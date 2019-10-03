@@ -1,33 +1,37 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
-import { IHelpMenuDataItem, DraggableHelpWindowDialogService, HelpWindowComponent } from '@covalent/experimental/help';
+import {
+  IMarkdownNavigatorItem,
+  MarkdownNavigatorWindowService,
+  MarkdownNavigatorWindowComponent,
+} from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'help-demo',
-  styleUrls: ['./help.component.scss'],
-  templateUrl: './help.component.html',
+  selector: 'markdown-navigator-demo',
+  styleUrls: ['./markdown-navigator.component.scss'],
+  templateUrl: './markdown-navigator.component.html',
   animations: [slideInDownAnimation],
   preserveWhitespaces: true,
 })
-export class HelpDemoComponent {
+export class MarkdownNavigatorDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  oneItem: IHelpMenuDataItem[] = [
+  oneItem: IMarkdownNavigatorItem[] = [
     {
       url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
     },
   ];
 
-  itemWithRawMarkdown: IHelpMenuDataItem[] = [
+  itemWithRawMarkdown: IMarkdownNavigatorItem[] = [
     {
       markdownString: '# Heading',
     },
   ];
 
-  multipleItems: IHelpMenuDataItem[] = [
+  multipleItems: IMarkdownNavigatorItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
       title: 'Code Editor API',
@@ -38,14 +42,14 @@ export class HelpDemoComponent {
     },
   ];
 
-  oneItemWithAnchor: IHelpMenuDataItem[] = [
+  oneItemWithAnchor: IMarkdownNavigatorItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
       anchor: 'Adding a new documentation component',
     },
   ];
 
-  nestedItems: IHelpMenuDataItem[] = [
+  nestedItems: IMarkdownNavigatorItem[] = [
     {
       title: 'Covalent Components',
       children: [
@@ -62,7 +66,7 @@ export class HelpDemoComponent {
     },
   ];
 
-  options: { name: string; value: IHelpMenuDataItem[] }[] = [
+  options: { name: string; value: IMarkdownNavigatorItem[] }[] = [
     {
       name: 'One item',
       value: this.oneItem,
@@ -75,20 +79,20 @@ export class HelpDemoComponent {
     { name: 'One item with anchor', value: this.oneItemWithAnchor },
     { name: 'Nested items', value: this.nestedItems },
   ];
-  selected: { name: string; value: IHelpMenuDataItem[] } = this.options[0];
-  currentItems: IHelpMenuDataItem[] = this.selected.value;
+  selected: { name: string; value: IMarkdownNavigatorItem[] } = this.options[0];
+  currentItems: IMarkdownNavigatorItem[] = this.selected.value;
   userInput: string = this.prettyJson(this.currentItems);
 
   windowOpen: boolean = false;
-  ref: MatDialogRef<HelpWindowComponent>;
+  ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
 
-  constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
+  constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
   select(): void {
     this.use(this.selected.value);
   }
 
-  use(items: IHelpMenuDataItem[]): void {
+  use(items: IMarkdownNavigatorItem[]): void {
     this.currentItems = items;
     this.userInput = this.prettyJson(this.currentItems);
     if (this.windowOpen) {
@@ -100,7 +104,7 @@ export class HelpDemoComponent {
     this.use(JSON.parse(this.userInput));
   }
 
-  prettyJson(items: IHelpMenuDataItem[]): string {
+  prettyJson(items: IMarkdownNavigatorItem[]): string {
     return JSON.stringify(items, undefined, 4);
   }
 
@@ -108,7 +112,7 @@ export class HelpDemoComponent {
     if (this.windowOpen) {
       this.closeDialog();
     }
-    this.ref = this.draggableHelpWindowDialogService.open({ items: this.currentItems });
+    this.ref = this._markdownNavigatorWindowService.open({ items: this.currentItems });
     this.ref.afterOpened().subscribe(() => {
       this.windowOpen = true;
     });

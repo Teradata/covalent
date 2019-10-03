@@ -1,15 +1,19 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
-import { CovalentHelpModule } from '../help.module';
-import { DraggableHelpWindowDialogService } from './draggable-help-window-dialog.service';
+import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
+import { MarkdownNavigatorWindowService } from './markdown-navigator-window.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogRef } from '@angular/material/dialog';
-import { HelpWindowComponent, IHelpMenuDataItem, IHelpWindowComponentLabels, DEFAULT_HELP_COMP_LABELS } from '../';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { IMarkdownNavigatorItem, DEFAULT_MARKDOWN_NAVIGATOR_LABELS } from '../markdown-navigator.component';
+import {
+  MarkdownNavigatorWindowComponent,
+  IMarkdownNavigatorWindowLabels,
+} from '../markdown-navigator-window/markdown-navigator-window.component';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
-const RAW_MARKDOWN_ITEMS: IHelpMenuDataItem[] = [
+const RAW_MARKDOWN_ITEMS: IMarkdownNavigatorItem[] = [
   {
     markdownString: RAW_MARKDOWN,
   },
@@ -31,16 +35,16 @@ async function wait(fixture: ComponentFixture<any>): Promise<void> {
 })
 class TestComponent {}
 
-describe('DraggableHelpWindowDialogService', () => {
+describe('MarkdownNavigatorWindowService', () => {
   let overlayContainerElement: HTMLElement;
 
-  function getHelpComponent(): HTMLElement {
-    return <HTMLElement>overlayContainerElement.querySelector(`td-help`);
+  function getMarkdownNavigator(): HTMLElement {
+    return <HTMLElement>overlayContainerElement.querySelector(`td-markdown-navigator`);
   }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentHelpModule],
+      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
       declarations: [TestComponent],
       providers: [
         {
@@ -56,37 +60,43 @@ describe('DraggableHelpWindowDialogService', () => {
     });
   }));
 
-  it('should open and close help window properly', async(
+  it('should open and close markdown navigator window properly', async(
     inject(
-      [DraggableHelpWindowDialogService],
-      async (_draggableHelpWindowDialogService: DraggableHelpWindowDialogService) => {
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<HelpWindowComponent> = _draggableHelpWindowDialogService.open({ items: [] });
+        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+          items: [],
+        });
 
         await wait(fixture);
         await dialogRef.afterOpen().toPromise();
 
-        expect(getHelpComponent()).toBeTruthy();
+        expect(getMarkdownNavigator()).toBeTruthy();
 
-        (<HTMLElement>overlayContainerElement.querySelector(`td-help-window .td-help-window-close`)).click();
+        (<HTMLElement>(
+          overlayContainerElement.querySelector(`td-markdown-navigator-window .td-markdown-navigator-window-close`)
+        )).click();
         await wait(fixture);
 
-        expect(getHelpComponent()).toBeFalsy();
+        expect(getMarkdownNavigator()).toBeFalsy();
       },
     ),
   ));
   it('should open with no items', async(
     inject(
-      [DraggableHelpWindowDialogService],
-      async (_draggableHelpWindowDialogService: DraggableHelpWindowDialogService) => {
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<HelpWindowComponent> = _draggableHelpWindowDialogService.open({ items: [] });
+        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+          items: [],
+        });
 
         await wait(fixture);
         await dialogRef.afterOpen().toPromise();
 
         expect(dialogRef.componentInstance.items).toEqual([]);
-        expect(getHelpComponent().querySelectorAll('mat-action-list button').length).toBe(0);
+        expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(0);
 
         dialogRef.close();
         await wait(fixture);
@@ -95,10 +105,10 @@ describe('DraggableHelpWindowDialogService', () => {
   ));
   it('should open with an item', async(
     inject(
-      [DraggableHelpWindowDialogService],
-      async (_draggableHelpWindowDialogService: DraggableHelpWindowDialogService) => {
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<HelpWindowComponent> = _draggableHelpWindowDialogService.open({
+        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: RAW_MARKDOWN_ITEMS,
         });
 
@@ -106,7 +116,7 @@ describe('DraggableHelpWindowDialogService', () => {
         await dialogRef.afterOpen().toPromise();
 
         expect(dialogRef.componentInstance.items).toEqual(RAW_MARKDOWN_ITEMS);
-        expect(getHelpComponent().querySelectorAll('mat-action-list button').length).toBe(2);
+        expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(2);
 
         dialogRef.close();
         await wait(fixture);
@@ -116,10 +126,10 @@ describe('DraggableHelpWindowDialogService', () => {
 
   it('should use passed in labels', async(
     inject(
-      [DraggableHelpWindowDialogService],
-      async (_draggableHelpWindowDialogService: DraggableHelpWindowDialogService) => {
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        let dialogRef: MatDialogRef<HelpWindowComponent> = _draggableHelpWindowDialogService.open({
+        let dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: [],
           labels: {},
         });
@@ -128,14 +138,14 @@ describe('DraggableHelpWindowDialogService', () => {
         await dialogRef.afterOpen().toPromise();
 
         expect(dialogRef.componentInstance.labels).toEqual({});
-        expect(getHelpComponent().textContent).toContain(DEFAULT_HELP_COMP_LABELS.emptyState);
+        expect(getMarkdownNavigator().textContent).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
         dialogRef.close();
         await wait(fixture);
 
-        const SAMPLE_LABELS: IHelpWindowComponentLabels = {
+        const SAMPLE_LABELS: IMarkdownNavigatorWindowLabels = {
           emptyState: 'Boo hoo :(',
         };
-        dialogRef = _draggableHelpWindowDialogService.open({
+        dialogRef = _markdownNavigatorWindowService.open({
           items: [],
           labels: SAMPLE_LABELS,
         });
@@ -144,7 +154,7 @@ describe('DraggableHelpWindowDialogService', () => {
         await dialogRef.afterOpen().toPromise();
 
         expect(dialogRef.componentInstance.labels).toEqual(SAMPLE_LABELS);
-        expect(getHelpComponent().textContent).toContain(SAMPLE_LABELS.emptyState);
+        expect(getMarkdownNavigator().textContent).toContain(SAMPLE_LABELS.emptyState);
 
         dialogRef.close();
         await wait(fixture);
@@ -154,10 +164,10 @@ describe('DraggableHelpWindowDialogService', () => {
 
   it('should use default to primary toolbar color', async(
     inject(
-      [DraggableHelpWindowDialogService],
-      async (_draggableHelpWindowDialogService: DraggableHelpWindowDialogService) => {
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<HelpWindowComponent> = _draggableHelpWindowDialogService.open({
+        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: RAW_MARKDOWN_ITEMS,
         });
 
@@ -173,10 +183,10 @@ describe('DraggableHelpWindowDialogService', () => {
   ));
   it('should use passed in toolbar color', async(
     inject(
-      [DraggableHelpWindowDialogService],
-      async (_draggableHelpWindowDialogService: DraggableHelpWindowDialogService) => {
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        let dialogRef: MatDialogRef<HelpWindowComponent> = _draggableHelpWindowDialogService.open({
+        let dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: [],
           toolbarColor: 'accent',
         });
@@ -189,7 +199,7 @@ describe('DraggableHelpWindowDialogService', () => {
         dialogRef.close();
         await wait(fixture);
 
-        dialogRef = _draggableHelpWindowDialogService.open({ items: [], toolbarColor: 'primary' });
+        dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'primary' });
 
         await wait(fixture);
         await dialogRef.afterOpen().toPromise();
@@ -199,7 +209,7 @@ describe('DraggableHelpWindowDialogService', () => {
         dialogRef.close();
         await wait(fixture);
 
-        dialogRef = _draggableHelpWindowDialogService.open({ items: [], toolbarColor: 'warn' });
+        dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'warn' });
 
         await wait(fixture);
         await dialogRef.afterOpen().toPromise();
@@ -209,7 +219,7 @@ describe('DraggableHelpWindowDialogService', () => {
         dialogRef.close();
         await wait(fixture);
 
-        dialogRef = _draggableHelpWindowDialogService.open({ items: [], toolbarColor: undefined });
+        dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: undefined });
 
         await wait(fixture);
         await dialogRef.afterOpen().toPromise();
@@ -224,19 +234,24 @@ describe('DraggableHelpWindowDialogService', () => {
 
   it('should have proper classes', async(
     inject(
-      [DraggableHelpWindowDialogService],
-      async (_draggableHelpWindowDialogService: DraggableHelpWindowDialogService) => {
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<HelpWindowComponent> = _draggableHelpWindowDialogService.open({ items: [] });
+        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+          items: [],
+        });
 
         await wait(fixture);
         await dialogRef.afterOpen().toPromise();
 
-        expect(overlayContainerElement.querySelector(`.td-draggable-help-window-wrapper`)).toBeTruthy();
-        expect(overlayContainerElement.querySelector(`td-help-window.td-draggable-help-window`)).toBeTruthy();
-        expect(window.getComputedStyle(overlayContainerElement.querySelector(`.td-help-window-toolbar`)).cursor).toBe(
-          'move',
-        );
+        expect(overlayContainerElement.querySelector(`.td-draggable-markdown-navigator-window-wrapper`)).toBeTruthy();
+        expect(
+          overlayContainerElement.querySelector(`td-markdown-navigator-window.td-draggable-markdown-navigator-window`),
+        ).toBeTruthy();
+        expect(
+          window.getComputedStyle(overlayContainerElement.querySelector(`.td-markdown-navigator-window-toolbar`))
+            .cursor,
+        ).toBe('move');
 
         dialogRef.close();
         await wait(fixture);

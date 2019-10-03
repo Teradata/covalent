@@ -1,27 +1,31 @@
 import { Injectable } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
-import { IHelpMenuDataItem, IHelpWindowComponentLabels } from '../help.utils';
-import { Overlay } from '@angular/cdk/overlay';
-import { CovalentHelpModule } from '../help.module';
-import { ThemePalette } from '@angular/material/core';
-import { HelpWindowComponent } from '../help-window/help-window.component';
-import { TdDialogService } from '@covalent/core/dialogs';
 
-interface IDraggableHelpWindowDialogServiceConfig {
-  items: IHelpMenuDataItem[];
+import { Overlay } from '@angular/cdk/overlay';
+import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
+import { ThemePalette } from '@angular/material/core';
+import {
+  MarkdownNavigatorWindowComponent,
+  IMarkdownNavigatorWindowLabels,
+} from '../markdown-navigator-window/markdown-navigator-window.component';
+import { TdDialogService } from '@covalent/core/dialogs';
+import { IMarkdownNavigatorItem } from '../markdown-navigator.component';
+
+export interface IMarkdownNavigatorWindowConfig {
+  items: IMarkdownNavigatorItem[];
   dialogConfig?: MatDialogConfig;
-  labels?: IHelpWindowComponentLabels;
+  labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
 }
 
 @Injectable({
-  providedIn: CovalentHelpModule,
+  providedIn: CovalentMarkdownNavigatorModule,
 })
-export class DraggableHelpWindowDialogService {
+export class MarkdownNavigatorWindowService {
   constructor(private _overlay: Overlay, private _tdDialogService: TdDialogService) {}
 
-  open(config: IDraggableHelpWindowDialogServiceConfig): MatDialogRef<HelpWindowComponent> {
-    const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-help-window-wrapper';
+  open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<MarkdownNavigatorWindowComponent> {
+    const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-markdown-navigator-window-wrapper';
     const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
       hasBackdrop: false,
       closeOnNavigation: true,
@@ -32,14 +36,14 @@ export class DraggableHelpWindowDialogService {
       scrollStrategy: this._overlay.scrollStrategies.noop(),
     };
 
-    const draggableDialog: MatDialogRef<HelpWindowComponent> = this._tdDialogService.openDraggable({
-      component: HelpWindowComponent,
+    const draggableDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = this._tdDialogService.openDraggable({
+      component: MarkdownNavigatorWindowComponent,
       config: {
         ...DEFAULT_DRAGGABLE_DIALOG_CONFIG,
         ...config.dialogConfig,
       },
-      dragHandleSelectors: ['.td-help-window-toolbar'],
-      draggableClass: 'td-draggable-help-window',
+      dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
+      draggableClass: 'td-draggable-markdown-navigator-window',
     });
 
     draggableDialog.componentInstance.items = config.items;

@@ -1,13 +1,13 @@
-# HelpComponent
+# MarkdownNavigatorComponent
 
-A component for rendering and navigating through documentation. Supports github urls.
+A component for rendering and navigating through markdown, such as documentation. Supports github urls.
 
 ## API Summary
 
 #### Inputs
-+ items: IHelpMenuDataItem[]
-  + List of IHelpMenuDataItems to be rendered
-+ labels?: IHelpComponentLabels
++ items: IMarkdownNavigatorItem[]
+  + List of IMarkdownNavigatorItems to be rendered
++ labels?: IMarkdownNavigatorLabels
   + Translated labels
 + toolbarColor?: ThemePalette
   + Color palette for toolbar
@@ -16,10 +16,10 @@ A component for rendering and navigating through documentation. Supports github 
 ## Setup
 
 ```typescript
-import { CovalentHelpModule } from '@covalent/experimental/help';
+import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 @NgModule({
   imports: [
-    CovalentHelpModule,
+    CovalentMarkdownNavigatorModule,
     ...
   ],
   ...
@@ -30,26 +30,26 @@ export class MyModule {}
 ## Usage
 
 ```html
-  <td-help [items]="items"></td-help>
+  <td-markdown-navigator [items]="items"></td-markdown-navigator>
 
 ```
 
 #### Sample items
 
 ```typescript
-oneItem: IHelpMenuDataItem[] = [
+oneItem: IMarkdownNavigatorItem[] = [
   {
     url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
   },
 ];
 
-itemWithRawMarkdown: IHelpMenuDataItem[] = [
+itemWithRawMarkdown: IMarkdownNavigatorItem[] = [
   {
     markdownString: '# Heading',
   },
 ];
 
-multipleItems: IHelpMenuDataItem[] = [
+multipleItems: IMarkdownNavigatorItem[] = [
   {
     url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
     title: 'Code Editor API',
@@ -60,14 +60,14 @@ multipleItems: IHelpMenuDataItem[] = [
   },
 ];
 
-oneItemWithAnchor: IHelpMenuDataItem[] = [
+oneItemWithAnchor: IMarkdownNavigatorItem[] = [
   {
     url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
     anchor: 'Adding a new documentation component',
   },
 ];
 
-nestedItems: IHelpMenuDataItem[] = [
+nestedItems: IMarkdownNavigatorItem[] = [
   {
     title: 'Covalent Components',
     children: [
@@ -88,33 +88,33 @@ nestedItems: IHelpMenuDataItem[] = [
 
 For reference:
 ```typescript
-interface IHelpMenuDataItem {
+interface IMarkdownNavigatorItem {
   title?: string;
   url?: string;
   httpOptions?: object;
   markdownString?: string; // raw markdown
   anchor?: string;
-  children?: IHelpMenuDataItem[];
+  children?: IMarkdownNavigatorItem[];
 }
 ```
 
-# DraggableHelpWindowDialogService
+# MarkdownNavigatorWindowService
 
-A service that opens a HelpWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
+A service that opens a MarkdownNavigatorWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
 
 ## API Summary
 
 #### Methods
 
-+ open: function(config: IDraggableHelpWindowDialogServiceConfig)
-  + Opens a HelpWindowComponent inside a draggable dialog.
++ open: function(config: IMarkdownNavigatorWindowConfig)
+  + Opens a MarkdownNavigatorWindowComponent inside a draggable dialog.
 
 For reference:
 ```typescript
-interface IDraggableHelpWindowDialogServiceConfig {
-  items: IHelpMenuDataItem[];
+interface IMarkdownNavigatorWindowConfig {
+  items: IMarkdownNavigatorItem[];
   dialogConfig?: MatDialogConfig;
-  labels?: IHelpWindowComponentLabels;
+  labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
 }
 ```
@@ -122,10 +122,10 @@ interface IDraggableHelpWindowDialogServiceConfig {
 ## Setup
 
 ```typescript
-import { CovalentHelpModule } from '@covalent/experimental/help';
+import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 @NgModule({
   imports: [
-    CovalentHelpModule,
+    CovalentMarkdownNavigatorModule,
     ...
   ],
   ...
@@ -140,20 +140,20 @@ Example:
 
 ```typescript
 import {
-  HelpWindowComponent,
-  DraggableHelpWindowDialogService,
-  IHelpMenuDataItem,
-} from '@covalent/experimental/help';
+  MarkdownNavigatorWindowComponent,
+  MarkdownNavigatorWindowService,
+  IMarkdownNavigatorItem,
+} from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
 
 export class SampleComponent{
 
-  ref: MatDialogRef<HelpWindowComponent>;
+  ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
 
-  constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
+  constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
   ngOnInit(): void {
-    this.ref = this.draggableHelpWindowDialogService.open({
+    this.ref = this._markdownNavigatorWindowService.open({
       items: [{ url: 'https://github.com/Teradata/covalent/blob/develop/README.md' }]
     });
     this.ref.afterOpened().subscribe(() => {
