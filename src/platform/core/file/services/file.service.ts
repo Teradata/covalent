@@ -2,7 +2,7 @@ import { Injectable, Optional } from '@angular/core';
 import { HttpClient, HttpRequest, HttpEvent, HttpEventType, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, Subject, Subscriber } from 'rxjs';
 import { tap } from 'rxjs/operators';
-
+import { CovalentFileModule } from '../file.module';
 /**
  * @deprecated should be removed in favor of IUploadInit
  * @breaking-change 3.0.0
@@ -20,7 +20,9 @@ export interface IUploadExtras {
   params?: { [param: string]: string | string[] };
 }
 
-@Injectable()
+@Injectable({
+  providedIn: CovalentFileModule,
+})
 export class TdFileService {
   private _progressSubject: Subject<number> = new Subject<number>();
   private _progressObservable: Observable<number>;

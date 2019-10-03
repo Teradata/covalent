@@ -4,8 +4,9 @@
  */
 
 import { Injectable } from '@angular/core';
-
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class IconService {
   private _icons: string[] = [
     'access_alarm',
