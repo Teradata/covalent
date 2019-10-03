@@ -1,5 +1,5 @@
-import { Injectable, Provider, SkipSelf, Optional, Type } from '@angular/core';
-import { Validators, ValidatorFn, FormControl, AbstractControl } from '@angular/forms';
+import { Injectable, Type } from '@angular/core';
+import { Validators, ValidatorFn, FormControl } from '@angular/forms';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicFileInputComponent } from '../dynamic-elements/dynamic-file-input/dynamic-file-input.component';
@@ -138,14 +138,3 @@ export class TdDynamicFormsService {
     return validator;
   }
 }
-
-export function DYNAMIC_FORMS_PROVIDER_FACTORY(parent: TdDynamicFormsService): TdDynamicFormsService {
-  return parent || new TdDynamicFormsService();
-}
-
-export const DYNAMIC_FORMS_PROVIDER: Provider = {
-  // If there is already a service available, use that. Otherwise, provide a new one.
-  provide: TdDynamicFormsService,
-  deps: [[new Optional(), new SkipSelf(), TdDynamicFormsService]],
-  useFactory: DYNAMIC_FORMS_PROVIDER_FACTORY,
-};

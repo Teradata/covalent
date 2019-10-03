@@ -17,7 +17,7 @@ import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operato
 
 import * as echarts from 'echarts/lib/echarts';
 
-import { TdChartOptionsService } from './chart-options.service';
+import { TdChartOptionsService, CHART_PROVIDER } from './chart-options.service';
 import { assignDefined } from './utils';
 
 @Component({
@@ -25,6 +25,7 @@ import { assignDefined } from './utils';
   template: '',
   styleUrls: ['./chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [CHART_PROVIDER],
 })
 export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   private _destroy: Subject<boolean> = new Subject<boolean>();

@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 
 import { filter, pairwise } from 'rxjs/operators';
-import { CovalentCommonModule } from '../common.module';
 @Injectable({
-  providedIn: CovalentCommonModule,
+  providedIn: 'root',
 })
 export class RouterPathService {
   private static _previousRoute: string = '/';

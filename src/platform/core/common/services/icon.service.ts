@@ -4,9 +4,8 @@
  */
 
 import { Injectable } from '@angular/core';
-import { CovalentCommonModule } from '../common.module';
 @Injectable({
-  providedIn: CovalentCommonModule,
+  providedIn: 'root',
 })
 export class IconService {
   private _icons: string[] = [

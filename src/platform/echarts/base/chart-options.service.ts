@@ -2,9 +2,7 @@ import { Injectable, Provider, Optional, SkipSelf } from '@angular/core';
 
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TdChartOptionsService {
   private _options: any = {};
   private _optionsSubject: Subject<any> = new BehaviorSubject<any>(this._options);
@@ -54,3 +52,14 @@ export class TdChartOptionsService {
     return this._optionsSubject.asObservable();
   }
 }
+
+export function CHART_PROVIDER_FACTORY(parent: TdChartOptionsService): TdChartOptionsService {
+  return parent || new TdChartOptionsService();
+}
+
+export const CHART_PROVIDER: Provider = {
+  // If there is already a service available, use that. Otherwise, provide a new one.
+  provide: TdChartOptionsService,
+  deps: [[new Optional(), new SkipSelf(), TdChartOptionsService]],
+  useFactory: CHART_PROVIDER_FACTORY,
+};
