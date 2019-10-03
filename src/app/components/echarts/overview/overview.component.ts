@@ -16,6 +16,12 @@ export class OverviewComponent {
       title: 'Bar Chart',
     },
     {
+      color: 'purple-500',
+      icon: 'pie_chart',
+      route: ['types', 'pie'],
+      title: 'Pie Chart',
+    },
+    {
       color: 'blue-A700',
       icon: 'show_chart',
       route: ['types', 'line'],

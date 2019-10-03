@@ -1,8 +1,8 @@
 import { convertObjectsToCSV, convertCSVToJSON } from './convert';
 
-fdescribe('Convert', () => {
-  fdescribe('Object to CSV conversion', () => {
-    fit('conversion with various parameter options', () => {
+describe('Convert', () => {
+  describe('Object to CSV conversion', () => {
+    it('conversion with various parameter options', () => {
       const objects: object[] = [{ name: 'user1', id: 123 }, { name: 'user2', id: 234 }];
       const expectedStr: string = 'name,id\r\nuser1,123\r\nuser2,234\r\n';
       const expectedStrCustomKeySeparator: string = 'name|id\r\nuser1|123\r\nuser2|234\r\n';
@@ -21,8 +21,8 @@ fdescribe('Convert', () => {
     });
   });
 
-  fdescribe('CSV to JSON conversion', () => {
-    fit('conversion with various parameter options', () => {
+  describe('CSV to JSON conversion', () => {
+    it('conversion with various parameter options', () => {
       const csv: string = 'name,id\r\nuser1,123\r\nuser2,234\r\n';
       const csvCustomKeySeparator: string = 'name|id\r\nuser1|123\r\nuser2|234\r\n';
       const csvCustomLineSeparator: string = 'name,id|user1,123|user2,234|';

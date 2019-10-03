@@ -23,7 +23,7 @@ There are also lots of property inputs like:
 + links?: any[] // or edges?: any[]
   + The links between nodes.
 
-And so many more.. for more info [click here](https://ecomfe.github.io/echarts-doc/public/en/option.html#series-graph)
+And so many more.. for more info [click here](https://echarts.apache.org/en/option.html#series-graph)
 
 ## Setup
 
