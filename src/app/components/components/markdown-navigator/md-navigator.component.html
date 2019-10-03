@@ -20,7 +20,7 @@
             <button mat-button class="text-upper" color="primary" (click)="tryUserInput()">Try</button>
           </div>
           <div flex="50">
-            <td-md-navigator [items]="currentItems" [style.height.px]="450"></td-md-navigator>
+            <td-markdown-navigator [items]="currentItems" [style.height.px]="450"></td-markdown-navigator>
           </div>
         </div>
       </mat-tab>
@@ -41,23 +41,23 @@
         <td-highlight lang="typescript">
             <![CDATA[
           import {
-            IMdNavigatorItem,
-            MdNavigatorWindowService
+            IMarkdownNavigatorItem,
+            MarkdownNavigatorWindowService
           } from '@covalent/markdown-navigator';
 
-          oneItem: IMdNavigatorItem[] = [
+          oneItem: IMarkdownNavigatorItem[] = [
             {
               url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
             },
           ];
 
-          itemWithRawMarkdown: IMdNavigatorItem[] = [
+          itemWithRawMarkdown: IMarkdownNavigatorItem[] = [
             {
               markdownString: '# Heading',
             },
           ];
 
-          multipleItems: IMdNavigatorItem[] = [
+          multipleItems: IMarkdownNavigatorItem[] = [
             {
               url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
               title: 'Code Editor API',
@@ -68,14 +68,14 @@
             },
           ];
 
-          oneItemWithAnchor: IMdNavigatorItem[] = [
+          oneItemWithAnchor: IMarkdownNavigatorItem[] = [
             {
               url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
               anchor: 'Adding a new documentation component',
             },
           ];
 
-          nestedItems: IMdNavigatorItem[] = [
+          nestedItems: IMarkdownNavigatorItem[] = [
             {
               title: 'Covalent Components',
               children: [
@@ -92,7 +92,7 @@
             },
           ];
 
-          options: { name: string; value: IMdNavigatorItem[] }[] = [
+          options: { name: string; value: IMarkdownNavigatorItem[] }[] = [
             {
               name: 'One item',
               value: this.oneItem,
@@ -106,15 +106,15 @@
             { name: 'Nested items', value: this.nestedItems },
           ];
 
-          selected: { name: string; value: IMdNavigatorItem[] } = this.options[0];
-          currentItems: IMdNavigatorItem[] = this.selected.value;
+          selected: { name: string; value: IMarkdownNavigatorItem[] } = this.options[0];
+          currentItems: IMarkdownNavigatorItem[] = this.selected.value;
           userInput: string = this.prettyJson(this.currentItems);
 
           select(): void {
             this.use(this.selected.value);
           }
 
-          use(items: IMdNavigatorItem[]): void {
+          use(items: IMarkdownNavigatorItem[]): void {
             this.currentItems = items;
             this.userInput = this.prettyJson(this.currentItems);
           }
@@ -123,7 +123,7 @@
             this.use(JSON.parse(this.userInput));
           }
 
-          prettyJson(items: IMdNavigatorItem[]): string {
+          prettyJson(items: IMarkdownNavigatorItem[]): string {
             return JSON.stringify(items, undefined, 4);
           }
             ]]>
@@ -137,7 +137,7 @@
 <mat-card>
   <mat-card-title>Markdown Navigator Window Service</mat-card-title>
   <mat-card-subtitle>
-    A service that opens a MdNavigatorWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
+    A service that opens a MarkdownNavigatorWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
   </mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-tab-group mat-stretch-tabs>
@@ -162,26 +162,26 @@
         <td-highlight lang="typescript">
           <![CDATA[
           import {
-            IMdNavigatorItem,
-            MdNavigatorWindowService,
-            MdNavigatorWindowComponent,
+            IMarkdownNavigatorItem,
+            MarkdownNavigatorWindowService,
+            MarkdownNavigatorWindowComponent,
           } from '@covalent/markdown-navigator';
 
           windowOpen: boolean = false;
-          ref: MatDialogRef<MdNavigatorWindowComponent>;
-          currentItems: IMdNavigatorItem[] = [
+          ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
+          currentItems: IMarkdownNavigatorItem[] = [
           {
             url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
           },
           ];
 
-          constructor(private _mdNavigatorWindowService: MdNavigatorWindowService) {}
+          constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
           openDialog(): void {
             if (this.windowOpen) {
               this.closeDialog();
             }
-            this.ref = this._mdNavigatorWindowService.open({items: this.currentItems});
+            this.ref = this._markdownNavigatorWindowService.open({items: this.currentItems});
             this.ref.afterOpened().subscribe(() => {
               this.windowOpen = true;
             });

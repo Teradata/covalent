@@ -1,7 +1,11 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
-import { IMdNavigatorItem, MdNavigatorWindowService, MdNavigatorWindowComponent } from '@covalent/markdown-navigator';
+import {
+  IMarkdownNavigatorItem,
+  MarkdownNavigatorWindowService,
+  MarkdownNavigatorWindowComponent,
+} from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -11,23 +15,23 @@ import { MatDialogRef } from '@angular/material/dialog';
   animations: [slideInDownAnimation],
   preserveWhitespaces: true,
 })
-export class MdNavigatorDemoComponent {
+export class MarkdownNavigatorDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  oneItem: IMdNavigatorItem[] = [
+  oneItem: IMarkdownNavigatorItem[] = [
     {
       url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
     },
   ];
 
-  itemWithRawMarkdown: IMdNavigatorItem[] = [
+  itemWithRawMarkdown: IMarkdownNavigatorItem[] = [
     {
       markdownString: '# Heading',
     },
   ];
 
-  multipleItems: IMdNavigatorItem[] = [
+  multipleItems: IMarkdownNavigatorItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
       title: 'Code Editor API',
@@ -38,14 +42,14 @@ export class MdNavigatorDemoComponent {
     },
   ];
 
-  oneItemWithAnchor: IMdNavigatorItem[] = [
+  oneItemWithAnchor: IMarkdownNavigatorItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
       anchor: 'Adding a new documentation component',
     },
   ];
 
-  nestedItems: IMdNavigatorItem[] = [
+  nestedItems: IMarkdownNavigatorItem[] = [
     {
       title: 'Covalent Components',
       children: [
@@ -62,7 +66,7 @@ export class MdNavigatorDemoComponent {
     },
   ];
 
-  options: { name: string; value: IMdNavigatorItem[] }[] = [
+  options: { name: string; value: IMarkdownNavigatorItem[] }[] = [
     {
       name: 'One item',
       value: this.oneItem,
@@ -75,20 +79,20 @@ export class MdNavigatorDemoComponent {
     { name: 'One item with anchor', value: this.oneItemWithAnchor },
     { name: 'Nested items', value: this.nestedItems },
   ];
-  selected: { name: string; value: IMdNavigatorItem[] } = this.options[0];
-  currentItems: IMdNavigatorItem[] = this.selected.value;
+  selected: { name: string; value: IMarkdownNavigatorItem[] } = this.options[0];
+  currentItems: IMarkdownNavigatorItem[] = this.selected.value;
   userInput: string = this.prettyJson(this.currentItems);
 
   windowOpen: boolean = false;
-  ref: MatDialogRef<MdNavigatorWindowComponent>;
+  ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
 
-  constructor(private _mdNavigatorWindowService: MdNavigatorWindowService) {}
+  constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
   select(): void {
     this.use(this.selected.value);
   }
 
-  use(items: IMdNavigatorItem[]): void {
+  use(items: IMarkdownNavigatorItem[]): void {
     this.currentItems = items;
     this.userInput = this.prettyJson(this.currentItems);
     if (this.windowOpen) {
@@ -100,7 +104,7 @@ export class MdNavigatorDemoComponent {
     this.use(JSON.parse(this.userInput));
   }
 
-  prettyJson(items: IMdNavigatorItem[]): string {
+  prettyJson(items: IMarkdownNavigatorItem[]): string {
     return JSON.stringify(items, undefined, 4);
   }
 
@@ -108,7 +112,7 @@ export class MdNavigatorDemoComponent {
     if (this.windowOpen) {
       this.closeDialog();
     }
-    this.ref = this._mdNavigatorWindowService.open({ items: this.currentItems });
+    this.ref = this._markdownNavigatorWindowService.open({ items: this.currentItems });
     this.ref.afterOpened().subscribe(() => {
       this.windowOpen = true;
     });

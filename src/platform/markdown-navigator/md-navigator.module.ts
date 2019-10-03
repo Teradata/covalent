@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdNavigatorComponent } from './md-navigator.component';
-import { MdNavigatorWindowComponent } from './md-navigator-window/md-navigator-window.component';
+import { MarkdownNavigatorComponent } from './md-navigator.component';
+import { MarkdownNavigatorWindowComponent } from './md-navigator-window/md-navigator-window.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
@@ -26,8 +26,8 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
     CovalentFlavoredMarkdownModule,
     CovalentDialogsModule,
   ],
-  declarations: [MdNavigatorComponent, MdNavigatorWindowComponent],
-  exports: [MdNavigatorComponent, MdNavigatorWindowComponent],
-  entryComponents: [MdNavigatorWindowComponent],
+  declarations: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent],
+  exports: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent],
+  entryComponents: [MarkdownNavigatorWindowComponent],
 })
-export class CovalentMdNavigatorModule {}
+export class CovalentMarkdownNavigatorModule {}

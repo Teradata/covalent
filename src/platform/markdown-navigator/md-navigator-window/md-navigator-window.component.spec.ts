@@ -3,24 +3,28 @@ import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemePalette } from '@angular/material/core';
-import { CovalentMdNavigatorModule } from '../md-navigator.module';
+import { CovalentMarkdownNavigatorModule } from '../md-navigator.module';
 import { MatToolbar } from '@angular/material/toolbar';
 import {
-  IMdNavigatorWindowLabels,
-  MdNavigatorWindowComponent,
-  DEFAULT_MD_NAVIGATOR_WINDOW_LABELS,
+  IMarkdownNavigatorWindowLabels,
+  MarkdownNavigatorWindowComponent,
+  DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS,
 } from './md-navigator-window.component';
-import { IMdNavigatorItem, MdNavigatorComponent, DEFAULT_MD_NAVIGATOR_LABELS } from '../md-navigator.component';
+import {
+  IMarkdownNavigatorItem,
+  MarkdownNavigatorComponent,
+  DEFAULT_MARKDOWN_NAVIGATOR_LABELS,
+} from '../md-navigator.component';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
 
-const URL_ITEM: IMdNavigatorItem[] = [
+const URL_ITEM: IMarkdownNavigatorItem[] = [
   {
     url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
   },
 ];
-const RAW_MARKDOWN_ITEM: IMdNavigatorItem[] = [
+const RAW_MARKDOWN_ITEM: IMarkdownNavigatorItem[] = [
   {
     markdownString: RAW_MARKDOWN,
   },
@@ -32,93 +36,99 @@ async function wait(fixture: ComponentFixture<any>): Promise<void> {
 }
 
 @Component({
-  selector: 'td-md-navigator-window-test',
+  selector: 'td-markdown-navigator-window-test',
   template: `
-    <td-md-navigator-window
+    <td-markdown-navigator-window
       [items]="items"
       [style.height.px]="450"
       [labels]="labels"
       [toolbarColor]="toolbarColor"
-    ></td-md-navigator-window>
+    ></td-markdown-navigator-window>
   `,
 })
-class TdMdNavigatorWindowTestComponent {
-  items: IMdNavigatorItem[] = [];
-  labels: IMdNavigatorWindowLabels;
+class TdMarkdownNavigatorWindowTestComponent {
+  items: IMarkdownNavigatorItem[] = [];
+  labels: IMarkdownNavigatorWindowLabels;
   toolbarColor: ThemePalette;
 }
 
 @Component({
-  selector: 'td-md-navigator-window-w-o-color-test',
+  selector: 'td-markdown-navigator-window-w-o-color-test',
   template: `
-    <td-md-navigator-window [items]="items" [style.height.px]="450" [labels]="labels"></td-md-navigator-window>
+    <td-markdown-navigator-window
+      [items]="items"
+      [style.height.px]="450"
+      [labels]="labels"
+    ></td-markdown-navigator-window>
   `,
 })
-class TdMdNavigatorWindowWOColorTestComponent {
-  items: IMdNavigatorItem[] = [];
-  labels: IMdNavigatorWindowLabels;
+class TdMarkdownNavigatorWindowWOColorTestComponent {
+  items: IMarkdownNavigatorItem[] = [];
+  labels: IMarkdownNavigatorWindowLabels;
 }
 
-describe('MdNavigatorWindowComponent', () => {
+describe('MarkdownNavigatorWindowComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TdMdNavigatorWindowTestComponent, TdMdNavigatorWindowWOColorTestComponent],
-      imports: [NoopAnimationsModule, CovalentMdNavigatorModule],
+      declarations: [TdMarkdownNavigatorWindowTestComponent, TdMarkdownNavigatorWindowWOColorTestComponent],
+      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
     }).compileComponents();
   }));
 
   it('should use default labels if labels is undefined', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
-        TdMdNavigatorWindowTestComponent,
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
       );
 
       await wait(fixture);
 
-      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(
-        By.directive(MdNavigatorWindowComponent),
+      const markdownNavigatorWindow: MarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorWindowComponent),
       ).componentInstance;
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
-        .componentInstance;
+      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorComponent),
+      ).componentInstance;
 
-      expect(mdNavigatorWindow.titleLabel).toBe(DEFAULT_MD_NAVIGATOR_WINDOW_LABELS.title);
-      expect(mdNavigatorWindow.closeLabel).toBe(DEFAULT_MD_NAVIGATOR_WINDOW_LABELS.close);
-      expect(mdNavigatorWindow.mdNavigatorLabels).toBeFalsy();
-      expect(mdNavigator.goHomeLabel).toBe(DEFAULT_MD_NAVIGATOR_LABELS.goHome);
-      expect(mdNavigator.goBackLabel).toBe(DEFAULT_MD_NAVIGATOR_LABELS.goBack);
-      expect(mdNavigator.emptyStateLabel).toBe(DEFAULT_MD_NAVIGATOR_LABELS.emptyState);
+      expect(markdownNavigatorWindow.titleLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.title);
+      expect(markdownNavigatorWindow.closeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close);
+      expect(markdownNavigatorWindow.markdownNavigatorLabels).toBeFalsy();
+      expect(markdownNavigator.goHomeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome);
+      expect(markdownNavigator.goBackLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack);
+      expect(markdownNavigator.emptyStateLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
     }),
   ));
 
   it('should use default labels if labels is an empty object', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
-        TdMdNavigatorWindowTestComponent,
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
       );
 
       await wait(fixture);
 
-      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(
-        By.directive(MdNavigatorWindowComponent),
+      const markdownNavigatorWindow: MarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorWindowComponent),
       ).componentInstance;
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
-        .componentInstance;
+      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorComponent),
+      ).componentInstance;
 
-      expect(mdNavigatorWindow.titleLabel).toBe(DEFAULT_MD_NAVIGATOR_WINDOW_LABELS.title);
-      expect(mdNavigatorWindow.closeLabel).toBe(DEFAULT_MD_NAVIGATOR_WINDOW_LABELS.close);
-      expect(mdNavigator.goHomeLabel).toBe(DEFAULT_MD_NAVIGATOR_LABELS.goHome);
-      expect(mdNavigator.goBackLabel).toBe(DEFAULT_MD_NAVIGATOR_LABELS.goBack);
-      expect(mdNavigator.emptyStateLabel).toBe(DEFAULT_MD_NAVIGATOR_LABELS.emptyState);
+      expect(markdownNavigatorWindow.titleLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.title);
+      expect(markdownNavigatorWindow.closeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close);
+      expect(markdownNavigator.goHomeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome);
+      expect(markdownNavigator.goBackLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack);
+      expect(markdownNavigator.emptyStateLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
     }),
   ));
 
   it('should use labels if passed in', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
-        TdMdNavigatorWindowTestComponent,
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
       );
 
-      const SAMPLE_LABELS: IMdNavigatorWindowLabels = {
+      const SAMPLE_LABELS: IMarkdownNavigatorWindowLabels = {
         title: 'Ayuda!',
         close: 'Cierra',
         goHome: 'Vete pa tu casa',
@@ -128,14 +138,14 @@ describe('MdNavigatorWindowComponent', () => {
       fixture.componentInstance.labels = SAMPLE_LABELS;
       await wait(fixture);
 
-      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(
-        By.directive(MdNavigatorWindowComponent),
+      const markdownNavigatorWindow: MarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorWindowComponent),
       ).componentInstance;
 
-      expect(mdNavigatorWindow.titleLabel).toBe(SAMPLE_LABELS.title);
-      expect(mdNavigatorWindow.closeLabel).toBe(SAMPLE_LABELS.close);
-      expect(mdNavigatorWindow.mdNavigatorLabels).toBeTruthy();
-      expect(mdNavigatorWindow.mdNavigatorLabels).toEqual({
+      expect(markdownNavigatorWindow.titleLabel).toBe(SAMPLE_LABELS.title);
+      expect(markdownNavigatorWindow.closeLabel).toBe(SAMPLE_LABELS.close);
+      expect(markdownNavigatorWindow.markdownNavigatorLabels).toBeTruthy();
+      expect(markdownNavigatorWindow.markdownNavigatorLabels).toEqual({
         goHome: SAMPLE_LABELS.goHome,
         goBack: SAMPLE_LABELS.goBack,
         emptyState: SAMPLE_LABELS.emptyState,
@@ -143,31 +153,32 @@ describe('MdNavigatorWindowComponent', () => {
     }),
   ));
 
-  it('pass items to mdNavigator component', async(
+  it('pass items to markdownNavigator component', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
-        TdMdNavigatorWindowTestComponent,
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
       );
 
       fixture.componentInstance.items = URL_ITEM;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
-        .componentInstance;
+      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorComponent),
+      ).componentInstance;
 
-      expect(mdNavigator.items).toEqual(URL_ITEM);
+      expect(markdownNavigator.items).toEqual(URL_ITEM);
 
       fixture.componentInstance.items = RAW_MARKDOWN_ITEM;
       await wait(fixture);
 
-      expect(mdNavigator.items).toEqual(RAW_MARKDOWN_ITEM);
+      expect(markdownNavigator.items).toEqual(RAW_MARKDOWN_ITEM);
     }),
   ));
 
   it('default to primary color if toolbarColor is not passed in', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowWOColorTestComponent> = TestBed.createComponent(
-        TdMdNavigatorWindowWOColorTestComponent,
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowWOColorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowWOColorTestComponent,
       );
 
       await wait(fixture);
@@ -180,8 +191,8 @@ describe('MdNavigatorWindowComponent', () => {
 
   it('use color if toolBar color is passed in', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
-        TdMdNavigatorWindowTestComponent,
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
       );
 
       fixture.componentInstance.toolbarColor = 'accent';
@@ -210,23 +221,23 @@ describe('MdNavigatorWindowComponent', () => {
 
   it('emit a close event ', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
-        TdMdNavigatorWindowTestComponent,
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
       );
 
       await wait(fixture);
-      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(
-        By.directive(MdNavigatorWindowComponent),
+      const markdownNavigatorWindow: MarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorWindowComponent),
       ).componentInstance;
 
-      spyOn(mdNavigatorWindow.closed, 'emit');
+      spyOn(markdownNavigatorWindow.closed, 'emit');
 
-      const closeButton: DebugElement = fixture.debugElement.query(By.css('.td-md-navigator-window-close'));
+      const closeButton: DebugElement = fixture.debugElement.query(By.css('.td-markdown-navigator-window-close'));
       closeButton.nativeElement.click();
 
       await wait(fixture);
 
-      expect(mdNavigatorWindow.closed.emit).toHaveBeenCalled();
+      expect(markdownNavigatorWindow.closed.emit).toHaveBeenCalled();
     }),
   ));
 });

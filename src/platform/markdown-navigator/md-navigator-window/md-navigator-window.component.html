@@ -1,11 +1,11 @@
-<mat-toolbar [color]="toolbarColor" class="td-md-navigator-window-toolbar">
+<mat-toolbar [color]="toolbarColor" class="td-markdown-navigator-window-toolbar">
   <mat-toolbar-row>
     <div layout="row" layout-align="start center" flex>
       <span class="mat-title push-bottom-none" flex>
         {{ titleLabel }}
       </span>
       <!-- TODO: Resizing a drag-and-drop element was not working so removed minimize/maximize for now-->
-      <button mat-icon-button matTooltip="Close" (click)="closed.emit()" class="td-md-navigator-window-close">
+      <button mat-icon-button matTooltip="Close" (click)="closed.emit()" class="td-markdown-navigator-window-close">
         <mat-icon [attr.aria-label]="closeLabel">
           close
         </mat-icon>
@@ -14,4 +14,4 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<td-md-navigator [items]="items" [labels]="mdNavigatorLabels"> </td-md-navigator>
+<td-markdown-navigator [items]="items" [labels]="markdownNavigatorLabels"> </td-markdown-navigator>

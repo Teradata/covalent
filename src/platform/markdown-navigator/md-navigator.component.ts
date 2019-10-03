@@ -1,22 +1,22 @@
 import { Component, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
-export interface IMdNavigatorItem {
+export interface IMarkdownNavigatorItem {
   title?: string;
   url?: string;
   httpOptions?: object;
   markdownString?: string; // raw markdown
   anchor?: string;
-  children?: IMdNavigatorItem[];
+  children?: IMarkdownNavigatorItem[];
 }
 
-export interface IMdNavigatorLabels {
+export interface IMarkdownNavigatorLabels {
   goHome?: string;
   goBack?: string;
   emptyState?: string;
 }
 
-export const DEFAULT_MD_NAVIGATOR_LABELS: IMdNavigatorLabels = {
+export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
   goHome: 'Go home',
   goBack: 'Go back',
   emptyState: 'No item(s) to display',
@@ -49,28 +49,28 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
 }
 
 @Component({
-  selector: 'td-md-navigator',
+  selector: 'td-markdown-navigator',
   templateUrl: './md-navigator.component.html',
   styleUrls: ['./md-navigator.component.scss'],
 })
-export class MdNavigatorComponent implements OnChanges {
+export class MarkdownNavigatorComponent implements OnChanges {
   /**
-   * items: IMdNavigatorItem[]
+   * items: IMarkdownNavigatorItem[]
    *
-   * List of IMdNavigatorItems to be rendered
+   * List of IMarkdownNavigatorItems to be rendered
    */
-  @Input() items: IMdNavigatorItem[];
+  @Input() items: IMarkdownNavigatorItem[];
 
   /**
-   * labels?: IMdNavigatorLabels
+   * labels?: IMarkdownNavigatorLabels
    *
    * Translated labels
    */
-  @Input() labels: IMdNavigatorLabels;
+  @Input() labels: IMarkdownNavigatorLabels;
 
-  historyStack: IMdNavigatorItem[][] = []; // history
-  currentMarkdownItem: IMdNavigatorItem; // currently rendered
-  currentMenuItems: IMdNavigatorItem[] = []; // current menu items
+  historyStack: IMarkdownNavigatorItem[][] = []; // history
+  currentMarkdownItem: IMarkdownNavigatorItem; // currently rendered
+  currentMenuItems: IMarkdownNavigatorItem[] = []; // current menu items
 
   loading: boolean = false;
 
@@ -128,15 +128,15 @@ export class MdNavigatorComponent implements OnChanges {
   }
 
   get goHomeLabel(): string {
-    return (this.labels && this.labels.goHome) || DEFAULT_MD_NAVIGATOR_LABELS.goHome;
+    return (this.labels && this.labels.goHome) || DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome;
   }
 
   get goBackLabel(): string {
-    return (this.labels && this.labels.goBack) || DEFAULT_MD_NAVIGATOR_LABELS.goBack;
+    return (this.labels && this.labels.goBack) || DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack;
   }
 
   get emptyStateLabel(): string {
-    return (this.labels && this.labels.emptyState) || DEFAULT_MD_NAVIGATOR_LABELS.emptyState;
+    return (this.labels && this.labels.emptyState) || DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -157,7 +157,7 @@ export class MdNavigatorComponent implements OnChanges {
     this.historyStack = [];
   }
 
-  handleItemSelected(item: IMdNavigatorItem): void {
+  handleItemSelected(item: IMarkdownNavigatorItem): void {
     if (this.currentMenuItems.length === 0) {
       // clicked on a markdown link within the current markdown file
       this.historyStack = [...this.historyStack, [this.currentMarkdownItem]];
@@ -188,7 +188,7 @@ export class MdNavigatorComponent implements OnChanges {
 
   goBack(): void {
     if (this.historyStack.length > 0) {
-      const parent: IMdNavigatorItem[] = this.historyStack[this.historyStack.length - 1];
+      const parent: IMarkdownNavigatorItem[] = this.historyStack[this.historyStack.length - 1];
       if (parent.length === 1 && (!parent[0].children || parent[0].children.length === 0)) {
         this.currentMenuItems = [];
         this.currentMarkdownItem = parent[0];
@@ -200,7 +200,7 @@ export class MdNavigatorComponent implements OnChanges {
     }
   }
 
-  getTitle(item: IMdNavigatorItem): string {
+  getTitle(item: IMarkdownNavigatorItem): string {
     return (
       item.title ||
       removeLeadingHash(item.anchor) ||
