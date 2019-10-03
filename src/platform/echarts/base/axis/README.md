@@ -23,7 +23,7 @@ There are also lots of property inputs like:
 + max?: number
   + The maximum value of axis.
 
-And so many more.. for more info on xAxis [click here](https://ecomfe.github.io/echarts-doc/public/en/option.html#xAxis) and yAxis [click here](https://ecomfe.github.io/echarts-doc/public/en/option.html#yAxis)
+And so many more.. for more info on xAxis [click here](https://echarts.apache.org/en/option.html#xAxis) and yAxis [click here](https://echarts.apache.org/en/option.html#yAxis)
 
 ## Setup
 
