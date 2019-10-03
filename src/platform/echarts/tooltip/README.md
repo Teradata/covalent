@@ -17,7 +17,7 @@ There are also lots of property inputs like:
 + trigger?: 'item' | 'axis' | 'none'
   + Type of triggering.
 
-And so many more.. for more info [click here](https://ecomfe.github.io/echarts-doc/public/en/option.html#tooltip)
+And so many more.. for more info [click here](https://echarts.apache.org/en/option.html#tooltip)
 
 
 # td-chart-series-tooltip

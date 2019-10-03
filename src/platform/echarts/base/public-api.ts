@@ -64,6 +64,7 @@ export {
   ITdMarkLine,
   ITdMarkArea,
   ITdLineLabel,
+  ITdLabelLine,
   ITdMarkLineEmphasis,
   ITdSeriesTooltip,
   TdSeriesLayoutBy,
