@@ -3,7 +3,7 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h3 class="mat-title">Ligature Material Icons</h3>
-    <p class="mat-body-1">The UI Platform ships with 750+ icons as Font (Ligature) icons.</p>
+    <p class="mat-body-1">The UI Platform ships with 1000+ icons as Font (Ligature) icons.</p>
     <p class="mat-body-1">
       Material design system icons are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI. Ensuring readability and clarity at both large and small sizes, these icons have been optimized for beautiful display on all common platforms and display resolutions.
     </p>
@@ -41,9 +41,9 @@
         <mat-divider></mat-divider>
         <mat-card-content>
           <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
-            <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
+            <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center" class="pad-xs">
                 <mat-icon>{{icon}}</mat-icon>
-                <p class="mat-caption">{{icon}}</p>
+                <p class="mat-caption text-truncate">{{icon}}</p>
             </div>
           </div>
         </mat-card-content>
