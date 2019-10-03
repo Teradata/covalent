@@ -21,7 +21,7 @@ There are also lots of property inputs like:
 + roam?: boolean
   + Whether to enable dragging roam (move and zoom).
 
-And so many more.. for more info [click here](https://ecomfe.github.io/echarts-doc/public/en/option.html#series-treemap)
+And so many more.. for more info [click here](https://echarts.apache.org/en/option.html#series-treemap)
 
 ## Setup
 
