@@ -59,8 +59,5 @@ cp -r deploy/platform/flavored-markdown src/platform/node_modules/@covalent
 # HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
 rm -rf src/platform/node_modules
 
-# BUILD: Experimental Schematics
-gulp build-schematics-assets
-
 # Need to move required file after ng-packagr runs because ng-packagr overrides primary entrypoint folders
 gulp move-additional-platform-files
