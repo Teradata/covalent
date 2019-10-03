@@ -14,12 +14,7 @@ module.exports = {
       '!src/platform/core/**/*.component.scss',
       'src/platform/core/**/*.scss',
 
-      'src/platform/core/**/codepoints',
-      'src/platform/core/**/MaterialIcons-Regular.eot',
-      'src/platform/core/**/MaterialIcons-Regular.ijmap',
-      'src/platform/core/**/MaterialIcons-Regular.ttf',
-      'src/platform/core/**/MaterialIcons-Regular.woff',
-      'src/platform/core/**/MaterialIcons-Regular.woff2',
+      'src/platform/core/**/MaterialIcons-Regular-v48.woff2',
       'src/platform/core/**/*.md',
     ],
     PostNgPackngrCompileStyles: [
