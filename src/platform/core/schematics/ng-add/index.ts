@@ -1,18 +1,8 @@
 import { Rule, chain, Tree, mergeWith, url, apply, branchAndMerge, template } from '@angular-devkit/schematics';
 import { addPackageToPackageJson } from '@angular/material/schematics/ng-add/package-config';
 import { ISchema } from './schema';
-import { covalentCoreVersion, materialVersion } from './version-names';
-import {
-  IComponent,
-  DynamicForms,
-  Http,
-  Highlight,
-  Markdown,
-  FlavoredMarkdown,
-  Echarts,
-  TextEditor,
-  CodeEditor,
-} from './components';
+import { covalentCoreVersion, materialVersion } from '../version-names';
+import { IComponent, components } from '../components';
 import { strings } from '@angular-devkit/core';
 import { getProjectFromWorkspace, getProjectTargetOptions } from '@angular/cdk/schematics';
 import { getWorkspace } from '@schematics/angular/utility/config';
@@ -23,17 +13,6 @@ export function addDependenciesAndFiles(options: ISchema): Rule {
     (host: Tree) => {
       addPackageToPackageJson(host, '@angular/material', `~${materialVersion}`);
       addPackageToPackageJson(host, '@covalent/core', `~${covalentCoreVersion}`);
-
-      let components: IComponent[] = [
-        new DynamicForms(),
-        new Http(),
-        new Highlight(),
-        new Markdown(),
-        new FlavoredMarkdown(),
-        new Echarts(),
-        new TextEditor(),
-        new CodeEditor(),
-      ];
 
       components.forEach((component: IComponent) => {
         if (component.enabled(options)) {

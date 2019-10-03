@@ -1,4 +1,4 @@
-import { ISchema } from './schema';
+import { ISchema } from './ng-add/schema';
 
 export interface IComponent {
   enabled(options: ISchema): boolean;
@@ -84,3 +84,14 @@ export class CodeEditor implements IComponent {
     return '@covalent/code-editor';
   }
 }
+
+export const components: IComponent[] = [
+  new DynamicForms(),
+  new Http(),
+  new Highlight(),
+  new Markdown(),
+  new FlavoredMarkdown(),
+  new Echarts(),
+  new TextEditor(),
+  new CodeEditor(),
+];
