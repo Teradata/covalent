@@ -61,8 +61,8 @@ function addThemeToAngularJson(): Rule {
     const workspace: experimental.workspace.WorkspaceSchema = getWorkspace(host);
     const project: experimental.workspace.WorkspaceProject = getProjectFromWorkspace(workspace);
     const targetOptions: any = getProjectTargetOptions(project, 'build');
-    const assetPath: string = `src/theme.scss`;
-    const prebuiltThemePathSegment: string = `src/styles.scss`;
+    const assetPath: string = `theme.scss`;
+    const prebuiltThemePathSegment: string = `styles.scss`;
 
     if (!targetOptions.styles) {
       targetOptions.styles = [assetPath];

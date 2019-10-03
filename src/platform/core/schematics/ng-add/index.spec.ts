@@ -66,13 +66,13 @@ describe('ng-add schematic', () => {
 
   it('should create theme.scss', async () => {
     const tree: Tree = await testRunner.runSchematicAsync('ng-add', {}, appTree).toPromise();
-    expect(tree.exists('src/theme.scss')).toBe(true);
+    expect(tree.exists('theme.scss')).toBe(true);
   });
 
   it('should import component themes to theme.scss if selected', async () => {
     const dependencyOptions: any = { highlight: true, markdown: true, flavoredMarkdown: true };
     const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
-    const fileContent: string = getFileContent(tree, 'src/theme.scss');
+    const fileContent: string = getFileContent(tree, 'theme.scss');
     expect(fileContent).toContain('covalent-markdown-theme');
     expect(fileContent).toContain('covalent-highlight-theme');
     expect(fileContent).toContain('covalent-flavored-markdown-theme');
@@ -81,7 +81,7 @@ describe('ng-add schematic', () => {
   it('should not import component themes to theme.scss if not selected', async () => {
     const dependencyOptions: any = { highlight: false, markdown: false, flavoredMarkdown: false };
     const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
-    const fileContent: string = getFileContent(tree, 'src/theme.scss');
+    const fileContent: string = getFileContent(tree, 'theme.scss');
     expect(fileContent).not.toContain('covalent-markdown-theme');
     expect(fileContent).not.toContain('covalent-highlight-theme');
     expect(fileContent).not.toContain('covalent-flavored-markdown-theme');
@@ -90,7 +90,7 @@ describe('ng-add schematic', () => {
   it('should include sass mixins to theme.scss if selected', async () => {
     const dependencyOptions: any = { styleSheetUtilities: true, styleSheetFlexLayout: true, styleSheetColors: true };
     const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
-    const fileContent: string = getFileContent(tree, 'src/theme.scss');
+    const fileContent: string = getFileContent(tree, 'theme.scss');
     expect(fileContent).toContain('covalent-utilities');
     expect(fileContent).toContain('covalent-layout');
     expect(fileContent).toContain('covalent-colors');
@@ -99,7 +99,7 @@ describe('ng-add schematic', () => {
   it('should not include sass mixins to theme.scss if selected', async () => {
     const dependencyOptions: any = { styleSheetUtilities: false, styleSheetFlexLayout: false, styleSheetColors: false };
     const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
-    const fileContent: string = getFileContent(tree, 'src/theme.scss');
+    const fileContent: string = getFileContent(tree, 'theme.scss');
     expect(fileContent).not.toContain('covalent-utilities');
     expect(fileContent).not.toContain('covalent-layout');
     expect(fileContent).not.toContain('covalent-colors');
@@ -108,7 +108,7 @@ describe('ng-add schematic', () => {
   it('should include theme.scss in angular config', async () => {
     const tree: Tree = await testRunner.runSchematicAsync('ng-add', {}, appTree).toPromise();
     const angularJson: any = getFileContent(tree, '/angular.json');
-    expect(angularJson).toContain('src/theme.scss');
+    expect(angularJson).toContain('theme.scss');
   });
 
   function expectVersionToBe(dependencies: any, name: string, expectedVersion: string): void {

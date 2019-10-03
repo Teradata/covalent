@@ -16,7 +16,6 @@
   "keywords": [
     "schematics"
   ],
-  "schematics": "./schematics/src/collection.json",
   "peerDependencies": {
     "@angular/common": "^0.0.0-NG",
     "@angular/core": "^0.0.0-NG",

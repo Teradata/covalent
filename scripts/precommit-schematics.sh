@@ -3,7 +3,7 @@ npm run test:schematics
 npm run tslint
 
 # Link project
-cd ../src/platform/experimental
+cd ../src/platform/core
 npm link
 
 # Create Angular base project
@@ -13,8 +13,8 @@ ng new testxyz
 
 # Run covalent schematics
 cd testxyz
-npm link @covalent/experimental
-ng g @covalent/experimental:ng-add
+npm link @covalent/core
+ng g @covalent/core:ng-add
 
 # Check generated files
 git status
