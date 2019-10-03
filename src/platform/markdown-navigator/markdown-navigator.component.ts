@@ -1,6 +1,26 @@
 import { Component, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
-import { IHelpMenuDataItem, IHelpComponentLabels, DEFAULT_HELP_COMP_LABELS } from './help.utils';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
+
+export interface IMarkdownNavigatorItem {
+  title?: string;
+  url?: string;
+  httpOptions?: object;
+  markdownString?: string; // raw markdown
+  anchor?: string;
+  children?: IMarkdownNavigatorItem[];
+}
+
+export interface IMarkdownNavigatorLabels {
+  goHome?: string;
+  goBack?: string;
+  emptyState?: string;
+}
+
+export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
+  goHome: 'Go home',
+  goBack: 'Go back',
+  emptyState: 'No item(s) to display',
+};
 
 function getTitleFromUrl(url: string): string {
   if (url) {
@@ -29,28 +49,28 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
 }
 
 @Component({
-  selector: 'td-help',
-  templateUrl: './help.component.html',
-  styleUrls: ['./help.component.scss'],
+  selector: 'td-markdown-navigator',
+  templateUrl: './markdown-navigator.component.html',
+  styleUrls: ['./markdown-navigator.component.scss'],
 })
-export class HelpComponent implements OnChanges {
+export class MarkdownNavigatorComponent implements OnChanges {
   /**
-   * items: IHelpMenuDataItem[]
+   * items: IMarkdownNavigatorItem[]
    *
-   * List of IHelpMenuDataItems to be rendered
+   * List of IMarkdownNavigatorItems to be rendered
    */
-  @Input() items: IHelpMenuDataItem[];
+  @Input() items: IMarkdownNavigatorItem[];
 
   /**
-   * labels?: IHelpComponentLabels
+   * labels?: IMarkdownNavigatorLabels
    *
    * Translated labels
    */
-  @Input() labels: IHelpComponentLabels;
+  @Input() labels: IMarkdownNavigatorLabels;
 
-  historyStack: IHelpMenuDataItem[][] = []; // history
-  currentMarkdownItem: IHelpMenuDataItem; // currently rendered
-  currentMenuItems: IHelpMenuDataItem[] = []; // current menu items
+  historyStack: IMarkdownNavigatorItem[][] = []; // history
+  currentMarkdownItem: IMarkdownNavigatorItem; // currently rendered
+  currentMenuItems: IMarkdownNavigatorItem[] = []; // current menu items
 
   loading: boolean = false;
 
@@ -108,15 +128,15 @@ export class HelpComponent implements OnChanges {
   }
 
   get goHomeLabel(): string {
-    return (this.labels && this.labels.goHome) || DEFAULT_HELP_COMP_LABELS.goHome;
+    return (this.labels && this.labels.goHome) || DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome;
   }
 
   get goBackLabel(): string {
-    return (this.labels && this.labels.goBack) || DEFAULT_HELP_COMP_LABELS.goBack;
+    return (this.labels && this.labels.goBack) || DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack;
   }
 
   get emptyStateLabel(): string {
-    return (this.labels && this.labels.emptyState) || DEFAULT_HELP_COMP_LABELS.emptyState;
+    return (this.labels && this.labels.emptyState) || DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -137,7 +157,7 @@ export class HelpComponent implements OnChanges {
     this.historyStack = [];
   }
 
-  handleItemSelected(item: IHelpMenuDataItem): void {
+  handleItemSelected(item: IMarkdownNavigatorItem): void {
     if (this.currentMenuItems.length === 0) {
       // clicked on a markdown link within the current markdown file
       this.historyStack = [...this.historyStack, [this.currentMarkdownItem]];
@@ -168,7 +188,7 @@ export class HelpComponent implements OnChanges {
 
   goBack(): void {
     if (this.historyStack.length > 0) {
-      const parent: IHelpMenuDataItem[] = this.historyStack[this.historyStack.length - 1];
+      const parent: IMarkdownNavigatorItem[] = this.historyStack[this.historyStack.length - 1];
       if (parent.length === 1 && (!parent[0].children || parent[0].children.length === 0)) {
         this.currentMenuItems = [];
         this.currentMarkdownItem = parent[0];
@@ -180,7 +200,7 @@ export class HelpComponent implements OnChanges {
     }
   }
 
-  getTitle(item: IHelpMenuDataItem): string {
+  getTitle(item: IMarkdownNavigatorItem): string {
     return (
       item.title ||
       removeLeadingHash(item.anchor) ||

@@ -23,7 +23,8 @@
       "@covalent/flavored-markdown": ["./platform/flavored-markdown"],
       "@covalent/code-editor": ["./platform/code-editor"],
       "@covalent/text-editor/*": ["./platform/text-editor/*"],
-      "@covalent/echarts/*": ["./platform/echarts/*"]
+      "@covalent/echarts/*": ["./platform/echarts/*"],
+      "@covalent/markdown-navigator": ["./platform/markdown-navigator"]
     },
     "noUnusedParameters": false,
     "noUnusedLocals": false,

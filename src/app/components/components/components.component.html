@@ -35,19 +35,21 @@
       </a>
       <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
     </ng-template>
-    <h3 matSubheader>Experimental Components</h3>
-    <ng-template let-item let-last="last" ngFor [ngForOf]="experimental">
-        <a mat-list-item
-            [routerLink]="[item.route]"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{exact:true}"
-            [tdLayoutNavListClose]="!media.query('gt-sm')">
-          <mat-icon matListAvatar>{{item.icon}}</mat-icon>
-          <h3 matLine> {{item.title}} </h3>
-          <p matLine> {{item.description}} </p>
-        </a>
-        <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
-      </ng-template>
+    <ng-container *ngIf="experimental.length">
+      <h3 matSubheader>Experimental Components</h3>
+      <ng-template let-item let-last="last" ngFor [ngForOf]="experimental">
+          <a mat-list-item
+              [routerLink]="[item.route]"
+              [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{exact:true}"
+              [tdLayoutNavListClose]="!media.query('gt-sm')">
+            <mat-icon matListAvatar>{{item.icon}}</mat-icon>
+            <h3 matLine> {{item.title}} </h3>
+            <p matLine> {{item.description}} </p>
+          </a>
+          <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
+        </ng-template>
+    </ng-container>
     <h3 matSubheader>External Components</h3>
     <a mat-list-item
         href="https://material.angular.io/components"
