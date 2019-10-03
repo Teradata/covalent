@@ -10,6 +10,7 @@
     "covalent",
     "reusable"
   ],
+  "schematics": "./schematics/collection.json",
   "ng-update": {
     "migrations": "./schematics/migration.json"
   },
