@@ -1,19 +1,31 @@
 :host {
-  display: block;
   position: relative;
   height: inherit;
-}
-
-.scroll-md {
-  position: absolute;
-  top: 40px; // back button
-  bottom: 0;
-  right: 0;
-  left: 0;
-  overflow-y: auto;
-}
-
-.sticky {
-  position: absolute;
-  top: 0;
+  height: 100%;
+  // layout="column"
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  .td-markdown-list,
+  .td-markdown-navigator-wrapper {
+    min-height: 1px;
+    overflow-y: auto;
+    // flex
+    flex: 1;
+    box-sizing: border-box;
+  }
+  .td-markdown-navigator-wrapper {
+    padding: 16px 16px 0;
+  }
+  .td-markdown-list > .mat-list {
+    padding-top: 0;
+  }
+  td-flavored-markdown-loader {
+    ::ng-deep .mat-progress-bar {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
 }
