@@ -101,8 +101,8 @@ import { DocumentationToolsModule } from '../../documentation-tools';
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component';
-import { HelpDemoComponent } from './help/help.component';
-import { CovalentHelpModule } from '@covalent/help';
+import { MdNavigatorDemoComponent } from './markdown-navigator/md-navigator.component';
+import { CovalentMdNavigatorModule } from '@covalent/markdown-navigator';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
 
@@ -142,7 +142,7 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     VirtualScrollDemoComponent,
     FlavoredMarkdownDemoComponent,
     TabSelectDemoComponent,
-    HelpDemoComponent,
+    MdNavigatorDemoComponent,
     SidesheetDemoComponent,
     // External Dependencies
     NgxTranslateDemoComponent,
@@ -204,7 +204,7 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     CovalentSidesheetModule,
     DocumentationToolsModule,
     CovalentTabSelectModule,
-    CovalentHelpModule,
+    CovalentMdNavigatorModule,
     TranslateModule,
     componentsRoutes,
     ToolbarModule,

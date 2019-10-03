@@ -2,27 +2,27 @@ import { Injectable } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 
 import { Overlay } from '@angular/cdk/overlay';
-import { CovalentHelpModule } from '../help.module';
+import { CovalentMdNavigatorModule } from '../md-navigator.module';
 import { ThemePalette } from '@angular/material/core';
-import { HelpWindowComponent, IHelpWindowComponentLabels } from '../help-window/help-window.component';
+import { MdNavigatorWindowComponent, IMdNavigatorWindowLabels } from '../md-navigator-window/md-navigator-window.component';
 import { TdDialogService } from '@covalent/core/dialogs';
-import { IHelpItem } from '../help.component';
+import { IMdNavigatorItem } from '../md-navigator.component';
 
-export interface IHelpWindowServiceConfig {
-  items: IHelpItem[];
+export interface IMdNavigatorWindowServiceConfig {
+  items: IMdNavigatorItem[];
   dialogConfig?: MatDialogConfig;
-  labels?: IHelpWindowComponentLabels;
+  labels?: IMdNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
 }
 
 @Injectable({
-  providedIn: CovalentHelpModule,
+  providedIn: CovalentMdNavigatorModule,
 })
-export class HelpWindowService {
+export class MdNavigatorWindowService {
   constructor(private _overlay: Overlay, private _tdDialogService: TdDialogService) {}
 
-  open(config: IHelpWindowServiceConfig): MatDialogRef<HelpWindowComponent> {
-    const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-help-window-wrapper';
+  open(config: IMdNavigatorWindowServiceConfig): MatDialogRef<MdNavigatorWindowComponent> {
+    const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-md-navigator-window-wrapper';
     const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
       hasBackdrop: false,
       closeOnNavigation: true,
@@ -33,14 +33,14 @@ export class HelpWindowService {
       scrollStrategy: this._overlay.scrollStrategies.noop(),
     };
 
-    const draggableDialog: MatDialogRef<HelpWindowComponent> = this._tdDialogService.openDraggable({
-      component: HelpWindowComponent,
+    const draggableDialog: MatDialogRef<MdNavigatorWindowComponent> = this._tdDialogService.openDraggable({
+      component: MdNavigatorWindowComponent,
       config: {
         ...DEFAULT_DRAGGABLE_DIALOG_CONFIG,
         ...config.dialogConfig,
       },
-      dragHandleSelectors: ['.td-help-window-toolbar'],
-      draggableClass: 'td-draggable-help-window',
+      dragHandleSelectors: ['.td-md-navigator-window-toolbar'],
+      draggableClass: 'td-draggable-md-navigator-window',
     });
 
     draggableDialog.componentInstance.items = config.items;

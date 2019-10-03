@@ -1,16 +1,18 @@
 {
-  "name": "@covalent/help",
+  "name": "@covalent/markdown-navigator",
   "version": "0.0.0-COVALENT",
-  "description": "Teradata UI Platform Help Module",
+  "description": "Teradata UI Platform Markdown Navigator Module",
   "keywords": [
     "angular",
     "components",
     "covalent",
-    "help",
-    "documentation",
     "markdown",
+    "markdown navigator",
+    "markdown-navigator",
+    "documentation navigator",
     "inline docs",
-    "docs"
+    "docs",
+    "help"
   ],
   "repository": {
     "type": "git",

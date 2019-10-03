@@ -1,22 +1,22 @@
 import { Component, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
-export interface IHelpItem {
+export interface IMdNavigatorItem {
   title?: string;
   url?: string;
   httpOptions?: object;
   markdownString?: string; // raw markdown
   anchor?: string;
-  children?: IHelpItem[];
+  children?: IMdNavigatorItem[];
 }
 
-export interface IHelpComponentLabels {
+export interface IMdNavigatorLabels {
   goHome?: string;
   goBack?: string;
   emptyState?: string;
 }
 
-export const DEFAULT_HELP_COMP_LABELS: IHelpComponentLabels = {
+export const DEFAULT_MD_NAVIGATOR_LABELS: IMdNavigatorLabels = {
   goHome: 'Go home',
   goBack: 'Go back',
   emptyState: 'No item(s) to display',
@@ -49,28 +49,28 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
 }
 
 @Component({
-  selector: 'td-help',
-  templateUrl: './help.component.html',
-  styleUrls: ['./help.component.scss'],
+  selector: 'td-md-navigator',
+  templateUrl: './md-navigator.component.html',
+  styleUrls: ['./md-navigator.component.scss'],
 })
-export class HelpComponent implements OnChanges {
+export class MdNavigatorComponent implements OnChanges {
   /**
-   * items: IHelpItem[]
+   * items: IMdNavigatorItem[]
    *
-   * List of IHelpMenuDataItems to be rendered
+   * List of IMdNavigatorItems to be rendered
    */
-  @Input() items: IHelpItem[];
+  @Input() items: IMdNavigatorItem[];
 
   /**
-   * labels?: IHelpComponentLabels
+   * labels?: IMdNavigatorLabels
    *
    * Translated labels
    */
-  @Input() labels: IHelpComponentLabels;
+  @Input() labels: IMdNavigatorLabels;
 
-  historyStack: IHelpItem[][] = []; // history
-  currentMarkdownItem: IHelpItem; // currently rendered
-  currentMenuItems: IHelpItem[] = []; // current menu items
+  historyStack: IMdNavigatorItem[][] = []; // history
+  currentMarkdownItem: IMdNavigatorItem; // currently rendered
+  currentMenuItems: IMdNavigatorItem[] = []; // current menu items
 
   loading: boolean = false;
 
@@ -128,15 +128,15 @@ export class HelpComponent implements OnChanges {
   }
 
   get goHomeLabel(): string {
-    return (this.labels && this.labels.goHome) || DEFAULT_HELP_COMP_LABELS.goHome;
+    return (this.labels && this.labels.goHome) || DEFAULT_MD_NAVIGATOR_LABELS.goHome;
   }
 
   get goBackLabel(): string {
-    return (this.labels && this.labels.goBack) || DEFAULT_HELP_COMP_LABELS.goBack;
+    return (this.labels && this.labels.goBack) || DEFAULT_MD_NAVIGATOR_LABELS.goBack;
   }
 
   get emptyStateLabel(): string {
-    return (this.labels && this.labels.emptyState) || DEFAULT_HELP_COMP_LABELS.emptyState;
+    return (this.labels && this.labels.emptyState) || DEFAULT_MD_NAVIGATOR_LABELS.emptyState;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -157,7 +157,7 @@ export class HelpComponent implements OnChanges {
     this.historyStack = [];
   }
 
-  handleItemSelected(item: IHelpItem): void {
+  handleItemSelected(item: IMdNavigatorItem): void {
     if (this.currentMenuItems.length === 0) {
       // clicked on a markdown link within the current markdown file
       this.historyStack = [...this.historyStack, [this.currentMarkdownItem]];
@@ -188,7 +188,7 @@ export class HelpComponent implements OnChanges {
 
   goBack(): void {
     if (this.historyStack.length > 0) {
-      const parent: IHelpItem[] = this.historyStack[this.historyStack.length - 1];
+      const parent: IMdNavigatorItem[] = this.historyStack[this.historyStack.length - 1];
       if (parent.length === 1 && (!parent[0].children || parent[0].children.length === 0)) {
         this.currentMenuItems = [];
         this.currentMarkdownItem = parent[0];
@@ -200,7 +200,7 @@ export class HelpComponent implements OnChanges {
     }
   }
 
-  getTitle(item: IHelpItem): string {
+  getTitle(item: IMdNavigatorItem): string {
     return (
       item.title ||
       removeLeadingHash(item.anchor) ||

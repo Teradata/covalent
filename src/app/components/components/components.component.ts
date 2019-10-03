@@ -175,10 +175,10 @@ export class ComponentsComponent {
       title: 'Flavored Markdown Parser',
     },
     {
-      description: 'Render and navigate .md documentation',
+      description: 'Render and navigate markdown',
       icon: 'subject',
-      route: 'help',
-      title: 'Help',
+      route: 'markdown-navigator',
+      title: 'Markdown Navigator',
     },
     {
       description: 'Build forms from a JS object',

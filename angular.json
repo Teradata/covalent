@@ -479,32 +479,35 @@
         }
       }
     },
-    "covalent-help": {
-      "root": "src/platform/help",
-      "sourceRoot": "src/platform/help",
+    "covalent-markdown-navigator": {
+      "root": "src/platform/markdown-navigator",
+      "sourceRoot": "src/platform/markdown-navigator",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "src/platform/help/tsconfig.lib.json",
-            "project": "src/platform/help/ng-package.js"
+            "tsConfig": "src/platform/markdown-navigator/tsconfig.lib.json",
+            "project": "src/platform/markdown-navigator/ng-package.js"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/platform/help/test.ts",
-            "tsConfig": "src/platform/help/tsconfig.spec.json",
-            "karmaConfig": "src/platform/help/karma.conf.js",
+            "main": "src/platform/markdown-navigator/test.ts",
+            "tsConfig": "src/platform/markdown-navigator/tsconfig.spec.json",
+            "karmaConfig": "src/platform/markdown-navigator/karma.conf.js",
             "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["src/platform/help/tsconfig.lib.json", "src/platform/help/tsconfig.spec.json"],
+            "tsConfig": [
+              "src/platform/markdown-navigator/tsconfig.lib.json",
+              "src/platform/markdown-navigator/tsconfig.spec.json"
+            ],
             "exclude": ["**/node_modules/**"]
           }
         }

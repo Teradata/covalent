@@ -44,7 +44,7 @@
       </a>
       <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
     </ng-template>
-    <ng-template *ngIf="experimental.length">
+    <ng-container *ngIf="experimental.length">
       <h3 matSubheader>Experimental Components</h3>
       <ng-template let-item let-last="last" ngFor [ngForOf]="experimental">
           <a mat-list-item
@@ -58,7 +58,7 @@
           </a>
           <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
         </ng-template>
-    </ng-template>
+    </ng-container>
     <h3 matSubheader>External Components</h3>
     <a mat-list-item
         href="https://material.angular.io/components"

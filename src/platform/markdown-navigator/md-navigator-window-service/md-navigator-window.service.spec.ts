@@ -1,16 +1,16 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
-import { CovalentHelpModule } from '../help.module';
-import { HelpWindowService } from './help-window.service';
+import { CovalentMdNavigatorModule } from '../md-navigator.module';
+import { MdNavigatorWindowService } from './md-navigator-window.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { IHelpItem, DEFAULT_HELP_COMP_LABELS } from '../help.component';
-import { HelpWindowComponent, IHelpWindowComponentLabels } from '../help-window/help-window.component';
+import { IMdNavigatorItem, DEFAULT_MD_NAVIGATOR_LABELS } from '../md-navigator.component';
+import { MdNavigatorWindowComponent, IMdNavigatorWindowLabels } from '../md-navigator-window/md-navigator-window.component';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
-const RAW_MARKDOWN_ITEMS: IHelpItem[] = [
+const RAW_MARKDOWN_ITEMS: IMdNavigatorItem[] = [
   {
     markdownString: RAW_MARKDOWN,
   },
@@ -32,16 +32,16 @@ async function wait(fixture: ComponentFixture<any>): Promise<void> {
 })
 class TestComponent {}
 
-describe('HelpWindowService', () => {
+describe('MdNavigatorWindowService', () => {
   let overlayContainerElement: HTMLElement;
 
-  function getHelpComponent(): HTMLElement {
-    return <HTMLElement>overlayContainerElement.querySelector(`td-help`);
+  function getMdNavigator(): HTMLElement {
+    return <HTMLElement>overlayContainerElement.querySelector(`td-md-navigator`);
   }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentHelpModule],
+      imports: [NoopAnimationsModule, CovalentMdNavigatorModule],
       declarations: [TestComponent],
       providers: [
         {
@@ -57,41 +57,41 @@ describe('HelpWindowService', () => {
     });
   }));
 
-  it('should open and close help window properly', async(
-    inject([HelpWindowService], async (_helpWindowService: HelpWindowService) => {
+  it('should open and close md navigator window properly', async(
+    inject([MdNavigatorWindowService], async (_mdNavigatorWindowService: MdNavigatorWindowService) => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-      const dialogRef: MatDialogRef<HelpWindowComponent> = _helpWindowService.open({ items: [] });
+      const dialogRef: MatDialogRef<MdNavigatorWindowComponent> = _mdNavigatorWindowService.open({ items: [] });
 
       await wait(fixture);
       await dialogRef.afterOpen().toPromise();
 
-      expect(getHelpComponent()).toBeTruthy();
+      expect(getMdNavigator()).toBeTruthy();
 
-      (<HTMLElement>overlayContainerElement.querySelector(`td-help-window .td-help-window-close`)).click();
+      (<HTMLElement>overlayContainerElement.querySelector(`td-md-navigator-window .td-md-navigator-window-close`)).click();
       await wait(fixture);
 
-      expect(getHelpComponent()).toBeFalsy();
+      expect(getMdNavigator()).toBeFalsy();
     }),
   ));
   it('should open with no items', async(
-    inject([HelpWindowService], async (_helpWindowService: HelpWindowService) => {
+    inject([MdNavigatorWindowService], async (_mdNavigatorWindowService: MdNavigatorWindowService) => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-      const dialogRef: MatDialogRef<HelpWindowComponent> = _helpWindowService.open({ items: [] });
+      const dialogRef: MatDialogRef<MdNavigatorWindowComponent> = _mdNavigatorWindowService.open({ items: [] });
 
       await wait(fixture);
       await dialogRef.afterOpen().toPromise();
 
       expect(dialogRef.componentInstance.items).toEqual([]);
-      expect(getHelpComponent().querySelectorAll('mat-action-list button').length).toBe(0);
+      expect(getMdNavigator().querySelectorAll('mat-action-list button').length).toBe(0);
 
       dialogRef.close();
       await wait(fixture);
     }),
   ));
   it('should open with an item', async(
-    inject([HelpWindowService], async (_helpWindowService: HelpWindowService) => {
+    inject([MdNavigatorWindowService], async (_mdNavigatorWindowService: MdNavigatorWindowService) => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-      const dialogRef: MatDialogRef<HelpWindowComponent> = _helpWindowService.open({
+      const dialogRef: MatDialogRef<MdNavigatorWindowComponent> = _mdNavigatorWindowService.open({
         items: RAW_MARKDOWN_ITEMS,
       });
 
@@ -99,7 +99,7 @@ describe('HelpWindowService', () => {
       await dialogRef.afterOpen().toPromise();
 
       expect(dialogRef.componentInstance.items).toEqual(RAW_MARKDOWN_ITEMS);
-      expect(getHelpComponent().querySelectorAll('mat-action-list button').length).toBe(2);
+      expect(getMdNavigator().querySelectorAll('mat-action-list button').length).toBe(2);
 
       dialogRef.close();
       await wait(fixture);
@@ -107,9 +107,9 @@ describe('HelpWindowService', () => {
   ));
 
   it('should use passed in labels', async(
-    inject([HelpWindowService], async (_helpWindowService: HelpWindowService) => {
+    inject([MdNavigatorWindowService], async (_mdNavigatorWindowService: MdNavigatorWindowService) => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-      let dialogRef: MatDialogRef<HelpWindowComponent> = _helpWindowService.open({
+      let dialogRef: MatDialogRef<MdNavigatorWindowComponent> = _mdNavigatorWindowService.open({
         items: [],
         labels: {},
       });
@@ -118,14 +118,14 @@ describe('HelpWindowService', () => {
       await dialogRef.afterOpen().toPromise();
 
       expect(dialogRef.componentInstance.labels).toEqual({});
-      expect(getHelpComponent().textContent).toContain(DEFAULT_HELP_COMP_LABELS.emptyState);
+      expect(getMdNavigator().textContent).toContain(DEFAULT_MD_NAVIGATOR_LABELS.emptyState);
       dialogRef.close();
       await wait(fixture);
 
-      const SAMPLE_LABELS: IHelpWindowComponentLabels = {
+      const SAMPLE_LABELS: IMdNavigatorWindowLabels = {
         emptyState: 'Boo hoo :(',
       };
-      dialogRef = _helpWindowService.open({
+      dialogRef = _mdNavigatorWindowService.open({
         items: [],
         labels: SAMPLE_LABELS,
       });
@@ -134,7 +134,7 @@ describe('HelpWindowService', () => {
       await dialogRef.afterOpen().toPromise();
 
       expect(dialogRef.componentInstance.labels).toEqual(SAMPLE_LABELS);
-      expect(getHelpComponent().textContent).toContain(SAMPLE_LABELS.emptyState);
+      expect(getMdNavigator().textContent).toContain(SAMPLE_LABELS.emptyState);
 
       dialogRef.close();
       await wait(fixture);
@@ -142,9 +142,9 @@ describe('HelpWindowService', () => {
   ));
 
   it('should use default to primary toolbar color', async(
-    inject([HelpWindowService], async (_helpWindowService: HelpWindowService) => {
+    inject([MdNavigatorWindowService], async (_mdNavigatorWindowService: MdNavigatorWindowService) => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-      const dialogRef: MatDialogRef<HelpWindowComponent> = _helpWindowService.open({
+      const dialogRef: MatDialogRef<MdNavigatorWindowComponent> = _mdNavigatorWindowService.open({
         items: RAW_MARKDOWN_ITEMS,
       });
 
@@ -158,9 +158,9 @@ describe('HelpWindowService', () => {
     }),
   ));
   it('should use passed in toolbar color', async(
-    inject([HelpWindowService], async (_helpWindowService: HelpWindowService) => {
+    inject([MdNavigatorWindowService], async (_mdNavigatorWindowService: MdNavigatorWindowService) => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-      let dialogRef: MatDialogRef<HelpWindowComponent> = _helpWindowService.open({
+      let dialogRef: MatDialogRef<MdNavigatorWindowComponent> = _mdNavigatorWindowService.open({
         items: [],
         toolbarColor: 'accent',
       });
@@ -173,7 +173,7 @@ describe('HelpWindowService', () => {
       dialogRef.close();
       await wait(fixture);
 
-      dialogRef = _helpWindowService.open({ items: [], toolbarColor: 'primary' });
+      dialogRef = _mdNavigatorWindowService.open({ items: [], toolbarColor: 'primary' });
 
       await wait(fixture);
       await dialogRef.afterOpen().toPromise();
@@ -183,7 +183,7 @@ describe('HelpWindowService', () => {
       dialogRef.close();
       await wait(fixture);
 
-      dialogRef = _helpWindowService.open({ items: [], toolbarColor: 'warn' });
+      dialogRef = _mdNavigatorWindowService.open({ items: [], toolbarColor: 'warn' });
 
       await wait(fixture);
       await dialogRef.afterOpen().toPromise();
@@ -193,7 +193,7 @@ describe('HelpWindowService', () => {
       dialogRef.close();
       await wait(fixture);
 
-      dialogRef = _helpWindowService.open({ items: [], toolbarColor: undefined });
+      dialogRef = _mdNavigatorWindowService.open({ items: [], toolbarColor: undefined });
 
       await wait(fixture);
       await dialogRef.afterOpen().toPromise();
@@ -206,16 +206,16 @@ describe('HelpWindowService', () => {
   ));
 
   it('should have proper classes', async(
-    inject([HelpWindowService], async (_helpWindowService: HelpWindowService) => {
+    inject([MdNavigatorWindowService], async (_mdNavigatorWindowService: MdNavigatorWindowService) => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-      const dialogRef: MatDialogRef<HelpWindowComponent> = _helpWindowService.open({ items: [] });
+      const dialogRef: MatDialogRef<MdNavigatorWindowComponent> = _mdNavigatorWindowService.open({ items: [] });
 
       await wait(fixture);
       await dialogRef.afterOpen().toPromise();
 
-      expect(overlayContainerElement.querySelector(`.td-draggable-help-window-wrapper`)).toBeTruthy();
-      expect(overlayContainerElement.querySelector(`td-help-window.td-draggable-help-window`)).toBeTruthy();
-      expect(window.getComputedStyle(overlayContainerElement.querySelector(`.td-help-window-toolbar`)).cursor).toBe(
+      expect(overlayContainerElement.querySelector(`.td-draggable-md-navigator-window-wrapper`)).toBeTruthy();
+      expect(overlayContainerElement.querySelector(`td-md-navigator-window.td-draggable-md-navigator-window`)).toBeTruthy();
+      expect(window.getComputedStyle(overlayContainerElement.querySelector(`.td-md-navigator-window-toolbar`)).cursor).toBe(
         'move',
       );
 

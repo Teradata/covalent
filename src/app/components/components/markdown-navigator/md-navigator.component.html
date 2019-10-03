@@ -1,7 +1,7 @@
 <mat-card>
-  <mat-card-title>Help component</mat-card-title>
+  <mat-card-title>Markdown Navigator component</mat-card-title>
   <mat-card-subtitle>
-    A component for rendering and navigating through documentation.
+    A component for rendering and navigating through markdown, such as documentation.
   </mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
@@ -20,7 +20,7 @@
             <button mat-button class="text-upper" color="primary" (click)="tryUserInput()">Try</button>
           </div>
           <div flex="50">
-            <td-help [items]="currentItems" [style.height.px]="450"></td-help>
+            <td-md-navigator [items]="currentItems" [style.height.px]="450"></td-md-navigator>
           </div>
         </div>
       </mat-tab>
@@ -41,23 +41,23 @@
         <td-highlight lang="typescript">
             <![CDATA[
           import {
-            IHelpItem,
-            HelpWindowService
-          } from '@covalent/help';
+            IMdNavigatorItem,
+            MdNavigatorWindowService
+          } from '@covalent/markdown-navigator';
 
-          oneItem: IHelpItem[] = [
+          oneItem: IMdNavigatorItem[] = [
             {
               url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
             },
           ];
 
-          itemWithRawMarkdown: IHelpItem[] = [
+          itemWithRawMarkdown: IMdNavigatorItem[] = [
             {
               markdownString: '# Heading',
             },
           ];
 
-          multipleItems: IHelpItem[] = [
+          multipleItems: IMdNavigatorItem[] = [
             {
               url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
               title: 'Code Editor API',
@@ -68,14 +68,14 @@
             },
           ];
 
-          oneItemWithAnchor: IHelpItem[] = [
+          oneItemWithAnchor: IMdNavigatorItem[] = [
             {
               url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
               anchor: 'Adding a new documentation component',
             },
           ];
 
-          nestedItems: IHelpItem[] = [
+          nestedItems: IMdNavigatorItem[] = [
             {
               title: 'Covalent Components',
               children: [
@@ -92,7 +92,7 @@
             },
           ];
 
-          options: { name: string; value: IHelpItem[] }[] = [
+          options: { name: string; value: IMdNavigatorItem[] }[] = [
             {
               name: 'One item',
               value: this.oneItem,
@@ -106,15 +106,15 @@
             { name: 'Nested items', value: this.nestedItems },
           ];
 
-          selected: { name: string; value: IHelpItem[] } = this.options[0];
-          currentItems: IHelpItem[] = this.selected.value;
+          selected: { name: string; value: IMdNavigatorItem[] } = this.options[0];
+          currentItems: IMdNavigatorItem[] = this.selected.value;
           userInput: string = this.prettyJson(this.currentItems);
 
           select(): void {
             this.use(this.selected.value);
           }
 
-          use(items: IHelpItem[]): void {
+          use(items: IMdNavigatorItem[]): void {
             this.currentItems = items;
             this.userInput = this.prettyJson(this.currentItems);
           }
@@ -123,7 +123,7 @@
             this.use(JSON.parse(this.userInput));
           }
 
-          prettyJson(items: IHelpItem[]): string {
+          prettyJson(items: IMdNavigatorItem[]): string {
             return JSON.stringify(items, undefined, 4);
           }
             ]]>
@@ -135,9 +135,9 @@
 </mat-card>
 
 <mat-card>
-  <mat-card-title>Help Window Service</mat-card-title>
+  <mat-card-title>Markdown Navigator Window Service</mat-card-title>
   <mat-card-subtitle>
-    A service that opens a HelpWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
+    A service that opens a MdNavigatorWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
   </mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-tab-group mat-stretch-tabs>
@@ -145,7 +145,7 @@
       <ng-template matTabLabel>Demo</ng-template>
       <mat-card-actions>
         <button mat-button class="text-upper" color="primary" (click)="openDialog()">
-          Open Draggable Help Window
+          Open Markdown Draggable Navigator Window
         </button>
       </mat-card-actions>
     </mat-tab>
@@ -155,33 +155,33 @@
         <td-highlight lang="html">
           <![CDATA[
             <button mat-button class="text-upper" color="primary" (click)="openDialog()">
-              Open Draggable Help Window
+              Open Markdown Draggable Navigator Window
             </button>
           ]]>
         </td-highlight>
         <td-highlight lang="typescript">
           <![CDATA[
           import {
-            IHelpItem,
-            HelpWindowService,
-            HelpWindowComponent,
-          } from '@covalent/help';
+            IMdNavigatorItem,
+            MdNavigatorWindowService,
+            MdNavigatorWindowComponent,
+          } from '@covalent/markdown-navigator';
 
           windowOpen: boolean = false;
-          ref: MatDialogRef<HelpWindowComponent>;
-          currentItems: IHelpItem[] = [
+          ref: MatDialogRef<MdNavigatorWindowComponent>;
+          currentItems: IMdNavigatorItem[] = [
           {
             url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
           },
           ];
 
-          constructor(private _helpWindowService: HelpWindowService) {}
+          constructor(private _mdNavigatorWindowService: MdNavigatorWindowService) {}
 
           openDialog(): void {
             if (this.windowOpen) {
               this.closeDialog();
             }
-            this.ref = this._helpWindowService.open({items: this.currentItems});
+            this.ref = this._mdNavigatorWindowService.open({items: this.currentItems});
             this.ref.afterOpened().subscribe(() => {
               this.windowOpen = true;
             });
@@ -200,4 +200,4 @@
   </mat-tab-group>
 </mat-card>
 
-<td-readme-loader resourceUrl="platform/help/README.md"></td-readme-loader>
+<td-readme-loader resourceUrl="platform/markdown-navigator/README.md"></td-readme-loader>

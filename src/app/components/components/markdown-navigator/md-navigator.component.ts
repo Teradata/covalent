@@ -1,33 +1,33 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
-import { IHelpItem, HelpWindowService, HelpWindowComponent } from '@covalent/help';
+import { IMdNavigatorItem, MdNavigatorWindowService, MdNavigatorWindowComponent } from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'help-demo',
-  styleUrls: ['./help.component.scss'],
-  templateUrl: './help.component.html',
+  selector: 'md-navigator-demo',
+  styleUrls: ['./md-navigator.component.scss'],
+  templateUrl: './md-navigator.component.html',
   animations: [slideInDownAnimation],
   preserveWhitespaces: true,
 })
-export class HelpDemoComponent {
+export class MdNavigatorDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  oneItem: IHelpItem[] = [
+  oneItem: IMdNavigatorItem[] = [
     {
       url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
     },
   ];
 
-  itemWithRawMarkdown: IHelpItem[] = [
+  itemWithRawMarkdown: IMdNavigatorItem[] = [
     {
       markdownString: '# Heading',
     },
   ];
 
-  multipleItems: IHelpItem[] = [
+  multipleItems: IMdNavigatorItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
       title: 'Code Editor API',
@@ -38,14 +38,14 @@ export class HelpDemoComponent {
     },
   ];
 
-  oneItemWithAnchor: IHelpItem[] = [
+  oneItemWithAnchor: IMdNavigatorItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
       anchor: 'Adding a new documentation component',
     },
   ];
 
-  nestedItems: IHelpItem[] = [
+  nestedItems: IMdNavigatorItem[] = [
     {
       title: 'Covalent Components',
       children: [
@@ -62,7 +62,7 @@ export class HelpDemoComponent {
     },
   ];
 
-  options: { name: string; value: IHelpItem[] }[] = [
+  options: { name: string; value: IMdNavigatorItem[] }[] = [
     {
       name: 'One item',
       value: this.oneItem,
@@ -75,20 +75,20 @@ export class HelpDemoComponent {
     { name: 'One item with anchor', value: this.oneItemWithAnchor },
     { name: 'Nested items', value: this.nestedItems },
   ];
-  selected: { name: string; value: IHelpItem[] } = this.options[0];
-  currentItems: IHelpItem[] = this.selected.value;
+  selected: { name: string; value: IMdNavigatorItem[] } = this.options[0];
+  currentItems: IMdNavigatorItem[] = this.selected.value;
   userInput: string = this.prettyJson(this.currentItems);
 
   windowOpen: boolean = false;
-  ref: MatDialogRef<HelpWindowComponent>;
+  ref: MatDialogRef<MdNavigatorWindowComponent>;
 
-  constructor(private _helpWindowService: HelpWindowService) {}
+  constructor(private _mdNavigatorWindowService: MdNavigatorWindowService) {}
 
   select(): void {
     this.use(this.selected.value);
   }
 
-  use(items: IHelpItem[]): void {
+  use(items: IMdNavigatorItem[]): void {
     this.currentItems = items;
     this.userInput = this.prettyJson(this.currentItems);
     if (this.windowOpen) {
@@ -100,7 +100,7 @@ export class HelpDemoComponent {
     this.use(JSON.parse(this.userInput));
   }
 
-  prettyJson(items: IHelpItem[]): string {
+  prettyJson(items: IMdNavigatorItem[]): string {
     return JSON.stringify(items, undefined, 4);
   }
 
@@ -108,7 +108,7 @@ export class HelpDemoComponent {
     if (this.windowOpen) {
       this.closeDialog();
     }
-    this.ref = this._helpWindowService.open({ items: this.currentItems });
+    this.ref = this._mdNavigatorWindowService.open({ items: this.currentItems });
     this.ref.afterOpened().subscribe(() => {
       this.windowOpen = true;
     });
