@@ -39,7 +39,7 @@ import {
   NavStepsRoute3DemoComponent,
   NavStepsRoute4DemoComponent,
 } from './nav-steps/nav-steps.component';
-import { HelpDemoComponent } from './help/help.component';
+import { MarkdownNavigatorDemoComponent } from './markdown-navigator/markdown-navigator.component';
 
 const routes: Routes = [
   {
@@ -183,8 +183,8 @@ const routes: Routes = [
         path: 'ngx-translate',
       },
       {
-        component: HelpDemoComponent,
-        path: 'help',
+        component: MarkdownNavigatorDemoComponent,
+        path: 'markdown-navigator',
       },
       {
         component: SidesheetDemoComponent,

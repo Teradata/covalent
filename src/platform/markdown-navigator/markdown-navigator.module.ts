@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HelpComponent } from './help.component';
-import { HelpWindowComponent } from './help-window/help-window.component';
+import { MarkdownNavigatorComponent } from './markdown-navigator.component';
+import { MarkdownNavigatorWindowComponent } from './markdown-navigator-window/markdown-navigator-window.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
@@ -26,8 +26,8 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
     CovalentFlavoredMarkdownModule,
     CovalentDialogsModule,
   ],
-  declarations: [HelpComponent, HelpWindowComponent],
-  exports: [HelpComponent, HelpWindowComponent],
-  entryComponents: [HelpWindowComponent],
+  declarations: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent],
+  exports: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent],
+  entryComponents: [MarkdownNavigatorWindowComponent],
 })
-export class CovalentHelpModule {}
+export class CovalentMarkdownNavigatorModule {}
