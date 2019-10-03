@@ -27,6 +27,11 @@ export class ComponentsComponent {
       title: 'Bar',
     },
     {
+      icon: 'pie_chart',
+      route: ['types', 'pie'],
+      title: 'Pie',
+    },
+    {
       icon: 'show_chart',
       route: ['types', 'line'],
       title: 'Line',

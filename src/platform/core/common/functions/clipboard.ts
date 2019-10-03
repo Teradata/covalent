@@ -1,10 +1,7 @@
 /**
- * Utility function to facilitate assigning a text value
- * to the system clipboard.
- * Note: The copy will succeed only if this method is performed
- * as a result of a user action (eg. user clicks a button in
- * the UI). Due to browser security restrictions, this method
- * will not succeed if executed strictly programmatically.
+ * Assign a text value to the system clipboard. Note: Due to browser
+ * security restrictions, the copy will only succeed if this method
+ * is invoked as a result of a user action (eg. user button click).
  *
  * @param value text value to be assigned to clipboard.
  * @returns boolean indicating success/failure of copy operation.

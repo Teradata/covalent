@@ -91,13 +91,34 @@
           }
 
           openDraggable(): void {
-            this._dialogService.openDraggable(
-              DraggableDemoComponent,
-              {height: '300px'},
-              ['.drag-handle'] // CSS selectors of element(s) inside the component meant to be drag handle(s)
-            );
+            this._dialogService.openDraggable({
+              component: DraggableDemoComponent,
+              config: { height: '300px' },
+              // CSS selectors of element(s) inside the component meant to be drag handle(s)
+              dragHandleSelectors: ['.drag-handle'],
+              // Class that will be added to the component signifying drag-ability
+              draggableClass: 'custom-class',
+            });
           }
         }
+      ]]>
+    </td-highlight>
+    <br/>
+    <td-highlight lang="typescript">
+      <![CDATA[
+      import { Component } from '@angular/core';
+
+      @Component({
+        selector: 'app-draggable-demo',
+        template: `
+          <h2>Draggable dialog</h2>
+          <p>Draggable via the drag handle</p>
+          <button mat-icon-button class="drag-handle">
+            <mat-icon>drag_handle</mat-icon>
+          </button>
+        `,
+      })
+      export class DraggableDemoComponent {}
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
