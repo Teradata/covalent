@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 
 import { Overlay } from '@angular/cdk/overlay';
-import { CovalentMarkdownNavigatorModule } from '../md-navigator.module';
+import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
 import { ThemePalette } from '@angular/material/core';
 import {
   MarkdownNavigatorWindowComponent,
   IMarkdownNavigatorWindowLabels,
-} from '../md-navigator-window/md-navigator-window.component';
+} from '../markdown-navigator-window/markdown-navigator-window.component';
 import { TdDialogService } from '@covalent/core/dialogs';
-import { IMarkdownNavigatorItem } from '../md-navigator.component';
+import { IMarkdownNavigatorItem } from '../markdown-navigator.component';
 
 export interface IMarkdownNavigatorWindowConfig {
   items: IMarkdownNavigatorItem[];

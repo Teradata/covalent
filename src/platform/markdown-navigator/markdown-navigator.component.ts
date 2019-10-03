@@ -50,8 +50,8 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
 
 @Component({
   selector: 'td-markdown-navigator',
-  templateUrl: './md-navigator.component.html',
-  styleUrls: ['./md-navigator.component.scss'],
+  templateUrl: './markdown-navigator.component.html',
+  styleUrls: ['./markdown-navigator.component.scss'],
 })
 export class MarkdownNavigatorComponent implements OnChanges {
   /**

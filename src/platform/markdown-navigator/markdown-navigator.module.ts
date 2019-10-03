@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MarkdownNavigatorComponent } from './md-navigator.component';
-import { MarkdownNavigatorWindowComponent } from './md-navigator-window/md-navigator-window.component';
+import { MarkdownNavigatorComponent } from './markdown-navigator.component';
+import { MarkdownNavigatorWindowComponent } from './markdown-navigator-window/markdown-navigator-window.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';

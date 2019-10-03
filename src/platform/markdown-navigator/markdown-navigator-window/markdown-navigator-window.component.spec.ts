@@ -3,18 +3,18 @@ import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemePalette } from '@angular/material/core';
-import { CovalentMarkdownNavigatorModule } from '../md-navigator.module';
+import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
 import { MatToolbar } from '@angular/material/toolbar';
 import {
   IMarkdownNavigatorWindowLabels,
   MarkdownNavigatorWindowComponent,
   DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS,
-} from './md-navigator-window.component';
+} from './markdown-navigator-window.component';
 import {
   IMarkdownNavigatorItem,
   MarkdownNavigatorComponent,
   DEFAULT_MARKDOWN_NAVIGATOR_LABELS,
-} from '../md-navigator.component';
+} from '../markdown-navigator.component';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;

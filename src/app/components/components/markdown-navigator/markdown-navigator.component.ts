@@ -9,9 +9,9 @@ import {
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'md-navigator-demo',
-  styleUrls: ['./md-navigator.component.scss'],
-  templateUrl: './md-navigator.component.html',
+  selector: 'markdown-navigator-demo',
+  styleUrls: ['./markdown-navigator.component.scss'],
+  templateUrl: './markdown-navigator.component.html',
   animations: [slideInDownAnimation],
   preserveWhitespaces: true,
 })

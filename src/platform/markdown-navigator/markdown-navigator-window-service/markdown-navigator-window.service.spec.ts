@@ -1,15 +1,15 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
-import { CovalentMarkdownNavigatorModule } from '../md-navigator.module';
-import { MarkdownNavigatorWindowService } from './md-navigator-window.service';
+import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
+import { MarkdownNavigatorWindowService } from './markdown-navigator-window.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { IMarkdownNavigatorItem, DEFAULT_MARKDOWN_NAVIGATOR_LABELS } from '../md-navigator.component';
+import { IMarkdownNavigatorItem, DEFAULT_MARKDOWN_NAVIGATOR_LABELS } from '../markdown-navigator.component';
 import {
   MarkdownNavigatorWindowComponent,
   IMarkdownNavigatorWindowLabels,
-} from '../md-navigator-window/md-navigator-window.component';
+} from '../markdown-navigator-window/markdown-navigator-window.component';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;

@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels } from '../md-navigator.component';
+import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels } from '../markdown-navigator.component';
 
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
   title?: string;
@@ -13,8 +13,8 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowL
 
 @Component({
   selector: 'td-markdown-navigator-window',
-  templateUrl: './md-navigator-window.component.html',
-  styleUrls: ['./md-navigator-window.component.scss'],
+  templateUrl: './markdown-navigator-window.component.html',
+  styleUrls: ['./markdown-navigator-window.component.scss'],
 })
 export class MarkdownNavigatorWindowComponent {
   @Input() items: IMarkdownNavigatorItem[];

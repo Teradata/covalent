@@ -4,10 +4,10 @@ import {
   IMarkdownNavigatorItem,
   IMarkdownNavigatorLabels,
   DEFAULT_MARKDOWN_NAVIGATOR_LABELS,
-} from './md-navigator.component';
+} from './markdown-navigator.component';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
-import { CovalentMarkdownNavigatorModule } from './md-navigator.module';
+import { CovalentMarkdownNavigatorModule } from './markdown-navigator.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';

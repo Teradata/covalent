@@ -39,7 +39,7 @@ import {
   NavStepsRoute3DemoComponent,
   NavStepsRoute4DemoComponent,
 } from './nav-steps/nav-steps.component';
-import { MarkdownNavigatorDemoComponent } from './markdown-navigator/md-navigator.component';
+import { MarkdownNavigatorDemoComponent } from './markdown-navigator/markdown-navigator.component';
 
 const routes: Routes = [
   {

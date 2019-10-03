@@ -101,7 +101,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component';
-import { MarkdownNavigatorDemoComponent } from './markdown-navigator/md-navigator.component';
+import { MarkdownNavigatorDemoComponent } from './markdown-navigator/markdown-navigator.component';
 import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
