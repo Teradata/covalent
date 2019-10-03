@@ -1,5 +1,10 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
-import { MdNavigatorComponent, IMdNavigatorItem, IMdNavigatorLabels, DEFAULT_MD_NAVIGATOR_LABELS } from './md-navigator.component';
+import {
+  MdNavigatorComponent,
+  IMdNavigatorItem,
+  IMdNavigatorLabels,
+  DEFAULT_MD_NAVIGATOR_LABELS,
+} from './md-navigator.component';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { CovalentMdNavigatorModule } from './md-navigator.module';
@@ -63,7 +68,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.items = [];
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
 
       expect(mdNavigator.showEmptyState).toBeTruthy();
       expect(mdNavigator.loading).toBeFalsy();
@@ -81,7 +87,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.items = undefined;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
 
       expect(mdNavigator.showEmptyState).toBeTruthy();
       expect(mdNavigator.loading).toBeFalsy();
@@ -99,7 +106,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.items = RAW_MARKDOWN_ITEM;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
 
       expect(mdNavigator.showEmptyState).toBeFalsy();
       expect(mdNavigator.loading).toBeFalsy();
@@ -117,7 +125,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.items = URL_ITEM;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
 
       expect(mdNavigator.showEmptyState).toBeFalsy();
       expect(mdNavigator.loading).toBeFalsy();
@@ -135,7 +144,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.items = FLAT_MIXED_ITEMS;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
 
       expect(mdNavigator.showEmptyState).toBeFalsy();
@@ -155,7 +165,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.items = NESTED_MIXED_ITEMS;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
 
       expect(mdNavigator.showEmptyState).toBeFalsy();
@@ -177,7 +188,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.items = undefined;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
       const elem: DebugElement = fixture.debugElement.query(By.directive(MdNavigatorComponent));
 
       expect(mdNavigator.goBackLabel).toContain(DEFAULT_MD_NAVIGATOR_LABELS.goBack);
@@ -194,7 +206,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.labels = {};
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
       const elem: DebugElement = fixture.debugElement.query(By.directive(MdNavigatorComponent));
 
       expect(mdNavigator.goBackLabel).toContain(DEFAULT_MD_NAVIGATOR_LABELS.goBack);
@@ -216,7 +229,8 @@ describe('MdNavigatorComponent', () => {
       fixture.componentInstance.labels = SAMPLE_LABELS;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
       const elem: DebugElement = fixture.debugElement.query(By.directive(MdNavigatorComponent));
 
       expect(mdNavigator.goBackLabel).toContain(SAMPLE_LABELS.goBack);

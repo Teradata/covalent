@@ -6,7 +6,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { IMdNavigatorItem, DEFAULT_MD_NAVIGATOR_LABELS } from '../md-navigator.component';
-import { MdNavigatorWindowComponent, IMdNavigatorWindowLabels } from '../md-navigator-window/md-navigator-window.component';
+import {
+  MdNavigatorWindowComponent,
+  IMdNavigatorWindowLabels,
+} from '../md-navigator-window/md-navigator-window.component';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
@@ -67,7 +70,9 @@ describe('MdNavigatorWindowService', () => {
 
       expect(getMdNavigator()).toBeTruthy();
 
-      (<HTMLElement>overlayContainerElement.querySelector(`td-md-navigator-window .td-md-navigator-window-close`)).click();
+      (<HTMLElement>(
+        overlayContainerElement.querySelector(`td-md-navigator-window .td-md-navigator-window-close`)
+      )).click();
       await wait(fixture);
 
       expect(getMdNavigator()).toBeFalsy();
@@ -214,10 +219,12 @@ describe('MdNavigatorWindowService', () => {
       await dialogRef.afterOpen().toPromise();
 
       expect(overlayContainerElement.querySelector(`.td-draggable-md-navigator-window-wrapper`)).toBeTruthy();
-      expect(overlayContainerElement.querySelector(`td-md-navigator-window.td-draggable-md-navigator-window`)).toBeTruthy();
-      expect(window.getComputedStyle(overlayContainerElement.querySelector(`.td-md-navigator-window-toolbar`)).cursor).toBe(
-        'move',
-      );
+      expect(
+        overlayContainerElement.querySelector(`td-md-navigator-window.td-draggable-md-navigator-window`),
+      ).toBeTruthy();
+      expect(
+        window.getComputedStyle(overlayContainerElement.querySelector(`.td-md-navigator-window-toolbar`)).cursor,
+      ).toBe('move');
 
       dialogRef.close();
       await wait(fixture);

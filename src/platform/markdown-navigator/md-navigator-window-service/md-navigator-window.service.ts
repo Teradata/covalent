@@ -4,7 +4,10 @@ import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { Overlay } from '@angular/cdk/overlay';
 import { CovalentMdNavigatorModule } from '../md-navigator.module';
 import { ThemePalette } from '@angular/material/core';
-import { MdNavigatorWindowComponent, IMdNavigatorWindowLabels } from '../md-navigator-window/md-navigator-window.component';
+import {
+  MdNavigatorWindowComponent,
+  IMdNavigatorWindowLabels,
+} from '../md-navigator-window/md-navigator-window.component';
 import { TdDialogService } from '@covalent/core/dialogs';
 import { IMdNavigatorItem } from '../md-navigator.component';
 

@@ -69,13 +69,17 @@ describe('MdNavigatorWindowComponent', () => {
 
   it('should use default labels if labels is undefined', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(TdMdNavigatorWindowTestComponent);
+      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMdNavigatorWindowTestComponent,
+      );
 
       await wait(fixture);
 
-      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(By.directive(MdNavigatorWindowComponent))
+      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(MdNavigatorWindowComponent),
+      ).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
         .componentInstance;
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
 
       expect(mdNavigatorWindow.titleLabel).toBe(DEFAULT_MD_NAVIGATOR_WINDOW_LABELS.title);
       expect(mdNavigatorWindow.closeLabel).toBe(DEFAULT_MD_NAVIGATOR_WINDOW_LABELS.close);
@@ -88,13 +92,17 @@ describe('MdNavigatorWindowComponent', () => {
 
   it('should use default labels if labels is an empty object', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(TdMdNavigatorWindowTestComponent);
+      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMdNavigatorWindowTestComponent,
+      );
 
       await wait(fixture);
 
-      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(By.directive(MdNavigatorWindowComponent))
+      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(MdNavigatorWindowComponent),
+      ).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
         .componentInstance;
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
 
       expect(mdNavigatorWindow.titleLabel).toBe(DEFAULT_MD_NAVIGATOR_WINDOW_LABELS.title);
       expect(mdNavigatorWindow.closeLabel).toBe(DEFAULT_MD_NAVIGATOR_WINDOW_LABELS.close);
@@ -106,7 +114,9 @@ describe('MdNavigatorWindowComponent', () => {
 
   it('should use labels if passed in', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(TdMdNavigatorWindowTestComponent);
+      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMdNavigatorWindowTestComponent,
+      );
 
       const SAMPLE_LABELS: IMdNavigatorWindowLabels = {
         title: 'Ayuda!',
@@ -118,8 +128,9 @@ describe('MdNavigatorWindowComponent', () => {
       fixture.componentInstance.labels = SAMPLE_LABELS;
       await wait(fixture);
 
-      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(By.directive(MdNavigatorWindowComponent))
-        .componentInstance;
+      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(MdNavigatorWindowComponent),
+      ).componentInstance;
 
       expect(mdNavigatorWindow.titleLabel).toBe(SAMPLE_LABELS.title);
       expect(mdNavigatorWindow.closeLabel).toBe(SAMPLE_LABELS.close);
@@ -134,12 +145,15 @@ describe('MdNavigatorWindowComponent', () => {
 
   it('pass items to mdNavigator component', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(TdMdNavigatorWindowTestComponent);
+      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMdNavigatorWindowTestComponent,
+      );
 
       fixture.componentInstance.items = URL_ITEM;
       await wait(fixture);
 
-      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent)).componentInstance;
+      const mdNavigator: MdNavigatorComponent = fixture.debugElement.query(By.directive(MdNavigatorComponent))
+        .componentInstance;
 
       expect(mdNavigator.items).toEqual(URL_ITEM);
 
@@ -166,7 +180,9 @@ describe('MdNavigatorWindowComponent', () => {
 
   it('use color if toolBar color is passed in', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(TdMdNavigatorWindowTestComponent);
+      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMdNavigatorWindowTestComponent,
+      );
 
       fixture.componentInstance.toolbarColor = 'accent';
       await wait(fixture);
@@ -194,11 +210,14 @@ describe('MdNavigatorWindowComponent', () => {
 
   it('emit a close event ', async(
     inject([], async () => {
-      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(TdMdNavigatorWindowTestComponent);
+      const fixture: ComponentFixture<TdMdNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMdNavigatorWindowTestComponent,
+      );
 
       await wait(fixture);
-      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(By.directive(MdNavigatorWindowComponent))
-        .componentInstance;
+      const mdNavigatorWindow: MdNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(MdNavigatorWindowComponent),
+      ).componentInstance;
 
       spyOn(mdNavigatorWindow.closed, 'emit');
 
