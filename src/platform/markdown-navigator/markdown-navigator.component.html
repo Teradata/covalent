@@ -13,7 +13,7 @@
         arrow_back
       </mat-icon>
     </button>
-    <span flex *ngIf="currentItemTitle" class="mat-body-2 title text-truncate">{{ currentItemTitle }}</span>
+    <span flex *ngIf="currentItemTitle" class="mat-body-2 title truncate">{{ currentItemTitle }}</span>
   </div>
 
   <mat-divider [style.position]="'relative'"></mat-divider>
@@ -31,7 +31,7 @@
         <mat-icon matListIcon>
           subject
         </mat-icon>
-        <span matLine class="text-truncate">
+        <span matLine class="truncate">
           {{ getTitle(item) }}
         </span>
         <mat-divider></mat-divider>
@@ -48,7 +48,7 @@
   </div>
 </ng-container>
 
-<div *ngIf="showEmptyState" layout="column" layout-align="center center" class="tc-grey-500 mat-typography pad-lg">
-  <mat-icon matListAvatar class="text-super push-bottom">subject</mat-icon>
+<div *ngIf="showEmptyState" layout="column" layout-align="center center" class=" empty-state">
+  <mat-icon matListAvatar>subject</mat-icon>
   <h2>{{ emptyStateLabel }}</h2>
 </div>
