@@ -16,7 +16,32 @@ import { getDirection, setDirection } from '../../utilities/direction';
   styleUrls: ['././toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  updates: Object[] = [];
+  updates: Object[] = [
+    {
+      route: '/components/markdown-navigator',
+      icon: 'subject',
+      description: 'Render and navigate markdown',
+      title: 'Markdown Navigator',
+    },
+    {
+      route: '/components/functions',
+      icon: 'build',
+      description: 'New helper functions for multiple situations',
+      title: 'Functions',
+    },
+    {
+      route: '/echarts/types/pie',
+      icon: 'pie_chart',
+      description: 'Added pie type support',
+      title: 'Pie Echarts',
+    },
+    {
+      route: '/components/dialogs',
+      icon: 'open_in_browser',
+      description: 'Draggable dialog support',
+      title: 'Dialogs',
+    },
+  ];
 
   dir: 'ltr' | 'rtl' = getDirection();
 
