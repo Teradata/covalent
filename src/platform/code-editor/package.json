@@ -35,7 +35,7 @@
     "monaco-editor": "^0.0.0-MONACO"
   },
   "peerDependencies": {
-    "@angular/common": "^0.0.0-NG",
-    "@angular/core": "^0.0.0-NG"
+    "@angular/common": ">=0.0.0-NG",
+    "@angular/core": ">=0.0.0-NG"
   }
 }
