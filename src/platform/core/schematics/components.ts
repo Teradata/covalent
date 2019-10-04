@@ -1,4 +1,4 @@
-import { ISchema } from './schema';
+import { ISchema } from './ng-add/schema';
 
 export interface IComponent {
   enabled(options: ISchema): boolean;
@@ -94,3 +94,17 @@ export class MarkdownNavigator implements IComponent {
     return '@covalent/markdown-navigator';
   }
 }
+
+export const components: IComponent[] = [
+  new DynamicForms(),
+  new Http(),
+  new Highlight(),
+  new Markdown(),
+  new FlavoredMarkdown(),
+  new Echarts(),
+  new TextEditor(),
+  new CodeEditor(),
+  new MarkdownNavigator(),
+];
+
+export const covalentPackages: string[] = components.map((c: IComponent) => c.dependency());
