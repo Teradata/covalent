@@ -52,6 +52,12 @@
       "description": "Whether covalent code-editor should be set up.",
       "x-prompt": "Set up code editor?"
     },
+    "markdownNavigator": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent markdown-navigator should be set up.",
+      "x-prompt": "Set up markdown navigator?"
+    },
     "styleSheetUtilities": {
       "type": "boolean",
       "default": true,

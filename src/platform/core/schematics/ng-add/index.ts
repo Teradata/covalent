@@ -12,6 +12,7 @@ import {
   Echarts,
   TextEditor,
   CodeEditor,
+  MarkdownNavigator,
 } from './components';
 import { strings } from '@angular-devkit/core';
 import { getProjectFromWorkspace, getProjectTargetOptions } from '@angular/cdk/schematics';
@@ -33,6 +34,7 @@ export function addDependenciesAndFiles(options: ISchema): Rule {
         new Echarts(),
         new TextEditor(),
         new CodeEditor(),
+        new MarkdownNavigator(),
       ];
 
       components.forEach((component: IComponent) => {
