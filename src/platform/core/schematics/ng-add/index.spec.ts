@@ -1,6 +1,6 @@
 import { getFileContent } from '@schematics/angular/utility/test';
 import { Tree } from '@angular-devkit/schematics';
-import { covalentCoreVersion, materialVersion } from './version-names';
+import { covalentCoreVersion, materialVersion } from '../version-names';
 import { SchematicTestRunner, UnitTestTree } from '@angular-devkit/schematics/testing';
 import { Schema as WorkspaceOptions } from '@schematics/angular/workspace/schema';
 import { Schema as ApplicationOptions } from '@schematics/angular/application/schema';
