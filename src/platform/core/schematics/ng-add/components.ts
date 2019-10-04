@@ -84,3 +84,13 @@ export class CodeEditor implements IComponent {
     return '@covalent/code-editor';
   }
 }
+
+export class MarkdownNavigator implements IComponent {
+  public enabled(options: ISchema): boolean {
+    return options.markdownNavigator;
+  }
+
+  public dependency(): string {
+    return '@covalent/markdown-navigator';
+  }
+}

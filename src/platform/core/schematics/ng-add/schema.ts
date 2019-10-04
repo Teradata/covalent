@@ -23,6 +23,9 @@ export interface ISchema {
   /** Whether covalent code editor should be set up. */
   codeEditor: boolean;
 
+  /** Whether markdown navigator should be set up. */
+  markdownNavigator: boolean;
+
   /** Whether covalent utilities stylesheet should be added. */
   styleSheetUtilities: boolean;
 
