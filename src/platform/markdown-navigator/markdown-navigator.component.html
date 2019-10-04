@@ -1,53 +1,50 @@
 <ng-container *ngIf="!showEmptyState">
-  <button mat-icon-button [matTooltip]="goHomeLabel" (click)="reset()">
-    <mat-icon [attr.aria-label]="goHomeLabel">
-      home
-    </mat-icon>
-  </button>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"> </mat-progress-bar>
 
-  <button *ngIf="showGoBackButton" mat-icon-button [matTooltip]="goBackLabel" (click)="goBack()">
-    <mat-icon [attr.aria-label]="goBackLabel">
-      arrow_back
-    </mat-icon>
-  </button>
-
-  <mat-action-list *ngIf="showMenu">
-    <button
-      *ngFor="let item of currentMenuItems"
-      (click)="handleItemSelected(item)"
-      mat-list-item
-      [matTooltip]="getTitle(item)"
-      matTooltipPosition="before"
-      matTooltipShowDelay="500"
-    >
-      <mat-icon matListIcon>
-        subject
+  <div>
+    <button mat-icon-button [matTooltip]="goHomeLabel" (click)="reset()">
+      <mat-icon [attr.aria-label]="goHomeLabel">
+        home
       </mat-icon>
-      <span class="text-truncate">
-        {{ getTitle(item) }}
-      </span>
     </button>
-  </mat-action-list>
 
-  <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent" class="sticky"> </mat-progress-bar>
+    <button *ngIf="showGoBackButton" mat-icon-button [matTooltip]="goBackLabel" (click)="goBack()">
+      <mat-icon [attr.aria-label]="goBackLabel">
+        arrow_back
+      </mat-icon>
+    </button>
+  </div>
 
-  <td-flavored-markdown-loader
-    *ngIf="showTdMarkdownLoader"
-    [url]="url"
-    [httpOptions]="httpOptions"
-    [anchor]="anchor"
-    class="pad scroll-md"
-  >
-  </td-flavored-markdown-loader>
+  <mat-divider [style.position]="'relative'"></mat-divider>
 
-  <td-flavored-markdown
-    *ngIf="showTdMarkdown"
-    [content]="markdownString"
-    [hostedUrl]="url"
-    [anchor]="anchor"
-    class="pad scroll-md"
-  >
-  </td-flavored-markdown>
+  <div *ngIf="showMenu" class="td-markdown-list scroll">
+    <mat-action-list>
+      <button
+        *ngFor="let item of currentMenuItems"
+        (click)="handleItemSelected(item)"
+        mat-list-item
+        [matTooltip]="getTitle(item)"
+        matTooltipPosition="before"
+        matTooltipShowDelay="500"
+      >
+        <mat-icon matListIcon>
+          subject
+        </mat-icon>
+        <span matLine class="text-truncate">
+          {{ getTitle(item) }}
+        </span>
+        <mat-divider></mat-divider>
+      </button>
+    </mat-action-list>
+  </div>
+
+  <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="td-markdown-navigator-wrapper scroll">
+    <td-flavored-markdown-loader *ngIf="showTdMarkdownLoader" [url]="url" [httpOptions]="httpOptions" [anchor]="anchor">
+    </td-flavored-markdown-loader>
+
+    <td-flavored-markdown *ngIf="showTdMarkdown" [content]="markdownString" [hostedUrl]="url" [anchor]="anchor">
+    </td-flavored-markdown>
+  </div>
 </ng-container>
 
 <div *ngIf="showEmptyState" layout="column" layout-align="center center" class="tc-grey-500 mat-typography pad-lg">
