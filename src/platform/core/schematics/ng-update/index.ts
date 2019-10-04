@@ -35,6 +35,7 @@ export function updatePackageInPackageJson(host: Tree, pkgs: string[], version: 
       }
     });
 
+    // tslint:disable-next-line
     host.overwrite('package.json', JSON.stringify(json, null, 2));
   }
 
