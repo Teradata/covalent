@@ -1,9 +1,10 @@
 # Run test and linter
 npm run test:schematics
 npm run tslint
+npm run build:lib
 
 # Link project
-cd ../src/platform/core
+cd ../deploy/platform/core
 npm link
 
 # Create Angular base project
