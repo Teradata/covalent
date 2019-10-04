@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
 export interface IMarkdownNavigatorItem {
@@ -67,6 +67,8 @@ export class MarkdownNavigatorComponent implements OnChanges {
    * Translated labels
    */
   @Input() labels: IMarkdownNavigatorLabels;
+
+  @ViewChild('markdownWrapper', { static: false }) markdownWrapper: ElementRef;
 
   historyStack: IMarkdownNavigatorItem[][] = []; // history
   currentMarkdownItem: IMarkdownNavigatorItem; // currently rendered
@@ -228,6 +230,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       const markdownString: string = await this._markdownUrlLoaderService.load(url.href);
       // pass in url to be able to use currentMarkdownItem.url later on
       this.handleItemSelected({ markdownString, url: url.href });
+      this.markdownWrapper.nativeElement.scrollTop = 0;
     } catch (error) {
       const win: Window = window.open(url.href, '_blank');
       win.focus();

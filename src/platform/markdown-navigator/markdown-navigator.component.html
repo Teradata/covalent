@@ -18,7 +18,7 @@
 
   <mat-divider [style.position]="'relative'"></mat-divider>
 
-  <div *ngIf="showMenu" class="td-markdown-list scroll">
+  <div *ngIf="showMenu" class="td-markdown-list">
     <mat-action-list>
       <button
         *ngFor="let item of currentMenuItems"
@@ -39,7 +39,7 @@
     </mat-action-list>
   </div>
 
-  <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="td-markdown-navigator-wrapper scroll">
+  <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
     <td-flavored-markdown-loader *ngIf="showTdMarkdownLoader" [url]="url" [httpOptions]="httpOptions" [anchor]="anchor">
     </td-flavored-markdown-loader>
 
