@@ -1,7 +1,7 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import chalk from 'chalk';
 import { TargetVersion } from './target-version';
-import { IComponent, components } from '../components';
+import { covalentPackages } from '../components';
 
 const green: any = chalk.green;
 const yellow: any = chalk.yellow;
@@ -17,13 +17,10 @@ export function updateToV3(): Rule {
 }
 
 function updateNonCorePackageDependencies(host: Tree, _context: SchematicContext): Tree {
-  components.forEach((component: IComponent) => {
-    updatePackageInPackageJson(host, component.dependency(), '3.0.0');
-  });
-  return host;
+  return updatePackageInPackageJson(host, covalentPackages, '3.0.0');
 }
 
-export function updatePackageInPackageJson(host: Tree, pkg: string, version: string): Tree {
+export function updatePackageInPackageJson(host: Tree, pkgs: string[], version: string): Tree {
   if (host.exists('package.json')) {
     const sourceText: string = host.read('package.json')!.toString('utf-8');
     const json: any = JSON.parse(sourceText);
@@ -32,9 +29,11 @@ export function updatePackageInPackageJson(host: Tree, pkg: string, version: str
       json.dependencies = {};
     }
 
-    if (json.dependencies[pkg]) {
-      json.dependencies[pkg] = version;
-    }
+    pkgs.forEach((pkg: string) => {
+      if (json.dependencies[pkg]) {
+        json.dependencies[pkg] = version;
+      }
+    });
 
     host.overwrite('package.json', JSON.stringify(json, null, 2));
   }

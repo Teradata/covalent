@@ -95,3 +95,5 @@ export const components: IComponent[] = [
   new TextEditor(),
   new CodeEditor(),
 ];
+
+export const covalentPackages: string[] = components.map((c: IComponent) => c.dependency());
