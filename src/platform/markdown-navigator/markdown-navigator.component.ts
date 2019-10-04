@@ -88,6 +88,10 @@ export class MarkdownNavigatorComponent implements OnChanges {
     return this.historyStack.length > 0;
   }
 
+  get showHomeButton(): boolean {
+    return this.historyStack.length > 1;
+  }
+
   get showMenu(): boolean {
     return this.currentMenuItems && this.currentMenuItems.length > 0;
   }
@@ -137,6 +141,10 @@ export class MarkdownNavigatorComponent implements OnChanges {
 
   get emptyStateLabel(): string {
     return (this.labels && this.labels.emptyState) || DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState;
+  }
+
+  get currentItemTitle(): string {
+    return this.getTitle(this.currentMarkdownItem) || (this.historyStack[0] && this.getTitle(this.historyStack[0][0]));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -201,12 +209,14 @@ export class MarkdownNavigatorComponent implements OnChanges {
   }
 
   getTitle(item: IMarkdownNavigatorItem): string {
-    return (
-      item.title ||
-      removeLeadingHash(item.anchor) ||
-      getTitleFromUrl(item.url) ||
-      getTitleFromMarkdownString(item.markdownString)
-    );
+    if (item) {
+      return (
+        removeLeadingHash(item.anchor) ||
+        item.title ||
+        getTitleFromMarkdownString(item.markdownString) ||
+        getTitleFromUrl(item.url)
+      );
+    }
   }
 
   async handleLinkClick(event: Event): Promise<void> {

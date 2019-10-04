@@ -1,8 +1,8 @@
 <ng-container *ngIf="!showEmptyState">
   <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"> </mat-progress-bar>
 
-  <div>
-    <button mat-icon-button [matTooltip]="goHomeLabel" (click)="reset()">
+  <div [style.display]="'flex'">
+    <button *ngIf="showHomeButton" mat-icon-button [matTooltip]="goHomeLabel" (click)="reset()">
       <mat-icon [attr.aria-label]="goHomeLabel">
         home
       </mat-icon>
@@ -13,6 +13,7 @@
         arrow_back
       </mat-icon>
     </button>
+    <span flex *ngIf="currentItemTitle" class="mat-body-2 title text-truncate">{{ currentItemTitle }}</span>
   </div>
 
   <mat-divider [style.position]="'relative'"></mat-divider>
