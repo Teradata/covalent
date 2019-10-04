@@ -20,6 +20,7 @@ export class MarkdownNavigatorWindowComponent {
   @Input() items: IMarkdownNavigatorItem[];
   @Input() labels: IMarkdownNavigatorWindowLabels;
   @Input() toolbarColor: ThemePalette = 'primary';
+  toolbarHeight: number = 56;
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
 
