@@ -146,7 +146,14 @@ export class MarkdownNavigatorComponent implements OnChanges {
   }
 
   get currentItemTitle(): string {
-    return this.getTitle(this.currentMarkdownItem) || (this.historyStack[0] && this.getTitle(this.historyStack[0][0]));
+    if (this.historyStack.length < 1) {
+      return '';
+    } else if (this.currentMarkdownItem) {
+      return this.getTitle(this.currentMarkdownItem);
+    } else if (this.historyStack[0] && this.historyStack[0][0]) {
+      return this.getTitle(this.historyStack[0][0]);
+    }
+    return '';
   }
 
   ngOnChanges(changes: SimpleChanges): void {

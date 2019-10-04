@@ -27,14 +27,14 @@ export class MarkdownNavigatorDemoComponent {
 
   itemWithRawMarkdown: IMarkdownNavigatorItem[] = [
     {
-      markdownString: '# Heading',
+      markdownString: '\n\n# Raw markdown example\n \n> Amazing\n\n1. List\n2. of\n3. items\n\n',
     },
   ];
 
   multipleItems: IMarkdownNavigatorItem[] = [
     {
-      url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
-      title: 'Code Editor API',
+      url: 'https://raw.githubusercontent.com/Teradata/nodejs-driver/develop/README.md',
+      title: 'Node.js Driver for Teradata',
     },
     {
       url: 'https://raw.githubusercontent.com/angular/angular/master/README.md',
@@ -51,14 +51,14 @@ export class MarkdownNavigatorDemoComponent {
 
   nestedItems: IMarkdownNavigatorItem[] = [
     {
-      title: 'Covalent Components',
+      title: 'Covalent',
       children: [
         {
-          title: 'Markdown Components',
+          title: 'Components',
           children: [
             {
               url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
-              title: 'td-markdown',
+              title: 'tdLoading',
             },
           ],
         },
