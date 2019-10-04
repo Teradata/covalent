@@ -1,7 +1,7 @@
 <mat-toolbar [color]="toolbarColor" class="td-markdown-navigator-window-toolbar" [style.min-height.px]="toolbarHeight">
-  <mat-toolbar-row [style.height.px]="toolbarHeight">
+  <mat-toolbar-row [style.height.px]="toolbarHeight" [style.padding-right.px]="0">
     <div layout="row" layout-align="start center" flex>
-      <span class="mat-title push-bottom-none" flex>
+      <span class="mat-title td-markdown-navigator-window-title" flex>
         {{ titleLabel }}
       </span>
       <!-- TODO: Resizing a drag-and-drop element was not working so removed minimize/maximize for now-->

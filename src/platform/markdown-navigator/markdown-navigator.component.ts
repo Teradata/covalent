@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
 export interface IMarkdownNavigatorItem {
@@ -68,6 +68,8 @@ export class MarkdownNavigatorComponent implements OnChanges {
    */
   @Input() labels: IMarkdownNavigatorLabels;
 
+  @ViewChild('markdownWrapper', { static: false }) markdownWrapper: ElementRef;
+
   historyStack: IMarkdownNavigatorItem[][] = []; // history
   currentMarkdownItem: IMarkdownNavigatorItem; // currently rendered
   currentMenuItems: IMarkdownNavigatorItem[] = []; // current menu items
@@ -86,6 +88,14 @@ export class MarkdownNavigatorComponent implements OnChanges {
 
   get showGoBackButton(): boolean {
     return this.historyStack.length > 0;
+  }
+
+  get showHomeButton(): boolean {
+    return this.historyStack.length > 1;
+  }
+
+  get showHeader(): boolean {
+    return this.showHomeButton || this.showGoBackButton || !!this.currentItemTitle;
   }
 
   get showMenu(): boolean {
@@ -137,6 +147,17 @@ export class MarkdownNavigatorComponent implements OnChanges {
 
   get emptyStateLabel(): string {
     return (this.labels && this.labels.emptyState) || DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState;
+  }
+
+  get currentItemTitle(): string {
+    if (this.historyStack.length < 1) {
+      return '';
+    } else if (this.currentMarkdownItem) {
+      return this.getTitle(this.currentMarkdownItem);
+    } else if (this.historyStack[0] && this.historyStack[0][0]) {
+      return this.getTitle(this.historyStack[0][0]);
+    }
+    return '';
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -201,12 +222,15 @@ export class MarkdownNavigatorComponent implements OnChanges {
   }
 
   getTitle(item: IMarkdownNavigatorItem): string {
-    return (
-      item.title ||
-      removeLeadingHash(item.anchor) ||
-      getTitleFromUrl(item.url) ||
-      getTitleFromMarkdownString(item.markdownString)
-    );
+    if (item) {
+      return (
+        removeLeadingHash(item.anchor) ||
+        item.title ||
+        getTitleFromUrl(item.url) ||
+        getTitleFromMarkdownString(item.markdownString) ||
+        ''
+      ).trim();
+    }
   }
 
   async handleLinkClick(event: Event): Promise<void> {
@@ -218,6 +242,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       const markdownString: string = await this._markdownUrlLoaderService.load(url.href);
       // pass in url to be able to use currentMarkdownItem.url later on
       this.handleItemSelected({ markdownString, url: url.href });
+      this.markdownWrapper.nativeElement.scrollTop = 0;
     } catch (error) {
       const win: Window = window.open(url.href, '_blank');
       win.focus();
