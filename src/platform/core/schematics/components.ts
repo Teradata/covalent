@@ -85,6 +85,16 @@ export class CodeEditor implements IComponent {
   }
 }
 
+export class MarkdownNavigator implements IComponent {
+  public enabled(options: ISchema): boolean {
+    return options.markdownNavigator;
+  }
+
+  public dependency(): string {
+    return '@covalent/markdown-navigator';
+  }
+}
+
 export const components: IComponent[] = [
   new DynamicForms(),
   new Http(),
@@ -94,6 +104,7 @@ export const components: IComponent[] = [
   new Echarts(),
   new TextEditor(),
   new CodeEditor(),
+  new MarkdownNavigator(),
 ];
 
 export const covalentPackages: string[] = components.map((c: IComponent) => c.dependency());
