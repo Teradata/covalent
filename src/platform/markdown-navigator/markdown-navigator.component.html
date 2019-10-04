@@ -1,22 +1,24 @@
 <ng-container *ngIf="!showEmptyState">
   <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"> </mat-progress-bar>
 
-  <div [style.display]="'flex'">
-    <button *ngIf="showHomeButton" mat-icon-button [matTooltip]="goHomeLabel" (click)="reset()">
-      <mat-icon [attr.aria-label]="goHomeLabel">
-        home
-      </mat-icon>
-    </button>
+  <ng-container *ngIf="showHeader">
+    <div [style.display]="'flex'">
+      <button *ngIf="showHomeButton" mat-icon-button [matTooltip]="goHomeLabel" (click)="reset()">
+        <mat-icon [attr.aria-label]="goHomeLabel">
+          home
+        </mat-icon>
+      </button>
 
-    <button *ngIf="showGoBackButton" mat-icon-button [matTooltip]="goBackLabel" (click)="goBack()">
-      <mat-icon [attr.aria-label]="goBackLabel">
-        arrow_back
-      </mat-icon>
-    </button>
-    <span flex *ngIf="currentItemTitle" class="mat-body-2 title truncate">{{ currentItemTitle }}</span>
-  </div>
+      <button *ngIf="showGoBackButton" mat-icon-button [matTooltip]="goBackLabel" (click)="goBack()">
+        <mat-icon [attr.aria-label]="goBackLabel">
+          arrow_back
+        </mat-icon>
+      </button>
+      <span flex *ngIf="currentItemTitle" class="mat-body-2 title truncate">{{ currentItemTitle }}</span>
+    </div>
 
-  <mat-divider [style.position]="'relative'"></mat-divider>
+    <mat-divider [style.position]="'relative'"></mat-divider>
+  </ng-container>
 
   <div *ngIf="showMenu" class="td-markdown-list">
     <mat-action-list>

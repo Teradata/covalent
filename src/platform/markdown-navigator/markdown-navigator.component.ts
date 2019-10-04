@@ -94,6 +94,10 @@ export class MarkdownNavigatorComponent implements OnChanges {
     return this.historyStack.length > 1;
   }
 
+  get showHeader(): boolean {
+    return this.showHomeButton || this.showGoBackButton || !!this.currentItemTitle;
+  }
+
   get showMenu(): boolean {
     return this.currentMenuItems && this.currentMenuItems.length > 0;
   }
@@ -222,9 +226,10 @@ export class MarkdownNavigatorComponent implements OnChanges {
       return (
         removeLeadingHash(item.anchor) ||
         item.title ||
+        getTitleFromUrl(item.url) ||
         getTitleFromMarkdownString(item.markdownString) ||
-        getTitleFromUrl(item.url)
-      );
+        ''
+      ).trim();
     }
   }
 
