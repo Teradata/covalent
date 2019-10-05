@@ -141,6 +141,12 @@ export class ComponentsOverviewComponent {
       route: 'animations',
       title: 'Animations',
     },
+    {
+      color: 'pink-A700',
+      icon: 'build',
+      route: 'functions',
+      title: 'Functions',
+    },
   ];
   optional: Object[] = [
     {
@@ -160,6 +166,12 @@ export class ComponentsOverviewComponent {
       icon: 'layers',
       route: 'flavored-markdown',
       title: 'Flavored Markdown Parser',
+    },
+    {
+      color: 'blue-A700',
+      icon: 'subject',
+      route: 'markdown-navigator',
+      title: 'Markdown Navigator',
     },
     {
       color: 'green-A700',
