@@ -47,7 +47,7 @@ describe('Component: SearchBox', () => {
 
 @Component({
   template: `
-    <td-search-box [(ngModel)]="value"> </td-search-box>
+    <td-search-box [(ngModel)]="value"></td-search-box>
   `,
 })
 class TestNgModelSupportComponent {

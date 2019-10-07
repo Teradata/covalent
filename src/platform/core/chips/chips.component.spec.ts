@@ -883,7 +883,7 @@ describe('Component: Chips', () => {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [color]="color"> </td-chips>
+    <td-chips [items]="items" [(ngModel)]="selectedItems" [color]="color"></td-chips>
   `,
 })
 class TdChipsTestComponent {
@@ -894,7 +894,7 @@ class TdChipsTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [chipAddition]="chipAddition"> </td-chips>
+    <td-chips [items]="items" [(ngModel)]="selectedItems" [chipAddition]="chipAddition"></td-chips>
   `,
 })
 class TdChipsA11yTestComponent {
@@ -911,8 +911,7 @@ class TdChipsA11yTestComponent {
       [compareWith]="compareWith"
       [(ngModel)]="selectedItems"
       (inputChange)="filter($event)"
-    >
-    </td-chips>
+    ></td-chips>
   `,
 })
 class TdChipsBasicTestComponent {
@@ -938,7 +937,7 @@ class TdChipsBasicTestComponent {
 
 @Component({
   template: `
-    <td-chips [placeholder]="placeholder" [required]="true" [items]="items" [(ngModel)]="items"> </td-chips>
+    <td-chips [placeholder]="placeholder" [required]="true" [items]="items" [(ngModel)]="items"></td-chips>
   `,
 })
 class TdChipsRequiredTestComponent {
@@ -966,7 +965,7 @@ class TdChipsObjectsRequireMatchTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked"> </td-chips>
+    <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked"></td-chips>
   `,
 })
 class TdChipsStackedTestComponent {
@@ -977,7 +976,7 @@ class TdChipsStackedTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked" [inputPosition]="position"> </td-chips>
+    <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked" [inputPosition]="position"></td-chips>
   `,
 })
 class TdChipsBeforeAfterTestComponent {
@@ -989,8 +988,12 @@ class TdChipsBeforeAfterTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [chipRemoval]="chipRemoval" [chipAddition]="chipAddition">
-    </td-chips>
+    <td-chips
+      [items]="items"
+      [(ngModel)]="selectedItems"
+      [chipRemoval]="chipRemoval"
+      [chipAddition]="chipAddition"
+    ></td-chips>
   `,
 })
 class TdChipRemovalTestComponent {
@@ -1002,8 +1005,12 @@ class TdChipRemovalTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" (chipFocus)="chipFocusEvent()" (chipBlur)="chipBlurEvent()">
-    </td-chips>
+    <td-chips
+      [items]="items"
+      [(ngModel)]="selectedItems"
+      (chipFocus)="chipFocusEvent()"
+      (chipBlur)="chipBlurEvent()"
+    ></td-chips>
   `,
 })
 class TdChipsEventsTestComponent {

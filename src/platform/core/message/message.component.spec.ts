@@ -234,7 +234,7 @@ describe('Component: Message', () => {
 
 @Component({
   template: `
-    <td-message [label]="label" [sublabel]="sublabel" [color]="color"> </td-message>
+    <td-message [label]="label" [sublabel]="sublabel" [color]="color"></td-message>
   `,
 })
 class TdMessageBasicTestComponent {
@@ -258,7 +258,7 @@ class TdMessageContentTestComponent {
 
 @Component({
   template: `
-    <td-message [label]="label" [color]="color" [opened]="opened"> </td-message>
+    <td-message [label]="label" [color]="color" [opened]="opened"></td-message>
   `,
 })
 class TdMessageOpenedTestComponent {

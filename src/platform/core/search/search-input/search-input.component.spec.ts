@@ -47,7 +47,7 @@ describe('Component: SearchInput', () => {
 
 @Component({
   template: `
-    <td-search-input [(ngModel)]="value"> </td-search-input>
+    <td-search-input [(ngModel)]="value"></td-search-input>
   `,
 })
 class TestNgModelSupportComponent {

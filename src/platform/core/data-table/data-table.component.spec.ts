@@ -525,7 +525,7 @@ describe('Component: DataTable', () => {
 
 @Component({
   template: `
-    <td-data-table [data]="data" [columns]="columns"> </td-data-table>
+    <td-data-table [data]="data" [columns]="columns"></td-data-table>
   `,
 })
 class TdDataTableBasicTestComponent {
@@ -548,8 +548,7 @@ class TdDataTableBasicTestComponent {
       [selectable]="selectable"
       [multiple]="multiple"
       [style.height.px]="200"
-    >
-    </td-data-table>
+    ></td-data-table>
   `,
 })
 class TdDataTableSelectableTestComponent {
@@ -561,7 +560,7 @@ class TdDataTableSelectableTestComponent {
 
 @Component({
   template: `
-    <td-data-table [data]="data" [columns]="columns" [clickable]="clickable" (rowClick)="clickEvent()"> </td-data-table>
+    <td-data-table [data]="data" [columns]="columns" [clickable]="clickable" (rowClick)="clickEvent()"></td-data-table>
   `,
 })
 class TdDataTableRowClickTestComponent {
@@ -589,8 +588,7 @@ class TdDataTableRowClickTestComponent {
       [clickable]="clickable"
       (rowClick)="clickEvent($event)"
       (rowSelect)="selectEvent($event)"
-    >
-    </td-data-table>
+    ></td-data-table>
   `,
 })
 class TdDataTableSelectableRowClickTestComponent {
@@ -615,7 +613,7 @@ class TdDataTableSelectableRowClickTestComponent {
 
 @Component({
   template: `
-    <td-data-table [data]="data" [columns]="columns" [selectable]="true" [(ngModel)]="selectedRows"> </td-data-table>
+    <td-data-table [data]="data" [columns]="columns" [selectable]="true" [(ngModel)]="selectedRows"></td-data-table>
   `,
 })
 class TdDataTableModelTestComponent {
@@ -639,8 +637,7 @@ class TdDataTableModelTestComponent {
       [selectable]="true"
       [(ngModel)]="selectedRows"
       [compareWith]="compareWith"
-    >
-    </td-data-table>
+    ></td-data-table>
   `,
 })
 class TdDataTableCompareWithTestComponent {
