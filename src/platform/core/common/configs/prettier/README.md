@@ -32,7 +32,7 @@ Update appropriate linter configs to have the newly installed linter rule sets a
 
 ```json
 {
-  "extends": ["./node_modules/core/common/configs/stylelint/.stylelintrc.json", "stylelint-config-prettier"]
+  "extends": ["./node_modules/@covalent/core/common/configs/stylelint/.stylelintrc.json", "stylelint-config-prettier"]
 }
 ```
 
@@ -41,7 +41,7 @@ Update appropriate linter configs to have the newly installed linter rule sets a
 Create a `prettier.config.js` file at the root level that references the `prettier.config.js` file located inside this repo.
 
 ```javascript
-var defaultConfig = require('./node_modules/core/common/configs/prettier/prettier.config.js');
+var defaultConfig = require('./node_modules/@covalent/core/common/configs/prettier/prettier.config.js');
 module.exports = defaultConfig;
 ```
 
