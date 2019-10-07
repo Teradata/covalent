@@ -108,7 +108,6 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-angular": "^8.1.0",
     "@commitlint/travis-cli": "^8.1.0",
-    "@covalent/tools": "2.0.1",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "~2.8.6",
