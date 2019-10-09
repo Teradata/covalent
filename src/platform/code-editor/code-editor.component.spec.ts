@@ -390,7 +390,7 @@ class TestEditorOptionsComponent {
 @Component({
   template: `
     <div>
-      <td-code-editor #editor style="height: 200px" language="javascript" [(value)]="sampleCode"> </td-code-editor>
+      <td-code-editor #editor style="height: 200px" language="javascript" [(value)]="sampleCode"></td-code-editor>
     </div>
   `,
 })
@@ -402,7 +402,7 @@ class TestTwoWayBindingWithValueComponent {
 @Component({
   template: `
     <div>
-      <td-code-editor #editor style="height: 200px" language="javascript" [(ngModel)]="sampleCode"> </td-code-editor>
+      <td-code-editor #editor style="height: 200px" language="javascript" [(ngModel)]="sampleCode"></td-code-editor>
     </div>
   `,
 })

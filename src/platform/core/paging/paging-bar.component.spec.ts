@@ -196,7 +196,7 @@ describe('Component: PagingBar', () => {
 
 @Component({
   template: `
-    <td-paging-bar [pageSize]="pageSize" [total]="9215"> </td-paging-bar>
+    <td-paging-bar [pageSize]="pageSize" [total]="9215"></td-paging-bar>
   `,
 })
 class TestPageSizeComponent {

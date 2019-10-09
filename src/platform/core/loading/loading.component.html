@@ -18,9 +18,8 @@
       [color]="color"
       [diameter]="getCircleDiameter()"
       [strokeWidth]="getCircleStrokeWidth()"
-    >
-    </mat-progress-spinner>
-    <mat-progress-bar *ngIf="isLinear()" [mode]="mode" [value]="value" [color]="color"> </mat-progress-bar>
+    ></mat-progress-spinner>
+    <mat-progress-bar *ngIf="isLinear()" [mode]="mode" [value]="value" [color]="color"></mat-progress-bar>
   </div>
   <ng-template [cdkPortalOutlet]="content"></ng-template>
 </div>

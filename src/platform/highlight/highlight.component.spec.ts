@@ -164,7 +164,7 @@ describe('Component: Highlight', () => {
 // Use the 4 components below to test the rendering requirements of the TdHighlight component.
 @Component({
   template: `
-    <td-highlight> </td-highlight>
+    <td-highlight></td-highlight>
   `,
 })
 class TdHighlightEmptyStaticTestRenderingComponent {}
@@ -180,7 +180,7 @@ class TdHighlightStaticHtmlTestRenderingComponent {}
 
 @Component({
   template: `
-    <td-highlight lang="css" [content]="content"> </td-highlight>
+    <td-highlight lang="css" [content]="content"></td-highlight>
   `,
 })
 class TdHighlightDynamicCssTestRenderingComponent {
@@ -189,7 +189,7 @@ class TdHighlightDynamicCssTestRenderingComponent {
 
 @Component({
   template: `
-    <td-highlight [lang]="lang"> </td-highlight>
+    <td-highlight [lang]="lang"></td-highlight>
   `,
 })
 class TdHighlightUndefinedLangTestRenderingComponent {
@@ -199,7 +199,7 @@ class TdHighlightUndefinedLangTestRenderingComponent {
 // Use the 4 components below to test event binding requirements of the TdHighlight component.
 @Component({
   template: `
-    <td-highlight (contentReady)="tdHighlightContentIsReady()"> </td-highlight>
+    <td-highlight (contentReady)="tdHighlightContentIsReady()"></td-highlight>
   `,
 })
 class TdHighlightEmptyStaticTestEventsComponent {
@@ -223,7 +223,7 @@ class TdHighlightStaticHtmlTestEventsComponent {
 
 @Component({
   template: `
-    <td-highlight lang="css" [content]="content" (contentReady)="tdHighlightContentIsReady()"> </td-highlight>
+    <td-highlight lang="css" [content]="content" (contentReady)="tdHighlightContentIsReady()"></td-highlight>
   `,
 })
 class TdHighlightDynamicCssTestEventsComponent {
@@ -235,7 +235,7 @@ class TdHighlightDynamicCssTestEventsComponent {
 
 @Component({
   template: `
-    <td-highlight [lang]="lang" (contentReady)="tdHighlightContentIsReady()"> </td-highlight>
+    <td-highlight [lang]="lang" (contentReady)="tdHighlightContentIsReady()"></td-highlight>
   `,
 })
 class TdHighlightUndefinedLangTestEventsComponent {

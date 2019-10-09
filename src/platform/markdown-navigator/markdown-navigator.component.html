@@ -1,5 +1,5 @@
 <ng-container *ngIf="!showEmptyState">
-  <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"> </mat-progress-bar>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar>
 
   <ng-container *ngIf="showHeader">
     <div [style.display]="'flex'">
@@ -42,11 +42,19 @@
   </div>
 
   <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
-    <td-flavored-markdown-loader *ngIf="showTdMarkdownLoader" [url]="url" [httpOptions]="httpOptions" [anchor]="anchor">
-    </td-flavored-markdown-loader>
+    <td-flavored-markdown-loader
+      *ngIf="showTdMarkdownLoader"
+      [url]="url"
+      [httpOptions]="httpOptions"
+      [anchor]="anchor"
+    ></td-flavored-markdown-loader>
 
-    <td-flavored-markdown *ngIf="showTdMarkdown" [content]="markdownString" [hostedUrl]="url" [anchor]="anchor">
-    </td-flavored-markdown>
+    <td-flavored-markdown
+      *ngIf="showTdMarkdown"
+      [content]="markdownString"
+      [hostedUrl]="url"
+      [anchor]="anchor"
+    ></td-flavored-markdown>
   </div>
 </ng-container>
 
