@@ -21,8 +21,7 @@ import { FormControl } from '@angular/forms';
       <ng-template
         [ngTemplateOutlet]="errorMessageTemplate"
         [ngTemplateOutletContext]="{ control: control, errors: control?.errors }"
-      >
-      </ng-template>
+      ></ng-template>
     </div>
   `,
 })

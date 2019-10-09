@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "2.1.0",
+  "version": "3.0.0-beta.1",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
@@ -108,7 +108,6 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-angular": "^8.1.0",
     "@commitlint/travis-cli": "^8.1.0",
-    "@covalent/tools": "2.0.1",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "~2.8.6",
@@ -127,7 +126,7 @@
     "gulp-postcss": "7.0.0",
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "1.6.0",
-    "husky": "^3.0.1",
+    "husky": "^2.7.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^4.0.1",

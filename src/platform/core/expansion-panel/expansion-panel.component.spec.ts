@@ -97,8 +97,12 @@ describe('Component: ExpansionPanel', () => {
 @Component({
   selector: 'td-expansion-panel-basic-test',
   template: `
-    <td-expansion-panel [label]="label" [sublabel]="sublabel" [expand]="expansion1" [disabled]="disabled">
-    </td-expansion-panel>
+    <td-expansion-panel
+      [label]="label"
+      [sublabel]="sublabel"
+      [expand]="expansion1"
+      [disabled]="disabled"
+    ></td-expansion-panel>
   `,
 })
 class TdExpansionPanelBasicTestComponent {

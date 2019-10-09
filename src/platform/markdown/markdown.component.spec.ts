@@ -503,7 +503,7 @@ describe('Component: Markdown', () => {
 // Use the 3 components below to test the rendering requirements of the TdMarkdown component.
 @Component({
   template: `
-    <td-markdown> </td-markdown>
+    <td-markdown></td-markdown>
   `,
 })
 class TdMarkdownEmptyStaticContentTestRenderingComponent {}
@@ -522,7 +522,7 @@ class TdMarkdownStaticContentTestRenderingComponent {}
 
 @Component({
   template: `
-    <td-markdown [content]="content"> </td-markdown>
+    <td-markdown [content]="content"></td-markdown>
   `,
 })
 class TdMarkdownDymanicContentTestRenderingComponent {
@@ -547,7 +547,7 @@ class TdMarkdownSimpleLineBreaksTestRenderingComponent {
 // Use the 3 components below to test event binding requirements of the TdMarkdown component.
 @Component({
   template: `
-    <td-markdown (contentReady)="tdMarkdownContentIsReady()"> </td-markdown>
+    <td-markdown (contentReady)="tdMarkdownContentIsReady()"></td-markdown>
   `,
 })
 class TdMarkdownEmptyStaticContentTestEventsComponent {
@@ -574,7 +574,7 @@ class TdMarkdownStaticContentTestEventsComponent {
 
 @Component({
   template: `
-    <td-markdown [content]="content" (contentReady)="tdMarkdownContentIsReady()"> </td-markdown>
+    <td-markdown [content]="content" (contentReady)="tdMarkdownContentIsReady()"></td-markdown>
   `,
 })
 class TdMarkdownDynamicContentTestEventsComponent {

@@ -12,8 +12,7 @@
           (keyup.enter)="selectAll(!checkBoxAll.checked)"
           (keyup.space)="selectAll(!checkBoxAll.checked)"
           (keydown.space)="blockEvent($event)"
-        >
-        </mat-checkbox>
+        ></mat-checkbox>
       </th>
       <th
         td-data-table-column
@@ -78,8 +77,7 @@
             (mouseup)="enableTextSelection()"
             stopRowClick
             (click)="select(row, $event, fromRow + rowIndex)"
-          >
-          </mat-pseudo-checkbox>
+          ></mat-pseudo-checkbox>
         </td>
         <td
           td-data-table-cell
@@ -89,9 +87,9 @@
           [style.min-width.px]="getColumnWidth(i)"
           [style.max-width.px]="getColumnWidth(i)"
         >
-          <span *ngIf="!getTemplateRef(column.name)">{{
-            column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)
-          }}</span>
+          <span *ngIf="!getTemplateRef(column.name)">
+            {{ column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row) }}
+          </span>
           <ng-template
             *ngIf="getTemplateRef(column.name)"
             [ngTemplateOutlet]="getTemplateRef(column.name)"
@@ -101,8 +99,7 @@
               column: column.name,
               index: rowIndex
             }"
-          >
-          </ng-template>
+          ></ng-template>
         </td>
       </tr>
     </tbody>

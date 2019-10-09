@@ -8,15 +8,13 @@
       [required]="required"
       [attr.name]="name"
       rows="4"
-    >
-    </textarea>
+    ></textarea>
     <mat-hint>{{ hint }}</mat-hint>
     <mat-error>
       <ng-template
         [ngTemplateOutlet]="errorMessageTemplate"
         [ngTemplateOutletContext]="{ control: control, errors: control?.errors }"
-      >
-      </ng-template>
+      ></ng-template>
     </mat-error>
   </mat-form-field>
 </div>
