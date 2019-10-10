@@ -16,7 +16,7 @@
             </mat-form-field>
           </div>
         </form>
-        <button mat-button color="primary" (click)="doCopyToClipboard()" class="text-upper pad-left-sm">
+        <button mat-button color="primary" (click)="doCopyToClipboard()" class="text-upper">
           Copy To Clipboard
         </button>
       </mat-tab>
@@ -83,7 +83,7 @@
         <p>Conversion function that takes a CSV representation of objects and converts them to JSON. The first row in the input must be the object keys. Custom key separator and line separator can be specified. Space indentation size for output JSON can be specified.</p>
         <h4>Input CSV:</h4>
         <td-highlight [content]="csv"></td-highlight>
-        <button mat-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper pad-left-sm pad-top">
+        <button mat-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper">
           Convert CSV
         </button>
         <h4>Output JSON:</h4>
@@ -92,7 +92,7 @@
         <p>Conversion function that takes an array of objects and converts them to CSV format. Custom key and line separators can be specified.</p>
         <h4>Input Objects:</h4>
         <td-highlight [content]="objectsString"></td-highlight>
-        <button mat-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper pad-left-sm pad-top">
+        <button mat-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper">
           Convert Objects
         </button>
         <h4>Output CSV:</h4>
@@ -178,28 +178,28 @@
         <p>Download CSV content to the specified file with .csv extension appended to the provided base file name.</p>
         <h4>CSV:</h4>
         <td-highlight [content]="csv"></td-highlight>
-        <button mat-button color="primary" (click)="doDownloadCSV()" class="text-upper pad-left-sm pad-top pad-bottom">
+        <button mat-button color="primary" (click)="doDownloadCSV()" class="text-upper">
           Download CSV
         </button>
         <h3 class="mat-title pad-top-lg">downloadJSON</h3>
         <p>Download JSON content to the specified file with .json extension appended to the provided base file name.</p>
         <h4>JSON:</h4>
         <td-highlight [content]="json"></td-highlight>
-        <button mat-button color="primary" (click)="doDownloadJSON()" class="text-upper pad-left-sm pad-top pad-bottom">
+        <button mat-button color="primary" (click)="doDownloadJSON()" class="text-upper">
           Download JSON
         </button>
         <h3 class="mat-title pad-top-lg">downloadObjectsToCSV</h3>
         <p>Convert objects to CSV format and download to file with .csv extension appended to the provided base file name. Custom key separator and line separator can be specified.</p>
         <h4>Objects:</h4>
         <td-highlight [content]="objectsString"></td-highlight>
-        <button mat-button color="primary" (click)="doDownloadObjectsToCSV()" class="text-upper pad-left-sm pad-top pad-bottom">
+        <button mat-button color="primary" (click)="doDownloadObjectsToCSV()" class="text-upper">
           Download To CSV
         </button>
         <h3 class="mat-title pad-top-lg">downloadObjectsToJSON</h3>
         <p>Convert objects to JSON format and download to file with .json extension appended to the provided base file name.</p>
         <h4>Objects:</h4>
         <td-highlight [content]="objectsString"></td-highlight>
-        <button mat-button color="primary" (click)="doDownloadObjectsToJSON()" class="text-upper pad-left-sm pad-top pad-bottom">
+        <button mat-button color="primary" (click)="doDownloadObjectsToJSON()" class="text-upper">
           Download To JSON
         </button>
         <h3 class="mat-title pad-top-lg">download</h3>
@@ -218,7 +218,7 @@
             </mat-form-field>
           </div>
         </form>
-        <button mat-button color="primary" (click)="doDownloadFile()" class="text-upper pad-left-sm pad-top">
+        <button mat-button color="primary" (click)="doDownloadFile()" class="text-upper">
           Download
         </button>
       </mat-tab>
