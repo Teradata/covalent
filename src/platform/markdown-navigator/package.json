@@ -27,10 +27,10 @@
     "Christian Memije <christian.memije@teradata.com>"
   ],
   "peerDependencies": {
-    "@angular/core": "^0.0.0-NG",
-    "@angular/common": "^0.0.0-NG",
-    "@angular/material": "^0.0.0-MATERIAL",
-    "@angular/cdk": "^0.0.0-MATERIAL",
+    "@angular/core": "0.0.0-NG",
+    "@angular/common": "0.0.0-NG",
+    "@angular/material": "0.0.0-MATERIAL",
+    "@angular/cdk": "0.0.0-MATERIAL",
     "@covalent/core": "^0.0.0-COVALENT",
     "@covalent/flavored-markdown": "^0.0.0-COVALENT"
   }
