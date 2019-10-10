@@ -1,3 +1,18 @@
+# [3.0.0-beta.1-1](https://github.com/teradata/covalent/compare/v3.0.0-beta.1...v3.0.0-beta.1-1) (2019-10-10)
+
+Quick fix to address install issues with 3.0.0-beta.1, also add support range to ^7.X.X and ^8.X.X
+
+### Bug Fixes
+
+* remove echarts link from overview ([#1510](https://github.com/teradata/covalent/issues/1510)) ([2dc774b](https://github.com/teradata/covalent/commit/2dc774b))
+* **build:** remove schematics as dep from core ([#1514](https://github.com/teradata/covalent/issues/1514)) ([6aeb6a4](https://github.com/teradata/covalent/commit/6aeb6a4))
+* **husky:** downgrade husky ([#1511](https://github.com/teradata/covalent/issues/1511)) ([6cc2406](https://github.com/teradata/covalent/commit/6cc2406))
+
+### Features
+
+* **covalent-tools:** move in covalent-tools configs ([#1512](https://github.com/teradata/covalent/issues/1512)) ([5b8e571](https://github.com/teradata/covalent/commit/5b8e571))
+* change ^X.X.X to ^X.X.X || ^X.X.X on ng versions ([#1509](https://github.com/teradata/covalent/issues/1509)) ([9a6fab4](https://github.com/teradata/covalent/commit/9a6fab4))
+
 # [3.0.0-beta.1](https://github.com/teradata/covalent/compare/2.1.0...3.0.0-beta.1) (2019-10-05)
 
 We announce our first beta in the road for 3.0.0, this is meant to add new components over the next 3 months and also start working towards ivy and angular 9 support.
