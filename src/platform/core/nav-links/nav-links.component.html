@@ -1,0 +1,43 @@
+<mat-nav-list dense *ngIf="links && links.length > 0">
+  <ng-template ngFor [ngForOf]="links" let-linkGroup let-indexGroup="index">
+    <td-expansion-panel
+      *ngIf="linkGroup.name && linkGroup.links.length"
+      class="td-nav-group"
+      [sublabel]="linkGroup.name"
+      [expand]="true"
+    >
+      <mat-divider></mat-divider>
+      <ng-template [ngTemplateOutlet]="links"></ng-template>
+    </td-expansion-panel>
+    <ng-template *ngIf="!linkGroup.name && linkGroup.links.length" [ngTemplateOutlet]="links"></ng-template>
+    <ng-template #links>
+      <ng-template ngFor [ngForOf]="linkGroup.links" let-link let-indexLink="index">
+        <a
+          mat-list-item
+          *ngIf="link.linkTo.href && (link.show === undefined || link.show)"
+          [href]="link.linkTo.href"
+          [target]="link.openInNewTab ? '_blank' : '_self'"
+          id="{{ id }}-{{ indexGroup }}-{{ indexLink }}"
+          class="td-nav-link"
+          (click)="linkClicked(link)"
+        >
+          <mat-icon matListIcon [fontSet]="link.fontSet">{{ link.icon }}</mat-icon>
+          <span matLine>{{ link.label }}</span>
+        </a>
+
+        <a
+          mat-list-item
+          *ngIf="link.linkTo.routerLink && (link.show === undefined || link.show)"
+          [routerLink]="link.linkTo.routerLink"
+          [target]="link.openInNewTab ? '_blank' : null"
+          id="{{ id }}-{{ indexGroup }}-{{ indexLink }}"
+          class="td-nav-link"
+          (click)="linkClicked(link)"
+        >
+          <mat-icon matListIcon [fontSet]="link.fontSet">{{ link.icon }}</mat-icon>
+          <span matLine>{{ link.label }}</span>
+        </a>
+      </ng-template>
+    </ng-template>
+  </ng-template>
+</mat-nav-list>
