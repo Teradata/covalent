@@ -1,3 +1,12 @@
+# [3.0.0-beta.1-2](https://github.com/teradata/covalent/compare/v3.0.0-beta.1-1...v3.0.0-beta.1-2) (2019-10-11)
+
+
+### Bug Fixes
+
+* **text-editor:** import css properly ([#1517](https://github.com/teradata/covalent/issues/1517)) ([8032866](https://github.com/teradata/covalent/commit/8032866))
+
+
+
 # [3.0.0-beta.1-1](https://github.com/teradata/covalent/compare/v3.0.0-beta.1...v3.0.0-beta.1-1) (2019-10-10)
 
 Quick fix to address install issues with 3.0.0-beta.1, also add support range to ^7.X.X and ^8.X.X
