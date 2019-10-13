@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { componentDetails } from '../../../../utilities/components';
+import { componentDetails } from '../../../components/components';
 
 @Component({
   selector: 'app-content-api',

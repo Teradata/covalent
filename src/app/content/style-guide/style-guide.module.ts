@@ -38,8 +38,7 @@ import {
   CovalentMessageModule,
 } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
-
-import { ToolbarModule } from '../../components/toolbar/toolbar.module';
+import { ToolbarModule } from 'app/components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [

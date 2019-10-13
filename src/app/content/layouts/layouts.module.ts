@@ -26,8 +26,7 @@ import {
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
-
-import { ToolbarModule } from '../../components/toolbar/toolbar.module';
+import { ToolbarModule } from 'app/components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [

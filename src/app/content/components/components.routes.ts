@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { ComponentOverviewComponent } from '../shared/component-overview/component-overview.component';
+import { ComponentOverviewComponent } from '../../components/shared/component-overview/component-overview.component';
 
 const routes: Routes = [
   {

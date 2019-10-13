@@ -1,4 +1,4 @@
-import { componentDetails } from '../components/components/components';
+import { componentDetails } from '../content/components/components';
 import { DetailsWrapperComponent } from 'app/components/shared/component-details/component-details-wrapper/content-details.component';
 import { ComponentHeroComponent } from 'app/components/shared/component-details/component-hero/component-hero.component';
 import { TdReadmeLoaderComponent } from 'app/documentation-tools/readme-loader/readme-loader.component';

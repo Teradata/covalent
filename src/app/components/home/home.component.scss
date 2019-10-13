@@ -11,6 +11,7 @@
 }
 .mat-icon-svg-xxl {
   width: 90%;
+  max-width: 352px;
   height: 90%;
 }
 .mat-icon-ux {
@@ -31,4 +32,13 @@
   .mat-icon-xl {
     font-size: 160px;
   }
+}
+
+.banner {
+  height: 528px;
+
+  background-image: url('assets/images/banner-bgc.svg');
+  background-size: 109%;
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { setComponentRoutes } from 'app/components/components/components';
+import { setComponentRoutes } from 'app/content/components/components';
 import { MarkdownDemoComponent } from './markdown.component';
 
 const routes: Routes = setComponentRoutes({

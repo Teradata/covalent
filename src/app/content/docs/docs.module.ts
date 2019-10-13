@@ -30,8 +30,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CovalentLayoutModule, CovalentMediaModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
-import { ToolbarModule } from '../../components/toolbar/toolbar.module';
-import { SidenavContentModule } from '../shared/sidenav-content/sidenav-content.module';
+import { SidenavContentModule } from '../../components/shared/sidenav-content/sidenav-content.module';
+import { ToolbarModule } from 'app/components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { ComponentOverviewModule } from '../shared/component-overview/component-overview.module';
+import { ComponentOverviewModule } from '../../components/shared/component-overview/component-overview.module';
+import { utilitiesRoutes } from './utilities.routes';
 
 @NgModule({
-  imports: [ComponentOverviewModule],
+  imports: [ComponentOverviewModule, utilitiesRoutes],
 })
-export class ComponentsModule {}
+export class UtilitiesModule {}

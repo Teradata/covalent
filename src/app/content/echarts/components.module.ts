@@ -21,14 +21,12 @@ import { CovalentLoadingModule } from '@covalent/core/loading';
 import { CovalentMediaModule } from '@covalent/core/media';
 import { CovalentMenuModule } from '@covalent/core/menu';
 
-import { ToolbarModule } from '../toolbar/toolbar.module';
-
 import { GettingStartedComponent } from './getting-started/getting-started.component';
 import { ChartComponent } from './chart/chart.component';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
-import { SidenavContentModule } from '../shared/sidenav-content/sidenav-content.module';
-import { ComponentOverviewModule } from '../shared/component-overview/component-overview.module';
+import { SidenavContentModule } from '../../components/shared/sidenav-content/sidenav-content.module';
+import { ComponentOverviewModule } from '../../components/shared/component-overview/component-overview.module';
 
 import { moduleRoutes } from './components.routes';
 
@@ -55,7 +53,6 @@ import { moduleRoutes } from './components.routes';
     CovalentLoadingModule,
     CovalentMediaModule,
     CovalentMenuModule,
-    ToolbarModule,
     DocumentationToolsModule,
     moduleRoutes,
     SidenavContentModule,

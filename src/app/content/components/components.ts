@@ -4,9 +4,9 @@ export const componentDetails: any = [
   {
     name: 'Breadcrumbs',
     id: 'breadcrumbs',
-    description: 'Breadcrumbs description blah blah',
+    description: 'Responsive navigation indicators',
     apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    overviewDocUrl: 'platform/core/breadcrumbs/README.md',
+    overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
     // componentDoc: url to component description,

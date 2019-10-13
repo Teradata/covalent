@@ -87,6 +87,10 @@ $theme: mat-light-theme($primary, $accent, $warn);
   }
 }
 
+body .mat-card {
+  border-radius: 8px;
+}
+
 // Dark theme
 .theme-dark {
   $primary-dark: mat-palette($td-slate, 800, 200, 900);
@@ -189,6 +193,13 @@ mat-nav-list {
 // Expansion panels
 .home .theme-dark .td-expansion-panel {
   background-color: mat-color($td-slate, 800);
+}
+
+td-layout-nav {
+  mat-toolbar {
+    z-index: 2;
+    @include mat-elevation(3);
+  }
 }
 
 // Active top nav

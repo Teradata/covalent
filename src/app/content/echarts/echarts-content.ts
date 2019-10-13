@@ -1,7 +1,4 @@
-import { Route } from '@angular/router';
-import { DetailsWrapperComponent } from '../shared/component-details/component-details-wrapper/content-details.component';
-import { ComponentHeroComponent } from '../shared/component-details/component-hero/component-hero.component';
-import { TdReadmeLoaderComponent } from 'app/documentation-tools/readme-loader/readme-loader.component';
+import { routeBuilder, IScopedRouteBuilder } from 'app/utilities/route-builder';
 
 export const echartsContentDetails: any = [
   {
@@ -22,7 +19,7 @@ export const echartsContentDetails: any = [
     apiDocUrl: 'platform/core/breadcrumbs/README.md',
     showExampleTab: true,
     showOverviewDemo: true,
-    overviewDocUrl: 'platform/echarts/bar/README.md',
+    overviewDocUrl: '',
     // overViewDemo: wether to show demo on overview,
     // module: []
   },
@@ -194,28 +191,4 @@ export const echartsContentDetails: any = [
   },
 ];
 
-export function setEchartRoutes(someObject: any): Route[] {
-  const currentComponent: any = echartsContentDetails.find((component) => component.id === someObject.id);
-
-  return [
-    {
-      path: '',
-      component: DetailsWrapperComponent,
-      data: currentComponent,
-      children: [
-        { path: '', redirectTo: 'overview' },
-        {
-          path: 'overview',
-          component: ComponentHeroComponent,
-          data: { resourceUrl: currentComponent.overviewDocUrl },
-          children: [{ path: '', component: someObject.overviewDemoComponent }],
-        },
-        {
-          path: 'api',
-          component: TdReadmeLoaderComponent,
-          data: { resourceUrl: currentComponent.apiDocUrl },
-        },
-      ],
-    },
-  ];
-}
+export const setEchartRoutes: IScopedRouteBuilder = routeBuilder(echartsContentDetails);
