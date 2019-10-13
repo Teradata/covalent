@@ -13,8 +13,6 @@ import localeEs from '@angular/common/locales/es';
 registerLocaleData(localeEs);
 
 import { DocsAppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -40,14 +38,17 @@ import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
-import { ToolbarModule } from './components/toolbar/toolbar.module';
+import { SidenavContentModule } from './components/shared/sidenav-content/sidenav-content.module';
 
 import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
+import { ContentContainerModule } from './components/content-container/content-container.module';
+import { HomeComponent } from './components/home/home.component';
+import { ToolbarModule } from './components/toolbar/toolbar.module';
 
 @NgModule({
-  declarations: [DocsAppComponent, HomeComponent, TemplatesComponent], // directives, components, and pipes owned by this NgModule
+  declarations: [DocsAppComponent, HomeComponent], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserAnimationsModule,
     CommonModule,
@@ -84,6 +85,8 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
         deps: [HttpClient],
       },
     }),
+    SidenavContentModule,
+    ContentContainerModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [

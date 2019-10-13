@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
-import { setComponentRoutes } from 'app/components/components/components';
+import { setComponentRoutes } from 'app/content/components/components';
 import { TabSelectDemoComponent } from './tab-select.component';
 
 const routes: Routes = setComponentRoutes({

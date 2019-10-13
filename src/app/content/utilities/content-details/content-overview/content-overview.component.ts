@@ -1,32 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ComponentPortal } from '@angular/cdk/portal';
-
-import { HelpDemoComponent } from 'app/components/components/component-demos/help/help.component';
-import { SidesheetDemoComponent } from 'app/components/components/component-demos/sidesheet/sidesheet.component';
-import { DialogsDemoComponent } from 'app/components/components/component-demos/dialogs/dialogs.component';
-import { componentDetails } from 'app/utilities/components';
-
-// const componentsToMap: any = [
-//   ['breadcrumbs', BreadcrumbDemoComponent],
-//   ['sidesheet', SidesheetDemoComponent],
-//   ['help', HelpDemoComponent],
-//   ['json-formatter', JsonFormatterDemoComponent],
-//   ['loading', LoadingDemoComponent],
-//   ['search', SearchDemoComponent],
-//   ['file-input', FileInputDemoComponent],
-//   ['messages-alerts', MessageDemoComponent],
-//   ['tab-select', TabSelectDemoComponent],
-//   ['simple-dialogs', DialogsDemoComponent],
-//   ['dynamic-forms', DynamicFormsDemoComponent],
-//   ['chips-autocomplete', ChipsDemoComponent],
-//   ['markdown-parser', MarkdownDemoComponent],
-//   ['flavored-markdown-parser', FlavoredMarkdownDemoComponent],
-//   ['syntax-highlight', HighlightDemoComponent],
-//   ['code-editor', CodeEditorDemoComponent],
-//   ['markdown-editor', MarkdownDemoComponent],
-// ];
-// const componentMap: Map<any, any> = new Map(componentsToMap);
+import { componentDetails } from 'app/content/components/components';
 
 @Component({
   selector: 'app-content-overview',

@@ -12,6 +12,7 @@ import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { setEchartRoutes } from '../../echarts-content';
 import { TypesCombinationComponent } from './combination.component';
+import { DocumentationToolsModule } from 'app/documentation-tools';
 
 const routes: Routes = setEchartRoutes({
   overviewDemoComponent: TypesCombinationComponent,
@@ -33,6 +34,7 @@ const routes: Routes = setEchartRoutes({
     CovalentToolboxEchartsModule,
     // Docs
     ComponentDetailsModule,
+    DocumentationToolsModule,
     // Routes
     RouterModule.forChild(routes),
   ],

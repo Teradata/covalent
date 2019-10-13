@@ -1,0 +1,94 @@
+{
+  "description": "Tools to help create, request, format, and animate ",
+  "components": [
+    {
+      "title": "",
+      "items": [
+        {
+          "color": "orange-A700",
+          "icon": "style",
+          "route": "breadcrumbs",
+          "title": "Utility Styles",
+          "description": "Sizing, text, paddings & margins"
+        },
+        {
+          "color": "blue-A700",
+          "icon": "http",
+          "route": "http",
+          "title": "Http Service",
+          "description": "Service provided with methods that extend the @angular [HttpClient] service and provide an additional layer of interceptor functionality."
+        }
+      ]
+    },
+    {
+      "title": "Pipes",
+      "items": [
+        {
+          "color": "pink-A700",
+          "icon": "loop",
+          "route": "file-input",
+          "title": "Digits Conversion"
+        },
+        {
+          "color": "pink-A700",
+          "icon": "loop",
+          "route": "message",
+          "title": "Byte Conversion"
+        },
+        {
+          "color": "pink-A700",
+          "icon": "loop",
+          "route": "loading",
+          "title": "Decimal Bytes Conversion"
+        },
+        {
+          "color": "pink-A700",
+          "icon": "access_time",
+          "route": "search",
+          "title": "Time Ago"
+        },
+        {
+          "color": "pink-A700",
+          "icon": "access_time",
+          "route": "paging",
+          "title": "Time Until"
+        },
+        {
+          "color": "pink-A700",
+          "icon": "flip",
+          "route": "paging",
+          "title": "Truncate"
+        }
+      ]
+    },
+    {
+      "title": "Animations",
+      "items": [
+        {
+          "color": "orange-A700",
+          "icon": "rotate_90_degrees_ccw",
+          "route": "breadcrumbs",
+          "title": "Rotate"
+        },
+        {
+          "color": "orange-A700",
+          "icon": "vertical_align_bottom",
+          "route": "tab-select",
+          "title": "Collapse"
+        },
+        {
+          "color": "orange-A700",
+          "icon": "more_horiz",
+          "route": "breadcrumbs",
+          "title": "Fade In/Out"
+        },
+        {
+          "color": "orange-A700",
+          "icon": "wb_iridescent",
+          "route": "breadcrumbs",
+          "title": "Attention Seekers"
+        }
+      ]
+    }
+  ]
+}

@@ -85,8 +85,6 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 
 import { DocumentationToolsModule } from '../../../documentation-tools';
 
-import { ToolbarModule } from '../../toolbar/toolbar.module';
-
 import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component';
 import { HelpDemoComponent } from './help/help.component';
 import { CovalentHelpModule } from '@covalent/experimental/help';
@@ -180,7 +178,6 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     CovalentTabSelectModule,
     CovalentHelpModule,
     TranslateModule,
-    ToolbarModule,
   ],
   // entryComponents: [TdTestDynamicComponent],
 })

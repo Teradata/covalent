@@ -1,4 +1,4 @@
-import { CovalentExpansionPanelModule } from './../../../platform/core/expansion-panel/expansion-panel.module';
+import { CovalentExpansionPanelModule } from '../../../platform/core/expansion-panel/expansion-panel.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
