@@ -20,7 +20,6 @@ import {
   TdDynamicElementDirective,
   TdDynamicFormsErrorTemplate,
 } from './dynamic-element.component';
-import { DYNAMIC_FORMS_PROVIDER } from './services/dynamic-forms.service';
 
 import { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicFileInputComponent } from './dynamic-elements/dynamic-file-input/dynamic-file-input.component';
@@ -66,7 +65,6 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     CovalentFileModule,
   ],
   exports: [TD_DYNAMIC_FORMS, TD_DYNAMIC_FORMS_ENTRY_COMPONENTS],
-  providers: [DYNAMIC_FORMS_PROVIDER],
   entryComponents: [TD_DYNAMIC_FORMS_ENTRY_COMPONENTS],
 })
 export class CovalentDynamicFormsModule {}

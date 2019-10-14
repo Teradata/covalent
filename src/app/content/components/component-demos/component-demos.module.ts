@@ -86,9 +86,11 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 import { DocumentationToolsModule } from '../../../documentation-tools';
 
 import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component';
-import { HelpDemoComponent } from './help/help.component';
-import { CovalentHelpModule } from '@covalent/experimental/help';
+import { MarkdownNavigatorDemoComponent } from './markdown-navigator/markdown-navigator.component';
+import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
+import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
+import { FunctionsDemoComponent } from './functions/functions.component';
 
 @NgModule({
   declarations: [
@@ -110,15 +112,17 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     DynamicFormsDemoComponent,
     CodeEditorDemoComponent,
     TextEditorDemoComponent,
+    FunctionsDemoComponent,
     NotificationsDemoComponent,
     BreadcrumbDemoComponent,
     FlavoredMarkdownDemoComponent,
     TabSelectDemoComponent,
-    HelpDemoComponent,
+    MarkdownNavigatorDemoComponent,
     SidesheetDemoComponent,
     // External Dependencies
     NgxTranslateDemoComponent,
     TdTestDynamicComponent,
+    DraggableDemoComponent,
   ],
   imports: [
     /** Angular Modules */
@@ -176,9 +180,9 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     CovalentSidesheetModule,
     DocumentationToolsModule,
     CovalentTabSelectModule,
-    CovalentHelpModule,
+    CovalentMarkdownNavigatorModule,
     TranslateModule,
   ],
-  // entryComponents: [TdTestDynamicComponent],
+  entryComponents: [TdTestDynamicComponent, DraggableDemoComponent],
 })
 export class ComponentDemosModule {}

@@ -83,7 +83,7 @@ export class DocsComponent {
       title: 'Building',
     },
     {
-      description: 'Access 750+ Material Design icons',
+      description: 'Access 1000+ Material Design icons',
       icon: 'photo_size_select_actual',
       route: 'icons',
       title: 'SVG Icon Sets',

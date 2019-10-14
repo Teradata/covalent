@@ -20,8 +20,7 @@
             *ngIf="_chipTemplate?.templateRef"
             [ngTemplateOutlet]="_chipTemplate?.templateRef"
             [ngTemplateOutletContext]="{ chip: chip }"
-          >
-          </ng-template>
+          ></ng-template>
         </span>
         <mat-icon *ngIf="canRemoveChip" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
           cancel
@@ -60,8 +59,7 @@
           *ngIf="_autocompleteOptionTemplate?.templateRef"
           [ngTemplateOutlet]="_autocompleteOptionTemplate?.templateRef"
           [ngTemplateOutletContext]="{ option: item }"
-        >
-        </ng-template>
+        ></ng-template>
       </mat-option>
     </ng-template>
   </mat-autocomplete>

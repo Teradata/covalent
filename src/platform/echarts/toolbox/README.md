@@ -17,7 +17,7 @@ There are also lots of property inputs like:
 + show?: boolean
   + Show or hide the toolbox.
 
-And so many more.. for more info [click here](https://ecomfe.github.io/echarts-doc/public/en/option.html#toolbox)
+And so many more.. for more info [click here](https://echarts.apache.org/en/option.html#toolbox)
 
 ## Setup
 

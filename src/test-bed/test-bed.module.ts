@@ -11,6 +11,8 @@ import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
 
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
+import { TdLoadingMaskModule } from '@covalent/experimental/loading-mask';
+import { CovalentNavLinksModule } from '@covalent/core/nav-links';
 
 @NgModule({
   declarations: [TestBedComponent, MainComponent],
@@ -24,6 +26,8 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     MatToolbarModule,
     appRoutes,
     /** Experimental Modules */
+    TdLoadingMaskModule,
+    CovalentNavLinksModule,
   ], // modules needed to run this module
   providers: [appRoutingProviders],
   bootstrap: [TestBedComponent],

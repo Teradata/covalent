@@ -26,6 +26,7 @@ import { CovalentDataTableModule } from '@covalent/core/data-table';
 import { CovalentHighlightModule } from '@covalent/highlight';
 
 import { TypesBarComponent } from './bar/bar.component';
+import { TypesPieComponent } from './pie/pie.component';
 import { TypesLineComponent } from './line/line.component';
 import { TypesScatterComponent } from './scatter/scatter.component';
 import { TypesCombinationComponent } from './combination/combination.component';
@@ -37,6 +38,7 @@ import { TypesTreemapComponent } from './treemap/treemap.component';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentLineEchartsModule } from '@covalent/echarts/line';
 import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
+import { CovalentPieEchartsModule } from '@covalent/echarts/pie';
 import { CovalentScatterEchartsModule } from '@covalent/echarts/scatter';
 import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
 import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
@@ -78,6 +80,7 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
     CovalentBaseEchartsModule,
     CovalentLineEchartsModule,
     CovalentBarEchartsModule,
+    CovalentPieEchartsModule,
     CovalentScatterEchartsModule,
     CovalentTooltipEchartsModule,
     CovalentTreeEchartsModule,
@@ -90,6 +93,7 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
   ],
   declarations: [
     TypesBarComponent,
+    TypesPieComponent,
     TypesLineComponent,
     TypesScatterComponent,
     TypesCombinationComponent,

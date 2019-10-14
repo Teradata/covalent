@@ -2,5 +2,36 @@
 
 <h4>Sandbox Links:</h4>
 
-<div class="pad"></div>
-<div class="pad"></div>
+<div class="pad td-skeleton-outer-container">
+  <div class="inner">
+    <td-loading-mask
+      [animated]="true"
+      [borderRadius]="'3px'"
+      [width]="'180px'"
+      class="push-bottom-sm fast"
+    ></td-loading-mask>
+    <td-loading-mask
+      [animated]="true"
+      [height]="'14px'"
+      [borderRadius]="'3px'"
+      [width]="'100px'"
+      class="push-bottom-sm fast"
+    ></td-loading-mask>
+    <td-loading-mask
+      [animated]="true"
+      [height]="'14px'"
+      [borderRadius]="'3px'"
+      [width]="'80px'"
+      class="push-bottom-md fast"
+    ></td-loading-mask>
+  </div>
+</div>
+
+<td-nav-links
+  [links]="[
+    {
+      name: 'test',
+      links: [{ label: 'test1', icon: 'apps', linkTo: { href: '/' } }, { label: 'test2', linkTo: { href: '/' } }]
+    }
+  ]"
+></td-nav-links>

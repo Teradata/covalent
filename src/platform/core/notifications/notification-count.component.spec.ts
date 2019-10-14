@@ -224,7 +224,7 @@ describe('Component: NotificationCount', () => {
 @Component({
   selector: 'td-notification-count-basic-test',
   template: `
-    <td-notification-count color="color" [notifications]="notifications"> </td-notification-count>
+    <td-notification-count color="color" [notifications]="notifications"></td-notification-count>
   `,
 })
 class TdNotificationCountBasicTestComponent {
@@ -245,8 +245,11 @@ class TdNotificationCountContentTestComponent {}
 @Component({
   selector: 'td-notification-count-position-test',
   template: `
-    <td-notification-count [positionX]="positionX" [positionY]="positionY" [notifications]="notifications">
-    </td-notification-count>
+    <td-notification-count
+      [positionX]="positionX"
+      [positionY]="positionY"
+      [notifications]="notifications"
+    ></td-notification-count>
   `,
 })
 class TdNotificationCountPositionTestComponent {
@@ -272,7 +275,7 @@ class TdNotificationCountPositionContentTestComponent {
 @Component({
   selector: 'td-notification-count-limit-test',
   template: `
-    <td-notification-count [notifications]="notifications" [limit]="limit"> </td-notification-count>
+    <td-notification-count [notifications]="notifications" [limit]="limit"></td-notification-count>
   `,
 })
 class TdNotificationCountLimitTestComponent {

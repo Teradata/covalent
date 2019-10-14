@@ -2,7 +2,8 @@
 
 <h2>Covalent Paging Component Combat Training Grounds</h2>
 <td-paging-bar #pagingBar [pageLinkCount]="5" [pageSize]="100" [total]="1345">
-  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+  {{pagingBar.range}}
+  <span hide-xs>of {{pagingBar.total}}</span>
 </td-paging-bar>
 
 <h2>Covalent Virtual Scroll Component Combat Training Grounds</h2>
@@ -42,11 +43,11 @@
   <mat-card>
     <mat-card-title>Fade Card</mat-card-title>
     <mat-card-content>Fade in or out with a click!</mat-card-content>
-    <mat-card-actions
-      ><button mat-raised-button color="primary" (click)="triggerState = !triggerState">
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="triggerState = !triggerState">
         Fade Out
-      </button></mat-card-actions
-    >
+      </button>
+    </mat-card-actions>
   </mat-card>
 </div>
 
@@ -71,8 +72,7 @@
   placeholder="Enter autocomplete strings"
   (inputChange)="filterStrings($event)"
   requireMatch
->
-</td-chips>
+></td-chips>
 
 <h2>Covalent Data Table Component Combat Training</h2>
 <td-data-table [data]="basicData" [columns]="configWidthColumns">
@@ -100,12 +100,14 @@
 
 <h2>Covalent File Input Component Combat Training</h2>
 <td-file-input [(ngModel)]="files" accept=".pdf" multiple>
-  <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
+  <mat-icon>attach_file</mat-icon>
+  <span>Choose a file...</span>
 </td-file-input>
 
 <h2>Covalent File Upload Button Component Combat Training</h2>
 <td-file-upload #singleFileUpload [(ngModel)]="file">
-  <mat-icon>file_upload</mat-icon><span>{{ singleFileUpload.value?.name }}</span>
+  <mat-icon>file_upload</mat-icon>
+  <span>{{ singleFileUpload.value?.name }}</span>
   <ng-template td-file-input-label>
     <mat-icon>attach_file</mat-icon>
     <span>
@@ -115,7 +117,7 @@
 </td-file-upload>
 
 <h2>Covalent json formatter directive Combat Training</h2>
-<td-json-formatter [data]="object" [levelsOpen]="1"> </td-json-formatter>
+<td-json-formatter [data]="object" [levelsOpen]="1"></td-json-formatter>
 
 <h2>Covalent Layout Combat Training</h2>
 <td-layout [opened]="true">

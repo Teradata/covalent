@@ -9,7 +9,7 @@
   <ng-template let-tabOption ngFor [ngForOf]="tabOptions">
     <mat-tab [disabled]="tabOption.disabled || disabled">
       <ng-template matTabLabel>
-        <ng-template *ngIf="tabOption.content" [cdkPortalOutlet]="tabOption.content"> </ng-template>
+        <ng-template *ngIf="tabOption.content" [cdkPortalOutlet]="tabOption.content"></ng-template>
       </ng-template>
     </mat-tab>
   </ng-template>

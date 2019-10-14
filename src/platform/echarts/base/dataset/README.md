@@ -21,7 +21,7 @@ There are also has several property inputs:s
 + sourceHeader?: boolean
   + Whether the first row/column of dataset.source represents dimension names.
 
-For more info [click here](https://ecomfe.github.io/echarts-doc/public/en/option.html#dataset)
+For more info [click here](https://echarts.apache.org/en/option.html#dataset)
 
 ## Setup
 

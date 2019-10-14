@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 
 import { filter, pairwise } from 'rxjs/operators';
-
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class RouterPathService {
   private static _previousRoute: string = '/';
   constructor(private _router: Router) {

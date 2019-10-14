@@ -3,6 +3,7 @@ import { Component, HostBinding } from '@angular/core';
 import { slideInUpAnimation } from '../../../../app.animations';
 
 import { TdDialogService } from '../../../../../platform/core';
+import { DraggableDemoComponent } from './draggable-demo/draggable-demo.component';
 
 @Component({
   selector: 'dialogs-demo',
@@ -36,6 +37,11 @@ export class DialogsDemoComponent {
                   Opens a modal dialog containing the given component.`,
       name: 'open',
       type: 'function<T>(component: ComponentType<T>, config: MatDialogConfig): MatDialogRef<T>',
+    },
+    {
+      description: 'Opens a draggable dialog containing the given component',
+      name: 'openDraggable',
+      type: 'function<T>(IDraggableConfig<T>): MatDialogRef<T>',
     },
     {
       description: `Wrapper function over the closeAll() method in MatDialog.
@@ -72,6 +78,17 @@ export class DialogsDemoComponent {
       value: 'Populated value',
       cancelButton: 'Cancel',
       acceptButton: 'Ok',
+    });
+  }
+
+  openDraggable(): void {
+    this._dialogService.openDraggable({
+      component: DraggableDemoComponent,
+      config: { height: '300px' },
+      // CSS selectors of element(s) inside the component meant to be drag handle(s)
+      dragHandleSelectors: ['.drag-handle'],
+      // Class that will be added to the component signifying drag-ability
+      draggableClass: 'custom-class',
     });
   }
 }

@@ -1,0 +1,23 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &.td-draggable-markdown-navigator-window {
+    .td-markdown-navigator-window-toolbar {
+      cursor: move;
+    }
+  }
+}
+
+.td-markdown-navigator-window-title {
+  margin-bottom: 0;
+}
+
+::ng-deep {
+  .td-draggable-markdown-navigator-window-wrapper {
+    > .mat-dialog-container {
+      padding: 0;
+    }
+  }
+}

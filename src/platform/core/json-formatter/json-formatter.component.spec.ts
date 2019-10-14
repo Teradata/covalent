@@ -203,7 +203,7 @@ describe('Component: JsonFormatter', () => {
 @Component({
   selector: 'td-json-formatter-basic-test',
   template: `
-    <td-json-formatter [data]="data" [levelsOpen]="levelsOpen"> </td-json-formatter>
+    <td-json-formatter [data]="data" [levelsOpen]="levelsOpen"></td-json-formatter>
   `,
 })
 class TdJsonFormatterBasicTestComponent {

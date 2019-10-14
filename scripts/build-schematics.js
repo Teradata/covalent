@@ -7,20 +7,22 @@ var chalk = require('chalk');
 var gulp = require('gulp');
 const config = require('../build.conf');
 
-const schematicsDir = path.join('src/platform/experimental', 'schematics');
+const schematicsDir = path.join('src/platform/core', 'schematics');
 
 const schematicsGlobs = [
   path.join(schematicsDir, '**/+(data|files)/**/*'),
   path.join(schematicsDir, '**/+(schema|collection|migration).json'),
 ];
 
-gulp.task('compile-schematics-ts', () => {
+gulp.task('compile-schematics', () => {
   return tsCompile(['-p', path.join(schematicsDir, 'tsconfig.json')]);
 });
 
-gulp.task('build-schematics-assets', gulp.series('compile-schematics-ts'), () => {
-  return gulp.src(schematicsGlobs).pipe(gulp.dest(path.join(config.deployed, 'experimental/schematics')));
+gulp.task('copy-schematics-files', () => {
+  return gulp.src(schematicsGlobs).pipe(gulp.dest(path.join(config.deployed, 'core/schematics')));
 });
+
+gulp.task('build-schematics', gulp.series('compile-schematics', 'copy-schematics-files'));
 
 function tsCompile(flags) {
   return new Promise((resolve, reject) => {

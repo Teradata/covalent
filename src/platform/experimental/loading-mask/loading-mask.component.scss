@@ -1,0 +1,53 @@
+$light-shade: rgba(250, 250, 250, 0.098);
+$dark-shade: rgba(0, 0, 0, 0.057);
+$animated-width: 130%;
+
+%hw-accel {
+  transform: translateZ(0);
+}
+
+%td-lm-base {
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.051);
+  position: relative;
+  overflow: hidden;
+  height: 16px;
+  width: 90px;
+}
+
+%td-lm-animation {
+  @extend %hw-accel;
+  & span {
+    height: 100%;
+    width: $animated-width;
+    background: linear-gradient(to right, $light-shade, $dark-shade 45%);
+    display: block;
+    position: absolute;
+    left: -#{$animated-width};
+    animation-duration: 1.9s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: loading;
+  }
+}
+
+@keyframes loading {
+  0% {
+    left: -#{$animated-width};
+  }
+  35%,
+  100% {
+    left: #{$animated-width};
+  }
+}
+
+:host {
+  @extend %td-lm-base;
+  &.td-loading-mask-animated {
+    @extend %td-lm-animation;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": "./",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "../../../../deploy/platform/core/schematics",
+    "lib": ["es2017", "dom"],
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": ["./../../../../node_modules/@types"],
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode": false,
+    "pretty": true,
+    "importHelpers": true
+  },
+  "include": ["**/*"],
+  "exclude": ["**/*.spec.ts", "**/files/**/*"]
+}
