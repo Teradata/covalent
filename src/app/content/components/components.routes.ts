@@ -16,17 +16,15 @@ const routes: Routes = [
         loadChildren: () => import('./component-demos/markdown/markdown.module').then((m) => m.MarkdownDemoModule),
       },
       {
-        path: 'highlight',
-        loadChildren: () => import('./component-demos/highlight/highlight.module').then((m) => m.HighlightDemoModule),
-      },
-      {
-        path: 'json-formatter',
+        path: 'markdown-navigator',
         loadChildren: () =>
-          import('./component-demos/json-formatter/json-formatter.module').then((m) => m.JsonFormatterDemoModule),
+          import('./component-demos/markdown-navigator/markdown-navigator.module').then(
+            (m) => m.MarkdownNavigatorDemoModule,
+          ),
       },
       {
-        path: 'loading',
-        loadChildren: () => import('./component-demos/loading/loading.module').then((m) => m.LoadingDemoModule),
+        path: 'message',
+        loadChildren: () => import('./component-demos/message/message.module').then((m) => m.MessageDemoModule),
       },
     ],
   },

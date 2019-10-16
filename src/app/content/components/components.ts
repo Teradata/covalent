@@ -127,6 +127,42 @@ export const componentDetails: any = [
     category: editors.name,
     route: '/components/text-editor',
   },
+  {
+    name: 'Markdown Parser',
+    id: 'markdown-parser',
+    description: 'Parse and render markdown code',
+    apiDocUrl: 'platform/markdown/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: '', //Need to create new category as Markdown
+    route: '/components/markdown-parser',
+  },
+  {
+    name: 'Markdown Navigator',
+    id: 'markdown-navigator',
+    description: 'A component for rendering and navigating through markdown, such as documentation.',
+    apiDocUrl: 'platform/markdown-navigator/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: '', //Need to create new category as Markdown
+    route: '/components/markdown-navigator',
+  },
+  {
+    name: 'Message',
+    id: 'message',
+    description: 'Info, warning & alert messages',
+    apiDocUrl: 'platform/core/message/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: buttons.name,
+    route: '/components/message',
+  },
 ];
 
 export const setComponentRoutes: IScopedRouteBuilder = routeBuilder(componentDetails);
