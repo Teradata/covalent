@@ -12,7 +12,7 @@ import {
   downloadFile,
   formatJSON,
   readFile,
-} from '../../../../platform/core';
+} from '../../../../../platform/core';
 
 @Component({
   selector: 'td-functions',

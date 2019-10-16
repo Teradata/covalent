@@ -5,6 +5,18 @@
   padding: 16px 16px 20px;
   box-sizing: border-box;
   box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+  .component-card-body {
+    height: 40px;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+  }
   &.no-description {
     height: 104px;
     padding: 20px 16px 16px;

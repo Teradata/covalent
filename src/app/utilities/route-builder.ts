@@ -39,8 +39,25 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
             component: TdReadmeLoaderComponent,
             data: { resourceUrl: componentMatch.apiDocUrl },
           },
+          {
+            path: 'examples',
+            component: TdReadmeLoaderComponent,
+            data: { resourceUrl: componentMatch.apiDocUrl },
+          },
         ],
       },
     ];
   };
 };
+
+export function docsRouteBuilder(array) {
+  const docsChildrenRoutes = array.map((route) => {
+    return {
+      path: route.route,
+      component: TdReadmeLoaderComponent,
+      data: { resourceUrl: route.docUrl },
+    };
+  });
+
+  return docsChildrenRoutes;
+}

@@ -1,5 +1,16 @@
 import { routeBuilder, IScopedRouteBuilder } from '../../utilities/route-builder';
 
+export const componentRouteCategories = [
+  { name: '', nested: false },
+  { name: 'Layout', nested: false },
+  { name: 'Buttons & Indicators', nested: false },
+  { name: 'Navigation', nested: false },
+  { name: 'Dialogs', nested: false },
+  { name: 'Forms', nested: false },
+];
+
+const [root, layout, buttons, nav, dialogs, forms] = componentRouteCategories;
+
 export const componentDetails: any = [
   {
     name: 'Breadcrumbs',
@@ -9,186 +20,23 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
+    icon: '',
+    category: buttons.name,
+    route: '/components/breadcrumbs',
+    demos: [],
   },
   {
-    name: 'Sidesheet Content',
-    id: 'sidesheet',
-    description: 'Sidesheet description blah blah',
+    name: 'Loading Mask',
+    id: 'loading-mask',
+    description:
+      'Animated mask for multiple uses on loading states asoudhasiudhausihdiasuhdiuashdiu suad asiud haisud aisu',
     apiDocUrl: 'platform/core/breadcrumbs/README.md',
+    overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Draggable Help',
-    id: 'help',
-    description: 'A component for rendering and navigating through documentation.',
-    apiDocUrl: 'platform/experimental/help/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'JSON Formatter',
-    id: 'json-formatter',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Loading',
-    id: 'loading',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Search',
-    id: 'search',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'File Input',
-    id: 'file-input',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Messages & Alerts',
-    id: 'messages-alerts',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Tab Select',
-    id: 'tab-select',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Simple Dialogs',
-    description: 'Breadcrumbs description blah blah',
-    id: 'simple-dialogs',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Dynamic Forms',
-    id: 'dynamic-forms',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Chips & Autocomplete',
-    id: 'chips-autocomplete',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Markdown Parser',
-    id: 'markdown-parser',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Flavored Markdown Parser',
-    id: 'flavored-markdown-parser',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Syntax Highlighting',
-    id: 'syntax-highlight',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Code Editor',
-    id: 'code-editor',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    overviewDocUrl: 'platform/core/breadcrumbs/README.md',
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Markdown Editor',
-    id: 'markdown-editor',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
+    icon: '',
+    category: 'Buttons & Indicators',
+    route: '/components/breadcrumbs',
   },
 ];
 
