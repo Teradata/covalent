@@ -1,4 +1,13 @@
-export const echartsContentDetails: any = [
+export const utilitiesRouteCategories = [
+  { name: '', nested: false },
+  { name: 'Pipes', nested: false },
+  { name: 'Functions', nested: false },
+  { name: 'Animations', nested: false },
+];
+
+const [root, pipes, functions, animations] = utilitiesRouteCategories;
+
+export const utilitiesContentDetails: any = [
   {
     name: 'Animations',
     id: 'animations',

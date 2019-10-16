@@ -3,8 +3,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { docsRoutes } from './docs.routes';
-
 import { DocsComponent } from './docs.component';
 import { DocsOverviewComponent } from './overview/overview.component';
 import { CreatingComponent } from './creating/creating.component';
@@ -32,6 +30,11 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { SidenavContentModule } from '../../components/shared/sidenav-content/sidenav-content.module';
 import { ToolbarModule } from 'app/components/toolbar/toolbar.module';
+import { RouterModule } from '@angular/router';
+import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
+import { docsChildRoutes } from './docs';
+import { docsRouteGroup } from 'app/utilities/route-trees';
+import { docsRoutes } from './docs.routes';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,7 @@ import { ToolbarModule } from 'app/components/toolbar/toolbar.module';
   imports: [
     /** Angular Modules */
     CommonModule,
+    RouterModule,
     /** Material Modules */
     MatSidenavModule,
     MatButtonModule,
@@ -65,9 +69,10 @@ import { ToolbarModule } from 'app/components/toolbar/toolbar.module';
     CovalentHighlightModule,
     DocumentationToolsModule,
     CovalentExpansionPanelModule,
-    docsRoutes,
     ToolbarModule,
+    ComponentDetailsModule,
     SidenavContentModule,
+    docsRoutes,
   ],
 })
 export class DocsModule {}

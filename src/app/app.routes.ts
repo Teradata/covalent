@@ -15,14 +15,6 @@ const routes: Routes = [
     data: { preload: false },
     loadChildren: () =>
       /* tslint:disable-next-line */
-      import('./content/docs/docs.module').then((m) => m.DocsModule),
-  },
-  {
-    // preload: true loads the module immediately
-    path: '',
-    data: { preload: false },
-    loadChildren: () =>
-      /* tslint:disable-next-line */
       import('./content/style-guide/style-guide.module').then((m) => m.StyleGuideModule),
   },
   {
@@ -37,6 +29,14 @@ const routes: Routes = [
     path: '',
     component: ContentContainerComponent,
     children: [
+      {
+        // preload: true loads the module immediately
+        path: '',
+        data: { preload: false },
+        loadChildren: () =>
+          /* tslint:disable-next-line */
+          import('./content/docs/docs.module').then((m) => m.DocsModule),
+      },
       {
         // preload: true loads the module immediately
         path: '',

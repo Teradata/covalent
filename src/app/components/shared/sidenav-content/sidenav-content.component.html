@@ -1,5 +1,6 @@
 <div class='doc-nav'>
-      <mat-expansion-panel class='mat-elevation-z0' [expanded]="router.isActive(routeGroup.rootRoute)" *ngFor='let routeGroup of combinedRoutes'
+   
+      <mat-expansion-panel [@.disabled]="true" class='mat-elevation-z0' [expanded]="router.isActive(routeGroup.rootRoute)" *ngFor='let routeGroup of combinedRoutes'
       >
           <mat-expansion-panel-header [collapsedHeight]="'38px'" [expandedHeight]="'56px'">
             <span class='fw-500'>{{routeGroup.name}}</span>
@@ -7,7 +8,7 @@
   
           <div class='doc-nav-section push-bottom-sm'>
             <ng-container *ngFor='let section of routeGroup.routeGroups'>
-  
+               
                 <ng-container *ngIf='!section.nested; else nested'>
                  <div *ngIf='section.name' class='doc-nav-section-label text-upper tc-grey-500 mat-caption'>
                 {{ section.name }}
@@ -22,7 +23,8 @@
 
 
               <ng-template #nested>
-                  <mat-expansion-panel class='mat-elevation-z0 nested-expansion-panel'
+               
+                  <mat-expansion-panel [@.disabled]="true" [expanded]="router.routerState.snapshot.url.includes(section.rootRoute)" class='mat-elevation-z0 nested-expansion-panel'
                   >
                   <mat-expansion-panel-header class='tc-grey-700' [collapsedHeight]="'34px'" [expandedHeight]="'40px'">
                       {{section.name}}

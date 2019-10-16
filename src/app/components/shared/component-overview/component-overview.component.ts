@@ -1,12 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 import { TdMediaService } from '@covalent/core/media';
 
 import { slideInUpAnimation } from '../../../app.animations';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { routeGroups } from 'app/utilities/route-trees';
 
 @Component({
   selector: 'component-overview',
@@ -18,25 +16,15 @@ export class ComponentOverviewComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
+  category: any;
   categoryGroups: any;
-  categoryTitle: string;
-  categoryDescription: string;
 
-  constructor(public media: TdMediaService, private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(public media: TdMediaService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.data
-      .pipe(
-        tap((data) => (this.categoryTitle = data.category)),
-        switchMap((data) => this.getCategoryPayload(data.category)),
-      )
-      .subscribe((data) => {
-        this.categoryDescription = data.description;
-        this.categoryGroups = data.components;
-      });
-  }
-
-  getCategoryPayload(category): Observable<any> {
-    return this.http.get<any>(`assets/${category}.json`);
+    this.route.data.subscribe((data) => {
+      this.category = routeGroups.find((group) => group.name.toLowerCase() === data.category);
+      this.categoryGroups = this.category.routeGroups;
+    });
   }
 }

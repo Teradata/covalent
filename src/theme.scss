@@ -234,3 +234,11 @@ nav.docs-nav {
 a {
   text-decoration: none;
 }
+
+.td-markdown {
+  h1,
+  h2,
+  h3 {
+    font-weight: 400 !important;
+  }
+}
