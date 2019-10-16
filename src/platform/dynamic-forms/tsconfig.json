@@ -5,7 +5,6 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@covalent/core": ["../core"],
       "@covalent/core/*": ["../core/*"]
     }
   },

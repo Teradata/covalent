@@ -101,12 +101,12 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   @Input('avatar') avatar: string;
 
   /**
-   * color?: string
+   * color?: 'accent' | 'primary' | 'warn'
    *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, default is used.
    */
-  @Input('color') color: string;
+  @Input('color') color: 'accent' | 'primary' | 'warn';
 
   /**
    * navigationRoute?: string

@@ -16,13 +16,6 @@ import { takeUntil } from 'rxjs/operators';
 
 import { TdNavStepLinkComponent } from '../nav-step-link/nav-step-link.component';
 
-/**
- * The directions that scrolling can go in when the header's tabs exceed the header width. 'After'
- * will scroll the header towards the end of the tabs list and 'before' will scroll towards the
- * beginning of the list.
- */
-export type ScrollDirection = 'after' | 'before';
-
 @Component({
   selector: 'nav[td-steps][vertical]',
   styleUrls: ['./nav-steps-vertical.component.scss'],

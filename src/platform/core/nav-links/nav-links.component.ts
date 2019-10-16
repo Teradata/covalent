@@ -7,7 +7,7 @@ export interface ITdLinkGroup {
 
 export interface ITdLink {
   label: string;
-  linkTo: { href: string } | { routerLink?: string | any[] };
+  linkTo: { href?: string } | { routerLink?: string | string[] };
   openInNewTab?: boolean;
   icon?: string;
   show?: boolean;
@@ -31,5 +31,13 @@ export class TdNavLinksComponent {
 
   linkClicked(link: ITdLink): void {
     this.afterClick.emit(link);
+  }
+
+  getHref(link: ITdLink): string {
+    return link.linkTo && (<{ href?: string }>link.linkTo).href;
+  }
+
+  getRouterLink(link: ITdLink): string | string[] {
+    return link.linkTo && (<{ routerLink?: string | string[] }>link.linkTo).routerLink;
   }
 }

@@ -101,6 +101,23 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   selector: 'td-chart-series[td-graph]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: [
+    'config',
+    'id',
+    'name',
+    'color',
+    'data',
+
+    'animation',
+    'animationThreshold',
+    'animationDuration',
+    'animationEasing',
+    'animationDelay',
+    'animationDurationUpdate',
+    'animationEasingUpdate',
+    'animationDelayUpdate',
+    'tooltip',
+  ],
   providers: [
     {
       provide: TdSeriesComponent,

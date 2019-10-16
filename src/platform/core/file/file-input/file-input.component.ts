@@ -59,10 +59,10 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements ICont
   }
 
   /**
-   * color?: string
+   * color?: 'accent' | 'primary' | 'warn'
    * Sets button color. Uses same color palette accepted as [MatButton].
    */
-  @Input('color') color: string;
+  @Input('color') color: 'accent' | 'primary' | 'warn';
 
   /**
    * multiple?: boolean

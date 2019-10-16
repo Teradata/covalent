@@ -35,12 +35,12 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
   @Input('logo') logo: string;
 
   /**
-   * color?: string
+   * color?: 'accent' | 'primary' | 'warn'
    *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, primary is used.
    */
-  @Input('color') color: string = 'primary';
+  @Input('color') color: 'accent' | 'primary' | 'warn' = 'primary';
 
   /**
    * mode?: 'side', 'push' or 'over'
