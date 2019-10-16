@@ -2,17 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes, Route } from '@angular/router';
 
-import { MatSelectModule } from '@angular/material/select';
-import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentJsonFormatterModule } from '@covalent/core/json-formatter';
 import { setComponentRoutes } from 'app/content/components/components';
 import { JsonFormatterDemoComponent } from './json-formatter.component';
+import { DocumentationToolsModule } from 'app/documentation-tools';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: JsonFormatterDemoComponent,
-  id: 'breadcrumbs',
+  id: 'json-formatter',
 });
 
 @NgModule({
@@ -20,11 +22,13 @@ const routes: Routes = setComponentRoutes({
   imports: [
     CommonModule,
     // Material
-    MatSelectModule,
-    MatIconModule,
+    MatCardModule,
+    MatDividerModule,
+    DocumentationToolsModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentHighlightModule,
+    CovalentJsonFormatterModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),
