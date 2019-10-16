@@ -15,6 +15,17 @@ const routes: Routes = [
         path: 'markdown-parser',
         loadChildren: () => import('./component-demos/markdown/markdown.module').then((m) => m.MarkdownDemoModule),
       },
+      {
+        path: 'markdown-navigator',
+        loadChildren: () =>
+          import('./component-demos/markdown-navigator/markdown-navigator.module').then(
+            (m) => m.MarkdownNavigatorDemoModule,
+          ),
+      },
+      {
+        path: 'message',
+        loadChildren: () => import('./component-demos/message/message.module').then((m) => m.MessageDemoModule),
+      },
     ],
   },
 ];
