@@ -27,6 +27,10 @@ const routes: Routes = [
         loadChildren: () => import('./component-demos/markdown/markdown.module').then((m) => m.MarkdownDemoModule),
       },
       {
+        path: 'paging',
+        loadChildren: () => import('./component-demos/paging/paging.module').then((m) => m.PagingDemoModule),
+      },
+      {
         path: 'search',
         loadChildren: () => import('./component-demos/search/search.module').then((m) => m.SearchDemoModule),
       },

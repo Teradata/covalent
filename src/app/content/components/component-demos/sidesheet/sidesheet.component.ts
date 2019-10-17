@@ -1,5 +1,4 @@
-import { Component, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { TdMediaService } from '@covalent/core/media';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -8,6 +7,4 @@ import { TdMediaService } from '@covalent/core/media';
   templateUrl: './sidesheet.component.html',
   preserveWhitespaces: true,
 })
-export class SidesheetDemoComponent {
-  constructor(private _changeDetectorRef: ChangeDetectorRef, public media: TdMediaService) {}
-}
+export class SidesheetDemoComponent {}
