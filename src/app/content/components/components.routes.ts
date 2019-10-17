@@ -33,6 +33,8 @@ const routes: Routes = [
       {
         path: 'sidesheet',
         loadChildren: () => import('./component-demos/sidesheet/sidesheet.module').then((m) => m.SidesheetDemoModule),
+      },
+      {
         path: 'nav-steps',
         loadChildren: () => import('./component-demos/nav-steps/nav-steps.module').then((m) => m.NavstepsDemoModule),
       },
