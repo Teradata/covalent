@@ -7,10 +7,11 @@ export const componentRouteCategories = [
   { name: 'Navigation', nested: false },
   { name: 'Dialogs', nested: false },
   { name: 'Forms', nested: false },
+  { name: 'Markdown', nested: false },
   { name: 'Editors', nested: false },
 ];
 
-const [root, layout, buttons, nav, dialogs, forms, editors] = componentRouteCategories;
+const [root, layout, buttons, nav, dialogs, forms, markdown, editors] = componentRouteCategories;
 
 export const componentDetails: any = [
   {
@@ -27,6 +28,30 @@ export const componentDetails: any = [
     demos: [],
   },
   {
+    name: 'File Input',
+    id: 'file-input',
+    description: 'Text input for files',
+    apiDocUrl: 'platform/core/file/file-input/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: buttons.name,
+    route: '/components/file-input',
+  },
+  {
+    name: 'Flavored Markdown Parser',
+    id: 'flavored-markdown',
+    description: 'Parse and render markdown code with a Material Design flavor',
+    apiDocUrl: 'platform/flavored-markdown/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: markdown.name,
+    route: '/components/flavored-markdown',
+  },
+  {
     name: 'Loading Mask',
     id: 'loading-mask',
     description:
@@ -40,6 +65,28 @@ export const componentDetails: any = [
     route: '/components/breadcrumbs',
   },
   {
+    name: 'Search',
+    id: 'search',
+    description: 'Search and filter items',
+    apiDocUrl: 'this one has two readmes that need to be consolidated',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: buttons.name,
+    route: '/components/search',
+  },
+  {
+    name: 'Sidesheet Content',
+    id: 'sidesheet',
+    description: 'Basic sidesheet content',
+    apiDocUrl: 'platform/core/sidesheet/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: layout.name,
+    route: '/components/sidesheet',
     name: 'Nav Steps',
     id: 'nav-steps',
     description:

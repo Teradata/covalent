@@ -88,8 +88,9 @@
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-flavored-markdown-loader [url]="'https://github.com/angular/angular/blob/master/README.md'">
-        </td-flavored-markdown-loader>
+        <td-flavored-markdown-loader
+          [url]="'https://github.com/angular/angular/blob/master/README.md'"
+        ></td-flavored-markdown-loader>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
@@ -101,5 +102,3 @@
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
-
-<td-readme-loader resourceUrl="platform/flavored-markdown/README.md"></td-readme-loader>
