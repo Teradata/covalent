@@ -30,10 +30,11 @@
                 "output": "/assets"
               },
               {
-                "glob": "**/*",
-                "input": "./docs",
-                "output": "./docs"
+                "glob": "**/*.@(html|ts|scss|demo-config)",
+                "input": "src/app/components/components/breadcrumbs/demos",
+                "output": "/assets/stackblitz-demos"
               },
+              { "glob": "**/*", "input": "./docs", "output": "./docs" },
               {
                 "glob": "**/*",
                 "input": "node_modules/monaco-editor/min",

@@ -31,6 +31,8 @@ import { AnimationsComponent } from './animations/animations.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
+import { BreadcrumbDemo1Component } from './breadcrumbs/demos/breadcrumbs-demo-1/breadcrumbs-demo-1.component';
+import { BreadcrumbDemo2Component } from './breadcrumbs/demos/breadcrumbs-demo-2/breadcrumbs-demo-2.component';
 import { SearchDemoComponent } from './search/search.component';
 import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
@@ -139,6 +141,8 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     FunctionsDemoComponent,
     NotificationsDemoComponent,
     BreadcrumbDemoComponent,
+    BreadcrumbDemo1Component,
+    BreadcrumbDemo2Component,
     VirtualScrollDemoComponent,
     FlavoredMarkdownDemoComponent,
     TabSelectDemoComponent,
