@@ -12,7 +12,7 @@ import { NotificationsDemoComponent } from './notifications.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: NotificationsDemoComponent,
-  id: 'breadcrumbs',
+  id: 'notifications',
 });
 
 @NgModule({

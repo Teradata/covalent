@@ -1,30 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes, Route } from '@angular/router';
-
-import { MatSelectModule } from '@angular/material/select';
-import { MatIconModule } from '@angular/material/icon';
+import { RouterModule, Routes } from '@angular/router';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
+import { CovalentSearchModule } from '@covalent/core/search';
 import { setComponentRoutes } from 'app/content/components/components';
 import { SearchDemoComponent } from './search.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: SearchDemoComponent,
-  id: 'breadcrumbs',
+  id: 'search',
 });
 
 @NgModule({
   declarations: [SearchDemoComponent],
   imports: [
     CommonModule,
+
     // Material
-    MatSelectModule,
-    MatIconModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentSearchModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),
