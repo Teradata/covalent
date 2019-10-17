@@ -12,7 +12,7 @@ import { TextEditorDemoComponent } from './text-editor.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: TextEditorDemoComponent,
-  id: 'breadcrumbs',
+  id: 'text-editor',
 });
 
 @NgModule({

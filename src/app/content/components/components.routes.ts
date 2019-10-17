@@ -33,6 +33,22 @@ const routes: Routes = [
       {
         path: 'sidesheet',
         loadChildren: () => import('./component-demos/sidesheet/sidesheet.module').then((m) => m.SidesheetDemoModule),
+        path: 'nav-steps',
+        loadChildren: () => import('./component-demos/nav-steps/nav-steps.module').then((m) => m.NavstepsDemoModule),
+      },
+      {
+        path: 'notifications',
+        loadChildren: () =>
+          import('./component-demos/notifications/notifications.module').then((m) => m.NotificationsDemoModule),
+      },
+      {
+        path: 'tab-select',
+        loadChildren: () => import('./component-demos/tab-select/tab-select.module').then((m) => m.TabSelectDemoModule),
+      },
+      {
+        path: 'text-editor',
+        loadChildren: () =>
+          import('./component-demos/text-editor/text-editor.module').then((m) => m.TextEditorDemoModule),
       },
     ],
   },

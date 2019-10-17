@@ -12,7 +12,7 @@ import { NavStepsDemoComponent } from './nav-steps.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: NavStepsDemoComponent,
-  id: 'breadcrumbs',
+  id: 'nav-steps',
 });
 
 @NgModule({
