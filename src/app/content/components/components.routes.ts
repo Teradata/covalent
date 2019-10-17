@@ -12,12 +12,19 @@ const routes: Routes = [
           import('./component-demos/breadcrumbs/breadcrumbs.module').then((m) => m.BreadcrumbsDemoModule),
       },
       {
-        path: 'markdown-parser',
-        loadChildren: () => import('./component-demos/markdown/markdown.module').then((m) => m.MarkdownDemoModule),
+        path: 'file-input',
+        loadChildren: () => import('./component-demos/file-input/file-input.module').then((m) => m.FileInputDemoModule),
       },
       {
-        path: 'paging',
-        loadChildren: () => import('./component-demos/paging/paging.module').then((m) => m.PagingDemoModule),
+        path: 'flavored-markdown',
+        loadChildren: () =>
+          import('./component-demos/flavored-markdown/flavored-markdown.module').then(
+            (m) => m.FlavoredMarkdownDemoModule,
+          ),
+      },
+      {
+        path: 'markdown-parser',
+        loadChildren: () => import('./component-demos/markdown/markdown.module').then((m) => m.MarkdownDemoModule),
       },
       {
         path: 'search',

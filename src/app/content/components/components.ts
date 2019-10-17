@@ -7,10 +7,10 @@ export const componentRouteCategories = [
   { name: 'Navigation', nested: false },
   { name: 'Dialogs', nested: false },
   { name: 'Forms', nested: false },
-  { name: 'Editors', nested: false },
+  { name: 'Markdown', nested: false },
 ];
 
-const [root, layout, buttons, nav, dialogs, forms, editors] = componentRouteCategories;
+const [root, layout, buttons, nav, dialogs, forms, markdown] = componentRouteCategories;
 
 export const componentDetails: any = [
   {
@@ -25,6 +25,30 @@ export const componentDetails: any = [
     category: buttons.name,
     route: '/components/breadcrumbs',
     demos: [],
+  },
+  {
+    name: 'File Input',
+    id: 'file-input',
+    description: 'Text input for files',
+    apiDocUrl: 'platform/core/file/file-input/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: buttons.name,
+    route: '/components/file-input',
+  },
+  {
+    name: 'Flavored Markdown Parser',
+    id: 'flavored-markdown',
+    description: 'Parse and render markdown code with a Material Design flavor',
+    apiDocUrl: 'platform/flavored-markdown/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: markdown.name,
+    route: '/components/flavored-markdown',
   },
   {
     name: 'Loading Mask',
@@ -196,6 +220,30 @@ export const componentDetails: any = [
     showExampleTab: true,
     showOverviewDemo: true,
     icon: 'view_array',
+    category: layout.name,
+    route: '/components/sidesheet',
+  },
+  {
+    name: 'Search',
+    id: 'search',
+    description: 'Search and filter items',
+    apiDocUrl: 'this one has two readmes that need to be consolidated',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
+    category: buttons.name,
+    route: '/components/search',
+  },
+  {
+    name: 'Sidesheet Content',
+    id: 'sidesheet',
+    description: 'Basic sidesheet content',
+    apiDocUrl: 'platform/core/sidesheet/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: '',
     category: layout.name,
     route: '/components/sidesheet',
   },
