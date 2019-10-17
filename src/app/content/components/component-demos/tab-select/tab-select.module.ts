@@ -12,7 +12,7 @@ import { TabSelectDemoComponent } from './tab-select.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: TabSelectDemoComponent,
-  id: 'breadcrumbs',
+  id: 'tab-select',
 });
 
 @NgModule({

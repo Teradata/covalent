@@ -16,6 +16,7 @@ const routes: Routes = setComponentRoutes({
   declarations: [SearchDemoComponent],
   imports: [
     CommonModule,
+
     // Material
     ComponentDetailsModule,
     // Covalent

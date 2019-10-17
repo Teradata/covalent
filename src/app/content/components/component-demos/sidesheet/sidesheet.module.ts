@@ -26,6 +26,8 @@ const routes: Routes = setComponentRoutes({
     MatButtonModule,
     // Material
     MatIconModule,
+    MatSidenavModule,
+    MatToolbarModule,
     ComponentDetailsModule,
     // Covalent
     CovalentSidesheetModule,
