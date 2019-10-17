@@ -10,9 +10,8 @@ import { CovalentMessageModule } from '@covalent/core/message';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
-import { CovalentHighlightModule } from '../../../../../../deploy/platform/highlight';
-import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { DocumentationToolsModule } from 'app/documentation-tools';
+import { CovalentHighlightModule } from '@covalent/highlight';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: MessageDemoComponent,
