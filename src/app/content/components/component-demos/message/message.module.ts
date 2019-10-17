@@ -2,29 +2,37 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes, Route } from '@angular/router';
 
-import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { MessageDemoComponent } from './message.component';
+import { CovalentMessageModule } from '@covalent/core/message';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
+import { CovalentHighlightModule } from '../../../../../../deploy/platform/highlight';
+import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+import { DocumentationToolsModule } from 'app/documentation-tools';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: MessageDemoComponent,
-  id: 'breadcrumbs',
+  id: 'message',
 });
 
 @NgModule({
   declarations: [MessageDemoComponent],
   imports: [
     CommonModule,
+    DocumentationToolsModule,
     // Material
-    MatSelectModule,
     MatIconModule,
+    MatCardModule,
+    MatDividerModule,
+    MatTabsModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentMessageModule,
+    CovalentHighlightModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),
