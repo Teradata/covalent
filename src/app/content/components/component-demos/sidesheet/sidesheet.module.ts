@@ -17,7 +17,7 @@ import { SidesheetDemoComponent } from './sidesheet.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: SidesheetDemoComponent,
-  id: 'breadcrumbs',
+  id: 'sidesheet',
 });
 
 @NgModule({

@@ -20,7 +20,7 @@ import { SearchDemoComponent } from './search.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: SearchDemoComponent,
-  id: 'breadcrumbs',
+  id: 'search',
 });
 
 @NgModule({
