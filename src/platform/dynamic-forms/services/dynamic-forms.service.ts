@@ -72,7 +72,7 @@ export class TdDynamicFormsService {
    * Gets component to be rendered depending on [TdDynamicElement | TdDynamicType]
    * Throws error if it does not exists or not supported.
    */
-  getDynamicElement(element: TdDynamicElement | TdDynamicType): any {
+  getDynamicElement(element: TdDynamicElement | TdDynamicType | Type<any>): any {
     switch (element) {
       case TdDynamicType.Text:
       case TdDynamicType.Number:

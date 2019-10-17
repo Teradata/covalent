@@ -52,6 +52,23 @@ export interface ITdBarSeries extends ITdSeries<'bar'> {
   selector: 'td-chart-series[td-bar]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: [
+    'config',
+    'id',
+    'name',
+    'color',
+    'data',
+
+    'animation',
+    'animationThreshold',
+    'animationDuration',
+    'animationEasing',
+    'animationDelay',
+    'animationDurationUpdate',
+    'animationEasingUpdate',
+    'animationDelayUpdate',
+    'tooltip',
+  ],
   providers: [
     {
       provide: TdSeriesComponent,

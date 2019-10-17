@@ -44,22 +44,22 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
   @ContentChild(TdFileInputLabelDirective, { static: false }) inputLabel: TdFileInputLabelDirective;
 
   /**
-   * defaultColor?: string
+   * defaultColor?: 'accent' | 'primary' | 'warn'
    * Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
    */
-  @Input('defaultColor') defaultColor: string = 'primary';
+  @Input('defaultColor') defaultColor: 'accent' | 'primary' | 'warn' = 'primary';
 
   /**
-   * activeColor?: string
+   * activeColor?: 'accent' | 'primary' | 'warn'
    * Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
    */
-  @Input('activeColor') activeColor: string = 'accent';
+  @Input('activeColor') activeColor: 'accent' | 'primary' | 'warn' = 'accent';
 
   /**
-   * cancelColor?: string
+   * cancelColor?: 'accent' | 'primary' | 'warn'
    * Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
    */
-  @Input('cancelColor') cancelColor: string = 'warn';
+  @Input('cancelColor') cancelColor: 'accent' | 'primary' | 'warn' = 'warn';
 
   /**
    * multiple?: boolean

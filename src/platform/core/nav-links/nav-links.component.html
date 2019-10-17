@@ -14,8 +14,8 @@
       <ng-template ngFor [ngForOf]="linkGroup.links" let-link let-indexLink="index">
         <a
           mat-list-item
-          *ngIf="link.linkTo.href && (link.show === undefined || link.show)"
-          [href]="link.linkTo.href"
+          *ngIf="getHref(link) && (link.show === undefined || link.show)"
+          [href]="getHref(link)"
           [target]="link.openInNewTab ? '_blank' : '_self'"
           id="{{ id }}-{{ indexGroup }}-{{ indexLink }}"
           class="td-nav-link"
@@ -27,8 +27,8 @@
 
         <a
           mat-list-item
-          *ngIf="link.linkTo.routerLink && (link.show === undefined || link.show)"
-          [routerLink]="link.linkTo.routerLink"
+          *ngIf="getRouterLink(link) && (link.show === undefined || link.show)"
+          [routerLink]="getRouterLink(link)"
           [target]="link.openInNewTab ? '_blank' : null"
           id="{{ id }}-{{ indexGroup }}-{{ indexLink }}"
           class="td-nav-link"

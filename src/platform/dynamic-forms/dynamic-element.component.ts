@@ -81,7 +81,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    * Sets type or element of element to be rendered.
    * Throws error if does not exist or no supported.
    */
-  @Input() type: TdDynamicElement | TdDynamicType = undefined;
+  @Input() type: TdDynamicElement | TdDynamicType | Type<any> = undefined;
 
   /**
    * Sets required validation checkup (if supported by element).
