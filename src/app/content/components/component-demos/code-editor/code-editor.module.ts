@@ -12,7 +12,7 @@ import { CodeEditorDemoComponent } from './code-editor.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: CodeEditorDemoComponent,
-  id: 'breadcrumbs',
+  id: 'code-editor',
 });
 
 @NgModule({
@@ -24,7 +24,6 @@ const routes: Routes = setComponentRoutes({
     MatIconModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),
