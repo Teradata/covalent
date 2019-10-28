@@ -12,6 +12,24 @@ const routes: Routes = [
           import('./component-demos/breadcrumbs/breadcrumbs.module').then((m) => m.BreadcrumbsDemoModule),
       },
       {
+        path: 'chips',
+        loadChildren: () => import('./component-demos/chips/chips.module').then((m) => m.ChipsDemoModule),
+      },
+      {
+        path: 'code-editor',
+        loadChildren: () =>
+          import('./component-demos/code-editor/code-editor.module').then((m) => m.CodeEditorDemoModule),
+      },
+      {
+        path: 'dialogs',
+        loadChildren: () => import('./component-demos/dialogs/dialogs.module').then((m) => m.DialogsDemoModule),
+      },
+      {
+        path: 'dynamic-forms',
+        loadChildren: () =>
+          import('./component-demos/dynamic-forms/dynamic-forms.module').then((m) => m.DynamicFormsDemoModule),
+      },
+      {
         path: 'file-input',
         loadChildren: () => import('./component-demos/file-input/file-input.module').then((m) => m.FileInputDemoModule),
       },

@@ -14,7 +14,7 @@ export enum rootRoutes {
 
 enum descriptions {
   Docs = 'some description',
-  Components = 'some components',
+  Components = 'Create views quickly with tested components that conform to Material Design',
   ECharts = 'some echarts',
   Utilities = 'some utilities',
 }

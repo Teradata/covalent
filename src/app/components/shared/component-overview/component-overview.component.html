@@ -4,12 +4,12 @@
 </div>
 
 
-<section *ngFor='let group of categoryGroups' class='push-bottom-lg'>
- 
+<section *ngFor='let group of categoryGroups' >
+<div *ngIf="!(group?.views?.length === 1 && group?.views[0]?.name === 'Overview')" class='push-bottom-lg pad-bottom-xs'>
   <h3 class="mat-subheading-1 tc-grey-600 push-bottom-xs pad-right-sm pad-left-sm">{{group.name}}</h3>
 <div layout="row" layout-wrap>
   <ng-container *ngFor='let item of group.views'>
-<div flex-xs='100' flex-sm='33' flex-gt-sm="25" *ngIf="item.name !== 'Overview'">
+<div flex-xs='100' flex-sm='33' flex-md='33' flex-gt-md="25" *ngIf="item.name !== 'Overview'">
  <mat-card [routerLink]='item.route' [ngClass]="{'no-description':!item?.description}" class="component-card cursor-pointer" layout='column' layout-align='space-between start'>
     <mat-icon  ngClass="tc-{{item.color || group.color || 'grey-600'}}">
      {{item.icon}}
@@ -26,6 +26,7 @@
 </div>
   </ng-container>
   
+</div>
 </div>
 </section>
 

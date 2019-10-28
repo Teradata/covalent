@@ -6,13 +6,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { DynamicFormsDemoComponent } from './dynamic-forms.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: DynamicFormsDemoComponent,
-  id: 'breadcrumbs',
+  id: 'dynamic-forms',
 });
 
 @NgModule({
@@ -24,7 +23,6 @@ const routes: Routes = setComponentRoutes({
     MatIconModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),
