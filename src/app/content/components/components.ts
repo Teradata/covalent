@@ -9,9 +9,10 @@ export const componentRouteCategories = [
   { name: 'Forms', nested: false, color: 'amber-900' },
   { name: 'Markdown', nested: false, color: 'deep-purple-900' },
   { name: 'Editors', nested: false, color: 'yellow-900' },
+  { name: 'Formatting', nested: false, color: 'indigo-900' },
 ];
 
-const [root, layout, buttons, nav, dialogs, forms, markdown] = componentRouteCategories;
+const [root, layout, buttons, nav, dialogs, forms, markdown, editors, formatting] = componentRouteCategories;
 
 export const componentDetails: any = [
   {
@@ -101,8 +102,7 @@ export const componentDetails: any = [
   {
     name: 'Loading Mask',
     id: 'loading-mask',
-    description:
-      'Animated mask for multiple uses on loading states asoudhasiudhausihdiasuhdiuashdiu suad asiud haisud aisu',
+    description: 'Mask areas for progressive loading',
     apiDocUrl: 'platform/core/breadcrumbs/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
@@ -112,16 +112,17 @@ export const componentDetails: any = [
     route: '/components/xyz',
   },
   {
-    name: 'Highlight',
+    name: 'Syntax Highlight',
     id: 'highlight',
-    description: 'Hightlight it',
+    description: 'Highlighting your code snippets',
     apiDocUrl: 'platform/core/breadcrumbs/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'search',
-    category: buttons.name,
-    route: '/components/search',
+    icon: 'code',
+    category: formatting.name,
+    route: '/components/highlight',
+    demos: [],
   },
   {
     name: 'JSON Formatter',
@@ -131,32 +132,20 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'view_array',
-    category: layout.name,
-    route: '/components/sidesheet',
+    icon: 'format_indent_increase',
+    category: formatting.name,
+    route: '/components/json-formatter',
+    demos: [],
   },
   {
-    name: 'Nav Steps',
-    id: 'nav-steps',
-    description:
-      'Navigate across a sequence of logical & numbered steps (shrink width of page to see responsive behavior)',
-    apiDocUrl: 'platform/core/steps/README.md',
+    name: 'Loading',
+    id: 'loading',
+    description: 'Circular or linear progress loader',
+    apiDocUrl: 'platform/core/loading/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'format_line_spacing',
-    category: nav.name,
-    route: '/components/nav-steps',
-  },
-  {
-    name: 'Notifications',
-    id: 'notifications',
-    description: 'Notification count & menu for toolbar',
-    apiDocUrl: 'platform/core/notifications/README.md',
-    overviewDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    icon: 'notifications',
+    icon: 'hourglass_empty',
     category: buttons.name,
     route: '/components/notifications',
   },
