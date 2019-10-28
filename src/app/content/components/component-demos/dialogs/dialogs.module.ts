@@ -5,14 +5,15 @@ import { RouterModule, Routes, Route } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
+import { CovalentDialogsModule } from '@covalent/core/dialogs';
+
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { DialogsDemoComponent } from './dialogs.component';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: DialogsDemoComponent,
-  id: 'breadcrumbs',
+  id: 'dialogs',
 });
 
 @NgModule({
@@ -24,7 +25,7 @@ const routes: Routes = setComponentRoutes({
     MatIconModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentDialogsModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),
