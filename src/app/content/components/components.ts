@@ -1,14 +1,14 @@
 import { routeBuilder, IScopedRouteBuilder } from '../../utilities/route-builder';
 
 export const componentRouteCategories = [
-  { name: '', nested: false },
-  { name: 'Layout', nested: false },
-  { name: 'Buttons & Indicators', nested: false },
-  { name: 'Navigation', nested: false },
-  { name: 'Dialogs', nested: false },
-  { name: 'Forms', nested: false },
-  { name: 'Markdown', nested: false },
-  { name: 'Editors', nested: false },
+  { name: '', nested: false, color: '' },
+  { name: 'Layout', nested: false, color: 'blue-900' },
+  { name: 'Buttons & Indicators', nested: false, color: 'pink-900' },
+  { name: 'Navigation', nested: false, color: 'orange-900' },
+  { name: 'Dialogs', nested: false, color: 'td-teal-900' },
+  { name: 'Forms', nested: false, color: 'amber-900' },
+  { name: 'Markdown', nested: false, color: 'deep-purple-900' },
+  { name: 'Editors', nested: false, color: 'yellow-900' },
 ];
 
 const [root, layout, buttons, nav, dialogs, forms, markdown, editors] = componentRouteCategories;
@@ -72,8 +72,8 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: '',
-    category: '', //Need to create new category as Markdown
+    icon: 'chrome_reader_mode',
+    category: markdown.name,
     route: '/components/markdown-parser',
   },
   {
@@ -84,8 +84,8 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: '',
-    category: '', //Need to create new category as Markdown
+    icon: 'subject',
+    category: markdown.name,
     route: '/components/markdown-navigator',
   },
   {
@@ -96,7 +96,7 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: '',
+    icon: 'info_outline',
     category: buttons.name,
     route: '/components/message',
   },
