@@ -1,5 +1,9 @@
 .doc-layout {
   position: relative;
-  max-width: 848px;
+  max-width: 1024px;
   width: 100%;
+}
+
+.doc-layout-gt-md {
+  padding-right: 88px;
 }
