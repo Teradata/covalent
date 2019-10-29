@@ -28,11 +28,11 @@ Update appropriate linter configs to have the newly installed linter rule sets a
 }
 ```
 
-`stylelintrc.json`
+`stylelint.config.js`
 
 ```json
 {
-  "extends": ["./node_modules/@covalent/core/common/configs/stylelint/.stylelintrc.json", "stylelint-config-prettier"]
+  "extends": ["./node_modules/@covalent/core/common/configs/stylelint/stylelint.config.js", "stylelint-config-prettier"]
 }
 ```
 
