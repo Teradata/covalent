@@ -1,43 +1,58 @@
 <mat-nav-list dense *ngIf="links && links.length > 0">
-  <ng-template ngFor [ngForOf]="links" let-linkGroup let-indexGroup="index">
-    <td-expansion-panel
-      *ngIf="linkGroup.name && linkGroup.links.length"
-      class="td-nav-group"
-      [sublabel]="linkGroup.name"
-      [expand]="true"
-    >
-      <mat-divider></mat-divider>
-      <ng-template [ngTemplateOutlet]="links"></ng-template>
-    </td-expansion-panel>
-    <ng-template *ngIf="!linkGroup.name && linkGroup.links.length" [ngTemplateOutlet]="links"></ng-template>
-    <ng-template #links>
-      <ng-template ngFor [ngForOf]="linkGroup.links" let-link let-indexLink="index">
+  <ng-template ngFor [ngForOf]="links" let-link let-linkIndex="index">
+    <ng-container *ngIf="link.show === undefined || link.show">
+      <ng-container *ngIf="link.children?.length && !link.link">
+        <h3
+          [class.td-nav-link-cursor]="link.collapsable"
+          matSubheader
+          matRipple
+          [matRippleDisabled]="!link.collapsable"
+          (click)="link.collapsable && _toggle(link)"
+        >
+          <mat-icon *ngIf="link.icon" [fontSet]="link.icon?.fontSet">{{ link.icon?.name }}</mat-icon>
+          <span [style.width.%]="100">{{ link.label }}</span>
+          <mat-icon [@tdRotate]="!_isCollapsed(link)" *ngIf="link.collapsable">
+            keyboard_arrow_down
+          </mat-icon>
+        </h3>
+        <td-nav-links
+          [id]="id + '-' + linkIndex"
+          [@tdCollapse]="!!_isCollapsed(link)"
+          [links]="link.children"
+        ></td-nav-links>
+      </ng-container>
+      <ng-container *ngIf="link.link">
         <a
           mat-list-item
-          *ngIf="getHref(link) && (link.show === undefined || link.show)"
-          [href]="getHref(link)"
-          [target]="link.openInNewTab ? '_blank' : '_self'"
-          id="{{ id }}-{{ indexGroup }}-{{ indexLink }}"
+          *ngIf="_href(link)"
+          [href]="_href(link)"
+          [target]="link.link.openInNewTab ? '_blank' : undefined"
+          id="{{ id }}-{{ linkIndex }}"
           class="td-nav-link"
-          (click)="linkClicked(link)"
+          (click)="_linkClicked(link)"
         >
-          <mat-icon matListIcon [fontSet]="link.fontSet">{{ link.icon }}</mat-icon>
+          <mat-icon matListIcon [fontSet]="link.icon?.fontSet">{{ link.icon?.name }}</mat-icon>
           <span matLine>{{ link.label }}</span>
+          <mat-icon *ngIf="link.link.openInNewTab">
+            launch
+          </mat-icon>
         </a>
-
         <a
           mat-list-item
-          *ngIf="getRouterLink(link) && (link.show === undefined || link.show)"
-          [routerLink]="getRouterLink(link)"
-          [target]="link.openInNewTab ? '_blank' : null"
-          id="{{ id }}-{{ indexGroup }}-{{ indexLink }}"
+          *ngIf="_routerLink(link)"
+          [routerLink]="_routerLink(link)"
+          [target]="link.link.openInNewTab ? '_blank' : undefined"
+          id="{{ id }}-{{ linkIndex }}"
           class="td-nav-link"
-          (click)="linkClicked(link)"
+          (click)="_linkClicked(link)"
         >
-          <mat-icon matListIcon [fontSet]="link.fontSet">{{ link.icon }}</mat-icon>
+          <mat-icon matListIcon [fontSet]="link.icon?.fontSet">{{ link.icon?.name }}</mat-icon>
           <span matLine>{{ link.label }}</span>
+          <mat-icon *ngIf="link.link.openInNewTab">
+            launch
+          </mat-icon>
         </a>
-      </ng-template>
-    </ng-template>
+      </ng-container>
+    </ng-container>
   </ng-template>
 </mat-nav-list>

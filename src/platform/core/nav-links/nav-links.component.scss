@@ -2,6 +2,12 @@
   display: block;
   .mat-nav-list.mat-list-base {
     padding-top: 2px;
+    .td-nav-link-cursor {
+      cursor: pointer;
+    }
+    .mat-list-item {
+      height: 40px;
+    }
   }
   .mat-icon {
     margin-right: 0;
