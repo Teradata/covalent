@@ -385,7 +385,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   }
 
   /**
-   * editorOptions?: Object
+   * editorOptions?: object
    * Options used on editor instantiation. Available options listed here:
    * https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html
    */
@@ -739,7 +739,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         this._webview.send('showFullScreenEditor');
       } else {
         const codeEditorElement: HTMLDivElement = this._editorContainer.nativeElement as HTMLDivElement;
-        const fullScreenMap: Object = {
+        const fullScreenMap: object = {
           // Chrome
           requestFullscreen: () => codeEditorElement.requestFullscreen(),
           // Safari

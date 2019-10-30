@@ -14,7 +14,7 @@ export class ComponentsOverviewComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  items: Object[] = [
+  items: object[] = [
     {
       color: 'deep-purple-A700',
       icon: 'view_list',
@@ -148,7 +148,7 @@ export class ComponentsOverviewComponent {
       title: 'Functions',
     },
   ];
-  optional: Object[] = [
+  optional: object[] = [
     {
       color: 'pink-A700',
       icon: 'code',
@@ -198,7 +198,7 @@ export class ComponentsOverviewComponent {
       title: 'HTTP Service',
     },
   ];
-  external: Object[] = [
+  external: object[] = [
     {
       color: 'blue-A700',
       icon: 'language',

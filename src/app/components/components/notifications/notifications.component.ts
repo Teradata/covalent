@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   preserveWhitespaces: true,
 })
 export class NotificationsDemoComponent {
-  notificationsAttrs: Object[] = [
+  notificationsAttrs: object[] = [
     {
       description: `Number for the notification count.
                   Shows number if the input is a positive number; shows no count state if boolean is "true"`,

@@ -14,7 +14,7 @@ export class SearchDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  searchInputAttrs: Object[] = [
+  searchInputAttrs: object[] = [
     {
       description: `Debounce timeout between keypresses. Defaults to 400.`,
       name: 'debounce?',
@@ -57,7 +57,7 @@ export class SearchDemoComponent {
     },
   ];
 
-  searchBoxAttrs: Object[] = [
+  searchBoxAttrs: object[] = [
     {
       description: `Debounce timeout between keypresses. Defaults to 400.`,
       name: 'debounce?',

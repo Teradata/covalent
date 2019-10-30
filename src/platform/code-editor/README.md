@@ -18,7 +18,7 @@
   + Theme used to style the Editor
 + automaticLayout?: boolean
   + Implemented via setInterval that constantly probes for the container's size. Defaults to false.
-+ editorOptions?: Object
++ editorOptions?: object
   + Editor Options Object of valid Configurations listed here: <a href="https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html">https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html</a>
 + layout?: function()
   + Instructs the editor to remeasure its container
