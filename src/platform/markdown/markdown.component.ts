@@ -194,7 +194,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
    */
-  @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
+  @Output() contentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
   constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
 
@@ -238,11 +238,11 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
       // Clean container
       this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
-      const divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
+      this._elementFromString(this._render(markdown));
     }
     // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
     setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor, true), 250);
-    this.onContentReady.emit();
+    this.contentReady.emit();
   }
 
   private async handleAnchorClicks(event: Event): Promise<void> {
@@ -289,7 +289,6 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     converter.setOption('tasklists', true);
     converter.setOption('tables', true);
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
-    const html: string = converter.makeHtml(markdownToParse);
-    return html;
+    return converter.makeHtml(markdownToParse);
   }
 }

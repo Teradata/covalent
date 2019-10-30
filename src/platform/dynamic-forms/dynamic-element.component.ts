@@ -27,7 +27,7 @@ export class TdDynamicElementBase {
 export const _TdDynamicElementMixinBase = mixinControlValueAccessor(TdDynamicElementBase);
 
 @Directive({ selector: '[tdDynamicFormsError]ng-template' })
-export class TdDynamicFormsErrorTemplate extends TemplatePortalDirective {
+export class TdDynamicFormsErrorTemplateDirective extends TemplatePortalDirective {
   @Input() tdDynamicFormsError: string;
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
     super(templateRef, viewContainerRef);
@@ -172,7 +172,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    */
   ngOnChanges(changes: SimpleChanges): void {
     if (this._instance) {
-      for (const prop in changes) {
+      for (const prop of Object.keys(changes)) {
         this._instance[prop] = changes[prop].currentValue;
       }
     }

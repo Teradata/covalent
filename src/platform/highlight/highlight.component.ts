@@ -54,7 +54,7 @@ export class TdHighlightComponent implements AfterViewInit {
    * contentReady?: function
    * Event emitted after the highlight content rendering is finished.
    */
-  @Output('contentReady') onContentReady: EventEmitter<void> = new EventEmitter<void>();
+  @Output('contentReady') contentReady: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
 
@@ -79,7 +79,7 @@ export class TdHighlightComponent implements AfterViewInit {
       // Parse html string into actual HTML elements.
       const preElement: HTMLPreElement = this._elementFromString(this._render(code));
     }
-    this.onContentReady.emit();
+    this.contentReady.emit();
   }
 
   private _elementFromString(codeStr: string): HTMLPreElement {
