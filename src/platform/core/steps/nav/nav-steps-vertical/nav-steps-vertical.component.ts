@@ -33,7 +33,7 @@ export class TdNavStepsVerticalComponent implements AfterContentInit, OnDestroy 
   private readonly _destroyed: Subject<void> = new Subject<void>();
 
   // all the sub components, which are the individual steps
-  @ContentChildren(TdNavStepLinkComponent) _steps: QueryList<TdNavStepLinkComponent>;
+  @ContentChildren(TdNavStepLinkComponent, { descendants: true }) _steps: QueryList<TdNavStepLinkComponent>;
 
   @ViewChild('stepList', { static: true }) _stepList: ElementRef;
 

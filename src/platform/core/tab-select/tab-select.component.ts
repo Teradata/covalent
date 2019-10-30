@@ -67,7 +67,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
   /**
    * Gets all tab option children
    */
-  @ContentChildren(TdTabOptionComponent) readonly _tabOptions: QueryList<TdTabOptionComponent>;
+  @ContentChildren(TdTabOptionComponent, { descendants: true }) readonly _tabOptions: QueryList<TdTabOptionComponent>;
 
   get tabOptions(): TdTabOptionComponent[] {
     return this._tabOptions ? this._tabOptions.toArray() : undefined;

@@ -115,8 +115,11 @@ describe('Component: Markdown', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
-        expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(2);
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+          expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(2);
+        });
       });
     }));
 
@@ -137,8 +140,11 @@ describe('Component: Markdown', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
-        expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(0);
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+          expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(0);
+        });
       });
     }));
 

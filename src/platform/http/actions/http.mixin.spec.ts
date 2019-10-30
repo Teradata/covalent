@@ -4,15 +4,14 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@an
 import { HttpHeaders, HttpResponse, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { CovalentHttpModule, TdHttpService } from '@covalent/http';
 import { Observable } from 'rxjs';
-import { TdHttp, TdGET, TdPOST, TdPATCH, TdDELETE, TdParam, TdQueryParams, TdBody } from './';
+import { mixinHttp, TdGET, TdPOST, TdPATCH, TdDELETE, TdParam, TdQueryParams, TdBody } from './';
 
 const TEST_URL: string = 'www.url.com/path/to/endpoint';
 
-@TdHttp({
-  baseUrl: TEST_URL,
-})
 @Injectable()
-export class BasicTestRESTService {
+export class BasicTestRESTService extends mixinHttp(class {}, {
+  baseUrl: TEST_URL,
+}) {
   @TdGET({
     path: '/',
   })
@@ -56,12 +55,11 @@ export class BasicTestRESTService {
   }
 }
 
-@TdHttp({
+@Injectable()
+export class BaseHeadersTestRESTService extends mixinHttp(class {}, {
   baseUrl: TEST_URL,
   baseHeaders: new HttpHeaders().set('header', 'value'),
-})
-@Injectable()
-export class BaseHeadersTestRESTService {
+}) {
   @TdGET({
     path: '/',
   })

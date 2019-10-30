@@ -62,7 +62,7 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
   _disableScrollBefore: boolean = true;
 
   // all the sub components, which are the individual steps
-  @ContentChildren(TdNavStepLinkComponent) _steps: QueryList<TdNavStepLinkComponent>;
+  @ContentChildren(TdNavStepLinkComponent, { descendants: true }) _steps: QueryList<TdNavStepLinkComponent>;
 
   @ViewChild('stepListContainer', { static: true }) _stepListContainer: ElementRef;
   @ViewChild('stepList', { static: true }) _stepList: ElementRef;
