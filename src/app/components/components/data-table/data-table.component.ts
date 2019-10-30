@@ -31,7 +31,7 @@ export class DataTableDemoComponent implements OnInit {
 
   @ViewChild(TdPagingBarComponent, { static: true }) pagingBar: TdPagingBarComponent;
 
-  cellAttrs: Object[] = [
+  cellAttrs: object[] = [
     {
       description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
       name: 'numeric',
@@ -44,7 +44,7 @@ export class DataTableDemoComponent implements OnInit {
     },
   ];
 
-  columnAttrs: Object[] = [
+  columnAttrs: object[] = [
     {
       description: `Sets unique column [name] for [sortable] events.`,
       name: 'name',
@@ -88,9 +88,9 @@ export class DataTableDemoComponent implements OnInit {
     },
   ];
 
-  serviceAttrs: Object[] = [
+  serviceAttrs: object[] = [
     {
-      description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them. 
+      description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them.
                   Any column names passed in with [nonSearchAbleColumns] will be excluded in the search.`,
       name: 'filterData',
       type: `function(data: any[], searchTerm: string, ignoreCase: boolean, nonSearchAbleColumns: string[])`,
@@ -224,9 +224,9 @@ export class DataTableDemoComponent implements OnInit {
     this.filter();
   }
 
-  async filter(): Promise<void> {
+  filter(): void {
     let newData: any[] = this.data;
-    const excludedColumns: string[] = await this.columns
+    const excludedColumns: string[] = this.columns
       .filter((column: ITdDataTableColumn) => {
         return (
           (column.filter === undefined && column.hidden === true) ||
@@ -236,16 +236,16 @@ export class DataTableDemoComponent implements OnInit {
       .map((column: ITdDataTableColumn) => {
         return column.name;
       });
-    newData = await this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
-    newData = await this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
-    newData = await this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
+    newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
+    newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.filteredData = newData;
   }
 
   filterDateData(): void {
     this.dateSortData = Array.from(this.dateSortData); // Change the array reference to trigger OnPush
-    this.dateSortData = this.dateSortData.sort((a: any, b: any) => {
+    this.dateSortData.sort((a: any, b: any) => {
       let direction: number = 0;
       if (this.dateSortOrder === TdDataTableSortingOrder.Descending) {
         direction = 1;
@@ -264,7 +264,7 @@ export class DataTableDemoComponent implements OnInit {
 
   filterAtomicData(): void {
     this.atomicData = Array.from(this.atomicData); // Change the array reference to trigger OnPush
-    this.atomicData = this.atomicData.sort((a: any, b: any) => {
+    this.atomicData.sort((a: any, b: any) => {
       let direction: number = 0;
       if (this.atomicSortOrder === TdDataTableSortingOrder.Descending) {
         direction = 1;

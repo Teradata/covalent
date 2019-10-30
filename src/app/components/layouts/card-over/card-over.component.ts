@@ -35,7 +35,7 @@ export class CardOverComponent {
       title: 'Components & Addons',
     },
   ];
-  usermenu: Object[] = [
+  usermenu: object[] = [
     {
       icon: 'swap_horiz',
       route: '.',
@@ -52,7 +52,7 @@ export class CardOverComponent {
       title: 'Sign out',
     },
   ];
-  cardlist: Object[] = [
+  cardlist: object[] = [
     {
       icon: 'account_box',
       route: '.',
@@ -72,7 +72,7 @@ export class CardOverComponent {
       description: 'API Key',
     },
   ];
-  carddates: Object[] = [
+  carddates: object[] = [
     {
       icon: 'access_time',
       route: '.',

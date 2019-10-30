@@ -8,7 +8,7 @@ export const tdHttpRESTParam: Symbol = Symbol('TdHttpRESTParam');
  * @internal
  */
 export function TdAbstractParam(type: TdParamType, param?: string): Function {
-  return function(target: Object, propertyKey: string | symbol, parameterIndex: number): void {
+  return function(target: object, propertyKey: string | symbol, parameterIndex: number): void {
     const parameters: { index: number; param: string; type: TdParamType }[] =
       Reflect.getOwnMetadata(tdHttpRESTParam, target, propertyKey) || [];
     parameters.push({

@@ -8,7 +8,7 @@ import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
   preserveWhitespaces: true,
 })
 export class NavViewComponent {
-  routes: Object[] = [
+  routes: object[] = [
     {
       icon: 'home',
       route: '.',
@@ -35,7 +35,7 @@ export class NavViewComponent {
       title: 'Components & Addons',
     },
   ];
-  usermenu: Object[] = [
+  usermenu: object[] = [
     {
       icon: 'swap_horiz',
       route: '.',

@@ -37,6 +37,7 @@ export class FileUploadDemoComponent {
   selectMultipleEvent(files: FileList | File): void {
     if (files instanceof FileList) {
       const names: string[] = [];
+      // tslint:disable-next-line:prefer-for-of
       for (let i: number = 0; i < files.length; i++) {
         names.push(files[i].name);
       }
@@ -49,6 +50,7 @@ export class FileUploadDemoComponent {
   uploadMultipleEvent(files: FileList | File): void {
     if (files instanceof FileList) {
       const names: string[] = [];
+      // tslint:disable-next-line:prefer-for-of
       for (let i: number = 0; i < files.length; i++) {
         names.push(files[i].name);
       }

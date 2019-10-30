@@ -34,7 +34,7 @@ export class IconographyComponent implements OnInit {
   ];
   neutrals: string[] = ['brown', 'grey', 'blue-grey'];
 
-  serviceAttrs: Object[] = [
+  serviceAttrs: object[] = [
     {
       description: `Searches query parameter and returns a new array with icons which match with the searched term.`,
       name: 'filter',

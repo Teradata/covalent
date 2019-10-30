@@ -39,7 +39,7 @@ describe('ng-update schematic', () => {
   it('should print console messages', async () => {
     // tslint:disable-next-line: no-console
     console.log = jasmine.createSpy('log');
-    const tree: Tree = await migrationTestRunner.runSchematicAsync('migration-v3', {}, appTree).toPromise();
+    await migrationTestRunner.runSchematicAsync('migration-v3', {}, appTree).toPromise();
 
     // tslint:disable-next-line: no-console
     expect(console.log).toHaveBeenCalledWith();
@@ -72,7 +72,7 @@ describe('ng-update schematic', () => {
 
     // Update tree
     const updatedTree: Tree = await migrationTestRunner.runSchematicAsync('migration-v3', {}, tree).toPromise();
-    const updatedPackageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
+    const updatedPackageJson: any = JSON.parse(getFileContent(updatedTree, '/package.json'));
     const updatedDependencies: any = updatedPackageJson.dependencies;
 
     const expectedCovalentVersion: string = '3.0.0';
