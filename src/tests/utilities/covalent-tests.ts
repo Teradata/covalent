@@ -55,6 +55,7 @@ export class CovalentTests {
   public static checkForErrorDialogs(): boolean {
     const elements: NodeList = document.querySelectorAll('[id^=cdk-overlay]');
     let foundErrorDialog: boolean = false;
+    // tslint:disable-next-line:prefer-for-of
     for (let index: number = 0; index < elements.length; index++) {
       if (elements[index].firstChild.textContent.indexOf('There was a problem') > -1) {
         foundErrorDialog = true;
