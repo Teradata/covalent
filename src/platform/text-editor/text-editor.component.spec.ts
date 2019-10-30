@@ -19,8 +19,8 @@ describe('Component: TextEditor', () => {
 
   it('should initialize the markdown editor and set value and test ngModel', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorComponent);
-      let component: TestTextEditorComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorComponent);
+      const component: TestTextEditorComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         component.editor1.value = '# Test this';
@@ -35,13 +35,13 @@ describe('Component: TextEditor', () => {
 
   it('should initialize the markdown editor with no toolbar options', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
-      let component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
+      const component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let element: HTMLElement = fixture.nativeElement;
+          const element: HTMLElement = fixture.nativeElement;
           expect(element.querySelectorAll('.editor-toolbar')).toBeTruthy();
           done();
         });
@@ -51,8 +51,8 @@ describe('Component: TextEditor', () => {
 
   it('should test isPreviewActive', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
-      let component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
+      const component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
@@ -66,8 +66,8 @@ describe('Component: TextEditor', () => {
 
   it('should test isSideBySideActive', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
-      let component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
+      const component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
@@ -81,8 +81,8 @@ describe('Component: TextEditor', () => {
 
   it('should test isFullscreenActive', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
-      let component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
+      const component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();

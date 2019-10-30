@@ -169,7 +169,7 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
   constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {}
 
   ngOnInit(): void {
-    for (let demoObj of this.mediaDemo) {
+    for (const demoObj of this.mediaDemo) {
       this._ngZone.run(() => {
         demoObj.value = this._mediaService.query(demoObj.query);
       });

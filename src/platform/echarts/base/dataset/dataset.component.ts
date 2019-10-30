@@ -27,7 +27,7 @@ export class TdDatasetComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         id: this.id,

@@ -52,12 +52,12 @@ export class TypesScatterComponent implements OnInit {
           opacity: 0.75,
           color: '#007373',
         },
-        symbolSize: function(data: number[]): number {
+        symbolSize(data: number[]): number {
           return Math.sqrt(data[2]) / 5e2;
         },
         label: {
           show: true,
-          formatter: function(param: any): any {
+          formatter(param: any): any {
             return param.data[3];
           },
           position: 'top',
@@ -91,12 +91,12 @@ export class TypesScatterComponent implements OnInit {
           opacity: 0.75,
           color: '#1B98C6',
         },
-        symbolSize: function(data: number[]): number {
+        symbolSize(data: number[]): number {
           return Math.sqrt(data[2]) / 5e2;
         },
         label: {
           show: true,
-          formatter: function(param: any): any {
+          formatter(param: any): any {
             return param.data[3];
           },
           position: 'top',

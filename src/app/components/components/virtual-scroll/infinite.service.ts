@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 const data: any[] = [];
 for (let index: number = 1; index <= 1200; index++) {
-  data.push({ index: index, name: 'element-' + index });
+  data.push({ index, name: 'element-' + index });
 }
 
 @Injectable()

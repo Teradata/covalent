@@ -144,9 +144,9 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
   }
 
   ngOnInit(): void {
-    let component: any =
+    const component: any =
       <any>this.type instanceof Type ? this.type : this._dynamicFormsService.getDynamicElement(this.type);
-    let ref: ComponentRef<any> = this._componentFactoryResolver
+    const ref: ComponentRef<any> = this._componentFactoryResolver
       .resolveComponentFactory(component)
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
@@ -172,7 +172,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    */
   ngOnChanges(changes: SimpleChanges): void {
     if (this._instance) {
-      for (let prop in changes) {
+      for (const prop in changes) {
         this._instance[prop] = changes[prop].currentValue;
       }
     }

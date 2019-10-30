@@ -43,9 +43,7 @@ export class TdFlavoredMarkdownContainerDirective {
   }
 }
 
-export interface IReplacerFunc<T> {
-  (componentRef: ComponentRef<T>, ...args: any[]): void;
-}
+export type IReplacerFunc<T> = (componentRef: ComponentRef<T>, ...args: any[]) => void;
 
 @Component({
   selector: 'td-flavored-markdown',
@@ -159,10 +157,10 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       let lines: string[] = markdown.split('\n');
 
       // check how much indentation is used by the first actual markdown line
-      let firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
+      const firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
 
       // Remove all indentation spaces so markdown can be parsed correctly
-      let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
+      const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
       lines = lines.map(function(line: string): string {
         return line.replace(startingWhitespaceRegex, '');
       });
@@ -193,7 +191,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       return;
     }
     if (key && markdown.indexOf(key) > -1) {
-      let markdownParts: string[] = markdown.split(key);
+      const markdownParts: string[] = markdown.split(key);
       keys.shift();
       this._render(markdownParts[0], undefined, undefined);
       this.container.viewContainerRef.insert(this._components[key].hostView, this.container.viewContainerRef.length);
@@ -201,7 +199,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       delete this._components[key];
       this._render(markdownParts[1], keys[0], keys);
     } else {
-      let contentRef: ComponentRef<TdMarkdownComponent> = this._componentFactoryResolver
+      const contentRef: ComponentRef<TdMarkdownComponent> = this._componentFactoryResolver
         .resolveComponentFactory(TdMarkdownComponent)
         .create(this._injector);
       contentRef.instance.content = markdown;
@@ -220,17 +218,17 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   ): string {
     let componentIndex: number = 0;
     return markdown.replace(regExp, (...args: any[]) => {
-      let componentFactory: ComponentFactory<T> = this._componentFactoryResolver.resolveComponentFactory(type);
-      let componentRef: ComponentRef<T> = componentFactory.create(this._injector);
+      const componentFactory: ComponentFactory<T> = this._componentFactoryResolver.resolveComponentFactory(type);
+      const componentRef: ComponentRef<T> = componentFactory.create(this._injector);
       replacerFunc(componentRef, ...args);
-      let key: string = '[' + componentFactory.selector + '-placeholder-' + componentIndex++ + ']';
+      const key: string = '[' + componentFactory.selector + '-placeholder-' + componentIndex++ + ']';
       this._components[key] = componentRef;
       return key;
     });
   }
 
   private _replaceCheckbox(markdown: string): string {
-    let checkboxRegExp: RegExp = /(?:^|\n)- \[(x| )\](.*)/gi;
+    const checkboxRegExp: RegExp = /(?:^|\n)- \[(x| )\](.*)/gi;
     return this._replaceComponent(
       markdown,
       MatCheckbox,
@@ -251,7 +249,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   private _replaceCodeBlocks(markdown: string): string {
-    let codeBlockRegExp: RegExp = /(?:^|\n)```(.*)\n([\s\S]*?)\n```/g;
+    const codeBlockRegExp: RegExp = /(?:^|\n)```(.*)\n([\s\S]*?)\n```/g;
     return this._replaceComponent(
       markdown,
       TdHighlightComponent,
@@ -266,14 +264,14 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   private _replaceTables(markdown: string): string {
-    let tableRgx: RegExp = /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
+    const tableRgx: RegExp = /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
     return this._replaceComponent(
       markdown,
       TdDataTableComponent,
       tableRgx,
       (componentRef: ComponentRef<TdDataTableComponent>, match: string) => {
-        let dataTableLines: string[] = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
-        let columns: string[] = dataTableLines[0]
+        const dataTableLines: string[] = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
+        const columns: string[] = dataTableLines[0]
           .split('|')
           .filter((col: string) => {
             return col;
@@ -281,7 +279,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
           .map((s: string) => {
             return s.trim();
           });
-        let alignment: string[] = dataTableLines[1]
+        const alignment: string[] = dataTableLines[1]
           .split('|')
           .filter((v: string) => {
             return v;
@@ -290,10 +288,10 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
             return s.trim();
           });
         componentRef.instance.columns = columns.map((col: string, index: number) => {
-          let widths: string[] = alignment[index].split('---');
-          let min: number = parseInt(widths[0], 10);
-          let max: number = parseInt(widths[1], 10);
-          let width: ITdDataTableColumnWidth = { min: min, max: max };
+          const widths: string[] = alignment[index].split('---');
+          const min: number = parseInt(widths[0], 10);
+          const max: number = parseInt(widths[1], 10);
+          let width: ITdDataTableColumnWidth = { min, max };
           if (isNaN(min) && isNaN(max)) {
             width = undefined;
           } else if (isNaN(max)) {
@@ -305,13 +303,13 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
             label: col,
             name: col.toLowerCase().trim(),
             numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
-            width: width,
+            width,
           };
         });
 
-        let data: any[] = [];
+        const data: any[] = [];
         for (let i: number = 2; i < dataTableLines.length; i++) {
-          let rowSplit: string[] = dataTableLines[i]
+          const rowSplit: string[] = dataTableLines[i]
             .split('|')
             .filter((cell: string) => {
               return cell;
@@ -319,7 +317,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
             .map((s: string) => {
               return s.trim();
             });
-          let row: any = {};
+          const row: any = {};
           columns.forEach((col: string, index: number) => {
             const rowSplitCell: string = rowSplit[index];
             if (rowSplitCell) {
@@ -334,8 +332,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         componentRef.instance.sortable = true;
         componentRef.instance.onSortChange.subscribe((event: ITdDataTableSortChangeEvent) => {
           componentRef.instance.data = data.sort((a: any, b: any) => {
-            let compA: any = a[event.name];
-            let compB: any = b[event.name];
+            const compA: any = a[event.name];
+            const compB: any = b[event.name];
             let direction: number = 0;
             if (!Number.isNaN(Number.parseFloat(compA)) && !Number.isNaN(Number.parseFloat(compB))) {
               direction = Number.parseFloat(compA) - Number.parseFloat(compB);
@@ -358,19 +356,19 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   private _replaceLists(markdown: string): string {
-    let listRegExp: RegExp = /(?:^|\n)(( *\+)[ |\t](.*)\n)+/g;
+    const listRegExp: RegExp = /(?:^|\n)(( *\+)[ |\t](.*)\n)+/g;
     return this._replaceComponent(
       markdown,
       TdFlavoredListComponent,
       listRegExp,
       (componentRef: ComponentRef<TdFlavoredListComponent>, match: string) => {
-        let lineTexts: string[] = match.split(
+        const lineTexts: string[] = match.split(
           new RegExp('\\n {' + (match.indexOf('+') - 1).toString() + '}\\+[ |\\t]'),
         );
         lineTexts.shift();
-        let lines: IFlavoredListItem[] = [];
+        const lines: IFlavoredListItem[] = [];
         lineTexts.forEach((text: string, index: number) => {
-          let sublineTexts: string[] = text.split(/\n *\+ /);
+          const sublineTexts: string[] = text.split(/\n *\+ /);
           lines.push({
             line: sublineTexts.shift(),
             sublines: sublineTexts.map((subline: string) => {

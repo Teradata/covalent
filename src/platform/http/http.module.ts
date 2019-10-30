@@ -8,7 +8,9 @@ import { TdURLRegExpInterceptorMatcher } from './interceptors/url-regexp-interce
 
 export const HTTP_CONFIG: InjectionToken<HttpConfig> = new InjectionToken<HttpConfig>('HTTP_CONFIG');
 
-export type HttpConfig = { interceptors: ITdHttpInterceptorConfig[] };
+export interface HttpConfig {
+  interceptors: ITdHttpInterceptorConfig[];
+}
 
 export function httpFactory(handler: HttpHandler, injector: Injector, config: HttpConfig): TdHttpService {
   return new TdHttpService(

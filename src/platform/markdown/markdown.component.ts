@@ -238,7 +238,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
       // Clean container
       this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
-      let divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
+      const divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
     }
     // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
     setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor, true), 250);
@@ -272,24 +272,24 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     let lines: string[] = markdown.split('\n');
 
     // check how much indentation is used by the first actual markdown line
-    let firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
+    const firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
 
     // Remove all indentation spaces so markdown can be parsed correctly
-    let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
+    const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
     lines = lines.map(function(line: string): string {
       return line.replace(startingWhitespaceRegex, '');
     });
 
     // Join lines again with line characters
-    let markdownToParse: string = lines.join('\n');
+    const markdownToParse: string = lines.join('\n');
 
     // Convert markdown into html
-    let converter: any = new showdown.Converter();
+    const converter: any = new showdown.Converter();
     converter.setOption('ghCodeBlocks', true);
     converter.setOption('tasklists', true);
     converter.setOption('tables', true);
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
-    let html: string = converter.makeHtml(markdownToParse);
+    const html: string = converter.makeHtml(markdownToParse);
     return html;
   }
 }

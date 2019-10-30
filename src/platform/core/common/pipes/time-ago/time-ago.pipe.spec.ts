@@ -2,7 +2,7 @@ import { TdTimeAgoPipe } from './time-ago.pipe';
 
 describe('TdTimeAgoPipe', () => {
   let pipe: TdTimeAgoPipe;
-  let time: number = Date.now();
+  const time: number = Date.now();
 
   beforeEach(() => {
     pipe = new TdTimeAgoPipe();

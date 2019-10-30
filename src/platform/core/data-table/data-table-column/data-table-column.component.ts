@@ -69,7 +69,7 @@ export class TdDataTableColumnComponent {
    */
   @Input('sortOrder')
   set sortOrder(order: 'ASC' | 'DESC') {
-    let sortOrder: string = order ? order.toUpperCase() : 'ASC';
+    const sortOrder: string = order ? order.toUpperCase() : 'ASC';
     if (sortOrder !== 'DESC' && sortOrder !== 'ASC') {
       throw new Error('[sortOrder] must be empty, ASC or DESC');
     }

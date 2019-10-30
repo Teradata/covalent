@@ -71,7 +71,7 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   abstract getConfig(): any;
 
   private _setOptions(): void {
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         id: this.id,

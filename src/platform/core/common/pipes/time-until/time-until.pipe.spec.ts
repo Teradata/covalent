@@ -2,7 +2,7 @@ import { TdTimeUntilPipe } from './time-until.pipe';
 
 describe('TdTimeUntilPipe', () => {
   let pipe: TdTimeUntilPipe;
-  let time: number = Date.now();
+  const time: number = Date.now();
 
   beforeEach(() => {
     pipe = new TdTimeUntilPipe();
@@ -18,7 +18,7 @@ describe('TdTimeUntilPipe', () => {
   });
 
   it('should return a time ago string', () => {
-    let fixedTime: number = Date.parse('2017-01-01T00:00:00Z');
+    const fixedTime: number = Date.parse('2017-01-01T00:00:00Z');
     // 1 second
     expect(pipe.transform(Date.parse('2017-01-01T00:00:01Z'), fixedTime)).toEqual('in 1 second');
     // < 1 minute

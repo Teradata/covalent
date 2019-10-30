@@ -31,8 +31,8 @@ describe('Component: App', () => {
 
   it('should set the editor value and retrieve that same value from editor', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
-      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -56,8 +56,8 @@ describe('Component: App', () => {
 
   it('should register a custom language and custom theme and set to custom language', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
-      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -73,7 +73,7 @@ describe('Component: App', () => {
               done();
             });
           });
-          let language: any = {
+          const language: any = {
             id: 'mySpecialLanguage',
             monarchTokensProvider: [
               ['/\\[error.*/', 'custom-error'],
@@ -139,8 +139,8 @@ describe('Component: App', () => {
 
   it('should set the editor style', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
-      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -155,7 +155,7 @@ describe('Component: App', () => {
             if (component.isElectronApp) {
               expect(component.editorStyle).toBe('width:100%;height:500px;border:10px solid green;');
             } else {
-              let containerDiv: HTMLDivElement = component._editorContainer.nativeElement;
+              const containerDiv: HTMLDivElement = component._editorContainer.nativeElement;
               expect(containerDiv.getAttribute('style')).toBe('width:100%;height:500px;border:10px solid green;');
             }
             done();
@@ -167,8 +167,8 @@ describe('Component: App', () => {
 
   it('should set the editor options and retrieve them', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestEditorOptionsComponent);
-      let component: TestEditorOptionsComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestEditorOptionsComponent);
+      const component: TestEditorOptionsComponent = fixture.debugElement.componentInstance;
       if (component.editor1.isElectronApp) {
         component.editor1.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -185,8 +185,8 @@ describe('Component: App', () => {
 
   it('should show multiple editors and set the editors values and retrieve that same values from editors', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestMultipleEditorsComponent);
-      let component: TestMultipleEditorsComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestMultipleEditorsComponent);
+      const component: TestMultipleEditorsComponent = fixture.debugElement.componentInstance;
       if (component.editor1.isElectronApp) {
         component.editor1.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
         component.editor2.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
@@ -230,8 +230,8 @@ describe('Component: App', () => {
 
   it('should show editor in fullscreen mode and then unset fullscreen mode', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
-      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -241,7 +241,7 @@ describe('Component: App', () => {
         component.onEditorInitialized.subscribe(() => {
           component.editorStyle = 'width:100%;height:500px;border:10px solid green;';
           component.value = 'SELECT * FROM foo;';
-          let containerDiv: IFsDocumentElement = <IFsDocumentElement>component._editorContainer.nativeElement;
+          const containerDiv: IFsDocumentElement = <IFsDocumentElement>component._editorContainer.nativeElement;
           if (component.isElectronApp) {
             component.showFullScreenEditor();
             expect(component.isFullScreen).toBe(true);
@@ -252,7 +252,7 @@ describe('Component: App', () => {
             component.showFullScreenEditor();
             expect(containerDiv.webkitRequestFullscreen).toHaveBeenCalled();
             component.exitFullScreenEditor();
-            let fsDoc: IFsDocument = <IFsDocument>document;
+            const fsDoc: IFsDocument = <IFsDocument>document;
             expect(fsDoc).toBeDefined();
           }
 
@@ -264,8 +264,8 @@ describe('Component: App', () => {
 
   it('should expose editor instance on editorInitialized event', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
-      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -274,7 +274,7 @@ describe('Component: App', () => {
       fixture.whenStable().then(() => {
         component.onEditorInitialized.subscribe(async (editorInstance: any) => {
           expect(editorInstance).toBeDefined();
-          let line: any = await editorInstance.getPosition();
+          const line: any = await editorInstance.getPosition();
 
           expect(line.column).toBe(1);
           expect(line.lineNumber).toBe(1);
@@ -286,8 +286,8 @@ describe('Component: App', () => {
 
   it('should work with 2 way binding via value', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithValueComponent);
-      let component: TestTwoWayBindingWithValueComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithValueComponent);
+      const component: TestTwoWayBindingWithValueComponent = fixture.debugElement.componentInstance;
       if (component.editor.isElectronApp) {
         component.editor.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -315,8 +315,8 @@ describe('Component: App', () => {
 
   it('should work with 2 way binding via ngModel', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithNgModelComponent);
-      let component: TestTwoWayBindingWithNgModelComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithNgModelComponent);
+      const component: TestTwoWayBindingWithNgModelComponent = fixture.debugElement.componentInstance;
       if (component.editor.isElectronApp) {
         component.editor.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }

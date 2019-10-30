@@ -18,9 +18,9 @@ describe('Component: SearchInput', () => {
   }));
 
   it('should leverage ngModel to set a value', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);
-    let component: TestNgModelSupportComponent = fixture.debugElement.componentInstance;
-    let inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);
+    const component: TestNgModelSupportComponent = fixture.debugElement.componentInstance;
+    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
     expect(inputElement.nativeElement).toBeTruthy();
 

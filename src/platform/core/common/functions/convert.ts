@@ -71,15 +71,15 @@ export function convertCSVToJSON(
     return '';
   }
 
-  let newObjects: any[] = [];
+  const newObjects: any[] = [];
 
   // Extract object keys from header row
   const keys: string[] = csvArray[0].split(keySeparator);
   // Iterate through array, creating one output line per object
   for (let i: number = 1; i < csvArray.length; i++) {
-    let newObject: any = {};
+    const newObject: any = {};
 
-    let values: string[] = csvArray[i].split(keySeparator);
+    const values: string[] = csvArray[i].split(keySeparator);
     if (values.length !== keys.length) {
       continue;
     }

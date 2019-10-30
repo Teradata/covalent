@@ -25,9 +25,9 @@ describe('Component: Highlight', () => {
 
   describe('Rendering: ', () => {
     it('should render empty', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestRenderingComponent);
-      let component: TdHighlightEmptyStaticTestRenderingComponent = fixture.debugElement.componentInstance;
-      let element: HTMLElement = fixture.nativeElement;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestRenderingComponent);
+      const component: TdHighlightEmptyStaticTestRenderingComponent = fixture.debugElement.componentInstance;
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe(``);
       expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeFalsy();
@@ -40,9 +40,9 @@ describe('Component: Highlight', () => {
     }));
 
     it('should render code from static content', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightStaticHtmlTestRenderingComponent);
-      let component: TdHighlightStaticHtmlTestRenderingComponent = fixture.debugElement.componentInstance;
-      let element: HTMLElement = fixture.nativeElement;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightStaticHtmlTestRenderingComponent);
+      const component: TdHighlightStaticHtmlTestRenderingComponent = fixture.debugElement.componentInstance;
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toContain(
         `{ {property} }`.trim(),
@@ -58,14 +58,14 @@ describe('Component: Highlight', () => {
     }));
 
     it('should render code from dynamic content', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicCssTestRenderingComponent);
-      let component: TdHighlightDynamicCssTestRenderingComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicCssTestRenderingComponent);
+      const component: TdHighlightDynamicCssTestRenderingComponent = fixture.debugElement.componentInstance;
       component.content = `
         pre {
           background: #002451;
           border-radius: 2px;
         }`;
-      let element: HTMLElement = fixture.nativeElement;
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe('');
       expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeFalsy();
@@ -78,8 +78,8 @@ describe('Component: Highlight', () => {
     }));
 
     it('should throw error for undefined language', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightUndefinedLangTestRenderingComponent);
-      let component: TdHighlightUndefinedLangTestRenderingComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightUndefinedLangTestRenderingComponent);
+      const component: TdHighlightUndefinedLangTestRenderingComponent = fixture.debugElement.componentInstance;
       expect(function(): void {
         fixture.detectChanges();
       }).toThrowError();
@@ -89,9 +89,9 @@ describe('Component: Highlight', () => {
   describe('Event bindings: ', () => {
     describe('contentReady event: ', () => {
       it('should be fired only once after display renders empty static content', async(() => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestEventsComponent);
-        let component: TdHighlightEmptyStaticTestEventsComponent = fixture.debugElement.componentInstance;
-        let eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestEventsComponent);
+        const component: TdHighlightEmptyStaticTestEventsComponent = fixture.debugElement.componentInstance;
+        const eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -101,9 +101,9 @@ describe('Component: Highlight', () => {
       }));
 
       it('should be fired only once after display renders highlight from static html', async(() => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightStaticHtmlTestEventsComponent);
-        let component: TdHighlightStaticHtmlTestEventsComponent = fixture.debugElement.componentInstance;
-        let eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightStaticHtmlTestEventsComponent);
+        const component: TdHighlightStaticHtmlTestEventsComponent = fixture.debugElement.componentInstance;
+        const eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -113,9 +113,9 @@ describe('Component: Highlight', () => {
       }));
 
       it('should be fired only once after display renders inital highlight from dynamic css content', async(() => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicCssTestEventsComponent);
-        let component: TdHighlightDynamicCssTestEventsComponent = fixture.debugElement.componentInstance;
-        let eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicCssTestEventsComponent);
+        const component: TdHighlightDynamicCssTestEventsComponent = fixture.debugElement.componentInstance;
+        const eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
 
         // Inital dynamic css content
         component.content = `
@@ -132,9 +132,9 @@ describe('Component: Highlight', () => {
       }));
 
       it('should be fired twice after changing the inital rendered highlight dynamic css content', async(() => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicCssTestEventsComponent);
-        let component: TdHighlightDynamicCssTestEventsComponent = fixture.debugElement.componentInstance;
-        let eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicCssTestEventsComponent);
+        const component: TdHighlightDynamicCssTestEventsComponent = fixture.debugElement.componentInstance;
+        const eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
 
         component.content = `
             pre {

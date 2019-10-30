@@ -25,8 +25,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should create the component', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       fixture.detectChanges();
       expect(component).toBeTruthy();
@@ -35,8 +35,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -83,8 +83,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid because an input is required', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -102,7 +102,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(2);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeFalsy();
@@ -114,8 +114,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid because a number is less than min', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -134,7 +134,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(2);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeFalsy();
@@ -146,11 +146,11 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form valid', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
-      let dob: Date = new Date();
+      const dob: Date = new Date();
       component.elements = [
         {
           name: 'first_name',
@@ -175,21 +175,19 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(3);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeTruthy();
-        expect(JSON.stringify(dynamicFormsComponent.value)).toBe(
-          JSON.stringify({ first_name: 'name', age: 20, dob: dob }),
-        );
+        expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({ first_name: 'name', age: 20, dob }));
       });
     }),
   ));
 
   it('should render dynamic elements and show form invalid because character length is less than minLength', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -203,7 +201,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeFalsy();
@@ -214,8 +212,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid because character length is more than maxLength', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -229,7 +227,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeFalsy();
@@ -240,8 +238,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form valid', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -256,7 +254,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeTruthy();
@@ -267,8 +265,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid with custom validation', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -279,7 +277,7 @@ describe('Component: TdDynamicForms', () => {
           validators: [
             {
               validator: (control: AbstractControl) => {
-                let isValid: boolean = control.value > 21 && control.value < 23;
+                const isValid: boolean = control.value > 21 && control.value < 23;
                 return !isValid ? { length: true } : undefined;
               },
             },
@@ -289,7 +287,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeFalsy();
@@ -300,8 +298,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid with Angular validation', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -320,7 +318,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeFalsy();
@@ -331,8 +329,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form valid with custom validations', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -354,7 +352,7 @@ describe('Component: TdDynamicForms', () => {
           validators: [
             {
               validator: (control: AbstractControl) => {
-                let isValid: boolean = control.value > 21 && control.value < 23;
+                const isValid: boolean = control.value > 21 && control.value < 23;
                 return !isValid ? { length: true } : undefined;
               },
             },
@@ -364,7 +362,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(2);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeTruthy();
@@ -375,8 +373,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render errors with manual validations', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       component.elements = [
         {
@@ -388,13 +386,13 @@ describe('Component: TdDynamicForms', () => {
 
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let key: string = 'customElement';
+          const key: string = 'customElement';
           dynamicFormsComponent.controls[key].markAsTouched();
           dynamicFormsComponent.controls[key].setErrors({ customError: 'CUSTOM_ERROR' });
 
@@ -410,8 +408,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements with one element disabled', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -431,7 +429,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(2);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeTruthy();
@@ -443,8 +441,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render disabled file input', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -467,8 +465,8 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic custom element', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
-      let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+      const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
       expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
       component.elements = [
@@ -481,7 +479,7 @@ describe('Component: TdDynamicForms', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
-        let dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
+        const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeTruthy();

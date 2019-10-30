@@ -14,8 +14,8 @@ describe('Component: FileUpload', () => {
 
   it('should render content inside .td-file-input button', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
-      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      const component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -26,8 +26,8 @@ describe('Component: FileUpload', () => {
 
   it('should mimic file selection and then clear it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
-      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      const component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -55,8 +55,8 @@ describe('Component: FileUpload', () => {
 
   it('should mimic file selection and then clear it by disabling it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
-      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      const component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       component.disabled = false;
       fixture.detectChanges();
@@ -85,8 +85,8 @@ describe('Component: FileUpload', () => {
 
   it('should mimic file selection and then upload it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
-      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      const component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       component.disabled = false;
       fixture.detectChanges();
@@ -111,10 +111,10 @@ describe('Component: FileUpload', () => {
 
   it('should mimic file selection and throw (select) event', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
-      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      const component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
 
-      let eventSpy: jasmine.Spy = spyOn(component, 'selectEvent');
+      const eventSpy: jasmine.Spy = spyOn(component, 'selectEvent');
 
       component.multiple = false;
       component.disabled = false;
@@ -134,10 +134,10 @@ describe('Component: FileUpload', () => {
 
   it('should mimic file selection, upload click and throw (upload) event', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
-      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      const component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
 
-      let eventSpy: jasmine.Spy = spyOn(component, 'uploadEvent');
+      const eventSpy: jasmine.Spy = spyOn(component, 'uploadEvent');
 
       component.multiple = false;
       component.disabled = false;
@@ -163,10 +163,10 @@ describe('Component: FileUpload', () => {
 
   it('should mimic file selection, cancel click and throw (cancel) event', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
-      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      const component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
 
-      let eventSpy: jasmine.Spy = spyOn(component, 'cancelEvent');
+      const eventSpy: jasmine.Spy = spyOn(component, 'cancelEvent');
 
       component.multiple = false;
       component.disabled = false;

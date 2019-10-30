@@ -34,14 +34,14 @@ describe('Component: Nav Steps Vertical', () => {
 
   it('should render 5 step headers and 4 separators', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsVerticalTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsVerticalTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let headers: DebugElement[] = fixture.debugElement.queryAll(By.css('td-step-header'));
+        const headers: DebugElement[] = fixture.debugElement.queryAll(By.css('td-step-header'));
         expect(headers.length).toBe(5);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let separators: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-vertical-line'));
+          const separators: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-vertical-line'));
           expect(separators.length).toBe(4);
         });
       });
