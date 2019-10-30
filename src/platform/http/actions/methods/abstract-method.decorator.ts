@@ -30,7 +30,7 @@ export function parseParams(target: HttpParams, source: HttpParams | { [key: str
       }
     });
   } else {
-    for (let key in source) {
+    for (const key in source) {
       // skip if value is undefined
       if (<any>source[key] !== undefined) {
         if (source[key] instanceof Array) {
@@ -60,22 +60,22 @@ export function TdAbstractMethod(config: {
   options?: ITdHttpRESTOptions;
 }): Function {
   return function(target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>): any {
-    let wrappedFunction: Function = descriptor.value;
+    const wrappedFunction: Function = descriptor.value;
     // replace method call with our own and proxy it
     descriptor.value = function(): any {
       try {
         let replacedPath: string = config.path;
-        let parameters: { index: number; param: string; type: TdParamType }[] = Reflect.getOwnMetadata(
+        const parameters: { index: number; param: string; type: TdParamType }[] = Reflect.getOwnMetadata(
           tdHttpRESTParam,
           target,
           propertyName,
         );
-        let newArgs: any[] = [];
+        const newArgs: any[] = [];
         let body: any;
         let queryParams: HttpParams = new HttpParams();
         if (parameters) {
           // map parameters and see which type they are to act on them
-          for (let parameter of parameters) {
+          for (const parameter of parameters) {
             if (parameter.type === 'param') {
               newArgs[parameter.index] = arguments[parameter.index];
               replacedPath = replacedPath.replace(':' + parameter.param, arguments[parameter.index]);
@@ -84,7 +84,7 @@ export function TdAbstractMethod(config: {
               body = arguments[parameter.index];
             } else if (parameter.type === 'queryParams') {
               newArgs[parameter.index] = arguments[parameter.index];
-              let qParams: HttpParams | { [key: string]: string | string[] } = arguments[parameter.index];
+              const qParams: HttpParams | { [key: string]: string | string[] } = arguments[parameter.index];
               if (config.options && config.options.params) {
                 queryParams = parseParams(queryParams, config.options.params);
               }
@@ -96,15 +96,15 @@ export function TdAbstractMethod(config: {
         }
         // tslint:disable-next-line
         let url: string = this.baseUrl + replacedPath;
-        let options: ITdHttpRESTOptionsWithBody = Object.assign({}, config.options, {
-          body: body,
+        const options: ITdHttpRESTOptionsWithBody = Object.assign({}, config.options, {
+          body,
           params: queryParams,
         });
         // tslint:disable-next-line
         let request: any = this.buildRequest(config.method, url, options);
         if (parameters) {
           // see which one was the response parameter so we can set the request observable
-          for (let parameter of parameters) {
+          for (const parameter of parameters) {
             if (parameter.type === 'response') {
               newArgs[parameter.index] = request;
             }

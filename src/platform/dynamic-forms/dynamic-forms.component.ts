@@ -83,8 +83,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
    */
   get errors(): { [name: string]: any } {
     if (this.dynamicForm) {
-      let errors: { [name: string]: any } = {};
-      for (let name in this.dynamicForm.controls) {
+      const errors: { [name: string]: any } = {};
+      for (const name in this.dynamicForm.controls) {
         errors[name] = this.dynamicForm.controls[name].errors;
       }
       return errors;
@@ -151,14 +151,14 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   private _rerenderElements(): void {
     this._clearRemovedElements();
     this._renderedElements = [];
-    let duplicates: string[] = [];
+    const duplicates: string[] = [];
     this._elements.forEach((elem: ITdDynamicElementConfig) => {
       this._dynamicFormsService.validateDynamicElementName(elem.name);
       if (duplicates.indexOf(elem.name) > -1) {
         throw new Error(`Dynamic element name: "${elem.name}" is duplicated`);
       }
       duplicates.push(elem.name);
-      let dynamicElement: AbstractControl = this.dynamicForm.get(elem.name);
+      const dynamicElement: AbstractControl = this.dynamicForm.get(elem.name);
       if (!dynamicElement) {
         this.dynamicForm.addControl(elem.name, this._dynamicFormsService.createFormControl(elem));
         this._subscribeToControlStatusChanges(elem.name);

@@ -8,12 +8,12 @@ export class CovalentTests {
    * function that can be changed for all places needing this.
    */
   public static clickDialogButton(component: any, buttonText: string): void {
-    let elements: NodeList = document.querySelectorAll('[mat-button]');
+    const elements: NodeList = document.querySelectorAll('[mat-button]');
     for (let index: number = 0; index < elements.length; index++) {
       // try to click share on any buttons found with share as the text content.  If there is an error trying to click one just
       // hide the error as it may not be clickable yet in the DOM or something
       try {
-        let button: Node = elements.item(index);
+        const button: Node = elements.item(index);
         if (button.firstChild.textContent === buttonText) {
           component.renderer.invokeElementMethod(button, 'dispatchEvent', [
             new MouseEvent('click', { bubbles: true, cancelable: true }),
@@ -42,7 +42,7 @@ export class CovalentTests {
    * function that can be changed for all places needing this.
    */
   public static clickExpansionDownArrow(component: any, expansionContainer: DebugElement): void {
-    let downArrowIcon: DebugElement = expansionContainer.children[0].children[0].children[0];
+    const downArrowIcon: DebugElement = expansionContainer.children[0].children[0].children[0];
     downArrowIcon.triggerEventHandler('click', undefined);
   }
 
@@ -53,7 +53,7 @@ export class CovalentTests {
    * function that can be changed for all places needing this.
    */
   public static checkForErrorDialogs(): boolean {
-    let elements: NodeList = document.querySelectorAll('[id^=cdk-overlay]');
+    const elements: NodeList = document.querySelectorAll('[id^=cdk-overlay]');
     let foundErrorDialog: boolean = false;
     for (let index: number = 0; index < elements.length; index++) {
       if (elements[index].firstChild.textContent.indexOf('There was a problem') > -1) {

@@ -131,7 +131,7 @@ export class TdLoadingComponent implements DoCheck {
 
   getCircleStrokeWidth(): number {
     // we calculate the stroke width by setting it as 10% of its diameter
-    let strokeWidth: number = this.getCircleDiameter() / 10;
+    const strokeWidth: number = this.getCircleDiameter() / 10;
     return Math.abs(strokeWidth);
   }
 

@@ -458,7 +458,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
   _handleAddChip(): boolean {
     let value: any;
     if (this.requireMatch) {
-      let selectedOptions: MatOption[] = this._options.toArray().filter((option: MatOption) => {
+      const selectedOptions: MatOption[] = this._options.toArray().filter((option: MatOption) => {
         return option.active;
       });
       if (selectedOptions.length > 0) {
@@ -521,7 +521,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
    * returns 'true' if successful, 'false' if it fails.
    */
   removeChip(index: number): boolean {
-    let removedValues: any[] = this.value.splice(index, 1);
+    const removedValues: any[] = this.value.splice(index, 1);
     if (removedValues.length === 0) {
       return false;
     }
@@ -609,7 +609,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
          * when pressing the up key
          */
         if (this.requireMatch) {
-          let length: number = this._options.length;
+          const length: number = this._options.length;
           if (length > 1 && this._options.toArray()[0].active && this._internalActivateOption) {
             this._options.toArray()[0].setInactiveStyles();
             this._internalActivateOption = false;
@@ -729,7 +729,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
    * Get total of chips
    */
   get _totalChips(): number {
-    let chips: MatChip[] = this._chipsChildren.toArray();
+    const chips: MatChip[] = this._chipsChildren.toArray();
     return chips.length;
   }
 

@@ -35,7 +35,7 @@ export class VirtualScrollDemoComponent implements OnInit {
 
   ngOnInit(): void {
     for (let index: number = 1; index <= 1200; index++) {
-      this.data.push({ index: index, name: 'element-' + index });
+      this.data.push({ index, name: 'element-' + index });
     }
 
     this.fetch();

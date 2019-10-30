@@ -9,12 +9,12 @@ export const tdHttpRESTParam: Symbol = Symbol('TdHttpRESTParam');
  */
 export function TdAbstractParam(type: TdParamType, param?: string): Function {
   return function(target: Object, propertyKey: string | symbol, parameterIndex: number): void {
-    let parameters: { index: number; param: string; type: TdParamType }[] =
+    const parameters: { index: number; param: string; type: TdParamType }[] =
       Reflect.getOwnMetadata(tdHttpRESTParam, target, propertyKey) || [];
     parameters.push({
       index: parameterIndex,
-      param: param,
-      type: type,
+      param,
+      type,
     });
     Reflect.defineMetadata(tdHttpRESTParam, parameters, target, propertyKey);
   };

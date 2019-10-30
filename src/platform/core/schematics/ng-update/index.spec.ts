@@ -28,7 +28,7 @@ describe('ng-update schematic', () => {
   let appTree: UnitTestTree;
 
   beforeEach(async () => {
-    let workspaceTree: UnitTestTree = await collectionTestRunner
+    const workspaceTree: UnitTestTree = await collectionTestRunner
       .runExternalSchematicAsync('@schematics/angular', 'workspace', workspaceOptions)
       .toPromise();
     appTree = await collectionTestRunner
@@ -75,7 +75,7 @@ describe('ng-update schematic', () => {
     const updatedPackageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
     const updatedDependencies: any = updatedPackageJson.dependencies;
 
-    let expectedCovalentVersion: string = '3.0.0';
+    const expectedCovalentVersion: string = '3.0.0';
 
     expectVersionToBe(updatedDependencies, '@covalent/dynamic-forms', expectedCovalentVersion);
     expectVersionToBe(updatedDependencies, '@covalent/http', expectedCovalentVersion);

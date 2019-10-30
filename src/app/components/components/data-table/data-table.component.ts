@@ -180,7 +180,7 @@ export class DataTableDemoComponent implements OnInit {
 
     this.dateSortData = this.data.slice(0, 5);
     this.dateSortData = this.dateSortData.map((row: any) => {
-      let randomDate: Date = new Date(
+      const randomDate: Date = new Date(
         new Date(2012, 0, 1).getTime() + Math.random() * (new Date().getTime() - new Date(2012, 0, 1).getTime()),
       );
       row.date = randomDate;
@@ -226,7 +226,7 @@ export class DataTableDemoComponent implements OnInit {
 
   async filter(): Promise<void> {
     let newData: any[] = this.data;
-    let excludedColumns: string[] = await this.columns
+    const excludedColumns: string[] = await this.columns
       .filter((column: ITdDataTableColumn) => {
         return (
           (column.filter === undefined && column.hidden === true) ||

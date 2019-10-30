@@ -237,15 +237,15 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
       if (this._webview) {
         this._webview.send('setLanguage', language);
       } else if (this._editor) {
-        let currentValue: string = this._editor.getValue();
+        const currentValue: string = this._editor.getValue();
         this._editor.dispose();
-        let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
+        const myDiv: HTMLDivElement = this._editorContainer.nativeElement;
         this._editor = monaco.editor.create(
           myDiv,
           Object.assign(
             {
               value: currentValue,
-              language: language,
+              language,
               theme: this._theme,
             },
             this.editorOptions,
@@ -273,16 +273,16 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
       if (this._webview) {
         this._webview.send('registerLanguage', language);
       } else if (this._editor) {
-        let currentValue: string = this._editor.getValue();
+        const currentValue: string = this._editor.getValue();
         this._editor.dispose();
 
         for (let i: number = 0; i < language.completionItemProvider.length; i++) {
-          let provider: any = language.completionItemProvider[i];
+          const provider: any = language.completionItemProvider[i];
           /* tslint:disable-next-line */
           provider.kind = eval(provider.kind);
         }
         for (let i: number = 0; i < language.monarchTokensProvider.length; i++) {
-          let monarchTokens: any = language.monarchTokensProvider[i];
+          const monarchTokens: any = language.monarchTokensProvider[i];
           /* tslint:disable-next-line */
           monarchTokens[0] = eval(monarchTokens[0]);
         }
@@ -304,7 +304,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
           },
         });
 
-        let css: HTMLStyleElement = document.createElement('style');
+        const css: HTMLStyleElement = document.createElement('style');
         css.type = 'text/css';
         css.innerHTML = language.monarchTokensProviderCSS;
         document.body.appendChild(css);
@@ -324,11 +324,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
       if (this._webview) {
         this._webview.send('setEditorStyle', { language: this._language, theme: this._theme, style: editorStyle });
       } else if (this._editor) {
-        let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
+        const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
         containerDiv.setAttribute('style', editorStyle);
-        let currentValue: string = this._editor.getValue();
+        const currentValue: string = this._editor.getValue();
         this._editor.dispose();
-        let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
+        const myDiv: HTMLDivElement = this._editorContainer.nativeElement;
         this._editor = monaco.editor.create(
           myDiv,
           Object.assign(
@@ -360,9 +360,9 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     this._theme = theme;
     if (this._componentInitialized) {
       if (this._webview) {
-        this._webview.send('setEditorOptions', { theme: theme });
+        this._webview.send('setEditorOptions', { theme });
       } else if (this._editor) {
-        this._editor.updateOptions({ theme: theme });
+        this._editor.updateOptions({ theme });
         this.onEditorConfigurationChanged.emit(undefined);
       }
     }
@@ -815,8 +815,8 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    * For calls for Electron use this to call the editor inside the webview
    */
   private wrapEditorCalls(obj: any): any {
-    let that: any = this;
-    let handler: any = {
+    const that: any = this;
+    const handler: any = {
       get(target: any, propKey: any, receiver: any): any {
         return async (...args: any): Promise<any> => {
           if (that._componentInitialized) {
@@ -825,11 +825,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 new Promise((resolve: any) => {
                   that._webview.executeJavaScript(code, resolve);
                 });
-              let result: any = await executeJavaScript('editor.' + propKey + '(' + args + ')');
+              const result: any = await executeJavaScript('editor.' + propKey + '(' + args + ')');
               return result;
             } else {
               const origMethod: any = target[propKey];
-              let result: any = await origMethod.apply(that._editor, args);
+              const result: any = await origMethod.apply(that._editor, args);
               // since running javascript code manually need to force Angular to detect changes
               setTimeout(() => {
                 that.zone.run(() => {
@@ -853,7 +853,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    * and emit the onEditorInitialized event.  This is only used in the browser version.
    */
   private initMonaco(): void {
-    let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
+    const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
     containerDiv.id = this._editorInnerContainer;
     this._editor = monaco.editor.create(
       containerDiv,

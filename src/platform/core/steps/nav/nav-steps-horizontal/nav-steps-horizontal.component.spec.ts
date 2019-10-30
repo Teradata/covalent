@@ -34,14 +34,14 @@ describe('Component: Nav Steps Horizontal', () => {
 
   it('should render 5 step headers and 4 separators', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let headers: DebugElement[] = fixture.debugElement.queryAll(By.css('td-step-header'));
+        const headers: DebugElement[] = fixture.debugElement.queryAll(By.css('td-step-header'));
         expect(headers.length).toBe(5);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let separators: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-horizontal-line'));
+          const separators: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-horizontal-line'));
           expect(separators.length).toBe(4);
         });
       });
@@ -50,14 +50,14 @@ describe('Component: Nav Steps Horizontal', () => {
 
   it('should hide paginations buttons when steps fit screen', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         document.body.style.width = '900px';
         window.dispatchEvent(new Event('resize'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
+          const pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
           expect(pagination.length).toBe(2);
           expect(fixture.debugElement.query(By.css('.td-step-header-pagination-controls-enabled'))).toBeFalsy();
         });
@@ -67,14 +67,14 @@ describe('Component: Nav Steps Horizontal', () => {
 
   it('should resize window and hide pagination buttons if steps dont fit screen', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         document.body.style.width = '150px';
         window.dispatchEvent(new Event('resize'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
+          const pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
           expect(pagination.length).toBe(2);
           expect(fixture.debugElement.query(By.css('.td-step-header-pagination-controls-enabled'))).toBeTruthy();
           expect(pagination[0].classes['td-step-header-pagination-disabled']).toBeTruthy();

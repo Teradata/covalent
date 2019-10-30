@@ -4,10 +4,10 @@ import { Subject, Observable } from 'rxjs';
  * Waits until monaco has been loaded so we can reference its global object.
  */
 export function waitUntilMonacoReady(): Observable<void> {
-  let monacoReady$: Subject<void> = new Subject<void>();
+  const monacoReady$: Subject<void> = new Subject<void>();
 
   // create interval to check if monaco has been loaded
-  let interval: any = setInterval(() => {
+  const interval: any = setInterval(() => {
     if (isMonacoLoaded()) {
       // clear interval when monaco has been loaded
       clearInterval(interval);

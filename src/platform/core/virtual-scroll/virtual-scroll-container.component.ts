@@ -136,7 +136,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
   }
 
   ngAfterViewChecked(): void {
-    let newHostHeight: number = this._elementRef.nativeElement.getBoundingClientRect().height;
+    const newHostHeight: number = this._elementRef.nativeElement.getBoundingClientRect().height;
     if (this._hostHeight !== newHostHeight) {
       this._hostHeight = newHostHeight;
       if (this._initialized) {
@@ -164,9 +164,9 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
 
   @HostListener('scroll', ['$event'])
   handleScroll(event: Event): void {
-    let element: HTMLElement = <HTMLElement>event.target;
+    const element: HTMLElement = <HTMLElement>event.target;
     if (element) {
-      let verticalScroll: number = element.scrollTop;
+      const verticalScroll: number = element.scrollTop;
       if (this._scrollVerticalOffset !== verticalScroll) {
         this._scrollVerticalOffset = verticalScroll;
         if (this._initialized) {
@@ -217,9 +217,9 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
   private _calculateVirtualRows(): void {
     if (this._data) {
       this._totalHeight = this._data.length * this.rowHeight;
-      let fromRow: number = Math.floor(this._scrollVerticalOffset / this.rowHeight) - TD_VIRTUAL_OFFSET;
+      const fromRow: number = Math.floor(this._scrollVerticalOffset / this.rowHeight) - TD_VIRTUAL_OFFSET;
       this._fromRow = fromRow > 0 ? fromRow : 0;
-      let range: number = Math.floor(this._hostHeight / this.rowHeight) + TD_VIRTUAL_OFFSET * 2;
+      const range: number = Math.floor(this._hostHeight / this.rowHeight) + TD_VIRTUAL_OFFSET * 2;
       let toRow: number = range + this.fromRow;
       if (isFinite(toRow) && toRow > this._data.length) {
         toRow = this._data.length;

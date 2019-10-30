@@ -59,7 +59,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         position: this.position,
@@ -85,7 +85,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
     return (params: any, ticket: any, callback: (ticket: string, html: string) => void) => {
       this._context = {
         $implicit: params,
-        ticket: ticket,
+        ticket,
       };
       // timeout set since we need to set the HTML at the end of the angular lifecycle when
       // the tooltip delay is more than 0

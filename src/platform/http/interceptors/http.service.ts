@@ -58,9 +58,9 @@ export class TdHttpService extends HttpClient {
       withCredentials?: boolean;
     } = {},
   ): Observable<any> {
-    let interceptors: ITdHttpInterceptor[] = this._interceptorBehavior.requestInterceptors
+    const interceptors: ITdHttpInterceptor[] = this._interceptorBehavior.requestInterceptors
       .filter((mapping: ITdHttpInterceptorMapping) => {
-        return this._interceptorBehavior.httpInterceptorMatcher.matches({ url: url }, mapping);
+        return this._interceptorBehavior.httpInterceptorMatcher.matches({ url }, mapping);
       })
       .map((mapping: ITdHttpInterceptorMapping) => {
         return mapping.interceptor;

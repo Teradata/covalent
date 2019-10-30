@@ -24,9 +24,9 @@ describe('Component: PagingBar', () => {
   }));
 
   it('should set [pageSize] dynamically', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageSizeComponent);
-    let component: TestPageSizeComponent = fixture.debugElement.componentInstance;
-    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestPageSizeComponent);
+    const component: TestPageSizeComponent = fixture.debugElement.componentInstance;
+    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
 
     component.pageSize = 100;
     fixture.detectChanges();
@@ -47,20 +47,20 @@ describe('Component: PagingBar', () => {
   });
 
   it('should set [initialPage] and instanciate the paging bar at that page', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestInitialPageComponent);
-    let component: TestInitialPageComponent = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestInitialPageComponent);
+    const component: TestInitialPageComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      let page: number = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.page;
+      const page: number = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.page;
       expect(page).toBe(3);
       done();
     });
   });
 
   it('should render first/last buttons and then remove them when setting [firstLast] to false', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestFirstLastComponent);
-    let component: TestFirstLastComponent = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestFirstLastComponent);
+    const component: TestFirstLastComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -78,8 +78,8 @@ describe('Component: PagingBar', () => {
   });
 
   it('should set [pageLinkCount] and then see buttons in markup and then change count', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
-    let component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
+    const component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
     component.pageLinkCount = 6;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -96,9 +96,9 @@ describe('Component: PagingBar', () => {
   });
 
   it('should navigate to page link 5 and then 3', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
-    let component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
-    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
+    const component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
+    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
     component.pageLinkCount = 5;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -118,10 +118,10 @@ describe('Component: PagingBar', () => {
   });
 
   it('should jump to a page using an external material input', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    let component: TestGoToComponent = fixture.debugElement.componentInstance;
-    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
-    let inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
+    const component: TestGoToComponent = fixture.debugElement.componentInstance;
+    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -144,10 +144,10 @@ describe('Component: PagingBar', () => {
   });
 
   it('should not jump to a page if the page doesnt exist', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    let component: TestGoToComponent = fixture.debugElement.componentInstance;
-    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
-    let inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
+    const component: TestGoToComponent = fixture.debugElement.componentInstance;
+    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -169,10 +169,10 @@ describe('Component: PagingBar', () => {
   });
 
   it('should floor a value before jumping to a page', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    let component: TestGoToComponent = fixture.debugElement.componentInstance;
-    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
-    let inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
+    const component: TestGoToComponent = fixture.debugElement.componentInstance;
+    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {

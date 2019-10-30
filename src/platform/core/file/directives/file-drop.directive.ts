@@ -61,10 +61,10 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
   @HostListener('drop', ['$event'])
   onDrop(event: Event): void {
     if (!this.disabled) {
-      let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
-      let files: FileList = transfer.files;
+      const transfer: DataTransfer = (<DragEvent>event).dataTransfer;
+      const files: FileList = transfer.files;
       if (files.length) {
-        let value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
+        const value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
         this.onFileDrop.emit(value);
       }
     }
@@ -79,7 +79,7 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
    */
   @HostListener('dragover', ['$event'])
   onDragOver(event: Event): void {
-    let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
+    const transfer: DataTransfer = (<DragEvent>event).dataTransfer;
     transfer.dropEffect = this._typeCheck(transfer.types);
     if (
       this.disabled ||

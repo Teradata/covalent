@@ -110,11 +110,11 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
    */
   private _onStepSelection(step: TdStepComponent): void {
     if (this.prevStep !== step) {
-      let prevStep: TdStepComponent = this.prevStep;
+      const prevStep: TdStepComponent = this.prevStep;
       this.prevStep = step;
-      let event: IStepChangeEvent = {
+      const event: IStepChangeEvent = {
         newStep: step,
-        prevStep: prevStep,
+        prevStep,
       };
       this._deactivateAllBut(step);
       this.onStepChange.emit(event);
@@ -135,7 +135,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   private _registerSteps(): void {
     this._subcriptions = [];
     this._steps.toArray().forEach((step: TdStepComponent) => {
-      let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
+      const subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
         this._onStepSelection(step);
       });
       this._subcriptions.push(subscription);

@@ -49,7 +49,7 @@ function injectArgs(types: (Type<any> | InjectionToken<any> | any[])[], injector
         if (arg.length === 0) {
           throw new Error('Arguments array must have arguments.');
         }
-        let type: Type<any> | undefined = undefined;
+        let type: Type<any> | undefined;
         let flags: InjectFlags = InjectFlags.Default;
 
         for (let j: number = 0; j < arg.length; j++) {
@@ -139,7 +139,7 @@ export function mixinHttp(
      * Method used to build the default headers using the base headers
      */
     buildHeaders(): HttpHeaders {
-      let headersObj: { [key: string]: any } = {};
+      const headersObj: { [key: string]: any } = {};
       this._baseHeaders.keys().forEach((key: any) => {
         headersObj[key] = this._baseHeaders.get(key);
       });
@@ -189,7 +189,7 @@ export function mixinHttp(
             headers = headers.set(key, (<HttpHeaders>options.headers).get(key));
           });
         } else {
-          for (let key in options.headers) {
+          for (const key in options.headers) {
             headers = headers.set(key, <any>options.headers[key]);
           }
         }

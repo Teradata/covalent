@@ -25,7 +25,7 @@ export class JsonFormatterDemoComponent {
       },
       {},
     ],
-    functionProperty: function(arg1: any, arg2: any): void {
+    functionProperty(arg1: any, arg2: any): void {
       // empty
     },
     undefinedProperty: undefined,

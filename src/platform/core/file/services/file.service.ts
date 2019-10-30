@@ -80,7 +80,7 @@ export class TdFileService {
    */
   upload(options: IUploadOptions): Observable<any> {
     return new Observable<any>((subscriber: Subscriber<any>) => {
-      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      const xhr: XMLHttpRequest = new XMLHttpRequest();
       let formData: FormData = new FormData();
 
       if (options.file !== undefined) {
@@ -113,7 +113,7 @@ export class TdFileService {
       xhr.open(options.method, options.url, true);
       xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       if (options.headers) {
-        for (let key in options.headers) {
+        for (const key in options.headers) {
           xhr.setRequestHeader(key, options.headers[key]);
         }
       }

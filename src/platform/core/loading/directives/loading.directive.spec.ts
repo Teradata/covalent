@@ -24,7 +24,7 @@ describe('Directive: Loading', () => {
 
   it('should render a spinner, replace strategy, primary color by default', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDefaultTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDefaultTestComponent);
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
@@ -50,8 +50,8 @@ describe('Directive: Loading', () => {
 
   it('should render a progress bar, replace strategy, accent color', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
-      let component: TdLoadingBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
+      const component: TdLoadingBasicTestComponent = fixture.debugElement.componentInstance;
       component.name = 'name';
       component.type = LoadingType.Linear;
       component.color = 'accent';
@@ -80,8 +80,8 @@ describe('Directive: Loading', () => {
 
   it('should render a spinner, overlay strategy, warn color', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
-      let component: TdLoadingBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
+      const component: TdLoadingBasicTestComponent = fixture.debugElement.componentInstance;
       component.name = 'name';
       component.type = LoadingType.Circular;
       component.color = 'warn';
@@ -120,8 +120,8 @@ describe('Directive: Loading', () => {
 
   it('should render a progress bar, overlay strategy, primary color, determinate mode and set values when shown', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
-      let component: TdLoadingBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
+      const component: TdLoadingBasicTestComponent = fixture.debugElement.componentInstance;
       component.name = 'name';
       component.type = LoadingType.Linear;
       component.color = 'primary';
@@ -180,7 +180,7 @@ describe('Directive: Loading', () => {
 
   it('should render fail to create component without a name and throw error', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
       expect(function(): void {
         fixture.detectChanges();
       }).toThrowError();
@@ -190,7 +190,7 @@ describe('Directive: Loading', () => {
 
   it('should render fail to create component because of duplicate name', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDuplicationTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDuplicationTestComponent);
       expect(function(): void {
         fixture.detectChanges();
       }).toThrowError();
@@ -200,8 +200,8 @@ describe('Directive: Loading', () => {
 
   it('should render a circle loading while the observable returns a value using until syntax and async pipe and display it', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingStarUntilAsyncTestComponent);
-      let component: TdLoadingStarUntilAsyncTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingStarUntilAsyncTestComponent);
+      const component: TdLoadingStarUntilAsyncTestComponent = fixture.debugElement.componentInstance;
       component.createObservable();
       component.color = 'accent';
       fixture.detectChanges();
@@ -233,8 +233,8 @@ describe('Directive: Loading', () => {
 
   it('should render a circle loading while the observable and resolve it in the catch by calling the service', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingNamedErrorStarUntilAsyncTestComponent);
-      let component: TdLoadingNamedErrorStarUntilAsyncTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingNamedErrorStarUntilAsyncTestComponent);
+      const component: TdLoadingNamedErrorStarUntilAsyncTestComponent = fixture.debugElement.componentInstance;
       component.createObservable();
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
@@ -262,8 +262,8 @@ describe('Directive: Loading', () => {
 
   it('should render a circle loading when false and remove it when true with boolean until syntax', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBooleanTemplateUntilTestComponent);
-      let component: TdLoadingBooleanTemplateUntilTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBooleanTemplateUntilTestComponent);
+      const component: TdLoadingBooleanTemplateUntilTestComponent = fixture.debugElement.componentInstance;
       component.loading = true;
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
@@ -288,7 +288,7 @@ describe('Directive: Loading', () => {
 
   it('should inject the content once even if we register/resolve quickly', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDefaultTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDefaultTestComponent);
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();

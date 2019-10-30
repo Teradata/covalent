@@ -11,11 +11,11 @@ import { CovalentChipsModule, TdChipsComponent } from './public-api';
 
 function createFakeKeyboardEvent(keyCode: number): any {
   return {
-    keyCode: keyCode,
-    preventDefault: function(): void {
+    keyCode,
+    preventDefault(): void {
       /* noop */
     },
-    stopPropagation: function(): void {
+    stopPropagation(): void {
       /* noop */
     },
   };
@@ -606,7 +606,7 @@ describe('Component: Chips', () => {
     });
 
     it('should right arrow on a chip and see the chipFocus event', (done: DoneFn) => {
-      let focusEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipFocusEvent');
+      const focusEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipFocusEvent');
 
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -631,7 +631,7 @@ describe('Component: Chips', () => {
     });
 
     it('should right arrow on a chip twice and see the chipBlur event', (done: DoneFn) => {
-      let blurEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipBlurEvent');
+      const blurEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipBlurEvent');
 
       fixture.detectChanges();
       fixture.whenStable().then(() => {

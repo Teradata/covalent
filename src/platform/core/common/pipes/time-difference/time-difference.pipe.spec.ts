@@ -2,8 +2,8 @@ import { TdTimeDifferencePipe } from './time-difference.pipe';
 
 describe('TdTimeDifferencePipe', () => {
   let pipe: TdTimeDifferencePipe;
-  let start: number = Date.now();
-  let end: number = new Date(start).getTime();
+  const start: number = Date.now();
+  const end: number = new Date(start).getTime();
 
   beforeEach(() => {
     pipe = new TdTimeDifferencePipe();
