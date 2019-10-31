@@ -19,8 +19,8 @@ export function parseParams(target: HttpParams, source: HttpParams | { [key: str
   if (source instanceof HttpParams) {
     source.keys().forEach((key: string) => {
       // skip if value is undefined
-      if ((<HttpParams>source).get(key) !== undefined) {
-        (<HttpParams>source).getAll(key).forEach((value: string, index: number) => {
+      if (source.get(key) !== undefined) {
+        source.getAll(key).forEach((value: string, index: number) => {
           if (index === 0) {
             queryParams = queryParams.set(key, value);
           } else {

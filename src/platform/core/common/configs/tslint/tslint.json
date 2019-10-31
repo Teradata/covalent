@@ -17,7 +17,7 @@
       "check-separator",
       "check-type"
     ],
-    "max-line-length": [true, 150],
+    "max-line-length": [true, 120],
     "member-ordering": {
       "options": {
         "order": [
@@ -124,6 +124,12 @@
     "no-angle-bracket-type-assertion": false,
 
     "max-classes-per-file": false,
-    "no-floating-promises": true
+    "no-floating-promises": false,
+
+    "no-big-function": false,
+    "no-duplicate-string": false,
+    "no-identical-functions": false,
+    "max-union-size": false,
+    "no-hardcoded-credentials": false
   }
 }

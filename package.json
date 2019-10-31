@@ -12,7 +12,7 @@
   "scripts": {
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "lint": "npm run tslint && npm run stylelint",
-    "tslint": "./node_modules/.bin/tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" \"./src/platform/core/schematics/**/*.ts\" -e \"./src/environments/**\"",
+    "tslint": "./node_modules/.bin/tslint -p ./tsconfig.json --format codeFrame -c ./tslint.json './src/**/*.ts' -e './src/platform/core/**'  -e './src/platform/echarts/**'",
     "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config stylelint.config.js --syntax scss",
     "preinstall": "rm -rf node_modules tmp deploy dist",
     "postinstall": "npm rebuild node-sass && webdriver-manager update",

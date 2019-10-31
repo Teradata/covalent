@@ -97,7 +97,8 @@ export class TdHttpService extends HttpClient {
   }
 
   private _handleResponseResolve(obs: Observable<any>, interceptors: ITdHttpInterceptor[]): Observable<any> {
-    interceptors.reverse().forEach((interceptor: ITdHttpInterceptor) => {
+    interceptors.reverse();
+    interceptors.forEach((interceptor: ITdHttpInterceptor) => {
       if (interceptor.handleResponse) {
         obs = interceptor.handleResponse(obs);
       }

@@ -6,13 +6,13 @@ import { InternalHttpService } from './actions/http.mixin';
 import { TdHttpService, TdInterceptorBehaviorService, ITdHttpInterceptorConfig } from './interceptors/http.service';
 import { TdURLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
 
-export const HTTP_CONFIG: InjectionToken<HttpConfig> = new InjectionToken<HttpConfig>('HTTP_CONFIG');
+export const HTTP_CONFIG: InjectionToken<IHttpConfig> = new InjectionToken<IHttpConfig>('HTTP_CONFIG');
 
-export interface HttpConfig {
+export interface IHttpConfig {
   interceptors: ITdHttpInterceptorConfig[];
 }
 
-export function httpFactory(handler: HttpHandler, injector: Injector, config: HttpConfig): TdHttpService {
+export function httpFactory(handler: HttpHandler, injector: Injector, config: IHttpConfig): TdHttpService {
   return new TdHttpService(
     handler,
     new TdInterceptorBehaviorService(injector, new TdURLRegExpInterceptorMatcher(), config.interceptors),
@@ -32,7 +32,7 @@ export const HTTP_INTERCEPTOR_PROVIDER: Provider = {
 export class CovalentHttpModule {
   constructor(private _internalHttpService: InternalHttpService) {}
 
-  static forRoot(config: HttpConfig = { interceptors: [] }): ModuleWithProviders {
+  static forRoot(config: IHttpConfig = { interceptors: [] }): ModuleWithProviders {
     return {
       ngModule: CovalentHttpModule,
       providers: [
