@@ -89,7 +89,7 @@ export class TdMediaService {
   }
 
   private _onResize(): void {
-    for (const query in this._querySources) {
+    for (const query of Object.keys(this._querySources)) {
       this._ngZone.run(() => {
         this._matchMediaTrigger(query);
       });

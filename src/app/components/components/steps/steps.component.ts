@@ -17,7 +17,7 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
 
   stepsAttrs: object[] = [
     {
-      description: `Method to be executed when [onStepChange] event is emitted.
+      description: `Method to be executed when [stepChange] event is emitted.
                   Emits an [IStepChangeEvent] implemented object.`,
       name: 'stepChange?',
       type: 'function($event)',

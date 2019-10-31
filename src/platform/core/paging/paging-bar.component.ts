@@ -44,13 +44,13 @@ export class TdPagingBarComponent implements OnInit {
    * firstLast?: boolean
    * Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
    */
-  @Input('firstLast') firstLast: boolean = true;
+  @Input() firstLast: boolean = true;
 
   /**
    * initialPage?: number
    * Sets starting page for the paging bar. Defaults to '1'
    */
-  @Input('initialPage') initialPage: number = 1;
+  @Input() initialPage: number = 1;
 
   /**
    * pageLinkCount?: number
@@ -135,7 +135,7 @@ export class TdPagingBarComponent implements OnInit {
    * Method to be executed when page size changes or any button is clicked in the paging bar.
    * Emits an [IPageChangeEvent] implemented object.
    */
-  @Output('change') onChange: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
+  @Output() change: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
 
   get isRTL(): boolean {
     if (this._dir) {
@@ -275,6 +275,6 @@ export class TdPagingBarComponent implements OnInit {
       toRow: this._toRow,
     };
     this._changeDetectorRef.markForCheck();
-    this.onChange.emit(event);
+    this.change.emit(event);
   }
 }
