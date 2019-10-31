@@ -42,7 +42,7 @@
     "no-arg": true,
     "no-bitwise": true,
     "no-conditional-assignment": true,
-    "no-consecutive-blank-lines": [true],
+    "no-consecutive-blank-lines": true,
     "no-console": [
       true,
       "assert",
@@ -79,7 +79,7 @@
     "no-namespace": true,
     "no-null-keyword": true,
     "no-require-imports": true,
-    "quotemark": { "options": [true, "single", "avoid-escape", "avoid-template"] },
+    "quotemark": [true, "single", "avoid-escape", "avoid-template"],
     "switch-default": true,
     "trailing-comma": {
       "options": {
@@ -125,11 +125,11 @@
 
     "max-classes-per-file": false,
     "no-floating-promises": false,
-
     "no-big-function": false,
     "no-duplicate-string": false,
     "no-identical-functions": false,
     "max-union-size": false,
-    "no-hardcoded-credentials": false
+    "no-hardcoded-credentials": false,
+    "cognitive-complexity": false
   }
 }

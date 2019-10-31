@@ -40,7 +40,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   /**
    * Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
    */
-  @Input('separatorIcon') separatorIcon: string = 'chevron_right';
+  @Input() separatorIcon: string = 'chevron_right';
 
   constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
 
