@@ -87,12 +87,12 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
   /**
    * Color of the tab group.
    */
-  @Input('color') color: ThemePalette;
+  @Input() color: ThemePalette;
 
   /**
    * Background color of the tab group.
    */
-  @Input('backgroundColor') backgroundColor: ThemePalette;
+  @Input() backgroundColor: ThemePalette;
 
   /**
    * Event that emits whenever the raw value of the select changes. This is here primarily

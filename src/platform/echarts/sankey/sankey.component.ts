@@ -80,28 +80,28 @@ export interface ITdSankeySeries extends ITdSeries<'sankey'> {
   ],
 })
 export class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> implements ITdSankeySeries {
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
-  @Input('left') left: string | number;
-  @Input('top') top: string | number;
-  @Input('right') right: string | number;
-  @Input('bottom') bottom: string | number;
-  @Input('width') width: string | number;
-  @Input('height') height: string | number;
-  @Input('nodeWidth') nodeWidth: number;
-  @Input('nodeGap') nodeGap: number;
-  @Input('layoutIterations') layoutIterations: number;
-  @Input('orient') orient: TdSankeyOrient;
-  @Input('draggable') draggable: boolean;
-  @Input('focusNodeAdjacency') focusNodeAdjacency: TdSankeyFocusNodeAdjacency;
-  @Input('label') label: ITdLabel;
-  @Input('itemStyle') itemStyle: ITdItemStyle;
-  @Input('lineStyle') lineStyle: ITdLineCurveStyle;
-  @Input('emphasis') emphasis: ITdEmphasis;
-  @Input('nodes') nodes: any[];
-  @Input('links') links: any[];
-  @Input('edges') edges: any[];
-  @Input('silent') silent: boolean;
+  @Input() zlevel: number;
+  @Input() z: number;
+  @Input() left: string | number;
+  @Input() top: string | number;
+  @Input() right: string | number;
+  @Input() bottom: string | number;
+  @Input() width: string | number;
+  @Input() height: string | number;
+  @Input() nodeWidth: number;
+  @Input() nodeGap: number;
+  @Input() layoutIterations: number;
+  @Input() orient: TdSankeyOrient;
+  @Input() draggable: boolean;
+  @Input() focusNodeAdjacency: TdSankeyFocusNodeAdjacency;
+  @Input() label: ITdLabel;
+  @Input() itemStyle: ITdItemStyle;
+  @Input() lineStyle: ITdLineCurveStyle;
+  @Input() emphasis: ITdEmphasis;
+  @Input() nodes: any[];
+  @Input() links: any[];
+  @Input() edges: any[];
+  @Input() silent: boolean;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('sankey', _optionsService);

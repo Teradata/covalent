@@ -50,21 +50,21 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
    * Note: [config] input properties will override input values
    * https://ecomfe.github.io/echarts-doc/public/en/option.html
    */
-  @Input('config') config: any = {};
+  @Input() config: any = {};
 
   /**
    * group?: string
    * group name in which the chart instance will be connected to
    * https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts.connect
    */
-  @Input('group') group: string;
+  @Input() group: string;
 
   /**
    * themeName?: string
    * theme to be applied into chart instance
    * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Overview%20of%20Style%20Customization
    */
-  @Input('themeName') themeName: string;
+  @Input() themeName: string;
 
   /**
    * renderer: 'svg' | 'canvas'
@@ -72,15 +72,15 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
    * defaults to 'canvas'
    * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Render%20by%20Canvas%20or%20SVG
    */
-  @Input('renderer') renderer: 'canvas' | 'svg' = 'canvas';
+  @Input() renderer: 'canvas' | 'svg' = 'canvas';
 
-  @Output('chartClick') chartClick: EventEmitter<any> = new EventEmitter<any>();
-  @Output('chartDblclick') chartDblclick: EventEmitter<any> = new EventEmitter<any>();
-  @Output('chartContextmenu') chartContextmenu: EventEmitter<any> = new EventEmitter<any>();
-  @Output('magicTypeChanged') magicTypeChanged: EventEmitter<any> = new EventEmitter<any>();
-  @Output('dataViewChanged') dataViewChanged: EventEmitter<any> = new EventEmitter<any>();
-  @Output('datazoom') datazoom: EventEmitter<any> = new EventEmitter<any>();
-  @Output('restore') restore: EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartDblclick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartContextmenu: EventEmitter<any> = new EventEmitter<any>();
+  @Output() magicTypeChanged: EventEmitter<any> = new EventEmitter<any>();
+  @Output() dataViewChanged: EventEmitter<any> = new EventEmitter<any>();
+  @Output() datazoom: EventEmitter<any> = new EventEmitter<any>();
+  @Output() restore: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
