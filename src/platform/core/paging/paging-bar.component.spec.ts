@@ -48,7 +48,6 @@ describe('Component: PagingBar', () => {
 
   it('should set [initialPage] and instanciate the paging bar at that page', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TestInitialPageComponent);
-    const component: TestInitialPageComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -119,7 +118,6 @@ describe('Component: PagingBar', () => {
 
   it('should jump to a page using an external material input', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    const component: TestGoToComponent = fixture.debugElement.componentInstance;
     const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
     const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
@@ -145,7 +143,6 @@ describe('Component: PagingBar', () => {
 
   it('should not jump to a page if the page doesnt exist', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    const component: TestGoToComponent = fixture.debugElement.componentInstance;
     const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
     const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
@@ -170,7 +167,6 @@ describe('Component: PagingBar', () => {
 
   it('should floor a value before jumping to a page', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    const component: TestGoToComponent = fixture.debugElement.componentInstance;
     const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
     const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 

@@ -131,6 +131,7 @@
     "max-union-size": false,
     "no-hardcoded-credentials": false,
     "cognitive-complexity": false,
-    "no-inputs-metadata-property": false
+    "no-inputs-metadata-property": false,
+    "use-type-alias": false
   }
 }

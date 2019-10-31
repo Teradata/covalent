@@ -71,7 +71,7 @@ export class TdLoadingService {
   createComponent(
     config: ITdLoadingDirectiveConfig,
     viewContainerRef: ViewContainerRef,
-    templateRef: TemplateRef<Object>,
+    templateRef: TemplateRef<object>,
     context: TdLoadingContext,
   ): ILoadingRef {
     const directiveConfig: TdLoadingDirectiveConfig = new TdLoadingDirectiveConfig(config);

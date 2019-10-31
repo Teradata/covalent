@@ -75,56 +75,56 @@ export class TdSearchInputComponent extends _TdSearchInputMixinBase implements I
    * appearance?: MatFormFieldAppearance
    * Appearance style for the underlying input component.
    */
-  @Input('appearance') appearance: MatFormFieldAppearance;
+  @Input() appearance: MatFormFieldAppearance;
 
   /**
    * showUnderline?: boolean
    * Sets if the input underline should be visible. Defaults to 'false'.
    */
-  @Input('showUnderline') showUnderline: boolean = false;
+  @Input() showUnderline: boolean = false;
 
   /**
    * debounce?: number
    * Debounce timeout between keypresses. Defaults to 400.
    */
-  @Input('debounce') debounce: number = 400;
+  @Input() debounce: number = 400;
 
   /**
    * placeholder?: string
    * Placeholder for the underlying input component.
    */
-  @Input('placeholder') placeholder: string;
+  @Input() placeholder: string;
 
   /**
    * clearIcon?: string
    * The icon used to clear the search input.
    * Defaults to 'cancel' icon.
    */
-  @Input('clearIcon') clearIcon: string = 'cancel';
+  @Input() clearIcon: string = 'cancel';
 
   /**
    * searchDebounce: function($event)
    * Event emitted after the [debounce] timeout.
    */
-  @Output('searchDebounce') onSearchDebounce: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchDebounce: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * search: function($event)
    * Event emitted after the key enter has been pressed.
    */
-  @Output('search') onSearch: EventEmitter<string> = new EventEmitter<string>();
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * clear: function()
    * Event emitted after the clear icon has been clicked.
    */
-  @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
+  @Output() clear: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * blur: function()
    * Event emitted after the blur event has been called in underlying input.
    */
-  @Output('blur') onBlur: EventEmitter<void> = new EventEmitter<void>();
+  @Output() blur: EventEmitter<void> = new EventEmitter<void>();
 
   get isRTL(): boolean {
     if (this._dir) {
@@ -156,7 +156,7 @@ export class TdSearchInputComponent extends _TdSearchInputMixinBase implements I
   }
 
   handleBlur(): void {
-    this.onBlur.emit(undefined);
+    this.blur.emit();
   }
 
   stopPropagation(event: Event): void {
@@ -165,7 +165,7 @@ export class TdSearchInputComponent extends _TdSearchInputMixinBase implements I
 
   handleSearch(event: Event): void {
     this.stopPropagation(event);
-    this.onSearch.emit(this.value);
+    this.search.emit(this.value);
   }
 
   /**
@@ -174,10 +174,10 @@ export class TdSearchInputComponent extends _TdSearchInputMixinBase implements I
   clearSearch(): void {
     this.value = '';
     this._changeDetectorRef.markForCheck();
-    this.onClear.emit(undefined);
+    this.clear.emit();
   }
 
   private _searchTermChanged(value: string): void {
-    this.onSearchDebounce.emit(value);
+    this.searchDebounce.emit(value);
   }
 }

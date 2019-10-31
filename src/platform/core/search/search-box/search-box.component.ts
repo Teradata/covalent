@@ -68,69 +68,69 @@ export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements ICont
    * The icon used to close the search toggle, only shown when [alwaysVisible] is false.
    * Defaults to 'search' icon.
    */
-  @Input('backIcon') backIcon: string = 'search';
+  @Input() backIcon: string = 'search';
 
   /**
    * searchIcon?: string
    * The icon used to open/focus the search toggle.
    * Defaults to 'search' icon.
    */
-  @Input('searchIcon') searchIcon: string = 'search';
+  @Input() searchIcon: string = 'search';
 
   /**
    * clearIcon?: string
    * The icon used to clear the search input.
    * Defaults to 'cancel' icon.
    */
-  @Input('clearIcon') clearIcon: string = 'cancel';
+  @Input() clearIcon: string = 'cancel';
 
   /**
    * showUnderline?: boolean
    * Sets if the input underline should be visible. Defaults to 'false'.
    */
-  @Input('showUnderline') showUnderline: boolean = false;
+  @Input() showUnderline: boolean = false;
 
   /**
    * debounce?: number
    * Debounce timeout between keypresses. Defaults to 400.
    */
-  @Input('debounce') debounce: number = 400;
+  @Input() debounce: number = 400;
 
   /**
    * alwaysVisible?: boolean
    * Sets if the input should always be visible. Defaults to 'false'.
    */
-  @Input('alwaysVisible') alwaysVisible: boolean = false;
+  @Input() alwaysVisible: boolean = false;
 
   /**
    * placeholder?: string
    * Placeholder for the underlying input component.
    */
-  @Input('placeholder') placeholder: string;
+  @Input() placeholder: string;
 
   /**
    * searchDebounce: function($event)
    * Event emitted after the [debounce] timeout.
    */
-  @Output('searchDebounce') onSearchDebounce: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchDebounce: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * search: function($event)
    * Event emitted after the key enter has been pressed.
    */
-  @Output('search') onSearch: EventEmitter<string> = new EventEmitter<string>();
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * clear: function()
    * Event emitted after the clear icon has been clicked.
    */
-  @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
+  @Output() clear: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * blur: function()
    * Event emitted after the blur event has been called in underlying input.
    */
-  @Output('blur') onBlur: EventEmitter<void> = new EventEmitter<void>();
+  @Output() blur: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(_changeDetectorRef: ChangeDetectorRef) {
     super(_changeDetectorRef);
@@ -155,18 +155,18 @@ export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements ICont
   }
 
   handleSearchDebounce(value: string): void {
-    this.onSearchDebounce.emit(value);
+    this.searchDebounce.emit(value);
   }
 
   handleSearch(value: string): void {
-    this.onSearch.emit(value);
+    this.search.emit(value);
   }
 
   handleClear(): void {
-    this.onClear.emit(undefined);
+    this.clear.emit();
   }
 
   handleBlur(): void {
-    this.onBlur.emit(undefined);
+    this.blur.emit();
   }
 }
