@@ -1,7 +1,7 @@
 declare const Reflect: any;
 export type TdParamType = 'param' | 'response' | 'body' | 'queryParams';
 
-export const tdHttpRESTParam: Symbol = Symbol('TdHttpRESTParam');
+export const tdHttpRESTParam: symbol = Symbol('TdHttpRESTParam');
 
 /**
  * Abstract implementation of the http param decorator

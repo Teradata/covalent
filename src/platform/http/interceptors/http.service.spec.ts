@@ -4,7 +4,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
 import { HttpRequest, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { TdHttpService, HttpConfig, CovalentHttpModule, ITdHttpInterceptor, ITdHttpRESTOptionsWithBody } from '../';
+import { TdHttpService, IHttpConfig, CovalentHttpModule, ITdHttpInterceptor, ITdHttpRESTOptionsWithBody } from '../';
 
 @Injectable()
 export class ResponseOverrideInterceptor implements ITdHttpInterceptor {
@@ -67,7 +67,7 @@ export class RequestRecoveryInterceptor implements ITdHttpInterceptor {
 }
 
 describe('Service: Http', () => {
-  const config: HttpConfig = {
+  const config: IHttpConfig = {
     interceptors: [
       {
         interceptor: ResponseOverrideInterceptor,

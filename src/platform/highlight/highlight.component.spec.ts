@@ -26,8 +26,6 @@ describe('Component: Highlight', () => {
   describe('Rendering: ', () => {
     it('should render empty', async(() => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestRenderingComponent);
-      const component: TdHighlightEmptyStaticTestRenderingComponent = fixture.debugElement.componentInstance;
-      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe(``);
       expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeFalsy();
@@ -41,7 +39,6 @@ describe('Component: Highlight', () => {
 
     it('should render code from static content', async(() => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightStaticHtmlTestRenderingComponent);
-      const component: TdHighlightStaticHtmlTestRenderingComponent = fixture.debugElement.componentInstance;
       const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toContain(
@@ -79,7 +76,6 @@ describe('Component: Highlight', () => {
 
     it('should throw error for undefined language', async(() => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightUndefinedLangTestRenderingComponent);
-      const component: TdHighlightUndefinedLangTestRenderingComponent = fixture.debugElement.componentInstance;
       expect(function(): void {
         fixture.detectChanges();
       }).toThrowError();
