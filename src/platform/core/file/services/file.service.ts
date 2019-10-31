@@ -113,7 +113,7 @@ export class TdFileService {
       xhr.open(options.method, options.url, true);
       xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       if (options.headers) {
-        for (const key in options.headers) {
+        for (const key of Object.keys(options.headers)) {
           xhr.setRequestHeader(key, options.headers[key]);
         }
       }

@@ -47,19 +47,19 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
    * defaultColor?: 'accent' | 'primary' | 'warn'
    * Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
    */
-  @Input('defaultColor') defaultColor: 'accent' | 'primary' | 'warn' = 'primary';
+  @Input() defaultColor: 'accent' | 'primary' | 'warn' = 'primary';
 
   /**
    * activeColor?: 'accent' | 'primary' | 'warn'
    * Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
    */
-  @Input('activeColor') activeColor: 'accent' | 'primary' | 'warn' = 'accent';
+  @Input() activeColor: 'accent' | 'primary' | 'warn' = 'accent';
 
   /**
    * cancelColor?: 'accent' | 'primary' | 'warn'
    * Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
    */
-  @Input('cancelColor') cancelColor: 'accent' | 'primary' | 'warn' = 'warn';
+  @Input() cancelColor: 'accent' | 'primary' | 'warn' = 'warn';
 
   /**
    * multiple?: boolean
@@ -91,27 +91,27 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
    * Sets files accepted when opening the file browser dialog.
    * Same as 'accept' attribute in <input/> element.
    */
-  @Input('accept') accept: string;
+  @Input() accept: string;
 
   /**
    * select?: function
    * Event emitted when a file is selected.
    * Emits a [File | FileList] object.
    */
-  @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+  @Output() select: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
   /**
    * upload?: function
    * Event emitted when upload button is clicked.
    * Emits a [File | FileList] object.
    */
-  @Output('upload') onUpload: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+  @Output() upload: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
   /**
    * cancel?: function
    * Event emitted when cancel button is clicked.
    */
-  @Output('cancel') onCancel: EventEmitter<void> = new EventEmitter<void>();
+  @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(_changeDetectorRef: ChangeDetectorRef) {
     super(_changeDetectorRef);
@@ -122,7 +122,7 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
    */
   uploadPressed(): void {
     if (this.value) {
-      this.onUpload.emit(this.value);
+      this.upload.emit(this.value);
     }
   }
 
@@ -131,16 +131,16 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
    */
   handleSelect(value: File | FileList): void {
     this.value = value;
-    this.onSelect.emit(value);
+    this.select.emit(value);
   }
 
   /**
    * Methods executed when cancel button is clicked.
    * Clears files.
    */
-  cancel(): void {
+  _cancel(): void {
     this.value = undefined;
-    this.onCancel.emit(undefined);
+    this.cancel.emit();
     // check if the file input is rendered before clearing it
     if (this.fileInput) {
       this.fileInput.clear();
@@ -150,7 +150,7 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
   /** Method executed when the disabled value changes */
   onDisabledChange(v: boolean): void {
     if (v) {
-      this.cancel();
+      this._cancel();
     }
   }
 }

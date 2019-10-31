@@ -130,6 +130,7 @@
     "no-identical-functions": false,
     "max-union-size": false,
     "no-hardcoded-credentials": false,
-    "cognitive-complexity": false
+    "cognitive-complexity": false,
+    "no-inputs-metadata-property": false
   }
 }

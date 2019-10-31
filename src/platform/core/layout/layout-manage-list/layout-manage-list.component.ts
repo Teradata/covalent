@@ -21,7 +21,7 @@ export class TdLayoutManageListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('mode') mode: 'side' | 'push' | 'over' = 'side';
+  @Input() mode: 'side' | 'push' | 'over' = 'side';
 
   /**
    * opened?: boolean
@@ -33,7 +33,7 @@ export class TdLayoutManageListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('opened') opened: boolean = true;
+  @Input() opened: boolean = true;
 
   /**
    * sidenavWidth?: string
@@ -43,7 +43,7 @@ export class TdLayoutManageListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('sidenavWidth') sidenavWidth: string = '257px';
+  @Input() sidenavWidth: string = '257px';
 
   /**
    * containerAutosize?: boolean
@@ -55,7 +55,7 @@ export class TdLayoutManageListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/blob/master/src/lib/sidenav/sidenav.md#resizing-an-open-sidenav
    */
-  @Input('containerAutosize') containerAutosize: boolean = false;
+  @Input() containerAutosize: boolean = false;
 
   /**
    * Checks if `ESC` should close the sidenav

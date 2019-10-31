@@ -25,7 +25,7 @@ export class TdFileSelectDirective {
    * Emits a [FileList | File] object.
    * Alternative to not use [(ngModel)].
    */
-  @Output('fileSelect') onFileSelect: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
+  @Output() fileSelect: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
 
   /**
    * Binds native 'multiple' attribute if [multiple] property is 'true'.
@@ -39,17 +39,17 @@ export class TdFileSelectDirective {
 
   /**
    * Listens to 'change' host event to get [HTMLInputElement] files.
-   * Emits the 'onFileSelect' event with a [FileList] or [File] depending if 'multiple' attr exists in host.
-   * Uses [(ngModel)] if declared, instead of emitting 'onFileSelect' event.
+   * Emits the 'fileSelect' event with a [FileList] or [File] depending if 'multiple' attr exists in host.
+   * Uses [(ngModel)] if declared, instead of emitting 'fileSelect' event.
    */
   @HostListener('change', ['$event'])
   onChange(event: Event): void {
     if (event.target instanceof HTMLInputElement) {
-      const fileInputEl: HTMLInputElement = <HTMLInputElement>event.target;
+      const fileInputEl: HTMLInputElement = event.target;
       const files: FileList = fileInputEl.files;
       if (files.length) {
         const value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
-        this.model ? this.model.update.emit(value) : this.onFileSelect.emit(value);
+        this.model ? this.model.update.emit(value) : this.fileSelect.emit(value);
       }
     }
   }
