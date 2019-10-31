@@ -158,7 +158,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
    * This accepts the same trackBy function [ngFor] does.
    * https://angular.io/api/core/TrackByFunction
    */
-  @Input('trackBy') trackBy: TrackByFunction<any> = (index: number, item: any) => {
+  @Input() trackBy: TrackByFunction<any> = (index: number, item: any) => {
     return item;
   };
 
@@ -173,11 +173,9 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
           this._calculateVirtualRows();
         }
       }
-      if (this._initialized) {
+      if (this._initialized && this._data.length * this.rowHeight - (verticalScroll + this._hostHeight) === 0) {
         // check to see if bottom was hit to throw the bottom event
-        if (this._data.length * this.rowHeight - (verticalScroll + this._hostHeight) === 0) {
-          this._bottom.next();
-        }
+        this._bottom.next();
       }
     }
   }

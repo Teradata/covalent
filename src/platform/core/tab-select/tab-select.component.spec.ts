@@ -30,7 +30,6 @@ describe('Component: TabSelect', () => {
   it('should render tab select with all options and click on second option to activate it', async(
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-      const component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
@@ -48,7 +47,6 @@ describe('Component: TabSelect', () => {
   it('should render tab select with all options with the second option active', async(
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-      const component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.componentInstance.value).toBe(undefined);
@@ -67,7 +65,6 @@ describe('Component: TabSelect', () => {
   it('should render tab select with first option active and then switch to 3rd option (value)', async(
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-      const component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.componentInstance.value).toBe(undefined);
@@ -92,7 +89,6 @@ describe('Component: TabSelect', () => {
   it('should render tab select with first option active and then switch to 3rd option (ngModel)', async(
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectFormsTestComponent);
-      const component: TdTabSelectFormsTestComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.componentInstance.value).toBe(1);

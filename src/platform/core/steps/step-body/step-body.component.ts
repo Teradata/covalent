@@ -42,14 +42,14 @@ export class TdStepBodyComponent {
    * active?: boolean
    * Sets for active/inactive states on body.
    */
-  @Input('active') active: boolean;
+  @Input() active: boolean;
 
   /**
    * state?: StepState or ['none' | 'required' | 'complete']
    * Sets styles for state of body.
    * Defaults to [StepState.None | 'none'].
    */
-  @Input('state') state: StepState = StepState.None;
+  @Input() state: StepState = StepState.None;
 
   /**
    * Returns 'true' if [state] equals to [StepState.Complete | 'complete'], else 'false'.

@@ -101,28 +101,28 @@ interface ITdTreeSeries extends ITdSeries<'tree'> {
   ],
 })
 export class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implements ITdTreeSeries {
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
-  @Input('left') left: string | number;
-  @Input('top') top: string | number;
-  @Input('right') right: string | number;
-  @Input('bottom') bottom: string | number;
-  @Input('width') width: string | number;
-  @Input('height') height: string | number;
-  @Input('layout') layout: TdTreeLayout;
-  @Input('orient') orient: TdTreeOrient;
-  @Input('symbol') symbol: TdMarkPointSymbol | string; // string added for custom SVG, URL or dataURI
-  @Input('symbolSize') symbolSize: number; // string added for custom SVG, URL or dataURI
-  @Input('symbolRotate') symbolRotate: number;
-  @Input('symbolKeepAspect') symbolKeepAspect: boolean;
-  @Input('roam') roam: boolean | string;
-  @Input('expandAndCollapse') expandAndCollapse: boolean;
-  @Input('initialTreeDepth') initialTreeDepth: number;
-  @Input('itemStyle') itemStyle: ITdItemStyle;
-  @Input('label') label: ITdLabel;
-  @Input('lineStyle') lineStyle: ITdLineStyle;
-  @Input('leaves') leaves: ITdTreeLeaves;
-  @Input('emphasis') emphasis: ITdTreeEmphasis;
+  @Input() zlevel: number;
+  @Input() z: number;
+  @Input() left: string | number;
+  @Input() top: string | number;
+  @Input() right: string | number;
+  @Input() bottom: string | number;
+  @Input() width: string | number;
+  @Input() height: string | number;
+  @Input() layout: TdTreeLayout;
+  @Input() orient: TdTreeOrient;
+  @Input() symbol: TdMarkPointSymbol | string; // string added for custom SVG, URL or dataURI
+  @Input() symbolSize: number; // string added for custom SVG, URL or dataURI
+  @Input() symbolRotate: number;
+  @Input() symbolKeepAspect: boolean;
+  @Input() roam: boolean | string;
+  @Input() expandAndCollapse: boolean;
+  @Input() initialTreeDepth: number;
+  @Input() itemStyle: ITdItemStyle;
+  @Input() label: ITdLabel;
+  @Input() lineStyle: ITdLineStyle;
+  @Input() leaves: ITdTreeLeaves;
+  @Input() emphasis: ITdTreeEmphasis;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('tree', _optionsService);
