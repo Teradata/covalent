@@ -36,7 +36,6 @@ describe('Component: TextEditor', () => {
   it('should initialize the markdown editor with no toolbar options', (done: DoneFn) => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
-      const component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();

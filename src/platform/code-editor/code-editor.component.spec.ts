@@ -39,7 +39,7 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.onEditorInitialized.subscribe(() => {
+        component.editorInitialized.subscribe(() => {
           component.value = 'SELECT * FROM foo;';
           component.getValue().subscribe((value: string) => {
             fixture.whenStable().then(() => {
@@ -64,8 +64,8 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.onEditorInitialized.subscribe(() => {
-          component.onEditorLanguageChanged.subscribe(() => {
+        component.editorInitialized.subscribe(() => {
+          component.editorLanguageChanged.subscribe(() => {
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               expect(component.theme).toBe('myCustomTheme');
@@ -147,7 +147,7 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.onEditorInitialized.subscribe(() => {
+        component.editorInitialized.subscribe(() => {
           component.editorStyle = 'width:100%;height:500px;border:10px solid green;';
           fixture.whenStable().then(() => {
             fixture.detectChanges();
@@ -175,7 +175,7 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.editor1.onEditorInitialized.subscribe(() => {
+        component.editor1.editorInitialized.subscribe(() => {
           expect(component.editor1.editorOptions.readOnly).toBe(true);
           done();
         });
@@ -195,7 +195,7 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.editor1.onEditorInitialized.subscribe(() => {
+        component.editor1.editorInitialized.subscribe(() => {
           component.editor1.value = 'SELECT * FROM foo;';
           component.editor1.getValue().subscribe((value: string) => {
             fixture.whenStable().then(() => {
@@ -238,7 +238,7 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.onEditorInitialized.subscribe(() => {
+        component.editorInitialized.subscribe(() => {
           component.editorStyle = 'width:100%;height:500px;border:10px solid green;';
           component.value = 'SELECT * FROM foo;';
           const containerDiv: IFsDocumentElement = <IFsDocumentElement>component._editorContainer.nativeElement;
@@ -272,7 +272,7 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.onEditorInitialized.subscribe(async (editorInstance: any) => {
+        component.editorInitialized.subscribe(async (editorInstance: any) => {
           expect(editorInstance).toBeDefined();
           const line: any = await editorInstance.getPosition();
 
@@ -296,7 +296,7 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.editor.onEditorInitialized.subscribe(() => {
+        component.editor.editorInitialized.subscribe(() => {
           fixture.changeDetectorRef.detectChanges();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
@@ -325,7 +325,7 @@ describe('Component: App', () => {
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        component.editor.onEditorInitialized.subscribe(() => {
+        component.editor.editorInitialized.subscribe(() => {
           fixture.changeDetectorRef.detectChanges();
           fixture.detectChanges();
           fixture.whenStable().then(() => {

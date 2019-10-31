@@ -34,9 +34,9 @@
 
 + editorInitialized?: function($event)
   + Emitted when Editor is finished initializing. Event passes a reference to the actual editor instance that can be used to call additional operations outside of the Angular component.
-+ onEditorConfigurationChanged?: function($event)
++ editorConfigurationChanged?: function($event)
   + Emitted when configuration of the Editor changes
-+ onEditorLanguageChanged?: function($event)
++ editorLanguageChanged?: function($event)
   + Emitted when the language of the Editor changes
 
 
