@@ -109,7 +109,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
    */
-  @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
+  @Output() contentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
   @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true }) container: TdFlavoredMarkdownContainerDirective;
 
@@ -171,15 +171,15 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       markdown = this._replaceCheckbox(markdown);
       markdown = this._replaceTables(markdown);
       markdown = this._replaceLists(markdown);
-      let keys: string[] = Object.keys(this._components);
+      const keys: string[] = Object.keys(this._components);
       // need to sort the placeholders in order of encounter in markdown content
-      keys = keys.sort((compA: string, compB: string) => {
+      keys.sort((compA: string, compB: string) => {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
       // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
       setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor, false), 250);
-      this.onContentReady.emit();
+      this.contentReady.emit();
       Promise.resolve().then(() => {
         this._changeDetectorRef.markForCheck();
       });
@@ -331,7 +331,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         componentRef.instance.data = data;
         componentRef.instance.sortable = true;
         componentRef.instance.onSortChange.subscribe((event: ITdDataTableSortChangeEvent) => {
-          componentRef.instance.data = data.sort((a: any, b: any) => {
+          componentRef.instance.data.sort((a: any, b: any) => {
             const compA: any = a[event.name];
             const compB: any = b[event.name];
             let direction: number = 0;

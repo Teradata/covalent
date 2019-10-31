@@ -66,8 +66,6 @@ describe('Component: Markdown', () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(
         TdMarkdownEmptyStaticContentTestRenderingComponent,
       );
-      const component: TdMarkdownEmptyStaticContentTestRenderingComponent = fixture.debugElement.componentInstance;
-      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe(``);
       expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
@@ -81,7 +79,6 @@ describe('Component: Markdown', () => {
 
     it('should render markup from static content', async(() => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownStaticContentTestRenderingComponent);
-      const component: TdMarkdownStaticContentTestRenderingComponent = fixture.debugElement.componentInstance;
       const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe(

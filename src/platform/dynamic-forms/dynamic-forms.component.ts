@@ -12,7 +12,7 @@ import {
 import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
-import { TdDynamicFormsErrorTemplate } from './dynamic-element.component';
+import { TdDynamicFormsErrorTemplateDirective } from './dynamic-element.component';
 
 import { timer, Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
@@ -30,7 +30,9 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   private _destroy$: Subject<any> = new Subject();
   private _destroyControl$: Subject<string> = new Subject();
 
-  @ContentChildren(TdDynamicFormsErrorTemplate) _errorTemplates: QueryList<TdDynamicFormsErrorTemplate>;
+  @ContentChildren(TdDynamicFormsErrorTemplateDirective) _errorTemplates: QueryList<
+    TdDynamicFormsErrorTemplateDirective
+  >;
   dynamicForm: FormGroup;
 
   /**
@@ -84,7 +86,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   get errors(): { [name: string]: any } {
     if (this.dynamicForm) {
       const errors: { [name: string]: any } = {};
-      for (const name in this.dynamicForm.controls) {
+      for (const name of Object.keys(this.dynamicForm.controls)) {
         errors[name] = this.dynamicForm.controls[name].errors;
       }
       return errors;
@@ -140,11 +142,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
    */
   private _updateErrorTemplates(): void {
     this._templateMap = new Map<string, TemplateRef<any>>();
-    for (let i: number = 0; i < this._errorTemplates.toArray().length; i++) {
-      this._templateMap.set(
-        this._errorTemplates.toArray()[i].tdDynamicFormsError,
-        this._errorTemplates.toArray()[i].templateRef,
-      );
+    for (const errorTemplate of this._errorTemplates.toArray()) {
+      this._templateMap.set(errorTemplate.tdDynamicFormsError, errorTemplate.templateRef);
     }
   }
 

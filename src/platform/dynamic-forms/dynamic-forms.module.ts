@@ -19,7 +19,7 @@ import { TdDynamicFormsComponent } from './dynamic-forms.component';
 import {
   TdDynamicElementComponent,
   TdDynamicElementDirective,
-  TdDynamicFormsErrorTemplate,
+  TdDynamicFormsErrorTemplateDirective,
 } from './dynamic-element.component';
 
 import { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
@@ -35,7 +35,7 @@ const TD_DYNAMIC_FORMS: Type<any>[] = [
   TdDynamicFormsComponent,
   TdDynamicElementComponent,
   TdDynamicElementDirective,
-  TdDynamicFormsErrorTemplate,
+  TdDynamicFormsErrorTemplateDirective,
 ];
 
 const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
