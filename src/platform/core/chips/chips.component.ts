@@ -258,13 +258,13 @@ export class TdChipsComponent extends _TdChipsMixinBase
    * placeholder?: string
    * Placeholder for the autocomplete input.
    */
-  @Input('placeholder') placeholder: string;
+  @Input() placeholder: string;
 
   /**
    * debounce?: number
    * Debounce timeout between keypresses. Defaults to 200.
    */
-  @Input('debounce') debounce: number = 200;
+  @Input() debounce: number = 200;
 
   /**
    * color?: 'primary' | 'accent' | 'warn'
@@ -288,35 +288,35 @@ export class TdChipsComponent extends _TdChipsMixinBase
    * Method to be executed when a chip is added.
    * Sends chip value as event.
    */
-  @Output('add') onAdd: EventEmitter<any> = new EventEmitter<any>();
+  @Output() add: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * remove?: function
    * Method to be executed when a chip is removed.
    * Sends chip value as event.
    */
-  @Output('remove') onRemove: EventEmitter<any> = new EventEmitter<any>();
+  @Output() remove: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * inputChange?: function
    * Method to be executed when the value in the autocomplete input changes.
    * Sends string value as event.
    */
-  @Output('inputChange') onInputChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() inputChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * chipFocus?: function
    * Method to be executed when a chip is focused.
    * Sends chip value as event.
    */
-  @Output('chipFocus') onChipFocus: EventEmitter<any> = new EventEmitter<any>();
+  @Output() chipFocus: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * blur?: function
    * Method to be executed when a chip is blurred.
    * Sends chip value as event.
    */
-  @Output('chipBlur') onChipBlur: EventEmitter<any> = new EventEmitter<any>();
+  @Output() chipBlur: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Hostbinding to set the a11y of the TdChipsComponent depending on its state
@@ -341,7 +341,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
    * Function used to check whether a chip value already exists.
    * Defaults to strict equality comparison ===
    */
-  @Input('compareWith') compareWith: (o1: any, o2: any) => boolean = (o1: any, o2: any) => {
+  @Input() compareWith: (o1: any, o2: any) => boolean = (o1: any, o2: any) => {
     return o1 === o2;
   };
 
@@ -417,7 +417,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
     this._inputValueChangesSubs = this.inputControl.valueChanges
       .pipe(debounceTime(this.debounce))
       .subscribe((value: string) => {
-        this.onInputChange.emit(value ? value : '');
+        this.inputChange.emit(value ? value : '');
       });
     this._changeDetectorRef.markForCheck();
   }
@@ -510,7 +510,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
     }
 
     this.value.push(value);
-    this.onAdd.emit(value);
+    this.add.emit(value);
     this.onChange(this.value);
     this._changeDetectorRef.markForCheck();
     return true;
@@ -538,7 +538,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
       this._focusChip(index - 1);
     }
 
-    this.onRemove.emit(removedValues[0]);
+    this.remove.emit(removedValues[0]);
     this.onChange(this.value);
     this.inputControl.setValue('');
     this._changeDetectorRef.markForCheck();
@@ -549,7 +549,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
    * Sets blur of chip and sends out event
    */
   _handleChipBlur(event: FocusEvent, value: any): void {
-    this.onChipBlur.emit(value);
+    this.chipBlur.emit(value);
   }
 
   /**
@@ -557,7 +557,7 @@ export class TdChipsComponent extends _TdChipsMixinBase
    */
   _handleChipFocus(event: FocusEvent, value: any): void {
     this.setFocusedState();
-    this.onChipFocus.emit(value);
+    this.chipFocus.emit(value);
   }
 
   _handleFocus(): boolean {

@@ -39,28 +39,28 @@ export class TdDataTableColumnComponent {
    * name?: string
    * Sets unique column [name] for [sortable] events.
    */
-  @Input('name') name: string = '';
+  @Input() name: string = '';
 
   /**
    * sortable?: boolean
    * Enables sorting events, sort icons and active column states.
    * Defaults to 'false'
    */
-  @Input('sortable') sortable: boolean = false;
+  @Input() sortable: boolean = false;
 
   /**
    * active?: boolean
    * Sets column to active state when 'true'.
    * Defaults to 'false'
    */
-  @Input('active') active: boolean = false;
+  @Input() active: boolean = false;
 
   /**
    * numeric?: boolean
    * Makes column follow the numeric data-table specs and sort icon.
    * Defaults to 'false'
    */
-  @Input('numeric') numeric: boolean = false;
+  @Input() numeric: boolean = false;
 
   /**
    * sortOrder?: ['ASC' | 'DESC'] or TdDataTableSortingOrder
@@ -82,9 +82,7 @@ export class TdDataTableColumnComponent {
    * Event emitted when the column headers are clicked. [sortable] needs to be enabled.
    * Emits an [ITdDataTableSortChangeEvent] implemented object.
    */
-  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> = new EventEmitter<
-    ITdDataTableSortChangeEvent
-  >();
+  @Output() sortChange: EventEmitter<ITdDataTableSortChangeEvent> = new EventEmitter<ITdDataTableSortChangeEvent>();
 
   @HostBinding('class.mat-clickable')
   get bindClickable(): boolean {
@@ -116,7 +114,7 @@ export class TdDataTableColumnComponent {
   @HostListener('click')
   handleClick(): void {
     if (this.sortable) {
-      this.onSortChange.emit({ name: this.name, order: this._sortOrder });
+      this.sortChange.emit({ name: this.name, order: this._sortOrder });
     }
   }
 

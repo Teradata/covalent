@@ -10,9 +10,9 @@ describe('TdTimeDifferencePipe', () => {
   });
 
   it('should return blank with an invalid date', () => {
-    expect(pipe.transform(undefined, undefined)).toEqual('Invalid Date');
+    expect(pipe.transform(undefined)).toEqual('Invalid Date');
     expect(pipe.transform(undefined, end)).toEqual('Invalid Date');
-    expect(pipe.transform('', undefined)).toEqual('Invalid Date');
+    expect(pipe.transform('')).toEqual('Invalid Date');
     expect(pipe.transform('', '')).toEqual('Invalid Date');
     expect(pipe.transform({}, {})).toEqual('Invalid Date');
     expect(pipe.transform('this is not a valid date', 'not a valid date either')).toEqual('Invalid Date');

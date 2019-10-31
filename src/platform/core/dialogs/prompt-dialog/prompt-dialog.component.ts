@@ -33,7 +33,7 @@ export class TdPromptDialogComponent implements AfterViewInit {
   }
 
   cancel(): void {
-    this._dialogRef.close(undefined);
+    this._dialogRef.close();
   }
 
   accept(): void {

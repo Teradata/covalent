@@ -417,34 +417,28 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Event emitted when the column headers are clicked. [sortable] needs to be enabled.
    * Emits an [ITdDataTableSortChangeEvent] implemented object.
    */
-  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> = new EventEmitter<
-    ITdDataTableSortChangeEvent
-  >();
+  @Output() sortChange: EventEmitter<ITdDataTableSortChangeEvent> = new EventEmitter<ITdDataTableSortChangeEvent>();
 
   /**
    * rowSelect?: function
    * Event emitted when a row is selected/deselected. [selectable] needs to be enabled.
    * Emits an [ITdDataTableSelectEvent] implemented object.
    */
-  @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
+  @Output() rowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
 
   /**
    * rowClick?: function
    * Event emitted when a row is clicked.
    * Emits an [ITdDataTableRowClickEvent] implemented object.
    */
-  @Output('rowClick') onRowClick: EventEmitter<ITdDataTableRowClickEvent> = new EventEmitter<
-    ITdDataTableRowClickEvent
-  >();
+  @Output() rowClick: EventEmitter<ITdDataTableRowClickEvent> = new EventEmitter<ITdDataTableRowClickEvent>();
 
   /**
    * selectAll?: function
    * Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled.
    * Emits an [ITdDataTableSelectAllEvent] implemented object.
    */
-  @Output('selectAll') onSelectAll: EventEmitter<ITdDataTableSelectAllEvent> = new EventEmitter<
-    ITdDataTableSelectAllEvent
-  >();
+  @Output() selectAll: EventEmitter<ITdDataTableSelectAllEvent> = new EventEmitter<ITdDataTableSelectAllEvent>();
 
   constructor(
     @Optional() @Inject(DOCUMENT) private _document: any,
@@ -460,7 +454,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Allows custom comparison between row and model to see if row is selected or not
    * Default comparation is by reference
    */
-  @Input('compareWith') compareWith: (row: any, model: any) => boolean = (row: any, model: any) => {
+  @Input() compareWith: (row: any, model: any) => boolean = (row: any, model: any) => {
     return row === model;
   };
 
@@ -508,8 +502,8 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Loads templates and sets them in a map for faster access.
    */
   ngAfterContentInit(): void {
-    for (let i: number = 0; i < this._templates.toArray().length; i++) {
-      this._templateMap.set(this._templates.toArray()[i].tdDataTableTemplate, this._templates.toArray()[i].templateRef);
+    for (const template of this._templates.toArray()) {
+      this._templateMap.set(template.tdDataTableTemplate, template.templateRef);
     }
   }
 
@@ -640,7 +634,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
   /**
    * Selects or clears all rows depending on 'checked' value.
    */
-  selectAll(checked: boolean): void {
+  _selectAll(checked: boolean): void {
     const toggledRows: any[] = [];
     if (checked) {
       this._data.forEach((row: any) => {
@@ -670,7 +664,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       this._allSelected = false;
       this._indeterminate = false;
     }
-    this.onSelectAll.emit({ rows: toggledRows, selected: checked });
+    this.selectAll.emit({ rows: toggledRows, selected: checked });
     this.onChange(this.value);
   }
 
@@ -727,15 +721,14 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
             // we ignore the toggle
             if ((this._firstCheckboxValue && !rowSelected) || (!this._firstCheckboxValue && rowSelected)) {
               this._doSelection(this._data[i], i);
-            } else if (this._shiftPreviouslyPressed) {
+            } else if (
+              this._shiftPreviouslyPressed &&
+              ((currentSelected >= this._firstSelectedIndex && currentSelected <= this._lastSelectedIndex) ||
+                (currentSelected <= this._firstSelectedIndex && currentSelected >= this._lastSelectedIndex))
+            ) {
               // else if the checkbox selected was in the middle of the last selection and the first selection
               // then we undo the selections
-              if (
-                (currentSelected >= this._firstSelectedIndex && currentSelected <= this._lastSelectedIndex) ||
-                (currentSelected <= this._firstSelectedIndex && currentSelected >= this._lastSelectedIndex)
-              ) {
-                this._doSelection(this._data[i], i);
-              }
+              this._doSelection(this._data[i], i);
             }
           }
         }
@@ -784,7 +777,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       const element: HTMLElement = event.target as HTMLElement;
       /* tslint:disable-next-line */
       if (srcElement.getAttribute('stopRowClick') === null && element.tagName.toLowerCase() !== 'mat-pseudo-checkbox') {
-        this.onRowClick.emit({
+        this.rowClick.emit({
           row,
           index,
         });
@@ -805,7 +798,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
-    this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder });
+    this.sortChange.next({ name: this._sortBy.name, order: this._sortOrder });
   }
 
   /**
@@ -929,7 +922,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       }
     }
     this._calculateCheckboxState();
-    this.onRowSelect.emit({ row, index: rowIndex, selected: !wasSelected });
+    this.rowSelect.emit({ row, index: rowIndex, selected: !wasSelected });
     this.onChange(this.value);
     return !wasSelected;
   }

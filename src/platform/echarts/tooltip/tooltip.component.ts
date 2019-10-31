@@ -119,7 +119,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
     this._optionsService.clearOption('tooltip');
   }
 
-  private _formatter(): Function {
+  private _formatter(): (params: any, ticket: any, callback: (ticket: string, html: string) => void) => string {
     return (params: any, ticket: any, callback: (ticket: string, html: string) => void) => {
       this._context = {
         $implicit: params,

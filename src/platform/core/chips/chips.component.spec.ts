@@ -42,7 +42,7 @@ describe('Component: Chips', () => {
         {
           provide: OverlayContainer,
           useFactory: () => {
-            overlayContainerElement = document.createElement('div') as HTMLElement;
+            overlayContainerElement = document.createElement('div');
             overlayContainerElement.classList.add('cdk-overlay-container');
 
             document.body.appendChild(overlayContainerElement);
@@ -355,7 +355,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
+        const option: HTMLElement = overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -371,7 +371,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
+        const option: HTMLElement = overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -395,7 +395,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
+        const option: HTMLElement = overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -415,7 +415,6 @@ describe('Component: Chips', () => {
 
   describe('panel usage and filtering: ', () => {
     let fixture: ComponentFixture<TdChipsBasicTestComponent>;
-    let input: DebugElement;
     let chips: DebugElement;
 
     beforeEach(() => {
@@ -491,7 +490,6 @@ describe('Component: Chips', () => {
 
   describe('panel usage and requireMatch usage: ', () => {
     let fixture: ComponentFixture<TdChipsObjectsRequireMatchTestComponent>;
-    let input: DebugElement;
     let chips: DebugElement;
 
     beforeEach(() => {
@@ -515,7 +513,7 @@ describe('Component: Chips', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
+          const option: HTMLElement = overlayContainerElement.querySelector('mat-option');
           option.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
@@ -530,7 +528,6 @@ describe('Component: Chips', () => {
 
   describe('stacked usage: ', () => {
     let fixture: ComponentFixture<TdChipsStackedTestComponent>;
-    let input: DebugElement;
     let chips: DebugElement;
 
     beforeEach(() => {
@@ -562,7 +559,6 @@ describe('Component: Chips', () => {
 
   describe('position usage: ', () => {
     let fixture: ComponentFixture<TdChipsBeforeAfterTestComponent>;
-    let input: DebugElement;
     let chips: DebugElement;
 
     beforeEach(() => {

@@ -16,7 +16,7 @@ export class TdDataTableCellComponent {
    * Makes cell follow the numeric data-table specs.
    * Defaults to 'false'
    */
-  @Input('numeric') numeric: boolean = false;
+  @Input() numeric: boolean = false;
 
   /**
    * align?: 'start' | 'center' | 'end'

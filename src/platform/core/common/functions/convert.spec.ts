@@ -11,8 +11,8 @@ describe('Convert', () => {
 
       expect(convertObjectsToCSV(undefined)).toEqual('');
       expect(convertObjectsToCSV([])).toEqual('');
-      expect(convertObjectsToCSV(objects, undefined)).toEqual(expectedStr);
-      expect(convertObjectsToCSV(objects, '|', undefined)).toEqual(expectedStrCustomKeySeparator);
+      expect(convertObjectsToCSV(objects)).toEqual(expectedStr);
+      expect(convertObjectsToCSV(objects, '|')).toEqual(expectedStrCustomKeySeparator);
       expect(convertObjectsToCSV(objects, undefined, '|')).toEqual(expectedStrCustomLineSeparator);
       expect(convertObjectsToCSV(objects)).toEqual(expectedStr);
       expect(convertObjectsToCSV(objects, '|')).toEqual(expectedStrCustomKeySeparator);
@@ -32,8 +32,8 @@ describe('Convert', () => {
 
       expect(convertCSVToJSON(undefined)).toEqual('');
       expect(convertCSVToJSON('')).toEqual('');
-      expect(convertCSVToJSON(csv, undefined)).toEqual(expectedJSON);
-      expect(convertCSVToJSON(csvCustomKeySeparator, '|', undefined)).toEqual(expectedJSON);
+      expect(convertCSVToJSON(csv)).toEqual(expectedJSON);
+      expect(convertCSVToJSON(csvCustomKeySeparator, '|')).toEqual(expectedJSON);
       expect(convertCSVToJSON(csvCustomLineSeparator, undefined, '|')).toEqual(expectedJSON);
       expect(convertCSVToJSON(csv)).toEqual(expectedJSON);
       expect(convertCSVToJSON(csvCustomKeySeparator, '|')).toEqual(expectedJSON);

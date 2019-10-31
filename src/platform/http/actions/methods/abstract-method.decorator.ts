@@ -58,7 +58,7 @@ export function TdAbstractMethod(config: {
   method: TdHttpMethod;
   path: string;
   options?: ITdHttpRESTOptions;
-}): Function {
+}): (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>) => any {
   return function(target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>): any {
     const wrappedFunction: Function = descriptor.value;
     // replace method call with our own and proxy it

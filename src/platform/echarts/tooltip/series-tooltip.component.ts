@@ -81,7 +81,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
    * Formatter for tooltip
    *
    */
-  private _formatter(): Function {
+  private _formatter(): (params: any, ticket: any, callback: (ticket: string, html: string) => void) => string {
     return (params: any, ticket: any, callback: (ticket: string, html: string) => void) => {
       this._context = {
         $implicit: params,

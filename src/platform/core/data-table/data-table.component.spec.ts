@@ -155,7 +155,6 @@ describe('Component: DataTable', () => {
     it('should not set the data input and not fail', (done: DoneFn) => {
       inject([], () => {
         const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-        const element: DebugElement = fixture.debugElement;
         const component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
 
         component.selectable = true;
@@ -172,7 +171,6 @@ describe('Component: DataTable', () => {
     it('should select one and be in indeterminate state, select all and then unselect all', (done: DoneFn) => {
       inject([], () => {
         const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-        const element: DebugElement = fixture.debugElement;
         const component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
 
         component.selectable = true;
@@ -237,7 +235,6 @@ describe('Component: DataTable', () => {
     it('should be interminate when atleast one row is selected and allSelected when all rows are selected', (done: DoneFn) => {
       inject([], () => {
         const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-        const element: DebugElement = fixture.debugElement;
         const component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
 
         component.selectable = true;
@@ -311,7 +308,6 @@ describe('Component: DataTable', () => {
     it('should shift click and select a range of rows', (done: DoneFn) => {
       inject([], () => {
         const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-        const element: DebugElement = fixture.debugElement;
         const component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
 
         component.selectable = true;

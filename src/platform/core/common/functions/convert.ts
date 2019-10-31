@@ -21,7 +21,7 @@ export function convertObjectsToCSV(
   // Iterate through array, creating one output line per object
   objects.forEach((value: object, key: number) => {
     let line: string = '';
-    for (const index in objects[key]) {
+    for (const index of Object.keys(objects[key])) {
       if (line !== '') {
         line += keySeparator;
       }

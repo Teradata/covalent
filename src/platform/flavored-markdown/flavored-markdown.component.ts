@@ -330,7 +330,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         }
         componentRef.instance.data = data;
         componentRef.instance.sortable = true;
-        componentRef.instance.onSortChange.subscribe((event: ITdDataTableSortChangeEvent) => {
+        componentRef.instance.sortChange.subscribe((event: ITdDataTableSortChangeEvent) => {
           componentRef.instance.data.sort((a: any, b: any) => {
             const compA: any = a[event.name];
             const compB: any = b[event.name];

@@ -232,7 +232,7 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
     }
   }
 
-  private _optionToContentFormatter(): Function {
+  private _optionToContentFormatter(): () => string {
     return () => {
       this._changeDetectorRef.markForCheck();
       return (<HTMLElement>this._elementRef.nativeElement).innerHTML;

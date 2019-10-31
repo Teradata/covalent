@@ -26,7 +26,7 @@ export class TdDataTableService {
             return itemValue.indexOf(filter) > -1;
           }
         });
-        return !(typeof res === 'undefined');
+        return typeof res !== 'undefined';
       });
     }
     return data;
