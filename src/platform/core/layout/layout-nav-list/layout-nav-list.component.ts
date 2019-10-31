@@ -18,13 +18,13 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * Title set in toolbar.
    */
-  @Input('toolbarTitle') toolbarTitle: string;
+  @Input() toolbarTitle: string;
 
   /**
    * icon?: string
    * icon name to be displayed before the title
    */
-  @Input('icon') icon: string;
+  @Input() icon: string;
 
   /**
    * logo?: string
@@ -32,7 +32,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
-  @Input('logo') logo: string;
+  @Input() logo: string;
 
   /**
    * color?: 'accent' | 'primary' | 'warn'
@@ -40,7 +40,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, primary is used.
    */
-  @Input('color') color: 'accent' | 'primary' | 'warn' = 'primary';
+  @Input() color: 'accent' | 'primary' | 'warn' = 'primary';
 
   /**
    * mode?: 'side', 'push' or 'over'
@@ -51,7 +51,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('mode') mode: 'side' | 'push' | 'over' = 'side';
+  @Input() mode: 'side' | 'push' | 'over' = 'side';
 
   /**
    * opened?: boolean
@@ -62,7 +62,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('opened') opened: boolean = true;
+  @Input() opened: boolean = true;
 
   /**
    * sidenavWidth?: string
@@ -72,7 +72,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('sidenavWidth') sidenavWidth: string = '350px';
+  @Input() sidenavWidth: string = '350px';
 
   /**
    * containerAutosize?: boolean
@@ -84,14 +84,14 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/blob/master/src/lib/sidenav/sidenav.md#resizing-an-open-sidenav
    */
-  @Input('containerAutosize') containerAutosize: boolean = false;
+  @Input() containerAutosize: boolean = false;
 
   /**
    * navigationRoute?: string
    *
    * option to set the combined route for the icon, logo, and toolbarTitle.
    */
-  @Input('navigationRoute') navigationRoute: string;
+  @Input() navigationRoute: string;
 
   /**
    * Checks if `ESC` should close the sidenav

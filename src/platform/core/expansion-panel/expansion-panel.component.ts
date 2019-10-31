@@ -180,10 +180,10 @@ export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implem
   }
 
   private _onExpanded(): void {
-    this.expanded.emit(undefined);
+    this.expanded.emit();
   }
 
   private _onCollapsed(): void {
-    this.collapsed.emit(undefined);
+    this.collapsed.emit();
   }
 }

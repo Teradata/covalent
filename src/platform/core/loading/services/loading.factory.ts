@@ -84,7 +84,7 @@ export class TdLoadingFactory {
   public createOverlayComponent(
     options: ITdLoadingConfig,
     viewContainerRef: ViewContainerRef,
-    templateRef: TemplateRef<Object>,
+    templateRef: TemplateRef<object>,
   ): ILoadingRef {
     (<IInternalLoadingOptions>options).height = undefined;
     (<IInternalLoadingOptions>options).style = LoadingStyle.Overlay;
@@ -114,7 +114,7 @@ export class TdLoadingFactory {
   public createReplaceComponent(
     options: ITdLoadingConfig,
     viewContainerRef: ViewContainerRef,
-    templateRef: TemplateRef<Object>,
+    templateRef: TemplateRef<object>,
     context: TdLoadingContext,
   ): ILoadingRef {
     const nativeElement: HTMLElement = <HTMLElement>templateRef.elementRef.nativeElement;
@@ -125,7 +125,7 @@ export class TdLoadingFactory {
     const loadingRef: ILoadingRef = this._createComponent(options);
     let loading: boolean = false;
     // passing context so when the template is attached, we can keep the reference of the variables
-    const contentRef: EmbeddedViewRef<Object> = viewContainerRef.createEmbeddedView(templateRef, context);
+    const contentRef: EmbeddedViewRef<object> = viewContainerRef.createEmbeddedView(templateRef, context);
     loadingRef.observable.pipe(distinctUntilChanged()).subscribe((registered: number) => {
       if (registered > 0 && !loading) {
         loading = true;

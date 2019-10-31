@@ -110,7 +110,6 @@ describe('Service: Loading', () => {
 
   it('should throw error when trying to create loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(function(): void {
         loadingService.create({
           name: undefined,
@@ -146,7 +145,6 @@ describe('Service: Loading', () => {
 
   it('should fail to resolve/setValue/register unknown names', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(loadingService.register('unknown')).toBeFalsy();
       expect(loadingService.setValue('unknown', 50)).toBeFalsy();
       expect(loadingService.resolve('unknown')).toBeFalsy();

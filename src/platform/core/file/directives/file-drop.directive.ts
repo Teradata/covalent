@@ -31,7 +31,7 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
    * Event emitted when a file or files are dropped in host element after being validated.
    * Emits a [FileList | File] object.
    */
-  @Output('fileDrop') onFileDrop: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
+  @Output() fileDrop: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
 
   /**
    * Binds native 'multiple' attribute if [multiple] property is 'true'.
@@ -55,7 +55,7 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
 
   /**
    * Listens to 'drop' host event to get validated transfer items.
-   * Emits the 'onFileDrop' event with a [FileList] or [File] depending if 'multiple' attr exists in host.
+   * Emits the 'fileDrop' event with a [FileList] or [File] depending if 'multiple' attr exists in host.
    * Stops event propagation and default action from browser for 'drop' event.
    */
   @HostListener('drop', ['$event'])
@@ -65,7 +65,7 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
       const files: FileList = transfer.files;
       if (files.length) {
         const value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
-        this.onFileDrop.emit(value);
+        this.fileDrop.emit(value);
       }
     }
     this._renderer.removeClass(this._element.nativeElement, 'drop-zone');
@@ -119,14 +119,14 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
    */
   private _typeCheck(types: ReadonlyArray<string> | DOMStringList): string {
     let dropEffect: string = 'none';
-    if (types) {
-      if (
-        ((<any>types).contains && (<any>types).contains('Files')) ||
-        ((<any>types).indexOf && (<any>types).indexOf('Files') !== -1)
-      ) {
-        dropEffect = 'copy';
-      }
+    if (
+      types &&
+      (((<any>types).contains && (<any>types).contains('Files')) ||
+        ((<any>types).indexOf && (<any>types).indexOf('Files') !== -1))
+    ) {
+      dropEffect = 'copy';
     }
+
     return dropEffect;
   }
 

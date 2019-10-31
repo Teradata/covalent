@@ -16,14 +16,14 @@
     mat-raised-button
     type="button"
     [color]="activeColor"
-    (keyup.delete)="cancel()"
-    (keyup.backspace)="cancel()"
-    (keyup.escape)="cancel()"
+    (keyup.delete)="_cancel()"
+    (keyup.backspace)="_cancel()"
+    (keyup.escape)="_cancel()"
     (click)="uploadPressed()"
   >
     <ng-content></ng-content>
   </button>
-  <button mat-icon-button type="button" class="td-file-upload-cancel" [color]="cancelColor" (click)="cancel()">
+  <button mat-icon-button type="button" class="td-file-upload-cancel" [color]="cancelColor" (click)="_cancel()">
     <mat-icon>cancel</mat-icon>
   </button>
 </div>

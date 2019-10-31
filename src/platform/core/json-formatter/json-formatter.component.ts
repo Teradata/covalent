@@ -154,10 +154,8 @@ export class TdJsonFormatterComponent {
         return 'object';
       }
       const date: Date = new Date(object);
-      if (Object.prototype.toString.call(date) === '[object Date]') {
-        if (!Number.isNaN(date.getTime())) {
-          return 'date';
-        }
+      if (Object.prototype.toString.call(date) === '[object Date]' && !Number.isNaN(date.getTime())) {
+        return 'date';
       }
     }
     return typeof object;
@@ -215,7 +213,7 @@ export class TdJsonFormatterComponent {
   private parseChildren(): void {
     if (this.isObject()) {
       this._children = [];
-      for (const key in this._data) {
+      for (const key of Object.keys(this._data)) {
         this._children.push(key);
       }
     }

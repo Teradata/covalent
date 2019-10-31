@@ -51,7 +51,6 @@ describe('Component: ExpansionPanel', () => {
   it('should render expansion panel summary', async(
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelSummaryTestComponent);
-      const component: TdExpansionPanelSummaryTestComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('.td-expanded'))).toBeFalsy();
@@ -72,7 +71,6 @@ describe('Component: ExpansionPanel', () => {
   it('should mimic panel click, expand content, hide summary', async(
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelBasicTestComponent);
-      const component: TdExpansionPanelBasicTestComponent = fixture.debugElement.componentInstance;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.debugElement.query(By.css('.td-expand-icon')).triggerEventHandler('click', new Event('click'));
