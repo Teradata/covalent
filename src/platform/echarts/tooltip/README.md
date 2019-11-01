@@ -12,7 +12,7 @@
 
 There are also lots of property inputs like:
 
-+ formatter?: string | Function
++ formatter?: string |(() => string)
   + The content formatter of tooltip's floating layer which supports string template and callback function.
 + trigger?: 'item' | 'axis' | 'none'
   + Type of triggering.
@@ -34,11 +34,11 @@ And so many more.. for more info [click here](https://echarts.apache.org/en/opti
 
 There are also lots of property inputs like:
 
-+ formatter?: string | Function
++ formatter?: string |(() => string)
   + The content formatter of tooltip's floating layer which supports string template and callback function.
 + trigger?: 'item' | 'axis' | 'none'
   + Type of triggering.
-  
+
 And so many more.. for more info [click here](https://ecomfe.github.io/echarts-doc/public/en/option.html#series-bar.tooltip)
 
 Note: every series object can contain its own tooltip

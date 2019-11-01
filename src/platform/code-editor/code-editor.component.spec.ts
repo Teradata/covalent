@@ -86,12 +86,14 @@ describe('Component: App', () => {
               theme: {
                 base: 'vs-dark',
                 inherit: true,
+                // tslint:disable:no-hardcoded-credentials
                 rules: [
                   { token: 'custom-info', foreground: '808080' },
                   { token: 'custom-error', foreground: 'ff0000', fontStyle: 'bold' },
                   { token: 'custom-notice', foreground: 'FFA500' },
                   { token: 'custom-date', foreground: '008800' },
                 ],
+                // tslint:enable:no-hardcoded-credentials
               },
             },
             monarchTokensProviderCSS: `

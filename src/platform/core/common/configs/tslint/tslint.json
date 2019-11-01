@@ -1,23 +1,22 @@
 {
   "extends": ["tslint:recommended", "tslint-sonarts", "tslint-angular"],
   "rules": {
-    "ordered-imports": {
-      "options": {
-        "import-sources-order": "any",
-        "module-source-path": "full",
-        "named-imports-order": "any"
-      }
+    "array-type": [true, "array"],
+    "ban-types": {
+      "options": [
+        ["Function", "Avoid using the `Function` type. Prefer a specific function type, like `() => void`."],
+        ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
+        ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"],
+        ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
+        ["String", "Avoid using the `String` type. Did you mean `string`?"],
+        ["Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?"]
+      ]
     },
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-module",
-      "check-separator",
-      "check-type"
-    ],
+    "cognitive-complexity": false,
+    "deprecation": false,
+    "max-classes-per-file": false,
     "max-line-length": [true, 120],
+    "max-union-size": false,
     "member-ordering": {
       "options": {
         "order": [
@@ -38,9 +37,12 @@
       }
     },
     "new-parens": true,
+    "no-angle-bracket-type-assertion": false,
     "no-any": false,
     "no-arg": true,
+    "no-big-function": false,
     "no-bitwise": true,
+    "no-collapsible-if": true,
     "no-conditional-assignment": true,
     "no-consecutive-blank-lines": true,
     "no-console": [
@@ -68,18 +70,42 @@
     "no-construct": true,
     "no-debugger": true,
     "no-default-export": true,
+    "no-duplicate-string": false,
     "no-duplicate-variable": true,
     "no-empty": true,
     "no-empty-interface": false,
     "no-eval": true,
+    "no-floating-promises": false,
+    "no-hardcoded-credentials": [true, "password", "secret", "token"],
+    "no-identical-functions": false,
     "no-inferrable-types": [false, "ignore-params", "ignore-properties"],
+    "no-inputs-metadata-property": false,
     "no-internal-module": true,
     "no-invalid-this": true,
     "no-magic-numbers": false,
     "no-namespace": true,
+    "no-non-null-assertion": true,
     "no-null-keyword": true,
     "no-require-imports": true,
+    "object-literal-key-quotes": [true, "consistent"],
+    "only-arrow-functions": false,
+    "ordered-imports": {
+      "options": {
+        "import-sources-order": "any",
+        "module-source-path": "full",
+        "named-imports-order": "any"
+      }
+    },
+    "prefer-for-of": true,
     "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+    "space-before-function-paren": [
+      true,
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
     "switch-default": true,
     "trailing-comma": {
       "options": {
@@ -97,41 +123,18 @@
       "variable-declaration",
       "member-variable-declaration"
     ],
-    "variable-name": { "options": ["ban-keywords", "check-format", "allow-leading-underscore"] },
-    "object-literal-key-quotes": [true, "consistent"],
-    "ban-types": {
-      "options": [
-        ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
-        ["Function", "Avoid using the `Function` type. Prefer a specific function type, like `() => void`."],
-        ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"],
-        ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
-        ["String", "Avoid using the `String` type. Did you mean `string`?"],
-        ["Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?"]
-      ]
+    "use-type-alias": false,
+    "variable-name": {
+      "options": ["ban-keywords", "check-format", "allow-leading-underscore"]
     },
-    "no-duplicate-string": [true, 5],
-    "array-type": [true, "array"],
-    "only-arrow-functions": false,
-    "prefer-for-of": true,
-    "no-big-function": [true, 100],
-    "cognitive-complexity": [true, 25],
-    "space-before-function-paren": [true, { "anonymous": "always", "named": "never", "asyncArrow": "always" }],
-    "no-collapsible-if": true,
-    "no-hardcoded-credentials": [true, "password", "secret", "token"],
-    "max-union-size": [true, 2],
-    "no-non-null-assertion": true,
-    "deprecation": false,
-    "no-angle-bracket-type-assertion": false,
-
-    "max-classes-per-file": false,
-    "no-floating-promises": false,
-    "no-big-function": false,
-    "no-duplicate-string": false,
-    "no-identical-functions": false,
-    "max-union-size": false,
-    "no-hardcoded-credentials": false,
-    "cognitive-complexity": false,
-    "no-inputs-metadata-property": false,
-    "use-type-alias": false
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-type"
+    ]
   }
 }
