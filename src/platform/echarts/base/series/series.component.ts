@@ -33,12 +33,12 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
 
   @Input() animation: boolean;
   @Input() animationThreshold: number;
-  @Input() animationDuration: number | (() => number);
+  @Input() animationDuration: number | Function;
   @Input() animationEasing: string;
-  @Input() animationDelay: number | (() => number);
-  @Input() animationDurationUpdate: number | (() => number);
+  @Input() animationDelay: number | Function;
+  @Input() animationDurationUpdate: number | Function;
   @Input() animationEasingUpdate: string;
-  @Input() animationDelayUpdate: number | (() => number);
+  @Input() animationDelayUpdate: number | Function;
   @Input() tooltip: ITdSeriesTooltip;
 
   constructor(type: T, protected optionsService: TdChartOptionsService) {

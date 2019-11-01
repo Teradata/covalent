@@ -26,7 +26,7 @@ export interface ITdLineSeries extends ITdSeries<'line'>, ITdShadow {
   yAxisIndex?: number;
   polarIndex?: number;
   symbol?: TdMarkPointSymbol | string;
-  symbolSize?: number | any[] | (() => number | any[]);
+  symbolSize?: number | any[] | Function;
   symbolRotate?: number;
   symbolKeepAspect?: boolean;
   symbolOffset?: any[];
@@ -96,7 +96,7 @@ export class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implem
   @Input() yAxisIndex: number;
   @Input() polarIndex: number;
   @Input() symbol: TdMarkPointSymbol | string;
-  @Input() symbolSize: number | any[] | (() => number | any[]);
+  @Input() symbolSize: number | any[] | Function;
   @Input() symbolRotate: number;
   @Input() symbolKeepAspect: boolean;
   @Input() symbolOffset: any[];

@@ -20,12 +20,12 @@ export interface ITdLineCurveStyle extends ITdLineStyle {
 export interface ITdAnimation {
   animation?: boolean;
   animationThreshold?: number;
-  animationDuration?: number | (() => number);
+  animationDuration?: number | Function;
   animationEasing?: string;
-  animationDelay?: number | (() => number);
-  animationDurationUpdate?: number | (() => number);
+  animationDelay?: number | Function;
+  animationDurationUpdate?: number | Function;
   animationEasingUpdate?: string;
-  animationDelayUpdate?: number | (() => number);
+  animationDelayUpdate?: number | Function;
 }
 
 export interface ITdTextShadow {
@@ -55,8 +55,8 @@ export interface ITdTooltip {
   renderMode?: 'html' | 'richText';
   confine?: boolean;
   transitionDuration?: number;
-  position?: string | any[] | (() => string | any[]);
-  formatter?: string | (() => string);
+  position?: string | any[] | Function;
+  formatter?: string | Function;
   backgroundColor?: string;
   borderColor?: string;
   borderWidth?: number;
@@ -96,7 +96,7 @@ export interface ITdEdgeLabel extends ITdShadow, ITdTextShadow, ITdFont {
   position?: TdLabelPosition;
   rotate?: number;
   offset?: number[];
-  formatter?: any | (() => any);
+  formatter?: any | Function;
   color?: any;
   align?: TdAlign;
   verticalAlign?: TdVerticalAlign;
@@ -120,7 +120,7 @@ export interface ITdLabel extends ITdEdgeLabel, ITdShadow, ITdTextShadow, ITdFon
 export interface ITdAxisPointerLabel extends ITdShadow, ITdTextShadow, ITdFont {
   show?: boolean;
   precision?: string | number;
-  formatter?: string | (() => string);
+  formatter?: string | Function;
   margin?: number;
   color?: any;
   lineHeight?: number;
@@ -170,15 +170,7 @@ export type TdAreaOrigin = 'auto' | 'start' | 'end';
 
 export type TdLineLabelPosition = 'middle' | 'start' | 'end';
 
-export type TdTooltipPosition =
-  | 'inside'
-  | 'top'
-  | 'left'
-  | 'right'
-  | 'bottom'
-  | string[]
-  | number[]
-  | (() => 'inside' | 'top' | 'left' | 'right' | 'bottom' | string[] | number[]);
+export type TdTooltipPosition = 'inside' | 'top' | 'left' | 'right' | 'bottom' | string[] | number[] | Function;
 
 export type TdFontWeight = 'normal' | 'bold' | 'bolder' | 'lighter' | number;
 

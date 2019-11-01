@@ -79,8 +79,8 @@ export interface ITdDataView {
   icon?: string;
   iconStyle?: ITdFeatureIconStyle;
   readOnly?: boolean;
-  optionToContent?: () => any;
-  contentToOption?: () => any;
+  optionToContent?: Function;
+  contentToOption?: Function;
   lang?: string[]; // Defaults to Chinese, there are 3 names in data view, which are ['data view', 'turn off' and 'refresh'].
   textareaColor?: string;
   textareaBorderColor?: string;

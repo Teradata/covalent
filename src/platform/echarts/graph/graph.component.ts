@@ -54,7 +54,7 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   nodeScaleRatio?: boolean;
   draggable?: boolean;
   symbol?: TdMarkPointSymbol | string;
-  symbolSize?: number | any[] | (() => number | any[]);
+  symbolSize?: number | any[] | Function;
   symbolRotate?: number;
   symbolKeepAspect?: boolean;
   symbolOffset?: any[];
@@ -89,12 +89,12 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   height: string | number;
   animation?: boolean;
   animationThreshold?: number;
-  animationDuration?: number | (() => number);
+  animationDuration?: number | Function;
   animationEasing?: string;
-  animationDelay?: number | (() => number);
-  animationDurationUpdate?: number | (() => number);
+  animationDelay?: number | Function;
+  animationDurationUpdate?: number | Function;
   animationEasingUpdate?: string;
-  animationDelayUpdate?: number | (() => number);
+  animationDelayUpdate?: number | Function;
 }
 
 @Component({
@@ -140,7 +140,7 @@ export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> impl
   @Input() nodeScaleRatio: boolean;
   @Input() draggable: boolean;
   @Input() symbol: TdMarkPointSymbol | string;
-  @Input() symbolSize: number | any[] | (() => number | any[]);
+  @Input() symbolSize: number | any[] | Function;
   @Input() symbolRotate: number;
   @Input() symbolKeepAspect: boolean;
   @Input() symbolOffset: any[];

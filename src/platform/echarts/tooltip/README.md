@@ -12,7 +12,7 @@
 
 There are also lots of property inputs like:
 
-+ formatter?: string | (() => string)
++ formatter?: string | Function
   + The content formatter of tooltip's floating layer which supports string template and callback function.
 + trigger?: 'item' | 'axis' | 'none'
   + Type of triggering.
@@ -34,7 +34,7 @@ And so many more.. for more info [click here](https://echarts.apache.org/en/opti
 
 There are also lots of property inputs like:
 
-+ formatter?: string | (() => string)
++ formatter?: string | Function
   + The content formatter of tooltip's floating layer which supports string template and callback function.
 + trigger?: 'item' | 'axis' | 'none'
   + Type of triggering.

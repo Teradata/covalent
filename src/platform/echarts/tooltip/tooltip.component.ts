@@ -55,7 +55,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
   @Input() confine: boolean = false;
   @Input() transitionDuration: number = 0.5;
   @Input() position: TdTooltipPosition; // series
-  @Input() formatter: string | (() => string); // series
+  @Input() formatter: string | Function; // series
   @Input() backgroundColor: string = 'rgba(50,50,50,0.7)'; // series
   @Input() borderColor: string = '#333'; // series
   @Input() borderWidth: number = 0; // series
