@@ -186,8 +186,9 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   }
 
   private _clearRemovedElements(): void {
-    this._renderedElements = this._renderedElements.filter((renderedElement: ITdDynamicElementConfig) =>
-      this._elements.some((element: ITdDynamicElementConfig) => element.name === renderedElement.name),
+    this._renderedElements = this._renderedElements.filter(
+      (renderedElement: ITdDynamicElementConfig) =>
+        !this._elements.some((element: ITdDynamicElementConfig) => element.name === renderedElement.name),
     );
     // remove elements that were removed from the array
     this._renderedElements.forEach((elem: ITdDynamicElementConfig) => {
