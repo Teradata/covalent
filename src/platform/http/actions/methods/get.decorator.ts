@@ -7,7 +7,7 @@ import { TdAbstractMethod } from './abstract-method.decorator';
 export function TdGET(config: {
   path: string;
   options?: ITdHttpRESTOptions;
-}): (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>) => any {
+}): (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<() => any>) => any {
   return TdAbstractMethod(<any>Object.assign(
     {
       method: 'GET',

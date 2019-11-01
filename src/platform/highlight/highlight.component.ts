@@ -48,7 +48,7 @@ export class TdHighlightComponent implements AfterViewInit {
    *
    * e.g. `typescript`, `html` , etc.
    */
-  @Input('lang') language: string = 'typescript';
+  @Input() lang: string = 'typescript';
 
   /**
    * contentReady?: function
@@ -59,7 +59,7 @@ export class TdHighlightComponent implements AfterViewInit {
   constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
 
   ngAfterViewInit(): void {
-    if (!this.language) {
+    if (!this.lang) {
       throw new Error('Error: language attribute must be defined in TdHighlightComponent.');
     }
     if (!this._content) {
@@ -121,7 +121,7 @@ export class TdHighlightComponent implements AfterViewInit {
       .replace(/&gt;/gi, '>'); // replace with < and > to render HTML in Angular
 
     // Parse code with highlight.js depending on language
-    const highlightedCode: any = hljs.highlight(this.language, codeToParse, true);
+    const highlightedCode: any = hljs.highlight(this.lang, codeToParse, true);
     highlightedCode.value = highlightedCode.value
       .replace(/=<span class="hljs-value">""<\/span>/gi, '')
       .replace('<head>', '')

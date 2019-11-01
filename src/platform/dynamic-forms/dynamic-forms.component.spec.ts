@@ -205,6 +205,7 @@ describe('Component: TdDynamicForms', () => {
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeFalsy();
+        // tslint:disable-next-line:no-hardcoded-credentials
         expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({ password: 'mypwd' }));
       });
     }),
@@ -231,6 +232,7 @@ describe('Component: TdDynamicForms', () => {
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeFalsy();
+        // tslint:disable-next-line:no-hardcoded-credentials
         expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({ password: 'myVeryLongString' }));
       });
     }),
@@ -258,6 +260,7 @@ describe('Component: TdDynamicForms', () => {
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
         expect(dynamicFormsComponent.valid).toBeTruthy();
+        // tslint:disable-next-line:no-hardcoded-credentials
         expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({ password: 'mySuperSecretPw' }));
       });
     }),

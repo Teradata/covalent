@@ -64,7 +64,7 @@ export interface ITdMarkAreaEmphasis {
 export interface ITdLineLabel {
   show?: boolean;
   position?: TdLineLabelPosition;
-  formatter?: string | Function;
+  formatter?: string | (() => string);
 }
 
 export interface ITdMarkLine extends ITdAnimation {

@@ -25,7 +25,7 @@ export interface ITdScatterSeries extends ITdSeries<'scatter'> {
   hoverAnimation?: boolean;
   legendHoverLink?: boolean;
   symbol?: TdMarkPointSymbol | string;
-  symbolSize?: number | any[] | Function;
+  symbolSize?: number | any[] | (() => number | any[]);
   symbolRotate?: number;
   symbolKeepAspect?: boolean;
   symbolOffset?: any[];
@@ -91,7 +91,7 @@ export class TdChartSeriesScatterComponent extends TdSeriesComponent<'scatter'> 
   @Input() hoverAnimation: boolean;
   @Input() legendHoverLink: boolean;
   @Input() symbol: TdMarkPointSymbol | string;
-  @Input() symbolSize: number | any[] | Function;
+  @Input() symbolSize: number | any[] | (() => number | any[]);
   @Input() symbolRotate: number;
   @Input() symbolKeepAspect: boolean;
   @Input() symbolOffset: any[];

@@ -47,7 +47,7 @@ export interface ITdAxisLine {
 export interface ITdAxisTick {
   show?: boolean;
   alignWithLabel?: boolean;
-  interval?: number | Function;
+  interval?: number | (() => number);
   inside?: boolean;
   length?: number;
   lineStyle?: ITdLineStyle;
@@ -55,14 +55,14 @@ export interface ITdAxisTick {
 
 export interface ITdAxisLabel extends ITdShadow, ITdTextShadow, ITdFont {
   show?: boolean;
-  interval?: number | Function;
+  interval?: number | (() => number);
   inside?: boolean;
   rotate?: number;
   margin?: number;
-  formatter?: string | Function;
+  formatter?: string | (() => string);
   showMinLabel?: boolean;
   showMaxLabel?: boolean;
-  color?: string | Function;
+  color?: string | (() => string);
   align?: TdAlign;
   verticalAlign?: TdVerticalAlign;
   lineHeight?: number;
@@ -118,7 +118,7 @@ export interface ITdXAxisConfig {
   nameRotate?: number;
   inverse?: boolean;
   boundaryGap?: boolean | any[];
-  min?: number | string | Function;
+  min?: number | string | (() => string);
   max?: number | string;
   scale?: boolean;
   splitNumber?: number;
@@ -153,7 +153,7 @@ export interface ITdYAxisConfig {
   nameRotate?: number;
   inverse?: boolean;
   boundaryGap?: boolean | any[];
-  min?: number | string | Function;
+  min?: number | string | (() => string);
   max?: number | string;
   scale?: boolean;
   splitNumber?: number;
