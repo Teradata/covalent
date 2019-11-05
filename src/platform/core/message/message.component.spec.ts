@@ -17,8 +17,8 @@ describe('Component: Message', () => {
   }));
 
   it('should set label, sublabel and color `primary`, `red` and then change to color `accent`', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
-    let component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
+    const component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
 
     component.label = 'Label';
     component.sublabel = 'Sublabel';
@@ -83,8 +83,8 @@ describe('Component: Message', () => {
   });
 
   it('should render the component with label and no sublabel', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
-    let component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
+    const component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
 
     component.label = 'Label';
     component.color = 'primary';
@@ -98,8 +98,8 @@ describe('Component: Message', () => {
   });
 
   it('should render the component with a button content as actions', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageContentTestComponent);
-    let component: TdMessageContentTestComponent = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageContentTestComponent);
+    const component: TdMessageContentTestComponent = fixture.debugElement.componentInstance;
 
     component.color = 'primary';
     fixture.detectChanges();
@@ -110,9 +110,9 @@ describe('Component: Message', () => {
   });
 
   it('should render the component, close it and then open it', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
-    let component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
-    let message: TdMessageComponent = fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
+    const component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
+    const message: TdMessageComponent = fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance;
 
     component.label = 'Label';
     component.color = 'primary';
@@ -136,9 +136,9 @@ describe('Component: Message', () => {
   });
 
   it('should not render the component, open it and then close it', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
-    let component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
-    let message: TdMessageComponent = fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
+    const component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
+    const message: TdMessageComponent = fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance;
 
     component.label = 'Label';
     component.color = 'primary';
@@ -162,9 +162,9 @@ describe('Component: Message', () => {
   });
 
   it('should render the component, toggle it and then toggle it again', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
-    let component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
-    let message: TdMessageComponent = fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
+    const component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
+    const message: TdMessageComponent = fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance;
 
     component.label = 'Label';
     component.color = 'primary';
@@ -188,8 +188,8 @@ describe('Component: Message', () => {
   });
 
   it('should render the component, then [opened] to false', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
-    let component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
+    const component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
 
     component.opened = true;
     component.label = 'Label';
@@ -207,8 +207,8 @@ describe('Component: Message', () => {
   });
 
   it('should not render the component, set [opened] to true and then [opened] to false', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
-    let component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
+    const component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
 
     component.label = 'Label';
     component.color = 'primary';

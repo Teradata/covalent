@@ -105,7 +105,7 @@ export class TdDynamicFormsService {
    * Creates form control for element depending [ITdDynamicElementConfig] properties.
    */
   createFormControl(config: ITdDynamicElementConfig): FormControl {
-    let validator: ValidatorFn = this.createValidators(config);
+    const validator: ValidatorFn = this.createValidators(config);
     return new FormControl({ value: config.default, disabled: config.disabled }, validator);
   }
 

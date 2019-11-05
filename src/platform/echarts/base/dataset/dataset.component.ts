@@ -10,11 +10,11 @@ import { assignDefined } from '../utils';
 export class TdDatasetComponent implements OnChanges, OnDestroy {
   private _state: any = {};
 
-  @Input('id') id: string;
-  @Input('config') config: any = {};
-  @Input('source') source: object | any[];
-  @Input('dimensions') dimensions: any[];
-  @Input('sourceHeader') sourceHeader: boolean;
+  @Input() id: string;
+  @Input() config: any = {};
+  @Input() source: object | any[];
+  @Input() dimensions: any[];
+  @Input() sourceHeader: boolean;
 
   constructor(private _optionsService: TdChartOptionsService) {}
 
@@ -27,7 +27,7 @@ export class TdDatasetComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         id: this.id,

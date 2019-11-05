@@ -16,7 +16,7 @@ import { getDirection, setDirection } from '../../utilities/direction';
   styleUrls: ['././toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  updates: Object[] = [
+  updates: object[] = [
     {
       route: '/components/markdown-navigator',
       icon: 'subject',

@@ -12,7 +12,7 @@ export class HomeComponent implements AfterViewInit {
 
   starCount: number = 0;
 
-  sections: Object[] = [
+  sections: object[] = [
     {
       color: 'deep-purple-A400',
       description: 'Your guide to start using the UI platform in your app!',
@@ -57,7 +57,7 @@ export class HomeComponent implements AfterViewInit {
     },
   ];
 
-  repos: Object[] = [
+  repos: object[] = [
     {
       color: 'amber-A400',
       description: 'A pre-built Angular 4 app using Covalent ready to go!',

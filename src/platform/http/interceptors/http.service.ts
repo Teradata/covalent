@@ -58,9 +58,9 @@ export class TdHttpService extends HttpClient {
       withCredentials?: boolean;
     } = {},
   ): Observable<any> {
-    let interceptors: ITdHttpInterceptor[] = this._interceptorBehavior.requestInterceptors
+    const interceptors: ITdHttpInterceptor[] = this._interceptorBehavior.requestInterceptors
       .filter((mapping: ITdHttpInterceptorMapping) => {
-        return this._interceptorBehavior.httpInterceptorMatcher.matches({ url: url }, mapping);
+        return this._interceptorBehavior.httpInterceptorMatcher.matches({ url }, mapping);
       })
       .map((mapping: ITdHttpInterceptorMapping) => {
         return mapping.interceptor;
@@ -97,7 +97,8 @@ export class TdHttpService extends HttpClient {
   }
 
   private _handleResponseResolve(obs: Observable<any>, interceptors: ITdHttpInterceptor[]): Observable<any> {
-    interceptors.reverse().forEach((interceptor: ITdHttpInterceptor) => {
+    interceptors.reverse();
+    interceptors.forEach((interceptor: ITdHttpInterceptor) => {
       if (interceptor.handleResponse) {
         obs = interceptor.handleResponse(obs);
       }

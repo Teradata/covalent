@@ -14,7 +14,7 @@ describe('Service: File', () => {
   });
 
   it('should throw error for missing file and formData', () => {
-    let options: IUploadOptions = {
+    const options: IUploadOptions = {
       url: 'test.url',
       method: 'post',
     };
@@ -36,21 +36,21 @@ describe('Service: File', () => {
   });
 
   it('should call send with no additional data and header', () => {
-    let file: File = new File(['content'], 'myfile.name');
+    const file: File = new File(['content'], 'myfile.name');
 
-    let formData: FormData = new FormData();
+    const formData: FormData = new FormData();
     formData.append('extraData', 'data');
-    let file2: File = new File(['content'], 'myotherfile.name');
+    const file2: File = new File(['content'], 'myotherfile.name');
     formData.append('myfile', file2);
 
-    let options: IUploadOptions = {
+    const options: IUploadOptions = {
       url: 'test.url',
-      file: file,
+      file,
       method: 'post',
-      formData: formData,
+      formData,
     };
 
-    let mySpy: jasmine.Spy = spyOn(XMLHttpRequest.prototype, 'send').and.callFake(() => {
+    const mySpy: jasmine.Spy = spyOn(XMLHttpRequest.prototype, 'send').and.callFake(() => {
       XMLHttpRequest.prototype.abort();
       expect(XMLHttpRequest.prototype.open).toHaveBeenCalledWith('post', 'test.url', true);
       expect(XMLHttpRequest.prototype.send).toHaveBeenCalledTimes(1);
@@ -63,22 +63,22 @@ describe('Service: File', () => {
   });
 
   it('should call send with formData and header', () => {
-    let file: File = new File(['content'], 'myfile.name');
-    let formData: FormData = new FormData();
+    const file: File = new File(['content'], 'myfile.name');
+    const formData: FormData = new FormData();
     formData.append('extraData', 'data');
     formData.append('myfile', file);
-    let options: IUploadOptions = {
+    const options: IUploadOptions = {
       url: 'test.url',
       method: 'post',
       headers: { 'My-Header': 'my-val' },
-      formData: formData,
+      formData,
     };
 
-    let mySpy: jasmine.Spy = spyOn(XMLHttpRequest.prototype, 'send').and.callFake(() => {
+    const mySpy: jasmine.Spy = spyOn(XMLHttpRequest.prototype, 'send').and.callFake(() => {
       XMLHttpRequest.prototype.abort();
       expect(XMLHttpRequest.prototype.send).toHaveBeenCalledWith(formData);
       expect(XMLHttpRequest.prototype.send).toHaveBeenCalledTimes(1);
-      let sentData: FormData = mySpy.calls.first().args[0];
+      const sentData: FormData = mySpy.calls.first().args[0];
       expect(sentData.get('file')).toBeNull();
       expect((sentData.get('myfile') as File).name).toEqual(file.name);
       expect(sentData.get('extraData')).toEqual('data');

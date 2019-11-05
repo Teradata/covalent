@@ -1,5 +1,5 @@
 export function assignDefined(target: any, ...sources: any[]): any {
-  let keys: Set<string> = new Set<string>();
+  const keys: Set<string> = new Set<string>();
   for (const source of sources) {
     for (const key of Object.keys(source)) {
       keys.add(key);

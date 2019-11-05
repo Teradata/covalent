@@ -33,10 +33,8 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoading')
   set name(name: string) {
-    if (!this._name) {
-      if (name) {
-        this._name = name;
-      }
+    if (!this._name && name) {
+      this._name = name;
     }
   }
 
@@ -66,13 +64,10 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoadingType')
   set type(type: LoadingType) {
-    switch (type) {
-      case LoadingType.Linear:
-        this._type = LoadingType.Linear;
-        break;
-      default:
-        this._type = LoadingType.Circular;
-        break;
+    if (type === LoadingType.Linear) {
+      this._type = LoadingType.Linear;
+    } else {
+      this._type = LoadingType.Circular;
     }
   }
 
@@ -83,13 +78,10 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoadingMode')
   set mode(mode: LoadingMode) {
-    switch (mode) {
-      case LoadingMode.Determinate:
-        this._mode = LoadingMode.Determinate;
-        break;
-      default:
-        this._mode = LoadingMode.Indeterminate;
-        break;
+    if (mode === LoadingMode.Determinate) {
+      this._mode = LoadingMode.Determinate;
+    } else {
+      this._mode = LoadingMode.Indeterminate;
     }
   }
 
@@ -99,14 +91,11 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Defaults to [LoadingMode.Replace | 'replace'].
    */
   @Input('tdLoadingStrategy')
-  set strategy(stategy: LoadingStrategy) {
-    switch (stategy) {
-      case LoadingStrategy.Overlay:
-        this._strategy = LoadingStrategy.Overlay;
-        break;
-      default:
-        this._strategy = LoadingStrategy.Replace;
-        break;
+  set strategy(strategy: LoadingStrategy) {
+    if (strategy === LoadingStrategy.Overlay) {
+      this._strategy = LoadingStrategy.Overlay;
+    } else {
+      this._strategy = LoadingStrategy.Replace;
     }
   }
 

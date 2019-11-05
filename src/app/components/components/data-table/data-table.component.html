@@ -411,7 +411,7 @@
               </button>
             </div>
             <mat-divider></mat-divider>
-            <td-data-table 
+            <td-data-table
               #dataTable
               [data]="filteredData"
               [columns]="columns"
@@ -472,13 +472,13 @@
 
               @ViewChild(TdPagingBarComponent, {static: true}) pagingBar: TdPagingBarComponent;
 
-              cellAttrs: Object[] = [{
+              cellAttrs: object[] = [{
                 description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
                 name: 'numeric',
                 type: `boolean`,
               }];
 
-              columnAttrs: Object[] = [{
+              columnAttrs: object[] = [{
                 description: `Sets unique column [name] for [sortable] events.`,
                 name: 'name',
                 type: `string`,
@@ -513,8 +513,8 @@
                 type: `function`,
               }];
 
-              serviceAttrs: Object[] = [{
-                description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them. 
+              serviceAttrs: object[] = [{
+                description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them.
                               Any column names passed in with [nonSearchAbleColumns] will be excluded in the search.`,
                 name: 'filterData',
                 type: `function(data: any[], searchTerm: string, ignoreCase: boolean, nonSearchAbleColumns: string[])`,
@@ -628,7 +628,7 @@
                 let newData: any[] = this.data;
                 let excludedColumns: string[] = await this.columns
                 .filter((column: ITdDataTableColumn) => {
-                  return ((column.filter === undefined && column.hidden === true) || 
+                  return ((column.filter === undefined && column.hidden === true) ||
                           (column.filter !== undefined && column.filter === false));
                 }).map((column: ITdDataTableColumn) => {
                   return column.name;

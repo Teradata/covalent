@@ -76,7 +76,7 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
     },
   ];
 
-  mediaServiceMethods: Object[] = [
+  mediaServiceMethods: object[] = [
     {
       description: `Used to evaluate whether a given media query is true or false given the
                   current device's screen / window size.`,
@@ -91,7 +91,7 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
     },
   ];
 
-  mediaBreakpoints: Object[] = [
+  mediaBreakpoints: object[] = [
     {
       breakpoint: 'xs',
       query: '(max-width: 599px)',
@@ -142,7 +142,7 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
     },
   ];
 
-  mediaAttrs: Object[] = [
+  mediaAttrs: object[] = [
     {
       description: `Media query used to evaluate screen/window size.
                   Toggles attributes, classes and styles if media query is matched.`,
@@ -169,7 +169,7 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
   constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {}
 
   ngOnInit(): void {
-    for (let demoObj of this.mediaDemo) {
+    for (const demoObj of this.mediaDemo) {
       this._ngZone.run(() => {
         demoObj.value = this._mediaService.query(demoObj.query);
       });

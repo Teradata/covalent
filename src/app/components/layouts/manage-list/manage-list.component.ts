@@ -9,7 +9,7 @@ import { TdMediaService } from '@covalent/core/media';
   preserveWhitespaces: true,
 })
 export class ManageListComponent {
-  routes: Object[] = [
+  routes: object[] = [
     {
       icon: 'home',
       route: '.',
@@ -36,7 +36,7 @@ export class ManageListComponent {
       title: 'Components & Addons',
     },
   ];
-  usermenu: Object[] = [
+  usermenu: object[] = [
     {
       icon: 'swap_horiz',
       route: '.',
@@ -53,7 +53,7 @@ export class ManageListComponent {
       title: 'Sign out',
     },
   ];
-  navmenu: Object[] = [
+  navmenu: object[] = [
     {
       icon: 'looks_one',
       route: '.',

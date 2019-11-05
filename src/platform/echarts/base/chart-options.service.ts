@@ -8,7 +8,7 @@ export class TdChartOptionsService {
   private _optionsSubject: Subject<any> = new BehaviorSubject<any>(this._options);
 
   setOption(option: string, value: any): void {
-    let options: any = {};
+    const options: any = {};
     options[option] = value;
     Object.assign(this._options, options);
     this._optionsSubject.next(this._options);
@@ -17,7 +17,7 @@ export class TdChartOptionsService {
   setArrayOption(option: string, value: any): any {
     let prevValue: any[] = this.getOption(option);
     if (prevValue) {
-      let index: number = prevValue.indexOf(value);
+      const index: number = prevValue.indexOf(value);
       index > -1 ? (prevValue[index] = value) : prevValue.push(value);
     } else {
       prevValue = [value];
@@ -28,7 +28,7 @@ export class TdChartOptionsService {
   removeArrayOption(option: string, value: any): any {
     let prevValue: any[] = this.getOption(option);
     if (prevValue) {
-      let index: number = prevValue.indexOf(value);
+      const index: number = prevValue.indexOf(value);
       if (index > -1) {
         /* tslint:disable-next-line */
         prevValue[index] = null;

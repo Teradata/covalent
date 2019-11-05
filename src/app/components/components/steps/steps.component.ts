@@ -15,9 +15,9 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  stepsAttrs: Object[] = [
+  stepsAttrs: object[] = [
     {
-      description: `Method to be executed when [onStepChange] event is emitted.
+      description: `Method to be executed when [stepChange] event is emitted.
                   Emits an [IStepChangeEvent] implemented object.`,
       name: 'stepChange?',
       type: 'function($event)',
@@ -29,7 +29,7 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
     },
   ];
 
-  stepAttrs: Object[] = [
+  stepAttrs: object[] = [
     {
       description: 'Sets label of [TdStepComponent] header. Defaults to "Step #"',
       name: 'label?',

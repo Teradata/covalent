@@ -8,9 +8,9 @@
           [disabled]="!hasData"
           [indeterminate]="indeterminate && !allSelected && hasData"
           [checked]="allSelected && hasData"
-          (click)="blockEvent($event); selectAll(!checkBoxAll.checked)"
-          (keyup.enter)="selectAll(!checkBoxAll.checked)"
-          (keyup.space)="selectAll(!checkBoxAll.checked)"
+          (click)="blockEvent($event); _selectAll(!checkBoxAll.checked)"
+          (keyup.enter)="_selectAll(!checkBoxAll.checked)"
+          (keyup.space)="_selectAll(!checkBoxAll.checked)"
           (keydown.space)="blockEvent($event)"
         ></mat-checkbox>
       </th>

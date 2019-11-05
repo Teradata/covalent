@@ -4,7 +4,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
 import { HttpRequest, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { TdHttpService, HttpConfig, CovalentHttpModule, ITdHttpInterceptor, ITdHttpRESTOptionsWithBody } from '../';
+import { TdHttpService, IHttpConfig, CovalentHttpModule, ITdHttpInterceptor, ITdHttpRESTOptionsWithBody } from '../';
 
 @Injectable()
 export class ResponseOverrideInterceptor implements ITdHttpInterceptor {
@@ -67,7 +67,7 @@ export class RequestRecoveryInterceptor implements ITdHttpInterceptor {
 }
 
 describe('Service: Http', () => {
-  let config: HttpConfig = {
+  const config: IHttpConfig = {
     interceptors: [
       {
         interceptor: ResponseOverrideInterceptor,
@@ -106,7 +106,7 @@ describe('Service: Http', () => {
     inject(
       [TdHttpService, HttpTestingController],
       (service: TdHttpService, httpTestingController: HttpTestingController) => {
-        let testUrl: string = 'http://www.test.com/error';
+        const testUrl: string = 'http://www.test.com/error';
 
         service.patch(testUrl, {}).subscribe(
           (data: string) => {
@@ -162,7 +162,7 @@ describe('Service: Http', () => {
             expect(data).toBeTruthy();
           });
 
-        let reqs: TestRequest[] = httpTestingController.match((req: HttpRequest<any>) => {
+        const reqs: TestRequest[] = httpTestingController.match((req: HttpRequest<any>) => {
           return true;
         });
         expect(reqs.length).toBeGreaterThan(0);
@@ -215,7 +215,7 @@ describe('Service: Http', () => {
           expect(data.body).toBe('success', 'intercepted url without `/url`');
         });
 
-        let reqs: TestRequest[] = httpTestingController.match((req: HttpRequest<any>) => {
+        const reqs: TestRequest[] = httpTestingController.match((req: HttpRequest<any>) => {
           return req.url.indexOf('url') > -1;
         });
         expect(reqs.length).toBeGreaterThan(0);
@@ -233,8 +233,8 @@ describe('Service: Http', () => {
     inject(
       [TdHttpService, HttpTestingController],
       (service: TdHttpService, httpTestingController: HttpTestingController) => {
-        let testUrl1: string = 'http://www.test.com/recovery/id/id2/fromerror';
-        let testUrl2: string = 'http://www.test.com/recovery/id/fromerror';
+        const testUrl1: string = 'http://www.test.com/recovery/id/id2/fromerror';
+        const testUrl2: string = 'http://www.test.com/recovery/id/fromerror';
 
         service.patch(testUrl1, {}, { observe: 'body' }).subscribe((data: string) => {
           expect(data).toBe('success', '/error/*/fromerror was intercepted');
@@ -244,7 +244,7 @@ describe('Service: Http', () => {
           expect(data.body).toBe('recovered', '/error/*/fromerror was not intercepted');
         });
 
-        let req1: TestRequest = httpTestingController.expectOne(testUrl1);
+        const req1: TestRequest = httpTestingController.expectOne(testUrl1);
         expect(req1.request.method).toEqual('PATCH');
         expect(req1.request.headers.get('recovered')).toBeNull(
           'did execute onRequestError when failed when it shouldnt',
@@ -254,7 +254,7 @@ describe('Service: Http', () => {
           statusText: 'OK',
         });
 
-        let req2: TestRequest = httpTestingController.expectOne(testUrl2);
+        const req2: TestRequest = httpTestingController.expectOne(testUrl2);
         expect(req2.request.method).toEqual('DELETE');
         expect(req2.request.headers.get('recovered')).toBe('yes', 'did not execute onRequestError when failed');
         req2.flush('success', {
@@ -279,7 +279,7 @@ describe('Service: Http', () => {
     inject(
       [TdHttpService, HttpTestingController],
       (service: TdHttpService, httpTestingController: HttpTestingController) => {
-        let testUrl: string = '/testurl';
+        const testUrl: string = '/testurl';
         let success: boolean = false;
         let error: boolean = false;
         let complete: boolean = false;
@@ -299,7 +299,7 @@ describe('Service: Http', () => {
           },
         );
 
-        let reqs: TestRequest[] = httpTestingController.match(testUrl);
+        const reqs: TestRequest[] = httpTestingController.match(testUrl);
         expect(reqs[0].request.method).toEqual('GET');
         reqs[0].flush('success', {
           status: 200,
@@ -323,7 +323,7 @@ describe('Service: Http', () => {
     inject(
       [TdHttpService, HttpTestingController],
       (service: TdHttpService, httpTestingController: HttpTestingController) => {
-        let testUrl: string = '/testurl';
+        const testUrl: string = '/testurl';
         let complete: boolean = false;
         service
           .post(
@@ -344,7 +344,7 @@ describe('Service: Http', () => {
               complete = true;
             },
           );
-        let req: TestRequest = httpTestingController.expectOne(testUrl);
+        const req: TestRequest = httpTestingController.expectOne(testUrl);
         expect(req.request.method).toEqual('POST');
         req.flush('success', {
           status: 200,
@@ -360,7 +360,7 @@ describe('Service: Http', () => {
     inject(
       [TdHttpService, HttpTestingController],
       (service: TdHttpService, httpTestingController: HttpTestingController) => {
-        let testUrl: string = '/testurl';
+        const testUrl: string = '/testurl';
         service.post(testUrl, {}).subscribe(
           () => {
             fail('on success execute when it shouldnt have with observables');
@@ -372,7 +372,7 @@ describe('Service: Http', () => {
             fail('on complete execute when it shouldnt have with observables');
           },
         );
-        let req: TestRequest = httpTestingController.expectOne(testUrl);
+        const req: TestRequest = httpTestingController.expectOne(testUrl);
         req.error(
           new ErrorEvent('Something Failed', {
             message: 'error',
@@ -387,7 +387,7 @@ describe('Service: Http', () => {
     inject(
       [TdHttpService, HttpTestingController],
       (service: TdHttpService, httpTestingController: HttpTestingController) => {
-        let testUrl: string = '/testurl';
+        const testUrl: string = '/testurl';
         service
           .post(
             testUrl,
@@ -406,7 +406,7 @@ describe('Service: Http', () => {
             },
           );
 
-        let req: TestRequest = httpTestingController.expectOne(testUrl);
+        const req: TestRequest = httpTestingController.expectOne(testUrl);
         expect(req.request.method).toEqual('POST');
         req.flush('success', {
           status: 200,
@@ -421,7 +421,7 @@ describe('Service: Http', () => {
     inject(
       [TdHttpService, HttpTestingController],
       (service: TdHttpService, httpTestingController: HttpTestingController) => {
-        let testUrl: string = '/testurl';
+        const testUrl: string = '/testurl';
         service
           .post(testUrl, {})
           .toPromise()
@@ -434,7 +434,7 @@ describe('Service: Http', () => {
             },
           );
 
-        let req: TestRequest = httpTestingController.expectOne(testUrl);
+        const req: TestRequest = httpTestingController.expectOne(testUrl);
         req.error(
           new ErrorEvent('Something Failed', {
             message: 'error',

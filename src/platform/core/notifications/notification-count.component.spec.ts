@@ -21,7 +21,7 @@ describe('Component: NotificationCount', () => {
 
   it('should render component with no notification tip', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
@@ -34,8 +34,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component notification tip with no count nor number', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
-      let component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
+      const component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
       component.notifications = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -51,8 +51,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component notification tip with count and number', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
-      let component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
+      const component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
       component.notifications = 44;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -68,8 +68,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component with notification tip hidden', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
-      let component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
+      const component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
       component.notifications = 0;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -82,8 +82,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component with notification tip and then hide it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
-      let component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
+      const component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
       component.notifications = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -100,8 +100,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component notification tip with defaultLimit+ when limit is not set and when count exceeds the default', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
-      let component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
+      const component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
       component.notifications = 100;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -117,8 +117,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component notification tip with count when limit is not set and when count does not exceed default', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
-      let component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
+      const component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
       component.notifications = 20;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -134,8 +134,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component notification tip with limit+ when limit is set', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountLimitTestComponent);
-      let component: TdNotificationCountLimitTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountLimitTestComponent);
+      const component: TdNotificationCountLimitTestComponent = fixture.debugElement.componentInstance;
       component.notifications = 100;
       component.limit = 50;
       fixture.detectChanges();
@@ -152,8 +152,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component notification tip with notifications when it is less than the limit', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountLimitTestComponent);
-      let component: TdNotificationCountLimitTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountLimitTestComponent);
+      const component: TdNotificationCountLimitTestComponent = fixture.debugElement.componentInstance;
       component.notifications = 20;
       component.limit = 50;
       fixture.detectChanges();
@@ -170,7 +170,7 @@ describe('Component: NotificationCount', () => {
 
   it('should render component with content transcluded', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountContentTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountContentTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('.td-notification-content'))).toBeTruthy();
@@ -181,8 +181,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component with content and default positionY top and position X after', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionContentTestComponent);
-      let component: TdNotificationCountPositionContentTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionContentTestComponent);
+      const component: TdNotificationCountPositionContentTestComponent = fixture.debugElement.componentInstance;
       component.notifications = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -194,8 +194,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component with no content and default positionY top and position X after', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionTestComponent);
-      let component: TdNotificationCountPositionTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionTestComponent);
+      const component: TdNotificationCountPositionTestComponent = fixture.debugElement.componentInstance;
       component.notifications = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -207,8 +207,8 @@ describe('Component: NotificationCount', () => {
 
   it('should render component with positionY bottom and position X before', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionTestComponent);
-      let component: TdNotificationCountPositionTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionTestComponent);
+      const component: TdNotificationCountPositionTestComponent = fixture.debugElement.componentInstance;
       component.notifications = true;
       component.positionX = TdNotificationCountPositionX.Before;
       component.positionY = TdNotificationCountPositionY.Bottom;
