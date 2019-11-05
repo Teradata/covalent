@@ -14,6 +14,64 @@ interface IFsDocumentElement extends HTMLDivElement {
   webkitRequestFullscreen?: () => void;
 }
 
+const monarchTokensProviderCSS: string = `
+.monaco-editor .token.custom-info {
+  color: grey;
+}
+.monaco-editor .token.custom-error {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.monaco-editor .token.custom-notice {
+  color: orange;
+}
+
+.monaco-editor .token.custom-date {
+  color: green;
+}
+`;
+const language: any = {
+  id: 'mySpecialLanguage',
+  monarchTokensProvider: [
+    ['/\\[error.*/', 'custom-error'],
+    ['/\\[notice.*/', 'custom-notice'],
+    ['/\\[info.*/', 'custom-info'],
+    ['/\\[[a-zA-Z 0-9:]+\\]/', 'custom-date'],
+  ],
+  customTheme: {
+    id: 'myCustomTheme',
+    theme: {
+      base: 'vs-dark',
+      inherit: true,
+      rules: [
+        { token: 'custom-info', foreground: '808080' },
+        { token: 'custom-error', foreground: 'ff0000', fontStyle: 'bold' },
+        { token: 'custom-notice', foreground: 'FFA500' },
+        { token: 'custom-date', foreground: '008800' },
+      ],
+    },
+  },
+  monarchTokensProviderCSS,
+  completionItemProvider: [
+    {
+      label: 'simpleText',
+      kind: 'monaco.languages.CompletionItemKind.Text',
+    },
+    {
+      label: 'testing',
+      kind: 'monaco.languages.CompletionItemKind.Keyword',
+      insertText: 'testing({{condition}})',
+    },
+    {
+      label: 'ifelse',
+      kind: 'monaco.languages.CompletionItemKind.Snippet',
+      insertText: ['if ({{condition}}) {', '\t{{}}', '} else {', '\t', '}'].join('\n'),
+      documentation: 'If-Else Statement',
+    },
+  ],
+};
+
 describe('Component: App', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -73,66 +131,36 @@ describe('Component: App', () => {
               done();
             });
           });
-          const language: any = {
-            id: 'mySpecialLanguage',
-            monarchTokensProvider: [
-              ['/\\[error.*/', 'custom-error'],
-              ['/\\[notice.*/', 'custom-notice'],
-              ['/\\[info.*/', 'custom-info'],
-              ['/\\[[a-zA-Z 0-9:]+\\]/', 'custom-date'],
-            ],
-            customTheme: {
-              id: 'myCustomTheme',
-              theme: {
-                base: 'vs-dark',
-                inherit: true,
-                // tslint:disable:no-hardcoded-credentials
-                rules: [
-                  { token: 'custom-info', foreground: '808080' },
-                  { token: 'custom-error', foreground: 'ff0000', fontStyle: 'bold' },
-                  { token: 'custom-notice', foreground: 'FFA500' },
-                  { token: 'custom-date', foreground: '008800' },
-                ],
-                // tslint:enable:no-hardcoded-credentials
-              },
-            },
-            monarchTokensProviderCSS: `
-              .monaco-editor .token.custom-info {
-                color: grey;
-              }
-              .monaco-editor .token.custom-error {
-                color: red;
-                font-weight: bold;
-                font-size: 1.2em;
-              }
-              .monaco-editor .token.custom-notice {
-                color: orange;
-              }
-
-              .monaco-editor .token.custom-date {
-                color: green;
-              }
-            `,
-            completionItemProvider: [
-              {
-                label: 'simpleText',
-                kind: 'monaco.languages.CompletionItemKind.Text',
-              },
-              {
-                label: 'testing',
-                kind: 'monaco.languages.CompletionItemKind.Keyword',
-                insertText: 'testing({{condition}})',
-              },
-              {
-                label: 'ifelse',
-                kind: 'monaco.languages.CompletionItemKind.Snippet',
-                insertText: ['if ({{condition}}) {', '\t{{}}', '} else {', '\t', '}'].join('\n'),
-                documentation: 'If-Else Statement',
-              },
-            ],
-          };
           component.registerLanguage(language);
           component.theme = 'myCustomTheme';
+          component.language = 'mySpecialLanguage';
+        });
+      });
+    })();
+  });
+
+  it('should remove style tags on destroy', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+
+      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
+      if (component.isElectronApp) {
+        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+      }
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.editorInitialized.subscribe(() => {
+          component.editorLanguageChanged.subscribe(() => {
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              expect(document.body.textContent).toContain(monarchTokensProviderCSS);
+              fixture.destroy();
+              expect(document.body.textContent).not.toContain(monarchTokensProviderCSS);
+              done();
+            });
+          });
+          component.registerLanguage(language);
           component.language = 'mySpecialLanguage';
         });
       });

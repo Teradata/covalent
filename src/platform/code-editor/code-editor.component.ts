@@ -65,7 +65,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _keycode: any;
   private _setValueTimeout: any;
   private initialContentChange: boolean = true;
-
+  private _registeredLanguagesStyles: HTMLStyleElement[] = [];
   @ViewChild('editorContainer', { static: true }) _editorContainer: ElementRef;
 
   /**
@@ -306,6 +306,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         css.innerHTML = language.monarchTokensProviderCSS;
         document.body.appendChild(css);
         this.editorConfigurationChanged.emit();
+        this._registeredLanguagesStyles = [...this._registeredLanguagesStyles, css];
       }
     }
   }
@@ -465,6 +466,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 var editor;
                 var theme = '${this._theme}';
                 var value = '${this._value}';
+                var registeredLanguagesStyles = [];
 
                 require.config({
                     baseUrl: '${this._appPath}/assets/monaco'
@@ -600,6 +602,8 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                     css.type = "text/css";
                     css.innerHTML = data.monarchTokensProviderCSS;
                     document.body.appendChild(css);
+                    registeredLanguagesStyles = [...registeredLanguagesStyles, css];
+
 
                     ipcRenderer.sendToHost("editorConfigurationChanged", '');
                 });
@@ -623,6 +627,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
 
                 ipcRenderer.on('dispose', function(){
                   editor.dispose();
+                  registeredLanguagesStyles.forEach((style) => style.remove());
                 });
 
                 // need to manually resize the editor any time the window size
@@ -719,6 +724,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
 
   ngOnDestroy(): void {
     this._changeDetectorRef.detach();
+    this._registeredLanguagesStyles.forEach((style: HTMLStyleElement) => style.remove());
     if (this._webview) {
       this._webview.send('dispose');
     } else if (this._editor) {
