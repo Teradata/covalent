@@ -25,7 +25,7 @@ jobs:
     - env: 'MODE=audit'
     - env: 'MODE=a11y'
 install:
-  - npm install
+  - npm ci
 script:
   - ./scripts/ci/travis-script.sh
 cache:
