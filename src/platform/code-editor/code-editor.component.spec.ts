@@ -44,12 +44,14 @@ const language: any = {
     theme: {
       base: 'vs-dark',
       inherit: true,
+      // tslint:disable:no-hardcoded-credentials
       rules: [
         { token: 'custom-info', foreground: '808080' },
         { token: 'custom-error', foreground: 'ff0000', fontStyle: 'bold' },
         { token: 'custom-notice', foreground: 'FFA500' },
         { token: 'custom-date', foreground: '008800' },
       ],
+      // tslint:enable:no-hardcoded-credentials
     },
   },
   monarchTokensProviderCSS,
@@ -141,9 +143,9 @@ describe('Component: App', () => {
 
   it('should remove style tags on destroy', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
 
-      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
+      const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
