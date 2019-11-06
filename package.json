@@ -14,7 +14,7 @@
     "lint": "npm run tslint && npm run stylelint",
     "tslint": "./node_modules/.bin/tslint -p ./tsconfig.json --format codeFrame -c ./tslint.json './src/**/*.ts'",
     "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config stylelint.config.js --syntax scss",
-    "preinstall": "rm -rf node_modules tmp deploy dist",
+    "preinstall": "rm -rf tmp deploy dist",
     "postinstall": "npm rebuild node-sass && webdriver-manager update",
     "test": "ng test covalent-docs --code-coverage --source-map=false --watch=false && npm run test:schematics",
     "test:watch": "ng test --code-coverage --source-map=false --watch=true",
@@ -39,12 +39,6 @@
     "prettier": "./node_modules/.bin/prettier --write './**/*.{ts,js,json,css,scss,yml,html}'",
     "prettier:check": "./node_modules/.bin/prettier --check './**/*.{ts,js,json,css,scss,yml,html}'",
     "commitlint": "node ./node_modules/@commitlint/travis-cli/lib/cli.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged --no-restage --bail --pattern '**/*.*(ts|js|json|css|scss|yml|html)'",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "engines": {
     "node": ">=10.15.3",
@@ -105,9 +99,7 @@
     "@angular-devkit/build-ng-packagr": "~0.801.2",
     "@angular/cli": "8.1.2",
     "@angular/compiler-cli": "^8.1.3",
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-angular": "^8.1.0",
-    "@commitlint/travis-cli": "^8.1.0",
+    "@covalent/standards": "file:src/platform/standards",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "~2.8.6",
@@ -115,7 +107,6 @@
     "@types/node": "~8.9.4",
     "@types/selenium-webdriver": "^2.52.0",
     "autoprefixer": "7.1.2",
-    "codelyzer": "^5.2.0",
     "conventional-changelog-cli": "^2.0.23",
     "coveralls": "^3.0.3",
     "fs-extra": "^4.0.0",
@@ -126,7 +117,6 @@
     "gulp-postcss": "7.0.0",
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "1.6.0",
-    "husky": "^2.7.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^4.0.1",
@@ -138,19 +128,11 @@
     "ng-packagr": "^5.3.0",
     "node-sass": "^4.11.0",
     "pa11y": "^5.1.0",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1",
     "protractor": "^6.0.0",
     "require-dir": "0.3.2",
     "semver": "5.2.0",
-    "stylelint": "^10.1.0",
-    "stylelint-config-prettier": "^5.2.0",
     "ts-node": "~7.0.0",
     "tsickle": "0.35.0",
-    "tslint": "^5.20.0",
-    "tslint-angular": "^3.0.2",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-sonarts": "1.9.0",
     "typescript": "~3.4.5",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-stats-plugin": "^0.3.0"

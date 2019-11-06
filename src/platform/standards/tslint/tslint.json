@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:recommended", "tslint-sonarts", "tslint-angular"],
+  "extends": ["tslint:recommended", "tslint-sonarts", "tslint-angular", "tslint-config-prettier"],
   "rules": {
     "array-type": [true, "array"],
     "ban-types": {
@@ -14,7 +14,6 @@
     "cognitive-complexity": false,
     "deprecation": false,
     "max-classes-per-file": false,
-    "max-line-length": [true, 120],
     "max-union-size": false,
     "member-ordering": {
       "options": {
@@ -35,7 +34,6 @@
         ]
       }
     },
-    "new-parens": true,
     "no-angle-bracket-type-assertion": false,
     "no-any": false,
     "no-arg": true,
@@ -43,7 +41,6 @@
     "no-bitwise": true,
     "no-collapsible-if": true,
     "no-conditional-assignment": true,
-    "no-consecutive-blank-lines": true,
     "no-console": [
       true,
       "assert",
@@ -86,7 +83,6 @@
     "no-non-null-assertion": true,
     "no-null-keyword": true,
     "no-require-imports": true,
-    "object-literal-key-quotes": [true, "consistent"],
     "only-arrow-functions": false,
     "ordered-imports": {
       "options": {
@@ -96,23 +92,7 @@
       }
     },
     "prefer-for-of": true,
-    "quotemark": [true, "single", "avoid-escape", "avoid-template"],
-    "space-before-function-paren": [
-      true,
-      {
-        "anonymous": "always",
-        "named": "never",
-        "asyncArrow": "always"
-      }
-    ],
     "switch-default": true,
-    "trailing-comma": {
-      "options": {
-        "esSpecCompliant": true,
-        "multiline": "always",
-        "singleline": "never"
-      }
-    },
     "typedef": [
       true,
       "call-signature",
@@ -125,15 +105,6 @@
     "use-type-alias": false,
     "variable-name": {
       "options": ["ban-keywords", "check-format", "allow-leading-underscore"]
-    },
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-module",
-      "check-separator",
-      "check-type"
-    ]
+    }
   }
 }
