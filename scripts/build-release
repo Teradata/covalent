@@ -64,4 +64,4 @@ rm -rf src/platform/node_modules
 
 # Need to move required file after ng-packagr runs because ng-packagr overrides primary entrypoint folders
 gulp move-additional-platform-files
-gulp move-standards-package
+gulp move-coding-standards-package

@@ -30,6 +30,6 @@ module.exports = {
       '!src/platform/core/**/*.md',
       'src/platform/**/*.md',
     ],
-    PostNgPackagerStandardsPackage: ['src/platform/standards/**/*.{js,json}'],
+    PostNgPackagerCodingStandardsPackage: ['src/platform/coding-standards/**/*.{js,json}'],
   },
 };
