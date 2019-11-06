@@ -94,7 +94,7 @@
     "highlight.js": "9.13.1",
     "monaco-editor": "^0.17.0",
     "rxjs": "6.5.2",
-    "showdown": "1.9.0",
+    "showdown": "^1.9.1",
     "simplemde": "^1.11.2",
     "tslib": "^1.9.3",
     "web-animations-js": "2.3.2",
