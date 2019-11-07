@@ -15,8 +15,7 @@ describe('Component: BaseEchart', () => {
 
   it('should render a canvas element', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdBaseEchartsBasicTestComponent);
-      let component: TdBaseEchartsBasicTestComponent = fixture.debugElement.componentInstance;
+      TestBed.createComponent(TdBaseEchartsBasicTestComponent);
     }),
   ));
 });
@@ -24,7 +23,7 @@ describe('Component: BaseEchart', () => {
 @Component({
   selector: 'td-base-echarts-basic-test',
   template: `
-    <td-chart [style.height.px]="300"> </td-chart>
+    <td-chart [style.height.px]="300"></td-chart>
   `,
 })
 class TdBaseEchartsBasicTestComponent {

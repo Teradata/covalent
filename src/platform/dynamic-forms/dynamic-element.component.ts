@@ -27,7 +27,7 @@ export class TdDynamicElementBase {
 export const _TdDynamicElementMixinBase = mixinControlValueAccessor(TdDynamicElementBase);
 
 @Directive({ selector: '[tdDynamicFormsError]ng-template' })
-export class TdDynamicFormsErrorTemplate extends TemplatePortalDirective {
+export class TdDynamicFormsErrorTemplateDirective extends TemplatePortalDirective {
   @Input() tdDynamicFormsError: string;
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
     super(templateRef, viewContainerRef);
@@ -81,7 +81,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    * Sets type or element of element to be rendered.
    * Throws error if does not exist or no supported.
    */
-  @Input() type: TdDynamicElement | TdDynamicType = undefined;
+  @Input() type: TdDynamicElement | TdDynamicType | Type<any> = undefined;
 
   /**
    * Sets required validation checkup (if supported by element).
@@ -144,9 +144,9 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
   }
 
   ngOnInit(): void {
-    let component: any =
+    const component: any =
       <any>this.type instanceof Type ? this.type : this._dynamicFormsService.getDynamicElement(this.type);
-    let ref: ComponentRef<any> = this._componentFactoryResolver
+    const ref: ComponentRef<any> = this._componentFactoryResolver
       .resolveComponentFactory(component)
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
@@ -172,7 +172,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    */
   ngOnChanges(changes: SimpleChanges): void {
     if (this._instance) {
-      for (let prop in changes) {
+      for (const prop of Object.keys(changes)) {
         this._instance[prop] = changes[prop].currentValue;
       }
     }

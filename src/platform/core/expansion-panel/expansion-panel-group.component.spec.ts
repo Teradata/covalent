@@ -208,9 +208,9 @@ class TdExpansionPanelGroupTestComponent {
   selector: 'td-expansion-panel-group-multi-init-expanded-test',
   template: `
     <td-expansion-panel-group [multi]="multi">
-      <td-expansion-panel [label]="panel1" [expand]="panel1Expanded"> </td-expansion-panel>
-      <td-expansion-panel [label]="panel2" [expand]="panel2Expanded"> </td-expansion-panel>
-      <td-expansion-panel [label]="panel3" [expand]="panel3Expanded"> </td-expansion-panel>
+      <td-expansion-panel [label]="panel1" [expand]="panel1Expanded"></td-expansion-panel>
+      <td-expansion-panel [label]="panel2" [expand]="panel2Expanded"></td-expansion-panel>
+      <td-expansion-panel [label]="panel3" [expand]="panel3Expanded"></td-expansion-panel>
     </td-expansion-panel-group>
   `,
 })

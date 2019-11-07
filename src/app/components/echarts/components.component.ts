@@ -20,7 +20,7 @@ import { tdCollapseAnimation, tdRotateAnimation, tdFadeInOutAnimation } from '@c
 export class ComponentsComponent {
   miniNav: boolean = false;
 
-  routes: Object[] = [
+  routes: object[] = [
     {
       icon: 'insert_chart',
       route: ['types', 'bar'],
@@ -68,7 +68,7 @@ export class ComponentsComponent {
     },
   ];
 
-  atomicComponentRoutes: Object[] = [
+  atomicComponentRoutes: object[] = [
     {
       description: 'Chart/Series Tooltip component, enable/disable and other tooltip level options.',
       icon: 'info',
@@ -89,7 +89,7 @@ export class ComponentsComponent {
       title: 'Toolbox',
     },
     {
-      description: `Dataset options, allows a convenient way to separate data and styles and enables reuse by different series. 
+      description: `Dataset options, allows a convenient way to separate data and styles and enables reuse by different series.
       It also enables data encoding.`,
       icon: 'view_list',
       route: ['atomic', 'dataset'],

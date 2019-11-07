@@ -112,6 +112,23 @@ interface ITdTreemapSeries extends ITdSeries<'treemap'> {
   selector: 'td-chart-series[td-treemap]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: [
+    'config',
+    'id',
+    'name',
+    'color',
+    'data',
+
+    'animation',
+    'animationThreshold',
+    'animationDuration',
+    'animationEasing',
+    'animationDelay',
+    'animationDurationUpdate',
+    'animationEasingUpdate',
+    'animationDelayUpdate',
+    'tooltip',
+  ],
   providers: [
     {
       provide: TdSeriesComponent,
@@ -120,40 +137,40 @@ interface ITdTreemapSeries extends ITdSeries<'treemap'> {
   ],
 })
 export class TdChartSeriesTreemapComponent extends TdSeriesComponent<'treemap'> implements ITdTreemapSeries {
-  @Input('config') config: any = {};
-  @Input('id') id: string;
-  @Input('name') name: string;
-  @Input('data') data: any;
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
-  @Input('left') left: string | number;
-  @Input('top') top: string | number;
-  @Input('right') right: string | number;
-  @Input('bottom') bottom: string | number;
-  @Input('width') width: string | number;
-  @Input('height') height: string | number;
-  @Input('squareRatio') squareRatio: string | number;
-  @Input('leafDepth') leafDepth: string | number;
-  @Input('drillDownIcon') drillDownIcon: string;
-  @Input('roam') roam: boolean | string;
-  @Input('nodeClick') nodeClick: boolean | string;
-  @Input('zoomToNodeRatio') zoomToNodeRatio: string | number;
-  @Input('levels') levels: any[];
-  @Input('silent') silent: boolean;
-  @Input('visualDimension') visualDimension: string | number;
-  @Input('visualMin') visualMin: string | number;
-  @Input('visualMax') visualMax: string | number;
-  @Input('colorAlpha') colorAlpha: any[];
-  @Input('colorSaturation') colorSaturation: string | number;
-  @Input('colorMappingBy') colorMappingBy: string;
-  @Input('visibleMin') visibleMin: string | number;
-  @Input('childrenVisibleMin') childrenVisibleMin: string | number;
-  @Input('itemStyle') itemStyle: ITdItemStyle;
-  @Input('label') label: ITdLabel;
-  @Input('upperLabel') upperLabel: ITdTreemapUpperLabel;
-  @Input('breadcrumb') breadcrumb: ITdTreemapBreadcrumb;
-  @Input('emphasis') emphasis: ITdTreemapEmphasis;
-  @Input('tooltip') tooltip: ITdSeriesTooltip;
+  @Input() config: any = {};
+  @Input() id: string;
+  @Input() name: string;
+  @Input() data: any;
+  @Input() zlevel: number;
+  @Input() z: number;
+  @Input() left: string | number;
+  @Input() top: string | number;
+  @Input() right: string | number;
+  @Input() bottom: string | number;
+  @Input() width: string | number;
+  @Input() height: string | number;
+  @Input() squareRatio: string | number;
+  @Input() leafDepth: string | number;
+  @Input() drillDownIcon: string;
+  @Input() roam: boolean | string;
+  @Input() nodeClick: boolean | string;
+  @Input() zoomToNodeRatio: string | number;
+  @Input() levels: any[];
+  @Input() silent: boolean;
+  @Input() visualDimension: string | number;
+  @Input() visualMin: string | number;
+  @Input() visualMax: string | number;
+  @Input() colorAlpha: any[];
+  @Input() colorSaturation: string | number;
+  @Input() colorMappingBy: string;
+  @Input() visibleMin: string | number;
+  @Input() childrenVisibleMin: string | number;
+  @Input() itemStyle: ITdItemStyle;
+  @Input() label: ITdLabel;
+  @Input() upperLabel: ITdTreemapUpperLabel;
+  @Input() breadcrumb: ITdTreemapBreadcrumb;
+  @Input() emphasis: ITdTreemapEmphasis;
+  @Input() tooltip: ITdSeriesTooltip;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('treemap', _optionsService);

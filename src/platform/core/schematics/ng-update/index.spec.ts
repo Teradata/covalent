@@ -1,5 +1,4 @@
 import { Tree } from '@angular-devkit/schematics';
-import { normalize } from '@angular-devkit/core';
 import { SchematicTestRunner, UnitTestTree } from '@angular-devkit/schematics/testing';
 import { Schema as WorkspaceOptions } from '@schematics/angular/workspace/schema';
 import { Schema as ApplicationOptions } from '@schematics/angular/application/schema';
@@ -10,9 +9,11 @@ const green: any = chalk.green;
 const yellow: any = chalk.yellow;
 
 const migrationPath: string = require.resolve('../migration.json');
+const collectionPath: string = require.resolve('../collection.json');
 
 describe('ng-update schematic', () => {
-  const testRunner: SchematicTestRunner = new SchematicTestRunner('rocket', migrationPath);
+  const collectionTestRunner: SchematicTestRunner = new SchematicTestRunner('collection', collectionPath);
+  const migrationTestRunner: SchematicTestRunner = new SchematicTestRunner('migration', migrationPath);
 
   const workspaceOptions: WorkspaceOptions = {
     name: 'workspace',
@@ -27,10 +28,10 @@ describe('ng-update schematic', () => {
   let appTree: UnitTestTree;
 
   beforeEach(async () => {
-    let workspaceTree: UnitTestTree = await testRunner
+    const workspaceTree: UnitTestTree = await collectionTestRunner
       .runExternalSchematicAsync('@schematics/angular', 'workspace', workspaceOptions)
       .toPromise();
-    appTree = await testRunner
+    appTree = await collectionTestRunner
       .runExternalSchematicAsync('@schematics/angular', 'application', appOptions, workspaceTree)
       .toPromise();
   });
@@ -38,7 +39,7 @@ describe('ng-update schematic', () => {
   it('should print console messages', async () => {
     // tslint:disable-next-line: no-console
     console.log = jasmine.createSpy('log');
-    const tree: Tree = await testRunner.runSchematicAsync('migration-v3', {}, appTree).toPromise();
+    await migrationTestRunner.runSchematicAsync('migration-v3', {}, appTree).toPromise();
 
     // tslint:disable-next-line: no-console
     expect(console.log).toHaveBeenCalledWith();
@@ -54,4 +55,47 @@ describe('ng-update schematic', () => {
       ),
     );
   });
+
+  it('should update non core packages to 3.0.0 in package.json', async () => {
+    const dependencyOptions: any = {
+      dynamicForms: true,
+      http: true,
+      highlight: false,
+      markdown: true,
+      flavoredMarkdown: true,
+      echarts: true,
+    };
+    // Create tree using ng-add
+    const tree: Tree = await collectionTestRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
+    const packageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
+    const dependencies: any = packageJson.dependencies;
+
+    // Update tree
+    const updatedTree: Tree = await migrationTestRunner.runSchematicAsync('migration-v3', {}, tree).toPromise();
+    const updatedPackageJson: any = JSON.parse(getFileContent(updatedTree, '/package.json'));
+    const updatedDependencies: any = updatedPackageJson.dependencies;
+
+    const expectedCovalentVersion: string = '3.0.0';
+
+    expectVersionToBe(updatedDependencies, '@covalent/dynamic-forms', expectedCovalentVersion);
+    expectVersionToBe(updatedDependencies, '@covalent/http', expectedCovalentVersion);
+    expectVersionToBe(updatedDependencies, '@covalent/markdown', expectedCovalentVersion);
+    expectVersionToBe(updatedDependencies, '@covalent/flavored-markdown', expectedCovalentVersion);
+    expectVersionToBe(updatedDependencies, '@covalent/echarts', expectedCovalentVersion);
+    expectVersionToBe(updatedDependencies, '@covalent/text-editor', expectedCovalentVersion);
+    expectVersionToBe(updatedDependencies, '@covalent/code-editor', expectedCovalentVersion);
+    expect(dependencies['@covalent/highlight']).not.toBeDefined();
+
+    expect(Object.keys(dependencies)).toEqual(
+      Object.keys(dependencies).sort(),
+      'Expected the modified ' + dependencies + ' to be sorted alphabetically.',
+    );
+  });
+
+  function expectVersionToBe(dependencies: any, name: string, expectedVersion: string): void {
+    expect(dependencies[name]).toBe(
+      expectedVersion,
+      'Expected ' + name + ' package to have ' + `~${expectedVersion}` + ' version.',
+    );
+  }
 });

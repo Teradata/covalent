@@ -19,26 +19,26 @@ export class TdStepHeaderComponent extends _TdStepHeaderMixinBase implements ICa
   /**
    * Number assigned to [TdStepHeaderComponent].
    */
-  @Input('number') number: number;
+  @Input() number: number;
 
   /**
    * active?: boolean
    * Sets for active/inactive states on header.
    */
-  @Input('active') active: boolean;
+  @Input() active: boolean;
 
   /**
    * state?: StepState or ['none' | 'required' | 'complete']
    * Sets styles for state of header.
    * Defaults to [StepState.None | 'none'].
    */
-  @Input('state') state: StepState = StepState.None;
+  @Input() state: StepState = StepState.None;
 
   /**
    * tabIndex?: number
    * tabIndex of the step header for a11y
    */
-  @Input('tabIndex') tabIndex: number;
+  @Input() tabIndex: number;
 
   /**
    * Returns 'true' if [state] equals to [StepState.Complete | 'complete'], else 'false'.

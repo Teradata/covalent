@@ -26,3 +26,47 @@
     ></td-loading-mask>
   </div>
 </div>
+
+<td-nav-links
+  [style.width.px]="400"
+  [links]="[
+    {
+      label: 'expansion',
+      collapsable: true,
+      children: [
+        {
+          label: 'link',
+          link: { href: '/', openInNewTab: true },
+          icon: { name: 'apps' }
+        }
+      ]
+    },
+    {
+      label: 'header',
+      children: [
+        {
+          label: 'link',
+          link: { href: '/' },
+          icon: { name: 'apps' }
+        }
+      ]
+    },
+    {
+      label: 'link',
+      link: { href: '/' },
+      icon: { name: 'apps' },
+      children: [
+        {
+          label: 'header',
+          link: { href: '/', openInNewTab: true },
+          icon: { name: 'apps' }
+        },
+        {
+          label: 'link',
+          link: { href: '/' },
+          icon: { name: 'apps' }
+        }
+      ]
+    }
+  ]"
+></td-nav-links>

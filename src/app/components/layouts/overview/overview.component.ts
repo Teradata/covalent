@@ -6,7 +6,7 @@ import { Component, HostBinding } from '@angular/core';
   templateUrl: './overview.component.html',
 })
 export class LayoutsOverviewComponent {
-  items: Object[] = [
+  items: object[] = [
     {
       description: 'A top toolbar only. Best for dashboards with no in-page navigation. A blank canvas.',
       icon: 'view_compact',

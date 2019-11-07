@@ -57,6 +57,23 @@ export interface ITdScatterSeries extends ITdSeries<'scatter'> {
   selector: 'td-chart-series[td-scatter]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: [
+    'config',
+    'id',
+    'name',
+    'color',
+    'data',
+
+    'animation',
+    'animationThreshold',
+    'animationDuration',
+    'animationEasing',
+    'animationDelay',
+    'animationDurationUpdate',
+    'animationEasingUpdate',
+    'animationDelayUpdate',
+    'tooltip',
+  ],
   providers: [
     {
       provide: TdSeriesComponent,
@@ -65,37 +82,37 @@ export interface ITdScatterSeries extends ITdSeries<'scatter'> {
   ],
 })
 export class TdChartSeriesScatterComponent extends TdSeriesComponent<'scatter'> implements ITdScatterSeries {
-  @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
-  @Input('xAxisIndex') xAxisIndex: number;
-  @Input('yAxisIndex') yAxisIndex: number;
-  @Input('polarIndex') polarIndex: number;
-  @Input('geoIndex') geoIndex: number;
-  @Input('calendarIndex') calendarIndex: number;
-  @Input('hoverAnimation') hoverAnimation: boolean;
-  @Input('legendHoverLink') legendHoverLink: boolean;
-  @Input('symbol') symbol: TdMarkPointSymbol | string;
-  @Input('symbolSize') symbolSize: number | any[] | Function;
-  @Input('symbolRotate') symbolRotate: number;
-  @Input('symbolKeepAspect') symbolKeepAspect: boolean;
-  @Input('symbolOffset') symbolOffset: any[];
-  @Input('large') large: boolean;
-  @Input('largeThreshold') largeThreshold: number;
-  @Input('cursor') cursor: string;
-  @Input('label') label: ITdLabel;
-  @Input('itemStyle') itemStyle: ITdItemStyle;
-  @Input('emphasis') emphasis: ITdEmphasis;
-  @Input('progressive') progressive: number;
-  @Input('progressiveThreshold') progressiveThreshold: number;
-  @Input('dimensions') dimensions: any[];
-  @Input('encode') encode: any;
-  @Input('seriesLayoutBy') seriesLayoutBy: TdSeriesLayoutBy;
-  @Input('datasetIndex') datasetIndex: number;
-  @Input('markPoint') markPoint: ITdMarkPoint;
-  @Input('markLine') markLine: ITdMarkLine;
-  @Input('markArea') markArea: ITdMarkArea;
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
-  @Input('silent') silent: boolean;
+  @Input() coordinateSystem: TdCoordinateSystem;
+  @Input() xAxisIndex: number;
+  @Input() yAxisIndex: number;
+  @Input() polarIndex: number;
+  @Input() geoIndex: number;
+  @Input() calendarIndex: number;
+  @Input() hoverAnimation: boolean;
+  @Input() legendHoverLink: boolean;
+  @Input() symbol: TdMarkPointSymbol | string;
+  @Input() symbolSize: number | any[] | Function;
+  @Input() symbolRotate: number;
+  @Input() symbolKeepAspect: boolean;
+  @Input() symbolOffset: any[];
+  @Input() large: boolean;
+  @Input() largeThreshold: number;
+  @Input() cursor: string;
+  @Input() label: ITdLabel;
+  @Input() itemStyle: ITdItemStyle;
+  @Input() emphasis: ITdEmphasis;
+  @Input() progressive: number;
+  @Input() progressiveThreshold: number;
+  @Input() dimensions: any[];
+  @Input() encode: any;
+  @Input() seriesLayoutBy: TdSeriesLayoutBy;
+  @Input() datasetIndex: number;
+  @Input() markPoint: ITdMarkPoint;
+  @Input() markLine: ITdMarkLine;
+  @Input() markArea: ITdMarkArea;
+  @Input() zlevel: number;
+  @Input() z: number;
+  @Input() silent: boolean;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('scatter', _optionsService);

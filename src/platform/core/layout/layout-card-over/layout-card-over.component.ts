@@ -12,14 +12,14 @@ export class TdLayoutCardOverComponent {
    *
    * Title set in card.
    */
-  @Input('cardTitle') cardTitle: string;
+  @Input() cardTitle: string;
 
   /**
    * cardSubtitle?: string
    *
    * Subtitle set in card.
    */
-  @Input('cardSubtitle') cardSubtitle: string;
+  @Input() cardSubtitle: string;
 
   /**
    * cardWidth?: string
@@ -27,13 +27,13 @@ export class TdLayoutCardOverComponent {
    * Card flex width in %.
    * Defaults to 70%.
    */
-  @Input('cardWidth') cardWidth: number = 70;
+  @Input() cardWidth: number = 70;
 
   /**
-   * color?: string
+   * color?: 'accent' | 'primary' | 'warn'
    *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, primary is used.
    */
-  @Input('color') color: string = 'primary';
+  @Input() color: 'accent' | 'primary' | 'warn' = 'primary';
 }

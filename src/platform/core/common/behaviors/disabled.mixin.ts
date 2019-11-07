@@ -21,7 +21,7 @@ export function mixinDisabled<T extends Constructor<{}>>(base: T): Constructor<I
       return this._disabled;
     }
     set disabled(value: boolean) {
-      let newValue: boolean = coerceBooleanProperty(value);
+      const newValue: boolean = coerceBooleanProperty(value);
       if (this._disabled !== newValue) {
         this._disabled = newValue;
         this.onDisabledChange(this._disabled);

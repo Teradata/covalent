@@ -24,22 +24,22 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   _state: any = {};
   _options: any = {};
 
-  @Input('config') config: any = {};
+  @Input() config: any = {};
 
-  @Input('id') id: string;
-  @Input('name') name: string;
-  @Input('color') color: string;
-  @Input('data') data: any[];
+  @Input() id: string;
+  @Input() name: string;
+  @Input() color: string;
+  @Input() data: any[];
 
-  @Input('animation') animation: boolean;
-  @Input('animationThreshold') animationThreshold: number;
-  @Input('animationDuration') animationDuration: number | Function;
-  @Input('animationEasing') animationEasing: string;
-  @Input('animationDelay') animationDelay: number | Function;
-  @Input('animationDurationUpdate') animationDurationUpdate: number | Function;
-  @Input('animationEasingUpdate') animationEasingUpdate: string;
-  @Input('animationDelayUpdate') animationDelayUpdate: number | Function;
-  @Input('tooltip') tooltip: ITdSeriesTooltip;
+  @Input() animation: boolean;
+  @Input() animationThreshold: number;
+  @Input() animationDuration: number | Function;
+  @Input() animationEasing: string;
+  @Input() animationDelay: number | Function;
+  @Input() animationDurationUpdate: number | Function;
+  @Input() animationEasingUpdate: string;
+  @Input() animationDelayUpdate: number | Function;
+  @Input() tooltip: ITdSeriesTooltip;
 
   constructor(type: T, protected optionsService: TdChartOptionsService) {
     this._type = type;
@@ -71,7 +71,7 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   abstract getConfig(): any;
 
   private _setOptions(): void {
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         id: this.id,

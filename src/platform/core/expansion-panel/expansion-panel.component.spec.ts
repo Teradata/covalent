@@ -15,8 +15,8 @@ describe('Component: ExpansionPanel', () => {
 
   it('should render expansion panel with label, sublabel and content hidden', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelBasicTestComponent);
-      let component: TdExpansionPanelBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelBasicTestComponent);
+      const component: TdExpansionPanelBasicTestComponent = fixture.debugElement.componentInstance;
       component.label = 'Label';
       component.sublabel = 'Sublabel';
       fixture.detectChanges();
@@ -50,8 +50,7 @@ describe('Component: ExpansionPanel', () => {
 
   it('should render expansion panel summary', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelSummaryTestComponent);
-      let component: TdExpansionPanelSummaryTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelSummaryTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('.td-expanded'))).toBeFalsy();
@@ -71,8 +70,7 @@ describe('Component: ExpansionPanel', () => {
 
   it('should mimic panel click, expand content, hide summary', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelBasicTestComponent);
-      let component: TdExpansionPanelBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelBasicTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.debugElement.query(By.css('.td-expand-icon')).triggerEventHandler('click', new Event('click'));
@@ -97,8 +95,12 @@ describe('Component: ExpansionPanel', () => {
 @Component({
   selector: 'td-expansion-panel-basic-test',
   template: `
-    <td-expansion-panel [label]="label" [sublabel]="sublabel" [expand]="expansion1" [disabled]="disabled">
-    </td-expansion-panel>
+    <td-expansion-panel
+      [label]="label"
+      [sublabel]="sublabel"
+      [expand]="expansion1"
+      [disabled]="disabled"
+    ></td-expansion-panel>
   `,
 })
 class TdExpansionPanelBasicTestComponent {

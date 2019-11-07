@@ -7,7 +7,7 @@ import { TdMediaService } from '@covalent/core/media';
   templateUrl: './docs.component.html',
 })
 export class DocsComponent {
-  items: Object[] = [
+  items: object[] = [
     {
       description: 'Installing Covalent & dependencies',
       icon: 'chrome_reader_mode',
@@ -45,7 +45,7 @@ export class DocsComponent {
       title: 'Building',
     },
     {
-      description: 'Access 750+ Material Design icons',
+      description: 'Access 1000+ Material Design icons',
       icon: 'photo_size_select_actual',
       route: 'icons',
       title: 'SVG Icon Sets',

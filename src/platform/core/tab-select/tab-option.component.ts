@@ -38,7 +38,7 @@ export class TdTabOptionComponent extends _TdTabOptionMixinBase implements ICanD
   /**
    * Value to which the option will be binded to.
    */
-  @Input('value') value: any;
+  @Input() value: any;
 
   constructor(_viewContainerRef: ViewContainerRef, _changeDetectorRef: ChangeDetectorRef) {
     super(_viewContainerRef, _changeDetectorRef);

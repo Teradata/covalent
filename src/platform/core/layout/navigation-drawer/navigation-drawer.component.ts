@@ -75,14 +75,14 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * sidenavTitle?: string
    * Title set in sideNav.
    */
-  @Input('sidenavTitle') sidenavTitle: string;
+  @Input() sidenavTitle: string;
 
   /**
    * icon?: string
    *
    * icon name to be displayed before the title
    */
-  @Input('icon') icon: string;
+  @Input() icon: string;
 
   /**
    * logo?: string
@@ -90,7 +90,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
-  @Input('logo') logo: string;
+  @Input() logo: string;
 
   /**
    * avatar?: string
@@ -98,22 +98,22 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * avatar url to be displayed before the title
    * If [icon] or [logo] are set, then this will not be shown.
    */
-  @Input('avatar') avatar: string;
+  @Input() avatar: string;
 
   /**
-   * color?: string
+   * color?: 'accent' | 'primary' | 'warn'
    *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, default is used.
    */
-  @Input('color') color: string;
+  @Input() color: 'accent' | 'primary' | 'warn';
 
   /**
    * navigationRoute?: string
    *
    * option to set the combined route for the icon, logo, and sidenavTitle.
    */
-  @Input('navigationRoute') navigationRoute: string;
+  @Input() navigationRoute: string;
 
   /**
    * backgroundUrl?: SafeResourceUrl
@@ -126,7 +126,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   // https://github.com/webpack/webpack/issues/2977
   set backgroundUrl(backgroundUrl: any) {
     if (backgroundUrl) {
-      let sanitizedUrl: string = this._sanitize.sanitize(SecurityContext.RESOURCE_URL, backgroundUrl);
+      const sanitizedUrl: string = this._sanitize.sanitize(SecurityContext.RESOURCE_URL, backgroundUrl);
       this._backgroundImage = this._sanitize.sanitize(SecurityContext.STYLE, 'url(' + sanitizedUrl + ')');
     }
   }
@@ -140,7 +140,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * string to be displayed as part of the navigation drawer sublabel.
    * if [email] is not set, then [name] will be the toggle menu text.
    */
-  @Input('name') name: string;
+  @Input() name: string;
 
   /**
    * email?: string
@@ -148,7 +148,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * string to be displayed as part of the navigation drawer sublabel in the [toggle] menu text.
    * if [email] and [name] are not set, then the toggle menu is not rendered.
    */
-  @Input('email') email: string;
+  @Input() email: string;
 
   /**
    * Checks if router was injected.

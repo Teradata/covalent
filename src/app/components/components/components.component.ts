@@ -8,7 +8,7 @@ import { TdMediaService } from '@covalent/core/media';
   templateUrl: './components.component.html',
 })
 export class ComponentsComponent {
-  items: Object[] = [
+  items: object[] = [
     {
       description: 'Components, Directives, Pipes & more',
       icon: 'picture_in_picture',
@@ -155,7 +155,7 @@ export class ComponentsComponent {
     },
   ];
 
-  optional: Object[] = [
+  optional: object[] = [
     {
       description: 'Highlighting your code snippets',
       icon: 'code',
@@ -173,6 +173,12 @@ export class ComponentsComponent {
       icon: 'layers',
       route: 'flavored-markdown',
       title: 'Flavored Markdown Parser',
+    },
+    {
+      description: 'Render and navigate markdown',
+      icon: 'subject',
+      route: 'markdown-navigator',
+      title: 'Markdown Navigator',
     },
     {
       description: 'Build forms from a JS object',
@@ -200,7 +206,7 @@ export class ComponentsComponent {
     },
   ];
 
-  external: Object[] = [
+  external: object[] = [
     {
       description: 'i18n library',
       icon: 'language',
@@ -209,14 +215,7 @@ export class ComponentsComponent {
     },
   ];
 
-  experimental: Object[] = [
-    {
-      description: 'Render and navigate .md documentation',
-      icon: 'subject',
-      route: 'help',
-      title: 'Help',
-    },
-  ];
+  experimental: object[] = [];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef, public media: TdMediaService) {}
 }

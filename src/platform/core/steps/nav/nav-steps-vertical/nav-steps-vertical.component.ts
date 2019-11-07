@@ -16,13 +16,6 @@ import { takeUntil } from 'rxjs/operators';
 
 import { TdNavStepLinkComponent } from '../nav-step-link/nav-step-link.component';
 
-/**
- * The directions that scrolling can go in when the header's tabs exceed the header width. 'After'
- * will scroll the header towards the end of the tabs list and 'before' will scroll towards the
- * beginning of the list.
- */
-export type ScrollDirection = 'after' | 'before';
-
 @Component({
   selector: 'nav[td-steps][vertical]',
   styleUrls: ['./nav-steps-vertical.component.scss'],
@@ -67,13 +60,13 @@ export class TdNavStepsVerticalComponent implements AfterContentInit, OnDestroy 
     this._separators.forEach((separator: HTMLElement) => {
       this._renderer.removeChild(this._stepList.nativeElement, separator);
     });
-    let stepsArray: TdNavStepLinkComponent[] = this._steps.toArray();
+    const stepsArray: TdNavStepLinkComponent[] = this._steps.toArray();
     // set the index number of the step so can display that number in circle
     stepsArray.forEach((step: TdNavStepLinkComponent, index: number) => {
       if (index > 0 && index < stepsArray.length) {
-        let separator: any = this._renderer.createElement('div');
+        const separator: any = this._renderer.createElement('div');
         this._renderer.addClass(separator, 'td-vertical-line-wrapper');
-        let separatorChild: any = this._renderer.createElement('div');
+        const separatorChild: any = this._renderer.createElement('div');
         this._renderer.addClass(separatorChild, 'td-vertical-line');
         this._renderer.appendChild(separator, separatorChild);
         this._separators.push(separator);

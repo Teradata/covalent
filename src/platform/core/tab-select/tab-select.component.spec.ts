@@ -16,8 +16,8 @@ describe('Component: TabSelect', () => {
 
   it('should render tab select with all tabs disabled', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-      let component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
+      const component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
       component.disabled = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -29,8 +29,7 @@ describe('Component: TabSelect', () => {
 
   it('should render tab select with all options and click on second option to activate it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-      let component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
@@ -47,8 +46,7 @@ describe('Component: TabSelect', () => {
 
   it('should render tab select with all options with the second option active', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-      let component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.componentInstance.value).toBe(undefined);
@@ -66,8 +64,7 @@ describe('Component: TabSelect', () => {
 
   it('should render tab select with first option active and then switch to 3rd option (value)', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-      let component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.componentInstance.value).toBe(undefined);
@@ -91,8 +88,7 @@ describe('Component: TabSelect', () => {
 
   it('should render tab select with first option active and then switch to 3rd option (ngModel)', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectFormsTestComponent);
-      let component: TdTabSelectFormsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectFormsTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.componentInstance.value).toBe(1);
@@ -119,7 +115,7 @@ describe('Component: TabSelect', () => {
 
   it('should render dynamic tab options from an ngFor loop', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectDynamicTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectDynamicTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.componentInstance.value).toBe(undefined);

@@ -38,6 +38,8 @@ module.exports = {
       '@covalent/echarts/scatter': 'covalent.echarts.scatter',
       '@covalent/echarts/tooltip': 'covalent.echarts.tooltip',
 
+      '@covalent/markdown-navigator': 'covalent.markdown-navigator',
+
       '@covalent/experimental': 'covalent.experimental',
     },
   },

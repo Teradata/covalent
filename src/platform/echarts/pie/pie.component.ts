@@ -49,6 +49,23 @@ export interface ITdPieSeries extends ITdSeries<'pie'> {
   selector: 'td-chart-series[td-pie]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: [
+    'config',
+    'id',
+    'name',
+    'color',
+    'data',
+
+    'animation',
+    'animationThreshold',
+    'animationDuration',
+    'animationEasing',
+    'animationDelay',
+    'animationDurationUpdate',
+    'animationEasingUpdate',
+    'animationDelayUpdate',
+    'tooltip',
+  ],
   providers: [
     {
       provide: TdSeriesComponent,
@@ -57,32 +74,32 @@ export interface ITdPieSeries extends ITdSeries<'pie'> {
   ],
 })
 export class TdChartSeriesPieComponent extends TdSeriesComponent<'pie'> implements ITdPieSeries {
-  @Input('legendHoverLink') legendHoverLink: boolean;
-  @Input('hoverAnimation') hoverAnimation: boolean;
-  @Input('hoverOffset') hoverOffset: number;
-  @Input('selectedMode') selectedMode: boolean | string;
-  @Input('selectedOffset') selectedOffset: number;
-  @Input('clockwise') clockwise: boolean;
-  @Input('startAngle') startAngle: number;
-  @Input('minAngle') minAngle: number;
-  @Input('minShowLabelAngle') minShowLabelAngle: number;
-  @Input('roseType') roseType: boolean | string;
-  @Input('avoidLabelOverlap') avoidLabelOverlap: boolean;
-  @Input('stillShowZeroSum') stillShowZeroSum: boolean;
-  @Input('cursor') cursor: string;
-  @Input('labelLine') labelLine: object;
-  @Input('label') label: any;
-  @Input('itemStyle') itemStyle: ITdItemStyle;
-  @Input('emphasis') emphasis: ITdEmphasis;
-  @Input('seriesLayoutBy') seriesLayoutBy: TdSeriesLayoutBy;
-  @Input('datasetIndex') datasetIndex: number;
-  @Input('markPoint') markPoint: ITdMarkPoint;
-  @Input('markLine') markLine: ITdMarkLine;
-  @Input('markArea') markArea: ITdMarkArea;
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
-  @Input('center') center: object;
-  @Input('radius') radius: number | string | any[];
+  @Input() legendHoverLink: boolean;
+  @Input() hoverAnimation: boolean;
+  @Input() hoverOffset: number;
+  @Input() selectedMode: boolean | string;
+  @Input() selectedOffset: number;
+  @Input() clockwise: boolean;
+  @Input() startAngle: number;
+  @Input() minAngle: number;
+  @Input() minShowLabelAngle: number;
+  @Input() roseType: boolean | string;
+  @Input() avoidLabelOverlap: boolean;
+  @Input() stillShowZeroSum: boolean;
+  @Input() cursor: string;
+  @Input() labelLine: object;
+  @Input() label: any;
+  @Input() itemStyle: ITdItemStyle;
+  @Input() emphasis: ITdEmphasis;
+  @Input() seriesLayoutBy: TdSeriesLayoutBy;
+  @Input() datasetIndex: number;
+  @Input() markPoint: ITdMarkPoint;
+  @Input() markLine: ITdMarkLine;
+  @Input() markArea: ITdMarkArea;
+  @Input() zlevel: number;
+  @Input() z: number;
+  @Input() center: object;
+  @Input() radius: number | string | any[];
 
   constructor(_optionsService: TdChartOptionsService) {
     super('pie', _optionsService);

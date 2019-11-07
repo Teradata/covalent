@@ -101,6 +101,23 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   selector: 'td-chart-series[td-graph]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: [
+    'config',
+    'id',
+    'name',
+    'color',
+    'data',
+
+    'animation',
+    'animationThreshold',
+    'animationDuration',
+    'animationEasing',
+    'animationDelay',
+    'animationDurationUpdate',
+    'animationEasingUpdate',
+    'animationDelayUpdate',
+    'tooltip',
+  ],
   providers: [
     {
       provide: TdSeriesComponent,
@@ -109,51 +126,51 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   ],
 })
 export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> implements ITdGraphSeries {
-  @Input('legendHoverLink') legendHoverLink: boolean;
-  @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
-  @Input('xAxisIndex') xAxisIndex: number;
-  @Input('yAxisIndex') yAxisIndex: number;
-  @Input('polarIndex') polarIndex: number;
-  @Input('calendarIndex') calendarIndex: number;
-  @Input('geoIndex') geoIndex: number;
-  @Input('hoverAnimation') hoverAnimation: boolean;
-  @Input('circular') circular: object;
-  @Input('force') force: ITdGraphForce;
-  @Input('layout') layout: TdGraphLayout;
-  @Input('nodeScaleRatio') nodeScaleRatio: boolean;
-  @Input('draggable') draggable: boolean;
-  @Input('symbol') symbol: TdMarkPointSymbol | string;
-  @Input('symbolSize') symbolSize: number | any[] | Function;
-  @Input('symbolRotate') symbolRotate: number;
-  @Input('symbolKeepAspect') symbolKeepAspect: boolean;
-  @Input('symbolOffset') symbolOffset: any[];
-  @Input('focusNodeAdjacency') focusNodeAdjacency: boolean;
-  @Input('edgeSymbol') edgeSymbol: any[] | string;
-  @Input('edgeSymbolSize') edgeSymbolSize: number;
-  @Input('cursor') cursor: string;
-  @Input('roam') roam: boolean;
-  @Input('initialTreeDepth') initialTreeDepth: number;
-  @Input('itemStyle') itemStyle: ITdItemStyle;
-  @Input('lineStyle') lineStyle: ITdLineStyle;
-  @Input('label') label: ITdLabel;
-  @Input('edgeLabel') edgeLabel: ITdEdgeLabel;
-  @Input('emphasis') emphasis: ITdEmphasis;
-  @Input('categories') categories: ITdCategories;
-  @Input('nodes') nodes: any[];
-  @Input('links') links: any[];
-  @Input('edges') edges: any[];
-  @Input('markPoint') markPoint: ITdMarkPoint;
-  @Input('markLine') markLine: ITdMarkLine;
-  @Input('markArea') markArea: ITdMarkArea;
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
-  @Input('silent') silent: boolean;
-  @Input('left') left: string | number;
-  @Input('top') top: string | number;
-  @Input('right') right: string | number;
-  @Input('bottom') bottom: string | number;
-  @Input('width') width: string | number;
-  @Input('height') height: string | number;
+  @Input() legendHoverLink: boolean;
+  @Input() coordinateSystem: TdCoordinateSystem;
+  @Input() xAxisIndex: number;
+  @Input() yAxisIndex: number;
+  @Input() polarIndex: number;
+  @Input() calendarIndex: number;
+  @Input() geoIndex: number;
+  @Input() hoverAnimation: boolean;
+  @Input() circular: object;
+  @Input() force: ITdGraphForce;
+  @Input() layout: TdGraphLayout;
+  @Input() nodeScaleRatio: boolean;
+  @Input() draggable: boolean;
+  @Input() symbol: TdMarkPointSymbol | string;
+  @Input() symbolSize: number | any[] | Function;
+  @Input() symbolRotate: number;
+  @Input() symbolKeepAspect: boolean;
+  @Input() symbolOffset: any[];
+  @Input() focusNodeAdjacency: boolean;
+  @Input() edgeSymbol: any[] | string;
+  @Input() edgeSymbolSize: number;
+  @Input() cursor: string;
+  @Input() roam: boolean;
+  @Input() initialTreeDepth: number;
+  @Input() itemStyle: ITdItemStyle;
+  @Input() lineStyle: ITdLineStyle;
+  @Input() label: ITdLabel;
+  @Input() edgeLabel: ITdEdgeLabel;
+  @Input() emphasis: ITdEmphasis;
+  @Input() categories: ITdCategories;
+  @Input() nodes: any[];
+  @Input() links: any[];
+  @Input() edges: any[];
+  @Input() markPoint: ITdMarkPoint;
+  @Input() markLine: ITdMarkLine;
+  @Input() markArea: ITdMarkArea;
+  @Input() zlevel: number;
+  @Input() z: number;
+  @Input() silent: boolean;
+  @Input() left: string | number;
+  @Input() top: string | number;
+  @Input() right: string | number;
+  @Input() bottom: string | number;
+  @Input() width: string | number;
+  @Input() height: string | number;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('graph', _optionsService);

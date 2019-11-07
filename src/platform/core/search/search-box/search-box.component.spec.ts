@@ -18,9 +18,9 @@ describe('Component: SearchBox', () => {
   }));
 
   it('should leverage ngModel to set a value', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);
-    let component: TestNgModelSupportComponent = fixture.debugElement.componentInstance;
-    let inputComponent: DebugElement = fixture.debugElement.query(By.directive(TdSearchInputComponent));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);
+    const component: TestNgModelSupportComponent = fixture.debugElement.componentInstance;
+    const inputComponent: DebugElement = fixture.debugElement.query(By.directive(TdSearchInputComponent));
 
     expect(inputComponent).toBeTruthy();
 
@@ -47,7 +47,7 @@ describe('Component: SearchBox', () => {
 
 @Component({
   template: `
-    <td-search-box [(ngModel)]="value"> </td-search-box>
+    <td-search-box [(ngModel)]="value"></td-search-box>
   `,
 })
 class TestNgModelSupportComponent {

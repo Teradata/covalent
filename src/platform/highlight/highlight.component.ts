@@ -48,18 +48,18 @@ export class TdHighlightComponent implements AfterViewInit {
    *
    * e.g. `typescript`, `html` , etc.
    */
-  @Input('lang') language: string = 'typescript';
+  @Input() lang: string = 'typescript';
 
   /**
    * contentReady?: function
    * Event emitted after the highlight content rendering is finished.
    */
-  @Output('contentReady') onContentReady: EventEmitter<void> = new EventEmitter<void>();
+  @Output() contentReady: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
 
   ngAfterViewInit(): void {
-    if (!this.language) {
+    if (!this.lang) {
       throw new Error('Error: language attribute must be defined in TdHighlightComponent.');
     }
     if (!this._content) {
@@ -77,9 +77,9 @@ export class TdHighlightComponent implements AfterViewInit {
       // Clean container
       this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
-      let preElement: HTMLPreElement = this._elementFromString(this._render(code));
+      this._elementFromString(this._render(code));
     }
-    this.onContentReady.emit();
+    this.contentReady.emit();
   }
 
   private _elementFromString(codeStr: string): HTMLPreElement {
@@ -102,10 +102,10 @@ export class TdHighlightComponent implements AfterViewInit {
     let lines: string[] = contents.split('\n');
 
     // check how much indentation is used by the first actual code line
-    let firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
+    const firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
 
     // Remove all indentation spaces so code can be parsed correctly
-    let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
+    const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
     lines = lines.map(function(line: string): string {
       return line
         .replace('=""', '') // remove empty values
@@ -113,7 +113,7 @@ export class TdHighlightComponent implements AfterViewInit {
         .replace(/\s+$/, ''); // remove trailing white spaces
     });
 
-    let codeToParse: string = lines
+    const codeToParse: string = lines
       .join('\n')
       .replace(/\{ \{/gi, '{{')
       .replace(/\} \}/gi, '}}')
@@ -121,7 +121,7 @@ export class TdHighlightComponent implements AfterViewInit {
       .replace(/&gt;/gi, '>'); // replace with < and > to render HTML in Angular
 
     // Parse code with highlight.js depending on language
-    let highlightedCode: any = hljs.highlight(this.language, codeToParse, true);
+    const highlightedCode: any = hljs.highlight(this.lang, codeToParse, true);
     highlightedCode.value = highlightedCode.value
       .replace(/=<span class="hljs-value">""<\/span>/gi, '')
       .replace('<head>', '')

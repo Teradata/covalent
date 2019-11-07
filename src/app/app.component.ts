@@ -17,7 +17,7 @@ export class DocsAppComponent {
   // Current date
   year: any = new Date().getFullYear();
 
-  routes: Object[] = [
+  routes: object[] = [
     {
       icon: 'library_books',
       route: 'docs',

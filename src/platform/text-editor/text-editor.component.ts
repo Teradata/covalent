@@ -1,13 +1,8 @@
-import { Component, Input, AfterViewInit, ViewChild, ElementRef, forwardRef, NgZone, Inject } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewChild, ElementRef, forwardRef, NgZone } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { DomSanitizer } from '@angular/platform-browser';
-import { DOCUMENT } from '@angular/common';
 import * as SimpleMDE from 'simplemde';
 // get access to the marked class under simplemde
 import * as marked from 'marked';
-declare const require: any;
-/* tslint:disable-next-line */
-let SimpleMDECss = require('simplemde/dist/simplemde.min.css');
 
 const noop: any = () => {
   // empty method
@@ -33,12 +28,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   @ViewChild('simplemde', { static: true }) textarea: ElementRef;
   @Input() options: any = {};
 
-  constructor(
-    private _elementRef: ElementRef,
-    private _zone: NgZone,
-    private _domSanitizer: DomSanitizer,
-    @Inject(DOCUMENT) private _document: any,
-  ) {}
+  constructor(private _zone: NgZone) {}
 
   /* tslint:disable-next-line */
   propagateChange = (_: any) => {};
@@ -83,11 +73,6 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   }
 
   ngAfterViewInit(): void {
-    if (this._document) {
-      let styleElement: HTMLElement = this._document.createElement('style');
-      styleElement.innerHTML = <string>this._domSanitizer.bypassSecurityTrustHtml(String(SimpleMDECss));
-      this._document.head.appendChild(styleElement);
-    }
     this.options.element = this.textarea.nativeElement;
 
     // If content entered is html then don't evaluate it, prevent xss vulnerabilities

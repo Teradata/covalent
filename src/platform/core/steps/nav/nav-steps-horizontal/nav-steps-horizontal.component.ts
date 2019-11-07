@@ -36,7 +36,7 @@ export type ScrollDirection = 'after' | 'before';
   changeDetection: ChangeDetectionStrategy.OnPush,
   /* tslint:disable-next-line */
   host: {
-    class: 'td-steps td-steps-horizontal',
+    'class': 'td-steps td-steps-horizontal',
     '[class.td-step-header-pagination-controls-enabled]': '_showPaginationControls',
     '[class.td-step-header-rtl]': "_getLayoutDirection() == 'rtl'",
   },
@@ -71,16 +71,16 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
    * Current width of the element container
    */
   get nativeElementWidth(): number {
-    let element: HTMLElement = <HTMLElement>this._elementRef.nativeElement;
+    const element: HTMLElement = <HTMLElement>this._elementRef.nativeElement;
 
     // Need to take into account border, margin and padding that might be around all the crumbs
-    let style: CSSStyleDeclaration = window.getComputedStyle(element);
-    let borderLeft: number = parseInt(style.borderLeft, 10);
-    let borderRight: number = parseInt(style.borderRight, 10);
-    let marginLeft: number = parseInt(style.marginLeft, 10);
-    let marginRight: number = parseInt(style.marginRight, 10);
-    let paddingLeft: number = parseInt(style.paddingLeft, 10);
-    let paddingRight: number = parseInt(style.paddingRight, 10);
+    const style: CSSStyleDeclaration = window.getComputedStyle(element);
+    const borderLeft: number = parseInt(style.borderLeft, 10);
+    const borderRight: number = parseInt(style.borderRight, 10);
+    const marginLeft: number = parseInt(style.marginLeft, 10);
+    const marginRight: number = parseInt(style.marginRight, 10);
+    const paddingLeft: number = parseInt(style.paddingLeft, 10);
+    const paddingRight: number = parseInt(style.paddingRight, 10);
 
     return (
       element.getBoundingClientRect().width -
@@ -251,11 +251,11 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
     this._separators.forEach((separator: HTMLElement) => {
       this._renderer.removeChild(this._stepList.nativeElement, separator);
     });
-    let stepsArray: TdNavStepLinkComponent[] = this._steps.toArray();
+    const stepsArray: TdNavStepLinkComponent[] = this._steps.toArray();
     // set the index number of the step so can display that number in circle
     stepsArray.forEach((step: TdNavStepLinkComponent, index: number) => {
       if (index > 0 && index < stepsArray.length) {
-        let separator: any = this._renderer.createElement('div');
+        const separator: any = this._renderer.createElement('div');
         this._renderer.addClass(separator, 'td-horizontal-line');
         this._separators.push(separator);
         this._renderer.insertBefore(this._stepList.nativeElement, separator, step.elementRef.nativeElement);

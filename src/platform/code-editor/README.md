@@ -18,7 +18,7 @@
   + Theme used to style the Editor
 + automaticLayout?: boolean
   + Implemented via setInterval that constantly probes for the container's size. Defaults to false.
-+ editorOptions?: Object
++ editorOptions?: object
   + Editor Options Object of valid Configurations listed here: <a href="https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html">https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html</a>
 + layout?: function()
   + Instructs the editor to remeasure its container
@@ -34,9 +34,9 @@
 
 + editorInitialized?: function($event)
   + Emitted when Editor is finished initializing. Event passes a reference to the actual editor instance that can be used to call additional operations outside of the Angular component.
-+ onEditorConfigurationChanged?: function($event)
++ editorConfigurationChanged?: function($event)
   + Emitted when configuration of the Editor changes
-+ onEditorLanguageChanged?: function($event)
++ editorLanguageChanged?: function($event)
   + Emitted when the language of the Editor changes
 
 

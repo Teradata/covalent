@@ -11,11 +11,11 @@ import { CovalentChipsModule, TdChipsComponent } from './public-api';
 
 function createFakeKeyboardEvent(keyCode: number): any {
   return {
-    keyCode: keyCode,
-    preventDefault: function(): void {
+    keyCode,
+    preventDefault(): void {
       /* noop */
     },
-    stopPropagation: function(): void {
+    stopPropagation(): void {
       /* noop */
     },
   };
@@ -42,7 +42,7 @@ describe('Component: Chips', () => {
         {
           provide: OverlayContainer,
           useFactory: () => {
-            overlayContainerElement = document.createElement('div') as HTMLElement;
+            overlayContainerElement = document.createElement('div');
             overlayContainerElement.classList.add('cdk-overlay-container');
 
             document.body.appendChild(overlayContainerElement);
@@ -355,7 +355,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
+        const option: HTMLElement = overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -371,7 +371,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
+        const option: HTMLElement = overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -395,7 +395,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
+        const option: HTMLElement = overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -415,7 +415,6 @@ describe('Component: Chips', () => {
 
   describe('panel usage and filtering: ', () => {
     let fixture: ComponentFixture<TdChipsBasicTestComponent>;
-    let input: DebugElement;
     let chips: DebugElement;
 
     beforeEach(() => {
@@ -491,7 +490,6 @@ describe('Component: Chips', () => {
 
   describe('panel usage and requireMatch usage: ', () => {
     let fixture: ComponentFixture<TdChipsObjectsRequireMatchTestComponent>;
-    let input: DebugElement;
     let chips: DebugElement;
 
     beforeEach(() => {
@@ -515,7 +513,7 @@ describe('Component: Chips', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
+          const option: HTMLElement = overlayContainerElement.querySelector('mat-option');
           option.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
@@ -530,7 +528,6 @@ describe('Component: Chips', () => {
 
   describe('stacked usage: ', () => {
     let fixture: ComponentFixture<TdChipsStackedTestComponent>;
-    let input: DebugElement;
     let chips: DebugElement;
 
     beforeEach(() => {
@@ -562,7 +559,6 @@ describe('Component: Chips', () => {
 
   describe('position usage: ', () => {
     let fixture: ComponentFixture<TdChipsBeforeAfterTestComponent>;
-    let input: DebugElement;
     let chips: DebugElement;
 
     beforeEach(() => {
@@ -606,7 +602,7 @@ describe('Component: Chips', () => {
     });
 
     it('should right arrow on a chip and see the chipFocus event', (done: DoneFn) => {
-      let focusEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipFocusEvent');
+      const focusEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipFocusEvent');
 
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -631,7 +627,7 @@ describe('Component: Chips', () => {
     });
 
     it('should right arrow on a chip twice and see the chipBlur event', (done: DoneFn) => {
-      let blurEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipBlurEvent');
+      const blurEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipBlurEvent');
 
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -883,7 +879,7 @@ describe('Component: Chips', () => {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [color]="color"> </td-chips>
+    <td-chips [items]="items" [(ngModel)]="selectedItems" [color]="color"></td-chips>
   `,
 })
 class TdChipsTestComponent {
@@ -894,7 +890,7 @@ class TdChipsTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [chipAddition]="chipAddition"> </td-chips>
+    <td-chips [items]="items" [(ngModel)]="selectedItems" [chipAddition]="chipAddition"></td-chips>
   `,
 })
 class TdChipsA11yTestComponent {
@@ -911,8 +907,7 @@ class TdChipsA11yTestComponent {
       [compareWith]="compareWith"
       [(ngModel)]="selectedItems"
       (inputChange)="filter($event)"
-    >
-    </td-chips>
+    ></td-chips>
   `,
 })
 class TdChipsBasicTestComponent {
@@ -938,7 +933,7 @@ class TdChipsBasicTestComponent {
 
 @Component({
   template: `
-    <td-chips [placeholder]="placeholder" [required]="true" [items]="items" [(ngModel)]="items"> </td-chips>
+    <td-chips [placeholder]="placeholder" [required]="true" [items]="items" [(ngModel)]="items"></td-chips>
   `,
 })
 class TdChipsRequiredTestComponent {
@@ -966,7 +961,7 @@ class TdChipsObjectsRequireMatchTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked"> </td-chips>
+    <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked"></td-chips>
   `,
 })
 class TdChipsStackedTestComponent {
@@ -977,7 +972,7 @@ class TdChipsStackedTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked" [inputPosition]="position"> </td-chips>
+    <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked" [inputPosition]="position"></td-chips>
   `,
 })
 class TdChipsBeforeAfterTestComponent {
@@ -989,8 +984,12 @@ class TdChipsBeforeAfterTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" [chipRemoval]="chipRemoval" [chipAddition]="chipAddition">
-    </td-chips>
+    <td-chips
+      [items]="items"
+      [(ngModel)]="selectedItems"
+      [chipRemoval]="chipRemoval"
+      [chipAddition]="chipAddition"
+    ></td-chips>
   `,
 })
 class TdChipRemovalTestComponent {
@@ -1002,8 +1001,12 @@ class TdChipRemovalTestComponent {
 
 @Component({
   template: `
-    <td-chips [items]="items" [(ngModel)]="selectedItems" (chipFocus)="chipFocusEvent()" (chipBlur)="chipBlurEvent()">
-    </td-chips>
+    <td-chips
+      [items]="items"
+      [(ngModel)]="selectedItems"
+      (chipFocus)="chipFocusEvent()"
+      (chipBlur)="chipBlurEvent()"
+    ></td-chips>
   `,
 })
 class TdChipsEventsTestComponent {

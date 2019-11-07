@@ -16,7 +16,7 @@ import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compo
 import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
 import { DragDrop, DragRef } from '@angular/cdk/drag-drop';
 import { DOCUMENT } from '@angular/common';
-
+import { CovalentDialogsModule } from '../dialogs.module';
 export interface IDialogConfig extends MatDialogConfig {
   title?: string;
   message: string;
@@ -44,7 +44,9 @@ export interface IDraggableConfig<T> {
   draggableClass?: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: CovalentDialogsModule,
+})
 export class TdDialogService {
   private _renderer2: Renderer2;
 
@@ -89,12 +91,12 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdAlertDialogComponent> object.
    */
   public openAlert(config: IAlertConfig): MatDialogRef<TdAlertDialogComponent> {
-    let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdAlertDialogComponent> = this._dialogService.open(
+    const dialogConfig: MatDialogConfig = this._createConfig(config);
+    const dialogRef: MatDialogRef<TdAlertDialogComponent> = this._dialogService.open(
       TdAlertDialogComponent,
       dialogConfig,
     );
-    let alertDialogComponent: TdAlertDialogComponent = dialogRef.componentInstance;
+    const alertDialogComponent: TdAlertDialogComponent = dialogRef.componentInstance;
     alertDialogComponent.title = config.title;
     alertDialogComponent.message = config.message;
     if (config.closeButton) {
@@ -117,12 +119,12 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdConfirmDialogComponent> object.
    */
   public openConfirm(config: IConfirmConfig): MatDialogRef<TdConfirmDialogComponent> {
-    let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdConfirmDialogComponent> = this._dialogService.open(
+    const dialogConfig: MatDialogConfig = this._createConfig(config);
+    const dialogRef: MatDialogRef<TdConfirmDialogComponent> = this._dialogService.open(
       TdConfirmDialogComponent,
       dialogConfig,
     );
-    let confirmDialogComponent: TdConfirmDialogComponent = dialogRef.componentInstance;
+    const confirmDialogComponent: TdConfirmDialogComponent = dialogRef.componentInstance;
     confirmDialogComponent.title = config.title;
     confirmDialogComponent.message = config.message;
     if (config.acceptButton) {
@@ -149,12 +151,12 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdPromptDialogComponent> object.
    */
   public openPrompt(config: IPromptConfig): MatDialogRef<TdPromptDialogComponent> {
-    let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdPromptDialogComponent> = this._dialogService.open(
+    const dialogConfig: MatDialogConfig = this._createConfig(config);
+    const dialogRef: MatDialogRef<TdPromptDialogComponent> = this._dialogService.open(
       TdPromptDialogComponent,
       dialogConfig,
     );
-    let promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
+    const promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
     promptDialogComponent.title = config.title;
     promptDialogComponent.message = config.message;
     promptDialogComponent.value = config.value;
@@ -214,7 +216,7 @@ export class TdDialogService {
   }
 
   private _createConfig(config: IDialogConfig): MatDialogConfig {
-    let dialogConfig: MatDialogConfig = new MatDialogConfig();
+    const dialogConfig: MatDialogConfig = new MatDialogConfig();
     dialogConfig.width = '400px';
     Object.assign(dialogConfig, config);
     return dialogConfig;

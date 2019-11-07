@@ -1,4 +1,0 @@
-{
-  "extends": ["./node_modules/@covalent/tools/lint/stylelint/.stylelintrc.json", "stylelint-config-prettier"],
-  "ignoreFiles": "./src/platform/experimental/schematics/src/ng-add/files/**"
-}

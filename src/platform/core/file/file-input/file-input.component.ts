@@ -59,10 +59,10 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements ICont
   }
 
   /**
-   * color?: string
+   * color?: 'accent' | 'primary' | 'warn'
    * Sets button color. Uses same color palette accepted as [MatButton].
    */
-  @Input('color') color: string;
+  @Input() color: 'accent' | 'primary' | 'warn';
 
   /**
    * multiple?: boolean
@@ -81,14 +81,14 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements ICont
    * Sets files accepted when opening the file browser dialog.
    * Same as 'accept' attribute in <input/> element.
    */
-  @Input('accept') accept: string;
+  @Input() accept: string;
 
   /**
    * select?: function
    * Event emitted a file is selected
    * Emits a [File | FileList] object.
    */
-  @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+  @Output() select: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
   constructor(private _renderer: Renderer2, _changeDetectorRef: ChangeDetectorRef) {
     super(_changeDetectorRef);
@@ -99,7 +99,7 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements ICont
    */
   handleSelect(files: File | FileList): void {
     this.writeValue(files);
-    this.onSelect.emit(files);
+    this.select.emit(files);
   }
 
   /**
