@@ -54,6 +54,7 @@ yarn.lock
 /bin
 /deploy
 /**/dist
+/coverage
 ```
 
 ## Create an npm script
