@@ -36,8 +36,8 @@
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
     "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular",
     "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt",
-    "prettier": "./node_modules/.bin/prettier --write './**/*.{ts,js,json,css,scss,yml,html}'",
-    "prettier:check": "./node_modules/.bin/prettier --check './**/*.{ts,js,json,css,scss,yml,html}'",
+    "prettier": "./node_modules/.bin/prettier --write './**/*.{ts,js,json,css,scss,yml,html,md}'",
+    "prettier:check": "./node_modules/.bin/prettier --check './**/*.{ts,js,json,css,scss,yml,html,md}'",
     "commitlint": "node ./node_modules/@commitlint/travis-cli/lib/cli.js"
   },
   "engines": {
