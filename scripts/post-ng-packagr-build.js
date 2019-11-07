@@ -16,8 +16,10 @@ gulp.task('move-additional-platform-files', function() {
   return gulp.src(config.paths.PostNgPackngrAdditionalFiles).pipe(gulp.dest(config.deployed));
 });
 
-gulp.task('move-config-files', function() {
-  return gulp.src(config.paths.PostNgPackagerConfigFiles).pipe(gulp.dest(`${config.deployed}core/common/configs`));
+gulp.task('move-coding-standards-package', function() {
+  return gulp
+    .src(config.paths.PostNgPackagerCodingStandardsPackage)
+    .pipe(gulp.dest(`${config.deployed}coding-standards`));
 });
 
 gulp.task('compile-core-sass', function() {
