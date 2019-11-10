@@ -5,6 +5,7 @@ import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { MarkdownNavigatorDemoComponent } from './markdown-navigator-demo.component';
 import { MarkdownNavigatorDemoRoutingModule } from './markdown-navigator-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentMarkdownNavigatorModule,
     /** Angular Modules */
     CommonModule,
+    MatButtonModule,
   ],
 })
 export class MarkdownNavigatorDemoModule {}

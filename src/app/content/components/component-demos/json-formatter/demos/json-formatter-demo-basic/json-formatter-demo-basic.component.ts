@@ -6,4 +6,26 @@ import { Component } from '@angular/core';
   templateUrl: './json-formatter-demo-basic.component.html',
   preserveWhitespaces: true,
 })
-export class JsonFormatterDemoBasicComponent {}
+export class JsonFormatterDemoBasicComponent {
+  data: Object = {
+    stringProperty: 'This is a string',
+    dateProperty: new Date(),
+    numberProperty: 10000,
+    booleanProperty: true,
+    numberArray: [1, 2, 3, 4, 5, 6],
+    arrayOfArrays: [[1, [2, 3]], [3, 4]],
+    objectArray: [
+      {
+        prop: undefined,
+      },
+      {},
+    ],
+    functionProperty: function(arg1: any, arg2: any): void {
+      // empty
+    },
+    undefinedProperty: undefined,
+    longNameeeeeeeeeeeProoooopeeeeeeeeeeertyy: 'got truncated',
+    emptyObject: {},
+    emptyArray: [],
+  };
+}

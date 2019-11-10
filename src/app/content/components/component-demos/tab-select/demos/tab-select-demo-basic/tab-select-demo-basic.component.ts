@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './tab-select-demo-basic.component.html',
   preserveWhitespaces: true,
 })
-export class TabSelectDemoBasicComponent {}
+export class TabSelectDemoBasicComponent {
+  value: string = '';
+}

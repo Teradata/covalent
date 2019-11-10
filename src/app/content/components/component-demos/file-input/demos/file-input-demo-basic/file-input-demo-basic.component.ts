@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './file-input-demo-basic.component.html',
   preserveWhitespaces: true,
 })
-export class FileInputDemoBasicComponent {}
+export class FileInputDemoBasicComponent {
+  files: any;
+}

@@ -5,6 +5,7 @@ import { CovalentTabSelectModule } from '@covalent/core/tab-select';
 import { TabSelectDemoComponent } from './tab-select-demo.component';
 import { TabSelectDemoRoutingModule } from './tab-select-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentTabSelectModule,
     /** Angular Modules */
     CommonModule,
+    FormsModule
   ],
 })
 export class TabSelectDemoModule {}
