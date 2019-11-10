@@ -5,6 +5,7 @@ import { CovalentChipsModule } from '@covalent/core/chips';
 import { ChipsDemoComponent } from './chips-demo.component';
 import { ChipsDemoRoutingModule } from './chips-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentChipsModule,
     /** Angular Modules */
     CommonModule,
+    FormsModule,
   ],
 })
 export class ChipsDemoModule {}
