@@ -5,6 +5,10 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 import { SidesheetDemoComponent } from './sidesheet-demo.component';
 import { SidesheetDemoRoutingModule } from './sidesheet-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,10 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentSidesheetModule,
     /** Angular Modules */
     CommonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatToolbarModule
   ],
 })
 export class SidesheetDemoModule {}

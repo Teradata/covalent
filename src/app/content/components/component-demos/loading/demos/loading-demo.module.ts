@@ -5,6 +5,7 @@ import { CovalentLoadingModule } from '@covalent/core/loading';
 import { LoadingDemoComponent } from './loading-demo.component';
 import { LoadingDemoRoutingModule } from './loading-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentLoadingModule,
     /** Angular Modules */
     CommonModule,
+    MatButtonModule,
   ],
 })
 export class LoadingDemoModule {}

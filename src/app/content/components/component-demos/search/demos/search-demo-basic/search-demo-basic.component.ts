@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './search-demo-basic.component.html',
   preserveWhitespaces: true,
 })
-export class SearchDemoBasicComponent {}
+export class SearchDemoBasicComponent {
+  searchInputTerm: string = '';
+}
