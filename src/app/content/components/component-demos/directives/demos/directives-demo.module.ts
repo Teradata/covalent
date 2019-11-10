@@ -5,6 +5,7 @@ import { CovalentCommonModule } from '@covalent/core/common';
 import { DirectivesDemoComponent } from './directives-demo.component';
 import { DirectivesDemoRoutingModule } from './directives-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentCommonModule,
     /** Angular Modules */
     CommonModule,
+    FormsModule,
   ],
 })
 export class DirectivesDemoModule {}

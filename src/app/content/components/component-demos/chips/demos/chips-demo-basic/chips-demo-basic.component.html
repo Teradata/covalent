@@ -1,1 +1,10 @@
-chips demo here
+<td-chips [chipAddition]="chipAddition"
+[chipRemoval]="chipRemoval"
+[items]="filteredStrings"
+[(ngModel)]="strings"
+placeholder="Type here"
+[disabled]="disabled"
+(inputChange)="filterStrings($event)"
+[inputPosition]="before ? 'before' : 'after'"
+requireMatch>
+</td-chips>

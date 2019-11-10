@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 import { DialogsDemoBasicComponent } from './dialogs-demo-basic/dialogs-demo-basic.component';
 import { CovalentDialogsModule } from '@covalent/core/dialogs';
 import { DialogsDemoComponent } from './dialogs-demo.component';
@@ -18,6 +19,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentDialogsModule,
     /** Angular Modules */
     CommonModule,
+    MatButtonModule,
   ],
 })
 export class DialogsDemoModule {}

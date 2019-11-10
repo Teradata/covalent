@@ -41,8 +41,7 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
           },
           {
             path: 'examples',
-            component: TdReadmeLoaderComponent,
-            data: { resourceUrl: componentMatch.apiDocUrl },
+            loadChildren: componentMatch.demo
           },
         ],
       },

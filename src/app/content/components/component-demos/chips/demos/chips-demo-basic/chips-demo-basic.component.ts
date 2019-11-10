@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './chips-demo-basic.component.html',
   preserveWhitespaces: true,
 })
-export class ChipsDemoBasicComponent {}
+export class ChipsDemoBasicComponent {
+  strings: string[] = [
+    'stepper',
+    'expansion-panel',
+    'markdown',
+    'highlight',
+    'loading',
+  ];
+}

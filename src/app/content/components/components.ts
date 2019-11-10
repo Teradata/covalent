@@ -26,6 +26,8 @@ export const componentDetails: any = [
     icon: 'more_horiz',
     category: buttons.name,
     route: '/components/breadcrumbs',
+    demo: () =>
+      import('./component-demos/breadcrumbs/demos/breadcrumbs-demo.module').then((mod) => mod.BreadcrumbsDemoModule),
   },
   {
     name: 'Chips Autocomplete',
@@ -38,6 +40,7 @@ export const componentDetails: any = [
     icon: 'label',
     category: forms.name,
     route: '/components/chips',
+    demo: () => import('./component-demos/chips/demos/chips-demo.module').then((mod) => mod.ChipsDemoModule),
   },
   {
     name: 'Code Editor',
@@ -50,6 +53,8 @@ export const componentDetails: any = [
     icon: 'featured_play_list',
     category: editors.name,
     route: '/components/code-editor',
+    demo: () =>
+      import('./component-demos/code-editor/demos/code-editor-demo.module').then((mod) => mod.CodeEditorDemoModule),
   },
   {
     name: 'Simple Dialogs',
@@ -62,6 +67,7 @@ export const componentDetails: any = [
     icon: 'open_in_browser',
     category: dialogs.name,
     route: '/components/dialogs',
+    demo: () => import('./component-demos/dialogs/demos/dialogs-demo.module').then((mod) => mod.DialogsDemoModule),
   },
   {
     name: 'Dynamic Forms',
@@ -74,6 +80,10 @@ export const componentDetails: any = [
     icon: 'format_align_center',
     category: forms.name,
     route: '/components/dynamic-forms',
+    demo: () =>
+      import('./component-demos/dynamic-forms/demos/dynamic-forms-demo.module').then(
+        (mod) => mod.DynamicFormsDemoModule,
+      ),
   },
   {
     name: 'File Input',
@@ -86,6 +96,8 @@ export const componentDetails: any = [
     icon: 'space_bar',
     category: buttons.name,
     route: '/components/file-input',
+    demo: () =>
+      import('./component-demos/file-input/demos/file-input-demo.module').then((mod) => mod.FileInputDemoModule),
   },
   {
     name: 'Flavored Markdown Parser',
@@ -98,6 +110,10 @@ export const componentDetails: any = [
     icon: 'format_paint',
     category: markdown.name,
     route: '/components/flavored-markdown',
+    demo: () =>
+      import('./component-demos/flavored-markdown/demos/flavored-markdown-demo.module').then(
+        (mod) => mod.FlavoredMarkdownDemoModule,
+      ),
   },
   {
     name: 'Loading Mask',
@@ -122,7 +138,8 @@ export const componentDetails: any = [
     icon: 'code',
     category: formatting.name,
     route: '/components/highlight',
-    demos: [],
+    demo: () =>
+      import('./component-demos/highlight/demos/highlight-demo.module').then((mod) => mod.HighlightDemoModule),
   },
   {
     name: 'JSON Formatter',
@@ -135,7 +152,10 @@ export const componentDetails: any = [
     icon: 'format_indent_increase',
     category: formatting.name,
     route: '/components/json-formatter',
-    demos: [],
+    demo: () =>
+      import('./component-demos/json-formatter/demos/json-formatter-demo.module').then(
+        (mod) => mod.JsonFormatterDemoModule,
+      ),
   },
   {
     name: 'Loading',
@@ -147,31 +167,8 @@ export const componentDetails: any = [
     showOverviewDemo: true,
     icon: 'hourglass_empty',
     category: buttons.name,
-    route: '/components/notifications',
-  },
-  {
-    name: 'Tab Select',
-    id: 'tab-select',
-    description: 'Bind values to tabs and use them as filters',
-    apiDocUrl: 'platform/core/tab-select/README.md',
-    overviewDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    icon: 'tab',
-    category: forms.name,
-    route: '/components/tab-select',
-  },
-  {
-    name: 'Text Editor',
-    id: 'text-editor',
-    description: 'Simple markdown text editor component (edit the markdown in the left editor for a real-time preview)',
-    apiDocUrl: 'platform/text-editor/README.md',
-    overviewDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    icon: 'keyboard',
-    category: editors.name,
-    route: '/components/text-editor',
+    route: '/components/loading',
+    demo: () => import('./component-demos/loading/demos/loading-demo.module').then((mod) => mod.LoadingDemoModule),
   },
   {
     name: 'Markdown Parser',
@@ -184,6 +181,7 @@ export const componentDetails: any = [
     icon: 'chrome_reader_mode',
     category: markdown.name,
     route: '/components/markdown-parser',
+    demo: () => import('./component-demos/markdown/demos/markdown-demo.module').then((mod) => mod.MarkdownDemoModule),
   },
   {
     name: 'Markdown Navigator',
@@ -196,6 +194,10 @@ export const componentDetails: any = [
     icon: 'subject',
     category: markdown.name,
     route: '/components/markdown-navigator',
+    demo: () =>
+      import('./component-demos/markdown-navigator/demos/markdown-navigator-demo.module').then(
+        (mod) => mod.MarkdownNavigatorDemoModule,
+      ),
   },
   {
     name: 'Message',
@@ -208,6 +210,7 @@ export const componentDetails: any = [
     icon: 'info_outline',
     category: buttons.name,
     route: '/components/message',
+    demo: () => import('./component-demos/message/demos/message-demo.module').then((mod) => mod.MessageDemoModule),
   },
   {
     name: 'Paging',
@@ -220,6 +223,7 @@ export const componentDetails: any = [
     icon: 'swap_horiz',
     category: nav.name,
     route: '/components/paging',
+    demo: () => import('./component-demos/paging/demos/paging-demo.module').then((mod) => mod.PagingDemoModule),
   },
   {
     name: 'Search',
@@ -232,6 +236,7 @@ export const componentDetails: any = [
     icon: 'search',
     category: forms.name,
     route: '/components/search',
+    demo: () => import('./component-demos/search/demos/search-demo.module').then((mod) => mod.SearchDemoModule),
   },
   {
     name: 'Sidesheet',
@@ -244,18 +249,52 @@ export const componentDetails: any = [
     icon: 'view_array',
     category: layout.name,
     route: '/components/sidesheet',
+    demo: () =>
+      import('./component-demos/sidesheet/demos/sidesheet-demo.module').then((mod) => mod.SidesheetDemoModule),
   },
   {
-    name: 'Search',
-    id: 'search',
-    description: 'Search and filter items',
-    apiDocUrl: 'this one has two readmes that need to be consolidated',
+    name: 'Nav Steps',
+    id: 'nav-steps',
+    description:
+      'Navigate across a sequence of logical & numbered steps (shrink width of page to see responsive behavior)',
+    apiDocUrl: 'platform/core/steps/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'format_line_spacing',
+    category: nav.name,
+    route: '/components/nav-steps',
+    demo: () => import('./component-demos/nav-steps/demos/nav-steps-demo.module').then((mod) => mod.NavStepsDemoModule),
+  },
+  {
+    name: 'Notifications',
+    id: 'notifications',
+    description: 'Notification count & menu for toolbar',
+    apiDocUrl: 'platform/core/notifications/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
     icon: '',
     category: buttons.name,
-    route: '/components/search',
+    route: '/components/notifications',
+    demo: () =>
+      import('./component-demos/notifications/demos/notifications-demo.module').then(
+        (mod) => mod.NotificationsDemoModule,
+      ),
+  },
+  {
+    name: 'Tab Select',
+    id: 'tab-select',
+    description: 'Bind values to tabs and use them as filters',
+    apiDocUrl: 'platform/core/tab-select/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'tab',
+    category: forms.name,
+    route: '/components/tab-select',
+    demo: () =>
+      import('./component-demos/tab-select/demos/tab-select-demo.module').then((mod) => mod.TabSelectDemoModule),
   },
   {
     name: 'Sidesheet Content',
@@ -265,9 +304,11 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: '',
-    category: layout.name,
-    route: '/components/sidesheet',
+    icon: 'keyboard',
+    category: editors.name,
+    route: '/components/text-editor',
+    demo: () =>
+      import('./component-demos/text-editor/demos/text-editor-demo.module').then((mod) => mod.TextEditorDemoModule),
   },
 ];
 

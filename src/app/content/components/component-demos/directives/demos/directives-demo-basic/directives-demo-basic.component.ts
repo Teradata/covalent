@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './directives-demo-basic.component.html',
   preserveWhitespaces: true,
 })
-export class DirectivesDemoBasicComponent {}
+export class DirectivesDemoBasicComponent {
+  trim: string = '';
+}
