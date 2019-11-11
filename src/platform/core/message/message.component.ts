@@ -59,14 +59,14 @@ export class TdMessageComponent implements AfterViewInit {
    *
    * Sets the label of the message.
    */
-  @Input('label') label: string;
+  @Input() label: string;
 
   /**
    * sublabel?: string
    *
    * Sets the sublabel of the message.
    */
-  @Input('sublabel') sublabel: string;
+  @Input() sublabel: string;
 
   /**
    * icon?: string
@@ -74,7 +74,7 @@ export class TdMessageComponent implements AfterViewInit {
    * The icon to be displayed before the title.
    * Defaults to `info_outline` icon
    */
-  @Input('icon') icon: string = 'info_outline';
+  @Input() icon: string = 'info_outline';
 
   /**
    * color?: primary | accent | warn

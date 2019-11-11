@@ -39,7 +39,7 @@ describe('MarkdownNavigatorWindowService', () => {
   let overlayContainerElement: HTMLElement;
 
   function getMarkdownNavigator(): HTMLElement {
-    return <HTMLElement>overlayContainerElement.querySelector(`td-markdown-navigator`);
+    return overlayContainerElement.querySelector(`td-markdown-navigator`);
   }
 
   beforeEach(async(() => {
@@ -50,7 +50,7 @@ describe('MarkdownNavigatorWindowService', () => {
         {
           provide: OverlayContainer,
           useFactory: () => {
-            overlayContainerElement = document.createElement('div') as HTMLElement;
+            overlayContainerElement = document.createElement('div');
             overlayContainerElement.classList.add('cdk-overlay-container');
             document.body.appendChild(overlayContainerElement);
             return { getContainerElement: () => overlayContainerElement };
@@ -73,7 +73,7 @@ describe('MarkdownNavigatorWindowService', () => {
         await dialogRef.afterOpened().toPromise();
 
         expect(getMarkdownNavigator()).toBeTruthy();
-
+        // tslint:disable-next-line:no-useless-cast
         (<HTMLElement>(
           overlayContainerElement.querySelector(`td-markdown-navigator-window .td-markdown-navigator-window-close`)
         )).click();

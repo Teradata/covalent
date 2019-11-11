@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
     sudo npm set progress=false
     sudo npm install --global gulp-cli
     cd /vagrant
-    npm install
+    npm ci
     echo "cd /vagrant" >> /home/vagrant/.bashrc
   SHELL
 end

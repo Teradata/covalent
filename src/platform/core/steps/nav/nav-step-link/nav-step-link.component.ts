@@ -55,14 +55,14 @@ export class TdNavStepLinkComponent extends _TdStepMixinBase implements ICanDisa
    * Label to display in step header
    * Defaults to empty
    */
-  @Input('label') label: string;
+  @Input() label: string;
 
   /**
    * sublabel?: string
    * Sublabel to display in step header
    * Defaults to empty
    */
-  @Input('sublabel') sublabel: string;
+  @Input() sublabel: string;
 
   /**
    * active?: boolean
@@ -81,7 +81,7 @@ export class TdNavStepLinkComponent extends _TdStepMixinBase implements ICanDisa
    * tabIndex?: number
    * tabIndex for component
    */
-  @Input('tabIndex') tabIndex: number;
+  @Input() tabIndex: number;
 
   constructor(private _changeDetectorRef: ChangeDetectorRef, public elementRef: ElementRef) {
     super();

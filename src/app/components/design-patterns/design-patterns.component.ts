@@ -7,7 +7,7 @@ import { TdMediaService } from '@covalent/core/media';
   templateUrl: './design-patterns.component.html',
 })
 export class DesignPatternsComponent {
-  items: Object[] = [
+  items: object[] = [
     {
       description: 'Various cards',
       icon: 'view_agenda',

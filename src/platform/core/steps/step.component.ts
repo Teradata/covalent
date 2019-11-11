@@ -77,13 +77,13 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
    * Sets label of [TdStepComponent] header.
    * Defaults to 'Step #'
    */
-  @Input('label') label: string;
+  @Input() label: string;
 
   /**
    * sublabel?: string
    * Sets sublabel of [TdStepComponent] header.
    */
-  @Input('sublabel') sublabel: string;
+  @Input() sublabel: string;
 
   /**
    * active?: boolean
@@ -124,13 +124,13 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
    * activated?: function
    * Event emitted when [TdStepComponent] is activated.
    */
-  @Output('activated') onActivated: EventEmitter<void> = new EventEmitter<void>();
+  @Output() activated: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * deactivated?: function
    * Event emitted when [TdStepComponent] is deactivated.
    */
-  @Output('deactivated') onDeactivated: EventEmitter<void> = new EventEmitter<void>();
+  @Output() deactivated: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private _viewContainerRef: ViewContainerRef) {
     super();
@@ -180,7 +180,7 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
   }
 
   /**
-   * Method to change active state internally and emit the [onActivated] event if 'true' or [onDeactivated]
+   * Method to change active state internally and emit the [activated] event if 'true' or [deactivated]
    * event if 'false'. (Blocked if [disabled] is 'true')
    * returns true if successfully changed state
    */
@@ -201,10 +201,10 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
   }
 
   private _onActivated(): void {
-    this.onActivated.emit(undefined);
+    this.activated.emit();
   }
 
   private _onDeactivated(): void {
-    this.onDeactivated.emit(undefined);
+    this.deactivated.emit();
   }
 }

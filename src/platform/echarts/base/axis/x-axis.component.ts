@@ -42,7 +42,7 @@ import { TdChartAxisComponent } from './axis.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartXAxisComponent extends TdChartAxisComponent {
-  @Input('position') position: TdXAxisPosition;
+  @Input() position: TdXAxisPosition;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('xAxis', _optionsService);

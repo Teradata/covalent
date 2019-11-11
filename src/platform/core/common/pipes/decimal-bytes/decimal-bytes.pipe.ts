@@ -13,9 +13,9 @@ export class TdDecimalBytesPipe implements PipeTransform {
       /* If not a valid number, return 'Invalid Number' */
       return 'Invalid Number';
     }
-    let k: number = 1000;
-    let sizes: string[] = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-    let i: number = Math.floor(Math.log(bytes) / Math.log(k));
+    const k: number = 1000;
+    const sizes: string[] = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    const i: number = Math.floor(Math.log(bytes) / Math.log(k));
     // if less than 1
     if (i < 0) {
       return 'Invalid Number';

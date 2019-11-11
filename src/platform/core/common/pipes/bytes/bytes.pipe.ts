@@ -13,9 +13,9 @@ export class TdBytesPipe implements PipeTransform {
       /* If not a valid number, return 'Invalid Number' */
       return 'Invalid Number';
     }
-    let k: number = 1024;
-    let sizes: string[] = ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
-    let i: number = Math.floor(Math.log(bytes) / Math.log(k));
+    const k: number = 1024;
+    const sizes: string[] = ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+    const i: number = Math.floor(Math.log(bytes) / Math.log(k));
     // if less than 1
     if (i < 0) {
       return 'Invalid Number';

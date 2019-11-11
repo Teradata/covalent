@@ -131,7 +131,7 @@ export class FunctionsDemoComponent {
   }
 
   async doReadFile(event: any): Promise<void> {
-    let file: File = event.srcElement.files[0];
+    const file: File = event.srcElement.files[0];
     this.readFileContent = await readFile(file);
   }
 }

@@ -12,7 +12,7 @@ import {
 import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
-import { TdDynamicFormsErrorTemplate } from './dynamic-element.component';
+import { TdDynamicFormsErrorTemplateDirective } from './dynamic-element.component';
 
 import { timer, Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
@@ -30,8 +30,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   private _destroy$: Subject<any> = new Subject();
   private _destroyControl$: Subject<string> = new Subject();
 
-  @ContentChildren(TdDynamicFormsErrorTemplate, { descendants: true }) _errorTemplates: QueryList<
-    TdDynamicFormsErrorTemplate
+  @ContentChildren(TdDynamicFormsErrorTemplateDirective, { descendants: true }) _errorTemplates: QueryList<
+    TdDynamicFormsErrorTemplateDirective
   >;
   dynamicForm: FormGroup;
 
@@ -85,8 +85,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
    */
   get errors(): { [name: string]: any } {
     if (this.dynamicForm) {
-      let errors: { [name: string]: any } = {};
-      for (let name in this.dynamicForm.controls) {
+      const errors: { [name: string]: any } = {};
+      for (const name of Object.keys(this.dynamicForm.controls)) {
         errors[name] = this.dynamicForm.controls[name].errors;
       }
       return errors;
@@ -142,25 +142,22 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
    */
   private _updateErrorTemplates(): void {
     this._templateMap = new Map<string, TemplateRef<any>>();
-    for (let i: number = 0; i < this._errorTemplates.toArray().length; i++) {
-      this._templateMap.set(
-        this._errorTemplates.toArray()[i].tdDynamicFormsError,
-        this._errorTemplates.toArray()[i].templateRef,
-      );
+    for (const errorTemplate of this._errorTemplates.toArray()) {
+      this._templateMap.set(errorTemplate.tdDynamicFormsError, errorTemplate.templateRef);
     }
   }
 
   private _rerenderElements(): void {
     this._clearRemovedElements();
     this._renderedElements = [];
-    let duplicates: string[] = [];
+    const duplicates: string[] = [];
     this._elements.forEach((elem: ITdDynamicElementConfig) => {
       this._dynamicFormsService.validateDynamicElementName(elem.name);
       if (duplicates.indexOf(elem.name) > -1) {
         throw new Error(`Dynamic element name: "${elem.name}" is duplicated`);
       }
       duplicates.push(elem.name);
-      let dynamicElement: AbstractControl = this.dynamicForm.get(elem.name);
+      const dynamicElement: AbstractControl = this.dynamicForm.get(elem.name);
       if (!dynamicElement) {
         this.dynamicForm.addControl(elem.name, this._dynamicFormsService.createFormControl(elem));
         this._subscribeToControlStatusChanges(elem.name);
@@ -189,15 +186,10 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   }
 
   private _clearRemovedElements(): void {
-    for (let i: number = 0; i < this._renderedElements.length; i++) {
-      for (let j: number = 0; j < this._elements.length; j++) {
-        // check if the name of the element is still there removed
-        if (this._renderedElements[i].name === this._elements[j].name) {
-          delete this._renderedElements[i];
-          break;
-        }
-      }
-    }
+    this._renderedElements = this._renderedElements.filter(
+      (renderedElement: ITdDynamicElementConfig) =>
+        !this._elements.some((element: ITdDynamicElementConfig) => element.name === renderedElement.name),
+    );
     // remove elements that were removed from the array
     this._renderedElements.forEach((elem: ITdDynamicElementConfig) => {
       this._destroyControl$.next(elem.name);

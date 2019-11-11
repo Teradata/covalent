@@ -15,8 +15,8 @@ describe('Component: FileInput', () => {
 
   it('should render content inside .td-file-input button', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputBasicTestComponent);
-      let component: TdFileInputBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputBasicTestComponent);
+      const component: TdFileInputBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -27,8 +27,8 @@ describe('Component: FileInput', () => {
 
   it('should mimic file selection and then clear it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputBasicTestComponent);
-      let component: TdFileInputBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputBasicTestComponent);
+      const component: TdFileInputBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -49,8 +49,8 @@ describe('Component: FileInput', () => {
 
   it('should mimic file selection and then clear it by disabling it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputBasicTestComponent);
-      let component: TdFileInputBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputBasicTestComponent);
+      const component: TdFileInputBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       component.disabled = false;
       fixture.detectChanges();
@@ -69,8 +69,8 @@ describe('Component: FileInput', () => {
 
   it('should mimic file (select) event', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputBasicTestComponent);
-      let component: TdFileInputBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputBasicTestComponent);
+      const component: TdFileInputBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       expect(component.files).toBeUndefined();
@@ -86,8 +86,8 @@ describe('Component: FileInput', () => {
 
   it('should mimic file selection event and check model', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputModelTestComponent);
-      let component: TdFileInputModelTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputModelTestComponent);
+      const component: TdFileInputModelTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       expect(component.files).toBeUndefined();
@@ -103,8 +103,8 @@ describe('Component: FileInput', () => {
 
   it('should mimic file selection event and check model and then clear it by disabling it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputModelTestComponent);
-      let component: TdFileInputModelTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputModelTestComponent);
+      const component: TdFileInputModelTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       expect(component.files).toBeUndefined();

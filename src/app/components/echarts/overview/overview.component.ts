@@ -8,7 +8,7 @@ import { TdMediaService } from '@covalent/core/media';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OverviewComponent {
-  items: Object[] = [
+  items: object[] = [
     {
       color: 'deep-purple-A700',
       icon: 'insert_chart',
@@ -65,7 +65,7 @@ export class OverviewComponent {
     },
   ];
 
-  atomicComponents: Object[] = [
+  atomicComponents: object[] = [
     {
       color: 'deep-orange-A700',
       icon: 'info',

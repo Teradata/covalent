@@ -15,7 +15,7 @@ describe('Component: JsonFormatter', () => {
 
   it('should render component with undefined in it', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
@@ -26,8 +26,8 @@ describe('Component: JsonFormatter', () => {
 
   it('should render component with key truncated and elipsis', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
-      let component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
+      const component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
       component.data = {
         loooooooooooooooooooooooooooooong: 'string',
       };
@@ -43,8 +43,8 @@ describe('Component: JsonFormatter', () => {
 
   it('should throw error if [levelsOpen] is not an integer', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
-      let component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
+      const component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
       component.levelsOpen = undefined;
       expect(function(): void {
         fixture.detectChanges();
@@ -57,13 +57,13 @@ describe('Component: JsonFormatter', () => {
 
   it('should render component with key and values depending on type', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
-      let component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
+      const component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
       component.data = {
         stringProperty: 'string',
         dateProperty: new Date(),
         numberProperty: 1,
-        functionProperty: function(): void {
+        functionProperty(): void {
           /* */
         },
         /* tslint:disable-next-line */
@@ -104,8 +104,8 @@ describe('Component: JsonFormatter', () => {
 
   it('should render component with an array hidden', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
-      let component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
+      const component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
       component.data = [1, 2, 3, 4, 5, 6];
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -124,8 +124,8 @@ describe('Component: JsonFormatter', () => {
 
   it('should render component with an array hidden, click on node and then display array content', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
-      let component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
+      const component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
       component.data = [1, 2, 3, 4, 5, 6];
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -157,8 +157,8 @@ describe('Component: JsonFormatter', () => {
 
   it('should render component with an array display by 1 level', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
-      let component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
+      const component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
       component.data = [1, 2, 3, 4, 5, 6];
       component.levelsOpen = 1;
       fixture.detectChanges();
@@ -175,8 +175,8 @@ describe('Component: JsonFormatter', () => {
 
   it('should render component and rerender data only when refresh method explicitly called', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
-      let component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
+      const component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
       component.data = { property: 'test' };
       fixture.detectChanges();
       fixture.whenStable().then(() => {

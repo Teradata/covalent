@@ -18,38 +18,38 @@ import {
 export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestroy {
   private _state: any = {};
 
-  @Input('config') config: any = {};
+  @Input() config: any = {};
 
-  @Input('id') id: string;
-  @Input('show') show: boolean = true;
-  @Input('gridIndex') gridIndex: number;
-  @Input('offset') offset: number;
+  @Input() id: string;
+  @Input() show: boolean = true;
+  @Input() gridIndex: number;
+  @Input() offset: number;
   abstract position: TdXAxisPosition | TdYAxisPosition;
-  @Input('type') type: TdAxisType;
-  @Input('name') name: string;
-  @Input('nameLocation') nameLocation: TdNameLocation;
-  @Input('nameTextStyle') nameTextStyle: any;
-  @Input('nameGap') nameGap: number;
-  @Input('nameRotate') nameRotate: number;
-  @Input('inverse') inverse: boolean;
-  @Input('boundaryGap') boundaryGap: boolean | string[];
-  @Input('min') min: string | number;
-  @Input('max') max: string | number;
-  @Input('scale') scale: boolean;
-  @Input('minInterval') minInterval: number;
-  @Input('interval') interval: number;
-  @Input('logBase') logBase: number;
-  @Input('silent') silent: boolean;
-  @Input('triggerEvent') triggerEvent: boolean;
-  @Input('axisLine') axisLine: ITdAxisLine;
-  @Input('axisTick') axisTick: ITdAxisTick;
-  @Input('axisLabel') axisLabel: ITdAxisLabel;
-  @Input('splitLine') splitLine: ITdSplitLine;
-  @Input('splitArea') splitArea: ITdSplitArea;
-  @Input('data') data: any;
-  @Input('axisPointer') axisPointer: ITdAxisPointer;
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
+  @Input() type: TdAxisType;
+  @Input() name: string;
+  @Input() nameLocation: TdNameLocation;
+  @Input() nameTextStyle: any;
+  @Input() nameGap: number;
+  @Input() nameRotate: number;
+  @Input() inverse: boolean;
+  @Input() boundaryGap: boolean | string[];
+  @Input() min: string | number;
+  @Input() max: string | number;
+  @Input() scale: boolean;
+  @Input() minInterval: number;
+  @Input() interval: number;
+  @Input() logBase: number;
+  @Input() silent: boolean;
+  @Input() triggerEvent: boolean;
+  @Input() axisLine: ITdAxisLine;
+  @Input() axisTick: ITdAxisTick;
+  @Input() axisLabel: ITdAxisLabel;
+  @Input() splitLine: ITdSplitLine;
+  @Input() splitArea: ITdSplitArea;
+  @Input() data: any;
+  @Input() axisPointer: ITdAxisPointer;
+  @Input() zlevel: number;
+  @Input() z: number;
 
   constructor(private _axisOption: string, private _optionsService: TdChartOptionsService) {}
 
@@ -66,7 +66,7 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         id: this.id,

@@ -32,8 +32,8 @@ describe('Component: DataTable', () => {
 
   it('should set hidden and not get search hits and set it to false and get search results', (done: DoneFn) => {
     inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicTestComponent);
-      let component: TdDataTableBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicTestComponent);
+      const component: TdDataTableBasicTestComponent = fixture.debugElement.componentInstance;
 
       component.columns[1].hidden = false;
       // backwards compatability test
@@ -98,8 +98,8 @@ describe('Component: DataTable', () => {
 
   it('should set filter and not get search hits and set it to false and get search results', (done: DoneFn) => {
     inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicTestComponent);
-      let component: TdDataTableBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicTestComponent);
+      const component: TdDataTableBasicTestComponent = fixture.debugElement.componentInstance;
 
       component.columns[1].filter = false;
 
@@ -154,9 +154,8 @@ describe('Component: DataTable', () => {
   describe('selectable and multiple', () => {
     it('should not set the data input and not fail', (done: DoneFn) => {
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-        let element: DebugElement = fixture.debugElement;
-        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        const component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
 
         component.selectable = true;
         component.multiple = true;
@@ -171,9 +170,8 @@ describe('Component: DataTable', () => {
 
     it('should select one and be in indeterminate state, select all and then unselect all', (done: DoneFn) => {
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-        let element: DebugElement = fixture.debugElement;
-        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        const component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
 
         component.selectable = true;
         component.multiple = true;
@@ -194,7 +192,7 @@ describe('Component: DataTable', () => {
         fixture.whenStable().then(() => {
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(
+            const dataTableComponent: TdDataTableComponent = fixture.debugElement.query(
               By.directive(TdDataTableComponent),
             ).componentInstance;
             // check how many rows were rendered
@@ -236,9 +234,8 @@ describe('Component: DataTable', () => {
 
     it('should be interminate when atleast one row is selected and allSelected when all rows are selected', (done: DoneFn) => {
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-        let element: DebugElement = fixture.debugElement;
-        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        const component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
 
         component.selectable = true;
         component.multiple = true;
@@ -258,7 +255,7 @@ describe('Component: DataTable', () => {
         fixture.whenStable().then(() => {
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(
+            const dataTableComponent: TdDataTableComponent = fixture.debugElement.query(
               By.directive(TdDataTableComponent),
             ).componentInstance;
             // check how many rows were rendered
@@ -310,9 +307,8 @@ describe('Component: DataTable', () => {
 
     it('should shift click and select a range of rows', (done: DoneFn) => {
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-        let element: DebugElement = fixture.debugElement;
-        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        const component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
 
         component.selectable = true;
         component.multiple = true;
@@ -333,7 +329,7 @@ describe('Component: DataTable', () => {
         fixture.whenStable().then(() => {
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(
+            const dataTableComponent: TdDataTableComponent = fixture.debugElement.query(
               By.directive(TdDataTableComponent),
             ).componentInstance;
             // check how many rows were rendered
@@ -345,7 +341,7 @@ describe('Component: DataTable', () => {
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               // select the first and last row with shift key also selected and should then select all checkboxes
-              let clickEvent: MouseEvent = document.createEvent('MouseEvents');
+              const clickEvent: MouseEvent = document.createEvent('MouseEvents');
               // the 12th parameter below 'true' sets the shift key to be clicked at the same time as as the mouse click
               clickEvent.initMouseEvent(
                 'click',
@@ -365,7 +361,7 @@ describe('Component: DataTable', () => {
                 document.body.parentNode,
               );
               fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].nativeElement.dispatchEvent(clickEvent);
-              let shiftClickEvent: MouseEvent = document.createEvent('MouseEvents');
+              const shiftClickEvent: MouseEvent = document.createEvent('MouseEvents');
               shiftClickEvent.initMouseEvent(
                 'click',
                 true,
@@ -400,10 +396,10 @@ describe('Component: DataTable', () => {
 
     it('should click on a row and see the rowClick Event', async(
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableRowClickTestComponent);
-        let component: TdDataTableRowClickTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableRowClickTestComponent);
+        const component: TdDataTableRowClickTestComponent = fixture.debugElement.componentInstance;
 
-        let eventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
+        const eventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -428,14 +424,14 @@ describe('Component: DataTable', () => {
 
     it('should click on a row and see the rowClick event only when clicking on row', async(
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableRowClickTestComponent);
-        let component: TdDataTableSelectableRowClickTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableRowClickTestComponent);
+        const component: TdDataTableSelectableRowClickTestComponent = fixture.debugElement.componentInstance;
 
         component.clickable = true;
         component.selectable = true;
 
-        let clickEventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
-        let selectEventSpy: jasmine.Spy = spyOn(component, 'selectEvent');
+        const clickEventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
+        const selectEventSpy: jasmine.Spy = spyOn(component, 'selectEvent');
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -463,8 +459,8 @@ describe('Component: DataTable', () => {
 
     it('should load table and have first row checked by reference', async(
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
-        let component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
+        const component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
 
         component.selectedRows = [component.data[0]];
 
@@ -483,8 +479,8 @@ describe('Component: DataTable', () => {
 
     it('should load table and have no rows checked by reference', async(
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
-        let component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
+        const component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
 
         component.selectedRows = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 }];
 
@@ -503,8 +499,8 @@ describe('Component: DataTable', () => {
 
     it('should load table and have first row checked using [compareWith]', async(
       inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableCompareWithTestComponent);
-        let component: TdDataTableCompareWithTestComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableCompareWithTestComponent);
+        const component: TdDataTableCompareWithTestComponent = fixture.debugElement.componentInstance;
 
         component.selectedRows = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 }];
 

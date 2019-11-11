@@ -15,8 +15,7 @@ describe('Component: BaseEchart', () => {
 
   it('should render a canvas element', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdBaseEchartsBasicTestComponent);
-      let component: TdBaseEchartsBasicTestComponent = fixture.debugElement.componentInstance;
+      TestBed.createComponent(TdBaseEchartsBasicTestComponent);
     }),
   ));
 });

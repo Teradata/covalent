@@ -12,7 +12,7 @@ export class JsonFormatterDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  data: Object = {
+  data: object = {
     stringProperty: 'This is a string',
     dateProperty: new Date(),
     numberProperty: 10000,
@@ -25,7 +25,7 @@ export class JsonFormatterDemoComponent {
       },
       {},
     ],
-    functionProperty: function(arg1: any, arg2: any): void {
+    functionProperty(arg1: any, arg2: any): void {
       // empty
     },
     undefinedProperty: undefined,

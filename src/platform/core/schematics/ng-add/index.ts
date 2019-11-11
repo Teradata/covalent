@@ -48,7 +48,7 @@ function addThemeToAngularJson(): Rule {
     } else {
       const existingStyles: any = targetOptions.styles.map((s: any) => (typeof s === 'string' ? s : s.input));
 
-      for (let [index, stylePath] of existingStyles.entries()) {
+      for (const [index, stylePath] of existingStyles.entries()) {
         if (stylePath === assetPath) {
           return;
         }

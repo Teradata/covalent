@@ -7,7 +7,7 @@ import { TdMediaService } from '@covalent/core/media';
   templateUrl: './docs.component.html',
 })
 export class DocsComponent {
-  items: Object[] = [
+  items: object[] = [
     {
       description: 'Installing Covalent & dependencies',
       icon: 'chrome_reader_mode',
