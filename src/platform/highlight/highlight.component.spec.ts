@@ -26,13 +26,14 @@ describe('Component: Highlight', () => {
   describe('Rendering: ', () => {
     it('should render empty', async(() => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestRenderingComponent);
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe(``);
-      expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeFalsy();
+      expect(element.querySelector('td-highlight pre code')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeFalsy();
+        expect(element.querySelector('td-highlight pre code')).toBeFalsy();
         expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe('');
       });
     }));
@@ -44,11 +45,11 @@ describe('Component: Highlight', () => {
       expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toContain(
         `{ {property} }`.trim(),
       );
-      expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeFalsy();
+      expect(element.querySelector('td-highlight pre code')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeTruthy();
+        expect(element.querySelector('td-highlight pre code')).toBeTruthy();
         expect(element.querySelector('td-highlight pre code').textContent.trim()).toContain(`{{property}}`);
         expect(element.querySelectorAll('.hljs-tag').length).toBe(6);
       });
@@ -65,11 +66,11 @@ describe('Component: Highlight', () => {
       const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe('');
-      expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeFalsy();
+      expect(element.querySelector('td-highlight pre code')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-highlight pre code'))).toBeTruthy();
+        expect(element.querySelector('td-highlight pre code')).toBeTruthy();
         expect(element.querySelectorAll('.hljs-number').length).toBe(2);
       });
     }));

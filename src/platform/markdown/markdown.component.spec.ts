@@ -66,13 +66,14 @@ describe('Component: Markdown', () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(
         TdMarkdownEmptyStaticContentTestRenderingComponent,
       );
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe(``);
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+        expect(element.querySelector('td-markdown div')).toBeFalsy();
         expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe('');
       });
     }));
@@ -87,11 +88,11 @@ describe('Component: Markdown', () => {
 
         * list item`.trim(),
       );
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+        expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(element.querySelector('td-markdown div h1').textContent.trim()).toBe('title');
         expect(element.querySelector('td-markdown div ul li').textContent.trim()).toBe('list item');
       });
@@ -110,13 +111,13 @@ describe('Component: Markdown', () => {
         third line
         `.trim(),
       );
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+          expect(element.querySelector('td-markdown div')).toBeTruthy();
           expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(2);
         });
       });
@@ -135,13 +136,13 @@ describe('Component: Markdown', () => {
         third line
         `.trim(),
       );
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+          expect(element.querySelector('td-markdown div')).toBeTruthy();
           expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(0);
         });
       });
@@ -161,11 +162,11 @@ describe('Component: Markdown', () => {
       const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe('');
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+        expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(element.querySelector('td-markdown div h1').textContent.trim()).toBe('another title');
         expect(element.querySelector('td-markdown div h2').textContent.trim()).toBe('subtitle');
         expect(element.querySelector('td-markdown div code').textContent.trim()).toBe('pseudo code');
@@ -182,11 +183,11 @@ describe('Component: Markdown', () => {
       const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe('');
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+        expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(element.querySelector('td-markdown div h1').textContent.trim()).toBe('another title');
         expect(element.querySelector('td-markdown div h2')).toBeFalsy();
         expect(element.querySelector('td-markdown div').textContent.trim()).toContain('## subtitle');
