@@ -3,7 +3,10 @@ import { convertObjectsToCSV, convertCSVToJSON } from './convert';
 describe('Convert', () => {
   describe('Object to CSV conversion', () => {
     it('conversion with various parameter options', () => {
-      const objects: object[] = [{ name: 'user1', id: 123 }, { name: 'user2', id: 234 }];
+      const objects: object[] = [
+        { name: 'user1', id: 123 },
+        { name: 'user2', id: 234 },
+      ];
       const expectedStr: string = 'name,id\r\nuser1,123\r\nuser2,234\r\n';
       const expectedStrCustomKeySeparator: string = 'name|id\r\nuser1|123\r\nuser2|234\r\n';
       const expectedStrCustomLineSeparator: string = 'name,id|user1,123|user2,234|';

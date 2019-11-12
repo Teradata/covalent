@@ -18,7 +18,10 @@ export class JsonFormatterDemoComponent {
     numberProperty: 10000,
     booleanProperty: true,
     numberArray: [1, 2, 3, 4, 5, 6],
-    arrayOfArrays: [[1, [2, 3]], [3, 4]],
+    arrayOfArrays: [
+      [1, [2, 3]],
+      [3, 4],
+    ],
     objectArray: [
       {
         prop: undefined,

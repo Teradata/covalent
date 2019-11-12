@@ -220,7 +220,10 @@ export class TypesTreeComponent implements OnInit {
             { name: 'Geometry', value: 10993 },
             {
               name: 'heap',
-              children: [{ name: 'FibonacciHeap', value: 9354 }, { name: 'HeapNode', value: 1233 }],
+              children: [
+                { name: 'FibonacciHeap', value: 9354 },
+                { name: 'HeapNode', value: 1233 },
+              ],
             },
             { name: 'IEvaluable', value: 335 },
             { name: 'IPredicate', value: 383 },
