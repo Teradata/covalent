@@ -63,6 +63,12 @@ export class OverviewComponent {
       route: ['types', 'graph'],
       title: 'Graph Chart',
     },
+    {
+      color: 'deep-orange-500',
+      icon: 'map',
+      route: ['types', 'map'],
+      title: 'Map Chart',
+    },
   ];
 
   atomicComponents: object[] = [

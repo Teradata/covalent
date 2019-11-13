@@ -33,6 +33,7 @@ import { TypesTreeComponent } from './tree/tree.component';
 import { TypesSankeyComponent } from './sankey/sankey.component';
 import { TypesGraphComponent } from './graph/graph.component';
 import { TypesTreemapComponent } from './treemap/treemap.component';
+import { TypesMapComponent } from './map/map.component';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentLineEchartsModule } from '@covalent/echarts/line';
@@ -43,6 +44,7 @@ import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
 import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
 import { CovalentGraphEchartsModule } from '@covalent/echarts/graph';
 import { CovalentTreemapEchartsModule } from '@covalent/echarts/treemap';
+import { CovalentMapEchartsModule } from '@covalent/echarts/map';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { moduleRoutes } from './types.routes';
@@ -86,6 +88,7 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
     CovalentGraphEchartsModule,
     CovalentSankeyEchartsModule,
     CovalentTreemapEchartsModule,
+    CovalentMapEchartsModule,
     CovalentToolboxEchartsModule,
     // internal
     DocumentationToolsModule,
@@ -101,6 +104,7 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
     TypesSankeyComponent,
     TypesGraphComponent,
     TypesTreemapComponent,
+    TypesMapComponent,
   ],
 })
 export class TypesModule {}
