@@ -33,7 +33,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   private _resizing: boolean = false;
 
   // all the sub components, which are the individual breadcrumbs
-  @ContentChildren(TdBreadcrumbComponent) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
+  @ContentChildren(TdBreadcrumbComponent, { descendants: true }) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
   // the list of hidden breadcrumbs not shown right now (responsive)
   hiddenBreadcrumbs: TdBreadcrumbComponent[] = [];
 

@@ -70,7 +70,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(getMarkdownNavigator()).toBeTruthy();
         // tslint:disable-next-line:no-useless-cast
@@ -93,7 +93,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.items).toEqual([]);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(0);
@@ -113,7 +113,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.items).toEqual(RAW_MARKDOWN_ITEMS);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(2);
@@ -135,7 +135,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.labels).toEqual({});
         expect(getMarkdownNavigator().textContent).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
@@ -151,7 +151,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.labels).toEqual(SAMPLE_LABELS);
         expect(getMarkdownNavigator().textContent).toContain(SAMPLE_LABELS.emptyState);
@@ -172,7 +172,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('primary');
 
@@ -192,7 +192,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('accent');
 
@@ -202,7 +202,7 @@ describe('MarkdownNavigatorWindowService', () => {
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'primary' });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('primary');
 
@@ -212,7 +212,7 @@ describe('MarkdownNavigatorWindowService', () => {
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'warn' });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('warn');
 
@@ -222,7 +222,7 @@ describe('MarkdownNavigatorWindowService', () => {
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: undefined });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe(undefined);
 
@@ -242,7 +242,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(overlayContainerElement.querySelector(`.td-draggable-markdown-navigator-window-wrapper`)).toBeTruthy();
         expect(

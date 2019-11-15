@@ -704,10 +704,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
       this._widthSubject.asObservable().pipe(distinctUntilChanged()),
       this._heightSubject.asObservable().pipe(distinctUntilChanged()),
     )
-      .pipe(
-        takeUntil(this._destroy),
-        debounceTime(100),
-      )
+      .pipe(takeUntil(this._destroy), debounceTime(100))
       .subscribe(() => {
         this.layout();
         this._changeDetectorRef.markForCheck();

@@ -100,7 +100,7 @@ describe('Component: Breadcrumbs', () => {
 @Component({
   selector: 'td-breadcrumbs-test',
   template: `
-    <div style="width: {{ width }}">
+    <div [style.width]="width">
       <td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="{{ separatorIcon }}">
         <a td-breadcrumb [routerLink]="'/'">Home</a>
         <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
