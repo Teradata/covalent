@@ -8,10 +8,12 @@ export function TdPOST(config: {
   path: string;
   options?: ITdHttpRESTOptions;
 }): (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>) => any {
-  return TdAbstractMethod(<any>Object.assign(
-    {
-      method: 'POST',
-    },
-    config,
-  ));
+  return TdAbstractMethod(
+    <any>Object.assign(
+      {
+        method: 'POST',
+      },
+      config,
+    ),
+  );
 }

@@ -8,10 +8,12 @@ export function TdGET(config: {
   path: string;
   options?: ITdHttpRESTOptions;
 }): (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>) => any {
-  return TdAbstractMethod(<any>Object.assign(
-    {
-      method: 'GET',
-    },
-    config,
-  ));
+  return TdAbstractMethod(
+    <any>Object.assign(
+      {
+        method: 'GET',
+      },
+      config,
+    ),
+  );
 }

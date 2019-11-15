@@ -29,7 +29,7 @@ export const _TdDynamicElementMixinBase = mixinControlValueAccessor(TdDynamicEle
 @Directive({ selector: '[tdDynamicFormsError]ng-template' })
 export class TdDynamicFormsErrorTemplateDirective extends TemplatePortalDirective {
   @Input() tdDynamicFormsError: string;
-  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+  constructor(public templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
     super(templateRef, viewContainerRef);
   }
 }

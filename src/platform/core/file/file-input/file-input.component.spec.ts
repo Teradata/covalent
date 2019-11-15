@@ -114,6 +114,7 @@ describe('Component: FileInput', () => {
         fixture.whenStable().then(() => {
           expect(component.files).toBeTruthy();
           component.disabled = true;
+          fixture.componentRef.changeDetectorRef.detectChanges();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             expect(component.files).toBeUndefined();
