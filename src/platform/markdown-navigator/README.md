@@ -148,18 +148,16 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 export class SampleComponent{
 
-  ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
-
   constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
   ngOnInit(): void {
-    this.ref = this._markdownNavigatorWindowService.open({
+    const ref: MatDialogRef<MarkdownNavigatorWindowComponent> = this._markdownNavigatorWindowService.open({
       items: [{ url: 'https://github.com/Teradata/covalent/blob/develop/README.md' }]
     });
-    this.ref.afterOpened().subscribe(() => {
+    ref.afterOpened().subscribe(() => {
 
     });
-    this.ref.afterClosed().subscribe(() => {
+    ref.afterClosed().subscribe(() => {
 
     });
   }

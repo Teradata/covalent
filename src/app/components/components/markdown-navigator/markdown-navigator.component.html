@@ -42,7 +42,6 @@
             <![CDATA[
           import {
             IMarkdownNavigatorItem,
-            MarkdownNavigatorWindowService
           } from '@covalent/markdown-navigator';
 
           oneItem: IMarkdownNavigatorItem[] = [
@@ -164,11 +163,8 @@
           import {
             IMarkdownNavigatorItem,
             MarkdownNavigatorWindowService,
-            MarkdownNavigatorWindowComponent,
           } from '@covalent/markdown-navigator';
 
-          windowOpen: boolean = false;
-          ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
           currentItems: IMarkdownNavigatorItem[] = [
           {
             url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
@@ -178,20 +174,7 @@
           constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
           openDialog(): void {
-            if (this.windowOpen) {
-              this.closeDialog();
-            }
-            this.ref = this._markdownNavigatorWindowService.open({items: this.currentItems});
-            this.ref.afterOpened().subscribe(() => {
-              this.windowOpen = true;
-            });
-
-            this.ref.afterClosed().subscribe(() => {
-              this.windowOpen = false;
-            });
-          }
-          closeDialog(): void {
-            this.ref.close();
+            this._markdownNavigatorWindowService.open({ items: this.currentItems });
           }
           ]]>
         </td-highlight>
