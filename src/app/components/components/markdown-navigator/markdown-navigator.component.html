@@ -145,7 +145,7 @@
       <ng-template matTabLabel>Demo</ng-template>
       <mat-card-actions>
         <button mat-button class="text-upper" color="primary" (click)="openDialog()">
-          Open Draggable Markdown Navigator Window
+          Open
         </button>
       </mat-card-actions>
     </mat-tab>
@@ -154,9 +154,9 @@
       <mat-card-content>
         <td-highlight lang="html">
           <![CDATA[
-            <button mat-button class="text-upper" color="primary" (click)="openDialog()">
-              Open Draggable Markdown Navigator Window
-            </button>
+          <button mat-button class="text-upper" color="primary" (click)="openDialog()">
+            Open
+          </button>
           ]]>
         </td-highlight>
         <td-highlight lang="typescript">
@@ -193,6 +193,41 @@
           closeDialog(): void {
             this.ref.close();
           }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Markdown Navigator Window Directive</mat-card-title>
+  <mat-card-subtitle>
+    A directive that calls the MarkdownNavigatorWindowService open method on click events.
+  </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-actions>
+        <button mat-button class="text-upper" color="primary" [tdMarkdownNavigatorWindow]="{ items: currentItems }">Open</button>
+      </mat-card-actions>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <td-highlight lang="html">
+          <![CDATA[
+          <button mat-button class="text-upper" color="primary" [tdMarkdownNavigatorWindow]="{ items: currentItems }">Open</button>
+          ]]>
+        </td-highlight>
+        <td-highlight lang="typescript">
+          <![CDATA[
+          currentItems: IMarkdownNavigatorItem[] = [
+          {
+            url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+          },
+          ];
           ]]>
         </td-highlight>
       </mat-card-content>
