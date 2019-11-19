@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
-import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
 import { ThemePalette } from '@angular/material/core';
 import {
   MarkdownNavigatorWindowComponent,
@@ -26,10 +25,7 @@ const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
   height: '475px',
   width: '360px',
 };
-
-@Injectable({
-  providedIn: CovalentMarkdownNavigatorModule,
-})
+@Injectable()
 export class MarkdownNavigatorWindowService {
   markdownNavigatorWindowDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = undefined;
   markdownNavigatorWindowDialogsOpen: number = 0;
