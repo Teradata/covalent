@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
-
 import { Overlay } from '@angular/cdk/overlay';
-import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
 import { ThemePalette } from '@angular/material/core';
 import {
   MarkdownNavigatorWindowComponent,
@@ -18,9 +16,7 @@ export interface IMarkdownNavigatorWindowConfig {
   toolbarColor?: ThemePalette;
 }
 
-@Injectable({
-  providedIn: CovalentMarkdownNavigatorModule,
-})
+@Injectable()
 export class MarkdownNavigatorWindowService {
   constructor(private _overlay: Overlay, private _tdDialogService: TdDialogService) {}
 
