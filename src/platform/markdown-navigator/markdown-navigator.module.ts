@@ -10,6 +10,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CovalentDialogsModule } from '@covalent/core/dialogs';
+import { MarkdownNavigatorWindowDirective } from './markdown-navigator-window-directive/markdown-navigator-window.directive';
+import { MarkdownNavigatorWindowService } from './markdown-navigator-window-service/markdown-navigator-window.service';
 
 @NgModule({
   imports: [
@@ -26,8 +28,9 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
     CovalentFlavoredMarkdownModule,
     CovalentDialogsModule,
   ],
-  declarations: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent],
-  exports: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent],
+  declarations: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent, MarkdownNavigatorWindowDirective],
+  exports: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent, MarkdownNavigatorWindowDirective],
   entryComponents: [MarkdownNavigatorWindowComponent],
+  providers: [MarkdownNavigatorWindowService],
 })
 export class CovalentMarkdownNavigatorModule {}

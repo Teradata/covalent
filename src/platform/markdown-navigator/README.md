@@ -165,3 +165,50 @@ export class SampleComponent{
   }
 }
 ```
+
+
+# MarkdownNavigatorWindowDirective
+
+A directive that calls the MarkdownNavigatorWindowService open method on click events.
+
+## API Summary
+
+#### Inputs
+
++ tdMarkdownNavigatorWindow: IMarkdownNavigatorWindowConfig
+  + Config to open window with
++ disabled: boolean
+  + Whether disabled or not
+
+For reference:
+```typescript
+interface IMarkdownNavigatorWindowConfig {
+  items: IMarkdownNavigatorItem[];
+  dialogConfig?: MatDialogConfig;
+  labels?: IMarkdownNavigatorWindowLabels;
+  toolbarColor?: ThemePalette;
+}
+```
+
+## Setup
+
+```typescript
+import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+@NgModule({
+  imports: [
+    CovalentMarkdownNavigatorModule,
+    ...
+  ],
+  ...
+})
+export class MyModule {}
+```
+
+
+## Usage
+
+Example:
+
+```html
+<button mat-button [tdMarkdownNavigatorWindow]="{ items: [] }" [disabled]="false">Open window</button>
+```
