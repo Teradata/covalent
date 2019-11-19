@@ -258,4 +258,27 @@ describe('MarkdownNavigatorWindowService', () => {
       },
     ),
   ));
+
+  it('should only have one markdown navigator open at a time', async(
+    inject(
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        expect(overlayContainerElement.querySelectorAll(`td-markdown-navigator`).length).toBe(0);
+        expect(_markdownNavigatorWindowService.isOpen).toBeFalsy();
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        await wait(fixture);
+        expect(overlayContainerElement.querySelectorAll(`td-markdown-navigator`).length).toBe(1);
+        expect(_markdownNavigatorWindowService.isOpen).toBeTruthy();
+      },
+    ),
+  ));
 });
