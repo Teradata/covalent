@@ -9,10 +9,12 @@ import {
 })
 export class MarkdownNavigatorWindowDirective {
   @Input('tdMarkdownNavigatorWindow') config: IMarkdownNavigatorWindowConfig;
-
+  @Input() disabled: boolean = false;
   constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
   @HostListener('click') click(): void {
-    this._markdownNavigatorWindowService.open(this.config);
+    if (!this.disabled) {
+      this._markdownNavigatorWindowService.open(this.config);
+    }
   }
 }

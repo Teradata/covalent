@@ -12,14 +12,15 @@ import { By } from '@angular/platform-browser';
 @Component({
   selector: 'test-component',
   template: `
-    <button [tdMarkdownNavigatorWindow]="items">Open markdown navigator window</button>
+    <button [tdMarkdownNavigatorWindow]="items" [disabled]="disabled">Open markdown navigator window</button>
   `,
 })
 class TestComponent {
   items: IMarkdownNavigatorWindowConfig = { items: [] };
+  disabled: boolean;
 }
 
-fdescribe('MarkdownNavigatorWindowDirective', () => {
+describe('MarkdownNavigatorWindowDirective', () => {
   let overlayContainerElement: HTMLElement;
 
   async function wait(fixture: ComponentFixture<any>): Promise<void> {
@@ -54,6 +55,19 @@ fdescribe('MarkdownNavigatorWindowDirective', () => {
         fixture.debugElement.query(By.css('button')).nativeElement.click();
         await wait(fixture);
         expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeTruthy();
+      },
+    ),
+  ));
+  it('should not open markdown navigator window if disabled', async(
+    inject(
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        fixture.componentInstance.disabled = true;
+        await wait(fixture);
+        fixture.debugElement.query(By.css('button')).nativeElement.click();
+        await wait(fixture);
+        expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeFalsy();
       },
     ),
   ));

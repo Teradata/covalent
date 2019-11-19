@@ -210,7 +210,7 @@
     <mat-tab>
       <ng-template matTabLabel>Demo</ng-template>
       <mat-card-actions>
-        <button mat-button class="text-upper" color="primary" [tdMarkdownNavigatorWindow]="{ items: currentItems }">Open</button>
+        <button mat-button class="text-upper" color="primary" [tdMarkdownNavigatorWindow]="{ items: currentItems }" [disabled]="false">Open</button>
       </mat-card-actions>
     </mat-tab>
     <mat-tab>
@@ -218,7 +218,7 @@
       <mat-card-content>
         <td-highlight lang="html">
           <![CDATA[
-          <button mat-button class="text-upper" color="primary" [tdMarkdownNavigatorWindow]="{ items: currentItems }">Open</button>
+          <button mat-button class="text-upper" color="primary" [tdMarkdownNavigatorWindow]="{ items: currentItems }" [disabled]="false">Open</button>
           ]]>
         </td-highlight>
         <td-highlight lang="typescript">

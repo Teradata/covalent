@@ -177,6 +177,8 @@ A directive that calls the MarkdownNavigatorWindowService open method on click e
 
 + tdMarkdownNavigatorWindow: IMarkdownNavigatorWindowConfig
   + Config to open window with
++ disabled: boolean
+  + Whether disabled or not
 
 For reference:
 ```typescript
@@ -208,5 +210,5 @@ export class MyModule {}
 Example:
 
 ```html
-<button mat-button [tdMarkdownNavigatorWindow]="{ items: [] }">Open window</button>
+<button mat-button [tdMarkdownNavigatorWindow]="{ items: [] }" [disabled]="false">Open window</button>
 ```
