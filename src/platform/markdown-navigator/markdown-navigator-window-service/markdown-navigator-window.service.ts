@@ -55,9 +55,12 @@ export class MarkdownNavigatorWindowService {
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';
     this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe(() => this.close());
-    this.markdownNavigatorWindowDialog.afterClosed().subscribe(() => {
-      this.markdownNavigatorWindowDialogsOpen--;
-    });
+    this.markdownNavigatorWindowDialog
+      .afterClosed()
+      .toPromise()
+      .then(() => {
+        this.markdownNavigatorWindowDialogsOpen--;
+      });
 
     return this.markdownNavigatorWindowDialog;
   }
