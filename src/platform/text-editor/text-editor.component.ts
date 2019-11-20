@@ -1,7 +1,7 @@
 import { Component, Input, AfterViewInit, ViewChild, ElementRef, forwardRef, NgZone } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import * as SimpleMDE from 'simplemde';
-// get access to the marked class under simplemde
+import * as EasyMDE from 'easymde';
+// get access to the marked class under easymde
 import * as marked from 'marked';
 
 const noop: any = () => {
@@ -22,10 +22,10 @@ const noop: any = () => {
 })
 export class TdTextEditorComponent implements AfterViewInit, ControlValueAccessor {
   private _value: string = '';
-  private _simpleMDE: any;
+  private _easyMDE: any;
   private _fromEditor: boolean = false;
 
-  @ViewChild('simplemde', { static: true }) textarea: ElementRef;
+  @ViewChild('easymde', { static: true }) textarea: ElementRef;
   @Input() options: any = {};
 
   constructor(private _zone: NgZone) {}
@@ -41,9 +41,9 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   @Input('value')
   set value(value: string) {
     this._value = value;
-    if (this._simpleMDE) {
+    if (this._easyMDE) {
       if (!this._fromEditor) {
-        this._simpleMDE.value(value);
+        this._easyMDE.value(value);
       }
       this.propagateChange(this._value);
       this._fromEditor = false;
@@ -55,8 +55,8 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
     return this._value;
   }
 
-  get simpleMDE(): any {
-    return this._simpleMDE;
+  get easyMDE(): any {
+    return this._easyMDE;
   }
 
   /**
@@ -77,113 +77,113 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
 
     // If content entered is html then don't evaluate it, prevent xss vulnerabilities
     marked.setOptions({ sanitize: true });
-    this._simpleMDE = new SimpleMDE(this.options);
-    this._simpleMDE.value(this.value);
-    this._simpleMDE.codemirror.on('change', () => {
+    this._easyMDE = new EasyMDE(this.options);
+    this._easyMDE.value(this.value);
+    this._easyMDE.codemirror.on('change', () => {
       this._fromEditor = true;
-      this.writeValue(this._simpleMDE.value());
+      this.writeValue(this._easyMDE.value());
     });
   }
 
-  /* Wrapped function provided by SimpleMDE */
+  /* Wrapped function provided by EasyMDE */
 
   isPreviewActive(): boolean {
-    return this._simpleMDE.isPreviewActive();
+    return this._easyMDE.isPreviewActive();
   }
 
   isSideBySideActive(): boolean {
-    return this._simpleMDE.isSideBySideActive();
+    return this._easyMDE.isSideBySideActive();
   }
 
   isFullscreenActive(): boolean {
-    return this._simpleMDE.isFullscreenActive();
+    return this._easyMDE.isFullscreenActive();
   }
 
   clearAutosavedValue(): void {
-    this._simpleMDE.clearAutosavedValue();
+    this._easyMDE.clearAutosavedValue();
   }
 
   toTextArea(): void {
-    this._simpleMDE.toTextArea();
+    this._easyMDE.toTextArea();
   }
 
   toggleBold(): void {
-    this._simpleMDE.toggleBold();
+    this._easyMDE.toggleBold();
   }
 
   toggleItalic(): void {
-    this._simpleMDE.toggleItalic();
+    this._easyMDE.toggleItalic();
   }
 
   toggleStrikethrough(): void {
-    this._simpleMDE.toggleStrikethrough();
+    this._easyMDE.toggleStrikethrough();
   }
 
   toggleHeadingSmaller(): void {
-    this._simpleMDE.toggleHeadingSmaller();
+    this._easyMDE.toggleHeadingSmaller();
   }
 
   toggleHeadingBigger(): void {
-    this._simpleMDE.toggleHeadingBigger();
+    this._easyMDE.toggleHeadingBigger();
   }
 
   toggleHeading1(): void {
-    this._simpleMDE.toggleHeading1();
+    this._easyMDE.toggleHeading1();
   }
 
   toggleHeading2(): void {
-    this._simpleMDE.toggleHeading2();
+    this._easyMDE.toggleHeading2();
   }
 
   toggleHeading3(): void {
-    this._simpleMDE.toggleHeading3();
+    this._easyMDE.toggleHeading3();
   }
 
   toggleCodeBlock(): void {
-    this._simpleMDE.toggleCodeBlock();
+    this._easyMDE.toggleCodeBlock();
   }
 
   toggleBlockquote(): void {
-    this._simpleMDE.toggleBlockquote();
+    this._easyMDE.toggleBlockquote();
   }
 
   toggleUnorderedList(): void {
-    this._simpleMDE.toggleUnorderedList();
+    this._easyMDE.toggleUnorderedList();
   }
 
   toggleOrderedList(): void {
-    this._simpleMDE.toggleOrderedList();
+    this._easyMDE.toggleOrderedList();
   }
 
   cleanBlock(): void {
-    this._simpleMDE.cleanBlock();
+    this._easyMDE.cleanBlock();
   }
 
   drawLink(): void {
-    this._simpleMDE.drawLink();
+    this._easyMDE.drawLink();
   }
 
   drawImage(): void {
-    this._simpleMDE.drawImage();
+    this._easyMDE.drawImage();
   }
 
   drawTable(): void {
-    this._simpleMDE.drawTable();
+    this._easyMDE.drawTable();
   }
 
   drawHorizontalRule(): void {
-    this._simpleMDE.drawHorizontalRule();
+    this._easyMDE.drawHorizontalRule();
   }
 
   togglePreview(): void {
-    this._simpleMDE.togglePreview();
+    this._easyMDE.togglePreview();
   }
 
   toggleSideBySide(): void {
-    this._simpleMDE.toggleSideBySide();
+    this._easyMDE.toggleSideBySide();
   }
 
   toggleFullScreen(): void {
-    this._simpleMDE.toggleFullScreen();
+    this._easyMDE.toggleFullScreen();
   }
 }
