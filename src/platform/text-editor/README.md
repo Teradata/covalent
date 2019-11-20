@@ -1,6 +1,6 @@
 ## TdTextEditorComponent: td-text-editor
 
-`<td-text-editor>` element generates a simplemde markdown editor.
+`<td-text-editor>` element generates an easymde markdown editor.
 
 ## API Summary
 
@@ -9,7 +9,7 @@
 + value?: string
   + value of text in editor
 + options?: object
-  + Options Object of valid Configurations listed here: <a href="https://github.com/sparksuite/simplemde-markdown-editor#configuration">https://github.com/sparksuite/simplemde-markdown-editor#configuration</a>
+  + Options Object of valid Configurations listed here: <a href="https://github.com/Ionaru/easy-markdown-editor#configuration">https://github.com/Ionaru/easy-markdown-editor#configuration</a>
 
 
 #### Properties
@@ -24,8 +24,8 @@
   + clears Auto Saved Value. Returns void
 + toTextArea?: function()
   + reverts to the Initial textarea. Returns void
-+ simpleMDE?: function()
-  + getter function for the underlying simpleMDE Object. Returns SimpleMDE
++ easyMDE?: function()
+  + getter function for the underlying easyMDE Object. Returns EasyMDE
 
 ## Installation
 
