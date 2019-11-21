@@ -63,6 +63,12 @@ export class OverviewComponent {
       route: ['types', 'graph'],
       title: 'Graph Chart',
     },
+    {
+      color: 'red-500',
+      icon: 'cloud',
+      route: ['types', 'wordcloud'],
+      title: 'Wordcloud Chart',
+    },
   ];
 
   atomicComponents: object[] = [
