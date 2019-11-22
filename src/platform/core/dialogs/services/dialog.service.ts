@@ -1,15 +1,6 @@
-import {
-  Injectable,
-  ViewContainerRef,
-  Provider,
-  SkipSelf,
-  Optional,
-  Inject,
-  Renderer2,
-  RendererFactory2,
-} from '@angular/core';
+import { Injectable, Inject, Renderer2, RendererFactory2 } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
-import { ComponentType, TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
+import { ComponentType } from '@angular/cdk/portal';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
@@ -17,6 +8,8 @@ import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.componen
 import { DragDrop, DragRef } from '@angular/cdk/drag-drop';
 import { DOCUMENT } from '@angular/common';
 import { CovalentDialogsModule } from '../dialogs.module';
+import { Subject } from 'rxjs';
+
 export interface IDialogConfig extends MatDialogConfig {
   title?: string;
   message: string;
@@ -42,6 +35,11 @@ export interface IDraggableConfig<T> {
   dragHandleSelectors?: string[];
   // Class that will be added to the component signifying drag-ability
   draggableClass?: string;
+}
+
+export interface IDraggableRefs<T> {
+  matDialogRef: MatDialogRef<T>;
+  dragRefSubject: Subject<DragRef>;
 }
 
 @Injectable({
@@ -177,21 +175,22 @@ export class TdDialogService {
     config,
     dragHandleSelectors,
     draggableClass,
-  }: IDraggableConfig<T>): MatDialogRef<T> {
-    const dialogRef: MatDialogRef<T, any> = this._dialogService.open(component, config);
+  }: IDraggableConfig<T>): IDraggableRefs<T> {
+    const matDialogRef: MatDialogRef<T, any> = this._dialogService.open(component, config);
+
+    const dragRefSubject: Subject<DragRef> = new Subject<DragRef>();
 
     const CDK_OVERLAY_PANE_SELECTOR: string = '.cdk-overlay-pane';
     const CDK_OVERLAY_CONTAINER_SELECTOR: string = '.cdk-overlay-container';
 
-    dialogRef.afterOpened().subscribe(() => {
-      const dialogElement: HTMLElement = <HTMLElement>this._document.getElementById(dialogRef.id);
+    matDialogRef.afterOpened().subscribe(() => {
+      const dialogElement: HTMLElement = <HTMLElement>this._document.getElementById(matDialogRef.id);
       const draggableElement: DragRef = this._dragDrop.createDrag(dialogElement);
 
       if (draggableClass) {
         const childComponent: Element = dialogElement.firstElementChild;
         this._renderer2.addClass(childComponent, draggableClass);
       }
-
       if (dragHandleSelectors && dragHandleSelectors.length) {
         const dragHandles: Element[] = dragHandleSelectors.reduce(
           (acc: Element[], curr: string) => [...acc, ...Array.from(dialogElement.querySelectorAll(curr))],
@@ -201,18 +200,19 @@ export class TdDialogService {
           draggableElement.withHandles(<HTMLElement[]>dragHandles);
         }
       }
-
       const rootElement: Element = dialogElement.closest(CDK_OVERLAY_PANE_SELECTOR);
       if (rootElement) {
         draggableElement.withRootElement(<HTMLElement>rootElement);
       }
+
       const boundaryElement: Element = dialogElement.closest(CDK_OVERLAY_CONTAINER_SELECTOR);
       if (boundaryElement) {
         draggableElement.withBoundaryElement(<HTMLElement>boundaryElement);
       }
+      dragRefSubject.next(draggableElement);
     });
 
-    return dialogRef;
+    return { matDialogRef, dragRefSubject };
   }
 
   private _createConfig(config: IDialogConfig): MatDialogConfig {

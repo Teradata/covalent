@@ -5,10 +5,14 @@ import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels } from '../markdown-na
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
   title?: string;
   close?: string;
+  minimize?: string;
+  maximize?: string;
 }
 export const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowLabels = {
   title: 'Help',
   close: 'Close',
+  minimize: 'Minimize',
+  maximize: 'Maximize',
 };
 
 @Component({
@@ -21,8 +25,11 @@ export class MarkdownNavigatorWindowComponent {
   @Input() labels: IMarkdownNavigatorWindowLabels;
   @Input() toolbarColor: ThemePalette = 'primary';
   toolbarHeight: number = 56;
+  @Input() isMinimized: boolean = false;
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
+  @Output() minimized: EventEmitter<void> = new EventEmitter();
+  @Output() maximized: EventEmitter<void> = new EventEmitter();
 
   get markdownNavigatorLabels(): IMarkdownNavigatorLabels {
     if (this.labels) {
@@ -40,5 +47,17 @@ export class MarkdownNavigatorWindowComponent {
 
   get closeLabel(): string {
     return (this.labels && this.labels.close) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close;
+  }
+
+  get toggleMinimizeLabel(): string {
+    if (this.isMinimized) {
+      return (this.labels && this.labels.maximize) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.maximize;
+    } else {
+      return (this.labels && this.labels.minimize) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.minimize;
+    }
+  }
+
+  toggleMinimize(): void {
+    this.isMinimized ? this.maximized.emit() : this.minimized.emit();
   }
 }
