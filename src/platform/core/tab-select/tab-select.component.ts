@@ -67,7 +67,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
   /**
    * Gets all tab option children
    */
-  @ContentChildren(TdTabOptionComponent) readonly _tabOptions: QueryList<TdTabOptionComponent>;
+  @ContentChildren(TdTabOptionComponent, { descendants: true }) readonly _tabOptions: QueryList<TdTabOptionComponent>;
 
   get tabOptions(): TdTabOptionComponent[] {
     return this._tabOptions ? this._tabOptions.toArray() : undefined;
@@ -87,12 +87,12 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
   /**
    * Color of the tab group.
    */
-  @Input('color') color: ThemePalette;
+  @Input() color: ThemePalette;
 
   /**
    * Background color of the tab group.
    */
-  @Input('backgroundColor') backgroundColor: ThemePalette;
+  @Input() backgroundColor: ThemePalette;
 
   /**
    * Event that emits whenever the raw value of the select changes. This is here primarily
@@ -141,7 +141,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
    */
   selectedIndexChange(selectedIndex: number): void {
     this._selectedIndex = selectedIndex;
-    let value: any = this._values[selectedIndex];
+    const value: any = this._values[selectedIndex];
     this.value = value;
     this.valueChange.emit(value);
     this.onChange(value);
@@ -162,7 +162,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
    * else set the value of the first tab.
    */
   private _setValue(value: any): void {
-    let index: number = this._values.indexOf(value);
+    const index: number = this._values.indexOf(value);
     if (index > -1) {
       this._selectedIndex = index;
     } else {

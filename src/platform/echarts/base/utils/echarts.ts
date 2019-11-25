@@ -15,7 +15,7 @@ import volcanicEruption from '../themes/volcanic-eruption';
  * Theme name and theme object needed as stated in
  * https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts.registerTheme
  */
-export function registerTheme(themeName: string, theme: Object): void {
+export function registerTheme(themeName: string, theme: object): void {
   echarts.registerTheme(themeName, theme);
 }
 

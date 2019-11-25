@@ -3,12 +3,12 @@
 module.exports = {
   deployed: 'deploy/platform/',
   echartsVersion: '^4.2.1',
-  angularVersion: '^7.0.0 || ^8.0.0',
-  materialVersion: '^7.0.0|| ^8.0.0',
-  showdownVersion: '^1.9.0',
+  angularVersion: '^7.0.0 || ^8.0.0 || ^9.0.0',
+  materialVersion: '^7.0.0|| ^8.0.0 || ^9.0.0',
+  showdownVersion: '^1.9.1',
   highlightVersion: '^9.13.1',
   monacoVersion: '^0.17.0',
-  simplemdeVersion: '^1.11.2',
+  easymde: '^2.8.0',
   paths: {
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',
@@ -30,6 +30,6 @@ module.exports = {
       '!src/platform/core/**/*.md',
       'src/platform/**/*.md',
     ],
-    PostNgPackagerConfigFiles: ['src/platform/core/common/configs/**/*.{js,json}'],
+    PostNgPackagerCodingStandardsPackage: ['src/platform/coding-standards/**/*.{js,json}'],
   },
 };

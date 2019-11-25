@@ -107,11 +107,9 @@ export class TdLoadingComponent implements DoCheck {
   ngDoCheck(): void {
     // When overlay is used and the host width has a value greater than 1px
     // set the circle diameter when possible incase the loading component was rendered in a hidden state
-    if (this.isOverlay() && this._hostHeight() > 1) {
-      if (this.animation) {
-        this._setCircleDiameter();
-        this._changeDetectorRef.markForCheck();
-      }
+    if (this.isOverlay() && this._hostHeight() > 1 && this.animation) {
+      this._setCircleDiameter();
+      this._changeDetectorRef.markForCheck();
     }
   }
 
@@ -131,7 +129,7 @@ export class TdLoadingComponent implements DoCheck {
 
   getCircleStrokeWidth(): number {
     // we calculate the stroke width by setting it as 10% of its diameter
-    let strokeWidth: number = this.getCircleDiameter() / 10;
+    const strokeWidth: number = this.getCircleDiameter() / 10;
     return Math.abs(strokeWidth);
   }
 
@@ -161,7 +159,7 @@ export class TdLoadingComponent implements DoCheck {
   }
 
   inAnimationCompleted(): void {
-    this._animationIn.next(undefined);
+    this._animationIn.next();
   }
 
   outAnimationCompleted(): void {
@@ -172,7 +170,7 @@ export class TdLoadingComponent implements DoCheck {
     this.value = 0;
     // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
-    this._animationOut.next(undefined);
+    this._animationOut.next();
   }
 
   /**

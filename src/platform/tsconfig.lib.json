@@ -12,6 +12,7 @@
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "fullTemplateTypeCheck": true,
-    "enableResourceInlining": true
+    "enableResourceInlining": true,
+    "enableIvy": false
   }
 }

@@ -15,9 +15,9 @@ export class TdDialogActionsDirective {}
   styleUrls: ['./dialog.component.scss'],
 })
 export class TdDialogComponent implements AfterContentInit {
-  @ContentChildren(TdDialogTitleDirective) dialogTitle: QueryList<TdDialogTitleDirective>;
-  @ContentChildren(TdDialogContentDirective) dialogContent: QueryList<TdDialogContentDirective>;
-  @ContentChildren(TdDialogActionsDirective) dialogActions: QueryList<TdDialogActionsDirective>;
+  @ContentChildren(TdDialogTitleDirective, { descendants: true }) dialogTitle: QueryList<TdDialogTitleDirective>;
+  @ContentChildren(TdDialogContentDirective, { descendants: true }) dialogContent: QueryList<TdDialogContentDirective>;
+  @ContentChildren(TdDialogActionsDirective, { descendants: true }) dialogActions: QueryList<TdDialogActionsDirective>;
 
   ngAfterContentInit(): void {
     if (this.dialogTitle.length > 1) {

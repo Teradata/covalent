@@ -23,7 +23,7 @@ describe('ng-add schematic', () => {
   let appTree: UnitTestTree;
 
   beforeEach(async () => {
-    let workspaceTree: UnitTestTree = await testRunner
+    const workspaceTree: UnitTestTree = await testRunner
       .runExternalSchematicAsync('@schematics/angular', 'workspace', workspaceOptions)
       .toPromise();
     appTree = await testRunner
@@ -45,8 +45,8 @@ describe('ng-add schematic', () => {
     const packageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
     const dependencies: any = packageJson.dependencies;
 
-    let expectedCovalentVersion: string = `~${covalentCoreVersion}`;
-    let expectedMaterialVersion: string = `~${materialVersion}`;
+    const expectedCovalentVersion: string = `~${covalentCoreVersion}`;
+    const expectedMaterialVersion: string = `~${materialVersion}`;
 
     expectVersionToBe(dependencies, '@covalent/core', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/dynamic-forms', expectedCovalentVersion);

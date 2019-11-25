@@ -25,21 +25,21 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
 
   _context: TdTooltipContext = new TdTooltipContext();
 
-  @Input('config') config: any;
+  @Input() config: any;
 
-  @Input('formatter') formatter: any;
+  @Input() formatter: any;
   // Parent tooltip trigger must be set to 'item' to render these properties
-  @Input('position') position: string | string[] | number[];
-  @Input('backgroundColor') backgroundColor: string = 'rgba(50,50,50,0.7)';
-  @Input('borderColor') borderColor: string = '#333';
-  @Input('borderWidth') borderWidth: number = 0;
-  @Input('padding') padding: number = 5;
-  @Input('textStyle') textStyle: any = {
+  @Input() position: string | string[] | number[];
+  @Input() backgroundColor: string = 'rgba(50,50,50,0.7)';
+  @Input() borderColor: string = '#333';
+  @Input() borderWidth: number = 0;
+  @Input() padding: number = 5;
+  @Input() textStyle: any = {
     color: '#FFF',
   };
-  @Input('extraCssText') extraCssText: string;
+  @Input() extraCssText: string;
 
-  @ContentChild(TdChartTooltipFormatterDirective, { read: TemplateRef, static: false }) formatterTemplate: TemplateRef<
+  @ContentChild(TdChartTooltipFormatterDirective, { read: TemplateRef, static: true }) formatterTemplate: TemplateRef<
     any
   >;
   @ViewChild('tooltipContent', { static: true }) fullTemplate: TemplateRef<any>;
@@ -59,7 +59,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         position: this.position,
@@ -81,11 +81,11 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
    * Formatter for tooltip
    *
    */
-  private _formatter(): Function {
+  private _formatter(): (params: any, ticket: any, callback: (ticket: string, html: string) => void) => string {
     return (params: any, ticket: any, callback: (ticket: string, html: string) => void) => {
       this._context = {
         $implicit: params,
-        ticket: ticket,
+        ticket,
       };
       // timeout set since we need to set the HTML at the end of the angular lifecycle when
       // the tooltip delay is more than 0

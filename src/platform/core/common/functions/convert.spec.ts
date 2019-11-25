@@ -3,7 +3,10 @@ import { convertObjectsToCSV, convertCSVToJSON } from './convert';
 describe('Convert', () => {
   describe('Object to CSV conversion', () => {
     it('conversion with various parameter options', () => {
-      const objects: object[] = [{ name: 'user1', id: 123 }, { name: 'user2', id: 234 }];
+      const objects: object[] = [
+        { name: 'user1', id: 123 },
+        { name: 'user2', id: 234 },
+      ];
       const expectedStr: string = 'name,id\r\nuser1,123\r\nuser2,234\r\n';
       const expectedStrCustomKeySeparator: string = 'name|id\r\nuser1|123\r\nuser2|234\r\n';
       const expectedStrCustomLineSeparator: string = 'name,id|user1,123|user2,234|';
@@ -11,8 +14,8 @@ describe('Convert', () => {
 
       expect(convertObjectsToCSV(undefined)).toEqual('');
       expect(convertObjectsToCSV([])).toEqual('');
-      expect(convertObjectsToCSV(objects, undefined)).toEqual(expectedStr);
-      expect(convertObjectsToCSV(objects, '|', undefined)).toEqual(expectedStrCustomKeySeparator);
+      expect(convertObjectsToCSV(objects)).toEqual(expectedStr);
+      expect(convertObjectsToCSV(objects, '|')).toEqual(expectedStrCustomKeySeparator);
       expect(convertObjectsToCSV(objects, undefined, '|')).toEqual(expectedStrCustomLineSeparator);
       expect(convertObjectsToCSV(objects)).toEqual(expectedStr);
       expect(convertObjectsToCSV(objects, '|')).toEqual(expectedStrCustomKeySeparator);
@@ -32,8 +35,8 @@ describe('Convert', () => {
 
       expect(convertCSVToJSON(undefined)).toEqual('');
       expect(convertCSVToJSON('')).toEqual('');
-      expect(convertCSVToJSON(csv, undefined)).toEqual(expectedJSON);
-      expect(convertCSVToJSON(csvCustomKeySeparator, '|', undefined)).toEqual(expectedJSON);
+      expect(convertCSVToJSON(csv)).toEqual(expectedJSON);
+      expect(convertCSVToJSON(csvCustomKeySeparator, '|')).toEqual(expectedJSON);
       expect(convertCSVToJSON(csvCustomLineSeparator, undefined, '|')).toEqual(expectedJSON);
       expect(convertCSVToJSON(csv)).toEqual(expectedJSON);
       expect(convertCSVToJSON(csvCustomKeySeparator, '|')).toEqual(expectedJSON);

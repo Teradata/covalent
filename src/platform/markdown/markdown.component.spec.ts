@@ -63,24 +63,24 @@ describe('Component: Markdown', () => {
 
   describe('Rendering: ', () => {
     it('should render empty static content', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownEmptyStaticContentTestRenderingComponent);
-      let component: TdMarkdownEmptyStaticContentTestRenderingComponent = fixture.debugElement.componentInstance;
-      let element: HTMLElement = fixture.nativeElement;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdMarkdownEmptyStaticContentTestRenderingComponent,
+      );
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe(``);
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+        expect(element.querySelector('td-markdown div')).toBeFalsy();
         expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe('');
       });
     }));
 
     it('should render markup from static content', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownStaticContentTestRenderingComponent);
-      let component: TdMarkdownStaticContentTestRenderingComponent = fixture.debugElement.componentInstance;
-      let element: HTMLElement = fixture.nativeElement;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownStaticContentTestRenderingComponent);
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe(
         `
@@ -88,21 +88,21 @@ describe('Component: Markdown', () => {
 
         * list item`.trim(),
       );
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+        expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(element.querySelector('td-markdown div h1').textContent.trim()).toBe('title');
         expect(element.querySelector('td-markdown div ul li').textContent.trim()).toBe('list item');
       });
     }));
 
     it('should render newlines as <br/> if simpleLineBreaks is true', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownSimpleLineBreaksTestRenderingComponent);
-      let component: TdMarkdownSimpleLineBreaksTestRenderingComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownSimpleLineBreaksTestRenderingComponent);
+      const component: TdMarkdownSimpleLineBreaksTestRenderingComponent = fixture.debugElement.componentInstance;
       component.simpleLineBreaks = true;
-      let element: HTMLElement = fixture.nativeElement;
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe(
         `
@@ -111,20 +111,23 @@ describe('Component: Markdown', () => {
         third line
         `.trim(),
       );
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
-        expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(2);
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(element.querySelector('td-markdown div')).toBeTruthy();
+          expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(2);
+        });
       });
     }));
 
     it('should not render newlines as <br/> if simpleLineBreaks is false', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownSimpleLineBreaksTestRenderingComponent);
-      let component: TdMarkdownSimpleLineBreaksTestRenderingComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownSimpleLineBreaksTestRenderingComponent);
+      const component: TdMarkdownSimpleLineBreaksTestRenderingComponent = fixture.debugElement.componentInstance;
       component.simpleLineBreaks = false;
-      let element: HTMLElement = fixture.nativeElement;
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe(
         `
@@ -133,18 +136,21 @@ describe('Component: Markdown', () => {
         third line
         `.trim(),
       );
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
-        expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(0);
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(element.querySelector('td-markdown div')).toBeTruthy();
+          expect(element.querySelector('td-markdown').querySelectorAll('br').length).toBe(0);
+        });
       });
     }));
 
     it('should render markup from dynamic content', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownDymanicContentTestRenderingComponent);
-      let component: TdMarkdownDymanicContentTestRenderingComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownDymanicContentTestRenderingComponent);
+      const component: TdMarkdownDymanicContentTestRenderingComponent = fixture.debugElement.componentInstance;
       component.content = `
       # another title
 
@@ -153,14 +159,14 @@ describe('Component: Markdown', () => {
       \`\`\`
       pseudo code
       \`\`\``;
-      let element: HTMLElement = fixture.nativeElement;
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe('');
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+        expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(element.querySelector('td-markdown div h1').textContent.trim()).toBe('another title');
         expect(element.querySelector('td-markdown div h2').textContent.trim()).toBe('subtitle');
         expect(element.querySelector('td-markdown div code').textContent.trim()).toBe('pseudo code');
@@ -168,20 +174,20 @@ describe('Component: Markdown', () => {
     }));
 
     it('should render markup from dynamic content incorrectly', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownDymanicContentTestRenderingComponent);
-      let component: TdMarkdownDymanicContentTestRenderingComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownDymanicContentTestRenderingComponent);
+      const component: TdMarkdownDymanicContentTestRenderingComponent = fixture.debugElement.componentInstance;
       component.content = `
       # another title
 
         ## subtitle`;
-      let element: HTMLElement = fixture.nativeElement;
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(fixture.debugElement.query(By.css('td-markdown')).nativeElement.textContent.trim()).toBe('');
-      expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeFalsy();
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect(fixture.debugElement.query(By.css('td-markdown div'))).toBeTruthy();
+        expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(element.querySelector('td-markdown div h1').textContent.trim()).toBe('another title');
         expect(element.querySelector('td-markdown div h2')).toBeFalsy();
         expect(element.querySelector('td-markdown div').textContent.trim()).toContain('## subtitle');
@@ -417,10 +423,10 @@ describe('Component: Markdown', () => {
   describe('Event bindings: ', () => {
     describe('contentReady event: ', () => {
       it('should be fired only once after display renders empty static content', async(() => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownEmptyStaticContentTestEventsComponent);
-        let component: TdMarkdownEmptyStaticContentTestEventsComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownEmptyStaticContentTestEventsComponent);
+        const component: TdMarkdownEmptyStaticContentTestEventsComponent = fixture.debugElement.componentInstance;
 
-        let eventSpy: jasmine.Spy = spyOn(component, 'tdMarkdownContentIsReady');
+        const eventSpy: jasmine.Spy = spyOn(component, 'tdMarkdownContentIsReady');
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -430,10 +436,10 @@ describe('Component: Markdown', () => {
       }));
 
       it('should be fired only once after display renders markup from static content', async(() => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownStaticContentTestEventsComponent);
-        let component: TdMarkdownStaticContentTestEventsComponent = fixture.debugElement.componentInstance;
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownStaticContentTestEventsComponent);
+        const component: TdMarkdownStaticContentTestEventsComponent = fixture.debugElement.componentInstance;
 
-        let eventSpy: jasmine.Spy = spyOn(component, 'tdMarkdownContentIsReady');
+        const eventSpy: jasmine.Spy = spyOn(component, 'tdMarkdownContentIsReady');
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -443,9 +449,9 @@ describe('Component: Markdown', () => {
       }));
 
       it('should be fired only once after display renders initial markup from dynamic content', async(() => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownDynamicContentTestEventsComponent);
-        let component: TdMarkdownDynamicContentTestEventsComponent = fixture.debugElement.componentInstance;
-        let eventSpy: jasmine.Spy = spyOn(component, 'tdMarkdownContentIsReady');
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownDynamicContentTestEventsComponent);
+        const component: TdMarkdownDynamicContentTestEventsComponent = fixture.debugElement.componentInstance;
+        const eventSpy: jasmine.Spy = spyOn(component, 'tdMarkdownContentIsReady');
 
         // Inital dynamic content
         component.content = `
@@ -465,9 +471,9 @@ describe('Component: Markdown', () => {
       }));
 
       it(`should be fired twice after changing the initial rendered markup dynamic content`, async(() => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownDynamicContentTestEventsComponent);
-        let component: TdMarkdownDynamicContentTestEventsComponent = fixture.debugElement.componentInstance;
-        let eventSpy: jasmine.Spy = spyOn(component, 'tdMarkdownContentIsReady');
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownDynamicContentTestEventsComponent);
+        const component: TdMarkdownDynamicContentTestEventsComponent = fixture.debugElement.componentInstance;
+        const eventSpy: jasmine.Spy = spyOn(component, 'tdMarkdownContentIsReady');
 
         component.content = `
         # another title

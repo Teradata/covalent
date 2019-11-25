@@ -29,7 +29,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   private _mode: StepMode = StepMode.Vertical;
   private _steps: QueryList<TdStepComponent>;
 
-  @ContentChildren(TdStepComponent)
+  @ContentChildren(TdStepComponent, { descendants: true })
   set stepsContent(steps: QueryList<TdStepComponent>) {
     if (steps) {
       this._steps = steps;
@@ -48,12 +48,10 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
    */
   @Input('mode')
   set mode(mode: StepMode) {
-    switch (mode) {
-      case StepMode.Horizontal:
-        this._mode = StepMode.Horizontal;
-        break;
-      default:
-        this._mode = StepMode.Vertical;
+    if (mode === StepMode.Horizontal) {
+      this._mode = StepMode.Horizontal;
+    } else {
+      this._mode = StepMode.Vertical;
     }
   }
   get mode(): StepMode {
@@ -62,14 +60,14 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
 
   /**
    * stepChange?: function
-   * Method to be executed when [onStepChange] event is emitted.
+   * Method to be executed when [stepChange] event is emitted.
    * Emits an [IStepChangeEvent] implemented object.
    */
-  @Output('stepChange') onStepChange: EventEmitter<IStepChangeEvent> = new EventEmitter<IStepChangeEvent>();
+  @Output() stepChange: EventEmitter<IStepChangeEvent> = new EventEmitter<IStepChangeEvent>();
 
   /**
    * Executed after content is initialized, loops through any [TdStepComponent] children elements,
-   * assigns them a number and subscribes as an observer to their [onActivated] event.
+   * assigns them a number and subscribes as an observer to their [activated] event.
    */
   ngAfterContentInit(): void {
     this._registerSteps();
@@ -106,18 +104,18 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
 
   /**
    * Wraps previous and new [TdStepComponent] numbers in an object that implements [IStepChangeEvent]
-   * and emits [onStepChange] event.
+   * and emits [stepChange] event.
    */
   private _onStepSelection(step: TdStepComponent): void {
     if (this.prevStep !== step) {
-      let prevStep: TdStepComponent = this.prevStep;
+      const prevStep: TdStepComponent = this.prevStep;
       this.prevStep = step;
-      let event: IStepChangeEvent = {
+      const event: IStepChangeEvent = {
         newStep: step,
-        prevStep: prevStep,
+        prevStep,
       };
       this._deactivateAllBut(step);
-      this.onStepChange.emit(event);
+      this.stepChange.emit(event);
     }
   }
 
@@ -135,7 +133,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   private _registerSteps(): void {
     this._subcriptions = [];
     this._steps.toArray().forEach((step: TdStepComponent) => {
-      let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
+      const subscription: Subscription = step.activated.asObservable().subscribe(() => {
         this._onStepSelection(step);
       });
       this._subcriptions.push(subscription);

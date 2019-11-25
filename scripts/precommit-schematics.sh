@@ -19,5 +19,4 @@ ng g @covalent/core:ng-add
 
 # Check generated files
 git status
-npm install
-
+npm ci

@@ -31,7 +31,7 @@ describe('Service: Loading', () => {
 
   it('should render default fullscreen loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       loadingService.register();
@@ -54,7 +54,7 @@ describe('Service: Loading', () => {
 
   it('should render configured progress bar, accent fullscreen loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       loadingService.create({
         name: 'name',
         type: LoadingType.Linear,
@@ -82,7 +82,7 @@ describe('Service: Loading', () => {
 
   it('should render configured progress bar, accent fullscreen loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       loadingService.create({
         name: 'name',
         type: LoadingType.Linear,
@@ -110,7 +110,6 @@ describe('Service: Loading', () => {
 
   it('should throw error when trying to create loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(function(): void {
         loadingService.create({
           name: undefined,
@@ -124,7 +123,7 @@ describe('Service: Loading', () => {
 
   it('should remove overriding loading component with the same name if fullscreen', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(function(): void {
         loadingService.create({
           name: 'name',
@@ -146,7 +145,6 @@ describe('Service: Loading', () => {
 
   it('should fail to resolve/setValue/register unknown names', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(loadingService.register('unknown')).toBeFalsy();
       expect(loadingService.setValue('unknown', 50)).toBeFalsy();
       expect(loadingService.resolve('unknown')).toBeFalsy();
@@ -156,7 +154,7 @@ describe('Service: Loading', () => {
 
   it('should render default fullscreen by registering 3 times and then resolve by calling resolveAll', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       loadingService.register();

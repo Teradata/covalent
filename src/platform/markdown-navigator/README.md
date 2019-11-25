@@ -148,20 +148,65 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 export class SampleComponent{
 
-  ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
-
   constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
   ngOnInit(): void {
-    this.ref = this._markdownNavigatorWindowService.open({
+    const ref: MatDialogRef<MarkdownNavigatorWindowComponent> = this._markdownNavigatorWindowService.open({
       items: [{ url: 'https://github.com/Teradata/covalent/blob/develop/README.md' }]
     });
-    this.ref.afterOpened().subscribe(() => {
+    ref.afterOpened().subscribe(() => {
 
     });
-    this.ref.afterClosed().subscribe(() => {
+    ref.afterClosed().subscribe(() => {
 
     });
   }
 }
+```
+
+
+# MarkdownNavigatorWindowDirective
+
+A directive that calls the MarkdownNavigatorWindowService open method on click events.
+
+## API Summary
+
+#### Inputs
+
++ tdMarkdownNavigatorWindow: IMarkdownNavigatorWindowConfig
+  + Config to open window with
++ disabled: boolean
+  + Whether disabled or not
+
+For reference:
+```typescript
+interface IMarkdownNavigatorWindowConfig {
+  items: IMarkdownNavigatorItem[];
+  dialogConfig?: MatDialogConfig;
+  labels?: IMarkdownNavigatorWindowLabels;
+  toolbarColor?: ThemePalette;
+}
+```
+
+## Setup
+
+```typescript
+import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+@NgModule({
+  imports: [
+    CovalentMarkdownNavigatorModule,
+    ...
+  ],
+  ...
+})
+export class MyModule {}
+```
+
+
+## Usage
+
+Example:
+
+```html
+<button mat-button [tdMarkdownNavigatorWindow]="{ items: [] }" [disabled]="false">Open window</button>
 ```

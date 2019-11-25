@@ -22,7 +22,10 @@ import {
 })
 export class FunctionsDemoComponent {
   copyText: string = 'Lorem Ipsum';
-  objects: object[] = [{ name: 'user1', id: 123 }, { name: 'user2', id: 234 }];
+  objects: object[] = [
+    { name: 'user1', id: 123 },
+    { name: 'user2', id: 234 },
+  ];
   objectsString: string;
   csvOutput: string = '';
   csv: string = 'name,id\r\nuser1,123\r\nuser2,234\r\n';
@@ -131,7 +134,7 @@ export class FunctionsDemoComponent {
   }
 
   async doReadFile(event: any): Promise<void> {
-    let file: File = event.srcElement.files[0];
+    const file: File = event.srcElement.files[0];
     this.readFileContent = await readFile(file);
   }
 }

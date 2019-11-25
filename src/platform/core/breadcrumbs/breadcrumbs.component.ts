@@ -33,14 +33,14 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   private _resizing: boolean = false;
 
   // all the sub components, which are the individual breadcrumbs
-  @ContentChildren(TdBreadcrumbComponent) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
+  @ContentChildren(TdBreadcrumbComponent, { descendants: true }) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
   // the list of hidden breadcrumbs not shown right now (responsive)
   hiddenBreadcrumbs: TdBreadcrumbComponent[] = [];
 
   /**
    * Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
    */
-  @Input('separatorIcon') separatorIcon: string = 'chevron_right';
+  @Input() separatorIcon: string = 'chevron_right';
 
   constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
 
@@ -79,15 +79,15 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
    * Current width of the element container
    */
   get nativeElementWidth(): number {
-    let element: HTMLElement = <HTMLElement>this._elementRef.nativeElement;
+    const element: HTMLElement = <HTMLElement>this._elementRef.nativeElement;
     // Need to take into account border, margin and padding that might be around all the crumbs
-    let style: CSSStyleDeclaration = window.getComputedStyle(element);
-    let borderLeft: number = parseInt(style.borderLeft, 10);
-    let borderRight: number = parseInt(style.borderRight, 10);
-    let marginLeft: number = parseInt(style.marginLeft, 10);
-    let marginRight: number = parseInt(style.marginRight, 10);
-    let paddingLeft: number = parseInt(style.paddingLeft, 10);
-    let paddingRight: number = parseInt(style.paddingRight, 10);
+    const style: CSSStyleDeclaration = window.getComputedStyle(element);
+    const borderLeft: number = parseInt(style.borderLeft, 10);
+    const borderRight: number = parseInt(style.borderRight, 10);
+    const marginLeft: number = parseInt(style.marginLeft, 10);
+    const marginRight: number = parseInt(style.marginRight, 10);
+    const paddingLeft: number = parseInt(style.paddingLeft, 10);
+    const paddingRight: number = parseInt(style.paddingRight, 10);
 
     return (
       element.getBoundingClientRect().width -
@@ -111,7 +111,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
    * Set the crumb icon separators
    */
   private setCrumbIcons(): void {
-    let breadcrumbArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
+    const breadcrumbArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
     if (breadcrumbArray.length > 0) {
       // don't show the icon on the last breadcrumb
       breadcrumbArray[breadcrumbArray.length - 1]._displayIcon = false;
@@ -122,12 +122,12 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   }
 
   private _calculateVisibility(): void {
-    let crumbsArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
+    const crumbsArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
     let crumbWidthSum: number = 0;
-    let hiddenCrumbs: TdBreadcrumbComponent[] = [];
+    const hiddenCrumbs: TdBreadcrumbComponent[] = [];
     // loop through crumbs in reverse order to calculate which ones should be removed
     for (let i: number = crumbsArray.length - 1; i >= 0; i--) {
-      let breadcrumb: TdBreadcrumbComponent = crumbsArray[i];
+      const breadcrumb: TdBreadcrumbComponent = crumbsArray[i];
       // if crumb exceeds width, then we skip it from the sum and add it into the hiddencrumbs array
       // and hide it
       if (crumbWidthSum + breadcrumb.width > this.nativeElementWidth) {

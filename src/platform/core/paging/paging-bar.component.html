@@ -19,7 +19,7 @@
         class="td-paging-bar-link-page"
         mat-icon-button
         type="button"
-        [color]="page === link ? 'accent' : ''"
+        [color]="page === link ? 'accent' : undefined"
         (click)="navigateToPage(link)"
       >
         {{ link }}

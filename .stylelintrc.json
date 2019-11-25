@@ -1,4 +1,0 @@
-{
-  "extends": ["./src/platform/core/common/configs/stylelint/.stylelintrc.json", "stylelint-config-prettier"],
-  "ignoreFiles": "./src/platform/core/schematics/ng-add/files/**"
-}

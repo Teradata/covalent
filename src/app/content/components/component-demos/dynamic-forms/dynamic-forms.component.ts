@@ -206,7 +206,7 @@ export class DynamicFormsDemoComponent {
       validators: [
         {
           validator: (control: AbstractControl) => {
-            let isValid: boolean = control.value.length <= 2;
+            const isValid: boolean = control.value.length <= 2;
             return !isValid ? { invalidChips: true } : undefined;
           },
         },
@@ -240,7 +240,7 @@ export class DynamicFormsDemoComponent {
       validators: [
         {
           validator: (control: AbstractControl) => {
-            let isValid: boolean = (!control.value && control.value !== 0) || control.value % 2 === 0;
+            const isValid: boolean = (!control.value && control.value !== 0) || control.value % 2 === 0;
             return !isValid ? { even: true } : undefined;
           },
         },
@@ -255,7 +255,7 @@ export class DynamicFormsDemoComponent {
       validators: [
         {
           validator: (control: AbstractControl) => {
-            let isValid: boolean = (!control.value && control.value !== 0) || control.value % 2 !== 0;
+            const isValid: boolean = (!control.value && control.value !== 0) || control.value % 2 !== 0;
             return !isValid ? { odd: true } : undefined;
           },
         },
@@ -272,20 +272,22 @@ export class DynamicFormsDemoComponent {
       validators: [
         {
           validator: (control: AbstractControl) => {
-            let isValid: boolean = /\d/i.test(control.value);
+            const isValid: boolean = /\d/i.test(control.value);
             return !isValid ? { oneNumber: true } : undefined;
           },
         },
         {
           validator: (control: AbstractControl) => {
-            let isValid: boolean = control.value && control.value.length >= 8 && control.value.length <= 20;
+            const isValid: boolean = control.value && control.value.length >= 8 && control.value.length <= 20;
             return !isValid ? { length: true } : undefined;
           },
         },
         {
           validator: (control: AbstractControl) => {
-            let validCharacters: string[] = ['!', '@', '#', '$', '%'];
-            let isValid: boolean = new RegExp('[' + validCharacters.join('').toString() + ']', 'g').test(control.value);
+            const validCharacters: string[] = ['!', '@', '#', '$', '%'];
+            const isValid: boolean = new RegExp('[' + validCharacters.join('').toString() + ']', 'g').test(
+              control.value,
+            );
             return !isValid ? { oneSpecialChar: true } : undefined;
           },
         },
@@ -316,7 +318,7 @@ export class DynamicFormsDemoComponent {
   ];
 
   submitManualValidator(): void {
-    let key: string = 'vowelsElement';
+    const key: string = 'vowelsElement';
     const control: AbstractControl = this.manualValidateForm.controls[key];
     if (control.value.match(/[^aeiou]/)) {
       this.manualValidateForm.controls[key].setErrors({

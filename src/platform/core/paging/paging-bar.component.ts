@@ -44,13 +44,13 @@ export class TdPagingBarComponent implements OnInit {
    * firstLast?: boolean
    * Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
    */
-  @Input('firstLast') firstLast: boolean = true;
+  @Input() firstLast: boolean = true;
 
   /**
    * initialPage?: number
    * Sets starting page for the paging bar. Defaults to '1'
    */
-  @Input('initialPage') initialPage: number = 1;
+  @Input() initialPage: number = 1;
 
   /**
    * pageLinkCount?: number
@@ -135,7 +135,7 @@ export class TdPagingBarComponent implements OnInit {
    * Method to be executed when page size changes or any button is clicked in the paging bar.
    * Emits an [IPageChangeEvent] implemented object.
    */
-  @Output('change') onChange: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
+  @Output() change: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
 
   get isRTL(): boolean {
     if (this._dir) {
@@ -208,7 +208,7 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   private _calculateRows(): void {
-    let top: number = this._pageSize * this._page;
+    const top: number = this._pageSize * this._page;
     this._fromRow = this._pageSize * (this._page - 1) + 1;
     this._toRow = this._total > top ? top : this._total;
   }
@@ -236,7 +236,7 @@ export class TdPagingBarComponent implements OnInit {
     // reset the pageLinks array
     this._pageLinks = [];
     // fill in the array with the pageLinks based on the current selected page
-    let middlePageLinks: number = Math.floor(actualPageLinkCount / 2);
+    const middlePageLinks: number = Math.floor(actualPageLinkCount / 2);
     for (let x: number = 0; x < actualPageLinkCount; x++) {
       // don't go past the maxPage in the pageLinks
       // have to handle even and odd pageLinkCounts differently so can still lead to the next numbers
@@ -266,7 +266,7 @@ export class TdPagingBarComponent implements OnInit {
   private _handleOnChange(): void {
     this._calculateRows();
     this._calculatePageLinks();
-    let event: IPageChangeEvent = {
+    const event: IPageChangeEvent = {
       page: this._page,
       maxPage: this.maxPage,
       pageSize: this._pageSize,
@@ -275,6 +275,6 @@ export class TdPagingBarComponent implements OnInit {
       toRow: this._toRow,
     };
     this._changeDetectorRef.markForCheck();
-    this.onChange.emit(event);
+    this.change.emit(event);
   }
 }

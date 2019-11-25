@@ -22,7 +22,7 @@ function updateNonCorePackageDependencies(host: Tree, _context: SchematicContext
 
 export function updatePackageInPackageJson(host: Tree, pkgs: string[], version: string): Tree {
   if (host.exists('package.json')) {
-    const sourceText: string = host.read('package.json')!.toString('utf-8');
+    const sourceText: string = host.read('package.json').toString('utf-8');
     const json: any = JSON.parse(sourceText);
 
     if (!json.dependencies) {

@@ -39,7 +39,7 @@ describe('MarkdownNavigatorWindowService', () => {
   let overlayContainerElement: HTMLElement;
 
   function getMarkdownNavigator(): HTMLElement {
-    return <HTMLElement>overlayContainerElement.querySelector(`td-markdown-navigator`);
+    return overlayContainerElement.querySelector(`td-markdown-navigator`);
   }
 
   beforeEach(async(() => {
@@ -50,7 +50,7 @@ describe('MarkdownNavigatorWindowService', () => {
         {
           provide: OverlayContainer,
           useFactory: () => {
-            overlayContainerElement = document.createElement('div') as HTMLElement;
+            overlayContainerElement = document.createElement('div');
             overlayContainerElement.classList.add('cdk-overlay-container');
             document.body.appendChild(overlayContainerElement);
             return { getContainerElement: () => overlayContainerElement };
@@ -70,10 +70,10 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(getMarkdownNavigator()).toBeTruthy();
-
+        // tslint:disable-next-line:no-useless-cast
         (<HTMLElement>(
           overlayContainerElement.querySelector(`td-markdown-navigator-window .td-markdown-navigator-window-close`)
         )).click();
@@ -93,7 +93,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.items).toEqual([]);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(0);
@@ -113,7 +113,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.items).toEqual(RAW_MARKDOWN_ITEMS);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(2);
@@ -135,7 +135,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.labels).toEqual({});
         expect(getMarkdownNavigator().textContent).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
@@ -151,7 +151,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.labels).toEqual(SAMPLE_LABELS);
         expect(getMarkdownNavigator().textContent).toContain(SAMPLE_LABELS.emptyState);
@@ -172,7 +172,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('primary');
 
@@ -192,7 +192,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('accent');
 
@@ -202,7 +202,7 @@ describe('MarkdownNavigatorWindowService', () => {
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'primary' });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('primary');
 
@@ -212,7 +212,7 @@ describe('MarkdownNavigatorWindowService', () => {
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'warn' });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('warn');
 
@@ -222,7 +222,7 @@ describe('MarkdownNavigatorWindowService', () => {
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: undefined });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe(undefined);
 
@@ -242,7 +242,7 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(overlayContainerElement.querySelector(`.td-draggable-markdown-navigator-window-wrapper`)).toBeTruthy();
         expect(
@@ -255,6 +255,29 @@ describe('MarkdownNavigatorWindowService', () => {
 
         dialogRef.close();
         await wait(fixture);
+      },
+    ),
+  ));
+
+  it('should only have one markdown navigator open at a time', async(
+    inject(
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        expect(overlayContainerElement.querySelectorAll(`td-markdown-navigator`).length).toBe(0);
+        expect(_markdownNavigatorWindowService.isOpen).toBeFalsy();
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        await wait(fixture);
+        expect(overlayContainerElement.querySelectorAll(`td-markdown-navigator`).length).toBe(1);
+        expect(_markdownNavigatorWindowService.isOpen).toBeTruthy();
       },
     ),
   ));

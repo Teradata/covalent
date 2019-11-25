@@ -4,6 +4,7 @@ import { LayoutToggle } from '../layout-toggle.class';
 
 @Directive({
   selector: '[tdLayoutNavListToggle]',
+  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutNavListToggleDirective extends LayoutToggle {
   @Input('tdLayoutNavListToggle')
@@ -26,6 +27,7 @@ export class TdLayoutNavListToggleDirective extends LayoutToggle {
 
 @Directive({
   selector: '[tdLayoutNavListClose]',
+  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutNavListCloseDirective extends LayoutToggle {
   @Input('tdLayoutNavListClose')
@@ -48,6 +50,7 @@ export class TdLayoutNavListCloseDirective extends LayoutToggle {
 
 @Directive({
   selector: '[tdLayoutNavListOpen]',
+  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutNavListOpenDirective extends LayoutToggle {
   @Input('tdLayoutNavListOpen')

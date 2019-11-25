@@ -16,7 +16,7 @@ export class PipesComponent {
   currentDate: Date = new Date();
   currentTimeStamp: string = this.currentDate.toISOString();
 
-  public logs: Object[] = [
+  public logs: object[] = [
     {
       bytes: 72452903343,
       digits: 0.03243,

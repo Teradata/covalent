@@ -22,19 +22,19 @@ describe('ControlValueAccessorMixin', () => {
 class TestClass {
   /** Fake instance of an ChangeDetectorRef. */
   _changeDetectorRef: ChangeDetectorRef = {
-    markForCheck: function(): void {
+    markForCheck(): void {
       /* empty */
     },
-    detach: function(): void {
+    detach(): void {
       /* empty */
     },
-    detectChanges: function(): void {
+    detectChanges(): void {
       /* empty */
     },
-    checkNoChanges: function(): void {
+    checkNoChanges(): void {
       /* empty */
     },
-    reattach: function(): void {
+    reattach(): void {
       /* empty */
     },
   };

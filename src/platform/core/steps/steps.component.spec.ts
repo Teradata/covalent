@@ -15,8 +15,8 @@ describe('Component: Steps', () => {
 
   it('should render vertical step with label, sublabel and content hidden', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
-      let component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
+      const component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
       component.label = 'Label';
       component.sublabel = 'Sublabel';
       fixture.detectChanges();
@@ -64,8 +64,8 @@ describe('Component: Steps', () => {
 
   it('should render vertical step with active content', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
-      let component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
+      const component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
       component.label = 'Label';
       component.sublabel = 'Sublabel';
       component.active = true;
@@ -91,8 +91,8 @@ describe('Component: Steps', () => {
 
   it('should render horizontal step with hidden content', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
-      let component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
+      const component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
       component.label = 'Label';
       component.sublabel = 'Sublabel';
       component.mode = StepMode.Horizontal;
@@ -136,8 +136,8 @@ describe('Component: Steps', () => {
 
   it('should render horizontal step with active content', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
-      let component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
+      const component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
       component.label = 'Label';
       component.sublabel = 'Sublabel';
       component.mode = StepMode.Horizontal;
@@ -162,8 +162,8 @@ describe('Component: Steps', () => {
 
   it('should render vertical step with required state', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
-      let component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsBasicTestComponent);
+      const component: TdStepsBasicTestComponent = fixture.debugElement.componentInstance;
       component.label = 'Label';
       component.sublabel = 'Sublabel';
       component.state = StepState.Required;
@@ -178,8 +178,8 @@ describe('Component: Steps', () => {
 
   it('should render vertical step with complete state and summary', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsSummaryTestComponent);
-      let component: TdStepsSummaryTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsSummaryTestComponent);
+      const component: TdStepsSummaryTestComponent = fixture.debugElement.componentInstance;
       component.label = 'Label';
       component.sublabel = 'Sublabel';
       component.state = StepState.Complete;
@@ -213,7 +213,7 @@ describe('Component: Steps', () => {
 
   it('should render dynamic steps from an ngFor loop', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsDynamicTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdStepsDynamicTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         // render 3 vertical steps

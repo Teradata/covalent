@@ -4,15 +4,14 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@an
 import { HttpHeaders, HttpResponse, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { CovalentHttpModule, TdHttpService } from '@covalent/http';
 import { Observable } from 'rxjs';
-import { TdHttp, TdGET, TdPOST, TdPATCH, TdDELETE, TdParam, TdQueryParams, TdBody } from './';
+import { mixinHttp, TdGET, TdPOST, TdPATCH, TdDELETE, TdParam, TdQueryParams, TdBody } from './';
 
 const TEST_URL: string = 'www.url.com/path/to/endpoint';
 
-@TdHttp({
-  baseUrl: TEST_URL,
-})
 @Injectable()
-export class BasicTestRESTService {
+export class BasicTestRESTService extends mixinHttp(class {}, {
+  baseUrl: TEST_URL,
+}) {
   @TdGET({
     path: '/',
   })
@@ -56,12 +55,11 @@ export class BasicTestRESTService {
   }
 }
 
-@TdHttp({
+@Injectable()
+export class BaseHeadersTestRESTService extends mixinHttp(class {}, {
   baseUrl: TEST_URL,
   baseHeaders: new HttpHeaders().set('header', 'value'),
-})
-@Injectable()
-export class BaseHeadersTestRESTService {
+}) {
   @TdGET({
     path: '/',
   })
@@ -97,7 +95,7 @@ describe('Decorators: Http', () => {
           },
         );
 
-        let req: TestRequest = httpTestingController.expectOne(TEST_URL + '/');
+        const req: TestRequest = httpTestingController.expectOne(TEST_URL + '/');
         expect(req.request.method).toEqual('GET');
         expect(req.request.url).toEqual(TEST_URL + '/');
         req.flush('success', {
@@ -128,7 +126,7 @@ describe('Decorators: Http', () => {
           },
         );
 
-        let req: TestRequest = httpTestingController.expectOne(TEST_URL + '/');
+        const req: TestRequest = httpTestingController.expectOne(TEST_URL + '/');
         expect(req.request.method).toEqual('GET');
         expect(req.request.url).toEqual(TEST_URL + '/');
         req.error(
@@ -147,7 +145,7 @@ describe('Decorators: Http', () => {
       (service: BasicTestRESTService, httpTestingController: HttpTestingController) => {
         let success: boolean = false;
         let complete: boolean = false;
-        let queryParams: HttpParams = new HttpParams()
+        const queryParams: HttpParams = new HttpParams()
           .set('firstParam', '1')
           .set('second-Param', '2')
           .append('second-Param', '3')
@@ -165,7 +163,7 @@ describe('Decorators: Http', () => {
           },
         );
 
-        let req: TestRequest = httpTestingController.match(() => true)[0];
+        const req: TestRequest = httpTestingController.match(() => true)[0];
         expect(req.request.method).toEqual('GET');
         expect(req.request.params).toEqual(queryParams);
         expect(req.request.url).toEqual(TEST_URL + '/');
@@ -206,7 +204,7 @@ describe('Decorators: Http', () => {
             },
           );
 
-        let req: TestRequest = httpTestingController.match(() => true)[0];
+        const req: TestRequest = httpTestingController.match(() => true)[0];
         expect(req.request.method).toEqual('GET');
         expect(req.request.params.toString()).toEqual('firstParam=1&secondParam=2&secondParam=3&thirdParam=false');
         expect(req.request.url).toEqual(TEST_URL + '/');
@@ -241,7 +239,7 @@ describe('Decorators: Http', () => {
           },
         );
 
-        let req: TestRequest = httpTestingController.match(() => true)[0];
+        const req: TestRequest = httpTestingController.match(() => true)[0];
         expect(req.request.method).toEqual('GET');
         expect(req.request.url).toEqual(TEST_URL + '/id-of-something');
         req.flush('success', {
@@ -275,7 +273,7 @@ describe('Decorators: Http', () => {
           },
         );
 
-        let req: TestRequest = httpTestingController.match(() => true)[0];
+        const req: TestRequest = httpTestingController.match(() => true)[0];
         expect(req.request.method).toEqual('POST');
         expect(req.request.body).toEqual('data');
         expect(req.request.url).toEqual(TEST_URL + '/');
@@ -310,7 +308,7 @@ describe('Decorators: Http', () => {
           },
         );
 
-        let req: TestRequest = httpTestingController.match(() => true)[0];
+        const req: TestRequest = httpTestingController.match(() => true)[0];
         expect(req.request.method).toEqual('PATCH');
         expect(req.request.body).toEqual('data');
         expect(req.request.url).toEqual(TEST_URL + '/id-of-something');
@@ -345,7 +343,7 @@ describe('Decorators: Http', () => {
           },
         );
 
-        let req: TestRequest = httpTestingController.match(() => true)[0];
+        const req: TestRequest = httpTestingController.match(() => true)[0];
         expect(req.request.method).toEqual('DELETE');
         expect(req.request.url).toEqual(TEST_URL + '/id-of-something');
         req.flush('success', {
@@ -365,7 +363,7 @@ describe('Decorators: Http', () => {
       [BaseHeadersTestRESTService, HttpTestingController],
       (service: BaseHeadersTestRESTService, httpTestingController: HttpTestingController) => {
         let success: boolean = false;
-        let error: boolean = false;
+        const error: boolean = false;
         let complete: boolean = false;
         service.query().subscribe(
           (data: string) => {
@@ -380,7 +378,7 @@ describe('Decorators: Http', () => {
           },
         );
 
-        let req: TestRequest = httpTestingController.match(() => true)[0];
+        const req: TestRequest = httpTestingController.match(() => true)[0];
         expect(req.request.method).toEqual('GET');
         expect(req.request.url).toEqual(TEST_URL + '/');
         expect(req.request.headers.get('header')).toBe('value');

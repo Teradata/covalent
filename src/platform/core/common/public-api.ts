@@ -17,11 +17,10 @@ export * from './behaviors/control-value-accesor.mixin';
 export * from './behaviors/disabled.mixin';
 export * from './behaviors/disable-ripple.mixin';
 
-/**
- * FORMS
- */
-// Form Directives
+// Directives
 export * from './forms/auto-trim/auto-trim.directive';
+export * from './directives/fullscreen/fullscreen.directive';
+
 // Validators
 export * from './forms/validators/validators';
 
@@ -42,3 +41,4 @@ export * from './pipes/bytes/bytes.pipe';
 export * from './pipes/digits/digits.pipe';
 export * from './pipes/truncate/truncate.pipe';
 export * from './pipes/decimal-bytes/decimal-bytes.pipe';
+export * from './pipes/time-until/time-until.pipe';

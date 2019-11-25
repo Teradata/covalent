@@ -7,45 +7,7 @@ import { TdMediaService } from '@covalent/core/media';
   templateUrl: './docs.component.html',
 })
 export class DocsComponent {
-  routes: Object[] = [
-    {
-      icon: 'library_books',
-      route: 'docs',
-      title: 'Documentation',
-    },
-    {
-      icon: 'picture_in_picture',
-      route: 'components',
-      title: 'Components & Addons',
-    },
-    {
-      icon: 'show_chart',
-      route: 'echarts',
-      title: 'Echarts',
-    },
-    {
-      icon: 'view_quilt',
-      route: 'layouts',
-      title: 'Layouts',
-    },
-    {
-      icon: 'color_lens',
-      route: 'style-guide',
-      title: 'Style Guide',
-    },
-    {
-      icon: 'extension',
-      route: 'design-patterns',
-      title: 'Design Patterns',
-    },
-    {
-      icon: 'view_carousel',
-      route: 'templates',
-      title: 'Templates',
-    },
-  ];
-
-  items: Object[] = [
+  items: object[] = [
     {
       description: 'Installing Covalent & dependencies',
       icon: 'chrome_reader_mode',

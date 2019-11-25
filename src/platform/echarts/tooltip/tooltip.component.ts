@@ -40,33 +40,33 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
 
   _context: TdTooltipContext = new TdTooltipContext();
 
-  @Input('config') config: any = {};
+  @Input() config: any = {};
 
-  @Input('show') show: boolean = true;
-  @Input('trigger') trigger: TdTooltipTrigger = 'axis';
-  @Input('axisPointer') axisPointer: any;
-  @Input('showContent') showContent: boolean = true;
-  @Input('alwaysShowContent') alwaysShowContent: boolean = false;
-  @Input('triggerOn') triggerOn: TdTooltipTriggerOn = 'mousemove|click';
-  @Input('showDelay') showDelay: number = 0;
-  @Input('hideDelay') hideDelay: number = 0;
-  @Input('enterable') enterable: boolean = false;
-  @Input('renderMode') renderMode: 'html' | 'richText';
-  @Input('confine') confine: boolean = false;
-  @Input('transitionDuration') transitionDuration: number = 0.5;
-  @Input('position') position: TdTooltipPosition; // series
-  @Input('formatter') formatter: string | Function; // series
-  @Input('backgroundColor') backgroundColor: string = 'rgba(50,50,50,0.7)'; // series
-  @Input('borderColor') borderColor: string = '#333'; // series
-  @Input('borderWidth') borderWidth: number = 0; // series
-  @Input('padding') padding: number = 5; // series
-  @Input('textStyle') textStyle: any = {
+  @Input() show: boolean = true;
+  @Input() trigger: TdTooltipTrigger = 'axis';
+  @Input() axisPointer: any;
+  @Input() showContent: boolean = true;
+  @Input() alwaysShowContent: boolean = false;
+  @Input() triggerOn: TdTooltipTriggerOn = 'mousemove|click';
+  @Input() showDelay: number = 0;
+  @Input() hideDelay: number = 0;
+  @Input() enterable: boolean = false;
+  @Input() renderMode: 'html' | 'richText';
+  @Input() confine: boolean = false;
+  @Input() transitionDuration: number = 0.5;
+  @Input() position: TdTooltipPosition; // series
+  @Input() formatter: string | Function; // series
+  @Input() backgroundColor: string = 'rgba(50,50,50,0.7)'; // series
+  @Input() borderColor: string = '#333'; // series
+  @Input() borderWidth: number = 0; // series
+  @Input() padding: number = 5; // series
+  @Input() textStyle: any = {
     // series
     color: '#FFF',
   };
-  @Input('extraCssText') extraCssText: string; // series
+  @Input() extraCssText: string; // series
 
-  @ContentChild(TdChartTooltipFormatterDirective, { read: TemplateRef, static: false }) formatterTemplate: TemplateRef<
+  @ContentChild(TdChartTooltipFormatterDirective, { read: TemplateRef, static: true }) formatterTemplate: TemplateRef<
     any
   >;
   @ViewChild('tooltipContent', { static: true }) fullTemplate: TemplateRef<any>;
@@ -86,7 +86,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         show: this.show,
@@ -119,11 +119,11 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
     this._optionsService.clearOption('tooltip');
   }
 
-  private _formatter(): Function {
+  private _formatter(): (params: any, ticket: any, callback: (ticket: string, html: string) => void) => string {
     return (params: any, ticket: any, callback: (ticket: string, html: string) => void) => {
       this._context = {
         $implicit: params,
-        ticket: ticket,
+        ticket,
       };
       // timeout set since we need to set the HTML at the end of the angular lifecycle when
       // the tooltip delay is more than 0

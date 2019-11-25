@@ -42,18 +42,16 @@ type Constructor<T> = new (...args: any[]) => T;
  */
 function injectArgs(types: (Type<any> | InjectionToken<any> | any[])[], injector: Injector): any[] {
   const args: any[] = [];
-  for (let i: number = 0; i < types.length; i++) {
-    const arg: any = types[i];
+  for (const arg of types) {
     if (arg) {
       if (Array.isArray(arg)) {
         if (arg.length === 0) {
           throw new Error('Arguments array must have arguments.');
         }
-        let type: Type<any> | undefined = undefined;
+        let type: Type<any> | undefined;
         let flags: InjectFlags = InjectFlags.Default;
 
-        for (let j: number = 0; j < arg.length; j++) {
-          const meta: any = arg[j];
+        for (const meta of arg) {
           if (meta instanceof Optional || meta.ngMetadataName === 'Optional') {
             /* tslint:disable */
             flags |= InjectFlags.Optional;
@@ -69,7 +67,7 @@ function injectArgs(types: (Type<any> | InjectionToken<any> | any[])[], injector
           /* tslint:enable */
         }
 
-        args.push(injector.get(type!, flags));
+        args.push(injector.get(type, flags));
       } else {
         args.push(injector.get(arg));
       }
@@ -139,7 +137,7 @@ export function mixinHttp(
      * Method used to build the default headers using the base headers
      */
     buildHeaders(): HttpHeaders {
-      let headersObj: { [key: string]: any } = {};
+      const headersObj: { [key: string]: any } = {};
       this._baseHeaders.keys().forEach((key: any) => {
         headersObj[key] = this._baseHeaders.get(key);
       });
@@ -185,11 +183,11 @@ export function mixinHttp(
       } else {
         let headers: HttpHeaders = this.buildHeaders();
         if (options.headers instanceof HttpHeaders) {
-          (<HttpHeaders>options.headers).keys().forEach((key: any) => {
+          options.headers.keys().forEach((key: any) => {
             headers = headers.set(key, (<HttpHeaders>options.headers).get(key));
           });
         } else {
-          for (let key in options.headers) {
+          for (const key of Object.keys(options.headers)) {
             headers = headers.set(key, <any>options.headers[key]);
           }
         }

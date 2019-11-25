@@ -52,6 +52,23 @@ export interface ITdBarSeries extends ITdSeries<'bar'> {
   selector: 'td-chart-series[td-bar]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: [
+    'config',
+    'id',
+    'name',
+    'color',
+    'data',
+
+    'animation',
+    'animationThreshold',
+    'animationDuration',
+    'animationEasing',
+    'animationDelay',
+    'animationDurationUpdate',
+    'animationEasingUpdate',
+    'animationDelayUpdate',
+    'tooltip',
+  ],
   providers: [
     {
       provide: TdSeriesComponent,
@@ -60,34 +77,34 @@ export interface ITdBarSeries extends ITdSeries<'bar'> {
   ],
 })
 export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implements ITdBarSeries {
-  @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
-  @Input('xAxisIndex') xAxisIndex: number;
-  @Input('yAxisIndex') yAxisIndex: number;
-  @Input('legendHoverLink') legendHoverLink: boolean;
-  @Input('stack') stack: string;
-  @Input('cursor') cursor: string;
-  @Input('label') label: any;
-  @Input('itemStyle') itemStyle: ITdItemStyle;
-  @Input('emphasis') emphasis: ITdEmphasis;
-  @Input('barWidth') barWidth: number;
-  @Input('barMaxWidth') barMaxWidth: number;
-  @Input('barMinHeight') barMinHeight: number;
-  @Input('barGap') barGap: string;
-  @Input('barCategoryGap') barCategoryGap: string;
-  @Input('large') large: boolean;
-  @Input('largeThreshold') largeThreshold: number;
-  @Input('progressive') progressive: number;
-  @Input('progressiveThreshold') progressiveThreshold: number;
-  @Input('progressiveChunkMode') progressiveChunkMode: TdProgressiveChunkMode;
-  @Input('dimensions') dimensions: any[];
-  @Input('encode') encode: any;
-  @Input('seriesLayoutBy') seriesLayoutBy: TdSeriesLayoutBy;
-  @Input('datasetIndex') datasetIndex: number;
-  @Input('markPoint') markPoint: ITdMarkPoint;
-  @Input('markLine') markLine: ITdMarkLine;
-  @Input('markArea') markArea: ITdMarkArea;
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
+  @Input() coordinateSystem: TdCoordinateSystem;
+  @Input() xAxisIndex: number;
+  @Input() yAxisIndex: number;
+  @Input() legendHoverLink: boolean;
+  @Input() stack: string;
+  @Input() cursor: string;
+  @Input() label: any;
+  @Input() itemStyle: ITdItemStyle;
+  @Input() emphasis: ITdEmphasis;
+  @Input() barWidth: number;
+  @Input() barMaxWidth: number;
+  @Input() barMinHeight: number;
+  @Input() barGap: string;
+  @Input() barCategoryGap: string;
+  @Input() large: boolean;
+  @Input() largeThreshold: number;
+  @Input() progressive: number;
+  @Input() progressiveThreshold: number;
+  @Input() progressiveChunkMode: TdProgressiveChunkMode;
+  @Input() dimensions: any[];
+  @Input() encode: any;
+  @Input() seriesLayoutBy: TdSeriesLayoutBy;
+  @Input() datasetIndex: number;
+  @Input() markPoint: ITdMarkPoint;
+  @Input() markLine: ITdMarkLine;
+  @Input() markArea: ITdMarkArea;
+  @Input() zlevel: number;
+  @Input() z: number;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('bar', _optionsService);

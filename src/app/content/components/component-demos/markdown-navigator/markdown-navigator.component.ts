@@ -1,11 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
-import {
-  IMarkdownNavigatorItem,
-  MarkdownNavigatorWindowService,
-  MarkdownNavigatorWindowComponent,
-} from '@covalent/markdown-navigator';
-import { MatDialogRef } from '@angular/material/dialog';
+import { slideInDownAnimation } from '../../../app.animations';
+import { IMarkdownNavigatorItem, MarkdownNavigatorWindowService } from '@covalent/markdown-navigator';
 
 @Component({
   selector: 'markdown-navigator-demo',
@@ -80,10 +76,6 @@ export class MarkdownNavigatorDemoComponent {
   selected: { name: string; value: IMarkdownNavigatorItem[] } = this.options[0];
   currentItems: IMarkdownNavigatorItem[] = this.selected.value;
   userInput: string = this.prettyJson(this.currentItems);
-
-  windowOpen: boolean = false;
-  ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
-
   constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
   select(): void {
@@ -93,7 +85,7 @@ export class MarkdownNavigatorDemoComponent {
   use(items: IMarkdownNavigatorItem[]): void {
     this.currentItems = items;
     this.userInput = this.prettyJson(this.currentItems);
-    if (this.windowOpen) {
+    if (this._markdownNavigatorWindowService.isOpen) {
       this.openDialog();
     }
   }
@@ -107,19 +99,6 @@ export class MarkdownNavigatorDemoComponent {
   }
 
   openDialog(): void {
-    if (this.windowOpen) {
-      this.closeDialog();
-    }
-    this.ref = this._markdownNavigatorWindowService.open({ items: this.currentItems });
-    this.ref.afterOpened().subscribe(() => {
-      this.windowOpen = true;
-    });
-
-    this.ref.afterClosed().subscribe(() => {
-      this.windowOpen = false;
-    });
-  }
-  closeDialog(): void {
-    this.ref.close();
+    this._markdownNavigatorWindowService.open({ items: this.currentItems });
   }
 }

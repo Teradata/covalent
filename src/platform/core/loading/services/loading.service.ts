@@ -71,10 +71,10 @@ export class TdLoadingService {
   createComponent(
     config: ITdLoadingDirectiveConfig,
     viewContainerRef: ViewContainerRef,
-    templateRef: TemplateRef<Object>,
+    templateRef: TemplateRef<object>,
     context: TdLoadingContext,
   ): ILoadingRef {
-    let directiveConfig: TdLoadingDirectiveConfig = new TdLoadingDirectiveConfig(config);
+    const directiveConfig: TdLoadingDirectiveConfig = new TdLoadingDirectiveConfig(config);
     if (this._context[directiveConfig.name]) {
       throw Error(`Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`);
     }
@@ -103,7 +103,7 @@ export class TdLoadingService {
    * Only displayed when the mask has a request registered on it.
    */
   public create(config: ITdLoadingConfig): void {
-    let fullscreenConfig: TdLoadingConfig = new TdLoadingConfig(config);
+    const fullscreenConfig: TdLoadingConfig = new TdLoadingConfig(config);
     this.removeComponent(fullscreenConfig.name);
     this._context[fullscreenConfig.name] = this._loadingFactory.createFullScreenComponent(fullscreenConfig);
   }
@@ -222,7 +222,7 @@ export class TdLoadingService {
    */
   public setValue(name: string, value: number): boolean {
     if (this._context[name]) {
-      let instance: TdLoadingComponent = this._context[name].componentRef.instance;
+      const instance: TdLoadingComponent = this._context[name].componentRef.instance;
       if (instance.mode === LoadingMode.Determinate && instance.animation) {
         instance.value = value;
         return true;

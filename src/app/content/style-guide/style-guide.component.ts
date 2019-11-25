@@ -7,7 +7,7 @@ import { TdMediaService } from '@covalent/core/media';
   templateUrl: './style-guide.component.html',
 })
 export class StyleGuideComponent {
-  items: Object[] = [
+  items: object[] = [
     {
       description: 'Teradata logo usage',
       icon: 'color_lens',
@@ -51,7 +51,7 @@ export class StyleGuideComponent {
       title: 'Resources',
     },
   ];
-  patterns: Object[] = [
+  patterns: object[] = [
     {
       description: 'Material Design card patterns',
       icon: 'view_agenda',

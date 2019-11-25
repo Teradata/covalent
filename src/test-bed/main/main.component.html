@@ -28,10 +28,45 @@
 </div>
 
 <td-nav-links
+  [style.width.px]="400"
   [links]="[
     {
-      name: 'test',
-      links: [{ label: 'test1', icon: 'apps', linkTo: { href: '/' } }, { label: 'test2', linkTo: { href: '/' } }]
+      label: 'expansion',
+      collapsable: true,
+      children: [
+        {
+          label: 'link',
+          link: { href: '/', openInNewTab: true },
+          icon: { name: 'apps' }
+        }
+      ]
+    },
+    {
+      label: 'header',
+      children: [
+        {
+          label: 'link',
+          link: { href: '/' },
+          icon: { name: 'apps' }
+        }
+      ]
+    },
+    {
+      label: 'link',
+      link: { href: '/' },
+      icon: { name: 'apps' },
+      children: [
+        {
+          label: 'header',
+          link: { href: '/', openInNewTab: true },
+          icon: { name: 'apps' }
+        },
+        {
+          label: 'link',
+          link: { href: '/' },
+          icon: { name: 'apps' }
+        }
+      ]
     }
   ]"
 ></td-nav-links>

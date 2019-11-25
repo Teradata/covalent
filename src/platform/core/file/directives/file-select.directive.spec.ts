@@ -14,12 +14,12 @@ describe('Directive: FileSelect', () => {
 
   it('should add multiple attr', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileSelectBasicTestComponent);
-      let component: TdFileSelectBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileSelectBasicTestComponent);
+      const component: TdFileSelectBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileSelectDirective));
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileSelectDirective));
         expect((<any>directive.attributes).multiple).toBeDefined();
       });
     }),
@@ -27,12 +27,12 @@ describe('Directive: FileSelect', () => {
 
   it('should throw (fileSelect) event for a single file', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileSelectBasicTestComponent);
-      let component: TdFileSelectBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileSelectBasicTestComponent);
+      const component: TdFileSelectBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileSelectDirective));
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileSelectDirective));
         directive.triggerEventHandler('change', {
           target: directive.nativeElement,
         });

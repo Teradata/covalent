@@ -37,10 +37,10 @@ describe('Component: Breadcrumbs', () => {
 
   it('should render 5 Breadcrumbs', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
+        const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
           .componentInstance;
         expect(breadcrumbs.count).toBe(5);
       });
@@ -49,8 +49,8 @@ describe('Component: Breadcrumbs', () => {
 
   it('should change the separatorIcon', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
-      let component: TdBreadcrumbsTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
+      const component: TdBreadcrumbsTestComponent = fixture.debugElement.componentInstance;
       component.separatorIcon = 'flight_land';
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -63,14 +63,14 @@ describe('Component: Breadcrumbs', () => {
 
   it('should resize window and hide breadcrumbs', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         document.body.style.width = '300px';
         window.dispatchEvent(new Event('resize'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
+          const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
             .componentInstance;
           expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(2);
         });
@@ -80,7 +80,7 @@ describe('Component: Breadcrumbs', () => {
 
   it('should resize window and hide breadcrumbs with breadcrumb in mat-toolbar with padding', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsToolbarTestComponent);
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsToolbarTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         document.body.style.width = '300px';
@@ -88,7 +88,7 @@ describe('Component: Breadcrumbs', () => {
         fixture.detectChanges();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
+          const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
             .componentInstance;
           expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(3);
         });
@@ -100,7 +100,7 @@ describe('Component: Breadcrumbs', () => {
 @Component({
   selector: 'td-breadcrumbs-test',
   template: `
-    <div style="width: {{ width }}">
+    <div [style.width]="width">
       <td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="{{ separatorIcon }}">
         <a td-breadcrumb [routerLink]="'/'">Home</a>
         <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>

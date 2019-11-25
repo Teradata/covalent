@@ -14,12 +14,12 @@ describe('Directive: FileDrop', () => {
 
   it('should add/remove class on dragenter and dragleave', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
         directive.triggerEventHandler('dragenter', new Event('dragenter'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -36,12 +36,12 @@ describe('Directive: FileDrop', () => {
 
   it('should disable element and not add class on dragenter', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.disabled = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
         directive.triggerEventHandler('dragenter', new Event('dragenter'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -53,13 +53,13 @@ describe('Directive: FileDrop', () => {
 
   it('should throw dragover event and add copy dropEffect for a single file', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
-        let event: any = <DragEvent>new Event('dragover');
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const event: any = <DragEvent>new Event('dragover');
         event.dataTransfer = {
           dropEffect: 'none',
           types: ['Files'],
@@ -76,13 +76,13 @@ describe('Directive: FileDrop', () => {
 
   it('should throw dragover event and not add copy dropEffect for a multiple file', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
-        let event: any = <DragEvent>new Event('dragover');
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const event: any = <DragEvent>new Event('dragover');
         event.dataTransfer = {
           dropEffect: 'none',
           types: ['Files'],
@@ -99,13 +99,13 @@ describe('Directive: FileDrop', () => {
 
   it('should throw dragover event and add copy dropEffect for a multiple file', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
-        let event: any = <DragEvent>new Event('dragover');
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const event: any = <DragEvent>new Event('dragover');
         event.dataTransfer = {
           dropEffect: 'none',
           types: ['Files'],
@@ -122,14 +122,14 @@ describe('Directive: FileDrop', () => {
 
   it('should throw dragover event and not add copy dropEffect on disabled state', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       component.disabled = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
-        let event: any = <DragEvent>new Event('dragover');
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const event: any = <DragEvent>new Event('dragover');
         event.dataTransfer = {
           dropEffect: 'none',
           types: ['Files'],
@@ -146,14 +146,14 @@ describe('Directive: FileDrop', () => {
 
   it('should throw ondrop event for a single file', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
       expect(component.files).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
-        let event: any = <DragEvent>new Event('drop');
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const event: any = <DragEvent>new Event('drop');
         event.dataTransfer = {
           files: [{}],
         };
@@ -168,14 +168,14 @@ describe('Directive: FileDrop', () => {
 
   it('should throw ondrop event for a multiple files', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = true;
       expect(component.files).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
-        let event: any = <DragEvent>new Event('drop');
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const event: any = <DragEvent>new Event('drop');
         event.dataTransfer = {
           files: [{}, {}],
         };
@@ -190,14 +190,14 @@ describe('Directive: FileDrop', () => {
 
   it('should not throw ondrop event for disabled state', async(
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
-      let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
+      const component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.disabled = true;
       expect(component.files).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
-        let event: any = <DragEvent>new Event('drop');
+        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileDropDirective));
+        const event: any = <DragEvent>new Event('drop');
         event.dataTransfer = {
           files: [{}],
         };

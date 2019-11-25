@@ -2,11 +2,9 @@ import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
 import { ChangeDetectorRef, DebugElement } from '@angular/core';
 
 import { TdNavLinksComponent } from './nav-links.component';
+import { CovalentNavLinksModule } from './nav-links.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { CovalentExpansionPanelModule } from '@covalent/core/expansion-panel';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -19,15 +17,7 @@ describe('TdNavLinksComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        BrowserModule,
-        RouterTestingModule,
-        NoopAnimationsModule,
-        CovalentExpansionPanelModule,
-        MatIconModule,
-        MatListModule,
-      ],
-      declarations: [TdNavLinksComponent],
+      imports: [BrowserModule, RouterTestingModule, NoopAnimationsModule, CovalentNavLinksModule],
     }).compileComponents();
   }));
 
@@ -47,14 +37,11 @@ describe('TdNavLinksComponent', () => {
   it('should display 1 href link', async () => {
     component.links = [
       {
-        links: [
-          {
-            // tslint:disable-next-line: no-duplicate-string
-            label: 'Duck Duck Go',
-            // tslint:disable-next-line: no-duplicate-string
-            linkTo: { href: 'https://duckduckgo.com/' },
-          },
-        ],
+        // tslint:disable-next-line: no-duplicate-string
+        label: 'Duck Duck Go',
+        // tslint:disable-next-line: no-duplicate-string
+        link: { href: 'https://duckduckgo.com/' },
+        icon: { name: 'apps' },
       },
     ];
     changeDetectorRef.detectChanges();
@@ -63,7 +50,7 @@ describe('TdNavLinksComponent', () => {
     // tslint:disable-next-line: no-duplicate-string
     const navLinks: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-nav-link'));
     // tslint:disable-next-line: no-duplicate-string
-    const hrefLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0-0'));
+    const hrefLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0'));
     expect((<HTMLElement>hrefLink.nativeElement).hasAttribute('href')).toBeTruthy();
     expect((<HTMLElement>hrefLink.nativeElement).hasAttribute('ng-reflect-router-link')).toBeFalsy();
     expect(navLinks.length).toBe(1);
@@ -73,12 +60,9 @@ describe('TdNavLinksComponent', () => {
   it('should display 1 router link', async () => {
     component.links = [
       {
-        links: [
-          {
-            label: 'Duck Duck Go',
-            linkTo: { routerLink: 'https://duckduckgo.com/' },
-          },
-        ],
+        label: 'Duck Duck Go',
+        link: { routerLink: 'https://duckduckgo.com/' },
+        icon: { name: 'apps' },
       },
     ];
 
@@ -86,7 +70,7 @@ describe('TdNavLinksComponent', () => {
     await fixture.whenStable();
 
     const navLinks: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-nav-link'));
-    const routerLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0-0'));
+    const routerLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0'));
     expect((<HTMLElement>routerLink.nativeElement).hasAttribute('href')).toBeTruthy();
     expect((<HTMLElement>routerLink.nativeElement).hasAttribute('ng-reflect-router-link')).toBeTruthy();
     expect(navLinks.length).toBe(1);
@@ -96,16 +80,14 @@ describe('TdNavLinksComponent', () => {
   it('should display 1 href link and 1 router link', async () => {
     component.links = [
       {
-        links: [
-          {
-            label: 'Duck Duck Go',
-            linkTo: { href: 'https://duckduckgo.com/' },
-          },
-          {
-            label: 'Home',
-            linkTo: { routerLink: ['/'] },
-          },
-        ],
+        label: 'Duck Duck Go',
+        link: { href: 'https://duckduckgo.com/' },
+        icon: { name: 'apps' },
+      },
+      {
+        label: 'Home',
+        link: { routerLink: ['/'] },
+        icon: { name: 'apps' },
       },
     ];
 
@@ -113,8 +95,8 @@ describe('TdNavLinksComponent', () => {
     await fixture.whenStable();
 
     const navLinks: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-nav-link'));
-    const hrefLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0-0'));
-    const routerLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0-1'));
+    const hrefLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0'));
+    const routerLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-1'));
 
     expect((<HTMLElement>hrefLink.nativeElement).hasAttribute('href')).toBeTruthy();
     expect((<HTMLElement>hrefLink.nativeElement).hasAttribute('ng-reflect-router-link')).toBeFalsy();
@@ -128,17 +110,15 @@ describe('TdNavLinksComponent', () => {
   it('should display 1 hidden href link and 1 router link', async () => {
     component.links = [
       {
-        links: [
-          {
-            label: 'Duck Duck Go',
-            linkTo: { href: 'https://duckduckgo.com/' },
-            show: false,
-          },
-          {
-            label: 'Home',
-            linkTo: { routerLink: ['/'] },
-          },
-        ],
+        label: 'Duck Duck Go',
+        link: { href: 'https://duckduckgo.com/' },
+        icon: { name: 'apps' },
+        show: false,
+      },
+      {
+        label: 'Home',
+        link: { routerLink: ['/'] },
+        icon: { name: 'apps' },
       },
     ];
 
@@ -146,8 +126,8 @@ describe('TdNavLinksComponent', () => {
     await fixture.whenStable();
 
     const navLinks: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-nav-link'));
-    const hrefLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0-0'));
-    const routerLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0-1'));
+    const hrefLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0'));
+    const routerLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-1'));
 
     expect(navLinks.length).toBe(1);
     expect(hrefLink).toBeFalsy();
@@ -157,15 +137,17 @@ describe('TdNavLinksComponent', () => {
   it('should display 1 group with 1 routelink and 1 href', async () => {
     component.links = [
       {
-        name: 'Group 1 Links',
-        links: [
+        label: 'Group 1 Links',
+        children: [
           {
             label: 'Duck Duck Go',
-            linkTo: { href: 'https://duckduckgo.com/' },
+            link: { href: 'https://duckduckgo.com/' },
+            icon: { name: 'apps' },
           },
           {
             label: 'Home',
-            linkTo: { routerLink: ['/'] },
+            link: { routerLink: ['/'] },
+            icon: { name: 'apps' },
           },
         ],
       },
@@ -175,7 +157,7 @@ describe('TdNavLinksComponent', () => {
     await fixture.whenStable();
 
     const navLinks: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-nav-link'));
-    const navGroups: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-nav-group'));
+    const navGroups: DebugElement[] = fixture.debugElement.queryAll(By.css('h3'));
     const hrefLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0-0'));
     const routerLink: DebugElement = fixture.debugElement.query(By.css('#' + id + '-0-1'));
 
@@ -188,28 +170,32 @@ describe('TdNavLinksComponent', () => {
   it('should display 2 group and 4 links', async () => {
     component.links = [
       {
-        name: 'Group 1 Links',
-        links: [
+        label: 'Group 1 Links',
+        children: [
           {
             label: 'Duck Duck Go',
-            linkTo: { href: 'https://duckduckgo.com/' },
+            link: { href: 'https://duckduckgo.com/' },
+            icon: { name: 'apps' },
           },
           {
             label: 'Home',
-            linkTo: { routerLink: ['/'] },
+            link: { routerLink: ['/'] },
+            icon: { name: 'apps' },
           },
         ],
       },
       {
-        name: 'Group 2 Links',
-        links: [
+        label: 'Group 2 Links',
+        children: [
           {
             label: 'Duck Duck Go',
-            linkTo: { href: 'https://duckduckgo.com/' },
+            link: { href: 'https://duckduckgo.com/' },
+            icon: { name: 'apps' },
           },
           {
             label: 'Home',
-            linkTo: { routerLink: ['/'] },
+            link: { routerLink: ['/'] },
+            icon: { name: 'apps' },
           },
         ],
       },
@@ -219,7 +205,7 @@ describe('TdNavLinksComponent', () => {
     await fixture.whenStable();
 
     const navLinks: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-nav-link'));
-    const navGroups: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-nav-group'));
+    const navGroups: DebugElement[] = fixture.debugElement.queryAll(By.css('h3'));
 
     expect(navGroups.length).toBe(2);
 

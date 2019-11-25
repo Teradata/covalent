@@ -146,26 +146,26 @@ export class TdChartViewDataFormatterDirective {}
 export class TdChartToolboxComponent implements OnChanges, OnDestroy {
   private _state: any = {};
 
-  @Input('config') config: any = {};
+  @Input() config: any = {};
 
-  @Input('show') show: boolean = true;
-  @Input('name') trigger: string;
-  @Input('orient') orient: TdToolboxOrient;
-  @Input('itemSize') itemSize: number;
-  @Input('itemGap') itemGap: number;
-  @Input('showTitle') showTitle: boolean = true;
-  @Input('label') label: ITdLabel;
-  @Input('feature') feature: ITdToolboxFeature;
-  @Input('iconStyle') iconStyle: ITdFeatureIconStyle;
-  @Input('zlevel') zlevel: number;
-  @Input('z') z: number;
-  @Input('transitionDuration') transitionDuration: number = 0.5;
-  @Input('left') left: string | number = 'auto';
-  @Input('top') top: string | number = 'auto';
-  @Input('right') right: string | number = 'auto';
-  @Input('bottom') bottom: string | number = 'auto';
-  @Input('width') width: string | number = 'auto';
-  @Input('height') height: string | number = 'auto';
+  @Input() show: boolean = true;
+  @Input() trigger: string;
+  @Input() orient: TdToolboxOrient;
+  @Input() itemSize: number;
+  @Input() itemGap: number;
+  @Input() showTitle: boolean = true;
+  @Input() label: ITdLabel;
+  @Input() feature: ITdToolboxFeature;
+  @Input() iconStyle: ITdFeatureIconStyle;
+  @Input() zlevel: number;
+  @Input() z: number;
+  @Input() transitionDuration: number = 0.5;
+  @Input() left: string | number = 'auto';
+  @Input() top: string | number = 'auto';
+  @Input() right: string | number = 'auto';
+  @Input() bottom: string | number = 'auto';
+  @Input() width: string | number = 'auto';
+  @Input() height: string | number = 'auto';
 
   @ContentChild(TdChartViewDataFormatterDirective, { read: TemplateRef, static: false })
   formatterTemplate: TemplateRef<any>;
@@ -188,7 +188,7 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
   private _setOptions(): void {
     this._checkFormatterTemplate();
 
-    let config: any = assignDefined(
+    const config: any = assignDefined(
       this._state,
       {
         show: this.show,
@@ -232,7 +232,7 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
     }
   }
 
-  private _optionToContentFormatter(): Function {
+  private _optionToContentFormatter(): () => string {
     return () => {
       this._changeDetectorRef.markForCheck();
       return (<HTMLElement>this._elementRef.nativeElement).innerHTML;
