@@ -31,5 +31,8 @@ export class DetailsWrapperComponent implements OnInit {
 
   ngOnInit(): void {
     this.component = this._route.snapshot.data;
+    if (this.component.hideOverview) {
+      this.navLinks = this.navLinks.slice(1);
+    }
   }
 }

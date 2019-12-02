@@ -1,6 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 
-import { slideInDownAnimation } from '../../../app.animations';
+import { slideInDownAnimation } from '../../../../app.animations';
 import { IMarkdownNavigatorItem, MarkdownNavigatorWindowService } from '@covalent/markdown-navigator';
 
 @Component({
