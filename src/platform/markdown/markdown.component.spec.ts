@@ -379,6 +379,7 @@ describe('Component: Markdown', () => {
       const RAW_LINK: string = 'https://raw.githubusercontent.com/Teradata/covalent/develop/';
       const EXTERNAL_IMG: string = 'https://angular.io/assets/images/logos/angular/angular.svg';
       const SUB_DIRECTORY: string = 'dir/';
+      const SVG_IMG: string = 'src/assets/icons/covalent.svg';
       // these are not valid image urls
       const images: string[][] = [
         [`./${SIBLING_IMG}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`],
@@ -388,6 +389,7 @@ describe('Component: Markdown', () => {
         [`${RAW_LINK}${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
         [`${EXTERNAL_IMG}`, `${EXTERNAL_IMG}`],
         [`${NON_RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`],
+        [`${NON_RAW_LINK}${SVG_IMG}`, `${RAW_LINK}${SVG_IMG}?sanitize=true`],
       ];
 
       let markdown: string = '';
