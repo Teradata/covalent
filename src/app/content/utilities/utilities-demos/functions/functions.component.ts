@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import {
@@ -13,14 +13,18 @@ import {
   formatJSON,
   readFile,
 } from '../../../../../platform/core';
+import { slideInUpAnimation } from '../../../../app.animations';
 
 @Component({
   selector: 'td-functions',
   templateUrl: './functions.component.html',
   styleUrls: ['./functions.component.scss'],
   preserveWhitespaces: true,
+  animations: [slideInUpAnimation],
 })
 export class FunctionsDemoComponent {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
   copyText: string = 'Lorem Ipsum';
   objects: object[] = [
     { name: 'user1', id: 123 },

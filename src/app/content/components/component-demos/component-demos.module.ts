@@ -90,7 +90,6 @@ import { MarkdownNavigatorDemoComponent } from './markdown-navigator/markdown-na
 import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
-import { FunctionsDemoComponent } from './functions/functions.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +111,6 @@ import { FunctionsDemoComponent } from './functions/functions.component';
     DynamicFormsDemoComponent,
     CodeEditorDemoComponent,
     TextEditorDemoComponent,
-    FunctionsDemoComponent,
     NotificationsDemoComponent,
     BreadcrumbDemoComponent,
     FlavoredMarkdownDemoComponent,

@@ -1,12 +1,12 @@
 import { Component, HostBinding } from '@angular/core';
 
-import { slideInDownAnimation } from '../../../app.animations';
+import { slideInUpAnimation } from '../../../../app.animations';
 
 @Component({
   selector: 'utility-styles',
   templateUrl: './utility-styles.component.html',
   styleUrls: ['./utility-styles.component.scss'],
-  animations: [slideInDownAnimation],
+  animations: [slideInUpAnimation],
   preserveWhitespaces: true,
 })
 export class UtilityStylesComponent {

@@ -1,6 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 
-import { slideInDownAnimation } from '../../../../app.animations';
+import { slideInDownAnimation, slideInUpAnimation } from '../../../../app.animations';
 import { tdRotateAnimation } from '../../../../../platform/core/common/animations/rotate/rotate.animation';
 import { tdCollapseAnimation } from '../../../../../platform/core/common/animations/collapse/collapse.animation';
 import { tdFadeInOutAnimation } from '../../../../../platform/core/common/animations/fade/fadeInOut.animation';
@@ -15,6 +15,7 @@ import { tdPulseAnimation } from '../../../../../platform/core/common/animations
   styleUrls: ['./animations.component.scss'],
   templateUrl: './animations.component.html',
   animations: [
+    slideInUpAnimation,
     slideInDownAnimation,
     tdRotateAnimation,
     tdCollapseAnimation,
@@ -30,7 +31,6 @@ import { tdPulseAnimation } from '../../../../../platform/core/common/animations
 export class AnimationsComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
   rotateState1: boolean = false;
   rotateState2: boolean = false;
 

@@ -6,10 +6,7 @@ import { FunctionsDemoRoutingModule } from './functions-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    FunctionsDemoComponent,
-    FunctionsDemoBasicComponent
-  ],
+  declarations: [FunctionsDemoComponent, FunctionsDemoBasicComponent],
   imports: [
     DemoModule,
     FunctionsDemoRoutingModule,
