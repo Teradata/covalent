@@ -15,8 +15,8 @@ export enum rootRoutes {
 enum descriptions {
   Docs = 'some description',
   Components = 'Create views quickly with tested components that conform to Material Design',
-  ECharts = 'some echarts',
-  Utilities = 'some utilities',
+  ECharts = 'Visualize your data easily. ECharts is an extensive "tried and true" charting library brought to Angular as Covalent Echarts',
+  Utilities = 'Tools to help create, request, format, and animate',
 }
 
 export const docsRouteGroup: IRouteGroup[] = createRouteGroup({

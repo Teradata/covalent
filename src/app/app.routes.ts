@@ -51,7 +51,7 @@ const routes: Routes = [
         data: { preload: false },
         loadChildren: () =>
           /* tslint:disable-next-line */
-          import('./content/echarts/components.module').then((m) => m.ComponentsModule),
+          import('./content/echarts/echarts.module').then((m) => m.EchartsModule),
       },
       {
         // preload: true loads the module immediately

@@ -17,19 +17,54 @@
     {
       "title": "Charts",
       "items": [
-        { "icon": "insert_chart", "route": "bar", "title": "Bar", "color": "deep-purple-A200" },
-        { "icon": "show_chart", "route": ["types", "line"], "title": "Line", "color": "deep-purple-A200" },
-        { "icon": "bubble_chart", "route": ["types", "scatter"], "title": "Scatter", "color": "deep-purple-A200" },
+        {
+          "icon": "insert_chart",
+          "route": "bar",
+          "title": "Bar",
+          "color": "deep-purple-A200"
+        },
+        {
+          "icon": "show_chart",
+          "route": ["types", "line"],
+          "title": "Line",
+          "color": "deep-purple-A200"
+        },
+        {
+          "icon": "bubble_chart",
+          "route": ["types", "scatter"],
+          "title": "Scatter",
+          "color": "deep-purple-A200"
+        },
         {
           "icon": "multiline_chart",
           "route": ["types", "combination"],
           "title": "Combination",
           "color": "deep-purple-A200"
         },
-        { "icon": "share", "route": ["types", "tree"], "title": "Tree", "color": "deep-purple-A200" },
-        { "icon": "dashboard", "route": ["types", "treemap"], "title": "Treemap", "color": "deep-purple-A200" },
-        { "icon": "call_split", "route": ["types", "sankey"], "title": "Sankey", "color": "deep-purple-A200" },
-        { "icon": "grain", "route": ["types", "graph"], "title": "Graph", "color": "deep-purple-A200" }
+        {
+          "icon": "share",
+          "route": ["types", "tree"],
+          "title": "Tree",
+          "color": "deep-purple-A200"
+        },
+        {
+          "icon": "dashboard",
+          "route": ["types", "treemap"],
+          "title": "Treemap",
+          "color": "deep-purple-A200"
+        },
+        {
+          "icon": "call_split",
+          "route": ["types", "sankey"],
+          "title": "Sankey",
+          "color": "deep-purple-A200"
+        },
+        {
+          "icon": "grain",
+          "route": ["types", "graph"],
+          "title": "Graph",
+          "color": "deep-purple-A200"
+        }
       ]
     },
     {

@@ -27,7 +27,7 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
         component: DetailsWrapperComponent,
         data: componentMatch,
         children: [
-          { path: '', redirectTo: 'overview' },
+          { path: '', redirectTo: componentMatch.hideOverview ? 'api' : 'overview' },
           {
             path: 'overview',
             component: ComponentHeroComponent,
@@ -41,7 +41,7 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
           },
           {
             path: 'examples',
-            loadChildren: componentMatch.demo
+            loadChildren: componentMatch.demo,
           },
         ],
       },
