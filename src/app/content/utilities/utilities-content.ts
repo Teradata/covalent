@@ -1,86 +1,85 @@
 export const utilitiesRouteCategories = [
   { name: '', nested: false },
-  { name: 'Pipes', nested: false },
-  { name: 'Functions', nested: false },
-  { name: 'Animations', nested: false },
+  { name: 'Http', nested: false },
+  // { name: 'Pipes', nested: false },
+  // { name: 'Functions', nested: false },
+  // { name: 'Animations', nested: false },
 ];
 
-const [root, pipes, functions, animations] = utilitiesRouteCategories;
+const [root, http, pipes, functions, animations] = utilitiesRouteCategories;
 
 export const utilitiesContentDetails: any = [
   {
+    name: 'Http Service',
+    id: 'http-service',
+    description:
+      'Service provided with methods that extend the @angular [HttpClient] service and provide an additional layer of interceptor functionality.',
+    apiDocUrl: 'platform/http/interceptors/README.md',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    category: http.name,
+    route: '/utilities/http-service',
+  },
+  {
+    name: 'Http Decorators',
+    id: 'http-decorators',
+    description:
+      'Framework of decorators on top of the angular [HttpClient] or covalent [TdHttpService] to enhance your services and give them Http capabilities.',
+    apiDocUrl: 'platform/http/actions/README.md',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    category: http.name,
+    route: '/utilities/http-decorators',
+  },
+  {
     name: 'Animations',
     id: 'animations',
-    description: 'Animations for blah blah',
-    apiDocUrl: 'platform/echarts/bar/README.md',
+    description:
+      'Simple reusable animations to reduce boilerplate code. For custom and complex animations look into the Angular animations doc.',
+    apiDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
+    category: root.name,
+    route: '/utilities/animations',
     // componentDoc: url to component description,
     // overViewDemo: wether to show demo on overview,
     // module: []
   },
   {
-    name: 'Sidesheet Content',
-    id: 'sidesheet',
-    description: 'Sidesheet description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
+    name: 'Pipes',
+    id: 'pipes',
+    description: 'Custom angular pipes',
+    apiDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
+    category: root.name,
+    route: '/utilities/pipes',
     // componentDoc: url to component description,
     // overViewDemo: wether to show demo on overview,
     // module: []
   },
   {
-    name: 'Draggable Help',
-    id: 'help',
-    description: 'A component for rendering and navigating through documentation.',
-    apiDocUrl: 'platform/experimental/help/README.md',
+    name: 'Functions',
+    id: 'functions',
+    description: 'Helper functions',
+    apiDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
+    category: root.name,
+    route: '/utilities/functions',
     // componentDoc: url to component description,
     // overViewDemo: wether to show demo on overview,
     // module: []
   },
   {
-    name: 'JSON Formatter',
-    id: 'json-formatter',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
+    name: 'Styling',
+    id: 'styling',
+    description: 'CSS style classes',
+    apiDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Loading',
-    id: 'loading',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'Search',
-    id: 'search',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
-  },
-  {
-    name: 'File Input',
-    id: 'file-input',
-    description: 'Breadcrumbs description blah blah',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
+    category: root.name,
+    route: '/utilities/styling',
     // componentDoc: url to component description,
     // overViewDemo: wether to show demo on overview,
     // module: []

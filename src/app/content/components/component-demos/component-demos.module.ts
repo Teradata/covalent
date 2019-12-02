@@ -89,6 +89,10 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
 import { HelpDemoComponent } from './help/help.component';
 import { CovalentHelpModule } from '@covalent/experimental/help';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
+<<<<<<< HEAD
+=======
+import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
+>>>>>>> fix: utilities
 
 @NgModule({
   declarations: [

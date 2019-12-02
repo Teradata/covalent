@@ -15,14 +15,6 @@ const routes: Routes = [
     data: { preload: false },
     loadChildren: () =>
       /* tslint:disable-next-line */
-      import('./content/style-guide/style-guide.module').then((m) => m.StyleGuideModule),
-  },
-  {
-    // preload: true loads the module immediately
-    path: '',
-    data: { preload: false },
-    loadChildren: () =>
-      /* tslint:disable-next-line */
       import('./content/layouts/layouts.module').then((m) => m.LayoutsModule),
   },
   {
@@ -76,4 +68,5 @@ export const appRoutes: any = RouterModule.forRoot(routes, {
   preloadingStrategy: SelectivePreloadingStrategyService,
   scrollPositionRestoration: 'enabled',
   relativeLinkResolution: 'corrected',
+  anchorScrolling: 'enabled',
 });
