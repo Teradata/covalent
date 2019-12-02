@@ -65,7 +65,7 @@ export class ResizableDraggableDialog {
   }
 
   private _getDialogWrapper(): HTMLElement {
-    return (<HTMLElement>this._document.getElementById(this._dialogRef.id)).parentElement;
+    return (<HTMLElement>this._document.getElementById(this._dialogRef.id) || {}).parentElement;
   }
 
   private _getViewportDimensions(): ClientRect {

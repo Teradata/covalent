@@ -93,7 +93,9 @@ export class MarkdownNavigatorWindowService {
 
   public close(): void {
     if (this.markdownNavigatorWindowDialog) {
-      this.resizableDraggableDialog.detach();
+      if (this.resizableDraggableDialog) {
+        this.resizableDraggableDialog.detach();
+      }
       this.markdownNavigatorWindowDialog.close();
     }
   }
