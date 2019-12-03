@@ -1,4 +1,14 @@
-import { Component, Input, OnChanges, SimpleChanges, HostListener, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
 export interface IMarkdownNavigatorItem {
@@ -52,6 +62,7 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
   selector: 'td-markdown-navigator',
   templateUrl: './markdown-navigator.component.html',
   styleUrls: ['./markdown-navigator.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MarkdownNavigatorComponent implements OnChanges {
   /**
@@ -76,7 +87,10 @@ export class MarkdownNavigatorComponent implements OnChanges {
 
   loading: boolean = false;
 
-  constructor(private _markdownUrlLoaderService: MarkdownLoaderService) {}
+  constructor(
+    private _markdownUrlLoaderService: MarkdownLoaderService,
+    private _changeDetectorRef: ChangeDetectorRef,
+  ) {}
 
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
@@ -176,6 +190,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       this.currentMarkdownItem = undefined;
     }
     this.historyStack = [];
+    this._changeDetectorRef.detectChanges();
   }
 
   handleItemSelected(item: IMarkdownNavigatorItem): void {
@@ -205,6 +220,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       // render markdown
       this.currentMarkdownItem = item;
     }
+    this._changeDetectorRef.detectChanges();
   }
 
   goBack(): void {
@@ -219,6 +235,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       }
       this.historyStack = this.historyStack.slice(0, -1);
     }
+    this._changeDetectorRef.detectChanges();
   }
 
   getTitle(item: IMarkdownNavigatorItem): string {
@@ -238,6 +255,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
     const link: HTMLAnchorElement = <HTMLAnchorElement>event.target;
     const url: URL = new URL(link.href);
     this.loading = true;
+    this._changeDetectorRef.detectChanges();
     try {
       const markdownString: string = await this._markdownUrlLoaderService.load(url.href);
       // pass in url to be able to use currentMarkdownItem.url later on
@@ -249,5 +267,6 @@ export class MarkdownNavigatorComponent implements OnChanges {
     } finally {
       this.loading = false;
     }
+    this._changeDetectorRef.detectChanges();
   }
 }

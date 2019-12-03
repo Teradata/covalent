@@ -37,9 +37,87 @@ const NESTED_MIXED_ITEMS: IMarkdownNavigatorItem[] = [
   },
 ];
 
+const DEEPLY_NESTED_TREE: IMarkdownNavigatorItem[] = [
+  {
+    title: 'A',
+    children: [
+      {
+        title: 'A1',
+        children: [
+          {
+            markdownString: 'A1I',
+            title: 'A1I',
+          },
+          {
+            markdownString: 'A1II',
+            title: 'A1II',
+          },
+        ],
+      },
+      {
+        title: 'A2',
+        children: [
+          {
+            markdownString: 'A2I',
+            title: 'A2I',
+          },
+          {
+            markdownString: 'A2II',
+            title: 'A2II',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'B',
+    children: [
+      {
+        title: 'B1',
+        children: [
+          {
+            markdownString: 'B1I',
+            title: 'B1I',
+          },
+          {
+            markdownString: 'B1II',
+            title: 'B1II',
+          },
+        ],
+      },
+      {
+        title: 'B2',
+        children: [
+          {
+            markdownString: 'B2I',
+            title: 'B2I',
+          },
+          {
+            markdownString: 'B2II',
+            title: 'B2II',
+          },
+        ],
+      },
+    ],
+  },
+];
+
 async function wait(fixture: ComponentFixture<any>): Promise<void> {
   fixture.detectChanges();
   await fixture.whenStable();
+}
+function getItem(fixture: ComponentFixture<any>, index: number) {
+  return fixture.debugElement.queryAll(By.css('mat-action-list button'))[index].nativeElement;
+}
+function goBack(fixture: ComponentFixture<any>) {
+  fixture.debugElement.query(By.css('.mat-icon-button[data-test="back-button"]')).nativeElement.click();
+}
+
+function goHome(fixture: ComponentFixture<any>) {
+  fixture.debugElement.query(By.css('.mat-icon-button[data-test="home-button"]')).nativeElement.click();
+}
+function getMarkdown(fixture: ComponentFixture<any>): string {
+  return fixture.debugElement.query(By.css('td-flavored-markdown ')).nativeElement.textContent;
 }
 
 @Component({
@@ -264,6 +342,84 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.goHomeLabel).toContain(SAMPLE_LABELS.goHome);
       expect(markdownNavigator.emptyStateLabel).toContain(SAMPLE_LABELS.emptyState);
       expect(elem.nativeElement.textContent).toContain(SAMPLE_LABELS.emptyState);
+    }),
+  ));
+
+  it('should be able to navigate up and down tree using the back button', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = DEEPLY_NESTED_TREE;
+      await wait(fixture);
+
+      expect(getItem(fixture, 0).textContent).toContain('A');
+      getItem(fixture, 0).click();
+      expect(getItem(fixture, 0).textContent).toContain('A1');
+      getItem(fixture, 0).click();
+      expect(getItem(fixture, 0).textContent).toContain('A1I');
+      getItem(fixture, 0).click();
+      expect(getMarkdown(fixture)).toContain('A1I');
+      goBack(fixture);
+      expect(getItem(fixture, 1).textContent).toContain('A1II');
+      getItem(fixture, 1).click();
+      expect(getMarkdown(fixture)).toContain('A1II');
+      goBack(fixture);
+      goBack(fixture);
+      expect(getItem(fixture, 1).textContent).toContain('A2');
+      getItem(fixture, 1).click();
+      expect(getItem(fixture, 0).textContent).toContain('A2I');
+      getItem(fixture, 0).click();
+      expect(getMarkdown(fixture)).toContain('A2I');
+      goBack(fixture);
+      expect(getItem(fixture, 1).textContent).toContain('A2II');
+      getItem(fixture, 1).click();
+      expect(getMarkdown(fixture)).toContain('A2II');
+      goBack(fixture);
+      goBack(fixture);
+      goBack(fixture);
+      expect(getItem(fixture, 1).textContent).toContain('B');
+      getItem(fixture, 1).click();
+      expect(getItem(fixture, 0).textContent).toContain('B1');
+      getItem(fixture, 0).click();
+      expect(getItem(fixture, 0).textContent).toContain('B1I');
+      getItem(fixture, 0).click();
+      expect(getMarkdown(fixture)).toContain('B1I');
+      goBack(fixture);
+      expect(getItem(fixture, 1).textContent).toContain('B1II');
+      getItem(fixture, 1).click();
+      expect(getMarkdown(fixture)).toContain('B1II');
+      goBack(fixture);
+      goBack(fixture);
+      expect(getItem(fixture, 1).textContent).toContain('B2');
+      getItem(fixture, 1).click();
+      expect(getItem(fixture, 0).textContent).toContain('B2I');
+      getItem(fixture, 0).click();
+      expect(getMarkdown(fixture)).toContain('B2I');
+      goBack(fixture);
+      expect(getItem(fixture, 1).textContent).toContain('B2II');
+      getItem(fixture, 1).click();
+      expect(getMarkdown(fixture)).toContain('B2II');
+    }),
+  ));
+
+  it('should be able to go to root using home button', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = DEEPLY_NESTED_TREE;
+      await wait(fixture);
+
+      getItem(fixture, 0).click();
+      getItem(fixture, 0).click();
+      getItem(fixture, 0).click();
+      expect(getMarkdown(fixture)).toContain('A1I');
+      goHome(fixture);
+      expect(getItem(fixture, 0).textContent).toContain('A');
+      expect(getItem(fixture, 1).textContent).toContain('B');
     }),
   ));
 });

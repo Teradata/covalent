@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels } from '../markdown-navigator.component';
 
@@ -15,6 +15,7 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowL
   selector: 'td-markdown-navigator-window',
   templateUrl: './markdown-navigator-window.component.html',
   styleUrls: ['./markdown-navigator-window.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MarkdownNavigatorWindowComponent {
   @Input() items: IMarkdownNavigatorItem[];
