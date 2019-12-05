@@ -6,13 +6,15 @@ import {
   IMarkdownNavigatorWindowLabels,
 } from '../markdown-navigator-window/markdown-navigator-window.component';
 import { TdDialogService } from '@covalent/core/dialogs';
-import { IMarkdownNavigatorItem } from '../markdown-navigator.component';
+import { IMarkdownNavigatorItem, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
 
 export interface IMarkdownNavigatorWindowConfig {
   items: IMarkdownNavigatorItem[];
   dialogConfig?: MatDialogConfig;
   labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
+  jumpTo?: IMarkdownNavigatorItem;
+  compareWith?: IMarkdownNavigatorCompareWith;
 }
 
 const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-markdown-navigator-window-wrapper';
@@ -27,8 +29,8 @@ const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
 };
 @Injectable()
 export class MarkdownNavigatorWindowService {
-  markdownNavigatorWindowDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = undefined;
-  markdownNavigatorWindowDialogsOpen: number = 0;
+  private markdownNavigatorWindowDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = undefined;
+  private markdownNavigatorWindowDialogsOpen: number = 0;
 
   constructor(private _tdDialogService: TdDialogService) {}
 
@@ -48,6 +50,8 @@ export class MarkdownNavigatorWindowService {
 
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
+    this.markdownNavigatorWindowDialog.componentInstance.jumpTo = config.jumpTo;
+    this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';
     this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe(() => this.close());

@@ -9,9 +9,11 @@ A component for rendering and navigating through markdown, such as documentation
   + List of IMarkdownNavigatorItems to be rendered
 + labels?: IMarkdownNavigatorLabels
   + Translated labels
-+ toolbarColor?: ThemePalette
-  + Color palette for toolbar
-  + Defaults to 'primary'
++ jumpTo?: IMarkdownNavigatorItem
+  + Item to jump to
++ compareWith?: IMarkdownNavigatorCompareWith
+  + Function used to find jumpTo item
+  + Defaults to comparison by strict equality (===)
 
 ## Setup
 
@@ -116,6 +118,8 @@ interface IMarkdownNavigatorWindowConfig {
   dialogConfig?: MatDialogConfig;
   labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
+  jumpTo?: IMarkdownNavigatorItem;
+  compareWith?: IMarkdownNavigatorCompareWith;
 }
 ```
 
@@ -185,6 +189,8 @@ interface IMarkdownNavigatorWindowConfig {
   dialogConfig?: MatDialogConfig;
   labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
+  jumpTo?: IMarkdownNavigatorItem;
+  compareWith?: IMarkdownNavigatorCompareWith;
 }
 ```
 
