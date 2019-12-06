@@ -6,15 +6,17 @@ import {
   IMarkdownNavigatorWindowLabels,
 } from '../markdown-navigator-window/markdown-navigator-window.component';
 import { TdDialogService, IDraggableRefs, ResizableDraggableDialog } from '@covalent/core/dialogs';
-import { IMarkdownNavigatorItem } from '../markdown-navigator.component';
 import { DragRef, Point } from '@angular/cdk/drag-drop/drag-ref';
 import { DOCUMENT } from '@angular/common';
+import { IMarkdownNavigatorItem, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
 
 export interface IMarkdownNavigatorWindowConfig {
   items: IMarkdownNavigatorItem[];
   dialogConfig?: MatDialogConfig;
   labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
+  startAt?: IMarkdownNavigatorItem;
+  compareWith?: IMarkdownNavigatorCompareWith;
 }
 
 const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-markdown-navigator-window-wrapper';
@@ -42,11 +44,11 @@ interface IDialogDimensions {
 
 @Injectable()
 export class MarkdownNavigatorWindowService {
-  _renderer2: Renderer2;
-  markdownNavigatorWindowDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = undefined;
-  markdownNavigatorWindowDialogsOpen: number = 0;
-  dragRef: DragRef;
-  resizableDraggableDialog: ResizableDraggableDialog;
+  private _renderer2: Renderer2;
+  private dragRef: DragRef;
+  private resizableDraggableDialog: ResizableDraggableDialog;
+  private markdownNavigatorWindowDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = undefined;
+  private markdownNavigatorWindowDialogsOpen: number = 0;
 
   constructor(
     private _tdDialogService: TdDialogService,
@@ -75,6 +77,8 @@ export class MarkdownNavigatorWindowService {
     this.markdownNavigatorWindowDialog = matDialogRef;
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
+    this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
+    this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';
     this.markdownNavigatorWindowDialogsOpen++;

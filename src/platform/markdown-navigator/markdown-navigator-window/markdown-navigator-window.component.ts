@@ -1,6 +1,10 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels } from '../markdown-navigator.component';
+import {
+  IMarkdownNavigatorItem,
+  IMarkdownNavigatorLabels,
+  IMarkdownNavigatorCompareWith,
+} from '../markdown-navigator.component';
 
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
   title?: string;
@@ -19,11 +23,14 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowL
   selector: 'td-markdown-navigator-window',
   templateUrl: './markdown-navigator-window.component.html',
   styleUrls: ['./markdown-navigator-window.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MarkdownNavigatorWindowComponent {
   @Input() items: IMarkdownNavigatorItem[];
   @Input() labels: IMarkdownNavigatorWindowLabels;
   @Input() toolbarColor: ThemePalette = 'primary';
+  @Input() startAt: IMarkdownNavigatorItem;
+  @Input() compareWith: IMarkdownNavigatorCompareWith;
   toolbarHeight: number = 56;
   @Input() isMinimized: boolean = false;
 

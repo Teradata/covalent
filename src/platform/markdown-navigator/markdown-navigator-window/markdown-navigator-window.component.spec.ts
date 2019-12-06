@@ -14,7 +14,9 @@ import {
   IMarkdownNavigatorItem,
   MarkdownNavigatorComponent,
   DEFAULT_MARKDOWN_NAVIGATOR_LABELS,
+  IMarkdownNavigatorCompareWith,
 } from '../markdown-navigator.component';
+import { DEEPLY_NESTED_TREE, compareByTitle } from '../markdown-navigator.component.spec';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
@@ -30,7 +32,9 @@ const RAW_MARKDOWN_ITEM: IMarkdownNavigatorItem[] = [
   },
 ];
 
-async function wait(fixture: ComponentFixture<any>): Promise<void> {
+async function wait(
+  fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent | TdMarkdownNavigatorWindowWOColorTestComponent>,
+): Promise<void> {
   fixture.detectChanges();
   await fixture.whenStable();
 }
@@ -43,6 +47,8 @@ async function wait(fixture: ComponentFixture<any>): Promise<void> {
       [style.height.px]="450"
       [labels]="labels"
       [toolbarColor]="toolbarColor"
+      [startAt]="startAt"
+      [compareWith]="compareWith"
     ></td-markdown-navigator-window>
   `,
 })
@@ -50,6 +56,8 @@ class TdMarkdownNavigatorWindowTestComponent {
   items: IMarkdownNavigatorItem[] = [];
   labels: IMarkdownNavigatorWindowLabels;
   toolbarColor: ThemePalette;
+  startAt: IMarkdownNavigatorItem;
+  compareWith: IMarkdownNavigatorCompareWith;
 }
 
 @Component({
@@ -241,6 +249,50 @@ describe('MarkdownNavigatorWindowComponent', () => {
       await wait(fixture);
 
       expect(markdownNavigatorWindow.closed.emit).toHaveBeenCalled();
+    }),
+  ));
+
+  it('pass startAt item to markdownNavigator component', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
+
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[0];
+      await wait(fixture);
+
+      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorComponent),
+      ).componentInstance;
+
+      expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[0]);
+
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[1];
+      await wait(fixture);
+      expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[1]);
+    }),
+  ));
+
+  it('pass compareWith item to markdownNavigator component', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
+      function compareByUrl(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem): boolean {
+        return o1.url === o2.url;
+      }
+      fixture.componentInstance.compareWith = compareByUrl;
+      await wait(fixture);
+
+      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(MarkdownNavigatorComponent),
+      ).componentInstance;
+
+      expect(markdownNavigator.compareWith).toEqual(compareByUrl);
+
+      fixture.componentInstance.compareWith = compareByTitle;
+      await wait(fixture);
+      expect(markdownNavigator.compareWith).toEqual(compareByTitle);
     }),
   ));
 });

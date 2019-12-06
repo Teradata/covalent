@@ -6,6 +6,7 @@ import {
   isGithubHref,
   rawGithubHref,
   scrollToAnchor,
+  isRawGithubHref,
 } from './markdown-utils';
 import { Component } from '@angular/core';
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
@@ -126,11 +127,22 @@ describe('Markdown utils', () => {
   it('isGithubHref should check whether an href is from github.com', () => {
     expect(isGithubHref('')).toBe(false);
     expect(isGithubHref(undefined)).toBe(false);
+    expect(isGithubHref('github.com')).toBe(false);
+    expect(isGithubHref('subdomain.github.com')).toBe(false);
+    expect(isGithubHref('https://raw.githubusercontent.com')).toBe(false);
     expect(isGithubHref('http://github.com')).toBe(true);
     expect(isGithubHref('https://github.com')).toBe(true);
     expect(isGithubHref('https://github.com/something')).toBe(true);
-    expect(isGithubHref('github.com')).toBe(false);
-    expect(isGithubHref('subdomain.github.com')).toBe(false);
+  });
+
+  it('isRawGithubHref should check whether an href is from raw.githubusercontent.com', () => {
+    expect(isRawGithubHref('')).toBe(false);
+    expect(isRawGithubHref(undefined)).toBe(false);
+    expect(isRawGithubHref('raw.githubusercontent.com')).toBe(false);
+    expect(isRawGithubHref('https://raw.githubusercontent.com')).toBe(true);
+    expect(isRawGithubHref('http://raw.githubusercontent.com')).toBe(true);
+    expect(isRawGithubHref('https://raw.githubusercontent.com')).toBe(true);
+    expect(isRawGithubHref('https://raw.githubusercontent.com/something')).toBe(true);
   });
 
   it('scrollToAnchor should scroll to anchor within provided element, or parent if tryParent is true', async () => {
