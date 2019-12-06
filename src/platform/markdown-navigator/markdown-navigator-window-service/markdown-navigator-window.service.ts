@@ -1,42 +1,43 @@
 import { Injectable } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
-
-import { Overlay } from '@angular/cdk/overlay';
-import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
 import { ThemePalette } from '@angular/material/core';
 import {
   MarkdownNavigatorWindowComponent,
   IMarkdownNavigatorWindowLabels,
 } from '../markdown-navigator-window/markdown-navigator-window.component';
 import { TdDialogService } from '@covalent/core/dialogs';
-import { IMarkdownNavigatorItem } from '../markdown-navigator.component';
+import { IMarkdownNavigatorItem, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
 
 export interface IMarkdownNavigatorWindowConfig {
   items: IMarkdownNavigatorItem[];
   dialogConfig?: MatDialogConfig;
   labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
+  startAt?: IMarkdownNavigatorItem;
+  compareWith?: IMarkdownNavigatorCompareWith;
 }
 
-@Injectable({
-  providedIn: CovalentMarkdownNavigatorModule,
-})
+const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-markdown-navigator-window-wrapper';
+
+const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
+  hasBackdrop: false,
+  closeOnNavigation: true,
+  panelClass: CDK_OVERLAY_CUSTOM_CLASS,
+  position: { bottom: '0px', right: '0px' },
+  height: '475px',
+  width: '360px',
+};
+@Injectable()
 export class MarkdownNavigatorWindowService {
-  constructor(private _overlay: Overlay, private _tdDialogService: TdDialogService) {}
+  private markdownNavigatorWindowDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = undefined;
+  private markdownNavigatorWindowDialogsOpen: number = 0;
 
-  open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<MarkdownNavigatorWindowComponent> {
-    const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-markdown-navigator-window-wrapper';
-    const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
-      hasBackdrop: false,
-      closeOnNavigation: true,
-      panelClass: CDK_OVERLAY_CUSTOM_CLASS,
-      position: { bottom: '0', right: '0' },
-      height: '475px',
-      width: '360px',
-      scrollStrategy: this._overlay.scrollStrategies.noop(),
-    };
+  constructor(private _tdDialogService: TdDialogService) {}
 
-    const draggableDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = this._tdDialogService.openDraggable({
+  public open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<MarkdownNavigatorWindowComponent> {
+    this.close();
+
+    this.markdownNavigatorWindowDialog = this._tdDialogService.openDraggable({
       component: MarkdownNavigatorWindowComponent,
       config: {
         ...DEFAULT_DRAGGABLE_DIALOG_CONFIG,
@@ -45,12 +46,32 @@ export class MarkdownNavigatorWindowService {
       dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
       draggableClass: 'td-draggable-markdown-navigator-window',
     });
+    this.markdownNavigatorWindowDialogsOpen++;
 
-    draggableDialog.componentInstance.items = config.items;
-    draggableDialog.componentInstance.labels = config.labels;
-    draggableDialog.componentInstance.toolbarColor = 'toolbarColor' in config ? config.toolbarColor : 'primary';
-    draggableDialog.componentInstance.closed.subscribe(() => draggableDialog.close());
+    this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
+    this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
+    this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
+    this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
+    this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
+      'toolbarColor' in config ? config.toolbarColor : 'primary';
+    this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe(() => this.close());
+    this.markdownNavigatorWindowDialog
+      .afterClosed()
+      .toPromise()
+      .then(() => {
+        this.markdownNavigatorWindowDialogsOpen--;
+      });
 
-    return draggableDialog;
+    return this.markdownNavigatorWindowDialog;
+  }
+
+  public close(): void {
+    if (this.markdownNavigatorWindowDialog) {
+      this.markdownNavigatorWindowDialog.close();
+    }
+  }
+
+  public get isOpen(): boolean {
+    return this.markdownNavigatorWindowDialogsOpen > 0;
   }
 }

@@ -20,6 +20,7 @@ import {
   removeTrailingHash,
   rawGithubHref,
   isGithubHref,
+  isRawGithubHref,
 } from './markdown-utils/markdown-utils';
 
 declare const require: any;
@@ -109,6 +110,14 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
         }
       } catch {
         image.src = generateAbsoluteHref(isGithubHref(currentHref) ? rawGithubHref(currentHref) : currentHref, src);
+      }
+      // gh svgs need to have ?sanitize=true
+      if (isRawGithubHref(image.src)) {
+        const url: URL = new URL(image.src);
+        if (url.pathname.endsWith('.svg')) {
+          url.searchParams.set('sanitize', 'true');
+          image.src = url.href;
+        }
       }
     });
 

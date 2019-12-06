@@ -5,7 +5,7 @@
   "keywords": [
     "angular",
     "covalent",
-    "simplemde",
+    "easymde",
     "markdown",
     "text",
     "editor",
@@ -33,7 +33,7 @@
     "Julie Knowles <julie.knowles@teradata.com>"
   ],
   "dependencies": {
-    "simplemde": "0.0.0-SIMPLEMDE"
+    "easymde": "0.0.0-EASYMDE"
   },
   "peerDependencies": {
     "@angular/common": "0.0.0-NG",

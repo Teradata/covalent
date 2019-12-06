@@ -30,7 +30,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   private _destroy$: Subject<any> = new Subject();
   private _destroyControl$: Subject<string> = new Subject();
 
-  @ContentChildren(TdDynamicFormsErrorTemplateDirective) _errorTemplates: QueryList<
+  @ContentChildren(TdDynamicFormsErrorTemplateDirective, { descendants: true }) _errorTemplates: QueryList<
     TdDynamicFormsErrorTemplateDirective
   >;
   dynamicForm: FormGroup;
@@ -205,13 +205,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
       filter((destroyedElementName: string) => destroyedElementName === elementName),
     );
 
-    control.statusChanges
-      .pipe(
-        takeUntil(this._destroy$),
-        takeUntil(controlDestroyed$),
-      )
-      .subscribe(() => {
-        this._changeDetectorRef.markForCheck();
-      });
+    control.statusChanges.pipe(takeUntil(this._destroy$), takeUntil(controlDestroyed$)).subscribe(() => {
+      this._changeDetectorRef.markForCheck();
+    });
   }
 }

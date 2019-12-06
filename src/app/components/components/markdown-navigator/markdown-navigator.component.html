@@ -8,127 +8,107 @@
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <div layout="row">
-          <div flex="50">
-            <mat-radio-group [(ngModel)]="selected" (change)="select()">
-              <mat-radio-button *ngFor="let option of options" [value]="option">
-                {{ option.name }}
-                <br />
-              </mat-radio-button>
-            </mat-radio-group>
-            <td-code-editor flex [language]="'json'" [(ngModel)]="userInput" [style.height.px]="200"></td-code-editor>
-            <button mat-button class="text-upper" color="primary" (click)="tryUserInput()">Try</button>
-          </div>
-          <div flex="50">
-            <td-markdown-navigator [items]="currentItems" [style.height.px]="450"></td-markdown-navigator>
-          </div>
+        <div>
+          <mat-radio-group [(ngModel)]="selected" (change)="selectOption()">
+            <mat-radio-button *ngFor="let option of options" [value]="option">
+              {{ option.name }}
+            </mat-radio-button>
+          </mat-radio-group>
+          <td-code-editor
+            flex
+            [language]="'json'"
+            [editorOptions]="{ minimap: { enabled: false } }"
+            [(ngModel)]="input"
+            [style.height.px]="200"
+          ></td-code-editor>
+          <button mat-button class="text-upper" color="primary" (click)="applyInput()">Apply</button>
+          <button mat-button class="text-upper" color="primary" (click)="demoStartAt()">Jump to a place</button>
+        </div>
+        <div>
+          <td-markdown-navigator
+            [items]="currentTree"
+            [startAt]="startAt"
+            [compareWith]="compareByTitle"
+            [style.height.px]="250"
+          ></td-markdown-navigator>
         </div>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <td-highlight lang="html">
           <![CDATA[
-            <mat-radio-group [(ngModel)]="selected" (change)="select()">
-              <mat-radio-button *ngFor="let option of options" [value]="option">
-                option.name
-                <br />
-              </mat-radio-button>
-            </mat-radio-group>
-            <td-code-editor flex [language]="'json'" [(ngModel)]="userInput" [style.height.px]="200"></td-code-editor>
-            <button mat-button class="text-upper" color="primary" (click)="tryUserInput()">Try</button>
+            <td-markdown-navigator
+              [items]="currentTree"
+              [startAt]="startAt"
+              [compareWith]="compareByTitle"
+              [style.height.px]="250"
+            ></td-markdown-navigator>
           ]]>
         </td-highlight>
         <td-highlight lang="typescript">
-            <![CDATA[
+          <![CDATA[
           import {
             IMarkdownNavigatorItem,
-            MarkdownNavigatorWindowService
           } from '@covalent/markdown-navigator';
 
-          oneItem: IMarkdownNavigatorItem[] = [
-            {
-              url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
-            },
-          ];
+          public currentTree: IMarkdownNavigatorItem[] = [];
+          public startAt: IMarkdownNavigatorItem;
+          public compareByTitle: (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean = (
+            o1: IMarkdownNavigatorItem,
+            o2: IMarkdownNavigatorItem,
+          ): boolean => o1.title === o2.title;
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
 
-          itemWithRawMarkdown: IMarkdownNavigatorItem[] = [
-            {
-              markdownString: '\n\n# Raw markdown example\n \n> Amazing\n\n1. List\n2. of\n3. items\n\n',
-            },
-          ];
-
-          multipleItems: IMarkdownNavigatorItem[] = [
-            {
-              url: 'https://raw.githubusercontent.com/Teradata/nodejs-driver/develop/README.md',
-              title: 'Node.js Driver for Teradata',
-            },
-            {
-              url: 'https://raw.githubusercontent.com/angular/angular/master/README.md',
-              title: 'Angular',
-            },
-          ];
-
-          oneItemWithAnchor: IMarkdownNavigatorItem[] = [
-            {
-              url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
-              anchor: 'Developer Guide for the Platform',
-            },
-          ];
-
-          nestedItems: IMarkdownNavigatorItem[] = [
-            {
-              title: 'Covalent',
-              children: [
-                {
-                  title: 'Components',
-                  children: [
-                    {
-                      url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
-                      title: 'tdLoading',
-                    },
-                  ],
-                },
-              ],
-            },
-          ];
-
-          options: { name: string; value: IMarkdownNavigatorItem[] }[] = [
-            {
-              name: 'One item',
-              value: this.oneItem,
-            },
-            {
-              name: 'Raw markdown',
-              value: this.itemWithRawMarkdown,
-            },
-            { name: 'Multiple items', value: this.multipleItems },
-            { name: 'One item with anchor', value: this.oneItemWithAnchor },
-            { name: 'Nested items', value: this.nestedItems },
-          ];
-
-          selected: { name: string; value: IMarkdownNavigatorItem[] } = this.options[0];
-          currentItems: IMarkdownNavigatorItem[] = this.selected.value;
-          userInput: string = this.prettyJson(this.currentItems);
-
-          select(): void {
-            this.use(this.selected.value);
-          }
-
-          use(items: IMarkdownNavigatorItem[]): void {
-            this.currentItems = items;
-            this.userInput = this.prettyJson(this.currentItems);
-          }
-
-          tryUserInput(): void {
-            this.use(JSON.parse(this.userInput));
-          }
-
-          prettyJson(items: IMarkdownNavigatorItem[]): string {
-            return JSON.stringify(items, undefined, 4);
-          }
+<mat-card>
+  <mat-card-title>Markdown Navigator Window component</mat-card-title>
+  <mat-card-subtitle>
+    A component that contains a MarkdownNavigator component and a toolbar
+  </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-markdown-navigator-window
+          [items]="currentTree"
+          [startAt]="startAt"
+          [compareWith]="compareByTitle"
+          [style.height.px]="250"
+        ></td-markdown-navigator-window>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <mat-card-content>
+          <td-highlight lang="html">
+            <![CDATA[
+            <td-markdown-navigator-window
+              [items]="currentTree"
+              [startAt]="startAt"
+              [compareWith]="compareByTitle"
+              [style.height.px]="250"
+            ></td-markdown-navigator-window>
             ]]>
-
           </td-highlight>
+          <td-highlight lang="typescript">
+            <![CDATA[
+            import {
+              IMarkdownNavigatorItem,
+            } from '@covalent/markdown-navigator';
+
+            public currentTree: IMarkdownNavigatorItem[] = [];
+            public startAt: IMarkdownNavigatorItem;
+            public compareByTitle: (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean = (
+              o1: IMarkdownNavigatorItem,
+              o2: IMarkdownNavigatorItem,
+            ): boolean => o1.title === o2.title;
+            ]]>
+          </td-highlight>
+        </mat-card-content>
       </mat-tab>
     </mat-tab-group>
   </mat-card-content>
@@ -137,15 +117,16 @@
 <mat-card>
   <mat-card-title>Markdown Navigator Window Service</mat-card-title>
   <mat-card-subtitle>
-    A service that opens a MarkdownNavigatorWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
+    A service that opens a MarkdownNavigatorWindowComponent inside a draggable dialog. Uses the openDraggable method of
+    the TdDialogService.
   </mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-tab-group mat-stretch-tabs>
     <mat-tab>
       <ng-template matTabLabel>Demo</ng-template>
       <mat-card-actions>
-        <button mat-button class="text-upper" color="primary" (click)="openDialog()">
-          Open Draggable Markdown Navigator Window
+        <button mat-button class="text-upper" color="primary" (click)="openWindow()">
+          Open
         </button>
       </mat-card-actions>
     </mat-tab>
@@ -154,45 +135,64 @@
       <mat-card-content>
         <td-highlight lang="html">
           <![CDATA[
-            <button mat-button class="text-upper" color="primary" (click)="openDialog()">
-              Open Draggable Markdown Navigator Window
-            </button>
+          <button mat-button class="text-upper" color="primary" (click)="openWindow()">
+            Open
+          </button>
           ]]>
         </td-highlight>
         <td-highlight lang="typescript">
           <![CDATA[
           import {
-            IMarkdownNavigatorItem,
             MarkdownNavigatorWindowService,
-            MarkdownNavigatorWindowComponent,
           } from '@covalent/markdown-navigator';
-
-          windowOpen: boolean = false;
-          ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
-          currentItems: IMarkdownNavigatorItem[] = [
-          {
-            url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
-          },
-          ];
 
           constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
-          openDialog(): void {
-            if (this.windowOpen) {
-              this.closeDialog();
-            }
-            this.ref = this._markdownNavigatorWindowService.open({items: this.currentItems});
-            this.ref.afterOpened().subscribe(() => {
-              this.windowOpen = true;
-            });
+          public openWindow(): void {
+            this._markdownNavigatorWindowService.open(this.windowConfig);
+          }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
 
-            this.ref.afterClosed().subscribe(() => {
-              this.windowOpen = false;
-            });
-          }
-          closeDialog(): void {
-            this.ref.close();
-          }
+<mat-card>
+  <mat-card-title>Markdown Navigator Window Directive</mat-card-title>
+  <mat-card-subtitle>
+    A directive that calls the MarkdownNavigatorWindowService open method on click events.
+  </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-actions>
+        <button
+          mat-button
+          class="text-upper"
+          color="primary"
+          [tdMarkdownNavigatorWindow]="windowConfig"
+          [disabled]="false"
+        >
+          Open
+        </button>
+      </mat-card-actions>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <td-highlight lang="html">
+          <![CDATA[
+          <button
+            mat-button
+            class="text-upper"
+            color="primary"
+            [tdMarkdownNavigatorWindow]="windowConfig"
+            [disabled]="false"
+          >
+            Open
+          </button>
           ]]>
         </td-highlight>
       </mat-card-content>

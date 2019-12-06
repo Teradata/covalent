@@ -2,7 +2,7 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -64,7 +64,7 @@ const TD_LAYOUTS: Type<any>[] = [
 @NgModule({
   imports: [
     CommonModule,
-    ScrollDispatchModule,
+    ScrollingModule,
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,

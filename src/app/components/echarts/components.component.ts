@@ -71,6 +71,11 @@ export class ComponentsComponent {
       route: ['types', 'wordcloud'],
       title: 'Wordcloud',
     },
+    {
+      icon: 'map',
+      route: ['types', 'map'],
+      title: 'Map',
+    },
   ];
 
   atomicComponentRoutes: object[] = [

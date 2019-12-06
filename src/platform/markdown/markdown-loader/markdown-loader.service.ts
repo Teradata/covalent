@@ -1,4 +1,5 @@
-import { Injectable, Sanitizer, SecurityContext } from '@angular/core';
+import { Injectable, SecurityContext } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { isGithubHref, rawGithubHref } from '../markdown-utils/markdown-utils';
 
@@ -6,7 +7,7 @@ import { isGithubHref, rawGithubHref } from '../markdown-utils/markdown-utils';
   providedIn: 'root',
 })
 export class MarkdownLoaderService {
-  constructor(private _http: HttpClient, private _sanitizer: Sanitizer) {}
+  constructor(private _http: HttpClient, private _sanitizer: DomSanitizer) {}
 
   async load(url: string, httpOptions: object = {}): Promise<string> {
     const sanitizedUrl: string = this._sanitizer.sanitize(SecurityContext.URL, url);
