@@ -10,6 +10,7 @@ import {
   MarkdownNavigatorWindowComponent,
   IMarkdownNavigatorWindowLabels,
 } from '../markdown-navigator-window/markdown-navigator-window.component';
+import { DEEPLY_NESTED_TREE, compareByTitle } from '../markdown-navigator.component.spec';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
@@ -22,7 +23,7 @@ const RAW_MARKDOWN_ITEMS: IMarkdownNavigatorItem[] = [
   },
 ];
 
-async function wait(fixture: ComponentFixture<any>): Promise<void> {
+async function wait(fixture: ComponentFixture<TestComponent>): Promise<void> {
   fixture.detectChanges();
   await fixture.whenStable();
 }
@@ -117,6 +118,55 @@ describe('MarkdownNavigatorWindowService', () => {
 
         expect(dialogRef.componentInstance.items).toEqual(RAW_MARKDOWN_ITEMS);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(2);
+
+        dialogRef.close();
+        await wait(fixture);
+      },
+    ),
+  ));
+
+  it('should open to a certain item', async(
+    inject(
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+          items: DEEPLY_NESTED_TREE,
+          startAt: DEEPLY_NESTED_TREE[0],
+        });
+
+        await wait(fixture);
+        await dialogRef.afterOpened().toPromise();
+
+        expect(dialogRef.componentInstance.startAt).toEqual(DEEPLY_NESTED_TREE[0]);
+        expect(getMarkdownNavigator().querySelector('[data-test="title"]').textContent).toContain(
+          DEEPLY_NESTED_TREE[0].title,
+        );
+
+        dialogRef.close();
+        await wait(fixture);
+      },
+    ),
+  ));
+
+  it('should open to a certain item using compareWith function', async(
+    inject(
+      [MarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+          items: DEEPLY_NESTED_TREE,
+          startAt: DEEPLY_NESTED_TREE[1],
+          compareWith: compareByTitle,
+        });
+
+        await wait(fixture);
+        await dialogRef.afterOpened().toPromise();
+
+        expect(dialogRef.componentInstance.compareWith).toEqual(compareByTitle);
+        expect(getMarkdownNavigator().querySelector('[data-test="title"]').textContent).toContain(
+          DEEPLY_NESTED_TREE[1].title,
+        );
 
         dialogRef.close();
         await wait(fixture);

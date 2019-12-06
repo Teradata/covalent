@@ -10,6 +10,7 @@
         [matTooltip]="closeLabel"
         (click)="closed.emit()"
         class="td-markdown-navigator-window-close"
+        [attr.data-test]="'close-button'"
       >
         <mat-icon [attr.aria-label]="closeLabel">
           close
@@ -19,4 +20,9 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<td-markdown-navigator [items]="items" [labels]="markdownNavigatorLabels"></td-markdown-navigator>
+<td-markdown-navigator
+  [items]="items"
+  [labels]="markdownNavigatorLabels"
+  [startAt]="startAt"
+  [compareWith]="compareWith"
+></td-markdown-navigator>

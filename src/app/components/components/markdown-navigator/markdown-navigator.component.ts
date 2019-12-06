@@ -1,7 +1,52 @@
 import { Component, HostBinding } from '@angular/core';
+import { slideInDownAnimation } from '../../../app.animations';
+import {
+  IMarkdownNavigatorItem,
+  MarkdownNavigatorWindowService,
+  IMarkdownNavigatorWindowConfig,
+} from '@covalent/markdown-navigator';
 
-import { slideInDownAnimation } from '../../../../app.animations';
-import { IMarkdownNavigatorItem, MarkdownNavigatorWindowService } from '@covalent/markdown-navigator';
+function prettyJson(items: IMarkdownNavigatorItem[]): string {
+  return JSON.stringify(items, undefined, 4);
+}
+
+const singleLevelTree: IMarkdownNavigatorItem[] = [
+  {
+    url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+  },
+];
+const biLevelTree: IMarkdownNavigatorItem[] = [
+  {
+    url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+    title: 'Covalent',
+  },
+  {
+    url: 'https://raw.githubusercontent.com/angular/angular/master/README.md',
+    title: 'Angular',
+  },
+  {
+    markdownString: '\n\n# Raw markdown example\n \n> Amazing\n\n1. List\n2. of\n3. items\n\n',
+    title: 'Raw markdown',
+  },
+];
+const multiLevelTree: IMarkdownNavigatorItem[] = [
+  {
+    title: 'Covalent',
+    children: [
+      {
+        title: 'Components',
+        children: [
+          {
+            url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
+            title: 'tdLoading',
+          },
+        ],
+      },
+    ],
+  },
+  biLevelTree[1],
+  biLevelTree[2],
+];
 
 @Component({
   selector: 'markdown-navigator-demo',
@@ -14,92 +59,54 @@ export class MarkdownNavigatorDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  oneItem: IMarkdownNavigatorItem[] = [
+  public options: { name: string; value: IMarkdownNavigatorItem[] }[] = [
+    { name: 'Multi-level', value: multiLevelTree },
+    { name: 'Bi-level', value: biLevelTree },
     {
-      url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+      name: 'Single-level',
+      value: singleLevelTree,
     },
   ];
+  public selected: { name: string; value: IMarkdownNavigatorItem[] } = this.options[0];
+  public currentTree: IMarkdownNavigatorItem[] = this.selected.value;
+  public startAt: IMarkdownNavigatorItem;
+  public input: string = prettyJson(this.currentTree);
 
-  itemWithRawMarkdown: IMarkdownNavigatorItem[] = [
-    {
-      markdownString: '\n\n# Raw markdown example\n \n> Amazing\n\n1. List\n2. of\n3. items\n\n',
-    },
-  ];
-
-  multipleItems: IMarkdownNavigatorItem[] = [
-    {
-      url: 'https://raw.githubusercontent.com/Teradata/nodejs-driver/develop/README.md',
-      title: 'Node.js Driver for Teradata',
-    },
-    {
-      url: 'https://raw.githubusercontent.com/angular/angular/master/README.md',
-      title: 'Angular',
-    },
-  ];
-
-  oneItemWithAnchor: IMarkdownNavigatorItem[] = [
-    {
-      url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
-      anchor: 'Adding a new documentation component',
-    },
-  ];
-
-  nestedItems: IMarkdownNavigatorItem[] = [
-    {
-      title: 'Covalent',
-      children: [
-        {
-          title: 'Components',
-          children: [
-            {
-              url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
-              title: 'tdLoading',
-            },
-          ],
-        },
-      ],
-    },
-  ];
-
-  options: { name: string; value: IMarkdownNavigatorItem[] }[] = [
-    {
-      name: 'One item',
-      value: this.oneItem,
-    },
-    {
-      name: 'Raw markdown',
-      value: this.itemWithRawMarkdown,
-    },
-    { name: 'Multiple items', value: this.multipleItems },
-    { name: 'One item with anchor', value: this.oneItemWithAnchor },
-    { name: 'Nested items', value: this.nestedItems },
-  ];
-  selected: { name: string; value: IMarkdownNavigatorItem[] } = this.options[0];
-  currentItems: IMarkdownNavigatorItem[] = this.selected.value;
-  userInput: string = this.prettyJson(this.currentItems);
   constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
 
-  select(): void {
+  public compareByTitle: (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean = (
+    o1: IMarkdownNavigatorItem,
+    o2: IMarkdownNavigatorItem,
+  ): boolean => o1.title === o2.title;
+
+  public get windowConfig(): IMarkdownNavigatorWindowConfig {
+    return { items: this.currentTree, startAt: this.startAt, compareWith: this.compareByTitle };
+  }
+
+  public selectOption(): void {
+    this.startAt = undefined;
     this.use(this.selected.value);
   }
 
-  use(items: IMarkdownNavigatorItem[]): void {
-    this.currentItems = items;
-    this.userInput = this.prettyJson(this.currentItems);
+  public use(items: IMarkdownNavigatorItem[]): void {
+    this.currentTree = items;
+    this.input = prettyJson(this.currentTree);
     if (this._markdownNavigatorWindowService.isOpen) {
-      this.openDialog();
+      this.openWindow();
     }
   }
 
-  tryUserInput(): void {
-    this.use(JSON.parse(this.userInput));
+  public applyInput(): void {
+    this.use(JSON.parse(this.input));
   }
 
-  prettyJson(items: IMarkdownNavigatorItem[]): string {
-    return JSON.stringify(items, undefined, 4);
+  public demoStartAt(): void {
+    this.selected = this.options[0];
+    this.startAt = { title: 'tdLoading' };
+    this.use(JSON.parse(JSON.stringify(this.selected.value)));
   }
 
-  openDialog(): void {
-    this._markdownNavigatorWindowService.open({ items: this.currentItems });
+  public openWindow(): void {
+    this._markdownNavigatorWindowService.open(this.windowConfig);
   }
 }
