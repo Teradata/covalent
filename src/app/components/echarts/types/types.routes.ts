@@ -9,6 +9,7 @@ import { TypesTreeComponent } from './tree/tree.component';
 import { TypesTreemapComponent } from './treemap/treemap.component';
 import { TypesSankeyComponent } from './sankey/sankey.component';
 import { TypesGraphComponent } from './graph/graph.component';
+import { TypesWordcloudComponent } from './wordcloud/wordcloud.component';
 import { TypesMapComponent } from './map/map.component';
 
 const routes: Routes = [
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     component: TypesTreemapComponent,
     path: 'treemap',
+  },
+  {
+    component: TypesWordcloudComponent,
+    path: 'wordcloud',
   },
   {
     component: TypesMapComponent,

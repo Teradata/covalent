@@ -82,6 +82,7 @@
     "core-js": "^2.5.4",
     "easymde": "^2.8.0",
     "echarts": "4.2.1",
+    "echarts-wordcloud": "^1.1.3",
     "hammerjs": "^2.0.8",
     "highlight.js": "9.13.1",
     "monaco-editor": "^0.17.0",

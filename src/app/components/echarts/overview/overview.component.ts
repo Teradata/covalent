@@ -64,6 +64,12 @@ export class OverviewComponent {
       title: 'Graph Chart',
     },
     {
+      color: 'red-500',
+      icon: 'cloud',
+      route: ['types', 'wordcloud'],
+      title: 'Wordcloud Chart',
+    },
+    {
       color: 'deep-orange-500',
       icon: 'map',
       route: ['types', 'map'],

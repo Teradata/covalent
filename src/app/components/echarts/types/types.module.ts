@@ -33,6 +33,7 @@ import { TypesTreeComponent } from './tree/tree.component';
 import { TypesSankeyComponent } from './sankey/sankey.component';
 import { TypesGraphComponent } from './graph/graph.component';
 import { TypesTreemapComponent } from './treemap/treemap.component';
+import { TypesWordcloudComponent } from './wordcloud/wordcloud.component';
 import { TypesMapComponent } from './map/map.component';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
@@ -43,6 +44,7 @@ import { CovalentScatterEchartsModule } from '@covalent/echarts/scatter';
 import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
 import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
 import { CovalentGraphEchartsModule } from '@covalent/echarts/graph';
+import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
 import { CovalentTreemapEchartsModule } from '@covalent/echarts/treemap';
 import { CovalentMapEchartsModule } from '@covalent/echarts/map';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
@@ -87,6 +89,7 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
     CovalentTreeEchartsModule,
     CovalentGraphEchartsModule,
     CovalentSankeyEchartsModule,
+    CovalentWordcloudEchartsModule,
     CovalentTreemapEchartsModule,
     CovalentMapEchartsModule,
     CovalentToolboxEchartsModule,
@@ -104,6 +107,7 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
     TypesSankeyComponent,
     TypesGraphComponent,
     TypesTreemapComponent,
+    TypesWordcloudComponent,
     TypesMapComponent,
   ],
 })

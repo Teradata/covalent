@@ -67,6 +67,11 @@ export class ComponentsComponent {
       title: 'Graph',
     },
     {
+      icon: 'cloud',
+      route: ['types', 'wordcloud'],
+      title: 'Wordcloud',
+    },
+    {
       icon: 'map',
       route: ['types', 'map'],
       title: 'Map',
