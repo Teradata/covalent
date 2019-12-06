@@ -132,13 +132,13 @@ describe('MarkdownNavigatorWindowService', () => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
         const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: DEEPLY_NESTED_TREE,
-          jumpTo: DEEPLY_NESTED_TREE[0],
+          startAt: DEEPLY_NESTED_TREE[0],
         });
 
         await wait(fixture);
         await dialogRef.afterOpened().toPromise();
 
-        expect(dialogRef.componentInstance.jumpTo).toEqual(DEEPLY_NESTED_TREE[0]);
+        expect(dialogRef.componentInstance.startAt).toEqual(DEEPLY_NESTED_TREE[0]);
         expect(getMarkdownNavigator().querySelector('[data-test="title"]').textContent).toContain(
           DEEPLY_NESTED_TREE[0].title,
         );
@@ -156,7 +156,7 @@ describe('MarkdownNavigatorWindowService', () => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
         const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: DEEPLY_NESTED_TREE,
-          jumpTo: DEEPLY_NESTED_TREE[1],
+          startAt: DEEPLY_NESTED_TREE[1],
           compareWith: compareByTitle,
         });
 

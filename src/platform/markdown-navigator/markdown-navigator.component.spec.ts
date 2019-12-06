@@ -199,7 +199,7 @@ function validateTree(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent
       [items]="items"
       [style.height.px]="450"
       [labels]="labels"
-      [jumpTo]="jumpTo"
+      [startAt]="startAt"
       [compareWith]="compareWith"
     ></td-markdown-navigator>
   `,
@@ -207,7 +207,7 @@ function validateTree(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent
 class TdMarkdownNavigatorTestComponent {
   items: IMarkdownNavigatorItem[] = [];
   labels: IMarkdownNavigatorLabels;
-  jumpTo: IMarkdownNavigatorItem;
+  startAt: IMarkdownNavigatorItem;
   compareWith: IMarkdownNavigatorCompareWith;
 }
 
@@ -459,36 +459,37 @@ describe('MarkdownNavigatorComponent', () => {
     }),
   ));
 
-  it('should be able to jump to certain spot passing a reference to a certain child', async(
+  it('should be able to start at a certain item by passing a reference to that item', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
         TdMarkdownNavigatorTestComponent,
       );
       fixture.componentInstance.items = DEEPLY_NESTED_TREE;
-      fixture.componentInstance.jumpTo = DEEPLY_NESTED_TREE[0];
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[0];
       await wait(fixture);
       expect(getTitle(fixture)).toContain('A');
-
       goBack(fixture);
-      await wait(fixture);
-      fixture.componentInstance.jumpTo = DEEPLY_NESTED_TREE[0].children[0];
-      await wait(fixture);
-      expect(getTitle(fixture)).toContain('A1');
 
-      fixture.componentInstance.jumpTo = DEEPLY_NESTED_TREE[0].children[0].children[0];
+      // should not jump to new spot unless items is changed
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[0].children[0];
       await wait(fixture);
-      expect(getMarkdown(fixture)).toContain('A1I');
+      expect(getItem(fixture, 0).textContent).toContain('A');
 
-      fixture.componentInstance.jumpTo = DEEPLY_NESTED_TREE[1].children[1].children[1];
+      // should handle an invalid startAt
+      fixture.componentInstance.items = NESTED_MIXED_ITEMS;
       await wait(fixture);
-      expect(getMarkdown(fixture)).toContain('B2II');
-      goHome(fixture);
+      expect(getItem(fixture, 0).textContent).toContain('First item');
 
+      fixture.componentInstance.items = DEEPLY_NESTED_TREE;
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[1];
+      await wait(fixture);
+      expect(getTitle(fixture)).toContain('B');
+      goBack(fixture);
       validateTree(fixture);
     }),
   ));
 
-  it('should be able to jump to certain spot by using a custom compareWith function', async(
+  it('should be able to jump to start at a certain item by using a custom compareWith function', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
         TdMarkdownNavigatorTestComponent,
@@ -496,22 +497,9 @@ describe('MarkdownNavigatorComponent', () => {
 
       fixture.componentInstance.items = DEEPLY_NESTED_TREE;
       fixture.componentInstance.compareWith = compareByTitle;
-
-      fixture.componentInstance.jumpTo = { title: 'A' };
+      fixture.componentInstance.startAt = { title: 'A' };
       await wait(fixture);
       expect(getTitle(fixture)).toContain('A');
-
-      fixture.componentInstance.jumpTo = { title: 'A1' };
-      await wait(fixture);
-      expect(getTitle(fixture)).toContain('A1');
-
-      fixture.componentInstance.jumpTo = { title: 'A1I' };
-      await wait(fixture);
-      expect(getMarkdown(fixture)).toContain('A1I');
-
-      fixture.componentInstance.jumpTo = { title: 'B2II' };
-      await wait(fixture);
-      expect(getMarkdown(fixture)).toContain('B2II');
 
       function deepHackyComparison(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem): boolean {
         // order matters
@@ -519,15 +507,10 @@ describe('MarkdownNavigatorComponent', () => {
       }
 
       fixture.componentInstance.compareWith = deepHackyComparison;
+      fixture.componentInstance.items = NESTED_MIXED_ITEMS;
+      fixture.componentInstance.startAt = NESTED_MIXED_ITEMS[1];
       await wait(fixture);
-      fixture.componentInstance.jumpTo = {
-        markdownString: 'A1I',
-        title: 'A1I',
-      };
-      await wait(fixture);
-      expect(getMarkdown(fixture)).toContain('A1I');
-      goHome(fixture);
-      validateTree(fixture);
+      expect(getMarkdown(fixture)).toContain('Heading');
     }),
   ));
 });

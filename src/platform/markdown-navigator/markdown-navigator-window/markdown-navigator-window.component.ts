@@ -25,7 +25,7 @@ export class MarkdownNavigatorWindowComponent {
   @Input() items: IMarkdownNavigatorItem[];
   @Input() labels: IMarkdownNavigatorWindowLabels;
   @Input() toolbarColor: ThemePalette = 'primary';
-  @Input() jumpTo: IMarkdownNavigatorItem;
+  @Input() startAt: IMarkdownNavigatorItem;
   @Input() compareWith: IMarkdownNavigatorCompareWith;
   toolbarHeight: number = 56;
 

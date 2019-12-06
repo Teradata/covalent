@@ -47,7 +47,7 @@ async function wait(
       [style.height.px]="450"
       [labels]="labels"
       [toolbarColor]="toolbarColor"
-      [jumpTo]="jumpTo"
+      [startAt]="startAt"
       [compareWith]="compareWith"
     ></td-markdown-navigator-window>
   `,
@@ -56,7 +56,7 @@ class TdMarkdownNavigatorWindowTestComponent {
   items: IMarkdownNavigatorItem[] = [];
   labels: IMarkdownNavigatorWindowLabels;
   toolbarColor: ThemePalette;
-  jumpTo: IMarkdownNavigatorItem;
+  startAt: IMarkdownNavigatorItem;
   compareWith: IMarkdownNavigatorCompareWith;
 }
 
@@ -249,24 +249,24 @@ describe('MarkdownNavigatorWindowComponent', () => {
     }),
   ));
 
-  it('pass jumpTo item to markdownNavigator component', async(
+  it('pass startAt item to markdownNavigator component', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
         TdMarkdownNavigatorWindowTestComponent,
       );
 
-      fixture.componentInstance.jumpTo = DEEPLY_NESTED_TREE[0];
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[0];
       await wait(fixture);
 
       const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
         By.directive(MarkdownNavigatorComponent),
       ).componentInstance;
 
-      expect(markdownNavigator.jumpTo).toEqual(DEEPLY_NESTED_TREE[0]);
+      expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[0]);
 
-      fixture.componentInstance.jumpTo = DEEPLY_NESTED_TREE[1];
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[1];
       await wait(fixture);
-      expect(markdownNavigator.jumpTo).toEqual(DEEPLY_NESTED_TREE[1]);
+      expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[1]);
     }),
   ));
 

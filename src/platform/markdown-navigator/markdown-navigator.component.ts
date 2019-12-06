@@ -104,16 +104,16 @@ export class MarkdownNavigatorComponent implements OnChanges {
   @Input() labels: IMarkdownNavigatorLabels;
 
   /**
-   * goTo?: IMarkdownNavigatorItem
+   * startAt?: IMarkdownNavigatorItem
    *
-   * Item to jump to
+   * Item to start to
    */
-  @Input() jumpTo: IMarkdownNavigatorItem;
+  @Input() startAt: IMarkdownNavigatorItem;
 
   /**
    * compareWith?: IMarkdownNavigatorCompareWith
    *
-   * Function used to find jumpTo item
+   * Function used to find startAt item
    * Defaults to comparison by strict equality (===)
    */
   @Input() compareWith: IMarkdownNavigatorCompareWith;
@@ -216,9 +216,9 @@ export class MarkdownNavigatorComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.items) {
       this.reset();
-    }
-    if (changes.jumpTo && this.items) {
-      this._jumpTo(this.jumpTo);
+      if (this.items && this.startAt) {
+        this._jumpTo(this.startAt);
+      }
     }
   }
 

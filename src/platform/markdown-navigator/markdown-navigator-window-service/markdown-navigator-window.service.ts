@@ -13,7 +13,7 @@ export interface IMarkdownNavigatorWindowConfig {
   dialogConfig?: MatDialogConfig;
   labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
-  jumpTo?: IMarkdownNavigatorItem;
+  startAt?: IMarkdownNavigatorItem;
   compareWith?: IMarkdownNavigatorCompareWith;
 }
 
@@ -50,7 +50,7 @@ export class MarkdownNavigatorWindowService {
 
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
-    this.markdownNavigatorWindowDialog.componentInstance.jumpTo = config.jumpTo;
+    this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
     this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';
