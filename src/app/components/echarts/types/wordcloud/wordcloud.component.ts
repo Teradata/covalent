@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
-import { ITdWordCloudData } from '@covalent/echarts/wordcloud/wordcloud.component';
+import { ITdWordCloudData } from '@covalent/echarts/wordcloud';
 
 import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
 
