@@ -65,14 +65,14 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
 
   async loadMarkdown(): Promise<void> {
     this.loading = true;
-    this._changeDetectorRef.detectChanges();
+    this._changeDetectorRef.markForCheck();
     try {
       this.content = await this._markdownUrlLoaderService.load(this.url, this.httpOptions);
     } catch (error) {
       this.loadFailed.emit(error);
     } finally {
       this.loading = false;
-      this._changeDetectorRef.detectChanges();
+      this._changeDetectorRef.markForCheck();
     }
   }
 }

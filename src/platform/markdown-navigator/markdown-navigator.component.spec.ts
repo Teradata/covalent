@@ -110,12 +110,14 @@ async function wait(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>)
 function getItem(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>, index: number): HTMLElement {
   return fixture.debugElement.queryAll(By.css('mat-action-list button'))[index].nativeElement;
 }
-function goBack(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>): void {
+async function goBack(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>): Promise<void> {
   fixture.debugElement.query(By.css('.mat-icon-button[data-test="back-button"]')).nativeElement.click();
+  await wait(fixture);
 }
 
-function goHome(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>): void {
+async function goHome(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>): Promise<void> {
   fixture.debugElement.query(By.css('.mat-icon-button[data-test="home-button"]')).nativeElement.click();
+  await wait(fixture);
 }
 function getMarkdown(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>): string {
   return fixture.debugElement.query(By.css('td-flavored-markdown ')).nativeElement.textContent;
@@ -129,66 +131,80 @@ export function compareByTitle(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigato
   return o1.title === o2.title;
 }
 
-function validateTree(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>): void {
+async function validateTree(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>): Promise<void> {
   expect(getItem(fixture, 0).textContent).toContain('A');
   getItem(fixture, 0).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('A');
   expect(getItem(fixture, 0).textContent).toContain('A1');
   getItem(fixture, 0).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('A1');
   expect(getItem(fixture, 0).textContent).toContain('A1I');
   getItem(fixture, 0).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('A1I');
   expect(getMarkdown(fixture)).toContain('A1I');
-  goBack(fixture);
+  await goBack(fixture);
   expect(getItem(fixture, 1).textContent).toContain('A1II');
   getItem(fixture, 1).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('A1II');
   expect(getMarkdown(fixture)).toContain('A1II');
-  goBack(fixture);
-  goBack(fixture);
+  await goBack(fixture);
+  await goBack(fixture);
   expect(getItem(fixture, 1).textContent).toContain('A2');
   getItem(fixture, 1).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('A2');
   expect(getItem(fixture, 0).textContent).toContain('A2I');
   getItem(fixture, 0).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('A2I');
   expect(getMarkdown(fixture)).toContain('A2I');
-  goBack(fixture);
+  await goBack(fixture);
   expect(getItem(fixture, 1).textContent).toContain('A2II');
   getItem(fixture, 1).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('A2II');
   expect(getMarkdown(fixture)).toContain('A2II');
-  goBack(fixture);
-  goBack(fixture);
-  goBack(fixture);
+  await goBack(fixture);
+  await goBack(fixture);
+  await goBack(fixture);
   expect(getItem(fixture, 1).textContent).toContain('B');
   getItem(fixture, 1).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('B');
   expect(getItem(fixture, 0).textContent).toContain('B1');
   getItem(fixture, 0).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('B1');
   expect(getItem(fixture, 0).textContent).toContain('B1I');
   getItem(fixture, 0).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('B1I');
   expect(getMarkdown(fixture)).toContain('B1I');
-  goBack(fixture);
+  await goBack(fixture);
   expect(getItem(fixture, 1).textContent).toContain('B1II');
   getItem(fixture, 1).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('B1II');
   expect(getMarkdown(fixture)).toContain('B1II');
-  goBack(fixture);
-  goBack(fixture);
+  await goBack(fixture);
+  await goBack(fixture);
   expect(getItem(fixture, 1).textContent).toContain('B2');
   getItem(fixture, 1).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('B2');
   expect(getItem(fixture, 0).textContent).toContain('B2I');
   getItem(fixture, 0).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('B2I');
   expect(getMarkdown(fixture)).toContain('B2I');
-  goBack(fixture);
+  await goBack(fixture);
   expect(getItem(fixture, 1).textContent).toContain('B2II');
   getItem(fixture, 1).click();
+  await wait(fixture);
   expect(getTitle(fixture)).toContain('B2II');
   expect(getMarkdown(fixture)).toContain('B2II');
 }
@@ -448,10 +464,13 @@ describe('MarkdownNavigatorComponent', () => {
       await wait(fixture);
 
       getItem(fixture, 0).click();
+      await wait(fixture);
       getItem(fixture, 0).click();
+      await wait(fixture);
       getItem(fixture, 0).click();
+      await wait(fixture);
       expect(getMarkdown(fixture)).toContain('A1I');
-      goHome(fixture);
+      await goHome(fixture);
       expect(getItem(fixture, 0).textContent).toContain('A');
       expect(getItem(fixture, 1).textContent).toContain('B');
 
@@ -484,7 +503,7 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[1];
       await wait(fixture);
       expect(getTitle(fixture)).toContain('B');
-      goBack(fixture);
+      await goBack(fixture);
       validateTree(fixture);
     }),
   ));

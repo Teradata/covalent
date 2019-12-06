@@ -232,7 +232,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       this.currentMarkdownItem = undefined;
     }
     this.historyStack = [];
-    this._changeDetectorRef.detectChanges();
+    this._changeDetectorRef.markForCheck();
   }
 
   goBack(): void {
@@ -252,7 +252,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       // one level down just go to root
       this.reset();
     }
-    this._changeDetectorRef.detectChanges();
+    this._changeDetectorRef.markForCheck();
   }
 
   handleItemSelected(item: IMarkdownNavigatorItem): void {
@@ -276,7 +276,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       // render markdown
       this.currentMarkdownItem = item;
     }
-    this._changeDetectorRef.detectChanges();
+    this._changeDetectorRef.markForCheck();
   }
 
   getTitle(item: IMarkdownNavigatorItem): string {
@@ -301,6 +301,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
       );
       (ancestors || []).forEach((ancestor: IMarkdownNavigatorItem) => this.handleItemSelected(ancestor));
     }
+    this._changeDetectorRef.markForCheck();
   }
 
   private async handleLinkClick(event: Event): Promise<void> {
@@ -308,7 +309,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
     const link: HTMLAnchorElement = <HTMLAnchorElement>event.target;
     const url: URL = new URL(link.href);
     this.loading = true;
-    this._changeDetectorRef.detectChanges();
+    this._changeDetectorRef.markForCheck();
     try {
       const markdownString: string = await this._markdownUrlLoaderService.load(url.href);
       // pass in url to be able to use currentMarkdownItem.url later on
@@ -320,6 +321,6 @@ export class MarkdownNavigatorComponent implements OnChanges {
     } finally {
       this.loading = false;
     }
-    this._changeDetectorRef.detectChanges();
+    this._changeDetectorRef.markForCheck();
   }
 }
