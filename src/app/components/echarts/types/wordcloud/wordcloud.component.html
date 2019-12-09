@@ -1,0 +1,101 @@
+<mat-card flex>
+  <mat-card-title>Wordcloud</mat-card-title>
+  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip and theme</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-chart [style.height.px]="500">
+          <td-chart-tooltip [trigger]="'item'"></td-chart-tooltip>
+          <td-chart-series td-wordCloud
+                          shape="star"
+                          [sizeRange]="[8, 30]"
+                          [rotationRange]="[-30, 30]"
+                          [color]="randomColor"
+                          [data]="componentExampleRandomWords">
+          </td-chart-series>
+        </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>TypeScript: </p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+          export class WordcloudComponent {
+            words: string[] = [ 'Covalent', 'Teradata', 'Angular', 'TypeScript', 'JavaScript', 'Protractor', 'Karma',
+                                'Ruby', 'Rails', 'Ruby on Rails', 'Java', 'Scala', 'RSpec', 'Cucumber', 'JUnit', 'Elixir',
+                                'Twitter Bootstrap', 'HTML', 'CSS', 'SASS', 'PHP' ];
+
+            randomWords: ITdWordCloudData[] = Array.apply(undefined, Array(30)).map(() => {
+              return {
+                name: this.words[Math.floor(Math.random() * this.words.length)],
+                value: Math.floor(Math.random() * 100),
+                textStyle: {
+                  normal: {
+                    fontFamily: 'sans-serif',
+                    fontWeight: 'bold',
+                  },
+                },
+              };
+            });
+
+            randomColor(): string {
+              return 'rgb(' + [
+                Math.round(Math.random() * 160),
+                Math.round(Math.random() * 160),
+                Math.round(Math.random() * 160),
+              ].join(',') + ')';
+            }
+          };
+          ]]>
+        </td-highlight>
+        <p>HTML: </p>
+        <td-highlight lang="html">
+          <![CDATA[
+          <td-chart [style.height.px]="500">
+              <td-chart-tooltip [trigger]="'item'"></td-chart-tooltip>
+              <td-chart-series td-wordCloud
+                              shape="star"
+                              sizeRange="[8, 30]"
+                              rotationRange="[-30, 30]"
+                              [color]="randomColor"
+                              [data]="randomWords">
+              </td-chart-series>
+            </td-chart>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Wordcloud (JS Object)</mat-card-title>
+  <mat-card-subtitle>Configuration object used to render a chart</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-chart [style.height.px]="500" 
+                  [config]="config">
+        </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML: </p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chart [style.height.px]="500" 
+                      [config]="config">
+            </td-chart>
+          ]]>
+        </td-highlight>
+        <p>config JSON: </p>
+        <td-highlight [content]="config | json" lang="json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<td-readme-loader resourceUrl="platform/echarts/wordcloud/README.md"></td-readme-loader>
