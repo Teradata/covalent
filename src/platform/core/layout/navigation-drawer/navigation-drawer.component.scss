@@ -34,16 +34,32 @@
         width: 60px;
         margin: 0 12px 12px 0;
       }
+
+      .td-navigation-drawer-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .td-navigation-drawer-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .td-navigation-drawer-menu-toggle {
       // [layout="row"]
       flex-direction: row;
       box-sizing: border-box;
       display: flex;
+
       .td-navigation-drawer-label {
         // [flex]
         flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
+
       .td-navigation-drawer-menu-button {
         height: 24px;
         line-height: 24px;
