@@ -9,26 +9,32 @@ import { catchError, map } from 'rxjs/operators';
   templateUrl: './demo.component.html',
 })
 export class DemoComponent {
-  @Input() demoId: string;  
+  @Input() demoId: string;
   viewCode: boolean = false;
   typescriptFile: string;
   htmlFile: string;
   stylesFile: string;
 
-  constructor(private _http: HttpClient) {
-
-  }
+  constructor(private _http: HttpClient) {}
 
   toggleCodeView(): void {
     let demoMarker: number = this.demoId.indexOf('-demo-');
     let demoFolderName: string = this.demoId.slice(0, demoMarker);
+    console.log(demoFolderName);
+    console.log(demoMarker);
     forkJoin({
-      typescript: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.ts`, { responseType: 'text' }),
-      html: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.html`, { responseType: 'text' }),
-      styles: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.scss`, { responseType: 'text' }),
+      typescript: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.ts`, {
+        responseType: 'text',
+      }),
+      html: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.html`, {
+        responseType: 'text',
+      }),
+      styles: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.scss`, {
+        responseType: 'text',
+      }),
     })
       .pipe(
-        map((responses: { typescript: string; html: string, styles: string }) => {
+        map((responses: { typescript: string; html: string; styles: string }) => {
           return { typescript: responses.typescript, html: responses.html, styles: responses.styles };
         }),
         catchError((error: Response) => {
@@ -48,5 +54,4 @@ export class DemoComponent {
         this.viewCode = !this.viewCode;
       });
   }
-
 }
