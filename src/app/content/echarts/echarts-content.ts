@@ -97,6 +97,7 @@ export const echartsContentDetails: any = [
     overviewDocUrl: '',
     icon: 'insert_chart',
     route: '/echarts/pie',
+    demo: () => import('./echarts-demos/pie/demos/pie-demo.module').then((mod) => mod.PieDemoModule),
   },
   {
     name: 'Sankey',
@@ -111,6 +112,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/sankey',
     color: '',
+    demo: () => import('./echarts-demos/sankey/demos/sankey-demo.module').then((mod) => mod.SankeyDemoModule),
   },
   {
     name: 'Scatter',
