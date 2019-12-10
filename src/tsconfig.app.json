@@ -3,8 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "../out-tsc/app",
-    "types": ["hammerjs"],
-    "target": "es5"
+    "types": ["hammerjs"]
   },
   "exclude": ["universal-app/**", "test.ts", "**/*.spec.*"]
 }
