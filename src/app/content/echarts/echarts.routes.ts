@@ -24,39 +24,40 @@ const routes: Routes = [
       },
       {
         path: 'combination',
-        loadChildren: () => import('./echarts-demos/combination/combination.module').then((m) => m.CombinationModule),
+        loadChildren: () =>
+          import('./echarts-demos/combination/combination.module').then((m: any) => m.CombinationModule),
       },
       {
         path: 'bar',
-        loadChildren: () => import('./echarts-demos/bar/bar.module').then((m) => m.BarModule),
+        loadChildren: () => import('./echarts-demos/bar/bar.module').then((m: any) => m.BarModule),
       },
       {
         path: 'graph',
-        loadChildren: () => import('./echarts-demos/graph/graph.module').then((m) => m.GraphModule),
+        loadChildren: () => import('./echarts-demos/graph/graph.module').then((m: any) => m.GraphModule),
       },
       {
         path: 'line',
-        loadChildren: () => import('./echarts-demos/line/line.module').then((m) => m.LineModule),
+        loadChildren: () => import('./echarts-demos/line/line.module').then((m: any) => m.LineModule),
       },
       {
         path: 'pie',
-        loadChildren: () => import('./echarts-demos/pie/pie.module').then((m) => m.PieModule),
+        loadChildren: () => import('./echarts-demos/pie/pie.module').then((m: any) => m.PieModule),
       },
       {
         path: 'sankey',
-        loadChildren: () => import('./echarts-demos/sankey/sankey.module').then((m) => m.SankeyModule),
+        loadChildren: () => import('./echarts-demos/sankey/sankey.module').then((m: any) => m.SankeyModule),
       },
       {
         path: 'scatter',
-        loadChildren: () => import('./echarts-demos/scatter/scatter.module').then((m) => m.ScatterModule),
+        loadChildren: () => import('./echarts-demos/scatter/scatter.module').then((m: any) => m.ScatterModule),
       },
       {
         path: 'tree',
-        loadChildren: () => import('./echarts-demos/tree/tree.module').then((m) => m.TreeModule),
+        loadChildren: () => import('./echarts-demos/tree/tree.module').then((m: any) => m.TreeModule),
       },
       {
         path: 'treemap',
-        loadChildren: () => import('./echarts-demos/treemap/treemap.module').then((m) => m.TreemapModule),
+        loadChildren: () => import('./echarts-demos/treemap/treemap.module').then((m: any) => m.TreemapModule),
       },
       {
         path: 'tooltip',

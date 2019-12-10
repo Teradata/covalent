@@ -1,6 +1,6 @@
 import { routeBuilder, IScopedRouteBuilder } from 'app/utilities/route-builder';
 
-export const echartsRoutesCategories = [
+export const echartsRoutesCategories: any = [
   { name: '', nested: false },
   { name: 'Base', nested: false },
   { name: 'Chart Types', nested: false, color: 'blue-800' },
@@ -37,7 +37,7 @@ export const echartsContentDetails: any = [
     overviewDocUrl: '',
     icon: 'insert_chart',
     route: '/echarts/bar',
-    demo: () => import('./echarts-demos/bar/demos/bar-demo.module').then((mod) => mod.BarDemoModule),
+    demo: () => import('./echarts-demos/bar/demos/bar-demo.module').then((mod: any) => mod.BarDemoModule),
   },
   {
     name: 'Combination',
@@ -53,7 +53,7 @@ export const echartsContentDetails: any = [
     route: '/echarts/combination',
     color: '',
     demo: () =>
-      import('./echarts-demos/combination/demos/combination-demo.module').then((mod) => mod.CombinationDemoModule),
+      import('./echarts-demos/combination/demos/combination-demo.module').then((mod: any) => mod.CombinationDemoModule),
   },
   {
     name: 'Graph',
@@ -123,7 +123,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/scatter',
     color: '',
-    demo: () => import('./echarts-demos/scatter/demos/scatter-demo.module').then((mod) => mod.ScatterDemoModule),
+    demo: () => import('./echarts-demos/scatter/demos/scatter-demo.module').then((mod: any) => mod.ScatterDemoModule),
   },
   {
     name: 'Tree',

@@ -1,6 +1,6 @@
 import { docsRouteBuilder } from 'app/utilities/route-builder';
 
-export const docsRouteCategories = [
+export const docsRouteCategories: any = [
   { name: 'Getting Started', nested: true, rootRoute: 'get-started' },
   { name: 'Theming', nested: true, rootRoute: 'theming' },
   { name: 'Migration', nested: true, rootRoute: 'migration' },
@@ -24,4 +24,4 @@ export const docsContentDetails: any = [
   },
 ];
 
-export const docsChildRoutes = docsRouteBuilder(docsContentDetails);
+export const docsChildRoutes: object[] = docsRouteBuilder(docsContentDetails);

@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { componentDetails } from '../../components/components';
 import { Component, OnInit } from '@angular/core';
 
@@ -33,8 +33,8 @@ export class ContentDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._route.paramMap.subscribe((params) => {
-      const componentMatch: any = this.componentArray.find((e) => e.id === params.get('id'));
+    this._route.paramMap.subscribe((params: ParamMap) => {
+      const componentMatch: any = this.componentArray.find((e: any) => e.id === params.get('id'));
       if (componentMatch) {
         this.component = componentMatch;
       } else {

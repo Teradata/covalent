@@ -1,4 +1,4 @@
-export const utilitiesRouteCategories = [
+export const utilitiesRouteCategories: any = [
   { name: '', nested: false },
   { name: 'Http', nested: false },
   { name: 'Media Queries', nested: false },
