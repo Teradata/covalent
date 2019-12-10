@@ -68,6 +68,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/graph',
     color: '',
+    demo: () => import('./echarts-demos/graph/demos/graph-demo.module').then((mod) => mod.GraphDemoModule),
   },
   {
     name: 'Line',
@@ -82,6 +83,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/line',
     color: '',
+    demo: () => import('./echarts-demos/line/demos/line-demo.module').then((mod) => mod.LineDemoModule),
   },
   {
     name: 'Pie',
