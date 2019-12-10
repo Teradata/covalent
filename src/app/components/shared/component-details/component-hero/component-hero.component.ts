@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./component-hero.component.scss'],
 })
 export class ComponentHeroComponent {
-  constructor() {}
+  resourceUrl: any;
 }

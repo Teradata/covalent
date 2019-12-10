@@ -19,14 +19,25 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { CovalentCommonModule } from '../../../platform/core';
 import { UtilityStylesComponent } from './utilities-demos/utility-styles/utility-styles.component';
+import { MediaServiceDemoComponent } from './utilities-demos/media/service/media.component';
+import { MediaDirectiveDemoComponent } from './utilities-demos/media/directive/media.component';
+import { CovalentMediaModule } from '../../../platform/core/media';
 
 @NgModule({
-  declarations: [AnimationsComponent, PipesComponent, FunctionsDemoComponent, UtilityStylesComponent],
+  declarations: [
+    AnimationsComponent,
+    PipesComponent,
+    FunctionsDemoComponent,
+    UtilityStylesComponent,
+    MediaServiceDemoComponent,
+    MediaDirectiveDemoComponent,
+  ],
   imports: [
-    ComponentOverviewModule,
     utilitiesRoutes,
+    // Angular
     FormsModule,
     CommonModule,
+    // Angular Material
     MatCardModule,
     MatDividerModule,
     MatInputModule,
@@ -35,8 +46,13 @@ import { UtilityStylesComponent } from './utilities-demos/utility-styles/utility
     MatFormFieldModule,
     MatListModule,
     MatButtonModule,
+    // Covalent
     CovalentHighlightModule,
     CovalentCommonModule,
+    ComponentOverviewModule,
+    CovalentCommonModule,
+    CovalentMediaModule,
+    // Documentation
     DocumentationToolsModule,
   ],
 })

@@ -29,7 +29,6 @@ import { DocumentationToolsModule } from 'app/documentation-tools';
     CovalentCommonModule,
     DocumentationToolsModule,
   ],
-  exports: [ComponentHeroComponent],
   providers: [],
 })
 export class ComponentDetailsModule {}

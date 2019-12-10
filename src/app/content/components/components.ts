@@ -26,7 +26,8 @@ export const componentDetails: any = [
     icon: 'more_horiz',
     category: buttons.name,
     route: '/components/breadcrumbs',
-    demo: () => import('./component-demos/breadcrumbs/demos/breadcrumbs-demo.module').then(mod => mod.BreadcrumbsDemoModule),
+    demo: () =>
+      import('./component-demos/breadcrumbs/demos/breadcrumbs-demo.module').then((mod) => mod.BreadcrumbsDemoModule),
   },
   {
     name: 'Chips Autocomplete',
@@ -39,7 +40,7 @@ export const componentDetails: any = [
     icon: 'label',
     category: forms.name,
     route: '/components/chips',
-    demo: () => import('./component-demos/chips/demos/chips-demo.module').then(mod => mod.ChipsDemoModule),
+    demo: () => import('./component-demos/chips/demos/chips-demo.module').then((mod) => mod.ChipsDemoModule),
   },
   {
     name: 'Code Editor',
@@ -52,7 +53,8 @@ export const componentDetails: any = [
     icon: 'featured_play_list',
     category: editors.name,
     route: '/components/code-editor',
-    demo: () => import('./component-demos/code-editor/demos/code-editor-demo.module').then(mod => mod.CodeEditorDemoModule),
+    demo: () =>
+      import('./component-demos/code-editor/demos/code-editor-demo.module').then((mod) => mod.CodeEditorDemoModule),
   },
   {
     name: 'Simple Dialogs',
@@ -65,7 +67,7 @@ export const componentDetails: any = [
     icon: 'open_in_browser',
     category: dialogs.name,
     route: '/components/dialogs',
-    demo: () => import('./component-demos/dialogs/demos/dialogs-demo.module').then(mod => mod.DialogsDemoModule),
+    demo: () => import('./component-demos/dialogs/demos/dialogs-demo.module').then((mod) => mod.DialogsDemoModule),
   },
   {
     name: 'Dynamic Forms',
@@ -78,7 +80,10 @@ export const componentDetails: any = [
     icon: 'format_align_center',
     category: forms.name,
     route: '/components/dynamic-forms',
-    demo: () => import('./component-demos/dynamic-forms/demos/dynamic-forms-demo.module').then(mod => mod.DynamicFormsDemoModule),
+    demo: () =>
+      import('./component-demos/dynamic-forms/demos/dynamic-forms-demo.module').then(
+        (mod) => mod.DynamicFormsDemoModule,
+      ),
   },
   {
     name: 'File Input',
@@ -91,7 +96,8 @@ export const componentDetails: any = [
     icon: 'space_bar',
     category: buttons.name,
     route: '/components/file-input',
-    demo: () => import('./component-demos/file-input/demos/file-input-demo.module').then(mod => mod.FileInputDemoModule),
+    demo: () =>
+      import('./component-demos/file-input/demos/file-input-demo.module').then((mod) => mod.FileInputDemoModule),
   },
   {
     name: 'Flavored Markdown Parser',
@@ -104,7 +110,10 @@ export const componentDetails: any = [
     icon: 'format_paint',
     category: markdown.name,
     route: '/components/flavored-markdown',
-    demo: () => import('./component-demos/flavored-markdown/demos/flavored-markdown-demo.module').then(mod => mod.FlavoredMarkdownDemoModule),
+    demo: () =>
+      import('./component-demos/flavored-markdown/demos/flavored-markdown-demo.module').then(
+        (mod) => mod.FlavoredMarkdownDemoModule,
+      ),
   },
   {
     name: 'Loading Mask',
@@ -129,7 +138,8 @@ export const componentDetails: any = [
     icon: 'code',
     category: formatting.name,
     route: '/components/highlight',
-    demo: () => import('./component-demos/highlight/demos/highlight-demo.module').then(mod => mod.HighlightDemoModule),
+    demo: () =>
+      import('./component-demos/highlight/demos/highlight-demo.module').then((mod) => mod.HighlightDemoModule),
   },
   {
     name: 'JSON Formatter',
@@ -142,7 +152,10 @@ export const componentDetails: any = [
     icon: 'format_indent_increase',
     category: formatting.name,
     route: '/components/json-formatter',
-    demo: () => import('./component-demos/json-formatter/demos/json-formatter-demo.module').then(mod => mod.JsonFormatterDemoModule),
+    demo: () =>
+      import('./component-demos/json-formatter/demos/json-formatter-demo.module').then(
+        (mod) => mod.JsonFormatterDemoModule,
+      ),
   },
   {
     name: 'Loading',
@@ -155,7 +168,7 @@ export const componentDetails: any = [
     icon: 'hourglass_empty',
     category: buttons.name,
     route: '/components/loading',
-    demo: () => import('./component-demos/loading/demos/loading-demo.module').then(mod => mod.LoadingDemoModule),
+    demo: () => import('./component-demos/loading/demos/loading-demo.module').then((mod) => mod.LoadingDemoModule),
   },
   {
     name: 'Markdown Parser',
@@ -168,7 +181,7 @@ export const componentDetails: any = [
     icon: 'chrome_reader_mode',
     category: markdown.name,
     route: '/components/markdown-parser',
-    demo: () => import('./component-demos/markdown/demos/markdown-demo.module').then(mod => mod.MarkdownDemoModule),
+    demo: () => import('./component-demos/markdown/demos/markdown-demo.module').then((mod) => mod.MarkdownDemoModule),
   },
   {
     name: 'Markdown Navigator',
@@ -181,7 +194,10 @@ export const componentDetails: any = [
     icon: 'subject',
     category: markdown.name,
     route: '/components/markdown-navigator',
-    demo: () => import('./component-demos/markdown-navigator/demos/markdown-navigator-demo.module').then(mod => mod.MarkdownNavigatorDemoModule),
+    demo: () =>
+      import('./component-demos/markdown-navigator/demos/markdown-navigator-demo.module').then(
+        (mod) => mod.MarkdownNavigatorDemoModule,
+      ),
   },
   {
     name: 'Message',
@@ -194,7 +210,7 @@ export const componentDetails: any = [
     icon: 'info_outline',
     category: buttons.name,
     route: '/components/message',
-    demo: () => import('./component-demos/message/demos/message-demo.module').then(mod => mod.MessageDemoModule),
+    demo: () => import('./component-demos/message/demos/message-demo.module').then((mod) => mod.MessageDemoModule),
   },
   {
     name: 'Paging',
@@ -207,7 +223,7 @@ export const componentDetails: any = [
     icon: 'swap_horiz',
     category: nav.name,
     route: '/components/paging',
-    demo: () => import('./component-demos/paging/demos/paging-demo.module').then(mod => mod.PagingDemoModule),
+    demo: () => import('./component-demos/paging/demos/paging-demo.module').then((mod) => mod.PagingDemoModule),
   },
   {
     name: 'Search',
@@ -220,7 +236,34 @@ export const componentDetails: any = [
     icon: 'search',
     category: buttons.name,
     route: '/components/search',
-    demo: () => import('./component-demos/search/demos/search-demo.module').then(mod => mod.SearchDemoModule),
+    demo: () => import('./component-demos/search/demos/search-demo.module').then((mod) => mod.SearchDemoModule),
+  },
+  {
+    name: 'Data Table',
+    id: 'data-table',
+    description: 'Project tabular data',
+    apiDocUrl: 'platform/core/data-table/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'view_array',
+    category: layout.name,
+    route: '/components/data-table',
+    demo: () =>
+      import('./component-demos/data-table/demos/data-table-demo.module').then((mod) => mod.DataTableDemosModule),
+  },
+  {
+    name: 'Stepper',
+    id: 'steps',
+    description: 'A sequence of logical & numbered steps',
+    apiDocUrl: 'platform/core/steps/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'view_array',
+    category: layout.name,
+    route: '/components/steps',
+    demo: () => import('./component-demos/steps/demos/steps-demo.module').then((mod) => mod.StepsDemosModule),
   },
   {
     name: 'Sidesheet Content',
@@ -233,7 +276,8 @@ export const componentDetails: any = [
     icon: 'view_array',
     category: layout.name,
     route: '/components/sidesheet',
-    demo: () => import('./component-demos/sidesheet/demos/sidesheet-demo.module').then(mod => mod.SidesheetDemoModule),
+    demo: () =>
+      import('./component-demos/sidesheet/demos/sidesheet-demo.module').then((mod) => mod.SidesheetDemoModule),
   },
   {
     name: 'Nav Steps',
@@ -247,7 +291,7 @@ export const componentDetails: any = [
     icon: 'format_line_spacing',
     category: nav.name,
     route: '/components/nav-steps',
-    demo: () => import('./component-demos/nav-steps/demos/nav-steps-demo.module').then(mod => mod.NavStepsDemoModule),
+    demo: () => import('./component-demos/nav-steps/demos/nav-steps-demo.module').then((mod) => mod.NavStepsDemoModule),
   },
   {
     name: 'Notifications',
@@ -260,7 +304,10 @@ export const componentDetails: any = [
     icon: 'notifications',
     category: buttons.name,
     route: '/components/notifications',
-    demo: () => import('./component-demos/notifications/demos/notifications-demo.module').then(mod => mod.NotificationsDemoModule),
+    demo: () =>
+      import('./component-demos/notifications/demos/notifications-demo.module').then(
+        (mod) => mod.NotificationsDemoModule,
+      ),
   },
   {
     name: 'Tab Select',
@@ -273,7 +320,8 @@ export const componentDetails: any = [
     icon: 'tab',
     category: forms.name,
     route: '/components/tab-select',
-    demo: () => import('./component-demos/tab-select/demos/tab-select-demo.module').then(mod => mod.TabSelectDemoModule),
+    demo: () =>
+      import('./component-demos/tab-select/demos/tab-select-demo.module').then((mod) => mod.TabSelectDemoModule),
   },
   {
     name: 'Text Editor',
@@ -286,7 +334,8 @@ export const componentDetails: any = [
     icon: 'keyboard',
     category: editors.name,
     route: '/components/text-editor',
-    demo: () => import('./component-demos/text-editor/demos/text-editor-demo.module').then(mod => mod.TextEditorDemoModule),
+    demo: () =>
+      import('./component-demos/text-editor/demos/text-editor-demo.module').then((mod) => mod.TextEditorDemoModule),
   },
 ];
 

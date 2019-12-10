@@ -81,7 +81,6 @@ import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { FlavoredMarkdownDemoComponent } from './flavored-markdown/flavored-markdown.component';
 import { SidesheetDemoComponent } from './sidesheet/sidesheet.component';
-import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
 import { DocumentationToolsModule } from '../../../documentation-tools';
 
@@ -118,7 +117,6 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     MarkdownNavigatorDemoComponent,
     SidesheetDemoComponent,
     // External Dependencies
-    NgxTranslateDemoComponent,
     TdTestDynamicComponent,
     DraggableDemoComponent,
   ],
