@@ -17,6 +17,11 @@
 .mat-icon-ux {
   width: 165px;
 }
+
+.max-width {
+  max-width: 1056px;
+  width: 100%;
+}
 @media (max-width: 799px) {
   .mat-icon-md {
     font-size: 50px;
@@ -35,10 +40,20 @@
 }
 
 .banner {
-  height: 528px;
+  height: 560px;
 
-  background-image: url('assets/images/banner-bgc.svg');
-  background-size: 109%;
+  background-image: url('assets/images/banner-bgcs.svg');
+  background-size: 80%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right bottom;
+}
+
+.icon-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
