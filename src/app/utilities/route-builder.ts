@@ -1,25 +1,20 @@
-import { componentDetails } from '../content/components/components';
 import { DetailsWrapperComponent } from 'app/components/shared/component-details/component-details-wrapper/content-details.component';
 import { ComponentHeroComponent } from 'app/components/shared/component-details/component-hero/component-hero.component';
 import { TdReadmeLoaderComponent } from 'app/documentation-tools/readme-loader/readme-loader.component';
-import { Route, Routes } from '@angular/router';
+import { Route } from '@angular/router';
 
 interface IRouteBuilderIdentifier {
   overviewDemoComponent: any;
   id: string;
 }
 
-interface IRouteBuilder {
-  (detailsArray: any): IScopedRouteBuilder;
-}
+export type IRouteBuilder = (detailsArray: any) => IScopedRouteBuilder;
 
-export interface IScopedRouteBuilder {
-  (identifier: IRouteBuilderIdentifier): Route[];
-}
+export type IScopedRouteBuilder = (identifier: IRouteBuilderIdentifier) => Route[];
 
 export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
   return function(identifier: IRouteBuilderIdentifier): Route[] {
-    const componentMatch: any = detailsArray.find((component) => component.id === identifier.id);
+    const componentMatch: any = detailsArray.find((component: any) => component.id === identifier.id);
 
     return [
       {
@@ -49,14 +44,12 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
   };
 };
 
-export function docsRouteBuilder(array) {
-  const docsChildrenRoutes = array.map((route) => {
+export function docsRouteBuilder(array: string[]): object[] {
+  return array.map((route: any) => {
     return {
       path: route.route,
       component: TdReadmeLoaderComponent,
       data: { resourceUrl: route.docUrl },
     };
   });
-
-  return docsChildrenRoutes;
 }

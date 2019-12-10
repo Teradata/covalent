@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { componentDetails } from '../../../components/components';
 
@@ -17,9 +17,9 @@ export class ContentApiComponent implements OnInit {
     this.componentJson = componentDetails;
   }
 
-  ngOnInit() {
-    this._route.parent.paramMap.subscribe((params) => {
-      this.resourceUrl = this.componentJson.find((e) => e.id === params.get('id')).apiDocUrl;
+  ngOnInit(): void {
+    this._route.parent.paramMap.subscribe((params: ParamMap) => {
+      this.resourceUrl = this.componentJson.find((e: any) => e.id === params.get('id')).apiDocUrl;
     });
   }
 }
