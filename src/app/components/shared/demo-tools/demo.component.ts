@@ -20,8 +20,6 @@ export class DemoComponent {
   toggleCodeView(): void {
     let demoMarker: number = this.demoId.indexOf('-demo-');
     let demoFolderName: string = this.demoId.slice(0, demoMarker);
-    console.log(demoFolderName);
-    console.log(demoMarker);
     forkJoin({
       typescript: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.ts`, {
         responseType: 'text',
