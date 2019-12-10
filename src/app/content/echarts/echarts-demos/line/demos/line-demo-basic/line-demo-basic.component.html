@@ -1,0 +1,95 @@
+<div layout="row" layout-align="start center">
+  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+    Chart Theme:
+  </div>
+  <mat-form-field floatLabel="never">
+    <mat-select [(value)]="selectedTheme" (valueChange)="selectChartTheme($event)">
+      <mat-option *ngFor="let theme of themes" [value]="theme">
+        {{ theme }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<td-chart [style.height.px]="300" [themeName]="themeSelector.selected$ | async">
+  <td-chart-tooltip [trigger]="'item'"></td-chart-tooltip>
+  <td-chart-x-axis
+    [show]="true"
+    [position]="'top'"
+    [type]="'time'"
+    [splitLine]="{ show: false }"
+    [boundaryGap]="false"
+  ></td-chart-x-axis>
+  <td-chart-y-axis [show]="true" [type]="'value'"></td-chart-y-axis>
+  <td-chart-series
+    td-line
+    [symbolSize]="14"
+    [data]="[
+      {
+        name: '2018-10-29T03:27:33.932Z',
+        value: ['2018-10-29T03:27:33.932Z', 200]
+      },
+      {
+        name: '2018-10-30T03:27:33.932Z',
+        value: ['2018-10-30T03:27:33.932Z', 50]
+      },
+      {
+        name: '2018-10-31T03:27:33.932Z',
+        value: ['2018-10-31T03:27:33.932Z', 100]
+      }
+    ]"
+    [name]="'Revenue'"
+    [symbol]="'roundRect'"
+  >
+    <td-chart-series-tooltip>
+      <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+        <ng-container *ngIf="params">
+          <div layout="row" layout-align="start center">
+            <mat-icon>
+              <span class="tc-accent">account_balance</span>
+            </mat-icon>
+            <span class="mat-caption pad-left-sm">
+              {{ params.seriesName + ': ' + params.value[1] }}
+            </span>
+          </div>
+          <div class="mat-caption">at {{ params.name | date: 'medium' }}</div>
+        </ng-container>
+      </ng-template>
+    </td-chart-series-tooltip>
+  </td-chart-series>
+  <td-chart-series
+    td-line
+    [symbolSize]="14"
+    [data]="[
+      {
+        name: '2018-10-29T03:28:59.797Z',
+        value: ['2018-10-29T03:28:59.797Z', 200]
+      },
+      {
+        name: '2018-10-29T13:28:59.797Z',
+        value: ['2018-10-29T13:28:59.797Z', 50]
+      },
+      {
+        name: '2018-11-01T03:28:59.797Z',
+        value: ['2018-11-01T03:28:59.797Z', 100]
+      }
+    ]"
+    [name]="'Sales'"
+    [symbol]="'roundRect'"
+  >
+    <td-chart-series-tooltip>
+      <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+        <ng-container *ngIf="params">
+          <div layout="row" layout-align="start center">
+            <mat-icon>
+              <span class="tc-primary">attach_money</span>
+            </mat-icon>
+            <span class="mat-caption pad-left-sm">
+              {{ params.seriesName + ': ' + params.value[1] }}
+            </span>
+          </div>
+          <div class="mat-caption">at {{ params.name | date: 'medium' }}</div>
+        </ng-container>
+      </ng-template>
+    </td-chart-series-tooltip>
+  </td-chart-series>
+</td-chart>
