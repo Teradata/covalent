@@ -1,12 +1,10 @@
 export const utilitiesRouteCategories = [
   { name: '', nested: false },
   { name: 'Http', nested: false },
-  // { name: 'Pipes', nested: false },
-  // { name: 'Functions', nested: false },
-  // { name: 'Animations', nested: false },
+  { name: 'Media Queries', nested: false },
 ];
 
-const [root, http, pipes, functions, animations] = utilitiesRouteCategories;
+const [root, http, media] = utilitiesRouteCategories;
 
 export const utilitiesContentDetails: any = [
   {
@@ -41,9 +39,6 @@ export const utilitiesContentDetails: any = [
     showOverviewDemo: true,
     category: root.name,
     route: '/utilities/animations',
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
   },
   {
     name: 'Pipes',
@@ -54,9 +49,6 @@ export const utilitiesContentDetails: any = [
     showOverviewDemo: true,
     category: root.name,
     route: '/utilities/pipes',
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
   },
   {
     name: 'Functions',
@@ -67,9 +59,6 @@ export const utilitiesContentDetails: any = [
     showOverviewDemo: true,
     category: root.name,
     route: '/utilities/functions',
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
   },
   {
     name: 'Styling',
@@ -80,8 +69,25 @@ export const utilitiesContentDetails: any = [
     showOverviewDemo: true,
     category: root.name,
     route: '/utilities/styling',
-    // componentDoc: url to component description,
-    // overViewDemo: wether to show demo on overview,
-    // module: []
+  },
+  {
+    name: 'Query Service',
+    id: 'styling',
+    description: 'Responsive service & directive (for attributes)',
+    apiDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    category: media.name,
+    route: '/utilities/media-service',
+  },
+  {
+    name: 'Toggle Directive',
+    id: 'styling',
+    description: 'Responsive service & directive (for attributes)',
+    apiDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    category: media.name,
+    route: '/utilities/media-directive',
   },
 ];

@@ -70,6 +70,14 @@ const routes: Routes = [
         loadChildren: () =>
           import('./component-demos/text-editor/text-editor.module').then((m) => m.TextEditorDemoModule),
       },
+      {
+        path: 'data-table',
+        loadChildren: () => import('./component-demos/data-table/data-table.module').then((m) => m.DataTableDemoModule),
+      },
+      {
+        path: 'steps',
+        loadChildren: () => import('./component-demos/steps/steps.module').then((m) => m.StepsDemoModule),
+      },
     ],
   },
 ];

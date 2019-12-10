@@ -5,6 +5,8 @@ import { AnimationsComponent } from './utilities-demos/animations/animations.com
 import { PipesComponent } from './utilities-demos/pipes/pipes.component';
 import { FunctionsDemoComponent } from './utilities-demos/functions/functions.component';
 import { UtilityStylesComponent } from './utilities-demos/utility-styles/utility-styles.component';
+import { MediaServiceDemoComponent } from './utilities-demos/media/service/media.component';
+import { MediaDirectiveDemoComponent } from './utilities-demos/media/directive/media.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
       {
         path: 'styling',
         component: UtilityStylesComponent,
+      },
+      {
+        path: 'media-service',
+        component: MediaServiceDemoComponent,
+      },
+      {
+        path: 'media-directive',
+        component: MediaDirectiveDemoComponent,
       },
     ],
   },
