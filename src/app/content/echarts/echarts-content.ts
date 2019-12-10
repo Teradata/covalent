@@ -123,6 +123,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/scatter',
     color: '',
+    demo: () => import('./echarts-demos/scatter/demos/scatter-demo.module').then((mod) => mod.ScatterDemoModule),
   },
   {
     name: 'Tree',
