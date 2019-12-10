@@ -112,23 +112,24 @@ export class MarkdownNavigatorWindowService {
     let position: Point;
     let dimensions: IDialogDimensions;
     this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe(() => this.close());
-    this.markdownNavigatorWindowDialog.componentInstance.minimized.subscribe(() => {
-      dimensions = this._getDialogSize(this.markdownNavigatorWindowDialog);
-      position = this.dragRef.getFreeDragPosition();
-      this.markdownNavigatorWindowDialog.componentInstance.isMinimized = true;
-      this.markdownNavigatorWindowDialog.updateSize(DEFAULT_WIDTH, MIN_HEIGHT);
-      this.markdownNavigatorWindowDialog.updatePosition(DEFAULT_POSITION);
-      this.dragRef.reset();
-      this.dragRef.disabled = true;
-      this.resizableDraggableDialog.detach();
-    });
-    this.markdownNavigatorWindowDialog.componentInstance.maximized.subscribe(() => {
-      this.markdownNavigatorWindowDialog.componentInstance.isMinimized = false;
-      this.markdownNavigatorWindowDialog.updateSize(dimensions.width, dimensions.height);
-      this.markdownNavigatorWindowDialog.updatePosition({ top: '0px', right: '0px', bottom: '0px', left: '0px' });
-      this.dragRef.setFreeDragPosition(position);
-      this.dragRef.disabled = false;
-      this.resizableDraggableDialog.attach();
+    this.markdownNavigatorWindowDialog.componentInstance.dockToggled.subscribe((docked: boolean) => {
+      if (docked) {
+        this.markdownNavigatorWindowDialog.componentInstance.docked = false;
+        this.markdownNavigatorWindowDialog.updateSize(dimensions.width, dimensions.height);
+        this.markdownNavigatorWindowDialog.updatePosition({ top: '0px', right: '0px', bottom: '0px', left: '0px' });
+        this.dragRef.setFreeDragPosition(position);
+        this.dragRef.disabled = false;
+        this.resizableDraggableDialog.attach();
+      } else {
+        dimensions = this._getDialogSize(this.markdownNavigatorWindowDialog);
+        position = this.dragRef.getFreeDragPosition();
+        this.markdownNavigatorWindowDialog.componentInstance.docked = true;
+        this.markdownNavigatorWindowDialog.updateSize(DEFAULT_WIDTH, MIN_HEIGHT);
+        this.markdownNavigatorWindowDialog.updatePosition(DEFAULT_POSITION);
+        this.dragRef.reset();
+        this.dragRef.disabled = true;
+        this.resizableDraggableDialog.detach();
+      }
     });
     this.markdownNavigatorWindowDialog
       .afterClosed()

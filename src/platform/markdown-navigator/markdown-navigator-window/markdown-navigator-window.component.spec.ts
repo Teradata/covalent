@@ -142,8 +142,8 @@ describe('MarkdownNavigatorWindowComponent', () => {
         goHome: 'Vete pa tu casa',
         goBack: 'Regresa',
         emptyState: 'No hay nada',
-        minimize: 'Minimizar',
-        maximize: 'Maximizar',
+        dock: 'Minimizar',
+        unDock: 'Maximizar',
       };
       fixture.componentInstance.labels = SAMPLE_LABELS;
       await wait(fixture);
@@ -155,7 +155,7 @@ describe('MarkdownNavigatorWindowComponent', () => {
       expect(markdownNavigatorWindow.titleLabel).toBe(SAMPLE_LABELS.title);
       expect(markdownNavigatorWindow.closeLabel).toBe(SAMPLE_LABELS.close);
       expect(markdownNavigatorWindow.markdownNavigatorLabels).toBeTruthy();
-      expect(markdownNavigatorWindow.toggleMinimizeLabel).toBe(SAMPLE_LABELS.minimize);
+      expect(markdownNavigatorWindow.toggleDockedStateLabel).toBe(SAMPLE_LABELS.dock);
       expect(markdownNavigatorWindow.markdownNavigatorLabels).toEqual({
         goHome: SAMPLE_LABELS.goHome,
         goBack: SAMPLE_LABELS.goBack,

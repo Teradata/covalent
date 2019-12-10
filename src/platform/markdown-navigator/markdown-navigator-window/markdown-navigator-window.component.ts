@@ -9,14 +9,14 @@ import {
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
   title?: string;
   close?: string;
-  minimize?: string;
-  maximize?: string;
+  dock?: string;
+  unDock?: string;
 }
 export const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowLabels = {
   title: 'Help',
   close: 'Close',
-  minimize: 'Minimize',
-  maximize: 'Maximize',
+  dock: 'Dock',
+  unDock: 'Undock',
 };
 
 @Component({
@@ -32,11 +32,10 @@ export class MarkdownNavigatorWindowComponent {
   @Input() startAt: IMarkdownNavigatorItem;
   @Input() compareWith: IMarkdownNavigatorCompareWith;
   toolbarHeight: number = 56;
-  @Input() isMinimized: boolean = false;
+  @Input() docked: boolean = false;
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
-  @Output() minimized: EventEmitter<void> = new EventEmitter();
-  @Output() maximized: EventEmitter<void> = new EventEmitter();
+  @Output() dockToggled: EventEmitter<boolean> = new EventEmitter();
 
   get markdownNavigatorLabels(): IMarkdownNavigatorLabels {
     if (this.labels) {
@@ -56,15 +55,15 @@ export class MarkdownNavigatorWindowComponent {
     return (this.labels && this.labels.close) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close;
   }
 
-  get toggleMinimizeLabel(): string {
-    if (this.isMinimized) {
-      return (this.labels && this.labels.maximize) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.maximize;
+  get toggleDockedStateLabel(): string {
+    if (this.docked) {
+      return (this.labels && this.labels.unDock) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.unDock;
     } else {
-      return (this.labels && this.labels.minimize) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.minimize;
+      return (this.labels && this.labels.dock) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.dock;
     }
   }
 
-  toggleMinimize(): void {
-    this.isMinimized ? this.maximized.emit() : this.minimized.emit();
+  toggleDockedState(): void {
+    this.dockToggled.emit(this.docked);
   }
 }
