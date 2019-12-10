@@ -18,8 +18,8 @@ export class DemoComponent {
   constructor(private _http: HttpClient) {}
 
   toggleCodeView(): void {
-    let demoMarker: number = this.demoId.indexOf('-demo-');
-    let demoFolderName: string = this.demoId.slice(0, demoMarker);
+    const demoMarker: number = this.demoId.indexOf('-demo-');
+    const demoFolderName: string = this.demoId.slice(0, demoMarker);
     forkJoin({
       typescript: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.ts`, {
         responseType: 'text',
