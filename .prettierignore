@@ -5,3 +5,4 @@
 src/platform/core/schematics/ng-add/files/theme.scss
 src/app/components/**/*.html
 *.md
+src/app/content/**/*.html
