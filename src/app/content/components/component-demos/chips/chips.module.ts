@@ -9,6 +9,8 @@ import { ComponentDetailsModule } from 'app/components/shared/component-details/
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { ChipsDemoComponent } from './chips.component';
+import { CovalentChipsModule } from '../../../../../platform/core';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: ChipsDemoComponent,
@@ -19,12 +21,11 @@ const routes: Routes = setComponentRoutes({
   declarations: [ChipsDemoComponent],
   imports: [
     CommonModule,
+    FormsModule,
     // Material
-    MatSelectModule,
-    MatIconModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentChipsModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),

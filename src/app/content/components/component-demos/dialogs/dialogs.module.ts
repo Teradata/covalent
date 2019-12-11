@@ -10,6 +10,7 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 import { DialogsDemoComponent } from './dialogs.component';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: DialogsDemoComponent,
@@ -23,6 +24,7 @@ const routes: Routes = setComponentRoutes({
     // Material
     MatSelectModule,
     MatIconModule,
+    MatButtonModule,
     ComponentDetailsModule,
     // Covalent
     CovalentDialogsModule,

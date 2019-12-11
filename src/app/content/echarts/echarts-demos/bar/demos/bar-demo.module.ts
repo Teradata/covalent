@@ -9,15 +9,16 @@ import { CovalentLineEchartsModule } from '@covalent/echarts/line';
 import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { BarBasicSharedModule } from './bar-demo-basic/bar-demo-basic.shared';
 
-import { BarDemoBasicComponent } from './bar-demo-basic/bar-demo-basic.component';
 import { BarDemoComponent } from './bar-demo.component';
 import { BarDemoRoutingModule } from './bar-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [BarDemoComponent, BarDemoBasicComponent],
+  declarations: [BarDemoComponent],
   imports: [
+    BarBasicSharedModule,
     DemoModule,
     BarDemoRoutingModule,
     /** Covalent Modules */
