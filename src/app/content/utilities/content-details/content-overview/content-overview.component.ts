@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { componentDetails } from 'app/content/components/components';
 
@@ -15,15 +15,13 @@ export class ContentOverviewComponent implements OnInit {
     this.componentJson = componentDetails;
   }
 
-  ngOnInit() {
-    this._route.parent.paramMap.subscribe((params: any) => {
-      const component: any = this.componentJson.find((e) => e.id === params.get('id'));
+  ngOnInit(): void {
+    this._route.parent.paramMap.subscribe((params: ParamMap) => {
+      const component: any = this.componentJson.find((e: any) => e.id === params.get('id'));
       if (!component) {
         this._router.navigate(['components']);
         return;
       }
-
-      // this.contentPlaceholder = new ComponentPortal(componentMap.get(component.id));
     });
   }
 }

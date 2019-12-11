@@ -5,6 +5,7 @@ import { TdMediaService } from '@covalent/core/media';
 import { slideInUpAnimation } from '../../../app.animations';
 import { ActivatedRoute } from '@angular/router';
 import { routeGroups } from 'app/utilities/route-trees';
+import { ICombinedRouteGroup } from 'app/utilities/route-group';
 
 @Component({
   selector: 'component-overview',
@@ -22,8 +23,8 @@ export class ComponentOverviewComponent implements OnInit {
   constructor(public media: TdMediaService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.data.subscribe((data) => {
-      this.category = routeGroups.find((group) => group.name.toLowerCase() === data.category);
+    this.route.data.subscribe((data: any) => {
+      this.category = routeGroups.find((group: ICombinedRouteGroup) => group.name.toLowerCase() === data.category);
       this.categoryGroups = this.category.routeGroups;
     });
   }

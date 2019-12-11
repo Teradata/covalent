@@ -1,6 +1,6 @@
 import { routeBuilder, IScopedRouteBuilder } from 'app/utilities/route-builder';
 
-export const echartsRoutesCategories = [
+export const echartsRoutesCategories: any = [
   { name: '', nested: false },
   { name: 'Base', nested: false },
   { name: 'Chart Types', nested: false, color: 'blue-800' },
@@ -37,7 +37,7 @@ export const echartsContentDetails: any = [
     overviewDocUrl: '',
     icon: 'insert_chart',
     route: '/echarts/bar',
-    demo: () => import('./echarts-demos/bar/demos/bar-demo.module').then((mod) => mod.BarDemoModule),
+    demo: () => import('./echarts-demos/bar/demos/bar-demo.module').then((mod: any) => mod.BarDemoModule),
   },
   {
     name: 'Combination',
@@ -53,7 +53,7 @@ export const echartsContentDetails: any = [
     route: '/echarts/combination',
     color: '',
     demo: () =>
-      import('./echarts-demos/combination/demos/combination-demo.module').then((mod) => mod.CombinationDemoModule),
+      import('./echarts-demos/combination/demos/combination-demo.module').then((mod: any) => mod.CombinationDemoModule),
   },
   {
     name: 'Graph',
@@ -68,7 +68,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/graph',
     color: '',
-    demo: () => import('./echarts-demos/graph/demos/graph-demo.module').then((mod) => mod.GraphDemoModule),
+    demo: () => import('./echarts-demos/graph/demos/graph-demo.module').then((mod: any) => mod.GraphDemoModule),
   },
   {
     name: 'Line',
@@ -83,7 +83,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/line',
     color: '',
-    demo: () => import('./echarts-demos/line/demos/line-demo.module').then((mod) => mod.LineDemoModule),
+    demo: () => import('./echarts-demos/line/demos/line-demo.module').then((mod: any) => mod.LineDemoModule),
   },
   {
     name: 'Pie',
@@ -97,7 +97,7 @@ export const echartsContentDetails: any = [
     overviewDocUrl: '',
     icon: 'insert_chart',
     route: '/echarts/pie',
-    demo: () => import('./echarts-demos/pie/demos/pie-demo.module').then((mod) => mod.PieDemoModule),
+    demo: () => import('./echarts-demos/pie/demos/pie-demo.module').then((mod: any) => mod.PieDemoModule),
   },
   {
     name: 'Sankey',
@@ -112,7 +112,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/sankey',
     color: '',
-    demo: () => import('./echarts-demos/sankey/demos/sankey-demo.module').then((mod) => mod.SankeyDemoModule),
+    demo: () => import('./echarts-demos/sankey/demos/sankey-demo.module').then((mod: any) => mod.SankeyDemoModule),
   },
   {
     name: 'Scatter',
@@ -127,7 +127,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/scatter',
     color: '',
-    demo: () => import('./echarts-demos/scatter/demos/scatter-demo.module').then((mod) => mod.ScatterDemoModule),
+    demo: () => import('./echarts-demos/scatter/demos/scatter-demo.module').then((mod: any) => mod.ScatterDemoModule),
   },
   {
     name: 'Tree',
