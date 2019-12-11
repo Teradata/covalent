@@ -142,6 +142,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/tree',
     color: '',
+    demo: () => import('./echarts-demos/tree/demos/tree-demo.module').then((mod: any) => mod.TreeDemoModule),
   },
   {
     name: 'Treemap',
