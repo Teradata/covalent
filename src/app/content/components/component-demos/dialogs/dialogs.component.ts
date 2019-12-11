@@ -8,7 +8,6 @@ import { TdDialogService } from '../../../../../platform/core';
   selector: 'dialogs-demo',
   styleUrls: ['./dialogs.component.scss'],
   templateUrl: './dialogs.component.html',
-  animations: [slideInUpAnimation],
   preserveWhitespaces: true,
 })
 export class DialogsDemoComponent {
@@ -46,7 +45,6 @@ export class DialogsDemoComponent {
   ];
 
   constructor(private _dialogService: TdDialogService) {}
-
   openAlert(): void {
     this._dialogService.openAlert({
       title: 'Alert',

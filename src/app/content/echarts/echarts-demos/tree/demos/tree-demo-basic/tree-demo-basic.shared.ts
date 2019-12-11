@@ -9,17 +9,11 @@ import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
 
-import { TreeDemoComponent } from './tree-demo.component';
-import { TreeDemoRoutingModule } from './tree-demo-routing.module';
-import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { TreeBasicSharedModule } from './tree-demo-basic/tree-demo-basic.shared';
+import { TreeDemoBasicComponent } from './tree-demo-basic.component';
 
 @NgModule({
-  declarations: [TreeDemoComponent],
+  declarations: [TreeDemoBasicComponent],
   imports: [
-    TreeBasicSharedModule,
-    DemoModule,
-    TreeDemoRoutingModule,
     /** Covalent Modules */
     CovalentBaseEchartsModule,
     CovalentTooltipEchartsModule,
@@ -31,5 +25,6 @@ import { TreeBasicSharedModule } from './tree-demo-basic/tree-demo-basic.shared'
     MatSelectModule,
     MatIconModule,
   ],
+  exports: [TreeDemoBasicComponent],
 })
-export class TreeDemoModule {}
+export class TreeBasicSharedModule {}

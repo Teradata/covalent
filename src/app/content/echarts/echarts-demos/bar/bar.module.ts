@@ -5,8 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
-import { TypesBarComponent } from './bar.component';
-
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
@@ -16,15 +14,17 @@ import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from 'app/documentation-tools';
+import { BarBasicSharedModule } from './demos/bar-demo-basic/bar-demo-basic.shared';
+import { BarDemoBasicComponent } from './demos/bar-demo-basic/bar-demo-basic.component';
 
 const routes: Routes = setEchartRoutes({
-  overviewDemoComponent: TypesBarComponent,
+  overviewDemoComponent: BarDemoBasicComponent,
   id: 'bar',
 });
 
 @NgModule({
-  declarations: [TypesBarComponent],
   imports: [
+    BarBasicSharedModule,
     CommonModule,
     // Material
     MatSelectModule,

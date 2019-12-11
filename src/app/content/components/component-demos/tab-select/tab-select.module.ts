@@ -9,6 +9,8 @@ import { ComponentDetailsModule } from 'app/components/shared/component-details/
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { TabSelectDemoComponent } from './tab-select.component';
+import { CovalentTabSelectModule } from '../../../../../platform/core';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: TabSelectDemoComponent,
@@ -19,12 +21,13 @@ const routes: Routes = setComponentRoutes({
   declarations: [TabSelectDemoComponent],
   imports: [
     CommonModule,
+    FormsModule,
     // Material
     MatSelectModule,
     MatIconModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentTabSelectModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),

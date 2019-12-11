@@ -9,6 +9,7 @@ import { ComponentDetailsModule } from 'app/components/shared/component-details/
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { NavStepsDemoComponent } from './nav-steps.component';
+import { CovalentNavLinksModule, CovalentStepsModule } from '../../../../../platform/core';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: NavStepsDemoComponent,
@@ -24,7 +25,7 @@ const routes: Routes = setComponentRoutes({
     MatIconModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentStepsModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),

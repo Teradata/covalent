@@ -5,10 +5,11 @@ import { RouterModule, Routes, Route } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
+import { MatButtonModule } from '@angular/material/button';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { NotificationsDemoComponent } from './notifications.component';
+import { CovalentNotificationsModule } from '../../../../../platform/core';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: NotificationsDemoComponent,
@@ -22,9 +23,10 @@ const routes: Routes = setComponentRoutes({
     // Material
     MatSelectModule,
     MatIconModule,
+    MatButtonModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentNotificationsModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),

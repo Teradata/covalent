@@ -10,16 +10,17 @@ import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from 'app/documentation-tools';
-import { TypesTreeComponent } from './tree.component';
+import { TreeBasicSharedModule } from './demos/tree-demo-basic/tree-demo-basic.shared';
+import { TreeDemoBasicComponent } from './demos/tree-demo-basic/tree-demo-basic.component';
 
 const routes: Routes = setEchartRoutes({
-  overviewDemoComponent: TypesTreeComponent,
+  overviewDemoComponent: TreeDemoBasicComponent,
   id: 'tree',
 });
 
 @NgModule({
-  declarations: [TypesTreeComponent],
   imports: [
+    TreeBasicSharedModule,
     CommonModule,
     // Material
     MatSelectModule,
