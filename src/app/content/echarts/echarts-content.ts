@@ -157,6 +157,7 @@ export const echartsContentDetails: any = [
     category: chartTypes.name,
     route: '/echarts/treemap',
     color: '',
+    demo: () => import('./echarts-demos/treemap/demos/treemap-demo.module').then((mod: any) => mod.TreemapDemoModule),
   },
   {
     name: 'Axis',
