@@ -5,6 +5,8 @@ import { RouterModule, Routes, Route } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 import { DynamicFormsDemoComponent } from './dynamic-forms.component';
@@ -21,6 +23,7 @@ const routes: Routes = setComponentRoutes({
     // Material
     MatSelectModule,
     MatIconModule,
+    CovalentDynamicFormsModule,
     ComponentDetailsModule,
     // Covalent
     // Docs

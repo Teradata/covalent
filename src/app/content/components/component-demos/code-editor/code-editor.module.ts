@@ -4,9 +4,11 @@ import { RouterModule, Routes, Route } from '@angular/router';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+
+import { CovalentCodeEditorModule } from '@covalent/code-editor';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { CodeEditorDemoComponent } from './code-editor.component';
 
@@ -22,6 +24,8 @@ const routes: Routes = setComponentRoutes({
     // Material
     MatSelectModule,
     MatIconModule,
+    FormsModule,
+    CovalentCodeEditorModule,
     ComponentDetailsModule,
     // Covalent
     // Docs
