@@ -57,12 +57,7 @@ import { CovalentCodeEditorModule } from '../../../../platform/code-editor';
 import { CovalentTextEditorModule } from '../../../../platform/text-editor';
 
 import { HighlightDemoComponent } from './highlight/highlight.component';
-import {
-  NavStepsDemoComponent,
-  NavStepsRoute1DemoComponent,
-  NavStepsRoute3DemoComponent,
-  NavStepsRoute4DemoComponent,
-} from './nav-steps/nav-steps.component';
+import { NavStepsDemoComponent } from './nav-steps/nav-steps.component';
 import { FileInputDemoComponent } from './file-input/file-input.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
@@ -84,22 +79,15 @@ import { SidesheetDemoComponent } from './sidesheet/sidesheet.component';
 
 import { DocumentationToolsModule } from '../../../documentation-tools';
 
-import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component';
-import { HelpDemoComponent } from './help/help.component';
-import { CovalentHelpModule } from '@covalent/experimental/help';
+import { MarkdownNavigatorDemoComponent } from './markdown-navigator/markdown-navigator.component';
+import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
-<<<<<<< HEAD
-=======
 import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
->>>>>>> fix: utilities
 
 @NgModule({
   declarations: [
     HighlightDemoComponent,
     NavStepsDemoComponent,
-    NavStepsRoute1DemoComponent,
-    NavStepsRoute3DemoComponent,
-    NavStepsRoute4DemoComponent,
     FileInputDemoComponent,
     LoadingDemoComponent,
     MarkdownDemoComponent,
@@ -120,7 +108,7 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     HelpDemoComponent,
     SidesheetDemoComponent,
     // External Dependencies
-    TdTestDynamicComponent,
+    DraggableDemoComponent,
   ],
   imports: [
     /** Angular Modules */
@@ -181,6 +169,6 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     CovalentHelpModule,
     TranslateModule,
   ],
-  // entryComponents: [TdTestDynamicComponent],
+  entryComponents: [DraggableDemoComponent],
 })
 export class ComponentDemosModule {}

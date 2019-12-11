@@ -4,11 +4,12 @@ import { RouterModule, Routes, Route } from '@angular/router';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from 'app/content/components/components';
 import { TextEditorDemoComponent } from './text-editor.component';
+import { CovalentTextEditorModule } from '../../../../../platform/text-editor';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: TextEditorDemoComponent,
@@ -22,9 +23,10 @@ const routes: Routes = setComponentRoutes({
     // Material
     MatSelectModule,
     MatIconModule,
+    FormsModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    CovalentTextEditorModule,
     // Docs
     // Routes
     RouterModule.forChild(routes),
