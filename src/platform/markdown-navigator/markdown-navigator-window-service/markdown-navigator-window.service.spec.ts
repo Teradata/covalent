@@ -98,8 +98,7 @@ describe('MarkdownNavigatorWindowService', () => {
 
         expect(dialogRef.componentInstance.items).toEqual([]);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(0);
-
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
@@ -119,7 +118,7 @@ describe('MarkdownNavigatorWindowService', () => {
         expect(dialogRef.componentInstance.items).toEqual(RAW_MARKDOWN_ITEMS);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(2);
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
@@ -189,7 +188,7 @@ describe('MarkdownNavigatorWindowService', () => {
 
         expect(dialogRef.componentInstance.labels).toEqual({});
         expect(getMarkdownNavigator().textContent).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
 
         const SAMPLE_LABELS: IMarkdownNavigatorWindowLabels = {
@@ -206,7 +205,7 @@ describe('MarkdownNavigatorWindowService', () => {
         expect(dialogRef.componentInstance.labels).toEqual(SAMPLE_LABELS);
         expect(getMarkdownNavigator().textContent).toContain(SAMPLE_LABELS.emptyState);
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
@@ -226,7 +225,7 @@ describe('MarkdownNavigatorWindowService', () => {
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('primary');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
@@ -246,7 +245,7 @@ describe('MarkdownNavigatorWindowService', () => {
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('accent');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
 
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'primary' });
@@ -256,7 +255,7 @@ describe('MarkdownNavigatorWindowService', () => {
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('primary');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
 
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'warn' });
@@ -266,7 +265,7 @@ describe('MarkdownNavigatorWindowService', () => {
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('warn');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
 
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: undefined });
@@ -276,7 +275,7 @@ describe('MarkdownNavigatorWindowService', () => {
 
         expect(dialogRef.componentInstance.toolbarColor).toBe(undefined);
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
@@ -303,7 +302,7 @@ describe('MarkdownNavigatorWindowService', () => {
             .cursor,
         ).toBe('move');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
@@ -328,6 +327,7 @@ describe('MarkdownNavigatorWindowService', () => {
         await wait(fixture);
         expect(overlayContainerElement.querySelectorAll(`td-markdown-navigator`).length).toBe(1);
         expect(_markdownNavigatorWindowService.isOpen).toBeTruthy();
+        _markdownNavigatorWindowService.close();
       },
     ),
   ));

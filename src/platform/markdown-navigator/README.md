@@ -84,6 +84,17 @@ A component that contains a MarkdownNavigator component and a toolbar
 + toolbarColor?: ThemePalette
   + Toolbar color
   + Defaults to 'primary'
++ docked?: boolean
+  + Whether docked or not.
+  + Defaults to false
+
+#### Outputs
+
++ closed: void
+  + Event emitted when the close button is clicked.
++ dockToggled: boolean
+  + Event emitted when the toggle dock state button is clicked.
+  + Emits current docked state.
 
 ## Setup
 
