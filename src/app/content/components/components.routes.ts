@@ -112,6 +112,11 @@ const routes: Routes = [
         path: 'steps',
         loadChildren: () => import('./component-demos/steps/steps.module').then((m: any) => m.StepsDemoModule),
       },
+      {
+        path: 'loading-mask',
+        loadChildren: () =>
+          import('./component-demos/loading-mask/loading-mask.module').then((m: any) => m.LoadingMaskDemoModule),
+      },
     ],
   },
 ];
