@@ -1,3 +1,12 @@
 mat-radio-button {
   margin: 8px;
 }
+
+:host,
+.demo-markdown-container {
+  width: 100%;
+}
+
+.demo-markdown-container {
+  max-width: 400px;
+}
