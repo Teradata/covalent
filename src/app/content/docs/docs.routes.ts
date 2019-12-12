@@ -1,5 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
 import { TdReadmeLoaderComponent } from 'app/documentation-tools/readme-loader/readme-loader.component';
+import { AngularMaterialComponent } from './angular-material/angular-material.component';
+import { UtilitySASSMixinsComponent } from './utility-sass-mixins/utility-sass-mixins.component';
+import { IconsComponent } from './icons/icons.component';
+import { ThemeComponent } from './theme/theme.component';
 
 const routes: Routes = [
   {
@@ -13,7 +17,16 @@ const routes: Routes = [
         children: [
           { path: '', redirectTo: 'overview' },
           { path: 'overview', component: TdReadmeLoaderComponent, data: { resourceUrl: 'docs/GETTING_STARTED.md' } },
-          { path: 'something', component: TdReadmeLoaderComponent, data: { resourceUrl: 'docs/GETTING_STARTED.md' } },
+          { path: 'angular', component: AngularMaterialComponent },
+        ],
+      },
+      {
+        path: 'theming',
+        children: [
+          { path: '', redirectTo: 'icon-sets' },
+          { path: 'sass-mixins', component: UtilitySASSMixinsComponent },
+          { path: 'icon-sets', component: IconsComponent },
+          { path: 'custom-theme', component: ThemeComponent },
         ],
       },
     ],
