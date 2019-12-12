@@ -1,5 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
-import { slideInDownAnimation } from '../../../app.animations';
+import { Component } from '@angular/core';
 import {
   IMarkdownNavigatorItem,
   MarkdownNavigatorWindowService,
@@ -56,9 +55,6 @@ const multiLevelTree: IMarkdownNavigatorItem[] = [
   preserveWhitespaces: true,
 })
 export class MarkdownNavigatorDemoComponent {
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
   public options: { name: string; value: IMarkdownNavigatorItem[] }[] = [
     { name: 'Multi-level', value: multiLevelTree },
     { name: 'Bi-level', value: biLevelTree },

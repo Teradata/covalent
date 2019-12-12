@@ -16,6 +16,7 @@ import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
 import { DocumentationToolsModule } from 'app/documentation-tools';
 import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: MarkdownNavigatorDemoComponent,
@@ -29,6 +30,7 @@ const routes: Routes = setComponentRoutes({
     DocumentationToolsModule,
     // Material
     MatCardModule,
+    MatButtonModule,
     MatRadioModule,
     MatDividerModule,
     MatTabsModule,
