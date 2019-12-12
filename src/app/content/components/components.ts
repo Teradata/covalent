@@ -1,9 +1,9 @@
 import { routeBuilder, IScopedRouteBuilder } from '../../utilities/route-builder';
-import { modes } from 'codemirror';
 
 export const componentRouteCategories: any = [
   { name: '', nested: false, color: '' },
-  { name: 'Layout', nested: false, color: 'blue-900' },
+  { name: 'Screen Layouts', nested: false, color: 'green-900' },
+  { name: 'Content Layout', nested: false, color: 'blue-900' },
   { name: 'Buttons & Indicators', nested: false, color: 'pink-900' },
   { name: 'Navigation', nested: false, color: 'orange-900' },
   { name: 'Dialogs', nested: false, color: 'td-teal-900' },
@@ -13,7 +13,18 @@ export const componentRouteCategories: any = [
   { name: 'Formatting', nested: false, color: 'indigo-900' },
 ];
 
-const [root, layout, buttons, nav, dialogs, forms, markdown, editors, formatting] = componentRouteCategories;
+const [
+  root,
+  viewLayouts,
+  layout,
+  buttons,
+  nav,
+  dialogs,
+  forms,
+  markdown,
+  editors,
+  formatting,
+] = componentRouteCategories;
 
 export const componentDetails: any = [
   {
@@ -103,6 +114,19 @@ export const componentDetails: any = [
     route: '/components/file-input',
     demo: () =>
       import('./component-demos/file-input/demos/file-input-demo.module').then((mod: any) => mod.FileInputDemoModule),
+  },
+  {
+    name: 'Stepper',
+    id: 'steps',
+    description: 'A sequence of logical & numbered steps',
+    apiDocUrl: 'platform/core/steps/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'view_array',
+    category: buttons.name,
+    route: '/components/steps',
+    demo: () => import('./component-demos/steps/demos/steps-demo.module').then((mod: any) => mod.StepsDemosModule),
   },
   {
     name: 'Flavored Markdown Parser',
@@ -263,17 +287,79 @@ export const componentDetails: any = [
       import('./component-demos/data-table/demos/data-table-demo.module').then((mod: any) => mod.DataTableDemosModule),
   },
   {
-    name: 'Stepper',
-    id: 'steps',
-    description: 'A sequence of logical & numbered steps',
-    apiDocUrl: 'platform/core/steps/README.md',
+    name: 'Base Layout',
+    id: 'layout',
+    description: 'Blank main sidenav component that gets hooked as parent of all the other layouts',
+    apiDocUrl: 'platform/core/layout/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
     icon: 'view_array',
-    category: layout.name,
-    route: '/components/steps',
-    demo: () => import('./component-demos/steps/demos/steps-demo.module').then((mod: any) => mod.StepsDemosModule),
+    category: viewLayouts.name,
+    route: '/components/layout',
+    demo: () => import('./component-demos/layout/demos/layout-demo.module').then((mod: any) => mod.LayoutDemosModule),
+  },
+  {
+    name: 'Nav View',
+    id: 'layout-nav',
+    description: 'Layout with a custom navigation view with toolbar items and footers.',
+    apiDocUrl: 'platform/core/layout/layout-nav/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'view_array',
+    category: viewLayouts.name,
+    route: '/components/layout-nav',
+    demo: () =>
+      import('./component-demos/layout-nav/demos/layout-nav-demo.module').then((mod: any) => mod.LayoutNavDemosModule),
+  },
+  {
+    name: 'Nav List',
+    id: 'layout-nav-list',
+    description: 'Basic sidesheet content',
+    apiDocUrl: 'platform/core/layout/layout-nav-list/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'view_array',
+    category: viewLayouts.name,
+    route: '/components/layout-nav-list',
+    demo: () =>
+      import('./component-demos/layout-nav-list/demos/layout-nav-list-demo.module').then(
+        (mod: any) => mod.LayoutNavListDemosModule,
+      ),
+  },
+  {
+    name: 'Focused Layout',
+    id: 'layout-card-over',
+    description: 'Single card layout for focusing on single tasks',
+    apiDocUrl: 'platform/core/layout/layout-card-over/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'view_array',
+    category: viewLayouts.name,
+    route: '/components/layout-card-over',
+    demo: () =>
+      import('./component-demos/layout-card-over/demos/layout-card-over-demo.module').then(
+        (mod: any) => mod.LayoutCardOverDemosModule,
+      ),
+  },
+  {
+    name: 'Manage List',
+    id: 'layout-management-list',
+    description: 'Management focused layout with toolbar items, item selections and footers',
+    apiDocUrl: 'platform/core/layout/layout-manage-list/README.md',
+    overviewDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    icon: 'view_array',
+    category: viewLayouts.name,
+    route: '/components/layout-management-list',
+    demo: () =>
+      import('./component-demos/layout-management-list/demos/layout-management-list-demo.module').then(
+        (mod: any) => mod.LayoutManagementListDemosModule,
+      ),
   },
   {
     name: 'Sidesheet',
