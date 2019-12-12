@@ -1,4 +1,5 @@
 import { routeBuilder, IScopedRouteBuilder } from '../../utilities/route-builder';
+import { modes } from 'codemirror';
 
 export const componentRouteCategories: any = [
   { name: '', nested: false, color: '' },
@@ -123,13 +124,17 @@ export const componentDetails: any = [
     name: 'Loading Mask',
     id: 'loading-mask',
     description: 'Mask areas for progressive loading',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
+    apiDocUrl: 'platform/experimental/loading-mask/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
     icon: 'blur_linear',
     category: 'Buttons & Indicators',
-    route: '/components/xyz',
+    route: '/components/loading-mask',
+    demo: () =>
+      import('./component-demos/loading-mask/demos/loading-mask-demo.module').then(
+        (mod: any) => mod.LoadingMaskDemosModule,
+      ),
   },
   {
     name: 'Syntax Highlight',
