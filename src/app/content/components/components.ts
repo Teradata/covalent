@@ -2,8 +2,8 @@ import { routeBuilder, IScopedRouteBuilder } from '../../utilities/route-builder
 
 export const componentRouteCategories: any = [
   { name: '', nested: false, color: '' },
-  { name: 'Screen Layouts', nested: false, color: 'green-900' },
-  { name: 'Content Layout', nested: false, color: 'blue-900' },
+  { name: 'Screen Layouts', nested: false, color: 'td-blue' },
+  { name: 'Content Layout', nested: false, color: 'td-yellow' },
   { name: 'Buttons & Indicators', nested: false, color: 'pink-900' },
   { name: 'Navigation', nested: false, color: 'orange-900' },
   { name: 'Dialogs', nested: false, color: 'td-teal-900' },
@@ -164,7 +164,7 @@ export const componentDetails: any = [
     name: 'Syntax Highlight',
     id: 'highlight',
     description: 'Highlighting your code snippets',
-    apiDocUrl: 'platform/core/breadcrumbs/README.md',
+    apiDocUrl: 'platform/highlight/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
@@ -280,7 +280,7 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'view_array',
+    icon: 'border_all',
     category: layout.name,
     route: '/components/data-table',
     demo: () =>
@@ -294,7 +294,7 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'view_array',
+    icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout',
     demo: () => import('./component-demos/layout/demos/layout-demo.module').then((mod: any) => mod.LayoutDemosModule),
@@ -307,7 +307,7 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'view_array',
+    icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-nav',
     demo: () =>
@@ -321,7 +321,7 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'view_array',
+    icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-nav-list',
     demo: () =>
@@ -337,7 +337,7 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'view_array',
+    icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-card-over',
     demo: () =>
@@ -353,7 +353,7 @@ export const componentDetails: any = [
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
-    icon: 'view_array',
+    icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-management-list',
     demo: () =>
@@ -380,7 +380,7 @@ export const componentDetails: any = [
     id: 'nav-steps',
     description:
       'Navigate across a sequence of logical & numbered steps (shrink width of page to see responsive behavior)',
-    apiDocUrl: 'platform/core/steps/README.md',
+    apiDocUrl: 'platform/core/steps/nav/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
