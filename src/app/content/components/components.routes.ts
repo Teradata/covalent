@@ -84,6 +84,36 @@ const routes: Routes = [
           import('./component-demos/sidesheet/sidesheet.module').then((m: any) => m.SidesheetDemoModule),
       },
       {
+        path: 'layout',
+        loadChildren: () => import('./component-demos/layout/layout.module').then((m: any) => m.LayoutDemoModule),
+      },
+      {
+        path: 'layout-nav',
+        loadChildren: () =>
+          import('./component-demos/layout-nav/layout-nav.module').then((m: any) => m.LayoutNavDemoModule),
+      },
+      {
+        path: 'layout-nav-list',
+        loadChildren: () =>
+          import('./component-demos/layout-nav-list/layout-nav-list.module').then(
+            (m: any) => m.LayoutNavListDemoModule,
+          ),
+      },
+      {
+        path: 'layout-card-over',
+        loadChildren: () =>
+          import('./component-demos/layout-card-over/layout-card-over.module').then(
+            (m: any) => m.LayoutCardOverDemoModule,
+          ),
+      },
+      {
+        path: 'layout-management-list',
+        loadChildren: () =>
+          import('./component-demos/layout-management-list/layout-management-list.module').then(
+            (m: any) => m.LayoutManagementListDemoModule,
+          ),
+      },
+      {
         path: 'nav-steps',
         loadChildren: () =>
           import('./component-demos/nav-steps/nav-steps.module').then((m: any) => m.NavstepsDemoModule),

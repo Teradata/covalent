@@ -162,7 +162,7 @@ export const echartsContentDetails: any = [
   {
     name: 'Axis',
     id: 'axis',
-    description: '',
+    description: 'Control chart axis declaratively',
     apiDocUrl: 'platform/echarts/base/axis/README.md',
     showExampleTab: true,
     showOverviewDemo: true,
@@ -176,7 +176,7 @@ export const echartsContentDetails: any = [
   {
     name: 'Dataset',
     id: 'dataset',
-    description: '',
+    description: 'Add flexibility to manage chart data independently',
     apiDocUrl: 'platform/echarts/base/dataset/README.md',
     showExampleTab: true,
     showOverviewDemo: true,
@@ -190,7 +190,7 @@ export const echartsContentDetails: any = [
   {
     name: 'Tooltip',
     id: 'tooltip',
-    description: '',
+    description: 'Display tooltips on charts',
     apiDocUrl: 'platform/echarts/tooltip/README.md',
     showExampleTab: true,
     showOverviewDemo: true,
@@ -204,7 +204,7 @@ export const echartsContentDetails: any = [
   {
     name: 'Toolbox',
     id: 'toolbox',
-    description: '',
+    description: 'Add a multi functional toolbox to charts',
     apiDocUrl: 'platform/echarts/toolbox/README.md',
     showExampleTab: true,
     showOverviewDemo: true,

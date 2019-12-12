@@ -1,5 +1,3 @@
-<h4>Sidesheet Content</h4>
-<p>Basic sidesheet content</p>
 <div [style.height]="'300px'" class="relative">
   <mat-sidenav-container fullscreen>
     <mat-sidenav [opened]="true" position="end" mode="side" #sidesheet>
@@ -11,24 +9,17 @@
           </button>
         </td-sidesheet-header>
         <td-sidesheet-content>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat aliquet sem, a molestie dolor
-            molestie placerat. Donec convallis sodales magna, nec varius tellus tincidunt lacinia. Vivamus sollicitudin
-            finibus imperdiet. Quisque mattis quis mauris a facilisis. Maecenas tristique sem molestie diam varius
-            viverra. Duis egestas mi neque, a posuere libero pellentesque quis. Sed ornare metus augue, vitae maximus
-            lorem euismod vel. Curabitur finibus nisl ac purus efficitur tempor. Morbi fermentum lorem fermentum justo
-            cursus, nec volutpat mi blandit. In nec accumsan quam, eget venenatis arcu.
-          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat aliquet sem, a molestie dolor molestie placerat. Donec convallis sodales magna, nec varius tellus tincidunt lacinia. Vivamus sollicitudin finibus imperdiet. Quisque mattis quis mauris a facilisis. Maecenas tristique sem molestie diam varius viverra. Duis egestas mi neque, a posuere libero pellentesque quis. Sed ornare metus augue, vitae maximus lorem euismod vel. Curabitur finibus nisl ac purus efficitur tempor. Morbi fermentum lorem fermentum justo cursus, nec volutpat mi blandit. In nec accumsan quam, eget venenatis arcu.</p>
         </td-sidesheet-content>
         <td-sidesheet-actions>
           <button mat-raised-button class="text-upper" color="accent">action</button>
           <button mat-button class="text-upper">cancel</button>
         </td-sidesheet-actions>
-      </td-sidesheet>
+      </td-sidesheet>  
     </mat-sidenav>
     <mat-toolbar layout="row" layout-align="start center" flex>
       <span flex></span>
-      <button mat-raised-button (click)="sidesheet.toggle()">
+      <button mat-button (click)="sidesheet.toggle()">
         Toggle Sidesheet
       </button>
     </mat-toolbar>
