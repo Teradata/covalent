@@ -23,7 +23,7 @@ class TestComponent {
 describe('MarkdownNavigatorWindowDirective', () => {
   let overlayContainerElement: HTMLElement;
 
-  async function wait(fixture: ComponentFixture<any>): Promise<void> {
+  async function wait(fixture: ComponentFixture<TestComponent>): Promise<void> {
     fixture.detectChanges();
     await fixture.whenStable();
   }
@@ -55,6 +55,10 @@ describe('MarkdownNavigatorWindowDirective', () => {
         fixture.debugElement.query(By.css('button')).nativeElement.click();
         await wait(fixture);
         expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeTruthy();
+        // tslint:disable-next-line:no-useless-cast
+        (<HTMLElement>overlayContainerElement.querySelector(`[data-test="close-button"]`)).click();
+        await wait(fixture);
+        expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeFalsy();
       },
     ),
   ));

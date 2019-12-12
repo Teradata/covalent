@@ -57,12 +57,12 @@ export function isAnchorLink(anchor: HTMLAnchorElement): boolean {
   }
   return false;
 }
+const RAW_GITHUB_HOSTNAME: string = 'raw.githubusercontent.com';
 
 export function rawGithubHref(githubHref: string): string {
   if (githubHref) {
     try {
       const url: URL = new URL(githubHref);
-      const RAW_GITHUB_HOSTNAME: string = 'raw.githubusercontent.com';
       if (url.hostname === RAW_GITHUB_HOSTNAME) {
         return url.href;
       } else if (isGithubHref(githubHref)) {
@@ -81,6 +81,15 @@ export function isGithubHref(href: string): boolean {
   try {
     const temp: URL = new URL(href);
     return temp.hostname === 'github.com';
+  } catch {
+    return false;
+  }
+}
+
+export function isRawGithubHref(href: string): boolean {
+  try {
+    const temp: URL = new URL(href);
+    return temp.hostname === RAW_GITHUB_HOSTNAME;
   } catch {
     return false;
   }
