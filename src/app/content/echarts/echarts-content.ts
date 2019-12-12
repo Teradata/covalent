@@ -182,7 +182,7 @@ export const echartsContentDetails: any = [
     showExampleTab: true,
     showOverviewDemo: true,
     overviewDocUrl: '',
-    icon: 'dashboard',
+    icon: 'cloud_queue',
     hideOverview: false,
     category: chartTypes.name,
     route: '/echarts/wordcloud',

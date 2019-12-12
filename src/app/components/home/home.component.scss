@@ -40,12 +40,13 @@
 }
 
 .banner {
-  height: 560px;
-
   background-image: url('assets/images/banner-bgcs.svg');
-  background-size: 80%;
   background-repeat: no-repeat;
   background-position: right bottom;
+}
+
+.banner-lg {
+  background-size: 80%;
 }
 
 .icon-avatar {
@@ -56,4 +57,9 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+.covalent-logo-xs {
+  width: 192px;
+  height: auto;
 }

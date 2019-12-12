@@ -5,7 +5,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SidenavContentComponent } from './sidenav-content.component';
 
-import { CovalentExpansionPanelModule, CovalentMediaModule, CovalentCommonModule } from '../../../../platform/core';
+import {
+  CovalentExpansionPanelModule,
+  CovalentMediaModule,
+  CovalentCommonModule,
+  CovalentLayoutModule,
+} from '../../../../platform/core';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -22,6 +27,7 @@ import { RouterModule } from '@angular/router';
     CovalentExpansionPanelModule,
     CovalentMediaModule,
     CovalentCommonModule,
+    CovalentLayoutModule,
   ],
 })
 export class SidenavContentModule {}
