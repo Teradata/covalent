@@ -40,6 +40,10 @@ const routes: Routes = [
         loadChildren: () => import('./echarts-demos/line/line.module').then((m: any) => m.LineModule),
       },
       {
+        path: 'map',
+        loadChildren: () => import('./echarts-demos/map/map.module').then((m: any) => m.MapModule),
+      },
+      {
         path: 'pie',
         loadChildren: () => import('./echarts-demos/pie/pie.module').then((m: any) => m.PieModule),
       },
@@ -58,6 +62,10 @@ const routes: Routes = [
       {
         path: 'treemap',
         loadChildren: () => import('./echarts-demos/treemap/treemap.module').then((m: any) => m.TreemapModule),
+      },
+      {
+        path: 'wordcloud',
+        loadChildren: () => import('./echarts-demos/wordcloud/wordcloud.module').then((m: any) => m.WordcloudModule),
       },
       {
         path: 'tooltip',

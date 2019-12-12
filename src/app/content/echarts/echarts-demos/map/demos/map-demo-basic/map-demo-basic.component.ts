@@ -1,17 +1,17 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
+import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 import { usaJSON } from './geoJson-USA';
 
 import * as echarts from 'echarts';
 
 @Component({
-  selector: 'types-map',
-  templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss'],
+  selector: 'map-demo-basic',
+  templateUrl: './map-demo-basic.component.html',
+  styleUrls: ['./map-demo-basic.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   preserveWhitespaces: true,
 })
-export class TypesMapComponent implements OnInit {
+export class MapDemoBasicComponent implements OnInit {
   // Chart config
   config: any = {
     tooltip: {

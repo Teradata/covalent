@@ -2,16 +2,16 @@ import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@
 import { getThemes } from '@covalent/echarts/base';
 import { ITdWordCloudData } from '@covalent/echarts/wordcloud';
 
-import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
+import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
-  selector: 'types-wordcloud',
-  templateUrl: './wordcloud.component.html',
-  styleUrls: ['./wordcloud.component.scss'],
+  selector: 'wordcloud-demo-basic',
+  templateUrl: './wordcloud-demo-basic.component.html',
+  styleUrls: ['./wordcloud-demo-basic.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   preserveWhitespaces: true,
 })
-export class TypesWordcloudComponent implements OnInit {
+export class WordcloudDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();
   selectedTheme: string;
 
