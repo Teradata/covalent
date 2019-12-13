@@ -76,7 +76,7 @@ export const componentDetails: any = [
     name: 'Simple Dialogs',
     id: 'dialogs',
     description: 'Quick way to use alert, confirm, prompt, and draggable dialogs',
-    apiDocUrl: '' /* Needs MD file for dialogs. Doesn't exist currently */,
+    apiDocUrl: 'platform/core/dialogs/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
     showOverviewDemo: true,
