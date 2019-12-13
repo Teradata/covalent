@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CodeEditorDemoComponent } from './code-editor-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: CodeEditorDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class CodeEditorDemoRoutingModule { }
+export class CodeEditorDemoRoutingModule {}

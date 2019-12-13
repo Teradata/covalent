@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MessageDemoComponent } from './message-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: MessageDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MessageDemoRoutingModule { }
+export class MessageDemoRoutingModule {}

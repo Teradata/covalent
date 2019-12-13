@@ -7,10 +7,7 @@ import { MessageDemoRoutingModule } from './message-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    MessageDemoComponent,
-    MessageDemoBasicComponent
-  ],
+  declarations: [MessageDemoComponent, MessageDemoBasicComponent],
   imports: [
     DemoModule,
     MessageDemoRoutingModule,

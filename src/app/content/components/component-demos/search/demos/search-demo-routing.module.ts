@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SearchDemoComponent } from './search-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: SearchDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class SearchDemoRoutingModule { }
+export class SearchDemoRoutingModule {}

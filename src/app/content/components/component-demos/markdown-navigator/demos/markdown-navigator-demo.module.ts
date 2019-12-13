@@ -8,10 +8,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-    MarkdownNavigatorDemoComponent,
-    MarkdownNavigatorDemoBasicComponent
-  ],
+  declarations: [MarkdownNavigatorDemoComponent, MarkdownNavigatorDemoBasicComponent],
   imports: [
     DemoModule,
     MarkdownNavigatorDemoRoutingModule,

@@ -7,10 +7,7 @@ import { PagingDemoRoutingModule } from './paging-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    PagingDemoComponent,
-    PagingDemoBasicComponent
-  ],
+  declarations: [PagingDemoComponent, PagingDemoBasicComponent],
   imports: [
     DemoModule,
     PagingDemoRoutingModule,

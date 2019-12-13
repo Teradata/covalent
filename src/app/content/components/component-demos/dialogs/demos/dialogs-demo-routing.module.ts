@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DialogsDemoComponent } from './dialogs-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: DialogsDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DialogsDemoRoutingModule { }
+export class DialogsDemoRoutingModule {}

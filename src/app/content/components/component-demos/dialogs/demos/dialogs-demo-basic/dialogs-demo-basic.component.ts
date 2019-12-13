@@ -8,7 +8,6 @@ import { TdDialogService } from '@covalent/core/dialogs';
   preserveWhitespaces: true,
 })
 export class DialogsDemoBasicComponent {
-
   constructor(private _dialogService: TdDialogService) {}
   openAlert(): void {
     this._dialogService.openAlert({

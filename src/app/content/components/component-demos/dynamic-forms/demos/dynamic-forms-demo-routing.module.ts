@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DynamicFormsDemoComponent } from './dynamic-forms-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: DynamicFormsDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DynamicFormsDemoRoutingModule { }
+export class DynamicFormsDemoRoutingModule {}

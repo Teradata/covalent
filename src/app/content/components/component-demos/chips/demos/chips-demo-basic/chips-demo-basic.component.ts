@@ -7,11 +7,5 @@ import { Component } from '@angular/core';
   preserveWhitespaces: true,
 })
 export class ChipsDemoBasicComponent {
-  strings: string[] = [
-    'stepper',
-    'expansion-panel',
-    'markdown',
-    'highlight',
-    'loading',
-  ];
+  strings: string[] = ['stepper', 'expansion-panel', 'markdown', 'highlight', 'loading'];
 }

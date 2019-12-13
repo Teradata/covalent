@@ -8,10 +8,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    CodeEditorDemoComponent,
-    CodeEditorDemoBasicComponent
-  ],
+  declarations: [CodeEditorDemoComponent, CodeEditorDemoBasicComponent],
   imports: [
     DemoModule,
     CodeEditorDemoRoutingModule,
@@ -19,7 +16,7 @@ import { FormsModule } from '@angular/forms';
     CovalentCodeEditorModule,
     /** Angular Modules */
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
 })
 export class CodeEditorDemoModule {}

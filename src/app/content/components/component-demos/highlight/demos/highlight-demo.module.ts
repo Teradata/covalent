@@ -7,10 +7,7 @@ import { HighlightDemoRoutingModule } from './highlight-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    HighlightDemoComponent,
-    HighlightDemoBasicComponent
-  ],
+  declarations: [HighlightDemoComponent, HighlightDemoBasicComponent],
   imports: [
     DemoModule,
     HighlightDemoRoutingModule,

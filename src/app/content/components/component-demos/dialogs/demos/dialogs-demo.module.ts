@@ -8,10 +8,7 @@ import { DialogsDemoRoutingModule } from './dialogs-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    DialogsDemoComponent,
-    DialogsDemoBasicComponent
-  ],
+  declarations: [DialogsDemoComponent, DialogsDemoBasicComponent],
   imports: [
     DemoModule,
     DialogsDemoRoutingModule,

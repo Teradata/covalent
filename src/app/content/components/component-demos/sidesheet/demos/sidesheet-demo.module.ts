@@ -11,10 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  declarations: [
-    SidesheetDemoComponent,
-    SidesheetDemoBasicComponent
-  ],
+  declarations: [SidesheetDemoComponent, SidesheetDemoBasicComponent],
   imports: [
     DemoModule,
     SidesheetDemoRoutingModule,
@@ -25,7 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatSidenavModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
 })
 export class SidesheetDemoModule {}

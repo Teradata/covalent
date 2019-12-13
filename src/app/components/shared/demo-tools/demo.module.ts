@@ -11,8 +11,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [ DemoComponent ],
-  exports: [ DemoComponent ],
+  declarations: [DemoComponent],
+  exports: [DemoComponent],
   imports: [
     /** Covalent Modules */
     CovalentHighlightModule,

@@ -7,10 +7,7 @@ import { JsonFormatterDemoRoutingModule } from './json-formatter-demo-routing.mo
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    JsonFormatterDemoComponent,
-    JsonFormatterDemoBasicComponent
-  ],
+  declarations: [JsonFormatterDemoComponent, JsonFormatterDemoBasicComponent],
   imports: [
     DemoModule,
     JsonFormatterDemoRoutingModule,

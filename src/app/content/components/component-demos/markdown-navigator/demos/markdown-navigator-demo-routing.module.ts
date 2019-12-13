@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MarkdownNavigatorDemoComponent } from './markdown-navigator-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: MarkdownNavigatorDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MarkdownNavigatorDemoRoutingModule { }
+export class MarkdownNavigatorDemoRoutingModule {}

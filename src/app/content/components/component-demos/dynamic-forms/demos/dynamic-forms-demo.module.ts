@@ -7,10 +7,7 @@ import { DynamicFormsDemoRoutingModule } from './dynamic-forms-demo-routing.modu
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    DynamicFormsDemoComponent,
-    DynamicFormsDemoBasicComponent
-  ],
+  declarations: [DynamicFormsDemoComponent, DynamicFormsDemoBasicComponent],
   imports: [
     DemoModule,
     DynamicFormsDemoRoutingModule,
