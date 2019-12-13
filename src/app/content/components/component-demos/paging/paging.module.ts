@@ -6,6 +6,7 @@ import { ComponentDetailsModule } from 'app/components/shared/component-details/
 import { CovalentPagingModule } from '@covalent/core/paging';
 import { setComponentRoutes } from 'app/content/components/components';
 import { PagingDemoComponent } from './paging.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: PagingDemoComponent,
@@ -17,6 +18,7 @@ const routes: Routes = setComponentRoutes({
   imports: [
     CommonModule,
     // Material
+    MatDividerModule,
     ComponentDetailsModule,
     // Covalent
     CovalentPagingModule,

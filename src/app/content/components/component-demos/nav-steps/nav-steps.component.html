@@ -3,7 +3,6 @@
       routerLinkActive
       #rla="routerLinkActive"
       [routerLinkActiveOptions]="{exact:true}"
-      [routerLink]="['/components', 'nav-steps']"
       [state]="'complete'"
       [label]="'1st step'"
       [sublabel]="'some description'"
@@ -12,7 +11,6 @@
       routerLinkActive
       #rla2="routerLinkActive"
       [routerLinkActiveOptions]="{exact: true}"
-      [routerLink]="['/components', 'nav-steps', 'route2']"
       [state]="'complete'"
       [label]="'2nd step'"
       [disabled]="true"
@@ -21,7 +19,6 @@
       routerLinkActive
       #rla3="routerLinkActive"
       [routerLinkActiveOptions]="{exact: true}"
-      [routerLink]="['/components', 'nav-steps', 'route3']"
       [state]="'required'"
       [label]="'3rd step'"
       [active]="rla3.isActive"></a>
