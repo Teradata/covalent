@@ -93,7 +93,7 @@ export const echartsContentDetails: any = [
     showExampleTab: true,
     showOverviewDemo: true,
     overviewDocUrl: '',
-    icon: 'bubble_chart',
+    icon: 'show_chart',
     hideOverview: false,
     category: chartTypes.name,
     route: '/echarts/line',
