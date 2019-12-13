@@ -22,12 +22,14 @@ import { UtilityStylesComponent } from './utilities-demos/utility-styles/utility
 import { MediaServiceDemoComponent } from './utilities-demos/media/service/media.component';
 import { MediaDirectiveDemoComponent } from './utilities-demos/media/directive/media.component';
 import { CovalentMediaModule } from '../../../platform/core/media';
+import { DirectivesComponent } from './utilities-demos/directives/directives.component';
 
 @NgModule({
   declarations: [
     AnimationsComponent,
     PipesComponent,
     FunctionsDemoComponent,
+    DirectivesComponent,
     UtilityStylesComponent,
     MediaServiceDemoComponent,
     MediaDirectiveDemoComponent,

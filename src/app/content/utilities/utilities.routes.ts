@@ -7,6 +7,7 @@ import { FunctionsDemoComponent } from './utilities-demos/functions/functions.co
 import { UtilityStylesComponent } from './utilities-demos/utility-styles/utility-styles.component';
 import { MediaServiceDemoComponent } from './utilities-demos/media/service/media.component';
 import { MediaDirectiveDemoComponent } from './utilities-demos/media/directive/media.component';
+import { DirectivesComponent } from './utilities-demos/directives/directives.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path: 'functions',
         component: FunctionsDemoComponent,
+      },
+      {
+        path: 'directives',
+        component: DirectivesComponent,
       },
       {
         path: 'styling',
