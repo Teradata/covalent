@@ -12,6 +12,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DocumentationToolsModule } from 'app/documentation-tools';
 import { CovalentHighlightModule } from '@covalent/highlight';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: MessageDemoComponent,
@@ -25,9 +26,7 @@ const routes: Routes = setComponentRoutes({
     DocumentationToolsModule,
     // Material
     MatIconModule,
-    MatCardModule,
-    MatDividerModule,
-    MatTabsModule,
+    MatButtonModule,
     ComponentDetailsModule,
     // Covalent
     CovalentMessageModule,

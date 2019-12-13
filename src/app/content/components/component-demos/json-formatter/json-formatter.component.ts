@@ -1,17 +1,11 @@
 import { Component, HostBinding } from '@angular/core';
 
-import { slideInUpAnimation } from '../../../../app.animations';
-
 @Component({
   selector: 'json-formatter-demo',
   styleUrls: ['./json-formatter.component.scss'],
   templateUrl: './json-formatter.component.html',
-  animations: [slideInUpAnimation],
 })
 export class JsonFormatterDemoComponent {
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
   data: object = {
     stringProperty: 'This is a string',
     dateProperty: new Date(),
@@ -28,7 +22,7 @@ export class JsonFormatterDemoComponent {
       },
       {},
     ],
-    functionProperty(arg1: any, arg2: any): void {
+    functionProperty: (arg1: any, arg2: any): void => {
       // empty
     },
     undefinedProperty: undefined,

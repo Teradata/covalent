@@ -1,8 +1,8 @@
-<h4>Basic Paging Demo</h4>
+
+
+<mat-divider></mat-divider>
+
 <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
   {{ pagingBar.range }} of {{ pagingBar.total }}
 </td-paging-bar>
-<p>Page Size: {{ event?.pageSize || '100' }}</p>
-<p>Page: {{ event?.page || '1' }} of {{ event?.maxPage || '14' }}</p>
-<p>Rows: {{ event?.fromRow || '1' }} to {{ event?.toRow || '100' }}</p>
-<p>Total: {{ event?.total || '1345' }}</p>
+

@@ -1,3 +1,16 @@
-<h4>Basic Search Demo</h4>
-<p>Search and filter items</p>
-<td-search-input placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
+
+
+<div class='push-bottom-lg'>
+    Search Input
+    <p class='mat-caption tc-grey-700 push-none'>Appearance: standard</p>
+    <td-search-input   appearance='standard' placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input> 
+</div>
+
+<div class='push-bottom'>
+      Search Box
+      <p class='mat-caption tc-grey-700 push-none'>
+        Search input with animations
+      </p>
+      <td-search-box  placeholder="Search here" showUnderline='true' alwaysVisible='true' (clear)="searchInputTerm = ''"></td-search-box>
+</div>
+

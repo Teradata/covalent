@@ -36,7 +36,7 @@ export const componentDetails: any = [
     showExampleTab: true,
     showOverviewDemo: true,
     icon: 'more_horiz',
-    category: buttons.name,
+    category: nav.name,
     route: '/components/breadcrumbs',
     demo: () =>
       import('./component-demos/breadcrumbs/demos/breadcrumbs-demo.module').then(
