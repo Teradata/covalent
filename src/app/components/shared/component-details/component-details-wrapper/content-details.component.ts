@@ -34,5 +34,8 @@ export class DetailsWrapperComponent implements OnInit {
     if (this.component.hideOverview) {
       this.navLinks = this.navLinks.slice(1);
     }
+    if (this.component.hideExamples) {
+      this.navLinks = this.navLinks.slice(0, -1);
+    }
   }
 }

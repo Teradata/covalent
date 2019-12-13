@@ -41,6 +41,16 @@ export const utilitiesContentDetails: any = [
     route: '/utilities/animations',
   },
   {
+    name: 'Directives',
+    id: 'directives',
+    description: 'Core Covalent custom directives',
+    apiDocUrl: '',
+    showExampleTab: true,
+    showOverviewDemo: true,
+    category: root.name,
+    route: '/utilities/directives',
+  },
+  {
     name: 'Pipes',
     id: 'pipes',
     description: 'Custom angular pipes',

@@ -65,7 +65,6 @@ import { MessageDemoComponent } from './message/message.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
-import { DirectivesComponent } from './directives/directives.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
 import { SearchDemoComponent } from './search/search.component';
@@ -95,7 +94,6 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     JsonFormatterDemoComponent,
     ChipsDemoComponent,
     DialogsDemoComponent,
-    DirectivesComponent,
     PagingDemoComponent,
     SearchDemoComponent,
     DynamicFormsDemoComponent,
