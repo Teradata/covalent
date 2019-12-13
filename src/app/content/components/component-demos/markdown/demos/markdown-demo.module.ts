@@ -7,10 +7,7 @@ import { MarkdownDemoRoutingModule } from './markdown-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    MarkdownDemoComponent,
-    MarkdownDemoBasicComponent
-  ],
+  declarations: [MarkdownDemoComponent, MarkdownDemoBasicComponent],
   imports: [
     DemoModule,
     MarkdownDemoRoutingModule,

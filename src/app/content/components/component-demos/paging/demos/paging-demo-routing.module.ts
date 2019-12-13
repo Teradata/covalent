@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PagingDemoComponent } from './paging-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: PagingDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PagingDemoRoutingModule { }
+export class PagingDemoRoutingModule {}

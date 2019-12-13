@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TabSelectDemoComponent } from './tab-select-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: TabSelectDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TabSelectDemoRoutingModule { }
+export class TabSelectDemoRoutingModule {}

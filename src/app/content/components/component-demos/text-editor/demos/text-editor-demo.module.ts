@@ -8,10 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CovalentTextEditorModule } from '../../../../../../platform/text-editor';
 
 @NgModule({
-  declarations: [
-    TextEditorDemoComponent,
-    TextEditorDemoBasicComponent
-  ],
+  declarations: [TextEditorDemoComponent, TextEditorDemoBasicComponent],
   imports: [
     DemoModule,
     TextEditorDemoRoutingModule,
@@ -19,7 +16,7 @@ import { CovalentTextEditorModule } from '../../../../../../platform/text-editor
     CovalentTextEditorModule,
     /** Angular Modules */
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
 })
 export class TextEditorDemoModule {}

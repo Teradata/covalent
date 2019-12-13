@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
   preserveWhitespaces: true,
 })
 export class CodeEditorDemoBasicComponent {
-  editorVal: string = 
-  `
+  editorVal: string = `
   SELECT department_number, sampleid 
   FROM department
   SAMPLE .25, .25, .50

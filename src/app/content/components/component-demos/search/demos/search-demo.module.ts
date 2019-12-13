@@ -7,10 +7,7 @@ import { SearchDemoRoutingModule } from './search-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    SearchDemoComponent,
-    SearchDemoBasicComponent
-  ],
+  declarations: [SearchDemoComponent, SearchDemoBasicComponent],
   imports: [
     DemoModule,
     SearchDemoRoutingModule,

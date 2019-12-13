@@ -7,10 +7,7 @@ import { NavStepsDemoRoutingModule } from './nav-steps-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    NavStepsDemoComponent,
-    NavStepsDemoBasicComponent
-  ],
+  declarations: [NavStepsDemoComponent, NavStepsDemoBasicComponent],
   imports: [
     DemoModule,
     NavStepsDemoRoutingModule,

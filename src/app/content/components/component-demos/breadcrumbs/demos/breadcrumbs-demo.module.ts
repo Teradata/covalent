@@ -7,10 +7,7 @@ import { BreadcrumbsDemoRoutingModule } from './breadcrumbs-demo-routing.module'
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    BreadcrumbsDemoComponent,
-    BreadcrumbsDemoBasicComponent
-  ],
+  declarations: [BreadcrumbsDemoComponent, BreadcrumbsDemoBasicComponent],
   imports: [
     DemoModule,
     BreadcrumbsDemoRoutingModule,

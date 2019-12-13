@@ -7,10 +7,7 @@ import { FlavoredMarkdownDemoRoutingModule } from './flavored-markdown-demo-rout
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    FlavoredMarkdownDemoComponent,
-    FlavoredMarkdownDemoBasicComponent
-  ],
+  declarations: [FlavoredMarkdownDemoComponent, FlavoredMarkdownDemoBasicComponent],
   imports: [
     DemoModule,
     FlavoredMarkdownDemoRoutingModule,

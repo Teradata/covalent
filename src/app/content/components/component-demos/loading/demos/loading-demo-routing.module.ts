@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoadingDemoComponent } from './loading-demo.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: LoadingDemoComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class LoadingDemoRoutingModule { }
+export class LoadingDemoRoutingModule {}

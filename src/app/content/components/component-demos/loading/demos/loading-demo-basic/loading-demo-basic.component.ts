@@ -10,7 +10,7 @@ import { TdLoadingService } from '@covalent/core/loading';
 export class LoadingDemoBasicComponent {
   overlayStarSyntax: boolean = false;
 
-  constructor(private _loadingService: TdLoadingService){}
+  constructor(private _loadingService: TdLoadingService) {}
 
   toggleOverlayStarSyntax(): void {
     this.overlayStarSyntax = !this.overlayStarSyntax;

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { MarkdownNavigatorWindowService, MarkdownNavigatorWindowComponent, IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
+import {
+  MarkdownNavigatorWindowService,
+  MarkdownNavigatorWindowComponent,
+  IMarkdownNavigatorItem,
+} from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({

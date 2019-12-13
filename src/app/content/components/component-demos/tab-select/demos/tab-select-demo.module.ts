@@ -8,10 +8,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    TabSelectDemoComponent,
-    TabSelectDemoBasicComponent
-  ],
+  declarations: [TabSelectDemoComponent, TabSelectDemoBasicComponent],
   imports: [
     DemoModule,
     TabSelectDemoRoutingModule,
@@ -19,7 +16,7 @@ import { FormsModule } from '@angular/forms';
     CovalentTabSelectModule,
     /** Angular Modules */
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
 })
 export class TabSelectDemoModule {}

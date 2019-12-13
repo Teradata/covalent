@@ -8,10 +8,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    ChipsDemoComponent,
-    ChipsDemoBasicComponent
-  ],
+  declarations: [ChipsDemoComponent, ChipsDemoBasicComponent],
   imports: [
     DemoModule,
     ChipsDemoRoutingModule,
