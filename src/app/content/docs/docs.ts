@@ -11,7 +11,13 @@ const [gettingStarted, theming, migration, other] = docsRouteCategories;
 
 export const docsContentDetails: any = [
   {
-    name: 'Overview',
+    name: 'What is Covalent?',
+    docUrl: 'docs/COVALENT.md',
+    route: '/docs/get-started/what-is-covalent',
+    category: gettingStarted.name,
+  },
+  {
+    name: 'Get Covalent',
     docUrl: 'docs/GETTING_STARTED.md',
     route: '/docs/get-started/overview',
     category: gettingStarted.name,
