@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class ChipsDemoComponent {
   strings: string[] = ['stepper', 'expansion-panel', 'markdown', 'highlight', 'loading'];
+  stringsModel: string[] = this.strings.slice(0, 2);
 }

@@ -26,7 +26,7 @@ npm install --save @covalent/core
 npm install --save @covalent/http @covalent/highlight @covalent/markdown @covalent/dynamic-forms @covalent/echarts
 ```
 
-To test (__only for testing!__) the latest changes from develop, install the nightly build: **(only the core module has a nightly build)**
+To test (__only for testing!__) the latest changes from develop, install the nightly build:
 
 ```bash
 npm install --save https://github.com/Teradata/covalent-nightly.git
