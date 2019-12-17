@@ -3,24 +3,22 @@
   TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
 -->
 <div layout="row" layout-align="end center" flex>
-  <nav hide-xs hide-sm class="text-upper text-sm docs-nav push-left-lg" layout="row">
-    <a class="push-right-md text-nodecoration " [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
+  <nav hide-xs hide-sm class="text-upper text-sm docs-nav push-left-lg push-right-xxl" layout="row">
+    <a class="push-right-md text-nodecoration " [routerLink]="['/docs']" [routerLinkActive]="['active']">
+      Docs
+    </a>
     <a class="push-right-md text-nodecoration " [routerLink]="['/components']" [routerLinkActive]="['active']">
       Components
     </a>
-    <a class="push-right-md text-nodecoration " [routerLink]="['/echarts']" [routerLinkActive]="['active']">ECharts</a>
+    <a class="push-right-md text-nodecoration " [routerLink]="['/echarts']" [routerLinkActive]="['active']">
+      ECharts
+    </a>
     <a class="push-right-md text-nodecoration " [routerLink]="['/utilities']" [routerLinkActive]="['active']">
       Utilities
     </a>
   </nav>
   <div layout="row" layout-align="end center">
-    <a
-      class="push-left-xxl"
-      mat-icon-button
-      matTooltip="Github"
-      href="https://github.com/teradata/covalent"
-      target="_blank"
-    >
+    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
     <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">

@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { routeGroups } from 'app/utilities/route-trees';
 import { ICombinedRouteGroup } from 'app/utilities/route-group';
 
-const ANGULAR_DOCS_URL = 'https://material.angular.io/';
+const ANGULAR_DOCS_URL: string = 'https://material.angular.io/';
 @Component({
   selector: 'component-overview',
   styleUrls: ['./component-overview.component.scss'],
