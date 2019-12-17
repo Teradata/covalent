@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { routeGroups } from 'app/utilities/route-trees';
 import { ICombinedRouteGroup } from 'app/utilities/route-group';
 
+const ANGULAR_DOCS_URL = 'https://material.angular.io/';
 @Component({
   selector: 'component-overview',
   styleUrls: ['./component-overview.component.scss'],
@@ -19,6 +20,7 @@ export class ComponentOverviewComponent implements OnInit {
 
   category: any;
   categoryGroups: any;
+  angularDocsURL: string = ANGULAR_DOCS_URL;
 
   constructor(public media: TdMediaService, private route: ActivatedRoute) {}
 

@@ -46,14 +46,16 @@
   </div>
 
   <div layout="row" layout-wrap>
-    <div flex="25">
-      <mat-card class="component-card cursor-pointer" layout="column" layout-align="space-between start">
-        <mat-icon class="icon-component tc-blue-A700">layers</mat-icon>
-        <div>
-          <div class="mat-subheading-2 push-bottom-xs">Angular Material</div>
-          <div class="tc-grey-600 mat-caption">A short description about the component.</div>
-        </div>
-      </mat-card>
+    <div flex-xs="100" flex-sm="33" flex-md="33" flex-gt-md="25">
+      <a [href]="angularDocsURL" target="_blank">
+        <mat-card class="component-card cursor-pointer" layout="column" layout-align="space-between start">
+          <mat-icon class="icon-component tc-deep-purple-800">layers</mat-icon>
+          <div>
+            <div class="mat-subheading-2 push-bottom-xs">Angular Material</div>
+            <div class="tc-grey-600 mat-caption">A short description about the component.</div>
+          </div>
+        </mat-card>
+      </a>
     </div>
   </div>
 </section>
