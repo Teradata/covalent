@@ -14,7 +14,6 @@
     "lint": "npm run tslint && npm run stylelint",
     "tslint": "./node_modules/.bin/tslint -p ./tsconfig.json --format codeFrame -c ./tslint.json './src/**/*.ts'",
     "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config stylelint.config.js --syntax scss",
-    "preinstall": "rm -rf tmp deploy dist",
     "postinstall": "npm rebuild node-sass && webdriver-manager update",
     "test": "ng test covalent-docs --code-coverage --source-map=false --watch=false && npm run test:schematics",
     "test:watch": "ng test --code-coverage --source-map=false --watch=true",
