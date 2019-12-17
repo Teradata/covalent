@@ -14,6 +14,7 @@ import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 import { setComponentRoutes } from 'app/content/components/components';
 import { SidesheetDemoComponent } from './sidesheet.component';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: SidesheetDemoComponent,

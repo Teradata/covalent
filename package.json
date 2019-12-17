@@ -12,8 +12,8 @@
   "scripts": {
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "lint": "npm run tslint && npm run stylelint",
-    "tslint": "./node_modules/.bin/tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" \"./src/platform/core/schematics/**/*.ts\" -e \"./src/environments/**\"",
-    "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config .stylelintrc.json --syntax scss",
+    "tslint": "./node_modules/.bin/tslint -p ./tsconfig.json --format codeFrame -c ./tslint.json './src/**/*.ts'",
+    "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config stylelint.config.js --syntax scss",
     "preinstall": "rm -rf tmp deploy dist",
     "postinstall": "npm rebuild node-sass && webdriver-manager update",
     "test": "ng test covalent-docs --code-coverage --source-map=false --watch=false && npm run test:schematics",

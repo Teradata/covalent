@@ -78,10 +78,8 @@ import { SidesheetDemoComponent } from './sidesheet/sidesheet.component';
 
 import { DocumentationToolsModule } from '../../../documentation-tools';
 
-import { MarkdownNavigatorDemoComponent } from './markdown-navigator/markdown-navigator.component';
 import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
-import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
 
 @NgModule({
   declarations: [
@@ -103,10 +101,8 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     BreadcrumbDemoComponent,
     FlavoredMarkdownDemoComponent,
     TabSelectDemoComponent,
-    HelpDemoComponent,
     SidesheetDemoComponent,
     // External Dependencies
-    DraggableDemoComponent,
   ],
   imports: [
     /** Angular Modules */
@@ -149,6 +145,7 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     CovalentFileModule,
     CovalentNotificationsModule,
     CovalentMenuModule,
+    CovalentMarkdownModule,
     CovalentChipsModule,
     CovalentJsonFormatterModule,
     CovalentDataTableModule,
@@ -162,11 +159,10 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     CovalentBreadcrumbsModule,
     CovalentFlavoredMarkdownModule,
     CovalentSidesheetModule,
+    CovalentMarkdownNavigatorModule,
     DocumentationToolsModule,
     CovalentTabSelectModule,
-    CovalentHelpModule,
     TranslateModule,
   ],
-  entryComponents: [DraggableDemoComponent],
 })
 export class ComponentDemosModule {}

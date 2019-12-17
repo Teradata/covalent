@@ -1,0 +1,21 @@
+
+<div layout-xs='column' layout-sm="column" layout-gt-sm='row' layout-align='center center'>
+  <div layout='column' flex="30" flex-xs='100' flex-order='2'flex-order-gt-sm='1' class='pad-bottom-lg'>
+    <mat-radio-group class='push-bottom-sm' layout='column' [(ngModel)]="selected" (change)="selectOption()">
+      <mat-radio-button *ngFor="let option of options" [value]="option">
+        {{ option.name }}
+        <br />
+      </mat-radio-button>
+    </mat-radio-group>
+    <div layout-xs='column' flex-xs='100' layout-align-xs='start start'>
+      <button mat-raised-button class="text-upper push-bottom" color="accent" (click)="applyInput()">Try</button>
+      <button mat-raised-button class="text-upper" color="none" (click)="openWindow()">
+        Open Draggable Window
+      </button>
+    </div>
+    <td-code-editor flex [language]="'json'" [(ngModel)]="currentTree" [style.height.px]="200"></td-code-editor>
+  </div>
+  <div  flex-gt-sm='50' layout='column' flex-order-sm='1'  flex-order-xs='1' flex-order-gt-sm='2' class='demo-markdown-container'>
+      <td-markdown-navigator class='mat-card mat-elevation-z4 overflow-scroll' [items]="currentTree" [style.height.px]="450"></td-markdown-navigator>
+  </div>
+</div>
