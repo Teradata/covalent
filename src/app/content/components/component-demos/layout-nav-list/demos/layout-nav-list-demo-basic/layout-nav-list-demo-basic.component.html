@@ -1,0 +1,27 @@
+<td-layout class='layout-nav-list-demo' sidenavWidth='280px'>
+  <td-navigation-drawer flex sidenavTitle="Covalent" logo="teradata-dark" name="Firstname Lastname" email="firstname.lastname@company.com">
+    <mat-nav-list>
+      <a mat-list-item><mat-icon>home</mat-icon>Home</a>
+      <a mat-list-item tdLayoutToggle><mat-icon>close</mat-icon>Close Drawer</a>
+    </mat-nav-list>
+    <div td-navigation-drawer-menu>
+      <mat-nav-list>
+        <a mat-list-item><mat-icon>account_box</mat-icon>Profile</a>
+      </mat-nav-list>
+    </div>
+  </td-navigation-drawer>
+  <td-layout-nav-list logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/" opened="true" mode="side">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div td-sidenav-content>
+      Sidenav content here
+    </div>
+    <div td-toolbar-content>
+      <button mat-button tdLayoutNavListToggle>
+        Toggle
+      </button>
+    </div>
+    Content goes here
+  </td-layout-nav-list>
+</td-layout>

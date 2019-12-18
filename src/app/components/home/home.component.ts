@@ -14,46 +14,22 @@ export class HomeComponent implements AfterViewInit {
 
   sections: object[] = [
     {
-      color: 'deep-purple-A400',
-      description: 'Your guide to start using the UI platform in your app!',
-      icon: 'library_books',
-      route: 'docs',
-      title: 'Documentation',
-    },
-    {
-      color: 'teal-A700',
-      description: 'Covalent Components, Directives, Pipes, & Services',
-      icon: 'picture_in_picture',
+      description: 'Reusable, atomic and enterprise focused',
+      icon: 'extension',
       route: 'components',
       title: 'Components',
     },
     {
-      color: 'cyan-A700',
-      description: 'Several different material design layout options for your apps',
-      icon: 'view_quilt',
-      route: 'layouts',
-      title: 'Layouts',
+      description: 'The extensive power of ECharts brought to Angular',
+      icon: 'bar_chart',
+      route: 'echarts',
+      title: 'Charts',
     },
     {
-      color: 'indigo-A400',
-      description: 'Teradata brand logo usage, color palettes and more',
-      icon: 'color_lens',
-      route: 'style-guide',
-      title: 'Style Guide',
-    },
-    {
-      color: 'yellow-800',
-      description: 'Solutions for commonly occuring problems',
-      icon: 'extension',
-      route: 'design-patterns',
-      title: 'Design Patterns',
-    },
-    {
-      color: 'green-A700',
-      description: 'Gallery of example applications and usages',
-      icon: 'view_carousel',
-      route: 'templates',
-      title: 'Templates',
+      description: 'Reduce boilerplate with custom pipes, css, animations and more',
+      icon: 'build',
+      route: 'utilities',
+      title: 'Utilities',
     },
   ];
 

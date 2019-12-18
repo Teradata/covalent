@@ -43,7 +43,7 @@ $mat-font-url: 'platform/core/common/styles/font/';
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $primary: mat-palette($td-slate, 700, 100, 900);
-$accent: mat-palette($td-orange, 800, 200, 900);
+$accent: mat-palette($td-teal, 800, 200, 900);
 
 // The warn palette is optional (defaults to red).
 $warn: mat-palette($mat-red, 600, 200, 900);
@@ -85,6 +85,10 @@ $theme: mat-light-theme($primary, $accent, $warn);
       color: darken(mat-color($accent-alt), 10%);
     }
   }
+}
+
+body .mat-card {
+  border-radius: 8px;
 }
 
 // Dark theme
@@ -191,17 +195,37 @@ mat-nav-list {
   background-color: mat-color($td-slate, 800);
 }
 
+td-layout-nav {
+  mat-toolbar {
+    z-index: 2;
+    @include mat-elevation(3);
+  }
+}
+
 // Active top nav
 nav.docs-nav {
   a {
     line-height: 4;
     display: block;
-    &:not(.active) {
-      color: rgba(255, 255, 255, 0.75);
+    font-size: 1.14285em;
+    letter-spacing: 0.0764285em;
+    position: relative;
+    color: rgba(250, 250, 250, 0.8);
+
+    &:hover {
+      color: #fff;
     }
     &.active {
-      color: mat-color($accent);
-      border-bottom: 1px solid mat-color($accent);
+      color: #fff;
+      &::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        bottom: 0;
+        width: 100%;
+        background-color: mat-color($accent);
+        left: 0;
+      }
     }
   }
 }
@@ -209,4 +233,12 @@ nav.docs-nav {
 // Links
 a {
   text-decoration: none;
+}
+
+.td-markdown {
+  h1,
+  h2,
+  h3 {
+    font-weight: 400 !important;
+  }
 }

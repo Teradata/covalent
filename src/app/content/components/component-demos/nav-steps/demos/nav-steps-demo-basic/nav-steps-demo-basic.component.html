@@ -1,0 +1,28 @@
+<nav td-steps horizontal>
+        <a td-step-link
+            routerLinkActive
+            #rla="routerLinkActive"
+            [routerLinkActiveOptions]="{exact:true}"
+            [routerLink]="['/components', 'nav-steps']"
+            [state]="'complete'"
+            [label]="'1st step'"
+            [sublabel]="'some description'"
+            [active]="rla.isActive"></a>
+        <a td-step-link
+            routerLinkActive
+            #rla2="routerLinkActive"
+            [routerLinkActiveOptions]="{exact: true}"
+            [routerLink]="['/components', 'nav-steps', 'route2']"
+            [state]="'complete'"
+            [label]="'2nd step'"
+            [disabled]="true"
+            [active]="rla2.isActive"></a>
+        <a td-step-link
+            routerLinkActive
+            #rla3="routerLinkActive"
+            [routerLinkActiveOptions]="{exact: true}"
+            [routerLink]="['/components', 'nav-steps', 'route3']"
+            [state]="'required'"
+            [label]="'3rd step'"
+            [active]="rla3.isActive"></a>
+</nav>

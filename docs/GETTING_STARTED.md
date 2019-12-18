@@ -26,7 +26,7 @@ npm install --save @covalent/core
 npm install --save @covalent/http @covalent/highlight @covalent/markdown @covalent/dynamic-forms @covalent/echarts
 ```
 
-To test (__only for testing!__) the latest changes from develop, install the nightly build: **(only the core module has a nightly build)**
+To test (__only for testing!__) the latest changes from develop, install the nightly build:
 
 ```bash
 npm install --save https://github.com/Teradata/covalent-nightly.git
@@ -132,7 +132,7 @@ This also includes the `material icons` by default.
 
 #### Not interested in using ALL the CSS?
 
-Click [here](https://teradata.github.io/covalent/#/docs/utility-sass-mixins) if you want to cherry pick the utility classes instead of loading the `platform.css`
+Click [here](https://teradata.github.io/covalent/#/docs/theming/utility-sass-mixins) if you want to cherry pick the utility classes instead of loading the `platform.css`
 
 ----
 
