@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import {
-  TdHttp,
+  mixinHttp,
   TdGET,
   TdPOST,
   TdBody,
@@ -24,15 +24,14 @@ import {
 } from '@covalent/http';
 
 /**
- * TdHttp uses TdHttpService and TdHttpClient uses HttpClient
+ * mixinHttp can use TdHttpService and HttpClient
  */
 
-@TdHttp({ // or @TdHttpClient({
+@Injectable()
+export class TestHttpService extends mixinHttp(class {}, {
   baseUrl: 'www.mybaseurl.com',
   baseHeaders: new HttpHeaders({ 'Accept': 'application/json' }),
-})
-@Injectable()
-export class TestHttpService {
+}) { // or }, HttpClient) {
   /**
    * Generates http request [www.mybaseurl.com/myitems] GET and returns an HttpResponse object
    */

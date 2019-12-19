@@ -6,6 +6,7 @@ import { TdHttpService } from '../../interceptors/http.service';
 
 /**
  * Decorator used to give a service http capabilities using TdHttpService
+ * @deprecated will be removed in angular 10
  */
 export function TdHttp(config: ITdHttpRESTConfig): <T extends new (...args: any[]) => {}>(constructor: any) => any {
   return function<T extends new (...args: any[]) => {}>(constructor: any): any {
@@ -15,6 +16,7 @@ export function TdHttp(config: ITdHttpRESTConfig): <T extends new (...args: any[
 
 /**
  * Decorator used to give a service http capabilities using HttpClient
+ * @deprecated will be removed in angular 10
  */
 export function TdHttpClient(
   config: ITdHttpRESTConfig,
