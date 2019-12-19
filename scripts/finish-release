@@ -6,7 +6,7 @@ set -e
 echo "Create commit for bump and changelog"
 git add -A .
 
-git commit -a -m "chore(): generate changelog and bump to version v$version"
+git commit -a -m "feat(): generate changelog and bump to version v$version"
 
 echo "Create tag"
 git tag -a v$version
