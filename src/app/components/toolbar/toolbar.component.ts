@@ -36,6 +36,18 @@ export class ToolbarComponent {
       title: 'Pie Echarts',
     },
     {
+      route: '/echarts/map',
+      icon: 'map',
+      description: 'Added map type support',
+      title: 'Map Echarts',
+    },
+    {
+      route: '/echarts/wordcloud',
+      icon: 'cloud_queue',
+      description: 'Added wordcloud type support',
+      title: 'WordCloud Echarts',
+    },
+    {
       route: '/components/dialogs',
       icon: 'open_in_browser',
       description: 'Draggable dialog support',
