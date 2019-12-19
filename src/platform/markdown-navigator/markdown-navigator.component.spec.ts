@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import {
-  MarkdownNavigatorComponent,
+  TdMarkdownNavigatorComponent,
   IMarkdownNavigatorItem,
   IMarkdownNavigatorLabels,
   DEFAULT_MARKDOWN_NAVIGATOR_LABELS,
@@ -244,8 +244,8 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.items = [];
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
 
       expect(markdownNavigator.showEmptyState).toBeTruthy();
@@ -266,8 +266,8 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.items = undefined;
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
 
       expect(markdownNavigator.showEmptyState).toBeTruthy();
@@ -288,8 +288,8 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.items = RAW_MARKDOWN_ITEM;
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
 
       expect(markdownNavigator.showEmptyState).toBeFalsy();
@@ -310,8 +310,8 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.items = URL_ITEM;
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
 
       expect(markdownNavigator.showEmptyState).toBeFalsy();
@@ -332,8 +332,8 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.items = FLAT_MIXED_ITEMS;
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
 
@@ -356,8 +356,8 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.items = NESTED_MIXED_ITEMS;
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
 
@@ -382,10 +382,10 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.items = undefined;
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
-      const elem: DebugElement = fixture.debugElement.query(By.directive(MarkdownNavigatorComponent));
+      const elem: DebugElement = fixture.debugElement.query(By.directive(TdMarkdownNavigatorComponent));
 
       expect(markdownNavigator.goBackLabel).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack);
       expect(markdownNavigator.goHomeLabel).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome);
@@ -403,10 +403,10 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.labels = {};
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
-      const elem: DebugElement = fixture.debugElement.query(By.directive(MarkdownNavigatorComponent));
+      const elem: DebugElement = fixture.debugElement.query(By.directive(TdMarkdownNavigatorComponent));
 
       expect(markdownNavigator.goBackLabel).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack);
       expect(markdownNavigator.goHomeLabel).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome);
@@ -429,10 +429,10 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.labels = SAMPLE_LABELS;
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
-      const elem: DebugElement = fixture.debugElement.query(By.directive(MarkdownNavigatorComponent));
+      const elem: DebugElement = fixture.debugElement.query(By.directive(TdMarkdownNavigatorComponent));
 
       expect(markdownNavigator.goBackLabel).toContain(SAMPLE_LABELS.goBack);
       expect(markdownNavigator.goHomeLabel).toContain(SAMPLE_LABELS.goHome);

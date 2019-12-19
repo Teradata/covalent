@@ -25,7 +25,7 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowL
   styleUrls: ['./markdown-navigator-window.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MarkdownNavigatorWindowComponent {
+export class TdMarkdownNavigatorWindowComponent {
   @Input() items: IMarkdownNavigatorItem[];
   @Input() labels: IMarkdownNavigatorWindowLabels;
   @Input() toolbarColor: ThemePalette = 'primary';

@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { TdDataTableSortingOrder } from '../data-table.component';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TdDataTableService {
   /**
    * params:

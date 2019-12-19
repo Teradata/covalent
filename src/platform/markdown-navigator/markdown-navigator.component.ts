@@ -9,7 +9,7 @@ import {
   ChangeDetectorRef,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
+import { removeLeadingHash, isAnchorLink, TdMarkdownLoaderService } from '@covalent/markdown';
 
 export interface IMarkdownNavigatorItem {
   title?: string;
@@ -88,7 +88,7 @@ function getAncestors(
   styleUrls: ['./markdown-navigator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MarkdownNavigatorComponent implements OnChanges {
+export class TdMarkdownNavigatorComponent implements OnChanges {
   /**
    * items: IMarkdownNavigatorItem[]
    *
@@ -127,7 +127,7 @@ export class MarkdownNavigatorComponent implements OnChanges {
   loading: boolean = false;
 
   constructor(
-    private _markdownUrlLoaderService: MarkdownLoaderService,
+    private _markdownUrlLoaderService: TdMarkdownLoaderService,
     private _changeDetectorRef: ChangeDetectorRef,
   ) {}
 

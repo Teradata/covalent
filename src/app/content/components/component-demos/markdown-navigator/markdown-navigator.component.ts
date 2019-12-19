@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {
   IMarkdownNavigatorItem,
-  MarkdownNavigatorWindowService,
+  TdMarkdownNavigatorWindowService,
   IMarkdownNavigatorWindowConfig,
 } from '@covalent/markdown-navigator';
 
@@ -67,7 +67,7 @@ export class MarkdownNavigatorDemoComponent {
   public startAt: IMarkdownNavigatorItem;
   public input: string = prettyJson(this.currentTree);
 
-  constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
+  constructor(private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) {}
 
   public compareByTitle: (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean = (
     o1: IMarkdownNavigatorItem,

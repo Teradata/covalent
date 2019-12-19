@@ -7,7 +7,6 @@ import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compo
 import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
 import { DragDrop, DragRef } from '@angular/cdk/drag-drop';
 import { DOCUMENT } from '@angular/common';
-import { CovalentDialogsModule } from '../dialogs.module';
 import { Subject } from 'rxjs';
 
 export interface IDialogConfig extends MatDialogConfig {
@@ -42,9 +41,7 @@ export interface IDraggableRefs<T> {
   dragRefSubject: Subject<DragRef>;
 }
 
-@Injectable({
-  providedIn: CovalentDialogsModule,
-})
+@Injectable()
 export class TdDialogService {
   private _renderer2: Renderer2;
 

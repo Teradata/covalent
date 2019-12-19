@@ -4,7 +4,7 @@ import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component } from '@angular/core';
 import {
-  MarkdownNavigatorWindowService,
+  TdMarkdownNavigatorWindowService,
   IMarkdownNavigatorWindowConfig,
 } from '../markdown-navigator-window-service/markdown-navigator-window.service';
 import { By } from '@angular/platform-browser';
@@ -48,8 +48,8 @@ describe('MarkdownNavigatorWindowDirective', () => {
 
   it('should open and close markdown navigator window properly', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
         await wait(fixture);
         fixture.debugElement.query(By.css('button')).nativeElement.click();
@@ -64,8 +64,8 @@ describe('MarkdownNavigatorWindowDirective', () => {
   ));
   it('should not open markdown navigator window if disabled', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
         fixture.componentInstance.disabled = true;
         await wait(fixture);
