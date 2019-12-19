@@ -2,7 +2,7 @@ import { Injectable, Inject, RendererFactory2, Renderer2 } from '@angular/core';
 import { MatDialogRef, MatDialogConfig, DialogPosition } from '@angular/material/dialog';
 import { ThemePalette } from '@angular/material/core';
 import {
-  MarkdownNavigatorWindowComponent,
+  TdMarkdownNavigatorWindowComponent,
   IMarkdownNavigatorWindowLabels,
 } from '../markdown-navigator-window/markdown-navigator-window.component';
 import { TdDialogService, IDraggableRefs, ResizableDraggableDialog } from '@covalent/core/dialogs';
@@ -43,11 +43,11 @@ interface IDialogDimensions {
 }
 
 @Injectable()
-export class MarkdownNavigatorWindowService {
+export class TdMarkdownNavigatorWindowService {
   private _renderer2: Renderer2;
   private dragRef: DragRef;
   private resizableDraggableDialog: ResizableDraggableDialog;
-  private markdownNavigatorWindowDialog: MatDialogRef<MarkdownNavigatorWindowComponent> = undefined;
+  private markdownNavigatorWindowDialog: MatDialogRef<TdMarkdownNavigatorWindowComponent> = undefined;
   private markdownNavigatorWindowDialogsOpen: number = 0;
 
   constructor(
@@ -58,7 +58,7 @@ export class MarkdownNavigatorWindowService {
     this._renderer2 = rendererFactory.createRenderer(undefined, undefined);
   }
 
-  public open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<MarkdownNavigatorWindowComponent> {
+  public open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<TdMarkdownNavigatorWindowComponent> {
     this.close();
 
     const draggableConfig: MatDialogConfig = {
@@ -68,8 +68,8 @@ export class MarkdownNavigatorWindowService {
     const {
       matDialogRef,
       dragRefSubject,
-    }: IDraggableRefs<MarkdownNavigatorWindowComponent> = this._tdDialogService.openDraggable({
-      component: MarkdownNavigatorWindowComponent,
+    }: IDraggableRefs<TdMarkdownNavigatorWindowComponent> = this._tdDialogService.openDraggable({
+      component: TdMarkdownNavigatorWindowComponent,
       config: draggableConfig,
       dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
       draggableClass: 'td-draggable-markdown-navigator-window',
@@ -139,7 +139,7 @@ export class MarkdownNavigatorWindowService {
       });
   }
 
-  private _getDialogSize(dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent>): IDialogDimensions {
+  private _getDialogSize(dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent>): IDialogDimensions {
     const { width, height } = getComputedStyle(
       (<HTMLElement>this._document.getElementById(dialogRef.id)).parentElement,
     );

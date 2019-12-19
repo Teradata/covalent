@@ -40,9 +40,13 @@ const TD_PIPES: Type<any>[] = [
  * Services
  */
 
+import { RouterPathService } from './services/router-path.service';
+import { IconService } from './services/icon.service';
+
 @NgModule({
   imports: [FormsModule, CommonModule],
   declarations: [TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
   exports: [FormsModule, CommonModule, TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
+  providers: [RouterPathService, IconService],
 })
 export class CovalentCommonModule {}

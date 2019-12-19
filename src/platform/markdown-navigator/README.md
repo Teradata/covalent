@@ -150,17 +150,17 @@ export class MyModule {}
 
 ```typescript
 import {
-  MarkdownNavigatorWindowComponent,
-  MarkdownNavigatorWindowService,
+  TdMarkdownNavigatorWindowComponent,
+  TdMarkdownNavigatorWindowService,
   IMarkdownNavigatorItem
 } from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
 
 export class SampleComponent {
-  constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
+  constructor(private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) {}
 
   ngOnInit(): void {
-    const ref: MatDialogRef<MarkdownNavigatorWindowComponent> = this._markdownNavigatorWindowService.open({
+    const ref: MatDialogRef<TdMarkdownNavigatorWindowComponent> = this._markdownNavigatorWindowService.open({
       items: [{ url: 'https://github.com/Teradata/covalent/blob/develop/README.md' }]
     });
     ref.afterOpened().subscribe(() => {});
@@ -171,7 +171,7 @@ export class SampleComponent {
 
 # MarkdownNavigatorWindowDirective
 
-A directive that calls the MarkdownNavigatorWindowService open method on click events.
+A directive that calls the TdMarkdownNavigatorWindowService open method on click events.
 
 ## API Summary
 

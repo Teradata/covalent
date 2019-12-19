@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {
-  MarkdownNavigatorWindowService,
-  MarkdownNavigatorWindowComponent,
+  TdMarkdownNavigatorWindowService,
+  TdMarkdownNavigatorWindowComponent,
   IMarkdownNavigatorItem,
 } from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -14,7 +14,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class MarkdownNavigatorDemoBasicComponent {
   windowOpen: boolean = false;
-  ref: MatDialogRef<MarkdownNavigatorWindowComponent>;
+  ref: MatDialogRef<TdMarkdownNavigatorWindowComponent>;
   oneItem: IMarkdownNavigatorItem[] = [
     {
       url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
@@ -29,7 +29,7 @@ export class MarkdownNavigatorDemoBasicComponent {
   selected: { name: string; value: IMarkdownNavigatorItem[] } = this.options[0];
   currentItems: IMarkdownNavigatorItem[] = this.selected.value;
 
-  constructor(private _markdownNavigatorWindowService: MarkdownNavigatorWindowService) {}
+  constructor(private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) {}
 
   openDialog(): void {
     if (this.windowOpen) {

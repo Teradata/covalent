@@ -11,6 +11,7 @@ import { TdDataTableCellComponent } from './data-table-cell/data-table-cell.comp
 import { TdDataTableRowComponent, TdDataTableColumnRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableTableComponent } from './data-table-table/data-table-table.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
+import { TdDataTableService } from './services/data-table.service';
 
 const TD_DATA_TABLE: Type<any>[] = [
   TdDataTableComponent,
@@ -27,5 +28,6 @@ const TD_DATA_TABLE: Type<any>[] = [
   imports: [CommonModule, MatCheckboxModule, MatTooltipModule, MatIconModule, MatPseudoCheckboxModule],
   declarations: [TD_DATA_TABLE],
   exports: [TD_DATA_TABLE],
+  providers: [TdDataTableService],
 })
 export class CovalentDataTableModule {}

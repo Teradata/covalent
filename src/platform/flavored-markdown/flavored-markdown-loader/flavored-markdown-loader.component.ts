@@ -8,7 +8,7 @@ import {
   EventEmitter,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { MarkdownLoaderService } from '@covalent/markdown';
+import { TdMarkdownLoaderService } from '@covalent/markdown';
 
 // TODO: make a td-markdown-loader component
 
@@ -54,7 +54,7 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
-    private _markdownUrlLoaderService: MarkdownLoaderService,
+    private _markdownUrlLoaderService: TdMarkdownLoaderService,
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
