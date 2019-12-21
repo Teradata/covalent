@@ -4,9 +4,7 @@ import { DecimalPipe } from '@angular/common';
 @Pipe({
   name: 'digits',
 })
-
 export class TdDigitsPipe implements PipeTransform {
-
   private _decimalPipe: DecimalPipe;
 
   constructor(@Inject(LOCALE_ID) private _locale: string = 'en') {
@@ -23,10 +21,12 @@ export class TdDigitsPipe implements PipeTransform {
     } else if (digits < 1) {
       return this._decimalPipe.transform(digits.toFixed(precision));
     }
-    let k: number = 1000;
-    let sizes: string[] = ['', 'K', 'M', 'B', 'T', 'Q'];
-    let i: number = Math.floor(Math.log(digits) / Math.log(k));
-    let size: string = sizes[i];
-    return this._decimalPipe.transform(parseFloat((digits / Math.pow(k, i)).toFixed(precision))) + (size ? ' ' + size : '');
+    const k: number = 1000;
+    const sizes: string[] = ['', 'K', 'M', 'B', 'T', 'Q'];
+    const i: number = Math.floor(Math.log(digits) / Math.log(k));
+    const size: string = sizes[i];
+    return (
+      this._decimalPipe.transform(parseFloat((digits / Math.pow(k, i)).toFixed(precision))) + (size ? ' ' + size : '')
+    );
   }
 }

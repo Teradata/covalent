@@ -1,24 +1,23 @@
 import { Component, Directive, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 
-@Directive({selector: 'td-dialog-title'})
+@Directive({ selector: 'td-dialog-title' })
 export class TdDialogTitleDirective {}
 
-@Directive({selector: 'td-dialog-content'})
+@Directive({ selector: 'td-dialog-content' })
 export class TdDialogContentDirective {}
 
-@Directive({selector: 'td-dialog-actions'})
+@Directive({ selector: 'td-dialog-actions' })
 export class TdDialogActionsDirective {}
 
 @Component({
   selector: 'td-dialog',
   templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss' ],
+  styleUrls: ['./dialog.component.scss'],
 })
 export class TdDialogComponent implements AfterContentInit {
-
-  @ContentChildren(TdDialogTitleDirective) dialogTitle: QueryList<TdDialogTitleDirective>;
-  @ContentChildren(TdDialogContentDirective) dialogContent: QueryList<TdDialogContentDirective>;
-  @ContentChildren(TdDialogActionsDirective) dialogActions: QueryList<TdDialogActionsDirective>;
+  @ContentChildren(TdDialogTitleDirective, { descendants: true }) dialogTitle: QueryList<TdDialogTitleDirective>;
+  @ContentChildren(TdDialogContentDirective, { descendants: true }) dialogContent: QueryList<TdDialogContentDirective>;
+  @ContentChildren(TdDialogActionsDirective, { descendants: true }) dialogActions: QueryList<TdDialogActionsDirective>;
 
   ngAfterContentInit(): void {
     if (this.dialogTitle.length > 1) {
@@ -31,5 +30,4 @@ export class TdDialogComponent implements AfterContentInit {
       throw new Error('Duplicate td-dialog-actions component at in td-dialog.');
     }
   }
-
 }

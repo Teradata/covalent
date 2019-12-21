@@ -32,6 +32,9 @@
 + clear?: string
   + Event emitted after the clear icon has been clicked.
   + Emits [void].
++ blur: function
+  + Event emitted after the blur event has been called in underlying input.
+  + Emits [void].
 
 ## Setup
 
@@ -54,6 +57,6 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-  <td-search-box backIcon="arrow_back" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
+  <td-search-box backIcon="arrow_back" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''" (blur)="onBlurEvent()">
   </td-search-box>
 ```

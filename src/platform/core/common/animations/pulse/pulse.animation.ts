@@ -1,6 +1,16 @@
-
-import { trigger, state, style, keyframes, transition, animate,
-         AnimationTriggerMetadata, AUTO_STYLE, query, animateChild, group } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  keyframes,
+  transition,
+  animate,
+  AnimationTriggerMetadata,
+  AUTO_STYLE,
+  query,
+  animateChild,
+  group,
+} from '@angular/animations';
 import { IAnimationOptions } from '../common/interfaces';
 
 /**
@@ -16,39 +26,25 @@ import { IAnimationOptions } from '../common/interfaces';
  * usage: [@tdPulse]="{ value: true | false, params: { duration: 200 }}"
  */
 export const tdPulseAnimation: AnimationTriggerMetadata = trigger('tdPulse', [
-  state('0', style({
-    transform: 'scale3d(1, 1, 1)',
-  })),
-  state('1',  style({
-    transform: 'scale3d(1, 1, 1)',
-  })),
-  transition('0 <=> 1', [
-    group([
-      query('@*', animateChild(), { optional: true }),
-      animate('{{ duration }}ms {{ delay }}ms {{ ease }}',
-      keyframes([
-          style({ transform: 'scale3d(1, 1, 1)', offset: 0 }),
-          style({ transform: 'scale3d(1.05, 1.05, 1.05)', offset: 0.5 }),
-          style({ transform: 'scale3d(1, 1, 1)', offset: 1.0 }),
-        ]),
-      ),
-    ]),
-  ], { params: { duration: 500, delay: '0', ease: 'ease-out' }}),
-]);
-
-/** @deprecated see tdPulseAnimation */
-export function TdPulseAnimation(pulseOptions: IAnimationOptions = {}): AnimationTriggerMetadata {
-  return trigger(pulseOptions.anchor || 'tdPulse', [
-    state('0', style({
+  state(
+    '0',
+    style({
       transform: 'scale3d(1, 1, 1)',
-    })),
-    state('1',  style({
+    }),
+  ),
+  state(
+    '1',
+    style({
       transform: 'scale3d(1, 1, 1)',
-    })),
-    transition('0 <=> 1', [
+    }),
+  ),
+  transition(
+    '0 <=> 1',
+    [
       group([
         query('@*', animateChild(), { optional: true }),
-        animate((pulseOptions.duration || 500) + 'ms ' + (pulseOptions.delay || 0) + 'ms',
+        animate(
+          '{{ duration }}ms {{ delay }}ms {{ ease }}',
           keyframes([
             style({ transform: 'scale3d(1, 1, 1)', offset: 0 }),
             style({ transform: 'scale3d(1.05, 1.05, 1.05)', offset: 0.5 }),
@@ -56,6 +52,7 @@ export function TdPulseAnimation(pulseOptions: IAnimationOptions = {}): Animatio
           ]),
         ),
       ]),
-    ]),
-  ]);
-}
+    ],
+    { params: { duration: 500, delay: '0', ease: 'ease-out' } },
+  ),
+]);

@@ -1,0 +1,41 @@
+<mat-toolbar
+  [color]="toolbarColor"
+  class="td-markdown-navigator-window-toolbar"
+  [style.min-height.px]="toolbarHeight"
+  [style.cursor]="docked ? 'inherit' : 'move'"
+>
+  <mat-toolbar-row [style.height.px]="toolbarHeight" [style.padding-right.px]="0">
+    <div layout="row" layout-align="start center" flex>
+      <span class="mat-title td-markdown-navigator-window-title" flex>
+        {{ titleLabel }}
+      </span>
+      <!-- TODO: Resizing a drag-and-drop element was not working so removed docking/undocking for now-->
+      <!--
+      <button mat-icon-button [matTooltip]="toggleDockedStateLabel" (click)="toggleDockedState()">
+        <mat-icon [attr.aria-label]="toggleDockedStateLabel">
+          {{ docked ? 'unfold_more' : 'unfold_less' }}
+        </mat-icon>
+      </button>
+      -->
+      <button
+        mat-icon-button
+        [matTooltip]="closeLabel"
+        (click)="closed.emit()"
+        class="td-markdown-navigator-window-close"
+        [attr.data-test]="'close-button'"
+      >
+        <mat-icon [attr.aria-label]="closeLabel">
+          close
+        </mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<td-markdown-navigator
+  [items]="items"
+  [labels]="markdownNavigatorLabels"
+  [style.display]="docked ? 'none' : 'inherit'"
+  [startAt]="startAt"
+  [compareWith]="compareWith"
+></td-markdown-navigator>

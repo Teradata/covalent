@@ -1,0 +1,54 @@
+<td-chart [style.height.px]="400">
+  <td-chart-dataset
+    [source]="{
+      product: ['Latte', 'Tea', 'Cocoa', 'Milk'],
+      count: [823, 235, 1042, 988],
+      score: [95.8, 81.4, 91.2, 76.9]
+    }"
+  ></td-chart-dataset>
+  <td-chart-toolbox
+    [show]="true"
+    [right]="30"
+    [top]="10"
+    [feature]="{
+      dataView: { readOnly: true, title: 'View Data', lang: ['Data View', 'Turn Off', 'Refresh'] }
+    }"
+  >
+    <ng-template tdViewDataFormatter>
+      <table td-data-table>
+        <thead>
+          <tr td-data-table-column-row>
+            <th td-data-table-column>Product</th>
+            <th td-data-table-column>Count</th>
+            <th td-data-table-column>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of ['Latte', 'Tea', 'Cocoa', 'Milk']; let i = index">
+            <tr td-data-table-row>
+              <td td-data-table-cell>{{ item }}</td>
+              <td td-data-table-cell *ngIf="[823, 235, 1042, 988] as firstSeries">
+                {{ firstSeries[i] }}
+              </td>
+              <td td-data-table-cell *ngIf="[95.8, 81.4, 91.2, 76.9] as secondSeries">
+                {{ secondSeries[i] }}
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </ng-template>
+  </td-chart-toolbox>
+  <td-chart-tooltip [trigger]="'item'" [textStyle]="{ color: '#818181' }" [backgroundColor]="'#ffffff'">
+    <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+      <ng-container *ngIf="params">
+        <div layout="row" layout-align="start center">
+          <span class="mat-caption pad-left-sm">
+            {{ params.seriesName ? params.seriesName : params.name }} : {{ params.value }}
+          </span>
+        </div>
+      </ng-container>
+    </ng-template>
+  </td-chart-tooltip>
+  <td-chart-series td-pie [radius]="[0, '75%']"></td-chart-series>
+</td-chart>

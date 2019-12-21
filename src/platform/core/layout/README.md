@@ -26,7 +26,7 @@
 Example for Main Layout:
 
 ```html
-<td-layout [mode]="side" [opened]="true" [sidenavWidth]="257px">
+<td-layout [mode]="'side'" [opened]="true" [sidenavWidth]="'257px'">
   <div td-sidenav-content>
    .. more sidenav content
   </div>
@@ -99,6 +99,9 @@ See [theming](https://teradata.github.io/covalent/#/docs/theme) in the covalent 
 + logo: string
   + Logo icon name to be displayed before the title. 
   + If [icon] is set, then this will not be shown.
++ avatar: string
+  + Avatar url to be displayed before the title.
+  + If [icon] or [logo] are set, then this will not be shown.
 + color: string
   + Optional sidenav toolbar color.
 + navigationRoute: string

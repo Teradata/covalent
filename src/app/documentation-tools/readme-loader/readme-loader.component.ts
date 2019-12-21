@@ -1,37 +1,26 @@
-import { Component, Input, HostBinding, Sanitizer, SecurityContext, ChangeDetectorRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
-import { catchError } from 'rxjs/operators';
+import { Component, Input, OnInit, HostBinding } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { slideInUpAnimation } from '../../app.animations';
 
 @Component({
   selector: 'td-readme-loader',
   styleUrls: ['./readme-loader.component.scss'],
   templateUrl: './readme-loader.component.html',
+  animations: [slideInUpAnimation],
 })
-export class TdReadmeLoaderComponent {
+export class TdReadmeLoaderComponent implements OnInit {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  @Input()
-  set resourceUrl(resourceUrl: string) {
-    if (resourceUrl) {
-      this.loadResource(this._sanitizer.sanitize(SecurityContext.URL, resourceUrl));
+  @Input() resourceUrl: string;
+
+  constructor(private _route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    if (this.resourceUrl) {
+      return;
     }
+
+    this.resourceUrl = this._route.snapshot.data.resourceUrl;
   }
-
-  content: string;
-
-  constructor(private _http: HttpClient,
-              private _sanitizer: Sanitizer,
-              private _changeDetectorRef: ChangeDetectorRef) {}
-
-  async loadResource(resourceUrl: string): Promise<void> {
-    try {
-      this.content = await this._http.get(resourceUrl, {responseType: 'text'}).toPromise();
-    } catch (error) {
-      this.content = 'Warning: Resource could not be loaded.';
-    } finally {
-      this._changeDetectorRef.markForCheck();
-    }
-  }
-
 }

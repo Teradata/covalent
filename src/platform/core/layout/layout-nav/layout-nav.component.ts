@@ -4,24 +4,23 @@ import { TdLayoutComponent } from '../layout.component';
 
 @Component({
   selector: 'td-layout-nav',
-  styleUrls: ['./layout-nav.component.scss' ],
+  styleUrls: ['./layout-nav.component.scss'],
   templateUrl: './layout-nav.component.html',
 })
 export class TdLayoutNavComponent {
-
   /**
    * toolbarTitle?: string
    *
    * Title set in toolbar.
    */
-  @Input('toolbarTitle') toolbarTitle: string;
+  @Input() toolbarTitle: string;
 
   /**
    * icon?: string
    *
    * icon name to be displayed before the title
    */
-  @Input('icon') icon: string;
+  @Input() icon: string;
 
   /**
    * logo?: string
@@ -29,22 +28,22 @@ export class TdLayoutNavComponent {
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
-  @Input('logo') logo: string;
+  @Input() logo: string;
 
   /**
-   * color?: string
+   * color?: 'accent' | 'primary' | 'warn'
    *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, primary is used.
    */
-  @Input('color') color: string = 'primary';
+  @Input() color: 'accent' | 'primary' | 'warn' = 'primary';
 
   /**
    * navigationRoute?: string
    *
    * option to set the combined route for the icon, logo, and toolbarTitle.
    */
-  @Input('navigationRoute') navigationRoute: string;
+  @Input() navigationRoute: string;
 
   /**
    * Checks if router was injected.

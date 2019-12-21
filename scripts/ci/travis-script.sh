@@ -25,13 +25,11 @@ else
   fileDiff=$(git diff --name-only $TRAVIS_BRANCH...HEAD)
 fi
 
-# Check if tests can be skipped
-if [[ ${fileDiff} =~ ^(.*\.md\s*)*$ ]]; then
-  echo "Skipping tests since only markdown files changed."
-  exit 0
-fi
-
-if [ "${MODE}" = "lint" ]; then
+if [ "${MODE}" = "commitlint" ]; then
+    npm run commitlint
+elif [ "${MODE}" = "prettier" ]; then
+    npm run prettier:check
+elif [ "${MODE}" = "lint" ]; then
   npm run lint
 elif [ "${MODE}" = "aot" ]; then
   npm run build:docs
@@ -39,6 +37,8 @@ elif [ "${MODE}" = "release" ]; then
   npm run build:lib
 elif [ "${MODE}" = "unit-test" ]; then
   npm run test
+elif [ "${MODE}" = "audit" ]; then
+  npm audit --production --audit-level=high
 elif [ "${MODE}" = "a11y" ]; then
   npm run a11y
 fi

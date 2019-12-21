@@ -3,11 +3,10 @@ import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-textarea',
-  styleUrls: [ './dynamic-textarea.component.scss' ],
+  styleUrls: ['./dynamic-textarea.component.scss'],
   templateUrl: './dynamic-textarea.component.html',
 })
 export class TdDynamicTextareaComponent {
-
   control: FormControl;
 
   label: string = '';
@@ -19,5 +18,4 @@ export class TdDynamicTextareaComponent {
   required: boolean = undefined;
 
   errorMessageTemplate: TemplateRef<any> = undefined;
-
 }

@@ -1,8 +1,8 @@
 ## TdMarkdownComponent: td-markdown
 
-`<td-markdown>` is an @angular component for Github flavored Javascript Markdown to HTML converter. It is based on [showdown](https://github.com/showdownjs/showdown/) library.
+`<td-markdown>` is a component that parses and renders Github flavored markdown. It is based on the [showdown](https://github.com/showdownjs/showdown/) library.
 
-**Note:** This module uses the **DomSanitizer** service to ~sanitize~ the parsed `html` from the `showdown` lib to avoid **XSS** issues.
+**Note:** This module uses the **DomSanitizer** service to sanitize the parsed html from the showdown lib to avoid **XSS** issues.
 
 By default, `--dev` build will log the following message in the console to let you know:
 
@@ -12,19 +12,29 @@ By default, `--dev` build will log the following message in the console to let y
 
 #### Inputs
 
-+ content: string
-  + Markdown format content to be parsed as html markup. 
++ content?: string
+  + Markdown format content to be parsed as html markup.
   + Used to load data dynamically. e.g. `README.md` content.
+
++ simpleLineBreaks?: string
+  + Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
+  + Defaults to false.
+
++ hostedUrl?: string
+  + If markdown contains relative paths, this is required to generate correct urls.
+
++ anchor?: string
+  + Anchor to jump to.
 
 #### Events
 
-+ contentReady: function
++ contentReady: undefined
   + Event emitted after the markdown content rendering is finished.
 
 
 ## Installation
 
-This component can be installed as npm package.
+This component can be installed as an npm package.
 
 ```bash
 npm i -save @covalent/markdown
@@ -32,7 +42,7 @@ npm i -save @covalent/markdown
 
 ## Setup
 
-Then, import the **[CovalentMarkdownModule]** in your NgModule:
+Then, import the **CovalentMarkdownModule** in your NgModule:
 
 ```typescript
 import { CovalentMarkdownModule } from '@covalent/markdown';
@@ -48,9 +58,9 @@ export class MyModule {}
 
 ### Theming
 
-The `markdown` module comes with its own `covalent` theme which uses the material *theme* which is used by importing our theme scss file.
+This module comes with its own Covalent theme which uses the material theme which is used by importing our theme scss file.
 
-```css
+```scss
 @import '~@angular/material/theming';
 @import '~@covalent/markdown/markdown-theme';
 
@@ -71,7 +81,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 ```html
 <td-markdown>
-  # Heading 
+  # Heading
   ## Sub Heading (H2)
   ### Steps (H2)
 </td-markdown>
@@ -79,7 +89,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 **Output:**
 
-# Heading 
+# Heading
 ## Sub Heading (H2)
 ### Steps (H2)
-

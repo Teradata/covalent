@@ -7,10 +7,10 @@
 
 // Custom typography
 $custom-typography: mat-typography-config(
-  $button: mat-typography-level(14px, 14px, 400)
+  $button: mat-typography-level(14px, 14px, 400),
 );
 $custom-toolbar-typography: mat-typography-config(
-  $title: mat-typography-level(20px, 32px, 400)
+  $title: mat-typography-level(20px, 32px, 400),
 );
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -43,10 +43,10 @@ $mat-font-url: 'platform/core/common/styles/font/';
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $primary: mat-palette($td-slate, 700, 100, 900);
-$accent:  mat-palette($td-orange, 800, 200, 900);
+$accent: mat-palette($td-teal, 800, 200, 900);
 
 // The warn palette is optional (defaults to red).
-$warn:    mat-palette($mat-red, 600, 200, 900);
+$warn: mat-palette($mat-red, 600, 200, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: mat-light-theme($primary, $accent, $warn);
@@ -64,8 +64,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // Alt theme
 .theme-alt {
   $primary-alt: mat-palette($td-orange, 800, 200, 900);
-  $accent-alt:  mat-palette($td-slate, 700, 100, 900);
-  $warn-alt:    mat-palette($mat-red, 600, 200, 900);
+  $accent-alt: mat-palette($td-slate, 700, 100, 900);
+  $warn-alt: mat-palette($mat-red, 600, 200, 900);
   $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
   @include angular-material-theme($theme-alt);
   @include covalent-theme($theme-alt);
@@ -87,11 +87,15 @@ $theme: mat-light-theme($primary, $accent, $warn);
   }
 }
 
+body .mat-card {
+  border-radius: 8px;
+}
+
 // Dark theme
 .theme-dark {
   $primary-dark: mat-palette($td-slate, 800, 200, 900);
-  $accent-dark:  mat-palette($td-orange, 800, 200, 900);
-  $warn-dark:    mat-palette($mat-red, 600, 200, 900);
+  $accent-dark: mat-palette($td-orange, 800, 200, 900);
+  $warn-dark: mat-palette($mat-red, 600, 200, 900);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
   @include angular-material-theme($theme-dark);
   @include covalent-theme($theme-dark);
@@ -120,8 +124,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // Subpage themes
 .theme-docs {
   $primary-docs: mat-palette($mat-deep-purple, 700);
-  $accent-docs:  mat-palette($mat-cyan, A400);
-  $warn-docs:    mat-palette($mat-red, 600);
+  $accent-docs: mat-palette($mat-cyan, A400);
+  $warn-docs: mat-palette($mat-red, 600);
   $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
   @include angular-material-theme($theme-docs);
   @include covalent-theme($theme-docs);
@@ -144,8 +148,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // Custom theme examples
 .blue-orange {
   $primary2: mat-palette($mat-blue, 700);
-  $accent2:  mat-palette($mat-orange, 800);
-  $warn2:    mat-palette($mat-red, 600);
+  $accent2: mat-palette($mat-orange, 800);
+  $warn2: mat-palette($mat-red, 600);
 
   $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
 
@@ -155,8 +159,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 .blue-grey-deep-orange {
   $primary3: mat-palette($mat-blue-grey, 700);
-  $accent3:  mat-palette($mat-deep-orange);
-  $warn3:    mat-palette($mat-red, 600);
+  $accent3: mat-palette($mat-deep-orange);
+  $warn3: mat-palette($mat-red, 600);
 
   $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
 
@@ -191,17 +195,37 @@ mat-nav-list {
   background-color: mat-color($td-slate, 800);
 }
 
+td-layout-nav {
+  mat-toolbar {
+    z-index: 2;
+    @include mat-elevation(3);
+  }
+}
+
 // Active top nav
-nav {
+nav.docs-nav {
   a {
     line-height: 4;
     display: block;
-    &:not(.active) {
-      color: rgba(255, 255, 255, 0.75);
+    font-size: 1.14285em;
+    letter-spacing: 0.0764285em;
+    position: relative;
+    color: rgba(250, 250, 250, 0.8);
+
+    &:hover {
+      color: #fff;
     }
     &.active {
-      color: mat-color($accent);
-      border-bottom: 1px solid mat-color($accent);
+      color: #fff;
+      &::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        bottom: 0;
+        width: 100%;
+        background-color: mat-color($accent);
+        left: 0;
+      }
     }
   }
 }
@@ -209,4 +233,12 @@ nav {
 // Links
 a {
   text-decoration: none;
+}
+
+.td-markdown {
+  h1,
+  h2,
+  h3 {
+    font-weight: 400 !important;
+  }
 }

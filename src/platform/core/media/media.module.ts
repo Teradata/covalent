@@ -1,29 +1,14 @@
 import { Type } from '@angular/core';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
-
-import { MEDIA_PROVIDER } from './services/media.service';
 import { TdMediaToggleDirective } from './directives/media-toggle.directive';
+import { TdMediaService } from './services/media.service';
 
-const TD_MEDIA: Type<any>[] = [
-  TdMediaToggleDirective,
-];
+const TD_MEDIA: Type<any>[] = [TdMediaToggleDirective];
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    TD_MEDIA,
-  ],
-  exports: [
-    TD_MEDIA,
-  ],
-  providers: [
-    MEDIA_PROVIDER,
-  ],
+  declarations: [TD_MEDIA],
+  exports: [TD_MEDIA],
+  providers: [TdMediaService],
 })
-export class CovalentMediaModule {
-
-}
+export class CovalentMediaModule {}

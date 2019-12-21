@@ -3,6 +3,7 @@ $step-circle: 24px;
 .td-step-header {
   position: relative;
   outline: none;
+  min-width: 120px;
   height: 72px;
   // layout row
   flex-direction: row;
@@ -12,7 +13,7 @@ $step-circle: 24px;
   // flex
   flex: 1;
   // layout-align start
-  justify-content: start;
+  justify-content: flex-start;
   // layout-align start center
   align-items: center;
   align-content: center;

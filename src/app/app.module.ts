@@ -13,8 +13,6 @@ import localeEs from '@angular/common/locales/es';
 registerLocaleData(localeEs);
 
 import { DocsAppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -26,25 +24,31 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
-         CovalentMediaModule } from '../platform/core';
+import {
+  CovalentLayoutModule,
+  CovalentExpansionPanelModule,
+  CovalentNotificationsModule,
+  CovalentMenuModule,
+  CovalentMediaModule,
+} from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
-import { ToolbarModule } from './components/toolbar/toolbar.module';
+import { SidenavContentModule } from './components/shared/sidenav-content/sidenav-content.module';
 
 import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
+import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
+import { ContentContainerModule } from './components/content-container/content-container.module';
+import { HomeComponent } from './components/home/home.component';
+import { ToolbarModule } from './components/toolbar/toolbar.module';
 
 @NgModule({
-  declarations: [
-    DocsAppComponent,
-    HomeComponent,
-    TemplatesComponent,
-  ], // directives, components, and pipes owned by this NgModule
+  declarations: [DocsAppComponent, HomeComponent], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserAnimationsModule,
     CommonModule,
@@ -61,6 +65,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     MatToolbarModule,
     MatGridListModule,
     MatTooltipModule,
+    MatSnackBarModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentExpansionPanelModule,
@@ -71,6 +76,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
+    CovalentSidesheetModule,
     ToolbarModule,
     TranslateModule.forRoot({
       loader: {
@@ -79,18 +85,23 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
         deps: [HttpClient],
       },
     }),
+    SidenavContentModule,
+    ContentContainerModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
     GitHubService,
-    InternalDocsService, {
+    InternalDocsService,
+    {
       // Configure LOCALE_ID depending on the language set in browser
-      provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
+      provide: LOCALE_ID,
+      useFactory: getSelectedLanguage,
+      deps: [TranslateService],
     },
     SelectivePreloadingStrategyService,
   ], // additional providers needed for this module
-  entryComponents: [ ],
-  bootstrap: [ DocsAppComponent ],
+  entryComponents: [],
+  bootstrap: [DocsAppComponent],
 })
 export class AppModule {}

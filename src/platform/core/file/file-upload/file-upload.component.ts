@@ -1,5 +1,14 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ContentChild, ChangeDetectorRef,
-  forwardRef } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  ViewChild,
+  ContentChild,
+  ChangeDetectorRef,
+  forwardRef,
+} from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
@@ -14,42 +23,43 @@ export const _TdFileUploadMixinBase = mixinControlValueAccessor(mixinDisabled(Td
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TdFileUploadComponent),
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TdFileUploadComponent),
+      multi: true,
+    },
+  ],
   selector: 'td-file-upload',
   inputs: ['disabled', 'value'],
   styleUrls: ['./file-upload.component.scss'],
   templateUrl: './file-upload.component.html',
 })
 export class TdFileUploadComponent extends _TdFileUploadMixinBase implements IControlValueAccessor, ICanDisable {
-
   private _multiple: boolean = false;
   private _required: boolean = false;
 
-  @ViewChild(TdFileInputComponent) fileInput: TdFileInputComponent;
+  @ViewChild(TdFileInputComponent, { static: false }) fileInput: TdFileInputComponent;
 
-  @ContentChild(TdFileInputLabelDirective) inputLabel: TdFileInputLabelDirective;
+  @ContentChild(TdFileInputLabelDirective, { static: false }) inputLabel: TdFileInputLabelDirective;
 
   /**
-   * defaultColor?: string
+   * defaultColor?: 'accent' | 'primary' | 'warn'
    * Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
    */
-  @Input('defaultColor') defaultColor: string = 'primary';
+  @Input() defaultColor: 'accent' | 'primary' | 'warn' = 'primary';
 
   /**
-   * activeColor?: string
+   * activeColor?: 'accent' | 'primary' | 'warn'
    * Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
    */
-  @Input('activeColor') activeColor: string = 'accent';
+  @Input() activeColor: 'accent' | 'primary' | 'warn' = 'accent';
 
   /**
-   * cancelColor?: string
+   * cancelColor?: 'accent' | 'primary' | 'warn'
    * Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
    */
-  @Input('cancelColor') cancelColor: string = 'warn';
+  @Input() cancelColor: 'accent' | 'primary' | 'warn' = 'warn';
 
   /**
    * multiple?: boolean
@@ -81,27 +91,27 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
    * Sets files accepted when opening the file browser dialog.
    * Same as 'accept' attribute in <input/> element.
    */
-  @Input('accept') accept: string;
+  @Input() accept: string;
 
   /**
    * select?: function
    * Event emitted when a file is selected.
    * Emits a [File | FileList] object.
    */
-  @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+  @Output() select: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
   /**
    * upload?: function
    * Event emitted when upload button is clicked.
    * Emits a [File | FileList] object.
    */
-  @Output('upload') onUpload: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+  @Output() upload: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
   /**
    * cancel?: function
    * Event emitted when cancel button is clicked.
    */
-  @Output('cancel') onCancel: EventEmitter<void> = new EventEmitter<void>();
+  @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(_changeDetectorRef: ChangeDetectorRef) {
     super(_changeDetectorRef);
@@ -112,7 +122,7 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
    */
   uploadPressed(): void {
     if (this.value) {
-      this.onUpload.emit(this.value);
+      this.upload.emit(this.value);
     }
   }
 
@@ -121,16 +131,16 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
    */
   handleSelect(value: File | FileList): void {
     this.value = value;
-    this.onSelect.emit(value);
+    this.select.emit(value);
   }
 
   /**
    * Methods executed when cancel button is clicked.
    * Clears files.
    */
-  cancel(): void {
+  _cancel(): void {
     this.value = undefined;
-    this.onCancel.emit(undefined);
+    this.cancel.emit();
     // check if the file input is rendered before clearing it
     if (this.fileInput) {
       this.fileInput.clear();
@@ -140,7 +150,7 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
   /** Method executed when the disabled value changes */
   onDisabledChange(v: boolean): void {
     if (v) {
-      this.cancel();
+      this._cancel();
     }
   }
 }

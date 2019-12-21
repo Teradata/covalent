@@ -1,38 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { CovalentNavStepperModule } from '../platform/experimental/nav-stepper';
-
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
-import { NavStepperDemoComponent } from './sandbox/nav-stepper/nav-stepper.component';
+
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
+import { TdLoadingMaskModule } from '@covalent/experimental/loading-mask';
+import { CovalentNavLinksModule } from '@covalent/core/nav-links';
 
 @NgModule({
-  declarations: [
-    TestBedComponent,
-    NavStepperDemoComponent,
-    MainComponent,
-  ],
+  declarations: [TestBedComponent, MainComponent],
   imports: [
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatDividerModule,
     MatToolbarModule,
     appRoutes,
     /** Experimental Modules */
-    CovalentNavStepperModule,
+    TdLoadingMaskModule,
+    CovalentNavLinksModule,
   ], // modules needed to run this module
-  providers: [
-    appRoutingProviders,
-  ],
+  providers: [appRoutingProviders],
   bootstrap: [TestBedComponent],
 })
-export class TestBedModule { }
+export class TestBedModule {}

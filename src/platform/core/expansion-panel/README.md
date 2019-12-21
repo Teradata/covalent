@@ -29,10 +29,34 @@ It also contains an optional summary to display anything in collapsed state.
 + toggle: function
   + Toggle state of component. Returns "true" if successful, else "false".
 + open: function
-  + Opens component and sets state to expanded. Retuns "true" if successful, else "false".
+  + Opens component and sets state to expanded. Returns "true" if successful, else "false".
 + close: function
-  + Closes component and sets state to collapsed. Retuns "true" if successful, else "false".
+  + Closes component and sets state to collapsed. Returns "true" if successful, else "false".
 
+
+# td-expansion-panel-group
+
+`td-expansion-panel-group` is used to group expansion panel components.
+
+Setting the `multi` property to false allows for accordion mode, where only one panel is allowed to be open at a time.
+
+Margin is added between the panels when expanded, following the material spec.
+
+## API Summary
+
+#### Inputs
+
++ multi?: boolean
+  + Sets whether multiple panels can be opened at a given time.
+  + Set to false for accordion mode.
+  + Defaults to false.
+
+#### Methods
+
++ openAll: function
+  + Opens all expansion panels, only if multi set set to true.
++ closeAll: function
+  + Closes all expansion panels.
 
 ## Setup
 
@@ -55,7 +79,15 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-<td-expansion-panel label="label" sublabel="sublabel" expand="true" disabled="false" (expanded)="expandedEvent()" (collapsed)="collapsedEvent()" [disableRipple]="false">
+<td-expansion-panel
+  label="label"
+  sublabel="sublabel"
+  expand="true"
+  disabled="false"
+  (expanded)="expandedEvent()"
+  (collapsed)="collapsedEvent()"
+  [disableRipple]="false"
+>
   <ng-template td-expansion-panel-header>
     ... add header content (overrides label and sublabel)
   </ng-template>
@@ -72,18 +104,8 @@ Example for HTML usage:
 </td-expansion-panel>
 ```
 
-# td-expansion-panel-group
-
-`td-expansion-panel-group` is used to group expansion panel components.
-
-It adds margin between them when expanded following the material spec.
-
-## Usage
-
-Example for HTML usage:
-
 ```html
-<td-expansion-panel-group>
+<td-expansion-panel-group [multi]="false">
   <td-expansion-panel>
     ..content
   </td-expansion-panel>

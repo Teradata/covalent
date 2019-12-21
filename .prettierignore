@@ -1,0 +1,7 @@
+/dist
+/deploy
+/node_modules
+/coverage
+src/platform/core/schematics/ng-add/files/theme.scss
+*.md
+src/app/content/**/*.html

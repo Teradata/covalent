@@ -1,4 +1,15 @@
-import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges, TemplateRef, ChangeDetectorRef, Type } from '@angular/core';
+import {
+  Component,
+  Directive,
+  Input,
+  HostBinding,
+  OnInit,
+  SimpleChanges,
+  OnChanges,
+  TemplateRef,
+  ChangeDetectorRef,
+  Type,
+} from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
@@ -15,11 +26,10 @@ export class TdDynamicElementBase {
 /* tslint:disable-next-line */
 export const _TdDynamicElementMixinBase = mixinControlValueAccessor(TdDynamicElementBase);
 
-@Directive({selector: '[tdDynamicFormsError]ng-template'})
-export class TdDynamicFormsErrorTemplate extends TemplatePortalDirective {
-
+@Directive({ selector: '[tdDynamicFormsError]ng-template' })
+export class TdDynamicFormsErrorTemplateDirective extends TemplatePortalDirective {
   @Input() tdDynamicFormsError: string;
-  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+  constructor(public templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
     super(templateRef, viewContainerRef);
   }
 }
@@ -28,21 +38,23 @@ export class TdDynamicFormsErrorTemplate extends TemplatePortalDirective {
   selector: '[tdDynamicContainer]',
 })
 export class TdDynamicElementDirective {
-  constructor(public viewContainer: ViewContainerRef) { }
+  constructor(public viewContainer: ViewContainerRef) {}
 }
 
 @Component({
-  providers: [TdDynamicFormsService, {
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TdDynamicElementComponent),
-    multi: true,
-  }],
+  providers: [
+    TdDynamicFormsService,
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TdDynamicElementComponent),
+      multi: true,
+    },
+  ],
   selector: 'td-dynamic-element',
   template: '<div tdDynamicContainer></div>',
 })
 export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
-                                       implements IControlValueAccessor, OnInit, OnChanges {
-
+  implements IControlValueAccessor, OnInit, OnChanges {
   private _instance: any;
 
   /**
@@ -69,7 +81,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    * Sets type or element of element to be rendered.
    * Throws error if does not exist or no supported.
    */
-  @Input() type: TdDynamicElement | TdDynamicType = undefined;
+  @Input() type: TdDynamicElement | TdDynamicType | Type<any> = undefined;
 
   /**
    * Sets required validation checkup (if supported by element).
@@ -111,7 +123,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    */
   @Input() errorMessageTemplate: TemplateRef<any> = undefined;
 
-  @ViewChild(TdDynamicElementDirective) childElement: TdDynamicElementDirective;
+  @ViewChild(TdDynamicElementDirective, { static: true }) childElement: TdDynamicElementDirective;
 
   @HostBinding('attr.max')
   get maxAttr(): any {
@@ -123,16 +135,19 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
     return this.min;
   }
 
-  constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _dynamicFormsService: TdDynamicFormsService,
-              _changeDetectorRef: ChangeDetectorRef) {
+  constructor(
+    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _dynamicFormsService: TdDynamicFormsService,
+    _changeDetectorRef: ChangeDetectorRef,
+  ) {
     super(_changeDetectorRef);
   }
 
   ngOnInit(): void {
-    let component: any = <any>this.type instanceof Type ? this.type : this._dynamicFormsService.getDynamicElement(this.type);
-    let ref: ComponentRef<any> = this._componentFactoryResolver.
-      resolveComponentFactory(component)
+    const component: any =
+      <any>this.type instanceof Type ? this.type : this._dynamicFormsService.getDynamicElement(this.type);
+    const ref: ComponentRef<any> = this._componentFactoryResolver
+      .resolveComponentFactory(component)
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
     this._instance = ref.instance;
@@ -157,7 +172,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    */
   ngOnChanges(changes: SimpleChanges): void {
     if (this._instance) {
-      for (let prop in changes) {
+      for (const prop of Object.keys(changes)) {
         this._instance[prop] = changes[prop].currentValue;
       }
     }

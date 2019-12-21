@@ -6,12 +6,11 @@ import { ILayoutTogglable } from './layout-toggle.class';
 
 @Component({
   selector: 'td-layout',
-  styleUrls: ['./layout.component.scss' ],
+  styleUrls: ['./layout.component.scss'],
   templateUrl: './layout.component.html',
 })
 export class TdLayoutComponent implements ILayoutTogglable {
-
-  @ViewChild(MatSidenav) sidenav: MatSidenav;
+  @ViewChild(MatSidenav, { static: true }) sidenav: MatSidenav;
 
   /**
    * mode?: 'side', 'push' or 'over'
@@ -22,7 +21,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('mode') mode: 'side' | 'push' | 'over' = 'over';
+  @Input() mode: 'side' | 'push' | 'over' = 'over';
 
   /**
    * opened?: boolean
@@ -34,7 +33,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('opened') opened: boolean = false;
+  @Input() opened: boolean = false;
 
   /**
    * sidenavWidth?: string
@@ -44,7 +43,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('sidenavWidth') sidenavWidth: string = '320px';
+  @Input() sidenavWidth: string = '320px';
 
   /**
    * containerAutosize?: boolean
@@ -53,10 +52,10 @@ export class TdLayoutComponent implements ILayoutTogglable {
    * Defaults to "false".
    *
    * See documentation for more info and potential performance risks.
-   * 
+   *
    * https://github.com/angular/material2/blob/master/src/lib/sidenav/sidenav.md#resizing-an-open-sidenav
    */
-  @Input('containerAutosize') containerAutosize: boolean = false;
+  @Input() containerAutosize: boolean = false;
 
   /**
    * Checks if `ESC` should close the sidenav
@@ -86,5 +85,4 @@ export class TdLayoutComponent implements ILayoutTogglable {
   public close(): Promise<MatDrawerToggleResult> {
     return this.sidenav.close();
   }
-
 }

@@ -12,28 +12,33 @@ export const _TdStepHeaderMixinBase = mixinDisableRipple(mixinDisabled(TdStepHea
 @Component({
   selector: 'td-step-header',
   inputs: ['disabled', 'disableRipple'],
-  styleUrls: ['./step-header.component.scss' ],
+  styleUrls: ['./step-header.component.scss'],
   templateUrl: './step-header.component.html',
 })
 export class TdStepHeaderComponent extends _TdStepHeaderMixinBase implements ICanDisable, ICanDisableRipple {
-
   /**
    * Number assigned to [TdStepHeaderComponent].
    */
-  @Input('number') number: number;
+  @Input() number: number;
 
   /**
    * active?: boolean
    * Sets for active/inactive states on header.
    */
-  @Input('active') active: boolean;
+  @Input() active: boolean;
 
   /**
    * state?: StepState or ['none' | 'required' | 'complete']
    * Sets styles for state of header.
    * Defaults to [StepState.None | 'none'].
    */
-  @Input('state') state: StepState = StepState.None;
+  @Input() state: StepState = StepState.None;
+
+  /**
+   * tabIndex?: number
+   * tabIndex of the step header for a11y
+   */
+  @Input() tabIndex: number;
 
   /**
    * Returns 'true' if [state] equals to [StepState.Complete | 'complete'], else 'false'.

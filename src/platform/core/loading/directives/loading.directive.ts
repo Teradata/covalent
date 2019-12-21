@@ -20,7 +20,6 @@ let TD_LOADING_NEXT_ID: number = 0;
   selector: '[tdLoading]',
 })
 export class TdLoadingDirective implements OnInit, OnDestroy {
-
   private _context: TdLoadingContext = new TdLoadingContext();
   private _type: LoadingType;
   private _mode: LoadingMode;
@@ -34,10 +33,8 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoading')
   set name(name: string) {
-    if (!this._name) {
-      if (name) {
-        this._name = name;
-      }
+    if (!this._name && name) {
+      this._name = name;
     }
   }
 
@@ -67,13 +64,10 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoadingType')
   set type(type: LoadingType) {
-    switch (type) {
-      case LoadingType.Linear:
-        this._type = LoadingType.Linear;
-        break;
-      default:
-        this._type = LoadingType.Circular;
-        break;
+    if (type === LoadingType.Linear) {
+      this._type = LoadingType.Linear;
+    } else {
+      this._type = LoadingType.Circular;
     }
   }
 
@@ -84,13 +78,10 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoadingMode')
   set mode(mode: LoadingMode) {
-    switch (mode) {
-      case LoadingMode.Determinate:
-        this._mode = LoadingMode.Determinate;
-        break;
-      default:
-        this._mode = LoadingMode.Indeterminate;
-        break;
+    if (mode === LoadingMode.Determinate) {
+      this._mode = LoadingMode.Determinate;
+    } else {
+      this._mode = LoadingMode.Indeterminate;
     }
   }
 
@@ -100,14 +91,11 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Defaults to [LoadingMode.Replace | 'replace'].
    */
   @Input('tdLoadingStrategy')
-  set strategy(stategy: LoadingStrategy) {
-    switch (stategy) {
-      case LoadingStrategy.Overlay:
-        this._strategy = LoadingStrategy.Overlay;
-        break;
-      default:
-        this._strategy = LoadingStrategy.Replace;
-        break;
+  set strategy(strategy: LoadingStrategy) {
+    if (strategy === LoadingStrategy.Overlay) {
+      this._strategy = LoadingStrategy.Overlay;
+    } else {
+      this._strategy = LoadingStrategy.Replace;
     }
   }
 
@@ -117,9 +105,11 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoadingColor') color: 'primary' | 'accent' | 'warn' = 'primary';
 
-  constructor(private _viewContainerRef: ViewContainerRef,
-              private _templateRef: TemplateRef<TdLoadingContext>,
-              private _loadingService: TdLoadingService) {}
+  constructor(
+    private _viewContainerRef: ViewContainerRef,
+    private _templateRef: TemplateRef<TdLoadingContext>,
+    private _loadingService: TdLoadingService,
+  ) {}
 
   /**
    * Registers component in the DOM, so it will be available when calling resolve/register.
@@ -147,13 +137,18 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     // Check if `TdLoadingComponent` has been created before trying to add one again.
     // There is a weird edge case when using `[routerLinkActive]` that calls the `ngOnInit` twice in a row
     if (!this._loadingRef) {
-      this._loadingRef = this._loadingService.createComponent({
-        name: this._name,
-        type: this._type,
-        mode: this._mode,
-        color: this.color,
-        strategy: this._strategy,
-      }, this._viewContainerRef, this._templateRef, this._context);
+      this._loadingRef = this._loadingService.createComponent(
+        {
+          name: this._name,
+          type: this._type,
+          mode: this._mode,
+          color: this.color,
+          strategy: this._strategy,
+        },
+        this._viewContainerRef,
+        this._templateRef,
+        this._context,
+      );
     }
   }
 }

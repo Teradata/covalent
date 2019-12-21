@@ -1,33 +1,42 @@
 import { NgModule, ModuleWithProviders, Injector, InjectionToken, Provider } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule, HttpHandler } from '@angular/common/http';
 
-import { HttpInterceptorService, IHttpInterceptorConfig } from './interceptors/http-interceptor.service';
-import { URLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
+import { InternalHttpService } from './actions/http.mixin';
 
-export const HTTP_CONFIG: InjectionToken<HttpConfig> = new InjectionToken<HttpConfig>('HTTP_CONFIG');
+import { TdHttpService, TdInterceptorBehaviorService, ITdHttpInterceptorConfig } from './interceptors/http.service';
+import { TdURLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
 
-export type HttpConfig = {interceptors: IHttpInterceptorConfig[]};
+export const HTTP_CONFIG: InjectionToken<IHttpConfig> = new InjectionToken<IHttpConfig>('HTTP_CONFIG');
 
-export function httpFactory(http: Http, injector: Injector, config: HttpConfig): HttpInterceptorService {
-  return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), config.interceptors);
+export interface IHttpConfig {
+  interceptors: ITdHttpInterceptorConfig[];
+}
+
+export function httpFactory(handler: HttpHandler, injector: Injector, config: IHttpConfig): TdHttpService {
+  return new TdHttpService(
+    handler,
+    new TdInterceptorBehaviorService(injector, new TdURLRegExpInterceptorMatcher(), config.interceptors),
+  );
 }
 
 export const HTTP_INTERCEPTOR_PROVIDER: Provider = {
-  provide: HttpInterceptorService,
+  provide: TdHttpService,
   useFactory: httpFactory,
-  deps: [Http, Injector, HTTP_CONFIG],
+  deps: [HttpHandler, Injector, HTTP_CONFIG],
 };
 
 @NgModule({
-  imports: [
-    HttpModule,
-  ],
+  imports: [HttpClientModule],
+  providers: [InternalHttpService],
 })
 export class CovalentHttpModule {
-  static forRoot(config: HttpConfig = {interceptors: []}): ModuleWithProviders {
+  constructor(private _internalHttpService: InternalHttpService) {}
+
+  static forRoot(config: IHttpConfig = { interceptors: [] }): ModuleWithProviders {
     return {
       ngModule: CovalentHttpModule,
-      providers: [{
+      providers: [
+        {
           provide: HTTP_CONFIG,
           useValue: config,
         },

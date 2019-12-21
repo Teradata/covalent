@@ -11,8 +11,7 @@
     "material",
     "markdown"
   ],
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/teradata/covalent.git"
@@ -32,14 +31,14 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "highlight.js": "9.11.0",
-    "showdown": "1.6.4"
+    "highlight.js": "0.0.0-HIGHLIGHT",
+    "showdown": "0.0.0-SHOWDOWN"
   },
   "peerDependencies": {
-    "@angular/common": "^0.0.0-NG",
-    "@angular/core": "^0.0.0-NG",
-    "@angular/cdk": "^0.0.0-MATERIAL",
-    "@angular/material": "^0.0.0-MATERIAL",
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "@angular/cdk": "0.0.0-MATERIAL",
+    "@angular/material": "0.0.0-MATERIAL",
     "@covalent/core": "^0.0.0-COVALENT",
     "@covalent/highlight": "^0.0.0-COVALENT",
     "@covalent/markdown": "^0.0.0-COVALENT"

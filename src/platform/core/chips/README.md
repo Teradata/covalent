@@ -23,17 +23,20 @@ Leverage the templates to create your own chip or contact chip.
 + placeholder?: string
   + Placeholder for the autocomplete input.
 + required?: boolean
-  + Mandates at least one chip to be available in the component. Appends * to the placeholder text. 
+  + Mandates at least one chip to be available in the component. Appends * to the placeholder text.
   + It does not prevent the deletion of last chip but instead sets the input field to warn state
   + Defaults to false
 + disabled?: boolean
   + Sets disabled state and disabled addition/removal of chips.
 + chipAddition?: boolean
-  + Enables the ability to add chips. When setting disabled as true, this will be overriden. 
+  + Enables the ability to add chips. When setting disabled as true, this will be overriden.
 + chipRemoval?: boolean
-  + Enables the ability to remove chips. When setting disabled as true, this will be overriden. 
+  + Enables the ability to remove chips. When setting disabled as true, this will be overriden.
 + debounce?: number
   + Debounce timeout between keypresses. Defaults to 200.
++ compareWith? function
+  + Function used to check whether a chip value already exists.
+  + Defaults to strict equality comparison ===
 
 #### Events
 
@@ -74,9 +77,10 @@ Example for HTML usage:
           [items]="items"
           [inputPosition]="'before'"
           [(ngModel)]="model"
-          [disabled]="disabled" 
+          [disabled]="disabled"
           [chipAddition]="chipAddition"
           [chipRemoval]="chipRemoval"
+          [compareWith]="compareWith"
           (add)="addEvent($event)"
           (remove)="removeEvent($event)"
           (chipBlur)="handleChipBlur($event)"
@@ -91,5 +95,5 @@ Example for HTML usage:
     {{option}}
   </ng-template>
   // anything below it
-</td-chips>  
+</td-chips>
 ```

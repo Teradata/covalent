@@ -3,17 +3,26 @@
   TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
 -->
 <div layout="row" layout-align="end center" flex>
-    <span flex></span>
-    <nav hide-xs hide-sm class="text-upper text-sm" layout="row">
-      <a class="push-right text-nodecoration" [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/components']" [routerLinkActive]="['active']">Components</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/layouts']" [routerLinkActive]="['active']">Layouts</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/style-guide']" [routerLinkActive]="['active']">Style <span hide-md>Guide</span></a>
-      <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']"><span hide-md>Design</span> Patterns</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
-    </nav>
+  <nav hide-xs hide-sm class="text-upper text-sm docs-nav push-left-lg push-right-xxl" layout="row">
+    <a class="push-right-md text-nodecoration " [routerLink]="['/docs']" [routerLinkActive]="['active']">
+      Docs
+    </a>
+    <a class="push-right-md text-nodecoration " [routerLink]="['/components']" [routerLinkActive]="['active']">
+      Components
+    </a>
+    <a class="push-right-md text-nodecoration " [routerLink]="['/echarts']" [routerLinkActive]="['active']">
+      ECharts
+    </a>
+    <a class="push-right-md text-nodecoration " [routerLink]="['/utilities']" [routerLinkActive]="['active']">
+      Utilities
+    </a>
+  </nav>
+  <div layout="row" layout-align="end center">
+    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
     <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
-      <td-notification-count color="accent" [notifications]="updates.length + 3">
+      <td-notification-count color="accent" [notifications]="updates.length + 1">
         <mat-icon>notifications</mat-icon>
       </td-notification-count>
     </button>
@@ -23,31 +32,31 @@
         <mat-nav-list dense>
           <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
             <a mat-list-item [routerLink]="[item.route]">
-              <mat-icon matListAvatar>{{item.icon}}</mat-icon>
-              <h4 matLine><span class="text-wrap">{{item.description}}</span></h4>
-              <p matLine>{{item.title}}</p>
+              <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
+              <h4 matLine>
+                <span class="text-wrap">{{ item.description }}</span>
+              </h4>
+              <p matLine>{{ item.title }}</p>
             </a>
             <mat-divider></mat-divider>
           </ng-template>
-          <a mat-list-item href="https://github.com/Teradata/covalent/tree/develop/src/platform/experimental" target="_blank">
-            <mat-icon matListAvatar>view_list</mat-icon>
-            <h4 matLine><span class="text-wrap">Navigational Stepper</span></h4>
-            <p matLine>*experimental*</p>
-          </a>
-          <mat-divider></mat-divider>
-          <a mat-list-item href="https://github.com/Teradata/covalent/tree/develop/src/platform/experimental" target="_blank">
-            <mat-icon matListAvatar>http</mat-icon>
-            <h4 matLine><span class="text-wrap">Http Decorators</span></h4>
-            <p matLine>*experimental*</p>
-          </a>
-          <mat-divider></mat-divider>
-          <a mat-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L66-L77" target="_blank">
+          <a
+            mat-list-item
+            href="https://github.com/Teradata/covalent/blob/develop/package.json#L74-L101"
+            target="_blank"
+          >
             <mat-icon matListAvatar>change_history</mat-icon>
             <h4 matLine><span class="text-wrap">Dependencies</span></h4>
             <p matLine>See our package.json for more information</p>
           </a>
         </mat-nav-list>
-        <a mat-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md" target="_blank">
+        <a
+          mat-button
+          color="accent"
+          td-menu-footer
+          href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md"
+          target="_blank"
+        >
           View Full Changelog
         </a>
       </td-menu>
@@ -56,17 +65,22 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #settingsMenu="matMenu">
-      <button mat-menu-item (click)="dir = (dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(dir)" title="Toggle between RTL and LTR">
+      <button
+        mat-menu-item
+        (click)="dir = dir == 'rtl' ? 'ltr' : 'rtl'; changeDir(dir)"
+        title="Toggle between RTL and LTR"
+      >
         <mat-icon>swap_horiz</mat-icon>
-        <span>{{dir.toUpperCase()}}</span>
+        <span>{{ dir.toUpperCase() }}</span>
       </button>
-      <button mat-menu-item *ngIf="activeTheme === 'theme-dark'" (click)="theme('default-theme')">
+      <!-- <button mat-menu-item *ngIf="activeTheme === 'theme-dark'" (click)="theme('default-theme')">
         <mat-icon>brightness_high</mat-icon>
         <span>Light Mode</span>
       </button>
       <button mat-menu-item *ngIf="activeTheme != 'theme-dark'" (click)="theme('theme-dark')">
         <mat-icon>brightness_low</mat-icon>
         <span>Dark Mode</span>
-      </button>
+      </button> -->
     </mat-menu>
   </div>
+</div>

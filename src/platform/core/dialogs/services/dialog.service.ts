@@ -1,10 +1,13 @@
-import { Injectable, ViewContainerRef, Provider, SkipSelf, Optional } from '@angular/core';
+import { Injectable, Inject, Renderer2, RendererFactory2 } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { ComponentType } from '@angular/cdk/portal';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
+import { DragDrop, DragRef } from '@angular/cdk/drag-drop';
+import { DOCUMENT } from '@angular/common';
+import { Subject } from 'rxjs';
 
 export interface IDialogConfig extends MatDialogConfig {
   title?: string;
@@ -24,10 +27,32 @@ export interface IPromptConfig extends IConfirmConfig {
   value?: string;
 }
 
+export interface IDraggableConfig<T> {
+  component: ComponentType<T>;
+  config?: MatDialogConfig;
+  // CSS selectors of element(s) inside the component meant to be drag handle(s)
+  dragHandleSelectors?: string[];
+  // Class that will be added to the component signifying drag-ability
+  draggableClass?: string;
+}
+
+export interface IDraggableRefs<T> {
+  matDialogRef: MatDialogRef<T>;
+  dragRefSubject: Subject<DragRef>;
+}
+
 @Injectable()
 export class TdDialogService {
+  private _renderer2: Renderer2;
 
-  constructor(private _dialogService: MatDialog) {}
+  constructor(
+    @Inject(DOCUMENT) private _document: any,
+    private _dialogService: MatDialog,
+    private _dragDrop: DragDrop,
+    private rendererFactory: RendererFactory2,
+  ) {
+    this._renderer2 = rendererFactory.createRenderer(undefined, undefined);
+  }
 
   /**
    * params:
@@ -61,10 +86,12 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdAlertDialogComponent> object.
    */
   public openAlert(config: IAlertConfig): MatDialogRef<TdAlertDialogComponent> {
-    let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdAlertDialogComponent> =
-      this._dialogService.open(TdAlertDialogComponent, dialogConfig);
-    let alertDialogComponent: TdAlertDialogComponent = dialogRef.componentInstance;
+    const dialogConfig: MatDialogConfig = this._createConfig(config);
+    const dialogRef: MatDialogRef<TdAlertDialogComponent> = this._dialogService.open(
+      TdAlertDialogComponent,
+      dialogConfig,
+    );
+    const alertDialogComponent: TdAlertDialogComponent = dialogRef.componentInstance;
     alertDialogComponent.title = config.title;
     alertDialogComponent.message = config.message;
     if (config.closeButton) {
@@ -87,10 +114,12 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdConfirmDialogComponent> object.
    */
   public openConfirm(config: IConfirmConfig): MatDialogRef<TdConfirmDialogComponent> {
-    let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdConfirmDialogComponent> =
-      this._dialogService.open(TdConfirmDialogComponent, dialogConfig);
-    let confirmDialogComponent: TdConfirmDialogComponent = dialogRef.componentInstance;
+    const dialogConfig: MatDialogConfig = this._createConfig(config);
+    const dialogRef: MatDialogRef<TdConfirmDialogComponent> = this._dialogService.open(
+      TdConfirmDialogComponent,
+      dialogConfig,
+    );
+    const confirmDialogComponent: TdConfirmDialogComponent = dialogRef.componentInstance;
     confirmDialogComponent.title = config.title;
     confirmDialogComponent.message = config.message;
     if (config.acceptButton) {
@@ -117,10 +146,12 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdPromptDialogComponent> object.
    */
   public openPrompt(config: IPromptConfig): MatDialogRef<TdPromptDialogComponent> {
-    let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdPromptDialogComponent> =
-      this._dialogService.open(TdPromptDialogComponent, dialogConfig);
-    let promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
+    const dialogConfig: MatDialogConfig = this._createConfig(config);
+    const dialogRef: MatDialogRef<TdPromptDialogComponent> = this._dialogService.open(
+      TdPromptDialogComponent,
+      dialogConfig,
+    );
+    const promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
     promptDialogComponent.title = config.title;
     promptDialogComponent.message = config.message;
     promptDialogComponent.value = config.value;
@@ -133,23 +164,58 @@ export class TdDialogService {
     return dialogRef;
   }
 
+  /**
+   * Opens a draggable dialog containing the given component.
+   */
+  public openDraggable<T>({
+    component,
+    config,
+    dragHandleSelectors,
+    draggableClass,
+  }: IDraggableConfig<T>): IDraggableRefs<T> {
+    const matDialogRef: MatDialogRef<T, any> = this._dialogService.open(component, config);
+
+    const dragRefSubject: Subject<DragRef> = new Subject<DragRef>();
+
+    const CDK_OVERLAY_PANE_SELECTOR: string = '.cdk-overlay-pane';
+    const CDK_OVERLAY_CONTAINER_SELECTOR: string = '.cdk-overlay-container';
+
+    matDialogRef.afterOpened().subscribe(() => {
+      const dialogElement: HTMLElement = <HTMLElement>this._document.getElementById(matDialogRef.id);
+      const draggableElement: DragRef = this._dragDrop.createDrag(dialogElement);
+
+      if (draggableClass) {
+        const childComponent: Element = dialogElement.firstElementChild;
+        this._renderer2.addClass(childComponent, draggableClass);
+      }
+      if (dragHandleSelectors && dragHandleSelectors.length) {
+        const dragHandles: Element[] = dragHandleSelectors.reduce(
+          (acc: Element[], curr: string) => [...acc, ...Array.from(dialogElement.querySelectorAll(curr))],
+          [],
+        );
+        if (dragHandles.length > 0) {
+          draggableElement.withHandles(<HTMLElement[]>dragHandles);
+        }
+      }
+      const rootElement: Element = dialogElement.closest(CDK_OVERLAY_PANE_SELECTOR);
+      if (rootElement) {
+        draggableElement.withRootElement(<HTMLElement>rootElement);
+      }
+
+      const boundaryElement: Element = dialogElement.closest(CDK_OVERLAY_CONTAINER_SELECTOR);
+      if (boundaryElement) {
+        draggableElement.withBoundaryElement(<HTMLElement>boundaryElement);
+      }
+      dragRefSubject.next(draggableElement);
+    });
+
+    return { matDialogRef, dragRefSubject };
+  }
+
   private _createConfig(config: IDialogConfig): MatDialogConfig {
-    let dialogConfig: MatDialogConfig = new MatDialogConfig();
+    const dialogConfig: MatDialogConfig = new MatDialogConfig();
     dialogConfig.width = '400px';
     Object.assign(dialogConfig, config);
     return dialogConfig;
   }
-
 }
-
-export function DIALOG_PROVIDER_FACTORY(
-    parent: TdDialogService, dialog: MatDialog): TdDialogService {
-  return parent || new TdDialogService(dialog);
-}
-
-export const DIALOG_PROVIDER: Provider = {
-  // If there is already service available, use that. Otherwise, provide a new one.
-  provide: TdDialogService,
-  deps: [[new Optional(), new SkipSelf(), TdDialogService], MatDialog],
-  useFactory: DIALOG_PROVIDER_FACTORY,
-};

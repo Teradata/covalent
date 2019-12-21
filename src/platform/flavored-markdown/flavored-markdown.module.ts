@@ -10,12 +10,15 @@ import { CovalentMarkdownModule, TdMarkdownComponent } from '@covalent/markdown'
 
 import { TdFlavoredListComponent } from './cfm-list/cfm-list.component';
 import { TdFlavoredMarkdownComponent, TdFlavoredMarkdownContainerDirective } from './flavored-markdown.component';
+import { TdFlavoredMarkdownLoaderComponent } from './flavored-markdown-loader/flavored-markdown-loader.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [
     CommonModule,
     MatCheckboxModule,
     MatListModule,
+    MatProgressBarModule,
     CovalentDataTableModule,
     CovalentHighlightModule,
     CovalentMarkdownModule,
@@ -24,10 +27,9 @@ import { TdFlavoredMarkdownComponent, TdFlavoredMarkdownContainerDirective } fro
     TdFlavoredListComponent,
     TdFlavoredMarkdownComponent,
     TdFlavoredMarkdownContainerDirective,
+    TdFlavoredMarkdownLoaderComponent,
   ],
-  exports: [
-    TdFlavoredMarkdownComponent,
-  ],
+  exports: [TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent],
   entryComponents: [
     TdDataTableComponent,
     TdMarkdownComponent,
@@ -36,5 +38,4 @@ import { TdFlavoredMarkdownComponent, TdFlavoredMarkdownContainerDirective } fro
     TdFlavoredListComponent,
   ],
 })
-export class CovalentFlavoredMarkdownModule {
-}
+export class CovalentFlavoredMarkdownModule {}

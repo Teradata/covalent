@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,25 +9,18 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: SearchInput', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        FormsModule,
-        CovalentSearchModule,
-      ],
-      declarations: [
-        TestNgModelSupportComponent,
-      ],
+      imports: [NoopAnimationsModule, FormsModule, CovalentSearchModule],
+      declarations: [TestNgModelSupportComponent],
     });
     TestBed.compileComponents();
   }));
 
   it('should leverage ngModel to set a value', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);
-    let component: TestNgModelSupportComponent = fixture.debugElement.componentInstance;
-    let inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);
+    const component: TestNgModelSupportComponent = fixture.debugElement.componentInstance;
+    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
     expect(inputElement.nativeElement).toBeTruthy();
 
@@ -54,14 +42,13 @@ describe('Component: SearchInput', () => {
         });
       });
     });
-    
   });
 });
 
 @Component({
   template: `
-    <td-search-input [(ngModel)]="value">
-    </td-search-input>`,
+    <td-search-input [(ngModel)]="value"></td-search-input>
+  `,
 })
 class TestNgModelSupportComponent {
   value: string;

@@ -2,9 +2,9 @@ import { TdTruncatePipe } from './truncate.pipe';
 
 describe('TdTruncatePipe', () => {
   let pipe: TdTruncatePipe;
-  let start: number = Date.now();
-  let spaces: string = 'asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf as';
-  let nospaces: string = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+  const start: number = Date.now();
+  const spaces: string = 'asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf as';
+  const nospaces: string = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
 
   beforeEach(() => {
     pipe = new TdTruncatePipe();
