@@ -44,14 +44,14 @@
     &::after {
       content: '';
       display: block;
-      width: calc(100% - 36px);
+      width: calc(100% - 16px);
       height: 29px;
       position: absolute;
-      left: 0;
       top: 4px;
       z-index: 0;
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
+      border-radius: 20px;
+      right: -12px;
+      left: -12px;
       opacity: 0;
     }
     &:hover {
