@@ -6,9 +6,10 @@ import { LoadingDemoComponent } from './loading-demo.component';
 import { LoadingDemoRoutingModule } from './loading-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { MatButtonModule } from '@angular/material/button';
+import { LoadingDemoFullscreenComponent } from './loading-demo-fullscreen/loading-demo-fullscreen.component';
 
 @NgModule({
-  declarations: [LoadingDemoComponent, LoadingDemoBasicComponent],
+  declarations: [LoadingDemoComponent, LoadingDemoBasicComponent, LoadingDemoFullscreenComponent],
   imports: [
     DemoModule,
     LoadingDemoRoutingModule,
