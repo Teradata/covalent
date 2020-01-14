@@ -41,19 +41,41 @@
             </mat-expansion-panel-header>
 
             <div class="doc-nav-section">
-              <mat-nav-list td-sidenav-content disableRipple="true">
-                <a
-                  *ngFor="let view of section.views"
-                  mat-list-item
-                  [routerLink]="view.route"
-                  [routerLinkActive]="['active']"
-                  [routerLinkActiveOptions]="{ exact: view.name === 'Overview' }"
-                  class="tc-grey-700 doc-nav-link"
-                  [tdLayoutClose]
-                >
-                  {{ view.name }}
-                </a>
-              </mat-nav-list>
+              <ng-container *ngIf="!section.hasSubGroup; else subgroup">
+                <mat-nav-list td-sidenav-content disableRipple="true">
+                  <a
+                    *ngFor="let view of section.views"
+                    mat-list-item
+                    [routerLink]="view.route"
+                    [routerLinkActive]="['active']"
+                    [routerLinkActiveOptions]="{ exact: view.name === 'Overview' }"
+                    class="tc-grey-700 doc-nav-link"
+                    [tdLayoutClose]
+                  >
+                    {{ view.name }}
+                  </a>
+                </mat-nav-list>
+              </ng-container>
+              <ng-template #subgroup>
+                <ng-container *ngFor="let section of section.routeGroups">
+                  <div *ngIf="section.name" class="doc-nav-section-label text-upper tc-grey-500 mat-caption">
+                    {{ section.name }}
+                  </div>
+                  <mat-nav-list td-sidenav-content disableRipple="true" class="pad-top-xs">
+                    <a
+                      *ngFor="let item of section.views"
+                      mat-list-item
+                      [routerLink]="item.route"
+                      [routerLinkActive]="['active']"
+                      [routerLinkActiveOptions]="{ exact: item.name === 'Overview' }"
+                      class="tc-grey-700 doc-nav-link"
+                      [tdLayoutClose]
+                    >
+                      {{ item.name }}
+                    </a>
+                  </mat-nav-list>
+                </ng-container>
+              </ng-template>
             </div>
           </mat-expansion-panel>
         </ng-template>

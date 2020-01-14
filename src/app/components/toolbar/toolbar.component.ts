@@ -30,19 +30,19 @@ export class ToolbarComponent {
       title: 'Functions',
     },
     {
-      route: '/echarts/pie',
+      route: '/visualizations/echarts/pie',
       icon: 'pie_chart',
       description: 'Added pie type support',
       title: 'Pie Echarts',
     },
     {
-      route: '/echarts/map',
+      route: '/visualizations/echarts/map',
       icon: 'map',
       description: 'Added map type support',
       title: 'Map Echarts',
     },
     {
-      route: '/echarts/wordcloud',
+      route: '/visualizations/echarts/wordcloud',
       icon: 'cloud_queue',
       description: 'Added wordcloud type support',
       title: 'WordCloud Echarts',

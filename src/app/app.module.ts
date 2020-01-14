@@ -40,7 +40,7 @@ import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { SidenavContentModule } from './components/shared/sidenav-content/sidenav-content.module';
 
-import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService } from './services';
+import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService, PowerBIService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 import { ContentContainerModule } from './components/content-container/content-container.module';
@@ -100,6 +100,7 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
       deps: [TranslateService],
     },
     SelectivePreloadingStrategyService,
+    PowerBIService,
   ], // additional providers needed for this module
   entryComponents: [],
   bootstrap: [DocsAppComponent],

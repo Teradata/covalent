@@ -5,7 +5,7 @@ import { TdMediaService } from '@covalent/core/media';
 import { slideInUpAnimation } from '../../../app.animations';
 import { ActivatedRoute } from '@angular/router';
 import { routeGroups } from 'app/utilities/route-trees';
-import { ICombinedRouteGroup } from 'app/utilities/route-group';
+import { ICombinedRouteGroup, IRouteGroup } from 'app/utilities/route-group';
 
 const ANGULAR_DOCS_URL: string = 'https://material.angular.io/';
 @Component({
@@ -26,8 +26,24 @@ export class ComponentOverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: any) => {
-      this.category = routeGroups.find((group: ICombinedRouteGroup) => group.name.toLowerCase() === data.category);
-      this.categoryGroups = this.category.routeGroups;
+      this._initializeCategoryByName(data.category);
     });
+  }
+
+  private _initializeCategoryByName(category: string): void {
+    this.category = routeGroups.find((group: ICombinedRouteGroup) => group.name.toLowerCase() === category);
+    if (this.category) {
+      this.categoryGroups = this.category.routeGroups;
+    } else {
+      routeGroups.forEach((group: ICombinedRouteGroup) => {
+        const currentCategory: IRouteGroup = group.routeGroups.find(
+          (subGroup: IRouteGroup) => subGroup.name.toLowerCase() === category,
+        );
+        if (currentCategory) {
+          this.category = currentCategory;
+          this.categoryGroups = this.category.routeGroups;
+        }
+      });
+    }
   }
 }

@@ -86,8 +86,10 @@
     "hammerjs": "^2.0.8",
     "highlight.js": "9.13.1",
     "monaco-editor": "^0.17.0",
+    "powerbi-client": "^2.8.0",
     "rxjs": "6.5.3",
     "showdown": "^1.9.1",
+    "tableau-api": "^2.2.3",
     "tslib": "^1.10.0",
     "web-animations-js": "2.3.2",
     "zone.js": "^0.10.2"

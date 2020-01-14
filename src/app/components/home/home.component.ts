@@ -20,10 +20,10 @@ export class HomeComponent implements AfterViewInit {
       title: 'Components',
     },
     {
-      description: 'The extensive power of ECharts brought to Angular',
+      description: 'The extensive power of ECharts and visualization embeddings brought to Angular',
       icon: 'bar_chart',
-      route: 'echarts',
-      title: 'Charts',
+      route: '/visualizations/echarts',
+      title: 'Visualizations',
     },
     {
       description: 'Reduce boilerplate with custom pipes, css, animations and more',

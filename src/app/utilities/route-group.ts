@@ -2,13 +2,16 @@ export interface ICombinedRouteGroup {
   name: string;
   description: string;
   routeGroups: IRouteGroup[];
-  rootRoute: string;
+  rootRoute: string | RegExp;
 }
 
 export interface IRouteGroup {
   name: string;
   nested: boolean;
-  views: IRoute[];
+  description?: any;
+  hasSubGroup?: boolean;
+  views?: IRoute[];
+  routeGroups?: IRouteGroup[];
 }
 
 export interface IRoute {

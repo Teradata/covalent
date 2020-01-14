@@ -43,7 +43,15 @@ const routes: Routes = [
         data: { preload: false },
         loadChildren: () =>
           /* tslint:disable-next-line */
-          import('./content/echarts/echarts.module').then((m) => m.EchartsModule),
+          import('./content/visualizations/echarts/echarts.module').then((m) => m.EchartsModule),
+      },
+      {
+        // preload: true loads the module immediately
+        path: '',
+        data: { preload: false },
+        loadChildren: () =>
+          /* tslint:disable-next-line */
+          import('./content/visualizations/embeddings/embeddings.module').then((m) => m.EmbeddingsModule),
       },
       {
         // preload: true loads the module immediately

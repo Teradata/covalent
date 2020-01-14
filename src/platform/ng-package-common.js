@@ -38,6 +38,10 @@ module.exports = {
       '@covalent/echarts/scatter': 'covalent.echarts.scatter',
       '@covalent/echarts/tooltip': 'covalent.echarts.tooltip',
 
+      '@covalent/tableau-embed': 'covalent.tableau-embed',
+      '@covalent/powerbi-embed': 'covalent.powerbi-embed',
+      '@covalent/microstrategy-embed': 'covalent.microstrategy-embed',
+
       '@covalent/markdown-navigator': 'covalent.markdown-navigator',
 
       '@covalent/experimental': 'covalent.experimental',
