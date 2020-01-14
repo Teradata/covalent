@@ -8,6 +8,10 @@
   margin-bottom: 0;
 }
 
+td-markdown-navigator {
+  height: calc(100% - 56px); // account for toolbar height
+}
+
 ::ng-deep {
   .td-draggable-markdown-navigator-window-wrapper {
     > .mat-dialog-container {
