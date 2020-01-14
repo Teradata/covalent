@@ -1,22 +1,16 @@
 import {
   Component,
-  Directive,
   Input,
   Output,
   ElementRef,
   AfterViewInit,
-  ViewContainerRef,
-  TemplateRef,
   ViewChild,
-  HostBinding,
   EventEmitter,
   ChangeDetectorRef,
   OnChanges,
 } from '@angular/core';
 
 import { tdCollapseAnimation } from '@covalent/core/common';
-
-declare var microstrategy: any;
 
 export const enum DeviceType {
   desktop = 'desktop',
