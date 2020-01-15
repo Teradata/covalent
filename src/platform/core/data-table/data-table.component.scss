@@ -19,9 +19,9 @@ $checkbox-size: 18px;
     top: 0;
   }
   .td-data-table-column-separator {
-    left: 2px;
+    inset-inline-start: 2px;
   }
-  right: 0;
+  inset-inline-end: 0;
   width: 6px;
   cursor: col-resize;
   &.td-resizing {

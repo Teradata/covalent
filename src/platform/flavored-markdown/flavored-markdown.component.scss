@@ -21,7 +21,7 @@ $code-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monos
 
   :not(pre) > code {
     font-family: $code-font;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
   }
 }

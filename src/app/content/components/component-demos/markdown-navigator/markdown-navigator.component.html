@@ -1,14 +1,14 @@
 
 <div layout-xs='column' layout-sm="column" layout-gt-sm='row' layout-align='center center'>
-  <div layout='column' flex="30" flex-xs='100' flex-order='2'flex-order-gt-sm='1' class='pad-bottom-lg'>
-    <mat-radio-group class='push-bottom-sm' layout='column' [(ngModel)]="selected" (change)="selectOption()">
+  <div layout='column' flex="30" flex-xs='100' flex-order='2'flex-order-gt-sm='1' class='pad-block-end-lg'>
+    <mat-radio-group class='push-block-end-sm' layout='column' [(ngModel)]="selected" (change)="selectOption()">
       <mat-radio-button *ngFor="let option of options" [value]="option">
         {{ option.name }}
         <br />
       </mat-radio-button>
     </mat-radio-group>
     <div layout-xs='column' flex-xs='100' layout-align-xs='start start'>
-      <button mat-raised-button class="text-upper push-bottom" color="accent" (click)="applyInput()">Try</button>
+      <button mat-raised-button class="text-upper push-block-end" color="accent" (click)="applyInput()">Try</button>
       <button mat-raised-button class="text-upper" color="none" (click)="openWindow()">
         Open Draggable Window
       </button>

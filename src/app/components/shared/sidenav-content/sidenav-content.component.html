@@ -9,13 +9,13 @@
       <span class="fw-500">{{ routeGroup.name }}</span>
     </mat-expansion-panel-header>
 
-    <div class="doc-nav-section push-bottom-sm">
+    <div class="doc-nav-section push-block-end-sm">
       <ng-container *ngFor="let section of routeGroup.routeGroups">
         <ng-container *ngIf="!section.nested; else nested">
           <div *ngIf="section.name" class="doc-nav-section-label text-upper tc-grey-500 mat-caption">
             {{ section.name }}
           </div>
-          <mat-nav-list td-sidenav-content disableRipple="true" class="pad-top-xs">
+          <mat-nav-list td-sidenav-content disableRipple="true" class="pad-block-start-xs">
             <a
               *ngFor="let item of section.views"
               mat-list-item

@@ -24,7 +24,7 @@
     font-size: 14px;
     height: 38px;
     .mat-list-item-content {
-      padding-left: 36px;
+      padding-inline-start: 36px;
       padding-bottom: 2px;
     }
   }
@@ -47,11 +47,11 @@
       width: calc(100% - 36px);
       height: 29px;
       position: absolute;
-      left: 0;
+      inset-inline-start: 0;
       top: 4px;
       z-index: 0;
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
+      border-start-end-radius: 20px;
+      border-end-end-radius: 20px;
       opacity: 0;
     }
     &:hover {
@@ -80,11 +80,11 @@
     border-radius: 0;
     .mat-expansion-panel-header {
       font-size: 14px;
-      padding-right: 28px;
+      padding-inline-end: 28px;
     }
     .mat-expansion-panel-body {
-      padding-right: 0;
-      padding-left: 0;
+      padding-inline-end: 0;
+      padding-inline-start: 0;
     }
     .mat-expansion-indicator::after {
       border-width: 0 1.5px 1.5px 0;
@@ -100,10 +100,10 @@
         padding-bottom: 0;
       }
       .mat-expansion-panel-header {
-        padding-left: 36px;
+        padding-inline-start: 36px;
       }
       .mat-list-base .mat-list-item .mat-list-item-content {
-        padding-left: 48px;
+        padding-inline-start: 48px;
       }
     }
   }

@@ -66,7 +66,7 @@ Basic Example:
           <mat-icon>
             <span [style.color]="params.color">people</span>
           </mat-icon>
-          <span class="mat-caption pad-left-sm">
+          <span class="mat-caption pad-inline-start-sm">
             {{params.seriesName + ': ' + params.value}}
           </span>
         </div>

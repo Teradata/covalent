@@ -28,9 +28,9 @@
 @mixin td-pulling-utilities() {
   body {
     @include pull();
-    @include pull(-bottom);
-    @include pull(-top);
-    @include pull(-left);
-    @include pull(-right);
+    @include pull(-block-end);
+    @include pull(-block-start);
+    @include pull(-inline-start);
+    @include pull(-inline-end);
   }
 }

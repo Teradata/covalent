@@ -1,5 +1,5 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+  <div hide-xs class="mat-subheading-2 pad-inline-start pad-inline-end push-block-end-none">
     Chart Theme:
   </div>
   <mat-form-field floatLabel="never">
@@ -16,7 +16,7 @@
       <ng-container *ngIf="params">
         <div layout="row" layout-align="start center">
           <mat-icon [style.color]="params.color">person</mat-icon>
-          <span class="mat-caption pad-left-sm">
+          <span class="mat-caption pad-inline-start-sm">
             {{ params.seriesName + ': ' + params.value[1] }}
           </span>
         </div>

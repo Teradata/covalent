@@ -73,7 +73,7 @@ Basic Tooltip Example:
       <ng-container *ngIf="params">
         <div layout="row" layout-align="start center">
           <mat-icon [style.color]="params.color">person</mat-icon>
-          <span class="mat-caption pad-left-sm">
+          <span class="mat-caption pad-inline-start-sm">
             {{params.seriesName + ': ' + params.value}}
           </span>
         </div>
@@ -100,7 +100,7 @@ Basic Series Tooltip Example (only works if tooltip.trigger is 'item'):
         <ng-container *ngIf="params">
           <div layout="row" layout-align="start center">
             <mat-icon [style.color]="params.color">person</mat-icon>
-            <span class="mat-caption pad-left-sm">
+            <span class="mat-caption pad-inline-start-sm">
               {{params.seriesName + ': ' + params.value}}
             </span>
           </div>

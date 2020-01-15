@@ -11,7 +11,7 @@
         <a mat-button flex [routerLink]="[item.route]">
           <img src="assets/images/{{ item.route }}.png" alt="{{ item.title }}" />
           <div class="mat-subtitle">{{ item.title }}</div>
-          <div class="mat-body-1 text-wrap text-left">{{ item.description }}</div>
+          <div class="mat-body-1 text-wrap text-start">{{ item.description }}</div>
         </a>
       </ng-template>
     </div>
@@ -57,13 +57,13 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
           <![CDATA[ <div layout="row"> <div flex>child</div> <div flex>child</div> <div flex>child</div> </div> ]]>
         </td-highlight>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <p>Vertical column container:</p>
@@ -72,7 +72,7 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
@@ -88,14 +88,14 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
           <![CDATA[ <div layout="row" layout-margin> <div flex>child</div> <div flex>child</div> <div flex>child</div>
           </div> ]]>
         </td-highlight>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <p>Layout padding</p>
@@ -104,7 +104,7 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
@@ -121,14 +121,14 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex="30" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
           <![CDATA[ <div layout="row" layout-padding> <div flex="40">child</div> <div flex>child</div> <div
           flex="30">child</div> </div> ]]>
         </td-highlight>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <p>Responsive widths (will change as you resize browser):</p>
@@ -137,14 +137,14 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex-gt-xs="30" flex-md="20" flex-lg="10" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
           <![CDATA[ <div layout="row" layout-padding> <div flex-gt-xs="40" flex-md="50">child</div> <div
           flex>child</div> <div flex-gt-xs="30" flex-md="20" flex-lg="10">child</div> </div> ]]>
         </td-highlight>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <p>Typical responsive layout (just collapse on xs which is mobile)</p>
@@ -152,7 +152,7 @@
           <div flex-gt-xs="60" class="bgc-teal-600 tc-teal-50">child</div>
           <div flex-gt-xs="40" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <div class="pad-top pad-bottom">
+        <div class="pad-block-start pad-block-end">
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">

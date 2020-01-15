@@ -1,5 +1,5 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+  <div hide-xs class="mat-subheading-2 pad-inline-start pad-inline-end push-block-end-none">
     Chart Theme:
   </div>
   <mat-form-field floatLabel="never">
@@ -15,7 +15,7 @@
     <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
       <ng-container *ngIf="params">
         <div layout="row" layout-align="start center">
-          <mat-icon class="push-right-sm">
+          <mat-icon class="push-inline-end-sm">
             <span class="tc-blue-300">info</span>
           </mat-icon>
           <span>{{ params.name }}</span>

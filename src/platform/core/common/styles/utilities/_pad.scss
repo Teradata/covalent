@@ -28,9 +28,9 @@
 @mixin td-padding-utilities() {
   body {
     @include pad();
-    @include pad(-bottom);
-    @include pad(-top);
-    @include pad(-left);
-    @include pad(-right);
+    @include pad(-block-end);
+    @include pad(-block-start);
+    @include pad(-inline-start);
+    @include pad(-inline-end);
   }
 }

@@ -28,9 +28,9 @@
 @mixin td-pushing-utilities() {
   body {
     @include push();
-    @include push(-bottom);
-    @include push(-top);
-    @include push(-left);
-    @include push(-right);
+    @include push(-block-end);
+    @include push(-block-start);
+    @include push(-inline-start);
+    @include push(-inline-end);
   }
 }

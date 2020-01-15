@@ -42,12 +42,12 @@ $color: rgba(0, 0, 0, 0.01);
       }
       mat-card-title {
         padding-top: $padding;
-        padding-left: $padding;
-        padding-right: $padding;
+        padding-inline-start: $padding;
+        padding-inline-end: $padding;
       }
       mat-card-subtitle {
-        padding-left: $padding;
-        padding-right: $padding;
+        padding-inline-start: $padding;
+        padding-inline-end: $padding;
       }
       mat-card-content {
         padding: $padding;

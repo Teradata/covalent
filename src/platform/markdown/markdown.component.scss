@@ -162,7 +162,7 @@
 
     ul,
     ol {
-      padding-left: 0;
+      padding-inline-start: 0;
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -195,31 +195,31 @@
     }
 
     .pl-0 {
-      padding-left: 0 !important;
+      padding-inline-start: 0 !important;
     }
 
     .pl-1 {
-      padding-left: 3px !important;
+      padding-inline-start: 3px !important;
     }
 
     .pl-2 {
-      padding-left: 6px !important;
+      padding-inline-start: 6px !important;
     }
 
     .pl-3 {
-      padding-left: 12px !important;
+      padding-inline-start: 12px !important;
     }
 
     .pl-4 {
-      padding-left: 24px !important;
+      padding-inline-start: 24px !important;
     }
 
     .pl-5 {
-      padding-left: 36px !important;
+      padding-inline-start: 36px !important;
     }
 
     .pl-6 {
-      padding-left: 48px !important;
+      padding-inline-start: 48px !important;
     }
 
     .form-select::-ms-expand {
@@ -346,7 +346,7 @@
 
     ul,
     ol {
-      padding-left: 2em;
+      padding-inline-start: 2em;
     }
 
     ul ul,

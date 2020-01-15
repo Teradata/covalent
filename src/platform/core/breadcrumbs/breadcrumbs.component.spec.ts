@@ -101,7 +101,7 @@ describe('Component: Breadcrumbs', () => {
   selector: 'td-breadcrumbs-test',
   template: `
     <div [style.width]="width">
-      <td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="{{ separatorIcon }}">
+      <td-breadcrumbs #breadcrumbs class="pad-inline-start" separatorIcon="{{ separatorIcon }}">
         <a td-breadcrumb [routerLink]="'/'">Home</a>
         <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
         <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
@@ -118,9 +118,9 @@ class TdBreadcrumbsTestComponent {
 @Component({
   selector: 'td-breadcrumbs-test-toolbar',
   template: `
-    <mat-toolbar class="dense-toolbar push-top" color="primary">
+    <mat-toolbar class="dense-toolbar push-block-start" color="primary">
       <mat-toolbar-row>
-        <td-breadcrumbs #breadcrumbsPadded class="pad-left">
+        <td-breadcrumbs #breadcrumbsPadded class="pad-inline-start">
           <a td-breadcrumb routerLink="/">Home</a>
           <a td-breadcrumb routerLink="/layouts">Layouts</a>
           <a td-breadcrumb routerLink="/layouts2">Layouts2</a>

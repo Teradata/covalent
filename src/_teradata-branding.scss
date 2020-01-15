@@ -577,16 +577,16 @@ body {
   .mat-toolbar {
     .mat-icon-button + .mat-icon-logo,
     .mat-icon-button + span > .mat-icon-logo {
-      margin-left: 10px;
+      margin-inline-start: 10px;
     }
     .mat-icon-logo {
-      margin-right: 16px;
+      margin-inline-end: 16px;
     }
   }
   // Logo in card title alignment
   .mat-card-title {
     .mat-icon-logo {
-      margin-right: 8px;
+      margin-inline-end: 8px;
     }
   }
 

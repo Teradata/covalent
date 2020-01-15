@@ -1,5 +1,5 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+  <div hide-xs class="mat-subheading-2 pad-inline-start pad-inline-end push-block-end-none">
     Chart Theme:
   </div>
   <mat-form-field floatLabel="never">
@@ -56,12 +56,12 @@
           <div layout="row" layout-align="start center">
             <ng-container *ngIf="params.dataType === 'node'">
               <mat-icon [style.color]="params.color">device_hub</mat-icon>
-              <span class="mat-caption pad-left-sm">
+              <span class="mat-caption pad-inline-start-sm">
                 {{ params.data.name }}
               </span>
             </ng-container>
             <ng-container *ngIf="params.dataType === 'edge'">
-              <span class="mat-caption pad-left-sm">
+              <span class="mat-caption pad-inline-start-sm">
                 {{ params.data.source }}
               </span>
               <mat-icon>arrow_forward</mat-icon>
