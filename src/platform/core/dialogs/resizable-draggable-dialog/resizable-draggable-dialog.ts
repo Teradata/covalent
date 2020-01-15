@@ -1,9 +1,7 @@
 import { Renderer2 } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DragRef } from '@angular/cdk/drag-drop';
-import { fromEvent } from 'rxjs/internal/observable/fromEvent';
-import { Subscription } from 'rxjs';
-import { merge } from 'rxjs';
+import { merge, Subscription, fromEvent } from 'rxjs';
 import { Point } from '@angular/cdk/drag-drop/drag-ref';
 
 enum corners {

@@ -8,14 +8,18 @@
   margin-bottom: 0;
 }
 
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+td-markdown-navigator {
+  height: calc(100% - 56px); // account for toolbar height
 }
 
 .td-markdown-navigator-window-close {
   margin: 0 -8px;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 ::ng-deep {
