@@ -8,6 +8,8 @@ import { TdLoadingService, LoadingMode, LoadingType } from '@covalent/core/loadi
 })
 export class LoadingDemoFullscreenComponent {
   constructor(private _loadingService: TdLoadingService) {
+    // optional, only necessary for a custom config
+    // used in toggleCustomFullscreenDemo()
     this._loadingService.create({
       name: 'customFullscreenDemo',
       mode: LoadingMode.Indeterminate,
