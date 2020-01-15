@@ -12,25 +12,26 @@
     <div layout="row" layout-wrap>
       <ng-container *ngFor="let item of group.views">
         <div flex-xs="100" flex-sm="33" flex-md="33" flex-gt-md="25" *ngIf="item.name !== 'Overview'">
-          <mat-card
-            [routerLink]="item.route"
-            [ngClass]="{ 'no-description': !item?.description }"
-            class="component-card cursor-pointer"
-            layout="column"
-            layout-align="space-between start"
-          >
-            <mat-icon ngClass="tc-{{ item.color || group.color || 'grey-600' }}">
-              {{ item.icon }}
-            </mat-icon>
-            <div>
-              <div class="push-bottom-xs">
-                <span class="mat-subheading-2">{{ item.name }}</span>
+          <a [routerLink]="item.route" class="text-nodecoration push-sm block">
+            <mat-card
+              [ngClass]="{ 'no-description': !item?.description }"
+              class="component-card cursor-pointer push-none"
+              layout="column"
+              layout-align="space-between start"
+            >
+              <mat-icon ngClass="tc-{{ item.color || group.color || 'grey-600' }}">
+                {{ item.icon }}
+              </mat-icon>
+              <div>
+                <div class="push-bottom-xs">
+                  <span class="mat-subheading-2">{{ item.name }}</span>
+                </div>
+                <div *ngIf="item?.description" class="tc-grey-600 mat-caption component-card-body">
+                  {{ item.description | truncate }}
+                </div>
               </div>
-              <div *ngIf="item?.description" class="tc-grey-600 mat-caption component-card-body">
-                {{ item.description | truncate }}
-              </div>
-            </div>
-          </mat-card>
+            </mat-card>
+          </a>
         </div>
       </ng-container>
     </div>
