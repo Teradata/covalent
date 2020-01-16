@@ -24,8 +24,8 @@
     font-size: 14px;
     height: 38px;
     .mat-list-item-content {
-      padding-inline-start: 36px;
-      padding-bottom: 2px;
+      padding-inline: 36px;
+      padding-block-end: 2px;
     }
   }
 
@@ -44,7 +44,7 @@
     &::after {
       content: '';
       display: block;
-      width: calc(100% - 36px);
+      width: calc(100% - 16px);
       height: 29px;
       position: absolute;
       inset-inline-start: 0;
