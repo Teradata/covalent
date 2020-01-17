@@ -50,9 +50,10 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-<td-message #message label="Label" sublabel="Sublabel goes here" icon="warning" color="primary | blue | red" [opened]="true">
-  <button td-message-actions mat-button>View More</button>
-  <button td-message-actions mat-button (click)="message.close()">Close</button>
-  // .. body goes here
-</td-message>  
+<td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
+  <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
+</td-message>
+<button mat-button color="accent" (click)="messageDemo.toggle()">
+  Toggle Visibility
+</button>
 ```
