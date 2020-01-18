@@ -3,7 +3,7 @@
 <p class="mat-body-1">Message in a card with action</p>
 <mat-card>
   <td-message label="Warning!" sublabel="Your probably shouldn't do that!" class="bgc-td-orange-100 tc-td-orange" icon="warning">
-    <button td-message-actions mat-button>VIEW MORE</button>
+    <button td-message-actions mat-button (click)="showAlert()">VIEW MORE</button>
   </td-message>
 </mat-card>
 <p class="mat-body-1">Message in a card content:</p>

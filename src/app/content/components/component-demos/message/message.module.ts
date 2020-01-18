@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+
+import { CovalentMessageModule } from '@covalent/core/message';
+import { CovalentHighlightModule } from '@covalent/highlight';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 import { MessageDemoComponent } from './message.component';
-import { CovalentMessageModule } from '@covalent/core/message';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
+import { CovalentDialogsModule } from '../../../../../platform/core';
 import { DocumentationToolsModule } from 'app/documentation-tools';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: MessageDemoComponent,
@@ -30,6 +31,7 @@ const routes: Routes = setComponentRoutes({
     MatDividerModule,
     ComponentDetailsModule,
     // Covalent
+    CovalentDialogsModule,
     CovalentMessageModule,
     CovalentHighlightModule,
     // Docs
