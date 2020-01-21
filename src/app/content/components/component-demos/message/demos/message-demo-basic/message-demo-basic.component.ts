@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TdDialogService } from '../../../../../../../platform/core';
 
 @Component({
   selector: 'message-demo-basic',
@@ -6,4 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './message-demo-basic.component.html',
   preserveWhitespaces: true,
 })
-export class MessageDemoBasicComponent {}
+export class MessageDemoBasicComponent {
+  constructor(private _dialogService: TdDialogService) {}
+
+  showAlert(): void {
+    this._dialogService.openAlert({
+      title: 'VIEW MORE clicked!',
+      message: 'Same action can be used for navigation or showing messages like this!',
+    });
+  }
+}
