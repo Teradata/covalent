@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set a number of loops before timing out.
-LIMIT=12
+LIMIT=20
 
 # Time to wait before re-checking
 SLEEP=10
