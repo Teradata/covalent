@@ -1,8 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { slideInUpAnimation } from '../../../../app.animations';
-
-import { TdLoadingService } from '../../../../../platform/core';
+import { TdLoadingService } from '../../../../../platform/core/loading';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

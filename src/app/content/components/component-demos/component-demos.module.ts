@@ -28,27 +28,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-import {
-  CovalentCommonModule,
-  CovalentLayoutModule,
-  CovalentMediaModule,
-  CovalentExpansionPanelModule,
-  CovalentFileModule,
-  CovalentStepsModule,
-  CovalentLoadingModule,
-  CovalentDialogsModule,
-  CovalentSearchModule,
-  CovalentPagingModule,
-  CovalentNotificationsModule,
-  CovalentMenuModule,
-  CovalentChipsModule,
-  CovalentDataTableModule,
-  CovalentJsonFormatterModule,
-  CovalentBreadcrumbsModule,
-  CovalentMessageModule,
-  CovalentVirtualScrollModule,
-  CovalentTabSelectModule,
-} from '../../../../platform/core';
 import { CovalentHighlightModule } from '../../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../../platform/dynamic-forms';
@@ -80,6 +59,25 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
 
 import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
+import { CovalentCommonModule } from '../../../../platform/core/common';
+import { CovalentLayoutModule } from '../../../../platform/core/layout';
+import { CovalentMediaModule } from '../../../../platform/core/media';
+import { CovalentExpansionPanelModule } from '../../../../platform/core/expansion-panel';
+import { CovalentStepsModule } from '../../../../platform/core/steps';
+import { CovalentDialogsModule } from '../../../../platform/core/dialogs';
+import { CovalentLoadingModule } from '../../../../platform/core/loading';
+import { CovalentSearchModule } from '../../../../platform/core/search';
+import { CovalentPagingModule } from '../../../../platform/core/paging';
+import { CovalentFileModule } from '../../../../platform/core/file';
+import { CovalentNotificationsModule } from '../../../../platform/core/notifications';
+import { CovalentMenuModule } from '../../../../platform/core/menu';
+import { CovalentChipsModule } from '../../../../platform/core/chips';
+import { CovalentJsonFormatterModule } from '../../../../platform/core/json-formatter';
+import { CovalentDataTableModule } from '../../../../platform/core/data-table';
+import { CovalentMessageModule } from '../../../../platform/core/message';
+import { CovalentVirtualScrollModule } from '../../../../platform/core/virtual-scroll';
+import { CovalentBreadcrumbsModule } from '../../../../platform/core/breadcrumbs';
+import { CovalentTabSelectModule } from '../../../../platform/core/tab-select';
 
 @NgModule({
   declarations: [

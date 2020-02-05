@@ -5,10 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { StepsDemoBasicComponent } from './steps-demo-basic/steps-demo-basic.component';
 import { StepsDemoComponent } from './steps-demo.component';
-import { CovalentStepsModule } from '../../../../../../platform/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { StepsDemosRoutingModule } from './steps-demo-routing.module';
 import { FormsModule } from '@angular/forms';
+import { CovalentStepsModule } from '../../../../../../platform/core/steps';
 
 @NgModule({
   declarations: [StepsDemoBasicComponent, StepsDemoComponent],

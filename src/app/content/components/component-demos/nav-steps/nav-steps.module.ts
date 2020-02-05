@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 import { NavStepsDemoComponent } from './nav-steps.component';
-import { CovalentStepsModule } from '../../../../../platform/core';
+import { CovalentStepsModule } from '../../../../../platform/core/steps';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: NavStepsDemoComponent,

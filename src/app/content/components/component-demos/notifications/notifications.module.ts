@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 import { NotificationsDemoComponent } from './notifications.component';
-import { CovalentNotificationsModule } from '../../../../../platform/core';
+import { CovalentNotificationsModule } from '../../../../../platform/core/notifications';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: NotificationsDemoComponent,

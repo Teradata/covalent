@@ -5,13 +5,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SidenavContentComponent } from './sidenav-content.component';
 
-import {
-  CovalentExpansionPanelModule,
-  CovalentMediaModule,
-  CovalentCommonModule,
-  CovalentLayoutModule,
-} from '../../../../platform/core';
 import { RouterModule } from '@angular/router';
+import { CovalentExpansionPanelModule } from '../../../../platform/core/expansion-panel';
+import { CovalentMediaModule } from '../../../../platform/core/media';
+import { CovalentLayoutModule } from '../../../../platform/core/layout';
+import { CovalentCommonModule } from '../../../../platform/core/common';
 
 @NgModule({
   declarations: [SidenavContentComponent],

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutDemoBasicComponent } from './layout-demo-basic.component';
-import { CovalentLayoutModule } from '../../../../../../../platform/core';
+import { CovalentLayoutModule } from '../../../../../../../platform/core/layout';
 
 @NgModule({
   declarations: [LayoutDemoBasicComponent],

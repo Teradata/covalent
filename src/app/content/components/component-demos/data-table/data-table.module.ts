@@ -7,9 +7,10 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
-import { CovalentDataTableModule, CovalentDialogsModule } from '../../../../../platform/core';
 import { DataTableHeroComponent } from './data-table.component';
 import { MatButtonModule } from '@angular/material/button';
+import { CovalentDataTableModule } from '../../../../../platform/core/data-table';
+import { CovalentDialogsModule } from '../../../../../platform/core/dialogs';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: DataTableHeroComponent,

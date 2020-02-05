@@ -46,7 +46,7 @@
         </td-highlight>
         <p>Typescript:</p>
         <td-highlight lang="typescript">
-          <![CDATA[ import { copyToClipboard } from '@covalent/core' export class FunctionsDemoComponent { copyText:
+          <![CDATA[ import { copyToClipboard } from '@covalent/core/common' export class FunctionsDemoComponent { copyText:
           string = 'Lorem Ipsum'; constructor(private _snackBar: MatSnackBar) {} doCopyToClipboard(): void { // Invoke
           utility function to copy input text to clipboard copyToClipboard(this.copyText); // Show snackbar to indicate
           task complete this._snackBar.open('Text copied!', undefined, { duration: 2000, }); } } ]]>
@@ -101,7 +101,7 @@
         </td-highlight>
         <p>Typescript:</p>
         <td-highlight lang="typescript">
-          <![CDATA[ import { convertCSVToJSON, convertObjectsToCSV } from '@covalent/core' export class
+          <![CDATA[ import { convertCSVToJSON, convertObjectsToCSV } from '@covalent/core/common' export class
           FunctionsDemoComponent { csv: string = 'name,id\r\nuser1,123\r\nuser2,234\r\n'; jsonOutput: string = '';
           objects: object[] = [ { 'name': 'user1', 'id': 123 }, { 'name': 'user2', 'id': 234 } ]; objectsString: string;
           csvOutput: string = ''; constructor(private _snackBar: MatSnackBar) { this.objectsString =
@@ -206,7 +206,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[ import { downloadCSV, downloadJSON, downloadObjectsToCSV, downloadObjectsToJSON, downloadFile } from
-          '@covalent/core' export class FunctionsDemoComponent { csv: string = 'name,id\r\nuser1,123\r\nuser2,234\r\n';
+          '@covalent/core/common' export class FunctionsDemoComponent { csv: string = 'name,id\r\nuser1,123\r\nuser2,234\r\n';
           json: string = '[{"name":"user1","id":"123"},{"name":"user2","id":"234"}]'; objects: object[] = [ { 'name':
           'user1', 'id': 123 }, { 'name': 'user2', 'id': 234 } ]; objectsString: string; fileName: string =
           'sample.txt'; fileContent: string = 'Lorem Ipsum'; mimeType: string = 'text/plain'; constructor(private
@@ -258,7 +258,7 @@
         </td-highlight>
         <p>Typescript</p>
         <td-highlight lang="typescript">
-          <![CDATA[ import { readFile } from '@covalent/core' export class FunctionsDemoComponent { readFileContent:
+          <![CDATA[ import { readFile } from '@covalent/core/common' export class FunctionsDemoComponent { readFileContent:
           string = ''; async doReadFile(event: any): Promise<void> { let file: File = event.srcElement.files[0];
           this.readFileContent = await readFile(file); } } ]]>
         </td-highlight>
