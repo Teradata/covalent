@@ -3,7 +3,7 @@ import { Component, DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentTabSelectModule } from './public-api';
+import { CovalentTabSelectModule } from './';
 
 describe('Component: TabSelect', () => {
   beforeEach(async(() => {

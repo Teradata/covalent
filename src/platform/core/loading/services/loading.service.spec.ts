@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../public-api';
+import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../';
 
 describe('Service: Loading', () => {
   let overlayContainerElement: HTMLElement;

@@ -1,6 +1,6 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
-import { CovalentFileModule, TdFileDropDirective } from '../public-api';
+import { CovalentFileModule, TdFileDropDirective } from '../';
 import { By } from '@angular/platform-browser';
 
 describe('Directive: FileDrop', () => {
