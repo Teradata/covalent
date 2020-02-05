@@ -13,7 +13,7 @@ import {
 } from '@angular/core';
 
 import { Subscription, Subject, fromEvent, merge } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, startWith } from 'rxjs/operators';
 
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
@@ -30,7 +30,9 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit, OnDestroy {
   private _resizeSubscription: Subscription = Subscription.EMPTY;
   private _widthSubject: Subject<number> = new Subject<number>();
+  private _contentChildrenSub: Subscription;
   private _resizing: boolean = false;
+  private _separatorIcon: string = 'chevron_right';
 
   // all the sub components, which are the individual breadcrumbs
   @ContentChildren(TdBreadcrumbComponent, { descendants: true }) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
@@ -40,7 +42,13 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   /**
    * Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
    */
-  @Input() separatorIcon: string = 'chevron_right';
+  @Input() public set separatorIcon(separatorIcon: string) {
+    this._separatorIcon = separatorIcon;
+    this.setCrumbIcons();
+  }
+  public get separatorIcon(): string {
+    return this._separatorIcon;
+  }
 
   constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
 
@@ -67,12 +75,15 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   }
 
   ngAfterContentInit(): void {
-    this.setCrumbIcons();
-    this._changeDetectorRef.markForCheck();
+    this._contentChildrenSub = this._breadcrumbs.changes.pipe(startWith(this._breadcrumbs)).subscribe(() => {
+      this.setCrumbIcons();
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   ngOnDestroy(): void {
     this._resizeSubscription.unsubscribe();
+    this._contentChildrenSub.unsubscribe();
   }
 
   /*
@@ -111,14 +122,14 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
    * Set the crumb icon separators
    */
   private setCrumbIcons(): void {
-    const breadcrumbArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
-    if (breadcrumbArray.length > 0) {
-      // don't show the icon on the last breadcrumb
-      breadcrumbArray[breadcrumbArray.length - 1]._displayIcon = false;
+    if (this._breadcrumbs) {
+      const breadcrumbArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
+      breadcrumbArray.forEach((breadcrumb: TdBreadcrumbComponent, index: number) => {
+        breadcrumb.separatorIcon = this.separatorIcon;
+        // don't show the icon on the last breadcrumb
+        breadcrumb.displayIcon = index < breadcrumbArray.length - 1;
+      });
     }
-    breadcrumbArray.forEach((breadcrumb: TdBreadcrumbComponent) => {
-      breadcrumb.separatorIcon = this.separatorIcon;
-    });
   }
 
   private _calculateVisibility(): void {
