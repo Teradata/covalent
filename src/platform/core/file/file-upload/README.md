@@ -18,7 +18,7 @@ Example for usage:
   </ng-template>
 </td-file-upload>
 ```
- 
+
 ```typescript
 export class Demo {
 
@@ -44,7 +44,7 @@ export class Demo {
   cancelEvent(): void {
     ...
   }
-} 
+}
 ```
 
 ## API Summary
@@ -102,48 +102,26 @@ Service provided with methods that wrap complexity for as easier file upload exp
 
 #### Methods
 
-+ upload: function(IUploadState)
-  + Uses underlying [XMLHttpRequest] to upload a file to a url. 
-  + Will be depricated when Angular fixes [Http] to allow [FormData] as body.
++ send: function(url: string, method: string, body: File | FormData, uploadExtras: IUploadExtras)
+  + Uploads a file to a URL.
 
 ## Usage
 
-Recieves as parameter an object that implements the [IUploadOptions] interface. You have to assign a value either to `[file]` or to `[formData]`. If `[file]` is assigned then `[formData]` will be ignored; when only `[formData]` is assigned then it will be sent as form data.
-
 ```typescript
-interface IUploadOptions { 
-  url: string; 
-  method: 'post' | 'put'; 
-  file?: File;
-  headers?: {[key: string]: string};
-  formData?: FormData; 
-}
-```
+import { TdFileService } from '@covalent/core/file';
 
-Example for usage:
-
-```typescript
-import { TdFileService, IUploadOptions } from '@covalent/core/file';
-...
-  providers: [ TdFileService ]
-})
 export class Demo {
 
   file: File;
-  
-  constructor(private fileUploadService: TdFileService) { 
+
+  constructor(private fileUploadService: TdFileService) {
   };
-  
-  uploadEvent1(file: File) {    
-    let options: IUploadOptions = {
-      url: 'https://url.to/API',
-      method: 'post',
-      file: file
-    };    
-    this.fileService.upload(options).subscribe((response) => {
+
+  uploadEvent1(file: File) {
+    this.fileService.send('https://url.to/API', 'post', file).subscribe((response) => {
       ...
     });
   };
-  
+
 }
 ```

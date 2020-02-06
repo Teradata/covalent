@@ -3,18 +3,6 @@ import { HttpClient, HttpRequest, HttpEvent, HttpEventType, HttpHeaders, HttpPar
 import { Observable, Subject, Subscriber } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-/**
- * @deprecated should be removed in favor of IUploadInit
- * @breaking-change 3.0.0
- */
-export interface IUploadOptions {
-  url: string;
-  method: 'post' | 'put';
-  file?: File;
-  headers?: { [key: string]: string };
-  formData?: FormData;
-}
-
 export interface IUploadExtras {
   headers?: { [name: string]: string | string[] };
   params?: { [param: string]: string | string[] };
@@ -43,7 +31,7 @@ export class TdFileService {
   }
 
   /**
-   * Uploads a file to URL.
+   * Uploads a file to a URL.
    */
   send(
     url: string,
@@ -60,64 +48,6 @@ export class TdFileService {
       params: new HttpParams({ fromObject: params || {} }),
     });
     return this._http.request(req).pipe(tap((event: HttpEvent<any>) => this.handleEvent(event)));
-  }
-
-  /**
-   * params:
-   * - options: IUploadOptions {
-   *     url: string,
-   *     method: 'post' | 'put',
-   *     file?: File,
-   *     headers?: {[key: string]: string},
-   *     formData?: FormData
-   * }
-   *
-   * Uses underlying [XMLHttpRequest] to upload a file to a url.
-   * @deprecated use send instead
-   * @breaking-change 3.0.0
-   */
-  upload(options: IUploadOptions): Observable<any> {
-    return new Observable<any>((subscriber: Subscriber<any>) => {
-      const xhr: XMLHttpRequest = new XMLHttpRequest();
-      let formData: FormData = new FormData();
-
-      if (options.file !== undefined) {
-        formData.append('file', options.file);
-      } else if (options.formData !== undefined) {
-        formData = options.formData;
-      } else {
-        return subscriber.error('For [IUploadOptions] you have to set either the [file] or the [formData] property.');
-      }
-
-      xhr.upload.onprogress = (event: ProgressEvent) => {
-        let progress: number = 0;
-        if (event.lengthComputable) {
-          progress = Math.round((event.loaded / event.total) * 100);
-        }
-        this._progressSubject.next(progress);
-      };
-
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4) {
-          if (xhr.status >= 200 && xhr.status < 300) {
-            subscriber.next(xhr.response);
-            subscriber.complete();
-          } else {
-            subscriber.error(xhr.response);
-          }
-        }
-      };
-
-      xhr.open(options.method, options.url, true);
-      xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-      if (options.headers) {
-        for (const key of Object.keys(options.headers)) {
-          xhr.setRequestHeader(key, options.headers[key]);
-        }
-      }
-
-      xhr.send(formData);
-    });
   }
 
   private handleEvent<T = any>(event: HttpEvent<T>): void {
