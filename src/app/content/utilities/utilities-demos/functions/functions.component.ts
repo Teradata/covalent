@@ -1,8 +1,9 @@
 import { Component, HostBinding } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { slideInUpAnimation } from '../../../../app.animations';
 import {
   copyToClipboard,
+  formatJSON,
   convertObjectsToCSV,
   convertCSVToJSON,
   downloadCSV,
@@ -10,10 +11,8 @@ import {
   downloadObjectsToCSV,
   downloadObjectsToJSON,
   downloadFile,
-  formatJSON,
   readFile,
-} from '../../../../../platform/core';
-import { slideInUpAnimation } from '../../../../app.animations';
+} from '../../../../../platform/core/common';
 
 @Component({
   selector: 'td-functions',

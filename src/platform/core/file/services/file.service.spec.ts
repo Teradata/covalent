@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { TdFileService, IUploadOptions, CovalentFileModule } from '../public-api';
+import { TdFileService, IUploadOptions, CovalentFileModule } from '../';
 
 describe('Service: File', () => {
   let service: TdFileService;

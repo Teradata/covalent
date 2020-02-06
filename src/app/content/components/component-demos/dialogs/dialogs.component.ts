@@ -1,8 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { slideInUpAnimation } from '../../../../app.animations';
-
-import { TdDialogService } from '../../../../../platform/core';
+import { TdDialogService } from '../../../../../platform/core/dialogs';
 
 @Component({
   selector: 'dialogs-demo',

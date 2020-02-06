@@ -1,17 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
+import { InternalDocsService } from '../../../../services';
+import { TdPagingBarComponent, IPageChangeEvent } from '../../../../../platform/core/paging';
 import {
+  ITdDataTableColumn,
   TdDataTableSortingOrder,
   TdDataTableService,
-  TdDataTableComponent,
   ITdDataTableSortChangeEvent,
-  ITdDataTableColumn,
-  TdPagingBarComponent,
-} from '../../../../../platform/core';
-import { IPageChangeEvent } from '../../../../../platform/core';
-import { TdDialogService } from '../../../../../platform/core';
-
-import { InternalDocsService } from '../../../../services';
+} from '../../../../../platform/core/data-table';
+import { TdDialogService } from '../../../../../platform/core/dialogs';
 
 const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
 const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);

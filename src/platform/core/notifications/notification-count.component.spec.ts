@@ -1,7 +1,7 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { CovalentNotificationsModule, TdNotificationCountPositionX, TdNotificationCountPositionY } from './public-api';
+import { CovalentNotificationsModule, TdNotificationCountPositionX, TdNotificationCountPositionY } from './';
 import { By } from '@angular/platform-browser';
 
 describe('Component: NotificationCount', () => {

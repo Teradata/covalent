@@ -26,13 +26,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import {
-  CovalentLayoutModule,
-  CovalentExpansionPanelModule,
-  CovalentNotificationsModule,
-  CovalentMenuModule,
-  CovalentMediaModule,
-} from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
@@ -46,6 +39,11 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 import { ContentContainerModule } from './components/content-container/content-container.module';
 import { HomeComponent } from './components/home/home.component';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
+import { CovalentLayoutModule } from '../platform/core/layout';
+import { CovalentExpansionPanelModule } from '../platform/core/expansion-panel';
+import { CovalentNotificationsModule } from '../platform/core/notifications';
+import { CovalentMenuModule } from '../platform/core/menu';
+import { CovalentMediaModule } from '../platform/core/media';
 
 @NgModule({
   declarations: [DocsAppComponent, HomeComponent], // directives, components, and pipes owned by this NgModule

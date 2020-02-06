@@ -1,8 +1,9 @@
 import { Component, OnInit, NgZone, OnDestroy, HostBinding } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { TdMediaService, tdJelloAnimation } from '../../../../../../platform/core';
 import { slideInUpAnimation } from '../../../../../app.animations';
+import { tdJelloAnimation } from '../../../../../../platform/core/common';
+import { TdMediaService } from '../../../../../../platform/core/media';
 
 @Component({
   selector: 'media-demo',

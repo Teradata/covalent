@@ -17,12 +17,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
-import { CovalentCommonModule } from '../../../platform/core';
 import { UtilityStylesComponent } from './utilities-demos/utility-styles/utility-styles.component';
 import { MediaServiceDemoComponent } from './utilities-demos/media/service/media.component';
 import { MediaDirectiveDemoComponent } from './utilities-demos/media/directive/media.component';
 import { CovalentMediaModule } from '../../../platform/core/media';
 import { DirectivesComponent } from './utilities-demos/directives/directives.component';
+import { CovalentCommonModule } from '../../../platform/core/common';
 
 @NgModule({
   declarations: [
