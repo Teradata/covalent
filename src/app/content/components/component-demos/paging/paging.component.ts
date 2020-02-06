@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { IPageChangeEvent } from '../../../../../platform/core';
+import { IPageChangeEvent } from '../../../../../platform/core/paging';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -20,10 +20,30 @@ import {
 export class TdBreadcrumbComponent implements AfterViewInit {
   private _displayCrumb: boolean = true;
   private _width: number = 0;
+  private _displayIcon: boolean = true;
+  private _separatorIcon: string = 'chevron_right';
+
   // Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'
-  separatorIcon: string = 'chevron_right';
+  public get separatorIcon(): string {
+    return this._separatorIcon;
+  }
+  public set separatorIcon(separatorIcon: string) {
+    this._separatorIcon = separatorIcon;
+    setTimeout(() => {
+      this._changeDetectorRef.markForCheck();
+    });
+  }
+
   // Should show the right chevron or not before the label
-  _displayIcon: boolean = true;
+  public get displayIcon(): boolean {
+    return this._displayIcon;
+  }
+  public set displayIcon(displayIcon: boolean) {
+    this._displayIcon = displayIcon;
+    setTimeout(() => {
+      this._changeDetectorRef.markForCheck();
+    });
+  }
 
   get displayCrumb(): boolean {
     return this._displayCrumb;
@@ -34,7 +54,9 @@ export class TdBreadcrumbComponent implements AfterViewInit {
    */
   set displayCrumb(shouldDisplay: boolean) {
     this._displayCrumb = shouldDisplay;
-    this._changeDetectorRef.markForCheck();
+    setTimeout(() => {
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   /**

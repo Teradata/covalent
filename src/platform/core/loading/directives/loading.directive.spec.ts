@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../public-api';
+import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../';
 import { catchError } from 'rxjs/operators';
 
 describe('Directive: Loading', () => {

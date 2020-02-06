@@ -25,7 +25,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { CovalentLayoutModule, CovalentMediaModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { SidenavContentModule } from '../../components/shared/sidenav-content/sidenav-content.module';
@@ -35,6 +34,8 @@ import { ComponentDetailsModule } from 'app/components/shared/component-details/
 import { docsChildRoutes } from './docs';
 import { docsRouteGroup } from 'app/utilities/route-trees';
 import { docsRoutes } from './docs.routes';
+import { CovalentMediaModule } from '../../../platform/core/media';
+import { CovalentLayoutModule } from '../../../platform/core/layout';
 
 @NgModule({
   declarations: [

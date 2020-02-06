@@ -16,17 +16,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import {
-  CovalentLayoutModule,
-  CovalentExpansionPanelModule,
-  CovalentStepsModule,
-  CovalentMediaModule,
-  CovalentCommonModule,
-} from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
-import { ToolbarModule } from 'app/components/toolbar/toolbar.module';
+import { CovalentLayoutModule } from '../../../platform/core/layout';
+import { CovalentExpansionPanelModule } from '../../../platform/core/expansion-panel';
+import { CovalentStepsModule } from '../../../platform/core/steps';
+import { CovalentMediaModule } from '../../../platform/core/media';
+import { CovalentCommonModule } from '../../../platform/core/common';
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [

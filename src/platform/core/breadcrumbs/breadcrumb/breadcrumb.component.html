@@ -1,6 +1,6 @@
 <ng-content></ng-content>
 <mat-icon
-  *ngIf="_displayIcon"
+  *ngIf="displayIcon"
   class="td-breadcrumb-separator-icon"
   [style.cursor]="'default'"
   (click)="_handleIconClick($event)"

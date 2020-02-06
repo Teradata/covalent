@@ -1,8 +1,8 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CovalentBaseEchartsModule } from '../public-api';
 import { By } from '@angular/platform-browser';
+import { CovalentBaseEchartsModule } from './base.module';
 
 describe('Component: BaseEchart', () => {
   beforeEach(async(() => {

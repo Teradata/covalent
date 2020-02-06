@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 import { ChipsDemoComponent } from './chips.component';
-import { CovalentChipsModule } from '../../../../../platform/core';
 import { FormsModule } from '@angular/forms';
+import { CovalentChipsModule } from '../../../../../platform/core/chips';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: ChipsDemoComponent,

@@ -4,8 +4,14 @@ import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { CovalentBreadcrumbsModule } from './public-api';
+import { CovalentBreadcrumbsModule } from './';
 import { TdBreadcrumbsComponent } from './breadcrumbs.component';
+
+interface IBreadcrumbItem {
+  route: string;
+  text: string;
+}
+const sampleBreadcrumb: IBreadcrumbItem = { route: 'test', text: 'test' };
 
 @Component({
   selector: 'fake',
@@ -19,7 +25,12 @@ export class FakeComponent {}
 describe('Component: Breadcrumbs', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TdBreadcrumbsTestComponent, TdBreadcrumbsToolbarTestComponent, FakeComponent],
+      declarations: [
+        TdBreadcrumbsTestComponent,
+        TdBreadcrumbsToolbarTestComponent,
+        TdBreadcrumbsSizeIconChangeTestComponent,
+        FakeComponent,
+      ],
       imports: [
         NoopAnimationsModule,
         MatToolbarModule,
@@ -95,6 +106,58 @@ describe('Component: Breadcrumbs', () => {
       });
     }),
   ));
+
+  it('should react to change of breadcrumbs size & separator icon', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdBreadcrumbsSizeIconChangeTestComponent> = TestBed.createComponent(
+        TdBreadcrumbsSizeIconChangeTestComponent,
+      );
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      let breadcrumbs: DebugElement = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent));
+      expect(breadcrumbs.children.length).toBe(1);
+      expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeFalsy();
+      const component: TdBreadcrumbsSizeIconChangeTestComponent = fixture.debugElement.componentInstance;
+      component.breadcrumbItems = [...component.breadcrumbItems, sampleBreadcrumb];
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      breadcrumbs = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent));
+      expect(breadcrumbs.children.length).toBe(2);
+      expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeTruthy();
+      expect(breadcrumbs.children[0].query(By.css('mat-icon')).nativeElement.textContent).toContain('chevron_right');
+      expect(breadcrumbs.children[1].query(By.css('mat-icon'))).toBeFalsy();
+      component.separatorIcon = 'motorcycle';
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      breadcrumbs = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent));
+      expect(breadcrumbs.children.length).toBe(2);
+      expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeTruthy();
+      expect(breadcrumbs.children[0].query(By.css('mat-icon')).nativeElement.textContent).toContain('motorcycle');
+      expect(breadcrumbs.children[1].query(By.css('mat-icon'))).toBeFalsy();
+
+      component.breadcrumbItems = [sampleBreadcrumb];
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      expect(breadcrumbs.children.length).toBe(1);
+      expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeFalsy();
+    }),
+  ));
 });
 
 @Component({
@@ -133,4 +196,21 @@ class TdBreadcrumbsTestComponent {
 })
 class TdBreadcrumbsToolbarTestComponent {
   separatorIcon: string = 'motorcycle';
+}
+
+@Component({
+  selector: 'td-breadcrumbs-size-icon-change-test',
+  template: `
+    <div>
+      <td-breadcrumbs #breadcrumbs [separatorIcon]="separatorIcon">
+        <a *ngFor="let breadcrumb of breadcrumbItems" td-breadcrumb [routerLink]="breadcrumb.route">
+          {{ breadcrumb.text }}
+        </a>
+      </td-breadcrumbs>
+    </div>
+  `,
+})
+class TdBreadcrumbsSizeIconChangeTestComponent {
+  breadcrumbItems: IBreadcrumbItem[] = [sampleBreadcrumb];
+  separatorIcon: string = 'chevron_right';
 }

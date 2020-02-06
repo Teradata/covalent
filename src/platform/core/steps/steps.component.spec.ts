@@ -2,7 +2,7 @@ import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing'
 import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentStepsModule, StepState, StepMode } from './public-api';
+import { CovalentStepsModule, StepState, StepMode } from './';
 
 describe('Component: Steps', () => {
   beforeEach(async(() => {

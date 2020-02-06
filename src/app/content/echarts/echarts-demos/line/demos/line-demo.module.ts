@@ -9,10 +9,10 @@ import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { CovalentLineEchartsModule } from '../../../../../../platform/echarts';
 import { LineDemoComponent } from './line-demo.component';
 import { LineDemoRoutingModule } from './line-demo-routing.module';
 import { LineDemoBasicComponent } from './line-demo-basic/line-demo-basic.component';
+import { CovalentLineEchartsModule } from '../../../../../../platform/echarts/line';
 
 @NgModule({
   declarations: [LineDemoComponent, LineDemoBasicComponent],

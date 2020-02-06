@@ -11,8 +11,8 @@ import { CovalentHighlightModule } from '@covalent/highlight';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 import { MessageDemoComponent } from './message.component';
-import { CovalentDialogsModule } from '../../../../../platform/core';
 import { DocumentationToolsModule } from 'app/documentation-tools';
+import { CovalentDialogsModule } from '../../../../../platform/core/dialogs';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: MessageDemoComponent,

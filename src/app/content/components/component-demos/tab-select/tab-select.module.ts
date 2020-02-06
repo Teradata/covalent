@@ -8,8 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 import { TabSelectDemoComponent } from './tab-select.component';
-import { CovalentTabSelectModule } from '../../../../../platform/core';
 import { FormsModule } from '@angular/forms';
+import { CovalentTabSelectModule } from '../../../../../platform/core/tab-select';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: TabSelectDemoComponent,
