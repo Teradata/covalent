@@ -39,9 +39,9 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICo
   private _multiple: boolean = false;
   private _required: boolean = false;
 
-  @ViewChild(TdFileInputComponent, { static: false }) fileInput: TdFileInputComponent;
+  @ViewChild(TdFileInputComponent) fileInput: TdFileInputComponent;
 
-  @ContentChild(TdFileInputLabelDirective, { static: false }) inputLabel: TdFileInputLabelDirective;
+  @ContentChild(TdFileInputLabelDirective) inputLabel: TdFileInputLabelDirective;
 
   /**
    * defaultColor?: 'accent' | 'primary' | 'warn'

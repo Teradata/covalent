@@ -40,6 +40,5 @@ import { CovalentCommonModule } from '../../../../platform/core/common';
     contentDetailsRoutes,
     DocumentationToolsModule,
   ],
-  entryComponents: [],
 })
 export class ContentDetailsModule {}

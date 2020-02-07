@@ -21,6 +21,5 @@ const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [TdLoadingComponent];
   declarations: [TD_LOADING],
   exports: [TD_LOADING],
   providers: [LOADING_FACTORY_PROVIDER, LOADING_PROVIDER],
-  entryComponents: [TD_LOADING_ENTRY_COMPONENTS],
 })
 export class CovalentLoadingModule {}

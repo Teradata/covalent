@@ -30,7 +30,6 @@ import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window-se
   ],
   declarations: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
   exports: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
-  entryComponents: [TdMarkdownNavigatorWindowComponent],
   providers: [TdMarkdownNavigatorWindowService],
 })
 export class CovalentMarkdownNavigatorModule {}

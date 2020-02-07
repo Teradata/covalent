@@ -8,11 +8,10 @@ import { TdCodeEditorComponent } from './code-editor.component';
   imports: [CommonModule],
   declarations: [TdCodeEditorComponent],
   exports: [TdCodeEditorComponent],
-  entryComponents: [],
   bootstrap: [TdCodeEditorComponent],
 })
 export class CovalentCodeEditorModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<CovalentCodeEditorModule> {
     return {
       ngModule: CovalentCodeEditorModule,
       providers: [],
