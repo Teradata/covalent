@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
@@ -10,11 +10,4 @@ import { TdTextEditorComponent } from './text-editor.component';
   exports: [TdTextEditorComponent],
   bootstrap: [TdTextEditorComponent],
 })
-export class CovalentTextEditorModule {
-  static forRoot(): ModuleWithProviders<CovalentTextEditorModule> {
-    return {
-      ngModule: CovalentTextEditorModule,
-      providers: [],
-    };
-  }
-}
+export class CovalentTextEditorModule {}

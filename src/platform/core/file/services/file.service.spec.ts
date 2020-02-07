@@ -9,7 +9,7 @@ describe('Service: File', () => {
     TestBed.configureTestingModule({
       imports: [CovalentFileModule, HttpClientTestingModule],
     });
-    service = TestBed.get(TdFileService);
+    service = TestBed.inject(TdFileService);
     spyOn(XMLHttpRequest.prototype, 'open').and.callThrough();
     spyOn(XMLHttpRequest.prototype, 'setRequestHeader').and.callThrough();
   });
