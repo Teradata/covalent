@@ -118,7 +118,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
    */
   @Input() compareWith: IMarkdownNavigatorCompareWith;
 
-  @ViewChild('markdownWrapper', { static: false }) markdownWrapper: ElementRef;
+  @ViewChild('markdownWrapper') markdownWrapper: ElementRef;
 
   historyStack: IMarkdownNavigatorItem[] = []; // history
   currentMarkdownItem: IMarkdownNavigatorItem; // currently rendered

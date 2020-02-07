@@ -118,8 +118,8 @@ export class TdChipsComponent extends _TdChipsMixinBase
   @ViewChild(MatAutocompleteTrigger, { static: true }) _autocompleteTrigger: MatAutocompleteTrigger;
   @ViewChildren(MatChip) _chipsChildren: QueryList<MatChip>;
 
-  @ContentChild(TdChipDirective, { static: false }) _chipTemplate: TdChipDirective;
-  @ContentChild(TdAutocompleteOptionDirective, { static: false })
+  @ContentChild(TdChipDirective) _chipTemplate: TdChipDirective;
+  @ContentChild(TdAutocompleteOptionDirective)
   _autocompleteOptionTemplate: TdAutocompleteOptionDirective;
 
   @ViewChildren(MatOption) _options: QueryList<MatOption>;

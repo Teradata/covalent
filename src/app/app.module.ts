@@ -99,7 +99,6 @@ import { CovalentMediaModule } from '../platform/core/media';
     },
     SelectivePreloadingStrategyService,
   ], // additional providers needed for this module
-  entryComponents: [],
   bootstrap: [DocsAppComponent],
 })
 export class AppModule {}

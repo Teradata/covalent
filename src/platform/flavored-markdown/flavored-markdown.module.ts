@@ -30,12 +30,5 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     TdFlavoredMarkdownLoaderComponent,
   ],
   exports: [TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent],
-  entryComponents: [
-    TdDataTableComponent,
-    TdMarkdownComponent,
-    TdHighlightComponent,
-    MatCheckbox,
-    TdFlavoredListComponent,
-  ],
 })
 export class CovalentFlavoredMarkdownModule {}

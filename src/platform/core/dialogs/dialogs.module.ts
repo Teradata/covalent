@@ -38,7 +38,6 @@ const TD_DIALOGS_ENTRY_COMPONENTS: Type<any>[] = [
   imports: [FormsModule, CommonModule, MatDialogModule, MatInputModule, MatButtonModule],
   declarations: [TD_DIALOGS],
   exports: [TD_DIALOGS],
-  entryComponents: [TD_DIALOGS_ENTRY_COMPONENTS],
   providers: [TdDialogService],
 })
 export class CovalentDialogsModule {}

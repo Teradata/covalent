@@ -68,9 +68,9 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
   }
 
   @ViewChild(TemplateRef, { static: true }) _content: TemplateRef<any>;
-  @ContentChild(TdStepLabelDirective, { static: false }) stepLabel: TdStepLabelDirective;
-  @ContentChild(TdStepActionsDirective, { static: false }) stepActions: TdStepActionsDirective;
-  @ContentChild(TdStepSummaryDirective, { static: false }) stepSummary: TdStepSummaryDirective;
+  @ContentChild(TdStepLabelDirective) stepLabel: TdStepLabelDirective;
+  @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
+  @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
 
   /**
    * label?: string

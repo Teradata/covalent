@@ -7,7 +7,7 @@ import { TdTextEditorComponent } from '../../../../../platform/text-editor';
   templateUrl: './text-editor.component.html',
 })
 export class TextEditorDemoComponent {
-  @ViewChild('editor', { static: false }) private _tdEditor: TdTextEditorComponent;
+  @ViewChild('editor') private _tdEditor: TdTextEditorComponent;
 
   editorVal: string = `# Intro
 Go ahead, play around with the editor! Be sure to check out **bold** and *italic* styling, or even [links](https://google.com).

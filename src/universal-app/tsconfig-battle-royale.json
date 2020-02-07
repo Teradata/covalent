@@ -4,7 +4,6 @@
     "stripInternal": false,
     "outDir": ".",
     "rootDir": ".",
-    "sourceMap": true,
     "noUnusedParameters": false,
     "strictNullChecks": false,
     "target": "es2015",
