@@ -1,3 +1,57 @@
+<a name="3.0.0-beta.3"></a>
+# [3.0.0-beta.3](https://github.com/teradata/covalent/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2020-02-10)
+
+Now that angular 9 is finally out and stable, covalent finally fully supports ivy! This release is specifically targeting bugfixes, breaking changes and ivy support.
+
+Please let us know if you have any problems, we will start going into an RC process over the next following weeks.
+
+### Breaking Changes
+
+* **build:** remove primary entry points ([f0dd4c652d61db957f6296c6a9a18871fab1782f](https://github.com/Teradata/covalent/commit/f0dd4c652d61db957f6296c6a9a18871fab1782f))
+
+We finally removed the primary entry points like `@covalent/core` and `@covalent/echarts`.. please use the secondary entry points.
+
+e.g.
+
+```
+@covalent/core/loading
+@covalent/core/common
+@covalent/echarts/base
+```
+
+* **code-editor:** autoLayout removed ([#1595](https://github.com/teradata/covalent/issues/1595)) ([02304db](https://github.com/teradata/covalent/commit/02304db))
+
+`autoLayout` was deprecated and didnt have any real value.
+
+* **http:** remove http class decorators ([#1611](https://github.com/teradata/covalent/issues/1611)) ([85a0341](https://github.com/teradata/covalent/commit/85a0341))
+
+`@TdHttp` and `@TdHttpClient` were deprecated and removed since they wouldnt work in conjunction of `@Injectable` and it will break in angular v10.
+
+Please extend the mixin `mixinHttp` to provide the same functionality.
+
+* **file-service:** remove upload method ([#1613](https://github.com/teradata/covalent/issues/1613)) ([45f4467](https://github.com/teradata/covalent/commit/45f4467))
+
+`upload` method was removed in favor of `send`.
+
+### Bug Fixes
+
+* **markdown-navigator:** get rid of markdown-nav-window extra scrollbar ([#1600](https://github.com/teradata/covalent/issues/1600)) ([0e4f780](https://github.com/teradata/covalent/commit/0e4f780))
+* **breadcrumbs:** react to size and icon change ([#1608](https://github.com/teradata/covalent/issues/1608)) ([5d31311](https://github.com/teradata/covalent/commit/5d31311))
+* **build:** remove internal rxjs import ([#1594](https://github.com/teradata/covalent/issues/1594)) ([10e0786](https://github.com/teradata/covalent/commit/10e0786))
+* **docs:** rtl styling ([#1596](https://github.com/teradata/covalent/issues/1596)) ([da38db6](https://github.com/teradata/covalent/commit/da38db6))
+* **docs:** fix gh-pages deployment script ([87e7334](https://github.com/teradata/covalent/commit/87e7334))
+* **text-editor:** fix mde placeholder ([#1609](https://github.com/teradata/covalent/issues/1609)) ([b7ed374](https://github.com/teradata/covalent/commit/b7ed374))
+
+
+### Features
+
+* **fix-td-message-demo:** modified for clarity of usage ([#1598](https://github.com/teradata/covalent/issues/1598)) ([da44eb3](https://github.com/teradata/covalent/commit/da44eb3))
+* **loading:** add a fullscreen loading demo ([#1599](https://github.com/teradata/covalent/issues/1599)) ([0a970e9](https://github.com/teradata/covalent/commit/0a970e9))
+* **messages-docs:** add more demos to messages, remove unused code ([#1605](https://github.com/teradata/covalent/issues/1605)) ([bddb743](https://github.com/teradata/covalent/commit/bddb743))
+* **all:** upgrade to angular 9 ([#1612](https://github.com/teradata/covalent/issues/1612)) ([2dacec0](https://github.com/teradata/covalent/commit/2dacec0))
+
+
+
 <a name="3.0.0-beta.2"></a>
 # [3.0.0-beta.2](https://github.com/teradata/covalent/compare/v3.0.0-beta.1-2...v3.0.0-beta.2) (2019-12-19)
 
