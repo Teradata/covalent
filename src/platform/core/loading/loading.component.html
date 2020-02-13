@@ -5,12 +5,7 @@
   [class.td-overlay]="isOverlay() || isFullScreen()"
   [class.td-fullscreen]="isFullScreen()"
 >
-  <div
-    [@tdFadeInOut]="animation"
-    (@tdFadeInOut.done)="animationComplete($event)"
-    [style.min-height]="getHeight()"
-    class="td-loading"
-  >
+  <div [@tdFadeInOut]="animation" [style.min-height]="getHeight()" class="td-loading">
     <mat-progress-spinner
       *ngIf="isCircular()"
       [mode]="mode"
