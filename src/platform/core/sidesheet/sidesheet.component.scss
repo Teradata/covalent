@@ -10,12 +10,14 @@ $td-sidesheet-top-padding: 20px !default;
 // base stle for [layout="column"]
 %layout-column {
   @extend %layout;
+
   flex-direction: column;
 }
 
 // base stle for [layout="column"]
 %layout-row {
   @extend %layout;
+
   flex-direction: row;
 }
 
@@ -49,6 +51,7 @@ td-sidesheet {
   // HEADER STYLES
   td-sidesheet-header {
     @extend %layout-row, %layout-align-start-center;
+
     width: 100%;
     padding: $td-sidesheet-top-padding $td-sidesheet-side-padding;
     font-size: 18px;

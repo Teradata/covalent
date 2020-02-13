@@ -44,6 +44,7 @@
 
   .td-expansion-panel {
     @include mat-elevation(1);
+
     background-color: mat-color($background, card);
     .td-expansion-panel-header {
       &:focus:not(.mat-disabled),

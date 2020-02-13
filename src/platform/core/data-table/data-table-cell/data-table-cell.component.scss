@@ -2,6 +2,7 @@
 :host {
   vertical-align: middle;
   @include rtl(text-align, left, right);
+
   padding: 0;
   > .td-data-table-cell-content-wrapper {
     padding: 0 28px;
