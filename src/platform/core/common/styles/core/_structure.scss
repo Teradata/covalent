@@ -26,6 +26,7 @@
     font-weight: normal;
     background-color: inherit;
     @include rtl(text-align, left, right);
+
     border: none;
     padding: 0;
     margin: 0;

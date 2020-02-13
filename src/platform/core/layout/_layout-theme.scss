@@ -16,6 +16,7 @@
         size: td-font-size($config, body-1);
         weight: 500;
       }
+
       line-height: td-line-height($config, body-1);
     }
     .td-navigation-drawer-menu-toggle {
@@ -24,6 +25,7 @@
         size: td-font-size($config, body-2);
         weight: 400;
       }
+
       line-height: td-line-height($config, body-2);
     }
   }
@@ -56,6 +58,7 @@
   td-layout {
     mat-toolbar {
       @include mat-elevation(1);
+
       z-index: 1;
     }
   }
