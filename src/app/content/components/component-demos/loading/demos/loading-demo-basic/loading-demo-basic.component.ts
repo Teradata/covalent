@@ -5,7 +5,6 @@ import { TdLoadingService } from '@covalent/core/loading';
   selector: 'loading-demo-basic',
   styleUrls: ['./loading-demo-basic.component.scss'],
   templateUrl: './loading-demo-basic.component.html',
-  preserveWhitespaces: true,
 })
 export class LoadingDemoBasicComponent {
   overlayStarSyntax: boolean = false;

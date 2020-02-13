@@ -11,7 +11,7 @@ import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/
 import { TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 
-import { Observable, Subject, Subscription } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
 import { TdLoadingContext } from '../directives/loading.directive';
@@ -59,16 +59,14 @@ export class TdLoadingFactory {
         overlayRef = this._createOverlay();
         loadingRef.componentRef = overlayRef.attach(new ComponentPortal(TdLoadingComponent));
         this._mapOptions(options, loadingRef.componentRef.instance);
-        loadingRef.componentRef.instance.startInAnimation();
+        loadingRef.componentRef.instance.show();
         loadingRef.componentRef.changeDetectorRef.detectChanges();
       } else if (registered <= 0 && loading) {
         loading = false;
-        const subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {
-          subs.unsubscribe();
-          loadingRef.componentRef.destroy();
-          overlayRef.detach();
-          overlayRef.dispose();
-        });
+        loadingRef.componentRef.instance.hide();
+        loadingRef.componentRef.destroy();
+        overlayRef.detach();
+        overlayRef.dispose();
       }
     });
     return loadingRef;
@@ -96,10 +94,10 @@ export class TdLoadingFactory {
     loadingRef.observable.pipe(distinctUntilChanged()).subscribe((registered: number) => {
       if (registered > 0 && !loading) {
         loading = true;
-        loadingRef.componentRef.instance.startInAnimation();
+        loadingRef.componentRef.instance.show();
       } else if (registered <= 0 && loading) {
         loading = false;
-        loadingRef.componentRef.instance.startOutAnimation();
+        loadingRef.componentRef.instance.hide();
       }
     });
     return loadingRef;
@@ -135,24 +133,22 @@ export class TdLoadingFactory {
           viewContainerRef.detach(viewContainerRef.indexOf(contentRef));
           viewContainerRef.insert(loadingRef.componentRef.hostView, 0);
         }
-        loadingRef.componentRef.instance.startInAnimation();
+        loadingRef.componentRef.instance.show();
       } else if (registered <= 0 && loading) {
         loading = false;
-        const subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {
-          subs.unsubscribe();
-          // detach loader and attach the content if content is there
-          const index: number = viewContainerRef.indexOf(contentRef);
-          if (index < 0) {
-            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.componentRef.hostView));
-            viewContainerRef.insert(contentRef, 0);
-          }
-          /**
-           * Need to call "markForCheck" and "detectChanges" on attached template, so its detected by parent component when attached
-           * with "OnPush" change detection
-           */
-          contentRef.detectChanges();
-          contentRef.markForCheck();
-        });
+        loadingRef.componentRef.instance.hide();
+        // detach loader and attach the content if content is there
+        const index: number = viewContainerRef.indexOf(contentRef);
+        if (index < 0) {
+          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.componentRef.hostView));
+          viewContainerRef.insert(contentRef, 0);
+        }
+        /**
+         * Need to call "markForCheck" and "detectChanges" on attached template, so its detected by parent component when attached
+         * with "OnPush" change detection
+         */
+        contentRef.detectChanges();
+        contentRef.markForCheck();
       }
     });
     return loadingRef;
