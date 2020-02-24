@@ -1,0 +1,15 @@
+<p class="mat-body-1">Message in a card content:</p>
+<mat-card>
+  <mat-card-title>Card title</mat-card-title>
+  <mat-divider></mat-divider>
+  <td-message label="Info" sublabel="Maybe you want to know this" color="accent" icon="info"></td-message>
+  <mat-card-content>
+    content
+  </mat-card-content>
+</mat-card>
+<p class="mat-body-1">Message in a card with action</p>
+<mat-card>
+  <td-message label="Warning!" sublabel="Your probably shouldn't do that!" class="bgc-td-orange-100 tc-td-orange" icon="warning">
+    <button td-message-actions mat-button (click)="showAlert()">VIEW MORE</button>
+  </td-message>
+</mat-card>
