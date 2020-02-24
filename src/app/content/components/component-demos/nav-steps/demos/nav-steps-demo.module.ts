@@ -1,13 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavStepsDemoBasicComponent } from './nav-steps-demo-basic/nav-steps-demo-basic.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { NavStepsDemoHorizontalComponent } from './nav-steps-demo-horizontal/nav-steps-demo-horizontal.component';
+import { NavStepsDemoVerticalComponent } from './nav-steps-demo-vertical/nav-steps-demo-vertical.component';
 import { CovalentStepsModule } from '@covalent/core/steps';
-import { NavStepsDemoComponent } from './nav-steps-demo.component';
+import {
+  NavStepsDemoComponent,
+  NavStepsRoute1DemoComponent,
+  NavStepsRoute3DemoComponent,
+  NavStepsRoute4DemoComponent,
+} from './nav-steps-demo.component';
 import { NavStepsDemoRoutingModule } from './nav-steps-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [NavStepsDemoComponent, NavStepsDemoBasicComponent],
+  declarations: [
+    NavStepsDemoComponent,
+    NavStepsRoute1DemoComponent,
+    NavStepsRoute3DemoComponent,
+    NavStepsRoute4DemoComponent,
+    NavStepsDemoHorizontalComponent,
+    NavStepsDemoVerticalComponent,
+  ],
   imports: [
     DemoModule,
     NavStepsDemoRoutingModule,
@@ -15,6 +29,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentStepsModule,
     /** Angular Modules */
     CommonModule,
+    MatDividerModule,
   ],
 })
 export class NavStepsDemoModule {}
