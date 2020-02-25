@@ -17,7 +17,7 @@ import { Observable, Subject } from 'rxjs';
 import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import { waitUntilMonacoReady, loadMonaco } from './code-editor.utils';
+import { waitUntilMonacoReady } from './code-editor.utils';
 
 const noop: any = () => {
   // empty method
@@ -27,7 +27,7 @@ const noop: any = () => {
 let uniqueCounter: number = 0;
 // declare all the built in electron objects
 declare const electron: any;
-declare const monaco: any;
+import * as monaco from 'monaco-editor';
 
 @Component({
   selector: 'td-code-editor',
@@ -680,7 +680,6 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    */
   ngAfterViewInit(): void {
     if (!this._isElectronApp) {
-      loadMonaco();
       waitUntilMonacoReady()
         .pipe(takeUntil(this._destroy))
         .subscribe(() => {
