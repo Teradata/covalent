@@ -10,10 +10,9 @@
 
 #### Pre Release Checklist
 
-1. Notifications need to be updated in the covalent `home` screen.
-2. Make sure the `build.conf.js` points to the correct versions.
-3. `ng serve --prod` works fine.
-4. `npm run build:lib` works fine.
+1. Make sure the `build.conf.js` points to the correct versions.
+2. `ng serve --prod` works fine.
+3. `npm run build:lib` works fine.
 
 #### Start Release
 
