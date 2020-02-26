@@ -1,5 +1,5 @@
 import { Type } from '@angular/core';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';

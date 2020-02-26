@@ -1,7 +1,7 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentExpansionPanelModule, TdExpansionPanelComponent } from './public-api';
+import { CovalentExpansionPanelModule, TdExpansionPanelComponent } from './';
 import { By } from '@angular/platform-browser';
 
 describe('Component: ExpansionPanel', () => {

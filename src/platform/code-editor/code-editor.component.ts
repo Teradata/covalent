@@ -69,18 +69,6 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   @ViewChild('editorContainer', { static: true }) _editorContainer: ElementRef;
 
   /**
-   * automaticLayout?: boolean
-   * @deprecated in favor of our own resize implementation.
-   */
-  @Input('automaticLayout')
-  set automaticLayout(automaticLayout: boolean) {
-    // tslint:disable-next-line
-    console.warn(
-      '[automaticLayout] has been deprecated in favor of our own resize implementation and will be removed on 3.0.0',
-    );
-  }
-
-  /**
    * editorInitialized: function($event)
    * Event emitted when editor is first initialized
    */
@@ -704,10 +692,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
       this._widthSubject.asObservable().pipe(distinctUntilChanged()),
       this._heightSubject.asObservable().pipe(distinctUntilChanged()),
     )
-      .pipe(
-        takeUntil(this._destroy),
-        debounceTime(100),
-      )
+      .pipe(takeUntil(this._destroy), debounceTime(100))
       .subscribe(() => {
         this.layout();
         this._changeDetectorRef.markForCheck();

@@ -1,0 +1,109 @@
+:host {
+  margin-bottom: 104px;
+}
+
+.doc-nav ::ng-deep {
+  font-size: 14px;
+  padding-top: 24px;
+  .doc-nav-section {
+    padding-top: 4px;
+  }
+  .doc-nav-section-label {
+    padding: 12px 36px 0;
+    letter-spacing: 0.1666em;
+    font-size: 11px;
+    &::after {
+      content: '';
+      width: 243px;
+      height: 1px;
+      background-color: #e0e0e0;
+      display: block;
+    }
+  }
+  .mat-list-base .mat-list-item {
+    font-size: 14px;
+    height: 38px;
+    .mat-list-item-content {
+      padding: 0 36px 2px;
+    }
+  }
+
+  .doc-nav-link {
+    position: relative;
+    &.active {
+      color: #005655 !important;
+      font-weight: 400 !important;
+    }
+    &.mat-list-item:focus {
+      background-color: white;
+    }
+  }
+
+  a.doc-nav-link {
+    &::after {
+      content: '';
+      display: block;
+      width: calc(100% - 16px);
+      height: 29px;
+      position: absolute;
+      top: 4px;
+      z-index: 0;
+      border-radius: 20px;
+      right: -12px;
+      left: -12px;
+      opacity: 0;
+    }
+    &:hover {
+      background: white;
+      &::after {
+        background-color: #0000000d;
+        opacity: 1;
+      }
+    }
+  }
+
+  a.doc-nav-link.active {
+    &::after {
+      opacity: 1;
+      background-color: #00969626;
+    }
+  }
+  .doc-nav-link:hover:not(.active) {
+    color: black !important;
+  }
+  .fw-500 {
+    font-weight: 500;
+  }
+
+  .mat-expansion-panel {
+    border-radius: 0;
+    .mat-expansion-panel-header {
+      font-size: 14px;
+      padding-right: 28px;
+    }
+    .mat-expansion-panel-body {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .mat-expansion-indicator::after {
+      border-width: 0 1.5px 1.5px 0;
+      padding: 2px;
+      margin-bottom: 4px;
+    }
+    &.nested-expansion-panel {
+      &:hover .mat-expansion-panel-header,
+      .mat-expansion-panel-header.mat-expanded {
+        color: black !important;
+      }
+      .mat-expansion-panel-body {
+        padding-bottom: 0;
+      }
+      .mat-expansion-panel-header {
+        padding-left: 36px;
+      }
+      .mat-list-base .mat-list-item .mat-list-item-content {
+        padding-left: 48px;
+      }
+    }
+  }
+}

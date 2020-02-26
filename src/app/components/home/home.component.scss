@@ -11,10 +11,16 @@
 }
 .mat-icon-svg-xxl {
   width: 90%;
+  max-width: 352px;
   height: 90%;
 }
 .mat-icon-ux {
   width: 165px;
+}
+
+.max-width {
+  max-width: 1056px;
+  width: 100%;
 }
 @media (max-width: 799px) {
   .mat-icon-md {
@@ -31,4 +37,29 @@
   .mat-icon-xl {
     font-size: 160px;
   }
+}
+
+.banner {
+  background-image: url('assets/images/banner-bgcs.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.banner-lg {
+  background-size: 80%;
+}
+
+.icon-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.covalent-logo-xs {
+  width: 192px;
+  height: auto;
 }

@@ -1,7 +1,7 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CovalentFileModule, TdFileInputComponent } from '../public-api';
+import { CovalentFileModule, TdFileInputComponent } from '../';
 import { By } from '@angular/platform-browser';
 
 describe('Component: FileInput', () => {
@@ -114,6 +114,7 @@ describe('Component: FileInput', () => {
         fixture.whenStable().then(() => {
           expect(component.files).toBeTruthy();
           component.disabled = true;
+          fixture.componentRef.changeDetectorRef.detectChanges();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             expect(component.files).toBeUndefined();

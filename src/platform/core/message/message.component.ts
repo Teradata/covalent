@@ -36,7 +36,7 @@ export class TdMessageComponent implements AfterViewInit {
   private _initialized: boolean = false;
 
   @ViewChild(TdMessageContainerDirective, { static: true }) _childElement: TdMessageContainerDirective;
-  @ViewChild(TemplateRef, { static: false }) _template: TemplateRef<any>;
+  @ViewChild(TemplateRef) _template: TemplateRef<any>;
 
   /**
    * Binding host to tdCollapse animation

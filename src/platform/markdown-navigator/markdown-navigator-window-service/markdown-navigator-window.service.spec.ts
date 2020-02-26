@@ -1,15 +1,16 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
-import { MarkdownNavigatorWindowService } from './markdown-navigator-window.service';
+import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { IMarkdownNavigatorItem, DEFAULT_MARKDOWN_NAVIGATOR_LABELS } from '../markdown-navigator.component';
 import {
-  MarkdownNavigatorWindowComponent,
+  TdMarkdownNavigatorWindowComponent,
   IMarkdownNavigatorWindowLabels,
 } from '../markdown-navigator-window/markdown-navigator-window.component';
+import { DEEPLY_NESTED_TREE, compareByTitle } from '../markdown-navigator.component.spec';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
@@ -22,7 +23,7 @@ const RAW_MARKDOWN_ITEMS: IMarkdownNavigatorItem[] = [
   },
 ];
 
-async function wait(fixture: ComponentFixture<any>): Promise<void> {
+async function wait(fixture: ComponentFixture<TestComponent>): Promise<void> {
   fixture.detectChanges();
   await fixture.whenStable();
 }
@@ -62,15 +63,15 @@ describe('MarkdownNavigatorWindowService', () => {
 
   it('should open and close markdown navigator window properly', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+        const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: [],
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(getMarkdownNavigator()).toBeTruthy();
         // tslint:disable-next-line:no-useless-cast
@@ -85,38 +86,86 @@ describe('MarkdownNavigatorWindowService', () => {
   ));
   it('should open with no items', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+        const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: [],
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.items).toEqual([]);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(0);
-
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
   ));
   it('should open with an item', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+        const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: RAW_MARKDOWN_ITEMS,
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.items).toEqual(RAW_MARKDOWN_ITEMS);
         expect(getMarkdownNavigator().querySelectorAll('mat-action-list button').length).toBe(2);
+
+        _markdownNavigatorWindowService.close();
+        await wait(fixture);
+      },
+    ),
+  ));
+
+  it('should open to a certain item', async(
+    inject(
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+          items: DEEPLY_NESTED_TREE,
+          startAt: DEEPLY_NESTED_TREE[0],
+        });
+
+        await wait(fixture);
+        await dialogRef.afterOpened().toPromise();
+
+        expect(dialogRef.componentInstance.startAt).toEqual(DEEPLY_NESTED_TREE[0]);
+        expect(getMarkdownNavigator().querySelector('[data-test="title"]').textContent).toContain(
+          DEEPLY_NESTED_TREE[0].title,
+        );
+
+        dialogRef.close();
+        await wait(fixture);
+      },
+    ),
+  ));
+
+  it('should open to a certain item using compareWith function', async(
+    inject(
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+          items: DEEPLY_NESTED_TREE,
+          startAt: DEEPLY_NESTED_TREE[1],
+          compareWith: compareByTitle,
+        });
+
+        await wait(fixture);
+        await dialogRef.afterOpened().toPromise();
+
+        expect(dialogRef.componentInstance.compareWith).toEqual(compareByTitle);
+        expect(getMarkdownNavigator().querySelector('[data-test="title"]').textContent).toContain(
+          DEEPLY_NESTED_TREE[1].title,
+        );
 
         dialogRef.close();
         await wait(fixture);
@@ -126,20 +175,20 @@ describe('MarkdownNavigatorWindowService', () => {
 
   it('should use passed in labels', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        let dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+        let dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: [],
           labels: {},
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.labels).toEqual({});
         expect(getMarkdownNavigator().textContent).toContain(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
 
         const SAMPLE_LABELS: IMarkdownNavigatorWindowLabels = {
@@ -151,12 +200,12 @@ describe('MarkdownNavigatorWindowService', () => {
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.labels).toEqual(SAMPLE_LABELS);
         expect(getMarkdownNavigator().textContent).toContain(SAMPLE_LABELS.emptyState);
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
@@ -164,69 +213,69 @@ describe('MarkdownNavigatorWindowService', () => {
 
   it('should use default to primary toolbar color', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+        const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: RAW_MARKDOWN_ITEMS,
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('primary');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
   ));
   it('should use passed in toolbar color', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        let dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+        let dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: [],
           toolbarColor: 'accent',
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('accent');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
 
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'primary' });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('primary');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
 
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: 'warn' });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe('warn');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
 
         dialogRef = _markdownNavigatorWindowService.open({ items: [], toolbarColor: undefined });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(dialogRef.componentInstance.toolbarColor).toBe(undefined);
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
       },
     ),
@@ -234,15 +283,15 @@ describe('MarkdownNavigatorWindowService', () => {
 
   it('should have proper classes', async(
     inject(
-      [MarkdownNavigatorWindowService],
-      async (_markdownNavigatorWindowService: MarkdownNavigatorWindowService) => {
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
         const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-        const dialogRef: MatDialogRef<MarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+        const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
           items: [],
         });
 
         await wait(fixture);
-        await dialogRef.afterOpen().toPromise();
+        await dialogRef.afterOpened().toPromise();
 
         expect(overlayContainerElement.querySelector(`.td-draggable-markdown-navigator-window-wrapper`)).toBeTruthy();
         expect(
@@ -253,8 +302,32 @@ describe('MarkdownNavigatorWindowService', () => {
             .cursor,
         ).toBe('move');
 
-        dialogRef.close();
+        _markdownNavigatorWindowService.close();
         await wait(fixture);
+      },
+    ),
+  ));
+
+  it('should only have one markdown navigator open at a time', async(
+    inject(
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        expect(overlayContainerElement.querySelectorAll(`td-markdown-navigator`).length).toBe(0);
+        expect(_markdownNavigatorWindowService.isOpen).toBeFalsy();
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        _markdownNavigatorWindowService.open({
+          items: [],
+        });
+        await wait(fixture);
+        expect(overlayContainerElement.querySelectorAll(`td-markdown-navigator`).length).toBe(1);
+        expect(_markdownNavigatorWindowService.isOpen).toBeTruthy();
+        _markdownNavigatorWindowService.close();
       },
     ),
   ));

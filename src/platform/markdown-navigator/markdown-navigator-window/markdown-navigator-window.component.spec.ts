@@ -7,14 +7,16 @@ import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
 import { MatToolbar } from '@angular/material/toolbar';
 import {
   IMarkdownNavigatorWindowLabels,
-  MarkdownNavigatorWindowComponent,
+  TdMarkdownNavigatorWindowComponent,
   DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS,
 } from './markdown-navigator-window.component';
 import {
   IMarkdownNavigatorItem,
-  MarkdownNavigatorComponent,
+  TdMarkdownNavigatorComponent,
   DEFAULT_MARKDOWN_NAVIGATOR_LABELS,
+  IMarkdownNavigatorCompareWith,
 } from '../markdown-navigator.component';
+import { DEEPLY_NESTED_TREE, compareByTitle } from '../markdown-navigator.component.spec';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
@@ -30,7 +32,9 @@ const RAW_MARKDOWN_ITEM: IMarkdownNavigatorItem[] = [
   },
 ];
 
-async function wait(fixture: ComponentFixture<any>): Promise<void> {
+async function wait(
+  fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent | TdMarkdownNavigatorWindowWOColorTestComponent>,
+): Promise<void> {
   fixture.detectChanges();
   await fixture.whenStable();
 }
@@ -43,6 +47,8 @@ async function wait(fixture: ComponentFixture<any>): Promise<void> {
       [style.height.px]="450"
       [labels]="labels"
       [toolbarColor]="toolbarColor"
+      [startAt]="startAt"
+      [compareWith]="compareWith"
     ></td-markdown-navigator-window>
   `,
 })
@@ -50,6 +56,8 @@ class TdMarkdownNavigatorWindowTestComponent {
   items: IMarkdownNavigatorItem[] = [];
   labels: IMarkdownNavigatorWindowLabels;
   toolbarColor: ThemePalette;
+  startAt: IMarkdownNavigatorItem;
+  compareWith: IMarkdownNavigatorCompareWith;
 }
 
 @Component({
@@ -83,11 +91,11 @@ describe('MarkdownNavigatorWindowComponent', () => {
 
       await wait(fixture);
 
-      const markdownNavigatorWindow: MarkdownNavigatorWindowComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorWindowComponent),
+      const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
       ).componentInstance;
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
 
       expect(markdownNavigatorWindow.titleLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.title);
@@ -107,11 +115,11 @@ describe('MarkdownNavigatorWindowComponent', () => {
 
       await wait(fixture);
 
-      const markdownNavigatorWindow: MarkdownNavigatorWindowComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorWindowComponent),
+      const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
       ).componentInstance;
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
 
       expect(markdownNavigatorWindow.titleLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.title);
@@ -134,17 +142,20 @@ describe('MarkdownNavigatorWindowComponent', () => {
         goHome: 'Vete pa tu casa',
         goBack: 'Regresa',
         emptyState: 'No hay nada',
+        dock: 'Minimizar',
+        unDock: 'Maximizar',
       };
       fixture.componentInstance.labels = SAMPLE_LABELS;
       await wait(fixture);
 
-      const markdownNavigatorWindow: MarkdownNavigatorWindowComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorWindowComponent),
+      const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
       ).componentInstance;
 
       expect(markdownNavigatorWindow.titleLabel).toBe(SAMPLE_LABELS.title);
       expect(markdownNavigatorWindow.closeLabel).toBe(SAMPLE_LABELS.close);
       expect(markdownNavigatorWindow.markdownNavigatorLabels).toBeTruthy();
+      expect(markdownNavigatorWindow.toggleDockedStateLabel).toBe(SAMPLE_LABELS.dock);
       expect(markdownNavigatorWindow.markdownNavigatorLabels).toEqual({
         goHome: SAMPLE_LABELS.goHome,
         goBack: SAMPLE_LABELS.goBack,
@@ -162,8 +173,8 @@ describe('MarkdownNavigatorWindowComponent', () => {
       fixture.componentInstance.items = URL_ITEM;
       await wait(fixture);
 
-      const markdownNavigator: MarkdownNavigatorComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorComponent),
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
       ).componentInstance;
 
       expect(markdownNavigator.items).toEqual(URL_ITEM);
@@ -226,8 +237,8 @@ describe('MarkdownNavigatorWindowComponent', () => {
       );
 
       await wait(fixture);
-      const markdownNavigatorWindow: MarkdownNavigatorWindowComponent = fixture.debugElement.query(
-        By.directive(MarkdownNavigatorWindowComponent),
+      const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
       ).componentInstance;
 
       spyOn(markdownNavigatorWindow.closed, 'emit');
@@ -238,6 +249,50 @@ describe('MarkdownNavigatorWindowComponent', () => {
       await wait(fixture);
 
       expect(markdownNavigatorWindow.closed.emit).toHaveBeenCalled();
+    }),
+  ));
+
+  it('pass startAt item to markdownNavigator component', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
+
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[0];
+      await wait(fixture);
+
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
+      ).componentInstance;
+
+      expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[0]);
+
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[1];
+      await wait(fixture);
+      expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[1]);
+    }),
+  ));
+
+  it('pass compareWith item to markdownNavigator component', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
+      function compareByUrl(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem): boolean {
+        return o1.url === o2.url;
+      }
+      fixture.componentInstance.compareWith = compareByUrl;
+      await wait(fixture);
+
+      const markdownNavigator: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
+      ).componentInstance;
+
+      expect(markdownNavigator.compareWith).toEqual(compareByUrl);
+
+      fixture.componentInstance.compareWith = compareByTitle;
+      await wait(fixture);
+      expect(markdownNavigator.compareWith).toEqual(compareByTitle);
     }),
   ));
 });

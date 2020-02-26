@@ -16,7 +16,8 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 jobs:
   include:
-    - env: 'MODE=commitlint'
+    - if: type = pull_request
+      env: 'MODE=commitlint'
     - env: 'MODE=prettier'
     - env: 'MODE=lint'
     - env: 'MODE=aot'
@@ -25,7 +26,7 @@ jobs:
     - env: 'MODE=audit'
     - env: 'MODE=a11y'
 install:
-  - npm install
+  - npm ci
 script:
   - ./scripts/ci/travis-script.sh
 cache:

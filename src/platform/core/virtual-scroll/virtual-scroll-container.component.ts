@@ -84,7 +84,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
 
   @ViewChildren('rowElement') _rows: QueryList<ElementRef>;
 
-  @ContentChild(TdVirtualScrollRowDirective, { static: false }) _rowTemplate: TdVirtualScrollRowDirective;
+  @ContentChild(TdVirtualScrollRowDirective) _rowTemplate: TdVirtualScrollRowDirective;
 
   get rowHeight(): number {
     if (this._rows && this._rows.toArray()[0]) {

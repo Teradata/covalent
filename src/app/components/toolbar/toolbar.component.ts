@@ -24,16 +24,28 @@ export class ToolbarComponent {
       title: 'Markdown Navigator',
     },
     {
-      route: '/components/functions',
+      route: '/utilities/functions',
       icon: 'build',
       description: 'New helper functions for multiple situations',
       title: 'Functions',
     },
     {
-      route: '/echarts/types/pie',
+      route: '/echarts/pie',
       icon: 'pie_chart',
       description: 'Added pie type support',
       title: 'Pie Echarts',
+    },
+    {
+      route: '/echarts/map',
+      icon: 'map',
+      description: 'Added map type support',
+      title: 'Map Echarts',
+    },
+    {
+      route: '/echarts/wordcloud',
+      icon: 'cloud_queue',
+      description: 'Added wordcloud type support',
+      title: 'WordCloud Echarts',
     },
     {
       route: '/components/dialogs',

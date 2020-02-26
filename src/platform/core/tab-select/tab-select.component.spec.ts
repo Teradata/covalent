@@ -3,7 +3,7 @@ import { Component, DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentTabSelectModule } from './public-api';
+import { CovalentTabSelectModule } from './';
 
 describe('Component: TabSelect', () => {
   beforeEach(async(() => {
@@ -170,6 +170,10 @@ class TdTabSelectFormsTestComponent {
   `,
 })
 class TdTabSelectDynamicTestComponent {
-  options: any[] = [{ label: 'Option 1', value: 1 }, { label: 'Option 2', value: 2 }, { label: 'Option 3', value: 3 }];
+  options: any[] = [
+    { label: 'Option 1', value: 1 },
+    { label: 'Option 2', value: 2 },
+    { label: 'Option 3', value: 3 },
+  ];
   value: any;
 }

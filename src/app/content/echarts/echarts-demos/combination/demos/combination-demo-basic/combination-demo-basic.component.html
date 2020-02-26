@@ -1,0 +1,21 @@
+<div layout="row" layout-align="start center">
+  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+    Chart Theme:
+  </div>
+  <mat-form-field floatLabel="never">
+    <mat-select [(value)]="selectedTheme" (valueChange)="selectChartTheme($event)">
+      <mat-option *ngFor="let theme of themes" [value]="theme">
+        {{ theme }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<td-chart [style.height.px]="300" [themeName]="themeSelector.selected$ | async" [config]="{ tooltip: { show: true } }">
+  <td-chart-x-axis
+    [show]="true"
+    [data]="['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']"
+  ></td-chart-x-axis>
+  <td-chart-y-axis [show]="true" [type]="'value'" [min]="0" [max]="300"></td-chart-y-axis>
+  <td-chart-series td-bar [data]="[150, 130, 150, 120, 150, 120]" [name]="'Yesterday'"></td-chart-series>
+  <td-chart-series td-line [data]="[80, 122, 80, 120, 80, 120]" [name]="'Today'"></td-chart-series>
+</td-chart>

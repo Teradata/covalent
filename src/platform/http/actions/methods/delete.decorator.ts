@@ -8,10 +8,12 @@ export function TdDELETE(config: {
   path: string;
   options?: ITdHttpRESTOptions;
 }): (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>) => any {
-  return TdAbstractMethod(<any>Object.assign(
-    {
-      method: 'DELETE',
-    },
-    config,
-  ));
+  return TdAbstractMethod(
+    <any>Object.assign(
+      {
+        method: 'DELETE',
+      },
+      config,
+    ),
+  );
 }

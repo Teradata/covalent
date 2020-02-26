@@ -56,6 +56,7 @@
     & > .mat-drawer-content {
       flex-grow: 1;
     }
+
     /* Ensure the left sidenav is a flex column & 100% height */
     & > .mat-drawer > .mat-drawer-inner-container {
       box-shadow: $whiteframe-shadow-1dp;

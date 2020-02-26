@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../public-api';
+import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../';
 import { catchError } from 'rxjs/operators';
 
 describe('Directive: Loading', () => {
@@ -43,6 +43,40 @@ describe('Directive: Loading', () => {
           expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
           done();
+        });
+      });
+    })();
+  });
+
+  it('should render a spinner, replace strategy twice', (done: DoneFn) => {
+    inject([TdLoadingService], (loadingService: TdLoadingService) => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDefaultTestComponent);
+      fixture.detectChanges();
+      expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+      loadingService.register('name');
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
+        loadingService.resolve('name');
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+          expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+          loadingService.register('name');
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
+            loadingService.resolve('name');
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+              expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+              done();
+            });
+          });
         });
       });
     })();
@@ -231,7 +265,7 @@ describe('Directive: Loading', () => {
     })();
   });
 
-  it('should render a circle loading while the observable and resolve it in the catch by calling the service', (done: DoneFn) => {
+  it('should render a circle loading while the observable and resolve it with an error', (done: DoneFn) => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingNamedErrorStarUntilAsyncTestComponent);
       const component: TdLoadingNamedErrorStarUntilAsyncTestComponent = fixture.debugElement.componentInstance;
@@ -251,9 +285,6 @@ describe('Directive: Loading', () => {
         fixture.whenStable().then(() => {
           expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
-          expect(
-            (<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent.trim(),
-          ).toBeFalsy();
           done();
         });
       });
@@ -396,8 +427,7 @@ class TdLoadingNamedErrorStarUntilAsyncTestComponent {
   createObservable(): void {
     this.observable = this._subject.asObservable().pipe(
       catchError(() => {
-        this._loadingService.resolveAll('name1');
-        return of(undefined);
+        return of('error');
       }),
     );
   }

@@ -32,7 +32,7 @@ export const HTTP_INTERCEPTOR_PROVIDER: Provider = {
 export class CovalentHttpModule {
   constructor(private _internalHttpService: InternalHttpService) {}
 
-  static forRoot(config: IHttpConfig = { interceptors: [] }): ModuleWithProviders {
+  static forRoot(config: IHttpConfig = { interceptors: [] }): ModuleWithProviders<CovalentHttpModule> {
     return {
       ngModule: CovalentHttpModule,
       providers: [

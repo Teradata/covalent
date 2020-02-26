@@ -1,9 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Observable, BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TdMediaService {
   private _resizing: boolean = false;
   private _globalSubscription: Subscription;

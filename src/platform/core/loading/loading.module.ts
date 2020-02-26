@@ -1,5 +1,5 @@
 import { Type } from '@angular/core';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { PortalModule } from '@angular/cdk/portal';
@@ -21,6 +21,5 @@ const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [TdLoadingComponent];
   declarations: [TD_LOADING],
   exports: [TD_LOADING],
   providers: [LOADING_FACTORY_PROVIDER, LOADING_PROVIDER],
-  entryComponents: [TD_LOADING_ENTRY_COMPONENTS],
 })
 export class CovalentLoadingModule {}

@@ -29,7 +29,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   private _mode: StepMode = StepMode.Vertical;
   private _steps: QueryList<TdStepComponent>;
 
-  @ContentChildren(TdStepComponent)
+  @ContentChildren(TdStepComponent, { descendants: true })
   set stepsContent(steps: QueryList<TdStepComponent>) {
     if (steps) {
       this._steps = steps;

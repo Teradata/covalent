@@ -3,7 +3,6 @@ module.exports = {
   lib: {
     entryFile: 'index.ts',
     umdModuleIds: {
-      '@covalent/core': 'covalent.core',
       '@covalent/core/paging': 'covalent.core.paging',
       '@covalent/core/virtual-scroll': 'covalent.core.virtual-scroll',
       '@covalent/core/notifications': 'covalent.core.notifications',
@@ -31,7 +30,6 @@ module.exports = {
       '@covalent/code-editor': 'covalent.code-editor',
       '@covalent/text-editor': 'covalent.text-editor',
 
-      '@covalent/echarts': 'covalent.echarts',
       '@covalent/echarts/base': 'covalent.echarts.base',
       '@covalent/echarts/bar': 'covalent.echarts.bar',
       '@covalent/echarts/line': 'covalent.echarts.line',
@@ -39,8 +37,6 @@ module.exports = {
       '@covalent/echarts/tooltip': 'covalent.echarts.tooltip',
 
       '@covalent/markdown-navigator': 'covalent.markdown-navigator',
-
-      '@covalent/experimental': 'covalent.experimental',
     },
   },
   whitelistedNonPeerDependencies: ['.'],

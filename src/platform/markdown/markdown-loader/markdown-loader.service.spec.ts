@@ -1,5 +1,5 @@
 import { TestBed, inject, async } from '@angular/core/testing';
-import { MarkdownLoaderService } from './markdown-loader.service';
+import { TdMarkdownLoaderService } from './markdown-loader.service';
 import { CovalentMarkdownModule } from '../markdown.module';
 
 const SAMPLE_HEADING: string = 'Covalent: UI Platform based on Angular-Material';
@@ -11,7 +11,7 @@ const RAW_GH_BRANCH_URL: string = 'https://raw.githubusercontent.com/Teradata/co
 const NON_MARKDOWN_URL: string = 'https://teradata.github.io/covalent/#/';
 const UNREACHABLE_URL: string = 'https://github.com/';
 
-describe('MarkdownLoaderService', () => {
+describe('Service: MarkdownLoader', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [CovalentMarkdownModule],
@@ -19,35 +19,35 @@ describe('MarkdownLoaderService', () => {
   }));
 
   it('should fetch from a raw github url', async(
-    inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
+    inject([TdMarkdownLoaderService], async (_markdownLoaderService: TdMarkdownLoaderService) => {
       const markdown: string = await _markdownLoaderService.load(RAW_GH_URL);
       expect(markdown).toContain(SAMPLE_HEADING);
     }),
   ));
 
   it('should fetch from a non-raw github url', async(
-    inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
+    inject([TdMarkdownLoaderService], async (_markdownLoaderService: TdMarkdownLoaderService) => {
       const markdown: string = await _markdownLoaderService.load(GH_URL);
       expect(markdown).toContain(SAMPLE_HEADING);
     }),
   ));
 
   it('should fetch from a raw branch github url', async(
-    inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
+    inject([TdMarkdownLoaderService], async (_markdownLoaderService: TdMarkdownLoaderService) => {
       const markdown: string = await _markdownLoaderService.load(RAW_GH_BRANCH_URL);
       expect(markdown).toContain(SAMPLE_HEADING);
     }),
   ));
 
   it('should fetch from a non-raw branch github url', async(
-    inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
+    inject([TdMarkdownLoaderService], async (_markdownLoaderService: TdMarkdownLoaderService) => {
       const markdown: string = await _markdownLoaderService.load(BRANCH_GH_URL);
       expect(markdown).toContain(SAMPLE_HEADING);
     }),
   ));
 
   it('should throw error if content response type is not plain or markdown', async(
-    inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
+    inject([TdMarkdownLoaderService], async (_markdownLoaderService: TdMarkdownLoaderService) => {
       let failed: boolean = false;
       try {
         await _markdownLoaderService.load(NON_MARKDOWN_URL);
@@ -60,7 +60,7 @@ describe('MarkdownLoaderService', () => {
   ));
 
   it('should throw error if url is not reachable', async(
-    inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
+    inject([TdMarkdownLoaderService], async (_markdownLoaderService: TdMarkdownLoaderService) => {
       let failed: boolean = false;
       try {
         await _markdownLoaderService.load(UNREACHABLE_URL);

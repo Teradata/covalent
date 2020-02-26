@@ -519,6 +519,5 @@ export class TdDynamicTestComponent {
   declarations: [TdDynamicTestComponent],
   imports: [ReactiveFormsModule],
   exports: [TdDynamicTestComponent],
-  entryComponents: [TdDynamicTestComponent],
 })
 export class TdDynamicTestModule {}

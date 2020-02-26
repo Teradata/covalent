@@ -190,10 +190,7 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
       this._widthSubject.asObservable().pipe(distinctUntilChanged()),
       this._heightSubject.asObservable().pipe(distinctUntilChanged()),
     )
-      .pipe(
-        takeUntil(this._destroy),
-        debounceTime(100),
-      )
+      .pipe(takeUntil(this._destroy), debounceTime(100))
       .subscribe(() => {
         if (this._instance) {
           this._instance.resize();

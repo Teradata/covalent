@@ -1,3 +1,3 @@
 {
-  "extends": ["./src/platform/core/common/configs/tslint/tslint.json", "tslint-config-prettier"]
+  "extends": ["./src/platform/coding-standards/tslint/tslint.js"]
 }

@@ -4,9 +4,7 @@
  */
 
 import { Injectable } from '@angular/core';
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class IconService {
   // To update, run this little script on https://material.io/resources/icons/?style=baseline
   // JSON.stringify(

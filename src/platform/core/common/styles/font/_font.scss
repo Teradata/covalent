@@ -8,6 +8,7 @@ $mat-font-url: 'styles/font/' !default;
     src: url($mat-font-url+'MaterialIcons-Regular-v48.woff2') format('woff2');
   }
   .material-icons {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
@@ -24,6 +25,7 @@ $mat-font-url: 'styles/font/' !default;
 
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
+
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
 

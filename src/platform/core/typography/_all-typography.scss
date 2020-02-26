@@ -8,7 +8,7 @@
 @import '../steps/steps-theme';
 
 @function td-typography-config(
-  $font-family: 'Roboto, "Helvetica Neue", sans-serif',
+  $font-family: '"Roboto", "Helvetica Neue", sans-serif',
   $headline: td-typography-level(24px, 32px, 400),
   $title: td-typography-level(20px, 32px, 500),
   $subheading-2: td-typography-level(16px, 28px, 400),

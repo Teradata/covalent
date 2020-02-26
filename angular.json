@@ -30,6 +30,16 @@
                 "output": "/assets"
               },
               {
+                "glob": "**/demos/**/*",
+                "input": "src/app/content/components/component-demos",
+                "output": "/assets/demos"
+              },
+              {
+                "glob": "**/demos/**/*",
+                "input": "src/app/content/echarts/echarts-demos",
+                "output": "/assets/demos"
+              },
+              {
                 "glob": "**/*",
                 "input": "./docs",
                 "output": "./docs"

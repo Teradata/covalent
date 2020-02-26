@@ -1,3 +1,107 @@
+<a name="3.0.0-beta.3"></a>
+# [3.0.0-beta.3](https://github.com/teradata/covalent/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2020-02-10)
+
+Now that angular 9 is finally out and stable, covalent finally fully supports ivy! This release is specifically targeting bugfixes, breaking changes and ivy support.
+
+Please let us know if you have any problems, we will start going into an RC process over the next following weeks.
+
+### Breaking Changes
+
+* **build:** remove primary entry points ([f0dd4c652d61db957f6296c6a9a18871fab1782f](https://github.com/Teradata/covalent/commit/f0dd4c652d61db957f6296c6a9a18871fab1782f))
+
+We finally removed the primary entry points like `@covalent/core` and `@covalent/echarts`.. please use the secondary entry points.
+
+e.g.
+
+```
+@covalent/core/loading
+@covalent/core/common
+@covalent/echarts/base
+```
+
+* **code-editor:** autoLayout removed ([#1595](https://github.com/teradata/covalent/issues/1595)) ([02304db](https://github.com/teradata/covalent/commit/02304db))
+
+`autoLayout` was deprecated and didnt have any real value.
+
+* **http:** remove http class decorators ([#1611](https://github.com/teradata/covalent/issues/1611)) ([85a0341](https://github.com/teradata/covalent/commit/85a0341))
+
+`@TdHttp` and `@TdHttpClient` were deprecated and removed since they wouldnt work in conjunction of `@Injectable` and it will break in angular v10.
+
+Please extend the mixin `mixinHttp` to provide the same functionality.
+
+* **file-service:** remove upload method ([#1613](https://github.com/teradata/covalent/issues/1613)) ([45f4467](https://github.com/teradata/covalent/commit/45f4467))
+
+`upload` method was removed in favor of `send`.
+
+### Bug Fixes
+
+* **markdown-navigator:** get rid of markdown-nav-window extra scrollbar ([#1600](https://github.com/teradata/covalent/issues/1600)) ([0e4f780](https://github.com/teradata/covalent/commit/0e4f780))
+* **breadcrumbs:** react to size and icon change ([#1608](https://github.com/teradata/covalent/issues/1608)) ([5d31311](https://github.com/teradata/covalent/commit/5d31311))
+* **build:** remove internal rxjs import ([#1594](https://github.com/teradata/covalent/issues/1594)) ([10e0786](https://github.com/teradata/covalent/commit/10e0786))
+* **docs:** rtl styling ([#1596](https://github.com/teradata/covalent/issues/1596)) ([da38db6](https://github.com/teradata/covalent/commit/da38db6))
+* **docs:** fix gh-pages deployment script ([87e7334](https://github.com/teradata/covalent/commit/87e7334))
+* **text-editor:** fix mde placeholder ([#1609](https://github.com/teradata/covalent/issues/1609)) ([b7ed374](https://github.com/teradata/covalent/commit/b7ed374))
+
+
+### Features
+
+* **fix-td-message-demo:** modified for clarity of usage ([#1598](https://github.com/teradata/covalent/issues/1598)) ([da44eb3](https://github.com/teradata/covalent/commit/da44eb3))
+* **loading:** add a fullscreen loading demo ([#1599](https://github.com/teradata/covalent/issues/1599)) ([0a970e9](https://github.com/teradata/covalent/commit/0a970e9))
+* **messages-docs:** add more demos to messages, remove unused code ([#1605](https://github.com/teradata/covalent/issues/1605)) ([bddb743](https://github.com/teradata/covalent/commit/bddb743))
+* **all:** upgrade to angular 9 ([#1612](https://github.com/teradata/covalent/issues/1612)) ([2dacec0](https://github.com/teradata/covalent/commit/2dacec0))
+
+
+
+<a name="3.0.0-beta.2"></a>
+# [3.0.0-beta.2](https://github.com/teradata/covalent/compare/v3.0.0-beta.1-2...v3.0.0-beta.2) (2019-12-19)
+
+With this beta release, we decided to redesign our docs and create a better look and feel!
+This is just the beginning and we will add stackblitz support for each demo and a lot more demos.
+
+Let us know what would improve your experience with our docs!
+
+Highlights:
+
+Map type echart support!
+WordCloud type echart support!
+Markdown Navigator improvements!
+Initial version of nav links component!
+Ivy support with backwards compatibility!
+Coding Standards package (`@covalent/coding-standards`)
+Lots of bug fixes
+
+### Bug Fixes
+
+* **build:** revert service providers to support ng 7-8 ([#1588](https://github.com/teradata/covalent/issues/1588)) ([1db1cdf](https://github.com/teradata/covalent/commit/1db1cdf))
+* **code-editor:** remove added styles on destroy ([#1518](https://github.com/teradata/covalent/issues/1518)) ([ce45ce9](https://github.com/teradata/covalent/commit/ce45ce9))
+* **echarts:** build was failing for package ([#1569](https://github.com/teradata/covalent/issues/1569)) ([e61e832](https://github.com/teradata/covalent/commit/e61e832))
+* **echarts:** make sure we grab tooltip templates ([#1562](https://github.com/teradata/covalent/issues/1562)) ([29e4df2](https://github.com/teradata/covalent/commit/29e4df2))
+* **http:** *DEPRECATE* http class decorators ([#1589](https://github.com/teradata/covalent/issues/1589)) ([55613da](https://github.com/teradata/covalent/commit/55613da))
+* **markdown:** fix gh svg links ([#1565](https://github.com/teradata/covalent/issues/1565)) ([2518ebb](https://github.com/teradata/covalent/commit/2518ebb))
+* **nav-drawer:** overflow ellipsis ([#1572](https://github.com/teradata/covalent/issues/1572)) ([9a12955](https://github.com/teradata/covalent/commit/9a12955))
+* **stylelint:** include stylelint config in build & convert to js ([#1534](https://github.com/teradata/covalent/issues/1534)) ([1dfd731](https://github.com/teradata/covalent/commit/1dfd731))
+
+
+### Features
+
+* **coding-standards:** create a [@covalent](https://github.com/covalent)/coding-standards package ([#1551](https://github.com/teradata/covalent/issues/1551)) ([0e22559](https://github.com/teradata/covalent/commit/0e22559))
+* **coding-standards:** add doc and make tslint js instead of json ([#1554](https://github.com/teradata/covalent/issues/1554)) ([f691634](https://github.com/teradata/covalent/commit/f691634))
+* **docs:** redesign ([#1579](https://github.com/teradata/covalent/issues/1579)) ([0da3a02](https://github.com/teradata/covalent/commit/0da3a02)), closes [#1538](https://github.com/teradata/covalent/issues/1538) [#1558](https://github.com/teradata/covalent/issues/1558) [#1557](https://github.com/teradata/covalent/issues/1557) [#1560](https://github.com/teradata/covalent/issues/1560) [#1562](https://github.com/teradata/covalent/issues/1562) [#1565](https://github.com/teradata/covalent/issues/1565) [#1566](https://github.com/teradata/covalent/issues/1566) [#1567](https://github.com/teradata/covalent/issues/1567) [#1555](https://github.com/teradata/covalent/issues/1555) [#1564](https://github.com/teradata/covalent/issues/1564) [#1569](https://github.com/teradata/covalent/issues/1569) [#1572](https://github.com/teradata/covalent/issues/1572) [#1563](https://github.com/teradata/covalent/issues/1563)
+* **easmde:** convert from simplemde ([#1560](https://github.com/teradata/covalent/issues/1560)) ([8aa94c4](https://github.com/teradata/covalent/commit/8aa94c4))
+* **echarts:** add wordcloud type with ecomfe/echarts-wordcloud ([#1564](https://github.com/teradata/covalent/issues/1564)) ([abeeb0c](https://github.com/teradata/covalent/commit/abeeb0c))
+* **echarts:** add map type visualization and demo ([#1555](https://github.com/teradata/covalent/issues/1555)) ([783230f](https://github.com/teradata/covalent/commit/783230f))
+* **ivy:** ivy support ([#1520](https://github.com/teradata/covalent/issues/1520)) ([e5beffc](https://github.com/teradata/covalent/commit/e5beffc))
+* **ivy:** upgrade to angular 9 ([#1538](https://github.com/teradata/covalent/issues/1538)) ([e2ac8eb](https://github.com/teradata/covalent/commit/e2ac8eb))
+* **markdown-navigator:** add ability to start at a point in tree ([#1567](https://github.com/teradata/covalent/issues/1567)) ([7243523](https://github.com/teradata/covalent/commit/7243523))
+* **markdown-navigator:** add resizability feature ([#1563](https://github.com/teradata/covalent/issues/1563)) ([3385ef5](https://github.com/teradata/covalent/commit/3385ef5))
+* **markdown-navigator:** add MarkdownNavigatorWindowDirective ([#1558](https://github.com/teradata/covalent/issues/1558)) ([79ae4c5](https://github.com/teradata/covalent/commit/79ae4c5))
+* **markdown-navigator:** add nightly for package ([#1566](https://github.com/teradata/covalent/issues/1566)) ([8f2674c](https://github.com/teradata/covalent/commit/8f2674c))
+* **markdown-navigator:** only open one window at a time ([#1557](https://github.com/teradata/covalent/issues/1557)) ([b1eaf0f](https://github.com/teradata/covalent/commit/b1eaf0f))
+* **nav-links:** add nav-links module ([#1513](https://github.com/teradata/covalent/issues/1513)) ([412b12e](https://github.com/teradata/covalent/commit/412b12e))
+* **nav-links:** improve API contract + tweaks ([#1537](https://github.com/teradata/covalent/issues/1537)) ([0380540](https://github.com/teradata/covalent/commit/0380540))
+* **tslint:** update tslint rules ([#1539](https://github.com/teradata/covalent/issues/1539)) ([31e8cd2](https://github.com/teradata/covalent/commit/31e8cd2)), closes [#1542](https://github.com/teradata/covalent/issues/1542)
+
+
 # [3.0.0-beta.1-2](https://github.com/teradata/covalent/compare/v3.0.0-beta.1-1...v3.0.0-beta.1-2) (2019-10-11)
 
 
