@@ -29,7 +29,7 @@
     "build:universal": "bash scripts/build-universal",
     "publish:npm": "npm run build:lib && bash scripts/npm-publish",
     "publish:nightly": "npm run build:lib && bash scripts/nightly-publish core && bash scripts/nightly-publish coding-standards && bash scripts/nightly-publish code-editor && bash scripts/nightly-publish text-editor && bash scripts/nightly-publish echarts && bash scripts/nightly-publish markdown-navigator && bash scripts/nightly-publish experimental",
-    "ghpages:deploy": "npm run build:docs -- --base-href /covalent/ && bash scripts/ghpages-deploy",
+    "ghpages:deploy": "VERSION=$(echo v${npm_package_version} | cut -c1-2) && npm run build:docs -- --base-href /covalent/$VERSION && bash scripts/ghpages-deploy $VERSION",
     "release:start": "bash scripts/start-release",
     "release:finish": "bash scripts/finish-release",
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
@@ -37,10 +37,7 @@
     "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt",
     "prettier": "./node_modules/.bin/prettier --write './**/*.{ts,js,json,css,scss,yml,html,md}'",
     "prettier:check": "./node_modules/.bin/prettier --check './**/*.{ts,js,json,css,scss,yml,html,md}'",
-    "commitlint": "node ./node_modules/@commitlint/travis-cli/lib/cli.js",
-    "build:ghpages": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --prod --optimization --output-path covalent-docs --base-href /covalent/latest/",
-    "deploy:ghpages": "node --max_old_space_size=5048 ./node_modules/@koumoul/gh-pages-multi/bin/gh-pages-multi.js deploy -s covalent-docs --no-history",
-    "gh-pages": "npm run build:ghpages && deploy:ghpages"
+    "commitlint": "node ./node_modules/@commitlint/travis-cli/lib/cli.js"
   },
   "engines": {
     "node": ">=10.15.3",
@@ -104,7 +101,6 @@
     "@angular/cli": "^9.0.0",
     "@angular/compiler-cli": "^9.0.0",
     "@covalent/coding-standards": "file:src/platform/coding-standards",
-    "@koumoul/gh-pages-multi": "^0.7.1",
     "@types/codemirror": "0.0.80",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",

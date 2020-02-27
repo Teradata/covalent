@@ -20,15 +20,6 @@
       <span [routerLink]="['/']" class="cursor-pointer" [style.textTransform]="'capitalize'">
         Covalent
       </span>
-      <button mat-button [matMenuTriggerFor]="verMenu">
-        {{ '3.0.0' }}
-        <mat-icon>arrow_drop_down</mat-icon>
-      </button>
-      <mat-menu #verMenu="matMenu">
-        <a mat-menu-item href="https://teradata.github.io/covalent/v1.0.x">1.0.x</a>
-        <a mat-menu-item href="https://teradata.github.io/covalent/v2.1.x">2.1.x</a>
-        <a mat-menu-item href="https://teradata.github.io/covalent/latest">3.0.0</a>
-      </mat-menu>
       <td-toolbar flex layout="row"></td-toolbar>
     </div>
     <router-outlet></router-outlet>
