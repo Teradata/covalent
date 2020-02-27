@@ -36,9 +36,9 @@
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
     "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular",
     "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt",
-    "build:ghpages": "./node_modules/@angular/cli/bin/ng build --prod --optimization --output-path covalent-docs --base-href /covalent/v2.1.x/",
-    "deploy:ghpages": "node --max_old_space_size=5048 ./node_modules/@koumoul/gh-pages-multi/bin/gh-pages-multi.js deploy -s covalent-docs -t v2.1.x",
-    "publish:gh-pages": "npm run build:ghpages && npm run deploy:ghpages"
+    "build:ghpages": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --prod --optimization --output-path covalent-docs --base-href /covalent/v${npm_package_version}/",
+    "deploy:version": "node --max_old_space_size=5048 ./node_modules/@koumoul/gh-pages-multi/bin/gh-pages-multi.js deploy -s covalent-docs -t v${npm_package_version}",
+    "gh-pages": "npm run build:ghpages && deploy:version"
   },
   "engines": {
     "node": ">=10.15.3",
