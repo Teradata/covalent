@@ -37,7 +37,10 @@
     "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt",
     "prettier": "./node_modules/.bin/prettier --write './**/*.{ts,js,json,css,scss,yml,html,md}'",
     "prettier:check": "./node_modules/.bin/prettier --check './**/*.{ts,js,json,css,scss,yml,html,md}'",
-    "commitlint": "node ./node_modules/@commitlint/travis-cli/lib/cli.js"
+    "commitlint": "node ./node_modules/@commitlint/travis-cli/lib/cli.js",
+    "build:ghpages": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --prod --optimization --output-path covalent-docs --base-href /covalent/latest/",
+    "deploy:ghpages": "node --max_old_space_size=5048 ./node_modules/@koumoul/gh-pages-multi/bin/gh-pages-multi.js deploy -s covalent-docs --no-history",
+    "gh-pages": "npm run build:ghpages && deploy:ghpages"
   },
   "engines": {
     "node": ">=10.15.3",
@@ -101,6 +104,7 @@
     "@angular/cli": "^9.0.0",
     "@angular/compiler-cli": "^9.0.0",
     "@covalent/coding-standards": "file:src/platform/coding-standards",
+    "@koumoul/gh-pages-multi": "^0.7.1",
     "@types/codemirror": "0.0.80",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
