@@ -1,0 +1,10 @@
+<p class="mat-body-1 tc-grey-700 push-top-sm pad-bottom-sm">sorting on a date column</p>
+<mat-divider inset></mat-divider>
+<ng-container *ngIf="dateSortData">
+<td-data-table [data]="dateSortData" [sortable]="true" [sortBy]="'date'" [sortOrder]="sortOrder" (sortChange)="sortDates($event)"
+  [columns]="dateColumns">
+  <ng-template tdDataTableTemplate="img" let-value="value">
+    <img [src]="value" />
+  </ng-template>
+</td-data-table>
+</ng-container>

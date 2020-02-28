@@ -1,0 +1,26 @@
+<p class="mat-body-1 tc-grey-700 push-top-sm pad-bottom-sm">sorting on a date or first name column</p>
+<mat-divider inset></mat-divider>
+<table td-data-table>
+  <thead>
+    <tr td-data-table-column-row>
+      <th td-data-table-column [name]="'date'"
+                                [sortable]="true"
+                                [active]="atomicSortBy == 'date'"
+                                (sortChange)="sortAtomic($event)"
+                                [sortOrder]="atomicSortOrder">Date</th>
+      <th td-data-table-column [name]="'first_name'"
+                                [sortable]="true"
+                                [active]="atomicSortBy == 'first_name'"
+                                (sortChange)="sortAtomic($event)"
+                                [sortOrder]="atomicSortOrder">First Name</th>
+      <th td-data-table-column [name]="'last_name'">Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr td-data-table-row *ngFor="let item of atomicData">
+      <td td-data-table-cell>{{item.date}}</td>
+      <td td-data-table-cell>{{item.first_name}}</td>
+      <td td-data-table-cell>{{item.last_name}}</td>
+    </tr>
+  </tbody>
+</table>

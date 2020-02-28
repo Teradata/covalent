@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
-import { InternalDocsService } from '../../../../services';
-import { ITdDataTableColumn } from '../../../../../platform/core/data-table';
-import { TdDialogService } from '../../../../../platform/core/dialogs';
+import { InternalDocsService } from '../../../../../../services';
+import { ITdDataTableColumn } from '../../../../../../../platform/core/data-table';
+import { TdDialogService } from '../../../../../../../platform/core/dialogs';
 
 const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 
 @Component({
-  selector: 'data-table-hero',
-  styleUrls: ['./data-table.component.scss'],
-  templateUrl: './data-table.component.html',
+  selector: 'data-table-demo-custom',
+  styleUrls: ['./data-table-demo-custom.component.scss'],
+  templateUrl: './data-table-demo-custom.component.html',
   preserveWhitespaces: true,
 })
-export class DataTableHeroComponent implements OnInit {
+export class DataTableDemoCustomComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'first_name', label: 'First Name', sortable: true, width: 150 },
     { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
@@ -22,13 +22,7 @@ export class DataTableHeroComponent implements OnInit {
 
   data: any[];
   basicData: any[];
-
   constructor(private _internalDocsService: InternalDocsService, private _dialogService: TdDialogService) {}
-
-  async ngOnInit(): Promise<void> {
-    this.data = await this._internalDocsService.queryData().toPromise();
-    this.basicData = this.data.slice(0, 10);
-  }
 
   openPrompt(row: any, name: string): void {
     this._dialogService
@@ -42,5 +36,10 @@ export class DataTableHeroComponent implements OnInit {
           row[name] = value;
         }
       });
+  }
+
+  async ngOnInit(): Promise<void> {
+    this.data = await this._internalDocsService.queryData().toPromise();
+    this.basicData = this.data.slice(0, 10);
   }
 }
