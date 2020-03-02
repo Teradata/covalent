@@ -1,7 +1,6 @@
 ::ng-deep {
   .td-data-table-scrollable {
-    /* stylelint-disable length-zero-no-unit */
-    border-top: 0;
+    border-top: none;
   }
   td-data-table {
     border-bottom: 0px;
