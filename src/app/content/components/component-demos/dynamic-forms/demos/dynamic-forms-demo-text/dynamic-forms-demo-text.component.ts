@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
 
 @Component({
-  selector: 'dynamic-forms-demo-basic',
-  styleUrls: ['./dynamic-forms-demo-basic.component.scss'],
-  templateUrl: './dynamic-forms-demo-basic.component.html',
+  selector: 'dynamic-forms-demo-text',
+  styleUrls: ['./dynamic-forms-demo-text.component.scss'],
+  templateUrl: './dynamic-forms-demo-text.component.html',
   preserveWhitespaces: true,
 })
-export class DynamicFormsDemoBasicComponent {
+export class DynamicFormsDemoTextComponent {
   textElements: ITdDynamicElementConfig[] = [
     {
       name: 'input',
