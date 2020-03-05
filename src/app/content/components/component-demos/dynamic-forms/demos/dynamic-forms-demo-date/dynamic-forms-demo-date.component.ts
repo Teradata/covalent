@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
+import { ITdDynamicElementConfig, TdDynamicElement } from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'dynamic-forms-demo-date',
   styleUrls: ['./dynamic-forms-demo-date.component.scss'],
   templateUrl: './dynamic-forms-demo-date.component.html',
-  preserveWhitespaces: true,
 })
 export class DynamicFormsDemoDateComponent {
   dateElements: ITdDynamicElementConfig[] = [

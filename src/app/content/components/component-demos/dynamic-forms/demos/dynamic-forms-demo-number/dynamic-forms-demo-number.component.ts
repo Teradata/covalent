@@ -5,7 +5,6 @@ import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@coval
   selector: 'dynamic-forms-demo-number',
   styleUrls: ['./dynamic-forms-demo-number.component.scss'],
   templateUrl: './dynamic-forms-demo-number.component.html',
-  preserveWhitespaces: true,
 })
 export class DynamicFormsDemoNumberComponent {
   numberElements: ITdDynamicElementConfig[] = [

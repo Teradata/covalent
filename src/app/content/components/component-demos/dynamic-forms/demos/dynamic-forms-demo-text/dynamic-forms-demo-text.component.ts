@@ -5,7 +5,6 @@ import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@coval
   selector: 'dynamic-forms-demo-text',
   styleUrls: ['./dynamic-forms-demo-text.component.scss'],
   templateUrl: './dynamic-forms-demo-text.component.html',
-  preserveWhitespaces: true,
 })
 export class DynamicFormsDemoTextComponent {
   textElements: ITdDynamicElementConfig[] = [

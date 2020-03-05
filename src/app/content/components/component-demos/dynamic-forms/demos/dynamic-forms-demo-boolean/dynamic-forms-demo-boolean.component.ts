@@ -5,7 +5,6 @@ import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@coval
   selector: 'dynamic-forms-demo-boolean',
   styleUrls: ['./dynamic-forms-demo-boolean.component.scss'],
   templateUrl: './dynamic-forms-demo-boolean.component.html',
-  preserveWhitespaces: true,
 })
 export class DynamicFormsDemoBooleanComponent {
   booleanElements: ITdDynamicElementConfig[] = [

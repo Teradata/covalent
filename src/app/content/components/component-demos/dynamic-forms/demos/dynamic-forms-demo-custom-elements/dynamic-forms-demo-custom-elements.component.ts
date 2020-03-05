@@ -24,7 +24,6 @@ export class TdTestDynamicComponent {
   selector: 'dynamic-forms-demo-custom-elements',
   styleUrls: ['./dynamic-forms-demo-custom-elements.component.scss'],
   templateUrl: './dynamic-forms-demo-custom-elements.component.html',
-  preserveWhitespaces: true,
 })
 export class DynamicFormsDemoCustomElementsComponent {
   customElements: ITdDynamicElementConfig[] = [
