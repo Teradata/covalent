@@ -3,6 +3,7 @@
     routerLinkActive
     #rla="routerLinkActive"
     [routerLinkActiveOptions]="{exact:true}"
+    [routerLink]="['/components', 'nav-steps', 'examples']"
     [state]="'complete'"
     [label]="'1st step'"
     [sublabel]="'complete but can be edited'"
@@ -20,14 +21,16 @@
     routerLinkActive
     #rla3="routerLinkActive"
     [routerLinkActiveOptions]="{exact: true}"
+    [routerLink]="['/components', 'nav-steps', 'examples', 'route3']"
     [state]="'required'"
-    [label]="'3rd step'"
     [sublabel]="'required step'"
+    [label]="'3rd step'"
     [active]="rla3.isActive"></a>
   <a td-step-link
     routerLinkActive
     #rla4="routerLinkActive"
     [routerLinkActiveOptions]="{exact: true}"
+    [routerLink]="['/components', 'nav-steps', 'examples', 'route4']"
     [state]="'none'"
     [label]="'optional step'"
     [sublabel]="'last and final'"
