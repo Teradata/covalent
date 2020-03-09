@@ -1,4 +1,20 @@
 @mixin td-toolbar-utilities() {
+  body[dense] mat-toolbar,
+  body[dense] mat-toolbar-row,
+  mat-toolbar[dense],
+  mat-toolbar-row[dense] {
+    &.mat-toolbar-multiple-rows {
+      .mat-toolbar-row,
+      .mat-toolbar-single-row {
+        height: 48px;
+      }
+    }
+
+    &.mat-toolbar-single-row,
+    &.mat-toolbar-row {
+      height: 48px;
+    }
+  }
   mat-toolbar {
     [mat-button] {
       &:first-of-type:not(:last-child) {
