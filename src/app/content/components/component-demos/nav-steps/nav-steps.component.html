@@ -22,4 +22,12 @@
       [state]="'required'"
       [label]="'3rd step'"
       [active]="rla3.isActive"></a>
+  <a td-step-link
+      routerLinkActive
+      #rla4="routerLinkActive"
+      [routerLinkActiveOptions]="{exact: true}"
+      [state]="'none'"
+      [label]="'Optional step'"
+      [sublabel]="'Last and final'"
+      [active]="rla4.isActive"></a>
 </nav>

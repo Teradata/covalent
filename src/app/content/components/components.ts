@@ -378,7 +378,7 @@ export const componentDetails: any = [
     name: 'Nav Steps',
     id: 'nav-steps',
     description:
-      'Navigate across a sequence of logical & numbered steps (shrink width of page to see responsive behavior)',
+      'Navigate across a sequence of logical and numbered steps. Shrink width of page to see responsive behavior',
     apiDocUrl: 'platform/core/steps/nav/README.md',
     overviewDocUrl: '',
     showExampleTab: true,

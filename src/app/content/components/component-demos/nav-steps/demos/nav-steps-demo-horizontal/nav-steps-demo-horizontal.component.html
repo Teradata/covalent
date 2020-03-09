@@ -6,7 +6,7 @@
     [routerLink]="['/components', 'nav-steps', 'examples']"
     [state]="'complete'"
     [label]="'1st step'"
-    [sublabel]="'some description'"
+    [sublabel]="'complete but can be edited'"
     [active]="rla.isActive"></a>
   <a td-step-link
     routerLinkActive
@@ -14,6 +14,7 @@
     [routerLinkActiveOptions]="{exact: true}"
     [state]="'complete'"
     [label]="'2nd step'"
+    [sublabel]="'disabled step'"
     [disabled]="true"
     [active]="rla2.isActive"></a>
   <a td-step-link
@@ -22,6 +23,7 @@
     [routerLinkActiveOptions]="{exact: true}"
     [routerLink]="['/components', 'nav-steps', 'examples', 'route3']"
     [state]="'required'"
+    [sublabel]="'required step'"
     [label]="'3rd step'"
     [active]="rla3.isActive"></a>
   <a td-step-link
@@ -30,9 +32,7 @@
     [routerLinkActiveOptions]="{exact: true}"
     [routerLink]="['/components', 'nav-steps', 'examples', 'route4']"
     [state]="'none'"
-    [label]="'Optional step'"
-    [sublabel]="'Last and final'"
+    [label]="'optional step'"
+    [sublabel]="'last and final'"
     [active]="rla4.isActive"></a>
 </nav>
-<mat-divider inset></mat-divider>
-<router-outlet></router-outlet>
