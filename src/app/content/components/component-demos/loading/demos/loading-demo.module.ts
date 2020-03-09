@@ -9,6 +9,9 @@ import { LoadingDemoRoutingModule } from './loading-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { MatButtonModule } from '@angular/material/button';
 import { LoadingDemoFullscreenComponent } from './loading-demo-fullscreen/loading-demo-fullscreen.component';
+import { LoadingDemoIconComponent } from './loading-demo-icon/loading-demo-icon.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,7 @@ import { LoadingDemoFullscreenComponent } from './loading-demo-fullscreen/loadin
     LoadingDemoReplaceComponent,
     LoadingDemoObservableComponent,
     LoadingDemoFullscreenComponent,
+    LoadingDemoIconComponent,
   ],
   imports: [
     DemoModule,
@@ -26,6 +30,8 @@ import { LoadingDemoFullscreenComponent } from './loading-demo-fullscreen/loadin
     /** Angular Modules */
     CommonModule,
     MatButtonModule,
+    MatIconModule,
+    MatListModule,
   ],
 })
 export class LoadingDemoModule {}
