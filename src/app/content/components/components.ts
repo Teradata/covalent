@@ -118,7 +118,7 @@ export const componentDetails: any = [
   {
     name: 'Stepper',
     id: 'steps',
-    description: 'A sequence of logical & numbered steps',
+    description: 'A sequence of logical and numbered steps with associated active and complete state',
     apiDocUrl: 'platform/core/steps/README.md',
     overviewDocUrl: '',
     showExampleTab: true,
