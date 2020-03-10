@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChipsDemoWithStringsComponent } from './chips-demo-with-strings/chips-demo-with-strings.component';
+import { ChipsDemoWithRequireMatchAttributeComponent } from './chips-demo-with-requireMatch-attribute/chips-demo-with-requireMatch-attribute.component';
 import { CovalentChipsModule } from '@covalent/core/chips';
 import { ChipsDemoComponent } from './chips-demo.component';
 import { ChipsDemoRoutingModule } from './chips-demo-routing.module';
@@ -20,7 +20,7 @@ import { ChipsDemoForChipEventsComponent } from './chips-demo-for-chip-events/ch
 @NgModule({
   declarations: [
     ChipsDemoComponent,
-    ChipsDemoWithStringsComponent,
+    ChipsDemoWithRequireMatchAttributeComponent,
     ChipsDemoWithObjectsComponent,
     ChipsDemoWithRequiredAttributeComponent,
     ChipsDemoWithChipAvatarComponent,

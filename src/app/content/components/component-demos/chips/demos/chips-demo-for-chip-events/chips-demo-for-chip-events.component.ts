@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chips-demo-for-chip-events.component.scss'],
 })
 export class ChipsDemoForChipEventsComponent {
-  events: string[] = [];
+  event: string = 'Event:';
   strings: string[] = ['stepper', 'expansion-panel', 'markdown', 'highlight', 'loading'];
   stringsModel: string[] = this.strings.slice(0, 2);
   filteredStrings: string[];
@@ -33,18 +33,18 @@ export class ChipsDemoForChipEventsComponent {
   }
 
   handleChipBlur(value: any): void {
-    this.events.push(this.logTime + ': Blur Event received from ' + value);
+    this.event = `Event: Blur event emitted for '${value}'`;
   }
 
   handleChipFocus(value: any): void {
-    this.events.push(this.logTime + ': Focus Event received from ' + value);
+    this.event = `Event: Focus event emitted for '${value}'`;
   }
 
   handleAdd(value: any): void {
-    this.events.push(this.logTime + ': Add Event received from ' + value);
+    this.event = `Event: Add event emitted for '${value}'`;
   }
 
   handleRemove(value: any): void {
-    this.events.push(this.logTime + ': Remove Event received from ' + value);
+    this.event = `Event: Remove event emitted for '${value}'`;
   }
 }

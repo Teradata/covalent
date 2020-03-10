@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'chips-demo-with-strings',
-  styleUrls: ['./chips-demo-with-strings.component.scss'],
-  templateUrl: './chips-demo-with-strings.component.html',
+  selector: 'chips-demo-with-requireMatch-attribute',
+  styleUrls: ['./chips-demo-with-requireMatch-attribute.component.scss'],
+  templateUrl: './chips-demo-with-requireMatch-attribute.component.html',
   preserveWhitespaces: true,
 })
-export class ChipsDemoWithStringsComponent {
+export class ChipsDemoWithRequireMatchAttributeComponent {
   strings: string[] = ['stepper', 'expansion-panel', 'markdown', 'highlight', 'loading'];
   stringsModel: string[] = this.strings.slice(0, 2);
   disabled: boolean = false;
