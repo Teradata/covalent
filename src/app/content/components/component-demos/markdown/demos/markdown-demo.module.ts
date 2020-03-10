@@ -5,9 +5,18 @@ import { CovalentMarkdownModule } from '@covalent/markdown';
 import { MarkdownDemoComponent } from './markdown-demo.component';
 import { MarkdownDemoRoutingModule } from './markdown-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { MarkdownDemoAnchorJumpingComponent } from './markdown-demo-anchor-jumping/markdown-demo-anchor-jumping.component';
+import { MarkdownDemoHostedUrlComponent } from './markdown-demo-hosted-url/markdown-demo-hosted-url.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [MarkdownDemoComponent, MarkdownDemoBasicComponent],
+  declarations: [
+    MarkdownDemoComponent,
+    MarkdownDemoBasicComponent,
+    MarkdownDemoAnchorJumpingComponent,
+    MarkdownDemoHostedUrlComponent,
+  ],
   imports: [
     DemoModule,
     MarkdownDemoRoutingModule,
@@ -15,6 +24,8 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CovalentMarkdownModule,
     /** Angular Modules */
     CommonModule,
+    MatButtonModule,
+    MatCardModule,
   ],
 })
 export class MarkdownDemoModule {}

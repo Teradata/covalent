@@ -10,6 +10,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class DemoComponent {
   @Input() demoId: string;
+  @Input() demoTitle: string;
   viewCode: boolean = false;
   typescriptFile: string;
   htmlFile: string;

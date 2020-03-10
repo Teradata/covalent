@@ -9,7 +9,7 @@
       [style.max-width]="sidenavWidth"
       [style.min-width]="sidenavWidth"
     >
-      <mat-toolbar [color]="color">
+      <mat-toolbar class="td-layout-toolbar" [color]="color">
         <ng-content select="[td-menu-button]"></ng-content>
         <span
           *ngIf="icon || logo || toolbarTitle"
@@ -28,7 +28,7 @@
       </div>
     </mat-sidenav>
     <div class="td-layout-nav-list-main">
-      <mat-toolbar [color]="color">
+      <mat-toolbar class="td-layout-toolbar" [color]="color">
         <ng-content select="[td-toolbar-content]"></ng-content>
       </mat-toolbar>
       <div class="td-layout-nav-list-content" cdkScrollable>
