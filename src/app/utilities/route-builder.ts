@@ -38,6 +38,10 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
             path: 'examples',
             loadChildren: componentMatch.demo,
           },
+          {
+            path: 'migration',
+            loadChildren: componentMatch.migration,
+          },
         ],
       },
     ];
