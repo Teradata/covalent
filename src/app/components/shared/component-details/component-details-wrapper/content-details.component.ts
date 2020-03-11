@@ -36,17 +36,22 @@ export class DetailsWrapperComponent implements OnInit {
 
   ngOnInit(): void {
     this.component = this._route.snapshot.data;
-    if (this.component.hideExamples) {
+    if (!this.component.showExamples) {
       this.navLinks = this.navLinks.filter((link: any) => {
         return link.route !== 'examples';
       });
     }
-    if (this.component.hideOverview) {
+    if (!this.component.showAPI) {
+      this.navLinks = this.navLinks.filter((link: any) => {
+        return link.route !== 'api';
+      });
+    }
+    if (!this.component.showOverview) {
       this.navLinks = this.navLinks.filter((link: any) => {
         return link.route !== 'overview';
       });
     }
-    if (this.component.hideMigration) {
+    if (!this.component.showMigration) {
       this.navLinks = this.navLinks.filter((link: any) => {
         return link.route !== 'migration';
       });

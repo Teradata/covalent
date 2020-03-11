@@ -4,7 +4,7 @@
   color="warn"
   icon="warning"
   class="push-bottom-md"
-  *ngIf="!component?.hideMigration"
+  *ngIf="component?.showMigration"
 >
   <a td-message-actions mat-button target="_blank" [href]="component?.materialDocUrl" class="mat-button">
     VIEW DOC
