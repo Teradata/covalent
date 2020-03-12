@@ -157,7 +157,7 @@ const routes: Routes = [
       {
         path: 'file-upload',
         loadChildren: () =>
-          import('./component-demos/file-upload/file-upload.module').then((m: any) => m.FileUploadDemoModule),
+          import('./component-demos/file-upload/file-upload.module').then((m: any) => m.FileUploadModule),
       },
     ],
   },

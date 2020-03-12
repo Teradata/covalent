@@ -5,7 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -29,7 +31,9 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     MatButtonModule,
     MatDividerModule,
     MatExpansionModule,
+    MatFormFieldModule,
     MatIconModule,
+    MatInputModule,
     MatListModule,
     MatSlideToggleModule,
     MatToolbarModule,

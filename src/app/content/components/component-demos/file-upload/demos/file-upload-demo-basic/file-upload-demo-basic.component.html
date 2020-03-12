@@ -1,2 +1,19 @@
-<p>file-upload-demo-basic works!</p>
-<div>You made it work</div>
+<h2>Covalent</h2>
+<button mat-button routerLink="/components/file-input" routerLinkActive="active">Use Covalent file-input component</button>
+
+
+<hr>
+<h2>Native with Material</h2>
+<ng-container *ngIf="!file; else upload">
+  <button type="button" mat-raised-button (click)="fileInput.click()" [disabled]="disabled">
+    <mat-icon>attach_file</mat-icon>
+    'Choose a file...  <span [hidden]="!fileInput?.required">*</span>
+  </button>
+</ng-container>
+<ng-template #upload>
+  <button type="button" mat-raised-button (click)="uploadDoc()" [disabled]="disabled">
+    <mat-icon>file_upload</mat-icon>
+    {{file?.name }}
+  </button>
+</ng-template>
+<input hidden #fileInput type="file" required>

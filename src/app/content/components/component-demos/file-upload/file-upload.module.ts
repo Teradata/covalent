@@ -14,6 +14,6 @@ const routes: Routes = setComponentRoutes({
 
 @NgModule({
   declarations: [FileUploadComponent],
-  imports: [CommonModule, CovalentFileModule, ComponentDetailsModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, CovalentFileModule, ComponentDetailsModule, RouterModule.forChild(routes)],
 })
 export class FileUploadModule {}
