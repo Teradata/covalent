@@ -480,6 +480,23 @@ export const componentDetails: any = [
         (mod: any) => mod.TextEditorDemoModule,
       ),
   },
+  {
+    name: 'File Upload',
+    id: 'file-upload',
+    description: 'Upload files from your compuer or device',
+    apiDocUrl: 'platform/core/file/file-upload/README.md',
+    overviewDocUrl: '',
+    hideExamples: true,
+    hideOverview: true,
+    hideMigration: false,
+    icon: 'file',
+    category: buttons.name,
+    route: '/components/file-upload',
+    demo: () =>
+      import('./component-demos/file-upload/demos/file-upload-demo.module').then(
+        (mod: any) => mod.FileUploadDemoModule,
+      ),
+  },
 ];
 
 export const setComponentRoutes: IScopedRouteBuilder = routeBuilder(componentDetails);

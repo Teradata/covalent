@@ -154,6 +154,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./component-demos/loading-mask/loading-mask.module').then((m: any) => m.LoadingMaskDemoModule),
       },
+      {
+        path: 'file-upload',
+        loadChildren: () =>
+          import('./component-demos/file-upload/file-upload.module').then((m: any) => m.FileUploadDemoModule),
+      },
     ],
   },
 ];
