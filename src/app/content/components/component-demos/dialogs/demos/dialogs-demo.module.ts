@@ -6,9 +6,10 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
 import { DialogsDemoComponent } from './dialogs-demo.component';
 import { DialogsDemoRoutingModule } from './dialogs-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { DialogsDemoResizableComponent } from './dialogs-demo-resizable/dialogs-demo-resizable.component';
 
 @NgModule({
-  declarations: [DialogsDemoComponent, DialogsDemoBasicComponent],
+  declarations: [DialogsDemoComponent, DialogsDemoBasicComponent, DialogsDemoResizableComponent],
   imports: [
     DemoModule,
     DialogsDemoRoutingModule,
