@@ -4,6 +4,22 @@ import { Component } from '@angular/core';
   selector: 'flavored-markdown-demo',
   styleUrls: ['./flavored-markdown.component.scss'],
   templateUrl: './flavored-markdown.component.html',
-  preserveWhitespaces: true,
 })
-export class FlavoredMarkdownDemoComponent {}
+export class FlavoredMarkdownDemoComponent {
+  basicFlavoredMarkdown: string = `
+    ## Checkboxes
+
+    - [x] My checkbox
+    - [x] My second checkbox
+    - [ ] My empty checkbox
+
+    ## List
+
+    + One
+      + subline
+    + Two
+    + Three
+      + subline
+      + second subline
+  `;
+}
