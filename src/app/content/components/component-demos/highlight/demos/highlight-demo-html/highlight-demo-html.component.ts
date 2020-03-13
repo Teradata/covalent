@@ -4,6 +4,12 @@ import { Component } from '@angular/core';
   selector: 'highlight-demo-html',
   styleUrls: ['./highlight-demo-html.component.scss'],
   templateUrl: './highlight-demo-html.component.html',
-  preserveWhitespaces: true,
 })
-export class HighlightDemoHtmlComponent {}
+export class HighlightDemoHtmlComponent {
+  html: string = `
+  <div>
+    <h1>hello world!</h1>
+    <span>Some additional text here</span>
+  </div>
+  `;
+}

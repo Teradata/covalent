@@ -4,6 +4,15 @@ import { Component } from '@angular/core';
   selector: 'highlight-demo-css',
   styleUrls: ['./highlight-demo-css.component.scss'],
   templateUrl: './highlight-demo-css.component.html',
-  preserveWhitespaces: true,
 })
-export class HighlightDemoCssComponent {}
+export class HighlightDemoCssComponent {
+  css: string = `
+  .flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+  `;
+}
