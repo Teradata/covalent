@@ -25,17 +25,36 @@ export class DetailsWrapperComponent implements OnInit {
       route: 'examples',
       alwaysShow: false,
     },
+    {
+      name: 'Migration',
+      route: 'migration',
+      alwaysShow: false,
+    },
   ];
 
   constructor(private _route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.component = this._route.snapshot.data;
-    if (this.component.hideOverview) {
-      this.navLinks = this.navLinks.slice(1);
+    if (!this.component.showExamples) {
+      this.navLinks = this.navLinks.filter((link: any) => {
+        return link.route !== 'examples';
+      });
     }
-    if (this.component.hideExamples) {
-      this.navLinks = this.navLinks.slice(0, -1);
+    if (!this.component.showAPI) {
+      this.navLinks = this.navLinks.filter((link: any) => {
+        return link.route !== 'api';
+      });
+    }
+    if (!this.component.showOverview) {
+      this.navLinks = this.navLinks.filter((link: any) => {
+        return link.route !== 'overview';
+      });
+    }
+    if (!this.component.showMigration) {
+      this.navLinks = this.navLinks.filter((link: any) => {
+        return link.route !== 'migration';
+      });
     }
   }
 }
