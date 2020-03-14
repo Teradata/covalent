@@ -8,17 +8,18 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { setComponentRoutes } from 'app/content/components/components';
-import { HighlightDemoComponent } from './highlight.component';
+import { HighLightDemoCssSharedModule } from './demos/highlight-demo-css/highlight-demo-css-shared';
+import { HighlightDemoCssComponent } from './demos/highlight-demo-css/highlight-demo-css.component';
 import { DocumentationToolsModule } from 'app/documentation-tools';
 
 const routes: Routes = setComponentRoutes({
-  overviewDemoComponent: HighlightDemoComponent,
+  overviewDemoComponent: HighlightDemoCssComponent,
   id: 'highlight',
 });
 
 @NgModule({
-  declarations: [HighlightDemoComponent],
   imports: [
+    HighLightDemoCssSharedModule,
     CommonModule,
     // Material
     MatCardModule,
