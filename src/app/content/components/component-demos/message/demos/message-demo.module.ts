@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MessageDemoBasicComponent } from './message-demo-basic/message-demo-basic.component';
-import { MessageDemoCardComponent } from './message-demo-card/message-demo-card.component';
+import { MessageDemoBasicSharedModule } from './message-demo-basic/message-demo-basic-shared';
+import { MessageDemoActionComponent } from './message-demo-action/message-demo-action.component';
 import { MessageDemoToggleVisibilityComponent } from './message-demo-toggle-visibility/message-demo-toggle-visibility.component';
-import { MessageDemoCssComponent } from './message-demo-css/message-demo-css.component';
+import { MessageDemoColorComponent } from './message-demo-color/message-demo-color.component';
 import { CovalentMessageModule } from '@covalent/core/message';
 import { MessageDemoComponent } from './message-demo.component';
 import { MessageDemoRoutingModule } from './message-demo-routing.module';
@@ -16,13 +16,13 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     MessageDemoComponent,
-    MessageDemoBasicComponent,
-    MessageDemoCardComponent,
-    MessageDemoCssComponent,
+    MessageDemoActionComponent,
+    MessageDemoColorComponent,
     MessageDemoToggleVisibilityComponent,
   ],
   imports: [
     DemoModule,
+    MessageDemoBasicSharedModule,
     MessageDemoRoutingModule,
     /** Covalent Modules */
     CovalentMessageModule,

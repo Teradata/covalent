@@ -1,8 +1,9 @@
-<p class="mat-body-1">Toggle visibility:</p>
-<td-message #messageDemo class="pad-sm push-bottom" color="primary" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
-  <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
+<td-message #messageDemo class="pad-sm push-bottom" color="primary" label="Manage visibility"
+  sublabel="Click the button to hide message">
+  <button td-message-actions mat-icon-button (click)="messageDemo.close()">
+    <mat-icon>cancel</mat-icon>
+  </button>
 </td-message>
-<mat-divider></mat-divider>
-<button mat-button color="accent" class="text-upper push-top-sm pull-bottom" (click)="messageDemo.toggle()">
+<button mat-button color="accent" class="push-top-sm pull-bottom" (click)="messageDemo.toggle()">
   Toggle Visibility
 </button>
