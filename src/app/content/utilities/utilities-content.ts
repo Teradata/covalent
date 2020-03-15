@@ -1,20 +1,27 @@
+import { IComponentDetails } from '../component-interfaces';
+
 export const utilitiesRouteCategories: any = [
   { name: '', nested: false },
   { name: 'Http', nested: false },
   { name: 'Media Queries', nested: false },
 ];
 
+const tabs: object = {
+  showOverview: true,
+  showAPI: true,
+  showExamples: true,
+  showMigration: false,
+};
+
 const [root, http, media] = utilitiesRouteCategories;
 
-export const utilitiesContentDetails: any = [
+export const createUtilitiesDetails: IComponentDetails[] = [
   {
     name: 'Http Service',
     id: 'http-service',
     description:
       'Service provided with methods that extend the @angular [HttpClient] service and provide an additional layer of interceptor functionality.',
     apiDocUrl: 'platform/http/interceptors/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: http.name,
     route: '/utilities/http-service',
   },
@@ -24,8 +31,6 @@ export const utilitiesContentDetails: any = [
     description:
       'Framework of decorators on top of the angular [HttpClient] or covalent [TdHttpService] to enhance your services and give them Http capabilities.',
     apiDocUrl: 'platform/http/actions/README.md',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: http.name,
     route: '/utilities/http-decorators',
   },
@@ -35,8 +40,6 @@ export const utilitiesContentDetails: any = [
     description:
       'Simple reusable animations to reduce boilerplate code. For custom and complex animations look into the Angular animations doc.',
     apiDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: root.name,
     route: '/utilities/animations',
   },
@@ -45,8 +48,6 @@ export const utilitiesContentDetails: any = [
     id: 'directives',
     description: 'Core Covalent custom directives',
     apiDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: root.name,
     route: '/utilities/directives',
   },
@@ -55,8 +56,6 @@ export const utilitiesContentDetails: any = [
     id: 'pipes',
     description: 'Custom angular pipes',
     apiDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: root.name,
     route: '/utilities/pipes',
   },
@@ -65,8 +64,6 @@ export const utilitiesContentDetails: any = [
     id: 'functions',
     description: 'Helper functions',
     apiDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: root.name,
     route: '/utilities/functions',
   },
@@ -75,8 +72,6 @@ export const utilitiesContentDetails: any = [
     id: 'styling',
     description: 'CSS style classes',
     apiDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: root.name,
     route: '/utilities/styling',
   },
@@ -85,8 +80,6 @@ export const utilitiesContentDetails: any = [
     id: 'styling',
     description: 'Responsive service & directive (for attributes)',
     apiDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: media.name,
     route: '/utilities/media-service',
   },
@@ -95,9 +88,13 @@ export const utilitiesContentDetails: any = [
     id: 'styling',
     description: 'Responsive service & directive (for attributes)',
     apiDocUrl: '',
-    showExampleTab: true,
-    showOverviewDemo: true,
     category: media.name,
     route: '/utilities/media-directive',
   },
 ];
+
+export const utilitiesContentDetails: IComponentDetails[] = createUtilitiesDetails.map(
+  (component: IComponentDetails) => {
+    return { ...tabs, ...component };
+  },
+);
