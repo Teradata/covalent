@@ -232,7 +232,7 @@ export const createComponentDetails: IComponentDetails[] = [
   {
     name: 'Data Table',
     id: 'data-table',
-    description: 'Project tabular data',
+    description: 'Component for displaying tabular data',
     apiDocUrl: 'platform/core/data-table/README.md',
     icon: 'border_all',
     category: layout.name,
