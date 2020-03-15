@@ -22,8 +22,8 @@ export class DataTableDemoWithComponentsComponent implements OnInit {
   @ViewChild(TdPagingBarComponent, { static: true }) pagingBar: TdPagingBarComponent;
 
   columns: ITdDataTableColumn[] = [
-    { name: 'first_name', label: 'First Name', sortable: true, width: 150 },
-    { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
+    { name: 'first_name', label: 'First Name', sortable: true, filter: false, width: 150 },
+    { name: 'last_name', label: 'Last Name', sortable: false },
     { name: 'email', label: 'Email', sortable: true, width: 250 },
     { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
   ];
@@ -39,7 +39,7 @@ export class DataTableDemoWithComponentsComponent implements OnInit {
   filteredTotal: number;
   selectedRows: any[] = [];
 
-  searchTerm: string = '';
+  filterTerm: string = '';
   fromRow: number = 1;
   currentPage: number = 1;
   pageSize: number = 50;
@@ -55,29 +55,29 @@ export class DataTableDemoWithComponentsComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.data = await this._internalDocsService.queryData().toPromise();
     this.basicData = this.data.slice(0, 10);
-    this.filter();
+    this.refreshTable();
   }
 
   sort(sortEvent: ITdDataTableSortChangeEvent): void {
     this.sortBy = sortEvent.name;
     this.sortOrder = sortEvent.order;
-    this.filter();
+    this.refreshTable();
   }
 
-  search(searchTerm: string): void {
-    this.searchTerm = searchTerm;
+  filter(filterTerm: string): void {
+    this.filterTerm = filterTerm;
     this.pagingBar.navigateToPage(1);
-    this.filter();
+    this.refreshTable();
   }
 
   page(pagingEvent: IPageChangeEvent): void {
     this.fromRow = pagingEvent.fromRow;
     this.currentPage = pagingEvent.page;
     this.pageSize = pagingEvent.pageSize;
-    this.filter();
+    this.refreshTable();
   }
 
-  filter(): void {
+  refreshTable(): void {
     let newData: any[] = this.data;
     const excludedColumns: string[] = this.columns
       .filter((column: ITdDataTableColumn) => {
@@ -89,7 +89,7 @@ export class DataTableDemoWithComponentsComponent implements OnInit {
       .map((column: ITdDataTableColumn) => {
         return column.name;
       });
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
+    newData = this._dataTableService.filterData(newData, this.filterTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);

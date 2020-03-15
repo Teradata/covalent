@@ -4,19 +4,19 @@ import { InternalDocsService } from '../../../../../../services';
 import { TdDataTableSortingOrder, ITdDataTableSortChangeEvent } from '../../../../../../../platform/core/data-table';
 
 @Component({
-  selector: 'data-table-demo-atomic',
-  styleUrls: ['./data-table-demo-atomic.component.scss'],
-  templateUrl: './data-table-demo-atomic.component.html',
+  selector: 'data-table-demo-sort',
+  styleUrls: ['./data-table-demo-sort.component.scss'],
+  templateUrl: './data-table-demo-sort.component.html',
   preserveWhitespaces: true,
 })
-export class DataTableDemoAtomicComponent implements OnInit {
+export class DataTableDemoSortComponent implements OnInit {
   data: any[];
   basicData: any[];
   dateSortData: any[];
   atomicData: any[];
 
-  atomicSortBy: string = 'date';
-  atomicSortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
+  sortBy: string = 'date';
+  sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _internalDocsService: InternalDocsService) {}
 
@@ -34,27 +34,27 @@ export class DataTableDemoAtomicComponent implements OnInit {
     this.atomicData = [].concat(this.dateSortData);
   }
 
-  sortAtomic(sortEvent: ITdDataTableSortChangeEvent): void {
-    this.atomicSortOrder =
-      this.atomicSortOrder === TdDataTableSortingOrder.Ascending
+  sort(sortEvent: ITdDataTableSortChangeEvent): void {
+    this.sortOrder =
+      this.sortOrder === TdDataTableSortingOrder.Ascending
         ? TdDataTableSortingOrder.Descending
         : TdDataTableSortingOrder.Ascending;
-    this.atomicSortBy = sortEvent.name;
-    this.filterAtomicData();
+    this.sortBy = sortEvent.name;
+    this.filterData();
   }
 
-  filterAtomicData(): void {
+  filterData(): void {
     this.atomicData = Array.from(this.atomicData); // Change the array reference to trigger OnPush
     this.atomicData.sort((a: any, b: any) => {
       let direction: number = 0;
-      if (this.atomicSortOrder === TdDataTableSortingOrder.Descending) {
+      if (this.sortOrder === TdDataTableSortingOrder.Descending) {
         direction = 1;
-      } else if (this.atomicSortOrder === TdDataTableSortingOrder.Ascending) {
+      } else if (this.sortOrder === TdDataTableSortingOrder.Ascending) {
         direction = -1;
       }
-      if (a[this.atomicSortBy] < b[this.atomicSortBy]) {
+      if (a[this.sortBy] < b[this.sortBy]) {
         return direction;
-      } else if (a[this.atomicSortBy] > b[this.atomicSortBy]) {
+      } else if (a[this.sortBy] > b[this.sortBy]) {
         return -direction;
       } else {
         return direction;

@@ -1,5 +1,3 @@
-<p class="mat-body-1 tc-grey-700 push-top-sm pad-bottom-sm">with formatting, configurable width columns and templates</p>
-<mat-divider inset></mat-divider>
 <td-data-table [data]="basicData" [columns]="configWidthColumns">
   <ng-template tdDataTableTemplate="img" let-index="index" let-value="value">
     <img [src]="value" [alt]="index" />
