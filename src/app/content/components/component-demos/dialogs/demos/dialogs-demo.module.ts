@@ -6,10 +6,26 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
 import { DialogsDemoComponent } from './dialogs-demo.component';
 import { DialogsDemoRoutingModule } from './dialogs-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { DialogsDemoResizableComponent } from './dialogs-demo-resizable/dialogs-demo-resizable.component';
+import {
+  DialogsDemoDraggableComponent,
+  DraggableDialogComponent,
+} from './dialogs-demo-draggable/dialogs-demo-draggable.component';
+import {
+  DraggableResizableDialogComponent,
+  DialogsDemoDraggableResizableComponent,
+} from './dialogs-demo-draggable-resizable/dialogs-demo-draggable-resizable.component';
+
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [DialogsDemoComponent, DialogsDemoBasicComponent, DialogsDemoResizableComponent],
+  declarations: [
+    DialogsDemoComponent,
+    DialogsDemoBasicComponent,
+    DialogsDemoDraggableComponent,
+    DraggableDialogComponent,
+    DraggableResizableDialogComponent,
+    DialogsDemoDraggableResizableComponent,
+  ],
   imports: [
     DemoModule,
     DialogsDemoRoutingModule,
@@ -18,6 +34,7 @@ import { DialogsDemoResizableComponent } from './dialogs-demo-resizable/dialogs-
     /** Angular Modules */
     CommonModule,
     MatButtonModule,
+    MatIconModule,
   ],
 })
 export class DialogsDemoModule {}
