@@ -1,0 +1,34 @@
+
+<mat-card>
+  <mat-card-title>Covalent Example</mat-card-title>
+<mat-list>
+  <mat-list-item>
+    Column Header
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
+    <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+      <mat-list-item>
+        <mat-icon matListAvatar>person</mat-icon>
+        <h4 matLine>{{row.name}}</h4>
+        <p matLine>Row: {{row.index}}</p>
+      </mat-list-item>
+      <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
+    </ng-template>
+  </td-virtual-scroll-container>
+</mat-list>
+</mat-card>
+
+<mat-card>
+<mat-card-title>Material CDK Example</mat-card-title>
+<cdk-virtual-scroll-viewport itemSize="50" class="vs-viewport">
+  <mat-list *cdkVirtualFor="let item of data; last as last;" class="example-item">
+    <mat-list-item>
+      <mat-icon matListAvatar>person</mat-icon>
+      <h4 matLine>{{item.name}}</h4>
+      <p matLine>Row: {{item.index}}</p>
+      <mat-divider *ngIf="!last" [inset]="false"></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</cdk-virtual-scroll-viewport>
+</mat-card>
