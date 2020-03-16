@@ -202,7 +202,7 @@ export const createComponentDetails: IComponentDetails[] = [
   {
     name: 'Message',
     id: 'message',
-    description: 'Info, warning & alert messages',
+    description: 'Informational component supporting visibility toggling and additional information action',
     apiDocUrl: 'platform/core/message/README.md',
     icon: 'info_outline',
     category: buttons.name,
