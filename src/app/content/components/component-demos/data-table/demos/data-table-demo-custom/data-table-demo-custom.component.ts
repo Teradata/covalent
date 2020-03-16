@@ -38,8 +38,8 @@ export class DataTableDemoCustomComponent implements OnInit {
       });
   }
 
-  async ngOnInit(): Promise<void> {
-    this.data = await this._internalDocsService.queryData().toPromise();
+  ngOnInit(): void {
+    this.data = this._internalDocsService.getData();
     this.basicData = this.data.slice(0, 10);
   }
 }

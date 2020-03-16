@@ -52,8 +52,8 @@ export class DataTableDemoWithComponentsComponent implements OnInit {
     private _dialogService: TdDialogService,
   ) {}
 
-  async ngOnInit(): Promise<void> {
-    this.data = await this._internalDocsService.queryData().toPromise();
+  ngOnInit(): void {
+    this.data = this._internalDocsService.getData();
     this.basicData = this.data.slice(0, 10);
     this.refreshTable();
   }
