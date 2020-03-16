@@ -1,17 +1,12 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 import { TdDialogService } from '@covalent/core/dialogs';
-import { slideInDownAnimation } from 'app/app.animations';
 
 @Component({
   selector: 'dialogs-demo-basic',
   styleUrls: ['./dialogs-demo-basic.component.scss'],
   templateUrl: './dialogs-demo-basic.component.html',
-  animations: [slideInDownAnimation],
 })
 export class DialogsDemoBasicComponent {
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
   constructor(private _dialogService: TdDialogService) {}
   openAlert(): void {
     this._dialogService.openAlert({
