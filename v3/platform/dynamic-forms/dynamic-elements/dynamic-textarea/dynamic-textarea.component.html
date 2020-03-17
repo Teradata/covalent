@@ -1,0 +1,20 @@
+<div class="td-dynamic-textarea-wrapper">
+  <mat-form-field class="td-dynamic-textarea-field">
+    <textarea
+      #elementInput
+      matInput
+      [formControl]="control"
+      [placeholder]="label"
+      [required]="required"
+      [attr.name]="name"
+      rows="4"
+    ></textarea>
+    <mat-hint>{{ hint }}</mat-hint>
+    <mat-error>
+      <ng-template
+        [ngTemplateOutlet]="errorMessageTemplate"
+        [ngTemplateOutletContext]="{ control: control, errors: control?.errors }"
+      ></ng-template>
+    </mat-error>
+  </mat-form-field>
+</div>

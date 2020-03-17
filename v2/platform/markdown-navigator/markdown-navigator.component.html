@@ -1,0 +1,78 @@
+<ng-container *ngIf="!showEmptyState">
+  <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar>
+
+  <ng-container *ngIf="showHeader">
+    <div [style.display]="'flex'">
+      <button
+        *ngIf="showHomeButton"
+        mat-icon-button
+        [matTooltip]="goHomeLabel"
+        (click)="reset()"
+        [attr.data-test]="'home-button'"
+      >
+        <mat-icon [attr.aria-label]="goHomeLabel">
+          home
+        </mat-icon>
+      </button>
+
+      <button
+        *ngIf="showGoBackButton"
+        mat-icon-button
+        [matTooltip]="goBackLabel"
+        (click)="goBack()"
+        [attr.data-test]="'back-button'"
+      >
+        <mat-icon [attr.aria-label]="goBackLabel">
+          arrow_back
+        </mat-icon>
+      </button>
+      <span flex *ngIf="currentItemTitle" class="mat-body-2 title truncate" [attr.data-test]="'title'">
+        {{ currentItemTitle }}
+      </span>
+    </div>
+
+    <mat-divider [style.position]="'relative'"></mat-divider>
+  </ng-container>
+
+  <div *ngIf="showMenu" class="td-markdown-list">
+    <mat-action-list>
+      <button
+        *ngFor="let item of currentMenuItems"
+        (click)="handleItemSelected(item)"
+        mat-list-item
+        [matTooltip]="getTitle(item)"
+        matTooltipPosition="before"
+        matTooltipShowDelay="500"
+      >
+        <mat-icon matListIcon>
+          subject
+        </mat-icon>
+        <span matLine class="truncate">
+          {{ getTitle(item) }}
+        </span>
+        <mat-divider></mat-divider>
+      </button>
+    </mat-action-list>
+  </div>
+
+  <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
+    <td-flavored-markdown-loader
+      *ngIf="showTdMarkdownLoader"
+      [url]="url"
+      [httpOptions]="httpOptions"
+      [anchor]="anchor"
+    ></td-flavored-markdown-loader>
+
+    <td-flavored-markdown
+      *ngIf="showTdMarkdown"
+      [content]="markdownString"
+      [hostedUrl]="url"
+      [anchor]="anchor"
+    ></td-flavored-markdown>
+  </div>
+</ng-container>
+
+<div *ngIf="showEmptyState" layout="column" layout-align="center center" class=" empty-state">
+  <mat-icon matListAvatar>subject</mat-icon>
+  <h2>{{ emptyStateLabel }}</h2>
+</div>

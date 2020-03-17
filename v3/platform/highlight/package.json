@@ -1,0 +1,39 @@
+{
+  "name": "@covalent/highlight",
+  "version": "0.0.0-COVALENT",
+  "description": "Teradata UI Platform Highlight Module",
+  "keywords": [
+    "angular",
+    "components",
+    "reusable",
+    "highlight",
+    "highlightjs"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jason Weaver <jason.weaver@teradata.com>",
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>"
+  ],
+  "dependencies": {
+    "highlight.js": "0.0.0-HIGHLIGHT"
+  },
+  "peerDependencies": {
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "@angular/platform-browser": "0.0.0-NG"
+  }
+}

@@ -1,0 +1,36 @@
+<div class="td-dynamic-file-input-wrapper">
+  <mat-form-field
+    tdFileDrop
+    class="td-dynamic-file-input-field"
+    floatLabel="never"
+    [disabled]="control?.disabled"
+    (fileDrop)="_handlefileDrop($event)"
+    (click)="!control?.disabled && fileInput.inputElement.click()"
+    (keyup.enter)="!control?.disabled && fileInput.inputElement.click()"
+    (keyup.delete)="fileInput.clear()"
+    (keyup.backspace)="fileInput.clear()"
+  >
+    <input
+      matInput
+      [value]="control?.value?.name"
+      [placeholder]="label"
+      [attr.name]="name"
+      [disabled]="control?.disabled"
+      readonly
+    />
+    <mat-hint>{{ hint }}</mat-hint>
+    <mat-error>
+      <ng-template
+        [ngTemplateOutlet]="errorMessageTemplate"
+        [ngTemplateOutletContext]="{ control: control, errors: control?.errors }"
+      ></ng-template>
+    </mat-error>
+  </mat-form-field>
+  <button mat-icon-button *ngIf="control.value" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
+    <mat-icon>cancel</mat-icon>
+  </button>
+  <td-file-input class="td-file-input" #fileInput [formControl]="control">
+    <mat-icon>folder</mat-icon>
+    <span>{{ label }}</span>
+  </td-file-input>
+</div>

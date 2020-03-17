@@ -1,0 +1,10 @@
+<td-dynamic-forms [elements]="textElements">
+    <ng-template let-element ngFor [ngForOf]="textElements">
+      <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+          <span *ngIf="control.touched || !control.pristine">
+            <span *ngIf="control.hasError('minlength')">Min length value: {{element.minLength}}</span>
+            <span *ngIf="control.hasError('maxlength')">Max length value: {{element.minLength}}</span>
+          </span>
+      </ng-template>
+    </ng-template>
+  </td-dynamic-forms>

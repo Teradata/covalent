@@ -1,0 +1,24 @@
+<div class="td-dynamic-datepicker-wrapper">
+  <mat-form-field class="td-dynamic-datepicker-field">
+    <input
+      #elementInput
+      matInput
+      [matDatepicker]="dynamicDatePicker"
+      [formControl]="control"
+      [placeholder]="label"
+      [required]="required"
+      [name]="name"
+      [min]="min"
+      [max]="max"
+    />
+    <mat-hint>{{ hint }}</mat-hint>
+    <mat-error>
+      <ng-template
+        [ngTemplateOutlet]="errorMessageTemplate"
+        [ngTemplateOutletContext]="{ control: control, errors: control?.errors }"
+      ></ng-template>
+    </mat-error>
+    <mat-datepicker-toggle matSuffix [for]="dynamicDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #dynamicDatePicker></mat-datepicker>
+  </mat-form-field>
+</div>

@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+
+.sticky {
+  position: absolute;
+  top: 0;
+}
+
+// Delay loader .6s to prevent flicker if response is faster
+.delay {
+  animation: delayAnimation;
+  animation-duration: 0.6s;
+}
+
+@keyframes delayAnimation {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

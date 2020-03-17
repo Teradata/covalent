@@ -1,0 +1,14 @@
+<mat-progress-bar
+  [ngClass]="'delay'"
+  *ngIf="loading"
+  mode="indeterminate"
+  color="accent"
+  class="sticky"
+></mat-progress-bar>
+<td-flavored-markdown
+  *ngIf="!loading"
+  [content]="content"
+  [hostedUrl]="url"
+  [anchor]="anchor"
+  (contentReady)="contentReady.emit()"
+></td-flavored-markdown>

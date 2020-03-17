@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Listener</title>
+    <desc>Copyright Teradata, Inc.</desc>
+    <defs></defs>
+    <g id="listener" fill-rule="evenodd">
+        <g>
+            <path d="M123.068976,165 L242,46.0689758 L242,481.931024 L122.068976,362 L211,362 L211,165 L123.068976,165 Z M270,46.0689758 L406.315492,182.384468 L406.315492,218 L299,218 L299,307 L406.315492,307 L406.315492,345.615532 L270,481.931024 L270,46.0689758 Z" id="Combined-Shape"></path>
+            <path d="M423,236 L317,236 L317,291 L423,291 L423,325.713274 L488,264.063605 L423,201 L423,236 Z" id="Combined-Shape"></path>
+            <polygon id="Rectangle" transform="translate(125.500000, 323.500000) rotate(-270.000000) translate(-125.500000, -323.500000) " points="104.59892 256 147 256 146.40108 391 127.129671 367.569116 104 391"></polygon>
+            <polygon id="Rectangle" transform="translate(108.500000, 263.500000) rotate(-270.000000) translate(-108.500000, -263.500000) " points="82.6407376 179 135 179 134.359262 348 110.561832 319.042335 82 348"></polygon>
+            <polygon id="Rectangle" transform="translate(125.500000, 203.500000) rotate(-270.000000) translate(-125.500000, -203.500000) " points="104.59892 136 147 136 146.40108 271 127.129671 247.569116 104 271"></polygon>
+        </g>
+    </g>
+</svg>

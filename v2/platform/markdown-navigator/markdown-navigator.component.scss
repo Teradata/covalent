@@ -1,0 +1,51 @@
+:host {
+  position: relative;
+  height: inherit;
+  height: 100%;
+  // layout="column"
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  .td-markdown-list,
+  .markdown-wrapper {
+    min-height: 1px;
+    overflow-y: auto;
+    // flex
+    flex: 1;
+    box-sizing: border-box;
+  }
+  .markdown-wrapper {
+    padding: 16px 16px 0;
+  }
+  .td-markdown-list > .mat-list {
+    padding-top: 0;
+  }
+  td-flavored-markdown-loader {
+    ::ng-deep .mat-progress-bar {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+
+  .title {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 8px 0;
+    padding-left: 16px;
+  }
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.empty-state {
+  padding: 32px;
+  mat-icon {
+    font-size: 4em;
+  }
+}

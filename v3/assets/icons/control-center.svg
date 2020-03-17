@@ -1,0 +1,21 @@
+<svg width="409" height="427" viewBox="0 0 409 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>control-center</title>
+  <desc>Copyright Teradata, Inc.</desc>
+  <g id="Canvas" transform="translate(-238 111)">
+    <g id="control-center">
+      <g id="Rectangle-1-Copy-8">
+        <use xlink:href="#path0_fill" transform="translate(450 86)"/>
+      </g>
+      <g id="Rectangle-1-Copy-8">
+        <use xlink:href="#path0_fill" transform="matrix(-1 0 0 1 435 86)"/>
+      </g>
+      <g id="Subtract">
+        <use xlink:href="#path1_fill" transform="translate(238 -110.5)"/>
+      </g>
+    </g>
+  </g>
+  <defs>
+    <path id="path0_fill" fill-rule="evenodd" d="M 0 179.167L 0 230L 197 52.1031L 197 0L 0 179.167Z"/>
+    <path id="path1_fill" fill-rule="evenodd" d="M 0 181.5L 203.5 360.5L 408.5 181.5L 203.5 0L 0 181.5ZM 173.454 115.626L 181 54L 226 54L 235.793 113.984L 267.603 91.1031L 294.647 118.147L 270.261 149.338L 332.5 159.5L 332.5 204.5L 270.02 212.151L 294.046 245.553L 267.002 272.596L 236.057 248.403L 226 310L 181 310L 173.263 246.811L 139.897 272.897L 112.853 245.853L 137.126 212.107L 75 204.5L 75 159.5L 137.089 149.363L 113.154 118.748L 140.197 91.7041L 173.454 115.626ZM 249 180.5C 249 205.353 228.853 225.5 204 225.5C 179.147 225.5 159 205.353 159 180.5C 159 155.647 179.147 135.5 204 135.5C 228.853 135.5 249 155.647 249 180.5Z"/>
+  </defs>
+</svg>

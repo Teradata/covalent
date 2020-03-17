@@ -1,0 +1,29 @@
+.td-dynamic-form-wrapper {
+  ::ng-deep {
+    .mat-form-field-infix {
+      width: auto;
+    }
+    .td-dynamic-element-hint {
+      font-size: 75%;
+      display: block;
+    }
+  }
+  // [layout-wrap]
+  flex-wrap: wrap;
+  // [layout]
+  box-sizing: border-box;
+  display: flex;
+  // [layout="row"]
+  flex-direction: row;
+  // [layout-align="start center"]
+  align-items: center;
+  align-content: center;
+  max-width: 100%;
+  justify-content: flex-start;
+  .td-dynamic-element-wrapper {
+    max-height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    padding: 4px 4px 8px;
+  }
+}

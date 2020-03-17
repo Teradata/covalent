@@ -1,0 +1,5 @@
+:host ::ng-deep {
+  // intentionally omitting file extension
+  // see: https://stackoverflow.com/questions/48806765/import-styles-in-angular-components-styles-with-ng-deep
+  @import '~easymde/dist/easymde.min';
+}

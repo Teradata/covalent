@@ -1,0 +1,17 @@
+:host {
+  &.mat-disabled {
+    pointer-events: none;
+  }
+  .td-step-header-wrapper {
+    width: 100%;
+  }
+  // layout
+  box-sizing: border-box;
+  display: flex;
+  // layout="row"
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  max-width: 100%;
+  justify-content: flex-start;
+}

@@ -1,0 +1,10 @@
+        <td-chart [style.height.px]="500">
+          <td-chart-tooltip [trigger]="'item'"></td-chart-tooltip>
+          <td-chart-series td-wordCloud
+                          shape="star"
+                          [sizeRange]="[8, 30]"
+                          [rotationRange]="[-30, 30]"
+                          [color]="randomColor"
+                          [data]="componentExampleRandomWords">
+          </td-chart-series>
+        </td-chart>

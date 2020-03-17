@@ -1,0 +1,26 @@
+<div
+  class="td-dynamic-slider-wrapper mat-form-field mat-form-field-can-float mat-form-field-should-float"
+  [class.mat-focused]="slider._isActive"
+>
+  <span class="mat-form-field-label-wrapper">
+    <label class="mat-form-field-label mat-primary td-slider-label">
+      {{ label }}
+      <span *ngIf="required && !control?.disabled" class="mat-form-field-required-marker">*</span>
+    </label>
+  </span>
+  <div class="td-dynamic-slider-field">
+    <mat-slider
+      #slider
+      class="td-dynamic-slider"
+      [formControl]="control"
+      [attr.name]="name"
+      [min]="min"
+      [max]="max"
+      thumbLabel
+      tickInterval="auto"
+      [required]="required"
+      (blur)="_handleBlur()"
+    ></mat-slider>
+  </div>
+  <span class="mat-hint td-dynamic-element-hint">{{ hint }}</span>
+</div>

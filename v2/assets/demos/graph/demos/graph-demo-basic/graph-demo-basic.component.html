@@ -1,0 +1,68 @@
+<div flex layout="row" layout-align="start center">
+  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+    Chart Theme:
+  </div>
+  <mat-form-field floatLabel="never">
+    <mat-select [(value)]="selectedTheme" (valueChange)="selectChartTheme($event)">
+      <mat-option *ngFor="let theme of themes" [value]="theme">
+        {{ theme }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<td-chart [style.height.px]="500" [themeName]="themeSelector.selected$ | async">
+  <td-chart-tooltip [trigger]="'item'">
+    <ng-template let-params let-i="index" let-ticket="ticket" tdTooltipFormatter>
+      <ng-container *ngIf="params">
+        <div layout="row" layout-align="start center">
+          <ng-container *ngIf="params.dataType === 'node'">
+            <mat-icon [style.color]="params.color">device_hub</mat-icon>
+            <span class="mat-caption pad-left-sm">
+              {{ params.data.name }}
+            </span>
+          </ng-container>
+          <ng-container *ngIf="params.dataType === 'edge'">
+            <span class="mat-caption pad-left-sm">
+              {{ params.data.source }}
+            </span>
+            <mat-icon>arrow_forward</mat-icon>
+            <span class="mat-caption">
+              {{ params.data.target }}
+            </span>
+          </ng-container>
+        </div>
+      </ng-container>
+    </ng-template>
+  </td-chart-tooltip>
+  <td-chart-series
+    td-graph
+    [data]="[
+      { x: -739.36383, y: -404.26147, id: 'jquery', name: 'jquery', symbolSize: 40.7252817 },
+      { x: -134.2215, y: -862.7517, id: 'backbone', name: 'backbone', symbolSize: 60.1554675 },
+      { x: -818.97516, y: 624.50604, id: 'angular', name: 'angular', symbolSize: 60.7816025 },
+      { x: -710.59204, y: 120.37976, id: 'socket.io', name: 'socket.io', symbolSize: 19.818306 },
+      { x: -127.03764, y: 477.03778, id: 'underscore', name: 'underscore', symbolSize: 40.0429485 },
+      { x: -338.03128, y: -404.62427, id: 'vue.js', name: 'vue.js', symbolSize: 80.163814 },
+      { x: 118.30771, y: -380.16626, id: 'lodash', name: 'lodash', symbolSize: 18.935852 },
+      { x: 381.10724, y: -531.28235, id: 'dateformat', name: 'dateformat', symbolSize: 30.3863845 },
+      { x: -644.2716, y: -230.14833, id: 'express', name: 'express', symbolSize: 49.608772 }
+    ]"
+    [edges]="[
+      { source: 'jquery', target: 'backbone' },
+      { source: 'jquery', target: 'vue.js' },
+      { source: 'jquery', target: 'lodash' },
+      { source: 'jquery', target: 'dateformat' },
+      { source: 'backbone', target: 'underscore' },
+      { source: 'faye', target: 'cookiejar' },
+      { source: 'socket.io', target: 'express' },
+      { source: 'socket.io', target: 'faye' },
+      { source: 'vue.js', target: 'underscore' },
+      { source: 'vue.js', target: 'dateformat' },
+      { source: 'express', target: 'socket.io' },
+      { source: 'express', target: 'dateformat' }
+    ]"
+    [roam]="true"
+    [focusNodeAdjacency]="true"
+    [label]="{ emphasis: { position: 'right', show: true } }"
+  ></td-chart-series>
+</td-chart>
