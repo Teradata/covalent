@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { CovalentDialogsModule } from '@covalent/core/dialogs';
 import { DialogsDemoComponent } from './dialogs-demo.component';
-import { DialogsDemoRoutingModule } from './dialogs-demo-routing.module';
-import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { DialogsDemoBasicComponent } from './dialogs-demo-basic/dialogs-demo-basic.component';
 import {
   DialogsDemoDraggableComponent,
   DraggableDialogComponent,
@@ -14,19 +12,20 @@ import {
   DraggableResizableDialogComponent,
   DialogsDemoDraggableResizableComponent,
 } from './dialogs-demo-draggable-resizable/dialogs-demo-draggable-resizable.component';
-
-import { MatIconModule } from '@angular/material/icon';
+import { DialogsDemoRoutingModule } from './dialogs-demo-routing.module';
+import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { DialogsDemoBasicSharedModule } from './dialogs-demo-basic/dialogs-demo-basic-shared';
 
 @NgModule({
   declarations: [
     DialogsDemoComponent,
-    DialogsDemoBasicComponent,
     DialogsDemoDraggableComponent,
     DraggableDialogComponent,
     DraggableResizableDialogComponent,
     DialogsDemoDraggableResizableComponent,
   ],
   imports: [
+    DialogsDemoBasicSharedModule,
     DemoModule,
     DialogsDemoRoutingModule,
     /** Covalent Modules */
