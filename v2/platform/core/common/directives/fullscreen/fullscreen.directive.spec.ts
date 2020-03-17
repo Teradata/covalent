@@ -1,16 +1,17 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { TdFullscreenDirective } from './fullscreen.directive';
-import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting,
+} from '@angular/platform-browser-dynamic/testing';
 import { By } from '@angular/platform-browser';
 
 @Component({
-  template: `
-    <div tdFullScreen #myDirective="tdFullScreen">
-      <button id="test-btn" mat-button color="primary" (click)="myDirective.toggleFullScreen()">Fullscreen</button>
-      <button id="test-btn-exit" mat-button color="warn" (click)="myDirective.exitFullScreen()">exit Fullscreen</button>
-    </div>
-  `,
+  template: `<div tdFullScreen #myDirective="tdFullScreen">
+    <button id="test-btn" mat-button color="primary" (click)="myDirective.toggleFullScreen()">Fullscreen</button>
+    <button id="test-btn-exit" mat-button color="warn" (click)="myDirective.exitFullScreen()">exit Fullscreen</button>
+  </div>`,
 })
 class TdFullscreenTestComponent {}
 
@@ -25,7 +26,10 @@ describe('TdFullscreenDirective', () => {
     TestBed.resetTestEnvironment();
     TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
     TestBed.configureTestingModule({
-      declarations: [TdFullscreenTestComponent, TdFullscreenDirective],
+      declarations: [
+        TdFullscreenTestComponent,
+        TdFullscreenDirective,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TdFullscreenTestComponent);
@@ -63,12 +67,12 @@ describe('TdFullscreenDirective', () => {
     fixture.detectChanges();
     expect(directive.fullScreenIsActive).toBe(false);
   });
-
+  
   it('should call enterFullScreen() on directive', async () => {
     const enterSpy: any = spyOn(directive, 'enterFullScreen').and.returnValue(true);
     btnEl.triggerEventHandler('click', undefined);
     fixture.detectChanges();
-    await fixture.whenStable();
+    await fixture.whenStable(); 
     expect(enterSpy).toBeDefined();
     expect(enterSpy).toHaveBeenCalled();
     expect(enterSpy).toBeTruthy();

@@ -18,32 +18,13 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbComponent implements AfterViewInit {
+
   private _displayCrumb: boolean = true;
   private _width: number = 0;
-  private _displayIcon: boolean = true;
-  private _separatorIcon: string = 'chevron_right';
-
   // Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'
-  public get separatorIcon(): string {
-    return this._separatorIcon;
-  }
-  public set separatorIcon(separatorIcon: string) {
-    this._separatorIcon = separatorIcon;
-    setTimeout(() => {
-      this._changeDetectorRef.markForCheck();
-    });
-  }
-
+  separatorIcon: string = 'chevron_right';
   // Should show the right chevron or not before the label
-  public get displayIcon(): boolean {
-    return this._displayIcon;
-  }
-  public set displayIcon(displayIcon: boolean) {
-    this._displayIcon = displayIcon;
-    setTimeout(() => {
-      this._changeDetectorRef.markForCheck();
-    });
-  }
+  _displayIcon: boolean = true;
 
   get displayCrumb(): boolean {
     return this._displayCrumb;
@@ -54,9 +35,7 @@ export class TdBreadcrumbComponent implements AfterViewInit {
    */
   set displayCrumb(shouldDisplay: boolean) {
     this._displayCrumb = shouldDisplay;
-    setTimeout(() => {
-      this._changeDetectorRef.markForCheck();
-    });
+    this._changeDetectorRef.markForCheck();
   }
 
   /**
@@ -76,7 +55,9 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     return this._displayCrumb ? undefined : 'none';
   }
 
-  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private _elementRef: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef) {
+  }
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element
@@ -93,4 +74,5 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     event.stopPropagation();
     event.preventDefault();
   }
+
 }

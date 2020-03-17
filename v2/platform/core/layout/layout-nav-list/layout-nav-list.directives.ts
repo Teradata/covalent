@@ -4,19 +4,17 @@ import { LayoutToggle } from '../layout-toggle.class';
 
 @Directive({
   selector: '[tdLayoutNavListToggle]',
-  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutNavListToggleDirective extends LayoutToggle {
-  @Input('tdLayoutNavListToggle')
+
+  @Input('tdLayoutNavListToggle') 
   set tdLayoutNavListToggle(tdLayoutNavListToggle: boolean) {
     this.disabled = !(<any>tdLayoutNavListToggle === '' || tdLayoutNavListToggle);
   }
 
-  constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef,
-  ) {
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+              renderer: Renderer2,
+              elementRef: ElementRef) {
     super(layout, renderer, elementRef);
   }
 
@@ -27,19 +25,17 @@ export class TdLayoutNavListToggleDirective extends LayoutToggle {
 
 @Directive({
   selector: '[tdLayoutNavListClose]',
-  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutNavListCloseDirective extends LayoutToggle {
-  @Input('tdLayoutNavListClose')
+  
+  @Input('tdLayoutNavListClose') 
   set tdLayoutNavListClose(tdLayoutNavListClose: boolean) {
     this.disabled = !(<any>tdLayoutNavListClose === '' || tdLayoutNavListClose);
   }
 
-  constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef,
-  ) {
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+              renderer: Renderer2,
+              elementRef: ElementRef) {
     super(layout, renderer, elementRef);
   }
 
@@ -50,19 +46,17 @@ export class TdLayoutNavListCloseDirective extends LayoutToggle {
 
 @Directive({
   selector: '[tdLayoutNavListOpen]',
-  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutNavListOpenDirective extends LayoutToggle {
-  @Input('tdLayoutNavListOpen')
+
+  @Input('tdLayoutNavListOpen') 
   set tdLayoutNavListOpen(tdLayoutNavListOpen: boolean) {
     this.disabled = !(<any>tdLayoutNavListOpen === '' || tdLayoutNavListOpen);
   }
 
-  constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef,
-  ) {
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+              renderer: Renderer2,
+              elementRef: ElementRef) {
     super(layout, renderer, elementRef);
   }
 

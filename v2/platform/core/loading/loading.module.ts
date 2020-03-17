@@ -1,5 +1,5 @@
 import { Type } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { PortalModule } from '@angular/cdk/portal';
@@ -12,14 +12,37 @@ import { TdLoadingFactory, LOADING_FACTORY_PROVIDER } from './services/loading.f
 import { TdLoadingDirective } from './directives/loading.directive';
 import { TdLoadingComponent } from './loading.component';
 
-const TD_LOADING: Type<any>[] = [TdLoadingComponent, TdLoadingDirective];
+const TD_LOADING: Type<any>[] = [
+  TdLoadingComponent,
+  TdLoadingDirective,
+];
 
-const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [TdLoadingComponent];
+const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
+  TdLoadingComponent,
+];
 
 @NgModule({
-  imports: [CommonModule, MatProgressBarModule, MatProgressSpinnerModule, OverlayModule, PortalModule],
-  declarations: [TD_LOADING],
-  exports: [TD_LOADING],
-  providers: [LOADING_FACTORY_PROVIDER, LOADING_PROVIDER],
+  imports: [
+    CommonModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    OverlayModule,
+    PortalModule,
+  ],
+  declarations: [
+    TD_LOADING,
+  ],
+  exports: [
+    TD_LOADING,
+  ],
+  providers: [
+    LOADING_FACTORY_PROVIDER,
+    LOADING_PROVIDER,
+  ],
+  entryComponents: [
+    TD_LOADING_ENTRY_COMPONENTS,
+  ],
 })
-export class CovalentLoadingModule {}
+export class CovalentLoadingModule {
+
+}

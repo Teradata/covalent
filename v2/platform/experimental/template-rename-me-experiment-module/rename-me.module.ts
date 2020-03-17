@@ -4,8 +4,16 @@ import { CommonModule } from '@angular/common';
 import { TdRenameMeComponent } from './rename-me.component';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [TdRenameMeComponent],
-  exports: [TdRenameMeComponent],
+  imports: [
+    CommonModule,
+  ],
+  declarations: [
+    TdRenameMeComponent,
+  ],
+  exports: [
+    TdRenameMeComponent,
+  ],
 })
-export class CovalentRenameMeModule {}
+export class CovalentRenameMeModule {
+
+}

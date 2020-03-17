@@ -1,14 +1,25 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import {
+  TestBed,
+  inject,
+  async,
+  ComponentFixture,
+} from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentExpansionPanelModule, TdExpansionPanelComponent } from './';
+import {
+  CovalentExpansionPanelModule,
+  TdExpansionPanelComponent,
+} from './public-api';
 import { By } from '@angular/platform-browser';
 import { TdExpansionPanelGroupComponent } from './expansion-panel-group.component';
 
 describe('Component: ExpansionPanelGroup', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TdExpansionPanelGroupTestComponent, TdExpansionPanelGroupMultiInitTestComponent],
+      declarations: [
+        TdExpansionPanelGroupTestComponent,
+        TdExpansionPanelGroupMultiInitTestComponent,
+      ],
       imports: [NoopAnimationsModule, CovalentExpansionPanelModule],
     });
     TestBed.compileComponents();
@@ -16,8 +27,11 @@ describe('Component: ExpansionPanelGroup', () => {
 
   it('should allow multiple panels to be opened at once if multi is true', async(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdExpansionPanelGroupTestComponent,
+      );
+      const component: TdExpansionPanelGroupTestComponent =
+        fixture.debugElement.componentInstance;
       component.multi = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -42,8 +56,11 @@ describe('Component: ExpansionPanelGroup', () => {
 
   it('should not allow multiple panels to be opened at once if multi is false', async(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdExpansionPanelGroupTestComponent,
+      );
+      const component: TdExpansionPanelGroupTestComponent =
+        fixture.debugElement.componentInstance;
       component.multi = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -68,8 +85,11 @@ describe('Component: ExpansionPanelGroup', () => {
 
   it('should only open the last panel that has the expand input enabled, if multi is true and multiple panels have the expand input enabled', async(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupMultiInitTestComponent);
-      const component: TdExpansionPanelGroupMultiInitTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdExpansionPanelGroupMultiInitTestComponent,
+      );
+      const component: TdExpansionPanelGroupMultiInitTestComponent =
+        fixture.debugElement.componentInstance;
       component.multi = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -85,8 +105,11 @@ describe('Component: ExpansionPanelGroup', () => {
 
   it('should only leave last panel opened open if multi is set to false', async(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdExpansionPanelGroupTestComponent,
+      );
+      const component: TdExpansionPanelGroupTestComponent =
+        fixture.debugElement.componentInstance;
       component.multi = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -119,8 +142,11 @@ describe('Component: ExpansionPanelGroup', () => {
 
   it('should open all panels if the openAll method is called, and multi is set to true', async(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdExpansionPanelGroupTestComponent,
+      );
+      const component: TdExpansionPanelGroupTestComponent =
+        fixture.debugElement.componentInstance;
       component.multi = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -141,8 +167,11 @@ describe('Component: ExpansionPanelGroup', () => {
 
   it('should not open any new panels if the openAll method is called, and multi is set to false', async(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdExpansionPanelGroupTestComponent,
+      );
+      const component: TdExpansionPanelGroupTestComponent =
+        fixture.debugElement.componentInstance;
       component.multi = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -163,8 +192,11 @@ describe('Component: ExpansionPanelGroup', () => {
 
   it('should close all panels if the closeAll method is called', async(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdExpansionPanelGroupTestComponent,
+      );
+      const component: TdExpansionPanelGroupTestComponent =
+        fixture.debugElement.componentInstance;
       component.multi = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -208,9 +240,12 @@ class TdExpansionPanelGroupTestComponent {
   selector: 'td-expansion-panel-group-multi-init-expanded-test',
   template: `
     <td-expansion-panel-group [multi]="multi">
-      <td-expansion-panel [label]="panel1" [expand]="panel1Expanded"></td-expansion-panel>
-      <td-expansion-panel [label]="panel2" [expand]="panel2Expanded"></td-expansion-panel>
-      <td-expansion-panel [label]="panel3" [expand]="panel3Expanded"></td-expansion-panel>
+      <td-expansion-panel [label]="panel1" [expand]="panel1Expanded">
+      </td-expansion-panel>
+      <td-expansion-panel [label]="panel2" [expand]="panel2Expanded">
+      </td-expansion-panel>
+      <td-expansion-panel [label]="panel3" [expand]="panel3Expanded">
+      </td-expansion-panel>
     </td-expansion-panel-group>
   `,
 })
@@ -229,10 +264,14 @@ function getAllOpenPanels(fixture: ComponentFixture<any>): DebugElement[] {
   return fixture.debugElement
     .queryAll(By.directive(TdExpansionPanelComponent))
     .filter(
-      (element: DebugElement) => element.query(By.css('.td-expansion-content')).nativeElement.style.height !== '0px',
+      (element: DebugElement) =>
+        element.query(By.css('.td-expansion-content')).nativeElement.style
+          .height !== '0px',
     );
 }
 
 function togglePanel(panel: DebugElement): void {
-  panel.query(By.css('.td-expansion-panel-header')).triggerEventHandler('click', new Event('click'));
+  panel
+    .query(By.css('.td-expansion-panel-header'))
+    .triggerEventHandler('click', new Event('click'));
 }

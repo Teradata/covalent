@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './rename-me.component.html',
 })
 export class TdRenameMeComponent {
+
   constructor() {
     // stub
   }
+
 }

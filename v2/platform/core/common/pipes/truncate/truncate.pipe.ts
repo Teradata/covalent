@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'truncate',
 })
+
 export class TdTruncatePipe implements PipeTransform {
   transform(text: any, length: number): string {
     if (typeof text !== 'string') {

@@ -1,5 +1,7 @@
-import { Component, ChangeDetectorRef, ElementRef, DoCheck } from '@angular/core';
+import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy, ElementRef, DoCheck } from '@angular/core';
+import { AnimationEvent } from '@angular/animations';
 import { TemplatePortal } from '@angular/cdk/portal';
+import { Observable, Subject } from 'rxjs';
 
 export enum LoadingType {
   Circular = 'circular',
@@ -28,11 +30,16 @@ export const TD_CIRCLE_DIAMETER: number = 100;
 
 @Component({
   selector: 'td-loading',
-  styleUrls: ['./loading.component.scss'],
+  styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
-  animations: [tdFadeInOutAnimation],
+  animations: [
+    tdFadeInOutAnimation,
+  ],
 })
 export class TdLoadingComponent implements DoCheck {
+
+  private _animationIn: Subject<any> = new Subject<any>();
+  private _animationOut: Subject<any> = new Subject<any>();
   private _mode: LoadingMode = LoadingMode.Indeterminate;
   private _defaultMode: LoadingMode = LoadingMode.Indeterminate;
   private _value: number = 0;
@@ -90,14 +97,17 @@ export class TdLoadingComponent implements DoCheck {
    */
   color: 'primary' | 'accent' | 'warn' = 'primary';
 
-  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private _elementRef: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngDoCheck(): void {
     // When overlay is used and the host width has a value greater than 1px
     // set the circle diameter when possible incase the loading component was rendered in a hidden state
-    if (this.isOverlay() && this._hostHeight() > 1 && this.animation) {
-      this._setCircleDiameter();
-      this._changeDetectorRef.markForCheck();
+    if (this.isOverlay() && this._hostHeight() > 1) {
+      if (this.animation) {
+        this._setCircleDiameter();
+        this._changeDetectorRef.markForCheck();
+      }
     }
   }
 
@@ -117,7 +127,7 @@ export class TdLoadingComponent implements DoCheck {
 
   getCircleStrokeWidth(): number {
     // we calculate the stroke width by setting it as 10% of its diameter
-    const strokeWidth: number = this.getCircleDiameter() / 10;
+    let strokeWidth: number = this.getCircleDiameter() / 10;
     return Math.abs(strokeWidth);
   }
 
@@ -137,38 +147,58 @@ export class TdLoadingComponent implements DoCheck {
     return this.style === LoadingStyle.Overlay;
   }
 
+  animationComplete(event: AnimationEvent): void {
+    // Check to see if its "in" or "out" animation to execute the proper callback
+    if (!event.fromState) {
+      this.inAnimationCompleted();
+    } else {
+      this.outAnimationCompleted();
+    }
+  }
+
+  inAnimationCompleted(): void {
+    this._animationIn.next(undefined);
+  }
+
+  outAnimationCompleted(): void {
+   /* little hack to reset the loader value and animation before removing it from DOM
+    * else, the loader will appear with prev value when its registered again
+    * and will do an animation going prev value to 0.
+    */
+    this.value = 0;
+    // Check for changes for `OnPush` change detection
+    this._changeDetectorRef.markForCheck();
+    this._animationOut.next(undefined);
+  }
+
   /**
    * Starts in animation and returns an observable for completition event.
    */
-  show(): void {
+  startInAnimation(): Observable<any> {
     /* need to switch back to the selected mode, so we have saved it in another variable
-     *  and then recover it. (issue with protractor)
-     */
+    *  and then recover it. (issue with protractor)
+    */
     this._mode = this._defaultMode;
     // Set values before the animations starts
     this._setCircleDiameter();
     // Check for changes for `OnPush` change detection
     this.animation = true;
     this._changeDetectorRef.markForCheck();
+    return this._animationIn.asObservable();
   }
 
   /**
    * Starts out animation and returns an observable for completition event.
    */
-  hide(): void {
+  startOutAnimation(): Observable<any> {
     this.animation = false;
     /* need to switch back and forth from determinate/indeterminate so the setInterval()
-     * inside mat-progress-spinner stops and protractor doesnt timeout waiting to sync.
-     */
+    * inside mat-progress-spinner stops and protractor doesnt timeout waiting to sync.
+    */
     this._mode = LoadingMode.Determinate;
     // Check for changes for `OnPush` change detection
-    /* little hack to reset the loader value and animation before removing it from DOM
-     * else, the loader will appear with prev value when its registered again
-     * and will do an animation going prev value to 0.
-     */
-    this.value = 0;
-    // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
+    return this._animationOut.asObservable();
   }
 
   /**

@@ -32,12 +32,10 @@ export class TdFullscreenDirective {
   }
 
   public enterFullScreen(): void {
-    const {
-      _el: { nativeElement },
-    }: TdFullscreenDirective = this;
+    const { _el: { nativeElement } }: TdFullscreenDirective = this;
     const enterFullScreenMap: object = {
       requestFullscreen: () => nativeElement.requestFullscreen(), // Chrome
-      webkitRequestFullscreen: () => nativeElement.webkitRequestFullscreen(), // Safari
+      webkitRequestFullscreen: () => nativeElement.webkitRequestFullscreen(), // Safari 
       mozRequestFullScreen: () => nativeElement.mozRequestFullScreen(), // Firefox
       msRequestFullscreen: () => nativeElement.msRequestFullscreen(), // IE
     };
@@ -50,10 +48,7 @@ export class TdFullscreenDirective {
   }
 
   public exitFullScreen(): void {
-    const {
-      _document,
-      _el: { nativeElement },
-    }: TdFullscreenDirective = this;
+    const { _document, _el: { nativeElement } }: TdFullscreenDirective = this;
     const exitFullScreenMap: object = {
       exitFullscreen: () => _document.exitFullscreen(), // Chrome
       webkitExitFullscreen: () => _document.webkitExitFullscreen(), // Safari

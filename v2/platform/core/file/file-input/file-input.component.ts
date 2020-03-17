@@ -1,18 +1,5 @@
-import {
-  Component,
-  Directive,
-  Input,
-  Output,
-  EventEmitter,
-  ChangeDetectionStrategy,
-  ViewChild,
-  ElementRef,
-  Renderer2,
-  TemplateRef,
-  ViewContainerRef,
-  ChangeDetectorRef,
-  forwardRef,
-} from '@angular/core';
+import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
+         ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
@@ -37,32 +24,31 @@ export const _TdFileInputMixinBase = mixinControlValueAccessor(mixinDisabled(TdF
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TdFileInputComponent),
-      multi: true,
-    },
-  ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdFileInputComponent),
+    multi: true,
+  }],
   selector: 'td-file-input',
   inputs: ['disabled', 'value'],
   styleUrls: ['./file-input.component.scss'],
   templateUrl: './file-input.component.html',
 })
 export class TdFileInputComponent extends _TdFileInputMixinBase implements IControlValueAccessor, ICanDisable {
+
   private _multiple: boolean = false;
 
   /** The native `<input type="file"> element */
-  @ViewChild('fileInput', { static: true }) _inputElement: ElementRef;
+  @ViewChild('fileInput') _inputElement: ElementRef;
   get inputElement(): HTMLInputElement {
     return this._inputElement.nativeElement;
   }
 
   /**
-   * color?: 'accent' | 'primary' | 'warn'
+   * color?: string
    * Sets button color. Uses same color palette accepted as [MatButton].
    */
-  @Input() color: 'accent' | 'primary' | 'warn';
+  @Input('color') color: string;
 
   /**
    * multiple?: boolean
@@ -81,14 +67,14 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements ICont
    * Sets files accepted when opening the file browser dialog.
    * Same as 'accept' attribute in <input/> element.
    */
-  @Input() accept: string;
+  @Input('accept') accept: string;
 
   /**
    * select?: function
    * Event emitted a file is selected
    * Emits a [File | FileList] object.
    */
-  @Output() select: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+  @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
   constructor(private _renderer: Renderer2, _changeDetectorRef: ChangeDetectorRef) {
     super(_changeDetectorRef);
@@ -99,7 +85,7 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements ICont
    */
   handleSelect(files: File | FileList): void {
     this.writeValue(files);
-    this.select.emit(files);
+    this.onSelect.emit(files);
   }
 
   /**

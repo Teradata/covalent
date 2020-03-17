@@ -1,25 +1,32 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import {
+  TestBed,
+  inject,
+  async,
+  ComponentFixture,
+} from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../';
+import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../public-api';
 
 describe('Service: Loading', () => {
   let overlayContainerElement: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TdLoadingWrapperTestComponent],
-      imports: [NoopAnimationsModule, CovalentLoadingModule],
+      declarations: [
+        TdLoadingWrapperTestComponent,
+      ],
+      imports: [
+        NoopAnimationsModule,
+        CovalentLoadingModule,
+      ],
       providers: [
-        {
-          provide: OverlayContainer,
-          useFactory: () => {
-            overlayContainerElement = document.createElement('div');
-            return { getContainerElement: () => overlayContainerElement };
-          },
-        },
+        {provide: OverlayContainer, useFactory: () => {
+          overlayContainerElement = document.createElement('div');
+          return {getContainerElement: () => overlayContainerElement};
+        }},
       ],
     });
     TestBed.compileComponents();
@@ -31,7 +38,7 @@ describe('Service: Loading', () => {
 
   it('should render default fullscreen loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       loadingService.register();
@@ -54,7 +61,7 @@ describe('Service: Loading', () => {
 
   it('should render configured progress bar, accent fullscreen loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       loadingService.create({
         name: 'name',
         type: LoadingType.Linear,
@@ -82,7 +89,7 @@ describe('Service: Loading', () => {
 
   it('should render configured progress bar, accent fullscreen loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       loadingService.create({
         name: 'name',
         type: LoadingType.Linear,
@@ -110,6 +117,7 @@ describe('Service: Loading', () => {
 
   it('should throw error when trying to create loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(function(): void {
         loadingService.create({
           name: undefined,
@@ -123,7 +131,7 @@ describe('Service: Loading', () => {
 
   it('should remove overriding loading component with the same name if fullscreen', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(function(): void {
         loadingService.create({
           name: 'name',
@@ -145,6 +153,7 @@ describe('Service: Loading', () => {
 
   it('should fail to resolve/setValue/register unknown names', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(loadingService.register('unknown')).toBeFalsy();
       expect(loadingService.setValue('unknown', 50)).toBeFalsy();
       expect(loadingService.resolve('unknown')).toBeFalsy();
@@ -154,7 +163,7 @@ describe('Service: Loading', () => {
 
   it('should render default fullscreen by registering 3 times and then resolve by calling resolveAll', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       loadingService.register();
@@ -181,7 +190,9 @@ describe('Service: Loading', () => {
 @Component({
   selector: 'td-loading-wrapper-test',
   template: `
-    <div class="content"></div>
+  <div class="content"></div>
   `,
 })
-class TdLoadingWrapperTestComponent {}
+class TdLoadingWrapperTestComponent {
+
+}

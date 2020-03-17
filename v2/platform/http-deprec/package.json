@@ -1,0 +1,38 @@
+{
+  "name": "@covalent/http-deprec",
+  "version": "0.0.0-COVALENT",
+  "description": "Teradata UI Platform Http Helper Module (deprecated)",
+  "keywords": [
+    "angular",
+    "components",
+    "reusable",
+    "http",
+    "rest",
+    "interceptor",
+    "deprecated"
+  ],
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jason Weaver <jason.weaver@teradata.com>",
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>"
+  ],
+  "peerDependencies": {
+    "@angular/core": "^0.0.0-NG",
+    "@angular/http": "^0.0.0-NG"
+  }
+}

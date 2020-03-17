@@ -10,14 +10,12 @@ $td-sidesheet-top-padding: 20px !default;
 // base stle for [layout="column"]
 %layout-column {
   @extend %layout;
-
   flex-direction: column;
 }
 
 // base stle for [layout="column"]
 %layout-row {
   @extend %layout;
-
   flex-direction: row;
 }
 
@@ -39,7 +37,7 @@ $td-sidesheet-top-padding: 20px !default;
 
 td-sidesheet {
   @extend %layout-column, %layout-fill;
-
+  
   .mat-divider-horizontal {
     position: static !important;
   }
@@ -51,7 +49,6 @@ td-sidesheet {
   // HEADER STYLES
   td-sidesheet-header {
     @extend %layout-row, %layout-align-start-center;
-
     width: 100%;
     padding: $td-sidesheet-top-padding $td-sidesheet-side-padding;
     font-size: 18px;
@@ -88,14 +85,12 @@ td-sidesheet {
 // FIRST/LAST CHILD ADJUSTMENTS
 // top els in td-sidesheet-content and td-sidesheet can't have their default margin-tops (e.g. <p> tags)
 // or they'll incorrectly add to card's top padding
-td-sidesheet > :first-child,
-td-sidesheet-content > :first-child {
+td-sidesheet > :first-child, td-sidesheet-content > :first-child {
   margin-top: 0;
 }
 
 // last els in td-sidesheet-content and td-sidesheet can't have their default margin-bottoms (e.g. <p> tags)
 // or they'll incorrectly add to card's bottom padding
-td-sidesheet > :last-child,
-td-sidesheet-content > :last-child {
+td-sidesheet > :last-child, td-sidesheet-content > :last-child {
   margin-bottom: 0;
 }

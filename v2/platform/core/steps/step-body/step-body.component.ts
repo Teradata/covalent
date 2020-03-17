@@ -6,50 +6,47 @@ import { tdCollapseAnimation } from '@covalent/core/common';
 
 @Component({
   selector: 'td-step-body',
-  styleUrls: ['./step-body.component.scss'],
+  styleUrls: ['./step-body.component.scss' ],
   templateUrl: './step-body.component.html',
-  animations: [tdCollapseAnimation],
+  animations: [
+    tdCollapseAnimation,
+  ],
 })
 export class TdStepBodyComponent {
-  @ViewChild('contentRef', { read: ElementRef, static: true }) contentRef: ElementRef;
+
+  @ViewChild('contentRef', { read: ElementRef }) contentRef: ElementRef;
 
   get hasContent(): boolean {
-    return (
-      this.contentRef &&
-      (this.contentRef.nativeElement.children.length > 0 || !!this.contentRef.nativeElement.textContent.trim())
-    );
+    return this.contentRef &&
+          (this.contentRef.nativeElement.children.length > 0 || !!this.contentRef.nativeElement.textContent.trim());
   }
 
-  @ViewChild('actionsRef', { read: ElementRef, static: true }) actionsRef: ElementRef;
+  @ViewChild('actionsRef', { read: ElementRef }) actionsRef: ElementRef;
 
   get hasActions(): boolean {
-    return (
-      this.actionsRef &&
-      (this.actionsRef.nativeElement.children.length > 0 || !!this.actionsRef.nativeElement.textContent.trim())
-    );
+    return this.actionsRef &&
+          (this.actionsRef.nativeElement.children.length > 0 || !!this.actionsRef.nativeElement.textContent.trim());
   }
 
-  @ViewChild('summaryRef', { read: ElementRef, static: true }) summaryRef: ElementRef;
+  @ViewChild('summaryRef', { read: ElementRef }) summaryRef: ElementRef;
 
   get hasSummary(): boolean {
-    return (
-      this.summaryRef &&
-      (this.summaryRef.nativeElement.children.length > 0 || !!this.summaryRef.nativeElement.textContent.trim())
-    );
+    return this.summaryRef &&
+          (this.summaryRef.nativeElement.children.length > 0 || !!this.summaryRef.nativeElement.textContent.trim());
   }
 
   /**
    * active?: boolean
    * Sets for active/inactive states on body.
    */
-  @Input() active: boolean;
+  @Input('active') active: boolean;
 
   /**
    * state?: StepState or ['none' | 'required' | 'complete']
    * Sets styles for state of body.
    * Defaults to [StepState.None | 'none'].
    */
-  @Input() state: StepState = StepState.None;
+  @Input('state') state: StepState = StepState.None;
 
   /**
    * Returns 'true' if [state] equals to [StepState.Complete | 'complete'], else 'false'.

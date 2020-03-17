@@ -1,14 +1,5 @@
-import {
-  Component,
-  Directive,
-  Input,
-  Output,
-  TemplateRef,
-  ViewChild,
-  ViewContainerRef,
-  ContentChild,
-  OnInit,
-} from '@angular/core';
+import { Component, Directive, Input, Output, TemplateRef, ViewChild,
+         ViewContainerRef, ContentChild, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
@@ -59,6 +50,7 @@ export const _TdStepMixinBase = mixinDisableRipple(mixinDisabled(TdStepBase));
   templateUrl: './step.component.html',
 })
 export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDisable, ICanDisableRipple {
+
   private _active: boolean = false;
   private _state: StepState = StepState.None;
 
@@ -67,7 +59,7 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
     return this._contentPortal;
   }
 
-  @ViewChild(TemplateRef, { static: true }) _content: TemplateRef<any>;
+  @ViewChild(TemplateRef) _content: TemplateRef<any>;
   @ContentChild(TdStepLabelDirective) stepLabel: TdStepLabelDirective;
   @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
   @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
@@ -77,13 +69,13 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
    * Sets label of [TdStepComponent] header.
    * Defaults to 'Step #'
    */
-  @Input() label: string;
+  @Input('label') label: string;
 
   /**
    * sublabel?: string
    * Sets sublabel of [TdStepComponent] header.
    */
-  @Input() sublabel: string;
+  @Input('sublabel') sublabel: string;
 
   /**
    * active?: boolean
@@ -124,13 +116,13 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
    * activated?: function
    * Event emitted when [TdStepComponent] is activated.
    */
-  @Output() activated: EventEmitter<void> = new EventEmitter<void>();
+  @Output('activated') onActivated: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * deactivated?: function
    * Event emitted when [TdStepComponent] is deactivated.
    */
-  @Output() deactivated: EventEmitter<void> = new EventEmitter<void>();
+  @Output('deactivated') onDeactivated: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private _viewContainerRef: ViewContainerRef) {
     super();
@@ -180,7 +172,7 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
   }
 
   /**
-   * Method to change active state internally and emit the [activated] event if 'true' or [deactivated]
+   * Method to change active state internally and emit the [onActivated] event if 'true' or [onDeactivated]
    * event if 'false'. (Blocked if [disabled] is 'true')
    * returns true if successfully changed state
    */
@@ -201,10 +193,10 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
   }
 
   private _onActivated(): void {
-    this.activated.emit();
+    this.onActivated.emit(undefined);
   }
 
   private _onDeactivated(): void {
-    this.deactivated.emit();
+    this.onDeactivated.emit(undefined);
   }
 }

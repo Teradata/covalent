@@ -5,11 +5,14 @@ import { tdCollapseAnimation } from '@covalent/core/common';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-json-formatter',
-  styleUrls: ['./json-formatter.component.scss'],
+  styleUrls: ['./json-formatter.component.scss' ],
   templateUrl: './json-formatter.component.html',
-  animations: [tdCollapseAnimation],
+  animations: [
+    tdCollapseAnimation,
+  ],
 })
 export class TdJsonFormatterComponent {
+
   /**
    * Max length for property names. Any names bigger than this get trunctated.
    */
@@ -60,7 +63,7 @@ export class TdJsonFormatterComponent {
     this._key = key;
   }
   get key(): string {
-    const elipsis: string = this._key && this._key.length > TdJsonFormatterComponent.KEY_MAX_LENGTH ? '…' : '';
+    let elipsis: string = this._key && this._key.length > TdJsonFormatterComponent.KEY_MAX_LENGTH ? '…' : '';
     return this._key ? this._key.substring(0, TdJsonFormatterComponent.KEY_MAX_LENGTH) + elipsis : this._key;
   }
 
@@ -88,7 +91,9 @@ export class TdJsonFormatterComponent {
     return false;
   }
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef, @Optional() private _dir: Dir) {}
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              @Optional() private _dir: Dir) {
+  }
 
   /**
    * Refreshes json-formatter and rerenders [data]
@@ -120,8 +125,8 @@ export class TdJsonFormatterComponent {
    * Gets parsed value depending on value type.
    */
   getValue(value: any): string {
-    const type: string = this.getType(value);
-    if (type === 'undefined' || type === 'null') {
+    let type: string = this.getType(value);
+    if (type === 'undefined' || (type === 'null')) {
       return type;
     } else if (type === 'date') {
       value = new Date(value).toString();
@@ -129,12 +134,9 @@ export class TdJsonFormatterComponent {
       value = '"' + value + '"';
     } else if (type === 'function') {
       // Remove content of the function
-      return (
-        value
-          .toString()
+      return value.toString()
           .replace(/[\r\n]/g, '')
-          .replace(/\{.*\}/, '') + '{…}'
-      );
+          .replace(/\{.*\}/, '') + '{…}';
     } else if (Array.isArray(value)) {
       return this.getObjectName() + ' [' + value.length + ']';
     }
@@ -153,9 +155,11 @@ export class TdJsonFormatterComponent {
       if (Array.isArray(object)) {
         return 'object';
       }
-      const date: Date = new Date(object);
-      if (Object.prototype.toString.call(date) === '[object Date]' && !Number.isNaN(date.getTime())) {
-        return 'date';
+      let date: Date = new Date(object);
+      if (Object.prototype.toString.call(date) === '[object Date]') {
+        if (!Number.isNaN(date.getTime())) {
+          return 'date';
+        }
       }
     }
     return typeof object;
@@ -166,12 +170,12 @@ export class TdJsonFormatterComponent {
    * see: http://stackoverflow.com/a/332429
    */
   getObjectName(): string {
-    const object: any = this._data;
+    let object: any = this._data;
     if (this.isObject() && !object.constructor) {
-      return 'Object';
+        return 'Object';
     }
-    const funcNameRegex: RegExp = /function (.{1,})\(/;
-    const results: RegExpExecArray = funcNameRegex.exec(object.constructor.toString());
+    let funcNameRegex: RegExp = /function (.{1,})\(/;
+    let results: RegExpExecArray = (funcNameRegex).exec((object).constructor.toString());
     if (results && results.length > 1) {
       return results[1];
     } else {
@@ -187,35 +191,32 @@ export class TdJsonFormatterComponent {
     let startChar: string = '{ ';
     let endChar: string = ' }';
     if (this.isArray()) {
-      const previewArray: any[] = this._data.slice(0, TdJsonFormatterComponent.PREVIEW_LIMIT);
+      let previewArray: any[] = this._data.slice(0, TdJsonFormatterComponent.PREVIEW_LIMIT);
       previewData = previewArray.map((obj: any) => {
         return this.getValue(obj);
       });
       startChar = '[';
       endChar = ']';
     } else {
-      const previewKeys: string[] = this._children.slice(0, TdJsonFormatterComponent.PREVIEW_LIMIT);
+      let previewKeys: string[] = this._children.slice(0, TdJsonFormatterComponent.PREVIEW_LIMIT);
       previewData = previewKeys.map((key: string) => {
         return key + ': ' + this.getValue(this._data[key]);
       });
     }
-    const previewString: string = previewData.join(', ');
-    const ellipsis: string =
-      previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ||
-      previewString.length > TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH
-        ? '…'
-        : '';
-    return (
-      startChar + previewString.substring(0, TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH) + ellipsis + endChar
-    );
+    let previewString: string =  previewData.join(', ');
+    let ellipsis: string = previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ||
+                           previewString.length > TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH ? '…' : '';
+    return startChar + previewString.substring(0, TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH) +
+           ellipsis + endChar;
   }
 
   private parseChildren(): void {
     if (this.isObject()) {
       this._children = [];
-      for (const key of Object.keys(this._data)) {
+      for (let key in this._data) {
         this._children.push(key);
       }
     }
   }
+
 }

@@ -1,13 +1,4 @@
-import {
-  Component,
-  AfterViewInit,
-  ElementRef,
-  Input,
-  Output,
-  EventEmitter,
-  Renderer2,
-  SecurityContext,
-} from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare const require: any;
@@ -20,6 +11,7 @@ let hljs: any = require('highlight.js/lib');
   templateUrl: './highlight.component.html',
 })
 export class TdHighlightComponent implements AfterViewInit {
+
   private _initialized: boolean = false;
 
   private _content: string;
@@ -48,18 +40,20 @@ export class TdHighlightComponent implements AfterViewInit {
    *
    * e.g. `typescript`, `html` , etc.
    */
-  @Input() lang: string = 'typescript';
+  @Input('lang') language: string = 'typescript';
 
   /**
    * contentReady?: function
    * Event emitted after the highlight content rendering is finished.
    */
-  @Output() contentReady: EventEmitter<void> = new EventEmitter<void>();
+  @Output('contentReady') onContentReady: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
+  constructor(private _renderer: Renderer2,
+              private _elementRef: ElementRef,
+              private _domSanitizer: DomSanitizer) {}
 
   ngAfterViewInit(): void {
-    if (!this.lang) {
+    if (!this.language) {
       throw new Error('Error: language attribute must be defined in TdHighlightComponent.');
     }
     if (!this._content) {
@@ -77,9 +71,9 @@ export class TdHighlightComponent implements AfterViewInit {
       // Clean container
       this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
-      this._elementFromString(this._render(code));
+      let preElement: HTMLPreElement = this._elementFromString(this._render(code));
     }
-    this.contentReady.emit();
+    this.onContentReady.emit();
   }
 
   private _elementFromString(codeStr: string): HTMLPreElement {
@@ -97,15 +91,16 @@ export class TdHighlightComponent implements AfterViewInit {
 
   private _render(contents: string): string {
     // Trim leading and trailing newlines
-    contents = contents.replace(/^(\s|\t)*\n+/g, '').replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
+    contents = contents.replace(/^(\s|\t)*\n+/g, '')
+                       .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
     // Split markup by line characters
     let lines: string[] = contents.split('\n');
 
     // check how much indentation is used by the first actual code line
-    const firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
+    let firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
 
     // Remove all indentation spaces so code can be parsed correctly
-    const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
+    let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
     lines = lines.map(function(line: string): string {
       return line
         .replace('=""', '') // remove empty values
@@ -113,15 +108,12 @@ export class TdHighlightComponent implements AfterViewInit {
         .replace(/\s+$/, ''); // remove trailing white spaces
     });
 
-    const codeToParse: string = lines
-      .join('\n')
-      .replace(/\{ \{/gi, '{{')
-      .replace(/\} \}/gi, '}}')
-      .replace(/&lt;/gi, '<')
-      .replace(/&gt;/gi, '>'); // replace with < and > to render HTML in Angular
+    let codeToParse: string =  lines.join('\n')
+    .replace(/\{ \{/gi, '{{').replace(/\} \}/gi, '}}')
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in Angular
 
     // Parse code with highlight.js depending on language
-    const highlightedCode: any = hljs.highlight(this.lang, codeToParse, true);
+    let highlightedCode: any = hljs.highlight(this.language, codeToParse, true);
     highlightedCode.value = highlightedCode.value
       .replace(/=<span class="hljs-value">""<\/span>/gi, '')
       .replace('<head>', '')

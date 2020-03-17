@@ -1,18 +1,9 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  ContentChildren,
-  TemplateRef,
-  QueryList,
-  AfterContentInit,
-  OnDestroy,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef, ContentChildren,
+         TemplateRef, QueryList, AfterContentInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
-import { TdDynamicFormsErrorTemplateDirective } from './dynamic-element.component';
+import { TdDynamicFormsErrorTemplate } from './dynamic-element.component';
 
 import { timer, Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
@@ -24,15 +15,14 @@ import { takeUntil, filter } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
+
   private _renderedElements: ITdDynamicElementConfig[] = [];
   private _elements: ITdDynamicElementConfig[];
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
   private _destroy$: Subject<any> = new Subject();
   private _destroyControl$: Subject<string> = new Subject();
 
-  @ContentChildren(TdDynamicFormsErrorTemplateDirective, { descendants: true }) _errorTemplates: QueryList<
-    TdDynamicFormsErrorTemplateDirective
-  >;
+  @ContentChildren(TdDynamicFormsErrorTemplate) _errorTemplates: QueryList<TdDynamicFormsErrorTemplate>;
   dynamicForm: FormGroup;
 
   /**
@@ -85,8 +75,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
    */
   get errors(): { [name: string]: any } {
     if (this.dynamicForm) {
-      const errors: { [name: string]: any } = {};
-      for (const name of Object.keys(this.dynamicForm.controls)) {
+      let errors: {[name: string]: any} = {};
+      for (let name in this.dynamicForm.controls) {
         errors[name] = this.dynamicForm.controls[name].errors;
       }
       return errors;
@@ -97,18 +87,16 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   /**
    * Getter property for [controls] of dynamic [FormGroup].
    */
-  get controls(): { [key: string]: AbstractControl } {
+  get controls(): {[key: string]: AbstractControl} {
     if (this.dynamicForm) {
       return this.dynamicForm.controls;
     }
     return {};
   }
 
-  constructor(
-    private _formBuilder: FormBuilder,
-    private _dynamicFormsService: TdDynamicFormsService,
-    private _changeDetectorRef: ChangeDetectorRef,
-  ) {
+  constructor(private _formBuilder: FormBuilder,
+              private _dynamicFormsService: TdDynamicFormsService,
+              private _changeDetectorRef: ChangeDetectorRef) {
     this.dynamicForm = this._formBuilder.group({});
   }
 
@@ -142,22 +130,25 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
    */
   private _updateErrorTemplates(): void {
     this._templateMap = new Map<string, TemplateRef<any>>();
-    for (const errorTemplate of this._errorTemplates.toArray()) {
-      this._templateMap.set(errorTemplate.tdDynamicFormsError, errorTemplate.templateRef);
+    for (let i: number = 0; i < this._errorTemplates.toArray().length; i++) {
+      this._templateMap.set(
+        this._errorTemplates.toArray()[i].tdDynamicFormsError,
+        this._errorTemplates.toArray()[i].templateRef,
+      );
     }
   }
 
   private _rerenderElements(): void {
     this._clearRemovedElements();
     this._renderedElements = [];
-    const duplicates: string[] = [];
+    let duplicates: string[] = [];
     this._elements.forEach((elem: ITdDynamicElementConfig) => {
       this._dynamicFormsService.validateDynamicElementName(elem.name);
       if (duplicates.indexOf(elem.name) > -1) {
         throw new Error(`Dynamic element name: "${elem.name}" is duplicated`);
       }
       duplicates.push(elem.name);
-      const dynamicElement: AbstractControl = this.dynamicForm.get(elem.name);
+      let dynamicElement: AbstractControl = this.dynamicForm.get(elem.name);
       if (!dynamicElement) {
         this.dynamicForm.addControl(elem.name, this._dynamicFormsService.createFormControl(elem));
         this._subscribeToControlStatusChanges(elem.name);
@@ -177,19 +168,22 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
     });
     // call a change detection since the whole form might change
     this._changeDetectorRef.detectChanges();
-    timer()
-      .toPromise()
-      .then(() => {
-        // call a markForCheck so elements are rendered correctly in OnPush
-        this._changeDetectorRef.markForCheck();
-      });
+    timer().toPromise().then(() => {
+      // call a markForCheck so elements are rendered correctly in OnPush
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   private _clearRemovedElements(): void {
-    this._renderedElements = this._renderedElements.filter(
-      (renderedElement: ITdDynamicElementConfig) =>
-        !this._elements.some((element: ITdDynamicElementConfig) => element.name === renderedElement.name),
-    );
+    for (let i: number = 0; i < this._renderedElements.length; i++) {
+      for (let j: number = 0; j < this._elements.length; j++) {
+        // check if the name of the element is still there removed
+        if (this._renderedElements[i].name === this._elements[j].name) {
+          delete this._renderedElements[i];
+          break;
+        }
+      }
+    }
     // remove elements that were removed from the array
     this._renderedElements.forEach((elem: ITdDynamicElementConfig) => {
       this._destroyControl$.next(elem.name);
@@ -201,12 +195,17 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   private _subscribeToControlStatusChanges(elementName: string): void {
     const control: AbstractControl = this.controls[elementName];
 
-    const controlDestroyed$: Observable<any> = this._destroyControl$.pipe(
-      filter((destroyedElementName: string) => destroyedElementName === elementName),
-    );
+    const controlDestroyed$: Observable<any> = this._destroyControl$
+      .pipe(
+        filter((destroyedElementName: string) => destroyedElementName === elementName),
+      );
 
-    control.statusChanges.pipe(takeUntil(this._destroy$), takeUntil(controlDestroyed$)).subscribe(() => {
-      this._changeDetectorRef.markForCheck();
-    });
+    control.statusChanges
+      .pipe(
+        takeUntil(this._destroy$),
+        takeUntil(controlDestroyed$),
+      ).subscribe(() => {
+        this._changeDetectorRef.markForCheck();
+      });
   }
 }

@@ -3,14 +3,15 @@ import { Component, Input, Renderer2, ElementRef } from '@angular/core';
 @Component({
   /* tslint:disable-next-line */
   selector: 'td-layout-footer,td-layout-footer-inner',
-  styleUrls: ['./layout-footer.component.scss'],
+  styleUrls: ['./layout-footer.component.scss' ],
   templateUrl: './layout-footer.component.html',
 })
 export class TdLayoutFooterComponent {
+
   private _color: 'primary' | 'accent' | 'warn';
 
   /**
-   * color?: 'accent' | 'primary' | 'warn'
+   * color?: string
    *
    * Optional color option: primary | accent | warn.
    */
@@ -26,7 +27,9 @@ export class TdLayoutFooterComponent {
     return this._color;
   }
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef) {
+  constructor(private _renderer: Renderer2,
+              private _elementRef: ElementRef) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-layout-footer');
   }
+
 }

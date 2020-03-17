@@ -7,6 +7,7 @@ import { NgModel } from '@angular/forms';
   selector: '[tdFileSelect]',
 })
 export class TdFileSelectDirective {
+
   private _multiple: boolean = false;
 
   /**
@@ -25,7 +26,7 @@ export class TdFileSelectDirective {
    * Emits a [FileList | File] object.
    * Alternative to not use [(ngModel)].
    */
-  @Output() fileSelect: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
+  @Output('fileSelect') onFileSelect: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
 
   /**
    * Binds native 'multiple' attribute if [multiple] property is 'true'.
@@ -35,21 +36,22 @@ export class TdFileSelectDirective {
     return this._multiple ? '' : undefined;
   }
 
-  constructor(@Optional() @Host() private model: NgModel) {}
+  constructor(@Optional() @Host() private model: NgModel) {
+  }
 
   /**
    * Listens to 'change' host event to get [HTMLInputElement] files.
-   * Emits the 'fileSelect' event with a [FileList] or [File] depending if 'multiple' attr exists in host.
-   * Uses [(ngModel)] if declared, instead of emitting 'fileSelect' event.
+   * Emits the 'onFileSelect' event with a [FileList] or [File] depending if 'multiple' attr exists in host.
+   * Uses [(ngModel)] if declared, instead of emitting 'onFileSelect' event.
    */
   @HostListener('change', ['$event'])
   onChange(event: Event): void {
     if (event.target instanceof HTMLInputElement) {
-      const fileInputEl: HTMLInputElement = event.target;
-      const files: FileList = fileInputEl.files;
+      let fileInputEl: HTMLInputElement = (<HTMLInputElement>event.target);
+      let files: FileList = fileInputEl.files;
       if (files.length) {
-        const value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
-        this.model ? this.model.update.emit(value) : this.fileSelect.emit(value);
+        let value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
+        this.model ? this.model.update.emit(value) : this.onFileSelect.emit(value);
       }
     }
   }

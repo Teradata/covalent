@@ -3,23 +3,24 @@ import { Input } from '@angular/core';
 
 @Component({
   selector: 'td-layout-card-over',
-  styleUrls: ['./layout-card-over.component.scss'],
+  styleUrls: ['./layout-card-over.component.scss' ],
   templateUrl: './layout-card-over.component.html',
 })
 export class TdLayoutCardOverComponent {
+
   /**
    * cardTitle?: string
    *
    * Title set in card.
    */
-  @Input() cardTitle: string;
+  @Input('cardTitle') cardTitle: string;
 
   /**
    * cardSubtitle?: string
    *
    * Subtitle set in card.
    */
-  @Input() cardSubtitle: string;
+  @Input('cardSubtitle') cardSubtitle: string;
 
   /**
    * cardWidth?: string
@@ -27,13 +28,14 @@ export class TdLayoutCardOverComponent {
    * Card flex width in %.
    * Defaults to 70%.
    */
-  @Input() cardWidth: number = 70;
+  @Input('cardWidth') cardWidth: number = 70;
 
   /**
-   * color?: 'accent' | 'primary' | 'warn'
+   * color?: string
    *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, primary is used.
    */
-  @Input() color: 'accent' | 'primary' | 'warn' = 'primary';
+  @Input('color') color: string = 'primary';
+
 }

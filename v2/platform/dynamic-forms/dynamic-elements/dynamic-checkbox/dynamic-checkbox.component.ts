@@ -3,10 +3,11 @@ import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-checkbox',
-  styleUrls: ['./dynamic-checkbox.component.scss'],
+  styleUrls: [ './dynamic-checkbox.component.scss' ],
   templateUrl: './dynamic-checkbox.component.html',
 })
 export class TdDynamicCheckboxComponent {
+
   control: FormControl;
 
   label: string = '';
@@ -16,4 +17,5 @@ export class TdDynamicCheckboxComponent {
   hint: string = '';
 
   required: boolean = false;
+
 }

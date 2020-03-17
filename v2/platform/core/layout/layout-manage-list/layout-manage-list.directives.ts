@@ -4,19 +4,17 @@ import { LayoutToggle } from '../layout-toggle.class';
 
 @Directive({
   selector: '[tdLayoutManageListToggle]',
-  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutManageListToggleDirective extends LayoutToggle {
-  @Input('tdLayoutManageListToggle')
+
+  @Input('tdLayoutManageListToggle') 
   set tdLayoutManageListToggle(tdLayoutManageListToggle: boolean) {
     this.disabled = !(<any>tdLayoutManageListToggle === '' || tdLayoutManageListToggle);
   }
 
-  constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef,
-  ) {
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+              renderer: Renderer2,
+              elementRef: ElementRef) {
     super(layout, renderer, elementRef);
   }
 
@@ -27,19 +25,17 @@ export class TdLayoutManageListToggleDirective extends LayoutToggle {
 
 @Directive({
   selector: '[tdLayoutManageListClose]',
-  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutManageListCloseDirective extends LayoutToggle {
-  @Input('tdLayoutManageListClose')
+  
+  @Input('tdLayoutManageListClose') 
   set tdLayoutManageListClose(tdLayoutManageListClose: boolean) {
     this.disabled = !(<any>tdLayoutManageListClose === '' || tdLayoutManageListClose);
   }
 
-  constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef,
-  ) {
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+              renderer: Renderer2,
+              elementRef: ElementRef) {
     super(layout, renderer, elementRef);
   }
 
@@ -50,19 +46,17 @@ export class TdLayoutManageListCloseDirective extends LayoutToggle {
 
 @Directive({
   selector: '[tdLayoutManageListOpen]',
-  inputs: ['hideWhenOpened'],
 })
 export class TdLayoutManageListOpenDirective extends LayoutToggle {
-  @Input('tdLayoutManageListOpen')
+
+  @Input('tdLayoutManageListOpen') 
   set tdLayoutManageListOpen(tdLayoutManageListOpen: boolean) {
     this.disabled = !(<any>tdLayoutManageListOpen === '' || tdLayoutManageListOpen);
   }
 
-  constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef,
-  ) {
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+              renderer: Renderer2,
+              elementRef: ElementRef) {
     super(layout, renderer, elementRef);
   }
 

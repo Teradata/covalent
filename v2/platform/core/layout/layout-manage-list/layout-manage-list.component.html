@@ -1,13 +1,11 @@
 <mat-sidenav-container fullscreen [autosize]="containerAutosize" class="td-layout-manage-list">
-  <mat-sidenav
-    #sidenav
-    position="start"
-    [mode]="mode"
-    [opened]="opened"
-    [disableClose]="disableClose"
-    [style.max-width]="sidenavWidth"
-    [style.min-width]="sidenavWidth"
-  >
+  <mat-sidenav #sidenav
+              position="start"
+              [mode]="mode"
+              [opened]="opened"
+              [disableClose]="disableClose"
+              [style.max-width]="sidenavWidth"
+              [style.min-width]="sidenavWidth">
     <ng-content select="mat-toolbar[td-sidenav-content]"></ng-content>
     <div class="td-layout-manage-list-sidenav" cdkScrollable>
       <ng-content select="[td-sidenav-content]"></ng-content>

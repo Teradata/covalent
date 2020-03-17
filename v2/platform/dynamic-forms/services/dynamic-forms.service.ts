@@ -45,7 +45,7 @@ export interface ITdDynamicElementConfig {
   max?: any;
   minLength?: any;
   maxLength?: any;
-  selections?: string[] | { value: any; label: string }[];
+  selections?: string[] | { value: any, label: string }[];
   multiple?: boolean;
   default?: any;
   flex?: number;
@@ -56,6 +56,7 @@ export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[^0-9][^\@]*$/;
 
 @Injectable()
 export class TdDynamicFormsService {
+
   /**
    * Method to validate if the [name] is a proper element name.
    * Throws error if name is not valid.
@@ -70,7 +71,7 @@ export class TdDynamicFormsService {
    * Gets component to be rendered depending on [TdDynamicElement | TdDynamicType]
    * Throws error if it does not exists or not supported.
    */
-  getDynamicElement(element: TdDynamicElement | TdDynamicType | Type<any>): any {
+  getDynamicElement(element: TdDynamicElement | TdDynamicType): any {
     switch (element) {
       case TdDynamicType.Text:
       case TdDynamicType.Number:
@@ -103,7 +104,7 @@ export class TdDynamicFormsService {
    * Creates form control for element depending [ITdDynamicElementConfig] properties.
    */
   createFormControl(config: ITdDynamicElementConfig): FormControl {
-    const validator: ValidatorFn = this.createValidators(config);
+    let validator: ValidatorFn = this.createValidators(config);
     return new FormControl({ value: config.default, disabled: config.disabled }, validator);
   }
 
@@ -137,7 +138,8 @@ export class TdDynamicFormsService {
   }
 }
 
-export function DYNAMIC_FORMS_PROVIDER_FACTORY(parent: TdDynamicFormsService): TdDynamicFormsService {
+export function DYNAMIC_FORMS_PROVIDER_FACTORY(
+  parent: TdDynamicFormsService): TdDynamicFormsService {
   return parent || new TdDynamicFormsService();
 }
 

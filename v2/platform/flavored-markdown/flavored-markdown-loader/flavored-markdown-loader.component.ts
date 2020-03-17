@@ -1,14 +1,5 @@
-import {
-  Component,
-  Input,
-  ChangeDetectorRef,
-  SimpleChanges,
-  OnChanges,
-  Output,
-  EventEmitter,
-  ChangeDetectionStrategy,
-} from '@angular/core';
-import { TdMarkdownLoaderService } from '@covalent/markdown';
+import { Component, Input, ChangeDetectorRef, SimpleChanges, OnChanges, Output, EventEmitter } from '@angular/core';
+import { MarkdownLoaderService } from '@covalent/markdown';
 
 // TODO: make a td-markdown-loader component
 
@@ -16,7 +7,6 @@ import { TdMarkdownLoaderService } from '@covalent/markdown';
   selector: 'td-flavored-markdown-loader',
   styleUrls: ['./flavored-markdown-loader.component.scss'],
   templateUrl: './flavored-markdown-loader.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
   /**
@@ -54,7 +44,7 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
-    private _markdownUrlLoaderService: TdMarkdownLoaderService,
+    private _markdownUrlLoaderService: MarkdownLoaderService,
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -65,7 +55,6 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
 
   async loadMarkdown(): Promise<void> {
     this.loading = true;
-    this._changeDetectorRef.markForCheck();
     try {
       this.content = await this._markdownUrlLoaderService.load(this.url, this.httpOptions);
     } catch (error) {

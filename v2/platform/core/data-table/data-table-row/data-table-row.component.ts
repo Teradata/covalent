@@ -1,13 +1,4 @@
-import {
-  Component,
-  Input,
-  Output,
-  Renderer2,
-  ElementRef,
-  ContentChildren,
-  QueryList,
-  HostListener,
-} from '@angular/core';
+import { Component, Input, Output, Renderer2, ElementRef, ContentChildren, QueryList, HostListener } from '@angular/core';
 
 import { TdDataTableCellComponent } from '../data-table-cell/data-table-cell.component';
 import { TdDataTableColumnComponent } from '../data-table-column/data-table-column.component';
@@ -15,22 +6,25 @@ import { TdDataTableColumnComponent } from '../data-table-column/data-table-colu
 @Component({
   /* tslint:disable-next-line */
   selector: 'tr[td-data-table-column-row]',
-  styleUrls: ['./data-table-row.component.scss'],
+  styleUrls: ['./data-table-row.component.scss' ],
   templateUrl: './data-table-row.component.html',
 })
 export class TdDataTableColumnRowComponent {
+
   constructor(protected _elementRef: ElementRef, protected _renderer: Renderer2) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-column-row');
   }
+
 }
 
 @Component({
   /* tslint:disable-next-line */
   selector: 'tr[td-data-table-row]',
-  styleUrls: ['./data-table-row.component.scss'],
+  styleUrls: ['./data-table-row.component.scss' ],
   templateUrl: './data-table-row.component.html',
 })
 export class TdDataTableRowComponent {
+
   private _selected: boolean = false;
 
   @Input('selected')
@@ -69,4 +63,5 @@ export class TdDataTableRowComponent {
   focus(): void {
     this._elementRef.nativeElement.focus();
   }
+
 }

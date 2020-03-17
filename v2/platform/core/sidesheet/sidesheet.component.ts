@@ -32,7 +32,6 @@ export class TdSidesheetHeaderComponent {}
   selector: 'td-sidesheet',
   templateUrl: './sidesheet.component.html',
   styleUrls: ['./sidesheet.component.scss'],
-  // tslint:disable-next-line:use-component-view-encapsulation
   encapsulation: ViewEncapsulation.None,
 })
 export class TdSidesheetComponent {

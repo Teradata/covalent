@@ -1,25 +1,7 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  forwardRef,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  ViewChild,
-  OnDestroy,
-  AfterViewInit,
-  ContentChildren,
-  TemplateRef,
-  AfterContentInit,
-  QueryList,
-  Inject,
-  Optional,
-  ViewChildren,
-  ElementRef,
-  OnInit,
-  AfterContentChecked,
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy,
+         ChangeDetectorRef, ViewChild, OnDestroy, AfterViewInit,
+         ContentChildren, TemplateRef, AfterContentInit, QueryList, Inject,
+         Optional, ViewChildren, ElementRef, OnInit, AfterContentChecked } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
@@ -31,10 +13,7 @@ import { Observable, Subscription, Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
-import {
-  ITdDataTableSortChangeEvent,
-  TdDataTableColumnComponent,
-} from './data-table-column/data-table-column.component';
+import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
 import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
@@ -104,21 +83,20 @@ export class TdDataTableBase {
 export const _TdDataTableMixinBase = mixinControlValueAccessor(TdDataTableBase, []);
 
 @Component({
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TdDataTableComponent),
-      multi: true,
-    },
-  ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdDataTableComponent),
+    multi: true,
+  }],
   selector: 'td-data-table',
-  styleUrls: ['./data-table.component.scss'],
+  styleUrls: ['./data-table.component.scss' ],
   templateUrl: './data-table.component.html',
   inputs: ['value'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdDataTableComponent extends _TdDataTableMixinBase
-  implements IControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+export class TdDataTableComponent extends _TdDataTableMixinBase implements IControlValueAccessor, OnInit,
+                                          AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+
   /** responsive width calculations */
   private _resizeSubs: Subscription;
   private _rowsChangedSubs: Subscription;
@@ -224,11 +202,9 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
 
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
-  @ContentChildren(TdDataTableTemplateDirective, { descendants: true }) _templates: QueryList<
-    TdDataTableTemplateDirective
-  >;
+  @ContentChildren(TdDataTableTemplateDirective) _templates: QueryList<TdDataTableTemplateDirective>;
 
-  @ViewChild('scrollableDiv', { static: true }) _scrollableDiv: ElementRef;
+  @ViewChild('scrollableDiv') _scrollableDiv: ElementRef;
 
   @ViewChildren('columnElement') _colElements: QueryList<TdDataTableColumnComponent>;
 
@@ -295,7 +271,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
     if (this.hasData) {
       this._columns = [];
       // if columns is undefined, use key in [data] rows as name and label for column headers.
-      const row: any = this._data[0];
+      let row: any = this._data[0];
       Object.keys(row).forEach((k: string) => {
         if (!this._columns.find((c: any) => c.name === k)) {
           this._columns.push({ name: k, label: k });
@@ -399,12 +375,13 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    */
   @Input('sortOrder')
   set sortOrder(order: 'ASC' | 'DESC') {
-    const sortOrder: string = order ? order.toUpperCase() : 'ASC';
+    let sortOrder: string = order ? order.toUpperCase() : 'ASC';
     if (sortOrder !== 'DESC' && sortOrder !== 'ASC') {
       throw new Error('[sortOrder] must be empty, ASC or DESC');
     }
 
-    this._sortOrder = sortOrder === 'ASC' ? TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
+    this._sortOrder = sortOrder === 'ASC' ?
+      TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
   }
   get sortOrderEnum(): TdDataTableSortingOrder {
     return this._sortOrder;
@@ -419,35 +396,35 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Event emitted when the column headers are clicked. [sortable] needs to be enabled.
    * Emits an [ITdDataTableSortChangeEvent] implemented object.
    */
-  @Output() sortChange: EventEmitter<ITdDataTableSortChangeEvent> = new EventEmitter<ITdDataTableSortChangeEvent>();
+  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> =
+                                      new EventEmitter<ITdDataTableSortChangeEvent>();
 
   /**
    * rowSelect?: function
    * Event emitted when a row is selected/deselected. [selectable] needs to be enabled.
    * Emits an [ITdDataTableSelectEvent] implemented object.
    */
-  @Output() rowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
+  @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
 
   /**
    * rowClick?: function
    * Event emitted when a row is clicked.
    * Emits an [ITdDataTableRowClickEvent] implemented object.
    */
-  @Output() rowClick: EventEmitter<ITdDataTableRowClickEvent> = new EventEmitter<ITdDataTableRowClickEvent>();
+  @Output('rowClick') onRowClick: EventEmitter<ITdDataTableRowClickEvent> = new EventEmitter<ITdDataTableRowClickEvent>();
 
   /**
    * selectAll?: function
    * Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled.
    * Emits an [ITdDataTableSelectAllEvent] implemented object.
    */
-  @Output() selectAll: EventEmitter<ITdDataTableSelectAllEvent> = new EventEmitter<ITdDataTableSelectAllEvent>();
+  @Output('selectAll') onSelectAll: EventEmitter<ITdDataTableSelectAllEvent> =
+                                    new EventEmitter<ITdDataTableSelectAllEvent>();
 
-  constructor(
-    @Optional() @Inject(DOCUMENT) private _document: any,
-    private _elementRef: ElementRef,
-    private _domSanitizer: DomSanitizer,
-    _changeDetectorRef: ChangeDetectorRef,
-  ) {
+  constructor(@Optional() @Inject(DOCUMENT) private _document: any,
+              private _elementRef: ElementRef,
+              private _domSanitizer: DomSanitizer,
+              _changeDetectorRef: ChangeDetectorRef) {
     super(_changeDetectorRef);
   }
 
@@ -456,9 +433,9 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Allows custom comparison between row and model to see if row is selected or not
    * Default comparation is by reference
    */
-  @Input() compareWith: (row: any, model: any) => boolean = (row: any, model: any) => {
+  @Input('compareWith') compareWith: (row: any, model: any) => boolean = (row: any, model: any) => {
     return row === model;
-  };
+  }
 
   /**
    * Initialize observable for resize and scroll events
@@ -476,21 +453,22 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
     });
 
     // initialize observable for column resize calculations
-    this._columnResizeSubs = this._onColumnResize
-      .asObservable()
-      .pipe(debounceTime(0))
-      .subscribe((clientX: number) => {
-        this._columnClientX = clientX;
-        this._calculateWidths();
-        this._changeDetectorRef.markForCheck();
-      });
+    this._columnResizeSubs = this._onColumnResize.asObservable().pipe(
+      debounceTime(0),
+    ).subscribe((clientX: number) => {
+      this._columnClientX = clientX;
+      this._calculateWidths();
+      this._changeDetectorRef.markForCheck();
+    });
     // initialize observable for scroll column header reposition
-    this._horizontalScrollSubs = this._onHorizontalScroll.asObservable().subscribe((horizontalScroll: number) => {
+    this._horizontalScrollSubs = this._onHorizontalScroll.asObservable()
+      .subscribe((horizontalScroll: number) => {
       this._scrollHorizontalOffset = horizontalScroll;
       this._changeDetectorRef.markForCheck();
     });
     // initialize observable for virtual scroll rendering
-    this._verticalScrollSubs = this._onVerticalScroll.asObservable().subscribe((verticalScroll: number) => {
+    this._verticalScrollSubs = this._onVerticalScroll.asObservable()
+      .subscribe((verticalScroll: number) => {
       this._scrollVerticalOffset = verticalScroll;
       this._calculateVirtualRows();
       this._changeDetectorRef.markForCheck();
@@ -504,8 +482,11 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Loads templates and sets them in a map for faster access.
    */
   ngAfterContentInit(): void {
-    for (const template of this._templates.toArray()) {
-      this._templateMap.set(template.tdDataTableTemplate, template.templateRef);
+    for (let i: number = 0; i < this._templates.toArray().length; i++) {
+      this._templateMap.set(
+        this._templates.toArray()[i].tdDataTableTemplate,
+        this._templates.toArray()[i].templateRef,
+      );
     }
   }
 
@@ -519,7 +500,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       this._onVerticalScroll.next(0);
     }
     if (this._elementRef.nativeElement) {
-      const newHostWidth: number = this._elementRef.nativeElement.getBoundingClientRect().width;
+      let newHostWidth: number = this._elementRef.nativeElement.getBoundingClientRect().width;
       // if the width has changed then we throw a resize event.
       if (this._hostWidth !== newHostWidth) {
         setTimeout(() => {
@@ -529,7 +510,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       }
     }
     if (this._scrollableDiv.nativeElement) {
-      const newHostHeight: number = this._scrollableDiv.nativeElement.getBoundingClientRect().height;
+      let newHostHeight: number = this._scrollableDiv.nativeElement.getBoundingClientRect().height;
       // if the height of the viewport has changed, then we mark for check
       if (this._hostHeight !== newHostHeight) {
         this._hostHeight = newHostHeight;
@@ -544,7 +525,9 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * so we can start calculating the widths
    */
   ngAfterViewInit(): void {
-    this._rowsChangedSubs = this._rows.changes.pipe(debounceTime(0)).subscribe(() => {
+    this._rowsChangedSubs = this._rows.changes.pipe(
+      debounceTime(0),
+    ).subscribe(() => {
       this._onResize.next();
     });
     this._calculateVirtualRows();
@@ -579,13 +562,13 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Calls the scroll observable
    */
   handleScroll(event: Event): void {
-    const element: HTMLElement = <HTMLElement>event.target;
+    let element: HTMLElement = (<HTMLElement>event.target);
     if (element) {
-      const horizontalScroll: number = element.scrollLeft;
+      let horizontalScroll: number = element.scrollLeft;
       if (this._scrollHorizontalOffset !== horizontalScroll) {
         this._onHorizontalScroll.next(horizontalScroll);
       }
-      const verticalScroll: number = element.scrollTop;
+      let verticalScroll: number = element.scrollTop;
       if (this._scrollVerticalOffset !== verticalScroll) {
         this._onVerticalScroll.next(verticalScroll);
       }
@@ -612,9 +595,9 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
   /**
    * Getter method for template references
    */
-  getTemplateRef(name: string): TemplateRef<any> {
-    return this._templateMap.get(name);
-  }
+   getTemplateRef(name: string): TemplateRef<any> {
+     return this._templateMap.get(name);
+   }
 
   /**
    * Clears model (ngModel) of component by removing all values in array.
@@ -636,8 +619,8 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
   /**
    * Selects or clears all rows depending on 'checked' value.
    */
-  _selectAll(checked: boolean): void {
-    const toggledRows: any[] = [];
+  selectAll(checked: boolean): void {
+    let toggledRows: any[] = [];
     if (checked) {
       this._data.forEach((row: any) => {
         // skiping already selected rows
@@ -654,10 +637,10 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
         // checking which ones are being toggled
         if (this.isRowSelected(row)) {
           toggledRows.push(row);
-          const modelRow: any = this.value.filter((val: any) => {
+          let modelRow: any = this.value.filter((val: any) => {
             return this.compareWith(row, val);
           })[0];
-          const index: number = this.value.indexOf(modelRow);
+          let index: number = this.value.indexOf(modelRow);
           if (index > -1) {
             this.value.splice(index, 1);
           }
@@ -666,7 +649,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       this._allSelected = false;
       this._indeterminate = false;
     }
-    this.selectAll.emit({ rows: toggledRows, selected: checked });
+    this.onSelectAll.emit({rows: toggledRows, selected: checked});
     this.onChange(this.value);
   }
 
@@ -675,11 +658,9 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    */
   isRowSelected(row: any): boolean {
     // compare items by [compareWith] function
-    return this.value
-      ? this.value.filter((val: any) => {
-          return this.compareWith(row, val);
-        }).length > 0
-      : false;
+    return this.value ? this.value.filter((val: any) => {
+      return this.compareWith(row, val);
+    }).length > 0 : false;
   }
 
   /**
@@ -690,7 +671,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
     if (this.selectable) {
       this.blockEvent(event);
       // Check to see if Shift key is selected and need to select everything in between
-      const mouseEvent: MouseEvent = event as MouseEvent;
+      let mouseEvent: MouseEvent = event as MouseEvent;
       if (this.multiple && mouseEvent && mouseEvent.shiftKey && this._lastSelectedIndex > -1) {
         let firstIndex: number = currentSelected;
         let lastIndex: number = this._lastSelectedIndex;
@@ -700,16 +681,14 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
         }
         // if clicking a checkbox behind the initial check, then toggle all selections expect the initial checkbox
         // else the checkboxes clicked are all after the initial one
-        if (
-          (this._firstSelectedIndex >= currentSelected && this._lastSelectedIndex > this._firstSelectedIndex) ||
-          (this._firstSelectedIndex <= currentSelected && this._lastSelectedIndex < this._firstSelectedIndex)
-        ) {
+        if ((this._firstSelectedIndex >= currentSelected && this._lastSelectedIndex > this._firstSelectedIndex) ||
+           (this._firstSelectedIndex <= currentSelected && this._lastSelectedIndex < this._firstSelectedIndex)) {
           for (let i: number = firstIndex; i <= lastIndex; i++) {
             if (this._firstSelectedIndex !== i) {
               this._doSelection(this._data[i], i);
             }
           }
-        } else if (this._firstSelectedIndex > currentSelected || this._firstSelectedIndex < currentSelected) {
+        } else if ((this._firstSelectedIndex > currentSelected) || (this._firstSelectedIndex < currentSelected)) {
           // change indexes depending on where the next checkbox is selected (before or after)
           if (this._firstSelectedIndex > currentSelected) {
             lastIndex--;
@@ -717,26 +696,26 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
             firstIndex++;
           }
           for (let i: number = firstIndex; i <= lastIndex; i++) {
-            const rowSelected: boolean = this.isRowSelected(this._data[i]);
+            let rowSelected: boolean = this.isRowSelected(this._data[i]);
             // if row is selected and first checkbox was selected
             // or if row was unselected and first checkbox was unselected
             // we ignore the toggle
-            if ((this._firstCheckboxValue && !rowSelected) || (!this._firstCheckboxValue && rowSelected)) {
+            if ((this._firstCheckboxValue && !rowSelected) ||
+                (!this._firstCheckboxValue && rowSelected)) {
               this._doSelection(this._data[i], i);
-            } else if (
-              this._shiftPreviouslyPressed &&
-              ((currentSelected >= this._firstSelectedIndex && currentSelected <= this._lastSelectedIndex) ||
-                (currentSelected <= this._firstSelectedIndex && currentSelected >= this._lastSelectedIndex))
-            ) {
+            } else if (this._shiftPreviouslyPressed) {
               // else if the checkbox selected was in the middle of the last selection and the first selection
               // then we undo the selections
-              this._doSelection(this._data[i], i);
+              if ((currentSelected >= this._firstSelectedIndex && currentSelected <= this._lastSelectedIndex) ||
+                  (currentSelected <= this._firstSelectedIndex && currentSelected >= this._lastSelectedIndex)) {
+                this._doSelection(this._data[i], i);
+              }
             }
           }
         }
         this._shiftPreviouslyPressed = true;
-        // if shift wasnt pressed, then we take the element checked as the first row
-        // incase the next click uses shift
+      // if shift wasnt pressed, then we take the element checked as the first row
+      // incase the next click uses shift
       } else if (mouseEvent && !mouseEvent.shiftKey) {
         this._firstCheckboxValue = this._doSelection(row, currentSelected);
         this._shiftPreviouslyPressed = false;
@@ -776,12 +755,12 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       // ignoring linting rules here because attribute it actually null or not there
       // can't check for undefined
       const srcElement: any = event.srcElement || event.currentTarget;
-      const element: HTMLElement = event.target as HTMLElement;
+      let element: HTMLElement = event.target as HTMLElement;
       /* tslint:disable-next-line */
       if (srcElement.getAttribute('stopRowClick') === null && element.tagName.toLowerCase() !== 'mat-pseudo-checkbox') {
-        this.rowClick.emit({
-          row,
-          index,
+        this.onRowClick.emit({
+          row: row,
+          index: index,
         });
       }
     }
@@ -792,15 +771,13 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    */
   handleSort(column: ITdDataTableColumn): void {
     if (this._sortBy === column) {
-      this._sortOrder =
-        this._sortOrder === TdDataTableSortingOrder.Ascending
-          ? TdDataTableSortingOrder.Descending
-          : TdDataTableSortingOrder.Ascending;
+      this._sortOrder = this._sortOrder === TdDataTableSortingOrder.Ascending ?
+        TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending;
     } else {
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
-    this.sortChange.next({ name: this._sortBy.name, order: this._sortOrder });
+    this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder });
   }
 
   /**
@@ -833,7 +810,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
          * if users presses the down arrow, we focus the next row
          * unless its the last row
          */
-        if (index < this._rows.toArray().length - 1) {
+        if (index < (this._rows.toArray().length - 1)) {
           this._rows.toArray()[index + 1].focus();
         }
         this.blockEvent(event);
@@ -842,7 +819,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
         }
         break;
       default:
-      // default
+        // default
     }
   }
 
@@ -860,9 +837,9 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
   _handleColumnDrag(event: MouseEvent | DragEvent): void {
     // check if there was been a separator clicked for resize
     if (this._resizingColumn !== undefined && event.clientX > 0) {
-      const xPosition: number = event.clientX;
+      let xPosition: number = event.clientX;
       // checks if the separator is being moved to try and resize the column, else dont do anything
-      if (xPosition > 0 && this._columnClientX > 0 && xPosition - this._columnClientX !== 0) {
+      if (xPosition > 0 && this._columnClientX > 0 && (xPosition - this._columnClientX) !== 0) {
         // calculate the new width depending if making the column bigger or smaller
         let proposedManualWidth: number = this._widths[this._resizingColumn].value + (xPosition - this._columnClientX);
         // if the proposed new width is less than the projected min width of the column, use projected min width
@@ -896,7 +873,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       return value;
     }
     if (name.indexOf('.') > -1) {
-      const splitName: string[] = name.split(/\.(.+)/, 2);
+      let splitName: string[] = name.split(/\.(.+)/, 2);
       return this._getNestedValue(splitName[1], value[splitName[0]]);
     } else {
       return value[name];
@@ -907,7 +884,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Does the actual Row Selection
    */
   private _doSelection(row: any, rowIndex: number): boolean {
-    const wasSelected: boolean = this.isRowSelected(row);
+    let wasSelected: boolean = this.isRowSelected(row);
     if (!wasSelected) {
       if (!this._multiple) {
         this.clearModel();
@@ -918,13 +895,13 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       row = this.value.filter((val: any) => {
         return this.compareWith(row, val);
       })[0];
-      const index: number = this.value.indexOf(row);
+      let index: number = this.value.indexOf(row);
       if (index > -1) {
         this.value.splice(index, 1);
       }
     }
     this._calculateCheckboxState();
-    this.rowSelect.emit({ row, index: rowIndex, selected: !wasSelected });
+    this.onRowSelect.emit({row: row, index: rowIndex, selected: !wasSelected});
     this.onChange(this.value);
     return !wasSelected;
   }
@@ -936,7 +913,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
     if (this._data) {
       this._allSelected = typeof this._data.find((d: any) => !this.isRowSelected(d)) === 'undefined';
       this._indeterminate = false;
-      for (const row of this._data) {
+      for (let row of this._data) {
         if (!this.isRowSelected(row)) {
           continue;
         }
@@ -966,7 +943,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
   private _adjustColumnWidhts(): void {
     let fixedTotalWidth: number = 0;
     // get the number of total columns that have flexible widths (not fixed or hidden)
-    const flexibleWidths: number = this._widths.filter((width: IInternalColumnWidth, index: number) => {
+    let flexibleWidths: number = this._widths.filter((width: IInternalColumnWidth, index: number) => {
       if (this.columns[index].hidden) {
         return false;
       }
@@ -984,21 +961,19 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
     // if we have flexible columns and pixels to spare on them
     // we try and spread the pixels across them
     if (flexibleWidths && recalculateHostWidth) {
-      const newValue: number = Math.floor(recalculateHostWidth / flexibleWidths);
+      let newValue: number = Math.floor(recalculateHostWidth / flexibleWidths);
       let adjustedNumber: number = 0;
       // adjust the column widths with the spread pixels
       this._widths.forEach((colWidth: IInternalColumnWidth) => {
-        if (
-          (this._widths[colWidth.index].max && this._widths[colWidth.index].value > newValue) ||
-          (this._widths[colWidth.index].min && this._widths[colWidth.index].value < newValue) ||
-          !this._widths[colWidth.index].limit
-        ) {
+        if (this._widths[colWidth.index].max && this._widths[colWidth.index].value > newValue ||
+            this._widths[colWidth.index].min && this._widths[colWidth.index].value < newValue ||
+            !this._widths[colWidth.index].limit) {
           this._adjustColumnWidth(colWidth.index, newValue);
           adjustedNumber++;
         }
       });
       // if there are still columns that need to be recalculated, we start over
-      const newFlexibleWidths: number = this._widths.filter((width: IInternalColumnWidth) => {
+      let newFlexibleWidths: number = this._widths.filter((width: IInternalColumnWidth) => {
         return !width.limit && !width.max;
       }).length;
       if (newFlexibleWidths !== adjustedNumber && newFlexibleWidths !== flexibleWidths) {
@@ -1012,8 +987,8 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    */
   private _adjustColumnWidth(index: number, value: number): void {
     this._widths[index] = {
-      value,
-      index,
+      value: value,
+      index: index,
       limit: false,
       min: false,
       max: false,
@@ -1024,25 +999,26 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
     if (this.columns[index]) {
       // if the provided width has min/max, then we check to see if we need to set it
       if (typeof this.columns[index].width === 'object') {
-        const widthOpts: ITdDataTableColumnWidth = <ITdDataTableColumnWidth>this.columns[index].width;
+        let widthOpts: ITdDataTableColumnWidth = <ITdDataTableColumnWidth>this.columns[index].width;
         // if the column width is less than the configured min, we override it
-        skipMinWidthProjection = widthOpts && !!widthOpts.min;
+        skipMinWidthProjection = (widthOpts && !!widthOpts.min);
         if (widthOpts && widthOpts.min >= this._widths[index].value) {
           this._widths[index].value = widthOpts.min;
           this._widths[index].min = true;
-          // if the column width is more than the configured max, we override it
+        // if the column width is more than the configured max, we override it
         } else if (widthOpts && widthOpts.max <= this._widths[index].value) {
           this._widths[index].value = widthOpts.max;
           this._widths[index].max = true;
         }
-        // if it has a fixed width, then we just set it
+      // if it has a fixed width, then we just set it
       } else if (typeof this.columns[index].width === 'number') {
         this._widths[index].value = <number>this.columns[index].width;
         skipMinWidthProjection = this._widths[index].limit = true;
       }
     }
     // if there wasn't any width or min width provided, we set a min to what the column width min should be
-    if (!skipMinWidthProjection && this._widths[index].value < this._colElements.toArray()[index].projectedWidth) {
+    if (!skipMinWidthProjection &&
+        this._widths[index].value < this._colElements.toArray()[index].projectedWidth) {
       this._widths[index].value = this._colElements.toArray()[index].projectedWidth;
       this._widths[index].min = true;
       this._widths[index].limit = false;
@@ -1053,7 +1029,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    * Generic method to calculate column width
    */
   private _calculateWidth(): number {
-    const renderedColumns: ITdDataTableColumn[] = this.columns.filter((col: ITdDataTableColumn) => !col.hidden);
+    let renderedColumns: ITdDataTableColumn[] = this.columns.filter((col: ITdDataTableColumn) => !col.hidden);
     return Math.floor(this.hostWidth / renderedColumns.length);
   }
 
@@ -1081,7 +1057,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       });
       this._totalHeight = rowHeightSum;
       // set the initial row to be rendered taking into account the row offset
-      const fromRow: number = scrolledRows - TD_VIRTUAL_OFFSET;
+      let fromRow: number = scrolledRows - TD_VIRTUAL_OFFSET;
       this._fromRow = fromRow > 0 ? fromRow : 0;
 
       let hostHeight: number = this._hostHeight;
@@ -1092,7 +1068,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
         index++;
       }
       // set the last row to be rendered taking into account the row offset
-      const range: number = index - 1 + TD_VIRTUAL_OFFSET * 2;
+      let range: number = (index - 1) + (TD_VIRTUAL_OFFSET * 2);
       let toRow: number = range + this.fromRow;
       // if last row is greater than the total length, then we use the total length
       if (isFinite(toRow) && toRow > this._data.length) {
@@ -1115,9 +1091,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
       }
     }
 
-    this._offsetTransform = this._domSanitizer.bypassSecurityTrustStyle(
-      'translateY(' + (offset - this.totalHeight) + 'px)',
-    );
+    this._offsetTransform = this._domSanitizer.bypassSecurityTrustStyle('translateY(' + (offset - this.totalHeight) + 'px)');
     if (this._data) {
       this._virtualData = this.data.slice(this.fromRow, this.toRow);
     }

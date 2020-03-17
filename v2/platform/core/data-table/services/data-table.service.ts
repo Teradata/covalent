@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
 
-import { TdDataTableSortingOrder } from '../data-table.component';
+import { TdDataTableSortingOrder, ITdDataTableColumn } from '../data-table.component';
 
 @Injectable()
 export class TdDataTableService {
+
   /**
    * params:
    * - data: any[]
@@ -14,17 +15,17 @@ export class TdDataTableService {
    * Searches [data] parameter for [searchTerm] matches and returns a new array with them.
    */
   filterData(data: any[], searchTerm: string, ignoreCase: boolean = false, excludedColumns?: string[]): any[] {
-    const filter: string = searchTerm ? (ignoreCase ? searchTerm.toLowerCase() : searchTerm) : '';
+    let filter: string = searchTerm ? (ignoreCase ? searchTerm.toLowerCase() : searchTerm) : '';
     if (filter) {
       data = data.filter((item: any) => {
         const res: any = Object.keys(item).find((key: string) => {
           if (!excludedColumns || excludedColumns.indexOf(key) === -1) {
-            const preItemValue: string = '' + item[key];
+            const preItemValue: string = ('' + item[key]);
             const itemValue: string = ignoreCase ? preItemValue.toLowerCase() : preItemValue;
             return itemValue.indexOf(filter) > -1;
           }
         });
-        return typeof res !== 'undefined';
+        return !(typeof res === 'undefined');
       });
     }
     return data;
@@ -42,8 +43,8 @@ export class TdDataTableService {
     if (sortBy) {
       data = Array.from(data); // Change the array reference to trigger OnPush and not mutate original array
       data.sort((a: any, b: any) => {
-        const compA: any = a[sortBy];
-        const compB: any = b[sortBy];
+        let compA: any = a[sortBy];
+        let compB: any = b[sortBy];
         let direction: number = 0;
         if (!Number.isNaN(Number.parseFloat(compA)) && !Number.isNaN(Number.parseFloat(compB))) {
           direction = Number.parseFloat(compA) - Number.parseFloat(compB);
@@ -75,3 +76,15 @@ export class TdDataTableService {
     return data;
   }
 }
+
+export function DATA_TABLE_PROVIDER_FACTORY(
+    parent: TdDataTableService): TdDataTableService {
+  return parent || new TdDataTableService();
+}
+
+export const DATA_TABLE_PROVIDER: Provider = {
+  // If there is already a service available, use that. Otherwise, provide a new one.
+  provide: TdDataTableService,
+  deps: [[new Optional(), new SkipSelf(), TdDataTableService]],
+  useFactory: DATA_TABLE_PROVIDER_FACTORY,
+};

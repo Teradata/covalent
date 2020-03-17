@@ -2,16 +2,16 @@ import { TdTimeAgoPipe } from './time-ago.pipe';
 
 describe('TdTimeAgoPipe', () => {
   let pipe: TdTimeAgoPipe;
-  const time: number = Date.now();
+  let time: number = Date.now();
 
   beforeEach(() => {
     pipe = new TdTimeAgoPipe();
   });
 
   it('should return "Invalid Date" with an invalid date', () => {
-    expect(pipe.transform(undefined)).toEqual('Invalid Date');
+    expect(pipe.transform(undefined, undefined)).toEqual('Invalid Date');
     expect(pipe.transform(undefined, time)).toEqual('Invalid Date');
-    expect(pipe.transform('')).toEqual('Invalid Date');
+    expect(pipe.transform('', undefined)).toEqual('Invalid Date');
     expect(pipe.transform('', '')).toEqual('Invalid Date');
     expect(pipe.transform({}, {})).toEqual('Invalid Date');
     expect(pipe.transform('this is not a valid date', 'not a valid date either')).toEqual('Invalid Date');

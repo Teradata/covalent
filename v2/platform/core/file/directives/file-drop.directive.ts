@@ -14,6 +14,7 @@ export const _TdFileDropMixinBase = mixinDisabled(TdFileDropBase);
   inputs: ['disabled'],
 })
 export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDisable {
+
   private _multiple: boolean = false;
 
   /**
@@ -31,7 +32,7 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
    * Event emitted when a file or files are dropped in host element after being validated.
    * Emits a [FileList | File] object.
    */
-  @Output() fileDrop: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
+  @Output('fileDrop') onFileDrop: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
 
   /**
    * Binds native 'multiple' attribute if [multiple] property is 'true'.
@@ -55,17 +56,17 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
 
   /**
    * Listens to 'drop' host event to get validated transfer items.
-   * Emits the 'fileDrop' event with a [FileList] or [File] depending if 'multiple' attr exists in host.
+   * Emits the 'onFileDrop' event with a [FileList] or [File] depending if 'multiple' attr exists in host.
    * Stops event propagation and default action from browser for 'drop' event.
    */
   @HostListener('drop', ['$event'])
   onDrop(event: Event): void {
     if (!this.disabled) {
-      const transfer: DataTransfer = (<DragEvent>event).dataTransfer;
-      const files: FileList = transfer.files;
+      let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
+      let files: FileList = transfer.files;
       if (files.length) {
-        const value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
-        this.fileDrop.emit(value);
+        let value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
+        this.onFileDrop.emit(value);
       }
     }
     this._renderer.removeClass(this._element.nativeElement, 'drop-zone');
@@ -79,12 +80,10 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
    */
   @HostListener('dragover', ['$event'])
   onDragOver(event: Event): void {
-    const transfer: DataTransfer = (<DragEvent>event).dataTransfer;
+    let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
     transfer.dropEffect = this._typeCheck(transfer.types);
-    if (
-      this.disabled ||
-      (!this._multiple && ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))
-    ) {
+    if (this.disabled || (!this._multiple &&
+      ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))) {
       transfer.dropEffect = 'none';
     } else {
       transfer.dropEffect = 'copy';
@@ -119,14 +118,12 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
    */
   private _typeCheck(types: ReadonlyArray<string> | DOMStringList): string {
     let dropEffect: string = 'none';
-    if (
-      types &&
-      (((<any>types).contains && (<any>types).contains('Files')) ||
-        ((<any>types).indexOf && (<any>types).indexOf('Files') !== -1))
-    ) {
-      dropEffect = 'copy';
+    if (types) {
+      if (((<any>types).contains && (<any>types).contains('Files'))
+      || ((<any>types).indexOf && (<any>types).indexOf('Files') !== -1)) {
+        dropEffect = 'copy';
+      }
     }
-
     return dropEffect;
   }
 

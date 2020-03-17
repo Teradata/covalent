@@ -18,7 +18,8 @@ import { Subject } from 'rxjs';
   styleUrls: ['./expansion-panel-group.component.scss'],
   templateUrl: './expansion-panel-group.component.html',
 })
-export class TdExpansionPanelGroupComponent implements AfterContentInit, OnDestroy {
+export class TdExpansionPanelGroupComponent
+  implements AfterContentInit, OnDestroy {
   private _multi: boolean = false;
 
   private _lastOpenedPanels: TdExpansionPanelComponent[] = [];
@@ -36,16 +37,21 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit, OnDestr
   set multi(multi: boolean) {
     this._multi = coerceBooleanProperty(multi);
     if (this._multi === false && this._lastOpenedPanels.length > 0) {
-      this._closeAllExcept(this._lastOpenedPanels[this._lastOpenedPanels.length - 1]);
+      this._closeAllExcept(
+        this._lastOpenedPanels[this._lastOpenedPanels.length - 1],
+      );
     }
   }
 
-  @ContentChildren(TdExpansionPanelComponent, { descendants: true }) expansionPanels: QueryList<
+  @ContentChildren(TdExpansionPanelComponent) expansionPanels: QueryList<
     TdExpansionPanelComponent
   >;
 
   constructor(private _renderer: Renderer2, private _elementRef: ElementRef) {
-    this._renderer.addClass(this._elementRef.nativeElement, 'td-expansion-panel-group');
+    this._renderer.addClass(
+      this._elementRef.nativeElement,
+      'td-expansion-panel-group',
+    );
   }
 
   ngOnDestroy(): void {
@@ -83,9 +89,11 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit, OnDestr
    */
   public openAll(): void {
     if (this._multi) {
-      this.expansionPanels.forEach((expansionPanel: TdExpansionPanelComponent) => {
-        expansionPanel.open();
-      });
+      this.expansionPanels.forEach(
+        (expansionPanel: TdExpansionPanelComponent) => {
+          expansionPanel.open();
+        },
+      );
     }
   }
 
@@ -93,32 +101,44 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit, OnDestr
    * Closes all expansion panels
    */
   public closeAll(): void {
-    this.expansionPanels.forEach((expansionPanel: TdExpansionPanelComponent) => {
-      expansionPanel.close();
-    });
+    this.expansionPanels.forEach(
+      (expansionPanel: TdExpansionPanelComponent) => {
+        expansionPanel.close();
+      },
+    );
   }
 
-  private _attachListeners(expansionPanels: QueryList<TdExpansionPanelComponent>): void {
+  private _attachListeners(
+    expansionPanels: QueryList<TdExpansionPanelComponent>,
+  ): void {
     this._lastOpenedPanels = [];
     expansionPanels.forEach((expansionPanel: TdExpansionPanelComponent) => {
-      expansionPanel.expanded.pipe(takeUntil(this._stopWatchingPanels)).subscribe(() => {
-        const indexOfPanel: number = this._lastOpenedPanels.indexOf(expansionPanel);
-        if (indexOfPanel !== -1) {
-          this._lastOpenedPanels.splice(indexOfPanel, 1);
-        }
-        this._lastOpenedPanels.push(expansionPanel);
+      expansionPanel.expanded
+        .pipe(takeUntil(this._stopWatchingPanels))
+        .subscribe(() => {
+          const indexOfPanel: number = this._lastOpenedPanels.indexOf(
+            expansionPanel,
+          );
+          if (indexOfPanel !== -1) {
+            this._lastOpenedPanels.splice(indexOfPanel, 1);
+          }
+          this._lastOpenedPanels.push(expansionPanel);
 
-        if (!this._multi) {
-          this._closeAllExcept(expansionPanel);
-        }
-      });
+          if (!this._multi) {
+            this._closeAllExcept(expansionPanel);
+          }
+        });
 
-      expansionPanel.collapsed.pipe(takeUntil(this._stopWatchingPanels)).subscribe(() => {
-        const indexOfPanel: number = this._lastOpenedPanels.indexOf(expansionPanel);
-        if (indexOfPanel !== -1) {
-          this._lastOpenedPanels.splice(indexOfPanel, 1);
-        }
-      });
+      expansionPanel.collapsed
+        .pipe(takeUntil(this._stopWatchingPanels))
+        .subscribe(() => {
+          const indexOfPanel: number = this._lastOpenedPanels.indexOf(
+            expansionPanel,
+          );
+          if (indexOfPanel !== -1) {
+            this._lastOpenedPanels.splice(indexOfPanel, 1);
+          }
+        });
     });
   }
 

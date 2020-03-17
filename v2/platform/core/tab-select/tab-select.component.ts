@@ -12,18 +12,19 @@ import {
   EventEmitter,
   OnDestroy,
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 import { ThemePalette } from '@angular/material/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import {
-  ICanDisable,
-  mixinDisabled,
-  IControlValueAccessor,
-  mixinControlValueAccessor,
-  ICanDisableRipple,
-  mixinDisableRipple,
+import { ICanDisable,
+          mixinDisabled,
+          IControlValueAccessor,
+          mixinControlValueAccessor,
+          ICanDisableRipple,
+          mixinDisableRipple,
 } from '@covalent/core/common';
 
 import { Subscription } from 'rxjs';
@@ -39,13 +40,11 @@ export const _TdTabSelectMixinBase = mixinControlValueAccessor(mixinDisabled(mix
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TdTabSelectComponent),
-      multi: true,
-    },
-  ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdTabSelectComponent),
+    multi: true,
+  }],
   selector: 'td-tab-select',
   templateUrl: './tab-select.component.html',
   styleUrls: ['./tab-select.component.scss'],
@@ -53,7 +52,8 @@ export const _TdTabSelectMixinBase = mixinControlValueAccessor(mixinDisabled(mix
   inputs: ['value', 'disabled', 'disableRipple'],
 })
 export class TdTabSelectComponent extends _TdTabSelectMixinBase
-  implements IControlValueAccessor, ICanDisable, ICanDisableRipple, OnInit, AfterContentInit, OnDestroy {
+                                  implements IControlValueAccessor, ICanDisable, ICanDisableRipple, OnInit, AfterContentInit, OnDestroy {
+
   private _subs: Subscription[] = [];
 
   private _values: any[] = [];
@@ -67,7 +67,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
   /**
    * Gets all tab option children
    */
-  @ContentChildren(TdTabOptionComponent, { descendants: true }) readonly _tabOptions: QueryList<TdTabOptionComponent>;
+  @ContentChildren(TdTabOptionComponent) readonly _tabOptions: QueryList<TdTabOptionComponent>;
 
   get tabOptions(): TdTabOptionComponent[] {
     return this._tabOptions ? this._tabOptions.toArray() : undefined;
@@ -87,12 +87,12 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
   /**
    * Color of the tab group.
    */
-  @Input() color: ThemePalette;
+  @Input('color') color: ThemePalette;
 
   /**
    * Background color of the tab group.
    */
-  @Input() backgroundColor: ThemePalette;
+  @Input('backgroundColor') backgroundColor: ThemePalette;
 
   /**
    * Event that emits whenever the raw value of the select changes. This is here primarily
@@ -141,7 +141,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
    */
   selectedIndexChange(selectedIndex: number): void {
     this._selectedIndex = selectedIndex;
-    const value: any = this._values[selectedIndex];
+    let value: any = this._values[selectedIndex];
     this.value = value;
     this.valueChange.emit(value);
     this.onChange(value);
@@ -162,7 +162,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
    * else set the value of the first tab.
    */
   private _setValue(value: any): void {
-    const index: number = this._values.indexOf(value);
+    let index: number = this._values.indexOf(value);
     if (index > -1) {
       this._selectedIndex = index;
     } else {
@@ -171,4 +171,5 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
     }
     this._changeDetectorRef.markForCheck();
   }
+
 }

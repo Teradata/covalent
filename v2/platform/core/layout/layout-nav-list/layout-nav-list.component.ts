@@ -7,24 +7,25 @@ import { ILayoutTogglable } from '../layout-toggle.class';
 
 @Component({
   selector: 'td-layout-nav-list',
-  styleUrls: ['./layout-nav-list.component.scss'],
+  styleUrls: ['./layout-nav-list.component.scss' ],
   templateUrl: './layout-nav-list.component.html',
 })
 export class TdLayoutNavListComponent implements ILayoutTogglable {
-  @ViewChild(MatSidenav, { static: true }) sidenav: MatSidenav;
+
+  @ViewChild(MatSidenav) sidenav: MatSidenav;
 
   /**
    * toolbarTitle?: string
    *
    * Title set in toolbar.
    */
-  @Input() toolbarTitle: string;
+  @Input('toolbarTitle') toolbarTitle: string;
 
   /**
    * icon?: string
    * icon name to be displayed before the title
    */
-  @Input() icon: string;
+  @Input('icon') icon: string;
 
   /**
    * logo?: string
@@ -32,15 +33,15 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
-  @Input() logo: string;
+  @Input('logo') logo: string;
 
   /**
-   * color?: 'accent' | 'primary' | 'warn'
+   * color?: string
    *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, primary is used.
    */
-  @Input() color: 'accent' | 'primary' | 'warn' = 'primary';
+  @Input('color') color: string = 'primary';
 
   /**
    * mode?: 'side', 'push' or 'over'
@@ -51,7 +52,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input() mode: 'side' | 'push' | 'over' = 'side';
+  @Input('mode') mode: 'side' | 'push' | 'over' = 'side';
 
   /**
    * opened?: boolean
@@ -62,7 +63,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input() opened: boolean = true;
+  @Input('opened') opened: boolean = true;
 
   /**
    * sidenavWidth?: string
@@ -72,7 +73,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input() sidenavWidth: string = '350px';
+  @Input('sidenavWidth') sidenavWidth: string = '350px';
 
   /**
    * containerAutosize?: boolean
@@ -81,17 +82,17 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    * Defaults to "false".
    *
    * See documentation for more info and potential performance risks.
-   *
+   * 
    * https://github.com/angular/material2/blob/master/src/lib/sidenav/sidenav.md#resizing-an-open-sidenav
    */
-  @Input() containerAutosize: boolean = false;
-
+  @Input('containerAutosize') containerAutosize: boolean = false;
+  
   /**
    * navigationRoute?: string
    *
    * option to set the combined route for the icon, logo, and toolbarTitle.
    */
-  @Input() navigationRoute: string;
+  @Input('navigationRoute') navigationRoute: string;
 
   /**
    * Checks if `ESC` should close the sidenav
@@ -136,4 +137,5 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
   public close(): Promise<MatDrawerToggleResult> {
     return this.sidenav.close();
   }
+
 }

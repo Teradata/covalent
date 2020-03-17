@@ -15,7 +15,6 @@
       family: td-font-family($config);
       size: td-font-size($config, body-1);
     }
-
     line-height: td-line-height($config, body-1);
   }
 }
@@ -63,14 +62,12 @@
           color: mat-color($foreground, secondary-text);
         }
         &.mat-inactive {
-          &,
-          & * {
+          &, & * {
             color: mat-color($foreground, disabled);
           }
         }
         &.mat-warn {
-          &,
-          & * {
+          &, & * {
             color: mat-color($warn);
           }
         }

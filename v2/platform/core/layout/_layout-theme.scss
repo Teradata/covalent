@@ -16,7 +16,6 @@
         size: td-font-size($config, body-1);
         weight: 500;
       }
-
       line-height: td-line-height($config, body-1);
     }
     .td-navigation-drawer-menu-toggle {
@@ -25,7 +24,6 @@
         size: td-font-size($config, body-2);
         weight: 400;
       }
-
       line-height: td-line-height($config, body-2);
     }
   }
@@ -58,30 +56,7 @@
   td-layout {
     mat-toolbar {
       @include mat-elevation(1);
-
       z-index: 1;
-    }
-  }
-
-  body[dense] td-layout-nav,
-  body[dense] td-layout-nav-list,
-  body[dense] td-layout-card-over,
-  td-layout-nav[dense],
-  td-layout-nav-list[dense],
-  td-layout-card-over[dense] {
-    mat-toolbar.td-layout-toolbar {
-      &.mat-toolbar-row,
-      &.mat-toolbar-single-row {
-        height: 48px;
-      }
-    }
-  }
-  body[dense] td-layout-card-over,
-  td-layout-card-over[dense] {
-    .td-layout-card-over-wrapper {
-      margin: -48px;
-      margin-left: 0;
-      margin-right: 0;
     }
   }
   .mat-drawer-side.td-layout-sidenav {
@@ -93,22 +68,19 @@
     @include mat-elevation(2);
     &.mat-primary {
       background: mat-color($primary);
-      &,
-      mat-icon {
+      &, mat-icon {
         color: mat-color($primary, default-contrast);
       }
     }
     &.mat-accent {
       background: mat-color($accent);
-      &,
-      mat-icon {
+      &, mat-icon {
         color: mat-color($accent, default-contrast);
       }
     }
     &.mat-warn {
       background: mat-color($warn);
-      &,
-      mat-icon {
+      &, mat-icon {
         color: mat-color($warn, default-contrast);
       }
     }

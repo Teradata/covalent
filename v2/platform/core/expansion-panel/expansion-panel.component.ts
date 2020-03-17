@@ -1,14 +1,5 @@
-import {
-  Component,
-  Directive,
-  Input,
-  Output,
-  TemplateRef,
-  ViewContainerRef,
-  ContentChild,
-  ElementRef,
-  Renderer2,
-} from '@angular/core';
+import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild,
+         ElementRef, Renderer2 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
@@ -62,19 +53,21 @@ export const _TdExpansionPanelMixinBase = mixinDisableRipple(mixinDisabled(TdExp
 
 @Component({
   selector: 'td-expansion-panel',
-  styleUrls: ['./expansion-panel.component.scss'],
+  styleUrls: ['./expansion-panel.component.scss' ],
   templateUrl: './expansion-panel.component.html',
   inputs: ['disabled', 'disableRipple'],
-  animations: [tdCollapseAnimation, tdRotateAnimation],
+  animations: [
+    tdCollapseAnimation,
+    tdRotateAnimation,
+  ],
 })
 export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implements ICanDisable, ICanDisableRipple {
+
   private _expand: boolean = false;
 
-  @ContentChild(TdExpansionPanelHeaderDirective)
-  expansionPanelHeader: TdExpansionPanelHeaderDirective;
+  @ContentChild(TdExpansionPanelHeaderDirective) expansionPanelHeader: TdExpansionPanelHeaderDirective;
   @ContentChild(TdExpansionPanelLabelDirective) expansionPanelLabel: TdExpansionPanelLabelDirective;
-  @ContentChild(TdExpansionPanelSublabelDirective)
-  expansionPanelSublabel: TdExpansionPanelSublabelDirective;
+  @ContentChild(TdExpansionPanelSublabelDirective) expansionPanelSublabel: TdExpansionPanelSublabelDirective;
 
   /**
    * label?: string
@@ -113,7 +106,8 @@ export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implem
    */
   @Output() collapsed: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef) {
+  constructor(private _renderer: Renderer2,
+              private _elementRef: ElementRef) {
     super();
     this._renderer.addClass(this._elementRef.nativeElement, 'td-expansion-panel');
   }
@@ -180,10 +174,10 @@ export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implem
   }
 
   private _onExpanded(): void {
-    this.expanded.emit();
+    this.expanded.emit(undefined);
   }
 
   private _onCollapsed(): void {
-    this.collapsed.emit();
+    this.collapsed.emit(undefined);
   }
 }

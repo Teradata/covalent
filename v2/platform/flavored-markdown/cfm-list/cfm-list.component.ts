@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+} from '@angular/core';
 
 export interface IFlavoredListItem {
   line: string;

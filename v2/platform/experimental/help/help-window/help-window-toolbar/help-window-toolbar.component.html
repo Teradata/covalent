@@ -1,0 +1,30 @@
+<mat-toolbar
+  color="primary"
+>
+  <mat-toolbar-row>
+    <div
+      layout="row"
+      layout-align="start center"
+      flex
+    >
+      <span
+        class="mat-title push-bottom-none"
+        flex
+      >
+        {{ helpLabel }}
+      </span>
+      <!-- TODO: Resizing a drag-and-drop element was not working so removed minimize/maximize for now-->
+      <button
+        mat-icon-button
+        matTooltip="Close"
+        (click)="closed.emit()"
+      >
+        <mat-icon
+          [attr.aria-label]="closeLabel"
+        >
+          close
+        </mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

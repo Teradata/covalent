@@ -7,7 +7,7 @@ export class TdTimeUntilPipe implements PipeTransform {
   transform(time: any, reference?: any): string {
     // Convert time to date object if not already
     time = new Date(time);
-    const ref: Date = new Date(reference);
+    let ref: Date = new Date(reference);
 
     // If not a valid timestamp, return 'Invalid Date'
     if (!time.getTime()) {
@@ -16,7 +16,7 @@ export class TdTimeUntilPipe implements PipeTransform {
 
     // For unit testing, we need to be able to declare a static start time
     // for calculations, or else speed of tests can bork.
-    const startTime: number = isNaN(ref.getTime()) ? Date.now() : ref.getTime();
+    let startTime: number = isNaN(ref.getTime()) ? Date.now() : ref.getTime();
     let diff: number = Math.floor((time.getTime() - startTime) / 1000);
 
     if (diff < 2) {

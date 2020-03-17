@@ -1,5 +1,5 @@
 import { Type } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -23,9 +23,23 @@ const TD_FILE: Type<any>[] = [
 ];
 
 @NgModule({
-  imports: [FormsModule, CommonModule, MatIconModule, MatButtonModule, PortalModule],
-  declarations: [TD_FILE],
-  exports: [TD_FILE],
-  providers: [TdFileService],
+  imports: [
+    FormsModule,
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    PortalModule,
+  ],
+  declarations: [
+    TD_FILE,
+  ],
+  exports: [
+    TD_FILE,
+  ],
+  providers: [
+    TdFileService,
+  ],
 })
-export class CovalentFileModule {}
+export class CovalentFileModule {
+
+}

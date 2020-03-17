@@ -1,23 +1,6 @@
-import {
-  Component,
-  Directive,
-  Input,
-  Output,
-  EventEmitter,
-  ContentChild,
-  AfterViewInit,
-  ViewChild,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  QueryList,
-  ViewChildren,
-  ElementRef,
-  HostListener,
-  Renderer2,
-  AfterViewChecked,
-  OnDestroy,
-  TrackByFunction,
-} from '@angular/core';
+import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterViewInit, ViewChild,
+         ChangeDetectionStrategy, ChangeDetectorRef, QueryList, ViewChildren, ElementRef, HostListener,
+         Renderer2, AfterViewChecked, OnDestroy, TrackByFunction } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { Subscription, Subject } from 'rxjs';
@@ -35,11 +18,12 @@ export interface ITdVirtualScrollBottomEvent {
 
 @Component({
   selector: 'td-virtual-scroll-container',
-  styleUrls: ['./virtual-scroll-container.component.scss'],
+  styleUrls: ['./virtual-scroll-container.component.scss' ],
   templateUrl: './virtual-scroll-container.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterViewChecked, OnDestroy {
+
   private _subs: Subscription[] = [];
   private _bottom: Subject<any> = new Subject();
   private _initialized: boolean = false;
@@ -109,34 +93,30 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
     return this._offsetTransform;
   }
 
-  constructor(
-    private _elementRef: ElementRef,
-    private _domSanitizer: DomSanitizer,
-    private _renderer: Renderer2,
-    private _changeDetectorRef: ChangeDetectorRef,
-  ) {}
+  constructor(private _elementRef: ElementRef,
+              private _domSanitizer: DomSanitizer,
+              private _renderer: Renderer2,
+              private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
-    this._subs.push(
-      this._rows.changes.subscribe(() => {
-        this._calculateVirtualRows();
-      }),
-    );
+    this._subs.push(this._rows.changes.subscribe(() => {
+      this._calculateVirtualRows();
+    }));
     this._initialized = true;
     this._calculateVirtualRows();
 
-    this._subs.push(
-      this._bottom.pipe(debounceTime(SCROLL_DEBOUNCE)).subscribe(() => {
-        this.bottom.emit({
-          lastRow: this._data[this._data.length - 1],
-          lastIndex: this.toRow,
-        });
-      }),
-    );
+    this._subs.push(this._bottom.pipe(
+      debounceTime(SCROLL_DEBOUNCE),
+    ).subscribe(() => {
+      this.bottom.emit({
+        lastRow: this._data[this._data.length - 1],
+        lastIndex: this.toRow,
+      });
+    }));
   }
 
   ngAfterViewChecked(): void {
-    const newHostHeight: number = this._elementRef.nativeElement.getBoundingClientRect().height;
+    let newHostHeight: number = this._elementRef.nativeElement.getBoundingClientRect().height;
     if (this._hostHeight !== newHostHeight) {
       this._hostHeight = newHostHeight;
       if (this._initialized) {
@@ -158,24 +138,26 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
    * This accepts the same trackBy function [ngFor] does.
    * https://angular.io/api/core/TrackByFunction
    */
-  @Input() trackBy: TrackByFunction<any> = (index: number, item: any) => {
+  @Input('trackBy') trackBy: TrackByFunction<any> =  (index: number, item: any) => {
     return item;
-  };
+  }
 
   @HostListener('scroll', ['$event'])
   handleScroll(event: Event): void {
-    const element: HTMLElement = <HTMLElement>event.target;
+    let element: HTMLElement = (<HTMLElement>event.target);
     if (element) {
-      const verticalScroll: number = element.scrollTop;
+      let verticalScroll: number = element.scrollTop;
       if (this._scrollVerticalOffset !== verticalScroll) {
         this._scrollVerticalOffset = verticalScroll;
         if (this._initialized) {
           this._calculateVirtualRows();
         }
       }
-      if (this._initialized && this._data.length * this.rowHeight - (verticalScroll + this._hostHeight) === 0) {
+      if (this._initialized) {
         // check to see if bottom was hit to throw the bottom event
-        this._bottom.next();
+        if ((this._data.length * this.rowHeight) - (verticalScroll + this._hostHeight) === 0) {
+          this._bottom.next();
+        }
       }
     }
   }
@@ -215,9 +197,9 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
   private _calculateVirtualRows(): void {
     if (this._data) {
       this._totalHeight = this._data.length * this.rowHeight;
-      const fromRow: number = Math.floor(this._scrollVerticalOffset / this.rowHeight) - TD_VIRTUAL_OFFSET;
+      let fromRow: number = Math.floor((this._scrollVerticalOffset / this.rowHeight)) - TD_VIRTUAL_OFFSET;
       this._fromRow = fromRow > 0 ? fromRow : 0;
-      const range: number = Math.floor(this._hostHeight / this.rowHeight) + TD_VIRTUAL_OFFSET * 2;
+      let range: number = Math.floor((this._hostHeight / this.rowHeight)) + (TD_VIRTUAL_OFFSET * 2);
       let toRow: number = range + this.fromRow;
       if (isFinite(toRow) && toRow > this._data.length) {
         toRow = this._data.length;
@@ -232,13 +214,11 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
     }
 
     let offset: number = 0;
-    if (this._scrollVerticalOffset > TD_VIRTUAL_OFFSET * this.rowHeight) {
+    if (this._scrollVerticalOffset > (TD_VIRTUAL_OFFSET * this.rowHeight)) {
       offset = this.fromRow * this.rowHeight;
     }
 
-    this._offsetTransform = this._domSanitizer.bypassSecurityTrustStyle(
-      'translateY(' + (offset - this.totalHeight) + 'px)',
-    );
+    this._offsetTransform = this._domSanitizer.bypassSecurityTrustStyle('translateY(' + (offset - this.totalHeight) + 'px)');
     if (this._data) {
       this._virtualData = this.data.slice(this.fromRow, this.toRow);
     }

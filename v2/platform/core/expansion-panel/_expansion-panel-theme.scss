@@ -44,7 +44,6 @@
 
   .td-expansion-panel {
     @include mat-elevation(1);
-
     background-color: mat-color($background, card);
     .td-expansion-panel-header {
       &:focus:not(.mat-disabled),
@@ -56,8 +55,7 @@
           color: mat-color($foreground, icon);
         }
         &.mat-disabled {
-          &,
-          & * {
+          &, & * {
             color: mat-color($foreground, disabled);
           }
         }
@@ -68,8 +66,7 @@
     }
     .td-expansion-label,
     .td-expansion-sublabel {
-      &,
-      & * {
+      &, & * {
         vertical-align: middle;
       }
     }

@@ -12,8 +12,7 @@ $checkbox-size: 18px;
 }
 
 .td-data-table-column-resizer {
-  &,
-  .td-data-table-column-separator {
+  &, .td-data-table-column-separator {
     position: absolute;
     height: 100%;
     top: 0;
@@ -21,7 +20,6 @@ $checkbox-size: 18px;
   .td-data-table-column-separator {
     left: 2px;
   }
-
   right: 0;
   width: 6px;
   cursor: col-resize;

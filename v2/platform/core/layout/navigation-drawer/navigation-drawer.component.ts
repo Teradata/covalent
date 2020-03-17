@@ -1,16 +1,5 @@
-import {
-  Component,
-  Directive,
-  Input,
-  ContentChildren,
-  OnInit,
-  OnDestroy,
-  forwardRef,
-  Inject,
-  QueryList,
-  SecurityContext,
-  Optional,
-} from '@angular/core';
+import { Component, Directive, Input, ContentChildren, OnInit, OnDestroy, forwardRef, Inject,
+         QueryList, SecurityContext, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { SafeResourceUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { MatDrawerToggleResult } from '@angular/material/sidenav';
@@ -24,20 +13,25 @@ import { tdCollapseAnimation } from '@covalent/core/common';
 @Directive({
   selector: '[td-navigation-drawer-menu]',
 })
-export class TdNavigationDrawerMenuDirective {}
+export class TdNavigationDrawerMenuDirective {
+
+}
 
 @Directive({
   selector: '[td-navigation-drawer-toolbar]',
 })
-export class TdNavigationDrawerToolbarDirective {}
+export class TdNavigationDrawerToolbarDirective {
+
+}
 
 @Component({
   selector: 'td-navigation-drawer',
-  styleUrls: ['./navigation-drawer.component.scss'],
+  styleUrls: ['./navigation-drawer.component.scss' ],
   templateUrl: './navigation-drawer.component.html',
-  animations: [tdCollapseAnimation],
+  animations: [ tdCollapseAnimation ],
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
+
   private _closeSubscription: Subscription;
   private _menuToggled: boolean = false;
   private _backgroundImage: SafeStyle;
@@ -46,13 +40,9 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
     return this._menuToggled;
   }
 
-  @ContentChildren(TdNavigationDrawerMenuDirective, { descendants: true }) _drawerMenu: QueryList<
-    TdNavigationDrawerMenuDirective
-  >;
+  @ContentChildren(TdNavigationDrawerMenuDirective) _drawerMenu: QueryList<TdNavigationDrawerMenuDirective>;
 
-  @ContentChildren(TdNavigationDrawerToolbarDirective, { descendants: true }) _toolbar: QueryList<
-    TdNavigationDrawerToolbarDirective
-  >;
+  @ContentChildren(TdNavigationDrawerToolbarDirective) _toolbar: QueryList<TdNavigationDrawerToolbarDirective>;
 
   /**
    * Checks if there is a [TdNavigationDrawerMenuDirective] has content.
@@ -79,14 +69,14 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * sidenavTitle?: string
    * Title set in sideNav.
    */
-  @Input() sidenavTitle: string;
+  @Input('sidenavTitle') sidenavTitle: string;
 
   /**
    * icon?: string
    *
    * icon name to be displayed before the title
    */
-  @Input() icon: string;
+  @Input('icon') icon: string;
 
   /**
    * logo?: string
@@ -94,7 +84,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
-  @Input() logo: string;
+  @Input('logo') logo: string;
 
   /**
    * avatar?: string
@@ -102,22 +92,22 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * avatar url to be displayed before the title
    * If [icon] or [logo] are set, then this will not be shown.
    */
-  @Input() avatar: string;
+  @Input('avatar') avatar: string;
 
   /**
-   * color?: 'accent' | 'primary' | 'warn'
+   * color?: string
    *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, default is used.
    */
-  @Input() color: 'accent' | 'primary' | 'warn';
+  @Input('color') color: string;
 
   /**
    * navigationRoute?: string
    *
    * option to set the combined route for the icon, logo, and sidenavTitle.
    */
-  @Input() navigationRoute: string;
+  @Input('navigationRoute') navigationRoute: string;
 
   /**
    * backgroundUrl?: SafeResourceUrl
@@ -130,7 +120,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   // https://github.com/webpack/webpack/issues/2977
   set backgroundUrl(backgroundUrl: any) {
     if (backgroundUrl) {
-      const sanitizedUrl: string = this._sanitize.sanitize(SecurityContext.RESOURCE_URL, backgroundUrl);
+      let sanitizedUrl: string = this._sanitize.sanitize(SecurityContext.RESOURCE_URL, backgroundUrl);
       this._backgroundImage = this._sanitize.sanitize(SecurityContext.STYLE, 'url(' + sanitizedUrl + ')');
     }
   }
@@ -144,7 +134,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * string to be displayed as part of the navigation drawer sublabel.
    * if [email] is not set, then [name] will be the toggle menu text.
    */
-  @Input() name: string;
+  @Input('name') name: string;
 
   /**
    * email?: string
@@ -152,7 +142,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * string to be displayed as part of the navigation drawer sublabel in the [toggle] menu text.
    * if [email] and [name] are not set, then the toggle menu is not rendered.
    */
-  @Input() email: string;
+  @Input('email') email: string;
 
   /**
    * Checks if router was injected.
@@ -161,11 +151,9 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(
-    @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
-    @Optional() private _router: Router,
-    private _sanitize: DomSanitizer,
-  ) {}
+  constructor(@Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
+              @Optional() private _router: Router,
+              private _sanitize: DomSanitizer) {}
 
   ngOnInit(): void {
     this._closeSubscription = this._layout.sidenav.openedChange.subscribe((opened: boolean) => {

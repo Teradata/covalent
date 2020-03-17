@@ -1,5 +1,3 @@
-/* stylelint-disable function-url-quotes, no-duplicate-selectors */
-
 /*
 *
 *  Responsive attributes
@@ -33,7 +31,7 @@ $layout-breakpoint-lg: 1920px !default;
   }
 }
 
-@mixin flex-order-for-name($sizes: null) {
+@mixin flex-order-for-name($sizes:null) {
   @if $sizes == null {
     $sizes: '';
 
@@ -62,7 +60,7 @@ $layout-breakpoint-lg: 1920px !default;
   }
 }
 
-@mixin offset-for-name($sizes: null) {
+@mixin offset-for-name($sizes:null) {
   @if $sizes == null {
     $sizes: '';
   }
@@ -133,9 +131,7 @@ $layout-breakpoint-lg: 1920px !default;
     $name: '-#{$name}';
   }
 
-  [layout#{$name}],
-  [layout#{$name}='column'],
-  [layout#{$name}='row'] {
+  [layout#{$name}], [layout#{$name}="column"], [layout#{$name}="row"] {
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
@@ -143,10 +139,10 @@ $layout-breakpoint-lg: 1920px !default;
     display: -ms-flexbox;
     display: flex;
   }
-  [layout#{$name}='column'] {
+  [layout#{$name}="column"] {
     flex-direction: column;
   }
-  [layout#{$name}='row'] {
+  [layout#{$name}="row"] {
     flex-direction: row;
   }
 }
@@ -171,38 +167,39 @@ $layout-breakpoint-lg: 1920px !default;
   // Do not use unitless flex-basis values in the flex shorthand because IE 10-11 will error.
   // Also use 0% instead of 0px since minifiers will often convert 0px to 0 (which is unitless and will have the same problem).
   // Safari, however, fails with flex-basis : 0% and requires flex-basis : 0px
-  @media screen\0 {
+  @media screen\0
+  {
     [#{$flexName}] {
       flex: 1 1 0%;
     }
   }
 
-  [#{$flexName}='grow'],
+  [#{$flexName}="grow"],
   [#{$flexName}-grow] {
     flex: 1 1 100%;
     box-sizing: border-box;
   }
-  [#{$flexName}='initial'],
+  [#{$flexName}="initial"],
   [#{$flexName}-initial] {
     flex: 0 1 auto;
     box-sizing: border-box;
   }
-  [#{$flexName}='auto'],
+  [#{$flexName}="auto"],
   [#{$flexName}-auto] {
     flex: 1 1 auto;
     box-sizing: border-box;
   }
-  [#{$flexName}='none'],
+  [#{$flexName}="none"],
   [#{$flexName}-none] {
     flex: 0 0 auto;
     box-sizing: border-box;
   }
-  [#{$flexName}='noshrink'],
+  [#{$flexName}="noshrink"],
   [#{$flexName}-noshrink] {
     flex: 1 0 auto;
     box-sizing: border-box;
   }
-  [#{$flexName}='nogrow'],
+  [#{$flexName}="nogrow"],
   [#{$flexName}-nogrow] {
     flex: 0 1 auto;
     box-sizing: border-box;
@@ -212,23 +209,23 @@ $layout-breakpoint-lg: 1920px !default;
   @for $i from 0 through 20 {
     $value: #{$i * 5 + '%'};
 
-    [#{$flexName}='#{$i * 5}'] {
+    [#{$flexName}="#{$i * 5}"] {
       flex: 1 1 #{$value};
       max-width: #{$value};
       max-height: 100%;
       box-sizing: border-box;
     }
 
-    [layout='row'] > [#{$flexName}='#{$i * 5}'],
-    [layout#{$name}='row'] > [#{$flexName}='#{$i * 5}'] {
+    [layout="row"] > [#{$flexName}="#{$i * 5}"],
+    [layout#{$name}="row"] > [#{$flexName}="#{$i * 5}"] {
       flex: 1 1 #{$value};
       max-width: #{$value};
       max-height: 100%;
       box-sizing: border-box;
     }
 
-    [layout='column'] > [#{$flexName}='#{$i * 5}'],
-    [layout#{$name}='column'] > [#{$flexName}='#{$i * 5}'] {
+    [layout="column"] > [#{$flexName}="#{$i * 5}"],
+    [layout#{$name}="column"] > [#{$flexName}="#{$i * 5}"] {
       flex: 1 1 #{$value};
       max-width: 100%;
       max-height: #{$value};
@@ -236,71 +233,63 @@ $layout-breakpoint-lg: 1920px !default;
     }
   }
 
-  [layout='row'],
-  [layout#{$name}='row'] {
-    > [#{$flexName}='33'],
-    > [#{$flexName}='33'] {
+  [layout="row"], [layout#{$name}="row"] {
+    > [#{$flexName}="33"], > [#{$flexName}="33"] {
       flex: 1 1 33%;
       max-width: calc(100% / 3);
       max-height: 100%;
       box-sizing: border-box;
     }
-    > [#{$flexName}='34'],
-    > [#{$flexName}='34'] {
+    > [#{$flexName}="34"], > [#{$flexName}="34"] {
       flex: 1 1 34%;
       max-width: 34%;
       max-height: 100%;
       box-sizing: border-box;
     }
-    > [#{$flexName}='66'],
-    > [#{$flexName}='66'] {
+    > [#{$flexName}="66"], > [#{$flexName}="66"] {
       flex: 1 1 66%;
       max-width: calc(200% / 3);
       max-height: 100%;
       box-sizing: border-box;
     }
-    > [#{$flexName}='67'],
-    > [#{$flexName}='67'] {
+    > [#{$flexName}="67"], > [#{$flexName}="67"] {
       flex: 1 1 67%;
       max-width: 67%;
       max-height: 100%;
       box-sizing: border-box;
     }
   }
-  [layout='column'],
-  [layout#{$name}='column'] {
-    > [#{$flexName}='33'],
-    > [#{$flexName}='33'] {
+  [layout="column"], [layout#{$name}="column"] {
+    > [#{$flexName}="33"], > [#{$flexName}="33"] {
       flex: 1 1 33%;
       max-width: 100%;
       max-height: calc(100% / 3);
       box-sizing: border-box;
     }
-    > [#{$flexName}='34'],
-    > [#{$flexName}='34'] {
+    > [#{$flexName}="34"], > [#{$flexName}="34"] {
       flex: 1 1 34%;
       max-width: 100%;
       max-height: 34%;
       box-sizing: border-box;
     }
-    > [#{$flexName}='66'],
-    > [#{$flexName}='66'] {
+    > [#{$flexName}="66"], > [#{$flexName}="66"] {
       flex: 1 1 66%;
       max-width: 100%;
       max-height: calc(200% / 3);
       box-sizing: border-box;
     }
-    > [#{$flexName}='67'],
-    > [#{$flexName}='67'] {
+    > [#{$flexName}="67"], > [#{$flexName}="67"] {
       flex: 1 1 67%;
       max-width: 100%;
       max-height: 67%;
       box-sizing: border-box;
     }
   }
+
 }
 
 @mixin layout-align-for-name($suffix: null) {
+
   // Alignment attributes for layout containers' children
   // Arrange on the Main Axis
   // center, start, end, space-between, space-around
@@ -314,26 +303,26 @@ $layout-breakpoint-lg: 1920px !default;
 
   [#{$name}],
   [#{$name}="start stretch"] // defaults
- {
+  {
     justify-content: flex-start;
     align-content: stretch;
     align-items: stretch;
   }
   // Main Axis Center
-  [#{$name}='start'],
-  [#{$name}='start start'],
-  [#{$name}='start center'],
-  [#{$name}='start end'],
-  [#{$name}='start stretch'] {
+  [#{$name}="start"],
+  [#{$name}="start start"],
+  [#{$name}="start center"],
+  [#{$name}="start end"],
+  [#{$name}="start stretch"] {
     justify-content: flex-start;
   }
 
   // Main Axis Center
-  [#{$name}='center'],
-  [#{$name}='center start'],
-  [#{$name}='center center'],
-  [#{$name}='center end'],
-  [#{$name}='center stretch'] {
+  [#{$name}="center"],
+  [#{$name}="center start"],
+  [#{$name}="center center"],
+  [#{$name}="center end"],
+  [#{$name}="center stretch"] {
     justify-content: center;
   }
 
@@ -370,21 +359,21 @@ $layout-breakpoint-lg: 1920px !default;
   // ------------------------------
 
   // Cross Axis Start
-  [#{$name}='start start'],
-  [#{$name}='center start'],
-  [#{$name}='end start'],
-  [#{$name}='space-between start'],
-  [#{$name}='space-around start'] {
+  [#{$name}="start start"],
+  [#{$name}="center start"],
+  [#{$name}="end start"],
+  [#{$name}="space-between start"],
+  [#{$name}="space-around start"] {
     align-items: flex-start;
     align-content: flex-start;
   }
 
   // Cross Axis Center
-  [#{$name}='start center'],
-  [#{$name}='center center'],
-  [#{$name}='end center'],
-  [#{$name}='space-between center'],
-  [#{$name}='space-around center'] {
+  [#{$name}="start center"],
+  [#{$name}="center center"],
+  [#{$name}="end center"],
+  [#{$name}="space-between center"],
+  [#{$name}="space-around center"] {
     align-items: center;
     align-content: center;
     max-width: 100%;
@@ -397,39 +386,39 @@ $layout-breakpoint-lg: 1920px !default;
   }
 
   // Cross Axis Center IE overflow fix
-  [#{$name}='start center'] > *,
-  [#{$name}='center center'] > *,
-  [#{$name}='end center'] > *,
-  [#{$name}='space-between center'] > *,
-  [#{$name}='space-around center'] > * {
+  [#{$name}="start center"] > *,
+  [#{$name}="center center"] > *,
+  [#{$name}="end center"] > *,
+  [#{$name}="space-between center"] > *,
+  [#{$name}="space-around center"] > * {
     max-width: 100%;
     box-sizing: border-box;
   }
 
   // Cross Axis End
-  [#{$name}='start end'],
-  [#{$name}='center end'],
-  [#{$name}='end end'],
-  [#{$name}='space-between end'],
-  [#{$name}='space-around end'] {
+  [#{$name}="start end"],
+  [#{$name}="center end"],
+  [#{$name}="end end"],
+  [#{$name}="space-between end"],
+  [#{$name}="space-around end"] {
     align-items: flex-end;
     align-content: flex-end;
   }
 
   // Cross Axis  stretch
-  [#{$name}='start stretch'],
-  [#{$name}='center stretch'],
-  [#{$name}='end stretch'],
-  [#{$name}='space-between stretch'],
-  [#{$name}='space-around stretch'] {
+  [#{$name}="start stretch"],
+  [#{$name}="center stretch"],
+  [#{$name}="end stretch"],
+  [#{$name}="space-between stretch"],
+  [#{$name}="space-around stretch"] {
     align-items: stretch;
     align-content: stretch;
   }
 }
 
 @mixin layout-padding-margin() {
-  [layout-padding] > [flex-sm],
-  [layout-padding] > [flex-lt-md] {
+
+  [layout-padding] > [flex-sm], [layout-padding] > [flex-lt-md] {
     padding: $layout-gutter-width / 4;
   }
   [layout-padding],
@@ -478,7 +467,7 @@ $layout-breakpoint-lg: 1920px !default;
   }
 }
 
-@mixin layouts_for_breakpoint($name: null) {
+@mixin layouts_for_breakpoint($name:null) {
   @include flex-order-for-name($name);
   @include offset-for-name($name);
   @include layout-align-for-name($name);
@@ -511,8 +500,7 @@ $layout-breakpoint-lg: 1920px !default;
 
   @media (max-width: $layout-breakpoint-xs - 1) {
     // Xtra-SMALL  SCREEN
-    [hide-xs],
-    [hide] {
+    [hide-xs], [hide] {
       &:not([show-xs]):not([show]) {
         display: none;
       }
@@ -523,12 +511,12 @@ $layout-breakpoint-lg: 1920px !default;
   @media (min-width: $layout-breakpoint-xs) {
     // BIGGER THAN Xtra-SMALL SCREEN
     @include layouts_for_breakpoint(gt-xs);
+
   }
 
   @media (min-width: $layout-breakpoint-xs) and (max-width: $layout-breakpoint-sm - 1) {
     // SMALL SCREEN
-    [hide-sm],
-    [hide-gt-xs] {
+    [hide-sm], [hide-gt-xs] {
       &:not([show-gt-xs]):not([show-sm]):not([show]) {
         display: none;
       }
@@ -542,13 +530,12 @@ $layout-breakpoint-lg: 1920px !default;
   @media (min-width: $layout-breakpoint-sm) {
     // BIGGER THAN SMALL SCREEN
     @include layouts_for_breakpoint(gt-sm);
+
   }
 
   @media (min-width: $layout-breakpoint-sm) and (max-width: $layout-breakpoint-md - 1) {
     // MEDIUM SCREEN
-    [hide],
-    [hide-gt-xs],
-    [hide-gt-sm] {
+    [hide], [hide-gt-xs], [hide-gt-sm] {
       &:not([show-gt-xs]):not([show-gt-sm]):not([show-md]):not([show]) {
         display: none;
       }
@@ -566,10 +553,7 @@ $layout-breakpoint-lg: 1920px !default;
 
   @media (min-width: $layout-breakpoint-md) and (max-width: $layout-breakpoint-lg - 1) {
     // LARGE SCREEN
-    [hide],
-    [hide-gt-xs],
-    [hide-gt-sm],
-    [hide-gt-md] {
+    [hide], [hide-gt-xs], [hide-gt-sm], [hide-gt-md] {
       &:not([show-gt-xs]):not([show-gt-sm]):not([show-gt-md]):not([show-lg]):not([show]) {
         display: none;
       }
@@ -587,11 +571,7 @@ $layout-breakpoint-lg: 1920px !default;
     @include layouts_for_breakpoint(xl);
 
     // BIGGER THAN LARGE SCREEN
-    [hide],
-    [hide-gt-xs],
-    [hide-gt-sm],
-    [hide-gt-md],
-    [hide-gt-lg] {
+    [hide], [hide-gt-xs], [hide-gt-sm], [hide-gt-md], [hide-gt-lg] {
       &:not([show-gt-xs]):not([show-gt-sm]):not([show-gt-md]):not([show-gt-lg]):not([show-xl]):not([show]) {
         display: none;
       }

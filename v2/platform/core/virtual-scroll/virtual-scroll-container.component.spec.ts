@@ -1,4 +1,9 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import {
+  TestBed,
+  inject,
+  async,
+  ComponentFixture,
+} from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -9,21 +14,26 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: VirtualScrollContainer', () => {
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, MatListModule, CovalentVirtualScrollModule],
-      declarations: [TestBasicVirtualScrollComponent],
+      imports: [
+        NoopAnimationsModule,
+        MatListModule,
+        CovalentVirtualScrollModule,
+      ],
+      declarations: [
+        TestBasicVirtualScrollComponent,
+      ],
     });
     TestBed.compileComponents();
   }));
 
   it('should render only what fits the viewport', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
-    const component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
-    const virtualScrollComponent: DebugElement = fixture.debugElement.query(
-      By.directive(TdVirtualScrollContainerComponent),
-    );
-
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
+    let component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
+    let virtualScrollComponent: DebugElement = fixture.debugElement.query(By.directive(TdVirtualScrollContainerComponent));
+    
     component.height = 200;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -49,11 +59,9 @@ describe('Component: VirtualScrollContainer', () => {
   });
 
   it('should render rows and scroll to 2th row', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
-    const component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
-    const virtualScrollComponent: DebugElement = fixture.debugElement.query(
-      By.directive(TdVirtualScrollContainerComponent),
-    );
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
+    let component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
+    let virtualScrollComponent: DebugElement = fixture.debugElement.query(By.directive(TdVirtualScrollContainerComponent));
 
     component.height = 100;
     fixture.detectChanges();
@@ -64,23 +72,19 @@ describe('Component: VirtualScrollContainer', () => {
         expect(virtualScrollComponent.componentInstance.virtualData.length).toBe(6);
         fixture.detectChanges();
         virtualScrollComponent.componentInstance.scrollTo(2);
-        expect(virtualScrollComponent.nativeElement.scrollTop).toBe(
-          virtualScrollComponent.componentInstance.rowHeight * 2,
-        );
+        expect(virtualScrollComponent.nativeElement.scrollTop).toBe(virtualScrollComponent.componentInstance.rowHeight * 2);
         done();
       });
     });
   });
 
   it('should render rows, clear them and render them again', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
-    const component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
-    const virtualScrollComponent: DebugElement = fixture.debugElement.query(
-      By.directive(TdVirtualScrollContainerComponent),
-    );
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
+    let component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
+    let virtualScrollComponent: DebugElement = fixture.debugElement.query(By.directive(TdVirtualScrollContainerComponent));
 
     component.height = 100;
-    const data: any[] = component.data;
+    let data: any[] = component.data;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       fixture.detectChanges();
@@ -105,12 +109,10 @@ describe('Component: VirtualScrollContainer', () => {
   });
 
   it('should emit bottom event', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
-    const component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
-    const virtualScrollComponent: DebugElement = fixture.debugElement.query(
-      By.directive(TdVirtualScrollContainerComponent),
-    );
-    const eventSpy: jasmine.Spy = spyOn(component, 'myBottom');
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
+    let component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
+    let virtualScrollComponent: DebugElement = fixture.debugElement.query(By.directive(TdVirtualScrollContainerComponent));
+    let eventSpy: jasmine.Spy = spyOn(component, 'myBottom');
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -134,13 +136,12 @@ describe('Component: VirtualScrollContainer', () => {
       <td-virtual-scroll-container [style.height.px]="height" [data]="data" (bottom)="myBottom()">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
           <mat-list-item>
-            <h4 matLine>{{ row }}</h4>
+            <h4 matLine>{{row}}</h4>
           </mat-list-item>
           <mat-divider *ngIf="!last"></mat-divider>
         </ng-template>
       </td-virtual-scroll-container>
-    </mat-list>
-  `,
+    </mat-list>`,
 })
 class TestBasicVirtualScrollComponent {
   height: number = 200;

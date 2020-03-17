@@ -1,29 +1,11 @@
-import {
-  Type,
-  Injectable,
-  Injector,
-  ɵReflectionCapabilities,
-  InjectFlags,
-  Optional,
-  SkipSelf,
-  Self,
-  Inject,
-  InjectionToken,
-  inject,
-  INJECTOR,
-} from '@angular/core';
+import { Type, Injectable, Injector, ɵReflectionCapabilities, InjectFlags, Optional,
+  SkipSelf, Self, Inject, InjectionToken, inject, INJECTOR } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TdHttpService } from '../interceptors/http.service';
 
 import { Observable } from 'rxjs';
 
-import {
-  ITdHttpRESTOptions,
-  ITdHttpRESTOptionsWithBody,
-  TdHttpRESTResponseType,
-  TdHttpRESTObserve,
-  TdHttpMethod,
-} from '../http.interfaces';
+import { ITdHttpRESTOptions, ITdHttpRESTOptionsWithBody, TdHttpRESTResponseType, TdHttpRESTObserve, TdHttpMethod } from '../http.interfaces';
 
 export interface ITdHttpRESTConfig {
   baseHeaders?: HttpHeaders;
@@ -40,18 +22,20 @@ type Constructor<T> = new (...args: any[]) => T;
  * This is used internally to inject services from the constructor of the base service using the mixinHttp
  * @internal
  */
-function injectArgs(types: (Type<any> | InjectionToken<any> | any[])[], injector: Injector): any[] {
+function injectArgs(types: (Type<any>| InjectionToken<any>| any[])[], injector: Injector): any[] {
   const args: any[] = [];
-  for (const arg of types) {
+  for (let i: number = 0; i < types.length; i++) {
+    const arg: any = types[i];
     if (arg) {
       if (Array.isArray(arg)) {
         if (arg.length === 0) {
           throw new Error('Arguments array must have arguments.');
         }
-        let type: Type<any> | undefined;
+        let type: Type<any>|undefined = undefined;
         let flags: InjectFlags = InjectFlags.Default;
 
-        for (const meta of arg) {
+        for (let j: number = 0; j < arg.length; j++) {
+          const meta: any = arg[j];
           if (meta instanceof Optional || meta.ngMetadataName === 'Optional') {
             /* tslint:disable */
             flags |= InjectFlags.Optional;
@@ -67,7 +51,7 @@ function injectArgs(types: (Type<any> | InjectionToken<any> | any[])[], injector
           /* tslint:enable */
         }
 
-        args.push(injector.get(type, flags));
+        args.push(injector.get(type !, flags));
       } else {
         args.push(injector.get(arg));
       }
@@ -87,40 +71,41 @@ export function getInjector(): Injector {
   }
 }
 
-/**
+/** 
  * Mixin to augment a service with http helpers.
  * @internal
  */
-export function mixinHttp(
-  base: any,
-  config: ITdHttpRESTConfig,
-  httpInject: Type<HttpClient | TdHttpService> = TdHttpService,
-): Constructor<any> {
+export function mixinHttp(base: any,
+                          config: ITdHttpRESTConfig,
+                          httpInject: Type<HttpClient | TdHttpService> = TdHttpService): Constructor<any> {
+  /**
+   * Internal class used to get an instance of Injector for internal usage plus also
+   * a way to inject services from the constructor of the underlying service
+   * @internal
+   */
+  abstract class HttpInternalClass extends base {
+    constructor(...args: any[]) {
+      super(...(args && args.length ? args : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())));
+      this._injector = getInjector();
+      this.buildConfig();
+    }
+    abstract buildConfig(): void;
+  }
   /**
    * Actuall class being returned with all the hooks for http usage
    * @internal
    */
-  return class extends base {
-    private _injector: Injector;
+  return class extends HttpInternalClass {
     private _baseUrl: string;
     get baseUrl(): string {
-      return (typeof this.basePath === 'string' ? this.basePath.replace(/\/$/, '') : '') + this._baseUrl;
+      return (typeof(this.basePath) === 'string' ?
+        this.basePath.replace(/\/$/, '') : '') + this._baseUrl;
     }
     private _baseHeaders: HttpHeaders;
     private _defaultObserve?: TdHttpRESTObserve;
     private _defaultResponseType?: TdHttpRESTResponseType;
 
     http: HttpClient | TdHttpService;
-
-    constructor() {
-      super(
-        ...(arguments && arguments.length
-          ? arguments
-          : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())),
-      );
-      this._injector = getInjector();
-      this.buildConfig();
-    }
 
     /**
      * Method used to setup the configuration parameters and get an instance of the http service
@@ -137,41 +122,25 @@ export function mixinHttp(
      * Method used to build the default headers using the base headers
      */
     buildHeaders(): HttpHeaders {
-      const headersObj: { [key: string]: any } = {};
+      let headersObj: {[key: string]: any} = {};
       this._baseHeaders.keys().forEach((key: any) => {
         headersObj[key] = this._baseHeaders.get(key);
       });
       return new HttpHeaders(headersObj);
     }
     /* tslint:disable-next-line */
-    buildRequest<HttpResponse>(
-      method: 'POST' | 'PUT' | 'PATCH',
-      url: string,
-      options?: ITdHttpRESTOptionsWithBody,
-    ): Observable<HttpResponse>;
+    buildRequest<HttpResponse>(method: 'POST' | 'PUT' | 'PATCH', url: string, options?: ITdHttpRESTOptionsWithBody): Observable<HttpResponse>;
     /* tslint:disable-next-line */
-    buildRequest<HttpResponse>(
-      method: 'GET' | 'DELETE',
-      url: string,
-      options?: ITdHttpRESTOptions,
-    ): Observable<HttpResponse>;
+    buildRequest<HttpResponse>(method: 'GET' | 'DELETE', url: string, options?: ITdHttpRESTOptions): Observable<HttpResponse>;
     /* tslint:disable-next-line */
-    buildRequest<HttpResponse>(
-      method: TdHttpMethod,
-      url: string,
-      options?: ITdHttpRESTOptionsWithBody,
-    ): Observable<HttpResponse> {
+    buildRequest<HttpResponse>(method: TdHttpMethod, url: string, options?: ITdHttpRESTOptionsWithBody): Observable<HttpResponse> {
       return this._buildRequest(method, url, options);
     }
 
     /**
      * Method used to build the request depending on the `http` service and TdHttpMethod
      */
-    private _buildRequest(
-      method: TdHttpMethod,
-      url: string,
-      options: ITdHttpRESTOptionsWithBody = {},
-    ): Observable<any> {
+    private _buildRequest(method: TdHttpMethod, url: string, options: ITdHttpRESTOptionsWithBody = {}): Observable<any> {
       if (!options.responseType) {
         options.responseType = this._defaultResponseType;
       }
@@ -183,11 +152,11 @@ export function mixinHttp(
       } else {
         let headers: HttpHeaders = this.buildHeaders();
         if (options.headers instanceof HttpHeaders) {
-          options.headers.keys().forEach((key: any) => {
+          (<HttpHeaders>options.headers).keys().forEach((key: any) => {
             headers = headers.set(key, (<HttpHeaders>options.headers).get(key));
           });
         } else {
-          for (const key of Object.keys(options.headers)) {
+          for (let key in options.headers) {
             headers = headers.set(key, <any>options.headers[key]);
           }
         }
@@ -198,12 +167,13 @@ export function mixinHttp(
   };
 }
 
-/**
+/** 
  * @internal
  * WORKAROUND until Ivy Renderer is ready
  */
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class InternalHttpService {
+
   static _injector: Injector = undefined;
 
   constructor(_injector: Injector) {

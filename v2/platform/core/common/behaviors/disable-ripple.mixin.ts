@@ -21,7 +21,7 @@ export function mixinDisableRipple<T extends Constructor<{}>>(base: T): Construc
       return this._disableRipple;
     }
     set disableRipple(value: boolean) {
-      const newValue: boolean = coerceBooleanProperty(value);
+      let newValue: boolean = coerceBooleanProperty(value);
       if (this._disableRipple !== newValue) {
         this._disableRipple = newValue;
         this.onDisableRippleChange(this._disableRipple);

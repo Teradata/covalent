@@ -17,7 +17,7 @@ export enum StepMode {
 
 @Component({
   selector: 'td-steps',
-  styleUrls: ['./steps.component.scss'],
+  styleUrls: ['./steps.component.scss' ],
   templateUrl: './steps.component.html',
   /* tslint:disable-next-line */
   host: {
@@ -25,11 +25,12 @@ export enum StepMode {
   },
 })
 export class TdStepsComponent implements OnDestroy, AfterContentInit {
+
   private _subcriptions: Subscription[];
   private _mode: StepMode = StepMode.Vertical;
   private _steps: QueryList<TdStepComponent>;
 
-  @ContentChildren(TdStepComponent, { descendants: true })
+  @ContentChildren(TdStepComponent)
   set stepsContent(steps: QueryList<TdStepComponent>) {
     if (steps) {
       this._steps = steps;
@@ -48,10 +49,12 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
    */
   @Input('mode')
   set mode(mode: StepMode) {
-    if (mode === StepMode.Horizontal) {
-      this._mode = StepMode.Horizontal;
-    } else {
-      this._mode = StepMode.Vertical;
+    switch (mode) {
+      case StepMode.Horizontal:
+        this._mode = StepMode.Horizontal;
+        break;
+      default:
+        this._mode = StepMode.Vertical;
     }
   }
   get mode(): StepMode {
@@ -60,14 +63,14 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
 
   /**
    * stepChange?: function
-   * Method to be executed when [stepChange] event is emitted.
+   * Method to be executed when [onStepChange] event is emitted.
    * Emits an [IStepChangeEvent] implemented object.
    */
-  @Output() stepChange: EventEmitter<IStepChangeEvent> = new EventEmitter<IStepChangeEvent>();
+  @Output('stepChange') onStepChange: EventEmitter<IStepChangeEvent> = new EventEmitter<IStepChangeEvent>();
 
   /**
    * Executed after content is initialized, loops through any [TdStepComponent] children elements,
-   * assigns them a number and subscribes as an observer to their [activated] event.
+   * assigns them a number and subscribes as an observer to their [onActivated] event.
    */
   ngAfterContentInit(): void {
     this._registerSteps();
@@ -95,27 +98,25 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   }
 
   areStepsActive(): boolean {
-    return (
-      this._steps.filter((step: TdStepComponent) => {
-        return step.active;
-      }).length > 0
-    );
+    return this._steps.filter((step: TdStepComponent) => {
+      return step.active;
+    }).length > 0;
   }
 
   /**
    * Wraps previous and new [TdStepComponent] numbers in an object that implements [IStepChangeEvent]
-   * and emits [stepChange] event.
+   * and emits [onStepChange] event.
    */
   private _onStepSelection(step: TdStepComponent): void {
     if (this.prevStep !== step) {
-      const prevStep: TdStepComponent = this.prevStep;
+      let prevStep: TdStepComponent = this.prevStep;
       this.prevStep = step;
-      const event: IStepChangeEvent = {
+      let event: IStepChangeEvent = {
         newStep: step,
-        prevStep,
+        prevStep: prevStep,
       };
       this._deactivateAllBut(step);
-      this.stepChange.emit(event);
+      this.onStepChange.emit(event);
     }
   }
 
@@ -123,17 +124,16 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
    * Loops through [TdStepComponent] children elements and deactivates them ignoring the one passed as an argument.
    */
   private _deactivateAllBut(activeStep: TdStepComponent): void {
-    this._steps
-      .filter((step: TdStepComponent) => step !== activeStep)
-      .forEach((step: TdStepComponent) => {
-        step.active = false;
-      });
+    this._steps.filter((step: TdStepComponent) => step !== activeStep)
+    .forEach((step: TdStepComponent) => {
+      step.active = false;
+    });
   }
 
   private _registerSteps(): void {
     this._subcriptions = [];
     this._steps.toArray().forEach((step: TdStepComponent) => {
-      const subscription: Subscription = step.activated.asObservable().subscribe(() => {
+      let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
         this._onStepSelection(step);
       });
       this._subcriptions.push(subscription);

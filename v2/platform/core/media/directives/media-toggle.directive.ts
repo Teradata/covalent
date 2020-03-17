@@ -8,12 +8,13 @@ import { TdMediaService } from '../services/media.service';
   selector: '[tdMediaToggle]',
 })
 export class TdMediaToggleDirective implements OnInit, OnDestroy {
+
   private _subscription: Subscription;
 
   private _query: string;
   private _matches: boolean = false;
-  private _attributes: { [key: string]: string } = {};
-  private _styles: { [key: string]: string } = {};
+  private _attributes: {[key: string]: string} = {};
+  private _styles: {[key: string]: string} = {};
   private _classes: string[] = [];
 
   /**
@@ -56,7 +57,7 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
     this._styles = styles;
   }
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _mediaService: TdMediaService) {}
+  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _mediaService: TdMediaService) { }
 
   ngOnInit(): void {
     this._mediaChange(this._mediaService.query(this._query));
@@ -79,7 +80,7 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   }
 
   private _changeAttributes(): void {
-    for (const attr in this._attributes) {
+    for (let attr in this._attributes) {
       if (this._matches) {
         this._renderer.setAttribute(this._elementRef.nativeElement, attr, this._attributes[attr]);
       } else {
@@ -99,7 +100,7 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   }
 
   private _changeStyles(): void {
-    for (const style in this._styles) {
+    for (let style in this._styles) {
       if (this._matches) {
         this._renderer.setStyle(this._elementRef.nativeElement, style, this._styles[style]);
       } else {
@@ -107,4 +108,5 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
       }
     }
   }
+
 }

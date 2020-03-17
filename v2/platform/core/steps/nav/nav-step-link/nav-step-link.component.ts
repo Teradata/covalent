@@ -21,6 +21,7 @@ import { _TdStepMixinBase, StepState } from '../../step.component';
   },
 })
 export class TdNavStepLinkComponent extends _TdStepMixinBase implements ICanDisable, ICanDisableRipple {
+
   private _active: boolean = false;
   private _state: StepState = StepState.None;
 
@@ -55,14 +56,14 @@ export class TdNavStepLinkComponent extends _TdStepMixinBase implements ICanDisa
    * Label to display in step header
    * Defaults to empty
    */
-  @Input() label: string;
+  @Input('label') label: string;
 
   /**
    * sublabel?: string
    * Sublabel to display in step header
    * Defaults to empty
    */
-  @Input() sublabel: string;
+  @Input('sublabel') sublabel: string;
 
   /**
    * active?: boolean
@@ -81,9 +82,10 @@ export class TdNavStepLinkComponent extends _TdStepMixinBase implements ICanDisa
    * tabIndex?: number
    * tabIndex for component
    */
-  @Input() tabIndex: number;
+  @Input('tabIndex') tabIndex: number;
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef, public elementRef: ElementRef) {
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              public elementRef: ElementRef) {
     super();
   }
 
@@ -93,4 +95,5 @@ export class TdNavStepLinkComponent extends _TdStepMixinBase implements ICanDisa
       click.stopImmediatePropagation();
     }
   }
+
 }

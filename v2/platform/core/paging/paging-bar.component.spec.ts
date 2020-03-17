@@ -1,4 +1,9 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import {
+  TestBed,
+  inject,
+  async,
+  ComponentFixture,
+} from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -9,9 +14,14 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: PagingBar', () => {
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, MatInputModule, CovalentPagingModule],
+      imports: [
+        NoopAnimationsModule,
+        MatInputModule,
+        CovalentPagingModule,
+      ],
       declarations: [
         TestInitialPageComponent,
         TestPageSizeComponent,
@@ -24,10 +34,10 @@ describe('Component: PagingBar', () => {
   }));
 
   it('should set [pageSize] dynamically', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestPageSizeComponent);
-    const component: TestPageSizeComponent = fixture.debugElement.componentInstance;
-    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
-
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageSizeComponent);
+    let component: TestPageSizeComponent = fixture.debugElement.componentInstance;
+    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    
     component.pageSize = 100;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -47,19 +57,20 @@ describe('Component: PagingBar', () => {
   });
 
   it('should set [initialPage] and instanciate the paging bar at that page', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestInitialPageComponent);
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestInitialPageComponent);
+    let component: TestInitialPageComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      const page: number = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.page;
+      let page: number = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.page;
       expect(page).toBe(3);
       done();
     });
   });
 
   it('should render first/last buttons and then remove them when setting [firstLast] to false', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestFirstLastComponent);
-    const component: TestFirstLastComponent = fixture.debugElement.componentInstance;
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestFirstLastComponent);
+    let component: TestFirstLastComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -77,8 +88,8 @@ describe('Component: PagingBar', () => {
   });
 
   it('should set [pageLinkCount] and then see buttons in markup and then change count', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
-    const component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
+    let component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
     component.pageLinkCount = 6;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -95,9 +106,9 @@ describe('Component: PagingBar', () => {
   });
 
   it('should navigate to page link 5 and then 3', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
-    const component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
-    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
+    let component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
+    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
     component.pageLinkCount = 5;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -117,19 +128,20 @@ describe('Component: PagingBar', () => {
   });
 
   it('should jump to a page using an external material input', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
-    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
+    let component: TestGoToComponent = fixture.debugElement.componentInstance;
+    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    let inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toBe('Go to:');
       expect(fixture.debugElement.query(By.css('input')).nativeElement).toBeTruthy();
       expect(inputElement.nativeElement.value).toBe('1');
-
+      
       inputElement.nativeElement.value = '6';
       const event: KeyboardEvent = new KeyboardEvent('keyup', {
-        key: 'Enter',
+          'key': 'Enter',
       });
       inputElement.nativeElement.dispatchEvent(event);
       fixture.detectChanges();
@@ -142,18 +154,19 @@ describe('Component: PagingBar', () => {
   });
 
   it('should not jump to a page if the page doesnt exist', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
-    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
+    let component: TestGoToComponent = fixture.debugElement.componentInstance;
+    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    let inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       expect(fixture.debugElement.query(By.css('input')).nativeElement).toBeTruthy();
       expect(inputElement.nativeElement.value).toBe('1');
-
+      
       inputElement.nativeElement.value = '8';
       const event: KeyboardEvent = new KeyboardEvent('keyup', {
-        key: 'Enter',
+          'key': 'Enter',
       });
       inputElement.nativeElement.dispatchEvent(event);
       fixture.detectChanges();
@@ -166,18 +179,19 @@ describe('Component: PagingBar', () => {
   });
 
   it('should floor a value before jumping to a page', (done: DoneFn) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
-    const pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
-    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
+    let component: TestGoToComponent = fixture.debugElement.componentInstance;
+    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    let inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       expect(fixture.debugElement.query(By.css('input')).nativeElement).toBeTruthy();
       expect(inputElement.nativeElement.value).toBe('1');
-
+      
       inputElement.nativeElement.value = '4.556';
       const event: KeyboardEvent = new KeyboardEvent('keyup', {
-        key: 'Enter',
+          'key': 'Enter',
       });
       inputElement.nativeElement.dispatchEvent(event);
       fixture.detectChanges();
@@ -192,8 +206,8 @@ describe('Component: PagingBar', () => {
 
 @Component({
   template: `
-    <td-paging-bar [pageSize]="pageSize" [total]="9215"></td-paging-bar>
-  `,
+    <td-paging-bar [pageSize]="pageSize" [total]="9215">
+    </td-paging-bar>`,
 })
 class TestPageSizeComponent {
   pageSize: number = 37;
@@ -201,8 +215,7 @@ class TestPageSizeComponent {
 
 @Component({
   template: `
-    <td-paging-bar [initialPage]="initialPage" [total]="9215"></td-paging-bar>
-  `,
+    <td-paging-bar [initialPage]="initialPage" [total]="9215"></td-paging-bar>`,
 })
 class TestInitialPageComponent {
   initialPage: number = 3;
@@ -210,8 +223,7 @@ class TestInitialPageComponent {
 
 @Component({
   template: `
-    <td-paging-bar [firstLast]="firstLast" [total]="9333"></td-paging-bar>
-  `,
+    <td-paging-bar [firstLast]="firstLast" [total]="9333"></td-paging-bar>`,
 })
 class TestFirstLastComponent {
   firstLast: boolean = true;
@@ -219,8 +231,7 @@ class TestFirstLastComponent {
 
 @Component({
   template: `
-    <td-paging-bar [pageLinkCount]="pageLinkCount" [pageSize]="pageSize" [total]="1345"></td-paging-bar>
-  `,
+    <td-paging-bar [pageLinkCount]="pageLinkCount" [pageSize]="pageSize" [total]="1345"></td-paging-bar>`,
 })
 class TestPageLinkCountComponent {
   pageLinkCount: number = 7;
@@ -232,18 +243,17 @@ class TestPageLinkCountComponent {
     <td-paging-bar #pagingBar [pageSize]="100" [total]="650">
       <p>Go to:</p>
       <mat-form-field>
-        <input
-          #goToInput
-          matInput
-          type="number"
-          [min]="1"
-          [max]="pagingBar.maxPage"
-          [value]="pagingBar.page"
-          (blur)="goToInput.value = pagingBar.page"
-          (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"
-        />
+        <input #goToInput
+                matInput
+                type="number"
+                [min]="1"
+                [max]="pagingBar.maxPage"
+                [value]="pagingBar.page"
+                (blur)="goToInput.value = pagingBar.page"
+                (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
       </mat-form-field>
-    </td-paging-bar>
-  `,
+      
+    </td-paging-bar>`,
 })
-class TestGoToComponent {}
+class TestGoToComponent {
+}
