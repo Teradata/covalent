@@ -202,7 +202,7 @@ export const createComponentDetails: IComponentDetails[] = [
   {
     name: 'Message',
     id: 'message',
-    description: 'Info, warning & alert messages',
+    description: 'Informational component supporting visibility toggling and additional information action',
     apiDocUrl: 'platform/core/message/README.md',
     icon: 'info_outline',
     category: buttons.name,
@@ -232,7 +232,7 @@ export const createComponentDetails: IComponentDetails[] = [
   {
     name: 'Data Table',
     id: 'data-table',
-    description: 'Project tabular data',
+    description: 'Component for displaying tabular data',
     apiDocUrl: 'platform/core/data-table/README.md',
     icon: 'border_all',
     category: layout.name,
