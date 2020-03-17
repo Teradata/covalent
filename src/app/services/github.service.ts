@@ -15,6 +15,21 @@ export class GitHubService {
 
   }
 
+  getVersionDirectories(): Observable<string[]> {
+    return this._http
+      .get<{ name: string; type: string }[]>(GITHUB_URL + '/repos/Teradata/covalent/contents?ref=gh-pages')
+      .pipe(
+        map((data: { name: string; type: string }[]) => {
+          return data
+            .filter((row: { name: string; type: string }) => row.type === 'dir' && row.name.startsWith('v'))
+            .map((row: { name: string; type: string }) => row.name)
+            .sort((a: string, b: string) => {
+              return a < b ? 1 : -1;
+            });
+        }),
+      );
+  }
+
   queryStartCount(): Observable<number> {
     return this._http.get(GITHUB_URL + '/search/repositories?q=repo:Teradata/covalent')
       .pipe(

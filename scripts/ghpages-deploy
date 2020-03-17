@@ -1,16 +1,17 @@
 #!/bin/bash
-git branch -f gh-pages
+version=$1
+
+echo "Checking out gh-pages branch"
 git checkout gh-pages
-echo 'Created and Checked out gh-pages branch'
 
-git reset --hard origin/develop
-
-cp -r dist/* .
-echo 'Copied dist/ directory into root dir and replaced <base href="/"> with <base href="/covalent/"> in index.html'
+echo "Created or replaced $version dir"
+rm -rf ./$version
+mkdir $version
+cp -r dist/* $version
 
 echo 'Tracking files'
-git add -A .
+git add -A $version
 echo 'Commiting files'
-git commit -a -m 'gh-pages update'
+git commit --no-verify -a -m "feat(): gh-pages update for $version"
 echo 'Pushing files into gh-pages branch'
 git push origin gh-pages --force
