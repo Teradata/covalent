@@ -14,6 +14,7 @@ import {
 })
 export class DynamicFormsDemoCustomValidationComponent {
   @ViewChild('manualValidateForm', { static: true }) manualValidateForm: TdDynamicFormsComponent;
+
   customValidationElements: ITdDynamicElementConfig[] = [
     {
       name: 'evenElement',
@@ -24,21 +25,6 @@ export class DynamicFormsDemoCustomValidationComponent {
           validator: (control: AbstractControl) => {
             const isValid: boolean = (!control.value && control.value !== 0) || control.value % 2 === 0;
             return !isValid ? { even: true } : undefined;
-          },
-        },
-      ],
-    },
-    {
-      name: 'oddInRangeElement',
-      label: 'Odd Number Between 8 and 20',
-      type: TdDynamicType.Number,
-      min: 8,
-      max: 20,
-      validators: [
-        {
-          validator: (control: AbstractControl) => {
-            const isValid: boolean = (!control.value && control.value !== 0) || control.value % 2 !== 0;
-            return !isValid ? { odd: true } : undefined;
           },
         },
       ],

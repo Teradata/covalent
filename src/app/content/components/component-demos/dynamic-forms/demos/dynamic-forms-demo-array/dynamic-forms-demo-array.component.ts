@@ -15,20 +15,20 @@ export class DynamicFormsDemoArrayComponent {
       default: 'Test1',
     },
     {
-      name: 'required-select',
+      name: 'requiredSelect',
       type: TdDynamicElement.Select,
       selections: ['Test1', 'Test2', 'Test3', 'Test4'],
       required: true,
     },
     {
-      name: 'required-multiple-select',
+      name: 'requiredMultipleSelect',
       type: TdDynamicElement.Select,
       multiple: true,
       selections: ['Test1', 'Test2', 'Test3', 'Test4'],
       required: true,
     },
     {
-      name: 'value-label-select',
+      name: 'valueLabelSelect',
       hint: 'this is a select hint',
       type: TdDynamicElement.Select,
       selections: [

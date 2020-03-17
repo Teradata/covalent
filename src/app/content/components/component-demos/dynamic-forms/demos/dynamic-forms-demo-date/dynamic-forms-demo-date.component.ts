@@ -9,7 +9,7 @@ import { ITdDynamicElementConfig, TdDynamicElement } from '@covalent/dynamic-for
 export class DynamicFormsDemoDateComponent {
   dateElements: ITdDynamicElementConfig[] = [
     {
-      name: 'date-input',
+      name: 'dateInput',
       label: 'Select a date',
       hint: 'this is a datepicker hint',
       type: TdDynamicElement.Datepicker,

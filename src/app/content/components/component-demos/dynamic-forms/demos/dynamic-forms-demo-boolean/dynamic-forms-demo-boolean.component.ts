@@ -16,7 +16,7 @@ export class DynamicFormsDemoBooleanComponent {
       default: false,
     },
     {
-      name: 'slide-toggle',
+      name: 'slideToggle',
       type: TdDynamicElement.SlideToggle,
       hint: 'this is a slide toggle',
       default: true,

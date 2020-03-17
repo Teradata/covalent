@@ -1,6 +1,4 @@
-<h3 class="mat-title">Custom Validation</h3>
-<h4>Using custom validator functions to create your own</h4>
-<mat-divider></mat-divider>
+<h4>Custom Validation</h4>
 <td-dynamic-forms [elements]="customValidationElements">
   <ng-template let-element ngFor [ngForOf]="customValidationElements">
     <ng-template let-control="control" [tdDynamicFormsError]="element.name">
@@ -15,11 +13,8 @@
 </td-dynamic-forms>
 
 <mat-divider></mat-divider>
-
 <h4>Multiple Validators</h4>
-<mat-divider></mat-divider>
-
-<td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
+<td-dynamic-forms [elements]="multipleValidatorTypes">
   <ng-template let-control="control" [tdDynamicFormsError]="'passwordElement'">
     <span *ngIf="control.touched || !control.pristine">
       <span *ngIf="control.hasError('oneNumber')">Must contain at least 1 number.</span>
@@ -29,9 +24,9 @@
   </ng-template>
 </td-dynamic-forms>
 
-<h4>Angular Validators</h4>
 <mat-divider></mat-divider>
-<td-dynamic-forms #customValidateForm [elements]="angularValidators">
+<h4>Angular Validators</h4>
+<td-dynamic-forms [elements]="angularValidators">
   <ng-template let-control="control" tdDynamicFormsError="hexColorElement">
     <span *ngIf="control.touched || !control.pristine">
       <span *ngIf="control.hasError('pattern')">Only hex color characters.</span>
@@ -39,8 +34,8 @@
   </ng-template>
 </td-dynamic-forms>
 
-<h4>Manual Validators</h4>
 <mat-divider></mat-divider>
+<h4>Manual Validators</h4>
 <td-dynamic-forms #manualValidateForm [elements]="manualValidatorElement">
   <ng-template let-control="control" tdDynamicFormsError="vowelsElement">
     <span *ngIf="control.touched || !control.pristine">

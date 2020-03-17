@@ -16,14 +16,14 @@ export class DynamicFormsDemoTextComponent {
       flex: 50,
     },
     {
-      name: 'required-input',
+      name: 'requiredInput',
       label: 'Input Label',
       type: TdDynamicElement.Input,
       required: true,
       flex: 50,
     },
     {
-      name: 'text-length',
+      name: 'textLength',
       label: 'Text Length',
       type: TdDynamicElement.Input,
       minLength: 4,
@@ -45,7 +45,7 @@ export class DynamicFormsDemoTextComponent {
       required: false,
     },
     {
-      name: 'required-password',
+      name: 'requiredPassword',
       label: 'Password Label',
       type: TdDynamicElement.Password,
       required: true,

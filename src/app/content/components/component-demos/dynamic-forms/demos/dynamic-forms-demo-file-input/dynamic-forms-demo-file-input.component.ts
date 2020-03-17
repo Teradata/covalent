@@ -9,7 +9,7 @@ import { ITdDynamicElementConfig, TdDynamicElement } from '@covalent/dynamic-for
 export class DynamicFormsDemoFileInputComponent {
   fileElements: ITdDynamicElementConfig[] = [
     {
-      name: 'file-input',
+      name: 'fileInput',
       label: 'Browse a file',
       hint: 'this is a file input hint',
       type: TdDynamicElement.FileInput,
