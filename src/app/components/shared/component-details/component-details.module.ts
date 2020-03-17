@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentMediaModule } from '@covalent/core/media';
+import { CovalentMessageModule } from '@covalent/core/message';
 
 import { ComponentHeroComponent } from './component-hero/component-hero.component';
 import { DetailsWrapperComponent } from './component-details-wrapper/content-details.component';
@@ -27,6 +28,7 @@ import { DocumentationToolsModule } from 'app/documentation-tools';
     /** Covalent Modules */
     CovalentMediaModule,
     CovalentCommonModule,
+    CovalentMessageModule,
     DocumentationToolsModule,
   ],
   providers: [],

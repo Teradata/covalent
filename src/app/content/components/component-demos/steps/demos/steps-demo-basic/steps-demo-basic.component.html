@@ -1,15 +1,15 @@
 <div layout="row" layout-align="start center">
   <mat-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
     <mat-button-toggle matTooltip="Vertical Stepper" [value]="0">
-      <mat-icon>swap_vert</mat-icon>
+      <mat-icon class="push-right-xs">swap_vert</mat-icon>
       <span hide-md hide-sm hide-xs>Vertical</span>
     </mat-button-toggle>
     <mat-button-toggle matTooltip="Horizontal Stepper" [value]="1">
-      <mat-icon>swap_horiz</mat-icon>
+      <mat-icon class="push-right-xs">swap_horiz</mat-icon>
       <span hide-md hide-sm hide-xs>Horizontal</span>
     </mat-button-toggle>
     <mat-button-toggle matTooltip="Responsive (changes from horizontal to vertical)" [value]="2">
-      <mat-icon>devices</mat-icon>
+      <mat-icon class="push-right-xs">devices</mat-icon>
       <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span>
     </mat-button-toggle>
   </mat-button-toggle-group>
@@ -48,7 +48,7 @@
   <td-step
     #step3
     label="Complete State"
-    sublabel="Toggle between active and inactive while in complete state."
+    sublabel="Toggle between active/inactive and complete/incomplete state."
     [state]="stateStep3"
     [disabled]="disabled"
   >
@@ -64,3 +64,8 @@
     </ng-template>
   </td-step>
 </td-steps>
+<mat-divider></mat-divider>
+<div class="demo-button-row">
+  <button mat-button color="accent" (click)="step1.toggle()" class="text-upper">Toggle First Active</button>
+  <button mat-button color="accent" (click)="toggleDisabled()" class="text-upper">Toggle Disable All</button>
+</div>

@@ -10,18 +10,19 @@ import { CovalentMessageModule } from '@covalent/core/message';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
-import { MessageDemoComponent } from './message.component';
+import { MessageDemoBasicSharedModule } from './demos/message-demo-basic/message-demo-basic-shared';
+import { MessageDemoBasicComponent } from './demos/message-demo-basic/message-demo-basic.component';
 import { DocumentationToolsModule } from 'app/documentation-tools';
 import { CovalentDialogsModule } from '../../../../../platform/core/dialogs';
 
 const routes: Routes = setComponentRoutes({
-  overviewDemoComponent: MessageDemoComponent,
+  overviewDemoComponent: MessageDemoBasicComponent,
   id: 'message',
 });
 
 @NgModule({
-  declarations: [MessageDemoComponent],
   imports: [
+    MessageDemoBasicSharedModule,
     CommonModule,
     DocumentationToolsModule,
     // Material
