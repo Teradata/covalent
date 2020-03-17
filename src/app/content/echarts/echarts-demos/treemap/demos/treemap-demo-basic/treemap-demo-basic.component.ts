@@ -1,7 +1,4 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
-import * as echarts from 'echarts/lib/echarts';
-import { getThemes } from '@covalent/echarts/base';
-import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
   selector: 'treemap-demo-basic',
@@ -11,9 +8,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   preserveWhitespaces: true,
 })
 export class TreemapDemoBasicComponent implements OnInit {
-  themes: string[] = getThemes();
-  selectedTheme: string;
-
   // Series data
   data: any = [
     {
@@ -200,14 +194,9 @@ export class TreemapDemoBasicComponent implements OnInit {
     ],
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(private _cdr: ChangeDetectorRef) {}
 
   async ngOnInit(): Promise<void> {
-    this.selectedTheme = this.themeSelector.selected;
     this._cdr.markForCheck();
-  }
-
-  selectChartTheme(theme: string): void {
-    this.themeSelector.select(theme);
   }
 }

@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
   selector: 'pie-demo-basic',
@@ -56,6 +55,4 @@ export class PieDemoBasicComponent {
       formatter: '{a} <br/>{b} : {c} ({d}%)',
     },
   };
-
-  constructor(public themeSelector: ChartThemeSelectorService) {}
 }

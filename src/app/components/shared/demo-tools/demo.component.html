@@ -3,6 +3,9 @@
     <span>{{ demoTitle || demoId }}</span>
     <span flex></span>
     <button (click)="toggleCodeView()" mat-icon-button><mat-icon>code</mat-icon></button>
+    <button *ngIf="!hideStackBlitzDemo" (click)="openStackblitzDemo()" mat-icon-button>
+      <mat-icon>open_in_new</mat-icon>
+    </button>
   </mat-toolbar-row>
   <mat-tab-group *ngIf="viewCode">
     <mat-tab label="HTML">

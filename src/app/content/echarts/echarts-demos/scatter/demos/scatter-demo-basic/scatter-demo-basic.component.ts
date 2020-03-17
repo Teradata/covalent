@@ -1,6 +1,4 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
-import { getThemes } from '@covalent/echarts/base';
-import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
   selector: 'scatter-demo-basic',
@@ -10,9 +8,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   preserveWhitespaces: true,
 })
 export class ScatterDemoBasicComponent implements OnInit {
-  themes: string[] = getThemes();
-  selectedTheme: string;
-
   config: any = {
     tooltip: {
       show: true,
@@ -105,15 +100,10 @@ export class ScatterDemoBasicComponent implements OnInit {
     ],
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(private _cdr: ChangeDetectorRef) {}
 
   async ngOnInit(): Promise<void> {
-    this.selectedTheme = this.themeSelector.selected;
     this._cdr.markForCheck();
-  }
-
-  selectChartTheme(theme: string): void {
-    this.themeSelector.select(theme);
   }
 
   symbolSize(data: number[]): number {

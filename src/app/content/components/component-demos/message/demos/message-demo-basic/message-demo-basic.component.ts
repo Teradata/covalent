@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TdDialogService } from '../../../../../../../platform/core/dialogs';
+import { TdDialogService } from '@covalent/core/dialogs';
 
 @Component({
   selector: 'message-demo-basic',

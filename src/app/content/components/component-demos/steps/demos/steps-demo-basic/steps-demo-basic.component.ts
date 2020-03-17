@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, NgZone, HostBinding } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { TdMediaService } from '../../../../../../../platform/core/media';
-import { StepState } from '../../../../../../../platform/core/steps';
+import { TdMediaService } from '@covalent/core/media';
+import { StepState } from '@covalent/core/steps';
 
 @Component({
   selector: 'steps-demo-basic',

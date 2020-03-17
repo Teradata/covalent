@@ -1,8 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
-import { getThemes } from '@covalent/echarts/base';
 import { ITdWordCloudData } from '@covalent/echarts/wordcloud';
-
-import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
   selector: 'wordcloud-demo-basic',
@@ -12,9 +9,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   preserveWhitespaces: true,
 })
 export class WordcloudDemoBasicComponent implements OnInit {
-  themes: string[] = getThemes();
-  selectedTheme: string;
-
   words: string[] = [
     'Covalent',
     'Teradata',
@@ -79,10 +73,9 @@ export class WordcloudDemoBasicComponent implements OnInit {
     ],
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(private _cdr: ChangeDetectorRef) {}
 
   async ngOnInit(): Promise<void> {
-    this.selectedTheme = this.themeSelector.selected;
     this._cdr.markForCheck();
   }
 
@@ -107,9 +100,5 @@ export class WordcloudDemoBasicComponent implements OnInit {
         },
       };
     });
-  }
-
-  selectChartTheme(theme: string): void {
-    this.themeSelector.select(theme);
   }
 }

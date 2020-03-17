@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./breadcrumbs-demo-resize.component.scss'],
   templateUrl: './breadcrumbs-demo-resize.component.html',
 })
-export class BreadcrumbsResizeBasicComponent {
+export class BreadcrumbsDemoResizeComponent {
   count: number = 0;
 }

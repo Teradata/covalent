@@ -1,6 +1,4 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
-import { getThemes } from '@covalent/echarts/base';
-import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
   selector: 'line-demo-basic',
@@ -11,9 +9,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
 })
 export class LineDemoBasicComponent implements OnInit {
   today: Date = new Date();
-
-  themes: string[] = getThemes();
-  selectedTheme: string;
 
   // Chart config
   config: any = {
@@ -78,14 +73,9 @@ export class LineDemoBasicComponent implements OnInit {
     },
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(private _cdr: ChangeDetectorRef) {}
 
   async ngOnInit(): Promise<void> {
-    this.selectedTheme = this.themeSelector.selected;
     this._cdr.markForCheck();
-  }
-
-  selectChartTheme(theme: string): void {
-    this.themeSelector.select(theme);
   }
 }

@@ -30,6 +30,16 @@
                 "output": "/assets"
               },
               {
+                "glob": "+(shared.module.ts|angular.json|theme.scss)",
+                "input": "src/app/content/components/component-demos",
+                "output": "/assets/demos"
+              },
+              {
+                "glob": "+(_teradata-branding.scss|polyfills.ts)",
+                "input": "src",
+                "output": "/assets/demos"
+              },
+              {
                 "glob": "**/demos/**/*",
                 "input": "src/app/content/components/component-demos",
                 "output": "/assets/demos"

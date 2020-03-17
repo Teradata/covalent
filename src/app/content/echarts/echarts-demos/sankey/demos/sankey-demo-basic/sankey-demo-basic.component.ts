@@ -1,6 +1,4 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
-import { getThemes } from '@covalent/echarts/base';
-import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
   selector: 'sankey-demo-basic',
@@ -10,9 +8,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   preserveWhitespaces: true,
 })
 export class SankeyDemoBasicComponent implements OnInit {
-  themes: string[] = getThemes();
-  selectedTheme: string;
-
   config: any = {
     xAxis: { show: false },
     yAxis: { show: false },
@@ -62,14 +57,9 @@ export class SankeyDemoBasicComponent implements OnInit {
     ],
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(private _cdr: ChangeDetectorRef) {}
 
   async ngOnInit(): Promise<void> {
-    this.selectedTheme = this.themeSelector.selected;
     this._cdr.markForCheck();
-  }
-
-  selectChartTheme(theme: string): void {
-    this.themeSelector.select(theme);
   }
 }

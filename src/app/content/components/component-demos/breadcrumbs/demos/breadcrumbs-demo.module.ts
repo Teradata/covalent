@@ -7,7 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { BreadcrumbsDemoBasicComponent } from './breadcrumbs-demo-basic/breadcrumbs-demo-basic.component';
 import { BreadcrumbsDemoCustomSeparatorComponent } from './breadcrumbs-demo-custom-separator/breadcrumbs-demo-custom-separator.component';
-import { BreadcrumbsResizeBasicComponent } from './breadcrumbs-demo-resize/breadcrumbs-demo-resize.component';
+import { BreadcrumbsDemoResizeComponent } from './breadcrumbs-demo-resize/breadcrumbs-demo-resize.component';
 import { BreadcrumbsDemoComponent } from './breadcrumbs-demo.component';
 
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
@@ -19,7 +19,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     BreadcrumbsDemoComponent,
     BreadcrumbsDemoBasicComponent,
     BreadcrumbsDemoCustomSeparatorComponent,
-    BreadcrumbsResizeBasicComponent,
+    BreadcrumbsDemoResizeComponent,
   ],
   imports: [
     DemoModule,
