@@ -4,7 +4,10 @@ import { RouterModule, Routes, Route } from '@angular/router';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
+import { CovalentChipsModule } from '../../../../../platform/core/chips';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
@@ -23,6 +26,9 @@ const routes: Routes = setComponentRoutes({
     // Material
     MatSelectModule,
     MatIconModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    CovalentChipsModule,
     CovalentDynamicFormsModule,
     ComponentDetailsModule,
     // Covalent
