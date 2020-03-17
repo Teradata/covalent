@@ -24,12 +24,12 @@
       [matMenuTriggerFor]="verMenu"
       [matTooltip]="'Click here to change versions'"
     >
-      {{ 'v3' }}
+      {{ version }}
       <mat-icon>arrow_drop_down</mat-icon>
     </button>
     <mat-menu #verMenu="matMenu">
-      <ng-template let-version [ngFor]="versions">
-        <a mat-menu-item [href]="'https://teradata.github.io/covalent/' + version">{{ version }}</a>
+      <ng-template let-version ngFor [ngForOf]="versions">
+        <a mat-menu-item [href]="'https://teradata.github.io/covalent/' + version + '/'">{{ version }}</a>
       </ng-template>
     </mat-menu>
     <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">

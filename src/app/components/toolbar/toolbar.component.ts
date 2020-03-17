@@ -10,7 +10,7 @@ import { Dir } from '@angular/cdk/bidi';
 
 import { getDirection, setDirection } from '../../utilities/direction';
 
-import { VersionService } from './versions.service';
+import { GitHubService } from '../../services/github.service';
 
 @Component({
   selector: 'td-toolbar',
@@ -22,9 +22,13 @@ export class ToolbarComponent implements OnInit {
 
   versions: string[] = [];
 
+  get version(): string {
+    return location.pathname.split('/')[2] || 'LOCAL';
+  }
+
   constructor(
     private _renderer: Renderer2,
-    private _versionService: VersionService,
+    private _githubService: GitHubService,
     private _dir: Dir,
     @Inject(DOCUMENT) private _document: any,
   ) {
@@ -32,7 +36,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.versions = await this._versionService.getVersions().toPromise();
+    this.versions = await this._githubService.getVersionDirectories().toPromise();
   }
 
   changeDir(dir: 'ltr' | 'rtl'): void {

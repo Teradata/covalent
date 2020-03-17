@@ -2,10 +2,7 @@
 version=$1
 
 echo "Checking out gh-pages branch"
-git branch -f gh-pages
 git checkout gh-pages
-
-git reset --hard origin/develop
 
 echo "Created or replaced $version dir"
 rm -rf ./$version
