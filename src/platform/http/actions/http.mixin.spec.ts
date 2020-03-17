@@ -1,8 +1,8 @@
 import { TestBed, inject, async } from '@angular/core/testing';
 import { Injectable } from '@angular/core';
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
-import { HttpHeaders, HttpResponse, HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { CovalentHttpModule, TdHttpService } from '@covalent/http';
+import { HttpHeaders, HttpResponse, HttpErrorResponse, HttpParams, HttpUrlEncodingCodec } from '@angular/common/http';
+import { CovalentHttpModule } from '@covalent/http';
 import { Observable } from 'rxjs';
 import { mixinHttp, TdGET, TdPOST, TdPATCH, TdDELETE, TdParam, TdQueryParams, TdBody } from './';
 
@@ -23,6 +23,13 @@ export class BasicTestRESTService extends mixinHttp(class {}, {
     path: '/',
   })
   queryWithParams(@TdQueryParams() queryParams: HttpParams): Observable<any> {
+    return undefined;
+  }
+
+  @TdGET({
+    path: '/',
+  })
+  queryWithParamsCustomEncoder(@TdQueryParams() queryParams: HttpParams): Observable<any> {
     return undefined;
   }
 
@@ -139,7 +146,7 @@ describe('Decorators: Http', () => {
     ),
   ));
 
-  it('expect to do a query with HttpParams parameters succesfully', async(
+  it('expect to do a query with HttpParams parameters successfully', async(
     inject(
       [BasicTestRESTService, HttpTestingController],
       (service: BasicTestRESTService, httpTestingController: HttpTestingController) => {
@@ -167,6 +174,65 @@ describe('Decorators: Http', () => {
         expect(req.request.method).toEqual('GET');
         expect(req.request.params).toEqual(queryParams);
         expect(req.request.url).toEqual(TEST_URL + '/');
+        expect(req.request.urlWithParams).toEqual(
+          `${TEST_URL}/?firstParam=1&second-Param=2&second-Param=3&thirdParam=false`,
+        );
+        req.flush('success', {
+          status: 200,
+          statusText: 'OK',
+        });
+        httpTestingController.verify();
+
+        expect(success).toBe(true, 'on success didnt execute with observables');
+        expect(complete).toBe(true, 'on complete didnt execute with observables');
+      },
+    ),
+  ));
+
+  it('expect to do a query with HttpParams parameters with a custom encoder successfully', async(
+    inject(
+      [BasicTestRESTService, HttpTestingController],
+      (service: BasicTestRESTService, httpTestingController: HttpTestingController) => {
+        let success: boolean = false;
+        let complete: boolean = false;
+        const firstParam: string = '/dir/child/test.csv';
+        const secondParam: string = '!@#$%=';
+
+        class CustomEncoder implements HttpUrlEncodingCodec {
+          encodeKey(key: string): string {
+            return encodeURIComponent(key);
+          }
+          encodeValue(value: string): string {
+            return encodeURIComponent(value);
+          }
+          decodeKey(key: string): string {
+            return decodeURIComponent(key);
+          }
+          decodeValue(value: string): string {
+            return decodeURIComponent(value);
+          }
+        }
+        const queryParams: HttpParams = new HttpParams({ encoder: new CustomEncoder() })
+          .set('firstParam', firstParam)
+          .set('secondParam', secondParam);
+        service.queryWithParams(queryParams).subscribe(
+          (data: string) => {
+            expect(data).toBe('success');
+            success = true;
+          },
+          () => {
+            fail('on error executed when it shouldnt have with observables');
+          },
+          () => {
+            complete = true;
+          },
+        );
+
+        const req: TestRequest = httpTestingController.match(() => true)[0];
+        expect(req.request.urlWithParams).toEqual(
+          `${TEST_URL}/?firstParam=${encodeURIComponent(firstParam)}&secondParam=${encodeURIComponent(secondParam)}`,
+        );
+
         req.flush('success', {
           status: 200,
           statusText: 'OK',
