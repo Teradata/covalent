@@ -1,0 +1,20 @@
+@import '../variables';
+
+@mixin td-sidenav-utilities() {
+  mat-sidenav {
+    width: $navigation-drawer-width;
+    .mat-list-item-content {
+      mat-icon {
+        @include rtl(margin-left, 0, $margin);
+        @include rtl(margin-right, $margin, 0);
+        color: #737373;
+        fill: #737373;
+      }
+    }
+    [mat-list-item] {
+      &,&:active,&:focus {
+        outline: none;
+      }
+    }
+  }
+}

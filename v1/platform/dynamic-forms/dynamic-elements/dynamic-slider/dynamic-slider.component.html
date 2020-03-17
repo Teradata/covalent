@@ -1,0 +1,17 @@
+<div class="td-dynamic-slider-wrapper">
+  <div class="mat-form-field-placeholder-wrapper mat-form-field-can-float mat-form-field-should-float"
+       [class.mat-focused]="slider._isActive">
+    <label class="mat-form-field-placeholder mat-float mat-form-field-float td-slider-label"> {{label}} <span *ngIf="required" class="mat-placeholder-required">*</span></label>
+  </div>
+  <div class="td-dynamic-slider-field">
+    <mat-slider #slider
+               class="td-dynamic-slider"
+               [(ngModel)]="value"
+                [min]="min"
+                [max]="max"
+                thumbLabel
+                tickInterval="auto"
+                [required]="required">
+    </mat-slider>
+  </div>  
+</div>

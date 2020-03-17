@@ -1,0 +1,126 @@
+@import '../variables';
+
+@mixin td-structure-utilities() {
+  html, body {
+    height: 100%;
+    color: rgba(0, 0, 0, 0.87);
+    background: white;
+    position: relative;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  [tabindex='-1']:focus {
+    outline: none;
+  }
+
+  .inset {
+    padding: 10px;
+  }
+
+  button.md-no-style {
+    font-weight: normal;
+    background-color: inherit;
+    @include rtl(text-align, left,right);
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  select,
+  button,
+  textarea,
+  input {
+    vertical-align: baseline;
+  }
+
+  // Fix Android 4.0 button bugs
+  input[type='reset'],
+  input[type='submit'],
+  html input[type='button'],
+  button {
+    cursor: pointer;
+    -webkit-appearance: button;
+
+    &[disabled] {
+      cursor: default;
+    }
+  }
+
+  textarea {
+    vertical-align: top;
+    overflow: auto;
+  }
+
+  input {
+    &[type='search'] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+
+  .md-visually-hidden,
+  .mat-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    text-transform: none;
+    width: 1px;
+  }
+
+  .md-shadow,
+  .mat-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .md-shadow-bottom-z-1,
+  .mat-shadow-bottom-z-1 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  }
+
+  .md-shadow-bottom-z-2,
+  .mat-shadow-bottom-z-2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .md-shadow-animated.md-shadow,
+  .mat-shadow-animated.mat-shadow {
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .md-padding,
+  .mat-padding {
+    padding: 8px;
+  }
+
+  .md-margin,
+  .mat-margin {
+    margin: 8px;
+  }
+
+  @media (min-width: $layout-breakpoint-sm) {
+    .md-padding,
+    .mat-padding {
+      padding: 16px;
+    }
+  }
+}

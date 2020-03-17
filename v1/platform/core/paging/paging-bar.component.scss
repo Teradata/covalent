@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  .td-paging-bar {
+    height: 48px;
+    // [layout]
+    box-sizing: border-box;
+    display: flex;
+    // [layout="row"]
+    flex-direction: row;
+    // [layout-align="end center"]
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: flex-end;
+    ::ng-deep > * {
+      margin: 0 10px;
+    }
+    [mat-icon-button] {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+}

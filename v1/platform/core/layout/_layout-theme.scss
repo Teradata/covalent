@@ -1,0 +1,88 @@
+@import '../common/styles/elevation';
+@import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-layout-typography($config) {
+  td-navigation-drawer {
+    .td-navigation-drawer-title {
+      font: {
+        family: td-font-family($config);
+        size: td-font-size($config, subheading-2);
+      }
+    }
+    .td-navigation-drawer-name {
+      font: {
+        family: td-font-family($config);
+        size: td-font-size($config, body-1);
+        weight: 500;
+      }
+      line-height: td-line-height($config, body-1);
+    }
+    .td-navigation-drawer-menu-toggle {
+      font: {
+        family: td-font-family($config);
+        size: td-font-size($config, body-2);
+        weight: 400;
+      }
+      line-height: td-line-height($config, body-2);
+    }
+  }
+}
+
+@mixin td-layout-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-drawer-container {
+    background-color: mat-color($background, status-bar);
+  }
+
+  [mat-icon-button].td-layout-menu-button {
+    margin-left: 0;
+    ::ng-deep [dir='rtl'] & {
+      margin-right: 0;
+      margin-left: 6px;
+    }
+  }
+
+  td-layout-nav,
+  td-layout-nav-list,
+  td-layout-manage-list,
+  td-layout-card-over,
+  td-navigation-drawer,
+  td-layout {
+    mat-toolbar {
+      @include mat-elevation(1);
+      z-index: 1;
+    }
+  }
+  .mat-drawer-side.td-layout-sidenav {
+    @include mat-elevation(2);
+  }
+  .td-layout-footer {
+    background: mat-color($background, app-bar);
+    color: mat-color($foreground, text);
+    @include mat-elevation(2);
+    &.mat-primary {
+      background: mat-color($primary);
+      &, mat-icon {
+        color: mat-color($primary, default-contrast);
+      }
+    }
+    &.mat-accent {
+      background: mat-color($accent);
+      &, mat-icon {
+        color: mat-color($accent, default-contrast);
+      }
+    }
+    &.mat-warn {
+      background: mat-color($warn);
+      &, mat-icon {
+        color: mat-color($warn, default-contrast);
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="td-dynamic-input-wrapper">
+  <mat-form-field class="td-dynamic-input-field">
+    <input #elementInput
+            matInput
+            [(ngModel)]="value"
+            [formControl]="control"
+            [placeholder]="label"
+            [type]="type"
+            [required]="required"
+            [attr.min]="min"
+            [attr.max]="max"
+            [attr.minLength]="minLength"
+            [attr.maxLength]="maxLength"/>
+  </mat-form-field>
+</div>

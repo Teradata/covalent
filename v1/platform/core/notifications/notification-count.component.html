@@ -1,0 +1,14 @@
+<div #content class="td-notification-content">
+  <ng-content></ng-content>
+</div>
+<div *ngIf="show"
+     class="td-notification-count mat-{{color}}"
+     [class.td-notification-top]="positionY === 'top'"
+     [class.td-notification-bottom]="positionY === 'bottom'"
+     [class.td-notification-before]="positionX === 'before'"
+     [class.td-notification-after]="positionX === 'after'"
+     [class.td-notification-center-y]="positionY === 'center'"
+     [class.td-notification-center-x]="positionX === 'center'"
+     [class.td-notification-no-count]="noCount">
+  {{noCount ? '' : notificationsDisplay}}
+</div>

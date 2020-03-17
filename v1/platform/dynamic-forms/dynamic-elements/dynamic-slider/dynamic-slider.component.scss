@@ -1,0 +1,13 @@
+.td-dynamic-slider-field {
+  position: relative;
+  margin-top: 8px;
+  // [layout="row"]
+  flex-direction: row;
+  // [layout]
+  display: flex;
+  box-sizing: border-box;
+  .td-dynamic-slider {
+    // [flex]
+    flex: 1;
+  }
+}

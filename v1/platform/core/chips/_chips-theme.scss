@@ -1,0 +1,72 @@
+@import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-chips-typography($config) {
+  .td-chip-content {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, caption);
+    }
+  }
+}
+
+@mixin td-chips-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  // chips
+  td-chips {
+    // chip
+    .mat-basic-chip {
+      background: mat-color($background, status-bar);
+      color: mat-color($foreground, text);
+      &:focus:not(.td-chip-disabled) {
+        mat-icon:hover {
+          color: mat-color($foreground, icon);
+        }
+        &.mat-primary {
+          background: mat-color($primary);
+          &, mat-icon {
+            color: mat-color($primary, default-contrast);
+          }
+        }
+        &.mat-accent {
+          background: mat-color($accent);
+          &, mat-icon {
+            color: mat-color($accent, default-contrast);
+          }
+        }
+        &.mat-warn {
+          background: mat-color($warn);
+          &, mat-icon {
+            color: mat-color($warn, default-contrast);
+          }
+        }
+      }
+      mat-icon.td-chip-removal {
+        color: mat-color($foreground, hint-text);
+        &:hover {
+          color: mat-color($foreground, icon);
+        }
+      }
+    }
+    &.mat-primary {
+      .mat-form-field-underline .mat-form-field-ripple {
+        background-color: mat-color($primary);
+      }
+    }
+    &.mat-accent {
+      .mat-form-field-underline .mat-form-field-ripple {
+        background-color: mat-color($accent);
+      }
+    }
+    &.mat-warn {
+      .mat-form-field-underline .mat-form-field-ripple {
+        background-color: mat-color($warn);
+      }
+    }
+  }
+}

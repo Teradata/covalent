@@ -1,0 +1,82 @@
+<table td-data-table
+        [style.left.px]="columnsLeftScroll"
+        [class.mat-selectable]="selectable">
+  <thead class="td-data-table-head">
+    <tr td-data-table-column-row>
+      <th td-data-table-column class="mat-checkbox-column" *ngIf="selectable">
+        <mat-checkbox
+          #checkBoxAll
+          *ngIf="multiple"
+          [disabled]="!hasData"
+          [indeterminate]="indeterminate && !allSelected && hasData"
+          [checked]="allSelected && hasData"
+          (click)="blockEvent($event); selectAll(!checkBoxAll.checked)"
+          (keyup.enter)="selectAll(!checkBoxAll.checked)"
+          (keyup.space)="selectAll(!checkBoxAll.checked)"
+          (keydown.space)="blockEvent($event)">
+        </mat-checkbox>
+      </th>
+      <th td-data-table-column
+          #columnElement
+          *ngFor="let column of columns; let i = index;"
+          [style.min-width.px]="getColumnWidth(i)"
+          [style.max-width.px]="getColumnWidth(i)"
+          [name]="column.name"
+          [numeric]="column.numeric"
+          [active]="(column.sortable || sortable) && column === sortByColumn"
+          [sortable]="column.sortable || (sortable && column.sortable !== false)"
+          [sortOrder]="sortOrderEnum"
+          [hidden]="column.hidden"
+          (sortChange)="handleSort(column)">
+          <span [matTooltip]="column.tooltip">{{column.label}}</span>
+      </th>
+    </tr>
+  </thead>
+</table>
+<div #scrollableDiv class="td-data-table-scrollable"
+      (scroll)="handleScroll($event)">
+  <div [style.height.px]="totalHeight"></div>
+  <table td-data-table
+          [style.transform]="offsetTransform"
+          [style.position]="'absolute'"
+          [class.mat-selectable]="selectable"
+          [class.mat-clickable]="clickable">
+    <tbody class="td-data-table-body">
+      <tr td-data-table-row
+          #dtRow
+          [tabIndex]="selectable ? 0 : -1"
+          [selected]="(clickable || selectable) && isRowSelected(row)"
+          *ngFor="let row of virtualData; let rowIndex = index"
+          (click)="handleRowClick(row, fromRow + rowIndex, $event)"
+          (keyup)="selectable && _rowKeyup($event, row, rowIndex)"
+          (keydown.space)="blockEvent($event)"
+          (keydown.shift.space)="blockEvent($event)"
+          (keydown.shift)="disableTextSelection()"
+          (keyup.shift)="enableTextSelection()">
+        <td td-data-table-cell class="mat-checkbox-cell" *ngIf="selectable">
+          <mat-pseudo-checkbox
+            [state]="dtRow.selected ? 'checked' : 'unchecked'"
+            (mousedown)="disableTextSelection()"
+            (mouseup)="enableTextSelection()"
+            stopRowClick
+            (click)="select(row, $event, fromRow + rowIndex)">
+          </mat-pseudo-checkbox>
+        </td>
+        <td td-data-table-cell
+            [numeric]="column.numeric"
+            [hidden]="column.hidden"
+            *ngFor="let column of columns; let i = index"
+            [style.min-width.px]="getColumnWidth(i)"
+            [style.max-width.px]="getColumnWidth(i)">
+          <span *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
+          <ng-template
+            *ngIf="getTemplateRef(column.name)"
+            [ngTemplateOutlet]="getTemplateRef(column.name)"
+            [ngTemplateOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name }">
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-content></ng-content>

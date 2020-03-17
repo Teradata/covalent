@@ -1,0 +1,33 @@
+<mat-toolbar [color]="color"
+             [style.background-image]="backgroundImage"
+             [class.td-toolbar-background]="!!isBackgroundAvailable"
+             class="td-nagivation-drawer-toolbar">
+  <ng-content select="[td-navigation-drawer-toolbar]"></ng-content>
+  <ng-container *ngIf="!isCustomToolbar">
+    <div *ngIf="icon || logo || sidenavTitle"
+          class="td-navigation-drawer-toolbar-content"
+          [class.cursor-pointer]="routerEnabled"
+          (click)="handleNavigationClick()">
+      <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+      <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
+      <span *ngIf="sidenavTitle" class="td-navigation-drawer-title">{{sidenavTitle}}</span>
+    </div>
+    <div class="td-navigation-drawer-name" *ngIf="email && name">{{name}}</div>
+    <div class="td-navigation-drawer-menu-toggle"
+        href
+        *ngIf="email || name"
+        (click)="toggleMenu()">
+      <span class="td-navigation-drawer-label">{{email || name}}</span>
+      <button mat-icon-button class="td-navigation-drawer-menu-button" *ngIf="isMenuAvailable">
+        <mat-icon *ngIf="!menuToggled">arrow_drop_down</mat-icon>
+        <mat-icon *ngIf="menuToggled">arrow_drop_up</mat-icon>
+      </button>
+    </div>
+  </ng-container>
+</mat-toolbar>
+<div class="td-navigation-drawer-content" [@tdCollapse]="menuToggled">
+  <ng-content></ng-content>
+</div>
+<div class="td-navigation-drawer-menu-content" [@tdCollapse]="!menuToggled">
+  <ng-content select="[td-navigation-drawer-menu]"></ng-content>
+</div>

@@ -1,0 +1,83 @@
+@import '../common/styles/typography-functions';
+
+@mixin td-data-table-typography($config) {
+  .td-data-table-cell {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-1);
+      weight: td-font-weight($config, body-1);
+    }
+    line-height: td-line-height($config, body-1);
+  }
+  .td-data-table-column {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, caption);
+      weight: 600;
+    }
+  }
+}
+
+@mixin td-data-table-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .td-data-table-scrollable {
+    border-top: 1px solid mat-color($foreground, divider);
+  }
+  table[td-data-table] {
+    .td-data-table-column-row,
+    .td-data-table-row {
+      border-bottom-color: mat-color($foreground, divider);
+    }
+    .mat-checkbox-cell,
+    .mat-checkbox-column {
+      color: mat-color($foreground, secondary-text);
+      mat-pseudo-checkbox.mat-pseudo-checkbox-checked {
+        background-color: mat-color($accent);
+      }
+    }
+    .td-data-table-cell {
+      mat-form-field {
+        .mat-form-field-underline {
+          display: none;
+        }
+      }
+    }
+    .td-data-table-column {
+      color: mat-color($foreground, secondary-text);
+      * {
+        vertical-align: middle;
+      }
+      mat-icon {
+        &.td-data-table-sort-icon {
+          color: mat-color($foreground, disabled);
+        }
+      }
+      &.mat-active,
+      &.mat-active mat-icon {
+        color: mat-color($foreground, base);
+      }
+    }
+    &.mat-selectable tbody > tr.td-data-table-row {
+      &.td-selected {
+        background-color: mat-color($background, 'app-bar');
+      }
+      &:focus {
+        background-color: mat-color($background, 'hover');
+      }
+    }
+    &.mat-clickable tbody > tr.td-data-table-row {
+      &:hover {
+        background-color: mat-color($background, 'hover');
+      }
+    }
+  }
+  .mat-selected-title {
+    background-color: mat-color($accent, 0.12);
+    color: mat-color($accent);
+  }
+}

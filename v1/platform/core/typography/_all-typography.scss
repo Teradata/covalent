@@ -1,0 +1,49 @@
+@import '../chips/chips-theme';
+@import '../data-table/data-table-theme';
+@import '../dialogs/dialog-theme';
+@import '../expansion-panel/expansion-panel-theme';
+@import '../json-formatter/json-formatter-theme';
+@import '../message/message-theme';
+@import '../paging/paging-bar-theme';
+@import '../steps/steps-theme';
+
+@function td-typography-config(
+  $font-family:   'Roboto, "Helvetica Neue", sans-serif',
+  $headline:      td-typography-level(24px, 32px, 400),
+  $title:         td-typography-level(20px, 32px, 500),
+  $subheading-2:  td-typography-level(16px, 28px, 400),
+  $subheading-1:  td-typography-level(15px, 24px, 400),
+  $body-2:        td-typography-level(14px, 24px, 500),
+  $body-1:        td-typography-level(14px, 20px, 400),
+  $caption:       td-typography-level(12px, 20px, 400)
+) {
+  @return (
+    font-family:    $font-family,
+    headline:       $headline,
+    title:          $title,
+    subheading-2:   $subheading-2,
+    subheading-1:   $subheading-1,
+    body-2:         $body-2,
+    body-1:         $body-1,
+    caption:        $caption
+  );
+}
+
+@mixin td-typography($config: null) {
+  @if $config == null {
+    $config: td-typography-config();
+  }
+
+  body {
+    font-family: td-font-family($config);
+  }
+  @include td-chips-typography($config);
+  @include td-data-table-typography($config);
+  @include td-dialog-typography($config);
+  @include td-expansion-panel-typography($config);
+  @include td-json-formatter-typography($config);
+  @include td-message-typography($config);
+  @include td-paging-bar-typography($config);
+  @include td-steps-typography($config);
+  @include td-layout-typography($config);
+}

@@ -1,0 +1,42 @@
+<div *ngIf="isHorizontal()" class="td-steps-header">
+  <ng-template let-step let-index="index" let-last="last" ngFor [ngForOf]="steps">
+    <td-step-header class="td-step-horizontal-header"
+                    (keydown.enter)="step.open()"
+                    [number]="index + 1"
+                    [active]="step.active"
+                    [disableRipple]="step.disableRipple"
+                    [disabled]="step.disabled" 
+                    [state]="step.state"
+                    (click)="step.open()">
+      <ng-template td-step-header-label [cdkPortalHost]="step.stepLabel"></ng-template>
+      <ng-template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</ng-template>
+      <ng-template td-step-header-sublabel [ngIf]="true">{{step.sublabel | truncate:30}}</ng-template>
+    </td-step-header>
+    <span *ngIf="!last" class="td-horizontal-line"></span>
+  </ng-template>
+</div>
+<div *ngFor="let step of steps; let index = index; let last = last" class="td-step">
+  <td-step-header class="td-step-vertical-header"
+                  (keydown.enter)="step.toggle()"
+                  [number]="index + 1"
+                  [active]="step.active" 
+                  [disabled]="step.disabled"
+                  [disableRipple]="step.disableRipple"
+                  [state]="step.state"
+                  (click)="step.toggle()"
+                  *ngIf="isVertical()">
+    <ng-template td-step-header-label [cdkPortalHost]="step.stepLabel"></ng-template>
+    <ng-template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</ng-template>
+    <ng-template td-step-header-sublabel [ngIf]="true">{{step.sublabel}}</ng-template>
+  </td-step-header>
+  <ng-template [ngIf]="isVertical() || step.active || (!areStepsActive() && prevStep === step)">
+    <td-step-body [active]="step.active" [state]="step.state">
+      <div *ngIf="isVertical()" class="td-line-wrapper">
+        <div *ngIf="!last" class="td-vertical-line"></div>
+      </div>
+      <ng-template td-step-body-content [cdkPortalHost]="step.stepContent"></ng-template>
+      <ng-template td-step-body-actions [cdkPortalHost]="step.stepActions"></ng-template>
+      <ng-template td-step-body-summary [cdkPortalHost]="step.stepSummary"></ng-template>
+    </td-step-body>
+  </ng-template>
+</div>

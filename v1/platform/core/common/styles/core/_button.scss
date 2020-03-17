@@ -1,0 +1,58 @@
+@import '../theme-functions';
+@import '../rtl';
+
+// Standard button sizing.
+$mat-button-padding: 0 rem(0.6) !default;
+$mat-button-min-width: rem(8.8) !default;
+$mat-button-margin: rem(0.6) rem(0.8) !default;
+$mat-button-line-height: rem(3.6) !default;
+$mat-button-border-radius: 3px !default;
+
+// FAB sizing.
+$mat-fab-border-radius: 50%;
+$mat-fab-size: rem(5.6) !default;
+$mat-fab-line-height: rem(5.6) !default;
+$mat-fab-padding: rem(1.6) !default;
+$mat-fab-mini-size: rem(4) !default;
+$mat-fab-mini-line-height: rem(4) !default;
+
+// Icon button sizing.
+$mat-icon-button-height: rem(4) !default;
+$mat-icon-button-width: rem(4) !default;
+$mat-icon-button-margin: rem(0.6) !default;
+$mat-icon-border-radius: $mat-fab-border-radius;
+
+/** Mixin to create distinct classes for fab positions, e.g. ".mat-fab-position-bottom-right". */
+@mixin mat-fab-position($spot, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  [mat-fab].mat-fab-position-#{$spot},
+  .mat-fab.mat-fab-position-#{$spot},
+  [mat-fab].mat-fab-#{$spot},
+  .mat-fab.mat-fab-#{$spot} {
+    top: $top;
+    @include rtl(right, $right,$left);
+    @include rtl(left, $left,$right);
+    bottom: $bottom;
+    position: absolute;
+    &.fixed {
+      position: fixed;
+    }
+  }
+}
+
+@mixin td-button-utilities() {
+  $mat-fab-pos-offset: ($mat-fab-size - $mat-fab-padding) / 2;
+  @include mat-fab-position(bottom-right, auto, $mat-fab-pos-offset, $mat-fab-pos-offset, auto);
+  @include mat-fab-position(bottom-left, auto, auto, $mat-fab-pos-offset, $mat-fab-pos-offset);
+  @include mat-fab-position(top-right, $mat-fab-pos-offset, $mat-fab-pos-offset, auto, auto);
+  @include mat-fab-position(top-left, $mat-fab-pos-offset, auto, auto, $mat-fab-pos-offset);
+
+  button {
+    &[mat-icon-button] {
+      &.mat-icon-button-mini {
+        height: 24px;
+        line-height: 24px;
+        width: 24px;
+      }
+    }
+  }
+}

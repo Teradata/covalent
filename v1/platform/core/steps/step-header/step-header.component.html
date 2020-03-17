@@ -1,0 +1,32 @@
+<div class="td-step-header"
+      [class.mat-disabled]="disabled"
+      matRipple
+      [matRippleDisabled]="disabled || disableRipple"
+      [tabIndex]="disabled ? -1 : 0">
+  <div class="td-circle"
+      [class.mat-inactive]="(!active && !isComplete()) || disabled"
+      [class.mat-active]="active && !disabled"
+      *ngIf="!isRequired() && !isComplete()">
+    <span *ngIf="(active || !isComplete())">{{number || ''}}</span>
+  </div>
+  <div class="td-complete" *ngIf="isComplete()">
+    <mat-icon class="mat-complete">check_circle</mat-icon>
+  </div>
+  <div class="td-triangle"
+      [class.bg-muted]="disabled"
+      *ngIf="isRequired()">
+    <mat-icon class="mat-warn">warning</mat-icon>
+  </div>
+  <div class="td-step-label-wrapper"
+        [class.mat-inactive]="(!active && !isComplete()) || disabled"
+        [class.mat-warn]="isRequired() && !disabled">
+    <div class="td-step-label">
+      <ng-content select="[td-step-header-label]"></ng-content>
+    </div>
+    <div class="td-step-sublabel">
+      <ng-content select="[td-step-header-sublabel]"></ng-content>
+    </div>
+  </div>
+  <span class="td-step-header-separator"></span>
+  <mat-icon class="td-edit-icon" *ngIf="isComplete() && !active && !disabled">mode_edit</mat-icon>
+</div>

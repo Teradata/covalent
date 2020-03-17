@@ -1,0 +1,40 @@
+@import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-message-typography($config) {
+  .td-message-label {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-2);
+      weight: 600;
+    }
+    line-height: td-line-height($config, body-2);
+  }
+  .td-message-sublabel {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-1);
+    }
+  }
+}
+
+@mixin td-message-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .td-message {
+    &.mat-primary {
+      color: mat-color($primary);
+      background-color: mat-color($primary, 0.15);
+    }
+    &.mat-accent {
+      color: mat-color($accent);
+      background-color: mat-color($accent, 0.15);
+    }
+    &.mat-warn {
+      color: mat-color($warn);
+      background-color: mat-color($warn, 0.15);
+    }
+  }
+}

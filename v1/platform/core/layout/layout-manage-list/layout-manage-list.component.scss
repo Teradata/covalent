@@ -1,0 +1,77 @@
+@import '../../common/styles/core/whiteframe';
+
+:host {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  mat-sidenav-container.td-layout-manage-list {
+    // [flex]
+    flex: 1;
+    & > mat-sidenav {
+      &.mat-drawer-opened,
+      &.mat-drawer-opening,
+      &.mat-drawer-closed,
+      &.mat-drawer-closing {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  .td-layout-manage-list-sidenav {
+    text-align: start;
+    // [flex]
+    flex: 1;
+    // [md-content]
+    display: block;
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .td-layout-manage-list-main {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+    // [layout="column"]
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    .td-layout-manage-list-content {
+      // [md-content]
+      display: block;
+      position: relative;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      // [flex]
+      flex: 1;
+    }
+  }
+}
+:host ::ng-deep {
+  mat-sidenav-container.td-layout-manage-list {
+    & > .mat-drawer-content {
+      flex-grow: 1;
+    }
+    /* Ensure the left sidenav is a flex column & 100% height */
+    & > mat-sidenav {
+      box-shadow: $whiteframe-shadow-1dp;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  mat-nav-list a[mat-list-item] .mat-list-item-content {
+    font-size: 14px;
+  }
+  .mat-toolbar {
+    font-weight: 400;
+  }
+}

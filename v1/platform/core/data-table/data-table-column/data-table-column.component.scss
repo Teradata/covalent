@@ -1,0 +1,78 @@
+@import '../../common/styles/rtl';
+
+:host {
+  white-space: nowrap;
+  position: relative;
+  padding: 0;
+  > .td-data-table-heading {
+    padding: 0 28px;
+  }
+
+  &:first-child > .td-data-table-heading {
+    @include rtl(padding-left, 24px, initial);
+    @include rtl(padding-right, initial, 24px);
+  }
+  &:last-child > .td-data-table-heading {
+    @include rtl(padding-left, 28px, 24px);
+    @include rtl(padding-right, 24px, 28px);
+  }
+
+  mat-icon {
+    height: 16px;
+    width: 16px;
+    font-size: 16px !important;
+    line-height: 16px !important;
+
+    &.td-data-table-sort-icon {
+      opacity: 0;
+      transition: transform 0.25s;
+      position: absolute;
+      top: 0;
+
+      &.mat-asc {
+        transform: rotate(0deg);
+      }
+
+      &.mat-desc {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:hover.mat-sortable mat-icon.td-data-table-sort-icon,
+  &.mat-active.mat-sortable mat-icon.td-data-table-sort-icon {
+    opacity: 1;
+  }
+
+  vertical-align: middle;
+  @include rtl(text-align, left, right);
+
+  > * {
+    vertical-align: middle;
+  }
+
+  &.mat-clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .td-data-table-heading {
+    display: inline-block;
+    position: relative;
+  }
+  &.mat-numeric {
+    @include rtl(text-align, right, left);
+    mat-icon.td-data-table-sort-icon {
+      @include rtl(margin-left, -22px, initial);
+      @include rtl(margin-right, initial, -22px);
+    }
+  }
+  &:not(.mat-numeric) {
+    mat-icon.td-data-table-sort-icon {
+      @include rtl(margin-left, 6px, initial);
+      @include rtl(margin-right, initial, 6px);
+    }
+  }
+}

@@ -1,0 +1,129 @@
+// Elements can have an "elevation" from 1 to 5, signified by shadows.
+// See http://google.com/design/spec/what-is-material/objects-in-3d-space.html
+
+$mat-shadow-bottom-z-1: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+$mat-shadow-bottom-z-2: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+
+// Whiteframes
+
+$shadow-key-umbra-opacity: 0.2;
+$shadow-key-penumbra-opacity: 0.14;
+$shadow-ambient-shadow-opacity: 0.12;
+
+// NOTE(shyndman): gulp-sass seems to be failing if I split the shadow defs across
+//    multiple lines. Ugly. Sorry.
+$whiteframe-shadow-1dp: 0 1px 3px 0 rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 1px 1px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 2px 1px -1px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-2dp: 0 1px 5px 0 rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 3px 1px -2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-3dp: 0 1px 8px 0 rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 3px 4px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 3px 3px -2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-4dp: 0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 1px 10 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-5dp: 0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 5px 8px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 1px 14px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-6dp: 0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 6px 10 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 1px 18px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-7dp: 0 4px 5px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 7px 10 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 2px 16px 1px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-8dp: 0 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 8px 10 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-9dp: 0 5px 6px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 9px 12px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 3px 16px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-10dp: 0 6px 6px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 10 14px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 4px 18px 3px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-11dp: 0 6px 7px -4px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 11px 15px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 4px 20 3px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-12dp: 0 7px 8px -4px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 12px 17px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 5px 22px 4px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-13dp: 0 7px 8px -4px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 13px 19px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 5px 24px 4px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+$whiteframe-shadow-14dp: 0 7px 9px -4px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+  0 14px 21px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+  0 5px 26px 4px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
+
+@mixin td-whiteframe-utilities() {
+ 
+  .md-whiteframe-1dp, .md-whiteframe-z1,
+  .mat-whiteframe-1dp, .mat-whiteframe-z1 {
+    box-shadow: $whiteframe-shadow-1dp;
+  }
+
+  .md-whiteframe-2dp,
+  .mat-whiteframe-2dp {
+    box-shadow: $whiteframe-shadow-2dp;
+  }
+
+  .md-whiteframe-3dp,
+  .mat-whiteframe-3dp {
+    box-shadow: $whiteframe-shadow-3dp;
+  }
+
+  .md-whiteframe-4dp, .md-whiteframe-z2,
+  .mat-whiteframe-4dp, .mat-whiteframe-z2 {
+    box-shadow: $whiteframe-shadow-4dp;
+  }
+
+  .md-whiteframe-5dp,
+  .mat-whiteframe-5dp {
+    box-shadow: $whiteframe-shadow-5dp;
+  }
+
+  .md-whiteframe-6dp,
+  .mat-whiteframe-6dp {
+    box-shadow: $whiteframe-shadow-6dp;
+  }
+
+  .md-whiteframe-7dp, .md-whiteframe-z3,
+  .mat-whiteframe-7dp, .mat-whiteframe-z3 {
+    box-shadow: $whiteframe-shadow-7dp;
+  }
+
+  .md-whiteframe-8dp,
+  .mat-whiteframe-8dp {
+    box-shadow: $whiteframe-shadow-8dp;
+  }
+
+  .md-whiteframe-9dp,
+  .mat-whiteframe-9dp {
+    box-shadow: $whiteframe-shadow-9dp;
+  }
+
+  .md-whiteframe-10dp, .md-whiteframe-z4,
+  .mat-whiteframe-10dp, .mat-whiteframe-z4 {
+    box-shadow: $whiteframe-shadow-10dp;
+  }
+
+  .md-whiteframe-11dp,
+  .mat-whiteframe-11dp {
+    box-shadow: $whiteframe-shadow-11dp;
+  }
+
+  .md-whiteframe-12dp,
+  .mat-whiteframe-12dp {
+    box-shadow: $whiteframe-shadow-12dp;
+  }
+
+  .md-whiteframe-13dp, .md-whiteframe-z5,
+  .mat-whiteframe-13dp, .mat-whiteframe-z5 {
+    box-shadow: $whiteframe-shadow-13dp;
+  }
+
+  .md-whiteframe-14dp,
+  .mat-whiteframe-14dp {
+    box-shadow: $whiteframe-shadow-14dp;
+  }
+}

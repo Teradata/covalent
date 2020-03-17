@@ -1,0 +1,77 @@
+@import '../common/styles/variables';
+@import '../common/styles/elevation';
+@import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-expansion-panel-typography($config) {
+  .td-expansion-label {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, subheading-2);
+      weight: td-font-weight($config, subheading-2);
+    }
+  }
+  .td-expansion-sublabel {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-1);
+      weight: td-font-weight($config, body-1);
+    }
+  }
+}
+
+@mixin td-expansion-panel-theme($theme) {
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .td-expansion-panel-group {
+    .td-expansion-panel {
+      transition: 120ms ease-in;
+      &:not(:last-of-type) {
+        &.td-expanded {
+          margin-bottom: $margin;
+        }
+      }
+      &:not(:first-of-type) {
+        &.td-expanded {
+          margin-top: $margin;
+        }
+      }
+    }
+  }
+
+  .td-expansion-panel {
+    @include mat-elevation(1);
+    background-color: mat-color($background, card);
+    .td-expansion-panel-header {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
+        background: mat-color($background, 'hover');
+      }
+      .td-expansion-panel-header-content {
+        mat-icon.td-expand-icon {
+          color: mat-color($foreground, icon);
+        }
+        &.mat-disabled {
+          &, & * {
+            color: mat-color($foreground, disabled);
+          }
+        }
+      }
+    }
+    mat-icon.td-expand-icon {
+      color: mat-color($foreground, icon);
+    }
+    .td-expansion-label,
+    .td-expansion-sublabel {
+      &, & * {
+        vertical-align: middle;
+      }
+    }
+    .td-expansion-sublabel {
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+}

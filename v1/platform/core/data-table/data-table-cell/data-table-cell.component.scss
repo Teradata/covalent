@@ -1,0 +1,48 @@
+@import '../../common/styles/rtl';
+:host {
+  vertical-align: middle;
+  @include rtl(text-align, left, right);
+  padding: 0;
+  > .td-data-table-cell-content-wrapper {
+    padding: 0 28px;
+    // [layout]
+    box-sizing: border-box;
+    display: flex;
+    // [layout="row"]
+    flex-direction: row;
+    // [layout-align="start center"]
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: start;
+    &.td-data-table-cell-numeric {
+      // [layout-align="end center"]
+      justify-content: flex-end;
+    }
+  }
+
+  &:first-child > .td-data-table-cell-content-wrapper {
+    @include rtl(padding-left, 24px, initial);
+    @include rtl(padding-right, initial, 24px);
+  }
+  &:last-child > .td-data-table-cell-content-wrapper {
+    @include rtl(padding-left, 28px, 24px);
+    @include rtl(padding-right, 24px, 28px);
+  }
+
+  > * {
+    vertical-align: middle;
+  }
+
+  &.mat-clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.mat-numeric {
+    @include rtl(text-align, right, left);
+  }
+}

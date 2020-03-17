@@ -1,0 +1,38 @@
+{
+  "DEMO_TAB": "Demo",
+  "CODE_TAB": "Code",
+  "DEMO_BASIC": {
+    "TITLE": "Basic example with ngx-translate",
+    "SUBTITLE": "i18n with ngx-translate",
+    "PIPE_MESSAGE": "This is a translated message using the [translate] pipe.",
+    "DIRECTIVE_MESSAGE": "This is a translated message using the [translate] directive"
+  },
+  "DEMO_ONE": {
+    "TITLE": "More examples with ngx-translate",
+    "SUBTITLE": "i18n with ngx-translate + [ngPlural] from Angular",
+    "SELECT": {
+      "PLACEHOLDER": "Select a value",
+      "TOOLTIP": "When this value changes, [ngPlural] reads it to select the correct message"
+    },
+    "COUNT": {
+      "NONE": "There are no selected values",
+      "SINGLE": "There is one selected value",
+      "PLURAL": "There are {{value}} selected values"
+    }
+  },
+  "DEMO_TWO": {
+    "TITLE": "Example with ngx-translate and Angular l10n",
+    "SUBTITLE": "leverage native Angular [date] and [number] pipes and their Locale support",
+    "BALANCE" : "account balance: {{value}}"
+  },
+  "DEMO_THREE": {
+    "TITLE": "Example with ngx-translate and dialogs",
+    "SUBTITLE": "translate strings at a service level",
+    "OPEN_ALERT": "Open alert",
+    "ALERT": {
+      "TITLE" : "Alert",
+      "MESSAGE" : "This is a translated message.",
+      "CLOSE": "Close"
+    }
+  }
+}

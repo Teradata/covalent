@@ -1,0 +1,30 @@
+@import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-dialog-typography($config) {
+  .td-dialog-title {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, title);
+      weight: td-font-weight($config, title);
+    }
+  }
+  .td-dialog-message {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, subheading-2);
+      weight: td-font-weight($config, subheading-2);
+    }
+    line-height: td-line-height($config, subheading-2);
+  }
+}
+@mixin td-dialog-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  .td-dialog-message {
+    color:  mat-color($foreground, secondary-text);
+  }
+}
