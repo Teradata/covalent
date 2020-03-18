@@ -14,9 +14,9 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/demo",
-            "index": "index.html",
-            "main": "main.ts",
-            "polyfills": "polyfills.ts",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -25,7 +25,7 @@
                 "output": "/assets/monaco"
               }
             ],
-            "styles": ["theme.scss"],
+            "styles": ["src/theme/theme.scss"],
             "scripts": []
           }
         },

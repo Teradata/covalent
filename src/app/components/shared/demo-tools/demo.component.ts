@@ -65,7 +65,7 @@ export class DemoComponent {
   import { Routes, RouterModule } from '@angular/router';
 
   import { SharedModule } from './shared.module';
-  import { Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah } from './Cha-234c8b6d-591e-4140-9c82-8c36a0709afb-Cha.component';
+  import { Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah } from './app/Cha-234c8b6d-591e-4140-9c82-8c36a0709afb-Cha.component';
 
   const routes: Routes = [
     {
@@ -177,19 +177,19 @@ export class DemoComponent {
 
         const project: any = {
           files: {
-            [`${this.demoId}.component.ts`]: demo.typescript,
-            [`${this.demoId}.component.html`]: demo.html,
-            [`${this.demoId}.component.scss`]: demo.style || '',
-            [`index.html`]: this.indexFile,
-            [`main.ts`]: this.mainFile,
-            [`app.module.ts`]: this.appModuleFile,
-            [`shared.module.ts`]: demo.sharedModule,
+            [`src/app/${this.demoId}.component.ts`]: demo.typescript,
+            [`src/app/${this.demoId}.component.html`]: demo.html,
+            [`src/app/${this.demoId}.component.scss`]: demo.style || '',
+            [`src/index.html`]: this.indexFile,
+            [`src/main.ts`]: this.mainFile,
+            [`src/app.module.ts`]: this.appModuleFile,
+            [`src/shared.module.ts`]: demo.sharedModule,
             [`angular.json`]: demo.angularJson,
-            [`theme.scss`]: demo.themeScss,
-            [`_teradata-branding.scss`]: demo.teradataThemeScss,
-            [`_markdown-theme.scss`]: demo.markdownThemeScss,
-            [`_flavored-markdown-theme.scss`]: demo.flavoredMarkdownThemeScss,
-            [`polyfills.ts`]: demo.polyfills,
+            [`src/theme/theme.scss`]: demo.themeScss,
+            [`src/theme/_teradata-branding.scss`]: demo.teradataThemeScss,
+            [`src/theme/_markdown-theme.scss`]: demo.markdownThemeScss,
+            [`src/theme/_flavored-markdown-theme.scss`]: demo.flavoredMarkdownThemeScss,
+            [`src/polyfills.ts`]: demo.polyfills,
           },
           title: this.demoTitle || this.demoId,
           description: this.demoTitle || this.demoId,
