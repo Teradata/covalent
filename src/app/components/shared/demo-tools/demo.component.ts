@@ -12,6 +12,8 @@ interface IDemoFiles {
   sharedModule: string;
   angularJson: string;
   themeScss: string;
+  markdownThemeScss: string;
+  flavoredMarkdownThemeScss: string;
   teradataThemeScss: string;
   polyfills: string;
 }
@@ -90,19 +92,19 @@ export class DemoComponent {
   constructor(private _http: HttpClient) {
     this.dependencies = data.dependencies;
     // has additional themes for respective demos to work
-    this.dependencies['@covalent/core'] = '3.0.0-rc.1';
-    this.dependencies['@covalent/dynamic-forms'] = '3.0.0-rc.1';
+    this.dependencies['@covalent/core'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/dynamic-forms'] = '3.0.0-rc.2';
 
-    this.dependencies['@covalent/markdown'] = '3.0.0-rc.1';
-    this.dependencies['@covalent/flavored-markdown'] = '3.0.0-rc.1';
-    this.dependencies['@covalent/markdown-navigator'] = '3.0.0-rc.1';
-    this.dependencies['@covalent/code-editor'] = '3.0.0-rc.1';
-    this.dependencies['@covalent/http'] = '3.0.0-rc.1';
-    this.dependencies['@covalent/highlight'] = '3.0.0-rc.1';
+    this.dependencies['@covalent/markdown'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/flavored-markdown'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/markdown-navigator'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/code-editor'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/http'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/highlight'] = '3.0.0-rc.2';
+    // TODO: doesn't appear stackblitz api support nightly dependencies - needs follow up for loading mask demo
     // this.dependencies['@covalent/experimental'] = "git+https://github.com/Teradata/covalent-experimental-nightly.git";
     // "@covalent/experimental": "git+https://github.com/Teradata/covalent-experimental-nightly.git",
-
-    this.dependencies['@covalent/echarts'] = '3.0.0-rc.1';
+    this.dependencies['@covalent/echarts'] = '3.0.0-rc.2';
     this.dependencies['@types/echarts'] = '*';
     this.dependencies['zrender'] = '4.3.0'; // needed for echarts
 
@@ -127,6 +129,10 @@ export class DemoComponent {
       sharedModule: this._http.get(`assets/demos/shared.module.ts`, { responseType: 'text' }),
       angularJson: this._http.get(`assets/demos/angular.json`, { responseType: 'text' }),
       themeScss: this._http.get(`assets/demos/theme.scss`, { responseType: 'text' }),
+      markdownThemeScss: this._http.get(`platform/markdown/_markdown-theme.scss`, { responseType: 'text' }),
+      flavoredMarkdownThemeScss: this._http.get(`platform/flavored-markdown/_flavored-markdown-theme.scss`, {
+        responseType: 'text',
+      }),
       teradataThemeScss: this._http.get(`assets/demos/_teradata-branding.scss`, { responseType: 'text' }),
       polyfills: this._http.get(`assets/demos/polyfills.ts`, { responseType: 'text' }),
     })
@@ -139,6 +145,8 @@ export class DemoComponent {
             sharedModule: responses.sharedModule,
             angularJson: responses.angularJson,
             themeScss: responses.themeScss,
+            markdownThemeScss: responses.markdownThemeScss,
+            flavoredMarkdownThemeScss: responses.flavoredMarkdownThemeScss,
             teradataThemeScss: responses.teradataThemeScss,
             polyfills: responses.polyfills,
           };
@@ -161,6 +169,12 @@ export class DemoComponent {
         this.appModuleFile = this.appModuleFile.replace(this.uniqueChaCha, this.demoId);
         this.appModuleFile = this.appModuleFile.replace(new RegExp(this.uniqueYahYah, 'g'), demoComponentName);
 
+        // TODO: remove this after markdown has been update and pushed out with the respective import
+        demo.markdownThemeScss = demo.markdownThemeScss.replace(
+          "@import '../../../node_modules/@angular/material/theming';",
+          "@import '~@angular/material/theming';",
+        );
+
         const project = {
           files: {
             [`${this.demoId}.component.ts`]: demo.typescript,
@@ -173,6 +187,8 @@ export class DemoComponent {
             [`angular.json`]: demo.angularJson,
             [`theme.scss`]: demo.themeScss,
             [`_teradata-branding.scss`]: demo.teradataThemeScss,
+            [`_markdown-theme.scss`]: demo.markdownThemeScss,
+            [`_flavored-markdown-theme.scss`]: demo.flavoredMarkdownThemeScss,
             [`polyfills.ts`]: demo.polyfills,
           },
           title: this.demoTitle || this.demoId,

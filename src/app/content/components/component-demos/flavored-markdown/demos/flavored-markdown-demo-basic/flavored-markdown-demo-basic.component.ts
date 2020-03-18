@@ -12,14 +12,5 @@ export class FlavoredMarkdownDemoBasicComponent {
     - [x] My checkbox
     - [x] My second checkbox
     - [ ] My empty checkbox
-
-    ## List
-
-    + One
-      + subline
-    + Two
-    + Three
-      + subline
-      + second subline
   `;
 }

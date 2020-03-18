@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCheckboxModule, MatCheckbox } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -17,6 +17,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 
 import {
   CovalentDynamicFormsModule,
@@ -47,7 +54,7 @@ import { CovalentMarkdownModule, TdMarkdownComponent } from '@covalent/markdown'
 import { CovalentMarkdownNavigatorModule, TdMarkdownNavigatorWindowComponent } from '@covalent/markdown-navigator';
 
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentHighlightModule, TdHighlightComponent } from '@covalent/highlight';
 import { CovalentJsonFormatterModule } from '@covalent/core/json-formatter';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
@@ -84,6 +91,14 @@ import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
     MatSnackBarModule,
     MatButtonToggleModule,
     MatCheckboxModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatExpansionModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+
     /** Covalent Modules */
     CovalentExpansionPanelModule,
     CovalentMenuModule,
@@ -139,6 +154,8 @@ import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
     TdMarkdownNavigatorWindowComponent,
     TdDataTableComponent,
     TdMarkdownComponent,
+    TdHighlightComponent,
+    MatCheckbox,
   ],
 })
 export class SharedModule {}
