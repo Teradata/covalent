@@ -33,7 +33,7 @@ export class DemoComponent {
   typescriptFile: string;
   htmlFile: string;
   stylesFile: string;
-  dependencies: Object = new Object();
+  dependencies: object = new Object();
 
   indexFile: string = `
   <!doctype html>
@@ -175,7 +175,7 @@ export class DemoComponent {
           "@import '~@angular/material/theming';",
         );
 
-        const project = {
+        const project: any = {
           files: {
             [`${this.demoId}.component.ts`]: demo.typescript,
             [`${this.demoId}.component.html`]: demo.html,
