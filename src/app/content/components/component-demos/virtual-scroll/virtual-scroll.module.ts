@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
-import { VirtualScrollDemoComponent } from './virtual-scroll.component';
+import { VirtualScrollDemoComponent } from './demos/virtual-scroll-demo.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CovalentVirtualScrollModule } from '../../../../../platform/core/virtual-scroll';
 
