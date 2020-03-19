@@ -45,11 +45,12 @@
         matTooltipShowDelay="500"
       >
         <mat-icon matListIcon>
-          subject
+          {{ getIcon(item) }}
         </mat-icon>
         <span matLine class="truncate">
           {{ getTitle(item) }}
         </span>
+        <span matLine class="truncate">{{ item.description }}</span>
         <mat-divider></mat-divider>
       </button>
     </mat-action-list>

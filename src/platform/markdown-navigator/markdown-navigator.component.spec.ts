@@ -27,6 +27,19 @@ const RAW_MARKDOWN_ITEM: IMarkdownNavigatorItem[] = [
 
 const FLAT_MIXED_ITEMS: IMarkdownNavigatorItem[] = [...URL_ITEM, ...RAW_MARKDOWN_ITEM];
 
+const ITEMS_WITH_CUSTOM_ICONS: IMarkdownNavigatorItem[] = [
+  { ...URL_ITEM[0], icon: 'whatshot' },
+  { ...RAW_MARKDOWN_ITEM[0], icon: 'touch_app' },
+];
+
+const ITEMS_WITH_DESCRIPTIONS: IMarkdownNavigatorItem[] = [
+  {
+    ...URL_ITEM[0],
+    description: 'An introduction into what Covalent is all about',
+  },
+  { ...RAW_MARKDOWN_ITEM[0], description: 'An example of using raw markdown' },
+];
+
 const NESTED_MIXED_ITEMS: IMarkdownNavigatorItem[] = [
   {
     title: 'First item',
@@ -344,6 +357,40 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showTdMarkdown).toBeFalsy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
       expect(listItems.length).toBe(FLAT_MIXED_ITEMS.length);
+    }),
+  ));
+
+  it('should use custom icons if passed in', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = ITEMS_WITH_CUSTOM_ICONS;
+      await wait(fixture);
+
+      const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
+
+      expect(listItems.length).toBe(ITEMS_WITH_CUSTOM_ICONS.length);
+      expect(listItems[0].nativeElement.textContent).toContain(ITEMS_WITH_CUSTOM_ICONS[0].icon);
+      expect(listItems[1].nativeElement.textContent).toContain(ITEMS_WITH_CUSTOM_ICONS[1].icon);
+    }),
+  ));
+
+  it('should use descriptions if passed in', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = ITEMS_WITH_DESCRIPTIONS;
+      await wait(fixture);
+
+      const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
+
+      expect(listItems.length).toBe(ITEMS_WITH_DESCRIPTIONS.length);
+      expect(listItems[0].nativeElement.textContent).toContain(ITEMS_WITH_DESCRIPTIONS[0].description);
+      expect(listItems[1].nativeElement.textContent).toContain(ITEMS_WITH_DESCRIPTIONS[1].description);
     }),
   ));
 
