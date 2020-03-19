@@ -7,7 +7,7 @@
       [min]="1"
       [max]="pagingBarInput.maxPage"
       [value]="pagingBarInput.page"
-      (blur)="goToInput.value = pagingBarInput.page"
+      (change)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"
       (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"
     />
   </mat-form-field>
