@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscriber } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-
+import { catchError } from 'rxjs/operators';
+import { sampleDataTableData } from './data';
 export interface ITemplate {
   title: string;
   description: string;
@@ -28,13 +28,7 @@ export class InternalDocsService {
     );
   }
 
-  queryData(): Observable<any[]> {
-    return this._http.get<any[]>(INTERNAL_DOCS_URL + '/data.json').pipe(
-      catchError(() => {
-        return new Observable((subscriber: Subscriber<any[]>) => {
-          subscriber.next([]);
-        });
-      }),
-    );
+  getData(): any[] {
+    return JSON.parse(sampleDataTableData);
   }
 }

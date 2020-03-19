@@ -7,84 +7,8 @@ import { StepState } from '../../../../../../../platform/core/steps';
   selector: 'steps-demo-basic',
   styleUrls: ['./steps-demo-basic.component.scss'],
   templateUrl: './steps-demo-basic.component.html',
-  preserveWhitespaces: true,
 })
 export class StepsDemoBasicComponent implements OnInit, OnDestroy {
-  stepsAttrs: object[] = [
-    {
-      description: `Method to be executed when [stepChange] event is emitted.
-                  Emits an [IStepChangeEvent] implemented object.`,
-      name: 'stepChange?',
-      type: 'function($event)',
-    },
-    {
-      description: 'Defines if the mode of the [TdStepsComponent].  Defaults to [StepMode.Vertical | "vertical"]',
-      name: 'mode?',
-      type: 'StepMode or ["vertical" | "horizontal"]',
-    },
-  ];
-
-  stepAttrs: object[] = [
-    {
-      description: 'Sets label of [TdStepComponent] header. Defaults to "Step #"',
-      name: 'label?',
-      type: 'string',
-    },
-    {
-      description: 'Sets sublabel of [TdStepComponent] header.',
-      name: 'sublabel?',
-      type: 'string',
-    },
-    {
-      description: 'Toggles [TdStepComponent] between active/deactive.',
-      name: 'active?',
-      type: 'boolean',
-    },
-    {
-      description: 'Disables icon and header, blocks click event and sets [TdStepComponent] to deactive if "true".',
-      name: 'disabled?',
-      type: 'boolean',
-    },
-    {
-      description: 'Sets state of [TdStepComponent] depending on value. Defaults to [StepState.None | "none"]',
-      name: 'state?',
-      type: 'StepState or ["none" | "required" | "complete"]',
-    },
-    {
-      description: ' Whether the ripple effect for this component is disabled',
-      name: 'disableRipple?',
-      type: 'boolean',
-    },
-    {
-      description: 'Event emitted when [TdStepComponent] is activated.',
-      name: 'activated?',
-      type: 'function()',
-    },
-    {
-      description: 'Event emitted when [TdStepComponent] is deactivated.',
-      name: 'deactivated?',
-      type: 'function()',
-    },
-    {
-      description: `Toggle active state of [TdStepComponent]. Retuns "true" if successful, else "false".
-                  Can be accessed by referencing element in local variable.`,
-      name: 'toggle',
-      type: 'function()',
-    },
-    {
-      description: `Opens [TdStepComponent]. Retuns "true" if successful, else "false".
-                  Can be accessed by referencing element in local variable.`,
-      name: 'open',
-      type: 'function()',
-    },
-    {
-      description: `Closes [TdStepComponent]. Retuns "true" if successful, else "false".
-                  Can be accessed by referencing element in local variable.`,
-      name: 'close',
-      type: 'function()',
-    },
-  ];
-
   querySubscription: Subscription;
   mode: number = 0;
   horizontal: boolean = false;

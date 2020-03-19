@@ -1,3 +1,32 @@
+<a name="3.0.0-rc.2"></a>
+# [3.0.0-rc.2](https://github.com/teradata/covalent/compare/v3.0.0-beta.3...v3.0.0-rc.2) (2020-03-16)
+
+We are on track for 3.0.0 stable.
+
+We are working hard adding back demos for our docs and fixing bugs. Let us know if you find anything critical.
+
+
+### Bug Fixes
+
+* **http:** dont override httpParams object ([#1673](https://github.com/teradata/covalent/issues/1673)) ([6edf9cc](https://github.com/teradata/covalent/commit/6edf9cc))
+
+
+<a name="3.0.0-rc.1"></a>
+# [3.0.0-rc.1](https://github.com/teradata/covalent/compare/v3.0.0-beta.3...v3.0.0-rc.1) (2020-03-09)
+
+
+### Bug Fixes
+
+* **loading:** remove delay on DOM insert/removal ([#1624](https://github.com/teradata/covalent/issues/1624)) ([9e078b2](https://github.com/teradata/covalent/commit/9e078b2))
+
+
+### Features
+
+* **layout:** add dense mode ([#1663](https://github.com/teradata/covalent/issues/1663)) ([576e2fb](https://github.com/teradata/covalent/commit/576e2fb))
+* **toolbar:** add dense mode ([#1665](https://github.com/teradata/covalent/issues/1665)) ([25b7ade](https://github.com/teradata/covalent/commit/25b7ade))
+
+
+
 <a name="3.0.0-beta.3"></a>
 # [3.0.0-beta.3](https://github.com/teradata/covalent/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2020-02-10)
 
