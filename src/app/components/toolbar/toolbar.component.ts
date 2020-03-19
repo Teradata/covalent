@@ -3,62 +3,40 @@
  * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
  */
 
-import { Component, ElementRef, Inject, Renderer2, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, Inject, Renderer2, Output, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { Dir } from '@angular/cdk/bidi';
 
 import { getDirection, setDirection } from '../../utilities/direction';
 
+import { GitHubService } from '../../services/github.service';
+
 @Component({
   selector: 'td-toolbar',
   templateUrl: '././toolbar.component.html',
   styleUrls: ['././toolbar.component.scss'],
 })
-export class ToolbarComponent {
-  updates: object[] = [
-    {
-      route: '/components/markdown-navigator',
-      icon: 'subject',
-      description: 'Render and navigate markdown',
-      title: 'Markdown Navigator',
-    },
-    {
-      route: '/utilities/functions',
-      icon: 'build',
-      description: 'New helper functions for multiple situations',
-      title: 'Functions',
-    },
-    {
-      route: '/echarts/pie',
-      icon: 'pie_chart',
-      description: 'Added pie type support',
-      title: 'Pie Echarts',
-    },
-    {
-      route: '/echarts/map',
-      icon: 'map',
-      description: 'Added map type support',
-      title: 'Map Echarts',
-    },
-    {
-      route: '/echarts/wordcloud',
-      icon: 'cloud_queue',
-      description: 'Added wordcloud type support',
-      title: 'WordCloud Echarts',
-    },
-    {
-      route: '/components/dialogs',
-      icon: 'open_in_browser',
-      description: 'Draggable dialog support',
-      title: 'Dialogs',
-    },
-  ];
-
+export class ToolbarComponent implements OnInit {
   dir: 'ltr' | 'rtl' = getDirection();
 
-  constructor(private _renderer: Renderer2, private _dir: Dir, @Inject(DOCUMENT) private _document: any) {
+  versions: string[] = [];
+
+  get version(): string {
+    return location.pathname.split('/')[2] || 'LOCAL';
+  }
+
+  constructor(
+    private _renderer: Renderer2,
+    private _githubService: GitHubService,
+    private _dir: Dir,
+    @Inject(DOCUMENT) private _document: any,
+  ) {
     this._dir.dir = this.dir;
+  }
+
+  async ngOnInit(): Promise<void> {
+    this.versions = await this._githubService.getVersionDirectories().toPromise();
   }
 
   changeDir(dir: 'ltr' | 'rtl'): void {

@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
 
 @Component({
-  selector: 'dynamic-forms-demo-basic',
-  styleUrls: ['./dynamic-forms-demo-basic.component.scss'],
-  templateUrl: './dynamic-forms-demo-basic.component.html',
-  preserveWhitespaces: true,
+  selector: 'dynamic-forms-demo-text',
+  styleUrls: ['./dynamic-forms-demo-text.component.scss'],
+  templateUrl: './dynamic-forms-demo-text.component.html',
 })
-export class DynamicFormsDemoBasicComponent {
+export class DynamicFormsDemoTextComponent {
   textElements: ITdDynamicElementConfig[] = [
     {
       name: 'input',
@@ -17,14 +16,14 @@ export class DynamicFormsDemoBasicComponent {
       flex: 50,
     },
     {
-      name: 'required-input',
+      name: 'requiredInput',
       label: 'Input Label',
       type: TdDynamicElement.Input,
       required: true,
       flex: 50,
     },
     {
-      name: 'text-length',
+      name: 'textLength',
       label: 'Text Length',
       type: TdDynamicElement.Input,
       minLength: 4,
@@ -46,7 +45,7 @@ export class DynamicFormsDemoBasicComponent {
       required: false,
     },
     {
-      name: 'required-password',
+      name: 'requiredPassword',
       label: 'Password Label',
       type: TdDynamicElement.Password,
       required: true,

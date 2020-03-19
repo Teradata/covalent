@@ -72,7 +72,7 @@ export const createComponentDetails: IComponentDetails[] = [
       ),
   },
   {
-    name: 'Simple Dialogs',
+    name: 'Dialogs',
     id: 'dialogs',
     description: 'Quick way to use alert, confirm, prompt, and draggable dialogs',
     apiDocUrl: 'platform/core/dialogs/README.md',
