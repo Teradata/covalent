@@ -8,7 +8,6 @@
       [max]="pagingBarInput.maxPage"
       [value]="pagingBarInput.page"
       (change)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"
-      (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"
     />
   </mat-form-field>
   {{pagingBarInput.range}} of {{pagingBarInput.total}}
