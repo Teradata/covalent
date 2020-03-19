@@ -14,7 +14,7 @@ const routes: Routes = setComponentRoutes({
 });
 
 @NgModule({
-  declarations: [VirtualScrollDemoComponent],
+  declarations: [],
   imports: [
     CommonModule,
     ComponentDetailsModule,
