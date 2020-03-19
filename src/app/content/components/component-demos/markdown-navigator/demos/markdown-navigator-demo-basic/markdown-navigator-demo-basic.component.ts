@@ -22,6 +22,16 @@ export class MarkdownNavigatorDemoBasicComponent {
           description: 'Reactive programming',
           icon: 'speed',
           url: 'https://github.com/ReactiveX/rxjs/blob/master/README.md',
+          children: [
+            {
+              title: 'Intro pt 1',
+              markdownString: '🔥',
+            },
+            {
+              title: 'Intro pt 2',
+              markdownString: '⚡',
+            },
+          ],
         },
       ],
     });

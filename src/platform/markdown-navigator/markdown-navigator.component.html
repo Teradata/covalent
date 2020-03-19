@@ -34,42 +34,44 @@
     <mat-divider [style.position]="'relative'"></mat-divider>
   </ng-container>
 
-  <div *ngIf="showMenu" class="td-markdown-list">
-    <mat-action-list>
-      <button
-        *ngFor="let item of currentMenuItems"
-        (click)="handleItemSelected(item)"
-        mat-list-item
-        [matTooltip]="getTitle(item)"
-        matTooltipPosition="before"
-        matTooltipShowDelay="500"
-      >
-        <mat-icon matListIcon>
-          {{ getIcon(item) }}
-        </mat-icon>
-        <span matLine class="truncate">
-          {{ getTitle(item) }}
-        </span>
-        <span matLine class="truncate">{{ item.description }}</span>
-        <mat-divider></mat-divider>
-      </button>
-    </mat-action-list>
-  </div>
+  <div class="scroll-area">
+    <div *ngIf="showMenu" class="td-markdown-list">
+      <mat-action-list>
+        <button
+          *ngFor="let item of currentMenuItems"
+          (click)="handleItemSelected(item)"
+          mat-list-item
+          [matTooltip]="getTitle(item)"
+          matTooltipPosition="before"
+          matTooltipShowDelay="500"
+        >
+          <mat-icon matListIcon>
+            {{ getIcon(item) }}
+          </mat-icon>
+          <span matLine class="truncate">
+            {{ getTitle(item) }}
+          </span>
+          <span matLine class="truncate">{{ item.description }}</span>
+          <mat-divider></mat-divider>
+        </button>
+      </mat-action-list>
+    </div>
 
-  <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
-    <td-flavored-markdown-loader
-      *ngIf="showTdMarkdownLoader"
-      [url]="url"
-      [httpOptions]="httpOptions"
-      [anchor]="anchor"
-    ></td-flavored-markdown-loader>
+    <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
+      <td-flavored-markdown-loader
+        *ngIf="showTdMarkdownLoader"
+        [url]="url"
+        [httpOptions]="httpOptions"
+        [anchor]="anchor"
+      ></td-flavored-markdown-loader>
 
-    <td-flavored-markdown
-      *ngIf="showTdMarkdown"
-      [content]="markdownString"
-      [hostedUrl]="url"
-      [anchor]="anchor"
-    ></td-flavored-markdown>
+      <td-flavored-markdown
+        *ngIf="showTdMarkdown"
+        [content]="markdownString"
+        [hostedUrl]="url"
+        [anchor]="anchor"
+      ></td-flavored-markdown>
+    </div>
   </div>
 </ng-container>
 
