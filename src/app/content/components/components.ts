@@ -72,7 +72,7 @@ export const createComponentDetails: IComponentDetails[] = [
       ),
   },
   {
-    name: 'Simple Dialogs',
+    name: 'Dialogs',
     id: 'dialogs',
     description: 'Quick way to use alert, confirm, prompt, and draggable dialogs',
     apiDocUrl: 'platform/core/dialogs/README.md',
@@ -376,6 +376,40 @@ export const createComponentDetails: IComponentDetails[] = [
     demo: () =>
       import('./component-demos/text-editor/demos/text-editor-demo.module').then(
         (mod: any) => mod.TextEditorDemoModule,
+      ),
+  },
+  {
+    name: 'Virtual Scrolling',
+    id: 'virtual-scroll',
+    description: 'Virtual Scroll a list of items',
+    apiDocUrl: 'platform/core/virtual-scroll/README.md',
+    materialDocUrl: 'https://material.angular.io/cdk/scrolling/overview',
+    showExamples: false,
+    showOverview: false,
+    showMigration: true,
+    icon: 'format_line_spacing',
+    category: layout.name,
+    route: '/components/virtual-scroll',
+    migration: () =>
+      import('./component-demos/virtual-scroll/demos/virtual-scroll-demo.module').then(
+        (mod: any) => mod.VirtualScrollDemoModule,
+      ),
+  },
+  {
+    name: 'File Upload',
+    id: 'file-upload',
+    description: 'Upload files from your computer or device',
+    apiDocUrl: 'platform/core/file/file-upload/README.md',
+    materialDocUrl: '/#/components/file-input',
+    showExamples: false,
+    showOverview: false,
+    showMigration: true,
+    icon: 'cloud_upload',
+    category: buttons.name,
+    route: '/components/file-upload',
+    migration: () =>
+      import('./component-demos/file-upload/demos/file-upload-demo.module').then(
+        (mod: any) => mod.FileUploadDemoModule,
       ),
   },
 ];

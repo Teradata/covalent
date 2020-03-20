@@ -44,7 +44,7 @@ import { CovalentExpansionPanelModule } from '../platform/core/expansion-panel';
 import { CovalentNotificationsModule } from '../platform/core/notifications';
 import { CovalentMenuModule } from '../platform/core/menu';
 import { CovalentMediaModule } from '../platform/core/media';
-
+import { CovalentFileModule } from '../platform/core/file';
 @NgModule({
   declarations: [DocsAppComponent, HomeComponent], // directives, components, and pipes owned by this NgModule
   imports: [
@@ -86,6 +86,7 @@ import { CovalentMediaModule } from '../platform/core/media';
     SidenavContentModule,
     ContentContainerModule,
     appRoutes,
+    CovalentFileModule,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,

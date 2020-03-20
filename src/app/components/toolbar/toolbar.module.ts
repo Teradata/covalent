@@ -8,8 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { CovalentMenuModule } from '../../../platform/core/menu';
-import { CovalentNotificationsModule } from '../../../platform/core/notifications';
 
 @NgModule({
   imports: [
@@ -18,8 +18,8 @@ import { CovalentNotificationsModule } from '../../../platform/core/notification
     MatListModule,
     MatIconModule,
     MatMenuModule,
+    MatTooltipModule,
     CovalentMenuModule,
-    CovalentNotificationsModule,
     RouterModule,
   ],
   declarations: [ToolbarComponent],
