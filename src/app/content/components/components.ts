@@ -129,19 +129,6 @@ export const createComponentDetails: IComponentDetails[] = [
       ),
   },
   {
-    name: 'Loading Mask',
-    id: 'loading-mask',
-    description: 'Mask areas for progressive loading',
-    apiDocUrl: 'platform/experimental/loading-mask/README.md',
-    icon: 'blur_linear',
-    category: 'Buttons & Indicators',
-    route: '/components/loading-mask',
-    demo: () =>
-      import('./component-demos/loading-mask/demos/loading-mask-demo.module').then(
-        (mod: any) => mod.LoadingMaskDemosModule,
-      ),
-  },
-  {
     name: 'Syntax Highlight',
     id: 'highlight',
     description: 'Highlighting your code snippets',
