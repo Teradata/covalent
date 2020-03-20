@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'tab-select-demo-basic',
   styleUrls: ['./tab-select-demo-basic.component.scss'],
   templateUrl: './tab-select-demo-basic.component.html',
-  preserveWhitespaces: true,
 })
 export class TabSelectDemoBasicComponent {
   value: string = '';

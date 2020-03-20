@@ -7,7 +7,6 @@ import { TdDataTableSortingOrder, ITdDataTableSortChangeEvent } from '../../../.
   selector: 'data-table-demo-sort',
   styleUrls: ['./data-table-demo-sort.component.scss'],
   templateUrl: './data-table-demo-sort.component.html',
-  preserveWhitespaces: true,
 })
 export class DataTableDemoSortComponent implements OnInit {
   data: any[];

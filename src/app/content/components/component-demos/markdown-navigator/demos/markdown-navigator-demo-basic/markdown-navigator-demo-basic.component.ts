@@ -10,7 +10,6 @@ import { MatDialogRef } from '@angular/material/dialog';
   selector: 'markdown-navigator-demo-basic',
   styleUrls: ['./markdown-navigator-demo-basic.component.scss'],
   templateUrl: './markdown-navigator-demo-basic.component.html',
-  preserveWhitespaces: true,
 })
 export class MarkdownNavigatorDemoBasicComponent {
   windowOpen: boolean = false;

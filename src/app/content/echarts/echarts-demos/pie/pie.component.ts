@@ -6,7 +6,6 @@ import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
   templateUrl: './pie.component.html',
   styleUrls: ['./pie.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class TypesPieComponent {
   // Chart config

@@ -7,7 +7,6 @@ import { slideInUpAnimation } from '../../../app.animations';
   styleUrls: ['./icons.component.scss'],
   templateUrl: './icons.component.html',
   animations: [slideInUpAnimation],
-  preserveWhitespaces: true,
 })
 export class IconsComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;

@@ -10,7 +10,6 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
   selector: 'data-table-demo-custom',
   styleUrls: ['./data-table-demo-custom.component.scss'],
   templateUrl: './data-table-demo-custom.component.html',
-  preserveWhitespaces: true,
 })
 export class DataTableDemoCustomComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
