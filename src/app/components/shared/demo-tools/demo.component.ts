@@ -1,9 +1,8 @@
-import { Component, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import sdk from '@stackblitz/sdk';
-import { catchError, map } from 'rxjs/operators';
 import { forkJoin, Observable, Subscriber, of } from 'rxjs';
-import * as data from '../../../../../package.json';
+import * as packageJson from '../../../../../package.json';
 import { ChangeDetectorRef } from '@angular/core';
 
 interface IDemoFiles {
@@ -19,14 +18,23 @@ interface IDemoFiles {
   polyfills: string;
 }
 
+interface IStackBlitzInfo {
+  files: {};
+  title: string;
+  description: string;
+  template: string;
+  dependencies: {};
+}
+
 @Component({
   selector: 'demo-component',
   styleUrls: ['./demo.component.scss'],
   templateUrl: './demo.component.html',
 })
 export class DemoComponent implements AfterViewInit {
-  private readonly uniqueFileNamePlaceholder: string = 'Cha-234c8b6d-591e-4140-9c82-8c36a0709afb-Cha';
-  private readonly uniqueComponentNamePlaceholder: string = 'Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah';
+  private readonly uniqueFileNamePlaceholder: string = 'uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb';
+  private readonly uniqueComponentNamePlaceholder: string =
+    'uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768';
   @ViewChild('content') private content: any;
   demoId: string;
   @Input() demoTitle: string;
@@ -35,7 +43,8 @@ export class DemoComponent implements AfterViewInit {
   typescriptFile: string;
   htmlFile: string;
   stylesFile: string;
-  dependencies: object = new Object();
+  dependencies: object = {};
+  version: string = packageJson.version;
 
   indexFile: string = `
   <!doctype html>
@@ -46,7 +55,7 @@ export class DemoComponent implements AfterViewInit {
     <base href="/">
   </head>
   <body>
-    <Cha-234c8b6d-591e-4140-9c82-8c36a0709afb-Cha></Cha-234c8b6d-591e-4140-9c82-8c36a0709afb-Cha> 
+    <uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb></uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb> 
   </body>
   </html>
     `;
@@ -67,18 +76,18 @@ export class DemoComponent implements AfterViewInit {
   import { Routes, RouterModule } from '@angular/router';
 
   import { SharedModule } from './shared.module';
-  import { Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah } from './app/Cha-234c8b6d-591e-4140-9c82-8c36a0709afb-Cha.component';
+  import { uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768 } from './app/uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb.component';
 
   const routes: Routes = [
     {
       path: '',
-      component: Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah,
+      component: uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768,
     }
   ];
   
   @NgModule({
     declarations: [
-      Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah
+      uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768
     ],
     imports: [
       BrowserModule,
@@ -86,27 +95,27 @@ export class DemoComponent implements AfterViewInit {
       RouterModule.forRoot(routes),
     ],
     providers: [],
-    bootstrap: [Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah]
+    bootstrap: [uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768]
   })
   export class AppModule { }
     `;
 
   constructor(private _http: HttpClient, private _cdr: ChangeDetectorRef) {
-    this.dependencies = data.dependencies;
+    this.dependencies = packageJson.dependencies;
     // has additional themes for respective demos to work
-    this.dependencies['@covalent/core'] = '3.0.0-rc.2';
-    this.dependencies['@covalent/dynamic-forms'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/core'] = this.version;
+    this.dependencies['@covalent/dynamic-forms'] = this.version;
 
-    this.dependencies['@covalent/markdown'] = '3.0.0-rc.2';
-    this.dependencies['@covalent/flavored-markdown'] = '3.0.0-rc.2';
-    this.dependencies['@covalent/markdown-navigator'] = '3.0.0-rc.2';
-    this.dependencies['@covalent/code-editor'] = '3.0.0-rc.2';
-    this.dependencies['@covalent/http'] = '3.0.0-rc.2';
-    this.dependencies['@covalent/highlight'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/markdown'] = this.version;
+    this.dependencies['@covalent/flavored-markdown'] = this.version;
+    this.dependencies['@covalent/markdown-navigator'] = this.version;
+    this.dependencies['@covalent/code-editor'] = this.version;
+    this.dependencies['@covalent/http'] = this.version;
+    this.dependencies['@covalent/highlight'] = this.version;
     // TODO: doesn't appear stackblitz api support nightly dependencies - needs follow up for loading mask demo
     // this.dependencies['@covalent/experimental'] = "git+https://github.com/Teradata/covalent-experimental-nightly.git";
     // "@covalent/experimental": "git+https://github.com/Teradata/covalent-experimental-nightly.git",
-    this.dependencies['@covalent/echarts'] = '3.0.0-rc.2';
+    this.dependencies['@covalent/echarts'] = this.version;
     this.dependencies['@types/echarts'] = '*';
     this.dependencies['zrender'] = '4.3.0'; // needed for echarts
 
@@ -141,74 +150,48 @@ export class DemoComponent implements AfterViewInit {
       }),
       teradataThemeScss: this._http.get(`assets/demos/_teradata-branding.scss`, { responseType: 'text' }),
       polyfills: this._http.get(`assets/demos/polyfills.ts`, { responseType: 'text' }),
-    })
-      .pipe(
-        map((responses: IDemoFiles) => {
-          return {
-            typescript: responses.typescript,
-            html: responses.html,
-            style: responses.style,
-            sharedModule: responses.sharedModule,
-            angularJson: responses.angularJson,
-            themeScss: responses.themeScss,
-            markdownThemeScss: responses.markdownThemeScss,
-            flavoredMarkdownThemeScss: responses.flavoredMarkdownThemeScss,
-            teradataThemeScss: responses.teradataThemeScss,
-            polyfills: responses.polyfills,
-          };
-        }),
-        catchError((error: Response) => {
-          return new Observable<any>((subscriber: Subscriber<any>) => {
-            try {
-              subscriber.error(error);
-            } catch (err) {
-              subscriber.error(error);
-            }
-          });
-        }),
-      )
-      .subscribe((demo: IDemoFiles) => {
-        this.indexFile = this.indexFile.replace(new RegExp(this.uniqueFileNamePlaceholder, 'g'), this.demoId);
-        const demoIdParts: string[] = this.demoId.split('-');
-        const demoComponentName: string =
-          demoIdParts.map((piece: string) => piece.charAt(0).toUpperCase() + piece.substr(1)).join('') + 'Component';
-        this.appModuleFile = this.appModuleFile.replace(this.uniqueFileNamePlaceholder, this.demoId);
-        this.appModuleFile = this.appModuleFile.replace(
-          new RegExp(this.uniqueComponentNamePlaceholder, 'g'),
-          demoComponentName,
-        );
+    }).subscribe((demo: IDemoFiles) => {
+      this.indexFile = this.indexFile.replace(new RegExp(this.uniqueFileNamePlaceholder, 'g'), this.demoId);
+      const demoIdParts: string[] = this.demoId.split('-');
+      const demoComponentName: string =
+        demoIdParts.map((piece: string) => piece.charAt(0).toUpperCase() + piece.substr(1)).join('') + 'Component';
+      this.appModuleFile = this.appModuleFile.replace(this.uniqueFileNamePlaceholder, this.demoId);
+      this.appModuleFile = this.appModuleFile.replace(
+        new RegExp(this.uniqueComponentNamePlaceholder, 'g'),
+        demoComponentName,
+      );
 
-        // TODO: remove this after markdown has been update and pushed out with the respective import
-        demo.markdownThemeScss = demo.markdownThemeScss.replace(
-          "@import '../../../node_modules/@angular/material/theming';",
-          "@import '~@angular/material/theming';",
-        );
+      // TODO: remove this after markdown has been update and pushed out with the respective import
+      demo.markdownThemeScss = demo.markdownThemeScss.replace(
+        "@import '../../../node_modules/@angular/material/theming';",
+        "@import '~@angular/material/theming';",
+      );
 
-        const project: any = {
-          files: {
-            [`src/app/${this.demoId}.component.ts`]: demo.typescript,
-            [`src/app/${this.demoId}.component.html`]: demo.html,
-            [`src/app/${this.demoId}.component.scss`]: demo.style || '',
-            [`src/index.html`]: this.indexFile,
-            [`src/main.ts`]: this.mainFile,
-            [`src/app.module.ts`]: this.appModuleFile,
-            [`src/shared.module.ts`]: demo.sharedModule,
-            [`angular.json`]: demo.angularJson,
-            [`src/theme/theme.scss`]: demo.themeScss,
-            [`src/theme/_teradata-branding.scss`]: demo.teradataThemeScss,
-            [`src/theme/_markdown-theme.scss`]: demo.markdownThemeScss,
-            [`src/theme/_flavored-markdown-theme.scss`]: demo.flavoredMarkdownThemeScss,
-            [`src/polyfills.ts`]: demo.polyfills,
-          },
-          title: this.demoTitle || this.demoId,
-          description: this.demoTitle || this.demoId,
-          template: 'angular-cli',
-          dependencies: data.dependencies,
-        };
+      const project: IStackBlitzInfo = {
+        files: {
+          [`src/app/${this.demoId}.component.ts`]: demo.typescript,
+          [`src/app/${this.demoId}.component.html`]: demo.html,
+          [`src/app/${this.demoId}.component.scss`]: demo.style || '',
+          [`src/index.html`]: this.indexFile,
+          [`src/main.ts`]: this.mainFile,
+          [`src/app.module.ts`]: this.appModuleFile,
+          [`src/shared.module.ts`]: demo.sharedModule,
+          [`angular.json`]: demo.angularJson,
+          [`src/theme/theme.scss`]: demo.themeScss,
+          [`src/theme/_teradata-branding.scss`]: demo.teradataThemeScss,
+          [`src/theme/_markdown-theme.scss`]: demo.markdownThemeScss,
+          [`src/theme/_flavored-markdown-theme.scss`]: demo.flavoredMarkdownThemeScss,
+          [`src/polyfills.ts`]: demo.polyfills,
+        },
+        title: this.demoTitle || this.demoId,
+        description: this.demoTitle || this.demoId,
+        template: 'angular-cli',
+        dependencies: packageJson.dependencies,
+      };
 
-        // Method to open project in new window
-        sdk.openProject(project);
-      });
+      // Method to open project in new window
+      sdk.openProject(project);
+    });
   }
 
   toggleCodeView(): void {
@@ -224,26 +207,11 @@ export class DemoComponent implements AfterViewInit {
       styles: this._http.get(`assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.scss`, {
         responseType: 'text',
       }),
-    })
-      .pipe(
-        map((responses: { typescript: string; html: string; styles: string }) => {
-          return { typescript: responses.typescript, html: responses.html, styles: responses.styles };
-        }),
-        catchError((error: Response) => {
-          return new Observable<any>((subscriber: Subscriber<any>) => {
-            try {
-              subscriber.error(error);
-            } catch (err) {
-              subscriber.error(error);
-            }
-          });
-        }),
-      )
-      .subscribe((demo: { typescript: string; html: string; styles: string }) => {
-        this.typescriptFile = demo.typescript;
-        this.htmlFile = demo.html;
-        this.stylesFile = demo.styles;
-        this.viewCode = !this.viewCode;
-      });
+    }).subscribe((demo: { typescript: string; html: string; styles: string }) => {
+      this.typescriptFile = demo.typescript;
+      this.htmlFile = demo.html;
+      this.stylesFile = demo.styles;
+      this.viewCode = !this.viewCode;
+    });
   }
 }
