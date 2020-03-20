@@ -4,7 +4,6 @@ export interface IComponentDetails {
   description?: string;
   apiDocUrl?: string;
   overviewDocUrl?: string;
-  materialDocUrl?: string;
   icon?: string;
   category?: string;
   route?: string;
@@ -12,6 +11,7 @@ export interface IComponentDetails {
   showAPI?: boolean;
   showExamples?: boolean;
   showMigration?: boolean;
+  migrationUrl?: string;
   demo?: any;
   migration?: any;
 }
