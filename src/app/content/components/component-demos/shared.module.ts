@@ -26,7 +26,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-
 import {
   CovalentDynamicFormsModule,
   TdDynamicInputComponent,
