@@ -24,6 +24,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 
 import {
   CovalentDynamicFormsModule,
@@ -52,6 +54,7 @@ import { CovalentTabSelectModule } from '@covalent/core/tab-select';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { CovalentMarkdownModule, TdMarkdownComponent } from '@covalent/markdown';
 import { CovalentMarkdownNavigatorModule, TdMarkdownNavigatorWindowComponent } from '@covalent/markdown-navigator';
+import { CovalentVirtualScrollModule } from '@covalent/core/virtual-scroll';
 
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
 import { CovalentHighlightModule, TdHighlightComponent } from '@covalent/highlight';
@@ -98,6 +101,7 @@ import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
+    ScrollingModule,
 
     /** Covalent Modules */
     CovalentExpansionPanelModule,
@@ -128,6 +132,7 @@ import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
     CovalentCodeEditorModule,
     CovalentHighlightModule,
     CovalentJsonFormatterModule,
+    CovalentVirtualScrollModule,
 
     CovalentBaseEchartsModule,
     CovalentTooltipEchartsModule,
