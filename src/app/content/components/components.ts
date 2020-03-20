@@ -398,7 +398,7 @@ export const createComponentDetails: IComponentDetails[] = [
   {
     name: 'File Upload',
     id: 'file-upload',
-    description: 'Upload files from your compuer or device',
+    description: 'Upload files from your computer or device',
     apiDocUrl: 'platform/core/file/file-upload/README.md',
     materialDocUrl: '/#/components/file-input',
     showExamples: false,
