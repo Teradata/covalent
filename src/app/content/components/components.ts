@@ -378,6 +378,23 @@ export const createComponentDetails: IComponentDetails[] = [
         (mod: any) => mod.TextEditorDemoModule,
       ),
   },
+  {
+    name: 'Virtual Scrolling',
+    id: 'virtual-scroll',
+    description: 'Virtual Scroll a list of items',
+    apiDocUrl: 'platform/core/virtual-scroll/README.md',
+    materialDocUrl: 'https://material.angular.io/cdk/scrolling/overview',
+    showExamples: false,
+    showOverview: false,
+    showMigration: true,
+    icon: 'format_line_spacing',
+    category: layout.name,
+    route: '/components/virtual-scroll',
+    migration: () =>
+      import('./component-demos/virtual-scroll/demos/virtual-scroll-demo.module').then(
+        (mod: any) => mod.VirtualScrollDemoModule,
+      ),
+  },
 ];
 
 export const componentDetails: IComponentDetails[] = createComponentDetails.map((component: IComponentDetails) => {
