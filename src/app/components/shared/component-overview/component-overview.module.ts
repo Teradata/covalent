@@ -12,7 +12,7 @@ import { DocumentationToolsModule } from 'app/documentation-tools';
 import { CovalentExpansionPanelModule } from '../../../../platform/core/expansion-panel';
 import { CovalentMediaModule } from '../../../../platform/core/media';
 import { CovalentCommonModule } from '../../../../platform/core/common';
-
+import { CovalentFileModule } from '../../../../platform/core/file';
 @NgModule({
   declarations: [ComponentOverviewComponent],
   exports: [ComponentOverviewComponent],
@@ -29,6 +29,7 @@ import { CovalentCommonModule } from '../../../../platform/core/common';
     CovalentMediaModule,
     CovalentCommonModule,
     DocumentationToolsModule,
+    CovalentFileModule,
   ],
 })
 export class ComponentOverviewModule {}

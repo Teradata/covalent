@@ -395,6 +395,23 @@ export const createComponentDetails: IComponentDetails[] = [
         (mod: any) => mod.VirtualScrollDemoModule,
       ),
   },
+  {
+    name: 'File Upload',
+    id: 'file-upload',
+    description: 'Upload files from your computer or device',
+    apiDocUrl: 'platform/core/file/file-upload/README.md',
+    materialDocUrl: '/#/components/file-input',
+    showExamples: false,
+    showOverview: false,
+    showMigration: true,
+    icon: 'cloud_upload',
+    category: buttons.name,
+    route: '/components/file-upload',
+    migration: () =>
+      import('./component-demos/file-upload/demos/file-upload-demo.module').then(
+        (mod: any) => mod.FileUploadDemoModule,
+      ),
+  },
 ];
 
 export const componentDetails: IComponentDetails[] = createComponentDetails.map((component: IComponentDetails) => {
