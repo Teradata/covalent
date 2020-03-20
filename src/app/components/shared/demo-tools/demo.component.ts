@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import sdk from '@stackblitz/sdk';
 import { catchError, map } from 'rxjs/operators';
 import { forkJoin, Observable, Subscriber, of } from 'rxjs';
 import * as data from '../../../../../package.json';
+import { ChangeDetectorRef } from '@angular/core';
 
 interface IDemoFiles {
   typescript: string;
@@ -23,10 +24,11 @@ interface IDemoFiles {
   styleUrls: ['./demo.component.scss'],
   templateUrl: './demo.component.html',
 })
-export class DemoComponent {
-  private readonly uniqueChaCha: string = 'Cha-234c8b6d-591e-4140-9c82-8c36a0709afb-Cha';
-  private readonly uniqueYahYah: string = 'Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah';
-  @Input() demoId: string;
+export class DemoComponent implements AfterViewInit {
+  private readonly uniqueFileNamePlaceholder: string = 'Cha-234c8b6d-591e-4140-9c82-8c36a0709afb-Cha';
+  private readonly uniqueComponentNamePlaceholder: string = 'Yah-f3cc5d58-5956-446a-abee-a8fb70193768-Yah';
+  @ViewChild('content') private content: any;
+  demoId: string;
   @Input() demoTitle: string;
   @Input() hideStackBlitzDemo: boolean = false;
   viewCode: boolean = false;
@@ -89,7 +91,7 @@ export class DemoComponent {
   export class AppModule { }
     `;
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private _cdr: ChangeDetectorRef) {
     this.dependencies = data.dependencies;
     // has additional themes for respective demos to work
     this.dependencies['@covalent/core'] = '3.0.0-rc.2';
@@ -111,7 +113,11 @@ export class DemoComponent {
     this.dependencies['@td-vantage/ui-platform'] = '*';
   }
 
-  // TODO: write wrapper around this and create "demo-component" that will consume it (show's demo/typescript/styles/html tab)
+  ngAfterViewInit(): void {
+    this.demoId = this.content.nativeElement.firstChild.nodeName.toLowerCase();
+    this._cdr.detectChanges();
+  }
+
   async openStackblitzDemo(): Promise<void> {
     const demoMarker: number = this.demoId.indexOf('-demo-');
     const demoFolderName: string = this.demoId.slice(0, demoMarker);
@@ -162,12 +168,15 @@ export class DemoComponent {
         }),
       )
       .subscribe((demo: IDemoFiles) => {
-        this.indexFile = this.indexFile.replace(new RegExp(this.uniqueChaCha, 'g'), this.demoId);
+        this.indexFile = this.indexFile.replace(new RegExp(this.uniqueFileNamePlaceholder, 'g'), this.demoId);
         const demoIdParts: string[] = this.demoId.split('-');
         const demoComponentName: string =
           demoIdParts.map((piece: string) => piece.charAt(0).toUpperCase() + piece.substr(1)).join('') + 'Component';
-        this.appModuleFile = this.appModuleFile.replace(this.uniqueChaCha, this.demoId);
-        this.appModuleFile = this.appModuleFile.replace(new RegExp(this.uniqueYahYah, 'g'), demoComponentName);
+        this.appModuleFile = this.appModuleFile.replace(this.uniqueFileNamePlaceholder, this.demoId);
+        this.appModuleFile = this.appModuleFile.replace(
+          new RegExp(this.uniqueComponentNamePlaceholder, 'g'),
+          demoComponentName,
+        );
 
         // TODO: remove this after markdown has been update and pushed out with the respective import
         demo.markdownThemeScss = demo.markdownThemeScss.replace(
