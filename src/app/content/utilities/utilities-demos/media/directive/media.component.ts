@@ -10,7 +10,6 @@ import { TdMediaService } from '../../../../../../platform/core/media';
   styleUrls: ['./media.component.scss'],
   templateUrl: './media.component.html',
   animations: [tdJelloAnimation, slideInUpAnimation],
-  preserveWhitespaces: true,
 })
 export class MediaDirectiveDemoComponent implements OnInit, OnDestroy {
   private _subcriptions: Subscription[] = [];

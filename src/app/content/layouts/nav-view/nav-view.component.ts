@@ -5,7 +5,6 @@ import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
   selector: 'layouts-nav-view',
   styleUrls: ['./nav-view.component.scss'],
   templateUrl: './nav-view.component.html',
-  preserveWhitespaces: true,
 })
 export class NavViewComponent {
   routes: object[] = [

@@ -58,8 +58,7 @@
     <h3>Consuming Mock Data Endpoints</h3>
     <p>The Mock API Server generates real endpoints that can be consumed in Angular services.</p>
     <td-highlight lang="typescript">
-      <![CDATA[ import { Injectable } from '@angular/core'; @Injectable() export class ItemsService { private
-      mockApiData: string = 'http://localhost:8080/items'; ... ]]>
+      {{ mockApiDataTypescript }}
     </td-highlight>
     <p>
       The Covalent Data Mock API Server actually stores data in memory, so it's possible to add, update, and delete
