@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import sdk from '@stackblitz/sdk';
 import { forkJoin, Observable, Subscriber, of } from 'rxjs';
@@ -35,7 +35,7 @@ export class DemoComponent implements AfterViewInit {
   private readonly uniqueFileNamePlaceholder: string = 'uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb';
   private readonly uniqueComponentNamePlaceholder: string =
     'uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768';
-  @ViewChild('content') private content: any;
+  @ViewChild('content') private content: ElementRef;
   demoId: string;
   @Input() demoTitle: string;
   @Input() hideStackBlitzDemo: boolean = false;
