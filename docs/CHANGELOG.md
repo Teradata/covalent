@@ -1,3 +1,34 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/teradata/covalent/compare/v3.0.0-rc.2...v3.0.0) (2020-03-23)
+
+We are finally stable! 
+
+We are pleased to announce our 3.0.0 release. We worked on adding back all the demos and improving the experience of our documentation, as well as adding new components/enhancements and ivy support.
+
+We have deprecated the following 3 components:
+
+- File Upload
+- Virtual Scroll
+- Expansion Panel
+
+So please check the documentation to see the migration steps.
+
+Let us know if you have any problems or suggestions on how to improve Covalent.
+
+
+### Features
+
+* **docs:** deploy ghpages in subdir + version switcher ([#1658](https://github.com/teradata/covalent/issues/1658)) ([e61464f](https://github.com/teradata/covalent/commit/e61464f))
+
+
+### Docs
+
+* **chips:** add chips examples ([#1655](https://github.com/teradata/covalent/issues/1655)) ([650bf01](https://github.com/teradata/covalent/commit/650bf01))
+* **code-editor:** add missing demos ([#1680](https://github.com/teradata/covalent/issues/1680)) ([e55fc5a](https://github.com/teradata/covalent/commit/e55fc5a))
+* **deprecation:** file upload deprecation ([#1685](https://github.com/teradata/covalent/issues/1685)) ([f69f347](https://github.com/teradata/covalent/commit/f69f347))
+* **demo:** add all paging demos ([#1664](https://github.com/teradata/covalent/issues/1664)) ([57b553c](https://github.com/teradata/covalent/commit/57b553c))
+
+
 <a name="3.0.0-rc.2"></a>
 # [3.0.0-rc.2](https://github.com/teradata/covalent/compare/v3.0.0-beta.3...v3.0.0-rc.2) (2020-03-16)
 
