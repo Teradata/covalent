@@ -1,12 +1,12 @@
 <td-message
   label="Deprecation Notice"
-  sublabel="This component will be deprecated in favor of Angular Material components"
+  sublabel="This component will be deprecated in favor of a different implementation"
   color="warn"
   icon="warning"
   class="push-bottom-md"
   *ngIf="component?.showMigration"
 >
-  <a td-message-actions mat-button target="_blank" [href]="component?.materialDocUrl" class="mat-button">
+  <a td-message-actions mat-button target="_blank" [href]="component?.migrationUrl" class="mat-button">
     VIEW DOC
   </a>
 </td-message>

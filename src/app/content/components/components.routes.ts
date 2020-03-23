@@ -150,11 +150,6 @@ const routes: Routes = [
         loadChildren: () => import('./component-demos/steps/steps.module').then((m: any) => m.StepsDemoModule),
       },
       {
-        path: 'loading-mask',
-        loadChildren: () =>
-          import('./component-demos/loading-mask/loading-mask.module').then((m: any) => m.LoadingMaskDemoModule),
-      },
-      {
         path: 'virtual-scroll',
         loadChildren: () =>
           import('./component-demos/virtual-scroll/virtual-scroll.module').then((m: any) => m.VirtualScrollDemoModule),
