@@ -32,8 +32,8 @@ interface IStackBlitzInfo {
   templateUrl: './demo.component.html',
 })
 export class DemoComponent implements AfterViewInit {
-  private readonly uniqueFileNamePlaceholder: string = 'uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb';
-  private readonly uniqueComponentNamePlaceholder: string =
+  private uniqueFileNamePlaceholder: string = 'uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb';
+  private uniqueComponentNamePlaceholder: string =
     'uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768';
   @ViewChild('content') private content: ElementRef;
   demoId: string;
@@ -55,7 +55,7 @@ export class DemoComponent implements AfterViewInit {
     <base href="/">
   </head>
   <body>
-    <uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb></uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb> 
+    <${this.uniqueFileNamePlaceholder}></${this.uniqueFileNamePlaceholder}> 
   </body>
   </html>
     `;
@@ -76,18 +76,18 @@ export class DemoComponent implements AfterViewInit {
   import { Routes, RouterModule } from '@angular/router';
 
   import { SharedModule } from './shared.module';
-  import { uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768 } from './app/uniqueFileNamePlaceholder-234c8b6d-591e-4140-9c82-8c36a0709afb.component';
+  import { ${this.uniqueComponentNamePlaceholder} } from './app/${this.uniqueFileNamePlaceholder}.component';
 
   const routes: Routes = [
     {
       path: '',
-      component: uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768,
+      component: ${this.uniqueComponentNamePlaceholder},
     }
   ];
   
   @NgModule({
     declarations: [
-      uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768
+      ${this.uniqueComponentNamePlaceholder}
     ],
     imports: [
       BrowserModule,
@@ -95,7 +95,7 @@ export class DemoComponent implements AfterViewInit {
       RouterModule.forRoot(routes),
     ],
     providers: [],
-    bootstrap: [uniqueComponentNamePlaceholder-f3cc5d58-5956-446a-abee-a8fb70193768]
+    bootstrap: [${this.uniqueComponentNamePlaceholder}]
   })
   export class AppModule { }
     `;
@@ -162,6 +162,28 @@ export class DemoComponent implements AfterViewInit {
       );
 
       // TODO: remove this after markdown has been update and pushed out with the respective import
+
+      demo.themeScss = demo.themeScss.replace(
+        "@import './platform/core/theming/all-theme';",
+        "@import '~@covalent/core/theming/all-theme';",
+      );
+
+      demo.themeScss = demo.themeScss.replace(
+        "@import './platform/markdown/markdown-theme';",
+        "@import './markdown-theme';",
+      );
+
+      demo.themeScss = demo.themeScss.replace(
+        "@import './platform/highlight/highlight-theme';",
+        "@import '~highlight.js/styles/vs.css';",
+      );
+      demo.themeScss = demo.themeScss.replace('@include covalent-highlight-theme();', '');
+
+      demo.themeScss = demo.themeScss.replace(
+        "@import './platform/flavored-markdown/flavored-markdown-theme';",
+        "@import './flavored-markdown-theme';",
+      );
+
       demo.markdownThemeScss = demo.markdownThemeScss.replace(
         "@import '../../../node_modules/@angular/material/theming';",
         "@import '~@angular/material/theming';",
