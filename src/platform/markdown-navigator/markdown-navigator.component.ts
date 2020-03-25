@@ -20,6 +20,7 @@ export interface IMarkdownNavigatorItem {
   children?: IMarkdownNavigatorItem[];
   description?: string;
   icon?: string;
+  footer?: any;
 }
 
 export interface IMarkdownNavigatorLabels {
@@ -170,6 +171,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       return this.currentMarkdownItem.url;
     }
     return undefined;
+  }
+
+  get footer(): any {
+    if (this.currentMarkdownItem) {
+      return this.currentMarkdownItem.footer;
+    }
   }
   get httpOptions(): object {
     if (this.currentMarkdownItem) {
