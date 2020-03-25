@@ -18,6 +18,8 @@ export interface IMarkdownNavigatorItem {
   markdownString?: string; // raw markdown
   anchor?: string;
   children?: IMarkdownNavigatorItem[];
+  description?: string;
+  icon?: string;
 }
 
 export interface IMarkdownNavigatorLabels {
@@ -288,6 +290,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
         getTitleFromMarkdownString(item.markdownString) ||
         ''
       ).trim();
+    }
+  }
+
+  getIcon(item: IMarkdownNavigatorItem): string {
+    if (item) {
+      return item.icon || 'subject';
     }
   }
 

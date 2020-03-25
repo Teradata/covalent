@@ -26,6 +26,8 @@ interface IMarkdownNavigatorItem {
   markdownString?: string; // raw markdown
   anchor?: string;
   children?: IMarkdownNavigatorItem[];
+  description?: string;
+  icon?: string;
 }
 ```
 
