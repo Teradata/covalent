@@ -19,7 +19,7 @@ export interface IMarkdownNavigatorWindowConfig {
   compareWith?: IMarkdownNavigatorCompareWith;
 }
 
-const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-markdown-navigator-window-wrapper';
+const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-window-dialog';
 
 const DEFAULT_POSITION: DialogPosition = { bottom: '0px', right: '0px' };
 const DEFAULT_WIDTH: string = '360px';
@@ -30,7 +30,7 @@ const MAX_WIDTH: string = '100vw';
 const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
   hasBackdrop: false,
   closeOnNavigation: true,
-  panelClass: CDK_OVERLAY_CUSTOM_CLASS,
+  panelClass: [CDK_OVERLAY_CUSTOM_CLASS],
   position: DEFAULT_POSITION,
   height: DEFAULT_HEIGHT,
   width: DEFAULT_WIDTH,
@@ -61,9 +61,18 @@ export class TdMarkdownNavigatorWindowService {
   public open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<TdMarkdownNavigatorWindowComponent> {
     this.close();
 
+    let panelClass: string[] = [...DEFAULT_DRAGGABLE_DIALOG_CONFIG.panelClass];
+    if (config.dialogConfig && config.dialogConfig.panelClass) {
+      if (Array.isArray(config.dialogConfig.panelClass)) {
+        panelClass = [...config.dialogConfig.panelClass];
+      } else {
+        panelClass = [config.dialogConfig.panelClass];
+      }
+    }
     const draggableConfig: MatDialogConfig = {
       ...DEFAULT_DRAGGABLE_DIALOG_CONFIG,
       ...config.dialogConfig,
+      panelClass,
     };
     const {
       matDialogRef,
@@ -71,7 +80,7 @@ export class TdMarkdownNavigatorWindowService {
     }: IDraggableRefs<TdMarkdownNavigatorWindowComponent> = this._tdDialogService.openDraggable({
       component: TdMarkdownNavigatorWindowComponent,
       config: draggableConfig,
-      dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
+      dragHandleSelectors: ['.td-window-dialog-toolbar'],
       draggableClass: 'td-draggable-markdown-navigator-window',
     });
     this.markdownNavigatorWindowDialog = matDialogRef;

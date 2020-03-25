@@ -76,7 +76,7 @@ describe('MarkdownNavigatorWindowService', () => {
         expect(getMarkdownNavigator()).toBeTruthy();
         // tslint:disable-next-line:no-useless-cast
         (<HTMLElement>(
-          overlayContainerElement.querySelector(`td-markdown-navigator-window .td-markdown-navigator-window-close`)
+          overlayContainerElement.querySelector(`td-markdown-navigator-window .td-window-dialog-close`)
         )).click();
         await wait(fixture);
 
@@ -293,14 +293,13 @@ describe('MarkdownNavigatorWindowService', () => {
         await wait(fixture);
         await dialogRef.afterOpened().toPromise();
 
-        expect(overlayContainerElement.querySelector(`.td-draggable-markdown-navigator-window-wrapper`)).toBeTruthy();
+        expect(overlayContainerElement.querySelector(`.td-window-dialog`)).toBeTruthy();
         expect(
           overlayContainerElement.querySelector(`td-markdown-navigator-window.td-draggable-markdown-navigator-window`),
         ).toBeTruthy();
-        expect(
-          window.getComputedStyle(overlayContainerElement.querySelector(`.td-markdown-navigator-window-toolbar`))
-            .cursor,
-        ).toBe('move');
+        expect(window.getComputedStyle(overlayContainerElement.querySelector(`.td-window-dialog-toolbar`)).cursor).toBe(
+          'move',
+        );
 
         _markdownNavigatorWindowService.close();
         await wait(fixture);
