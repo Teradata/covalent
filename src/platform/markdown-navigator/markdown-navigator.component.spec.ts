@@ -116,6 +116,26 @@ export const DEEPLY_NESTED_TREE: IMarkdownNavigatorItem[] = [
   },
 ];
 
+export const ITEMS_AT_SAME_LEVEL_AS_MARKDOWN: IMarkdownNavigatorItem[] = [
+  {
+    title: 'A',
+    markdownString: `
+    # Markdown
+
+    Litty
+    `,
+    children: [
+      {
+        title: 'A1',
+      },
+    ],
+  },
+  {
+    title: 'B',
+    markdownString: 'B',
+  },
+];
+
 async function wait(fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>): Promise<void> {
   fixture.detectChanges();
   await fixture.whenStable();
@@ -420,6 +440,34 @@ describe('MarkdownNavigatorComponent', () => {
     }),
   ));
 
+  it('should render list and markdown side by side', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = ITEMS_AT_SAME_LEVEL_AS_MARKDOWN;
+      await wait(fixture);
+
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
+      ).componentInstance;
+      const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
+
+      expect(markdownNavigator.showTdMarkdown).toBeFalsy();
+      expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
+      expect(listItems.length).toBe(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN.length);
+      expect(listItems[0].nativeElement.textContent).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title);
+      expect(listItems[1].nativeElement.textContent).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[1].title);
+      getItem(fixture, 0).click();
+      await wait(fixture);
+      expect(markdownNavigator.showMenu).toBeTruthy();
+      expect(markdownNavigator.showTdMarkdown).toBeTruthy();
+      expect(getTitle(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title);
+      expect(getMarkdown(fixture)).toContain('Markdown');
+    }),
+  ));
+
   it('should use default labels if labels is undefined', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
@@ -576,7 +624,7 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.items = NESTED_MIXED_ITEMS;
       fixture.componentInstance.startAt = NESTED_MIXED_ITEMS[1];
       await wait(fixture);
-      expect(getMarkdown(fixture)).toContain('Heading');
+      expect(getTitle(fixture)).toContain(NESTED_MIXED_ITEMS[1].title);
     }),
   ));
 });
