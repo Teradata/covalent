@@ -9,6 +9,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
+import { ITdFlavoredMarkdownButtonClickEvent } from '../flavored-markdown.component';
 
 // TODO: make a td-markdown-loader component
 
@@ -48,6 +49,8 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
    * Emitted when loading of markdown file fails.
    */
   @Output() loadFailed: EventEmitter<Error> = new EventEmitter();
+
+  @Output() buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter();
 
   content: string;
   loading: boolean = true;

@@ -5,6 +5,7 @@ import {
   IMarkdownNavigatorLabels,
   IMarkdownNavigatorCompareWith,
 } from '../markdown-navigator.component';
+import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
 
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
   title?: string;
@@ -36,6 +37,7 @@ export class TdMarkdownNavigatorWindowComponent {
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
   @Output() dockToggled: EventEmitter<boolean> = new EventEmitter();
+  @Output() buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter();
 
   get markdownNavigatorLabels(): IMarkdownNavigatorLabels {
     if (this.labels) {
