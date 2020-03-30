@@ -3,29 +3,6 @@
   display: flex;
   flex-direction: column;
 }
-
-.td-markdown-navigator-window-title {
-  margin-bottom: 0;
-}
-
 td-markdown-navigator {
   height: calc(100% - 56px); // account for toolbar height
-}
-
-.td-markdown-navigator-window-close {
-  margin: 0 -8px;
-}
-
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-::ng-deep {
-  .td-draggable-markdown-navigator-window-wrapper {
-    > .mat-dialog-container {
-      padding: 0;
-    }
-  }
 }

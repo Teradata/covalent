@@ -243,7 +243,7 @@ describe('MarkdownNavigatorWindowComponent', () => {
 
       spyOn(markdownNavigatorWindow.closed, 'emit');
 
-      const closeButton: DebugElement = fixture.debugElement.query(By.css('.td-markdown-navigator-window-close'));
+      const closeButton: DebugElement = fixture.debugElement.query(By.css('.td-window-dialog-close'));
       closeButton.nativeElement.click();
 
       await wait(fixture);
