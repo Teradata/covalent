@@ -8,6 +8,8 @@ import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { FlavoredMarkdownDemoComponent } from './flavored-markdown-demo.component';
 import { FlavoredMarkdownDemoRoutingModule } from './flavored-markdown-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { FlavoredMarkdownDemoButtonsComponent } from './flavored-markdown-demo-buttons/flavored-markdown-demo-buttons.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     FlavoredMarkdownDemoInlineComponent,
     FlavoredMarkdownDemoTablesComponent,
     FlavoredMarkdownDemoLoaderComponent,
+    FlavoredMarkdownDemoButtonsComponent,
   ],
   imports: [
     DemoModule,
     FlavoredMarkdownDemoRoutingModule,
     /** Covalent Modules */
     CovalentFlavoredMarkdownModule,
+    MatSnackBarModule,
     /** Angular Modules */
     CommonModule,
   ],

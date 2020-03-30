@@ -18,6 +18,8 @@ export interface IMarkdownNavigatorItem {
   markdownString?: string; // raw markdown
   anchor?: string;
   children?: IMarkdownNavigatorItem[];
+  description?: string;
+  icon?: string;
 }
 
 export interface IMarkdownNavigatorLabels {
@@ -257,25 +259,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   handleItemSelected(item: IMarkdownNavigatorItem): void {
     this.historyStack = [...this.historyStack, item];
-    if (
-      item.children &&
-      item.children.length === 1 &&
-      (!item.children[0].children || item.children[0].children.length === 0)
-    ) {
-      // clicked on item with one child that has no children
-      // don't show menu
-      this.currentMenuItems = [];
-      // render markdown
-      this.currentMarkdownItem = item.children[0];
-    } else if (item.children && item.children.length > 0) {
-      // has children, go inside
-      this.currentMenuItems = item.children;
-    } else {
-      // don't show menu
-      this.currentMenuItems = [];
-      // render markdown
-      this.currentMarkdownItem = item;
-    }
+    this.currentMenuItems = item.children;
+    this.currentMarkdownItem = item;
     this._changeDetectorRef.markForCheck();
   }
 
@@ -288,6 +273,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
         getTitleFromMarkdownString(item.markdownString) ||
         ''
       ).trim();
+    }
+  }
+
+  getIcon(item: IMarkdownNavigatorItem): string {
+    if (item) {
+      return item.icon || 'subject';
     }
   }
 
