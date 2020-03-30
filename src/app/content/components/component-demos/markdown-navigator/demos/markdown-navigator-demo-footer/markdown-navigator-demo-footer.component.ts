@@ -46,6 +46,12 @@ export class MarkdownNavigatorDemoFooterComponent {
         markdownString: ` With a nav-list as a footer`,
         footer: MarkdownNavigatorDemoFooterExampleBComponent,
       },
+      {
+        title: 'Global footer',
+        markdownString: `With a footer that was set at the top level`,
+        footer: MarkdownNavigatorDemoFooterExampleAComponent,
+      },
     ],
+    footer: MarkdownNavigatorDemoFooterExampleAComponent,
   };
 }

@@ -7,7 +7,7 @@ import {
   IMarkdownNavigatorCompareWith,
 } from './markdown-navigator.component';
 import { By } from '@angular/platform-browser';
-import { Component, DebugElement } from '@angular/core';
+import { Component, DebugElement, Type } from '@angular/core';
 import { CovalentMarkdownNavigatorModule } from './markdown-navigator.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -48,6 +48,34 @@ const NESTED_MIXED_ITEMS: IMarkdownNavigatorItem[] = [
   {
     title: 'Second item',
     children: RAW_MARKDOWN_ITEM,
+  },
+];
+
+@Component({
+  template: `
+    <div>
+      Footer A Content
+    </div>
+  `,
+})
+export class FooterAComponent {}
+
+@Component({
+  template: `
+    <div>
+      Global Footer Content
+    </div>
+  `,
+})
+export class GlobalFooterComponent {}
+
+const ITEMS_WITH_FOOTERS: IMarkdownNavigatorItem[] = [
+  {
+    markdownString: `Footer A`,
+    footer: FooterAComponent,
+  },
+  {
+    markdownString: `Global Footer`,
   },
 ];
 
@@ -250,6 +278,7 @@ async function validateTree(fixture: ComponentFixture<TdMarkdownNavigatorTestCom
       [labels]="labels"
       [startAt]="startAt"
       [compareWith]="compareWith"
+      [footer]="footer"
     ></td-markdown-navigator>
   `,
 })
@@ -258,6 +287,7 @@ class TdMarkdownNavigatorTestComponent {
   labels: IMarkdownNavigatorLabels;
   startAt: IMarkdownNavigatorItem;
   compareWith: IMarkdownNavigatorCompareWith;
+  footer: Type<any>;
 }
 
 describe('MarkdownNavigatorComponent', () => {
@@ -625,6 +655,37 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.startAt = NESTED_MIXED_ITEMS[1];
       await wait(fixture);
       expect(getTitle(fixture)).toContain(NESTED_MIXED_ITEMS[1].title);
+    }),
+  ));
+
+  it('should be able to render a custom component as a footer', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = ITEMS_WITH_FOOTERS;
+      fixture.componentInstance.footer = GlobalFooterComponent;
+
+      await wait(fixture);
+
+      expect(fixture.nativeElement.textContent).toContain('Global Footer Content');
+
+      getItem(fixture, 0).click();
+
+      await wait(fixture);
+
+      expect(fixture.nativeElement.textContent).toContain('Footer A Content');
+
+      goBack(fixture);
+
+      await wait(fixture);
+
+      getItem(fixture, 1).click();
+
+      await wait(fixture);
+
+      expect(fixture.nativeElement.textContent).toContain('Global Footer Content');
     }),
   ));
 });

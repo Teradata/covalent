@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy, Type } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import {
   IMarkdownNavigatorItem,
@@ -32,6 +32,7 @@ export class TdMarkdownNavigatorWindowComponent {
   @Input() startAt: IMarkdownNavigatorItem;
   @Input() compareWith: IMarkdownNavigatorCompareWith;
   @Input() docked: boolean = false;
+  @Input() footer: Type<any>;
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
   @Output() dockToggled: EventEmitter<boolean> = new EventEmitter();

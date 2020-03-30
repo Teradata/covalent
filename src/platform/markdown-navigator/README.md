@@ -15,6 +15,8 @@ A component for rendering and navigating through markdown, such as documentation
 + compareWith?: IMarkdownNavigatorCompareWith
   + Function used to find startAt item
   + Defaults to comparison by strict equality (===)
++ footer:? Type<any>
+  + Custom component to be used as global footer
 
 For reference:
 
@@ -28,6 +30,7 @@ interface IMarkdownNavigatorItem {
   children?: IMarkdownNavigatorItem[];
   description?: string;
   icon?: string;
+  footer?: Type<any>;
 }
 ```
 
@@ -86,17 +89,14 @@ A component that contains a MarkdownNavigator component and a toolbar
 + toolbarColor?: ThemePalette
   + Toolbar color
   + Defaults to 'primary'
-+ docked?: boolean
-  + Whether docked or not.
-  + Defaults to false
++ footer:? Type<any>;
+  + Custom component to be used as global footer
+
 
 #### Outputs
 
 + closed: void
   + Event emitted when the close button is clicked.
-+ dockToggled: boolean
-  + Event emitted when the toggle dock state button is clicked.
-  + Emits current docked state.
 
 ## Setup
 
@@ -135,6 +135,7 @@ interface IMarkdownNavigatorWindowConfig {
   toolbarColor?: ThemePalette;
   startAt?: IMarkdownNavigatorItem;
   compareWith?: IMarkdownNavigatorCompareWith;
+  footer?: Type<any>;
 }
 ```
 
