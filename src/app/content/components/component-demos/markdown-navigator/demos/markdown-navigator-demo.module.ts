@@ -12,6 +12,7 @@ import {
   MarkdownNavigatorDemoFooterExampleBComponent,
 } from './markdown-navigator-demo-footer/markdown-navigator-demo-footer.component';
 import { MatListModule } from '@angular/material/list';
+import { MarkdownNavigatorDemoEventsComponent } from './markdown-navigator-demo-events/markdown-navigator-demo-events.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatListModule } from '@angular/material/list';
     MarkdownNavigatorDemoFooterComponent,
     MarkdownNavigatorDemoFooterExampleAComponent,
     MarkdownNavigatorDemoFooterExampleBComponent,
+    MarkdownNavigatorDemoEventsComponent,
   ],
   imports: [
     DemoModule,

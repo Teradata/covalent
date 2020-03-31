@@ -70,6 +70,7 @@
         [content]="markdownString"
         [hostedUrl]="url"
         [anchor]="anchor"
+        (buttonClicked)="buttonClicked.emit($event)"
       ></td-flavored-markdown>
     </div>
     <ng-container *ngComponentOutlet="footerComponent"></ng-container>
