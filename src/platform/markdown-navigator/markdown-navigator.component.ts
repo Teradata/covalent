@@ -256,15 +256,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   goBack(): void {
     if (this.historyStack.length > 1) {
       const parent: IMarkdownNavigatorItem = this.historyStack[this.historyStack.length - 2];
-      if (parent.children && parent.children.length > 0) {
-        // if parent has children, show menu
-        this.currentMenuItems = parent.children;
-        this.currentMarkdownItem = undefined;
-      } else {
-        // else just render markdown
-        this.currentMenuItems = [];
-        this.currentMarkdownItem = parent;
-      }
+      this.currentMarkdownItem = parent;
+      this.currentMenuItems = parent.children;
       this.historyStack = this.historyStack.slice(0, -1);
     } else {
       // one level down just go to root
