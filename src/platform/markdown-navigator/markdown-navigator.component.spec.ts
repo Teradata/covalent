@@ -147,14 +147,11 @@ export const DEEPLY_NESTED_TREE: IMarkdownNavigatorItem[] = [
 export const ITEMS_AT_SAME_LEVEL_AS_MARKDOWN: IMarkdownNavigatorItem[] = [
   {
     title: 'A',
-    markdownString: `
-    # Markdown
-
-    Litty
-    `,
+    markdownString: `A markdown`,
     children: [
       {
         title: 'A1',
+        markdownString: `A1 markdown`,
       },
     ],
   },
@@ -491,10 +488,25 @@ describe('MarkdownNavigatorComponent', () => {
       expect(listItems[1].nativeElement.textContent).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[1].title);
       getItem(fixture, 0).click();
       await wait(fixture);
+
       expect(markdownNavigator.showMenu).toBeTruthy();
       expect(markdownNavigator.showTdMarkdown).toBeTruthy();
       expect(getTitle(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title);
-      expect(getMarkdown(fixture)).toContain('Markdown');
+      expect(getMarkdown(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].markdownString);
+
+      getItem(fixture, 0).click();
+      await wait(fixture);
+
+      expect(markdownNavigator.showMenu).toBeFalsy();
+      expect(markdownNavigator.showTdMarkdown).toBeTruthy();
+      expect(getTitle(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].children[0].title);
+      expect(getMarkdown(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].children[0].markdownString);
+      goBack(fixture);
+
+      expect(markdownNavigator.showMenu).toBeTruthy();
+      expect(markdownNavigator.showTdMarkdown).toBeTruthy();
+      expect(getTitle(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title);
+      expect(getMarkdown(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].markdownString);
     }),
   ));
 
