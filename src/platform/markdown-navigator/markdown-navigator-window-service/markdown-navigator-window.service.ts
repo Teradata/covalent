@@ -1,4 +1,4 @@
-import { Injectable, Inject, RendererFactory2, Renderer2 } from '@angular/core';
+import { Injectable, Inject, RendererFactory2, Renderer2, Type } from '@angular/core';
 import { MatDialogRef, MatDialogConfig, DialogPosition } from '@angular/material/dialog';
 import { ThemePalette } from '@angular/material/core';
 import {
@@ -17,6 +17,7 @@ export interface IMarkdownNavigatorWindowConfig {
   toolbarColor?: ThemePalette;
   startAt?: IMarkdownNavigatorItem;
   compareWith?: IMarkdownNavigatorCompareWith;
+  footer?: Type<any>;
 }
 
 const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-window-dialog';
@@ -91,6 +92,7 @@ export class TdMarkdownNavigatorWindowService {
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';
     this.markdownNavigatorWindowDialogsOpen++;
+    this.markdownNavigatorWindowDialog.componentInstance.footer = config.footer;
     dragRefSubject.subscribe((dragRf: DragRef) => {
       this.dragRef = dragRf;
       this.resizableDraggableDialog = new ResizableDraggableDialog(

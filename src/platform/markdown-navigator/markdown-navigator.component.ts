@@ -8,6 +8,7 @@ import {
   ElementRef,
   ChangeDetectorRef,
   ChangeDetectionStrategy,
+  Type,
 } from '@angular/core';
 import { removeLeadingHash, isAnchorLink, TdMarkdownLoaderService } from '@covalent/markdown';
 
@@ -20,6 +21,7 @@ export interface IMarkdownNavigatorItem {
   children?: IMarkdownNavigatorItem[];
   description?: string;
   icon?: string;
+  footer?: Type<any>;
 }
 
 export interface IMarkdownNavigatorLabels {
@@ -113,6 +115,13 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   @Input() startAt: IMarkdownNavigatorItem;
 
   /**
+   * footer?: Type<any>
+   *
+   * Component to be displayed in footer
+   */
+  @Input() footer: Type<any>;
+
+  /**
    * compareWith?: IMarkdownNavigatorCompareWith
    *
    * Function used to find startAt item
@@ -170,6 +179,13 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       return this.currentMarkdownItem.url;
     }
     return undefined;
+  }
+
+  get footerComponent(): any {
+    if (this.currentMarkdownItem && this.currentMarkdownItem.footer) {
+      return this.currentMarkdownItem.footer;
+    }
+    return this.footer;
   }
   get httpOptions(): object {
     if (this.currentMarkdownItem) {
