@@ -28,7 +28,7 @@ export class MarkdownNavigatorDemoEventsComponent {
       ],
     });
     dialogRef.componentInstance.buttonClicked.subscribe((data: ITdFlavoredMarkdownButtonClickEvent) =>
-      this._snackBar.open(`Button clicked: ${JSON.stringify(data)}`),
+      this._snackBar.open(`Button clicked: ${JSON.stringify(data)}`, undefined, { duration: 2000 }),
     );
   }
 }
