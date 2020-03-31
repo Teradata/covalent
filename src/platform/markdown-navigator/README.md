@@ -18,6 +18,11 @@ A component for rendering and navigating through markdown, such as documentation
 + footer:? Type<any>
   + Custom component to be used as global footer
 
+#### Outputs
+
++ buttonClicked: ITdFlavoredMarkdownButtonClickEvent
+  + Emitted when a button is clicked
+
 For reference:
 
 ```typescript
@@ -97,6 +102,8 @@ A component that contains a MarkdownNavigator component and a toolbar
 
 + closed: void
   + Event emitted when the close button is clicked.
++ buttonClicked: ITdFlavoredMarkdownButtonClickEvent
+  + Emitted when a button is clicked
 
 ## Setup
 
