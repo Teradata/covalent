@@ -11,8 +11,8 @@ export class TdURLRegExpInterceptorMatcher implements ITdHttpInterceptorMatcher 
       mapping.paths.filter((path: string) => {
         path = path
           .replace(/\*\*/gi, '<>')
-          .replace(/\*/gi, '[a-zA-Z0-9\\-_]+')
-          .replace(/<>/gi, '[a-zA-Z0-9\\-_/]*');
+          .replace(/\*/gi, '[^/?]+')
+          .replace(/<>/gi, '[^?]*');
         if (path) {
           path += '(\\?{1}.*)?$';
           return new RegExp(path).test(options.url);
