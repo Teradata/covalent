@@ -33,6 +33,7 @@ interface IMarkdownNavigatorItem {
   markdownString?: string; // raw markdown
   anchor?: string;
   children?: IMarkdownNavigatorItem[];
+  childrenUrl?: string;
   description?: string;
   icon?: string;
   footer?: Type<any>;

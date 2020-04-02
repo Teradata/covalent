@@ -13,6 +13,7 @@ import {
 } from './markdown-navigator-demo-footer/markdown-navigator-demo-footer.component';
 import { MatListModule } from '@angular/material/list';
 import { MarkdownNavigatorDemoEventsComponent } from './markdown-navigator-demo-events/markdown-navigator-demo-events.component';
+import { MarkdownNavigatorDemoChildrenUrlComponent } from './markdown-navigator-demo-children-url/markdown-navigator-demo-children-url.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MarkdownNavigatorDemoEventsComponent } from './markdown-navigator-demo-
     MarkdownNavigatorDemoFooterExampleAComponent,
     MarkdownNavigatorDemoFooterExampleBComponent,
     MarkdownNavigatorDemoEventsComponent,
+    MarkdownNavigatorDemoChildrenUrlComponent,
   ],
   imports: [
     DemoModule,

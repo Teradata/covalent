@@ -10,6 +10,8 @@ import { By } from '@angular/platform-browser';
 import { Component, DebugElement, Type } from '@angular/core';
 import { CovalentMarkdownNavigatorModule } from './markdown-navigator.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
@@ -76,6 +78,15 @@ const ITEMS_WITH_FOOTERS: IMarkdownNavigatorItem[] = [
   },
   {
     markdownString: `Global Footer`,
+  },
+];
+
+const CHILDREN_URL: string = 'https://samplechildrenurl.com';
+
+const ITEMS_WITH_CHILDREN_URL: IMarkdownNavigatorItem[] = [
+  {
+    title: 'Children url',
+    childrenUrl: CHILDREN_URL,
   },
 ];
 
@@ -288,11 +299,17 @@ class TdMarkdownNavigatorTestComponent {
 }
 
 describe('MarkdownNavigatorComponent', () => {
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TdMarkdownNavigatorTestComponent],
-      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
+      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule, HttpClientTestingModule],
     }).compileComponents();
+
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
   }));
 
   it('should render empty state when an empty array is passed into items', async(
@@ -358,6 +375,42 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showMenu).toBeFalsy();
       expect(markdownNavigator.showTdMarkdown).toBeTruthy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
+    }),
+  ));
+
+  it('should fetch childrenUrl and render', async(
+    inject([], async () => {
+      const itemATitle: string = 'fetched item A';
+      const itemBTitle: string = 'fetched item B';
+
+      const testData: IMarkdownNavigatorItem[] = [{ title: itemATitle }, { title: itemBTitle }];
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = ITEMS_WITH_CHILDREN_URL;
+      await wait(fixture);
+
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
+      ).componentInstance;
+
+      expect(markdownNavigator.showMenu).toBeTruthy();
+      expect(markdownNavigator.showTdMarkdown).toBeFalsy();
+
+      getItem(fixture, 0).click();
+      const req: TestRequest = httpTestingController.expectOne(CHILDREN_URL);
+      req.flush(testData);
+
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(markdownNavigator.showMenu).toBeTruthy();
+      expect(markdownNavigator.showTdMarkdown).toBeFalsy();
+      expect(getItem(fixture, 0).textContent).toContain(itemATitle);
+      expect(getItem(fixture, 1).textContent).toContain(itemBTitle);
+
+      httpTestingController.verify();
     }),
   ));
 
