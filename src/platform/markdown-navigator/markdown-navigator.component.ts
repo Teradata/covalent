@@ -146,6 +146,9 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   loading: boolean = false;
 
+  markdownLoaderError: string;
+  childrenUrlError: string;
+
   constructor(
     private _markdownUrlLoaderService: TdMarkdownLoaderService,
     private _changeDetectorRef: ChangeDetectorRef,
@@ -254,9 +257,14 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   hasChildrenOrChildrenUrl(item: IMarkdownNavigatorItem): boolean {
     return (item.children && item.children.length > 0) || !!item.childrenUrl;
   }
+  clearErrors(): void {
+    this.markdownLoaderError = undefined;
+    this.childrenUrlError = undefined;
+  }
 
   reset(): void {
     this.loading = false;
+    this.clearErrors();
     // if single item and no children
     if (this.items && this.items.length === 1 && !this.hasChildrenOrChildrenUrl(this.items[0])) {
       this.currentMenuItems = [];
@@ -271,6 +279,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   goBack(): void {
     this.loading = false;
+    this.clearErrors();
     if (this.historyStack.length > 1) {
       const parent: IMarkdownNavigatorItem = this.historyStack[this.historyStack.length - 2];
       this.currentMarkdownItem = parent;
@@ -284,6 +293,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   handleItemSelected(item: IMarkdownNavigatorItem): void {
+    this.clearErrors();
     this.currentMarkdownItem = item;
     this.historyStack = [...this.historyStack, item];
     this.setChildrenAsCurrentMenuItems(item);
@@ -320,7 +330,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       return await this._http
         .get<IMarkdownNavigatorItem[]>(sanitizedUrl, { ...item.httpOptions })
         .toPromise();
-    } catch {
+    } catch (error) {
+      this.handleChildrenUrlError(error);
       return [];
     }
   }
@@ -341,6 +352,15 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     if (item) {
       return item.icon || 'subject';
     }
+  }
+
+  handleChildrenUrlError(error: Error): void {
+    this.childrenUrlError = error.message;
+    this._changeDetectorRef.markForCheck();
+  }
+  handleMarkdownLoaderError(error: Error): void {
+    this.markdownLoaderError = error.message;
+    this._changeDetectorRef.markForCheck();
   }
 
   private _jumpTo(item: IMarkdownNavigatorItem): void {

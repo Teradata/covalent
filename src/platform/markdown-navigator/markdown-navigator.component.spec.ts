@@ -414,6 +414,98 @@ describe('MarkdownNavigatorComponent', () => {
     }),
   ));
 
+  it('should show proper error messages', async(
+    inject([], async () => {
+      const invalidMarkdownUrl: string = 'https://invalid_markdown_url.com';
+      const invalidChildrenUrl: string = 'https://invalid_children_url.com';
+      const ITEMS_WITH_ERRORS: IMarkdownNavigatorItem[] = [
+        {
+          title: 'Invalid markdown url',
+          url: invalidMarkdownUrl,
+          children: [
+            {
+              title: 'Invalid children url',
+              childrenUrl: invalidChildrenUrl,
+            },
+          ],
+        },
+        { title: 'Invalid markdown and children url', url: invalidMarkdownUrl, childrenUrl: invalidChildrenUrl },
+      ];
+      const invalidMarkdownUrlOptions: object = { status: 404, statusText: 'Not Found' };
+      const message: string = 'Failed :(';
+      function getMarkdownLoaderError(): HTMLElement {
+        return (fixture.debugElement.query(By.css('[data-test="markdown-loader-error"]')) || {}).nativeElement;
+      }
+      function getChildrenUrlError(): HTMLElement {
+        return (fixture.debugElement.query(By.css('[data-test="children-url-error"]')) || {}).nativeElement;
+      }
+
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+      fixture.componentInstance.items = ITEMS_WITH_ERRORS;
+
+      await wait(fixture);
+      getItem(fixture, 0).click();
+      await wait(fixture);
+
+      const invalidMarkdownUrlRequest: TestRequest = httpTestingController.expectOne(invalidMarkdownUrl);
+      invalidMarkdownUrlRequest.flush(message, invalidMarkdownUrlOptions);
+
+      await wait(fixture);
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(getMarkdownLoaderError()).toBeTruthy();
+      expect(getMarkdownLoaderError().textContent).toContain('Not Found');
+
+      getItem(fixture, 0).click();
+      const invalidChildrenUrlRequest: TestRequest = httpTestingController.expectOne(invalidChildrenUrl);
+      invalidChildrenUrlRequest.flush(message, invalidMarkdownUrlOptions);
+
+      await wait(fixture);
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(getMarkdownLoaderError()).toBeFalsy();
+      expect(getChildrenUrlError()).toBeTruthy();
+      goBack(fixture);
+
+      const invalidMarkdownUrlRequest2: TestRequest = httpTestingController.expectOne(invalidMarkdownUrl);
+      invalidMarkdownUrlRequest2.flush(message, invalidMarkdownUrlOptions);
+
+      await wait(fixture);
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(getMarkdownLoaderError()).toBeTruthy();
+      expect(getChildrenUrlError()).toBeFalsy();
+
+      goBack(fixture);
+      getItem(fixture, 1).click();
+      await wait(fixture);
+
+      const invalidMarkdownUrlRequest3: TestRequest = httpTestingController.expectOne(invalidMarkdownUrl);
+      invalidMarkdownUrlRequest3.flush(message, invalidMarkdownUrlOptions);
+      const invalidChildrenUrlRequest2: TestRequest = httpTestingController.expectOne(invalidChildrenUrl);
+      invalidChildrenUrlRequest2.flush(message, invalidMarkdownUrlOptions);
+
+      await wait(fixture);
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(getMarkdownLoaderError()).toBeTruthy();
+      expect(getChildrenUrlError()).toBeTruthy();
+
+      goBack(fixture);
+
+      expect(getMarkdownLoaderError()).toBeFalsy();
+      expect(getChildrenUrlError()).toBeFalsy();
+
+      httpTestingController.verify();
+    }),
+  ));
+
   it('should render one url item from GitHub', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
