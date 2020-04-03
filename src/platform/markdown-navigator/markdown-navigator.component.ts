@@ -274,8 +274,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     if (this.historyStack.length > 1) {
       const parent: IMarkdownNavigatorItem = this.historyStack[this.historyStack.length - 2];
       this.currentMarkdownItem = parent;
-      this.setChildrenAsCurrentMenuItems(parent);
       this.historyStack = this.historyStack.slice(0, -1);
+      this.setChildrenAsCurrentMenuItems(parent);
     } else {
       // one level down just go to root
       this.reset();
@@ -284,9 +284,9 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   handleItemSelected(item: IMarkdownNavigatorItem): void {
+    this.currentMarkdownItem = item;
     this.historyStack = [...this.historyStack, item];
     this.setChildrenAsCurrentMenuItems(item);
-    this.currentMarkdownItem = item;
     this._changeDetectorRef.markForCheck();
   }
 
@@ -295,14 +295,18 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     this.loading = true;
     this._changeDetectorRef.markForCheck();
 
-    const itemToVerifyWith: IMarkdownNavigatorItem = this.historyStack[0];
+    const stackSnapshot: IMarkdownNavigatorItem[] = this.historyStack;
     let children: IMarkdownNavigatorItem[] = [];
     if (item.children) {
       children = item.children;
     } else if (item.childrenUrl) {
       children = await this.loadChildrenUrl(item);
     }
-    if (this.historyStack[0] === itemToVerifyWith) {
+    const newStackSnapshot: IMarkdownNavigatorItem[] = this.historyStack;
+    if (
+      stackSnapshot.length === newStackSnapshot.length &&
+      stackSnapshot.every((stackItem: IMarkdownNavigatorItem, index: number) => stackItem === newStackSnapshot[index])
+    ) {
       this.currentMenuItems = children;
     }
 
