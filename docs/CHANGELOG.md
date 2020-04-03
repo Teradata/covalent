@@ -1,3 +1,13 @@
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/teradata/covalent/compare/v3.0.0...v3.0.1) (2020-04-03)
+
+
+### Bug Fixes
+
+* **http:** accept special chars in path intercepting regex ([#1726](https://github.com/teradata/covalent/issues/1726)) ([5c8bdba](https://github.com/teradata/covalent/commit/5c8bdba))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/teradata/covalent/compare/v3.0.0-rc.2...v3.0.0) (2020-03-23)
 
