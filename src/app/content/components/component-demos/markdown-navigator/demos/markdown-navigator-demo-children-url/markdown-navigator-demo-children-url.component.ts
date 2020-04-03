@@ -10,7 +10,7 @@ export class MarkdownNavigatorDemoChildrenUrlComponent {
   items: IMarkdownNavigatorItem[] = [
     {
       title: '🔥',
-      childrenUrl: 'https://api.myjson.com/bins/aqnfk',
+      childrenUrl: '/assets/demos-data/children_url.json',
     },
   ];
 }
