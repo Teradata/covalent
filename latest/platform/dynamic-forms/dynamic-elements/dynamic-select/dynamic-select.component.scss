@@ -1,0 +1,12 @@
+.td-dynamic-select-wrapper {
+  // [layout="row"]
+  flex-direction: row;
+  // [layout]
+  display: flex;
+  box-sizing: border-box;
+  .td-dynamic-select-field {
+    // [flex]
+    flex: 1;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,90 @@
+$step-circle: 24px;
+
+.td-step-header {
+  position: relative;
+  outline: none;
+  min-width: 120px;
+  height: 72px;
+  // layout row
+  flex-direction: row;
+  // layout
+  box-sizing: border-box;
+  display: flex;
+  // flex
+  flex: 1;
+  // layout-align start
+  justify-content: flex-start;
+  // layout-align start center
+  align-items: center;
+  align-content: center;
+  max-width: 100%;
+  &:hover:not(.mat-disabled) {
+    cursor: pointer;
+  }
+  mat-icon.td-edit-icon {
+    margin: 0 8px;
+  }
+  mat-icon {
+    &.mat-warn {
+      font-size: $step-circle;
+      height: $step-circle;
+      width: $step-circle;
+    }
+    &.mat-complete {
+      position: relative;
+      left: -2px;
+      top: 2px;
+      font-size: $step-circle + 4;
+      height: $step-circle;
+      width: $step-circle;
+    }
+  }
+  .td-circle {
+    height: $step-circle;
+    width: $step-circle;
+    line-height: $step-circle;
+    border-radius: 99%;
+    text-align: center;
+    flex: none;
+    & mat-icon {
+      margin-top: 2px;
+      font-weight: bold;
+    }
+  }
+  .td-triangle {
+    & > mat-icon {
+      font-size: 25px;
+    }
+  }
+  .td-complete {
+    font-size: 0;
+  }
+  .td-circle,
+  .td-triangle,
+  .td-complete {
+    ::ng-deep :not([dir='rtl']) & {
+      margin: {
+        left: 8px;
+        right: 0;
+      }
+    }
+    ::ng-deep [dir='rtl'] & {
+      margin: {
+        left: 0;
+        right: 8px;
+      }
+    }
+  }
+  .td-circle,
+  .td-complete {
+    font-size: 14px;
+  }
+  .td-step-label-wrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .td-step-header-separator {
+    flex: 1;
+    box-sizing: border-box;
+  }
+}

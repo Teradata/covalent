@@ -1,0 +1,34 @@
+<form [formGroup]="dynamicForm" novalidate>
+  <div class="td-dynamic-form-wrapper">
+    <ng-template let-element ngFor [ngForOf]="elements">
+      <div
+        class="td-dynamic-element-wrapper"
+        [style.max-width.%]="element.flex ? element.flex : 100"
+        [style.flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
+        [style.-ms-flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
+        [style.-webkit-box-flex]="1"
+      >
+        <td-dynamic-element
+          #dynamicElement
+          *ngIf="dynamicForm.controls[element.name]"
+          [formControlName]="element.name"
+          [dynamicControl]="dynamicForm.controls[element.name]"
+          [id]="element.name"
+          [name]="element.name"
+          [label]="element.label || element.name"
+          [hint]="element.hint"
+          [type]="element.type"
+          [required]="element.required"
+          [min]="element.min"
+          [max]="element.max"
+          [minLength]="element.minLength"
+          [maxLength]="element.maxLength"
+          [selections]="element.selections"
+          [multiple]="element.multiple"
+          [errorMessageTemplate]="getErrorTemplateRef(element.name)"
+        ></td-dynamic-element>
+      </div>
+    </ng-template>
+  </div>
+  <ng-content></ng-content>
+</form>

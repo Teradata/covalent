@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  ::ng-deep {
+    // Ensuring sidenav content has flex column properties
+    & > mat-sidenav-container .mat-drawer > .mat-drawer-inner-container {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

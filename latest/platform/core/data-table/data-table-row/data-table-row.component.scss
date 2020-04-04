@@ -1,0 +1,12 @@
+:host {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+:host.td-data-table-row {
+  height: 48px;
+}
+
+:host.td-data-table-column-row {
+  height: 56px;
+}

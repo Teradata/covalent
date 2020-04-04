@@ -1,0 +1,36 @@
+@mixin push($direction: '') {
+  .push#{$direction} {
+    margin#{$direction}: 16px;
+  }
+  .push#{$direction}-xxl {
+    margin#{$direction}: 56px;
+  }
+  .push#{$direction}-xl {
+    margin#{$direction}: 48px;
+  }
+  .push#{$direction}-lg {
+    margin#{$direction}: 32px;
+  }
+  .push#{$direction}-md {
+    margin#{$direction}: 24px;
+  }
+  .push#{$direction}-sm {
+    margin#{$direction}: 8px;
+  }
+  .push#{$direction}-xs {
+    margin#{$direction}: 4px;
+  }
+  .push#{$direction}-none {
+    margin#{$direction}: 0;
+  }
+}
+
+@mixin td-pushing-utilities() {
+  body {
+    @include push();
+    @include push(-bottom);
+    @include push(-top);
+    @include push(-left);
+    @include push(-right);
+  }
+}

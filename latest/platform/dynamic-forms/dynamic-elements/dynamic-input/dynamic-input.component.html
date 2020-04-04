@@ -1,0 +1,24 @@
+<div class="td-dynamic-input-wrapper">
+  <mat-form-field class="td-dynamic-input-field">
+    <input
+      #elementInput
+      matInput
+      [formControl]="control"
+      [placeholder]="label"
+      [type]="type"
+      [required]="required"
+      [attr.name]="name"
+      [attr.min]="min"
+      [attr.max]="max"
+      [attr.minLength]="minLength"
+      [attr.maxLength]="maxLength"
+    />
+    <mat-hint>{{ hint }}</mat-hint>
+    <mat-error>
+      <ng-template
+        [ngTemplateOutlet]="errorMessageTemplate"
+        [ngTemplateOutletContext]="{ control: control, errors: control?.errors }"
+      ></ng-template>
+    </mat-error>
+  </mat-form-field>
+</div>
