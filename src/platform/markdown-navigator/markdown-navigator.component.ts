@@ -11,9 +11,12 @@ import {
   Type,
   Output,
   EventEmitter,
+  SecurityContext,
 } from '@angular/core';
 import { removeLeadingHash, isAnchorLink, TdMarkdownLoaderService } from '@covalent/markdown';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import { DomSanitizer } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 
 export interface IMarkdownNavigatorItem {
   title?: string;
@@ -22,6 +25,7 @@ export interface IMarkdownNavigatorItem {
   markdownString?: string; // raw markdown
   anchor?: string;
   children?: IMarkdownNavigatorItem[];
+  childrenUrl?: string;
   description?: string;
   icon?: string;
   footer?: Type<any>;
@@ -142,9 +146,14 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   loading: boolean = false;
 
+  markdownLoaderError: string;
+  childrenUrlError: string;
+
   constructor(
     private _markdownUrlLoaderService: TdMarkdownLoaderService,
     private _changeDetectorRef: ChangeDetectorRef,
+    private _sanitizer: DomSanitizer,
+    private _http: HttpClient,
   ) {}
 
   @HostListener('click', ['$event'])
@@ -245,9 +254,19 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     }
   }
 
+  hasChildrenOrChildrenUrl(item: IMarkdownNavigatorItem): boolean {
+    return (item.children && item.children.length > 0) || !!item.childrenUrl;
+  }
+  clearErrors(): void {
+    this.markdownLoaderError = undefined;
+    this.childrenUrlError = undefined;
+  }
+
   reset(): void {
+    this.loading = false;
+    this.clearErrors();
     // if single item and no children
-    if (this.items && this.items.length === 1 && (!this.items[0].children || this.items[0].children.length === 0)) {
+    if (this.items && this.items.length === 1 && !this.hasChildrenOrChildrenUrl(this.items[0])) {
       this.currentMenuItems = [];
       this.currentMarkdownItem = this.items[0];
     } else {
@@ -259,11 +278,13 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   goBack(): void {
+    this.loading = false;
+    this.clearErrors();
     if (this.historyStack.length > 1) {
       const parent: IMarkdownNavigatorItem = this.historyStack[this.historyStack.length - 2];
       this.currentMarkdownItem = parent;
-      this.currentMenuItems = parent.children;
       this.historyStack = this.historyStack.slice(0, -1);
+      this.setChildrenAsCurrentMenuItems(parent);
     } else {
       // one level down just go to root
       this.reset();
@@ -272,10 +293,47 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   handleItemSelected(item: IMarkdownNavigatorItem): void {
-    this.historyStack = [...this.historyStack, item];
-    this.currentMenuItems = item.children;
+    this.clearErrors();
     this.currentMarkdownItem = item;
+    this.historyStack = [...this.historyStack, item];
+    this.setChildrenAsCurrentMenuItems(item);
     this._changeDetectorRef.markForCheck();
+  }
+
+  async setChildrenAsCurrentMenuItems(item: IMarkdownNavigatorItem): Promise<void> {
+    this.currentMenuItems = [];
+    this.loading = true;
+    this._changeDetectorRef.markForCheck();
+
+    const stackSnapshot: IMarkdownNavigatorItem[] = this.historyStack;
+    let children: IMarkdownNavigatorItem[] = [];
+    if (item.children) {
+      children = item.children;
+    } else if (item.childrenUrl) {
+      children = await this.loadChildrenUrl(item);
+    }
+    const newStackSnapshot: IMarkdownNavigatorItem[] = this.historyStack;
+    if (
+      stackSnapshot.length === newStackSnapshot.length &&
+      stackSnapshot.every((stackItem: IMarkdownNavigatorItem, index: number) => stackItem === newStackSnapshot[index])
+    ) {
+      this.currentMenuItems = children;
+    }
+
+    this.loading = false;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  async loadChildrenUrl(item: IMarkdownNavigatorItem): Promise<IMarkdownNavigatorItem[]> {
+    const sanitizedUrl: string = this._sanitizer.sanitize(SecurityContext.URL, item.childrenUrl);
+    try {
+      return await this._http
+        .get<IMarkdownNavigatorItem[]>(sanitizedUrl, { ...item.httpOptions })
+        .toPromise();
+    } catch (error) {
+      this.handleChildrenUrlError(error);
+      return [];
+    }
   }
 
   getTitle(item: IMarkdownNavigatorItem): string {
@@ -294,6 +352,15 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     if (item) {
       return item.icon || 'subject';
     }
+  }
+
+  handleChildrenUrlError(error: Error): void {
+    this.childrenUrlError = error.message;
+    this._changeDetectorRef.markForCheck();
+  }
+  handleMarkdownLoaderError(error: Error): void {
+    this.markdownLoaderError = error.message;
+    this._changeDetectorRef.markForCheck();
   }
 
   private _jumpTo(item: IMarkdownNavigatorItem): void {

@@ -35,6 +35,13 @@
   </ng-container>
 
   <div class="scroll-area">
+    <td-message
+      *ngIf="childrenUrlError"
+      [sublabel]="childrenUrlError"
+      color="warn"
+      icon="error"
+      [attr.data-test]="'children-url-error'"
+    ></td-message>
     <div *ngIf="showMenu" class="td-markdown-list">
       <mat-action-list>
         <button
@@ -58,11 +65,19 @@
     </div>
 
     <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
+      <td-message
+        *ngIf="markdownLoaderError"
+        [sublabel]="markdownLoaderError"
+        color="warn"
+        icon="error"
+        [attr.data-test]="'markdown-loader-error'"
+      ></td-message>
       <td-flavored-markdown-loader
         *ngIf="showTdMarkdownLoader"
         [url]="url"
         [httpOptions]="httpOptions"
         [anchor]="anchor"
+        (loadFailed)="handleMarkdownLoaderError($event)"
       ></td-flavored-markdown-loader>
 
       <td-flavored-markdown
@@ -77,7 +92,7 @@
   </div>
 </ng-container>
 
-<div *ngIf="showEmptyState" layout="column" layout-align="center center" class=" empty-state">
+<div *ngIf="showEmptyState" layout="column" layout-align="center center" class="empty-state">
   <mat-icon matListAvatar>subject</mat-icon>
   <h2>{{ emptyStateLabel }}</h2>
 </div>
