@@ -1,3 +1,33 @@
+<a name="3.1.0-beta.1"></a>
+# [3.1.0-beta.1](https://github.com/teradata/covalent/compare/v3.0.0...v3.1.0-beta.1) (2020-04-04)
+
+
+### Bug Fixes
+
+* **http:** accept special chars in path intercepting regex ([#1726](https://github.com/teradata/covalent/issues/1726)) ([43c47f1](https://github.com/teradata/covalent/commit/43c47f1))
+* **markdown-nav:** go back functionality ([#1720](https://github.com/teradata/covalent/issues/1720)) ([6f279c3](https://github.com/teradata/covalent/commit/6f279c3))
+
+
+### Features
+
+* **flavored-markdown:** render buttons ([#1715](https://github.com/teradata/covalent/issues/1715)) ([d0c658d](https://github.com/teradata/covalent/commit/d0c658d))
+* **markdown-nav:** add children url property ([#1727](https://github.com/teradata/covalent/issues/1727)) ([41ad8b2](https://github.com/teradata/covalent/commit/41ad8b2))
+* **markdown-nav:** add footer support ([#1713](https://github.com/teradata/covalent/issues/1713)) ([a87cebf](https://github.com/teradata/covalent/commit/a87cebf))
+* **markdown-nav:** create window dialog component ([#1712](https://github.com/teradata/covalent/issues/1712)) ([0ed6a24](https://github.com/teradata/covalent/commit/0ed6a24))
+* **markdown-nav:** expose button click events ([#1718](https://github.com/teradata/covalent/issues/1718)) ([9d770f1](https://github.com/teradata/covalent/commit/9d770f1))
+* **markdown-nav:** support descriptions and icons ([#1687](https://github.com/teradata/covalent/issues/1687)) ([0386897](https://github.com/teradata/covalent/commit/0386897))
+* **md-nav:** render md and list at same level ([#1689](https://github.com/teradata/covalent/issues/1689)) ([460f5d3](https://github.com/teradata/covalent/commit/460f5d3))
+
+
+<a name="3.0.1"></a>
+# [3.0.1](https://github.com/teradata/covalent/compare/v3.0.0...v3.0.1) (2020-04-04)
+
+
+### Bug Fixes
+
+* **http:** accept special chars in path intercepting regex ([#1726](https://github.com/teradata/covalent/issues/1726)) ([43c47f1](https://github.com/teradata/covalent/commit/43c47f1))
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/teradata/covalent/compare/v3.0.0-rc.2...v3.0.0) (2020-03-23)
 
