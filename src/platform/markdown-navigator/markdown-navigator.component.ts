@@ -19,6 +19,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
 export interface IMarkdownNavigatorItem {
+  id?: string;
   title?: string;
   url?: string;
   httpOptions?: object;
@@ -71,6 +72,9 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
   return !isAnchorLink(anchor) && anchor.pathname.endsWith('.md');
 }
 function defaultCompareWith(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem): boolean {
+  if (o1.id && o2.id) {
+    return o1.id === o2.id;
+  }
   return o1 === o2;
 }
 

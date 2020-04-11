@@ -27,6 +27,7 @@ For reference:
 
 ```typescript
 interface IMarkdownNavigatorItem {
+  id?: string; // used to compare items by default and as attr id for content
   title?: string;
   url?: string;
   httpOptions?: object;
@@ -59,12 +60,15 @@ export class MyModule {}
 ```typescript
 const items = [
   {
+    id: 'covalent',
     title: 'Covalent',
     children: [
       {
+        id: 'component',
         title: 'Components',
         children: [
           {
+            id: 'td-loading',
             url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
             title: 'tdLoading'
           }
