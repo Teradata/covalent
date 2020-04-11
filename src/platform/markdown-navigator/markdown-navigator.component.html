@@ -4,6 +4,7 @@
   <ng-container *ngIf="showHeader">
     <div [style.display]="'flex'">
       <button
+        id="td-markdown-navigator-home-button"
         *ngIf="showHomeButton"
         mat-icon-button
         [matTooltip]="goHomeLabel"
@@ -16,6 +17,7 @@
       </button>
 
       <button
+        id="td-markdown-navigator-back-button"
         *ngIf="showGoBackButton"
         mat-icon-button
         [matTooltip]="goBackLabel"
@@ -34,7 +36,7 @@
     <mat-divider [style.position]="'relative'"></mat-divider>
   </ng-container>
 
-  <div class="scroll-area">
+  <div class="scroll-area" id="td-markdown-navigator-content">
     <td-message
       *ngIf="childrenUrlError"
       [sublabel]="childrenUrlError"
@@ -45,7 +47,8 @@
     <div *ngIf="showMenu" class="td-markdown-list">
       <mat-action-list>
         <button
-          *ngFor="let item of currentMenuItems"
+          *ngFor="let item of currentMenuItems; index as index"
+          [id]="'td-markdown-navigator-list-item-' + (item.id ? item.id : index)"
           (click)="handleItemSelected(item)"
           mat-list-item
           [matTooltip]="getTitle(item)"
