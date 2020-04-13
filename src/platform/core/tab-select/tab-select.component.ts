@@ -11,10 +11,13 @@ import {
   Output,
   EventEmitter,
   OnDestroy,
+  ViewChild,
+  ElementRef,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ThemePalette } from '@angular/material/core';
+import { MatTabGroup } from '@angular/material/tabs';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import {
@@ -26,7 +29,8 @@ import {
   mixinDisableRipple,
 } from '@covalent/core/common';
 
-import { Subscription } from 'rxjs';
+import { timer, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 import { TdTabOptionComponent } from './tab-option.component';
 
@@ -54,11 +58,14 @@ export const _TdTabSelectMixinBase = mixinControlValueAccessor(mixinDisabled(mix
 })
 export class TdTabSelectComponent extends _TdTabSelectMixinBase
   implements IControlValueAccessor, ICanDisable, ICanDisableRipple, OnInit, AfterContentInit, OnDestroy {
-  private _subs: Subscription[] = [];
+  private _destroy: Subject<boolean> = new Subject<boolean>();
+  private _widthSubject: Subject<number> = new Subject<number>();
 
   private _values: any[] = [];
   private _selectedIndex: number = 0;
   private _stretchTabs: boolean = false;
+
+  @ViewChild(MatTabGroup, { static: true }) _matTabGroup: MatTabGroup;
 
   get selectedIndex(): number {
     return this._selectedIndex;
@@ -100,27 +107,39 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
    */
   @Output() readonly valueChange: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(_changeDetectorRef: ChangeDetectorRef) {
+  constructor(_changeDetectorRef: ChangeDetectorRef, private _elementRef: ElementRef) {
     super(_changeDetectorRef);
   }
 
   ngOnInit(): void {
+    // set a timer to check every 250ms if the width has changed.
+    // if the width has changed, then we realign the ink bar
+    this._widthSubject
+      .asObservable()
+      .pipe(takeUntil(this._destroy), distinctUntilChanged(), debounceTime(100))
+      .subscribe(() => {
+        this._matTabGroup.realignInkBar();
+        this._changeDetectorRef.markForCheck();
+      });
+    timer(500, 250)
+      .pipe(takeUntil(this._destroy))
+      .subscribe(() => {
+        if (this._elementRef && this._elementRef.nativeElement) {
+          this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
+        }
+      });
     // subscribe to check if value changes and update the selectedIndex internally.
-    this._subs.push(
-      this.valueChanges.subscribe((value: any) => {
-        this._setValue(value);
-      }),
-    );
+    this.valueChanges.pipe(takeUntil(this._destroy)).subscribe((value: any) => {
+      this._setValue(value);
+    });
   }
 
   ngAfterContentInit(): void {
     // subscribe to listen to any tab changes.
     this._refreshValues();
-    this._subs.push(
-      this._tabOptions.changes.subscribe(() => {
-        this._refreshValues();
-      }),
-    );
+    this._tabOptions.changes.pipe(takeUntil(this._destroy)).subscribe(() => {
+      this._refreshValues();
+    });
     // initialize value
     Promise.resolve().then(() => {
       this._setValue(this.value);
@@ -128,11 +147,8 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
   }
 
   ngOnDestroy(): void {
-    if (this._subs && this._subs.length) {
-      this._subs.forEach((sub: Subscription) => {
-        sub.unsubscribe();
-      });
-    }
+    this._destroy.next(true);
+    this._destroy.unsubscribe();
   }
 
   /**
