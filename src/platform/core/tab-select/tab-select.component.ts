@@ -13,6 +13,7 @@ import {
   OnDestroy,
   ViewChild,
   ElementRef,
+  NgZone,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -107,27 +108,32 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
    */
   @Output() readonly valueChange: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(_changeDetectorRef: ChangeDetectorRef, private _elementRef: ElementRef) {
+  constructor(_changeDetectorRef: ChangeDetectorRef, private _ngZone: NgZone, private _elementRef: ElementRef) {
     super(_changeDetectorRef);
   }
 
   ngOnInit(): void {
     // set a timer to check every 250ms if the width has changed.
     // if the width has changed, then we realign the ink bar
-    this._widthSubject
-      .asObservable()
-      .pipe(takeUntil(this._destroy), distinctUntilChanged(), debounceTime(100))
-      .subscribe(() => {
-        this._matTabGroup.realignInkBar();
-        this._changeDetectorRef.markForCheck();
-      });
-    timer(500, 250)
-      .pipe(takeUntil(this._destroy))
-      .subscribe(() => {
-        if (this._elementRef && this._elementRef.nativeElement) {
-          this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
-        }
-      });
+    this._ngZone.runOutsideAngular(() => {
+      this._widthSubject
+        .asObservable()
+        .pipe(takeUntil(this._destroy), distinctUntilChanged(), debounceTime(100))
+        .subscribe(() => {
+          this._ngZone.run(() => {
+            this._matTabGroup.realignInkBar();
+            this._changeDetectorRef.markForCheck();
+          });
+        });
+      timer(500, 250)
+        .pipe(takeUntil(this._destroy))
+        .subscribe(() => {
+          if (this._elementRef && this._elementRef.nativeElement) {
+            this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
+          }
+        });
+    });
+
     // subscribe to check if value changes and update the selectedIndex internally.
     this.valueChanges.pipe(takeUntil(this._destroy)).subscribe((value: any) => {
       this._setValue(value);
