@@ -8,22 +8,24 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { MatButtonModule } from '@angular/material/button';
 import {
   MarkdownNavigatorDemoFooterComponent,
-  MarkdownNavigatorDemoFooterExampleAComponent,
-  MarkdownNavigatorDemoFooterExampleBComponent,
+  MarkdownNavigatorDemoFooterGlobalExampleComponent,
+  MarkdownNavigatorDemoFooterItemExampleComponent,
 } from './markdown-navigator-demo-footer/markdown-navigator-demo-footer.component';
 import { MatListModule } from '@angular/material/list';
-import { MarkdownNavigatorDemoEventsComponent } from './markdown-navigator-demo-events/markdown-navigator-demo-events.component';
 import { MarkdownNavigatorDemoChildrenUrlComponent } from './markdown-navigator-demo-children-url/markdown-navigator-demo-children-url.component';
+import { MarkdownNavigatorDemoButtonClickedComponent } from './markdown-navigator-demo-button-clicked/markdown-navigator-demo-button-clicked.component';
+import { MarkdownNavigatorDemoServiceButtonClickedComponent } from './markdown-navigator-demo-service-button-clicked/markdown-navigator-demo-service-button-clicked.component';
 
 @NgModule({
   declarations: [
     MarkdownNavigatorDemoComponent,
     MarkdownNavigatorDemoBasicComponent,
     MarkdownNavigatorDemoFooterComponent,
-    MarkdownNavigatorDemoFooterExampleAComponent,
-    MarkdownNavigatorDemoFooterExampleBComponent,
-    MarkdownNavigatorDemoEventsComponent,
+    MarkdownNavigatorDemoFooterGlobalExampleComponent,
+    MarkdownNavigatorDemoFooterItemExampleComponent,
+    MarkdownNavigatorDemoServiceButtonClickedComponent,
     MarkdownNavigatorDemoChildrenUrlComponent,
+    MarkdownNavigatorDemoButtonClickedComponent,
   ],
   imports: [
     DemoModule,
