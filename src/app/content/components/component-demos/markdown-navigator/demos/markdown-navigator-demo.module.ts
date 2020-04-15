@@ -17,6 +17,7 @@ import { MarkdownNavigatorDemoButtonClickedComponent } from './markdown-navigato
 import { MarkdownNavigatorDemoServiceButtonClickedComponent } from './markdown-navigator-demo-service-button-clicked/markdown-navigator-demo-service-button-clicked.component';
 import { MarkdownNavigatorDemoDirectiveComponent } from './markdown-navigator-demo-directive/markdown-navigator-demo-directive.component';
 import { MarkdownNavigatorDemoServiceComponent } from './markdown-navigator-demo-service/markdown-navigator-demo-service.component';
+import { MarkdownNavigatorDemoWindowComponent } from './markdown-navigator-demo-window/markdown-navigator-demo-window.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MarkdownNavigatorDemoServiceComponent } from './markdown-navigator-demo
     MarkdownNavigatorDemoButtonClickedComponent,
     MarkdownNavigatorDemoDirectiveComponent,
     MarkdownNavigatorDemoServiceComponent,
+    MarkdownNavigatorDemoWindowComponent,
   ],
   imports: [
     DemoModule,
