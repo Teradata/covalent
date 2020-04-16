@@ -21,11 +21,14 @@ import { MarkdownNavigatorDemoStartAtComponent } from './markdown-navigator-demo
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
 import { MarkdownNavigatorDemoAnchorComponent } from './markdown-navigator-demo-anchor/markdown-navigator-demo-anchor.component';
+import { MarkdownNavigatorBasicSharedModule } from './markdown-navigator-demo-basic/markdown-navigator-demo-basic-shared';
+import { MarkdownNavigatorDemoEditorComponent } from './markdown-navigator-demo-editor/markdown-navigator-demo-editor.component';
+import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
     MarkdownNavigatorDemoComponent,
-    MarkdownNavigatorDemoBasicComponent,
     MarkdownNavigatorDemoFooterComponent,
     MarkdownNavigatorDemoFooterGlobalExampleComponent,
     MarkdownNavigatorDemoFooterItemExampleComponent,
@@ -36,17 +39,21 @@ import { MarkdownNavigatorDemoAnchorComponent } from './markdown-navigator-demo-
     MarkdownNavigatorDemoServiceComponent,
     MarkdownNavigatorDemoStartAtComponent,
     MarkdownNavigatorDemoAnchorComponent,
+    MarkdownNavigatorDemoEditorComponent,
   ],
   imports: [
     DemoModule,
     MarkdownNavigatorDemoRoutingModule,
+    MarkdownNavigatorBasicSharedModule,
     /** Covalent Modules */
     CovalentMarkdownNavigatorModule,
+    CovalentCodeEditorModule,
     /** Angular Modules */
     CommonModule,
     MatButtonModule,
     MatListModule,
     MatButtonToggleModule,
+    MatSlideToggleModule,
     FormsModule,
   ],
 })
