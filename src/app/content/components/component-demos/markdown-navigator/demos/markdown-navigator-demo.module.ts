@@ -17,6 +17,9 @@ import { MarkdownNavigatorDemoButtonClickedComponent } from './markdown-navigato
 import { MarkdownNavigatorDemoServiceButtonClickedComponent } from './markdown-navigator-demo-service-button-clicked/markdown-navigator-demo-service-button-clicked.component';
 import { MarkdownNavigatorDemoDirectiveComponent } from './markdown-navigator-demo-directive/markdown-navigator-demo-directive.component';
 import { MarkdownNavigatorDemoServiceComponent } from './markdown-navigator-demo-service/markdown-navigator-demo-service.component';
+import { MarkdownNavigatorDemoStartAtComponent } from './markdown-navigator-demo-start-at/markdown-navigator-demo-start-at.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { MarkdownNavigatorDemoServiceComponent } from './markdown-navigator-demo
     MarkdownNavigatorDemoButtonClickedComponent,
     MarkdownNavigatorDemoDirectiveComponent,
     MarkdownNavigatorDemoServiceComponent,
+    MarkdownNavigatorDemoStartAtComponent,
   ],
   imports: [
     DemoModule,
@@ -40,6 +44,8 @@ import { MarkdownNavigatorDemoServiceComponent } from './markdown-navigator-demo
     CommonModule,
     MatButtonModule,
     MatListModule,
+    MatButtonToggleModule,
+    FormsModule,
   ],
 })
 export class MarkdownNavigatorDemoModule {}

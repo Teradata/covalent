@@ -256,6 +256,9 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
         this._jumpTo(this.startAt);
       }
     }
+    if (changes.startAt && this.items && this.startAt) {
+      this._jumpTo(this.startAt);
+    }
   }
 
   hasChildrenOrChildrenUrl(item: IMarkdownNavigatorItem): boolean {
