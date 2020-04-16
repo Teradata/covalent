@@ -20,6 +20,7 @@ import { MarkdownNavigatorDemoServiceComponent } from './markdown-navigator-demo
 import { MarkdownNavigatorDemoStartAtComponent } from './markdown-navigator-demo-start-at/markdown-navigator-demo-start-at.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
+import { MarkdownNavigatorDemoAnchorComponent } from './markdown-navigator-demo-anchor/markdown-navigator-demo-anchor.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     MarkdownNavigatorDemoDirectiveComponent,
     MarkdownNavigatorDemoServiceComponent,
     MarkdownNavigatorDemoStartAtComponent,
+    MarkdownNavigatorDemoAnchorComponent,
   ],
   imports: [
     DemoModule,
