@@ -11,7 +11,7 @@ export class MarkdownNavigatorDemoChildrenUrlComponent {
     {
       id: 'test-url-children',
       title: '🔥',
-      childrenUrl: '/assets/demos-data/children_url.json',
+      childrenUrl: '/assets/demos-data/children_url_1.json',
     },
   ];
 }
