@@ -18,12 +18,7 @@ export class MarkdownNavigatorDemoServiceButtonClickedComponent {
     const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = this._markdownNavigatorWindowService.open({
       items: [
         {
-          title: 'Mars',
-          markdownString: `[Go to Mars](#data={"planet":"mars"})`,
-        },
-        {
-          title: 'Jupiter',
-          markdownString: `[Go to Jupiter](#data={"planet":"Jupiter"})`,
+          markdownString: `[Trigger button click event](#data={"planet":"mars"})`,
         },
       ],
     });

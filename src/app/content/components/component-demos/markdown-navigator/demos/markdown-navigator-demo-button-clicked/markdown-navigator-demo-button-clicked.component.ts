@@ -11,12 +11,7 @@ import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 export class MarkdownNavigatorDemoButtonClickedComponent {
   items: IMarkdownNavigatorItem[] = [
     {
-      title: 'Mars',
-      markdownString: `[Go to Mars](#data={"planet":"mars"})`,
-    },
-    {
-      title: 'Jupiter',
-      markdownString: `[Go to Jupiter](#data={"planet":"Jupiter"})`,
+      markdownString: `[Trigger button click event](#data={"planet":"mars"})`,
     },
   ];
 

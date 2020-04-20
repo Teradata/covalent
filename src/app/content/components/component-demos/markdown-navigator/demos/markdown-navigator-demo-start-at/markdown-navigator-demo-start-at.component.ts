@@ -30,10 +30,6 @@ export class MarkdownNavigatorDemoStartAtComponent {
         },
       ],
     },
-    {
-      title: 'Item B',
-      id: 'B',
-    },
   ];
   startAt: IMarkdownNavigatorItem;
   compareWith: (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean;
