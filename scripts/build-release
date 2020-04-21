@@ -36,6 +36,8 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 ./node_modules/@angular/cli/bin/ng build covalent-text-editor
 # BUILD: @covalent/echarts primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-echarts
+# BUILD: @covalent/guided-tour primary entrypoint
+./node_modules/@angular/cli/bin/ng build covalent-guided-tour
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
 # HACK START

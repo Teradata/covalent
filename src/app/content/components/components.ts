@@ -82,6 +82,19 @@ export const createComponentDetails: IComponentDetails[] = [
     demo: () => import('./component-demos/dialogs/demos/dialogs-demo.module').then((mod: any) => mod.DialogsDemoModule),
   },
   {
+    name: 'Guided Tour',
+    id: 'guided-tour',
+    description: 'Tour guides using Shepherd',
+    apiDocUrl: 'platform/guided-tour/README.md',
+    icon: 'directions_bus',
+    category: dialogs.name,
+    route: '/components/guided-tour',
+    demo: () =>
+      import('./component-demos/guided-tour/demos/guided-tour-demo.module').then(
+        (mod: any) => mod.GuidedTourDemosModule,
+      ),
+  },
+  {
     name: 'Dynamic Forms',
     id: 'dynamic-forms',
     description: 'Build forms from a JS object',
