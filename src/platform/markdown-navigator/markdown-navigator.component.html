@@ -4,6 +4,7 @@
   <ng-container *ngIf="showHeader">
     <div [style.display]="'flex'">
       <button
+        id="td-markdown-navigator-home-button"
         *ngIf="showHomeButton"
         mat-icon-button
         [matTooltip]="goHomeLabel"
@@ -16,6 +17,7 @@
       </button>
 
       <button
+        id="td-markdown-navigator-back-button"
         *ngIf="showGoBackButton"
         mat-icon-button
         [matTooltip]="goBackLabel"
@@ -34,11 +36,19 @@
     <mat-divider [style.position]="'relative'"></mat-divider>
   </ng-container>
 
-  <div class="scroll-area">
+  <div class="scroll-area" id="td-markdown-navigator-content">
+    <td-message
+      *ngIf="childrenUrlError"
+      [sublabel]="childrenUrlError"
+      color="warn"
+      icon="error"
+      [attr.data-test]="'children-url-error'"
+    ></td-message>
     <div *ngIf="showMenu" class="td-markdown-list">
       <mat-action-list>
         <button
-          *ngFor="let item of currentMenuItems"
+          *ngFor="let item of currentMenuItems; index as index"
+          [id]="'td-markdown-navigator-list-item-' + (item.id ? item.id : index)"
           (click)="handleItemSelected(item)"
           mat-list-item
           [matTooltip]="getTitle(item)"
@@ -58,11 +68,19 @@
     </div>
 
     <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
+      <td-message
+        *ngIf="markdownLoaderError"
+        [sublabel]="markdownLoaderError"
+        color="warn"
+        icon="error"
+        [attr.data-test]="'markdown-loader-error'"
+      ></td-message>
       <td-flavored-markdown-loader
         *ngIf="showTdMarkdownLoader"
         [url]="url"
         [httpOptions]="httpOptions"
         [anchor]="anchor"
+        (loadFailed)="handleMarkdownLoaderError($event)"
       ></td-flavored-markdown-loader>
 
       <td-flavored-markdown
@@ -70,12 +88,14 @@
         [content]="markdownString"
         [hostedUrl]="url"
         [anchor]="anchor"
+        (buttonClicked)="buttonClicked.emit($event)"
       ></td-flavored-markdown>
     </div>
+    <ng-container *ngComponentOutlet="footerComponent"></ng-container>
   </div>
 </ng-container>
 
-<div *ngIf="showEmptyState" layout="column" layout-align="center center" class=" empty-state">
+<div *ngIf="showEmptyState" layout="column" layout-align="center center" class="empty-state">
   <mat-icon matListAvatar>subject</mat-icon>
   <h2>{{ emptyStateLabel }}</h2>
 </div>

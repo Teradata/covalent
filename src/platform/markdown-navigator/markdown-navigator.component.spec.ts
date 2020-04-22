@@ -7,9 +7,11 @@ import {
   IMarkdownNavigatorCompareWith,
 } from './markdown-navigator.component';
 import { By } from '@angular/platform-browser';
-import { Component, DebugElement } from '@angular/core';
+import { Component, DebugElement, Type } from '@angular/core';
 import { CovalentMarkdownNavigatorModule } from './markdown-navigator.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
@@ -48,6 +50,43 @@ const NESTED_MIXED_ITEMS: IMarkdownNavigatorItem[] = [
   {
     title: 'Second item',
     children: RAW_MARKDOWN_ITEM,
+  },
+];
+
+@Component({
+  template: `
+    <div>
+      Footer A Content
+    </div>
+  `,
+})
+export class FooterAComponent {}
+
+@Component({
+  template: `
+    <div>
+      Global Footer Content
+    </div>
+  `,
+})
+export class GlobalFooterComponent {}
+
+const ITEMS_WITH_FOOTERS: IMarkdownNavigatorItem[] = [
+  {
+    markdownString: `Footer A`,
+    footer: FooterAComponent,
+  },
+  {
+    markdownString: `Global Footer`,
+  },
+];
+
+const CHILDREN_URL: string = 'https://samplechildrenurl.com';
+
+const ITEMS_WITH_CHILDREN_URL: IMarkdownNavigatorItem[] = [
+  {
+    title: 'Children url',
+    childrenUrl: CHILDREN_URL,
   },
 ];
 
@@ -119,14 +158,11 @@ export const DEEPLY_NESTED_TREE: IMarkdownNavigatorItem[] = [
 export const ITEMS_AT_SAME_LEVEL_AS_MARKDOWN: IMarkdownNavigatorItem[] = [
   {
     title: 'A',
-    markdownString: `
-    # Markdown
-
-    Litty
-    `,
+    markdownString: `A markdown`,
     children: [
       {
         title: 'A1',
+        markdownString: `A1 markdown`,
       },
     ],
   },
@@ -250,6 +286,7 @@ async function validateTree(fixture: ComponentFixture<TdMarkdownNavigatorTestCom
       [labels]="labels"
       [startAt]="startAt"
       [compareWith]="compareWith"
+      [footer]="footer"
     ></td-markdown-navigator>
   `,
 })
@@ -258,14 +295,21 @@ class TdMarkdownNavigatorTestComponent {
   labels: IMarkdownNavigatorLabels;
   startAt: IMarkdownNavigatorItem;
   compareWith: IMarkdownNavigatorCompareWith;
+  footer: Type<any>;
 }
 
 describe('MarkdownNavigatorComponent', () => {
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TdMarkdownNavigatorTestComponent],
-      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
+      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule, HttpClientTestingModule],
     }).compileComponents();
+
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
   }));
 
   it('should render empty state when an empty array is passed into items', async(
@@ -331,6 +375,134 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showMenu).toBeFalsy();
       expect(markdownNavigator.showTdMarkdown).toBeTruthy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
+    }),
+  ));
+
+  it('should fetch childrenUrl and render', async(
+    inject([], async () => {
+      const itemATitle: string = 'fetched item A';
+      const itemBTitle: string = 'fetched item B';
+
+      const testData: IMarkdownNavigatorItem[] = [{ title: itemATitle }, { title: itemBTitle }];
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = ITEMS_WITH_CHILDREN_URL;
+      await wait(fixture);
+
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
+      ).componentInstance;
+
+      expect(markdownNavigator.showMenu).toBeTruthy();
+      expect(markdownNavigator.showTdMarkdown).toBeFalsy();
+
+      getItem(fixture, 0).click();
+      const req: TestRequest = httpTestingController.expectOne(CHILDREN_URL);
+      req.flush(testData);
+
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(markdownNavigator.showMenu).toBeTruthy();
+      expect(markdownNavigator.showTdMarkdown).toBeFalsy();
+      expect(getItem(fixture, 0).textContent).toContain(itemATitle);
+      expect(getItem(fixture, 1).textContent).toContain(itemBTitle);
+
+      httpTestingController.verify();
+    }),
+  ));
+
+  it('should show proper error messages', async(
+    inject([], async () => {
+      const invalidMarkdownUrl: string = 'https://invalid_markdown_url.com';
+      const invalidChildrenUrl: string = 'https://invalid_children_url.com';
+      const ITEMS_WITH_ERRORS: IMarkdownNavigatorItem[] = [
+        {
+          title: 'Invalid markdown url',
+          url: invalidMarkdownUrl,
+          children: [
+            {
+              title: 'Invalid children url',
+              childrenUrl: invalidChildrenUrl,
+            },
+          ],
+        },
+        { title: 'Invalid markdown and children url', url: invalidMarkdownUrl, childrenUrl: invalidChildrenUrl },
+      ];
+      const invalidMarkdownUrlOptions: object = { status: 404, statusText: 'Not Found' };
+      const message: string = 'Failed :(';
+      function getMarkdownLoaderError(): HTMLElement {
+        return (fixture.debugElement.query(By.css('[data-test="markdown-loader-error"]')) || {}).nativeElement;
+      }
+      function getChildrenUrlError(): HTMLElement {
+        return (fixture.debugElement.query(By.css('[data-test="children-url-error"]')) || {}).nativeElement;
+      }
+
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+      fixture.componentInstance.items = ITEMS_WITH_ERRORS;
+
+      await wait(fixture);
+      getItem(fixture, 0).click();
+      await wait(fixture);
+
+      const invalidMarkdownUrlRequest: TestRequest = httpTestingController.expectOne(invalidMarkdownUrl);
+      invalidMarkdownUrlRequest.flush(message, invalidMarkdownUrlOptions);
+
+      await wait(fixture);
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(getMarkdownLoaderError()).toBeTruthy();
+      expect(getMarkdownLoaderError().textContent).toContain('Not Found');
+
+      getItem(fixture, 0).click();
+      const invalidChildrenUrlRequest: TestRequest = httpTestingController.expectOne(invalidChildrenUrl);
+      invalidChildrenUrlRequest.flush(message, invalidMarkdownUrlOptions);
+
+      await wait(fixture);
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(getMarkdownLoaderError()).toBeFalsy();
+      expect(getChildrenUrlError()).toBeTruthy();
+      goBack(fixture);
+
+      const invalidMarkdownUrlRequest2: TestRequest = httpTestingController.expectOne(invalidMarkdownUrl);
+      invalidMarkdownUrlRequest2.flush(message, invalidMarkdownUrlOptions);
+
+      await wait(fixture);
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(getMarkdownLoaderError()).toBeTruthy();
+      expect(getChildrenUrlError()).toBeFalsy();
+
+      goBack(fixture);
+      getItem(fixture, 1).click();
+      await wait(fixture);
+
+      const invalidMarkdownUrlRequest3: TestRequest = httpTestingController.expectOne(invalidMarkdownUrl);
+      invalidMarkdownUrlRequest3.flush(message, invalidMarkdownUrlOptions);
+      const invalidChildrenUrlRequest2: TestRequest = httpTestingController.expectOne(invalidChildrenUrl);
+      invalidChildrenUrlRequest2.flush(message, invalidMarkdownUrlOptions);
+
+      await wait(fixture);
+      await wait(fixture);
+      await wait(fixture);
+
+      expect(getMarkdownLoaderError()).toBeTruthy();
+      expect(getChildrenUrlError()).toBeTruthy();
+
+      goBack(fixture);
+
+      expect(getMarkdownLoaderError()).toBeFalsy();
+      expect(getChildrenUrlError()).toBeFalsy();
+
+      httpTestingController.verify();
     }),
   ));
 
@@ -461,10 +633,25 @@ describe('MarkdownNavigatorComponent', () => {
       expect(listItems[1].nativeElement.textContent).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[1].title);
       getItem(fixture, 0).click();
       await wait(fixture);
+
       expect(markdownNavigator.showMenu).toBeTruthy();
       expect(markdownNavigator.showTdMarkdown).toBeTruthy();
       expect(getTitle(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title);
-      expect(getMarkdown(fixture)).toContain('Markdown');
+      expect(getMarkdown(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].markdownString);
+
+      getItem(fixture, 0).click();
+      await wait(fixture);
+
+      expect(markdownNavigator.showMenu).toBeFalsy();
+      expect(markdownNavigator.showTdMarkdown).toBeTruthy();
+      expect(getTitle(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].children[0].title);
+      expect(getMarkdown(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].children[0].markdownString);
+      goBack(fixture);
+
+      expect(markdownNavigator.showMenu).toBeTruthy();
+      expect(markdownNavigator.showTdMarkdown).toBeTruthy();
+      expect(getTitle(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title);
+      expect(getMarkdown(fixture)).toContain(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].markdownString);
     }),
   ));
 
@@ -625,6 +812,37 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.startAt = NESTED_MIXED_ITEMS[1];
       await wait(fixture);
       expect(getTitle(fixture)).toContain(NESTED_MIXED_ITEMS[1].title);
+    }),
+  ));
+
+  it('should be able to render a custom component as a footer', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = ITEMS_WITH_FOOTERS;
+      fixture.componentInstance.footer = GlobalFooterComponent;
+
+      await wait(fixture);
+
+      expect(fixture.nativeElement.textContent).toContain('Global Footer Content');
+
+      getItem(fixture, 0).click();
+
+      await wait(fixture);
+
+      expect(fixture.nativeElement.textContent).toContain('Footer A Content');
+
+      goBack(fixture);
+
+      await wait(fixture);
+
+      getItem(fixture, 1).click();
+
+      await wait(fixture);
+
+      expect(fixture.nativeElement.textContent).toContain('Global Footer Content');
     }),
   ));
 });

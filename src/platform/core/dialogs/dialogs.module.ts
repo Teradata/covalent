@@ -17,6 +17,10 @@ import { TdAlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { TdPromptDialogComponent } from './prompt-dialog/prompt-dialog.component';
 import { TdDialogService } from './services/dialog.service';
+import { TdWindowDialogComponent } from './window-dialog/window-dialog.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 
 const TD_DIALOGS: Type<any>[] = [
   TdAlertDialogComponent,
@@ -26,6 +30,7 @@ const TD_DIALOGS: Type<any>[] = [
   TdDialogTitleDirective,
   TdDialogActionsDirective,
   TdDialogContentDirective,
+  TdWindowDialogComponent,
 ];
 
 const TD_DIALOGS_ENTRY_COMPONENTS: Type<any>[] = [
@@ -35,7 +40,17 @@ const TD_DIALOGS_ENTRY_COMPONENTS: Type<any>[] = [
 ];
 
 @NgModule({
-  imports: [FormsModule, CommonModule, MatDialogModule, MatInputModule, MatButtonModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule,
+
+    MatToolbarModule,
+    MatTooltipModule,
+    MatIconModule,
+  ],
   declarations: [TD_DIALOGS],
   exports: [TD_DIALOGS],
   providers: [TdDialogService],

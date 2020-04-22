@@ -15,6 +15,10 @@ import {
 import { DialogsDemoRoutingModule } from './dialogs-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { DialogsDemoBasicSharedModule } from './dialogs-demo-basic/dialogs-demo-basic-shared';
+import {
+  DraggableResizableWindowDialogComponent,
+  DialogsDemoDraggableResizableWindowComponent,
+} from './dialogs-demo-draggable-resizable-window/dialogs-demo-draggable-resizable-window.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,8 @@ import { DialogsDemoBasicSharedModule } from './dialogs-demo-basic/dialogs-demo-
     DraggableDialogComponent,
     DraggableResizableDialogComponent,
     DialogsDemoDraggableResizableComponent,
+    DraggableResizableWindowDialogComponent,
+    DialogsDemoDraggableResizableWindowComponent,
   ],
   imports: [
     DialogsDemoBasicSharedModule,

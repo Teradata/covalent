@@ -15,19 +15,29 @@ A component for rendering and navigating through markdown, such as documentation
 + compareWith?: IMarkdownNavigatorCompareWith
   + Function used to find startAt item
   + Defaults to comparison by strict equality (===)
++ footer:? Type<any>
+  + Custom component to be used as global footer
+
+#### Outputs
+
++ buttonClicked: ITdFlavoredMarkdownButtonClickEvent
+  + Emitted when a button is clicked
 
 For reference:
 
 ```typescript
 interface IMarkdownNavigatorItem {
+  id?: string; // used to compare items by default and as attr id for content
   title?: string;
   url?: string;
   httpOptions?: object;
   markdownString?: string; // raw markdown
   anchor?: string;
   children?: IMarkdownNavigatorItem[];
+  childrenUrl?: string;
   description?: string;
   icon?: string;
+  footer?: Type<any>;
 }
 ```
 
@@ -50,12 +60,15 @@ export class MyModule {}
 ```typescript
 const items = [
   {
+    id: 'covalent',
     title: 'Covalent',
     children: [
       {
+        id: 'component',
         title: 'Components',
         children: [
           {
+            id: 'td-loading',
             url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
             title: 'tdLoading'
           }
@@ -86,17 +99,16 @@ A component that contains a MarkdownNavigator component and a toolbar
 + toolbarColor?: ThemePalette
   + Toolbar color
   + Defaults to 'primary'
-+ docked?: boolean
-  + Whether docked or not.
-  + Defaults to false
++ footer:? Type<any>;
+  + Custom component to be used as global footer
+
 
 #### Outputs
 
 + closed: void
   + Event emitted when the close button is clicked.
-+ dockToggled: boolean
-  + Event emitted when the toggle dock state button is clicked.
-  + Emits current docked state.
++ buttonClicked: ITdFlavoredMarkdownButtonClickEvent
+  + Emitted when a button is clicked
 
 ## Setup
 
@@ -135,6 +147,7 @@ interface IMarkdownNavigatorWindowConfig {
   toolbarColor?: ThemePalette;
   startAt?: IMarkdownNavigatorItem;
   compareWith?: IMarkdownNavigatorCompareWith;
+  footer?: Type<any>;
 }
 ```
 

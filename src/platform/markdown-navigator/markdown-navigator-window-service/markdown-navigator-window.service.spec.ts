@@ -11,6 +11,7 @@ import {
   IMarkdownNavigatorWindowLabels,
 } from '../markdown-navigator-window/markdown-navigator-window.component';
 import { DEEPLY_NESTED_TREE, compareByTitle } from '../markdown-navigator.component.spec';
+import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
@@ -76,7 +77,7 @@ describe('MarkdownNavigatorWindowService', () => {
         expect(getMarkdownNavigator()).toBeTruthy();
         // tslint:disable-next-line:no-useless-cast
         (<HTMLElement>(
-          overlayContainerElement.querySelector(`td-markdown-navigator-window .td-markdown-navigator-window-close`)
+          overlayContainerElement.querySelector(`td-markdown-navigator-window .td-window-dialog-close`)
         )).click();
         await wait(fixture);
 
@@ -293,14 +294,13 @@ describe('MarkdownNavigatorWindowService', () => {
         await wait(fixture);
         await dialogRef.afterOpened().toPromise();
 
-        expect(overlayContainerElement.querySelector(`.td-draggable-markdown-navigator-window-wrapper`)).toBeTruthy();
+        expect(overlayContainerElement.querySelector(`.td-window-dialog`)).toBeTruthy();
         expect(
           overlayContainerElement.querySelector(`td-markdown-navigator-window.td-draggable-markdown-navigator-window`),
         ).toBeTruthy();
-        expect(
-          window.getComputedStyle(overlayContainerElement.querySelector(`.td-markdown-navigator-window-toolbar`))
-            .cursor,
-        ).toBe('move');
+        expect(window.getComputedStyle(overlayContainerElement.querySelector(`.td-window-dialog-toolbar`)).cursor).toBe(
+          'move',
+        );
 
         _markdownNavigatorWindowService.close();
         await wait(fixture);
@@ -327,6 +327,42 @@ describe('MarkdownNavigatorWindowService', () => {
         await wait(fixture);
         expect(overlayContainerElement.querySelectorAll(`td-markdown-navigator`).length).toBe(1);
         expect(_markdownNavigatorWindowService.isOpen).toBeTruthy();
+        _markdownNavigatorWindowService.close();
+      },
+    ),
+  ));
+  it('should be able to listen to markdown button events', async(
+    inject(
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+
+        const marsButtonEvent: ITdFlavoredMarkdownButtonClickEvent = {
+          text: 'Got to Mars',
+          data: '{"oribital_speed": "24.007 km/s"}',
+        };
+        const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = _markdownNavigatorWindowService.open({
+          items: [
+            {
+              title: 'Mars',
+              markdownString: ` [${marsButtonEvent.text}](#data=${marsButtonEvent.data})`,
+            },
+          ],
+        });
+
+        let event: ITdFlavoredMarkdownButtonClickEvent;
+        dialogRef.componentInstance.buttonClicked.subscribe((data: ITdFlavoredMarkdownButtonClickEvent) => {
+          event = data;
+        });
+
+        await wait(fixture);
+
+        const button: HTMLElement = document.querySelector('td-markdown-navigator button');
+        button.click();
+
+        await wait(fixture);
+
+        expect(event).toEqual(marsButtonEvent);
         _markdownNavigatorWindowService.close();
       },
     ),

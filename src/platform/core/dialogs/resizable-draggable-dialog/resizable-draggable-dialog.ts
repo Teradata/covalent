@@ -157,6 +157,7 @@ export class ResizableDraggableDialog {
   }
 
   private _handleMouseDown(event: PointerEvent, corner: corners): void {
+    this._renderer2.setStyle(<HTMLElement>this._document.body, 'user-select', 'none');
     const { width: originalWidth, height: originalHeight } = this._getDialogWrapperDimensions();
     const originalMouseX: number = event.pageX;
     const originalMouseY: number = event.pageY;
@@ -217,6 +218,7 @@ export class ResizableDraggableDialog {
       fromEvent(window, 'pointerup'),
       fromEvent(window, 'pointercancel'),
     ).subscribe(() => {
+      this._renderer2.removeStyle(<HTMLElement>this._document.body, 'user-select');
       mouseMoveSub.unsubscribe();
       mouseUpSub.unsubscribe();
     });
