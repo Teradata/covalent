@@ -1,3 +1,93 @@
+<a name="3.1.0-beta.1"></a>
+# [3.1.0-beta.1](https://github.com/teradata/covalent/compare/v3.0.0...v3.1.0-beta.1) (2020-04-04)
+
+
+### Bug Fixes
+
+* **http:** accept special chars in path intercepting regex ([#1726](https://github.com/teradata/covalent/issues/1726)) ([43c47f1](https://github.com/teradata/covalent/commit/43c47f1))
+* **markdown-nav:** go back functionality ([#1720](https://github.com/teradata/covalent/issues/1720)) ([6f279c3](https://github.com/teradata/covalent/commit/6f279c3))
+
+
+### Features
+
+* **flavored-markdown:** render buttons ([#1715](https://github.com/teradata/covalent/issues/1715)) ([d0c658d](https://github.com/teradata/covalent/commit/d0c658d))
+* **markdown-nav:** add children url property ([#1727](https://github.com/teradata/covalent/issues/1727)) ([41ad8b2](https://github.com/teradata/covalent/commit/41ad8b2))
+* **markdown-nav:** add footer support ([#1713](https://github.com/teradata/covalent/issues/1713)) ([a87cebf](https://github.com/teradata/covalent/commit/a87cebf))
+* **markdown-nav:** create window dialog component ([#1712](https://github.com/teradata/covalent/issues/1712)) ([0ed6a24](https://github.com/teradata/covalent/commit/0ed6a24))
+* **markdown-nav:** expose button click events ([#1718](https://github.com/teradata/covalent/issues/1718)) ([9d770f1](https://github.com/teradata/covalent/commit/9d770f1))
+* **markdown-nav:** support descriptions and icons ([#1687](https://github.com/teradata/covalent/issues/1687)) ([0386897](https://github.com/teradata/covalent/commit/0386897))
+* **md-nav:** render md and list at same level ([#1689](https://github.com/teradata/covalent/issues/1689)) ([460f5d3](https://github.com/teradata/covalent/commit/460f5d3))
+
+
+<a name="3.0.1"></a>
+# [3.0.1](https://github.com/teradata/covalent/compare/v3.0.0...v3.0.1) (2020-04-04)
+
+
+### Bug Fixes
+
+* **http:** accept special chars in path intercepting regex ([#1726](https://github.com/teradata/covalent/issues/1726)) ([43c47f1](https://github.com/teradata/covalent/commit/43c47f1))
+
+
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/teradata/covalent/compare/v3.0.0-rc.2...v3.0.0) (2020-03-23)
+
+We are finally stable! 
+
+We are pleased to announce our 3.0.0 release. We worked on adding back all the demos and improving the experience of our documentation, as well as adding new components/enhancements and ivy support.
+
+We have deprecated the following 3 components:
+
+- File Upload
+- Virtual Scroll
+- Expansion Panel
+
+So please check the documentation to see the migration steps.
+
+Let us know if you have any problems or suggestions on how to improve Covalent.
+
+
+### Features
+
+* **docs:** deploy ghpages in subdir + version switcher ([#1658](https://github.com/teradata/covalent/issues/1658)) ([e61464f](https://github.com/teradata/covalent/commit/e61464f))
+
+
+### Docs
+
+* **chips:** add chips examples ([#1655](https://github.com/teradata/covalent/issues/1655)) ([650bf01](https://github.com/teradata/covalent/commit/650bf01))
+* **code-editor:** add missing demos ([#1680](https://github.com/teradata/covalent/issues/1680)) ([e55fc5a](https://github.com/teradata/covalent/commit/e55fc5a))
+* **deprecation:** file upload deprecation ([#1685](https://github.com/teradata/covalent/issues/1685)) ([f69f347](https://github.com/teradata/covalent/commit/f69f347))
+* **demo:** add all paging demos ([#1664](https://github.com/teradata/covalent/issues/1664)) ([57b553c](https://github.com/teradata/covalent/commit/57b553c))
+
+
+<a name="3.0.0-rc.2"></a>
+# [3.0.0-rc.2](https://github.com/teradata/covalent/compare/v3.0.0-beta.3...v3.0.0-rc.2) (2020-03-16)
+
+We are on track for 3.0.0 stable.
+
+We are working hard adding back demos for our docs and fixing bugs. Let us know if you find anything critical.
+
+
+### Bug Fixes
+
+* **http:** dont override httpParams object ([#1673](https://github.com/teradata/covalent/issues/1673)) ([6edf9cc](https://github.com/teradata/covalent/commit/6edf9cc))
+
+
+<a name="3.0.0-rc.1"></a>
+# [3.0.0-rc.1](https://github.com/teradata/covalent/compare/v3.0.0-beta.3...v3.0.0-rc.1) (2020-03-09)
+
+
+### Bug Fixes
+
+* **loading:** remove delay on DOM insert/removal ([#1624](https://github.com/teradata/covalent/issues/1624)) ([9e078b2](https://github.com/teradata/covalent/commit/9e078b2))
+
+
+### Features
+
+* **layout:** add dense mode ([#1663](https://github.com/teradata/covalent/issues/1663)) ([576e2fb](https://github.com/teradata/covalent/commit/576e2fb))
+* **toolbar:** add dense mode ([#1665](https://github.com/teradata/covalent/issues/1665)) ([25b7ade](https://github.com/teradata/covalent/commit/25b7ade))
+
+
+
 <a name="3.0.0-beta.3"></a>
 # [3.0.0-beta.3](https://github.com/teradata/covalent/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2020-02-10)
 

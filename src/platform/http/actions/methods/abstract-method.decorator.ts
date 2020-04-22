@@ -86,10 +86,18 @@ export function TdAbstractMethod(config: {
               newArgs[parameter.index] = arguments[parameter.index];
               const qParams: HttpParams | { [key: string]: string | string[] } = arguments[parameter.index];
               if (config.options && config.options.params) {
-                queryParams = parseParams(queryParams, config.options.params);
+                if (config.options.params instanceof HttpParams) {
+                  queryParams = parseParams(config.options.params, queryParams);
+                } else {
+                  queryParams = parseParams(queryParams, config.options.params);
+                }
               }
               if (qParams) {
-                queryParams = parseParams(queryParams, qParams);
+                if (qParams instanceof HttpParams) {
+                  queryParams = parseParams(qParams, queryParams);
+                } else {
+                  queryParams = parseParams(queryParams, qParams);
+                }
               }
             }
           }

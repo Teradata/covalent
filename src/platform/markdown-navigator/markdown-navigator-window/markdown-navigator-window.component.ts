@@ -1,10 +1,11 @@
-import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy, Type } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import {
   IMarkdownNavigatorItem,
   IMarkdownNavigatorLabels,
   IMarkdownNavigatorCompareWith,
 } from '../markdown-navigator.component';
+import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
 
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
   title?: string;
@@ -31,11 +32,12 @@ export class TdMarkdownNavigatorWindowComponent {
   @Input() toolbarColor: ThemePalette = 'primary';
   @Input() startAt: IMarkdownNavigatorItem;
   @Input() compareWith: IMarkdownNavigatorCompareWith;
-  toolbarHeight: number = 56;
   @Input() docked: boolean = false;
+  @Input() footer: Type<any>;
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
   @Output() dockToggled: EventEmitter<boolean> = new EventEmitter();
+  @Output() buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter();
 
   get markdownNavigatorLabels(): IMarkdownNavigatorLabels {
     if (this.labels) {

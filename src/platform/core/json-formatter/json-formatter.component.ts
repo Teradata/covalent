@@ -212,10 +212,7 @@ export class TdJsonFormatterComponent {
 
   private parseChildren(): void {
     if (this.isObject()) {
-      this._children = [];
-      for (const key of Object.keys(this._data)) {
-        this._children.push(key);
-      }
+      this._children = Object.keys(this._data);
     }
   }
 }

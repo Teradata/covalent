@@ -6,8 +6,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  .td-markdown-list,
-  .markdown-wrapper {
+  .scroll-area {
     min-height: 1px;
     overflow-y: auto;
     // flex

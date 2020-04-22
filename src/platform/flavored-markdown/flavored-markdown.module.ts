@@ -9,9 +9,14 @@ import { CovalentHighlightModule, TdHighlightComponent } from '@covalent/highlig
 import { CovalentMarkdownModule, TdMarkdownComponent } from '@covalent/markdown';
 
 import { TdFlavoredListComponent } from './cfm-list/cfm-list.component';
-import { TdFlavoredMarkdownComponent, TdFlavoredMarkdownContainerDirective } from './flavored-markdown.component';
+import {
+  TdFlavoredMarkdownComponent,
+  TdFlavoredMarkdownContainerDirective,
+  TdFlavoredMarkdownButtonComponent,
+} from './flavored-markdown.component';
 import { TdFlavoredMarkdownLoaderComponent } from './flavored-markdown-loader/flavored-markdown-loader.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -22,12 +27,14 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     CovalentDataTableModule,
     CovalentHighlightModule,
     CovalentMarkdownModule,
+    MatButtonModule,
   ],
   declarations: [
     TdFlavoredListComponent,
     TdFlavoredMarkdownComponent,
     TdFlavoredMarkdownContainerDirective,
     TdFlavoredMarkdownLoaderComponent,
+    TdFlavoredMarkdownButtonComponent,
   ],
   exports: [TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent],
 })

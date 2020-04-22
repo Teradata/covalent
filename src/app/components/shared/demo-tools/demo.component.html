@@ -1,6 +1,6 @@
 <mat-card class="push-none demo-card overflow-hidden">
   <mat-toolbar-row>
-    <span>{{ demoId }}</span>
+    <span>{{ demoTitle || demoId }}</span>
     <span flex></span>
     <button (click)="toggleCodeView()" mat-icon-button><mat-icon>code</mat-icon></button>
   </mat-toolbar-row>

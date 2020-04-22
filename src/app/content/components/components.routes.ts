@@ -30,6 +30,13 @@ const routes: Routes = [
           import('./component-demos/dynamic-forms/dynamic-forms.module').then((m: any) => m.DynamicFormsDemoModule),
       },
       {
+        path: 'expansion-panels',
+        loadChildren: () =>
+          import('./component-demos/expansion-panels/expansion-panels.module').then(
+            (m: any) => m.ExpansionPanelsDemoModule,
+          ),
+      },
+      {
         path: 'file-input',
         loadChildren: () =>
           import('./component-demos/file-input/file-input.module').then((m: any) => m.FileInputDemoModule),
@@ -143,9 +150,14 @@ const routes: Routes = [
         loadChildren: () => import('./component-demos/steps/steps.module').then((m: any) => m.StepsDemoModule),
       },
       {
-        path: 'loading-mask',
+        path: 'virtual-scroll',
         loadChildren: () =>
-          import('./component-demos/loading-mask/loading-mask.module').then((m: any) => m.LoadingMaskDemoModule),
+          import('./component-demos/virtual-scroll/virtual-scroll.module').then((m: any) => m.VirtualScrollDemoModule),
+      },
+      {
+        path: 'file-upload',
+        loadChildren: () =>
+          import('./component-demos/file-upload/file-upload.module').then((m: any) => m.FileUploadModule),
       },
     ],
   },

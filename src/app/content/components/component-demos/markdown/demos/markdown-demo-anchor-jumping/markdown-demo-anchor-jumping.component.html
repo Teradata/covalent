@@ -1,0 +1,11 @@
+<mat-card-content>
+  <td-markdown [anchor]="anchor">{{ markdown }}</td-markdown>
+</mat-card-content>
+<mat-card-actions>
+  <button mat-button class="text-upper" color="accent" (click)="jumpToH1()">
+    Jump to heading 1
+  </button>
+  <button mat-button class="text-upper" color="accent" (click)="jumpToH2()">
+    Jump to heading 2
+  </button>
+</mat-card-actions>
