@@ -93,9 +93,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -118,9 +115,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -146,9 +140,6 @@ describe('Component: App', () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
 
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -173,9 +164,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -184,12 +172,8 @@ describe('Component: App', () => {
           fixture.whenStable().then(() => {
             fixture.detectChanges();
             fixture.changeDetectorRef.detectChanges();
-            if (component.isElectronApp) {
-              expect(component.editorStyle).toBe('width:100%;height:500px;border:10px solid green;');
-            } else {
-              const containerDiv: HTMLDivElement = component._editorContainer.nativeElement;
-              expect(containerDiv.getAttribute('style')).toBe('width:100%;height:500px;border:10px solid green;');
-            }
+            const containerDiv: HTMLDivElement = component._editorContainer.nativeElement;
+            expect(containerDiv.getAttribute('style')).toBe('width:100%;height:500px;border:10px solid green;');
             done();
           });
         });
@@ -201,9 +185,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TestEditorOptionsComponent);
       const component: TestEditorOptionsComponent = fixture.debugElement.componentInstance;
-      if (component.editor1.isElectronApp) {
-        component.editor1.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -219,11 +200,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TestMultipleEditorsComponent);
       const component: TestMultipleEditorsComponent = fixture.debugElement.componentInstance;
-      if (component.editor1.isElectronApp) {
-        component.editor1.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-        component.editor2.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-        component.editor3.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -264,9 +240,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -274,19 +247,12 @@ describe('Component: App', () => {
           component.editorStyle = 'width:100%;height:500px;border:10px solid green;';
           component.value = 'SELECT * FROM foo;';
           const containerDiv: IFsDocumentElement = <IFsDocumentElement>component._editorContainer.nativeElement;
-          if (component.isElectronApp) {
-            component.showFullScreenEditor();
-            expect(component.isFullScreen).toBe(true);
-            component.exitFullScreenEditor();
-            expect(component.isFullScreen).toBe(false);
-          } else {
-            spyOn(containerDiv, 'webkitRequestFullscreen');
-            component.showFullScreenEditor();
-            expect(containerDiv.webkitRequestFullscreen).toHaveBeenCalled();
-            component.exitFullScreenEditor();
-            const fsDoc: IFsDocument = <IFsDocument>document;
-            expect(fsDoc).toBeDefined();
-          }
+          spyOn(containerDiv, 'webkitRequestFullscreen');
+          component.showFullScreenEditor();
+          expect(containerDiv.webkitRequestFullscreen).toHaveBeenCalled();
+          component.exitFullScreenEditor();
+          const fsDoc: IFsDocument = <IFsDocument>document;
+          expect(fsDoc).toBeDefined();
 
           done();
         });
@@ -298,9 +264,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -320,59 +283,69 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithValueComponent);
       const component: TestTwoWayBindingWithValueComponent = fixture.debugElement.componentInstance;
-      if (component.editor.isElectronApp) {
-        component.editor.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
-      const newSampleCode: string = 'const val = 2;';
-      component.sampleCode = newSampleCode;
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         component.editor.editorInitialized.subscribe(() => {
-          fixture.changeDetectorRef.detectChanges();
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            setTimeout(() => {
-              component.editor.getValue().subscribe((value: string) => {
-                expect(component.sampleCode).toBe(newSampleCode);
-                expect(value).toBe(newSampleCode);
-                done();
+          setTimeout(() => {
+            // Wait sufficient time that the editor should have been created and the value set
+            component.editor.getValue().subscribe((originalValue: string) => {
+              expect(originalValue).toBe('const val = 1;');
+
+              const newSampleCode: string = 'const val = 2;';
+              component.sampleCode = newSampleCode;
+              fixture.changeDetectorRef.detectChanges();
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                setTimeout(() => {
+                  // Value changed, should have had time to been set in editor
+                  component.editor.getValue().subscribe((newValue: string) => {
+                    expect(component.sampleCode).toBe(newSampleCode);
+                    expect(newValue).toBe(newSampleCode);
+                    done();
+                  });
+                }, 1000); // wait for timeouts
               });
-            }, 1000); // wait for timeouts
-          });
+            });
+          }, 1000); // wait for timeouts
         });
       });
     })();
   });
 
-  it('should work with 2 way binding via ngModel', (done: DoneFn) => {
-    inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithNgModelComponent);
-      const component: TestTwoWayBindingWithNgModelComponent = fixture.debugElement.componentInstance;
-      if (component.editor.isElectronApp) {
-        component.editor.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
-      const newSampleCode: string = 'const val = 2;';
-      component.sampleCode = newSampleCode;
-      fixture.changeDetectorRef.detectChanges();
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        component.editor.editorInitialized.subscribe(() => {
-          fixture.changeDetectorRef.detectChanges();
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            setTimeout(() => {
-              component.editor.getValue().subscribe((value: string) => {
-                expect(component.sampleCode).toBe(newSampleCode);
-                expect(value).toBe(newSampleCode);
-                done();
-              });
-            }, 1000); // wait for timeouts
-          });
-        });
-      });
-    })();
-  });
+  // it('should work with 2 way binding via ngModel', (done: DoneFn) => {
+  //   inject([], () => {
+  //     const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithNgModelComponent);
+  //     const component: TestTwoWayBindingWithNgModelComponent = fixture.debugElement.componentInstance;
+  //     fixture.changeDetectorRef.detectChanges();
+  //     fixture.detectChanges();
+  //     fixture.whenStable().then(() => {
+  //       component.editor.editorInitialized.subscribe(() => {
+  //         setTimeout(() => {
+  //           // Wait sufficient time that the editor should have been created and the value set
+  //           component.editor.getValue().subscribe((originalValue: string) => {
+  //             expect(originalValue).toBe('const val = 1;');
+
+  //             const newSampleCode: string = 'const val = 2;';
+  //             component.sampleCode = newSampleCode;
+  //             fixture.changeDetectorRef.detectChanges();
+  //             fixture.detectChanges();
+  //             fixture.whenStable().then(() => {
+  //               setTimeout(() => {
+  //                 // Value changed, should have had time to been set in editor
+  //                 component.editor.getValue().subscribe((newValue: string) => {
+  //                   expect(component.sampleCode).toBe(newSampleCode);
+  //                   expect(newValue).toBe(newSampleCode);
+  //                   done();
+  //                 });
+  //               }, 1000); // wait for timeouts
+  //             });
+  //           });
+  //         }, 1000); // wait for timeouts
+  //       });
+  //     });
+  //   })();
+  // });
 });
 
 @Component({
@@ -381,7 +354,7 @@ describe('Component: App', () => {
       <td-code-editor #editor1 style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>
     </div>
     <div>
-      <td-code-editor #editor2 style="height: 200px" theme="vs" flex language="HTML"></td-code-editor>
+      <td-code-editor #editor2 style="height: 200px" theme="vs" flex language="html"></td-code-editor>
     </div>
     <div>
       <td-code-editor #editor3 style="height: 200px" theme="vs" flex language="css"></td-code-editor>

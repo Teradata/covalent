@@ -174,10 +174,14 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    */
   @Input('language')
   set language(language: string) {
+    if (language === this._language) {
+      return;
+    }
     this._language = language;
     if (this._componentInitialized && this._editor) {
       const currentValue: string = this._editor.getValue();
       this._editor.dispose();
+      this._editor = undefined;
       const myDiv: HTMLDivElement = this._editorContainer.nativeElement;
 
       this._editor = monaco.editor.create(
@@ -252,12 +256,16 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    */
   @Input('editorStyle')
   set editorStyle(editorStyle: string) {
+    if (editorStyle === this._editorStyle) {
+      return;
+    }
     this._editorStyle = editorStyle;
     if (this._componentInitialized && this._editor) {
       const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
       containerDiv.setAttribute('style', editorStyle);
       const currentValue: string = this._editor.getValue();
       this._editor.dispose();
+      this._editor = undefined;
       const myDiv: HTMLDivElement = this._editorContainer.nativeElement;
 
       this._editor = monaco.editor.create(
@@ -404,6 +412,7 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
     this._registeredLanguagesStyles.forEach((style: HTMLStyleElement) => style.remove());
     if (this._editor) {
       this._editor.dispose();
+      this._editor = undefined;
     }
     this._destroy.next(true);
     this._destroy.unsubscribe();
