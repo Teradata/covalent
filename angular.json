@@ -130,7 +130,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
@@ -219,7 +219,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/core/test.ts",
             "tsConfig": "src/platform/core/tsconfig.spec.json",
@@ -228,7 +228,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/platform/core/tsconfig.lib.json", "src/platform/core/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
@@ -250,7 +250,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/highlight/test.ts",
             "tsConfig": "src/platform/highlight/tsconfig.spec.json",
@@ -259,7 +259,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/platform/highlight/tsconfig.lib.json", "src/platform/highlight/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
@@ -281,7 +281,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/dynamic-forms/test.ts",
             "tsConfig": "src/platform/dynamic-forms/tsconfig.spec.json",
@@ -290,7 +290,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "src/platform/dynamic-forms/tsconfig.lib.json",
@@ -315,7 +315,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/http/test.ts",
             "tsConfig": "src/platform/http/tsconfig.spec.json",
@@ -324,7 +324,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/platform/http/tsconfig.lib.json", "src/platform/http/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
@@ -346,7 +346,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/markdown/test.ts",
             "tsConfig": "src/platform/markdown/tsconfig.spec.json",
@@ -355,7 +355,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/platform/markdown/tsconfig.lib.json", "src/platform/markdown/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
@@ -377,7 +377,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/flavored-markdown/test.ts",
             "tsConfig": "src/platform/flavored-markdown/tsconfig.spec.json",
@@ -386,7 +386,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "src/platform/flavored-markdown/tsconfig.lib.json",
@@ -411,7 +411,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "customWebpackConfig": {
               "path": "./monaco-webpack.config.js",
@@ -427,7 +427,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/platform/code-editor/tsconfig.lib.json", "src/platform/code-editor/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
@@ -449,7 +449,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/text-editor/test.ts",
             "tsConfig": "src/platform/text-editor/tsconfig.spec.json",
@@ -458,7 +458,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/platform/text-editor/tsconfig.lib.json", "src/platform/text-editor/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
@@ -480,7 +480,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/echarts/test.ts",
             "tsConfig": "src/platform/echarts/tsconfig.spec.json",
@@ -489,7 +489,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/platform/echarts/tsconfig.lib.json", "src/platform/echarts/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
@@ -511,7 +511,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/markdown-navigator/test.ts",
             "tsConfig": "src/platform/markdown-navigator/tsconfig.spec.json",
@@ -520,7 +520,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "src/platform/markdown-navigator/tsconfig.lib.json",
@@ -545,7 +545,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/platform/experimental/test.ts",
             "tsConfig": "src/platform/experimental/tsconfig.spec.json",
@@ -554,7 +554,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-builders/custom-webpack:tslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["src/platform/experimental/tsconfig.lib.json", "src/platform/experimental/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
