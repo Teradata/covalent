@@ -164,6 +164,12 @@ export class MediaDirectiveDemoComponent implements OnInit, OnDestroy {
       type: '{[key: string]: string}',
     },
   ];
+  mediaToggleHtml: string = `
+    <div tdMediaToggle="sm" [mediaClasses]="['classOne', 'classTwo']" 
+      [mediaAttributes]="{title: 'tooltip'}" [mediaStyles]="{color: 'red'}">
+      ...
+    </div>
+  `;
 
   constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {}
 
