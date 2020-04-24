@@ -77,7 +77,7 @@ describe('Component: Highlight', () => {
 
     it('should throw error for undefined language', async(() => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightUndefinedLangTestRenderingComponent);
-      expect(function(): void {
+      expect(function (): void {
         fixture.detectChanges();
       }).toThrowError();
     }));

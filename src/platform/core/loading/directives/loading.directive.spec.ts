@@ -215,7 +215,7 @@ describe('Directive: Loading', () => {
   it('should render fail to create component without a name and throw error', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
-      expect(function(): void {
+      expect(function (): void {
         fixture.detectChanges();
       }).toThrowError();
       done();
@@ -225,7 +225,7 @@ describe('Directive: Loading', () => {
   it('should render fail to create component because of duplicate name', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDuplicationTestComponent);
-      expect(function(): void {
+      expect(function (): void {
         fixture.detectChanges();
       }).toThrowError();
       done();
