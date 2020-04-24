@@ -81,7 +81,7 @@
     "@ngx-translate/http-loader": "4.0.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
-    "easymde": "^2.8.0",
+    "easymde": "2.8.0",
     "echarts": "4.2.1",
     "echarts-wordcloud": "^1.1.3",
     "hammerjs": "^2.0.8",
