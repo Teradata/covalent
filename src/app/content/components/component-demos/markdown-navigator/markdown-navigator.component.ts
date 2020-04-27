@@ -51,7 +51,6 @@ const multiLevelTree: IMarkdownNavigatorItem[] = [
   selector: 'markdown-navigator-demo',
   styleUrls: ['./markdown-navigator.component.scss'],
   templateUrl: './markdown-navigator.component.html',
-  preserveWhitespaces: true,
 })
 export class MarkdownNavigatorDemoComponent {
   public options: { name: string; value: IMarkdownNavigatorItem[] }[] = [

@@ -6,7 +6,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   templateUrl: './pie-demo-basic.component.html',
   styleUrls: ['./pie-demo-basic.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class PieDemoBasicComponent {
   // Chart config

@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'chips-demo',
   styleUrls: ['./chips.component.scss'],
   templateUrl: './chips.component.html',
-  preserveWhitespaces: true,
 })
 export class ChipsDemoComponent {
   strings: string[] = ['stepper', 'expansion-panel', 'markdown', 'highlight', 'loading'];

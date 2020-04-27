@@ -10,7 +10,6 @@ import { TdMediaService } from '../../../../../../platform/core/media';
   styleUrls: ['./media.component.scss'],
   templateUrl: './media.component.html',
   animations: [tdJelloAnimation, slideInUpAnimation],
-  preserveWhitespaces: true,
 })
 export class MediaServiceDemoComponent implements OnInit, OnDestroy {
   private _subcriptions: Subscription[] = [];
@@ -165,7 +164,48 @@ export class MediaServiceDemoComponent implements OnInit, OnDestroy {
       type: '{[key: string]: string}',
     },
   ];
-
+  mediaServiceTypescript: string = `
+    import { Component, NgZone, OnInit, OnDestroy } from '@angular/core';
+    import { TdMediaService } from '@covalent/core/media';
+    import { Subscription } from 'rxjs';
+    ...
+    })
+    export class Demo implements OnInit, OnDestroy {
+      isSmallScreen: boolean = false;
+      private _querySubscription: Subscription;
+      constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) { 
+      }
+      checkScreen(): void {
+        this._ngZone.run(() => {
+          this.isSmallScreen = this._mediaService.query('sm'); // or '(min-width: 960px) and (max-width: 1279px)'
+        });
+      }
+      watchScreen(): void {
+        this._querySubscription = this._mediaService.registerQuery('sm').subscribe((matches: boolean) => {
+          this._ngZone.run(() => {
+            this.isSmallScreen = matches;
+          });
+        });
+      }
+      ngOnInit(): void {
+        this.watchScreen();
+      }
+      ngOnDestroy(): void {
+        this._querySubscription.unsubscribe();
+      }
+    }
+  `;
+  covalentMediaHtml: string = `
+    import { CovalentMediaModule } from '@covalent/core/media';
+    @NgModule({
+      imports: [
+        CovalentMediaModule,
+        ...
+      ],
+      ...
+    })
+    export class MyModule {}
+  `;
   constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {}
 
   ngOnInit(): void {

@@ -7,7 +7,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   styleUrls: ['./combination-demo-basic.component.scss'],
   templateUrl: './combination-demo-basic.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class CombinationDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();

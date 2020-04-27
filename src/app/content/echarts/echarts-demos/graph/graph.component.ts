@@ -7,7 +7,6 @@ import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
   templateUrl: './graph.component.html',
   styleUrls: ['./graph.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class TypesGraphComponent implements OnInit {
   themes: string[] = getThemes();

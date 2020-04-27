@@ -61,7 +61,7 @@
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
-          <![CDATA[ <div layout="row"> <div flex>child</div> <div flex>child</div> <div flex>child</div> </div> ]]>
+          {{ rwdHorizontalRowHtml }}
         </td-highlight>
         <div class="pad-top pad-bottom">
           <mat-divider></mat-divider>
@@ -76,7 +76,7 @@
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
-          <![CDATA[ <div layout="column"> <div flex>child</div> <div flex>child</div> <div flex>child</div> </div> ]]>
+          {{ rwdVerticalColumnHtml }}
         </td-highlight>
       </div>
     </td-expansion-panel>
@@ -92,8 +92,7 @@
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
-          <![CDATA[ <div layout="row" layout-margin> <div flex>child</div> <div flex>child</div> <div flex>child</div>
-          </div> ]]>
+          {{ rwdMarginHtml }}
         </td-highlight>
         <div class="pad-top pad-bottom">
           <mat-divider></mat-divider>
@@ -108,8 +107,7 @@
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
-          <![CDATA[ <div layout="row" layout-padding> <div flex>child</div> <div flex>child</div> <div flex>child</div>
-          </div> ]]>
+          {{ rwdPaddingHtml }}
         </td-highlight>
       </div>
     </td-expansion-panel>
@@ -125,8 +123,7 @@
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
-          <![CDATA[ <div layout="row" layout-padding> <div flex="40">child</div> <div flex>child</div> <div
-          flex="30">child</div> </div> ]]>
+          {{ rwd4030Html }}
         </td-highlight>
         <div class="pad-top pad-bottom">
           <mat-divider></mat-divider>
@@ -141,8 +138,7 @@
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
-          <![CDATA[ <div layout="row" layout-padding> <div flex-gt-xs="40" flex-md="50">child</div> <div
-          flex>child</div> <div flex-gt-xs="30" flex-md="20" flex-lg="10">child</div> </div> ]]>
+          {{ rwdWidthHtml }}
         </td-highlight>
         <div class="pad-top pad-bottom">
           <mat-divider></mat-divider>
@@ -156,8 +152,7 @@
           <mat-divider></mat-divider>
         </div>
         <td-highlight lang="html">
-          <![CDATA[ <div layout-gt-xs="row"> <div flex-gt-xs="60">child</div> <div flex-gt-xs="40">child</div> </div>
-          ]]>
+          {{ rwdXsHtml }}
         </td-highlight>
       </div>
     </td-expansion-panel>
