@@ -29,16 +29,12 @@ export class MarkdownNavigatorDemoEditorComponent {
   applyInput(): void {
     this.items = JSON.parse(this.input);
     this.input = prettyJson(this.items);
-    this.openWindow();
+    this.openOrClose();
   }
 
-  openWindow(): void {
-    this._markdownNavigatorWindowService.open({ items: this.items });
-  }
-
-  handleToggleChange(): void {
+  openOrClose(): void {
     if (this.windowShouldOpen) {
-      this.openWindow();
+      this._markdownNavigatorWindowService.open({ items: this.items });
     } else {
       this._markdownNavigatorWindowService.close();
     }
