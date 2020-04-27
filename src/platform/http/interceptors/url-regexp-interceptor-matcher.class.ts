@@ -9,10 +9,7 @@ export class TdURLRegExpInterceptorMatcher implements ITdHttpInterceptorMatcher 
   matches(options: { url: string }, mapping: ITdHttpInterceptorMapping): boolean {
     return (
       mapping.paths.filter((path: string) => {
-        path = path
-          .replace(/\*\*/gi, '<>')
-          .replace(/\*/gi, '[^/?]+')
-          .replace(/<>/gi, '[^?]*');
+        path = path.replace(/\*\*/gi, '<>').replace(/\*/gi, '[^/?]+').replace(/<>/gi, '[^?]*');
         if (path) {
           path += '(\\?{1}.*)?$';
           return new RegExp(path).test(options.url);

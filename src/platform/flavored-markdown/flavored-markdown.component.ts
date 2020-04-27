@@ -195,7 +195,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
       // Remove all indentation spaces so markdown can be parsed correctly
       const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
-      lines = lines.map(function(line: string): string {
+      lines = lines.map(function (line: string): string {
         return line.replace(startingWhitespaceRegex, '');
       });
 
