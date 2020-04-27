@@ -53,6 +53,14 @@ const routes: Routes = [
           /* tslint:disable-next-line */
           import('./content/utilities/utilities.module').then((m) => m.UtilitiesModule),
       },
+      {
+        // preload: true loads the module immediately
+        path: '',
+        data: { preload: false },
+        loadChildren: () =>
+          /* tslint:disable-next-line */
+          import('./components/contact/contact.module').then((m) => m.ContactUsModule),
+      },
     ],
   },
   {
