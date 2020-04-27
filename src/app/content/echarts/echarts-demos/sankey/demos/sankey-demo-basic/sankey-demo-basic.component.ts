@@ -7,7 +7,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   templateUrl: './sankey-demo-basic.component.html',
   styleUrls: ['./sankey-demo-basic.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class SankeyDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();

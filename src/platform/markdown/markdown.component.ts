@@ -32,18 +32,12 @@ let showdown: any = require('showdown/dist/showdown.js');
 function generateAbsoluteHref(currentHref: string, relativeHref: string): string {
   if (currentHref && relativeHref) {
     const currentUrl: URL = new URL(currentHref);
-    const path: string = currentUrl.pathname
-      .split('/')
-      .slice(1, -1)
-      .join('/');
+    const path: string = currentUrl.pathname.split('/').slice(1, -1).join('/');
     const correctUrl: URL = new URL(currentHref);
 
     if (relativeHref.startsWith('/')) {
       // url is relative to top level
-      const orgAndRepo: string = path
-        .split('/')
-        .slice(0, 3)
-        .join('/');
+      const orgAndRepo: string = path.split('/').slice(0, 3).join('/');
       correctUrl.pathname = `${orgAndRepo}${relativeHref}`;
     } else {
       correctUrl.pathname = `${path}/${relativeHref}`;
@@ -285,7 +279,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
 
     // Remove all indentation spaces so markdown can be parsed correctly
     const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
-    lines = lines.map(function(line: string): string {
+    lines = lines.map(function (line: string): string {
       return line.replace(startingWhitespaceRegex, '');
     });
 

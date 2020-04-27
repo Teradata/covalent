@@ -314,7 +314,7 @@ $layout-breakpoint-lg: 1920px !default;
 
   [#{$name}],
   [#{$name}="start stretch"] // defaults
- {
+  {
     justify-content: flex-start;
     align-content: stretch;
     align-items: stretch;

@@ -110,7 +110,7 @@ describe('Service: Loading', () => {
 
   it('should throw error when trying to create loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
-      expect(function(): void {
+      expect(function (): void {
         loadingService.create({
           name: undefined,
           type: LoadingType.Linear,
@@ -124,7 +124,7 @@ describe('Service: Loading', () => {
   it('should remove overriding loading component with the same name if fullscreen', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
-      expect(function(): void {
+      expect(function (): void {
         loadingService.create({
           name: 'name',
           type: LoadingType.Linear,
@@ -132,7 +132,7 @@ describe('Service: Loading', () => {
         });
       }).not.toThrowError();
       fixture.detectChanges();
-      expect(function(): void {
+      expect(function (): void {
         loadingService.create({
           name: 'name',
           type: LoadingType.Linear,

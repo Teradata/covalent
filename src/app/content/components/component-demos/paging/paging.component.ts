@@ -6,7 +6,6 @@ import { IPageChangeEvent } from '../../../../../platform/core/paging';
   selector: 'paging-demo',
   styleUrls: ['./paging.component.scss'],
   templateUrl: './paging.component.html',
-  preserveWhitespaces: true,
 })
 export class PagingDemoComponent {
   event: IPageChangeEvent;

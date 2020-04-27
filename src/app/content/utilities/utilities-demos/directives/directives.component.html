@@ -11,16 +11,7 @@
 <mat-divider></mat-divider>
     <p>Import the [CovalentCommonModule] in your NgModule:</p>
     <td-highlight lang="typescript">
-      <![CDATA[ 
-      import { CovalentCommonModule } from '@covalent/core/common';
-      @NgModule({
-        imports: [
-          CovalentCommonModule,
-          ...
-        ],
-        ...
-      })
-      export class MyModule {} ]]>
+      {{ directiveTypescript }}
     </td-highlight>
     <a
       mat-raised-button
@@ -52,8 +43,7 @@
           </ul>
           <p>Usage:</p>
           <td-highlight lang="html">
-            <![CDATA[ <div tdFullScreen #myDirective="tdFullScreen"> <button mat-button color="primary"
-            (click)="myDirective.toggleFullScreen()">Fullscreen</button> </div> ]]>
+            {{ fullscreenHtml }}
           </td-highlight>
           <div layout="column">
             <p *ngIf="!tdFullScreen.fullScreenIsActive" flex class="mat-line">
@@ -99,8 +89,7 @@
     </div>
     <p>Usage:</p>
     <td-highlight lang="html">
-      <![CDATA[ <mat-form-field> <input matInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
-      </mat-form-field> ]]>
+      {{ autotrimHtml }}
     </td-highlight>
   </mat-card-content>
 </mat-card>

@@ -11,7 +11,7 @@
     <mat-divider></mat-divider>
     <p>Font icons using ligatures are the default option and simple to use:</p>
     <td-highlight lang="html">
-      <![CDATA[ <mat-icon>home</mat-icon> ]]>
+      {{ iconsHtml }}
     </td-highlight>
     <p class='push-bottom-lg'>
       which renders
@@ -26,19 +26,11 @@
     </p>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
-      <![CDATA[ 
-      import { DomSanitizer } from '@angular/platform-browser'; 
-      import { MatIconRegistry } from '@angular/material/icon';
-      ...
-      ...
-      constructor(private _iconRegistry: MatIconRegistry, private _domSanitizer:DomSanitizer) { 
-        this._iconRegistry.addSvgIconInNamespace('assets', 'sun',
-        this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/sun.svg')); 
-      } ]]>
+      {{ svgIconsTypescript }}
     </td-highlight>
     <p>HTML:</p>
     <td-highlight class='push-bottom-lg' lang="html">
-      <![CDATA[ <mat-icon svgIcon="assets:sun"></mat-icon> ]]>
+      {{ svgIconsHtml }}
     </td-highlight>
   <a mat-button color="accent" target="_blank" href="https://material.io/icons/" class="text-upper">Search Icons</a>
   </section>

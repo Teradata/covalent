@@ -9,7 +9,6 @@ import { TdLoadingService } from '../../../../../platform/core/loading';
   styleUrls: ['./loading.component.scss'],
   templateUrl: './loading.component.html',
   animations: [slideInUpAnimation],
-  preserveWhitespaces: true,
 })
 export class LoadingDemoComponent {
   overlayStarSyntax: boolean = false;
