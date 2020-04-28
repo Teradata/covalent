@@ -16,7 +16,7 @@ export class GuidedTourDemoBasicComponent implements OnInit {
       steps: [
         {
           title: 'Fuel',
-          text: 'Here are fuel levels',
+          text: 'Here are the fuel levels',
           attachTo: {
             element: '#fuel',
             on: 'bottom',
@@ -24,7 +24,7 @@ export class GuidedTourDemoBasicComponent implements OnInit {
         },
         {
           title: 'Oxygen',
-          text: `That's all there is to it.`,
+          text: `Here are the Oxygen levels.`,
           attachTo: {
             element: '#oxygen',
             on: 'bottom',
@@ -32,7 +32,7 @@ export class GuidedTourDemoBasicComponent implements OnInit {
         },
         {
           title: 'Global status',
-          text: `Here you can see the global status of the vehicle`,
+          text: `Here you can see the global status of the vehicle. That is all there is to it!`,
           attachTo: {
             element: '#status',
             on: 'bottom',
