@@ -351,13 +351,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private async _jumpTo(itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[]): Promise<void> {
     this.reset();
     if (this.items && this.items.length > 0) {
-      const compareWith: IMarkdownNavigatorCompareWith = this.compareWith || defaultCompareWith;
       let path: IMarkdownNavigatorItem[] = [];
 
       if (Array.isArray(itemOrPath)) {
-        path = await this.followPath(this.items, itemOrPath, compareWith);
+        path = await this.followPath(this.items, itemOrPath);
       } else {
-        path = this.findPath(this.items, itemOrPath, compareWith);
+        path = this.findPath(this.items, itemOrPath);
       }
       (path || []).forEach((pathItem: IMarkdownNavigatorItem) => this.handleItemSelected(pathItem));
     }
@@ -367,11 +366,10 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private async followPath(
     items: IMarkdownNavigatorItem[],
     path: IMarkdownNavigatorItem[],
-    compareWith: IMarkdownNavigatorCompareWith,
   ): Promise<IMarkdownNavigatorItem[]> {
     let pathItems: IMarkdownNavigatorItem[] = [];
     let currentLevel: IMarkdownNavigatorItem[] = items;
-
+    const compareWith: IMarkdownNavigatorCompareWith = this.compareWith || defaultCompareWith;
     for (const pathItem of path) {
       const foundItem: IMarkdownNavigatorItem = currentLevel.find((item: IMarkdownNavigatorItem) =>
         compareWith(pathItem, item),
@@ -395,17 +393,14 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return pathItems;
   }
 
-  private findPath(
-    items: IMarkdownNavigatorItem[],
-    item: IMarkdownNavigatorItem,
-    compareWith: IMarkdownNavigatorCompareWith,
-  ): IMarkdownNavigatorItem[] {
+  private findPath(items: IMarkdownNavigatorItem[], item: IMarkdownNavigatorItem): IMarkdownNavigatorItem[] {
+    const compareWith: IMarkdownNavigatorCompareWith = this.compareWith || defaultCompareWith;
     if (items) {
       for (const child of items) {
         if (compareWith(child, item)) {
           return [child];
         }
-        const ancestors: IMarkdownNavigatorItem[] = this.findPath(child.children, item, compareWith);
+        const ancestors: IMarkdownNavigatorItem[] = this.findPath(child.children, item);
         if (ancestors) {
           return [child, ...ancestors];
         }
