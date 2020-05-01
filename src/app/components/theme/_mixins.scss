@@ -1,0 +1,32 @@
+// Helper mixins for Teradata Brand palettes
+//
+// Mixins here loop over Teradata brand palette and create classes to be used
+// in Teradata Products.
+
+// Text color palette mixin
+@mixin tc($palette, $name, $default) {
+  .tc-#{$name} {
+    color: map-get($palette, $default);
+  }
+  @each $size, $color in $palette {
+    @if $size != contrast {
+      .tc-#{$name}-#{$size} {
+        color: $color;
+      }
+    }
+  }
+}
+
+// Background color palette mixin
+@mixin bgc($palette, $name, $default) {
+  .bgc-#{$name} {
+    background-color: map-get($palette, $default);
+  }
+  @each $size, $color in $palette {
+    @if $size != contrast {
+      .bgc-#{$name}-#{$size} {
+        background-color: $color;
+      }
+    }
+  }
+}

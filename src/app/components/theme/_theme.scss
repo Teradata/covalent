@@ -1,0 +1,64 @@
+/**
+* FONTS
+*/
+
+// Teradata Font
+$td-font-default: 'Arial, Helvetica, sans-serif';
+
+$td-font-display-regular: '"RidleyGrotesk", "RidleyGrotesk-Regular", Arial, Helvetica, sans-serif';
+$td-font-display-medium: '"RidleyGrotesk", "RidleyGrotesk-Medium", Arial, Helvetica, sans-serif';
+$td-font-display-semibold: '"RidleyGrotesk","RidleyGrotesk-Semibold", Arial, Helvetica, sans-serif';
+$td-font-display-bold: '"RidleyGrotesk","RidleyGrotesk-Bold", Arial, Helvetica, sans-serif';
+
+$fontConfig: (
+  font-family: $td-font-default,
+  display-4: mat-typography-level(96px, 120px, 500, $td-font-display-medium, -1.5px),
+  display-3: mat-typography-level(60px, 84px, 600, $td-font-display-semibold, -0.5px),
+  display-2: mat-typography-level(48px, 64px, 600, $td-font-display-semibold, 0),
+  display-1: mat-typography-level(34px, 48px, 700, $td-font-display-bold, 0.25px),
+  headline: mat-typography-level(24px, 36px, 700, $td-font-display-bold, 0),
+  title: mat-typography-level(20px, 28px, 600, $td-font-display-semibold, 0.15px),
+  subheading-2: mat-typography-level(16px, 24px, 600, $td-font-display-semibold, 0.15px),
+  subheading-1: mat-typography-level(14px, 20px, 600, $td-font-display-semibold, 0.1px),
+  body-1: mat-typography-level(14px, 20px, 400, $td-font-default, 0.25px),
+  body-2: mat-typography-level(14px, 20px, 700, $td-font-default, 0.25px),
+  button: mat-typography-level(14px, 16px, 600, $td-font-display-semibold, 0.5px),
+  caption: mat-typography-level(12px, 16px, 400, $td-font-default, 0.4px),
+  input: mat-typography-level(inherit, 1.125, 400, $td-font-default, 0.4px),
+  overline: mat-typography-level(10px, 12px, 400, $td-font-default, 1.5px),
+);
+
+@include mat-core($fontConfig);
+
+.mat-card-title {
+  @include mat-typography-level-to-styles($fontConfig, title);
+}
+
+.mat-overline {
+  text-transform: uppercase;
+  @include mat-typography-level-to-styles($fontConfig, overline);
+}
+
+// Teradata Palette utility classes
+body {
+  font-family: #{$td-font-default} !important;
+  // Teradata Slate - foreground & background
+  @include tc($td-slate, td-slate, 500);
+  @include bgc($td-slate, td-slate, 500);
+
+  // Teradata Orange - foreground & background
+  @include tc($td-orange, td-orange, 800);
+  @include bgc($td-orange, td-orange, 500);
+
+  // Teradata Yellow - foreground & background
+  @include tc($td-yellow, td-yellow, 900);
+  @include bgc($td-yellow, td-yellow, 500);
+
+  // Teradata Teal - foreground & background
+  @include tc($td-teal, td-teal, 900);
+  @include bgc($td-teal, td-teal, 500);
+
+  // Teradata Blue - foreground & background
+  @include tc($td-blue, td-blue, 700);
+  @include bgc($td-blue, td-blue, 500);
+}

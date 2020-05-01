@@ -1,7 +1,7 @@
+<div [class.alternative]="otherTheme">
 <td-layout #layout [class]="activeTheme" [dir]="dir">
   <td-navigation-drawer
     sidenavTitle="Covalent"
-    [logo]="activeTheme === 'theme-dark' ? 'teradata' : 'teradata-dark'"
     navigationRoute="/"
     flex
     color="none"
@@ -21,7 +21,13 @@
         Covalent
       </span>
       <td-toolbar flex layout="row"></td-toolbar>
+
+      <section class="example-section">
+        <button (click)="changeTheme()" mat-raised-button color="primary">Change Theme</button>
+      </section>
+
     </div>
     <router-outlet></router-outlet>
   </td-layout-nav>
 </td-layout>
+</div>

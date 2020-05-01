@@ -16,6 +16,11 @@ import { getDirection } from './utilities/direction';
 export class DocsAppComponent {
   // Current date
   year: any = new Date().getFullYear();
+  otherTheme: boolean = false;
+
+  changeTheme() {
+    this.otherTheme = !this.otherTheme;
+  }
 
   routes: object[] = [
     {
@@ -182,10 +187,10 @@ export class DocsAppComponent {
     this.dir = getDirection();
   }
 
-  get activeTheme(): string {
-    return localStorage.getItem('theme');
-  }
-  theme(theme: string): void {
-    localStorage.setItem('theme', theme);
-  }
+  // get activeTheme(): string {
+  //   return localStorage.getItem('theme');
+  // }
+  // theme(theme: string): void {
+  //   localStorage.setItem('theme', theme);
+  // }
 }

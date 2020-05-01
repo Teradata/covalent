@@ -242,3 +242,25 @@ a {
     font-weight: 400 !important;
   }
 }
+
+
+@include mat-core();
+
+$custom-primary: mat-palette($mat-deep-purple,600);
+$custom-accent: mat-palette($mat-pink, 100);
+
+$custom-theme: mat-dark-theme($custom-primary, $custom-accent);
+@include angular-material-theme($custom-theme);
+
+$alt-primary: mat-palette($mat-yellow);
+$alt-accent: mat-palette($mat-grey, 200);
+
+$alt-theme: mat-dark-theme($alt-primary, $alt-accent);
+
+.alternative{
+  @include angular-material-theme($alt-theme);
+}
+
+// .myTheme{
+//   @include angular-material-theme($custom-primary);
+// }

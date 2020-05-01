@@ -1,0 +1,13 @@
+/**
+* DEFAULT VARIABLES FOR VANTAGE UIs
+*/
+
+// Light theme
+$td-accent: mat-palette($td-teal, 900, 200, 900);
+$td-primary: mat-palette($td-slate, 500, 200, 800);
+$td-warn: mat-palette($mat-red, 900);
+
+// Dark theme
+$td-dark-accent: mat-palette($td-teal, 300, 100, 1200);
+$td-dark-primary: mat-palette($td-slate, 300, 200, 900);
+$td-dark-warn: mat-palette($mat-red, 400);
