@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MarkdownNavigatorDemoBasicComponent } from './markdown-navigator-demo-basic/markdown-navigator-demo-basic.component';
 import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { MarkdownNavigatorDemoComponent } from './markdown-navigator-demo.component';
 import { MarkdownNavigatorDemoRoutingModule } from './markdown-navigator-demo-routing.module';
@@ -25,6 +24,7 @@ import { MarkdownNavigatorBasicSharedModule } from './markdown-navigator-demo-ba
 import { MarkdownNavigatorDemoEditorComponent } from './markdown-navigator-demo-editor/markdown-navigator-demo-editor.component';
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MarkdownNavigatorDemoChildrenUrlStartAtComponent } from './markdown-navigator-demo-children-url-start-at/markdown-navigator-demo-children-url-start-at.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MarkdownNavigatorDemoStartAtComponent,
     MarkdownNavigatorDemoAnchorComponent,
     MarkdownNavigatorDemoEditorComponent,
+    MarkdownNavigatorDemoChildrenUrlStartAtComponent,
   ],
   imports: [
     DemoModule,
