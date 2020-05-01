@@ -14,6 +14,7 @@ import {
 import { MatListModule } from '@angular/material/list';
 import { MarkdownNavigatorDemoEventsComponent } from './markdown-navigator-demo-events/markdown-navigator-demo-events.component';
 import { MarkdownNavigatorDemoChildrenUrlComponent } from './markdown-navigator-demo-children-url/markdown-navigator-demo-children-url.component';
+import { MarkdownNavigatorDemoChildrenUrlStartAtComponent } from './markdown-navigator-demo-children-url-start-at/markdown-navigator-demo-children-url-start-at.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MarkdownNavigatorDemoChildrenUrlComponent } from './markdown-navigator-
     MarkdownNavigatorDemoFooterExampleBComponent,
     MarkdownNavigatorDemoEventsComponent,
     MarkdownNavigatorDemoChildrenUrlComponent,
+    MarkdownNavigatorDemoChildrenUrlStartAtComponent,
   ],
   imports: [
     DemoModule,

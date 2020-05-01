@@ -86,6 +86,7 @@ const CHILDREN_URL: string = 'https://samplechildrenurl.com';
 const ITEMS_WITH_CHILDREN_URL: IMarkdownNavigatorItem[] = [
   {
     title: 'Children url',
+    id: 'root',
     childrenUrl: CHILDREN_URL,
   },
 ];
@@ -93,6 +94,7 @@ const ITEMS_WITH_CHILDREN_URL: IMarkdownNavigatorItem[] = [
 export const DEEPLY_NESTED_TREE: IMarkdownNavigatorItem[] = [
   {
     title: 'A',
+    id: 'A_ID',
     children: [
       {
         title: 'A1',
@@ -293,7 +295,7 @@ async function validateTree(fixture: ComponentFixture<TdMarkdownNavigatorTestCom
 class TdMarkdownNavigatorTestComponent {
   items: IMarkdownNavigatorItem[] = [];
   labels: IMarkdownNavigatorLabels;
-  startAt: IMarkdownNavigatorItem;
+  startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   compareWith: IMarkdownNavigatorCompareWith;
   footer: Type<any>;
 }
@@ -787,6 +789,78 @@ describe('MarkdownNavigatorComponent', () => {
       expect(getTitle(fixture)).toContain('B');
       await goBack(fixture);
       validateTree(fixture);
+    }),
+  ));
+
+  it('should be able to jump to start at a certain item by referencing an id', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = DEEPLY_NESTED_TREE;
+      fixture.componentInstance.startAt = { id: 'A_ID' };
+      await wait(fixture);
+      expect(getTitle(fixture)).toContain('A');
+      await goBack(fixture);
+      validateTree(fixture);
+    }),
+  ));
+
+  it('should be able to jump to start at a certain item by referencing a path of items', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = DEEPLY_NESTED_TREE;
+      fixture.componentInstance.startAt = [{ id: 'A_ID' }];
+      await wait(fixture);
+      await wait(fixture);
+      expect(getTitle(fixture)).toContain('A');
+      await goBack(fixture);
+      validateTree(fixture);
+    }),
+  ));
+
+  it('should not jump anywhere if path is invalid', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = DEEPLY_NESTED_TREE;
+      fixture.componentInstance.startAt = [{ id: 'A_ID' }, { id: 'NON_EXISTING_ID' }];
+      await wait(fixture);
+      await wait(fixture);
+      expect(getItem(fixture, 0).textContent).toContain('A');
+      expect(getItem(fixture, 1).textContent).toContain('B');
+      validateTree(fixture);
+    }),
+  ));
+
+  it('should be able to jump to start at a certain item by referencing a path of items that depends on children_url', async(
+    inject([], async () => {
+      const childrenUrl1: string = CHILDREN_URL;
+      const childrenUrl2: string = 'https://anothersamplechildrenurl.com';
+      const childrenUrlRequest1: IMarkdownNavigatorItem[] = [{ id: '2a', title: '2a', childrenUrl: childrenUrl2 }];
+      const childrenUrlRequest2: IMarkdownNavigatorItem[] = [{ title: '3c', id: '3c' }];
+
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorTestComponent,
+      );
+
+      fixture.componentInstance.items = ITEMS_WITH_CHILDREN_URL;
+      fixture.componentInstance.startAt = [{ id: 'root' }, { id: '2a' }, { id: '3c' }];
+      await wait(fixture);
+      const req1: TestRequest = httpTestingController.expectOne(childrenUrl1);
+      req1.flush(childrenUrlRequest1);
+      await wait(fixture);
+      const req2: TestRequest = httpTestingController.expectOne(childrenUrl2);
+      req2.flush(childrenUrlRequest2);
+      await wait(fixture);
+      await wait(fixture);
+      expect(getTitle(fixture)).toContain('3c');
     }),
   ));
 
