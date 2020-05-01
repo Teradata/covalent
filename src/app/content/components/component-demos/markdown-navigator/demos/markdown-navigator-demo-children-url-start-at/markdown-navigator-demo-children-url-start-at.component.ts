@@ -7,12 +7,44 @@ import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
   templateUrl: './markdown-navigator-demo-children-url-start-at.component.html',
 })
 export class MarkdownNavigatorDemoChildrenUrlStartAtComponent {
+  startAt: IMarkdownNavigatorItem[] = [{ id: 'url-children-demo' }, { id: 'child-2' }, { id: 'grandchild-2' }];
   items: IMarkdownNavigatorItem[] = [
     {
-      id: 'test-url-children',
-      title: '🔥',
+      id: 'url-children-demo',
+      title: 'Url children demo',
       childrenUrl: '/assets/demos-data/children_url_1.json',
+      /*
+      For ref:
+
+      children_url_1.json:
+      [
+        {
+          "title": "Child 1",
+          "id": "child-1",
+          "markdownString": "> This is child 1"
+        },
+        {
+          "title": "Child 2",
+          "id": "child-2",
+          "markdownString": "> This is child 2",
+          "childrenUrl": "/assets/demos-data/children_url_2.json"
+        }
+      ]
+
+      children_url_2.json:
+      [
+        {
+          "title": "Grandchild 1",
+          "id": "grandchild-1",
+          "markdownString": "> This is grandchild 1"
+        },
+        {
+          "title": "Grandchild 2",
+          "id": "grandchild-2",
+          "markdownString": "> This is grandchild 2"
+        }
+      ]
+      */
     },
   ];
-  startAt: IMarkdownNavigatorItem[] = [{ id: 'test-url-children' }, { id: 'up_up_and_away' }, { id: 'blast_off' }];
 }

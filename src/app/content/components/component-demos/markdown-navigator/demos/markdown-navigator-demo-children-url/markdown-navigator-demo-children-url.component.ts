@@ -9,8 +9,7 @@ import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 export class MarkdownNavigatorDemoChildrenUrlComponent {
   items: IMarkdownNavigatorItem[] = [
     {
-      id: 'test-url-children',
-      title: '🔥',
+      title: 'Url children demo',
       childrenUrl: '/assets/demos-data/children_url_1.json',
     },
   ];
