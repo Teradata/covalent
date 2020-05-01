@@ -187,10 +187,10 @@ export class DocsAppComponent {
     this.dir = getDirection();
   }
 
-  // get activeTheme(): string {
-  //   return localStorage.getItem('theme');
-  // }
-  // theme(theme: string): void {
-  //   localStorage.setItem('theme', theme);
-  // }
+  get activeTheme(): string {
+    return localStorage.getItem('theme');
+  }
+  theme(theme: string): void {
+    localStorage.setItem('theme', theme);
+  }
 }
