@@ -22,8 +22,6 @@ const noop: any = () => {
 
 // counter for ids to allow for multiple editors on one page
 let uniqueCounter: number = 0;
-// declare all the built in electron objects
-declare const electron: any;
 import * as monaco from 'monaco-editor';
 
 @Component({
@@ -57,6 +55,7 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
   _isFullScreen: boolean = false;
   _keycode: any;
   _setValueTimeout: any;
+  _setLanguageTimeout: any;
   initialContentChange: boolean = true;
   _registeredLanguagesStyles: HTMLStyleElement[] = [];
 
@@ -101,28 +100,24 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    */
   @Input('value')
   set value(value: string) {
+    if (value === this._value) {
+      return;
+    }
+
     // Clear any timeout that might overwrite this value set in the future
     if (this._setValueTimeout) {
       clearTimeout(this._setValueTimeout);
     }
-    this._value = value;
-    if (this._componentInitialized) {
-      if (this._editor && this._editor.setValue) {
-        // don't want to keep sending content if event came from the editor, infinite loop
-        if (!this._fromEditor) {
-          this._editor.setValue(value);
-        }
-        this.editorValueChange.emit();
-        this.propagateChange(this._value);
-        this.change.emit();
-        this._fromEditor = false;
-        this.zone.run(() => (this._value = value));
-      } else {
-        // Editor is not loaded yet, try again in half a second
-        this._setValueTimeout = setTimeout(() => {
-          this.value = value;
-        }, 500);
+    if (this._componentInitialized && this._editor && this._editor.setValue) {
+      this._value = value;
+      // don't want to keep sending content if event came from the editor, infinite loop
+      if (!this._fromEditor) {
+        this._editor.setValue(value);
       }
+      this.editorValueChange.emit();
+      this.propagateChange(this._value);
+      this.change.emit();
+      this._fromEditor = false;
     } else {
       this._setValueTimeout = setTimeout(() => {
         this.value = value;
@@ -177,19 +172,25 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
     if (language === this._language) {
       return;
     }
-    this._language = language;
+
+    // Clear any timeout that might overwrite this language set in the future
+    if (this._setLanguageTimeout) {
+      clearTimeout(this._setLanguageTimeout);
+    }
     if (this._componentInitialized && this._editor) {
       const currentValue: string = this._editor.getValue();
+      this._editor.getModel().dispose();
       this._editor.dispose();
       this._editor = undefined;
-      const myDiv: HTMLDivElement = this._editorContainer.nativeElement;
 
+      this._language = language;
+      const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
       this._editor = monaco.editor.create(
-        myDiv,
+        containerDiv,
         Object.assign(
           {
             value: currentValue,
-            language,
+            language: this._language,
             theme: this._theme,
           },
           this.editorOptions,
@@ -201,6 +202,10 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
       });
       this.editorConfigurationChanged.emit();
       this.editorLanguageChanged.emit();
+    } else {
+      this._setLanguageTimeout = setTimeout(() => {
+        this.language = language;
+      }, 500);
     }
   }
   get language(): string {
@@ -213,8 +218,6 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    */
   registerLanguage(language: any): void {
     if (this._componentInitialized && this._editor) {
-      this._editor.dispose();
-
       for (const provider of language.completionItemProvider) {
         /* tslint:disable-next-line */
         provider.kind = eval(provider.kind);
@@ -259,17 +262,18 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
     if (editorStyle === this._editorStyle) {
       return;
     }
-    this._editorStyle = editorStyle;
+
     if (this._componentInitialized && this._editor) {
-      const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
-      containerDiv.setAttribute('style', editorStyle);
       const currentValue: string = this._editor.getValue();
+      this._editor.getModel().dispose();
       this._editor.dispose();
       this._editor = undefined;
-      const myDiv: HTMLDivElement = this._editorContainer.nativeElement;
 
+      this._editorStyle = editorStyle;
+      const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
+      containerDiv.setAttribute('style', this._editorStyle);
       this._editor = monaco.editor.create(
-        myDiv,
+        containerDiv,
         Object.assign(
           {
             value: currentValue,
@@ -410,7 +414,14 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
   ngOnDestroy(): void {
     this._changeDetectorRef.detach();
     this._registeredLanguagesStyles.forEach((style: HTMLStyleElement) => style.remove());
+    if (this._setValueTimeout) {
+      clearTimeout(this._setValueTimeout);
+    }
+    if (this._setLanguageTimeout) {
+      clearTimeout(this._setLanguageTimeout);
+    }
     if (this._editor) {
+      this._editor.getModel().dispose();
       this._editor.dispose();
       this._editor = undefined;
     }
@@ -492,7 +503,6 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
 
   /**
    * wrapEditorCalls used to proxy all the calls to the monaco editor
-   * For calls for Electron use this to call the editor inside the webview
    */
   private wrapEditorCalls(obj: any): any {
     const that: any = this;

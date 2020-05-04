@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { TdCodeEditorComponent } from '@covalent/code-editor';
+import { Component, ChangeDetectorRef } from '@angular/core';
 
 const sql: string = `SELECT department_number, sampleid
 FROM department
@@ -71,13 +70,12 @@ const html: string = `<div layout="row" layout-align="start center" class="pad-x
   templateUrl: './code-editor-demo-basic.component.html',
 })
 export class CodeEditorDemoBasicComponent {
-  @ViewChild('editor') private _tdEditor: TdCodeEditorComponent;
-
   editorLanguage: string = 'sql';
   editorVal: string = sql;
 
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+
   changeLanguage(): void {
-    this._tdEditor.language = this.editorLanguage;
     this.editorVal =
       this.editorLanguage === 'sql'
         ? sql
@@ -86,5 +84,6 @@ export class CodeEditorDemoBasicComponent {
         : this.editorLanguage === 'javascript'
         ? javascript
         : html;
+    this._changeDetectorRef.detectChanges();
   }
 }

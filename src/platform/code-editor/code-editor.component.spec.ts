@@ -3,9 +3,6 @@ import { Component, ViewChild } from '@angular/core';
 import { TdCodeEditorComponent } from './';
 import { FormsModule } from '@angular/forms';
 
-declare var electron: any;
-declare const process: any;
-
 // to be able to test fullscreen when running headless in travis
 interface IFsDocument extends HTMLDocument {
   webkitExitFullscreen?: () => void;
@@ -202,36 +199,103 @@ describe('Component: App', () => {
       const component: TestMultipleEditorsComponent = fixture.debugElement.componentInstance;
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        component.editor1.editorInitialized.subscribe(() => {
-          component.editor1.value = 'SELECT * FROM foo;';
+      const jsEditorContent: string = `export interface IFoo
+        {
+          a: number,
+          b: string
+        };`;
+      const sqlEditorContent: string = `SELECT * FROM foo2;`;
+      const cssEditorContent: string = `:host {
+        display: block;
+        position: relative;
+        .editorContainer {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }`;
+      component.editor1.editorInitialized.subscribe(() => {
+        component.editor1.value = jsEditorContent;
+        component.editor2.value = sqlEditorContent;
+        component.editor3.value = cssEditorContent;
+        fixture.changeDetectorRef.detectChanges();
+        fixture.detectChanges();
+        setTimeout(() => {
           component.editor1.getValue().subscribe((value: string) => {
-            fixture.whenStable().then(() => {
-              fixture.detectChanges();
-              fixture.changeDetectorRef.detectChanges();
-              expect(value).toBe('SELECT * FROM foo;');
+            expect(value).toBe(jsEditorContent);
 
-              component.editor2.value = 'SELECT * FROM foo2;';
-              component.editor2.getValue().subscribe((value2: string) => {
-                fixture.whenStable().then(() => {
-                  fixture.detectChanges();
-                  fixture.changeDetectorRef.detectChanges();
-                  expect(value2).toBe('SELECT * FROM foo2;');
+            component.editor2.getValue().subscribe((value2: string) => {
+              expect(value2).toBe(sqlEditorContent);
 
-                  component.editor3.value = 'SELECT * FROM foo3;';
-                  component.editor3.getValue().subscribe((value3: string) => {
-                    fixture.whenStable().then(() => {
-                      fixture.detectChanges();
-                      fixture.changeDetectorRef.detectChanges();
-                      expect(value3).toBe('SELECT * FROM foo3;');
-                      done();
-                    });
-                  });
-                });
+              component.editor3.getValue().subscribe((value3: string) => {
+                expect(value3).toBe(cssEditorContent);
+                done();
               });
             });
           });
-        });
+        }, 1000);
+      });
+    })();
+  });
+
+  it('should work with 2 way binding via value', (done: DoneFn) => {
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithValueComponent);
+      const component: TestTwoWayBindingWithValueComponent = fixture.debugElement.componentInstance;
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      component.editor.editorInitialized.subscribe(() => {
+        setTimeout(() => {
+          // Wait sufficient time that the editor should have been created and the value set
+          component.editor.getValue().subscribe((originalValue: string) => {
+            expect(originalValue).toBe('const val = 1;');
+
+            const newSampleCode: string = 'const val = 2;';
+            component.sampleCode = newSampleCode;
+            fixture.changeDetectorRef.detectChanges();
+            fixture.detectChanges();
+              setTimeout(() => {
+                // Value changed, should have had time to been set in editor
+                component.editor.getValue().subscribe((newValue: string) => {
+                  expect(component.sampleCode).toBe(newSampleCode);
+                  expect(newValue).toBe(newSampleCode);
+                  done();
+                });
+              }, 1000); // wait for timeouts
+          });
+        }, 1000); // wait for timeouts
+      });
+    })();
+  });
+
+  it('should work with 2 way binding via ngModel', (done: DoneFn) => {
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithNgModelComponent);
+      const component: TestTwoWayBindingWithNgModelComponent = fixture.debugElement.componentInstance;
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      component.editor.editorInitialized.subscribe(() => {
+        setTimeout(() => {
+          // Wait sufficient time that the editor should have been created and the value set
+          component.editor.getValue().subscribe((originalValue: string) => {
+            expect(originalValue).toBe('const val = 1;');
+
+            const newSampleCode: string = 'const val = 2;';
+            component.sampleCode = newSampleCode;
+            fixture.changeDetectorRef.detectChanges();
+            fixture.detectChanges();
+            setTimeout(() => {
+              // Value changed, should have had time to been set in editor
+              component.editor.getValue().subscribe((newValue: string) => {
+                expect(component.sampleCode).toBe(newSampleCode);
+                expect(newValue).toBe(newSampleCode);
+                done();
+              });
+            }, 1000); // wait for timeouts
+          });
+        }, 1000); // wait for timeouts
       });
     })();
   });
@@ -278,74 +342,6 @@ describe('Component: App', () => {
       });
     })();
   });
-
-  it('should work with 2 way binding via value', (done: DoneFn) => {
-    inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithValueComponent);
-      const component: TestTwoWayBindingWithValueComponent = fixture.debugElement.componentInstance;
-      fixture.changeDetectorRef.detectChanges();
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        component.editor.editorInitialized.subscribe(() => {
-          setTimeout(() => {
-            // Wait sufficient time that the editor should have been created and the value set
-            component.editor.getValue().subscribe((originalValue: string) => {
-              expect(originalValue).toBe('const val = 1;');
-
-              const newSampleCode: string = 'const val = 2;';
-              component.sampleCode = newSampleCode;
-              fixture.changeDetectorRef.detectChanges();
-              fixture.detectChanges();
-              fixture.whenStable().then(() => {
-                setTimeout(() => {
-                  // Value changed, should have had time to been set in editor
-                  component.editor.getValue().subscribe((newValue: string) => {
-                    expect(component.sampleCode).toBe(newSampleCode);
-                    expect(newValue).toBe(newSampleCode);
-                    done();
-                  });
-                }, 1000); // wait for timeouts
-              });
-            });
-          }, 1000); // wait for timeouts
-        });
-      });
-    })();
-  });
-
-  // it('should work with 2 way binding via ngModel', (done: DoneFn) => {
-  //   inject([], () => {
-  //     const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithNgModelComponent);
-  //     const component: TestTwoWayBindingWithNgModelComponent = fixture.debugElement.componentInstance;
-  //     fixture.changeDetectorRef.detectChanges();
-  //     fixture.detectChanges();
-  //     fixture.whenStable().then(() => {
-  //       component.editor.editorInitialized.subscribe(() => {
-  //         setTimeout(() => {
-  //           // Wait sufficient time that the editor should have been created and the value set
-  //           component.editor.getValue().subscribe((originalValue: string) => {
-  //             expect(originalValue).toBe('const val = 1;');
-
-  //             const newSampleCode: string = 'const val = 2;';
-  //             component.sampleCode = newSampleCode;
-  //             fixture.changeDetectorRef.detectChanges();
-  //             fixture.detectChanges();
-  //             fixture.whenStable().then(() => {
-  //               setTimeout(() => {
-  //                 // Value changed, should have had time to been set in editor
-  //                 component.editor.getValue().subscribe((newValue: string) => {
-  //                   expect(component.sampleCode).toBe(newSampleCode);
-  //                   expect(newValue).toBe(newSampleCode);
-  //                   done();
-  //                 });
-  //               }, 1000); // wait for timeouts
-  //             });
-  //           });
-  //         }, 1000); // wait for timeouts
-  //       });
-  //     });
-  //   })();
-  // });
 });
 
 @Component({
@@ -354,7 +350,7 @@ describe('Component: App', () => {
       <td-code-editor #editor1 style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>
     </div>
     <div>
-      <td-code-editor #editor2 style="height: 200px" theme="vs" flex language="html"></td-code-editor>
+      <td-code-editor #editor2 style="height: 200px" theme="vs" flex language="sql"></td-code-editor>
     </div>
     <div>
       <td-code-editor #editor3 style="height: 200px" theme="vs" flex language="css"></td-code-editor>

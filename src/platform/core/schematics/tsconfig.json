@@ -10,7 +10,7 @@
     "lib": ["es2017", "dom"],
     "moduleResolution": "node",
     "sourceMap": true,
-    "target": "es5",
+    "target": "es2015",
     "typeRoots": ["./../../../../node_modules/@types"],
     "noUnusedParameters": false,
     "noUnusedLocals": false,

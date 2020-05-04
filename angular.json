@@ -82,6 +82,12 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "browserTarget": "covalent-docs:build"
           },
           "configurations": {
@@ -93,6 +99,12 @@
         "extract-i18n": {
           "builder": "@angular-builders/custom-webpack:extract-i18n",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "browserTarget": "covalent-docs:build"
           }
         },
@@ -195,6 +207,12 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "browserTarget": "covalent-test-bed:build"
           },
           "configurations": {
@@ -219,8 +237,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/core/test.ts",
             "tsConfig": "src/platform/core/tsconfig.spec.json",
             "karmaConfig": "src/platform/core/karma.conf.js",
@@ -250,8 +274,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/highlight/test.ts",
             "tsConfig": "src/platform/highlight/tsconfig.spec.json",
             "karmaConfig": "src/platform/highlight/karma.conf.js",
@@ -281,8 +311,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/dynamic-forms/test.ts",
             "tsConfig": "src/platform/dynamic-forms/tsconfig.spec.json",
             "karmaConfig": "src/platform/dynamic-forms/karma.conf.js",
@@ -315,8 +351,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/http/test.ts",
             "tsConfig": "src/platform/http/tsconfig.spec.json",
             "karmaConfig": "src/platform/http/karma.conf.js",
@@ -346,8 +388,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/markdown/test.ts",
             "tsConfig": "src/platform/markdown/tsconfig.spec.json",
             "karmaConfig": "src/platform/markdown/karma.conf.js",
@@ -377,8 +425,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/flavored-markdown/test.ts",
             "tsConfig": "src/platform/flavored-markdown/tsconfig.spec.json",
             "karmaConfig": "src/platform/flavored-markdown/karma.conf.js",
@@ -411,7 +465,7 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
             "customWebpackConfig": {
               "path": "./monaco-webpack.config.js",
@@ -449,8 +503,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/text-editor/test.ts",
             "tsConfig": "src/platform/text-editor/tsconfig.spec.json",
             "karmaConfig": "src/platform/text-editor/karma.conf.js",
@@ -480,8 +540,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/echarts/test.ts",
             "tsConfig": "src/platform/echarts/tsconfig.spec.json",
             "karmaConfig": "src/platform/echarts/karma.conf.js",
@@ -511,8 +577,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/markdown-navigator/test.ts",
             "tsConfig": "src/platform/markdown-navigator/tsconfig.spec.json",
             "karmaConfig": "src/platform/markdown-navigator/karma.conf.js",
@@ -545,8 +617,14 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
+            "customWebpackConfig": {
+              "path": "./monaco-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "prepend"
+              }
+            },
             "main": "src/platform/experimental/test.ts",
             "tsConfig": "src/platform/experimental/tsconfig.spec.json",
             "karmaConfig": "src/platform/experimental/karma.conf.js",
