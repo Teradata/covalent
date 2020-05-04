@@ -233,9 +233,9 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
     if (changes.items) {
       this.reset();
-      if (this.items && this.startAt) {
-        await this._jumpTo(this.startAt);
-      }
+    }
+    if (changes.startAt && this.items && this.startAt) {
+      this._jumpTo(this.startAt);
     }
   }
 
