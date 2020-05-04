@@ -6,9 +6,10 @@ import { GuidedTourDemoRoutingModule } from './guided-tour-demo-routing.module';
 import { GuidedTourDemoBasicSharedModule } from './guided-tour-demo-basic/guided-tour-basic-shared';
 import { MatButtonModule } from '@angular/material/button';
 import { GuidedTourDemoAbortOnComponent } from './guided-tour-demo-abort-on/guided-tour-demo-abort-on.component';
+import { GuidedTourDemoAttachOptionsComponent } from './guided-tour-demo-attach-options/guided-tour-demo-attach-options.component';
 
 @NgModule({
-  declarations: [GuidedTourDemoComponent, GuidedTourDemoAbortOnComponent],
+  declarations: [GuidedTourDemoComponent, GuidedTourDemoAbortOnComponent, GuidedTourDemoAttachOptionsComponent],
   imports: [CommonModule, DemoModule, GuidedTourDemoBasicSharedModule, GuidedTourDemoRoutingModule, MatButtonModule],
 })
 export class GuidedTourDemosModule {}

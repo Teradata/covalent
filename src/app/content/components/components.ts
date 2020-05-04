@@ -84,7 +84,7 @@ export const createComponentDetails: IComponentDetails[] = [
   {
     name: 'Guided Tour',
     id: 'guided-tour',
-    description: 'Tour guides using Shepherd',
+    description: 'Guided tours using Shepherd',
     apiDocUrl: 'platform/guided-tour/README.md',
     icon: 'directions_bus',
     category: dialogs.name,

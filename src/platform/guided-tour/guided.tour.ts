@@ -1,35 +1,16 @@
 import Shepherd from 'shepherd.js';
+import { timer, Subject, BehaviorSubject, merge, Subscription, fromEvent, forkJoin } from 'rxjs';
+import { takeUntil, skipWhile, filter, skip, first } from 'rxjs/operators';
 
 export type TourStep = Shepherd.Step.StepOptions;
 export type TourStepButton = Shepherd.Step.StepOptionsButton;
 
-import { timer, Subject, BehaviorSubject, merge, Subscription, fromEvent, forkJoin } from 'rxjs';
-import { takeUntil, skipWhile, filter, skip, first } from 'rxjs/operators';
-
-const SHEPHERD_DEFAULT_FIND_TIME_BEFORE_SHOW: number = 100;
-const SHEPHERD_DEFAULT_FIND_INTERVAL: number = 500;
-const SHEPHERD_DEFAULT_FIND_ATTEMPTS: number = 20;
-
-const overriddenEvents: string[] = ['click', 'pointerover', 'removed', 'added', 'keyup'];
-
-const keyEvents: Map<number, string> = new Map<number, string>([
-  [13, 'enter'],
-  [27, 'esc'],
-]);
-
-const defaultStepOptions: TourStep = {
-  scrollTo: { behavior: 'smooth', block: 'center' },
-  cancelIcon: {
-    enabled: true,
-  },
-};
-
-interface ITourEventOn {
+export interface ITourEventOn {
   selector?: string;
   event?: string;
 }
 
-interface ITourEventOnOptions {
+export interface ITourEventOnOptions {
   timeBeforeShow?: number;
   interval?: number;
 }
@@ -59,9 +40,10 @@ export interface ITourStep extends TourStep {
   attachToOptions?: ITourStepAttachToOptions;
   advanceOnOptions?: ITourStepAdvanceOnOptions;
   advanceOn?: ITourStepAdvanceOn[] | ITourStepAdvanceOn | any;
+  abortOn?: ITourAbortOn[];
 }
 
-export abstract class TourButtonsActions {
+abstract class TourButtonsActions {
   abstract next(): void;
 
   abstract back(): void;
@@ -70,6 +52,24 @@ export abstract class TourButtonsActions {
 
   abstract finish(): void;
 }
+
+const SHEPHERD_DEFAULT_FIND_TIME_BEFORE_SHOW: number = 100;
+const SHEPHERD_DEFAULT_FIND_INTERVAL: number = 500;
+const SHEPHERD_DEFAULT_FIND_ATTEMPTS: number = 20;
+
+const overriddenEvents: string[] = ['click', 'pointerover', 'removed', 'added', 'keyup'];
+
+const keyEvents: Map<number, string> = new Map<number, string>([
+  [13, 'enter'],
+  [27, 'esc'],
+]);
+
+const defaultStepOptions: TourStep = {
+  scrollTo: { behavior: 'smooth', block: 'center' },
+  cancelIcon: {
+    enabled: true,
+  },
+};
 
 const MAT_ICON_BUTTON: string = 'mat-icon-button material-icons mat-button-base';
 const MAT_BUTTON: string = 'mat-button-base mat-button';
@@ -149,8 +149,9 @@ export class CovalentGuidedTour extends TourButtonsActions {
   }
 
   protected _prepareTour(originalSteps: ITourStep[]): ITourStep[] {
-    // create Subject for back events
+    // create Subjects for back and forward events
     const backEvent$: Subject<void> = new Subject<void>();
+    const forwardEvent$: Subject<void> = new Subject<void>();
     let _backFlow: boolean = false;
     // create Subject for your end
     const destroyedEvent$: Subject<void> = new Subject<void>();
@@ -194,6 +195,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
     // listen to the destroyed event to clean up all the streams
     this._destroyedEvent$.pipe(first()).subscribe(() => {
       backEvent$.complete();
+      forwardEvent$.complete();
       destroyedEvent$.next();
       destroyedEvent$.complete();
     });
@@ -206,6 +208,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
         text: 'chevron_right',
         action: () => {
           // intercept the next action and trigger event
+          forwardEvent$.next();
           this.shepherdTour.next();
         },
         classes: MAT_ICON_BUTTON,
@@ -278,7 +281,25 @@ export class CovalentGuidedTour extends TourButtonsActions {
                   } else {
                     this.shepherdTour.next();
                   }
+                  forwardEvent$.next();
                   advanceSubs.unsubscribe();
+                });
+            }
+
+            // if abortOn was passed on the step, we bind the event and execute complete
+            if (step.abortOn) {
+              const abortArr$: Subject<void>[] = [];
+              step.abortOn.forEach((abortOn: ITourAbortOn) => {
+                const abortEvent$: Subject<void> = new Subject<void>();
+                abortArr$.push(abortEvent$);
+                this._bindEvent(abortOn, undefined, abortEvent$, destroyedEvent$);
+              });
+
+              const abortSubs: Subscription = merge(...abortArr$)
+                .pipe(takeUntil(merge(destroyedEvent$, backEvent$, forwardEvent$)))
+                .subscribe(() => {
+                  this.shepherdTour.complete();
+                  abortSubs.unsubscribe();
                 });
             }
           };
@@ -334,6 +355,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
                     // destroys current step if we need to skip it to remove it from the tour
                     const currentStep: Shepherd.Step = this.shepherdTour.getCurrentStep();
                     currentStep.destroy();
+                    this.shepherdTour.next();
                     this.shepherdTour.removeStep((<Shepherd.Step.StepOptions>currentStep).id);
                   }
                 } else if (step.attachToOptions && step.attachToOptions.else) {
@@ -377,7 +399,14 @@ export class CovalentGuidedTour extends TourButtonsActions {
               _retriesReached$.complete();
             });
           } else {
-            resolve();
+            // resolve observable until the timeBeforeShow has passsed or use default
+            timer(
+              (step.attachToOptions && step.attachToOptions.timeBeforeShow) || SHEPHERD_DEFAULT_FIND_TIME_BEFORE_SHOW,
+            )
+              .pipe(takeUntil(merge(destroyedEvent$)))
+              .subscribe(() => {
+                resolve();
+              });
           }
         });
       };

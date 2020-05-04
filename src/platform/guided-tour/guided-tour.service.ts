@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router, ActivatedRoute, ParamMap, NavigationExtras } from '@angular/router';
-
+import {
+  Router,
+  ActivatedRoute,
+  ParamMap,
+  NavigationExtras,
+  NavigationStart,
+  Event as NavigationEvent,
+} from '@angular/router';
 import Shepherd from 'shepherd.js';
-
-import { tap, map } from 'rxjs/operators';
+import { tap, map, filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-
 import { CovalentGuidedTour, ITourStep, ITourOptions } from './guided.tour';
 
 export interface IGuidedTour extends ITourOptions {
@@ -31,6 +35,15 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
 
   constructor(private _router: Router, private _route: ActivatedRoute, private _httpClient: HttpClient) {
     super();
+    _router.events
+      .pipe(
+        filter((event: NavigationEvent) => event instanceof NavigationStart && event.navigationTrigger === 'popstate'),
+      )
+      .subscribe((event: NavigationEvent) => {
+        if (this.shepherdTour.isActive) {
+          this.shepherdTour.cancel();
+        }
+      });
   }
 
   async registerTour(tourName: string, tour: IGuidedTour | string): Promise<void> {
