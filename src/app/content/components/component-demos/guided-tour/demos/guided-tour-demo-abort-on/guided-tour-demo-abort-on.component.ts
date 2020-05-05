@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CovalentGuidedTourService, IGuidedTour } from '@covalent/guided-tour';
+import { CovalentGuidedTourService, IGuidedTour, ITourEvent } from '@covalent/guided-tour';
 
 @Component({
   selector: 'guided-tour-demo-abort-on',
@@ -17,7 +17,7 @@ export class GuidedTourDemoAbortOnComponent implements OnInit {
         // on global level, can also be on individual step level
         {
           selector: '#abort-on-demo #added-element',
-          event: 'added', // can be added/removed/clicked/hover/etc
+          event: ITourEvent.added, // click, pointerover, keyup, added, removed
         },
       ],
       steps: [

@@ -18,35 +18,43 @@ A wrapper around [Shepherd](https://shepherdjs.dev) with extra functionality. Ma
 export type TourStep = Shepherd.Step.StepOptions;
 export type TourStepButton = Shepherd.Step.StepOptionsButton;
 
+export enum ITourEvent {
+  'click' = 'click',
+  'pointerover' = 'pointerover',
+  'keyup' = 'keyup',
+  'added' = 'added', // added to DOM
+  'removed' = 'removed', // removed from DOM
+}
+
 export interface ITourEventOn {
-  selector?: string;
-  event?: string;
+  selector?: string; // css selector
+  event?: keyof typeof ITourEvent; // click, pointerover, keyup, added, removed
 }
 
 export interface ITourEventOnOptions {
-  timeBeforeShow?: number;
-  interval?: number;
+  timeBeforeShow?: number; // delay before step is displayed
+  interval?: number; // time between searches for element, defaults to 500ms
 }
 
 export interface ITourAbortOn extends ITourEventOn {}
 
 export interface ITourOptions extends Shepherd.Tour.TourOptions {
-  abortOn?: ITourAbortOn[];
+  abortOn?: ITourAbortOn[]; // events to abort on
 }
 
 export interface ITourStepAttachToOptions extends ITourEventOnOptions {
   highlight?: boolean;
-  retries?: number;
-  skipIfNotFound?: boolean;
-  else?: string;
-  goBackTo?: string;
+  retries?: number; // # num of attempts to find element
+  skipIfNotFound?: boolean; // if element is not found after n retries, move on to next step
+  else?: string; // if element is not found, go to step with this id
+  goBackTo?: string; // back button goes back to step with this id
 }
 
 export interface ITourStepAdvanceOn extends ITourEventOn {}
 
 export interface ITourStepAdvanceOnOptions extends ITourEventOnOptions {
-  jumpTo?: string;
-  allowGoBack?: boolean;
+  jumpTo?: string; // next button will jump to step with this id
+  allowGoBack?: boolean; // allow back within this step
 }
 
 export interface ITourStep extends TourStep {

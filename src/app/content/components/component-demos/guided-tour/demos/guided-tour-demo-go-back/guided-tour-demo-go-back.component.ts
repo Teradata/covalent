@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CovalentGuidedTourService, IGuidedTour } from '@covalent/guided-tour';
+import { CovalentGuidedTourService, IGuidedTour, ITourEvent } from '@covalent/guided-tour';
 
 @Component({
   selector: 'guided-tour-demo-go-back',
@@ -31,7 +31,7 @@ export class GuidedTourDemoGoBackComponent implements OnInit {
           },
           advanceOn: {
             selector: '#go-back-demo #advance-button',
-            event: 'click',
+            event: ITourEvent.click,
           },
           advanceOnOptions: {
             allowGoBack: false,
