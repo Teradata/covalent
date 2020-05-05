@@ -6,9 +6,9 @@
   </p>
 </section>
 
-<mat-card class='push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none'>
+<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
   <mat-card-title>Clipboard</mat-card-title>
-  <mat-card-subtitle class='push-bottom-none'>Clipboard function.</mat-card-subtitle>
+  <mat-card-subtitle class="push-bottom-none">Clipboard function.</mat-card-subtitle>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
@@ -49,9 +49,9 @@
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
-<mat-card class='push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none'>
+<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
   <mat-card-title>Convert</mat-card-title>
-  <mat-card-subtitle class='push-bottom-none'>Type conversion functions.</mat-card-subtitle>
+  <mat-card-subtitle class="push-bottom-none">Type conversion functions.</mat-card-subtitle>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
@@ -90,15 +90,15 @@
         </td-highlight>
         <p>Typescript:</p>
         <td-highlight lang="typescript">
-          {{ convertCodeTypescript }}      
+          {{ convertCodeTypescript }}
         </td-highlight>
       </mat-tab>
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
-<mat-card class='push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none'>
+<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
   <mat-card-title>Download</mat-card-title>
-  <mat-card-subtitle class='push-bottom-none'>Content download functions.</mat-card-subtitle>
+  <mat-card-subtitle class="push-bottom-none">Content download functions.</mat-card-subtitle>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
@@ -176,9 +176,9 @@
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
-<mat-card class='push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none'>
+<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
   <mat-card-title>File</mat-card-title>
-  <mat-card-subtitle class='push-bottom-none'>File handling functions.</mat-card-subtitle>
+  <mat-card-subtitle class="push-bottom-none">File handling functions.</mat-card-subtitle>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
@@ -187,7 +187,7 @@
         <p>Read file as UTF-8 text. Return string contents on read completion.</p>
         <button mat-raised-button class="text-upper" color="primary" (click)="fileInput.click()">
           Choose File
-          <input #fileInput type="file" (change)="doReadFile($event)" style="display:none" />
+          <input #fileInput type="file" (change)="doReadFile($event)" style="display: none;" />
         </button>
         <h4>File Content:</h4>
         <td-highlight class="filecontentmaxheight" [content]="readFileContent"></td-highlight>
