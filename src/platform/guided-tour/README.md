@@ -118,3 +118,13 @@ const basicDemoTour: IGuidedTour = {
 this._guidedTourService.registerTour('basicDemoTour', basicDemoTour);
 this._guidedTourService.startTour('basicDemoTour');
 ```
+
+```html
+<div id="basic-demo">
+  <button mat-raised-button color="accent" (click)="startTour()">Start tour</button>
+  <meter id="fuel" min="0" max="100" low="33" high="66" optimum="50" value="50"></meter>
+  <progress id="oxygen" max="100" value="70"> 70% </progress>
+  <marquee id="status">All systems are running smoothly</marquee>
+</div>
+
+```
