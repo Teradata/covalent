@@ -8,7 +8,7 @@ A wrapper around [Shepherd](https://shepherdjs.dev) with extra functionality. Ma
 
 + registerTour(tourName: string, tour: IGuidedTour | string): Promise<void>
   + Create a tour
-+ startTour(tour: string): Shepherd.Tour
++ startTour(tourName: string): Shepherd.Tour
   + Start a certain tour
 + initializeOnQueryParams(queryParam: string = 'tour'): Observable<ParamMap>
   + Listen to query params to launch a tour

@@ -51,8 +51,8 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
     this._toursMap.set(tourName, guidedTour);
   }
 
-  startTour(tour: string): Shepherd.Tour {
-    const guidedTour: IGuidedTour = this._getTour(tour);
+  startTour(tourName: string): Shepherd.Tour {
+    const guidedTour: IGuidedTour = this._getTour(tourName);
     this.finish();
     if (guidedTour && guidedTour.steps && guidedTour.steps.length) {
       // remove steps from tour since we need to preprocess them first
@@ -64,7 +64,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
       return tourInstance;
     } else {
       // tslint:disable-next-line:no-console
-      console.warn(`Tour ${tour} does not exist. Please try another tour.`);
+      console.warn(`Tour ${tourName} does not exist. Please try another tour.`);
     }
   }
 

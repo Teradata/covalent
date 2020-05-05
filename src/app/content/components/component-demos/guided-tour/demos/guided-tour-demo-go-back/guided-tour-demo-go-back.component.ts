@@ -11,11 +11,12 @@ export class GuidedTourDemoGoBackComponent implements OnInit {
 
   ngOnInit(): void {
     const goBackTour: IGuidedTour = {
-      useModalOverlay: false,
+      useModalOverlay: true,
       steps: [
         {
           id: 'step-1',
-          title: 'Continue the tour.',
+          title: 'Step 1',
+          text: 'Continue tour',
           attachTo: {
             element: '#go-back-demo #step-1',
             on: 'top',
@@ -25,7 +26,7 @@ export class GuidedTourDemoGoBackComponent implements OnInit {
           title: 'Step 2',
           text: 'Cannot go back in this step',
           attachTo: {
-            element: '#go-back-demo #step-2',
+            element: '#go-back-demo #advance-button',
             on: 'top',
           },
           advanceOn: {

@@ -11,12 +11,13 @@ export class GuidedTourDemoAdvanceOnComponent implements OnInit {
 
   ngOnInit(): void {
     const advanceOnTour: IGuidedTour = {
-      useModalOverlay: false,
+      useModalOverlay: true,
       steps: [
         {
           title: 'Step 1',
+          text: 'CLick on button to advance to step 2',
           attachTo: {
-            element: '#advance-on-demo #step-1',
+            element: '#advance-on-demo #advance-button',
             on: 'top',
           },
           advanceOn: {
