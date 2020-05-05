@@ -71,40 +71,42 @@ export interface IGuidedTourStep extends ITourStep {
 ## Setup
 
 ```ts
-import { CovalentGuidedTourService } from '@covalent/guided-tour';
+import { CovalentGuidedTourModule } from '@covalent/guided-tour';
 ```
 
 ## Usage
 ```ts
-const demoTour: IGuidedTour = {
+import { CovalentGuidedTourService } from '@covalent/guided-tour';
+
+const basicDemoTour: IGuidedTour = {
   useModalOverlay: true,
   steps: [
     {
       title: 'Fuel',
       text: 'Here are the fuel levels',
       attachTo: {
-        element: '#fuel',
-        on: 'bottom',
+        element: '#basic-demo #fuel',
+        on: 'top',
       },
     },
     {
       title: 'Oxygen',
-      text: `Here are the Oxygen levels.`,
+      text: 'Here are the Oxygen levels.',
       attachTo: {
-        element: '#oxygen',
-        on: 'bottom',
+        element: '#basic-demo #oxygen',
+        on: 'top',
       },
     },
     {
       title: 'Global status',
-      text: `Here you can see the global status of the vehicle. That is all there is to it!`,
+      text: 'Here you can see the global status of the vehicle. That is all there is to it!',
       attachTo: {
-        element: '#status',
-        on: 'bottom',
+        element: '#basic-demo #status',
+        on: 'top',
       },
     },
   ],
 };
-this._guidedTourService.registerTour('demoTour', demoTour);
-this._guidedTourService.startTour('demoTour');
+this._guidedTourService.registerTour('basicDemoTour', basicDemoTour);
+this._guidedTourService.startTour('basicDemoTour');
 ```

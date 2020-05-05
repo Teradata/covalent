@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CovalentGuidedTourService, IGuidedTour } from '@covalent/guided-tour';
-import Shepherd from 'shepherd.js';
 
 @Component({
   selector: 'guided-tour-demo-abort-on',
@@ -12,10 +11,12 @@ export class GuidedTourDemoAbortOnComponent implements OnInit {
   constructor(private _guidedTourService: CovalentGuidedTourService) {}
 
   ngOnInit(): void {
-    const abortOnAddedTour: IGuidedTour = {
+    const abortOnTour: IGuidedTour = {
+      useModalOverlay: true,
       abortOn: [
+        // on global level, can also be on individual step level
         {
-          selector: '#added-element',
+          selector: '#abort-on-demo #added-element',
           event: 'added', // can be added/removed/clicked/hover/etc
         },
       ],
@@ -24,13 +25,13 @@ export class GuidedTourDemoAbortOnComponent implements OnInit {
           title: 'Abort on element added',
           text: 'Click this button to add an element which will abort the tour. ',
           attachTo: {
-            element: '#add-element',
+            element: '#abort-on-demo #add-element',
             on: 'top',
           },
         },
       ],
     };
-    this._guidedTourService.registerTour('abortOnAddedTour', abortOnAddedTour);
+    this._guidedTourService.registerTour('abortOnTour', abortOnTour);
   }
 
   addElement(): void {
@@ -39,6 +40,6 @@ export class GuidedTourDemoAbortOnComponent implements OnInit {
 
   startTour(): void {
     this.displayElement = false;
-    this._guidedTourService.startTour('abortOnAddedTour');
+    this._guidedTourService.startTour('abortOnTour');
   }
 }
