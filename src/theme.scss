@@ -3,6 +3,8 @@
 @import './platform/markdown/markdown-theme';
 @import './platform/highlight/highlight-theme';
 @import './platform/flavored-markdown/flavored-markdown-theme';
+@import './platform/guided-tour/guided-tour-theme';
+
 // Plus imports for other components in your app.
 
 // Custom typography
@@ -61,6 +63,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-flavored-markdown-theme($theme);
 @include teradata-brand($theme);
 
+@include covalent-guided-tour-theme($theme);
+
 // Alt theme
 .theme-alt {
   $primary-alt: mat-palette($td-orange, 800, 200, 900);
@@ -102,6 +106,8 @@ body .mat-card {
   @include covalent-markdown-theme($theme-dark);
   @include covalent-flavored-markdown-theme($theme-dark);
   @include teradata-brand($theme-dark);
+
+  @include covalent-guided-tour-theme($theme-dark);
 
   .tc-primary {
     color: mat-color($primary-dark);

@@ -9,6 +9,7 @@ module.exports = {
   highlightVersion: '^9.13.1',
   monacoVersion: '^0.17.0',
   easymdeVersion: '2.8.0',
+  shepherdVersion: '^7.1.0',
   paths: {
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',

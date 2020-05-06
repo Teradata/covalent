@@ -22,6 +22,7 @@ const placeholders = [
   ['0.0.0-HIGHLIGHT', buildConfig.highlightVersion],
   ['0.0.0-MONACO', buildConfig.monacoVersion],
   ['0.0.0-EASYMDE', buildConfig.easymdeVersion],
+  ['0.0.0-SHEPHERD', buildConfig.shepherdVersion],
 ];
 
 /** RegExps that match version placeholders inside of a file. */
