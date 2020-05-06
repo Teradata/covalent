@@ -8,6 +8,7 @@ export const componentRouteCategories: any = [
   { name: 'Buttons & Indicators', nested: false, color: 'pink-900' },
   { name: 'Navigation', nested: false, color: 'orange-900' },
   { name: 'Dialogs', nested: false, color: 'td-teal-900' },
+  { name: 'Guided Tour', nested: false, color: 'blue-900' },
   { name: 'Forms', nested: false, color: 'amber-900' },
   { name: 'Markdown', nested: false, color: 'deep-purple-900' },
   { name: 'Editors', nested: false, color: 'yellow-900' },
@@ -28,6 +29,7 @@ const [
   buttons,
   nav,
   dialogs,
+  guidedTour,
   forms,
   markdown,
   editors,
@@ -87,7 +89,7 @@ export const createComponentDetails: IComponentDetails[] = [
     description: 'Guided tours using Shepherd',
     apiDocUrl: 'platform/guided-tour/README.md',
     icon: 'directions_bus',
-    category: dialogs.name,
+    category: guidedTour.name,
     route: '/components/guided-tour',
     demo: () =>
       import('./component-demos/guided-tour/demos/guided-tour-demo.module').then(
