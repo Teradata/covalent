@@ -15,7 +15,7 @@ export class GuidedTourDemoAdvanceOnComponent implements OnInit {
       steps: [
         {
           title: 'Step 1',
-          text: 'CLick on button to advance to step 2',
+          text: 'Click on button to advance to step 2',
           attachTo: {
             element: '#advance-on-demo #advance-button',
             on: 'top',
