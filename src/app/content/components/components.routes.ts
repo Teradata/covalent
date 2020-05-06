@@ -25,6 +25,11 @@ const routes: Routes = [
         loadChildren: () => import('./component-demos/dialogs/dialogs.module').then((m: any) => m.DialogsDemoModule),
       },
       {
+        path: 'guided-tour',
+        loadChildren: () =>
+          import('./component-demos/guided-tour/guided-tour.module').then((m: any) => m.GuidedTourDemoModule),
+      },
+      {
         path: 'dynamic-forms',
         loadChildren: () =>
           import('./component-demos/dynamic-forms/dynamic-forms.module').then((m: any) => m.DynamicFormsDemoModule),

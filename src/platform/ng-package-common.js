@@ -37,6 +37,7 @@ module.exports = {
       '@covalent/echarts/tooltip': 'covalent.echarts.tooltip',
 
       '@covalent/markdown-navigator': 'covalent.markdown-navigator',
+      '@covalent/guided-tour': 'covalent.guided-tour',
     },
   },
   whitelistedNonPeerDependencies: ['.'],

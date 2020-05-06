@@ -1,7 +1,13 @@
 <p>Editor Running in Browser:</p>
 <div layout="row" layout-align="start center">
-  <td-code-editor #editor class="editor" theme="vs" [language]="editorLanguage" [(ngModel)]="editorVal" flex>
-  </td-code-editor>
+  <td-code-editor
+    #editor
+    class="editor"
+    theme="vs"
+    [language]="editorLanguage"
+    [(ngModel)]="editorVal"
+    flex
+  ></td-code-editor>
 </div>
 <p>Editor Output:</p>
 <div layout="row" layout-align="start center">

@@ -8,7 +8,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   styleUrls: ['./treemap-demo-basic.component.scss'],
   templateUrl: './treemap-demo-basic.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class TreemapDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();

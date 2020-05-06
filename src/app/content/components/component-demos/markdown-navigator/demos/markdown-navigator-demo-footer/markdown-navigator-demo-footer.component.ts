@@ -1,32 +1,19 @@
 import { Component } from '@angular/core';
-import { IMarkdownNavigatorWindowConfig } from '@covalent/markdown-navigator';
+import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 
 @Component({
-  selector: 'markdown-navigator-demo-footer-example-a',
   template: `
-    <div [style.padding.em]="1">
-      <button mat-raised-button>
-        Launch space shuttle
-      </button>
-    </div>
+    <p [style.padding.em]="1">Global footer</p>
   `,
 })
-export class MarkdownNavigatorDemoFooterExampleAComponent {}
+export class MarkdownNavigatorDemoFooterGlobalExampleComponent {}
 
 @Component({
-  selector: 'markdown-navigator-demo-footer-example-b',
   template: `
-    <div>
-      <h2 [style.padding-right.em]="0.5" [style.padding-left.em]="0.5">Learn more:</h2>
-      <mat-nav-list>
-        <a mat-list-item href="https://angular.io/" target="_blank">Angular</a>
-        <a mat-list-item href="https://rxjs-dev.firebaseapp.com/" target="_blank">RxJS</a>
-        <a mat-list-item href="https://material.angular.io/ " target="_blank">Angular Material</a>
-      </mat-nav-list>
-    </div>
+    <p [style.padding.em]="1">Item footer</p>
   `,
 })
-export class MarkdownNavigatorDemoFooterExampleBComponent {}
+export class MarkdownNavigatorDemoFooterItemExampleComponent {}
 
 @Component({
   selector: 'markdown-navigator-demo-footer',
@@ -34,24 +21,16 @@ export class MarkdownNavigatorDemoFooterExampleBComponent {}
   templateUrl: './markdown-navigator-demo-footer.component.html',
 })
 export class MarkdownNavigatorDemoFooterComponent {
-  mdNavWindowConfig: IMarkdownNavigatorWindowConfig = {
-    items: [
-      {
-        title: 'Button Footer',
-        markdownString: `With a button as a footer`,
-        footer: MarkdownNavigatorDemoFooterExampleAComponent,
-      },
-      {
-        title: 'Nav list footer',
-        markdownString: ` With a nav-list as a footer`,
-        footer: MarkdownNavigatorDemoFooterExampleBComponent,
-      },
-      {
-        title: 'Global footer',
-        markdownString: `With a footer that was set at the top level`,
-        footer: MarkdownNavigatorDemoFooterExampleAComponent,
-      },
-    ],
-    footer: MarkdownNavigatorDemoFooterExampleAComponent,
-  };
+  items: IMarkdownNavigatorItem[] = [
+    {
+      title: 'Item Footer',
+      markdownString: `Uses footer set at item level`,
+      footer: MarkdownNavigatorDemoFooterItemExampleComponent,
+    },
+    {
+      title: 'Global footer',
+      markdownString: `Falls back to footer set at the top level`,
+    },
+  ];
+  footer: MarkdownNavigatorDemoFooterGlobalExampleComponent = MarkdownNavigatorDemoFooterGlobalExampleComponent;
 }

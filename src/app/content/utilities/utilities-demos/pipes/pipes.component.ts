@@ -7,7 +7,6 @@ import { slideInUpAnimation } from '../../../../app.animations';
   styleUrls: ['./pipes.component.scss'],
   templateUrl: './pipes.component.html',
   animations: [slideInUpAnimation],
-  preserveWhitespaces: true,
 })
 export class PipesComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
@@ -96,4 +95,99 @@ export class PipesComponent {
     //   truncate_length: 40,
     // },
   ];
+  covalantCommonTypescript: string = `
+    import { CovalentCommonModule } from '@covalent/core/common';
+    @NgModule({
+      imports: [
+        CovalentCommonModule,
+        ...
+      ],
+      ...
+    })
+    export class MyModule {}
+  `;
+  digitsHtml: string = `
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <!-- original output -->
+        <h3 matLine>Digits: { { log.digits } }</h3>
+        <!-- output with digits pipe -->
+        <p matLine>Converted: { { log.digits | digits } }</p>
+        <!-- output with precision aurgument -->
+        <p matLine>With precision argument: { { log.digits | digits:log.precision } } </p>
+      </mat-list-item>
+    </mat-list>
+  `;
+  bytesHtml: string = `
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <!-- original output -->
+        <h3 matLine>Bytes: { { log.bytes } }</h3>
+        <!-- output with bytes pipe -->
+        <p matLine>Converted: { { log.bytes | bytes } }</p>
+        <!-- output with precision aurgument -->
+        <p matLine>With precision argument: { { log.bytes | bytes:log.precision } } </p>
+      </mat-list-item>
+    </mat-list>
+  `;
+  decimalByteHtml: string = `
+  <mat-list>
+    <mat-list-item *ngFor="let log of logs">
+      <!-- original output -->
+      <h3 matLine>Bytes: { { log.bytes } }</h3>
+      <!-- output with bytes pipe -->
+      <p matLine>Converted: { { log.bytes | decimalBytes } }</p>
+      <!-- output with precision aurgument -->
+      <p matLine>With precision argument: { { log.bytes | decimalBytes:log.precision } } </p>
+    </mat-list-item>
+  </mat-list>
+  `;
+  timeAgoHtml: string = `
+  <mat-list>
+    <mat-list-item *ngFor="let log of logs">
+      <!-- original output -->
+      { { log.timestamp } } | 
+      <!-- output with timeAgo pipe -->
+      { { log.timestamp | timeAgo:reference } } //reference is optional
+    </mat-list-item>
+  </mat-list>
+  `;
+  timeUntilHtml: string = `
+  <mat-list>
+    <mat-list-item *ngFor="let log of logs">
+      <!-- original output -->
+      { { log.timestamp } } | 
+      <!-- output with timeUntil pipe -->
+      { { log.timestamp | timeUntil:reference } } //reference is optional
+    </mat-list-item>
+  </mat-list>
+  `;
+  timeDiffHtml: string = `
+  <mat-list>
+    <mat-list-item *ngFor="let log of logs">
+      <!-- Start and end time output -->
+      <h3 matLine>{ { log.timestamp } } | End Time: { { log.timestampend } }</h3>
+      <!-- output with timeDifference pipe -->
+      <p matLine>Difference: { { log.timestamp | timeDifference:log.timestampend } }</p>
+      <!-- outputs the time difference relative to the current time -->
+      <p matLine>Difference relative to current time: { { log.timestamp | timeDifference } }</p>
+    </mat-list-item>
+  </mat-list> 
+  `;
+  truncateHtml1: string = `
+  <mat-list>
+    <mat-list-item *ngFor="let log of logs">
+      <!-- original value output -->
+      <h3 matLine>Original value: <code>{ { log.text_value } }</code></h3>
+      <!-- truncated value output -->
+      <p matLine>Truncate with a length value of <code>{ { log.truncate_length } }</code>: { { log.text_value | truncate:log.truncate_length } }</p>
+    </mat-list-item>
+  </mat-list>
+  `;
+  truncateHtml2: string = `
+    <!-- Both have the same output because -->
+    <!-- the space is removed in the last example -->
+    { { abcd abcd abcd | truncate:4 } } <!-- 'abcd…' -->
+    { { abcd abcd abcd | truncate:5 } } <!-- 'abcd…' -->
+  `;
 }

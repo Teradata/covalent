@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes, Route } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
@@ -10,40 +10,43 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { setComponentRoutes } from 'app/content/components/components';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-
-import { MarkdownNavigatorDemoComponent } from './markdown-navigator.component';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
 import { DocumentationToolsModule } from 'app/documentation-tools';
-import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 import { MatButtonModule } from '@angular/material/button';
+import { MarkdownNavigatorBasicSharedModule } from './demos/markdown-navigator-demo-basic/markdown-navigator-demo-basic-shared';
+import { MarkdownNavigatorDemoBasicComponent } from './demos/markdown-navigator-demo-basic/markdown-navigator-demo-basic.component';
 
 const routes: Routes = setComponentRoutes({
-  overviewDemoComponent: MarkdownNavigatorDemoComponent,
+  overviewDemoComponent: MarkdownNavigatorDemoBasicComponent,
   id: 'markdown-navigator',
 });
 
 @NgModule({
-  declarations: [MarkdownNavigatorDemoComponent],
   imports: [
+    // Docs
+    // Routes
+    RouterModule.forChild(routes),
+
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+
     DocumentationToolsModule,
+    ComponentDetailsModule,
+
     // Material
     MatCardModule,
     MatButtonModule,
     MatRadioModule,
     MatDividerModule,
     MatTabsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ComponentDetailsModule,
+
     // Covalent
     CovalentHighlightModule,
     CovalentCodeEditorModule,
-    CovalentMarkdownNavigatorModule,
-    // Docs
-    // Routes
-    RouterModule.forChild(routes),
+
+    MarkdownNavigatorBasicSharedModule,
   ],
   exports: [],
   providers: [],

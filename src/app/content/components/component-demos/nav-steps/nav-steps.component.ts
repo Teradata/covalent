@@ -4,6 +4,5 @@ import { Component } from '@angular/core';
   selector: 'nav-steps-demo',
   styleUrls: ['./nav-steps.component.scss'],
   templateUrl: './nav-steps.component.html',
-  preserveWhitespaces: true,
 })
 export class NavStepsDemoComponent {}
