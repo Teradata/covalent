@@ -7,7 +7,6 @@ import { ITdDataTableColumn } from '../../../../../../../platform/core/data-tabl
   selector: 'data-table-demo-basic',
   styleUrls: ['./data-table-demo-basic.component.scss'],
   templateUrl: './data-table-demo-basic.component.html',
-  preserveWhitespaces: true,
 })
 export class DataTableDemoBasicComponent implements OnInit {
   configWidthColumns: ITdDataTableColumn[] = [

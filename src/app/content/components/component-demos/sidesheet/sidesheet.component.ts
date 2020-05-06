@@ -5,6 +5,5 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   selector: 'sidesheet-demo',
   styleUrls: ['./sidesheet.component.scss'],
   templateUrl: './sidesheet.component.html',
-  preserveWhitespaces: true,
 })
 export class SidesheetDemoComponent {}

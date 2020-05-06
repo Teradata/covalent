@@ -7,7 +7,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   styleUrls: ['./scatter-demo-basic.component.scss'],
   templateUrl: './scatter-demo-basic.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class ScatterDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();

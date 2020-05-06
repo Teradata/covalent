@@ -5,25 +5,20 @@ import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'markdown-navigator-demo-events',
-  styleUrls: ['./markdown-navigator-demo-events.component.scss'],
-  templateUrl: './markdown-navigator-demo-events.component.html',
+  selector: 'markdown-navigator-demo-service-button-clicked',
+  styleUrls: ['./markdown-navigator-demo-service-button-clicked.component.scss'],
+  templateUrl: './markdown-navigator-demo-service-button-clicked.component.html',
 })
-export class MarkdownNavigatorDemoEventsComponent {
+export class MarkdownNavigatorDemoServiceButtonClickedComponent {
   constructor(
     private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService,
     private _snackBar: MatSnackBar,
   ) {}
-  openDialog(): void {
+  open(): void {
     const dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent> = this._markdownNavigatorWindowService.open({
       items: [
         {
-          title: 'Mars',
-          markdownString: `[Go to Mars](#data={"planet": "mars"})`,
-        },
-        {
-          title: 'Jupiter',
-          markdownString: `[Go to Jupiter](#data={"planet": "Jupiter"})`,
+          markdownString: `[Trigger button click event](#data={"planet":"mars"})`,
         },
       ],
     });

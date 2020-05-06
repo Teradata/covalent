@@ -10,7 +10,6 @@ import { TdMediaService } from '../../../../../../platform/core/media';
   styleUrls: ['./media.component.scss'],
   templateUrl: './media.component.html',
   animations: [tdJelloAnimation, slideInUpAnimation],
-  preserveWhitespaces: true,
 })
 export class MediaDirectiveDemoComponent implements OnInit, OnDestroy {
   private _subcriptions: Subscription[] = [];
@@ -165,6 +164,12 @@ export class MediaDirectiveDemoComponent implements OnInit, OnDestroy {
       type: '{[key: string]: string}',
     },
   ];
+  mediaToggleHtml: string = `
+    <div tdMediaToggle="sm" [mediaClasses]="['classOne', 'classTwo']" 
+      [mediaAttributes]="{title: 'tooltip'}" [mediaStyles]="{color: 'red'}">
+      ...
+    </div>
+  `;
 
   constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {}
 

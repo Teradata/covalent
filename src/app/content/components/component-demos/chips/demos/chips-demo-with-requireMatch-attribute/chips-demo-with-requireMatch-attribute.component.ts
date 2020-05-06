@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'chips-demo-with-requireMatch-attribute',
   styleUrls: ['./chips-demo-with-requireMatch-attribute.component.scss'],
   templateUrl: './chips-demo-with-requireMatch-attribute.component.html',
-  preserveWhitespaces: true,
 })
 export class ChipsDemoWithRequireMatchAttributeComponent {
   strings: string[] = ['stepper', 'expansion-panel', 'markdown', 'highlight', 'loading'];

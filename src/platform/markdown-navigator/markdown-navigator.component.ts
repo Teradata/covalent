@@ -78,25 +78,6 @@ function defaultCompareWith(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorIt
   return o1 === o2;
 }
 
-function getAncestors(
-  items: IMarkdownNavigatorItem[],
-  item: IMarkdownNavigatorItem,
-  compareWith: IMarkdownNavigatorCompareWith,
-): IMarkdownNavigatorItem[] {
-  if (items) {
-    for (const child of items) {
-      if (compareWith(child, item)) {
-        return [child];
-      }
-      const ancestors: IMarkdownNavigatorItem[] = getAncestors(child.children, item, compareWith);
-      if (ancestors) {
-        return [child, ...ancestors];
-      }
-    }
-  }
-  return undefined;
-}
-
 @Component({
   selector: 'td-markdown-navigator',
   templateUrl: './markdown-navigator.component.html',
@@ -119,11 +100,11 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   @Input() labels: IMarkdownNavigatorLabels;
 
   /**
-   * startAt?: IMarkdownNavigatorItem
+   * startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
    *
-   * Item to start to
+   * Item or path to start at
    */
-  @Input() startAt: IMarkdownNavigatorItem;
+  @Input() startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
 
   /**
    * footer?: Type<any>
@@ -249,12 +230,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return '';
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  async ngOnChanges(changes: SimpleChanges): Promise<void> {
     if (changes.items) {
       this.reset();
-      if (this.items && this.startAt) {
-        this._jumpTo(this.startAt);
-      }
+    }
+    if (changes.startAt && this.items && this.startAt) {
+      this._jumpTo(this.startAt);
     }
   }
 
@@ -367,17 +348,65 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     this._changeDetectorRef.markForCheck();
   }
 
-  private _jumpTo(item: IMarkdownNavigatorItem): void {
+  private async _jumpTo(itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[]): Promise<void> {
     this.reset();
     if (this.items && this.items.length > 0) {
-      const ancestors: IMarkdownNavigatorItem[] = getAncestors(
-        this.items,
-        item,
-        this.compareWith || defaultCompareWith,
-      );
-      (ancestors || []).forEach((ancestor: IMarkdownNavigatorItem) => this.handleItemSelected(ancestor));
+      let path: IMarkdownNavigatorItem[] = [];
+
+      if (Array.isArray(itemOrPath)) {
+        path = await this.followPath(this.items, itemOrPath);
+      } else {
+        path = this.findPath(this.items, itemOrPath);
+      }
+      (path || []).forEach((pathItem: IMarkdownNavigatorItem) => this.handleItemSelected(pathItem));
     }
     this._changeDetectorRef.markForCheck();
+  }
+
+  private async followPath(
+    items: IMarkdownNavigatorItem[],
+    path: IMarkdownNavigatorItem[],
+  ): Promise<IMarkdownNavigatorItem[]> {
+    let pathItems: IMarkdownNavigatorItem[] = [];
+    let currentLevel: IMarkdownNavigatorItem[] = items;
+    const compareWith: IMarkdownNavigatorCompareWith = this.compareWith || defaultCompareWith;
+    for (const pathItem of path) {
+      const foundItem: IMarkdownNavigatorItem = currentLevel.find((item: IMarkdownNavigatorItem) =>
+        compareWith(pathItem, item),
+      );
+
+      if (foundItem) {
+        pathItems = [...pathItems, foundItem];
+
+        if (foundItem.children) {
+          currentLevel = foundItem.children;
+        } else if (foundItem.childrenUrl) {
+          currentLevel = await this.loadChildrenUrl(foundItem);
+        }
+      } else {
+        break;
+      }
+    }
+    if (pathItems.length !== path.length) {
+      pathItems = [];
+    }
+    return pathItems;
+  }
+
+  private findPath(items: IMarkdownNavigatorItem[], item: IMarkdownNavigatorItem): IMarkdownNavigatorItem[] {
+    const compareWith: IMarkdownNavigatorCompareWith = this.compareWith || defaultCompareWith;
+    if (items) {
+      for (const child of items) {
+        if (compareWith(child, item)) {
+          return [child];
+        }
+        const ancestors: IMarkdownNavigatorItem[] = this.findPath(child.children, item);
+        if (ancestors) {
+          return [child, ...ancestors];
+        }
+      }
+    }
+    return undefined;
   }
 
   private async handleLinkClick(event: Event): Promise<void> {

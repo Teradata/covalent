@@ -22,19 +22,19 @@
     </p>
     <p>for example in app.module.ts:</p>
     <td-highlight lang="typescript">
-      <![CDATA[ import { NewViewComponent } from './new-view/new-view.component'; ]]>
+      {{ newViewRootTypescript }}
     </td-highlight>
     <p>And define those declarations/imports in @NgModule:</p>
     <td-highlight lang="typescript">
-      <![CDATA[ imports: [ NewViewComponent ] ]]>
+      {{ newViewFeatureTypescript }}
     </td-highlight>
     <p>next we'll need to create a route for this component, edit app.routes.ts:</p>
     <td-highlight lang="typescript">
-      <![CDATA[ import { NewViewComponent } from './new-view/new-view.component'; ]]>
+      {{ newViewRouteTypescript }}
     </td-highlight>
     <p>and add a new path with the url you desire for this route:</p>
     <td-highlight lang="typescript">
-      <![CDATA[ { path: 'new-view', component: NewViewComponent }, ]]>
+      {{ newViewPathTypescript }}
     </td-highlight>
     <p>Now you can use this new route in your main nav or wherever you like!</p>
   </mat-card-content>
@@ -46,7 +46,8 @@
       target="_blank"
       href="https://github.com/angular/angular-cli/wiki/generate"
       class="text-upper"
-      >Generate Docs</a
     >
+      Generate Docs
+    </a>
   </mat-card-actions>
 </mat-card>

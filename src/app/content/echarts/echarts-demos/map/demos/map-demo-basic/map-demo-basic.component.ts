@@ -9,7 +9,6 @@ import * as echarts from 'echarts';
   templateUrl: './map-demo-basic.component.html',
   styleUrls: ['./map-demo-basic.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class MapDemoBasicComponent implements OnInit {
   // Chart config
