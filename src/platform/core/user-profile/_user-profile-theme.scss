@@ -1,0 +1,11 @@
+@mixin covalent-user-profile-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $secondary-text: map-get($foreground, secondary-text);
+
+  td-user-profile-menu {
+    .mat-list-base .mat-list-item .mat-line:nth-child(n + 2) {
+      color: $secondary-text;
+      @include mat-typography-level-to-styles($fontConfig, caption);
+    }
+  }
+}

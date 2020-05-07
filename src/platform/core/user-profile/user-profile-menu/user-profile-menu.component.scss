@@ -1,0 +1,35 @@
+.user-profile-menu {
+  [td-menu-header] {
+    text-align: left;
+    padding-bottom: 0;
+  }
+}
+
+::ng-deep mat-list-item:not(:first-child),
+::ng-deep [mat-list-item] {
+  .mat-list-item-content .mat-icon[matListAvatar] {
+    background: none;
+  }
+}
+
+.mat-action-list {
+  padding-top: 0;
+}
+
+::ng-deep .mat-action-list .mat-divider,
+::ng-deep .mat-divider {
+  margin: 8px 0;
+}
+
+// TODO remove styles when bug gets addressed in td-menu in Covalent
+:host ::ng-deep {
+  mat-divider:last-child {
+    display: none;
+  }
+  mat-list .mat-list-item.mat-2-line .mat-list-item-content {
+    height: inherit;
+  }
+}
+td-menu {
+  margin-bottom: 0;
+}
