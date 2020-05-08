@@ -62,7 +62,7 @@ Install the Monaco Editor webpack extension plugin.
 npm install --save-dev monaco-editor-webpack-plugin
 ```
 
-Create a webpack config file utilizing the Monaco Editor webpack plugin. Languages and features can be included/excluded to control the resulting image size. Note: If you are including this component in an Electron application, define the electron-renderer target.
+Create a webpack config file utilizing the Monaco Editor webpack plugin. Languages and features can be included/excluded to control the resulting image size.
 
 ```javascript
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
@@ -89,6 +89,9 @@ module.exports = {
   ],
 };
 ```
+Note: If you are including this component in an Electron application, define the electron-renderer target.  See Electron example here:
+[https://github.com/Teradata/covalent-electron/blob/develop/monaco-webpack.config.js](https://github.com/Teradata/covalent-electron/blob/develop/monaco-webpack.config.js)
+
 
 Reference the webpack file in your angular.json build config.
 
