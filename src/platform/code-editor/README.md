@@ -62,12 +62,13 @@ Install the Monaco Editor webpack extension plugin.
 npm install --save-dev monaco-editor-webpack-plugin
 ```
 
-Create a webpack config file utilizing the Monaco Editor webpack plugin. Languages and features can be included/excluded to control the resulting image size.
+Create a webpack config file utilizing the Monaco Editor webpack plugin. Languages and features can be included/excluded to control the resulting image size. Note: If you are including this component in an Electron application, define the electron-renderer target.
 
 ```javascript
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
+  target: 'electron-renderer',
   module: {
     rules: [
       {
@@ -89,26 +90,20 @@ module.exports = {
 };
 ```
 
-If you are including this component in an Electron application, define the electron-renderer target.
-
-```javascript
-module.exports = {
-  target: 'electron-renderer'
-};
-```
-
 Reference the webpack file in your angular.json build config.
 
 ```json
-  "build": {
-    "builder": "@angular-builders/custom-webpack:browser",
-    "options": {
-      "customWebpackConfig": {
-        "path": "./monaco-webpack.config.js",
-          "mergeStrategies": {
-          "module.rules": "prepend"
-        }
-      },
+...
+"build": {
+  "builder": "@angular-builders/custom-webpack:browser",
+  "options": {
+    "customWebpackConfig": {
+      "path": "./monaco-webpack.config.js",
+        "mergeStrategies": {
+        "module.rules": "prepend"
+      }
+    },
+...
 ```
 
 Import the **CovalentCodeEditorModule** in your NgModule:
