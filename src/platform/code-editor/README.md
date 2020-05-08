@@ -48,21 +48,61 @@ npm install @covalent/code-editor
 
 ## Setup
 
-Add the glob to assets in angular.json (to make monaco-editor javascript available to the app)
-```json
-{
-  "apps": [
-    {
-      "assets": [
-        {
-          "glob": "**/*",
-          "input": "node_modules/monaco-editor/min",
-          "output": "/assets/monaco"
-        }
-      ],
+Install the webpack custom builder.
+
+```bash
+npm install --save-dev @angular-builders/custom-webpack
 ```
 
-Then, import the **CovalentCodeEditorModule** in your NgModule:
+Install the Monaco Editor webpack extension plugin.
+
+```bash
+npm install --save-dev monaco-editor-webpack-plugin
+```
+
+Create a webpack config file utilizing the Monaco Editor webpack plugin. Languages and features can be included/excluded to control the resulting image size.
+
+```javascript
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader'],
+      },
+      {
+        test: /\.ttf$/,
+        use: ['file-loader'],
+      },
+    ],
+  },
+  plugins: [
+    new MonacoWebpackPlugin({
+      languages: ['css','html','javascript','sql','typescript'],
+      features: ['contextmenu','clipboard','find'],
+    }),
+  ],
+  target: 'electron-renderer'
+};
+```
+
+Reference the webpack file in your angular.json build config.
+
+```json
+  "build": {
+    "builder": "@angular-builders/custom-webpack:browser",
+    "options": {
+      "customWebpackConfig": {
+        "path": "./monaco-webpack.config.js",
+          "mergeStrategies": {
+          "module.rules": "prepend"
+        }
+      },
+```
+
+Import the **CovalentCodeEditorModule** in your NgModule:
 
 ```typescript
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
