@@ -48,6 +48,8 @@ npm install @covalent/code-editor
 
 ## Setup
 
+We utilize the ESM build of the Monaco Editor. To include this build, you must utilize custom webpack. See <a href="https://github.com/Microsoft/monaco-editor/blob/master/docs/integrate-esm.md">https://github.com/Microsoft/monaco-editor/blob/master/docs/integrate-esm.md</a> for more information.
+
 Install the webpack custom builder.
 
 ```bash
@@ -84,6 +86,13 @@ module.exports = {
       features: ['contextmenu','clipboard','find'],
     }),
   ],
+};
+```
+
+If you are including this component in an Electron application, define the electron-renderer target.
+
+```javascript
+module.exports = {
   target: 'electron-renderer'
 };
 ```
