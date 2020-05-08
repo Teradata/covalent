@@ -256,14 +256,14 @@ describe('Component: App', () => {
             component.sampleCode = newSampleCode;
             fixture.changeDetectorRef.detectChanges();
             fixture.detectChanges();
-              setTimeout(() => {
-                // Value changed, should have had time to been set in editor
-                component.editor.getValue().subscribe((newValue: string) => {
-                  expect(component.sampleCode).toBe(newSampleCode);
-                  expect(newValue).toBe(newSampleCode);
-                  done();
-                });
-              }, 1000); // wait for timeouts
+            setTimeout(() => {
+              // Value changed, should have had time to been set in editor
+              component.editor.getValue().subscribe((newValue: string) => {
+                expect(component.sampleCode).toBe(newSampleCode);
+                expect(newValue).toBe(newSampleCode);
+                done();
+              });
+            }, 1000); // wait for timeouts
           });
         }, 1000); // wait for timeouts
       });
