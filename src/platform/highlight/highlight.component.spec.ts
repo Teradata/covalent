@@ -74,13 +74,6 @@ describe('Component: Highlight', () => {
         expect(element.querySelectorAll('.hljs-number').length).toBe(2);
       });
     }));
-
-    it('should throw error for undefined language', async(() => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightUndefinedLangTestRenderingComponent);
-      expect(function (): void {
-        fixture.detectChanges();
-      }).toThrowError();
-    }));
   });
 
   describe('Event bindings: ', () => {
