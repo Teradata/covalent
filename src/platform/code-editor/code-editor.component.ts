@@ -3,7 +3,7 @@ import {
   Input,
   Output,
   EventEmitter,
-  AfterViewInit,
+  OnInit,
   ViewChild,
   ElementRef,
   forwardRef,
@@ -36,28 +36,23 @@ import * as monaco from 'monaco-editor';
     },
   ],
 })
-export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccessor, OnDestroy {
-  _destroy: Subject<boolean> = new Subject<boolean>();
-  _widthSubject: Subject<number> = new Subject<number>();
-  _heightSubject: Subject<number> = new Subject<number>();
+export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDestroy {
+  private _destroy: Subject<boolean> = new Subject<boolean>();
+  private _widthSubject: Subject<number> = new Subject<number>();
+  private _heightSubject: Subject<number> = new Subject<number>();
 
-  _editorStyle: string = 'width:100%;height:100%;border:1px solid grey;';
-  _value: string = '';
-  _theme: string = 'vs';
-  _language: string = 'javascript';
-  _subject: Subject<string> = new Subject();
-  _editorInnerContainer: string = 'editorInnerContainer' + uniqueCounter++;
-  _editor: any;
-  _editorProxy: any;
-  _componentInitialized: boolean = false;
-  _fromEditor: boolean = false;
-  _editorOptions: any = {};
-  _isFullScreen: boolean = false;
-  _keycode: any;
-  _setValueTimeout: any;
-  _setLanguageTimeout: any;
-  initialContentChange: boolean = true;
-  _registeredLanguagesStyles: HTMLStyleElement[] = [];
+  private _editorStyle: string = 'width:100%;height:100%;border:1px solid grey;';
+  private _value: string = '';
+  private _theme: string = 'vs';
+  private _language: string = 'javascript';
+  private _subject: Subject<string> = new Subject();
+  private _editorInnerContainer: string = 'editorInnerContainer' + uniqueCounter++;
+  private _editor: any;
+  private _componentInitialized: boolean = false;
+  private _editorOptions: any = {};
+  private _isFullScreen: boolean = false;
+  private _keycode: any;
+  private _registeredLanguagesStyles: HTMLStyleElement[] = [];
 
   @ViewChild('editorContainer', { static: true }) _editorContainer: ElementRef;
 
@@ -96,37 +91,27 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
 
   /**
    * value?: string
-   * Value in the Editor after async getEditorContent was called
    */
   @Input('value')
   set value(value: string) {
     if (value === this._value) {
       return;
     }
-
-    // Clear any timeout that might overwrite this value set in the future
-    if (this._setValueTimeout) {
-      clearTimeout(this._setValueTimeout);
-    }
-    if (this._componentInitialized && this._editor && this._editor.setValue) {
-      this._value = value;
-      // don't want to keep sending content if event came from the editor, infinite loop
-      if (!this._fromEditor) {
-        this._editor.setValue(value);
-      }
-      this.editorValueChange.emit();
-      this.propagateChange(this._value);
-      this.change.emit();
-      this._fromEditor = false;
-    } else {
-      this._setValueTimeout = setTimeout(() => {
-        this.value = value;
-      }, 500);
+    this._value = value;
+    if (this._componentInitialized) {
+      this.applyValue();
     }
   }
 
   get value(): string {
     return this._value;
+  }
+
+  applyValue(): void {
+    if (this._value !== undefined) {
+      this._editor.setValue(this._value);
+      this.editorValueChange.emit();
+    }
   }
 
   /**
@@ -151,7 +136,7 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    * Returns the content within the editor
    */
   getValue(): Observable<string> {
-    if (this._componentInitialized && this._editor) {
+    if (this._componentInitialized) {
       this._value = this._editor.getValue();
       setTimeout(() => {
         this._subject.next(this._value);
@@ -169,47 +154,21 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    */
   @Input('language')
   set language(language: string) {
-    if (language === this._language) {
-      return;
-    }
-
-    // Clear any timeout that might overwrite this language set in the future
-    if (this._setLanguageTimeout) {
-      clearTimeout(this._setLanguageTimeout);
-    }
-    if (this._componentInitialized && this._editor) {
-      const currentValue: string = this._editor.getValue();
-      this._editor.getModel().dispose();
-      this._editor.dispose();
-      this._editor = undefined;
-
-      this._language = language;
-      const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
-      this._editor = monaco.editor.create(
-        containerDiv,
-        Object.assign(
-          {
-            value: currentValue,
-            language: this._language,
-            theme: this._theme,
-          },
-          this.editorOptions,
-        ),
-      );
-      this._editor.getModel().onDidChangeContent((e: any) => {
-        this._fromEditor = true;
-        this.writeValue(this._editor.getValue());
-      });
-      this.editorConfigurationChanged.emit();
-      this.editorLanguageChanged.emit();
-    } else {
-      this._setLanguageTimeout = setTimeout(() => {
-        this.language = language;
-      }, 500);
+    this._language = language;
+    if (this._componentInitialized) {
+      this.applyLanguage();
     }
   }
+
   get language(): string {
     return this._language;
+  }
+
+  applyLanguage(): void {
+    if (this._language) {
+      monaco.editor.setModelLanguage(this._editor.getModel(), this._language);
+      this.editorLanguageChanged.emit();
+    }
   }
 
   /**
@@ -217,7 +176,7 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    * Registers a custom Language within the editor
    */
   registerLanguage(language: any): void {
-    if (this._componentInitialized && this._editor) {
+    if (this._componentInitialized) {
       for (const provider of language.completionItemProvider) {
         /* tslint:disable-next-line */
         provider.kind = eval(provider.kind);
@@ -259,38 +218,21 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    */
   @Input('editorStyle')
   set editorStyle(editorStyle: string) {
-    if (editorStyle === this._editorStyle) {
-      return;
-    }
-
-    if (this._componentInitialized && this._editor) {
-      const currentValue: string = this._editor.getValue();
-      this._editor.getModel().dispose();
-      this._editor.dispose();
-      this._editor = undefined;
-
-      this._editorStyle = editorStyle;
-      const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
-      containerDiv.setAttribute('style', this._editorStyle);
-      this._editor = monaco.editor.create(
-        containerDiv,
-        Object.assign(
-          {
-            value: currentValue,
-            language: this._language,
-            theme: this._theme,
-          },
-          this.editorOptions,
-        ),
-      );
-      this._editor.getModel().onDidChangeContent((e: any) => {
-        this._fromEditor = true;
-        this.writeValue(this._editor.getValue());
-      });
+    this._editorStyle = editorStyle;
+    if (this._componentInitialized) {
+      this.applyStyle();
     }
   }
+
   get editorStyle(): string {
     return this._editorStyle;
+  }
+
+  applyStyle(): void {
+    if (this._editorStyle) {
+      const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
+      containerDiv.setAttribute('style', this._editorStyle);
+    }
   }
 
   /**
@@ -300,7 +242,7 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
   @Input('theme')
   set theme(theme: string) {
     this._theme = theme;
-    if (this._componentInitialized && this._editor) {
+    if (this._componentInitialized) {
       this._editor.updateOptions({ theme });
       this.editorConfigurationChanged.emit();
     }
@@ -330,7 +272,7 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
   @Input('editorOptions')
   set editorOptions(editorOptions: any) {
     this._editorOptions = editorOptions;
-    if (this._componentInitialized && this._editor) {
+    if (this._componentInitialized) {
       this._editor.updateOptions(editorOptions);
       this.editorConfigurationChanged.emit();
     }
@@ -343,7 +285,7 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
    * layout method that calls layout method of editor and instructs the editor to remeasure its container
    */
   layout(): void {
-    if (this._componentInitialized && this._editor) {
+    if (this._componentInitialized) {
       this._editor.layout();
     }
   }
@@ -358,10 +300,7 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
   // tslint:disable-next-line:member-ordering
   constructor(private zone: NgZone, private _changeDetectorRef: ChangeDetectorRef, private _elementRef: ElementRef) {}
 
-  /**
-   * ngAfterViewInit only used for browser version of editor
-   */
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
     containerDiv.id = this._editorInnerContainer;
 
@@ -377,17 +316,15 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
       ),
     );
     setTimeout(() => {
-      this._editorProxy = this.wrapEditorCalls(this._editor);
+      this.applyLanguage();
+      this.applyValue();
+      this.applyStyle();
       this._componentInitialized = true;
-      this.editorInitialized.emit(this._editorProxy);
+      this.editorInitialized.emit(this._editor);
     });
     this._editor.getModel().onDidChangeContent((e: any) => {
-      this._fromEditor = true;
       this.writeValue(this._editor.getValue());
-      if (this.initialContentChange) {
-        this.initialContentChange = false;
-        this.layout();
-      }
+      this.layout();
     });
     this.addFullScreenModeCommand();
 
@@ -414,16 +351,8 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
   ngOnDestroy(): void {
     this._changeDetectorRef.detach();
     this._registeredLanguagesStyles.forEach((style: HTMLStyleElement) => style.remove());
-    if (this._setValueTimeout) {
-      clearTimeout(this._setValueTimeout);
-    }
-    if (this._setLanguageTimeout) {
-      clearTimeout(this._setLanguageTimeout);
-    }
     if (this._editor) {
-      this._editor.getModel().dispose();
       this._editor.dispose();
-      this._editor = undefined;
     }
     this._destroy.next(true);
     this._destroy.unsubscribe();
@@ -499,41 +428,5 @@ export class TdCodeEditorComponent implements AfterViewInit, ControlValueAccesso
         this.showFullScreenEditor();
       },
     });
-  }
-
-  /**
-   * wrapEditorCalls used to proxy all the calls to the monaco editor
-   */
-  private wrapEditorCalls(obj: any): any {
-    const that: any = this;
-    const handler: any = {
-      get(target: any, propKey: any, receiver: any): any {
-        return async (...args: any): Promise<any> => {
-          if (that._componentInitialized) {
-            if (that._webview) {
-              const executeJavaScript: (code: string) => Promise<any> = (code: string) =>
-                new Promise((resolve: any) => {
-                  that._webview.executeJavaScript(code, resolve);
-                });
-              return executeJavaScript('editor.' + propKey + '(' + args + ')');
-            } else {
-              const origMethod: any = target[propKey];
-              const result: any = await origMethod.apply(that._editor, args);
-              // since running javascript code manually need to force Angular to detect changes
-              setTimeout(() => {
-                that.zone.run(() => {
-                  // tslint:disable-next-line
-                  if (!that._changeDetectorRef['destroyed']) {
-                    that._changeDetectorRef.detectChanges();
-                  }
-                });
-              });
-              return result;
-            }
-          }
-        };
-      },
-    };
-    return new Proxy(obj, handler);
   }
 }

@@ -68,6 +68,7 @@ Create a webpack config file utilizing the Monaco Editor webpack plugin. Languag
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
+  // target should only be specified when including component in Electron app
   target: 'electron-renderer',
   module: {
     rules: [
