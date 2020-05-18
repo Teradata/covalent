@@ -416,7 +416,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:build",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
               "path": "./monaco-webpack.config.js",
