@@ -321,6 +321,7 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
       this.applyStyle();
       this._componentInitialized = true;
       this.editorInitialized.emit(this._editor);
+      this.editorConfigurationChanged.emit();
     });
     this._editor.getModel().onDidChangeContent((e: any) => {
       this.writeValue(this._editor.getValue());
