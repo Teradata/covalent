@@ -412,7 +412,7 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
   /**
    * addFullScreenModeCommand used to add the fullscreen option to the context menu
    */
-  addFullScreenModeCommand(): void {
+  private addFullScreenModeCommand(): void {
     this._editor.addAction({
       // An unique identifier of the contributed action.
       id: 'fullScreen',
