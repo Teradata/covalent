@@ -80,14 +80,8 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "customWebpackConfig": {
-              "path": "./monaco-webpack.config.js",
-              "mergeStrategies": {
-                "module.rules": "prepend"
-              }
-            },
             "browserTarget": "covalent-docs:build"
           },
           "configurations": {
@@ -199,14 +193,8 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "customWebpackConfig": {
-              "path": "./monaco-webpack.config.js",
-              "mergeStrategies": {
-                "module.rules": "prepend"
-              }
-            },
             "browserTarget": "covalent-test-bed:build"
           },
           "configurations": {
@@ -416,27 +404,15 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "customWebpackConfig": {
-              "path": "./monaco-webpack.config.js",
-              "mergeStrategies": {
-                "module.rules": "prepend"
-              }
-            },
             "tsConfig": "src/platform/code-editor/tsconfig.lib.json",
             "project": "src/platform/code-editor/ng-package.js"
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "customWebpackConfig": {
-              "path": "./monaco-webpack.config.js",
-              "mergeStrategies": {
-                "module.rules": "prepend"
-              }
-            },
             "main": "src/platform/code-editor/test.ts",
             "tsConfig": "src/platform/code-editor/tsconfig.spec.json",
             "karmaConfig": "src/platform/code-editor/karma.conf.js",
