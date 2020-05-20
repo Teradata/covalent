@@ -20,6 +20,7 @@ const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [TdLoadingComponent];
   imports: [CommonModule, MatProgressBarModule, MatProgressSpinnerModule, OverlayModule, PortalModule],
   declarations: [TD_LOADING],
   exports: [TD_LOADING],
+  entryComponents: [TD_LOADING_ENTRY_COMPONENTS],
   providers: [LOADING_FACTORY_PROVIDER, LOADING_PROVIDER],
 })
 export class CovalentLoadingModule {}
