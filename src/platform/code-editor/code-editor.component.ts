@@ -48,6 +48,7 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
   private _subject: Subject<string> = new Subject();
   private _editorInnerContainer: string = 'editorInnerContainer' + uniqueCounter++;
   private _editor: any;
+  private _fromEditor: boolean = false;
   private _componentInitialized: boolean = false;
   private _editorOptions: any = {};
   private _isFullScreen: boolean = false;
@@ -108,10 +109,13 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
   }
 
   applyValue(): void {
-    if (this._value !== undefined) {
+    if (!this._fromEditor) {
       this._editor.setValue(this._value);
-      this.editorValueChange.emit();
     }
+    this._fromEditor = false;
+    this.propagateChange(this._value);
+    this.change.emit();
+    this.editorValueChange.emit();
   }
 
   /**
@@ -137,12 +141,10 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
    */
   getValue(): Observable<string> {
     if (this._componentInitialized) {
-      this._value = this._editor.getValue();
       setTimeout(() => {
         this._subject.next(this._value);
         this._subject.complete();
         this._subject = new Subject();
-        this.editorValueChange.emit();
       });
       return this._subject.asObservable();
     }
@@ -315,15 +317,17 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
         this.editorOptions,
       ),
     );
+    this._componentInitialized = true;
     setTimeout(() => {
       this.applyLanguage();
+      this._fromEditor = true;
       this.applyValue();
       this.applyStyle();
-      this._componentInitialized = true;
       this.editorInitialized.emit(this._editor);
       this.editorConfigurationChanged.emit();
     });
     this._editor.getModel().onDidChangeContent((e: any) => {
+      this._fromEditor = true;
       this.writeValue(this._editor.getValue());
       this.layout();
     });
