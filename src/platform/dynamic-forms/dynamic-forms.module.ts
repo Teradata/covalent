@@ -68,6 +68,7 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     CovalentFileModule,
   ],
   exports: [TD_DYNAMIC_FORMS, TD_DYNAMIC_FORMS_ENTRY_COMPONENTS],
+  entryComponents: [TD_DYNAMIC_FORMS_ENTRY_COMPONENTS],
   providers: [DYNAMIC_FORMS_PROVIDER],
 })
 export class CovalentDynamicFormsModule {}
