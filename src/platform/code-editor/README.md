@@ -48,21 +48,71 @@ npm install @covalent/code-editor
 
 ## Setup
 
-Add the glob to assets in angular.json (to make monaco-editor javascript available to the app)
-```json
-{
-  "apps": [
-    {
-      "assets": [
-        {
-          "glob": "**/*",
-          "input": "node_modules/monaco-editor/min",
-          "output": "/assets/monaco"
-        }
-      ],
+Due to an known issue in Monaco Editor version 0.20.0 <a href="https://github.com/microsoft/monaco-editor/issues/1842">https://github.com/microsoft/monaco-editor/issues/1842</a> regarding errors arising when quickly disposing editor instances, utilize the 0.17.1 version of monaco-editor.
+
+We utilize the ESM build of the Monaco Editor. To include this build, you must utilize custom webpack. See <a href="https://github.com/Microsoft/monaco-editor/blob/master/docs/integrate-esm.md">https://github.com/Microsoft/monaco-editor/blob/master/docs/integrate-esm.md</a> for more information.
+
+Install the webpack custom builder.
+
+```bash
+npm install --save-dev @angular-builders/custom-webpack
 ```
 
-Then, import the **CovalentCodeEditorModule** in your NgModule:
+Install the Monaco Editor webpack extension plugin.
+
+```bash
+npm install --save-dev monaco-editor-webpack-plugin
+```
+
+Create a webpack config file utilizing the Monaco Editor webpack plugin. Languages and features can be included/excluded to control the resulting image size.
+
+```javascript
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+
+module.exports = {
+  // target should only be specified when including component in Electron app
+  target: 'electron-renderer',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader'],
+      },
+      {
+        test: /\.ttf$/,
+        use: ['file-loader'],
+      },
+    ],
+  },
+  plugins: [
+    new MonacoWebpackPlugin({
+      languages: ['css','html','javascript','sql','typescript'],
+      features: ['contextmenu','clipboard','find'],
+    }),
+  ],
+};
+```
+Note: If you are including this component in an Electron application, define the electron-renderer target.  See Electron example here:
+[https://github.com/Teradata/covalent-electron/blob/develop/monaco-webpack.config.js](https://github.com/Teradata/covalent-electron/blob/develop/monaco-webpack.config.js)
+
+
+Reference the webpack file in your angular.json build config.
+
+```json
+...
+"build": {
+  "builder": "@angular-builders/custom-webpack:browser",
+  "options": {
+    "customWebpackConfig": {
+      "path": "./monaco-webpack.config.js",
+        "mergeStrategies": {
+        "module.rules": "prepend"
+      }
+    },
+...
+```
+
+Import the **CovalentCodeEditorModule** in your NgModule:
 
 ```typescript
 import { CovalentCodeEditorModule } from '@covalent/code-editor';

@@ -3,9 +3,6 @@ import { Component, ViewChild } from '@angular/core';
 import { TdCodeEditorComponent } from './';
 import { FormsModule } from '@angular/forms';
 
-declare var electron: any;
-declare const process: any;
-
 // to be able to test fullscreen when running headless in travis
 interface IFsDocument extends HTMLDocument {
   webkitExitFullscreen?: () => void;
@@ -93,9 +90,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -118,9 +112,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -146,9 +137,6 @@ describe('Component: App', () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
 
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -173,9 +161,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -184,12 +169,8 @@ describe('Component: App', () => {
           fixture.whenStable().then(() => {
             fixture.detectChanges();
             fixture.changeDetectorRef.detectChanges();
-            if (component.isElectronApp) {
-              expect(component.editorStyle).toBe('width:100%;height:500px;border:10px solid green;');
-            } else {
-              const containerDiv: HTMLDivElement = component._editorContainer.nativeElement;
-              expect(containerDiv.getAttribute('style')).toBe('width:100%;height:500px;border:10px solid green;');
-            }
+            const containerDiv: HTMLDivElement = component._editorContainer.nativeElement;
+            expect(containerDiv.getAttribute('style')).toBe('width:100%;height:500px;border:10px solid green;');
             done();
           });
         });
@@ -201,9 +182,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TestEditorOptionsComponent);
       const component: TestEditorOptionsComponent = fixture.debugElement.componentInstance;
-      if (component.editor1.isElectronApp) {
-        component.editor1.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -219,11 +197,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TestMultipleEditorsComponent);
       const component: TestMultipleEditorsComponent = fixture.debugElement.componentInstance;
-      if (component.editor1.isElectronApp) {
-        component.editor1.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-        component.editor2.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-        component.editor3.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -264,9 +237,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -274,19 +244,12 @@ describe('Component: App', () => {
           component.editorStyle = 'width:100%;height:500px;border:10px solid green;';
           component.value = 'SELECT * FROM foo;';
           const containerDiv: IFsDocumentElement = <IFsDocumentElement>component._editorContainer.nativeElement;
-          if (component.isElectronApp) {
-            component.showFullScreenEditor();
-            expect(component.isFullScreen).toBe(true);
-            component.exitFullScreenEditor();
-            expect(component.isFullScreen).toBe(false);
-          } else {
-            spyOn(containerDiv, 'webkitRequestFullscreen');
-            component.showFullScreenEditor();
-            expect(containerDiv.webkitRequestFullscreen).toHaveBeenCalled();
-            component.exitFullScreenEditor();
-            const fsDoc: IFsDocument = <IFsDocument>document;
-            expect(fsDoc).toBeDefined();
-          }
+          spyOn(containerDiv, 'webkitRequestFullscreen');
+          component.showFullScreenEditor();
+          expect(containerDiv.webkitRequestFullscreen).toHaveBeenCalled();
+          component.exitFullScreenEditor();
+          const fsDoc: IFsDocument = <IFsDocument>document;
+          expect(fsDoc).toBeDefined();
 
           done();
         });
@@ -298,9 +261,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
-      if (component.isElectronApp) {
-        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       fixture.changeDetectorRef.detectChanges();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -320,9 +280,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithValueComponent);
       const component: TestTwoWayBindingWithValueComponent = fixture.debugElement.componentInstance;
-      if (component.editor.isElectronApp) {
-        component.editor.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       const newSampleCode: string = 'const val = 2;';
       component.sampleCode = newSampleCode;
       fixture.changeDetectorRef.detectChanges();
@@ -349,9 +306,6 @@ describe('Component: App', () => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithNgModelComponent);
       const component: TestTwoWayBindingWithNgModelComponent = fixture.debugElement.componentInstance;
-      if (component.editor.isElectronApp) {
-        component.editor.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
-      }
       const newSampleCode: string = 'const val = 2;';
       component.sampleCode = newSampleCode;
       fixture.changeDetectorRef.detectChanges();
