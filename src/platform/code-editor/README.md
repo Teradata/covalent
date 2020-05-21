@@ -48,6 +48,8 @@ npm install @covalent/code-editor
 
 ## Setup
 
+Due to an known issue in Monaco Editor version 0.20.0 <a href="https://github.com/microsoft/monaco-editor/issues/1842">https://github.com/microsoft/monaco-editor/issues/1842</a> regarding errors arising when quickly disposing editor instances, utilize the 0.17.1 version of monaco-editor.
+
 We utilize the ESM build of the Monaco Editor. To include this build, you must utilize custom webpack. See <a href="https://github.com/Microsoft/monaco-editor/blob/master/docs/integrate-esm.md">https://github.com/Microsoft/monaco-editor/blob/master/docs/integrate-esm.md</a> for more information.
 
 Install the webpack custom builder.
