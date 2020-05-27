@@ -12,11 +12,7 @@ import { UserProfileDemoRoutingModule } from './user-profile-demo-routing.module
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
 @NgModule({
-  declarations: [
-    UserProfileDemoComponent,
-    UserProfileDemoBasicComponent,
-    UserProfileDemoListItemsComponent,
-  ],
+  declarations: [UserProfileDemoComponent, UserProfileDemoBasicComponent, UserProfileDemoListItemsComponent],
   imports: [
     DemoModule,
     // Material
@@ -29,4 +25,4 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     CommonModule,
   ],
 })
-export class UserProfileDemoModule {}
+export class UserProfileDemosModule {}

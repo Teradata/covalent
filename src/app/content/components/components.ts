@@ -375,7 +375,7 @@ export const createComponentDetails: IComponentDetails[] = [
     route: '/components/user-profile',
     demo: () =>
       import('./component-demos/user-profile/demos/user-profile-demo.module').then(
-        (mod: any) => mod.UserProfileDemoModule,
+        (mod: any) => mod.UserProfileDemosModule,
       ),
   },
   {
