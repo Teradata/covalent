@@ -7,20 +7,22 @@ import { CovalentUserProfileModule } from '@covalent/core/user-profile';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
 import { setComponentRoutes } from 'app/content/components/components';
 
-import { UserProfileDemoComponent } from './user-profile.component';
+import { UserProfileDemoListItemsSharedModule } from './demos/user-profile-demo-list-items/user-profile-demo-list-items.module';
+import { UserProfileDemoListItemsComponent } from './demos/user-profile-demo-list-items/user-profile-demo-list-items.component';
 
 const routes: Routes = setComponentRoutes({
-  overviewDemoComponent: UserProfileDemoComponent,
+  overviewDemoComponent: UserProfileDemoListItemsComponent,
   id: 'user-profile',
 });
 
 @NgModule({
-  declarations: [UserProfileDemoComponent],
   imports: [
     CommonModule,
     ComponentDetailsModule,
     MatIconModule,
     MatListModule,
+    // Demo
+    UserProfileDemoListItemsSharedModule,
     // Covalent
     CovalentUserProfileModule,
     // Routes
