@@ -14,11 +14,21 @@ export class GuidedTourDemoBasicComponent implements OnInit {
       useModalOverlay: true,
       steps: [
         {
+          title: 'Vehicle Status Report',
+          text: 'Learn how to check the status of ypur vehicle',
+          attachToOptions: {
+            showProgress: false,
+          },
+        },
+        {
           title: 'Fuel',
           text: 'Here are the fuel levels',
           attachTo: {
             element: '#basic-demo #fuel',
             on: 'top',
+          },
+          attachToOptions: {
+            showProgress: true,
           },
         },
         {
@@ -35,6 +45,9 @@ export class GuidedTourDemoBasicComponent implements OnInit {
           attachTo: {
             element: '#basic-demo #status',
             on: 'top',
+          },
+          attachToOptions: {
+            showProgress: false,
           },
         },
       ],

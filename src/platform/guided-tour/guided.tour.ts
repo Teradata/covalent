@@ -35,6 +35,7 @@ export interface ITourStepAttachToOptions extends ITourEventOnOptions {
   skipIfNotFound?: boolean; // if element is not found after n retries, move on to next step
   else?: string; // if element is not found, go to step with this id
   goBackTo?: string; // back button goes back to step with this id
+  showProgress?: boolean; // show/hide progress on step
 }
 
 export interface ITourStepAdvanceOn extends ITourEventOn {}
@@ -49,6 +50,7 @@ export interface ITourStep extends TourStep {
   advanceOnOptions?: ITourStepAdvanceOnOptions;
   advanceOn?: ITourStepAdvanceOn[] | ITourStepAdvanceOn | any;
   abortOn?: ITourAbortOn[];
+  count?: number;
 }
 
 abstract class TourButtonsActions {
@@ -173,8 +175,6 @@ export class CovalentGuidedTour extends TourButtonsActions {
      * This function adds the step progress in the footer of the shepherd tooltip
      */
     const appendProgressFunc: Function = function (): void {
-      // get step index of current step
-      const stepIndex: number = this.shepherdTour.steps.indexOf(this.shepherdTour.currentStep);
       // get all the footers that are available in the DOM
       const footers: Element[] = Array.from<Element>(document.querySelectorAll('.shepherd-footer'));
       // get the last footer since Shepherd always puts the active one at the end
@@ -182,15 +182,25 @@ export class CovalentGuidedTour extends TourButtonsActions {
       // generate steps html element
       const progress: HTMLSpanElement = document.createElement('span');
       progress.className = 'shepherd-progress';
-      progress.innerText = `${stepIndex + 1}/${this.shepherdTour.steps.length}`;
+      progress.innerText = `${this.shepherdTour.currentStep.options.count}/${stepTotal}`;
       // insert into the footer before the first button
       footer.insertBefore(progress, footer.querySelector('.shepherd-button'));
     };
 
+    let stepTotal: number = 0;
     const steps: ITourStep[] = originalSteps.map((step: ITourStep) => {
+      let showProgress: Function;
+      if (step.attachToOptions?.showProgress === undefined || step.attachToOptions?.showProgress === true) {
+        step.count = ++stepTotal;
+        showProgress = appendProgressFunc.bind(this);
+      } else if (step.attachToOptions?.showProgress === false) {
+        showProgress = function (): void {
+          return;
+        }.bind(this);
+      }
       return Object.assign({}, step, {
         when: {
-          show: appendProgressFunc.bind(this),
+          show: showProgress,
         },
       });
     });
