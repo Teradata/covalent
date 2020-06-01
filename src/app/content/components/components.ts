@@ -381,6 +381,19 @@ export const createComponentDetails: IComponentDetails[] = [
       ),
   },
   {
+    name: 'User Profile',
+    id: 'user-profile',
+    description: 'User profile menu component with support for lists for customization',
+    apiDocUrl: 'platform/core/user-profile/README.md',
+    icon: 'person',
+    category: layout.name,
+    route: '/components/user-profile',
+    demo: () =>
+      import('./component-demos/user-profile/demos/user-profile-demo.module').then(
+        (mod: any) => mod.UserProfileDemosModule,
+      ),
+  },
+  {
     name: 'Virtual Scrolling',
     id: 'virtual-scroll',
     description: 'Virtual Scroll a list of items',

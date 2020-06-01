@@ -146,6 +146,11 @@ const routes: Routes = [
           import('./component-demos/text-editor/text-editor.module').then((m: any) => m.TextEditorDemoModule),
       },
       {
+        path: 'user-profile',
+        loadChildren: () =>
+          import('./component-demos/user-profile/user-profile.module').then((m: any) => m.UserProfileDemoModule),
+      },
+      {
         path: 'data-table',
         loadChildren: () =>
           import('./component-demos/data-table/data-table.module').then((m: any) => m.DataTableDemoModule),
