@@ -1,0 +1,27 @@
+@mixin covalent-user-profile-theme($theme, $config: null) {
+  @include td-user-profile-typography($config);
+  @include td-user-profile-theme($theme);
+}
+
+@mixin td-user-profile-typography($config: null) {
+  @if $config == null {
+    $config: td-typography-config();
+  }
+
+  td-user-profile-menu {
+    .mat-list-base .mat-list-item .mat-line:nth-child(n + 2) {
+      @include mat-typography-level-to-styles($config, caption);
+    }
+  }
+}
+
+@mixin td-user-profile-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $secondary-text: map-get($foreground, secondary-text);
+
+  td-user-profile-menu {
+    .mat-list-base .mat-list-item .mat-line:nth-child(n + 2) {
+      color: $secondary-text;
+    }
+  }
+}

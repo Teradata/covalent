@@ -1,0 +1,10 @@
+<button mat-icon-button [matMenuTriggerFor]="accountMenu">
+  <mat-icon>person</mat-icon>
+</button>
+
+<mat-menu #accountMenu="matMenu" [overlapTrigger]="false">
+  <td-user-profile-menu [name]="name" [email]="email">
+    <ng-content select="[td-user-info-list]" td-user-info-list></ng-content>
+    <ng-content select="[td-user-action-list]" td-user-action-list></ng-content>
+  </td-user-profile-menu>
+</mat-menu>
