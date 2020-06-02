@@ -95,7 +95,7 @@ const basicDemoTour: IGuidedTour = {
       title: 'Vehicle Status Report',
       text: 'Learn how to check the status of your vehicle',
       attachToOptions: {
-        showProgress: false,
+        skipFromStepCount: true,
       },
     },
     {
@@ -106,7 +106,7 @@ const basicDemoTour: IGuidedTour = {
         on: 'top',
       },
       attachToOptions: {
-        showProgress: true,
+        skipFromStepCount: false,
       },
     },
     {
@@ -125,7 +125,7 @@ const basicDemoTour: IGuidedTour = {
         on: 'top',
       },
       attachToOptions: {
-        showProgress: false,
+        skipFromStepCount: true,
       },
     },
   ],

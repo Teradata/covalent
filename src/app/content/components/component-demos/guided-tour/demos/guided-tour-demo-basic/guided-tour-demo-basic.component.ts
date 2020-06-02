@@ -17,7 +17,7 @@ export class GuidedTourDemoBasicComponent implements OnInit {
           title: 'Vehicle Status Report',
           text: 'Learn how to check the status of your vehicle',
           attachToOptions: {
-            showProgress: false,
+            skipFromStepCount: true,
           },
         },
         {
@@ -28,7 +28,7 @@ export class GuidedTourDemoBasicComponent implements OnInit {
             on: 'top',
           },
           attachToOptions: {
-            showProgress: true,
+            skipFromStepCount: false,
           },
         },
         {
@@ -47,7 +47,7 @@ export class GuidedTourDemoBasicComponent implements OnInit {
             on: 'top',
           },
           attachToOptions: {
-            showProgress: false,
+            skipFromStepCount: true,
           },
         },
       ],

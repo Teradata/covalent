@@ -35,7 +35,7 @@ export interface ITourStepAttachToOptions extends ITourEventOnOptions {
   skipIfNotFound?: boolean; // if element is not found after n retries, move on to next step
   else?: string; // if element is not found, go to step with this id
   goBackTo?: string; // back button goes back to step with this id
-  showProgress?: boolean; // show/hide progress on step
+  skipFromStepCount?: boolean; // show/hide progress on step
 }
 
 export interface ITourStepAdvanceOn extends ITourEventOn {}
@@ -190,13 +190,16 @@ export class CovalentGuidedTour extends TourButtonsActions {
     let stepTotal: number = 0;
     const steps: ITourStep[] = originalSteps.map((step: ITourStep) => {
       let showProgress: Function;
-      if (step.attachToOptions?.showProgress === undefined || step.attachToOptions?.showProgress === true) {
-        step.count = ++stepTotal;
-        showProgress = appendProgressFunc.bind(this);
-      } else if (step.attachToOptions?.showProgress === false) {
+      if (step.attachToOptions?.skipFromStepCount === true) {
         showProgress = function (): void {
           return;
-        }.bind(this);
+        };
+      } else if (
+        step.attachToOptions?.skipFromStepCount === undefined ||
+        step.attachToOptions?.skipFromStepCount === false
+      ) {
+        step.count = ++stepTotal;
+        showProgress = appendProgressFunc.bind(this);
       }
       return Object.assign({}, step, {
         when: {
