@@ -15,7 +15,7 @@ export class GuidedTourDemoBasicComponent implements OnInit {
       steps: [
         {
           title: 'Vehicle Status Report',
-          text: 'Learn how to check the status of ypur vehicle',
+          text: 'Learn how to check the status of your vehicle',
           attachToOptions: {
             showProgress: false,
           },

@@ -48,6 +48,7 @@ export interface ITourStepAttachToOptions extends ITourEventOnOptions {
   skipIfNotFound?: boolean; // if element is not found after n retries, move on to next step
   else?: string; // if element is not found, go to step with this id
   goBackTo?: string; // back button goes back to step with this id
+  showProgress?: boolean; // show/hide the step count
 }
 
 export interface ITourStepAdvanceOn extends ITourEventOn {}
@@ -62,6 +63,7 @@ export interface ITourStep extends TourStep {
   advanceOnOptions?: ITourStepAdvanceOnOptions;
   advanceOn?: ITourStepAdvanceOn[] | ITourStepAdvanceOn | any;
   abortOn?: ITourAbortOn[];
+  count?: number;
 }
 
 export interface IGuidedTour extends ITourOptions {
@@ -90,11 +92,21 @@ const basicDemoTour: IGuidedTour = {
   useModalOverlay: true,
   steps: [
     {
+      title: 'Vehicle Status Report',
+      text: 'Learn how to check the status of your vehicle',
+      attachToOptions: {
+        showProgress: false,
+      },
+    },
+    {
       title: 'Fuel',
       text: 'Here are the fuel levels',
       attachTo: {
         element: '#basic-demo #fuel',
         on: 'top',
+      },
+      attachToOptions: {
+        showProgress: true,
       },
     },
     {
@@ -111,6 +123,9 @@ const basicDemoTour: IGuidedTour = {
       attachTo: {
         element: '#basic-demo #status',
         on: 'top',
+      },
+      attachToOptions: {
+        showProgress: false,
       },
     },
   ],
