@@ -48,7 +48,7 @@ export interface ITourStepAttachToOptions extends ITourEventOnOptions {
   skipIfNotFound?: boolean; // if element is not found after n retries, move on to next step
   else?: string; // if element is not found, go to step with this id
   goBackTo?: string; // back button goes back to step with this id
-  showProgress?: boolean; // show/hide the step count
+  skipFromStepCount?: boolean; // show/hide the step count, removes step from total count
 }
 
 export interface ITourStepAdvanceOn extends ITourEventOn {}
