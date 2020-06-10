@@ -14,21 +14,11 @@ export class GuidedTourDemoBasicComponent implements OnInit {
       useModalOverlay: true,
       steps: [
         {
-          title: 'Vehicle Status Report',
-          text: 'Learn how to check the status of your vehicle',
-          attachToOptions: {
-            skipFromStepCount: true,
-          },
-        },
-        {
           title: 'Fuel',
           text: 'Here are the fuel levels',
           attachTo: {
             element: '#basic-demo #fuel',
             on: 'top',
-          },
-          attachToOptions: {
-            skipFromStepCount: false,
           },
         },
         {
@@ -45,9 +35,6 @@ export class GuidedTourDemoBasicComponent implements OnInit {
           attachTo: {
             element: '#basic-demo #status',
             on: 'top',
-          },
-          attachToOptions: {
-            skipFromStepCount: true,
           },
         },
       ],
