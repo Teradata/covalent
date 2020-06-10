@@ -92,21 +92,11 @@ const basicDemoTour: IGuidedTour = {
   useModalOverlay: true,
   steps: [
     {
-      title: 'Vehicle Status Report',
-      text: 'Learn how to check the status of your vehicle',
-      attachToOptions: {
-        skipFromStepCount: true,
-      },
-    },
-    {
       title: 'Fuel',
       text: 'Here are the fuel levels',
       attachTo: {
         element: '#basic-demo #fuel',
         on: 'top',
-      },
-      attachToOptions: {
-        skipFromStepCount: false,
       },
     },
     {
@@ -123,9 +113,6 @@ const basicDemoTour: IGuidedTour = {
       attachTo: {
         element: '#basic-demo #status',
         on: 'top',
-      },
-      attachToOptions: {
-        skipFromStepCount: true,
       },
     },
   ],
