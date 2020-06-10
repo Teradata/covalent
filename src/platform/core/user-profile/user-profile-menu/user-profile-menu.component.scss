@@ -29,6 +29,9 @@
   mat-list .mat-list-item.mat-2-line .mat-list-item-content {
     height: inherit;
   }
+  .mat-list-item .mat-list-item-content {
+    padding: 8px;
+  }
 }
 td-menu {
   margin-bottom: 0;
