@@ -291,6 +291,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     converter.setOption('ghCodeBlocks', true);
     converter.setOption('tasklists', true);
     converter.setOption('tables', true);
+    converter.setOption('literalMidWordUnderscores', true);
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
     return converter.makeHtml(markdownToParse);
   }
