@@ -13,17 +13,21 @@ export class GuidedTourDemoSkipCountComponent implements OnInit {
       useModalOverlay: true,
       steps: [
         {
-          title: 'Vehicle Status Report',
-          text: 'Learn how to check the status of your vehicle',
+          title: 'Introduction',
+          text: 'The introduction step has been removed from the count total',
+          attachTo: {
+            element: '#skip-count-demo #skip-intro',
+            on: 'top',
+          },
           attachToOptions: {
             skipFromStepCount: true,
           },
         },
         {
-          title: 'Fuel',
-          text: 'Here are the fuel levels',
+          title: 'Step 1',
+          text: 'Step 1 is the first of 2 steps to be counted in the total',
           attachTo: {
-            element: '#skip-count #skip-fuel',
+            element: '#skip-count-demo #skip-step-1',
             on: 'top',
           },
           attachToOptions: {
@@ -31,18 +35,18 @@ export class GuidedTourDemoSkipCountComponent implements OnInit {
           },
         },
         {
-          title: 'Oxygen',
-          text: 'Here are the Oxygen levels.',
+          title: 'Step 2',
+          text: 'Step 2 is the second of 2 steps to be counted in the total',
           attachTo: {
-            element: '#skip-count #skip-oxygen',
+            element: '#skip-count-demo #skip-step-2',
             on: 'top',
           },
         },
         {
-          title: 'Global status',
-          text: 'Here you can see the global status of the vehicle. That is all there is to it!',
+          title: 'Final',
+          text: 'The final step has been removed from the count total',
           attachTo: {
-            element: '#skip-count #skip-status',
+            element: '#skip-count-demo #skip-step-final',
             on: 'top',
           },
           attachToOptions: {
