@@ -11,6 +11,7 @@ export class TdConfirmDialogComponent {
   message: string;
   cancelButton: string = 'CANCEL';
   acceptButton: string = 'ACCEPT';
+  acceptButtonColor: string = 'accent';
 
   constructor(private _dialogRef: MatDialogRef<TdConfirmDialogComponent>) {}
 

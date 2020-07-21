@@ -7,7 +7,7 @@
   </td-dialog-content>
   <td-dialog-actions>
     <button mat-button #closeBtn (keydown.arrowright)="acceptBtn.focus()" (click)="cancel()">{{ cancelButton }}</button>
-    <button mat-button color="accent" #acceptBtn (keydown.arrowleft)="closeBtn.focus()" (click)="accept()">
+    <button mat-button [color]="acceptButtonColor" #acceptBtn (keydown.arrowleft)="closeBtn.focus()" (click)="accept()">
       {{ acceptButton }}
     </button>
   </td-dialog-actions>
