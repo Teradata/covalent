@@ -20,8 +20,8 @@ export interface IAlertConfig extends IDialogConfig {
 
 export interface IConfirmConfig extends IDialogConfig {
   acceptButton?: string;
-  acceptButtonColor?: string;
   cancelButton?: string;
+  isDestructive?: boolean;
 }
 
 export interface IPromptConfig extends IConfirmConfig {
@@ -108,8 +108,8 @@ export class TdDialogService {
    *     title?: string;
    *     viewContainerRef?: ViewContainerRef;
    *     acceptButton?: string;
-   *     acceptButtonColor?: string;
    *     cancelButton?: string;
+   *     isDestructive?: boolean;
    * }
    *
    * Opens a confirm dialog with the provided config.
@@ -127,8 +127,8 @@ export class TdDialogService {
     if (config.acceptButton) {
       confirmDialogComponent.acceptButton = config.acceptButton;
     }
-    if (config.acceptButtonColor) {
-      confirmDialogComponent.acceptButtonColor = config.acceptButtonColor;
+    if (config.isDestructive) {
+      confirmDialogComponent.isDestructive = config.isDestructive;
     }
     if (config.cancelButton) {
       confirmDialogComponent.cancelButton = config.cancelButton;

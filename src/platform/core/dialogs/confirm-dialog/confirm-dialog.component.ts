@@ -11,7 +11,7 @@ export class TdConfirmDialogComponent {
   message: string;
   cancelButton: string = 'CANCEL';
   acceptButton: string = 'ACCEPT';
-  acceptButtonColor: string = 'accent';
+  isDestructive: boolean = false;
 
   constructor(private _dialogRef: MatDialogRef<TdConfirmDialogComponent>) {}
 

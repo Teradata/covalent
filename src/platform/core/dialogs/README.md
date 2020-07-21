@@ -57,7 +57,7 @@ export class Demo {
       title: 'Confirm', //OPTIONAL, hides if not provided
       cancelButton: 'Disagree', //OPTIONAL, defaults to 'CANCEL'
       acceptButton: 'Agree', //OPTIONAL, defaults to 'ACCEPT'
-      acceptButtonColor: 'warn', //OPTIONAL, defaults to 'accent'
+      isDestructive: false, //OPTIONAL, defaults to false
       width: '500px', //OPTIONAL, defaults to 400px
     }).afterClosed().subscribe((accept: boolean) => {
       if (accept) {
