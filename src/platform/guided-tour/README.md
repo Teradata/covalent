@@ -68,6 +68,8 @@ export interface ITourStep extends TourStep {
 
 export interface IGuidedTour extends ITourOptions {
   steps: IGuidedTourStep[];
+  finishButtonText?: string; // optionally pass in a localized string; default value is 'finish'
+  dismissButtonText?: string; // optionally pass in a localized string; default value is 'cancel tour'
 }
 
 export interface IGuidedTourStep extends ITourStep {

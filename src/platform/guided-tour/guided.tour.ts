@@ -164,7 +164,11 @@ export class CovalentGuidedTour extends TourButtonsActions {
     this.shepherdTour.start();
   }
 
-  protected _prepareTour(originalSteps: ITourStep[]): ITourStep[] {
+  protected _prepareTour(
+    originalSteps: ITourStep[],
+    finishLabel: string = 'finish',
+    dismissLabel: string = 'cancel tour',
+  ): ITourStep[] {
     // create Subjects for back and forward events
     const backEvent$: Subject<void> = new Subject<void>();
     const forwardEvent$: Subject<void> = new Subject<void>();
@@ -209,12 +213,12 @@ export class CovalentGuidedTour extends TourButtonsActions {
     });
 
     const finishButton: TourStepButton = {
-      text: 'finish',
+      text: finishLabel,
       action: this['finish'].bind(this),
       classes: MAT_BUTTON,
     };
     const dismissButton: TourStepButton = {
-      text: 'cancel tour',
+      text: dismissLabel,
       action: this['cancel'].bind(this),
       classes: MAT_BUTTON,
     };

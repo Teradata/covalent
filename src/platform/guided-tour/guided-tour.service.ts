@@ -16,6 +16,8 @@ import { CovalentGuidedTour, ITourStep, ITourOptions } from './guided.tour';
 
 export interface IGuidedTour extends ITourOptions {
   steps: IGuidedTourStep[];
+  finishButtonText?: string;
+  dismissButtonText?: string;
 }
 
 export interface IGuidedTourStep extends ITourStep {
@@ -58,7 +60,9 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
       // remove steps from tour since we need to preprocess them first
       this.newTour(Object.assign({}, guidedTour, { steps: undefined }));
       const tourInstance: Shepherd.Tour = this.shepherdTour.addSteps(
-        this._configureRoutesForSteps(this._prepareTour(guidedTour.steps)),
+        this._configureRoutesForSteps(
+          this._prepareTour(guidedTour.steps, guidedTour.finishButtonText, guidedTour.dismissButtonText),
+        ),
       );
       this.start();
       return tourInstance;
