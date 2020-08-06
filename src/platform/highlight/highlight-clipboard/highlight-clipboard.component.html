@@ -1,5 +1,7 @@
-<button type="button" [cdkCopyToClipboard]="content" class="bgc">
-  <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color">content_copy</mat-icon>
-</button>
+<div class="rel-position">
+  <button type="button" [cdkCopyToClipboard]="content" class="tc-white abs-position pad-sm">
+    <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color">content_copy</mat-icon>
+  </button>
+</div>
 
 <td-highlight [content]="content" [lang]="lang"></td-highlight>
