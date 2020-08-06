@@ -138,9 +138,9 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    * copyToClipboard for showing copy button for code snippets
    *
    */
-  @Input('copy')
-  set copy(copy: boolean) {
-    this._copyToClipboard = copy;
+  @Input('copyToClipboard')
+  set copyToClipboard(copyToClipboard: boolean) {
+    this._copyToClipboard = copyToClipboard;
   }
 
   /**
