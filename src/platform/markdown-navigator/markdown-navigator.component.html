@@ -82,12 +82,12 @@
         [anchor]="anchor"
         (loadFailed)="handleMarkdownLoaderError($event)"
       ></td-flavored-markdown-loader>
-
       <td-flavored-markdown
         *ngIf="showTdMarkdown"
         [content]="markdownString"
         [hostedUrl]="url"
         [anchor]="anchor"
+        [copy]="copyToClipboard"
         (buttonClicked)="buttonClicked.emit($event)"
       ></td-flavored-markdown>
     </div>

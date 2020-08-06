@@ -19,11 +19,18 @@ export class MarkdownNavigatorDemoServiceComponent {
           title: 'Jupiter',
           markdownString: `[Go to Jupiter](#data={"planet":"Jupiter"})`,
         },
+        {
+          title: 'Covalent Browser Support',
+          url: 'https://github.com/Teradata/product-help/blob/master/AnalyticFunctions/Best-Match-Mode-ML-Engine.md',
+          anchor: 'browser-support',
+        },
       ],
       dialogConfig: {
         width: '300px',
         height: '300px',
       },
+
+      copyToClipboard: true,
     });
   }
 }

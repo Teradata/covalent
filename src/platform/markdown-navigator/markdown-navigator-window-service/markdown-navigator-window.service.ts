@@ -17,6 +17,7 @@ export interface IMarkdownNavigatorWindowConfig {
   toolbarColor?: ThemePalette;
   startAt?: IMarkdownNavigatorItem;
   compareWith?: IMarkdownNavigatorCompareWith;
+  copyToClipboard?: boolean;
   footer?: Type<any>;
 }
 
@@ -88,6 +89,7 @@ export class TdMarkdownNavigatorWindowService {
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
     this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
+    this.markdownNavigatorWindowDialog.componentInstance.copyToClipboard = config.copyToClipboard;
     this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';

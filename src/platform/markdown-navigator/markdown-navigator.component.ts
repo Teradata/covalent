@@ -106,6 +106,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
    */
   @Input() startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
 
+  @Input() copyToClipboard: boolean;
   /**
    * footer?: Type<any>
    *

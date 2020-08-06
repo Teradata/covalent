@@ -23,7 +23,7 @@ import {
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent } from '@covalent/highlight';
+import { TdHighlightComponent, HighlightClipboardComponent } from '@covalent/highlight';
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 import {
   TdDataTableComponent,
@@ -85,6 +85,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   private _components: {} = {};
   private _viewInit: boolean = false;
 
+  private _copyToClipboard: boolean = false;
+
   /**
    * content?: string
    *
@@ -128,6 +130,17 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   @Input('anchor')
   set anchor(anchor: string) {
     this._anchor = anchor;
+  }
+
+  /**
+   * copyToClipboard?: string
+   *
+   * copyToClipboard for showing copy button for code snippets
+   *
+   */
+  @Input('copy')
+  set copy(copy: boolean) {
+    this._copyToClipboard = copy;
   }
 
   /**
@@ -307,9 +320,14 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     const codeBlockRegExp: RegExp = /(?:^|\n)```(.*)\n([\s\S]*?)\n```/g;
     return this._replaceComponent(
       markdown,
-      TdHighlightComponent,
+      this._copyToClipboard ? HighlightClipboardComponent : TdHighlightComponent,
       codeBlockRegExp,
-      (componentRef: ComponentRef<TdHighlightComponent>, match: string, language: string, codeblock: string) => {
+      (
+        componentRef: ComponentRef<TdHighlightComponent | HighlightClipboardComponent>,
+        match: string,
+        language: string,
+        codeblock: string,
+      ) => {
         if (language) {
           componentRef.instance.lang = language;
         }

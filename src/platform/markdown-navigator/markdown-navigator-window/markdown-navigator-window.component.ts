@@ -33,6 +33,7 @@ export class TdMarkdownNavigatorWindowComponent {
   @Input() startAt: IMarkdownNavigatorItem;
   @Input() compareWith: IMarkdownNavigatorCompareWith;
   @Input() docked: boolean = false;
+  @Input() copyToClipboard: boolean = false;
   @Input() footer: Type<any>;
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
