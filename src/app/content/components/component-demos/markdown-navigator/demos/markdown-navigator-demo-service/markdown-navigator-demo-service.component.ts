@@ -21,7 +21,7 @@ export class MarkdownNavigatorDemoServiceComponent {
         },
         {
           title: 'Covalent Browser Support',
-          url: 'https://github.com/Teradata/product-help/blob/master/AnalyticFunctions/Best-Match-Mode-ML-Engine.md',
+          url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
           anchor: 'browser-support',
         },
       ],
