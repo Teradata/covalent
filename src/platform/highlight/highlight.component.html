@@ -1,1 +1,10 @@
-<ng-content></ng-content>
+<div>
+  <div #highlightComponent>
+    <ng-content></ng-content>
+  </div>
+  <div #copyComponent>
+    <button mat-icon-button [cdkCopyToClipboard]="copyContent" class="copy-button" matTooltip="Copy">
+      <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color">content_copy</mat-icon>
+    </button>
+  </div>
+</div>

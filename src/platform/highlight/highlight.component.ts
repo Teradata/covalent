@@ -7,12 +7,33 @@ import {
   EventEmitter,
   Renderer2,
   SecurityContext,
+  ViewChild,
+  Directive,
+  ViewContainerRef,
+  OnInit,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare const require: any;
 /* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
+
+@Directive({
+  selector: '[tdCopyToClipboard]',
+})
+export class TdCopyToClipboardDirective implements OnInit {
+  @ViewChild('highlightComponent') highlightComp: ElementRef;
+  @ViewChild('copyComponent') copyComp: ElementRef;
+  constructor(public viewContainerRef: ViewContainerRef, private _renderer: Renderer2) {}
+
+  ngOnInit(): void {
+    // const li = this._renderer.createElement('li');
+    // const text = this._renderer.createText('New li element from renderer');
+    console.log('inside directive ngOninit');
+    // this._renderer.appendChild(li, text);
+    this._renderer.appendChild(this.highlightComp.nativeElement, this.copyComp.nativeElement);
+  }
+}
 
 @Component({
   selector: 'td-highlight',
@@ -42,6 +63,13 @@ export class TdHighlightComponent implements AfterViewInit {
   }
 
   /**
+   * copyToClipboard?: boolean
+   *
+   * Used to display copy button for the code snippets
+   */
+  @Input() copyToClipboard: boolean;
+
+  /**
    * lang?: string
    *
    * Language of the code content to be parsed as highlighted html.
@@ -60,17 +88,20 @@ export class TdHighlightComponent implements AfterViewInit {
     }
   }
 
+  copyContent: string;
+
   /**
    * contentReady?: function
    * Event emitted after the highlight content rendering is finished.
    */
   @Output() contentReady: EventEmitter<void> = new EventEmitter<void>();
+  @ViewChild('highlightComponent') highlightComp: ElementRef;
+  @ViewChild('copyComponent') copyComp: ElementRef;
 
   constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
-
   ngAfterViewInit(): void {
     if (!this._content) {
-      this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
+      this._loadContent((<HTMLElement>this.highlightComp.nativeElement).textContent);
     } else {
       this._loadContent(this._content);
     }
@@ -86,6 +117,9 @@ export class TdHighlightComponent implements AfterViewInit {
       this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
       this._elementFromString(this._render(code));
+      if (this.copyToClipboard) {
+        this._renderer.appendChild(this._elementRef.nativeElement, this.copyComp.nativeElement);
+      }
     }
     this.contentReady.emit();
   }
@@ -127,7 +161,7 @@ export class TdHighlightComponent implements AfterViewInit {
       .replace(/\} \}/gi, '}}')
       .replace(/&lt;/gi, '<')
       .replace(/&gt;/gi, '>'); // replace with < and > to render HTML in Angular
-
+    this.copyContent = codeToParse;
     // Parse code with highlight.js depending on language
     const highlightedCode: any = hljs.highlight(this._lang, codeToParse, true);
     highlightedCode.value = highlightedCode.value

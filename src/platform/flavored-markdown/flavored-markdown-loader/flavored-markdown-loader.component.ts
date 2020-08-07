@@ -38,6 +38,8 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
    */
   @Input() anchor: string;
 
+  @Input() copyToClipboard: boolean;
+
   /**
    * contentReady: void
    * Emitted when markdown rendering is finished.

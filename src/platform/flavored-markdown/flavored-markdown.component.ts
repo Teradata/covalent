@@ -23,7 +23,7 @@ import {
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent, HighlightClipboardComponent } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 import {
   TdDataTableComponent,
@@ -60,7 +60,9 @@ export class TdFlavoredMarkdownButtonComponent {
   selector: '[tdFlavoredMarkdownContainer]',
 })
 export class TdFlavoredMarkdownContainerDirective {
-  constructor(public viewContainerRef: ViewContainerRef, private _renderer: Renderer2) {}
+  constructor(public viewContainerRef: ViewContainerRef, private _renderer: Renderer2) {
+    console.log('inisde flavored directive constructor');
+  }
 
   clear(): void {
     this._renderer.setProperty(this.viewContainerRef.element.nativeElement, 'innerHTML', '');
@@ -320,16 +322,20 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     const codeBlockRegExp: RegExp = /(?:^|\n)```(.*)\n([\s\S]*?)\n```/g;
     return this._replaceComponent(
       markdown,
-      this._copyToClipboard ? HighlightClipboardComponent : TdHighlightComponent,
+      TdHighlightComponent,
       codeBlockRegExp,
       (
-        componentRef: ComponentRef<TdHighlightComponent | HighlightClipboardComponent>,
+        componentRef: ComponentRef<TdHighlightComponent>,
         match: string,
         language: string,
         codeblock: string,
+        copyToClipboard: boolean,
       ) => {
         if (language) {
           componentRef.instance.lang = language;
+        }
+        if (copyToClipboard && this._copyToClipboard) {
+          componentRef.instance.copyToClipboard = this._copyToClipboard;
         }
         componentRef.instance.content = codeblock;
       },
