@@ -1,0 +1,18 @@
+<mat-menu *ngIf="items && items.length > 0" #childMenu="matMenu" [overlapTrigger]="false">
+  <span *ngFor="let item of items">
+    <span *ngIf="item.children && item.children.length > 0">
+      <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span>{{ item.text }}</span>
+      </button>
+      <td-dynamic-menu-item #menu [items]="item.children"></td-dynamic-menu-item>
+    </span>
+    <span *ngIf="!item.children || item.children.length === 0">
+      <a [href]="item.href" mat-menu-item>
+        <span layout="row" layout-align="start center">
+          <span flex>{{ item.text }}</span>
+        </span>
+      </a>
+    </span>
+  </span>
+</mat-menu>

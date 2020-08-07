@@ -35,6 +35,11 @@ const routes: Routes = [
           import('./component-demos/dynamic-forms/dynamic-forms.module').then((m: any) => m.DynamicFormsDemoModule),
       },
       {
+        path: 'dynamic-menu',
+        loadChildren: () =>
+          import('./component-demos/dynamic-menu/dynamic-menu.module').then((m: any) => m.DynamicMenuDemoModule),
+      },
+      {
         path: 'expansion-panels',
         loadChildren: () =>
           import('./component-demos/expansion-panels/expansion-panels.module').then(

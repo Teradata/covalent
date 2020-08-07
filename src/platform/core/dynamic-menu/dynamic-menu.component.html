@@ -1,0 +1,8 @@
+<ng-template let-item ngFor [ngForOf]="_items">
+  <span *ngIf="item.children && item.children.length > 0">
+    <button mat-button [matMenuTriggerFor]="menu.childMenu">
+      {{ item.text }}
+    </button>
+    <td-dynamic-menu-item #menu [items]="item.children"></td-dynamic-menu-item>
+  </span>
+</ng-template>
