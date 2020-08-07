@@ -60,9 +60,7 @@ export class TdFlavoredMarkdownButtonComponent {
   selector: '[tdFlavoredMarkdownContainer]',
 })
 export class TdFlavoredMarkdownContainerDirective {
-  constructor(public viewContainerRef: ViewContainerRef, private _renderer: Renderer2) {
-    console.log('inisde flavored directive constructor');
-  }
+  constructor(public viewContainerRef: ViewContainerRef, private _renderer: Renderer2) {}
 
   clear(): void {
     this._renderer.setProperty(this.viewContainerRef.element.nativeElement, 'innerHTML', '');

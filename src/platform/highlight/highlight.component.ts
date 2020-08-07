@@ -27,10 +27,6 @@ export class TdCopyToClipboardDirective implements OnInit {
   constructor(public viewContainerRef: ViewContainerRef, private _renderer: Renderer2) {}
 
   ngOnInit(): void {
-    // const li = this._renderer.createElement('li');
-    // const text = this._renderer.createText('New li element from renderer');
-    console.log('inside directive ngOninit');
-    // this._renderer.appendChild(li, text);
     this._renderer.appendChild(this.highlightComp.nativeElement, this.copyComp.nativeElement);
   }
 }
