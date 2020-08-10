@@ -17,6 +17,8 @@ A component for rendering and navigating through markdown, such as documentation
   + Defaults to comparison by strict equality (===)
 + footer:? Type<any>
   + Custom component to be used as global footer
++ copyToClipboard?: boolean
+  + If passed true, copy button gets displayed for highlighted code snippet.
 
 #### Outputs
 

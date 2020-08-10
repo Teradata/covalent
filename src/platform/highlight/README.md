@@ -18,6 +18,8 @@ By default, `--dev` build will log the following message in the console to let y
   + Language of the code content to be parsed as highlighted html.
 + content: string
   + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
++ copyToClipboard?: boolean
+  + If passed true, copy button gets displayed for highlighted code snippet.
 
 #### Events
 
@@ -56,7 +58,7 @@ The `highlight` module comes with its own default `covalent` theme which you can
 ```css
 @import '~@covalent/highlight/highlight-theme';
 
-@include covalent-highlight-theme();
+@include covalent-highlight-theme($theme);
 ```
 
 Alternatively, you can use the *highlight.js* pre-built [themes](https://github.com/isagalaev/highlight.js/tree/master/src/styles) by loading them either by an import:
