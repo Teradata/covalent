@@ -1,27 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-
-import { CovalentMenuModule } from '@covalent/core/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { TdDynamicMenuComponent } from './dynamic-menu.component';
 import { TdDynamicMenuItemComponent } from './dynamic-menu-item/dynamic-menu-item.component';
 
 @NgModule({
   declarations: [TdDynamicMenuComponent, TdDynamicMenuItemComponent],
-  imports: [
-    CommonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-
-    /* covalent modules */
-    CovalentMenuModule,
-  ],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatListModule, MatMenuModule, MatTooltipModule],
   providers: [],
   exports: [TdDynamicMenuComponent, TdDynamicMenuItemComponent],
 })

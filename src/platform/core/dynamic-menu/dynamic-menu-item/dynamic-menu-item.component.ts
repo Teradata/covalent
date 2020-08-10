@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { IMenuItem } from '../dynamic-menu.component';
+import { MatMenu } from '@angular/material/menu';
 
 @Component({
   selector: 'td-dynamic-menu-item',
@@ -8,5 +9,5 @@ import { IMenuItem } from '../dynamic-menu.component';
 })
 export class TdDynamicMenuItemComponent {
   @Input() items: IMenuItem[];
-  @ViewChild('childMenu') public childMenu: any;
+  @ViewChild('childMenu', { static: true }) public childMenu: MatMenu;
 }

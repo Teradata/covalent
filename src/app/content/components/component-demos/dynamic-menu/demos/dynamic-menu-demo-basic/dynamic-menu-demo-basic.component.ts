@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IMenuItem } from '@covalent/core/dynamic-menu';
+import { IMenuItem, IMenuTrigger } from '@covalent/core/dynamic-menu';
 
 @Component({
   selector: 'dynamic-menu-demo-basic',
@@ -7,343 +7,90 @@ import { IMenuItem } from '@covalent/core/dynamic-menu';
   templateUrl: './dynamic-menu-demo-basic.component.html',
 })
 export class DynamicMenuDemoBasicComponent {
-  items: IMenuItem[] = [
+  trigger1: IMenuTrigger = {
+    id: 'triggerbutton',
+    icon: 'list',
+    text: 'Trigger With Text And Icon',
+  };
+
+  items1: IMenuItem[] = [
     {
-      text: 'DevFestFL',
-      icon: 'close',
+      id: 'covalentlinkstrigger',
+      text: 'Covalent Links',
+      svgIcon: 'assets:covalent',
       children: [
         {
-          text: 'Speakers',
-          icon: 'group',
-          children: [
-            {
-              text: 'Michael Prentice',
-              icon: 'person',
-              href: 'michael-prentice',
-              children: [
-                {
-                  text: 'Create Enterprise UIs',
-                  icon: 'star_rate',
-                  href: 'material-design',
-                },
-              ],
-            },
-            {
-              text: 'Stephen Fluin',
-              icon: 'person',
-              href: 'stephen-fluin',
-              children: [
-                {
-                  text: "What's up with the Web?",
-                  icon: 'star_rate',
-                  href: 'what-up-web',
-                },
-              ],
-            },
-            {
-              text: 'Mike Brocchi',
-              icon: 'person',
-              href: 'mike-brocchi',
-              children: [
-                {
-                  text: 'My ally, the CLI',
-                  icon: 'star_rate',
-                  href: 'my-ally-cli',
-                },
-                {
-                  text: 'Become an Angular Tailor',
-                  icon: 'star_rate',
-                  href: 'become-angular-tailer',
-                },
-              ],
-            },
-          ],
+          id: 'quickstartlink',
+          text: 'Quickstart',
+          icon: 'flash_on',
+          link: 'https://github.com/Teradata/covalent-quickstart',
+          newTab: true,
         },
         {
-          text: 'Sessions',
-          icon: 'speaker_notes',
-          children: [
-            {
-              text: 'Create Enterprise UIs',
-              icon: 'star_rate',
-              href: 'material-design',
-            },
-            {
-              text: "What's up with the Web?",
-              icon: 'star_rate',
-              href: 'what-up-web',
-            },
-            {
-              text: 'My ally, the CLI',
-              icon: 'star_rate',
-              href: 'my-ally-cli',
-            },
-            {
-              text: 'Become an Angular Tailor',
-              icon: 'star_rate',
-              href: 'become-angular-tailer',
-            },
-          ],
+          id: 'electronlink',
+          text: 'Electron App',
+          icon: 'laptop_mac',
+          link: 'https://github.com/Teradata/covalent-electron',
+          newTab: true,
         },
         {
-          text: 'Feedback',
-          icon: 'feedback',
-          href: 'feedback',
+          id: 'datalink',
+          text: 'Covalent Data',
+          icon: 'aspect_ratio',
+          link: 'https://github.com/Teradata/covalent-data',
+          newTab: true,
         },
       ],
     },
-    // {
-    //   text: 'Disney',
-    //   icon: 'close',
-    //   children: [
-    //     {
-    //       text: 'Speakers',
-    //       icon: 'group',
-    //       children: [
-    //         {
-    //           text: 'Michael Prentice',
-    //           icon: 'person',
-    //           href: 'michael-prentice',
-    //           children: [
-    //             {
-    //               text: 'Create Enterprise UIs',
-    //               icon: 'star_rate',
-    //               href: 'material-design'
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           text: 'Stephen Fluin',
-    //           icon: 'person',
-    //           href: 'stephen-fluin',
-    //           children: [
-    //             {
-    //               text: 'What\'s up with the Web?',
-    //               icon: 'star_rate',
-    //               href: 'what-up-web'
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           text: 'Mike Brocchi',
-    //           icon: 'person',
-    //           href: 'mike-brocchi',
-    //           children: [
-    //             {
-    //               text: 'My ally, the CLI',
-    //               icon: 'star_rate',
-    //               href: 'my-ally-cli'
-    //             },
-    //             {
-    //               text: 'Become an Angular Tailor',
-    //               icon: 'star_rate',
-    //               href: 'become-angular-tailer'
-    //             }
-    //           ]
-    //         }
-    //       ]
-    //     },
-    //     {
-    //       text: 'Sessions',
-    //       icon: 'speaker_notes',
-    //       children: [
-    //         {
-    //           text: 'Create Enterprise UIs',
-    //           icon: 'star_rate',
-    //           href: 'material-design'
-    //         },
-    //         {
-    //           text: 'What\'s up with the Web?',
-    //           icon: 'star_rate',
-    //           href: 'what-up-web'
-    //         },
-    //         {
-    //           text: 'My ally, the CLI',
-    //           icon: 'star_rate',
-    //           href: 'my-ally-cli'
-    //         },
-    //         {
-    //           text: 'Become an Angular Tailor',
-    //           icon: 'star_rate',
-    //           href: 'become-angular-tailer'
-    //         }
-    //       ]
-    //     },
-    //     {
-    //       text: 'Feedback',
-    //       icon: 'feedback',
-    //       href: 'feedback'
-    //     }
-    //   ]
-    // },
-    // {
-    //   text: 'Orlando',
-    //   icon: 'close',
-    //   children: [
-    //     {
-    //       text: 'Speakers',
-    //       icon: 'group',
-    //       children: [
-    //         {
-    //           text: 'Michael Prentice',
-    //           icon: 'person',
-    //           href: 'michael-prentice',
-    //           children: [
-    //             {
-    //               text: 'Create Enterprise UIs',
-    //               icon: 'star_rate',
-    //               href: 'material-design'
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           text: 'Stephen Fluin',
-    //           icon: 'person',
-    //           href: 'stephen-fluin',
-    //           children: [
-    //             {
-    //               text: 'What\'s up with the Web?',
-    //               icon: 'star_rate',
-    //               href: 'what-up-web'
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           text: 'Mike Brocchi',
-    //           icon: 'person',
-    //           href: 'mike-brocchi',
-    //           children: [
-    //             {
-    //               text: 'My ally, the CLI',
-    //               icon: 'star_rate',
-    //               href: 'my-ally-cli'
-    //             },
-    //             {
-    //               text: 'Become an Angular Tailor',
-    //               icon: 'star_rate',
-    //               href: 'become-angular-tailer'
-    //             }
-    //           ]
-    //         }
-    //       ]
-    //     },
-    //     {
-    //       text: 'Sessions',
-    //       icon: 'speaker_notes',
-    //       children: [
-    //         {
-    //           text: 'Create Enterprise UIs',
-    //           icon: 'star_rate',
-    //           href: 'material-design'
-    //         },
-    //         {
-    //           text: 'What\'s up with the Web?',
-    //           icon: 'star_rate',
-    //           href: 'what-up-web'
-    //         },
-    //         {
-    //           text: 'My ally, the CLI',
-    //           icon: 'star_rate',
-    //           href: 'my-ally-cli'
-    //         },
-    //         {
-    //           text: 'Become an Angular Tailor',
-    //           icon: 'star_rate',
-    //           href: 'become-angular-tailer'
-    //         }
-    //       ]
-    //     },
-    //     {
-    //       text: 'Feedback',
-    //       icon: 'feedback',
-    //       href: 'feedback'
-    //     }
-    //   ]
-    // },
-    // {
-    //   text: 'Maleficent',
-    //   disabled: true,
-    //   icon: 'close',
-    //   children: [
-    //     {
-    //       text: 'Speakers',
-    //       icon: 'group',
-    //       children: [
-    //         {
-    //           text: 'Michael Prentice',
-    //           icon: 'person',
-    //           href: 'michael-prentice',
-    //           children: [
-    //             {
-    //               text: 'Create Enterprise UIs',
-    //               icon: 'star_rate',
-    //               href: 'material-design'
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           text: 'Stephen Fluin',
-    //           icon: 'person',
-    //           href: 'stephen-fluin',
-    //           children: [
-    //             {
-    //               text: 'What\'s up with the Web?',
-    //               icon: 'star_rate',
-    //               href: 'what-up-web'
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           text: 'Mike Brocchi',
-    //           icon: 'person',
-    //           href: 'mike-brocchi',
-    //           children: [
-    //             {
-    //               text: 'My ally, the CLI',
-    //               icon: 'star_rate',
-    //               href: 'my-ally-cli'
-    //             },
-    //             {
-    //               text: 'Become an Angular Tailor',
-    //               icon: 'star_rate',
-    //               href: 'become-angular-tailer'
-    //             }
-    //           ]
-    //         }
-    //       ]
-    //     },
-    //     {
-    //       text: 'Sessions',
-    //       icon: 'speaker_notes',
-    //       children: [
-    //         {
-    //           text: 'Create Enterprise UIs',
-    //           icon: 'star_rate',
-    //           href: 'material-design'
-    //         },
-    //         {
-    //           text: 'What\'s up with the Web?',
-    //           icon: 'star_rate',
-    //           href: 'what-up-web'
-    //         },
-    //         {
-    //           text: 'My ally, the CLI',
-    //           icon: 'star_rate',
-    //           href: 'my-ally-cli'
-    //         },
-    //         {
-    //           text: 'Become an Angular Tailor',
-    //           icon: 'star_rate',
-    //           href: 'become-angular-tailer'
-    //         }
-    //       ]
-    //     },
-    //     {
-    //       text: 'Feedback',
-    //       icon: 'feedback',
-    //       href: 'feedback'
-    //     }
-    //   ]
-    // }
+    {
+      id: 'angularlink',
+      text: 'Angular Link',
+      svgIcon: 'assets:angular',
+      children: [
+        {
+          text: 'Angular Homepage',
+          icon: 'star_rate',
+          link: 'https://angular.io/',
+          newTab: true,
+        },
+      ],
+    },
+  ];
+
+  trigger2: IMenuTrigger = {
+    icon: 'help',
+    tooltip: 'This launch button has no text but does have a tooltip',
+  };
+
+  items2: IMenuItem[] = [
+    {
+      text: 'Level 1',
+      icon: 'filter_1',
+      children: [
+        {
+          text: 'Level 2',
+          icon: 'filter_2',
+          children: [
+            {
+              text: 'Level 3',
+              icon: 'filter_3',
+              children: [
+                {
+                  text: 'Teradata - open in current tab',
+                  icon: 'filter_4',
+                  link: 'www.teradata.com',
+                },
+                {
+                  text: 'Teradata - open in new tab',
+                  icon: 'filter_4',
+                  link: 'www.teradata.com',
+                  newTab: true,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ];
 }
