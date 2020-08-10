@@ -1,4 +1,4 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture, fakeAsync } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -25,16 +25,20 @@ describe('Component: Highlight', () => {
 
   describe('Rendering: ', () => {
     it('should render empty', async(() => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestRenderingComponent);
-      const element: HTMLElement = fixture.nativeElement;
+      fakeAsync(() => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestRenderingComponent);
+        const element: HTMLElement = fixture.nativeElement;
 
-      expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe(``);
-      expect(element.querySelector('td-highlight pre code')).toBeFalsy();
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        fixture.detectChanges();
+        expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe(``);
         expect(element.querySelector('td-highlight pre code')).toBeFalsy();
-        expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe('');
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(element.querySelector('td-highlight pre code')).toBeFalsy();
+          expect(fixture.debugElement.query(By.css('td-highlight > div > div')).nativeElement.textContent.trim()).toBe(
+            '',
+          );
+        });
       });
     }));
 
@@ -65,7 +69,7 @@ describe('Component: Highlight', () => {
         }`;
       const element: HTMLElement = fixture.nativeElement;
 
-      expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe('');
+      expect(fixture.debugElement.query(By.css('td-highlight > div > div')).nativeElement.textContent.trim()).toBe('');
       expect(element.querySelector('td-highlight pre code')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {

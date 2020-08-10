@@ -8,9 +8,8 @@ import {
   Renderer2,
   SecurityContext,
   ViewChild,
-  Directive,
-  ViewContainerRef,
-  OnInit,
+  ChangeDetectorRef,
+  AfterViewChecked,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -18,25 +17,12 @@ declare const require: any;
 /* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
 
-@Directive({
-  selector: '[tdCopyToClipboard]',
-})
-export class TdCopyToClipboardDirective implements OnInit {
-  @ViewChild('highlightComponent') highlightComp: ElementRef;
-  @ViewChild('copyComponent') copyComp: ElementRef;
-  constructor(public viewContainerRef: ViewContainerRef, private _renderer: Renderer2) {}
-
-  ngOnInit(): void {
-    this._renderer.appendChild(this.highlightComp.nativeElement, this.copyComp.nativeElement);
-  }
-}
-
 @Component({
   selector: 'td-highlight',
   styleUrls: ['./highlight.component.scss'],
   templateUrl: './highlight.component.html',
 })
-export class TdHighlightComponent implements AfterViewInit {
+export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   private _initialized: boolean = false;
 
   private _content: string;
@@ -94,7 +80,17 @@ export class TdHighlightComponent implements AfterViewInit {
   @ViewChild('highlightComponent') highlightComp: ElementRef;
   @ViewChild('copyComponent') copyComp: ElementRef;
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
+  constructor(
+    private _renderer: Renderer2,
+    private _elementRef: ElementRef,
+    private _domSanitizer: DomSanitizer,
+    private cdr: ChangeDetectorRef,
+  ) {}
+
+  ngAfterViewChecked(): void {
+    this.cdr.detectChanges();
+  }
+
   ngAfterViewInit(): void {
     if (!this._content) {
       this._loadContent((<HTMLElement>this.highlightComp.nativeElement).textContent);
