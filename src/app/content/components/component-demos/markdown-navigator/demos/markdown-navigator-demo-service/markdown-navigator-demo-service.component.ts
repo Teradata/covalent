@@ -34,8 +34,6 @@ export class MarkdownNavigatorDemoServiceComponent {
         width: '300px',
         height: '300px',
       },
-
-      copyToClipboard: true,
       startAt: [{ id: 'child_id' }, { id: 'child-1' }],
     });
   }
