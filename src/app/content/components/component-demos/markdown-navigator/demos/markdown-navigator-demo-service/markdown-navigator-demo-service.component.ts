@@ -19,11 +19,22 @@ export class MarkdownNavigatorDemoServiceComponent {
           title: 'Jupiter',
           markdownString: `[Go to Jupiter](#data={"planet":"Jupiter"})`,
         },
+        {
+          title: 'Covalent Browser Support',
+          url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+          anchor: 'browser-support',
+        },
+        {
+          id: 'child_id',
+          title: 'Children',
+          childrenUrl: '/assets/demos-data/children_url_1.json',
+        },
       ],
       dialogConfig: {
         width: '300px',
         height: '300px',
       },
+      startAt: [{ id: 'child_id' }, { id: 'child-1' }],
     });
   }
 }
