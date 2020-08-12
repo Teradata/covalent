@@ -15,7 +15,7 @@ export interface IMarkdownNavigatorWindowConfig {
   dialogConfig?: MatDialogConfig;
   labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
-  startAt?: IMarkdownNavigatorItem;
+  startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   compareWith?: IMarkdownNavigatorCompareWith;
   copyToClipboard?: boolean;
   footer?: Type<any>;

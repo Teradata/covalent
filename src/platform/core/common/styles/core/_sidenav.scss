@@ -7,9 +7,6 @@
       mat-icon {
         @include rtl(margin-left, 0, $margin);
         @include rtl(margin-right, $margin, 0);
-
-        color: #737373;
-        fill: #737373;
       }
     }
     [mat-list-item] {

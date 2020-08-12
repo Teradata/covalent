@@ -30,7 +30,7 @@ export class TdMarkdownNavigatorWindowComponent {
   @Input() items: IMarkdownNavigatorItem[];
   @Input() labels: IMarkdownNavigatorWindowLabels;
   @Input() toolbarColor: ThemePalette = 'primary';
-  @Input() startAt: IMarkdownNavigatorItem;
+  @Input() startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   @Input() compareWith: IMarkdownNavigatorCompareWith;
   @Input() docked: boolean = false;
   @Input() copyToClipboard: boolean = false;

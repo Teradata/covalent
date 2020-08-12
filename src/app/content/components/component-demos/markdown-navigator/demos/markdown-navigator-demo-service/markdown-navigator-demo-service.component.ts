@@ -24,6 +24,11 @@ export class MarkdownNavigatorDemoServiceComponent {
           url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
           anchor: 'browser-support',
         },
+        {
+          id: 'child_id',
+          title: 'Children',
+          childrenUrl: '/assets/demos-data/children_url_1.json',
+        },
       ],
       dialogConfig: {
         width: '300px',
@@ -31,6 +36,7 @@ export class MarkdownNavigatorDemoServiceComponent {
       },
 
       copyToClipboard: true,
+      startAt: [{ id: 'child_id' }, { id: 'child-1' }],
     });
   }
 }
