@@ -38,7 +38,27 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
    */
   @Input() anchor: string;
 
+  /**
+   * copyToClipboard?: boolean
+   *
+   * copyToClipboard for showing copy button for code snippets
+   *
+   */
   @Input() copyToClipboard: boolean;
+
+  /**
+   * copyToClipboardTooltip?: string
+   *
+   * tooltip to show on hover of the copy button
+   */
+  @Input() copyToClipboardTooltip: string;
+
+  /**
+   * copyToClipboardCopiedTooltip?: string
+   *
+   * message to show when text gets copied
+   */
+  @Input() copyToClipboardCopiedTooltip: string;
 
   /**
    * contentReady: void

@@ -106,7 +106,27 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
    */
   @Input() startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
 
+  /**
+   * copyToClipboard?: boolean
+   *
+   * copyToClipboard for showing copy button for code snippets
+   *
+   */
   @Input() copyToClipboard: boolean;
+
+  /**
+   * copyToClipboardTooltip?: string
+   *
+   * tooltip to show on hover of the copy button
+   */
+  @Input() copyToClipboardTooltip: string;
+
+  /**
+   * copyToClipboardCopiedTooltip?: string
+   *
+   * message to show when text gets copied
+   */
+  @Input() copyToClipboardCopiedTooltip: string;
   /**
    * footer?: Type<any>
    *

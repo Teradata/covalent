@@ -51,6 +51,10 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
    */
   @Input() copyToClipboard: boolean;
 
+  @Input() copyToClipboardTooltip: string = 'Copy';
+
+  @Input() copyToClipboardCopiedTooltip: string = 'Copied';
+
   /**
    * lang?: string
    *
@@ -80,6 +84,8 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   @ViewChild('highlightComponent') highlightComp: ElementRef;
   @ViewChild('copyComponent') copyComp: ElementRef;
 
+  @ViewChild('tooltip') tooltip: any;
+
   constructor(
     private _renderer: Renderer2,
     private _elementRef: ElementRef,
@@ -98,6 +104,17 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
       this._loadContent(this._content);
     }
     this._initialized = true;
+  }
+
+  textCopied(event: EventEmitter<boolean>): void {
+    if (event) {
+      this.tooltip.message = this.copyToClipboardCopiedTooltip;
+      this.tooltip.show();
+      setTimeout(() => {
+        this.tooltip.hide();
+        this.tooltip.message = this.copyToClipboardTooltip;
+      }, 2000);
+    }
   }
 
   /**

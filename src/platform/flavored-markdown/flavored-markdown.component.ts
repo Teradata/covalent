@@ -133,7 +133,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   /**
-   * copyToClipboard?: string
+   * copyToClipboard?: boolean
    *
    * copyToClipboard for showing copy button for code snippets
    *
@@ -143,6 +143,19 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     this._copyToClipboard = copyToClipboard;
   }
 
+  /**
+   * copyToClipboardTooltip?: string
+   *
+   * tooltip to show on hover of the copy button
+   */
+  @Input() copyToClipboardTooltip: string;
+
+  /**
+   * copyToClipboardCopiedTooltip?: string
+   *
+   * message to show when text gets copied
+   */
+  @Input() copyToClipboardCopiedTooltip: string;
   /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
@@ -328,12 +341,20 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         language: string,
         codeblock: string,
         copyToClipboard: boolean,
+        copyToClipboardTooltip: string,
+        copyToClipboardCopiedTooltip: string,
       ) => {
         if (language) {
           componentRef.instance.lang = language;
         }
         if (copyToClipboard && this._copyToClipboard) {
           componentRef.instance.copyToClipboard = this._copyToClipboard;
+        }
+        if (copyToClipboardTooltip) {
+          componentRef.instance.copyToClipboardTooltip = this.copyToClipboardTooltip;
+        }
+        if (copyToClipboardCopiedTooltip) {
+          componentRef.instance.copyToClipboardCopiedTooltip = this.copyToClipboardCopiedTooltip;
         }
         componentRef.instance.content = codeblock;
       },

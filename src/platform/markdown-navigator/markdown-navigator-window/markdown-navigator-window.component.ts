@@ -34,6 +34,9 @@ export class TdMarkdownNavigatorWindowComponent {
   @Input() compareWith: IMarkdownNavigatorCompareWith;
   @Input() docked: boolean = false;
   @Input() copyToClipboard: boolean = false;
+  @Input() copyToClipboardTooltip: string;
+  @Input() copyToClipboardCopiedTooltip: string;
+
   @Input() footer: Type<any>;
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
