@@ -25,10 +25,10 @@ This component uses `<td-markdown>` to render the markdown. See `<td-markdown>`'
   + Facilitate copying code from code snippet to the system clipboard.
 
 + copyToClipboardTooltip?: string
-  + Tooltip to get dispalyed on hover of the copy button.
+  + Tooltip to display on hover of the copy button.
 
 + copyToCopiedClipboardTooltip?: boolean
-  + Message to get dispalyed when the code snippet gets copied.
+  + Tooltip to display when the code snippet is copied.
   
 #### Outputs
 

@@ -21,10 +21,10 @@ By default, `--dev` build will log the following message in the console to let y
 + copyToClipboard?: boolean
   + Facilitate copying code from code snippet to the system clipboard.
 + copyToClipboardTooltip?: string
-  + Tooltip to get dispalyed on hover of the copy button.
+  + Tooltip to display on hover of the copy button.
 + copyToCopiedClipboardTooltip?: boolean
-  + Message to get dispalyed when the code snippet gets copied.
-
+  + Tooltip to display when the code snippet is copied.
+  
 #### Events
 
 + contentReady: function
