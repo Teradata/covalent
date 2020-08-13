@@ -86,6 +86,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   private _viewInit: boolean = false;
 
   private _copyToClipboard: boolean = false;
+  private _copyToClipboardTooltip: string = 'Copy';
+  private _copyToClipboardCopiedTooltip: string = 'Copied';
 
   /**
    * content?: string
@@ -148,14 +150,20 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    *
    * tooltip to show on hover of the copy button
    */
-  @Input() copyToClipboardTooltip: string;
+  @Input('copyToClipboardTooltip')
+  set copyToClipboardTooltip(copyToClipboardTooltip: string) {
+    this._copyToClipboardTooltip = copyToClipboardTooltip ? copyToClipboardTooltip : 'Copy';
+  }
 
   /**
    * copyToClipboardCopiedTooltip?: string
    *
    * message to show when text gets copied
    */
-  @Input() copyToClipboardCopiedTooltip: string;
+  @Input('copyToClipboardCopiedTooltip')
+  set copyToClipboardCopiedTooltip(copyToClipboardCopiedTooltip: string) {
+    this._copyToClipboardCopiedTooltip = copyToClipboardCopiedTooltip ? copyToClipboardCopiedTooltip : 'Copied';
+  }
   /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
@@ -341,8 +349,6 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         language: string,
         codeblock: string,
         copyToClipboard: boolean,
-        copyToClipboardTooltip: string,
-        copyToClipboardCopiedTooltip: string,
       ) => {
         if (language) {
           componentRef.instance.lang = language;
@@ -350,12 +356,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         if (copyToClipboard && this._copyToClipboard) {
           componentRef.instance.copyToClipboard = this._copyToClipboard;
         }
-        if (copyToClipboardTooltip) {
-          componentRef.instance.copyToClipboardTooltip = this.copyToClipboardTooltip;
-        }
-        if (copyToClipboardCopiedTooltip) {
-          componentRef.instance.copyToClipboardCopiedTooltip = this.copyToClipboardCopiedTooltip;
-        }
+        componentRef.instance.copyToClipboardTooltip = this._copyToClipboardTooltip;
+        componentRef.instance.copyToClipboardCopiedTooltip = this._copyToClipboardCopiedTooltip;
         componentRef.instance.content = codeblock;
       },
     );

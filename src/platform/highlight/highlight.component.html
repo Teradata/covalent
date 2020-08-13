@@ -2,7 +2,7 @@
   <div #highlightComponent>
     <ng-content></ng-content>
   </div>
-  <div #copyComponent>
+  <div #copyComponent *ngIf="copyToClipboard">
     <button
       mat-icon-button
       [cdkCopyToClipboard]="copyContent"

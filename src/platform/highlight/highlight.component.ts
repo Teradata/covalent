@@ -28,6 +28,8 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   private _content: string;
   private _lang: string = 'typescript';
 
+  private _copyToClipboardCopiedTooltip: string = 'Copied';
+
   /**
    * content?: string
    *
@@ -49,11 +51,24 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
    *
    * Used to display copy button for the code snippets
    */
-  @Input() copyToClipboard: boolean;
+  @Input() copyToClipboard: boolean = false;
 
+  /**
+   * copyToClipboardTooltip?: string
+   *
+   * tooltip to show on hover of the copy button
+   */
   @Input() copyToClipboardTooltip: string = 'Copy';
 
-  @Input() copyToClipboardCopiedTooltip: string = 'Copied';
+  /**
+   * copyToClipboardCopiedTooltip?: string
+   *
+   * message to show when text gets copied
+   */
+  @Input('copyToClipboardCopiedTooltip')
+  set copyToClipboardCopiedTooltip(copyToClipboardCopiedTooltip: string) {
+    this._copyToClipboardCopiedTooltip = copyToClipboardCopiedTooltip ? copyToClipboardCopiedTooltip : 'Copied';
+  }
 
   /**
    * lang?: string
@@ -108,7 +123,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
 
   textCopied(event: EventEmitter<boolean>): void {
     if (event) {
-      this.tooltip.message = this.copyToClipboardCopiedTooltip;
+      this.tooltip.message = this._copyToClipboardCopiedTooltip;
       this.tooltip.show();
       setTimeout(() => {
         this.tooltip.hide();
