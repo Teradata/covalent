@@ -59,7 +59,6 @@ export class DynamicMenuDemoBasicComponent {
 
   trigger2: IMenuTrigger = {
     icon: 'help',
-    tooltip: 'This launch button has no text but does have a tooltip',
   };
 
   items2: IMenuItem[] = [

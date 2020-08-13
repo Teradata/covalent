@@ -6,7 +6,6 @@ export interface IMenuTrigger {
   icon?: string; // Optional icon
   svgIcon?: string; // Optional svgIcon
   iconClasses?: string[]; // Optional styling classes
-  tooltip?: string; // Hover help for button
 }
 
 export interface IMenuItem {
