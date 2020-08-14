@@ -29,7 +29,6 @@ import { DynamicMenuHeroSharedModule } from './dynamic-menu-demo-basic/dynamic-m
     MatListModule,
     MatTabsModule,
     MatToolbarModule,
-    /** Hero Module */
   ],
 })
 export class DynamicMenuDemoModule {}

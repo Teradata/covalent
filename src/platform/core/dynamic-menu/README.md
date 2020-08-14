@@ -1,6 +1,6 @@
 # td-dynamic-menu
 
-`td-dynamic-menu` element supports the creation of n-level deep cascading menus with links using a JSON definition language.
+`td-dynamic-menu` element supports the creation of n-level deep cascading menus with links using a JSON object.
 
 ## API Summary
 
