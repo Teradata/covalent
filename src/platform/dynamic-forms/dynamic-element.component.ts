@@ -17,7 +17,12 @@ import { TemplatePortalDirective } from '@angular/cdk/portal';
 
 import { mixinControlValueAccessor, IControlValueAccessor } from '@covalent/core/common';
 
-import { TdDynamicElement, TdDynamicType, TdDynamicFormsService } from './services/dynamic-forms.service';
+import {
+  TdDynamicElement,
+  TdDynamicType,
+  TdDynamicFormsService,
+  ITdDynamicElementCustomConfig,
+} from './services/dynamic-forms.service';
 
 export class TdDynamicElementBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
@@ -119,6 +124,11 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
   @Input() multiple: boolean = undefined;
 
   /**
+   * Sets any additional properties on custom component.
+   */
+  @Input() customConfig: ITdDynamicElementCustomConfig;
+
+  /**
    * Sets error message template so it can be injected into dynamic components.
    */
   @Input() errorMessageTemplate: TemplateRef<any> = undefined;
@@ -165,6 +175,11 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
     this._instance.selections = this.selections;
     this._instance.multiple = this.multiple;
     this._instance.errorMessageTemplate = this.errorMessageTemplate;
+    if (this.customConfig) {
+      Object.getOwnPropertyNames(this.customConfig).forEach((name: string) => {
+        this._instance[name] = this.customConfig[name];
+      });
+    }
   }
 
   /**

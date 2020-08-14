@@ -34,6 +34,11 @@ export interface ITdDynamicElementValidator {
   validator: ValidatorFn;
 }
 
+// Property values to be set in custom component
+export interface ITdDynamicElementCustomConfig {
+  [name: string]: any;
+}
+
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
@@ -50,6 +55,7 @@ export interface ITdDynamicElementConfig {
   default?: any;
   flex?: number;
   validators?: ITdDynamicElementValidator[];
+  customConfig?: ITdDynamicElementCustomConfig;
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[^0-9][^\@]*$/;
