@@ -344,6 +344,19 @@ export const createComponentDetails: IComponentDetails[] = [
       import('./component-demos/nav-steps/demos/nav-steps-demo.module').then((mod: any) => mod.NavStepsDemoModule),
   },
   {
+    name: 'Dynamic Menu',
+    id: 'dynamic-menu',
+    description: 'Multi-level menu',
+    apiDocUrl: 'platform/core/dynamic-menu/README.md',
+    icon: 'format_align_center',
+    category: nav.name,
+    route: '/components/dynamic-menu',
+    demo: () =>
+      import('./component-demos/dynamic-menu/demos/dynamic-menu-demo.module').then(
+        (mod: any) => mod.DynamicMenuDemoModule,
+      ),
+  },
+  {
     name: 'Notifications',
     id: 'notifications',
     description: 'Notification count & menu for toolbar',

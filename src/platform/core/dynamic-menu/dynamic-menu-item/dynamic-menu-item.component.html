@@ -1,0 +1,24 @@
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false">
+  <ng-template let-item ngFor [ngForOf]="items">
+    <ng-container *ngIf="item.children && item.children.length > 0">
+      <button mat-menu-item [id]="item.id" [matMenuTriggerFor]="menu.childMenu">
+        <mat-icon *ngIf="item.svgIcon" [class]="item.iconClasses" [svgIcon]="item.svgIcon"></mat-icon>
+        <mat-icon *ngIf="item.icon" [class]="item.iconClasses">{{ item.icon }}</mat-icon>
+        <span *ngIf="item.text">
+          {{ item.text }}
+        </span>
+      </button>
+      <td-dynamic-menu-item #menu [items]="item.children"></td-dynamic-menu-item>
+    </ng-container>
+    <ng-container *ngIf="!item.children || item.children.length === 0">
+      <a class="new-tab" mat-menu-item [id]="item.id" [href]="item.link" [target]="item.newTab ? '_blank' : '_self'">
+        <mat-icon *ngIf="item.svgIcon" [class]="item.iconClasses" [svgIcon]="item.svgIcon"></mat-icon>
+        <mat-icon *ngIf="item.icon" [class]="item.iconClasses">{{ item.icon }}</mat-icon>
+        <span *ngIf="item.text">
+          {{ item.text }}
+        </span>
+        <mat-icon *ngIf="item.newTab" class="new-tab-icon">launch</mat-icon>
+      </a>
+    </ng-container>
+  </ng-template>
+</mat-menu>
