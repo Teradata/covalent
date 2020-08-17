@@ -2,7 +2,7 @@
   mat-icon-button
   [cdkCopyToClipboard]="copiedContent"
   class="copy-button"
-  [matTooltip]="copyToClipboardTooltip"
+  [matTooltip]="copyCodeTooltips.copyToClipboardTooltip"
   #tooltip="matTooltip"
   (cdkCopyToClipboardCopied)="textCopied($event)"
 >

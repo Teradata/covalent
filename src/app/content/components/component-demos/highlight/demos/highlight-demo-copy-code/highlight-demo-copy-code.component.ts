@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 
 @Component({
   selector: 'highlight-demo-copy-code',
@@ -11,4 +12,8 @@ export class HighlightDemoCopyCodeComponent {
     display: flex;
   }
   `;
+  tooltipsConfig: ICopyCodeTooltips = {
+    copyToClipboardTooltip: 'Copy text',
+    copyToClipboardCopiedTooltip: 'Text copied',
+  };
 }

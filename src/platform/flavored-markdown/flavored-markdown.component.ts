@@ -23,7 +23,7 @@ import {
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent } from '@covalent/highlight';
+import { TdHighlightComponent, ICopyCodeTooltips } from '@covalent/highlight';
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 import {
   TdDataTableComponent,
@@ -85,9 +85,10 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   private _components: {} = {};
   private _viewInit: boolean = false;
 
-  private _copyToClipboardTooltip: string = 'Copy';
-  private _copyToClipboardCopiedTooltip: string = 'Copied';
-
+  private _copyCodeTooltips: ICopyCodeTooltips = {
+    copyToClipboardTooltip: 'Copy',
+    copyToClipboardCopiedTooltip: 'Copied',
+  };
   /**
    * content?: string
    *
@@ -142,23 +143,21 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   @Input() copyCodeToClipboard: boolean = false;
 
   /**
-   * copyToClipboardTooltip?: string
+   * copyCodeTooltips?: ICopyCodeTooltips
    *
-   * tooltip to show on hover of the copy button
+   * tooltips to show when we hover on the copy button and when code gets copied
    */
-  @Input('copyToClipboardTooltip')
-  set copyToClipboardTooltip(copyToClipboardTooltip: string) {
-    this._copyToClipboardTooltip = copyToClipboardTooltip ? copyToClipboardTooltip : 'Copy';
+  @Input('copyCodeTooltips')
+  set copyCodeTooltips(copyCodeTooltips: ICopyCodeTooltips) {
+    if (copyCodeTooltips && copyCodeTooltips.copyToClipboardTooltip) {
+      this._copyCodeTooltips.copyToClipboardTooltip = copyCodeTooltips.copyToClipboardTooltip;
+    }
+    if (copyCodeTooltips && copyCodeTooltips.copyToClipboardCopiedTooltip) {
+      this._copyCodeTooltips.copyToClipboardCopiedTooltip = copyCodeTooltips.copyToClipboardCopiedTooltip;
+    }
   }
-
-  /**
-   * copyToClipboardCopiedTooltip?: string
-   *
-   * message to show when text gets copied
-   */
-  @Input('copyToClipboardCopiedTooltip')
-  set copyToClipboardCopiedTooltip(copyToClipboardCopiedTooltip: string) {
-    this._copyToClipboardCopiedTooltip = copyToClipboardCopiedTooltip ? copyToClipboardCopiedTooltip : 'Copied';
+  get copyCodeTooltips(): ICopyCodeTooltips {
+    return this._copyCodeTooltips;
   }
   /**
    * contentReady?: function
@@ -344,8 +343,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
           componentRef.instance.lang = language;
         }
         componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
-        componentRef.instance.copyToClipboardTooltip = this._copyToClipboardTooltip;
-        componentRef.instance.copyToClipboardCopiedTooltip = this._copyToClipboardCopiedTooltip;
+        componentRef.instance.copyCodeTooltips.copyToClipboardTooltip = this._copyCodeTooltips.copyToClipboardTooltip;
+        componentRef.instance.copyCodeTooltips.copyToClipboardCopiedTooltip = this._copyCodeTooltips.copyToClipboardCopiedTooltip;
         componentRef.instance.content = codeblock;
       },
     );

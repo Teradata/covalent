@@ -36,8 +36,10 @@ export class MarkdownNavigatorDemoServiceComponent {
       },
 
       copyCodeToClipboard: true,
-      copyToClipboardTooltip: 'Copy text',
-      copyToClipboardCopiedTooltip: 'Text copied',
+      copyCodeTooltips: {
+        copyToClipboardTooltip: 'Copy Code',
+        copyToClipboardCopiedTooltip: 'Code Copied',
+      },
       startAt: [{ id: 'child_id' }, { id: 'child-1' }],
     });
   }

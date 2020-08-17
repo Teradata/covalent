@@ -81,8 +81,7 @@
         [httpOptions]="httpOptions"
         [anchor]="anchor"
         [copyCodeToClipboard]="copyCodeToClipboard"
-        [copyToClipboardTooltip]="copyToClipboardTooltip"
-        [copyToClipboardCopiedTooltip]="copyToClipboardCopiedTooltip"
+        [copyCodeTooltips]="copyCodeTooltips"
         (loadFailed)="handleMarkdownLoaderError($event)"
       ></td-flavored-markdown-loader>
       <td-flavored-markdown
@@ -91,8 +90,7 @@
         [hostedUrl]="url"
         [anchor]="anchor"
         [copyCodeToClipboard]="copyCodeToClipboard"
-        [copyToClipboardTooltip]="copyToClipboardTooltip"
-        [copyToClipboardCopiedTooltip]="copyToClipboardCopiedTooltip"
+        [copyCodeTooltips]="copyCodeTooltips"
         (buttonClicked)="buttonClicked.emit($event)"
       ></td-flavored-markdown>
     </div>

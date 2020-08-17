@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
 import { ITdFlavoredMarkdownButtonClickEvent } from '../flavored-markdown.component';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 
 // TODO: make a td-markdown-loader component
 
@@ -47,18 +48,11 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
   @Input() copyCodeToClipboard: boolean;
 
   /**
-   * copyToClipboardTooltip?: string
+   * copyCodeTooltips?: ICopyCodeTooltips
    *
-   * tooltip to show on hover of the copy button
+   * tooltips to show when we hover on the copy button and when code gets copied
    */
-  @Input() copyToClipboardTooltip: string;
-
-  /**
-   * copyToClipboardCopiedTooltip?: string
-   *
-   * message to show when text gets copied
-   */
-  @Input() copyToClipboardCopiedTooltip: string;
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
 
   /**
    * contentReady: void

@@ -19,6 +19,11 @@ declare const require: any;
 /* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
 
+export interface ICopyCodeTooltips {
+  copyToClipboardTooltip?: string;
+  copyToClipboardCopiedTooltip?: string;
+}
+
 @Component({
   selector: 'td-highlight',
   styleUrls: ['./highlight.component.scss'],
@@ -29,8 +34,6 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
 
   private _content: string;
   private _lang: string = 'typescript';
-
-  private _copyToClipboardCopiedTooltip: string = 'Copied';
 
   /**
    * content?: string
@@ -56,24 +59,11 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   @Input() copyCodeToClipboard: boolean = false;
 
   /**
-   * copyToClipboardTooltip?: string
+   * copyCodeTooltips?: ICopyCodeTooltips
    *
-   * tooltip to show on hover of the copy button
+   * tooltips to show when we hover on the copy button and when code gets copied
    */
-  @Input() copyToClipboardTooltip: string = 'Copy';
-
-  /**
-   * copyToClipboardCopiedTooltip?: string
-   *
-   * message to show when text gets copied
-   */
-  @Input('copyToClipboardCopiedTooltip')
-  set copyToClipboardCopiedTooltip(copyToClipboardCopiedTooltip: string) {
-    this._copyToClipboardCopiedTooltip = copyToClipboardCopiedTooltip;
-  }
-  get copyToClipboardCopiedTooltip(): string {
-    return this._copyToClipboardCopiedTooltip;
-  }
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
 
   /**
    * lang?: string
@@ -124,17 +114,6 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
       this._loadContent(this._content);
     }
     this._initialized = true;
-  }
-
-  textCopied(event: boolean): void {
-    if (event) {
-      this.tooltip.message = this._copyToClipboardCopiedTooltip;
-      this.tooltip.show();
-      setTimeout(() => {
-        this.tooltip.hide();
-        this.tooltip.message = this.copyToClipboardTooltip;
-      }, 2000);
-    }
   }
 
   /**
