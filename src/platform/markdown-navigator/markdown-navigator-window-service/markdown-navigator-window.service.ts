@@ -92,10 +92,14 @@ export class TdMarkdownNavigatorWindowService {
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
     this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
     this.markdownNavigatorWindowDialog.componentInstance.copyCodeToClipboard = config.copyCodeToClipboard;
-    this.markdownNavigatorWindowDialog.componentInstance.copyCodeTooltips.copyToClipboardTooltip =
-      config.copyCodeTooltips.copyToClipboardTooltip;
-    this.markdownNavigatorWindowDialog.componentInstance.copyCodeTooltips.copyToClipboardCopiedTooltip =
-      config.copyCodeTooltips.copyToClipboardCopiedTooltip;
+    if (config.copyCodeTooltips && config.copyCodeTooltips.copyToClipboardTooltip) {
+      this.markdownNavigatorWindowDialog.componentInstance.copyCodeTooltips.copyToClipboardTooltip =
+        config.copyCodeTooltips.copyToClipboardTooltip;
+    }
+    if (config.copyCodeTooltips && config.copyCodeTooltips.copyToClipboardCopiedTooltip) {
+      this.markdownNavigatorWindowDialog.componentInstance.copyCodeTooltips.copyToClipboardCopiedTooltip =
+        config.copyCodeTooltips.copyToClipboardCopiedTooltip;
+    }
     this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';
