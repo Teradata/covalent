@@ -18,13 +18,18 @@ By default, `--dev` build will log the following message in the console to let y
   + Language of the code content to be parsed as highlighted html.
 + content: string
   + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
-+ copyToClipboard?: boolean
-  + Facilitate copying code from code snippet to the system clipboard.
-+ copyToClipboardTooltip?: string
-  + Tooltip to display on hover of the copy button.
-+ copyToCopiedClipboardTooltip?: boolean
-  + Tooltip to display when the code snippet is copied.
-  
++ copyCodeToClipboard?: boolean
+  + Display copy code button for code snippets which copies code from code snippet to the system clipboard.
++ copyCodeTooltips?: ICopyCodeTooltips
+  + Tooltips to display on hover of the copy button and when the code snippet is copied.
+
+For reference:
+```
+interface ICopyCodeTooltips {
+  copyToClipboardTooltip?: string;
+  copyToClipboardCopiedTooltip?: string;
+}
+``` 
 #### Events
 
 + contentReady: function

@@ -21,15 +21,18 @@ This component uses `<td-markdown>` to render the markdown. See `<td-markdown>`'
 + anchor?: string
   + Anchor to jump to.
 
-+ copyToClipboard?: boolean
-  + Facilitate copying code from code snippet to the system clipboard.
++ copyCodeToClipboard?: boolean
+  + Display copy code button for code snippets which copies code from code snippet to the system clipboard.
++ copyCodeTooltips?: ICopyCodeTooltips
+  + Tooltips to display on hover of the copy button and when the code snippet is copied.
 
-+ copyToClipboardTooltip?: string
-  + Tooltip to display on hover of the copy button.
-
-+ copyToCopiedClipboardTooltip?: boolean
-  + Tooltip to display when the code snippet is copied.
-  
+For reference:
+```
+interface ICopyCodeTooltips {
+  copyToClipboardTooltip?: string;
+  copyToClipboardCopiedTooltip?: string;
+}
+```  
 #### Outputs
 
 + buttonClicked: ITdFlavoredMarkdownButtonClickEvent
