@@ -17,7 +17,7 @@ export interface IMarkdownNavigatorWindowConfig {
   toolbarColor?: ThemePalette;
   startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   compareWith?: IMarkdownNavigatorCompareWith;
-  copyToClipboard?: boolean;
+  copyCodeToClipboard?: boolean;
   copyToClipboardTooltip?: string;
   copyToClipboardCopiedTooltip?: string;
   footer?: Type<any>;
@@ -91,7 +91,7 @@ export class TdMarkdownNavigatorWindowService {
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
     this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
-    this.markdownNavigatorWindowDialog.componentInstance.copyToClipboard = config.copyToClipboard;
+    this.markdownNavigatorWindowDialog.componentInstance.copyCodeToClipboard = config.copyCodeToClipboard;
     this.markdownNavigatorWindowDialog.componentInstance.copyToClipboardTooltip = config.copyToClipboardTooltip;
     this.markdownNavigatorWindowDialog.componentInstance.copyToClipboardCopiedTooltip =
       config.copyToClipboardCopiedTooltip;

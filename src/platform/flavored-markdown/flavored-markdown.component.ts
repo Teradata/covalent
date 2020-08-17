@@ -85,7 +85,6 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   private _components: {} = {};
   private _viewInit: boolean = false;
 
-  private _copyToClipboard: boolean = false;
   private _copyToClipboardTooltip: string = 'Copy';
   private _copyToClipboardCopiedTooltip: string = 'Copied';
 
@@ -135,15 +134,12 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   /**
-   * copyToClipboard?: boolean
+   * copyCodeToClipboard?: boolean
    *
-   * copyToClipboard for showing copy button for code snippets
+   * shows copy button for code snippets
    *
    */
-  @Input('copyToClipboard')
-  set copyToClipboard(copyToClipboard: boolean) {
-    this._copyToClipboard = copyToClipboard;
-  }
+  @Input() copyCodeToClipboard: boolean = false;
 
   /**
    * copyToClipboardTooltip?: string
@@ -343,19 +339,11 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       markdown,
       TdHighlightComponent,
       codeBlockRegExp,
-      (
-        componentRef: ComponentRef<TdHighlightComponent>,
-        match: string,
-        language: string,
-        codeblock: string,
-        copyToClipboard: boolean,
-      ) => {
+      (componentRef: ComponentRef<TdHighlightComponent>, match: string, language: string, codeblock: string) => {
         if (language) {
           componentRef.instance.lang = language;
         }
-        if (copyToClipboard && this._copyToClipboard) {
-          componentRef.instance.copyToClipboard = this._copyToClipboard;
-        }
+        componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
         componentRef.instance.copyToClipboardTooltip = this._copyToClipboardTooltip;
         componentRef.instance.copyToClipboardCopiedTooltip = this._copyToClipboardCopiedTooltip;
         componentRef.instance.content = codeblock;

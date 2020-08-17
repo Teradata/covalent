@@ -10,8 +10,10 @@ import {
   ViewChild,
   ChangeDetectorRef,
   AfterViewChecked,
+  TemplateRef,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatTooltip } from '@angular/material/tooltip';
 
 declare const require: any;
 /* tslint:disable-next-line */
@@ -47,11 +49,11 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   }
 
   /**
-   * copyToClipboard?: boolean
+   * copyCodeToClipboard?: boolean
    *
    * Used to display copy button for the code snippets
    */
-  @Input() copyToClipboard: boolean = false;
+  @Input() copyCodeToClipboard: boolean = false;
 
   /**
    * copyToClipboardTooltip?: string
@@ -67,7 +69,10 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
    */
   @Input('copyToClipboardCopiedTooltip')
   set copyToClipboardCopiedTooltip(copyToClipboardCopiedTooltip: string) {
-    this._copyToClipboardCopiedTooltip = copyToClipboardCopiedTooltip ? copyToClipboardCopiedTooltip : 'Copied';
+    this._copyToClipboardCopiedTooltip = copyToClipboardCopiedTooltip;
+  }
+  get copyToClipboardCopiedTooltip(): string {
+    return this._copyToClipboardCopiedTooltip;
   }
 
   /**
@@ -99,7 +104,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   @ViewChild('highlightComponent') highlightComp: ElementRef;
   @ViewChild('copyComponent') copyComp: ElementRef;
 
-  @ViewChild('tooltip') tooltip: any;
+  @ViewChild('tooltip') tooltip: MatTooltip;
 
   constructor(
     private _renderer: Renderer2,
@@ -121,7 +126,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
     this._initialized = true;
   }
 
-  textCopied(event: EventEmitter<boolean>): void {
+  textCopied(event: boolean): void {
     if (event) {
       this.tooltip.message = this._copyToClipboardCopiedTooltip;
       this.tooltip.show();
@@ -141,7 +146,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
       this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
       this._elementFromString(this._render(code));
-      if (this.copyToClipboard) {
+      if (this.copyCodeToClipboard) {
         this._renderer.appendChild(this._elementRef.nativeElement, this.copyComp.nativeElement);
       }
     }

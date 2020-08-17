@@ -2,16 +2,13 @@
   <div #highlightComponent>
     <ng-content></ng-content>
   </div>
-  <div #copyComponent *ngIf="copyToClipboard">
-    <button
-      mat-icon-button
-      [cdkCopyToClipboard]="copyContent"
-      class="copy-button"
-      [matTooltip]="copyToClipboardTooltip"
-      #tooltip="matTooltip"
-      (cdkCopyToClipboardCopied)="textCopied($event)"
-    >
-      <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color">content_copy</mat-icon>
-    </button>
+
+  <div #copyComponent *ngIf="copyCodeToClipboard">
+    <td-copy-code-button
+      [copiedContent]="copyContent"
+      [copyCodeToClipboard]="copyCodeToClipboard"
+      [copyToClipboardTooltip]="copyToClipboardTooltip"
+      [copyToClipboardCopiedTooltip]="copyToClipboardCopiedTooltip"
+    ></td-copy-code-button>
   </div>
 </div>

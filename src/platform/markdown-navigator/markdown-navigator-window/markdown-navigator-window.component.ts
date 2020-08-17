@@ -33,7 +33,7 @@ export class TdMarkdownNavigatorWindowComponent {
   @Input() startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   @Input() compareWith: IMarkdownNavigatorCompareWith;
   @Input() docked: boolean = false;
-  @Input() copyToClipboard: boolean = false;
+  @Input() copyCodeToClipboard: boolean = false;
   @Input() copyToClipboardTooltip: string;
   @Input() copyToClipboardCopiedTooltip: string;
 
