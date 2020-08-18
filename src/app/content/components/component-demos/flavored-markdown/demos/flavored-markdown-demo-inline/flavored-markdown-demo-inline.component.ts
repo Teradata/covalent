@@ -27,7 +27,7 @@ export class FlavoredMarkdownDemoInlineComponent {
   `;
 
   tooltipsConfig: ICopyCodeTooltips = {
-    copyToClipboardTooltip: 'Copy Text',
-    copyToClipboardCopiedTooltip: 'Text Copied',
+    copy: 'copy',
+    copied: 'copied',
   };
 }

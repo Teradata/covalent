@@ -13,7 +13,7 @@ export class HighlightDemoCopyCodeComponent {
   }
   `;
   tooltipsConfig: ICopyCodeTooltips = {
-    copyToClipboardTooltip: 'Copy text',
-    copyToClipboardCopiedTooltip: 'Text copied',
+    copy: 'Copy text',
+    copied: 'Text copied',
   };
 }

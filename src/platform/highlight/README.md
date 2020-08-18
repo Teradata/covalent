@@ -26,8 +26,8 @@ By default, `--dev` build will log the following message in the console to let y
 For reference:
 ```
 interface ICopyCodeTooltips {
-  copyToClipboardTooltip?: string;
-  copyToClipboardCopiedTooltip?: string;
+  copy?: string;
+  copied?: string;
 }
 ``` 
 #### Events

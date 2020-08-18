@@ -14,15 +14,11 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatTooltip } from '@angular/material/tooltip';
+import { ICopyCodeTooltips } from '.';
 
 declare const require: any;
 /* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
-
-export interface ICopyCodeTooltips {
-  copyToClipboardTooltip?: string;
-  copyToClipboardCopiedTooltip?: string;
-}
 
 @Component({
   selector: 'td-highlight',

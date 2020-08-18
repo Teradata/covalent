@@ -84,10 +84,9 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   private _components: {} = {};
   private _viewInit: boolean = false;
-
   private _copyCodeTooltips: ICopyCodeTooltips = {
-    copyToClipboardTooltip: 'Copy',
-    copyToClipboardCopiedTooltip: 'Copied',
+    copy: 'Copy',
+    copied: 'Copied',
   };
   /**
    * content?: string
@@ -149,11 +148,11 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    */
   @Input('copyCodeTooltips')
   set copyCodeTooltips(copyCodeTooltips: ICopyCodeTooltips) {
-    if (copyCodeTooltips && copyCodeTooltips.copyToClipboardTooltip) {
-      this._copyCodeTooltips.copyToClipboardTooltip = copyCodeTooltips.copyToClipboardTooltip;
+    if (copyCodeTooltips && copyCodeTooltips.copy) {
+      this._copyCodeTooltips.copy = copyCodeTooltips.copy;
     }
-    if (copyCodeTooltips && copyCodeTooltips.copyToClipboardCopiedTooltip) {
-      this._copyCodeTooltips.copyToClipboardCopiedTooltip = copyCodeTooltips.copyToClipboardCopiedTooltip;
+    if (copyCodeTooltips && copyCodeTooltips.copied) {
+      this._copyCodeTooltips.copied = copyCodeTooltips.copied;
     }
   }
   get copyCodeTooltips(): ICopyCodeTooltips {
@@ -343,8 +342,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
           componentRef.instance.lang = language;
         }
         componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
-        componentRef.instance.copyCodeTooltips.copyToClipboardTooltip = this._copyCodeTooltips.copyToClipboardTooltip;
-        componentRef.instance.copyCodeTooltips.copyToClipboardCopiedTooltip = this._copyCodeTooltips.copyToClipboardCopiedTooltip;
+        componentRef.instance.copyCodeTooltips = this._copyCodeTooltips;
         componentRef.instance.content = codeblock;
       },
     );

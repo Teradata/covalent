@@ -29,8 +29,8 @@ This component uses `<td-markdown>` to render the markdown. See `<td-markdown>`'
 For reference:
 ```
 interface ICopyCodeTooltips {
-  copyToClipboardTooltip?: string;
-  copyToClipboardCopiedTooltip?: string;
+  copy?: string;
+  copied?: string;
 }
 ```  
 #### Outputs

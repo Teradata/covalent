@@ -45,8 +45,8 @@ interface IMarkdownNavigatorItem {
 }
 
 interface ICopyCodeTooltips {
-  copyToClipboardTooltip?: string;
-  copyToClipboardCopiedTooltip?: string;
+  copy?: string;
+  copied?: string;
 }
 ```
 

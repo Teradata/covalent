@@ -1,6 +1,10 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatTooltip } from '@angular/material/tooltip';
-import { ICopyCodeTooltips } from '..';
+
+export interface ICopyCodeTooltips {
+  copy?: string;
+  copied?: string;
+}
 
 @Component({
   selector: 'td-copy-code-button',
@@ -9,8 +13,8 @@ import { ICopyCodeTooltips } from '..';
 })
 export class TdCopyCodeButtonComponent {
   private _copyCodeTooltips: ICopyCodeTooltips = {
-    copyToClipboardTooltip: 'Copy',
-    copyToClipboardCopiedTooltip: 'Copied',
+    copy: 'Copy',
+    copied: 'Copied',
   };
 
   @Input() copiedContent: string;
@@ -22,11 +26,11 @@ export class TdCopyCodeButtonComponent {
    */
   @Input('copyCodeTooltips')
   set copyCodeTooltips(copyCodeTooltips: ICopyCodeTooltips) {
-    if (copyCodeTooltips && copyCodeTooltips.copyToClipboardTooltip) {
-      this._copyCodeTooltips.copyToClipboardTooltip = copyCodeTooltips.copyToClipboardTooltip;
+    if (copyCodeTooltips && copyCodeTooltips.copy) {
+      this._copyCodeTooltips.copy = copyCodeTooltips.copy;
     }
-    if (copyCodeTooltips && copyCodeTooltips.copyToClipboardCopiedTooltip) {
-      this._copyCodeTooltips.copyToClipboardCopiedTooltip = copyCodeTooltips.copyToClipboardCopiedTooltip;
+    if (copyCodeTooltips && copyCodeTooltips.copied) {
+      this._copyCodeTooltips.copied = copyCodeTooltips.copied;
     }
   }
   get copyCodeTooltips(): ICopyCodeTooltips {
@@ -36,11 +40,11 @@ export class TdCopyCodeButtonComponent {
 
   textCopied(event: boolean): void {
     if (event) {
-      this.tooltip.message = this._copyCodeTooltips.copyToClipboardCopiedTooltip;
+      this.tooltip.message = this._copyCodeTooltips.copied;
       this.tooltip.show();
       setTimeout(() => {
         this.tooltip.hide();
-        this.tooltip.message = this._copyCodeTooltips.copyToClipboardTooltip;
+        this.tooltip.message = this._copyCodeTooltips.copy;
       }, 2000);
     }
   }
