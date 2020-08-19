@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, HostListener } from '@angular/core';
 import { MatTooltip } from '@angular/material/tooltip';
 
 export interface ICopyCodeTooltips {
@@ -45,18 +45,16 @@ export class TdCopyCodeButtonComponent {
       this.tooltip.hide();
       this.tooltip.message = this.copiedTooltip;
       this.tooltip.show();
-      setTimeout(this.hideTooltip.bind(this), 1500);
     }
   }
-
-  hideTooltip(): void {
-    this.tooltip.hide();
+  @HostListener('mouseleave')
+  hide(): void {
     this.initializeTooltip();
   }
 
   initializeTooltip(): void {
     setTimeout(() => {
       this.tooltip.message = this.copyTooltip;
-    }, 500);
+    }, 200);
   }
 }
