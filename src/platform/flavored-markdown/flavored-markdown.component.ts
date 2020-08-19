@@ -84,10 +84,6 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   private _components: {} = {};
   private _viewInit: boolean = false;
-  private _copyCodeTooltips: ICopyCodeTooltips = {
-    copy: 'Copy',
-    copied: 'Copied',
-  };
   /**
    * content?: string
    *
@@ -146,18 +142,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    *
    * tooltips to show when we hover on the copy button and when code gets copied
    */
-  @Input('copyCodeTooltips')
-  set copyCodeTooltips(copyCodeTooltips: ICopyCodeTooltips) {
-    if (copyCodeTooltips && copyCodeTooltips.copy) {
-      this._copyCodeTooltips.copy = copyCodeTooltips.copy;
-    }
-    if (copyCodeTooltips && copyCodeTooltips.copied) {
-      this._copyCodeTooltips.copied = copyCodeTooltips.copied;
-    }
-  }
-  get copyCodeTooltips(): ICopyCodeTooltips {
-    return this._copyCodeTooltips;
-  }
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
   /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
@@ -342,7 +327,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
           componentRef.instance.lang = language;
         }
         componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
-        componentRef.instance.copyCodeTooltips = this._copyCodeTooltips;
+        componentRef.instance.copyCodeTooltips = this.copyCodeTooltips;
         componentRef.instance.content = codeblock;
       },
     );

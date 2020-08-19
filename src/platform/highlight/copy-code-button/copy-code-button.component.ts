@@ -12,11 +12,7 @@ export interface ICopyCodeTooltips {
   styleUrls: ['./copy-code-button.component.scss'],
 })
 export class TdCopyCodeButtonComponent {
-  private _copyCodeTooltips: ICopyCodeTooltips = {
-    copy: 'Copy',
-    copied: 'Copied',
-  };
-
+  private _copyCodeTooltips: ICopyCodeTooltips = {};
   @Input() copiedContent: string;
   @Input() copyCodeToClipboard: boolean = false;
   /**
@@ -26,26 +22,38 @@ export class TdCopyCodeButtonComponent {
    */
   @Input('copyCodeTooltips')
   set copyCodeTooltips(copyCodeTooltips: ICopyCodeTooltips) {
-    if (copyCodeTooltips && copyCodeTooltips.copy) {
-      this._copyCodeTooltips.copy = copyCodeTooltips.copy;
-    }
-    if (copyCodeTooltips && copyCodeTooltips.copied) {
-      this._copyCodeTooltips.copied = copyCodeTooltips.copied;
-    }
+    this._copyCodeTooltips.copy = copyCodeTooltips.copy;
+    this._copyCodeTooltips.copied = copyCodeTooltips.copied;
   }
   get copyCodeTooltips(): ICopyCodeTooltips {
     return this._copyCodeTooltips;
   }
+
+  get copyTooltip(): string {
+    return this._copyCodeTooltips.copy || 'Copy';
+  }
+
+  get copiedTooltip(): string {
+    return this._copyCodeTooltips.copied || 'Copied';
+  }
+
+  tooltipMessage: boolean = false;
   @ViewChild('tooltip') tooltip: MatTooltip;
 
   textCopied(event: boolean): void {
     if (event) {
-      this.tooltip.message = this._copyCodeTooltips.copied;
+      this.tooltip.message = this.copiedTooltip;
       this.tooltip.show();
       setTimeout(() => {
         this.tooltip.hide();
-        this.tooltip.message = this._copyCodeTooltips.copy;
-      }, 2000);
+        this.initializeTooltip();
+      }, 1500);
     }
+  }
+
+  initializeTooltip(): void {
+    setTimeout(() => {
+      this.tooltip.message = this.copyTooltip;
+    }, 500);
   }
 }
