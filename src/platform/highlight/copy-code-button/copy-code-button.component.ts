@@ -42,13 +42,16 @@ export class TdCopyCodeButtonComponent {
 
   textCopied(event: boolean): void {
     if (event) {
+      this.tooltip.hide();
       this.tooltip.message = this.copiedTooltip;
       this.tooltip.show();
-      setTimeout(() => {
-        this.tooltip.hide();
-        this.initializeTooltip();
-      }, 1500);
+      setTimeout(this.hideTooltip.bind(this), 1500);
     }
+  }
+
+  hideTooltip(): void {
+    this.tooltip.hide();
+    this.initializeTooltip();
   }
 
   initializeTooltip(): void {
