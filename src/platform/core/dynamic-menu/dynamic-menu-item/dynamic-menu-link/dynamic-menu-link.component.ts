@@ -9,9 +9,9 @@ import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../../dynamic-menu.comp
 export class TdDynamicMenuLinkComponent {
   @Input() item: IMenuItem;
 
-  @Output() clicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
+  @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
 
   emitClicked(): void {
-    this.clicked.emit({ text: this.item.text, action: this.item.action });
+    this.itemClicked.emit({ text: this.item.text, action: this.item.action });
   }
 }

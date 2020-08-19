@@ -39,9 +39,9 @@ export class TdDynamicMenuComponent {
   @Input() trigger: IMenuTrigger;
   @Input() items: IMenuItem[];
 
-  @Output() clicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
+  @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
 
   emitClicked(event: ITdDynamicMenuLinkClickEvent): void {
-    this.clicked.emit(event);
+    this.itemClicked.emit(event);
   }
 }

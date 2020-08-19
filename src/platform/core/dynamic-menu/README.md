@@ -47,7 +47,7 @@ export interface ITdDynamicMenuLinkClickEvent {
 
 #### Output
 
-+ clicked: ITdDynamicMenuLinkClickEvent
++ itemClicked: ITdDynamicMenuLinkClickEvent
   + Emitted when an action link is pressed.
 
 ## Setup

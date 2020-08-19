@@ -10,11 +10,11 @@ import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../dynamic-menu.compone
 export class TdDynamicMenuItemComponent {
   @Input() items: IMenuItem[];
 
-  @Output() clicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
+  @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
 
   @ViewChild('childMenu', { static: true }) public childMenu: MatMenu;
 
   emitClicked(event: ITdDynamicMenuLinkClickEvent): void {
-    this.clicked.emit(event);
+    this.itemClicked.emit(event);
   }
 }

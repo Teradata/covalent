@@ -11,7 +11,7 @@
       <td-dynamic-menu-item #menu [items]="item.children"></td-dynamic-menu-item>
     </ng-container>
     <ng-container *ngIf="!item.children || item.children.length === 0">
-      <td-dynamic-menu-link [item]="item" (clicked)="emitClicked($event)"></td-dynamic-menu-link>
+      <td-dynamic-menu-link [item]="item" (itemClicked)="emitClicked($event)"></td-dynamic-menu-link>
     </ng-container>
   </ng-template>
 </mat-menu>
