@@ -42,7 +42,7 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
   /**
    * copyCodeToClipboard?: boolean
    *
-   * shows copy button for code snippets
+   * Display copy button on code snippets to copy code to clipboard.
    *
    */
   @Input() copyCodeToClipboard: boolean = false;
@@ -50,7 +50,7 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
   /**
    * copyCodeTooltips?: ICopyCodeTooltips
    *
-   * tooltips to show when we hover on the copy button and when code gets copied
+   * Tooltips for copy button to copy and upon copying.
    */
   @Input() copyCodeTooltips: ICopyCodeTooltips = {};
 
