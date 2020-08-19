@@ -8,32 +8,47 @@
 
 ```typescript
 export interface IMenuTrigger {
-  text?: string;  // Text to display on button
-  icon?: string;  // Optional icon
-  svgIcon?: string;  // Optional svgIcon
-  iconClasses?: string[];  // Optional styling classes
-  tooltip?: string;  // Hover help for button
+  id?: string; // Optional identifier
+  text?: string; // Text to display on button
+  icon?: string; // Optional icon
+  svgIcon?: string; // Optional svgIcon
+  iconClasses?: string[]; // Optional styling classes
 }
 
 export interface IMenuItem {
-  text: string;  // Display text
-  icon?: string;  // Optional icon
-  svgIcon?: string;  // Optional svgIcon
-  iconClasses?: string[];  // Optional styling classes
+  id?: string; // Optional identifier
+  text: string; // Display text
+  icon?: string; // Optional icon
+  svgIcon?: string; // Optional svgIcon
+  iconClasses?: string[]; // Optional styling classes
   // For submenu trigger items
-  children?: IMenuItem[];  // List of items to be displayed in submenu
+  children?: IMenuItem[]; // List of items to be displayed in submenu
   // For link items
-  link?: string;  // Link ref (relative or fully qualified)
-  newTab?: boolean;  // Indicates where link should be opened
+  link?: string; // Link ref (relative or fully qualified). Optional if
+  // defining an "action" link
+  newTab?: boolean; // Indicates where link should be opened
+  // For action items (simply emits click event)
+  action?: string; // Value returned on click event
+}
+
+// Click action payload derived from IMenuItem
+export interface ITdDynamicMenuLinkClickEvent {
+  text: string;
+  action: string;
 }
 ```
 
 #### Inputs
 
-+ trigger?: IMenuTrigger
++ trigger: IMenuTrigger
   + Definition for trigger button.
-+ items?: IMenuItem[]
++ items: IMenuItem[]
   + One or more items to be displayed in menu.
+
+#### Output
+
++ itemClicked: ITdDynamicMenuLinkClickEvent
+  + Emitted when an action link is pressed.
 
 ## Setup
 
@@ -103,6 +118,12 @@ items: IMenuItem[] = [
         newTab: true,
       },
     ],
+  },
+  {
+    id: 'actionlink',
+    text: 'Do Action',
+    icon: 'directions_run',
+    action: 'Go Run',
   },
 ];
 ```
