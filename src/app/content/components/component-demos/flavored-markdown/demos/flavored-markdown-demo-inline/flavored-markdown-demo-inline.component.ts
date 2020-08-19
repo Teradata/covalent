@@ -28,6 +28,6 @@ export class FlavoredMarkdownDemoInlineComponent {
 
   tooltipsConfig: ICopyCodeTooltips = {
     copy: 'Copiar',
-    copied: 'copiada',
+    copied: 'Copiado',
   };
 }

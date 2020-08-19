@@ -18,7 +18,7 @@ export class TdCopyCodeButtonComponent {
   /**
    * copyCodeTooltips?: ICopyCodeTooltips
    *
-   * tooltips to show when we hover on the copy button and when code gets copied
+   * Tooltips for copy button to copy and upon copying.
    */
   @Input('copyCodeTooltips')
   set copyCodeTooltips(copyCodeTooltips: ICopyCodeTooltips) {

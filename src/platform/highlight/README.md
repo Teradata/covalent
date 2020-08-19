@@ -19,9 +19,9 @@ By default, `--dev` build will log the following message in the console to let y
 + content: string
   + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
 + copyCodeToClipboard?: boolean
-  + Display copy code button for code snippets which copies code from code snippet to the system clipboard.
+  + Display copy button on code snippets to copy code to clipboard.
 + copyCodeTooltips?: ICopyCodeTooltips
-  + Tooltips to display on hover of the copy button and when the code snippet is copied.
+  + Tooltips for copy button to copy and upon copying.
 
 For reference:
 ```
@@ -29,7 +29,7 @@ interface ICopyCodeTooltips {
   copy?: string;
   copied?: string;
 }
-``` 
+```
 #### Events
 
 + contentReady: function
