@@ -27,13 +27,14 @@ export interface IMenuItem {
   link?: string; // Link ref (relative or fully qualified). Optional if
   // defining an "action" link
   newTab?: boolean; // Indicates where link should be opened
-  data?: string; // Value returned on "action" click event
+  // For action items (simply emits click event)
+  action?: string; // Value returned on click event
 }
 
 // Click action payload derived from IMenuItem
 export interface ITdDynamicMenuLinkClickEvent {
   text: string;
-  data: string;
+  action: string;
 }
 ```
 
@@ -47,7 +48,7 @@ export interface ITdDynamicMenuLinkClickEvent {
 #### Output
 
 + clicked: ITdDynamicMenuLinkClickEvent
-  + Emitted when action link is pressed.
+  + Emitted when an action link is pressed.
 
 ## Setup
 
