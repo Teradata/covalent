@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export interface IMenuTrigger {
   id?: string; // Optional identifier
@@ -17,8 +17,17 @@ export interface IMenuItem {
   // For submenu trigger items
   children?: IMenuItem[]; // List of items to be displayed in submenu
   // For link items
-  link?: string; // Link ref (relative or fully qualified)
+  link?: string; // Link ref (relative or fully qualified). Optional if
+  // defining an "action" link
   newTab?: boolean; // Indicates where link should be opened
+  // For action items (simply emits click event)
+  action?: string; // Value returned on click event
+}
+
+// Click action payload derived from IMenuItem
+export interface ITdDynamicMenuLinkClickEvent {
+  text: string;
+  action: string;
 }
 
 @Component({
@@ -29,4 +38,10 @@ export interface IMenuItem {
 export class TdDynamicMenuComponent {
   @Input() trigger: IMenuTrigger;
   @Input() items: IMenuItem[];
+
+  @Output() clicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
+
+  emitClicked(event: ITdDynamicMenuLinkClickEvent): void {
+    this.clicked.emit(event);
+  }
 }

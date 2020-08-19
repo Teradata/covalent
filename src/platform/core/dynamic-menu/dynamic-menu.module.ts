@@ -8,11 +8,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { TdDynamicMenuComponent } from './dynamic-menu.component';
 import { TdDynamicMenuItemComponent } from './dynamic-menu-item/dynamic-menu-item.component';
+import { TdDynamicMenuLinkComponent } from './dynamic-menu-item/dynamic-menu-link/dynamic-menu-link.component';
 
 @NgModule({
-  declarations: [TdDynamicMenuComponent, TdDynamicMenuItemComponent],
+  declarations: [TdDynamicMenuComponent, TdDynamicMenuItemComponent, TdDynamicMenuLinkComponent],
   imports: [CommonModule, MatButtonModule, MatIconModule, MatListModule, MatMenuModule, MatTooltipModule],
   providers: [],
-  exports: [TdDynamicMenuComponent, TdDynamicMenuItemComponent],
+  exports: [TdDynamicMenuComponent, TdDynamicMenuItemComponent, TdDynamicMenuLinkComponent],
 })
 export class CovalentDynamicMenuModule {}

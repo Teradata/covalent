@@ -1,0 +1,11 @@
+.new-tab {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  span {
+    flex: 1;
+  }
+  .new-tab-icon {
+    margin: 0 0 0 16px;
+  }
+}
