@@ -12,7 +12,7 @@ export interface ICopyCodeTooltips {
   styleUrls: ['./copy-code-button.component.scss'],
 })
 export class TdCopyCodeButtonComponent {
-  private _copyCodeTooltips: ICopyCodeTooltips = {};
+  // private _copyCodeTooltips: ICopyCodeTooltips = {};
   @Input() copiedContent: string;
   @Input() copyCodeToClipboard: boolean = false;
   /**
@@ -20,24 +20,16 @@ export class TdCopyCodeButtonComponent {
    *
    * Tooltips for copy button to copy and upon copying.
    */
-  @Input('copyCodeTooltips')
-  set copyCodeTooltips(copyCodeTooltips: ICopyCodeTooltips) {
-    this._copyCodeTooltips.copy = copyCodeTooltips.copy;
-    this._copyCodeTooltips.copied = copyCodeTooltips.copied;
-  }
-  get copyCodeTooltips(): ICopyCodeTooltips {
-    return this._copyCodeTooltips;
-  }
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
 
   get copyTooltip(): string {
-    return this._copyCodeTooltips.copy || 'Copy';
+    return this.copyCodeTooltips.copy || 'Copy';
   }
 
   get copiedTooltip(): string {
-    return this._copyCodeTooltips.copied || 'Copied';
+    return this.copyCodeTooltips.copied || 'Copied';
   }
 
-  tooltipMessage: boolean = false;
   @ViewChild('tooltip') tooltip: MatTooltip;
 
   textCopied(event: boolean): void {
@@ -48,10 +40,6 @@ export class TdCopyCodeButtonComponent {
     }
   }
   @HostListener('mouseleave')
-  hide(): void {
-    this.initializeTooltip();
-  }
-
   initializeTooltip(): void {
     setTimeout(() => {
       this.tooltip.message = this.copyTooltip;
