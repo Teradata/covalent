@@ -28,7 +28,7 @@
     "build:lib": "bash scripts/build-release && gulp version-placeholder",
     "build:universal": "bash scripts/build-universal",
     "publish:npm": "npm run build:lib && bash scripts/npm-publish",
-    "publish:nightly": "npm run build:lib && bash scripts/nightly-publish core && bash scripts/nightly-publish coding-standards && bash scripts/nightly-publish code-editor && bash scripts/nightly-publish text-editor && bash scripts/nightly-publish echarts && bash scripts/nightly-publish markdown-navigator && bash scripts/nightly-publish experimental && bash scripts/nightly-publish guided-tour && bash scripts/nightly-publish highlight",
+    "publish:nightly": "npm run build:lib && bash scripts/nightly-publish core && bash scripts/nightly-publish coding-standards && bash scripts/nightly-publish code-editor && bash scripts/nightly-publish text-editor && bash scripts/nightly-publish echarts && bash scripts/nightly-publish markdown-navigator && bash scripts/nightly-publish experimental && bash scripts/nightly-publish guided-tour && bash scripts/nightly-publish highlight && bash scripts/nightly-publish flavored-markdown",
     "ghpages:deploy": "VERSION=$(echo v${npm_package_version} | cut -c1-2) && npm run build:docs -- --base-href /covalent/$VERSION/ && bash scripts/ghpages-deploy $VERSION",
     "release:start": "bash scripts/start-release",
     "release:finish": "bash scripts/finish-release",
