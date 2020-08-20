@@ -20,14 +20,13 @@ export interface IMenuItem {
   icon?: string; // Optional icon
   svgIcon?: string; // Optional svgIcon
   iconClasses?: string[]; // Optional styling classes
-  // If provided, item is a submenu trigger
+  // If children provided, item is a submenu trigger
   // Represents the contents of the submenu
   children?: IMenuItem[];
-  // If provided, item is a URL link item
-  link?: string; // Link ref (relative or fully qualified). Optional if
-  // Indicates where URL should be displayed, current or new browser tab
-  newTab?: boolean;
-  // If provided, item is an action link
+  // If link provided, item is a URL link
+  link?: string; // href (relative or fully qualified).
+  newTab?: boolean; // Indicates where URL should be displayed, current or new browser tab
+  // If action provided, item is an action link
   // A click on this item will emit itemClicked event
   action?: string;
 }
