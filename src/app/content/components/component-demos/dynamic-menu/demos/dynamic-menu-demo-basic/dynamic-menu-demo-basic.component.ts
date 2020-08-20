@@ -16,11 +16,18 @@ export class DynamicMenuDemoBasicComponent {
 
   items1: IMenuItem[] = [
     {
+      // Grouping label
+      id: 'platform',
+      text: 'Platform',
+    },
+    {
+      // Submenu trigger
       id: 'covalentlinkstrigger',
       text: 'Covalent Links',
       svgIcon: 'assets:covalent',
       children: [
         {
+          // URL link
           id: 'quickstartlink',
           text: 'Quickstart',
           icon: 'flash_on',
@@ -28,6 +35,7 @@ export class DynamicMenuDemoBasicComponent {
           newTab: true,
         },
         {
+          // URL link
           id: 'electronlink',
           text: 'Electron App',
           icon: 'laptop_mac',
@@ -35,6 +43,7 @@ export class DynamicMenuDemoBasicComponent {
           newTab: true,
         },
         {
+          // URL link
           id: 'datalink',
           text: 'Covalent Data',
           icon: 'aspect_ratio',
@@ -44,19 +53,31 @@ export class DynamicMenuDemoBasicComponent {
       ],
     },
     {
+      // Grouping label
+      id: 'framework',
+      text: 'Framework',
+    },
+    {
+      // Submenu trigger
       id: 'angularlink',
       text: 'Angular Link',
       svgIcon: 'assets:angular',
       children: [
         {
+          // URL link
           text: 'Angular Homepage',
-          icon: 'star_rate',
           link: 'https://angular.io/',
           newTab: true,
         },
       ],
     },
     {
+      // Grouping label
+      id: 'actions',
+      text: 'Actions',
+    },
+    {
+      // Action link
       id: 'actionlink',
       text: 'Do Action',
       icon: 'directions_run',
