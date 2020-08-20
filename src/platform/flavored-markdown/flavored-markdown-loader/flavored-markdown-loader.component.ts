@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
 import { ITdFlavoredMarkdownButtonClickEvent } from '../flavored-markdown.component';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 
 // TODO: make a td-markdown-loader component
 
@@ -37,6 +38,21 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
    * Anchor to jump to.
    */
   @Input() anchor: string;
+
+  /**
+   * copyCodeToClipboard?: boolean
+   *
+   * Display copy button on code snippets to copy code to clipboard.
+   *
+   */
+  @Input() copyCodeToClipboard: boolean = false;
+
+  /**
+   * copyCodeTooltips?: ICopyCodeTooltips
+   *
+   * Tooltips for copy button to copy and upon copying.
+   */
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
 
   /**
    * contentReady: void

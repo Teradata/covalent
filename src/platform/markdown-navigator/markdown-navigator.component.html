@@ -80,14 +80,17 @@
         [url]="url"
         [httpOptions]="httpOptions"
         [anchor]="anchor"
+        [copyCodeToClipboard]="copyCodeToClipboard"
+        [copyCodeTooltips]="copyCodeTooltips"
         (loadFailed)="handleMarkdownLoaderError($event)"
       ></td-flavored-markdown-loader>
-
       <td-flavored-markdown
         *ngIf="showTdMarkdown"
         [content]="markdownString"
         [hostedUrl]="url"
         [anchor]="anchor"
+        [copyCodeToClipboard]="copyCodeToClipboard"
+        [copyCodeTooltips]="copyCodeTooltips"
         (buttonClicked)="buttonClicked.emit($event)"
       ></td-flavored-markdown>
     </div>

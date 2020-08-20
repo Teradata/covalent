@@ -7,8 +7,14 @@ import {
   EventEmitter,
   Renderer2,
   SecurityContext,
+  ViewChild,
+  ChangeDetectorRef,
+  AfterViewChecked,
+  TemplateRef,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatTooltip } from '@angular/material/tooltip';
+import { ICopyCodeTooltips } from '.';
 
 declare const require: any;
 /* tslint:disable-next-line */
@@ -19,7 +25,7 @@ let hljs: any = require('highlight.js/lib');
   styleUrls: ['./highlight.component.scss'],
   templateUrl: './highlight.component.html',
 })
-export class TdHighlightComponent implements AfterViewInit {
+export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   private _initialized: boolean = false;
 
   private _content: string;
@@ -42,6 +48,20 @@ export class TdHighlightComponent implements AfterViewInit {
   }
 
   /**
+   * copyCodeToClipboard?: boolean
+   *
+   * Display copy button on code snippets to copy code to clipboard.
+   */
+  @Input() copyCodeToClipboard: boolean = false;
+
+  /**
+   * copyCodeTooltips?: ICopyCodeTooltips
+   *
+   * Tooltips for copy button to copy and upon copying.
+   */
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
+
+  /**
    * lang?: string
    *
    * Language of the code content to be parsed as highlighted html.
@@ -60,17 +80,32 @@ export class TdHighlightComponent implements AfterViewInit {
     }
   }
 
+  copyContent: string;
+
   /**
    * contentReady?: function
    * Event emitted after the highlight content rendering is finished.
    */
   @Output() contentReady: EventEmitter<void> = new EventEmitter<void>();
+  @ViewChild('highlightComponent') highlightComp: ElementRef;
+  @ViewChild('copyComponent') copyComp: ElementRef;
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
+  @ViewChild('tooltip') tooltip: MatTooltip;
+
+  constructor(
+    private _renderer: Renderer2,
+    private _elementRef: ElementRef,
+    private _domSanitizer: DomSanitizer,
+    private cdr: ChangeDetectorRef,
+  ) {}
+
+  ngAfterViewChecked(): void {
+    this.cdr.detectChanges();
+  }
 
   ngAfterViewInit(): void {
     if (!this._content) {
-      this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
+      this._loadContent((<HTMLElement>this.highlightComp.nativeElement).textContent);
     } else {
       this._loadContent(this._content);
     }
@@ -86,6 +121,9 @@ export class TdHighlightComponent implements AfterViewInit {
       this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
       this._elementFromString(this._render(code));
+      if (this.copyCodeToClipboard) {
+        this._renderer.appendChild(this._elementRef.nativeElement, this.copyComp.nativeElement);
+      }
     }
     this.contentReady.emit();
   }
@@ -127,7 +165,7 @@ export class TdHighlightComponent implements AfterViewInit {
       .replace(/\} \}/gi, '}}')
       .replace(/&lt;/gi, '<')
       .replace(/&gt;/gi, '>'); // replace with < and > to render HTML in Angular
-
+    this.copyContent = codeToParse;
     // Parse code with highlight.js depending on language
     const highlightedCode: any = hljs.highlight(this._lang, codeToParse, true);
     highlightedCode.value = highlightedCode.value

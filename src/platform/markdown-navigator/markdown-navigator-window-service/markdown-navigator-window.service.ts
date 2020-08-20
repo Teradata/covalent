@@ -9,6 +9,7 @@ import { TdDialogService, IDraggableRefs, ResizableDraggableDialog } from '@cova
 import { DragRef, Point } from '@angular/cdk/drag-drop/drag-ref';
 import { DOCUMENT } from '@angular/common';
 import { IMarkdownNavigatorItem, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 
 export interface IMarkdownNavigatorWindowConfig {
   items: IMarkdownNavigatorItem[];
@@ -17,6 +18,8 @@ export interface IMarkdownNavigatorWindowConfig {
   toolbarColor?: ThemePalette;
   startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   compareWith?: IMarkdownNavigatorCompareWith;
+  copyCodeToClipboard?: boolean;
+  copyCodeTooltips?: ICopyCodeTooltips;
   footer?: Type<any>;
 }
 
@@ -88,6 +91,8 @@ export class TdMarkdownNavigatorWindowService {
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
     this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
+    this.markdownNavigatorWindowDialog.componentInstance.copyCodeToClipboard = config.copyCodeToClipboard;
+    this.markdownNavigatorWindowDialog.componentInstance.copyCodeTooltips = config.copyCodeTooltips;
     this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';

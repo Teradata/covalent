@@ -23,7 +23,7 @@ import {
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent } from '@covalent/highlight';
+import { TdHighlightComponent, ICopyCodeTooltips } from '@covalent/highlight';
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 import {
   TdDataTableComponent,
@@ -84,7 +84,6 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   private _components: {} = {};
   private _viewInit: boolean = false;
-
   /**
    * content?: string
    *
@@ -130,6 +129,20 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     this._anchor = anchor;
   }
 
+  /**
+   * copyCodeToClipboard?: boolean
+   *
+   * Display copy button on code snippets to copy code to clipboard.
+   *
+   */
+  @Input() copyCodeToClipboard: boolean = false;
+
+  /**
+   * copyCodeTooltips?: ICopyCodeTooltips
+   *
+   * Tooltips for copy button to copy and upon copying.
+   */
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
   /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
@@ -313,6 +326,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         if (language) {
           componentRef.instance.lang = language;
         }
+        componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
+        componentRef.instance.copyCodeTooltips = this.copyCodeTooltips;
         componentRef.instance.content = codeblock;
       },
     );

@@ -6,6 +6,7 @@ import {
   IMarkdownNavigatorCompareWith,
 } from '../markdown-navigator.component';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
   title?: string;
@@ -33,6 +34,8 @@ export class TdMarkdownNavigatorWindowComponent {
   @Input() startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   @Input() compareWith: IMarkdownNavigatorCompareWith;
   @Input() docked: boolean = false;
+  @Input() copyCodeToClipboard: boolean = false;
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
   @Input() footer: Type<any>;
 
   @Output() closed: EventEmitter<void> = new EventEmitter();

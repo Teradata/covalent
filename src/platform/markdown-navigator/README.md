@@ -17,6 +17,10 @@ A component for rendering and navigating through markdown, such as documentation
   + Defaults to comparison by strict equality (===)
 + footer:? Type<any>
   + Custom component to be used as global footer
++ copyCodeToClipboard?: boolean
+  + Display copy button on code snippets to copy code to clipboard.
++ copyCodeTooltips?: ICopyCodeTooltips
+  + Tooltips for copy button to copy and upon copying.
 
 #### Outputs
 
@@ -38,6 +42,11 @@ interface IMarkdownNavigatorItem {
   description?: string;
   icon?: string;
   footer?: Type<any>;
+}
+
+interface ICopyCodeTooltips {
+  copy?: string;
+  copied?: string;
 }
 ```
 

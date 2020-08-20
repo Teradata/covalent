@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 
 @Component({
   selector: 'flavored-markdown-demo-inline',
@@ -24,4 +25,9 @@ export class FlavoredMarkdownDemoInlineComponent {
       }
     \`\`\`
   `;
+
+  tooltipsConfig: ICopyCodeTooltips = {
+    copy: 'Copiar',
+    copied: 'Copiado',
+  };
 }

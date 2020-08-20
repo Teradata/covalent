@@ -2,7 +2,6 @@ $code-font: 'Menlo', 'Monaco', 'Andale Mono', 'lucida console', 'Courier New', m
 $padding: 16px;
 
 :host ::ng-deep {
-  display: block;
   overflow-x: auto;
   padding: $padding;
   pre,
@@ -24,6 +23,7 @@ $padding: 16px;
     position: relative;
     border-radius: 2px;
     font-size: 0.8rem;
+    width: 100%;
   }
 
   code {
@@ -38,5 +38,11 @@ $padding: 16px;
     overflow-wrap: break-word;
     line-height: 1.5;
     margin: 0;
+  }
+  .copy-button {
+    border: none;
+    background: inherit;
+    margin-top: -8px;
+    margin-right: -8px;
   }
 }
