@@ -67,7 +67,7 @@ The `highlight` module comes with its own default `covalent` theme which you can
 ```css
 @import '~@covalent/highlight/highlight-theme';
 
-@include covalent-highlight-theme($theme);
+@include covalent-highlight-theme();
 ```
 
 Alternatively, you can use the *highlight.js* pre-built [themes](https://github.com/isagalaev/highlight.js/tree/master/src/styles) by loading them either by an import:
