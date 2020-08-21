@@ -23,11 +23,11 @@ export class TdCopyCodeButtonComponent {
   @Input() copyCodeTooltips: ICopyCodeTooltips = {};
 
   get copyTooltip(): string {
-    return this.copyCodeTooltips.copy || 'Copy';
+    return (this.copyCodeTooltips && this.copyCodeTooltips.copy) || 'Copy';
   }
 
   get copiedTooltip(): string {
-    return this.copyCodeTooltips.copied || 'Copied';
+    return (this.copyCodeTooltips && this.copyCodeTooltips.copied) || 'Copied';
   }
 
   @ViewChild('tooltip') tooltip: MatTooltip;
