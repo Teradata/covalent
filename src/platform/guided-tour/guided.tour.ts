@@ -164,11 +164,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
     this.shepherdTour.start();
   }
 
-  protected _prepareTour(
-    originalSteps: ITourStep[],
-    finishLabel: string = 'finish',
-    dismissLabel: string = 'cancel tour',
-  ): ITourStep[] {
+  protected _prepareTour(originalSteps: ITourStep[], finishLabel: string = 'finish'): ITourStep[] {
     // create Subjects for back and forward events
     const backEvent$: Subject<void> = new Subject<void>();
     const forwardEvent$: Subject<void> = new Subject<void>();
@@ -215,11 +211,6 @@ export class CovalentGuidedTour extends TourButtonsActions {
     const finishButton: TourStepButton = {
       text: finishLabel,
       action: this['finish'].bind(this),
-      classes: MAT_BUTTON,
-    };
-    const dismissButton: TourStepButton = {
-      text: dismissLabel,
-      action: this['cancel'].bind(this),
       classes: MAT_BUTTON,
     };
 
@@ -284,8 +275,9 @@ export class CovalentGuidedTour extends TourButtonsActions {
         advanceOn instanceof Array
       ) {
         step.advanceOn = undefined;
-        step.buttons =
-          step.advanceOnOptions && step.advanceOnOptions.allowGoBack ? [backButton, dismissButton] : [dismissButton];
+        if (step.advanceOnOptions && step.advanceOnOptions.allowGoBack) {
+          step.buttons = [backButton];
+        }
       }
       // adds a default beforeShowPromise function
       step.beforeShowPromise = () => {
@@ -348,11 +340,11 @@ export class CovalentGuidedTour extends TourButtonsActions {
           }
           // if we have an id as a string in either case, we use it (we ignore it if its HTMLElement)
           if (id) {
-            // if current step is the first step of the tour, we set the buttons to be only "next" or "dismiss"
+            // if current step is the first step of the tour, we set the buttons to be only "next"
             // we had to use `any` since the tour doesnt expose the steps in any fashion nor a way to check if we have modified them at all
             if (this.shepherdTour.getCurrentStep() === (<any>this.shepherdTour).steps[0]) {
               this.shepherdTour.getCurrentStep().updateStepOptions({
-                buttons: originalSteps[index].advanceOn ? [dismissButton] : [nextButton],
+                buttons: originalSteps[index].advanceOn ? [] : [nextButton],
               });
             }
             // register to the attempts observable to notify deeveloper when number has been reached
