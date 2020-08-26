@@ -65,12 +65,11 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
       const tourInstance: Shepherd.Tour = this.shepherdTour.addSteps(
         this._configureRoutesForSteps(this._prepareTour(guidedTour.steps, guidedTour.finishButtonText)),
       );
-      this.start();
       // init route transition if step URL is different then the current location.
       this.tourEvent$('show').subscribe((tourEvent: any) => {
         const currentURL: string = this._router.url.split(/[?#]/)[0];
         const {
-          step: { id },
+          step: { id, options },
         } = tourEvent;
         if (this._tourStepURLs.has(id)) {
           const stepRoute: string = this._tourStepURLs.get(id);
@@ -78,9 +77,14 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
             this._router.navigate([stepRoute]);
           }
         } else {
-          this._tourStepURLs.set(id, currentURL);
+          if (options && options.routing) {
+            this._tourStepURLs.set(id, options.routing.route);
+          } else {
+            this._tourStepURLs.set(id, currentURL);
+          }
         }
       });
+      this.start();
       return tourInstance;
     } else {
       // tslint:disable-next-line:no-console

@@ -11,7 +11,7 @@ import { GuidedTourDemoDelayComponent } from './guided-tour-demo-delay/guided-to
 import { GuidedTourDemoNotFoundComponent } from './guided-tour-demo-not-found/guided-tour-demo-not-found.component';
 import { GuidedTourDemoGoBackComponent } from './guided-tour-demo-go-back/guided-tour-demo-go-back.component';
 import { GuidedTourDemoSkipCountComponent } from './guided-tour-demo-skip-count/guided-tour-demo-skip-count.component';
-
+import { GuidedTourDemoGoBackNavigationComponent } from './guided-tour-demo-go-back-navigation/guided-tour-demo-go-back-navigation.component';
 @NgModule({
   declarations: [
     GuidedTourDemoComponent,
@@ -21,6 +21,7 @@ import { GuidedTourDemoSkipCountComponent } from './guided-tour-demo-skip-count/
     GuidedTourDemoNotFoundComponent,
     GuidedTourDemoGoBackComponent,
     GuidedTourDemoSkipCountComponent,
+    GuidedTourDemoGoBackNavigationComponent,
   ],
   imports: [CommonModule, DemoModule, GuidedTourDemoBasicSharedModule, GuidedTourDemoRoutingModule, MatButtonModule],
 })

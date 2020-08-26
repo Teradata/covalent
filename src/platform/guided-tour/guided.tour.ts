@@ -89,6 +89,7 @@ const defaultStepOptions: TourStep = {
 
 const MAT_ICON_BUTTON: string = 'mat-icon-button material-icons mat-button-base';
 const MAT_BUTTON: string = 'mat-button-base mat-button';
+const MAT_BUTTON_INVISIBLE: string = 'shepherd-void-button';
 
 export class CovalentGuidedTour extends TourButtonsActions {
   private _destroyedEvent$: Subject<void>;
@@ -214,6 +215,14 @@ export class CovalentGuidedTour extends TourButtonsActions {
       classes: MAT_BUTTON,
     };
 
+    const voidButton: TourStepButton = {
+      text: '',
+      action(): void {
+        return;
+      },
+      classes: MAT_BUTTON_INVISIBLE,
+    };
+
     // listen to the destroyed event to clean up all the streams
     this._destroyedEvent$.pipe(first()).subscribe(() => {
       backEvent$.complete();
@@ -275,9 +284,8 @@ export class CovalentGuidedTour extends TourButtonsActions {
         advanceOn instanceof Array
       ) {
         step.advanceOn = undefined;
-        if (step.advanceOnOptions && step.advanceOnOptions.allowGoBack) {
-          step.buttons = [backButton];
-        }
+        step.buttons =
+          step.advanceOnOptions && step.advanceOnOptions.allowGoBack ? [backButton, voidButton] : [voidButton];
       }
       // adds a default beforeShowPromise function
       step.beforeShowPromise = () => {
@@ -344,7 +352,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
             // we had to use `any` since the tour doesnt expose the steps in any fashion nor a way to check if we have modified them at all
             if (this.shepherdTour.getCurrentStep() === (<any>this.shepherdTour).steps[0]) {
               this.shepherdTour.getCurrentStep().updateStepOptions({
-                buttons: originalSteps[index].advanceOn ? [] : [nextButton],
+                buttons: originalSteps[index].advanceOn ? [voidButton] : [nextButton],
               });
             }
             // register to the attempts observable to notify deeveloper when number has been reached
