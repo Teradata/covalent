@@ -54,7 +54,7 @@ export class GuidedTourDemoGoBackNavigationComponent implements OnInit {
             route: '/components/guided-tour/examples',
           },
           attachTo: {
-            element: '#go-back-navigation-demo #step-3',
+            element: '#go-back-navigation-demo #step-4',
             on: 'top',
           },
         },
