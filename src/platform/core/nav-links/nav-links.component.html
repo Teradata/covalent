@@ -11,9 +11,7 @@
         >
           <mat-icon *ngIf="link.icon" [fontSet]="link.icon?.fontSet">{{ link.icon?.name }}</mat-icon>
           <span [style.width.%]="100">{{ link.label }}</span>
-          <mat-icon [@tdRotate]="!_isCollapsed(link)" *ngIf="link.collapsable">
-            keyboard_arrow_down
-          </mat-icon>
+          <mat-icon [@tdRotate]="!_isCollapsed(link)" *ngIf="link.collapsable">keyboard_arrow_down</mat-icon>
         </h3>
         <td-nav-links
           [id]="id + '-' + linkIndex"
@@ -33,9 +31,7 @@
         >
           <mat-icon matListIcon [fontSet]="link.icon?.fontSet">{{ link.icon?.name }}</mat-icon>
           <span matLine>{{ link.label }}</span>
-          <mat-icon *ngIf="link.link.openInNewTab">
-            launch
-          </mat-icon>
+          <mat-icon *ngIf="link.link.openInNewTab">launch</mat-icon>
         </a>
         <a
           mat-list-item
@@ -48,9 +44,7 @@
         >
           <mat-icon matListIcon [fontSet]="link.icon?.fontSet">{{ link.icon?.name }}</mat-icon>
           <span matLine>{{ link.label }}</span>
-          <mat-icon *ngIf="link.link.openInNewTab">
-            launch
-          </mat-icon>
+          <mat-icon *ngIf="link.link.openInNewTab">launch</mat-icon>
         </a>
       </ng-container>
     </ng-container>
