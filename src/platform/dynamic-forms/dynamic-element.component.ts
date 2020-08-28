@@ -53,7 +53,8 @@ export class TdDynamicElementDirective {
   selector: 'td-dynamic-element',
   template: '<div tdDynamicContainer></div>',
 })
-export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
+export class TdDynamicElementComponent
+  extends _TdDynamicElementMixinBase
   implements IControlValueAccessor, OnInit, OnChanges {
   private _instance: any;
 

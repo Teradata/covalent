@@ -1,9 +1,7 @@
 <section class="push-bottom-xl">
   <h1 class="push-bottom-sm mat-display-1">Functions</h1>
 
-  <p class="tc-grey-600 push-bottom-md">
-    Helpful functions for common interactions.
-  </p>
+  <p class="tc-grey-600 push-bottom-md">Helpful functions for common interactions.</p>
 </section>
 
 <mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
@@ -158,9 +156,7 @@
             </mat-form-field>
           </div>
         </form>
-        <button mat-raised-button color="none" (click)="doDownloadFile()" class="text-upper push-sm">
-          Download
-        </button>
+        <button mat-raised-button color="none" (click)="doDownloadFile()" class="text-upper push-sm">Download</button>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
@@ -187,7 +183,7 @@
         <p>Read file as UTF-8 text. Return string contents on read completion.</p>
         <button mat-raised-button class="text-upper" color="primary" (click)="fileInput.click()">
           Choose File
-          <input #fileInput type="file" (change)="doReadFile($event)" style="display: none;" />
+          <input #fileInput type="file" (change)="doReadFile($event)" style="display: none" />
         </button>
         <h4>File Content:</h4>
         <td-highlight class="filecontentmaxheight" [content]="readFileContent"></td-highlight>

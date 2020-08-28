@@ -13,9 +13,7 @@
     ></td-code-editor>
 
     <div layout="row" layout-align="space-between center">
-      <mat-slide-toggle [(ngModel)]="windowShouldOpen" (change)="openOrClose()">
-        Open window
-      </mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="windowShouldOpen" (change)="openOrClose()">Open window</mat-slide-toggle>
       <button mat-raised-button class="text-upper" (click)="applyInput()">Apply</button>
     </div>
   </div>
