@@ -12,7 +12,9 @@ A wrapper around [Shepherd](https://shepherdjs.dev) with extra functionality. Ma
   + Start a certain tour
 + initializeOnQueryParams(queryParam: string = 'tour'): Observable<ParamMap>
   + Listen to query params to launch a tour
-
++ tourEvent$(str: TourEvents): Observable<IGuidedTourEvent>
+  + Observable of tour events
+  
 ```ts
 // for reference
 export type TourStep = Shepherd.Step.StepOptions;
@@ -78,6 +80,22 @@ export interface IGuidedTourStep extends ITourStep {
     extras?: NavigationExtras;
   };
 }
+
+export enum TourEvents {
+  complete = 'complete',
+  cancel = 'cancel',
+  hide = 'hide',
+  show = 'show',
+  start = 'start',
+  active = 'active',
+  inactive = 'inactive',
+}
+
+export interface IGuidedTourEvent {
+  step: any; // current step tour is showing
+  previous: any; // previous step of the tour
+  tour: any; // tour object
+}
 ```
 
 ## Setup
@@ -121,6 +139,8 @@ const basicDemoTour: IGuidedTour = {
 };
 this._guidedTourService.registerTour('basicDemoTour', basicDemoTour);
 this._guidedTourService.startTour('basicDemoTour');
+this._guidedTourService.tourEvent$(TourEvents.show)
+  .subscribe((event: IGuidedTourEvent) => { /* event object contains current step, previous step and tour objects */});
 ```
 
 ```html
