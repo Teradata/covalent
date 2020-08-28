@@ -11,9 +11,7 @@
         (click)="reset()"
         [attr.data-test]="'home-button'"
       >
-        <mat-icon [attr.aria-label]="goHomeLabel">
-          home
-        </mat-icon>
+        <mat-icon [attr.aria-label]="goHomeLabel">home</mat-icon>
       </button>
 
       <button
@@ -24,9 +22,7 @@
         (click)="goBack()"
         [attr.data-test]="'back-button'"
       >
-        <mat-icon [attr.aria-label]="goBackLabel">
-          arrow_back
-        </mat-icon>
+        <mat-icon [attr.aria-label]="goBackLabel">arrow_back</mat-icon>
       </button>
       <span flex *ngIf="currentItemTitle" class="mat-body-2 title truncate" [attr.data-test]="'title'">
         {{ currentItemTitle }}

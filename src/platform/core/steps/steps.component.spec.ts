@@ -253,9 +253,7 @@ class TdStepsBasicTestComponent {
     <td-steps>
       <td-step [label]="label" [sublabel]="sublabel" [active]="active" [state]="state" [disabled]="disabled">
         Content
-        <ng-template td-step-summary>
-          Summary
-        </ng-template>
+        <ng-template td-step-summary>Summary</ng-template>
       </td-step>
     </td-steps>
   `,
@@ -272,9 +270,7 @@ class TdStepsSummaryTestComponent {
   selector: 'td-steps-dynamic-test',
   template: `
     <td-steps>
-      <td-step [label]="step" *ngFor="let step of ['step1', 'step2', 'step3']">
-        Content
-      </td-step>
+      <td-step [label]="step" *ngFor="let step of ['step1', 'step2', 'step3']">Content</td-step>
     </td-steps>
   `,
 })

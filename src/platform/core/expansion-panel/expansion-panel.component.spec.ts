@@ -114,9 +114,7 @@ class TdExpansionPanelBasicTestComponent {
   selector: 'td-expansion-summary-test',
   template: `
     <td-expansion-panel label="label" sublabel="sublabel" [expand]="expansion1" [disabled]="disabled">
-      <td-expansion-summary>
-        Summary
-      </td-expansion-summary>
+      <td-expansion-summary>Summary</td-expansion-summary>
     </td-expansion-panel>
   `,
 })

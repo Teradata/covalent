@@ -44,9 +44,7 @@
     <mat-card-title>Fade Card</mat-card-title>
     <mat-card-content>Fade in or out with a click!</mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="triggerState = !triggerState">
-        Fade Out
-      </button>
+      <button mat-raised-button color="primary" (click)="triggerState = !triggerState">Fade Out</button>
     </mat-card-actions>
   </mat-card>
 </div>
@@ -61,9 +59,7 @@
 >
   <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
 </td-message>
-<button mat-button color="accent" (click)="messageDemo.toggle()">
-  Toggle Visibility
-</button>
+<button mat-button color="accent" (click)="messageDemo.toggle()">Toggle Visibility</button>
 
 <h2>Covalent Chips Component Combat Training</h2>
 <td-chips
@@ -83,18 +79,12 @@
 
 <h2>Covalent Expansion Panel Component Combat Training</h2>
 <td-expansion-panel label="label" sublabel="sublabel" expand="true" disabled="false">
-  <ng-template td-expansion-panel-header>
-    ... add header content (overrides label and sublabel)
-  </ng-template>
-  <ng-template td-expansion-panel-label>
-    ... add label content (if not used, falls back to [label] input)
-  </ng-template>
+  <ng-template td-expansion-panel-header>... add header content (overrides label and sublabel)</ng-template>
+  <ng-template td-expansion-panel-label>... add label content (if not used, falls back to [label] input)</ng-template>
   <ng-template td-expansion-panel-sublabel>
     ... add sublabel content (if not used, falls back to [sublabel] input)
   </ng-template>
-  <td-expansion-summary>
-    ... add summary that will be shown when expansion-panel is "collapsed".
-  </td-expansion-summary>
+  <td-expansion-summary>... add summary that will be shown when expansion-panel is "collapsed".</td-expansion-summary>
   ... add content that
 </td-expansion-panel>
 
@@ -110,9 +100,7 @@
   <span>{{ singleFileUpload.value?.name }}</span>
   <ng-template td-file-input-label>
     <mat-icon>attach_file</mat-icon>
-    <span>
-      Choose a file...
-    </span>
+    <span>Choose a file...</span>
   </ng-template>
 </td-file-upload>
 
@@ -121,39 +109,27 @@
 
 <h2>Covalent Layout Combat Training</h2>
 <td-layout [opened]="true">
-  <div td-sidenav-content>
-    .. more sidenav content
-  </div>
+  <div td-sidenav-content>.. more sidenav content</div>
   .. main content
 </td-layout>
 
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
-  Content goes here
-</td-layout-nav>
+<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">Content goes here</td-layout-nav>
 
 <td-layout-nav-list toolbarTitle="Covalent" navigationRoute="/">
-  <div td-sidenav-content>
-    Sidenav content here
-  </div>
+  <div td-sidenav-content>Sidenav content here</div>
   Content goes here
 </td-layout-nav-list>
 
-<td-layout-card-over cardTitle="Covalent" cardSubtitle="Card Over Layout Demo">
-  Content goes here
-</td-layout-card-over>
+<td-layout-card-over cardTitle="Covalent" cardSubtitle="Card Over Layout Demo">Content goes here</td-layout-card-over>
 
 <td-layout-manage-list>
   <mat-toolbar td-sidenav-content></mat-toolbar>
-  <div td-sidenav-content>
-    Sidenav content here
-  </div>
+  <div td-sidenav-content>Sidenav content here</div>
   <mat-toolbar></mat-toolbar>
   Content goes here
 </td-layout-manage-list>
 
 <h2>Covalent loading Combat Training</h2>
 <ng-template tdLoading [tdLoadingUntil]="true">
-  <div>
-    testing
-  </div>
+  <div>testing</div>
 </ng-template>

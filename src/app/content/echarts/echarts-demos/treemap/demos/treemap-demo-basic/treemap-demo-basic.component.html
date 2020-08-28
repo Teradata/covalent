@@ -1,7 +1,5 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
-    Chart Theme:
-  </div>
+  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">Chart Theme:</div>
   <mat-form-field floatLabel="never">
     <mat-select [(value)]="selectedTheme" (valueChange)="selectChartTheme($event)">
       <mat-option *ngFor="let theme of themes" [value]="theme">
