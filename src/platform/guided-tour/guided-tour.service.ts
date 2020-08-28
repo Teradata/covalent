@@ -29,11 +29,26 @@ export interface IGuidedTourStep extends ITourStep {
 /**
  *  Router enabled Shepherd tour
  */
+export enum TourEvents {
+  complete = 'complete',
+  cancel = 'cancel',
+  hide = 'hide',
+  show = 'show',
+  start = 'start',
+  active = 'active',
+  inactive = 'inactive',
+}
+
+export interface IGuidedTourEvent {
+  step: any;
+  previous: any;
+  tour: any;
+}
 
 @Injectable()
 export class CovalentGuidedTourService extends CovalentGuidedTour {
   private _toursMap: Map<string, IGuidedTour> = new Map<string, IGuidedTour>();
-  private _tourStepURLs: Map<string, string> = new Map();
+  private _tourStepURLs: Map<string, string> = new Map<string, string>();
   constructor(private _router: Router, private _route: ActivatedRoute, private _httpClient: HttpClient) {
     super();
     _router.events
@@ -47,7 +62,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
       });
   }
 
-  tourEvent$(str: string): Observable<any> {
+  tourEvent$(str: TourEvents): Observable<IGuidedTourEvent> {
     return fromEvent(this.shepherdTour, str);
   }
 
@@ -66,7 +81,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
         this._configureRoutesForSteps(this._prepareTour(guidedTour.steps, guidedTour.finishButtonText)),
       );
       // init route transition if step URL is different then the current location.
-      this.tourEvent$('show').subscribe((tourEvent: any) => {
+      this.tourEvent$(TourEvents.show).subscribe((tourEvent: IGuidedTourEvent) => {
         const currentURL: string = this._router.url.split(/[?#]/)[0];
         const {
           step: { id, options },
