@@ -31,6 +31,7 @@ export interface IMarkdownNavigatorItem {
   description?: string;
   icon?: string;
   footer?: Type<any>;
+  startAtLink?: IMarkdownNavigatorItem;
 }
 
 export interface IMarkdownNavigatorLabels {
@@ -251,7 +252,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       this.reset();
     }
     if (changes.startAt && this.items && this.startAt) {
-      this._jumpTo(this.startAt);
+      this._jumpTo(this.startAt, undefined);
     }
   }
 
@@ -313,6 +314,9 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     } else if (item.childrenUrl) {
       children = await this.loadChildrenUrl(item);
     }
+    if (children && children.length && item.startAtLink) {
+      this._jumpTo(item.startAtLink, children);
+    }
     const newStackSnapshot: IMarkdownNavigatorItem[] = this.historyStack;
     if (
       stackSnapshot.length === newStackSnapshot.length &&
@@ -364,13 +368,18 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     this._changeDetectorRef.markForCheck();
   }
 
-  private async _jumpTo(itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[]): Promise<void> {
+  private async _jumpTo(
+    itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[],
+    children: IMarkdownNavigatorItem[],
+  ): Promise<void> {
     this.reset();
     if (this.items && this.items.length > 0) {
       let path: IMarkdownNavigatorItem[] = [];
 
       if (Array.isArray(itemOrPath)) {
         path = await this.followPath(this.items, itemOrPath);
+      } else if (children && children.length > 0) {
+        path = this.findPath(children, itemOrPath);
       } else {
         path = this.findPath(this.items, itemOrPath);
       }
