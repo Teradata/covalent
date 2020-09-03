@@ -10,14 +10,13 @@ import {
 } from '@angular/router';
 import Shepherd from 'shepherd.js';
 import { tap, map, filter } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { CovalentGuidedTour, ITourStep, ITourOptions } from './guided.tour';
 
 export interface IGuidedTour extends ITourOptions {
   steps: IGuidedTourStep[];
   finishButtonText?: string;
-  dismissButtonText?: string;
 }
 
 export interface IGuidedTourStep extends ITourStep {
@@ -30,11 +29,26 @@ export interface IGuidedTourStep extends ITourStep {
 /**
  *  Router enabled Shepherd tour
  */
+export enum TourEvents {
+  complete = 'complete',
+  cancel = 'cancel',
+  hide = 'hide',
+  show = 'show',
+  start = 'start',
+  active = 'active',
+  inactive = 'inactive',
+}
+
+export interface IGuidedTourEvent {
+  step: any;
+  previous: any;
+  tour: any;
+}
 
 @Injectable()
 export class CovalentGuidedTourService extends CovalentGuidedTour {
   private _toursMap: Map<string, IGuidedTour> = new Map<string, IGuidedTour>();
-
+  private _tourStepURLs: Map<string, string> = new Map<string, string>();
   constructor(private _router: Router, private _route: ActivatedRoute, private _httpClient: HttpClient) {
     super();
     _router.events
@@ -46,6 +60,10 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
           this.shepherdTour.cancel();
         }
       });
+  }
+
+  tourEvent$(str: TourEvents): Observable<IGuidedTourEvent> {
+    return fromEvent(this.shepherdTour, str);
   }
 
   async registerTour(tourName: string, tour: IGuidedTour | string): Promise<void> {
@@ -60,10 +78,27 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
       // remove steps from tour since we need to preprocess them first
       this.newTour(Object.assign({}, guidedTour, { steps: undefined }));
       const tourInstance: Shepherd.Tour = this.shepherdTour.addSteps(
-        this._configureRoutesForSteps(
-          this._prepareTour(guidedTour.steps, guidedTour.finishButtonText, guidedTour.dismissButtonText),
-        ),
+        this._configureRoutesForSteps(this._prepareTour(guidedTour.steps, guidedTour.finishButtonText)),
       );
+      // init route transition if step URL is different then the current location.
+      this.tourEvent$(TourEvents.show).subscribe((tourEvent: IGuidedTourEvent) => {
+        const currentURL: string = this._router.url.split(/[?#]/)[0];
+        const {
+          step: { id, options },
+        } = tourEvent;
+        if (this._tourStepURLs.has(id)) {
+          const stepRoute: string = this._tourStepURLs.get(id);
+          if (stepRoute !== currentURL) {
+            this._router.navigate([stepRoute]);
+          }
+        } else {
+          if (options && options.routing) {
+            this._tourStepURLs.set(id, options.routing.route);
+          } else {
+            this._tourStepURLs.set(id, currentURL);
+          }
+        }
+      });
       this.start();
       return tourInstance;
     } else {

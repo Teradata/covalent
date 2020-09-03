@@ -89,6 +89,7 @@ const defaultStepOptions: TourStep = {
 
 const MAT_ICON_BUTTON: string = 'mat-icon-button material-icons mat-button-base';
 const MAT_BUTTON: string = 'mat-button-base mat-button';
+const MAT_BUTTON_INVISIBLE: string = 'shepherd-void-button';
 
 export class CovalentGuidedTour extends TourButtonsActions {
   private _destroyedEvent$: Subject<void>;
@@ -164,11 +165,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
     this.shepherdTour.start();
   }
 
-  protected _prepareTour(
-    originalSteps: ITourStep[],
-    finishLabel: string = 'finish',
-    dismissLabel: string = 'cancel tour',
-  ): ITourStep[] {
+  protected _prepareTour(originalSteps: ITourStep[], finishLabel: string = 'finish'): ITourStep[] {
     // create Subjects for back and forward events
     const backEvent$: Subject<void> = new Subject<void>();
     const forwardEvent$: Subject<void> = new Subject<void>();
@@ -217,10 +214,13 @@ export class CovalentGuidedTour extends TourButtonsActions {
       action: this['finish'].bind(this),
       classes: MAT_BUTTON,
     };
-    const dismissButton: TourStepButton = {
-      text: dismissLabel,
-      action: this['cancel'].bind(this),
-      classes: MAT_BUTTON,
+
+    const voidButton: TourStepButton = {
+      text: '',
+      action(): void {
+        return;
+      },
+      classes: MAT_BUTTON_INVISIBLE,
     };
 
     // listen to the destroyed event to clean up all the streams
@@ -285,7 +285,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
       ) {
         step.advanceOn = undefined;
         step.buttons =
-          step.advanceOnOptions && step.advanceOnOptions.allowGoBack ? [backButton, dismissButton] : [dismissButton];
+          step.advanceOnOptions && step.advanceOnOptions.allowGoBack ? [backButton, voidButton] : [voidButton];
       }
       // adds a default beforeShowPromise function
       step.beforeShowPromise = () => {
@@ -348,11 +348,11 @@ export class CovalentGuidedTour extends TourButtonsActions {
           }
           // if we have an id as a string in either case, we use it (we ignore it if its HTMLElement)
           if (id) {
-            // if current step is the first step of the tour, we set the buttons to be only "next" or "dismiss"
+            // if current step is the first step of the tour, we set the buttons to be only "next"
             // we had to use `any` since the tour doesnt expose the steps in any fashion nor a way to check if we have modified them at all
             if (this.shepherdTour.getCurrentStep() === (<any>this.shepherdTour).steps[0]) {
               this.shepherdTour.getCurrentStep().updateStepOptions({
-                buttons: originalSteps[index].advanceOn ? [dismissButton] : [nextButton],
+                buttons: originalSteps[index].advanceOn ? [voidButton] : [nextButton],
               });
             }
             // register to the attempts observable to notify deeveloper when number has been reached

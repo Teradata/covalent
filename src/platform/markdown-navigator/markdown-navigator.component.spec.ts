@@ -55,18 +55,14 @@ const NESTED_MIXED_ITEMS: IMarkdownNavigatorItem[] = [
 
 @Component({
   template: `
-    <div>
-      Footer A Content
-    </div>
+    <div>Footer A Content</div>
   `,
 })
 export class FooterAComponent {}
 
 @Component({
   template: `
-    <div>
-      Global Footer Content
-    </div>
+    <div>Global Footer Content</div>
   `,
 })
 export class GlobalFooterComponent {}

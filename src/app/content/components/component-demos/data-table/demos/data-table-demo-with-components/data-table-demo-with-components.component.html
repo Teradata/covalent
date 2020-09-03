@@ -48,21 +48,15 @@
 <mat-divider></mat-divider>
 
 <div class="pad-sm">
-  <mat-slide-toggle color="accent" [(ngModel)]="selectable">
-    Row selection
-  </mat-slide-toggle>
-  <mat-slide-toggle color="accent" [(ngModel)]="clickable">
-    Row click
-  </mat-slide-toggle>
+  <mat-slide-toggle color="accent" [(ngModel)]="selectable">Row selection</mat-slide-toggle>
+  <mat-slide-toggle color="accent" [(ngModel)]="clickable">Row click</mat-slide-toggle>
   <mat-slide-toggle class="push-left" color="accent" [(ngModel)]="multiple" [disabled]="!selectable && !clickable">
     Multi-row click (shift + click)
   </mat-slide-toggle>
 </div>
 <mat-divider></mat-divider>
 <div class="pad-sm">
-  <mat-slide-toggle color="accent" [(ngModel)]="resizableColumns">
-    Resizable columns
-  </mat-slide-toggle>
+  <mat-slide-toggle color="accent" [(ngModel)]="resizableColumns">Resizable columns</mat-slide-toggle>
   <mat-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
     Hide Email column
   </mat-slide-toggle>
