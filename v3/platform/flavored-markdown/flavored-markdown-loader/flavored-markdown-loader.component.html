@@ -10,5 +10,8 @@
   [content]="content"
   [hostedUrl]="url"
   [anchor]="anchor"
+  [copyCodeToClipboard]="copyCodeToClipboard"
+  [copyCodeTooltips]="copyCodeTooltips"
   (contentReady)="contentReady.emit()"
+  (buttonClicked)="buttonClicked.emit($event)"
 ></td-flavored-markdown>

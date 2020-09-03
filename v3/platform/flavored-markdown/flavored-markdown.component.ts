@@ -18,11 +18,12 @@ import {
   OnChanges,
   SimpleChanges,
   ElementRef,
+  HostBinding,
 } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent } from '@covalent/highlight';
+import { TdHighlightComponent, ICopyCodeTooltips } from '@covalent/highlight';
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 import {
   TdDataTableComponent,
@@ -30,6 +31,30 @@ import {
   ITdDataTableSortChangeEvent,
   ITdDataTableColumnWidth,
 } from '@covalent/core/data-table';
+
+export interface ITdFlavoredMarkdownButtonClickEvent {
+  text: string;
+  data: string;
+}
+
+@Component({
+  template: `
+    <button mat-raised-button (click)="emitClick()">
+      {{ text }}
+    </button>
+  `,
+})
+export class TdFlavoredMarkdownButtonComponent {
+  @HostBinding('style.display') display: string = 'inline-block';
+  @Input() text: string = '';
+  @Input() data: string = '';
+  @Output() clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<
+    ITdFlavoredMarkdownButtonClickEvent
+  >();
+  emitClick(): void {
+    this.clicked.emit({ text: this.text, data: this.data });
+  }
+}
 
 @Directive({
   selector: '[tdFlavoredMarkdownContainer]',
@@ -59,7 +84,6 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   private _components: {} = {};
   private _viewInit: boolean = false;
-
   /**
    * content?: string
    *
@@ -106,10 +130,33 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   /**
+   * copyCodeToClipboard?: boolean
+   *
+   * Display copy button on code snippets to copy code to clipboard.
+   *
+   */
+  @Input() copyCodeToClipboard: boolean = false;
+
+  /**
+   * copyCodeTooltips?: ICopyCodeTooltips
+   *
+   * Tooltips for copy button to copy and upon copying.
+   */
+  @Input() copyCodeTooltips: ICopyCodeTooltips = {};
+  /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
    */
   @Output() contentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
+
+  /**
+   * buttonClicked?: ITdFlavoredMarkdownButtonClickEvent
+   * Event emitted when a button is clicked
+   * Is an object containing text and data of button
+   */
+  @Output() buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<
+    ITdFlavoredMarkdownButtonClickEvent
+  >();
 
   @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true }) container: TdFlavoredMarkdownContainerDirective;
 
@@ -161,7 +208,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
       // Remove all indentation spaces so markdown can be parsed correctly
       const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
-      lines = lines.map(function(line: string): string {
+      lines = lines.map(function (line: string): string {
         return line.replace(startingWhitespaceRegex, '');
       });
 
@@ -171,6 +218,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       markdown = this._replaceCheckbox(markdown);
       markdown = this._replaceTables(markdown);
       markdown = this._replaceLists(markdown);
+      markdown = this._replaceButtons(markdown);
       const keys: string[] = Object.keys(this._components);
       // need to sort the placeholders in order of encounter in markdown content
       keys.sort((compA: string, compB: string) => {
@@ -248,6 +296,26 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     );
   }
 
+  private _replaceButtons(markdown: string): string {
+    const buttonRegExp: RegExp = /\[([^\[]+)\](\(#data=(.*)\))/i;
+    const globalButtonRegExp: RegExp = new RegExp(buttonRegExp.source, buttonRegExp.flags + 'g');
+    return this._replaceComponent(
+      markdown,
+      TdFlavoredMarkdownButtonComponent,
+      globalButtonRegExp,
+      (componentRef: ComponentRef<TdFlavoredMarkdownButtonComponent>, match: string) => {
+        const matches: RegExpExecArray = buttonRegExp.exec(match);
+        const text: string = matches[1];
+        const data: string = matches[3];
+        componentRef.instance.text = text;
+        componentRef.instance.data = data;
+        componentRef.instance.clicked.subscribe((clickEvent: ITdFlavoredMarkdownButtonClickEvent) =>
+          this.buttonClicked.emit(clickEvent),
+        );
+      },
+    );
+  }
+
   private _replaceCodeBlocks(markdown: string): string {
     const codeBlockRegExp: RegExp = /(?:^|\n)```(.*)\n([\s\S]*?)\n```/g;
     return this._replaceComponent(
@@ -258,6 +326,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         if (language) {
           componentRef.instance.lang = language;
         }
+        componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
+        componentRef.instance.copyCodeTooltips = this.copyCodeTooltips;
         componentRef.instance.content = codeblock;
       },
     );

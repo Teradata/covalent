@@ -49,6 +49,11 @@ export class MyModule {}
 Pass an array of javascript objects that implement [ITdDynamicElementConfig] with the information to be rendered to the [elements] attribute.
 
 ```typescript
+// Property values to be set in custom component
+export interface ITdDynamicElementCustomConfig {
+  [name: string]: any;
+}
+
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
@@ -60,11 +65,12 @@ export interface ITdDynamicElementConfig {
   max?: any;
   minLength?: any;
   maxLength?: any;
-  selections?: any[] | { value: any, label: string }[];
+  selections?: string[] | { value: any; label: string }[];
   multiple?: boolean;
   default?: any;
   flex?: number;
   validators?: ITdDynamicElementValidator[];
+  customConfig?: ITdDynamicElementCustomConfig;
 }
 ```
 

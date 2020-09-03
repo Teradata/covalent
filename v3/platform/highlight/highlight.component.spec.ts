@@ -1,4 +1,4 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture, fakeAsync } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -25,16 +25,20 @@ describe('Component: Highlight', () => {
 
   describe('Rendering: ', () => {
     it('should render empty', async(() => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestRenderingComponent);
-      const element: HTMLElement = fixture.nativeElement;
+      fakeAsync(() => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestRenderingComponent);
+        const element: HTMLElement = fixture.nativeElement;
 
-      expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe(``);
-      expect(element.querySelector('td-highlight pre code')).toBeFalsy();
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        fixture.detectChanges();
+        expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe(``);
         expect(element.querySelector('td-highlight pre code')).toBeFalsy();
-        expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe('');
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(element.querySelector('td-highlight pre code')).toBeFalsy();
+          expect(fixture.debugElement.query(By.css('td-highlight > div > div')).nativeElement.textContent.trim()).toBe(
+            '',
+          );
+        });
       });
     }));
 
@@ -42,13 +46,13 @@ describe('Component: Highlight', () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightStaticHtmlTestRenderingComponent);
       const element: HTMLElement = fixture.nativeElement;
 
-      expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toContain(
-        `{ {property} }`.trim(),
-      );
       expect(element.querySelector('td-highlight pre code')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
+        expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toContain(
+          `{{property}}`.trim(),
+        );
         expect(element.querySelector('td-highlight pre code')).toBeTruthy();
         expect(element.querySelector('td-highlight pre code').textContent.trim()).toContain(`{{property}}`);
         expect(element.querySelectorAll('.hljs-tag').length).toBe(6);
@@ -65,7 +69,7 @@ describe('Component: Highlight', () => {
         }`;
       const element: HTMLElement = fixture.nativeElement;
 
-      expect(fixture.debugElement.query(By.css('td-highlight')).nativeElement.textContent.trim()).toBe('');
+      expect(fixture.debugElement.query(By.css('td-highlight > div > div')).nativeElement.textContent.trim()).toBe('');
       expect(element.querySelector('td-highlight pre code')).toBeFalsy();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -77,7 +81,7 @@ describe('Component: Highlight', () => {
 
     it('should throw error for undefined language', async(() => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightUndefinedLangTestRenderingComponent);
-      expect(function(): void {
+      expect(function (): void {
         fixture.detectChanges();
       }).toThrowError();
     }));
@@ -169,11 +173,18 @@ class TdHighlightEmptyStaticTestRenderingComponent {}
 @Component({
   template: `
     <td-highlight lang="html">
-      <![CDATA[ <td-highlight lang="html"> <h1>hello world!</h1> <span>{ {property} }</span> </td-highlight> ]]>
+      {{ dataHtml0 }}
     </td-highlight>
   `,
 })
-class TdHighlightStaticHtmlTestRenderingComponent {}
+class TdHighlightStaticHtmlTestRenderingComponent {
+  dataHtml0: string = `
+    <td-highlight lang="html">
+      <h1>hello world!</h1>
+      <span>{{property}}</span>
+    </td-highlight>
+  `;
+}
 
 @Component({
   template: `
@@ -208,11 +219,17 @@ class TdHighlightEmptyStaticTestEventsComponent {
 @Component({
   template: `
     <td-highlight lang="html" (contentReady)="tdHighlightContentIsReady()">
-      <![CDATA[ <td-highlight lang="html"> <h1>hello world!</h1> <span>{ {property} }</span> </td-highlight> ]]>
+      {{ dataHtml }}
     </td-highlight>
   `,
 })
 class TdHighlightStaticHtmlTestEventsComponent {
+  dataHtml: string = `
+    <td-highlight lang="html">
+      <h1>hello world!</h1>
+      <span>{ {property} }</span>
+    </td-highlight>
+  `;
   tdHighlightContentIsReady(): void {
     /* Stub */
   }

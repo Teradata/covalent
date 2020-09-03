@@ -1,6 +1,6 @@
 import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
-import { Component, NgModule, DebugElement } from '@angular/core';
+import { Component, NgModule, DebugElement, Input } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { Validators, AbstractControl, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -477,11 +477,17 @@ describe('Component: TdDynamicForms', () => {
           name: 'custom',
           type: TdDynamicTestComponent,
           default: 'value',
+          customConfig: {
+            specialValue: 'My special value',
+          },
         },
       ];
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
+        const customComponent: TdDynamicTestComponent = fixture.debugElement.query(By.directive(TdDynamicTestComponent))
+          .componentInstance;
+        expect(customComponent).toBeTruthy();
+        expect(customComponent.specialValue).toEqual('My special value');
         const dynamicFormsComponent: TdDynamicFormsComponent = fixture.debugElement.query(
           By.directive(TdDynamicFormsComponent),
         ).componentInstance;
@@ -513,6 +519,7 @@ class TdDynamicFormsTestComponent {
 })
 export class TdDynamicTestComponent {
   control: FormControl;
+  specialValue: string;
 }
 
 @NgModule({

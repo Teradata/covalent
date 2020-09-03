@@ -21,9 +21,7 @@
 <mat-accordion [multi]="multi" #matPanelGroup="matAccordion">
   <mat-expansion-panel>
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        Label goes here
-      </mat-panel-title>
+      <mat-panel-title>Label goes here</mat-panel-title>
     </mat-expansion-panel-header>
     <div class="md-padding">
       <h3 class="mat-subheading-2">md-padding class</h3>
@@ -31,9 +29,7 @@
   </mat-expansion-panel>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        Another label goes here
-      </mat-panel-title>
+      <mat-panel-title>Another label goes here</mat-panel-title>
     </mat-expansion-panel-header>
     <div class="md-padding">
       <h3 class="mat-subheading-2">md-padding class</h3>
@@ -41,9 +37,7 @@
   </mat-expansion-panel>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        Yet another label goes here
-      </mat-panel-title>
+      <mat-panel-title>Yet another label goes here</mat-panel-title>
     </mat-expansion-panel-header>
     <div class="md-padding">
       <h3 class="mat-subheading-2">md-padding class</h3>
@@ -52,7 +46,25 @@
 </mat-accordion>
 
 <div class="demo-button-row">
-  <mat-slide-toggle color="accent" [(ngModel)]="multi" (change)="onChange()" class="push-top push-right">Multi</mat-slide-toggle>
-  <button mat-button color="accent" class="text-upper" [disabled]="!multi" (click)="covPanelGroup.openAll(); matPanelGroup.openAll();">Open all</button>
-  <button mat-button color="accent" class="text-upper" [disabled]="!multi" (click)="covPanelGroup.closeAll(); matPanelGroup.closeAll();">Close all</button>
+  <mat-slide-toggle color="accent" [(ngModel)]="multi" (change)="onChange()" class="push-top push-right">
+    Multi
+  </mat-slide-toggle>
+  <button
+    mat-button
+    color="accent"
+    class="text-upper"
+    [disabled]="!multi"
+    (click)="covPanelGroup.openAll(); matPanelGroup.openAll()"
+  >
+    Open all
+  </button>
+  <button
+    mat-button
+    color="accent"
+    class="text-upper"
+    [disabled]="!multi"
+    (click)="covPanelGroup.closeAll(); matPanelGroup.closeAll()"
+  >
+    Close all
+  </button>
 </div>

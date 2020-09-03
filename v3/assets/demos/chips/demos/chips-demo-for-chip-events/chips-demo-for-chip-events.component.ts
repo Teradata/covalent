@@ -26,10 +26,7 @@ export class ChipsDemoForChipEventsComponent {
   }
 
   get logTime(): string {
-    return new Date()
-      .toISOString()
-      .split('T')[1]
-      .split('.')[0];
+    return new Date().toISOString().split('T')[1].split('.')[0];
   }
 
   handleChipBlur(value: any): void {

@@ -22,6 +22,7 @@ module.exports = {
       '@covalent/core/breadcrumbs': 'covalent.core.breadcrumbs',
       '@covalent/core/steps': 'covalent.core.steps',
       '@covalent/core/tab-select': 'covalent.core.tab-select',
+      '@covalent/core/user-profile': 'covalent.core.user-profile',
 
       '@covalent/dynamic-forms': 'covalent.dynamic-forms',
       '@covalent/highlight': 'covalent.highlight',
@@ -37,6 +38,7 @@ module.exports = {
       '@covalent/echarts/tooltip': 'covalent.echarts.tooltip',
 
       '@covalent/markdown-navigator': 'covalent.markdown-navigator',
+      '@covalent/guided-tour': 'covalent.guided-tour',
     },
   },
   whitelistedNonPeerDependencies: ['.'],

@@ -5,8 +5,8 @@
       <span *ngIf="control.touched || !control.pristine">
         <span *ngIf="control.hasError('even')">Must be even.</span>
         <span *ngIf="control.hasError('odd')">Must be odd.</span>
-        <span *ngIf="control.hasError('min')">Must be greater than {{element.min}}.</span>
-        <span *ngIf="control.hasError('max')">Must be less than {{element.max}}.</span>
+        <span *ngIf="control.hasError('min')">Must be greater than {{ element.min }}.</span>
+        <span *ngIf="control.hasError('max')">Must be less than {{ element.max }}.</span>
       </span>
     </ng-template>
   </ng-template>
@@ -43,7 +43,13 @@
     </span>
   </ng-template>
   <mat-card-actions>
-    <button mat-raised-button (click)="submitManualValidator()" color="primary" class="text-upper" [disabled]="!manualValidateForm.valid">
+    <button
+      mat-raised-button
+      (click)="submitManualValidator()"
+      color="primary"
+      class="text-upper"
+      [disabled]="!manualValidateForm.valid"
+    >
       Submit
     </button>
   </mat-card-actions>

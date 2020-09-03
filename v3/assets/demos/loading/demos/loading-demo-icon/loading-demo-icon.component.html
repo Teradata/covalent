@@ -3,12 +3,10 @@
     <mat-list-item>
       <div matListAvatar>
         <ng-template tdLoading [tdLoadingUntil]="!item.value" tdLoadingStrategy="overlay">
-          <mat-icon matListAvatar>
-            settings_backup_restore
-          </mat-icon>
+          <mat-icon matListAvatar>settings_backup_restore</mat-icon>
         </ng-template>
       </div>
-      <h3 matLine>{{item.label}}</h3>
+      <h3 matLine>{{ item.label }}</h3>
     </mat-list-item>
     <mat-divider *ngIf="!last"></mat-divider>
   </ng-template>

@@ -1,11 +1,11 @@
-import { Component, TemplateRef } from '@angular/core';
+import { Component, TemplateRef, Input } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 import { ITdDynamicElementConfig } from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'td-dynamic-input-test',
   template: `
-    <td-chips [items]="selections" [formControl]="control"></td-chips>
+    <td-chips [items]="selections" [formControl]="control" [placeholder]="placeholder"></td-chips>
     <div *ngIf="errorMessageTemplate && control?.errors" class="tc-red-600" [style.font-size.%]="'70'">
       <ng-template
         [ngTemplateOutlet]="errorMessageTemplate"
@@ -18,6 +18,8 @@ export class TdTestDynamicComponent {
   control: FormControl;
   selections: string[] = [];
   errorMessageTemplate: TemplateRef<any>;
+  // This value will be set via the customConfig property
+  placeholder: string;
 }
 
 @Component({
@@ -41,6 +43,11 @@ export class DynamicFormsDemoCustomElementsComponent {
           },
         },
       ],
+      customConfig: {
+        // This is a property unique to the custom component
+        // and will be applied on instantiation of the component
+        placeholder: 'Lists',
+      },
     },
   ];
 }

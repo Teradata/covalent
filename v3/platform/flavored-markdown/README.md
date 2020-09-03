@@ -21,6 +21,23 @@ This component uses `<td-markdown>` to render the markdown. See `<td-markdown>`'
 + anchor?: string
   + Anchor to jump to.
 
++ copyCodeToClipboard?: boolean
+  + Display copy button on code snippets to copy code to clipboard.
++ copyCodeTooltips?: ICopyCodeTooltips
+  + Tooltips for copy button to copy and upon copying.
+
+For reference:
+```
+interface ICopyCodeTooltips {
+  copy?: string;
+  copied?: string;
+}
+```
+#### Outputs
+
++ buttonClicked: ITdFlavoredMarkdownButtonClickEvent
+  + Emitted when a button is clicked
+
 #### Events
 
 + contentReady: undefined
@@ -112,6 +129,11 @@ A component that fetches markdown from a GitHub url and renders it using `<td-fl
 
 + anchor?: string
   + Anchor to jump to.
+
+#### Outputs
+
++ buttonClicked: ITdFlavoredMarkdownButtonClickEvent
+  + Emitted when a button is clicked
 
 #### Events
 

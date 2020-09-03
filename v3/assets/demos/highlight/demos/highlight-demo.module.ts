@@ -7,9 +7,15 @@ import { HighlightDemoComponent } from './highlight-demo.component';
 import { HighlightDemoRoutingModule } from './highlight-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { HighLightDemoCssSharedModule } from './highlight-demo-css/highlight-demo-css-shared';
+import { HighlightDemoCopyCodeComponent } from './highlight-demo-copy-code/highlight-demo-copy-code.component';
 
 @NgModule({
-  declarations: [HighlightDemoComponent, HighlightDemoHtmlComponent, HighlightDemoTsComponent],
+  declarations: [
+    HighlightDemoComponent,
+    HighlightDemoHtmlComponent,
+    HighlightDemoTsComponent,
+    HighlightDemoCopyCodeComponent,
+  ],
   imports: [
     HighLightDemoCssSharedModule,
     DemoModule,

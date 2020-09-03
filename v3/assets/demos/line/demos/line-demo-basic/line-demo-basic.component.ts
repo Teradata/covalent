@@ -7,7 +7,6 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   templateUrl: './line-demo-basic.component.html',
   styleUrls: ['./line-demo-basic.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: true,
 })
 export class LineDemoBasicComponent implements OnInit {
   today: Date = new Date();

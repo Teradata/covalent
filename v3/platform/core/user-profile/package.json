@@ -1,0 +1,13 @@
+{
+  "ngPackage": {
+    "assets": [
+      "./*.theme.scss"
+    ],
+    "lib": {
+      "entryFile": "index.ts",
+      "umdModuleIds": {
+        "@covalent/core/menu": "covalent.core.menu"
+      }
+    }
+  }
+}

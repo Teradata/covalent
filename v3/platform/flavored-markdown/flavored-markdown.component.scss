@@ -8,7 +8,6 @@ $code-font: 'Menlo', 'Monaco', 'Andale Mono', 'lucida console', 'Courier New', m
     }
   }
   td-data-table,
-  td-highlight,
   mat-checkbox {
     display: block;
   }
@@ -23,5 +22,10 @@ $code-font: 'Menlo', 'Monaco', 'Andale Mono', 'lucida console', 'Courier New', m
     font-family: $code-font;
     padding-left: 2px;
     padding-right: 2px;
+  }
+  td-highlight {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

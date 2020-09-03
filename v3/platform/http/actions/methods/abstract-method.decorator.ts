@@ -59,10 +59,10 @@ export function TdAbstractMethod(config: {
   path: string;
   options?: ITdHttpRESTOptions;
 }): (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>) => any {
-  return function(target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>): any {
+  return function (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>): any {
     const wrappedFunction: Function = descriptor.value;
     // replace method call with our own and proxy it
-    descriptor.value = function(): any {
+    descriptor.value = function (): any {
       try {
         let replacedPath: string = config.path;
         const parameters: { index: number; param: string; type: TdParamType }[] = Reflect.getOwnMetadata(

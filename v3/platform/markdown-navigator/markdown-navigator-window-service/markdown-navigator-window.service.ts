@@ -1,4 +1,4 @@
-import { Injectable, Inject, RendererFactory2, Renderer2 } from '@angular/core';
+import { Injectable, Inject, RendererFactory2, Renderer2, Type } from '@angular/core';
 import { MatDialogRef, MatDialogConfig, DialogPosition } from '@angular/material/dialog';
 import { ThemePalette } from '@angular/material/core';
 import {
@@ -9,17 +9,21 @@ import { TdDialogService, IDraggableRefs, ResizableDraggableDialog } from '@cova
 import { DragRef, Point } from '@angular/cdk/drag-drop/drag-ref';
 import { DOCUMENT } from '@angular/common';
 import { IMarkdownNavigatorItem, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 
 export interface IMarkdownNavigatorWindowConfig {
   items: IMarkdownNavigatorItem[];
   dialogConfig?: MatDialogConfig;
   labels?: IMarkdownNavigatorWindowLabels;
   toolbarColor?: ThemePalette;
-  startAt?: IMarkdownNavigatorItem;
+  startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   compareWith?: IMarkdownNavigatorCompareWith;
+  copyCodeToClipboard?: boolean;
+  copyCodeTooltips?: ICopyCodeTooltips;
+  footer?: Type<any>;
 }
 
-const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-markdown-navigator-window-wrapper';
+const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-window-dialog';
 
 const DEFAULT_POSITION: DialogPosition = { bottom: '0px', right: '0px' };
 const DEFAULT_WIDTH: string = '360px';
@@ -30,7 +34,7 @@ const MAX_WIDTH: string = '100vw';
 const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
   hasBackdrop: false,
   closeOnNavigation: true,
-  panelClass: CDK_OVERLAY_CUSTOM_CLASS,
+  panelClass: [CDK_OVERLAY_CUSTOM_CLASS],
   position: DEFAULT_POSITION,
   height: DEFAULT_HEIGHT,
   width: DEFAULT_WIDTH,
@@ -61,9 +65,18 @@ export class TdMarkdownNavigatorWindowService {
   public open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<TdMarkdownNavigatorWindowComponent> {
     this.close();
 
+    let panelClass: string[] = [...DEFAULT_DRAGGABLE_DIALOG_CONFIG.panelClass];
+    if (config.dialogConfig && config.dialogConfig.panelClass) {
+      if (Array.isArray(config.dialogConfig.panelClass)) {
+        panelClass = [...config.dialogConfig.panelClass];
+      } else {
+        panelClass = [config.dialogConfig.panelClass];
+      }
+    }
     const draggableConfig: MatDialogConfig = {
       ...DEFAULT_DRAGGABLE_DIALOG_CONFIG,
       ...config.dialogConfig,
+      panelClass,
     };
     const {
       matDialogRef,
@@ -71,17 +84,20 @@ export class TdMarkdownNavigatorWindowService {
     }: IDraggableRefs<TdMarkdownNavigatorWindowComponent> = this._tdDialogService.openDraggable({
       component: TdMarkdownNavigatorWindowComponent,
       config: draggableConfig,
-      dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
+      dragHandleSelectors: ['.td-window-dialog-toolbar'],
       draggableClass: 'td-draggable-markdown-navigator-window',
     });
     this.markdownNavigatorWindowDialog = matDialogRef;
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
     this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
+    this.markdownNavigatorWindowDialog.componentInstance.copyCodeToClipboard = config.copyCodeToClipboard;
+    this.markdownNavigatorWindowDialog.componentInstance.copyCodeTooltips = config.copyCodeTooltips;
     this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
     this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
       'toolbarColor' in config ? config.toolbarColor : 'primary';
     this.markdownNavigatorWindowDialogsOpen++;
+    this.markdownNavigatorWindowDialog.componentInstance.footer = config.footer;
     dragRefSubject.subscribe((dragRf: DragRef) => {
       this.dragRef = dragRf;
       this.resizableDraggableDialog = new ResizableDraggableDialog(

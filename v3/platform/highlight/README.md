@@ -18,7 +18,18 @@ By default, `--dev` build will log the following message in the console to let y
   + Language of the code content to be parsed as highlighted html.
 + content: string
   + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
++ copyCodeToClipboard?: boolean
+  + Display copy button on code snippets to copy code to clipboard.
++ copyCodeTooltips?: ICopyCodeTooltips
+  + Tooltips for copy button to copy and upon copying.
 
+For reference:
+```
+interface ICopyCodeTooltips {
+  copy?: string;
+  copied?: string;
+}
+```
 #### Events
 
 + contentReady: function
@@ -81,28 +92,37 @@ Or by loading them in the `index.html` file:
 
 ## Usage
 
-Simply wrap your code snippets in `<td-highlight>`. To use HTML brackets `<` and `>` wrap the code with `<![CDATA[` and `]]>;` or replace with HTMLs character entities `&lt;` and `&gt;`.
-
-Also, to display model binding, add spaces between curly braces like: `{ { } }` and wrap them  with `<![CDATA[` and `]]>;`
+Simply create a template literal string with your code and bind your snippets in `<td-highlight>{{code}}</td-highlight>`.
 
 Example for **HTML** usage:
-
-```html
-<td-highlight lang="html">
-  <![CDATA[
+```typescript
+@Component({
+  template: `
+    <td-highlight lang="html">
+      {{ code }}
+    </td-highlight>
+  `,
+})
+class ExampleComponent {
+  code: string = `
     <td-highlight lang="html">
       <h1>hello world!</h1>
       <span>{ {property} }</span>
     </td-highlight>
-  ]]>
-</td-highlight>
+  `;
+}
 ```
-
 Example for **CSS** usage:
-
-```html
-<td-highlight lang="css">    
-  <![CDATA[   
+```typescript
+@Component({
+  template: `
+    <td-highlight lang="css">
+      {{ code }}
+    </td-highlight>
+  `,
+})
+class ExampleComponent {
+  code: string = `
     pre {
       display: block;
       overflow-x: auto;
@@ -118,15 +138,20 @@ Example for **CSS** usage:
       position: relative;
       border-radius: 2px;
     }
-  ]]>
-</td-highlight>
+  `;
+}
 ```
- 
 Example for **Typescript**:
-
-```html
-<td-highlight lang="typescript">
-  <![CDATA[
+```typescript
+@Component({
+  template: `
+    <td-highlight lang="typescript">
+      {{ code }}
+    </td-highlight>
+  `,
+})
+class ExampleComponent {
+  code: string = `
     import { Injectable } from '@angular/core';
     import { Observable, Subject } from 'rxjs';
 
@@ -152,6 +177,6 @@ Example for **Typescript**:
         }
       }
     }
-  ]]>
-</td-highlight>
+  `;
+}
 ```

@@ -16,7 +16,6 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
   selector: 'data-table-demo-with-components',
   styleUrls: ['./data-table-demo-with-components.component.scss'],
   templateUrl: './data-table-demo-with-components.component.html',
-  preserveWhitespaces: true,
 })
 export class DataTableDemoWithComponentsComponent implements OnInit {
   @ViewChild(TdPagingBarComponent, { static: true }) pagingBar: TdPagingBarComponent;
