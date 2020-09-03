@@ -17,12 +17,54 @@ export class MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent {
       childrenUrl: 'https://www.teradata.com/product-help/UseCases/use_cases.json',
       startAtLink: { title: 'External Object Store' },
     },
+    /*
+    For ref : On click of 'External Object Store', 
+              it opens item with title - 'External Object Store' from use-cases.json
+    
+    use_cases.json
+
+  [
+    {
+      "title": "Path Analysis",
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/nPath/README.md"
+    },
+    {
+      "title": "Vantage Path",
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/VantagePath/README.md"
+    },
+    {
+      "title": "Time Series - Consumer Complaints",
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/TimeSeriesAnalysis/README.md"
+    },
+    {
+      "title": "Financial Services Customer Journey",
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/FSCustomerJourney/README.md"
+    },
+    {
+      "title": "Knee Replacement",
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/KneeReplacement/README.md"
+    },
+    {
+      "title": "Manufacturing Defect Analysis",
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/ManufacturingDefects/README.md"
+    },
+    {
+      "title": "Deep History",
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/SalesOffload/README.md"
+    },
+    {
+      "title": "External Object Store",
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/ExternalObjectStore/README.md"
+    }
+  ]
+
+    */
     {
       id: 'url-children-demo',
       title: 'Url children demo',
       childrenUrl: '/assets/demos-data/children_url_3.json',
       /*
-      For ref:
+      For ref: click 'Url children demo' --> 'Child 2' --> goes to 'GrandChild-2'
 
       children_url_3.json:
       [

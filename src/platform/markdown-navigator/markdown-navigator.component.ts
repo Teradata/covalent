@@ -396,9 +396,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       } else {
         path = this.findPath(this.items, itemOrPath);
       }
-      (path || []).forEach((pathItem: IMarkdownNavigatorItem) => {
-        return this.handleItemSelected(pathItem);
-      });
+      (path || []).forEach((pathItem: IMarkdownNavigatorItem) => this.handleItemSelected(pathItem));
     }
     this._changeDetectorRef.markForCheck();
   }
