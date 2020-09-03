@@ -1,3 +1,48 @@
+# [3.1.0-beta.2](https://github.com/teradata/covalent/compare/v3.1.0-beta.1...v3.1.0-beta.2) (2020-09-03)
+
+
+### Bug Fixes
+
+* **coding-standards:** fix install ([#1742](https://github.com/teradata/covalent/issues/1742)) ([febf979](https://github.com/teradata/covalent/commit/febf9797b5b3d8069d22fb4a3d3c7e5a7671f56f))
+* **docs:** removed preserveWhitespaces prop from demos only ([#1692](https://github.com/teradata/covalent/issues/1692)) ([bc5387d](https://github.com/teradata/covalent/commit/bc5387db3e29ac2f180407e0e33cb429d8b0a119))
+* **help:** open links in markdown navigator ([#1788](https://github.com/teradata/covalent/issues/1788)) ([cf1336c](https://github.com/teradata/covalent/commit/cf1336c16efdef4b4d567b78ddc0f88381a6e662))
+* **highlight-lang-change:** detect and respond to change ([#1762](https://github.com/teradata/covalent/issues/1762)) ([875492b](https://github.com/teradata/covalent/commit/875492b01b477289f01450c012bf47d984550667))
+* **json-formatter:** optimize children loop ([#1735](https://github.com/teradata/covalent/issues/1735)) ([8800d41](https://github.com/teradata/covalent/commit/8800d418c7ff4c0a954d818f3cb5a145749bc13b))
+* **markdown:** add startAt option for children url ([#1796](https://github.com/teradata/covalent/issues/1796)) ([b6f0d78](https://github.com/teradata/covalent/commit/b6f0d785e62d24f6ef7f392bae0b2025d16bdf9b))
+* **markdown:** literal mid word underscores ([#1773](https://github.com/teradata/covalent/issues/1773)) ([017ad4e](https://github.com/teradata/covalent/commit/017ad4e8a6e423d88a25ea10423769ac35cd925d))
+* add nightly for flavored-markdown ([c8cf878](https://github.com/teradata/covalent/commit/c8cf878bcbfa646c734a560cda84be3e28e2cf7d))
+* add nightly for highlight ([e2c39e4](https://github.com/teradata/covalent/commit/e2c39e4ca8267a17f5533976efb1cfcfe6da40f6))
+* copy code button ([#1792](https://github.com/teradata/covalent/issues/1792)) ([beb3b0c](https://github.com/teradata/covalent/commit/beb3b0c01e4b9a6ae5525ff702d77104e2de2ec1))
+* hardcoded sidenav color ([#1785](https://github.com/teradata/covalent/issues/1785)) ([d694d34](https://github.com/teradata/covalent/commit/d694d3455f16844b4def5f404f6384c4c25a92c8))
+* **prettier-update:** changes per latest prettier run ([#1795](https://github.com/teradata/covalent/issues/1795)) ([965fa1b](https://github.com/teradata/covalent/commit/965fa1becd67fb2c3d9fe95a5659547d1389e244))
+* **readme:** fix covalent readme links ([#1740](https://github.com/teradata/covalent/issues/1740)) ([429e5b6](https://github.com/teradata/covalent/commit/429e5b66d042fd1865068f6a6a7aa601669b7886))
+* **resizable-dialog:** avoid unwanted text selection ([#1732](https://github.com/teradata/covalent/issues/1732)) ([115c121](https://github.com/teradata/covalent/commit/115c121659c67d2944fe8fc849bc3372a93eb9b3))
+* **tab-select:** ink bar realign on host width changes ([#1733](https://github.com/teradata/covalent/issues/1733)) ([8838112](https://github.com/teradata/covalent/commit/8838112e83d91eb7d1bddb4851983cc5f1706fc7))
+* quick fix on mat-divider margin ([#1776](https://github.com/teradata/covalent/issues/1776)) ([23634e6](https://github.com/teradata/covalent/commit/23634e6aae84f0889c5455fc316df2af7f4eab91))
+
+
+### Features
+
+* **deps:** update prettier ([#1730](https://github.com/teradata/covalent/issues/1730)) ([8b057b6](https://github.com/teradata/covalent/commit/8b057b674c4914643ba359b312bf77a427281ce1))
+* **dialogs:** add isDestructive parameter to confirm dialog ([#1779](https://github.com/teradata/covalent/issues/1779)) ([0a1a5d1](https://github.com/teradata/covalent/commit/0a1a5d1c98c26c62346ad0e17ee73ba84e96c10f))
+* **dynamic-forms-custom-config:** custom component values ([#1789](https://github.com/teradata/covalent/issues/1789)) ([87f3b74](https://github.com/teradata/covalent/commit/87f3b74295739d135345e7662e044ce6704f8736))
+* **dynamic-menu:** action links ([#1790](https://github.com/teradata/covalent/issues/1790)) ([ccdee1e](https://github.com/teradata/covalent/commit/ccdee1eade69ef5edb3ae7c8af744c0ac0ea1e7c))
+* **dynamic-menu:** support for grouping labels ([#1791](https://github.com/teradata/covalent/issues/1791)) ([aad9ee7](https://github.com/teradata/covalent/commit/aad9ee70ca441c89750dbd980bc14e1b50f2e538))
+* **guided-tour:** add guided-tour package ([#1741](https://github.com/teradata/covalent/issues/1741)) ([26b7e9d](https://github.com/teradata/covalent/commit/26b7e9d286b8523f13af22e67a3a4d7817ebc2c8))
+* **guided-tour:** allow localized strings for buttons [#1780](https://github.com/teradata/covalent/issues/1780) ([#1781](https://github.com/teradata/covalent/issues/1781)) ([8480b55](https://github.com/teradata/covalent/commit/8480b551c506079630f76d3d5208f6daa774c9fc))
+* **guided-tour:** push to nightly ([#1755](https://github.com/teradata/covalent/issues/1755)) ([1c3c9db](https://github.com/teradata/covalent/commit/1c3c9db6563e4ba63ce77355df6025c4e8551d4f))
+* **markdown-nav:** add id support ([#1731](https://github.com/teradata/covalent/issues/1731)) ([105a80a](https://github.com/teradata/covalent/commit/105a80a599d73682c181920c52e1c4d42b5d5f21))
+* **markdown-nav:** startAt + children_url ([#1739](https://github.com/teradata/covalent/issues/1739)) ([967f340](https://github.com/teradata/covalent/commit/967f340d989a87060bbba0f87bae2a8fb9444915))
+* **monaco-esm-build:** utilize Monaco esm classes ([#1757](https://github.com/teradata/covalent/issues/1757)) ([163baae](https://github.com/teradata/covalent/commit/163baae3150296511a25c71ad052b11384a021da))
+* **user-menu:** handle email and user nicer ([#1769](https://github.com/teradata/covalent/issues/1769)) ([a705301](https://github.com/teradata/covalent/commit/a705301c69fb9024664c082908700c45b48d6a13))
+* **user-profile:** adding user profile component ([#1756](https://github.com/teradata/covalent/issues/1756)) ([7c351eb](https://github.com/teradata/covalent/commit/7c351ebe77a8089c067d64d5f52ffdcf58e976cb))
+* **user-profile:** fix header padding ([#1770](https://github.com/teradata/covalent/issues/1770)) ([a2c6b28](https://github.com/teradata/covalent/commit/a2c6b288edb6207b10eac0cb9e8d81341c2c7b7e))
+* copy code button ([#1786](https://github.com/teradata/covalent/issues/1786)) ([1d94a0b](https://github.com/teradata/covalent/commit/1d94a0b4664b8a22cb9c5d7aa5729e30dd317369))
+* dynamic menu ([#1787](https://github.com/teradata/covalent/issues/1787)) ([05b8112](https://github.com/teradata/covalent/commit/05b8112b3e2cb80492364774a1416ddc0e5e5f6b))
+* tour events observable ([#1793](https://github.com/teradata/covalent/issues/1793)) ([024cc2e](https://github.com/teradata/covalent/commit/024cc2e75501900fa1a67f0f5afc2b1c5aea61ae))
+
+
+
 <a name="3.1.0-beta.1"></a>
 # [3.1.0-beta.1](https://github.com/teradata/covalent/compare/v3.0.0...v3.1.0-beta.1) (2020-04-04)
 
