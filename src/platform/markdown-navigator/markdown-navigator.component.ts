@@ -31,6 +31,7 @@ export interface IMarkdownNavigatorItem {
   description?: string;
   icon?: string;
   footer?: Type<any>;
+  startAtLink?: IMarkdownNavigatorItem;
 }
 
 export interface IMarkdownNavigatorLabels {
@@ -251,7 +252,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       this.reset();
     }
     if (changes.startAt && this.items && this.startAt) {
-      this._jumpTo(this.startAt);
+      this._jumpTo(this.startAt, undefined);
     }
   }
 
@@ -282,10 +283,22 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     this.loading = false;
     this.clearErrors();
     if (this.historyStack.length > 1) {
-      const parent: IMarkdownNavigatorItem = this.historyStack[this.historyStack.length - 2];
-      this.currentMarkdownItem = parent;
-      this.historyStack = this.historyStack.slice(0, -1);
-      this.setChildrenAsCurrentMenuItems(parent);
+      let parent: IMarkdownNavigatorItem = this.historyStack[this.historyStack.length - 2];
+
+      if (parent.startAtLink) {
+        parent = this.historyStack[this.historyStack.length - 3]
+          ? this.historyStack[this.historyStack.length - 3]
+          : undefined;
+        this.historyStack = this.historyStack.slice(0, -1);
+      }
+
+      if (parent) {
+        this.currentMarkdownItem = parent;
+        this.historyStack = this.historyStack.slice(0, -1);
+        this.setChildrenAsCurrentMenuItems(parent);
+      } else {
+        this.reset();
+      }
     } else {
       // one level down just go to root
       this.reset();
@@ -312,6 +325,9 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       children = item.children;
     } else if (item.childrenUrl) {
       children = await this.loadChildrenUrl(item);
+    }
+    if (children && children.length && item.startAtLink) {
+      this._jumpTo(item.startAtLink, children);
     }
     const newStackSnapshot: IMarkdownNavigatorItem[] = this.historyStack;
     if (
@@ -364,13 +380,19 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     this._changeDetectorRef.markForCheck();
   }
 
-  private async _jumpTo(itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[]): Promise<void> {
+  private async _jumpTo(
+    itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[],
+    children: IMarkdownNavigatorItem[],
+  ): Promise<void> {
+    const historyStack: IMarkdownNavigatorItem[] = this.historyStack;
     this.reset();
     if (this.items && this.items.length > 0) {
       let path: IMarkdownNavigatorItem[] = [];
-
       if (Array.isArray(itemOrPath)) {
         path = await this.followPath(this.items, itemOrPath);
+      } else if (children && children.length > 0) {
+        this.historyStack = historyStack;
+        path = this.findPath(children, itemOrPath);
       } else {
         path = this.findPath(this.items, itemOrPath);
       }

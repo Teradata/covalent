@@ -25,6 +25,7 @@ import { MarkdownNavigatorDemoEditorComponent } from './markdown-navigator-demo-
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MarkdownNavigatorDemoChildrenUrlStartAtComponent } from './markdown-navigator-demo-children-url-start-at/markdown-navigator-demo-children-url-start-at.component';
+import { MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent } from './markdown-navigator-demo-start-at-onclick-children-url/markdown-navigator-demo-start-at-onclick-children-url.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MarkdownNavigatorDemoChildrenUrlStartAtComponent } from './markdown-nav
     MarkdownNavigatorDemoAnchorComponent,
     MarkdownNavigatorDemoEditorComponent,
     MarkdownNavigatorDemoChildrenUrlStartAtComponent,
+    MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent,
   ],
   imports: [
     DemoModule,
