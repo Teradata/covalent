@@ -20,7 +20,7 @@
     "hammerjs": "^2.0.8",
     "highlight.js": "9.11.0",
     "rxjs": "6.3.3",
-    "showdown": "1.6.4",
+    "showdown": "1.9.1",
     "tslib": "^1.9.3",
     "web-animations-js": "2.3.1",
     "zone.js": "^0.8.26"
