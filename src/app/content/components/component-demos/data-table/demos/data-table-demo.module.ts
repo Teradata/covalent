@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DataTableDemoColumnSortOrderComponent } from './data-table-demo-column-sort-order/data-table-demo-column-sort-order.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     DataTableDemoSortComponent,
     DataTableDemoCustomComponent,
     DataTableDemoWithComponentsComponent,
+    DataTableDemoColumnSortOrderComponent,
   ],
   imports: [
     DataTableDemoBasicSharedModule,
