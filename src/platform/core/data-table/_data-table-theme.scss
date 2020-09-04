@@ -98,7 +98,7 @@
     color: mat-color($accent);
   }
   .sort-order-bgc {
-    background-color: if($is-dark-theme, map-get($mat-dark-theme-background, background), $white-87-opacity);
+    background-color: if($is-dark-theme, map-get($mat-dark-theme-background, background), mat-color($mat-grey, 200));
     color: if($is-dark-theme, $light-secondary-text, mat-color($mat-grey, 70));
   }
 }
