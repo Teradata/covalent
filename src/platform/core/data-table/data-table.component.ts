@@ -60,6 +60,7 @@ export interface ITdDataTableColumn {
   hidden?: boolean;
   filter?: boolean;
   width?: ITdDataTableColumnWidth | number;
+  columnSortOrder?: number;
 }
 
 export interface ITdDataTableSelectEvent {
@@ -117,8 +118,7 @@ export const _TdDataTableMixinBase = mixinControlValueAccessor(TdDataTableBase, 
   inputs: ['value'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdDataTableComponent
-  extends _TdDataTableMixinBase
+export class TdDataTableComponent extends _TdDataTableMixinBase
   implements IControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
   /** responsive width calculations */
   private _resizeSubs: Subscription;

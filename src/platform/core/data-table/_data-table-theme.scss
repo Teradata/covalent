@@ -25,6 +25,7 @@
   $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
+  $is-dark-theme: map-get($theme, is-dark);
 
   td-data-table {
     border-bottom: 1px solid mat-color($foreground, divider);
@@ -95,5 +96,9 @@
   .mat-selected-title {
     background-color: mat-color($accent, 0.12);
     color: mat-color($accent);
+  }
+  .sort-order-bgc {
+    background-color: if($is-dark-theme, map-get($mat-dark-theme-background, background), $white-87-opacity);
+    color: if($is-dark-theme, $light-secondary-text, mat-color($mat-grey, 70));
   }
 }

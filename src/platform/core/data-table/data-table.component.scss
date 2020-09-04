@@ -1,6 +1,15 @@
 $backdrop-index: 80;
 $checkbox-size: 18px;
 
+.header-number-circle {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 :host {
   display: block;
   overflow: hidden;
@@ -9,6 +18,10 @@ $checkbox-size: 18px;
     overflow: auto;
     height: calc(100% - 56px);
   }
+}
+
+.td-table-header-label {
+  display: flex;
 }
 
 .td-data-table-column-resizer {

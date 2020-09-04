@@ -28,7 +28,9 @@
       transition: transform 0.25s;
       position: absolute;
       top: 0;
-
+      &.display-numeric {
+        right: 0;
+      }
       &.mat-asc {
         transform: rotate(0deg);
       }
