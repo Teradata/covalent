@@ -97,7 +97,7 @@
     background-color: mat-color($accent, 0.12);
     color: mat-color($accent);
   }
-  .sort-order-bgc {
+  .td-data-table-sort-badge {
     background-color: if(
       $is-dark-theme,
       map-get($mat-dark-theme-background, background),

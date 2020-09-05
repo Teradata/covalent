@@ -31,7 +31,7 @@
       >
         <span [matTooltip]="column.tooltip" [class]="column.columnSortOrder ? 'td-table-header-label' : ''">
           {{ column.label }}
-          <span *ngIf="column.columnSortOrder" class="push-left-xs header-number-circle mat-caption sort-order-bgc">
+          <span *ngIf="column.columnSortOrder" class="td-data-table-sort-badge">
             {{ column.columnSortOrder || '' }}
 
             <span

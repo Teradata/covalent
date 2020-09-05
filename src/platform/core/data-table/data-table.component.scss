@@ -1,13 +1,17 @@
 $backdrop-index: 80;
 $checkbox-size: 18px;
 
-.header-number-circle {
+.td-data-table-sort-badge {
   height: 16px;
   width: 16px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: normal;
 }
 
 :host {
