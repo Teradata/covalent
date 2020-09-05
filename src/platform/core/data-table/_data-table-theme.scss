@@ -17,6 +17,13 @@
       weight: 600;
     }
   }
+  .td-data-table-sort-badge {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, caption);
+      weight: 400;
+    }
+  }
 }
 
 @mixin td-data-table-theme($theme) {
