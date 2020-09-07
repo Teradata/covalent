@@ -21,7 +21,7 @@
     font: {
       family: td-font-family($config);
       size: td-font-size($config, caption);
-      weight: 400;
+      weight: td-font-weight($config, body-1);
     }
   }
 }
