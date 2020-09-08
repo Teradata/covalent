@@ -62,7 +62,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 @include covalent-flavored-markdown-theme($theme);
 @include teradata-brand($theme);
-@include td-data-table-theme();
 
 @include covalent-guided-tour-theme($theme);
 
@@ -107,7 +106,6 @@ body .mat-card {
   @include covalent-markdown-theme($theme-dark);
   @include covalent-flavored-markdown-theme($theme-dark);
   @include teradata-brand($theme-dark);
-  @include td-data-table-theme();
 
   @include covalent-guided-tour-theme($theme-dark);
 
