@@ -48,7 +48,6 @@ export interface ITdDataTableColumnWidth {
   min?: number;
   max?: number;
 }
-
 export interface ITdDataTableColumn {
   name: string;
   label: string;
