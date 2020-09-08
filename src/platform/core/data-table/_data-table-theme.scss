@@ -17,6 +17,13 @@
       weight: 600;
     }
   }
+  .td-data-table-sort-badge {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, caption);
+      weight: td-font-weight($config, body-1);
+    }
+  }
 }
 
 @mixin td-data-table-theme($theme) {
@@ -25,6 +32,7 @@
   $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
+  $is-dark-theme: map-get($theme, is-dark);
 
   td-data-table {
     border-bottom: 1px solid mat-color($foreground, divider);
@@ -95,5 +103,13 @@
   .mat-selected-title {
     background-color: mat-color($accent, 0.12);
     color: mat-color($accent);
+  }
+  .td-data-table-sort-badge {
+    background-color: if(
+      $is-dark-theme,
+      map-get($mat-dark-theme-background, background),
+      mat-color($background, 'app-bar')
+    );
+    color: if($is-dark-theme, $light-secondary-text, mat-color($foreground, icon));
   }
 }

@@ -63,6 +63,11 @@ export class TdDataTableColumnComponent {
   @Input() numeric: boolean = false;
 
   /**
+   * if column sort order is present
+   */
+  @Input() isColumnSortOrder: boolean = false;
+
+  /**
    * sortOrder?: ['ASC' | 'DESC'] or TdDataTableSortingOrder
    * Sets the sort order of column.
    * Defaults to 'ASC' or TdDataTableSortingOrder.Ascending

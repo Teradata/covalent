@@ -15,6 +15,7 @@
     *ngIf="sortable && !numeric"
     [class.mat-asc]="isAscending()"
     [class.mat-desc]="isDescending()"
+    [class.display-numeric]="isColumnSortOrder"
   >
     arrow_upward
   </mat-icon>
