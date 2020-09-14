@@ -22,8 +22,9 @@ export class GuidedTourDemoBasicComponent implements OnInit {
           },
         },
         {
+          id: 'oxygen',
           title: 'Oxygen',
-          text: 'Here are the Oxygen levels.',
+          text: 'Here are the Oxygen levels. Click on progress bar to enable next button',
           attachTo: {
             element: '#basic-demo #oxygen',
             on: 'top',
@@ -42,7 +43,12 @@ export class GuidedTourDemoBasicComponent implements OnInit {
     this._guidedTourService.registerTour('basicDemoTour', basicDemoTour);
   }
 
+  enableNext(): void {
+    this._guidedTourService.setNextBtnDisability('oxygen', false);
+  }
+
   startTour(): void {
     this._guidedTourService.startTour('basicDemoTour');
+    this._guidedTourService.setNextBtnDisability('oxygen', true);
   }
 }
