@@ -7,13 +7,24 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { TdDynamicMenuComponent } from './dynamic-menu.component';
-import { TdDynamicMenuItemComponent } from './dynamic-menu-item/dynamic-menu-item.component';
-import { TdDynamicMenuLinkComponent } from './dynamic-menu-item/dynamic-menu-link/dynamic-menu-link.component';
+import { TdDynamicMenuLabelComponent } from './dynamic-menu-label/dynamic-menu-label.component';
+import { TdDynamicMenuLinkComponent } from './dynamic-menu-link/dynamic-menu-link.component';
+import { TdDynamicMenuTriggerComponent } from './dynamic-menu-trigger/dynamic-menu-trigger.component';
 
 @NgModule({
-  declarations: [TdDynamicMenuComponent, TdDynamicMenuItemComponent, TdDynamicMenuLinkComponent],
+  declarations: [
+    TdDynamicMenuComponent,
+    TdDynamicMenuLabelComponent,
+    TdDynamicMenuLinkComponent,
+    TdDynamicMenuTriggerComponent,
+  ],
   imports: [CommonModule, MatButtonModule, MatIconModule, MatListModule, MatMenuModule, MatTooltipModule],
   providers: [],
-  exports: [TdDynamicMenuComponent, TdDynamicMenuItemComponent, TdDynamicMenuLinkComponent],
+  exports: [
+    TdDynamicMenuComponent,
+    TdDynamicMenuLabelComponent,
+    TdDynamicMenuLinkComponent,
+    TdDynamicMenuTriggerComponent,
+  ],
 })
 export class CovalentDynamicMenuModule {}

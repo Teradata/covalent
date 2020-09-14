@@ -3,16 +3,16 @@ import { MatMenu } from '@angular/material/menu';
 import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../dynamic-menu.component';
 
 @Component({
-  selector: 'td-dynamic-menu-item',
-  templateUrl: './dynamic-menu-item.component.html',
-  styleUrls: ['./dynamic-menu-item.component.scss'],
+  selector: 'td-dynamic-menu-trigger',
+  templateUrl: './dynamic-menu-trigger.component.html',
+  styleUrls: ['./dynamic-menu-trigger.component.scss'],
 })
-export class TdDynamicMenuItemComponent {
-  @Input() items: IMenuItem[];
+export class TdDynamicMenuTriggerComponent {
+  @Input() item: IMenuItem;
 
   @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
 
-  @ViewChild('childMenu', { static: true }) public childMenu: MatMenu;
+  // @ViewChild('subMenu', { static: true }) public subMenu: MatMenu;
 
   emitClicked(event: ITdDynamicMenuLinkClickEvent): void {
     this.itemClicked.emit(event);

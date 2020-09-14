@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../../dynamic-menu.component';
+import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../dynamic-menu.component';
 
 @Component({
   selector: 'td-dynamic-menu-link',

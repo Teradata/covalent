@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { MatMenu } from '@angular/material/menu';
 
 // Trigger button launches top level menu. Must specify text and/or icon.
 export interface IMenuTrigger {
@@ -47,6 +48,8 @@ export class TdDynamicMenuComponent {
   @Input() items: IMenuItem[];
 
   @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
+
+  // @ViewChild('menu', { static: true }) public menu: MatMenu;
 
   emitClicked(event: ITdDynamicMenuLinkClickEvent): void {
     this.itemClicked.emit(event);

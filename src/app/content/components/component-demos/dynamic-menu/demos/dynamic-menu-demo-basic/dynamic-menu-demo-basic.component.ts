@@ -57,25 +57,25 @@ export class DynamicMenuDemoBasicComponent {
       id: 'framework',
       text: 'Framework',
     },
-    {
-      // Submenu trigger
-      id: 'angularlink',
-      text: 'Angular Link',
-      svgIcon: 'assets:angular',
-      children: [
-        {
-          // URL link
-          text: 'Angular Homepage',
-          link: 'https://angular.io/',
-          newTab: true,
-        },
-      ],
-    },
-    {
-      // Grouping label
-      id: 'actions',
-      text: 'Actions',
-    },
+    // {
+    //   // Submenu trigger
+    //   id: 'angularlink',
+    //   text: 'Angular Link',
+    //   svgIcon: 'assets:angular',
+    //   children: [
+    //     {
+    //       // URL link
+    //       text: 'Angular Homepage',
+    //       link: 'https://angular.io/',
+    //       newTab: true,
+    //     },
+    //   ],
+    // },
+    // {
+    //   // Grouping label
+    //   id: 'actions',
+    //   text: 'Actions',
+    // },
     {
       // Action link
       id: 'actionlink',
@@ -93,31 +93,31 @@ export class DynamicMenuDemoBasicComponent {
     {
       text: 'Level 1',
       icon: 'filter_1',
-      children: [
-        {
-          text: 'Level 2',
-          icon: 'filter_2',
-          children: [
-            {
-              text: 'Level 3',
-              icon: 'filter_3',
-              children: [
-                {
-                  text: 'Teradata - open in current tab',
-                  icon: 'filter_4',
-                  link: 'www.teradata.com',
-                },
-                {
-                  text: 'Teradata - open in new tab',
-                  icon: 'filter_4',
-                  link: 'www.teradata.com',
-                  newTab: true,
-                },
-              ],
-            },
-          ],
-        },
-      ],
+      // children: [
+      //   {
+      //     text: 'Level 2',
+      //     icon: 'filter_2',
+      //     // children: [
+      //     //   {
+      //     //     text: 'Level 3',
+      //     //     icon: 'filter_3',
+      //     //     children: [
+      //     //       {
+      //     //         text: 'Teradata - open in current tab',
+      //     //         icon: 'filter_4',
+      //     //         link: 'www.teradata.com',
+      //     //       },
+      //     //       {
+      //     //         text: 'Teradata - open in new tab',
+      //     //         icon: 'filter_4',
+      //     //         link: 'www.teradata.com',
+      //     //         newTab: true,
+      //     //       },
+      //     //     ],
+      //     //   },
+      //     // ],
+      //   },
+      // ],
     },
   ];
 
