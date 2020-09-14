@@ -6,7 +6,6 @@
 @mixin covalent-highlight-theme() {
   td-highlight {
     background: #1e1e21;
-    display: flex;
     .highlight {
       color: $light-primary-text;
     }

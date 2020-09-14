@@ -4,6 +4,7 @@ $padding: 16px;
 :host ::ng-deep {
   overflow-x: auto;
   padding: $padding;
+  display: flex;
   pre,
   code,
   .highlight {
