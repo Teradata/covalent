@@ -19,7 +19,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "shepherd.js": "0.0.0-SHEPHERD"
+    "shepherd.js": "0.0.0-SHEPHERD",
+    "tslib": "^2.0.0"
   },
   "peerDependencies": {
     "@angular/core": "0.0.0-NG",
