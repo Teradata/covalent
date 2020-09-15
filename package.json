@@ -102,6 +102,7 @@
     "@angular-devkit/schematics": "^9.0.0",
     "@angular/cli": "^9.0.0",
     "@angular/compiler-cli": "^9.0.0",
+    "@schematics/angular": "^10.1.1",
     "@types/codemirror": "0.0.80",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
