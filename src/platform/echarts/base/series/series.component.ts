@@ -1,4 +1,4 @@
-import { Input, OnChanges, OnInit, OnDestroy } from '@angular/core';
+import { Input, OnChanges, OnInit, OnDestroy, Component, Inject } from '@angular/core';
 
 import { assignDefined } from '../utils/assign-defined';
 import { TdChartOptionsService } from '../chart-options.service';
@@ -14,6 +14,9 @@ export interface ITdSeries<T> extends ITdAnimation {
   tooltip?: ITdSeriesTooltip;
 }
 
+@Component({
+  template: '',
+})
 export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChanges, OnInit, OnDestroy {
   private _type: T;
 
@@ -41,7 +44,7 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   @Input() animationDelayUpdate: number | Function;
   @Input() tooltip: ITdSeriesTooltip;
 
-  constructor(type: T, protected optionsService: TdChartOptionsService) {
+  constructor(@Inject('T') type: T, protected optionsService: TdChartOptionsService) {
     this._type = type;
   }
 

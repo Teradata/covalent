@@ -1,4 +1,4 @@
-import { Input, OnChanges, OnInit, OnDestroy } from '@angular/core';
+import { Input, OnChanges, OnInit, OnDestroy, Inject, Directive } from '@angular/core';
 
 import { TdChartOptionsService } from '../chart-options.service';
 import { assignDefined } from '../utils';
@@ -15,7 +15,10 @@ import {
   TdYAxisPosition,
 } from './axis.interface';
 
-export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestroy {
+@Directive({
+  selector: 'tdChartAxisAbstract',
+})
+export abstract class TdChartAxisAbstractDirective implements OnChanges, OnInit, OnDestroy {
   private _state: any = {};
 
   @Input() config: any = {};
@@ -51,7 +54,7 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
   @Input() zlevel: number;
   @Input() z: number;
 
-  constructor(private _axisOption: string, private _optionsService: TdChartOptionsService) {}
+  constructor(@Inject('String') private _axisOption: string, private _optionsService: TdChartOptionsService) {}
 
   ngOnInit(): void {
     this._setOptions();

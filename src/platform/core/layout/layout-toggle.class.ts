@@ -1,4 +1,14 @@
-import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import {
+  Input,
+  HostListener,
+  Renderer2,
+  ElementRef,
+  AfterViewInit,
+  OnDestroy,
+  Component,
+  Inject,
+  Directive,
+} from '@angular/core';
 
 import { MatSidenav, MatDrawerToggleResult } from '@angular/material/sidenav';
 
@@ -19,7 +29,12 @@ export class LayoutToggleBase {}
 /* tslint:disable-next-line */
 export const _TdLayoutToggleMixinBase = mixinDisabled(LayoutToggleBase);
 
-export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements AfterViewInit, OnDestroy, ICanDisable {
+@Directive({
+  selector: 'tdLayoutToggleAbstract',
+})
+export abstract class LayoutToggleAbstractDirective
+  extends _TdLayoutToggleMixinBase
+  implements AfterViewInit, OnDestroy, ICanDisable {
   private _toggleSubs: Subscription;
 
   private _initialized: boolean = false;
@@ -38,7 +53,11 @@ export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements A
     }
   }
 
-  constructor(protected _layout: ILayoutTogglable, private _renderer: Renderer2, private _elementRef: ElementRef) {
+  constructor(
+    @Inject('ILayoutTogglable') protected _layout: ILayoutTogglable,
+    private _renderer: Renderer2,
+    private _elementRef: ElementRef,
+  ) {
     super();
     // if layout has not been provided
     // show warn message
