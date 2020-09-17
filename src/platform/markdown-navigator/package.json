@@ -26,6 +26,9 @@
   "contributors": [
     "Christian Memije <christian.memije@teradata.com>"
   ],
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
     "@angular/core": "0.0.0-NG",
     "@angular/common": "0.0.0-NG",

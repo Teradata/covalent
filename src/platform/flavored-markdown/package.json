@@ -32,7 +32,8 @@
   ],
   "dependencies": {
     "highlight.js": "0.0.0-HIGHLIGHT",
-    "showdown": "0.0.0-SHOWDOWN"
+    "showdown": "0.0.0-SHOWDOWN",
+    "tslib": "^2.0.0"
   },
   "peerDependencies": {
     "@angular/common": "0.0.0-NG",

@@ -12,7 +12,7 @@ import {
   ITdSeries,
   ITdLabel,
   TdProgressiveChunkMode,
-  TdSeriesComponent,
+  TdSeriesDirective,
 } from '@covalent/echarts/base';
 
 export interface ITdBarSeries extends ITdSeries<'bar'> {
@@ -71,12 +71,12 @@ export interface ITdBarSeries extends ITdSeries<'bar'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesBarComponent),
     },
   ],
 })
-export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implements ITdBarSeries {
+export class TdChartSeriesBarComponent extends TdSeriesDirective<'bar'> implements ITdBarSeries {
   @Input() coordinateSystem: TdCoordinateSystem;
   @Input() xAxisIndex: number;
   @Input() yAxisIndex: number;

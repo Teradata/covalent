@@ -11,7 +11,7 @@ import {
   ITdMarkArea,
   ITdSeries,
   ITdLabel,
-  TdSeriesComponent,
+  TdSeriesDirective,
   TdMarkPointSymbol,
   ITdLineStyle,
   ITdEdgeLabel,
@@ -120,12 +120,12 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesGraphComponent),
     },
   ],
 })
-export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> implements ITdGraphSeries {
+export class TdChartSeriesGraphComponent extends TdSeriesDirective<'graph'> implements ITdGraphSeries {
   @Input() legendHoverLink: boolean;
   @Input() coordinateSystem: TdCoordinateSystem;
   @Input() xAxisIndex: number;

@@ -1,4 +1,4 @@
-import { Input, OnChanges, OnInit, OnDestroy } from '@angular/core';
+import { Input, OnChanges, OnInit, OnDestroy, Directive } from '@angular/core';
 
 import { assignDefined } from '../utils/assign-defined';
 import { TdChartOptionsService } from '../chart-options.service';
@@ -14,7 +14,8 @@ export interface ITdSeries<T> extends ITdAnimation {
   tooltip?: ITdSeriesTooltip;
 }
 
-export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChanges, OnInit, OnDestroy {
+@Directive()
+export abstract class TdSeriesDirective<T = any> implements ITdSeries<T>, OnChanges, OnInit, OnDestroy {
   private _type: T;
 
   get type(): T {

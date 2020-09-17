@@ -6,7 +6,7 @@ import {
   ITdSeriesTooltip,
   ITdLabel,
   ITdSeries,
-  TdSeriesComponent,
+  TdSeriesDirective,
   ITdEmphasis,
   ITdShadow,
 } from '@covalent/echarts/base';
@@ -131,12 +131,12 @@ interface ITdTreemapSeries extends ITdSeries<'treemap'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesTreemapComponent),
     },
   ],
 })
-export class TdChartSeriesTreemapComponent extends TdSeriesComponent<'treemap'> implements ITdTreemapSeries {
+export class TdChartSeriesTreemapComponent extends TdSeriesDirective<'treemap'> implements ITdTreemapSeries {
   @Input() config: any = {};
   @Input() id: string;
   @Input() name: string;

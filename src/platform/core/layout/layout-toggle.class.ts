@@ -1,4 +1,13 @@
-import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import {
+  Input,
+  HostBinding,
+  HostListener,
+  Renderer2,
+  ElementRef,
+  AfterViewInit,
+  OnDestroy,
+  Directive,
+} from '@angular/core';
 
 import { MatSidenav, MatDrawerToggleResult } from '@angular/material/sidenav';
 
@@ -19,7 +28,10 @@ export class LayoutToggleBase {}
 /* tslint:disable-next-line */
 export const _TdLayoutToggleMixinBase = mixinDisabled(LayoutToggleBase);
 
-export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements AfterViewInit, OnDestroy, ICanDisable {
+@Directive()
+export abstract class BaseLayoutToggleDirectiive
+  extends _TdLayoutToggleMixinBase
+  implements AfterViewInit, OnDestroy, ICanDisable {
   private _toggleSubs: Subscription;
 
   private _initialized: boolean = false;

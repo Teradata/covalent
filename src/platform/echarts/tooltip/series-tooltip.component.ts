@@ -11,7 +11,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 
-import { assignDefined, TdSeriesComponent } from '@covalent/echarts/base';
+import { assignDefined, TdSeriesDirective } from '@covalent/echarts/base';
 
 import { TdChartTooltipFormatterDirective, TdTooltipContext } from './tooltip.component';
 
@@ -47,7 +47,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
     private _elementRef: ElementRef,
-    private _seriesComponent: TdSeriesComponent,
+    private _seriesComponent: TdSeriesDirective,
   ) {}
 
   ngOnChanges(): void {

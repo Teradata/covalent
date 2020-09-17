@@ -8,7 +8,7 @@ import {
   ITdLabel,
   ITdLineStyle,
   ITdSeries,
-  TdSeriesComponent,
+  TdSeriesDirective,
   ITdEmphasis,
   ITdShadow,
 } from '@covalent/echarts/base';
@@ -95,12 +95,12 @@ interface ITdTreeSeries extends ITdSeries<'tree'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesTreeComponent),
     },
   ],
 })
-export class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implements ITdTreeSeries {
+export class TdChartSeriesTreeComponent extends TdSeriesDirective<'tree'> implements ITdTreeSeries {
   @Input() zlevel: number;
   @Input() z: number;
   @Input() left: string | number;

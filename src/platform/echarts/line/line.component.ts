@@ -15,7 +15,7 @@ import {
   ITdEmphasis,
   ITdSeries,
   ITdShadow,
-  TdSeriesComponent,
+  TdSeriesDirective,
 } from '@covalent/echarts/base';
 
 export type TdSampling = 'average' | 'max' | 'min' | 'sum';
@@ -85,12 +85,12 @@ export interface ITdLineSeries extends ITdSeries<'line'>, ITdShadow {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesLineComponent),
     },
   ],
 })
-export class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implements ITdLineSeries {
+export class TdChartSeriesLineComponent extends TdSeriesDirective<'line'> implements ITdLineSeries {
   @Input() coordinateSystem: TdCoordinateSystem;
   @Input() xAxisIndex: number;
   @Input() yAxisIndex: number;

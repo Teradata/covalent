@@ -6,7 +6,7 @@ import {
   ITdItemStyle,
   ITdEmphasis,
   ITdSeries,
-  TdSeriesComponent,
+  TdSeriesDirective,
   ITdShadow,
   ITdLineCurveStyle,
 } from '@covalent/echarts/base';
@@ -74,12 +74,12 @@ export interface ITdSankeySeries extends ITdSeries<'sankey'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesSankeyComponent),
     },
   ],
 })
-export class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> implements ITdSankeySeries {
+export class TdChartSeriesSankeyComponent extends TdSeriesDirective<'sankey'> implements ITdSankeySeries {
   @Input() zlevel: number;
   @Input() z: number;
   @Input() left: string | number;

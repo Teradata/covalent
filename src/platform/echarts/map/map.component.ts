@@ -8,7 +8,7 @@ import {
   ITdMarkArea,
   ITdSeries,
   ITdLabel,
-  TdSeriesComponent,
+  TdSeriesDirective,
 } from '@covalent/echarts/base';
 
 export type TdMapValueCalculation = 'sum' | 'average' | 'max' | 'min';
@@ -78,12 +78,12 @@ export interface ITdMapSeries extends ITdSeries<'map'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesMapComponent),
     },
   ],
 })
-export class TdChartSeriesMapComponent extends TdSeriesComponent<'map'> implements ITdMapSeries {
+export class TdChartSeriesMapComponent extends TdSeriesDirective<'map'> implements ITdMapSeries {
   @Input() map: string;
   @Input() roam: boolean;
   @Input() center: number[];
