@@ -75,7 +75,7 @@ export interface ITdTreemapBreadcrumb {
   emphasis?: ITdTreemapEmphasis;
 }
 
-interface ITdTreemapSeries extends ITdSeries<'treemap'> {
+interface ITdTreemapSeries extends ITdSeries {
   zlevel?: number;
   z?: number;
   left?: string | number;
@@ -136,7 +136,7 @@ interface ITdTreemapSeries extends ITdSeries<'treemap'> {
     },
   ],
 })
-export class TdChartSeriesTreemapComponent extends TdSeriesDirective<'treemap'> implements ITdTreemapSeries {
+export class TdChartSeriesTreemapComponent extends TdSeriesDirective implements ITdTreemapSeries {
   @Input() config: any = {};
   @Input() id: string;
   @Input() name: string;

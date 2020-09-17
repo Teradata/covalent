@@ -15,7 +15,7 @@ import {
   TdSeriesDirective,
 } from '@covalent/echarts/base';
 
-export interface ITdBarSeries extends ITdSeries<'bar'> {
+export interface ITdBarSeries extends ITdSeries {
   legendHoverLink?: boolean;
   coordinateSystem?: TdCoordinateSystem;
   xAxisIndex?: number;
@@ -76,7 +76,7 @@ export interface ITdBarSeries extends ITdSeries<'bar'> {
     },
   ],
 })
-export class TdChartSeriesBarComponent extends TdSeriesDirective<'bar'> implements ITdBarSeries {
+export class TdChartSeriesBarComponent extends TdSeriesDirective implements ITdBarSeries {
   @Input() coordinateSystem: TdCoordinateSystem;
   @Input() xAxisIndex: number;
   @Input() yAxisIndex: number;

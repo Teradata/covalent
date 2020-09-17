@@ -15,7 +15,7 @@ import {
   ITdSeries,
 } from '@covalent/echarts/base';
 
-export interface ITdScatterSeries extends ITdSeries<'scatter'> {
+export interface ITdScatterSeries extends ITdSeries {
   coordinateSystem?: TdCoordinateSystem;
   xAxisIndex?: number;
   yAxisIndex?: number;
@@ -81,7 +81,7 @@ export interface ITdScatterSeries extends ITdSeries<'scatter'> {
     },
   ],
 })
-export class TdChartSeriesScatterComponent extends TdSeriesDirective<'scatter'> implements ITdScatterSeries {
+export class TdChartSeriesScatterComponent extends TdSeriesDirective implements ITdScatterSeries {
   @Input() coordinateSystem: TdCoordinateSystem;
   @Input() xAxisIndex: number;
   @Input() yAxisIndex: number;

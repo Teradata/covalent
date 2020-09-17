@@ -25,7 +25,7 @@ export interface ITdSankeyEmphasis extends ITdEmphasis {
   lineStyle: ITdSankeyEmphasisLineStyle;
 }
 
-export interface ITdSankeySeries extends ITdSeries<'sankey'> {
+export interface ITdSankeySeries extends ITdSeries {
   zlevel?: number;
   z?: number;
   left?: string | number;
@@ -79,7 +79,7 @@ export interface ITdSankeySeries extends ITdSeries<'sankey'> {
     },
   ],
 })
-export class TdChartSeriesSankeyComponent extends TdSeriesDirective<'sankey'> implements ITdSankeySeries {
+export class TdChartSeriesSankeyComponent extends TdSeriesDirective implements ITdSankeySeries {
   @Input() zlevel: number;
   @Input() z: number;
   @Input() left: string | number;

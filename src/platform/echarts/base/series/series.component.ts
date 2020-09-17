@@ -5,20 +5,20 @@ import { TdChartOptionsService } from '../chart-options.service';
 import { ITdSeriesTooltip } from '../series/series.interface';
 import { ITdAnimation } from '../base.types';
 
-export interface ITdSeries<T> extends ITdAnimation {
+export interface ITdSeries extends ITdAnimation {
   id?: string;
   name?: string;
   color?: string;
-  type?: T;
+  type?: string;
 
   tooltip?: ITdSeriesTooltip;
 }
 
 @Directive()
-export abstract class TdSeriesDirective<T = any> implements ITdSeries<T>, OnChanges, OnInit, OnDestroy {
-  private _type: T;
+export abstract class TdSeriesDirective implements ITdSeries, OnChanges, OnInit, OnDestroy {
+  private _type: string;
 
-  get type(): T {
+  get type(): string {
     return this._type;
   }
 
@@ -42,7 +42,7 @@ export abstract class TdSeriesDirective<T = any> implements ITdSeries<T>, OnChan
   @Input() animationDelayUpdate: number | Function;
   @Input() tooltip: ITdSeriesTooltip;
 
-  constructor(type: T, protected optionsService: TdChartOptionsService) {
+  constructor(type: string, protected optionsService: TdChartOptionsService) {
     this._type = type;
   }
 

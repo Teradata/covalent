@@ -1,11 +1,11 @@
 import { Optional, Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
 import { TdLayoutComponent } from './layout.component';
-import { BaseLayoutToggleDirectiive } from './layout-toggle.class';
+import { BaseLayoutToggleDirective } from './layout-toggle.class';
 
 @Directive({
   selector: '[tdLayoutToggle]',
 })
-export class TdLayoutToggleDirective extends BaseLayoutToggleDirectiive {
+export class TdLayoutToggleDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutToggle')
   set tdLayoutToggle(tdLayoutToggle: boolean) {
     this.disabled = !(<any>tdLayoutToggle === '' || tdLayoutToggle);
@@ -27,7 +27,7 @@ export class TdLayoutToggleDirective extends BaseLayoutToggleDirectiive {
 @Directive({
   selector: '[tdLayoutClose]',
 })
-export class TdLayoutCloseDirective extends BaseLayoutToggleDirectiive {
+export class TdLayoutCloseDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutClose')
   set tdLayoutClose(tdLayoutClose: boolean) {
     this.disabled = !(<any>tdLayoutClose === '' || tdLayoutClose);
@@ -49,7 +49,7 @@ export class TdLayoutCloseDirective extends BaseLayoutToggleDirectiive {
 @Directive({
   selector: '[tdLayoutOpen]',
 })
-export class TdLayoutOpenDirective extends BaseLayoutToggleDirectiive {
+export class TdLayoutOpenDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutOpen')
   set tdLayoutClose(tdLayoutOpen: boolean) {
     this.disabled = !(<any>tdLayoutOpen === '' || tdLayoutOpen);

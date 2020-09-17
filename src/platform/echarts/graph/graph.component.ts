@@ -39,7 +39,7 @@ export interface ITdGraphForce {
 
 export type TdGraphLayout = 'none' | 'circular' | 'force';
 
-export interface ITdGraphSeries extends ITdSeries<'graph'> {
+export interface ITdGraphSeries extends ITdSeries {
   legendHoverLink?: boolean;
   coordinateSystem?: TdCoordinateSystem;
   xAxisIndex?: number;
@@ -125,7 +125,7 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
     },
   ],
 })
-export class TdChartSeriesGraphComponent extends TdSeriesDirective<'graph'> implements ITdGraphSeries {
+export class TdChartSeriesGraphComponent extends TdSeriesDirective implements ITdGraphSeries {
   @Input() legendHoverLink: boolean;
   @Input() coordinateSystem: TdCoordinateSystem;
   @Input() xAxisIndex: number;

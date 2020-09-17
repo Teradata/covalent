@@ -45,7 +45,7 @@ export interface ITdTreeLeaves {
   emphasis: ITdEmphasis;
 }
 
-interface ITdTreeSeries extends ITdSeries<'tree'> {
+interface ITdTreeSeries extends ITdSeries {
   zlevel?: number;
   z?: number;
   left?: string | number;
@@ -100,7 +100,7 @@ interface ITdTreeSeries extends ITdSeries<'tree'> {
     },
   ],
 })
-export class TdChartSeriesTreeComponent extends TdSeriesDirective<'tree'> implements ITdTreeSeries {
+export class TdChartSeriesTreeComponent extends TdSeriesDirective implements ITdTreeSeries {
   @Input() zlevel: number;
   @Input() z: number;
   @Input() left: string | number;

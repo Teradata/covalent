@@ -24,7 +24,7 @@ export interface ITdMapItemStyle {
   emphasis?: ITdItemStyle;
 }
 
-export interface ITdMapSeries extends ITdSeries<'map'> {
+export interface ITdMapSeries extends ITdSeries {
   map?: string;
   roam?: boolean;
   center?: number[];
@@ -83,7 +83,7 @@ export interface ITdMapSeries extends ITdSeries<'map'> {
     },
   ],
 })
-export class TdChartSeriesMapComponent extends TdSeriesDirective<'map'> implements ITdMapSeries {
+export class TdChartSeriesMapComponent extends TdSeriesDirective implements ITdMapSeries {
   @Input() map: string;
   @Input() roam: boolean;
   @Input() center: number[];

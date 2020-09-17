@@ -14,7 +14,7 @@ import {
   TdSeriesDirective,
 } from '@covalent/echarts/base';
 
-export interface ITdPieSeries extends ITdSeries<'pie'> {
+export interface ITdPieSeries extends ITdSeries {
   legendHoverLink?: boolean;
   hoverAnimation?: boolean;
   hoverOffset?: number;
@@ -73,7 +73,7 @@ export interface ITdPieSeries extends ITdSeries<'pie'> {
     },
   ],
 })
-export class TdChartSeriesPieComponent extends TdSeriesDirective<'pie'> implements ITdPieSeries {
+export class TdChartSeriesPieComponent extends TdSeriesDirective implements ITdPieSeries {
   @Input() legendHoverLink: boolean;
   @Input() hoverAnimation: boolean;
   @Input() hoverOffset: number;

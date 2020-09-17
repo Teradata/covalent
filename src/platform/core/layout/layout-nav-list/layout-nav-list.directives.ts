@@ -1,12 +1,12 @@
 import { Optional, Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
 import { TdLayoutNavListComponent } from './layout-nav-list.component';
-import { BaseLayoutToggleDirectiive } from '../layout-toggle.class';
+import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 
 @Directive({
   selector: '[tdLayoutNavListToggle]',
   inputs: ['hideWhenOpened'],
 })
-export class TdLayoutNavListToggleDirective extends BaseLayoutToggleDirectiive {
+export class TdLayoutNavListToggleDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutNavListToggle')
   set tdLayoutNavListToggle(tdLayoutNavListToggle: boolean) {
     this.disabled = !(<any>tdLayoutNavListToggle === '' || tdLayoutNavListToggle);
@@ -29,7 +29,7 @@ export class TdLayoutNavListToggleDirective extends BaseLayoutToggleDirectiive {
   selector: '[tdLayoutNavListClose]',
   inputs: ['hideWhenOpened'],
 })
-export class TdLayoutNavListCloseDirective extends BaseLayoutToggleDirectiive {
+export class TdLayoutNavListCloseDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutNavListClose')
   set tdLayoutNavListClose(tdLayoutNavListClose: boolean) {
     this.disabled = !(<any>tdLayoutNavListClose === '' || tdLayoutNavListClose);
@@ -52,7 +52,7 @@ export class TdLayoutNavListCloseDirective extends BaseLayoutToggleDirectiive {
   selector: '[tdLayoutNavListOpen]',
   inputs: ['hideWhenOpened'],
 })
-export class TdLayoutNavListOpenDirective extends BaseLayoutToggleDirectiive {
+export class TdLayoutNavListOpenDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutNavListOpen')
   set tdLayoutNavListOpen(tdLayoutNavListOpen: boolean) {
     this.disabled = !(<any>tdLayoutNavListOpen === '' || tdLayoutNavListOpen);
