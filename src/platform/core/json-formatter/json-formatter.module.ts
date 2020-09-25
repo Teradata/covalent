@@ -5,9 +5,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 
 import { TdJsonFormatterComponent } from './json-formatter.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  imports: [CommonModule, MatTooltipModule, MatIconModule],
+  imports: [CommonModule, MatTooltipModule, MatIconModule, ScrollingModule, MatButtonModule],
   declarations: [TdJsonFormatterComponent],
   exports: [TdJsonFormatterComponent],
 })
