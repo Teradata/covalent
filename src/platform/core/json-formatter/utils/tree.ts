@@ -33,7 +33,6 @@ export class JsonHirearchy {
   type: any = '';
   rootNode: JsonTreeNode;
 
-  // Perform traversal upon initiation
   constructor(json: any, key: string = '') {
     this.rootNode = new JsonTreeNode(key, json);
     this.rootNode.valueType = getType(json);
@@ -42,11 +41,11 @@ export class JsonHirearchy {
     this.tree = [this.rootNode];
   }
 
-  jsonTransform(obj: object) {
+  jsonTransform(obj: any) {
     return Object.entries(obj).reduce<JsonTree>((tree: JsonTree, [key, value]: any) => {
       const node = new JsonTreeNode(key, value);
-      // If object or array dive in, dates are exempt here
-      if (isCollection(value) && !isDate(value) && !isUndefined(value)) {
+
+      if (node.valueType === 'array' || node.valueType === 'object') {
         node.children = this.jsonTransform(value);
       }
 

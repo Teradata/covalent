@@ -1,4 +1,4 @@
-<cdk-virtual-scroll-viewport class="td-json-formatter-wrapper" itemSize="24">
+<cdk-virtual-scroll-viewport #viewport class="td-json-formatter-wrapper" itemSize="24">
   <ng-container *cdkVirtualFor="let node of dataSource; let first = first">
     <div class="td-node" [style.padding-left]="node.level * 24 + 'px'">
       <button
@@ -8,18 +8,20 @@
         [style.visibility]="node.hasChildren ? 'visible' : 'hidden'"
       >
         <mat-icon class="mat-icon-rtl-mirror">
-          {{ treeControl.isExpanded(node) ? "expand_more" : "chevron_right" }}
+          {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
         </mat-icon>
       </button>
-      <span class="key">{{ node.key || key }} </span>
+      <span class="key">{{ displayKey(node.key || key) }}</span>
       <span *ngIf="!first || key">:</span>
       <span
         class="value"
         [ngClass]="node.valueType"
-        [class.td-empty]="node.valueType === 'object' && !node.childrenCount"
+        [class.td-empty]="(node.valueType === 'object' || node.valueType === 'array') && !node.hasChildren"
+        [matTooltip]="getPreview(node)"
+        matTooltipPosition="after"
       >
-        {{ getValue(node) }}</span
-      >
+        {{ getValue(node) }}
+      </span>
     </div>
   </ng-container>
 </cdk-virtual-scroll-viewport>
