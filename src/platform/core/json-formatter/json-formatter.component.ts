@@ -5,21 +5,56 @@ import { Component, Input, ViewChild } from '@angular/core';
 
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { JsonHirearchy, JsonTree, JsonTreeNode } from './utils/tree';
-import {
-  getNodeLevel,
-  getIsNodeExpandable,
-  nodeTransformer,
-  getNodeChildren,
-  JsonTreeFlatNode,
-  isArray,
-} from './utils/tree.utils';
+import { JsonTreeFlatNode } from './utils/tree.utils';
 
 /**
- * Setup type value map to render correct values for each
- * supported type
+ * Function to be passed to TreeFlattener to figure out if
+ * node has children.
+ */
+export function getIsNodeExpandable({ hasChildren }: JsonTreeFlatNode): boolean {
+  return hasChildren;
+}
+
+/**
+ * Function to be passed to TreeFlattener to transform
+ * a JSonTreeNode -> JsonTreeFlatNode.
+ */
+export function nodeTransformer(node: JsonTreeNode, level: number): JsonTreeFlatNode {
+  const hasChildren: boolean = node && node.children && node.children.length > 0 ? true : false;
+  return {
+    key: node.key,
+    value: node.value,
+    valueType: node.valueType,
+    level: level,
+    hasChildren: hasChildren,
+    childrenCount: hasChildren ? node.children.length : 0,
+    isExpanded: false,
+    originalNode: node,
+  };
+}
+
+/**
+ * Function to be passed to TreeFlattener to figure out
+ * node level.
+ */
+export function getNodeLevel({ level }: JsonTreeFlatNode): number {
+  return level;
+}
+
+/**
+ * Function to be passed to TreeFlattener that returns
+ * a node's children.
+ */
+export function getNodeChildren({ children }: JsonTreeNode): JsonTreeNode[] {
+  return children;
+}
+
+/**
+ * Strategies to handle rendering of a node's value
+ * based on its own type.
  */
 export const typeValues: {
-  [key: string]: (node: JsonTreeFlatNode | JsonTreeNode) => any;
+  [key: string]: (node: JsonTreeFlatNode | JsonTreeNode) => string;
 } = {
   boolean: (node) => node.value,
   number: (node) => node.value,
@@ -35,7 +70,6 @@ export const typeValues: {
       .replace(/\{.*\}/, '') + '{…}',
   array: (node) => `Array [${node.value.length}]`,
 };
-export const valueByType = new Map(Object.entries(typeValues));
 
 @Component({
   selector: 'td-json-formatter',
@@ -43,8 +77,6 @@ export const valueByType = new Map(Object.entries(typeValues));
   templateUrl: './json-formatter.component.html',
 })
 export class TdJsonFormatterComponent {
-  @ViewChild('viewport', { static: true }) _viewPort: CdkVirtualScrollViewport;
-
   /**
    * Max length for property names. Any names bigger than this get trunctated.
    */
@@ -64,9 +96,34 @@ export class TdJsonFormatterComponent {
   private _levelsOpen: number = 0;
   private _key: string;
 
+  /**
+   * Map of strategies to use when rendering values based on type.
+   */
+  private _renderByTypeStrategy: Map<string, (node: JsonTreeFlatNode | JsonTreeNode) => string> = new Map(
+    Object.entries(typeValues),
+  );
+
+  /**
+   * Treecontrol for generated hirearchy from JSON.
+   */
+  _treeControl: FlatTreeControl<JsonTreeFlatNode> = new FlatTreeControl<JsonTreeFlatNode>(
+    getNodeLevel,
+    getIsNodeExpandable,
+  );
+
+  /**
+   * Data source to be used for tree.
+   */
+  _dataSource: MatTreeFlatDataSource<JsonTreeNode, JsonTreeFlatNode>;
+
+  /**
+   * data: any
+   * JS object to be formatted.
+   */
+
   @Input() set data(json) {
     this._data = new JsonHirearchy(json, this.key || '').tree || [];
-    this.dataSource.data = this._data;
+    this._dataSource.data = this._data;
   }
 
   get data() {
@@ -83,9 +140,9 @@ export class TdJsonFormatterComponent {
       throw new Error('[levelsOpen] needs to be an integer.');
     }
     this._levelsOpen = levelsOpen;
-    this.treeControl.dataNodes.forEach((node: JsonTreeFlatNode) => {
+    this._treeControl.dataNodes.forEach((node: JsonTreeFlatNode) => {
       const relativeLevel = levelsOpen - 1;
-      node.level <= relativeLevel && node.hasChildren && this.treeControl.expand(node);
+      node.level <= relativeLevel && node.hasChildren && this._treeControl.expand(node);
     });
   }
   get levelsOpen(): number {
@@ -101,14 +158,8 @@ export class TdJsonFormatterComponent {
     this._key = key;
   }
   get key(): string {
-    return this.displayKey(this._key) || '';
+    return this._displayKey(this._key) || '';
   }
-
-  treeControl: FlatTreeControl<JsonTreeFlatNode> = new FlatTreeControl<JsonTreeFlatNode>(
-    getNodeLevel,
-    getIsNodeExpandable,
-  );
-  dataSource: MatTreeFlatDataSource<JsonTreeNode, JsonTreeFlatNode>;
 
   constructor() {
     const treeFlattener = new MatTreeFlattener<JsonTreeNode, JsonTreeFlatNode>(
@@ -117,67 +168,56 @@ export class TdJsonFormatterComponent {
       getIsNodeExpandable,
       getNodeChildren,
     );
-    // Populates our flattened data into the tree control
-    this.dataSource = new MatTreeFlatDataSource(this.treeControl, treeFlattener);
+
+    this._dataSource = new MatTreeFlatDataSource(this._treeControl, treeFlattener);
   }
 
-  displayKey(key: any): string {
+  _displayKey(key: any): string {
     const elipsis: string = key && key.length > TdJsonFormatterComponent.KEY_MAX_LENGTH ? '…' : '';
     return key ? `${key.substring(0, 30)}${elipsis}` : key;
   }
 
-  getValue(node: JsonTreeFlatNode | JsonTreeNode): string {
-    return valueByType.get(node.valueType)(node);
+  _getValue(node: JsonTreeFlatNode | JsonTreeNode): string {
+    return this._renderByTypeStrategy.get(node.valueType)(node);
   }
 
-  hasChild(index: number, nodeData: JsonTreeFlatNode) {
+  _hasChild(nodeData: JsonTreeFlatNode) {
     return getIsNodeExpandable(nodeData);
   }
 
-  getParentNode(node: JsonTreeFlatNode) {
-    const nodeIndex = this.dataSource._flattenedData.value.indexOf(node);
+  /**
+   * Helper method for getting preview of values.
+   */
 
-    for (let i = nodeIndex - 1; i >= 0; i--) {
-      if (this.dataSource._flattenedData.value[i].level === node.level - 1) {
-        return this.dataSource._flattenedData.value[i];
-      }
-    }
-
-    return null;
-  }
-
-  shouldRender(node: JsonTreeFlatNode) {
-    const parent = this.getParentNode(node);
-    return !parent || parent.isExpanded;
-  }
-
-  private previewHelper: any = {
+  private _previewHelper: any = {
     needsEllipsis: (previewData: any, previewString: any) =>
       previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ||
       previewString.length > TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH,
     previewNodes: (node: JsonTreeFlatNode) =>
       node?.originalNode?.children?.slice(0, TdJsonFormatterComponent.PREVIEW_LIMIT),
     object: {
-      callback: (node: JsonTreeNode) => node.key + ': ' + this.getValue(node),
+      callback: (node: JsonTreeNode) => node.key + ': ' + this._getValue(node),
       chars: ['{', '}'],
     },
     array: {
-      callback: (node: JsonTreeNode) => this.getValue(node),
+      callback: (node: JsonTreeNode) => this._getValue(node),
       chars: ['[', ']'],
     },
   };
+
   /**
    * Creates preview of nodes children to render in tooltip depending if its an array or an object.
    */
-  getPreview(node: JsonTreeFlatNode): string {
+
+  _getPreview(node: JsonTreeFlatNode): string {
     if (node.valueType === 'array' || node.valueType === 'object') {
       const type: string = node.valueType;
-      const [startChar, endChar] = this.previewHelper[type].chars;
+      const [startChar, endChar] = this._previewHelper[type].chars;
 
-      const previewData = this.previewHelper.previewNodes(node).map(this.previewHelper[type].callback);
+      const previewData = this._previewHelper.previewNodes(node).map(this._previewHelper[type].callback);
 
       const previewString: string = previewData.join(', ');
-      const ellipsis: string = this.previewHelper.needsEllipsis(previewData, previewString) ? '…' : '';
+      const ellipsis: string = this._previewHelper.needsEllipsis(previewData, previewString) ? '…' : '';
 
       const truncatedPreviewString: string = previewString.substring(
         0,
