@@ -21,12 +21,18 @@ export class JsonTreeNode {
   children?: JsonTreeNode[];
 }
 
-export const getType = (value: any) => {
-  if (isObject(value) && !isUndefined(value)) {
-    return !value ? 'null' : isArray(value) ? 'array' : isDate(value) ? 'date' : 'object';
-  }
-  return typeof value;
-};
+/**
+ * Gets type of object.
+ * returns 'null' if object is null and 'date' if value is object and can be parsed to a date.
+ */
+
+export function getObjectType(object: any): string {
+  return !object ? 'null' : isArray(object) ? 'array' : isDate(object) ? 'date' : 'object';
+}
+
+export function getType(value: any): string {
+  return isObject(value) ? getObjectType(value) : typeof value;
+}
 
 export class JsonHirearchy {
   tree: JsonTree = [];
