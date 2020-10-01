@@ -7,6 +7,20 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree'
 import { JsonHirearchy, JsonTree, JsonTreeNode } from './utils/tree';
 import { JsonTreeFlatNode } from './utils/tree.utils';
 
+interface PreviewHelper {
+  needsEllipsis: (previewData: any, previewString: any) => boolean;
+  previewNodes: (node: JsonTreeFlatNode) => JsonTreeNode[];
+  previewStrategy: {
+    object: previewTypeStrategy;
+    array: previewTypeStrategy;
+  };
+}
+
+type previewTypeStrategy = {
+  format: (node: JsonTreeNode) => string;
+  chars: string[];
+};
+
 /**
  * Function to be passed to TreeFlattener to figure out if
  * node has children.
@@ -140,9 +154,9 @@ export class TdJsonFormatterComponent {
       throw new Error('[levelsOpen] needs to be an integer.');
     }
     this._levelsOpen = levelsOpen;
+
     this._treeControl.dataNodes.forEach((node: JsonTreeFlatNode) => {
-      const relativeLevel = levelsOpen - 1;
-      node.level <= relativeLevel && node.hasChildren && this._treeControl.expand(node);
+      node.level < levelsOpen && node.hasChildren && this._treeControl.expand(node);
     });
   }
   get levelsOpen(): number {
@@ -189,19 +203,21 @@ export class TdJsonFormatterComponent {
    * Helper method for getting preview of values.
    */
 
-  private _previewHelper: any = {
+  private _previewHelper: PreviewHelper = {
     needsEllipsis: (previewData: any, previewString: any) =>
       previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ||
       previewString.length > TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH,
     previewNodes: (node: JsonTreeFlatNode) =>
       node?.originalNode?.children?.slice(0, TdJsonFormatterComponent.PREVIEW_LIMIT),
-    object: {
-      callback: (node: JsonTreeNode) => node.key + ': ' + this._getValue(node),
-      chars: ['{', '}'],
-    },
-    array: {
-      callback: (node: JsonTreeNode) => this._getValue(node),
-      chars: ['[', ']'],
+    previewStrategy: {
+      object: {
+        format: (node: JsonTreeNode) => node.key + ': ' + this._getValue(node),
+        chars: ['{', '}'],
+      },
+      array: {
+        format: (node: JsonTreeNode) => this._getValue(node),
+        chars: ['[', ']'],
+      },
     },
   };
 
@@ -212,9 +228,11 @@ export class TdJsonFormatterComponent {
   _getPreview(node: JsonTreeFlatNode): string {
     if (node.valueType === 'array' || node.valueType === 'object') {
       const type: string = node.valueType;
-      const [startChar, endChar] = this._previewHelper[type].chars;
+      const [startChar, endChar]: string[] = this._previewHelper.previewStrategy[type].chars;
 
-      const previewData = this._previewHelper.previewNodes(node).map(this._previewHelper[type].callback);
+      const previewData: string[] = this._previewHelper
+        .previewNodes(node)
+        .map(this._previewHelper.previewStrategy[type].format);
 
       const previewString: string = previewData.join(', ');
       const ellipsis: string = this._previewHelper.needsEllipsis(previewData, previewString) ? '…' : '';

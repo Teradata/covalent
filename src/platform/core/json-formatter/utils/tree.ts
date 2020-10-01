@@ -2,13 +2,6 @@ import { isArray, isDate, isObject, isUndefined } from './tree.utils';
 
 export type JsonTree = JsonTreeNode[];
 
-export interface JsonTreeNode {
-  key: string;
-  value: any;
-  valueType: string;
-  children?: JsonTreeNode[];
-}
-
 export class JsonTreeNode {
   constructor(key: any, value: any) {
     this.key = key;
