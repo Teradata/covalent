@@ -257,7 +257,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
             this.shepherdTour.back();
           }
         },
-        classes: MAT_ICON_BUTTON,
+        classes: step.advanceOnOptions?.allowGoBack === false ? MAT_BUTTON_INVISIBLE : MAT_ICON_BUTTON,
       };
 
       // check if highlight was provided for the step, else fallback into shepherds usage

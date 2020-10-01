@@ -60,6 +60,7 @@ export interface ITdDataTableColumn {
   hidden?: boolean;
   filter?: boolean;
   width?: ITdDataTableColumnWidth | number;
+  columnSortOrder?: number;
 }
 
 export interface ITdDataTableSelectEvent {
