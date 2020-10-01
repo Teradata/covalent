@@ -49,8 +49,8 @@ Execute `npm run publish:npm -- next` to publish a beta/RC Release.
 
 #### Post Release Checklist
 
-1. Deploy to ghpages using `npm run ghpages:deploy`
-2. Update `stackblitz` if needed
-3. Update Covalent Quickstart (or Seed) with small commits to show step by step the upgrade process
+1. Deploy to ghpages using `npm run ghpages:deploy`.
+2. Edit the tag with the version and put the changelog as the description.
+3. Update `stackblitz` if needed.
 4. Update UPGRADE.md as necessary.
 5. Throw party~
