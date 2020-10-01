@@ -13,6 +13,8 @@
 1. Make sure the `build.conf.js` points to the correct versions.
 2. `ng serve --prod` works fine.
 3. `npm run build:lib` works fine.
+4. Must have admin permissions to this repo.
+5. Must have an npm account and permissions to publish to covalent.  Can check login with `npm login`.
 
 #### Start Release
 
