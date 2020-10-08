@@ -14,7 +14,7 @@ By default, `--dev` build will log the following message in the console to let y
 
 #### Inputs
 
-+ lang: string
++ codeLang: string
   + Language of the code content to be parsed as highlighted html.
 + content: string
   + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
