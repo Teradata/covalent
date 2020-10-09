@@ -8,7 +8,6 @@ import { HighlightDemoRoutingModule } from './highlight-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { HighLightDemoCssSharedModule } from './highlight-demo-css/highlight-demo-css-shared';
 import { HighlightDemoCopyCodeComponent } from './highlight-demo-copy-code/highlight-demo-copy-code.component';
-import { HighlightDemoDeprecatedLangAttributeComponent } from './highlight-demo-deprecated-lang-attribute/highlight-demo-deprecated-lang-attribute.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { HighlightDemoDeprecatedLangAttributeComponent } from './highlight-demo-
     HighlightDemoHtmlComponent,
     HighlightDemoTsComponent,
     HighlightDemoCopyCodeComponent,
-    HighlightDemoDeprecatedLangAttributeComponent,
   ],
   imports: [
     HighLightDemoCssSharedModule,
