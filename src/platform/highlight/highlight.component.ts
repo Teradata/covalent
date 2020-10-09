@@ -74,9 +74,11 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   set codeLang(lang: string) {
     this.setLanguage(lang);
   }
-  /** @deprecated */
+  /** @deprecated - removed completely @4.0.0 */
   @Input()
   set lang(lang: string) {
+    // tslint:disable-next-line: no-console
+    console.warn('DEPRECATION WARNING: switch to codeLang attribute as lang attribute is deprecated.');
     this.setLanguage(lang);
   }
 

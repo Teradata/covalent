@@ -14,6 +14,9 @@ By default, `--dev` build will log the following message in the console to let y
 
 #### Inputs
 
++ lang: string
+  + Language of the code content to be parsed as highlighted html.
+   > **DEPRECATION WARNING: lang attribute is deprecated and it will be removed in v4.0.0**
 + codeLang: string
   + Language of the code content to be parsed as highlighted html.
 + content: string
