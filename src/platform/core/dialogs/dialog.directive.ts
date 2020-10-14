@@ -11,16 +11,16 @@ const EMAIL_REGEXP: RegExp = /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`
 export class TdValidateInputDirective implements Validator {
   @Input() validator: IInputValidator;
 
-  errorMessages: string[];
+  returnedErrors: {};
   validate(c: FormControl): ValidationErrors {
+    this.returnedErrors = {};
     const isInValid: boolean =
-      this.isInputValueEmpty(c.value) ||
+      this.isRequired(c.value) ||
       this.isMinConditionInValid(c.value) ||
       this.isMaxConditionInValid(c.value) ||
       !this.isEmail(c.value) ||
-      this.isRequired(c.value) ||
       this.isPatternApplied(c.value);
-    return !isInValid ? null : { minlength: { requiredLength: this.validator.min } };
+    return !isInValid ? null : this.returnedErrors;
   }
 
   isInputValueEmpty(value: string): boolean {
@@ -29,19 +29,42 @@ export class TdValidateInputDirective implements Validator {
   }
 
   isMinConditionInValid(value: string): boolean {
-    return this.validator && this.validator.min && !this.isInputValueEmpty(value) && value.length < this.validator.min;
+    const errObj: {} = { minlength: { requiredLength: this.validator.min } };
+    const isInvalid: boolean =
+      this.validator && this.validator.min && !this.isInputValueEmpty(value) && value.length < this.validator.min;
+    if (isInvalid) {
+      this.returnedErrors = { ...this.returnedErrors, ...errObj };
+    }
+    return isInvalid;
   }
 
   isMaxConditionInValid(value: string): boolean {
-    return this.validator && this.validator.max && !this.isInputValueEmpty(value) && value.length > this.validator.max;
+    const errObj: {} = { maxlength: { requiredLength: this.validator.max } };
+    const isInvalid: boolean =
+      this.validator && this.validator.max && !this.isInputValueEmpty(value) && value.length > this.validator.max;
+    if (isInvalid) {
+      this.returnedErrors = { ...this.returnedErrors, ...errObj };
+    }
+    return isInvalid;
   }
 
   isEmail(value: string): boolean {
-    return this.validator && this.validator.email && !this.isInputValueEmpty(value) && EMAIL_REGEXP.test(value);
+    const errObj: {} = { maxlength: { requiredLength: this.validator.max } };
+    const isInvalid: boolean =
+      this.validator && this.validator.email && !this.isInputValueEmpty(value) && EMAIL_REGEXP.test(value);
+    if (isInvalid) {
+      this.returnedErrors = { ...this.returnedErrors, ...errObj };
+    }
+    return isInvalid;
   }
 
   isRequired(value: string): boolean {
-    return this.validator && this.validator.required && this.isInputValueEmpty(value);
+    const errObj: {} = { maxlength: { requiredLength: this.validator.max } };
+    const isInvalid: boolean = this.validator && this.validator.required && this.isInputValueEmpty(value);
+    if (isInvalid) {
+      this.returnedErrors = { ...this.returnedErrors, ...errObj };
+    }
+    return isInvalid;
   }
 
   isPatternApplied(value: string): boolean {
