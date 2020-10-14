@@ -2,7 +2,7 @@ import { Type } from '@angular/core';
 import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,6 +21,7 @@ import { TdWindowDialogComponent } from './window-dialog/window-dialog.component
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
+import { TdValidateInputDirective } from './dialog.directive';
 
 const TD_DIALOGS: Type<any>[] = [
   TdAlertDialogComponent,
@@ -42,6 +43,7 @@ const TD_DIALOGS_ENTRY_COMPONENTS: Type<any>[] = [
 @NgModule({
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     MatDialogModule,
     MatInputModule,
@@ -51,7 +53,7 @@ const TD_DIALOGS_ENTRY_COMPONENTS: Type<any>[] = [
     MatTooltipModule,
     MatIconModule,
   ],
-  declarations: [TD_DIALOGS],
+  declarations: [TD_DIALOGS, TdValidateInputDirective],
   exports: [TD_DIALOGS],
   providers: [TdDialogService],
 })

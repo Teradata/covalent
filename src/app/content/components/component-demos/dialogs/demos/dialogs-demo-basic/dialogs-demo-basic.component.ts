@@ -33,6 +33,13 @@ export class DialogsDemoBasicComponent {
       value: 'Populated value',
       cancelButton: 'Cancel',
       acceptButton: 'Ok',
+
+      validators: {
+        min: 5,
+        max: 10,
+        email: true,
+        required: true,
+      },
     });
   }
 }

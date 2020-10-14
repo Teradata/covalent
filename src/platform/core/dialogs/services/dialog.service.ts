@@ -24,8 +24,16 @@ export interface IConfirmConfig extends IDialogConfig {
   isDestructive?: boolean;
 }
 
+export interface IInputValidator {
+  min?: number;
+  max?: number;
+  required?: boolean;
+  email?: boolean;
+  pattern?: string | RegExp;
+}
 export interface IPromptConfig extends IConfirmConfig {
   value?: string;
+  validators?: IInputValidator;
 }
 
 export interface IDraggableConfig<T> {
@@ -160,6 +168,7 @@ export class TdDialogService {
     promptDialogComponent.title = config.title;
     promptDialogComponent.message = config.message;
     promptDialogComponent.value = config.value;
+    promptDialogComponent.validators = config.validators;
     if (config.acceptButton) {
       promptDialogComponent.acceptButton = config.acceptButton;
     }

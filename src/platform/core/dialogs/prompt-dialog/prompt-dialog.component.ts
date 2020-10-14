@@ -1,5 +1,7 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { IInputValidator } from '../public-api';
 
 @Component({
   selector: 'td-prompt-dialog',
@@ -13,7 +15,13 @@ export class TdPromptDialogComponent implements AfterViewInit {
   cancelButton: string = 'CANCEL';
   acceptButton: string = 'ACCEPT';
 
+  validators: IInputValidator = {};
+
   @ViewChild('input', { static: true }) _input: ElementRef;
+
+  // inputForm: FormGroup = new FormGroup({
+  //   input: new FormControl('', [Validators.required, this.isInputValidator.bind(this)]),
+  // });
 
   constructor(private _dialogRef: MatDialogRef<TdPromptDialogComponent>) {}
 
@@ -39,4 +47,15 @@ export class TdPromptDialogComponent implements AfterViewInit {
   accept(): void {
     this._dialogRef.close(this.value);
   }
+  // isInputValidator(control: AbstractControl): ValidationErrors | undefined {
+  //   const { value }: AbstractControl = control;
+  //   console.log('value -- ', value);
+  //   if(this.value === value) {
+  //     return {input: false};
+  //   }
+
+  //   if (value === '') {
+  //     return undefined;
+  //   }
+  // }
 }

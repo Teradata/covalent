@@ -14,7 +14,8 @@
             (keydown.enter)="$event.preventDefault(); form.valid && accept()"
             [(ngModel)]="value"
             name="value"
-            required
+            [validator]="validators"
+            validateInput
           />
         </mat-form-field>
       </div>
