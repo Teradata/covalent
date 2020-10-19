@@ -1,14 +1,15 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { IInputValidator } from '../public-api';
+import { DialogValidator } from '../dialog-validator';
 
 @Component({
   selector: 'td-prompt-dialog',
   templateUrl: './prompt-dialog.component.html',
   styleUrls: ['./prompt-dialog.component.scss'],
 })
-export class TdPromptDialogComponent implements AfterViewInit {
+export class TdPromptDialogComponent implements OnInit, AfterViewInit {
   title: string;
   message: string;
   value: string;
@@ -19,12 +20,20 @@ export class TdPromptDialogComponent implements AfterViewInit {
 
   @ViewChild('input', { static: true }) _input: ElementRef;
 
-  // inputForm: FormGroup = new FormGroup({
-  //   input: new FormControl('', [Validators.required, this.isInputValidator.bind(this)]),
-  // });
-
+  inputForm: FormGroup;
   constructor(private _dialogRef: MatDialogRef<TdPromptDialogComponent>) {}
 
+  ngOnInit(): void {
+    this.inputForm = new FormGroup({
+      promptInput: new FormControl('', [
+        DialogValidator.required(this.validators.required),
+        DialogValidator.email(this.validators.email),
+        DialogValidator.min(this.validators.min),
+        DialogValidator.max(this.validators.max),
+        DialogValidator.pattern(this.validators.pattern),
+      ]),
+    });
+  }
   ngAfterViewInit(): void {
     // focus input once everything is rendered and good to go
     Promise.resolve().then(() => {
@@ -47,15 +56,4 @@ export class TdPromptDialogComponent implements AfterViewInit {
   accept(): void {
     this._dialogRef.close(this.value);
   }
-  // isInputValidator(control: AbstractControl): ValidationErrors | undefined {
-  //   const { value }: AbstractControl = control;
-  //   console.log('value -- ', value);
-  //   if(this.value === value) {
-  //     return {input: false};
-  //   }
-
-  //   if (value === '') {
-  //     return undefined;
-  //   }
-  // }
 }

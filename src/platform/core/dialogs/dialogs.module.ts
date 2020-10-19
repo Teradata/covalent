@@ -21,7 +21,6 @@ import { TdWindowDialogComponent } from './window-dialog/window-dialog.component
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
-import { TdValidateInputDirective } from './dialog.directive';
 
 const TD_DIALOGS: Type<any>[] = [
   TdAlertDialogComponent,
@@ -53,7 +52,7 @@ const TD_DIALOGS_ENTRY_COMPONENTS: Type<any>[] = [
     MatTooltipModule,
     MatIconModule,
   ],
-  declarations: [TD_DIALOGS, TdValidateInputDirective],
+  declarations: [TD_DIALOGS],
   exports: [TD_DIALOGS],
   providers: [TdDialogService],
 })

@@ -4,19 +4,21 @@
   </td-dialog-title>
   <td-dialog-content>
     <span class="td-dialog-message">{{ message }}</span>
-    <form #form="ngForm" novalidate>
+    <form novalidate [formGroup]="inputForm">
       <div class="td-dialog-input-wrapper">
         <mat-form-field class="td-dialog-input">
           <input
             matInput
             #input
             (focus)="handleInputFocus()"
-            (keydown.enter)="$event.preventDefault(); form.valid && accept()"
+            (keydown.enter)="$event.preventDefault(); inputForm.valid && accept()"
             [(ngModel)]="value"
             name="value"
-            [validator]="validators"
-            validateInput
+            formControlName="promptInput"
           />
+
+          {{ inputForm.valid }}
+          {{ inputForm.controls.min }}
         </mat-form-field>
       </div>
     </form>
@@ -28,7 +30,7 @@
       color="accent"
       #acceptBtn
       (keydown.arrowleft)="closeBtn.focus()"
-      [disabled]="!form.valid"
+      [disabled]="!inputForm.valid"
       (click)="accept()"
     >
       {{ acceptButton }}

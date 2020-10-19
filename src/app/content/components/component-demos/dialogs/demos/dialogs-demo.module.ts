@@ -19,6 +19,7 @@ import {
   DraggableResizableWindowDialogComponent,
   DialogsDemoDraggableResizableWindowComponent,
 } from './dialogs-demo-draggable-resizable-window/dialogs-demo-draggable-resizable-window.component';
+import { DialogsDemoPromptValidatorComponent } from './dialogs-demo-prompt-validator/dialogs-demo-prompt-validator.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {
     DialogsDemoDraggableResizableComponent,
     DraggableResizableWindowDialogComponent,
     DialogsDemoDraggableResizableWindowComponent,
+    DialogsDemoPromptValidatorComponent,
   ],
   imports: [
     DialogsDemoBasicSharedModule,
