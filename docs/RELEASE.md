@@ -13,6 +13,8 @@
 1. Make sure the `build.conf.js` points to the correct versions.
 2. `ng serve --prod` works fine.
 3. `npm run build:lib` works fine.
+4. Must have admin permissions to this repo.
+5. Must have an npm account and permissions to publish to covalent.  Can check login with `npm login`.
 
 #### Start Release
 
@@ -49,8 +51,8 @@ Execute `npm run publish:npm -- next` to publish a beta/RC Release.
 
 #### Post Release Checklist
 
-1. Deploy to ghpages using `npm run ghpages:deploy`
-2. Update `stackblitz` if needed
-3. Update Covalent Quickstart (or Seed) with small commits to show step by step the upgrade process
+1. Deploy to ghpages using `npm run ghpages:deploy`.
+2. Edit the tag with the version and put the changelog as the description.
+3. Update `stackblitz` if needed.
 4. Update UPGRADE.md as necessary.
 5. Throw party~

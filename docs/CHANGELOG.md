@@ -1,3 +1,19 @@
+# [3.1.0](https://github.com/teradata/covalent/compare/v3.1.0-beta.2...v3.1.0) (2020-10-01)
+
+
+### Bug Fixes
+
+* **guided-tour:** allowGoBack not working Teradata/covalent[#1800](https://github.com/teradata/covalent/issues/1800) ([#1801](https://github.com/teradata/covalent/issues/1801)) ([9a0fd5c](https://github.com/teradata/covalent/commit/9a0fd5c0fa0da88975fcda73b3b62a6da8b6edc9))
+* **highlight:** move highlight display rule out of theme file ([#1804](https://github.com/teradata/covalent/issues/1804)) ([39377d1](https://github.com/teradata/covalent/commit/39377d1c657276449a39a33da9233a1d72a74464))
+* **menu:** fix dynamic menu hover ([#1806](https://github.com/teradata/covalent/issues/1806)) ([966ea14](https://github.com/teradata/covalent/commit/966ea14c4dd3f037fd52802c92d798bf2750fada))
+
+
+### Features
+
+* column sort order for datatable ([#1799](https://github.com/teradata/covalent/issues/1799)) ([2248518](https://github.com/teradata/covalent/commit/22485187fea9d87f3d141c42f6fb036fa95438b6))
+
+
+
 # [3.1.0-beta.2](https://github.com/teradata/covalent/compare/v3.1.0-beta.1...v3.1.0-beta.2) (2020-09-03)
 
 
