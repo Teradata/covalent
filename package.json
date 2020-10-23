@@ -90,7 +90,6 @@
     "rxjs": "^6.5.4",
     "shepherd.js": "^7.1.0",
     "showdown": "^1.9.1",
-    "tslib": "^2.0.0",
     "web-animations-js": "2.3.2",
     "zone.js": "^0.10.2"
   },

@@ -16,9 +16,6 @@
   "keywords": [
     "schematics"
   ],
-  "dependencies": {
-    "tslib": "^2.0.0"
-  },
   "peerDependencies": {
     "@angular/common": "0.0.0-NG",
     "@angular/core": "0.0.0-NG",

@@ -33,8 +33,7 @@
     "Julie Knowles <julie.knowles@teradata.com>"
   ],
   "dependencies": {
-    "easymde": "0.0.0-EASYMDE",
-    "tslib": "^2.0.0"
+    "easymde": "0.0.0-EASYMDE"
   },
   "peerDependencies": {
     "@angular/common": "0.0.0-NG",
