@@ -69,15 +69,17 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
    *
    * e.g. `typescript`, `html` , etc.
    */
-  @Input('lang')
+
+  @Input('codeLang')
+  set codeLang(lang: string) {
+    this.setLanguage(lang);
+  }
+  /** @deprecated - removed completely @4.0.0 */
+  @Input()
   set lang(lang: string) {
-    if (!lang) {
-      throw new Error('Error: language attribute must be defined in TdHighlightComponent.');
-    }
-    this._lang = lang;
-    if (this._initialized) {
-      this._loadContent(this._content);
-    }
+    // tslint:disable-next-line: no-console
+    console.warn('DEPRECATION WARNING: switch to codeLang attribute as lang attribute is deprecated.');
+    this.setLanguage(lang);
   }
 
   copyContent: string;
@@ -110,6 +112,16 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
       this._loadContent(this._content);
     }
     this._initialized = true;
+  }
+
+  setLanguage(lang: string) {
+    if (!lang) {
+      throw new Error('Error: language attribute must be defined in TdHighlightComponent.');
+    }
+    this._lang = lang;
+    if (this._initialized) {
+      this._loadContent(this._content);
+    }
   }
 
   /**

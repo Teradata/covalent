@@ -24,7 +24,7 @@
     </p>
     <td-highlight>npm run start-api</td-highlight>
     <p>You should see the server running starting with:</p>
-    <td-highlight lang="bash">
+    <td-highlight codeLang="bash">
       INFO[0000] ################################################################## INFO[0000] ######## ########
       INFO[0000] ######## Teradata Covalent Atomic Data mock API server ######## INFO[0000] ######## Copyright 2016 by
       Teradata. All rights reserved. ######## INFO[0000] ######## This software is covered under the MIT license.
@@ -47,7 +47,7 @@
       For example to modify the mock users , edit
       <code>mock-api/schemas/users.yaml</code>
     </p>
-    <td-highlight lang="bash">
+    <td-highlight codeLang="bash">
       # this is a sample schema file for a user object. --- initial_entries: 10 randomize: false displayname:
       _firstname_ _lastname_ id: _firstname_._lastname_ email: _firstname_._lastname_@_company_.com created:
       _createdtimestamp_ last_access: _itemtimestamp_ site_admin: _admin_ ...
@@ -65,10 +65,10 @@
       <code>/mock-api/datum/firstname.txt</code>
       , and each value is on a single line:
     </p>
-    <td-highlight lang="bash">Aaron Benjamin Carl Olive ...</td-highlight>
+    <td-highlight codeLang="bash">Aaron Benjamin Carl Olive ...</td-highlight>
     <h3>Consuming Mock Data Endpoints</h3>
     <p>The Mock API Server generates real endpoints that can be consumed in Angular services.</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       {{ mockApiDataTypescript }}
     </td-highlight>
     <p>
