@@ -9,7 +9,7 @@ const GH_URL: string = 'https://github.com/Teradata/covalent/blob/develop/README
 const BRANCH_GH_URL: string = 'https://github.com/Teradata/covalent/blob/master/README.md';
 const RAW_GH_BRANCH_URL: string = 'https://raw.githubusercontent.com/Teradata/covalent/master/README.md';
 const NON_MARKDOWN_URL: string = 'https://teradata.github.io/covalent/#/';
-const UNREACHABLE_URL: string = 'https://github.com/';
+const UNREACHABLE_URL: string = 'https://github.com/Teradata/covalent/tree/develop/src';
 
 describe('Service: MarkdownLoader', () => {
   beforeEach(async(() => {

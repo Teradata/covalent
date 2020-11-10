@@ -11,7 +11,7 @@ import {
   ITdMarkArea,
   ITdSeries,
   ITdLabel,
-  TdSeriesComponent,
+  TdSeriesDirective,
   TdMarkPointSymbol,
   ITdLineStyle,
   ITdEdgeLabel,
@@ -39,7 +39,7 @@ export interface ITdGraphForce {
 
 export type TdGraphLayout = 'none' | 'circular' | 'force';
 
-export interface ITdGraphSeries extends ITdSeries<'graph'> {
+export interface ITdGraphSeries extends ITdSeries {
   legendHoverLink?: boolean;
   coordinateSystem?: TdCoordinateSystem;
   xAxisIndex?: number;
@@ -120,12 +120,12 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesGraphComponent),
     },
   ],
 })
-export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> implements ITdGraphSeries {
+export class TdChartSeriesGraphComponent extends TdSeriesDirective implements ITdGraphSeries {
   @Input() legendHoverLink: boolean;
   @Input() coordinateSystem: TdCoordinateSystem;
   @Input() xAxisIndex: number;
