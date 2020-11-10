@@ -101,14 +101,14 @@ Example for **HTML** usage:
 ```typescript
 @Component({
   template: `
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       {{ code }}
     </td-highlight>
   `,
 })
 class ExampleComponent {
   code: string = `
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <h1>hello world!</h1>
       <span>{ {property} }</span>
     </td-highlight>
@@ -119,7 +119,7 @@ Example for **CSS** usage:
 ```typescript
 @Component({
   template: `
-    <td-highlight lang="css">
+    <td-highlight codeLang="css">
       {{ code }}
     </td-highlight>
   `,
@@ -148,7 +148,7 @@ Example for **Typescript**:
 ```typescript
 @Component({
   template: `
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       {{ code }}
     </td-highlight>
   `,

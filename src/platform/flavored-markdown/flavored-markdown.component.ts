@@ -324,7 +324,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       codeBlockRegExp,
       (componentRef: ComponentRef<TdHighlightComponent>, match: string, language: string, codeblock: string) => {
         if (language) {
-          componentRef.instance.lang = language;
+          componentRef.instance.codeLang = language;
         }
         componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
         componentRef.instance.copyCodeTooltips = this.copyCodeTooltips;
