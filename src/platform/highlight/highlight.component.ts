@@ -114,7 +114,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
     this._initialized = true;
   }
 
-  setLanguage(lang: string) {
+  setLanguage(lang: string): void {
     if (!lang) {
       throw new Error('Error: language attribute must be defined in TdHighlightComponent.');
     }
