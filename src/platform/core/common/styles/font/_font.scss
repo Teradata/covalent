@@ -5,7 +5,7 @@ $mat-font-url: 'styles/font/' !default;
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url('MaterialIcons-Regular-v48.woff2') format('woff2');
+    src: url($mat-font-url + 'MaterialIcons-Regular-v48.woff2') format('woff2');
   }
   .material-icons {
     /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */

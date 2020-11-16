@@ -29,7 +29,7 @@ $custom-toolbar-typography: mat-typography-config(
 @include covalent-core();
 
 // Include material icons
-$mat-font-url: 'platform/core/common/styles/font/';
+$mat-font-url: './';
 @include covalent-material-icons();
 
 // Include covalent utility classes
