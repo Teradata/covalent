@@ -10,10 +10,11 @@
     (keyup.delete)="fileInput.clear()"
     (keyup.backspace)="fileInput.clear()"
   >
+    <mat-label>{{ label }}</mat-label>
     <input
       matInput
       [value]="control?.value?.name"
-      [placeholder]="label"
+      [placeholder]="placeholder"
       [attr.name]="name"
       [disabled]="control?.disabled"
       readonly

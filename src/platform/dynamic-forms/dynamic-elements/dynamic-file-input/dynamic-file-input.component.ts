@@ -19,6 +19,8 @@ export class TdDynamicFileInputComponent {
 
   errorMessageTemplate: TemplateRef<any> = undefined;
 
+  placeholder: string = '';
+
   _handlefileDrop(value: File): void {
     this.control.setValue(value);
   }

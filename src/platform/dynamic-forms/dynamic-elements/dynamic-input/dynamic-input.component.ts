@@ -28,4 +28,6 @@ export class TdDynamicInputComponent {
   maxLength: number = undefined;
 
   errorMessageTemplate: TemplateRef<any> = undefined;
+
+  placeholder: string = '';
 }

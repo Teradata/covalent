@@ -1,10 +1,11 @@
 <div class="td-dynamic-input-wrapper">
   <mat-form-field class="td-dynamic-input-field">
+    <mat-label>{{ label }}</mat-label>
     <input
       #elementInput
       matInput
       [formControl]="control"
-      [placeholder]="label"
+      [placeholder]="placeholder"
       [type]="type"
       [required]="required"
       [attr.name]="name"
