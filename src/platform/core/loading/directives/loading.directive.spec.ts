@@ -182,19 +182,19 @@ describe('Directive: Loading', () => {
           loadingService.setValue('name', 20);
           fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
-            transform: 'scaleX(0.2)',
+            transform: 'scale3d(0.2, 1, 1)',
           });
 
           loadingService.setValue('name', 50);
           fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
-            transform: 'scaleX(0.5)',
+            transform: 'scale3d(0.5, 1, 1)',
           });
 
           loadingService.setValue('name', 100);
           fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
-            transform: 'scaleX(1)',
+            transform: 'scale3d(1, 1, 1)',
           });
 
           loadingService.resolve('name');
