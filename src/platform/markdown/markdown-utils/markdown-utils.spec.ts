@@ -9,7 +9,7 @@ import {
   isRawGithubHref,
 } from './markdown-utils';
 import { Component } from '@angular/core';
-import { async, TestBed, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 @Component({
@@ -43,11 +43,13 @@ import { By } from '@angular/platform-browser';
 class JumpToAnchorTestComponent {}
 
 describe('Markdown utils', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [JumpToAnchorTestComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [JumpToAnchorTestComponent],
+      }).compileComponents();
+    }),
+  );
 
   it('removeLeadingHash should remove leading hashes', () => {
     expect(removeLeadingHash('')).toBe('');

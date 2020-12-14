@@ -40,9 +40,8 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit, OnDestr
     }
   }
 
-  @ContentChildren(TdExpansionPanelComponent, { descendants: true }) expansionPanels: QueryList<
-    TdExpansionPanelComponent
-  >;
+  @ContentChildren(TdExpansionPanelComponent, { descendants: true })
+  expansionPanels: QueryList<TdExpansionPanelComponent>;
 
   constructor(private _renderer: Renderer2, private _elementRef: ElementRef) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-expansion-panel-group');

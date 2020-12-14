@@ -36,7 +36,7 @@ function mergeFiles(options: ISchema): Rule {
 }
 
 function addThemeToAngularJson(): Rule {
-  return updateWorkspace(workspace => {
+  return updateWorkspace((workspace: workspaces.WorkspaceDefinition) => {
     const project: workspaces.ProjectDefinition = getProjectFromWorkspace(workspace);
     const targetOptions: any = getProjectTargetOptions(project, 'build');
     const assetPath: string = `theme.scss`;

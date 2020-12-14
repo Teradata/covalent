@@ -1,4 +1,4 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,20 +7,22 @@ import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoa
 import { catchError } from 'rxjs/operators';
 
 describe('Directive: Loading', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        TdLoadingDefaultTestComponent,
-        TdLoadingBasicTestComponent,
-        TdLoadingDuplicationTestComponent,
-        TdLoadingStarUntilAsyncTestComponent,
-        TdLoadingNamedErrorStarUntilAsyncTestComponent,
-        TdLoadingBooleanTemplateUntilTestComponent,
-      ],
-      imports: [NoopAnimationsModule, CovalentLoadingModule],
-    });
-    TestBed.compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [
+          TdLoadingDefaultTestComponent,
+          TdLoadingBasicTestComponent,
+          TdLoadingDuplicationTestComponent,
+          TdLoadingStarUntilAsyncTestComponent,
+          TdLoadingNamedErrorStarUntilAsyncTestComponent,
+          TdLoadingBooleanTemplateUntilTestComponent,
+        ],
+        imports: [NoopAnimationsModule, CovalentLoadingModule],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   it('should render a spinner, replace strategy, primary color by default', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
