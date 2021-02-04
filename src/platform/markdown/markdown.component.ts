@@ -12,7 +12,7 @@ import {
   HostBinding,
   HostListener,
 } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
   scrollToAnchor,
   genHeadingId,
@@ -264,7 +264,9 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(html, this._hostedUrl);
     const htmlWithAbsoluteImgSrcs: string = normalizeImageSrcs(htmlWithAbsoluteHrefs, this._hostedUrl);
     const htmlWithHeadingIds: string = addIdsToHeadings(htmlWithAbsoluteImgSrcs);
-    div.innerHTML = htmlWithHeadingIds;
+    console.info(htmlWithHeadingIds);
+    const htmlWithVideos: SafeHtml = this._renderVideoElements(htmlWithHeadingIds);
+    this._renderer.setProperty(div, 'innerHTML', htmlWithVideos);
     return div;
   }
 
@@ -294,5 +296,18 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     converter.setOption('literalMidWordUnderscores', true);
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
     return converter.makeHtml(markdownToParse);
+  }
+
+  private _renderVideoElements(html: string): SafeHtml {
+    const ytLongEmbed: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:embed\/)([\w-]{11})(\?[\w%;-]+(?:=[\w%;-]+)?(?:&[\w%;-]+(?:=[\w%;-]+)?)*)?)]/gi;
+    const ytLongWatch: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:watch\?v=)([\w-]{11})(&[\w%;-]+(?:=[\w%;-]+)?)*)]/gi;
+    const ytShort: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)?youtu.be\/([\w-]{11})\??([\w%;-]+(?:=[\w%;-]+)?(?:&[\w%;-]+(?:=[\w%;-]+)?)*)?]/gi;
+
+    function convert(match: string, id: string, flags: string): string {
+      flags = flags.replace(/&amp;/gi, '&');
+      return `<iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/${id}?${flags}"></iframe>`;
+    }
+
+    return html.replace(ytLongWatch, convert).replace(ytLongEmbed, convert).replace(ytShort, convert);
   }
 }
