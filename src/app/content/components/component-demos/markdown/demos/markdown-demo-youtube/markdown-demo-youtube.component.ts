@@ -33,5 +33,9 @@ This works with any of these base URLs (with or without the 'https://www.' porti
 
 ![www.youtube.com/embed/dQw4w9WgXcQ?autoplay=true]
 
+### Playlist embedding
+(https://youtube.com/playlist?list=PLXIU9mpT9-03zDjIdMvJRmcANfW644x3F)
+
+![https://youtube.com/playlist?list=PLXIU9mpT9-03zDjIdMvJRmcANfW644x3F]
   `;
 }

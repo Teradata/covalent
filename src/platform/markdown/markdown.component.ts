@@ -264,7 +264,6 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(html, this._hostedUrl);
     const htmlWithAbsoluteImgSrcs: string = normalizeImageSrcs(htmlWithAbsoluteHrefs, this._hostedUrl);
     const htmlWithHeadingIds: string = addIdsToHeadings(htmlWithAbsoluteImgSrcs);
-    console.info(htmlWithHeadingIds);
     const htmlWithVideos: SafeHtml = this._renderVideoElements(htmlWithHeadingIds);
     this._renderer.setProperty(div, 'innerHTML', htmlWithVideos);
     return div;
@@ -302,12 +301,25 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     const ytLongEmbed: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:embed\/)([\w-]{11})(\?[\w%;-]+(?:=[\w%;-]+)?(?:&[\w%;-]+(?:=[\w%;-]+)?)*)?)]/gi;
     const ytLongWatch: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:watch\?v=)([\w-]{11})(&[\w%;-]+(?:=[\w%;-]+)?)*)]/gi;
     const ytShort: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)?youtu.be\/([\w-]{11})\??([\w%;-]+(?:=[\w%;-]+)?(?:&[\w%;-]+(?:=[\w%;-]+)?)*)?]/gi;
+    const ytPlaylist: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:playlist\?list=)([\w-]{34})(&[\w%;-]+(?:=[\w%;-]+)?)*)]/gi;
 
     function convert(match: string, id: string, flags: string): string {
-      flags = flags.replace(/&amp;/gi, '&');
-      return `<iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/${id}?${flags}"></iframe>`;
+      if (flags) {
+        id += '?' + flags.replace(/&amp;/gi, '&');
+      }
+      return `<iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/${id}"></iframe>`;
+    }
+    function convertPL(match: string, id: string, flags: string): string {
+      if (flags) {
+        id += flags.replace(/&amp;/gi, '&');
+      }
+      return `<iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/videoseries?list=${id}"></iframe>`;
     }
 
-    return html.replace(ytLongWatch, convert).replace(ytLongEmbed, convert).replace(ytShort, convert);
+    return html
+      .replace(ytLongWatch, convert)
+      .replace(ytLongEmbed, convert)
+      .replace(ytShort, convert)
+      .replace(ytPlaylist, convertPL);
   }
 }
