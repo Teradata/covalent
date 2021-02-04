@@ -48,9 +48,8 @@ export class TdFlavoredMarkdownButtonComponent {
   @HostBinding('style.display') display: string = 'inline-block';
   @Input() text: string = '';
   @Input() data: string = '';
-  @Output() clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<
-    ITdFlavoredMarkdownButtonClickEvent
-  >();
+  @Output()
+  clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
   emitClick(): void {
     this.clicked.emit({ text: this.text, data: this.data });
   }
@@ -154,9 +153,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    * Event emitted when a button is clicked
    * Is an object containing text and data of button
    */
-  @Output() buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<
-    ITdFlavoredMarkdownButtonClickEvent
-  >();
+  @Output()
+  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
 
   @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true }) container: TdFlavoredMarkdownContainerDirective;
 
