@@ -30,9 +30,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   private _destroy$: Subject<any> = new Subject();
   private _destroyControl$: Subject<string> = new Subject();
 
-  @ContentChildren(TdDynamicFormsErrorTemplateDirective, { descendants: true }) _errorTemplates: QueryList<
-    TdDynamicFormsErrorTemplateDirective
-  >;
+  @ContentChildren(TdDynamicFormsErrorTemplateDirective, { descendants: true })
+  _errorTemplates: QueryList<TdDynamicFormsErrorTemplateDirective>;
   dynamicForm: FormGroup;
 
   /**

@@ -12,7 +12,7 @@ import {
   HostBinding,
   HostListener,
 } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
   scrollToAnchor,
   genHeadingId,
@@ -21,6 +21,7 @@ import {
   rawGithubHref,
   isGithubHref,
   isRawGithubHref,
+  renderVideoElements,
 } from './markdown-utils/markdown-utils';
 
 declare const require: any;
@@ -264,7 +265,8 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(html, this._hostedUrl);
     const htmlWithAbsoluteImgSrcs: string = normalizeImageSrcs(htmlWithAbsoluteHrefs, this._hostedUrl);
     const htmlWithHeadingIds: string = addIdsToHeadings(htmlWithAbsoluteImgSrcs);
-    div.innerHTML = htmlWithHeadingIds;
+    const htmlWithVideos: SafeHtml = renderVideoElements(htmlWithHeadingIds);
+    this._renderer.setProperty(div, 'innerHTML', htmlWithVideos);
     return div;
   }
 
