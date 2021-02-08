@@ -16,7 +16,7 @@
         <div class="group-label text-sm">{{ item.text }}</div>
       </ng-container>
       <ng-container *ngIf="item.link || item.action">
-        <div mat-menu-item class="paddin-none">
+        <div mat-menu-item class="pad-none">
           <td-dynamic-menu-link [item]="item" (itemClicked)="emitClicked($event)"></td-dynamic-menu-link>
         </div>
       </ng-container>

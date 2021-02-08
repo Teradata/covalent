@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 
-import { TdChartOptionsService, ITdSeries, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdChartOptionsService, ITdSeries, TdSeriesDirective } from '@covalent/echarts/base';
 
 export type TdWordcloudShape =
   | 'circle'
@@ -29,7 +29,7 @@ export interface ITdWordCloudData {
   textStyle?: ITdWordcloudTextStyle;
 }
 
-export interface ITdWordcloudSeries extends ITdSeries<'wordCloud'> {
+export interface ITdWordcloudSeries extends ITdSeries {
   data?: ITdWordCloudData[];
   shape?: TdWordcloudShape;
   left?: string | number;
@@ -69,12 +69,12 @@ export interface ITdWordcloudSeries extends ITdSeries<'wordCloud'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesWordcloudComponent),
     },
   ],
 })
-export class TdChartSeriesWordcloudComponent extends TdSeriesComponent<'wordCloud'> implements ITdWordcloudSeries {
+export class TdChartSeriesWordcloudComponent extends TdSeriesDirective implements ITdWordcloudSeries {
   @Input() data: ITdWordCloudData[];
   @Input() shape: TdWordcloudShape;
   @Input() left: string | number;

@@ -1,12 +1,12 @@
 import { Optional, Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
 import { TdLayoutManageListComponent } from './layout-manage-list.component';
-import { LayoutToggle } from '../layout-toggle.class';
+import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 
 @Directive({
   selector: '[tdLayoutManageListToggle]',
   inputs: ['hideWhenOpened'],
 })
-export class TdLayoutManageListToggleDirective extends LayoutToggle {
+export class TdLayoutManageListToggleDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutManageListToggle')
   set tdLayoutManageListToggle(tdLayoutManageListToggle: boolean) {
     this.disabled = !(<any>tdLayoutManageListToggle === '' || tdLayoutManageListToggle);
@@ -29,7 +29,7 @@ export class TdLayoutManageListToggleDirective extends LayoutToggle {
   selector: '[tdLayoutManageListClose]',
   inputs: ['hideWhenOpened'],
 })
-export class TdLayoutManageListCloseDirective extends LayoutToggle {
+export class TdLayoutManageListCloseDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutManageListClose')
   set tdLayoutManageListClose(tdLayoutManageListClose: boolean) {
     this.disabled = !(<any>tdLayoutManageListClose === '' || tdLayoutManageListClose);
@@ -52,7 +52,7 @@ export class TdLayoutManageListCloseDirective extends LayoutToggle {
   selector: '[tdLayoutManageListOpen]',
   inputs: ['hideWhenOpened'],
 })
-export class TdLayoutManageListOpenDirective extends LayoutToggle {
+export class TdLayoutManageListOpenDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutManageListOpen')
   set tdLayoutManageListOpen(tdLayoutManageListOpen: boolean) {
     this.disabled = !(<any>tdLayoutManageListOpen === '' || tdLayoutManageListOpen);

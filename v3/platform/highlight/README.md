@@ -16,6 +16,9 @@ By default, `--dev` build will log the following message in the console to let y
 
 + lang: string
   + Language of the code content to be parsed as highlighted html.
+   > **DEPRECATION WARNING: lang attribute is deprecated and it will be removed in v4.0.0**
++ codeLang: string
+  + Language of the code content to be parsed as highlighted html.
 + content: string
   + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
 + copyCodeToClipboard?: boolean
@@ -98,14 +101,14 @@ Example for **HTML** usage:
 ```typescript
 @Component({
   template: `
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       {{ code }}
     </td-highlight>
   `,
 })
 class ExampleComponent {
   code: string = `
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <h1>hello world!</h1>
       <span>{ {property} }</span>
     </td-highlight>
@@ -116,7 +119,7 @@ Example for **CSS** usage:
 ```typescript
 @Component({
   template: `
-    <td-highlight lang="css">
+    <td-highlight codeLang="css">
       {{ code }}
     </td-highlight>
   `,
@@ -145,7 +148,7 @@ Example for **Typescript**:
 ```typescript
 @Component({
   template: `
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       {{ code }}
     </td-highlight>
   `,

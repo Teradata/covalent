@@ -226,9 +226,8 @@ export class TdDataTableComponent
 
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
-  @ContentChildren(TdDataTableTemplateDirective, { descendants: true }) _templates: QueryList<
-    TdDataTableTemplateDirective
-  >;
+  @ContentChildren(TdDataTableTemplateDirective, { descendants: true })
+  _templates: QueryList<TdDataTableTemplateDirective>;
 
   @ViewChild('scrollableDiv', { static: true }) _scrollableDiv: ElementRef;
 

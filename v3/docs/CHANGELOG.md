@@ -1,3 +1,22 @@
+## [3.1.1-beta.1](https://github.com/teradata/covalent/compare/v3.1.0...v3.1.1-beta.1) (2021-02-08)
+
+
+### Bug Fixes
+
+* **material-icons:** restored relative path mechanism ([#1822](https://github.com/teradata/covalent/issues/1822)) ([7ac9766](https://github.com/teradata/covalent/commit/7ac976634c59dff60507020b6589c1bbd3f57f9c))
+* lint issue in highlight component ([9cffdd8](https://github.com/teradata/covalent/commit/9cffdd863dd9241d82b50ef651b77751b91b9e65))
+* **docs:** fixed displaying demos for messages ([#1812](https://github.com/teradata/covalent/issues/1812)) ([d705d1e](https://github.com/teradata/covalent/commit/d705d1e22ce531e38c90ab0bea36102fc90d393c))
+* **highlight:** deprecate lang input in favor of codeLang ([fe998e1](https://github.com/teradata/covalent/commit/fe998e19aab44dfab0cc30e661385bc60ac1d253))
+* **menu:** use default utility class for no padding ([#1818](https://github.com/teradata/covalent/issues/1818)) ([793803c](https://github.com/teradata/covalent/commit/793803c367d4ad56e1f2e1a84b6e28de74120c35))
+
+
+### Features
+
+* **markdown:** add youtube video embeds (VAC-442) ([4b9d84d](https://github.com/teradata/covalent/commit/4b9d84dfdc6df78db39eba33145adf0a6d83fcf5))
+* upgrade covalent to angular@10 ([89ed65d](https://github.com/teradata/covalent/commit/89ed65d1427f9ad20a6cd1e58dd4e9e10f8cd873))
+
+
+
 # [3.1.0](https://github.com/teradata/covalent/compare/v3.1.0-beta.2...v3.1.0) (2020-10-01)
 
 
@@ -92,7 +111,7 @@
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/teradata/covalent/compare/v3.0.0-rc.2...v3.0.0) (2020-03-23)
 
-We are finally stable! 
+We are finally stable!
 
 We are pleased to announce our 3.0.0 release. We worked on adding back all the demos and improving the experience of our documentation, as well as adding new components/enhancements and ivy support.
 
@@ -1169,7 +1188,7 @@ Our new `http` module has a different usage and uses `@angular/common/http` unde
 
 * **animations:** remove deprecated animation functions ([#1297](https://github.com/teradata/covalent/issues/1297)) ([f37ce0c](https://github.com/teradata/covalent/commit/f37ce0c))
 
-Function animations will no longer be part of covalent, please use the animation constants moving foward. 
+Function animations will no longer be part of covalent, please use the animation constants moving foward.
 
 Before:
 
@@ -1189,7 +1208,7 @@ Usage info [here](https://teradata.github.io/covalent/#/components/animations)
 
 With the new `multi` input in `td-expansion-panel-group`, the expansions will be accordion by default (`[multi]="false"`). So if you want to keep the same behavior, please add `multi` as an input.
 
-Before: 
+Before:
 
 ```html
 <td-expansion-panel-group>
@@ -1458,7 +1477,7 @@ Highlights:
 
 We are pleased to announce `covalent@1.0.0` stable!
 
-Thanks to the community for helping us improve Covalent more as each day passes by. 
+Thanks to the community for helping us improve Covalent more as each day passes by.
 
 Now that we are stable, the team will focus on improving our components and adding more and more features going forward.
 
@@ -1978,7 +1997,7 @@ Before:
     Toolbar content
   </div>
   Content
- <td-layout-nav-list> 
+ <td-layout-nav-list>
 ```
 
 After:
@@ -1997,7 +2016,7 @@ After:
     </button>
   </div>
   Content
- <td-layout-nav-list> 
+ <td-layout-nav-list>
 ```
 
 e.g. `td-layout-manage-list`
@@ -2014,7 +2033,7 @@ Before:
     Toolbar content
   </div>
   Content
- <td-layout-manage-list> 
+ <td-layout-manage-list>
 ```
 
 After:
@@ -2031,8 +2050,8 @@ After:
     </button>
   </md-toolbar>
   Content
- <td-layout-manage-list> 
-```  
+ <td-layout-manage-list>
+```
 
 All these changes will allow the developers to toggle parent sidenavs with any clickable element + able to toggle/open/close parent sidenavs from child routes + allow mixing and matching different layouts.
 

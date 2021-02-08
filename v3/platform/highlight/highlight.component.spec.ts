@@ -172,14 +172,14 @@ class TdHighlightEmptyStaticTestRenderingComponent {}
 
 @Component({
   template: `
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       {{ dataHtml0 }}
     </td-highlight>
   `,
 })
 class TdHighlightStaticHtmlTestRenderingComponent {
   dataHtml0: string = `
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <h1>hello world!</h1>
       <span>{{property}}</span>
     </td-highlight>
@@ -188,7 +188,7 @@ class TdHighlightStaticHtmlTestRenderingComponent {
 
 @Component({
   template: `
-    <td-highlight lang="css" [content]="content"></td-highlight>
+    <td-highlight codeLang="css" [content]="content"></td-highlight>
   `,
 })
 class TdHighlightDynamicCssTestRenderingComponent {
@@ -197,7 +197,7 @@ class TdHighlightDynamicCssTestRenderingComponent {
 
 @Component({
   template: `
-    <td-highlight [lang]="lang"></td-highlight>
+    <td-highlight [codeLang]="lang"></td-highlight>
   `,
 })
 class TdHighlightUndefinedLangTestRenderingComponent {
@@ -218,14 +218,14 @@ class TdHighlightEmptyStaticTestEventsComponent {
 
 @Component({
   template: `
-    <td-highlight lang="html" (contentReady)="tdHighlightContentIsReady()">
+    <td-highlight codeLang="html" (contentReady)="tdHighlightContentIsReady()">
       {{ dataHtml }}
     </td-highlight>
   `,
 })
 class TdHighlightStaticHtmlTestEventsComponent {
   dataHtml: string = `
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <h1>hello world!</h1>
       <span>{ {property} }</span>
     </td-highlight>
@@ -237,7 +237,7 @@ class TdHighlightStaticHtmlTestEventsComponent {
 
 @Component({
   template: `
-    <td-highlight lang="css" [content]="content" (contentReady)="tdHighlightContentIsReady()"></td-highlight>
+    <td-highlight codeLang="css" [content]="content" (contentReady)="tdHighlightContentIsReady()"></td-highlight>
   `,
 })
 class TdHighlightDynamicCssTestEventsComponent {
@@ -249,7 +249,7 @@ class TdHighlightDynamicCssTestEventsComponent {
 
 @Component({
   template: `
-    <td-highlight [lang]="lang" (contentReady)="tdHighlightContentIsReady()"></td-highlight>
+    <td-highlight [codeLang]="lang" (contentReady)="tdHighlightContentIsReady()"></td-highlight>
   `,
 })
 class TdHighlightUndefinedLangTestEventsComponent {
