@@ -1,12 +1,8 @@
-@import '../common/styles/theme-functions';
-@import '../common/styles/typography-functions';
+@import "~@angular/material/theming";
 
 @mixin td-json-formatter-typography($config) {
-  .td-key {
-    font: {
-      family: td-font-family($config);
-      size: td-font-size($config, body-1);
-    }
+  .td-node {
+    @include mat-typography-level-to-styles($config, body-1);
   }
 }
 
@@ -21,40 +17,30 @@
     .date::after,
     .td-object-name::after,
     .td-array-length::after {
-      content: '\200E';
+      content: "\200E";
     }
-    .td-key {
-      &.td-key-node {
-        &:focus,
-        &:hover {
-          background-color: mat-color($background, hover);
-        }
-        .td-node-icon {
-          color: mat-color($foreground, secondary-text);
-        }
-      }
-    }
+
     .key {
       color: mat-color($primary);
     }
     .value {
-      .string {
+      &.string {
         color: mat-color($warn);
       }
-      .number {
+      &.number {
         color: mat-color($accent);
       }
-      .boolean {
+      &.boolean {
         color: mat-color($accent);
       }
-      .null,
-      .undefined {
+      &.null,
+      &.undefined {
         color: mat-color($foreground, disabled-text);
       }
-      .function {
+      &.function {
         color: mat-color($primary);
       }
-      .date {
+      &.date {
         color: mat-color($foreground, text);
       }
     }
