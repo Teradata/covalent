@@ -22,4 +22,6 @@ export class TdDynamicSelectComponent {
   multiple: boolean = undefined;
 
   errorMessageTemplate: TemplateRef<any> = undefined;
+
+  placeholder: string = '';
 }

@@ -1,11 +1,12 @@
 <div class="td-dynamic-datepicker-wrapper">
   <mat-form-field class="td-dynamic-datepicker-field">
+    <mat-label>{{ label }}</mat-label>
     <input
       #elementInput
       matInput
       [matDatepicker]="dynamicDatePicker"
       [formControl]="control"
-      [placeholder]="label"
+      [placeholder]="placeholder"
       [required]="required"
       [name]="name"
       [min]="min"

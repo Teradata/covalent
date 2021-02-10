@@ -56,6 +56,7 @@ export interface ITdDynamicElementConfig {
   flex?: number;
   validators?: ITdDynamicElementValidator[];
   customConfig?: ITdDynamicElementCustomConfig;
+  placeholder?: string;
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[^0-9][^\@]*$/;

@@ -18,4 +18,6 @@ export class TdDynamicTextareaComponent {
   required: boolean = undefined;
 
   errorMessageTemplate: TemplateRef<any> = undefined;
+
+  placeholder: string = '';
 }

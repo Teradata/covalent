@@ -1,8 +1,9 @@
 <div class="td-dynamic-select-wrapper">
   <mat-form-field class="td-dynamic-select-field">
+    <mat-label>{{ label }}</mat-label>
     <mat-select
       [formControl]="control"
-      [placeholder]="label"
+      [placeholder]="placeholder"
       [required]="required"
       [attr.name]="name"
       [multiple]="multiple"
