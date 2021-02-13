@@ -1,21 +1,23 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 import { TdTextEditorComponent } from './';
 import { By } from '@angular/platform-browser';
 
 describe('Component: TextEditor', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        TdTextEditorComponent,
-        TestTextEditorComponent,
-        TestTextEditorResetComponent,
-        TestTextEditorOptionsComponent,
-      ],
-      imports: [],
-    });
-    TestBed.compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [
+          TdTextEditorComponent,
+          TestTextEditorComponent,
+          TestTextEditorResetComponent,
+          TestTextEditorOptionsComponent,
+        ],
+        imports: [],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   it('should initialize the markdown editor and set value and test ngModel', (done: DoneFn) => {
     inject([], () => {

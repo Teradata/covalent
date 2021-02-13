@@ -1,4 +1,4 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Component, DebugElement } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,40 +24,42 @@ function createFakeKeyboardEvent(keyCode: number): any {
 describe('Component: Chips', () => {
   let overlayContainerElement: HTMLElement;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [CovalentChipsModule, FormsModule, ReactiveFormsModule, NoopAnimationsModule],
-      declarations: [
-        TdChipsTestComponent,
-        TdChipsA11yTestComponent,
-        TdChipsBasicTestComponent,
-        TdChipsObjectsRequireMatchTestComponent,
-        TdChipsRequiredTestComponent,
-        TdChipsStackedTestComponent,
-        TdChipsBeforeAfterTestComponent,
-        TdChipRemovalTestComponent,
-        TdChipsEventsTestComponent,
-      ],
-      providers: [
-        {
-          provide: OverlayContainer,
-          useFactory: () => {
-            overlayContainerElement = document.createElement('div');
-            overlayContainerElement.classList.add('cdk-overlay-container');
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [CovalentChipsModule, FormsModule, ReactiveFormsModule, NoopAnimationsModule],
+        declarations: [
+          TdChipsTestComponent,
+          TdChipsA11yTestComponent,
+          TdChipsBasicTestComponent,
+          TdChipsObjectsRequireMatchTestComponent,
+          TdChipsRequiredTestComponent,
+          TdChipsStackedTestComponent,
+          TdChipsBeforeAfterTestComponent,
+          TdChipRemovalTestComponent,
+          TdChipsEventsTestComponent,
+        ],
+        providers: [
+          {
+            provide: OverlayContainer,
+            useFactory: () => {
+              overlayContainerElement = document.createElement('div');
+              overlayContainerElement.classList.add('cdk-overlay-container');
 
-            document.body.appendChild(overlayContainerElement);
+              document.body.appendChild(overlayContainerElement);
 
-            // remove body padding to keep consistent cross-browser
-            document.body.style.padding = '0';
-            document.body.style.margin = '0';
+              // remove body padding to keep consistent cross-browser
+              document.body.style.padding = '0';
+              document.body.style.margin = '0';
 
-            return { getContainerElement: () => overlayContainerElement };
+              return { getContainerElement: () => overlayContainerElement };
+            },
           },
-        },
-      ],
-    });
-    TestBed.compileComponents();
-  }));
+        ],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   describe('should test general features: ', () => {
     let fixture: ComponentFixture<TdChipsTestComponent>;

@@ -1,4 +1,4 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,74 +15,85 @@ import { CovalentStepsModule } from '../../steps.module';
 export class FakeComponent {}
 
 describe('Component: Nav Steps Horizontal', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TdNavStepsHorizontalTestComponent, FakeComponent],
-      imports: [
-        NoopAnimationsModule,
-        RouterTestingModule.withRoutes([
-          { path: '', component: FakeComponent },
-          { path: 'layouts', component: FakeComponent },
-          { path: 'layouts2', component: FakeComponent },
-          { path: 'layouts3', component: FakeComponent },
-        ]),
-        CovalentStepsModule,
-      ],
-    });
-    TestBed.compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TdNavStepsHorizontalTestComponent, FakeComponent],
+        imports: [
+          NoopAnimationsModule,
+          RouterTestingModule.withRoutes([
+            { path: '', component: FakeComponent },
+            { path: 'layouts', component: FakeComponent },
+            { path: 'layouts2', component: FakeComponent },
+            { path: 'layouts3', component: FakeComponent },
+          ]),
+          CovalentStepsModule,
+        ],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
-  it('should render 5 step headers and 4 separators', async(
-    inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        const headers: DebugElement[] = fixture.debugElement.queryAll(By.css('td-step-header'));
-        expect(headers.length).toBe(5);
+  it(
+    'should render 5 step headers and 4 separators',
+    waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const separators: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-horizontal-line'));
-          expect(separators.length).toBe(4);
+          const headers: DebugElement[] = fixture.debugElement.queryAll(By.css('td-step-header'));
+          expect(headers.length).toBe(5);
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            const separators: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-horizontal-line'));
+            expect(separators.length).toBe(4);
+          });
         });
-      });
-    }),
-  ));
+      }),
+    ),
+  );
 
-  it('should hide paginations buttons when steps fit screen', async(
-    inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        document.body.style.width = '900px';
-        window.dispatchEvent(new Event('resize'));
+  it(
+    'should hide paginations buttons when steps fit screen',
+    waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
-          expect(pagination.length).toBe(2);
-          expect(fixture.debugElement.query(By.css('.td-step-header-pagination-controls-enabled'))).toBeFalsy();
+          document.body.style.width = '900px';
+          window.dispatchEvent(new Event('resize'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            const pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
+            expect(pagination.length).toBe(2);
+            expect(fixture.debugElement.query(By.css('.td-step-header-pagination-controls-enabled'))).toBeFalsy();
+          });
         });
-      });
-    }),
-  ));
+      }),
+    ),
+  );
 
-  it('should resize window and hide pagination buttons if steps dont fit screen', async(
-    inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        document.body.style.width = '150px';
-        window.dispatchEvent(new Event('resize'));
+  it(
+    'should resize window and hide pagination buttons if steps dont fit screen',
+    waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
-          expect(pagination.length).toBe(2);
-          expect(fixture.debugElement.query(By.css('.td-step-header-pagination-controls-enabled'))).toBeTruthy();
-          expect(pagination[0].classes['td-step-header-pagination-disabled']).toBeTruthy();
-          expect(pagination[1].classes['td-step-header-pagination-disabled']).toBeFalsy();
+          document.body.style.width = '150px';
+          window.dispatchEvent(new Event('resize'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            const pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
+            expect(pagination.length).toBe(2);
+            expect(fixture.debugElement.query(By.css('.td-step-header-pagination-controls-enabled'))).toBeTruthy();
+            expect(pagination[0].classes['td-step-header-pagination-disabled']).toBeTruthy();
+            expect(pagination[1].classes['td-step-header-pagination-disabled']).toBeFalsy();
+          });
         });
-      });
-    }),
-  ));
+      }),
+    ),
+  );
 });
 
 @Component({

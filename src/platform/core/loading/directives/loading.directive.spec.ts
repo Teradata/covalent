@@ -1,4 +1,4 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,20 +7,22 @@ import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoa
 import { catchError } from 'rxjs/operators';
 
 describe('Directive: Loading', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        TdLoadingDefaultTestComponent,
-        TdLoadingBasicTestComponent,
-        TdLoadingDuplicationTestComponent,
-        TdLoadingStarUntilAsyncTestComponent,
-        TdLoadingNamedErrorStarUntilAsyncTestComponent,
-        TdLoadingBooleanTemplateUntilTestComponent,
-      ],
-      imports: [NoopAnimationsModule, CovalentLoadingModule],
-    });
-    TestBed.compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [
+          TdLoadingDefaultTestComponent,
+          TdLoadingBasicTestComponent,
+          TdLoadingDuplicationTestComponent,
+          TdLoadingStarUntilAsyncTestComponent,
+          TdLoadingNamedErrorStarUntilAsyncTestComponent,
+          TdLoadingBooleanTemplateUntilTestComponent,
+        ],
+        imports: [NoopAnimationsModule, CovalentLoadingModule],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   it('should render a spinner, replace strategy, primary color by default', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
@@ -182,19 +184,19 @@ describe('Directive: Loading', () => {
           loadingService.setValue('name', 20);
           fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
-            transform: 'scaleX(0.2)',
+            transform: 'scale3d(0.2, 1, 1)',
           });
 
           loadingService.setValue('name', 50);
           fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
-            transform: 'scaleX(0.5)',
+            transform: 'scale3d(0.5, 1, 1)',
           });
 
           loadingService.setValue('name', 100);
           fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
-            transform: 'scaleX(1)',
+            transform: 'scale3d(1, 1, 1)',
           });
 
           loadingService.resolve('name');
