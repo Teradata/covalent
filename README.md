@@ -45,8 +45,8 @@ Certain covalent version are meant for certain angular versions, and here is the
 | Covalent | Angular
 |:---:|:---:|
 | 2.X | 8.X |
-| 3.X | 9.X / 10.X |
-| Future / Nightly | 10.X |
+| 3.X | 9.X / 10.X / 11.x |
+| Future / Nightly | 11.X |
 
 ## Browser Support
 
