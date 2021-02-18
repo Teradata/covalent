@@ -16,13 +16,15 @@ import { Observable, Subject } from 'rxjs';
 import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
+// Use esm version to support shipping subset of languages and features
+import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+
 const noop: any = () => {
   // empty method
 };
 
 // counter for ids to allow for multiple editors on one page
 let uniqueCounter: number = 0;
-import * as monaco from 'monaco-editor';
 
 @Component({
   selector: 'td-code-editor',
