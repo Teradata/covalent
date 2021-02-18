@@ -7,7 +7,7 @@ module.exports = {
   materialVersion: '^9.0.0 || ^10.0.0-0',
   showdownVersion: '^1.9.1',
   highlightVersion: '^9.13.1',
-  monacoVersion: '^0.20.0',
+  monacoVersion: '^0.22.0',
   easymdeVersion: '2.8.0',
   shepherdVersion: '^7.1.0',
   paths: {
