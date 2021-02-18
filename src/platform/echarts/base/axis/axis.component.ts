@@ -1,4 +1,4 @@
-import { Input, OnChanges, OnInit, OnDestroy } from '@angular/core';
+import { Input, OnChanges, OnInit, OnDestroy, Directive } from '@angular/core';
 
 import { TdChartOptionsService } from '../chart-options.service';
 import { assignDefined } from '../utils';
@@ -15,7 +15,8 @@ import {
   TdYAxisPosition,
 } from './axis.interface';
 
-export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestroy {
+@Directive()
+export abstract class TdChartAxisDirective implements OnChanges, OnInit, OnDestroy {
   private _state: any = {};
 
   @Input() config: any = {};

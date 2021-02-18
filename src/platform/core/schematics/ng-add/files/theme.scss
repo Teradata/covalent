@@ -24,7 +24,7 @@ $custom-toolbar-typography: mat-typography-config(
 @include covalent-core();
 
 // Include material icons
-$mat-font-url: '~@covalent/core/common/styles/font/';
+$mat-font-url: './';
 @include covalent-material-icons();
 
 <% if (styleSheetUtilities) { %>

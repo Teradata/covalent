@@ -1,6 +1,6 @@
 export * from './base.module';
 export { TdChartComponent } from './chart.component';
-export { TdChartAxisComponent } from './axis/axis.component';
+export { TdChartAxisDirective } from './axis/axis.component';
 export { TdChartYAxisComponent } from './axis/y-axis.component';
 export { TdChartXAxisComponent } from './axis/x-axis.component';
 export { TdDatasetComponent } from './dataset/dataset.component';

@@ -1,4 +1,4 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -9,13 +9,15 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: VirtualScrollContainer', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, MatListModule, CovalentVirtualScrollModule],
-      declarations: [TestBasicVirtualScrollComponent],
-    });
-    TestBed.compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [NoopAnimationsModule, MatListModule, CovalentVirtualScrollModule],
+        declarations: [TestBasicVirtualScrollComponent],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   it('should render only what fits the viewport', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);

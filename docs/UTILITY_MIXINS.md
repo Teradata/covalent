@@ -21,7 +21,7 @@ We also bundle the material icons
 
 ```css
 // Include pre-bundled material-icons
-$mat-font-url: '../node_modules/@covalent/core/common/styles/font/';
+$mat-font-url: './';
 @include covalent-material-icons();
 // Alternative way to include material-icons
 // @import '../node_modules/@covalent/core/common/material-icons.css';

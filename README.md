@@ -38,6 +38,16 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 ---
 
+## Angular Support
+
+Certain covalent version are meant for certain angular versions, and here is the matrix:
+
+| Covalent | Angular
+|:---:|:---:|
+| 2.X | 8.X |
+| 3.X | 9.X / 10.X |
+| Future / Nightly | 10.X |
+
 ## Browser Support
 
 Covalent is built on a CSS Flexbox layout and all layouts and components heavily rely up that support, so the current browsers are supported in order or recommendation:

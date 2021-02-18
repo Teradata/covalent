@@ -1,4 +1,4 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -8,13 +8,15 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: Message', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentMessageModule],
-      declarations: [TdMessageBasicTestComponent, TdMessageContentTestComponent, TdMessageOpenedTestComponent],
-    });
-    TestBed.compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [NoopAnimationsModule, CovalentMessageModule],
+        declarations: [TdMessageBasicTestComponent, TdMessageContentTestComponent, TdMessageOpenedTestComponent],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   it('should set label, sublabel and color `primary`, `red` and then change to color `accent`', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);

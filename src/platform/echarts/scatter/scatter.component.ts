@@ -11,11 +11,11 @@ import {
   TdSeriesLayoutBy,
   ITdMarkLine,
   ITdMarkArea,
-  TdSeriesComponent,
+  TdSeriesDirective,
   ITdSeries,
 } from '@covalent/echarts/base';
 
-export interface ITdScatterSeries extends ITdSeries<'scatter'> {
+export interface ITdScatterSeries extends ITdSeries {
   coordinateSystem?: TdCoordinateSystem;
   xAxisIndex?: number;
   yAxisIndex?: number;
@@ -76,12 +76,12 @@ export interface ITdScatterSeries extends ITdSeries<'scatter'> {
   ],
   providers: [
     {
-      provide: TdSeriesComponent,
+      provide: TdSeriesDirective,
       useExisting: forwardRef(() => TdChartSeriesScatterComponent),
     },
   ],
 })
-export class TdChartSeriesScatterComponent extends TdSeriesComponent<'scatter'> implements ITdScatterSeries {
+export class TdChartSeriesScatterComponent extends TdSeriesDirective implements ITdScatterSeries {
   @Input() coordinateSystem: TdCoordinateSystem;
   @Input() xAxisIndex: number;
   @Input() yAxisIndex: number;

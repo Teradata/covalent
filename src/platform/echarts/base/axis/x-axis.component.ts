@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 import { TdChartOptionsService } from '../chart-options.service';
 import { TdXAxisPosition } from './axis.interface';
-import { TdChartAxisComponent } from './axis.component';
+import { TdChartAxisDirective } from './axis.component';
 
 @Component({
   selector: 'td-chart-x-axis',
@@ -41,7 +41,7 @@ import { TdChartAxisComponent } from './axis.component';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdChartXAxisComponent extends TdChartAxisComponent {
+export class TdChartXAxisComponent extends TdChartAxisDirective {
   @Input() position: TdXAxisPosition;
 
   constructor(_optionsService: TdChartOptionsService) {
