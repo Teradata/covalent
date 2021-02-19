@@ -3,8 +3,8 @@
 module.exports = {
   deployed: 'deploy/platform/',
   echartsVersion: '^4.2.1',
-  angularVersion: '^9.0.0 || ^10.0.0-0',
-  materialVersion: '^9.0.0 || ^10.0.0-0',
+  angularVersion: '^9.0.0 || ^10.0.0-0 || ^11.0.0-0',
+  materialVersion: '^9.0.0 || ^10.0.0-0 || ^11.0.0-0',
   showdownVersion: '^1.9.1',
   highlightVersion: '^9.13.1',
   monacoVersion: '^0.22.0',
