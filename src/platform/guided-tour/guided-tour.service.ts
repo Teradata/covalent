@@ -12,7 +12,7 @@ import Shepherd from 'shepherd.js';
 import { tap, map, filter } from 'rxjs/operators';
 import { Observable, fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import { CovalentGuidedTour, ITourStep, ITourOptions } from './guided.tour';
+import { CovalentGuidedTour, ITourStep, ITourOptions, TourStepButton } from './guided.tour';
 
 export interface IGuidedTour extends ITourOptions {
   steps: IGuidedTourStep[];
@@ -130,6 +130,18 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
         }
       }),
     );
+  }
+
+  setNextBtnDisability(stepId: string, isDisabled: boolean): void {
+    if (this.shepherdTour.getById(stepId)) {
+      const stepOptions: ITourStep = (this.shepherdTour.getById(stepId) as any).options;
+      stepOptions.buttons.forEach((button: TourStepButton) => {
+        if (button.text === 'chevron_right') {
+          button.disabled = isDisabled;
+        }
+      });
+      this.shepherdTour.getById(stepId).updateStepOptions(stepOptions);
+    }
   }
 
   private async _loadTour(tourUrl: string): Promise<any> {
