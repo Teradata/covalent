@@ -164,7 +164,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
 
     // Remove all indentation spaces so code can be parsed correctly
     const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
-    lines = lines.map(function (line: string): string {
+    lines = lines.map(function(line: string): string {
       return line
         .replace('=""', '') // remove empty values
         .replace(startingWhitespaceRegex, '')

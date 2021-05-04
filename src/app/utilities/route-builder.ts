@@ -13,7 +13,7 @@ export type IRouteBuilder = (detailsArray: any) => IScopedRouteBuilder;
 export type IScopedRouteBuilder = (identifier: IRouteBuilderIdentifier) => Route[];
 
 export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
-  return function (identifier: IRouteBuilderIdentifier): Route[] {
+  return function(identifier: IRouteBuilderIdentifier): Route[] {
     const componentMatch: any = detailsArray.find((component: any) => component.id === identifier.id);
 
     return [
