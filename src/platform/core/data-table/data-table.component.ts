@@ -118,8 +118,10 @@ export const _TdDataTableMixinBase = mixinControlValueAccessor(TdDataTableBase, 
   inputs: ['value'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdDataTableComponent extends _TdDataTableMixinBase
-  implements IControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+export class TdDataTableComponent
+  extends _TdDataTableMixinBase
+  implements IControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy
+{
   /** responsive width calculations */
   private _resizeSubs: Subscription;
   private _rowsChangedSubs: Subscription;
@@ -752,7 +754,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
    */
   disableTextSelection(): void {
     if (this._document) {
-      this._document.onselectstart = function(): boolean {
+      this._document.onselectstart = function (): boolean {
         return false;
       };
     }

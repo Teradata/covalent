@@ -57,8 +57,10 @@ export const _TdTabSelectMixinBase = mixinControlValueAccessor(mixinDisabled(mix
   /* tslint:disable-next-line */
   inputs: ['value', 'disabled', 'disableRipple'],
 })
-export class TdTabSelectComponent extends _TdTabSelectMixinBase
-  implements IControlValueAccessor, ICanDisable, ICanDisableRipple, OnInit, AfterContentInit, OnDestroy {
+export class TdTabSelectComponent
+  extends _TdTabSelectMixinBase
+  implements IControlValueAccessor, ICanDisable, ICanDisableRipple, OnInit, AfterContentInit, OnDestroy
+{
   private _destroy: Subject<boolean> = new Subject<boolean>();
   private _widthSubject: Subject<number> = new Subject<number>();
 

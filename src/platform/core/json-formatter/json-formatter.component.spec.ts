@@ -56,7 +56,7 @@ describe('Component: JsonFormatter', () => {
         const fixture: ComponentFixture<any> = TestBed.createComponent(TdJsonFormatterBasicTestComponent);
         const component: TdJsonFormatterBasicTestComponent = fixture.debugElement.componentInstance;
         component.levelsOpen = undefined;
-        expect(function(): void {
+        expect(function (): void {
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             fixture.detectChanges();
