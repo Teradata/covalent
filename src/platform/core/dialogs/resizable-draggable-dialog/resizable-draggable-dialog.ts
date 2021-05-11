@@ -162,10 +162,8 @@ export class ResizableDraggableDialog {
     const originalMouseX: number = event.pageX;
     const originalMouseY: number = event.pageY;
     const { x: currentTransformX, y: currentTransformY }: Point = this._dragRef.getFreeDragPosition();
-    const {
-      bottom: distanceFromBottom,
-      right: distanceFromRight,
-    }: ClientRect = this._getDialogWrapper().getBoundingClientRect();
+    const { bottom: distanceFromBottom, right: distanceFromRight }: ClientRect =
+      this._getDialogWrapper().getBoundingClientRect();
     const { right: viewportWidth, bottom: viewportHeight }: ClientRect = this._getViewportDimensions();
 
     const mouseMoveSub: Subscription = fromEvent(window, 'pointermove').subscribe((e: PointerEvent) => {

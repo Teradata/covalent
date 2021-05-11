@@ -344,9 +344,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   async loadChildrenUrl(item: IMarkdownNavigatorItem): Promise<IMarkdownNavigatorItem[]> {
     const sanitizedUrl: string = this._sanitizer.sanitize(SecurityContext.URL, item.childrenUrl);
     try {
-      return await this._http
-        .get<IMarkdownNavigatorItem[]>(sanitizedUrl, { ...item.httpOptions })
-        .toPromise();
+      return await this._http.get<IMarkdownNavigatorItem[]>(sanitizedUrl, { ...item.httpOptions }).toPromise();
     } catch (error) {
       this.handleChildrenUrlError(error);
       return [];

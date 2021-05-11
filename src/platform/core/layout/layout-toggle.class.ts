@@ -31,7 +31,8 @@ export const _TdLayoutToggleMixinBase = mixinDisabled(LayoutToggleBase);
 @Directive()
 export abstract class BaseLayoutToggleDirective
   extends _TdLayoutToggleMixinBase
-  implements AfterViewInit, OnDestroy, ICanDisable {
+  implements AfterViewInit, OnDestroy, ICanDisable
+{
   private _toggleSubs: Subscription;
 
   private _initialized: boolean = false;

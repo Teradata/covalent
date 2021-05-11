@@ -60,7 +60,8 @@ export class TdDynamicElementDirective {
 })
 export class TdDynamicElementComponent
   extends _TdDynamicElementMixinBase
-  implements IControlValueAccessor, OnInit, OnChanges {
+  implements IControlValueAccessor, OnInit, OnChanges
+{
   private _instance: any;
 
   /**
