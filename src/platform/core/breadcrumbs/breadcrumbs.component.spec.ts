@@ -55,8 +55,9 @@ describe('Component: Breadcrumbs', () => {
         const fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
-            .componentInstance;
+          const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(
+            By.directive(TdBreadcrumbsComponent),
+          ).componentInstance;
           expect(breadcrumbs.count).toBe(5);
         });
       }),
@@ -91,8 +92,9 @@ describe('Component: Breadcrumbs', () => {
           window.dispatchEvent(new Event('resize'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
-              .componentInstance;
+            const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(
+              By.directive(TdBreadcrumbsComponent),
+            ).componentInstance;
             expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(2);
           });
         });
@@ -112,8 +114,9 @@ describe('Component: Breadcrumbs', () => {
           fixture.detectChanges();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent))
-              .componentInstance;
+            const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(
+              By.directive(TdBreadcrumbsComponent),
+            ).componentInstance;
             expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(3);
           });
         });

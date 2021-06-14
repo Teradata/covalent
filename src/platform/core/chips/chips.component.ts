@@ -93,7 +93,8 @@ export const _TdChipsMixinBase = mixinControlValueAccessor(mixinDisabled(TdChips
 })
 export class TdChipsComponent
   extends _TdChipsMixinBase
-  implements IControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable {
+  implements IControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable
+{
   private _outsideClickSubs: Subscription = Subscription.EMPTY;
   private _inputValueChangesSubs: Subscription = Subscription.EMPTY;
   private _isMousedown: boolean = false;

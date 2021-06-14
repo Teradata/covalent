@@ -22,19 +22,8 @@ const tabs: object = {
   showMigration: false,
 };
 
-const [
-  root,
-  viewLayouts,
-  layout,
-  buttons,
-  nav,
-  dialogs,
-  guidedTour,
-  forms,
-  markdown,
-  editors,
-  formatting,
-] = componentRouteCategories;
+const [root, viewLayouts, layout, buttons, nav, dialogs, guidedTour, forms, markdown, editors, formatting] =
+  componentRouteCategories;
 
 export const createComponentDetails: IComponentDetails[] = [
   {

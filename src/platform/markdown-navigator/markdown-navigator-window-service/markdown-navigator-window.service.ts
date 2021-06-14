@@ -78,15 +78,13 @@ export class TdMarkdownNavigatorWindowService {
       ...config.dialogConfig,
       panelClass,
     };
-    const {
-      matDialogRef,
-      dragRefSubject,
-    }: IDraggableRefs<TdMarkdownNavigatorWindowComponent> = this._tdDialogService.openDraggable({
-      component: TdMarkdownNavigatorWindowComponent,
-      config: draggableConfig,
-      dragHandleSelectors: ['.td-window-dialog-toolbar'],
-      draggableClass: 'td-draggable-markdown-navigator-window',
-    });
+    const { matDialogRef, dragRefSubject }: IDraggableRefs<TdMarkdownNavigatorWindowComponent> =
+      this._tdDialogService.openDraggable({
+        component: TdMarkdownNavigatorWindowComponent,
+        config: draggableConfig,
+        dragHandleSelectors: ['.td-window-dialog-toolbar'],
+        draggableClass: 'td-draggable-markdown-navigator-window',
+      });
     this.markdownNavigatorWindowDialog = matDialogRef;
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
