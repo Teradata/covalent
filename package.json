@@ -110,7 +110,7 @@
     "@types/node": "^12.7.2",
     "@types/selenium-webdriver": "^2.52.0",
     "autoprefixer": "9.6.5",
-    "conventional-changelog-cli": "^2.0.34",
+    "conventional-changelog-cli": "^2.1.1",
     "coveralls": "^3.0.3",
     "css-loader": "3.4.2",
     "file-loader": "5.0.2",
