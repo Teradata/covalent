@@ -91,8 +91,7 @@ export const _TdChipsMixinBase = mixinControlValueAccessor(mixinDisabled(TdChips
   templateUrl: './chips.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdChipsComponent
-  extends _TdChipsMixinBase
+export class TdChipsComponent extends _TdChipsMixinBase
   implements IControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable {
   private _outsideClickSubs: Subscription = Subscription.EMPTY;
   private _inputValueChangesSubs: Subscription = Subscription.EMPTY;

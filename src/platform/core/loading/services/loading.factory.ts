@@ -160,7 +160,11 @@ export class TdLoadingFactory {
   private _createOverlay(): OverlayRef {
     const state: OverlayConfig = new OverlayConfig();
     state.hasBackdrop = false;
-    state.positionStrategy = this._overlay.position().global().centerHorizontally().centerVertically();
+    state.positionStrategy = this._overlay
+      .position()
+      .global()
+      .centerHorizontally()
+      .centerVertically();
     return this._overlay.create(state);
   }
 

@@ -8,7 +8,7 @@ var gulp = require('gulp');
 const buildConfig = require('../build.conf');
 const packageJson = require('../package.json');
 
-gulp.task('version-placeholder', function (cb) {
+gulp.task('version-placeholder', function(cb) {
   replaceVersionPlaceholders(buildConfig.deployed);
   cb();
 });

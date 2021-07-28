@@ -11,7 +11,9 @@ import { ITdFlavoredMarkdownButtonClickEvent } from './flavored-markdown.compone
 class TdFlavoredMarkdownTestComponent {
   markdown: string = '';
   @Output()
-  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
+  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<
+    ITdFlavoredMarkdownButtonClickEvent
+  >();
 }
 
 describe('Component: TdFlavoredMarkdown should: ', () => {

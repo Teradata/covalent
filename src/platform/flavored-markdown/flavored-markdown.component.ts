@@ -154,7 +154,9 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    * Is an object containing text and data of button
    */
   @Output()
-  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
+  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<
+    ITdFlavoredMarkdownButtonClickEvent
+  >();
 
   @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true }) container: TdFlavoredMarkdownContainerDirective;
 
@@ -206,7 +208,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
       // Remove all indentation spaces so markdown can be parsed correctly
       const startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
-      lines = lines.map(function (line: string): string {
+      lines = lines.map(function(line: string): string {
         return line.replace(startingWhitespaceRegex, '');
       });
 

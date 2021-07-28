@@ -175,7 +175,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
     /**
      * This function adds the step progress in the footer of the shepherd tooltip
      */
-    const appendProgressFunc: Function = function (): void {
+    const appendProgressFunc: Function = function(): void {
       // get all the footers that are available in the DOM
       const footers: Element[] = Array.from<Element>(document.querySelectorAll('.shepherd-footer'));
       // get the last footer since Shepherd always puts the active one at the end
@@ -192,7 +192,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
     const steps: ITourStep[] = originalSteps.map((step: ITourStep) => {
       let showProgress: Function;
       if (step.attachToOptions?.skipFromStepCount === true) {
-        showProgress = function (): void {
+        showProgress = function(): void {
           return;
         };
       } else if (

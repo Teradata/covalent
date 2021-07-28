@@ -1,4 +1,4 @@
-module.exports = function (config) {
+module.exports = function(config) {
   var configuration = {
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],

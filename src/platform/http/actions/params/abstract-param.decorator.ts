@@ -11,7 +11,7 @@ export function TdAbstractParam(
   type: TdParamType,
   param?: string,
 ): (target: object, propertyKey: string | symbol, parameterIndex: number) => void {
-  return function (target: object, propertyKey: string | symbol, parameterIndex: number): void {
+  return function(target: object, propertyKey: string | symbol, parameterIndex: number): void {
     const parameters: { index: number; param: string; type: TdParamType }[] =
       Reflect.getOwnMetadata(tdHttpRESTParam, target, propertyKey) || [];
     parameters.push({
