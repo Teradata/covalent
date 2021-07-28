@@ -23,7 +23,7 @@ jobs:
     - env: 'MODE=aot'
     - env: 'MODE=release'
     - env: 'MODE=unit-test'
-    - env: 'MODE=audit'
+    # - env: 'MODE=audit'
     - env: 'MODE=a11y'
 install:
   - npm ci
