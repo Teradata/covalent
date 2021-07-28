@@ -116,8 +116,6 @@
     "file-loader": "5.0.2",
     "fs-extra": "^4.0.0",
     "glob": "^6.0.4",
-    "gulp": "4.0.2",
-    "gulp-bump": "3.2.0",
     "gulp-hub": "4.2.0",
     "gulp-postcss": "8.0.0",
     "gulp-sass": "^5.0.0",
