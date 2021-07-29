@@ -37,16 +37,14 @@ export class DialogsDemoDraggableResizableWindowComponent {
   ) {}
 
   openDraggableResizableWindowDialog(): void {
-    const {
-      matDialogRef,
-      dragRefSubject,
-    }: IDraggableRefs<DraggableResizableWindowDialogComponent> = this._dialogService.openDraggable({
-      component: DraggableResizableWindowDialogComponent,
-      dragHandleSelectors: ['mat-toolbar'],
-      config: {
-        panelClass: ['td-window-dialog'], // pass this class in to ensure certain css is properly added
-      },
-    });
+    const { matDialogRef, dragRefSubject }: IDraggableRefs<DraggableResizableWindowDialogComponent> =
+      this._dialogService.openDraggable({
+        component: DraggableResizableWindowDialogComponent,
+        dragHandleSelectors: ['mat-toolbar'],
+        config: {
+          panelClass: ['td-window-dialog'], // pass this class in to ensure certain css is properly added
+        },
+      });
 
     // listen to close event
     matDialogRef.componentInstance.closed.subscribe(() => matDialogRef.close());

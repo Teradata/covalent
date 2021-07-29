@@ -120,7 +120,8 @@ export const _TdDataTableMixinBase = mixinControlValueAccessor(TdDataTableBase, 
 })
 export class TdDataTableComponent
   extends _TdDataTableMixinBase
-  implements IControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+  implements IControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy
+{
   /** responsive width calculations */
   private _resizeSubs: Subscription;
   private _rowsChangedSubs: Subscription;

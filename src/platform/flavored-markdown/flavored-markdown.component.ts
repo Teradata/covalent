@@ -332,7 +332,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   private _replaceTables(markdown: string): string {
-    const tableRgx: RegExp = /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
+    const tableRgx: RegExp =
+      /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
     return this._replaceComponent(
       markdown,
       TdDataTableComponent,
