@@ -29,14 +29,12 @@ export class DialogsDemoDraggableResizableComponent {
   ) {}
 
   openDraggableResizableDialog(): void {
-    const {
-      matDialogRef,
-      dragRefSubject,
-    }: IDraggableRefs<DraggableResizableDialogComponent> = this._dialogService.openDraggable({
-      component: DraggableResizableDialogComponent,
-      // CSS selectors of element(s) inside the component meant to be drag handle(s)
-      dragHandleSelectors: ['.drag-handle'],
-    });
+    const { matDialogRef, dragRefSubject }: IDraggableRefs<DraggableResizableDialogComponent> =
+      this._dialogService.openDraggable({
+        component: DraggableResizableDialogComponent,
+        // CSS selectors of element(s) inside the component meant to be drag handle(s)
+        dragHandleSelectors: ['.drag-handle'],
+      });
 
     let resizableDraggableDialog: ResizableDraggableDialog;
     dragRefSubject.subscribe((dragRf: DragRef) => {
