@@ -21,7 +21,6 @@
     "codelyzer": "^5.2.0",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-angular": "^8.1.0",
-    "@commitlint/travis-cli": "^8.1.0",
     "husky": "^2.7.0",
     "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1",
