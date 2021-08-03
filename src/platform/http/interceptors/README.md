@@ -1,4 +1,6 @@
-# TdHttpService
+# TdHttpService (Deprecated)
+
+***Deprecation Notice** - This component will be deprecated in favor of a different implementation* [View Doc](https://angular.io/api/common/http)
 
 Service provided with methods that extend the @angular [HttpClient] service and provide an additional layer of interceptor functionality.
 

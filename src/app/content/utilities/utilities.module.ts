@@ -23,6 +23,7 @@ import { MediaDirectiveDemoComponent } from './utilities-demos/media/directive/m
 import { CovalentMediaModule } from '../../../platform/core/media';
 import { DirectivesComponent } from './utilities-demos/directives/directives.component';
 import { CovalentCommonModule } from '../../../platform/core/common';
+import { CovalentMessageModule } from '../../../platform/core/message';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { CovalentCommonModule } from '../../../platform/core/common';
     ComponentOverviewModule,
     CovalentCommonModule,
     CovalentMediaModule,
+    CovalentMessageModule,
     // Documentation
     DocumentationToolsModule,
   ],
