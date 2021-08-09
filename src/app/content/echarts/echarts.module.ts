@@ -17,9 +17,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentCommonModule } from '@covalent/core/common';
-import { CovalentLoadingModule } from '@covalent/core/loading';
-import { CovalentMediaModule } from '@covalent/core/media';
-import { CovalentMenuModule } from '@covalent/core/menu';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 import { SidenavContentModule } from '../../components/shared/sidenav-content/sidenav-content.module';
@@ -47,9 +44,6 @@ import { moduleRoutes } from './echarts.routes';
     // Covalent Core
     CovalentLayoutModule,
     CovalentCommonModule,
-    CovalentLoadingModule,
-    CovalentMediaModule,
-    CovalentMenuModule,
     DocumentationToolsModule,
     moduleRoutes,
     SidenavContentModule,

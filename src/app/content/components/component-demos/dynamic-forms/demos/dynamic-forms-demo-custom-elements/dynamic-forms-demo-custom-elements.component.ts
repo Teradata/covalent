@@ -5,7 +5,6 @@ import { ITdDynamicElementConfig } from '@covalent/dynamic-forms';
 @Component({
   selector: 'td-dynamic-input-test',
   template: `
-    <td-chips [items]="selections" [formControl]="control" [placeholder]="placeholder"></td-chips>
     <div *ngIf="errorMessageTemplate && control?.errors" class="tc-red-600" [style.font-size.%]="'70'">
       <ng-template
         [ngTemplateOutlet]="errorMessageTemplate"

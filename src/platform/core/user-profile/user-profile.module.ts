@@ -5,23 +5,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 
-import { CovalentMenuModule } from '@covalent/core/menu';
-
 import { TdUserProfileMenuComponent } from './user-profile-menu/user-profile-menu.component';
 import { TdUserProfileComponent } from './user-profile.component';
 
 @NgModule({
   declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
-  imports: [
-    CommonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-
-    /* covalent modules */
-    CovalentMenuModule,
-  ],
+  imports: [CommonModule, MatMenuModule, MatIconModule, MatButtonModule, MatListModule],
   providers: [],
   exports: [TdUserProfileComponent, TdUserProfileMenuComponent],
 })

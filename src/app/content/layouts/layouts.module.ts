@@ -20,9 +20,6 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 import { CovalentLayoutModule } from '../../../platform/core/layout';
-import { CovalentExpansionPanelModule } from '../../../platform/core/expansion-panel';
-import { CovalentStepsModule } from '../../../platform/core/steps';
-import { CovalentMediaModule } from '../../../platform/core/media';
 import { CovalentCommonModule } from '../../../platform/core/common';
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
@@ -46,9 +43,6 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatToolbarModule,
     /** Covalent Modules */
     CovalentLayoutModule,
-    CovalentExpansionPanelModule,
-    CovalentStepsModule,
-    CovalentMediaModule,
     CovalentHighlightModule,
     CovalentCommonModule,
     DocumentationToolsModule,

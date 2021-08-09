@@ -1,15 +1,10 @@
 <mat-sidenav-container fullscreen>
-  <mat-sidenav mode="side" [opened]="media.registerQuery('gt-sm') | async" [style.width.px]="280" [style.z-index]="1">
+  <mat-sidenav mode="side" [style.width.px]="280" [style.z-index]="1">
     <app-sidenav-content></app-sidenav-content>
   </mat-sidenav>
   <mat-sidenav-content class="bgc-white-4">
     <div layout="row" layout-align="center start" class="pad-top-xl">
-      <div
-        layout="column"
-        tdMediaToggle="gt-md"
-        [mediaClasses]="['doc-layout-gt-md']"
-        class="pad-top-md doc-layout pad-left-md pad-right-md"
-      >
+      <div layout="column" class="pad-top-md doc-layout pad-left-md pad-right-md">
         <router-outlet></router-outlet>
       </div>
     </div>

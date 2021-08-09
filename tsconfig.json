@@ -17,7 +17,6 @@
       "@covalent/core/*": ["./platform/core/*"],
       "@covalent/dynamic-forms": ["./platform/dynamic-forms"],
       "@covalent/highlight": ["./platform/highlight"],
-      "@covalent/http": ["./platform/http"],
       "@covalent/markdown": ["./platform/markdown"],
       "@covalent/experimental/*": ["./platform/experimental/*"],
       "@covalent/flavored-markdown": ["./platform/flavored-markdown"],

@@ -9,19 +9,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { CovalentMenuModule } from '../../../platform/core/menu';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatListModule,
-    MatIconModule,
-    MatMenuModule,
-    MatTooltipModule,
-    CovalentMenuModule,
-    RouterModule,
-  ],
+  imports: [CommonModule, MatButtonModule, MatListModule, MatIconModule, MatMenuModule, MatTooltipModule, RouterModule],
   declarations: [ToolbarComponent],
   exports: [ToolbarComponent],
 })

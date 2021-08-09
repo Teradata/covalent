@@ -1,8 +1,6 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Dir } from '@angular/cdk/bidi';
 import { MatIconRegistry } from '@angular/material/icon';
-import { TdMediaService } from '@covalent/core/media';
 import { TranslateService } from '@ngx-translate/core';
 
 import { getSelectedLanguage } from './utilities/translate';
@@ -60,8 +58,6 @@ export class DocsAppComponent {
   constructor(
     private _iconRegistry: MatIconRegistry,
     private _domSanitizer: DomSanitizer,
-    private _changeDetectorRef: ChangeDetectorRef,
-    public media: TdMediaService,
     translateService: TranslateService,
   ) {
     // Set fallback language

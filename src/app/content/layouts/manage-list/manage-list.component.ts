@@ -1,5 +1,4 @@
 import { Component, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -145,7 +144,7 @@ export class ManageListComponent {
           <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
           <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
         </div>
-        <td-layout-manage-list #manageList [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'" [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+        <td-layout-manage-list #manageList>
           <mat-toolbar td-sidenav-content>
             <span>Optional Title</span>
           </mat-toolbar>
@@ -165,7 +164,7 @@ export class ManageListComponent {
               </button>
             </div>
           </mat-toolbar>
-          <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+          <div layout-gt-sm="row"  >
             <div flex-gt-sm="60">
               <mat-card>
                 <mat-card-title>Products Sales</mat-card-title>
@@ -227,7 +226,6 @@ export class ManageListComponent {
   `;
   managedListFullTypescript: string = `
     import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-    import { TdMediaService } from '@covalent/core/media'; 
     @Component({
       changeDetection: ChangeDetectionStrategy.OnPush,
       selector: 'layouts-manage-list',
@@ -254,9 +252,9 @@ export class ManageListComponent {
         { icon: 'looks_4', route: '.', title: 'Fourth item', description: 'Item description', },
         { icon: 'looks_5', route: '.', title: 'Fifth item', description: 'Item description', },
       ];
-      constructor(public media: TdMediaService) {}
+      constructor() {}
     }
   `;
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef, public media: TdMediaService) {}
+  constructor() {}
 }

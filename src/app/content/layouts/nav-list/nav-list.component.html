@@ -90,12 +90,7 @@
           </mat-nav-list>
         </div>
       </td-navigation-drawer>
-      <td-layout-nav-list
-        #navList
-        [opened]="media.registerQuery('gt-sm') | async"
-        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
-        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'"
-      >
+      <td-layout-nav-list #navList>
         <div td-sidenav-toolbar-content layout="row" layout-align="start center">
           <button mat-icon-button tdLayoutToggle>
             <mat-icon>menu</mat-icon>
@@ -126,7 +121,7 @@
             <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
           </ng-template>
         </mat-nav-list>
-        <div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+        <div>
           <mat-card>
             <mat-card-title>Main Content</mat-card-title>
             <mat-card-subtitle>content area</mat-card-subtitle>

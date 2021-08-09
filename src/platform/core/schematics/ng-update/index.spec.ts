@@ -78,7 +78,6 @@ describe('ng-update schematic', () => {
     const expectedCovalentVersion: string = '3.0.0';
 
     expectVersionToBe(updatedDependencies, '@covalent/dynamic-forms', expectedCovalentVersion);
-    expectVersionToBe(updatedDependencies, '@covalent/http', expectedCovalentVersion);
     expectVersionToBe(updatedDependencies, '@covalent/markdown', expectedCovalentVersion);
     expectVersionToBe(updatedDependencies, '@covalent/flavored-markdown', expectedCovalentVersion);
     expectVersionToBe(updatedDependencies, '@covalent/echarts', expectedCovalentVersion);

@@ -7,7 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
-import { CovalentChipsModule } from '../../../../../platform/core/chips';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
@@ -28,7 +27,6 @@ const routes: Routes = setComponentRoutes({
     MatIconModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    CovalentChipsModule,
     CovalentDynamicFormsModule,
     ComponentDetailsModule,
     // Covalent

@@ -1,4 +1,3 @@
-import { CovalentExpansionPanelModule } from '@covalent/core/expansion-panel';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -31,10 +30,7 @@ import { SidenavContentModule } from '../../components/shared/sidenav-content/si
 import { ToolbarModule } from 'app/components/toolbar/toolbar.module';
 import { RouterModule } from '@angular/router';
 import { ComponentDetailsModule } from 'app/components/shared/component-details/component-details.module';
-import { docsChildRoutes } from './docs';
-import { docsRouteGroup } from 'app/utilities/route-trees';
 import { docsRoutes } from './docs.routes';
-import { CovalentMediaModule } from '../../../platform/core/media';
 import { CovalentLayoutModule } from '../../../platform/core/layout';
 
 @NgModule({
@@ -66,10 +62,8 @@ import { CovalentLayoutModule } from '../../../platform/core/layout';
     MatMenuModule,
     /** Covalent Modules */
     CovalentLayoutModule,
-    CovalentMediaModule,
     CovalentHighlightModule,
     DocumentationToolsModule,
-    CovalentExpansionPanelModule,
     ToolbarModule,
     ComponentDetailsModule,
     SidenavContentModule,

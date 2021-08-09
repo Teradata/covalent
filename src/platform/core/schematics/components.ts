@@ -15,16 +15,6 @@ export class DynamicForms implements IComponent {
   }
 }
 
-export class Http implements IComponent {
-  public enabled(options: ISchema): boolean {
-    return options.http;
-  }
-
-  public dependency(): string {
-    return '@covalent/http';
-  }
-}
-
 export class Highlight implements IComponent {
   public enabled(options: ISchema): boolean {
     return options.highlight;
@@ -97,7 +87,6 @@ export class MarkdownNavigator implements IComponent {
 
 export const components: IComponent[] = [
   new DynamicForms(),
-  new Http(),
   new Highlight(),
   new Markdown(),
   new FlavoredMarkdown(),

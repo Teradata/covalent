@@ -39,10 +39,6 @@ Covalent modules live in separated npm packages:
 **@covalent/text-editor**
   - Simple markdown text editor component
 
-**@covalent/http-service**
-  - Develop http services with custom decorators
-  - Easily Intercept Http requests
-
 <br/>
 
 ## Browser Support

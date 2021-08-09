@@ -7,7 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
 import { CovalentCommonModule } from '@covalent/core/common';
-import { CovalentMediaModule } from '@covalent/core/media';
 import { CovalentMessageModule } from '@covalent/core/message';
 
 import { ComponentHeroComponent } from './component-hero/component-hero.component';
@@ -26,7 +25,6 @@ import { DocumentationToolsModule } from 'app/documentation-tools';
     MatCardModule,
     MatTabsModule,
     /** Covalent Modules */
-    CovalentMediaModule,
     CovalentCommonModule,
     CovalentMessageModule,
     DocumentationToolsModule,

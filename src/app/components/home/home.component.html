@@ -1,24 +1,12 @@
 <td-layout class="home">
   <div>
-    <section
-      class="banner bgc-white-4"
-      tdMediaToggle="gt-sm"
-      [mediaClasses]="['banner-lg']"
-      [ngClass]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate'"
-    >
+    <section class="banner bgc-white-4" [ngClass]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate'">
       <div layout="row" layout-align="center center">
         <div class="max-width">
           <div layout="row" layout-align="space-between center">
-            <div
-              flex
-              flex-order-xs="2"
-              layout="row"
-              layout-align="center center"
-              tdMediaToggle="gt-xs"
-              [mediaClasses]="['pad-top-lg', 'pad-bottom-xs', 'pad-right-none']"
-            >
+            <div flex flex-order-xs="2" layout="row" layout-align="center center">
               <div class="push-top-xl" hide-xs></div>
-              <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']" [style.maxWidth.px]="500">
+              <div [style.maxWidth.px]="500">
                 <div
                   layout="column"
                   layout-gt-sm="row"
@@ -27,27 +15,13 @@
                   layout-align="start center"
                   class="pad-top-lg"
                 >
-                  <mat-icon
-                    tdMediaToggle="gt-sm"
-                    [mediaClasses]="['pull-left']"
-                    class="covalent-logo-xs push-right-sm"
-                    svgIcon="assets:covalent"
-                    hide-gt-sm
-                  ></mat-icon>
-                  <div class="text-center" tdMediaToggle="gt-sm" [mediaClasses]="['text-left']">
-                    <h3
-                      class="pull-bottom-xs mat-title tc-td-teal mat-headline"
-                      tdMediaToggle="gt-sm"
-                      [mediaClasses]="['mat-display-1']"
-                    >
-                      Covalent
-                    </h3>
+                  <mat-icon class="covalent-logo-xs push-right-sm" svgIcon="assets:covalent" hide-gt-sm></mat-icon>
+                  <div class="text-center">
+                    <h3 class="pull-bottom-xs mat-title tc-td-teal mat-headline">Covalent</h3>
                     <h1
                       class="mat-title tc-td-slate push-top-xs push-bottom-xs mat-display-2"
                       [style.lineHeight.em]="1.3"
                       [style.fontWeight]="500"
-                      tdMediaToggle="gt-sm"
-                      [mediaStyles]="{ letterSpacing: '-0.02em', fontSize: '54px' }"
                     >
                       Enterprise UI Platform
                     </h1>
@@ -56,8 +30,6 @@
                 <h2
                   class="mat-title tc-td-slate-600 push-top-xs push-bottom-sm text-center pad-sm push-left push-right"
                   [style.fontWeight]="400"
-                  tdMediaToggle="gt-sm"
-                  [mediaClasses]="['text-left', 'pad-right-md', 'push-left-none', 'pad-left-none']"
                 >
                   Reusable tested tools to build robust Angular Material & Angular applications
                 </h2>
@@ -68,7 +40,6 @@
                     color="accent"
                     [style.letterSpacing.px]="1"
                     class="text-upper text-lg push-bottom-lg pad-xs pad-left-md pad-right-md"
-                    tdMediaToggle="gt-xs"
                     [routerLink]="['/docs']"
                   >
                     Get Started
@@ -93,21 +64,8 @@
               </div>
               <div class="push-bottom-xl" hide-xs></div>
             </div>
-            <div
-              flex="40"
-              hide-xs
-              hide-sm
-              layout="column"
-              layout-align="center start"
-              tdMediaToggle="gt-xs"
-              [mediaClasses]="['pad-bottom-xl']"
-            >
-              <mat-icon
-                class="mat-icon-svg-xxl pad-top"
-                svgIcon="assets:covalent"
-                tdMediaToggle="xs"
-                [mediaClasses]="['push-top', 'push-left']"
-              ></mat-icon>
+            <div flex="40" hide-xs hide-sm layout="column" layout-align="center start">
+              <mat-icon class="mat-icon-svg-xxl pad-top" svgIcon="assets:covalent"></mat-icon>
             </div>
           </div>
         </div>
@@ -116,9 +74,9 @@
 
     <section [class]="activeTheme === 'theme-dark' ? 'bgc-black' : 'mat-app-background'">
       <div layout-gt-xs="row" layout-align="center center">
-        <div flex class="pad max-width" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
+        <div flex class="pad max-width">
           <div class="push-top-md" hide-xs></div>
-          <div tdMediaToggle="gt-sm" [mediaClasses]="['push']">
+          <div>
             <mat-nav-list hide-gt-sm>
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <a mat-list-item [routerLink]="[item.route]">
@@ -156,9 +114,9 @@
       <div layout="row" layout-align="center center">
         <div class="max-width">
           <div layout="row" class="pad-top pad-bottom">
-            <div flex flex-order-xs="2" class="pad max-width" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
+            <div flex flex-order-xs="2" class="pad max-width">
               <div class="push-top-xxl" hide-xs></div>
-              <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
+              <div>
                 <h2 class="mat-headline tc-red-500 push-top-xs push-bottom-sm">
                   Built with
                   <mat-icon>favorite</mat-icon>
@@ -174,21 +132,8 @@
               </div>
               <div class="push-bottom-xl" hide-xs></div>
             </div>
-            <div
-              flex="30"
-              flex-xs="20"
-              flex-order-xs="1"
-              layout-gt-xs="column"
-              layout-align="center start"
-              tdMediaToggle="gt-xs"
-              [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']"
-            >
-              <mat-icon
-                class="mat-icon-svg-xxl fill-red-500"
-                svgIcon="assets:angular-outline"
-                tdMediaToggle="xs"
-                [mediaClasses]="['push-top', 'push-left']"
-              ></mat-icon>
+            <div flex="30" flex-xs="20" flex-order-xs="1" layout-gt-xs="column" layout-align="center start">
+              <mat-icon class="mat-icon-svg-xxl fill-red-500" svgIcon="assets:angular-outline"></mat-icon>
             </div>
           </div>
         </div>
@@ -199,9 +144,9 @@
       <div layout="row" layout-align="center center">
         <div class="max-width">
           <div layout="row" class="pad-top pad-bottom">
-            <div flex flex-order="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
+            <div flex flex-order="2" class="pad">
               <div class="push-top-xxl" hide-xs></div>
-              <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
+              <div>
                 <h2 class="mat-headline tc-green-A700 push-top-xs push-bottom-sm">
                   Following the Material Design spec
                 </h2>
@@ -217,28 +162,15 @@
               </div>
               <div class="push-bottom-xl" hide-xs></div>
             </div>
-            <div
-              flex="30"
-              flex-xs="20"
-              flex-order="1"
-              layout-gt-xs="column"
-              layout-align="center start"
-              tdMediaToggle="gt-xs"
-              [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-left-xl']"
-            >
-              <mat-icon
-                class="mat-icon-svg-xxl fill-green-A700"
-                svgIcon="assets:material-outline"
-                tdMediaToggle="xs"
-                [mediaClasses]="['push-top', 'push-left']"
-              ></mat-icon>
+            <div flex="30" flex-xs="20" flex-order="1" layout-gt-xs="column" layout-align="center start">
+              <mat-icon class="mat-icon-svg-xxl fill-green-A700" svgIcon="assets:material-outline"></mat-icon>
             </div>
           </div>
         </div>
       </div>
     </section>
   </div>
-  <td-layout-footer color="primary" tdMediaToggle="xs" [mediaClasses]="['text-center']">
+  <td-layout-footer color="primary">
     <div layout-gt-xs="row" layout-align="start center">
       <div class="mat-caption">©2016 - {{ year }} Teradata. All Rights Reserved</div>
       <span flex></span>

@@ -1,4 +1,3 @@
-import { TdMediaService } from '@covalent/core/media';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./content-container.component.scss'],
 })
 export class ContentContainerComponent {
-  constructor(public media: TdMediaService) {}
+  constructor() {}
 }

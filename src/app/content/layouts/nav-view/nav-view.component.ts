@@ -97,7 +97,7 @@ export class NavViewComponent {
         <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
         <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
       </div>
-      <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+      <div layout-gt-sm="row"  >
         <div flex-gt-sm="60">
           <mat-card>
             <mat-card-title>Products Sales</mat-card-title>

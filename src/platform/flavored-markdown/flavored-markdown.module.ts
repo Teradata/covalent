@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list';
 
-import { CovalentDataTableModule, TdDataTableComponent } from '@covalent/core/data-table';
-import { CovalentHighlightModule, TdHighlightComponent } from '@covalent/highlight';
-import { CovalentMarkdownModule, TdMarkdownComponent } from '@covalent/markdown';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentMarkdownModule } from '@covalent/markdown';
 
 import { TdFlavoredListComponent } from './cfm-list/cfm-list.component';
 import {
@@ -24,7 +23,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatCheckboxModule,
     MatListModule,
     MatProgressBarModule,
-    CovalentDataTableModule,
     CovalentHighlightModule,
     CovalentMarkdownModule,
     MatButtonModule,

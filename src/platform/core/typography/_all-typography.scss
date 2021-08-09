@@ -1,11 +1,6 @@
-@import '../chips/chips-theme';
-@import '../data-table/data-table-theme';
 @import '../dialogs/dialog-theme';
-@import '../expansion-panel/expansion-panel-theme';
 @import '../json-formatter/json-formatter-theme';
 @import '../message/message-theme';
-@import '../paging/paging-bar-theme';
-@import '../steps/steps-theme';
 
 @function td-typography-config(
   $font-family: '"Roboto", "Helvetica Neue", sans-serif',
@@ -37,13 +32,8 @@
   body {
     font-family: td-font-family($config);
   }
-  @include td-chips-typography($config);
-  @include td-data-table-typography($config);
   @include td-dialog-typography($config);
-  @include td-expansion-panel-typography($config);
   @include td-json-formatter-typography($config);
   @include td-message-typography($config);
-  @include td-paging-bar-typography($config);
-  @include td-steps-typography($config);
   @include td-layout-typography($config);
 }
