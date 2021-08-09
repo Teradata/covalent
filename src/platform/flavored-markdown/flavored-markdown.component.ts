@@ -48,9 +48,8 @@ export class TdFlavoredMarkdownButtonComponent {
   @HostBinding('style.display') display: string = 'inline-block';
   @Input() text: string = '';
   @Input() data: string = '';
-  @Output() clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<
-    ITdFlavoredMarkdownButtonClickEvent
-  >();
+  @Output()
+  clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
   emitClick(): void {
     this.clicked.emit({ text: this.text, data: this.data });
   }
@@ -154,9 +153,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    * Event emitted when a button is clicked
    * Is an object containing text and data of button
    */
-  @Output() buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<
-    ITdFlavoredMarkdownButtonClickEvent
-  >();
+  @Output()
+  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
 
   @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true }) container: TdFlavoredMarkdownContainerDirective;
 
@@ -334,7 +332,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   private _replaceTables(markdown: string): string {
-    const tableRgx: RegExp = /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
+    const tableRgx: RegExp =
+      /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
     return this._replaceComponent(
       markdown,
       TdDataTableComponent,

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TdLoadingMaskComponent } from './loading-mask.component';
 import { DebugElement } from '@angular/core';
@@ -7,11 +7,13 @@ describe('TdLoadingMaskComponent', () => {
   let component: TdLoadingMaskComponent;
   let fixture: ComponentFixture<TdLoadingMaskComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TdLoadingMaskComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TdLoadingMaskComponent],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TdLoadingMaskComponent);

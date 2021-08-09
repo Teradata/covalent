@@ -1,4 +1,4 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,22 +8,24 @@ import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoa
 describe('Service: Loading', () => {
   let overlayContainerElement: HTMLElement;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TdLoadingWrapperTestComponent],
-      imports: [NoopAnimationsModule, CovalentLoadingModule],
-      providers: [
-        {
-          provide: OverlayContainer,
-          useFactory: () => {
-            overlayContainerElement = document.createElement('div');
-            return { getContainerElement: () => overlayContainerElement };
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TdLoadingWrapperTestComponent],
+        imports: [NoopAnimationsModule, CovalentLoadingModule],
+        providers: [
+          {
+            provide: OverlayContainer,
+            useFactory: () => {
+              overlayContainerElement = document.createElement('div');
+              return { getContainerElement: () => overlayContainerElement };
+            },
           },
-        },
-      ],
-    });
-    TestBed.compileComponents();
-  }));
+        ],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   afterEach(() => {
     overlayContainerElement.innerHTML = '';

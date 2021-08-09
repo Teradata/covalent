@@ -22,19 +22,8 @@ const tabs: object = {
   showMigration: false,
 };
 
-const [
-  root,
-  viewLayouts,
-  layout,
-  buttons,
-  nav,
-  dialogs,
-  guidedTour,
-  forms,
-  markdown,
-  editors,
-  formatting,
-] = componentRouteCategories;
+const [root, viewLayouts, layout, buttons, nav, dialogs, guidedTour, forms, markdown, editors, formatting] =
+  componentRouteCategories;
 
 export const createComponentDetails: IComponentDetails[] = [
   {
@@ -55,6 +44,8 @@ export const createComponentDetails: IComponentDetails[] = [
     id: 'chips',
     description: 'Field completion with chips',
     apiDocUrl: 'platform/core/chips/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/components/chips/overview',
     icon: 'label',
     category: forms.name,
     route: '/components/chips',
@@ -125,6 +116,8 @@ export const createComponentDetails: IComponentDetails[] = [
     id: 'steps',
     description: 'A sequence of logical and numbered steps with associated active and complete state',
     apiDocUrl: 'platform/core/steps/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/cdk/stepper/overview',
     icon: 'view_array',
     category: buttons.name,
     route: '/components/steps',
@@ -172,6 +165,8 @@ export const createComponentDetails: IComponentDetails[] = [
     id: 'loading',
     description: 'Circular or linear progress loader',
     apiDocUrl: 'platform/core/loading/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/components/progress-spinner/overview',
     icon: 'hourglass_empty',
     category: buttons.name,
     route: '/components/loading',
@@ -216,6 +211,8 @@ export const createComponentDetails: IComponentDetails[] = [
     id: 'paging',
     description: 'Component used to paging within a dataset',
     apiDocUrl: 'platform/core/paging/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/components/paginator/overview',
     icon: 'swap_horiz',
     category: nav.name,
     route: '/components/paging',
@@ -236,6 +233,8 @@ export const createComponentDetails: IComponentDetails[] = [
     id: 'data-table',
     description: 'Component for displaying tabular data',
     apiDocUrl: 'platform/core/data-table/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/components/table/overview',
     icon: 'border_all',
     category: layout.name,
     route: '/components/data-table',
@@ -325,6 +324,8 @@ export const createComponentDetails: IComponentDetails[] = [
     id: 'sidesheet',
     description: 'Basic sidesheet content',
     apiDocUrl: 'platform/core/sidesheet/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/components/sidenav/overview',
     icon: 'view_array',
     category: layout.name,
     route: '/components/sidesheet',
@@ -337,6 +338,8 @@ export const createComponentDetails: IComponentDetails[] = [
     description:
       'Navigate across a sequence of logical and numbered steps. Shrink width of page to see responsive behavior',
     apiDocUrl: 'platform/core/steps/nav/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/components/stepper/overview',
     icon: 'format_line_spacing',
     category: nav.name,
     route: '/components/nav-steps',
@@ -361,6 +364,8 @@ export const createComponentDetails: IComponentDetails[] = [
     id: 'notifications',
     description: 'Notification count & menu for toolbar',
     apiDocUrl: 'platform/core/notifications/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/components/badge/overview',
     icon: 'notifications',
     category: buttons.name,
     route: '/components/notifications',
@@ -374,6 +379,8 @@ export const createComponentDetails: IComponentDetails[] = [
     id: 'tab-select',
     description: 'Bind values to tabs and use them as filters',
     apiDocUrl: 'platform/core/tab-select/README.md',
+    showMigration: true,
+    migrationUrl: 'https://material.angular.io/components/tabs/overview',
     icon: 'tab',
     category: forms.name,
     route: '/components/tab-select',

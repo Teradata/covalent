@@ -1,6 +1,6 @@
 ## Covalent: UI Platform based on Angular-Material
 
-[![Build Status](https://travis-ci.org/Teradata/covalent.svg?branch=develop)](https://travis-ci.org/Teradata/covalent)
+[![Covalent CI](https://github.com/teradata/covalent/actions/workflows/ci.yml/badge.svg)](https://github.com/teradata/covalent/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/%40covalent/core.svg)](https://www.npmjs.com/package/@covalent/core)
 [![npm](https://img.shields.io/npm/v/%40covalent/core/next.svg)](https://www.npmjs.com/package/@covalent/core/v/next)
 [![Join the chat at https://gitter.im/Teradata/covalent](https://badges.gitter.im/Teradata/covalent.svg)](https://gitter.im/Teradata/covalent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -45,8 +45,8 @@ Certain covalent version are meant for certain angular versions, and here is the
 | Covalent | Angular
 |:---:|:---:|
 | 2.X | 8.X |
-| 3.X | 9.X / 10.X |
-| Future / Nightly | 10.X |
+| 3.X | 9.X / 10.X / 11.x |
+| Future / Nightly | 11.X |
 
 ## Browser Support
 

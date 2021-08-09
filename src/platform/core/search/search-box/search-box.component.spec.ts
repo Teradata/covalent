@@ -1,4 +1,4 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,13 +9,15 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: SearchBox', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, FormsModule, CovalentSearchModule],
-      declarations: [TestNgModelSupportComponent],
-    });
-    TestBed.compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [NoopAnimationsModule, FormsModule, CovalentSearchModule],
+        declarations: [TestNgModelSupportComponent],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   it('should leverage ngModel to set a value', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);

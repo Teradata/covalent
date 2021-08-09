@@ -1,4 +1,4 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 import { TdCodeEditorComponent } from './';
 import { FormsModule } from '@angular/forms';
@@ -72,19 +72,21 @@ const language: any = {
 };
 
 describe('Component: App', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        TdCodeEditorComponent,
-        TestMultipleEditorsComponent,
-        TestEditorOptionsComponent,
-        TestTwoWayBindingWithValueComponent,
-        TestTwoWayBindingWithNgModelComponent,
-      ],
-      imports: [FormsModule],
-    });
-    TestBed.compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [
+          TdCodeEditorComponent,
+          TestMultipleEditorsComponent,
+          TestEditorOptionsComponent,
+          TestTwoWayBindingWithValueComponent,
+          TestTwoWayBindingWithNgModelComponent,
+        ],
+        imports: [FormsModule],
+      });
+      TestBed.compileComponents();
+    }),
+  );
 
   it('should set the editor value and retrieve that same value from editor', (done: DoneFn) => {
     inject([], () => {
