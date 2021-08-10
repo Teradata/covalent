@@ -8,7 +8,7 @@
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "es2020",
+    "module": "esnext",
     "moduleResolution": "node",
     "target": "es2015",
     "typeRoots": ["node_modules/@types"],
