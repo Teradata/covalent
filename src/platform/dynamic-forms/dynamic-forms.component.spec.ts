@@ -550,6 +550,35 @@ describe('Component: TdDynamicForms', () => {
       }),
     ),
   );
+
+  it(
+    `should render the placeholder for input fields`,
+    waitForAsync(
+      inject([], async () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+        const component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+
+        component.elements = [
+          {
+            name: 'input',
+            type: TdDynamicElement.Input,
+            label: 'LABEL',
+            placeholder: 'PLACEHOLDER',
+          },
+        ];
+        fixture.detectChanges();
+
+        await fixture.whenStable();
+        const inputElement: DebugElement = fixture.debugElement.query(By.css('[data-placeholder]'));
+        inputElement.triggerEventHandler('focus', {});
+        fixture.detectChanges();
+        await fixture.whenStable();
+        const labelElement: DebugElement = fixture.debugElement.query(By.css('mat-label'));
+        expect(inputElement.attributes['placeholder']).toBe('PLACEHOLDER');
+        expect(labelElement.nativeElement.textContent).toEqual('LABEL');
+      }),
+    ),
+  );
 });
 
 @Component({

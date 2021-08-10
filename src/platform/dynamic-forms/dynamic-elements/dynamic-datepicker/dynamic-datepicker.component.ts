@@ -24,4 +24,6 @@ export class TdDynamicDatepickerComponent {
   max: number = undefined;
 
   errorMessageTemplate: TemplateRef<any> = undefined;
+
+  placeholder: string = '';
 }

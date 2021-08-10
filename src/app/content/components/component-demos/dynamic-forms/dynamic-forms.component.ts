@@ -19,6 +19,7 @@ export class DynamicFormsDemoComponent {
     {
       name: 'required-input',
       label: 'Input Label',
+      placeholder: 'Input Placeholder',
       type: TdDynamicElement.Input,
       required: true,
       flex: 50,
