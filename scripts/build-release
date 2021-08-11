@@ -6,7 +6,7 @@ rm -rf ./src/platform/node_modules
 rm -rf ./deploy
 
 # BUILD: @covalent/core primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-core
+node ./node_modules/@angular/cli/bin/ng build covalent-core
 
 # BUILD: Schematics
 gulp build-schematics
@@ -23,21 +23,21 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 # HACK END
 
 # BUILD: @covalent/dynamic-forms primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-dynamic-forms
+node ./node_modules/@angular/cli/bin/ng build covalent-dynamic-forms
 # BUILD: @covalent/highlight primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-highlight
+node ./node_modules/@angular/cli/bin/ng build covalent-highlight
 # BUILD: @covalent/http primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-http
+node ./node_modules/@angular/cli/bin/ng build covalent-http
 # BUILD: @covalent/markdown primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-markdown
+node ./node_modules/@angular/cli/bin/ng build covalent-markdown
 # BUILD: @covalent/code-editor primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-code-editor
+node ./node_modules/@angular/cli/bin/ng build covalent-code-editor
 # BUILD: @covalent/text-editor primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-text-editor
+node ./node_modules/@angular/cli/bin/ng build covalent-text-editor
 # BUILD: @covalent/echarts primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-echarts
+node ./node_modules/@angular/cli/bin/ng build covalent-echarts
 # BUILD: @covalent/guided-tour primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-guided-tour
+node ./node_modules/@angular/cli/bin/ng build covalent-guided-tour
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
 # HACK START
@@ -47,7 +47,7 @@ cp -r deploy/platform/http src/platform/node_modules/@covalent
 # HACK END
 
 # BUILD: @covalent/flavored-markdown primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-flavored-markdown
+node ./node_modules/@angular/cli/bin/ng build covalent-flavored-markdown
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
 # Help module within experimental depends on flavored-markdown
@@ -56,10 +56,10 @@ cp -r deploy/platform/flavored-markdown src/platform/node_modules/@covalent
 # HACK END
 
 # BUILD: @covalent/markdown-navigator primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-markdown-navigator
+node ./node_modules/@angular/cli/bin/ng build covalent-markdown-navigator
 
 # BUILD: @covalent/experimental primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-experimental
+node ./node_modules/@angular/cli/bin/ng build covalent-experimental
 
 # HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
 rm -rf src/platform/node_modules

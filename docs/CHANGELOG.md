@@ -1,3 +1,22 @@
+## [3.1.1](https://github.com/teradata/covalent/compare/v3.1.1-beta.1...v3.1.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* **dynamic-forms:** show label as mat-label instead of placeholder ([a1359e6](https://github.com/teradata/covalent/commit/a1359e63275c176b387f871e5a15c0808e819406)), closes [#1820](https://github.com/teradata/covalent/issues/1820)
+* fixed moving child list to bottom on markdown-navigator(VAC-649) ([e6c0581](https://github.com/teradata/covalent/commit/e6c0581607d57db4a4095f8cfd1847b793bf7d09))
+* **prettier:** prettier fix ([551575f](https://github.com/teradata/covalent/commit/551575f274f00a31211be23e6d40ca195fc2564b))
+
+
+### Features
+
+* **guided tour:** added next button disable feature ([c826c78](https://github.com/teradata/covalent/commit/c826c78b6eea23d16c42e214554373ba9e1825f4))
+* update to angular 11 ([bde6efa](https://github.com/teradata/covalent/commit/bde6efa9d9df34c7b1170e7271b6cc4959f2f7f7))
+* upgrade angular support matrix ([ce43c43](https://github.com/teradata/covalent/commit/ce43c438144984571d43971afac841dc32268770))
+* upgrade monaco version ([021de1f](https://github.com/teradata/covalent/commit/021de1feafa1212a562346dd92b58aaba80c0c12))
+
+
+
 ## [3.1.1-beta.1](https://github.com/teradata/covalent/compare/v3.1.0...v3.1.1-beta.1) (2021-02-08)
 
 
