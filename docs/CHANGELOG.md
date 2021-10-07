@@ -1,3 +1,14 @@
+## [3.1.2-beta.1](https://github.com/teradata/covalent/compare/v3.1.1...v3.1.2-beta.1) (2021-10-07)
+
+
+### Bug Fixes
+
+* **dialogs:** theming adjustment for dialog header ([92da309](https://github.com/teradata/covalent/commit/92da309377ff7ebbed9ca41990e966d2982b736e))
+* **guided-tour:** allowing custom buttons ([#1861](https://github.com/teradata/covalent/issues/1861)) ([5ac24f1](https://github.com/teradata/covalent/commit/5ac24f1ad0384d469931058bea8ede14b21f939a))
+* **theme:** table style theme adjustments ([#1860](https://github.com/teradata/covalent/issues/1860)) ([9bf1f09](https://github.com/teradata/covalent/commit/9bf1f0988c020344a96130dad1e6bf69a1b6d5b0))
+
+
+
 ## [3.1.1](https://github.com/teradata/covalent/compare/v3.1.1-beta.1...v3.1.1) (2021-08-11)
 
 
