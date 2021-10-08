@@ -1,3 +1,7 @@
+## [3.1.2-beta.4](https://github.com/teradata/covalent/compare/v3.1.2-beta.3...v3.1.2-beta.4) (2021-10-08)
+
+
+
 ## [3.1.2-beta.3](https://github.com/teradata/covalent/compare/v3.1.2-beta.2...v3.1.2-beta.3) (2021-10-08)
 
 
