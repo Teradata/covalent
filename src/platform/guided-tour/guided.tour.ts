@@ -265,7 +265,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
         step.attachToOptions && step.attachToOptions.highlight ? 'shepherd-highlight' : step.highlightClass;
 
       // Adding buttons in the steps if no buttons are defined
-      if (step.buttons.length === 0) {
+      if (!step.buttons || step.buttons.length === 0) {
         if (index === 0) {
           // first step
           step.buttons = [nextButton];
