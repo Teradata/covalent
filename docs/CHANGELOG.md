@@ -1,3 +1,12 @@
+## [3.1.2-beta.5](https://github.com/teradata/covalent/compare/v3.1.2-beta.4...v3.1.2-beta.5) (2021-11-17)
+
+
+### Bug Fixes
+
+* **guided-tour:** step button override error ([07e515f](https://github.com/teradata/covalent/commit/07e515fed1a3425e34464f42d5a5129e86304dfa))
+
+
+
 ## [3.1.2-beta.4](https://github.com/teradata/covalent/compare/v3.1.2-beta.3...v3.1.2-beta.4) (2021-10-08)
 
 
