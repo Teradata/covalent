@@ -29,6 +29,7 @@
   .mat-toolbar.td-window-dialog-toolbar {
     color: mat-color($foreground, text);
     border-bottom: 1px solid mat-color($foreground, divider);
+    background: none;
   }
 
   .td-dialog-message {

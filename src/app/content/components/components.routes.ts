@@ -101,6 +101,11 @@ const routes: Routes = [
           import('./component-demos/sidesheet/sidesheet.module').then((m: any) => m.SidesheetDemoModule),
       },
       {
+        path: 'side-sheet',
+        loadChildren: () =>
+          import('./component-demos/side-sheet/sidesheet.module').then((m: any) => m.SideSheetDemoModule),
+      },
+      {
         path: 'layout',
         loadChildren: () => import('./component-demos/layout/layout.module').then((m: any) => m.LayoutDemoModule),
       },

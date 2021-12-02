@@ -333,6 +333,17 @@ export const createComponentDetails: IComponentDetails[] = [
       import('./component-demos/sidesheet/demos/sidesheet-demo.module').then((mod: any) => mod.SidesheetDemoModule),
   },
   {
+    name: 'Side Sheet',
+    id: 'side-sheet',
+    description: "A side sheet dialog that overlays content with an animation (based on Angular Material's dialog)",
+    apiDocUrl: 'platform/core/side-sheet/README.md',
+    icon: 'view_array',
+    category: dialogs.name,
+    route: '/components/side-sheet',
+    demo: () =>
+      import('./component-demos/side-sheet/demos/sidesheet-demo.module').then((mod: any) => mod.SideSheetDemoModule),
+  },
+  {
     name: 'Nav Steps',
     id: 'nav-steps',
     description:
