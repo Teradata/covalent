@@ -1,4 +1,7 @@
-# Http Decorators
+
+# Http Decorators (Deprecated)
+
+***Deprecation Notice** - This component will be deprecated in favor of a different implementation* [View Doc](https://angular.io/api/common/http)
 
 It is a framework of decorators on top of the angular [HttpClient] or covalent [TdHttpService] to enhance your services and give them Http capabilities.
 

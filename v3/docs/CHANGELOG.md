@@ -1,3 +1,89 @@
+## [3.1.2-beta.7](https://github.com/teradata/covalent/compare/v3.1.2-beta.6...v3.1.2-beta.7) (2021-12-13)
+
+
+### Features
+
+* **sidesheet:** Updated td side sheet behavior ([0e9e614](https://github.com/teradata/covalent/commit/0e9e614b135e418aed6131a51801e50d4b373381))
+
+
+
+## [3.1.2-beta.6](https://github.com/teradata/covalent/compare/v3.1.2-beta.4...v3.1.2-beta.6) (2021-11-17)
+
+
+### Bug Fixes
+
+* **guided-tour:** step button override error ([07e515f](https://github.com/teradata/covalent/commit/07e515fed1a3425e34464f42d5a5129e86304dfa))
+
+
+### Features
+
+* generate changelog and bump to version vv3.1.2-beta.5 ([98a5f0e](https://github.com/teradata/covalent/commit/98a5f0e0aebe39dcf9da848414c0babf62844070))
+
+
+
+## [3.1.2-beta.5](https://github.com/teradata/covalent/compare/v3.1.2-beta.4...v3.1.2-beta.5) (2021-11-17)
+
+
+### Bug Fixes
+
+* **guided-tour:** step button override error ([07e515f](https://github.com/teradata/covalent/commit/07e515fed1a3425e34464f42d5a5129e86304dfa))
+
+
+
+## [3.1.2-beta.4](https://github.com/teradata/covalent/compare/v3.1.2-beta.3...v3.1.2-beta.4) (2021-10-08)
+
+
+
+## [3.1.2-beta.3](https://github.com/teradata/covalent/compare/v3.1.2-beta.2...v3.1.2-beta.3) (2021-10-08)
+
+
+
+## [3.1.2-beta.2](https://github.com/teradata/covalent/compare/v3.1.1...v3.1.2-beta.2) (2021-10-08)
+
+
+### Bug Fixes
+
+* **dialogs:** theming adjustment for dialog header ([92da309](https://github.com/teradata/covalent/commit/92da309377ff7ebbed9ca41990e966d2982b736e))
+* **guided-tour:** allowing custom buttons ([#1861](https://github.com/teradata/covalent/issues/1861)) ([5ac24f1](https://github.com/teradata/covalent/commit/5ac24f1ad0384d469931058bea8ede14b21f939a))
+* **theme:** table style theme adjustments ([#1860](https://github.com/teradata/covalent/issues/1860)) ([9bf1f09](https://github.com/teradata/covalent/commit/9bf1f0988c020344a96130dad1e6bf69a1b6d5b0))
+
+
+### Features
+
+* generate changelog and bump to version v3.1.2-beta.1 ([525df0e](https://github.com/teradata/covalent/commit/525df0e7828e3a9b54bbc36efbf5273739b32642))
+
+
+
+## [3.1.2-beta.1](https://github.com/teradata/covalent/compare/v3.1.1...v3.1.2-beta.1) (2021-10-07)
+
+
+### Bug Fixes
+
+* **dialogs:** theming adjustment for dialog header ([92da309](https://github.com/teradata/covalent/commit/92da309377ff7ebbed9ca41990e966d2982b736e))
+* **guided-tour:** allowing custom buttons ([#1861](https://github.com/teradata/covalent/issues/1861)) ([5ac24f1](https://github.com/teradata/covalent/commit/5ac24f1ad0384d469931058bea8ede14b21f939a))
+* **theme:** table style theme adjustments ([#1860](https://github.com/teradata/covalent/issues/1860)) ([9bf1f09](https://github.com/teradata/covalent/commit/9bf1f0988c020344a96130dad1e6bf69a1b6d5b0))
+
+
+
+## [3.1.1](https://github.com/teradata/covalent/compare/v3.1.1-beta.1...v3.1.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* **dynamic-forms:** show label as mat-label instead of placeholder ([a1359e6](https://github.com/teradata/covalent/commit/a1359e63275c176b387f871e5a15c0808e819406)), closes [#1820](https://github.com/teradata/covalent/issues/1820)
+* fixed moving child list to bottom on markdown-navigator(VAC-649) ([e6c0581](https://github.com/teradata/covalent/commit/e6c0581607d57db4a4095f8cfd1847b793bf7d09))
+* **prettier:** prettier fix ([551575f](https://github.com/teradata/covalent/commit/551575f274f00a31211be23e6d40ca195fc2564b))
+
+
+### Features
+
+* **guided tour:** added next button disable feature ([c826c78](https://github.com/teradata/covalent/commit/c826c78b6eea23d16c42e214554373ba9e1825f4))
+* update to angular 11 ([bde6efa](https://github.com/teradata/covalent/commit/bde6efa9d9df34c7b1170e7271b6cc4959f2f7f7))
+* upgrade angular support matrix ([ce43c43](https://github.com/teradata/covalent/commit/ce43c438144984571d43971afac841dc32268770))
+* upgrade monaco version ([021de1f](https://github.com/teradata/covalent/commit/021de1feafa1212a562346dd92b58aaba80c0c12))
+
+
+
 ## [3.1.1-beta.1](https://github.com/teradata/covalent/compare/v3.1.0...v3.1.1-beta.1) (2021-02-08)
 
 

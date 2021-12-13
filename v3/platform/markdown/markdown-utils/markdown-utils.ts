@@ -96,10 +96,14 @@ export function isRawGithubHref(href: string): boolean {
 }
 
 export function renderVideoElements(html: string): string {
-  const ytLongEmbed: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:embed\/)([\w-]{11})(\?[\w%;-]+(?:=[\w%;-]+)?(?:&[\w%;-]+(?:=[\w%;-]+)?)*)?)]/gi;
-  const ytLongWatch: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:watch\?v=)([\w-]{11})(&[\w%;-]+(?:=[\w%;-]+)?)*)]/gi;
-  const ytShort: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)?youtu.be\/([\w-]{11})\??([\w%;-]+(?:=[\w%;-]+)?(?:&[\w%;-]+(?:=[\w%;-]+)?)*)?]/gi;
-  const ytPlaylist: RegExp = /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:playlist\?list=)([\w-]{34})(&[\w%;-]+(?:=[\w%;-]+)?)*)]/gi;
+  const ytLongEmbed: RegExp =
+    /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:embed\/)([\w-]{11})(\?[\w%;-]+(?:=[\w%;-]+)?(?:&[\w%;-]+(?:=[\w%;-]+)?)*)?)]/gi;
+  const ytLongWatch: RegExp =
+    /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:watch\?v=)([\w-]{11})(&[\w%;-]+(?:=[\w%;-]+)?)*)]/gi;
+  const ytShort: RegExp =
+    /!\[(?:(?:https?:)?(?:\/\/)?)?youtu.be\/([\w-]{11})\??([\w%;-]+(?:=[\w%;-]+)?(?:&[\w%;-]+(?:=[\w%;-]+)?)*)?]/gi;
+  const ytPlaylist: RegExp =
+    /!\[(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?.)?youtube.(?:.+?)\/(?:(?:playlist\?list=)([\w-]{34})(&[\w%;-]+(?:=[\w%;-]+)?)*)]/gi;
 
   function convert(match: string, id: string, flags: string): string {
     if (flags) {

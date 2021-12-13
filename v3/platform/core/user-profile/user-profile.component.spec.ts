@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,12 +12,14 @@ describe('CovalentUserProfileComponent', () => {
   let component: TdUserProfileComponent;
   let fixture: ComponentFixture<TdUserProfileComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
-      imports: [MatMenuModule, MatIconModule, MatButtonModule, MatListModule, CovalentMenuModule],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
+        imports: [MatMenuModule, MatIconModule, MatButtonModule, MatListModule, CovalentMenuModule],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TdUserProfileComponent);

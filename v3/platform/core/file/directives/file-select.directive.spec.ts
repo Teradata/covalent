@@ -1,44 +1,52 @@
-import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { CovalentFileModule, TdFileSelectDirective } from '../';
 import { By } from '@angular/platform-browser';
 
 describe('Directive: FileSelect', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TdFileSelectBasicTestComponent],
-      imports: [CovalentFileModule],
-    });
-    TestBed.compileComponents();
-  }));
-
-  it('should add multiple attr', async(
-    inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileSelectBasicTestComponent);
-      const component: TdFileSelectBasicTestComponent = fixture.debugElement.componentInstance;
-      component.multiple = true;
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileSelectDirective));
-        expect((<any>directive.attributes).multiple).toBeDefined();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TdFileSelectBasicTestComponent],
+        imports: [CovalentFileModule],
       });
+      TestBed.compileComponents();
     }),
-  ));
+  );
 
-  it('should throw (fileSelect) event for a single file', async(
-    inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileSelectBasicTestComponent);
-      const component: TdFileSelectBasicTestComponent = fixture.debugElement.componentInstance;
-      component.multiple = false;
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileSelectDirective));
-        directive.triggerEventHandler('change', {
-          target: directive.nativeElement,
+  it(
+    'should add multiple attr',
+    waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileSelectBasicTestComponent);
+        const component: TdFileSelectBasicTestComponent = fixture.debugElement.componentInstance;
+        component.multiple = true;
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileSelectDirective));
+          expect((<any>directive.attributes).multiple).toBeDefined();
         });
-      });
-    }),
-  ));
+      }),
+    ),
+  );
+
+  it(
+    'should throw (fileSelect) event for a single file',
+    waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdFileSelectBasicTestComponent);
+        const component: TdFileSelectBasicTestComponent = fixture.debugElement.componentInstance;
+        component.multiple = false;
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          const directive: DebugElement = fixture.debugElement.query(By.directive(TdFileSelectDirective));
+          directive.triggerEventHandler('change', {
+            target: directive.nativeElement,
+          });
+        });
+      }),
+    ),
+  );
 });
 
 @Component({

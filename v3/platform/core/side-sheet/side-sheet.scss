@@ -1,0 +1,69 @@
+$padding: 24px !default;
+$max-height: 65vh !default;
+$button-margin: 8px !default;
+
+.td-side-sheet-container {
+  background-color: white;
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12);
+  display: block;
+  padding: $padding;
+  box-sizing: border-box;
+  overflow: auto;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  max-height: inherit;
+}
+
+.td-side-sheet-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.td-side-sheet-content {
+  margin: 0 $padding * -1;
+  padding: 0 $padding;
+  overflow: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+.td-side-sheet-title {
+  margin: -16px 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.td-side-sheet-actions {
+  padding: 8px 0;
+  margin: 0 -16px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: content-box;
+
+  // Pull the actions down to avoid their padding stacking with the dialog's padding.
+  margin-bottom: -$padding;
+
+  &[align='end'] {
+    justify-content: flex-end;
+  }
+
+  &[align='center'] {
+    justify-content: center;
+  }
+
+  .mat-button-base + .mat-button-base,
+  .mat-mdc-button-base + .mat-mdc-button-base {
+    margin-left: $button-margin;
+
+    [dir='rtl'] & {
+      margin-left: 0;
+      margin-right: $button-margin;
+    }
+  }
+}

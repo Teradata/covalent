@@ -264,14 +264,17 @@ export class CovalentGuidedTour extends TourButtonsActions {
       step.highlightClass =
         step.attachToOptions && step.attachToOptions.highlight ? 'shepherd-highlight' : step.highlightClass;
 
-      if (index === 0) {
-        // first step
-        step.buttons = [nextButton];
-      } else if (index === totalSteps - 1) {
-        // last step
-        step.buttons = [backButton, finishButton];
-      } else {
-        step.buttons = [backButton, nextButton];
+      // Adding buttons in the steps if no buttons are defined
+      if (!step.buttons || step.buttons.length === 0) {
+        if (index === 0) {
+          // first step
+          step.buttons = [nextButton];
+        } else if (index === totalSteps - 1) {
+          // last step
+          step.buttons = [backButton, finishButton];
+        } else {
+          step.buttons = [backButton, nextButton];
+        }
       }
 
       // checks "advanceOn" to override listeners

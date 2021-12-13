@@ -33,6 +33,34 @@
   </ng-container>
 
   <div class="scroll-area" id="td-markdown-navigator-content">
+    <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
+      <td-message
+        *ngIf="markdownLoaderError"
+        [sublabel]="markdownLoaderError"
+        color="warn"
+        icon="error"
+        [attr.data-test]="'markdown-loader-error'"
+      ></td-message>
+      <td-flavored-markdown-loader
+        *ngIf="showTdMarkdownLoader"
+        [url]="url"
+        [httpOptions]="httpOptions"
+        [anchor]="anchor"
+        [copyCodeToClipboard]="copyCodeToClipboard"
+        [copyCodeTooltips]="copyCodeTooltips"
+        (loadFailed)="handleMarkdownLoaderError($event)"
+      ></td-flavored-markdown-loader>
+      <td-flavored-markdown
+        *ngIf="showTdMarkdown"
+        [content]="markdownString"
+        [hostedUrl]="url"
+        [anchor]="anchor"
+        [copyCodeToClipboard]="copyCodeToClipboard"
+        [copyCodeTooltips]="copyCodeTooltips"
+        (buttonClicked)="buttonClicked.emit($event)"
+      ></td-flavored-markdown>
+    </div>
+
     <td-message
       *ngIf="childrenUrlError"
       [sublabel]="childrenUrlError"
@@ -63,33 +91,6 @@
       </mat-action-list>
     </div>
 
-    <div *ngIf="showTdMarkdownLoader || showTdMarkdown" class="markdown-wrapper" #markdownWrapper>
-      <td-message
-        *ngIf="markdownLoaderError"
-        [sublabel]="markdownLoaderError"
-        color="warn"
-        icon="error"
-        [attr.data-test]="'markdown-loader-error'"
-      ></td-message>
-      <td-flavored-markdown-loader
-        *ngIf="showTdMarkdownLoader"
-        [url]="url"
-        [httpOptions]="httpOptions"
-        [anchor]="anchor"
-        [copyCodeToClipboard]="copyCodeToClipboard"
-        [copyCodeTooltips]="copyCodeTooltips"
-        (loadFailed)="handleMarkdownLoaderError($event)"
-      ></td-flavored-markdown-loader>
-      <td-flavored-markdown
-        *ngIf="showTdMarkdown"
-        [content]="markdownString"
-        [hostedUrl]="url"
-        [anchor]="anchor"
-        [copyCodeToClipboard]="copyCodeToClipboard"
-        [copyCodeTooltips]="copyCodeTooltips"
-        (buttonClicked)="buttonClicked.emit($event)"
-      ></td-flavored-markdown>
-    </div>
     <ng-container *ngComponentOutlet="footerComponent"></ng-container>
   </div>
 </ng-container>

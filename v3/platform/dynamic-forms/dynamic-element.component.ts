@@ -60,7 +60,8 @@ export class TdDynamicElementDirective {
 })
 export class TdDynamicElementComponent
   extends _TdDynamicElementMixinBase
-  implements IControlValueAccessor, OnInit, OnChanges {
+  implements IControlValueAccessor, OnInit, OnChanges
+{
   private _instance: any;
 
   /**
@@ -134,6 +135,11 @@ export class TdDynamicElementComponent
    */
   @Input() errorMessageTemplate: TemplateRef<any> = undefined;
 
+  /**
+   * Sets the placeholder message
+   */
+  @Input() placeholder: string = '';
+
   @ViewChild(TdDynamicElementDirective, { static: true }) childElement: TdDynamicElementDirective;
 
   @HostBinding('attr.max')
@@ -176,6 +182,7 @@ export class TdDynamicElementComponent
     this._instance.selections = this.selections;
     this._instance.multiple = this.multiple;
     this._instance.errorMessageTemplate = this.errorMessageTemplate;
+    this._instance.placeholder = this.placeholder;
     if (this.customConfig) {
       Object.getOwnPropertyNames(this.customConfig).forEach((name: string) => {
         this._instance[name] = this.customConfig[name];

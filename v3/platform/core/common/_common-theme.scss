@@ -19,4 +19,15 @@
       color: mat-color($foreground, disabled);
     }
   }
+
+  table.mat-table {
+    background: transparent;
+  }
+
+  .mat-row {
+    &:hover,
+    &:focus {
+      background-color: map-get($background, hover);
+    }
+  }
 }

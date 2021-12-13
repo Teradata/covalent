@@ -5,8 +5,8 @@ import { covalentCoreVersion, materialVersion } from '../version-names';
 import { IComponent, components } from '../components';
 import { strings } from '@angular-devkit/core';
 import { getProjectFromWorkspace, getProjectTargetOptions } from '@angular/cdk/schematics';
-import { getWorkspace } from '@schematics/angular/utility/config';
-import { experimental } from '@angular-devkit/core';
+import { updateWorkspace } from '@schematics/angular/utility/workspace';
+import { workspaces } from '@angular-devkit/core';
 
 export function addDependenciesAndFiles(options: ISchema): Rule {
   return chain([
@@ -36,9 +36,8 @@ function mergeFiles(options: ISchema): Rule {
 }
 
 function addThemeToAngularJson(): Rule {
-  return (host: Tree) => {
-    const workspace: experimental.workspace.WorkspaceSchema = getWorkspace(host);
-    const project: experimental.workspace.WorkspaceProject = getProjectFromWorkspace(workspace);
+  return updateWorkspace((workspace: workspaces.WorkspaceDefinition) => {
+    const project: workspaces.ProjectDefinition = getProjectFromWorkspace(workspace);
     const targetOptions: any = getProjectTargetOptions(project, 'build');
     const assetPath: string = `theme.scss`;
     const prebuiltThemePathSegment: string = `styles.scss`;
@@ -58,7 +57,5 @@ function addThemeToAngularJson(): Rule {
       }
       targetOptions.styles.unshift(assetPath);
     }
-    host.overwrite('angular.json', JSON.stringify(workspace, undefined, 2));
-    return host;
-  };
+  });
 }

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TdCopyCodeButtonComponent } from './copy-code-button.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
@@ -11,12 +11,14 @@ describe('CopyCodeButtonComponent', () => {
   let component: TdCopyCodeButtonComponent;
   let fixture: ComponentFixture<TdCopyCodeButtonComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TdCopyCodeButtonComponent],
-      imports: [ClipboardModule, MatIconModule, MatTooltipModule, MatButtonModule],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TdCopyCodeButtonComponent],
+        imports: [ClipboardModule, MatIconModule, MatTooltipModule, MatButtonModule],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TdCopyCodeButtonComponent);
