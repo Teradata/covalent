@@ -1,3 +1,12 @@
+## [3.1.2-beta.7](https://github.com/teradata/covalent/compare/v3.1.2-beta.6...v3.1.2-beta.7) (2021-12-13)
+
+
+### Features
+
+* **sidesheet:** Updated td side sheet behavior ([0e9e614](https://github.com/teradata/covalent/commit/0e9e614b135e418aed6131a51801e50d4b373381))
+
+
+
 ## [3.1.2-beta.6](https://github.com/teradata/covalent/compare/v3.1.2-beta.4...v3.1.2-beta.6) (2021-11-17)
 
 
