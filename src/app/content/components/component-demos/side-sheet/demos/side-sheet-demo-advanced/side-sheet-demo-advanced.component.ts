@@ -3,18 +3,21 @@ import { CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
   selector: 'example',
-  template: 'it works from a component',
+  template: `
+    it works from a component
+  `,
 })
-class ExampleComponent {}
+class SideSheetDemoExampleComponent {}
 
 @Component({
   selector: 'side-sheet-demo-advanced',
   templateUrl: './side-sheet-demo-advanced.component.html',
+  styleUrls: ['./side-sheet-demo-advanced.component.scss'],
 })
 export class SideSheetDemoAdvancedComponent {
   constructor(private sideSheet: CovalentSideSheet) {}
 
   toggleSideSheet(): void {
-    this.sideSheet.open(ExampleComponent);
+    this.sideSheet.open(SideSheetDemoExampleComponent);
   }
 }

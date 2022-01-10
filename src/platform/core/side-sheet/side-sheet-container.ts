@@ -234,6 +234,7 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
     '[attr.aria-label]': '_config.ariaLabel',
     '[attr.aria-describedby]': '_config.ariaDescribedBy || null',
     '[@sideSheetContainer]': '_state',
+    '(@sideSheetContainer.start)': '_onAnimationStart($event)',
     '(@sideSheetContainer.done)': '_onAnimationDone($event)',
   },
 })
@@ -249,6 +250,15 @@ export class CovalentSideSheetContainer extends _CovalentSideSheetContainerBase 
     } else if (toState === 'exit') {
       this._restoreFocus();
       this._animationStateChanged.next({ state: 'closed', totalTime });
+    }
+  }
+
+  /** Callback, invoked when an animation on the host starts. */
+  _onAnimationStart({ toState, totalTime }: AnimationEvent) {
+    if (toState === 'enter') {
+      this._animationStateChanged.next({ state: 'opening', totalTime });
+    } else if (toState === 'exit' || toState === 'void') {
+      this._animationStateChanged.next({ state: 'closing', totalTime });
     }
   }
 
