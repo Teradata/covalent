@@ -1,3 +1,18 @@
+## [3.1.2](https://github.com/teradata/covalent/compare/v3.1.2-beta.7...v3.1.2) (2022-01-11)
+
+
+### Bug Fixes
+
+* **actions:** remove on push action ([f74f904](https://github.com/teradata/covalent/commit/f74f9040236dc006d7d8df07fe1d6852dad8887e))
+* **version:** update to semver ([fbeff39](https://github.com/teradata/covalent/commit/fbeff3912606b3bde4a1505866a5448bc6ca06d8))
+
+
+### Features
+
+* **side-sheet:** adding multi layered ability ([55eb180](https://github.com/teradata/covalent/commit/55eb180624e88ac1787d5648984b5624d620b1be))
+
+
+
 ## [3.1.2-beta.7](https://github.com/teradata/covalent/compare/v3.1.2-beta.6...v3.1.2-beta.7) (2021-12-13)
 
 
