@@ -252,9 +252,6 @@ export class ManageListComponent {
         { icon: 'looks_4', route: '.', title: 'Fourth item', description: 'Item description', },
         { icon: 'looks_5', route: '.', title: 'Fifth item', description: 'Item description', },
       ];
-      constructor() {}
     }
   `;
-
-  constructor() {}
 }

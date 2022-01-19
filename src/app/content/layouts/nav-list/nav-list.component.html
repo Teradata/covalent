@@ -111,7 +111,7 @@
             <mat-icon svgIcon="assets:github"></mat-icon>
           </a>
         </div>
-        <mat-nav-list td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
+        <mat-nav-list td-sidenav-content>
           <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
             <a mat-list-item>
               <mat-icon matListAvatar>{{ item.icon }}</mat-icon>

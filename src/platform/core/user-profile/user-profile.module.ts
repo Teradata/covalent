@@ -7,10 +7,11 @@ import { MatListModule } from '@angular/material/list';
 
 import { TdUserProfileMenuComponent } from './user-profile-menu/user-profile-menu.component';
 import { TdUserProfileComponent } from './user-profile.component';
+import { CovalentMenuModule } from '@covalent/core/menu';
 
 @NgModule({
   declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
-  imports: [CommonModule, MatMenuModule, MatIconModule, MatButtonModule, MatListModule],
+  imports: [CommonModule, MatMenuModule, MatIconModule, MatButtonModule, MatListModule, CovalentMenuModule],
   providers: [],
   exports: [TdUserProfileComponent, TdUserProfileMenuComponent],
 })

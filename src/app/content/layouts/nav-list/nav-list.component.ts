@@ -146,7 +146,7 @@ export class NavListComponent {
           <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
           <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
         </div> 
-        <mat-nav-list td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
+        <mat-nav-list td-sidenav-content [tdLayoutNavListClose]="">
           <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu"> 
             <a mat-list-item>
               <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
@@ -207,9 +207,6 @@ export class NavListComponent {
         { icon: 'looks_4', route: '.', title: 'Fourth item', description: 'Item description', },
         { icon: 'looks_5', route: '.', title: 'Fifth item', description: 'Item description', },
       ];
-      constructor() {}
     }
   `;
-
-  constructor() {}
 }

@@ -209,7 +209,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       markdown = this._replaceCodeBlocks(markdown);
       markdown = this._replaceCheckbox(markdown);
       // TODO: re-enable tables
-      //markdown = this._replaceTables(markdown);
+      // markdown = this._replaceTables(markdown);
       markdown = this._replaceLists(markdown);
       markdown = this._replaceButtons(markdown);
       const keys: string[] = Object.keys(this._components);

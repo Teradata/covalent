@@ -8,12 +8,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
-import { MainComponent } from './main/main.component';
 
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
-  declarations: [TestBedComponent, MainComponent],
+  declarations: [TestBedComponent],
   imports: [
     BrowserModule,
     CommonModule,

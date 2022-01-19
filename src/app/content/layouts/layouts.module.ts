@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { layoutsRoutes } from './layouts.routes';
 
 import { LayoutsComponent } from './layouts.component';
-import { LayoutsOverviewComponent } from './overview/overview.component';
 import { NavViewComponent } from './nav-view/nav-view.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { CardOverComponent } from './card-over/card-over.component';
@@ -15,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
@@ -24,14 +24,7 @@ import { CovalentCommonModule } from '../../../platform/core/common';
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
-  declarations: [
-    LayoutsComponent,
-    LayoutsOverviewComponent,
-    NavViewComponent,
-    NavListComponent,
-    CardOverComponent,
-    ManageListComponent,
-  ],
+  declarations: [LayoutsComponent, NavViewComponent, NavListComponent, CardOverComponent, ManageListComponent],
   imports: [
     /** Angular Modules */
     CommonModule,
@@ -41,6 +34,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
+    MatExpansionModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentHighlightModule,
