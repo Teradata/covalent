@@ -50,7 +50,6 @@ describe('ng-add schematic', () => {
 
     expectVersionToBe(dependencies, '@covalent/core', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/dynamic-forms', expectedCovalentVersion);
-    expectVersionToBe(dependencies, '@covalent/http', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/markdown', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/flavored-markdown', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/echarts', expectedCovalentVersion);

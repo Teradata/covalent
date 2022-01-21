@@ -5,5 +5,5 @@
     "outDir": "../out-tsc/app",
     "types": ["hammerjs"]
   },
-  "exclude": ["universal-app/**", "test.ts", "**/*.spec.*"]
+  "exclude": ["test.ts", "**/*.spec.*"]
 }

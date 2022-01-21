@@ -1,8 +1,6 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { CovalentMenuModule } from '@covalent/core/menu';
-
 import { TdUserProfileMenuComponent } from './user-profile-menu.component';
 
 describe('CovalentUserProfileMenuComponent', () => {
@@ -13,7 +11,7 @@ describe('CovalentUserProfileMenuComponent', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [TdUserProfileMenuComponent],
-        imports: [MatIconModule, MatListModule, CovalentMenuModule],
+        imports: [MatIconModule, MatListModule],
       }).compileComponents();
     }),
   );

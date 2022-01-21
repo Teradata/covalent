@@ -23,7 +23,7 @@ The new command creates a project with a build system for your Angular app.
 ```bash
 npm install --save @covalent/core
 ## (optional) Additional Covalent Modules installs
-npm install --save @covalent/http @covalent/highlight @covalent/markdown @covalent/dynamic-forms @covalent/echarts
+npm install --save @covalent/highlight @covalent/markdown @covalent/dynamic-forms @covalent/echarts
 ```
 
 To test (__only for testing!__) the latest changes from develop, install the nightly build:
@@ -41,7 +41,6 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentStepsModule  } from '@covalent/core/steps';
 /* any other core modules */
 // (optional) Additional Covalent Modules imports
-import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
@@ -52,7 +51,6 @@ import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
     CovalentLayoutModule,
     CovalentStepsModule,
     // (optional) Additional Covalent Modules imports
-    CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
@@ -159,7 +157,6 @@ System.config({
     '@covalent/core/chips': 'npm:@covalent/core/bundles/covalent-core-chips.umd.min.js',
     // and any other module you need from @covalent/core/*
     // (optional) Additional configuration options
-    '@covalent/http': 'npm:@covalent/http/bundles/covalent-http.umd.min.js',
     '@covalent/highlight': 'npm:@covalent/highlight/bundles/covalent-highlight.umd.min.js',
     '@covalent/markdown': 'npm:@covalent/markdown/bundles/covalent-markdown.min.umd.js',
     '@covalent/dynamic-forms': 'npm:@covalent/dynamic-forms/bundles/covalent-dynamic-forms.umd.min.js',

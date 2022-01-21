@@ -1,7 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
-import { TdMediaService } from '@covalent/core/media';
-
 import { slideInUpAnimation } from '../../../app.animations';
 import { ActivatedRoute } from '@angular/router';
 import { routeGroups } from 'app/utilities/route-trees';
@@ -22,7 +20,7 @@ export class ComponentOverviewComponent implements OnInit {
   categoryGroups: any;
   angularDocsURL: string = ANGULAR_DOCS_URL;
 
-  constructor(public media: TdMediaService, private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.data.subscribe((data: any) => {

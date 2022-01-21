@@ -1,5 +1,4 @@
-import { Component, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { TdMediaService } from '@covalent/core/media';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -130,7 +129,7 @@ export class NavListComponent {
           </mat-nav-list>
         </div>
       </td-navigation-drawer>
-      <td-layout-nav-list #navList [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'" [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+      <td-layout-nav-list #navList >
         <div td-sidenav-toolbar-content layout="row" layout-align="start center">
           <button mat-icon-button tdLayoutToggle>
             <mat-icon>menu</mat-icon>
@@ -147,7 +146,7 @@ export class NavListComponent {
           <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
           <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
         </div> 
-        <mat-nav-list td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
+        <mat-nav-list td-sidenav-content [tdLayoutNavListClose]="">
           <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu"> 
             <a mat-list-item>
               <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
@@ -157,7 +156,7 @@ export class NavListComponent {
             <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
           </ng-template>
         </mat-nav-list>
-        <div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+        <div>
           <mat-card>
             <mat-card-title>Main Content</mat-card-title>
             <mat-card-subtitle>content area</mat-card-subtitle>
@@ -182,7 +181,6 @@ export class NavListComponent {
   `;
   navListFullTypescript: string = `
     import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
-    import { TdMediaService } from '@covalent/core/media';
     @Component({
       changeDetection: ChangeDetectionStrategy.OnPush,
       selector: 'layouts-nav-list',
@@ -209,9 +207,6 @@ export class NavListComponent {
         { icon: 'looks_4', route: '.', title: 'Fourth item', description: 'Item description', },
         { icon: 'looks_5', route: '.', title: 'Fifth item', description: 'Item description', },
       ];
-      constructor(public media: TdMediaService) {}
     }
   `;
-
-  constructor(private _changeDetectorRef: ChangeDetectorRef, public media: TdMediaService) {}
 }

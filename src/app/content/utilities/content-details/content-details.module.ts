@@ -16,8 +16,6 @@ import { ContentExamplesComponent } from './content-examples/content-examples.co
 import { PortalModule } from '@angular/cdk/portal';
 
 import { DocumentationToolsModule } from 'app/documentation-tools';
-import { CovalentExpansionPanelModule } from '../../../../platform/core/expansion-panel';
-import { CovalentMediaModule } from '../../../../platform/core/media';
 import { CovalentCommonModule } from '../../../../platform/core/common';
 
 @NgModule({
@@ -34,8 +32,6 @@ import { CovalentCommonModule } from '../../../../platform/core/common';
     MatTabsModule,
     PortalModule,
     /** Covalent Modules */
-    CovalentExpansionPanelModule,
-    CovalentMediaModule,
     CovalentCommonModule,
     contentDetailsRoutes,
     DocumentationToolsModule,

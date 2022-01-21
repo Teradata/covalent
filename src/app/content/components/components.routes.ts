@@ -12,10 +12,6 @@ const routes: Routes = [
           import('./component-demos/breadcrumbs/breadcrumbs.module').then((m: any) => m.BreadcrumbsDemoModule),
       },
       {
-        path: 'chips',
-        loadChildren: () => import('./component-demos/chips/chips.module').then((m: any) => m.ChipsDemoModule),
-      },
-      {
         path: 'code-editor',
         loadChildren: () =>
           import('./component-demos/code-editor/code-editor.module').then((m: any) => m.CodeEditorDemoModule),
@@ -38,13 +34,6 @@ const routes: Routes = [
         path: 'dynamic-menu',
         loadChildren: () =>
           import('./component-demos/dynamic-menu/dynamic-menu.module').then((m: any) => m.DynamicMenuDemoModule),
-      },
-      {
-        path: 'expansion-panels',
-        loadChildren: () =>
-          import('./component-demos/expansion-panels/expansion-panels.module').then(
-            (m: any) => m.ExpansionPanelsDemoModule,
-          ),
       },
       {
         path: 'file-input',
@@ -73,10 +62,6 @@ const routes: Routes = [
           import('./component-demos/json-formatter/json-formatter.module').then((m: any) => m.JsonFormatterDemoModule),
       },
       {
-        path: 'loading',
-        loadChildren: () => import('./component-demos/loading/loading.module').then((m: any) => m.LoadingDemoModule),
-      },
-      {
         path: 'markdown-navigator',
         loadChildren: () =>
           import('./component-demos/markdown-navigator/markdown-navigator.module').then(
@@ -88,17 +73,8 @@ const routes: Routes = [
         loadChildren: () => import('./component-demos/message/message.module').then((m: any) => m.MessageDemoModule),
       },
       {
-        path: 'paging',
-        loadChildren: () => import('./component-demos/paging/paging.module').then((m: any) => m.PagingDemoModule),
-      },
-      {
         path: 'search',
         loadChildren: () => import('./component-demos/search/search.module').then((m: any) => m.SearchDemoModule),
-      },
-      {
-        path: 'sidesheet',
-        loadChildren: () =>
-          import('./component-demos/sidesheet/sidesheet.module').then((m: any) => m.SidesheetDemoModule),
       },
       {
         path: 'side-sheet',
@@ -136,21 +112,6 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'nav-steps',
-        loadChildren: () =>
-          import('./component-demos/nav-steps/nav-steps.module').then((m: any) => m.NavstepsDemoModule),
-      },
-      {
-        path: 'notifications',
-        loadChildren: () =>
-          import('./component-demos/notifications/notifications.module').then((m: any) => m.NotificationsDemoModule),
-      },
-      {
-        path: 'tab-select',
-        loadChildren: () =>
-          import('./component-demos/tab-select/tab-select.module').then((m: any) => m.TabSelectDemoModule),
-      },
-      {
         path: 'text-editor',
         loadChildren: () =>
           import('./component-demos/text-editor/text-editor.module').then((m: any) => m.TextEditorDemoModule),
@@ -159,20 +120,6 @@ const routes: Routes = [
         path: 'user-profile',
         loadChildren: () =>
           import('./component-demos/user-profile/user-profile.module').then((m: any) => m.UserProfileDemoModule),
-      },
-      {
-        path: 'data-table',
-        loadChildren: () =>
-          import('./component-demos/data-table/data-table.module').then((m: any) => m.DataTableDemoModule),
-      },
-      {
-        path: 'steps',
-        loadChildren: () => import('./component-demos/steps/steps.module').then((m: any) => m.StepsDemoModule),
-      },
-      {
-        path: 'virtual-scroll',
-        loadChildren: () =>
-          import('./component-demos/virtual-scroll/virtual-scroll.module').then((m: any) => m.VirtualScrollDemoModule),
       },
       {
         path: 'file-upload',

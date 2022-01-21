@@ -13,7 +13,6 @@ import { TdTestDynamicComponent } from './dynamic-forms-demo-custom-elements/dyn
 import { DynamicFormsDemoDateComponent } from './dynamic-forms-demo-date/dynamic-forms-demo-date.component';
 import { DynamicFormsDemoFileInputComponent } from './dynamic-forms-demo-file-input/dynamic-forms-demo-file-input.component';
 import { DynamicFormsDemoNumberComponent } from './dynamic-forms-demo-number/dynamic-forms-demo-number.component';
-import { CovalentChipsModule } from '../../../../../../platform/core/chips';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { DynamicFormsDemoComponent } from './dynamic-forms-demo.component';
 import { DynamicFormsDemoRoutingModule } from './dynamic-forms-demo-routing.module';
@@ -36,7 +35,6 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     DemoModule,
     DynamicFormsDemoRoutingModule,
     /** Covalent Modules */
-    CovalentChipsModule,
     CovalentDynamicFormsModule,
     /** Angular Modules */
     CommonModule,

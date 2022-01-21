@@ -25,9 +25,7 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 # BUILD: @covalent/dynamic-forms primary entrypoint
 node ./node_modules/@angular/cli/bin/ng build covalent-dynamic-forms
 # BUILD: @covalent/highlight primary entrypoint
-node ./node_modules/@angular/cli/bin/ng build covalent-highlight
-# BUILD: @covalent/http primary entrypoint
-node ./node_modules/@angular/cli/bin/ng build covalent-http
+./node_modules/@angular/cli/bin/ng build covalent-highlight
 # BUILD: @covalent/markdown primary entrypoint
 node ./node_modules/@angular/cli/bin/ng build covalent-markdown
 # BUILD: @covalent/code-editor primary entrypoint
@@ -43,7 +41,6 @@ node ./node_modules/@angular/cli/bin/ng build covalent-guided-tour
 # HACK START
 cp -r deploy/platform/markdown src/platform/node_modules/@covalent
 cp -r deploy/platform/highlight src/platform/node_modules/@covalent
-cp -r deploy/platform/http src/platform/node_modules/@covalent
 # HACK END
 
 # BUILD: @covalent/flavored-markdown primary entrypoint

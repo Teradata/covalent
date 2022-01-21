@@ -6,8 +6,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { SidenavContentComponent } from './sidenav-content.component';
 
 import { RouterModule } from '@angular/router';
-import { CovalentExpansionPanelModule } from '../../../../platform/core/expansion-panel';
-import { CovalentMediaModule } from '../../../../platform/core/media';
 import { CovalentLayoutModule } from '../../../../platform/core/layout';
 import { CovalentCommonModule } from '../../../../platform/core/common';
 
@@ -22,8 +20,6 @@ import { CovalentCommonModule } from '../../../../platform/core/common';
     MatListModule,
     MatExpansionModule,
     /** Covalent Modules */
-    CovalentExpansionPanelModule,
-    CovalentMediaModule,
     CovalentCommonModule,
     CovalentLayoutModule,
   ],

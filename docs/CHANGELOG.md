@@ -2142,7 +2142,7 @@ After:
 ```html
 <td-layout-manage-list>
   <md-toolbar td-sidenav-content></md-toolbar>
-  <div td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+  <div td-sidenav-content [tdLayoutManageListClose]="false">
     Sidenav Content
   </div>
   <md-toolbar>

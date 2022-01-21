@@ -9,8 +9,6 @@ import { ComponentOverviewComponent } from './component-overview.component';
 
 import { RouterModule } from '@angular/router';
 import { DocumentationToolsModule } from 'app/documentation-tools';
-import { CovalentExpansionPanelModule } from '../../../../platform/core/expansion-panel';
-import { CovalentMediaModule } from '../../../../platform/core/media';
 import { CovalentCommonModule } from '../../../../platform/core/common';
 import { CovalentFileModule } from '../../../../platform/core/file';
 @NgModule({
@@ -25,8 +23,6 @@ import { CovalentFileModule } from '../../../../platform/core/file';
     MatIconModule,
     MatCardModule,
     /** Covalent Modules */
-    CovalentExpansionPanelModule,
-    CovalentMediaModule,
     CovalentCommonModule,
     DocumentationToolsModule,
     CovalentFileModule,
