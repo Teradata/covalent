@@ -1,3 +1,19 @@
+# [4.0.0](https://github.com/teradata/covalent/compare/v3.1.2...v4.0.0) (2022-01-21)
+
+
+### Bug Fixes
+
+* **build:** build fix for core package ([6da10b1](https://github.com/teradata/covalent/commit/6da10b1a286280e5e8ad56d174204dd0de2ce322))
+* **docs:** fix docs sidenav ([b67ff76](https://github.com/teradata/covalent/commit/b67ff7613eb81007fb8bf78fa97a988bef3c73fa))
+* **flavored-markdown:** brought back table parsing ([45ffe8d](https://github.com/teradata/covalent/commit/45ffe8de0d3097b953cb900d2e85c08c3ed56d8a))
+
+
+### Features
+
+* **deprecation:** deprecating old components ([de33302](https://github.com/teradata/covalent/commit/de333026624ec336845e229b2b4da140b1384cc7))
+
+
+
 ## [3.1.2](https://github.com/teradata/covalent/compare/v3.1.2-beta.7...v3.1.2) (2022-01-11)
 
 
