@@ -19,9 +19,12 @@ import {
   SimpleChanges,
   ElementRef,
   HostBinding,
+  OnInit,
 } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
 import { TdHighlightComponent, ICopyCodeTooltips } from '@covalent/highlight';
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
@@ -29,6 +32,46 @@ import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 export interface ITdFlavoredMarkdownButtonClickEvent {
   text: string;
   data: string;
+}
+
+export interface ITdFlavoredMarkDownTableColumn {
+  label: string;
+  name: string;
+  numeric: boolean;
+}
+
+@Component({
+  template: `
+    <mat-table [dataSource]="dataSource" matSort>
+      <!-- Column Definition -->
+      <ng-template ngFor let-column [ngForOf]="columnDefs">
+        <ng-container [matColumnDef]="column.name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.label }}</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row[column.name] }}</mat-cell>
+        </ng-container>
+      </ng-template>
+      <!-- Header and Row Declarations -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  `,
+})
+export class TdFlavoredMarkdownTableComponent implements OnInit, AfterViewInit {
+  @Input() columnDefs: ITdFlavoredMarkDownTableColumn[] = [];
+  @Input() data: unknown[];
+  @ViewChild(MatSort) sort: MatSort;
+
+  displayedColumns: string[];
+  dataSource: MatTableDataSource<unknown>;
+
+  ngOnInit(): void {
+    this.displayedColumns = this.columnDefs.map((c: ITdFlavoredMarkDownTableColumn) => c.name);
+    this.dataSource = new MatTableDataSource(this.data);
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+  }
 }
 
 @Component({
@@ -208,8 +251,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       markdown = [...lines, '', ''].join('\n');
       markdown = this._replaceCodeBlocks(markdown);
       markdown = this._replaceCheckbox(markdown);
-      // TODO: re-enable tables
-      // markdown = this._replaceTables(markdown);
+      markdown = this._replaceTables(markdown);
       markdown = this._replaceLists(markdown);
       markdown = this._replaceButtons(markdown);
       const keys: string[] = Object.keys(this._components);
@@ -326,98 +368,64 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     );
   }
 
-  // private _replaceTables(markdown: string): string {
-  //   const tableRgx: RegExp =
-  //     /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
-  //   return this._replaceComponent(
-  //     markdown,
-  //     TdDataTableComponent,
-  //     tableRgx,
-  //     (componentRef: ComponentRef<TdDataTableComponent>, match: string) => {
-  //       const dataTableLines: string[] = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
-  //       const columns: string[] = dataTableLines[0]
-  //         .split('|')
-  //         .filter((col: string) => {
-  //           return col;
-  //         })
-  //         .map((s: string) => {
-  //           return s.trim();
-  //         });
-  //       const alignment: string[] = dataTableLines[1]
-  //         .split('|')
-  //         .filter((v: string) => {
-  //           return v;
-  //         })
-  //         .map((s: string) => {
-  //           return s.trim();
-  //         });
-  //       componentRef.instance.columns = columns.map((col: string, index: number) => {
-  //         const widths: string[] = alignment[index].split('---');
-  //         const min: number = parseInt(widths[0], 10);
-  //         const max: number = parseInt(widths[1], 10);
-  //         let width: ITdDataTableColumnWidth = { min, max };
-  //         if (isNaN(min) && isNaN(max)) {
-  //           width = undefined;
-  //         } else if (isNaN(max)) {
-  //           width.max = undefined;
-  //         } else if (isNaN(min)) {
-  //           width.min = undefined;
-  //         }
-  //         return {
-  //           label: col,
-  //           name: col.toLowerCase().trim(),
-  //           numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
-  //           width,
-  //         };
-  //       });
+  private _replaceTables(markdown: string): string {
+    const tableRgx: RegExp =
+      /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
+    return this._replaceComponent(
+      markdown,
+      TdFlavoredMarkdownTableComponent,
+      tableRgx,
+      (componentRef: ComponentRef<TdFlavoredMarkdownTableComponent>, match: string) => {
+        const dataTableLines: string[] = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
+        const columns: string[] = dataTableLines[0]
+          .split('|')
+          .filter((col: string) => {
+            return col;
+          })
+          .map((s: string) => {
+            return s.trim();
+          });
+        const alignment: string[] = dataTableLines[1]
+          .split('|')
+          .filter((v: string) => {
+            return v;
+          })
+          .map((s: string) => {
+            return s.trim();
+          });
 
-  //       const data: any[] = [];
-  //       for (let i: number = 2; i < dataTableLines.length; i++) {
-  //         const rowSplit: string[] = dataTableLines[i]
-  //           .split('|')
-  //           .filter((cell: string) => {
-  //             return cell;
-  //           })
-  //           .map((s: string) => {
-  //             return s.trim();
-  //           });
-  //         const row: any = {};
-  //         columns.forEach((col: string, index: number) => {
-  //           const rowSplitCell: string = rowSplit[index];
-  //           if (rowSplitCell) {
-  //             row[col.toLowerCase().trim()] = rowSplitCell.replace(/`(.*)`/, (m: string, value: string) => {
-  //               return value;
-  //             });
-  //           }
-  //         });
-  //         data.push(row);
-  //       }
-  //       componentRef.instance.data = data;
-  //       componentRef.instance.sortable = true;
-  //       componentRef.instance.sortChange.subscribe((event: ITdDataTableSortChangeEvent) => {
-  //         componentRef.instance.data.sort((a: any, b: any) => {
-  //           const compA: any = a[event.name];
-  //           const compB: any = b[event.name];
-  //           let direction: number = 0;
-  //           if (!Number.isNaN(Number.parseFloat(compA)) && !Number.isNaN(Number.parseFloat(compB))) {
-  //             direction = Number.parseFloat(compA) - Number.parseFloat(compB);
-  //           } else {
-  //             if (compA < compB) {
-  //               direction = -1;
-  //             } else if (compA > compB) {
-  //               direction = 1;
-  //             }
-  //           }
-  //           return direction * (event.order === TdDataTableSortingOrder.Descending ? -1 : 1);
-  //         });
-  //         componentRef.instance.refresh();
-  //       });
-  //       setTimeout(() => {
-  //         componentRef.instance.refresh();
-  //       });
-  //     },
-  //   );
-  // }
+        const data: any[] = [];
+        for (let i: number = 2; i < dataTableLines.length; i++) {
+          const rowSplit: string[] = dataTableLines[i]
+            .split('|')
+            .filter((cell: string) => {
+              return cell;
+            })
+            .map((s: string) => {
+              return s.trim();
+            });
+          const row: any = {};
+          columns.forEach((col: string, index: number) => {
+            const rowSplitCell: string = rowSplit[index];
+            if (rowSplitCell) {
+              row[col.toLowerCase().trim()] = rowSplitCell.replace(/`(.*)`/, (m: string, value: string) => {
+                return value;
+              });
+            }
+          });
+          data.push(row);
+        }
+        componentRef.instance.columnDefs = columns.map((col: string, index: number) => {
+          return {
+            label: col,
+            name: col.toLowerCase().trim(),
+            numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
+          };
+        });
+        componentRef.instance.data = data;
+      },
+    );
+  }
 
   private _replaceLists(markdown: string): string {
     const listRegExp: RegExp = /(?:^|\n)(( *\+)[ |\t](.*)\n)+/g;

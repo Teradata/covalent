@@ -12,10 +12,13 @@ import {
   TdFlavoredMarkdownComponent,
   TdFlavoredMarkdownContainerDirective,
   TdFlavoredMarkdownButtonComponent,
+  TdFlavoredMarkdownTableComponent,
 } from './flavored-markdown.component';
 import { TdFlavoredMarkdownLoaderComponent } from './flavored-markdown-loader/flavored-markdown-loader.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   imports: [
@@ -26,6 +29,8 @@ import { MatButtonModule } from '@angular/material/button';
     CovalentHighlightModule,
     CovalentMarkdownModule,
     MatButtonModule,
+    MatTableModule,
+    MatSortModule,
   ],
   declarations: [
     TdFlavoredListComponent,
@@ -33,6 +38,7 @@ import { MatButtonModule } from '@angular/material/button';
     TdFlavoredMarkdownContainerDirective,
     TdFlavoredMarkdownLoaderComponent,
     TdFlavoredMarkdownButtonComponent,
+    TdFlavoredMarkdownTableComponent,
   ],
   exports: [TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent],
 })

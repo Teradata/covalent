@@ -164,7 +164,7 @@ export class ManageListComponent {
               </button>
             </div>
           </mat-toolbar>
-          <div layout-gt-sm="row"  >
+          <div layout-gt-sm="row">
             <div flex-gt-sm="60">
               <mat-card>
                 <mat-card-title>Products Sales</mat-card-title>

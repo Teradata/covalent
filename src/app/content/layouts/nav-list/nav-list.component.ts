@@ -156,7 +156,7 @@ export class NavListComponent {
             <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
           </ng-template>
         </mat-nav-list>
-        <div  >
+        <div>
           <mat-card>
             <mat-card-title>Main Content</mat-card-title>
             <mat-card-subtitle>content area</mat-card-subtitle>
