@@ -1,0 +1,17 @@
+:host {
+  .td-dynamic-slider-wrapper {
+    display: block;
+  }
+}
+.td-dynamic-slider-field {
+  position: relative;
+  // [layout="row"]
+  flex-direction: row;
+  // [layout]
+  display: flex;
+  box-sizing: border-box;
+  .td-dynamic-slider {
+    // [flex]
+    flex: 1;
+  }
+}

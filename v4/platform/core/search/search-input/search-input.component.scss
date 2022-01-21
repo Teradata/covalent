@@ -1,0 +1,63 @@
+:host {
+  .td-search-input {
+    overflow-x: hidden;
+    // [layout]
+    box-sizing: border-box;
+    display: flex;
+    // [layout="row"]
+    flex-direction: row;
+    // [layout-align="end center"]
+    align-items: baseline;
+    align-content: center;
+    max-width: 100%;
+    justify-content: flex-end;
+    .td-search-input-field {
+      flex: 1;
+    }
+    ::ng-deep mat-form-field {
+      &.mat-form-field-appearance-outline {
+        .mat-form-field-wrapper {
+          padding-bottom: 0;
+        }
+      }
+      &.mat-form-field-appearance-fill {
+        .mat-form-field-wrapper {
+          padding-bottom: 0;
+          .mat-form-field-flex {
+            height: 52px;
+          }
+          .mat-form-field-underline {
+            bottom: 0;
+          }
+        }
+      }
+      &.mat-form-field-appearance-standard {
+        .mat-form-field-wrapper {
+          padding-bottom: 0;
+          .mat-form-field-infix {
+            bottom: 0.4em;
+          }
+          .mat-form-field-underline {
+            bottom: 0;
+          }
+        }
+      }
+      &.mat-form-field-appearance-legacy {
+        .mat-form-field-infix {
+          align-self: center;
+        }
+      }
+      .mat-input-element {
+        caret-color: currentColor;
+      }
+      &.mat-hide-underline .mat-form-field-underline {
+        display: none;
+      }
+    }
+    .td-search-input-clear {
+      // [flex="none"]
+      flex: 0 0 auto;
+      align-self: center;
+    }
+  }
+}

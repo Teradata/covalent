@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "covalent-core-ng-add",
+  "title": "Covalent core ng-add schematic",
+  "type": "object",
+  "properties": {
+    "dynamicForms": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent dynamic-forms should be set up.",
+      "x-prompt": "Set up dynamic forms?"
+    },
+    "highlight": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent highlight should be set up.",
+      "x-prompt": "Set up highlight for code snippets?"
+    },
+    "http": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent http should be set up.",
+      "x-prompt": "Set up http service?"
+    },
+    "markdown": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent markdown parser should be set up.",
+      "x-prompt": "Set up markdown parser for writing md files?"
+    },
+    "flavoredMarkdown": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent flavored markdown should be set up.",
+      "x-prompt": "Set up flavored markdown for rendering material design components?"
+    },
+    "echarts": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent echarts should be set up.",
+      "x-prompt": "Set up covalent echarts?"
+    },
+    "textEditor": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent text-editor should be set up.",
+      "x-prompt": "Set up text editor?"
+    },
+    "codeEditor": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent code-editor should be set up.",
+      "x-prompt": "Set up code editor?"
+    },
+    "markdownNavigator": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent markdown-navigator should be set up.",
+      "x-prompt": "Set up markdown navigator?"
+    },
+    "styleSheetUtilities": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent utilities mixin should be added.",
+      "x-prompt": "Add stylesheet utilities"
+    },
+    "styleSheetFlexLayout": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent flex layout should be added.",
+      "x-prompt": "Add flex layout stylesheet"
+    },
+    "styleSheetColors": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent colors should be added.",
+      "x-prompt": "Add colors stylesheet"
+    }
+  },
+  "required": []
+}

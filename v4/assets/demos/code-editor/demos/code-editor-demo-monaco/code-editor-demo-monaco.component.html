@@ -1,0 +1,22 @@
+<td-code-editor
+  data-cy="td-code-editor"
+  #editor
+  [editorOptions]="{ autoIndent: true, cursorBlinking: 'phase' }"
+  flex
+  language="javascript"
+  [(ngModel)]="editorVal"
+  [theme]="editorTheme"
+  (editorInitialized)="editorInitialized($event)"
+  (editorConfigurationChanged)="configChanged(editor.theme)"
+></td-code-editor>
+
+<div layout="row" layout-align="start center" class="pad-sm">
+  <span flex="none" hide-xs class="push-right mat-body-1">Editor Theme</span>
+  <mat-form-field floatLabel="never">
+    <mat-select [(ngModel)]="editorTheme" placeholder="Editor Theme">
+      <mat-option value="vs-dark">Dark</mat-option>
+      <mat-option value="hc-black">High Contrast</mat-option>
+      <mat-option value="vs">Light</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
