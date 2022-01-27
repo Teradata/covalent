@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { CovalentMenuModule } from '@covalent/core/menu';
 
 import { TdLayoutComponent } from './layout.component';
 import { TdLayoutToggleDirective, TdLayoutCloseDirective, TdLayoutOpenDirective } from './layout.directives';
@@ -71,6 +72,7 @@ const TD_LAYOUTS: Type<any>[] = [
     MatIconModule,
     MatCardModule,
     MatDividerModule,
+    CovalentMenuModule,
   ],
   declarations: [TD_LAYOUTS],
   exports: [TD_LAYOUTS],
