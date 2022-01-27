@@ -1,8 +1,6 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import 'echarts/lib/component/tooltip';
-
 import { TdChartTooltipComponent, TdChartTooltipFormatterDirective } from './tooltip.component';
 import { TdSeriesTooltipComponent } from './series-tooltip.component';
 

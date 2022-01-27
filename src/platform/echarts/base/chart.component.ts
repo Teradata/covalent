@@ -15,8 +15,6 @@ import {
 import { Subject, fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operators';
 
-import * as echarts from 'echarts/lib/echarts';
-
 import { TdChartOptionsService, CHART_PROVIDER } from './chart-options.service';
 import { assignDefined } from './utils';
 

@@ -2,8 +2,6 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 import { usaJSON } from './geoJson-USA';
 
-import * as echarts from 'echarts';
-
 @Component({
   selector: 'map-demo-basic',
   templateUrl: './map-demo-basic.component.html',
