@@ -1,7 +1,4 @@
 {
-  "cli": {
-    "analytics": "0efb205c-9146-473f-936e-bc1801e17d22"
-  },
   "version": 1,
   "projects": {
     "covalent-docs": {
@@ -496,5 +493,8 @@
       }
     }
   },
-  "defaultProject": "covalent-docs"
+  "defaultProject": "covalent-docs",
+  "cli": {
+    "analytics": false
+  }
 }

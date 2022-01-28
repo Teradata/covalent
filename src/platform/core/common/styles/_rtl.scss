@@ -8,10 +8,12 @@
     #{$prop}: $rtl-value;
     unicode-bidi: embed;
   }
+
   body[dir='rtl'] & {
     #{$prop}: $rtl-value;
     unicode-bidi: embed;
   }
+
   [dir='rtl'] & {
     #{$prop}: $rtl-value;
     unicode-bidi: embed;
@@ -21,6 +23,7 @@
     direction: rtl;
     unicode-bidi: bidi-override;
   }
+
   bdo[dir='ltr'] {
     direction: ltr;
     unicode-bidi: bidi-override;

@@ -6,9 +6,11 @@
 @mixin covalent-highlight-theme() {
   td-highlight {
     background: #1e1e21;
+
     .highlight {
       color: $light-primary-text;
     }
+
     .copy-button {
       color: $light-primary-text;
     }
@@ -52,6 +54,7 @@
       color: #dcdcaa;
     }
 
+    /* stylelint-disable selector-class-pattern */
     .hljs-built_in,
     .hljs-builtin-name,
     .hljs-type,
@@ -61,6 +64,7 @@
     .hljs-bullet {
       color: #4ec9b0;
     }
+    /* stylelint-enable selector-class-pattern */
 
     .hljs-number {
       color: #b5cea8;

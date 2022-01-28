@@ -5,11 +5,13 @@ $padding: 16px;
   overflow-x: auto;
   padding: $padding;
   display: flex;
+
   pre,
   code,
   .highlight {
     font-family: $code-font;
   }
+
   pre {
     display: block;
     overflow-x: auto;
@@ -20,7 +22,7 @@ $padding: 16px;
     line-height: 1.45;
     tab-size: 2;
     -webkit-font-smoothing: auto;
-    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
     position: relative;
     border-radius: 2px;
     font-size: 0.8rem;
@@ -40,6 +42,7 @@ $padding: 16px;
     line-height: 1.5;
     margin: 0;
   }
+
   .copy-button {
     border: none;
     background: inherit;

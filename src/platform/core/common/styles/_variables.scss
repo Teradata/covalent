@@ -49,15 +49,15 @@ $toast-height: $baseline-grid * 3 !default;
 $toast-margin: $baseline-grid * 1 !default;
 
 // Whiteframes
-$whiteframe-shadow-z1: 0 2px 5px 0 rgba(0, 0, 0, 0.26) !default;
+$whiteframe-shadow-z1: 0 2px 5px 0 rgb(0 0 0 / 26%) !default;
 $whiteframe-zindex-z1: 1 !default;
-$whiteframe-shadow-z2: 0 8px 17px rgba(0, 0, 0, 0.2) !default;
+$whiteframe-shadow-z2: 0 8px 17px rgb(0 0 0 / 20%) !default;
 $whiteframe-zindex-z2: 2 !default;
-$whiteframe-shadow-z3: 0 17px 50px rgba(0, 0, 0, 0.19) !default;
+$whiteframe-shadow-z3: 0 17px 50px rgb(0 0 0 / 19%) !default;
 $whiteframe-zindex-z3: 3 !default;
-$whiteframe-shadow-z4: 0 16px 28px 0 rgba(0, 0, 0, 0.22) !default;
+$whiteframe-shadow-z4: 0 16px 28px 0 rgb(0 0 0 / 22%) !default;
 $whiteframe-zindex-z4: 4 !default;
-$whiteframe-shadow-z5: 0 27px 24px 0 rgba(0, 0, 0, 0.2) !default;
+$whiteframe-shadow-z5: 0 27px 24px 0 rgb(0 0 0 / 20%) !default;
 $whiteframe-zindex-z5: 5 !default;
 
 // Z-indexes

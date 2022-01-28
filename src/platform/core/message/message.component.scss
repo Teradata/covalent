@@ -1,5 +1,6 @@
 :host {
   display: block;
+
   .td-message-wrapper {
     padding: 8px 16px;
     min-height: 52px;
@@ -13,6 +14,7 @@
     align-content: center;
     max-width: 100%;
     justify-content: flex-start;
+
     .td-message-labels {
       // [flex]
       flex: 1;
@@ -22,6 +24,7 @@
 
 .td-message-icon {
   margin-right: 16px;
+
   ::ng-deep [dir='rtl'] & {
     margin-left: 16px;
     margin-right: 0;

@@ -77,8 +77,8 @@
     }
 
     input {
-      font: 13px/1.4 'Helvetica', 'arial', 'nimbussansl', 'liberationsans', 'freesans', 'clean', sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol';
     }
 
     a {
@@ -178,14 +178,14 @@
     }
 
     code {
-      font-family: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+      font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
       font-size: 12px;
     }
 
     pre {
       margin-top: 0;
       margin-bottom: 0;
-      font: 12px 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+      font: 12px Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     }
 
     .pl-0 {
@@ -591,7 +591,7 @@
     kbd {
       display: inline-block;
       padding: 3px 5px;
-      font: 11px 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+      font: 11px Consolas, 'Liberation Mono', Menlo, Courier, monospace;
       line-height: 10px;
       vertical-align: middle;
       background-color: #fcfcfc;

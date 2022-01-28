@@ -37,11 +37,11 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 Certain covalent version are meant for certain angular versions, and here is the matrix:
 
-| Covalent | Angular
+| Covalent | Angular |
 |:---:|:---:|
 | 2.X | 8.X |
 | 3.X | 9.X / 10.X / 11.x |
-| 3.X | 12.X / 13.X
+| 4.X | 12.X / 13.X |
 | Future / Nightly | 13.X |
 
 ## Browser Support
