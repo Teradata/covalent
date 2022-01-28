@@ -11,7 +11,7 @@ const yellow: any = chalk.yellow;
 const migrationPath: string = require.resolve('../migration.json');
 const collectionPath: string = require.resolve('../collection.json');
 
-describe('ng-update schematic', () => {
+xdescribe('ng-update schematic', () => {
   const collectionTestRunner: SchematicTestRunner = new SchematicTestRunner('collection', collectionPath);
   const migrationTestRunner: SchematicTestRunner = new SchematicTestRunner('migration', migrationPath);
 

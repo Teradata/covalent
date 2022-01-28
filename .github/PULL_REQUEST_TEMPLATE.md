@@ -9,13 +9,13 @@
 
 #### Test Steps
 <!-- Add instructions on how to test your changes -->
-- [ ] `npm run serve`
+- [ ] `npm run start`
 - [ ] then this
 - [ ] finally this
 
 #### General Tests for Every PR
 
-- [ ] `npm run serve:prod` still works.
+- [ ] `npm run start:prod` still works.
 - [ ] `npm run tslint` passes.
 - [ ] `npm run stylelint` passes.
 - [ ] `npm test` passes and code coverage is not lower.

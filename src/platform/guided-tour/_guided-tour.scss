@@ -114,6 +114,8 @@ $mat-icon-font: 'Material Icons', sans-serif;
   background: none;
   font-size: 1.6em;
   font-family: $mat-icon-font;
+  position: relative;
+  border-width: 0;
   // Work around for having material icon as close button
   // Shepherd uses a span with 'x' string as content and aria-label hidden,
   // hence, doing this won't affect accessibility.

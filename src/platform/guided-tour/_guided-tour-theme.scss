@@ -1,5 +1,4 @@
 @import './guided-tour.scss';
-@import '~@angular/material/button/button-base';
 
 @mixin covalent-guided-tour-theme($theme, $config: null) {
   @include td-guided-tour-typography($config);
@@ -61,8 +60,6 @@
   // Bringing in mat-icon button styles
   // Class can't be passed so we must include mat button styles here
   .shepherd-cancel-icon {
-    @include mat-button-base;
-
     min-width: 0;
     margin: 0;
     padding: 0;

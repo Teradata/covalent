@@ -47,7 +47,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift
 
 # Run ng serve in the background and save the process ID.
-npm run serve &
+npm run start &
 NPM_PID=$!
 
 # wait for the server to return.

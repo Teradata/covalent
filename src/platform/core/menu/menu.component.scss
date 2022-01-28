@@ -31,7 +31,7 @@ $td-menu-spacing: 8px !default;
           }
         }
         [matLine] + [matLine] {
-          margin-top: $td-menu-spacing / 2;
+          margin-top: calc($td-menu-spacing / 2);
         }
       }
     }

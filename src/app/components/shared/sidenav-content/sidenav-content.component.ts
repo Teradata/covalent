@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { routeGroups } from '../../../utilities/route-trees';
-import { Router } from '@angular/router';
+import { IsActiveMatchOptions, Router } from '@angular/router';
 import { ICombinedRouteGroup } from 'app/utilities/route-group';
 
 @Component({
@@ -10,7 +10,18 @@ import { ICombinedRouteGroup } from 'app/utilities/route-group';
   styleUrls: ['./sidenav-content.component.scss'],
 })
 export class SidenavContentComponent {
+  private readonly matchOptions: IsActiveMatchOptions = {
+    paths: 'exact',
+    queryParams: 'subset',
+    matrixParams: 'ignored',
+    fragment: 'ignored',
+  };
+
   combinedRoutes: ICombinedRouteGroup[] = routeGroups;
 
-  constructor(public router: Router) {}
+  constructor(private router: Router) {}
+
+  isActive(route: string): boolean {
+    return this.router.isActive(route, this.matchOptions);
+  }
 }

@@ -55,7 +55,7 @@ $color: rgba(0, 0, 0, 0.01);
       &,
       & .mat-card {
         & .mat-card-actions {
-          padding: $padding / 2;
+          padding: calc($padding / 2);
           margin: 0;
         }
       }

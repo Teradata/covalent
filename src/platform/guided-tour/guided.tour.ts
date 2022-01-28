@@ -292,7 +292,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
       }
       // adds a default beforeShowPromise function
       step.beforeShowPromise = () => {
-        return new Promise((resolve: () => void) => {
+        return new Promise((resolve: (value?: any) => void) => {
           const additionalCapabilitiesSetup: Function = () => {
             if (advanceOn && !step.advanceOn) {
               if (!Array.isArray(advanceOn)) {

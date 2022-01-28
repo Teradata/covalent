@@ -9,11 +9,11 @@ rm -rf ./deploy
 node ./node_modules/@angular/cli/bin/ng build covalent-core
 
 # BUILD: Schematics
-gulp build-schematics
+#gulp build-schematics
 
 echo 'Compiling and moving moving some requried files not handled by ng-packagr'
 gulp move-required-core-files
-gulp compile-core-sass
+#gulp compile-core-sass
 echo 'Completed compiling and moving moving some requried files not handled by ng-packagr'
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
@@ -25,7 +25,7 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 # BUILD: @covalent/dynamic-forms primary entrypoint
 node ./node_modules/@angular/cli/bin/ng build covalent-dynamic-forms
 # BUILD: @covalent/highlight primary entrypoint
-./node_modules/@angular/cli/bin/ng build covalent-highlight
+node ./node_modules/@angular/cli/bin/ng build covalent-highlight
 # BUILD: @covalent/markdown primary entrypoint
 node ./node_modules/@angular/cli/bin/ng build covalent-markdown
 # BUILD: @covalent/code-editor primary entrypoint

@@ -7,7 +7,7 @@ import { Schema as ApplicationOptions } from '@schematics/angular/application/sc
 
 const collectionPath: string = require.resolve('../collection.json');
 
-describe('ng-add schematic', () => {
+xdescribe('ng-add schematic', () => {
   const testRunner: SchematicTestRunner = new SchematicTestRunner('rocket', collectionPath);
 
   const workspaceOptions: WorkspaceOptions = {
