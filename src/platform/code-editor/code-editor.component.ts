@@ -49,13 +49,14 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
   private _language: string = 'javascript';
   private _subject: Subject<string> = new Subject();
   private _editorInnerContainer: string = 'editorInnerContainer' + uniqueCounter++;
-  private _editor: any;
+  private _editor: monaco.editor.IStandaloneCodeEditor;
   private _fromEditor: boolean = false;
   private _componentInitialized: boolean = false;
   private _editorOptions: any = {};
   private _isFullScreen: boolean = false;
   private _keycode: any;
   private _registeredLanguagesStyles: HTMLStyleElement[] = [];
+  private _onDidChangeContentDisposable?: monaco.IDisposable;
 
   @ViewChild('editorContainer', { static: true }) _editorContainer: ElementRef;
 
@@ -63,7 +64,8 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
    * editorInitialized: function($event)
    * Event emitted when editor is first initialized
    */
-  @Output() editorInitialized: EventEmitter<void> = new EventEmitter<void>();
+  @Output() editorInitialized: EventEmitter<monaco.editor.IStandaloneCodeEditor> =
+    new EventEmitter<monaco.editor.IStandaloneCodeEditor>();
 
   /**
    * editorConfigurationChanged: function($event)
@@ -328,7 +330,10 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
       this.editorInitialized.emit(this._editor);
       this.editorConfigurationChanged.emit();
     });
-    this._editor.getModel().onDidChangeContent((e: any) => {
+    // The `onDidChangeContent` returns a disposable object (an object with `dispose()` method) which will cleanup
+    // the listener. The callback, that we pass to `onDidChangeContent`, captures `this`. This leads to a circular reference
+    // (`td-code-editor -> monaco -> td-code-editor`) and prevents the `td-code-editor` from being GC'd.
+    this._onDidChangeContentDisposable = this._editor.getModel().onDidChangeContent((e: any) => {
       this._fromEditor = true;
       this.writeValue(this._editor.getValue());
       this.layout();
@@ -358,8 +363,13 @@ export class TdCodeEditorComponent implements OnInit, ControlValueAccessor, OnDe
   ngOnDestroy(): void {
     this._changeDetectorRef.detach();
     this._registeredLanguagesStyles.forEach((style: HTMLStyleElement) => style.remove());
+    if (this._onDidChangeContentDisposable) {
+      this._onDidChangeContentDisposable.dispose();
+      this._onDidChangeContentDisposable = undefined;
+    }
     if (this._editor) {
       this._editor.dispose();
+      this._editor = undefined;
     }
     this._destroy.next(true);
     this._destroy.unsubscribe();
