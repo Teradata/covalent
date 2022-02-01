@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../../dynamic-menu.component';
 
 @Component({

@@ -1,8 +1,6 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import 'echarts/lib/chart/sankey';
-
 import { TdChartSeriesSankeyComponent } from './sankey.component';
 
 export const SANKEY_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesSankeyComponent];

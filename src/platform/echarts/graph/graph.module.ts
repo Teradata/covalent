@@ -1,8 +1,5 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import 'echarts/lib/chart/graph';
-
 import { TdChartSeriesGraphComponent } from './graph.component';
 
 export const GRAPH_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesGraphComponent];

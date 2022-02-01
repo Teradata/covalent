@@ -2,14 +2,16 @@ import { TestBed, inject, waitForAsync, ComponentFixture } from '@angular/core/t
 import { Component } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentDynamicMenuModule, TdDynamicMenuComponent, IMenuTrigger, IMenuItem } from './';
-import { By } from '@angular/platform-browser';
+import { By, DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('Component: DynamicMenu', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [TdDynamicMenuBasicTestComponent],
-        imports: [NoopAnimationsModule, CovalentDynamicMenuModule],
+        imports: [NoopAnimationsModule, CovalentDynamicMenuModule, HttpClientTestingModule],
       });
       TestBed.compileComponents();
     }),
@@ -18,7 +20,7 @@ describe('Component: DynamicMenu', () => {
   it(
     'should show menu and submenu appropriately',
     waitForAsync(
-      inject([], () => {
+      inject([MatIconRegistry, DomSanitizer], (iconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) => {
         const fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicMenuBasicTestComponent);
         const component: TdDynamicMenuBasicTestComponent = fixture.debugElement.componentInstance;
         component.trigger = {
@@ -69,6 +71,18 @@ describe('Component: DynamicMenu', () => {
             ],
           },
         ];
+
+        iconRegistry.addSvgIconInNamespace(
+          'assets',
+          'angular',
+          domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/angular.svg'),
+        );
+
+        iconRegistry.addSvgIconInNamespace(
+          'assets',
+          'covalent',
+          domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/covalent.svg'),
+        );
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {

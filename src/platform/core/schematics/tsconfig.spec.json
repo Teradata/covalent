@@ -1,8 +1,7 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "../",
+    "outDir": "./",
     "lib": ["es6", "dom"],
     "module": "commonjs",
     "types": ["jasmine", "hammerjs", "node"]
