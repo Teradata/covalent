@@ -13,7 +13,7 @@ node ./node_modules/@angular/cli/bin/ng build covalent-core
 
 echo 'Compiling and moving moving some requried files not handled by ng-packagr'
 gulp move-required-core-files
-#gulp compile-core-sass
+gulp compile-core-sass
 echo 'Completed compiling and moving moving some requried files not handled by ng-packagr'
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points

@@ -26,9 +26,9 @@
 // itself). For a further explanation of these terms and their meanings, see
 // https://en.wikipedia.org/wiki/Umbra,_penumbra_and_antumbra.
 
-$_umbra-color: rgb(black, 0.2);
-$_penumbra-color: rgb(black, 0.14);
-$_ambient-color: rgb(black, 0.12);
+$_umbra-color: rgba(black, 0.2);
+$_penumbra-color: rgba(black, 0.14);
+$_ambient-color: rgba(black, 0.12);
 
 // Maps for the different shadow sets and their values within each z-space. These values were
 // created by taking a few reference shadow sets created by Google's Designers and interpolating

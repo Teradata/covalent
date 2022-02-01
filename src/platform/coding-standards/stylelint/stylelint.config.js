@@ -20,5 +20,6 @@ module.exports = {
     'color-function-notation': null,
     'value-keyword-case': null, // for map-gets
     'no-descending-specificity': null, // will require refactor
+    'no-invalid-position-at-import-rule': null, // to use @use rule
   },
 };

@@ -92,7 +92,7 @@ $warn:    mat-palette($mat-red, 600);
 
 $theme: mat-light-theme($primary, $accent, $warn);
 
-@include angular-material-theme($theme);
+@include mat.all-component-themes($theme);
 @include covalent-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme();

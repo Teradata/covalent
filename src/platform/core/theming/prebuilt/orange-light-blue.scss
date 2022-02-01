@@ -1,13 +1,20 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 @import '../all-theme';
 
-@include mat-core();
+$primary: mat.define-palette(mat.$orange-palette, 800);
+$accent: mat.define-palette(mat.$light-blue-palette, 600, A100, A400);
+$warn: mat.define-palette(mat.$red-palette, 600);
 
-$primary: mat-palette($mat-orange, 800);
-$accent: mat-palette($mat-light-blue, 600, A100, A400);
-$warn: mat-palette($mat-red, 600);
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
 
-$theme: mat-light-theme($primary, $accent, $warn);
-
-@include angular-material-theme($theme);
+@include mat.core();
+@include mat.all-component-themes($theme);
 @include covalent-theme($theme);

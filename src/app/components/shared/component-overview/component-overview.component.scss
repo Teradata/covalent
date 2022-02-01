@@ -8,7 +8,7 @@
   height: 144px;
   padding: 16px 16px 20px;
   box-sizing: border-box;
-  box-shadow: 0 1px 1px 0 rgb(60 64 67 / 8%), 0 1px 3px 1px rgb(60 64 67 / 16%);
+  box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 80%), 0 1px 3px 1px rgba(60, 64, 67, 16%);
 
   .component-card-body {
     height: 40px;
@@ -29,7 +29,7 @@
   }
 
   &:hover {
-    box-shadow: 0 1px 3px 1px rgb(60 64 67 / 20%), 0 2px 8px 4px rgb(60 64 67 / 10%);
+    box-shadow: 0 1px 3px 1px rgba(60, 64, 67, 20%), 0 2px 8px 4px rgba(60, 64, 67, 10%);
     transform: translateY(-1px);
   }
 }

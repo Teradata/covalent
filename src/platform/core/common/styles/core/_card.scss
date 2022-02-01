@@ -12,7 +12,7 @@
   text-shadow: makelongshadow($color);
 }
 
-$color: rgb(0 0 0 / 1%);
+$color: rgba(0, 0, 0, 1%);
 
 @mixin td-card-utilities() {
   html {
@@ -146,21 +146,22 @@ $color: rgb(0 0 0 / 1%);
     &[ng-reflect-href] {
       &:hover {
         cursor: pointer;
-        box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 20%), 0 4px 5px 0 rgba(0, 0, 0, 14%), 0 1px 10px 0 rgba(0, 0, 0, 12%);
       }
 
       &:active {
-        box-shadow: 0 6px 6px -3px rgb(0 0 0 / 20%), 0 10px 14px 1px rgb(0 0 0 / 14%), 0 4px 18px 3px rgb(0 0 0 / 12%);
+        box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 20%), 0 10px 14px 1px rgba(0, 0, 0, 14%),
+          0 4px 18px 3px rgba(0, 0, 0, 12%);
 
         & mat-toolbar {
-          background-color: rgb(255 255 255 / 20%);
+          background-color: rgba(255, 255, 255, 20%);
           background-position: -100% 100%;
         }
       }
 
       & mat-toolbar {
         background-size: 200% 100%;
-        background-image: linear-gradient(to right, transparent 50%, rgb(255 255 255 / 20%) 50%);
+        background-image: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 20%) 50%);
         transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s,
           background-color 0.5s ease;
       }

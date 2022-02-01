@@ -4,7 +4,7 @@
   html,
   body {
     height: 100%;
-    color: rgb(0 0 0 / 87%);
+    color: rgba(0, 0, 0, 87%);
     background: white;
     position: relative;
   }
@@ -95,12 +95,12 @@
 
   .md-shadow-bottom-z-1,
   .mat-shadow-bottom-z-1 {
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 26%);
   }
 
   .md-shadow-bottom-z-2,
   .mat-shadow-bottom-z-2 {
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 40%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 40%);
   }
 
   .md-shadow-animated.md-shadow,

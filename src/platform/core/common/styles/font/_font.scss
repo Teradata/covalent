@@ -78,22 +78,22 @@ $mat-font-url: 'styles/font/' !default;
   // Rules for using icons as black on a light background.
   .material-icons.md-dark,
   .material-icons.mat-dark {
-    color: rgb(0 0 0 / 54%);
+    color: rgba(0, 0, 0, 54%);
   }
 
   .material-icons.md-dark.md-inactive,
   .material-icons.mat-dark.mat-inactive {
-    color: rgb(0 0 0 / 26%);
+    color: rgba(0, 0, 0, 26%);
   }
 
   // Rules for using icons as white on a dark background.
   .material-icons.md-light,
   .material-icons.mat-light {
-    color: rgb(255 255 255 / 100%);
+    color: rgba(255, 255, 255, 100%);
   }
 
   .material-icons.md-light.md-inactive,
   .material-icons.mat-light.mat-inactive {
-    color: rgb(255 255 255 / 30%);
+    color: rgba(255, 255, 255, 30%);
   }
 }
