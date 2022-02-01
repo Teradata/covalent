@@ -10,7 +10,8 @@ import {
   OnChanges,
   SimpleChanges,
   HostBinding,
-  HostListener,
+  NgZone,
+  OnDestroy,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
@@ -138,12 +139,13 @@ function addIdsToHeadings(html: string): string {
   styleUrls: ['./markdown.component.scss'],
   templateUrl: './markdown.component.html',
 })
-export class TdMarkdownComponent implements OnChanges, AfterViewInit {
+export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy {
   private _content: string;
   private _simpleLineBreaks: boolean = false;
   private _hostedUrl: string;
   private _anchor: string;
   private _viewInit: boolean = false;
+  private _anchorListener?: VoidFunction;
   /**
    * .td-markdown class added to host so ::ng-deep gets scoped.
    */
@@ -200,15 +202,12 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
    */
   @Output() contentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
-
-  @HostListener('click', ['$event'])
-  clickListener(event: Event): void {
-    const element: HTMLElement = <HTMLElement>event.srcElement;
-    if (element.matches('a[href]') && isAnchorLink(<HTMLAnchorElement>element)) {
-      this.handleAnchorClicks(event);
-    }
-  }
+  constructor(
+    private _renderer: Renderer2,
+    private _elementRef: ElementRef,
+    private _domSanitizer: DomSanitizer,
+    private _ngZone: NgZone,
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
@@ -224,6 +223,23 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
       this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
     }
     this._viewInit = true;
+
+    // Caretaker note: the `scrollToAnchor` calls `element.scrollIntoView`, a native synchronous DOM
+    // API and it doesn't require Angular running `ApplicationRef.tick()` each time the markdown component is clicked.
+    // Host listener (added through `@HostListener`) cause Angular to add an event listener within the Angular zone.
+    // It also calls `markViewDirty()` before calling the actual listener (the decorated class method).
+    this._ngZone.runOutsideAngular(() => {
+      this._anchorListener = this._renderer.listen(this._elementRef.nativeElement, 'click', (event: MouseEvent) => {
+        const element: HTMLElement = <HTMLElement>event.srcElement;
+        if (element.matches('a[href]') && isAnchorLink(<HTMLAnchorElement>element)) {
+          this.handleAnchorClicks(event);
+        }
+      });
+    });
+  }
+
+  ngOnDestroy(): void {
+    this._anchorListener?.();
   }
 
   refresh(): void {
@@ -249,7 +265,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     this.contentReady.emit();
   }
 
-  private async handleAnchorClicks(event: Event): Promise<void> {
+  private handleAnchorClicks(event: Event): void {
     event.preventDefault();
     const url: URL = new URL((<HTMLAnchorElement>event.target).href);
     const hash: string = decodeURI(url.hash);
