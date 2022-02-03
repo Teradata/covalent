@@ -1,3 +1,21 @@
+# [4.0.0-beta.1](https://github.com/teradata/covalent/compare/v4.0.0-alpha.0...v4.0.0-beta.1) (2022-02-03)
+
+
+### Bug Fixes
+
+* **code-editor:** dispose the event listener when the component is destroyed ([3e3e10f](https://github.com/teradata/covalent/commit/3e3e10f7241021baff30c197434fb44ad371121e))
+
+
+### Features
+
+* **angular:** updating ng13 upgrade ([c21b39d](https://github.com/teradata/covalent/commit/c21b39dec4b0b7d9a8fb2d1093ba37382707a3bc))
+* **angular:** upgrade to ng 12 ([57582cf](https://github.com/teradata/covalent/commit/57582cf9c2c13f1b082ca7e8937c13802c940cb5))
+* **angular:** upgrade to ng 13 ([425f389](https://github.com/teradata/covalent/commit/425f3892813c0beee7799245db244a812da92651))
+* **angular:** upgrade to ng material 12 ([c1f448f](https://github.com/teradata/covalent/commit/c1f448fd62c678821a70b57870d06c89cda90ac8))
+* **angular:** upgrade to ng material 13 ([3ff3f28](https://github.com/teradata/covalent/commit/3ff3f2888751c2fc15ea43a3dc3baee8bb406ee0))
+
+
+
 # [4.0.0-alpha.0](https://github.com/teradata/covalent/compare/v4.0.0...v4.0.0-alpha.0) (2022-01-21)
 
 
