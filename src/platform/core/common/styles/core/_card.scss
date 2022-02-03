@@ -12,16 +12,18 @@
   text-shadow: makelongshadow($color);
 }
 
-$color: rgba(0, 0, 0, 0.01);
+$color: rgba(0, 0, 0, 1%);
 
 @mixin td-card-utilities() {
   html {
     .mat-card {
       padding: 0;
       margin: 8px;
+
       mat-card-header {
         height: auto;
       }
+
       [matCardAvatar] {
         font-size: $mat-card-header-size;
         line-height: $mat-card-header-size;
@@ -30,9 +32,11 @@ $color: rgba(0, 0, 0, 0.01);
         margin: 16px 0 0 15px;
         border-radius: 50%;
       }
+
       .mat-card-image {
         width: 100%;
       }
+
       .mat-card-image,
       .mat-card-lg-image,
       .mat-card-md-image,
@@ -40,33 +44,40 @@ $color: rgba(0, 0, 0, 0.01);
       .mat-card-title-group {
         margin: 0;
       }
+
       mat-card-title {
         padding-top: $padding;
         padding-left: $padding;
         padding-right: $padding;
       }
+
       mat-card-subtitle {
         padding-left: $padding;
         padding-right: $padding;
       }
+
       mat-card-content {
         padding: $padding;
       }
+
       &,
       & .mat-card {
         & .mat-card-actions {
-          padding: $padding / 2;
+          padding: calc($padding / 2);
           margin: 0;
         }
       }
+
       .mat-card-actions:last-child {
         margin-bottom: 0;
         padding-bottom: 8px;
       }
+
       .mat-divider.relative {
         position: relative;
       }
     }
+
     &[dir='rtl'] {
       .mat-card-title-group {
         .mat-card-image,
@@ -79,6 +90,7 @@ $color: rgba(0, 0, 0, 0.01);
           }
         }
       }
+
       .mat-card {
         .mat-card-image {
           &:first-child {
@@ -86,6 +98,7 @@ $color: rgba(0, 0, 0, 0.01);
             border-top-right-radius: $mat-card-radius;
           }
         }
+
         .mat-card-lg-image,
         .mat-card-md-image,
         .mat-card-sm-image {
@@ -95,6 +108,7 @@ $color: rgba(0, 0, 0, 0.01);
         }
       }
     }
+
     &:not([dir='rtl']) {
       .mat-card-title-group {
         .mat-card-image,
@@ -107,6 +121,7 @@ $color: rgba(0, 0, 0, 0.01);
           }
         }
       }
+
       .mat-card {
         .mat-card-image {
           &:first-child {
@@ -114,6 +129,7 @@ $color: rgba(0, 0, 0, 0.01);
             border-top-right-radius: $mat-card-radius;
           }
         }
+
         .mat-card-lg-image,
         .mat-card-md-image,
         .mat-card-sm-image {
@@ -130,23 +146,27 @@ $color: rgba(0, 0, 0, 0.01);
     &[ng-reflect-href] {
       &:hover {
         cursor: pointer;
-        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 20%), 0 4px 5px 0 rgba(0, 0, 0, 14%), 0 1px 10px 0 rgba(0, 0, 0, 12%);
       }
+
       &:active {
-        box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14),
-          0 4px 18px 3px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 20%), 0 10px 14px 1px rgba(0, 0, 0, 14%),
+          0 4px 18px 3px rgba(0, 0, 0, 12%);
+
         & mat-toolbar {
-          background-color: rgba(255, 255, 255, 0.2);
+          background-color: rgba(255, 255, 255, 20%);
           background-position: -100% 100%;
         }
       }
+
       & mat-toolbar {
         background-size: 200% 100%;
-        background-image: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0.2) 50%);
+        background-image: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 20%) 50%);
         transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s,
           background-color 0.5s ease;
       }
     }
+
     & mat-toolbar {
       height: 148px;
       border-radius: 2px 2px 0 0;

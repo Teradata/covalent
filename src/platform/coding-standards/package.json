@@ -17,7 +17,7 @@
   "contributors": [
     "Christian Memije <christian.memije@teradata.com>"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "codelyzer": "^5.2.0",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-angular": "^8.1.0",

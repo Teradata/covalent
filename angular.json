@@ -1,8 +1,5 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "src/platform",
-  "defaultProject": "covalent-docs",
   "projects": {
     "covalent-docs": {
       "root": "",
@@ -74,9 +71,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
@@ -84,14 +79,8 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "customWebpackConfig": {
-              "path": "./monaco-webpack.config.js",
-              "mergeStrategies": {
-                "module.rules": "prepend"
-              }
-            },
             "browserTarget": "covalent-docs:build"
           },
           "configurations": {
@@ -103,12 +92,6 @@
         "extract-i18n": {
           "builder": "@angular-builders/custom-webpack:extract-i18n",
           "options": {
-            "customWebpackConfig": {
-              "path": "./monaco-webpack.config.js",
-              "mergeStrategies": {
-                "module.rules": "prepend"
-              }
-            },
             "browserTarget": "covalent-docs:build"
           }
         },
@@ -249,37 +232,6 @@
               "src/platform/dynamic-forms/tsconfig.lib.json",
               "src/platform/dynamic-forms/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
-    "covalent-http": {
-      "root": "src/platform/http",
-      "sourceRoot": "src/platform/http",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "src/platform/http/tsconfig.lib.json",
-            "project": "src/platform/http/ng-package.js"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/platform/http/test.ts",
-            "tsConfig": "src/platform/http/tsconfig.spec.json",
-            "karmaConfig": "src/platform/http/karma.conf.js",
-            "polyfills": "src/polyfills.ts"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["src/platform/http/tsconfig.lib.json", "src/platform/http/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
@@ -541,11 +493,7 @@
       }
     }
   },
-  "schematics": {
-    "@schematics/angular:component": {
-      "style": "scss"
-    }
-  },
+  "defaultProject": "covalent-docs",
   "cli": {
     "analytics": false
   }

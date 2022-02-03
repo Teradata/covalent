@@ -32,10 +32,8 @@
     "Steven Ov <steven.ov@teradata.com>",
     "Julie Knowles <julie.knowles@teradata.com>"
   ],
-  "dependencies": {
-    "easymde": "0.0.0-EASYMDE"
-  },
   "peerDependencies": {
+    "easymde": "0.0.0-EASYMDE",
     "@angular/common": "0.0.0-NG",
     "@angular/core": "0.0.0-NG"
   }

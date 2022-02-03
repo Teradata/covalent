@@ -9,7 +9,8 @@ export class HighlightDemoCssComponent {
   css: string = `
   .flex-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 0;
     margin: 0;

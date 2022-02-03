@@ -4,6 +4,7 @@
   .td-layout-nav-list-wrapper > .mat-sidenav-container {
     > mat-sidenav.mat-drawer-side {
       border-right: 0;
+
       [dir='rtl'] & {
         border-left: 0;
       }
@@ -21,6 +22,7 @@
   display: flex;
   // [flex]
   flex: 1;
+
   .td-layout-nav-list-wrapper {
     // [layout="column"]
     flex-direction: column;
@@ -32,6 +34,7 @@
     position: relative;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+
     .td-layout-nav-list-toolbar-content {
       // [layout="row"]
       flex-direction: row;
@@ -43,6 +46,7 @@
       max-width: 100%;
       justify-content: flex-start;
     }
+
     .td-layout-nav-list-content {
       text-align: start;
       // [flex]
@@ -53,6 +57,7 @@
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
+
     .td-layout-nav-list-main {
       // [layout="column"]
       flex-direction: column;
@@ -65,6 +70,7 @@
       height: 100%;
       position: relative;
       overflow: auto;
+
       .td-layout-nav-list-content {
         // [md-content]
         display: block;
@@ -75,9 +81,11 @@
         flex: 1;
       }
     }
+
     mat-sidenav-container.td-layout-nav-list {
       // [flex]
       flex: 1;
+
       & > mat-sidenav {
         &.mat-drawer-opened,
         &.mat-drawer-opening,
@@ -89,6 +97,7 @@
     }
   }
 }
+
 :host ::ng-deep {
   mat-sidenav-container.td-layout-nav-list {
     & > .mat-drawer-content {
@@ -99,10 +108,6 @@
     & > .mat-drawer > .mat-drawer-inner-container {
       box-shadow: $whiteframe-shadow-1dp;
       box-sizing: border-box;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -moz-box;
-      display: -ms-flexbox;
       display: flex;
       flex-direction: column;
     }

@@ -34,6 +34,7 @@ $mat-icon-border-radius: $mat-fab-border-radius;
 
     bottom: $bottom;
     position: absolute;
+
     &.fixed {
       position: fixed;
     }
@@ -41,7 +42,7 @@ $mat-icon-border-radius: $mat-fab-border-radius;
 }
 
 @mixin td-button-utilities() {
-  $mat-fab-pos-offset: ($mat-fab-size - $mat-fab-padding) / 2;
+  $mat-fab-pos-offset: calc(($mat-fab-size - $mat-fab-padding) / 2);
   @include mat-fab-position(bottom-right, auto, $mat-fab-pos-offset, $mat-fab-pos-offset, auto);
   @include mat-fab-position(bottom-left, auto, auto, $mat-fab-pos-offset, $mat-fab-pos-offset);
   @include mat-fab-position(top-right, $mat-fab-pos-offset, $mat-fab-pos-offset, auto, auto);

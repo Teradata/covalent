@@ -2,7 +2,7 @@
   <mat-expansion-panel
     [@.disabled]="true"
     class="mat-elevation-z0"
-    [expanded]="router.isActive(routeGroup.rootRoute)"
+    [expanded]="isActive(routeGroup.rootRoute)"
     *ngFor="let routeGroup of combinedRoutes"
   >
     <mat-expansion-panel-header [collapsedHeight]="'38px'" [expandedHeight]="'50px'">
@@ -37,7 +37,7 @@
             class="mat-elevation-z0 nested-expansion-panel"
           >
             <mat-expansion-panel-header class="tc-grey-700" [collapsedHeight]="'34px'" [expandedHeight]="'34px'">
-              {{ section.name }}
+              <mat-panel-title>{{ section.name }}</mat-panel-title>
             </mat-expansion-panel-header>
 
             <div class="doc-nav-section">

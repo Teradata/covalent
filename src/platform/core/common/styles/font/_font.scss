@@ -7,6 +7,7 @@ $mat-font-url: 'styles/font/' !default;
     font-weight: 400;
     src: url($mat-font-url + 'MaterialIcons-Regular-v48.woff2') format('woff2');
   }
+
   .material-icons {
     /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: 'Material Icons';
@@ -52,18 +53,21 @@ $mat-font-url: 'styles/font/' !default;
     height: 18px;
     width: 18px;
   }
+
   .material-icons.md-24,
   .material-icons.mat-24 {
     font-size: 24px;
     height: 24px;
     width: 24px;
   }
+
   .material-icons.md-36,
   .material-icons.mat-36 {
     font-size: 36px;
     height: 36px;
     width: 36px;
   }
+
   .material-icons.md-48,
   .material-icons.mat-48 {
     font-size: 48px;
@@ -74,20 +78,22 @@ $mat-font-url: 'styles/font/' !default;
   // Rules for using icons as black on a light background.
   .material-icons.md-dark,
   .material-icons.mat-dark {
-    color: rgba(0, 0, 0, 0.54);
+    color: rgba(0, 0, 0, 54%);
   }
+
   .material-icons.md-dark.md-inactive,
   .material-icons.mat-dark.mat-inactive {
-    color: rgba(0, 0, 0, 0.26);
+    color: rgba(0, 0, 0, 26%);
   }
 
   // Rules for using icons as white on a dark background.
   .material-icons.md-light,
   .material-icons.mat-light {
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 100%);
   }
+
   .material-icons.md-light.md-inactive,
   .material-icons.mat-light.mat-inactive {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 30%);
   }
 }

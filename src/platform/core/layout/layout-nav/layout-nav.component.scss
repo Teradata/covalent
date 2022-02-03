@@ -1,5 +1,6 @@
 .td-menu-button {
   margin-left: 0;
+
   ::ng-deep [dir='rtl'] & {
     margin-right: 0;
     margin-left: 6px;
@@ -13,6 +14,7 @@
   min-height: 100%;
   height: 100%;
   overflow: hidden;
+
   .td-layout-nav-wrapper {
     // [layout="column"]
     flex-direction: column;
@@ -23,6 +25,7 @@
     width: 100%;
     min-height: 100%;
     height: 100%;
+
     .td-layout-nav-toolbar-content {
       // [layout="row"]
       flex-direction: row;
@@ -34,6 +37,7 @@
       max-width: 100%;
       justify-content: flex-start;
     }
+
     .td-layout-nav-content {
       // [layout="column"]
       flex-direction: column;

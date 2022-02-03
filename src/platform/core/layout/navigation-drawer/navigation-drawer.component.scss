@@ -1,22 +1,27 @@
 :host {
   width: 100%;
+
   .td-navigation-drawer-content,
   .td-navigation-drawer-menu-content {
     &.ng-animating {
       overflow: hidden;
     }
   }
+
   mat-toolbar {
     padding: 16px;
+
     &.td-toolbar-background {
       background-repeat: no-repeat;
       background-size: cover;
     }
+
     &.td-nagivation-drawer-toolbar {
       flex-direction: column;
       height: auto !important;
       display: block !important;
     }
+
     .td-navigation-drawer-toolbar-content {
       // [layout="row"]
       flex-direction: row;
@@ -41,11 +46,13 @@
         text-overflow: ellipsis;
       }
     }
+
     .td-navigation-drawer-name {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
     .td-navigation-drawer-menu-toggle {
       // [layout="row"]
       flex-direction: row;
@@ -67,6 +74,7 @@
       }
     }
   }
+
   > div {
     overflow: hidden;
   }

@@ -9,17 +9,19 @@
 
 // Delay loader .6s to prevent flicker if response is faster
 .delay {
-  animation: delayAnimation;
+  animation: delay-animation;
   animation-duration: 0.6s;
 }
 
-@keyframes delayAnimation {
+@keyframes delay-animation {
   0% {
     opacity: 0;
   }
+
   99% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

@@ -18,10 +18,8 @@
     "url": "https://github.com/teradata/covalent/issues"
   },
   "license": "MIT",
-  "dependencies": {
-    "shepherd.js": "0.0.0-SHEPHERD"
-  },
   "peerDependencies": {
+    "shepherd.js": "0.0.0-SHEPHERD",
     "@angular/core": "0.0.0-NG",
     "@angular/common": "0.0.0-NG",
     "@angular/material": "0.0.0-MATERIAL",

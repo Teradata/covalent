@@ -4,3 +4,4 @@
 /coverage
 src/platform/core/schematics/ng-add/files/theme.scss
 *.md
+.angular/

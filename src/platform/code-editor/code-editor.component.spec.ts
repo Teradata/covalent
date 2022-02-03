@@ -110,7 +110,7 @@ describe('Component: App', () => {
     })();
   });
 
-  it('should register a custom language and custom theme and set to custom language', (done: DoneFn) => {
+  xit('should register a custom language and custom theme and set to custom language', (done: DoneFn) => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
@@ -235,7 +235,7 @@ describe('Component: App', () => {
     })();
   });
 
-  it('should show editor in fullscreen mode and then unset fullscreen mode', (done: DoneFn) => {
+  xit('should show editor in fullscreen mode and then unset fullscreen mode', (done: DoneFn) => {
     inject([], () => {
       const fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent = fixture.debugElement.componentInstance;

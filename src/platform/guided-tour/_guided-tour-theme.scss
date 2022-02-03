@@ -1,5 +1,4 @@
 @import './guided-tour.scss';
-@import '~@angular/material/button/button-base';
 
 @mixin covalent-guided-tour-theme($theme, $config: null) {
   @include td-guided-tour-typography($config);
@@ -14,9 +13,11 @@
   .shepherd-title {
     @include mat-typography-level-to-styles($config, subheading-2);
   }
+
   .shepherd-text {
     @include mat-typography-level-to-styles($config, body-1);
   }
+
   .shepherd-progress {
     @include mat-typography-level-to-styles($config, body-1);
   }
@@ -41,6 +42,7 @@
   .shepherd-cancel-icon span::after {
     color: mat-color($accent, darker-contrast);
   }
+
   .shepherd-button:not(:disabled),
   .shepherd-button.shepherd-button-secondary:not(:disabled),
   .shepherd-cancel-icon {
@@ -61,8 +63,6 @@
   // Bringing in mat-icon button styles
   // Class can't be passed so we must include mat button styles here
   .shepherd-cancel-icon {
-    @include mat-button-base;
-
     min-width: 0;
     margin: 0;
     padding: 0;
@@ -72,6 +72,7 @@
     line-height: $mat-icon-button-size;
     border-radius: $mat-icon-button-border-radius;
   }
+
   .shepherd-void-button {
     display: none;
   }

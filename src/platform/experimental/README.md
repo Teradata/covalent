@@ -26,7 +26,7 @@ ___
 
 **Step 4:** Run test-bed application
 
-1. `npm run serve:experimental`
+1. `npm run start:experimental`
 
 **Notes:** 
 1. By following the template your experiment will be compiled into standard compliant Angular Package Format (APF) via [ng-packagr](https://github.com/dherges/ng-packagr). If you would like to learn more about the benefits of APF you can reference this [link](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit).
