@@ -14,7 +14,7 @@ do
     # ignore experimental package
     if [[ !(${package} =~ "experimental") ]]
     then
-      npm publish ${package} --access=public --tag=$tag
+      npm publish ${package} --access=public --tag=$tag --ignore-scripts
     fi
   fi
 done
