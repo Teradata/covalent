@@ -1,6 +1,6 @@
 import { TestBed, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
-import { Component, DebugElement } from '@angular/core';
+import { ApplicationRef, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CovalentMarkdownModule } from './';
 
@@ -294,6 +294,33 @@ describe('Component: Markdown', () => {
         expect(window.scrollY).toBeLessThan(heading2ScrollPos);
       }),
     );
+
+    it('should jump to anchor if an anchor link is clicked but should not run change detection', async () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
+      const component: TdMarkdownAnchorsTestEventsComponent = fixture.debugElement.componentInstance;
+      component.content = anchorTestMarkdown();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const appRef: ApplicationRef = TestBed.inject(ApplicationRef);
+      spyOn(appRef, 'tick').and.callThrough();
+
+      window.scrollTo(0, 0);
+      const originalScrollPos: number = window.scrollY;
+      const heading: HTMLElement = fixture.debugElement.nativeElement.querySelector('a');
+
+      const event: Event = new Event('click', { bubbles: true });
+      spyOn(event, 'preventDefault').and.callThrough();
+
+      heading.dispatchEvent(event);
+
+      const headingScrollPos: number = window.scrollY;
+
+      expect(appRef.tick).not.toHaveBeenCalled();
+      expect(event.preventDefault).toHaveBeenCalled();
+      expect(headingScrollPos).toBeGreaterThan(originalScrollPos);
+    });
 
     it(
       'should jump to anchor if an anchor link is clicked regardless of lang',
