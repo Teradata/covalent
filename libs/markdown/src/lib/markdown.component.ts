@@ -225,8 +225,7 @@ export class TdMarkdownComponent
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
    */
-  @Output() contentReady: EventEmitter<undefined> =
-    new EventEmitter<undefined>();
+  @Output() contentReady: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private _renderer: Renderer2,
@@ -307,9 +306,12 @@ export class TdMarkdownComponent
       this._elementFromString(this._render(markdown));
     }
     // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
-    setTimeout(
-      () => scrollToAnchor(this._elementRef.nativeElement, this._anchor, true),
-      250
+    this._ngZone.runOutsideAngular(() =>
+      setTimeout(
+        () =>
+          scrollToAnchor(this._elementRef.nativeElement, this._anchor, true),
+        250
+      )
     );
     this.contentReady.emit();
   }
