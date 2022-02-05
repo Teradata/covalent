@@ -6,6 +6,7 @@ import {
   ElementRef,
   forwardRef,
   NgZone,
+  OnDestroy,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import * as EasyMDE from 'easymde';
@@ -29,10 +30,10 @@ const noop: any = () => {
   ],
 })
 export class TdTextEditorComponent
-  implements AfterViewInit, ControlValueAccessor
+  implements AfterViewInit, OnDestroy, ControlValueAccessor
 {
   private _value = '';
-  private _easyMDE: any;
+  private _easyMDE!: EasyMDE;
   private _fromEditor = false;
 
   @ViewChild('easymde', { static: true }) textarea!: ElementRef;
@@ -65,7 +66,7 @@ export class TdTextEditorComponent
     return this._value;
   }
 
-  get easyMDE(): any {
+  get easyMDE(): EasyMDE {
     return this._easyMDE;
   }
 
@@ -89,10 +90,11 @@ export class TdTextEditorComponent
     marked.marked.setOptions({ sanitize: true });
     this._easyMDE = new EasyMDE(this.options);
     this._easyMDE.value(this.value);
-    this._easyMDE.codemirror.on('change', () => {
-      this._fromEditor = true;
-      this.writeValue(this._easyMDE.value());
-    });
+    this._easyMDE.codemirror.on('change', this._onChange);
+  }
+
+  ngOnDestroy(): void {
+    this._easyMDE?.codemirror.off('change', this._onChange);
   }
 
   /* Wrapped function provided by EasyMDE */
@@ -118,82 +120,87 @@ export class TdTextEditorComponent
   }
 
   toggleBold(): void {
-    this._easyMDE.toggleBold();
+    EasyMDE.toggleBold(this._easyMDE);
   }
 
   toggleItalic(): void {
-    this._easyMDE.toggleItalic();
+    EasyMDE.toggleItalic(this._easyMDE);
   }
 
   toggleStrikethrough(): void {
-    this._easyMDE.toggleStrikethrough();
+    EasyMDE.toggleStrikethrough(this._easyMDE);
   }
 
   toggleHeadingSmaller(): void {
-    this._easyMDE.toggleHeadingSmaller();
+    EasyMDE.toggleHeadingSmaller(this._easyMDE);
   }
 
   toggleHeadingBigger(): void {
-    this._easyMDE.toggleHeadingBigger();
+    EasyMDE.toggleHeadingBigger(this._easyMDE);
   }
 
   toggleHeading1(): void {
-    this._easyMDE.toggleHeading1();
+    EasyMDE.toggleHeading1(this._easyMDE);
   }
 
   toggleHeading2(): void {
-    this._easyMDE.toggleHeading2();
+    EasyMDE.toggleHeading2(this._easyMDE);
   }
 
   toggleHeading3(): void {
-    this._easyMDE.toggleHeading3();
+    EasyMDE.toggleHeading3(this._easyMDE);
   }
 
   toggleCodeBlock(): void {
-    this._easyMDE.toggleCodeBlock();
+    EasyMDE.toggleCodeBlock(this._easyMDE);
   }
 
   toggleBlockquote(): void {
-    this._easyMDE.toggleBlockquote();
+    EasyMDE.toggleBlockquote(this._easyMDE);
   }
 
   toggleUnorderedList(): void {
-    this._easyMDE.toggleUnorderedList();
+    EasyMDE.toggleUnorderedList(this._easyMDE);
   }
 
   toggleOrderedList(): void {
-    this._easyMDE.toggleOrderedList();
+    EasyMDE.toggleOrderedList(this._easyMDE);
   }
 
   cleanBlock(): void {
-    this._easyMDE.cleanBlock();
+    EasyMDE.cleanBlock(this._easyMDE);
   }
 
   drawLink(): void {
-    this._easyMDE.drawLink();
+    EasyMDE.drawLink(this._easyMDE);
   }
 
   drawImage(): void {
-    this._easyMDE.drawImage();
+    EasyMDE.drawImage(this._easyMDE);
   }
 
   drawTable(): void {
-    this._easyMDE.drawTable();
+    EasyMDE.drawTable(this._easyMDE);
   }
 
   drawHorizontalRule(): void {
-    this._easyMDE.drawHorizontalRule();
+    EasyMDE.drawHorizontalRule(this._easyMDE);
   }
 
   togglePreview(): void {
-    this._easyMDE.togglePreview();
+    EasyMDE.togglePreview(this._easyMDE);
   }
 
   toggleSideBySide(): void {
-    this._easyMDE.toggleSideBySide();
+    EasyMDE.toggleSideBySide(this._easyMDE);
   }
 
   toggleFullScreen(): void {
-    this._easyMDE.toggleFullScreen();
+    EasyMDE.toggleFullScreen(this._easyMDE);
   }
+
+  private _onChange = (): void => {
+    this._fromEditor = true;
+    this.writeValue(this._easyMDE?.value());
+  };
 }
