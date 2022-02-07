@@ -59,7 +59,7 @@
     "@angular/router": "^13.2.0",
     "@ngx-translate/core": "14.0.0",
     "@ngx-translate/http-loader": "7.0.0",
-    "easymde": "2.8.0",
+    "easymde": "2.16.1",
     "echarts": "4.2.1",
     "echarts-wordcloud": "^1.1.3",
     "hammerjs": "^2.0.8",

@@ -76,7 +76,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
     this.options.element = this.textarea.nativeElement;
 
     // If content entered is html then don't evaluate it, prevent xss vulnerabilities
-    marked.setOptions({ sanitize: true });
+    marked.marked.setOptions({ sanitize: true });
     this._easyMDE = new EasyMDE(this.options);
     this._easyMDE.value(this.value);
     this._easyMDE.codemirror.on('change', () => {
