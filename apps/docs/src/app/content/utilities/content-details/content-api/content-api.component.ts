@@ -19,7 +19,9 @@ export class ContentApiComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.parent.paramMap.subscribe((params: ParamMap) => {
-      this.resourceUrl = this.componentJson.find((e: any) => e.id === params.get('id')).apiDocUrl;
+      this.resourceUrl = this.componentJson.find(
+        (e: any) => e.id === params.get('id')
+      ).apiDocUrl;
     });
   }
 }

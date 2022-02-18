@@ -1,14 +1,31 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { TdFullscreenDirective } from './fullscreen.directive';
-import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting,
+} from '@angular/platform-browser-dynamic/testing';
 import { By } from '@angular/platform-browser';
 
 @Component({
   template: `
     <div tdFullScreen #myDirective="tdFullScreen">
-      <button id="test-btn" mat-button color="primary" (click)="myDirective.toggleFullScreen()">Fullscreen</button>
-      <button id="test-btn-exit" mat-button color="warn" (click)="myDirective.exitFullScreen()">exit Fullscreen</button>
+      <button
+        id="test-btn"
+        mat-button
+        color="primary"
+        (click)="myDirective.toggleFullScreen()"
+      >
+        Fullscreen
+      </button>
+      <button
+        id="test-btn-exit"
+        mat-button
+        color="warn"
+        (click)="myDirective.exitFullScreen()"
+      >
+        exit Fullscreen
+      </button>
     </div>
   `,
 })
@@ -23,7 +40,10 @@ describe('TdFullscreenDirective', () => {
 
   beforeEach(() => {
     TestBed.resetTestEnvironment();
-    TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+    TestBed.initTestEnvironment(
+      BrowserDynamicTestingModule,
+      platformBrowserDynamicTesting()
+    );
     TestBed.configureTestingModule({
       declarations: [TdFullscreenTestComponent, TdFullscreenDirective],
     }).compileComponents();
@@ -31,13 +51,15 @@ describe('TdFullscreenDirective', () => {
     fixture = TestBed.createComponent(TdFullscreenTestComponent);
     btnEl = fixture.debugElement.query(By.css('#test-btn'));
     btnExit = fixture.debugElement.query(By.css('#test-btn-exit'));
-    directiveEl = fixture.debugElement.query(By.directive(TdFullscreenDirective));
+    directiveEl = fixture.debugElement.query(
+      By.directive(TdFullscreenDirective)
+    );
     directive = directiveEl.injector.get(TdFullscreenDirective);
   });
 
   it('Should capture fullscreenchange event and toggle fullScreenIsActive property', async () => {
     expect(directive.fullScreenIsActive).toBeFalsy();
-    jest.spyOn(directive, 'fsChangeHandler').mockImplementation(()=> true);
+    jest.spyOn(directive, 'fsChangeHandler').mockImplementation(() => true);
     btnEl.triggerEventHandler('fullscreenchange', undefined);
     directive.fullScreenIsActive = true;
     fixture.detectChanges();
@@ -48,7 +70,7 @@ describe('TdFullscreenDirective', () => {
   });
 
   it('should trigger toggleFullscreen() on template', () => {
-    jest.spyOn(directive, 'toggleFullScreen').mockImplementation(()=> true);
+    jest.spyOn(directive, 'toggleFullScreen').mockImplementation(() => true);
     btnEl.triggerEventHandler('click', undefined);
     fixture.detectChanges();
     expect(directive.toggleFullScreen).toBeDefined();

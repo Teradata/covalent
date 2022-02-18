@@ -16,7 +16,7 @@ describe('CovalentUserProfileMenuComponent', () => {
         declarations: [TdUserProfileMenuComponent],
         imports: [MatIconModule, MatListModule, CovalentMenuModule],
       }).compileComponents();
-    }),
+    })
   );
 
   beforeEach(() => {
@@ -34,7 +34,10 @@ describe('CovalentUserProfileMenuComponent', () => {
   });
 
   it('should block out click event on header click', () => {
-    const mouseEvent: MouseEvent = new MouseEvent('click', { bubbles: true, cancelable: true });
+    const mouseEvent: MouseEvent = new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+    });
 
     jest.spyOn(mouseEvent, 'preventDefault');
     jest.spyOn(mouseEvent, 'stopPropagation');

@@ -35,7 +35,9 @@ const routes: Routes = [
         data: { preload: true },
         loadChildren: () =>
           /* tslint:disable-next-line */
-          import('./content/components/components.module').then((m) => m.ComponentsModule),
+          import('./content/components/components.module').then(
+            (m) => m.ComponentsModule
+          ),
       },
       {
         // preload: true loads the module immediately
@@ -43,7 +45,9 @@ const routes: Routes = [
         data: { preload: false },
         loadChildren: () =>
           /* tslint:disable-next-line */
-          import('./content/echarts/echarts.module').then((m) => m.EchartsModule),
+          import('./content/echarts/echarts.module').then(
+            (m) => m.EchartsModule
+          ),
       },
       {
         // preload: true loads the module immediately
@@ -51,7 +55,9 @@ const routes: Routes = [
         data: { preload: false },
         loadChildren: () =>
           /* tslint:disable-next-line */
-          import('./content/utilities/utilities.module').then((m) => m.UtilitiesModule),
+          import('./content/utilities/utilities.module').then(
+            (m) => m.UtilitiesModule
+          ),
       },
     ],
   },

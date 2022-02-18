@@ -1,20 +1,27 @@
 import { Component } from '@angular/core';
 import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 
-function compareByTitle(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem): boolean {
+function compareByTitle(
+  o1: IMarkdownNavigatorItem,
+  o2: IMarkdownNavigatorItem
+): boolean {
   return o1.title === o2.title;
 }
 @Component({
   selector: 'markdown-navigator-demo-start-at-onclick-children-url',
-  templateUrl: './markdown-navigator-demo-start-at-onclick-children-url.component.html',
-  styleUrls: ['./markdown-navigator-demo-start-at-onclick-children-url.component.scss'],
+  templateUrl:
+    './markdown-navigator-demo-start-at-onclick-children-url.component.html',
+  styleUrls: [
+    './markdown-navigator-demo-start-at-onclick-children-url.component.scss',
+  ],
 })
 export class MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent {
   items: IMarkdownNavigatorItem[] = [
     {
       id: 'external_obj_store',
       title: 'External Object Store',
-      childrenUrl: 'https://www.teradata.com/product-help/UseCases/use_cases.json',
+      childrenUrl:
+        'https://www.teradata.com/product-help/UseCases/use_cases.json',
       startAtLink: { title: 'External Object Store' },
     },
     /*
@@ -98,5 +105,8 @@ export class MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent {
       */
     },
   ];
-  compareWith: (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean = compareByTitle;
+  compareWith: (
+    o1: IMarkdownNavigatorItem,
+    o2: IMarkdownNavigatorItem
+  ) => boolean = compareByTitle;
 }

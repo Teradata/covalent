@@ -1,4 +1,12 @@
-import { Optional, Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
+import {
+  Optional,
+  Directive,
+  Input,
+  Renderer2,
+  ElementRef,
+  Inject,
+  forwardRef,
+} from '@angular/core';
 import { TdLayoutManageListComponent } from './layout-manage-list.component';
 import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 
@@ -8,13 +16,17 @@ import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 export class TdLayoutManageListToggleDirective extends BaseLayoutToggleDirective {
   @Input()
   set tdLayoutManageListToggle(tdLayoutManageListToggle: boolean | string) {
-    this.disabled = !(<any>tdLayoutManageListToggle === '' || tdLayoutManageListToggle);
+    this.disabled = !(
+      <any>tdLayoutManageListToggle === '' || tdLayoutManageListToggle
+    );
   }
 
   constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+    @Optional()
+    @Inject(forwardRef(() => TdLayoutManageListComponent))
+    layout: TdLayoutManageListComponent,
     renderer: Renderer2,
-    elementRef: ElementRef,
+    elementRef: ElementRef
   ) {
     super(layout, renderer, elementRef);
   }
@@ -30,13 +42,17 @@ export class TdLayoutManageListToggleDirective extends BaseLayoutToggleDirective
 export class TdLayoutManageListCloseDirective extends BaseLayoutToggleDirective {
   @Input()
   set tdLayoutManageListClose(tdLayoutManageListClose: boolean) {
-    this.disabled = !(<any>tdLayoutManageListClose === '' || tdLayoutManageListClose);
+    this.disabled = !(
+      <any>tdLayoutManageListClose === '' || tdLayoutManageListClose
+    );
   }
 
   constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+    @Optional()
+    @Inject(forwardRef(() => TdLayoutManageListComponent))
+    layout: TdLayoutManageListComponent,
     renderer: Renderer2,
-    elementRef: ElementRef,
+    elementRef: ElementRef
   ) {
     super(layout, renderer, elementRef);
   }
@@ -52,13 +68,17 @@ export class TdLayoutManageListCloseDirective extends BaseLayoutToggleDirective 
 export class TdLayoutManageListOpenDirective extends BaseLayoutToggleDirective {
   @Input()
   set tdLayoutManageListOpen(tdLayoutManageListOpen: boolean | string) {
-    this.disabled = !(<any>tdLayoutManageListOpen === '' || tdLayoutManageListOpen);
+    this.disabled = !(
+      <any>tdLayoutManageListOpen === '' || tdLayoutManageListOpen
+    );
   }
 
   constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+    @Optional()
+    @Inject(forwardRef(() => TdLayoutManageListComponent))
+    layout: TdLayoutManageListComponent,
     renderer: Renderer2,
-    elementRef: ElementRef,
+    elementRef: ElementRef
   ) {
     super(layout, renderer, elementRef);
   }

@@ -11,7 +11,11 @@
     [right]="30"
     [top]="10"
     [feature]="{
-      dataView: { readOnly: true, title: 'View Data', lang: ['Data View', 'Turn Off', 'Refresh'] }
+      dataView: {
+        readOnly: true,
+        title: 'View Data',
+        lang: ['Data View', 'Turn Off', 'Refresh']
+      }
     }"
   >
     <ng-template tdViewDataFormatter>
@@ -24,13 +28,24 @@
           </tr>
         </thead>
         <tbody>
-          <ng-container *ngFor="let item of ['Latte', 'Tea', 'Cocoa', 'Milk']; let i = index">
+          <ng-container
+            *ngFor="
+              let item of ['Latte', 'Tea', 'Cocoa', 'Milk'];
+              let i = index
+            "
+          >
             <tr td-data-table-row>
               <td td-data-table-cell>{{ item }}</td>
-              <td td-data-table-cell *ngIf="[823, 235, 1042, 988] as firstSeries">
+              <td
+                td-data-table-cell
+                *ngIf="[823, 235, 1042, 988] as firstSeries"
+              >
                 {{ firstSeries[i] }}
               </td>
-              <td td-data-table-cell *ngIf="[95.8, 81.4, 91.2, 76.9] as secondSeries">
+              <td
+                td-data-table-cell
+                *ngIf="[95.8, 81.4, 91.2, 76.9] as secondSeries"
+              >
                 {{ secondSeries[i] }}
               </td>
             </tr>
@@ -39,12 +54,17 @@
       </table>
     </ng-template>
   </td-chart-toolbox>
-  <td-chart-tooltip [trigger]="'item'" [textStyle]="{ color: '#818181' }" [backgroundColor]="'#ffffff'">
+  <td-chart-tooltip
+    [trigger]="'item'"
+    [textStyle]="{ color: '#818181' }"
+    [backgroundColor]="'#ffffff'"
+  >
     <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
       <ng-container *ngIf="params">
         <div layout="row" layout-align="start center">
           <span class="mat-caption pad-left-sm">
-            {{ params.seriesName ? params.seriesName : params.name }} : {{ params.value }}
+            {{ params.seriesName ? params.seriesName : params.name }} :
+            {{ params.value }}
           </span>
         </div>
       </ng-container>

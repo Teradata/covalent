@@ -1,7 +1,18 @@
 /* tslint:disable */
 import { AnimationEvent } from '@angular/animations';
-import { ConfigurableFocusTrap, ConfigurableFocusTrapFactory, FocusMonitor, FocusOrigin } from '@angular/cdk/a11y';
-import { BasePortalOutlet, CdkPortalOutlet, ComponentPortal, DomPortal, TemplatePortal } from '@angular/cdk/portal';
+import {
+  ConfigurableFocusTrap,
+  ConfigurableFocusTrapFactory,
+  FocusMonitor,
+  FocusOrigin,
+} from '@angular/cdk/a11y';
+import {
+  BasePortalOutlet,
+  CdkPortalOutlet,
+  ComponentPortal,
+  DomPortal,
+  TemplatePortal,
+} from '@angular/cdk/portal';
 import { DOCUMENT } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -24,10 +35,13 @@ import { CovalentSideSheetConfig } from './side-sheet.config';
 
 export function _getFocusedElementPierceShadowDom(): HTMLElement | null {
   let activeElement =
-    typeof document !== 'undefined' && document ? (document.activeElement as HTMLElement | null) : null;
+    typeof document !== 'undefined' && document
+      ? (document.activeElement as HTMLElement | null)
+      : null;
 
   while (activeElement && activeElement.shadowRoot) {
-    const newActiveElement = activeElement.shadowRoot.activeElement as HTMLElement | null;
+    const newActiveElement = activeElement.shadowRoot
+      .activeElement as HTMLElement | null;
     if (newActiveElement === activeElement) {
       break;
     } else {
@@ -81,7 +95,7 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
     @Optional() @Inject(DOCUMENT) _document: any,
     /** The side-sheet configuration. */
     public _config: CovalentSideSheetConfig,
-    private _focusMonitor?: FocusMonitor,
+    private _focusMonitor?: FocusMonitor
   ) {
     super();
     this._ariaLabelledBy = _config.ariaLabelledBy || null;
@@ -142,13 +156,15 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
         element.focus();
       }
     } else {
-      this._focusTrap.focusInitialElementWhenReady().then((focusedSuccessfully) => {
-        // If we weren't able to find a focusable element in the side-sheet, then focus the side-sheet
-        // container instead.
-        if (!focusedSuccessfully) {
-          this._focusSideSheetContainer();
-        }
-      });
+      this._focusTrap
+        .focusInitialElementWhenReady()
+        .then((focusedSuccessfully) => {
+          // If we weren't able to find a focusable element in the side-sheet, then focus the side-sheet
+          // container instead.
+          if (!focusedSuccessfully) {
+            this._focusSideSheetContainer();
+          }
+        });
     }
   }
 
@@ -157,7 +173,11 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
     const previousElement = this._elementFocusedBeforeSideSheetWasOpened;
 
     // We need the extra check, because IE can set the `activeElement` to null in some cases.
-    if (this._config.restoreFocus && previousElement && typeof previousElement.focus === 'function') {
+    if (
+      this._config.restoreFocus &&
+      previousElement &&
+      typeof previousElement.focus === 'function'
+    ) {
       const activeElement = _getFocusedElementPierceShadowDom();
       const element = this._elementRef.nativeElement;
 
@@ -172,7 +192,10 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
         element.contains(activeElement)
       ) {
         if (this._focusMonitor) {
-          this._focusMonitor.focusVia(previousElement, this._closeInteractionType);
+          this._focusMonitor.focusVia(
+            previousElement,
+            this._closeInteractionType
+          );
           this._closeInteractionType = null;
         } else {
           previousElement.focus();
@@ -187,13 +210,16 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
 
   /** Sets up the focus trap. */
   private _setupFocusTrap() {
-    this._focusTrap = this._focusTrapFactory.create(this._elementRef.nativeElement);
+    this._focusTrap = this._focusTrapFactory.create(
+      this._elementRef.nativeElement
+    );
   }
 
   /** Captures the element that was focused before the side-sheet was opened. */
   private _capturePreviouslyFocusedElement() {
     if (this._document) {
-      this._elementFocusedBeforeSideSheetWasOpened = _getFocusedElementPierceShadowDom();
+      this._elementFocusedBeforeSideSheetWasOpened =
+        _getFocusedElementPierceShadowDom();
     }
   }
 
@@ -219,36 +245,41 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
  */
 @Component({
   selector: 'td-side-sheet-container',
-  template: `
-    <ng-template cdkPortalOutlet></ng-template>
-  `,
+  template: ` <ng-template cdkPortalOutlet></ng-template> `,
   styleUrls: ['side-sheet.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.Default,
   animations: [tdSideSheetAnimations.sideSheetContainer],
 })
 export class CovalentSideSheetContainerComponent extends _CovalentSideSheetContainerBase {
-
   /** State of the side-sheet animation. */
   _state: 'void' | 'enter' | 'exit' = 'enter';
 
-  @HostBinding('class.td-side-sheet-container') tdSideSheetContainerClass = true;
+  @HostBinding('class.td-side-sheet-container') tdSideSheetContainerClass =
+    true;
   @HostBinding('tabindex') tabIndex = -1;
   @HostBinding('aria-modal') arialModal = true;
   @HostBinding('id') idAttr = this._id;
   @HostBinding('attr.role') roleAttr = this._config.role;
-  @HostBinding('attr.aria-labelledby') arialLabelByAttr = this._config.ariaLabel ? null : this._ariaLabelledBy;
-  @HostBinding('attr.aria-describedby') arialDescribeByAttr =this._config.ariaDescribedBy || null;
+  @HostBinding('attr.aria-labelledby') arialLabelByAttr = this._config.ariaLabel
+    ? null
+    : this._ariaLabelledBy;
+  @HostBinding('attr.aria-describedby') arialDescribeByAttr =
+    this._config.ariaDescribedBy || null;
   @HostBinding('attr.aria-label') arialLabelAttr = this._config.ariaLabel;
   @HostBinding('@sideSheetContainer') get sideSheetAnimationState() {
     return this._state;
-  };
-  @HostListener('@sideSheetContainer.start', ['$event']) onAnimateStart($event: AnimationEvent) {
-    this._onAnimationStart($event)
+  }
+  @HostListener('@sideSheetContainer.start', ['$event']) onAnimateStart(
+    $event: AnimationEvent
+  ) {
+    this._onAnimationStart($event);
   }
 
-  @HostListener('@sideSheetContainer.done', ['$event']) onAnimateDone($event: AnimationEvent) {
-    this._onAnimationDone($event)
+  @HostListener('@sideSheetContainer.done', ['$event']) onAnimateDone(
+    $event: AnimationEvent
+  ) {
+    this._onAnimationDone($event);
   }
 
   /** Callback, invoked whenever an animation on the host completes. */

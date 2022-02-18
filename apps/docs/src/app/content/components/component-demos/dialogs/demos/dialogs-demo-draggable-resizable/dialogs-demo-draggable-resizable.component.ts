@@ -1,7 +1,11 @@
 import { Component, Inject, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DragRef } from '@angular/cdk/drag-drop';
-import { TdDialogService, IDraggableRefs, ResizableDraggableDialog } from '@covalent/core/dialogs';
+import {
+  TdDialogService,
+  IDraggableRefs,
+  ResizableDraggableDialog,
+} from '@covalent/core/dialogs';
 
 @Component({
   selector: 'draggable-resizable-dialog',
@@ -25,23 +29,34 @@ export class DialogsDemoDraggableResizableComponent {
   constructor(
     private _dialogService: TdDialogService,
     @Inject(DOCUMENT) private _document: any,
-    private _renderer2: Renderer2,
+    private _renderer2: Renderer2
   ) {}
 
   openDraggableResizableDialog(): void {
-    const { matDialogRef, dragRefSubject }: IDraggableRefs<DraggableResizableDialogComponent> =
-      this._dialogService.openDraggable({
+    const {
+      matDialogRef,
+      dragRefSubject,
+    }: IDraggableRefs<DraggableResizableDialogComponent> = this._dialogService.openDraggable(
+      {
         component: DraggableResizableDialogComponent,
         // CSS selectors of element(s) inside the component meant to be drag handle(s)
         dragHandleSelectors: ['.drag-handle'],
-      });
+      }
+    );
 
     let resizableDraggableDialog: ResizableDraggableDialog;
     dragRefSubject.subscribe((dragRf: DragRef) => {
-      resizableDraggableDialog = new ResizableDraggableDialog(this._document, this._renderer2, matDialogRef, dragRf);
+      resizableDraggableDialog = new ResizableDraggableDialog(
+        this._document,
+        this._renderer2,
+        matDialogRef,
+        dragRf
+      );
     });
 
     // Detach resize-ability event listeners after dialog closes
-    matDialogRef.afterClosed().subscribe(() => resizableDraggableDialog.detach());
+    matDialogRef
+      .afterClosed()
+      .subscribe(() => resizableDraggableDialog.detach());
   }
 }

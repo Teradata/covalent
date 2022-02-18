@@ -8,7 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [DynamicMenuDemoBasicComponent],
-  imports: [CommonModule, CovalentDynamicMenuModule, MatButtonModule, MatIconModule],
+  imports: [
+    CommonModule,
+    CovalentDynamicMenuModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
   exports: [DynamicMenuDemoBasicComponent],
 })
 export class DynamicMenuHeroSharedModule {}

@@ -12,7 +12,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { CovalentMenuModule } from '@covalent/core/menu';
 
 import { TdLayoutComponent } from './layout.component';
-import { TdLayoutToggleDirective, TdLayoutCloseDirective, TdLayoutOpenDirective } from './layout.directives';
+import {
+  TdLayoutToggleDirective,
+  TdLayoutCloseDirective,
+  TdLayoutOpenDirective,
+} from './layout.directives';
 import { TdLayoutNavComponent } from './layout-nav/layout-nav.component';
 import { TdLayoutNavListComponent } from './layout-nav-list/layout-nav-list.component';
 import {

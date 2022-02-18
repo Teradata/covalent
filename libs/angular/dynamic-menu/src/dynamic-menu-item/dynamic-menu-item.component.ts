@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { MatMenu } from '@angular/material/menu';
 import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../dynamic-menu.menu';
 
@@ -10,7 +16,8 @@ import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../dynamic-menu.menu';
 export class TdDynamicMenuItemComponent {
   @Input() items!: IMenuItem[];
 
-  @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
+  @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> =
+    new EventEmitter<ITdDynamicMenuLinkClickEvent>();
 
   @ViewChild('childMenu', { static: true }) public childMenu!: MatMenu;
 

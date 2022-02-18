@@ -1,5 +1,12 @@
 import { Injectable, Optional } from '@angular/core';
-import { HttpClient, HttpRequest, HttpEvent, HttpEventType, HttpHeaders, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpRequest,
+  HttpEvent,
+  HttpEventType,
+  HttpHeaders,
+  HttpParams,
+} from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -37,17 +44,26 @@ export class TdFileService {
     url: string,
     method: string,
     body: File | FormData,
-    { headers, params }: IUploadExtras = {},
+    { headers, params }: IUploadExtras = {}
   ): Observable<HttpEvent<any>> {
     if (!this._http) {
-      throw new Error('The HttpClient module needs to be imported at root module level');
+      throw new Error(
+        'The HttpClient module needs to be imported at root module level'
+      );
     }
-    const req: HttpRequest<File | FormData> = new HttpRequest(method.toUpperCase(), url, body, {
-      reportProgress: true,
-      headers: new HttpHeaders(headers || {}),
-      params: new HttpParams({ fromObject: params || {} }),
-    });
-    return this._http.request(req).pipe(tap((event: HttpEvent<any>) => this.handleEvent(event)));
+    const req: HttpRequest<File | FormData> = new HttpRequest(
+      method.toUpperCase(),
+      url,
+      body,
+      {
+        reportProgress: true,
+        headers: new HttpHeaders(headers || {}),
+        params: new HttpParams({ fromObject: params || {} }),
+      }
+    );
+    return this._http
+      .request(req)
+      .pipe(tap((event: HttpEvent<any>) => this.handleEvent(event)));
   }
 
   private handleEvent<T = any>(event: HttpEvent<T>): void {
@@ -56,7 +72,9 @@ export class TdFileService {
         this._progressSubject.next(0);
         break;
       case HttpEventType.UploadProgress:
-        this._progressSubject.next(Math.round((100 * event.loaded) / (event.total ?? 0) ));
+        this._progressSubject.next(
+          Math.round((100 * event.loaded) / (event.total ?? 0))
+        );
         break;
       case HttpEventType.Response:
         this._progressSubject.next(100);

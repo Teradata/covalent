@@ -13,7 +13,11 @@ export class TdAutoTrimDirective {
    */
   @HostListener('blur', ['$event'])
   onBlur(event: Event): void {
-    if (this._model && this._model.value && typeof this._model.value === 'string') {
+    if (
+      this._model &&
+      this._model.value &&
+      typeof this._model.value === 'string'
+    ) {
       this._model.update.emit(this._model.value.trim());
     }
   }

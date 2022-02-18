@@ -24,7 +24,9 @@ export class MarkdownNavigatorDemoEditorComponent {
   items: IMarkdownNavigatorItem[] = initialItems;
   windowShouldOpen = false;
 
-  constructor(private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) {}
+  constructor(
+    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService
+  ) {}
 
   applyInput(): void {
     this.items = JSON.parse(this.input);

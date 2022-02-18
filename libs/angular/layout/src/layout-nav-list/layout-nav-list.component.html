@@ -1,5 +1,9 @@
 <div class="td-layout-nav-list-wrapper">
-  <mat-sidenav-container fullscreen [autosize]="containerAutosize" class="td-layout-nav-list">
+  <mat-sidenav-container
+    fullscreen
+    [autosize]="containerAutosize"
+    class="td-layout-nav-list"
+  >
     <mat-sidenav
       #sidenav
       position="start"
@@ -18,7 +22,11 @@
           (click)="handleNavigationClick()"
         >
           <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
-          <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
+          <mat-icon
+            *ngIf="logo && !icon"
+            class="mat-icon-logo"
+            [svgIcon]="logo"
+          ></mat-icon>
           <span *ngIf="toolbarTitle">{{ toolbarTitle }}</span>
         </span>
         <ng-content select="[td-sidenav-toolbar-content]"></ng-content>

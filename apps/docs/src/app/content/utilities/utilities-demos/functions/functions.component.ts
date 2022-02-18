@@ -311,9 +311,13 @@ export class FunctionsDemoComponent {
     downloadObjectsToJSON('objtojsonsampledata', this.objects);
 
     // Show snackbar to indicate task complete
-    this._snackBar.open('Objects converted to JSON and downloaded!', undefined, {
-      duration: 2000,
-    });
+    this._snackBar.open(
+      'Objects converted to JSON and downloaded!',
+      undefined,
+      {
+        duration: 2000,
+      }
+    );
   }
 
   doDownloadFile(): void {

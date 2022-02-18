@@ -75,12 +75,17 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     return this._displayCrumb ? undefined : 'none';
   }
 
-  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(
+    private _elementRef: ElementRef,
+    private _changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element
     setTimeout(() => {
-      this._width = (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
+      this._width = (<HTMLElement>(
+        this._elementRef.nativeElement
+      )).getBoundingClientRect().width;
       this._changeDetectorRef.markForCheck();
     });
   }

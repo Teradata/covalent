@@ -1,5 +1,15 @@
 /* tslint:disable */
-import { Directive, Input, OnChanges, OnInit, Optional, SimpleChanges, ElementRef, HostBinding, HostListener } from '@angular/core';
+import {
+  Directive,
+  Input,
+  OnChanges,
+  OnInit,
+  Optional,
+  SimpleChanges,
+  ElementRef,
+  HostBinding,
+  HostListener,
+} from '@angular/core';
 import { CovalentSideSheet } from './side-sheet';
 import { _closeSideSheetVia, CovalentSideSheetRef } from './side-sheet-ref';
 
@@ -16,25 +26,27 @@ let dialogElementUid = 0;
 export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
   /** Screenreader label for the button. */
   @HostBinding('attr.arial-label')
-  @Input('aria-label') ariaLabel?: string;
+  @Input('aria-label')
+  ariaLabel?: string;
 
   /** Default to "button" to prevents accidental form submits. */
   @HostBinding('attr.type')
-  @Input() type: 'submit' | 'button' | 'reset' = 'button';
+  @Input()
+  type: 'submit' | 'button' | 'reset' = 'button';
 
   /** Dialog close input. */
   @Input('td-side-sheet-close') dialogResult: any;
 
   @Input('CovalentSideSheetClose') _CovalentSideSheetClose: any;
 
-  @HostListener('click') onClick ($event: MouseEvent) {
+  @HostListener('click') onClick($event: MouseEvent) {
     this._onButtonClick($event);
-  };
+  }
 
   constructor(
     @Optional() public dialogRef: CovalentSideSheetRef<any>,
     private _elementRef: ElementRef<HTMLElement>,
-    private _dialog: CovalentSideSheet,
+    private _dialog: CovalentSideSheet
   ) {}
 
   ngOnInit(): void {
@@ -44,12 +56,17 @@ export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
       // views cannot be given a custom injector. Instead, we look up the DialogRef by
       // ID. This must occur in `onInit`, as the ID binding for the dialog container won't
       // be resolved at constructor time.
-      this.dialogRef = getClosestDialog(this._elementRef, this._dialog.openSideSheets)  ;
+      this.dialogRef = getClosestDialog(
+        this._elementRef,
+        this._dialog.openSideSheets
+      );
     }
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    const proxiedChange = changes['_CovalentSideSheetClose'] || changes['_CovalentSideSheetCloseResult'];
+    const proxiedChange =
+      changes['_CovalentSideSheetClose'] ||
+      changes['_CovalentSideSheetCloseResult'];
 
     if (proxiedChange) {
       this.dialogResult = proxiedChange.currentValue;
@@ -64,7 +81,7 @@ export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
     _closeSideSheetVia(
       this.dialogRef,
       event.screenX === 0 && event.screenY === 0 ? 'keyboard' : 'mouse',
-      this.dialogResult,
+      this.dialogResult
     );
   }
 }
@@ -89,7 +106,7 @@ export class CovalentSideSheetTitleDirective implements OnInit {
     // tslint:disable-next-line: lightweight-tokens
     @Optional() private _dialogRef: CovalentSideSheetRef<any>,
     private _elementRef: ElementRef<HTMLElement>,
-    private _dialog: CovalentSideSheet,
+    private _dialog: CovalentSideSheet
   ) {}
 
   ngOnInit(): void {
@@ -102,7 +119,10 @@ export class CovalentSideSheetTitleDirective implements OnInit {
         }
       });
     } else {
-      this._dialogRef = getClosestDialog(this._elementRef, this._dialog.openSideSheets);
+      this._dialogRef = getClosestDialog(
+        this._elementRef,
+        this._dialog.openSideSheets
+      );
     }
   }
 }
@@ -125,7 +145,6 @@ export class CovalentSideSheetContentDirective {
   selector: `[td-side-sheet-actions], td-side-sheet-actions, [CovalentSideSheetActions]`,
 })
 export class CovalentSideSheetActionsDirective {
-
   @HostBinding('class.td-side-sheet-actions') tdSideSheetActions = true;
 }
 
@@ -144,12 +163,17 @@ export class CovalentSideSheetWrapperDirective {
  * @param element Element relative to which to look for a dialog.
  * @param openDialogs References to the currently-open dialogs.
  */
-function getClosestDialog(element: ElementRef<HTMLElement>, openDialogs: CovalentSideSheetRef<any>[]): CovalentSideSheetRef<any> {
+function getClosestDialog(
+  element: ElementRef<HTMLElement>,
+  openDialogs: CovalentSideSheetRef<any>[]
+): CovalentSideSheetRef<any> {
   let parent: HTMLElement | null = element.nativeElement.parentElement;
 
   while (parent && !parent.classList.contains('td-side-sheet-container')) {
     parent = parent.parentElement;
   }
 
-  return parent ? openDialogs.find((dialog) => dialog.id === parent?.id) ?? openDialogs[0] : openDialogs[0];
+  return parent
+    ? openDialogs.find((dialog) => dialog.id === parent?.id) ?? openDialogs[0]
+    : openDialogs[0];
 }

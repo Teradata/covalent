@@ -7,7 +7,9 @@ import { TdMarkdownNavigatorWindowService } from '@covalent/markdown-navigator';
   templateUrl: './markdown-navigator-demo-service.component.html',
 })
 export class MarkdownNavigatorDemoServiceComponent {
-  constructor(private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) {}
+  constructor(
+    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService
+  ) {}
   open(): void {
     this._markdownNavigatorWindowService.open({
       items: [

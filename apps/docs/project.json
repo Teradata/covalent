@@ -38,9 +38,7 @@
             "output": "/libs"
           }
         ],
-        "styles": [
-          "apps/docs/src/styles.scss"
-        ],
+        "styles": ["apps/docs/src/styles.scss"],
         "scripts": [
           "node_modules/echarts/dist/echarts.js",
           "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js",

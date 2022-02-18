@@ -1,5 +1,10 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
-import { HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core';
+import {
+  HostListener,
+  HostBinding,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 export class TdFileDropBase {}
@@ -27,7 +32,9 @@ export class TdFileDropDirective {
    * Event emitted when a file or files are dropped in host element after being validated.
    * Emits a [FileList | File] object.
    */
-  @Output() fileDrop: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
+  @Output() fileDrop: EventEmitter<FileList | File> = new EventEmitter<
+    FileList | File
+  >();
 
   /**
    * Binds native 'multiple' attribute if [multiple] property is 'true'.
@@ -55,10 +62,15 @@ export class TdFileDropDirective {
   @HostListener('drop', ['$event'])
   onDrop(event: Event): void {
     if (!this.disabled) {
-      const transfer: DataTransfer = (<DragEvent>event).dataTransfer ?? new DataTransfer();
+      const transfer: DataTransfer =
+        (<DragEvent>event).dataTransfer ?? new DataTransfer();
       const files: FileList = transfer.files;
       if (files.length) {
-        const value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
+        const value: FileList | File = this._multiple
+          ? files.length > 1
+            ? files
+            : files[0]
+          : files[0];
         this.fileDrop.emit(value);
       }
     }
@@ -73,11 +85,14 @@ export class TdFileDropDirective {
    */
   @HostListener('dragover', ['$event'])
   onDragOver(event: Event): void {
-    const transfer: DataTransfer = (<DragEvent>event).dataTransfer || new DataTransfer();
+    const transfer: DataTransfer =
+      (<DragEvent>event).dataTransfer || new DataTransfer();
     transfer.dropEffect = this._typeCheck(transfer.types);
     if (
       this.disabled ||
-      (!this._multiple && ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))
+      (!this._multiple &&
+        ((transfer.items && transfer.items.length > 1) ||
+          (<any>transfer).mozItemCount > 1))
     ) {
       transfer.dropEffect = 'none';
     } else {
@@ -111,7 +126,9 @@ export class TdFileDropDirective {
   /**
    * Validates if the transfer item types are 'Files'.
    */
-  private _typeCheck(types: ReadonlyArray<string> | DOMStringList): 'none' | 'copy' | 'link' | 'move' {
+  private _typeCheck(
+    types: ReadonlyArray<string> | DOMStringList
+  ): 'none' | 'copy' | 'link' | 'move' {
     let dropEffect: 'none' | 'copy' | 'link' | 'move' = 'none';
     if (
       types &&

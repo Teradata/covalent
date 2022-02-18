@@ -14,13 +14,18 @@ describe('Component: SearchInput', () => {
         declarations: [TestNgModelSupportComponent],
       });
       TestBed.compileComponents();
-    }),
+    })
   );
 
   it('should leverage ngModel to set a value', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);
-    const component: TestNgModelSupportComponent = fixture.debugElement.componentInstance;
-    const inputElement: DebugElement = fixture.debugElement.query(By.css('input'));
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TestNgModelSupportComponent
+    );
+    const component: TestNgModelSupportComponent =
+      fixture.debugElement.componentInstance;
+    const inputElement: DebugElement = fixture.debugElement.query(
+      By.css('input')
+    );
 
     expect(inputElement.nativeElement).toBeTruthy();
 
@@ -46,9 +51,7 @@ describe('Component: SearchInput', () => {
 });
 
 @Component({
-  template: `
-    <td-search-input [(ngModel)]="value"></td-search-input>
-  `,
+  template: ` <td-search-input [(ngModel)]="value"></td-search-input> `,
 })
 class TestNgModelSupportComponent {
   value!: string;

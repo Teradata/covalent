@@ -7,7 +7,9 @@ import { getThemes } from '@covalent/echarts/base';
 export class ChartThemeSelectorService {
   selected: string = getThemes()[0];
 
-  selectedSubject: BehaviorSubject<string> = new BehaviorSubject<string>(this.selected);
+  selectedSubject: BehaviorSubject<string> = new BehaviorSubject<string>(
+    this.selected
+  );
 
   selected$: Observable<string> = this.selectedSubject.asObservable();
 

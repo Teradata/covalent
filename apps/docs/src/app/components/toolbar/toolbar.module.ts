@@ -11,7 +11,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
-  imports: [CommonModule, MatButtonModule, MatListModule, MatIconModule, MatMenuModule, MatTooltipModule, RouterModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatMenuModule,
+    MatTooltipModule,
+    RouterModule,
+  ],
   declarations: [ToolbarComponent],
   exports: [ToolbarComponent],
 })

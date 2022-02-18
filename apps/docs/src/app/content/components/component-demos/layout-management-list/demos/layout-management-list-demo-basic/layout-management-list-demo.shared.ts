@@ -9,7 +9,14 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
 
 @NgModule({
   declarations: [LayoutManagementListDemoBasicComponent],
-  imports: [CommonModule, CovalentLayoutModule, MatListModule, MatButtonModule, MatIconModule, MatToolbarModule],
+  imports: [
+    CommonModule,
+    CovalentLayoutModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+  ],
   exports: [LayoutManagementListDemoBasicComponent],
 })
 export class LayoutManagementListDemoSharedModule {}

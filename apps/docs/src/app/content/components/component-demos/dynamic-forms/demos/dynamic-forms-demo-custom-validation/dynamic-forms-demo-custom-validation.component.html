@@ -5,8 +5,12 @@
       <span *ngIf="control.touched || !control.pristine">
         <span *ngIf="control.hasError('even')">Must be even.</span>
         <span *ngIf="control.hasError('odd')">Must be odd.</span>
-        <span *ngIf="control.hasError('min')">Must be greater than {{ element.min }}.</span>
-        <span *ngIf="control.hasError('max')">Must be less than {{ element.max }}.</span>
+        <span *ngIf="control.hasError('min')"
+          >Must be greater than {{ element.min }}.</span
+        >
+        <span *ngIf="control.hasError('max')"
+          >Must be less than {{ element.max }}.</span
+        >
       </span>
     </ng-template>
   </ng-template>
@@ -17,9 +21,15 @@
 <td-dynamic-forms [elements]="multipleValidatorTypes">
   <ng-template let-control="control" [tdDynamicFormsError]="'passwordElement'">
     <span *ngIf="control.touched || !control.pristine">
-      <span *ngIf="control.hasError('oneNumber')">Must contain at least 1 number.</span>
-      <span *ngIf="control.hasError('length')">Password needs from 8 - 20 characters.</span>
-      <span *ngIf="control.hasError('oneSpecialChar')">Need at least one special character (!, @, #, $, %).</span>
+      <span *ngIf="control.hasError('oneNumber')"
+        >Must contain at least 1 number.</span
+      >
+      <span *ngIf="control.hasError('length')"
+        >Password needs from 8 - 20 characters.</span
+      >
+      <span *ngIf="control.hasError('oneSpecialChar')"
+        >Need at least one special character (!, @, #, $, %).</span
+      >
     </span>
   </ng-template>
 </td-dynamic-forms>
@@ -29,7 +39,9 @@
 <td-dynamic-forms [elements]="angularValidators">
   <ng-template let-control="control" tdDynamicFormsError="hexColorElement">
     <span *ngIf="control.touched || !control.pristine">
-      <span *ngIf="control.hasError('pattern')">Only hex color characters.</span>
+      <span *ngIf="control.hasError('pattern')"
+        >Only hex color characters.</span
+      >
     </span>
   </ng-template>
 </td-dynamic-forms>
@@ -39,7 +51,9 @@
 <td-dynamic-forms #manualValidateForm [elements]="manualValidatorElement">
   <ng-template let-control="control" tdDynamicFormsError="vowelsElement">
     <span *ngIf="control.touched || !control.pristine">
-      <span *ngIf="control.hasError('consonants')">{{ control.errors['consonants'] }}</span>
+      <span *ngIf="control.hasError('consonants')">{{
+        control.errors['consonants']
+      }}</span>
     </span>
   </ng-template>
   <mat-card-actions>

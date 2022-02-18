@@ -11,9 +11,24 @@ import { TdDynamicMenuItemComponent } from './dynamic-menu-item/dynamic-menu-ite
 import { TdDynamicMenuLinkComponent } from './dynamic-menu-item/dynamic-menu-link/dynamic-menu-link.component';
 
 @NgModule({
-  declarations: [TdDynamicMenuComponent, TdDynamicMenuItemComponent, TdDynamicMenuLinkComponent],
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatListModule, MatMenuModule, MatTooltipModule],
+  declarations: [
+    TdDynamicMenuComponent,
+    TdDynamicMenuItemComponent,
+    TdDynamicMenuLinkComponent,
+  ],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatTooltipModule,
+  ],
   providers: [],
-  exports: [TdDynamicMenuComponent, TdDynamicMenuItemComponent, TdDynamicMenuLinkComponent],
+  exports: [
+    TdDynamicMenuComponent,
+    TdDynamicMenuItemComponent,
+    TdDynamicMenuLinkComponent,
+  ],
 })
 export class CovalentDynamicMenuModule {}

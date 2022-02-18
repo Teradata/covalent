@@ -19,12 +19,16 @@ export interface IRoute {
 }
 
 export function createRouteGroup(groupParams: any): any {
-  const routeGroup: IRouteGroup = groupParams.categories.map((category: any) => {
-    return {
-      ...category,
-      views: groupParams.components.filter((component: any) => component.category === category.name),
-    };
-  });
+  const routeGroup: IRouteGroup = groupParams.categories.map(
+    (category: any) => {
+      return {
+        ...category,
+        views: groupParams.components.filter(
+          (component: any) => component.category === category.name
+        ),
+      };
+    }
+  );
 
   if (groupParams.hasOverview && routeGroup.name === '') {
     routeGroup.views.unshift({

@@ -17,7 +17,10 @@ interface IFsDocument extends HTMLDocument {
 })
 export class TdFullscreenDirective {
   fullScreenIsActive = false;
-  constructor(@Inject(DOCUMENT) private _document: IFsDocument, private _el: ElementRef) {}
+  constructor(
+    @Inject(DOCUMENT) private _document: IFsDocument,
+    private _el: ElementRef
+  ) {}
 
   @HostListener('document:fullscreenchange', ['$event'])
   @HostListener('document:webkitfullscreenchange', ['$event'])
@@ -28,18 +31,20 @@ export class TdFullscreenDirective {
   }
 
   public toggleFullScreen(): void {
-    this._getFullScreenElement() === this._el.nativeElement ? this.exitFullScreen() : this.enterFullScreen();
+    this._getFullScreenElement() === this._el.nativeElement
+      ? this.exitFullScreen()
+      : this.enterFullScreen();
   }
 
   public enterFullScreen(): void {
     const {
       _el: { nativeElement },
     }: TdFullscreenDirective = this;
-    const enterFullScreenMap: {[key: string]:() => void } = {
-      'requestFullscreen': () => nativeElement.requestFullscreen(), // Chrome
-      'webkitRequestFullscreen': () => nativeElement.webkitRequestFullscreen(), // Safari
-      'mozRequestFullScreen': () => nativeElement.mozRequestFullScreen(), // Firefox
-      'msRequestFullscreen': () => nativeElement.msRequestFullscreen(), // IE
+    const enterFullScreenMap: { [key: string]: () => void } = {
+      requestFullscreen: () => nativeElement.requestFullscreen(), // Chrome
+      webkitRequestFullscreen: () => nativeElement.webkitRequestFullscreen(), // Safari
+      mozRequestFullScreen: () => nativeElement.mozRequestFullScreen(), // Firefox
+      msRequestFullscreen: () => nativeElement.msRequestFullscreen(), // IE
     };
 
     for (const handler of Object.keys(enterFullScreenMap)) {
@@ -50,7 +55,7 @@ export class TdFullscreenDirective {
   }
 
   public exitFullScreen(): void {
-    const exitFullScreenMap: {[key: string]:() => void} = {
+    const exitFullScreenMap: { [key: string]: () => void } = {
       exitFullscreen: () => this._document.exitFullscreen(), // Chrome
       webkitExitFullscreen: () => this._document.webkitExitFullscreen(), // Safari
       mozCancelFullScreen: () => this._document.mozCancelFullScreen(), // Firefox
@@ -58,16 +63,19 @@ export class TdFullscreenDirective {
     };
 
     for (const handler of Object.keys(exitFullScreenMap)) {
-      if (exitFullScreenMap[handler] && this._getFullScreenElement() === this._el.nativeElement) {
+      if (
+        exitFullScreenMap[handler] &&
+        this._getFullScreenElement() === this._el.nativeElement
+      ) {
         exitFullScreenMap[handler]();
       }
     }
   }
 
   private _getFullScreenElement(): Element | undefined {
-    const tdFullScreenElementMap: {[key: string]:() => Element } = {
+    const tdFullScreenElementMap: { [key: string]: () => Element } = {
       fullscreenElement: () => this._document.fullscreenElement, // Chrome, Opera
-      webkitFullscreenElement: () =>this. _document.webkitFullscreenElement, // Safari
+      webkitFullscreenElement: () => this._document.webkitFullscreenElement, // Safari
       mozFullscreenElement: () => this._document.mozFullscreenElement, // Firefox
       msFullscreenElement: () => this._document.msFullscreenElement, // IE, Edge
     };

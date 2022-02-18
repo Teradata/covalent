@@ -10,7 +10,13 @@ import {
   ChangeDetectorRef,
   forwardRef,
 } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material/input';
@@ -42,21 +48,21 @@ export class TdSearchInputBase {
         style({
           transform: 'translateX(-150%)',
           display: 'none',
-        }),
+        })
       ),
       state(
         'hide-right',
         style({
           transform: 'translateX(150%)',
           display: 'none',
-        }),
+        })
       ),
       state(
         'show',
         style({
           transform: 'translateX(0%)',
           display: 'block',
-        }),
+        })
       ),
       transition('* => show', animate('200ms ease-in')),
       transition('show => *', animate('200ms ease-out')),
@@ -130,12 +136,16 @@ export class TdSearchInputComponent implements ControlValueAccessor, OnInit {
     return false;
   }
 
-  constructor(@Optional() private _dir: Dir, private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(
+    @Optional() private _dir: Dir,
+    private _changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-    this._input?.ngControl?.valueChanges?.pipe(
+    this._input?.ngControl?.valueChanges
+      ?.pipe(
         debounceTime(this.debounce),
-        skip(1), // skip first change when value is set to undefined
+        skip(1) // skip first change when value is set to undefined
       )
       .subscribe((value: string) => {
         this._searchTermChanged(value);

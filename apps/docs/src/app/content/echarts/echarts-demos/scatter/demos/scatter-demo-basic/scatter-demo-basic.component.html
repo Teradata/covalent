@@ -1,7 +1,12 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">Chart Theme:</div>
+  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+    Chart Theme:
+  </div>
   <mat-form-field floatLabel="never">
-    <mat-select [(value)]="selectedTheme" (valueChange)="selectChartTheme($event)">
+    <mat-select
+      [(value)]="selectedTheme"
+      (valueChange)="selectChartTheme($event)"
+    >
       <mat-option *ngFor="let theme of themes" [value]="theme">
         {{ theme }}
       </mat-option>
@@ -10,7 +15,12 @@
 </div>
 <td-chart [style.height.px]="300" [themeName]="themeSelector.selected$ | async">
   <td-chart-tooltip [trigger]="'item'">
-    <ng-template let-params let-i="index" let-ticket="ticket" tdTooltipFormatter>
+    <ng-template
+      let-params
+      let-i="index"
+      let-ticket="ticket"
+      tdTooltipFormatter
+    >
       <ng-container *ngIf="params">
         <div layout="row" layout-align="start center">
           <mat-icon [style.color]="params.color">person</mat-icon>
@@ -21,7 +31,12 @@
       </ng-container>
     </ng-template>
   </td-chart-tooltip>
-  <td-chart-x-axis [show]="true" [position]="'bottom'" [type]="'value'" [boundaryGap]="true"></td-chart-x-axis>
+  <td-chart-x-axis
+    [show]="true"
+    [position]="'bottom'"
+    [type]="'value'"
+    [boundaryGap]="true"
+  ></td-chart-x-axis>
   <td-chart-y-axis [show]="true" [type]="'value'"></td-chart-y-axis>
   <td-chart-series
     td-scatter

@@ -20,8 +20,17 @@ export function downloadCSV(fileBaseName: string, csv: string): void {
  * @param format indicates if JSON should be prettied
  * @param indent optional parameter indicating space indentation for pretty output. Default is 2
  */
-export function downloadJSON(fileBaseName: string, json: string, format: boolean = false, indent: number = 2): void {
-  downloadFile(`${fileBaseName}.json`, format ? formatJSON(JSON.parse(json), indent) : json, 'application/json');
+export function downloadJSON(
+  fileBaseName: string,
+  json: string,
+  format: boolean = false,
+  indent: number = 2
+): void {
+  downloadFile(
+    `${fileBaseName}.json`,
+    format ? formatJSON(JSON.parse(json), indent) : json,
+    'application/json'
+  );
 }
 
 /**
@@ -39,9 +48,13 @@ export function downloadObjectsToCSV(
   fileBaseName: string,
   objects: any[],
   keySeparator: string = ',',
-  lineSeparator: string = '\r\n',
+  lineSeparator: string = '\r\n'
 ): void {
-  downloadFile(`${fileBaseName}.csv`, convertObjectsToCSV(objects, keySeparator, lineSeparator), 'text/csv');
+  downloadFile(
+    `${fileBaseName}.csv`,
+    convertObjectsToCSV(objects, keySeparator, lineSeparator),
+    'text/csv'
+  );
 }
 
 /**
@@ -53,8 +66,16 @@ export function downloadObjectsToCSV(
  *   prior to writing to download destination
  * @param indent optional parameter indicating space indentation for pretty output. Default is 2
  */
-export function downloadObjectsToJSON(fileBaseName: string, objects: any[], indent: number = 2): void {
-  downloadFile(`${fileBaseName}.json`, formatJSON(objects, indent), 'application/json');
+export function downloadObjectsToJSON(
+  fileBaseName: string,
+  objects: any[],
+  indent: number = 2
+): void {
+  downloadFile(
+    `${fileBaseName}.json`,
+    formatJSON(objects, indent),
+    'application/json'
+  );
 }
 
 /**
@@ -64,7 +85,11 @@ export function downloadObjectsToJSON(fileBaseName: string, objects: any[], inde
  * @param contents string contents to be written to download destination
  * @param mimeType mime type appropriate to file content to support consumption of destination file
  */
-export function downloadFile(fileName: string, contents: string, mimeType: string = 'text/plain'): void {
+export function downloadFile(
+  fileName: string,
+  contents: string,
+  mimeType: string = 'text/plain'
+): void {
   if (!fileName || !contents) {
     return;
   }

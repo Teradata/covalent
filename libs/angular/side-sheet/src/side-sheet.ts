@@ -13,11 +13,26 @@ import {
   TemplateRef,
   Type,
 } from '@angular/core';
-import { Overlay, OverlayConfig, OverlayRef, GlobalPositionStrategy } from '@angular/cdk/overlay';
-import { ComponentPortal, ComponentType, TemplatePortal } from '@angular/cdk/portal';
-import { MAT_DIALOG_DATA, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import {
+  Overlay,
+  OverlayConfig,
+  OverlayRef,
+  GlobalPositionStrategy,
+} from '@angular/cdk/overlay';
+import {
+  ComponentPortal,
+  ComponentType,
+  TemplatePortal,
+} from '@angular/cdk/portal';
+import {
+  MAT_DIALOG_DATA,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+} from '@angular/material/dialog';
 import { AnimationCurves, AnimationDurations } from '@angular/material/core';
-import { CovalentSideSheetContainerComponent, _CovalentSideSheetContainerBase } from './side-sheet-container';
+import {
+  CovalentSideSheetContainerComponent,
+  _CovalentSideSheetContainerBase,
+} from './side-sheet-container';
 import { Subject, Subscription, of } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
 import { Directionality } from '@angular/cdk/bidi';
@@ -26,10 +41,14 @@ import { CovalentSideSheetRef } from './side-sheet-ref';
 import { CovalentSideSheetConfig } from './side-sheet.config';
 
 @Directive()
-export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> implements OnDestroy {
+export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
+  implements OnDestroy
+{
   private _openSideSheetsAtThisLevel: CovalentSideSheetRef<unknown>[] = [];
   private readonly _afterAllClosedAtThisLevel = new Subject<void>();
-  private readonly _afterOpenedAtThisLevel = new Subject<CovalentSideSheetRef<unknown>>();
+  private readonly _afterOpenedAtThisLevel = new Subject<
+    CovalentSideSheetRef<unknown>
+  >();
   private _animationStateSubscriptions!: Subscription;
 
   private defaultSidebarConfig = {
@@ -44,42 +63,57 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
     private _parentSideSheet: _CovalentSideSheetBase<C> | undefined,
     private _sideSheetRefConstructor: Type<CovalentSideSheetRef<any>>,
     private _sideSheetContainerType: Type<C>,
-    private _sideSheetDataToken: InjectionToken<unknown>,
+    private _sideSheetDataToken: InjectionToken<unknown>
   ) {}
 
   /** Keeps track of the currently-open side-sheets. */
   get openSideSheets(): CovalentSideSheetRef<unknown>[] {
-    return this._parentSideSheet ? this._parentSideSheet.openSideSheets : this._openSideSheetsAtThisLevel;
+    return this._parentSideSheet
+      ? this._parentSideSheet.openSideSheets
+      : this._openSideSheetsAtThisLevel;
   }
 
   open<T, D = unknown, R = unknown>(
     componentOrTemplateRef: ComponentType<T> | TemplateRef<T>,
-    config?: CovalentSideSheetConfig<D>,
+    config?: CovalentSideSheetConfig<D>
   ): CovalentSideSheetRef<T, R> {
-    config = { ...(this._defaultOptions || new CovalentSideSheetConfig()), ...this.defaultSidebarConfig, ...config };
+    config = {
+      ...(this._defaultOptions || new CovalentSideSheetConfig()),
+      ...this.defaultSidebarConfig,
+      ...config,
+    };
 
     const overlayRef = this._createOverlay(config);
-    const sideSheetContainer = this._attachSideSheetContainer(overlayRef, config);
+    const sideSheetContainer = this._attachSideSheetContainer(
+      overlayRef,
+      config
+    );
     const sideSheetRef = this._attachSideSheetContent<T, R>(
       componentOrTemplateRef,
       sideSheetContainer,
       overlayRef,
-      config,
+      config
     );
-    const prevSideSheetRef: CovalentSideSheetRef<unknown> = this.openSideSheets.slice(-1)[0];
+    const prevSideSheetRef: CovalentSideSheetRef<unknown> =
+      this.openSideSheets.slice(-1)[0];
     const prevOverlayRef = prevSideSheetRef?.overlayRef;
 
     // Animate previous side sheet to full width
     if (prevOverlayRef?.overlayElement) {
       prevOverlayRef.overlayElement.style.transition = `${AnimationDurations.COMPLEX} ${AnimationCurves.DECELERATION_CURVE}`;
-      prevOverlayRef.overlayElement.style.minWidth = `${(window as any).innerWidth}px`;
+      prevOverlayRef.overlayElement.style.minWidth = `${
+        (window as any).innerWidth
+      }px`;
     }
 
     // Revert the previous side sheet config & size
     sideSheetRef._containerInstance._animationStateChanged
       .pipe(
-        filter((event) => event.state === 'closing' && !!(prevSideSheetRef && prevOverlayRef)),
-        take(1),
+        filter(
+          (event) =>
+            event.state === 'closing' && !!(prevSideSheetRef && prevOverlayRef)
+        ),
+        take(1)
       )
       .subscribe(() => {
         prevOverlayRef.overlayElement.style.transition = `${AnimationDurations.EXITING} ${AnimationCurves.DECELERATION_CURVE}`;
@@ -132,7 +166,8 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
       maxWidth: config.maxWidth,
     });
     const overlayRef = this._overlay.create(overlayConfig);
-    const positionStrategy = overlayRef.getConfig().positionStrategy as GlobalPositionStrategy;
+    const positionStrategy = overlayRef.getConfig()
+      .positionStrategy as GlobalPositionStrategy;
     positionStrategy.right('0px');
 
     return overlayRef;
@@ -144,8 +179,12 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
    * @param config The side-sheet configuration.
    * @returns A promise resolving to a ComponentRef for the attached container.
    */
-  private _attachSideSheetContainer(overlay: OverlayRef, config: CovalentSideSheetConfig): C {
-    const userInjector = config && config.viewContainerRef && config.viewContainerRef.injector;
+  private _attachSideSheetContainer(
+    overlay: OverlayRef,
+    config: CovalentSideSheetConfig
+  ): C {
+    const userInjector =
+      config && config.viewContainerRef && config.viewContainerRef.injector;
     const injector = Injector.create({
       parent: userInjector || this._injector,
       providers: [{ provide: CovalentSideSheetConfig, useValue: config }],
@@ -155,7 +194,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
       this._sideSheetContainerType,
       config.viewContainerRef,
       injector,
-      config.componentFactoryResolver,
+      config.componentFactoryResolver
     );
     const containerRef = overlay.attach<C>(containerPortal);
 
@@ -175,11 +214,15 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
     componentOrTemplateRef: ComponentType<T> | TemplateRef<T>,
     sideSheetContainer: C,
     overlayRef: OverlayRef,
-    config: CovalentSideSheetConfig,
+    config: CovalentSideSheetConfig
   ): CovalentSideSheetRef<T, R> {
     // Create a reference to the side-sheet we're creating in order to give the user a handle
     // to modify and close it.
-    const sideSheetRef = new this._sideSheetRefConstructor(overlayRef, sideSheetContainer, config.id);
+    const sideSheetRef = new this._sideSheetRefConstructor(
+      overlayRef,
+      sideSheetContainer,
+      config.id
+    );
 
     if (componentOrTemplateRef instanceof TemplateRef) {
       sideSheetContainer.attachTemplatePortal(
@@ -187,12 +230,20 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
         new TemplatePortal<T>(componentOrTemplateRef, null!, <any>{
           $implicit: config.data,
           sideSheetRef,
-        }),
+        })
       );
     } else {
-      const injector = this._createInjector<T>(config, sideSheetRef, sideSheetContainer);
+      const injector = this._createInjector<T>(
+        config,
+        sideSheetRef,
+        sideSheetContainer
+      );
       const contentRef = sideSheetContainer.attach<T>(
-        new ComponentPortal(componentOrTemplateRef, config.viewContainerRef, injector),
+        new ComponentPortal(
+          componentOrTemplateRef,
+          config.viewContainerRef,
+          injector
+        )
       );
       sideSheetRef.componentInstance = contentRef.instance;
     }
@@ -205,9 +256,10 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
   private _createInjector<T>(
     config: CovalentSideSheetConfig,
     sideSheetRef: CovalentSideSheetRef<T>,
-    sideSheetContainer: C,
+    sideSheetContainer: C
   ): Injector {
-    const userInjector = config && config.viewContainerRef && config.viewContainerRef.injector;
+    const userInjector =
+      config && config.viewContainerRef && config.viewContainerRef.injector;
 
     // The side-sheet container should be provided as the side-sheet container and the side-sheet's
     // content are created out of the same `ViewContainerRef` and as such, are siblings
@@ -221,7 +273,12 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
 
     if (
       config.direction &&
-      (!userInjector || !userInjector.get<Directionality | null>(Directionality, null, InjectFlags.Optional))
+      (!userInjector ||
+        !userInjector.get<Directionality | null>(
+          Directionality,
+          null,
+          InjectFlags.Optional
+        ))
     ) {
       providers.push({
         provide: Directionality,
@@ -229,7 +286,10 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase> i
       });
     }
 
-    return Injector.create({ parent: userInjector || this._injector, providers });
+    return Injector.create({
+      parent: userInjector || this._injector,
+      providers,
+    });
   }
 
   /**
@@ -262,8 +322,10 @@ export class CovalentSideSheet extends _CovalentSideSheetBase<CovalentSideSheetC
   constructor(
     overlay: Overlay,
     injector: Injector,
-    @Optional() @Inject(MAT_DIALOG_DEFAULT_OPTIONS) defaultOptions: CovalentSideSheetConfig,
-    @Optional() @SkipSelf() parentSideSheet: CovalentSideSheet,
+    @Optional()
+    @Inject(MAT_DIALOG_DEFAULT_OPTIONS)
+    defaultOptions: CovalentSideSheetConfig,
+    @Optional() @SkipSelf() parentSideSheet: CovalentSideSheet
   ) {
     super(
       overlay,
@@ -272,7 +334,7 @@ export class CovalentSideSheet extends _CovalentSideSheetBase<CovalentSideSheetC
       parentSideSheet,
       CovalentSideSheetRef,
       CovalentSideSheetContainerComponent,
-      MAT_DIALOG_DATA,
+      MAT_DIALOG_DATA
     );
   }
 }

@@ -1,4 +1,12 @@
-import { Optional, Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
+import {
+  Optional,
+  Directive,
+  Input,
+  Renderer2,
+  ElementRef,
+  Inject,
+  forwardRef,
+} from '@angular/core';
 import { TdLayoutNavListComponent } from './layout-nav-list.component';
 import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 
@@ -8,13 +16,17 @@ import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 export class TdLayoutNavListToggleDirective extends BaseLayoutToggleDirective {
   @Input()
   set tdLayoutNavListToggle(tdLayoutNavListToggle: boolean | string) {
-    this.disabled = !(<any>tdLayoutNavListToggle === '' || tdLayoutNavListToggle);
+    this.disabled = !(
+      <any>tdLayoutNavListToggle === '' || tdLayoutNavListToggle
+    );
   }
 
   constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+    @Optional()
+    @Inject(forwardRef(() => TdLayoutNavListComponent))
+    layout: TdLayoutNavListComponent,
     renderer: Renderer2,
-    elementRef: ElementRef,
+    elementRef: ElementRef
   ) {
     super(layout, renderer, elementRef);
   }
@@ -34,9 +46,11 @@ export class TdLayoutNavListCloseDirective extends BaseLayoutToggleDirective {
   }
 
   constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+    @Optional()
+    @Inject(forwardRef(() => TdLayoutNavListComponent))
+    layout: TdLayoutNavListComponent,
     renderer: Renderer2,
-    elementRef: ElementRef,
+    elementRef: ElementRef
   ) {
     super(layout, renderer, elementRef);
   }
@@ -56,9 +70,11 @@ export class TdLayoutNavListOpenDirective extends BaseLayoutToggleDirective {
   }
 
   constructor(
-    @Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+    @Optional()
+    @Inject(forwardRef(() => TdLayoutNavListComponent))
+    layout: TdLayoutNavListComponent,
     renderer: Renderer2,
-    elementRef: ElementRef,
+    elementRef: ElementRef
   ) {
     super(layout, renderer, elementRef);
   }

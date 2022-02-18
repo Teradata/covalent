@@ -45,7 +45,9 @@ export class PipesComponent {
       reference: new Date(2016, 4, 17),
       timestamp: '2016-06-10T17:59:59.000Z',
       timestampend: '2016-11-29T18:59:59.000Z',
-      expiration_date: new Date(new Date(2016, 4, 17).getTime() + 120000).toISOString(),
+      expiration_date: new Date(
+        new Date(2016, 4, 17).getTime() + 120000
+      ).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 10,
     },
@@ -55,7 +57,9 @@ export class PipesComponent {
       reference: new Date(2016, 4, 17).getTime(),
       timestamp: '2016-06-17T12:59:59.000Z',
       timestampend: '2016-06-17T13:00:00.000Z',
-      expiration_date: new Date(new Date(2016, 4, 17).getTime() + 7200000).toISOString(),
+      expiration_date: new Date(
+        new Date(2016, 4, 17).getTime() + 7200000
+      ).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 15,
     },

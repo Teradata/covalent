@@ -1,4 +1,7 @@
-import { routeBuilder, IScopedRouteBuilder } from '../../utilities/route-builder';
+import {
+  routeBuilder,
+  IScopedRouteBuilder,
+} from '../../utilities/route-builder';
 import { IComponentDetails } from '../component-interfaces';
 
 export const componentRouteCategories: any = [
@@ -17,7 +20,8 @@ const tabs: object = {
   showMigration: false,
 };
 
-const [root, viewLayouts, buttons, code, markdown, tour] = componentRouteCategories;
+const [root, viewLayouts, buttons, code, markdown, tour] =
+  componentRouteCategories;
 
 export const createComponentDetails: IComponentDetails[] = [
   {
@@ -28,7 +32,10 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'search',
     category: buttons.name,
     route: '/components/search',
-    demo: () => import('./component-demos/search/demos/search-demo.module').then((mod: any) => mod.SearchDemoModule),
+    demo: () =>
+      import('./component-demos/search/demos/search-demo.module').then(
+        (mod: any) => mod.SearchDemoModule
+      ),
   },
   {
     name: 'Breadcrumbs',
@@ -39,9 +46,9 @@ export const createComponentDetails: IComponentDetails[] = [
     category: buttons.name,
     route: '/components/breadcrumbs',
     demo: () =>
-      import('./component-demos/breadcrumbs/demos/breadcrumbs-demo.module').then(
-        (mod: any) => mod.BreadcrumbsDemoModule,
-      ),
+      import(
+        './component-demos/breadcrumbs/demos/breadcrumbs-demo.module'
+      ).then((mod: any) => mod.BreadcrumbsDemoModule),
   },
   {
     name: 'File Input',
@@ -52,40 +59,51 @@ export const createComponentDetails: IComponentDetails[] = [
     category: buttons.name,
     route: '/components/file-input',
     demo: () =>
-      import('./component-demos/file-input/demos/file-input-demo.module').then((mod: any) => mod.FileInputDemoModule),
+      import('./component-demos/file-input/demos/file-input-demo.module').then(
+        (mod: any) => mod.FileInputDemoModule
+      ),
   },
   {
     name: 'Message',
     id: 'message',
-    description: 'Informational component supporting visibility toggling and additional information action',
+    description:
+      'Informational component supporting visibility toggling and additional information action',
     apiDocUrl: 'libs/angular/message/README.md',
     icon: 'info_outline',
     category: buttons.name,
     route: '/components/message',
-    demo: () => import('./component-demos/message/demos/message-demo.module').then((mod: any) => mod.MessageDemoModule),
+    demo: () =>
+      import('./component-demos/message/demos/message-demo.module').then(
+        (mod: any) => mod.MessageDemoModule
+      ),
   },
   {
     name: 'Dialogs',
     id: 'dialogs',
-    description: 'Quick way to use alert, confirm, prompt, and draggable dialogs',
+    description:
+      'Quick way to use alert, confirm, prompt, and draggable dialogs',
     apiDocUrl: 'libs/angular/dialogs/README.md',
     icon: 'open_in_browser',
     category: buttons.name,
     route: '/components/dialogs',
-    demo: () => import('./component-demos/dialogs/demos/dialogs-demo.module').then((mod: any) => mod.DialogsDemoModule),
+    demo: () =>
+      import('./component-demos/dialogs/demos/dialogs-demo.module').then(
+        (mod: any) => mod.DialogsDemoModule
+      ),
   },
   {
     name: 'User Profile',
     id: 'user-profile',
-    description: 'User profile menu component with support for lists for customization',
+    description:
+      'User profile menu component with support for lists for customization',
     apiDocUrl: 'libs/angular/user-profile/README.md',
     icon: 'person',
     category: buttons.name,
     route: '/components/user-profile',
     demo: () =>
-      import('./component-demos/user-profile/demos/user-profile-demo.module').then(
-        (mod: any) => mod.UserProfileDemosModule,
-      ),
+      import(
+        './component-demos/user-profile/demos/user-profile-demo.module'
+      ).then((mod: any) => mod.UserProfileDemosModule),
   },
   {
     name: 'Syntax Highlight',
@@ -96,7 +114,9 @@ export const createComponentDetails: IComponentDetails[] = [
     category: code.name,
     route: '/components/highlight',
     demo: () =>
-      import('./component-demos/highlight/demos/highlight-demo.module').then((mod: any) => mod.HighlightDemoModule),
+      import('./component-demos/highlight/demos/highlight-demo.module').then(
+        (mod: any) => mod.HighlightDemoModule
+      ),
   },
   {
     name: 'JSON Formatter',
@@ -107,9 +127,9 @@ export const createComponentDetails: IComponentDetails[] = [
     category: buttons.name,
     route: '/components/json-formatter',
     demo: () =>
-      import('./component-demos/json-formatter/demos/json-formatter-demo.module').then(
-        (mod: any) => mod.JsonFormatterDemoModule,
-      ),
+      import(
+        './component-demos/json-formatter/demos/json-formatter-demo.module'
+      ).then((mod: any) => mod.JsonFormatterDemoModule),
   },
   {
     name: 'Code Editor',
@@ -120,9 +140,9 @@ export const createComponentDetails: IComponentDetails[] = [
     category: code.name,
     route: '/components/code-editor',
     demo: () =>
-      import('./component-demos/code-editor/demos/code-editor-demo.module').then(
-        (mod: any) => mod.CodeEditorDemoModule,
-      ),
+      import(
+        './component-demos/code-editor/demos/code-editor-demo.module'
+      ).then((mod: any) => mod.CodeEditorDemoModule),
   },
   {
     name: 'Guided Tour',
@@ -133,9 +153,9 @@ export const createComponentDetails: IComponentDetails[] = [
     category: tour.name,
     route: '/components/guided-tour',
     demo: () =>
-      import('./component-demos/guided-tour/demos/guided-tour-demo.module').then(
-        (mod: any) => mod.GuidedTourDemosModule,
-      ),
+      import(
+        './component-demos/guided-tour/demos/guided-tour-demo.module'
+      ).then((mod: any) => mod.GuidedTourDemosModule),
   },
   {
     name: 'Flavored Markdown Parser',
@@ -146,9 +166,9 @@ export const createComponentDetails: IComponentDetails[] = [
     category: markdown.name,
     route: '/components/flavored-markdown',
     demo: () =>
-      import('./component-demos/flavored-markdown/demos/flavored-markdown-demo.module').then(
-        (mod: any) => mod.FlavoredMarkdownDemoModule,
-      ),
+      import(
+        './component-demos/flavored-markdown/demos/flavored-markdown-demo.module'
+      ).then((mod: any) => mod.FlavoredMarkdownDemoModule),
   },
   {
     name: 'Markdown Parser',
@@ -159,42 +179,52 @@ export const createComponentDetails: IComponentDetails[] = [
     category: markdown.name,
     route: '/components/markdown-parser',
     demo: () =>
-      import('./component-demos/markdown/demos/markdown-demo.module').then((mod: any) => mod.MarkdownDemoModule),
+      import('./component-demos/markdown/demos/markdown-demo.module').then(
+        (mod: any) => mod.MarkdownDemoModule
+      ),
   },
   {
     name: 'Markdown Navigator',
     id: 'markdown-navigator',
-    description: 'A component for rendering and navigating through markdown, such as documentation.',
+    description:
+      'A component for rendering and navigating through markdown, such as documentation.',
     apiDocUrl: 'libs/markdown-navigator/README.md',
     icon: 'subject',
     category: markdown.name,
     route: '/components/markdown-navigator',
     demo: () =>
-      import('./component-demos/markdown-navigator/demos/markdown-navigator-demo.module').then(
-        (mod: any) => mod.MarkdownNavigatorDemoModule,
-      ),
+      import(
+        './component-demos/markdown-navigator/demos/markdown-navigator-demo.module'
+      ).then((mod: any) => mod.MarkdownNavigatorDemoModule),
   },
   {
     name: 'Base Layout',
     id: 'layout',
-    description: 'Blank main sidenav component that gets hooked as parent of all the other layouts',
+    description:
+      'Blank main sidenav component that gets hooked as parent of all the other layouts',
     apiDocUrl: 'libs/angular/layout/README.md',
     showOverview: false,
     icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout',
-    demo: () => import('./component-demos/layout/demos/layout-demo.module').then((mod: any) => mod.LayoutDemosModule),
+    demo: () =>
+      import('./component-demos/layout/demos/layout-demo.module').then(
+        (mod: any) => mod.LayoutDemosModule
+      ),
   },
   {
     name: 'Nav View',
     id: 'layout-nav',
-    description: 'Layout with a custom navigation view with toolbar items and footers.',
+    description:
+      'Layout with a custom navigation view with toolbar items and footers.',
     apiDocUrl: 'libs/angular/layout/src/layout-nav/README.md',
     icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-nav',
     demo: () =>
-      import('./component-demos/layout-nav/demos/layout-nav-demo.module').then((mod: any) => mod.LayoutNavDemosModule),
+      import('./component-demos/layout-nav/demos/layout-nav-demo.module').then(
+        (mod: any) => mod.LayoutNavDemosModule
+      ),
   },
   {
     name: 'Nav List',
@@ -205,9 +235,9 @@ export const createComponentDetails: IComponentDetails[] = [
     category: viewLayouts.name,
     route: '/components/layout-nav-list',
     demo: () =>
-      import('./component-demos/layout-nav-list/demos/layout-nav-list-demo.module').then(
-        (mod: any) => mod.LayoutNavListDemosModule,
-      ),
+      import(
+        './component-demos/layout-nav-list/demos/layout-nav-list-demo.module'
+      ).then((mod: any) => mod.LayoutNavListDemosModule),
   },
   {
     name: 'Focused Layout',
@@ -218,33 +248,37 @@ export const createComponentDetails: IComponentDetails[] = [
     category: viewLayouts.name,
     route: '/components/layout-card-over',
     demo: () =>
-      import('./component-demos/layout-card-over/demos/layout-card-over-demo.module').then(
-        (mod: any) => mod.LayoutCardOverDemosModule,
-      ),
+      import(
+        './component-demos/layout-card-over/demos/layout-card-over-demo.module'
+      ).then((mod: any) => mod.LayoutCardOverDemosModule),
   },
   {
     name: 'Manage List',
     id: 'layout-management-list',
-    description: 'Management focused layout with toolbar items, item selections and footers',
+    description:
+      'Management focused layout with toolbar items, item selections and footers',
     apiDocUrl: 'libs/angular/layout/src/layout-manage-list/README.md',
     icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-management-list',
     demo: () =>
-      import('./component-demos/layout-management-list/demos/layout-management-list-demo.module').then(
-        (mod: any) => mod.LayoutManagementListDemosModule,
-      ),
+      import(
+        './component-demos/layout-management-list/demos/layout-management-list-demo.module'
+      ).then((mod: any) => mod.LayoutManagementListDemosModule),
   },
   {
     name: 'Side Sheet',
     id: 'side-sheet',
-    description: "A side sheet dialog that overlays content with an animation (based on Angular Material's dialog)",
+    description:
+      "A side sheet dialog that overlays content with an animation (based on Angular Material's dialog)",
     apiDocUrl: 'libs/angular/side-sheet/README.md',
     icon: 'view_array',
     category: viewLayouts.name,
     route: '/components/side-sheet',
     demo: () =>
-      import('./component-demos/side-sheet/demos/sidesheet-demo.module').then((mod: any) => mod.SideSheetDemoModule),
+      import('./component-demos/side-sheet/demos/sidesheet-demo.module').then(
+        (mod: any) => mod.SideSheetDemoModule
+      ),
   },
   {
     name: 'Dynamic Menu',
@@ -255,9 +289,9 @@ export const createComponentDetails: IComponentDetails[] = [
     category: buttons.name,
     route: '/components/dynamic-menu',
     demo: () =>
-      import('./component-demos/dynamic-menu/demos/dynamic-menu-demo.module').then(
-        (mod: any) => mod.DynamicMenuDemoModule,
-      ),
+      import(
+        './component-demos/dynamic-menu/demos/dynamic-menu-demo.module'
+      ).then((mod: any) => mod.DynamicMenuDemoModule),
   },
   {
     name: 'Dynamic Forms',
@@ -268,27 +302,31 @@ export const createComponentDetails: IComponentDetails[] = [
     category: buttons.name,
     route: '/components/dynamic-forms',
     demo: () =>
-      import('./component-demos/dynamic-forms/demos/dynamic-forms-demo.module').then(
-        (mod: any) => mod.DynamicFormsDemoModule,
-      ),
+      import(
+        './component-demos/dynamic-forms/demos/dynamic-forms-demo.module'
+      ).then((mod: any) => mod.DynamicFormsDemoModule),
   },
   {
     name: 'Text Editor',
     id: 'text-editor',
-    description: 'Simple markdown text editor component (edit the markdown in the left editor for a real-time preview)',
+    description:
+      'Simple markdown text editor component (edit the markdown in the left editor for a real-time preview)',
     apiDocUrl: 'libs/angular-text-editor/README.md',
     icon: 'keyboard',
     category: markdown.name,
     route: '/components/text-editor',
     demo: () =>
-      import('./component-demos/text-editor/demos/text-editor-demo.module').then(
-        (mod: any) => mod.TextEditorDemoModule,
-      ),
+      import(
+        './component-demos/text-editor/demos/text-editor-demo.module'
+      ).then((mod: any) => mod.TextEditorDemoModule),
   },
 ];
 
-export const componentDetails: IComponentDetails[] = createComponentDetails.map((component: IComponentDetails) => {
-  return { ...tabs, ...component };
-});
+export const componentDetails: IComponentDetails[] = createComponentDetails.map(
+  (component: IComponentDetails) => {
+    return { ...tabs, ...component };
+  }
+);
 
-export const setComponentRoutes: IScopedRouteBuilder = routeBuilder(componentDetails);
+export const setComponentRoutes: IScopedRouteBuilder =
+  routeBuilder(componentDetails);

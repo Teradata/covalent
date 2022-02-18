@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-
 interface IRouteConfig {
   icon: string;
   route: string;

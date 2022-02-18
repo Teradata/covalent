@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, TemplateRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({

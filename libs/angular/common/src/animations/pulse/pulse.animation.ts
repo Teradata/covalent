@@ -30,13 +30,13 @@ export const tdPulseAnimation: AnimationTriggerMetadata = trigger('tdPulse', [
     '0',
     style({
       transform: 'scale3d(1, 1, 1)',
-    }),
+    })
   ),
   state(
     '1',
     style({
       transform: 'scale3d(1, 1, 1)',
-    }),
+    })
   ),
   transition(
     '0 <=> 1',
@@ -49,10 +49,10 @@ export const tdPulseAnimation: AnimationTriggerMetadata = trigger('tdPulse', [
             style({ transform: 'scale3d(1, 1, 1)', offset: 0 }),
             style({ transform: 'scale3d(1.05, 1.05, 1.05)', offset: 0.5 }),
             style({ transform: 'scale3d(1, 1, 1)', offset: 1.0 }),
-          ]),
+          ])
         ),
       ]),
     ],
-    { params: { duration: 500, delay: '0', ease: 'ease-out' } },
+    { params: { duration: 500, delay: '0', ease: 'ease-out' } }
   ),
 ]);

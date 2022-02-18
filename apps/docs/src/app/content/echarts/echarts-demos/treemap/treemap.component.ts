@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
 
@@ -188,7 +193,10 @@ export class TypesTreemapComponent implements OnInit {
         levels: [
           { itemStyle: { normal: { borderWidth: 0, gapWidth: 5 } } },
           { itemStyle: { normal: { gapWidth: 1 } } },
-          { colorSaturation: [0.35, 0.5], itemStyle: { normal: { gapWidth: 1, borderColorSaturation: 0.6 } } },
+          {
+            colorSaturation: [0.35, 0.5],
+            itemStyle: { normal: { gapWidth: 1, borderColorSaturation: 0.6 } },
+          },
         ],
         label: {
           show: true,
@@ -198,7 +206,10 @@ export class TypesTreemapComponent implements OnInit {
     ],
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(
+    private _cdr: ChangeDetectorRef,
+    public themeSelector: ChartThemeSelectorService
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

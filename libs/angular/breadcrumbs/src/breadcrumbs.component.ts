@@ -24,7 +24,9 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   templateUrl: './breadcrumbs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit, OnDestroy {
+export class TdBreadcrumbsComponent
+  implements OnInit, DoCheck, AfterContentInit, OnDestroy
+{
   private _resizeSubscription: Subscription = Subscription.EMPTY;
   private _widthSubject: Subject<number> = new Subject<number>();
   private _contentChildrenSub!: Subscription;
@@ -34,7 +36,8 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   @HostBinding('class.td-breadcrumbs') tdBreadCrumbsClass = true;
 
   // all the sub components, which are the individual breadcrumbs
-  @ContentChildren(TdBreadcrumbComponent, { descendants: true }) _breadcrumbs!: QueryList<TdBreadcrumbComponent>;
+  @ContentChildren(TdBreadcrumbComponent, { descendants: true })
+  _breadcrumbs!: QueryList<TdBreadcrumbComponent>;
   // the list of hidden breadcrumbs not shown right now (responsive)
   hiddenBreadcrumbs: TdBreadcrumbComponent[] = [];
 
@@ -49,12 +52,15 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
     return this._separatorIcon;
   }
 
-  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(
+    private _elementRef: ElementRef,
+    private _changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this._resizeSubscription = merge(
       fromEvent(window, 'resize').pipe(debounceTime(10)),
-      this._widthSubject.asObservable().pipe(distinctUntilChanged()),
+      this._widthSubject.asObservable().pipe(distinctUntilChanged())
     ).subscribe(() => {
       if (!this._resizing) {
         this._resizing = true;
@@ -74,10 +80,12 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   }
 
   ngAfterContentInit(): void {
-    this._contentChildrenSub = this._breadcrumbs.changes.pipe(startWith(this._breadcrumbs)).subscribe(() => {
-      this.setCrumbIcons();
-      this._changeDetectorRef.markForCheck();
-    });
+    this._contentChildrenSub = this._breadcrumbs.changes
+      .pipe(startWith(this._breadcrumbs))
+      .subscribe(() => {
+        this.setCrumbIcons();
+        this._changeDetectorRef.markForCheck();
+      });
   }
 
   ngOnDestroy(): void {
@@ -122,12 +130,15 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
    */
   private setCrumbIcons(): void {
     if (this._breadcrumbs) {
-      const breadcrumbArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
-      breadcrumbArray.forEach((breadcrumb: TdBreadcrumbComponent, index: number) => {
-        breadcrumb.separatorIcon = this.separatorIcon;
-        // don't show the icon on the last breadcrumb
-        breadcrumb.displayIcon = index < breadcrumbArray.length - 1;
-      });
+      const breadcrumbArray: TdBreadcrumbComponent[] =
+        this._breadcrumbs.toArray();
+      breadcrumbArray.forEach(
+        (breadcrumb: TdBreadcrumbComponent, index: number) => {
+          breadcrumb.separatorIcon = this.separatorIcon;
+          // don't show the icon on the last breadcrumb
+          breadcrumb.displayIcon = index < breadcrumbArray.length - 1;
+        }
+      );
     }
   }
 

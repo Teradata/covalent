@@ -19,7 +19,12 @@ import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { CovalentCommonModule } from '@covalent/core/common';
 
 @NgModule({
-  declarations: [ContentDetailsComponent, ContentOverviewComponent, ContentApiComponent, ContentExamplesComponent],
+  declarations: [
+    ContentDetailsComponent,
+    ContentOverviewComponent,
+    ContentApiComponent,
+    ContentExamplesComponent,
+  ],
   exports: [ContentDetailsComponent],
   imports: [
     /** Angular Modules */

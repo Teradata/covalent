@@ -1,5 +1,9 @@
 <div class="field-container" layout="row" layout-align="start center">
-  <mat-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
+  <mat-button-toggle-group
+    name="mode"
+    (change)="modeChange()"
+    [(ngModel)]="debounce"
+  >
     <mat-button-toggle matTooltip="Enter/Clear Events" [value]="0">
       <mat-icon>search</mat-icon>
       Enter/Clear
@@ -36,4 +40,11 @@
     <mat-card-content>card content</mat-card-content>
   </mat-card>
 </div>
-<button mat-button color="accent" (click)="toggleAlwaysVisible()" class="push-top text-upper">Always Visible</button>
+<button
+  mat-button
+  color="accent"
+  (click)="toggleAlwaysVisible()"
+  class="push-top text-upper"
+>
+  Always Visible
+</button>

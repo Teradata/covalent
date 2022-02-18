@@ -23,7 +23,13 @@ $mat-icon-button-margin: rem(0.6) !default;
 $mat-icon-border-radius: $mat-fab-border-radius;
 
 /** Mixin to create distinct classes for fab positions, e.g. ".mat-fab-position-bottom-right". */
-@mixin mat-fab-position($spot, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+@mixin mat-fab-position(
+  $spot,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+) {
   [mat-fab].mat-fab-position-#{$spot},
   .mat-fab.mat-fab-position-#{$spot},
   [mat-fab].mat-fab-#{$spot},
@@ -43,10 +49,34 @@ $mat-icon-border-radius: $mat-fab-border-radius;
 
 @mixin td-button-utilities() {
   $mat-fab-pos-offset: calc(($mat-fab-size - $mat-fab-padding) / 2);
-  @include mat-fab-position(bottom-right, auto, $mat-fab-pos-offset, $mat-fab-pos-offset, auto);
-  @include mat-fab-position(bottom-left, auto, auto, $mat-fab-pos-offset, $mat-fab-pos-offset);
-  @include mat-fab-position(top-right, $mat-fab-pos-offset, $mat-fab-pos-offset, auto, auto);
-  @include mat-fab-position(top-left, $mat-fab-pos-offset, auto, auto, $mat-fab-pos-offset);
+  @include mat-fab-position(
+    bottom-right,
+    auto,
+    $mat-fab-pos-offset,
+    $mat-fab-pos-offset,
+    auto
+  );
+  @include mat-fab-position(
+    bottom-left,
+    auto,
+    auto,
+    $mat-fab-pos-offset,
+    $mat-fab-pos-offset
+  );
+  @include mat-fab-position(
+    top-right,
+    $mat-fab-pos-offset,
+    $mat-fab-pos-offset,
+    auto,
+    auto
+  );
+  @include mat-fab-position(
+    top-left,
+    $mat-fab-pos-offset,
+    auto,
+    auto,
+    $mat-fab-pos-offset
+  );
 
   button {
     &[mat-icon-button] {

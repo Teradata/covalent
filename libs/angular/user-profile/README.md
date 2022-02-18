@@ -6,10 +6,10 @@
 
 #### Inputs
 
-+ name?: string
-  + name of the user.
-+ email?: string
-  + email of the user.
+- name?: string
+  - name of the user.
+- email?: string
+  - email of the user.
 
 ## Setup
 
@@ -36,7 +36,7 @@ Basic Example:
 </td-user-profile>
 ```
 
-Example with all inputs and projected content: 
+Example with all inputs and projected content:
 
 `[td-user-info-list]` is used to project content in the mat-list.
 `[td-user-action-list]` is used to project content in the mat-action-list.

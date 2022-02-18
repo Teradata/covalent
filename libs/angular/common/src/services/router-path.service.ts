@@ -10,7 +10,7 @@ export class RouterPathService {
     this._router.events
       .pipe(
         filter((e: any) => e instanceof RoutesRecognized),
-        pairwise(),
+        pairwise()
       )
       .subscribe((e: any[]) => {
         RouterPathService._previousRoute = e[0].urlAfterRedirects;

@@ -9,7 +9,9 @@ export interface ICanDisableRipple {
 }
 
 /** Mixin to augment a component or directive with a `disabled` property. */
-export function mixinDisableRipple<T extends Constructor<Record<string, unknown>>>(base: T): Constructor<ICanDisableRipple> & T {
+export function mixinDisableRipple<
+  T extends Constructor<Record<string, unknown>>
+>(base: T): Constructor<ICanDisableRipple> & T {
   return class extends base {
     private _disableRipple = false;
 

@@ -16,8 +16,8 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: npx nx prettier:check
-      - run: npx nx run-many --target=lint
+      - run: npm run format:check
+      - run: npx nx run-many --target=lint --all
 
   test:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: npx nx run-many --target=test
+      - run: npx nx run-many --target=test --all
 
   build:
     runs-on: ubuntu-latest
@@ -43,4 +43,4 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: npx nx run-many --target=build
+      - run: npx nx run-many --target=build--all

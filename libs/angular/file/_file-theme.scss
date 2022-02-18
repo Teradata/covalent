@@ -18,7 +18,8 @@
     * Class that is added ondragenter by the [TdFileDrop] directive.
     */
     .drop-zone {
-      transition: background $swift-ease-out-duration $swift-ease-out-timing-function,
+      transition: background $swift-ease-out-duration
+          $swift-ease-out-timing-function,
         mat-elevation-transition-property-value();
       @include mat-elevation(8);
     }

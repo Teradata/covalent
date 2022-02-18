@@ -8,11 +8,16 @@ export const TRANSLATE_STORAGE_KEY = 'ngx-translate-lang';
 /**
  * Utility method to get selected language from sessionStorage or browser
  */
-export function getSelectedLanguage(translateService: TranslateService): string {
+export function getSelectedLanguage(
+  translateService: TranslateService
+): string {
   const storedLanguage = sessionStorage.getItem(TRANSLATE_STORAGE_KEY);
   const browserLang = translateService.getBrowserLang() ?? 'en';
   // Check if the lenguage has been stored else if the language wasnt stored, then use browser default if supported
-  if (storedLanguage && translateService.getLangs().indexOf(storedLanguage) > -1) {
+  if (
+    storedLanguage &&
+    translateService.getLangs().indexOf(storedLanguage) > -1
+  ) {
     return storedLanguage;
   } else if (translateService.getLangs().indexOf(browserLang) > -1) {
     return browserLang;

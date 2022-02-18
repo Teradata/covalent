@@ -17,9 +17,15 @@ export class TdLayoutFooterComponent {
   @Input()
   set color(color: 'primary' | 'accent' | 'warn' | undefined) {
     if (color) {
-      this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
+      this._renderer.removeClass(
+        this._elementRef.nativeElement,
+        'mat-' + this._color
+      );
       this._color = color;
-      this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+      this._renderer.addClass(
+        this._elementRef.nativeElement,
+        'mat-' + this._color
+      );
     }
   }
   get color(): 'primary' | 'accent' | 'warn' | undefined {

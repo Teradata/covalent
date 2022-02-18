@@ -9,7 +9,14 @@ import {
   forwardRef,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { trigger, state, style, transition, animate, AUTO_STYLE } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+  AUTO_STYLE,
+} from '@angular/animations';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
 import { noop } from 'rxjs';
@@ -37,14 +44,14 @@ export class TdSearchBoxBase {
         style({
           width: '0%',
           margin: '0px',
-        }),
+        })
       ),
       state(
         '1',
         style({
           width: '100%',
           margin: AUTO_STYLE,
-        }),
+        })
       ),
       transition('0 => 1', animate('200ms ease-in')),
       transition('1 => 0', animate('200ms ease-out')),
@@ -53,7 +60,8 @@ export class TdSearchBoxBase {
 })
 export class TdSearchBoxComponent implements ControlValueAccessor {
   private _searchVisible = false;
-  @ViewChild(TdSearchInputComponent, { static: true }) _searchInput?: TdSearchInputComponent;
+  @ViewChild(TdSearchInputComponent, { static: true })
+  _searchInput?: TdSearchInputComponent;
 
   get searchVisible(): boolean {
     return this._searchVisible;
@@ -104,9 +112,7 @@ export class TdSearchBoxComponent implements ControlValueAccessor {
    */
   @Input() placeholder = '';
 
-
   @Input() value: unknown;
-
 
   /**
    * searchDebounce: function($event)

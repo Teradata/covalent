@@ -44,7 +44,10 @@
       <code>#myFullScreenElement="tdFullScreen"</code>
       .
     </p>
-    <p>Use the template reference variable to access properties and metheds of the directive:</p>
+    <p>
+      Use the template reference variable to access properties and metheds of
+      the directive:
+    </p>
     <ul>
       <li>
         <code>myFullScreenElement.fullScreenIsActive</code>
@@ -109,7 +112,12 @@
     <p>Try entering white spaces before or after a word this input:</p>
     <div layout="row">
       <mat-form-field flex>
-        <input matInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed" />
+        <input
+          matInput
+          tdAutoTrim
+          [(ngModel)]="trim"
+          placeholder="This will be autotrimmed"
+        />
       </mat-form-field>
     </div>
     <p>Usage:</p>

@@ -17,7 +17,7 @@
     "build": "nx build",
     "test": "nx test",
     "lint": "nx lint",
-    "format": "nx format",
+    "format:check": "nx format",
     "format:write": "nx format:write"
   },
   "dependencies": {

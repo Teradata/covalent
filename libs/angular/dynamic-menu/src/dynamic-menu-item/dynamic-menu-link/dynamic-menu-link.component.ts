@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../../dynamic-menu.menu';
+import {
+  IMenuItem,
+  ITdDynamicMenuLinkClickEvent,
+} from '../../dynamic-menu.menu';
 
 @Component({
   selector: 'td-dynamic-menu-link',
@@ -9,7 +12,8 @@ import { IMenuItem, ITdDynamicMenuLinkClickEvent } from '../../dynamic-menu.menu
 export class TdDynamicMenuLinkComponent {
   @Input() item!: IMenuItem;
 
-  @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> = new EventEmitter<ITdDynamicMenuLinkClickEvent>();
+  @Output() itemClicked: EventEmitter<ITdDynamicMenuLinkClickEvent> =
+    new EventEmitter<ITdDynamicMenuLinkClickEvent>();
 
   emitClicked(): void {
     this.itemClicked.emit({ text: this.item.text, action: this.item.action });

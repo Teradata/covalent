@@ -3,13 +3,36 @@
   TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
 -->
 <div layout="row" layout-align="end center" flex>
-  <nav hide-xs hide-sm class="text-upper text-sm docs-nav push-left-lg push-right-xxl" layout="row">
-    <a class="push-right-md text-nodecoration" [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
-    <a class="push-right-md text-nodecoration" [routerLink]="['/components']" [routerLinkActive]="['active']">
+  <nav
+    hide-xs
+    hide-sm
+    class="text-upper text-sm docs-nav push-left-lg push-right-xxl"
+    layout="row"
+  >
+    <a
+      class="push-right-md text-nodecoration"
+      [routerLink]="['/docs']"
+      [routerLinkActive]="['active']"
+      >Docs</a
+    >
+    <a
+      class="push-right-md text-nodecoration"
+      [routerLink]="['/components']"
+      [routerLinkActive]="['active']"
+    >
       Components
     </a>
-    <a class="push-right-md text-nodecoration" [routerLink]="['/echarts']" [routerLinkActive]="['active']">ECharts</a>
-    <a class="push-right-md text-nodecoration" [routerLink]="['/utilities']" [routerLinkActive]="['active']">
+    <a
+      class="push-right-md text-nodecoration"
+      [routerLink]="['/echarts']"
+      [routerLinkActive]="['active']"
+      >ECharts</a
+    >
+    <a
+      class="push-right-md text-nodecoration"
+      [routerLink]="['/utilities']"
+      [routerLinkActive]="['active']"
+    >
       Utilities
     </a>
   </nav>
@@ -25,10 +48,19 @@
     </button>
     <mat-menu #verMenu="matMenu">
       <ng-template let-version ngFor [ngForOf]="versions">
-        <a mat-menu-item [href]="'https://teradata.github.io/covalent/' + version + '/'">{{ version }}</a>
+        <a
+          mat-menu-item
+          [href]="'https://teradata.github.io/covalent/' + version + '/'"
+          >{{ version }}</a
+        >
       </ng-template>
     </mat-menu>
-    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+    <a
+      mat-icon-button
+      matTooltip="Github"
+      href="https://github.com/teradata/covalent"
+      target="_blank"
+    >
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
     <button hide-xs mat-icon-button [matMenuTriggerFor]="settingsMenu">
