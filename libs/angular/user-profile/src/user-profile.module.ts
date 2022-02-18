@@ -11,7 +11,14 @@ import { CovalentMenuModule } from '@covalent/core/menu';
 
 @NgModule({
   declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
-  imports: [CommonModule, MatMenuModule, MatIconModule, MatButtonModule, MatListModule, CovalentMenuModule],
+  imports: [
+    CommonModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatListModule,
+    CovalentMenuModule,
+  ],
   providers: [],
   exports: [TdUserProfileComponent, TdUserProfileMenuComponent],
 })

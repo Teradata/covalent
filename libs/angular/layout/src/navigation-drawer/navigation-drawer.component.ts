@@ -128,8 +128,14 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   // https://github.com/webpack/webpack/issues/2977
   set backgroundUrl(backgroundUrl: any) {
     if (backgroundUrl) {
-      const sanitizedUrl = this._sanitize.sanitize(SecurityContext.RESOURCE_URL, backgroundUrl);
-      this._backgroundImage = this._sanitize.sanitize(SecurityContext.STYLE, 'url(' + sanitizedUrl + ')');
+      const sanitizedUrl = this._sanitize.sanitize(
+        SecurityContext.RESOURCE_URL,
+        backgroundUrl
+      );
+      this._backgroundImage = this._sanitize.sanitize(
+        SecurityContext.STYLE,
+        'url(' + sanitizedUrl + ')'
+      );
     }
   }
   get backgroundImage(): SafeStyle | null {
@@ -160,17 +166,20 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   }
 
   constructor(
-    @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
+    @Inject(forwardRef(() => TdLayoutComponent))
+    private _layout: TdLayoutComponent,
     @Optional() private _router: Router,
-    private _sanitize: DomSanitizer,
+    private _sanitize: DomSanitizer
   ) {}
 
   ngOnInit(): void {
-    this._closeSubscription = this._layout.sidenav.openedChange.subscribe((opened: boolean) => {
-      if (!opened) {
-        this._menuToggled = false;
+    this._closeSubscription = this._layout.sidenav.openedChange.subscribe(
+      (opened: boolean) => {
+        if (!opened) {
+          this._menuToggled = false;
+        }
       }
-    });
+    );
   }
 
   ngOnDestroy(): void {

@@ -12,7 +12,12 @@ const routes: Routes = setComponentRoutes({
 });
 
 @NgModule({
-  imports: [GuidedTourDemoBasicSharedModule, CommonModule, ComponentDetailsModule, RouterModule.forChild(routes)],
+  imports: [
+    GuidedTourDemoBasicSharedModule,
+    CommonModule,
+    ComponentDetailsModule,
+    RouterModule.forChild(routes),
+  ],
   exports: [],
   providers: [],
 })

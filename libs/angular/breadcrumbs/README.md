@@ -1,23 +1,23 @@
 # td-breadcrumbs
 
-`td-breadcrumbs` element generates breadcrumbs for navigation.  Handles Responsive by removing breadcrumbs from the beginning of the list as allowable space decreases.
+`td-breadcrumbs` element generates breadcrumbs for navigation. Handles Responsive by removing breadcrumbs from the beginning of the list as allowable space decreases.
 
 ## API Summary
 
 #### Inputs
 
-+ separatorIcon?: string
-  + Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
+- separatorIcon?: string
+  - Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
 
 #### Methods
 
-+ count: number
-  + The total count of individual breadcrumbs (read only)
+- count: number
+  - The total count of individual breadcrumbs (read only)
 
 #### Attributes
 
-+ hiddenBreadcrumbs: TdBreadcrumbComponent[]
-  + Array of currently hidden breadcrumbs (responsive)
+- hiddenBreadcrumbs: TdBreadcrumbComponent[]
+  - Array of currently hidden breadcrumbs (responsive)
 
 # td-breadcrumb
 
@@ -27,10 +27,10 @@
 
 #### Methods
 
-+ displayCrumb: boolean 
-  + Whether to display the individual breadcrumb or not
-+ width: number 
-  + The current width of the individual breadcrumb (read only)
+- displayCrumb: boolean
+  - Whether to display the individual breadcrumb or not
+- width: number
+  - The current width of the individual breadcrumb (read only)
 
 ## Setup
 
@@ -62,7 +62,7 @@ Basic Example:
 </td-breadcrumbs>
 ```
 
-Example with all inputs/outputs: 
+Example with all inputs/outputs:
 
 ```html
 <td-breadcrumbs #breadcrumbs separatorIcon="motorcycle">
@@ -73,13 +73,17 @@ Example with all inputs/outputs:
   <td-breadcrumb>Manage List</td-breadcrumb>
 </td-breadcrumbs>
 <mat-divider></mat-divider>
+<div>Total Breadcrumbs Count: {{breadcrumbs.count}}</div>
 <div>
-  Total Breadcrumbs Count: {{breadcrumbs.count}}
+  Hidden Breadcrumbs Count (shrink window to see):
+  {{breadcrumbs.hiddenBreadcrumbs.length}}
 </div>
-<div>
-  Hidden Breadcrumbs Count (shrink window to see): {{breadcrumbs.hiddenBreadcrumbs.length}}
-</div>
-<ng-template let-breadcrumb let-index="index" ngFor [ngForOf]="breadcrumbs.hiddenBreadcrumbs">
+<ng-template
+  let-breadcrumb
+  let-index="index"
+  ngFor
+  [ngForOf]="breadcrumbs.hiddenBreadcrumbs"
+>
   <div>
     <p>Breadcrumb Number: {{index}}</p>
     <p>Breadcrumb Width: {{breadcrumb?.width}}</p>

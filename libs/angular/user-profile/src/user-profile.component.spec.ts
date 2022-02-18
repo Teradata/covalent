@@ -17,9 +17,15 @@ describe('CovalentUserProfileComponent', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
-        imports: [MatMenuModule, MatIconModule, MatButtonModule, MatListModule, CovalentMenuModule],
+        imports: [
+          MatMenuModule,
+          MatIconModule,
+          MatButtonModule,
+          MatListModule,
+          CovalentMenuModule,
+        ],
       }).compileComponents();
-    }),
+    })
   );
 
   beforeEach(() => {

@@ -10,18 +10,18 @@ Note: if no [ViewContainerRef] is provided, [TdDialogService] will throw an erro
 
 #### Methods
 
-+ openAlert: function(IAlertConfig): MatDialogRef<TdAlertDialogComponent>
-  + Opens an alert dialog with the provided config.
-+ openConfirm: function(IConfirmConfig): MatDialogRef<TdConfirmDialogComponent>
-  + Opens a confirm dialog with the provided config.
-+ openPrompt: function(IPromptConfig): MatDialogRef<TdPromptDialogComponent>
-  + Opens a prompt dialog with the provided config.
-+ open: function<T>(component: ComponentType<T>, config: MatDialogConfig): MatDialogRef<T>
-  + Wrapper function over the open() method in MatDialog. Opens a modal dialog containing the given component.
-+ openDraggable: function<T>(IDraggableConfig<T>): MatDialogRef<T>
-  + Opens a draggable dialog containing the given component
-+ closeAll: function()
-  + Wrapper function over the closeAll() method in MatDialog. Closes all of the currently-open dialogs.
+- openAlert: function(IAlertConfig): MatDialogRef<TdAlertDialogComponent>
+  - Opens an alert dialog with the provided config.
+- openConfirm: function(IConfirmConfig): MatDialogRef<TdConfirmDialogComponent>
+  - Opens a confirm dialog with the provided config.
+- openPrompt: function(IPromptConfig): MatDialogRef<TdPromptDialogComponent>
+  - Opens a prompt dialog with the provided config.
+- open: function<T>(component: ComponentType<T>, config: MatDialogConfig): MatDialogRef<T>
+  - Wrapper function over the open() method in MatDialog. Opens a modal dialog containing the given component.
+- openDraggable: function<T>(IDraggableConfig<T>): MatDialogRef<T>
+  - Opens a draggable dialog containing the given component
+- closeAll: function()
+  - Wrapper function over the closeAll() method in MatDialog. Closes all of the currently-open dialogs.
 
 ## Usage
 
@@ -132,14 +132,15 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
 })
 export class MyModule {}
 ```
-After that, just inject [TdDialogService] and use it for your dialogs.
 
+After that, just inject [TdDialogService] and use it for your dialogs.
 
 # ResizableDraggableDialog
 
 A utility to make a draggable dialog resizable.
 
 ## Usage
+
 ```ts
  constructor(
     private _dialogService: TdDialogService,
@@ -152,15 +153,22 @@ A utility to make a draggable dialog resizable.
 const {
   matDialogRef,
   dragRefSubject,
-}: IDraggableRefs<DraggableResizableDialogComponent> = this._dialogService.openDraggable({
-  component: DraggableResizableDialogComponent,
-  // CSS selectors of element(s) inside the component meant to be drag handle(s)
-  dragHandleSelectors: ['.drag-handle'],
-});
+}: IDraggableRefs<DraggableResizableDialogComponent> = this._dialogService.openDraggable(
+  {
+    component: DraggableResizableDialogComponent,
+    // CSS selectors of element(s) inside the component meant to be drag handle(s)
+    dragHandleSelectors: ['.drag-handle'],
+  }
+);
 
 let resizableDraggableDialog: ResizableDraggableDialog;
 dragRefSubject.subscribe((dragRf: DragRef) => {
-  resizableDraggableDialog = new ResizableDraggableDialog(this._document, this._renderer2, matDialogRef, dragRf);
+  resizableDraggableDialog = new ResizableDraggableDialog(
+    this._document,
+    this._renderer2,
+    matDialogRef,
+    dragRf
+  );
 });
 
 // Detach resize-ability event listeners after dialog closes
@@ -175,16 +183,17 @@ A component that can be utilized to create a dialog with a toolbar
 
 #### Inputs
 
-+ title: string
-  + Title that appears in toolbar
-+ closeLabel: string
-  + Label to be used on close button
-+ toolbarColor: ThemePalette
-  + Toolbar color
+- title: string
+  - Title that appears in toolbar
+- closeLabel: string
+  - Label to be used on close button
+- toolbarColor: ThemePalette
+  - Toolbar color
 
 #### Outputs
-+ closed: string
-  + Emitted when close button is clicked
+
+- closed: string
+  - Emitted when close button is clicked
 
 ## Usage
 
@@ -207,9 +216,8 @@ export class DraggableResizableWindowDialogComponent {
 ```
 
 ```ts
-const matDialogRef: MatDialogRef<DraggableResizableWindowDialogComponent> = this._dialogService.open(
-  DraggableResizableWindowDialogComponent,
-);
+const matDialogRef: MatDialogRef<DraggableResizableWindowDialogComponent> =
+  this._dialogService.open(DraggableResizableWindowDialogComponent);
 // listen to close event
 matDialogRef.componentInstance.closed.subscribe(() => matDialogRef.close());
 ```

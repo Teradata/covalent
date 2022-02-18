@@ -1,4 +1,10 @@
-import { Component, Directive, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import {
+  Component,
+  Directive,
+  ContentChildren,
+  QueryList,
+  AfterContentInit,
+} from '@angular/core';
 
 @Directive({ selector: '[tdDialogTitle]' })
 export class TdDialogTitleDirective {}
@@ -15,9 +21,12 @@ export class TdDialogActionsDirective {}
   styleUrls: ['./dialog.component.scss'],
 })
 export class TdDialogComponent implements AfterContentInit {
-  @ContentChildren(TdDialogTitleDirective, { descendants: true }) dialogTitle!: QueryList<TdDialogTitleDirective>;
-  @ContentChildren(TdDialogContentDirective, { descendants: true }) dialogContent!: QueryList<TdDialogContentDirective>;
-  @ContentChildren(TdDialogActionsDirective, { descendants: true }) dialogActions!: QueryList<TdDialogActionsDirective>;
+  @ContentChildren(TdDialogTitleDirective, { descendants: true })
+  dialogTitle!: QueryList<TdDialogTitleDirective>;
+  @ContentChildren(TdDialogContentDirective, { descendants: true })
+  dialogContent!: QueryList<TdDialogContentDirective>;
+  @ContentChildren(TdDialogActionsDirective, { descendants: true })
+  dialogActions!: QueryList<TdDialogActionsDirective>;
 
   ngAfterContentInit(): void {
     if (this.dialogTitle.length > 1) {

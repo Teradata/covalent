@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'utilities',
     children: [
-      { path: '', component: ComponentOverviewComponent, data: { category: 'utilities' } },
+      {
+        path: '',
+        component: ComponentOverviewComponent,
+        data: { category: 'utilities' },
+      },
       {
         path: 'animations',
         component: AnimationsComponent,

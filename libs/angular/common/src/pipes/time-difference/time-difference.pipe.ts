@@ -18,7 +18,9 @@ export class TdTimeDifferencePipe implements PipeTransform {
       return 'Invalid Date';
     }
 
-    let diff: number = Math.floor((endTime.getTime() - startTime.getTime()) / 1000);
+    let diff: number = Math.floor(
+      (endTime.getTime() - startTime.getTime()) / 1000
+    );
 
     const days: number = Math.floor(diff / (60 * 60 * 24));
     diff = diff - days * (60 * 60 * 24);

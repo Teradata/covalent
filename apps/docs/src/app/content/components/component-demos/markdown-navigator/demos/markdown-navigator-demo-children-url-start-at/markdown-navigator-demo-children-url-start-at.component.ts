@@ -7,7 +7,11 @@ import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
   templateUrl: './markdown-navigator-demo-children-url-start-at.component.html',
 })
 export class MarkdownNavigatorDemoChildrenUrlStartAtComponent {
-  startAt: IMarkdownNavigatorItem[] = [{ id: 'url-children-demo' }, { id: 'child-2' }, { id: 'grandchild-2' }];
+  startAt: IMarkdownNavigatorItem[] = [
+    { id: 'url-children-demo' },
+    { id: 'child-2' },
+    { id: 'grandchild-2' },
+  ];
   items: IMarkdownNavigatorItem[] = [
     {
       id: 'url-children-demo',

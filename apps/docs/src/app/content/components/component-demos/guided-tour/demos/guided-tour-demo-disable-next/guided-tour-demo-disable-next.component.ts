@@ -33,7 +33,10 @@ export class GuidedTourDemoDisableNextComponent implements OnInit {
         },
       ],
     };
-    this._guidedTourService.registerTour('disableNextDemoTour', disableNextDemoTour);
+    this._guidedTourService.registerTour(
+      'disableNextDemoTour',
+      disableNextDemoTour
+    );
   }
 
   enableNext(): void {

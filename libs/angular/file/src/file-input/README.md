@@ -9,12 +9,18 @@ Can also drop a file(s) into the component to bind the file(s) to it.
 Example for usage:
 
 ```html
-<td-file-input [(ngModel)]="files" color="primary" (select)="selectEvent($event)"
-               accept=".ext,.anotherExt" [disabled]="disabled" multiple>
+<td-file-input
+  [(ngModel)]="files"
+  color="primary"
+  (select)="selectEvent($event)"
+  accept=".ext,.anotherExt"
+  [disabled]="disabled"
+  multiple
+>
   <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
 </td-file-input>
 ```
- 
+
 ```typescript
 export class Demo {
 
@@ -28,32 +34,32 @@ export class Demo {
       ...
     }
   };
-} 
+}
 ```
 
 ## API Summary
 
 #### Inputs
 
-+ color: string
-  + Sets button color. Uses same color palette accepted as [MatButton].
-+ multiple: boolean
-  + Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
-+ accept: string
-  + Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
-+ disabled: boolean
-  + Disables [TdFileUploadComponent] and clears selected/dropped files.
+- color: string
+  - Sets button color. Uses same color palette accepted as [MatButton].
+- multiple: boolean
+  - Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
+- accept: string
+  - Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
+- disabled: boolean
+  - Disables [TdFileUploadComponent] and clears selected/dropped files.
 
 #### Events
 
-+ select: function($event)
-  + Event emitted when a file is selected. 
-  + Emits a [File or FileList] object.
+- select: function($event)
+  - Event emitted when a file is selected.
+  - Emits a [File or FileList] object.
 
 #### Methods
 
-+ clear: function
-  + Used to clear the selected files from the [TdFileInputComponent].
+- clear: function
+  - Used to clear the selected files from the [TdFileInputComponent].
 
 ## Setup
 
@@ -79,27 +85,27 @@ export class MyModule {}
 
 Add the directive wherever you want to bind a [File | FileList] into a class model to an existing <input type="file"/> element.
 
-Uses optional [(ngModel)] directive to bind file. (if [(ngModel]) exists, [fileSelect] is omitted)   
+Uses optional [(ngModel)] directive to bind file. (if [(ngModel]) exists, [fileSelect] is omitted)
 
 Example for usage:
 
 ```html
-<input type="file" tdFileSelect (fileSelect)="files = $event" multiple>
+<input type="file" tdFileSelect (fileSelect)="files = $event" multiple />
 ```
 
 ## API Summary
 
 #### Inputs
 
-+ multiple: boolean
-  + Sets whether multiple files can be selected at once in host element, or just a single file. 
-  + Can also be "multiple" native attribute.
+- multiple: boolean
+  - Sets whether multiple files can be selected at once in host element, or just a single file.
+  - Can also be "multiple" native attribute.
 
 #### Events
 
-+ fileSelect: function($event)
-  + Event emitted when a file or files are selected in host [HTMLInputElement]. 
-  + Emits a [FileList or File] object. Alternative to not use [(ngModel)].
+- fileSelect: function($event)
+  - Event emitted when a file or files are selected in host [HTMLInputElement].
+  - Emits a [FileList or File] object. Alternative to not use [(ngModel)].
 
 ## TdFileDropDirective: tdFileDrop
 
@@ -109,30 +115,33 @@ Add the directive wherever you want to add drop support to an element to bind a 
 
 To add effect when <code>ondragenter</code> event is executed, override <code>.drop-zone</code> class in the context you are using it.
 
-Note: if element has child elements, add <code>* { pointer-events: none; }</code> to avoid event being thrown again while navigating in child elements.
+Note: if element has child elements, add <code>\* { pointer-events: none; }</code> to avoid event being thrown again while navigating in child elements.
 
 Example for usage:
 
 ```html
-<div tdFileDrop (fileDrop)="files = $event" multiple [disabled]="disabled">
-</div> 
+<div
+  tdFileDrop
+  (fileDrop)="files = $event"
+  multiple
+  [disabled]="disabled"
+></div>
 ```
-
 
 ## API Summary
 
 #### Inputs
 
-+ multiple: boolean
-  + Sets whether multiple files can be dropped at once in host element, or just a single file. 
-  + Can also be "multiple" native attribute.
-+ disabled: boolean
-  + Disabled drop events for host element.
+- multiple: boolean
+  - Sets whether multiple files can be dropped at once in host element, or just a single file.
+  - Can also be "multiple" native attribute.
+- disabled: boolean
+  - Disabled drop events for host element.
 
 #### Events
 
-+ fileDrop: function($event)
-  + Event emitted when a file or files are dropped in host element after being validated.  
-  + Emits a [FileList or File] object.
+- fileDrop: function($event)
+  - Event emitted when a file or files are dropped in host element after being validated.
+  - Emits a [FileList or File] object.
 
 &nbsp;

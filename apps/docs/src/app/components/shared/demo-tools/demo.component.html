@@ -2,7 +2,9 @@
   <mat-toolbar-row>
     <span>{{ demoTitle || demoId }}</span>
     <span flex></span>
-    <button (click)="toggleCodeView()" mat-icon-button><mat-icon>code</mat-icon></button>
+    <button (click)="toggleCodeView()" mat-icon-button>
+      <mat-icon>code</mat-icon>
+    </button>
   </mat-toolbar-row>
   <mat-tab-group *ngIf="viewCode">
     <mat-tab label="HTML">

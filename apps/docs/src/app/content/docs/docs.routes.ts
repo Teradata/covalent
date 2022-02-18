@@ -16,7 +16,11 @@ const routes: Routes = [
         path: 'get-started',
         children: [
           { path: '', redirectTo: 'what-is-covalent' },
-          { path: 'overview', component: TdReadmeLoaderComponent, data: { resourceUrl: 'docs/GETTING_STARTED.md' } },
+          {
+            path: 'overview',
+            component: TdReadmeLoaderComponent,
+            data: { resourceUrl: 'docs/GETTING_STARTED.md' },
+          },
           { path: 'angular', component: AngularMaterialComponent },
           {
             path: 'what-is-covalent',

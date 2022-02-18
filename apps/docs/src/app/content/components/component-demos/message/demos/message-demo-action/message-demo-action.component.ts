@@ -12,7 +12,8 @@ export class MessageDemoActionComponent {
   showAlert(): void {
     this._dialogService.openAlert({
       title: 'View More Clicked',
-      message: 'Actions can be useful for displaying a dialog to provide more information',
+      message:
+        'Actions can be useful for displaying a dialog to provide more information',
     });
   }
 }

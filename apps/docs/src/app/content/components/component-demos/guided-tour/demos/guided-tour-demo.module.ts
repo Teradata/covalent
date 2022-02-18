@@ -25,6 +25,12 @@ import { GuidedTourDemoGoBackNavigationComponent } from './guided-tour-demo-go-b
     GuidedTourDemoSkipCountComponent,
     GuidedTourDemoGoBackNavigationComponent,
   ],
-  imports: [CommonModule, DemoModule, GuidedTourDemoBasicSharedModule, GuidedTourDemoRoutingModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    DemoModule,
+    GuidedTourDemoBasicSharedModule,
+    GuidedTourDemoRoutingModule,
+    MatButtonModule,
+  ],
 })
 export class GuidedTourDemosModule {}

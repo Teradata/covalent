@@ -1,10 +1,16 @@
 <mat-card>
   <mat-card-title>Minimum Demo</mat-card-title>
-  <mat-card-subtitle>Minimum code for this layout with no wrapper</mat-card-subtitle>
+  <mat-card-subtitle
+    >Minimum code for this layout with no wrapper</mat-card-subtitle
+  >
   <mat-divider></mat-divider>
   <div [style.height]="'200px'" class="relative">
     <td-layout>
-      <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+      <td-layout-nav
+        logo="assets:teradata"
+        toolbarTitle="Covalent"
+        navigationRoute="/"
+      >
         Content goes here
       </td-layout-nav>
     </td-layout>
@@ -44,7 +50,11 @@
           </mat-nav-list>
         </div>
       </td-navigation-drawer>
-      <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+      <td-layout-nav
+        logo="assets:teradata"
+        toolbarTitle="Covalent"
+        navigationRoute="/"
+      >
         <button mat-icon-button td-menu-button tdLayoutToggle>
           <mat-icon>menu</mat-icon>
         </button>
@@ -61,7 +71,9 @@
 </mat-card>
 <mat-card>
   <mat-card-title>Full Demo</mat-card-title>
-  <mat-card-subtitle>Full working code with all options and templates</mat-card-subtitle>
+  <mat-card-subtitle
+    >Full working code with all options and templates</mat-card-subtitle
+  >
   <mat-divider></mat-divider>
   <div [style.height]="'400px'" class="relative">
     <td-layout>
@@ -92,13 +104,27 @@
           <button mat-icon-button td-menu-button tdLayoutToggle>
             <mat-icon>menu</mat-icon>
           </button>
-          <mat-icon [routerLink]="['/']" class="mat-icon-logo cursor-pointer" svgIcon="assets:teradata"></mat-icon>
+          <mat-icon
+            [routerLink]="['/']"
+            class="mat-icon-logo cursor-pointer"
+            svgIcon="assets:teradata"
+          ></mat-icon>
           <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
           <span flex></span>
-          <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank">
+          <a
+            mat-icon-button
+            matTooltip="Docs"
+            href="https://teradata.github.io/covalent/"
+            target="_blank"
+          >
             <mat-icon>chrome_reader_mode</mat-icon>
           </a>
-          <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+          <a
+            mat-icon-button
+            matTooltip="Github"
+            href="https://github.com/teradata/covalent"
+            target="_blank"
+          >
             <mat-icon svgIcon="assets:github"></mat-icon>
           </a>
         </div>
@@ -106,24 +132,38 @@
           <div flex-gt-sm="60">
             <mat-card>
               <mat-card-title>Products Sales</mat-card-title>
-              <mat-card-subtitle>usage stats for our products</mat-card-subtitle>
+              <mat-card-subtitle
+                >usage stats for our products</mat-card-subtitle
+              >
               <mat-divider></mat-divider>
               <mat-card-content>card content</mat-card-content>
               <mat-divider></mat-divider>
               <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
+                <a
+                  mat-button
+                  color="accent"
+                  class="text-upper"
+                  [routerLink]="['/']"
+                >
                   <span>View More</span>
                 </a>
               </mat-card-actions>
             </mat-card>
             <mat-card>
               <mat-card-title>Customer Activity</mat-card-title>
-              <mat-card-subtitle>Recent activity from select members</mat-card-subtitle>
+              <mat-card-subtitle
+                >Recent activity from select members</mat-card-subtitle
+              >
               <mat-divider></mat-divider>
               <mat-card-content>card content</mat-card-content>
               <mat-divider></mat-divider>
               <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
+                <a
+                  mat-button
+                  color="accent"
+                  class="text-upper"
+                  [routerLink]="['/']"
+                >
                   <span>View More</span>
                 </a>
               </mat-card-actions>
@@ -137,7 +177,12 @@
               <mat-card-content>card content</mat-card-content>
               <mat-divider></mat-divider>
               <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
+                <a
+                  mat-button
+                  color="accent"
+                  class="text-upper"
+                  [routerLink]="['/']"
+                >
                   <span>View More</span>
                 </a>
               </mat-card-actions>
@@ -149,7 +194,12 @@
               <mat-card-content>card content</mat-card-content>
               <mat-divider></mat-divider>
               <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
+                <a
+                  mat-button
+                  color="accent"
+                  class="text-upper"
+                  [routerLink]="['/']"
+                >
                   <span>View More</span>
                 </a>
               </mat-card-actions>
@@ -158,7 +208,9 @@
         </div>
         <td-layout-footer>
           <div layout="row" layout-align="start center">
-            <span class="mat-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+            <span class="mat-caption"
+              >Copyright &copy; 2017 Teradata. All rights reserved</span
+            >
           </div>
         </td-layout-footer>
       </td-layout-nav>
@@ -175,4 +227,6 @@
     </td-highlight>
   </mat-card-content>
 </mat-card>
-<td-readme-loader resourceUrl="platform/core/layout/layout-nav/README.md"></td-readme-loader>
+<td-readme-loader
+  resourceUrl="platform/core/layout/layout-nav/README.md"
+></td-readme-loader>

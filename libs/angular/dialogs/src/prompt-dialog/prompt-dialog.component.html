@@ -21,7 +21,14 @@
     </form>
   </div>
   <div tdDialogActions>
-    <button mat-button #closeBtn (keydown.arrowright)="acceptBtn.focus()" (click)="cancel()">{{ cancelButton }}</button>
+    <button
+      mat-button
+      #closeBtn
+      (keydown.arrowright)="acceptBtn.focus()"
+      (click)="cancel()"
+    >
+      {{ cancelButton }}
+    </button>
     <button
       mat-button
       color="accent"

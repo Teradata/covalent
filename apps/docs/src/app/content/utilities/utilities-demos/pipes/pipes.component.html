@@ -32,7 +32,8 @@
     <p class="mat-body-1">
       The
       <code>digits</code>
-      pipe takes a number and converts the output to an appropriate numerical measurement with an optional
+      pipe takes a number and converts the output to an appropriate numerical
+      measurement with an optional
       <code>precision</code>
       argument.
     </p>
@@ -43,7 +44,9 @@
         <!-- output with bytes pipe -->
         <p matLine>Converted: {{ log.digits | digits }}</p>
         <!-- output with precision aurgument -->
-        <p *ngIf="log.precision" matLine>With precision argument: {{ log.digits | digits: log.precision }}</p>
+        <p *ngIf="log.precision" matLine>
+          With precision argument: {{ log.digits | digits: log.precision }}
+        </p>
       </mat-list-item>
     </mat-list>
     <p>Usage:</p>
@@ -60,7 +63,8 @@
     <p class="mat-body-1">
       The
       <code>bytes</code>
-      pipe takes a number and converts the output to an appropriate base 1024 data measurement with an optional
+      pipe takes a number and converts the output to an appropriate base 1024
+      data measurement with an optional
       <code>precision</code>
       argument.
     </p>
@@ -71,7 +75,9 @@
         <!-- output with bytes pipe -->
         <p matLine>Converted: {{ log.bytes | bytes }}</p>
         <!-- output with precision aurgument -->
-        <p *ngIf="log.precision" matLine>With precision argument: {{ log.bytes | bytes: log.precision }}</p>
+        <p *ngIf="log.precision" matLine>
+          With precision argument: {{ log.bytes | bytes: log.precision }}
+        </p>
       </mat-list-item>
     </mat-list>
     <p>Usage:</p>
@@ -88,7 +94,8 @@
     <p class="mat-body-1">
       The
       <code>decimalBytes</code>
-      pipe takes a number and converts the output to an appropriate base 1000 data measurement with an optional
+      pipe takes a number and converts the output to an appropriate base 1000
+      data measurement with an optional
       <code>precision</code>
       argument.
     </p>
@@ -99,7 +106,9 @@
         <!-- output with bytes pipe -->
         <p matLine>Converted: {{ log.bytes | decimalBytes }}</p>
         <!-- output with precision aurgument -->
-        <p *ngIf="log.precision" matLine>With precision argument: {{ log.bytes | decimalBytes: log.precision }}</p>
+        <p *ngIf="log.precision" matLine>
+          With precision argument: {{ log.bytes | decimalBytes: log.precision }}
+        </p>
       </mat-list-item>
     </mat-list>
     <p>Usage:</p>
@@ -122,7 +131,10 @@
     </p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
-        <h3 matLine>Timestamp: {{ log.timestamp }} | {{ log.timestamp | timeAgo: log.reference }}</h3>
+        <h3 matLine>
+          Timestamp: {{ log.timestamp }} |
+          {{ log.timestamp | timeAgo: log.reference }}
+        </h3>
         <p *ngIf="log.reference" matLine>Reference: {{ log.reference }}</p>
       </mat-list-item>
     </mat-list>
@@ -142,11 +154,15 @@
       <code>timeUntil</code>
       pipe takes a string, number or Date timestamp (example:
       <code>{{ currentTimeStamp }}</code>
-      ) and tranforms it to the amount of time until that timestamp will be reached.
+      ) and tranforms it to the amount of time until that timestamp will be
+      reached.
     </p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
-        <h3 matLine>Timestamp: {{ log.expiration_date }} | {{ log.expiration_date | timeUntil: log.reference }}</h3>
+        <h3 matLine>
+          Timestamp: {{ log.expiration_date }} |
+          {{ log.expiration_date | timeUntil: log.reference }}
+        </h3>
         <p *ngIf="log.reference" matLine>Reference: {{ log.reference }}</p>
       </mat-list-item>
     </mat-list>
@@ -164,23 +180,32 @@
     <p class="mat-body-1">
       The
       <code>timeDifference</code>
-      pipe outputs the difference between two times. Strings, Numbers or Date timestamps are acceptable types. (example:
+      pipe outputs the difference between two times. Strings, Numbers or Date
+      timestamps are acceptable types. (example:
       <code>2016-01-29T17:59:59.000Z</code>
       ).
     </p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <!-- Start and end time output -->
-        <h3 matLine>Start Time: {{ log.timestamp }} | End Time: {{ log.timestampend }}</h3>
+        <h3 matLine>
+          Start Time: {{ log.timestamp }} | End Time: {{ log.timestampend }}
+        </h3>
         <!-- output with timeDifference pipe -->
-        <p matLine>Difference: {{ log.timestamp | timeDifference: log.timestampend }}</p>
+        <p matLine>
+          Difference: {{ log.timestamp | timeDifference: log.timestampend }}
+        </p>
         <!-- outputs the time difference relative to the current time -->
-        <p matLine>Difference relative to current time: {{ log.timestamp | timeDifference }}</p>
+        <p matLine>
+          Difference relative to current time:
+          {{ log.timestamp | timeDifference }}
+        </p>
       </mat-list-item>
     </mat-list>
     <p class="mat-body-1">
       <strong>Note:</strong>
-      Using this pipe without arguments outputs the time difference relative to the current time.
+      Using this pipe without arguments outputs the time difference relative to
+      the current time.
     </p>
     <p>Usage:</p>
     <td-highlight codeLang="html">
@@ -221,7 +246,8 @@
     </td-highlight>
     <p class="mat-body-1">
       <strong>Note:</strong>
-      If the last character in a returned output is a space, then that space is removed.
+      If the last character in a returned output is a space, then that space is
+      removed.
     </p>
     <td-highlight codeLang="html">
       {{ truncateHtml2 }}
@@ -236,8 +262,8 @@
     <a mat-list-item href="https://angular.io/api?type=pipe" target="_blank">
       <mat-icon>launch</mat-icon>
       <span matLine>
-        Angular comes with a stock of pipes such as DatePipe, UpperCasePipe, LowerCasePipe, CurrencyPipe, and
-        PercentPipe
+        Angular comes with a stock of pipes such as DatePipe, UpperCasePipe,
+        LowerCasePipe, CurrencyPipe, and PercentPipe
       </span>
     </a>
   </mat-nav-list>

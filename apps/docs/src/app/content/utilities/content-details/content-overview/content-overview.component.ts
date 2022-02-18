@@ -17,7 +17,9 @@ export class ContentOverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.parent.paramMap.subscribe((params: ParamMap) => {
-      const component: any = this.componentJson.find((e: any) => e.id === params.get('id'));
+      const component: any = this.componentJson.find(
+        (e: any) => e.id === params.get('id')
+      );
       if (!component) {
         this._router.navigate(['components']);
         return;

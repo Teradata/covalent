@@ -55,8 +55,7 @@ export const createUtilitiesDetails: IComponentDetails[] = [
   },
 ];
 
-export const utilitiesContentDetails: IComponentDetails[] = createUtilitiesDetails.map(
-  (component: IComponentDetails) => {
+export const utilitiesContentDetails: IComponentDetails[] =
+  createUtilitiesDetails.map((component: IComponentDetails) => {
     return { ...tabs, ...component };
-  },
-);
+  });

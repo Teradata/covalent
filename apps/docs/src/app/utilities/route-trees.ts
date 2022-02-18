@@ -1,10 +1,22 @@
-import { componentDetails, componentRouteCategories } from '../content/components/components';
-import { utilitiesRouteCategories, utilitiesContentDetails } from '../content/utilities/utilities-content';
-import { echartsRoutesCategories, echartsContentDetails } from '../content/echarts/echarts-content';
+import {
+  componentDetails,
+  componentRouteCategories,
+} from '../content/components/components';
+import {
+  utilitiesRouteCategories,
+  utilitiesContentDetails,
+} from '../content/utilities/utilities-content';
+import {
+  echartsRoutesCategories,
+  echartsContentDetails,
+} from '../content/echarts/echarts-content';
 import { docsRouteCategories, docsContentDetails } from '../content/docs/docs';
 
-
-import { createRouteGroup, IRouteGroup, ICombinedRouteGroup } from './route-group';
+import {
+  createRouteGroup,
+  IRouteGroup,
+  ICombinedRouteGroup,
+} from './route-group';
 
 export enum rootRoutes {
   Docs = '/docs',
@@ -49,14 +61,24 @@ export const utilitiesRouteGroup: IRouteGroup[] = createRouteGroup({
 });
 
 export const routeGroups: ICombinedRouteGroup[] = [
-  { name: 'Documentation', description: descriptions.Docs, routeGroups: docsRouteGroup, rootRoute: rootRoutes.Docs },
+  {
+    name: 'Documentation',
+    description: descriptions.Docs,
+    routeGroups: docsRouteGroup,
+    rootRoute: rootRoutes.Docs,
+  },
   {
     name: 'Components',
     description: descriptions.Components,
     routeGroups: componentRoutesGroup,
     rootRoute: rootRoutes.Components,
   },
-  { name: 'ECharts', description: descriptions.ECharts, routeGroups: echartsRouteGroup, rootRoute: rootRoutes.ECharts },
+  {
+    name: 'ECharts',
+    description: descriptions.ECharts,
+    routeGroups: echartsRouteGroup,
+    rootRoute: rootRoutes.ECharts,
+  },
   {
     name: 'Utilities',
     description: descriptions.Utilities,

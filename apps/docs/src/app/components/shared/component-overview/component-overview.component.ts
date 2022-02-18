@@ -24,7 +24,10 @@ export class ComponentOverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: any) => {
-      this.category = routeGroups.find((group: ICombinedRouteGroup) => group.name.toLowerCase() === data.category);
+      this.category = routeGroups.find(
+        (group: ICombinedRouteGroup) =>
+          group.name.toLowerCase() === data.category
+      );
       this.categoryGroups = this.category.routeGroups;
     });
   }

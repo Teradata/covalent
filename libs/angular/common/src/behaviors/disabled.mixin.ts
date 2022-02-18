@@ -9,7 +9,9 @@ export interface ICanDisable {
 }
 
 /** Mixin to augment a component or directive with a `disabled` property. */
-export function mixinDisabled<T extends Constructor<any>>(base: T): Constructor<ICanDisable> & T {
+export function mixinDisabled<T extends Constructor<any>>(
+  base: T
+): Constructor<ICanDisable> & T {
   return class extends base {
     private _disabled = false;
 

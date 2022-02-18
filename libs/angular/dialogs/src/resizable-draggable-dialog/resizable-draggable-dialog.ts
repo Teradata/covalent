@@ -44,7 +44,7 @@ export class ResizableDraggableDialog {
     private _document: any,
     private _renderer2: Renderer2,
     private _dialogRef: MatDialogRef<any>,
-    private _dragRef: DragRef,
+    private _dragRef: DragRef
   ) {
     this._initialPositionReset();
     this._attachCorners();
@@ -58,21 +58,27 @@ export class ResizableDraggableDialog {
   public detach(): void {
     this.pointerDownSubs.forEach((sub: Subscription) => sub.unsubscribe());
     this.pointerDownSubs = [];
-    this.cornerElements.forEach((elem: HTMLElement) => this._renderer2.removeChild(this._getDialogWrapper(), elem));
+    this.cornerElements.forEach((elem: HTMLElement) =>
+      this._renderer2.removeChild(this._getDialogWrapper(), elem)
+    );
     this.cornerElements = [];
   }
 
   private _getDialogWrapper(): HTMLElement | null {
-    return (<HTMLElement>this._document.getElementById(this._dialogRef.id) || {}).parentElement;
+    return (
+      <HTMLElement>this._document.getElementById(this._dialogRef.id) || {}
+    ).parentElement;
   }
 
   private _getViewportDimensions(): ClientRect | undefined {
     return this._getDialogWrapper()?.parentElement?.getBoundingClientRect();
   }
 
-  private _getDialogWrapperDimensions(): { width: number; height: number }  {
+  private _getDialogWrapperDimensions(): { width: number; height: number } {
     const wrapper = this._getDialogWrapper();
-    if (!wrapper) { return { width: 0, height: 0 } }
+    if (!wrapper) {
+      return { width: 0, height: 0 };
+    }
     const dimensions: CSSStyleDeclaration = getComputedStyle(wrapper);
     return {
       width: getPixels(dimensions.width),
@@ -106,7 +112,12 @@ export class ResizableDraggableDialog {
       y = (viewportHeight - height) / 2;
     }
     // use drag ref's mechanisms for positioning instead of the dialog's
-    this._dialogRef.updatePosition({ top: '0px', right: '0px', bottom: '0px', left: '0px' });
+    this._dialogRef.updatePosition({
+      top: '0px',
+      right: '0px',
+      bottom: '0px',
+      left: '0px',
+    });
     this._dragRef.setFreeDragPosition({ x, y });
   }
 
@@ -134,9 +145,16 @@ export class ResizableDraggableDialog {
 
         const icon: HTMLElement = this._renderer2.createElement('i');
         this._renderer2.addClass(icon, 'material-icons');
-        this._renderer2.appendChild(icon, this._renderer2.createText('filter_list'));
+        this._renderer2.appendChild(
+          icon,
+          this._renderer2.createText('filter_list')
+        );
         this._renderer2.appendChild(element, icon);
-        this._renderer2.setStyle(icon, 'transform', `rotate(${315}deg) translate(0px, ${offset})`);
+        this._renderer2.setStyle(
+          icon,
+          'transform',
+          `rotate(${315}deg) translate(0px, ${offset})`
+        );
         this._renderer2.setStyle(icon, 'font-size', cornerWidth);
       } else if (corner === corners.bottomLeft) {
         cursor = cursors.nesw;
@@ -151,7 +169,10 @@ export class ResizableDraggableDialog {
       this._renderer2.setStyle(element, rightLeft, offset);
       this._renderer2.setStyle(element, 'cursor', cursor);
 
-      const pointerDownSub: Subscription = fromEvent<PointerEvent>(element, 'pointerdown').subscribe((event: PointerEvent) => {
+      const pointerDownSub: Subscription = fromEvent<PointerEvent>(
+        element,
+        'pointerdown'
+      ).subscribe((event: PointerEvent) => {
         this._handleMouseDown(event, corner);
       });
       this.pointerDownSubs = [...this.pointerDownSubs, pointerDownSub];
@@ -159,18 +180,27 @@ export class ResizableDraggableDialog {
   }
 
   private _handleMouseDown(event: PointerEvent, corner: corners): void {
-    this._renderer2.setStyle(<HTMLElement>this._document.body, 'user-select', 'none');
-    const { width: originalWidth, height: originalHeight } = this._getDialogWrapperDimensions();
+    this._renderer2.setStyle(
+      <HTMLElement>this._document.body,
+      'user-select',
+      'none'
+    );
+    const { width: originalWidth, height: originalHeight } =
+      this._getDialogWrapperDimensions();
     const originalMouseX: number = event.pageX;
     const originalMouseY: number = event.pageY;
-    const { x: currentTransformX, y: currentTransformY }: Point = this._dragRef.getFreeDragPosition();
+    const { x: currentTransformX, y: currentTransformY }: Point =
+      this._dragRef.getFreeDragPosition();
     const wrapper = this._getDialogWrapper()?.getBoundingClientRect();
     const distanceFromBottom = wrapper?.bottom ?? 0;
-    const distanceFromRight = wrapper?.right ?? 0;      
+    const distanceFromRight = wrapper?.right ?? 0;
     const viewportWidth = this._getViewportDimensions()?.right ?? 0;
     const viewportHeight = this._getViewportDimensions()?.bottom ?? 0;
 
-    const mouseMoveSub: Subscription = fromEvent<PointerEvent>(window, 'pointermove').subscribe((e: PointerEvent) => {
+    const mouseMoveSub: Subscription = fromEvent<PointerEvent>(
+      window,
+      'pointermove'
+    ).subscribe((e: PointerEvent) => {
       e.preventDefault(); // prevent highlighting of text when dragging
 
       const yDelta: number = clamp(0, e.pageY, viewportHeight) - originalMouseY;
@@ -184,7 +214,11 @@ export class ResizableDraggableDialog {
       if (corner === corners.topRight) {
         newHeight = clamp(minHeight, originalHeight - yDelta, viewportHeight);
         newWidth = clamp(minWidth, originalWidth + xDelta, viewportWidth);
-        newTransformY = clamp(0, currentTransformY + yDelta, distanceFromBottom - newHeight);
+        newTransformY = clamp(
+          0,
+          currentTransformY + yDelta,
+          distanceFromBottom - newHeight
+        );
         newTransformX = currentTransformX;
       }
       // bottom right
@@ -199,15 +233,27 @@ export class ResizableDraggableDialog {
         newHeight = clamp(minHeight, originalHeight + yDelta, viewportHeight);
         newWidth = clamp(minWidth, originalWidth - xDelta, viewportWidth);
         newTransformY = currentTransformY;
-        newTransformX = clamp(0, currentTransformX + xDelta, distanceFromRight - newWidth);
+        newTransformX = clamp(
+          0,
+          currentTransformX + xDelta,
+          distanceFromRight - newWidth
+        );
       }
       // top left
       else {
         newHeight = clamp(minHeight, originalHeight - yDelta, viewportHeight);
         newWidth = clamp(minWidth, originalWidth - xDelta, viewportWidth);
 
-        newTransformX = clamp(0, currentTransformX + xDelta, distanceFromRight - newWidth);
-        newTransformY = clamp(0, currentTransformY + yDelta, distanceFromBottom - newHeight);
+        newTransformX = clamp(
+          0,
+          currentTransformX + xDelta,
+          distanceFromRight - newWidth
+        );
+        newTransformY = clamp(
+          0,
+          currentTransformY + yDelta,
+          distanceFromBottom - newHeight
+        );
       }
       this._dialogRef.updateSize(`${newWidth}px`, `${newHeight}px`);
       this._dragRef.setFreeDragPosition({
@@ -218,9 +264,12 @@ export class ResizableDraggableDialog {
 
     const mouseUpSub: Subscription = merge(
       fromEvent(window, 'pointerup'),
-      fromEvent(window, 'pointercancel'),
+      fromEvent(window, 'pointercancel')
     ).subscribe(() => {
-      this._renderer2.removeStyle(<HTMLElement>this._document.body, 'user-select');
+      this._renderer2.removeStyle(
+        <HTMLElement>this._document.body,
+        'user-select'
+      );
       mouseMoveSub.unsubscribe();
       mouseUpSub.unsubscribe();
     });

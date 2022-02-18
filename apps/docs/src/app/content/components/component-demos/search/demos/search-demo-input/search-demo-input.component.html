@@ -1,5 +1,9 @@
 <div class="field-container" layout="row" layout-align="start center">
-  <mat-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
+  <mat-button-toggle-group
+    name="mode"
+    (change)="modeChange()"
+    [(ngModel)]="debounce"
+  >
     <mat-button-toggle matTooltip="Enter/Clear Events" [value]="0">
       <mat-icon>search</mat-icon>
       Enter/Clear

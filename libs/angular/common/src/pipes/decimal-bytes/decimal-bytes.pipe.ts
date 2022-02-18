@@ -14,12 +14,24 @@ export class TdDecimalBytesPipe implements PipeTransform {
       return 'Invalid Number';
     }
     const k = 1000;
-    const sizes: string[] = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    const sizes: string[] = [
+      'B',
+      'KB',
+      'MB',
+      'GB',
+      'TB',
+      'PB',
+      'EB',
+      'ZB',
+      'YB',
+    ];
     const i: number = Math.floor(Math.log(bytes) / Math.log(k));
     // if less than 1
     if (i < 0) {
       return 'Invalid Number';
     }
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(precision)) + ' ' + sizes[i];
+    return (
+      parseFloat((bytes / Math.pow(k, i)).toFixed(precision)) + ' ' + sizes[i]
+    );
   }
 }

@@ -25,7 +25,9 @@ export class TdFileSelectDirective {
    * Emits a [FileList | File] object.
    * Alternative to not use [(ngModel)].
    */
-  @Output() fileSelect: EventEmitter<FileList | File> = new EventEmitter<FileList | File>();
+  @Output() fileSelect: EventEmitter<FileList | File> = new EventEmitter<
+    FileList | File
+  >();
 
   /**
    * Binds native 'multiple' attribute if [multiple] property is 'true'.
@@ -48,8 +50,14 @@ export class TdFileSelectDirective {
       const fileInputEl: HTMLInputElement = event.target;
       const files: FileList = fileInputEl.files || new FileList();
       if (files.length) {
-        const value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
-        this.model ? this.model.update.emit(value) : this.fileSelect.emit(value);
+        const value: FileList | File = this._multiple
+          ? files.length > 1
+            ? files
+            : files[0]
+          : files[0];
+        this.model
+          ? this.model.update.emit(value)
+          : this.fileSelect.emit(value);
       }
     }
   }

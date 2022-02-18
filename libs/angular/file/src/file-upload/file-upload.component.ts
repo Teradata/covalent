@@ -10,7 +10,10 @@ import {
   forwardRef,
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
+import {
+  TdFileInputComponent,
+  TdFileInputLabelDirective,
+} from '../file-input/file-input.component';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { noop } from 'rxjs';
 
@@ -38,7 +41,8 @@ export class TdFileUploadComponent implements ControlValueAccessor {
 
   @ViewChild(TdFileInputComponent) fileInput?: TdFileInputComponent;
 
-  @ContentChild(TdFileInputLabelDirective) inputLabel?: TdFileInputLabelDirective;
+  @ContentChild(TdFileInputLabelDirective)
+  inputLabel?: TdFileInputLabelDirective;
 
   /**
    * defaultColor?: 'accent' | 'primary' | 'warn'
@@ -106,14 +110,18 @@ export class TdFileUploadComponent implements ControlValueAccessor {
    * Event emitted when a file is selected.
    * Emits a [File | FileList] object.
    */
-  @Output() selectFile: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+  @Output() selectFile: EventEmitter<File | FileList> = new EventEmitter<
+    File | FileList
+  >();
 
   /**
    * upload?: function
    * Event emitted when upload button is clicked.
    * Emits a [File | FileList] object.
    */
-  @Output() upload: EventEmitter<File | FileList | unknown> = new EventEmitter<File | FileList | unknown>();
+  @Output() upload: EventEmitter<File | FileList | unknown> = new EventEmitter<
+    File | FileList | unknown
+  >();
 
   /**
    * cancel?: function

@@ -15,7 +15,9 @@ describe('TdTimeDifferencePipe', () => {
     expect(pipe.transform('')).toEqual('Invalid Date');
     expect(pipe.transform('', '')).toEqual('Invalid Date');
     expect(pipe.transform({}, {})).toEqual('Invalid Date');
-    expect(pipe.transform('this is not a valid date', 'not a valid date either')).toEqual('Invalid Date');
+    expect(
+      pipe.transform('this is not a valid date', 'not a valid date either')
+    ).toEqual('Invalid Date');
   });
 
   it('should return a time ago string', () => {
@@ -32,10 +34,16 @@ describe('TdTimeDifferencePipe', () => {
     // 1 hour
     expect(pipe.transform(start - 1000 * 60 * 60, end)).toEqual('01:00:00');
     // < 1 day
-    expect(pipe.transform(start - 1000 * 60 * 60 * 13, end)).toEqual('13:00:00');
+    expect(pipe.transform(start - 1000 * 60 * 60 * 13, end)).toEqual(
+      '13:00:00'
+    );
     // 1 day
-    expect(pipe.transform(start - 1000 * 60 * 60 * 24, end)).toEqual('1 day - 00:00:00');
+    expect(pipe.transform(start - 1000 * 60 * 60 * 24, end)).toEqual(
+      '1 day - 00:00:00'
+    );
     // < 1 month
-    expect(pipe.transform(start - 1000 * 60 * 60 * 24 * 17, end)).toEqual('17 days - 00:00:00');
+    expect(pipe.transform(start - 1000 * 60 * 60 * 24 * 17, end)).toEqual(
+      '17 days - 00:00:00'
+    );
   });
 });

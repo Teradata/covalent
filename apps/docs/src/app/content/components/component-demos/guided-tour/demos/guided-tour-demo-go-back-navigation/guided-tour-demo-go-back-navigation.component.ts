@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CovalentGuidedTourService, IGuidedTour, ITourEvent } from '@covalent/guided-tour';
+import {
+  CovalentGuidedTourService,
+  IGuidedTour,
+  ITourEvent,
+} from '@covalent/guided-tour';
 import { Router } from '@angular/router';
 @Component({
   selector: 'guided-tour-demo-go-back-navigation',
@@ -60,7 +64,10 @@ export class GuidedTourDemoGoBackNavigationComponent implements OnInit {
         },
       ],
     };
-    this._guidedTourService.registerTour('goBackNavigationTour', goBackNavigationTour);
+    this._guidedTourService.registerTour(
+      'goBackNavigationTour',
+      goBackNavigationTour
+    );
   }
 
   startTour(): void {

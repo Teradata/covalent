@@ -2,16 +2,12 @@ import { Component } from '@angular/core';
 import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 
 @Component({
-  template: `
-    <p [style.padding.em]="1">Global footer</p>
-  `,
+  template: ` <p [style.padding.em]="1">Global footer</p> `,
 })
 export class MarkdownNavigatorDemoFooterGlobalExampleComponent {}
 
 @Component({
-  template: `
-    <p [style.padding.em]="1">Item footer</p>
-  `,
+  template: ` <p [style.padding.em]="1">Item footer</p> `,
 })
 export class MarkdownNavigatorDemoFooterItemExampleComponent {}
 
@@ -32,5 +28,6 @@ export class MarkdownNavigatorDemoFooterComponent {
       markdownString: `Falls back to footer set at the top level`,
     },
   ];
-  footer: MarkdownNavigatorDemoFooterGlobalExampleComponent = MarkdownNavigatorDemoFooterGlobalExampleComponent;
+  footer: MarkdownNavigatorDemoFooterGlobalExampleComponent =
+    MarkdownNavigatorDemoFooterGlobalExampleComponent;
 }

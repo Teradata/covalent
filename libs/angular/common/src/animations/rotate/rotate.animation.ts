@@ -38,18 +38,23 @@ export const tdRotateAnimation: AnimationTriggerMetadata = trigger('tdRotate', [
     style({
       transform: 'rotate({{ degressStart }}deg)',
     }),
-    { params: { degressStart: 0 } },
+    { params: { degressStart: 0 } }
   ),
   state(
     '1',
     style({
       transform: 'rotate({{ degreesEnd }}deg)',
     }),
-    { params: { degreesEnd: 180 } },
+    { params: { degreesEnd: 180 } }
   ),
   transition(
     '0 <=> 1',
-    [group([query('@*', animateChild(), { optional: true }), animate('{{ duration }}ms {{ delay }}ms {{ ease }}')])],
-    { params: { duration: 250, delay: '0', ease: 'ease-in' } },
+    [
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate('{{ duration }}ms {{ delay }}ms {{ ease }}'),
+      ]),
+    ],
+    { params: { duration: 250, delay: '0', ease: 'ease-in' } }
   ),
 ]);

@@ -3,7 +3,14 @@
  * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
  */
 
-import { Component, ElementRef, Inject, Renderer2, Output, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Inject,
+  Renderer2,
+  Output,
+  OnInit,
+} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { Dir } from '@angular/cdk/bidi';
@@ -30,17 +37,23 @@ export class ToolbarComponent implements OnInit {
     private _renderer: Renderer2,
     private _githubService: GitHubService,
     private _dir: Dir,
-    @Inject(DOCUMENT) private _document: any,
+    @Inject(DOCUMENT) private _document: any
   ) {
     this._dir.dir = this.dir;
   }
 
   async ngOnInit(): Promise<void> {
-    this.versions = await this._githubService.getVersionDirectories().toPromise();
+    this.versions = await this._githubService
+      .getVersionDirectories()
+      .toPromise();
   }
 
   changeDir(dir: 'ltr' | 'rtl'): void {
-    this._renderer.setAttribute(this._document.querySelector('html'), 'dir', dir);
+    this._renderer.setAttribute(
+      this._document.querySelector('html'),
+      'dir',
+      dir
+    );
     this._dir.dir = dir;
     setDirection(dir);
   }

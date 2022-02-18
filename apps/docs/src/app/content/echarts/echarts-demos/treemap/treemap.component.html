@@ -1,7 +1,12 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">Chart Theme:</div>
+  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+    Chart Theme:
+  </div>
   <mat-form-field floatLabel="never">
-    <mat-select [(value)]="selectedTheme" (valueChange)="selectChartTheme($event)">
+    <mat-select
+      [(value)]="selectedTheme"
+      (valueChange)="selectChartTheme($event)"
+    >
       <mat-option *ngFor="let theme of themes" [value]="theme">
         {{ theme }}
       </mat-option>
@@ -188,7 +193,10 @@
     [levels]="[
       { itemStyle: { normal: { borderWidth: 0, gapWidth: 5 } } },
       { itemStyle: { normal: { gapWidth: 1 } } },
-      { colorSaturation: [0.35, 0.5], itemStyle: { normal: { gapWidth: 1, borderColorSaturation: 0.6 } } }
+      {
+        colorSaturation: [0.35, 0.5],
+        itemStyle: { normal: { gapWidth: 1, borderColorSaturation: 0.6 } }
+      }
     ]"
   ></td-chart-series>
 </td-chart>

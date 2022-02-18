@@ -11,13 +11,22 @@
 </div>
 <p>Editor Output:</p>
 <div layout="row" layout-align="start center">
-  <td-highlight class="editor" flex [content]="editorVal" [codeLang]="editorLanguage"></td-highlight>
+  <td-highlight
+    class="editor"
+    flex
+    [content]="editorVal"
+    [codeLang]="editorLanguage"
+  ></td-highlight>
 </div>
 
 <div layout="row" layout-align="start center" class="pad-xs pad-bottom-none">
   <span flex="none" hide-xs class="push-right mat-body-1">Editor Language</span>
   <mat-form-field floatLabel="never">
-    <mat-select [(ngModel)]="editorLanguage" (ngModelChange)="changeLanguage()" placeholder="Editor Language">
+    <mat-select
+      [(ngModel)]="editorLanguage"
+      (ngModelChange)="changeLanguage()"
+      placeholder="Editor Language"
+    >
       <mat-option value="html">HTML</mat-option>
       <mat-option value="javascript">JavaScript</mat-option>
       <mat-option value="typescript">TypeScript</mat-option>

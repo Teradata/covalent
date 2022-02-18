@@ -4,7 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
+import {
+  TranslateModule,
+  TranslateService,
+  TranslateLoader,
+} from '@ngx-translate/core';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
@@ -33,8 +37,15 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 import { SidenavContentModule } from './components/shared/sidenav-content/sidenav-content.module';
 
-import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService } from './services';
-import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
+import {
+  GitHubService,
+  InternalDocsService,
+  SelectivePreloadingStrategyService,
+} from './services';
+import {
+  getSelectedLanguage,
+  createTranslateLoader,
+} from './utilities/translate';
 import { ContentContainerModule } from './components/content-container/content-container.module';
 import { HomeComponent } from './components/home/home.component';
 import { ToolbarModule } from './components/toolbar/toolbar.module';

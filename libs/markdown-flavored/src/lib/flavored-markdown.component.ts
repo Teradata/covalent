@@ -29,10 +29,7 @@ import {
   TdFlavoredListComponent,
   IFlavoredListItem,
 } from './cfm-list/cfm-list.component';
-import {
-  TdHighlightComponent,
-  ICopyCodeTooltips,
-} from '@covalent/highlight';
+import { TdHighlightComponent, ICopyCodeTooltips } from '@covalent/highlight';
 
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 

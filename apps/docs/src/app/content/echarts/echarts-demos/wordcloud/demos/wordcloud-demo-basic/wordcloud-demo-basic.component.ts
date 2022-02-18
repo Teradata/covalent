@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
 import { ITdWordCloudData } from '@covalent/echarts/wordcloud';
 
@@ -61,7 +66,9 @@ export class WordcloudDemoBasicComponent implements OnInit {
     'Techno',
   ];
 
-  componentExampleRandomWords: ITdWordCloudData[] = this.generateRandomWords(this.words2);
+  componentExampleRandomWords: ITdWordCloudData[] = this.generateRandomWords(
+    this.words2
+  );
 
   // Chart config
   config: any = {
@@ -78,7 +85,10 @@ export class WordcloudDemoBasicComponent implements OnInit {
     ],
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(
+    private _cdr: ChangeDetectorRef,
+    public themeSelector: ChartThemeSelectorService
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;
@@ -88,14 +98,18 @@ export class WordcloudDemoBasicComponent implements OnInit {
   randomColor(): string {
     return (
       'rgb(' +
-      [Math.round(Math.random() * 160), Math.round(Math.random() * 160), Math.round(Math.random() * 160)].join(',') +
+      [
+        Math.round(Math.random() * 160),
+        Math.round(Math.random() * 160),
+        Math.round(Math.random() * 160),
+      ].join(',') +
       ')'
     );
   }
 
   generateRandomWords(words: string[]): ITdWordCloudData[] {
     const wordList = [];
-    for (let i=0; i<30; i++) {
+    for (let i = 0; i < 30; i++) {
       wordList.push({
         name: words[Math.floor(Math.random() * words.length)],
         value: Math.floor(Math.random() * 100),
@@ -104,7 +118,7 @@ export class WordcloudDemoBasicComponent implements OnInit {
             fontFamily: 'sans-serif',
             fontWeight: 'bold',
           },
-          color: this.randomColor()
+          color: this.randomColor(),
         },
       });
     }

@@ -4,7 +4,9 @@ export const DIRECTION_STORAGE_KEY = 'app-direction';
  * Utility method to get selected direction from sessionStorage
  */
 export function getDirection(): 'ltr' | 'rtl' {
-  const storedDirection: 'ltr' | 'rtl' = <any>sessionStorage.getItem(DIRECTION_STORAGE_KEY);
+  const storedDirection: 'ltr' | 'rtl' = <any>(
+    sessionStorage.getItem(DIRECTION_STORAGE_KEY)
+  );
   // Check if the direction was stored
   if (storedDirection) {
     return storedDirection;

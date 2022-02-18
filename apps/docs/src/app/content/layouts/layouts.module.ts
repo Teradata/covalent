@@ -24,7 +24,13 @@ import { CovalentCommonModule } from '@covalent/core/common';
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
-  declarations: [LayoutsComponent, NavViewComponent, NavListComponent, CardOverComponent, ManageListComponent],
+  declarations: [
+    LayoutsComponent,
+    NavViewComponent,
+    NavListComponent,
+    CardOverComponent,
+    ManageListComponent,
+  ],
   imports: [
     /** Angular Modules */
     CommonModule,

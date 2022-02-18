@@ -5,7 +5,7 @@
   [disabled]="disabled"
   [accept]="accept"
   [color]="defaultColor"
-  (selectFile)="handleSelect"
+  (selectFile)="(handleSelect)"
 >
   <ng-template [cdkPortalOutlet]="inputLabel" [ngIf]="true"></ng-template>
 </td-file-input>
@@ -23,7 +23,13 @@
   >
     <ng-content></ng-content>
   </button>
-  <button mat-icon-button type="button" class="td-file-upload-cancel" [color]="cancelColor" (click)="_cancel()">
+  <button
+    mat-icon-button
+    type="button"
+    class="td-file-upload-cancel"
+    [color]="cancelColor"
+    (click)="_cancel()"
+  >
     <mat-icon>cancel</mat-icon>
   </button>
 </div>

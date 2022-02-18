@@ -12,7 +12,11 @@ const routes: Routes = setComponentRoutes({
 });
 
 @NgModule({
-  imports: [DynamicMenuHeroSharedModule, CommonModule, RouterModule.forChild(routes)],
+  imports: [
+    DynamicMenuHeroSharedModule,
+    CommonModule,
+    RouterModule.forChild(routes),
+  ],
   exports: [],
   providers: [],
 })

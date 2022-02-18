@@ -11,7 +11,13 @@ import { TdSearchInputComponent } from './search-input/search-input.component';
 import { TdSearchBoxComponent } from './search-box/search-box.component';
 
 @NgModule({
-  imports: [FormsModule, CommonModule, MatInputModule, MatIconModule, MatButtonModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+  ],
   declarations: [TdSearchInputComponent, TdSearchBoxComponent],
   exports: [TdSearchInputComponent, TdSearchBoxComponent],
 })

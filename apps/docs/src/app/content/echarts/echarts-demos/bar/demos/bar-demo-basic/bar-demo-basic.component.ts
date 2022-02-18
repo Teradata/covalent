@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
@@ -34,7 +39,14 @@ export class BarDemoBasicComponent implements OnInit {
     },
     xAxis: [
       {
-        data: ['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports'],
+        data: [
+          'Electronics',
+          'Toys',
+          'Grocery',
+          'Appliances',
+          'Automotive',
+          'Sports',
+        ],
       },
       {
         show: true,
@@ -87,7 +99,10 @@ export class BarDemoBasicComponent implements OnInit {
     },
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(
+    private _cdr: ChangeDetectorRef,
+    public themeSelector: ChartThemeSelectorService
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

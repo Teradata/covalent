@@ -26,7 +26,9 @@ export class TdDigitsPipe implements PipeTransform {
     const i: number = Math.floor(Math.log(digits) / Math.log(k));
     const size: string = sizes[i];
     return (
-      this._decimalPipe.transform(parseFloat((digits / Math.pow(k, i)).toFixed(precision))) + (size ? ' ' + size : '')
+      this._decimalPipe.transform(
+        parseFloat((digits / Math.pow(k, i)).toFixed(precision))
+      ) + (size ? ' ' + size : '')
     );
   }
 }

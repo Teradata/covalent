@@ -34,7 +34,9 @@ export class ContentDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.paramMap.subscribe((params: ParamMap) => {
-      const componentMatch: any = this.componentArray.find((e: any) => e.id === params.get('id'));
+      const componentMatch: any = this.componentArray.find(
+        (e: any) => e.id === params.get('id')
+      );
       if (componentMatch) {
         this.component = componentMatch;
       } else {

@@ -50,22 +50,31 @@ export abstract class BaseLayoutToggleDirective
     }
   }
 
-  constructor(protected _layout: ILayoutTogglable, private _renderer: Renderer2, private _elementRef: ElementRef) {
+  constructor(
+    protected _layout: ILayoutTogglable,
+    private _renderer: Renderer2,
+    private _elementRef: ElementRef
+  ) {
     super();
     // if layout has not been provided
     // show warn message
     if (!this._layout) {
       this._noLayoutMessage();
     }
-    this._renderer.addClass(this._elementRef.nativeElement, 'td-layout-menu-button');
+    this._renderer.addClass(
+      this._elementRef.nativeElement,
+      'td-layout-menu-button'
+    );
   }
 
   ngAfterViewInit(): void {
     this._initialized = true;
     if (this._layout && this._layout.sidenav) {
-      this._toggleSubs = this._layout.sidenav._animationStarted.subscribe(() => {
-        this._toggleVisibility();
-      });
+      this._toggleSubs = this._layout.sidenav._animationStarted.subscribe(
+        () => {
+          this._toggleVisibility();
+        }
+      );
     }
     // execute toggleVisibility since the onOpenStart and onCloseStart
     // methods might not be executed always when the element is rendered
@@ -88,7 +97,7 @@ export abstract class BaseLayoutToggleDirective
     if (!this.disabled) {
       // if layout has been provided, try triggering the click on it
       // else show warn message
-      console.log(this._layout.opened)
+      console.log(this._layout.opened);
       if (this._layout && !this._layout.opened) {
         this.onClick();
       } else {
@@ -102,7 +111,11 @@ export abstract class BaseLayoutToggleDirective
   private _toggleVisibility(): void {
     if (this._layout) {
       if (this._layout.sidenav.opened && this._hideWhenOpened) {
-        this._renderer.setStyle(this._elementRef.nativeElement, 'display', 'none');
+        this._renderer.setStyle(
+          this._elementRef.nativeElement,
+          'display',
+          'none'
+        );
       } else {
         this._renderer.setStyle(this._elementRef.nativeElement, 'display', '');
       }
@@ -111,6 +124,8 @@ export abstract class BaseLayoutToggleDirective
 
   private _noLayoutMessage(): void {
     /* tslint:disable-next-line */
-    console.warn('Covalent: Parent layout not found for layout toggle directive');
+    console.warn(
+      'Covalent: Parent layout not found for layout toggle directive'
+    );
   }
 }

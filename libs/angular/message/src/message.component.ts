@@ -35,7 +35,8 @@ export class TdMessageComponent implements AfterViewInit {
   private _animating = false;
   private _initialized = false;
 
-  @ViewChild(TdMessageContainerDirective, { static: true }) _childElement?: TdMessageContainerDirective;
+  @ViewChild(TdMessageContainerDirective, { static: true })
+  _childElement?: TdMessageContainerDirective;
   @ViewChild(TemplateRef) _template!: TemplateRef<any>;
 
   /**
@@ -84,14 +85,29 @@ export class TdMessageComponent implements AfterViewInit {
    */
   @Input()
   set color(color: string) {
-    this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
-    this._renderer.removeClass(this._elementRef.nativeElement, 'bgc-' + this._color + '-100');
-    this._renderer.removeClass(this._elementRef.nativeElement, 'tc-' + this._color + '-700');
+    this._renderer.removeClass(
+      this._elementRef.nativeElement,
+      'mat-' + this._color
+    );
+    this._renderer.removeClass(
+      this._elementRef.nativeElement,
+      'bgc-' + this._color + '-100'
+    );
+    this._renderer.removeClass(
+      this._elementRef.nativeElement,
+      'tc-' + this._color + '-700'
+    );
     if (color === 'primary' || color === 'accent' || color === 'warn') {
       this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + color);
     } else {
-      this._renderer.addClass(this._elementRef.nativeElement, 'bgc-' + color + '-100');
-      this._renderer.addClass(this._elementRef.nativeElement, 'tc-' + color + '-700');
+      this._renderer.addClass(
+        this._elementRef.nativeElement,
+        'bgc-' + color + '-100'
+      );
+      this._renderer.addClass(
+        this._elementRef.nativeElement,
+        'tc-' + color + '-700'
+      );
     }
     this._color = color;
     this._changeDetectorRef.markForCheck();
@@ -125,7 +141,7 @@ export class TdMessageComponent implements AfterViewInit {
   constructor(
     private _renderer: Renderer2,
     private _changeDetectorRef: ChangeDetectorRef,
-    private _elementRef: ElementRef,
+    private _elementRef: ElementRef
   ) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-message');
   }

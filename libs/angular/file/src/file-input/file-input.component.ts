@@ -21,7 +21,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   selector: '[tdFileInputLabel]ng-template',
 })
 export class TdFileInputLabelDirective extends TemplatePortalDirective {
-  constructor(templateRef: TemplateRef<unknown>, viewContainerRef: ViewContainerRef) {
+  constructor(
+    templateRef: TemplateRef<unknown>,
+    viewContainerRef: ViewContainerRef
+  ) {
     super(templateRef, viewContainerRef);
   }
 }
@@ -78,7 +81,6 @@ export class TdFileInputComponent implements ControlValueAccessor {
    */
   @Input() accept?: string;
 
-
   @Input()
   set disabled(disabled: boolean) {
     this._disabled = disabled;
@@ -95,15 +97,19 @@ export class TdFileInputComponent implements ControlValueAccessor {
    * Event emitted a file is selected
    * Emits a [File | FileList] object.
    */
-  @Output() selectFile: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+  @Output() selectFile: EventEmitter<File | FileList> = new EventEmitter<
+    File | FileList
+  >();
 
-  constructor(private _renderer: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(
+    private _renderer: Renderer2,
+    private _changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   writeValue(value: unknown): void {
     this.value = value;
     this._changeDetectorRef.markForCheck();
     this._renderer.setProperty(this.inputElement, 'value', '');
-
   }
 
   registerOnChange(newValue: unknown): void {

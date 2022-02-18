@@ -9,25 +9,25 @@ But you can also set a `color` from our lib and it can be applied in the compone
 
 #### Inputs
 
-+ label?: string
-  + Sets the label of the message.
-+ sublabel?: string
-  + Sets the sublabel of the message.
-+ icon?: string
-  + The icon to be displayed before the title. Defaults to `info_outline` icon.
-+ color?: 'primary' | 'accent' | 'warn'
-  + Sets the color of the message. Can also use any material color: `purple`, `light-blue`, etc.
-+ opened?: boolean
-  + Shows or hides the message depending on its value. Defaults to 'true'.
+- label?: string
+  - Sets the label of the message.
+- sublabel?: string
+  - Sets the sublabel of the message.
+- icon?: string
+  - The icon to be displayed before the title. Defaults to `info_outline` icon.
+- color?: 'primary' | 'accent' | 'warn'
+  - Sets the color of the message. Can also use any material color: `purple`, `light-blue`, etc.
+- opened?: boolean
+  - Shows or hides the message depending on its value. Defaults to 'true'.
 
 #### Methods
 
-+ open: function 
-  + Renders the message on screen.
-+ close: function
-  +  Removes the message content from screen.
-+ toggle: function
-  +  Toggles between open and close depending on state.
+- open: function
+  - Renders the message on screen.
+- close: function
+  - Removes the message content from screen.
+- toggle: function
+  - Toggles between open and close depending on state.
 
 ## Setup
 
@@ -50,8 +50,16 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-<td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
-  <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
+<td-message
+  #messageDemo
+  color="primary"
+  class="pad-sm"
+  label="Hide me!"
+  sublabel="You can toggle my visibility & add a class!"
+>
+  <button td-message-actions mat-icon-button (click)="messageDemo.close()">
+    <mat-icon>cancel</mat-icon>
+  </button>
 </td-message>
 <button mat-button color="accent" (click)="messageDemo.toggle()">
   Toggle Visibility

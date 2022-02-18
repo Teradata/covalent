@@ -10,7 +10,7 @@
 export function convertObjectsToCSV(
   objects: any[],
   keySeparator: string = ',',
-  lineSeparator: string = '\r\n',
+  lineSeparator: string = '\r\n'
 ): string {
   if (!objects) {
     return '';
@@ -59,7 +59,7 @@ export function convertCSVToJSON(
   csv: string,
   keySeparator: string = ',',
   lineSeparator: string = '\r\n',
-  indent: number = 2,
+  indent: number = 2
 ): string {
   if (!csv) {
     return '';

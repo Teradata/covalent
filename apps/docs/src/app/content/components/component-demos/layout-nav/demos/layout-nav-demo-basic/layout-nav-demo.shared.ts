@@ -8,7 +8,13 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
 
 @NgModule({
   declarations: [LayoutNavDemoBasicComponent],
-  imports: [CommonModule, CovalentLayoutModule, MatListModule, MatIconModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    CovalentLayoutModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+  ],
   exports: [LayoutNavDemoBasicComponent],
 })
 export class LayoutNavDemoSharedModule {}

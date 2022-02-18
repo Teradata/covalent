@@ -48,15 +48,15 @@ export interface ITdDynamicMenuLinkClickEvent {
 
 #### Inputs
 
-+ trigger: IMenuTrigger
-  + Definition for trigger button.
-+ items: IMenuItem[]
-  + One or more items to be displayed in menu.
+- trigger: IMenuTrigger
+  - Definition for trigger button.
+- items: IMenuItem[]
+  - One or more items to be displayed in menu.
 
 #### Output
 
-+ itemClicked: ITdDynamicMenuLinkClickEvent
-  + Emitted when an action link is pressed.
+- itemClicked: ITdDynamicMenuLinkClickEvent
+  - Emitted when an action link is pressed.
 
 ## Setup
 

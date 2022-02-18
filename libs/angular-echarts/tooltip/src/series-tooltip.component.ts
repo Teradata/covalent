@@ -11,10 +11,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 
-import {
-  assignDefined,
-  TdSeriesDirective,
-} from '@covalent/echarts/base';
+import { assignDefined, TdSeriesDirective } from '@covalent/echarts/base';
 
 import {
   TdChartTooltipFormatterDirective,

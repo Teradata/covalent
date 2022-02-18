@@ -13,7 +13,8 @@ import {
   templateUrl: './dynamic-forms-demo-custom-validation.component.html',
 })
 export class DynamicFormsDemoCustomValidationComponent {
-  @ViewChild('manualValidateForm', { static: true }) manualValidateForm!: TdDynamicFormsComponent;
+  @ViewChild('manualValidateForm', { static: true })
+  manualValidateForm!: TdDynamicFormsComponent;
 
   customValidationElements: ITdDynamicElementConfig[] = [
     {
@@ -23,7 +24,9 @@ export class DynamicFormsDemoCustomValidationComponent {
       validators: [
         {
           validator: (control: AbstractControl) => {
-            const isValid: boolean = (!control.value && control.value !== 0) || control.value % 2 === 0;
+            const isValid: boolean =
+              (!control.value && control.value !== 0) ||
+              control.value % 2 === 0;
             return !isValid ? { even: true } : null;
           },
         },
@@ -46,16 +49,20 @@ export class DynamicFormsDemoCustomValidationComponent {
         },
         {
           validator: (control: AbstractControl) => {
-            const isValid: boolean = control.value && control.value.length >= 8 && control.value.length <= 20;
+            const isValid: boolean =
+              control.value &&
+              control.value.length >= 8 &&
+              control.value.length <= 20;
             return !isValid ? { length: true } : null;
           },
         },
         {
           validator: (control: AbstractControl) => {
             const validCharacters: string[] = ['!', '@', '#', '$', '%'];
-            const isValid: boolean = new RegExp('[' + validCharacters.join('').toString() + ']', 'g').test(
-              control.value,
-            );
+            const isValid: boolean = new RegExp(
+              '[' + validCharacters.join('').toString() + ']',
+              'g'
+            ).test(control.value);
             return !isValid ? { oneSpecialChar: true } : null;
           },
         },

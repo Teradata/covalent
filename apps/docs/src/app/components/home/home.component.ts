@@ -36,7 +36,8 @@ export class HomeComponent implements AfterViewInit {
       title: 'Charts',
     },
     {
-      description: 'Reduce boilerplate with custom pipes, css, animations and more',
+      description:
+        'Reduce boilerplate with custom pipes, css, animations and more',
       icon: 'build',
       route: 'utilities',
       title: 'Utilities',
