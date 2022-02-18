@@ -1,0 +1,117 @@
+{
+  "projectType": "application",
+  "root": "apps/docs",
+  "sourceRoot": "apps/docs/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/docs",
+        "index": "apps/docs/src/index.html",
+        "main": "apps/docs/src/main.ts",
+        "polyfills": "apps/docs/src/polyfills.ts",
+        "tsConfig": "apps/docs/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/docs/src/favicon.ico",
+          "apps/docs/src/assets",
+          {
+            "glob": "**/demos/**/*",
+            "input": "apps/docs/src/app/content/components/component-demos",
+            "output": "/assets/demos"
+          },
+          {
+            "glob": "**/demos/**/*",
+            "input": "apps/docs/src/app/content/echarts/echarts-demos",
+            "output": "/assets/demos"
+          },
+          {
+            "glob": "**/*",
+            "input": "docs",
+            "output": "/docs"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs",
+            "output": "/libs"
+          }
+        ],
+        "styles": [
+          "apps/docs/src/styles.scss"
+        ],
+        "scripts": [
+          "node_modules/echarts/dist/echarts.js",
+          "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js",
+          "node_modules/shepherd.js/dist/js/shepherd.min.js"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "4mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "15kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/docs/src/environments/environment.ts",
+              "with": "apps/docs/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "docs:build:production"
+        },
+        "development": {
+          "browserTarget": "docs:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "docs:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/docs/src/**/*.ts", "apps/docs/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/docs"],
+      "options": {
+        "jestConfig": "apps/docs/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

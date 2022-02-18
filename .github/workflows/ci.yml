@@ -2,7 +2,7 @@ name: Covalent CI
 
 on:
   pull_request:
-    branches: [master, develop]
+    branches: [main, develop]
 
 jobs:
   lint:
@@ -15,9 +15,10 @@ jobs:
         with:
           node-version: 12
           cache: npm
+      - run: echo "${CI_COMMIT_TITLE}\n\n${CI_COMMIT_DESCRIPTION}" | npx commitlint
       - run: npm ci
-      - run: npm run prettier:check
-      - run: npm run lint
+      - run: npx nx prettier:check
+      - run: npx nx affected --target=lint
 
   test:
     runs-on: ubuntu-latest
@@ -30,7 +31,7 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: npm test
+      - run: npx nx affected --target=test
 
   build:
     runs-on: ubuntu-latest
@@ -43,18 +44,4 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: npm run build:lib
-      - run: npm run build:docs
-
-  compliance:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12
-        uses: actions/setup-node@v2
-        with:
-          node-version: 12
-          cache: npm
-      - run: npm ci
-      - run: npm run a11y
+      - run: npx nx affected --target=build

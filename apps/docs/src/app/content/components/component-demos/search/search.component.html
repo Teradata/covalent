@@ -1,0 +1,22 @@
+<div class="push-bottom-lg">
+  Search Input
+  <p class="mat-caption tc-grey-700 push-none">Appearance: legacy</p>
+  <td-search-input
+    appearance="legacy"
+    placeholder="Search here"
+    [showUnderline]="true"
+    (search)="searchInputTerm = $event"
+    (clear)="searchInputTerm = ''"
+  ></td-search-input>
+</div>
+
+<div class="push-bottom">
+  Search Box
+  <p class="mat-caption tc-grey-700 push-none">Search input with animations</p>
+  <td-search-box
+    placeholder="Search here"
+    [showUnderline]="true"
+    [alwaysVisible]="true"
+    (clear)="searchInputTerm = ''"
+  ></td-search-box>
+</div>
