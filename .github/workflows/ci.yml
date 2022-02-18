@@ -16,9 +16,9 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: echo "${{ github.event.head_commit.message }}" | npx commitlint
+      - run: echo "${{ github.event.commits[0].message }}" | npx commitlint
       - run: npx nx prettier:check
-      - run: npx nx affected --target=lint
+      - run: npx nx run-many --target=lint
 
   test:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: npx nx affected --target=test --base=origin/main --head=HEAD --with-deps
+      - run: npx nx run-many --target=test
 
   build:
     runs-on: ubuntu-latest
@@ -44,4 +44,4 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: npx nx affected --target=build --base=origin/main --head=HEAD --with-deps
+      - run: npx nx run-many --target=build
