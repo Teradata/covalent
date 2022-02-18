@@ -16,7 +16,6 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: echo "${{ github.event.commits[0].message }}" | npx commitlint
       - run: npx nx prettier:check
       - run: npx nx run-many --target=lint
 
