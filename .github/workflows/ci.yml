@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: 12
           cache: npm
-      - run: echo "${CI_COMMIT_TITLE}\n\n${CI_COMMIT_DESCRIPTION}" | npx commitlint
       - run: npm ci
+      - run: echo "${CI_COMMIT_TITLE}\n\n${CI_COMMIT_DESCRIPTION}" | npx commitlint
       - run: npx nx prettier:check
       - run: npx nx affected --target=lint
 
