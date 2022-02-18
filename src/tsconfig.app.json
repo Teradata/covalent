@@ -1,9 +1,0 @@
-{
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "../out-tsc/app",
-    "types": ["echarts"]
-  },
-  "files": ["./main.ts", "./polyfills.ts"]
-}

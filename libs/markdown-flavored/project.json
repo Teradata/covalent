@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/markdown-flavored",
+  "sourceRoot": "libs/markdown-flavored/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/markdown-flavored"],
+      "options": {
+        "project": "libs/markdown-flavored/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/markdown-flavored/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/markdown-flavored/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/markdown-flavored"],
+      "options": {
+        "jestConfig": "libs/markdown-flavored/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/markdown-flavored/src/**/*.ts",
+          "libs/markdown-flavored/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

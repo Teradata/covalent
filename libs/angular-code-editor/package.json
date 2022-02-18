@@ -1,0 +1,23 @@
+{
+  "name": "@covalent/code-editor",
+  "version": "0.0.1",
+  "description": "Teradata UI Platform Code Editor Module",
+  "keywords": [
+    "angular",
+    "covalent",
+    "monaco",
+    "monaco-editor",
+    "code",
+    "editor",
+    "electron",
+    "reusable"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0",
+    "monaco-editor": "^0.32.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

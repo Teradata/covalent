@@ -1,0 +1,21 @@
+{
+  "name": "@covalent/echarts",
+  "version": "0.0.1",
+  "description": "Teradata UI Platform Echarts Module",
+  "keywords": [
+    "angular",
+    "echarts",
+    "components",
+    "covalent",
+    "reusable"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0",
+    "echarts": "^5.3.0",
+    "echarts-wordcloud": "^2.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

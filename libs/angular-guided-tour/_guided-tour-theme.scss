@@ -1,0 +1,78 @@
+@mixin covalent-guided-tour-theme($theme, $config: null) {
+  @include td-guided-tour-typography($config);
+  @include td-guided-tour-theme($theme);
+}
+
+@mixin td-guided-tour-typography($config) {
+  @if $config == null {
+    $config: td-typography-config();
+  }
+
+  .shepherd-title {
+    @include mat-typography-level-to-styles($config, subheading-2);
+  }
+
+  .shepherd-text {
+    @include mat-typography-level-to-styles($config, body-1);
+  }
+
+  .shepherd-progress {
+    @include mat-typography-level-to-styles($config, body-1);
+  }
+}
+
+@mixin td-guided-tour-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .shepherd-highlight {
+    background: mat-color($background, focused-button);
+  }
+
+  .shepherd-button,
+  .shepherd-cancel-icon,
+  .shepherd-has-title .shepherd-content .shepherd-cancel-icon,
+  .shepherd-title,
+  .shepherd-text,
+  .shepherd-content,
+  .shepherd-cancel-icon span::after {
+    color: mat-color($accent, darker-contrast);
+  }
+
+  .shepherd-button:not(:disabled),
+  .shepherd-button.shepherd-button-secondary:not(:disabled),
+  .shepherd-cancel-icon {
+    &:hover {
+      background: mat-color($background, focused-button);
+    }
+  }
+
+  .shepherd-has-title .shepherd-content .shepherd-header,
+  .shepherd-element,
+  .shepherd-arrow::before,
+  .shepherd-arrow::after,
+  .shepherd-content,
+  .shepherd-element.shepherd-has-title[data-popper-placement^='bottom']
+    > .shepherd-arrow::before {
+    background: mat-color($accent, darker);
+  }
+
+  // Bringing in mat-icon button styles
+  // Class can't be passed so we must include mat button styles here
+  .shepherd-cancel-icon {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    width: $mat-icon-button-size;
+    height: $mat-icon-button-size;
+    flex-shrink: 0;
+    line-height: $mat-icon-button-size;
+    border-radius: $mat-icon-button-border-radius;
+  }
+
+  .shepherd-void-button {
+    display: none;
+  }
+}
