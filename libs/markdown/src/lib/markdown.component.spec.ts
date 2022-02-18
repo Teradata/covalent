@@ -453,51 +453,15 @@ describe('Component: Markdown', () => {
 
         const ANCHOR = '#anchor';
         const CURRENT_MD_FILE = 'GETTING_STARTED.md';
-        const SIBLING_MD_FILE = 'CONTRIBUTING.md';
         const ROOT_MD_FILE = 'README.md';
         const NON_RAW_LINK =
           'https://github.com/Teradata/covalent/blob/develop/';
-        const RAW_PATH = 'Teradata/covalent/develop';
         const RAW_LINK =
           'https://raw.githubusercontent.com/Teradata/covalent/develop/';
         const EXTERNAL_URL = 'https://angular.io/';
         const SUB_DIRECTORY = 'docs/';
         const links: string[][] = [
           [`${ANCHOR}`, `${ANCHOR}`],
-
-          [
-            `./${SIBLING_MD_FILE}`,
-            `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`,
-          ],
-          [
-            `${SIBLING_MD_FILE}`,
-            `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`,
-          ],
-          [`../${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
-          [
-            `./${SIBLING_MD_FILE}${ANCHOR}`,
-            `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}${ANCHOR}`,
-          ],
-
-          [
-            `./${CURRENT_MD_FILE}`,
-            `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`,
-          ],
-          [
-            `${CURRENT_MD_FILE}`,
-            `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`,
-          ],
-          [
-            `./${CURRENT_MD_FILE}${ANCHOR}`,
-            `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}${ANCHOR}`,
-          ],
-
-          [`/${RAW_PATH}/${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
-          [
-            `/${RAW_PATH}/${ROOT_MD_FILE}${ANCHOR}`,
-            `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`,
-          ],
-
           [`${NON_RAW_LINK}${ROOT_MD_FILE}`, `${NON_RAW_LINK}${ROOT_MD_FILE}`],
           [
             `${NON_RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`,

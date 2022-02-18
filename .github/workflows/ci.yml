@@ -43,4 +43,4 @@ jobs:
           node-version: 12
           cache: npm
       - run: npm ci
-      - run: npx nx run-many --target=build--all
+      - run: npx nx run-many --target=build --all
