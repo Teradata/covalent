@@ -12,7 +12,7 @@
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
-    "prepack": "husky install",
+    "prepare": "husky install",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
