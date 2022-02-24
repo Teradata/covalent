@@ -20,10 +20,10 @@
 
 #### General Tests for Every PR
 
-- [ ] `npm run start:prod` still works.
-- [ ] `npm run tslint` passes.
+- [ ] `npm run start` still works.
+- [ ] `npm run lint` passes.
 - [ ] `npm run stylelint` passes.
 - [ ] `npm test` passes and code coverage is not lower.
-- [ ] `npm run build:lib` still works.
+- [ ] `npm run build` still works.
 
 ##### Screenshots or link to StackBlitz/Plunker
