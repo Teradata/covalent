@@ -1,3 +1,12 @@
+# [4.0.0-beta.2](https://github.com/teradata/covalent/compare/v4.0.0-beta.1...v4.0.0-beta.2) (2022-02-25)
+
+
+### Performance Improvements
+
+* **markdown:** do not run change detection when the markdown is clicked ([b73d7ba](https://github.com/teradata/covalent/commit/b73d7ba90b3262cab0deebdd648372d98b967bf4))
+
+
+
 # [4.0.0-beta.1](https://github.com/teradata/covalent/compare/v4.0.0-alpha.0...v4.0.0-beta.1) (2022-02-03)
 
 

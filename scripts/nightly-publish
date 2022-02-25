@@ -41,7 +41,7 @@ if [ -n "$(git status --porcelain)" ]; then
   git add -A
   git commit -m "$commitMessage"
   git tag "$commitSha"
-  git push origin master --tags
+  git push origin main --tags
   echo "Finished publishing nightly build for ${package}"
 else
   echo "No changes to commit for ${package}";

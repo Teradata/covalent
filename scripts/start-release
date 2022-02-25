@@ -5,10 +5,10 @@ set -e
 
 echo "Started release v$version"
 
-echo "Making sure master is up to date"
-git checkout master
+echo "Making sure main is up to date"
+git checkout main
 
-git pull origin master
+git pull origin main
 
 echo "Checking out develop branch"
 git checkout develop

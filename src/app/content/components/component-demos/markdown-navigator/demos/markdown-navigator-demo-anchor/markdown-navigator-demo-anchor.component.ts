@@ -10,12 +10,12 @@ export class MarkdownNavigatorDemoAnchorComponent {
   items: IMarkdownNavigatorItem[] = [
     {
       title: 'Covalent Browser Support',
-      url: 'https://github.com/teradata/covalent/blob/master/README.md',
+      url: 'https://github.com/teradata/covalent/blob/main/README.md',
       anchor: 'browser-support',
     },
     {
       title: 'Angular Commit Message Format',
-      url: 'https://github.com/angular/angular/blob/master/CONTRIBUTING.md',
+      url: 'https://github.com/angular/angular/blob/main/CONTRIBUTING.md',
       anchor: 'commit-message-format',
     },
   ];
