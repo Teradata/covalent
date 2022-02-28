@@ -8,7 +8,7 @@
     "angular-guided-tour": "libs/angular-guided-tour",
     "angular-highlight": "libs/angular-highlight",
     "angular-text-editor": "libs/angular-text-editor",
-    "docs": "apps/docs",
+    "docs-app": "apps/docs-app",
     "docs-e2e": "apps/docs-e2e",
     "markdown": "libs/markdown",
     "markdown-flavored": "libs/markdown-flavored",

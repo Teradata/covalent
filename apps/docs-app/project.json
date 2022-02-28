@@ -1,30 +1,30 @@
 {
   "projectType": "application",
-  "root": "apps/docs",
-  "sourceRoot": "apps/docs/src",
+  "root": "apps/docs-app",
+  "sourceRoot": "apps/docs-app/src",
   "prefix": "covalent",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/docs",
-        "index": "apps/docs/src/index.html",
-        "main": "apps/docs/src/main.ts",
-        "polyfills": "apps/docs/src/polyfills.ts",
-        "tsConfig": "apps/docs/tsconfig.app.json",
+        "outputPath": "dist/apps/docs-app",
+        "index": "apps/docs-app/src/index.html",
+        "main": "apps/docs-app/src/main.ts",
+        "polyfills": "apps/docs-app/src/polyfills.ts",
+        "tsConfig": "apps/docs-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/docs/src/favicon.ico",
-          "apps/docs/src/assets",
+          "apps/docs-app/src/favicon.ico",
+          "apps/docs-app/src/assets",
           {
             "glob": "**/demos/**/*",
-            "input": "apps/docs/src/app/content/components/component-demos",
+            "input": "apps/docs-app/src/app/content/components/component-demos",
             "output": "/assets/demos"
           },
           {
             "glob": "**/demos/**/*",
-            "input": "apps/docs/src/app/content/echarts/echarts-demos",
+            "input": "apps/docs-app/src/app/content/echarts/echarts-demos",
             "output": "/assets/demos"
           },
           {
@@ -38,7 +38,7 @@
             "output": "/libs"
           }
         ],
-        "styles": ["apps/docs/src/styles.scss"],
+        "styles": ["apps/docs-app/src/styles.scss"],
         "scripts": [
           "node_modules/echarts/dist/echarts.js",
           "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js",
@@ -61,8 +61,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/docs/src/environments/environment.ts",
-              "with": "apps/docs/src/environments/environment.prod.ts"
+              "replace": "apps/docs-app/src/environments/environment.ts",
+              "with": "apps/docs-app/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -82,10 +82,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "docs:build:production"
+          "browserTarget": "docs-app:build:production"
         },
         "development": {
-          "browserTarget": "docs:build:development"
+          "browserTarget": "docs-app:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -93,20 +93,23 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "docs:build"
+        "browserTarget": "docs-app:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/docs/src/**/*.ts", "apps/docs/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/docs-app/src/**/*.ts",
+          "apps/docs-app/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/docs"],
+      "outputs": ["coverage/apps/docs-app"],
       "options": {
-        "jestConfig": "apps/docs/jest.config.js",
+        "jestConfig": "apps/docs-app/jest.config.js",
         "passWithNoTests": true
       }
     }
