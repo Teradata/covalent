@@ -5,9 +5,12 @@
   "prefix": "covalent",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-builders/custom-webpack:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "customWebpackConfig": {
+          "path": "./monaco-webpack.config.js"
+        },
         "outputPath": "dist/apps/docs-app",
         "index": "apps/docs-app/src/index.html",
         "main": "apps/docs-app/src/main.ts",
@@ -38,7 +41,10 @@
             "output": "/libs"
           }
         ],
-        "styles": ["apps/docs-app/src/styles.scss"],
+        "styles": [
+          "apps/docs-app/src/styles.scss",
+          "node_modules/monaco-editor/min/vs/editor/editor.main.css"
+        ],
         "scripts": [
           "node_modules/echarts/dist/echarts.js",
           "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js",
@@ -79,7 +85,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular-builders/custom-webpack:dev-server",
       "configurations": {
         "production": {
           "browserTarget": "docs-app:build:production"
