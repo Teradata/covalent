@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "4.1.1-beta.2",
+  "version": "4.1.1-beta.3",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
@@ -15,7 +15,7 @@
     "prepare": "husky install",
     "start": "nx serve",
     "build": "nx build",
-    "build:lib": "nx build:lib",
+    "build:lib": "npx nx run-many --target=build --all",
     "test": "nx test",
     "lint": "nx lint",
     "format:check": "nx format",
@@ -66,6 +66,9 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "13.8.0",
     "@nrwl/workspace": "13.8.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/echarts": "^4.9.13",
     "@types/jasmine": "~3.5.0",
     "@types/jest": "27.0.2",

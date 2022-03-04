@@ -1,6 +1,6 @@
 {
   "name": "@covalent/core",
-  "version": "4.1.1-beta.2",
+  "version": "4.1.1-beta.3",
   "exports": {
     ".": {
       "sass": "./theming/_all-theme.scss"

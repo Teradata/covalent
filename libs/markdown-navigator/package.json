@@ -1,6 +1,6 @@
 {
   "name": "@covalent/markdown-navigator",
-  "version": "4.1.1-beta.2",
+  "version": "4.1.1-beta.3",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
