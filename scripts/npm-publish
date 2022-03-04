@@ -4,6 +4,13 @@ tag=latest
 
 [[ $1 = 'next' ]] && tag=next || tag=latest
 
+if [ "$NPM_TOKEN" == "" ]; then
+  echo "NPM Token is not set. export the token using NPM_TOKEN"
+  exit 1;
+fi
+
+npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+
 for package in ./dist/libs/*
 do
   if [ -d ${package} ]

@@ -4,7 +4,7 @@
     ["@semantic-release/release-notes-generator"],
     ["@semantic-release/exec", {
       "prepareCmd":"./scripts/npm-version ${nextRelease.version}",
-      "publishCmd": "./scripts/npm-publish"
+      "publishCmd": "./scripts/npm-publish ${options.channel}"
     }],
     ["@semantic-release/npm"],
     ["@semantic-release/changelog",{
