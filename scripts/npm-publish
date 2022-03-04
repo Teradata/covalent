@@ -1,0 +1,20 @@
+#!/bin/bash
+scope=@covalent
+tag=latest
+
+[[ $1 = 'next' ]] && tag=next || tag=latest
+
+for package in ./dist/libs/*
+do
+  if [ -d ${package} ]
+  then
+    # ignore experimental package
+    if [[ !(${package} =~ "experimental") ]]
+    then
+      npm publish ${package} --access=public --tag=$tag --ignore-scripts
+    fi
+  fi
+done
+
+echo "Published successfully [scope: $scope]. Use 'npm install [package-name]' in the project you want to use it."
+exit 0
