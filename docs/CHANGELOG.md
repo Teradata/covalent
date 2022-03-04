@@ -1,3 +1,26 @@
+# [4.1.0](https://github.com/Teradata/covalent/compare/v4.0.0...v4.1.0) (2022-03-04)
+
+### Bug Fixes
+
+- **code-editor:** dispose the event listener when the component is destroyed ([3e3e10f](https://github.com/Teradata/covalent/commit/3e3e10f7241021baff30c197434fb44ad371121e))
+- **docs:** fix to docs app editor demo ([d2082c8](https://github.com/Teradata/covalent/commit/d2082c8cb63cbfc4b5cf63a6aaafa266209c264c))
+- **test:** fix markdown tests ([5672b4a](https://github.com/Teradata/covalent/commit/5672b4ae72211a76632465c4ef09478b5bd8922c))
+
+### Features
+
+- **angular:** updating ng13 upgrade ([c21b39d](https://github.com/Teradata/covalent/commit/c21b39dec4b0b7d9a8fb2d1093ba37382707a3bc))
+- **angular:** upgrade to ng 12 ([57582cf](https://github.com/Teradata/covalent/commit/57582cf9c2c13f1b082ca7e8937c13802c940cb5))
+- **angular:** upgrade to ng 13 ([425f389](https://github.com/Teradata/covalent/commit/425f3892813c0beee7799245db244a812da92651))
+- **angular:** upgrade to ng material 12 ([c1f448f](https://github.com/Teradata/covalent/commit/c1f448fd62c678821a70b57870d06c89cda90ac8))
+- **angular:** upgrade to ng material 13 ([3ff3f28](https://github.com/Teradata/covalent/commit/3ff3f2888751c2fc15ea43a3dc3baee8bb406ee0))
+- generate changelog and bump to version v4.0.0-alpha.0 ([8b4a558](https://github.com/Teradata/covalent/commit/8b4a5588ce1d6649ec7da9797d0bea982d6ebaa0))
+- generate changelog and bump to version v4.0.0-beta.1 ([bada3ad](https://github.com/Teradata/covalent/commit/bada3ad115586843f6f062399d20a77686b38f36))
+- **nx:** renaming docs app ([a19767f](https://github.com/Teradata/covalent/commit/a19767fc16e4dc82204ad89927747d28d59e8390))
+
+### Performance Improvements
+
+- **markdown:** do not run change detection when the markdown is clicked ([b73d7ba](https://github.com/Teradata/covalent/commit/b73d7ba90b3262cab0deebdd648372d98b967bf4))
+
 # [4.0.0-beta.1](https://github.com/teradata/covalent/compare/v4.0.0-alpha.0...v4.0.0-beta.1) (2022-02-03)
 
 ### Bug Fixes
