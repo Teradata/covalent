@@ -1,6 +1,6 @@
 {
   "name": "@covalent/flavored-markdown",
-  "version": "4.1.0",
+  "version": "4.1.1-beta.1",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
