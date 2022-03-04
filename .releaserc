@@ -3,8 +3,8 @@
     ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
     ["@semantic-release/release-notes-generator"],
     ["@semantic-release/exec", {
-      "prepareCmd":"./scripts/npm-version ${nextRelease.version}",
-      "publishCmd": "./scripts/npm-publish ${options.channel}"
+      "prepareCmd":"./scripts/npm-version ${nextRelease.version} && npm run build:lib",
+      "publishCmd": "./scripts/npm-publish ${nextRelease.channel}"
     }],
     ["@semantic-release/npm"],
     ["@semantic-release/changelog",{

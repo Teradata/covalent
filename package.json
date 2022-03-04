@@ -15,6 +15,7 @@
     "prepare": "husky install",
     "start": "nx serve",
     "build": "nx build",
+    "build:lib": "nx build:lib",
     "test": "nx test",
     "lint": "nx lint",
     "format:check": "nx format",
