@@ -1,6 +1,6 @@
 {
   "name": "@covalent/echarts",
-  "version": "4.1.1-beta.3",
+  "version": "4.1.1-next.1",
   "description": "Teradata UI Platform Echarts Module",
   "keywords": [
     "angular",

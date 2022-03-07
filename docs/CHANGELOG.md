@@ -1,3 +1,12 @@
+## [4.1.1-next.1](https://github.com/Teradata/covalent/compare/v4.1.0...v4.1.1-next.1) (2022-03-07)
+
+### Bug Fixes
+
+- **buid:** add next release channel ([4bcb718](https://github.com/Teradata/covalent/commit/4bcb718570a8d9131d5d7a4801100ac4201db037))
+- **build:** build fixes ([99bee9e](https://github.com/Teradata/covalent/commit/99bee9e38841094d4057cb68ede7830bc0e07c5b))
+- **build:** fix to build scripts ([ca87c9a](https://github.com/Teradata/covalent/commit/ca87c9a8915c670dea299945ee3aba3776054324))
+- **build:** trigger release ([669fd9c](https://github.com/Teradata/covalent/commit/669fd9c4ce891d52c16b03d8cdc93cc81290e34c))
+
 ## [4.1.1-beta.3](https://github.com/Teradata/covalent/compare/v4.1.1-beta.2...v4.1.1-beta.3) (2022-03-04)
 
 ### Bug Fixes

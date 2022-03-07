@@ -1,6 +1,6 @@
 {
   "name": "@covalent/dynamic-forms",
-  "version": "4.1.1-beta.3",
+  "version": "4.1.1-next.1",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
