@@ -23,5 +23,12 @@
       "assets": ["*.tgz"]
     }]
   ],
-  "branches": [{ "name": "beta", "prerelease": true }, { "name": "main" }]
+  "branches": [
+    { 
+      "name": "next",
+      "channel": "next",
+      "prerelease": true
+    },{ 
+      "name": "main" 
+    }]
 }

@@ -22,8 +22,6 @@ jobs:
         run: npx nx run-many --target=lint --all
       - name: Test
         run: npx nx run-many --target=test --all
-      - name: Build
-        run: npx nx run-many --target=build --all
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
