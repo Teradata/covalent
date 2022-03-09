@@ -1,6 +1,23 @@
 {
   "name": "@covalent/dynamic-forms",
-  "version": "0.0.1",
+  "version": "4.1.1-next.1",
+  "description": "Teradata UI Platform Dynamic Forms Module",
+  "keywords": [
+    "angular",
+    "components",
+    "reusable",
+    "dynamic",
+    "forms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
