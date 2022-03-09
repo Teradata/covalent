@@ -1,4 +1,5 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/libs/angular-highlight"
+  "dest": "../../dist/libs/angular-highlight",
+  "assets": ["./**/*theme.scss"]
 }

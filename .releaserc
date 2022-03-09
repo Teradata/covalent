@@ -3,7 +3,7 @@
     ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
     ["@semantic-release/release-notes-generator"],
     ["@semantic-release/exec", {
-      "prepareCmd":"./scripts/npm-version ${nextRelease.version}",
+      "prepareCmd": "./scripts/npm-version ${nextRelease.version} && node ./scripts/version-placeholder ./dist",
       "publishCmd": "./scripts/npm-publish"
     }],
     ["@semantic-release/npm"],

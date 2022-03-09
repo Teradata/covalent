@@ -11,11 +11,11 @@
     "guided tour"
   ],
   "peerDependencies": {
-    "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0",
-    "shepherd.js": "^9.0.0"
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "shepherd.js": "0.0.0-SHEPHERD"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "0.0.0-TSLIB"
   }
 }

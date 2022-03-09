@@ -1,2 +1,2 @@
-var defaultConfig = require('./src/platform/coding-standards/prettier/prettier.config.js');
+var defaultConfig = require('./libs/coding-standards/src/lib/prettier/prettier.config.js');
 module.exports = defaultConfig;

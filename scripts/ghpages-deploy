@@ -1,0 +1,17 @@
+#!/bin/bash
+version=$1
+
+echo "Checking out gh-pages branch"
+git checkout gh-pages
+
+echo "Created or replaced $version dir"
+rm -rf ./$version
+mkdir $version
+cp -r dist/apps/docs-app/* $version
+
+echo 'Tracking files'
+git add -A $version
+echo 'Commiting files'
+git commit --no-verify -a -m "feat(): gh-pages update for $version"
+echo 'Pushing files into gh-pages branch'
+git push origin gh-pages --force

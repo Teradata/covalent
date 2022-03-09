@@ -17,6 +17,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run format:check
+      - run: npx nx run-many --target=scsslint --all
       - run: npx nx run-many --target=lint --all
 
   test:
@@ -31,6 +32,19 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx nx run-many --target=test --all
+
+  e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12
+          cache: npm
+      - run: npm ci
+      - run: npx nx run-many --target=e2e --all
 
   build:
     runs-on: ubuntu-latest

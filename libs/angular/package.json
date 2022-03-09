@@ -16,11 +16,11 @@
   "license": "MIT",
   "author": "Teradata UX",
   "peerDependencies": {
-    "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0",
-    "@covalent/core/common": "0.0.0"
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "@covalent/core/common": "0.0.0-COVALENT"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "0.0.0-TSLIB"
   }
 }

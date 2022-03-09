@@ -2,6 +2,6 @@
 const {
   covalentHooks,
   generateHuskyConfig,
-} = require('./src/platform/coding-standards/husky/husky.js');
+} = require('./libs/coding-standards/src/lib/husky/husky.js');
 const huskyHooks = generateHuskyConfig(covalentHooks());
 module.exports = huskyHooks;

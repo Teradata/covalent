@@ -9,12 +9,12 @@
     "markdown"
   ],
   "peerDependencies": {
-    "showdown": "showdown@2.0.0-alpha",
-    "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0",
-    "@angular/platform-browser": "^13.2.0"
+    "showdown": "0.0.0-SHOWDOWN",
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "@angular/platform-browser": "0.0.0-NG"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "0.0.0-TSLIB"
   }
 }

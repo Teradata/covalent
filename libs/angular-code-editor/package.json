@@ -22,11 +22,11 @@
   "license": "MIT",
   "author": "Teradata UX",
   "peerDependencies": {
-    "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0",
-    "monaco-editor": "^0.32.1"
+    "@angular/common": "0.0.0-COVALENT",
+    "@angular/core": "0.0.0-COVALENT",
+    "monaco-editor": "0.0.0-MONACO"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "0.0.0-TSLIB"
   }
 }

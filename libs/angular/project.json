@@ -65,6 +65,16 @@
           "libs/angular/layout/**/*.html"
         ]
       }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/angular/**/*.scss'"
+          }
+        ]
+      }
     }
   },
   "tags": []

@@ -36,6 +36,16 @@
           "libs/markdown-flavored/src/**/*.html"
         ]
       }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/markdown-flavored/**/*.scss'"
+          }
+        ]
+      }
     }
   },
   "tags": []

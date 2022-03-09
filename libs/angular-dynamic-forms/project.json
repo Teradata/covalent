@@ -37,6 +37,16 @@
           "libs/angular-dynamic-forms/src/**/*.html"
         ]
       }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/angular-dynamic-forms/**/*.scss'"
+          }
+        ]
+      }
     }
   },
   "tags": []
