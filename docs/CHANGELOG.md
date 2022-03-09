@@ -1,3 +1,7 @@
+# [4.0.0-beta.4](https://github.com/teradata/covalent/compare/v4.0.0-beta.2...v4.0.0-beta.4) (2022-03-09)
+
+
+
 # [4.0.0-beta.2](https://github.com/teradata/covalent/compare/v4.0.0-beta.1...v4.0.0-beta.2) (2022-02-25)
 
 
