@@ -71,6 +71,7 @@
     "@types/jest": "27.0.2",
     "@types/jsdom": "^16.2.14",
     "@types/node": "16.11.7",
+    "@types/showdown": "^1.9.4",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
     "@typescript-eslint/parser": "~5.10.0",
     "autoprefixer": "^10.4.0",

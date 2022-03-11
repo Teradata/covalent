@@ -15,9 +15,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatTooltip } from '@angular/material/tooltip';
 import { ICopyCodeTooltips } from './copy-code-button/copy-code-button.component';
 
-declare const require: any;
-/* tslint:disable-next-line */
-const hljs = require('highlight.js/lib/common');
+import hljs from 'highlight.js';
 
 @Component({
   selector: 'td-highlight',
