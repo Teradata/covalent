@@ -59,8 +59,8 @@ export class GuidedTourDemoGoBackNavigationComponent implements OnInit {
           },
           attachTo: {
             element: '#go-back-navigation-demo #step-4',
-            on: 'top',
           },
+          scrollTo: false,
         },
       ],
     };
