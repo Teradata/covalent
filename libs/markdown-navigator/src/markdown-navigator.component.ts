@@ -150,14 +150,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return this.historyStack.length > 0;
   }
 
-  get showHomeButton(): boolean {
-    return this.historyStack.length > 1;
-  }
-
   get showHeader(): boolean {
-    return (
-      this.showHomeButton || this.showGoBackButton || !!this.currentItemTitle
-    );
+    return this.showGoBackButton || !!this.currentItemTitle;
   }
 
   get showMenu(): boolean {
@@ -284,7 +278,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     this._changeDetectorRef.markForCheck();
   }
 
-  goBack(): void {
+  goBack(goBackLength = 1): void {
     this.loading = false;
     this.clearErrors();
     if (this.historyStack.length > 1) {
@@ -295,12 +289,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
         parent = this.historyStack[this.historyStack.length - 3]
           ? this.historyStack[this.historyStack.length - 3]
           : undefined;
-        this.historyStack = this.historyStack.slice(0, -1);
+        this.historyStack = this.historyStack.slice(0, -goBackLength);
       }
 
       if (parent) {
         this.currentMarkdownItem = parent;
-        this.historyStack = this.historyStack.slice(0, -1);
+        this.historyStack = this.historyStack.slice(0, -goBackLength);
         this.setChildrenAsCurrentMenuItems(parent);
       } else {
         this.reset();

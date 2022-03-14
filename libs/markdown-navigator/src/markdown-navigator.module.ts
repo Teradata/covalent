@@ -12,6 +12,7 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
 import { CovalentMessageModule } from '@covalent/core/message';
 import { TdMarkdownNavigatorWindowDirective } from './markdown-navigator-window-directive/markdown-navigator-window.directive';
 import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window-service/markdown-navigator-window.service';
+import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 
 @NgModule({
   imports: [
@@ -23,9 +24,10 @@ import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window-se
     MatListModule,
     MatIconModule,
     MatProgressBarModule,
-    CovalentMessageModule,
-    CovalentFlavoredMarkdownModule,
+    CovalentBreadcrumbsModule,
     CovalentDialogsModule,
+    CovalentFlavoredMarkdownModule,
+    CovalentMessageModule,
   ],
   declarations: [
     TdMarkdownNavigatorComponent,

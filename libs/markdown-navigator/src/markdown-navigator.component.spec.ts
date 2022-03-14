@@ -12,7 +12,7 @@ import {
   IMarkdownNavigatorCompareWith,
 } from './markdown-navigator.component';
 import { By } from '@angular/platform-browser';
-import { Component, DebugElement, Type } from '@angular/core';
+import { Component, DebugElement, Type, ViewChild } from '@angular/core';
 import { CovalentMarkdownNavigatorModule } from './markdown-navigator.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -194,9 +194,7 @@ function getItem(
 async function goBack(
   fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>
 ): Promise<void> {
-  fixture.debugElement
-    .query(By.css('.mat-icon-button[data-test="back-button"]'))
-    .nativeElement.click();
+  fixture.componentInstance.navigator.goBack();
   await wait(fixture);
 }
 
@@ -204,7 +202,7 @@ async function goHome(
   fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>
 ): Promise<void> {
   fixture.debugElement
-    .query(By.css('.mat-icon-button[data-test="home-button"]'))
+    .query(By.css('[data-test="home-button"]'))
     .nativeElement.click();
   await wait(fixture);
 }
@@ -327,6 +325,9 @@ class TdMarkdownNavigatorTestComponent {
   startAt!: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   compareWith!: IMarkdownNavigatorCompareWith;
   footer!: Type<any>;
+
+  @ViewChild(TdMarkdownNavigatorComponent)
+  navigator!: TdMarkdownNavigatorComponent;
 }
 
 describe('MarkdownNavigatorComponent', () => {

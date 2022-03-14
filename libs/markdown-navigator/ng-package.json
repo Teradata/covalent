@@ -1,4 +1,5 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/libs/markdown-navigator"
+  "dest": "../../dist/libs/markdown-navigator",
+  "assets": ["./**/*theme.scss"]
 }
