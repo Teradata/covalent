@@ -15,7 +15,13 @@ import {
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ICanDisable,
+  IControlValueAccessor,
+  mixinControlValueAccessor,
+  mixinDisabled,
+} from '@covalent/core/common';
 
 @Directive({
   selector: '[tdFileInputLabel]ng-template',
@@ -33,6 +39,10 @@ export class TdFileInputBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
 }
 
+export const _TdFileInputMixinBase = mixinControlValueAccessor(
+  mixinDisabled(TdFileInputBase)
+);
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
@@ -43,17 +53,21 @@ export class TdFileInputBase {
     },
   ],
   selector: 'td-file-input',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'value'],
   styleUrls: ['./file-input.component.scss'],
   templateUrl: './file-input.component.html',
 })
-export class TdFileInputComponent implements ControlValueAccessor {
+export class TdFileInputComponent
+  extends _TdFileInputMixinBase
+  implements IControlValueAccessor, ICanDisable
+{
   private _multiple = false;
-  private _disabled = false;
 
   /** The native `<input type="file"> element */
-  @ViewChild('fileInput', { static: true }) _inputElement?: ElementRef;
+  @ViewChild('fileInput', { static: true }) _inputElement!: ElementRef;
   get inputElement(): HTMLInputElement {
-    return this._inputElement?.nativeElement;
+    return this._inputElement.nativeElement;
   }
 
   /**
@@ -70,7 +84,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
   set multiple(multiple: boolean | string) {
     this._multiple = coerceBooleanProperty(multiple);
   }
-  get multiple(): boolean | string {
+  get multiple(): boolean {
     return this._multiple;
   }
 
@@ -80,17 +94,6 @@ export class TdFileInputComponent implements ControlValueAccessor {
    * Same as 'accept' attribute in <input/> element.
    */
   @Input() accept?: string;
-
-  @Input()
-  set disabled(disabled: boolean) {
-    this._disabled = disabled;
-    this.onDisabledChange(disabled);
-  }
-  get disabled(): boolean {
-    return this._disabled;
-  }
-
-  @Input() value?: unknown;
 
   /**
    * select?: function
@@ -103,22 +106,9 @@ export class TdFileInputComponent implements ControlValueAccessor {
 
   constructor(
     private _renderer: Renderer2,
-    private _changeDetectorRef: ChangeDetectorRef
-  ) {}
-
-  writeValue(value: unknown): void {
-    this.value = value;
-    this._changeDetectorRef.markForCheck();
-    this._renderer.setProperty(this.inputElement, 'value', '');
-  }
-
-  registerOnChange(newValue: unknown): void {
-    //
-    this.writeValue(newValue);
-  }
-
-  registerOnTouched(): void {
-    //
+    _changeDetectorRef: ChangeDetectorRef
+  ) {
+    super(_changeDetectorRef);
   }
 
   /**
@@ -138,7 +128,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
   }
 
   /** Method executed when the disabled value changes */
-  onDisabledChange(v: boolean): void {
+  override onDisabledChange(v: boolean): void {
     if (v) {
       this.clear();
     }
@@ -146,7 +136,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
   /**
    * Sets disable to the component. Implemented as part of ControlValueAccessor.
    */
-  setDisabledState(isDisabled: boolean): void {
+  override setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
 }

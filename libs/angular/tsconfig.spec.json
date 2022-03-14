@@ -3,10 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node"],
-    "paths": {
-      "@covalent/core/common": ["common2/index.ts"]
-    }
+    "types": ["jest", "node"]
   },
   "files": ["./test-setup.ts"],
   "include": ["**/*.test.ts", "**/*.spec.ts", "**/*.d.ts"]

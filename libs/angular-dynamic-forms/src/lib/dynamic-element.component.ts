@@ -16,17 +16,13 @@ import {
   ComponentRef,
   forwardRef,
 } from '@angular/core';
-import {
-  NG_VALUE_ACCESSOR,
-  FormControl,
-  AbstractControl,
-} from '@angular/forms';
+import { NG_VALUE_ACCESSOR, AbstractControl } from '@angular/forms';
 import { CdkPortal } from '@angular/cdk/portal';
 
 import {
   mixinControlValueAccessor,
   IControlValueAccessor,
-} from './behaviors/control-value-accesor.mixin';
+} from '@covalent/core/common';
 
 import {
   TdDynamicElement,

@@ -8,41 +8,38 @@ This component uses `<td-markdown>` to render the markdown. See `<td-markdown>`'
 
 #### Inputs
 
-+ content?: string
-  + Markdown format content to be parsed as material/covalent markup.
-
-+ simpleLineBreaks?: string
-  + Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
-  + Defaults to false.
-
-+ hostedUrl?: string
-  + If markdown contains relative paths, this is required to generate correct urls.
-
-+ anchor?: string
-  + Anchor to jump to.
-
-+ copyCodeToClipboard?: boolean
-  + Display copy button on code snippets to copy code to clipboard.
-+ copyCodeTooltips?: ICopyCodeTooltips
-  + Tooltips for copy button to copy and upon copying.
+- content?: string
+  - Markdown format content to be parsed as material/covalent markup.
+- simpleLineBreaks?: string
+  - Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
+  - Defaults to false.
+- hostedUrl?: string
+  - If markdown contains relative paths, this is required to generate correct urls.
+- anchor?: string
+  - Anchor to jump to.
+- copyCodeToClipboard?: boolean
+  - Display copy button on code snippets to copy code to clipboard.
+- copyCodeTooltips?: ICopyCodeTooltips
+  - Tooltips for copy button to copy and upon copying.
 
 For reference:
+
 ```
 interface ICopyCodeTooltips {
   copy?: string;
   copied?: string;
 }
 ```
+
 #### Outputs
 
-+ buttonClicked: ITdFlavoredMarkdownButtonClickEvent
-  + Emitted when a button is clicked
+- buttonClicked: ITdFlavoredMarkdownButtonClickEvent
+  - Emitted when a button is clicked
 
 #### Events
 
-+ contentReady: undefined
-  + Event emitted after the markdown content rendering is finished.
-
+- contentReady: undefined
+  - Event emitted after the markdown content rendering is finished.
 
 ## Installation
 
@@ -87,8 +84,8 @@ This module comes with its own Covalent theme which uses the material theme whic
 @include mat-core();
 
 $primary: mat-palette($mat-orange, 800);
-$accent:  mat-palette($mat-light-blue, 600, A100, A400);
-$warn:    mat-palette($mat-red, 600);
+$accent: mat-palette($mat-light-blue, 600, A100, A400);
+$warn: mat-palette($mat-red, 600);
 
 $theme: mat-light-theme($primary, $accent, $warn);
 
@@ -103,15 +100,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 ```html
 <td-flavored-markdown>
-  - [x] checked action
-  - [ ] unchecked action
-
-  + list item
-  + list item
+  - [x] checked action - [ ] unchecked action + list item + list item
 </td-flavored-markdown>
 ```
-
-
 
 ## TdFlavoredMarkdownLoaderComponent: td-flavored-markdown-loader
 
@@ -121,28 +112,30 @@ A component that fetches markdown from a GitHub url and renders it using `<td-fl
 
 #### Inputs
 
-+ url: string
-  + The url of the markdown file.
+- url: string
 
-+ httpOptions?: object
-  + HTTP options that can be part of the request.
+  - The url of the markdown file.
 
-+ anchor?: string
-  + Anchor to jump to.
+- httpOptions?: object
+
+  - HTTP options that can be part of the request.
+
+- anchor?: string
+  - Anchor to jump to.
 
 #### Outputs
 
-+ buttonClicked: ITdFlavoredMarkdownButtonClickEvent
-  + Emitted when a button is clicked
+- buttonClicked: ITdFlavoredMarkdownButtonClickEvent
+  - Emitted when a button is clicked
 
 #### Events
 
-+ contentReady: void
-  + Emitted when markdown rendering is finished.
+- contentReady: void
 
-+ loadFailed: Error
-  + Emitted when loading of markdown file fails.
+  - Emitted when markdown rendering is finished.
 
+- loadFailed: Error
+  - Emitted when loading of markdown file fails.
 
 ## Example
 
