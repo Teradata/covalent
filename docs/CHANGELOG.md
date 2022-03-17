@@ -1,3 +1,34 @@
+# [4.1.0-develop.1](https://github.com/Teradata/covalent/compare/v4.0.0...v4.1.0-develop.1) (2022-03-17)
+
+### Bug Fixes
+
+- **angular:** using correct control value mixin ([b3f591a](https://github.com/Teradata/covalent/commit/b3f591aece02ac23567164e606c7565dbdcdaa46))
+- **code-editor:** dispose the event listener when the component is destroyed ([3e3e10f](https://github.com/Teradata/covalent/commit/3e3e10f7241021baff30c197434fb44ad371121e))
+- **docs:** fix to docs app editor demo ([92b2d33](https://github.com/Teradata/covalent/commit/92b2d33a5f3a93c89e2f548e2ea88b95399e468b))
+- **dynamic-forms:** added custom element example ([70dd386](https://github.com/Teradata/covalent/commit/70dd386a1d9bf98730a5ea869f35cb79dd017828))
+- **guided-tour:** fixing demo to not scroll after nav ([9543448](https://github.com/Teradata/covalent/commit/95434486b57f9a14213baa2a3c6ca483128817d9))
+- **imports:** remove require imports from highlight and markdown ([224857c](https://github.com/Teradata/covalent/commit/224857cd6c4840803f1a240707f6bf60104094f0))
+- **markdown:** fixed flavored markdown list parsing ([995e1bd](https://github.com/Teradata/covalent/commit/995e1bd5ed65305a2c637d248e8b78e90bb920f8))
+- **misc:** fixing code per review comments ([cb3dffc](https://github.com/Teradata/covalent/commit/cb3dffce22b0851973a72655d06b0b61439ca25a))
+- **test:** fix markdown tests ([50abf83](https://github.com/Teradata/covalent/commit/50abf83f50b68c00ff5557bbcb78e5dc3a3555f1))
+
+### Features
+
+- **angular:** updating ng13 upgrade ([c21b39d](https://github.com/Teradata/covalent/commit/c21b39dec4b0b7d9a8fb2d1093ba37382707a3bc))
+- **angular:** upgrade to ng 12 ([57582cf](https://github.com/Teradata/covalent/commit/57582cf9c2c13f1b082ca7e8937c13802c940cb5))
+- **angular:** upgrade to ng 13 ([425f389](https://github.com/Teradata/covalent/commit/425f3892813c0beee7799245db244a812da92651))
+- **angular:** upgrade to ng material 12 ([c1f448f](https://github.com/Teradata/covalent/commit/c1f448fd62c678821a70b57870d06c89cda90ac8))
+- **angular:** upgrade to ng material 13 ([3ff3f28](https://github.com/Teradata/covalent/commit/3ff3f2888751c2fc15ea43a3dc3baee8bb406ee0))
+- generate changelog and bump to version v4.0.0-alpha.0 ([8b4a558](https://github.com/Teradata/covalent/commit/8b4a5588ce1d6649ec7da9797d0bea982d6ebaa0))
+- generate changelog and bump to version v4.0.0-beta.1 ([bada3ad](https://github.com/Teradata/covalent/commit/bada3ad115586843f6f062399d20a77686b38f36))
+- generate changelog and bump to version v4.0.0-beta.2 ([f116c31](https://github.com/Teradata/covalent/commit/f116c31da5ecbc643baa8e9ee40a92ae94d62df7))
+- generate changelog and bump to version v4.0.0-beta.4 ([59c32fd](https://github.com/Teradata/covalent/commit/59c32fd4a3a01f55028cdb7b09bb407970ae383f))
+- **nx:** renaming docs app ([f6a02a7](https://github.com/Teradata/covalent/commit/f6a02a717ce22aea1f9e51ef4396c7242aa1cb35))
+
+### Performance Improvements
+
+- **markdown:** do not run change detection when the markdown is clicked ([b73d7ba](https://github.com/Teradata/covalent/commit/b73d7ba90b3262cab0deebdd648372d98b967bf4))
+
 # [4.0.0-beta.4](https://github.com/teradata/covalent/compare/v4.0.0-beta.2...v4.0.0-beta.4) (2022-03-09)
 
 # [4.0.0-beta.2](https://github.com/teradata/covalent/compare/v4.0.0-beta.1...v4.0.0-beta.2) (2022-02-25)
