@@ -25,8 +25,7 @@ import {
   renderVideoElements,
 } from './markdown-utils/markdown-utils';
 
-declare const require: any;
-const showdown: any = require('showdown/dist/showdown.js');
+import * as showdown from 'showdown';
 
 // TODO: assumes it is a github url
 // allow override somehow
