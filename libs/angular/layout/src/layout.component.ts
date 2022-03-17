@@ -19,7 +19,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    * Defaults to "over".
    * See "MatSidenav" documentation for more info.
    *
-   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   * https://github.com/angular/material2/tree/main/src/lib/sidenav
    */
   @Input() mode: 'side' | 'push' | 'over' = 'over';
 
@@ -31,7 +31,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    *
    * See "MatSidenav" documentation for more info.
    *
-   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   * https://github.com/angular/material2/tree/main/src/lib/sidenav
    */
   @Input() opened = false;
 
@@ -41,7 +41,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    * Sets the "width" of the sidenav in either "px" or "%"
    * Defaults to "320px".
    *
-   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   * https://github.com/angular/material2/tree/main/src/lib/sidenav
    */
   @Input() sidenavWidth = '320px';
 
@@ -53,7 +53,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    *
    * See documentation for more info and potential performance risks.
    *
-   * https://github.com/angular/material2/blob/master/src/lib/sidenav/sidenav.md#resizing-an-open-sidenav
+   * https://github.com/angular/material2/blob/main/src/lib/sidenav/sidenav.md#resizing-an-open-sidenav
    */
   @Input() containerAutosize = false;
 

@@ -97,7 +97,7 @@ export abstract class BaseLayoutToggleDirective
     if (!this.disabled) {
       // if layout has been provided, try triggering the click on it
       // else show warn message
-      if (this._layout && !this._layout.opened) {
+      if (this._layout) {
         this.onClick();
       } else {
         this._noLayoutMessage();

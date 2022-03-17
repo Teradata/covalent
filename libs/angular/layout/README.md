@@ -130,7 +130,7 @@ Example for Main Layout / Navigation Drawer Combo:
     navigationRoute="/"
   >
     .. main drawer content
-    <div td-navigation-drawer-menu>.. menu drawer content</div>
+    <div tdNavigationDrawerMenu>.. menu drawer content</div>
   </td-navigation-drawer>
   <div td-sidenav-content>.. more sidenav content</div>
   .. main content

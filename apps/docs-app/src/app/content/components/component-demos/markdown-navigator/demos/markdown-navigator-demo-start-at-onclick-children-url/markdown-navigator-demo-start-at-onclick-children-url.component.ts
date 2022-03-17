@@ -33,35 +33,35 @@ export class MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent {
   [
     {
       "title": "Path Analysis",
-      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/nPath/README.md"
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/main/UseCases/nPath/README.md"
     },
     {
       "title": "Vantage Path",
-      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/VantagePath/README.md"
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/main/UseCases/VantagePath/README.md"
     },
     {
       "title": "Time Series - Consumer Complaints",
-      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/TimeSeriesAnalysis/README.md"
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/main/UseCases/TimeSeriesAnalysis/README.md"
     },
     {
       "title": "Financial Services Customer Journey",
-      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/FSCustomerJourney/README.md"
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/main/UseCases/FSCustomerJourney/README.md"
     },
     {
       "title": "Knee Replacement",
-      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/KneeReplacement/README.md"
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/main/UseCases/KneeReplacement/README.md"
     },
     {
       "title": "Manufacturing Defect Analysis",
-      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/ManufacturingDefects/README.md"
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/main/UseCases/ManufacturingDefects/README.md"
     },
     {
       "title": "Deep History",
-      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/SalesOffload/README.md"
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/main/UseCases/SalesOffload/README.md"
     },
     {
       "title": "External Object Store",
-      "url": "https://raw.githubusercontent.com/Teradata/product-help/master/UseCases/ExternalObjectStore/README.md"
+      "url": "https://raw.githubusercontent.com/Teradata/product-help/main/UseCases/ExternalObjectStore/README.md"
     }
   ]
 

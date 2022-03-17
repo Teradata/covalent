@@ -115,21 +115,21 @@ describe('Markdown utils', () => {
       'https://raw.githubusercontent.com/Teradata/covalent/';
     const path = '/docs/CONTRIBUTING.md';
     const developBranch = 'develop';
-    const masterBranch = 'master';
+    const mainBranch = 'main';
     const anchor = '#anchor';
 
     const DEVELOP_NON_RAW_HREF = `${something}${developBranch}${path}`;
     const DEVELOP_RAW_HREF = `${somethingElse}${developBranch}${path}`;
-    const MASTER_NON_RAW_HREF = `${something}${masterBranch}${path}`;
-    const MASTER_RAW_HREF = `${somethingElse}${masterBranch}${path}`;
+    const MAIN_NON_RAW_HREF = `${something}${mainBranch}${path}`;
+    const MAIN_RAW_HREF = `${somethingElse}${mainBranch}${path}`;
     const DEVELOP_NON_RAW_HREF_WITH_ANCHOR = `${something}${developBranch}${path}${anchor}`;
     const DEVELOP_RAW_HREF_WITH_ANCHOR = `${somethingElse}${developBranch}${path}${anchor}`;
 
     expect(rawGithubHref(anchor)).toBe('');
     expect(rawGithubHref(DEVELOP_NON_RAW_HREF)).toBe(DEVELOP_RAW_HREF);
     expect(rawGithubHref(DEVELOP_RAW_HREF)).toBe(DEVELOP_RAW_HREF);
-    expect(rawGithubHref(MASTER_NON_RAW_HREF)).toBe(MASTER_RAW_HREF);
-    expect(rawGithubHref(MASTER_RAW_HREF)).toBe(MASTER_RAW_HREF);
+    expect(rawGithubHref(MAIN_NON_RAW_HREF)).toBe(MAIN_RAW_HREF);
+    expect(rawGithubHref(MAIN_RAW_HREF)).toBe(MAIN_RAW_HREF);
     expect(rawGithubHref(DEVELOP_NON_RAW_HREF_WITH_ANCHOR)).toBe(
       DEVELOP_RAW_HREF_WITH_ANCHOR
     );

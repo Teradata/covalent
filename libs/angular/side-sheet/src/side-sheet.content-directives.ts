@@ -39,7 +39,7 @@ export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
 
   @Input('CovalentSideSheetClose') _CovalentSideSheetClose: any;
 
-  @HostListener('click') onClick($event: MouseEvent) {
+  @HostListener('click', ['$event']) onClick($event: MouseEvent) {
     this._onButtonClick($event);
   }
 

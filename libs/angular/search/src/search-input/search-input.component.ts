@@ -76,7 +76,7 @@ export class TdSearchInputComponent implements ControlValueAccessor, OnInit {
    * appearance?: MatFormFieldAppearance
    * Appearance style for the underlying input component.
    */
-  @Input() appearance: MatFormFieldAppearance = 'outline';
+  @Input() appearance: MatFormFieldAppearance = 'legacy';
 
   /**
    * showUnderline?: boolean

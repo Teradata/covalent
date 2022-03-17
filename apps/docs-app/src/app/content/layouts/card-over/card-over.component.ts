@@ -103,7 +103,7 @@ export class CardOverComponent {
         <mat-nav-list>
           <a mat-list-item><mat-icon>home</mat-icon>Home</a> 
         </mat-nav-list>
-        <div td-navigation-drawer-menu> 
+        <div tdNavigationDrawerMenu> 
           <mat-nav-list> 
             <a mat-list-item><mat-icon>account_box</mat-icon>Profile</a>
           </mat-nav-list>
@@ -125,7 +125,7 @@ export class CardOverComponent {
         <mat-nav-list> 
           <a *ngFor="let item of routes" mat-list-item><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
         </mat-nav-list> 
-        <div td-navigation-drawer-menu>
+        <div tdNavigationDrawerMenu>
           <mat-nav-list> 
             <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
           </mat-nav-list> 
