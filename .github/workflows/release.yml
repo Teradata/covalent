@@ -12,10 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16
+          cache: npm
       - name: Install dependencies
         run: npx ci
       - name: SCSS Lint
