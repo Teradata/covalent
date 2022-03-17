@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    branches: [main, develop]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        run: npx ci
+      - name: SCSS Lint
+        run: npx nx run-many --target=scsslint --all
+      - name: Lint
+        run: npx nx run-many --target=lint --all
+      - name: Test
+        run: npx nx run-many --target=test --all
+      - name: Build
+        run: npx nx run-many --target=build --all
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+      - name: Deploy GitHub Pages
+        run: npm run ghpages:deploy

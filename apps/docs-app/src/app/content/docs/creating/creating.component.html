@@ -1,0 +1,61 @@
+<mat-card>
+  <mat-card-title>Creating new views</mat-card-title>
+  <mat-card-subtitle
+    >Harness the power of the new Angular CLI</mat-card-subtitle
+  >
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h3>Generate Component</h3>
+    <p>
+      Using the CLI, nagivate into the directory you want the new component,
+      then simply:
+    </p>
+    <td-highlight codeLang="html">ng generate component new-view</td-highlight>
+    <p>
+      The CLI will do the heavy lifting and create the following with
+      corresponding names:
+    </p>
+    <ul>
+      <li>directory (/new-view)</li>
+      <li>html template (/new-view/new-view.component.html)</li>
+      <li>scss file (/new-view/new-view.component.scss)</li>
+      <li>typescript file (/new-view/new-view.component.ts)</li>
+      <li>unit test (/new-view/new-view.component.spec.ts)</li>
+    </ul>
+    <p>
+      It will also attempt to update your app module file. Double check and make
+      sure your new component is imported into app.module.ts:
+    </p>
+    <p>for example in app.module.ts:</p>
+    <td-highlight codeLang="typescript">
+      {{ newViewRootTypescript }}
+    </td-highlight>
+    <p>And define those declarations/imports in @NgModule:</p>
+    <td-highlight codeLang="typescript">
+      {{ newViewFeatureTypescript }}
+    </td-highlight>
+    <p>
+      next we'll need to create a route for this component, edit app.routes.ts:
+    </p>
+    <td-highlight codeLang="typescript">
+      {{ newViewRouteTypescript }}
+    </td-highlight>
+    <p>and add a new path with the url you desire for this route:</p>
+    <td-highlight codeLang="typescript">
+      {{ newViewPathTypescript }}
+    </td-highlight>
+    <p>Now you can use this new route in your main nav or wherever you like!</p>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a
+      mat-button
+      color="accent"
+      target="_blank"
+      href="https://github.com/angular/angular-cli/wiki/generate"
+      class="text-upper"
+    >
+      Generate Docs
+    </a>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,201 @@
+<mat-card>
+  <mat-card-title>Minimum Demo</mat-card-title>
+  <mat-card-subtitle
+    >Minimum code for this layout with no wrapper</mat-card-subtitle
+  >
+  <mat-divider></mat-divider>
+  <div [style.height]="'400px'" class="relative">
+    <td-layout-nav-list
+      logo="assets:teradata"
+      toolbarTitle="Covalent"
+      navigationRoute="/"
+      [opened]="true"
+      mode="side"
+    >
+      <div td-sidenav-content>Sidenav content here</div>
+      Content goes here
+    </td-layout-nav-list>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <td-highlight codeLang="html">
+      {{ navListMinHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Basic Demo</mat-card-title>
+  <mat-card-subtitle>Basic layout wrapper &amp; nav drawer</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <div [style.height]="'400px'" class="relative">
+    <td-layout>
+      <td-navigation-drawer
+        flex
+        sidenavTitle="Covalent"
+        logo="teradata-dark"
+        name="Firstname Lastname"
+        email="firstname.lastname@company.com"
+      >
+        <mat-nav-list>
+          <a mat-list-item>
+            <mat-icon>home</mat-icon>
+            Home
+          </a>
+        </mat-nav-list>
+        <div tdNavigationDrawerMenu>
+          <mat-nav-list>
+            <a mat-list-item>
+              <mat-icon>account_box</mat-icon>
+              Profile
+            </a>
+          </mat-nav-list>
+        </div>
+      </td-navigation-drawer>
+      <td-layout-nav-list
+        logo="assets:teradata"
+        toolbarTitle="Covalent"
+        navigationRoute="/"
+        [opened]="true"
+        mode="side"
+      >
+        <button mat-icon-button td-menu-button tdLayoutToggle>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div td-sidenav-content>Sidenav content here</div>
+        <div td-toolbar-content>
+          <button mat-button tdLayoutNavListToggle>Toggle</button>
+        </div>
+        Content goes here
+      </td-layout-nav-list>
+    </td-layout>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <td-highlight codeLang="html">
+      {{ navListBasicHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Full Demo</mat-card-title>
+  <mat-card-subtitle
+    >Full working code with all options and templates</mat-card-subtitle
+  >
+  <mat-divider></mat-divider>
+  <div [style.height]="'400px'" class="relative">
+    <td-layout>
+      <td-navigation-drawer
+        flex
+        sidenavTitle="Covalent"
+        logo="teradata-dark"
+        name="Firstname Lastname"
+        email="firstname.lastname@company.com"
+      >
+        <mat-nav-list>
+          <a *ngFor="let item of routes" mat-list-item>
+            <mat-icon>{{ item.icon }}</mat-icon>
+            {{ item.title }}
+          </a>
+        </mat-nav-list>
+        <div tdNavigationDrawerMenu>
+          <mat-nav-list>
+            <a *ngFor="let item of usermenu" mat-list-item>
+              <mat-icon>{{ item.icon }}</mat-icon>
+              {{ item.title }}
+            </a>
+          </mat-nav-list>
+        </div>
+      </td-navigation-drawer>
+      <td-layout-nav-list #navList>
+        <div
+          td-sidenav-toolbar-content
+          layout="row"
+          layout-align="start center"
+        >
+          <button mat-icon-button tdLayoutToggle>
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-icon
+            [routerLink]="['/']"
+            class="mat-icon-logo cursor-pointer"
+            svgIcon="assets:teradata"
+          ></mat-icon>
+          <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
+        </div>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <button mat-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+          <span>Page Title</span>
+          <span flex></span>
+          <a
+            mat-icon-button
+            matTooltip="Docs"
+            href="https://teradata.github.io/covalent/"
+            target="_blank"
+          >
+            <mat-icon>chrome_reader_mode</mat-icon>
+          </a>
+          <a
+            mat-icon-button
+            matTooltip="Github"
+            href="https://github.com/teradata/covalent"
+            target="_blank"
+          >
+            <mat-icon svgIcon="assets:github"></mat-icon>
+          </a>
+        </div>
+        <mat-nav-list td-sidenav-content>
+          <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
+            <a mat-list-item>
+              <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
+              <h3 matLine>{{ item.title }}</h3>
+              <p matLine>{{ item.description }}</p>
+            </a>
+            <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+          </ng-template>
+        </mat-nav-list>
+        <div>
+          <mat-card>
+            <mat-card-title>Main Content</mat-card-title>
+            <mat-card-subtitle>content area</mat-card-subtitle>
+            <mat-divider></mat-divider>
+            <mat-card-content>card content</mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-actions>
+              <a
+                mat-button
+                color="accent"
+                class="text-upper"
+                [routerLink]="['/']"
+              >
+                <span>View More</span>
+              </a>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <td-layout-footer-inner>Optional inner footer</td-layout-footer-inner>
+        <td-layout-footer>
+          <div layout="row" layout-align="start center">
+            <span class="mat-caption"
+              >Copyright &copy; 2017 Teradata. All rights reserved</span
+            >
+          </div>
+        </td-layout-footer>
+      </td-layout-nav-list>
+    </td-layout>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <td-highlight codeLang="html">
+      {{ navListFullHtml }}
+    </td-highlight>
+    <h3 class="mat-title">TypeScript:</h3>
+    <td-highlight codeLang="typescript">
+      {{ navListFullTypescript }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+<td-readme-loader
+  resourceUrl="platform/core/layout/layout-nav-list/README.md"
+></td-readme-loader>

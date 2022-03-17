@@ -79,4 +79,3 @@ $mat-font-url: '../node_modules/@covalent/core/common/styles/font/';
 // Include covalent color classes
 @include covalent-colors();
 ```
-

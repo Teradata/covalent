@@ -1,0 +1,34 @@
+#!/bin/bash
+set -e
+
+VERSION=${1:-0.0.0}
+
+echo "Bumping @covalent packages"
+
+if [ "$VERSION" == "0.0.0" ] 
+  then
+  echo 'Version is not correctly set' >&2
+  exit 1
+fi
+
+echo "VERSION currently set is ${VERSION}"
+
+PARENT_DIR=`pwd`
+
+echo "parent directory set at ${PARENT_DIR}"
+
+for package in ./libs/*
+do
+  if [ -d ${package} ]
+  then
+    cd ${package}
+    npm version ${VERSION} --no-git-tag-version
+    cd ${PARENT_DIR}
+    echo "Versioned ${package} successfully"
+  fi
+done
+
+# Set parent directory version when finished
+# npm version ${VERSION} --no-git-tag-version
+
+exit 0

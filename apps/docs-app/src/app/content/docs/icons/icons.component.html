@@ -1,0 +1,42 @@
+<section class="push-bottom-xl">
+  <h1 class="push-bottom-sm mat-display-1">Material Design Icons</h1>
+
+  <p class="tc-grey-600 push-bottom-md">Access 1000+ SVG or Font icons</p>
+</section>
+
+<section class="push-bottom-xxl">
+  <h3 class="push-bottom-sm mat-title">Font Icons</h3>
+  <mat-divider></mat-divider>
+  <p>Font icons using ligatures are the default option and simple to use:</p>
+  <td-highlight codeLang="html">
+    {{ iconsHtml }}
+  </td-highlight>
+  <p class="push-bottom-lg">
+    which renders
+    <mat-icon>home</mat-icon>
+  </p>
+
+  <h3 class="push-bottom-sm mat-title">SVG Icons (from Safe URLS)</h3>
+  <mat-divider></mat-divider>
+  <p>
+    SVG icons have to be sanitized before they can be used with [DomSanitizer]
+    and then icons need to be registered in [MatIconRegistry] so it can be
+    referred later on:
+  </p>
+  <p>Typescript:</p>
+  <td-highlight codeLang="typescript">
+    {{ svgIconsTypescript }}
+  </td-highlight>
+  <p>HTML:</p>
+  <td-highlight class="push-bottom-lg" codeLang="html">
+    {{ svgIconsHtml }}
+  </td-highlight>
+  <a
+    mat-button
+    color="accent"
+    target="_blank"
+    href="https://material.io/icons/"
+    class="text-upper"
+    >Search Icons</a
+  >
+</section>

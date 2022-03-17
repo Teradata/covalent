@@ -1,0 +1,27 @@
+{
+  "plugins": [
+    ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
+    ["@semantic-release/release-notes-generator"],
+    ["@semantic-release/exec", {
+      "prepareCmd": "./scripts/npm-version ${nextRelease.version} && node ./scripts/version-placeholder ./dist",
+      "publishCmd": "./scripts/npm-publish"
+    }],
+    ["@semantic-release/npm"],
+    ["@semantic-release/changelog",{
+      "changelogFile": "docs/CHANGELOG.md"
+    }],
+    ["@semantic-release/git", {
+      "message": "ci(release): ${nextRelease.version} [skip ci]",
+      "assets": [
+        "docs/CHANGELOG.md",
+        "package.json",
+        "package-lock.json",
+        "libs/**/package.json"
+      ]
+    }],
+    ["@semantic-release/github", {
+      "assets": ["*.tgz"]
+    }]
+  ],
+  "branches": [{ "name": "beta", "prerelease": true }, { "name": "main" }]
+}

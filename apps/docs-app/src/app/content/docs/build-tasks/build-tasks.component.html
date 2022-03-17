@@ -1,0 +1,81 @@
+<mat-card>
+  <mat-card-title>Build Tasks</mat-card-title>
+  <mat-card-subtitle>Angular CLI Build Tasks</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h3>Command Line Build Tasks</h3>
+    <h4>Important: Make sure you have Node 6.11.1 or greater!</h4>
+    <p>First install the CLI</p>
+    <td-highlight codeLang="bash"
+      >npm install -g @angular/cli@latest</td-highlight
+    >
+    <h4>Local server</h4>
+    <p>Serve your app locally by navingating to the directory and running:</p>
+    <td-highlight codeLang="bash">ng serve</td-highlight>
+    <p>
+      Which will serve to
+      <code>http://localhost:4200/</code>
+      by default.
+    </p>
+    <h4>Generating content</h4>
+    <p>
+      You can use the
+      <code>ng generate</code>
+      (or just
+      <code>ng g</code>
+      )
+    </p>
+    <td-highlight codeLang="bash">ng g component my-new-component</td-highlight>
+    <p>You can find all possible blueprints in the table below:</p>
+    <table cellpadding="10">
+      <thead>
+        <tr>
+          <th>Scaffold</th>
+          <th>Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Component</td>
+          <td><code>ng g component my-new-component</code></td>
+        </tr>
+        <tr>
+          <td>Directive</td>
+          <td><code>ng g directive my-new-directive</code></td>
+        </tr>
+        <tr>
+          <td>Pipe</td>
+          <td><code>ng g pipe my-new-pipe</code></td>
+        </tr>
+        <tr>
+          <td>Service</td>
+          <td><code>ng g service my-new-service</code></td>
+        </tr>
+        <tr>
+          <td>Class</td>
+          <td><code>ng g class my-new-class</code></td>
+        </tr>
+        <tr>
+          <td>Interface</td>
+          <td><code>ng g interface my-new-interface</code></td>
+        </tr>
+        <tr>
+          <td>Enum</td>
+          <td><code>ng g enum my-new-enum</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a
+      mat-button
+      color="accent"
+      target="_blank"
+      href="https://github.com/angular/angular-cli/wiki/build"
+      class="text-upper"
+    >
+      Build Docs
+    </a>
+  </mat-card-actions>
+</mat-card>

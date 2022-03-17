@@ -1,0 +1,57 @@
+{
+  "projectType": "library",
+  "root": "libs/markdown",
+  "sourceRoot": "libs/markdown/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/markdown"],
+      "options": {
+        "project": "libs/markdown/ng-package.json",
+        "tailwindConfig": "libs/markdown/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/markdown/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/markdown/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/markdown"],
+      "options": {
+        "jestConfig": "libs/markdown/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/markdown/src/**/*.ts",
+          "libs/markdown/src/**/*.html",
+          "libs/markdown/flavored/**/*.ts",
+          "libs/markdown/flavored/**/*.html",
+          "libs/markdown/navigator/**/*.ts",
+          "libs/markdown/navigator/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/markdown/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

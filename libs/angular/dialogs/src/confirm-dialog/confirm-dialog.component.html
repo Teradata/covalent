@@ -1,0 +1,27 @@
+<td-dialog>
+  <div tdDialogTitle *ngIf="title">
+    {{ title }}
+  </div>
+  <div tdDialogContent>
+    <span class="td-dialog-message">{{ message }}</span>
+  </div>
+  <div tdDialogActions>
+    <button
+      mat-button
+      #closeBtn
+      (keydown.arrowright)="acceptBtn.focus()"
+      (click)="cancel()"
+    >
+      {{ cancelButton }}
+    </button>
+    <button
+      mat-button
+      [color]="isDestructive ? 'warn' : 'accent'"
+      #acceptBtn
+      (keydown.arrowleft)="closeBtn.focus()"
+      (click)="accept()"
+    >
+      {{ acceptButton }}
+    </button>
+  </div>
+</td-dialog>

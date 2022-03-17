@@ -1,0 +1,42 @@
+<td-message
+  label="Deprecation Notice"
+  sublabel="This component will be deprecated in favor of a different implementation"
+  color="warn"
+  icon="warning"
+  class="push-bottom-md"
+  *ngIf="component?.showMigration"
+>
+  <a
+    td-message-actions
+    mat-button
+    target="_blank"
+    [href]="component?.migrationUrl"
+    class="mat-button"
+    >VIEW DOC</a
+  >
+</td-message>
+<div class="push-bottom-xxl pad-bottom-xxl">
+  <div class="pad-right-sm pad-left-sm push-bottom-lg">
+    <h1 class="mat-display-1 content-title push-bottom-sm text-caps">
+      {{ component?.name }}
+    </h1>
+    <h3 class="mat-subheading-2 tc-grey-600" [style.maxWidth.px]="500">
+      {{ component?.description }}
+    </h3>
+  </div>
+
+  <nav mat-tab-nav-bar color="accent" class="push-bottom-lg">
+    <a
+      mat-tab-link
+      *ngFor="let link of navLinks"
+      [routerLink]="link.route"
+      routerLinkActive="active"
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+    >
+      {{ link.name | uppercase }}
+    </a>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

@@ -1,4 +1,4 @@
 module.exports = {
-  extends: ['./src/platform/coding-standards/stylelint/stylelint.config.js'],
-  ignoreFiles: ['./src/platform/core/schematics/ng-add/files/**'],
+  extends: ['./libs/coding-standards/src/lib/stylelint/stylelint.config.js'],
+  ignoreFiles: ['./libs/angular/schematics/ng-add/files/**'],
 };

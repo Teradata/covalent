@@ -1,0 +1,11 @@
+{
+  "name": "@covalent/markdown-navigator",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG"
+  },
+  "dependencies": {
+    "tslib": "0.0.0-TSLIB"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "root": "libs/coding-standards",
+  "sourceRoot": "libs/coding-standards/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/coding-standards/**/*.js"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,37 @@
+:host {
+  margin-bottom: 200px;
+}
+
+.component-card {
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  display: flex;
+  height: 144px;
+  padding: 16px 16px 20px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 80%),
+    0 1px 3px 1px rgba(60, 64, 67, 16%);
+
+  .component-card-body {
+    height: 40px;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-word;
+    -webkit-line-clamp: 2;
+    display: box;
+    text-overflow: ellipsis;
+
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+  }
+
+  &.no-description {
+    height: 104px;
+    padding: 20px 16px 16px;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 3px 1px rgba(60, 64, 67, 20%),
+      0 2px 8px 4px rgba(60, 64, 67, 10%);
+    transform: translateY(-1px);
+  }
+}

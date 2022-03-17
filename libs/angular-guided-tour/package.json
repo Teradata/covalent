@@ -1,0 +1,21 @@
+{
+  "name": "@covalent/guided-tour",
+  "version": "0.0.1",
+  "description": "Covalent Guided Tour Module",
+  "keywords": [
+    "angular",
+    "covalent",
+    "shepherd",
+    "tour",
+    "guide",
+    "guided tour"
+  ],
+  "peerDependencies": {
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "shepherd.js": "0.0.0-SHEPHERD"
+  },
+  "dependencies": {
+    "tslib": "0.0.0-TSLIB"
+  }
+}

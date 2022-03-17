@@ -1,0 +1,30 @@
+<mat-card class="push-none demo-card overflow-hidden">
+  <mat-toolbar-row>
+    <span>{{ demoTitle || demoId }}</span>
+    <span flex></span>
+    <button (click)="toggleCodeView()" mat-icon-button>
+      <mat-icon>code</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  <mat-tab-group *ngIf="viewCode">
+    <mat-tab label="HTML">
+      <td-highlight codeLang="html">
+        {{ htmlFile }}
+      </td-highlight>
+    </mat-tab>
+    <mat-tab label="TS">
+      <td-highlight codeLang="typescript">
+        {{ typescriptFile }}
+      </td-highlight>
+    </mat-tab>
+    <mat-tab label="SCSS" *ngIf="stylesFile">
+      <td-highlight codeLang="scss">
+        {{ stylesFile }}
+      </td-highlight>
+    </mat-tab>
+  </mat-tab-group>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <ng-content></ng-content>
+  </mat-card-content>
+</mat-card>
