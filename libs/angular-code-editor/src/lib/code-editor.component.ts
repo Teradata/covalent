@@ -7,7 +7,6 @@ import {
   ViewChild,
   ElementRef,
   forwardRef,
-  NgZone,
   ChangeDetectorRef,
   OnDestroy,
 } from '@angular/core';
@@ -18,6 +17,10 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 // Use esm version to support shipping subset of languages and features
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+import {
+  mixinControlValueAccessor,
+  mixinDisabled,
+} from '@covalent/core/common';
 
 const noop = () => {
   // empty method
@@ -25,6 +28,15 @@ const noop = () => {
 
 // counter for ids to allow for multiple editors on one page
 let uniqueCounter = 0;
+
+export class TdCodeEditorBase {
+  constructor(public _changeDetectorRef: ChangeDetectorRef) {}
+}
+
+export const _TdCodeEditorMixinBase = mixinControlValueAccessor(
+  mixinDisabled(TdCodeEditorBase),
+  []
+);
 
 @Component({
   selector: 'td-code-editor',
@@ -39,6 +51,7 @@ let uniqueCounter = 0;
   ],
 })
 export class TdCodeEditorComponent
+  extends _TdCodeEditorMixinBase
   implements OnInit, ControlValueAccessor, OnDestroy
 {
   private _destroy: Subject<boolean> = new Subject<boolean>();
@@ -90,20 +103,19 @@ export class TdCodeEditorComponent
    */
   @Output() editorValueChange: EventEmitter<void> = new EventEmitter<void>();
 
-  propagateChange = () => noop;
-  onTouched = () => noop;
+  propagateChange = (_: any) => noop;
 
   /**
    * value?: string
    */
   @Input()
-  set value(value: string) {
+  override set value(value: string) {
     this._value = value;
     if (this._componentInitialized) {
       this.applyValue();
     }
   }
-  get value(): string {
+  override get value(): string {
     return this._value;
   }
 
@@ -112,23 +124,14 @@ export class TdCodeEditorComponent
       this._editor.setValue(this._value);
     }
     this._fromEditor = false;
+    this.propagateChange(this._value);
     this.editorValueChange.emit();
   }
 
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  writeValue(value: any): void {
-    // do not write if null or undefined
-    // tslint:disable-next-line
-    if (value != undefined) {
-      this.value = value;
-    }
-  }
-  registerOnChange(fn: any): void {
+  override registerOnChange(fn: any): void {
     this.propagateChange = fn;
   }
-  registerOnTouched(fn: any): void {
+  override registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
 
@@ -300,10 +303,11 @@ export class TdCodeEditorComponent
 
   // tslint:disable-next-line:member-ordering
   constructor(
-    private zone: NgZone,
-    private _changeDetectorRef: ChangeDetectorRef,
+    _changeDetectorRef: ChangeDetectorRef,
     private _elementRef: ElementRef
-  ) {}
+  ) {
+    super(_changeDetectorRef);
+  }
 
   ngOnInit(): void {
     const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;

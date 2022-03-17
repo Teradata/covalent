@@ -5,11 +5,12 @@ import { ITdDynamicElementConfig } from '@covalent/dynamic-forms';
 @Component({
   selector: 'td-dynamic-input-test',
   template: `
-    <div
-      *ngIf="errorMessageTemplate && control?.errors"
-      class="tc-red-600"
-      [style.font-size.%]="'70'"
-    >
+    <td-code-editor
+      [style.height.px]="300"
+      [formControl]="control"
+      ngDefaultControl
+    ></td-code-editor>
+    <div *ngIf="errorMessageTemplate && control?.errors" class="tc-red-600">
       <ng-template
         [ngTemplateOutlet]="errorMessageTemplate"
         [ngTemplateOutletContext]="{
@@ -38,14 +39,13 @@ export class DynamicFormsDemoCustomElementsComponent {
     {
       name: 'custom',
       type: TdTestDynamicComponent,
-      default: ['list1'],
-      selections: ['list1', 'list2', 'list3'],
+      default: 'SELECT * from dynamic.element',
       flex: 100,
       validators: [
         {
           validator: (control: AbstractControl) => {
-            const isValid: boolean = control.value.length <= 2;
-            return !isValid ? { invalidChips: true } : null;
+            const isValid: boolean = control.value?.length;
+            return !isValid ? { required: true } : null;
           },
         },
       ],
