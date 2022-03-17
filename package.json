@@ -66,6 +66,7 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "13.8.0",
     "@nrwl/workspace": "13.8.0",
+    "@semantic-release/exec": "^6.0.3",
     "@types/echarts": "^4.9.13",
     "@types/jasmine": "~3.5.0",
     "@types/jest": "27.0.2",
