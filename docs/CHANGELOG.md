@@ -1,3 +1,9 @@
+# [4.1.0-develop.2](https://github.com/Teradata/covalent/compare/v4.1.0-develop.1...v4.1.0-develop.2) (2022-03-18)
+
+### Bug Fixes
+
+- **release:** build before release ([7682933](https://github.com/Teradata/covalent/commit/7682933d4884c54ebb7c8d222735290315f36a0d))
+
 # [4.1.0-develop.1](https://github.com/Teradata/covalent/compare/v4.0.0...v4.1.0-develop.1) (2022-03-17)
 
 ### Bug Fixes
