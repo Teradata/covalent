@@ -4,13 +4,17 @@ tag=latest
 
 [[ $1 = 'next' ]] && tag=next || tag=latest
 
+echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >.npmrc
+
 for package in ./dist/libs/*
 do
   if [ -d ${package} ]
   then
-    npm publish ${package} --access=public --tag=$tag --ignore-scripts
+    npm publish ${package} --access=public --tag=$tag --ignore-scripts;
   fi
 done
+
+rm .npmrc
 
 echo "Published successfully [scope: $scope]. Use 'npm install [package-name]' in the project you want to use it."
 exit 0
