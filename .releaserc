@@ -2,14 +2,17 @@
   "plugins": [
     ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
     ["@semantic-release/release-notes-generator"],
-    ["@semantic-release/exec", {
-      "prepareCmd": "./scripts/npm-version ${nextRelease.version} && npm run release:prepare",
-      "publishCmd": "./scripts/npm-publish ${nextRelease.channel}"
-    }],
     ["@semantic-release/changelog",{
       "changelogFile": "docs/CHANGELOG.md"
     }],
-    ["@semantic-release/npm"],
+    ["@semantic-release/npm", {
+      "npmPublish": false,
+      "tarballDir": "dist/libs"
+    }],
+    ["@semantic-release/exec", {
+      "prepareCmd": "npm run release:prepare",
+      "publishCmd": "./scripts/npm-publish ${nextRelease.channel}"
+    }],
     ["@semantic-release/git", {
       "message": "ci(release): ${nextRelease.version} [skip ci]",
       "assets": [
@@ -19,7 +22,7 @@
       ]
     }],
     ["@semantic-release/github", {
-      "assets": ["*.tgz"]
+      "assets": ["dist/libs/*.tgz"]
     }]
   ],
   "branches": [{
