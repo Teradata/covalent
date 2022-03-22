@@ -29,6 +29,18 @@
         "passWithNoTests": true
       }
     },
+    "build-scss": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "mkdir -p dist/libs/angular/common/",
+          "mkdir -p dist/libs/angular/theming/prebuilt/",
+          "./node_modules/.bin/sass --trace --color --style=compressed ./libs/angular/common/prebuilt/:./dist/libs/angular/common/",
+          "./node_modules/.bin/sass --trace --color --style=compressed ./libs/angular/theming/prebuilt/:./dist/libs/angular/theming/prebuilt/"
+        ],
+        "parallel": false
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
