@@ -1,6 +1,6 @@
 {
   "name": "@covalent/coding-standards",
-  "version": "4.1.0-develop.2",
+  "version": "0.0.0-COVALENT",
   "description": "Teradata Covalent coding standards regarding linting, commit standards, & more",
   "keywords": [
     "covalent"

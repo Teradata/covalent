@@ -17,20 +17,11 @@ jobs:
         with:
           node-version: 16
           cache: npm
+          persist-credentials: false
       - name: Install dependencies
         run: npx ci
-      - name: SCSS Lint
-        run: npx nx run-many --target=scsslint --all
-      - name: Lint
-        run: npx nx run-many --target=lint --all
-      - name: Test
-        run: npx nx run-many --target=test --all
-      - name: Build
-        run: npx nx run-many --target=build --all
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
-      - name: Deploy GitHub Pages
-        run: npm run ghpages:deploy

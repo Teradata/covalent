@@ -11,7 +11,7 @@ const placeholders = [
   ['0.0.0-NG', packageJson.dependencies['@angular/core']],
   ['0.0.0-MATERIAL', packageJson.dependencies['@angular/material']],
   ['0.0.0-ECHARTS', packageJson.dependencies['echarts']],
-  ['0.0.0-ECHARTS-WORDCLOUD', packageJson.dependencies['echarts-wordcloud']],
+  ['0.0.0-WORDCLOUD', packageJson.dependencies['echarts-wordcloud']],
   ['0.0.0-SHOWDOWN', packageJson.dependencies['showdown']],
   ['0.0.0-HIGHLIGHT', packageJson.dependencies['highlight.js']],
   ['0.0.0-MONACO', packageJson.dependencies['monaco-editor']],
