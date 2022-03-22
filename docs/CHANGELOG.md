@@ -1,3 +1,9 @@
+# [4.1.0-develop.5](https://github.com/Teradata/covalent/compare/v4.1.0-develop.4...v4.1.0-develop.5) (2022-03-22)
+
+### Bug Fixes
+
+- **release:** npmrc file for publish step ([bfdf675](https://github.com/Teradata/covalent/commit/bfdf675c1a2c62844f01baab8d4a0d91f4ca63ab))
+
 # [4.1.0-develop.4](https://github.com/Teradata/covalent/compare/v4.1.0-develop.3...v4.1.0-develop.4) (2022-03-22)
 
 ### Bug Fixes
