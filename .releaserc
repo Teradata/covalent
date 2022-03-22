@@ -3,20 +3,19 @@
     ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
     ["@semantic-release/release-notes-generator"],
     ["@semantic-release/exec", {
-      "prepareCmd": "./scripts/npm-version ${nextRelease.version} && npm run release",
-      "publishCmd": "./scripts/npm-publish"
+      "prepareCmd": "./scripts/npm-version ${nextRelease.version} && npm run release:prepare",
+      "publishCmd": "./scripts/npm-publish ${nextRelease.channel}"
     }],
-    ["@semantic-release/npm"],
     ["@semantic-release/changelog",{
       "changelogFile": "docs/CHANGELOG.md"
     }],
+    ["@semantic-release/npm"],
     ["@semantic-release/git", {
       "message": "ci(release): ${nextRelease.version} [skip ci]",
       "assets": [
         "docs/CHANGELOG.md",
         "package.json",
-        "package-lock.json",
-        "libs/**/package.json"
+        "package-lock.json"
       ]
     }],
     ["@semantic-release/github", {

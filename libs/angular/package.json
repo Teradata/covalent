@@ -1,6 +1,6 @@
 {
   "name": "@covalent/core",
-  "version": "4.1.0-develop.2",
+  "version": "0.0.0-COVALENT",
   "exports": {
     ".": {
       "sass": "./theming/_all-theme.scss"
@@ -18,7 +18,7 @@
   "peerDependencies": {
     "@angular/common": "0.0.0-NG",
     "@angular/core": "0.0.0-NG",
-    "@covalent/core/common": "0.0.0-COVALENT"
+    "@covalent/core": "0.0.0-COVALENT"
   },
   "dependencies": {
     "tslib": "0.0.0-TSLIB"
