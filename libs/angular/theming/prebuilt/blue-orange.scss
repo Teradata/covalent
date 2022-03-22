@@ -1,4 +1,4 @@
-@use '~@angular/material' as mat;
+@use '../../../../node_modules/@angular/material' as mat;
 @import '../all-theme';
 
 $primary: mat.define-palette(mat.$blue-palette, 700);
