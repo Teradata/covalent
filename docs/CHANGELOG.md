@@ -1,3 +1,9 @@
+# [4.1.0-develop.6](https://github.com/Teradata/covalent/compare/v4.1.0-develop.5...v4.1.0-develop.6) (2022-03-22)
+
+### Bug Fixes
+
+- **release:** re-adding prebuilt css ([0d75b72](https://github.com/Teradata/covalent/commit/0d75b721752f419e7b80211a412c2c687739b296))
+
 # [4.1.0-develop.5](https://github.com/Teradata/covalent/compare/v4.1.0-develop.4...v4.1.0-develop.5) (2022-03-22)
 
 ### Bug Fixes
