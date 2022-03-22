@@ -1,3 +1,9 @@
+# [4.1.0-develop.4](https://github.com/Teradata/covalent/compare/v4.1.0-develop.3...v4.1.0-develop.4) (2022-03-22)
+
+### Bug Fixes
+
+- **releaes:** add NODE_AUTH_TOKEN variable ([2723bb9](https://github.com/Teradata/covalent/commit/2723bb99d4498c82c12c903d4e026d69e6383ab8))
+
 # [4.1.0-develop.3](https://github.com/Teradata/covalent/compare/v4.1.0-develop.2...v4.1.0-develop.3) (2022-03-22)
 
 ### Bug Fixes
