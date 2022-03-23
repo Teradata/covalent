@@ -1,3 +1,9 @@
+# [4.1.0-develop.7](https://github.com/Teradata/covalent/compare/v4.1.0-develop.6...v4.1.0-develop.7) (2022-03-23)
+
+### Bug Fixes
+
+- **editor:** fix peer dep versions ([5f5fdbb](https://github.com/Teradata/covalent/commit/5f5fdbbb9a222d1e4be42295c7175a30d9cb1408))
+
 # [4.1.0-develop.6](https://github.com/Teradata/covalent/compare/v4.1.0-develop.5...v4.1.0-develop.6) (2022-03-22)
 
 ### Bug Fixes
