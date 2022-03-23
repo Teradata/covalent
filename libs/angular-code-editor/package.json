@@ -22,8 +22,8 @@
   "license": "MIT",
   "author": "Teradata UX",
   "peerDependencies": {
-    "@angular/common": "0.0.0-COVALENT",
-    "@angular/core": "0.0.0-COVALENT",
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
     "monaco-editor": "0.0.0-MONACO"
   },
   "dependencies": {
