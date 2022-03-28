@@ -368,7 +368,7 @@ export class TdMarkdownComponent
     const markdownToParse: string = lines.join('\n');
 
     // Convert markdown into html
-    const converter: any = new showdown.Converter();
+    const converter: showdown.Converter = new showdown.Converter();
     converter.setOption('ghCodeBlocks', true);
     converter.setOption('tasklists', true);
     converter.setOption('tables', true);

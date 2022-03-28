@@ -2,8 +2,6 @@
   "name": "@covalent/highlight",
   "version": "0.0.0-COVALENT",
   "description": "Teradata UI Platform Highlight Module",
-  "license": "MIT",
-  "author": "Teradata UX",
   "keywords": [
     "angular",
     "components",
@@ -11,6 +9,15 @@
     "highlight",
     "highlightjs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
   "peerDependencies": {
     "highlight.js": "0.0.0-HIGHLIGHT",
     "@angular/common": "0.0.0-NG",
