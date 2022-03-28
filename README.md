@@ -51,8 +51,8 @@ Covalent is built on a CSS Flexbox layout and all layouts and components heavily
 
 #### Current version - 1 for the following:
 
-|               | Chrome | Firefox | Safari | Edge | Mobile Chrome | Mobile Safari |
-| ------------- | :----: | :-----: | :----: | :--: | :-----------: | :-----------: |
-| **Supported** |   ✓    |    ✓    |   ✓    |  ✓   |       ~       |       ~       |
+| Chrome | Firefox | Safari | Edge | Mobile Chrome | Mobile Safari |
+| :----: | :-----: | :----: | :--: | :-----------: | :-----------: |
+|   ✓    |    ✓    |   ✓    |  ✓   |       ~       |       ~       |
 
 ~ Indicates limited testing & lower priority
