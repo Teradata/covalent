@@ -6,15 +6,14 @@ import {
   OnDestroy,
   ChangeDetectionStrategy,
   AfterContentInit,
-  DoCheck,
   ChangeDetectorRef,
   ElementRef,
   Input,
   HostBinding,
 } from '@angular/core';
 
-import { Subscription, Subject, fromEvent, merge } from 'rxjs';
-import { debounceTime, distinctUntilChanged, startWith } from 'rxjs/operators';
+import { Subscription, fromEvent } from 'rxjs';
+import { debounceTime, startWith } from 'rxjs/operators';
 
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
@@ -25,10 +24,9 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbsComponent
-  implements OnInit, DoCheck, AfterContentInit, OnDestroy
+  implements OnInit, AfterContentInit, OnDestroy
 {
   private _resizeSubscription: Subscription = Subscription.EMPTY;
-  private _widthSubject: Subject<number> = new Subject<number>();
   private _contentChildrenSub!: Subscription;
   private _resizing = false;
   private _separatorIcon = 'chevron_right';
@@ -58,25 +56,18 @@ export class TdBreadcrumbsComponent
   ) {}
 
   ngOnInit(): void {
-    this._resizeSubscription = merge(
-      fromEvent(window, 'resize').pipe(debounceTime(10)),
-      this._widthSubject.asObservable().pipe(distinctUntilChanged())
-    ).subscribe(() => {
-      if (!this._resizing) {
-        this._resizing = true;
-        setTimeout(() => {
-          this._calculateVisibility();
-          this._resizing = false;
-          this._changeDetectorRef.markForCheck();
-        }, 100);
-      }
-    });
-  }
-
-  ngDoCheck(): void {
-    if (this._elementRef && this._elementRef.nativeElement) {
-      this._widthSubject.next(this.nativeElementWidth);
-    }
+    this._resizeSubscription = fromEvent(window, 'resize')
+      .pipe(debounceTime(10))
+      .subscribe(() => {
+        if (!this._resizing) {
+          this._resizing = true;
+          setTimeout(() => {
+            this._calculateVisibility();
+            this._resizing = false;
+            this._changeDetectorRef.markForCheck();
+          }, 100);
+        }
+      });
   }
 
   ngAfterContentInit(): void {

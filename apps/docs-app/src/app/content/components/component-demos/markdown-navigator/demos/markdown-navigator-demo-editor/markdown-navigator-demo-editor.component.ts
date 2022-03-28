@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {
   IMarkdownNavigatorItem,
   TdMarkdownNavigatorWindowService,
-  IMarkdownNavigatorWindowConfig,
 } from '@covalent/markdown-navigator';
 
 function prettyJson(items: IMarkdownNavigatorItem[]): string {

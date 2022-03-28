@@ -111,6 +111,7 @@ export class TdCodeEditorComponent
   @Input()
   override set value(value: string) {
     this._value = value;
+
     if (this._componentInitialized) {
       this.applyValue();
     }

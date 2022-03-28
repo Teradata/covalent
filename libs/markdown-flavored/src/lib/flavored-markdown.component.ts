@@ -501,7 +501,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
           (col: string, index: number) => {
             return {
               label: col,
-              name: col.toLowerCase().trim(),
+              name: col ? col.toLowerCase().trim() : `column ${index}`,
               numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
             };
           }
