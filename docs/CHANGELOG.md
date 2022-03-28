@@ -1,3 +1,14 @@
+# [4.1.0-develop.8](https://github.com/Teradata/covalent/compare/v4.1.0-develop.7...v4.1.0-develop.8) (2022-03-28)
+
+### Bug Fixes
+
+- adjust spacing of breadcrumbs, weight of title ([3569afd](https://github.com/Teradata/covalent/commit/3569afda7953745bf85574286f4cb9424ebee5ba))
+- vertical misalignment of final breadcrumb icon ([a579d10](https://github.com/Teradata/covalent/commit/a579d10f3ab5c250abfdc8820ff228d21fb0bf0e))
+
+### Features
+
+- **markdown-navigator:** adding td-breadcrumbs ([8838601](https://github.com/Teradata/covalent/commit/88386010869399a8707d720b18f9b1c9454986d4))
+
 # [4.1.0-develop.7](https://github.com/Teradata/covalent/compare/v4.1.0-develop.6...v4.1.0-develop.7) (2022-03-23)
 
 ### Bug Fixes
