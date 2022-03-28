@@ -25,8 +25,7 @@ import {
   renderVideoElements,
 } from './markdown-utils/markdown-utils';
 
-declare const require: any;
-const showdown: any = require('showdown/dist/showdown.js');
+import * as showdown from 'showdown';
 
 // TODO: assumes it is a github url
 // allow override somehow
@@ -113,7 +112,11 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
       .forEach((image: HTMLImageElement) => {
         const src = image.getAttribute('src') ?? '';
         try {
+          /* tslint:disable-next-line:no-unused-expression */
           new URL(src);
+          if (isGithubHref(src)) {
+            image.src = rawGithubHref(src);
+          }
         } catch {
           image.src = generateAbsoluteHref(
             isGithubHref(currentHref)
