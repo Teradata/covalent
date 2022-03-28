@@ -9,13 +9,12 @@ $code-font: 'Menlo', 'Monaco', 'Andale Mono', 'lucida console', 'Courier New',
     }
   }
 
-  td-data-table,
   mat-checkbox {
     display: block;
   }
 
-  td-data-table,
   td-highlight,
+  mat-table,
   mat-checkbox:last-of-type {
     margin-bottom: 16px;
   }

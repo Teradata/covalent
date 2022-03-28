@@ -21,12 +21,11 @@
             td-breadcrumb
             (click)="goBack(index)"
             [attr.data-test]="'back-button'"
+            >{{ stack.title }}</a
           >
-            {{ stack.title }}
-          </a>
         </ng-container>
         <ng-template #lastBreadCrumb>
-          <mat-icon>chevron_right</mat-icon>
+          <mat-icon class="breadcrumb-end-icon">chevron_right</mat-icon>
         </ng-template>
       </ng-container>
     </td-breadcrumbs>

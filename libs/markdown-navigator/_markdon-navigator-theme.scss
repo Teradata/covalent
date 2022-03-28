@@ -13,7 +13,7 @@
 @mixin covalent-markdown-navigator-theme($theme) {
   $foreground: map-get($theme, foreground);
   $secondary: map-get($foreground, secondary-text);
-  
+
   td-markdown-navigator {
     td-breadcrumbs {
       color: $secondary;
