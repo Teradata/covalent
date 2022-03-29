@@ -1,7 +1,4 @@
+# Add files here to ignore them from prettier formatting
+
 /dist
-/deploy
-/node_modules
 /coverage
-src/platform/core/schematics/ng-add/files/theme.scss
-*.md
-.angular/

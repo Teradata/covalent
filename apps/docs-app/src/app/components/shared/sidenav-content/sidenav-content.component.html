@@ -1,0 +1,81 @@
+<div class="doc-nav">
+  <mat-expansion-panel
+    [@.disabled]="true"
+    class="mat-elevation-z0"
+    [expanded]="isActive(routeGroup.rootRoute)"
+    *ngFor="let routeGroup of combinedRoutes"
+  >
+    <mat-expansion-panel-header
+      [collapsedHeight]="'38px'"
+      [expandedHeight]="'50px'"
+    >
+      <span class="fw-500">{{ routeGroup.name }}</span>
+    </mat-expansion-panel-header>
+
+    <div class="doc-nav-section push-bottom-sm">
+      <ng-container *ngFor="let section of routeGroup.routeGroups">
+        <ng-container *ngIf="!section.nested; else nested">
+          <div
+            *ngIf="section.name"
+            class="doc-nav-section-label text-upper tc-grey-500 mat-caption"
+          >
+            {{ section.name }}
+          </div>
+          <mat-nav-list
+            td-sidenav-content
+            disableRipple="true"
+            class="pad-top-xs"
+          >
+            <a
+              *ngFor="let item of section.views"
+              mat-list-item
+              [routerLink]="item.route"
+              [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact: item.name === 'Overview' }"
+              class="tc-grey-700 doc-nav-link"
+              [tdLayoutClose]
+            >
+              {{ item.name }}
+            </a>
+          </mat-nav-list>
+        </ng-container>
+
+        <ng-template #nested>
+          <mat-expansion-panel
+            [@.disabled]="true"
+            [expanded]="
+              router.routerState.snapshot.url.includes(routeGroup.rootRoute)
+            "
+            class="mat-elevation-z0 nested-expansion-panel"
+          >
+            <mat-expansion-panel-header
+              class="tc-grey-700"
+              [collapsedHeight]="'34px'"
+              [expandedHeight]="'34px'"
+            >
+              <mat-panel-title>{{ section.name }}</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="doc-nav-section">
+              <mat-nav-list td-sidenav-content disableRipple="true">
+                <a
+                  *ngFor="let view of section.views"
+                  mat-list-item
+                  [routerLink]="view.route"
+                  [routerLinkActive]="['active']"
+                  [routerLinkActiveOptions]="{
+                    exact: view.name === 'Overview'
+                  }"
+                  class="tc-grey-700 doc-nav-link"
+                  [tdLayoutClose]
+                >
+                  {{ view.name }}
+                </a>
+              </mat-nav-list>
+            </div>
+          </mat-expansion-panel>
+        </ng-template>
+      </ng-container>
+    </div>
+  </mat-expansion-panel>
+</div>

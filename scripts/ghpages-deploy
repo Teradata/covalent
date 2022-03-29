@@ -7,7 +7,11 @@ git checkout gh-pages
 echo "Created or replaced $version dir"
 rm -rf ./$version
 mkdir $version
-cp -r dist/covalent-docs/* $version
+cp -r dist/apps/docs-app/* $version
+
+echo "Configuring GIT User"
+git config user.name github-actions
+git config user.email github-actions@github.com
 
 echo 'Tracking files'
 git add -A $version

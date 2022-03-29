@@ -1,0 +1,275 @@
+@use '@angular/material' as mat;
+@import '../../../libs/angular/theming/all-theme';
+@import '../../../libs/markdown/markdown-theme';
+@import '../../../libs/angular-highlight/highlight-theme';
+@import '../../../libs/markdown-flavored/flavored-markdown-theme';
+@import '../../../libs/markdown-navigator/markdon-navigator-theme';
+@import '../../../libs/angular-guided-tour/guided-tour-theme';
+@import '../../../libs/angular-guided-tour/styles/guided-tour.scss';
+
+// Import Roboto styles from google apis CDN
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+// Plus imports for other components in your app.
+
+// Custom typography
+$custom-typography: mat-typography-config(
+  $button: mat-typography-level(14px, 14px, 400),
+);
+$custom-toolbar-typography: mat-typography-config(
+  $title: mat-typography-level(20px, 32px, 400),
+);
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat.core($custom-typography);
+
+// Setting the toolbar to the proper spec weight
+@include mat-toolbar-typography($custom-toolbar-typography);
+
+// Teradata brand
+/* stylelint-disable-next-line no-invalid-position-at-import-rule */
+@import './teradata-branding';
+
+// Include the core styles for Covalent
+@include covalent-core();
+
+// Include material icons
+$mat-font-url: './';
+@include covalent-material-icons();
+
+// Include covalent utility classes
+@include covalent-utilities();
+
+// Include flex layout classes
+@include covalent-layout();
+
+// Include covalent color classes
+@include covalent-colors();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$primary: mat-palette($td-slate, 700, 100, 900);
+$accent: mat-palette($td-teal, 800, 200, 900);
+
+// The warn palette is optional (defaults to red).
+$warn: mat-palette($mat-red, 600, 200, 900);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+@include covalent-theme($theme);
+@include covalent-markdown-theme($theme);
+@include covalent-highlight-theme(
+
+); // OR @import '~highlight.js/styles/vs.css';
+@include covalent-flavored-markdown-theme($theme);
+@include covalent-markdown-navigator-theme($theme);
+@include covalent-markdown-navigator-typography($custom-typography);
+@include teradata-brand($theme);
+
+@include covalent-guided-tour-theme($theme);
+
+// Alt theme
+.theme-alt {
+  $primary-alt: mat-palette($td-orange, 800, 200, 900);
+  $accent-alt: mat-palette($td-slate, 700, 100, 900);
+  $warn-alt: mat-palette($mat-red, 600, 200, 900);
+  $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
+  @include angular-material-theme($theme-alt);
+  @include covalent-theme($theme-alt);
+
+  .tc-primary {
+    color: mat-color($primary-alt);
+  }
+
+  .tc-accent {
+    color: mat-color($accent-alt);
+  }
+
+  .tc-warn {
+    color: mat-color($warn-alt);
+  }
+
+  a:not([class*='mat-']) {
+    color: mat-color($accent-alt);
+
+    &:hover {
+      color: darken(mat-color($accent-alt), 10%);
+    }
+  }
+}
+
+body .mat-card {
+  border-radius: 8px;
+}
+
+// Dark theme
+.theme-dark {
+  $primary-dark: mat-palette($td-slate, 800, 200, 900);
+  $accent-dark: mat-palette($td-orange, 800, 200, 900);
+  $warn-dark: mat-palette($mat-red, 600, 200, 900);
+  $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+  @include angular-material-theme($theme-dark);
+  @include covalent-theme($theme-dark);
+  @include covalent-markdown-theme($theme-dark);
+  @include covalent-flavored-markdown-theme($theme-dark);
+  @include covalent-markdown-navigator-theme($theme-dark);
+  @include teradata-brand($theme-dark);
+
+  @include covalent-guided-tour-theme($theme-dark);
+
+  .tc-primary {
+    color: mat-color($primary-dark);
+  }
+
+  .tc-accent,
+  a {
+    color: mat-color($accent-dark);
+  }
+
+  a:hover {
+    color: darken(mat-color($accent-dark), 10%);
+  }
+
+  .tc-warn {
+    color: mat-color($warn-dark);
+  }
+
+  .bgc-contrast {
+    background-color: #111111;
+  }
+}
+
+// Subpage themes
+.theme-docs {
+  $primary-docs: mat-palette($mat-deep-purple, 700);
+  $accent-docs: mat-palette($mat-cyan, A400);
+  $warn-docs: mat-palette($mat-red, 600);
+  $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
+  @include angular-material-theme($theme-docs);
+  @include covalent-theme($theme-docs);
+
+  .tc-primary {
+    color: mat-color($primary-docs);
+  }
+
+  .tc-accent,
+  a {
+    color: mat-color($accent-docs);
+  }
+
+  a:hover {
+    color: darken(mat-color($accent-docs), 10%);
+  }
+
+  .tc-warn {
+    color: mat-color($warn-docs);
+  }
+}
+
+// Custom theme examples
+.blue-orange {
+  $primary2: mat-palette($mat-blue, 700);
+  $accent2: mat-palette($mat-orange, 800);
+  $warn2: mat-palette($mat-red, 600);
+
+  $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
+
+  @include angular-material-theme($blue-orange);
+  @include covalent-theme($blue-orange);
+}
+
+.blue-grey-deep-orange {
+  $primary3: mat-palette($mat-blue-grey, 700);
+  $accent3: mat-palette($mat-deep-orange);
+  $warn3: mat-palette($mat-red, 600);
+
+  $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
+
+  @include angular-material-theme($blue-grey-deep-orange);
+  @include covalent-theme($blue-grey-deep-orange);
+}
+
+/* ------------------------------------------------------------------------------- */
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
+
+// Apply theme for this app
+.bgc-contrast {
+  background-color: #ececec;
+}
+
+// Active icon color in list nav
+mat-nav-list {
+  [mat-list-item].active {
+    mat-icon[matListAvatar] {
+      background-color: mat-color($accent);
+      color: mat-color($accent, default-contrast);
+    }
+
+    mat-icon[matListIcon] {
+      color: mat-color($accent);
+    }
+  }
+}
+
+// Expansion panels
+.home .theme-dark .td-expansion-panel {
+  background-color: mat-color($td-slate, 800);
+}
+
+td-layout-nav {
+  mat-toolbar {
+    z-index: 2;
+    @include mat-elevation(3);
+  }
+}
+
+// Active top nav
+nav.docs-nav {
+  a {
+    line-height: 4;
+    display: block;
+    font-size: 1.1428em;
+    letter-spacing: 0.0764em;
+    position: relative;
+    color: rgba(250, 250, 250, 80%);
+
+    &:hover {
+      color: #ffffff;
+    }
+
+    &.active {
+      color: #ffffff;
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        bottom: 0;
+        width: 100%;
+        background-color: mat-color($accent);
+        left: 0;
+      }
+    }
+  }
+}
+
+// Links
+a {
+  text-decoration: none;
+}
+
+.td-markdown {
+  h1,
+  h2,
+  h3 {
+    font-weight: 400 !important;
+  }
+}

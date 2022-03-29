@@ -9,35 +9,43 @@ Covalent is a UI Platform focused on solving common enterprise needs. Covalent f
 Covalent modules live in separated npm packages:
 
 **@covalent/core**
-  - Bundled with 20+ UI components
-  - Including: Fully pre-made layouts, data table, wizard stepper, custom pipes, services, utility functions and more
+
+- Bundled with 20+ UI components
+- Including: Fully pre-made layouts, data table, wizard stepper, custom pipes, services, utility functions and more
 
 **@covalent/echarts**
 
-  - Atomic components made to facilitate visualizations
-  - 9+ chart types including: bar, scatter, treemap and more
+- Atomic components made to facilitate visualizations
+- 9+ chart types including: bar, scatter, treemap and more
 
 **@covalent/highlight**
-  - Syntax highlighting with support for many languages
+
+- Syntax highlighting with support for many languages
 
 **@covalent/markdown-parser**
-  - Parse Github flavored markdown
+
+- Parse Github flavored markdown
 
 **@covalent/flavored-markdown**
-  - Turn markdown into material components
+
+- Turn markdown into material components
 
 **@covalent/markdown-navigator**
-  - Navigate through different sources of markdown
-  - Draggable window for showing inline documentation
+
+- Navigate through different sources of markdown
+- Draggable window for showing inline documentation
 
 **@covalent/dynamic-forms**
-  - Build forms from a JS object
+
+- Build forms from a JS object
 
 **@covalent/code-editor**
-  - Multi-language code editor
+
+- Multi-language code editor
 
 **@covalent/text-editor**
-  - Simple markdown text editor component
+
+- Simple markdown text editor component
 
 <br/>
 
@@ -47,16 +55,17 @@ Covalent is built on a CSS Flexbox layout and all layouts and components heavily
 
 #### Current version - 1 for the following:
 
-| Chrome | Firefox | Safari | Edge | Mobile Chrome | Mobile Safari | IE11
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| ✓ | ✓ | ✓ | ✓ | ~ | ~ | ~ |
+| Chrome | Firefox | Safari | Edge | Mobile Chrome | Mobile Safari | IE11 |
+| :----: | :-----: | :----: | :--: | :-----------: | :-----------: | :--: |
+|   ✓    |    ✓    |   ✓    |  ✓   |       ~       |       ~       |  ~   |
 
 <br/>
 
 ## Assumptions
+
 Throughout the docs we consider familiarity with the following technologies:
 
-  * Angular
-  * Javascript/Typescript
-  * CSS/SCSS
-  * HTML
+- Angular
+- Javascript/Typescript
+- CSS/SCSS
+- HTML

@@ -1,0 +1,71 @@
+<mat-card>
+  <mat-card-title>Testing</mat-card-title>
+  <mat-card-subtitle>Deploy your app via CLI</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h3>Install TSLint for TypeScript</h3>
+    <p>
+      First ensure you have Protractor and TSLint installed, setup for
+      TypeScript and updated Webdriver
+    </p>
+    <td-highlight codeLang="bash">
+      npm install -g tslint typescript npm install -g protractor
+      webdriver-manager update ./node_modules/.bin/webdriver-manager update
+    </td-highlight>
+    <h3>Running unit tests</h3>
+    <p>
+      Tests will execute after a build is executed via Karma, and it will
+      automatically watch your files for changes.
+    </p>
+    <p>
+      You can run tests a single time via --watch=false, and turn off building
+      of the app via --build=false (useful for running it at the same time as ng
+      serve).
+    </p>
+    <td-highlight codeLang="bash">ng test</td-highlight>
+    <h3>Running end-to-end tests</h3>
+    <p>
+      Before running the tests make sure you are serving the app via ng serve.
+    </p>
+    <p>End-to-end tests are ran via Protractor.</p>
+
+    <td-highlight codeLang="bash">ng e2e</td-highlight>
+    <h3>Linting and formatting code</h3>
+    <p>
+      You can lint your app code by running ng lint. This will use the lint npm
+      script that in generated projects uses tslint.
+    </p>
+    <td-highlight codeLang="bash">ng lint</td-highlight>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a
+      mat-button
+      color="accent"
+      target="_blank"
+      href="https://github.com/angular/angular-cli/wiki/test"
+      class="text-upper"
+    >
+      Testing Docs
+    </a>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>Resources</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <a
+      mat-list-item
+      href="http://karma-runner.github.io/0.13/index.html"
+      target="_blank"
+    >
+      <mat-icon>launch</mat-icon>
+      <span matLine>More on Karma (Unit Tests)</span>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item href="http://www.protractortest.org/" target="_blank">
+      <mat-icon>launch</mat-icon>
+      <span matLine>More on Protractor (End to End Tests)</span>
+    </a>
+  </mat-nav-list>
+</mat-card>

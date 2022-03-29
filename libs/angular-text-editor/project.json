@@ -1,0 +1,52 @@
+{
+  "projectType": "library",
+  "root": "libs/angular-text-editor",
+  "sourceRoot": "libs/angular-text-editor/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/angular-text-editor"],
+      "options": {
+        "project": "libs/angular-text-editor/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-text-editor/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-text-editor/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/angular-text-editor"],
+      "options": {
+        "jestConfig": "libs/angular-text-editor/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-text-editor/src/**/*.ts",
+          "libs/angular-text-editor/src/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/angular-text-editor/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

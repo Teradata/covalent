@@ -1,3 +1,0 @@
-{
-  "extends": ["./src/platform/coding-standards/tslint/tslint.js"]
-}

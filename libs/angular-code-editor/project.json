@@ -1,0 +1,59 @@
+{
+  "projectType": "library",
+  "root": "libs/angular-code-editor",
+  "sourceRoot": "libs/angular-code-editor/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/angular-code-editor"],
+      "options": {
+        "project": "libs/angular-code-editor/ng-package.json",
+        "tailwindConfig": "libs/angular-code-editor/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-code-editor/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-code-editor/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@angular-builders/custom-webpack:karma",
+      "options": {
+        "customWebpackConfig": {
+          "path": "./monaco-webpack.config.js",
+          "mergeStrategies": {
+            "module.rules": "prepend"
+          }
+        },
+        "main": "libs/angular-code-editor/src/test.ts",
+        "tsConfig": "libs/angular-code-editor/tsconfig.spec.json",
+        "karmaConfig": "libs/angular-code-editor/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-code-editor/src/**/*.ts",
+          "libs/angular-code-editor/src/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/angular-code-editor/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

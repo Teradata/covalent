@@ -1,0 +1,93 @@
+<div class="pad-right-sm pad-left-sm">
+  <h1 class="mat-display-1 push-bottom text-caps">{{ category.name }}</h1>
+  <h3
+    class="mat-subheading-2 tc-grey-600 push-bottom-xl"
+    [style.maxWidth.px]="468"
+  >
+    {{ category.description }}
+  </h3>
+</div>
+
+<section *ngFor="let group of categoryGroups">
+  <div
+    *ngIf="
+      !(group?.views?.length === 1 && (group?.views)[0]?.name === 'Overview')
+    "
+    class="push-bottom-lg pad-bottom-xs"
+  >
+    <h3
+      class="mat-subheading-1 tc-grey-600 push-bottom-xs pad-right-sm pad-left-sm"
+    >
+      {{ group.name }}
+    </h3>
+    <div layout="row" layout-wrap>
+      <ng-container *ngFor="let item of group.views">
+        <div
+          flex-xs="100"
+          flex-sm="33"
+          flex-md="33"
+          flex-gt-md="25"
+          *ngIf="item.name !== 'Overview'"
+        >
+          <a [routerLink]="item.route" class="text-nodecoration push-sm block">
+            <mat-card
+              [ngClass]="{ 'no-description': !item?.description }"
+              class="component-card cursor-pointer push-none"
+              layout="column"
+              layout-align="space-between start"
+            >
+              <mat-icon
+                ngClass="tc-{{ item.color || group.color || 'grey-600' }}"
+              >
+                {{ item.icon }}
+              </mat-icon>
+              <div>
+                <div class="push-bottom-xs">
+                  <span class="mat-subheading-2">{{ item.name }}</span>
+                </div>
+                <div
+                  *ngIf="item?.description"
+                  class="tc-grey-600 mat-caption component-card-body"
+                >
+                  {{ item.description | truncate }}
+                </div>
+              </div>
+            </mat-card>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<section class="pad-bottom-xxl" *ngIf="category.name === 'Components'">
+  <div class="pad-right-sm pad-left-sm pad-top-xl">
+    <h1 class="mat-display-1 push-bottom-md">External Components</h1>
+    <h3
+      class="mat-subheading-2 tc-grey-600 push-bottom-lg"
+      [style.maxWidth.px]="468"
+    >
+      Recommended but not maintained by Covalent
+    </h3>
+  </div>
+
+  <div layout="row" layout-wrap>
+    <div flex-xs="100" flex-sm="33" flex-md="33" flex-gt-md="25">
+      <a [href]="angularDocsURL" target="_blank">
+        <mat-card
+          class="component-card cursor-pointer"
+          layout="column"
+          layout-align="space-between start"
+        >
+          <mat-icon class="icon-component tc-deep-purple-800">layers</mat-icon>
+          <div>
+            <div class="mat-subheading-2 push-bottom-xs">Angular Material</div>
+            <div class="tc-grey-600 mat-caption">
+              A short description about the component.
+            </div>
+          </div>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+</section>

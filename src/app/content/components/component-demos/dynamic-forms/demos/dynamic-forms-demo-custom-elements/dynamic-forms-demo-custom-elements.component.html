@@ -1,9 +1,0 @@
-<td-dynamic-forms [elements]="customElements">
-  <ng-template let-element ngFor [ngForOf]="customElements">
-    <ng-template let-control="control" [tdDynamicFormsError]="element.name">
-      <span *ngIf="control.touched || !control.pristine">
-        <span *ngIf="control.hasError('invalidChips')">No more than 2 chips</span>
-      </span>
-    </ng-template>
-  </ng-template>
-</td-dynamic-forms>

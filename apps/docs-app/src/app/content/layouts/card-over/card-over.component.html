@@ -1,0 +1,184 @@
+<mat-card>
+  <mat-card-title>Minimum Demo</mat-card-title>
+  <mat-card-subtitle
+    >Minimum code for this layout with no wrapper</mat-card-subtitle
+  >
+  <mat-divider></mat-divider>
+  <div [style.height]="'150px'" class="relative">
+    <td-layout-card-over
+      cardTitle="Covalent"
+      cardSubtitle="Card Over Layout Demo"
+    >
+      Content goes here
+    </td-layout-card-over>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <td-highlight codeLang="html">
+      {{ tdLayoutMinHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Basic Demo</mat-card-title>
+  <mat-card-subtitle>Basic layout wrapper &amp; nav drawer</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <div [style.height]="'400px'" class="relative">
+    <td-layout>
+      <td-navigation-drawer
+        flex
+        sidenavTitle="Covalent"
+        logo="teradata-dark"
+        name="Firstname Lastname"
+        email="firstname.lastname@company.com"
+      >
+        <mat-nav-list>
+          <a mat-list-item>
+            <mat-icon>home</mat-icon>
+            Home
+          </a>
+        </mat-nav-list>
+        <div tdNavigationDrawerMenu>
+          <mat-nav-list>
+            <a mat-list-item>
+              <mat-icon>account_box</mat-icon>
+              Profile
+            </a>
+          </mat-nav-list>
+        </div>
+      </td-navigation-drawer>
+      <td-layout-nav
+        logo="assets:teradata"
+        toolbarTitle="Covalent"
+        navigationRoute="/"
+      >
+        <button mat-icon-button td-menu-button tdLayoutToggle>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <td-layout-card-over
+          cardTitle="Covalent"
+          cardSubtitle="Card Over Layout Demo"
+        >
+          Content goes here
+        </td-layout-card-over>
+      </td-layout-nav>
+    </td-layout>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <td-highlight codeLang="html">
+      {{ tdLayoutDrawerHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Full Demo</mat-card-title>
+  <mat-card-subtitle
+    >Full working code with all options and templates</mat-card-subtitle
+  >
+  <mat-divider></mat-divider>
+  <div [style.height]="'400px'" class="relative">
+    <td-layout>
+      <td-navigation-drawer
+        flex
+        sidenavTitle="Covalent"
+        logo="teradata-dark"
+        name="Firstname Lastname"
+        email="firstname.lastname@company.com"
+      >
+        <mat-nav-list>
+          <a *ngFor="let item of routes" mat-list-item>
+            <mat-icon>{{ item.icon }}</mat-icon>
+            {{ item.title }}
+          </a>
+        </mat-nav-list>
+        <div tdNavigationDrawerMenu>
+          <mat-nav-list>
+            <a *ngFor="let item of usermenu" mat-list-item>
+              <mat-icon>{{ item.icon }}</mat-icon>
+              {{ item.title }}
+            </a>
+          </mat-nav-list>
+        </div>
+      </td-navigation-drawer>
+      <td-layout-nav>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <button mat-icon-button td-menu-button tdLayoutToggle>
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-icon
+            [routerLink]="['/']"
+            class="mat-icon-logo cursor-pointer"
+            svgIcon="assets:teradata"
+          ></mat-icon>
+          <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
+          <span flex></span>
+          <a
+            mat-icon-button
+            matTooltip="Docs"
+            href="https://teradata.github.io/covalent/"
+            target="_blank"
+          >
+            <mat-icon>chrome_reader_mode</mat-icon>
+          </a>
+          <a
+            mat-icon-button
+            matTooltip="Github"
+            href="https://github.com/teradata/covalent"
+            target="_blank"
+          >
+            <mat-icon svgIcon="assets:github"></mat-icon>
+          </a>
+        </div>
+        <td-layout-card-over [cardWidth]="75">
+          <mat-card-title>Card Over Layout</mat-card-title>
+          <mat-card-subtitle
+            >A card over layout with all available options</mat-card-subtitle
+          >
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <mat-list>
+              <h3 matSubheader>Metadata</h3>
+              <ng-template let-item let-last="last" ngFor [ngForOf]="cardlist">
+                <mat-list-item>
+                  <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
+                  <h3 matLine>{{ item.title }}</h3>
+                  <p matLine>{{ item.description }}</p>
+                </mat-list-item>
+                <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+              </ng-template>
+              <mat-divider></mat-divider>
+              <h3 matSubheader>Dates</h3>
+              <ng-template let-item let-last="last" ngFor [ngForOf]="carddates">
+                <mat-list-item>
+                  <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
+                  <h3 matLine>{{ item.date | timeAgo }}</h3>
+                  <p matLine>{{ item.description }}</p>
+                </mat-list-item>
+                <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+              </ng-template>
+            </mat-list>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+          <mat-card-actions>
+            <button mat-button color="accent" class="text-upper">Edit</button>
+          </mat-card-actions>
+        </td-layout-card-over>
+      </td-layout-nav>
+    </td-layout>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <td-highlight codeLang="html">
+      {{ tdLayoutLinksHtml }}
+    </td-highlight>
+    <h3 class="mat-title">TypeScript:</h3>
+    <td-highlight codeLang="typescript">
+      {{ tdLayoutTypescript }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+<td-readme-loader
+  td-after-card
+  resourceUrl="platform/core/layout/layout-card-over/README.md"
+></td-readme-loader>

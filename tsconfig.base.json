@@ -1,0 +1,86 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@covalent/code-editor": ["libs/angular-code-editor/src/public_api.ts"],
+      "@covalent/core": ["libs/angular/public_api.ts"],
+      "@covalent/core/breadcrumbs": [
+        "libs/angular/breadcrumbs/src/public_api.ts"
+      ],
+      "@covalent/core/common": ["libs/angular/common/src/public_api.ts"],
+      "@covalent/core/dialogs": ["libs/angular/dialogs/src/public_api.ts"],
+      "@covalent/core/dynamic-menu": [
+        "libs/angular/dynamic-menu/src/public_api.ts"
+      ],
+      "@covalent/core/file": ["libs/angular/file/src/public_api.ts"],
+      "@covalent/core/json-formatter": [
+        "libs/angular/json-formatter/src/public_api.ts"
+      ],
+      "@covalent/core/layout": ["libs/angular/layout/src/public_api.ts"],
+      "@covalent/core/menu": ["libs/angular/menu/src/public_api.ts"],
+      "@covalent/core/message": ["libs/angular/message/src/public_api.ts"],
+      "@covalent/core/search": ["libs/angular/search/src/public_api.ts"],
+      "@covalent/core/side-sheet": [
+        "libs/angular/side-sheet/src/public_api.ts"
+      ],
+      "@covalent/core/user-profile": [
+        "libs/angular/user-profile/src/public_api.ts"
+      ],
+      "@covalent/dynamic-forms": [
+        "libs/angular-dynamic-forms/src/public_api.ts"
+      ],
+      "@covalent/echarts": ["libs/angular-echarts/src/public_api.ts"],
+      "@covalent/echarts/bar": ["libs/angular-echarts/bar/src/public_api.ts"],
+      "@covalent/echarts/base": ["libs/angular-echarts/base/src/public_api.ts"],
+      "@covalent/echarts/graph": [
+        "libs/angular-echarts/graph/src/public_api.ts"
+      ],
+      "@covalent/echarts/line": ["libs/angular-echarts/line/src/public_api.ts"],
+      "@covalent/echarts/map": ["libs/angular-echarts/map/src/public_api.ts"],
+      "@covalent/echarts/pie": ["libs/angular-echarts/pie/src/public_api.ts"],
+      "@covalent/echarts/sankey": [
+        "libs/angular-echarts/sankey/src/public_api.ts"
+      ],
+      "@covalent/echarts/scatter": [
+        "libs/angular-echarts/scatter/src/public_api.ts"
+      ],
+      "@covalent/echarts/toolbox": [
+        "libs/angular-echarts/toolbox/src/public_api.ts"
+      ],
+      "@covalent/echarts/tooltip": [
+        "libs/angular-echarts/tooltip/src/public_api.ts"
+      ],
+      "@covalent/echarts/tree": ["libs/angular-echarts/tree/src/public_api.ts"],
+      "@covalent/echarts/treemap": [
+        "libs/angular-echarts/treemap/src/public_api.ts"
+      ],
+      "@covalent/echarts/wordcloud": [
+        "libs/angular-echarts/wordcloud/src/public_api.ts"
+      ],
+      "@covalent/flavored-markdown": [
+        "libs/markdown-flavored/src/public_api.ts"
+      ],
+      "@covalent/guided-tour": ["libs/angular-guided-tour/src/public_api.ts"],
+      "@covalent/highlight": ["libs/angular-highlight/src/public_api.ts"],
+      "@covalent/markdown": ["libs/markdown/src/public_api.ts"],
+      "@covalent/markdown-navigator": [
+        "libs/markdown-navigator/src/public_api.ts"
+      ],
+      "@covalent/text-editor": ["libs/angular-text-editor/src/public_api.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

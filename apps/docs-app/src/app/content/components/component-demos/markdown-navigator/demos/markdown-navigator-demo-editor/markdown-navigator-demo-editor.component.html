@@ -1,0 +1,30 @@
+<div layout="row" layout-xs="column">
+  <div flex="50" flex-xs="100">
+    <td-code-editor
+      flex
+      [language]="'json'"
+      [(ngModel)]="input"
+      [style.height.px]="300"
+      [style.margin-bottom.px]="16"
+      [editorOptions]="{
+        minimap: {
+          enabled: false
+        }
+      }"
+    ></td-code-editor>
+    <div layout="row" layout-align="space-between center">
+      <mat-slide-toggle [(ngModel)]="windowShouldOpen" (change)="openOrClose()"
+        >Open window</mat-slide-toggle
+      >
+      <button mat-raised-button class="text-upper" (click)="applyInput()">
+        Apply
+      </button>
+    </div>
+  </div>
+  <div flex="50" flex-xs="100" style="margin-left: 16px">
+    <td-markdown-navigator
+      [items]="items"
+      [style.height.px]="300"
+    ></td-markdown-navigator>
+  </div>
+</div>

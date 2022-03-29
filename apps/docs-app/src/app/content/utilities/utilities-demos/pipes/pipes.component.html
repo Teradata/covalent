@@ -1,0 +1,270 @@
+<section class="push-bottom-xl">
+  <h1 class="push-bottom-sm mat-display-1">Pipes</h1>
+
+  <p class="tc-grey-600 push-bottom-md">Custom Angular pipes (filters).</p>
+</section>
+
+<section class="push-bottom-xxl">
+  <h3 class="push-bottom-sm mat-title">Setup</h3>
+  <mat-divider></mat-divider>
+  <p>Import the [CovalentCommonModule] in your NgModule:</p>
+  <td-highlight codeLang="typescript">
+    {{ covalantCommonTypescript }}
+  </td-highlight>
+
+  <mat-divider></mat-divider>
+
+  <a
+    mat-raised-button
+    color="none"
+    href="https://angular.io/docs/ts/latest/guide/pipes.html"
+    target="_blank"
+    class="text-upper push-top-sm"
+  >
+    Pipes Docs
+  </a>
+</section>
+
+<mat-card class="mat-elevation-z0 bgc-grey-50 push-bottom-lg push-none">
+  <mat-card-title>Digits Conversion</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      The
+      <code>digits</code>
+      pipe takes a number and converts the output to an appropriate numerical
+      measurement with an optional
+      <code>precision</code>
+      argument.
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <!-- original output -->
+        <h3 matLine>Digits: {{ log.digits }}</h3>
+        <!-- output with bytes pipe -->
+        <p matLine>Converted: {{ log.digits | digits }}</p>
+        <!-- output with precision aurgument -->
+        <p *ngIf="log.precision" matLine>
+          With precision argument: {{ log.digits | digits: log.precision }}
+        </p>
+      </mat-list-item>
+    </mat-list>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ digitsHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 bgc-grey-50 push-bottom-lg push-none">
+  <mat-card-title>Byte Conversion</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      The
+      <code>bytes</code>
+      pipe takes a number and converts the output to an appropriate base 1024
+      data measurement with an optional
+      <code>precision</code>
+      argument.
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <!-- original output -->
+        <h3 matLine>Bytes: {{ log.bytes }}</h3>
+        <!-- output with bytes pipe -->
+        <p matLine>Converted: {{ log.bytes | bytes }}</p>
+        <!-- output with precision aurgument -->
+        <p *ngIf="log.precision" matLine>
+          With precision argument: {{ log.bytes | bytes: log.precision }}
+        </p>
+      </mat-list-item>
+    </mat-list>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ bytesHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none">
+  <mat-card-title>Decimal Bytes Conversion</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      The
+      <code>decimalBytes</code>
+      pipe takes a number and converts the output to an appropriate base 1000
+      data measurement with an optional
+      <code>precision</code>
+      argument.
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <!-- original output -->
+        <h3 matLine>Bytes: {{ log.bytes }}</h3>
+        <!-- output with bytes pipe -->
+        <p matLine>Converted: {{ log.bytes | decimalBytes }}</p>
+        <!-- output with precision aurgument -->
+        <p *ngIf="log.precision" matLine>
+          With precision argument: {{ log.bytes | decimalBytes: log.precision }}
+        </p>
+      </mat-list-item>
+    </mat-list>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ decimalByteHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none">
+  <mat-card-title>Time Ago</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      The
+      <code>timeAgo</code>
+      pipe takes a string, number or Date timestamp (example:
+      <code>2016-01-29T17:59:59.000Z</code>
+      ) and tranforms it to the amount of time that has gone by.
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <h3 matLine>
+          Timestamp: {{ log.timestamp }} |
+          {{ log.timestamp | timeAgo: log.reference }}
+        </h3>
+        <p *ngIf="log.reference" matLine>Reference: {{ log.reference }}</p>
+      </mat-list-item>
+    </mat-list>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ timeAgoHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none">
+  <mat-card-title>Time Until</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      The
+      <code>timeUntil</code>
+      pipe takes a string, number or Date timestamp (example:
+      <code>{{ currentTimeStamp }}</code>
+      ) and tranforms it to the amount of time until that timestamp will be
+      reached.
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <h3 matLine>
+          Timestamp: {{ log.expiration_date }} |
+          {{ log.expiration_date | timeUntil: log.reference }}
+        </h3>
+        <p *ngIf="log.reference" matLine>Reference: {{ log.reference }}</p>
+      </mat-list-item>
+    </mat-list>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ timeUntilHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none">
+  <mat-card-title>Time Difference</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      The
+      <code>timeDifference</code>
+      pipe outputs the difference between two times. Strings, Numbers or Date
+      timestamps are acceptable types. (example:
+      <code>2016-01-29T17:59:59.000Z</code>
+      ).
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <!-- Start and end time output -->
+        <h3 matLine>
+          Start Time: {{ log.timestamp }} | End Time: {{ log.timestampend }}
+        </h3>
+        <!-- output with timeDifference pipe -->
+        <p matLine>
+          Difference: {{ log.timestamp | timeDifference: log.timestampend }}
+        </p>
+        <!-- outputs the time difference relative to the current time -->
+        <p matLine>
+          Difference relative to current time:
+          {{ log.timestamp | timeDifference }}
+        </p>
+      </mat-list-item>
+    </mat-list>
+    <p class="mat-body-1">
+      <strong>Note:</strong>
+      Using this pipe without arguments outputs the time difference relative to
+      the current time.
+    </p>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ timeDiffHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none">
+  <mat-card-title>Truncate</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      The
+      <code>truncate</code>
+      pipe limits a string to a specified
+      <code>length</code>
+      and adds an ellipsis.
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <!-- original value output -->
+        <h3 matLine>
+          Original value:
+          <code>{{ log.text_value }}</code>
+        </h3>
+        <!-- truncated value output -->
+        <p matLine>
+          Truncate with a length value of
+          <code>{{ log.truncate_length }}</code>
+          : {{ log.text_value | truncate: log.truncate_length ?? 0 }}
+        </p>
+      </mat-list-item>
+    </mat-list>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ truncateHtml1 }}
+    </td-highlight>
+    <p class="mat-body-1">
+      <strong>Note:</strong>
+      If the last character in a returned output is a space, then that space is
+      removed.
+    </p>
+    <td-highlight codeLang="html">
+      {{ truncateHtml2 }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none">
+  <mat-card-title>Angular Pipes</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <a mat-list-item href="https://angular.io/api?type=pipe" target="_blank">
+      <mat-icon>launch</mat-icon>
+      <span matLine>
+        Angular comes with a stock of pipes such as DatePipe, UpperCasePipe,
+        LowerCasePipe, CurrencyPipe, and PercentPipe
+      </span>
+    </a>
+  </mat-nav-list>
+</mat-card>

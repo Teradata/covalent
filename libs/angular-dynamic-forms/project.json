@@ -1,0 +1,53 @@
+{
+  "projectType": "library",
+  "root": "libs/angular-dynamic-forms",
+  "sourceRoot": "libs/angular-dynamic-forms/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/angular-dynamic-forms"],
+      "options": {
+        "project": "libs/angular-dynamic-forms/ng-package.json",
+        "tailwindConfig": "libs/angular-dynamic-forms/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-dynamic-forms/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-dynamic-forms/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/angular-dynamic-forms"],
+      "options": {
+        "jestConfig": "libs/angular-dynamic-forms/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-dynamic-forms/src/**/*.ts",
+          "libs/angular-dynamic-forms/src/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/angular-dynamic-forms/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

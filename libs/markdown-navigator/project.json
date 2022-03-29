@@ -1,0 +1,52 @@
+{
+  "projectType": "library",
+  "root": "libs/markdown-navigator",
+  "sourceRoot": "libs/markdown-navigator/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/markdown-navigator"],
+      "options": {
+        "project": "libs/markdown-navigator/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/markdown-navigator/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/markdown-navigator/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/markdown-navigator"],
+      "options": {
+        "jestConfig": "libs/markdown-navigator/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/markdown-navigator/src/**/*.ts",
+          "libs/markdown-navigator/src/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/markdown-navigator/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

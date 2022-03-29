@@ -15,21 +15,22 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 ## Setup
 
-* Ensure you have Node 12.20.x+ and NPM 6+ installed.
-* Install Angular CLI `npm i -g @angular/cli`
-* Install Typescript `npm i -g typescript`
-* Install Node packages `npm ci`
-* Run local build `npm run start`
+- Ensure you have Node 12.20.x+ and NPM 6+ installed.
+- Install Angular CLI `npm i -g @angular/cli`
+- Install Typescript `npm i -g typescript`
+- Install Node packages `npm ci`
+- Run local build `npm run start`
+
 ---
 
-* [Getting Started](docs/GETTING_STARTED.md)
-* [Contributing Guidelines](docs/CONTRIBUTING.md)
-* [Developer Guide](docs/DEVELOPER_GUIDE.md)
-* [Upgrading](docs/UPGRADE.md)
-* [Releasing](docs/RELEASE.md)
-* [Changelog](docs/CHANGELOG.md)
-* [StackBlitz Template](https://stackblitz.com/edit/covalent)
-* [Plunker Template](http://plnkr.co/edit/XhSrUWBw2RhCkXPoE4fn)
+- [Getting Started](docs/GETTING_STARTED.md)
+- [Contributing Guidelines](docs/CONTRIBUTING.md)
+- [Developer Guide](docs/DEVELOPER_GUIDE.md)
+- [Upgrading](docs/UPGRADE.md)
+- [Releasing](docs/RELEASE.md)
+- [Changelog](docs/CHANGELOG.md)
+- [StackBlitz Template](https://stackblitz.com/edit/covalent)
+- [Plunker Template](http://plnkr.co/edit/XhSrUWBw2RhCkXPoE4fn)
 
 ---
 
@@ -37,12 +38,12 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 Certain covalent version are meant for certain angular versions, and here is the matrix:
 
-| Covalent | Angular |
-|:---:|:---:|
-| 2.X | 8.X |
-| 3.X | 9.X / 10.X / 11.x |
-| 4.X | 12.X / 13.X |
-| Future / Nightly | 13.X |
+|     Covalent     |      Angular      |
+| :--------------: | :---------------: |
+|       2.X        |        8.X        |
+|       3.X        | 9.X / 10.X / 11.x |
+|       4.X        |    12.X / 13.X    |
+| Future / Nightly |       13.X        |
 
 ## Browser Support
 
@@ -50,9 +51,8 @@ Covalent is built on a CSS Flexbox layout and all layouts and components heavily
 
 #### Current version - 1 for the following:
 
-|   | Chrome | Firefox | Safari | Edge | Mobile Chrome | Mobile Safari
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| __Supported__ | ✓ | ✓ | ✓ | ✓ | ~ | ~ |
-
+|               | Chrome | Firefox | Safari | Edge | Mobile Chrome | Mobile Safari |
+| ------------- | :----: | :-----: | :----: | :--: | :-----------: | :-----------: |
+| **Supported** |   ✓    |    ✓    |   ✓    |  ✓   |       ~       |       ~       |
 
 ~ Indicates limited testing & lower priority

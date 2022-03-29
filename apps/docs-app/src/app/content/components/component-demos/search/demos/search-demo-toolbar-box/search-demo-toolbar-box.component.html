@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <td-search-box
+    backIcon="arrow_back"
+    placeholder="Search here"
+    [alwaysVisible]="alwaysVisible"
+    flex
+  ></td-search-box>
+  <button mat-icon-button>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+<button
+  mat-button
+  color="accent"
+  (click)="toggleAlwaysVisible()"
+  class="push-top text-upper"
+>
+  Always Visible
+</button>

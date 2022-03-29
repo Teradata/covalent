@@ -1,0 +1,423 @@
+<section class="push-bottom-xl">
+  <h1 class="push-bottom-sm mat-display-1">Animations</h1>
+
+  <p class="tc-grey-600 push-bottom-md">
+    Utilities to help add simple reusable animations and reduce boilerplate
+    code. For custom and complex animations look into the Angular animations
+    doc.
+  </p>
+</section>
+
+<section class="push-bottom-xxl">
+  <h3 class="push-bottom-sm mat-title">Setup</h3>
+  <mat-divider></mat-divider>
+  <p>
+    Import individual animation utilities as needed into the component that will
+    contain the elements you want to animate.
+  </p>
+  <td-highlight codeLang="typescript">
+    {{ animationTypescript }}
+  </td-highlight>
+
+  <mat-divider></mat-divider>
+
+  <a
+    mat-raised-button
+    color="none"
+    href="https://angular.io/guide/animations"
+    target="_blank"
+    class="text-upper push-top-sm"
+  >
+    Animations Docs
+  </a>
+</section>
+
+<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
+  <mat-card-title>Rotate Animation</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      Use
+      <code>tdRotateAnimation</code>
+      to rotate any element based on a boolean state.
+    </p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button
+        mat-raised-button
+        [@tdRotate]="rotateState1"
+        (click)="rotateState1 = !rotateState1"
+        color="accent"
+      >
+        Rotate 180&deg;
+        <mat-icon>mood</mat-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight codeLang="typescript">
+        {{ rotate180Typescript }}
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight codeLang="html">
+        {{ rotate180Html }}
+      </td-highlight>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div>
+      <h3>Demo 2:</h3>
+      <button
+        mat-raised-button
+        [@tdRotate]="{
+          value: rotateState2,
+          params: { duration: 500, degreesEnd: -45 }
+        }"
+        (click)="rotateState2 = !rotateState2"
+        color="accent"
+      >
+        Rotate -45&deg;
+        <mat-icon
+          [@tdRotate]="{
+            value: rotateState2,
+            params: { duration: 750, degreesEnd: 545 }
+          }"
+          >mood</mat-icon
+        >
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight codeLang="typescript">
+        {{ rotate45Typescript }}
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight codeLang="html">
+        {{ rotate45Html }}
+      </td-highlight>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+      <h2>Parameter Options:</h2>
+      <mat-list>
+        <mat-list-item>
+          <h3 matLine>degreesStart?: number</h3>
+          <p matLine>
+            Degrees of rotation that the dom object will end up in during the
+            "false" state
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>degreesEnd?: number</h3>
+          <p matLine>
+            Degrees of rotation that the dom object will end up in during the
+            "true" state
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>duration?: number</h3>
+          <p matLine>
+            Duration the animation will run in milliseconds. Defaults to 250 ms.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>delay?: number</h3>
+          <p matLine>
+            Delay before the animation will run in milliseconds. Defaults to 0
+            ms.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>ease?: string</h3>
+          <p matLine>
+            Animation accelerate and decelerate style. Defaults to ease-in.
+          </p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
+  <mat-card-title>Collapse Animation</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      Use
+      <code>tdCollapseAnimation</code>
+      to collapse any element based on a boolean state.
+    </p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="collapseState1 = !collapseState1"
+      >
+        Collapse
+      </button>
+      <div
+        [style.overflow]="'hidden'"
+        [@tdCollapse]="{ value: collapseState1, params: { duration: 500 } }"
+      >
+        <mat-card>
+          <mat-card-title>Collapse card</mat-card-title>
+          <mat-card-content>Collapse card with a click!</mat-card-content>
+          <mat-card-actions>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="collapseState1 = !collapseState1"
+            >
+              Collapse
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+      <p>Typescript:</p>
+      <td-highlight codeLang="typescript">
+        {{ collapseTypescript }}
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight codeLang="html">
+        {{ collapseHtml }}
+      </td-highlight>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+      <h2>Parameter Options:</h2>
+      <mat-list>
+        <mat-list-item>
+          <h3 matLine>duration?: number</h3>
+          <p matLine>
+            Duration the animation will run in milliseconds. Defaults to 150 ms.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>delay?: number</h3>
+          <p matLine>
+            Delay before the animation will run in milliseconds. Defaults to 0
+            ms.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>easeOnClose?: string</h3>
+          <p matLine>
+            Animation accelerates and decelerates when closing. Defaults to
+            ease-in.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>easeOnOpen?: string</h3>
+          <p matLine>
+            Animation accelerates and decelerates when opening. Defaults to
+            ease-out.
+          </p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
+  <mat-card-title>Fade in/out Animation</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      Use
+      <code>TdFadeInOutAnimation</code>
+      to fade in/out any element based on a boolean state.
+    </p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="fadeInOutState1 = !fadeInOutState1"
+      >
+        Fade
+      </button>
+      <div [@tdFadeInOut]="fadeInOutState1">
+        <mat-card>
+          <mat-card-title>Fade Card</mat-card-title>
+          <mat-card-content>Fade in or out with a click!</mat-card-content>
+          <mat-card-actions>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="fadeInOutState1 = !fadeInOutState1"
+            >
+              Fade
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+      <p>Typescript:</p>
+      <td-highlight codeLang="typescript">
+        {{ fadeTypescript }}
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight codeLang="html">
+        {{ fadeHtml }}
+      </td-highlight>
+    </div>
+
+    <mat-divider></mat-divider>
+    <div>
+      <h2>API:</h2>
+      <mat-list>
+        <mat-list-item>
+          <h3 matLine>anchor?: string</h3>
+          <p matLine>
+            The anchor name is used to attach the animation to an arbitrary
+            element in the template. Defaults to 'tdFadeInOut'.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>duration?: number</h3>
+          <p matLine>
+            Duration the animation will run in milliseconds. Defaults to 150 ms.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>delay?: number</h3>
+          <p matLine>
+            Delay before the animation will run in milliseconds. Defaults to 0
+            ms.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>easeOnIn?: string</h3>
+          <p matLine>
+            Animation accelerates and decelerates when fading in. Defaults to
+            ease-in.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>easeOnOut?: string</h3>
+          <p matLine>
+            Animation accelerates and decelerates when fading out. Defaults to
+            ease-out.
+          </p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
+  <mat-card-title>Attention Seekers Animation</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div>
+      <h3>Demos:</h3>
+
+      <button
+        mat-raised-button
+        class="push-sm"
+        [@tdBounce]="bounceState"
+        (click)="bounceState = !bounceState"
+        color="accent"
+      >
+        @tdBounce
+        <mat-icon>mood</mat-icon>
+      </button>
+
+      <button
+        mat-raised-button
+        class="push-sm"
+        [@tdFlash]="flashState"
+        (click)="flashState = !flashState"
+        color="accent"
+      >
+        @tdFlash
+        <mat-icon>mood</mat-icon>
+      </button>
+
+      <button
+        mat-raised-button
+        class="push-sm"
+        [@tdHeadshake]="headshakeState"
+        (click)="headshakeState = !headshakeState"
+        color="accent"
+      >
+        @tdHeadshake
+        <mat-icon>mood</mat-icon>
+      </button>
+
+      <button
+        mat-raised-button
+        class="push-sm"
+        [@tdJello]="jelloState"
+        (click)="jelloState = !jelloState"
+        color="accent"
+      >
+        @tdJello
+        <mat-icon>mood</mat-icon>
+      </button>
+
+      <button
+        mat-raised-button
+        class="push-sm"
+        [@tdPulse]="pulseState"
+        (click)="pulseState = !pulseState"
+        color="accent"
+      >
+        @tdPulse
+        <mat-icon>mood</mat-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight codeLang="typescript">
+        {{ attentionSeekersAnimationTypescript }}
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight codeLang="html">
+        {{ attentionSeekersAnimationHtml }}
+      </td-highlight>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+      <h2>API:</h2>
+      <mat-list>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>duration?: number</h3>
+          <p matLine>
+            Duration the animation will run in milliseconds. Defaults to 500 ms.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>delay?: number</h3>
+          <p matLine>
+            Delay before the animation will run in milliseconds. Defaults to 0
+            ms.
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>ease?: number</h3>
+          <p matLine>
+            Animation accelerate and decelerate style. Defaults to ease-out.
+          </p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card-content>
+</mat-card>

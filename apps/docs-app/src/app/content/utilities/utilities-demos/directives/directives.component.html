@@ -1,0 +1,128 @@
+<section class="push-bottom-xl">
+  <h1 class="push-bottom-sm mat-display-1">Directives</h1>
+
+  <p class="tc-grey-600 push-bottom-md">Core Covalent directives</p>
+</section>
+
+<section class="push-bottom-xxl">
+  <h3 class="push-bottom-sm mat-title">Setup</h3>
+  <mat-divider></mat-divider>
+  <p>Import the [CovalentCommonModule] in your NgModule:</p>
+  <td-highlight codeLang="typescript">
+    {{ directiveTypescript }}
+  </td-highlight>
+  <a
+    mat-raised-button
+    color="none"
+    href="https://angular.io/docs/ts/latest/guide/attribute-directives.html"
+    target="_blank"
+    class="text-upper push-top-sm"
+  >
+    Directives Docs
+  </a>
+</section>
+
+<mat-card
+  tdFullScreen
+  #tdFullScreen="tdFullScreen"
+  class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none text-break"
+>
+  <mat-card-header layout="row">
+    <mat-card-title flex>Fullscreen directive</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      Use
+      <code>tdFullScreen</code>
+      directive on any element you want full screen.
+    </p>
+    <p>
+      Assign
+      <code>tdFullScreen</code>
+      to a template reference variable
+      <code>#myFullScreenElement="tdFullScreen"</code>
+      .
+    </p>
+    <p>
+      Use the template reference variable to access properties and metheds of
+      the directive:
+    </p>
+    <ul>
+      <li>
+        <code>myFullScreenElement.fullScreenIsActive</code>
+        , Check if fullscreen is activated for this element
+      </li>
+      <li>
+        <code>myFullScreenElement.toggleFullScreen()</code>
+        , Toggle fullscreen for this element
+      </li>
+      <li>
+        <code>myFullScreenElement.enterFullScreen()</code>
+        , Active fullscreen for this element
+      </li>
+      <li>
+        <code>myFullScreenElement.exitFullScreen()</code>
+        , Exit fullscreen for this element
+      </li>
+    </ul>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ fullscreenHtml }}
+    </td-highlight>
+    <div layout="column">
+      <p *ngIf="!tdFullScreen.fullScreenIsActive" flex class="mat-line">
+        Press the button below to view this card in fullscreen mode.
+      </p>
+      <p *ngIf="tdFullScreen.fullScreenIsActive" flex class="mat-line">
+        Select the button below or press the esc key to exit fullscreen mode.
+      </p>
+    </div>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button
+      *ngIf="!tdFullScreen.fullScreenIsActive"
+      mat-raised-button
+      color="primary"
+      (click)="tdFullScreen.toggleFullScreen()"
+    >
+      enter fullscreen
+    </button>
+    <button
+      *ngIf="tdFullScreen.fullScreenIsActive"
+      mat-raised-button
+      color="primary"
+      (click)="tdFullScreen.toggleFullScreen()"
+    >
+      exit fullscreen
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none">
+  <mat-card-title>Autotrim directive</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">
+      Use
+      <code>tdAutoTrim</code>
+      on an input to automatically trim the characters.
+    </p>
+    <p>Try entering white spaces before or after a word this input:</p>
+    <div layout="row">
+      <mat-form-field flex>
+        <input
+          matInput
+          tdAutoTrim
+          [(ngModel)]="trim"
+          placeholder="This will be autotrimmed"
+        />
+      </mat-form-field>
+    </div>
+    <p>Usage:</p>
+    <td-highlight codeLang="html">
+      {{ autotrimHtml }}
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
