@@ -12,7 +12,7 @@ import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { MapDemoComponent } from './map-demo.component';
 import { MapDemoRoutingModule } from './map-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { CovalentMapEchartsModule } from '../../../../../../platform/echarts/map';
+import { CovalentMapEchartsModule } from '@covalent/echarts/map';
 import { MapBasicSharedModule } from './map-demo-basic/map-demo-basic.shared';
 
 @NgModule({

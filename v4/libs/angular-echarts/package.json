@@ -1,0 +1,30 @@
+{
+  "name": "@covalent/echarts",
+  "version": "0.0.0-COVALENT",
+  "description": "Teradata UI Platform Echarts Module",
+  "keywords": [
+    "angular",
+    "echarts",
+    "components",
+    "covalent",
+    "reusable"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "peerDependencies": {
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "echarts": "0.0.0-ECHARTS",
+    "echarts-wordcloud": "0.0.0-WORDCLOUD"
+  },
+  "dependencies": {
+    "tslib": "0.0.0-TSLIB"
+  }
+}

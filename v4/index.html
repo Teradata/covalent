@@ -1,117 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8"/>
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
     <title>Teradata Covalent - Angular Material Design UI Platform</title>
-    <base href="/covalent/v4/"/>
-    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-    <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc-.woff) format('woff');}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxM.woff) format('woff');}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format('woff');}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <style>
-      .loader,
-      .loader::before,
-      .loader::after {
-        border-radius: 50%;
-      }
+    <base href="/covalent/v4/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>@import"https://fonts.googleapis.com/css?family=Roboto:300,400,500";@charset "UTF-8";html,body{height:100%;color:#000000de;background:white;position:relative}body{margin:0;padding:0}body{font-family:Roboto,Helvetica Neue,sans-serif}body:after{content:"";position:absolute;top:0;height:2px;width:100%;z-index:999;background-color:#00b2b1}:root{--sash-size:4px}</style><link rel="stylesheet" href="styles.f50dd09c88cebe21.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.f50dd09c88cebe21.css"></noscript></head>
+  <body>
+    <docs-covalent></docs-covalent>
+  <script src="runtime.cc3eae513e83c54a.js" type="module"></script><script src="polyfills.9c12223a8d1dfa39.js" type="module"></script><script src="scripts.1a0b9d45428d656a.js" defer></script><script src="main.0a21777c74fc024c.js" type="module"></script>
 
-      .loader {
-        color: #f2724b;
-        font-size: 11px;
-        text-indent: -99999em;
-        margin: 55px auto;
-        position: relative;
-        width: 10em;
-        height: 10em;
-        box-shadow: inset 0 0 0 1em;
-        -webkit-transform: translateZ(0);
-        -ms-transform: translateZ(0);
-        transform: translateZ(0);
-      }
-
-      .loader::before,
-      .loader::after {
-        position: absolute;
-        content: '';
-      }
-
-      .loader::before {
-        width: 5.2em;
-        height: 10.2em;
-        background: #ececec;
-        border-radius: 10.2em 0 0 10.2em;
-        top: -0.1em;
-        left: -0.1em;
-        -webkit-transform-origin: 5.2em 5.1em;
-        transform-origin: 5.2em 5.1em;
-        -webkit-animation: load2 2s infinite ease 1.5s;
-        animation: load2 2s infinite ease 1.5s;
-      }
-
-      .loader::after {
-        width: 5.2em;
-        height: 10.2em;
-        background: #ececec;
-        border-radius: 0 10.2em 10.2em 0;
-        top: -0.1em;
-        left: 5.1em;
-        -webkit-transform-origin: 0 5.1em;
-        transform-origin: 0 5.1em;
-        -webkit-animation: load2 2s infinite ease;
-        animation: load2 2s infinite ease;
-      }
-
-      @-webkit-keyframes load2 {
-        0% {
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-        }
-
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes load2 {
-        0% {
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-        }
-
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-  <link rel="stylesheet" href="styles.0a993d945b1799008ca1.css"></head>
-
-  <body class="bgc-contrast">
-    <docs-covalent>
-      <div style="padding: 20%; text-align: center">
-        <mat-icon _ngcontent-c1="" class="mat-icon" role="img" svgicon="assets:teradata" aria-hidden="true" ng-reflect-svg-icon="assets:teradata">
-          <svg width="300" height="72" viewBox="0 0 696 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-            <title>Teradata Logo</title>
-            <desc>Copright Teradata</desc>
-            <defs></defs>
-            <g id="teradata" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="text" fill="#354145">
-                <path d="M78.882,72.796 L123.941,72.796 C120.763,60.83 111.788,55.595 101.878,55.595 C92.53,55.595 81.873,61.204 78.882,72.796 Z M149.182,90.184 L78.134,90.184 C80.564,103.646 90.099,111.873 101.504,111.873 C108.796,111.873 117.957,110.937 124.689,99.533 L146.751,104.206 C138.524,123.652 121.884,133 101.504,133 C75.142,133 53.64,112.994 53.64,83.64 C53.64,54.286 75.142,34.093 101.878,34.093 C126.745,34.093 148.246,53.351 149.182,81.771 L149.182,90.184 Z" id="Fill-1"></path>
-                <path d="M387.843,83.64 C387.843,66.439 374.568,55.595 361.294,55.595 C346.336,55.595 335.118,66.439 335.118,83.64 C335.118,100.841 346.336,111.498 361.294,111.498 C374.568,111.498 387.843,100.841 387.843,83.64 Z M412.523,130.195 L387.843,130.195 L387.843,122.156 C380.364,129.074 370.081,133 356.993,133 C333.248,133 311.186,112.994 311.186,83.64 C311.186,54.286 333.248,34.093 356.993,34.093 C370.081,34.093 380.364,38.019 387.843,44.937 L387.843,0.937 L412.523,0.937 L412.523,130.195 Z" id="Fill-3"></path>
-                <path d="M630.3,92.427 C630.3,104.393 618.894,113.368 605.807,113.368 C596.271,113.368 589.915,108.88 589.915,101.962 C589.915,95.606 595.149,91.306 603.003,91.306 L630.3,91.306 L630.3,92.427 Z M614.407,37.117 L614.407,37.093 L580.299,37.093 L580.299,57.658 L614.407,57.658 C623.943,57.658 630.3,61.765 630.3,71.113 L630.3,72.61 L603.377,72.61 C579.818,72.61 566.356,84.576 566.356,102.524 C566.356,120.846 580.566,133 601.881,133 C614.595,133 623.943,128.7 630.3,122.53 L630.3,130.195 L653.858,130.195 L653.858,69.244 C653.858,47.082 638.243,37.617 614.407,37.117 Z" id="Fill-4"></path>
-                <path d="M484.378,92.427 C484.378,104.393 472.973,113.368 459.885,113.368 C450.349,113.368 443.992,108.88 443.992,101.962 C443.992,95.606 449.227,91.306 457.08,91.306 L484.378,91.306 L484.378,92.427 Z M468.485,37.117 L468.485,37.093 L434.377,37.093 L434.377,57.658 L468.485,57.658 C478.02,57.658 484.378,61.765 484.378,71.113 L484.378,72.61 L457.454,72.61 C433.895,72.61 420.434,84.576 420.434,102.524 C420.434,120.846 434.644,133 455.958,133 C468.672,133 478.02,128.7 484.378,122.53 L484.378,130.195 L507.935,130.195 L507.935,69.244 C507.935,47.082 492.321,37.617 468.485,37.117 Z" id="Fill-5"></path>
-                <path d="M279.3,92.427 C279.3,104.393 267.894,113.368 254.807,113.368 C245.271,113.368 238.914,108.88 238.914,101.962 C238.914,95.606 244.15,91.306 252.003,91.306 L279.3,91.306 L279.3,92.427 Z M263.408,37.117 L263.408,37.093 L229.299,37.093 L229.299,57.658 L263.408,57.658 C272.943,57.658 279.3,61.765 279.3,71.113 L279.3,72.61 L252.376,72.61 C228.818,72.61 215.356,84.576 215.356,102.524 C215.356,120.846 229.566,133 250.881,133 C263.595,133 272.943,128.7 279.3,122.53 L279.3,130.195 L302.858,130.195 L302.858,69.244 C302.858,47.082 287.244,37.617 263.408,37.117 Z" id="Fill-6"></path>
-                <path d="M216.11,37.026 C200.966,37.026 190.121,43.069 182.643,53.913 L182.643,36.899 L157.963,36.899 L157.963,130.197 L182.643,130.197 L182.643,100.095 C182.643,74.106 193.113,57.776 215.923,57.776 L217.044,57.776 L217.044,37.029 C216.741,37.027 216.431,37.026 216.11,37.026" id="Fill-7"></path>
-                <path d="M48.982,107.707 C45.229,109.115 41.291,110.002 38.328,110.002 C30.102,110.002 24.68,105.142 24.68,93.923 L24.68,57.09 L49.982,57.09 L49.982,36.898 L24.68,36.898 L24.68,14.007 L0,14.007 L0,95.793 C0,121.408 14.584,133 36.646,133 C44.438,133 51.879,131.338 61.481,126.199 C56.364,121.123 51.667,114.8 48.982,107.707" id="Fill-8"></path>
-                <path d="M558.509,109.788 C557.521,109.926 556.586,110.002 555.733,110.002 C547.507,110.002 542.085,105.142 542.085,93.923 L542.085,57.09 L568.068,57.09 L568.068,36.898 L542.085,36.898 L542.085,14.007 L517.404,14.007 L517.404,95.793 C517.404,121.408 531.988,133 554.051,133 C559.44,133 564.302,132.206 569.964,130.017 C562.645,124.774 559.799,116.281 558.509,109.788" id="Fill-9"></path>
-              </g>
-              <path d="M695.029,116.028 C695.029,124.853 688.257,131.624 678.817,131.624 C669.377,131.624 662.605,124.853 662.605,116.028 C662.605,107.615 669.377,100.227 678.817,100.227 C688.257,100.227 695.029,107.615 695.029,116.028" id="Fill-11" fill="#E46C42"></path>
-            </g>
-          </svg>
-        </mat-icon>
-        <h3 class="tc-td-accent">Teradata Covalent</h3>
-        <div class="loader">Loading...</div>
-      </div>
-    </docs-covalent>
-  <script src="runtime-es2015.c458b0843e262caf5cb2.js" type="module"></script><script src="runtime-es5.c458b0843e262caf5cb2.js" nomodule="" defer=""></script><script src="polyfills-es5.d4a77f7779dfb745ade7.js" nomodule="" defer=""></script><script src="polyfills-es2015.2d131126b6fa006e3eb4.js" type="module"></script><script src="scripts.7db5a8a1df1d2146c813.js" defer=""></script><script src="main-es2015.1ff8e845a95ff13bc131.js" type="module"></script><script src="main-es5.1ff8e845a95ff13bc131.js" nomodule="" defer=""></script></body>
-</html>
+</body></html>

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './json-formatter-demo-basic.component.html',
 })
 export class JsonFormatterDemoBasicComponent {
-  data: object = {
+  data: Record<string, any> = {
     stringProperty: 'This is a string',
     dateProperty: new Date(),
     numberProperty: 10000,

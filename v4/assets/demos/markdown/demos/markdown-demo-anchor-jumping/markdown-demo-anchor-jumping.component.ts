@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './markdown-demo-anchor-jumping.component.html',
 })
 export class MarkdownDemoAnchorJumpingComponent {
-  anchor: string;
-  markdown: string = `
+  anchor!: string;
+  markdown = `
     * [Heading 1](#heading-1)
     * [Heading 2](#heading-2)
 

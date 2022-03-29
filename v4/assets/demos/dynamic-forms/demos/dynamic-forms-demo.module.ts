@@ -17,6 +17,7 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { DynamicFormsDemoComponent } from './dynamic-forms-demo.component';
 import { DynamicFormsDemoRoutingModule } from './dynamic-forms-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import { CovalentCodeEditorModule } from '@covalent/code-editor';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     DynamicFormsDemoRoutingModule,
     /** Covalent Modules */
     CovalentDynamicFormsModule,
+    CovalentCodeEditorModule,
     /** Angular Modules */
     CommonModule,
     FormsModule,

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
+import {
+  ITdDynamicElementConfig,
+  TdDynamicElement,
+  TdDynamicType,
+} from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'dynamic-forms-demo-number',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TdDialogService } from '../../../../../../../platform/core/dialogs';
+import { TdDialogService } from '@covalent/core/dialogs';
 
 @Component({
   selector: 'message-demo-action',
@@ -12,7 +12,8 @@ export class MessageDemoActionComponent {
   showAlert(): void {
     this._dialogService.openAlert({
       title: 'View More Clicked',
-      message: 'Actions can be useful for displaying a dialog to provide more information',
+      message:
+        'Actions can be useful for displaying a dialog to provide more information',
     });
   }
 }

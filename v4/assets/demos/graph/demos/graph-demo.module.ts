@@ -13,7 +13,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { GraphDemoBasicComponent } from './graph-demo-basic/graph-demo-basic.component';
 import { GraphDemoComponent } from './graph-demo.component';
 import { GraphDemoRoutingModule } from './graph-demo-routing.module';
-import { CovalentGraphEchartsModule } from '../../../../../../platform/echarts/graph';
+import { CovalentGraphEchartsModule } from '@covalent/echarts/graph';
 
 @NgModule({
   declarations: [GraphDemoBasicComponent, GraphDemoComponent],

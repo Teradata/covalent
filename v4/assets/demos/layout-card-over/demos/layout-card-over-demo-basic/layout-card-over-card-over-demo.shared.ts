@@ -4,11 +4,17 @@ import { LayoutCardOverDemoBasicComponent } from './layout-card-over-demo-basic.
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-import { CovalentLayoutModule } from '../../../../../../../platform/core/layout';
+import { CovalentLayoutModule } from '@covalent/core/layout';
 
 @NgModule({
   declarations: [LayoutCardOverDemoBasicComponent],
-  imports: [CommonModule, CovalentLayoutModule, MatIconModule, MatListModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    CovalentLayoutModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule,
+  ],
   exports: [LayoutCardOverDemoBasicComponent],
 })
 export class LayoutCardOverDemoSharedModule {}

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { editor } from 'monaco-editor';
 
-declare const monaco: any;
-
 @Component({
   selector: 'code-editor-demo-monaco',
   styleUrls: ['./code-editor-demo-monaco.component.scss'],
@@ -11,8 +9,8 @@ declare const monaco: any;
 export class CodeEditorDemoMonacoComponent {
   private _editor: any;
 
-  editorTheme: string = 'vs';
-  editorVal: string = `var rows = prompt("How many rows for your multiplication table?");
+  editorTheme = 'vs';
+  editorVal = `var rows = prompt("How many rows for your multiplication table?");
 var cols = prompt("How many columns for your multiplication table?");
 if(rows == "" || rows == null)
   rows = 10;
@@ -37,7 +35,10 @@ function createTable(rows, cols) {
 `;
 
   configChanged(theme: string): void {
-    monaco.editor.setTheme(theme);
+    const monaco: any = (window as any).monaco;
+    if (monaco) {
+      monaco.editor.setTheme(theme);
+    }
     this.getModel();
   }
 

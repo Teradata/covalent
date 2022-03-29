@@ -12,7 +12,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { LineDemoComponent } from './line-demo.component';
 import { LineDemoRoutingModule } from './line-demo-routing.module';
 import { LineDemoBasicComponent } from './line-demo-basic/line-demo-basic.component';
-import { CovalentLineEchartsModule } from '../../../../../../platform/echarts/line';
+import { CovalentLineEchartsModule } from '@covalent/echarts/line';
 
 @NgModule({
   declarations: [LineDemoComponent, LineDemoBasicComponent],

@@ -17,7 +17,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  declarations: [SearchDemoComponent, SearchDemoBoxComponent, SearchDemoInputComponent, SearchDemoToolbarBoxComponent],
+  declarations: [
+    SearchDemoComponent,
+    SearchDemoBoxComponent,
+    SearchDemoInputComponent,
+    SearchDemoToolbarBoxComponent,
+  ],
   imports: [
     DemoModule,
     FormsModule,

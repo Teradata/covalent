@@ -9,11 +9,10 @@ import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { CovalentPieEchartsModule } from '../../../../../../platform/echarts/pie';
 import { SankeyDemoBasicComponent } from './sankey-demo-basic/sankey-demo-basic.component';
 import { SankeyDemoComponent } from './sankey-demo.component';
 import { SankeyDemoRoutingModule } from './sankey-demo-routing.module';
-import { CovalentSankeyEchartsModule } from '../../../../../../platform/echarts/sankey';
+import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
 
 @NgModule({
   declarations: [SankeyDemoBasicComponent, SankeyDemoComponent],

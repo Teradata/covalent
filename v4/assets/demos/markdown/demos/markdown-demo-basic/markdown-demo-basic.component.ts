@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './markdown-demo-basic.component.html',
 })
 export class MarkdownDemoBasicComponent {
-  basicMarkdown: string = `
+  basicMarkdown = `
     # Heading (H1)
 
     ## Sub Heading (H2)
@@ -28,7 +28,7 @@ export class MarkdownDemoBasicComponent {
     Combined emphasis with **asterisks and _underscores_**.
   `;
 
-  blockquoteMarkdown: string = `
+  blockquoteMarkdown = `
     > Blockquotes are very handy in email to emulate reply text.
     > This line is part of the same quote.
 
@@ -38,7 +38,7 @@ export class MarkdownDemoBasicComponent {
     this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
   `;
 
-  dividerMarkdown: string = `
+  dividerMarkdown = `
     Three or more...
 
     ---
@@ -54,7 +54,7 @@ export class MarkdownDemoBasicComponent {
     Underscores
   `;
 
-  codeblockMarkdown: string = `
+  codeblockMarkdown = `
     \`this is an inline code snippet\`
 
     \`\`\`javascript
@@ -68,7 +68,7 @@ export class MarkdownDemoBasicComponent {
     \`\`\`
   `;
 
-  linksMarkdown: string = `
+  linksMarkdown = `
     [I'm an inline-style link](https://teradata.github.io/)
 
     [I'm a reference-style link case does not matter][Teradata Github Landing]

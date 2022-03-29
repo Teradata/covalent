@@ -3,7 +3,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { LayoutCardOverDemoComponent } from './layout-card-over-demo.component';
 import { LayoutCardOverDemoRoutingModule } from './layout-card-over-demo-routing.module';
 import { LayoutCardOverDemoSharedModule } from './layout-card-over-demo-basic/layout-card-over-card-over-demo.shared';
-import { CovalentLayoutModule } from '../../../../../../platform/core/layout';
+import { CovalentLayoutModule } from '@covalent/core/layout';
 
 @NgModule({
   declarations: [LayoutCardOverDemoComponent],

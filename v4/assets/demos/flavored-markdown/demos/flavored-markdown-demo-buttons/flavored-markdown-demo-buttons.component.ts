@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './flavored-markdown-demo-buttons.component.html',
 })
 export class FlavoredMarkdownDemoButtonsComponent {
-  buttonsFlavoredMarkdown: string = `
+  buttonsFlavoredMarkdown = `
     ## Buttons
 
     [Go to Mars](#data={"planet": "mars"})
@@ -19,6 +19,8 @@ export class FlavoredMarkdownDemoButtonsComponent {
   constructor(private _snackBar: MatSnackBar) {}
 
   handleButtonClicked(data: ITdFlavoredMarkdownButtonClickEvent): void {
-    this._snackBar.open(`Button clicked: ${JSON.stringify(data)}`, undefined, { duration: 2000 });
+    this._snackBar.open(`Button clicked: ${JSON.stringify(data)}`, undefined, {
+      duration: 2000,
+    });
   }
 }

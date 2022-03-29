@@ -7,7 +7,7 @@ import { CovalentSideSheet } from '@covalent/core/side-sheet';
   styleUrls: ['./side-sheet-demo-basic.component.scss'],
 })
 export class SideSheetDemoBasicComponent {
-  @ViewChild('example') template: TemplateRef<any>;
+  @ViewChild('example') template!: TemplateRef<any>;
 
   constructor(private sideSheet: CovalentSideSheet) {}
 

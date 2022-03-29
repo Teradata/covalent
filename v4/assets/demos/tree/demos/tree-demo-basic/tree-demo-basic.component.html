@@ -1,7 +1,12 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">Chart Theme:</div>
+  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+    Chart Theme:
+  </div>
   <mat-form-field floatLabel="never">
-    <mat-select [(value)]="selectedTheme" (valueChange)="selectChartTheme($event)">
+    <mat-select
+      [(value)]="selectedTheme"
+      (valueChange)="selectChartTheme($event)"
+    >
       <mat-option *ngFor="let theme of themes" [value]="theme">
         {{ theme }}
       </mat-option>
@@ -54,7 +59,10 @@
                   { name: 'SpanningTree', value: 3416 }
                 ]
               },
-              { name: 'optimization', children: [{ name: 'AspectRatioBanker', value: 7074 }] }
+              {
+                name: 'optimization',
+                children: [{ name: 'AspectRatioBanker', value: 7074 }]
+              }
             ]
           },
           {
@@ -118,7 +126,11 @@
               { name: 'TextSprite', value: 10066 }
             ]
           },
-          { name: 'flex', collapsed: true, children: [{ name: 'FlareVis', value: 4116 }] },
+          {
+            name: 'flex',
+            collapsed: true,
+            children: [{ name: 'FlareVis', value: 4116 }]
+          },
           {
             name: 'physics',
             children: [
@@ -405,7 +417,15 @@
     ]"
     [initialTreeDepth]="2"
     [symbolSize]="10"
-    [leaves]="{ label: { padding: [2.5, 5], fontSize: 9, distance: 5, position: 'right' } }"
-    [label]="{ padding: [2.5, 5], borderRadius: 10, fontSize: 9, distance: 5, position: 'left' }"
+    [leaves]="{
+      label: { padding: 5, fontSize: 9, distance: 5, position: 'right' }
+    }"
+    [label]="{
+      padding: 5,
+      borderRadius: 10,
+      fontSize: 9,
+      distance: 5,
+      position: 'left'
+    }"
   ></td-chart-series>
 </td-chart>

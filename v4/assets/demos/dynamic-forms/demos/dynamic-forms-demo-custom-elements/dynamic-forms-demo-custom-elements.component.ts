@@ -1,24 +1,32 @@
-import { Component, TemplateRef, Input } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
 import { ITdDynamicElementConfig } from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'td-dynamic-input-test',
   template: `
-    <div *ngIf="errorMessageTemplate && control?.errors" class="tc-red-600" [style.font-size.%]="'70'">
+    <td-code-editor
+      [style.height.px]="300"
+      [formControl]="control"
+      ngDefaultControl
+    ></td-code-editor>
+    <div *ngIf="errorMessageTemplate && control?.errors" class="tc-red-600">
       <ng-template
         [ngTemplateOutlet]="errorMessageTemplate"
-        [ngTemplateOutletContext]="{ control: control, errors: control?.errors }"
+        [ngTemplateOutletContext]="{
+          control: control,
+          errors: control?.errors
+        }"
       ></ng-template>
     </div>
   `,
 })
 export class TdTestDynamicComponent {
-  control: FormControl;
+  control!: FormControl;
   selections: string[] = [];
-  errorMessageTemplate: TemplateRef<any>;
+  errorMessageTemplate!: TemplateRef<any>;
   // This value will be set via the customConfig property
-  placeholder: string;
+  placeholder!: string;
 }
 
 @Component({
@@ -31,14 +39,13 @@ export class DynamicFormsDemoCustomElementsComponent {
     {
       name: 'custom',
       type: TdTestDynamicComponent,
-      default: ['list1'],
-      selections: ['list1', 'list2', 'list3'],
+      default: 'SELECT * from dynamic.element',
       flex: 100,
       validators: [
         {
           validator: (control: AbstractControl) => {
-            const isValid: boolean = control.value.length <= 2;
-            return !isValid ? { invalidChips: true } : undefined;
+            const isValid: boolean = control.value?.length;
+            return !isValid ? { required: true } : null;
           },
         },
       ],

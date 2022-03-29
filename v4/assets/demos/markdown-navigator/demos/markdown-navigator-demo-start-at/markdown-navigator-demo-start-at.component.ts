@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 
-function compareByTitle(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem): boolean {
+function compareByTitle(
+  o1: IMarkdownNavigatorItem,
+  o2: IMarkdownNavigatorItem
+): boolean {
   return o1.title === o2.title;
 }
 
@@ -31,9 +34,12 @@ export class MarkdownNavigatorDemoStartAtComponent {
       ],
     },
   ];
-  startAt: IMarkdownNavigatorItem;
-  compareWith: (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean;
-  selection: string;
+  startAt!: IMarkdownNavigatorItem;
+  compareWith?: (
+    o1: IMarkdownNavigatorItem,
+    o2: IMarkdownNavigatorItem
+  ) => boolean;
+  selection!: string;
 
   handleChange(): void {
     // there are 3 ways to find item to start at
@@ -41,8 +47,9 @@ export class MarkdownNavigatorDemoStartAtComponent {
     // choose your weapon 😈
     switch (this.selection) {
       case 'reference':
-        this.startAt = this.items[0].children[0];
+        this.startAt = { id: 'A1' };
         this.compareWith = undefined;
+
         break;
       case 'id':
         this.startAt = { id: 'A2' };

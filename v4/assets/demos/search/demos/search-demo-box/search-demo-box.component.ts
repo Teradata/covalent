@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './search-demo-box.component.html',
 })
 export class SearchDemoBoxComponent {
-  searchBoxTerm: string = '';
-  debounce: number = 0;
-  alwaysVisible: boolean = false;
+  searchBoxTerm = '';
+  debounce = 0;
+  alwaysVisible = false;
 
   toggleAlwaysVisible(): void {
     this.alwaysVisible = !this.alwaysVisible;

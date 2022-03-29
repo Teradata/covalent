@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 
-const sql: string = `SELECT department_number, sampleid
+const sql = `SELECT department_number, sampleid
 FROM department
 SAMPLE .25, .25, .50
 ORDER BY sampleid;
@@ -11,7 +11,7 @@ SAMPLE  3, 5, 8
 ORDER BY sampleid;
 `;
 
-const typescript: string = `interface OS {
+const typescript = `interface OS {
     name: String;
     language: String;
 }
@@ -27,7 +27,7 @@ const nougat = {
 dessert(nougat);
 `;
 
-const javascript: string = `var rows = prompt("How many rows for your multiplication table?");
+const javascript = `var rows = prompt("How many rows for your multiplication table?");
 var cols = prompt("How many columns for your multiplication table?");
 if(rows == "" || rows == null)
   rows = 10;
@@ -51,7 +51,7 @@ function createTable(rows, cols) {
 }
 `;
 
-const html: string = `<div layout="row" layout-align="start center" class="pad-xs pad-bottom-none">
+const html = `<div layout="row" layout-align="start center" class="pad-xs pad-bottom-none">
   <span flex="none" hide-xs class="push-right mat-body-1">Editor Language</span>
   <mat-form-field floatLabel="never">
     <mat-select [(ngModel)]="editorLanguage" (ngModelChange)="changeLanguage()" placeholder="Editor Language">
@@ -70,7 +70,7 @@ const html: string = `<div layout="row" layout-align="start center" class="pad-x
   templateUrl: './code-editor-demo-basic.component.html',
 })
 export class CodeEditorDemoBasicComponent {
-  editorLanguage: string = 'sql';
+  editorLanguage = 'sql';
   editorVal: string = sql;
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}

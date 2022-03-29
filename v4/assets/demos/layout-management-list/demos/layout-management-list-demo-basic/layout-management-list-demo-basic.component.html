@@ -16,7 +16,7 @@
         Close Drawer
       </a>
     </mat-nav-list>
-    <div td-navigation-drawer-menu>
+    <div tdNavigationDrawerMenu>
       <mat-nav-list>
         <a mat-list-item>
           <mat-icon>account_box</mat-icon>
@@ -25,11 +25,15 @@
       </mat-nav-list>
     </div>
   </td-navigation-drawer>
-  <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+  <td-layout-nav
+    logo="assets:teradata"
+    toolbarTitle="Covalent"
+    navigationRoute="/"
+  >
     <button mat-icon-button td-menu-button tdLayoutToggle>
       <mat-icon>menu</mat-icon>
     </button>
-    <td-layout-manage-list opened="true" mode="side">
+    <td-layout-manage-list [opened]="true" mode="side">
       <mat-toolbar td-sidenav-content>Nav Title</mat-toolbar>
       <div td-sidenav-content>Sidenav content here</div>
       <mat-toolbar>

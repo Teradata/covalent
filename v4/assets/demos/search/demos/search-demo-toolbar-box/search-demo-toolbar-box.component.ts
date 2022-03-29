@@ -7,7 +7,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   templateUrl: './search-demo-toolbar-box.component.html',
 })
 export class SearchDemoToolbarBoxComponent {
-  alwaysVisible: boolean = false;
+  alwaysVisible = false;
 
   toggleAlwaysVisible(): void {
     this.alwaysVisible = !this.alwaysVisible;

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './markdown-demo-youtube.component.html',
 })
 export class MarkdownDemoYoutubeComponent {
-  videoMarkdown: string = `
+  videoMarkdown = `
 ## Embed YouTube Videos
 
 Use this custom embed syntax and you can embed YouTube videos with ease

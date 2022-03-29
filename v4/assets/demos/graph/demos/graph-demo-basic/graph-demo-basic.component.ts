@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
@@ -10,7 +15,7 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
 })
 export class GraphDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();
-  selectedTheme: string;
+  selectedTheme!: string;
 
   // Chart config
   config: any = {
@@ -128,7 +133,10 @@ export class GraphDemoBasicComponent implements OnInit {
     ],
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(
+    private _cdr: ChangeDetectorRef,
+    public themeSelector: ChartThemeSelectorService
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

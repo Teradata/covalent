@@ -1,0 +1,22 @@
+@mixin covalent-markdown-navigator-typography($fontConfig) {
+  td-markdown-navigator {
+    td-breadcrumbs .mat-button {
+      @include mat-typography-level-to-styles($fontConfig, caption);
+    }
+
+    .breadcrumb-current-title {
+      @include mat-typography-level-to-styles($fontConfig, headline);
+    }
+  }
+}
+
+@mixin covalent-markdown-navigator-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $secondary: map-get($foreground, secondary-text);
+
+  td-markdown-navigator {
+    td-breadcrumbs {
+      color: $secondary;
+    }
+  }
+}

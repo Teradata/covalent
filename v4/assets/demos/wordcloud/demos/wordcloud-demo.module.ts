@@ -12,7 +12,7 @@ import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { WordcloudDemoComponent } from './wordcloud-demo.component';
 import { WordcloudDemoRoutingModule } from './wordcloud-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { CovalentWordcloudEchartsModule } from '../../../../../../platform/echarts/wordcloud';
+import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
 import { WordcloudDemoSharedModule } from './wordcloud-demo-basic/wordcloud-demo.shared';
 
 @NgModule({

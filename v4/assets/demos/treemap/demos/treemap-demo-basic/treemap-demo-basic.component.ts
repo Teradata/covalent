@@ -1,5 +1,9 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
-import * as echarts from 'echarts/lib/echarts';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
@@ -11,7 +15,7 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
 })
 export class TreemapDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();
-  selectedTheme: string;
+  selectedTheme!: string;
 
   // Series data
   data: any = [
@@ -189,7 +193,10 @@ export class TreemapDemoBasicComponent implements OnInit {
         levels: [
           { itemStyle: { normal: { borderWidth: 0, gapWidth: 5 } } },
           { itemStyle: { normal: { gapWidth: 1 } } },
-          { colorSaturation: [0.35, 0.5], itemStyle: { normal: { gapWidth: 1, borderColorSaturation: 0.6 } } },
+          {
+            colorSaturation: [0.35, 0.5],
+            itemStyle: { normal: { gapWidth: 1, borderColorSaturation: 0.6 } },
+          },
         ],
         label: {
           show: true,
@@ -199,7 +206,10 @@ export class TreemapDemoBasicComponent implements OnInit {
     ],
   };
 
-  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
+  constructor(
+    private _cdr: ChangeDetectorRef,
+    public themeSelector: ChartThemeSelectorService
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

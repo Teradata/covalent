@@ -1,0 +1,93 @@
+{
+  "projectType": "library",
+  "root": "libs/angular",
+  "sourceRoot": "libs/angular/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/angular"],
+      "options": {
+        "project": "libs/angular/ng-package.json",
+        "tailwindConfig": "libs/angular/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/angular"],
+      "options": {
+        "jestConfig": "libs/angular/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build-scss": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "mkdir -p dist/libs/angular/common/",
+          "mkdir -p dist/libs/angular/theming/prebuilt/",
+          "./node_modules/.bin/sass --trace --color --style=compressed ./libs/angular/common/prebuilt/:./dist/libs/angular/common/",
+          "./node_modules/.bin/sass --trace --color --style=compressed ./libs/angular/theming/prebuilt/:./dist/libs/angular/theming/prebuilt/"
+        ],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular/src/**/*.ts",
+          "libs/angular/src/**/*.html",
+          "libs/angular/breadcrumbs/**/*.ts",
+          "libs/angular/breadcrumbs/**/*.html",
+          "libs/angular/common/**/*.ts",
+          "libs/angular/common/**/*.html",
+          "libs/angular/dynamic-menu/**/*.ts",
+          "libs/angular/dynamic-menu/**/*.html",
+          "libs/angular/file/**/*.ts",
+          "libs/angular/file/**/*.html",
+          "libs/angular/json-formatter/**/*.ts",
+          "libs/angular/json-formatter/**/*.html",
+          "libs/angular/menu/**/*.ts",
+          "libs/angular/menu/**/*.html",
+          "libs/angular/message/**/*.ts",
+          "libs/angular/message/**/*.html",
+          "libs/angular/search/**/*.ts",
+          "libs/angular/search/**/*.html",
+          "libs/angular/side-sheet/**/*.ts",
+          "libs/angular/side-sheet/**/*.html",
+          "libs/angular/user-profile/**/*.ts",
+          "libs/angular/user-profile/**/*.html",
+          "libs/angular/common/**/*.ts",
+          "libs/angular/common/**/*.html",
+          "libs/angular/dialogs/**/*.ts",
+          "libs/angular/dialogs/**/*.html",
+          "libs/angular/common/**/*.ts",
+          "libs/angular/common/**/*.html",
+          "libs/angular/layout/**/*.ts",
+          "libs/angular/layout/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/angular/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

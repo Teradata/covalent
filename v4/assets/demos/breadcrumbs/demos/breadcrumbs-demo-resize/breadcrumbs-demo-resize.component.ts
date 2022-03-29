@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './breadcrumbs-demo-resize.component.html',
 })
 export class BreadcrumbsResizeBasicComponent {
-  count: number = 0;
+  count = 0;
 }

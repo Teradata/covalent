@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {
   IMarkdownNavigatorItem,
   TdMarkdownNavigatorWindowService,
-  IMarkdownNavigatorWindowConfig,
 } from '@covalent/markdown-navigator';
 
 function prettyJson(items: IMarkdownNavigatorItem[]): string {
@@ -22,9 +21,11 @@ const initialItems: IMarkdownNavigatorItem[] = [
 export class MarkdownNavigatorDemoEditorComponent {
   input: string = prettyJson(initialItems);
   items: IMarkdownNavigatorItem[] = initialItems;
-  windowShouldOpen: boolean = false;
+  windowShouldOpen = false;
 
-  constructor(private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) {}
+  constructor(
+    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService
+  ) {}
 
   applyInput(): void {
     this.items = JSON.parse(this.input);

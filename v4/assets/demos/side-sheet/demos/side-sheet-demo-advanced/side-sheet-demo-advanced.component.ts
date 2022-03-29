@@ -3,9 +3,7 @@ import { CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
   selector: 'example',
-  template: `
-    it works from a component
-  `,
+  template: ` it works from a component `,
 })
 class SideSheetDemoExampleComponent {}
 

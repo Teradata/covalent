@@ -7,7 +7,7 @@ import { ICopyCodeTooltips } from '@covalent/highlight';
   templateUrl: './flavored-markdown-demo-inline.component.html',
 })
 export class FlavoredMarkdownDemoInlineComponent {
-  inlineFlavoredMarkdown: string = `
+  inlineFlavoredMarkdown = `
     ## Inline
 
     Inline piece of code \`var obj: Type = bla;\`

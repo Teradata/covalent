@@ -7,7 +7,7 @@ import { ICopyCodeTooltips } from '@covalent/highlight';
   styleUrls: ['./highlight-demo-copy-code.component.scss'],
 })
 export class HighlightDemoCopyCodeComponent {
-  css: string = `
+  css = `
   .flex-container {
     display: flex;
   }

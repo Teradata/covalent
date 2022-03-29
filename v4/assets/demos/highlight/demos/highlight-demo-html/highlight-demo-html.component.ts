@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './highlight-demo-html.component.html',
 })
 export class HighlightDemoHtmlComponent {
-  html: string = `
+  html = `
   <div>
     <h1>hello world!</h1>
     <span>Some additional text here</span>

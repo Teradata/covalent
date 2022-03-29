@@ -4,11 +4,17 @@ import { LayoutNavListDemoBasicComponent } from './layout-nav-list-demo-basic.co
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CovalentLayoutModule } from '../../../../../../../platform/core/layout';
+import { CovalentLayoutModule } from '@covalent/core/layout';
 
 @NgModule({
   declarations: [LayoutNavListDemoBasicComponent],
-  imports: [CommonModule, CovalentLayoutModule, MatListModule, MatIconModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    CovalentLayoutModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+  ],
   exports: [LayoutNavListDemoBasicComponent],
 })
 export class LayoutNavListDemoSharedModule {}

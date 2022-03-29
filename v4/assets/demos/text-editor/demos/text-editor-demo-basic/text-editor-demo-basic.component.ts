@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './text-editor-demo-basic.component.html',
 })
 export class TextEditorDemoBasicComponent {
-  editorVal: string = `# Intro
+  editorVal = `# Intro
   Go ahead, play around with the editor! Be sure to check out **bold** and *italic* styling, or even [links](https://google.com).
   You can type the Markdown syntax, use the toolbar, or use shortcuts like 'cmd-b' or 'ctrl-b'.
   

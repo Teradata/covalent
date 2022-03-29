@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './highlight-demo-css.component.html',
 })
 export class HighlightDemoCssComponent {
-  css: string = `
+  css = `
   .flex-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 0;
     margin: 0;

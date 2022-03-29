@@ -1,0 +1,20 @@
+@use '../../../../node_modules/@angular/material' as mat;
+@import '../all-theme';
+
+$primary: mat.define-palette(mat.$orange-palette, 800);
+$accent: mat.define-palette(mat.$light-blue-palette, 600, A100, A400);
+$warn: mat.define-palette(mat.$red-palette, 600);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+
+@include mat.core();
+@include mat.all-component-themes($theme);
+@include covalent-theme($theme);

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './flavored-markdown-demo-basic.component.html',
 })
 export class FlavoredMarkdownDemoBasicComponent {
-  basicFlavoredMarkdown: string = `
+  basicFlavoredMarkdown = `
     ## Checkboxes
 
     - [x] My checkbox

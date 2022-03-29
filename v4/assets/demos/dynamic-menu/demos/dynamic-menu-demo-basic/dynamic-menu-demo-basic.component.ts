@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IMenuItem, IMenuTrigger, ITdDynamicMenuLinkClickEvent } from '@covalent/core/dynamic-menu';
+import {
+  IMenuItem,
+  IMenuTrigger,
+  ITdDynamicMenuLinkClickEvent,
+} from '@covalent/core/dynamic-menu';
 
 @Component({
   selector: 'dynamic-menu-demo-basic',
@@ -124,6 +128,10 @@ export class DynamicMenuDemoBasicComponent {
   constructor(private _snackBar: MatSnackBar) {}
 
   reportClick(event: ITdDynamicMenuLinkClickEvent): void {
-    this._snackBar.open(`Item "${event.text}:${event.action}" clicked`, undefined, { duration: 2000 });
+    this._snackBar.open(
+      `Item "${event.text}:${event.action}" clicked`,
+      undefined,
+      { duration: 2000 }
+    );
   }
 }

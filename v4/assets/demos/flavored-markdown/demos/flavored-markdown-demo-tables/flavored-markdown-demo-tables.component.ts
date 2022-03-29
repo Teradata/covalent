@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './flavored-markdown-demo-tables.component.html',
 })
 export class FlavoredMarkdownDemoTablesComponent {
-  tablesFlavoredMarkdown: string = `
+  tablesFlavoredMarkdown = `
     | Tables   |      Are      |  Cool |
     |----------|--------------:|------:|
     | col 1 is | left-aligned  | $1600 |

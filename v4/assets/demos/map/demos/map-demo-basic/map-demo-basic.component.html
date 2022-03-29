@@ -1,5 +1,8 @@
 <td-chart [style.height.px]="500">
-  <td-chart-tooltip [trigger]="'item'" [triggerOn]="'mousemove'"></td-chart-tooltip>
+  <td-chart-tooltip
+    [trigger]="'item'"
+    [triggerOn]="'mousemove'"
+  ></td-chart-tooltip>
   <td-chart-series
     td-map
     [name]="'USA PopEstimates'"
@@ -59,6 +62,5 @@
       { name: 'Puerto Rico', value: 3667084 }
     ]"
     [roam]="true"
-    [itemStyle]="{ emphasis: { label: { show: true } } }"
   ></td-chart-series>
 </td-chart>

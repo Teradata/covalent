@@ -6,7 +6,9 @@ import { CovalentSideSheet } from '@covalent/core/side-sheet';
   template: `
     it works from a component
     <div style="display:flex; justify-content:space-between;">
-      <button mat-raised-button color="primary" (click)="openSideSheet()">Open</button>
+      <button mat-raised-button color="primary" (click)="openSideSheet()">
+        Open
+      </button>
       <button mat-raised-button td-side-sheet-close>Close</button>
     </div>
   `,
@@ -15,7 +17,9 @@ export class SideSheetDemoExampleComponent {
   constructor(private sideSheet: CovalentSideSheet) {}
 
   openSideSheet(): void {
-    this.sideSheet.open(SideSheetDemoExampleLayeredComponent, { minWidth: '800px' });
+    this.sideSheet.open(SideSheetDemoExampleLayeredComponent, {
+      minWidth: '800px',
+    });
   }
 }
 

@@ -1,7 +1,12 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">Chart Theme:</div>
+  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+    Chart Theme:
+  </div>
   <mat-form-field floatLabel="never">
-    <mat-select [(value)]="selectedTheme" (valueChange)="selectChartTheme($event)">
+    <mat-select
+      [(value)]="selectedTheme"
+      (valueChange)="selectChartTheme($event)"
+    >
       <mat-option *ngFor="let theme of themes" [value]="theme">
         {{ theme }}
       </mat-option>
@@ -14,7 +19,14 @@
     [focusNodeAdjacency]="'allEdges'"
     [right]="40"
     [left]="40"
-    [data]="[{ name: 'a' }, { name: 'b' }, { name: 'a1' }, { name: 'a2' }, { name: 'b1' }, { name: 'c' }]"
+    [data]="[
+      { name: 'a' },
+      { name: 'b' },
+      { name: 'a1' },
+      { name: 'a2' },
+      { name: 'b1' },
+      { name: 'c' }
+    ]"
     [links]="[
       {
         source: 'a',
@@ -49,7 +61,12 @@
     ]"
   >
     <td-chart-tooltip [trigger]="'item'">
-      <ng-template let-params let-i="index" let-ticket="ticket" tdTooltipFormatter>
+      <ng-template
+        let-params
+        let-i="index"
+        let-ticket="ticket"
+        tdTooltipFormatter
+      >
         <ng-container *ngIf="params">
           <div layout="row" layout-align="start center">
             <ng-container *ngIf="params.dataType === 'node'">
@@ -63,7 +80,9 @@
                 {{ params.data.source }}
               </span>
               <mat-icon>arrow_forward</mat-icon>
-              <span class="mat-caption">{{ params.data.target }} : {{ params.value }}</span>
+              <span class="mat-caption"
+                >{{ params.data.target }} : {{ params.value }}</span
+              >
             </ng-container>
           </div>
         </ng-container>

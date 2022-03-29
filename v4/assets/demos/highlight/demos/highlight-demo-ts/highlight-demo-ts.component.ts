@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './highlight-demo-ts.component.html',
 })
 export class HighlightDemoTsComponent {
-  code: string = `
+  code = `
   import { Injectable } from '@angular/core';
   import { Observable, Subject } from 'rxjs';
 

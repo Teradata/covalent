@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CovalentGuidedTourService, IGuidedTour, ITourEvent } from '@covalent/guided-tour';
+import {
+  CovalentGuidedTourService,
+  IGuidedTour,
+  ITourEvent,
+} from '@covalent/guided-tour';
 
 @Component({
   selector: 'guided-tour-demo-abort-on',
@@ -7,7 +11,7 @@ import { CovalentGuidedTourService, IGuidedTour, ITourEvent } from '@covalent/gu
   templateUrl: './guided-tour-demo-abort-on.component.html',
 })
 export class GuidedTourDemoAbortOnComponent implements OnInit {
-  displayElement: boolean = false;
+  displayElement = false;
   constructor(private _guidedTourService: CovalentGuidedTourService) {}
 
   ngOnInit(): void {
