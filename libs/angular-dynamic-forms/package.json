@@ -20,7 +20,8 @@
   "author": "Teradata UX",
   "peerDependencies": {
     "@angular/common": "0.0.0-NG",
-    "@angular/core": "0.0.0-NG"
+    "@angular/core": "0.0.0-NG",
+    "@covalent/core": "0.0.0-COVALENT"
   },
   "dependencies": {
     "tslib": "0.0.0-TSLIB"

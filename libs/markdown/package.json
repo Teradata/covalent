@@ -8,6 +8,15 @@
     "reusable",
     "markdown"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
   "peerDependencies": {
     "showdown": "0.0.0-SHOWDOWN",
     "@angular/common": "0.0.0-NG",
