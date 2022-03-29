@@ -1,4 +1,10 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+  NgZone,
+} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -13,15 +19,21 @@ export class TdPromptDialogComponent implements AfterViewInit {
   cancelButton = 'CANCEL';
   acceptButton = 'ACCEPT';
 
-  @ViewChild('input', { static: true }) _input!: ElementRef;
+  @ViewChild('input', { static: true }) _input!: ElementRef<HTMLElement>;
 
-  constructor(private _dialogRef: MatDialogRef<TdPromptDialogComponent>) {}
+  constructor(
+    private _ngZone: NgZone,
+    private _dialogRef: MatDialogRef<TdPromptDialogComponent>
+  ) {}
 
   ngAfterViewInit(): void {
-    // focus input once everything is rendered and good to go
-    Promise.resolve().then(() => {
-      (<HTMLInputElement>this._input.nativeElement).focus();
-    });
+    this._ngZone.runOutsideAngular(() =>
+      // Note: `element.focus()` causes re-layout and this may lead to frame drop on slower devices.
+      // `Promise` is a microtask and microtask are executed within the current rendering frame.
+      // Animation tasks are executed within the next rendering frame.
+      // We focus input once everything is rendered and good to go.
+      requestAnimationFrame(() => this._input.nativeElement.focus())
+    );
   }
 
   /**
