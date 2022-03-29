@@ -1,19 +1,25 @@
-import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import {
+  Directive,
+  Input,
+  Output,
+  EventEmitter,
   HostListener,
   HostBinding,
   ElementRef,
   Renderer2,
+  OnInit,
+  OnDestroy,
+  NgZone,
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 export class TdFileDropBase {}
 
-@Directive({
-  selector: '[tdFileDrop]',
-})
-export class TdFileDropDirective {
+@Directive({ selector: '[tdFileDrop]' })
+export class TdFileDropDirective implements OnInit, OnDestroy {
   private _multiple = false;
+  private _dragenterListener?: VoidFunction;
+  private _dragleaveListener?: VoidFunction;
 
   /**
    * multiple?: boolean
@@ -52,7 +58,44 @@ export class TdFileDropDirective {
     return this.disabled ? '' : undefined;
   }
 
-  constructor(private _renderer: Renderer2, private _element: ElementRef) {}
+  constructor(
+    private _renderer: Renderer2,
+    private _element: ElementRef<HTMLElement>,
+    private _ngZone: NgZone
+  ) {}
+
+  ngOnInit(): void {
+    this._ngZone.runOutsideAngular(() => {
+      // Listens to 'dragenter' host event to add animation class 'drop-zone' which can be overriden in host.
+      // Stops event propagation and default action from browser for 'dragenter' event.
+      this._dragenterListener = this._renderer.listen(
+        this._element.nativeElement,
+        'dragenter',
+        (event: Event) => {
+          if (!this.disabled) {
+            this._renderer.addClass(this._element.nativeElement, 'drop-zone');
+          }
+          this._stopEvent(event);
+        }
+      );
+
+      // Listens to 'dragleave' host event to remove animation class 'drop-zone'.
+      // Stops event propagation and default action from browser for 'dragleave' event.
+      this._dragleaveListener = this._renderer.listen(
+        this._element.nativeElement,
+        'dragleave',
+        (event: Event) => {
+          this._renderer.removeClass(this._element.nativeElement, 'drop-zone');
+          this._stopEvent(event);
+        }
+      );
+    });
+  }
+
+  ngOnDestroy(): void {
+    this._dragenterListener?.();
+    this._dragleaveListener?.();
+  }
 
   /**
    * Listens to 'drop' host event to get validated transfer items.
@@ -98,28 +141,6 @@ export class TdFileDropDirective {
     } else {
       transfer.dropEffect = 'copy';
     }
-    this._stopEvent(event);
-  }
-
-  /**
-   * Listens to 'dragenter' host event to add animation class 'drop-zone' which can be overriden in host.
-   * Stops event propagation and default action from browser for 'dragenter' event.
-   */
-  @HostListener('dragenter', ['$event'])
-  onDragEnter(event: Event): void {
-    if (!this.disabled) {
-      this._renderer.addClass(this._element.nativeElement, 'drop-zone');
-    }
-    this._stopEvent(event);
-  }
-
-  /**
-   * Listens to 'dragleave' host event to remove animation class 'drop-zone'.
-   * Stops event propagation and default action from browser for 'dragleave' event.
-   */
-  @HostListener('dragleave', ['$event'])
-  onDragLeave(event: Event): void {
-    this._renderer.removeClass(this._element.nativeElement, 'drop-zone');
     this._stopEvent(event);
   }
 

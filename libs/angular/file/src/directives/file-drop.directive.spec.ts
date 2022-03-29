@@ -4,10 +4,11 @@ import {
   waitForAsync,
   ComponentFixture,
 } from '@angular/core/testing';
-import { Component, DebugElement } from '@angular/core';
+import { ApplicationRef, Component, DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+
 import { CovalentFileModule } from '../file.module';
 import { TdFileDropDirective } from './file-drop.directive';
-import { By } from '@angular/platform-browser';
 
 describe('Directive: FileDrop', () => {
   beforeEach(
@@ -36,44 +37,60 @@ describe('Directive: FileDrop', () => {
             By.directive(TdFileDropDirective)
           );
           directive.triggerEventHandler('dragenter', new Event('dragenter'));
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(directive.classes['drop-zone']).toBeTruthy();
-            directive.triggerEventHandler('dragleave', new Event('dragleave'));
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              expect(directive.classes['drop-zone']).toBeFalsy();
-            });
-          });
+          expect(directive.classes['drop-zone']).toBeTruthy();
+          directive.triggerEventHandler('dragleave', new Event('dragleave'));
+          expect(directive.classes['drop-zone']).toBeFalsy();
         });
       })
     )
   );
 
-  it(
-    'should disable element and not add class on dragenter',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.disabled = true;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          directive.triggerEventHandler('dragenter', new Event('dragenter'));
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(directive.classes['drop-zone']).toBeFalsy();
-          });
-        });
-      })
-    )
-  );
+  it('should disable element and not add class on dragenter', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.disabled = true;
+    fixture.detectChanges();
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    directive.triggerEventHandler('dragenter', new Event('dragenter'));
+    expect(directive.classes['drop-zone']).toBeFalsy();
+  });
+
+  it('should not run change detection on dragenter and dragleave events', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    fixture.detectChanges();
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+
+    const appRef: ApplicationRef = TestBed.inject(ApplicationRef);
+    jest.spyOn(appRef, 'tick');
+
+    const dragenterEvent: Event = new Event('dragenter');
+    jest.spyOn(dragenterEvent, 'preventDefault');
+    jest.spyOn(dragenterEvent, 'stopPropagation');
+
+    const dragleaveEvent: Event = new Event('dragleave');
+    jest.spyOn(dragleaveEvent, 'preventDefault');
+    jest.spyOn(dragleaveEvent, 'stopPropagation');
+
+    directive.nativeElement.dispatchEvent(dragenterEvent);
+    directive.nativeElement.dispatchEvent(dragleaveEvent);
+
+    expect(appRef.tick).not.toHaveBeenCalled();
+
+    expect(dragenterEvent.preventDefault).toHaveBeenCalled();
+    expect(dragenterEvent.stopPropagation).toHaveBeenCalled();
+
+    expect(dragleaveEvent.preventDefault).toHaveBeenCalled();
+    expect(dragleaveEvent.stopPropagation).toHaveBeenCalled();
+  });
 
   it(
     'should throw dragover event and add copy dropEffect for a single file',
