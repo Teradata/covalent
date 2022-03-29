@@ -1,3 +1,9 @@
+# [4.1.0-develop.10](https://github.com/Teradata/covalent/compare/v4.1.0-develop.9...v4.1.0-develop.10) (2022-03-29)
+
+### Bug Fixes
+
+- **text-editor:** remove the `change` event listener when the component is destroyed ([60eb8de](https://github.com/Teradata/covalent/commit/60eb8de8755f5b277a71d647775b1d8fffb5d19d))
+
 # [4.1.0-develop.9](https://github.com/Teradata/covalent/compare/v4.1.0-develop.8...v4.1.0-develop.9) (2022-03-29)
 
 ### Bug Fixes
