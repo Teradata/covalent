@@ -1,3 +1,9 @@
+# [4.1.0-develop.9](https://github.com/Teradata/covalent/compare/v4.1.0-develop.8...v4.1.0-develop.9) (2022-03-29)
+
+### Bug Fixes
+
+- **package:** adding back npm package meta ([a48fa5d](https://github.com/Teradata/covalent/commit/a48fa5d75025a8a4d8637ed7908412608f3ed70d))
+
 # [4.1.0-develop.8](https://github.com/Teradata/covalent/compare/v4.1.0-develop.7...v4.1.0-develop.8) (2022-03-28)
 
 ### Bug Fixes
