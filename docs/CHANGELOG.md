@@ -1,3 +1,10 @@
+# [4.1.0-develop.11](https://github.com/Teradata/covalent/compare/v4.1.0-develop.10...v4.1.0-develop.11) (2022-03-29)
+
+### Performance Improvements
+
+- **dialogs:** do not run change detection when focusing input ([096e764](https://github.com/Teradata/covalent/commit/096e7649a2e981c01070dd1efda4d34ac90b902a))
+- **file:** do not run change detection when drag events are dispatched on the `tdFileDrop` ([90c331e](https://github.com/Teradata/covalent/commit/90c331ea4eb66896781dc72f111e345e1cf09336))
+
 # [4.1.0-develop.10](https://github.com/Teradata/covalent/compare/v4.1.0-develop.9...v4.1.0-develop.10) (2022-03-29)
 
 ### Bug Fixes
