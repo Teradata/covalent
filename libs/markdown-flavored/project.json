@@ -5,7 +5,7 @@
   "prefix": "covalent",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:ng-packagr-lite",
+      "executor": "@nrwl/angular:package",
       "outputs": ["dist/libs/markdown-flavored"],
       "options": {
         "project": "libs/markdown-flavored/ng-package.json"
