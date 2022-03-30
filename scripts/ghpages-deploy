@@ -1,7 +1,10 @@
 #!/bin/bash
 version=$1
 
+git remote set-url origin https://$GITHUB_TOKEN@github.com/Teradata/covalent.git
+
 echo "Checking out gh-pages branch"
+git fetch
 git checkout gh-pages
 
 echo "Created or replaced $version dir"

@@ -1,0 +1,28 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main, develop]
+
+jobs:
+  release:
+    name: Deploy Docs App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.SEMANTIC_RELEASE_GH }}
+          persist-credentials: false
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: npm
+      - name: Install dependencies
+        run: npx ci
+      - name: Deploy docs to GitHub pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH }}
+        run: npm run ghpages:deploy
