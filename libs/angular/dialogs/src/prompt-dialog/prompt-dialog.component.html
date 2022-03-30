@@ -10,7 +10,6 @@
           <input
             matInput
             #input
-            (focus)="handleInputFocus()"
             (keydown.enter)="$event.preventDefault(); form.valid && accept()"
             [(ngModel)]="value"
             name="value"
@@ -21,19 +20,13 @@
     </form>
   </div>
   <div tdDialogActions>
-    <button
-      mat-button
-      #closeBtn
-      (keydown.arrowright)="acceptBtn.focus()"
-      (click)="cancel()"
-    >
+    <button mat-button #closeBtn (click)="cancel()">
       {{ cancelButton }}
     </button>
     <button
       mat-button
       color="accent"
       #acceptBtn
-      (keydown.arrowleft)="closeBtn.focus()"
       [disabled]="!form.valid"
       (click)="accept()"
     >
