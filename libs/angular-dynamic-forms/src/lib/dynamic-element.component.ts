@@ -9,13 +9,9 @@ import {
   TemplateRef,
   ChangeDetectorRef,
   Type,
+  Injector,
 } from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
-import {
-  ComponentFactoryResolver,
-  ComponentRef,
-  forwardRef,
-} from '@angular/core';
 import { NG_VALUE_ACCESSOR, AbstractControl } from '@angular/forms';
 import { CdkPortal } from '@angular/cdk/portal';
 
@@ -62,7 +58,7 @@ export class TdDynamicElementDirective {
     TdDynamicFormsService,
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TdDynamicElementComponent),
+      useExisting: TdDynamicElementComponent,
       multi: true,
     },
   ],
@@ -165,7 +161,7 @@ export class TdDynamicElementComponent
   }
 
   constructor(
-    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _injector: Injector,
     private _dynamicFormsService: TdDynamicFormsService,
     _changeDetectorRef: ChangeDetectorRef
   ) {
@@ -177,10 +173,9 @@ export class TdDynamicElementComponent
       <any>this.type instanceof Type
         ? this.type
         : this._dynamicFormsService.getDynamicElement(this.type);
-    const ref: ComponentRef<any> = this._componentFactoryResolver
-      .resolveComponentFactory(component)
-      .create(this.childElement.viewContainer.injector);
-    this.childElement.viewContainer.insert(ref.hostView);
+    const ref = this.childElement.viewContainer.createComponent(component, {
+      injector: this._injector,
+    });
     this._instance = ref.instance;
     this._instance.control = this.dynamicControl;
     this._instance.label = this.label;
