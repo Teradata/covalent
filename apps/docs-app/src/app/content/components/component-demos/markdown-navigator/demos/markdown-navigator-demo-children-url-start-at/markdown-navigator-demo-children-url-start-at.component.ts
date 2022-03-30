@@ -16,7 +16,7 @@ export class MarkdownNavigatorDemoChildrenUrlStartAtComponent {
     {
       id: 'url-children-demo',
       title: 'Url children demo',
-      childrenUrl: '/assets/demos-data/children_url_1.json',
+      childrenUrl: 'assets/demos-data/children_url_1.json',
       /*
       For ref:
 
