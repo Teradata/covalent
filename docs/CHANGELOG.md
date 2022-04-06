@@ -1,3 +1,9 @@
+## [4.1.1](https://github.com/Teradata/covalent/compare/v4.1.0...v4.1.1) (2022-04-06)
+
+### Bug Fixes
+
+- **markdown-navigator:** add button click to flavored markdown loader ([#1922](https://github.com/Teradata/covalent/issues/1922)) ([fec96ca](https://github.com/Teradata/covalent/commit/fec96cabd6ddcfae5d7aeee7e1625270a1bf10ca))
+
 # [4.1.0](https://github.com/Teradata/covalent/compare/v4.0.0...v4.1.0) (2022-03-29)
 
 ### Bug Fixes
