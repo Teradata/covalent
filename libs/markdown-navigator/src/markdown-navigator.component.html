@@ -57,6 +57,7 @@
         [copyCodeToClipboard]="copyCodeToClipboard"
         [copyCodeTooltips]="copyCodeTooltips"
         (loadFailed)="handleMarkdownLoaderError($event)"
+        (buttonClicked)="buttonClicked.emit($event)"
       ></td-flavored-markdown-loader>
       <td-flavored-markdown
         *ngIf="showTdMarkdown"
