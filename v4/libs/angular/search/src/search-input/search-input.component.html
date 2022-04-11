@@ -12,7 +12,6 @@
       [(ngModel)]="value"
       [placeholder]="placeholder"
       (blur)="handleBlur()"
-      (search)="stopPropagation($event)"
       (keyup.enter)="handleSearch($event)"
     />
     <span

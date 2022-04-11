@@ -9,6 +9,9 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   forwardRef,
+  OnDestroy,
+  ElementRef,
+  NgZone,
 } from '@angular/core';
 import {
   trigger,
@@ -22,8 +25,8 @@ import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material/input';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 
-import { debounceTime, skip } from 'rxjs/operators';
-import { noop } from 'rxjs';
+import { debounceTime, skip, takeUntil } from 'rxjs/operators';
+import { fromEvent, noop, Subject } from 'rxjs';
 
 export class TdSearchInputBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
@@ -69,8 +72,13 @@ export class TdSearchInputBase {
     ]),
   ],
 })
-export class TdSearchInputComponent implements ControlValueAccessor, OnInit {
+export class TdSearchInputComponent
+  implements ControlValueAccessor, OnInit, OnDestroy
+{
   @ViewChild(MatInput, { static: true }) _input?: MatInput;
+
+  @ViewChild('searchElement', { static: true, read: ElementRef })
+  _searchElement!: ElementRef<HTMLInputElement>;
 
   /**
    * appearance?: MatFormFieldAppearance
@@ -136,20 +144,34 @@ export class TdSearchInputComponent implements ControlValueAccessor, OnInit {
     return false;
   }
 
+  private _destroy$ = new Subject<void>();
+
   constructor(
     @Optional() private _dir: Dir,
-    private _changeDetectorRef: ChangeDetectorRef
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _ngZone: NgZone
   ) {}
 
   ngOnInit(): void {
     this._input?.ngControl?.valueChanges
       ?.pipe(
         debounceTime(this.debounce),
-        skip(1) // skip first change when value is set to undefined
+        skip(1), // skip first change when value is set to undefined
+        takeUntil(this._destroy$)
       )
       .subscribe((value: string) => {
         this._searchTermChanged(value);
       });
+
+    this._ngZone.runOutsideAngular(() =>
+      fromEvent(this._searchElement.nativeElement, 'search')
+        .pipe(takeUntil(this._destroy$))
+        .subscribe(this._stopPropagation)
+    );
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
   }
 
   writeValue(value: unknown): void {
@@ -176,12 +198,8 @@ export class TdSearchInputComponent implements ControlValueAccessor, OnInit {
     this.blurSearch.emit();
   }
 
-  stopPropagation(event: Event): void {
-    event.stopPropagation();
-  }
-
   handleSearch(event: Event): void {
-    this.stopPropagation(event);
+    this._stopPropagation(event);
     if (typeof this.value == 'string') {
       this.search.emit(this.value);
     }
@@ -198,5 +216,9 @@ export class TdSearchInputComponent implements ControlValueAccessor, OnInit {
 
   private _searchTermChanged(value: string): void {
     this.searchDebounce.emit(value);
+  }
+
+  private _stopPropagation(event: Event): void {
+    event.stopPropagation();
   }
 }
