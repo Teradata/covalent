@@ -1,14 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin, Observable, Subscriber } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { forkJoin, Observable, Subject, Subscriber } from 'rxjs';
+import { catchError, map, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'demo-component',
   styleUrls: ['./demo.component.scss'],
   templateUrl: './demo.component.html',
 })
-export class DemoComponent {
+export class DemoComponent implements OnDestroy {
   @Input() demoId!: string;
   @Input() demoTitle!: string;
   viewCode = false;
@@ -16,7 +16,13 @@ export class DemoComponent {
   htmlFile!: string;
   stylesFile!: string;
 
+  private _destroy$ = new Subject<void>();
+
   constructor(private _http: HttpClient) {}
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
+  }
 
   toggleCodeView(): void {
     if (this.viewCode) {
@@ -66,7 +72,8 @@ export class DemoComponent {
                 subscriber.error(error);
               }
             });
-          })
+          }),
+          takeUntil(this._destroy$)
         )
         .subscribe(
           (demo: { typescript: string; html: string; styles: string }) => {

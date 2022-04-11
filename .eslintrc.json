@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "rxjs", "rxjs-angular"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -29,7 +29,14 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "parserOptions": {
+        "project": ["tsconfig.*?.json"],
+        "warnOnUnsupportedTypeScriptVersion": false
+      },
+      "rules": {
+        "rxjs/no-unsafe-takeuntil": "error",
+        "rxjs-angular/prefer-takeuntil": "warn"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],

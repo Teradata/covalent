@@ -1,4 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { GitHubService } from '../../services';
 
 interface IRouteConfig {
@@ -16,7 +17,7 @@ interface IRouteConfig {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnDestroy {
   // Current date
   year: any = new Date().getFullYear();
 
@@ -68,12 +69,21 @@ export class HomeComponent implements AfterViewInit {
     },
   ];
 
+  private _destroy$ = new Subject<void>();
+
   constructor(private _gitHubService: GitHubService) {}
 
   ngAfterViewInit(): void {
-    this._gitHubService.queryStartCount().subscribe((starsCount: number) => {
-      this.starCount = starsCount;
-    });
+    this._gitHubService
+      .queryStartCount()
+      .pipe(takeUntil(this._destroy$))
+      .subscribe((starsCount: number) => {
+        this.starCount = starsCount;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
   }
 
   get activeTheme(): string {
