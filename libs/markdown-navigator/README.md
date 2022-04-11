@@ -78,7 +78,7 @@ const items = [
         children: [
           {
             id: 'td-loading',
-            url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
+            url: 'https://raw.githubusercontent.com/Teradata/covalent/main/src/platform/core/loading/README.md',
             title: 'tdLoading',
           },
         ],
@@ -189,7 +189,7 @@ export class SampleComponent {
       this._markdownNavigatorWindowService.open({
         items: [
           {
-            url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+            url: 'https://github.com/Teradata/covalent/blob/main/README.md',
           },
         ],
       });

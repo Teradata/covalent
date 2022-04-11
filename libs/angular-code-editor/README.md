@@ -93,7 +93,7 @@ module.exports = {
 ```
 
 Note: If you are including this component in an Electron application, define the electron-renderer target. See Electron example here:
-[https://github.com/Teradata/covalent-electron/blob/develop/monaco-webpack.config.js](https://github.com/Teradata/covalent-electron/blob/develop/monaco-webpack.config.js)
+[https://github.com/Teradata/covalent-electron/blob/main/monaco-webpack.config.js](https://github.com/Teradata/covalent-electron/blob/main/monaco-webpack.config.js)
 
 Reference the webpack file in your angular.json build config.
 

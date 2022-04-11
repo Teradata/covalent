@@ -7,7 +7,7 @@ Upgraded dependencies:
 - flex-layout@2.0.0-rc.1 addition
 - ngx-charts@3.1.2 to 4.1.3
 
-[1.0.0-beta.2 Upgrade Steps](https://github.com/Teradata/covalent-quickstart/pull/46/commits) and [Changelog](https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md#100-beta2-hotel-california-2017-02-23)
+[1.0.0-beta.2 Upgrade Steps](https://github.com/Teradata/covalent-quickstart/pull/46/commits) and [Changelog](https://github.com/Teradata/covalent/blob/main/docs/CHANGELOG.md#100-beta2-hotel-california-2017-02-23)
 
 ## Upgrade from 0.10 to 1.0.0-beta.1
 
@@ -37,4 +37,4 @@ Upgraded dependencies:
 - material@2.0.0-alpha.9-3 to 2.0.0-alpha-10
 - angular-cli@1.0.0-beta.15 to 1.0.0-beta.19-3
 
-[0.9 Upgrade Steps](https://github.com/Teradata/covalent-quickstart/pull/20/commits) and [Changelog](https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md#090-pallettown-cummerbund-2016-11-21)
+[0.9 Upgrade Steps](https://github.com/Teradata/covalent-quickstart/pull/20/commits) and [Changelog](https://github.com/Teradata/covalent/blob/main/docs/CHANGELOG.md#090-pallettown-cummerbund-2016-11-21)

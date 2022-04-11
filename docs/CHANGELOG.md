@@ -1956,7 +1956,7 @@ We are also pleased to announce the release of the [`covalent/text-editor`](http
 - Dynamic forms features and bug fixes
 - Data table sticky headers, configurable column widths and virtual scroll
 - Pre-canned animations!
-- Initial [IE11](https://github.com/Teradata/covalent/blob/develop/docs/IE11.md) support (there may be issues, so please [create an issue](https://github.com/Teradata/covalent/issues/new) if you find one)
+- Initial [IE11](https://github.com/Teradata/covalent/blob/main/docs/IE11.md) support (there may be issues, so please [create an issue](https://github.com/Teradata/covalent/issues/new) if you find one)
 
 ## Breaking Changes
 
@@ -2649,7 +2649,7 @@ These selectors were deprecated a few releases back so it should be ok to remove
 
 ## Internal
 
-- **docs:** upgrade guide for [beta.2](https://github.com/Teradata/covalent/blob/develop/docs/UPGRADE.md#upgrade-from-100-beta1-to-100-beta2) ([98a5a19650d2bdfd552456fe17cee76de4319d39](https://github.com/Teradata/covalent/commit/98a5a19650d2bdfd552456fe17cee76de4319d39))
+- **docs:** upgrade guide for [beta.2](https://github.com/Teradata/covalent/blob/main/docs/UPGRADE.md#upgrade-from-100-beta1-to-100-beta2) ([98a5a19650d2bdfd552456fe17cee76de4319d39](https://github.com/Teradata/covalent/commit/98a5a19650d2bdfd552456fe17cee76de4319d39))
 
 <a name="1.0.0-beta.2"></a>
 

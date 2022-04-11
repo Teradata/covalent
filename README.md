@@ -7,7 +7,7 @@
 
 [![npm](https://img.shields.io/npm/l/@covalent/core.svg)](LICENSE)
 
-<img alt="Covalent" src="https://gitcdn.link/repo/Teradata/covalent/develop/src/assets/icons/covalent.svg" width="150">
+<img alt="Covalent" src="https://raw.githubusercontent.com/Teradata/covalent/main/apps/docs-app/src/assets/icons/covalent.svg" width="150">
 
 Covalent is a reusable UI platform from Teradata for building web applications with common standards and tooling. It is based on Angular and Material Design.
 
