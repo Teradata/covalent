@@ -1,3 +1,9 @@
+## [4.1.2](https://github.com/Teradata/covalent/compare/v4.1.1...v4.1.2) (2022-04-11)
+
+### Performance Improvements
+
+- **markdown:** do not run change detection when DOM timer is fired and scrolled to an anchor ([a41ace7](https://github.com/Teradata/covalent/commit/a41ace7b70c100f529701a2c4a71356f768bda54))
+
 ## [4.1.1](https://github.com/Teradata/covalent/compare/v4.1.0...v4.1.1) (2022-04-06)
 
 ### Bug Fixes
