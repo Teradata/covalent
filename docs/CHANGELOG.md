@@ -1,3 +1,9 @@
+## [4.1.7](https://github.com/Teradata/covalent/compare/v4.1.6...v4.1.7) (2022-04-11)
+
+### Bug Fixes
+
+- **dynamic-forms:** fix name attribute for other inputs ([07481e8](https://github.com/Teradata/covalent/commit/07481e88a3dd48d26489980c478fb9dee212217c))
+
 ## [4.1.6](https://github.com/Teradata/covalent/compare/v4.1.5...v4.1.6) (2022-04-11)
 
 ### Bug Fixes
