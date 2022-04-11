@@ -72,7 +72,7 @@ export class TdCodeEditorComponent
   private _isFullScreen = false;
   private _keycode: any;
   private _registeredLanguagesStyles: HTMLStyleElement[] = [];
-  private _onDidChangeContentDisposable?: monaco.IDisposable;
+  private _disposables: monaco.IDisposable[] = [];
 
   @ViewChild('editorContainer', { static: true }) _editorContainer!: ElementRef;
 
@@ -186,11 +186,13 @@ export class TdCodeEditorComponent
     if (this._componentInitialized) {
       monaco.languages.register({ id: language.id });
 
-      monaco.languages.setMonarchTokensProvider(language.id, {
-        tokenizer: {
-          root: language.monarchTokensProvider,
-        },
-      });
+      this._disposables.push(
+        monaco.languages.setMonarchTokensProvider(language.id, {
+          tokenizer: {
+            root: language.monarchTokensProvider,
+          },
+        })
+      );
 
       // Define a new theme that constains only rules that match this language
       monaco.editor.defineTheme(
@@ -199,11 +201,13 @@ export class TdCodeEditorComponent
       );
       this._theme = language.customTheme.id;
 
-      monaco.languages.registerCompletionItemProvider(language.id, {
-        provideCompletionItems: () => {
-          return language.completionItemProvider;
-        },
-      });
+      this._disposables.push(
+        monaco.languages.registerCompletionItemProvider(language.id, {
+          provideCompletionItems: () => {
+            return language.completionItemProvider;
+          },
+        })
+      );
 
       const css: HTMLStyleElement = document.createElement('style');
       css.type = 'text/css';
@@ -337,13 +341,15 @@ export class TdCodeEditorComponent
     // The `onDidChangeContent` returns a disposable object (an object with `dispose()` method) which will cleanup
     // the listener. The callback, that we pass to `onDidChangeContent`, captures `this`. This leads to a circular reference
     // (`td-code-editor -> monaco -> td-code-editor`) and prevents the `td-code-editor` from being GC'd.
-    this._onDidChangeContentDisposable = this._editor
-      .getModel()
-      ?.onDidChangeContent(() => {
-        this._fromEditor = true;
-        this.writeValue(this._editor.getValue());
-        this.layout();
-      });
+    this._disposables.push(
+      (this._editor.getModel() as monaco.editor.ITextModel).onDidChangeContent(
+        () => {
+          this._fromEditor = true;
+          this.writeValue(this._editor.getValue());
+          this.layout();
+        }
+      )
+    );
     this.addFullScreenModeCommand();
 
     merge(
@@ -379,9 +385,8 @@ export class TdCodeEditorComponent
     this._registeredLanguagesStyles.forEach((style: HTMLStyleElement) =>
       style.remove()
     );
-    if (this._onDidChangeContentDisposable) {
-      this._onDidChangeContentDisposable.dispose();
-      this._onDidChangeContentDisposable = undefined;
+    while (this._disposables.length) {
+      this._disposables.pop()?.dispose();
     }
     if (this._editor) {
       this._editor.dispose();
@@ -416,19 +421,21 @@ export class TdCodeEditorComponent
    * addFullScreenModeCommand used to add the fullscreen option to the context menu
    */
   private addFullScreenModeCommand(): void {
-    this._editor.addAction({
-      // An unique identifier of the contributed action.
-      id: 'fullScreen',
-      // A label of the action that will be presented to the user.
-      label: 'Full Screen',
-      // An optional array of keybindings for the action.
-      contextMenuGroupId: 'navigation',
-      keybindings: this._keycode,
-      contextMenuOrder: 1.5,
-      // Method that will be executed when the action is triggered.
-      run: () => {
-        this.showFullScreenEditor();
-      },
-    });
+    this._disposables.push(
+      this._editor.addAction({
+        // An unique identifier of the contributed action.
+        id: 'fullScreen',
+        // A label of the action that will be presented to the user.
+        label: 'Full Screen',
+        // An optional array of keybindings for the action.
+        contextMenuGroupId: 'navigation',
+        keybindings: this._keycode,
+        contextMenuOrder: 1.5,
+        // Method that will be executed when the action is triggered.
+        run: () => {
+          this.showFullScreenEditor();
+        },
+      })
+    );
   }
 }
