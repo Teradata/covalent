@@ -20,11 +20,15 @@ import {
   ElementRef,
   HostBinding,
   OnInit,
+  OnDestroy,
 } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 import {
   TdFlavoredListComponent,
   IFlavoredListItem,
@@ -130,7 +134,9 @@ export type IReplacerFunc<T> = (
   templateUrl: './flavored-markdown.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
+export class TdFlavoredMarkdownComponent
+  implements AfterViewInit, OnChanges, OnDestroy
+{
   private _content!: string;
   private _simpleLineBreaks = false;
   private _hostedUrl!: string;
@@ -215,6 +221,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true })
   container!: TdFlavoredMarkdownContainerDirective;
 
+  private _destroy$ = new Subject<void>();
+
   constructor(
     private _componentFactoryResolver: ComponentFactoryResolver,
     private _renderer: Renderer2,
@@ -248,6 +256,10 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         this._changeDetectorRef.markForCheck();
       });
     }
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
   }
 
   refresh(): void {
@@ -412,10 +424,11 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         const data: string = matches[3];
         componentRef.instance.text = text;
         componentRef.instance.data = data;
-        componentRef.instance.clicked.subscribe(
-          (clickEvent: ITdFlavoredMarkdownButtonClickEvent) =>
+        componentRef.instance.clicked
+          .pipe(takeUntil(this._destroy$))
+          .subscribe((clickEvent: ITdFlavoredMarkdownButtonClickEvent) =>
             this.buttonClicked.emit(clickEvent)
-        );
+          );
       }
     );
   }
