@@ -1,3 +1,9 @@
+## [4.1.4](https://github.com/Teradata/covalent/compare/v4.1.3...v4.1.4) (2022-04-11)
+
+### Bug Fixes
+
+- **dynamic-forms:** remove deprecated `ComponentFactoryResolver` ([b78d2f7](https://github.com/Teradata/covalent/commit/b78d2f7e0aeb4c59d82f884cec76deebc8c16733))
+
 ## [4.1.3](https://github.com/Teradata/covalent/compare/v4.1.2...v4.1.3) (2022-04-11)
 
 ### Bug Fixes
@@ -15,6 +21,11 @@
 ### Bug Fixes
 
 - **markdown-navigator:** add button click to flavored markdown loader ([#1922](https://github.com/Teradata/covalent/issues/1922)) ([fec96ca](https://github.com/Teradata/covalent/commit/fec96cabd6ddcfae5d7aeee7e1625270a1bf10ca))
+## [4.1.1-develop.1](https://github.com/Teradata/covalent/compare/v4.1.0...v4.1.1-develop.1) (2022-04-11)
+
+### Performance Improvements
+
+- **dialogs:** do not run change detection on `focus` and `keydown` on the prompt dialog ([6177085](https://github.com/Teradata/covalent/commit/617708516ec55176743e54017db71202e2a5726e))
 
 # [4.1.0](https://github.com/Teradata/covalent/compare/v4.0.0...v4.1.0) (2022-03-29)
 
