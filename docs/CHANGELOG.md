@@ -1,4 +1,3 @@
-## [4.1.8](https://github.com/Teradata/covalent/compare/v4.1.7...v4.1.8) (2022-04-11)
 
 ### Bug Fixes
 
@@ -47,8 +46,6 @@
 - **markdown-navigator:** add button click to flavored markdown loader ([#1922](https://github.com/Teradata/covalent/issues/1922)) ([fec96ca](https://github.com/Teradata/covalent/commit/fec96cabd6ddcfae5d7aeee7e1625270a1bf10ca))
 
 ## [4.1.1-develop.1](https://github.com/Teradata/covalent/compare/v4.1.0...v4.1.1-develop.1) (2022-04-11)
-
-### Performance Improvements
 
 - **dialogs:** do not run change detection on `focus` and `keydown` on the prompt dialog ([6177085](https://github.com/Teradata/covalent/commit/617708516ec55176743e54017db71202e2a5726e))
 
