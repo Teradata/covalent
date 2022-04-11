@@ -31,7 +31,7 @@ const RAW_MARKDOWN = `# ${RAW_MARKDOWN_HEADING}`;
 
 const URL_ITEM: IMarkdownNavigatorItem[] = [
   {
-    url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+    url: 'https://github.com/Teradata/covalent/blob/main/README.md',
   },
 ];
 const RAW_MARKDOWN_ITEM: IMarkdownNavigatorItem[] = [

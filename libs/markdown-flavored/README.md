@@ -141,7 +141,7 @@ A component that fetches markdown from a GitHub url and renders it using `<td-fl
 
 ```html
 <td-flavored-markdown-loader
-  [url]="'https://github.com/Teradata/covalent/blob/develop/README.md'"
+  [url]="'https://github.com/Teradata/covalent/blob/main/README.md'"
 >
 </td-flavored-markdown-loader>
 ```

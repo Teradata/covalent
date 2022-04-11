@@ -28,7 +28,7 @@ export class MarkdownNavigatorDemoBasicComponent {
       title: 'Covalent',
       description: 'Terdata UI Platform',
       icon: 'whatshot',
-      url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+      url: 'https://github.com/Teradata/covalent/blob/main/README.md',
     },
   ];
 }

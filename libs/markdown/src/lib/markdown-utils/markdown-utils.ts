@@ -19,7 +19,7 @@ export function genHeadingId(str: string): string {
         .replace(/(_|-|\s)+/g, '')
         // Remove certain special chars to create heading ids similar to those in github
         // borrowed from showdown
-        // https://github.com/showdownjs/showdown/blob/develop/src/subParsers/makehtml/headers.js#L94
+        // https://github.com/showdownjs/showdown/blob/main/src/subParsers/makehtml/headers.js#L94
         .replace(/[&+$,/:;=?@"#{}|^¨~[\]`\\*)(%.!'<>]/g, '')
     ).toLowerCase();
   }

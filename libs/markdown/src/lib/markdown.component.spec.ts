@@ -488,10 +488,9 @@ describe('Component: Markdown', () => {
         const ANCHOR = '#anchor';
         const CURRENT_MD_FILE = 'GETTING_STARTED.md';
         const ROOT_MD_FILE = 'README.md';
-        const NON_RAW_LINK =
-          'https://github.com/Teradata/covalent/blob/develop/';
+        const NON_RAW_LINK = 'https://github.com/Teradata/covalent/blob/main/';
         const RAW_LINK =
-          'https://raw.githubusercontent.com/Teradata/covalent/develop/';
+          'https://raw.githubusercontent.com/Teradata/covalent/main/';
         const EXTERNAL_URL = 'https://angular.io/';
         const SUB_DIRECTORY = 'docs/';
         const links: string[][] = [
@@ -560,10 +559,9 @@ describe('Component: Markdown', () => {
         const CURRENT_MD_FILE = 'readme.md';
         const SIBLING_IMG = 'typescript.jpg';
         const ROOT_IMG = 'angular.png';
-        const NON_RAW_LINK =
-          'https://github.com/Teradata/covalent/blob/develop/';
+        const NON_RAW_LINK = 'https://github.com/Teradata/covalent/blob/main/';
         const RAW_LINK =
-          'https://raw.githubusercontent.com/Teradata/covalent/develop/';
+          'https://raw.githubusercontent.com/Teradata/covalent/main/';
         const EXTERNAL_IMG =
           'https://angular.io/assets/images/logos/angular/angular.svg';
         const SUB_DIRECTORY = 'dir/';
