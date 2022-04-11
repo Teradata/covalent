@@ -29,7 +29,7 @@ export class MarkdownNavigatorDemoServiceComponent {
         {
           id: 'child_id',
           title: 'Children',
-          childrenUrl: '/assets/demos-data/children_url_1.json',
+          childrenUrl: 'assets/demos-data/children_url_1.json',
         },
       ],
       dialogConfig: {
