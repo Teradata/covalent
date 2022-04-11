@@ -1,3 +1,9 @@
+## [4.1.8](https://github.com/Teradata/covalent/compare/v4.1.7...v4.1.8) (2022-04-11)
+
+### Bug Fixes
+
+- **search:** teardown subscription and do not run change detection on `search` events ([4deefb4](https://github.com/Teradata/covalent/commit/4deefb4aa1d682a894c8208916c29014555d3b80))
+
 ## [4.1.7](https://github.com/Teradata/covalent/compare/v4.1.6...v4.1.7) (2022-04-11)
 
 ### Bug Fixes
