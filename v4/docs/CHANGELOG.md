@@ -1,3 +1,9 @@
+## [4.1.3](https://github.com/Teradata/covalent/compare/v4.1.2...v4.1.3) (2022-04-11)
+
+### Bug Fixes
+
+- **code-editor:** cleanup all disposables ([d297e21](https://github.com/Teradata/covalent/commit/d297e2199665176487270bc7536f0bd7d9a39d5d))
+
 ## [4.1.2](https://github.com/Teradata/covalent/compare/v4.1.1...v4.1.2) (2022-04-11)
 
 ### Performance Improvements
