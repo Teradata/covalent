@@ -23,7 +23,7 @@ export class MarkdownNavigatorDemoServiceComponent {
         },
         {
           title: 'Covalent Browser Support',
-          url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
+          url: 'https://github.com/Teradata/covalent/blob/main/README.md',
           anchor: 'browser-support',
         },
         {

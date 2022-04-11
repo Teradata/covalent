@@ -5,14 +5,14 @@ import { CovalentMarkdownModule } from '../markdown.module';
 const SAMPLE_HEADING = 'Covalent: UI Platform based on Angular-Material';
 
 const RAW_GH_URL =
-  'https://raw.githubusercontent.com/Teradata/covalent/develop/README.md';
-const GH_URL = 'https://github.com/Teradata/covalent/blob/develop/README.md';
+  'https://raw.githubusercontent.com/Teradata/covalent/main/README.md';
+const GH_URL = 'https://github.com/Teradata/covalent/blob/main/README.md';
 const BRANCH_GH_URL =
   'https://github.com/Teradata/covalent/blob/main/README.md';
 const RAW_GH_BRANCH_URL =
   'https://raw.githubusercontent.com/Teradata/covalent/main/README.md';
 const NON_MARKDOWN_URL = 'https://teradata.github.io/covalent/#/';
-const UNREACHABLE_URL = 'https://github.com/Teradata/covalent/tree/develop/src';
+const UNREACHABLE_URL = 'https://github.com/Teradata/covalent/tree/main/src';
 
 describe('Service: MarkdownLoader', () => {
   beforeEach(
