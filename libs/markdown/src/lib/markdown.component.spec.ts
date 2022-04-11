@@ -1,7 +1,14 @@
-import { TestBed, waitForAsync, ComponentFixture } from '@angular/core/testing';
+import {
+  TestBed,
+  waitForAsync,
+  ComponentFixture,
+  tick,
+  fakeAsync,
+} from '@angular/core/testing';
 import { ApplicationRef, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CovalentMarkdownModule } from './markdown.module';
+import { TdMarkdownComponent } from './markdown.component';
 
 // Implementing scrollIntoView since its not implemented JSDOM
 window.HTMLElement.prototype.scrollIntoView = function () {
@@ -397,6 +404,33 @@ describe('Component: Markdown', () => {
       expect(event.preventDefault).toHaveBeenCalled();
       expect(headingScrollPos).toBeGreaterThanOrEqual(originalScrollPos);
     });
+
+    it('should emit `contentReady` and should not run change detection', fakeAsync(() => {
+      const contentReadySpy: jest.Mock = jest.fn();
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdMarkdownAnchorsTestEventsComponent
+      );
+      const component: TdMarkdownAnchorsTestEventsComponent =
+        fixture.debugElement.componentInstance;
+      component.anchor = 'heading 1';
+      component.content = anchorTestMarkdown();
+
+      const originalScrollPos: number = window.scrollY;
+      const { componentInstance } = fixture.debugElement.query(
+        By.directive(TdMarkdownComponent)
+      );
+      componentInstance.contentReady.subscribe(contentReadySpy);
+
+      fixture.detectChanges();
+
+      const appRef: ApplicationRef = TestBed.inject(ApplicationRef);
+      jest.spyOn(appRef, 'tick');
+
+      tick(250);
+
+      expect(appRef.tick).not.toHaveBeenCalled();
+      expect(contentReadySpy).toHaveBeenCalled();
+    }));
 
     it(
       'should jump to anchor if an anchor link is clicked regardless of lang',
