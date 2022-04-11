@@ -1,3 +1,9 @@
+## [4.1.1-develop.1](https://github.com/Teradata/covalent/compare/v4.1.0...v4.1.1-develop.1) (2022-04-11)
+
+### Performance Improvements
+
+- **dialogs:** do not run change detection on `focus` and `keydown` on the prompt dialog ([6177085](https://github.com/Teradata/covalent/commit/617708516ec55176743e54017db71202e2a5726e))
+
 # [4.1.0](https://github.com/Teradata/covalent/compare/v4.0.0...v4.1.0) (2022-03-29)
 
 ### Bug Fixes
