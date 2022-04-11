@@ -9,7 +9,11 @@ import {
   forwardRef,
   ChangeDetectorRef,
   OnDestroy,
+  NgZone,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable, of, Subject } from 'rxjs';
 import { fromEvent, merge, timer } from 'rxjs';
@@ -309,12 +313,18 @@ export class TdCodeEditorComponent
   // tslint:disable-next-line:member-ordering
   constructor(
     _changeDetectorRef: ChangeDetectorRef,
-    private _elementRef: ElementRef
+    private _elementRef: ElementRef<HTMLElement>,
+    private _ngZone: NgZone,
+    @Inject(PLATFORM_ID) private platformId: string
   ) {
     super(_changeDetectorRef);
   }
 
   ngOnInit(): void {
+    if (isPlatformServer(this.platformId)) {
+      return;
+    }
+
     const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
     containerDiv.id = this._editorInnerContainer;
 
@@ -352,32 +362,29 @@ export class TdCodeEditorComponent
     );
     this.addFullScreenModeCommand();
 
-    merge(
-      fromEvent(window, 'resize').pipe(debounceTime(100)),
-      this._widthSubject.asObservable().pipe(distinctUntilChanged()),
-      this._heightSubject.asObservable().pipe(distinctUntilChanged())
-    )
-      .pipe(takeUntil(this._destroy), debounceTime(100))
-      .subscribe(() => {
-        this.layout();
-        this._changeDetectorRef.markForCheck();
-      });
-    timer(500, 250)
-      .pipe(takeUntil(this._destroy))
-      .subscribe(() => {
-        if (this._elementRef && this._elementRef.nativeElement) {
-          this._widthSubject.next(
-            (<HTMLElement>(
-              this._elementRef.nativeElement
-            )).getBoundingClientRect().width
-          );
-          this._heightSubject.next(
-            (<HTMLElement>(
-              this._elementRef.nativeElement
-            )).getBoundingClientRect().height
-          );
-        }
-      });
+    this._ngZone.runOutsideAngular(() =>
+      merge(
+        fromEvent(window, 'resize').pipe(debounceTime(100)),
+        this._widthSubject.asObservable().pipe(distinctUntilChanged()),
+        this._heightSubject.asObservable().pipe(distinctUntilChanged())
+      )
+        .pipe(debounceTime(100), takeUntil(this._destroy))
+        .subscribe(() => {
+          // Note: this is being called outside of the Angular zone since we don't have to
+          // run change detection whenever the editor resizes itself.
+          this.layout();
+        })
+    );
+    this._ngZone.runOutsideAngular(() =>
+      timer(500, 250)
+        .pipe(takeUntil(this._destroy))
+        .subscribe(() => {
+          const { width, height } =
+            this._elementRef.nativeElement.getBoundingClientRect();
+          this._widthSubject.next(width);
+          this._heightSubject.next(height);
+        })
+    );
   }
 
   ngOnDestroy(): void {
