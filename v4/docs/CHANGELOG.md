@@ -1,3 +1,9 @@
+## [4.1.6](https://github.com/Teradata/covalent/compare/v4.1.5...v4.1.6) (2022-04-11)
+
+### Bug Fixes
+
+- **dynamic-forms:** material input name overriding ([#1895](https://github.com/Teradata/covalent/issues/1895)) ([9daa3df](https://github.com/Teradata/covalent/commit/9daa3dfa411653b68e3264fbf6ced8eb0914cb65))
+
 ## [4.1.5](https://github.com/Teradata/covalent/compare/v4.1.4...v4.1.5) (2022-04-11)
 
 ### Performance Improvements
