@@ -1,3 +1,9 @@
+## [4.1.4](https://github.com/Teradata/covalent/compare/v4.1.3...v4.1.4) (2022-04-11)
+
+### Bug Fixes
+
+- **dynamic-forms:** remove deprecated `ComponentFactoryResolver` ([b78d2f7](https://github.com/Teradata/covalent/commit/b78d2f7e0aeb4c59d82f884cec76deebc8c16733))
+
 ## [4.1.3](https://github.com/Teradata/covalent/compare/v4.1.2...v4.1.3) (2022-04-11)
 
 ### Bug Fixes
