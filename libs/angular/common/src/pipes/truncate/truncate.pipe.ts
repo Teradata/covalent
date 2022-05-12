@@ -10,7 +10,7 @@ export class TdTruncatePipe implements PipeTransform {
     }
 
     // Truncate
-    let truncated: string = text.substr(0, length);
+    let truncated: string = text.substring(0, length);
 
     if (text.length > length) {
       if (truncated.lastIndexOf(' ') > 0) {
