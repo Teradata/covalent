@@ -20,17 +20,23 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material/input';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
-
+import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, skip, takeUntil } from 'rxjs/operators';
-import { fromEvent, noop, Subject } from 'rxjs';
+import {
+  IControlValueAccessor,
+  mixinControlValueAccessor,
+} from '@covalent/core/common';
 
 export class TdSearchInputBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
 }
+
+export const _TdSearchInputMixinBase =
+  mixinControlValueAccessor(TdSearchInputBase);
 
 @Component({
   providers: [
@@ -73,7 +79,8 @@ export class TdSearchInputBase {
   ],
 })
 export class TdSearchInputComponent
-  implements ControlValueAccessor, OnInit, OnDestroy
+  extends _TdSearchInputMixinBase
+  implements IControlValueAccessor, OnInit, OnDestroy
 {
   @ViewChild(MatInput, { static: true }) _input?: MatInput;
 
@@ -111,7 +118,7 @@ export class TdSearchInputComponent
    */
   @Input() clearIcon = 'cancel';
 
-  @Input() value?: unknown;
+  @Input() override value!: unknown;
 
   /**
    * searchDebounce: function($event)
@@ -148,9 +155,11 @@ export class TdSearchInputComponent
 
   constructor(
     @Optional() private _dir: Dir,
-    private _changeDetectorRef: ChangeDetectorRef,
+    override _changeDetectorRef: ChangeDetectorRef,
     private _ngZone: NgZone
-  ) {}
+  ) {
+    super(_changeDetectorRef);
+  }
 
   ngOnInit(): void {
     this._input?.ngControl?.valueChanges
@@ -172,19 +181,6 @@ export class TdSearchInputComponent
 
   ngOnDestroy(): void {
     this._destroy$.next();
-  }
-
-  writeValue(value: unknown): void {
-    this.value = value;
-    this._changeDetectorRef.markForCheck();
-  }
-
-  registerOnChange(): void {
-    noop;
-  }
-
-  registerOnTouched(): void {
-    noop;
   }
 
   /**

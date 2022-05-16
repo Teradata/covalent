@@ -18,6 +18,10 @@ export class SearchDemoInputComponent {
   searchInputTerm = '';
   debounce = 0;
 
+  searchChange($event: string) {
+    this.searchInputTerm = $event;
+  }
+
   modeChange(): void {
     this.searchInputTerm = '';
   }
