@@ -10,7 +10,7 @@
     >
       <mat-option
         *ngFor="let selection of selections"
-        [value]="selection.value || selection"
+        [value]="selection.value ?? selection"
       >
         {{ selection.label || selection }}
       </mat-option>
