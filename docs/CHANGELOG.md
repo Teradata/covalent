@@ -1,3 +1,9 @@
+## [4.1.9](https://github.com/Teradata/covalent/compare/v4.1.8...v4.1.9) (2022-05-16)
+
+### Bug Fixes
+
+- **dynamic-forms:** fixed defualt value for booleans ([dee23fe](https://github.com/Teradata/covalent/commit/dee23fe1ed58bc9acb68788ddfa512d9f1f0c344))
+
 ## [4.1.8](https://github.com/Teradata/covalent/compare/v4.1.7...v4.1.8) (2022-04-11)
 
 ### Bug Fixes
