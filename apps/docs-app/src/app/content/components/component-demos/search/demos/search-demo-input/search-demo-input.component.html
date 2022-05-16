@@ -30,7 +30,8 @@
       [appearance]="appearance"
       [showUnderline]="true"
       placeholder="Search using debounce"
-      (searchDebounce)="searchInputTerm = $event"
+      (searchDebounce)="searchChange($event)"
+      (clear)="modeChange()"
       searchIcon="image_search"
     ></td-search-input>
     <td-search-input
@@ -38,8 +39,8 @@
       [appearance]="appearance"
       [showUnderline]="true"
       placeholder="Search using enter/clear"
-      (search)="searchInputTerm = $event"
-      (clear)="searchInputTerm = ''"
+      (search)="searchChange($event)"
+      (clear)="modeChange()"
       searchIcon="search"
     ></td-search-input>
   </div>
