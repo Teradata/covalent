@@ -9,13 +9,13 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import * as EasyMDE from 'easymde';
-// get access to the marked class under easymde
-import * as marked from 'marked';
+import { marked } from 'marked';
 
 const noop: any = () => {
   // empty method
 };
+
+const EasyMDE = (window as any).EasyMDE;
 
 @Component({
   selector: 'td-text-editor',
@@ -33,7 +33,7 @@ export class TdTextEditorComponent
   implements AfterViewInit, OnDestroy, ControlValueAccessor
 {
   private _value = '';
-  private _easyMDE!: EasyMDE;
+  private _easyMDE!: typeof EasyMDE;
   private _fromEditor = false;
 
   @ViewChild('easymde', { static: true }) textarea!: ElementRef;
@@ -66,7 +66,7 @@ export class TdTextEditorComponent
     return this._value;
   }
 
-  get easyMDE(): EasyMDE {
+  get easyMDE(): typeof EasyMDE {
     return this._easyMDE;
   }
 
@@ -87,7 +87,7 @@ export class TdTextEditorComponent
     this.options.element = this.textarea.nativeElement;
 
     // If content entered is html then don't evaluate it, prevent xss vulnerabilities
-    marked.marked.setOptions({ sanitize: true });
+    marked.setOptions({ sanitize: true });
     this._easyMDE = new EasyMDE(this.options);
     this._easyMDE.value(this.value);
     this._easyMDE.codemirror.on('change', this._onChange);

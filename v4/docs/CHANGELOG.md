@@ -1,3 +1,9 @@
+## [4.1.10](https://github.com/Teradata/covalent/compare/v4.1.9...v4.1.10) (2022-05-16)
+
+### Bug Fixes
+
+- **search:** re-implementing mixinControlValueAccessor ([177f1f3](https://github.com/Teradata/covalent/commit/177f1f30708c592c078e510b4eb56ba367c3296e))
+
 ## [4.1.9](https://github.com/Teradata/covalent/compare/v4.1.8...v4.1.9) (2022-05-16)
 
 ### Bug Fixes
