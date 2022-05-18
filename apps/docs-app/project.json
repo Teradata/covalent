@@ -48,7 +48,8 @@
         "scripts": [
           "node_modules/echarts/dist/echarts.js",
           "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js",
-          "node_modules/shepherd.js/dist/js/shepherd.min.js"
+          "node_modules/shepherd.js/dist/js/shepherd.min.js",
+          "node_modules/easymde/dist/easymde.min.js"
         ]
       },
       "configurations": {
