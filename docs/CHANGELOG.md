@@ -1,3 +1,9 @@
+## [4.1.11](https://github.com/Teradata/covalent/compare/v4.1.10...v4.1.11) (2022-05-18)
+
+### Bug Fixes
+
+- **text-editor:** remove easymde as commonjs dep ([5c57c0e](https://github.com/Teradata/covalent/commit/5c57c0e50f9daa7c107a90cf9476cbf0e2e90d6f))
+
 ## [4.1.11-develop.1](https://github.com/Teradata/covalent/compare/v4.1.10...v4.1.11-develop.1) (2022-05-17)
 
 ### Bug Fixes
