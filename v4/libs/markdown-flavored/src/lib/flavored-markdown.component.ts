@@ -391,7 +391,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   private _replaceButtons(markdown: string): string {
-    const buttonRegExp = /\[([^[]+)\](\(#data=(.*)\))/i;
+    const buttonRegExp = /\[([^[]+)\](\(#data=(.*?)\))/i;
     const globalButtonRegExp = new RegExp(
       buttonRegExp.source,
       buttonRegExp.flags + 'g'
