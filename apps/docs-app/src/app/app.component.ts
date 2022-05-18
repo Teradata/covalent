@@ -141,6 +141,21 @@ export class DocsAppComponent {
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
+      'dock_right',
+      this._domSanitizer.bypassSecurityTrustResourceUrl(
+        'assets/icons/dock_right.svg'
+      )
+    );
+    this._iconRegistry.addSvgIconInNamespace(
+      'assets',
+      'undock',
+      this._domSanitizer.bypassSecurityTrustResourceUrl(
+        'assets/icons/undock.svg'
+      )
+    );
+
+    this._iconRegistry.addSvgIconInNamespace(
+      'assets',
       'listener',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
         'assets/icons/listener.svg'
@@ -216,6 +231,7 @@ export class DocsAppComponent {
         'assets/icons/unity.svg'
       )
     );
+
     this._iconRegistry.addSvgIcon(
       'viewpoint',
       this._domSanitizer.bypassSecurityTrustResourceUrl(

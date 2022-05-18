@@ -15,6 +15,10 @@
           {{ docked ? 'unfold_more' : 'unfold_less' }}
         </mat-icon>
       </button> -->
+      <button mat-icon-button (click)="undockState()">
+        <mat-icon *ngIf="!isDockIcon" svgIcon="assets:undock"></mat-icon>
+        <mat-icon *ngIf="isDockIcon" svgIcon="assets:dock_right"> </mat-icon>
+      </button>
 
       <button
         mat-icon-button
