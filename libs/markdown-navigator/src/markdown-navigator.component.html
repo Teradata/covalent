@@ -19,7 +19,7 @@
         <ng-container *ngIf="!isLast; else lastBreadCrumb">
           <a
             td-breadcrumb
-            (click)="goBack(index)"
+            (click)="goBack(historyStack.length - index)"
             [attr.data-test]="'back-button'"
             >{{ stack.title }}</a
           >
