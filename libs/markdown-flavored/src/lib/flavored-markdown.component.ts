@@ -512,22 +512,25 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   private _replaceLists(markdown: string): string {
-    const listRegExp = /(?:^|\n)(( *(\+|-))[ |\t](.*)\n)+/g;
-    const listCharRegExp = new RegExp(/\+|-/);
+    const listRegExp = /(?:^|\n)(( *(\+|\*))[ |\t](.*)\n)+/g;
+    const listCharRegExp = new RegExp(/^(\+|\*)/);
     return this._replaceComponent(
       markdown,
       TdFlavoredListComponent,
       listRegExp,
       (componentRef: ComponentRef<TdFlavoredListComponent>, match: string) => {
         const matchIndex =
-          match.indexOf('+') !== -1 ? match.indexOf('+') : match.indexOf('-');
+          match.indexOf('+') !== -1 ? match.indexOf('+') : match.indexOf('*');
+
         const lineTexts: string[] = match.split(
-          new RegExp('\\n {' + (matchIndex - 1).toString() + '}(\\+|-)[ |\\t]')
+          new RegExp(
+            '\\n {' + (matchIndex - 1).toString() + '}(\\+|\\*)[ |\\t]'
+          )
         );
         lineTexts.shift();
         const lines: IFlavoredListItem[] = [];
         lineTexts.forEach((text: string) => {
-          const sublineTexts: string[] = text.split(/\n *(\+|-) /);
+          const sublineTexts: string[] = text.split(/\n *(\+|\*) /);
           const lineText = sublineTexts.shift() ?? '';
 
           if (listCharRegExp.test(lineText)) {
