@@ -151,7 +151,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   get showHeader(): boolean {
-    return this.showGoBackButton || !!this.currentItemTitle;
+    return !!this.currentItemTitle;
   }
 
   get showMenu(): boolean {
@@ -232,9 +232,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   get currentItemTitle(): string {
-    if (this.historyStack.length < 1) {
-      return '';
-    } else if (this.currentMarkdownItem) {
+    if (this.currentMarkdownItem) {
       return this.getTitle(this.currentMarkdownItem);
     } else if (this.historyStack.length > 0) {
       return this.getTitle(this.historyStack[this.historyStack.length - 1]);
@@ -278,29 +276,27 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     this._changeDetectorRef.markForCheck();
   }
 
-  goBack(goBackLength = 1): void {
+  goBack(goBackLength = 2): void {
     this.loading = false;
     this.clearErrors();
-    if (this.historyStack.length > 1) {
-      let parent: IMarkdownNavigatorItem | undefined =
-        this.historyStack[this.historyStack.length - 2];
+    let parent: IMarkdownNavigatorItem | undefined =
+      this.historyStack[this.historyStack.length - goBackLength];
 
-      if (parent?.startAtLink) {
-        parent = this.historyStack[this.historyStack.length - 3]
-          ? this.historyStack[this.historyStack.length - 3]
-          : undefined;
-        this.historyStack = this.historyStack.slice(0, -goBackLength);
-      }
+    if (parent?.startAtLink) {
+      parent = this.historyStack[this.historyStack.length - 3]
+        ? this.historyStack[this.historyStack.length - 3]
+        : undefined;
+      this.historyStack = this.historyStack.slice(0, -goBackLength);
+    }
 
-      if (parent) {
-        this.currentMarkdownItem = parent;
-        this.historyStack = this.historyStack.slice(0, -goBackLength);
-        this.setChildrenAsCurrentMenuItems(parent);
-      } else {
-        this.reset();
-      }
+    if (parent) {
+      this.currentMarkdownItem = parent;
+      this.historyStack = this.historyStack.slice(
+        0,
+        this.historyStack.length - goBackLength + 1
+      );
+      this.setChildrenAsCurrentMenuItems(parent);
     } else {
-      // one level down just go to root
       this.reset();
     }
     this._changeDetectorRef.markForCheck();
