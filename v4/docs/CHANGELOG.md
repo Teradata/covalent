@@ -1,3 +1,9 @@
+## [4.1.12](https://github.com/Teradata/covalent/compare/v4.1.11...v4.1.12) (2022-05-18)
+
+### Bug Fixes
+
+- **navigator:** fix button regex ([6b972de](https://github.com/Teradata/covalent/commit/6b972de1426173041e6bdb66cf4b829950e19d67))
+
 ## [4.1.11](https://github.com/Teradata/covalent/compare/v4.1.10...v4.1.11) (2022-05-18)
 
 ### Bug Fixes
