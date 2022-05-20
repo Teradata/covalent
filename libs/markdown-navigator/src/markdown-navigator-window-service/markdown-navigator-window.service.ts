@@ -174,7 +174,7 @@ export class TdMarkdownNavigatorWindowService {
           this.markdownNavigatorWindowDialog.componentInstance.docked = true;
           this.markdownNavigatorWindowDialog.updateSize(
             DEFAULT_WIDTH,
-            MIN_HEIGHT
+            DEFAULT_HEIGHT
           );
           this.markdownNavigatorWindowDialog.updatePosition(DEFAULT_POSITION);
           this.dragRef.reset();

@@ -10,14 +10,23 @@
         {{ title }}
       </span>
       <!-- TODO: Resizing a drag-and-drop element was not working so removed docking/undocking for now-->
-      <!-- <button mat-icon-button [matTooltip]="toggleDockedStateLabel" (click)="toggleDockedState()">
+      <!-- <button mat-icon-button (click)="toggleDockedState()">
         <mat-icon [attr.aria-label]="toggleDockedStateLabel">
           {{ docked ? 'unfold_more' : 'unfold_less' }}
         </mat-icon>
       </button> -->
-      <button mat-icon-button (click)="undockState()">
-        <mat-icon *ngIf="!isDockIcon" svgIcon="assets:undock"></mat-icon>
-        <mat-icon *ngIf="isDockIcon" svgIcon="assets:dock_right"> </mat-icon>
+      <button mat-icon-button (click)="toggleDockedState()">
+        <mat-icon
+          *ngIf="docked"
+          [attr.aria-label]="toggleDockedStateLabel"
+          svgIcon="assets:dock_right"
+        ></mat-icon>
+        <mat-icon
+          *ngIf="!docked"
+          [attr.aria-label]="toggleDockedStateLabel"
+          svgIcon="assets:undock"
+        >
+        </mat-icon>
       </button>
 
       <button

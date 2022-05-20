@@ -25,17 +25,8 @@ export class TdWindowDialogComponent {
   @Output() closed: EventEmitter<void> = new EventEmitter();
 
   toolbarHeight = 56;
-  isDockIcon = false;
 
   toggleDockedState(): void {
     this.dockToggled.emit(this.docked);
-  }
-
-  undockState(): void {
-    if (!this.isDockIcon) {
-      this.isDockIcon = true;
-    } else {
-      this.isDockIcon = false;
-    }
   }
 }
