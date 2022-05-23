@@ -39,7 +39,7 @@
     "echarts-wordcloud": "^2.0.0",
     "highlight.js": "^11.4.0",
     "monaco-editor": "^0.32.1",
-    "rxjs": "~7.4.0",
+    "rxjs": "^7.4.0",
     "shepherd.js": "^9.0.0",
     "showdown": "^2.0.3",
     "tslib": "^2.0.0",
