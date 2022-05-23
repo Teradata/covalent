@@ -1,3 +1,9 @@
+## [4.1.13](https://github.com/Teradata/covalent/compare/v4.1.12...v4.1.13) (2022-05-19)
+
+### Bug Fixes
+
+- **markdown-navigator:** fix for markdown navigator breadcrumbs ([8d4dd16](https://github.com/Teradata/covalent/commit/8d4dd16d399cf51fd975503fbbf8ec3afeca8ea5))
+
 ## [4.1.12](https://github.com/Teradata/covalent/compare/v4.1.11...v4.1.12) (2022-05-18)
 
 ### Bug Fixes
