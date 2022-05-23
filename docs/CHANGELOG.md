@@ -1,3 +1,9 @@
+## [4.1.14](https://github.com/Teradata/covalent/compare/v4.1.13...v4.1.14) (2022-05-23)
+
+### Bug Fixes
+
+- **flavored-markdown:** allow for all list characters ([60b83ab](https://github.com/Teradata/covalent/commit/60b83ab426d1b926c48b63f13dbba9248ccaabac))
+
 ## [4.1.13](https://github.com/Teradata/covalent/compare/v4.1.12...v4.1.13) (2022-05-19)
 
 ### Bug Fixes
