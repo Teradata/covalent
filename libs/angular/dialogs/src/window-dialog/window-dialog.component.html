@@ -10,12 +10,15 @@
         {{ title }}
       </span>
       <!-- TODO: Resizing a drag-and-drop element was not working so removed docking/undocking for now-->
-      <button mat-icon-button (click)="toggleDockedState()">
+      <button
+        mat-icon-button
+        (click)="toggleDockedState()"
+        class="td-window-dialog-close"
+      >
         <mat-icon [attr.aria-label]="toggleDockedStateLabel">
           {{ docked ? 'expand_less' : 'expand_more' }}
         </mat-icon>
       </button>
-
       <button
         mat-icon-button
         [matTooltip]="closeLabel ?? ''"
