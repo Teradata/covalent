@@ -389,11 +389,11 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private async _jumpTo(
     itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[],
     children?: IMarkdownNavigatorItem[]
-  ): Promise<void> {
+  ): Promise<boolean> {
     const historyStack: IMarkdownNavigatorItem[] = this.historyStack;
-    this.reset();
-    if (this.items && this.items.length > 0) {
-      let path: IMarkdownNavigatorItem[] | undefined = [];
+    let path: IMarkdownNavigatorItem[] = [];
+
+    if (this.items?.length) {
       if (Array.isArray(itemOrPath)) {
         path = await this.followPath(this.items, itemOrPath);
       } else if (children && children.length > 0) {
@@ -402,11 +402,14 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       } else {
         path = this.findPath(this.items, itemOrPath);
       }
-      (path || []).forEach((pathItem: IMarkdownNavigatorItem) =>
-        this.handleItemSelected(pathItem)
-      );
+      path.forEach((pathItem: IMarkdownNavigatorItem, index) => {
+        if (index === 0) { this.reset() }
+        
+        this.handleItemSelected(pathItem);
+      });
     }
-    this._changeDetectorRef.markForCheck();
+
+    return !!path.length;
   }
 
   private async followPath(
@@ -443,7 +446,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private findPath(
     items?: IMarkdownNavigatorItem[],
     item?: IMarkdownNavigatorItem
-  ): IMarkdownNavigatorItem[] | undefined {
+  ): IMarkdownNavigatorItem[] {
     const compareWith: IMarkdownNavigatorCompareWith =
       this.compareWith || defaultCompareWith;
     if (items) {
@@ -451,24 +454,30 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
         if (item && compareWith(child, item)) {
           return [child];
         }
-        const ancestors: IMarkdownNavigatorItem[] | undefined = this.findPath(
+        const ancestors: IMarkdownNavigatorItem[] = this.findPath(
           child.children,
           item
         );
-        if (ancestors) {
+        if (ancestors.length) {
           return [child, ...ancestors];
         }
       }
     }
-    return undefined;
+    return [];
   }
 
   private async handleLinkClick(event: Event): Promise<void> {
     event.preventDefault();
     const link: HTMLAnchorElement = <HTMLAnchorElement>event.target;
     const url: URL = new URL(link.href);
+    const urlParts = url.href.split('/');
+    const id = urlParts[urlParts.length-1].split('.md')[0];
     this.loading = true;
     this._changeDetectorRef.markForCheck();
+    const pathFound = await this._jumpTo({ id });
+
+    if (pathFound) { return; }
+
     try {
       const markdownString: string = await this._markdownUrlLoaderService.load(
         url.href
