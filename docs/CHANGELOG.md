@@ -1,3 +1,9 @@
+# [4.2.0](https://github.com/Teradata/covalent/compare/v4.1.15...v4.2.0) (2022-05-24)
+
+### Features
+
+- **markdown-navigator:** attempt to jump links before loading md file ([ee66078](https://github.com/Teradata/covalent/commit/ee660784c0b23cdeb48443a5983674a619a6f843))
+
 ## [4.1.15](https://github.com/Teradata/covalent/compare/v4.1.14...v4.1.15) (2022-05-23)
 
 ### Bug Fixes
