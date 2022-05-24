@@ -1,3 +1,9 @@
+## [4.1.15](https://github.com/Teradata/covalent/compare/v4.1.14...v4.1.15) (2022-05-23)
+
+### Bug Fixes
+
+- **rxjs:** in package from ~ to ^ ([#1947](https://github.com/Teradata/covalent/issues/1947)) ([d7f602d](https://github.com/Teradata/covalent/commit/d7f602d154625bb51cb8911a3bdb674e545d9cff))
+
 ## [4.1.14](https://github.com/Teradata/covalent/compare/v4.1.13...v4.1.14) (2022-05-23)
 
 ### Bug Fixes
