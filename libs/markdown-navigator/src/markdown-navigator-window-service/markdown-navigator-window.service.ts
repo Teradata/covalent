@@ -42,7 +42,7 @@ export interface IMarkdownNavigatorWindowConfig {
 
 const CDK_OVERLAY_CUSTOM_CLASS = 'td-window-dialog';
 
-const DEFAULT_POSITION: DialogPosition = { bottom: '0px', right: '10px' };
+const DEFAULT_POSITION: DialogPosition = { bottom: '0px', right: '16px' };
 const DEFAULT_WIDTH = '350px';
 const DEFAULT_HEIGHT = '75vh';
 const MIN_HEIGHT = '56px';
