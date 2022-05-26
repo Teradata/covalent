@@ -26,7 +26,9 @@
   .td-window-dialog {
     .mat-dialog-container {
       padding: 0;
-      border-radius:0px !important;
+      border-bottom-right-radius
+      :0px !important;
+      border-bottom-left-radius:0px !important ;
     }
   }
 }
