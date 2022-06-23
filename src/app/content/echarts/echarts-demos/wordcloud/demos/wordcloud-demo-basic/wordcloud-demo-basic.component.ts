@@ -103,6 +103,7 @@ export class WordcloudDemoBasicComponent implements OnInit {
             fontFamily: 'sans-serif',
             fontWeight: 'bold',
           },
+          color: this.randomColor(),
         },
       };
     });

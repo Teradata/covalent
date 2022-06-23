@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "../out-tsc/app",
-    "types": ["hammerjs"]
+    "types": ["hammerjs", "echarts"]
   },
   "exclude": ["universal-app/**", "test.ts", "**/*.spec.*"]
 }

@@ -15,8 +15,6 @@ export const BASE_MODULE_COMPONENTS: Type<any>[] = [
   TdDatasetComponent,
 ];
 
-import 'zrender/lib/svg/svg';
-
 registerDefaultThemes();
 
 @NgModule({

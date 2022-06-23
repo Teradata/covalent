@@ -57,7 +57,11 @@
               }
             ],
             "styles": ["src/styles.scss", "src/theme.scss"],
-            "scripts": ["node_modules/hammerjs/hammer.min.js"]
+            "scripts": [
+              "node_modules/hammerjs/hammer.min.js",
+              "node_modules/echarts/dist/echarts.js",
+              "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js"
+            ]
           },
           "configurations": {
             "production": {
