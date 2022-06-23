@@ -15,43 +15,38 @@ import { CovalentStepsModule } from '../../steps.module';
 export class FakeComponent {}
 
 describe('Component: Nav Steps Vertical', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdNavStepsVerticalTestComponent, FakeComponent],
-        imports: [
-          NoopAnimationsModule,
-          RouterTestingModule.withRoutes([
-            { path: '', component: FakeComponent },
-            { path: 'layouts', component: FakeComponent },
-            { path: 'layouts2', component: FakeComponent },
-            { path: 'layouts3', component: FakeComponent },
-          ]),
-          CovalentStepsModule,
-        ],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdNavStepsVerticalTestComponent, FakeComponent],
+      imports: [
+        NoopAnimationsModule,
+        RouterTestingModule.withRoutes([
+          { path: '', component: FakeComponent },
+          { path: 'layouts', component: FakeComponent },
+          { path: 'layouts2', component: FakeComponent },
+          { path: 'layouts3', component: FakeComponent },
+        ]),
+        CovalentStepsModule,
+      ],
+    });
+    TestBed.compileComponents();
+  }));
 
-  it(
-    'should render 5 step headers and 4 separators',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsVerticalTestComponent);
+  it('should render 5 step headers and 4 separators', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsVerticalTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        const headers: DebugElement[] = fixture.debugElement.queryAll(By.css('td-step-header'));
+        expect(headers.length).toBe(5);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const headers: DebugElement[] = fixture.debugElement.queryAll(By.css('td-step-header'));
-          expect(headers.length).toBe(5);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            const separators: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-vertical-line'));
-            expect(separators.length).toBe(4);
-          });
+          const separators: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-vertical-line'));
+          expect(separators.length).toBe(4);
         });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 });
 
 @Component({

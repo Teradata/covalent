@@ -9,15 +9,13 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: SearchInput', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, FormsModule, CovalentSearchModule],
-        declarations: [TestNgModelSupportComponent],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, FormsModule, CovalentSearchModule],
+      declarations: [TestNgModelSupportComponent],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should leverage ngModel to set a value', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TestNgModelSupportComponent);

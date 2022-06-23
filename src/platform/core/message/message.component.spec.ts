@@ -8,15 +8,13 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: Message', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, CovalentMessageModule],
-        declarations: [TdMessageBasicTestComponent, TdMessageContentTestComponent, TdMessageOpenedTestComponent],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, CovalentMessageModule],
+      declarations: [TdMessageBasicTestComponent, TdMessageContentTestComponent, TdMessageOpenedTestComponent],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should set label, sublabel and color `primary`, `red` and then change to color `accent`', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);

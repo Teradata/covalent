@@ -4,20 +4,18 @@ import { TdTextEditorComponent } from './';
 import { By } from '@angular/platform-browser';
 
 describe('Component: TextEditor', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [
-          TdTextEditorComponent,
-          TestTextEditorComponent,
-          TestTextEditorResetComponent,
-          TestTextEditorOptionsComponent,
-        ],
-        imports: [],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        TdTextEditorComponent,
+        TestTextEditorComponent,
+        TestTextEditorResetComponent,
+        TestTextEditorOptionsComponent,
+      ],
+      imports: [],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should initialize the markdown editor and set value and test ngModel', (done: DoneFn) => {
     inject([], () => {

@@ -28,59 +28,51 @@ describe('MarkdownNavigatorWindowDirective', () => {
     await fixture.whenStable();
   }
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
-        declarations: [TestComponent],
-        providers: [
-          {
-            provide: OverlayContainer,
-            useFactory: () => {
-              overlayContainerElement = document.createElement('div');
-              overlayContainerElement.classList.add('cdk-overlay-container');
-              document.body.appendChild(overlayContainerElement);
-              return { getContainerElement: () => overlayContainerElement };
-            },
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
+      declarations: [TestComponent],
+      providers: [
+        {
+          provide: OverlayContainer,
+          useFactory: () => {
+            overlayContainerElement = document.createElement('div');
+            overlayContainerElement.classList.add('cdk-overlay-container');
+            document.body.appendChild(overlayContainerElement);
+            return { getContainerElement: () => overlayContainerElement };
           },
-        ],
-      });
-    }),
-  );
+        },
+      ],
+    });
+  }));
 
-  it(
-    'should open and close markdown navigator window properly',
-    waitForAsync(
-      inject(
-        [TdMarkdownNavigatorWindowService],
-        async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
-          const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-          await wait(fixture);
-          fixture.debugElement.query(By.css('button')).nativeElement.click();
-          await wait(fixture);
-          expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeTruthy();
-          // tslint:disable-next-line:no-useless-cast
-          (<HTMLElement>overlayContainerElement.querySelector(`[data-test="close-button"]`)).click();
-          await wait(fixture);
-          expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeFalsy();
-        },
-      ),
+  it('should open and close markdown navigator window properly', waitForAsync(
+    inject(
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        await wait(fixture);
+        fixture.debugElement.query(By.css('button')).nativeElement.click();
+        await wait(fixture);
+        expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeTruthy();
+        // tslint:disable-next-line:no-useless-cast
+        (<HTMLElement>overlayContainerElement.querySelector(`[data-test="close-button"]`)).click();
+        await wait(fixture);
+        expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeFalsy();
+      },
     ),
-  );
-  it(
-    'should not open markdown navigator window if disabled',
-    waitForAsync(
-      inject(
-        [TdMarkdownNavigatorWindowService],
-        async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
-          const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-          fixture.componentInstance.disabled = true;
-          await wait(fixture);
-          fixture.debugElement.query(By.css('button')).nativeElement.click();
-          await wait(fixture);
-          expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeFalsy();
-        },
-      ),
+  ));
+  it('should not open markdown navigator window if disabled', waitForAsync(
+    inject(
+      [TdMarkdownNavigatorWindowService],
+      async (_markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) => {
+        const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+        fixture.componentInstance.disabled = true;
+        await wait(fixture);
+        fixture.debugElement.query(By.css('button')).nativeElement.click();
+        await wait(fixture);
+        expect(overlayContainerElement.querySelector(`td-markdown-navigator`)).toBeFalsy();
+      },
     ),
-  );
+  ));
 });

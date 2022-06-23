@@ -8,24 +8,22 @@ import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoa
 describe('Service: Loading', () => {
   let overlayContainerElement: HTMLElement;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdLoadingWrapperTestComponent],
-        imports: [NoopAnimationsModule, CovalentLoadingModule],
-        providers: [
-          {
-            provide: OverlayContainer,
-            useFactory: () => {
-              overlayContainerElement = document.createElement('div');
-              return { getContainerElement: () => overlayContainerElement };
-            },
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdLoadingWrapperTestComponent],
+      imports: [NoopAnimationsModule, CovalentLoadingModule],
+      providers: [
+        {
+          provide: OverlayContainer,
+          useFactory: () => {
+            overlayContainerElement = document.createElement('div');
+            return { getContainerElement: () => overlayContainerElement };
           },
-        ],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+        },
+      ],
+    });
+    TestBed.compileComponents();
+  }));
 
   afterEach(() => {
     overlayContainerElement.innerHTML = '';

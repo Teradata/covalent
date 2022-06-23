@@ -6,211 +6,188 @@ import { By } from '@angular/platform-browser';
 import { TdExpansionPanelGroupComponent } from './expansion-panel-group.component';
 
 describe('Component: ExpansionPanelGroup', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdExpansionPanelGroupTestComponent, TdExpansionPanelGroupMultiInitTestComponent],
-        imports: [NoopAnimationsModule, CovalentExpansionPanelModule],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdExpansionPanelGroupTestComponent, TdExpansionPanelGroupMultiInitTestComponent],
+      imports: [NoopAnimationsModule, CovalentExpansionPanelModule],
+    });
+    TestBed.compileComponents();
+  }));
 
-  it(
-    'should allow multiple panels to be opened at once if multi is true',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-        const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
-        component.multi = true;
+  it('should allow multiple panels to be opened at once if multi is true', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
+      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      component.multi = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        let openPanels: DebugElement[] = getAllOpenPanels(fixture);
+        expect(openPanels.length).toBe(0);
+        const allPanels: DebugElement[] = getAllPanels(fixture);
+        togglePanel(allPanels[0]);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let openPanels: DebugElement[] = getAllOpenPanels(fixture);
-          expect(openPanels.length).toBe(0);
-          const allPanels: DebugElement[] = getAllPanels(fixture);
-          togglePanel(allPanels[0]);
+          openPanels = getAllOpenPanels(fixture);
+          expect(openPanels.length).toBe(1);
+          togglePanel(allPanels[1]);
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             openPanels = getAllOpenPanels(fixture);
-            expect(openPanels.length).toBe(1);
-            togglePanel(allPanels[1]);
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              openPanels = getAllOpenPanels(fixture);
-              expect(openPanels.length).toBe(2);
-            });
+            expect(openPanels.length).toBe(2);
           });
         });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 
-  it(
-    'should not allow multiple panels to be opened at once if multi is false',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-        const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
-        component.multi = false;
+  it('should not allow multiple panels to be opened at once if multi is false', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
+      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      component.multi = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        let openPanels: DebugElement[] = getAllOpenPanels(fixture);
+        expect(openPanels.length).toBe(0);
+        const allPanels: DebugElement[] = getAllPanels(fixture);
+        togglePanel(allPanels[0]);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let openPanels: DebugElement[] = getAllOpenPanels(fixture);
-          expect(openPanels.length).toBe(0);
-          const allPanels: DebugElement[] = getAllPanels(fixture);
-          togglePanel(allPanels[0]);
+          openPanels = getAllOpenPanels(fixture);
+          expect(openPanels.length).toBe(1);
+          togglePanel(allPanels[1]);
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             openPanels = getAllOpenPanels(fixture);
             expect(openPanels.length).toBe(1);
-            togglePanel(allPanels[1]);
+          });
+        });
+      });
+    }),
+  ));
+
+  it('should only open the last panel that has the expand input enabled, if multi is true and multiple panels have the expand input enabled', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupMultiInitTestComponent);
+      const component: TdExpansionPanelGroupMultiInitTestComponent = fixture.debugElement.componentInstance;
+      component.multi = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        let openPanels: DebugElement[] = getAllOpenPanels(fixture);
+        expect(openPanels.length).toBe(1);
+        const allPanels: DebugElement[] = getAllPanels(fixture);
+        openPanels = getAllOpenPanels(fixture);
+        const lastPanel: DebugElement = openPanels[openPanels.length - 1];
+        expect(allPanels[allPanels.length - 2]).toBe(lastPanel);
+      });
+    }),
+  ));
+
+  it('should only leave last panel opened open if multi is set to false', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
+      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      component.multi = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        let openPanels: DebugElement[] = getAllOpenPanels(fixture);
+        expect(openPanels.length).toBe(0);
+        const allPanels: DebugElement[] = getAllPanels(fixture);
+        openPanels = getAllOpenPanels(fixture);
+        togglePanel(allPanels[0]);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          openPanels = getAllOpenPanels(fixture);
+          expect(openPanels.length).toBe(1);
+          togglePanel(allPanels[1]);
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            openPanels = getAllOpenPanels(fixture);
+            expect(openPanels.length).toBe(2);
+            component.multi = false;
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               openPanels = getAllOpenPanels(fixture);
               expect(openPanels.length).toBe(1);
+              expect(openPanels[0]).toBe(allPanels[1]);
             });
           });
         });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 
-  it(
-    'should only open the last panel that has the expand input enabled, if multi is true and multiple panels have the expand input enabled',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupMultiInitTestComponent);
-        const component: TdExpansionPanelGroupMultiInitTestComponent = fixture.debugElement.componentInstance;
-        component.multi = false;
+  it('should open all panels if the openAll method is called, and multi is set to true', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
+      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      component.multi = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        let openPanels: DebugElement[] = getAllOpenPanels(fixture);
+        expect(openPanels.length).toBe(0);
+        const panelGroup: TdExpansionPanelGroupComponent = fixture.debugElement.query(
+          By.directive(TdExpansionPanelGroupComponent),
+        ).componentInstance;
+        panelGroup.openAll();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let openPanels: DebugElement[] = getAllOpenPanels(fixture);
-          expect(openPanels.length).toBe(1);
-          const allPanels: DebugElement[] = getAllPanels(fixture);
           openPanels = getAllOpenPanels(fixture);
-          const lastPanel: DebugElement = openPanels[openPanels.length - 1];
-          expect(allPanels[allPanels.length - 2]).toBe(lastPanel);
+          expect(openPanels.length).toBe(3);
         });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 
-  it(
-    'should only leave last panel opened open if multi is set to false',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-        const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
-        component.multi = true;
+  it('should not open any new panels if the openAll method is called, and multi is set to false', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
+      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      component.multi = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        let openPanels: DebugElement[] = getAllOpenPanels(fixture);
+        expect(openPanels.length).toBe(0);
+        const panelGroup: TdExpansionPanelGroupComponent = fixture.debugElement.query(
+          By.directive(TdExpansionPanelGroupComponent),
+        ).componentInstance;
+        panelGroup.openAll();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let openPanels: DebugElement[] = getAllOpenPanels(fixture);
-          expect(openPanels.length).toBe(0);
-          const allPanels: DebugElement[] = getAllPanels(fixture);
           openPanels = getAllOpenPanels(fixture);
-          togglePanel(allPanels[0]);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            openPanels = getAllOpenPanels(fixture);
-            expect(openPanels.length).toBe(1);
-            togglePanel(allPanels[1]);
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              openPanels = getAllOpenPanels(fixture);
-              expect(openPanels.length).toBe(2);
-              component.multi = false;
-              fixture.detectChanges();
-              fixture.whenStable().then(() => {
-                openPanels = getAllOpenPanels(fixture);
-                expect(openPanels.length).toBe(1);
-                expect(openPanels[0]).toBe(allPanels[1]);
-              });
-            });
-          });
+          expect(openPanels.length).toBe(0);
         });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 
-  it(
-    'should open all panels if the openAll method is called, and multi is set to true',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-        const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
-        component.multi = true;
+  it('should close all panels if the closeAll method is called', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
+      const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
+      component.multi = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        let openPanels: DebugElement[] = getAllOpenPanels(fixture);
+        expect(openPanels.length).toBe(0);
+        const panelGroup: TdExpansionPanelGroupComponent = fixture.debugElement.query(
+          By.directive(TdExpansionPanelGroupComponent),
+        ).componentInstance;
+        panelGroup.openAll();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let openPanels: DebugElement[] = getAllOpenPanels(fixture);
-          expect(openPanels.length).toBe(0);
-          const panelGroup: TdExpansionPanelGroupComponent = fixture.debugElement.query(
-            By.directive(TdExpansionPanelGroupComponent),
-          ).componentInstance;
-          panelGroup.openAll();
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            openPanels = getAllOpenPanels(fixture);
-            expect(openPanels.length).toBe(3);
-          });
-        });
-      }),
-    ),
-  );
-
-  it(
-    'should not open any new panels if the openAll method is called, and multi is set to false',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-        const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
-        component.multi = false;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          let openPanels: DebugElement[] = getAllOpenPanels(fixture);
-          expect(openPanels.length).toBe(0);
-          const panelGroup: TdExpansionPanelGroupComponent = fixture.debugElement.query(
-            By.directive(TdExpansionPanelGroupComponent),
-          ).componentInstance;
-          panelGroup.openAll();
+          openPanels = getAllOpenPanels(fixture);
+          expect(openPanels.length).toBe(3);
+          panelGroup.closeAll();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             openPanels = getAllOpenPanels(fixture);
             expect(openPanels.length).toBe(0);
           });
         });
-      }),
-    ),
-  );
-
-  it(
-    'should close all panels if the closeAll method is called',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdExpansionPanelGroupTestComponent);
-        const component: TdExpansionPanelGroupTestComponent = fixture.debugElement.componentInstance;
-        component.multi = true;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          let openPanels: DebugElement[] = getAllOpenPanels(fixture);
-          expect(openPanels.length).toBe(0);
-          const panelGroup: TdExpansionPanelGroupComponent = fixture.debugElement.query(
-            By.directive(TdExpansionPanelGroupComponent),
-          ).componentInstance;
-          panelGroup.openAll();
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            openPanels = getAllOpenPanels(fixture);
-            expect(openPanels.length).toBe(3);
-            panelGroup.closeAll();
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              openPanels = getAllOpenPanels(fixture);
-              expect(openPanels.length).toBe(0);
-            });
-          });
-        });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 });
 
 @Component({

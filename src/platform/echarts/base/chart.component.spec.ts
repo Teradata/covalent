@@ -5,24 +5,19 @@ import { By } from '@angular/platform-browser';
 import { CovalentBaseEchartsModule } from './base.module';
 
 describe('Component: BaseEchart', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdBaseEchartsBasicTestComponent],
-        imports: [CovalentBaseEchartsModule],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdBaseEchartsBasicTestComponent],
+      imports: [CovalentBaseEchartsModule],
+    });
+    TestBed.compileComponents();
+  }));
 
-  it(
-    'should render a canvas element',
-    waitForAsync(
-      inject([], () => {
-        TestBed.createComponent(TdBaseEchartsBasicTestComponent);
-      }),
-    ),
-  );
+  it('should render a canvas element', waitForAsync(
+    inject([], () => {
+      TestBed.createComponent(TdBaseEchartsBasicTestComponent);
+    }),
+  ));
 });
 
 @Component({
