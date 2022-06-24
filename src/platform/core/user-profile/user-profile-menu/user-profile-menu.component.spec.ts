@@ -9,14 +9,12 @@ describe('CovalentUserProfileMenuComponent', () => {
   let component: TdUserProfileMenuComponent;
   let fixture: ComponentFixture<TdUserProfileMenuComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdUserProfileMenuComponent],
-        imports: [MatIconModule, MatListModule, CovalentMenuModule],
-      }).compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdUserProfileMenuComponent],
+      imports: [MatIconModule, MatListModule, CovalentMenuModule],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TdUserProfileMenuComponent);

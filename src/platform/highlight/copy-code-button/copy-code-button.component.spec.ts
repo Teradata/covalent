@@ -11,14 +11,12 @@ describe('CopyCodeButtonComponent', () => {
   let component: TdCopyCodeButtonComponent;
   let fixture: ComponentFixture<TdCopyCodeButtonComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdCopyCodeButtonComponent],
-        imports: [ClipboardModule, MatIconModule, MatTooltipModule, MatButtonModule],
-      }).compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdCopyCodeButtonComponent],
+      imports: [ClipboardModule, MatIconModule, MatTooltipModule, MatButtonModule],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TdCopyCodeButtonComponent);

@@ -43,13 +43,11 @@ import { By } from '@angular/platform-browser';
 class JumpToAnchorTestComponent {}
 
 describe('Markdown utils', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [JumpToAnchorTestComponent],
-      }).compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [JumpToAnchorTestComponent],
+    }).compileComponents();
+  }));
 
   it('removeLeadingHash should remove leading hashes', () => {
     expect(removeLeadingHash('')).toBe('');

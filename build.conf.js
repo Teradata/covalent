@@ -2,7 +2,7 @@
 
 module.exports = {
   deployed: 'deploy/platform/',
-  echartsVersion: '^4.2.1',
+  echartsVersion: '^5.3.0',
   angularVersion: '^9.0.0 || ^10.0.0-0 || ^11.0.0-0',
   materialVersion: '^9.0.0 || ^10.0.0-0 || ^11.0.0-0',
   showdownVersion: '^1.9.1',

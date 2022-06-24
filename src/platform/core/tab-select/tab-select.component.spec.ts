@@ -6,88 +6,101 @@ import { By } from '@angular/platform-browser';
 import { CovalentTabSelectModule } from './';
 
 describe('Component: TabSelect', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdTabSelectBasicTestComponent, TdTabSelectFormsTestComponent, TdTabSelectDynamicTestComponent],
-        imports: [NoopAnimationsModule, FormsModule, CovalentTabSelectModule],
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdTabSelectBasicTestComponent, TdTabSelectFormsTestComponent, TdTabSelectDynamicTestComponent],
+      imports: [NoopAnimationsModule, FormsModule, CovalentTabSelectModule],
+    });
+    TestBed.compileComponents();
+  }));
+
+  it('should render tab select with all tabs disabled', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
+      const component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
+      component.disabled = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.componentInstance.value).toBe(undefined);
+        expect(fixture.debugElement.queryAll(By.css('.mat-tab-disabled')).length).toBe(3);
       });
-      TestBed.compileComponents();
     }),
-  );
+  ));
 
-  it(
-    'should render tab select with all tabs disabled',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-        const component: TdTabSelectBasicTestComponent = fixture.debugElement.componentInstance;
-        component.disabled = true;
+  it('should render tab select with all options and click on second option to activate it', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
+        fixture.debugElement.queryAll(By.css('.mat-tab-label'))[1].nativeElement.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect(fixture.componentInstance.value).toBe(undefined);
-          expect(fixture.debugElement.queryAll(By.css('.mat-tab-disabled')).length).toBe(3);
+          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[1].nativeElement.className).toContain(
+            'mat-tab-label-active',
+          );
         });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 
-  it(
-    'should render tab select with all options and click on second option to activate it',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
+  it('should render tab select with all options with the second option active', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.componentInstance.value).toBe(undefined);
+        expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
+        fixture.componentInstance.value = 2;
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
-          fixture.debugElement.queryAll(By.css('.mat-tab-label'))[1].nativeElement.click();
+          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[1].nativeElement.className).toContain(
+            'mat-tab-label-active',
+          );
+        });
+      });
+    }),
+  ));
+
+  it('should render tab select with first option active and then switch to 3rd option (value)', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.componentInstance.value).toBe(undefined);
+        expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[0].nativeElement.className).toContain(
+            'mat-tab-label-active',
+          );
+          fixture.componentInstance.value = 3;
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[1].nativeElement.className).toContain(
+            expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[2].nativeElement.className).toContain(
               'mat-tab-label-active',
             );
           });
         });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 
-  it(
-    'should render tab select with all options with the second option active',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
+  it('should render tab select with first option active and then switch to 3rd option (ngModel)', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectFormsTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.componentInstance.value).toBe(1);
+        expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect(fixture.componentInstance.value).toBe(undefined);
-          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
-          fixture.componentInstance.value = 2;
+          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[0].nativeElement.className).toContain(
+            'mat-tab-label-active',
+          );
+          fixture.componentInstance.value = 3;
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[1].nativeElement.className).toContain(
-              'mat-tab-label-active',
-            );
-          });
-        });
-      }),
-    ),
-  );
-
-  it(
-    'should render tab select with first option active and then switch to 3rd option (value)',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectBasicTestComponent);
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          expect(fixture.componentInstance.value).toBe(undefined);
-          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[0].nativeElement.className).toContain(
-              'mat-tab-label-active',
-            );
-            fixture.componentInstance.value = 3;
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[2].nativeElement.className).toContain(
@@ -96,60 +109,27 @@ describe('Component: TabSelect', () => {
             });
           });
         });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 
-  it(
-    'should render tab select with first option active and then switch to 3rd option (ngModel)',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectFormsTestComponent);
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          expect(fixture.componentInstance.value).toBe(1);
-          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[0].nativeElement.className).toContain(
-              'mat-tab-label-active',
-            );
-            fixture.componentInstance.value = 3;
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              fixture.detectChanges();
-              fixture.whenStable().then(() => {
-                expect(fixture.debugElement.queryAll(By.css('.mat-tab-label'))[2].nativeElement.className).toContain(
-                  'mat-tab-label-active',
-                );
-              });
-            });
+  it('should render dynamic tab options from an ngFor loop', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectDynamicTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.componentInstance.value).toBe(undefined);
+        expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
+
+        let tabNo: number = 1;
+        fixture.debugElement
+          .queryAll(By.css('.mat-tab-label .mat-tab-label-content'))
+          .forEach((element: DebugElement) => {
+            expect((<HTMLElement>element.nativeElement).innerHTML).toContain('Option ' + tabNo++);
           });
-        });
-      }),
-    ),
-  );
-
-  it(
-    'should render dynamic tab options from an ngFor loop',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(TdTabSelectDynamicTestComponent);
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          expect(fixture.componentInstance.value).toBe(undefined);
-          expect(fixture.debugElement.queryAll(By.css('.mat-tab-label')).length).toBe(3);
-
-          let tabNo: number = 1;
-          fixture.debugElement
-            .queryAll(By.css('.mat-tab-label .mat-tab-label-content'))
-            .forEach((element: DebugElement) => {
-              expect((<HTMLElement>element.nativeElement).innerHTML).toContain('Option ' + tabNo++);
-            });
-        });
-      }),
-    ),
-  );
+      });
+    }),
+  ));
 });
 
 @Component({

@@ -14,23 +14,21 @@ import { MatPseudoCheckbox } from '@angular/material/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DataTable', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, FormsModule, CovalentDataTableModule],
-        declarations: [
-          TdDataTableBasicTestComponent,
-          TdDataTableSelectableTestComponent,
-          TdDataTableRowClickTestComponent,
-          TdDataTableSelectableRowClickTestComponent,
-          TdDataTableModelTestComponent,
-          TdDataTableCompareWithTestComponent,
-        ],
-        providers: [TdDataTableService],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, FormsModule, CovalentDataTableModule],
+      declarations: [
+        TdDataTableBasicTestComponent,
+        TdDataTableSelectableTestComponent,
+        TdDataTableRowClickTestComponent,
+        TdDataTableSelectableRowClickTestComponent,
+        TdDataTableModelTestComponent,
+        TdDataTableCompareWithTestComponent,
+      ],
+      providers: [TdDataTableService],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should set hidden and not get search hits and set it to false and get search results', (done: DoneFn) => {
     inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
@@ -396,143 +394,128 @@ describe('Component: DataTable', () => {
       })();
     });
 
-    it(
-      'should click on a row and see the rowClick Event',
-      waitForAsync(
-        inject([], () => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableRowClickTestComponent);
-          const component: TdDataTableRowClickTestComponent = fixture.debugElement.componentInstance;
+    it('should click on a row and see the rowClick Event', waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableRowClickTestComponent);
+        const component: TdDataTableRowClickTestComponent = fixture.debugElement.componentInstance;
 
-          const eventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
+        const eventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
 
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
+            expect(eventSpy.calls.count()).toBe(0);
+
+            component.clickable = true;
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              expect(eventSpy.calls.count()).toBe(0);
-
-              component.clickable = true;
+              fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
-                fixture.detectChanges();
-                fixture.whenStable().then(() => {
-                  expect(eventSpy.calls.count()).toBe(1);
-                });
+                expect(eventSpy.calls.count()).toBe(1);
               });
             });
           });
-        }),
-      ),
-    );
+        });
+      }),
+    ));
 
-    it(
-      'should click on a row and see the rowClick event only when clicking on row',
-      waitForAsync(
-        inject([], () => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableRowClickTestComponent);
-          const component: TdDataTableSelectableRowClickTestComponent = fixture.debugElement.componentInstance;
+    it('should click on a row and see the rowClick event only when clicking on row', waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableRowClickTestComponent);
+        const component: TdDataTableSelectableRowClickTestComponent = fixture.debugElement.componentInstance;
 
-          component.clickable = true;
-          component.selectable = true;
+        component.clickable = true;
+        component.selectable = true;
 
-          const clickEventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
-          const selectEventSpy: jasmine.Spy = spyOn(component, 'selectEvent');
+        const clickEventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
+        const selectEventSpy: jasmine.Spy = spyOn(component, 'selectEvent');
 
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
+            expect(clickEventSpy.calls.argsFor(0)[0].index).toBe(1);
+            expect(clickEventSpy.calls.count()).toBe(1);
+            expect(selectEventSpy.calls.count()).toBe(0);
+
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              expect(clickEventSpy.calls.argsFor(0)[0].index).toBe(1);
-              expect(clickEventSpy.calls.count()).toBe(1);
-              expect(selectEventSpy.calls.count()).toBe(0);
-
+              fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].nativeElement.click();
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].nativeElement.click();
-                fixture.detectChanges();
-                fixture.whenStable().then(() => {
-                  expect(selectEventSpy.calls.argsFor(0)[0].index).toBe(0);
-                  expect(clickEventSpy.calls.count()).toBe(1);
-                  expect(selectEventSpy.calls.count()).toBe(1);
-                });
+                expect(selectEventSpy.calls.argsFor(0)[0].index).toBe(0);
+                expect(clickEventSpy.calls.count()).toBe(1);
+                expect(selectEventSpy.calls.count()).toBe(1);
               });
             });
           });
-        }),
-      ),
-    );
+        });
+      }),
+    ));
 
-    it(
-      'should load table and have first row checked by reference',
-      waitForAsync(
-        inject([], () => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
-          const component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
+    it('should load table and have first row checked by reference', waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
+        const component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
 
-          component.selectedRows = [component.data[0]];
+        component.selectedRows = [component.data[0]];
 
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
           fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            fixture.detectChanges();
-            expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe(
-              'checked',
-            );
-            expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe(
-              'unchecked',
-            );
-          });
-        }),
-      ),
-    );
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe(
+            'checked',
+          );
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe(
+            'unchecked',
+          );
+        });
+      }),
+    ));
 
-    it(
-      'should load table and have no rows checked by reference',
-      waitForAsync(
-        inject([], () => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
-          const component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
+    it('should load table and have no rows checked by reference', waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
+        const component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
 
-          component.selectedRows = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 }];
+        component.selectedRows = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 }];
 
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
           fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            fixture.detectChanges();
-            expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe(
-              'unchecked',
-            );
-            expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe(
-              'unchecked',
-            );
-          });
-        }),
-      ),
-    );
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe(
+            'unchecked',
+          );
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe(
+            'unchecked',
+          );
+        });
+      }),
+    ));
 
-    it(
-      'should load table and have first row checked using [compareWith]',
-      waitForAsync(
-        inject([], () => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableCompareWithTestComponent);
-          const component: TdDataTableCompareWithTestComponent = fixture.debugElement.componentInstance;
+    it('should load table and have first row checked using [compareWith]', waitForAsync(
+      inject([], () => {
+        const fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableCompareWithTestComponent);
+        const component: TdDataTableCompareWithTestComponent = fixture.debugElement.componentInstance;
 
-          component.selectedRows = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 }];
+        component.selectedRows = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 }];
 
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
           fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            fixture.detectChanges();
-            expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe(
-              'checked',
-            );
-            expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe(
-              'unchecked',
-            );
-          });
-        }),
-      ),
-    );
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe(
+            'checked',
+          );
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe(
+            'unchecked',
+          );
+        });
+      }),
+    ));
   });
 });
 

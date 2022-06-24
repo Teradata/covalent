@@ -1,5 +1,3 @@
-import * as echarts from 'echarts/lib/echarts';
-
 import aquaSplash from '../themes/aqua-splash';
 import californiaCoast from '../themes/california-coast';
 import hawaiianSunrise from '../themes/hawaiian-sunrise';

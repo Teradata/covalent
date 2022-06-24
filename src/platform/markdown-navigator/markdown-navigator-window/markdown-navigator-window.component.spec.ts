@@ -76,252 +76,223 @@ class TdMarkdownNavigatorWindowWOColorTestComponent {
 }
 
 describe('MarkdownNavigatorWindowComponent', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdMarkdownNavigatorWindowTestComponent, TdMarkdownNavigatorWindowWOColorTestComponent],
-        imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
-      }).compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdMarkdownNavigatorWindowTestComponent, TdMarkdownNavigatorWindowWOColorTestComponent],
+      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
+    }).compileComponents();
+  }));
+
+  it('should use default labels if labels is undefined', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
+
+      await wait(fixture);
+
+      const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
+      ).componentInstance;
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
+      ).componentInstance;
+
+      expect(markdownNavigatorWindow.titleLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.title);
+      expect(markdownNavigatorWindow.closeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close);
+      expect(markdownNavigatorWindow.markdownNavigatorLabels).toBeFalsy();
+      expect(markdownNavigator.goHomeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome);
+      expect(markdownNavigator.goBackLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack);
+      expect(markdownNavigator.emptyStateLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
     }),
-  );
+  ));
 
-  it(
-    'should use default labels if labels is undefined',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowTestComponent,
-        );
+  it('should use default labels if labels is an empty object', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
 
-        await wait(fixture);
+      await wait(fixture);
 
-        const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorWindowComponent),
-        ).componentInstance;
-        const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent),
-        ).componentInstance;
+      const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
+      ).componentInstance;
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
+      ).componentInstance;
 
-        expect(markdownNavigatorWindow.titleLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.title);
-        expect(markdownNavigatorWindow.closeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close);
-        expect(markdownNavigatorWindow.markdownNavigatorLabels).toBeFalsy();
-        expect(markdownNavigator.goHomeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome);
-        expect(markdownNavigator.goBackLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack);
-        expect(markdownNavigator.emptyStateLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
-      }),
-    ),
-  );
+      expect(markdownNavigatorWindow.titleLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.title);
+      expect(markdownNavigatorWindow.closeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close);
+      expect(markdownNavigator.goHomeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome);
+      expect(markdownNavigator.goBackLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack);
+      expect(markdownNavigator.emptyStateLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
+    }),
+  ));
 
-  it(
-    'should use default labels if labels is an empty object',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowTestComponent,
-        );
+  it('should use labels if passed in', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
 
-        await wait(fixture);
+      const SAMPLE_LABELS: IMarkdownNavigatorWindowLabels = {
+        title: 'Ayuda!',
+        close: 'Cierra',
+        goHome: 'Vete pa tu casa',
+        goBack: 'Regresa',
+        emptyState: 'No hay nada',
+        dock: 'Minimizar',
+        unDock: 'Maximizar',
+      };
+      fixture.componentInstance.labels = SAMPLE_LABELS;
+      await wait(fixture);
 
-        const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorWindowComponent),
-        ).componentInstance;
-        const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent),
-        ).componentInstance;
+      const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
+      ).componentInstance;
 
-        expect(markdownNavigatorWindow.titleLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.title);
-        expect(markdownNavigatorWindow.closeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close);
-        expect(markdownNavigator.goHomeLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome);
-        expect(markdownNavigator.goBackLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack);
-        expect(markdownNavigator.emptyStateLabel).toBe(DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState);
-      }),
-    ),
-  );
+      expect(markdownNavigatorWindow.titleLabel).toBe(SAMPLE_LABELS.title);
+      expect(markdownNavigatorWindow.closeLabel).toBe(SAMPLE_LABELS.close);
+      expect(markdownNavigatorWindow.markdownNavigatorLabels).toBeTruthy();
+      expect(markdownNavigatorWindow.toggleDockedStateLabel).toBe(SAMPLE_LABELS.dock);
+      expect(markdownNavigatorWindow.markdownNavigatorLabels).toEqual({
+        goHome: SAMPLE_LABELS.goHome,
+        goBack: SAMPLE_LABELS.goBack,
+        emptyState: SAMPLE_LABELS.emptyState,
+      });
+    }),
+  ));
 
-  it(
-    'should use labels if passed in',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowTestComponent,
-        );
+  it('pass items to markdownNavigator component', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
 
-        const SAMPLE_LABELS: IMarkdownNavigatorWindowLabels = {
-          title: 'Ayuda!',
-          close: 'Cierra',
-          goHome: 'Vete pa tu casa',
-          goBack: 'Regresa',
-          emptyState: 'No hay nada',
-          dock: 'Minimizar',
-          unDock: 'Maximizar',
-        };
-        fixture.componentInstance.labels = SAMPLE_LABELS;
-        await wait(fixture);
+      fixture.componentInstance.items = URL_ITEM;
+      await wait(fixture);
 
-        const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorWindowComponent),
-        ).componentInstance;
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
+      ).componentInstance;
 
-        expect(markdownNavigatorWindow.titleLabel).toBe(SAMPLE_LABELS.title);
-        expect(markdownNavigatorWindow.closeLabel).toBe(SAMPLE_LABELS.close);
-        expect(markdownNavigatorWindow.markdownNavigatorLabels).toBeTruthy();
-        expect(markdownNavigatorWindow.toggleDockedStateLabel).toBe(SAMPLE_LABELS.dock);
-        expect(markdownNavigatorWindow.markdownNavigatorLabels).toEqual({
-          goHome: SAMPLE_LABELS.goHome,
-          goBack: SAMPLE_LABELS.goBack,
-          emptyState: SAMPLE_LABELS.emptyState,
-        });
-      }),
-    ),
-  );
+      expect(markdownNavigator.items).toEqual(URL_ITEM);
 
-  it(
-    'pass items to markdownNavigator component',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowTestComponent,
-        );
+      fixture.componentInstance.items = RAW_MARKDOWN_ITEM;
+      await wait(fixture);
 
-        fixture.componentInstance.items = URL_ITEM;
-        await wait(fixture);
+      expect(markdownNavigator.items).toEqual(RAW_MARKDOWN_ITEM);
+    }),
+  ));
 
-        const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent),
-        ).componentInstance;
+  it('default to primary color if toolbarColor is not passed in', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowWOColorTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowWOColorTestComponent,
+      );
 
-        expect(markdownNavigator.items).toEqual(URL_ITEM);
+      await wait(fixture);
 
-        fixture.componentInstance.items = RAW_MARKDOWN_ITEM;
-        await wait(fixture);
+      const toolbar: MatToolbar = fixture.debugElement.query(By.directive(MatToolbar)).componentInstance;
 
-        expect(markdownNavigator.items).toEqual(RAW_MARKDOWN_ITEM);
-      }),
-    ),
-  );
+      expect(toolbar.color).toBe('primary');
+    }),
+  ));
 
-  it(
-    'default to primary color if toolbarColor is not passed in',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowWOColorTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowWOColorTestComponent,
-        );
+  it('use color if toolBar color is passed in', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
 
-        await wait(fixture);
+      fixture.componentInstance.toolbarColor = 'accent';
+      await wait(fixture);
 
-        const toolbar: MatToolbar = fixture.debugElement.query(By.directive(MatToolbar)).componentInstance;
+      const toolbar: MatToolbar = fixture.debugElement.query(By.directive(MatToolbar)).componentInstance;
 
-        expect(toolbar.color).toBe('primary');
-      }),
-    ),
-  );
+      expect(toolbar.color).toBe('accent');
 
-  it(
-    'use color if toolBar color is passed in',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowTestComponent,
-        );
+      fixture.componentInstance.toolbarColor = 'primary';
+      await wait(fixture);
 
-        fixture.componentInstance.toolbarColor = 'accent';
-        await wait(fixture);
+      expect(toolbar.color).toBe('primary');
 
-        const toolbar: MatToolbar = fixture.debugElement.query(By.directive(MatToolbar)).componentInstance;
+      fixture.componentInstance.toolbarColor = 'warn';
+      await wait(fixture);
 
-        expect(toolbar.color).toBe('accent');
+      expect(toolbar.color).toBe('warn');
 
-        fixture.componentInstance.toolbarColor = 'primary';
-        await wait(fixture);
+      fixture.componentInstance.toolbarColor = undefined;
+      await wait(fixture);
 
-        expect(toolbar.color).toBe('primary');
+      expect(toolbar.color).toBe(undefined);
+    }),
+  ));
 
-        fixture.componentInstance.toolbarColor = 'warn';
-        await wait(fixture);
+  it('emit a close event ', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
 
-        expect(toolbar.color).toBe('warn');
+      await wait(fixture);
+      const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
+      ).componentInstance;
 
-        fixture.componentInstance.toolbarColor = undefined;
-        await wait(fixture);
+      spyOn(markdownNavigatorWindow.closed, 'emit');
 
-        expect(toolbar.color).toBe(undefined);
-      }),
-    ),
-  );
+      const closeButton: DebugElement = fixture.debugElement.query(By.css('.td-window-dialog-close'));
+      closeButton.nativeElement.click();
 
-  it(
-    'emit a close event ',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowTestComponent,
-        );
+      await wait(fixture);
 
-        await wait(fixture);
-        const markdownNavigatorWindow: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorWindowComponent),
-        ).componentInstance;
+      expect(markdownNavigatorWindow.closed.emit).toHaveBeenCalled();
+    }),
+  ));
 
-        spyOn(markdownNavigatorWindow.closed, 'emit');
+  it('pass startAt item to markdownNavigator component', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
 
-        const closeButton: DebugElement = fixture.debugElement.query(By.css('.td-window-dialog-close'));
-        closeButton.nativeElement.click();
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[0];
+      await wait(fixture);
 
-        await wait(fixture);
+      const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorComponent),
+      ).componentInstance;
 
-        expect(markdownNavigatorWindow.closed.emit).toHaveBeenCalled();
-      }),
-    ),
-  );
+      expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[0]);
 
-  it(
-    'pass startAt item to markdownNavigator component',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowTestComponent,
-        );
+      fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[1];
+      await wait(fixture);
+      expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[1]);
+    }),
+  ));
 
-        fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[0];
-        await wait(fixture);
+  it('pass compareWith item to markdownNavigator component', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
+        TdMarkdownNavigatorWindowTestComponent,
+      );
+      function compareByUrl(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem): boolean {
+        return o1.url === o2.url;
+      }
+      fixture.componentInstance.compareWith = compareByUrl;
+      await wait(fixture);
 
-        const markdownNavigator: TdMarkdownNavigatorComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent),
-        ).componentInstance;
+      const markdownNavigator: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
+        By.directive(TdMarkdownNavigatorWindowComponent),
+      ).componentInstance;
 
-        expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[0]);
+      expect(markdownNavigator.compareWith).toEqual(compareByUrl);
 
-        fixture.componentInstance.startAt = DEEPLY_NESTED_TREE[1];
-        await wait(fixture);
-        expect(markdownNavigator.startAt).toEqual(DEEPLY_NESTED_TREE[1]);
-      }),
-    ),
-  );
-
-  it(
-    'pass compareWith item to markdownNavigator component',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdMarkdownNavigatorWindowTestComponent> = TestBed.createComponent(
-          TdMarkdownNavigatorWindowTestComponent,
-        );
-        function compareByUrl(o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem): boolean {
-          return o1.url === o2.url;
-        }
-        fixture.componentInstance.compareWith = compareByUrl;
-        await wait(fixture);
-
-        const markdownNavigator: TdMarkdownNavigatorWindowComponent = fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorWindowComponent),
-        ).componentInstance;
-
-        expect(markdownNavigator.compareWith).toEqual(compareByUrl);
-
-        fixture.componentInstance.compareWith = compareByTitle;
-        await wait(fixture);
-        expect(markdownNavigator.compareWith).toEqual(compareByTitle);
-      }),
-    ),
-  );
+      fixture.componentInstance.compareWith = compareByTitle;
+      await wait(fixture);
+      expect(markdownNavigator.compareWith).toEqual(compareByTitle);
+    }),
+  ));
 });

@@ -7,13 +7,11 @@ describe('TdLoadingMaskComponent', () => {
   let component: TdLoadingMaskComponent;
   let fixture: ComponentFixture<TdLoadingMaskComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdLoadingMaskComponent],
-      }).compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdLoadingMaskComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TdLoadingMaskComponent);

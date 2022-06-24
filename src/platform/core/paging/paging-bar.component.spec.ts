@@ -9,21 +9,19 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: PagingBar', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, MatInputModule, CovalentPagingModule],
-        declarations: [
-          TestInitialPageComponent,
-          TestPageSizeComponent,
-          TestFirstLastComponent,
-          TestPageLinkCountComponent,
-          TestGoToComponent,
-        ],
-      });
-      TestBed.compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, MatInputModule, CovalentPagingModule],
+      declarations: [
+        TestInitialPageComponent,
+        TestPageSizeComponent,
+        TestFirstLastComponent,
+        TestPageLinkCountComponent,
+        TestGoToComponent,
+      ],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should set [pageSize] dynamically', (done: DoneFn) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(TestPageSizeComponent);
