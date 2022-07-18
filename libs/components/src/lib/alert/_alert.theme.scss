@@ -1,0 +1,70 @@
+@mixin theme() {
+  .mdc-banner {
+    --mdc-theme-surface: var(--mdc-theme-surface-neutral);
+    background-color: var(--mdc-theme-surface);
+
+    .mdc-banner__graphic {
+      --mdc-theme-surface: var(--mdc-theme-text-icon-on-background);
+    }
+
+    .mdc-banner__text {
+      color: var(--mdc-theme-text-primary-on-background);
+
+      .mdc-typography--body2 {
+        font-family: var(--mdc-typography-body2-font-family);
+        font-size: var(--mdc-typography-body2-font-size);
+        font-weight: 700;
+        line-height:  var(--mdc-typography-body2-line-height); 
+      }
+
+      .mdc-typography--body1 {
+        color: var(--mdc-theme-text-secondary-on-background);
+        font-family: var(--mdc-typography-body1-font-family);
+        font-size: var(--mdc-typography-body1-font-size);
+        font-weight: var(--mdc-typography-body1-font-weight);
+        line-height:  var(--mdc-typography-body1-line-height); 
+      }
+    }
+
+    &.caution {
+      --mdc-theme-surface: var(--mdc-theme-surface-caution);
+      &.td-banner--inline {
+        --mdc-theme-surface: var(--mdc-theme-surface-caution-highlight);
+        .mdc-banner__graphic, .mdc-banner__text {
+          --mdc-theme-surface: var(--mdc-theme-caution);
+          --mdc-theme-text-primary-on-background: var(--mdc-theme-caution);
+        }
+      }
+    }
+    &.negative {
+      --mdc-theme-surface: var(--mdc-theme-surface-negative);
+      &.td-banner--inline {
+        --mdc-theme-surface: var(--mdc-theme-surface-negative-highlight);
+        .mdc-banner__graphic, .mdc-banner__text {
+          --mdc-theme-surface: var(--mdc-theme-negative);
+          --mdc-theme-text-primary-on-background: var(--mdc-theme-negative);
+        }
+      } 
+    }
+    &.active {
+      --mdc-theme-surface: var(--mdc-theme-surface-secondary);
+      &.td-banner--inline {
+        --mdc-theme-surface: var(--mdc-theme-surface-secondary-highlight);
+        .mdc-banner__graphic, .mdc-banner__text {
+          --mdc-theme-surface: var(--mdc-theme-secondary);
+          --mdc-theme-text-primary-on-background: var(--mdc-theme-secondary);
+        }
+      }
+    }
+    &.positive {
+      --mdc-theme-surface: var(--mdc-theme-surface-positive);
+      &.td-banner--inline {
+        --mdc-theme-surface: var(--mdc-theme-surface-positive-highlight);
+        .mdc-banner__graphic, .mdc-banner__text {
+          --mdc-theme-surface: var(--mdc-theme-positive);
+          --mdc-theme-text-primary-on-background: var(--mdc-theme-positive);
+        }
+      }
+    }
+  }
+}

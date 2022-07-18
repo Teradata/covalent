@@ -1,0 +1,31 @@
+
+:host {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: min-content;
+    grid-template-areas: "mini-list main";
+    min-height: 100vh;
+}
+
+.main-content {
+    grid-area: main;
+    overflow: auto;
+    height: 100vh;
+    border-left: 1px solid;
+    border-color: var(--mdc-theme-border, rgba(black, 0.12));
+}
+
+.mini-list {
+    grid-area: mini-list;
+    width: 320px;
+    height: 100vh;
+    overflow-y: auto;
+    border-left: 1px solid;
+    border-color: var(--mdc-theme-border, rgba(black, 0.12));
+    
+    @media only screen and (max-width: 1000px) {
+        & {
+           display: none;
+       }
+    }
+}

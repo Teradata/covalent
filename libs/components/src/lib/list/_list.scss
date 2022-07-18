@@ -1,0 +1,88 @@
+
+
+
+@mixin core-styles() {
+    td-list {
+        .beta-list-item {
+            --mdc-list-item-meta-size: 20px;
+            --mdc-list-item-graphic-size: 40px; 
+            --mdc-list-item-graphic-margin: 15px;
+            --mdc-typography-subtitle1-font-size: var(--mdc-typography-subtitle2-font-size);
+            --mdc-typography-body2-font-size: var(--mdc-typography-caption-font-size);
+            margin-bottom: 8px;
+            font-size: var(--mdc-typography-subtitle1-font-size);
+
+            .beta-icon {
+                height: 20px;
+                line-height:20px;
+                width: 40px;
+            }
+        }
+
+        &.navigation-rail {
+            td-list-item:not(.beta-list-item) {
+                border-radius: 0 28px 28px 0;
+                margin-right: 16px;
+            }
+
+            td-list-item[graphic=avatar]:not(.beta-list-item) td-icon[slot=graphic] {
+                background: transparent;
+            }
+
+            .home-item .covalent-icon:not(.teradata-circle) {
+                --mdc-list-item-graphic-size: 40px;
+                --mdc-icon-size: 40px;
+            }
+
+            .home-item .home-icon {display: none;}
+            .home-item .teradata-circle {display: none;}
+            .home-item .teradata-no-circle {display: block;}
+            .home-item:hover .home-icon {display: block;}
+            .home-item:hover .covalent-icon {display: none;}
+
+            td-app-shell:not([open]) & {
+                td-list-item:not(.beta-list-item) {
+                    border-radius: 100%;
+                    margin: 0 auto 8px;
+                    padding: 0;
+                    width: 48px;
+                    height: 48px;
+                }
+
+                td-list-item [slot="graphic"],
+                td-list-item td-icon {
+                    margin-left: 8px
+                }
+
+                td-expansion-list {
+                    --td-list-item-text-icon-on-background: transparent;
+                    --td-list-menu-height: 0;  
+                }
+
+                .beta-list-item {
+                    --mdc-list-item-graphic-margin: 0px;
+                    --mdc-typography-subtitle1-font-size: 0;
+                    --mdc-typography-body2-font-size: 0;
+                    height: 48px;
+                    font-size: 0;
+                    padding: 0;
+                    justify-content: center;
+                    align-content: center;
+                }
+
+                .home-item {
+                    background-color: #f3753f;
+                    --mdc-ripple-color: #fff;
+                    --mdc-theme-text-icon-on-background: #fff;
+                }
+            }
+
+
+            td-app-shell[open] & {
+                .home-item .covalent-icon {display: none;}
+                .home-item .covalent-icon.teradata-circle {display: block;}
+                .home-item:hover .covalent-icon.teradata-circle {display: none;}
+            }        
+        }
+    }
+}

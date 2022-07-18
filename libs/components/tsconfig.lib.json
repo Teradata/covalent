@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/libs/components",
+    "declaration": true,
+    "types": []
+  },
+  "include": [
+   "../../node_modules/lit-scss-loader/types.d.ts",
+   "**/*.ts",
+  ],
+  "exclude": ["**/*.spec.ts"]
+}

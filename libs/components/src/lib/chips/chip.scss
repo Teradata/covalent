@@ -1,0 +1,36 @@
+@use '@material/chips/chip';
+
+@include chip.core-styles();
+
+.mdc-evolution-chip {
+    background-color: var(--mdc-theme-surface-neutral);
+
+    .mdc-evolution-chip__text-label {
+        color: var(--mdc-theme-text-primary-on-background);
+    }
+
+    .mdc-evolution-chip__icon {
+        font-family: var(--mdc-icon-font, 'Material Icons');
+        color: var(--mdc-theme-text-icon-on-background);
+    }
+
+    .mdc-evolution-chip__checkmark-path {
+        stroke: var(--mdc-theme-text-icon-on-background);
+    }
+
+    &.mdc-evolution-chip--selected {
+        background-color: var(--mdc-theme-surface-primary);
+    }
+    
+    &.negative {
+        background-color: var(--mdc-theme-surface-negative);
+    }
+
+    &.caution {
+        background-color: var(--mdc-theme-surface-caution);
+    }
+
+    &.secondary {
+        background-color: var(--mdc-theme-surface-secondary);
+    }
+}

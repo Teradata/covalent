@@ -1,0 +1,14 @@
+@use "@material/snackbar" as snackbar;
+
+@mixin snack-bar-theme($theme) {
+  $accent: map-get($theme, primary);
+  $icon-on-dark: map-get($theme, text-icon-on-dark);
+
+  --mdc-snackbar-action-color: #{$accent};
+
+  td-snackbar {
+    td-icon-button {
+      color: #{$icon-on-dark};
+    }
+  }
+}

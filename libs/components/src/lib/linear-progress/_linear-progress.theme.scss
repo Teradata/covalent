@@ -1,0 +1,10 @@
+@use "@material/linear-progress";
+
+@mixin linear-progress-theme($theme) {
+  // support for web component
+  --mdc-linear-progress-buffer-color: #{map-get($theme,divider)};
+  
+  .mdc-linear-progress {
+    @include linear-progress.buffer-color(map-get($theme,divider));
+  }
+}

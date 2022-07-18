@@ -1,0 +1,51 @@
+@use '@material/banner/banner' as banner-core;
+@use '@material/elevation/mixins' as elevation-mixins;
+@use '@material/feature-targeting/feature-targeting';
+@use '@material/shape';
+
+@use  './alert.theme';
+
+$query: feature-targeting.all();
+
+:host {
+    @include banner-core.core-styles();
+    @include alert.theme();
+    @include elevation-mixins.overlay-common($query); // COPYBARA_COMMENT_THIS_LINE
+
+    .mdc-banner {
+        @include shape.radius(8px);
+        @include elevation-mixins.overlay-surface-position($query: $query);
+        @include elevation-mixins.overlay-dimensions(100%, $query: $query);
+        @include elevation-mixins.elevation(1, $query: $query);
+        overflow: hidden;
+        border: none;
+
+        .mdc-banner__content {
+            max-width: inherit;
+        }
+
+        .mdc-banner__graphic {
+            background: none;
+            margin-left: 24px;
+            width: 24px;
+        }
+
+        .mdc-banner__text {
+            margin-left: 24px;
+        }
+
+        .mdc-banner__actions {
+            align-self: center;
+            align-items: center;
+        }
+
+        &.td-banner--inline {
+            @include shape.radius(0);
+            @include elevation-mixins.elevation(0, $query: $query);
+        }
+    }
+
+    ::slotted(*) {
+        margin-left: 8px;
+    }
+}

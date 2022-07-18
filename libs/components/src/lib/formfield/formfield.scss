@@ -1,0 +1,9 @@
+
+@use '@material/rtl';
+
+::slotted(td-switch) {
+    margin-right: 10px;
+    @include rtl.rtl {
+      margin-left: 10px;
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "root": "libs/tokens",
+  "sourceRoot": "libs/tokens/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["cd libs/tokens && style-dictionary build"],
+        "parallel": false,
+        "outputPath": "dist/libs/components"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/tokens/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["design-system", "tokens"]
+}

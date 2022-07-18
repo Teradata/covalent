@@ -1,0 +1,517 @@
+// Material Theme Builder layout
+
+body {
+    display: flex;
+    margin: 0;
+  }
+  
+  .remix-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 200;
+    
+  }
+  
+  // Theme Builder drawer content
+  
+  
+  .drawer-content--theme-summary {
+    display: none;
+  }
+  
+  .theme-name {
+    margin-bottom: 0;
+  
+    &:focus {
+      outline: 1px solid rgba(0, 0, 0, .12);
+    }
+  
+    &:empty:before {
+      content: attr(placeholder);
+      color: rgba(0, 0, 0, .6);
+    }
+  }
+  
+  // Theme Summary content
+  
+  .mdc-list-divider.theme-summary-divider {
+    border-bottom-width: 2px;
+    margin: 20px 0;
+  }
+  
+  .theme-summary-line {  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+  
+    figure {
+      margin: 0;
+    }
+  
+    .theme-summary-code {
+      background: none;
+    }
+  
+    .theme-summary-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+  
+    .theme-summary-shape {
+  
+      width: 48px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+    }
+    
+    &.theme-summary-line--typography {
+      margin: 0;
+    }
+  
+    .theme-summary-typography {
+      width: 120px;
+
+    }
+  
+ 
+  }
+  
+  .mdc-list-divider.typography-baseline-divider {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  
+  
+  .mdc-drawer-app-content {
+    width: 100%;
+  }
+  
+  .theme-builder-desc-banner {
+    display: none; // hide on >1310px screens
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  // Breakpoint <1310px
+  @media (max-width: 1310px) {
+    .theme-builder-app-bar, .theme-builder-desc-banner {
+      display: block;
+    }
+    
+    .theme-builder-drawer {
+      //  No display by default until JS loads in to prevent jank 
+      display: none;
+    }
+  }
+  
+  // Main content layout
+  
+  .main-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  
+    &:not(.mdc-top-app-bar--fixed-adjust) {
+      padding: 2vh 0;
+    }
+    
+    .column {
+      width: 420px;
+    }
+  }
+  
+  .component-section-row {
+    display: flex;
+  
+    .component-section:first-child {
+      width: 200px;
+    }
+  }
+  
+  .component-section {
+    margin: 16px 20px 40px 20px;
+  
+    &.dialog-component-section {
+      margin-bottom: 60px; // To avoid overshadowing Image List
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .component-section {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .mdc-image-list {
+      width: auto;
+    }
+    
+    .mdc-drawer {
+      width: 60%;
+      min-width: calc(100% - 56px);
+    }
+    
+    .column {
+      width: auto;
+      max-width: 420px;
+      padding-right: 8px;
+      padding-left: 8px;
+    } 
+  }
+  
+  @media only screen and (max-width: 485px) {
+    .column {
+      overflow: hidden;
+    }
+    
+    .remix-fab {
+    position: fixed;
+    bottom: 16px;
+    right: auto;
+    margin: 0;
+    z-index: 200;
+    
+  }
+    
+     .mdc-dialog .mdc-dialog__surface {
+      max-width: calc(100% - 100px);
+    }
+  }
+    
+  .section-header {
+    display: flex;
+    height: 36px;
+    font-family: Roboto, sans-serif;
+    
+    a {
+      display: flex;
+      align-items: center;
+     
+    
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+    
+    .material-icons {
+      font-size: 1rem;
+      padding: 8px;
+  
+      &.leading-icon {
+        padding-left: 0;
+      }
+    }
+  }
+  
+  .component-wrapper {
+    margin: 16px 0;
+  }
+  
+  // Extra padding for printing
+  
+  .print {
+    .column {
+      width: 30vw;
+    }
+  
+    .component-wrapper {
+      margin-bottom: 60px;
+    
+      &.text-field-component-wrapper, &.chips-component-wrapper {
+        margin-bottom: 96px;
+      }
+    }
+    
+    .theme-name {
+      margin-bottom: 8px;
+    }
+    
+    .glitch-url {
+      font-size: 1rem;
+    }
+    
+    .drawer-content--instructions {
+      .mdc-typography--overline {
+        font-size: 0.9rem;
+      }
+      
+      .mdc-typography--body2 {
+        font-size: 1.2rem;
+        line-height: 1.75rem;
+      }
+    }
+    
+    .drawer-content--options {
+      display: none;
+    }
+    
+      // Print adjustments
+    
+    .button-component-wrapper,
+    .fab-component-wrapper {
+      margin: 24px 0 44px;
+    }
+    
+    .top-bar-component-wrapper {
+      margin: 24px 0 52px;
+    }
+    
+    .switch-component-wrapper {
+      margin-left: -8px;
+      margin-top: 24px;
+    }
+    
+    .component-wrapper.checkbox-component-wrapper {
+      margin-left: -18px;
+    }
+    
+    .component-wrapper.chips-component-wrapper-1 {
+      margin: 12px 0 92px -8px;
+    }
+    
+    .select-component {
+      margin: 0 20px 40px 20px;
+    }
+    
+    .column-2 {
+      transform: translate(-16px);
+    }
+    
+    .card-component-wrapper {
+      margin: 16px 0 38px;
+    }
+    
+    .component-wrapper.text-field-component-wrapper-1 {
+      margin: 22px 0 90px;
+    }
+    
+    .dialog-component-wrapper {
+      margin: 8px 0 52px;
+    }
+    
+    .linear-progress-section {
+      margin-top: -8px;
+    }
+    
+    .tabs-section {
+      margin-top: -16px;
+    }
+    
+    .radio-row {
+      margin-top: -24px;
+      margin-bottom: -16px;
+    }
+    
+    .snackbar-section {
+      margin-top: -16px;
+    }
+    
+    .image-section {
+      margin-top: -4px;
+    }
+    
+    .switch-section {
+      margin-top: 0;
+    }
+    
+    .short-app-bar-section,
+    .menu-section {
+      margin-top: 0px;
+    }
+    
+    .switch-checkbox-row {
+      margin-bottom: 16px;
+    }
+    
+    .list-section {
+      margin-top: 8px;
+    }
+    
+    .dialog-component-section {
+      margin-bottom: 52px;
+      margin-top: -16px;
+    }
+    
+    .chips-section {
+      margin: 16px 20px -32px 20px;
+    }
+    
+    .image-list-section {
+      transform: translateY(-8px);
+    }
+  }
+  
+  // Theme Summary Typography
+  .typography-callout {
+    font-size: 12px;
+    padding: 16px;
+  }
+  
+  .font-link {
+    font-size: 12px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: -16px;
+  }
+  
+  .font-link i {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+  
+  .theme-shape .varValue {
+    display: block;
+  }
+  
+  .varValue {
+    font-weight: 600;
+  }
+
+  // Material Theming
+// After importing all MDC Web components, apply mixins to theme individual components
+
+// .mdc-button {
+//   @include mdc-button-shape-radius(50%);
+// }
+
+// Checkbox and radio
+
+.mdc-checkbox, .mdc-radio {
+    margin-right: 4px;
+  }
+  
+  // Top app bar
+  
+  .component-wrapper .mdc-top-app-bar {
+    position: relative;
+    z-index: 1;
+  
+    &:not(.mdc-top-app-bar--short) {
+      width: 100%;
+    }
+  }
+  
+  // Card
+  
+  .mdc-card {
+    width: 100%;
+  
+    .demo-card__primary {
+      padding: 1rem;
+    }
+  
+    .demo-card__title,
+    .demo-card__subtitle {
+      margin: 0;
+    }
+  
+    .demo-card__secondary {
+      padding: 0 1rem 8px;
+      opacity: 0.87;
+    }
+  }
+  
+  // Linear progress
+  
+  .mdc-linear-progress {
+    width: 100%;
+  }
+  
+  // Menu
+  
+  .mdc-menu-surface--anchor > .mdc-menu {
+    position: relative;
+    z-index: 1;
+  }
+  
+  // Select
+  
+  .mdc-select {
+    width: 160px;
+  }
+  
+  // Drawer
+  
+  .drawer-component-wrapper {
+    background: rgba(0, 0, 0, 0.3);
+  
+    .mdc-drawer {
+  
+      .mdc-drawer__content {
+        padding: 0;
+      }
+    }
+  }
+  
+  // Text field
+  
+  .mdc-text-field {
+    width: 100%;
+  }
+  
+  // Tabs
+//   .component-wrapper .mdc-tab-bar {
+//     background: $mdc-theme-primary;
+  
+//     .mdc-tab {
+//       @include mdc-tab-text-label-color($mdc-theme-on-primary);
+  
+//       .mdc-tab__ripple {
+//         @include mdc-states($mdc-theme-on-primary);
+//       }
+//     }
+  
+//     .mdc-tab-indicator {
+//       @include mdc-tab-indicator-underline-color($mdc-theme-on-primary);
+//     }
+//   }
+  
+  // Snackbar
+  
+  .mdc-snackbar {
+    position: relative;
+    margin: 0;
+    justify-content: start;
+    z-index: 1;
+  }
+  
+  // Dialog
+  
+  .mdc-dialog {
+    position: relative;
+    justify-content: start;
+    z-index: 1;
+  
+    .mdc-dialog__surface {
+      max-width: 100%;
+    }
+  }
+  
+
+  // Image list
+  
+  .mdc-image-list {  
+    max-width: 400px;
+    max-height: 600px;
+    margin: 0;
+  }
+  
+  .component-wrapper {
+    &.button-component-wrapper, &.fab-component-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    // Offset built-in padding to left-align all components
+  
+
+  }
+  

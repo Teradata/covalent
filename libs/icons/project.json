@@ -1,0 +1,7 @@
+{
+  "root": "libs/icons",
+  "sourceRoot": "libs/icons/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["design-system", "icons"]
+}

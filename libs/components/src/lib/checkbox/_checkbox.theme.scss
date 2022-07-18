@@ -1,0 +1,6 @@
+@mixin checkbox-theme ($theme) {
+    --mdc-checkbox-checked-color: #{map-get($theme, primary)};
+    --mdc-checkbox-disabled-color: #{map-get($theme, text-disabled-on-background)};
+    --mdc-checkbox-ink-color: #{map-get($theme, on-primary)};
+    --mdc-checkbox-unchecked-color: #{map-get($theme, text-icon-on-background)};
+}

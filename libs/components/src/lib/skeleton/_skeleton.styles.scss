@@ -1,0 +1,11 @@
+@mixin core-styles() {
+  .skeleton-text * {
+    font-family: "skeleton" !important;
+  }
+  .skeleton-text {
+    --mdc-typography-body2-font-family: "skeleton";
+    --mdc-typography-body2-letter-spacing: -0.03em;
+    --mdc-theme-text-primary-on-background: #ccc;
+    --skeleton-color: #ccc;
+  }
+}

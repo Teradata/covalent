@@ -1,0 +1,15 @@
+ul {
+    --mdc-list-side-padding: 72px;
+    transition: transform 0.15s ease-out;
+    overflow: hidden;
+    height: var(--td-list-menu-height, 0);
+
+    slot::slotted(td-list-item) {
+        height: 32px;
+    }
+
+    &.td-expansion-list--open {
+        transition: min-height 0.25s ease-in;
+        height: var(--td-list-menu-height, inherit);
+    }
+}

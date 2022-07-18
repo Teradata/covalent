@@ -1,0 +1,14 @@
+.expansion-icon {
+    margin-left: -16px;
+    margin-right: -8px;
+    color: var(--td-list-item-text-icon-on-background, var(--mdc-theme-text-icon-on-background))
+}
+
+:host([childItem]) {
+    height: 32px;
+
+    .mdc-deprecated-list-item__text {
+        padding-left: 56px;
+    }
+    
+}

@@ -1,0 +1,53 @@
+@use "@material/button";
+
+@mixin button-theme($theme) {
+  
+  --mdc-theme-error: #{map-get($theme,error)};
+
+  // --- web component --- //
+
+  // --- set default to neutral --- //
+  td-button {
+    --mdc-button-outline-color: #{map-get($theme,text-icon-on-background)};
+    --mdc-theme-primary: #{map-get($theme,text-primary-on-background)};
+  }
+  
+  // --- apply accent color --- //
+  td-button[outlined].accent.primary,
+  td-button[raised].accent.primary,
+  td-button[text].accent.primary {
+    --mdc-theme-primary: #{map-get($theme,primary)};
+    --mdc-button-outline-color: var(--mdc-theme-primary);
+  }
+  
+  // --- apply error color --- //
+  td-button[outlined].destructive.primary,
+  td-button[raised].destructive.primary,
+  td-button[text].destructive.primary,
+  td-button[outlined].negative.primary, // Same thing, just using "negative" alias
+  td-button[raised].negative.primary,
+  td-button[text].negative.primary {
+    --mdc-theme-primary: var(--mdc-theme-error);
+    --mdc-button-outline-color: var(--mdc-theme-error);
+  }
+
+  // --- non-web component --- //
+
+  .mdc-button:not(:disabled) {
+    --mdc-button-outline-color: #{map-get($theme,text-icon-on-background)};
+    --mdc-theme-primary: #{map-get($theme,text-primary-on-background)};
+    @include button.outline-color(map-get($theme,text-icon-on-background));
+    
+    &.accent {
+      --mdc-theme-primary: #{map-get($theme,primary)};
+      --mdc-button-outline-color: var(--mdc-theme-primary);
+      border-color: var(--mdc-button-outline-color);
+    }
+    &.destructive,
+    &.negative {
+      --mdc-theme-primary: #{map-get($theme,error)};
+      --mdc-button-outline-color: var(--mdc-theme-primary);
+      border-color: var(--mdc-button-outline-color);
+    }
+  }
+}

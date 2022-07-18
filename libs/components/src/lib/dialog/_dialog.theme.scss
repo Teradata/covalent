@@ -1,0 +1,16 @@
+@use '@material/dialog';
+
+@mixin dialog-theme($theme) {
+  $text: map-get($theme, text-primary-on-background);
+  $border: map-get($theme, divider);
+
+  --mdc-dialog-heading-ink-color: #{$text};
+  --mdc-dialog-content-ink-color: #{$text};
+  --mdc-dialog-scroll-divider-color: #{$border};
+
+  
+  .mdc-dialog {
+    @include dialog.title-ink-color($text);
+    @include dialog.content-ink-color($text);
+  }
+}
