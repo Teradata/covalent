@@ -1,12 +1,11 @@
 <button
+  #fileInputButton
   mat-raised-button
   class="td-file-input"
   type="button"
   [color]="color"
   [multiple]="multiple"
   [disabled]="disabled"
-  (keyup.enter)="fileInput.click()"
-  (click)="fileInput.click()"
   (fileDrop)="handleSelect($event)"
   tdFileDrop
 >

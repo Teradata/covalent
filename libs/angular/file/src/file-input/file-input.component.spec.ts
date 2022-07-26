@@ -4,12 +4,13 @@ import {
   waitForAsync,
   ComponentFixture,
 } from '@angular/core/testing';
-import { Component } from '@angular/core';
+import { ApplicationRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import { ENTER } from '@angular/cdk/keycodes';
+
 import { CovalentFileModule } from '../file.module';
 import { TdFileInputComponent } from '../file-input/file-input.component';
-
-import { By } from '@angular/platform-browser';
 
 describe('Component: FileInput', () => {
   beforeEach(
@@ -131,6 +132,25 @@ describe('Component: FileInput', () => {
       })
     )
   );
+
+  it('should not run change detection when the button is clicked, but should redirect the click to `<input />`', () => {
+    const fixture: ComponentFixture<TdFileInputBasicTestComponent> =
+      TestBed.createComponent(TdFileInputBasicTestComponent);
+    fixture.detectChanges();
+    const appRef = TestBed.inject(ApplicationRef);
+    jest.spyOn(appRef, 'tick');
+    const button: HTMLButtonElement = fixture.debugElement.query(
+      By.css('.td-file-input')
+    ).nativeElement;
+    const input: HTMLInputElement = fixture.debugElement.query(
+      By.css('.td-file-input-hidden')
+    ).nativeElement;
+    jest.spyOn(input, 'click');
+    button.dispatchEvent(new Event('click'));
+    button.dispatchEvent(new KeyboardEvent('keyup', { keyCode: ENTER }));
+    expect(appRef.tick).not.toHaveBeenCalled();
+    expect(input.click).toHaveBeenCalledTimes(2);
+  });
 
   // Todo do we really want to support ng model?
   xit(
