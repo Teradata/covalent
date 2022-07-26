@@ -1,3 +1,9 @@
+## [4.2.1](https://github.com/Teradata/covalent/compare/v4.2.0...v4.2.1) (2022-07-26)
+
+### Performance Improvements
+
+- **code-editor:** do not run change detection whenever the editor does re-layout ([1061b3e](https://github.com/Teradata/covalent/commit/1061b3e7b55f1507fd61755a05df446f82909d0a))
+
 # [4.2.0](https://github.com/Teradata/covalent/compare/v4.1.15...v4.2.0) (2022-05-24)
 
 ### Features
