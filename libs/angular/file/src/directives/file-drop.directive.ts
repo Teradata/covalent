@@ -20,6 +20,7 @@ export class TdFileDropDirective implements OnInit, OnDestroy {
   private _multiple = false;
   private _dragenterListener?: VoidFunction;
   private _dragleaveListener?: VoidFunction;
+  private _dragoverListener?: VoidFunction;
 
   /**
    * multiple?: boolean
@@ -89,12 +90,37 @@ export class TdFileDropDirective implements OnInit, OnDestroy {
           this._stopEvent(event);
         }
       );
+
+      // Listens to 'dragover' host event to validate transfer items.
+      // Checks if 'multiple' attr exists in host to allow multiple file drops.
+      // Stops event propagation and default action from browser for 'dragover' event.
+      this._dragoverListener = this._renderer.listen(
+        this._element.nativeElement,
+        'dragover',
+        (event: DragEvent) => {
+          const transfer: DataTransfer =
+            event.dataTransfer || new DataTransfer();
+          transfer.dropEffect = this._typeCheck(transfer.types);
+          if (
+            this.disabled ||
+            (!this._multiple &&
+              ((transfer.items && transfer.items.length > 1) ||
+                (<any>transfer).mozItemCount > 1))
+          ) {
+            transfer.dropEffect = 'none';
+          } else {
+            transfer.dropEffect = 'copy';
+          }
+          this._stopEvent(event);
+        }
+      );
     });
   }
 
   ngOnDestroy(): void {
     this._dragenterListener?.();
     this._dragleaveListener?.();
+    this._dragoverListener?.();
   }
 
   /**
@@ -118,29 +144,6 @@ export class TdFileDropDirective implements OnInit, OnDestroy {
       }
     }
     this._renderer.removeClass(this._element.nativeElement, 'drop-zone');
-    this._stopEvent(event);
-  }
-
-  /**
-   * Listens to 'dragover' host event to validate transfer items.
-   * Checks if 'multiple' attr exists in host to allow multiple file drops.
-   * Stops event propagation and default action from browser for 'dragover' event.
-   */
-  @HostListener('dragover', ['$event'])
-  onDragOver(event: Event): void {
-    const transfer: DataTransfer =
-      (<DragEvent>event).dataTransfer || new DataTransfer();
-    transfer.dropEffect = this._typeCheck(transfer.types);
-    if (
-      this.disabled ||
-      (!this._multiple &&
-        ((transfer.items && transfer.items.length > 1) ||
-          (<any>transfer).mozItemCount > 1))
-    ) {
-      transfer.dropEffect = 'none';
-    } else {
-      transfer.dropEffect = 'copy';
-    }
     this._stopEvent(event);
   }
 
