@@ -51,6 +51,8 @@ export class TdMarkdownNavigatorWindowComponent {
   @Output() dockToggled: EventEmitter<boolean> = new EventEmitter();
   @Output() buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> =
     new EventEmitter();
+  @Output() itemSelected: EventEmitter<IMarkdownNavigatorItem> =
+    new EventEmitter();
 
   get markdownNavigatorLabels(): IMarkdownNavigatorLabels | undefined {
     if (!this.labels) {

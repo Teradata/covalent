@@ -116,6 +116,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   @Output() buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> =
     new EventEmitter();
+  @Output() itemSelected: EventEmitter<IMarkdownNavigatorItem> =
+    new EventEmitter();
 
   @ViewChild('markdownWrapper') markdownWrapper!: ElementRef;
 
@@ -273,6 +275,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       this.currentMarkdownItem = undefined;
     }
     this.historyStack = [];
+    this.itemSelected.emit(undefined);
     this._changeDetectorRef.markForCheck();
   }
 
@@ -299,6 +302,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     } else {
       this.reset();
     }
+    this.itemSelected.emit(parent);
     this._changeDetectorRef.markForCheck();
   }
 
@@ -307,6 +311,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     this.currentMarkdownItem = item;
     this.historyStack = [...this.historyStack, item];
     this.setChildrenAsCurrentMenuItems(item);
+    this.itemSelected.emit(item);
     this._changeDetectorRef.markForCheck();
   }
 
@@ -403,8 +408,10 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
         path = this.findPath(this.items, itemOrPath);
       }
       path.forEach((pathItem: IMarkdownNavigatorItem, index) => {
-        if (index === 0) { this.reset() }
-        
+        if (index === 0) {
+          this.reset();
+        }
+
         this.handleItemSelected(pathItem);
       });
     }
@@ -471,12 +478,14 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     const link: HTMLAnchorElement = <HTMLAnchorElement>event.target;
     const url: URL = new URL(link.href);
     const urlParts = url.href.split('/');
-    const id = urlParts[urlParts.length-1].split('.md')[0];
+    const id = urlParts[urlParts.length - 1].split('.md')[0];
     this.loading = true;
     this._changeDetectorRef.markForCheck();
     const pathFound = await this._jumpTo({ id });
 
-    if (pathFound) { return; }
+    if (pathFound) {
+      return;
+    }
 
     try {
       const markdownString: string = await this._markdownUrlLoaderService.load(
