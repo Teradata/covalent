@@ -1,3 +1,9 @@
+# [4.3.0](https://github.com/Teradata/covalent/compare/v4.2.1...v4.3.0) (2022-08-11)
+
+### Features
+
+- **navigator:** add EventEmitter to selected item ([537697c](https://github.com/Teradata/covalent/commit/537697c92089cd7258a14e73651666022649c57f))
+
 ## [4.2.1](https://github.com/Teradata/covalent/compare/v4.2.0...v4.2.1) (2022-07-26)
 
 ### Performance Improvements
