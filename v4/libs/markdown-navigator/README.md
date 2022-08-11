@@ -26,6 +26,8 @@ A component for rendering and navigating through markdown, such as documentation
 
 - buttonClicked: ITdFlavoredMarkdownButtonClickEvent
   - Emitted when a button is clicked
+- itemSelected: IMarkdownNavigatorItem
+  - Emitted the selected item when a item is selected
 
 For reference:
 
@@ -117,6 +119,8 @@ A component that contains a MarkdownNavigator component and a toolbar
   - Event emitted when the close button is clicked.
 - buttonClicked: ITdFlavoredMarkdownButtonClickEvent
   - Emitted when a button is clicked
+- itemSelected: IMarkdownNavigatorItem
+  - Emitted the selected item when a item is selected
 
 ## Setup
 
