@@ -151,6 +151,13 @@ const routes: Routes = [
           ).then((m: any) => m.LayoutManagementListDemoModule),
       },
       {
+        path: 'loading',
+        loadChildren: () =>
+          import('./component-demos/loading/loading.module').then(
+            (m: any) => m.LoadingDemoModule
+          ),
+      },
+      {
         path: 'text-editor',
         loadChildren: () =>
           import('./component-demos/text-editor/text-editor.module').then(

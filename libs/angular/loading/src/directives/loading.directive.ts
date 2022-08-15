@@ -25,10 +25,6 @@ let TD_LOADING_NEXT_ID = 0;
 })
 export class TdLoadingDirective implements OnInit, OnDestroy {
   private _context: TdLoadingContext = new TdLoadingContext();
-  private _type?: LoadingType;
-  private _mode?: LoadingMode;
-  private _strategy?: LoadingStrategy;
-  private _name!: string;
   private _loadingRef?: ILoadingRef;
 
   /**
@@ -36,11 +32,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Name reference of the loading mask, used to register/resolve requests to the mask.
    */
   @Input('tdLoading')
-  set name(name: string) {
-    if (!this._name && name) {
-      this._name = name;
-    }
-  }
+  name!: string;
 
   /**
    * tdLoadingUntil?: any
@@ -50,14 +42,14 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoadingUntil')
   set until(until: any) {
-    if (!this._name) {
-      this._name = 'td-loading-until-' + TD_LOADING_NEXT_ID++;
+    if (!this.name) {
+      this.name = 'td-loading-until-' + TD_LOADING_NEXT_ID++;
     }
     this._context.$implicit = this._context.tdLoading = until;
     if (!until) {
-      this._loadingService.register(this._name);
+      this._loadingService.register(this.name);
     } else {
-      this._loadingService.resolveAll(this._name);
+      this._loadingService.resolveAll(this.name);
     }
   }
 
@@ -67,27 +59,14 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Defaults to [LoadingType.Circular | 'circular'].
    */
   @Input('tdLoadingType')
-  set type(type: LoadingType) {
-    if (type === LoadingType.Linear) {
-      this._type = LoadingType.Linear;
-    } else {
-      this._type = LoadingType.Circular;
-    }
-  }
+  type: LoadingType = LoadingType.Circular;
 
   /**
    * tdLoadingMode?: LoadingMode or ['determinate' | 'indeterminate']
    * Sets the mode of loading mask depending on value.
    * Defaults to [LoadingMode.Indeterminate | 'indeterminate'].
    */
-  @Input('tdLoadingMode')
-  set mode(mode: LoadingMode) {
-    if (mode === LoadingMode.Determinate) {
-      this._mode = LoadingMode.Determinate;
-    } else {
-      this._mode = LoadingMode.Indeterminate;
-    }
-  }
+  @Input('tdLoadingMode') mode: LoadingMode = LoadingMode.Indeterminate;
 
   /**
    * tdLoadingStrategy?: LoadingStrategy or ['replace' | 'overlay']
@@ -95,13 +74,8 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Defaults to [LoadingMode.Replace | 'replace'].
    */
   @Input('tdLoadingStrategy')
-  set strategy(strategy: LoadingStrategy) {
-    if (strategy === LoadingStrategy.Overlay) {
-      this._strategy = LoadingStrategy.Overlay;
-    } else {
-      this._strategy = LoadingStrategy.Replace;
-    }
-  }
+  strategy: LoadingStrategy.Overlay | LoadingStrategy.Replace =
+    LoadingStrategy.Replace;
 
   /**
    * tdLoadingColor?: "primary" | "accent" | "warn"
@@ -126,7 +100,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Remove component when directive is destroyed.
    */
   ngOnDestroy(): void {
-    this._loadingService.removeComponent(this._name);
+    this._loadingService.removeComponent(this.name);
     this._loadingRef = undefined;
   }
 
@@ -135,7 +109,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Passes this directive's [TemplateRef] to modify DOM depending on loading `strategy`.
    */
   private _registerComponent(): void {
-    if (!this._name) {
+    if (!this.name) {
       throw new Error('Name is needed to register loading directive');
     }
     // Check if `TdLoadingComponent` has been created before trying to add one again.
@@ -143,11 +117,11 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     if (!this._loadingRef) {
       this._loadingRef = this._loadingService.createComponent(
         {
-          name: this._name,
-          type: this._type,
-          mode: this._mode,
+          name: this.name,
+          type: this.type,
+          mode: this.mode,
           color: this.color,
-          strategy: this._strategy,
+          strategy: this.strategy,
         },
         this._viewContainerRef,
         this._templateRef,

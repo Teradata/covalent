@@ -28,7 +28,7 @@ export enum LoadingStyle {
   None = 'none',
 }
 
-export const TD_CIRCLE_DIAMETER = 100;
+export const TD_CIRCLE_DIAMETER = 40;
 
 @Component({
   selector: 'td-loading',
@@ -80,7 +80,7 @@ export class TdLoadingComponent implements DoCheck {
    * height: number
    * Sets height of [TdLoadingComponent].
    */
-  height = 0;
+  height = 100;
 
   /**
    * type: LoadingType
@@ -192,7 +192,7 @@ export class TdLoadingComponent implements DoCheck {
       diameter = this._hostHeight();
     }
     // if the diameter is over TD_CIRCLE_DIAMETER, we set TD_CIRCLE_DIAMETER
-    if (!!diameter && diameter <= TD_CIRCLE_DIAMETER) {
+    if (diameter <= TD_CIRCLE_DIAMETER) {
       this._circleDiameter = Math.floor(diameter);
     } else {
       this._circleDiameter = TD_CIRCLE_DIAMETER;
