@@ -174,7 +174,7 @@ export const createComponentDetails: IComponentDetails[] = [
     name: 'Loading',
     id: 'loading',
     description: 'Circular or linear progress loader',
-    apiDocUrl: 'libs/loading/README.md',
+    apiDocUrl: 'libs/angular/loading/README.md',
     icon: 'hourglass_empty',
     category: buttons.name,
     route: '/components/loading',
