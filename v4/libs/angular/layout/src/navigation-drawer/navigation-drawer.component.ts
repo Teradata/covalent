@@ -15,7 +15,8 @@ import { Router } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { MatDrawerToggleResult } from '@angular/material/sidenav';
 
-import { Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { TdLayoutComponent } from '../layout.component';
 
@@ -38,9 +39,9 @@ export class TdNavigationDrawerToolbarDirective {}
   animations: [tdCollapseAnimation],
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
-  private _closeSubscription?: Subscription;
   private _menuToggled = false;
   private _backgroundImage!: SafeStyle | null;
+  private _destroy$ = new Subject<void>();
 
   get menuToggled(): boolean {
     return this._menuToggled;
@@ -173,20 +174,17 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this._closeSubscription = this._layout.sidenav.openedChange.subscribe(
-      (opened: boolean) => {
+    this._layout.sidenav.openedChange
+      .pipe(takeUntil(this._destroy$))
+      .subscribe((opened: boolean) => {
         if (!opened) {
           this._menuToggled = false;
         }
-      }
-    );
+      });
   }
 
   ngOnDestroy(): void {
-    if (this._closeSubscription) {
-      this._closeSubscription.unsubscribe();
-      this._closeSubscription = undefined;
-    }
+    this._destroy$.next();
   }
 
   toggleMenu(): void {

@@ -1,4 +1,4 @@
-import { Component, Inject, Renderer2 } from '@angular/core';
+import { Component, Inject, Renderer2, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DragRef } from '@angular/cdk/drag-drop';
 import {
@@ -6,6 +6,8 @@ import {
   IDraggableRefs,
   ResizableDraggableDialog,
 } from '@covalent/core/dialogs';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'draggable-resizable-dialog',
@@ -25,12 +27,18 @@ export class DraggableResizableDialogComponent {}
   styleUrls: ['./dialogs-demo-draggable-resizable.component.scss'],
   templateUrl: './dialogs-demo-draggable-resizable.component.html',
 })
-export class DialogsDemoDraggableResizableComponent {
+export class DialogsDemoDraggableResizableComponent implements OnDestroy {
+  private _destroy$ = new Subject<void>();
+
   constructor(
     private _dialogService: TdDialogService,
     @Inject(DOCUMENT) private _document: any,
     private _renderer2: Renderer2
   ) {}
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
+  }
 
   openDraggableResizableDialog(): void {
     const {
@@ -45,14 +53,16 @@ export class DialogsDemoDraggableResizableComponent {
     );
 
     let resizableDraggableDialog: ResizableDraggableDialog;
-    dragRefSubject.subscribe((dragRf: DragRef) => {
-      resizableDraggableDialog = new ResizableDraggableDialog(
-        this._document,
-        this._renderer2,
-        matDialogRef,
-        dragRf
-      );
-    });
+    dragRefSubject
+      .pipe(takeUntil(this._destroy$))
+      .subscribe((dragRf: DragRef) => {
+        resizableDraggableDialog = new ResizableDraggableDialog(
+          this._document,
+          this._renderer2,
+          matDialogRef,
+          dragRf
+        );
+      });
 
     // Detach resize-ability event listeners after dialog closes
     matDialogRef

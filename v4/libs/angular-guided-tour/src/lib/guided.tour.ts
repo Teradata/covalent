@@ -406,7 +406,6 @@ export class CovalentGuidedTour extends TourButtonsActions {
             _retryAttempts$
               .pipe(
                 skip(1),
-                takeUntil(merge(_stopTimer$.asObservable(), destroyedEvent$)),
                 skipWhile((val: number) => {
                   if (
                     step.attachToOptions &&
@@ -415,7 +414,8 @@ export class CovalentGuidedTour extends TourButtonsActions {
                     return val < step.attachToOptions.retries;
                   }
                   return val < SHEPHERD_DEFAULT_FIND_ATTEMPTS;
-                })
+                }),
+                takeUntil(merge(_stopTimer$.asObservable(), destroyedEvent$))
               )
               .subscribe((attempts: number) => {
                 _retriesReached$.next(1);
@@ -543,7 +543,6 @@ export class CovalentGuidedTour extends TourButtonsActions {
             const subEvent = event?.split('.')[1];
             fromEvent(element, mainEvent)
               .pipe(
-                takeUntil(merge(event$.asObservable(), destroyedEvent$)),
                 filter(($event: Event) => {
                   // only trigger if the event is a keyboard event and part of out list
                   if ($event instanceof KeyboardEvent) {
@@ -554,7 +553,8 @@ export class CovalentGuidedTour extends TourButtonsActions {
                   } else {
                     return true;
                   }
-                })
+                }),
+                takeUntil(merge(event$.asObservable(), destroyedEvent$))
               )
               .subscribe(() => {
                 event$.next();
