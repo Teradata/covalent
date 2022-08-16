@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './loading-demo-replace.component.html',
 })
 export class LoadingDemoReplaceComponent {
-  loading: boolean = false;
+  loading = false;
 
   toggle(): void {
     this.loading = !this.loading;
