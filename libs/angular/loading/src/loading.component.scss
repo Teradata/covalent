@@ -1,9 +1,11 @@
 .td-loading-wrapper {
   position: relative;
   display: block;
+
   &.td-fullscreen {
     position: inherit;
   }
+
   .td-loading {
     // layout
     box-sizing: border-box;
@@ -18,6 +20,7 @@
     // flex
     flex: 1;
   }
+
   &.td-overlay {
     .td-loading {
       position: absolute;
@@ -26,6 +29,7 @@
       left: 0;
       right: 0;
       z-index: 1000;
+
       mat-progress-bar {
         position: absolute;
         top: 0;
@@ -34,6 +38,7 @@
       }
     }
   }
+
   &.td-overlay-circular {
     .td-loading {
       bottom: 0;
