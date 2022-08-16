@@ -54,11 +54,11 @@ Example component html content with optional directives to support styling:
 ```html
 <span td-sidesheet-title>
   Side Sheet Title
-  <button mat-icon-button td-sidesheet-close>close</button>
+  <button mat-icon-button td-side-sheet-close>close</button>
 </span>
 <td-side-sheet-content> Sidesheet Content </td-side-sheet-content>
 <td-sidesheet-actions>
-  <button mat-icon-button td-sidesheet-close>close</button>
-  <button mat-icon-button td-sidesheet-close>save</button>
+  <button mat-icon-button td-side-sheet-close>close</button>
+  <button mat-icon-button td-side-sheet-close>save</button>
 </td-sidesheet-actions>
 ```
