@@ -4,6 +4,7 @@ import {
   Renderer2,
   Output,
   EventEmitter,
+  OnDestroy,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DragRef } from '@angular/cdk/drag-drop';
@@ -12,6 +13,7 @@ import {
   IDraggableRefs,
   ResizableDraggableDialog,
 } from '@covalent/core/dialogs';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'draggable-resizable-window-dialog',
@@ -39,12 +41,18 @@ export class DraggableResizableWindowDialogComponent {
   styleUrls: ['./dialogs-demo-draggable-resizable-window.component.scss'],
   templateUrl: './dialogs-demo-draggable-resizable-window.component.html',
 })
-export class DialogsDemoDraggableResizableWindowComponent {
+export class DialogsDemoDraggableResizableWindowComponent implements OnDestroy {
+  private _destroy$ = new Subject<void>();
+
   constructor(
     private _dialogService: TdDialogService,
     @Inject(DOCUMENT) private _document: any,
     private _renderer2: Renderer2
   ) {}
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
+  }
 
   openDraggableResizableWindowDialog(): void {
     const {
@@ -61,17 +69,21 @@ export class DialogsDemoDraggableResizableWindowComponent {
     );
 
     // listen to close event
-    matDialogRef.componentInstance.closed.subscribe(() => matDialogRef.close());
+    matDialogRef.componentInstance.closed
+      .pipe(takeUntil(this._destroy$))
+      .subscribe(() => matDialogRef.close());
 
     let resizableDraggableDialog: ResizableDraggableDialog;
-    dragRefSubject.subscribe((dragRf: DragRef) => {
-      resizableDraggableDialog = new ResizableDraggableDialog(
-        this._document,
-        this._renderer2,
-        matDialogRef,
-        dragRf
-      );
-    });
+    dragRefSubject
+      .pipe(takeUntil(this._destroy$))
+      .subscribe((dragRf: DragRef) => {
+        resizableDraggableDialog = new ResizableDraggableDialog(
+          this._document,
+          this._renderer2,
+          matDialogRef,
+          dragRf
+        );
+      });
 
     // Detach resize-ability event listeners after dialog closes
     matDialogRef

@@ -1,7 +1,8 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 
 import { slideInUpAnimation } from '../../../app.animations';
-import { ActivatedRoute } from '@angular/router';
 import { routeGroups } from '../../../utilities/route-trees';
 import { ICombinedRouteGroup } from '../../../utilities/route-group';
 
@@ -12,7 +13,7 @@ const ANGULAR_DOCS_URL = 'https://material.angular.io/';
   templateUrl: './component-overview.component.html',
   animations: [slideInUpAnimation],
 })
-export class ComponentOverviewComponent implements OnInit {
+export class ComponentOverviewComponent implements OnInit, OnDestroy {
   @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('class.td-route-animation') classAnimation = true;
 
@@ -20,15 +21,21 @@ export class ComponentOverviewComponent implements OnInit {
   categoryGroups: any;
   angularDocsURL: string = ANGULAR_DOCS_URL;
 
+  private _destroy$ = new Subject<void>();
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.data.subscribe((data: any) => {
+    this.route.data.pipe(takeUntil(this._destroy$)).subscribe((data: any) => {
       this.category = routeGroups.find(
         (group: ICombinedRouteGroup) =>
           group.name.toLowerCase() === data.category
       );
       this.categoryGroups = this.category.routeGroups;
     });
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
   }
 }

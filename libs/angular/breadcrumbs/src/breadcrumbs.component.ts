@@ -12,8 +12,8 @@ import {
   HostBinding,
 } from '@angular/core';
 
-import { Subscription, fromEvent } from 'rxjs';
-import { debounceTime, startWith } from 'rxjs/operators';
+import { fromEvent, Subject } from 'rxjs';
+import { debounceTime, startWith, takeUntil } from 'rxjs/operators';
 
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
@@ -26,10 +26,9 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 export class TdBreadcrumbsComponent
   implements OnInit, AfterContentInit, OnDestroy
 {
-  private _resizeSubscription: Subscription = Subscription.EMPTY;
-  private _contentChildrenSub!: Subscription;
   private _resizing = false;
   private _separatorIcon = 'chevron_right';
+  private _destroy$ = new Subject<void>();
 
   @HostBinding('class.td-breadcrumbs') tdBreadCrumbsClass = true;
 
@@ -56,8 +55,8 @@ export class TdBreadcrumbsComponent
   ) {}
 
   ngOnInit(): void {
-    this._resizeSubscription = fromEvent(window, 'resize')
-      .pipe(debounceTime(10))
+    fromEvent(window, 'resize')
+      .pipe(debounceTime(10), takeUntil(this._destroy$))
       .subscribe(() => {
         if (!this._resizing) {
           this._resizing = true;
@@ -71,7 +70,9 @@ export class TdBreadcrumbsComponent
   }
 
   ngAfterContentInit(): void {
-    this._contentChildrenSub = this._breadcrumbs.changes
+    // Note: doesn't need to unsubscribe since `QueryList.changes`
+    // gets completed by Angular when the view is destroyed.
+    this._breadcrumbs.changes
       .pipe(startWith(this._breadcrumbs))
       .subscribe(() => {
         this.setCrumbIcons();
@@ -80,8 +81,7 @@ export class TdBreadcrumbsComponent
   }
 
   ngOnDestroy(): void {
-    this._resizeSubscription.unsubscribe();
-    this._contentChildrenSub.unsubscribe();
+    this._destroy$.next();
   }
 
   /*
