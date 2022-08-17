@@ -30,6 +30,7 @@
         "libs/angular/json-formatter/src/public_api.ts"
       ],
       "@covalent/core/layout": ["libs/angular/layout/src/public_api.ts"],
+      "@covalent/core/loading": ["libs/angular/loading/src/public_api.ts"],
       "@covalent/core/menu": ["libs/angular/menu/src/public_api.ts"],
       "@covalent/core/message": ["libs/angular/message/src/public_api.ts"],
       "@covalent/core/search": ["libs/angular/search/src/public_api.ts"],

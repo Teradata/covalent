@@ -171,6 +171,19 @@ export const createComponentDetails: IComponentDetails[] = [
       ).then((mod: any) => mod.FlavoredMarkdownDemoModule),
   },
   {
+    name: 'Loading',
+    id: 'loading',
+    description: 'Circular or linear progress loader',
+    apiDocUrl: 'libs/angular/loading/README.md',
+    icon: 'hourglass_empty',
+    category: buttons.name,
+    route: '/components/loading',
+    demo: () =>
+      import('./component-demos/loading/demos/loading-demo.module').then(
+        (mod: any) => mod.LoadingDemoModule
+      ),
+  },
+  {
     name: 'Markdown Parser',
     id: 'markdown-parser',
     description: 'Parse and render markdown code',
