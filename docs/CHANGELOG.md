@@ -1,3 +1,15 @@
+# [4.4.0](https://github.com/Teradata/covalent/compare/v4.3.0...v4.4.0) (2022-08-17)
+
+### Bug Fixes
+
+- lint errors ([ffec850](https://github.com/Teradata/covalent/commit/ffec85015983f44722ce375057e695ee57ea0d89))
+- one more lint error ([91127eb](https://github.com/Teradata/covalent/commit/91127eb71b5f9ad2170b9c42f6023b8a431a45a0))
+- update loading API document path ([0bd794b](https://github.com/Teradata/covalent/commit/0bd794b19332d7e19dee3d624a43de3833cd6b05))
+
+### Features
+
+- **loading:** adding back td-loading component ([259a18a](https://github.com/Teradata/covalent/commit/259a18a7330371f58201ba370b3ba918ed68c147))
+
 # [4.3.0](https://github.com/Teradata/covalent/compare/v4.2.1...v4.3.0) (2022-08-11)
 
 ### Features
