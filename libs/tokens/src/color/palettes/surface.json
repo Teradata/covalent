@@ -1,0 +1,132 @@
+{
+  "light": {
+    "background": { "value": "{material.grey-100}", "type": "color" },
+    "surface": { "value": "white", "type": "color" },
+    "surface-canvas": { "value": "{material.grey-200}", "type": "color" },
+
+    "surface-primary": { "value": "{teradata.teal-200}", "type": "color" },
+    "surface-primary-highlight": {
+      "value": "rgba({teradata.teal-200}, 0.1)",
+      "type": "color"
+    },
+    "surface-primary-highlight-hover": {
+      "value": "rgba({teradata.teal-200}, 0.2)",
+      "type": "color"
+    },
+
+    "surface-secondary": { "value": "{teradata.teal-200}", "type": "color" },
+    "surface-secondary-highlight": {
+      "value": "rgba({teradata.teal-200}, 0.1)",
+      "type": "color"
+    },
+    "surface-secondary-highlight-hover": {
+      "value": "rgba({teradata.teal-200}, 0.2)",
+      "type": "color"
+    },
+
+    "surface-positive": { "value": "{material.green-200}", "type": "color" },
+    "surface-positive-highlight": {
+      "value": "rgba({material.green-200}, 0.1)",
+      "type": "color"
+    },
+    "surface-positive-highlight-hover": {
+      "value": "rgba({material.green-200}, 0.2)",
+      "type": "color"
+    },
+
+    "surface-caution": { "value": "{material.orange-300}", "type": "color" },
+    "surface-caution-highlight": {
+      "value": "rgba({material.orange-300}, 0.1)",
+      "type": "color"
+    },
+    "surface-caution-highlight-hover": {
+      "value": "rgba({material.orange-300}, 0.2)",
+      "type": "color"
+    },
+
+    "surface-negative": { "value": "{material.red-300}", "type": "color" },
+    "surface-negative-highlight": {
+      "value": "rgba({material.red-300}, 0.1)",
+      "type": "color"
+    },
+    "surface-negative-highlight-hover": {
+      "value": "rgba({material.red-300}, 0.2)",
+      "type": "color"
+    },
+
+    "surface-neutral": { "value": "{material.grey-400}", "type": "color" },
+    "surface-neutral-highlight": {
+      "value": "rgba({material.grey-400}, 0.04)",
+      "type": "color"
+    },
+    "surface-neutral-highlight-hover": {
+      "value": "rgba({material.grey-400}, 0.08)",
+      "type": "color"
+    }
+  },
+  "dark": {
+    "background": { "value": "{teradata.slate-1500}", "type": "color" },
+    "surface": { "value": "{teradata.slate-1100}", "type": "color" },
+    "surface-canvas": { "value": "{teradata.slate-1700}", "type": "color" },
+
+    "surface-primary": { "value": "{teradata.teal-1200}", "type": "color" },
+    "surface-primary-highlight": {
+      "value": "rgba({teradata.teal-1200}, 0.4)",
+      "type": "color"
+    },
+    "surface-primary-highlight-hover": {
+      "value": "rgba({teradata.teal-1200}, 0.6)",
+      "type": "color"
+    },
+
+    "surface-secondary": { "value": "{teradata.teal-1200}", "type": "color" },
+    "surface-secondary-highlight": {
+      "value": "rgba({teradata.teal-1200}, 0.4)",
+      "type": "color"
+    },
+    "surface-secondary-highlight-hover": {
+      "value": "rgba({teradata.teal-1200}, 0.6)",
+      "type": "color"
+    },
+
+    "surface-positive": { "value": "#336033", "type": "color" },
+    "surface-positive-highlight": {
+      "value": "rgba(#336033, 0.4)",
+      "type": "color"
+    },
+    "surface-positive-highlight-hover": {
+      "value": "rgba(#336033, 0.6)",
+      "type": "color"
+    },
+
+    "surface-caution": { "value": "#704C16", "type": "color" },
+    "surface-caution-highlight": {
+      "value": "rgba(#704C16, 0.4)",
+      "type": "color"
+    },
+    "surface-caution-highlight-hover": {
+      "value": "rgba(#704C16, 0.6)",
+      "type": "color"
+    },
+
+    "surface-negative": { "value": "#883E32", "type": "color" },
+    "surface-negative-highlight": {
+      "value": "rgba(#883E32, 0.4)",
+      "type": "color"
+    },
+    "surface-negative-highlight-hover": {
+      "value": "rgba(#883E32, 0.6)",
+      "type": "color"
+    },
+
+    "surface-neutral": { "value": "{teradata.slate-800}", "type": "color" },
+    "surface-neutral-highlight": {
+      "value": "rgba({teradata.slate-800}, 0.4)",
+      "type": "color"
+    },
+    "surface-neutral-highlight-hover": {
+      "value": "rgba({teradata.slate-800}, 0.6)",
+      "type": "color"
+    }
+  }
+}

@@ -19,7 +19,8 @@
     "format:check": "nx format",
     "format:write": "nx format:write",
     "ghpages:deploy": "VERSION=$(echo v${npm_package_version} | cut -c1-2) && npm run build docs-app -- --base-href=/covalent/$VERSION/ && bash scripts/ghpages-deploy $VERSION",
-    "release:prepare": "npx nx run-many --target=build --all && npx nx run-many --target=build-scss --all && node ./scripts/version-placeholder ./dist"
+    "release:prepare": "npx nx run-many --target=build --all && npx nx run-many --target=build-scss --all && node ./scripts/version-placeholder ./dist",
+    "style-dictionary": "cd libs/tokens && style-dictionary build"
   },
   "dependencies": {
     "@angular/animations": "^13.2.0",
@@ -104,6 +105,7 @@
     "postcss-url": "^10.1.1",
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.3",
+    "style-dictionary": "^3.7.0",
     "stylelint": "^14.5.3",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
