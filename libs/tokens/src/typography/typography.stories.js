@@ -1,4 +1,4 @@
-import * as typographyContent from '../../../../stories/demos/typography.content.html';
+import * as typographyContent from '/stories/demos/typography.content.html';
 
 export default {
   title: 'Basics/Typography',

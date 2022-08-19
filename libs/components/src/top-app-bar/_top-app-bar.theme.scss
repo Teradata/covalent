@@ -1,0 +1,26 @@
+@use '@material/top-app-bar';
+
+@mixin top-app-bar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $on-primary: map-get($theme, on-primary);
+  $surface: map-get($theme, surface);
+  $text-primary-on-background: map-get($theme, text-primary-on-background);
+  $icon: map-get($theme, text-icon-on-background);
+
+  td-top-app-bar,
+  td-top-app-bar-fixed,
+  .mdc-top-app-bar,
+  .mdc-top-app-bar-fixed {
+    --mdc-theme-primary: #{$surface};
+    --mdc-theme-on-primary: #{$text-primary-on-background};
+
+    td-button {
+      --mdc-theme-primary: #{$primary};
+      --mdc-theme-on-primary: #{$on-primary};
+    }
+
+    @include top-app-bar.fill-color($surface);
+    @include top-app-bar.ink-color($text-primary-on-background);
+    @include top-app-bar.icon-ink-color($icon);
+  }
+}

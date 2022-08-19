@@ -56,3 +56,7 @@ Covalent is built on a CSS Flexbox layout and all layouts and components heavily
 | **Supported** |   ✓    |    ✓    |   ✓    |  ✓   |       ~       |       ~       |
 
 ~ Indicates limited testing & lower priority
+
+## Running Chromatic
+
+`npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}`

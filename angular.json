@@ -9,6 +9,7 @@
     "angular-highlight": "libs/angular-highlight",
     "angular-text-editor": "libs/angular-text-editor",
     "coding-standards": "libs/coding-standards",
+    "components": "libs/components",
     "docs-app": "apps/docs-app",
     "docs-e2e": "apps/docs-e2e",
     "markdown": "libs/markdown",

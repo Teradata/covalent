@@ -1,0 +1,62 @@
+<!-- dialog-overview.stories.mdx -->
+
+import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
+import { Dialog } from '@storybook/components';
+
+<Meta
+  title="Components/Dialog/Overview"
+  parameters={{
+    docs: {
+      inlineStories: true,
+    },
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  #story--components-dialog--anatomy > div,
+  #story--components-dialog--logout > div,
+  #story--components-dialog--udf > div {
+    height: 20rem !important;
+  }
+  .preview-dark {
+    display: none;
+  }
+  .dark .preview-light {
+    display: none;
+  }
+  .dark .preview-dark {
+    display: block;
+  }
+`}</style>
+
+# Dialogs
+
+## Basics
+
+- Use only when the user has to make a decision RIGHT NOW
+- It's always better to do the action and then allow an "undo" option rather than using an "Are you sure?" dialog
+- To notify the user less intrusively, consider using a [snackbar](?path=/story/components-snackbar--basic) instead
+
+---
+
+## Anatomy
+
+<Pre>
+  <Story id="components-dialog--anatomy" />
+</Pre>
+
+---
+
+## Examples
+
+<Pre>
+  <Story id="components-dialog--logout" />
+</Pre>
+
+<Pre>
+  <Story id="components-dialog--udf" />
+</Pre>

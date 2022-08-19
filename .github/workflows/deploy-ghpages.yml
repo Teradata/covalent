@@ -22,7 +22,9 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npx ci
-      - name: Deploy docs to GitHub pages
+      - name: Build story book artifacts
+        run: npm run storybook:build
+      - name: Deploy docs and storybook to GitHub pages
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH }}
         run: npm run ghpages:deploy

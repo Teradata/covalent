@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes, Route } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { setComponentRoutes } from '../../../../content/components/components';
 import { DynamicMenuHeroSharedModule } from './demos/dynamic-menu-demo-basic/dynamic-menu-hero.shared';

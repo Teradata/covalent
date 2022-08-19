@@ -1,0 +1,95 @@
+<link rel="shortcut icon" href="icons/favicon.ico" />
+<script>
+  (function (h, o, u, n, d) {
+    h = h[d] = h[d] || {
+      q: [],
+      onReady: function (c) {
+        h.q.push(c);
+      },
+    };
+    d = o.createElement(u);
+    d.async = 1;
+    d.src = n;
+    n = o.getElementsByTagName(u)[0];
+    n.parentNode.insertBefore(d, n);
+  })(
+    window,
+    document,
+    'script',
+    'https://www.datadoghq-browser-agent.com/datadog-rum-v4.js',
+    'DD_RUM'
+  );
+  DD_RUM.onReady(function () {
+    DD_RUM.init({
+      clientToken: 'pubb030211c68c6a17d6a435a675bba6234',
+      applicationId: 'dd76caa7-7be6-473c-baae-db3fc4f0169f',
+      site: 'datadoghq.com',
+      service: 'covalent-storybook',
+      // Specify a version number to identify the deployed version of your application in Datadog
+      // version: '1.0.0',
+      sampleRate: 100,
+      trackInteractions: true,
+      defaultPrivacyLevel: 'mask-user-input',
+    });
+    DD_RUM.startSessionReplayRecording();
+  });
+</script>
+<style>
+  .sidebar-header {
+    max-width: 213px;
+  }
+  #root > div > div[role='main'] > div {
+    box-shadow: none;
+  }
+
+  .light #root > div > div[role='main'] > div {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  .dark #root > div > div[role='main'] > div {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .light #storybook-explorer-tree a.sidebar-item[data-selected='true'] {
+    background-color: rgba(133, 221, 220, 0.1);
+    color: #007373;
+  }
+  .light #storybook-explorer-tree a.sidebar-item[data-selected='true'] svg {
+    color: #007373;
+  }
+  .light #storybook-explorer-tree a.sidebar-item svg {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .light #storybook-explorer-tree a.sidebar-item[data-selected='true']:hover {
+    background-color: rgba(133, 221, 220, 0.2);
+  }
+  .light #storybook-explorer-tree a.sidebar-item:hover,
+  .light a.sidebar-item:focus {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  #storybook-explorer-tree a.sidebar-item[data-selected='true'] {
+    background-color: rgba(4, 92, 92, 0.4);
+    color: #59cecd;
+  }
+  #storybook-explorer-tree a.sidebar-item[data-selected='true'] svg {
+    color: #59cecd;
+  }
+  #storybook-explorer-tree a.sidebar-item svg {
+    color: #ffffff;
+  }
+  #storybook-explorer-tree a.sidebar-item[data-selected='true']:hover {
+    background-color: rgba(4, 92, 92, 0.6);
+  }
+  #storybook-explorer-tree a.sidebar-item:hover,
+  .light a.sidebar-item:focus {
+    background-color: hsla(0, 0%, 100%, 0.04);
+  }
+  .sidebar-item#components-dialog--anatomy,
+  .sidebar-item#components-dialog--logout,
+  .sidebar-item#components-dialog--udf {
+    display: none;
+  }
+  .sidebar-item + a {
+    display: none;
+  }
+</style>
