@@ -1,0 +1,365 @@
+@font-face {
+  font-family: 'covalent-icons';
+  src: url('./covalent-icons.eot?x0fu5w');
+  src: url('./covalent-icons.eot?x0fu5w#iefix') format('embedded-opentype'),
+    url('./covalent-icons.ttf?x0fu5w') format('truetype'),
+    url('./covalent-icons.woff?x0fu5w') format('woff'),
+    url('./covalent-icons.svg?x0fu5w#covalent-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'covalent-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga=1';
+  -moz-font-feature-settings: 'liga';
+  -ms-font-feature-settings: 'liga' 1;
+  font-feature-settings: 'liga';
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-compute_cluster_group:before {
+  content: '\e968';
+}
+.icon-compute_cluster:before {
+  content: '\e969';
+}
+.icon-compute_profile_dark:before {
+  content: '\e96a';
+}
+.icon-compute_profile_light:before {
+  content: '\e96b';
+}
+.icon-primary_cluster:before {
+  content: '\e96c';
+}
+.icon-alias_arrow:before {
+  content: '\e918';
+}
+.icon-api:before {
+  content: '\e91a';
+}
+.icon-api_ondark:before {
+  content: '\e919';
+}
+.icon-application:before {
+  content: '\e91b';
+}
+.icon-bucket:before {
+  content: '\e91c';
+}
+.icon-cluster_analysis:before {
+  content: '\e900';
+}
+.icon-column:before {
+  content: '\e91d';
+}
+.icon-connected_identity:before {
+  content: '\e91e';
+}
+.icon-data_preparation:before {
+  content: '\e901';
+}
+.icon-data_source:before {
+  content: '\e91f';
+}
+.icon-database:before {
+  content: '\e926';
+}
+.icon-database_changed:before {
+  content: '\e920';
+}
+.icon-database_edit:before {
+  content: '\e921';
+}
+.icon-database_foreign:before {
+  content: '\e922';
+}
+.icon-database_lab:before {
+  content: '\e923';
+}
+.icon-database_search:before {
+  content: '\e924';
+}
+.icon-database_synced:before {
+  content: '\e925';
+}
+.icon-disconnect:before {
+  content: '\e927';
+}
+.icon-dock_right:before {
+  content: '\e928';
+}
+.icon-engine:before {
+  content: '\e929';
+}
+.icon-file:before {
+  content: '\e930';
+}
+.icon-file_changed:before {
+  content: '\e92a';
+}
+.icon-file_edit:before {
+  content: '\e92b';
+}
+.icon-file_foreign:before {
+  content: '\e92c';
+}
+.icon-file_lab:before {
+  content: '\e92d';
+}
+.icon-file_search:before {
+  content: '\e92e';
+}
+.icon-file_synced:before {
+  content: '\e92f';
+}
+.icon-formula:before {
+  content: '\e931';
+}
+.icon-lab:before {
+  content: '\e932';
+}
+.icon-loader_dots:before {
+  content: '\e903';
+}
+.icon-machine_learning_ondark:before {
+  content: '\e933';
+}
+.icon-machine_learning:before {
+  content: '\e904';
+}
+.icon-model:before {
+  content: '\e937';
+}
+.icon-model_ondark:before {
+  content: '\e936';
+}
+.icon-model_configuration:before {
+  content: '\e935';
+}
+.icon-model_configuration_ondark:before {
+  content: '\e934';
+}
+.icon-no_results:before {
+  content: '\e938';
+}
+.icon-node_branch:before {
+  content: '\e905';
+}
+.icon-node_merge:before {
+  content: '\e906';
+}
+.icon-node_notification:before {
+  content: '\e93a';
+}
+.icon-node_notification_ondark:before {
+  content: '\e939';
+}
+.icon-object_storage:before {
+  content: '\e93c';
+}
+.icon-object_storage_ondark:before {
+  content: '\e93b';
+}
+.icon-operations:before {
+  content: '\e93d';
+}
+.icon-operators_divide:before {
+  content: '\e93e';
+}
+.icon-operators_equals:before {
+  content: '\e907';
+}
+.icon-operators_greater_than:before {
+  content: '\e93f';
+}
+.icon-operators_greater_than_or_equal:before {
+  content: '\e908';
+}
+.icon-operators_less_than:before {
+  content: '\e940';
+}
+.icon-operators_less_than_or_equal:before {
+  content: '\e909';
+}
+.icon-operators_multiply:before {
+  content: '\e90a';
+}
+.icon-operators_not_equal:before {
+  content: '\e90b';
+}
+.icon-operators_parentheses:before {
+  content: '\e941';
+}
+.icon-operators_parenthesis_left:before {
+  content: '\e942';
+}
+.icon-operators_parenthesis_right:before {
+  content: '\e943';
+}
+.icon-operators_subtract:before {
+  content: '\e90c';
+}
+.icon-outbound_campaign_manager:before {
+  content: '\e90d';
+}
+.icon-product_analyst:before {
+  content: '\e944';
+}
+.icon-product_console:before {
+  content: '\e945';
+}
+.icon-product_editor:before {
+  content: '\e946';
+}
+.icon-resize_northeast:before {
+  content: '\e947';
+}
+.icon-resize_northwest:before {
+  content: '\e948';
+}
+.icon-resize_southeast:before {
+  content: '\e949';
+}
+.icon-resize_southwest:before {
+  content: '\e94a';
+}
+.icon-rules:before {
+  content: '\e950';
+}
+.icon-rules_ondark:before {
+  content: '\e94d';
+}
+.icon-rules_insert:before {
+  content: '\e94c';
+}
+.icon-rules_insert_ondark:before {
+  content: '\e94b';
+}
+.icon-rules_select:before {
+  content: '\e94f';
+}
+.icon-rules_select_ondark:before {
+  content: '\e94e';
+}
+.icon-script:before {
+  content: '\e952';
+}
+.icon-script_ondark:before {
+  content: '\e951';
+}
+.icon-script_macro:before {
+  content: '\e90f';
+}
+.icon-script_macro_ondark:before {
+  content: '\e90e';
+}
+.icon-script_sql:before {
+  content: '\e911';
+}
+.icon-script_sql_ondark:before {
+  content: '\e910';
+}
+.icon-script_stored_procedure:before {
+  content: '\e913';
+}
+.icon-script_stored_procedure_ondark:before {
+  content: '\e912';
+}
+.icon-segmentation:before {
+  content: '\e953';
+}
+.icon-server:before {
+  content: '\e95a';
+}
+.icon-server_changed:before {
+  content: '\e954';
+}
+.icon-server_edit:before {
+  content: '\e955';
+}
+.icon-server_foreign:before {
+  content: '\e956';
+}
+.icon-server_lab:before {
+  content: '\e957';
+}
+.icon-server_search:before {
+  content: '\e958';
+}
+.icon-server_synced:before {
+  content: '\e959';
+}
+.icon-sftp:before {
+  content: '\e95c';
+}
+.icon-sftp_ondark:before {
+  content: '\e95b';
+}
+.icon-table:before {
+  content: '\e963';
+}
+.icon-table_changed:before {
+  content: '\e95d';
+}
+.icon-table_edit:before {
+  content: '\e95e';
+}
+.icon-table_foreign:before {
+  content: '\e95f';
+}
+.icon-table_lab:before {
+  content: '\e960';
+}
+.icon-table_search:before {
+  content: '\e961';
+}
+.icon-table_synced:before {
+  content: '\e962';
+}
+.icon-teradata:before {
+  content: '\e964';
+}
+.icon-teradata_nocircle:before {
+  content: '\e902';
+}
+.icon-text_analysis:before {
+  content: '\e965';
+}
+.icon-undock:before {
+  content: '\e966';
+}
+.icon-variable:before {
+  content: '\e915';
+}
+.icon-variable_ondark:before {
+  content: '\e914';
+}
+.icon-view_sankey:before {
+  content: '\e916';
+}
+.icon-wand:before {
+  content: '\e967';
+}
+.icon-workflow:before {
+  content: '\e917';
+}
