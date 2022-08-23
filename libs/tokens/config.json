@@ -1,0 +1,58 @@
+{
+  "source": ["src/**/*.json"],
+  "platforms": {
+    "json": {
+      "transformGroup": "assets",
+      "prefix": "td",
+      "buildPath": "build/json/",
+      "files": [
+        {
+          "destination": "variables.json",
+          "format": "json"
+        }
+      ]
+    },
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "build/scss/",
+      "files": [
+        {
+          "destination": "_variables.scss",
+          "format": "scss/map-deep"
+        }
+      ]
+    },
+    "css": {
+      "transformGroup": "css",
+      "prefix": "td",
+      "buildPath": "build/css/",
+      "files": [
+        {
+          "destination": "variables.css",
+          "format": "css/variables"
+        }
+      ]
+    },
+    "js": {
+      "transformGroup": "js",
+      "transforms": [
+        "attribute/cti",
+        "name/cti/pascal",
+        "size/rem",
+        "color/css"
+      ],
+      "prefix": "td",
+      "buildPath": "build/js/",
+      "files": [
+        {
+          "destination": "variables.js",
+          "format": "javascript/es6"
+        },
+        {
+          "destination": "variables.d.ts",
+          "format": "typescript/es6-declarations"
+        }
+      ]
+    }
+  }
+}
