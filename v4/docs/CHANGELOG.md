@@ -1,3 +1,9 @@
+# [4.5.0](https://github.com/Teradata/covalent/compare/v4.4.0...v4.5.0) (2022-08-23)
+
+### Features
+
+- move icons and tokens lib into this repo ([ff66868](https://github.com/Teradata/covalent/commit/ff668687a906dc488ecb528437e9dc481e4d49a5))
+
 # [4.4.0](https://github.com/Teradata/covalent/compare/v4.3.0...v4.4.0) (2022-08-17)
 
 ### Bug Fixes
