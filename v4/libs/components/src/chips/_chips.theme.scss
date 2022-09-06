@@ -1,0 +1,7 @@
+//@use '@material/chips';
+
+@mixin chips-theme($theme) {
+  $icon: map-get($theme, text-primary-on-light);
+
+  // @include chips.icon-color($icon);
+}

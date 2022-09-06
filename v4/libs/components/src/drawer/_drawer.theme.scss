@@ -1,0 +1,20 @@
+@use '@material/drawer';
+
+@mixin drawer-theme($theme) {
+  $border: map-get($theme, divider);
+  $text: map-get($theme, text-primary-on-background);
+  $text-secondary: map-get($theme, text-secondary-on-background);
+  $icon: map-get($theme, text-icon-on-background);
+
+  mdc-drawer {
+    border-color: $border;
+  }
+
+  .mdc-drawer {
+    @include drawer.title-ink-color($text);
+    @include drawer.subtitle-ink-color($text-secondary);
+    @include drawer.item-icon-ink-color($icon);
+    @include drawer.border-color($border);
+    @include drawer.divider-color($border);
+  }
+}

@@ -4,7 +4,6 @@ import {
   IGuidedTour,
   ITourEvent,
 } from '@covalent/guided-tour';
-import { Router } from '@angular/router';
 @Component({
   selector: 'guided-tour-demo-go-back-navigation',
   styleUrls: ['./guided-tour-demo-go-back-navigation.component.scss'],

@@ -7,7 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
-import { CovalentScatterEchartsModule } from '@covalent/echarts/scatter';
 
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { GraphDemoBasicComponent } from './graph-demo-basic/graph-demo-basic.component';

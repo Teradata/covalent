@@ -1,0 +1,39 @@
+@use '@material/textfield';
+@use '@material/textfield/helper-text';
+@use '@material/textfield/icon';
+
+@mixin text-field-theme($theme) {
+  $surface-canvas: map-get($theme, surface-canvas);
+  $text-secondary: map-get($theme, text-secondary-on-background);
+  $divider: map-get($theme, divider);
+  $primary-highlight-hover: map-get($theme, primary);
+  $border: map-get($theme, divider);
+  $icon: map-get($theme, text-icon-on-background);
+
+  --mdc-text-field-label-ink-color: #{$text-secondary};
+  --mdc-text-field-ink-color: #{$text-secondary};
+  --mdc-text-field-fill-color: #{$surface-canvas};
+  --mdc-text-field-idle-line-color: #{$divider};
+  --mdc-text-field-hover-line-color: #{$icon};
+  --mdc-text-field-outlined-idle-border-color: #{$divider};
+  --mdc-text-field-outlined-hover-border-color: #{$icon};
+
+  .mdc-text-field {
+    @include textfield.ink-color($text-secondary);
+    @include textfield.label-color($text-secondary);
+    @include textfield.fill-color($surface-canvas);
+    @include textfield.outline-color($divider);
+    @include textfield.bottom-line-color($divider);
+    @include textfield.hover-bottom-line-color($icon);
+    @include textfield.line-ripple-color($primary-highlight-hover);
+    @include textfield.focused-outline-color($primary-highlight-hover);
+    @include textfield.hover-outline-color($icon);
+    @include helper-text.helper-text-color($text-secondary);
+    @include icon.leading-icon-color($icon);
+    @include icon.trailing-icon-color($icon);
+  }
+
+  .mdc-text-field--outlined {
+    @include textfield.fill-color(transparent);
+  }
+}

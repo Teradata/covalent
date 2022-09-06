@@ -1,0 +1,86 @@
+<!-- button-overview.mdx -->
+
+import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Components/List/Overview"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  .docs-story > div:first-of-type .innerZoomElementWrapper > div {
+      border: none !important;
+  }
+  .docs-story mwc-list {
+    margin: 0 auto;
+    max-width: 30rem;
+  }
+`}</style>
+
+# Lists
+
+## Anatomy
+
+A list item may contain:
+
+- 1, 2 or 3 lines of text
+- A leading icon or avatar image
+- A trailing icon
+
+<Canvas>
+  <td-list>
+    <td-list-item graphic="avatar" hasMeta twoline>
+      <span>Two-line list item</span>
+      <span slot="secondary">Secondary line</span>
+      <td-icon slot="graphic">folder</td-icon>
+      <td-icon slot="meta">info</td-icon>
+    </td-list-item>
+  </td-list>
+</Canvas>
+
+## Displaying status
+
+Show as a byline in your list item. Do not use the main icon or avatar - this is reserved for showing object type.
+
+<Canvas>
+  <td-list>
+    <td-list-item twoline graphic="avatar">
+      <span>User Name</span>
+      <span slot="secondary" class="status-caution">
+        <td-icon>warning</td-icon>
+        Warning
+      </span>
+      <td-icon slot="graphic" class="inverted">
+        tag_faces
+      </td-icon>
+    </td-list-item>
+    <li divider role="separator"></li>
+    <td-list-item twoline graphic="avatar">
+      <span>User Name</span>
+      <span slot="secondary" class="status-negative">
+        <td-icon>error</td-icon>
+        Error
+      </span>
+      <td-icon slot="graphic" class="inverted">
+        tag_faces
+      </td-icon>
+    </td-list-item>
+    <li divider role="separator"></li>
+    <td-list-item twoline graphic="avatar">
+      <span>User Name</span>
+      <span slot="secondary" class="status-positive">
+        <td-icon>check</td-icon>
+        Successful
+      </span>
+      <td-icon slot="graphic" class="inverted">
+        tag_faces
+      </td-icon>
+    </td-list-item>
+    <li divider role="separator"></li>
+  </td-list>
+</Canvas>

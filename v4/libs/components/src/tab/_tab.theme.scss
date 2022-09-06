@@ -1,0 +1,11 @@
+@mixin tab-theme($theme) {
+  // support for web component
+  --mdc-tab-text-label-color-default: var(
+    --mdc-theme-text-primary-on-background
+  );
+  --mdc-tab-color-default: var(--mdc-theme-text-icon-on-background);
+
+  .mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
+    color: var(--mdc-theme-text-primary-on-background);
+  }
+}
