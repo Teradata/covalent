@@ -1,0 +1,6 @@
+{
+  "name": "@covalent/components",
+  "version": "1.0.13",
+  "description": "a catalog of material components for covalent",
+  "main": "index.js"
+}

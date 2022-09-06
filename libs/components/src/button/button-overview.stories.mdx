@@ -1,0 +1,167 @@
+<!-- button-overview.stories.mdx -->
+
+import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Components/Button/Overview"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  td-button {
+    margin-right: 8px;
+  }
+  .docs-story div:first-of-type {
+    text-align: center;
+  }
+  #story--example-button--outlined,
+  #story--example-button--text {
+    margin-right: 8px;
+  }
+  td-button[outlined].destructive {
+    margin-right: 4rem;
+  }
+`}</style>
+
+# Buttons
+
+## Basics
+
+- Each page can have only one primary action button
+- It is common and okay for some pages to have no primary action
+- Include an icon in your button only in specific circumstances
+
+<Canvas>
+  <td-button id="text-button" text label="Text button"></td-button>
+  <td-button id="outlined-button" outlined label="Outlined button"></td-button>
+  <td-button id="contained-button" raised label="Contained button"></td-button>
+</Canvas>
+
+---
+
+## Anatomy
+
+Buttons contain a text label and optional icon.
+
+<Canvas>
+  <form>
+    <td-button id="no-icon" raised label="No icon"></td-button>
+    <td-button
+      id="left-icon"
+      raised
+      label="Left icon"
+      icon="sailing"
+    ></td-button>
+    <td-button
+      id="right-icon"
+      raised
+      label="Right icon"
+      icon="sailing"
+      trailingIcon="true"
+    ></td-button>
+  </form>
+</Canvas>
+
+### Spacing
+
+Separate all buttons with an 8px gap.
+
+<Canvas>
+  <form>
+    <td-button outlined label="Button"></td-button>
+    <td-button outlined label="Button"></td-button>
+    <td-button outlined label="Button"></td-button>
+  </form>
+</Canvas>
+
+---
+
+## Placement
+
+Place the primary action to the right, followed by secondary actions.
+
+#### Sequence
+
+1.  Primary action button (if any)
+
+    Many pages will not have primary actions. This is OK.
+
+2.  Secondary action buttons
+
+3.  Lesser functions as icon buttons
+
+<Canvas>
+  <form>
+    <td-button outlined label="Button"></td-button>
+    <td-button outlined label="Button"></td-button>
+    <td-button raised label="Primary" class="primary accent"></td-button>
+  </form>
+</Canvas>
+
+### In footers
+
+In footers (such as card, dialog, page, or sheet footers) align all buttons to the right, but place destructive actions to the left to minimize accidental clicks.
+
+<Canvas>
+  <form>
+    <td-button outlined label="Delete" class="destructive"></td-button>
+    <td-button outlined label="Button"></td-button>
+    <td-button raised label="Primary" class="primary accent"></td-button>
+  </form>
+</Canvas>
+
+---
+
+## Styling
+
+Use “default” outline buttons for everything except the primary action (if any).
+
+<Canvas>
+  <form>
+    <td-button outlined label="Button"></td-button>
+    <td-button outlined label="Button"></td-button>
+  </form>
+</Canvas>
+
+### Primary action
+
+If the page has a primary action, use an “accent” contained button.
+
+<Canvas>
+  <form>
+    <td-button outlined label="Button"></td-button>
+    <td-button outlined label="Button"></td-button>
+    <td-button raised label="Primary" class="primary accent"></td-button>
+  </form>
+</Canvas>
+
+### Destructive action
+
+#### When the primary action is destructive
+
+If the primary action is a destructive one (for example, it deletes some data), then it uses the negative color.
+
+<Canvas>
+  <form>
+    <td-button outlined label="Button"></td-button>
+    <td-button outlined label="Button"></td-button>
+    <td-button raised label="Delete" class="destructive primary"></td-button>
+  </form>
+</Canvas>
+
+#### When the destructive action is not the primary action
+
+If the destructive action is not the primary action, do not use the negative color. This calls extra attention to it, and we want the focus to remain on the primary action.
+
+<Canvas>
+  <form>
+    <td-button outlined label="Delete" class="destructive"></td-button>
+    <td-button outlined label="Button"></td-button>
+    <td-button raised label="Primary" class="primary accent"></td-button>
+  </form>
+</Canvas>

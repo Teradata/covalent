@@ -6,7 +6,6 @@ import {
 } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 import { TdTextEditorComponent } from './text-editor.component';
-import { By } from '@angular/platform-browser';
 
 describe('Component: TextEditor', () => {
   beforeEach(

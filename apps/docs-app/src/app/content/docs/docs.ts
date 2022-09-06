@@ -7,7 +7,8 @@ export const docsRouteCategories: any = [
   // { name: 'Other', nested: false, rootRoute: 'other' },
 ];
 
-const [gettingStarted, theming, migration, other] = docsRouteCategories;
+const [gettingStarted, theming] = docsRouteCategories;
+// const [gettingStarted, theming, migration, other] = docsRouteCategories;
 
 export const docsContentDetails: any = [
   {

@@ -1,5 +1,6 @@
 #!/bin/bash
 version=$1
+storybook_dir="docs"
 
 git remote set-url origin https://$GITHUB_TOKEN@github.com/Teradata/covalent.git
 
@@ -12,13 +13,19 @@ rm -rf ./$version
 mkdir $version
 cp -r dist/apps/docs-app/* $version
 
+echo "Create or replace storybook dir"
+rm -rf ./$storybook_dir
+mkdir $storybook_dir
+cp -r ./storybook-static/ ./$storybook_dir/
+
 echo "Configuring GIT User"
 git config user.name github-actions
 git config user.email github-actions@github.com
 
 echo 'Tracking files'
 git add -A $version
+git add -A $storybook_dir
 echo 'Commiting files'
-git commit --no-verify -a -m "feat(): gh-pages update for $version"
+git commit --no-verify -a -m "feat(): gh-pages update for $version; update storybook pages"
 echo 'Pushing files into gh-pages branch'
 git push origin gh-pages --force

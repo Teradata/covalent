@@ -3,14 +3,7 @@
  * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
  */
 
-import {
-  Component,
-  ElementRef,
-  Inject,
-  Renderer2,
-  Output,
-  OnInit,
-} from '@angular/core';
+import { Component, Inject, Renderer2, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { Dir } from '@angular/cdk/bidi';

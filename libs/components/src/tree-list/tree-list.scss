@@ -1,0 +1,12 @@
+@use '@material/typography/mdc-typography';
+
+.container {
+  overflow-x: auto;
+}
+.content {
+  color: var(--mdc-theme-text-primary-on-background);
+  // Inline-block width is based on children.
+  display: inline-block;
+  // Set the min-width to 100% so the menu items always extend edge to edge.
+  min-width: 100%;
+}
