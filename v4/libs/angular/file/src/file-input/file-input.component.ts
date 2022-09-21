@@ -12,10 +12,16 @@ import {
   ViewContainerRef,
   ChangeDetectorRef,
   forwardRef,
+  OnInit,
+  OnDestroy,
+  NgZone,
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
+import { ENTER } from '@angular/cdk/keycodes';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { fromEvent, merge, Subject } from 'rxjs';
+import { filter, takeUntil } from 'rxjs/operators';
 import {
   ICanDisable,
   IControlValueAccessor,
@@ -60,12 +66,17 @@ export const _TdFileInputMixinBase = mixinControlValueAccessor(
 })
 export class TdFileInputComponent
   extends _TdFileInputMixinBase
-  implements IControlValueAccessor, ICanDisable
+  implements OnInit, OnDestroy, IControlValueAccessor, ICanDisable
 {
   private _multiple = false;
 
+  /** The native `<button class="td-file-input"></button>` element */
+  @ViewChild('fileInputButton', { static: true, read: ElementRef })
+  _inputButton!: ElementRef<HTMLElement>;
+
   /** The native `<input type="file"> element */
-  @ViewChild('fileInput', { static: true }) _inputElement!: ElementRef;
+  @ViewChild('fileInput', { static: true })
+  _inputElement!: ElementRef<HTMLInputElement>;
   get inputElement(): HTMLInputElement {
     return this._inputElement.nativeElement;
   }
@@ -104,11 +115,31 @@ export class TdFileInputComponent
     File | FileList
   >();
 
+  private _destroy$ = new Subject<void>();
+
   constructor(
+    private _ngZone: NgZone,
     private _renderer: Renderer2,
     _changeDetectorRef: ChangeDetectorRef
   ) {
     super(_changeDetectorRef);
+  }
+
+  ngOnInit(): void {
+    this._ngZone.runOutsideAngular(() => {
+      merge(
+        fromEvent(this._inputButton.nativeElement, 'click'),
+        fromEvent<KeyboardEvent>(this._inputButton.nativeElement, 'keyup').pipe(
+          filter((event) => event.keyCode === ENTER)
+        )
+      )
+        .pipe(takeUntil(this._destroy$))
+        .subscribe(() => this._inputElement.nativeElement.click());
+    });
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
   }
 
   /**
