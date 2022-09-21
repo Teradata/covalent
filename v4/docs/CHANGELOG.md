@@ -1,3 +1,9 @@
+# [4.6.0](https://github.com/Teradata/covalent/compare/v4.5.0...v4.6.0) (2022-09-06)
+
+### Features
+
+- move components lib into this repo ([d7e6896](https://github.com/Teradata/covalent/commit/d7e689654f3efb457b2a1c54ae845b64333cd99b))
+
 # [4.5.0](https://github.com/Teradata/covalent/compare/v4.4.0...v4.5.0) (2022-08-23)
 
 ### Features
