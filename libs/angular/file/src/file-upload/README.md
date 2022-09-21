@@ -13,7 +13,7 @@ Example for usage:
   defaultColor="accent"
   activeColor="warn"
   cancelColor="primary"
-  (select)="selectEvent($event)"
+  (selectFile)="selectEvent($event)"
   (upload)="uploadEvent($event)"
   (cancel)="cancelEvent()"
   accept=".ext,.anotherExt"
@@ -77,7 +77,7 @@ export class Demo {
 
 - upload: function($event)
   - Event emitted when upload button is clicked. Emits a [File or FileList] object.
-- select: function($event)
+- selectFile: function($event)
   - Event emitted when a file is selected. Emits a [File or FileList] object.
 - cancel: function
   - Event emitted when cancel button is clicked.

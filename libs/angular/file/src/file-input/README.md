@@ -12,7 +12,7 @@ Example for usage:
 <td-file-input
   [(ngModel)]="files"
   color="primary"
-  (select)="selectEvent($event)"
+  (selectFile)="selectEvent($event)"
   accept=".ext,.anotherExt"
   [disabled]="disabled"
   multiple
@@ -52,7 +52,7 @@ export class Demo {
 
 #### Events
 
-- select: function($event)
+- selectFile: function($event)
   - Event emitted when a file is selected.
   - Emits a [File or FileList] object.
 
