@@ -17,33 +17,25 @@ describe('Directive: FileDrop', () => {
         declarations: [TdFileDropBasicTestComponent],
         imports: [CovalentFileModule],
       });
-      TestBed.compileComponents();
     })
   );
 
-  it(
-    'should add/remove class on dragenter and dragleave',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          directive.triggerEventHandler('dragenter', new Event('dragenter'));
-          expect(directive.classes['drop-zone']).toBeTruthy();
-          directive.triggerEventHandler('dragleave', new Event('dragleave'));
-          expect(directive.classes['drop-zone']).toBeFalsy();
-        });
-      })
-    )
-  );
+  it('should add/remove class on dragenter and dragleave', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.multiple = false;
+    fixture.detectChanges();
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    directive.triggerEventHandler('dragenter', new Event('dragenter'));
+    expect(directive.classes['drop-zone']).toBeTruthy();
+    directive.triggerEventHandler('dragleave', new Event('dragleave'));
+    expect(directive.classes['drop-zone']).toBeFalsy();
+  });
 
   it('should disable element and not add class on dragenter', () => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(
@@ -92,220 +84,188 @@ describe('Directive: FileDrop', () => {
     expect(dragleaveEvent.stopPropagation).toHaveBeenCalled();
   });
 
-  it(
-    'should throw dragover event and add copy dropEffect for a single file',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          const event: any = <DragEvent>new Event('dragover');
-          event.dataTransfer = {
-            dropEffect: 'none',
-            types: ['Files'],
-            items: ['file-name.txt'],
-          };
-          directive.triggerEventHandler('dragover', event);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(event.dataTransfer.dropEffect).toBe('copy');
-          });
-        });
-      })
-    )
-  );
+  it('should throw dragover event and add copy dropEffect for a single file', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.multiple = false;
+    fixture.detectChanges();
 
-  it(
-    'should throw dragover event and not add copy dropEffect for a multiple file',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          const event: any = <DragEvent>new Event('dragover');
-          event.dataTransfer = {
-            dropEffect: 'none',
-            types: ['Files'],
-            items: ['file-name.txt', 'file-name1.txt'],
-          };
-          directive.triggerEventHandler('dragover', event);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(event.dataTransfer.dropEffect).toBe('none');
-          });
-        });
-      })
-    )
-  );
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    const event: any = <DragEvent>new Event('dragover');
+    event.dataTransfer = {
+      dropEffect: 'none',
+      types: ['Files'],
+      items: ['file-name.txt'],
+    };
+    directive.triggerEventHandler('dragover', event);
+    expect(event.dataTransfer.dropEffect).toBe('copy');
+  });
 
-  it(
-    'should throw dragover event and add copy dropEffect for a multiple file',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = true;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          const event: any = <DragEvent>new Event('dragover');
-          event.dataTransfer = {
-            dropEffect: 'none',
-            types: ['Files'],
-            items: ['file-name.txt', 'file-name1.txt'],
-          };
-          directive.triggerEventHandler('dragover', event);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(event.dataTransfer.dropEffect).toBe('copy');
-          });
-        });
-      })
-    )
-  );
+  it('should throw dragover event and not add copy dropEffect for a multiple file', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.multiple = false;
+    fixture.detectChanges();
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    const event: any = <DragEvent>new Event('dragover');
+    event.dataTransfer = {
+      dropEffect: 'none',
+      types: ['Files'],
+      items: ['file-name.txt', 'file-name1.txt'],
+    };
+    directive.triggerEventHandler('dragover', event);
+    fixture.detectChanges();
+    expect(event.dataTransfer.dropEffect).toBe('none');
+  });
 
-  it(
-    'should throw dragover event and not add copy dropEffect on disabled state',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
-        component.disabled = true;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          const event: any = <DragEvent>new Event('dragover');
-          event.dataTransfer = {
-            dropEffect: 'none',
-            types: ['Files'],
-            items: ['file-name.txt'],
-          };
-          directive.triggerEventHandler('dragover', event);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(event.dataTransfer.dropEffect).toBe('none');
-          });
-        });
-      })
-    )
-  );
+  it('should throw dragover event and add copy dropEffect for a multiple file', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.multiple = true;
+    fixture.detectChanges();
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    const event: any = <DragEvent>new Event('dragover');
+    event.dataTransfer = {
+      dropEffect: 'none',
+      types: ['Files'],
+      items: ['file-name.txt', 'file-name1.txt'],
+    };
+    directive.triggerEventHandler('dragover', event);
+    fixture.detectChanges();
+    expect(event.dataTransfer.dropEffect).toBe('copy');
+  });
 
-  it(
-    'should throw ondrop event for a single file',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
-        expect(component.files).toBeFalsy();
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          const event: any = <DragEvent>new Event('drop');
-          event.dataTransfer = {
-            files: [{}],
-          };
-          directive.triggerEventHandler('drop', event);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(component.files).toBeTruthy();
-          });
-        });
-      })
-    )
-  );
+  it('should throw dragover event and not add copy dropEffect on disabled state', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.multiple = false;
+    component.disabled = true;
+    fixture.detectChanges();
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    const event: any = <DragEvent>new Event('dragover');
+    event.dataTransfer = {
+      dropEffect: 'none',
+      types: ['Files'],
+      items: ['file-name.txt'],
+    };
+    directive.triggerEventHandler('dragover', event);
+    expect(event.dataTransfer.dropEffect).toBe('none');
+  });
 
-  it(
-    'should throw ondrop event for a multiple files',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = true;
-        expect(component.files).toBeFalsy();
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          const event: any = <DragEvent>new Event('drop');
-          event.dataTransfer = {
-            files: [{}, {}],
-          };
-          directive.triggerEventHandler('drop', event);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect((<FileList>component.files).length).toBe(2);
-          });
-        });
-      })
-    )
-  );
+  it('should not run change detection on dragover event', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.multiple = false;
+    fixture.detectChanges();
 
-  it(
-    'should not throw ondrop event for disabled state',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileDropBasicTestComponent
-        );
-        const component: TdFileDropBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.disabled = true;
-        expect(component.files).toBeFalsy();
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileDropDirective)
-          );
-          const event: any = <DragEvent>new Event('drop');
-          event.dataTransfer = {
-            files: [{}],
-          };
-          directive.triggerEventHandler('drop', event);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(component.files).toBeFalsy();
-          });
-        });
-      })
-    )
-  );
+    const appRef: ApplicationRef = TestBed.inject(ApplicationRef);
+    jest.spyOn(appRef, 'tick');
+
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    const event: any = <DragEvent>new Event('dragover');
+    jest.spyOn(event, 'preventDefault');
+    jest.spyOn(event, 'stopPropagation');
+    event.dataTransfer = {
+      dropEffect: 'none',
+      types: ['Files'],
+      items: ['file-name.txt'],
+    };
+    directive.triggerEventHandler('dragover', event);
+
+    expect(appRef.tick).not.toHaveBeenCalled();
+    expect(event.preventDefault).toHaveBeenCalled();
+    expect(event.stopPropagation).toHaveBeenCalled();
+    expect(event.dataTransfer.dropEffect).toBe('copy');
+  });
+
+  it('should throw ondrop event for a single file', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.multiple = false;
+    expect(component.files).toBeFalsy();
+    fixture.detectChanges();
+
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    const event: any = <DragEvent>new Event('drop');
+    event.dataTransfer = {
+      files: [{}],
+    };
+    directive.triggerEventHandler('drop', event);
+    fixture.detectChanges();
+    expect(component.files).toBeTruthy();
+  });
+
+  it('should throw ondrop event for a multiple files', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.multiple = true;
+    expect(component.files).toBeFalsy();
+    fixture.detectChanges();
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    const event: any = <DragEvent>new Event('drop');
+    event.dataTransfer = {
+      files: [{}, {}],
+    };
+    directive.triggerEventHandler('drop', event);
+    fixture.detectChanges();
+    expect((<FileList>component.files).length).toBe(2);
+  });
+
+  it('should not throw ondrop event for disabled state', () => {
+    const fixture: ComponentFixture<any> = TestBed.createComponent(
+      TdFileDropBasicTestComponent
+    );
+    const component: TdFileDropBasicTestComponent =
+      fixture.debugElement.componentInstance;
+    component.disabled = true;
+    expect(component.files).toBeFalsy();
+    fixture.detectChanges();
+    const directive: DebugElement = fixture.debugElement.query(
+      By.directive(TdFileDropDirective)
+    );
+    const event: any = <DragEvent>new Event('drop');
+    event.dataTransfer = {
+      files: [{}],
+    };
+    directive.triggerEventHandler('drop', event);
+    fixture.detectChanges();
+    expect(component.files).toBeFalsy();
+  });
 });
 
 @Component({
