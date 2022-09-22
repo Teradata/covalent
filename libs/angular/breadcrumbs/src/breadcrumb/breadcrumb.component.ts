@@ -1,3 +1,4 @@
+import { isPlatformServer } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -5,7 +6,14 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  ViewChild,
+  NgZone,
+  OnDestroy,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
+import { EMPTY, fromEvent, Observable, Subject } from 'rxjs';
+import { switchMap, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'td-breadcrumb, a[td-breadcrumb]',
@@ -13,7 +21,7 @@ import {
   templateUrl: './breadcrumb.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdBreadcrumbComponent implements AfterViewInit {
+export class TdBreadcrumbComponent implements AfterViewInit, OnDestroy {
   private _displayCrumb = true;
   private _width = 0;
   private _displayIcon = true;
@@ -21,6 +29,11 @@ export class TdBreadcrumbComponent implements AfterViewInit {
 
   @HostBinding('class.mat-button') matButtonClass = true;
   @HostBinding('class.td-breadcrumb') tdBreadCrumbClass = true;
+
+  @ViewChild('icon', { read: ElementRef })
+  set icon(icon: ElementRef<HTMLElement> | undefined) {
+    this._icon$.next(icon?.nativeElement);
+  }
 
   // Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'
   public get separatorIcon(): string {
@@ -75,10 +88,23 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     return this._displayCrumb ? undefined : 'none';
   }
 
+  /**
+   * This is used to notify the subscriber that the `mat-icon` has been rendered
+   * since it's wrapped with `ngIf` which means it's always rendered asynchronously.
+   * It also might be toggled within the DOM (added and removed multiple times).
+   */
+  private _icon$ = new Subject<HTMLElement | undefined>();
+
+  private _destroy$ = new Subject<void>();
+
   constructor(
-    private _elementRef: ElementRef,
+    @Inject(PLATFORM_ID) private _platformId: string,
+    private _ngZone: NgZone,
+    private _elementRef: ElementRef<HTMLElement>,
     private _changeDetectorRef: ChangeDetectorRef
-  ) {}
+  ) {
+    this._setupIconListener();
+  }
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element
@@ -90,11 +116,40 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     });
   }
 
-  /**
-   * Stop click propagation when clicking on icon
-   */
-  _handleIconClick(event: Event): void {
-    event.stopPropagation();
-    event.preventDefault();
+  ngOnDestroy(): void {
+    this._destroy$.next();
+  }
+
+  private _setupIconListener(): void {
+    // There's no reason to handle the event listener when this code is
+    // running on the Node.js side.
+    if (isPlatformServer(this._platformId)) {
+      return;
+    }
+
+    this._icon$
+      .pipe(
+        switchMap((icon) =>
+          icon
+            ? // Note: this is required to subscribe within the root zone since `addEventListener`
+              // remembers the `Zone.current` when being called. There's no sense to just call `fromEvent`
+              // within the root zone since `addEventListener` is called only when the `fromEvent` is
+              // subscribed.
+              new Observable<Event>((subscriber) =>
+                this._ngZone.runOutsideAngular(() =>
+                  fromEvent(icon, 'click').subscribe(subscriber)
+                )
+              )
+            : // If the `mat-icon` is removed from the DOM then remove existing
+              // event listeners.
+              EMPTY
+        ),
+        takeUntil(this._destroy$)
+      )
+      .subscribe((event) => {
+        // Stop click propagation when clicking on icon
+        event.stopPropagation();
+        event.preventDefault();
+      });
   }
 }
