@@ -11,11 +11,7 @@ import { SubPageMode, CovalentSideSheet } from '@covalent/core/side-sheet';
     </div>
 
     <div style="display:flex; justify-content:space-between; padding-top:50px">
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="openSideSheet('pushed')"
-      >
+      <button mat-raised-button color="primary" (click)="openSideSheet()">
         Open pushed
       </button>
     </div>
@@ -24,32 +20,31 @@ import { SubPageMode, CovalentSideSheet } from '@covalent/core/side-sheet';
       <button
         mat-raised-button
         color="primary"
-        (click)="openSideSheet('shifted')"
+        (click)="openSideSheet(SubPageOpenMode.shifted)"
       >
         Open shifted
       </button>
     </div>
 
     <div style="display:flex; justify-content:space-between; padding-top:50px">
-      <button mat-raised-button color="primary" (click)="openSideSheet('none')">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openSideSheet(SubPageOpenMode.none)"
+      >
         Open none
       </button>
     </div>
   `,
 })
 export class SideSheetDemoExampleComponent {
+  SubPageOpenMode = SubPageMode;
   constructor(private sideSheet: CovalentSideSheet) {}
 
-  openSideSheet(mode?: string): void {
-    let subPageMode: SubPageMode = SubPageMode.pushed;
-    if (mode === 'shifted') {
-      subPageMode = SubPageMode.shifted;
-    } else if (mode === 'none') {
-      subPageMode = SubPageMode.none;
-    }
+  openSideSheet(mode: SubPageMode = SubPageMode.pushed): void {
     this.sideSheet.open(SideSheetDemoExampleLayeredComponent, {
       minWidth: '400px',
-      subPageMode: subPageMode,
+      subPageMode: mode,
     });
   }
 }
