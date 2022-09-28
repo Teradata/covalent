@@ -22,7 +22,7 @@
     "release:prepare": "npx nx run-many --target=build --all && npx nx run-many --target=build-scss --all && node ./scripts/version-placeholder ./dist",
     "style-dictionary": "cd libs/tokens && style-dictionary build",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook -o storybook",
+    "storybook:build": "build-storybook",
     "chromatic": "npx chromatic"
   },
   "dependencies": {
