@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 17 Aug 2022 18:24:44 GMT
+ * Generated on Wed, 28 Sep 2022 18:22:21 GMT
  */
 
 export const TdLightPrimary: string;
@@ -15,12 +15,17 @@ export const TdLightOnBackground: string;
 export const TdLightOnSurface: string;
 export const TdLightOnError: string;
 export const TdLightDivider: string;
+export const TdLightEmphasis: string;
+export const TdLightAccent: string;
 export const TdLightBackground: string;
 export const TdLightSurface: string;
 export const TdLightSurfaceCanvas: string;
 export const TdLightSurfacePrimary: string;
 export const TdLightSurfacePrimaryHighlight: string;
 export const TdLightSurfacePrimaryHighlightHover: string;
+export const TdLightSurfaceAccent: string;
+export const TdLightSurfaceAccentHighlight: string;
+export const TdLightSurfaceAccentHighlightHover: string;
 export const TdLightSurfaceSecondary: string;
 export const TdLightSurfaceSecondaryHighlight: string;
 export const TdLightSurfaceSecondaryHighlightHover: string;
@@ -36,6 +41,9 @@ export const TdLightSurfaceNegativeHighlightHover: string;
 export const TdLightSurfaceNeutral: string;
 export const TdLightSurfaceNeutralHighlight: string;
 export const TdLightSurfaceNeutralHighlightHover: string;
+export const TdLightSurfaceEmphasis: string;
+export const TdLightSurfaceEmphasisHighlight: string;
+export const TdLightSurfaceEmphasisHighlightHover: string;
 export const TdLightTextPrimaryOnBackground: string;
 export const TdLightTextSecondaryOnBackground: string;
 export const TdLightTextHintOnBackground: string;
@@ -64,12 +72,17 @@ export const TdDarkOnBackground: string;
 export const TdDarkOnSurface: string;
 export const TdDarkOnError: string;
 export const TdDarkDivider: string;
+export const TdDarkEmphasis: string;
+export const TdDarkAccent: string;
 export const TdDarkBackground: string;
 export const TdDarkSurface: string;
 export const TdDarkSurfaceCanvas: string;
 export const TdDarkSurfacePrimary: string;
 export const TdDarkSurfacePrimaryHighlight: string;
 export const TdDarkSurfacePrimaryHighlightHover: string;
+export const TdDarkSurfaceAccent: string;
+export const TdDarkSurfaceAccentHighlight: string;
+export const TdDarkSurfaceAccentHighlightHover: string;
 export const TdDarkSurfaceSecondary: string;
 export const TdDarkSurfaceSecondaryHighlight: string;
 export const TdDarkSurfaceSecondaryHighlightHover: string;
@@ -85,6 +98,9 @@ export const TdDarkSurfaceNegativeHighlightHover: string;
 export const TdDarkSurfaceNeutral: string;
 export const TdDarkSurfaceNeutralHighlight: string;
 export const TdDarkSurfaceNeutralHighlightHover: string;
+export const TdDarkSurfaceEmphasis: string;
+export const TdDarkSurfaceEmphasisHighlight: string;
+export const TdDarkSurfaceEmphasisHighlightHover: string;
 export const TdDarkTextPrimaryOnBackground: string;
 export const TdDarkTextSecondaryOnBackground: string;
 export const TdDarkTextHintOnBackground: string;

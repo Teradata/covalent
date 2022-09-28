@@ -8,10 +8,15 @@
     map-get(variables.$tokens, typography)
   );
 }
-
 .dark {
   @include theme.components-theme(
     map-get(variables.$tokens, dark),
+    map-get(variables.$tokens, typography)
+  );
+}
+.light {
+  @include theme.components-theme(
+    map-get(variables.$tokens, light),
     map-get(variables.$tokens, typography)
   );
 }

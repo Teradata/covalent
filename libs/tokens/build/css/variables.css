@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 17 Aug 2022 18:24:44 GMT
+ * Generated on Wed, 28 Sep 2022 18:22:21 GMT
  */
 
 :root {
@@ -16,12 +16,17 @@
   --td-light-on-surface: rgba(0, 0, 0, 0.87);
   --td-light-on-error: white;
   --td-light-divider: rgba(0, 0, 0, 0.12);
+  --td-light-emphasis: #546e7a;
+  --td-light-accent: #007373;
   --td-light-background: #f5f5f5;
   --td-light-surface: white;
   --td-light-surface-canvas: #eee;
   --td-light-surface-primary: #85dddc;
   --td-light-surface-primary-highlight: rgba(#85dddc, 0.1);
   --td-light-surface-primary-highlight-hover: rgba(#85dddc, 0.2);
+  --td-light-surface-accent: #85dddc;
+  --td-light-surface-accent-highlight: rgba(#85dddc, 0.1);
+  --td-light-surface-accent-highlight-hover: rgba(#85dddc, 0.2);
   --td-light-surface-secondary: #85dddc;
   --td-light-surface-secondary-highlight: rgba(#85dddc, 0.1);
   --td-light-surface-secondary-highlight-hover: rgba(#85dddc, 0.2);
@@ -37,6 +42,9 @@
   --td-light-surface-neutral: #bdbdbd;
   --td-light-surface-neutral-highlight: rgba(#bdbdbd, 0.04);
   --td-light-surface-neutral-highlight-hover: rgba(#bdbdbd, 0.08);
+  --td-light-surface-emphasis: #afb6b9;
+  --td-light-surface-emphasis-highlight: rgba(#afb6b9, 0.1);
+  --td-light-surface-emphasis-highlight-hover: rgba(#afb6b9, 0.2);
   --td-light-text-primary-on-background: rgba(0, 0, 0, 0.87);
   --td-light-text-secondary-on-background: rgba(0, 0, 0, 0.54);
   --td-light-text-hint-on-background: rgba(0, 0, 0, 0.38);
@@ -65,12 +73,17 @@
   --td-dark-on-surface: white;
   --td-dark-on-error: rgba(0, 0, 0, 0.87);
   --td-dark-divider: rgba(255, 255, 255, 0.2);
+  --td-dark-emphasis: #b0bec5;
+  --td-dark-accent: #59cecd;
   --td-dark-background: #161c1f;
   --td-dark-surface: #28353b;
   --td-dark-surface-canvas: #101314;
   --td-dark-surface-primary: #045c5c;
   --td-dark-surface-primary-highlight: rgba(#045c5c, 0.4);
   --td-dark-surface-primary-highlight-hover: rgba(#045c5c, 0.6);
+  --td-dark-surface-accent: #045c5c;
+  --td-dark-surface-accent-highlight: rgba(#045c5c, 0.4);
+  --td-dark-surface-accent-highlight-hover: rgba(#045c5c, 0.6);
   --td-dark-surface-secondary: #045c5c;
   --td-dark-surface-secondary-highlight: rgba(#045c5c, 0.4);
   --td-dark-surface-secondary-highlight-hover: rgba(#045c5c, 0.6);
@@ -86,6 +99,9 @@
   --td-dark-surface-neutral: #43515a;
   --td-dark-surface-neutral-highlight: rgba(#43515a, 0.4);
   --td-dark-surface-neutral-highlight-hover: rgba(#43515a, 0.6);
+  --td-dark-surface-emphasis: #43515a;
+  --td-dark-surface-emphasis-highlight: rgba(#43515a, 0.4);
+  --td-dark-surface-emphasis-highlight-hover: rgba(#43515a, 0.6);
   --td-dark-text-primary-on-background: white;
   --td-dark-text-secondary-on-background: rgba(255, 255, 255, 0.7);
   --td-dark-text-hint-on-background: rgba(255, 255, 255, 0.5);

@@ -25,6 +25,10 @@
   --mdc-theme-negative: #{map-get($theme, error)};
   --mdc-theme-positive: #{map-get($theme, positive)};
   --mdc-theme-caution: #{map-get($theme, caution)};
+  --mdc-theme-emphasis: #{map-get($theme, emphasis)};
+
+  // Alias for primary
+  --mdc-theme-accent: #{map-get($theme, accent)};
 
   // Background colors
   --mdc-theme-background: #{map-get($theme, background)};
@@ -84,10 +88,30 @@
       $theme,
       surface-neutral-highlight-hover
     )};
+  --mdc-theme-surface-emphasis: #{map-get($theme, surface-emphasis)};
+  --mdc-theme-surface-emphasis-highlight: #{map-get(
+      $theme,
+      surface-emphasis-highlight
+    )};
+  --mdc-theme-surface-emphasis-highlight-hover: #{map-get(
+      $theme,
+      surface-emphasis-highlight-hover
+    )};
   --mdc-theme-on-primary: #{map-get($theme, on-primary)};
   --mdc-theme-on-secondary: #{map-get($theme, on-secondary)};
   --mdc-theme-on-surface: #{map-get($theme, on-surface)};
   --mdc-theme-border: #{map-get($theme, divider)};
+
+  // Alias for primary
+  --mdc-theme-surface-accent: #{map-get($theme, surface-primary)};
+  --mdc-theme-surface-accent-highlight: #{map-get(
+      $theme,
+      surface-primary-highlight
+    )};
+  --mdc-theme-surface-accent-highlight-hover: #{map-get(
+      $theme,
+      surface-primary-highlight-hover
+    )};
 
   // Surfaces
   --mdc-theme-background: #{map-get($theme, background)};
@@ -318,7 +342,7 @@
   @include button.button-theme($theme);
   @include card.card-theme($theme);
   @include checkbox.checkbox-theme($theme);
-  @include chips.chips-theme($theme);
+  // @include chips.chips-theme($theme);
   @include data-table.data-table-theme($theme);
   @include dialog.dialog-theme($theme);
   @include drawer.drawer-theme($theme);
@@ -337,10 +361,11 @@
 
   // Links
   a[href] {
-    color: var(--mdc-theme-text-primary-on-background);
+    color: var(--mdc-theme-secondary);
+    text-decoration: underline;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }

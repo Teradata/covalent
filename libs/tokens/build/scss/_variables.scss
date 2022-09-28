@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 17 Aug 2022 18:24:44 GMT
+ * Generated on Wed, 28 Sep 2022 18:22:21 GMT
  */
 
 $light-primary: #007373 !default;
@@ -15,12 +15,17 @@ $light-on-background: rgba(0, 0, 0, 0.87) !default;
 $light-on-surface: rgba(0, 0, 0, 0.87) !default;
 $light-on-error: white !default;
 $light-divider: rgba(0, 0, 0, 0.12) !default;
+$light-emphasis: #546e7a !default;
+$light-accent: #007373 !default;
 $light-background: #f5f5f5 !default;
 $light-surface: white !default;
 $light-surface-canvas: #eee !default;
 $light-surface-primary: #85dddc !default;
 $light-surface-primary-highlight: rgba(#85dddc, 0.1) !default;
 $light-surface-primary-highlight-hover: rgba(#85dddc, 0.2) !default;
+$light-surface-accent: #85dddc !default;
+$light-surface-accent-highlight: rgba(#85dddc, 0.1) !default;
+$light-surface-accent-highlight-hover: rgba(#85dddc, 0.2) !default;
 $light-surface-secondary: #85dddc !default;
 $light-surface-secondary-highlight: rgba(#85dddc, 0.1) !default;
 $light-surface-secondary-highlight-hover: rgba(#85dddc, 0.2) !default;
@@ -36,6 +41,9 @@ $light-surface-negative-highlight-hover: rgba(#e57373, 0.2) !default;
 $light-surface-neutral: #bdbdbd !default;
 $light-surface-neutral-highlight: rgba(#bdbdbd, 0.04) !default;
 $light-surface-neutral-highlight-hover: rgba(#bdbdbd, 0.08) !default;
+$light-surface-emphasis: #afb6b9 !default;
+$light-surface-emphasis-highlight: rgba(#afb6b9, 0.1) !default;
+$light-surface-emphasis-highlight-hover: rgba(#afb6b9, 0.2) !default;
 $light-text-primary-on-background: rgba(0, 0, 0, 0.87) !default;
 $light-text-secondary-on-background: rgba(0, 0, 0, 0.54) !default;
 $light-text-hint-on-background: rgba(0, 0, 0, 0.38) !default;
@@ -64,12 +72,17 @@ $dark-on-background: white !default;
 $dark-on-surface: white !default;
 $dark-on-error: rgba(0, 0, 0, 0.87) !default;
 $dark-divider: rgba(255, 255, 255, 0.2) !default;
+$dark-emphasis: #b0bec5 !default;
+$dark-accent: #59cecd !default;
 $dark-background: #161c1f !default;
 $dark-surface: #28353b !default;
 $dark-surface-canvas: #101314 !default;
 $dark-surface-primary: #045c5c !default;
 $dark-surface-primary-highlight: rgba(#045c5c, 0.4) !default;
 $dark-surface-primary-highlight-hover: rgba(#045c5c, 0.6) !default;
+$dark-surface-accent: #045c5c !default;
+$dark-surface-accent-highlight: rgba(#045c5c, 0.4) !default;
+$dark-surface-accent-highlight-hover: rgba(#045c5c, 0.6) !default;
 $dark-surface-secondary: #045c5c !default;
 $dark-surface-secondary-highlight: rgba(#045c5c, 0.4) !default;
 $dark-surface-secondary-highlight-hover: rgba(#045c5c, 0.6) !default;
@@ -85,6 +98,9 @@ $dark-surface-negative-highlight-hover: rgba(#883e32, 0.6) !default;
 $dark-surface-neutral: #43515a !default;
 $dark-surface-neutral-highlight: rgba(#43515a, 0.4) !default;
 $dark-surface-neutral-highlight-hover: rgba(#43515a, 0.6) !default;
+$dark-surface-emphasis: #43515a !default;
+$dark-surface-emphasis-highlight: rgba(#43515a, 0.4) !default;
+$dark-surface-emphasis-highlight-hover: rgba(#43515a, 0.6) !default;
 $dark-text-primary-on-background: white !default;
 $dark-text-secondary-on-background: rgba(255, 255, 255, 0.7) !default;
 $dark-text-hint-on-background: rgba(255, 255, 255, 0.5) !default;
@@ -461,12 +477,17 @@ $tokens: (
     'on-surface': $light-on-surface,
     'on-error': $light-on-error,
     'divider': $light-divider,
+    'emphasis': $light-emphasis,
+    'accent': $light-accent,
     'background': $light-background,
     'surface': $light-surface,
     'surface-canvas': $light-surface-canvas,
     'surface-primary': $light-surface-primary,
     'surface-primary-highlight': $light-surface-primary-highlight,
     'surface-primary-highlight-hover': $light-surface-primary-highlight-hover,
+    'surface-accent': $light-surface-accent,
+    'surface-accent-highlight': $light-surface-accent-highlight,
+    'surface-accent-highlight-hover': $light-surface-accent-highlight-hover,
     'surface-secondary': $light-surface-secondary,
     'surface-secondary-highlight': $light-surface-secondary-highlight,
     'surface-secondary-highlight-hover':
@@ -483,6 +504,9 @@ $tokens: (
     'surface-neutral': $light-surface-neutral,
     'surface-neutral-highlight': $light-surface-neutral-highlight,
     'surface-neutral-highlight-hover': $light-surface-neutral-highlight-hover,
+    'surface-emphasis': $light-surface-emphasis,
+    'surface-emphasis-highlight': $light-surface-emphasis-highlight,
+    'surface-emphasis-highlight-hover': $light-surface-emphasis-highlight-hover,
     'text-primary-on-background': $light-text-primary-on-background,
     'text-secondary-on-background': $light-text-secondary-on-background,
     'text-hint-on-background': $light-text-hint-on-background,
@@ -513,12 +537,17 @@ $tokens: (
     'on-surface': $dark-on-surface,
     'on-error': $dark-on-error,
     'divider': $dark-divider,
+    'emphasis': $dark-emphasis,
+    'accent': $dark-accent,
     'background': $dark-background,
     'surface': $dark-surface,
     'surface-canvas': $dark-surface-canvas,
     'surface-primary': $dark-surface-primary,
     'surface-primary-highlight': $dark-surface-primary-highlight,
     'surface-primary-highlight-hover': $dark-surface-primary-highlight-hover,
+    'surface-accent': $dark-surface-accent,
+    'surface-accent-highlight': $dark-surface-accent-highlight,
+    'surface-accent-highlight-hover': $dark-surface-accent-highlight-hover,
     'surface-secondary': $dark-surface-secondary,
     'surface-secondary-highlight': $dark-surface-secondary-highlight,
     'surface-secondary-highlight-hover': $dark-surface-secondary-highlight-hover,
@@ -534,6 +563,9 @@ $tokens: (
     'surface-neutral': $dark-surface-neutral,
     'surface-neutral-highlight': $dark-surface-neutral-highlight,
     'surface-neutral-highlight-hover': $dark-surface-neutral-highlight-hover,
+    'surface-emphasis': $dark-surface-emphasis,
+    'surface-emphasis-highlight': $dark-surface-emphasis-highlight,
+    'surface-emphasis-highlight-hover': $dark-surface-emphasis-highlight-hover,
     'text-primary-on-background': $dark-text-primary-on-background,
     'text-secondary-on-background': $dark-text-secondary-on-background,
     'text-hint-on-background': $dark-text-hint-on-background,
