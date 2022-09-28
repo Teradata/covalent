@@ -1,3 +1,14 @@
+## [4.6.1](https://github.com/Teradata/covalent/compare/v4.6.0...v4.6.1) (2022-09-21)
+
+### Bug Fixes
+
+- **markdown-flavored:** teardown subscription when the view is destroyed ([119ea5e](https://github.com/Teradata/covalent/commit/119ea5ed94fe12fa43413d871115d1451a957c49))
+
+### Performance Improvements
+
+- **file:** do not run change detection on `click` and `keyup` events when the `td-file-input` button is clicked ([823e7e4](https://github.com/Teradata/covalent/commit/823e7e431ca0500cc66b705bda49a4ccd1603718))
+- **file:** do not run change detection on `dragover` event ([72495eb](https://github.com/Teradata/covalent/commit/72495eb0adb28a4c9eb2985ad593897ed868faa5))
+
 # [4.6.0](https://github.com/Teradata/covalent/compare/v4.5.0...v4.6.0) (2022-09-06)
 
 ### Features

@@ -62,7 +62,7 @@ export class TdCodeEditorComponent
   private _widthSubject: Subject<number> = new Subject<number>();
   private _heightSubject: Subject<number> = new Subject<number>();
 
-  private _editorStyle = 'width:100%;height:100%;border:1px solid grey;';
+  private _editorStyle = 'width:100%;height:100%;';
   private _value = '';
   private _theme = 'vs';
   private _language = 'javascript';
