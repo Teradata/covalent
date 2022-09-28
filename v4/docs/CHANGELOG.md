@@ -1,3 +1,9 @@
+## [4.6.2](https://github.com/Teradata/covalent/compare/v4.6.1...v4.6.2) (2022-09-28)
+
+### Bug Fixes
+
+- **editor:** remove grey border ([c0c773d](https://github.com/Teradata/covalent/commit/c0c773d36d5a4f9fcfbe39c3e42ff5ec404eb972))
+
 ## [4.6.1](https://github.com/Teradata/covalent/compare/v4.6.0...v4.6.1) (2022-09-21)
 
 ### Bug Fixes
