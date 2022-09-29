@@ -1,3 +1,10 @@
+## [4.7.1](https://github.com/Teradata/covalent/compare/v4.7.0...v4.7.1) (2022-09-29)
+
+### Bug Fixes
+
+- **nx:** side sheet behavior change ([4e6c0f8](https://github.com/Teradata/covalent/commit/4e6c0f8d9e6ec7ff90d3c8fb2ca6904b3b3458dc))
+- **nx:** side sheet behavior change ([a15e022](https://github.com/Teradata/covalent/commit/a15e02239b94b9ac0141d001590c8a23a8877e75))
+
 # [4.7.0](https://github.com/Teradata/covalent/compare/v4.6.2...v4.7.0) (2022-09-28)
 
 ### Features
