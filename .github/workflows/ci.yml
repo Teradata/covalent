@@ -17,8 +17,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run format:check
-      - run: npx nx run-many --target=scsslint --all
-      - run: npx nx run-many --target=lint --all
+      - run: npx nx affected --target=scsslint --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
+      - run: npx nx affected --target=lint --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
 
   test:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npx nx run-many --target=test --all
+      - run: npx nx affected --target=test --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
 
   e2e:
     runs-on: ubuntu-latest
@@ -44,7 +44,7 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npx nx run-many --target=e2e --all
+      - run: npx nx affected --target=e2e --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
 
   build:
     runs-on: ubuntu-latest
@@ -57,4 +57,4 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npx nx run-many --target=build --all
+      - run: npx nx affected --target=build --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
