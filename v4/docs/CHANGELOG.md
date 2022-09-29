@@ -1,3 +1,13 @@
+# [4.8.0](https://github.com/Teradata/covalent/compare/v4.7.1...v4.8.0) (2022-09-29)
+
+### Bug Fixes
+
+- uncommented mixin in theme file ([a59ece7](https://github.com/Teradata/covalent/commit/a59ece787ec94d9fbc4f9393a90dda7d3ddaf952))
+
+### Features
+
+- add color use guide to covalent ([33aad1b](https://github.com/Teradata/covalent/commit/33aad1bcc58cad929ae76d67fa1eeed092142f26))
+
 ## [4.7.1](https://github.com/Teradata/covalent/compare/v4.7.0...v4.7.1) (2022-09-29)
 
 ### Bug Fixes

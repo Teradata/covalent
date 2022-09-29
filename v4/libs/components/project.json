@@ -3,6 +3,14 @@
   "sourceRoot": "libs/components/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["webpack -c libs/components/webpack.config.js"],
+        "parallel": false,
+        "outputPath": "dist/libs/components"
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],

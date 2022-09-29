@@ -44,6 +44,10 @@ module.exports = {
     treeList: './libs/components/src/tree-list/tree-list.ts',
     treeListItem: './libs/components/src/tree-list/tree-list-item.ts',
   },
+  output: {
+    filename: 'libs/components/[name].js',
+    clean: true,
+  },
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
     extensions: ['.ts', '.tsx', '.js'],
@@ -81,7 +85,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].css',
+              name: 'libs/components/[name].css',
             },
           },
           'extract-loader',
@@ -94,13 +98,28 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        './libs/components/package.json',
-        { from: './libs/icons/covalent-icons.css', to: './icons' },
-        { from: './libs/icons/covalent-icons.eot', to: './icons' },
-        { from: './libs/icons/covalent-icons.svg', to: './icons' },
-        { from: './libs/icons/covalent-icons.ttf', to: './icons' },
-        { from: './libs/icons/covalent-icons.woff', to: './icons' },
-        { from: './libs/icons/favicon.ico', to: './icons' },
+        { from: './libs/components/package.json', to: './libs/components' },
+        {
+          from: './libs/icons/covalent-icons.css',
+          to: './libs/components/icons',
+        },
+        {
+          from: './libs/icons/covalent-icons.eot',
+          to: './libs/components/icons',
+        },
+        {
+          from: './libs/icons/covalent-icons.svg',
+          to: './libs/components/icons',
+        },
+        {
+          from: './libs/icons/covalent-icons.ttf',
+          to: './libs/components/icons',
+        },
+        {
+          from: './libs/icons/covalent-icons.woff',
+          to: './libs/components/icons',
+        },
+        { from: './libs/icons/favicon.ico', to: './libs/components/icons' },
       ],
     }),
   ],
