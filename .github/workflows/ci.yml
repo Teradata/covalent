@@ -10,55 +10,59 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: npm
-          fetch-depth: 0
       - run: npm ci
       - run: npm run format:check
-      - run: npx nx affected --target=scsslint --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
-      - run: npx nx affected --target=lint --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
+      - run: npx nx affected --target=scsslint
+      - run: npx nx affected --target=lint
 
   test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: npm
-          fetch-depth: 0
       - run: npm ci
-      - run: npx nx affected --target=test --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
+      - run: npx nx affected --target=test
 
   e2e:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: npm
-          fetch-depth: 0
       - run: npm ci
-      - run: npx nx affected --target=e2e --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
+      - run: npx nx affected --target=e2e
 
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: npm
-          fetch-depth: 0
       - run: npm ci
-      - run: npx nx affected --target=build --base=${{ github.event.pull_request.base.sha }} --head=${{ github.sha }}
+      - run: npx nx affected --target=build
