@@ -1,3 +1,9 @@
+# [4.7.0](https://github.com/Teradata/covalent/compare/v4.6.2...v4.7.0) (2022-09-28)
+
+### Features
+
+- add info and help guide ([2c8a702](https://github.com/Teradata/covalent/commit/2c8a7025a9b99c3a202814ed53c004437c5a27cb))
+
 ## [4.6.2](https://github.com/Teradata/covalent/compare/v4.6.1...v4.6.2) (2022-09-28)
 
 ### Bug Fixes
