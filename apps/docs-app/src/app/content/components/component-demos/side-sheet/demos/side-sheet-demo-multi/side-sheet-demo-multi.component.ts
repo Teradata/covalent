@@ -1,31 +1,57 @@
 import { Component } from '@angular/core';
-import { CovalentSideSheet } from '@covalent/core/side-sheet';
+import { SubPageMode, CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
   selector: 'example',
   template: `
     it works from a component
-    <div style="display:flex; justify-content:space-between;">
-      <button mat-raised-button color="primary" (click)="openSideSheet()">
-        Open
-      </button>
+
+    <div style="display:flex; justify-content:right; padding-top:50px">
       <button mat-raised-button td-side-sheet-close>Close</button>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; padding-top:50px">
+      <button mat-raised-button color="primary" (click)="openSideSheet()">
+        Open pushed
+      </button>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; padding-top:50px">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openSideSheet(SubPageOpenMode.shifted)"
+      >
+        Open shifted
+      </button>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; padding-top:50px">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openSideSheet(SubPageOpenMode.none)"
+      >
+        Open none
+      </button>
     </div>
   `,
 })
 export class SideSheetDemoExampleComponent {
+  SubPageOpenMode = SubPageMode;
   constructor(private sideSheet: CovalentSideSheet) {}
 
-  openSideSheet(): void {
+  openSideSheet(mode: SubPageMode = SubPageMode.pushed): void {
     this.sideSheet.open(SideSheetDemoExampleLayeredComponent, {
-      minWidth: '800px',
+      minWidth: '400px',
+      subPageMode: mode,
     });
   }
 }
 
 @Component({
   selector: 'example-layered',
-  template: 'Im Mulit layered!',
+  template: 'Im Multi layered!',
 })
 class SideSheetDemoExampleLayeredComponent {}
 
