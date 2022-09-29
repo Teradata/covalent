@@ -39,5 +39,5 @@ testem.log
 Thumbs.db
 
 .angular
-storybook
+storybook-static
 build-storybook.log
