@@ -342,7 +342,7 @@
   @include button.button-theme($theme);
   @include card.card-theme($theme);
   @include checkbox.checkbox-theme($theme);
-  // @include chips.chips-theme($theme);
+  @include chips.chips-theme($theme);
   @include data-table.data-table-theme($theme);
   @include dialog.dialog-theme($theme);
   @include drawer.drawer-theme($theme);
