@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 16
           cache: npm
+          fetch-depth: 0
       - run: npm ci
       - run: npm run format:check
       - run: npx nx affected --target=scsslint --base=remotes/origin/${{ github.event.pull_request.base.sha }} --head=remotes/origin/${{ github.sha }}
@@ -30,6 +31,7 @@ jobs:
         with:
           node-version: 16
           cache: npm
+          fetch-depth: 0
       - run: npm ci
       - run: npx nx affected --target=test --base=remotes/origin/${{ github.event.pull_request.base.sha }} --head=remotes/origin/${{ github.sha }}
 
@@ -43,6 +45,7 @@ jobs:
         with:
           node-version: 16
           cache: npm
+          fetch-depth: 0
       - run: npm ci
       - run: npx nx affected --target=e2e --base=remotes/origin/${{ github.event.pull_request.base.sha }} --head=remotes/origin/${{ github.sha }}
 
@@ -56,5 +59,6 @@ jobs:
         with:
           node-version: 16
           cache: npm
+          fetch-depth: 0
       - run: npm ci
       - run: npx nx affected --target=build --base=remotes/origin/${{ github.event.pull_request.base.sha }} --head=remotes/origin/${{ github.sha }}
