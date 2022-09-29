@@ -19,8 +19,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run format:check
-      - run: npx nx affected --target=scsslint --base=remotes/origin/${{ github.event.pull_request.base.sha }}
-      - run: npx nx affected --target=lint --base=remotes/origin/${{ github.event.pull_request.base.sha }}
+      - run: npx nx affected --target=scsslint --base=${{ github.event.pull_request.base.sha }}
+      - run: npx nx affected --target=lint --base=${{ github.event.pull_request.base.sha }}
 
   test:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
           cache: npm
           fetch-depth: 0
       - run: npm ci
-      - run: npx nx affected --target=test --base=remotes/origin/${{ github.event.pull_request.base.sha }}
+      - run: npx nx affected --target=test --base=${{ github.event.pull_request.base.sha }}
 
   e2e:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npx nx affected --target=e2e --base=remotes/origin/${{ github.event.pull_request.base.sha }}
+      - run: npx nx affected --target=e2e --base=${{ github.event.pull_request.base.sha }}
 
   build:
     runs-on: ubuntu-latest
@@ -66,4 +66,4 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npx nx affected --target=build --base=remotes/origin/${{ github.event.pull_request.base.sha }}
+      - run: npx nx affected --target=build --base=${{ github.event.pull_request.base.sha }}
