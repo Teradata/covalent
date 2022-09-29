@@ -1,3 +1,9 @@
+## [4.8.1](https://github.com/Teradata/covalent/compare/v4.8.0...v4.8.1) (2022-09-29)
+
+### Bug Fixes
+
+- **componets:** deploy to npm & chromatic ci ([970c163](https://github.com/Teradata/covalent/commit/970c163b4e602a9cf780d0b0a0203c82ea325a7e))
+
 # [4.8.0](https://github.com/Teradata/covalent/compare/v4.7.1...v4.8.0) (2022-09-29)
 
 ### Bug Fixes
