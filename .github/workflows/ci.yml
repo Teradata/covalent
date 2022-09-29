@@ -19,8 +19,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run format:check
-      - run: npx nx affected --target=scsslint
-      - run: npx nx affected --target=lint
+      - run: npx nx affected --target=scsslint --base=remotes/origin/main
+      - run: npx nx affected --target=lint --base=remotes/origin/main
 
   test:
     runs-on: ubuntu-latest
@@ -34,8 +34,9 @@ jobs:
         with:
           node-version: 16
           cache: npm
+          fetch-depth: 0
       - run: npm ci
-      - run: npx nx affected --target=test
+      - run: npx nx affected --target=test --base=remotes/origin/main
 
   e2e:
     runs-on: ubuntu-latest
@@ -50,7 +51,7 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npx nx affected --target=e2e
+      - run: npx nx affected --target=e2e --base=remotes/origin/main
 
   build:
     runs-on: ubuntu-latest
@@ -65,4 +66,4 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npx nx affected --target=build
+      - run: npx nx affected --target=build --base=remotes/origin/main
