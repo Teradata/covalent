@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 17 Aug 2022 18:24:44 GMT
+ * Generated on Wed, 28 Sep 2022 18:22:21 GMT
  */
 
 export const TdLightPrimary = '#007373';
@@ -15,12 +15,17 @@ export const TdLightOnBackground = 'rgba(0, 0, 0, 0.87)';
 export const TdLightOnSurface = 'rgba(0, 0, 0, 0.87)';
 export const TdLightOnError = 'white';
 export const TdLightDivider = 'rgba(0, 0, 0, 0.12)';
+export const TdLightEmphasis = '#546e7a';
+export const TdLightAccent = '#007373';
 export const TdLightBackground = '#f5f5f5';
 export const TdLightSurface = 'white';
 export const TdLightSurfaceCanvas = '#eee';
 export const TdLightSurfacePrimary = '#85dddc';
 export const TdLightSurfacePrimaryHighlight = 'rgba(#85dddc, 0.1)';
 export const TdLightSurfacePrimaryHighlightHover = 'rgba(#85dddc, 0.2)';
+export const TdLightSurfaceAccent = '#85dddc';
+export const TdLightSurfaceAccentHighlight = 'rgba(#85dddc, 0.1)';
+export const TdLightSurfaceAccentHighlightHover = 'rgba(#85dddc, 0.2)';
 export const TdLightSurfaceSecondary = '#85dddc';
 export const TdLightSurfaceSecondaryHighlight = 'rgba(#85dddc, 0.1)';
 export const TdLightSurfaceSecondaryHighlightHover = 'rgba(#85dddc, 0.2)';
@@ -36,6 +41,9 @@ export const TdLightSurfaceNegativeHighlightHover = 'rgba(#e57373, 0.2)';
 export const TdLightSurfaceNeutral = '#bdbdbd';
 export const TdLightSurfaceNeutralHighlight = 'rgba(#bdbdbd, 0.04)';
 export const TdLightSurfaceNeutralHighlightHover = 'rgba(#bdbdbd, 0.08)';
+export const TdLightSurfaceEmphasis = '#afb6b9';
+export const TdLightSurfaceEmphasisHighlight = 'rgba(#afb6b9, 0.1)';
+export const TdLightSurfaceEmphasisHighlightHover = 'rgba(#afb6b9, 0.2)';
 export const TdLightTextPrimaryOnBackground = 'rgba(0, 0, 0, 0.87)';
 export const TdLightTextSecondaryOnBackground = 'rgba(0, 0, 0, 0.54)';
 export const TdLightTextHintOnBackground = 'rgba(0, 0, 0, 0.38)';
@@ -64,12 +72,17 @@ export const TdDarkOnBackground = 'white';
 export const TdDarkOnSurface = 'white';
 export const TdDarkOnError = 'rgba(0, 0, 0, 0.87)';
 export const TdDarkDivider = 'rgba(255, 255, 255, 0.2)';
+export const TdDarkEmphasis = '#b0bec5';
+export const TdDarkAccent = '#59cecd';
 export const TdDarkBackground = '#161c1f';
 export const TdDarkSurface = '#28353b';
 export const TdDarkSurfaceCanvas = '#101314';
 export const TdDarkSurfacePrimary = '#045c5c';
 export const TdDarkSurfacePrimaryHighlight = 'rgba(#045c5c, 0.4)';
 export const TdDarkSurfacePrimaryHighlightHover = 'rgba(#045c5c, 0.6)';
+export const TdDarkSurfaceAccent = '#045c5c';
+export const TdDarkSurfaceAccentHighlight = 'rgba(#045c5c, 0.4)';
+export const TdDarkSurfaceAccentHighlightHover = 'rgba(#045c5c, 0.6)';
 export const TdDarkSurfaceSecondary = '#045c5c';
 export const TdDarkSurfaceSecondaryHighlight = 'rgba(#045c5c, 0.4)';
 export const TdDarkSurfaceSecondaryHighlightHover = 'rgba(#045c5c, 0.6)';
@@ -85,6 +98,9 @@ export const TdDarkSurfaceNegativeHighlightHover = 'rgba(#883E32, 0.6)';
 export const TdDarkSurfaceNeutral = '#43515a';
 export const TdDarkSurfaceNeutralHighlight = 'rgba(#43515a, 0.4)';
 export const TdDarkSurfaceNeutralHighlightHover = 'rgba(#43515a, 0.6)';
+export const TdDarkSurfaceEmphasis = '#43515a';
+export const TdDarkSurfaceEmphasisHighlight = 'rgba(#43515a, 0.4)';
+export const TdDarkSurfaceEmphasisHighlightHover = 'rgba(#43515a, 0.6)';
 export const TdDarkTextPrimaryOnBackground = 'white';
 export const TdDarkTextSecondaryOnBackground = 'rgba(255, 255, 255, 0.7)';
 export const TdDarkTextHintOnBackground = 'rgba(255, 255, 255, 0.5)';

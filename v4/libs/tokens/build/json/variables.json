@@ -192,6 +192,38 @@
       },
       "path": ["light", "divider"]
     },
+    "emphasis": {
+      "value": "#546e7a",
+      "type": "color",
+      "filePath": "src/color/base.json",
+      "isSource": true,
+      "original": {
+        "value": "#546e7a",
+        "type": "color"
+      },
+      "name": "emphasis",
+      "attributes": {
+        "category": "light",
+        "type": "emphasis"
+      },
+      "path": ["light", "emphasis"]
+    },
+    "accent": {
+      "value": "#007373",
+      "type": "color",
+      "filePath": "src/color/base.json",
+      "isSource": true,
+      "original": {
+        "value": "{teradata.teal-900}",
+        "type": "color"
+      },
+      "name": "accent",
+      "attributes": {
+        "category": "light",
+        "type": "accent"
+      },
+      "path": ["light", "accent"]
+    },
     "background": {
       "value": "#f5f5f5",
       "type": "color",
@@ -287,6 +319,54 @@
         "type": "surface-primary-highlight-hover"
       },
       "path": ["light", "surface-primary-highlight-hover"]
+    },
+    "surface-accent": {
+      "value": "#85dddc",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "{teradata.teal-200}",
+        "type": "color"
+      },
+      "name": "surface-accent",
+      "attributes": {
+        "category": "light",
+        "type": "surface-accent"
+      },
+      "path": ["light", "surface-accent"]
+    },
+    "surface-accent-highlight": {
+      "value": "rgba(#85dddc, 0.1)",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "rgba({teradata.teal-200}, 0.1)",
+        "type": "color"
+      },
+      "name": "surface-accent-highlight",
+      "attributes": {
+        "category": "light",
+        "type": "surface-accent-highlight"
+      },
+      "path": ["light", "surface-accent-highlight"]
+    },
+    "surface-accent-highlight-hover": {
+      "value": "rgba(#85dddc, 0.2)",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "rgba({teradata.teal-200}, 0.2)",
+        "type": "color"
+      },
+      "name": "surface-accent-highlight-hover",
+      "attributes": {
+        "category": "light",
+        "type": "surface-accent-highlight-hover"
+      },
+      "path": ["light", "surface-accent-highlight-hover"]
     },
     "surface-secondary": {
       "value": "#85dddc",
@@ -527,6 +607,54 @@
         "type": "surface-neutral-highlight-hover"
       },
       "path": ["light", "surface-neutral-highlight-hover"]
+    },
+    "surface-emphasis": {
+      "value": "#afb6b9",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "{teradata.slate-200}",
+        "type": "color"
+      },
+      "name": "surface-emphasis",
+      "attributes": {
+        "category": "light",
+        "type": "surface-emphasis"
+      },
+      "path": ["light", "surface-emphasis"]
+    },
+    "surface-emphasis-highlight": {
+      "value": "rgba(#afb6b9, 0.1)",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "rgba({teradata.slate-200}, 0.1)",
+        "type": "color"
+      },
+      "name": "surface-emphasis-highlight",
+      "attributes": {
+        "category": "light",
+        "type": "surface-emphasis-highlight"
+      },
+      "path": ["light", "surface-emphasis-highlight"]
+    },
+    "surface-emphasis-highlight-hover": {
+      "value": "rgba(#afb6b9, 0.2)",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "rgba({teradata.slate-200}, 0.2)",
+        "type": "color"
+      },
+      "name": "surface-emphasis-highlight-hover",
+      "attributes": {
+        "category": "light",
+        "type": "surface-emphasis-highlight-hover"
+      },
+      "path": ["light", "surface-emphasis-highlight-hover"]
     },
     "text-primary-on-background": {
       "value": "rgba(0, 0, 0, 0.87)",
@@ -978,6 +1106,38 @@
       },
       "path": ["dark", "divider"]
     },
+    "emphasis": {
+      "value": "#b0bec5",
+      "type": "color",
+      "filePath": "src/color/base.json",
+      "isSource": true,
+      "original": {
+        "value": "#b0bec5",
+        "type": "color"
+      },
+      "name": "emphasis",
+      "attributes": {
+        "category": "dark",
+        "type": "emphasis"
+      },
+      "path": ["dark", "emphasis"]
+    },
+    "accent": {
+      "value": "#59cecd",
+      "type": "color",
+      "filePath": "src/color/base.json",
+      "isSource": true,
+      "original": {
+        "value": "{teradata.teal-300}",
+        "type": "color"
+      },
+      "name": "accent",
+      "attributes": {
+        "category": "dark",
+        "type": "accent"
+      },
+      "path": ["dark", "accent"]
+    },
     "background": {
       "value": "#161c1f",
       "type": "color",
@@ -1073,6 +1233,54 @@
         "type": "surface-primary-highlight-hover"
       },
       "path": ["dark", "surface-primary-highlight-hover"]
+    },
+    "surface-accent": {
+      "value": "#045c5c",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "{teradata.teal-1200}",
+        "type": "color"
+      },
+      "name": "surface-accent",
+      "attributes": {
+        "category": "dark",
+        "type": "surface-accent"
+      },
+      "path": ["dark", "surface-accent"]
+    },
+    "surface-accent-highlight": {
+      "value": "rgba(#045c5c, 0.4)",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "rgba({teradata.teal-1200}, 0.4)",
+        "type": "color"
+      },
+      "name": "surface-accent-highlight",
+      "attributes": {
+        "category": "dark",
+        "type": "surface-accent-highlight"
+      },
+      "path": ["dark", "surface-accent-highlight"]
+    },
+    "surface-accent-highlight-hover": {
+      "value": "rgba(#045c5c, 0.6)",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "rgba({teradata.teal-1200}, 0.6)",
+        "type": "color"
+      },
+      "name": "surface-accent-highlight-hover",
+      "attributes": {
+        "category": "dark",
+        "type": "surface-accent-highlight-hover"
+      },
+      "path": ["dark", "surface-accent-highlight-hover"]
     },
     "surface-secondary": {
       "value": "#045c5c",
@@ -1313,6 +1521,54 @@
         "type": "surface-neutral-highlight-hover"
       },
       "path": ["dark", "surface-neutral-highlight-hover"]
+    },
+    "surface-emphasis": {
+      "value": "#43515a",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "{teradata.slate-800}",
+        "type": "color"
+      },
+      "name": "surface-emphasis",
+      "attributes": {
+        "category": "dark",
+        "type": "surface-emphasis"
+      },
+      "path": ["dark", "surface-emphasis"]
+    },
+    "surface-emphasis-highlight": {
+      "value": "rgba(#43515a, 0.4)",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "rgba({teradata.slate-800}, 0.4)",
+        "type": "color"
+      },
+      "name": "surface-emphasis-highlight",
+      "attributes": {
+        "category": "dark",
+        "type": "surface-emphasis-highlight"
+      },
+      "path": ["dark", "surface-emphasis-highlight"]
+    },
+    "surface-emphasis-highlight-hover": {
+      "value": "rgba(#43515a, 0.6)",
+      "type": "color",
+      "filePath": "src/color/palettes/surface.json",
+      "isSource": true,
+      "original": {
+        "value": "rgba({teradata.slate-800}, 0.6)",
+        "type": "color"
+      },
+      "name": "surface-emphasis-highlight-hover",
+      "attributes": {
+        "category": "dark",
+        "type": "surface-emphasis-highlight-hover"
+      },
+      "path": ["dark", "surface-emphasis-highlight-hover"]
     },
     "text-primary-on-background": {
       "value": "white",
