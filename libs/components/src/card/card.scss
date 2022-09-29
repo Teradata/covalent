@@ -5,5 +5,8 @@
 
 .mdc-card__actions {
   color: var(--mdc-theme-text-primary-on-background);
+}
+.mdc-card__actions:first-of-type {
   border-bottom: 1px solid var(--mdc-theme-border);
+  padding-left: 16px;
 }
