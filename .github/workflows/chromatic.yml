@@ -7,7 +7,10 @@ name: 'Chromatic'
 on:
   pull_request:
     branches: [main]
-
+    paths:
+      - 'libs/components/**'
+      - 'libs/icons/**'
+      - 'libs/tokens/**'
 # List of jobs
 jobs:
   chromatic-deployment:
@@ -26,10 +29,5 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci --legacy-peer-deps
-        # 👇 Adds Chromatic as a step in the workflow
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        # Chromatic GitHub Action options
-        with:
-          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      # 👇 Adds Chromatic as a step in the workflow
+      - run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --exit-once-uploaded
