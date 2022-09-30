@@ -1,3 +1,9 @@
+# [4.9.0](https://github.com/Teradata/covalent/compare/v4.8.2...v4.9.0) (2022-09-30)
+
+### Features
+
+- **components:** adding basic tests ([db4550a](https://github.com/Teradata/covalent/commit/db4550a4984d23abbfe9d803d2f802be4b05bd5e))
+
 ## [4.8.2](https://github.com/Teradata/covalent/compare/v4.8.1...v4.8.2) (2022-09-29)
 
 ### Bug Fixes
