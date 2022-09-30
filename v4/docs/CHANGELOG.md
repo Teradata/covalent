@@ -1,3 +1,9 @@
+## [4.8.2](https://github.com/Teradata/covalent/compare/v4.8.1...v4.8.2) (2022-09-29)
+
+### Bug Fixes
+
+- **components:** storybook preview css path ([0c21783](https://github.com/Teradata/covalent/commit/0c2178397cb3f4b3e7a82c7f3daeb4603e047166))
+
 ## [4.8.1](https://github.com/Teradata/covalent/compare/v4.8.0...v4.8.1) (2022-09-29)
 
 ### Bug Fixes

@@ -9,7 +9,7 @@ declare global {
 }
 // Wraps td-tree-list-item components
 @customElement('td-tree-list')
-class CovalentTreeList extends LitElement {
+export class CovalentTreeList extends LitElement {
   static override styles = [styles];
   override render() {
     return html`
