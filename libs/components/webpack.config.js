@@ -56,8 +56,18 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
         exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: 'tsconfig.lib.json',
+              compilerOptions: {
+                outDir: '../../dist/libs/components',
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css|\.s(c|a)ss$/,
@@ -74,6 +84,15 @@ module.exports = {
           { loader: 'css-loader' },
           {
             loader: 'sass-loader',
+            options: {
+              // Prefer Dart Sass
+              implementation: require('sass'),
+              // See https://github.com/webpack-contrib/sass-loader/issues/804
+              webpackImporter: false,
+              sassOptions: {
+                includePaths: ['./node_modules'],
+              },
+            },
           },
         ],
       },
@@ -90,7 +109,16 @@ module.exports = {
           },
           'extract-loader',
           'css-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              // Prefer Dart Sass
+              implementation: require('sass'),
+              sassOptions: {
+                includePaths: ['./node_modules'],
+              },
+            },
+          },
         ],
       },
     ],

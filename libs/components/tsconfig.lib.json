@@ -1,11 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "composite": true,
     "outDir": "../../dist/out-tsc",
     "declaration": true,
     "types": []
   },
-  "include": ["**/*.ts"],
+  "include": ["../../node_modules/lit-scss-loader/types.d.ts", "**/*.ts"],
   "exclude": ["**/*.spec.ts"]
 }

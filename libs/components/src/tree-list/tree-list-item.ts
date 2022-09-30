@@ -10,7 +10,7 @@ declare global {
 }
 
 @customElement('td-tree-list-item')
-class CovalentTreeListItem extends LitElement {
+export class CovalentTreeListItem extends LitElement {
   static override styles = [styles];
   // Check if a list item is open.
   @property({ type: Boolean }) isOpen = false;
