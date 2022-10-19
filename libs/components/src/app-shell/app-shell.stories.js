@@ -1,11 +1,12 @@
 import { withDesign } from 'storybook-addon-designs';
-// import topAppBarComponent from "../../../../stories/demos/top-app-bar.component";
-import * as tableRowSelectionContent from '../../../../stories/demos/table-row-selection.content.html';
+// import topAppBarComponent from "../../stories/demos/top-app-bar.component";
+import * as tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html';
 
 import './app-shell';
 import '../action-ribbon/action-ribbon';
 import '../list/list-expansion';
 import '../list/list-item';
+import '../list/nav-list-item';
 import '../toolbar/toolbar';
 import '../button/button';
 
@@ -26,8 +27,10 @@ export default {
   },
 };
 
+let appShell;
 let banner;
 let dataTable;
+let navItems;
 
 const updateActionRibbon = () => {
   const selectedRowNum = dataTable.getSelectedRowIds().length;
@@ -46,13 +49,31 @@ const Template = ({ navClick }) => {
     'DOMContentLoaded',
     () => {
       const dataTableEl = document.querySelector('.mdc-data-table');
+      appShell = document.querySelector('td-app-shell');
+      navItems = document.querySelectorAll(
+        'td-nav-list-item, td-expansion-list'
+      );
       banner = document.querySelector('td-action-ribbon');
       dataTable = new MDCDataTable(dataTableEl);
+
+      document.querySelector('.help-item').addEventListener('click', () => {
+        appShell.helpOpen = !appShell.helpOpen;
+      });
+
+      document.querySelector('.help-close').addEventListener('click', () => {
+        appShell.helpOpen = false;
+      });
 
       setTimeout(updateActionRibbon, 150);
     },
     { once: true }
   );
+
+  document.addEventListener('CovalentAppShell:toggle', () => {
+    navItems.forEach((item) => {
+      item.navOpen = !item.navOpen;
+    });
+  });
 
   document.addEventListener(events.SELECTED_ALL, updateActionRibbon);
   document.addEventListener(events.UNSELECTED_ALL, updateActionRibbon);
@@ -81,42 +102,42 @@ const Template = ({ navClick }) => {
       <path class="logo-dot" fill="#e46c42" d="M695.029 116.028c0 8.825-6.772 15.596-16.212 15.596s-16.212-6.771-16.212-15.596c0-8.413 6.772-15.801 16.212-15.801s16.212 7.388 16.212 15.801"></path>
     </svg>
 
-    <td-list class="navigation-rail" slot="navigation" activatable>
-        <td-list-item class="home-item" graphic="avatar" >
+    <td-list class="navigation-rail" slot="navigation" activatable listitemtagname="td-nav-list-item">
+        <td-nav-list-item class="home-item" graphic="avatar">
             <span>Vantage</span>
             <td-icon class="covalent-icon teradata-circle" slot="graphic">teradata</td-icon>
             <td-icon class="covalent-icon teradata-no-circle" slot="graphic">teradata_nocircle</td-icon>
             <td-icon class="home-icon" slot="graphic">home</td-icon>
-        </td-list-item>
+        </td-nav-list-item>
 
         <td-expansion-list activatable>
-            <td-list-item slot="expansionHeader" graphic="avatar" hasChildren>
+            <td-nav-list-item slot="expansionHeader" graphic="avatar" hasChildren>
                Editor
                <td-icon class="covalent-icon" slot="graphic">product_editor</td-icon>
-            </td-list-item>
-            <td-list-item c>Scripts</td-list-item>
+            </td-nav-list-item>
+            <td-list-item>Scripts</td-list-item>
             <td-list-item>Scripts</td-list-item>
             <td-list-item>Scripts</td-list-item>
             <td-list-item>Scripts</td-list-item>
             <td-list-item>Scripts</td-list-item>
         </td-expansion-list>
 
-        <td-list-item graphic="avatar">
+        <td-nav-list-item graphic="avatar">
             <span>Sites</span>
             <td-icon class="covalent-icon" slot="graphic">server</td-icon>
-        </td-list-item>
-        <td-list-item graphic="avatar">
+        </td-nav-list-item>
+        <td-nav-list-item graphic="avatar">
             <span>Data Protections</span>
             <td-icon slot="graphic">settings_backup_restore</td-icon>
-        </td-list-item>
-        <td-list-item graphic="avatar">
+        </td-nav-list-item>
+        <td-nav-list-item graphic="avatar">
             <span>Identity</span>
             <td-icon slot="graphic">contacts</td-icon>
-        </td-list-item>
+        </td-nav-list-item>
     </td-list>
 
     <td-list class="navigation-rail" slot="user-menu" activatable>
-            <td-list-item class="beta-list-item" graphic="icon" twoline activated>
+            <td-nav-list-item class="beta-list-item" graphic="icon" twoline activated>
                 <svg slot="graphic" style="fill:orange; height:20px;" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
                 <g>
                     <path d="M0 2C0 0.895431 0.895431 0 2 0H40L34.9206 20H2C0.895429 20 0 19.1046 0 18V2Z"></path>
@@ -125,21 +146,36 @@ const Template = ({ navClick }) => {
                 </svg>
                <span>You're trying console beta</span>
                <span slot="secondary">Return to classic</span>
-           </td-list-item>
-           <td-list-item graphic="avatar">
+           </td-nav-list-item>
+           <td-nav-list-item graphic="avatar">
                <span>Notification</span>
                <td-icon slot="graphic">notifications</td-icon>
-           </td-list-item>
-           <td-list-item graphic="avatar">
+           </td-nav-list-item>
+           <td-nav-list-item graphic="avatar" class="help-item" >
                <span>Help</span>
                <td-icon slot="graphic">help</td-icon>
-           </td-list-item>
-           <td-list-item graphic="avatar">
+           </td-nav-list-item>
+           <td-nav-list-item graphic="avatar">
                <span>Account</span>
                <td-icon slot="graphic">person</td-icon>
-           </td-list-item>
+           </td-nav-list-item>
     </td-list>
 
+    <div slot="help" class="mdc-typography">
+        <td-toolbar label="Help" >
+          <td-icon-button slot="iconActions" icon="open_in_browser"></td-icon-button>
+          <td-icon-button slot="iconActions" icon="close" class="help-close"></td-icon-button>
+        </td-toolbar>
+        <div style="padding:16px">
+          <h3 class="mdc-typography--subtitle2">Ultricies nunc massa, id ut felis sed varius accumsan platea.</h3>
+          <p class="mdc-typography--body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt lectus risus, id aliquet mi congue sed.</p>
+          <p class="mdc-typography--body1">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices pouere cubilia curae; Phasellus tincidunt eros arcu, sollicitudin laoreet urna aliquet eget.</p>
+          <p class="mdc-typography--body1">Phasellus porta sed libero vel vulputate. Quisque non nisl sem. Pellentesque nec pretium magna, et vestibulum neque. Mauris molestie eros quis nisi pretium, </p>
+          <p class="mdc-typography--body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt lectus risus, id aliquet mi congue sed.</p>
+          <p class="mdc-typography--body1">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices pouere cubilia curae; Phasellus tincidunt eros arcu, sollicitudin laoreet urna aliquet eget.</p>
+          <p class="mdc-typography--body1">Phasellus porta sed libero vel vulputate. Quisque non nisl sem. Pellentesque nec pretium magna, et vestibulum neque. Mauris molestie eros quis nisi pretium, </p>
+        </div>
+    </div>
     <div slot="mini-list">
             <td-toolbar label="[Page name]" mini>
                 <td-icon-button slot="iconActions" icon="filter_list"></td-icon-button>

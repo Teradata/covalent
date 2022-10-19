@@ -38,11 +38,17 @@
   border-color: var(--mdc-theme-border, rgba(black, 0.12));
 }
 
-[name='help']::slotted(*) {
+.help {
   grid-area: help;
   width: 320px;
   height: 100vh;
   overflow-y: auto;
+  border-left: 1px solid;
+  border-color: var(--mdc-theme-border, rgba(black, 0.12));
+
+  &.help--closed {
+    width: 0;
+  }
 }
 
 [name='mini-list']::slotted(*) {

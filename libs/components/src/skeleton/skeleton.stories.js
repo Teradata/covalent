@@ -1,9 +1,9 @@
 import '../checkbox/checkbox';
 import '../formfield/formfield';
 
-import * as typographyContent from '../../../../stories/demos/typography.content.html';
-import * as loremIpsumContent from '../../../../stories/demos/lorem-ipsum.content.html';
-import * as tableProgressContent from '../../../../stories/demos/table-progress-indicator.content.html';
+import * as typographyContent from '../../stories/demos/typography.content.html';
+import * as loremIpsumContent from '../../stories/demos/lorem-ipsum.content.html';
+import * as tableProgressContent from '../../stories/demos/table-progress-indicator.content.html';
 
 import '!style-loader!css-loader!sass-loader!skeleton-elements/skeleton-elements.scss';
 

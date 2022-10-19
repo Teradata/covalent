@@ -1,9 +1,10 @@
+import anysort from 'anysort';
+
 import darkTheme from './theme/covalent.dark.theme';
 import lightTheme from './theme/covalent.light.theme';
 
 import '!style-loader!css-loader!sass-loader!./theme/markdown-elements.scss';
 
-import anysort from 'anysort';
 
 export const parameters = {
   options: {
@@ -28,17 +29,6 @@ export const parameters = {
     },
   },
   backgrounds: {
-    default: 'twitter',
-    values: [
-      {
-        name: 'twitter',
-        value: '#00aced',
-      },
-      {
-        name: 'facebook',
-        value: '#3b5998',
-      },
-    ],
     grid: {
       disable: true,
     },

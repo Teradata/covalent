@@ -1,4 +1,4 @@
-import * as gridContent from '../../../../stories/demos/grid.content.html';
+import * as gridContent from '../../stories/demos/grid.content.html';
 
 export default {
   title: 'Components/Grid',

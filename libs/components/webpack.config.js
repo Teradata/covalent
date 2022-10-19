@@ -4,8 +4,7 @@ module.exports = {
   mode: 'production',
   entry: {
     index: './libs/components/src/index.ts',
-    styles: './libs/components/styles/styles.scss',
-    theme: './libs/components/styles/theme/theme.scss',
+    theme: './libs/components/theme/theme.scss',
 
     actionRibbon: './libs/components/src/action-ribbon/action-ribbon.ts',
     alert: './libs/components/src/alert/alert.ts',
@@ -22,11 +21,12 @@ module.exports = {
     iconButton: './libs/components/src/icon-button/icon-button.ts',
     iconCheckbox: './libs/components/src/icon-checkbox/icon-check-toggle.ts',
     iconRadio: './libs/components/src/icon-radio/icon-radio-toggle.ts',
-    linearProgress: './libs/components/src/linear-progress/linear-progress.ts',
+    linearProgsress: './libs/components/src/linear-progress/linear-progress.ts',
     list: './libs/components/src/list/list.ts',
     listItem: './libs/components/src/list/list-item.ts',
     listExpansion: './libs/components/src/list/list-expansion.ts',
     listRadioItem: './libs/components/src/list/radio-list-item.ts',
+    listNavItem: './libs/components/src/list/nav-list-item.ts',
     menu: './libs/components/src/menu/menu.ts',
     radio: './libs/components/src/radio/radio.ts',
     select: './libs/components/src/select/select.ts',
@@ -98,7 +98,7 @@ module.exports = {
       },
       {
         test: /\.s(c|a)ss$/,
-        include: /libs\/components\/styles/,
+        include: /libs\/components\/theme/,
         exclude: /node_modules/,
         use: [
           {

@@ -1,5 +1,5 @@
 import { DrawerBase } from '@material/mwc-drawer/mwc-drawer-base';
-import { html } from 'lit';
+import { html, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
@@ -29,6 +29,9 @@ export class CovalentAppShell extends DrawerBase {
   @property()
   appName = '';
 
+  @property({ type: Boolean })
+  helpOpen = false;
+
   constructor() {
     super();
 
@@ -36,7 +39,14 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private _toggleOpen() {
+    if (this.mdcFoundation.isOpening() || this.mdcFoundation.isClosing()) {
+      return;
+    }
+
     this.open = !this.open;
+    this.dispatchEvent(
+      new Event('CovalentAppShell:toggle', { bubbles: true, composed: true })
+    );
   }
 
   resizeEvent() {
@@ -52,7 +62,6 @@ export class CovalentAppShell extends DrawerBase {
 
   override connectedCallback() {
     super.connectedCallback();
-
     window.addEventListener('resize', () => this.resizeEvent());
   }
 
@@ -68,6 +77,16 @@ export class CovalentAppShell extends DrawerBase {
       'mdc-drawer--dismissible': dismissible,
       'mdc-drawer--modal': modal,
     };
+    const helpPanelClasses = {
+      'help--closed': !this.helpOpen,
+    };
+
+    const scrim = modal
+      ? html`<div
+          class="mdc-drawer-scrim"
+          @click="${this._handleScrimClick}"
+        ></div>`
+      : nothing;
 
     return html`
       <div class="app-shell">
@@ -96,15 +115,12 @@ export class CovalentAppShell extends DrawerBase {
           <div divider></div>
           <slot name="user-menu"></slot>
         </nav>
-        ${modal
-          ? html`<div
-              class="mdc-drawer-scrim"
-              @click="${this._handleScrimClick}"
-            ></div>`
-          : ''}
+        ${scrim}
         <slot name="mini-list"></slot>
         <div class="main mdc-drawer-app-content"><slot></slot></div>
-        <slot name="help"></slot>
+        <div class="help ${classMap(helpPanelClasses)}">
+          <slot name="help"></slot>
+        </div>
       </div>
     `;
   }
