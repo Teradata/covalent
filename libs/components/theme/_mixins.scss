@@ -32,6 +32,7 @@
 
   // Background colors
   --mdc-theme-background: #{map-get($theme, background)};
+  --mdc-ripple-color: #{map-get($theme, on-surface)};
   --mdc-theme-surface: #{map-get($theme, surface)};
   --mdc-theme-surface-canvas: #{map-get($theme, surface-canvas)};
   --mdc-theme-surface-primary: #{map-get($theme, surface-primary)};
@@ -113,14 +114,8 @@
       surface-primary-highlight-hover
     )};
 
-  // Surfaces
-  --mdc-theme-background: #{map-get($theme, background)};
-  --mdc-theme-surface: #{map-get($theme, surface)};
-  --mdc-ripple-color: #{map-get($theme, on-surface)};
-
   // Typography
   --mdc-typography-font-family: #{map-get($typography, font-family)};
-
   --mdc-typography-headline1-font-family: #{map-get(
       $typography,
       headline1-font-family
@@ -137,7 +132,6 @@
       $typography,
       headline1-line-height
     )};
-
   --mdc-typography-headline2-font-family: #{map-get(
       $typography,
       headline2-font-family
@@ -154,7 +148,6 @@
       $typography,
       headline2-line-height
     )};
-
   --mdc-typography-headline3-font-family: #{map-get(
       $typography,
       headline3-font-family
@@ -171,7 +164,6 @@
       $typography,
       headline3-line-height
     )};
-
   --mdc-typography-headline4-font-family: #{map-get(
       $typography,
       headline4-font-family
@@ -188,7 +180,6 @@
       $typography,
       headline4-line-height
     )};
-
   --mdc-typography-headline5-font-family: #{map-get(
       $typography,
       headline5-font-family
@@ -205,7 +196,6 @@
       $typography,
       headline5-line-height
     )};
-
   --mdc-typography-headline6-font-family: #{map-get(
       $typography,
       headline6-font-family
@@ -222,7 +212,6 @@
       $typography,
       headline6-line-height
     )};
-
   --mdc-typography-subtitle1-font-family: #{map-get(
       $typography,
       subtitle1-font-family
@@ -239,7 +228,6 @@
       $typography,
       subtitle1-line-height
     )};
-
   --mdc-typography-subtitle2-font-family: #{map-get(
       $typography,
       subtitle2-font-family
@@ -256,17 +244,14 @@
       $typography,
       subtitle2-line-height
     )};
-
   --mdc-typography-body1-font-family: var(--mdc-typography-font-family);
   --mdc-typography-body1-font-size: #{map-get($typography, body1-font-size)};
   --mdc-typography-body1-font-weight: #{map-get($typography, body1-font-weight)};
   --mdc-typography-body1-line-height: #{map-get($typography, body1-line-height)};
-
   --mdc-typography-body2-font-family: var(--mdc-typography-font-family);
   --mdc-typography-body2-font-size: #{map-get($typography, body2-font-size)};
   --mdc-typography-body2-font-weight: #{map-get($typography, body2-font-weight)};
   --mdc-typography-body2-line-height: #{map-get($typography, body2-line-height)};
-
   --mdc-typography-button-font-family: #{map-get(
       $typography,
       button-font-family
@@ -280,7 +265,6 @@
       $typography,
       button-line-height
     )};
-
   --mdc-typography-caption-font-family: var(--mdc-typography-font-family);
   --mdc-typography-caption-font-size: #{map-get($typography, caption-font-size)};
   --mdc-typography-caption-font-weight: #{map-get(
@@ -313,7 +297,6 @@
       $theme,
       text-icon-on-background
     )};
-
   --mdc-theme-text-primary-on-light: #{map-get($theme, text-primary-on-light)};
   --mdc-theme-text-secondary-on-light: #{map-get(
       $theme,
@@ -322,7 +305,6 @@
   --mdc-theme-text-hint-on-light: #{map-get($theme, text-hint-on-light)};
   --mdc-theme-text-disabled-on-light: #{map-get($theme, text-disabled-on-light)};
   --mdc-theme-text-icon-on-light: #{map-get($theme, text-icon-on-light)};
-
   --mdc-theme-text-primary-on-dark: #{map-get($theme, text-primary-on-dark)};
   --mdc-theme-text-secondary-on-dark: #{map-get($theme, text-secondary-on-dark)};
   --mdc-theme-text-hint-on-dark: #{map-get($theme, text-hint-on-dark)};

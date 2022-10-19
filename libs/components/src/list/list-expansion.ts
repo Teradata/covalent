@@ -6,7 +6,6 @@ import { html, nothing } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { CovalentMenuBase } from '../menu/menu';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -31,9 +30,6 @@ export class CovalentExpansionList extends ListBase {
   @property({ type: Boolean, reflect: true })
   navOpen = false;
 
-  @query('td-menu')
-  menuEl!: CovalentMenuBase;
-
   @query('.expansion-header')
   expansionHeader!: HTMLElement;
 
@@ -43,11 +39,6 @@ export class CovalentExpansionList extends ListBase {
 
   private _toggleOpen() {
     this.open = !this.open;
-
-    if (!this.navOpen) {
-      this.menuEl.anchor = this.expansionHeader;
-      this.menuEl.open = !this.menuEl.open;
-    }
   }
 
   override render() {
@@ -55,7 +46,7 @@ export class CovalentExpansionList extends ListBase {
       <div class="expansion-header">
         <slot name="expansionHeader" @click=${this._toggleOpen}></slot>
       </div>
-      ${this.navOpen ? this.renderList() : nothing} ${this.renderMenu()}
+      ${this.navOpen ? this.renderList() : nothing }
     `;
   }
 
@@ -82,15 +73,6 @@ export class CovalentExpansionList extends ListBase {
         <slot></slot>
         ${this.renderPlaceholder()}
       </ul>
-    `;
-  }
-
-  renderMenu() {
-    return html`
-      <td-menu corner="TOP_END" absolute>
-        <slot></slot>
-        ${this.renderPlaceholder()}
-      </td-menu>
     `;
   }
 }

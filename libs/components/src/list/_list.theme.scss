@@ -52,7 +52,6 @@
   }
 
   td-list-item,
-  td-list-item,
   td-check-list-item,
   .mdc-list,
   .td-list-item,
@@ -77,9 +76,11 @@
       &.status-caution {
         color: var(--mdc-theme-caution);
       }
+
       &.status-negative {
         color: var(--mdc-theme-negative);
       }
+
       &.status-positive {
         color: var(--mdc-theme-positive);
       }

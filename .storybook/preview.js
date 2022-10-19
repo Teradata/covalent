@@ -1,26 +1,9 @@
-import anysort from 'anysort';
-
 import darkTheme from './theme/covalent.dark.theme';
 import lightTheme from './theme/covalent.light.theme';
 
 import '!style-loader!css-loader!sass-loader!./theme/markdown-elements.scss';
 
-
 export const parameters = {
-  options: {
-    storySort: (previous, next) => {
-      const [previousStory, previousMeta] = previous;
-      const [nextStory, nextMeta] = next;
-
-      return anysort(previousMeta.kind, nextMeta.kind, [
-        'Introduction',
-        'Guides/**',
-        'Patterns/**',
-        'Basics/**',
-        'Components/**/Overview',
-      ]);
-    },
-  },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {

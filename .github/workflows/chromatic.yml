@@ -28,6 +28,6 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      - run: npm ci --legacy-peer-deps
+      - run: npm ci
       # 👇 Adds Chromatic as a step in the workflow
-      - run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --exit-once-uploaded
+      - run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --exit-once-uploaded --auto-accept-changes

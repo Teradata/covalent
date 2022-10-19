@@ -13,13 +13,11 @@
 
 .app-shell {
   display: grid;
-  grid-template-columns: auto auto 1fr;
-  grid-template-rows: min-content;
-  grid-template-areas: 'nav mini-list main help';
+  grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
   min-height: 100vh;
 
   // TD Tiger stripe
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -71,6 +69,7 @@ nav.navigation {
   height: 100vh;
   overflow-y: auto;
   border-right: 0;
+
   .toggle-drawer {
     margin: 8px auto;
   }
@@ -89,6 +88,7 @@ nav.navigation {
       margin-left: 12px;
       margin-right: 12px;
     }
+
     slot[name='logo'] {
       display: block;
     }
@@ -147,6 +147,7 @@ td-top-app-bar-fixed {
     grid-template-columns: 1fr;
     grid-template-areas: 'header' 'main' 'mini-list' 'help';
   }
+
   [name='help']::slotted(*),
   .main {
     height: auto;

@@ -9,6 +9,7 @@ $space: chip-set-theme.$space-between-chips;
 
 ::slotted(td-chip) {
   @include rtl.reflexive-property(margin, $space, 0);
+
   margin-top: math.div($space, 2);
   margin-bottom: math.div($space, 2);
 }

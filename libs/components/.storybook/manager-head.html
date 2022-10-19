@@ -1,39 +1,3 @@
-<link rel="shortcut icon" href="icons/favicon.ico" />
-<script>
-  (function (h, o, u, n, d) {
-    h = h[d] = h[d] || {
-      q: [],
-      onReady: function (c) {
-        h.q.push(c);
-      },
-    };
-    d = o.createElement(u);
-    d.async = 1;
-    d.src = n;
-    n = o.getElementsByTagName(u)[0];
-    n.parentNode.insertBefore(d, n);
-  })(
-    window,
-    document,
-    'script',
-    'https://www.datadoghq-browser-agent.com/datadog-rum-v4.js',
-    'DD_RUM'
-  );
-  DD_RUM.onReady(function () {
-    DD_RUM.init({
-      clientToken: 'pubb030211c68c6a17d6a435a675bba6234',
-      applicationId: 'dd76caa7-7be6-473c-baae-db3fc4f0169f',
-      site: 'datadoghq.com',
-      service: 'covalent-storybook',
-      // Specify a version number to identify the deployed version of your application in Datadog
-      // version: '1.0.0',
-      sampleRate: 100,
-      trackInteractions: true,
-      defaultPrivacyLevel: 'mask-user-input',
-    });
-    DD_RUM.startSessionReplayRecording();
-  });
-</script>
 <style>
   .sidebar-header {
     max-width: 213px;

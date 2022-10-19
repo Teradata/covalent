@@ -40,12 +40,15 @@
     &.accent {
       --mdc-theme-primary: #{map-get($theme, primary)};
       --mdc-button-outline-color: var(--mdc-theme-primary);
+
       border-color: var(--mdc-button-outline-color);
     }
+
     &.destructive,
     &.negative {
       --mdc-theme-primary: #{map-get($theme, error)};
       --mdc-button-outline-color: var(--mdc-theme-primary);
+
       border-color: var(--mdc-button-outline-color);
     }
   }
