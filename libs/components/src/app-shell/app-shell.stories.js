@@ -115,11 +115,11 @@ const Template = ({ navClick }) => {
                Editor
                <td-icon class="covalent-icon" slot="graphic">product_editor</td-icon>
             </td-nav-list-item>
-            <td-list-item>Scripts</td-list-item>
-            <td-list-item>Scripts</td-list-item>
-            <td-list-item>Scripts</td-list-item>
-            <td-list-item>Scripts</td-list-item>
-            <td-list-item>Scripts</td-list-item>
+            <td-nav-list-item>Scripts</td-nav-list-item>
+            <td-nav-list-item>Scripts</td-nav-list-item>
+            <td-nav-list-item>Scripts</td-nav-list-item>
+            <td-nav-list-item>Scripts</td-nav-list-item>
+            <td-nav-list-item>Scripts</td-nav-list-item>
         </td-expansion-list>
 
         <td-nav-list-item graphic="avatar">

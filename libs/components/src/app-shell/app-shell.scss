@@ -12,6 +12,7 @@
 }
 
 .app-shell {
+  background-color: var(--mdc-theme-surface);
   display: grid;
   grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
   min-height: 100vh;
@@ -43,6 +44,8 @@
   overflow-y: auto;
   border-left: 1px solid;
   border-color: var(--mdc-theme-border, rgba(black, 0.12));
+  transition-property: width;
+  transition-duration: 200ms;
 
   &.help--closed {
     width: 0;

@@ -21,10 +21,11 @@ module.exports = {
     iconButton: './libs/components/src/icon-button/icon-button.ts',
     iconCheckbox: './libs/components/src/icon-checkbox/icon-check-toggle.ts',
     iconRadio: './libs/components/src/icon-radio/icon-radio-toggle.ts',
-    linearProgsress: './libs/components/src/linear-progress/linear-progress.ts',
+    linearProgress: './libs/components/src/linear-progress/linear-progress.ts',
     list: './libs/components/src/list/list.ts',
     listItem: './libs/components/src/list/list-item.ts',
     listExpansion: './libs/components/src/list/list-expansion.ts',
+    listCheckItem: './libs/components/src/list/check-list-item.ts',
     listRadioItem: './libs/components/src/list/radio-list-item.ts',
     listNavItem: './libs/components/src/list/nav-list-item.ts',
     menu: './libs/components/src/menu/menu.ts',
@@ -63,7 +64,7 @@ module.exports = {
             options: {
               configFile: 'tsconfig.lib.json',
               compilerOptions: {
-                outDir: '../../dist/libs/components',
+                outDir: '../../dist/',
               },
             },
           },
