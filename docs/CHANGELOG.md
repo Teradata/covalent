@@ -1,3 +1,9 @@
+# [4.10.0](https://github.com/Teradata/covalent/compare/v4.9.0...v4.10.0) (2022-10-26)
+
+### Features
+
+- **components:** rearranging libs & cleanup ([dee789c](https://github.com/Teradata/covalent/commit/dee789c54722dd1316228cde68a4380f2e2769bf))
+
 # [4.9.0](https://github.com/Teradata/covalent/compare/v4.8.2...v4.9.0) (2022-09-30)
 
 ### Features
