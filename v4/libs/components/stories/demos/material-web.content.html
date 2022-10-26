@@ -1,0 +1,2125 @@
+<!-- Required styles for Material Web -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/material-components-web@13.0.0/dist/material-components-web.min.css"
+/>
+<style>
+  body {
+    display: flex;
+    margin: 0;
+  }
+
+  .remix-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 200;
+  }
+
+  .drawer-content--theme-summary {
+    display: none;
+  }
+
+  .theme-name {
+    margin-bottom: 0;
+  }
+  .theme-name:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  .theme-name:empty:before {
+    content: attr(placeholder);
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .mdc-list-divider.theme-summary-divider {
+    border-bottom-width: 2px;
+    margin: 20px 0;
+  }
+
+  .theme-summary-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+  }
+  .theme-summary-line figure {
+    margin: 0;
+  }
+  .theme-summary-line .theme-summary-code {
+    background: none;
+  }
+  .theme-summary-line .theme-summary-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  .theme-summary-line .theme-summary-shape {
+    width: 48px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+  }
+  .theme-summary-line.theme-summary-line--typography {
+    margin: 0;
+  }
+  .theme-summary-line .theme-summary-typography {
+    width: 120px;
+  }
+
+  .mdc-list-divider.typography-baseline-divider {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .mdc-drawer-app-content {
+    width: 100%;
+  }
+
+  .theme-builder-desc-banner {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  @media (max-width: 1310px) {
+    .theme-builder-app-bar,
+    .theme-builder-desc-banner {
+      display: block;
+    }
+
+    .theme-builder-drawer {
+      display: none;
+    }
+  }
+  .main-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .main-content:not(.mdc-top-app-bar--fixed-adjust) {
+    padding: 2vh 0;
+  }
+  .main-content .column {
+    width: 420px;
+  }
+
+  .component-section-row {
+    display: flex;
+  }
+  .component-section-row .component-section:first-child {
+    width: 200px;
+  }
+
+  .component-section {
+    margin: 16px 20px 40px 20px;
+  }
+  .component-section.dialog-component-section {
+    margin-bottom: 60px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .component-section {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mdc-image-list {
+      width: auto;
+    }
+
+    .mdc-drawer {
+      width: 60%;
+      min-width: calc(100% - 56px);
+    }
+
+    .column {
+      width: auto;
+      max-width: 420px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+  @media only screen and (max-width: 485px) {
+    .column {
+      overflow: hidden;
+    }
+
+    .remix-fab {
+      position: fixed;
+      bottom: 16px;
+      right: auto;
+      margin: 0;
+      z-index: 200;
+    }
+
+    .mdc-dialog .mdc-dialog__surface {
+      max-width: calc(100% - 100px);
+    }
+  }
+  .section-header {
+    display: flex;
+    height: 36px;
+    font-family: Roboto, sans-serif;
+  }
+  .section-header a {
+    display: flex;
+    align-items: center;
+  }
+  .section-header a:hover,
+  .section-header a:focus {
+    text-decoration: none;
+  }
+  .section-header .material-icons {
+    font-size: 1rem;
+    padding: 8px;
+  }
+  .section-header .material-icons.leading-icon {
+    padding-left: 0;
+  }
+
+  .component-wrapper {
+    margin: 16px 0;
+  }
+
+  .print .column {
+    width: 30vw;
+  }
+  .print .component-wrapper {
+    margin-bottom: 60px;
+  }
+  .print .component-wrapper.text-field-component-wrapper,
+  .print .component-wrapper.chips-component-wrapper {
+    margin-bottom: 96px;
+  }
+  .print .theme-name {
+    margin-bottom: 8px;
+  }
+  .print .glitch-url {
+    font-size: 1rem;
+  }
+  .print .drawer-content--instructions .mdc-typography--overline {
+    font-size: 0.9rem;
+  }
+  .print .drawer-content--instructions .mdc-typography--body2 {
+    font-size: 1.2rem;
+    line-height: 1.75rem;
+  }
+  .print .drawer-content--options {
+    display: none;
+  }
+  .print .button-component-wrapper,
+  .print .fab-component-wrapper {
+    margin: 24px 0 44px;
+  }
+  .print .top-bar-component-wrapper {
+    margin: 24px 0 52px;
+  }
+  .print .switch-component-wrapper {
+    margin-left: -8px;
+    margin-top: 24px;
+  }
+  .print .component-wrapper.checkbox-component-wrapper {
+    margin-left: -18px;
+  }
+  .print .component-wrapper.chips-component-wrapper-1 {
+    margin: 12px 0 92px -8px;
+  }
+  .print .select-component {
+    margin: 0 20px 40px 20px;
+  }
+  .print .column-2 {
+    transform: translate(-16px);
+  }
+  .print .card-component-wrapper {
+    margin: 16px 0 38px;
+  }
+  .print .component-wrapper.text-field-component-wrapper-1 {
+    margin: 22px 0 90px;
+  }
+  .print .dialog-component-wrapper {
+    margin: 8px 0 52px;
+  }
+  .print .linear-progress-section {
+    margin-top: -8px;
+  }
+  .print .tabs-section {
+    margin-top: -16px;
+  }
+  .print .radio-row {
+    margin-top: -24px;
+    margin-bottom: -16px;
+  }
+  .print .snackbar-section {
+    margin-top: -16px;
+  }
+  .print .image-section {
+    margin-top: -4px;
+  }
+  .print .switch-section {
+    margin-top: 0;
+  }
+  .print .short-app-bar-section,
+  .print .menu-section {
+    margin-top: 0px;
+  }
+  .print .switch-checkbox-row {
+    margin-bottom: 16px;
+  }
+  .print .list-section {
+    margin-top: 8px;
+  }
+  .print .dialog-component-section {
+    margin-bottom: 52px;
+    margin-top: -16px;
+  }
+  .print .chips-section {
+    margin: 16px 20px -32px 20px;
+  }
+  .print .image-list-section {
+    transform: translateY(-8px);
+  }
+
+  .typography-callout {
+    font-size: 12px;
+    padding: 16px;
+  }
+
+  .font-link {
+    font-size: 12px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: -16px;
+  }
+
+  .font-link i {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+
+  .theme-shape .varValue {
+    display: block;
+  }
+
+  .varValue {
+    font-weight: 600;
+  }
+
+  .mdc-checkbox,
+  .mdc-radio {
+    margin-right: 4px;
+  }
+
+  .component-wrapper .mdc-top-app-bar {
+    position: relative;
+    z-index: 1;
+  }
+  .component-wrapper .mdc-top-app-bar:not(.mdc-top-app-bar--short) {
+    width: 100%;
+  }
+
+  .mdc-card {
+    width: 100%;
+  }
+  .mdc-card .demo-card__primary {
+    padding: 1rem;
+  }
+  .mdc-card .demo-card__title,
+  .mdc-card .demo-card__subtitle {
+    margin: 0;
+  }
+  .mdc-card .demo-card__secondary {
+    padding: 0 1rem 8px;
+    opacity: 0.87;
+  }
+
+  .mdc-linear-progress {
+    width: 100%;
+  }
+
+  .mdc-menu-surface--anchor > .mdc-menu {
+    position: relative;
+    z-index: 1;
+  }
+
+  .mdc-select {
+    width: 160px;
+  }
+
+  .drawer-component-wrapper {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .drawer-component-wrapper .mdc-drawer .mdc-drawer__content {
+    padding: 0;
+  }
+
+  .mdc-text-field {
+    width: 100%;
+  }
+
+  .mdc-snackbar {
+    position: relative;
+    margin: 0;
+    justify-content: start;
+    z-index: 1;
+  }
+
+  .mdc-dialog {
+    position: relative;
+    justify-content: start;
+    z-index: 1;
+  }
+  .mdc-dialog .mdc-dialog__surface {
+    max-width: 100%;
+  }
+
+  .mdc-image-list {
+    max-width: 400px;
+    max-height: 600px;
+    margin: 0;
+  }
+
+  .component-wrapper.button-component-wrapper,
+  .component-wrapper.fab-component-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+
+<!-- Required styles for Material Web -->
+<div class="mdc-typography">
+  <div class="mdc-drawer-app-content">
+    <main class="main-content">
+      <div class="theme-builder-desc-banner mdc-typography--caption">
+        An HTML rendering of MDC styled Components themed with Covalent
+      </div>
+
+      <!-- <button onclick=" window.open('https://glitch.com/edit/#!/remix/material-theme-builder','_blank')" class="mdc-fab mdc-fab--extended remix-fab" >
+                <span class="material-icons mdc-fab__icon">photo_filter</span>
+                <span class="mdc-fab__label">Create a new Theme</span>
+        </button> -->
+      <div class="column">
+        <!-- Button -->
+        <section class="component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/buttons.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Button
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper button-component-wrapper">
+            <button class="mdc-button mdc-button--raised">
+              <span class="mdc-button__ripple"></span>
+              Button
+            </button>
+            <button class="mdc-button">
+              <span class="mdc-button__ripple"></span>
+              Button
+            </button>
+            <button class="mdc-button mdc-button--outlined">
+              <span class="mdc-button__ripple"></span>
+              Button
+            </button>
+          </div>
+        </section>
+
+        <!-- Top app bar -->
+        <section class="component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/app-bars-top.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Top App Bar
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper top-bar-component-wrapper">
+            <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+              <div class="mdc-top-app-bar__row">
+                <section
+                  class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+                >
+                  <a class="material-icons mdc-top-app-bar__navigation-icon"
+                    >menu</a
+                  >
+                  <span class="mdc-top-app-bar__title">Headline 6</span>
+                </section>
+                <section
+                  class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+                  role="toolbar"
+                >
+                  <a
+                    class="material-icons mdc-icon-button mdc-top-app-bar__action-item"
+                    aria-label="Share"
+                    alt="Share"
+                    >share</a
+                  >
+                  <a
+                    class="material-icons mdc-icon-button mdc-top-app-bar__action-item"
+                    aria-label="Bookmark this page"
+                    alt="Bookmark this page"
+                    >bookmark</a
+                  >
+                  <a
+                    class="material-icons mdc-icon-button mdc-top-app-bar__action-item"
+                    aria-label="Search this page"
+                    alt="Search this page"
+                    >search</a
+                  >
+                </section>
+              </div>
+            </header>
+          </div>
+        </section>
+
+        <!-- Drawer -->
+        <section class="component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/navigation-drawer.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Drawer
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper drawer-component-wrapper">
+            <aside class="mdc-drawer">
+              <div class="mdc-drawer__header">
+                <h3 class="mdc-drawer__title">Headline 6</h3>
+                <h6 class="mdc-drawer__subtitle">Body 2</h6>
+              </div>
+              <div class="mdc-list-divider"></div>
+              <div class="mdc-drawer__content">
+                <nav class="mdc-list" role="listbox">
+                  <a
+                    class="mdc-list-item mdc-list-item--activated"
+                    aria-selected="true"
+                  >
+                    <i
+                      class="material-icons mdc-deprecated-list-item__graphic"
+                      aria-hidden="true"
+                      >inbox</i
+                    >
+                    <span class="mdc-list-item__ripple"></span>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                  <a class="mdc-list-item">
+                    <i
+                      class="material-icons mdc-deprecated-list-item__graphic"
+                      aria-hidden="true"
+                      >star</i
+                    >
+                    <span class="mdc-list-item__ripple"></span>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                  <a class="mdc-list-item">
+                    <i
+                      class="material-icons mdc-deprecated-list-item__graphic"
+                      aria-hidden="true"
+                      >bookmark</i
+                    >
+                    <span class="mdc-list-item__ripple"></span>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                  <a class="mdc-list-item">
+                    <i
+                      class="material-icons mdc-deprecated-list-item__graphic"
+                      aria-hidden="true"
+                      >send</i
+                    >
+                    <span class="mdc-list-item__ripple"></span>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                  <a class="mdc-list-item">
+                    <i
+                      class="material-icons mdc-deprecated-list-item__graphic"
+                      aria-hidden="true"
+                      >drafts</i
+                    >
+                    <span class="mdc-list-item__ripple"></span>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                </nav>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <div class="component-section-row">
+          <!-- Short top app bar -->
+          <section class="component-section short-app-bar-section">
+            <div class="section-header">
+              <a
+                href="https://material.io/design/components/app-bars-top.html"
+                class="mdc-typography--button"
+                target="_blank"
+              >
+                Short App Bar
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper">
+              <header
+                class="mdc-top-app-bar mdc-top-app-bar--short mdc-top-app-bar--short-collapsed"
+              >
+                <div class="mdc-top-app-bar__row">
+                  <section
+                    class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+                  >
+                    <a
+                      class="material-icons mdc-icon-button mdc-top-app-bar__navigation-icon"
+                      >menu</a
+                    >
+                  </section>
+                  <section
+                    class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+                    role="toolbar"
+                  >
+                    <a
+                      class="material-icons mdc-icon-button mdc-top-app-bar__action-item"
+                      aria-label="Open shopping cart"
+                      alt="Open shopping cart"
+                      >shopping_cart</a
+                    >
+                  </section>
+                </div>
+              </header>
+            </div>
+          </section>
+
+          <!-- Menu -->
+          <section class="component-section menu-section">
+            <div class="section-header">
+              <a
+                href="https://material.io/design/components/menus.html"
+                class="mdc-typography--button"
+                target="_blank"
+              >
+                Menu
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper">
+              <div class="mdc-menu-surface--anchor">
+                <div class="mdc-menu mdc-menu-surface mdc-menu-surface--open">
+                  <ul
+                    class="mdc-list"
+                    role="menu"
+                    aria-hidden="true"
+                    aria-orientation="vertical"
+                    tabindex="-1"
+                  >
+                    <li class="mdc-list-item" role="menuitem">
+                      <span class="mdc-list-item__ripple"></span>
+                      <span class="mdc-list-item__text">A Menu Item</span>
+                    </li>
+                    <li class="mdc-list-item" role="menuitem">
+                      <span class="mdc-list-item__ripple"></span>
+                      <span class="mdc-list-item__text">Another Menu Item</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Linear progress -->
+        <section class="component-section linear-progress-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/progress-indicators.html#linear-progress-indicators"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Linear Progress
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper linear-progress-component-wrapper">
+            <div
+              role="progressbar"
+              class="mdc-linear-progress mdc-linear-progress--indeterminate"
+            >
+              <div class="mdc-linear-progress__buffering-dots"></div>
+              <div class="mdc-linear-progress__buffer"></div>
+              <div
+                class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+              >
+                <span class="mdc-linear-progress__bar-inner"></span>
+              </div>
+              <div
+                class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+              >
+                <span class="mdc-linear-progress__bar-inner"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="component-section-row switch-checkbox-row">
+          <!-- Switch -->
+          <section class="component-section switch-section">
+            <div class="section-header">
+              <a
+                href="https://material.io/design/components/selection-controls.html#switches"
+                class="mdc-typography--button"
+                target="_blank"
+              >
+                Switch
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper switch-component-wrapper">
+              <button
+                id="basic-switch"
+                class="mdc-switch mdc-switch--unselected"
+                type="button"
+                role="switch"
+                aria-checked="false"
+              >
+                <div class="mdc-switch__track"></div>
+                <div class="mdc-switch__handle-track">
+                  <div class="mdc-switch__handle">
+                    <div class="mdc-switch__shadow">
+                      <div class="mdc-elevation-overlay"></div>
+                    </div>
+                    <div class="mdc-switch__ripple"></div>
+                    <div class="mdc-switch__icons">
+                      <svg
+                        class="mdc-switch__icon mdc-switch__icon--on"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19.69,5.23L8.96,15.96l-4.23-4.23L2.96,13.5l6,6L21.46,7L19.69,5.23z"
+                        />
+                      </svg>
+                      <svg
+                        class="mdc-switch__icon mdc-switch__icon--off"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M20 13H4v-2h16v2z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </button>
+              <label for="basic-switch">off/on</label>
+            </div>
+          </section>
+
+          <!-- Checkbox -->
+          <section class="component-section">
+            <div class="section-header">
+              <a
+                href="https://material.io/design/components/selection-controls.html#checkboxes"
+                class="mdc-typography--button"
+                target="_blank"
+              >
+                Checkbox
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper checkbox-component-wrapper">
+              <div class="mdc-checkbox">
+                <input type="checkbox" class="mdc-checkbox__native-control" />
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
+                    <path
+                      class="mdc-checkbox__checkmark-path"
+                      fill="none"
+                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                    />
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+              </div>
+              <div class="mdc-checkbox indeterminate-checkbox">
+                <input type="checkbox" class="mdc-checkbox__native-control" />
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
+                    <path
+                      class="mdc-checkbox__checkmark-path"
+                      fill="none"
+                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                    />
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+              </div>
+              <div class="mdc-checkbox">
+                <input
+                  type="checkbox"
+                  class="mdc-checkbox__native-control"
+                  checked
+                />
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
+                    <path
+                      class="mdc-checkbox__checkmark-path"
+                      fill="none"
+                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                    />
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="component-section-row radio-row">
+          <!-- Radio -->
+          <section class="component-section">
+            <div class="section-header">
+              <a
+                href="https://material.io/design/components/selection-controls.html#radio-buttons"
+                class="mdc-typography--button"
+                target="_blank"
+              >
+                Radio Button
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper radio-component-wrapper">
+              <div class="mdc-radio">
+                <input
+                  class="mdc-radio__native-control"
+                  type="radio"
+                  id="radio-1"
+                  name="radios"
+                  checked
+                />
+                <div class="mdc-radio__background">
+                  <div class="mdc-radio__outer-circle"></div>
+                  <div class="mdc-radio__inner-circle"></div>
+                </div>
+              </div>
+              <div class="mdc-radio">
+                <input
+                  class="mdc-radio__native-control"
+                  type="radio"
+                  id="radio-2"
+                  name="radios"
+                  checked
+                />
+                <div class="mdc-radio__background">
+                  <div class="mdc-radio__outer-circle"></div>
+                  <div class="mdc-radio__inner-circle"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Icon button -->
+          <section class="component-section">
+            <div class="section-header">
+              <a
+                href="https://material.io/design/components/buttons.html#toggle-button"
+                class="mdc-typography--button"
+                target="_blank"
+              >
+                Icon Button
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper icon-button-component-wrapper">
+              <button
+                id="icon-toggle-button"
+                class="mdc-icon-button"
+                aria-label="Add to favorites"
+                aria-pressed="false"
+              >
+                <div class="mdc-icon-button__ripple"></div>
+                <i
+                  class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on"
+                  >music_off</i
+                >
+                <i class="material-icons mdc-icon-button__icon">music_note</i>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- Chips -->
+        <section class="component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/chips.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Chips
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div
+            class="component-wrapper chips-component-wrapper chips-component-wrapper-1"
+          >
+            <span
+              class="mdc-evolution-chip-set"
+              role="listbox"
+              aria-orientation="horizontal"
+              aria-multiselectable="true"
+            >
+              <span class="mdc-evolution-chip-set__chips" role="presentation">
+                <span class="mdc-evolution-chip" role="row" id="c1">
+                  <span
+                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
+                    role="gridcell"
+                  >
+                    <button
+                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                      type="button"
+                      tabindex="-1"
+                    >
+                      <span
+                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                      ></span>
+                      <span class="mdc-evolution-chip__text-label"
+                        >Regular chip</span
+                      >
+                    </button>
+                  </span>
+                </span>
+                <span
+                  class="mdc-evolution-chip mdc-evolution-chip--with-trailing-action"
+                  role="row"
+                  id="c2"
+                  data-mdc-deletable="true"
+                >
+                  <span
+                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
+                    role="gridcell"
+                  >
+                    <button
+                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                      type="button"
+                      tabindex="0"
+                    >
+                      <span
+                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                      ></span>
+                      <span class="mdc-evolution-chip__text-label"
+                        >Trialing chip</span
+                      >
+                    </button>
+                  </span>
+                  <span
+                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--trailing"
+                    role="gridcell"
+                  >
+                    <button
+                      class="mdc-evolution-chip__action mdc-evolution-chip__action--trailing"
+                      type="button"
+                      tabindex="-1"
+                      aria-label="Remove chip foo"
+                    >
+                      <span
+                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--trailing"
+                      ></span>
+                      <span
+                        class="mdc-evolution-chip__icon material-icons mdc-evolution-chip__icon--trailing"
+                        >close</span
+                      >
+                    </button>
+                  </span>
+                </span>
+
+                <span
+                  class="mdc-evolution-chip mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--with-primary-icon"
+                  role="row"
+                  id="c0"
+                >
+                  <span
+                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
+                    role="gridcell"
+                  >
+                    <button
+                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                      type="button"
+                      tabindex="0"
+                    >
+                      <span
+                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                      ></span>
+                      <span class="mdc-evolution-chip__graphic">
+                        <span
+                          class="mdc-evolution-chip__icon mdc-evolution-chip__icon--primary material-icons"
+                          >favorite</span
+                        >
+                      </span>
+                      <span class="mdc-evolution-chip__text-label"
+                        >Leading chip</span
+                      >
+                    </button>
+                  </span>
+                </span>
+
+                <span
+                  class="mdc-evolution-chip mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--with-primary-icon mdc-evolution-chip--with-avatar"
+                  role="row"
+                  id="c0"
+                >
+                  <span
+                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
+                    role="gridcell"
+                  >
+                    <button
+                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                      type="button"
+                      tabindex="0"
+                    >
+                      <span
+                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                      ></span>
+                      <span class="mdc-evolution-chip__graphic">
+                        <span
+                          class="mdc-evolution-chip__icon mdc-evolution-chip__icon--primary material-icons"
+                          style="background: rgba(0, 0, 0, 0.3)"
+                          >person</span
+                        >
+                      </span>
+                      <span class="mdc-evolution-chip__text-label"
+                        >Avatar chip</span
+                      >
+                    </button>
+                  </span>
+                </span>
+
+                <span
+                  class="mdc-evolution-chip mdc-evolution-chip--disabled"
+                  role="row"
+                  id="c1"
+                >
+                  <span
+                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
+                    role="gridcell"
+                  >
+                    <button
+                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                      type="button"
+                      tabindex="-1"
+                      disabled
+                    >
+                      <span
+                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                      ></span>
+                      <span class="mdc-evolution-chip__text-label"
+                        >Disabled chip</span
+                      >
+                    </button>
+                  </span>
+                </span>
+
+                <span
+                  class="mdc-evolution-chip mdc-evolution-chip--filter mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--selectable"
+                  role="presentation"
+                  id="c5"
+                >
+                  <span
+                    class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                    role="option"
+                    aria-selected="false"
+                    tabindex="0"
+                  >
+                    <span
+                      class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                    ></span>
+                    <span class="mdc-evolution-chip__graphic">
+                      <span class="mdc-evolution-chip__checkmark">
+                        <svg
+                          class="mdc-evolution-chip__checkmark-svg"
+                          viewBox="-2 -3 30 30"
+                        >
+                          <path
+                            class="mdc-evolution-chip__checkmark-path"
+                            fill="none"
+                            stroke="black"
+                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="mdc-evolution-chip__text-label"
+                      >Filter chip</span
+                    >
+                  </span>
+                </span>
+
+                <span
+                  class="mdc-evolution-chip mdc-evolution-chip--filter mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--selectable"
+                  role="presentation"
+                  id="c6"
+                >
+                  <span
+                    class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                    role="option"
+                    aria-selected="false"
+                    tabindex="0"
+                    data-mdc-deletable="true"
+                  >
+                    <span
+                      class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                    ></span>
+                    <span class="mdc-evolution-chip__graphic">
+                      <span class="mdc-evolution-chip__checkmark">
+                        <svg
+                          class="mdc-evolution-chip__checkmark-svg"
+                          viewBox="-2 -3 30 30"
+                        >
+                          <path
+                            class="mdc-evolution-chip__checkmark-path"
+                            fill="none"
+                            stroke="black"
+                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="mdc-evolution-chip__text-label"
+                      >Filter chip</span
+                    >
+                  </span>
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            class="component-wrapper chips-component-wrapper chips-component-wrapper-2"
+          >
+            <span
+              class="mdc-evolution-chip-set"
+              role="listbox"
+              aria-orientation="horizontal"
+              aria-multiselectable="false"
+            >
+              <span class="mdc-evolution-chip-set__chips" role="presentation">
+                <span
+                  class="mdc-evolution-chip mdc-evolution-chip--filter mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--selectable mdc-evolution-chip--selected"
+                  role="presentation"
+                  id="c20"
+                >
+                  <span
+                    class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                    role="option"
+                    aria-selected="false"
+                    tabindex="0"
+                  >
+                    <span
+                      class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                    ></span>
+                    <span class="mdc-evolution-chip__graphic">
+                      <span class="mdc-evolution-chip__checkmark">
+                        <svg
+                          class="mdc-evolution-chip__checkmark-svg"
+                          viewBox="-2 -3 30 30"
+                        >
+                          <path
+                            class="mdc-evolution-chip__checkmark-path"
+                            fill="none"
+                            stroke="black"
+                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="mdc-evolution-chip__text-label"
+                      >Filter chip</span
+                    >
+                  </span>
+                </span>
+
+                <span
+                  class="mdc-evolution-chip mdc-evolution-chip--filter mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--selectable"
+                  role="presentation"
+                  id="c21"
+                >
+                  <span
+                    class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+                    role="option"
+                    aria-selected="false"
+                    tabindex="0"
+                    data-mdc-deletable="true"
+                  >
+                    <span
+                      class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+                    ></span>
+                    <span class="mdc-evolution-chip__graphic">
+                      <span class="mdc-evolution-chip__checkmark">
+                        <svg
+                          class="mdc-evolution-chip__checkmark-svg"
+                          viewBox="-2 -3 30 30"
+                        >
+                          <path
+                            class="mdc-evolution-chip__checkmark-path"
+                            fill="none"
+                            stroke="black"
+                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="mdc-evolution-chip__text-label"
+                      >Filter chip</span
+                    >
+                  </span>
+                </span>
+              </span>
+            </span>
+          </div>
+        </section>
+
+        <div class="component-section-row">
+          <!-- Select -->
+          <section class="component-section select-component">
+            <div class="section-header">
+              <a
+                href="https://material.io/develop/web/components/input-controls/select-menus/"
+                class="mdc-typography--button"
+                target="_blank"
+              >
+                Select
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper">
+              <div class="mdc-select mdc-select--filled demo-width-class">
+                <div
+                  class="mdc-select__anchor"
+                  role="button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-labelledby="demo-label demo-selected-text"
+                >
+                  <span class="mdc-select__ripple"></span>
+                  <span id="demo-label" class="mdc-floating-label"
+                    >Pick a Food Group</span
+                  >
+                  <span class="mdc-select__selected-text-container">
+                    <span
+                      id="demo-selected-text"
+                      class="mdc-select__selected-text"
+                    ></span>
+                  </span>
+                  <span class="mdc-select__dropdown-icon">
+                    <svg
+                      class="mdc-select__dropdown-icon-graphic"
+                      viewBox="7 10 10 5"
+                      focusable="false"
+                    >
+                      <polygon
+                        class="mdc-select__dropdown-icon-inactive"
+                        stroke="none"
+                        fill-rule="evenodd"
+                        points="7 10 12 15 17 10"
+                      ></polygon>
+                      <polygon
+                        class="mdc-select__dropdown-icon-active"
+                        stroke="none"
+                        fill-rule="evenodd"
+                        points="7 15 12 10 17 15"
+                      ></polygon>
+                    </svg>
+                  </span>
+                  <span class="mdc-line-ripple"></span>
+                </div>
+
+                <div
+                  class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+                >
+                  <ul
+                    class="mdc-deprecated-list"
+                    role="listbox"
+                    aria-label="Food picker listbox"
+                  >
+                    <li
+                      class="mdc-deprecated-list-item mdc-deprecated-list-item--selected"
+                      aria-selected="true"
+                      data-value=""
+                      role="option"
+                    >
+                      <span class="mdc-deprecated-list-item__ripple"></span>
+                    </li>
+                    <li
+                      class="mdc-deprecated-list-item"
+                      aria-selected="false"
+                      data-value="grains"
+                      role="option"
+                    >
+                      <span class="mdc-deprecated-list-item__ripple"></span>
+                      <span class="mdc-deprecated-list-item__text">
+                        Bread, Cereal, Rice, and Pasta
+                      </span>
+                    </li>
+                    <li
+                      class="mdc-deprecated-list-item mdc-deprecated-list-item--disabled"
+                      aria-selected="false"
+                      data-value="vegetables"
+                      aria-disabled="true"
+                      role="option"
+                    >
+                      <span class="mdc-deprecated-list-item__ripple"></span>
+                      <span class="mdc-deprecated-list-item__text">
+                        Vegetables
+                      </span>
+                    </li>
+                    <li
+                      class="mdc-deprecated-list-item"
+                      aria-selected="false"
+                      data-value="fruit"
+                      role="option"
+                    >
+                      <span class="mdc-deprecated-list-item__ripple"></span>
+                      <span class="mdc-deprecated-list-item__text">
+                        Fruit
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Select -->
+          <section class="component-section select-component">
+            <div class="section-header"><!-- Hold space for layout --></div>
+            <div class="component-wrapper">
+              <div class="mdc-select mdc-select--outlined">
+                <div
+                  class="mdc-select__anchor"
+                  aria-labelledby="outlined-select-label"
+                >
+                  <span class="mdc-notched-outline">
+                    <span class="mdc-notched-outline__leading"></span>
+                    <span class="mdc-notched-outline__notch">
+                      <span
+                        id="outlined-select-label"
+                        class="mdc-floating-label"
+                        >Pick a Food Group</span
+                      >
+                    </span>
+                    <span class="mdc-notched-outline__trailing"></span>
+                  </span>
+                  <span class="mdc-select__selected-text-container">
+                    <span
+                      id="demo-selected-text"
+                      class="mdc-select__selected-text"
+                    ></span>
+                  </span>
+                  <span class="mdc-select__dropdown-icon">
+                    <svg
+                      class="mdc-select__dropdown-icon-graphic"
+                      viewBox="7 10 10 5"
+                      focusable="false"
+                    >
+                      <polygon
+                        class="mdc-select__dropdown-icon-inactive"
+                        stroke="none"
+                        fill-rule="evenodd"
+                        points="7 10 12 15 17 10"
+                      ></polygon>
+                      <polygon
+                        class="mdc-select__dropdown-icon-active"
+                        stroke="none"
+                        fill-rule="evenodd"
+                        points="7 15 12 10 17 15"
+                      ></polygon>
+                    </svg>
+                  </span>
+                  <div
+                    class="mdc-select__menu mdc-menu mdc-menu-surface"
+                    role="listbox"
+                  >
+                    <ul class="mdc-list">
+                      <li
+                        class="mdc-list-item"
+                        data-value=""
+                        role="option"
+                      ></li>
+                      <li
+                        class="mdc-list-item"
+                        data-value="outlined-item1"
+                        role="option"
+                      >
+                        Body 2
+                      </li>
+                      <li
+                        class="mdc-list-item"
+                        data-value="outlined-item2"
+                        aria-selected="true"
+                        role="option"
+                      >
+                        Body 2
+                      </li>
+                      <li
+                        class="mdc-list-item"
+                        data-value="outlined-item3"
+                        role="option"
+                      >
+                        Body 2
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Other elements from the select remain. -->
+                <div
+                  class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+                >
+                  ...
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- List -->
+        <section class="component-section list-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/lists.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              List
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <ul class="mdc-list">
+              <li class="mdc-list-item" tabindex="0">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">Single-line item</span>
+              </li>
+              <li class="mdc-list-item">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">Single-line item</span>
+              </li>
+              <li class="mdc-list-item">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">Single-line item</span>
+              </li>
+            </ul>
+
+            <ul class="mdc-list mdc-list--two-line mdc-list--avatar-list">
+              <li class="mdc-list-item" tabindex="0">
+                <span class="mdc-list-item__ripple"></span>
+                <span
+                  class="mdc-deprecated-list-item__graphic material-icons"
+                  aria-hidden="true"
+                  >child_care</span
+                >
+                <span class="mdc-list-item__text">
+                  <span class="mdc-list-item__primary-text">Two-line item</span>
+                  <span class="mdc-list-item__secondary-text"
+                    >Secondary text</span
+                  >
+                </span>
+              </li>
+              <li role="separator" class="mdc-list-divider"></li>
+              <li class="mdc-list-item">
+                <span class="mdc-list-item__ripple"></span>
+                <span
+                  class="mdc-deprecated-list-item__graphic material-icons"
+                  aria-hidden="true"
+                  >child_care</span
+                >
+                <span class="mdc-list-item__text">
+                  <span class="mdc-list-item__primary-text">Two-line item</span>
+                  <span class="mdc-list-item__secondary-text"
+                    >Secondary text</span
+                  >
+                </span>
+              </li>
+              <li role="separator" class="mdc-list-divider"></li>
+              <li class="mdc-list-item">
+                <span class="mdc-list-item__ripple"></span>
+                <span
+                  class="mdc-deprecated-list-item__graphic material-icons"
+                  aria-hidden="true"
+                  >child_care</span
+                >
+                <span class="mdc-list-item__text">
+                  <span class="mdc-list-item__primary-text">Two-line item</span>
+                  <span class="mdc-list-item__secondary-text"
+                    >Secondary text</span
+                  >
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Deprecated List -->
+        <section class="component-section list-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/lists.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              List (Deprecated)
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <ul class="mdc-deprecated-list">
+              <li class="mdc-deprecated-list-item" tabindex="0">
+                <span class="mdc-deprecated-list-item__ripple"></span>
+                <span class="mdc-deprecated-list-item__text"
+                  >Single-line item</span
+                >
+              </li>
+              <li class="mdc-deprecated-list-item">
+                <span class="mdc-deprecated-list-item__ripple"></span>
+                <span class="mdc-deprecated-list-item__text"
+                  >Single-line item</span
+                >
+              </li>
+              <li class="mdc-deprecated-list-item">
+                <span class="mdc-deprecated-list-item__ripple"></span>
+                <span class="mdc-deprecated-list-item__text"
+                  >Single-line item</span
+                >
+              </li>
+            </ul>
+
+            <ul
+              class="mdc-deprecated-list mdc-deprecated-list--two-line mdc-deprecated-list--avatar-list"
+            >
+              <li class="mdc-deprecated-list-item" tabindex="0">
+                <span class="mdc-deprecated-list-item__ripple"></span>
+                <span
+                  class="mdc-deprecated-list-item__graphic material-icons"
+                  aria-hidden="true"
+                  >child_care</span
+                >
+                <span class="mdc-deprecated-list-item__text">
+                  <span class="mdc-deprecated-list-item__primary-text"
+                    >Two-line item</span
+                  >
+                  <span class="mdc-deprecated-list-item__secondary-text"
+                    >Secondary text</span
+                  >
+                </span>
+              </li>
+              <li role="separator" class="mdc-deprecated-list-divider"></li>
+              <li class="mdc-deprecated-list-item">
+                <span class="mdc-deprecated-list-item__ripple"></span>
+                <span
+                  class="mdc-deprecated-list-item__graphic material-icons"
+                  aria-hidden="true"
+                  >child_care</span
+                >
+                <span class="mdc-deprecated-list-item__text">
+                  <span class="mdc-deprecated-list-item__primary-text"
+                    >Two-line item</span
+                  >
+                  <span class="mdc-deprecated-list-item__secondary-text"
+                    >Secondary text</span
+                  >
+                </span>
+              </li>
+              <li role="separator" class="mdc-deprecated-list-divider"></li>
+              <li class="mdc-deprecated-list-item">
+                <span class="mdc-deprecated-list-item__ripple"></span>
+                <span
+                  class="mdc-deprecated-list-item__graphic material-icons"
+                  aria-hidden="true"
+                  >child_care</span
+                >
+                <span class="mdc-deprecated-list-item__text">
+                  <span class="mdc-deprecated-list-item__primary-text"
+                    >Two-line item</span
+                  >
+                  <span class="mdc-deprecated-list-item__secondary-text"
+                    >Secondary text</span
+                  >
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Data Table -->
+        <section class="component-section data-table-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/data-tables.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Data Table
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <div class="mdc-data-table">
+              <table
+                class="mdc-data-table__table"
+                aria-label="Dessert calories"
+              >
+                <thead>
+                  <tr class="mdc-data-table__header-row">
+                    <th
+                      class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox"
+                      role="columnheader"
+                      scope="col"
+                    >
+                      <div
+                        class="mdc-checkbox mdc-checkbox--selected mdc-data-table__header-row-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          class="mdc-checkbox__native-control"
+                          aria-label="Toggle all rows"
+                        />
+                        <div class="mdc-checkbox__background">
+                          <svg
+                            class="mdc-checkbox__checkmark"
+                            viewbox="0 0 24 24"
+                          >
+                            <path
+                              class="mdc-checkbox__checkmark-path"
+                              fill="none"
+                              d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                            />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="mdc-data-table__header-cell"
+                      role="columnheader"
+                      scope="col"
+                    >
+                      Dessert
+                    </th>
+                    <th
+                      class="mdc-data-table__header-cell"
+                      role="columnheader"
+                      scope="col"
+                    >
+                      Carbs (g)
+                    </th>
+                    <th
+                      class="mdc-data-table__header-cell"
+                      role="columnheader"
+                      scope="col"
+                    >
+                      Protein (g)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="mdc-data-table__content">
+                  <tr class="mdc-data-table__row" data-row-id="u0">
+                    <td
+                      class="mdc-data-table__cell mdc-data-table__cell--checkbox"
+                    >
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input
+                          type="checkbox"
+                          class="mdc-checkbox__native-control"
+                          aria-labelledby="r0"
+                        />
+                        <div class="mdc-checkbox__background">
+                          <svg
+                            class="mdc-checkbox__checkmark"
+                            viewbox="0 0 24 24"
+                          >
+                            <path
+                              class="mdc-checkbox__checkmark-path"
+                              fill="none"
+                              d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                            />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="r0">Froyo</td>
+                    <td
+                      class="mdc-data-table__cell mdc-data-table__cell--numeric"
+                    >
+                      24
+                    </td>
+                    <td
+                      class="mdc-data-table__cell mdc-data-table__cell--numeric"
+                    >
+                      4.0
+                    </td>
+                  </tr>
+                  <tr
+                    class="mdc-data-table__row mdc-data-table__row--selected"
+                    aria-selected="true"
+                    data-row-id="u1"
+                  >
+                    <td
+                      class="mdc-data-table__cell mdc-data-table__cell--checkbox"
+                    >
+                      <div
+                        class="mdc-checkbox mdc-checkbox--selected mdc-data-table__row-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          class="mdc-checkbox__native-control"
+                          checked
+                          aria-labelledby="r1"
+                        />
+                        <div class="mdc-checkbox__background">
+                          <svg
+                            class="mdc-checkbox__checkmark"
+                            viewbox="0 0 24 24"
+                          >
+                            <path
+                              class="mdc-checkbox__checkmark-path"
+                              fill="none"
+                              d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                            />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="r1">Eclair</td>
+                    <td
+                      class="mdc-data-table__cell mdc-data-table__cell--numeric"
+                    >
+                      37
+                    </td>
+                    <td
+                      class="mdc-data-table__cell mdc-data-table__cell--numeric"
+                    >
+                      4.3
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="column column-2">
+        <!-- FAB -->
+        <section class="component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/buttons-floating-action-button.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              FAB
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper fab-component-wrapper">
+            <button class="mdc-fab mdc-fab--extended">
+              <span class="material-icons mdc-fab__icon">edit</span>
+              <span class="mdc-fab__ripple"></span>
+              <span class="mdc-fab__label">Button</span>
+            </button>
+            <button class="mdc-fab" aria-label="Favorite">
+              <span class="mdc-fab__ripple"></span>
+              <span class="mdc-fab__icon material-icons">favorite</span>
+            </button>
+            <button class="mdc-fab mdc-fab--mini" aria-label="Add">
+              <span class="mdc-fab__ripple"></span>
+              <span class="mdc-fab__icon material-icons">add</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Card -->
+        <section class="component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/cards.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Card
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper card-component-wrapper">
+            <div class="mdc-card demo-card">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <div
+                  class="mdc-card__media mdc-card__media--16-9 demo-card__media"
+                  style="
+                    background-image: url('https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209');
+                  "
+                ></div>
+                <div class="demo-card__primary">
+                  <h3
+                    class="demo-card__subtitle mdc-typography mdc-typography--overline"
+                  >
+                    Overline
+                  </h3>
+                  <h2
+                    class="demo-card__title mdc-typography mdc-typography--headline6"
+                  >
+                    Headline 6
+                  </h2>
+                </div>
+                <div
+                  class="demo-card__secondary mdc-typography mdc-typography--body2"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+              </div>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                  <button
+                    class="mdc-button mdc-card__action mdc-card__action--button"
+                  >
+                    <span class="mdc-button__ripple"></span>Button
+                  </button>
+                  <button
+                    class="mdc-button mdc-card__action mdc-card__action--button"
+                  >
+                    <span class="mdc-button__ripple"></span>Button
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Text field -->
+        <section class="component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/text-fields.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Text field
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div
+            class="component-wrapper text-field-component-wrapper text-field-component-wrapper-1"
+          >
+            <label
+              class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trialing-icon"
+            >
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__notch">
+                  <span class="mdc-floating-label" id="my-label-id"
+                    >Your Name</span
+                  >
+                </span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input
+                type="text"
+                class="mdc-text-field__input"
+                aria-labelledby="my-label-id"
+              />
+              <i
+                class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
+                >visibility</i
+              >
+            </label>
+            <div class="mdc-text-field-helper-line">
+              <div
+                class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
+              >
+                Assistive text
+              </div>
+            </div>
+          </div>
+          <div
+            class="component-wrapper text-field-component-wrapper text-field-component-wrapper-2"
+          >
+            <label
+              class="mdc-text-field mdc-text-field--filled mdc-text-field--with-leading-icon"
+            >
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">Hint text</span>
+              <i
+                class="material-icons mdc-text-field__icon mdc-text-field__icon--leading"
+                >visibility</i
+              >
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+            <div class="mdc-text-field-helper-line">
+              <div
+                class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
+              >
+                Assistive text
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tabs -->
+        <section class="component-section tabs-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/tabs.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Tabs
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <div class="mdc-tab-bar" role="tablist">
+              <div class="mdc-tab-scroller">
+                <div class="mdc-tab-scroller__scroll-area">
+                  <div class="mdc-tab-scroller__scroll-content">
+                    <button
+                      class="mdc-tab mdc-tab--active"
+                      role="tab"
+                      aria-selected="true"
+                      tabindex="0"
+                    >
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Button</span>
+                      </span>
+                      <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                        <span
+                          class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                        ></span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </button>
+                    <button
+                      class="mdc-tab"
+                      role="tab"
+                      aria-selected="true"
+                      tabindex="0"
+                    >
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Button</span>
+                      </span>
+                      <span class="mdc-tab-indicator">
+                        <span
+                          class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                        ></span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </button>
+                    <button
+                      class="mdc-tab"
+                      role="tab"
+                      aria-selected="true"
+                      tabindex="0"
+                    >
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Button</span>
+                      </span>
+                      <span class="mdc-tab-indicator">
+                        <span
+                          class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                        ></span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slider -->
+        <section class="component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/sliders.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Slider
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <div class="mdc-slider">
+              <input
+                class="mdc-slider__input"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                name="volume"
+                aria-label="Continuous slider demo"
+              />
+              <div class="mdc-slider__track">
+                <div class="mdc-slider__track--inactive"></div>
+                <div class="mdc-slider__track--active">
+                  <div class="mdc-slider__track--active_fill"></div>
+                </div>
+              </div>
+              <div class="mdc-slider__thumb">
+                <div class="mdc-slider__thumb-knob"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Snackbar -->
+        <section class="component-section snackbar-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/snackbars.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Snackbar
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <div class="mdc-snackbar mdc-snackbar--open">
+              <div class="mdc-snackbar__surface">
+                <div
+                  class="mdc-snackbar__label"
+                  role="status"
+                  aria-live="polite"
+                >
+                  Marked as favorite.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dialog -->
+        <section class="component-section dialog-component-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/dialogs.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Dialog
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper dialog-component-wrapper">
+            <div
+              class="mdc-dialog mdc-dialog--open"
+              role="alertdialog"
+              aria-modal="true"
+              aria-labelledby="my-dialog-title"
+              aria-describedby="my-dialog-content"
+            >
+              <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                  <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+                  <h2 class="mdc-dialog__title" id="my-dialog-title">
+                    Headline 6
+                  </h2>
+                  <div class="mdc-dialog__content" id="my-dialog-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </div>
+                  <footer class="mdc-dialog__actions">
+                    <button
+                      type="button"
+                      class="mdc-button mdc-dialog__button"
+                      data-mdc-dialog-action="no"
+                    >
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">Button</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="mdc-button mdc-dialog__button"
+                      data-mdc-dialog-action="yes"
+                    >
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">Button</span>
+                    </button>
+                  </footer>
+                </div>
+              </div>
+              <!-- Note scrim element has been removed for this stickersheet -->
+              <!-- <div class="mdc-dialog__scrim"></div> -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Image List -->
+        <section class="component-section image-list-section">
+          <div class="section-header">
+            <a
+              href="https://material.io/design/components/image-lists.html"
+              class="mdc-typography--button"
+              target="_blank"
+            >
+              Image List
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <ul class="mdc-image-list mdc-image-list--masonry">
+              <li class="mdc-image-list__item">
+                <img
+                  class="mdc-image-list__image"
+                  src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-portrait.png?1553629847850"
+                />
+              </li>
+              <li class="mdc-image-list__item">
+                <img
+                  class="mdc-image-list__image"
+                  src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209"
+                />
+              </li>
+              <li class="mdc-image-list__item">
+                <img
+                  class="mdc-image-list__image"
+                  src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-med.png?1553629847913"
+                />
+              </li>
+              <li class="mdc-image-list__item">
+                <img
+                  class="mdc-image-list__image"
+                  src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209"
+                />
+              </li>
+              <li class="mdc-image-list__item">
+                <img
+                  class="mdc-image-list__image"
+                  src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-portrait.png?1553629847850"
+                />
+              </li>
+              <li class="mdc-image-list__item">
+                <img
+                  class="mdc-image-list__image"
+                  src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209"
+                />
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>

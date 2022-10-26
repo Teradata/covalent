@@ -1,4 +1,4 @@
-import topAppBarComponent from '../../../../stories/demos/top-app-bar.component';
+import topAppBarComponent from '../../stories/demos/top-app-bar.component';
 
 export default {
   title: 'Components/Top App Bar',

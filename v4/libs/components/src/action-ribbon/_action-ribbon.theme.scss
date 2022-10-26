@@ -1,6 +1,7 @@
 @mixin theme() {
   .mdc-banner {
     --td-action-ribbon-background: transparent;
+
     background-color: var(--td-action-ribbon-background);
     overflow: hidden;
 
@@ -12,11 +13,13 @@
     .mdc-banner__text {
       --mdc-theme-primary: var(--mdc-theme-surface-neutral-highlight-hover);
       --mdc-theme-on-surface: var(--mdc-theme-text-icon-on-background);
+
       color: var(--mdc-theme-on-surface);
     }
 
     .mdc-banner__text {
       --mdc-theme-on-surface: var(--mdc-theme-text-disabled-on-background);
+
       margin-left: 16px;
       font-family: var(--mdc-typography-caption-font-family);
       font-size: var(--mdc-typography-caption-font-size);
@@ -33,6 +36,7 @@
         --mdc-theme-on-surface: var(--mdc-theme-caution);
       }
     }
+
     &.negative {
       --td-action-ribbon-background: var(
         --mdc-theme-surface-negative-highlight
@@ -44,6 +48,7 @@
         --mdc-theme-on-surface: var(--mdc-theme-error);
       }
     }
+
     &.active {
       --td-action-ribbon-background: var(
         --mdc-theme-surface-secondary-highlight
@@ -55,6 +60,7 @@
         --mdc-theme-on-surface: var(--mdc-theme-secondary);
       }
     }
+
     &.positive {
       --td-action-ribbon-background: var(
         --mdc-theme-surface-positive-highlight

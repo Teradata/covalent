@@ -10,6 +10,7 @@
     border: none;
     color: var(--mdc-theme-text-icon-on-dark);
   }
+
   .mdc-toggle__checkmark-path {
     transition: stroke-dashoffset 180ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
     stroke: currentcolor;
@@ -17,14 +18,17 @@
     stroke-dashoffset: 29.7833;
     stroke-dasharray: 29.7833;
   }
+
   .showCheck {
     stroke-dashoffset: 0;
     opacity: 1;
   }
 }
+
 :host([width='fill']) {
   width: 100%;
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -41,13 +45,16 @@
   @include ripple.radius-unbounded;
   @include ripple.states;
 }
+
 .container::after,
 .container::before {
   border-radius: 8px;
 }
+
 .container:hover {
   cursor: pointer;
 }
+
 .cornerFill {
   background: linear-gradient(
     225deg,
@@ -55,17 +62,21 @@
     transparent 0
   );
 }
+
 .checked {
   border: solid 2px var(--mdc-theme-primary);
   background-color: var(--mdc-theme-surface-primary-highlight);
 }
+
 .checked:hover {
   background-color: var(--mdc-theme-surface-primary-highlight-hover);
 }
+
 [name='icon']::slotted(*) {
   font-size: 40px;
   color: var(--mdc-theme-text-icon-on-background);
 }
+
 [name='text']::slotted(*) {
   color: var(--mdc-theme-text-primary-on-background);
   font-family: var(--mdc-typography-body1-font-family);
@@ -74,6 +85,7 @@
   line-height: var(--mdc-typography-body1-line-height);
   letter-spacing: 0.4px;
 }
+
 [name='text']::slotted(*:last-child) {
   color: var(--mdc-theme-text-secondary-on-background);
   font-family: var(--mdc-typography-body2-font-family);

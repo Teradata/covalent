@@ -1,5 +1,5 @@
 import './card';
-import * as tableContent from '../../../../stories/demos/table.content.html';
+import * as tableContent from '../../stories/demos/table.content.html';
 
 export default {
   title: 'Components/Cards',

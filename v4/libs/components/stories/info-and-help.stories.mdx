@@ -1,0 +1,473 @@
+<!-- info-and-help.stories.mdx -->
+
+import { Meta, DocsContainer } from '@storybook/addon-docs';
+
+<Meta
+  title="Guides/Info and help"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  .item {
+    display: flex;
+    width: 100%;
+  }
+  .left {
+    width: 30%;
+  }
+  .right {
+    width: 70%;
+  }
+  .td-alert-container {
+    width: 552px;
+    margin-left: 64px;
+  }
+  .step-title {
+    width: 304px;
+    height: 208px;
+    background-color: #B0BEC5;
+    border-radius: 8px;
+    color: var(--mdc-theme-text-primary-on-background);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    margin-left: 180px;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.14), 0px 6px 30px rgba(0, 0, 0, 0.12), 0px 8px 10px rgba(0, 0, 0, 0.2);
+  }
+  .triangle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    transform: rotate(45deg);
+    left: -13px; 
+    top: 104px;
+    background-color: #B0BEC5;
+    border-color: transparent transparent var(--mdc-theme-border) var(--mdc-theme-border);
+  }
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  .toolbar > div:first-of-type {
+    font-family: var(--mdc-typography-subtitle2-font-family);
+    font-size: var(--mdc-typography-subtitle2-font-size);
+    font-weight: var(--mdc-typography-subtitle2-font-weight);
+    line-height: var(--mdc-typography-subtitle2-line-height);
+    color: var(--mdc-theme-text-primary-on-background);
+  }
+  .action-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  .action-bar > div:first-of-type {
+    font-family: var(--mdc-typography-body1-font-family);
+    font-size: var(--mdc-typography-body1-font-size);
+    font-weight: var(--mdc-typography-body1-font-weight);
+    line-height: var(--mdc-typography-body1-line-height);
+    color: var(--mdc-theme-text-secondary-on-background);
+  }
+  .chevron-space {
+    margin-right: 16px;
+  }
+  .see-also {
+    width: 272px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--mdc-theme-surface-primary-highlight);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .see-also > div {
+    font-family: var(--mdc-typography-caption-font-family);
+    font-size: var(--mdc-typography-caption-font-size);
+    font-weight: var(--mdc-typography-caption-font-weight);
+    line-height: var(--mdc-typography-caption-line-height);
+  }
+  span {
+    display: flex;
+    align-items: center;
+  }
+  span > td-icon {
+    font-size: 16px;
+  }
+  .help-window-bg {
+    margin-left: 24px;
+    width: 632px;
+    height: 560px;
+    border-radius: 8px;
+    border: solid 1px var(--mdc-theme-border);
+    position: relative;
+  }
+  .help-window {
+    width: 360px;
+    height: 544px;
+    border: solid 1px var(--mdc-theme-border);
+    border-bottom: none;
+    background-color: var(--mdc-theme-surface);
+    position: absolute;
+    right: 16px;
+    bottom: 0;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    overflow: hidden;
+  }
+  .help-window-crumbs {
+    font-size: 12px;
+  }
+  .help-window-title {
+    font-family: var(--mdc-typography-headline5-font-family);
+    font-size: var(--mdc-typography-headline5-font-size);
+    font-weight: var(--mdc-typography-headline5-font-weight);
+    line-height: var(--mdc-typography-headline5-line-height);
+    color: var(--mdc-theme-text-primary-on-background);
+    margin-bottom: 8px;
+  }
+  .photo {
+    width: 328px;
+    height: 213px;
+    background-color: var(--mdc-theme-border);
+    border-radius: 8px;
+    margin: 16px auto;
+  }
+  .skeleton-text {
+    color: var(--mdc-theme-border) !important;
+    letter-spacing: 0 !important;
+  }
+  .icon-container {
+    display: flex;
+    gap: 16px;
+  }
+  #title {
+    font-family: var(--mdc-typography-headline6-font-family);
+    font-size: var(--mdc-typography-headline6-font-size);
+    font-weight: var(--mdc-typography-headline6-font-weight);
+    line-height: var(--mdc-typography-headline6-line-height);
+    color: var(--mdc-theme-text-primary-on-background);
+  }
+  .sbdocs .sbdocs-hr {
+    margin-top: 0px;
+    padding-bottom: 0;
+  }
+  .card {
+    margin-left: 64px;
+    width: 552px;
+    height: 200px;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: solid 1px var(--mdc-theme-border);
+    border-bottom: none;
+    background: linear-gradient(to bottom, var(--mdc-theme-surface), var(--mdc-theme-background));
+  }
+  .card-content {
+    padding: 16px;
+  }
+  td-textfield {
+    margin-left: 60px;
+    width: 560px;
+  }
+  .relative {
+    position: relative;
+  }
+  .helper-text {
+    position: absolute;
+    bottom: -24px;
+    left: 76px;
+    font-family: var(--mdc-typography-caption-font-family);
+    font-size: var(--mdc-typography-caption-font-size);
+    font-weight: var(--mdc-typography-caption-font-weight);
+    line-height: var(--mdc-typography-caption-line-height);
+  }
+  .helper-text-error {
+    bottom: 16px;
+    color: var(--mdc-theme-error);
+  }
+  .textfield-neutral {
+    --mdc-text-field-outlined-hover-border-color: var(--mdc-theme-border);
+    --mdc-text-field-fill-color: var(--mdc-theme-border);
+    --mdc-text-field-idle-line-color: var(--mdc-theme-border);
+    --mdc-text-field-hover-line-color: var(--mdc-theme-border);
+    --mdc-text-field-outlined-idle-border-color: var(--mdc-theme-border);
+    --mdc-text-field-focused-label-color: var(--mdc-theme-border);
+    --mdc-theme-primary: var(--mdc-theme-text-secondary-on-background);
+    --mdc-notched-outline-stroke-width: 2px;
+  }
+  .textfield-error {
+    --mdc-text-field-outlined-hover-border-color: var(--mdc-theme-error);
+    --mdc-text-field-fill-color: var(--mdc-theme-error);
+    --mdc-text-field-idle-line-color: var(--mdc-theme-error);
+    --mdc-text-field-hover-line-color: var(--mdc-theme-error);
+    --mdc-text-field-outlined-idle-border-color: var(--mdc-theme-error);
+    --mdc-text-field-focused-label-color: var(--mdc-theme-error);
+    --mdc-theme-primary: var(--mdc-theme-error);
+    --mdc-text-field-label-ink-color: var(--mdc-theme-error);
+    --mdc-notched-outline-stroke-width: 2px;
+  }
+  .no-padding {
+    padding: 0 0 16px 0;
+  }
+  .top-margin {
+    margin-top: 8px;
+  }
+`}</style>
+
+# Info & help
+
+## General guidance (always visible)
+
+### Applies to the whole page
+
+###### Guided tour
+
+<div class="item">
+  <div class="left">
+    <div>
+      Take the user on a brief tour of the UI to help acclimate them to the
+      interface.
+    </div>
+    <div class="see-also">
+      <div>See also</div>
+      <span>
+        Features <td-icon>chevron_right</td-icon>
+        <a
+          href="https://www.figma.com/file/tDTc1JQZByIK0Igi6p1uky/Guided-tours?node-id=0%3A1"
+          target="_blank"
+        >
+          Guided tours
+        </a>
+      </span>
+    </div>
+  </div>
+  <div class="step-title right">
+    <div class="toolbar no-padding">
+      <div>Step title</div>
+      <div>
+        <td-icon>close</td-icon>
+      </div>
+    </div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi imperdiet dignissim
+    quam lacus vitae tincidunt sagittis. Aliquet ullamcorper congue arcu a, tempus
+    fringilla tellus imperdiet.
+    <div class="action-bar">
+      <div>2/4</div>
+      <div>
+        <td-icon class="chevron-space">chevron_left</td-icon>
+        <td-icon>chevron_right</td-icon>
+      </div>
+    </div>
+    <div class="triangle"></div>
+  </div>
+</div>
+
+###### Help window
+
+<div class="item">
+  <div class="left">
+    <div>Allow the user to toggle extra help on and off as needed.</div>
+    <div class="see-also">
+      <div>See also</div>
+      <span>
+        Features <td-icon>chevron_right</td-icon>{" "}
+        <a
+          href="https://www.figma.com/file/z3w5qXeAISPmBr4IOLAJ38/In-product-help?node-id=0%3A1"
+          target="_blank"
+        >
+          In-product help
+        </a>
+      </span>
+    </div>
+  </div>
+  <div class="right">
+    <div class="help-window-bg">
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <br />
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text fil</div>
+      <br />
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="skeleton-text">Filler text fil</div>
+      <br />
+      <div class="skeleton-text">Filler text filler text filler text filler text filler text filler text fi</div>
+      <div class="help-window">
+        <div class="toolbar">
+          <div id="title">Help</div>
+          <div class="icon-container">
+            <td-icon>expand_more</td-icon>
+            <td-icon>open_in_new</td-icon>
+            <td-icon>square</td-icon>
+            <td-icon>close</td-icon>
+          </div>
+        </div>
+        <hr />
+        <div class="card-content">
+          <span class="help-window-crumbs">
+            All topics <td-icon>chevron_right</td-icon> Developer
+            <td-icon>chevron_right</td-icon>
+          </span>
+          <div class="help-window-title">
+            Cras adipiscing tempus ornare purus vel.
+          </div>
+        </div>
+        <hr />
+        <div class="card-content">
+          <div id="title" class="top-margin">
+            Ultricies nunc massa, id ut felis sed varius accumsan platea.
+          </div>
+          <div class="photo"></div>
+          <div>Cras libero tempor pellentesque vitae eget.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+### Applies to part of the page
+
+###### Text directly in the page
+
+<div class="item">
+  <div class="left">Short explanations directly in the body of the page.</div>
+  <div class="right">
+    <div class="card">
+      <div class="toolbar skeleton-text">Filler text</div>
+      <hr />
+      <div class="card-content">
+        Configure which roles and groups have permission to create their own
+        workspace in this site.{' '}
+        <a
+          href="https://www.teradata.com"
+          target="_blank"
+          class="anchor-resize"
+        >
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+### An individual form field
+
+###### Form field hint
+
+<div class="item">
+  <div class="left">
+    Display your message directly adjacent to the field itself.
+  </div>
+  <div class="right relative">
+    <td-textfield
+      type="password"
+      class="textfield-neutral"
+      outlined
+      value="aaaaaaaaaa"
+      label="Password"
+    ></td-textfield>
+    <div class="helper-text">
+      8 – 12 characters long, containing at least one letter and one number
+    </div>
+  </div>
+</div>
+
+## Temporary guidance
+
+### Applies to the whole page
+
+###### Page-level alert
+
+<div class="item">
+  <div class="left">
+    Use a page-level alert to give feedback that’s not specifically related to
+    any one item or region.
+  </div>
+  <div class="right td-alert-container">
+    <td-alert
+      titleText="Alert title"
+      descriptionText="Alert description"
+      state="caution"
+      icon="warning"
+    >
+      <td-icon-button slot="action-items" icon="close"></td-icon-button>
+    </td-alert>
+  </div>
+</div>
+
+### Applies to part of a page, or a dialog
+
+###### Inline alert
+
+<div class="item">
+  <div class="left">
+    An inline alert allows more specific messaging about a smaller region of a
+    page, or a modal dialog or sheet.
+  </div>
+  <div class="right">
+    <div class="card">
+      <div id="title" class="toolbar">
+        Card title
+      </div>
+      <hr />
+      <div>
+        <td-alert
+          titleText="Alert title"
+          descriptionText="Alert description"
+          state="caution"
+          icon="warning"
+          inline
+        >
+          <td-icon-button slot="action-items" icon="close"></td-icon-button>
+        </td-alert>
+      </div>
+    </div>
+  </div>
+</div>
+
+### An individual form field
+
+###### Form field hint
+
+<div class="item">
+  <div class="left">
+    Display your message directly adjacent to the field itself. In the case of
+    errors and warnings, the form field also changes state to draw attention to
+    itself.
+  </div>
+  <div class="right relative">
+    <td-textfield
+      type="password"
+      class="textfield-error"
+      outlined
+      value="aaaaaaaaaa"
+      label="Password"
+    ></td-textfield>
+    <div class="helper-text helper-text-error">
+      8 – 12 characters long, containing at least one letter and one number
+    </div>
+  </div>
+</div>

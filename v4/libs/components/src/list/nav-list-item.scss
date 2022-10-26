@@ -1,0 +1,105 @@
+:host {
+  font-family: var(--mdc-typography-font-family);
+  font-size: var(--mdc-typography-body1-font-size);
+  font-weight: var(--mdc-typography-body1-font-weight);
+  line-height: var(--mdc-typography-body1-line-height);
+}
+
+:host([navopen]) {
+  border-radius: 0 28px 28px 0;
+  transition: border-radius 100ms ease-out;
+  margin-right: 16px;
+}
+
+:host([graphic='avatar']:not([navopen])) {
+  border-radius: 100%;
+  margin: 0 auto 8px;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+
+  ::slotted(td-icon[slot='graphic']) {
+    margin-left: 8px;
+    background: transparent;
+  }
+}
+
+:host(.home-item) {
+  ::slotted(.teradata-no-circle) {
+    --mdc-list-item-graphic-size: 40px;
+    --mdc-icon-size: 40px;
+
+    display: none;
+  }
+
+  ::slotted(.home-icon) {
+    display: none;
+
+    &:hover .covalent-icon {
+      display: none;
+    }
+  }
+}
+
+:host(.home-item:hover) {
+  ::slotted(.home-icon) {
+    display: block;
+  }
+
+  ::slotted(.teradata-circle) {
+    display: none;
+  }
+
+  ::slotted(.teradata-no-circle) {
+    display: none;
+  }
+}
+
+:host(.home-item:not([navopen])) {
+  background-color: #f3753f;
+
+  --mdc-ripple-color: #ffffff;
+  --mdc-theme-text-icon-on-background: #ffffff;
+
+  ::slotted(.teradata-circle) {
+    display: none;
+  }
+
+  ::slotted(.teradata-no-circle) {
+    display: block;
+  }
+}
+
+:host(.home-item:hover:not([navopen])) {
+  ::slotted(.teradata-no-circle) {
+    display: none;
+  }
+}
+
+:host(.beta-list-item) {
+  --mdc-theme-primary: var(--mdc-theme-surface-caution);
+  --mdc-list-item-meta-size: 20px;
+  --mdc-list-item-graphic-size: 40px;
+  --mdc-list-item-graphic-margin: 15px;
+  --mdc-typography-subtitle1-font-size: var(
+    --mdc-typography-subtitle2-font-size
+  );
+  --mdc-typography-body2-font-size: var(--mdc-typography-caption-font-size);
+
+  margin-bottom: 8px;
+  font-size: var(--mdc-typography-subtitle1-font-size);
+  margin-right: 0;
+  border-radius: 0;
+}
+
+:host(.beta-list-item:not([navopen])) {
+  --mdc-list-item-graphic-margin: 0;
+  --mdc-typography-subtitle1-font-size: 0;
+  --mdc-typography-body2-font-size: 0;
+
+  height: 48px;
+  font-size: 0;
+  padding: 0;
+  justify-content: center;
+  align-content: center;
+}
