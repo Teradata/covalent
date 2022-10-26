@@ -4,8 +4,7 @@ module.exports = {
   mode: 'production',
   entry: {
     index: './libs/components/src/index.ts',
-    styles: './libs/components/styles/styles.scss',
-    theme: './libs/components/styles/theme/theme.scss',
+    theme: './libs/components/theme/theme.scss',
 
     actionRibbon: './libs/components/src/action-ribbon/action-ribbon.ts',
     alert: './libs/components/src/alert/alert.ts',
@@ -26,7 +25,9 @@ module.exports = {
     list: './libs/components/src/list/list.ts',
     listItem: './libs/components/src/list/list-item.ts',
     listExpansion: './libs/components/src/list/list-expansion.ts',
+    listCheckItem: './libs/components/src/list/check-list-item.ts',
     listRadioItem: './libs/components/src/list/radio-list-item.ts',
+    listNavItem: './libs/components/src/list/nav-list-item.ts',
     menu: './libs/components/src/menu/menu.ts',
     radio: './libs/components/src/radio/radio.ts',
     select: './libs/components/src/select/select.ts',
@@ -63,7 +64,7 @@ module.exports = {
             options: {
               configFile: 'tsconfig.lib.json',
               compilerOptions: {
-                outDir: '../../dist/libs/components',
+                outDir: '../../dist/',
               },
             },
           },
@@ -98,7 +99,7 @@ module.exports = {
       },
       {
         test: /\.s(c|a)ss$/,
-        include: /libs\/components\/styles/,
+        include: /libs\/components\/theme/,
         exclude: /node_modules/,
         use: [
           {

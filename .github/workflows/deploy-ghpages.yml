@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npx ci
       - name: Build story book artifacts
-        run: npm run storybook:build
+        run: npx nx run components:build-storybook
       - name: Deploy docs and storybook to GitHub pages
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH }}

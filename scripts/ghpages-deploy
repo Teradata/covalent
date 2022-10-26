@@ -1,6 +1,6 @@
 #!/bin/bash
 version=$1
-storybook_dir="docs/components"
+storybook_dir="docs"
 
 git remote set-url origin https://$GITHUB_TOKEN@github.com/Teradata/covalent.git
 
@@ -16,7 +16,7 @@ cp -r dist/apps/docs-app/* $version
 echo "Create or replace storybook dir"
 rm -rf ./$storybook_dir
 mkdir -p $storybook_dir
-cp -r ./storybook-static/* ./$storybook_dir/
+cp -r ./dist/storybook/* ./$storybook_dir/
 
 echo "Configuring GIT User"
 git config user.name github-actions

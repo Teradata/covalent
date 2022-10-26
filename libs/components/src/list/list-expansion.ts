@@ -1,11 +1,13 @@
-import { ListBase } from '@material/mwc-list/mwc-list-base';
-import { observer } from '@material/mwc-base/observer';
+import { html, nothing } from 'lit';
+import {
+  customElement,
+  property,
+  queryAssignedElements,
+} from 'lit/decorators.js';
 import { styles as listBaseStyles } from '@material/mwc-list/mwc-list.css';
+import { CovalentListBase } from './list';
 import styles from './list-expansion.scss';
-import { html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
-import { classMap } from 'lit/directives/class-map.js';
+import { CovalentListItemBase } from './list-item';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -14,18 +16,21 @@ declare global {
 }
 
 @customElement('td-expansion-list')
-export class CovalentExpansionList extends ListBase {
-  static override styles = [styles, listBaseStyles];
+export class CovalentExpansionList extends CovalentListBase {
+  static override styles = [listBaseStyles, styles];
+  static override shadowRootOptions: ShadowRootInit = {
+    mode: 'open',
+    delegatesFocus: true,
+  };
 
-  @observer(function (this: CovalentExpansionList, value: boolean) {
-    if (value) {
-      //this.mdcFoundation.open();
-    } else {
-      //this.mdcFoundation.close();
-    }
-  })
   @property({ type: Boolean, reflect: true })
   open = false;
+
+  @property({ type: Boolean, reflect: true })
+  navOpen = false;
+
+  @queryAssignedElements({ slot: 'expansionHeader' })
+  expansionHeader!: CovalentListItemBase[];
 
   constructor() {
     super();
@@ -33,34 +38,17 @@ export class CovalentExpansionList extends ListBase {
 
   private _toggleOpen() {
     this.open = !this.open;
+
+    this.expansionHeader.forEach((el) => {
+      el.activated = this.open;
+      el.selected = this.open;
+    });
   }
 
   override render() {
-    const role = this.innerRole === null ? undefined : this.innerRole;
-    const ariaLabel =
-      this.innerAriaLabel === null ? undefined : this.innerAriaLabel;
-    const tabindex = this.rootTabbable ? '0' : '-1';
-    const classes = {
-      'td-expansion-list--open': this.open,
-    };
-
     return html`
-      <!-- @ts-ignore -->
       <slot name="expansionHeader" @click=${this._toggleOpen}></slot>
-      <ul
-        tabindex=${tabindex}
-        role="${ifDefined(role)}"
-        aria-label="${ifDefined(ariaLabel)}"
-        class="mdc-deprecated-list ${classMap(classes)}"
-        @keydown=${this.onKeydown}
-        @focusin=${this.onFocusIn}
-        @focusout=${this.onFocusOut}
-        @request-selected=${this.onRequestSelected}
-        @list-item-rendered=${this.onListItemConnected}
-      >
-        <slot></slot>
-        ${this.renderPlaceholder()}
-      </ul>
+      ${this.navOpen ? super.render() : nothing}
     `;
   }
 }

@@ -1,4 +1,4 @@
-import dialogComponent from '../../../../stories/demos/dialog.component';
+import dialogComponent from '../../stories/demos/dialog.component';
 
 export default {
   title: 'Components/Dialog',

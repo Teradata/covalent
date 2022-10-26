@@ -11,6 +11,14 @@
         "outputPath": "dist/libs/components"
       }
     },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/components"],
+      "options": {
+        "jestConfig": "libs/components/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -18,12 +26,34 @@
         "lintFilePatterns": ["libs/components/**/*.ts"]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/components"],
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "jestConfig": "libs/components/jest.config.js",
-        "passWithNoTests": true
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/components/**/*.scss'"
+          }
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx start-storybook -c libs/components/.storybook"
+          }
+        ]
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx build-storybook -c libs/components/.storybook -o dist/storybook/components"
+          }
+        ]
       }
     }
   },

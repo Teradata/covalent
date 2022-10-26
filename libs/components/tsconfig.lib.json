@@ -6,5 +6,11 @@
     "types": []
   },
   "include": ["../../node_modules/lit-scss-loader/types.d.ts", "**/*.ts"],
-  "exclude": ["**/*.spec.ts"]
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.stories.ts",
+    "**/*.stories.js",
+    "**/*.stories.jsx",
+    "**/*.stories.tsx"
+  ]
 }

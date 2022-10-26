@@ -3,23 +3,7 @@ import lightTheme from './theme/covalent.light.theme';
 
 import '!style-loader!css-loader!sass-loader!./theme/markdown-elements.scss';
 
-import anysort from 'anysort';
-
 export const parameters = {
-  options: {
-    storySort: (previous, next) => {
-      const [previousStory, previousMeta] = previous;
-      const [nextStory, nextMeta] = next;
-
-      return anysort(previousMeta.kind, nextMeta.kind, [
-        'Introduction',
-        'Guides/**',
-        'Patterns/**',
-        'Basics/**',
-        'Components/**/Overview',
-      ]);
-    },
-  },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
@@ -28,17 +12,6 @@ export const parameters = {
     },
   },
   backgrounds: {
-    default: 'twitter',
-    values: [
-      {
-        name: 'twitter',
-        value: '#00aced',
-      },
-      {
-        name: 'facebook',
-        value: '#3b5998',
-      },
-    ],
     grid: {
       disable: true,
     },

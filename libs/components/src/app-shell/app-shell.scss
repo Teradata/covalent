@@ -12,14 +12,13 @@
 }
 
 .app-shell {
+  background-color: var(--mdc-theme-surface);
   display: grid;
-  grid-template-columns: auto auto 1fr;
-  grid-template-rows: min-content;
-  grid-template-areas: 'nav mini-list main help';
+  grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
   min-height: 100vh;
 
   // TD Tiger stripe
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -38,11 +37,19 @@
   border-color: var(--mdc-theme-border, rgba(black, 0.12));
 }
 
-[name='help']::slotted(*) {
+.help {
   grid-area: help;
   width: 320px;
   height: 100vh;
   overflow-y: auto;
+  border-left: 1px solid;
+  border-color: var(--mdc-theme-border, rgba(black, 0.12));
+  transition-property: width;
+  transition-duration: 200ms;
+
+  &.help--closed {
+    width: 0;
+  }
 }
 
 [name='mini-list']::slotted(*) {
@@ -65,6 +72,7 @@ nav.navigation {
   height: 100vh;
   overflow-y: auto;
   border-right: 0;
+
   .toggle-drawer {
     margin: 8px auto;
   }
@@ -83,6 +91,7 @@ nav.navigation {
       margin-left: 12px;
       margin-right: 12px;
     }
+
     slot[name='logo'] {
       display: block;
     }
@@ -141,6 +150,7 @@ td-top-app-bar-fixed {
     grid-template-columns: 1fr;
     grid-template-areas: 'header' 'main' 'mini-list' 'help';
   }
+
   [name='help']::slotted(*),
   .main {
     height: auto;
