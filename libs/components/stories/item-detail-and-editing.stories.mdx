@@ -1,0 +1,463 @@
+<!-- item-detail-and-editing.stories.mdx -->
+
+import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
+
+<Meta
+  title="Guides/Item Detail and Editing"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 960px;
+        height: 400px;
+        border-radius: 8px;
+        border: var(--mdc-theme-border) 1px solid;
+        margin-top: 24px;
+        background-color: var(--mdc-theme-surface);
+    }
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-top: 16px;
+        border-top: solid 2px #f3753f;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .header {
+        font-family: var(--mdc-typography-headline6-font-family);
+        font-size: var(--mdc-typography-headline6-font-size);
+        font-weight: var(--mdc-typography-headline6-font-weight);
+        line-height: var(--mdc-typography-headline6-line-height);
+        color: var(--mdc-theme-text-primary-on-background);
+        margin-left: 16px;
+    }
+    .actions {
+        margin-right: 16px;
+    }
+    .actions td-button:first-of-type {
+        margin-right: 8px;
+    }
+    td-tab-bar {
+        width: 405px;
+        margin-left: 16px;
+        margin-top: 8px;
+    }
+    .sbdocs .sbdocs-hr {
+        margin-top: 0;
+        padding-bottom: 16px;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .content div:first-of-type {
+        width: 60%;
+    }
+    .content td-icon-button {
+        position: absolute;
+        right: 8px;
+        top: -8px;
+        padding: 0;
+    }
+    .content-text {
+        color: var(--mdc-theme-text-primary-on-background);
+    }
+    .subtitle {
+        font-family: var(--mdc-typography-body2-font-family);
+        font-size: var(--mdc-typography-body2-font-size);
+        font-weight: var(--mdc-typography-body2-font-weight);
+        line-height: var(--mdc-typography-body2-line-height);
+        margin-bottom: 4px;
+    }
+    .subtitle:last-of-type {
+        margin-top: 16px;
+    }
+    .divider {
+      width: 960px;
+      border: solid 1px var(--mdc-theme-border);
+      margin-top: 72px;
+      margin-bottom: 24px;
+    }
+    .changes-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .changes-container-item {
+        display: flex;
+        gap: 24px;
+    }
+    .changes-container-item > div:first-of-type {
+        width: 30%;
+    }
+    .changes-container-item > div:last-of-type {
+        width: 60%;
+    }
+    .changes-container .sbdocs .sbdocs-hr {
+        padding: 0;
+    }
+    .changes-title {
+        font-family: var(--mdc-typography-headline6-font-family);
+        font-size: var(--mdc-typography-headline6-font-size);
+        font-weight: var(--mdc-typography-headline6-font-weight);
+        line-height: var(--mdc-typography-headline6-line-height);
+        color: var(--mdc-theme-text-primary-on-background);
+        margin-bottom: 8px;
+    }
+    .changes-example {
+        width: 632px;
+        min-height: 200px;
+        border: solid 1px var(--mdc-theme-border);
+        border-radius: 8px;
+        background-color: var(--mdc-theme-surface);
+    }
+    .list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 56px;
+        padding-left: 16px;
+        border-bottom: solid var(--mdc-theme-border) 1px;
+    }
+    .list-item:last-of-type {
+        border-bottom: none;
+    }
+    .list-item-text {
+        font-family: var(--mdc-typography-body1-font-family);
+        font-size: var(--mdc-typography-body1-font-size);
+        font-weight: var(--mdc-typography-body1-font-weight);
+        line-height: var(--mdc-typography-body1-line-height);
+        color: var(--mdc-theme-text-primary-on-background);
+    }
+    .list-item-subtext {
+        font-family: var(--mdc-typography-body2-font-family);
+        font-size: var(--mdc-typography-body2-font-size);
+        font-weight: var(--mdc-typography-body2-font-weight);
+        line-height: var(--mdc-typography-body2-line-height);
+    }
+    .list-item-blue-bg {
+        background-color: var(--mdc-theme-surface-primary-highlight-hover);
+    }
+    .skeleton-text {
+      color: var(--mdc-theme-border) !important;
+      letter-spacing: 0 !important;
+    }
+    .skeleton-title {
+        margin-left: 16px;
+        margin-top: 8px;
+    }
+    .skeleton-block {
+        width: 96px;
+        height: 32px;
+        border-radius: 8px;
+        background-color: var(--mdc-theme-border) !important;
+        margin-right: 16px;
+    }
+    .skeleton-square {
+        width: 24px;
+        height: 24px;
+        background-color: var(--mdc-theme-border);
+        margin-right: 16px;
+    }
+    .object-list-example {
+        display: flex;
+    }
+    .object-list-left {
+        width: 50%;
+        border-right: solid 1px var(--mdc-theme-border);
+    }
+    .object-list-item {
+        justify-content: flex-start;
+        column-gap: 16px;
+    }
+    .object-list-left > div.list-item {
+        height: 33%;
+    }
+    td-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--mdc-theme-border);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .object-list-right {
+        padding-left: 16px;
+        padding-top: 14px;
+        overflow: hidden;
+    }
+    .action-ribbon-bottom-content {
+        padding-left: 16px;
+        padding-top: 14px;
+        padding-right: 56px;
+        border-top: solid 1px var(--mdc-theme-border);
+    }
+    .new-text-block {
+        margin-top: 16px;
+    }
+`}</style>
+
+# Item detail & editing
+
+## Viewing item details
+
+For content that’s intended to be browsed for information, display in read-only form, with an edit icon in the top right of the tab to enable editing.
+
+<div class="container">
+  <div class="toolbar">
+    <div class="header">
+      Interdum pellentesque cras ornare porttitor tellus ante.
+    </div>
+    <div class="actions">
+      <td-button outlined slot="buttonActions">
+        Action
+      </td-button>
+      <td-button outlined slot="buttonActions">
+        Action
+      </td-button>
+    </div>
+  </div>
+  <td-tab-bar activeIndex="0">
+    <td-tab null label="Details"></td-tab>
+    <td-tab null label="Tab 2"></td-tab>
+    <td-tab null label="Tab 3"></td-tab>
+    <td-tab null label="Tab 4"></td-tab>
+  </td-tab-bar>
+  <hr />
+  <div class="content">
+    <div>
+      <div class="subtitle">Description</div>
+      <div class="content-text">
+        Elit in semper faucibus aliquam. Nisl, augue porta eu urna adipiscing
+        amet scelerisque enim odio. Arcu, posuere ultricies egestas viverra
+        quis. Id pharetra lacinia donec orci.
+      </div>
+      <div class="subtitle">Tags</div>
+      <td-chip-set>
+        <td-chip label="Lorem"></td-chip>
+        <td-chip label="Ipsum"></td-chip>
+        <td-chip label="Dolor sit"></td-chip>
+      </td-chip-set>
+    </div>
+    <td-icon-button icon="edit"></td-icon-button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+## Editing
+
+Editing takes place in context, not in a separate view. Show form fields by default, and use the action ribbon to display state, save changes, or perform other relevant operations.
+
+### Indicating changes
+
+<div class="changes-container">
+  <div class="changes-container-item">
+    <div>
+      <div class="changes-title">Tabs</div>
+      <div>Show a change indicator in the relevant tab.</div>
+    </div>
+    <div class="changes-example">
+      <div class="skeleton-text skeleton-title">
+        Elit in semper faucibus aliquam. Nisl, augue porta eu urna.
+      </div>
+      <td-tab-bar activeIndex="0">
+        <td-tab null label="Details ●"></td-tab>
+        <td-tab null label="Tab 2"></td-tab>
+        <td-tab null label="Tab 3"></td-tab>
+        <td-tab null label="Tab 4"></td-tab>
+      </td-tab-bar>
+      <hr />
+      <div class="list-item list-item-blue-bg">
+        <div class="skeleton-text">Filler text</div>
+        <div class="skeleton-block"></div>
+      </div>
+      <div class="list-item">
+        <div class="skeleton-text">
+          Filler text Filler text Filler text Filler text Filler text Filler
+          text
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="changes-container-item">
+    <div>
+      <div class="changes-title">Object list</div>
+      <div>
+        If the object list is visible, show a change indicator in the relevant
+        list item.
+      </div>
+    </div>
+    <div class="changes-example object-list-example">
+      <div class="object-list-left">
+        <div class="list-item">
+          <div class="skeleton-text">Some filler text</div>
+          <div class="skeleton-square"></div>
+        </div>
+        <div class="list-item list-item-blue-bg object-list-item">
+          <td-icon>square</td-icon>
+          <div>
+            <div class="list-item-text">● Interdum pellentesque cra...</div>
+            <div class="list-item-subtext">June 24, 2020 5:12 PM</div>
+          </div>
+        </div>
+        <div class="list-item object-list-item">
+          <td-icon></td-icon>
+          <div>
+            <div class="skeleton-text">Interdum pellentesque cra...</div>
+            <div class="skeleton-text">June 24, 2020 5:12 PM</div>
+          </div>
+        </div>
+      </div>
+      <div class="object-list-right">
+        <div class="skeleton-text">Filler text filler text filler text</div>
+        <div class="skeleton-text">Filler text filler text filler text</div>
+        <div class="skeleton-text">Filler text filler text filler text</div>
+        <br />
+        <div class="skeleton-text">Filler text filler text filler text</div>
+        <div class="skeleton-text">Filler text filler text filler text</div>
+        <div class="skeleton-text">Filler text filler text filler text</div>
+        <div class="skeleton-text">Filler text filler text filler text</div>
+      </div>
+    </div>
+  </div>
+  <div class="changes-container-item">
+    <div>
+      <div class="changes-title">
+        Action ribbon - <br /> Nothing changed
+      </div>
+      <div>Provide “No changes” text to the left of the ribbon.</div>
+      <div class="new-text-block">Disable actions.</div>
+    </div>
+    <div class="changes-example">
+      <td-tab-bar activeIndex="0">
+        <td-tab null label="Details"></td-tab>
+        <td-tab null label="Tab 2"></td-tab>
+        <td-tab null label="Tab 3"></td-tab>
+        <td-tab null label="Tab 4"></td-tab>
+      </td-tab-bar>
+      <hr />
+      <td-action-ribbon labelText="No changes" state="undefined" null>
+        <td-button slot="action-items" outlined>
+          Cancel
+        </td-button>
+        <td-button slot="action-items" raised disabled>
+          Save
+        </td-button>
+      </td-action-ribbon>
+      <div class="action-ribbon-bottom-content">
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <br />
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">Filler text filler text filler text </div>
+      </div>
+    </div>
+  </div>
+  <div class="changes-container-item">
+    <div>
+      <div class="changes-title">
+        Action ribbon - <br /> Unsaved changes
+      </div>
+      <div>
+        Provide “You have unsaved changes” text to the left of the ribbon.
+      </div>
+      <div class="new-text-block">Enable any relevant actions.</div>
+    </div>
+    <div class="changes-example">
+      <td-tab-bar activeIndex="0">
+        <td-tab null label="Details ●"></td-tab>
+        <td-tab null label="Tab 2"></td-tab>
+        <td-tab null label="Tab 3"></td-tab>
+        <td-tab null label="Tab 4"></td-tab>
+      </td-tab-bar>
+      <hr />
+      <td-action-ribbon
+        labelText="You have unsaved changes"
+        state="active"
+        null
+      >
+        <td-button slot="action-items" outlined>
+          Cancel
+        </td-button>
+        <td-button slot="action-items" raised>
+          Save
+        </td-button>
+      </td-action-ribbon>
+      <div class="action-ribbon-bottom-content">
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <br />
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">
+          Filler text filler text filler text filler text filler text filler
+        </div>
+        <div class="skeleton-text">Filler text filler text filler text </div>
+      </div>
+    </div>
+  </div>
+</div>
