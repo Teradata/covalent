@@ -162,9 +162,10 @@ const Template = ({ navClick }) => {
     </td-list>
 
     <div slot="help" class="mdc-typography">
-        <td-toolbar label="Help" >
-          <td-icon-button slot="iconActions" icon="open_in_browser"></td-icon-button>
-          <td-icon-button slot="iconActions" icon="close" class="help-close"></td-icon-button>
+        <td-toolbar>
+          <span slot="title">Help</span>
+          <td-icon-button slot="actionItems" icon="open_in_browser"></td-icon-button>
+          <td-icon-button slot="actionItems" icon="close" class="help-close"></td-icon-button>
         </td-toolbar>
         <div style="padding:16px">
           <h3 class="mdc-typography--subtitle2">Ultricies nunc massa, id ut felis sed varius accumsan platea.</h3>
@@ -177,9 +178,10 @@ const Template = ({ navClick }) => {
         </div>
     </div>
     <div slot="mini-list">
-            <td-toolbar label="[Page name]" mini>
-                <td-icon-button slot="iconActions" icon="filter_list"></td-icon-button>
-                <td-icon-button slot="iconActions" icon="add"></td-icon-button>
+            <td-toolbar divider dense>
+              <span slot="title">[Page name]</span>
+              <td-icon-button slot="actionItems" icon="filter_list"></td-icon-button>
+              <td-icon-button slot="actionItems" icon="add"></td-icon-button>
             </td-toolbar>
             <td-list activatable>
                 <td-list-item graphic="avatar" twoline >
@@ -209,10 +211,11 @@ const Template = ({ navClick }) => {
             </td-list>
         </div>
 
-        <td-toolbar label="[Section name]" breadcrumbs="3">
-          <td-icon-button slot="iconActions" icon="menu_open"></td-icon-button>
-          <td-icon-button class="hidden-large" slot="iconActions" icon="add"></td-icon-button>
-          <td-button class="hidden-small" class="create-new-button" label="Create New" slot="buttonActions" raised></td-button>
+        <td-toolbar>
+          <span slot="title">[Section name]</span>
+          <td-icon-button slot="actionItems" icon="menu_open"></td-icon-button>
+          <td-icon-button class="hidden-large" slot="actionItems" icon="add"></td-icon-button>
+          <td-button class="hidden-small" class="create-new-button" label="Create New" slot="actionItems" raised></td-button>
         </td-toolbar>
 
         <td-tab-bar >

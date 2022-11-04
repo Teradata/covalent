@@ -4,7 +4,7 @@ import './toolbar';
 export default {
   title: 'Components/Toolbar',
   argTypes: {
-    mini: {
+    dense: {
       control: 'boolean',
       defaultValue: false,
     },
@@ -32,10 +32,6 @@ export default {
       control: 'boolean',
       defaultValue: true,
     },
-    breadcrumbs: {
-      control: 'number',
-      defaultValue: 0,
-    },
   },
   decorators: [withDesign],
   parameters: {
@@ -48,8 +44,7 @@ export default {
 };
 
 export const Toolbar = ({
-  mini,
-  breadcrumbs,
+  dense,
   title,
   filter,
   search,
@@ -58,43 +53,38 @@ export const Toolbar = ({
   action,
 }) => {
   return `
-    <td-toolbar breadcrumbs="${breadcrumbs}" label="${title}" ${
-    mini ? 'mini' : ''
-  }>
+    <td-toolbar ${dense ? 'dense' : ''}>
+      <span slot="title">${title}</span> 
       ${
         filter
-          ? '<td-icon-button icon="filter_list" slot="iconActions"></td-icon-button>'
+          ? '<td-icon-button icon="filter_list" slot="actionItems"></td-icon-button>'
           : ''
       }
       ${
         search
-          ? '<td-icon-button icon="search" slot="iconActions"></td-icon-button>'
+          ? '<td-icon-button icon="search" slot="actionItems"></td-icon-button>'
           : ''
       }
       ${
         add
-          ? '<td-icon-button icon="add" slot="iconActions"></td-icon-button>'
+          ? '<td-icon-button icon="add" slot="actionItems"></td-icon-button>'
           : ''
       }
       ${
         secondaryAction
-          ? '<td-button outlined slot="buttonActions">BUTTON TEXT</td-button>'
+          ? '<td-button outlined slot="actionItems">BUTTON TEXT</td-button>'
           : ''
       }
       ${
         action
-          ? '<td-button outlined slot="buttonActions">BUTTON TEXT</td-button>'
+          ? '<td-button outlined slot="actionItems">BUTTON TEXT</td-button>'
           : ''
       }
     </td-toolbar>
   `;
 };
 
-export const PageContext = Toolbar.bind({});
-PageContext.args = {
-  breadcrumbs: 3,
-};
-export const MiniToolbar = Toolbar.bind({});
-MiniToolbar.args = {
-  mini: 'true',
+export const denseToolbar = Toolbar.bind({});
+denseToolbar.args = {
+  dense: 'true',
 };
