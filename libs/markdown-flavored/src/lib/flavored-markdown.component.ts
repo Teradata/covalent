@@ -533,7 +533,7 @@ export class TdFlavoredMarkdownComponent
       listRegExp,
       (componentRef: ComponentRef<TdFlavoredListComponent>, match: string) => {
         const matchIndex =
-          match.indexOf('+') !== -1 ? match.indexOf('+') : match.indexOf('*');
+          match.indexOf('*') !== -1 ? match.indexOf('*') : match.indexOf('+');
 
         const lineTexts: string[] = match.split(
           new RegExp(
@@ -560,7 +560,6 @@ export class TdFlavoredMarkdownComponent
             }),
           });
         });
-
         componentRef.instance.lines = lines;
       }
     );
