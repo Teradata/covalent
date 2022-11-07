@@ -20,8 +20,6 @@ module.exports = {
     formField: './libs/components/src/formfield/formfield.ts',
     icon: './libs/components/src/icon/icon.ts',
     iconButton: './libs/components/src/icon-button/icon-button.ts',
-    iconButtonToggle:
-      './libs/components/src/icon-button-toggle/icon-button-toggle.ts',
     iconCheckbox: './libs/components/src/icon-checkbox/icon-check-toggle.ts',
     iconRadio: './libs/components/src/icon-radio/icon-radio-toggle.ts',
     linearProgress: './libs/components/src/linear-progress/linear-progress.ts',

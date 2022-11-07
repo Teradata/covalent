@@ -10,7 +10,6 @@ export * from './drawer/drawer';
 export * from './empty-state/empty-state';
 export * from './icon/icon';
 export * from './icon-button/icon-button';
-export * from './icon-button-toggle/icon-button-toggle';
 export * from './icon-checkbox/icon-check-toggle';
 export * from './icon-radio/icon-radio-toggle';
 export * from './linear-progress/linear-progress';
