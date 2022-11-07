@@ -1,3 +1,9 @@
+## [4.10.2](https://github.com/Teradata/covalent/compare/v4.10.1...v4.10.2) (2022-11-07)
+
+### Bug Fixes
+
+- **build:** fix to npm not publishing all packages ([ae36afc](https://github.com/Teradata/covalent/commit/ae36afc76a6438ccf79d9108c4363817ebe05a8a))
+
 ## [4.10.1](https://github.com/Teradata/covalent/compare/v4.10.0...v4.10.1) (2022-11-07)
 
 ### Bug Fixes
