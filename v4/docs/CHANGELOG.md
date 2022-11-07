@@ -1,3 +1,10 @@
+## [4.10.1](https://github.com/Teradata/covalent/compare/v4.10.0...v4.10.1) (2022-11-07)
+
+### Bug Fixes
+
+- display urls with query params in list ([5a8f270](https://github.com/Teradata/covalent/commit/5a8f2707f1db25f7aff8d34441de671b680631cd))
+- **markdown:** add check for CRLF in markdown, put CFM list behind flag ([0f58869](https://github.com/Teradata/covalent/commit/0f588693f3746f2e7bf3848fb8fe1fba35a216ac))
+
 # [4.10.0](https://github.com/Teradata/covalent/compare/v4.9.0...v4.10.0) (2022-10-26)
 
 ### Features
