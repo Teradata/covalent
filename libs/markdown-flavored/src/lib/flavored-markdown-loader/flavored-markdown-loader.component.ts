@@ -55,6 +55,12 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
   @Input() copyCodeTooltips?: ICopyCodeTooltips = {};
 
   /**
+   * useCfmList?: boolean = false;
+   * Use CFM list component instead of vanilla markdown list. Used in covalent documentation app.
+   */
+  @Input() useCfmList? = false;
+
+  /**
    * contentReady: void
    * Emitted when markdown rendering is finished.
    */
