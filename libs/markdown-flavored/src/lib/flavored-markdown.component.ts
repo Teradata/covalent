@@ -203,6 +203,13 @@ export class TdFlavoredMarkdownComponent
    * Tooltips for copy button to copy and upon copying.
    */
   @Input() copyCodeTooltips?: ICopyCodeTooltips = {};
+
+  /**
+   * useCfmList?: boolean = false;
+   * Use CFM list component instead of vanilla markdown list. Used in covalent documentation app.
+   */
+  @Input() useCfmList? = false;
+
   /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
@@ -290,9 +297,10 @@ export class TdFlavoredMarkdownComponent
         : null;
 
       // Remove all indentation spaces so markdown can be parsed correctly
+      // Remove all \r characters
       const startingWhitespaceRegex = new RegExp('^' + firstLineWhitespace);
       lines = lines.map(function (line: string): string {
-        return line.replace(startingWhitespaceRegex, '');
+        return line.replace(startingWhitespaceRegex, '').replace('\r', '');
       });
 
       // Join lines again with line characters
@@ -300,8 +308,12 @@ export class TdFlavoredMarkdownComponent
       markdown = this._replaceCodeBlocks(markdown);
       markdown = this._replaceCheckbox(markdown);
       markdown = this._replaceTables(markdown);
-      markdown = this._replaceLists(markdown);
       markdown = this._replaceButtons(markdown);
+
+      if (this.useCfmList) {
+        markdown = this._replaceLists(markdown);
+      }
+
       const keys: string[] = Object.keys(this._components);
       // need to sort the placeholders in order of encounter in markdown content
       keys.sort((compA: string, compB: string) => {
@@ -525,25 +537,25 @@ export class TdFlavoredMarkdownComponent
   }
 
   private _replaceLists(markdown: string): string {
-    const listRegExp = /(?:^|\n)(( *(\+|\*))[ |\t](.*)\n)+/g;
-    const listCharRegExp = new RegExp(/^(\+|\*)/);
+    const listRegExp = /(?:^|\n)(( *(\+|\*|-))[ |\t](.*)\n)+/g;
+    const listCharRegExp = new RegExp(/^(\+|\*|-)/);
     return this._replaceComponent(
       markdown,
       TdFlavoredListComponent,
       listRegExp,
       (componentRef: ComponentRef<TdFlavoredListComponent>, match: string) => {
-        const matchIndex =
-          match.indexOf('*') !== -1 ? match.indexOf('*') : match.indexOf('+');
+        const start = /(\+|\*|-)/.exec(match);
+        const matchIndex = start !== null ? start.index : 1;
 
         const lineTexts: string[] = match.split(
           new RegExp(
-            '\\n {' + (matchIndex - 1).toString() + '}(\\+|\\*)[ |\\t]'
+            '\\n {' + (matchIndex - 1).toString() + '}(\\+|\\*|\\-)[ |\\t]'
           )
         );
         lineTexts.shift();
         const lines: IFlavoredListItem[] = [];
         lineTexts.forEach((text: string) => {
-          const sublineTexts: string[] = text.split(/\n *(\+|\*) /);
+          const sublineTexts: string[] = text.split(/\n *(\+|\*|-) /);
           const lineText = sublineTexts.shift() ?? '';
 
           if (listCharRegExp.test(lineText)) {
