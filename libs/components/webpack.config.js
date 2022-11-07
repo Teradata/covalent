@@ -47,7 +47,6 @@ module.exports = {
   },
   output: {
     filename: 'libs/components/[name].js',
-    clean: true,
   },
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
