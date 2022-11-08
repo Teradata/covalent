@@ -26,6 +26,10 @@
       color: var(--td-status-header-status-color);
     }
 
+    .status-header-helper {
+      color: var(--mdc-theme-text-secondary-on-background);
+    }
+
     .status-header-title-text {
       color: var(--mdc-theme-on-surface);
     }
