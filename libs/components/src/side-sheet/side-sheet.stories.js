@@ -1,6 +1,6 @@
 import './side-sheet';
 import '../button/button';
-import { Active as ActiveStatusHeader } from '../status-header/status-header.stories';
+//import { Active as ActiveStatusHeader } from '../status-header/status-header.stories';
 import * as tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html';
 
 export default {
@@ -85,11 +85,6 @@ export const StatusHeader = () => {
         </style>
         <td-button raised>Open side sheet</td-button>
         <td-side-sheet noPadding>
-            ${ActiveStatusHeader({
-              state: 'active',
-              status: 'Running',
-              title: 'Active item details',
-            })}
             ${tableRowSelectionContent}
         </td-side-sheet>
     `;
