@@ -127,7 +127,7 @@ export default {
     size: {
       options: ['64px', '48px', '24px', '16px'],
       control: { type: 'select' },
-      defaultValue: 'houseboat',
+      defaultValue: '48px',
     },
 
     onClick: { action: 'onClick' },

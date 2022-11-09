@@ -1,0 +1,79 @@
+@mixin theme {
+  .status-header {
+    --td-status-header-background: transparent;
+    --td-status-header-icon-background: var(
+      --mdc-theme-surface-neutral-highlight-hover
+    );
+    --td-status-header-icon-color: var(--mdc-theme-text-icon-on-background);
+    --td-status-header-status-color: var(--mdc-theme-on-surface);
+
+    background-color: var(--td-status-header-background);
+
+    .status-header-content {
+      max-width: inherit;
+      flex-direction: column;
+    }
+
+    .status-header-icon {
+      background-color: var(--td-status-header-icon-background);
+      color: var(--td-status-header-icon-color);
+    }
+
+    .status-header-text {
+      --mdc-theme-primary: var(--mdc-theme-surface-neutral-highlight-hover);
+      --mdc-theme-on-surface: var(--mdc-theme-text-icon-on-background);
+
+      color: var(--td-status-header-status-color);
+    }
+
+    .status-header-helper {
+      color: var(--mdc-theme-text-secondary-on-background);
+    }
+
+    .status-header-title-text {
+      color: var(--mdc-theme-on-surface);
+    }
+
+    &.active {
+      --td-status-header-background: var(
+        --mdc-theme-surface-secondary-highlight
+      );
+      --td-status-header-icon-background: var(
+        --mdc-theme-surface-secondary-highlight-hover
+      );
+      --td-status-header-icon-color: var(--mdc-theme-secondary);
+      --td-status-header-status-color: var(--mdc-theme-secondary);
+    }
+
+    &.caution {
+      --td-status-header-background: var(--mdc-theme-surface-caution-highlight);
+      --td-status-header-icon-background: var(
+        --mdc-theme-surface-caution-highlight-hover
+      );
+      --td-status-header-icon-color: var(--mdc-theme-caution);
+      --td-status-header-status-color: var(--mdc-theme-caution);
+    }
+
+    &.error {
+      --td-status-header-background: var(
+        --mdc-theme-surface-negative-highlight
+      );
+      --td-status-header-icon-background: var(
+        --mdc-theme-surface-negative-highlight-hover
+      );
+      --td-status-header-icon-color: var(--mdc-theme-negative);
+      --td-status-header-status-color: var(--mdc-theme-negative);
+    }
+
+    &.positive {
+      --td-status-header-background: var(
+        --mdc-theme-surface-positive-highlight
+      );
+      --td-status-header-icon-background: var(
+        --mdc-theme-surface-positive-highlight-hover
+      );
+      --td-status-header-icon-color: var(--mdc-theme-positive);
+      --td-status-header-status-color: var(--mdc-theme-positive);
+    }
+  }
+}

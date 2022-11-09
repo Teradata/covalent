@@ -24,6 +24,8 @@ export * from './select/select';
 export * from './slider/slider';
 export * from './slider/slider-range';
 export * from './snackbar/snackbar';
+export * from './status-header/status-header';
+export * from './status-header/status-header-item';
 export * from './switch/switch';
 export * from './tab/tab';
 export * from './tab/tab-bar';
