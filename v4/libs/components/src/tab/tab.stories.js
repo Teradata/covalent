@@ -11,14 +11,11 @@ export default {
 const Template = ({ icon, activeIndex = 0 }) => {
   return `
         <td-tab-bar activeIndex="${activeIndex}">
-            <td-tab ${icon ? `icon="${icon}"` : null}
-                     label="Tab one">
+            <td-tab${icon ? ` icon="${icon}"` : ``} label="Tab one">
             </td-tab>
-            <td-tab ${icon ? `icon="${icon}"` : null}
-                     label="Tab two">
+            <td-tab${icon ? ` icon="${icon}"` : ``} label="Tab two">
             </td-tab>
-            <td-tab ${icon ? `icon="${icon}"` : null}
-                     label="Tab three">
+            <td-tab${icon ? ` icon="${icon}"` : ``} label="Tab three">
             </td-tab>
         </td-tab-bar>`;
 };
