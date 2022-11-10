@@ -1,3 +1,11 @@
+# [4.11.0](https://github.com/Teradata/covalent/compare/v4.10.2...v4.11.0) (2022-11-09)
+
+### Features
+
+- **components:** adding [@divrags](https://github.com/divrags) status header component ([e045495](https://github.com/Teradata/covalent/commit/e0454958a1fa3bc63a4f3f4a413bc7cd1c73a4d7))
+- **components:** adding sidesheet component ([5f2cc07](https://github.com/Teradata/covalent/commit/5f2cc0793286832858dae831bd6773bc67538fcd))
+- **components:** adjustments from review comments ([6ff03db](https://github.com/Teradata/covalent/commit/6ff03db9ab0b10d6709c474b634606146e04108d))
+
 ## [4.10.2](https://github.com/Teradata/covalent/compare/v4.10.1...v4.10.2) (2022-11-07)
 
 ### Bug Fixes

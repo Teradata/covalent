@@ -1,7 +1,7 @@
 import '../checkbox/checkbox';
 import '../formfield/formfield';
 
-import * as typographyContent from '../../stories/demos/typography.content.html';
+import { Basic } from '../typography/typography.stories';
 import * as loremIpsumContent from '../../stories/demos/lorem-ipsum.content.html';
 import * as tableProgressContent from '../../stories/demos/table-progress-indicator.content.html';
 
@@ -14,7 +14,7 @@ export default {
 const skeletonClsName = 'skeleton-text';
 const skeletonEffect = 'skeleton-effect-fade';
 
-export const DataTable = ({}) => {
+export const DataTable = () => {
   const container = document.createElement('div');
   container.innerHTML = tableProgressContent;
   const tableCell = container.getElementsByClassName('mdc-data-table__cell');
@@ -26,16 +26,16 @@ export const DataTable = ({}) => {
   return container;
 };
 
-export const Typography = ({}) => {
+export const Typography = () => {
   const container = document.createElement('div');
   container.classList.add(skeletonClsName);
   container.classList.add(skeletonEffect);
-  container.innerHTML = typographyContent;
+  container.innerHTML = `${Basic()}`;
 
   return container;
 };
 
-export const Content = ({}) => {
+export const Content = () => {
   const container = document.createElement('div');
   container.classList.add(skeletonClsName);
   container.classList.add(skeletonEffect);
