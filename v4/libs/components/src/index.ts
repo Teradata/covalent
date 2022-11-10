@@ -3,6 +3,7 @@ export * from './alert/alert';
 export * from './app-shell/app-shell';
 export * from './button/button';
 export * from './checkbox/checkbox';
+export * from './card/card';
 export * from './circular-progress/circular-progress';
 export * from './dialog/dialog';
 export * from './drawer/drawer';
