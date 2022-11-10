@@ -1,3 +1,9 @@
+# [4.12.0](https://github.com/Teradata/covalent/compare/v4.11.0...v4.12.0) (2022-11-10)
+
+### Features
+
+- **components:** adding typography web component ([6122bbd](https://github.com/Teradata/covalent/commit/6122bbdf7845f91167bdf6fa7d906b5eb7766520))
+
 # [4.11.0](https://github.com/Teradata/covalent/compare/v4.10.2...v4.11.0) (2022-11-09)
 
 ### Features
