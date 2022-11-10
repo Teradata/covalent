@@ -47,6 +47,7 @@ module.exports = {
     topAppBarFixed: './libs/components/src/top-app-bar/top-app-bar-fixed.ts',
     treeList: './libs/components/src/tree-list/tree-list.ts',
     treeListItem: './libs/components/src/tree-list/tree-list-item.ts',
+    typography: './libs/components/src/typography/typography.ts',
   },
   output: {
     filename: 'libs/components/[name].js',
