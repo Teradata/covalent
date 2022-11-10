@@ -10,6 +10,7 @@ module.exports = {
     alert: './libs/components/src/alert/alert.ts',
     appShell: './libs/components/src/app-shell/app-shell.ts',
     button: './libs/components/src/button/button.ts',
+    card: './libs/components/src/card/card.ts',
     checkbox: './libs/components/src/checkbox/checkbox.ts',
     circularProgress:
       './libs/components/src/circular-progress/circular-progress.ts',
