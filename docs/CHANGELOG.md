@@ -1,3 +1,11 @@
+## [4.12.1](https://github.com/Teradata/covalent/compare/v4.12.0...v4.12.1) (2022-11-10)
+
+### Bug Fixes
+
+- **components:** fixes for button, icon toggle, card ([fd10507](https://github.com/Teradata/covalent/commit/fd10507ae4549379c5111484c431e6b294d9d6e4))
+- **components:** removing boilerplate code from toolbar ([f07cdae](https://github.com/Teradata/covalent/commit/f07cdae57ede83745089cc3ae57a77200e679a91))
+- **package:** update dependency list ([ac59f54](https://github.com/Teradata/covalent/commit/ac59f54b90b30433f4107a7e403c0e0f65cabc3b))
+
 # [4.12.0](https://github.com/Teradata/covalent/compare/v4.11.0...v4.12.0) (2022-11-10)
 
 ### Features
