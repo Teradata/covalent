@@ -1,3 +1,9 @@
+## [4.12.2](https://github.com/Teradata/covalent/compare/v4.12.1...v4.12.2) (2022-11-14)
+
+### Bug Fixes
+
+- **components:** card and toolbar style adjustments ([ef39ea2](https://github.com/Teradata/covalent/commit/ef39ea27878e3928d867e862534cd9900a756b9c))
+
 ## [4.12.1](https://github.com/Teradata/covalent/compare/v4.12.0...v4.12.1) (2022-11-10)
 
 ### Bug Fixes
