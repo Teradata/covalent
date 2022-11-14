@@ -98,11 +98,6 @@ nav.navigation {
   }
 }
 
-td-top-app-bar-fixed {
-  --mdc-theme-primary: var(--mdc-theme-surface);
-  --mdc-theme-on-primary: var(--mdc-theme-on-surface);
-}
-
 [divider] {
   border-bottom: 1px solid;
   margin: 16px;
@@ -110,7 +105,7 @@ td-top-app-bar-fixed {
 }
 
 /* Open/Collapse Animation in Desktop */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) {
   nav.navigation {
     display: flex;
     flex-direction: column;
@@ -145,7 +140,7 @@ td-top-app-bar-fixed {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .app-shell {
     grid-template-columns: 1fr;
     grid-template-areas: 'header' 'main' 'mini-list' 'help';
