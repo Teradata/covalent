@@ -4,6 +4,10 @@
   display: block;
 }
 
+.mdc-top-app-bar__title {
+  padding-left: 0;
+}
+
 @media screen and (max-width: 768px) {
   .mdc-top-app-bar__title {
     font-family: var(--mdc-typography-subtitle2-font-family);
@@ -16,6 +20,8 @@
 .mdc-top-app-bar {
   position: static;
   background-color: transparent;
+  background-color: var(--mdc-theme-surface);
+  color: var(--mdc-theme-on-surface);
 }
 
 .mdc-top-app-bar--fixed-adjust,

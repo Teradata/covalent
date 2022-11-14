@@ -19,6 +19,10 @@ export class CardBase extends LitElement {
    */
   @property({ type: Boolean }) actionBar = false;
   /**
+   * Displays the ripple affect in primary area
+   */
+  @property({ type: Boolean }) interactive = false;
+  /**
    * Style the card as an outline variant
    */
   @property({ type: Boolean }) outlined = false;
@@ -36,8 +40,8 @@ export class CardBase extends LitElement {
           `
         : ''}
       <div class="mdc-card__primary-action">
-        <slot name="card-content"></slot>
-        <slot name="empty-state"></slot>
+        <slot></slot>
+        ${this.interactive ? html`<div class="mdc-card__ripple"></div>` : ''}
       </div>
       ${this.actionBar
         ? html`
