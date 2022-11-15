@@ -22,6 +22,7 @@ export * from './list/radio-list-item';
 export * from './menu/menu';
 export * from './radio/radio';
 export * from './select/select';
+export * from './side-sheet/side-sheet';
 export * from './slider/slider';
 export * from './slider/slider-range';
 export * from './snackbar/snackbar';

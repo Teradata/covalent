@@ -32,6 +32,7 @@ module.exports = {
     menu: './libs/components/src/menu/menu.ts',
     radio: './libs/components/src/radio/radio.ts',
     select: './libs/components/src/select/select.ts',
+    sideSheet: './libs/components/src/side-sheet/side-sheet.ts',
     slider: './libs/components/src/slider/slider.ts',
     sliderRange: './libs/components/src/slider/slider-range.ts',
     snackBar: './libs/components/src/snackbar/snackbar.ts',
