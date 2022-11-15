@@ -1,3 +1,9 @@
+## [4.12.3](https://github.com/Teradata/covalent/compare/v4.12.2...v4.12.3) (2022-11-15)
+
+### Bug Fixes
+
+- **components:** exporting sidesheet in build ([b56c928](https://github.com/Teradata/covalent/commit/b56c928f963e7e6b3317136f7116e1b0ef89be9c))
+
 ## [4.12.2](https://github.com/Teradata/covalent/compare/v4.12.1...v4.12.2) (2022-11-14)
 
 ### Bug Fixes
