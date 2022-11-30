@@ -3,7 +3,6 @@ import {
   Input,
   OnChanges,
   SimpleChanges,
-  HostListener,
   ViewChild,
   ElementRef,
   ChangeDetectorRef,
@@ -12,6 +11,9 @@ import {
   Output,
   EventEmitter,
   SecurityContext,
+  OnInit,
+  NgZone,
+  OnDestroy,
 } from '@angular/core';
 import {
   removeLeadingHash,
@@ -22,7 +24,8 @@ import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ICopyCodeTooltips } from '@covalent/highlight';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, fromEvent, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -62,7 +65,9 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
   styleUrls: ['./markdown-navigator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdMarkdownNavigatorComponent implements OnChanges {
+export class TdMarkdownNavigatorComponent
+  implements OnChanges, OnInit, OnDestroy
+{
   /**
    * items: IMarkdownNavigatorItem[]
    *
@@ -119,7 +124,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   @Output() itemSelected: EventEmitter<IMarkdownNavigatorItem> =
     new EventEmitter();
 
-  @ViewChild('markdownWrapper') markdownWrapper!: ElementRef;
+  @ViewChild('markdownWrapper') markdownWrapper!: ElementRef<HTMLElement>;
 
   historyStack: IMarkdownNavigatorItem[] = []; // history
   currentMarkdownItem?: IMarkdownNavigatorItem; // currently rendered
@@ -130,23 +135,16 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   markdownLoaderError?: string;
   childrenUrlError?: string;
 
+  private _destroy$ = new Subject<void>();
+
   constructor(
+    private _host: ElementRef<HTMLElement>,
+    private _ngZone: NgZone,
     private _markdownUrlLoaderService: TdMarkdownLoaderService,
     private _changeDetectorRef: ChangeDetectorRef,
     private _sanitizer: DomSanitizer,
     private _http: HttpClient
   ) {}
-
-  @HostListener('click', ['$event'])
-  clickListener(event: Event): void {
-    const element: HTMLElement = <HTMLElement>event.srcElement;
-    if (
-      element.matches('a[href]') &&
-      isMarkdownHref(<HTMLAnchorElement>element)
-    ) {
-      this.handleLinkClick(event);
-    }
-  }
 
   get showGoBackButton(): boolean {
     return this.historyStack.length > 0;
@@ -242,13 +240,35 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return '';
   }
 
-  async ngOnChanges(changes: SimpleChanges): Promise<void> {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes['items']) {
       this.reset();
     }
     if (changes['startAt'] && this.items && this.startAt) {
       this._jumpTo(this.startAt, undefined);
     }
+  }
+
+  ngOnInit(): void {
+    this._ngZone.runOutsideAngular(() =>
+      fromEvent(this._host.nativeElement, 'click')
+        .pipe(takeUntil(this._destroy$))
+        .subscribe((event) => {
+          const element: HTMLElement = <HTMLElement>event.srcElement;
+          if (
+            element.matches('a[href]') &&
+            isMarkdownHref(<HTMLAnchorElement>element)
+          ) {
+            // Re-enter the Angular zone only when the `click` event has been happened
+            // on the specific anchor.
+            this._ngZone.run(() => this.handleLinkClick(event));
+          }
+        })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
   }
 
   hasChildrenOrChildrenUrl(item: IMarkdownNavigatorItem): boolean {
