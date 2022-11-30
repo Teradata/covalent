@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Sep 2022 18:22:21 GMT
+ * Generated on Wed, 30 Nov 2022 18:07:44 GMT
  */
 
 export const TdLightPrimary: string;
@@ -17,6 +17,15 @@ export const TdLightOnError: string;
 export const TdLightDivider: string;
 export const TdLightEmphasis: string;
 export const TdLightAccent: string;
+export const TdLightCodeSnippetColor: string;
+export const TdLightCodeSnippetComment: string;
+export const TdLightCodeSnippetKeyword: string;
+export const TdLightCodeSnippetSelector: string;
+export const TdLightCodeSnippetLiteral: string;
+export const TdLightCodeSnippetString: string;
+export const TdLightCodeSnippetVariable: string;
+export const TdLightCodeSnippetTitle: string;
+export const TdLightCodeSnippetClass: string;
 export const TdLightBackground: string;
 export const TdLightSurface: string;
 export const TdLightSurfaceCanvas: string;
@@ -74,6 +83,15 @@ export const TdDarkOnError: string;
 export const TdDarkDivider: string;
 export const TdDarkEmphasis: string;
 export const TdDarkAccent: string;
+export const TdDarkCodeSnippetColor: string;
+export const TdDarkCodeSnippetComment: string;
+export const TdDarkCodeSnippetKeyword: string;
+export const TdDarkCodeSnippetSelector: string;
+export const TdDarkCodeSnippetLiteral: string;
+export const TdDarkCodeSnippetString: string;
+export const TdDarkCodeSnippetVariable: string;
+export const TdDarkCodeSnippetTitle: string;
+export const TdDarkCodeSnippetClass: string;
 export const TdDarkBackground: string;
 export const TdDarkSurface: string;
 export const TdDarkSurfaceCanvas: string;

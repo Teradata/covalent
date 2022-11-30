@@ -7,7 +7,7 @@
 @include skeleton.core-styles(); // TODO - should include support
 
 // TODO should be moved to consuming app - DOCS NEEDED
-:root {
+.light {
   @include theme.components-theme(
     map-get(variables.$tokens, light),
     map-get(variables.$tokens, typography)
@@ -17,13 +17,6 @@
 .dark {
   @include theme.components-theme(
     map-get(variables.$tokens, dark),
-    map-get(variables.$tokens, typography)
-  );
-}
-
-.light {
-  @include theme.components-theme(
-    map-get(variables.$tokens, light),
     map-get(variables.$tokens, typography)
   );
 }

@@ -2,6 +2,15 @@ import './code-snippet';
 import '../icon-button/icon-button';
 import '../button/button';
 
+import addons from '@storybook/addons';
+import {
+  DARK_MODE_EVENT_NAME,
+  UPDATE_DARK_MODE_EVENT_NAME,
+} from 'storybook-dark-mode';
+
+// get channel to listen to event emitter
+const channel = addons.getChannel();
+
 const sqlContent = `
 SELECT * FROM load_to_teradata (
     ON (
@@ -29,10 +38,6 @@ export default {
       control: 'boolean',
       defaultValue: false,
     },
-    isDark: {
-      control: 'boolean',
-      defaultValue: false,
-    },
     inline: {
       control: 'boolean',
       defaultValue: false,
@@ -57,7 +62,6 @@ export default {
 };
 
 const Template = ({
-  isDark,
   inline,
   content,
   hideHeader,
@@ -65,15 +69,34 @@ const Template = ({
   language,
   maxHeight,
 }) => {
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      const themeToggle = document.querySelector('#theme-toggle');
+
+      // listen to DARK_MODE event
+      channel.on(DARK_MODE_EVENT_NAME, (darkMode) => {
+        if (darkMode) {
+          themeToggle.setAttribute('icon', 'light_mode');
+        } else {
+          themeToggle.setAttribute('icon', 'dark_mode');
+        }
+      });
+
+      themeToggle.addEventListener('click', () => {
+        channel.emit(UPDATE_DARK_MODE_EVENT_NAME);
+      });
+    },
+    { once: true }
+  );
   return `
     <td-code-snippet 
         label="${label}"
         maxHeight="${maxHeight}"
         language="${language}" 
-        theme="${isDark ? 'dark' : 'light'}" 
         ${hideHeader ? 'hideHeader' : ''}
         ${inline ? 'inline' : ''}>
-    <td-icon-button slot="actionItems" icon="dark_mode"></td-icon-button>
+    <td-icon-button slot="actionItems" id="theme-toggle"></td-icon-button>
     <td-icon-button slot="actionItems" icon="content_copy"></td-icon-button>
     ${content} 
     </td-code-snippet>`;

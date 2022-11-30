@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement, property, queryAssignedNodes } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import styles from './code-snippet.scss';
@@ -19,9 +19,6 @@ export class CovalentCodeSnippetBase extends LitElement {
 
   @property()
   label?: string;
-
-  @property()
-  theme: 'light' | 'dark' = 'light';
 
   @property({ type: Boolean, reflect: true })
   inline = false;
