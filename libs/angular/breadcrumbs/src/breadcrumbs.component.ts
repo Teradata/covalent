@@ -1,3 +1,4 @@
+import { isPlatformServer } from '@angular/common';
 import {
   Component,
   ContentChildren,
@@ -10,10 +11,13 @@ import {
   ElementRef,
   Input,
   HostBinding,
+  NgZone,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
 
 import { fromEvent, Subject } from 'rxjs';
-import { debounceTime, startWith, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, startWith, takeUntil } from 'rxjs/operators';
 
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
@@ -50,23 +54,38 @@ export class TdBreadcrumbsComponent
   }
 
   constructor(
-    private _elementRef: ElementRef,
+    @Inject(PLATFORM_ID) private _platformId: string,
+    private _ngZone: NgZone,
+    private _elementRef: ElementRef<HTMLElement>,
     private _changeDetectorRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
-    fromEvent(window, 'resize')
-      .pipe(debounceTime(10), takeUntil(this._destroy$))
-      .subscribe(() => {
-        if (!this._resizing) {
+    // `window` is not available on the Node.js side.
+    if (isPlatformServer(this._platformId)) {
+      return;
+    }
+
+    this._ngZone.runOutsideAngular(() =>
+      fromEvent(window, 'resize')
+        .pipe(
+          debounceTime(10),
+          filter(() => !this._resizing),
+          takeUntil(this._destroy$)
+        )
+        .subscribe(() => {
           this._resizing = true;
           setTimeout(() => {
-            this._calculateVisibility();
-            this._resizing = false;
-            this._changeDetectorRef.markForCheck();
+            // Re-enter the Angular zone once the last timer fires and skip change
+            // detections on `resize` event and debounce timer.
+            this._ngZone.run(() => {
+              this._calculateVisibility();
+              this._resizing = false;
+              this._changeDetectorRef.markForCheck();
+            });
           }, 100);
-        }
-      });
+        })
+    );
   }
 
   ngAfterContentInit(): void {
