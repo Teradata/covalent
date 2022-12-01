@@ -77,9 +77,9 @@ const Template = ({
       // listen to DARK_MODE event
       channel.on(DARK_MODE_EVENT_NAME, (darkMode) => {
         if (darkMode) {
-          themeToggle.setAttribute('icon', 'light_mode');
+          themeToggle.setAttribute('icon', 'brightness_high');
         } else {
-          themeToggle.setAttribute('icon', 'dark_mode');
+          themeToggle.setAttribute('icon', 'brightness_4');
         }
       });
 
@@ -90,15 +90,15 @@ const Template = ({
     { once: true }
   );
   return `
-    <td-code-snippet 
+    <td-code-snippet
         label="${label}"
         maxHeight="${maxHeight}"
-        language="${language}" 
+        language="${language}"
         ${hideHeader ? 'hideHeader' : ''}
         ${inline ? 'inline' : ''}>
     <td-icon-button slot="actionItems" id="theme-toggle"></td-icon-button>
     <td-icon-button slot="actionItems" icon="content_copy"></td-icon-button>
-    ${content} 
+    ${content}
     </td-code-snippet>`;
 };
 
