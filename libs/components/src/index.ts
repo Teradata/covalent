@@ -5,6 +5,7 @@ export * from './button/button';
 export * from './checkbox/checkbox';
 export * from './card/card';
 export * from './circular-progress/circular-progress';
+export * from './code-snippet/code-snippet';
 export * from './dialog/dialog';
 export * from './drawer/drawer';
 export * from './empty-state/empty-state';

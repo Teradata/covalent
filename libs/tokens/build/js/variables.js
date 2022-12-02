@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Sep 2022 18:22:21 GMT
+ * Generated on Wed, 30 Nov 2022 18:07:44 GMT
  */
 
 export const TdLightPrimary = '#007373';
@@ -17,6 +17,15 @@ export const TdLightOnError = 'white';
 export const TdLightDivider = 'rgba(0, 0, 0, 0.12)';
 export const TdLightEmphasis = '#546e7a';
 export const TdLightAccent = '#007373';
+export const TdLightCodeSnippetColor = '#383a42';
+export const TdLightCodeSnippetComment = '#a0a1a7';
+export const TdLightCodeSnippetKeyword = '#a626a4';
+export const TdLightCodeSnippetSelector = '#e45649';
+export const TdLightCodeSnippetLiteral = '#0184bb';
+export const TdLightCodeSnippetString = '#50a14f';
+export const TdLightCodeSnippetVariable = '#986801';
+export const TdLightCodeSnippetTitle = '#4078f2';
+export const TdLightCodeSnippetClass = '#c18401';
 export const TdLightBackground = '#f5f5f5';
 export const TdLightSurface = 'white';
 export const TdLightSurfaceCanvas = '#eee';
@@ -55,7 +64,7 @@ export const TdLightTextSecondaryOnLight = 'rgba(0, 0, 0, 0.54)';
 export const TdLightTextHintOnLight = 'rgba(0, 0, 0, 0.38)';
 export const TdLightTextDisabledOnLight = 'rgba(0, 0, 0, 0.38)';
 export const TdLightTextIconOnLight = 'rgba(0, 0, 0, 0.54)';
-export const TdLightTextPrimaryOnDark = '255, 255, 255';
+export const TdLightTextPrimaryOnDark = 'white';
 export const TdLightTextSecondaryOnDark = 'rgba(255, 255, 255, 0.7)';
 export const TdLightTextHintOnDark = 'rgba(255, 255, 255, 0.5)';
 export const TdLightTextDisabledOnDark = 'rgba(255, 255, 255, 0.5)';
@@ -74,6 +83,15 @@ export const TdDarkOnError = 'rgba(0, 0, 0, 0.87)';
 export const TdDarkDivider = 'rgba(255, 255, 255, 0.2)';
 export const TdDarkEmphasis = '#b0bec5';
 export const TdDarkAccent = '#59cecd';
+export const TdDarkCodeSnippetColor = '#abb2bf';
+export const TdDarkCodeSnippetComment = '#5c6370';
+export const TdDarkCodeSnippetKeyword = '#c678dd';
+export const TdDarkCodeSnippetSelector = '#e06c75';
+export const TdDarkCodeSnippetLiteral = '#56b6c2';
+export const TdDarkCodeSnippetString = '#98c379';
+export const TdDarkCodeSnippetVariable = '#d19a66';
+export const TdDarkCodeSnippetTitle = '#61aeee';
+export const TdDarkCodeSnippetClass = '#e6c07b';
 export const TdDarkBackground = '#161c1f';
 export const TdDarkSurface = '#28353b';
 export const TdDarkSurfaceCanvas = '#101314';

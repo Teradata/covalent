@@ -321,6 +321,17 @@
   --mdc-shape-small: 8px;
   --mdc-shape-medium: 8px;
 
+  // Code snippet colors
+  --cov-theme-code-snippet-color: #{map-get($theme, code-snippet-color)};
+  --cov-theme-code-snippet-comment: #{map-get($theme, code-snippet-comment)};
+  --cov-theme-code-snippet-keyword: #{map-get($theme, code-snippet-keyword)};
+  --cov-theme-code-snippet-selector: #{map-get($theme, code-snippet-selector)};
+  --cov-theme-code-snippet-literal: #{map-get($theme, code-snippet-literal)};
+  --cov-theme-code-snippet-string: #{map-get($theme, code-snippet-string)};
+  --cov-theme-code-snippet-variable: #{map-get($theme, code-snippet-variable)};
+  --cov-theme-code-snippet-title: #{map-get($theme, code-snippet-title)};
+  --cov-theme-code-snippet-class: #{map-get($theme, code-snippet-class)};
+
   @include button.button-theme($theme);
   @include card.card-theme($theme);
   @include checkbox.checkbox-theme($theme);
