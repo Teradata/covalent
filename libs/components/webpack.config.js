@@ -46,6 +46,7 @@ module.exports = {
     textArea: './libs/components/src/textarea/textarea.ts',
     textField: './libs/components/src/textfield/textfield.ts',
     toolbar: './libs/components/src/toolbar/toolbar.ts',
+    tooltip: './libs/components/src/tooltip/tooltip.ts',
     topAppBar: './libs/components/src/top-app-bar/top-app-bar.ts',
     topAppBarFixed: './libs/components/src/top-app-bar/top-app-bar-fixed.ts',
     treeList: './libs/components/src/tree-list/tree-list.ts',

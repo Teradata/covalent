@@ -35,6 +35,7 @@ export * from './tab/tab-bar';
 export * from './textarea/textarea';
 export * from './textfield/textfield';
 export * from './toolbar/toolbar';
+export * from './tooltip/tooltip';
 export * from './top-app-bar/top-app-bar';
 export * from './top-app-bar/top-app-bar-fixed';
 export * from './tree-list/tree-list';
