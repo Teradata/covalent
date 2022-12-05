@@ -1,0 +1,119 @@
+:host {
+  background-color: var(--mdc-theme-surface-canvas);
+  border-radius: var(--mdc-shape-medium);
+  display: block;
+  position: relative;
+
+  /* For max height */
+  overflow: hidden;
+
+  pre {
+    margin: 0;
+    padding: 16px 0;
+    overflow: auto;
+
+    code.hljs.td-code-snippet {
+      padding: 0 16px;
+      display: block;
+      overflow-x: auto;
+    }
+  }
+
+  .hljs {
+    color: var(--cov-theme-code-snippet-color, #abb2bf);
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: var(--cov-theme-code-snippet-comment, #5c6370);
+    font-style: italic;
+  }
+
+  .hljs-doctag,
+  .hljs-formula,
+  .hljs-keyword {
+    color: var(--cov-theme-code-snippet-keyword, #c678dd);
+  }
+
+  .hljs-deletion,
+  .hljs-name,
+  .hljs-section,
+  .hljs-selector-tag,
+  .hljs-subst {
+    color: var(--cov-theme-code-snippet-selector, #e06c75);
+  }
+
+  .hljs-literal {
+    color: var(--cov-theme-code-snippet-literal, #56b6c2);
+  }
+
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-meta .hljs-string,
+  .hljs-regexp,
+  .hljs-string {
+    color: var(--cov-theme-code-snippet-string, #98c379);
+  }
+
+  .hljs-attr,
+  .hljs-number,
+  .hljs-selector-attr,
+  .hljs-selector-class,
+  .hljs-selector-pseudo,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-variable {
+    color: var(--cov-theme-code-snippet-variable, #d19a66);
+  }
+
+  .hljs-bullet,
+  .hljs-link,
+  .hljs-meta,
+  .hljs-selector-id,
+  .hljs-symbol,
+  .hljs-title {
+    color: var(--cov-theme-code-snippet-title, #61aeee);
+  }
+
+  .hljs-built_in,
+  .hljs-class .hljs-title,
+  .hljs-title.class_ {
+    color: var(--cov-theme-code-snippet-class, #e6c07b);
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: 700;
+  }
+
+  .hljs-link {
+    text-decoration: underline;
+  }
+}
+
+:host([inline]) {
+  border-radius: 0;
+}
+
+.header {
+  border-bottom: 1px solid var(--mdc-theme-border);
+  position: sticky;
+  top: -8px;
+  background-color: var(--mdc-theme-surface-canvas);
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px 4px 16px;
+  align-items: center;
+  border-radius: var(--mdc-shape-medium) var(--mdc-shape-medium) 0 0;
+}
+
+.title {
+  font-family: var(--mdc-typography-subtitle2-font-family);
+  font-size: var(--mdc-typography-subtitle2-font-size);
+  font-weight: var(--mdc-typography-subtitle2-font-weight);
+  line-height: var(--mdc-typography-subtitle2-line-height);
+  padding-right: 16px;
+}

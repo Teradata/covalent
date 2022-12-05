@@ -1,3 +1,14 @@
+# [4.13.0](https://github.com/Teradata/covalent/compare/v4.12.3...v4.13.0) (2022-12-02)
+
+### Bug Fixes
+
+- change theme toggle icons ([465711e](https://github.com/Teradata/covalent/commit/465711ec611228f5dd312284372217201cfba48a))
+
+### Features
+
+- **components:** adding code snippet component ([355b6f7](https://github.com/Teradata/covalent/commit/355b6f798a83662180b4fadb34d5303769e861cf))
+- **tokens:** adding code snippet tokens ([a37300f](https://github.com/Teradata/covalent/commit/a37300f7c8e7f0ce0f54187a9e3ce9d73ec475fa))
+
 ## [4.12.3](https://github.com/Teradata/covalent/compare/v4.12.2...v4.12.3) (2022-11-15)
 
 ### Bug Fixes

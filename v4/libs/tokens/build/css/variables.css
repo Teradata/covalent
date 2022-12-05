@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Sep 2022 18:22:21 GMT
+ * Generated on Wed, 30 Nov 2022 18:07:44 GMT
  */
 
 :root {
@@ -18,6 +18,15 @@
   --td-light-divider: rgba(0, 0, 0, 0.12);
   --td-light-emphasis: #546e7a;
   --td-light-accent: #007373;
+  --td-light-code-snippet-color: #383a42;
+  --td-light-code-snippet-comment: #a0a1a7;
+  --td-light-code-snippet-keyword: #a626a4;
+  --td-light-code-snippet-selector: #e45649;
+  --td-light-code-snippet-literal: #0184bb;
+  --td-light-code-snippet-string: #50a14f;
+  --td-light-code-snippet-variable: #986801;
+  --td-light-code-snippet-title: #4078f2;
+  --td-light-code-snippet-class: #c18401;
   --td-light-background: #f5f5f5;
   --td-light-surface: white;
   --td-light-surface-canvas: #eee;
@@ -56,7 +65,7 @@
   --td-light-text-hint-on-light: rgba(0, 0, 0, 0.38);
   --td-light-text-disabled-on-light: rgba(0, 0, 0, 0.38);
   --td-light-text-icon-on-light: rgba(0, 0, 0, 0.54);
-  --td-light-text-primary-on-dark: 255, 255, 255;
+  --td-light-text-primary-on-dark: white;
   --td-light-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
   --td-light-text-hint-on-dark: rgba(255, 255, 255, 0.5);
   --td-light-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
@@ -75,6 +84,15 @@
   --td-dark-divider: rgba(255, 255, 255, 0.2);
   --td-dark-emphasis: #b0bec5;
   --td-dark-accent: #59cecd;
+  --td-dark-code-snippet-color: #abb2bf;
+  --td-dark-code-snippet-comment: #5c6370;
+  --td-dark-code-snippet-keyword: #c678dd;
+  --td-dark-code-snippet-selector: #e06c75;
+  --td-dark-code-snippet-literal: #56b6c2;
+  --td-dark-code-snippet-string: #98c379;
+  --td-dark-code-snippet-variable: #d19a66;
+  --td-dark-code-snippet-title: #61aeee;
+  --td-dark-code-snippet-class: #e6c07b;
   --td-dark-background: #161c1f;
   --td-dark-surface: #28353b;
   --td-dark-surface-canvas: #101314;

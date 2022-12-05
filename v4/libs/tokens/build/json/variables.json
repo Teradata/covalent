@@ -224,6 +224,150 @@
       },
       "path": ["light", "accent"]
     },
+    "code-snippet-color": {
+      "value": "#383a42",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#383a42",
+        "type": "color"
+      },
+      "name": "code-snippet-color",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-color"
+      },
+      "path": ["light", "code-snippet-color"]
+    },
+    "code-snippet-comment": {
+      "value": "#a0a1a7",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#a0a1a7",
+        "type": "color"
+      },
+      "name": "code-snippet-comment",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-comment"
+      },
+      "path": ["light", "code-snippet-comment"]
+    },
+    "code-snippet-keyword": {
+      "value": "#a626a4",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#a626a4",
+        "type": "color"
+      },
+      "name": "code-snippet-keyword",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-keyword"
+      },
+      "path": ["light", "code-snippet-keyword"]
+    },
+    "code-snippet-selector": {
+      "value": "#e45649",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#e45649",
+        "type": "color"
+      },
+      "name": "code-snippet-selector",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-selector"
+      },
+      "path": ["light", "code-snippet-selector"]
+    },
+    "code-snippet-literal": {
+      "value": "#0184bb",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#0184bb",
+        "type": "color"
+      },
+      "name": "code-snippet-literal",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-literal"
+      },
+      "path": ["light", "code-snippet-literal"]
+    },
+    "code-snippet-string": {
+      "value": "#50a14f",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#50a14f",
+        "type": "color"
+      },
+      "name": "code-snippet-string",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-string"
+      },
+      "path": ["light", "code-snippet-string"]
+    },
+    "code-snippet-variable": {
+      "value": "#986801",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#986801",
+        "type": "color"
+      },
+      "name": "code-snippet-variable",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-variable"
+      },
+      "path": ["light", "code-snippet-variable"]
+    },
+    "code-snippet-title": {
+      "value": "#4078f2",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#4078f2",
+        "type": "color"
+      },
+      "name": "code-snippet-title",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-title"
+      },
+      "path": ["light", "code-snippet-title"]
+    },
+    "code-snippet-class": {
+      "value": "#c18401",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#c18401",
+        "type": "color"
+      },
+      "name": "code-snippet-class",
+      "attributes": {
+        "category": "light",
+        "type": "code-snippet-class"
+      },
+      "path": ["light", "code-snippet-class"]
+    },
     "background": {
       "value": "#f5f5f5",
       "type": "color",
@@ -833,12 +977,12 @@
       "path": ["light", "text-icon-on-light"]
     },
     "text-primary-on-dark": {
-      "value": "255, 255, 255",
+      "value": "white",
       "type": "color",
       "filePath": "src/color/text.json",
       "isSource": true,
       "original": {
-        "value": "255, 255, 255",
+        "value": "white",
         "type": "color"
       },
       "name": "text-primary-on-dark",
@@ -1137,6 +1281,150 @@
         "type": "accent"
       },
       "path": ["dark", "accent"]
+    },
+    "code-snippet-color": {
+      "value": "#abb2bf",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#abb2bf",
+        "type": "color"
+      },
+      "name": "code-snippet-color",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-color"
+      },
+      "path": ["dark", "code-snippet-color"]
+    },
+    "code-snippet-comment": {
+      "value": "#5c6370",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#5c6370",
+        "type": "color"
+      },
+      "name": "code-snippet-comment",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-comment"
+      },
+      "path": ["dark", "code-snippet-comment"]
+    },
+    "code-snippet-keyword": {
+      "value": "#c678dd",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#c678dd",
+        "type": "color"
+      },
+      "name": "code-snippet-keyword",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-keyword"
+      },
+      "path": ["dark", "code-snippet-keyword"]
+    },
+    "code-snippet-selector": {
+      "value": "#e06c75",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#e06c75",
+        "type": "color"
+      },
+      "name": "code-snippet-selector",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-selector"
+      },
+      "path": ["dark", "code-snippet-selector"]
+    },
+    "code-snippet-literal": {
+      "value": "#56b6c2",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#56b6c2",
+        "type": "color"
+      },
+      "name": "code-snippet-literal",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-literal"
+      },
+      "path": ["dark", "code-snippet-literal"]
+    },
+    "code-snippet-string": {
+      "value": "#98c379",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#98c379",
+        "type": "color"
+      },
+      "name": "code-snippet-string",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-string"
+      },
+      "path": ["dark", "code-snippet-string"]
+    },
+    "code-snippet-variable": {
+      "value": "#d19a66",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#d19a66",
+        "type": "color"
+      },
+      "name": "code-snippet-variable",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-variable"
+      },
+      "path": ["dark", "code-snippet-variable"]
+    },
+    "code-snippet-title": {
+      "value": "#61aeee",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#61aeee",
+        "type": "color"
+      },
+      "name": "code-snippet-title",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-title"
+      },
+      "path": ["dark", "code-snippet-title"]
+    },
+    "code-snippet-class": {
+      "value": "#e6c07b",
+      "type": "color",
+      "filePath": "src/color/code.json",
+      "isSource": true,
+      "original": {
+        "value": "#e6c07b",
+        "type": "color"
+      },
+      "name": "code-snippet-class",
+      "attributes": {
+        "category": "dark",
+        "type": "code-snippet-class"
+      },
+      "path": ["dark", "code-snippet-class"]
     },
     "background": {
       "value": "#161c1f",

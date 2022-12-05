@@ -14,6 +14,7 @@ module.exports = {
     checkbox: './libs/components/src/checkbox/checkbox.ts',
     circularProgress:
       './libs/components/src/circular-progress/circular-progress.ts',
+    codeSnippet: './libs/components/src/code-snippet/code-snippet.ts',
     dialog: './libs/components/src/dialog/dialog.ts',
     drawer: './libs/components/src/drawer/drawer.ts',
     emptyState: './libs/components/src/empty-state/empty-state.ts',
