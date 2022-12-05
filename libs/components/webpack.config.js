@@ -45,6 +45,7 @@ module.exports = {
     tabBar: './libs/components/src/tab/tab-bar.ts',
     textArea: './libs/components/src/textarea/textarea.ts',
     textField: './libs/components/src/textfield/textfield.ts',
+    textLockup: './libs/components/src/text-lockup/text-lockup.ts',
     toolbar: './libs/components/src/toolbar/toolbar.ts',
     topAppBar: './libs/components/src/top-app-bar/top-app-bar.ts',
     topAppBarFixed: './libs/components/src/top-app-bar/top-app-bar-fixed.ts',
