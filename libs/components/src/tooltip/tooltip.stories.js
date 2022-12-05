@@ -40,7 +40,7 @@ const Template = ({
     </td-icon>
     <td-tooltip 
       id="tooltip"
-      ${richTitle ? `richTitle="${richTitle}` : ''}
+      ${richTitle ? `richTitle="${richTitle}"` : ''}
       ${showDelayInMs >= 0 ? `showDelay="${showDelayInMs}"` : ''}
       ${hideDelayInMs >= 0 ? `hideDelay="${hideDelayInMs}"` : ''}
       ${isRich ? 'rich' : ''}
