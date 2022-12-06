@@ -6,7 +6,7 @@ export default {
   argTypes: {
     content: {
       control: 'text',
-      defaultValue: 'Im a tooltip!',
+      defaultValue: "I'm a tooltip!",
     },
     showDelayInMs: {
       control: 'number',
@@ -38,7 +38,7 @@ const Template = ({
       id="button">
       help
     </td-icon>
-    <td-tooltip 
+    <td-tooltip
       id="tooltip"
       ${richTitle ? `richTitle="${richTitle}"` : ''}
       ${showDelayInMs >= 0 ? `showDelay="${showDelayInMs}"` : ''}
@@ -61,7 +61,7 @@ Rich.args = {
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
       pretium vitae est et dapibus. Aenean sit amet felis eu lorem fermentum
       aliquam sit amet sit amet eros.
-      <a class="mdc-tooltip__content-link" href="http://teradata.com" target="_blank">learn more</a>
+      <a class="mdc-tooltip__content-link" href="http://teradata.com" target="_blank">Learn more</a>.
       <td-button slot="actionItems" label="action"></button>
   `,
 };
