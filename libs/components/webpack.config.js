@@ -47,6 +47,7 @@ module.exports = {
     textField: './libs/components/src/textfield/textfield.ts',
     textLockup: './libs/components/src/text-lockup/text-lockup.ts',
     toolbar: './libs/components/src/toolbar/toolbar.ts',
+    tooltip: './libs/components/src/tooltip/tooltip.ts',
     topAppBar: './libs/components/src/top-app-bar/top-app-bar.ts',
     topAppBarFixed: './libs/components/src/top-app-bar/top-app-bar-fixed.ts',
     treeList: './libs/components/src/tree-list/tree-list.ts',
