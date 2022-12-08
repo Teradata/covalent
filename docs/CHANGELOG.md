@@ -1,3 +1,14 @@
+# [4.15.0](https://github.com/Teradata/covalent/compare/v4.14.0...v4.15.0) (2022-12-08)
+
+### Bug Fixes
+
+- minor example content tweaks ([0d5bf51](https://github.com/Teradata/covalent/commit/0d5bf51f9ea7fdbad7884020da51264b05e041f9))
+
+### Features
+
+- **components:** tooltip stories typo fic ([6e475d2](https://github.com/Teradata/covalent/commit/6e475d29ca7a25aacc1e4f915b8cc5a63d413fc5))
+- **componet:** adding tooltip component ([4cba6ea](https://github.com/Teradata/covalent/commit/4cba6eaddcb933c32004f1eb710fd5558f6e5022))
+
 # [4.14.0](https://github.com/Teradata/covalent/compare/v4.13.0...v4.14.0) (2022-12-08)
 
 ### Features
