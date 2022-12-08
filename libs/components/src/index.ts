@@ -34,6 +34,7 @@ export * from './tab/tab';
 export * from './tab/tab-bar';
 export * from './textarea/textarea';
 export * from './textfield/textfield';
+export * from './text-lockup/text-lockup';
 export * from './toolbar/toolbar';
 export * from './top-app-bar/top-app-bar';
 export * from './top-app-bar/top-app-bar-fixed';
