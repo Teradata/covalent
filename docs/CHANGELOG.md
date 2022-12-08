@@ -1,3 +1,9 @@
+# [4.14.0](https://github.com/Teradata/covalent/compare/v4.13.0...v4.14.0) (2022-12-08)
+
+### Features
+
+- **components:** adding text lockup component ([1c4299c](https://github.com/Teradata/covalent/commit/1c4299cecfa7c7a0157d902f64f7328c80b35483))
+
 # [4.13.0](https://github.com/Teradata/covalent/compare/v4.12.3...v4.13.0) (2022-12-02)
 
 ### Bug Fixes
