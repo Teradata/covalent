@@ -14,6 +14,7 @@ import { MapDemoRoutingModule } from './map-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { CovalentMapEchartsModule } from '@covalent/echarts/map';
 import { MapBasicSharedModule } from './map-demo-basic/map-demo-basic.shared';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [MapDemoComponent],
@@ -22,7 +23,9 @@ import { MapBasicSharedModule } from './map-demo-basic/map-demo-basic.shared';
     DemoModule,
     MapDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentLineEchartsModule,
     CovalentMapEchartsModule,
     CovalentTooltipEchartsModule,

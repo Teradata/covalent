@@ -13,6 +13,7 @@ import { ScatterDemoBasicComponent } from './scatter-demo-basic/scatter-demo-bas
 import { ScatterDemoComponent } from './scatter-demo.component';
 import { ScatterDemoRoutingModule } from './scatter-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [ScatterDemoComponent, ScatterDemoBasicComponent],
@@ -20,7 +21,9 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     DemoModule,
     ScatterDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,
     CovalentScatterEchartsModule,

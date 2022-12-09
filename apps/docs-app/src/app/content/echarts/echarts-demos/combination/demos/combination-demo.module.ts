@@ -14,6 +14,7 @@ import { CombinationDemoBasicComponent } from './combination-demo-basic/combinat
 import { CombinationDemoComponent } from './combination-demo.component';
 import { CombinationDemoRoutingModule } from './combination-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [CombinationDemoComponent, CombinationDemoBasicComponent],
@@ -21,7 +22,9 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     DemoModule,
     CombinationDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentLineEchartsModule,
     CovalentBarEchartsModule,
     CovalentTooltipEchartsModule,

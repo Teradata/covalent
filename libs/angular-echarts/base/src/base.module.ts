@@ -1,4 +1,4 @@
-import { NgModule, Type } from '@angular/core';
+import { InjectionToken, ModuleWithProviders, NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TdChartComponent } from './chart.component';
@@ -15,11 +15,29 @@ export const BASE_MODULE_COMPONENTS: Type<any>[] = [
   TdDatasetComponent,
 ];
 
-registerDefaultThemes();
+export interface TdEchartsConfig {
+  echarts: typeof echarts;
+  defaultThemes?: boolean;
+}
+
+export const TD_ECHARTS_CONFIG = new InjectionToken<TdEchartsConfig>('TD_ECHARTS_CONFIG');
+
+import 'zrender/lib/svg/svg';
 
 @NgModule({
   imports: [CommonModule],
   declarations: [BASE_MODULE_COMPONENTS],
   exports: [BASE_MODULE_COMPONENTS],
 })
-export class CovalentBaseEchartsModule {}
+export class CovalentBaseEchartsModule {
+  static forRoot(config: TdEchartsConfig): ModuleWithProviders<CovalentBaseEchartsModule> {
+    if (config.defaultThemes !== false) {
+      registerDefaultThemes(config.echarts);
+    }
+
+    return {
+      ngModule: CovalentBaseEchartsModule,
+      providers: [{ provide: TD_ECHARTS_CONFIG, useValue: config }],
+    };
+  }
+}

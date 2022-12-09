@@ -9,12 +9,15 @@ import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { BarDemoBasicComponent } from './bar-demo-basic.component';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [BarDemoBasicComponent],
   imports: [
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentBarEchartsModule,
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,

@@ -11,6 +11,7 @@ import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { TypesSankeyComponent } from './sankey.component';
+import * as echarts from 'echarts';
 
 const routes: Routes = setEchartRoutes({
   overviewDemoComponent: TypesSankeyComponent,
@@ -25,7 +26,9 @@ const routes: Routes = setEchartRoutes({
     MatSelectModule,
     MatIconModule,
     // Covalent Echarts
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentSankeyEchartsModule,
     CovalentTooltipEchartsModule,
     // Docs

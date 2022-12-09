@@ -11,6 +11,7 @@ import { CovalentScatterEchartsModule } from '@covalent/echarts/scatter';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { TypesScatterComponent } from './scatter.component';
+import * as echarts from 'echarts';
 
 const routes: Routes = setEchartRoutes({
   overviewDemoComponent: TypesScatterComponent,
@@ -25,7 +26,9 @@ const routes: Routes = setEchartRoutes({
     MatSelectModule,
     MatIconModule,
     // Covalent Echarts
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentScatterEchartsModule,
     CovalentTooltipEchartsModule,
     // Docs

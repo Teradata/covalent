@@ -13,24 +13,24 @@ import volcanicEruption from '../themes/volcanic-eruption';
  * Theme name and theme object needed as stated in
  * https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts.registerTheme
  */
-export function registerTheme(themeName: string, theme: object): void {
-  echarts.registerTheme(themeName, theme);
+export function registerTheme(echartsLibrary: typeof echarts, themeName: string, theme: object): void {
+  echartsLibrary.registerTheme(themeName, theme);
 }
 
 /**
  * Function to register all default themes
  * @internal
  */
-export function registerDefaultThemes(): void {
-  registerTheme('aqua-splash', aquaSplash);
-  registerTheme('california-coast', californiaCoast);
-  registerTheme('hawaiian-sunrise', hawaiianSunrise);
-  registerTheme('passion-flower', passionFlower);
-  registerTheme('razzleberry-pie', razzleberryPie);
-  registerTheme('teradata-classic', teradataClassic);
-  registerTheme('teradata-default', teradataDefault);
-  registerTheme('urban-sunrise', urbanSunrise);
-  registerTheme('volcanic-eruption', volcanicEruption);
+export function registerDefaultThemes(echartsLibrary: typeof echarts): void {
+  registerTheme(echartsLibrary, 'aqua-splash', aquaSplash);
+  registerTheme(echartsLibrary, 'california-coast', californiaCoast);
+  registerTheme(echartsLibrary, 'hawaiian-sunrise', hawaiianSunrise);
+  registerTheme(echartsLibrary, 'passion-flower', passionFlower);
+  registerTheme(echartsLibrary, 'razzleberry-pie', razzleberryPie);
+  registerTheme(echartsLibrary, 'teradata-classic', teradataClassic);
+  registerTheme(echartsLibrary, 'teradata-default', teradataDefault);
+  registerTheme(echartsLibrary, 'urban-sunrise', urbanSunrise);
+  registerTheme(echartsLibrary, 'volcanic-eruption', volcanicEruption);
 }
 
 /**

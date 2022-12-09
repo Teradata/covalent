@@ -13,6 +13,7 @@ import { CovalentPieEchartsModule } from '@covalent/echarts/pie';
 import { PieDemoBasicComponent } from './pie-demo-basic/pie-demo-basic.component';
 import { PieDemoComponent } from './pie-demo.component';
 import { PieDemoRoutingModule } from './pie-demo-routing.module';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [PieDemoBasicComponent, PieDemoComponent],
@@ -20,7 +21,9 @@ import { PieDemoRoutingModule } from './pie-demo-routing.module';
     DemoModule,
     PieDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,
     CovalentPieEchartsModule,

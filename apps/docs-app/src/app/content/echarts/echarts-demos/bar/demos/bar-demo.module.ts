@@ -14,6 +14,7 @@ import { BarBasicSharedModule } from './bar-demo-basic/bar-demo-basic.shared';
 import { BarDemoComponent } from './bar-demo.component';
 import { BarDemoRoutingModule } from './bar-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [BarDemoComponent],
@@ -22,7 +23,9 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     DemoModule,
     BarDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentLineEchartsModule,
     CovalentBarEchartsModule,
     CovalentTooltipEchartsModule,

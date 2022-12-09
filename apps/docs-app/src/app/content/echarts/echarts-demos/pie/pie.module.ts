@@ -12,6 +12,7 @@ import { CovalentPieEchartsModule } from '@covalent/echarts/pie';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { TypesPieComponent } from './pie.component';
+import * as echarts from 'echarts';
 
 const routes: Routes = setEchartRoutes({
   overviewDemoComponent: TypesPieComponent,
@@ -26,7 +27,9 @@ const routes: Routes = setEchartRoutes({
     MatSelectModule,
     MatIconModule,
     // Covalent Echarts
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentPieEchartsModule,
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,

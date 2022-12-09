@@ -14,6 +14,7 @@ import { WordcloudDemoRoutingModule } from './wordcloud-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
 import { WordcloudDemoSharedModule } from './wordcloud-demo-basic/wordcloud-demo.shared';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [WordcloudDemoComponent],
@@ -22,7 +23,9 @@ import { WordcloudDemoSharedModule } from './wordcloud-demo-basic/wordcloud-demo
     DemoModule,
     WordcloudDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentLineEchartsModule,
     CovalentWordcloudEchartsModule,
     CovalentTooltipEchartsModule,

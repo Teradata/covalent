@@ -13,6 +13,7 @@ import { GraphDemoBasicComponent } from './graph-demo-basic/graph-demo-basic.com
 import { GraphDemoComponent } from './graph-demo.component';
 import { GraphDemoRoutingModule } from './graph-demo-routing.module';
 import { CovalentGraphEchartsModule } from '@covalent/echarts/graph';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [GraphDemoBasicComponent, GraphDemoComponent],
@@ -20,7 +21,9 @@ import { CovalentGraphEchartsModule } from '@covalent/echarts/graph';
     DemoModule,
     GraphDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,
     CovalentGraphEchartsModule,

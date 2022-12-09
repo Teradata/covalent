@@ -5,12 +5,15 @@ import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { WordcloudDemoBasicComponent } from './wordcloud-demo-basic.component';
 import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [WordcloudDemoBasicComponent],
   imports: [
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentWordcloudEchartsModule,
     /** Angular Modules */

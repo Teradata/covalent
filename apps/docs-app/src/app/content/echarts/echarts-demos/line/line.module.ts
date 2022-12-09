@@ -11,6 +11,7 @@ import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { TypesLineComponent } from './line.component';
+import * as echarts from 'echarts';
 
 const routes: Routes = setEchartRoutes({
   overviewDemoComponent: TypesLineComponent,
@@ -25,7 +26,9 @@ const routes: Routes = setEchartRoutes({
     MatSelectModule,
     MatIconModule,
     // Covalent Echarts
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentLineEchartsModule,
     CovalentTooltipEchartsModule,
     // Docs

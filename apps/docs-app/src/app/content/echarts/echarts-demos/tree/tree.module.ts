@@ -12,6 +12,7 @@ import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { TreeBasicSharedModule } from './demos/tree-demo-basic/tree-demo-basic.shared';
 import { TreeDemoBasicComponent } from './demos/tree-demo-basic/tree-demo-basic.component';
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
+import * as echarts from 'echarts';
 
 const routes: Routes = setEchartRoutes({
   overviewDemoComponent: TreeDemoBasicComponent,
@@ -26,7 +27,9 @@ const routes: Routes = setEchartRoutes({
     MatSelectModule,
     MatIconModule,
     // Covalent Echarts
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTreeEchartsModule,
     CovalentTooltipEchartsModule,
     // Docs

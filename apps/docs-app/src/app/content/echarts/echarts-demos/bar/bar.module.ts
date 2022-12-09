@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 
-import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
+import { CovalentBaseEchartsModule, TD_ECHARTS_CONFIG } from '@covalent/echarts/base';
 import { CovalentLineEchartsModule } from '@covalent/echarts/line';
 import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
@@ -16,6 +16,8 @@ import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { BarBasicSharedModule } from './demos/bar-demo-basic/bar-demo-basic.shared';
 import { BarDemoBasicComponent } from './demos/bar-demo-basic/bar-demo-basic.component';
+
+import * as echarts from 'echarts';
 
 const routes: Routes = setEchartRoutes({
   overviewDemoComponent: BarDemoBasicComponent,
@@ -30,7 +32,9 @@ const routes: Routes = setEchartRoutes({
     MatSelectModule,
     MatIconModule,
     // Covalent Echarts
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts
+    }),
     CovalentLineEchartsModule,
     CovalentBarEchartsModule,
     CovalentTooltipEchartsModule,

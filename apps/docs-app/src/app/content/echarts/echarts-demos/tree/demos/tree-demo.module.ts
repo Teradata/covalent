@@ -13,6 +13,7 @@ import { TreeDemoComponent } from './tree-demo.component';
 import { TreeDemoRoutingModule } from './tree-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { TreeBasicSharedModule } from './tree-demo-basic/tree-demo-basic.shared';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [TreeDemoComponent],
@@ -21,7 +22,9 @@ import { TreeBasicSharedModule } from './tree-demo-basic/tree-demo-basic.shared'
     DemoModule,
     TreeDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,
     CovalentTreeEchartsModule,

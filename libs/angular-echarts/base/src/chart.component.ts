@@ -10,6 +10,7 @@ import {
   OnChanges,
   OnDestroy,
   SimpleChanges,
+  Inject,
 } from '@angular/core';
 
 import { Subject, fromEvent, merge, timer } from 'rxjs';
@@ -22,6 +23,8 @@ import {
 
 import { TdChartOptionsService, CHART_PROVIDER } from './chart-options.service';
 import { assignDefined } from './utils';
+import { TdEchartsConfig, TD_ECHARTS_CONFIG } from './base.module';
+import { ECharts } from 'echarts';
 
 @Component({
   selector: 'td-chart',
@@ -35,12 +38,13 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   private _widthSubject: Subject<number> = new Subject<number>();
   private _heightSubject: Subject<number> = new Subject<number>();
 
-  private _instance: any;
+  private _instance?: ECharts;
+  private _echarts: typeof echarts;
 
   /**
    * returns the echarts instance
    */
-  get instance(): any {
+  get instance(): ECharts | undefined {
     return this._instance;
   }
 
@@ -88,8 +92,11 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
     private _elementRef: ElementRef,
-    private _optionsService: TdChartOptionsService
-  ) {}
+    private _optionsService: TdChartOptionsService,
+    @Inject(TD_ECHARTS_CONFIG) private _config: TdEchartsConfig
+  ) {
+    this._echarts = _config.echarts || (window as any).echarts;
+  }
 
   ngAfterViewInit(): void {
     this._initializeChart();
@@ -149,7 +156,7 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   private _initializeChart(): void {
-    this._instance = echarts.init(
+    this._instance = this._echarts.init(
       this._elementRef.nativeElement,
       this.themeName ?? '',
       {
@@ -193,7 +200,7 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
       });
     if (this.group) {
       this._instance.group = this.group;
-      echarts.connect(this.group);
+      this._echarts.connect(this.group);
       this._changeDetectorRef.markForCheck();
     }
     merge(

@@ -13,6 +13,7 @@ import { SankeyDemoBasicComponent } from './sankey-demo-basic/sankey-demo-basic.
 import { SankeyDemoComponent } from './sankey-demo.component';
 import { SankeyDemoRoutingModule } from './sankey-demo-routing.module';
 import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [SankeyDemoBasicComponent, SankeyDemoComponent],
@@ -20,7 +21,9 @@ import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
     DemoModule,
     SankeyDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,
     CovalentSankeyEchartsModule,

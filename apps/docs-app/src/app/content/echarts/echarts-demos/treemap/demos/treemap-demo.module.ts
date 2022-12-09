@@ -13,6 +13,7 @@ import { TreemapDemoBasicComponent } from './treemap-demo-basic/treemap-demo-bas
 import { TreemapDemoComponent } from './treemap-demo.component';
 import { TreemapDemoRoutingModule } from './treemap-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [TreemapDemoComponent, TreemapDemoBasicComponent],
@@ -20,7 +21,9 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     DemoModule,
     TreemapDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,
     CovalentTreemapEchartsModule,

@@ -10,12 +10,15 @@ import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
 
 import { TreeDemoBasicComponent } from './tree-demo-basic.component';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [TreeDemoBasicComponent],
   imports: [
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,
     CovalentTreeEchartsModule,

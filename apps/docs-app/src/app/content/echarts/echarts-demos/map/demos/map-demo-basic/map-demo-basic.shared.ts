@@ -5,12 +5,15 @@ import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { MapDemoBasicComponent } from './map-demo-basic.component';
 import { CovalentMapEchartsModule } from '@covalent/echarts/map';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [MapDemoBasicComponent],
   imports: [
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentMapEchartsModule,
     CovalentTooltipEchartsModule,
     /** Angular Modules */

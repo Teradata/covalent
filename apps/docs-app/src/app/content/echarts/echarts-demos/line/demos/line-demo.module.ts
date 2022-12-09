@@ -13,6 +13,7 @@ import { LineDemoComponent } from './line-demo.component';
 import { LineDemoRoutingModule } from './line-demo-routing.module';
 import { LineDemoBasicComponent } from './line-demo-basic/line-demo-basic.component';
 import { CovalentLineEchartsModule } from '@covalent/echarts/line';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [LineDemoComponent, LineDemoBasicComponent],
@@ -20,7 +21,9 @@ import { CovalentLineEchartsModule } from '@covalent/echarts/line';
     DemoModule,
     LineDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBaseEchartsModule,
+    CovalentBaseEchartsModule.forRoot({
+      echarts,
+    }),
     CovalentTooltipEchartsModule,
     CovalentToolboxEchartsModule,
     CovalentLineEchartsModule,
