@@ -1,0 +1,25 @@
+{
+  "migrations": [
+    {
+      "version": "14.0.0-beta",
+      "description": "As of Angular version 13, `entryComponents` are no longer necessary.",
+      "factory": "./migrations/entry-components/index",
+      "package": "@angular/core",
+      "name": "migration-entry-components"
+    },
+    {
+      "version": "14.0.0-beta",
+      "description": "As of Angular version 14, Forms model classes accept a type parameter, and existing usages must be opted out to preserve backwards-compatibility.",
+      "factory": "./migrations/typed-forms/index",
+      "package": "@angular/core",
+      "name": "migration-v14-typed-forms"
+    },
+    {
+      "version": "14.0.0-beta",
+      "description": "In Angular version 14, the `pathMatch` property of `Routes` was updated to be a strict union of the two valid options: `'full'|'prefix'`. `Routes` and `Route` variables need an explicit type so TypeScript does not infer the property as the looser `string`.",
+      "factory": "./migrations/path-match-type/index",
+      "package": "@angular/core",
+      "name": "migration-v14-path-match-type"
+    }
+  ]
+}

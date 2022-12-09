@@ -104,7 +104,7 @@ Reference the webpack file in your angular.json build config.
   "options": {
     "customWebpackConfig": {
       "path": "./monaco-webpack.config.js",
-        "mergeStrategies": {
+      "mergeStrategies": {
         "module.rules": "prepend"
       }
     },

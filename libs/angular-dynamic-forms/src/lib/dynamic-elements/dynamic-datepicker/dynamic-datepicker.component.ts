@@ -1,5 +1,5 @@
 import { Component, TemplateRef } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-datepicker',
@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './dynamic-datepicker.component.html',
 })
 export class TdDynamicDatepickerComponent {
-  control!: FormControl;
+  control!: UntypedFormControl;
 
   label = '';
 

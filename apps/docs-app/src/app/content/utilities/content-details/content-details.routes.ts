@@ -12,6 +12,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'overview',
+        pathMatch: 'full',
       },
       {
         component: ContentOverviewComponent,
