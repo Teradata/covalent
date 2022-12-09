@@ -27,7 +27,7 @@
         "customWebpackConfig": {
           "path": "./monaco-webpack.config.js",
           "mergeStrategies": {
-            "module.rules": "prepend"
+            "module.rules": "replace"
           }
         },
         "main": "libs/angular-code-editor/src/test.ts",

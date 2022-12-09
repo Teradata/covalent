@@ -20,7 +20,8 @@ import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 // Use esm version to support shipping subset of languages and features
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+import { editor, languages, IDisposable } from 'monaco-editor';
+
 import {
   mixinControlValueAccessor,
   mixinDisabled,
@@ -69,14 +70,14 @@ export class TdCodeEditorComponent
   private _subject: Subject<string> = new Subject();
   private _editorInnerContainer: string =
     'editorInnerContainer' + uniqueCounter++;
-  private _editor!: monaco.editor.IStandaloneCodeEditor;
+  private _editor!: editor.IStandaloneCodeEditor;
   private _fromEditor = false;
   private _componentInitialized = false;
   private _editorOptions: any = {};
   private _isFullScreen = false;
   private _keycode: any;
   private _registeredLanguagesStyles: HTMLStyleElement[] = [];
-  private _disposables: monaco.IDisposable[] = [];
+  private _disposables: IDisposable[] = [];
 
   @ViewChild('editorContainer', { static: true }) _editorContainer!: ElementRef;
 
@@ -85,7 +86,8 @@ export class TdCodeEditorComponent
    * Event emitted when editor is first initialized
    */
   @Output()
-  editorInitialized: EventEmitter<monaco.editor.IStandaloneCodeEditor> = new EventEmitter<monaco.editor.IStandaloneCodeEditor>();
+  editorInitialized: EventEmitter<editor.IStandaloneCodeEditor> =
+    new EventEmitter<editor.IStandaloneCodeEditor>();
 
   /**
    * editorConfigurationChanged: function($event)
@@ -174,8 +176,8 @@ export class TdCodeEditorComponent
 
   applyLanguage(): void {
     if (this._language) {
-      monaco.editor.setModelLanguage(
-        this._editor.getModel() as monaco.editor.ITextModel,
+      editor.setModelLanguage(
+        this._editor.getModel() as editor.ITextModel,
         this._language
       );
       this.editorLanguageChanged.emit();
@@ -188,10 +190,10 @@ export class TdCodeEditorComponent
    */
   registerLanguage(language: any): void {
     if (this._componentInitialized) {
-      monaco.languages.register({ id: language.id });
+      languages.register({ id: language.id });
 
       this._disposables.push(
-        monaco.languages.setMonarchTokensProvider(language.id, {
+        languages.setMonarchTokensProvider(language.id, {
           tokenizer: {
             root: language.monarchTokensProvider,
           },
@@ -199,14 +201,11 @@ export class TdCodeEditorComponent
       );
 
       // Define a new theme that constains only rules that match this language
-      monaco.editor.defineTheme(
-        language.customTheme.id,
-        language.customTheme.theme
-      );
+      editor.defineTheme(language.customTheme.id, language.customTheme.theme);
       this._theme = language.customTheme.id;
 
       this._disposables.push(
-        monaco.languages.registerCompletionItemProvider(language.id, {
+        languages.registerCompletionItemProvider(language.id, {
           provideCompletionItems: () => {
             return language.completionItemProvider;
           },
@@ -266,7 +265,7 @@ export class TdCodeEditorComponent
 
   /**
    * fullScreenKeyBinding?: number
-   * See here for key bindings https://microsoft.github.io/monaco-editor/api/enums/monaco.keycode.html
+   * See here for key bindings https://microsoft.github.io/monaco-editor/api/enums/keycode.html
    * Sets the KeyCode for shortcutting to Fullscreen mode
    */
   @Input()
@@ -328,7 +327,7 @@ export class TdCodeEditorComponent
     const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
     containerDiv.id = this._editorInnerContainer;
 
-    this._editor = monaco.editor.create(
+    this._editor = editor.create(
       containerDiv,
       Object.assign(
         {
@@ -352,13 +351,11 @@ export class TdCodeEditorComponent
     // the listener. The callback, that we pass to `onDidChangeContent`, captures `this`. This leads to a circular reference
     // (`td-code-editor -> monaco -> td-code-editor`) and prevents the `td-code-editor` from being GC'd.
     this._disposables.push(
-      (this._editor.getModel() as monaco.editor.ITextModel).onDidChangeContent(
-        () => {
-          this._fromEditor = true;
-          this.writeValue(this._editor.getValue());
-          this.layout();
-        }
-      )
+      (this._editor.getModel() as editor.ITextModel).onDidChangeContent(() => {
+        this._fromEditor = true;
+        this.writeValue(this._editor.getValue());
+        this.layout();
+      })
     );
     this.addFullScreenModeCommand();
 

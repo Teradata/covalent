@@ -2,7 +2,7 @@ import { Renderer2 } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DragRef } from '@angular/cdk/drag-drop';
 import { merge, Subscription, fromEvent } from 'rxjs';
-import { Point } from '@angular/cdk/drag-drop/drag-ref';
+import { Point } from '@angular/cdk/drag-drop';
 
 enum corners {
   topRight = 'topRight',

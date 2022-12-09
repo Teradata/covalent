@@ -29,14 +29,16 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
           {
             path: '',
             redirectTo: componentMatch.showOverview ? 'overview' : 'api',
+            pathMatch: 'full',
           },
           {
             path: 'overview',
             component: ComponentHeroComponent,
-            data: { resourceUrl: componentMatch.overviewDocUrl },
-            children: [
-              { path: '', component: identifier.overviewDemoComponent },
-            ],
+            data: { resourceUrl: identifier.overviewDemoComponent },
+            //loadChildren: ()=> identifier.overviewDemoComponent
+            // children: [
+            //   { path: '', component: identifier.overviewDemoComponent },
+            // ],
           },
           {
             path: 'api',
@@ -45,11 +47,11 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
           },
           {
             path: 'examples',
-            loadChildren: componentMatch.demo,
+            loadChildren: () => componentMatch.demo,
           },
           {
             path: 'migration',
-            loadChildren: componentMatch.migration,
+            loadChildren: () => componentMatch.migration,
           },
         ],
       },

@@ -9,7 +9,11 @@ import {
   AfterContentInit,
   OnDestroy,
 } from '@angular/core';
-import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  UntypedFormBuilder,
+  AbstractControl,
+} from '@angular/forms';
 
 import {
   TdDynamicFormsService,
@@ -38,7 +42,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
 
   @ContentChildren(TdDynamicFormsErrorTemplateDirective, { descendants: true })
   _errorTemplates!: QueryList<TdDynamicFormsErrorTemplateDirective>;
-  dynamicForm!: FormGroup;
+  dynamicForm!: UntypedFormGroup;
 
   /**
    * elements: ITdDynamicElementConfig[]
@@ -61,7 +65,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   /**
    * Getter property for dynamic [FormGroup].
    */
-  get form(): FormGroup {
+  get form(): UntypedFormGroup {
     return this.dynamicForm;
   }
 
@@ -110,7 +114,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
   }
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private _formBuilder: UntypedFormBuilder,
     private _dynamicFormsService: TdDynamicFormsService,
     private _changeDetectorRef: ChangeDetectorRef
   ) {

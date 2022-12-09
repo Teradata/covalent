@@ -20,7 +20,7 @@ import {
   IDraggableRefs,
   ResizableDraggableDialog,
 } from '@covalent/core/dialogs';
-import { DragRef, Point } from '@angular/cdk/drag-drop/drag-ref';
+import { DragRef, Point } from '@angular/cdk/drag-drop';
 import { DOCUMENT } from '@angular/common';
 import {
   IMarkdownNavigatorItem,
@@ -96,14 +96,13 @@ export class TdMarkdownNavigatorWindowService {
     const {
       matDialogRef,
       dragRefSubject,
-    }: IDraggableRefs<TdMarkdownNavigatorWindowComponent> = this._tdDialogService.openDraggable(
-      {
+    }: IDraggableRefs<TdMarkdownNavigatorWindowComponent> =
+      this._tdDialogService.openDraggable({
         component: TdMarkdownNavigatorWindowComponent,
         config: draggableConfig,
         dragHandleSelectors: ['.td-window-dialog-toolbar'],
         draggableClass: 'td-draggable-markdown-navigator-window',
-      }
-    );
+      });
     this.markdownNavigatorWindowDialog = matDialogRef;
     this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
     this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;

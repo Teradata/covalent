@@ -9,7 +9,10 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "customWebpackConfig": {
-          "path": "./monaco-webpack.config.js"
+          "path": "./monaco-webpack.config.js",
+          "mergeRules": {
+            "module.rules": "prepend"
+          }
         },
         "outputPath": "dist/apps/docs-app",
         "index": "apps/docs-app/src/index.html",
@@ -41,10 +44,7 @@
             "output": "/libs"
           }
         ],
-        "styles": [
-          "apps/docs-app/src/styles.scss",
-          "node_modules/monaco-editor/min/vs/editor/editor.main.css"
-        ],
+        "styles": ["apps/docs-app/src/styles.scss"],
         "scripts": [
           "node_modules/echarts/dist/echarts.js",
           "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js",

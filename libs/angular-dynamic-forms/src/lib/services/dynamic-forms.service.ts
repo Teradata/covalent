@@ -1,5 +1,5 @@
 import { Injectable, Provider, SkipSelf, Optional, Type } from '@angular/core';
-import { Validators, ValidatorFn, FormControl } from '@angular/forms';
+import { Validators, ValidatorFn, UntypedFormControl } from '@angular/forms';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicFileInputComponent } from '../dynamic-elements/dynamic-file-input/dynamic-file-input.component';
@@ -113,9 +113,9 @@ export class TdDynamicFormsService {
   /**
    * Creates form control for element depending [ITdDynamicElementConfig] properties.
    */
-  createFormControl(config: ITdDynamicElementConfig): FormControl {
+  createFormControl(config: ITdDynamicElementConfig): UntypedFormControl {
     const validator = this.createValidators(config);
-    return new FormControl(
+    return new UntypedFormControl(
       { value: config.default, disabled: config.disabled },
       validator
     );

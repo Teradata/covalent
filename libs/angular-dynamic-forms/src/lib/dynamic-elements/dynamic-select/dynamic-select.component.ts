@@ -1,5 +1,5 @@
 import { Component, TemplateRef } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-select',
@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './dynamic-select.component.html',
 })
 export class TdDynamicSelectComponent {
-  control!: FormControl;
+  control!: UntypedFormControl;
 
   label = '';
 

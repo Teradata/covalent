@@ -32,10 +32,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'search',
     category: buttons.name,
     route: '/components/search',
-    demo: () =>
-      import('./component-demos/search/demos/search-demo.module').then(
-        (mod: any) => mod.SearchDemoModule
-      ),
+    demo: import('./component-demos/search/demos/search-demo.module').then(
+      (mod: any) => mod.SearchDemoModule
+    ),
   },
   {
     name: 'Breadcrumbs',
@@ -45,10 +44,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'more_horiz',
     category: buttons.name,
     route: '/components/breadcrumbs',
-    demo: () =>
-      import(
-        './component-demos/breadcrumbs/demos/breadcrumbs-demo.module'
-      ).then((mod: any) => mod.BreadcrumbsDemoModule),
+    demo: import(
+      './component-demos/breadcrumbs/demos/breadcrumbs-demo.module'
+    ).then((mod: any) => mod.BreadcrumbsDemoModule),
   },
   {
     name: 'File Input',
@@ -58,10 +56,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'space_bar',
     category: buttons.name,
     route: '/components/file-input',
-    demo: () =>
-      import('./component-demos/file-input/demos/file-input-demo.module').then(
-        (mod: any) => mod.FileInputDemoModule
-      ),
+    demo: import(
+      './component-demos/file-input/demos/file-input-demo.module'
+    ).then((mod: any) => mod.FileInputDemoModule),
   },
   {
     name: 'Message',
@@ -72,10 +69,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'info_outline',
     category: buttons.name,
     route: '/components/message',
-    demo: () =>
-      import('./component-demos/message/demos/message-demo.module').then(
-        (mod: any) => mod.MessageDemoModule
-      ),
+    demo: import('./component-demos/message/demos/message-demo.module').then(
+      (mod: any) => mod.MessageDemoModule
+    ),
   },
   {
     name: 'Dialogs',
@@ -86,10 +82,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'open_in_browser',
     category: buttons.name,
     route: '/components/dialogs',
-    demo: () =>
-      import('./component-demos/dialogs/demos/dialogs-demo.module').then(
-        (mod: any) => mod.DialogsDemoModule
-      ),
+    demo: import('./component-demos/dialogs/demos/dialogs-demo.module').then(
+      (mod: any) => mod.DialogsDemoModule
+    ),
   },
   {
     name: 'User Profile',
@@ -100,10 +95,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'person',
     category: buttons.name,
     route: '/components/user-profile',
-    demo: () =>
-      import(
-        './component-demos/user-profile/demos/user-profile-demo.module'
-      ).then((mod: any) => mod.UserProfileDemosModule),
+    demo: import(
+      './component-demos/user-profile/demos/user-profile-demo.module'
+    ).then((mod: any) => mod.UserProfileDemosModule),
   },
   {
     name: 'Syntax Highlight',
@@ -113,10 +107,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'code',
     category: code.name,
     route: '/components/highlight',
-    demo: () =>
-      import('./component-demos/highlight/demos/highlight-demo.module').then(
-        (mod: any) => mod.HighlightDemoModule
-      ),
+    demo: import(
+      './component-demos/highlight/demos/highlight-demo.module'
+    ).then((mod: any) => mod.HighlightDemoModule),
   },
   {
     name: 'JSON Formatter',
@@ -126,10 +119,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'format_indent_increase',
     category: buttons.name,
     route: '/components/json-formatter',
-    demo: () =>
-      import(
-        './component-demos/json-formatter/demos/json-formatter-demo.module'
-      ).then((mod: any) => mod.JsonFormatterDemoModule),
+    demo: import(
+      './component-demos/json-formatter/demos/json-formatter-demo.module'
+    ).then((mod: any) => mod.JsonFormatterDemoModule),
   },
   {
     name: 'Code Editor',
@@ -139,10 +131,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'featured_play_list',
     category: code.name,
     route: '/components/code-editor',
-    demo: () =>
-      import(
-        './component-demos/code-editor/demos/code-editor-demo.module'
-      ).then((mod: any) => mod.CodeEditorDemoModule),
+    demo: import(
+      './component-demos/code-editor/demos/code-editor-demo.module'
+    ).then((mod: any) => mod.CodeEditorDemoModule),
   },
   {
     name: 'Guided Tour',
@@ -152,10 +143,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'directions_bus',
     category: tour.name,
     route: '/components/guided-tour',
-    demo: () =>
-      import(
-        './component-demos/guided-tour/demos/guided-tour-demo.module'
-      ).then((mod: any) => mod.GuidedTourDemosModule),
+    demo: import(
+      './component-demos/guided-tour/demos/guided-tour-demo.module'
+    ).then((mod: any) => mod.GuidedTourDemosModule),
   },
   {
     name: 'Flavored Markdown Parser',
@@ -165,10 +155,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'format_paint',
     category: markdown.name,
     route: '/components/flavored-markdown',
-    demo: () =>
-      import(
-        './component-demos/flavored-markdown/demos/flavored-markdown-demo.module'
-      ).then((mod: any) => mod.FlavoredMarkdownDemoModule),
+    demo: import(
+      './component-demos/flavored-markdown/demos/flavored-markdown-demo.module'
+    ).then((mod: any) => mod.FlavoredMarkdownDemoModule),
   },
   {
     name: 'Loading',
@@ -178,10 +167,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'hourglass_empty',
     category: buttons.name,
     route: '/components/loading',
-    demo: () =>
-      import('./component-demos/loading/demos/loading-demo.module').then(
-        (mod: any) => mod.LoadingDemoModule
-      ),
+    demo: import('./component-demos/loading/demos/loading-demo.module').then(
+      (mod: any) => mod.LoadingDemoModule
+    ),
   },
   {
     name: 'Markdown Parser',
@@ -191,10 +179,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'chrome_reader_mode',
     category: markdown.name,
     route: '/components/markdown-parser',
-    demo: () =>
-      import('./component-demos/markdown/demos/markdown-demo.module').then(
-        (mod: any) => mod.MarkdownDemoModule
-      ),
+    demo: import('./component-demos/markdown/demos/markdown-demo.module').then(
+      (mod: any) => mod.MarkdownDemoModule
+    ),
   },
   {
     name: 'Markdown Navigator',
@@ -205,10 +192,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'subject',
     category: markdown.name,
     route: '/components/markdown-navigator',
-    demo: () =>
-      import(
-        './component-demos/markdown-navigator/demos/markdown-navigator-demo.module'
-      ).then((mod: any) => mod.MarkdownNavigatorDemoModule),
+    demo: import(
+      './component-demos/markdown-navigator/demos/markdown-navigator-demo.module'
+    ).then((mod: any) => mod.MarkdownNavigatorDemoModule),
   },
   {
     name: 'Base Layout',
@@ -220,10 +206,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout',
-    demo: () =>
-      import('./component-demos/layout/demos/layout-demo.module').then(
-        (mod: any) => mod.LayoutDemosModule
-      ),
+    demo: import('./component-demos/layout/demos/layout-demo.module').then(
+      (mod: any) => mod.LayoutDemosModule
+    ),
   },
   {
     name: 'Nav View',
@@ -234,10 +219,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-nav',
-    demo: () =>
-      import('./component-demos/layout-nav/demos/layout-nav-demo.module').then(
-        (mod: any) => mod.LayoutNavDemosModule
-      ),
+    demo: import(
+      './component-demos/layout-nav/demos/layout-nav-demo.module'
+    ).then((mod: any) => mod.LayoutNavDemosModule),
   },
   {
     name: 'Nav List',
@@ -247,10 +231,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-nav-list',
-    demo: () =>
-      import(
-        './component-demos/layout-nav-list/demos/layout-nav-list-demo.module'
-      ).then((mod: any) => mod.LayoutNavListDemosModule),
+    demo: import(
+      './component-demos/layout-nav-list/demos/layout-nav-list-demo.module'
+    ).then((mod: any) => mod.LayoutNavListDemosModule),
   },
   {
     name: 'Focused Layout',
@@ -260,10 +243,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-card-over',
-    demo: () =>
-      import(
-        './component-demos/layout-card-over/demos/layout-card-over-demo.module'
-      ).then((mod: any) => mod.LayoutCardOverDemosModule),
+    demo: import(
+      './component-demos/layout-card-over/demos/layout-card-over-demo.module'
+    ).then((mod: any) => mod.LayoutCardOverDemosModule),
   },
   {
     name: 'Manage List',
@@ -274,10 +256,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'web',
     category: viewLayouts.name,
     route: '/components/layout-management-list',
-    demo: () =>
-      import(
-        './component-demos/layout-management-list/demos/layout-management-list-demo.module'
-      ).then((mod: any) => mod.LayoutManagementListDemosModule),
+    demo: import(
+      './component-demos/layout-management-list/demos/layout-management-list-demo.module'
+    ).then((mod: any) => mod.LayoutManagementListDemosModule),
   },
   {
     name: 'Side Sheet',
@@ -288,10 +269,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'view_array',
     category: viewLayouts.name,
     route: '/components/side-sheet',
-    demo: () =>
-      import('./component-demos/side-sheet/demos/sidesheet-demo.module').then(
-        (mod: any) => mod.SideSheetDemoModule
-      ),
+    demo: import(
+      './component-demos/side-sheet/demos/sidesheet-demo.module'
+    ).then((mod: any) => mod.SideSheetDemoModule),
   },
   {
     name: 'Dynamic Menu',
@@ -301,10 +281,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'format_align_center',
     category: buttons.name,
     route: '/components/dynamic-menu',
-    demo: () =>
-      import(
-        './component-demos/dynamic-menu/demos/dynamic-menu-demo.module'
-      ).then((mod: any) => mod.DynamicMenuDemoModule),
+    demo: import(
+      './component-demos/dynamic-menu/demos/dynamic-menu-demo.module'
+    ).then((mod: any) => mod.DynamicMenuDemoModule),
   },
   {
     name: 'Dynamic Forms',
@@ -314,10 +293,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'format_align_center',
     category: buttons.name,
     route: '/components/dynamic-forms',
-    demo: () =>
-      import(
-        './component-demos/dynamic-forms/demos/dynamic-forms-demo.module'
-      ).then((mod: any) => mod.DynamicFormsDemoModule),
+    demo: import(
+      './component-demos/dynamic-forms/demos/dynamic-forms-demo.module'
+    ).then((mod: any) => mod.DynamicFormsDemoModule),
   },
   {
     name: 'Text Editor',
@@ -328,10 +306,9 @@ export const createComponentDetails: IComponentDetails[] = [
     icon: 'keyboard',
     category: markdown.name,
     route: '/components/text-editor',
-    demo: () =>
-      import(
-        './component-demos/text-editor/demos/text-editor-demo.module'
-      ).then((mod: any) => mod.TextEditorDemoModule),
+    demo: import(
+      './component-demos/text-editor/demos/text-editor-demo.module'
+    ).then((mod: any) => mod.TextEditorDemoModule),
   },
 ];
 
