@@ -1,10 +1,7 @@
-import {
-  addHasRemoveClass,
-  BaseElement,
-} from '@material/mwc-base/base-element';
+import { addHasRemoveClass } from '@material/mwc-base/base-element';
 import { MDCTooltipAdapter, events } from '@material/tooltip';
 import { customElement, property, query } from 'lit/decorators.js';
-import { html, PropertyValues } from 'lit';
+import { html, LitElement, PropertyValues } from 'lit';
 import { MDCTooltipFoundation } from './tooltip.foundation';
 import styles from './tooltip.scss';
 
@@ -15,7 +12,7 @@ declare global {
 }
 
 @customElement('td-tooltip')
-export class CovalentTooltipBase extends BaseElement {
+export class CovalentTooltipBase extends LitElement {
   protected mdcFoundation!: MDCTooltipFoundation;
   protected readonly mdcFoundationClass = MDCTooltipFoundation;
   static override styles = [styles];
@@ -110,8 +107,11 @@ export class CovalentTooltipBase extends BaseElement {
     }
   }
 
-  protected firstUpdated(): void {
-    super.firstUpdated();
+  protected override async firstUpdated() {
+    if (this.mdcFoundation !== undefined) {
+      this.mdcFoundation.destroy();
+    }
+    this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
 
     this.anchor?.addEventListener('click', () =>
       this.mdcFoundation.handleAnchorClick()
