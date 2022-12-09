@@ -12,13 +12,13 @@ import {
 } from '@material/banner/constants';
 
 //TODO REMOVE ONCE default export is fixed
-import MDCBannerFoundation from './foundation';
+import { MDCBannerFoundation } from '@material/banner';
 
-import { html, TemplateResult } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { property, query } from 'lit/decorators.js';
 
-export class ActionRibbonBase extends BaseElement {
+export class ActionRibbonBase extends LitElement {
   protected mdcFoundation!: MDCBannerFoundation;
   protected readonly mdcFoundationClass = MDCBannerFoundation;
 
@@ -137,8 +137,12 @@ export class ActionRibbonBase extends BaseElement {
     this.open = false;
   }
 
-  protected override firstUpdated() {
-    super.firstUpdated();
+  protected override async firstUpdated() {
+    if (this.mdcFoundation !== undefined) {
+      this.mdcFoundation.destroy();
+    }
+    this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
+    
     if (this.open) {
       this.mdcFoundation.open();
     }

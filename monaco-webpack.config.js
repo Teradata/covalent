@@ -8,6 +8,11 @@ module.exports = {
         include: [/node_modules\/monaco-editor/],
         use: ['style-loader', 'css-loader'],
       },
+      {
+				test: /\.ttf$/,
+        include: [/node_modules\/monaco-editor/],
+				use: ['file-loader']
+			}
     ],
   },
   plugins: [
