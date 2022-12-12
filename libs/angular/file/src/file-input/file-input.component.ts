@@ -27,7 +27,7 @@ import {
   IControlValueAccessor,
   mixinControlValueAccessor,
   mixinDisabled,
-} from '@covalent/core/common';
+} from '../../../common/src/public_api';
 
 @Directive({
   selector: '[tdFileInputLabel]ng-template',
