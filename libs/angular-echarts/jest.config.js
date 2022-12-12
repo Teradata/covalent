@@ -14,6 +14,7 @@ module.exports = {
     },
   },
   coverageDirectory: '../../coverage/libs/angular-echarts',
+  testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

@@ -4,7 +4,7 @@ import {
   ElementRef,
   DoCheck,
 } from '@angular/core';
-import { tdFadeInOutAnimation } from '@covalent/core/common';
+import { tdFadeInOutAnimation } from '../../common/src/public_api';
 import { TemplatePortal } from '@angular/cdk/portal';
 
 export enum LoadingType {
