@@ -29,7 +29,7 @@ import { debounceTime, skip, takeUntil } from 'rxjs/operators';
 import {
   IControlValueAccessor,
   mixinControlValueAccessor,
-} from '../../../common/src/public_api';
+} from '@covalent/core/common';
 
 export class TdSearchInputBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
