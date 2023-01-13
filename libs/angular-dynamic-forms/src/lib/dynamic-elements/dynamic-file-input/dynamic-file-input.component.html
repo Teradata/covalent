@@ -3,20 +3,20 @@
     tdFileDrop
     class="td-dynamic-file-input-field"
     floatLabel="never"
-    [disabled]="control?.disabled"
+    [disabled]="control.disabled"
     (fileDrop)="_handlefileDrop($event)"
-    (click)="!control?.disabled && fileInput.inputElement.click()"
-    (keyup.enter)="!control?.disabled && fileInput.inputElement.click()"
+    (click)="!control.disabled && fileInput.inputElement.click()"
+    (keyup.enter)="!control.disabled && fileInput.inputElement.click()"
     (keyup.delete)="fileInput.clear()"
     (keyup.backspace)="fileInput.clear()"
   >
     <mat-label>{{ label }}</mat-label>
     <input
       matInput
-      [value]="control?.value?.name"
+      [value]="control.value?.name"
       [placeholder]="placeholder"
       [name]="name"
-      [disabled]="control?.disabled"
+      [disabled]="control.disabled"
       readonly
     />
     <mat-hint>{{ hint }}</mat-hint>
@@ -25,7 +25,7 @@
         [ngTemplateOutlet]="errorMessageTemplate"
         [ngTemplateOutletContext]="{
           control: control,
-          errors: control?.errors
+          errors: control.errors
         }"
       ></ng-template>
     </mat-error>
