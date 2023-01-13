@@ -2,6 +2,7 @@
 import { FocusOrigin } from '@angular/cdk/a11y';
 import { DialogRef } from '@angular/cdk/dialog';
 import { OverlayRef } from '@angular/cdk/overlay';
+import { BasePortalOutlet } from '@angular/cdk/portal';
 import {
   MatDialogRef,
   _MatDialogContainerBase,
@@ -14,13 +15,15 @@ let uniqueId = 0;
 // Create a new side sheet ref to change the id of the ref
 export class CovalentSideSheetRef<T, R = any> extends MatDialogRef<T, R> {
   constructor(
-    public ref: DialogRef<R, T>,
     public overlayRef: OverlayRef,
     public config: CovalentSideSheetConfig,
     public override _containerInstance: _MatDialogContainerBase,
     override readonly id: string = `td-side-sheet-${uniqueId++}`
   ) {
+    const ref = new DialogRef<R, T>(overlayRef, config);
     super(ref, config, _containerInstance);
+    (ref as { containerInstance: BasePortalOutlet }).containerInstance =
+      this._containerInstance;
   }
 }
 
