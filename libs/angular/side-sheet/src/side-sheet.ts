@@ -131,7 +131,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
       });
 
     // Add new side sheet to open list
-    this.openSideSheets.push(sideSheetRef as any);
+    this.openSideSheets.push(sideSheetRef);
 
     // Remove side sheet ref after closed
     sideSheetRef
@@ -230,6 +230,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
     // to modify and close it.
     const sideSheetRef = new this._sideSheetRefConstructor(
       overlayRef,
+      config,
       sideSheetContainer,
       config.id
     );
@@ -306,7 +307,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
    * Removes a side sheet from the array of open side sheets.
    * @param sideSheetRef Side Sheet to be removed.
    */
-  private _removeOpenSideSheet(sideSheetRef: any) {
+  private _removeOpenSideSheet(sideSheetRef: CovalentSideSheetRef<unknown>) {
     const index = this.openSideSheets.indexOf(sideSheetRef);
 
     if (index > -1) {
