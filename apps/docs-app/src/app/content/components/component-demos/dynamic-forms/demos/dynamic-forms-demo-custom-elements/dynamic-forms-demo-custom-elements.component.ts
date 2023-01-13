@@ -10,12 +10,12 @@ import { ITdDynamicElementConfig } from '@covalent/dynamic-forms';
       [formControl]="control"
       ngDefaultControl
     ></td-code-editor>
-    <div *ngIf="errorMessageTemplate && control?.errors" class="tc-red-600">
+    <div *ngIf="errorMessageTemplate && control.errors" class="tc-red-600">
       <ng-template
         [ngTemplateOutlet]="errorMessageTemplate"
         [ngTemplateOutletContext]="{
           control: control,
-          errors: control?.errors
+          errors: control.errors
         }"
       ></ng-template>
     </div>
