@@ -1,7 +1,4 @@
-import {
-  addHasRemoveClass,
-  BaseElement,
-} from '@material/mwc-base/base-element';
+import { addHasRemoveClass,} from '@material/mwc-base/base-element';
 import { observer } from '@material/mwc-base/observer';
 import { MDCBannerAdapter } from '@material/banner/adapter';
 import {
@@ -10,10 +7,7 @@ import {
   events,
   selectors,
 } from '@material/banner/constants';
-
-//TODO REMOVE ONCE default export is fixed
 import { MDCBannerFoundation } from '@material/banner';
-
 import { html, LitElement, TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { property, query } from 'lit/decorators.js';
