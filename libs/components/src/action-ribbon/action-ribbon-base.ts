@@ -142,7 +142,7 @@ export class ActionRibbonBase extends LitElement {
       this.mdcFoundation.destroy();
     }
     this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
-    
+
     if (this.open) {
       this.mdcFoundation.open();
     }
