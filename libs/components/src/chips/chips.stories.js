@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './chip';
 import './chip-set';
 
@@ -27,7 +26,6 @@ export default {
       defaultValue: false,
     },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',

@@ -1,8 +1,8 @@
-import { LitElement, html } from 'lit';
+import { css, LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property, queryAssignedNodes } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import styles from './code-snippet.scss';
-import hljs from 'highlight.js';
+import styles from './code-snippet.scss?inline';
+import hljs from 'highlight.js/lib/common';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -12,7 +12,11 @@ declare global {
 
 @customElement('td-code-snippet')
 export class CovalentCodeSnippetBase extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property()
   language?: string;

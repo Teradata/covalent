@@ -1,7 +1,7 @@
-import { html, LitElement, nothing } from 'lit';
+import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import styles from './text-lockup.scss';
+import styles from './text-lockup.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -11,7 +11,11 @@ declare global {
 
 @customElement('td-text-lockup')
 export class CovalentTextLockup extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property()
   subText!: string;

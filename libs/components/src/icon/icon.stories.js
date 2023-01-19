@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './icon';
 import iconList from '../../../icons/material-codepoints.json';
 
@@ -132,7 +131,6 @@ export default {
 
     onClick: { action: 'onClick' },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',

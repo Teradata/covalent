@@ -1,9 +1,9 @@
+import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
+import { customElement, property, query } from 'lit/decorators.js';
 import { addHasRemoveClass } from '@material/mwc-base/base-element';
 import { MDCTooltipAdapter, events } from '@material/tooltip';
-import { customElement, property, query } from 'lit/decorators.js';
-import { html, LitElement, PropertyValues } from 'lit';
-import { MDCTooltipFoundation } from './tooltip.foundation';
-import styles from './tooltip.scss';
+import { MDCTooltipFoundation } from '@material/tooltip/foundation';
+import styles from './tooltip.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -15,7 +15,11 @@ declare global {
 export class CovalentTooltipBase extends LitElement {
   protected mdcFoundation!: MDCTooltipFoundation;
   protected readonly mdcFoundationClass = MDCTooltipFoundation;
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @query('.mdc-tooltip') protected mdcRoot!: HTMLElement;
   @query('.mdc-tooltip__surface') protected mdcSurface!: HTMLElement;

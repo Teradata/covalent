@@ -4,9 +4,9 @@ import '@material/mwc-button';
 import '@material/mwc-icon-button';
 
 // Example Content
-import * as loremIpsumContent from './lorem-ipsum.content.html';
-import * as tableContent from './table.content.html';
-import * as tableRowSelectionContent from './table-row-selection.content.html';
+import loremIpsumContent from './lorem-ipsum.content.html?raw';
+import tableContent from './table.content.html?raw';
+import tableRowSelectionContent from './table-row-selection.content.html?raw';
 
 const iconButtons = `
         <td-icon-button icon="filter_list" slot="actionItems"></td-icon-button>

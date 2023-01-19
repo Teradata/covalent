@@ -1,4 +1,4 @@
-import { html, nothing } from 'lit';
+import { css, html, nothing, unsafeCSS } from 'lit';
 import {
   customElement,
   property,
@@ -6,7 +6,7 @@ import {
 } from 'lit/decorators.js';
 import { styles as listBaseStyles } from '@material/mwc-list/mwc-list.css';
 import { CovalentListBase } from './list';
-import styles from './list-expansion.scss';
+import styles from './list-expansion.scss?inline';
 import { CovalentListItemBase } from './list-item';
 
 declare global {
@@ -17,7 +17,14 @@ declare global {
 
 @customElement('td-expansion-list')
 export class CovalentExpansionList extends CovalentListBase {
-  static override styles = [listBaseStyles, styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(listBaseStyles)}
+    `,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
   static override shadowRootOptions: ShadowRootInit = {
     mode: 'open',
     delegatesFocus: true,

@@ -1,6 +1,4 @@
-import { withDesign } from 'storybook-addon-designs';
-// import topAppBarComponent from "../../stories/demos/top-app-bar.component";
-import * as tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html';
+import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
 
 import './app-shell';
 import '../action-ribbon/action-ribbon';
@@ -17,7 +15,6 @@ export default {
   argTypes: {
     navClick: { action: 'clicked' },
   },
-  decorators: [withDesign],
   parameters: {
     layout: 'fullscreen',
     design: {
@@ -234,7 +231,6 @@ const Template = ({ navClick }) => {
         </td-action-ribbon>
 
         ${tableRowSelectionContent}
-        
     </td-app-shell>
     `;
 };

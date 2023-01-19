@@ -1,7 +1,7 @@
-import { html, LitElement } from 'lit';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import styles from './tree-list-item.scss';
+import styles from './tree-list-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -11,7 +11,11 @@ declare global {
 
 @customElement('td-tree-list-item')
 export class CovalentTreeListItem extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
   // Check if a list item is open.
   @property({ type: Boolean }) isOpen = false;
   // Optional icon for each list item.

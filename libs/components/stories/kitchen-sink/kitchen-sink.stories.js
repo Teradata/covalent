@@ -1,8 +1,6 @@
 import { MDCCheckbox } from '@material/checkbox';
 import { MDCChipSet } from '@material/chips';
 import { MDCDialog } from '@material/dialog';
-import { MDCDrawer } from '@material/drawer';
-import { MDCFormField } from '@material/form-field';
 import { MDCIconButtonToggle } from '@material/icon-button';
 import { MDCLinearProgress } from '@material/linear-progress';
 import { MDCList } from '@material/list';
@@ -19,9 +17,9 @@ import { MDCTextFieldHelperText } from '@material/textfield/helper-text';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDataTable } from '@material/data-table';
 
-import * as kitchenSinkContent from '../demos/material-web.content.html';
-import '!style-loader!css-loader!sass-loader!./image-list.scss';
-import '!style-loader!css-loader!sass-loader!./chips.scss';
+import kitchenSinkContent from '../demos/material-web.content.html?raw';
+import './image-list.scss';
+import './chips.scss';
 
 export default {
   title: 'Patterns/Kitchen Sink',

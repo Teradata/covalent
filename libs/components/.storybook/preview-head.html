@@ -7,6 +7,20 @@
   rel="stylesheet"
 />
 <!-- Required styles for Covalent icons -->
-<link href="libs/components/icons/covalent-icons.css" rel="stylesheet" />
+<link
+  href="https://cdn.jsdelivr.net/npm/@covalent/components@4.12.2/icons/covalent-icons.css"
+  rel="stylesheet"
+/>
 <!-- Required styles for Covalent themes -->
-<link href="libs/components/theme.css" rel="stylesheet" />
+<link
+  href="https://cdn.jsdelivr.net/npm/@covalent/components@4.12.2/theme.css"
+  rel="stylesheet"
+/>
+<script>
+  window.global = window;
+  window.process = {
+    env: {
+      NODE_ENV: 'test',
+    },
+  };
+</script>
