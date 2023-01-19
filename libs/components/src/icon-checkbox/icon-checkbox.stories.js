@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './icon-check-toggle';
 
 export default {
@@ -18,7 +17,6 @@ export default {
       defaultValue: false,
     },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',

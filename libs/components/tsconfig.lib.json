@@ -5,7 +5,7 @@
     "declaration": true,
     "types": []
   },
-  "include": ["../../node_modules/lit-scss-loader/types.d.ts", "**/*.ts"],
+  "include": ["**/*.ts"],
   "exclude": [
     "**/*.spec.ts",
     "**/*.stories.ts",

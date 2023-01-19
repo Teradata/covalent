@@ -4,7 +4,7 @@ import '@material/mwc-menu';
 import '@material/mwc-list/mwc-list-item';
 import '@material/mwc-select';
 
-import * as menuTemplate from './menu.component.html';
+import menuTemplate from './menu.component.html?raw';
 
 export default ({}) => {
   document.addEventListener('DOMContentLoaded', () => {

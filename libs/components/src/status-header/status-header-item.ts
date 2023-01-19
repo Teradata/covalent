@@ -1,6 +1,6 @@
-import { html, LitElement } from 'lit';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import styles from './status-header-item.scss';
+import styles from './status-header-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -15,7 +15,11 @@ declare global {
  */
 @customElement('td-status-header-item')
 export class CovalentStatusHeaderItem extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property()
   label!: string;

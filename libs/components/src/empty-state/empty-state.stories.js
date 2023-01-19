@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './empty-state';
 import '../icon/icon';
 import '../card/card';
@@ -34,7 +33,6 @@ export default {
       description: 'Adds an icon to the empty alert',
     },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',

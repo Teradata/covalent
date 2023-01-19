@@ -1,3 +1,5 @@
+import './alert';
+
 export default {
   title: 'Components/Alert',
   parameters: {

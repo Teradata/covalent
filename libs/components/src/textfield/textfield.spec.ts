@@ -1,3 +1,7 @@
+/**
+ * @vitest-environment jsdom
+ */
+import { it, describe, expect } from 'vitest';
 import { CovalentTextFieldBase } from './textfield';
 
 describe('Text field', () => {

@@ -1,3 +1,7 @@
+/**
+ * @vitest-environment jsdom
+ */
+import { it, describe, expect } from 'vitest';
 import { CovalentCardBase } from './card';
 
 describe('Card', () => {

@@ -1,6 +1,7 @@
+import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { AlertBase } from './alert-base';
-import styles from './alert.scss';
+import styles from './alert.scss?inline';
 
 /**
  * Action ribbon
@@ -9,7 +10,11 @@ import styles from './alert.scss';
  */
 @customElement('td-alert')
 export class CovalentAlert extends AlertBase {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
 declare global {

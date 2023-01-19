@@ -1,3 +1,5 @@
+import './top-app-bar';
+import './top-app-bar-fixed';
 import topAppBarComponent from '../../stories/demos/top-app-bar.component';
 
 export default {

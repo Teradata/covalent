@@ -1,3 +1,7 @@
+/**
+ * @vitest-environment jsdom
+ */
+import { it, describe, expect } from 'vitest';
 import { CovalentEmptyStateBase } from './empty-state';
 
 describe('Empty state', () => {

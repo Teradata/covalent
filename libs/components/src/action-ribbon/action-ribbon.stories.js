@@ -1,3 +1,7 @@
+import './action-ribbon';
+import '../button/button';
+import '../icon/icon';
+
 export default {
   title: 'Components/Action Ribbon',
   parameters: {

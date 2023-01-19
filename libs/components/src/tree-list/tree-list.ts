@@ -1,6 +1,6 @@
-import { html, LitElement } from 'lit';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import styles from './tree-list.scss';
+import styles from './tree-list.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -10,7 +10,11 @@ declare global {
 // Wraps td-tree-list-item components
 @customElement('td-tree-list')
 export class CovalentTreeList extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
   override render() {
     return html`
       <div class="container">

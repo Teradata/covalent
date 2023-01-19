@@ -1,6 +1,7 @@
+import { css, unsafeCSS } from 'lit';
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import styles from './empty-state.scss';
+import styles from './empty-state.scss?inline';
 import '../icon/icon';
 
 declare global {
@@ -11,7 +12,11 @@ declare global {
 
 @customElement('td-empty-state')
 export class CovalentEmptyStateBase extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property({ type: String }) headline = '';
   @property({ type: String }) subtitle = '';
