@@ -1,5 +1,5 @@
-import { addHasRemoveClass, BaseElement } from '@material/mwc-base';
-import { MDCChipFoundation } from './foundation';
+import { addHasRemoveClass } from '@material/mwc-base';
+import { MDCChipFoundation } from '@material/chips/chip/foundation';
 import {
   MDCChipAttributes,
   MDCChipCssClasses,
@@ -13,12 +13,12 @@ import {
 } from '@material/chips/action/constants';
 import { MDCChipAdapter } from '@material/chips/chip/adapter';
 import { property, query } from 'lit/decorators.js';
-import { html } from 'lit';
+import { html, LitElement } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 
 let tdChipsId = 0;
 
-export class ChipBase extends BaseElement {
+export class ChipBase extends LitElement {
   protected mdcFoundation?: MDCChipFoundation;
   protected readonly mdcFoundationClass = MDCChipFoundation;
   protected actions!: Map<MDCChipActionType, MDCChipAction>;
@@ -107,8 +107,11 @@ export class ChipBase extends BaseElement {
     `;
   }
 
-  protected override firstUpdated() {
-    super.firstUpdated();
+  protected override async firstUpdated() {
+    if (this.mdcFoundation !== undefined) {
+      this.mdcFoundation.destroy();
+    }
+    this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
 
     this.actions = new Map();
     const actionEls = this.mdcRoot.querySelectorAll(

@@ -11,11 +11,12 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'get-started',
+        pathMatch: 'full',
       },
       {
         path: 'get-started',
         children: [
-          { path: '', redirectTo: 'what-is-covalent' },
+          { path: '', redirectTo: 'what-is-covalent', pathMatch: 'full' },
           {
             path: 'overview',
             component: TdReadmeLoaderComponent,
@@ -32,7 +33,7 @@ const routes: Routes = [
       {
         path: 'theming',
         children: [
-          { path: '', redirectTo: 'icon-sets' },
+          { path: '', redirectTo: 'icon-sets', pathMatch: 'full' },
           { path: 'sass-mixins', component: UtilitySASSMixinsComponent },
           { path: 'icon-sets', component: IconsComponent },
           { path: 'custom-theme', component: ThemeComponent },

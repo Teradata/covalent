@@ -230,6 +230,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
     // to modify and close it.
     const sideSheetRef = new this._sideSheetRefConstructor(
       overlayRef,
+      config,
       sideSheetContainer,
       config.id
     );

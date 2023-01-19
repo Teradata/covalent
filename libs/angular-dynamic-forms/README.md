@@ -104,12 +104,12 @@ import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@coval
 /* CUSTOM TYPE */
   template: `<label>{{label}}</label>
               <input [formControl]="control">
-              <div *ngIf="errorMessageTemplate && control?.errors"
+              <div *ngIf="errorMessageTemplate && control.errors"
                   class="tc-red-600"
                   [style.font-size.%]="'70'">
                 <ng-template
                   [ngTemplateOutlet]="errorMessageTemplate"
-                  [ngTemplateOutletContext]="{control: control, errors: control?.errors}">
+                  [ngTemplateOutletContext]="{control: control, errors: control.errors}">
                 </ng-template>
               </div>`,
 })

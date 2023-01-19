@@ -9,6 +9,7 @@ module.exports = {
     },
   },
   coverageDirectory: '../../coverage/libs/angular-highlight',
+  testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

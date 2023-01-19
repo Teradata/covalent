@@ -9,6 +9,7 @@ module.exports = {
     },
   },
   coverageDirectory: '../../coverage/libs/angular-dynamic-forms',
+  testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

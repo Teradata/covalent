@@ -1,7 +1,4 @@
-import {
-  addHasRemoveClass,
-  BaseElement,
-} from '@material/mwc-base/base-element';
+import { addHasRemoveClass,} from '@material/mwc-base/base-element';
 import { observer } from '@material/mwc-base/observer';
 import { MDCBannerAdapter } from '@material/banner/adapter';
 import {
@@ -10,15 +7,12 @@ import {
   events,
   selectors,
 } from '@material/banner/constants';
-
-//TODO REMOVE ONCE default export is fixed
-import MDCBannerFoundation from './foundation';
-
-import { html, TemplateResult } from 'lit';
+import { MDCBannerFoundation } from '@material/banner';
+import { html, LitElement, TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { property, query } from 'lit/decorators.js';
 
-export class ActionRibbonBase extends BaseElement {
+export class ActionRibbonBase extends LitElement {
   protected mdcFoundation!: MDCBannerFoundation;
   protected readonly mdcFoundationClass = MDCBannerFoundation;
 
@@ -137,8 +131,12 @@ export class ActionRibbonBase extends BaseElement {
     this.open = false;
   }
 
-  protected override firstUpdated() {
-    super.firstUpdated();
+  protected override async firstUpdated() {
+    if (this.mdcFoundation !== undefined) {
+      this.mdcFoundation.destroy();
+    }
+    this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
+    
     if (this.open) {
       this.mdcFoundation.open();
     }
