@@ -26,7 +26,7 @@
     }]
   ],
   "branches": [{
-    "name": "develop",
+    "name": "beta",
     "prerelease": true,
     "channel": "next"
   },{
