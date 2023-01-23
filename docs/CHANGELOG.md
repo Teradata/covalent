@@ -1,3 +1,17 @@
+# [4.16.0-beta.1](https://github.com/Teradata/covalent/compare/v4.15.0...v4.16.0-beta.1) (2023-01-23)
+
+### Bug Fixes
+
+- **build:** fix to imports failing on build ([1a75c43](https://github.com/Teradata/covalent/commit/1a75c43cd1521ccd84ff2b301eb7fb527f14d11a))
+- **dynamic-forms:** removing warnings from webpack compile ([49ca446](https://github.com/Teradata/covalent/commit/49ca44684447ec5220e3b8f7a1c0df32d17d7fd5))
+- **jest:** fixing jest processing ([25cd6d1](https://github.com/Teradata/covalent/commit/25cd6d159ed2874b2496001833ebd1d996ff6f52))
+- **side-sheet:** update side sheet ref arguments ([02a8722](https://github.com/Teradata/covalent/commit/02a872257e74d7a859ae5bb09330ee315c5dbd73))
+- **storybook:** getting storybook working after upgrade ([0ba283d](https://github.com/Teradata/covalent/commit/0ba283d024100297e8e33a42f4e2a9a5c7435050))
+
+### Features
+
+- **angular:** updates from review comments ([41d924a](https://github.com/Teradata/covalent/commit/41d924af269c171562349ba93a161ee8789f2ac9))
+
 # [4.15.0](https://github.com/Teradata/covalent/compare/v4.14.0...v4.15.0) (2022-12-08)
 
 ### Bug Fixes
