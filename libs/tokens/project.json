@@ -9,7 +9,8 @@
       "outputs": ["dist/libs/tokens"],
       "options": {
         "commands": [
-          "./node_modules/.bin/style-dictionary build -c libs/tokens/config.json"
+          "./node_modules/.bin/style-dictionary build -c libs/tokens/config.json",
+          "cp libs/tokens/package.json dist/libs/tokens"
         ],
         "parallel": false
       },
