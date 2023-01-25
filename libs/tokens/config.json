@@ -1,5 +1,5 @@
 {
-  "source": ["src/**/*.json"],
+  "source": ["libs/tokens/src/**/*.json"],
   "platforms": {
     "json": {
       "transformGroup": "assets",
@@ -14,7 +14,7 @@
     },
     "scss": {
       "transformGroup": "scss",
-      "buildPath": "build/scss/",
+      "buildPath": "dist/libs/tokens/",
       "files": [
         {
           "destination": "_variables.scss",

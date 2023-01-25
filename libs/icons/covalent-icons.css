@@ -10,6 +10,10 @@
   font-display: block;
 }
 
+.covalent-icon {
+  --mdc-icon-font: 'covalent-icons';
+}
+
 [class^='icon-'],
 [class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
