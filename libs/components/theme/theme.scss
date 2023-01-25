@@ -1,9 +1,10 @@
-@use '../../tokens/build/scss/variables' as variables;
-@use '../src/icon/icon' as icon;
+@use '../../../dist/libs/tokens/variables';
 @use '../src/skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
 @use './mixins' as theme;
 
-@include icon.core-styles(); // TODO - include future support in icons css
+// Required styles for Covalent icons
+@import '../../icons/covalent-icons.css';
+
 @include skeleton.core-styles(); // TODO - should include support
 
 // TODO should be moved to consuming app - DOCS NEEDED
