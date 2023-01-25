@@ -1,0 +1,27 @@
+{
+  "name": "tokens",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/tokens/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "builder": "nx:run-commands",
+      "outputs": ["dist/libs/tokens"],
+      "options": {
+        "commands": [
+          "./node_modules/.bin/style-dictionary build -c libs/tokens/config.json"
+        ],
+        "parallel": false
+      },
+      "configurations": {
+        "watch": {
+          "commands": [
+            "./node_modules/.bin/style-dictionary build -c libs/tokens/config.json",
+            "npx chokidar-cli  \"libs/tokens/src/**\" -c \"npx style-dictionary build -c libs/tokens/config.json\""
+          ]
+        }
+      }
+    }
+  },
+  "tags": []
+}

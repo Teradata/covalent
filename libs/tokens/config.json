@@ -1,10 +1,10 @@
 {
-  "source": ["src/**/*.json"],
+  "source": ["libs/tokens/src/**/*.json"],
   "platforms": {
     "json": {
       "transformGroup": "assets",
       "prefix": "td",
-      "buildPath": "build/json/",
+      "buildPath": "dist/libs/tokens/",
       "files": [
         {
           "destination": "variables.json",
@@ -14,7 +14,7 @@
     },
     "scss": {
       "transformGroup": "scss",
-      "buildPath": "build/scss/",
+      "buildPath": "dist/libs/tokens/",
       "files": [
         {
           "destination": "_variables.scss",
@@ -25,7 +25,7 @@
     "css": {
       "transformGroup": "css",
       "prefix": "td",
-      "buildPath": "build/css/",
+      "buildPath": "dist/libs/tokens/",
       "files": [
         {
           "destination": "variables.css",
@@ -42,7 +42,7 @@
         "color/css"
       ],
       "prefix": "td",
-      "buildPath": "build/js/",
+      "buildPath": "dist/libs/tokens/",
       "files": [
         {
           "destination": "variables.js",

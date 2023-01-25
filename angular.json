@@ -14,6 +14,7 @@
     "docs-e2e": "apps/docs-e2e",
     "markdown": "libs/markdown",
     "markdown-flavored": "libs/markdown-flavored",
-    "markdown-navigator": "libs/markdown-navigator"
+    "markdown-navigator": "libs/markdown-navigator",
+    "tokens": "libs/tokens"
   }
 }
