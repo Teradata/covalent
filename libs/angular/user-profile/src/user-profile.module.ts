@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { TdUserProfileMenuComponent } from './user-profile-menu/user-profile-menu.component';
 import { TdUserProfileComponent } from './user-profile.component';
 import { CovalentMenuModule } from '@covalent/core/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
@@ -18,6 +19,7 @@ import { CovalentMenuModule } from '@covalent/core/menu';
     MatButtonModule,
     MatListModule,
     CovalentMenuModule,
+    MatTooltipModule,
   ],
   providers: [],
   exports: [TdUserProfileComponent, TdUserProfileMenuComponent],
