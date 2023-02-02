@@ -1,3 +1,6 @@
+import './status-header';
+import './status-header-item';
+
 export default {
   title: 'Components/Status Header',
   parameters: {

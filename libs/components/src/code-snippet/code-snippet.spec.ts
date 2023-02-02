@@ -1,3 +1,7 @@
+/**
+ * @vitest-environment jsdom
+ */
+import { it, describe, expect } from 'vitest';
 import { CovalentCodeSnippetBase } from './code-snippet';
 
 describe('Code snippet', () => {

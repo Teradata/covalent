@@ -9,10 +9,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-				test: /\.ttf$/,
+        test: /\.ttf$/,
         include: [/node_modules\/monaco-editor/],
-				use: ['file-loader']
-			}
+        use: ['file-loader'],
+      },
     ],
   },
   plugins: [

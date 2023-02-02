@@ -1,7 +1,7 @@
-import * as gridContent from '../../stories/demos/grid.content.html';
+// import * as gridContent from '../../stories/demos/grid.content.html';
 
-export default {
-  title: 'Components/Grid',
-};
+// export default {
+//   title: 'Components/Grid',
+// };
 
-export const Basic = ({}) => gridContent;
+// export const Basic = ({}) => gridContent;

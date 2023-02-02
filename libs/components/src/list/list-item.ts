@@ -1,11 +1,11 @@
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import { html } from 'lit';
+import { css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { styles as controlStyle } from '@material/mwc-list/mwc-control-list-item.css';
 import { styles as listItemStyle } from '@material/mwc-list/mwc-list-item.css';
-import styles from './list-item.scss';
+import styles from './list-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -15,7 +15,17 @@ declare global {
 
 @customElement('td-list-item')
 export class CovalentListItemBase extends ListItemBase {
-  static override styles = [listItemStyle, controlStyle, styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(listItemStyle)}
+    `,
+    css`
+      ${unsafeCSS(controlStyle)}
+    `,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property({ type: Boolean, reflect: true }) hasChildren = false;
 

@@ -1,12 +1,8 @@
-import { DrawerBase } from '@material/mwc-drawer/mwc-drawer-base';
-import { html, nothing } from 'lit';
+import { css, html, nothing, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-
-import styles from './app-shell.scss';
-
-import '@material/mwc-icon-button';
-import '@material/mwc-top-app-bar-fixed';
+import { DrawerBase } from '@material/mwc-drawer/mwc-drawer-base';
+import styles from './app-shell.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -21,7 +17,11 @@ declare global {
  */
 @customElement('td-app-shell')
 export class CovalentAppShell extends DrawerBase {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   /**
    * The name of the application to show in the small app bar

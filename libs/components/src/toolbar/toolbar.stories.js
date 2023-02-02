@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './toolbar';
 
 export default {
@@ -33,7 +32,6 @@ export default {
       defaultValue: true,
     },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',

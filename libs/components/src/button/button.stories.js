@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './button';
 
 export default {
@@ -40,7 +39,6 @@ export default {
       defaultValue: false,
     },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',
