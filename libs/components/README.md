@@ -52,7 +52,7 @@ once the script is loaded, its now possible to start using our custom HTML eleme
     <script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/index.js"></script>
   </head>
   <body>
-    <td-button raised>Hello world<td-button>
+    <cv-button raised>Hello world<cv-button>
   </body>
 </html>
 ```
@@ -84,7 +84,7 @@ import '@covalent/components/button.js';
 @component({
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  template: '<td-button>Hello world</td-button>',
+  template: '<cv-button>Hello world</cv-button>',
 })
 export class AppComponent {}
 ```

@@ -8,43 +8,46 @@ export default {
   },
 };
 
-const Template = ({ disabled }) => {
-  return `<td-checkbox
+const Template = ({ label = 'Bananas', disabled }) => {
+  return `<cv-checkbox
+                aria-label="${label}"
                 ${disabled ? `disabled` : null}>
-            </td-checkbox>
-            <td-checkbox
+            </cv-checkbox>
+            <cv-checkbox
+                aria-label="${label}"
                 checked
                 ${disabled ? `disabled` : null}>
-            </td-checkbox>
-            <td-checkbox
+            </cv-checkbox>
+            <cv-checkbox
+                aria-label="${label}"
                 indeterminate
                 ${disabled ? `disabled` : null}>
-            </td-checkbox>`;
+            </cv-checkbox>`;
 };
 
 const LabelTemplate = ({ label = 'Bananas', indeterminate }) => {
   return `
             <style>
-                td-formfield {
+                cv-formfield {
                     display: block;
                 }
                 .child {
                     margin-left: 20px;
                 }
             </style>
-            <td-formfield label="${label}">
-                <td-checkbox ${
+            <cv-formfield label="${label}">
+                <cv-checkbox ${
                   indeterminate ? `indeterminate` : null
-                }></td-checkbox>
-            </td-formfield>
+                }></cv-checkbox>
+            </cv-formfield>
             
-            <td-formfield label="${label}">
-                <td-checkbox class="child"></td-checkbox>
-            </td-formfield>
+            <cv-formfield label="${label}">
+                <cv-checkbox class="child"></cv-checkbox>
+            </cv-formfield>
             
-            <td-formfield label="${label}">
-                <td-checkbox class="child" checked></td-checkbox>
-            </td-formfield>`;
+            <cv-formfield label="${label}">
+                <cv-checkbox class="child" checked></cv-checkbox>
+            </cv-formfield>`;
 };
 
 export const Basic = Template.bind({});

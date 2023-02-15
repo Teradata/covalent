@@ -1,14 +1,16 @@
-import { SnackbarBase } from '@material/mwc-snackbar/mwc-snackbar-base';
-import { styles } from '@material/mwc-snackbar/mwc-snackbar.css';
+import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { SnackbarBase } from '@material/mwc-snackbar/mwc-snackbar-base';
+import { styles as baseStyles } from '@material/mwc-snackbar/mwc-snackbar.css';
+import styles from './snackbar.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-snackbar': CovalentSnackbarBase;
+    'cv-snackbar': CovalentSnackbarBase;
   }
 }
 
-@customElement('td-snackbar')
+@customElement('cv-snackbar')
 export class CovalentSnackbarBase extends SnackbarBase {
-  static override styles = [styles];
+  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }

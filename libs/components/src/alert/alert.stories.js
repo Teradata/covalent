@@ -52,23 +52,24 @@ export const PageLevel = ({
   }
 
   return `
-        <td-alert
+        <cv-alert
           titleText="${title}"
           descriptionText="${description}"
           state="${state}"
           ${icon ? `icon="${icon}"` : ''}
+          ${icon ? `iconAriaLabel="${icon}"` : ''}
           ${inline ? `inline` : ''}>
           ${
             actionElement === 'button'
-              ? `<td-button slot="action-items">Button Text</td-button>`
+              ? `<cv-button slot="action-items">Button Text</cv-button>`
               : ''
           }
           ${
             actionElement === 'close icon'
-              ? `<td-icon-button slot="action-items" icon="close"></td-icon-button>`
+              ? `<cv-icon-button slot="action-items" icon="close"></cv-icon-button>`
               : ''
           }
-        </td-alert>`;
+        </cv-alert>`;
 };
 
 export const Inline = PageLevel.bind({});

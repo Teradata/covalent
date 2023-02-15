@@ -30,7 +30,7 @@
     &.caution {
       --mdc-theme-surface: var(--mdc-theme-surface-caution);
 
-      &.td-banner--inline {
+      &.cv-banner--inline {
         --mdc-theme-surface: var(--mdc-theme-surface-caution-highlight);
 
         .mdc-banner__graphic,
@@ -44,7 +44,7 @@
     &.negative {
       --mdc-theme-surface: var(--mdc-theme-surface-negative);
 
-      &.td-banner--inline {
+      &.cv-banner--inline {
         --mdc-theme-surface: var(--mdc-theme-surface-negative-highlight);
 
         .mdc-banner__graphic,
@@ -58,7 +58,7 @@
     &.active {
       --mdc-theme-surface: var(--mdc-theme-surface-secondary);
 
-      &.td-banner--inline {
+      &.cv-banner--inline {
         --mdc-theme-surface: var(--mdc-theme-surface-secondary-highlight);
 
         .mdc-banner__graphic,
@@ -72,7 +72,7 @@
     &.positive {
       --mdc-theme-surface: var(--mdc-theme-surface-positive);
 
-      &.td-banner--inline {
+      &.cv-banner--inline {
         --mdc-theme-surface: var(--mdc-theme-surface-positive-highlight);
 
         .mdc-banner__graphic,

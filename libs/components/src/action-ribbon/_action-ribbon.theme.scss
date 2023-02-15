@@ -1,8 +1,8 @@
 @mixin theme() {
   .mdc-banner {
-    --td-action-ribbon-background: transparent;
+    --cv-action-ribbon-background: transparent;
 
-    background-color: var(--td-action-ribbon-background);
+    background-color: var(--cv-action-ribbon-background);
     overflow: hidden;
 
     .mdc-banner__content {
@@ -28,7 +28,7 @@
     }
 
     &.caution {
-      --td-action-ribbon-background: var(--mdc-theme-surface-caution-highlight);
+      --cv-action-ribbon-background: var(--mdc-theme-surface-caution-highlight);
 
       .mdc-banner__graphic,
       .mdc-banner__text {
@@ -38,7 +38,7 @@
     }
 
     &.negative {
-      --td-action-ribbon-background: var(
+      --cv-action-ribbon-background: var(
         --mdc-theme-surface-negative-highlight
       );
 
@@ -50,7 +50,7 @@
     }
 
     &.active {
-      --td-action-ribbon-background: var(
+      --cv-action-ribbon-background: var(
         --mdc-theme-surface-secondary-highlight
       );
 
@@ -62,7 +62,7 @@
     }
 
     &.positive {
-      --td-action-ribbon-background: var(
+      --cv-action-ribbon-background: var(
         --mdc-theme-surface-positive-highlight
       );
 

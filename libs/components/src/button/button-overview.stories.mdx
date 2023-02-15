@@ -13,7 +13,7 @@ import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
 />
 
 <style>{`
-  td-button {
+  cv-button {
     margin-right: 8px;
   }
   .docs-story div:first-of-type {
@@ -23,7 +23,7 @@ import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
   #story--example-button--text {
     margin-right: 8px;
   }
-  td-button[outlined].destructive {
+  cv-button[outlined].destructive {
     margin-right: 4rem;
   }
 `}</style>
@@ -37,9 +37,9 @@ import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
 - Include an icon in your button only in specific circumstances
 
 <Canvas>
-  <td-button id="text-button" text label="Text button"></td-button>
-  <td-button id="outlined-button" outlined label="Outlined button"></td-button>
-  <td-button id="contained-button" raised label="Contained button"></td-button>
+  <cv-button id="text-button" text label="Text button"></cv-button>
+  <cv-button id="outlined-button" outlined label="Outlined button"></cv-button>
+  <cv-button id="contained-button" raised label="Contained button"></cv-button>
 </Canvas>
 
 ---
@@ -50,20 +50,20 @@ Buttons contain a text label and optional icon.
 
 <Canvas>
   <form>
-    <td-button id="no-icon" raised label="No icon"></td-button>
-    <td-button
+    <cv-button id="no-icon" raised label="No icon"></cv-button>
+    <cv-button
       id="left-icon"
       raised
       label="Left icon"
       icon="sailing"
-    ></td-button>
-    <td-button
+    ></cv-button>
+    <cv-button
       id="right-icon"
       raised
       label="Right icon"
       icon="sailing"
       trailingIcon="true"
-    ></td-button>
+    ></cv-button>
   </form>
 </Canvas>
 
@@ -73,9 +73,9 @@ Separate all buttons with an 8px gap.
 
 <Canvas>
   <form>
-    <td-button outlined label="Button"></td-button>
-    <td-button outlined label="Button"></td-button>
-    <td-button outlined label="Button"></td-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button outlined label="Button"></cv-button>
   </form>
 </Canvas>
 
@@ -97,9 +97,9 @@ Place the primary action to the right, followed by secondary actions.
 
 <Canvas>
   <form>
-    <td-button outlined label="Button"></td-button>
-    <td-button outlined label="Button"></td-button>
-    <td-button raised label="Primary" class="primary accent"></td-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button raised label="Primary" class="primary accent"></cv-button>
   </form>
 </Canvas>
 
@@ -109,9 +109,9 @@ In footers (such as card, dialog, page, or sheet footers) align all buttons to t
 
 <Canvas>
   <form>
-    <td-button outlined label="Delete" class="destructive"></td-button>
-    <td-button outlined label="Button"></td-button>
-    <td-button raised label="Primary" class="primary accent"></td-button>
+    <cv-button outlined label="Delete" class="destructive"></cv-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button raised label="Primary" class="primary accent"></cv-button>
   </form>
 </Canvas>
 
@@ -123,8 +123,8 @@ Use “default” outline buttons for everything except the primary action (if a
 
 <Canvas>
   <form>
-    <td-button outlined label="Button"></td-button>
-    <td-button outlined label="Button"></td-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button outlined label="Button"></cv-button>
   </form>
 </Canvas>
 
@@ -134,9 +134,9 @@ If the page has a primary action, use an “accent” contained button.
 
 <Canvas>
   <form>
-    <td-button outlined label="Button"></td-button>
-    <td-button outlined label="Button"></td-button>
-    <td-button raised label="Primary" class="primary accent"></td-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button raised label="Primary" class="primary accent"></cv-button>
   </form>
 </Canvas>
 
@@ -148,9 +148,9 @@ If the primary action is a destructive one (for example, it deletes some data), 
 
 <Canvas>
   <form>
-    <td-button outlined label="Button"></td-button>
-    <td-button outlined label="Button"></td-button>
-    <td-button raised label="Delete" class="destructive primary"></td-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button raised label="Delete" class="destructive primary"></cv-button>
   </form>
 </Canvas>
 
@@ -160,8 +160,8 @@ If the destructive action is not the primary action, do not use the negative col
 
 <Canvas>
   <form>
-    <td-button outlined label="Delete" class="destructive"></td-button>
-    <td-button outlined label="Button"></td-button>
-    <td-button raised label="Primary" class="primary accent"></td-button>
+    <cv-button outlined label="Delete" class="destructive"></cv-button>
+    <cv-button outlined label="Button"></cv-button>
+    <cv-button raised label="Primary" class="primary accent"></cv-button>
   </form>
 </Canvas>

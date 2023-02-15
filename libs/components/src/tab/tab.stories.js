@@ -10,14 +10,14 @@ export default {
 
 const Template = ({ icon, activeIndex = 0 }) => {
   return `
-        <td-tab-bar activeIndex="${activeIndex}">
-            <td-tab${icon ? ` icon="${icon}"` : ``} label="Tab one">
-            </td-tab>
-            <td-tab${icon ? ` icon="${icon}"` : ``} label="Tab two">
-            </td-tab>
-            <td-tab${icon ? ` icon="${icon}"` : ``} label="Tab three">
-            </td-tab>
-        </td-tab-bar>`;
+        <cv-tab-bar activeIndex="${activeIndex}">
+            <cv-tab${icon ? ` icon="${icon}"` : ``} label="Tab one">
+            </cv-tab>
+            <cv-tab${icon ? ` icon="${icon}"` : ``} label="Tab two">
+            </cv-tab>
+            <cv-tab${icon ? ` icon="${icon}"` : ``} label="Tab three">
+            </cv-tab>
+        </cv-tab-bar>`;
 };
 
 export const Basic = Template.bind({});

@@ -1,5 +1,5 @@
 :host {
-  --td-status-header-item-width: 178px;
+  --cv-status-header-item-width: 178px;
 
   display: flex;
   padding: 14px 16px;
@@ -12,6 +12,6 @@
 
 span {
   display: inline-block;
-  width: var(--td-status-header-item-width);
+  width: var(--cv-status-header-item-width);
   color: var(--mdc-theme-text-secondary-on-background);
 }

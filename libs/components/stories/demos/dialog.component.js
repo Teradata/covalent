@@ -6,7 +6,7 @@ export default ({}) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
-      const buttons = document.body.querySelectorAll('td-button[data-num]');
+      const buttons = document.body.querySelectorAll('cv-button[data-num]');
 
       for (let i = 0; i < buttons.length; i++) {
         const button = buttons[i];

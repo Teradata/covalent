@@ -140,7 +140,7 @@ export default {
 };
 
 const Template = ({ icon, size }, ...args) => {
-  const icoElem = document.createElement('td-icon');
+  const icoElem = document.createElement('cv-icon');
   icoElem.innerText = icon;
   icoElem.style.fontSize = size;
 

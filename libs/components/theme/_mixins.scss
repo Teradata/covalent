@@ -1,21 +1,5 @@
 // Covalent themed components
-@use '../src/button/button.theme' as button;
-@use '../src/card/card.theme' as card;
-@use '../src/checkbox/checkbox.theme' as checkbox;
-@use '../src/chips/chips.theme' as chips;
 @use '../src/data-table/data-table.theme' as data-table;
-@use '../src/dialog/dialog.theme' as dialog;
-@use '../src/drawer/drawer.theme' as drawer;
-@use '../src/icon-button/icon-button.theme' as icon-button;
-@use '../src/linear-progress/linear-progress.theme' as linear-progress;
-@use '../src/list/list.theme' as lists;
-@use '../src/radio/radio.theme' as radio;
-@use '../src/select/select.theme' as select;
-@use '../src/snackbar/snackbar.theme' as snack-bar;
-@use '../src/switch/switch.theme' as switch;
-@use '../src/tab/tab.theme' as tab;
-@use '../src/textfield/textfield.theme' as textfield;
-@use '../src/top-app-bar/top-app-bar.theme' as top-app-bar;
 
 @mixin components-theme($theme, $typography) {
   // Foreground colors
@@ -332,23 +316,7 @@
   --cov-theme-code-snippet-title: #{map-get($theme, code-snippet-title)};
   --cov-theme-code-snippet-class: #{map-get($theme, code-snippet-class)};
 
-  @include button.button-theme($theme);
-  @include card.card-theme($theme);
-  @include checkbox.checkbox-theme($theme);
-  @include chips.chips-theme($theme);
   @include data-table.data-table-theme($theme);
-  @include dialog.dialog-theme($theme);
-  @include drawer.drawer-theme($theme);
-  @include icon-button.icon-button-theme($theme);
-  @include linear-progress.linear-progress-theme($theme);
-  @include lists.lists-theme($theme);
-  @include radio.radio-theme($theme);
-  @include select.select-theme($theme);
-  @include snack-bar.snack-bar-theme($theme);
-  @include switch.switch-theme($theme);
-  @include tab.tab-theme($theme);
-  @include textfield.text-field-theme($theme);
-  @include top-app-bar.top-app-bar-theme($theme);
 
   color: var(--mdc-theme-text-primary-on-background);
 

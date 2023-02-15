@@ -13,10 +13,11 @@ export default {
 };
 
 const Template = ({ density = 0, indeterminate, progress }) => {
-  const progressBar = document.createElement('td-circular-progress');
+  const progressBar = document.createElement('cv-circular-progress');
   progressBar.density = density;
   progressBar.indeterminate = indeterminate;
   progressBar.progress = progress;
+  progressBar.ariaLabel = 'Example progress bar';
 
   return progressBar;
 };

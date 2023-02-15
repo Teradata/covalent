@@ -4,7 +4,7 @@ import styles from './status-header-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-status-header-item': CovalentStatusHeaderItem;
+    'cv-status-header-item': CovalentStatusHeaderItem;
   }
 }
 
@@ -13,7 +13,7 @@ declare global {
  *
  * @slot - This element has a slot
  */
-@customElement('td-status-header-item')
+@customElement('cv-status-header-item')
 export class CovalentStatusHeaderItem extends LitElement {
   static override styles = [
     css`
