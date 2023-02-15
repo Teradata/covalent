@@ -1,0 +1,14 @@
+{
+  "light": {
+    "chart-color-1": { "value": "#383a42", "type": "color" }
+  },
+  "light-highcontrast": {
+    "chart-color-1": { "value": "#383a42", "type": "color" }
+  },
+  "dark": {
+    "chart-color-1": { "value": "#383a42", "type": "color" }
+  },
+  "dark-highcontrast": {
+    "chart-color-1": { "value": "#383a42", "type": "color" }
+  }
+}
