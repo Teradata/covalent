@@ -8,7 +8,7 @@ import styles from './action-ribbon.scss?inline';
  *
  * @slot - This element has a slot
  */
-@customElement('td-action-ribbon')
+@customElement('cv-action-ribbon')
 export class CovalentActionRibbon extends ActionRibbonBase {
   static override styles = [
     css`
@@ -19,6 +19,6 @@ export class CovalentActionRibbon extends ActionRibbonBase {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-action-ribbon': CovalentActionRibbon;
+    'cv-action-ribbon': CovalentActionRibbon;
   }
 }

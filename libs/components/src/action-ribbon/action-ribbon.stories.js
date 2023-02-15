@@ -18,14 +18,16 @@ export default {
 
 export const Neutral = ({ label, color, icon, saveDisabled = false }) => {
   return `
-    <td-action-ribbon labelText="${label}" state="${color}" ${
-    icon ? `icon="${icon}"` : null
-  }>
-      <td-button slot="action-items" outlined>Cancel</td-button>
-      <td-button slot="action-items" ${
+    <cv-action-ribbon
+      labelText="${label}"
+      state="${color}" 
+      ${icon ? `icon="${icon}"` : null}
+      ${icon ? `iconAriaLabel="${icon}"` : null}>
+      <cv-button slot="action-items" outlined>Cancel</cv-button>
+      <cv-button slot="action-items" ${
         saveDisabled ? 'disabled' : null
-      } raised>Save</td-button>
-    </td-action-ribbon>`;
+      } raised>Save</cv-button>
+    </cv-action-ribbon>`;
 };
 
 export const Active = Neutral.bind({});

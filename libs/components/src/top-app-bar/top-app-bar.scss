@@ -1,3 +1,15 @@
+
+
+:host {
+  --mdc-theme-primary: var(--mdc-theme-surface);
+  --mdc-theme-on-primary: var(--mdc-theme-text-primary-on-background);
+
+  ::slotted(cv-button) {
+    --mdc-theme-primary: var(--mdc-theme-primary);
+    --mdc-theme-on-primary: var(--mdc-theme-on-primary);
+  }
+}
+
 .mdc-top-app-bar {
   background: var(--mdc-theme-surface);
   color: var(--mdc-theme-on-surface);

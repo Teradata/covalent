@@ -4,11 +4,11 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-slider-range': CovalentSliderRangeBase;
+    'cv-slider-range': CovalentSliderRangeBase;
   }
 }
 
-@customElement('td-slider-range')
+@customElement('cv-slider-range')
 export class CovalentSliderRangeBase extends SliderRangeBase {
   static override styles = [styles];
 }

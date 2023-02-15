@@ -8,11 +8,11 @@ import styles from './icon-radio.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-icon-radio-item': CovalentIconRadioToggleBase;
+    'cv-icon-radio-item': CovalentIconRadioToggleBase;
   }
 }
 
-@customElement('td-radio-icon')
+@customElement('cv-radio-icon')
 export class CovalentIconRadioToggleBase extends RadioBase {
   static override styles = [
     css`

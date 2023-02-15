@@ -3,11 +3,6 @@
 @mixin icon-button-theme($theme) {
   $icon: map-get($theme, text-icon-on-background);
 
-  // Support for web component
-  td-icon-button {
-    color: $icon;
-  }
-
   .mdc-icon-button {
     @include icon-button.ink-color($icon);
   }

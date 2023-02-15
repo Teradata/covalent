@@ -8,11 +8,11 @@ import navListStyles from './nav-list-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-nav-list-item': CovalentNavRailListItem;
+    'cv-nav-list-item': CovalentNavRailListItem;
   }
 }
 
-@customElement('td-nav-list-item')
+@customElement('cv-nav-list-item')
 export class CovalentNavRailListItem extends CovalentListItemBase {
   static override styles = [
     css`

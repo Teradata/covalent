@@ -31,14 +31,14 @@ const Template = ({
     window.tooltip.anchor = window.button;
   });
   return `
-    <td-icon
+    <cv-icon
       style="font-size: 36px;"
       aria-expanded="true"
       aria-haspopup="dialog"
       id="button">
       help
-    </td-icon>
-    <td-tooltip
+    </cv-icon>
+    <cv-tooltip
       id="tooltip"
       ${richTitle ? `richTitle="${richTitle}"` : ''}
       ${showDelayInMs >= 0 ? `showDelay="${showDelayInMs}"` : ''}
@@ -46,7 +46,7 @@ const Template = ({
       ${isRich ? 'rich' : ''}
       ${isPersistent ? 'persistent' : ''}>
       ${content}
-    </td-tooltip>
+    </cv-tooltip>
   `;
 };
 
@@ -62,7 +62,7 @@ Rich.args = {
       pretium vitae est et dapibus. Aenean sit amet felis eu lorem fermentum
       aliquam sit amet sit amet eros.
       <a class="mdc-tooltip__content-link" href="http://teradata.com" target="_blank">Learn more</a>.
-      <td-button slot="actionItems" label="action"></button>
+      <cv-button slot="actionItems" label="action"></button>
   `,
 };
 

@@ -5,11 +5,11 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-radio-list-item': CovalentRadioListItemBase;
+    'cv-radio-list-item': CovalentRadioListItemBase;
   }
 }
 
-@customElement('td-radio-list-item')
+@customElement('cv-radio-list-item')
 export class CovalentRadioListItemBase extends RadioListItemBase {
   static override styles = [styles, controlStyle];
 }

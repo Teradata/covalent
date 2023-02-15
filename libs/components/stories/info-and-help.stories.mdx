@@ -23,7 +23,7 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
   .right {
     width: 70%;
   }
-  .td-alert-container {
+  .cv-alert-container {
     width: 552px;
     margin-left: 64px;
   }
@@ -98,7 +98,7 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
     display: flex;
     align-items: center;
   }
-  span > td-icon {
+  span > cv-icon {
     font-size: 16px;
   }
   .help-window-bg {
@@ -174,7 +174,7 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
   .card-content {
     padding: 16px;
   }
-  td-textfield {
+  cv-textfield {
     margin-left: 60px;
     width: 560px;
   }
@@ -240,7 +240,7 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
     <div class="see-also">
       <div>See also</div>
       <span>
-        Features <td-icon>chevron_right</td-icon>
+        Features <cv-icon>chevron_right</cv-icon>
         <a
           href="https://www.figma.com/file/tDTc1JQZByIK0Igi6p1uky/Guided-tours?node-id=0%3A1"
           target="_blank"
@@ -254,7 +254,7 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
     <div class="toolbar no-padding">
       <div>Step title</div>
       <div>
-        <td-icon>close</td-icon>
+        <cv-icon>close</cv-icon>
       </div>
     </div>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi imperdiet dignissim
@@ -263,8 +263,8 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
     <div class="action-bar">
       <div>2/4</div>
       <div>
-        <td-icon class="chevron-space">chevron_left</td-icon>
-        <td-icon>chevron_right</td-icon>
+        <cv-icon class="chevron-space">chevron_left</cv-icon>
+        <cv-icon>chevron_right</cv-icon>
       </div>
     </div>
     <div class="triangle"></div>
@@ -279,7 +279,7 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
     <div class="see-also">
       <div>See also</div>
       <span>
-        Features <td-icon>chevron_right</td-icon>{" "}
+        Features <cv-icon>chevron_right</cv-icon>{" "}
         <a
           href="https://www.figma.com/file/z3w5qXeAISPmBr4IOLAJ38/In-product-help?node-id=0%3A1"
           target="_blank"
@@ -318,17 +318,17 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
         <div class="toolbar">
           <div id="title">Help</div>
           <div class="icon-container">
-            <td-icon>expand_more</td-icon>
-            <td-icon>open_in_new</td-icon>
-            <td-icon>square</td-icon>
-            <td-icon>close</td-icon>
+            <cv-icon>expand_more</cv-icon>
+            <cv-icon>open_in_new</cv-icon>
+            <cv-icon>square</cv-icon>
+            <cv-icon>close</cv-icon>
           </div>
         </div>
         <hr />
         <div class="card-content">
           <span class="help-window-crumbs">
-            All topics <td-icon>chevron_right</td-icon> Developer
-            <td-icon>chevron_right</td-icon>
+            All topics <cv-icon>chevron_right</cv-icon> Developer
+            <cv-icon>chevron_right</cv-icon>
           </span>
           <div class="help-window-title">
             Cras adipiscing tempus ornare purus vel.
@@ -382,13 +382,13 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
     Display your message directly adjacent to the field itself.
   </div>
   <div class="right relative">
-    <td-textfield
+    <cv-textfield
       type="password"
       class="textfield-neutral"
       outlined
       value="aaaaaaaaaa"
       label="Password"
-    ></td-textfield>
+    ></cv-textfield>
     <div class="helper-text">
       8 – 12 characters long, containing at least one letter and one number
     </div>
@@ -406,15 +406,15 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
     Use a page-level alert to give feedback that’s not specifically related to
     any one item or region.
   </div>
-  <div class="right td-alert-container">
-    <td-alert
+  <div class="right cv-alert-container">
+    <cv-alert
       titleText="Alert title"
       descriptionText="Alert description"
       state="caution"
       icon="warning"
     >
-      <td-icon-button slot="action-items" icon="close"></td-icon-button>
-    </td-alert>
+      <cv-icon-button slot="action-items" icon="close"></cv-icon-button>
+    </cv-alert>
   </div>
 </div>
 
@@ -434,15 +434,15 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
       </div>
       <hr />
       <div>
-        <td-alert
+        <cv-alert
           titleText="Alert title"
           descriptionText="Alert description"
           state="caution"
           icon="warning"
           inline
         >
-          <td-icon-button slot="action-items" icon="close"></td-icon-button>
-        </td-alert>
+          <cv-icon-button slot="action-items" icon="close"></cv-icon-button>
+        </cv-alert>
       </div>
     </div>
   </div>
@@ -459,13 +459,13 @@ import { Meta, DocsContainer } from '@storybook/addon-docs';
     itself.
   </div>
   <div class="right relative">
-    <td-textfield
+    <cv-textfield
       type="password"
       class="textfield-error"
       outlined
       value="aaaaaaaaaa"
       label="Password"
-    ></td-textfield>
+    ></cv-textfield>
     <div class="helper-text helper-text-error">
       8 – 12 characters long, containing at least one letter and one number
     </div>

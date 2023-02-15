@@ -18,27 +18,27 @@ export default {
 
 const Template = ({ icon, style, required, helper }) => {
   return `
-        <td-select
+        <cv-select
             label="${style}"
             validationMessage="This Field is Required"
             ${style}
             ${icon ? `icon="${icon}"` : null}
             ${helper ? `helper="${helper}"` : null}
             ${required ? `required` : null}>
-            <td-list-item selected></td-list-item>
-            <td-list-item ${
+            <cv-list-item selected></cv-list-item>
+            <cv-list-item ${
               icon ? `graphic="icon"` : null
-            } value="0">Item 0</td-list-item>
-            <td-list-item ${
+            } value="0">Item 0</cv-list-item>
+            <cv-list-item ${
               icon ? `graphic="icon"` : null
-            } value="1">Item 1</td-list-item>
-            <td-list-item ${
+            } value="1">Item 1</cv-list-item>
+            <cv-list-item ${
               icon ? `graphic="icon"` : null
-            } value="2">Item 2</td-list-item>
-            <td-list-item ${
+            } value="2">Item 2</cv-list-item>
+            <cv-list-item ${
               icon ? `graphic="icon"` : null
-            } value="3">Item 3</td-list-item>
-        </td-select>`;
+            } value="3">Item 3</cv-list-item>
+        </cv-select>`;
 };
 
 export const Basic = Template.bind({});

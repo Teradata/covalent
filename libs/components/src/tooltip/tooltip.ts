@@ -7,11 +7,11 @@ import styles from './tooltip.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-tooltip': CovalentTooltipBase;
+    'cv-tooltip': CovalentTooltipBase;
   }
 }
 
-@customElement('td-tooltip')
+@customElement('cv-tooltip')
 export class CovalentTooltipBase extends LitElement {
   protected mdcFoundation!: MDCTooltipFoundation;
   protected readonly mdcFoundationClass = MDCTooltipFoundation;

@@ -1,19 +1,18 @@
-import { css, unsafeCSS } from 'lit';
-import { CheckboxBase } from '@material/mwc-checkbox/mwc-checkbox-base';
-import { styles as checkboxStyle } from '@material/mwc-checkbox/mwc-checkbox.css';
-import styles from './icon-checkbox.scss?inline';
-import { html } from 'lit';
+import { css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
+import { CheckboxBase } from '@material/mwc-checkbox/mwc-checkbox-base';
+import { styles as checkboxStyle } from '@material/mwc-checkbox/mwc-checkbox.css';
+import styles from './icon-checkbox.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-icon-check-item': CovalentIconCheckToggleBase;
+    'cv-icon-check-item': CovalentIconCheckToggleBase;
   }
 }
 
-@customElement('td-checkbox-icon')
+@customElement('cv-checkbox-icon')
 export class CovalentIconCheckToggleBase extends CheckboxBase {
   static override styles = [
     css`

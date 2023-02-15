@@ -1,14 +1,14 @@
 import './side-sheet';
 import '../button/button';
-//import { Active as ActiveStatusHeader } from '../status-header/status-header.stories';
-// import * as tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html';
+import { Active as ActiveStatusHeader } from '../status-header/status-header.stories';
+import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
 
 export default {
   title: 'Components/Side sheet',
   argTypes: { onClick: { action: 'clicked' } },
   parameters: {
     actions: {
-      handles: ['click td-button'],
+      handles: ['click cv-button'],
     },
   },
 };
@@ -17,9 +17,9 @@ export const Basic = () => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
-      const sideSheet = document.querySelector('td-side-sheet');
+      const sideSheet = document.querySelector('cv-side-sheet');
       document
-        .querySelector('td-button')
+        .querySelector('cv-button')
         ?.addEventListener('click', () =>
           sideSheet?.open ? sideSheet.close() : sideSheet?.show()
         );
@@ -27,9 +27,9 @@ export const Basic = () => {
     { once: true }
   );
   return `
-        <td-button raised>Open side sheet</td-button>
-        <td-side-sheet heading="Sample side sheet">
-        </td-side-sheet>
+        <cv-button raised>Open side sheet</cv-button>
+        <cv-side-sheet heading="Sample side sheet">
+        </cv-side-sheet>
     `;
 };
 
@@ -54,12 +54,12 @@ export const Multiple = () => {
     { once: true }
   );
   return `
-        <td-button id="parentTarget" raised>Open side sheet</td-button>
-        <td-side-sheet id="parentSideSheet" heading="Sample side sheet">
-            <td-button id="childTarget" raised>Open child</td-button>
-        </td-side-sheet>
-        <td-side-sheet id="childSideSheet" heading="Child side sheet" >
-        </td-side-sheet>
+        <cv-button id="parentTarget" raised>Open side sheet</cv-button>
+        <cv-side-sheet id="parentSideSheet" heading="Sample side sheet">
+            <cv-button id="childTarget" raised>Open child</cv-button>
+        </cv-side-sheet>
+        <cv-side-sheet id="childSideSheet" heading="Child side sheet" >
+        </cv-side-sheet>
     `;
 };
 
@@ -67,10 +67,10 @@ export const StatusHeader = () => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
-      const sideSheet = document.querySelector('td-side-sheet');
+      const sideSheet = document.querySelector('cv-side-sheet');
       console.log(sideSheet);
       document
-        .querySelector('td-button')
+        .querySelector('cv-button')
         ?.addEventListener('click', () =>
           sideSheet?.open ? sideSheet.close() : sideSheet?.show()
         );
@@ -79,12 +79,14 @@ export const StatusHeader = () => {
   );
   return `
         <style>
-            td-side-sheet {
-                --td-side-sheet-width: 800px;
+            cv-side-sheet {
+                --cv-side-sheet-width: 800px;
             }
         </style>
-        <td-button raised>Open side sheet</td-button>
-        <td-side-sheet noPadding>
-        </td-side-sheet>
+        <cv-button raised>Open side sheet</cv-button>
+        <cv-side-sheet noPadding>
+          ${ActiveStatusHeader({state:'active'})}
+          ${tableRowSelectionContent}
+        </cv-side-sheet>
     `;
 };

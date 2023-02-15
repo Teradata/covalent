@@ -1,13 +1,13 @@
 @mixin theme {
   .status-header {
-    --td-status-header-background: transparent;
-    --td-status-header-icon-background: var(
+    --cv-status-header-background: transparent;
+    --cv-status-header-icon-background: var(
       --mdc-theme-surface-neutral-highlight-hover
     );
-    --td-status-header-icon-color: var(--mdc-theme-text-icon-on-background);
-    --td-status-header-status-color: var(--mdc-theme-on-surface);
+    --cv-status-header-icon-color: var(--mdc-theme-text-icon-on-background);
+    --cv-status-header-status-color: var(--mdc-theme-on-surface);
 
-    background-color: var(--td-status-header-background);
+    background-color: var(--cv-status-header-background);
 
     .status-header-content {
       max-width: inherit;
@@ -15,15 +15,15 @@
     }
 
     .status-header-icon {
-      background-color: var(--td-status-header-icon-background);
-      color: var(--td-status-header-icon-color);
+      background-color: var(--cv-status-header-icon-background);
+      color: var(--cv-status-header-icon-color);
     }
 
     .status-header-text {
       --mdc-theme-primary: var(--mdc-theme-surface-neutral-highlight-hover);
       --mdc-theme-on-surface: var(--mdc-theme-text-icon-on-background);
 
-      color: var(--td-status-header-status-color);
+      color: var(--cv-status-header-status-color);
     }
 
     .status-header-helper {
@@ -35,45 +35,45 @@
     }
 
     &.active {
-      --td-status-header-background: var(
+      --cv-status-header-background: var(
         --mdc-theme-surface-secondary-highlight
       );
-      --td-status-header-icon-background: var(
+      --cv-status-header-icon-background: var(
         --mdc-theme-surface-secondary-highlight-hover
       );
-      --td-status-header-icon-color: var(--mdc-theme-secondary);
-      --td-status-header-status-color: var(--mdc-theme-secondary);
+      --cv-status-header-icon-color: var(--mdc-theme-secondary);
+      --cv-status-header-status-color: var(--mdc-theme-secondary);
     }
 
     &.caution {
-      --td-status-header-background: var(--mdc-theme-surface-caution-highlight);
-      --td-status-header-icon-background: var(
+      --cv-status-header-background: var(--mdc-theme-surface-caution-highlight);
+      --cv-status-header-icon-background: var(
         --mdc-theme-surface-caution-highlight-hover
       );
-      --td-status-header-icon-color: var(--mdc-theme-caution);
-      --td-status-header-status-color: var(--mdc-theme-caution);
+      --cv-status-header-icon-color: var(--mdc-theme-caution);
+      --cv-status-header-status-color: var(--mdc-theme-caution);
     }
 
     &.error {
-      --td-status-header-background: var(
+      --cv-status-header-background: var(
         --mdc-theme-surface-negative-highlight
       );
-      --td-status-header-icon-background: var(
+      --cv-status-header-icon-background: var(
         --mdc-theme-surface-negative-highlight-hover
       );
-      --td-status-header-icon-color: var(--mdc-theme-negative);
-      --td-status-header-status-color: var(--mdc-theme-negative);
+      --cv-status-header-icon-color: var(--mdc-theme-negative);
+      --cv-status-header-status-color: var(--mdc-theme-negative);
     }
 
     &.positive {
-      --td-status-header-background: var(
+      --cv-status-header-background: var(
         --mdc-theme-surface-positive-highlight
       );
-      --td-status-header-icon-background: var(
+      --cv-status-header-icon-background: var(
         --mdc-theme-surface-positive-highlight-hover
       );
-      --td-status-header-icon-color: var(--mdc-theme-positive);
-      --td-status-header-status-color: var(--mdc-theme-positive);
+      --cv-status-header-icon-color: var(--mdc-theme-positive);
+      --cv-status-header-status-color: var(--mdc-theme-positive);
     }
   }
 }

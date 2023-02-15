@@ -1,9 +1,9 @@
 @use '@material/list' as list;
 @use '@material/list/evolution-mixins' as evolution-mixins;
 
-@mixin lists-theme($theme) {
-  $border: map-get($theme, divider);
-  $text: map-get($theme, text-primary-on-background);
+:host {
+  $border: var(--mdc-theme-border);
+  $text: var(--mdc-theme-text-primary-on-background);
 
   --mdc-list-single-line-height: 48px;
   --mdc-list-two-line-height: 72px;
@@ -47,14 +47,14 @@
 
   .mdc-deprecated-list.mdc-deprecated-list--avatar-list
     .mdc-deprecated-list-item__graphic,
-  td-list-item[graphic='avatar'] td-icon[slot='graphic'] {
+  cv-list-item[graphic='avatar'] cv-icon[slot='graphic'] {
     background-color: var(--mdc-theme-surface-neutral-highlight);
   }
 
-  td-list-item,
-  td-check-list-item,
+  cv-list-item,
+  cv-check-list-item,
   .mdc-list,
-  .td-list-item,
+  .cv-list-item,
   .mdc-deprecated-list,
   .mdc-deprecated-list-item__text,
   .mdc-list-item__primary-text {
@@ -64,9 +64,9 @@
     line-height: var(--mdc-typography-body1-line-height);
   }
 
-  td-list-item {
+  cv-list-item {
     span[slot='secondary'] {
-      td-icon {
+      cv-icon {
         font-size: 1rem;
         margin-right: 0.25rem;
         position: relative;
@@ -88,7 +88,7 @@
   }
 
   .beta-list-item {
-    --mdc-theme-primary: #{map-get($theme, surface-caution)};
+    --mdc-theme-primary: #{var(--mdc-theme-surface-caution)};
   }
 
   // Divider
