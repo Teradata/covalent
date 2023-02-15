@@ -8,7 +8,7 @@ import styles from './chip-set.scss?inline';
  *
  * @slot - This element has a slot
  */
-@customElement('td-chip-set')
+@customElement('cv-chip-set')
 export class CovalentChipSet extends ChipSetBase {
   static override styles = [
     css`
@@ -19,6 +19,6 @@ export class CovalentChipSet extends ChipSetBase {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-chip-set': CovalentChipSet;
+    'cv-chip-set': CovalentChipSet;
   }
 }

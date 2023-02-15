@@ -6,11 +6,11 @@ import baseStyles from './top-app-bar.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-top-app-bar': CovalentTopAppBarBase;
+    'cv-top-app-bar': CovalentTopAppBarBase;
   }
 }
 
-@customElement('td-top-app-bar')
+@customElement('cv-top-app-bar')
 export class CovalentTopAppBarBase extends TopAppBarBase {
   static override styles = [
     styles,

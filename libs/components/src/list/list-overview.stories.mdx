@@ -33,14 +33,14 @@ A list item may contain:
 - A trailing icon
 
 <Canvas>
-  <td-list>
-    <td-list-item graphic="avatar" hasMeta twoline>
+  <cv-list>
+    <cv-list-item graphic="avatar" hasMeta twoline>
       <span>Two-line list item</span>
       <span slot="secondary">Secondary line</span>
-      <td-icon slot="graphic">folder</td-icon>
-      <td-icon slot="meta">info</td-icon>
-    </td-list-item>
-  </td-list>
+      <cv-icon slot="graphic">folder</cv-icon>
+      <cv-icon slot="meta">info</cv-icon>
+    </cv-list-item>
+  </cv-list>
 </Canvas>
 
 ## Displaying status
@@ -48,39 +48,39 @@ A list item may contain:
 Show as a byline in your list item. Do not use the main icon or avatar - this is reserved for showing object type.
 
 <Canvas>
-  <td-list>
-    <td-list-item twoline graphic="avatar">
+  <cv-list>
+    <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
       <span slot="secondary" class="status-caution">
-        <td-icon>warning</td-icon>
+        <cv-icon>warning</cv-icon>
         Warning
       </span>
-      <td-icon slot="graphic" class="inverted">
+      <cv-icon slot="graphic" class="inverted">
         tag_faces
-      </td-icon>
-    </td-list-item>
+      </cv-icon>
+    </cv-list-item>
     <li divider role="separator"></li>
-    <td-list-item twoline graphic="avatar">
+    <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
       <span slot="secondary" class="status-negative">
-        <td-icon>error</td-icon>
+        <cv-icon>error</cv-icon>
         Error
       </span>
-      <td-icon slot="graphic" class="inverted">
+      <cv-icon slot="graphic" class="inverted">
         tag_faces
-      </td-icon>
-    </td-list-item>
+      </cv-icon>
+    </cv-list-item>
     <li divider role="separator"></li>
-    <td-list-item twoline graphic="avatar">
+    <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
       <span slot="secondary" class="status-positive">
-        <td-icon>check</td-icon>
+        <cv-icon>check</cv-icon>
         Successful
       </span>
-      <td-icon slot="graphic" class="inverted">
+      <cv-icon slot="graphic" class="inverted">
         tag_faces
-      </td-icon>
-    </td-list-item>
+      </cv-icon>
+    </cv-list-item>
     <li divider role="separator"></li>
-  </td-list>
+  </cv-list>
 </Canvas>

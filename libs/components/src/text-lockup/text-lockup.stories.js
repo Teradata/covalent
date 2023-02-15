@@ -43,12 +43,12 @@ export const textLockup = ({
   text,
 }) => {
   return `
-    <td-text-lockup
+    <cv-text-lockup
       subtext="${subText}"
       scale="${scale}"
       ${icon ? `icon="${icon}"` : ''}
       ${subTextState ? `state="${subTextState}"` : ''}
-      ${subTextTrailing ? 'trailingSubText' : ''}>${text}</td-text-lockup>
+      ${subTextTrailing ? 'trailingSubText' : ''}>${text}</cv-text-lockup>
   `;
 };
 

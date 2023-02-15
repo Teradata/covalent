@@ -5,11 +5,11 @@ import styles from './toolbar.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-toolbar': CovalentToolbarBase;
+    'cv-toolbar': CovalentToolbarBase;
   }
 }
 
-@customElement('td-toolbar')
+@customElement('cv-toolbar')
 export class CovalentToolbarBase extends TopAppBarBase {
   static override styles = [
     css`

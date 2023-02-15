@@ -1,7 +1,7 @@
 import './textfield';
 
 export default {
-  title: 'Components/Text Field',
+  title: 'Components/Text field',
   argTypes: {
     style: {
       options: ['outlined', 'filled'],
@@ -16,7 +16,7 @@ export default {
 
 const Template = ({ icon, iconTrailing, label, style, required, helper }) => {
   return `
-        <td-textfield 
+        <cv-textfield 
             label="${label ?? style}"
             ${style}
             ${
@@ -28,7 +28,7 @@ const Template = ({ icon, iconTrailing, label, style, required, helper }) => {
             }
             ${helper ? `helper="${helper}"` : null}
             ${required ? `required` : null}>
-        </td-textfield>`;
+        </cv-textfield>`;
 };
 
 export const Basic = Template.bind({});

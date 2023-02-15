@@ -29,10 +29,10 @@ export class AlertBase extends LitElement {
   open = true;
 
   @property({ type: String }) titleText = '';
-
   @property({ type: String }) descriptionText = '';
 
   @property({ type: String }) icon = '';
+  @property({ type: String }) iconAriaLabel = '';
 
   @property({ type: Boolean }) inline = false;
   /**
@@ -46,14 +46,14 @@ export class AlertBase extends LitElement {
   protected override render() {
     const classes = {
       'mdc-banner': true,
-      'td-banner--inline': this.inline,
+      'cv-banner--inline': this.inline,
       negative: this.state === 'negative',
       positive: this.state === 'positive',
       caution: this.state === 'caution',
       active: this.state === 'active',
     };
     return html` <div class="${classMap(classes)}" role="banner">
-      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive">
+      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive" aria-label="${this.titleText}">
         <div class="mdc-banner__graphic-text-wrapper">
           ${this.icon ? this.renderIcon() : ''}
           <div class="mdc-banner__text">
@@ -70,9 +70,9 @@ export class AlertBase extends LitElement {
 
   /** @soyTemplate */
   protected renderIcon(): TemplateResult {
-    return html` <div class="mdc-banner__graphic" role="img" alt="">
+    return html` <div class="mdc-banner__graphic" role="img" aria-label="${this.iconAriaLabel}">
       <slot name="icon">
-        <td-icon class="mdc-banner__icon"> ${this.icon} </td-icon>
+        <cv-icon class="mdc-banner__icon"> ${this.icon} </cv-icon>
       </slot>
     </div>`;
   }

@@ -4,11 +4,11 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-icon': CovalentIcon;
+    'cv-icon': CovalentIcon;
   }
 }
 
-@customElement('td-icon')
+@customElement('cv-icon')
 export class CovalentIcon extends Icon {
   static override styles = [styles];
 }

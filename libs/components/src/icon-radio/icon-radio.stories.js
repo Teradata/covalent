@@ -28,20 +28,20 @@ export default {
 export const Template = ({ width, height, iconOnly }) => {
   return `
     <div style="width:600px; display:flex; border:solid 1px var(--mdc-theme-border); padding: 16px 0px; justify-content: center; gap:16px;">
-      <td-radio-icon width=${width} height=${height} ${
+      <cv-radio-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   }>
-        <td-icon slot="icon">work</td-icon>
+        <cv-icon slot="icon">work</cv-icon>
         <div slot="text">Balanced</div>
         <div slot="text">Every week</div>
-      </td-radio-icon>
-      <td-radio-icon width=${width} height=${height} ${
+      </cv-radio-icon>
+      <cv-radio-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   }>
-        <td-icon slot="icon">work</td-icon>
+        <cv-icon slot="icon">work</cv-icon>
         <div slot="text">Balanced</div>
         <div slot="text">Every week</div>
-      </td-radio-icon>
+      </cv-radio-icon>
     </div>
   `;
 };

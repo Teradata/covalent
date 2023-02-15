@@ -44,10 +44,10 @@ import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
     .actions {
         margin-right: 16px;
     }
-    .actions td-button:first-of-type {
+    .actions cv-button:first-of-type {
         margin-right: 8px;
     }
-    td-tab-bar {
+    cv-tab-bar {
         width: 405px;
         margin-left: 16px;
         margin-top: 8px;
@@ -65,7 +65,7 @@ import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
     .content div:first-of-type {
         width: 60%;
     }
-    .content td-icon-button {
+    .content cv-icon-button {
         position: absolute;
         right: 8px;
         top: -8px;
@@ -185,7 +185,7 @@ import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
     .object-list-left > div.list-item {
         height: 33%;
     }
-    td-icon {
+    cv-icon {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -222,20 +222,20 @@ For content that’s intended to be browsed for information, display in read-onl
       Interdum pellentesque cras ornare porttitor tellus ante.
     </div>
     <div class="actions">
-      <td-button outlined slot="buttonActions">
+      <cv-button outlined slot="buttonActions">
         Action
-      </td-button>
-      <td-button outlined slot="buttonActions">
+      </cv-button>
+      <cv-button outlined slot="buttonActions">
         Action
-      </td-button>
+      </cv-button>
     </div>
   </div>
-  <td-tab-bar activeIndex="0">
-    <td-tab null label="Details"></td-tab>
-    <td-tab null label="Tab 2"></td-tab>
-    <td-tab null label="Tab 3"></td-tab>
-    <td-tab null label="Tab 4"></td-tab>
-  </td-tab-bar>
+  <cv-tab-bar activeIndex="0">
+    <cv-tab null label="Details"></cv-tab>
+    <cv-tab null label="Tab 2"></cv-tab>
+    <cv-tab null label="Tab 3"></cv-tab>
+    <cv-tab null label="Tab 4"></cv-tab>
+  </cv-tab-bar>
   <hr />
   <div class="content">
     <div>
@@ -246,13 +246,13 @@ For content that’s intended to be browsed for information, display in read-onl
         quis. Id pharetra lacinia donec orci.
       </div>
       <div class="subtitle">Tags</div>
-      <td-chip-set>
-        <td-chip label="Lorem"></td-chip>
-        <td-chip label="Ipsum"></td-chip>
-        <td-chip label="Dolor sit"></td-chip>
-      </td-chip-set>
+      <cv-chip-set>
+        <cv-chip label="Lorem"></cv-chip>
+        <cv-chip label="Ipsum"></cv-chip>
+        <cv-chip label="Dolor sit"></cv-chip>
+      </cv-chip-set>
     </div>
-    <td-icon-button icon="edit"></td-icon-button>
+    <cv-icon-button icon="edit"></cv-icon-button>
   </div>
 </div>
 
@@ -274,12 +274,12 @@ Editing takes place in context, not in a separate view. Show form fields by defa
       <div class="skeleton-text skeleton-title">
         Elit in semper faucibus aliquam. Nisl, augue porta eu urna.
       </div>
-      <td-tab-bar activeIndex="0">
-        <td-tab null label="Details ●"></td-tab>
-        <td-tab null label="Tab 2"></td-tab>
-        <td-tab null label="Tab 3"></td-tab>
-        <td-tab null label="Tab 4"></td-tab>
-      </td-tab-bar>
+      <cv-tab-bar activeIndex="0">
+        <cv-tab null label="Details ●"></cv-tab>
+        <cv-tab null label="Tab 2"></cv-tab>
+        <cv-tab null label="Tab 3"></cv-tab>
+        <cv-tab null label="Tab 4"></cv-tab>
+      </cv-tab-bar>
       <hr />
       <div class="list-item list-item-blue-bg">
         <div class="skeleton-text">Filler text</div>
@@ -308,14 +308,14 @@ Editing takes place in context, not in a separate view. Show form fields by defa
           <div class="skeleton-square"></div>
         </div>
         <div class="list-item list-item-blue-bg object-list-item">
-          <td-icon>square</td-icon>
+          <cv-icon>square</cv-icon>
           <div>
             <div class="list-item-text">● Interdum pellentesque cra...</div>
             <div class="list-item-subtext">June 24, 2020 5:12 PM</div>
           </div>
         </div>
         <div class="list-item object-list-item">
-          <td-icon></td-icon>
+          <cv-icon></cv-icon>
           <div>
             <div class="skeleton-text">Interdum pellentesque cra...</div>
             <div class="skeleton-text">June 24, 2020 5:12 PM</div>
@@ -343,21 +343,21 @@ Editing takes place in context, not in a separate view. Show form fields by defa
       <div class="new-text-block">Disable actions.</div>
     </div>
     <div class="changes-example">
-      <td-tab-bar activeIndex="0">
-        <td-tab null label="Details"></td-tab>
-        <td-tab null label="Tab 2"></td-tab>
-        <td-tab null label="Tab 3"></td-tab>
-        <td-tab null label="Tab 4"></td-tab>
-      </td-tab-bar>
+      <cv-tab-bar activeIndex="0">
+        <cv-tab null label="Details"></cv-tab>
+        <cv-tab null label="Tab 2"></cv-tab>
+        <cv-tab null label="Tab 3"></cv-tab>
+        <cv-tab null label="Tab 4"></cv-tab>
+      </cv-tab-bar>
       <hr />
-      <td-action-ribbon labelText="No changes" state="undefined" null>
-        <td-button slot="action-items" outlined>
+      <cv-action-ribbon labelText="No changes" state="undefined" null>
+        <cv-button slot="action-items" outlined>
           Cancel
-        </td-button>
-        <td-button slot="action-items" raised disabled>
+        </cv-button>
+        <cv-button slot="action-items" raised disabled>
           Save
-        </td-button>
-      </td-action-ribbon>
+        </cv-button>
+      </cv-action-ribbon>
       <div class="action-ribbon-bottom-content">
         <div class="skeleton-text">
           Filler text filler text filler text filler text filler text filler
@@ -405,25 +405,25 @@ Editing takes place in context, not in a separate view. Show form fields by defa
       <div class="new-text-block">Enable any relevant actions.</div>
     </div>
     <div class="changes-example">
-      <td-tab-bar activeIndex="0">
-        <td-tab null label="Details ●"></td-tab>
-        <td-tab null label="Tab 2"></td-tab>
-        <td-tab null label="Tab 3"></td-tab>
-        <td-tab null label="Tab 4"></td-tab>
-      </td-tab-bar>
+      <cv-tab-bar activeIndex="0">
+        <cv-tab null label="Details ●"></cv-tab>
+        <cv-tab null label="Tab 2"></cv-tab>
+        <cv-tab null label="Tab 3"></cv-tab>
+        <cv-tab null label="Tab 4"></cv-tab>
+      </cv-tab-bar>
       <hr />
-      <td-action-ribbon
+      <cv-action-ribbon
         labelText="You have unsaved changes"
         state="active"
         null
       >
-        <td-button slot="action-items" outlined>
+        <cv-button slot="action-items" outlined>
           Cancel
-        </td-button>
-        <td-button slot="action-items" raised>
+        </cv-button>
+        <cv-button slot="action-items" raised>
           Save
-        </td-button>
-      </td-action-ribbon>
+        </cv-button>
+      </cv-action-ribbon>
       <div class="action-ribbon-bottom-content">
         <div class="skeleton-text">
           Filler text filler text filler text filler text filler text filler

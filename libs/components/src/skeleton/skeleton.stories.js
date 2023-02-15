@@ -48,26 +48,26 @@ export const Checkbox = ({ label = 'Bananas', indeterminate }) => {
   const container = document.createElement('div');
   container.innerHTML = `
       <style>
-          td-formfield {
+          cv-formfield {
               display: block;
           }
           .child {
               margin-left: 20px;
           }
       </style>
-      <td-formfield label="${label}">
-          <td-checkbox ${indeterminate ? `indeterminate` : null}></td-checkbox>
-      </td-formfield>
+      <cv-formfield label="${label}">
+          <cv-checkbox ${indeterminate ? `indeterminate` : null}></cv-checkbox>
+      </cv-formfield>
       
-      <td-formfield label="${label}">
-          <td-checkbox class="child"></td-checkbox>
-      </td-formfield>
+      <cv-formfield label="${label}">
+          <cv-checkbox class="child"></cv-checkbox>
+      </cv-formfield>
       
-      <td-formfield label="${label}">
-          <td-checkbox class="child" checked></td-checkbox>
-      </td-formfield>`;
+      <cv-formfield label="${label}">
+          <cv-checkbox class="child" checked></cv-checkbox>
+      </cv-formfield>`;
 
-  const labels = container.getElementsByTagName('td-formfield');
+  const labels = container.getElementsByTagName('cv-formfield');
   Array.from(labels).forEach((label) => {
     label.classList.add(skeletonClsName);
     label.classList.add(skeletonEffect);

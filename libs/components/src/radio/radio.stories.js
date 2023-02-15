@@ -9,40 +9,40 @@ export default {
 };
 
 const Template = ({ disabled }) => {
-  return `<td-radio
+  return `<cv-radio
                 ${disabled ? `disabled` : null}>
-            </td-radio>
-            <td-radio
+            </cv-radio>
+            <cv-radio
                 checked
                 ${disabled ? `disabled` : null}>
-            </td-radio>
-            <td-radio
+            </cv-radio>
+            <cv-radio
                 indeterminate
                 ${disabled ? `disabled` : null}>
-            </td-radio>`;
+            </cv-radio>`;
 };
 
 const LabelTemplate = ({ label = 'Bananas', indeterminate }) => {
   return `
             <style>
-                td-formfield {
+                cv-formfield {
                     display: block;
                 }
                 .child {
                     margin-left: 20px;
                 }
             </style>
-            <td-formfield label="${label}">
-                <td-radio ${indeterminate ? `indeterminate` : null}></td-radio>
-            </td-formfield>
+            <cv-formfield label="${label}">
+                <cv-radio ${indeterminate ? `indeterminate` : null}></cv-radio>
+            </cv-formfield>
             
-            <td-formfield label="${label}">
-                <td-radio class="child"></td-radio>
-            </td-formfield>
+            <cv-formfield label="${label}">
+                <cv-radio class="child"></cv-radio>
+            </cv-formfield>
             
-            <td-formfield label="${label}">
-                <td-radio class="child" checked></td-radio>
-            </td-formfield>`;
+            <cv-formfield label="${label}">
+                <cv-radio class="child" checked></cv-radio>
+            </cv-formfield>`;
 };
 
 export const Basic = Template.bind({});

@@ -1,7 +1,7 @@
 import './textarea';
 
 export default {
-  title: 'Components/Textarea',
+  title: 'Components/Text area',
   argTypes: {
     style: {
       options: ['outlined', 'filled'],
@@ -13,12 +13,12 @@ export default {
 
 const Template = ({ label, style, required, helper }) => {
   return `
-        <td-textarea 
+        <cv-textarea 
             label="${label ?? style}"
             ${style}
             ${helper ? `helper="${helper}"` : null}
             ${required ? `required` : null}>
-        </td-textarea>`;
+        </cv-textarea>`;
 };
 
 export const Basic = Template.bind({});

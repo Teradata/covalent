@@ -15,7 +15,7 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
 <style>{`
     {/* EXAMPLE */}
     
-    td-button {
+    cv-button {
       border-radius: 8px;
     }
     .textfield-primary {
@@ -65,7 +65,7 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
         display: flex;
         column-gap: 16px;
     }
-    div.cardContainer td-card div {
+    div.cardContainer cv-card div {
         padding: 16px 16px 32px;
     }
     .mdc-dialog__header {
@@ -77,7 +77,7 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
         background-color: #161C1F;
         color: white;
     }
-    .darkText td-button {
+    .darkText cv-button {
         --mdc-theme-primary: var(--mdc-theme-text-primary-on-dark);
         --mdc-button-outline-color: white;
         margin-right: 8px;
@@ -85,7 +85,7 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
     .light {
         background-color: #F5F5F5;
     }
-    .lightText td-button {
+    .lightText cv-button {
         --mdc-theme-primary: var(--mdc-theme-text-primary-on-dark);
         --mdc-button-outline-color: black;
         margin-right: 8px;
@@ -247,7 +247,7 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
       padding-left: 16px;
       color: #FFFFFFDE;
     }
-    .td-teal-500 {
+    .cv-teal-500 {
       background-color: #00B2B1;
     }
     .accent-background-light {
@@ -264,7 +264,7 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
     .accent-foreground-dark {
       background-color: #045C5C;
     }
-    .td-slate-500 {
+    .cv-slate-500 {
       background-color: #616d73;
     }
     .primary-foreground-dark {
@@ -319,7 +319,7 @@ Each color is defined in both a light and dark version. These are designed to wo
 #### Examples
 
 <div class="light lightText exampleContainer">
-  <td-card cardTitle="Title" class="card">
+  <cv-card cardTitle="Title" class="card">
     <div slot="card-content" class="cardContent">
       <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -329,56 +329,56 @@ Each color is defined in both a light and dark version. These are designed to wo
       </div>
       <div class="mdc-layout-grid">
         <div class="mdc-layout-grid__inner">
-          <td-textfield
+          <cv-textfield
             label="Label"
             value="Value"
             outlined
             class="mdc-layout-grid__cell--span-6"
-          ></td-textfield>
-          <td-textfield
+          ></cv-textfield>
+          <cv-textfield
             label="Label"
             value="Value"
             outlined
             class="mdc-layout-grid__cell--span-6 textfield-negative"
-          ></td-textfield>
-          <td-textfield
+          ></cv-textfield>
+          <cv-textfield
             label="Label"
             value="Value"
             outlined
             class="mdc-layout-grid__cell--span-6  textfield-primary"
-          ></td-textfield>
-          <td-textfield
+          ></cv-textfield>
+          <cv-textfield
             label="Label"
             value="Value"
             outlined
             class="mdc-layout-grid__cell--span-6"
-          ></td-textfield>
+          ></cv-textfield>
         </div>
       </div>
     </div>
-  </td-card>
+  </cv-card>
   <div class="cardContainer">
-    <td-card cardTitle="Title">
+    <cv-card cardTitle="Title">
       <div slot="card-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commo
       </div>
-    </td-card>
-    <td-card cardTitle="Title">
+    </cv-card>
+    <cv-card cardTitle="Title">
       <div slot="card-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commo
       </div>
-    </td-card>
+    </cv-card>
   </div>
   <div class="dialog">
     <div class="dialogContainer">
       <div>Title</div>
-      <td-icon>close</td-icon>
+      <cv-icon>close</cv-icon>
     </div>
     <div class="dialogContent">
       <div>
@@ -386,15 +386,15 @@ Each color is defined in both a light and dark version. These are designed to wo
         tempor incididunt ut labore et dolore magna aliqua.
       </div>
       <div class="dialogActions">
-        <td-button outlined>BUTTON TEXT</td-button>
-        <td-button class="dark primary">BUTTON TEXT</td-button>
+        <cv-button outlined>BUTTON TEXT</cv-button>
+        <cv-button class="dark primary">BUTTON TEXT</cv-button>
       </div>
     </div>
   </div>
 </div>
 
 <div class="dark darkText exampleContainer">
-  <td-card cardTitle="Title" class="card">
+  <cv-card cardTitle="Title" class="card">
     <div slot="card-content" class="cardContent">
       <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -404,62 +404,62 @@ Each color is defined in both a light and dark version. These are designed to wo
       </div>
       <div class="mdc-layout-grid">
         <div class="mdc-layout-grid__inner">
-          <td-textfield
+          <cv-textfield
             label="Label"
             value="Value"
             outlined
             class="mdc-layout-grid__cell--span-6"
-          ></td-textfield>
-          <td-textfield
+          ></cv-textfield>
+          <cv-textfield
             label="Label"
             value="Value"
             outlined
             class="mdc-layout-grid__cell--span-6 textfield-negative"
-          ></td-textfield>
-          <td-textfield
+          ></cv-textfield>
+          <cv-textfield
             label="Label"
             value="Value"
             outlined
             class="mdc-layout-grid__cell--span-6 textfield-primary"
-          ></td-textfield>
-          <td-textfield
+          ></cv-textfield>
+          <cv-textfield
             label="Label"
             value="Value"
             outlined
             class="mdc-layout-grid__cell--span-6"
-          ></td-textfield>
+          ></cv-textfield>
         </div>
       </div>
     </div>
     <div slot="card-actions" class="mdc-card__action-buttons">
-      <td-button outlined class="whiteOutline">
+      <cv-button outlined class="whiteOutline">
         BUTTON TEXT
-      </td-button>
-      <td-button class="primary">BUTTON TEXT</td-button>
+      </cv-button>
+      <cv-button class="primary">BUTTON TEXT</cv-button>
     </div>
-  </td-card>
+  </cv-card>
   <div class="cardContainer">
-    <td-card cardTitle="Title">
+    <cv-card cardTitle="Title">
       <div slot="card-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commo
       </div>
-    </td-card>
-    <td-card cardTitle="Title">
+    </cv-card>
+    <cv-card cardTitle="Title">
       <div slot="card-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commo
       </div>
-    </td-card>
+    </cv-card>
   </div>
   <div class="dialog darkDialog">
     <div class="dialogContainer">
       <div>Title</div>
-      <td-icon>close</td-icon>
+      <cv-icon>close</cv-icon>
     </div>
     <div class="dialogContent">
       <div>
@@ -467,8 +467,8 @@ Each color is defined in both a light and dark version. These are designed to wo
         tempor incididunt ut labore et dolore magna aliqua.
       </div>
       <div class="dialogActions">
-        <td-button outlined>BUTTON TEXT</td-button>
-        <td-button class="light primary">BUTTON TEXT</td-button>
+        <cv-button outlined>BUTTON TEXT</cv-button>
+        <cv-button class="light primary">BUTTON TEXT</cv-button>
       </div>
     </div>
   </div>
@@ -483,14 +483,14 @@ Each color is defined in both a light and dark version. These are designed to wo
 | <div>Text</div> <div>Default text color</div>             | <div class="primaryText">Lorem ipsum dolor sit amet</div>                                                      | #000000 <br/> 0.87 opacity   | #ffffff <br/> 1.00 opacity  | --mdc-theme-text-primary-on-background   |
 | <div>Secondary text</div> <div>Less emphasized text</div> | <div class="secondary">Lorem ipsum dolor sit amet</div>                                                        | #000000 <br/> 0.54 opacity   | #ffffff <br/> 0.7 opacity   | --mdc-theme-text-secondary-on-background |
 | <div>Disabled text</div>                                  | <div class="disabled">Lorem ipsum dolor sit amet</div>                                                         | #000000 <br/> 0.38 opacity   | #ffffff <br/> 0.5 opacity   | --mdc-theme-text-disabled-on-background  |
-| <div>Icon</div><div>Default icon color</div>              | <td-icon>directions_boat</td-icon>                                                                             | #000000 <br/> 0.54 opacity   | #ffffff <br/> 0.7 opacity   | --mdc-theme-text-secondary-on-background |
-| <div>Disabled icon</div>                                  | <td-icon class="disabled">directions_boat</td-icon>                                                            | #000000 <br/> 0.38 opacity   | #ffffff <br/> 0.5 opacity   | --mdc-theme-text-disabled-on-background  |
+| <div>Icon</div><div>Default icon color</div>              | <cv-icon>directions_boat</cv-icon>                                                                             | #000000 <br/> 0.54 opacity   | #ffffff <br/> 0.7 opacity   | --mdc-theme-text-secondary-on-background |
+| <div>Disabled icon</div>                                  | <cv-icon class="disabled">directions_boat</cv-icon>                                                            | #000000 <br/> 0.38 opacity   | #ffffff <br/> 0.5 opacity   | --mdc-theme-text-disabled-on-background  |
 | <div>Divider</div>                                        | <div class="divider"></div>                                                                                    | #000000 <br/> 0.12 opacity   | #ffffff <br/> 0.2 opacity   | --mdc-theme-border                       |
-| <div>Positive</div>                                       | <div class="positiveFg">Lorem ipsum dolor sit amet</div> <td-icon class="positiveFg">directions_boat</td-icon> | #0a7e07                      | #42bd41                     | --mdc-theme-positive                     |
-| <div>Caution</div>                                        | <div class="cautionFg">Lorem ipsum dolor sit amet</div> <td-icon class="cautionFg">directions_boat</td-icon>   | #ff8f00                      | #ffb74d                     | --mdc-theme-caution                      |
-| <div>Negative</div>                                       | <div class="negativeFg">Lorem ipsum dolor sit amet</div> <td-icon class="negativeFg">directions_boat</td-icon> | #b11d00                      | #f46f5a                     | --mdc-theme-negative                     |
-| <div>Primary</div>                                        | <div class="primaryFg">Lorem ipsum dolor sit amet</div> <td-icon class="primaryFg">directions_boat</td-icon>   | #007373                      | #59cecd                     | --mdc-theme-primary                      |
-| <div>Emphasis</div>                                       | <div class="emphasisFg">Lorem ipsum dolor sit amet</div> <td-icon class="emphasisFg">directions_boat</td-icon> | #546e7a                      | #b0bec5                     | --mdc-theme-emphasis                     |
+| <div>Positive</div>                                       | <div class="positiveFg">Lorem ipsum dolor sit amet</div> <cv-icon class="positiveFg">directions_boat</cv-icon> | #0a7e07                      | #42bd41                     | --mdc-theme-positive                     |
+| <div>Caution</div>                                        | <div class="cautionFg">Lorem ipsum dolor sit amet</div> <cv-icon class="cautionFg">directions_boat</cv-icon>   | #ff8f00                      | #ffb74d                     | --mdc-theme-caution                      |
+| <div>Negative</div>                                       | <div class="negativeFg">Lorem ipsum dolor sit amet</div> <cv-icon class="negativeFg">directions_boat</cv-icon> | #b11d00                      | #f46f5a                     | --mdc-theme-negative                     |
+| <div>Primary</div>                                        | <div class="primaryFg">Lorem ipsum dolor sit amet</div> <cv-icon class="primaryFg">directions_boat</cv-icon>   | #007373                      | #59cecd                     | --mdc-theme-primary                      |
+| <div>Emphasis</div>                                       | <div class="emphasisFg">Lorem ipsum dolor sit amet</div> <cv-icon class="emphasisFg">directions_boat</cv-icon> | #546e7a                      | #b0bec5                     | --mdc-theme-emphasis                     |
 
 #### Background colors
 
@@ -524,9 +524,9 @@ You should almost never use these. They're here to explain the initial theme set
 
 | Name                       | Light mode example                                              | Dark mode example                                               |
 | -------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| <div>Accent</div>          | <div class="td-teal-500">TD Teal 500</div>                      | <div class="td-teal-500">TD Teal 500</div>                      |
+| <div>Accent</div>          | <div class="cv-teal-500">TD Teal 500</div>                      | <div class="cv-teal-500">TD Teal 500</div>                      |
 | <div>Accent (light)</div>  | <div class="accent-background-light">Background - Accent</div>  | <div class="accent-foreground-light">Foreground - Accent</div>  |
 | <div>Accent (dark)</div>   | <div class="accent-background-dark">Foreground - Accent</div>   | <div class="accent-foreground-dark">Background - Accent</div>   |
-| <div>Primary</div>         | <div class="td-slate-500">TD Slate 500</div>                    | <div class="td-slate-500">TD Slate 500</div>                    |
+| <div>Primary</div>         | <div class="cv-slate-500">TD Slate 500</div>                    | <div class="cv-slate-500">TD Slate 500</div>                    |
 | <div>Primary (dark)</div>  | <div class="primary-foreground-dark">Foreground - Primary</div> | <div class="primary-background-dark">Background - Primary</div> |
 | <div>Primary (light)</div> | <div class="primary-light">Background - Primary</div>           | <div class="primary-light">Foreground - Primary</div>           |

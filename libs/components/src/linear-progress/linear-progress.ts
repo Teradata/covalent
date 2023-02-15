@@ -1,14 +1,16 @@
-import { LinearProgressBase } from '@material/mwc-linear-progress/mwc-linear-progress-base';
-import { styles } from '@material/mwc-linear-progress/mwc-linear-progress.css';
+import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { LinearProgressBase } from '@material/mwc-linear-progress/mwc-linear-progress-base';
+import { styles as baseStyles } from '@material/mwc-linear-progress/mwc-linear-progress.css';
+import styles from './linear-progress.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-linear-progress': CovalentLinearProgressBase;
+    'cv-linear-progress': CovalentLinearProgressBase;
   }
 }
 
-@customElement('td-linear-progress')
+@customElement('cv-linear-progress')
 export class CovalentLinearProgressBase extends LinearProgressBase {
-  static override styles = [styles];
+  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }

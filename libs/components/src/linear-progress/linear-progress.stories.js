@@ -21,11 +21,12 @@ export default {
 };
 
 const Template = ({ indeterminate, buffer, progress, reverse }) => {
-  const progressBar = document.createElement('td-linear-progress');
+  const progressBar = document.createElement('cv-linear-progress');
   progressBar.indeterminate = indeterminate;
   progressBar.buffer = buffer;
   progressBar.progress = progress;
   progressBar.reverse = reverse;
+  progressBar.ariaLabel = 'Example progress bar'
 
   return progressBar;
 };

@@ -7,7 +7,7 @@
 
 $space: chip-set-theme.$space-between-chips;
 
-::slotted(td-chip) {
+::slotted(cv-chip) {
   @include rtl.reflexive-property(margin, $space, 0);
 
   margin-top: math.div($space, 2);

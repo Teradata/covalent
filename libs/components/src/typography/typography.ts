@@ -4,11 +4,11 @@ import styles from './typography.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-typography': CovalentTypography;
+    'cv-typography': CovalentTypography;
   }
 }
 
-@customElement('td-typography')
+@customElement('cv-typography')
 export class CovalentTypography extends LitElement {
   static override styles = [
     css`

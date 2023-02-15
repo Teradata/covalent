@@ -3,7 +3,7 @@
   "platforms": {
     "json": {
       "transformGroup": "assets",
-      "prefix": "td",
+      "prefix": "cv",
       "buildPath": "build/json/",
       "files": [
         {
@@ -24,7 +24,7 @@
     },
     "css": {
       "transformGroup": "css",
-      "prefix": "td",
+      "prefix": "cv",
       "buildPath": "build/css/",
       "files": [
         {
@@ -41,7 +41,7 @@
         "size/rem",
         "color/css"
       ],
-      "prefix": "td",
+      "prefix": "cv",
       "buildPath": "build/js/",
       "files": [
         {

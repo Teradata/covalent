@@ -4,11 +4,11 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-list': CovalentListBase;
+    'cv-list': CovalentListBase;
   }
 }
 
-@customElement('td-list')
+@customElement('cv-list')
 export class CovalentListBase extends ListBase {
   static override styles = [styles];
 }

@@ -5,11 +5,11 @@ import styles from './tree-list-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-tree-list-item': CovalentTreeListItem;
+    'cv-tree-list-item': CovalentTreeListItem;
   }
 }
 
-@customElement('td-tree-list-item')
+@customElement('cv-tree-list-item')
 export class CovalentTreeListItem extends LitElement {
   static override styles = [
     css`
@@ -36,12 +36,12 @@ export class CovalentTreeListItem extends LitElement {
       close: !this.isOpen,
     };
     const arrowIcon = 'arrow_right';
-    const icon = html`<td-icon>${this.icon}</td-icon>`;
-    const arrow = html`<td-icon class="${classMap(animation)} arrowIcon"
-      >${arrowIcon}</td-icon
+    const icon = html`<cv-icon>${this.icon}</cv-icon>`;
+    const arrow = html`<cv-icon class="${classMap(animation)} arrowIcon"
+      >${arrowIcon}</cv-icon
     >`;
 
-    // The nest slot should only take td-tree-list-item components. Otherwise use default value and display "No results".
+    // The nest slot should only take cv-tree-list-item components. Otherwise use default value and display "No results".
     return html`
       <div
         class="itemContent mdc-ripple-surface"
@@ -74,7 +74,7 @@ export class CovalentTreeListItem extends LitElement {
       detail: {
         message: `Emitting an event from ${this}`,
       },
-      // bubbles and composed are required in order to allow custom event to pass through shadow DOM boundary to td-tree-list.
+      // bubbles and composed are required in order to allow custom event to pass through shadow DOM boundary to cv-tree-list.
       bubbles: true,
       composed: true,
     });

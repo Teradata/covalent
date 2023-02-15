@@ -6,7 +6,7 @@ import baseStyles from './side-sheet.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-side-sheet': CovalentSideSheet;
+    'cv-side-sheet': CovalentSideSheet;
   }
 }
 
@@ -15,7 +15,7 @@ declare global {
  *
  * @slot - This element has a slot
  */
-@customElement('td-side-sheet')
+@customElement('cv-side-sheet')
 export class CovalentSideSheet extends CovalentDialogBase {
   static override styles = [
     styles,

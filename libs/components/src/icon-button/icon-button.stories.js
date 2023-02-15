@@ -19,10 +19,10 @@ export default {
 
 const Template = ({ disabled, icon, onClick }) => {
   return `
-    <td-icon-button id="myIconButton"
+    <cv-icon-button id="myIconButton"
       ${icon ? `icon="${icon}"` : null}
       ${disabled ? `disabled` : null}>
-    </td-icon-button>`;
+    </cv-icon-button>`;
 };
 
 export const Basic = Template.bind({});

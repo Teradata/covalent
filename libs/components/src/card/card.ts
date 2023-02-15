@@ -5,11 +5,11 @@ import styles from './card.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-card': CovalentCardBase;
+    'cv-card': CovalentCardBase;
   }
 }
 
-@customElement('td-card')
+@customElement('cv-card')
 export class CovalentCardBase extends CardBase {
   static override styles = [
     css`
