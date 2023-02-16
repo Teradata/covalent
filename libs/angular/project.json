@@ -35,8 +35,8 @@
         "commands": [
           "mkdir -p dist/libs/angular/common/",
           "mkdir -p dist/libs/angular/theming/prebuilt/",
-          "./node_modules/.bin/sass --load-path=node_modules --trace --color --style=compressed ./libs/angular/common/prebuilt/:./dist/libs/angular/common/",
-          "./node_modules/.bin/sass --load-path=node_modules --trace --color --style=compressed ./libs/angular/theming/prebuilt/:./dist/libs/angular/theming/prebuilt/"
+          "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/angular/common/prebuilt/:./dist/libs/angular/common/",
+          "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/angular/theming/prebuilt/:./dist/libs/angular/theming/prebuilt/"
         ],
         "parallel": false
       }
