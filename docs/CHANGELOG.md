@@ -1,3 +1,14 @@
+# [4.16.0-beta.2](https://github.com/Teradata/covalent/compare/v4.16.0-beta.1...v4.16.0-beta.2) (2023-02-16)
+
+### Bug Fixes
+
+- **build:** adding load paths for angular scss build ([881d60e](https://github.com/Teradata/covalent/commit/881d60efa01e57260b4f20e689e521a31784ca19))
+
+### Features
+
+- **components:** build updates ([d632683](https://github.com/Teradata/covalent/commit/d632683cd60880dd835a0af36ae0c7f0e6b70765))
+- **components:** switching over to vite ([e7c9f6a](https://github.com/Teradata/covalent/commit/e7c9f6ae5ca82165c897e171da3f7db86c24b3ae))
+
 # [4.16.0-beta.1](https://github.com/Teradata/covalent/compare/v4.15.0...v4.16.0-beta.1) (2023-01-23)
 
 ### Bug Fixes
