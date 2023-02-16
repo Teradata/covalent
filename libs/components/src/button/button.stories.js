@@ -58,7 +58,7 @@ const Template = ({
   isNegative,
   isPrimary,
 }) => {
-  return `<td-button id="myButton"
+  return `<cv-button id="myButton"
                       label="${label}"
                       ${showIcon && trailingIcon ? `trailingIcon` : ''}
                       ${showIcon && icon ? `icon="${icon}"` : ''}
@@ -68,7 +68,7 @@ const Template = ({
                       class="${isNegative ? `negative` : ''} ${
     isPrimary ? `primary` : ''
   }"
-         </td-button>`;
+         </cv-button>`;
 };
 
 export const Contained = Template.bind({});

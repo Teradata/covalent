@@ -1,7 +1,0 @@
-@use '@material/card' as card;
-
-@mixin card-theme($theme) {
-  .mdc-card.mdc-card--outlined {
-    @include card.fill-color(map-get($theme, background));
-  }
-}

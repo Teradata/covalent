@@ -21,12 +21,10 @@ export default {
 };
 
 const Template = ({ label, leading, stacked }) => {
-  let snackbar = undefined;
-
   document.addEventListener(
     'DOMContentLoaded',
     () => {
-      const snackbar = document.querySelector('td-snackbar');
+      const snackbar = document.querySelector('cv-snackbar');
       const snackbarTarget = document.querySelector('.show-snackbar-button');
 
       snackbarTarget.addEventListener('click', () => {
@@ -37,15 +35,15 @@ const Template = ({ label, leading, stacked }) => {
   );
 
   return `
-    <td-button class="show-snackbar-button">Toggle Snackbar</td-button>
-    <td-snackbar
+    <cv-button class="show-snackbar-button">Toggle Snackbar</cv-button>
+    <cv-snackbar
        class="my-snackbar"
        labelText="${label}"
        ${leading ? 'leading' : null}
        ${stacked ? 'stacked' : null}>
-      <td-button slot="action">RETRY</td-button>
-      <td-icon-button icon="close" slot="dismiss"></td-icon-button>
-    </td-snackbar>`;
+      <cv-button slot="action">RETRY</cv-button>
+      <cv-icon-button icon="close" slot="dismiss"></cv-icon-button>
+    </cv-snackbar>`;
 };
 
 export const Basic = Template.bind({});

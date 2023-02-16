@@ -9,12 +9,12 @@ import tableContent from './table.content.html?raw';
 import tableRowSelectionContent from './table-row-selection.content.html?raw';
 
 const iconButtons = `
-        <td-icon-button icon="filter_list" slot="actionItems"></td-icon-button>
-        <td-icon-button icon="search" slot="actionItems"></td-icon-button>
-        <td-icon-button icon="add" slot="actionItems"></td-icon-button>`;
+        <cv-icon-button icon="filter_list" slot="actionItems"></cv-icon-button>
+        <cv-icon-button icon="search" slot="actionItems"></cv-icon-button>
+        <cv-icon-button icon="add" slot="actionItems"></cv-icon-button>`;
 
-const buttons = `<td-button label="Buttons" slot="actionItems" ></td-button>
-    <td-button outlined label="Buttons" slot="actionItems" ></td-button>`;
+const buttons = `<cv-button label="Buttons" slot="actionItems" ></cv-button>
+    <cv-button outlined label="Buttons" slot="actionItems" ></cv-button>`;
 
 export default (
   {
@@ -28,8 +28,8 @@ export default (
   { parameters } = {}
 ) => {
   const AppBarComponentElem = parameters?.fixed
-    ? 'td-top-app-bar-fixed'
-    : 'td-top-app-bar';
+    ? 'cv-top-app-bar-fixed'
+    : 'cv-top-app-bar';
   const actionItems = showActionItems === 'buttons' ? buttons : iconButtons;
   let content = loremIpsumContent;
 
@@ -50,7 +50,7 @@ export default (
           ${centerTitle ? 'centerTitle' : null}
           ${dense ? 'dense' : null}
           ${prominent ? 'prominent' : null}>
-        <td-icon-button slot="navigationIcon" icon="menu_open"></td-icon-button>
+        <cv-icon-button slot="navigationIcon" icon="menu_open"></cv-icon-button>
         <div slot="title">${title}</div>
         ${actionItems}
        </${AppBarComponentElem}>

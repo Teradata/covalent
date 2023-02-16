@@ -1,5 +1,6 @@
 :host {
-  --td-side-sheet-width: 800px;
+  --cv-side-sheet-width: 800px;
+  --mdc-dialog-heading-ink-color: var(--mdc-theme-text-primary-on-background);
 }
 
 .mdc-dialog {
@@ -10,7 +11,7 @@
     height: 100%;
     min-height: inherit;
     max-height: inherit;
-    min-width: var(--td-side-sheet-width, 400px);
+    min-width: var(--cv-side-sheet-width, 400px);
   }
 }
 

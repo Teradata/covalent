@@ -1,14 +1,15 @@
-import { ButtonBase } from '@material/mwc-button/mwc-button-base';
-import { styles } from '@material/mwc-button/styles.css';
+import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
-
+import { ButtonBase } from '@material/mwc-button/mwc-button-base';
+import { styles as baseStyles } from '@material/mwc-button/styles.css';
+import styles from './button.scss?inline';
 declare global {
   interface HTMLElementTagNameMap {
-    'td-button': CovalentButtonBase;
+    'cv-button': CovalentButtonBase;
   }
 }
 
-@customElement('td-button')
+@customElement('cv-button')
 export class CovalentButtonBase extends ButtonBase {
-  static override styles = [styles];
+  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }

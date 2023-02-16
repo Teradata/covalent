@@ -6,11 +6,11 @@ import '../icon/icon';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-empty-state': CovalentEmptyStateBase;
+    'cv-empty-state': CovalentEmptyStateBase;
   }
 }
 
-@customElement('td-empty-state')
+@customElement('cv-empty-state')
 export class CovalentEmptyStateBase extends LitElement {
   static override styles = [
     css`
@@ -30,7 +30,7 @@ export class CovalentEmptyStateBase extends LitElement {
       >
         ${this.icon
           ? html` <div class="icon-background">
-              <td-icon class="covalent-icon">${this.icon}</td-icon>
+              <cv-icon class="covalent-icon">${this.icon}</cv-icon>
             </div>`
           : ''}
         ${this.headline

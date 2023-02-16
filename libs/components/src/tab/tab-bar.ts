@@ -4,11 +4,11 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-tab-bar': CovalentTabBarBase;
+    'cv-tab-bar': CovalentTabBarBase;
   }
 }
 
-@customElement('td-tab-bar')
+@customElement('cv-tab-bar')
 export class CovalentTabBarBase extends TabBarBase {
   static override styles = [styles];
 }

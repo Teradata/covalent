@@ -47,14 +47,14 @@ For giving opinionated feedback. Error messages, loading, status indicators, etc
 
 | Use case          | Icon                                                                     | Icon handle       | Icon set | Color               |
 | ----------------- | ------------------------------------------------------------------------ | ----------------- | -------- | ------------------- |
-| Cancelled         | <td-icon>not_interested</td-icon>                                        | not_interested    | Material | Icon disabled       |
-| Caution / warning | <td-icon class="caution">warning</td-icon>                               | warning           | Material | Foreground caution  |
-| Changed           | <td-icon class="covalent-icon">state_changed</td-icon>                   | state_changed     | Covalent | Foreground primary  |
-| Error             | <td-icon class="negative">error</td-icon>                                | error             | Material | Foreground negative |
-| Paused            | <td-icon>pause</td-icon>                                                 | pause             | Material | Icon                |
-| Pending / waiting | <td-icon class="covalent-icon">loader_dots</td-icon>                     | loader_dots       | Covalent | Icon                |
-| Running           | <td-circular-progress indeterminate density="-6"></td-circular-progress> | circular progress | Covalent | Icon                |
-| Success           | <td-icon class="positive">check</td-icon>                                | check             | Material | Foreground positive |
+| Cancelled         | <cv-icon>not_interested</cv-icon>                                        | not_interested    | Material | Icon disabled       |
+| Caution / warning | <cv-icon class="caution">warning</cv-icon>                               | warning           | Material | Foreground caution  |
+| Changed           | <cv-icon class="covalent-icon">state_changed</cv-icon>                   | state_changed     | Covalent | Foreground primary  |
+| Error             | <cv-icon class="negative">error</cv-icon>                                | error             | Material | Foreground negative |
+| Paused            | <cv-icon>pause</cv-icon>                                                 | pause             | Material | Icon                |
+| Pending / waiting | <cv-icon class="covalent-icon">loader_dots</cv-icon>                     | loader_dots       | Covalent | Icon                |
+| Running           | <cv-circular-progress indeterminate density="-6"></cv-circular-progress> | circular progress | Covalent | Icon                |
+| Success           | <cv-icon class="positive">check</cv-icon>                                | check             | Material | Foreground positive |
 
 ---
 
@@ -65,41 +65,41 @@ For giving opinionated feedback. Error messages, loading, status indicators, etc
 Show as a byline in your list item. Do not use the list icon - this is reserved for showing object type.
 
 <Canvas>
-  <td-list>
-    <td-list-item twoline graphic="avatar">
+  <cv-list>
+    <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
       <span slot="secondary" class="status-caution">
-        <td-icon>warning</td-icon>
+        <cv-icon>warning</cv-icon>
         Warning
       </span>
-      <td-icon slot="graphic" class="inverted">
+      <cv-icon slot="graphic" class="inverted">
         tag_faces
-      </td-icon>
-    </td-list-item>
+      </cv-icon>
+    </cv-list-item>
     <li divider role="separator"></li>
-    <td-list-item twoline graphic="avatar">
+    <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
       <span slot="secondary" class="status-negative">
-        <td-icon>error</td-icon>
+        <cv-icon>error</cv-icon>
         Error
       </span>
-      <td-icon slot="graphic" class="inverted">
+      <cv-icon slot="graphic" class="inverted">
         tag_faces
-      </td-icon>
-    </td-list-item>
+      </cv-icon>
+    </cv-list-item>
     <li divider role="separator"></li>
-    <td-list-item twoline graphic="avatar">
+    <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
       <span slot="secondary" class="status-positive">
-        <td-icon>check</td-icon>
+        <cv-icon>check</cv-icon>
         Successful
       </span>
-      <td-icon slot="graphic" class="inverted">
+      <cv-icon slot="graphic" class="inverted">
         tag_faces
-      </td-icon>
-    </td-list-item>
+      </cv-icon>
+    </cv-list-item>
     <li divider role="separator"></li>
-  </td-list>
+  </cv-list>
 </Canvas>
 
 ---
@@ -133,7 +133,7 @@ Try to put the status column last (or nearly last).
       </td>
       <td class="mdc-data-table__cell mdc-data-table__cell state_positive">
         <div class="status_lockup">
-          <td-icon class="positive">check</td-icon> Successful
+          <cv-icon class="positive">check</cv-icon> Successful
         </div>
       </td>
     </tr>
@@ -146,7 +146,7 @@ Try to put the status column last (or nearly last).
       </td>
       <td class="mdc-data-table__cell mdc-data-table__cell state_caution">
         <div class="status_lockup">
-          <td-icon class="caution">warning</td-icon> Some things didn't work
+          <cv-icon class="caution">warning</cv-icon> Some things didn't work
         </div>
       </td>
     </tr>
@@ -159,7 +159,7 @@ Try to put the status column last (or nearly last).
       </td>
       <td class="mdc-data-table__cell mdc-data-table__cell state_negative">
         <div class="status_lockup">
-          <td-icon class="negative">error</td-icon> Failed
+          <cv-icon class="negative">error</cv-icon> Failed
         </div>
       </td>
     </tr>
@@ -195,7 +195,7 @@ This is often too heavy-handed. Be careful.
       </td>
       <td class="mdc-data-table__cell mdc-data-table__cell state_positive">
         <div class="status_lockup">
-          <td-icon class="positive">check</td-icon> Successful
+          <cv-icon class="positive">check</cv-icon> Successful
         </div>
       </td>
     </tr>
@@ -208,7 +208,7 @@ This is often too heavy-handed. Be careful.
       </td>
       <td class="mdc-data-table__cell mdc-data-table__cell state_caution">
         <div class="status_lockup">
-          <td-icon class="caution">warning</td-icon> Some things didn't work
+          <cv-icon class="caution">warning</cv-icon> Some things didn't work
         </div>
       </td>
     </tr>
@@ -221,7 +221,7 @@ This is often too heavy-handed. Be careful.
       </td>
       <td class="mdc-data-table__cell mdc-data-table__cell state_negative">
         <div class="status_lockup">
-          <td-icon class="negative">error</td-icon> Failed
+          <cv-icon class="negative">error</cv-icon> Failed
         </div>
       </td>
     </tr>

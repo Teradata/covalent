@@ -5,11 +5,11 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-check-list-item': CovalentCheckListItemBase;
+    'cv-check-list-item': CovalentCheckListItemBase;
   }
 }
 
-@customElement('td-check-list-item')
+@customElement('cv-check-list-item')
 export class CovalentCheckListItemBase extends CheckListItemBase {
   static override styles = [styles, controlStyle];
 }

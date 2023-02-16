@@ -1,5 +1,4 @@
-@mixin tab-theme($theme) {
-  // support for web component
+:host {
   --mdc-tab-text-label-color-default: var(
     --mdc-theme-text-primary-on-background
   );

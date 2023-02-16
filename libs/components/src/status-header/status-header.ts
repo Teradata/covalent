@@ -8,7 +8,7 @@ import styles from './status-header.scss?inline';
  *
  * @slot - This element has a slot
  */
-@customElement('td-status-header')
+@customElement('cv-status-header')
 export class CovalentStatusHeader extends StatusHeaderBase {
   static override styles = [
     css`
@@ -19,6 +19,6 @@ export class CovalentStatusHeader extends StatusHeaderBase {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-status-header': CovalentStatusHeader;
+    'cv-status-header': CovalentStatusHeader;
   }
 }

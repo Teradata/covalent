@@ -28,20 +28,20 @@ export default {
 export const Template = ({ width, height, iconOnly }) => {
   return `
     <div style="width:600px; display:flex; border:solid 1px var(--mdc-theme-border); padding: 16px 0px; justify-content: center; gap:16px;">
-      <td-checkbox-icon width=${width} height=${height} ${
+      <cv-checkbox-icon width=${width} height=${height} ${
     iconOnly ? ' iconOnly' : ''
   }>
-        <td-icon slot="icon">work</td-icon>
+        <cv-icon slot="icon">work</cv-icon>
         <div slot="text">Balanced</div>
         <div slot="text">Every week</div>
-      </td-checkbox-icon>
-      <td-checkbox-icon width=${width} height=${height} ${
+      </cv-checkbox-icon>
+      <cv-checkbox-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   }>
-        <td-icon slot="icon">work</td-icon>
+        <cv-icon slot="icon">work</cv-icon>
         <div slot="text">Balanced</div>
         <div slot="text">Every week</div>
-      </td-checkbox-icon>
+      </cv-checkbox-icon>
     </div>
   `;
 };
@@ -50,42 +50,42 @@ const GridExample = ({ width, height, iconOnly }) => {
   return `
     <div class="mdc-layout-grid">
       <div class="mdc-layout-grid__inner">
-        <td-checkbox-icon width=${width} height=${height} ${
+        <cv-checkbox-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   } class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
-          <td-icon slot="icon">storage</td-icon>
+          <cv-icon slot="icon">storage</cv-icon>
           <div slot="text">Data</div>
-        </td-checkbox-icon>
-        <td-checkbox-icon width=${width} height=${height} ${
+        </cv-checkbox-icon>
+        <cv-checkbox-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   } class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
-          <td-icon slot="icon">description</td-icon>
+          <cv-icon slot="icon">description</cv-icon>
           <div slot="text">Files</div>
-        </td-checkbox-icon>
-        <td-checkbox-icon width=${width} height=${height} ${
+        </cv-checkbox-icon>
+        <cv-checkbox-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   } class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
-          <td-icon slot="icon">bookmark</td-icon>
+          <cv-icon slot="icon">bookmark</cv-icon>
           <div slot="text">Articles</div>
-        </td-checkbox-icon>
-        <td-checkbox-icon width=${width} height=${height} ${
+        </cv-checkbox-icon>
+        <cv-checkbox-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   } class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
-          <td-icon slot="icon">folder</td-icon>
+          <cv-icon slot="icon">folder</cv-icon>
           <div slot="text">Projects</div>
-        </td-checkbox-icon>
-        <td-checkbox-icon width=${width} height=${height} ${
+        </cv-checkbox-icon>
+        <cv-checkbox-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   } class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
-          <td-icon slot="icon">assignment</td-icon>
+          <cv-icon slot="icon">assignment</cv-icon>
           <div slot="text">Notebooks</div>
-        </td-checkbox-icon>
-        <td-checkbox-icon width=${width} height=${height} ${
+        </cv-checkbox-icon>
+        <cv-checkbox-icon width=${width} height=${height} ${
     iconOnly ? 'iconOnly' : ''
   } class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
-          <td-icon slot="icon" class="covalent-icon">script</td-icon>
+          <cv-icon slot="icon" class="covalent-icon">script</cv-icon>
           <div slot="text">Scripts</div>
-        </td-checkbox-icon>
+        </cv-checkbox-icon>
       </div>
     </div>
   

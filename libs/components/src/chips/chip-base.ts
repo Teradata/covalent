@@ -81,7 +81,7 @@ export class ChipBase extends LitElement {
       <span
         class="${classMap(classes)}"
         role="${this.filter ? 'presentation' : 'row'}"
-        id="td-chip-${this.chipId}"
+        id="cv-chip-${this.chipId}"
       >
         <span
           class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"

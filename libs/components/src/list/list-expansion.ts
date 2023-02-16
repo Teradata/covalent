@@ -11,11 +11,11 @@ import { CovalentListItemBase } from './list-item';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-expansion-list': CovalentExpansionList;
+    'cv-expansion-list': CovalentExpansionList;
   }
 }
 
-@customElement('td-expansion-list')
+@customElement('cv-expansion-list')
 export class CovalentExpansionList extends CovalentListBase {
   static override styles = [
     css`

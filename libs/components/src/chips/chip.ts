@@ -8,7 +8,7 @@ import styles from './chip.scss?inline';
  *
  * @slot - This element has a slot
  */
-@customElement('td-chip')
+@customElement('cv-chip')
 export class CovalentChip extends ChipBase {
   static override styles = [
     css`
@@ -19,6 +19,6 @@ export class CovalentChip extends ChipBase {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-chip': CovalentChip;
+    'cv-chip': CovalentChip;
   }
 }

@@ -16,14 +16,15 @@ export default {
 };
 
 const Template = ({ disabled, label, checked, onChange }) => {
-  const switchInput = document.createElement('td-switch');
+  const switchInput = document.createElement('cv-switch');
   switchInput.checked = checked;
   switchInput.disabled = disabled;
+  switchInput.ariaLabel = 'Example switch button'
 
   switchInput.addEventListener('change', onChange);
 
   if (label) {
-    const formfield = document.createElement('td-formfield');
+    const formfield = document.createElement('cv-formfield');
     formfield.label = label;
     formfield.appendChild(switchInput);
 

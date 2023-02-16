@@ -1,26 +1,26 @@
-<td-button data-num="1" raised>Basic</td-button>
-<td-dialog id="dialog1" heading="Dialog header">
+<cv-button data-num="1" raised>Basic</cv-button>
+<cv-dialog id="dialog1" heading="Dialog header">
   Dialog body text
-  <td-button slot="primaryAction" dialogAction="ok">Action 2</td-button>
-  <td-button slot="secondaryAction" dialogAction="cancel">Action 1</td-button>
-</td-dialog>
+  <cv-button slot="primaryAction" dialogAction="ok">Action 2</cv-button>
+  <cv-button slot="secondaryAction" dialogAction="cancel">Action 1</cv-button>
+</cv-dialog>
 
-<td-button data-num="2" raised>Actions</td-button>
-<td-dialog id="dialog2" heading="Actions">
+<cv-button data-num="2" raised>Actions</cv-button>
+<cv-dialog id="dialog2" heading="Actions">
   <p>
     By setting the dialogAction="my-action" attribute on any element projected
     into mwc-dialog, you can close the dialog by clicking on that element. The
     dialog will then fire a non-bubbling "closing" event and a non-bubbling
     "closed" event with an event detail of {action: "my-action"}
   </p>
-  <td-button slot="primaryAction" dialogAction="customAction"
-    >This has action</td-button
+  <cv-button slot="primaryAction" dialogAction="customAction"
+    >This has action</cv-button
   >
-  <td-button slot="secondaryAction">this does not</td-button>
-</td-dialog>
+  <cv-button slot="secondaryAction">this does not</cv-button>
+</cv-dialog>
 
-<td-button data-num="3" raised>Scrollable</td-button>
-<td-dialog id="dialog3" heading="My Title">
+<cv-button data-num="3" raised>Scrollable</cv-button>
+<cv-dialog id="dialog3" heading="My Title">
   <p>
     Really long text will scroll. Really long text will scroll. Really long text
     will scroll. Really long text will scroll. Really long text will scroll.
@@ -91,22 +91,22 @@
     Really log text will scroll. Really log text will scroll. Really log text
     will scroll. Really log text will scroll.
   </p>
-  <td-button slot="primaryAction" dialogAction="close">Close this!</td-button>
-</td-dialog>
+  <cv-button slot="primaryAction" dialogAction="close">Close this!</cv-button>
+</cv-dialog>
 
-<td-button data-num="4" raised>Hide Actions</td-button>
-<td-dialog id="dialog4" heading="Hide Actions">
+<cv-button data-num="4" raised>Hide Actions</cv-button>
+<cv-dialog id="dialog4" heading="Hide Actions">
   <p>
     If you don't have actions, you may want to set the "hideActions" property.
     This property will remove extra whitespace at the bottom of this dialog.
     This button will toggle that whitespace:
   </p>
-  <td-button raised id="toggleActions">Toggle hideActions</td-button>
+  <cv-button raised id="toggleActions">Toggle hideActions</cv-button>
   <div>
     mwc-dialog.hideActions is currently:
     <span id="hideActionVal"> false </span>
   </div>
-</td-dialog>
+</cv-dialog>
 
 <style>
   .styled {
@@ -125,8 +125,8 @@
   }
 </style>
 
-<td-button data-num="5" raised>Styled</td-button>
-<td-dialog id="dialog5" heading="Styled" class="styled">
+<cv-button data-num="5" raised>Styled</cv-button>
+<cv-dialog id="dialog5" heading="Styled" class="styled">
   <div>These are the current styles applied to this dialog</div>
   <pre>
 --mdc-theme-surface: #FFF;
@@ -143,45 +143,45 @@
 --mdc-theme-primary: #344955;
         </pre
   >
-  <td-button slot="primaryAction" dialogAction="close">
+  <cv-button slot="primaryAction" dialogAction="close">
     Too stylish for me!
-  </td-button>
-</td-dialog>
+  </cv-button>
+</cv-dialog>
 
-<td-button data-num="6" raised>Stacked</td-button>
-<td-dialog id="dialog6" heading="Stacked" stacked>
+<cv-button data-num="6" raised>Stacked</cv-button>
+<cv-dialog id="dialog6" heading="Stacked" stacked>
   <div>
     This is what happens when you set the stacked property on mwc-dialog. Notice
     that the primary action is now on top.
   </div>
-  <td-button slot="primaryAction" dialogAction="close"> Primary </td-button>
-  <td-button slot="secondaryAction" dialogAction="close"> Secondary </td-button>
-</td-dialog>
+  <cv-button slot="primaryAction" dialogAction="close"> Primary </cv-button>
+  <cv-button slot="secondaryAction" dialogAction="close"> Secondary </cv-button>
+</cv-dialog>
 
-<td-button data-num="7" raised>Initial Focus</td-button>
-<td-dialog id="dialog7" heading="Initial Focus">
+<cv-button data-num="7" raised>Initial Focus</cv-button>
+<cv-dialog id="dialog7" heading="Initial Focus">
   <div>
     In this example we set "dialogInitialFocus" on the mwc-textfield. When this
     dialog opens, it is auto-focused.
   </div>
-  <td-textfield label="i am auto-focused" dialogInitialFocus> </td-textfield>
-  <td-button slot="primaryAction" dialogAction="close"> Primary </td-button>
-  <td-button slot="secondaryAction" dialogAction="close"> Secondary </td-button>
-</td-dialog>
+  <cv-textfield label="i am auto-focused" dialogInitialFocus> </cv-textfield>
+  <cv-button slot="primaryAction" dialogAction="close"> Primary </cv-button>
+  <cv-button slot="secondaryAction" dialogAction="close"> Secondary </cv-button>
+</cv-dialog>
 
-<td-button data-num="8" raised>Form Validation</td-button>
-<td-dialog id="dialog8" heading="Form Validation">
+<cv-button data-num="8" raised>Form Validation</cv-button>
+<cv-dialog id="dialog8" heading="Form Validation">
   <p>This dialog can validate user input before closing.</p>
-  <td-textfield
+  <cv-textfield
     id="dialog8-text-field"
     minlength="3"
     maxlength="64"
     placeholder="First name"
     required
   >
-  </td-textfield>
-  <td-button id="dialog8-primary-action-button" slot="primaryAction">
+  </cv-textfield>
+  <cv-button id="dialog8-primary-action-button" slot="primaryAction">
     Confirm
-  </td-button>
-  <td-button slot="secondaryAction" dialogAction="close"> Cancel </td-button>
-</td-dialog>
+  </cv-button>
+  <cv-button slot="secondaryAction" dialogAction="close"> Cancel </cv-button>
+</cv-dialog>

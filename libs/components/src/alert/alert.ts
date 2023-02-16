@@ -8,7 +8,7 @@ import styles from './alert.scss?inline';
  *
  * @slot - This element has a slot
  */
-@customElement('td-alert')
+@customElement('cv-alert')
 export class CovalentAlert extends AlertBase {
   static override styles = [
     css`
@@ -19,6 +19,6 @@ export class CovalentAlert extends AlertBase {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-alert': CovalentAlert;
+    'cv-alert': CovalentAlert;
   }
 }

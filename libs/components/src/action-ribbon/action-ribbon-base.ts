@@ -36,6 +36,7 @@ export class ActionRibbonBase extends LitElement {
   @property({ type: String }) labelText = '';
 
   @property({ type: String }) icon = '';
+  @property({ type: String }) iconAriaLabel = '';
 
   @property({ type: Boolean }) centered = true;
 
@@ -57,7 +58,7 @@ export class ActionRibbonBase extends LitElement {
       'mdc-banner--centered': this.centered,
     };
     return html` <div class="${classMap(classes)}" role="banner">
-      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive">
+      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive" aria-label="${this.labelText}">
         <div class="mdc-banner__graphic-text-wrapper">
           ${this.icon ? this.renderIcon() : ''}
           <div class="mdc-banner__text">${this.labelText}</div>
@@ -70,9 +71,9 @@ export class ActionRibbonBase extends LitElement {
   }
 
   protected renderIcon(): TemplateResult {
-    return html` <div class="mdc-banner__graphic" role="img" alt="">
+    return html` <div class="mdc-banner__graphic" role="img" aria-label="${this.iconAriaLabel}">
       <slot name="icon">
-        <td-icon class="mdc-banner__icon"> ${this.icon} </td-icon>
+        <cv-icon class="mdc-banner__icon"> ${this.icon} </cv-icon>
       </slot>
     </div>`;
   }
