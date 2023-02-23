@@ -35,10 +35,6 @@ export const routeBuilder: IRouteBuilder = (detailsArray: any) => {
             path: 'overview',
             component: ComponentHeroComponent,
             data: { resourceUrl: identifier.overviewDemoComponent },
-            //loadChildren: ()=> identifier.overviewDemoComponent
-            // children: [
-            //   { path: '', component: identifier.overviewDemoComponent },
-            // ],
           },
           {
             path: 'api',
