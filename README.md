@@ -9,7 +9,7 @@
 
 <img alt="Covalent" src="https://raw.githubusercontent.com/Teradata/covalent/main/apps/docs-app/src/assets/icons/covalent.svg" width="150">
 
-Covalent is a reusable UI platform from Teradata for building web applications with common standards and tooling. It is based on Angular and Material Design.
+Covalent is Teradata's design system used to create Teradata branded experiences. This space is intended to be used to support developers creating coded experiences for Teradata products. Currently we are only supporting angular and a library of web components.
 
 **Vision: To build an atomic, reusable component platform for Teradata to consume, while collaborating in an open source model.**
 
