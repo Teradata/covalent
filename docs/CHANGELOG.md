@@ -1,3 +1,13 @@
+# [5.0.0-beta.1](https://github.com/Teradata/covalent/compare/v4.16.0-beta.2...v5.0.0-beta.1) (2023-02-23)
+
+### Features
+
+- **covalent:** update README ([3429703](https://github.com/Teradata/covalent/commit/3429703b06402cd08739a621b5e53c7bf38f8181))
+
+### BREAKING CHANGES
+
+- **covalent:** angular support, and components prefix update
+
 # [4.16.0-beta.2](https://github.com/Teradata/covalent/compare/v4.16.0-beta.1...v4.16.0-beta.2) (2023-02-16)
 
 ### Bug Fixes
