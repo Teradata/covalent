@@ -1,4 +1,4 @@
-## Covalent: UI Platform based on Angular-Material
+## Covalent Design System
 
 [![Covalent CI](https://github.com/teradata/covalent/actions/workflows/ci.yml/badge.svg)](https://github.com/teradata/covalent/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/%40covalent/core.svg)](https://www.npmjs.com/package/@covalent/core)
