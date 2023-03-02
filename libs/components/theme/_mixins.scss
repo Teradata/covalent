@@ -355,10 +355,5 @@
   // Links
   a[href] {
     color: var(--mdc-theme-secondary);
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
   }
 }

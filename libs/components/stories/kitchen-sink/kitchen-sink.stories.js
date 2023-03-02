@@ -19,7 +19,7 @@ import { MDCTextFieldHelperText } from '@material/textfield/helper-text';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDataTable } from '@material/data-table';
 
-import * as kitchenSinkContent from '../demos/material-web.content.html';
+import * as kitchenSinkContent from '../demos/material-web-comparison.content.html';
 import '!style-loader!css-loader!sass-loader!./image-list.scss';
 import '!style-loader!css-loader!sass-loader!./chips.scss';
 
