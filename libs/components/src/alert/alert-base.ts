@@ -1,19 +1,14 @@
-import {
-  addHasRemoveClass,
-  BaseElement,
-} from '@material/mwc-base/base-element';
+import { addHasRemoveClass } from '@material/mwc-base/base-element';
 import { observer } from '@material/mwc-base/observer';
+import { MDCBannerFoundation } from '@material/banner/foundation';
 import { MDCBannerAdapter } from '@material/banner/adapter';
 import { Action, CloseReason, events } from '@material/banner/constants';
 
-//TODO REMOVE ONCE default export is fixed
-import MDCBannerFoundation from '../action-ribbon/foundation';
-
-import { html, TemplateResult } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { property, query } from 'lit/decorators.js';
 
-export class AlertBase extends BaseElement {
+export class AlertBase extends LitElement {
   protected mdcFoundation!: MDCBannerFoundation;
   protected readonly mdcFoundationClass = MDCBannerFoundation;
 
@@ -34,10 +29,10 @@ export class AlertBase extends BaseElement {
   open = true;
 
   @property({ type: String }) titleText = '';
-
   @property({ type: String }) descriptionText = '';
 
   @property({ type: String }) icon = '';
+  @property({ type: String }) iconAriaLabel = '';
 
   @property({ type: Boolean }) inline = false;
   /**
@@ -51,14 +46,14 @@ export class AlertBase extends BaseElement {
   protected override render() {
     const classes = {
       'mdc-banner': true,
-      'td-banner--inline': this.inline,
+      'cv-banner--inline': this.inline,
       negative: this.state === 'negative',
       positive: this.state === 'positive',
       caution: this.state === 'caution',
       active: this.state === 'active',
     };
     return html` <div class="${classMap(classes)}" role="banner">
-      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive">
+      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive" aria-label="${this.titleText}">
         <div class="mdc-banner__graphic-text-wrapper">
           ${this.icon ? this.renderIcon() : ''}
           <div class="mdc-banner__text">
@@ -75,9 +70,9 @@ export class AlertBase extends BaseElement {
 
   /** @soyTemplate */
   protected renderIcon(): TemplateResult {
-    return html` <div class="mdc-banner__graphic" role="img" alt="">
+    return html` <div class="mdc-banner__graphic" role="img" aria-label="${this.iconAriaLabel}">
       <slot name="icon">
-        <td-icon class="mdc-banner__icon"> ${this.icon} </td-icon>
+        <cv-icon class="mdc-banner__icon"> ${this.icon} </cv-icon>
       </slot>
     </div>`;
   }
@@ -131,8 +126,11 @@ export class AlertBase extends BaseElement {
     this.open = false;
   }
 
-  protected override firstUpdated() {
-    super.firstUpdated();
+  protected override async firstUpdated() {
+    if (this.mdcFoundation !== undefined) {
+      this.mdcFoundation.destroy();
+    }
+    this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
     if (this.open) {
       this.mdcFoundation.open();
     }

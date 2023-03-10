@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-checkbox',
@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './dynamic-checkbox.component.html',
 })
 export class TdDynamicCheckboxComponent {
-  control!: FormControl;
+  control!: UntypedFormControl;
 
   label = '';
 

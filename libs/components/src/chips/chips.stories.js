@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './chip';
 import './chip-set';
 
@@ -27,7 +26,6 @@ export default {
       defaultValue: false,
     },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',
@@ -45,34 +43,34 @@ const Template = ({
   state,
   trailingIcon,
 }) => {
-  return `<td-chip-set label="test chips">
-           <td-chip
+  return `<cv-chip-set label="test chips">
+           <cv-chip
                 label="${label}"
                 ${showIcon ? `icon="${icon}"` : ''}
                 ${showIcon && trailingIcon ? `trailingIcon` : ''}
                 ${avatar ? 'avatar' : ''}
                 ${state ? `state="${state}"` : ''}
-                ${disabled ? 'disabled' : ''} ></td-chip>
-          </td-chip-set>`;
+                ${disabled ? 'disabled' : ''} ></cv-chip>
+          </cv-chip-set>`;
 };
 
 const SelectableTemplate = ({ multiSelectable, label, disabled, state }) => {
-  return `<td-chip-set 
+  return `<cv-chip-set 
            label="test chips" 
            selectable
            activeIndex="0"
            ${multiSelectable ? 'multi' : ''}>
-            <td-chip
+            <cv-chip
                   label="${label}"
                   filter
                   ${state ? `state="${state}"` : ''}
-                  ${disabled ? 'disabled' : ''} ></td-chip>
-            <td-chip
+                  ${disabled ? 'disabled' : ''} ></cv-chip>
+            <cv-chip
                   label="${label} 2"
                   filter
                   ${state ? `state="${state}"` : ''}
-                  ${disabled ? 'disabled' : ''} ></td-chip>
-          </td-chip-set>`;
+                  ${disabled ? 'disabled' : ''} ></cv-chip>
+          </cv-chip-set>`;
 };
 
 export const Basic = Template.bind({});

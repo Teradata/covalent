@@ -9,11 +9,11 @@ export default {
 
 const Template = ({ isDark }) => {
   return `<div class="${isDark ? `dark` : null}">
-            <td-dialog id="dialog1" heading="Dialog header" scrimClickAction="" open>
+            <cv-dialog id="dialog1" heading="Dialog header" scrimClickAction="" open>
               Dialog body text
-              <td-button slot="primaryAction">Action 2</td-button>
-              <td-button slot="secondaryAction">Action 1</td-button>
-            </td-dialog>
+              <cv-button slot="primaryAction">Action 2</cv-button>
+              <cv-button slot="secondaryAction">Action 1</cv-button>
+            </cv-dialog>
           </div>`;
 };
 
@@ -32,11 +32,11 @@ Anatomy.parameters = {
 };
 
 const templateLogout = ({}) => {
-  return `<td-dialog id="example-logout" heading="You will be logged out soon" scrimClickAction="" open>
+  return `<cv-dialog id="example-logout" heading="You will be logged out soon" scrimClickAction="" open>
             Due to inactivity, you’ll be logged out in 3 minutes to protect your security.
-            <td-button slot="primaryAction">Log out</td-button>
-            <td-button slot="secondaryAction">Stay logged in</td-button>
-          </td-dialog>`;
+            <cv-button slot="primaryAction">Log out</cv-button>
+            <cv-button slot="secondaryAction">Stay logged in</cv-button>
+          </cv-dialog>`;
 };
 
 export const Logout = templateLogout.bind({});
@@ -48,7 +48,7 @@ Logout.parameters = {
 
 const templateUDF = ({}) => {
   return `<style>
-              td-formfield {
+              cv-formfield {
                   margin-left: -.75rem;
               }
               .key-value {
@@ -59,18 +59,18 @@ const templateUDF = ({}) => {
                 color: --mdc-theme-text-secondary-on-background;
               }
           </style>
-          <td-dialog id="example-udf" heading="Delete User Defined Function" scrimClickAction="" open>
+          <cv-dialog id="example-udf" heading="Delete User Defined Function" scrimClickAction="" open>
             
             <div class="key-value">
               <div class="key-value--key mdc-typography--caption">Function to delete</div>
               <div class="key-value--value">UDF_StrCpy</div>
             </div>
-            <td-formfield label="I understand that all queries currently using this UDF will be canceled">
-              <td-checkbox class="child"></td-checkbox>
-            </td-formfield>
-            <td-button slot="primaryAction" class="destructive primary" disabled>Delete</td-button>
-            <td-button slot="secondaryAction">Cancel</td-button>
-          </td-dialog>`;
+            <cv-formfield label="I understand that all queries currently using this UDF will be canceled">
+              <cv-checkbox class="child"></cv-checkbox>
+            </cv-formfield>
+            <cv-button slot="primaryAction" class="destructive primary" disabled>Delete</cv-button>
+            <cv-button slot="secondaryAction">Cancel</cv-button>
+          </cv-dialog>`;
 };
 
 export const UDF = templateUDF.bind({});

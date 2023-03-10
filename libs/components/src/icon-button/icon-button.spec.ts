@@ -1,3 +1,7 @@
+/**
+ * @vitest-environment jsdom
+ */
+import { it, describe, expect } from 'vitest';
 import { CovalentIconButtonBase } from './icon-button';
 
 describe('Icon button', () => {

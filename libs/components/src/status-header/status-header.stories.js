@@ -1,3 +1,6 @@
+import './status-header';
+import './status-header-item';
+
 export default {
   title: 'Components/Status Header',
   parameters: {
@@ -26,48 +29,48 @@ export default {
 
 const renderIcon = (state, icon) => {
   if (state === 'active') {
-    return `<td-circular-progress slot="status-header-icon" indeterminate density="-2"></td-circular-progress>`;
+    return `<cv-circular-progress slot="status-header-icon" indeterminate density="-2"></cv-circular-progress>`;
   } else if (state === 'pending') {
-    return `<td-icon slot="status-header-icon" class="covalent-icon">loader_dots</td-icon>`;
+    return `<cv-icon slot="status-header-icon" class="covalent-icon">loader_dots</cv-icon>`;
   } else {
-    return `<td-icon slot="status-header-icon">${icon}</td-icon>`;
+    return `<cv-icon slot="status-header-icon">${icon}</cv-icon>`;
   }
 };
 
 const HeaderWithTabs = ({ state = 'neutral', status, title, icon }) => {
   return `
-    <td-status-header state="${state}" statusText="${status}" statusHelper="Status" titleText="${title}">
+    <cv-status-header state="${state}" statusText="${status}" statusHelper="Status" titleText="${title}">
       ${renderIcon(state, icon)}
 
-      <td-icon-button slot="status-header-actions" icon="close" dialogAction="close" ></td-icon-button>
+      <cv-icon-button slot="status-header-actions" icon="close" dialogAction="close" ></cv-icon-button>
 
-      <td-status-header-item slot="status-header-text" label="Start time">
+      <cv-status-header-item slot="status-header-text" label="Start time">
         09/30/21 4:38:50 PM
-      </td-status-header-item>
-      <td-status-header-item slot="status-header-text" label="Last heartbeat">
+      </cv-status-header-item>
+      <cv-status-header-item slot="status-header-text" label="Last heartbeat">
         09/30/21 4:38:51 PM
-      </td-status-header-item>
-      <td-status-header-item slot="status-header-text" label="Platform">
+      </cv-status-header-item>
+      <cv-status-header-item slot="status-header-text" label="Platform">
         linux-x64
-      </td-status-header-item>
-      <td-status-header-item slot="status-header-text" label="Softvare version">
+      </cv-status-header-item>
+      <cv-status-header-item slot="status-header-text" label="Softvare version">
         02.18.00.01-1
-      </td-status-header-item>
-      <td-status-header-item slot="status-header-text" label="Primary Cluster">
+      </cv-status-header-item>
+      <cv-status-header-item slot="status-header-text" label="Primary Cluster">
         Yes
-      </td-status-header-item>
-      <td-status-header-item slot="status-header-text" label="Primary Cluster manager">
+      </cv-status-header-item>
+      <cv-status-header-item slot="status-header-text" label="Primary Cluster manager">
         cs3094-04.labs.teradata.com
-      </td-status-header-item>
-      <td-tab-bar activeIndex="0">
-        <td-tab label="Tab one">
-        </td-tab>
-        <td-tab label="Tab two">
-        </td-tab>
-        <td-tab label="Tab three">
-        </td-tab>
-      </td-tab-bar>
-    </td-status-header>`;
+      </cv-status-header-item>
+      <cv-tab-bar activeIndex="0">
+        <cv-tab label="Tab one">
+        </cv-tab>
+        <cv-tab label="Tab two">
+        </cv-tab>
+        <cv-tab label="Tab three">
+        </cv-tab>
+      </cv-tab-bar>
+    </cv-status-header>`;
 };
 
 export const Active = HeaderWithTabs.bind({});

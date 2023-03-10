@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'td-component-hero',
@@ -7,4 +13,21 @@ import { Component } from '@angular/core';
 })
 export class ComponentHeroComponent {
   resourceUrl: any;
+}
+
+@Component({
+  selector: 'td-component-hero-dynamic',
+  template: '',
+})
+export class ComponentHeroComponentDynamicComponent {
+  resourceUrl: any = 'test';
+
+  @ViewChild('container') //normal way
+  container!: ElementRef;
+
+  constructor(private route: ActivatedRoute, private vcr: ViewContainerRef) {
+    this.resourceUrl = route.snapshot.data['resourceUrl'];
+    this.vcr.clear();
+    this.vcr.createComponent(this.resourceUrl);
+  }
 }

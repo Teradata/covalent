@@ -1,19 +1,24 @@
+import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { StatusHeaderBase } from './status-header-base';
-import styles from './status-header.scss';
+import styles from './status-header.scss?inline';
 
 /**
  * Status header
  *
  * @slot - This element has a slot
  */
-@customElement('td-status-header')
+@customElement('cv-status-header')
 export class CovalentStatusHeader extends StatusHeaderBase {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-status-header': CovalentStatusHeader;
+    'cv-status-header': CovalentStatusHeader;
   }
 }

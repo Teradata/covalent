@@ -43,10 +43,9 @@ export const createEchartDetails: any = [
     overviewDocUrl: '',
     icon: 'bar_chart',
     route: '/echarts/bar',
-    demo: () =>
-      import('./echarts-demos/bar/demos/bar-demo.module').then(
-        (mod: any) => mod.BarDemoModule
-      ),
+    demo: import('./echarts-demos/bar/demos/bar-demo.module').then(
+      (mod: any) => mod.BarDemoModule
+    ),
   },
   // {
   //   name: 'Combination',
@@ -71,10 +70,9 @@ export const createEchartDetails: any = [
     category: chartTypes.name,
     route: '/echarts/graph',
     color: '',
-    demo: () =>
-      import('./echarts-demos/graph/demos/graph-demo.module').then(
-        (mod: any) => mod.GraphDemoModule
-      ),
+    demo: import('./echarts-demos/graph/demos/graph-demo.module').then(
+      (mod: any) => mod.GraphDemoModule
+    ),
   },
   {
     name: 'Map',
@@ -86,10 +84,9 @@ export const createEchartDetails: any = [
     category: chartTypes.name,
     route: '/echarts/map',
     color: '',
-    demo: () =>
-      import('./echarts-demos/map/demos/map-demo.module').then(
-        (mod: any) => mod.MapDemoModule
-      ),
+    demo: import('./echarts-demos/map/demos/map-demo.module').then(
+      (mod: any) => mod.MapDemoModule
+    ),
   },
   {
     name: 'Line',
@@ -101,10 +98,9 @@ export const createEchartDetails: any = [
     category: chartTypes.name,
     route: '/echarts/line',
     color: '',
-    demo: () =>
-      import('./echarts-demos/line/demos/line-demo.module').then(
-        (mod: any) => mod.LineDemoModule
-      ),
+    demo: import('./echarts-demos/line/demos/line-demo.module').then(
+      (mod: any) => mod.LineDemoModule
+    ),
   },
   {
     name: 'Pie',
@@ -115,10 +111,9 @@ export const createEchartDetails: any = [
     overviewDocUrl: '',
     icon: 'insert_chart',
     route: '/echarts/pie',
-    demo: () =>
-      import('./echarts-demos/pie/demos/pie-demo.module').then(
-        (mod: any) => mod.PieDemoModule
-      ),
+    demo: import('./echarts-demos/pie/demos/pie-demo.module').then(
+      (mod: any) => mod.PieDemoModule
+    ),
   },
   {
     name: 'Sankey',
@@ -130,10 +125,9 @@ export const createEchartDetails: any = [
     category: chartTypes.name,
     route: '/echarts/sankey',
     color: '',
-    demo: () =>
-      import('./echarts-demos/sankey/demos/sankey-demo.module').then(
-        (mod: any) => mod.SankeyDemoModule
-      ),
+    demo: import('./echarts-demos/sankey/demos/sankey-demo.module').then(
+      (mod: any) => mod.SankeyDemoModule
+    ),
   },
   {
     name: 'Scatter',
@@ -145,10 +139,9 @@ export const createEchartDetails: any = [
     category: chartTypes.name,
     route: '/echarts/scatter',
     color: '',
-    demo: () =>
-      import('./echarts-demos/scatter/demos/scatter-demo.module').then(
-        (mod: any) => mod.ScatterDemoModule
-      ),
+    demo: import('./echarts-demos/scatter/demos/scatter-demo.module').then(
+      (mod: any) => mod.ScatterDemoModule
+    ),
   },
   {
     name: 'Tree',
@@ -160,10 +153,9 @@ export const createEchartDetails: any = [
     category: chartTypes.name,
     route: '/echarts/tree',
     color: '',
-    demo: () =>
-      import('./echarts-demos/tree/demos/tree-demo.module').then(
-        (mod: any) => mod.TreeDemoModule
-      ),
+    demo: import('./echarts-demos/tree/demos/tree-demo.module').then(
+      (mod: any) => mod.TreeDemoModule
+    ),
   },
   {
     name: 'Treemap',
@@ -175,10 +167,9 @@ export const createEchartDetails: any = [
     category: chartTypes.name,
     route: '/echarts/treemap',
     color: '',
-    demo: () =>
-      import('./echarts-demos/treemap/demos/treemap-demo.module').then(
-        (mod: any) => mod.TreemapDemoModule
-      ),
+    demo: import('./echarts-demos/treemap/demos/treemap-demo.module').then(
+      (mod: any) => mod.TreemapDemoModule
+    ),
   },
   {
     name: 'Wordcloud',
@@ -190,10 +181,9 @@ export const createEchartDetails: any = [
     category: chartTypes.name,
     route: '/echarts/wordcloud',
     color: '',
-    demo: () =>
-      import('./echarts-demos/wordcloud/demos/wordcloud-demo.module').then(
-        (mod: any) => mod.WordcloudDemoModule
-      ),
+    demo: import('./echarts-demos/wordcloud/demos/wordcloud-demo.module').then(
+      (mod: any) => mod.WordcloudDemoModule
+    ),
   },
   {
     name: 'Axis',

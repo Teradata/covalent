@@ -1,16 +1,20 @@
-import { html, LitElement } from 'lit';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import styles from './tree-list.scss';
+import styles from './tree-list.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-tree-list': CovalentTreeList;
+    'cv-tree-list': CovalentTreeList;
   }
 }
-// Wraps td-tree-list-item components
-@customElement('td-tree-list')
+// Wraps cv-tree-list-item components
+@customElement('cv-tree-list')
 export class CovalentTreeList extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
   override render() {
     return html`
       <div class="container">
@@ -21,14 +25,14 @@ export class CovalentTreeList extends LitElement {
     `;
   }
 }
-// Create event listener for td-tree-list-item's select event.
+// Create event listener for cv-tree-list-item's select event.
 document.addEventListener('select', (e: Event) => {
   handleSelect(e);
 });
 const handleSelect = (e: Event): void => {
-  // All td-tree-list-item components.
+  // All cv-tree-list-item components.
   const items: any[] = Array.from(
-    document.querySelectorAll('td-tree-list-item')
+    document.querySelectorAll('cv-tree-list-item')
   );
 
   // Currently selected item.

@@ -1,16 +1,12 @@
-import { DrawerBase } from '@material/mwc-drawer/mwc-drawer-base';
-import { html, nothing } from 'lit';
+import { css, html, nothing, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-
-import styles from './app-shell.scss';
-
-import '@material/mwc-icon-button';
-import '@material/mwc-top-app-bar-fixed';
+import { DrawerBase } from '@material/mwc-drawer/mwc-drawer-base';
+import styles from './app-shell.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-app-shell': CovalentAppShell;
+    'cv-app-shell': CovalentAppShell;
   }
 }
 
@@ -19,9 +15,13 @@ declare global {
  *
  * @slot - This element has a slot
  */
-@customElement('td-app-shell')
+@customElement('cv-app-shell')
 export class CovalentAppShell extends DrawerBase {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   /**
    * The name of the application to show in the small app bar
@@ -91,23 +91,23 @@ export class CovalentAppShell extends DrawerBase {
     return html`
       <div class="app-shell">
         <span class="header"
-          ><td-top-app-bar-fixed centerTitle>
-            <td-icon-button
+          ><cv-top-app-bar-fixed centerTitle>
+            <cv-icon-button
               class="toggle-drawer"
               @click=${this._toggleOpen}
               slot="navigationIcon"
               icon="menu"
-            ></td-icon-button>
+            ></cv-icon-button>
             <span slot="title">${this.appName}</span>
-          </td-top-app-bar-fixed>
+          </cv-top-app-bar-fixed>
         </span>
         <nav class="navigation mdc-drawer ${classMap(classes)}">
           <div class="navigation-toolbar">
-            <td-icon-button
+            <cv-icon-button
               @click=${this._toggleOpen}
               class="toggle-drawer"
               icon="menu"
-            ></td-icon-button>
+            ></cv-icon-button>
             <slot name="logo"></slot>
           </div>
           <slot name="navigation"></slot>

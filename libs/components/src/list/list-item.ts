@@ -1,21 +1,31 @@
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import { html } from 'lit';
+import { css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { styles as controlStyle } from '@material/mwc-list/mwc-control-list-item.css';
 import { styles as listItemStyle } from '@material/mwc-list/mwc-list-item.css';
-import styles from './list-item.scss';
+import styles from './list-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-list-item': CovalentListItemBase;
+    'cv-list-item': CovalentListItemBase;
   }
 }
 
-@customElement('td-list-item')
+@customElement('cv-list-item')
 export class CovalentListItemBase extends ListItemBase {
-  static override styles = [listItemStyle, controlStyle, styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(listItemStyle)}
+    `,
+    css`
+      ${unsafeCSS(controlStyle)}
+    `,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property({ type: Boolean, reflect: true }) hasChildren = false;
 
@@ -25,7 +35,7 @@ export class CovalentListItemBase extends ListItemBase {
     const meta = this.hasMeta ? this.renderMeta() : html``;
     const arrowIcon = this.activated ? 'arrow_drop_down' : 'arrow_right';
     const arrow = this.hasChildren
-      ? html`<td-icon class="expansion-icon">${arrowIcon}</td-icon>`
+      ? html`<cv-icon class="expansion-icon">${arrowIcon}</cv-icon>`
       : html``;
 
     return html` ${this.renderRipple()} ${arrow} ${graphic} ${text} ${meta} `;

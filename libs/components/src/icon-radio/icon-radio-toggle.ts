@@ -1,20 +1,26 @@
+import { css, html, unsafeCSS } from 'lit';
 import { RadioBase } from '@material/mwc-radio/mwc-radio-base';
 import { styles as radioStyle } from '@material/mwc-radio/mwc-radio.css';
-import styles from './icon-radio.scss';
-import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
+import styles from './icon-radio.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-icon-radio-item': CovalentIconRadioToggleBase;
+    'cv-icon-radio-item': CovalentIconRadioToggleBase;
   }
 }
 
-@customElement('td-radio-icon')
+@customElement('cv-radio-icon')
 export class CovalentIconRadioToggleBase extends RadioBase {
-  static override styles = [styles, radioStyle];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+    radioStyle,
+  ];
+
   @property() width: number | string = '200';
   @property() height: number | string = '160';
   @property({ type: Boolean }) iconOnly = false;

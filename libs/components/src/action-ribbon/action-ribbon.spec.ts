@@ -1,3 +1,7 @@
+/**
+ * @vitest-environment jsdom
+ */
+import { it, describe, expect } from 'vitest';
 import { CovalentActionRibbon } from './action-ribbon';
 
 describe('Action ribbon', () => {

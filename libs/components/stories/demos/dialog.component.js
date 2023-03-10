@@ -1,16 +1,12 @@
 // Material Dialog example taken Material Components Catalog
 // https://github.com/material-components/material-web/blob/master/demos/dialog
-import '@material/mwc-dialog';
-import '@material/mwc-button';
-import '@material/mwc-textfield';
-
-import * as dialogTemplate from './dialog.component.html';
+import dialogTemplate from './dialog.component.html?raw';
 
 export default ({}) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
-      const buttons = document.body.querySelectorAll('td-button[data-num]');
+      const buttons = document.body.querySelectorAll('cv-button[data-num]');
 
       for (let i = 0; i < buttons.length; i++) {
         const button = buttons[i];

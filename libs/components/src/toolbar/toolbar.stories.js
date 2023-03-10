@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './toolbar';
 
 export default {
@@ -33,7 +32,6 @@ export default {
       defaultValue: true,
     },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',
@@ -53,34 +51,34 @@ export const Toolbar = ({
   action,
 }) => {
   return `
-    <td-toolbar ${dense ? 'dense' : ''}>
+    <cv-toolbar ${dense ? 'dense' : ''}>
       <span slot="title">${title}</span> 
       ${
         filter
-          ? '<td-icon-button icon="filter_list" slot="actionItems"></td-icon-button>'
+          ? '<cv-icon-button icon="filter_list" slot="actionItems"></cv-icon-button>'
           : ''
       }
       ${
         search
-          ? '<td-icon-button icon="search" slot="actionItems"></td-icon-button>'
+          ? '<cv-icon-button icon="search" slot="actionItems"></cv-icon-button>'
           : ''
       }
       ${
         add
-          ? '<td-icon-button icon="add" slot="actionItems"></td-icon-button>'
+          ? '<cv-icon-button icon="add" slot="actionItems"></cv-icon-button>'
           : ''
       }
       ${
         secondaryAction
-          ? '<td-button outlined slot="actionItems">BUTTON TEXT</td-button>'
+          ? '<cv-button outlined slot="actionItems">BUTTON TEXT</cv-button>'
           : ''
       }
       ${
         action
-          ? '<td-button outlined slot="actionItems">BUTTON TEXT</td-button>'
+          ? '<cv-button outlined slot="actionItems">BUTTON TEXT</cv-button>'
           : ''
       }
-    </td-toolbar>
+    </cv-toolbar>
   `;
 };
 

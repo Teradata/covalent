@@ -1,6 +1,4 @@
-import { withDesign } from 'storybook-addon-designs';
-// import topAppBarComponent from "../../stories/demos/top-app-bar.component";
-import * as tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html';
+import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
 
 import './app-shell';
 import '../action-ribbon/action-ribbon';
@@ -17,7 +15,6 @@ export default {
   argTypes: {
     navClick: { action: 'clicked' },
   },
-  decorators: [withDesign],
   parameters: {
     layout: 'fullscreen',
     design: {
@@ -49,11 +46,11 @@ const Template = ({ navClick }) => {
     'DOMContentLoaded',
     () => {
       const dataTableEl = document.querySelector('.mdc-data-table');
-      appShell = document.querySelector('td-app-shell');
+      appShell = document.querySelector('cv-app-shell');
       navItems = document.querySelectorAll(
-        'td-nav-list-item, td-expansion-list'
+        'cv-nav-list-item, cv-expansion-list'
       );
-      banner = document.querySelector('td-action-ribbon');
+      banner = document.querySelector('cv-action-ribbon');
       dataTable = new MDCDataTable(dataTableEl);
 
       document.querySelector('.help-item').addEventListener('click', () => {
@@ -94,7 +91,7 @@ const Template = ({ navClick }) => {
         }
     }
     </style>
-    <td-app-shell appName="[App Name]" >
+    <cv-app-shell appName="[App Name]" >
 
     <svg slot="logo" class="logo logo-light" style="width:100px;" viewBox="0 0 696 133" fit=""  preserveAspectRatio="xMidYMid meet" focusable="false">
       <path style="fill: var(--covalent-theme-text-logo-on-background);" d="M78.882 72.796h45.059c-3.178-11.966-12.153-17.201-22.063-17.201-9.348 0-20.005 5.609-22.996 17.201zm70.3 17.388H78.134c2.43 13.462 11.965 21.689 23.37 21.689 7.292 0 16.453-.936 23.185-12.34l22.062 4.673C138.524 123.652 121.884 133 101.504 133c-26.362 0-47.864-20.006-47.864-49.36s21.502-49.547 48.238-49.547c24.867 0 46.368 19.258 47.304 47.678v8.413zM387.843 83.64c0-17.201-13.275-28.045-26.549-28.045-14.958 0-26.176 10.844-26.176 28.045s11.218 27.858 26.176 27.858c13.274 0 26.549-10.657 26.549-27.858zm24.68 46.555h-24.68v-8.039c-7.479 6.918-17.762 10.844-30.85 10.844-23.745 0-45.807-20.006-45.807-49.36s22.062-49.547 45.807-49.547c13.088 0 23.371 3.926 30.85 10.844v-44h24.68v129.258zM630.3 92.427c0 11.966-11.406 20.941-24.493 20.941-9.536 0-15.892-4.488-15.892-11.406 0-6.356 5.234-10.656 13.088-10.656H630.3v1.121zm-15.893-55.31v-.024h-34.108v20.565h34.108c9.536 0 15.893 4.107 15.893 13.455v1.497h-26.923c-23.559 0-37.021 11.966-37.021 29.914 0 18.322 14.21 30.476 35.525 30.476 12.714 0 22.062-4.3 28.419-10.47v7.665h23.558V69.244c0-22.162-15.615-31.627-39.451-32.127zM484.378 92.427c0 11.966-11.405 20.941-24.493 20.941-9.536 0-15.893-4.488-15.893-11.406 0-6.356 5.235-10.656 13.088-10.656h27.298v1.121zm-15.893-55.31v-.024h-34.108v20.565h34.108c9.535 0 15.893 4.107 15.893 13.455v1.497h-26.924c-23.559 0-37.02 11.966-37.02 29.914 0 18.322 14.21 30.476 35.524 30.476 12.714 0 22.062-4.3 28.42-10.47v7.665h23.557V69.244c0-22.162-15.614-31.627-39.45-32.127zM279.3 92.427c0 11.966-11.406 20.941-24.493 20.941-9.536 0-15.893-4.488-15.893-11.406 0-6.356 5.236-10.656 13.089-10.656H279.3v1.121zm-15.892-55.31v-.024h-34.109v20.565h34.109c9.535 0 15.892 4.107 15.892 13.455v1.497h-26.924c-23.558 0-37.02 11.966-37.02 29.914 0 18.322 14.21 30.476 35.525 30.476 12.714 0 22.062-4.3 28.419-10.47v7.665h23.558V69.244c0-22.162-15.614-31.627-39.45-32.127zM216.11 37.026c-15.144 0-25.989 6.043-33.467 16.887V36.899h-24.68v93.298h24.68v-30.102c0-25.989 10.47-42.319 33.28-42.319h1.121V37.029a141.28 141.28 0 00-.934-.003"></path>
@@ -102,42 +99,42 @@ const Template = ({ navClick }) => {
       <path class="logo-dot" fill="#e46c42" d="M695.029 116.028c0 8.825-6.772 15.596-16.212 15.596s-16.212-6.771-16.212-15.596c0-8.413 6.772-15.801 16.212-15.801s16.212 7.388 16.212 15.801"></path>
     </svg>
 
-    <td-list class="navigation-rail" slot="navigation" activatable listitemtagname="td-nav-list-item">
-        <td-nav-list-item class="home-item" graphic="avatar">
+    <cv-list class="navigation-rail" slot="navigation" activatable listitemtagname="cv-nav-list-item">
+        <cv-nav-list-item class="home-item" graphic="avatar">
             <span>Vantage</span>
-            <td-icon class="covalent-icon teradata-circle" slot="graphic">teradata</td-icon>
-            <td-icon class="covalent-icon teradata-no-circle" slot="graphic">teradata_nocircle</td-icon>
-            <td-icon class="home-icon" slot="graphic">home</td-icon>
-        </td-nav-list-item>
+            <cv-icon class="covalent-icon teradata-circle" slot="graphic">teradata</cv-icon>
+            <cv-icon class="covalent-icon teradata-no-circle" slot="graphic">teradata_nocircle</cv-icon>
+            <cv-icon class="home-icon" slot="graphic">home</cv-icon>
+        </cv-nav-list-item>
 
-        <td-expansion-list activatable>
-            <td-nav-list-item slot="expansionHeader" graphic="avatar" hasChildren>
+        <cv-expansion-list activatable>
+            <cv-nav-list-item slot="expansionHeader" graphic="avatar" hasChildren>
                Editor
-               <td-icon class="covalent-icon" slot="graphic">product_editor</td-icon>
-            </td-nav-list-item>
-            <td-nav-list-item>Scripts</td-nav-list-item>
-            <td-nav-list-item>Scripts</td-nav-list-item>
-            <td-nav-list-item>Scripts</td-nav-list-item>
-            <td-nav-list-item>Scripts</td-nav-list-item>
-            <td-nav-list-item>Scripts</td-nav-list-item>
-        </td-expansion-list>
+               <cv-icon class="covalent-icon" slot="graphic">product_editor</cv-icon>
+            </cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+        </cv-expansion-list>
 
-        <td-nav-list-item graphic="avatar">
+        <cv-nav-list-item graphic="avatar">
             <span>Sites</span>
-            <td-icon class="covalent-icon" slot="graphic">server</td-icon>
-        </td-nav-list-item>
-        <td-nav-list-item graphic="avatar">
+            <cv-icon class="covalent-icon" slot="graphic">server</cv-icon>
+        </cv-nav-list-item>
+        <cv-nav-list-item graphic="avatar">
             <span>Data Protections</span>
-            <td-icon slot="graphic">settings_backup_restore</td-icon>
-        </td-nav-list-item>
-        <td-nav-list-item graphic="avatar">
+            <cv-icon slot="graphic">settings_backup_restore</cv-icon>
+        </cv-nav-list-item>
+        <cv-nav-list-item graphic="avatar">
             <span>Identity</span>
-            <td-icon slot="graphic">contacts</td-icon>
-        </td-nav-list-item>
-    </td-list>
+            <cv-icon slot="graphic">contacts</cv-icon>
+        </cv-nav-list-item>
+    </cv-list>
 
-    <td-list class="navigation-rail" slot="user-menu" activatable>
-            <td-nav-list-item class="beta-list-item" graphic="icon" twoline activated>
+    <cv-list class="navigation-rail" slot="user-menu" activatable>
+            <cv-nav-list-item class="beta-list-item" graphic="icon" twoline activated>
                 <svg slot="graphic" style="fill:orange; height:20px;" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
                 <g>
                     <path d="M0 2C0 0.895431 0.895431 0 2 0H40L34.9206 20H2C0.895429 20 0 19.1046 0 18V2Z"></path>
@@ -146,27 +143,27 @@ const Template = ({ navClick }) => {
                 </svg>
                <span>You're trying console beta</span>
                <span slot="secondary">Return to classic</span>
-           </td-nav-list-item>
-           <td-nav-list-item graphic="avatar">
+           </cv-nav-list-item>
+           <cv-nav-list-item graphic="avatar">
                <span>Notification</span>
-               <td-icon slot="graphic">notifications</td-icon>
-           </td-nav-list-item>
-           <td-nav-list-item graphic="avatar" class="help-item" >
+               <cv-icon slot="graphic">notifications</cv-icon>
+           </cv-nav-list-item>
+           <cv-nav-list-item graphic="avatar" class="help-item" >
                <span>Help</span>
-               <td-icon slot="graphic">help</td-icon>
-           </td-nav-list-item>
-           <td-nav-list-item graphic="avatar">
+               <cv-icon slot="graphic">help</cv-icon>
+           </cv-nav-list-item>
+           <cv-nav-list-item graphic="avatar">
                <span>Account</span>
-               <td-icon slot="graphic">person</td-icon>
-           </td-nav-list-item>
-    </td-list>
+               <cv-icon slot="graphic">person</cv-icon>
+           </cv-nav-list-item>
+    </cv-list>
 
     <div slot="help" class="mdc-typography">
-        <td-toolbar>
+        <cv-toolbar>
           <span slot="title">Help</span>
-          <td-icon-button slot="actionItems" icon="open_in_browser"></td-icon-button>
-          <td-icon-button slot="actionItems" icon="close" class="help-close"></td-icon-button>
-        </td-toolbar>
+          <cv-icon-button slot="actionItems" icon="open_in_browser"></cv-icon-button>
+          <cv-icon-button slot="actionItems" icon="close" class="help-close"></cv-icon-button>
+        </cv-toolbar>
         <div style="padding:16px">
           <h3 class="mdc-typography--subtitle2">Ultricies nunc massa, id ut felis sed varius accumsan platea.</h3>
           <p class="mdc-typography--body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt lectus risus, id aliquet mi congue sed.</p>
@@ -178,64 +175,63 @@ const Template = ({ navClick }) => {
         </div>
     </div>
     <div slot="mini-list">
-            <td-toolbar divider dense>
+            <cv-toolbar divider dense>
               <span slot="title">[Page name]</span>
-              <td-icon-button slot="actionItems" icon="filter_list"></td-icon-button>
-              <td-icon-button slot="actionItems" icon="add"></td-icon-button>
-            </td-toolbar>
-            <td-list activatable>
-                <td-list-item graphic="avatar" twoline >
-                    <td-icon class="covalent-icon" slot="graphic">server</td-icon>
+              <cv-icon-button slot="actionItems" icon="filter_list"></cv-icon-button>
+              <cv-icon-button slot="actionItems" icon="add"></cv-icon-button>
+            </cv-toolbar>
+            <cv-list activatable>
+                <cv-list-item graphic="avatar" twoline >
+                    <cv-icon class="covalent-icon" slot="graphic">server</cv-icon>
                     <span>[Object name]</span>
                     <span slot="secondary">Secondary info</span>
-                </td-list-item>
+                </cv-list-item>
                 <li divider role="separator"></li>
-                <td-list-item graphic="avatar" twoline>
-                    <td-icon class="covalent-icon" slot="graphic">server</td-icon>
+                <cv-list-item graphic="avatar" twoline>
+                    <cv-icon class="covalent-icon" slot="graphic">server</cv-icon>
                     <span>[Object name]</span>
                     <span slot="secondary">Secondary info</span>
-                </td-list-item>
+                </cv-list-item>
                 <li divider role="separator"></li>
-                <td-list-item graphic="avatar" twoline activated>
-                    <td-icon class="covalent-icon" slot="graphic">server</td-icon>
+                <cv-list-item graphic="avatar" twoline activated>
+                    <cv-icon class="covalent-icon" slot="graphic">server</cv-icon>
                     <span>[Object name]</span>
                     <span slot="secondary">Secondary info</span>
-                </td-list-item>
+                </cv-list-item>
                 <li divider role="separator"></li>
-                <td-list-item graphic="avatar" twoline>
-                    <td-icon class="covalent-icon" slot="graphic">server</td-icon>
+                <cv-list-item graphic="avatar" twoline>
+                    <cv-icon class="covalent-icon" slot="graphic">server</cv-icon>
                     <span>[Object name]</span>
                     <span slot="secondary">Secondary info</span>
-                </td-list-item>
+                </cv-list-item>
                 <li divider role="separator"></li>
-            </td-list>
+            </cv-list>
         </div>
 
-        <td-toolbar>
+        <cv-toolbar>
           <span slot="title">[Section name]</span>
-          <td-icon-button slot="actionItems" icon="menu_open"></td-icon-button>
-          <td-icon-button class="hidden-large" slot="actionItems" icon="add"></td-icon-button>
-          <td-button class="hidden-small" class="create-new-button" label="Create New" slot="actionItems" raised></td-button>
-        </td-toolbar>
+          <cv-icon-button slot="actionItems" icon="menu_open"></cv-icon-button>
+          <cv-icon-button class="hidden-large" slot="actionItems" icon="add"></cv-icon-button>
+          <cv-button class="hidden-small" class="create-new-button" label="Create New" slot="actionItems" raised></cv-button>
+        </cv-toolbar>
 
-        <td-tab-bar >
-            <td-tab label="Overview" ></td-tab>
-            <td-tab label="Usage" ></td-tab>
-            <td-tab label="Objects" ></td-tab>
-            <td-tab label="Queries" ></td-tab>
-            <td-tab label="Network" ></td-tab>
-            <td-tab label="Settings" ></td-tab>
-        </td-tab-bar>
+        <cv-tab-bar >
+            <cv-tab label="Overview" ></cv-tab>
+            <cv-tab label="Usage" ></cv-tab>
+            <cv-tab label="Objects" ></cv-tab>
+            <cv-tab label="Queries" ></cv-tab>
+            <cv-tab label="Network" ></cv-tab>
+            <cv-tab label="Settings" ></cv-tab>
+        </cv-tab-bar>
 
         <div divider role="separator"></div>
 
-        <td-action-ribbon labelText="this is my label" state="active" >
-        <td-button slot="action-items" class="mdc-banner__secondary-action" outlined>Bulk action</td-button>
-        </td-action-ribbon>
+        <cv-action-ribbon labelText="this is my label" state="active" >
+        <cv-button slot="action-items" class="mdc-banner__secondary-action" outlined>Bulk action</cv-button>
+        </cv-action-ribbon>
 
         ${tableRowSelectionContent}
-        
-    </td-app-shell>
+    </cv-app-shell>
     `;
 };
 

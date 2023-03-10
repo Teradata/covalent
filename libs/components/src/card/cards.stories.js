@@ -1,5 +1,5 @@
 import './card';
-import * as tableContent from '../../stories/demos/table.content.html';
+import tableContent from '../../stories/demos/table.content.html?raw';
 
 export default {
   title: 'Components/Cards',
@@ -21,29 +21,21 @@ export default {
 
 export const Basic = ({ outlined, actionBar, cardTitle }) => {
   return `
-  <td-card 
+  <cv-card 
     cardTitle='${cardTitle}'
     ${actionBar ? 'actionBar' : ''}
     ${outlined ? 'outlined' : ''}
   >
     ${tableContent}
     <div slot="card-actions" class="mdc-card__action-buttons">
-      <button class="mdc-button mdc-card__action mdc-card__action--button">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Action 1</span>
-      </button>
-      <button class="mdc-button mdc-card__action mdc-card__action--button">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Action 2</span>
-      </button>
+      <cv-button label="Action 1"></cv-button>
+      <cv-button label="Action 2"></cv-button>
     </div>
     <div slot="card-actions" class="mdc-card__action-icons">
-      <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
-        title="Share">share</button>
-      <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
-        title="More options">more_vert</button>
+      <cv-icon-button icon="share"></cv-icon-button>
+      <cv-icon-button icon="more_vert"></cv-icon-button>
     </div>
-  </td-card>
+  </cv-card>
   `;
 };
 

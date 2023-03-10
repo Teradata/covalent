@@ -1,3 +1,7 @@
+/**
+ * @vitest-environment jsdom
+ */
+import { it, describe, expect } from 'vitest';
 import { CovalentTabBarBase } from './tab-bar';
 
 describe('Tab bar', () => {

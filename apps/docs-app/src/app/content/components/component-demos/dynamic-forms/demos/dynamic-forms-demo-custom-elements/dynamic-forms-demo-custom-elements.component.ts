@@ -1,5 +1,5 @@
 import { Component, TemplateRef } from '@angular/core';
-import { AbstractControl, FormControl } from '@angular/forms';
+import { AbstractControl, UntypedFormControl } from '@angular/forms';
 import { ITdDynamicElementConfig } from '@covalent/dynamic-forms';
 
 @Component({
@@ -10,19 +10,19 @@ import { ITdDynamicElementConfig } from '@covalent/dynamic-forms';
       [formControl]="control"
       ngDefaultControl
     ></td-code-editor>
-    <div *ngIf="errorMessageTemplate && control?.errors" class="tc-red-600">
+    <div *ngIf="errorMessageTemplate && control.errors" class="tc-red-600">
       <ng-template
         [ngTemplateOutlet]="errorMessageTemplate"
         [ngTemplateOutletContext]="{
           control: control,
-          errors: control?.errors
+          errors: control.errors
         }"
       ></ng-template>
     </div>
   `,
 })
 export class TdTestDynamicComponent {
-  control!: FormControl;
+  control!: UntypedFormControl;
   selections: string[] = [];
   errorMessageTemplate!: TemplateRef<any>;
   // This value will be set via the customConfig property

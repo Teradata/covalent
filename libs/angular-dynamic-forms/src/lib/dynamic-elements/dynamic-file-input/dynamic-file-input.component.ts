@@ -1,5 +1,5 @@
 import { Component, TemplateRef } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-file-input',
@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './dynamic-file-input.component.html',
 })
 export class TdDynamicFileInputComponent {
-  control!: FormControl;
+  control!: UntypedFormControl;
 
   required = false;
 

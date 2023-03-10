@@ -1,10 +1,10 @@
-import { html, LitElement } from 'lit';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import styles from './status-header-item.scss';
+import styles from './status-header-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-status-header-item': CovalentStatusHeaderItem;
+    'cv-status-header-item': CovalentStatusHeaderItem;
   }
 }
 
@@ -13,9 +13,13 @@ declare global {
  *
  * @slot - This element has a slot
  */
-@customElement('td-status-header-item')
+@customElement('cv-status-header-item')
 export class CovalentStatusHeaderItem extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property()
   label!: string;

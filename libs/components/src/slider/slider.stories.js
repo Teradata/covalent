@@ -23,7 +23,7 @@ export default {
 };
 
 const SingleTemplate = ({ discrete, disabled, markers, value = 10 }) => {
-  const progressBar = document.createElement('td-slider');
+  const progressBar = document.createElement('cv-slider');
   progressBar.discrete = discrete;
   progressBar.disabled = disabled;
   progressBar.markers = markers;
@@ -39,7 +39,7 @@ const SingleTemplate = ({ discrete, disabled, markers, value = 10 }) => {
 };
 
 const RangeTemplate = ({ discrete, disabled, markers, value = 10 }) => {
-  const progressBar = document.createElement('td-slider-range');
+  const progressBar = document.createElement('cv-slider-range');
   progressBar.discrete = discrete;
   progressBar.disabled = disabled;
   progressBar.markers = markers;

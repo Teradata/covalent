@@ -9,13 +9,20 @@ import { MatCardModule } from '@angular/material/card';
 import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentMessageModule } from '@covalent/core/message';
 
-import { ComponentHeroComponent } from './component-hero/component-hero.component';
+import {
+  ComponentHeroComponent,
+  ComponentHeroComponentDynamicComponent,
+} from './component-hero/component-hero.component';
 import { DetailsWrapperComponent } from './component-details-wrapper/content-details.component';
 
 import { DocumentationToolsModule } from '../../../documentation-tools';
 
 @NgModule({
-  declarations: [DetailsWrapperComponent, ComponentHeroComponent],
+  declarations: [
+    DetailsWrapperComponent,
+    ComponentHeroComponent,
+    ComponentHeroComponentDynamicComponent,
+  ],
   imports: [
     /** Angular Modules */
     CommonModule,

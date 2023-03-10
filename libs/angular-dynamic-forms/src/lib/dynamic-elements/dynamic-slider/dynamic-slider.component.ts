@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-slider',
@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './dynamic-slider.component.html',
 })
 export class TdDynamicSliderComponent {
-  control!: FormControl;
+  control!: UntypedFormControl;
 
   label = '';
 

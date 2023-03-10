@@ -42,7 +42,7 @@ $query: feature-targeting.all();
       align-items: center;
     }
 
-    &.td-banner--inline {
+    &.cv-banner--inline {
       @include shape.radius(0);
       @include elevation-mixins.elevation(0, $query: $query);
     }

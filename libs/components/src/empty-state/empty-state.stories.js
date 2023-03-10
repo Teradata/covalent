@@ -1,4 +1,3 @@
-import { withDesign } from 'storybook-addon-designs';
 import './empty-state';
 import '../icon/icon';
 import '../card/card';
@@ -34,7 +33,6 @@ export default {
       description: 'Adds an icon to the empty alert',
     },
   },
-  decorators: [withDesign],
   parameters: {
     design: {
       type: 'figma',
@@ -46,23 +44,23 @@ export default {
 // Page empty state
 export const Page = ({ headline, subtitle, action, twoActions, icon }) => {
   return `
-  <td-empty-state 
+  <cv-empty-state 
     headline="${headline}" 
     subtitle="${subtitle}"
     icon="${icon}"
   >
     ${
       action && !twoActions
-        ? '<td-button slot="buttons">Button Text</td-button>'
+        ? '<cv-button slot="buttons">Button Text</cv-button>'
         : ''
     }
     ${
       twoActions
-        ? '<td-button slot="buttons">Button Text</td-button>\n\
-    <td-button slot="buttons">Button Text</td-button>'
+        ? '<cv-button slot="buttons">Button Text</cv-button>\n\
+    <cv-button slot="buttons">Button Text</cv-button>'
         : ''
     }
-</td-empty-state>`;
+</cv-empty-state>`;
 };
 
 export const PageTitleOnly = Page.bind({});
@@ -99,11 +97,11 @@ const Card = ({
   twoActions,
 }) => {
   return `
-    <td-card 
+    <cv-card 
       cardTitle='${cardTitle}'
       ${cardOutlined ? 'outlined' : ''}
     >
-      <td-empty-state 
+      <cv-empty-state 
       headline="${headline}" 
       subtitle="${subtitle}"
       slot="empty-state"
@@ -111,17 +109,17 @@ const Card = ({
       >
           ${
             action && !twoActions
-              ? '<td-button slot="buttons">Button Text</td-button>'
+              ? '<cv-button slot="buttons">Button Text</cv-button>'
               : ''
           }
           ${
             twoActions
-              ? '<td-button slot="buttons">Button Text</td-button>\n\
-          <td-button slot="buttons">Button Text</td-button>'
+              ? '<cv-button slot="buttons">Button Text</cv-button>\n\
+          <cv-button slot="buttons">Button Text</cv-button>'
               : ''
           }
-      </td-empty-state>
-    </td-card>
+      </cv-empty-state>
+    </cv-card>
   `;
 };
 

@@ -1,16 +1,20 @@
-import { html, LitElement } from 'lit';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import styles from './typography.scss';
+import styles from './typography.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-typography': CovalentTypography;
+    'cv-typography': CovalentTypography;
   }
 }
 
-@customElement('td-typography')
+@customElement('cv-typography')
 export class CovalentTypography extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property()
   scale = 'body1';

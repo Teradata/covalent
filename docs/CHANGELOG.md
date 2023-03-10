@@ -1,3 +1,60 @@
+# [5.0.0-beta.1](https://github.com/Teradata/covalent/compare/v4.15.0...v5.0.0-beta.1) (2023-03-10)
+
+### Bug Fixes
+
+- **build:** adding load paths for angular scss build ([0417dd2](https://github.com/Teradata/covalent/commit/0417dd2ffd644232ec52937abb720824671d04d9))
+- **build:** fix to imports failing on build ([3f11193](https://github.com/Teradata/covalent/commit/3f1119313bbd6291fcb3aa29762b3a8e2cc4574f))
+- **dynamic-forms:** removing warnings from webpack compile ([e4801b1](https://github.com/Teradata/covalent/commit/e4801b1bca12b014d54bede58762b0968db7a8f1))
+- **jest:** fixing jest processing ([04665ab](https://github.com/Teradata/covalent/commit/04665ab26370b5e694e31acdf665d9bab32bd6eb))
+- **side-sheet:** update side sheet ref arguments ([66179d2](https://github.com/Teradata/covalent/commit/66179d21eb55f133318fe0644c8dd0c6706260eb))
+- **storybook:** getting storybook working after upgrade ([854144f](https://github.com/Teradata/covalent/commit/854144f888ac85679cb593164edc92147de2adb0))
+
+### Features
+
+- **angular:** updates from review comments ([81c6668](https://github.com/Teradata/covalent/commit/81c6668fb5c1f4e5deb440f846d452388998e3f9))
+- **components:** build updates ([1f7ee04](https://github.com/Teradata/covalent/commit/1f7ee04cda2ce986b7d6ab226e5ec56bd16b2271))
+- **components:** switching over to vite ([b20da8d](https://github.com/Teradata/covalent/commit/b20da8d6e0913f731343af9309f6d03331739425))
+- **covalent:** update README ([853b80d](https://github.com/Teradata/covalent/commit/853b80d7dba1246132851174923389b288e1af6d))
+
+### BREAKING CHANGES
+
+- **covalent:** angular support, and components prefix update
+
+# [5.0.0-beta.1](https://github.com/Teradata/covalent/compare/v4.16.0-beta.2...v5.0.0-beta.1) (2023-02-23)
+
+### Features
+
+- **covalent:** update README ([3429703](https://github.com/Teradata/covalent/commit/3429703b06402cd08739a621b5e53c7bf38f8181))
+
+### BREAKING CHANGES
+
+- **covalent:** angular support, and components prefix update
+
+# [4.16.0-beta.2](https://github.com/Teradata/covalent/compare/v4.16.0-beta.1...v4.16.0-beta.2) (2023-02-16)
+
+### Bug Fixes
+
+- **build:** adding load paths for angular scss build ([881d60e](https://github.com/Teradata/covalent/commit/881d60efa01e57260b4f20e689e521a31784ca19))
+
+### Features
+
+- **components:** build updates ([d632683](https://github.com/Teradata/covalent/commit/d632683cd60880dd835a0af36ae0c7f0e6b70765))
+- **components:** switching over to vite ([e7c9f6a](https://github.com/Teradata/covalent/commit/e7c9f6ae5ca82165c897e171da3f7db86c24b3ae))
+
+# [4.16.0-beta.1](https://github.com/Teradata/covalent/compare/v4.15.0...v4.16.0-beta.1) (2023-01-23)
+
+### Bug Fixes
+
+- **build:** fix to imports failing on build ([1a75c43](https://github.com/Teradata/covalent/commit/1a75c43cd1521ccd84ff2b301eb7fb527f14d11a))
+- **dynamic-forms:** removing warnings from webpack compile ([49ca446](https://github.com/Teradata/covalent/commit/49ca44684447ec5220e3b8f7a1c0df32d17d7fd5))
+- **jest:** fixing jest processing ([25cd6d1](https://github.com/Teradata/covalent/commit/25cd6d159ed2874b2496001833ebd1d996ff6f52))
+- **side-sheet:** update side sheet ref arguments ([02a8722](https://github.com/Teradata/covalent/commit/02a872257e74d7a859ae5bb09330ee315c5dbd73))
+- **storybook:** getting storybook working after upgrade ([0ba283d](https://github.com/Teradata/covalent/commit/0ba283d024100297e8e33a42f4e2a9a5c7435050))
+
+### Features
+
+- **angular:** updates from review comments ([41d924a](https://github.com/Teradata/covalent/commit/41d924af269c171562349ba93a161ee8789f2ac9))
+
 # [4.15.0](https://github.com/Teradata/covalent/compare/v4.14.0...v4.15.0) (2022-12-08)
 
 ### Bug Fixes

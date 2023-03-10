@@ -1,19 +1,24 @@
+import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { ChipBase } from './chip-base';
-import styles from './chip.scss';
+import styles from './chip.scss?inline';
 
 /**
  * Action ribbon
  *
  * @slot - This element has a slot
  */
-@customElement('td-chip')
+@customElement('cv-chip')
 export class CovalentChip extends ChipBase {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-chip': CovalentChip;
+    'cv-chip': CovalentChip;
   }
 }

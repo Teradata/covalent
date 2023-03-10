@@ -1,14 +1,16 @@
-import { SelectBase } from '@material/mwc-select/mwc-select-base';
-import { styles } from '@material/mwc-select/mwc-select.css';
+import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { SelectBase } from '@material/mwc-select/mwc-select-base';
+import { styles as baseStyles } from '@material/mwc-select/mwc-select.css';
+import styles from './select.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-select': CovalentSelectBase;
+    'cv-select': CovalentSelectBase;
   }
 }
 
-@customElement('td-select')
+@customElement('cv-select')
 export class CovalentSelectBase extends SelectBase {
-  static override styles = [styles];
+  static override styles = [css`${unsafeCSS(styles)}`, baseStyles];
 }

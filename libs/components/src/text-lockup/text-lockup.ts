@@ -1,17 +1,21 @@
-import { html, LitElement, nothing } from 'lit';
+import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import styles from './text-lockup.scss';
+import styles from './text-lockup.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'td-text-lockup': CovalentTextLockup;
+    'cv-text-lockup': CovalentTextLockup;
   }
 }
 
-@customElement('td-text-lockup')
+@customElement('cv-text-lockup')
 export class CovalentTextLockup extends LitElement {
-  static override styles = [styles];
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
   @property()
   subText!: string;
@@ -44,6 +48,6 @@ export class CovalentTextLockup extends LitElement {
   }
 
   renderIcon() {
-    return this.icon ? html`<td-icon>${this.icon}</td-icon>` : nothing;
+    return this.icon ? html`<cv-icon>${this.icon}</cv-icon>` : nothing;
   }
 }

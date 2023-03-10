@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-slide-toggle',
@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './dynamic-slide-toggle.component.html',
 })
 export class TdDynamicSlideToggleComponent {
-  control!: FormControl;
+  control!: UntypedFormControl;
 
   label = '';
 

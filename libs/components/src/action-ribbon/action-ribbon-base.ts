@@ -1,7 +1,4 @@
-import {
-  addHasRemoveClass,
-  BaseElement,
-} from '@material/mwc-base/base-element';
+import { addHasRemoveClass,} from '@material/mwc-base/base-element';
 import { observer } from '@material/mwc-base/observer';
 import { MDCBannerAdapter } from '@material/banner/adapter';
 import {
@@ -10,15 +7,12 @@ import {
   events,
   selectors,
 } from '@material/banner/constants';
-
-//TODO REMOVE ONCE default export is fixed
-import MDCBannerFoundation from './foundation';
-
-import { html, TemplateResult } from 'lit';
+import { MDCBannerFoundation } from '@material/banner';
+import { html, LitElement, TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { property, query } from 'lit/decorators.js';
 
-export class ActionRibbonBase extends BaseElement {
+export class ActionRibbonBase extends LitElement {
   protected mdcFoundation!: MDCBannerFoundation;
   protected readonly mdcFoundationClass = MDCBannerFoundation;
 
@@ -42,6 +36,7 @@ export class ActionRibbonBase extends BaseElement {
   @property({ type: String }) labelText = '';
 
   @property({ type: String }) icon = '';
+  @property({ type: String }) iconAriaLabel = '';
 
   @property({ type: Boolean }) centered = true;
 
@@ -63,7 +58,7 @@ export class ActionRibbonBase extends BaseElement {
       'mdc-banner--centered': this.centered,
     };
     return html` <div class="${classMap(classes)}" role="banner">
-      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive">
+      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive" aria-label="${this.labelText}">
         <div class="mdc-banner__graphic-text-wrapper">
           ${this.icon ? this.renderIcon() : ''}
           <div class="mdc-banner__text">${this.labelText}</div>
@@ -76,9 +71,9 @@ export class ActionRibbonBase extends BaseElement {
   }
 
   protected renderIcon(): TemplateResult {
-    return html` <div class="mdc-banner__graphic" role="img" alt="">
+    return html` <div class="mdc-banner__graphic" role="img" aria-label="${this.iconAriaLabel}">
       <slot name="icon">
-        <td-icon class="mdc-banner__icon"> ${this.icon} </td-icon>
+        <cv-icon class="mdc-banner__icon"> ${this.icon} </cv-icon>
       </slot>
     </div>`;
   }
@@ -137,8 +132,12 @@ export class ActionRibbonBase extends BaseElement {
     this.open = false;
   }
 
-  protected override firstUpdated() {
-    super.firstUpdated();
+  protected override async firstUpdated() {
+    if (this.mdcFoundation !== undefined) {
+      this.mdcFoundation.destroy();
+    }
+    this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
+
     if (this.open) {
       this.mdcFoundation.open();
     }

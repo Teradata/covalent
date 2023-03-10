@@ -1,11 +1,11 @@
 // Example Content
-import * as tableContent from '../../stories/demos/table.content.html';
-import * as tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html';
-import * as tablePagination from '../../stories/demos/table-pagination.content.html';
-import * as tableProgressIndicator from '../../stories/demos/table-progress-indicator.content.html';
-import * as tableColumnSorting from '../../stories/demos/table-column-sorting.content.html';
+import tableContent from '../../stories/demos/table.content.html?raw';
+import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
+import tablePagination from '../../stories/demos/table-pagination.content.html?raw';
+import tableProgressIndicator from '../../stories/demos/table-progress-indicator.content.html?raw';
+import tableColumnSorting from '../../stories/demos/table-column-sorting.content.html?raw';
 
-import '!style-loader!css-loader!sass-loader!./data-table.stories.scss';
+import './data-table.stories.scss';
 
 export default {
   title: 'Components/Data Table',

@@ -10,89 +10,89 @@ export default {
 
 const BasicTemplate = ({ selected }) => {
   return `
-    <td-list activatable>
-        <li><td-list-item>Item 0</td-list-item></li>
-        <li><td-list-item ${
+    <cv-list activatable>
+        <li><cv-list-item>Item 0</cv-list-item></li>
+        <li><cv-list-item ${
           selected ? `selected activated` : null
-        }>Item 1</td-list-item></li>
-        <li><td-list-item>Item 2</td-list-item></li>
-        <li><td-list-item>Item 3</td-list-item></li>
-    </td-list>`;
+        }>Item 1</cv-list-item></li>
+        <li><cv-list-item>Item 2</cv-list-item></li>
+        <li><cv-list-item>Item 3</cv-list-item></li>
+    </cv-list>`;
 };
 
 const IconTemplate = ({ icon, iconStyle = 'avatar' }) => {
   return `
-    <td-list>
-        <li><td-list-item graphic="${iconStyle}">
+    <cv-list>
+        <li><cv-list-item graphic="${iconStyle}">
             <span>${iconStyle} 0</span>
-            <td-icon slot="graphic">${icon}</td-icon>
-        </td-list-item></li>
-        <li><td-list-item graphic="${iconStyle}">
+            <cv-icon slot="graphic">${icon}</cv-icon>
+        </cv-list-item></li>
+        <li><cv-list-item graphic="${iconStyle}">
             <span>${iconStyle} 2</span>
-            <td-icon slot="graphic">${icon}</td-icon>
-        </td-list-item></li>
-        <li><td-list-item graphic="${iconStyle}">
+            <cv-icon slot="graphic">${icon}</cv-icon>
+        </cv-list-item></li>
+        <li><cv-list-item graphic="${iconStyle}">
             <span>${iconStyle} 3</span>
-            <td-icon slot="graphic">${icon}</td-icon>
-        </td-list-item></li>
-        <li><td-list-item graphic="${iconStyle}">
+            <cv-icon slot="graphic">${icon}</cv-icon>
+        </cv-list-item></li>
+        <li><cv-list-item graphic="${iconStyle}">
             <span>${iconStyle} 4</span>
-            <td-icon slot="graphic">${icon}</td-icon>
-        </td-list-item></li>
-        <li><td-list-item graphic="${iconStyle}">
+            <cv-icon slot="graphic">${icon}</cv-icon>
+        </cv-list-item></li>
+        <li><cv-list-item graphic="${iconStyle}">
             <span>${iconStyle} 5</span>
-            <td-icon slot="graphic">${icon}</td-icon>
-        </td-list-item></li>
-    </td-list>`;
+            <cv-icon slot="graphic">${icon}</cv-icon>
+        </cv-list-item></li>
+    </cv-list>`;
 };
 
 const TwoLineTemplate = ({ icon, style, required, helper }) => {
   return `
-    <td-list>
-        <li><td-list-item twoline>
+    <cv-list>
+        <li><cv-list-item twoline>
             <span>Item 0</span>
             <span slot="secondary">Secondary line</span>
-        </td-list-item></li>
-        <li><td-list-item twoline>
+        </cv-list-item></li>
+        <li><cv-list-item twoline>
             <span>Item 1</span>
             <span slot="secondary">Secondary line</span>
-        </td-list-item></li>
-        <li><td-list-item twoline>
+        </cv-list-item></li>
+        <li><cv-list-item twoline>
             <span>Item 2</span>
             <span slot="secondary">Secondary line</span>
-        </td-list-item></li>
-        <li><td-list-item twoline>
+        </cv-list-item></li>
+        <li><cv-list-item twoline>
             <span>Item 3</span>
             <span slot="secondary">Secondary line</span>
-        </td-list-item></li>
-    </td-list>`;
+        </cv-list-item></li>
+    </cv-list>`;
 };
 
 const CheckRadioTemplate = ({ listType }) => {
   return `
-    <td-list multi>
-        <li><td-${listType}-list-item selected>Item 0</td-${listType}-list-item></li>
-        <li><td-${listType}-list-item selected>Item 1</td-${listType}-list-item></li>
+    <cv-list multi>
+        <li><cv-${listType}-list-item selected>Item 0</cv-${listType}-list-item></li>
+        <li><cv-${listType}-list-item selected>Item 1</cv-${listType}-list-item></li>
         <li divider role="separator" padded></li>
-        <li><td-${listType}-list-item left selected>Item 2 (left)</td-${listType}-list-item></li>
-        <li><td-${listType}-list-item left>Item 3 (left)</td-${listType}-list-item></li>
-    </td-list>`;
+        <li><cv-${listType}-list-item left selected>Item 2 (left)</cv-${listType}-list-item></li>
+        <li><cv-${listType}-list-item left>Item 3 (left)</cv-${listType}-list-item></li>
+    </cv-list>`;
 };
 
 const SubItemTemplate = ({ selected }) => {
   return `
-    <td-list activatable>
-        <li><td-list-item>Item 0</td-list-item></li>
-        <li><td-list-item graphic="avatar" ${
+    <cv-list activatable>
+        <li><cv-list-item>Item 0</cv-list-item></li>
+        <li><cv-list-item graphic="avatar" ${
           selected ? `selected activated` : null
         } hasChildren>
           Item 1
-            <td-icon slot="graphic">settings</td-icon>
-        </td-list-item></li>
-        <li><td-list-item childItem> SubItems 0</td-list-item></li>
-        <li><td-list-item>Item 2</td-list-item></li>
-        <li><td-list-item>Item 3</td-list-item></li>
-    </td-list>`;
+            <cv-icon slot="graphic">settings</cv-icon>
+        </cv-list-item></li>
+        <li><cv-list-item childItem> SubItems 0</cv-list-item></li>
+        <li><cv-list-item>Item 2</cv-list-item></li>
+        <li><cv-list-item>Item 3</cv-list-item></li>
+    </cv-list>`;
 };
 
 export const Basic = BasicTemplate.bind({});

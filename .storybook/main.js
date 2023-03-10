@@ -13,8 +13,6 @@ module.exports = {
     },
     '@storybook/addon-interactions',
     'storybook-dark-mode',
-    'storybook-addon-designs',
   ],
-  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   staticDirs: [join(__dirname, './public')],
 };
