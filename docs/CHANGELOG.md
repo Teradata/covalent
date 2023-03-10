@@ -1,3 +1,20 @@
+# [5.0.0](https://github.com/Teradata/covalent/compare/v4.15.0...v5.0.0) (2023-03-10)
+
+- 5.0 release 🎈 (#2011) ([b684ffe](https://github.com/Teradata/covalent/commit/b684ffeeb8e668bda405086141138bee03d461de)), closes [#2011](https://github.com/Teradata/covalent/issues/2011)
+
+### BREAKING CHANGES
+
+- updating readme
+
+- feat(covalent): update README
+- angular support, and components prefix update
+
+- ci(release): 5.0.0-beta.1 [skip ci]
+
+- build(upgrade): update package-lock
+
+- ci(release): 5.0.0-beta.1 [skip ci]
+
 # [5.0.0-beta.1](https://github.com/Teradata/covalent/compare/v4.15.0...v5.0.0-beta.1) (2023-03-10)
 
 ### Bug Fixes
