@@ -6,7 +6,11 @@ const { mergeConfig } = require('vite');
   (rootMain.core = { builder: '@storybook/builder-vite' });
 module.exports = {
   ...rootMain,
-  async viteFinal(config) {
+  async viteFinal(config, { configType }) {
+    if (configType === 'PRODUCTION') {
+      // Set base URL for where it will be served in production
+      config.base = '/covalent/docs/components/';
+    }
     // Merge custom configuration into the default config
     return mergeConfig(config, {
       //root: '../../',
