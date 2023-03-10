@@ -1,0 +1,12 @@
+@use '@material/tooltip/tooltip-theme' as tooltip-theme;
+@use '@material/tooltip/styles' as tooltip;
+
+@include tooltip-theme.rich-text-ink-color(
+  var(--mdc-theme-text-primary-on-background),
+  var(--mdc-theme-text-primary-on-background),
+  var(--mdc-theme-accent)
+);
+
+.mdc-tooltip {
+  @include tooltip-theme.rich-fill-color(var(--mdc-theme-surface));
+}

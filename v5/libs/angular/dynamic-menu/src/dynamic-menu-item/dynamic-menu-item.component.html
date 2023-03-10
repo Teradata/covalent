@@ -1,0 +1,37 @@
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false">
+  <ng-template let-item let-index="index" ngFor [ngForOf]="items">
+    <ng-container *ngIf="item.children && item.children.length > 0">
+      <button mat-menu-item [id]="item.id" [matMenuTriggerFor]="menu.childMenu">
+        <mat-icon
+          *ngIf="item.svgIcon"
+          [class]="item.iconClasses"
+          [svgIcon]="item.svgIcon"
+        ></mat-icon>
+        <mat-icon *ngIf="item.icon" [class]="item.iconClasses">{{
+          item.icon
+        }}</mat-icon>
+        <span *ngIf="item.text">
+          {{ item.text }}
+        </span>
+      </button>
+      <td-dynamic-menu-item
+        #menu
+        [items]="item.children"
+      ></td-dynamic-menu-item>
+    </ng-container>
+    <ng-container *ngIf="!item.children || item.children.length === 0">
+      <ng-container *ngIf="!item.link && !item.action">
+        <mat-divider class="group-divider" *ngIf="index > 0"></mat-divider>
+        <div class="group-label text-sm">{{ item.text }}</div>
+      </ng-container>
+      <ng-container *ngIf="item.link || item.action">
+        <div mat-menu-item class="pad-none">
+          <td-dynamic-menu-link
+            [item]="item"
+            (itemClicked)="emitClicked($event)"
+          ></td-dynamic-menu-link>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-template>
+</mat-menu>
