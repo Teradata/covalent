@@ -23,6 +23,8 @@ jobs:
       - name: Install dependencies
         run: npx ci
       - name: Build story book artifacts
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
         run: npx nx run components:build-storybook
       - name: Deploy docs and storybook to GitHub pages
         env:
