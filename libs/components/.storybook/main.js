@@ -9,7 +9,7 @@ module.exports = {
   async viteFinal(config, { configType }) {
     if (configType === 'PRODUCTION') {
       // Set base URL for where it will be served in production
-      config.base = '/covalent/docs/components/';
+      config.base = './';
     }
     // Merge custom configuration into the default config
     return mergeConfig(config, {

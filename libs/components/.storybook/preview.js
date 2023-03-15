@@ -2,6 +2,9 @@ import anysort from 'anysort';
 
 import { parameters as mainParameters } from '../../../.storybook/preview';
 
+import '../theme/theme.scss';
+import '../../../.storybook/theme/markdown-elements.scss';
+
 export const parameters = {
   options: {
     storySort: (previous, next) => {
