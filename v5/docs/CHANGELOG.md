@@ -1,3 +1,15 @@
+## [5.0.2](https://github.com/Teradata/covalent/compare/v5.0.1...v5.0.2) (2023-03-15)
+
+### Bug Fixes
+
+- **components:** adjusted import location of scss theme file ([#2014](https://github.com/Teradata/covalent/issues/2014)) ([bcb2d49](https://github.com/Teradata/covalent/commit/bcb2d49da39690ac77785feb061d01c240605c5a))
+
+## [5.0.1](https://github.com/Teradata/covalent/compare/v5.0.0...v5.0.1) (2023-03-10)
+
+### Bug Fixes
+
+- **components:** update base url config ([2563fb6](https://github.com/Teradata/covalent/commit/2563fb605fd8cac959d2352f22f0dc4520bfafee))
+
 # [5.0.0](https://github.com/Teradata/covalent/compare/v4.15.0...v5.0.0) (2023-03-10)
 
 - 5.0 release 🎈 (#2011) ([b684ffe](https://github.com/Teradata/covalent/commit/b684ffeeb8e668bda405086141138bee03d461de)), closes [#2011](https://github.com/Teradata/covalent/issues/2011)
