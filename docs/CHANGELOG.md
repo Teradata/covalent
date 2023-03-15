@@ -1,3 +1,9 @@
+## [5.0.2](https://github.com/Teradata/covalent/compare/v5.0.1...v5.0.2) (2023-03-15)
+
+### Bug Fixes
+
+- **components:** adjusted import location of scss theme file ([#2014](https://github.com/Teradata/covalent/issues/2014)) ([bcb2d49](https://github.com/Teradata/covalent/commit/bcb2d49da39690ac77785feb061d01c240605c5a))
+
 ## [5.0.1](https://github.com/Teradata/covalent/compare/v5.0.0...v5.0.1) (2023-03-10)
 
 ### Bug Fixes
