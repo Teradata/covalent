@@ -16,6 +16,8 @@ jobs:
   chromatic-deployment:
     # Operating System
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max-old-space-size=4096
     # Job steps
     steps:
       # 👇 Version 2 of the action
