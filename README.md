@@ -43,7 +43,7 @@ Certain covalent version are meant for certain angular versions, and here is the
 |       2.X        |        8.X        |
 |       3.X        | 9.X / 10.X / 11.x |
 |       4.X        |    12.X / 13.X    |
-| Future / Nightly |       13.X        |
+|       5.X        |       14.X        |
 
 ## Browser Support
 
