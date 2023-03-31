@@ -1,12 +1,13 @@
 {
+  "name": "angular",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/angular",
   "sourceRoot": "libs/angular/src",
   "prefix": "covalent",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/angular"],
+      "outputs": ["{workspaceRoot}/dist/libs/angular"],
       "options": {
         "project": "libs/angular/ng-package.json",
         "tailwindConfig": "libs/angular/tailwind.config.js"
@@ -23,7 +24,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/angular"],
+      "outputs": ["{workspaceRoot}/coverage/libs/angular"],
       "options": {
         "jestConfig": "libs/angular/jest.config.js",
         "passWithNoTests": true

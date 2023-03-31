@@ -1,6 +1,7 @@
 {
+  "name": "docs-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/docs-app",
   "sourceRoot": "apps/docs-app/src",
   "prefix": "covalent",
   "targets": {
@@ -124,7 +125,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/docs-app"],
+      "outputs": ["{workspaceRoot}/coverage/apps/docs-app"],
       "options": {
         "jestConfig": "apps/docs-app/jest.config.js",
         "passWithNoTests": true

@@ -1,12 +1,13 @@
 {
+  "name": "markdown-flavored",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/markdown-flavored",
   "sourceRoot": "libs/markdown-flavored/src",
   "prefix": "covalent",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/markdown-flavored"],
+      "outputs": ["{workspaceRoot}/dist/libs/markdown-flavored"],
       "options": {
         "project": "libs/markdown-flavored/ng-package.json"
       },
@@ -22,7 +23,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/markdown-flavored"],
+      "outputs": ["{workspaceRoot}/coverage/libs/markdown-flavored"],
       "options": {
         "jestConfig": "libs/markdown-flavored/jest.config.js",
         "passWithNoTests": true
