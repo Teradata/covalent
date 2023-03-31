@@ -1,12 +1,13 @@
 {
+  "name": "angular-code-editor",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/angular-code-editor",
   "sourceRoot": "libs/angular-code-editor/src",
   "prefix": "covalent",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/angular-code-editor"],
+      "outputs": ["{workspaceRoot}/dist/libs/angular-code-editor"],
       "options": {
         "project": "libs/angular-code-editor/ng-package.json",
         "tailwindConfig": "libs/angular-code-editor/tailwind.config.js"

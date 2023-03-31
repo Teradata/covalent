@@ -1,12 +1,13 @@
 {
+  "name": "angular-guided-tour",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/angular-guided-tour",
   "sourceRoot": "libs/angular-guided-tour/src",
   "prefix": "covalent",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/angular-guided-tour"],
+      "outputs": ["{workspaceRoot}/dist/libs/angular-guided-tour"],
       "options": {
         "project": "libs/angular-guided-tour/ng-package.json",
         "tailwindConfig": "libs/angular-guided-tour/tailwind.config.js"
@@ -23,7 +24,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/angular-guided-tour"],
+      "outputs": ["{workspaceRoot}/coverage/libs/angular-guided-tour"],
       "options": {
         "jestConfig": "libs/angular-guided-tour/jest.config.js",
         "passWithNoTests": true
