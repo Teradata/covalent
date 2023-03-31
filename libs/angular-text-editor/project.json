@@ -1,12 +1,13 @@
 {
+  "name": "angular-text-editor",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/angular-text-editor",
   "sourceRoot": "libs/angular-text-editor/src",
   "prefix": "covalent",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/angular-text-editor"],
+      "outputs": ["{workspaceRoot}/dist/libs/angular-text-editor"],
       "options": {
         "project": "libs/angular-text-editor/ng-package.json"
       },
@@ -22,7 +23,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/angular-text-editor"],
+      "outputs": ["{workspaceRoot}/coverage/libs/angular-text-editor"],
       "options": {
         "jestConfig": "libs/angular-text-editor/jest.config.js",
         "passWithNoTests": true
