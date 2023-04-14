@@ -1,9 +1,6 @@
 <div class="pad-right-sm pad-left-sm">
-  <h1 class="mat-display-1 push-bottom text-caps">{{ category.name }}</h1>
-  <h3
-    class="mat-subheading-2 tc-grey-600 push-bottom-xl"
-    [style.maxWidth.px]="468"
-  >
+  <h1 class="mat-h1 push-bottom text-caps">{{ category.name }}</h1>
+  <h3 class="mat-h3 tc-grey-600 push-bottom-xl" [style.maxWidth.px]="468">
     {{ category.description }}
   </h3>
 </div>
@@ -16,7 +13,7 @@
     class="push-bottom-lg pad-bottom-xs"
   >
     <h3
-      class="mat-subheading-1 tc-grey-600 push-bottom-xs pad-right-sm pad-left-sm"
+      class="mat-h3 version-selector tc-grey-600 push-bottom-xs pad-right-sm pad-left-sm"
     >
       {{ group.name }}
     </h3>
@@ -43,7 +40,7 @@
               </mat-icon>
               <div>
                 <div class="push-bottom-xs">
-                  <span class="mat-subheading-2">{{ item.name }}</span>
+                  <span class="mat-h3">{{ item.name }}</span>
                 </div>
                 <div
                   *ngIf="item?.description"
@@ -62,11 +59,8 @@
 
 <section class="pad-bottom-xxl" *ngIf="category.name === 'Components'">
   <div class="pad-right-sm pad-left-sm pad-top-xl">
-    <h1 class="mat-display-1 push-bottom-md">External Components</h1>
-    <h3
-      class="mat-subheading-2 tc-grey-600 push-bottom-lg"
-      [style.maxWidth.px]="468"
-    >
+    <h1 class="mat-h1 push-bottom-md">External Components</h1>
+    <h3 class="mat-h3 tc-grey-600 push-bottom-lg" [style.maxWidth.px]="468">
       Recommended but not maintained by Covalent
     </h3>
   </div>
@@ -81,7 +75,7 @@
         >
           <mat-icon class="icon-component tc-deep-purple-800">layers</mat-icon>
           <div>
-            <div class="mat-subheading-2 push-bottom-xs">Angular Material</div>
+            <div class="mat-subtitle-1 push-bottom-xs">Angular Material</div>
             <div class="tc-grey-600 mat-caption">
               A short description about the component.
             </div>

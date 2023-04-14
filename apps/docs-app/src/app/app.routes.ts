@@ -74,6 +74,5 @@ export const appRoutes: any = RouterModule.forRoot(routes, {
   useHash: true,
   preloadingStrategy: SelectivePreloadingStrategyService,
   scrollPositionRestoration: 'enabled',
-  relativeLinkResolution: 'corrected',
   anchorScrolling: 'enabled',
 });

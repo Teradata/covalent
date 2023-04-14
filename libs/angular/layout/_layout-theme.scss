@@ -40,10 +40,6 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  .mat-drawer-container {
-    background-color: mat-color($background, status-bar);
-  }
-
   [mat-icon-button].td-layout-menu-button {
     margin-left: 0;
 
@@ -123,6 +119,10 @@
       mat-icon {
         color: mat-color($warn, default-contrast);
       }
+    }
+
+    .mat-mdc-button {
+      --mdc-text-button-label-text-color: mat-color($foreground, text);
     }
   }
 }

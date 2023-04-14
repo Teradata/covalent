@@ -1,5 +1,5 @@
 <section class="push-bottom-xl">
-  <h1 class="push-bottom-sm mat-display-1">Animations</h1>
+  <h1 class="push-bottom-sm mat-h1">Animations</h1>
 
   <p class="tc-grey-600 push-bottom-md">
     Utilities to help add simple reusable animations and reduce boilerplate
@@ -32,11 +32,12 @@
   </a>
 </section>
 
-<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
-  <mat-card-title>Rotate Animation</mat-card-title>
-  <mat-divider></mat-divider>
+<mat-card class="push-bottom-lg mat-elevation-z0 push-none">
+  <mat-card-header
+    ><mat-card-title>Rotate Animation</mat-card-title></mat-card-header
+  >
   <mat-card-content>
-    <p class="mat-body-1">
+    <p class="mat-body-2">
       Use
       <code>tdRotateAnimation</code>
       to rotate any element based on a boolean state.
@@ -101,39 +102,39 @@
       <h2>Parameter Options:</h2>
       <mat-list>
         <mat-list-item>
-          <h3 matLine>degreesStart?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>degreesStart?: number</h3>
+          <p matListItemLine>
             Degrees of rotation that the dom object will end up in during the
             "false" state
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>degreesEnd?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>degreesEnd?: number</h3>
+          <p matListItemLine>
             Degrees of rotation that the dom object will end up in during the
             "true" state
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>duration?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>duration?: number</h3>
+          <p matListItemLine>
             Duration the animation will run in milliseconds. Defaults to 250 ms.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>delay?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>delay?: number</h3>
+          <p matListItemLine>
             Delay before the animation will run in milliseconds. Defaults to 0
             ms.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>ease?: string</h3>
-          <p matLine>
+          <h3 matListItemTitle>ease?: string</h3>
+          <p matListItemLine>
             Animation accelerate and decelerate style. Defaults to ease-in.
           </p>
         </mat-list-item>
@@ -142,11 +143,12 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
-  <mat-card-title>Collapse Animation</mat-card-title>
-  <mat-divider></mat-divider>
+<mat-card class="push-bottom-lg mat-elevation-z0 push-none">
+  <mat-card-header
+    ><mat-card-title>Collapse Animation</mat-card-title></mat-card-header
+  >
   <mat-card-content>
-    <p class="mat-body-1">
+    <p class="mat-body-2">
       Use
       <code>tdCollapseAnimation</code>
       to collapse any element based on a boolean state.
@@ -194,31 +196,31 @@
       <h2>Parameter Options:</h2>
       <mat-list>
         <mat-list-item>
-          <h3 matLine>duration?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>duration?: number</h3>
+          <p matListItemLine>
             Duration the animation will run in milliseconds. Defaults to 150 ms.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>delay?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>delay?: number</h3>
+          <p matListItemLine>
             Delay before the animation will run in milliseconds. Defaults to 0
             ms.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>easeOnClose?: string</h3>
-          <p matLine>
+          <h3 matListItemTitle>easeOnClose?: string</h3>
+          <p matListItemLine>
             Animation accelerates and decelerates when closing. Defaults to
             ease-in.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>easeOnOpen?: string</h3>
-          <p matLine>
+          <h3 matListItemTitle>easeOnOpen?: string</h3>
+          <p matListItemLine>
             Animation accelerates and decelerates when opening. Defaults to
             ease-out.
           </p>
@@ -228,11 +230,12 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
-  <mat-card-title>Fade in/out Animation</mat-card-title>
-  <mat-divider></mat-divider>
+<mat-card class="push-bottom-lg mat-elevation-z0 push-none">
+  <mat-card-header
+    ><mat-card-title>Fade in/out Animation</mat-card-title></mat-card-header
+  >
   <mat-card-content>
-    <p class="mat-body-1">
+    <p class="mat-body-2">
       Use
       <code>TdFadeInOutAnimation</code>
       to fade in/out any element based on a boolean state.
@@ -278,39 +281,39 @@
       <h2>API:</h2>
       <mat-list>
         <mat-list-item>
-          <h3 matLine>anchor?: string</h3>
-          <p matLine>
+          <h3 matListItemTitle>anchor?: string</h3>
+          <p matListItemLine>
             The anchor name is used to attach the animation to an arbitrary
             element in the template. Defaults to 'tdFadeInOut'.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>duration?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>duration?: number</h3>
+          <p matListItemLine>
             Duration the animation will run in milliseconds. Defaults to 150 ms.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>delay?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>delay?: number</h3>
+          <p matListItemLine>
             Delay before the animation will run in milliseconds. Defaults to 0
             ms.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>easeOnIn?: string</h3>
-          <p matLine>
+          <h3 matListItemTitle>easeOnIn?: string</h3>
+          <p matListItemLine>
             Animation accelerates and decelerates when fading in. Defaults to
             ease-in.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>easeOnOut?: string</h3>
-          <p matLine>
+          <h3 matListItemTitle>easeOnOut?: string</h3>
+          <p matListItemLine>
             Animation accelerates and decelerates when fading out. Defaults to
             ease-out.
           </p>
@@ -320,9 +323,12 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card class="push-bottom-lg mat-elevation-z0 bgc-grey-50 push-none">
-  <mat-card-title>Attention Seekers Animation</mat-card-title>
-  <mat-divider></mat-divider>
+<mat-card class="push-bottom-lg mat-elevation-z0 push-none">
+  <mat-card-header
+    ><mat-card-title
+      >Attention Seekers Animation</mat-card-title
+    ></mat-card-header
+  >
   <mat-card-content>
     <div>
       <h3>Demos:</h3>
@@ -397,23 +403,23 @@
       <mat-list>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>duration?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>duration?: number</h3>
+          <p matListItemLine>
             Duration the animation will run in milliseconds. Defaults to 500 ms.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>delay?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>delay?: number</h3>
+          <p matListItemLine>
             Delay before the animation will run in milliseconds. Defaults to 0
             ms.
           </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>ease?: number</h3>
-          <p matLine>
+          <h3 matListItemTitle>ease?: number</h3>
+          <p matListItemLine>
             Animation accelerate and decelerate style. Defaults to ease-out.
           </p>
         </mat-list-item>

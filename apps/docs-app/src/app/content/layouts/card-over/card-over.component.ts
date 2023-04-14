@@ -151,9 +151,9 @@ export class CardOverComponent {
               <h3 matSubheader>Metadata</h3>
               <ng-template let-item let-last="last" ngFor [ngForOf]="cardlist">
                 <mat-list-item>
-                  <mat-icon matListAvatar>{ {item.icon} }</mat-icon>
-                  <h3 matLine> {{ item.title }} </h3>
-                  <p matLine> {{ item.description }}</p>
+                  <mat-icon matListItemAvatar>{ {item.icon} }</mat-icon>
+                  <h3 matListItemTitle> {{ item.title }} </h3>
+                  <p matListItemLine> {{ item.description }}</p>
                 </mat-list-item>
                 <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
                 </ng-template>
@@ -161,9 +161,9 @@ export class CardOverComponent {
                 <h3 matSubheader>Dates</h3>
                 <ng-template let-item let-last="last" ngFor [ngForOf]="carddates">
                 <mat-list-item>
-                  <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
-                  <h3 matLine>{{ item.date | timeAgo }}</h3>
-                  <p matLine>{{ item.description }}</p>
+                  <mat-icon matListItemAvatar>{{ item.icon }}</mat-icon>
+                  <h3 matListItemTitle>{{ item.date | timeAgo }}</h3>
+                  <p matListItemLine>{{ item.description }}</p>
                 </mat-list-item>
                 <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
                 </ng-template>

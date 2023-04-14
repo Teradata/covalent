@@ -1,8 +1,6 @@
 <td-dialog>
-  <div tdDialogTitle *ngIf="title">
-    {{ title }}
-  </div>
-  <div tdDialogContent>
+  <ng-container tdDialogTitle *ngIf="title">{{ title }}</ng-container>
+  <ng-container tdDialogContent>
     <span class="td-dialog-message">{{ message }}</span>
     <form #form="ngForm" novalidate>
       <div class="td-dialog-input-wrapper">
@@ -18,11 +16,9 @@
         </mat-form-field>
       </div>
     </form>
-  </div>
-  <div tdDialogActions>
-    <button mat-button #closeBtn (click)="cancel()">
-      {{ cancelButton }}
-    </button>
+  </ng-container>
+  <ng-container tdDialogActions>
+    <button mat-button #closeBtn (click)="cancel()">{{ cancelButton }}</button>
     <button
       mat-button
       color="accent"
@@ -32,5 +28,5 @@
     >
       {{ acceptButton }}
     </button>
-  </div>
+  </ng-container>
 </td-dialog>

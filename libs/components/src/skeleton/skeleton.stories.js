@@ -5,7 +5,7 @@ import { Basic } from '../typography/typography.stories';
 import loremIpsumContent from '../../stories/demos/lorem-ipsum.content.html?raw';
 import tableProgressContent from '../../stories/demos/table-progress-indicator.content.html?raw';
 
-import 'skeleton-elements/skeleton-elements.scss';
+import 'skeleton-elements/css';
 
 export default {
   title: 'Components/Skeleton',

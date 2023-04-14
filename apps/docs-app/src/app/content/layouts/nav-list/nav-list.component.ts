@@ -156,9 +156,9 @@ export class NavListComponent {
         <mat-nav-list td-sidenav-content [tdLayoutNavListClose]="">
           <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu"> 
             <a mat-list-item>
-              <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
-              <h3 matLine> { {item.title} } </h3> 
-              <p matLine>{{ item.description }}</p>
+              <mat-icon matListItemAvatar>{{ item.icon }}</mat-icon>
+              <h3 matListItemTitle> { {item.title} } </h3> 
+              <p matListItemLine>{{ item.description }}</p>
             </a> 
             <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
           </ng-template>

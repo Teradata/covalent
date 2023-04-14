@@ -6,10 +6,7 @@
     *ngFor="let routeGroup of combinedRoutes"
   >
     <mat-expansion-panel-header
-      [collapsedHeight]="'38px'"
-      [expandedHeight]="'50px'"
-    >
-      <span class="fw-500">{{ routeGroup.name }}</span>
+      >{{ routeGroup.name }}
     </mat-expansion-panel-header>
 
     <div class="doc-nav-section push-bottom-sm">
@@ -22,9 +19,10 @@
             {{ section.name }}
           </div>
           <mat-nav-list
+            *ngIf="section.views.length"
             td-sidenav-content
             disableRipple="true"
-            class="pad-top-xs"
+            class="pad-top-xs pad-right-md"
           >
             <a
               *ngFor="let item of section.views"
@@ -32,7 +30,7 @@
               [routerLink]="item.route"
               [routerLinkActive]="['active']"
               [routerLinkActiveOptions]="{ exact: item.name === 'Overview' }"
-              class="tc-grey-700 doc-nav-link"
+              class="doc-nav-link"
               [tdLayoutClose]
             >
               {{ item.name }}
@@ -48,11 +46,7 @@
             "
             class="mat-elevation-z0 nested-expansion-panel"
           >
-            <mat-expansion-panel-header
-              class="tc-grey-700"
-              [collapsedHeight]="'34px'"
-              [expandedHeight]="'34px'"
-            >
+            <mat-expansion-panel-header>
               <mat-panel-title>{{ section.name }}</mat-panel-title>
             </mat-expansion-panel-header>
 
@@ -66,7 +60,7 @@
                   [routerLinkActiveOptions]="{
                     exact: view.name === 'Overview'
                   }"
-                  class="tc-grey-700 doc-nav-link"
+                  class="doc-nav-link"
                   [tdLayoutClose]
                 >
                   {{ view.name }}

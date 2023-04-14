@@ -10,7 +10,7 @@
     mat-icon {
       color: mat-color($foreground, icon);
 
-      &[matListAvatar] {
+      &[matListItemAvatar] {
         background-color: mat-color($background, hover);
       }
     }

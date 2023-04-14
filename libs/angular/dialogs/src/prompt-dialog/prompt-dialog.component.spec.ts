@@ -35,20 +35,16 @@ describe('Component: TdPromptDialogComponent', () => {
 
   let fixture: ComponentFixture<TestComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, CovalentDialogsModule],
-        declarations: [TestComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, CovalentDialogsModule],
+      declarations: [TestComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);
   });
-
-  const tickRaf = () => tick(16);
 
   it('should focus the input element once the prompt dialog is opened', fakeAsync(() => {
     fixture.componentInstance.openPrompt();
@@ -56,8 +52,9 @@ describe('Component: TdPromptDialogComponent', () => {
       fixture.componentInstance.promptDialogComponent._input.nativeElement,
       'focus'
     );
+    fixture.componentInstance.promptDialogComponent.ngAfterViewInit();
     fixture.detectChanges();
-    tickRaf();
+    tick(500);
     expect(focusSpy).toHaveBeenCalled();
   }));
 
@@ -67,8 +64,9 @@ describe('Component: TdPromptDialogComponent', () => {
       fixture.componentInstance.promptDialogComponent._input.nativeElement,
       'select'
     );
+    fixture.componentInstance.promptDialogComponent.ngAfterViewInit();
     fixture.detectChanges();
-    tickRaf();
+    tick(500);
     expect(selectSpy).toHaveBeenCalled();
   }));
 });

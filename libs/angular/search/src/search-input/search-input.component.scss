@@ -17,6 +17,10 @@
     }
 
     ::ng-deep mat-form-field {
+      .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+      }
+
       &.mat-form-field-appearance-outline {
         .mat-form-field-wrapper {
           padding-bottom: 0;
@@ -51,12 +55,6 @@
         }
       }
 
-      &.mat-form-field-appearance-legacy {
-        .mat-form-field-infix {
-          align-self: center;
-        }
-      }
-
       .mat-input-element {
         caret-color: currentColor;
       }
@@ -69,7 +67,6 @@
     .td-search-input-clear {
       // [flex="none"]
       flex: 0 0 auto;
-      align-self: center;
     }
   }
 }

@@ -98,7 +98,8 @@ export class TdFlavoredMarkdownButtonComponent {
   @Input() text = '';
   @Input() data = '';
   @Output()
-  clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
+  clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> =
+    new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
   emitClick(): void {
     this.clicked.emit({ text: this.text, data: this.data });
   }
@@ -223,7 +224,8 @@ export class TdFlavoredMarkdownComponent
    * Is an object containing text and data of button
    */
   @Output()
-  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
+  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> =
+    new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
 
   @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true })
   container!: TdFlavoredMarkdownContainerDirective;
@@ -564,12 +566,14 @@ export class TdFlavoredMarkdownComponent
 
           lines.push({
             line: lineText,
-            sublines: sublineTexts.map((subline: string) => {
-              if (listCharRegExp.test(subline)) {
-                return '';
-              }
-              return subline.trim();
-            }),
+            sublines: sublineTexts
+              .map((subline: string) => {
+                if (listCharRegExp.test(subline)) {
+                  return '';
+                }
+                return subline.trim();
+              })
+              .filter((line) => !!line),
           });
         });
         componentRef.instance.lines = lines;

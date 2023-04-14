@@ -19,7 +19,7 @@ export class TdBreadcrumbComponent implements AfterViewInit {
   private _displayIcon = true;
   private _separatorIcon = 'chevron_right';
 
-  @HostBinding('class.mat-button') matButtonClass = true;
+  @HostBinding('class.mdc-button') matButtonClass = true;
   @HostBinding('class.td-breadcrumb') tdBreadCrumbClass = true;
 
   // Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'

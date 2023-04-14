@@ -1,11 +1,9 @@
 <td-dialog>
-  <div tdDialogTitle *ngIf="title">
-    {{ title }}
-  </div>
-  <div tdDialogContent>
+  <ng-container tdDialogTitle *ngIf="title">{{ title }}</ng-container>
+  <ng-container tdDialogContent>
     <span class="td-dialog-message">{{ message }}</span>
-  </div>
-  <div tdDialogActions>
+  </ng-container>
+  <ng-container tdDialogActions>
     <button
       mat-button
       #closeBtn
@@ -23,5 +21,5 @@
     >
       {{ acceptButton }}
     </button>
-  </div>
+  </ng-container>
 </td-dialog>

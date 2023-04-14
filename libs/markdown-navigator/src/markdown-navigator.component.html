@@ -93,10 +93,10 @@
           <mat-icon matListIcon>
             {{ getIcon(item) }}
           </mat-icon>
-          <span matLine class="truncate">
+          <span matListItemLine class="truncate">
             {{ getTitle(item) }}
           </span>
-          <span matLine class="truncate">{{ item.description }}</span>
+          <span matListItemLine class="truncate">{{ item.description }}</span>
           <mat-divider></mat-divider>
         </button>
       </mat-action-list>
@@ -112,6 +112,6 @@
   layout-align="center center"
   class="empty-state"
 >
-  <mat-icon matListAvatar>subject</mat-icon>
+  <mat-icon matListItemAvatar>subject</mat-icon>
   <h2>{{ emptyStateLabel }}</h2>
 </div>

@@ -45,15 +45,15 @@ Example with all inputs and projected content:
 <td-user-profile name="daffy duck" email="daffy.duck@teradata.com">
   <ng-container td-user-info-list>
     <mat-list-item>
-      <mat-icon matListAvatar>account_balance</mat-icon>
-      <span matLine>default</span>
-      <span matLine>organization</span>
+      <mat-icon matListItemAvatar>account_balance</mat-icon>
+      <span matListItemLine>default</span>
+      <span matListItemLine>organization</span>
     </mat-list-item>
   </ng-container>
   <ng-container td-user-action-list>
     <button mat-list-item>
-      <span matListAvatar></span>
-      <span matLine>Sign out</span>
+      <span matListItemAvatar></span>
+      <span matListItemLine>Sign out</span>
     </button>
   </ng-container>
 </td-user-profile>
