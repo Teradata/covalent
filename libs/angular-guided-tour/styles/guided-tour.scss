@@ -71,6 +71,7 @@ $mat-icon-font: 'Material Icons', sans-serif;
   &.material-icons {
     font-family: $mat-icon-font;
     font-size: 24px;
+    border-radius: 50%;
   }
 }
 

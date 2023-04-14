@@ -1,9 +1,6 @@
 <td-layout class="home">
   <div>
-    <section
-      class="banner bgc-white-4"
-      [ngClass]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate'"
-    >
+    <section class="banner">
       <div layout="row" layout-align="center center">
         <div class="max-width">
           <div layout="row" layout-align="space-between center">
@@ -35,17 +32,14 @@
                       Covalent
                     </h3>
                     <h1
-                      class="mat-title tc-td-slate push-top-xs push-bottom-xs mat-display-2"
-                      [style.lineHeight.em]="1.3"
-                      [style.fontWeight]="500"
+                      class="mat-title tc-td-slate push-top-xs push-bottom-xs mat-headline-3"
                     >
                       Enterprise UI Platform
                     </h1>
                   </div>
                 </div>
                 <h2
-                  class="mat-title tc-td-slate-600 push-top-xs push-bottom-sm text-center pad-sm push-left push-right"
-                  [style.fontWeight]="400"
+                  class="mat-title tc-td-slate-600 push-top-xs push-bottom-sm text-center pad-sm push-left push-right mat-headline-6"
                 >
                   Reusable tested tools to build robust Angular Material &
                   Angular applications
@@ -59,7 +53,6 @@
                   <button
                     mat-raised-button
                     color="accent"
-                    [style.letterSpacing.px]="1"
                     class="text-upper text-lg push-bottom-lg pad-xs pad-left-md pad-right-md"
                     [routerLink]="['/docs']"
                   >
@@ -122,11 +115,11 @@
             <mat-nav-list hide-gt-sm>
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <a mat-list-item [routerLink]="[item.route]">
-                  <mat-icon matListAvatar>
+                  <mat-icon matListItemAvatar>
                     <span class="tc-{{ item.color }}">{{ item.icon }}</span>
                   </mat-icon>
-                  <h3 matLine>{{ item.title }}</h3>
-                  <p matLine>{{ item.description }}</p>
+                  <h3 matListItemTitle>{{ item.title }}</h3>
+                  <p matListItemLine>{{ item.description }}</p>
                 </a>
                 <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
               </ng-template>
@@ -162,7 +155,7 @@
                       {{ item.title }}
                     </div>
                   </div>
-                  <div class="mat-subheading-2 text-wrap text-left tc-grey-700">
+                  <div class="mat-subtitle-1 text-wrap text-left tc-grey-700">
                     {{ item.description }}
                   </div>
                 </a>
@@ -180,19 +173,19 @@
             <div flex flex-order-xs="2" class="pad max-width">
               <div class="push-top-xxl" hide-xs></div>
               <div>
-                <h2 class="mat-headline tc-red-500 push-top-xs push-bottom-sm">
+                <h2
+                  class="mat-headline-5 tc-red-500 push-top-xs push-bottom-sm"
+                >
                   Built with
                   <mat-icon>favorite</mat-icon>
                   on Angular
                 </h2>
-                <h3
-                  class="mat-subheading-1 tc-td-slate push-top-xs push-bottom-sm"
-                >
+                <h3 class="mat-body-1 tc-td-slate push-top-xs push-bottom-sm">
                   Teradata is acvtively commited to Angular. Our entire product
                   suite is built or revamped on Angular.
                 </h3>
                 <h4
-                  class="mat-subheading-1 tc-td-slate push-top-xs push-bottom-sm"
+                  class="mat-body-1 tc-td-slate push-top-xs push-bottom-sm"
                   hide-xs
                 >
                   Teradata developers across the organization, contribute back
@@ -227,18 +220,16 @@
               <div class="push-top-xxl" hide-xs></div>
               <div>
                 <h2
-                  class="mat-headline tc-green-A700 push-top-xs push-bottom-sm"
+                  class="mat-headline-5 tc-green-A700 push-top-xs push-bottom-sm"
                 >
                   Following the Material Design spec
                 </h2>
-                <h3
-                  class="mat-subheading-1 tc-td-slate push-top-xs push-bottom-sm"
-                >
+                <h3 class="mat-body-1 tc-td-slate push-top-xs push-bottom-sm">
                   Covalent follows the Material Design specification as closely
                   as possible through the construction of all components.
                 </h3>
                 <h4
-                  class="mat-subheading-1 tc-td-slate push-top-xs push-bottom-sm"
+                  class="mat-body-1 tc-td-slate push-top-xs push-bottom-sm"
                   hide-xs
                 >
                   Adopting Material Design as our own spec allows our UI/UX

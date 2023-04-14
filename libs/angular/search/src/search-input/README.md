@@ -61,7 +61,7 @@ Example for HTML usage:
 
 ```html
 <td-search-input
-  appearance="legacy|standard|fill|outline"
+  appearance="fill|outline"
   placeholder="Search here"
   [(ngModel)]="searchInputTerm"
   [showUnderline]="false|true"

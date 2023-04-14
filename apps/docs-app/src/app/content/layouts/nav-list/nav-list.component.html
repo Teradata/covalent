@@ -38,14 +38,14 @@
       >
         <mat-nav-list>
           <a mat-list-item>
-            <mat-icon>home</mat-icon>
+            <mat-icon matListItemIcon>home</mat-icon>
             Home
           </a>
         </mat-nav-list>
         <div tdNavigationDrawerMenu>
           <mat-nav-list>
             <a mat-list-item>
-              <mat-icon>account_box</mat-icon>
+              <mat-icon matListItemIcon>account_box</mat-icon>
               Profile
             </a>
           </mat-nav-list>
@@ -148,9 +148,9 @@
         <mat-nav-list td-sidenav-content>
           <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
             <a mat-list-item>
-              <mat-icon matListAvatar>{{ item.icon }}</mat-icon>
-              <h3 matLine>{{ item.title }}</h3>
-              <p matLine>{{ item.description }}</p>
+              <mat-icon matListItemAvatar>{{ item.icon }}</mat-icon>
+              <h3 matListItemTitle>{{ item.title }}</h3>
+              <p matListItemLine>{{ item.description }}</p>
             </a>
             <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
           </ng-template>

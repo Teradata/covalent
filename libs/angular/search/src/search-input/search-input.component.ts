@@ -91,7 +91,7 @@ export class TdSearchInputComponent
    * appearance?: MatFormFieldAppearance
    * Appearance style for the underlying input component.
    */
-  @Input() appearance: MatFormFieldAppearance = 'legacy';
+  @Input() appearance: MatFormFieldAppearance = 'outline';
 
   /**
    * showUnderline?: boolean

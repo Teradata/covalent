@@ -1,8 +1,8 @@
 <div layout="row" layout-align="start center">
-  <div hide-xs class="mat-subheading-2 pad-left pad-right push-bottom-none">
+  <div hide-xs class="mat-subtitle-1 pad-left pad-right push-bottom-none">
     Chart Theme:
   </div>
-  <mat-form-field floatLabel="never">
+  <mat-form-field>
     <mat-select
       [(value)]="selectedTheme"
       (valueChange)="selectChartTheme($event)"
@@ -54,7 +54,7 @@
               {{ params.seriesName + ': ' + params.value[1] }}
             </span>
           </div>
-          <div class="mat-caption">at {{ params.name | date: 'medium' }}</div>
+          <div class="mat-caption">at {{ params.name | date : 'medium' }}</div>
         </ng-container>
       </ng-template>
     </td-chart-series-tooltip>
@@ -90,7 +90,7 @@
               {{ params.seriesName + ': ' + params.value[1] }}
             </span>
           </div>
-          <div class="mat-caption">at {{ params.name | date: 'medium' }}</div>
+          <div class="mat-caption">at {{ params.name | date : 'medium' }}</div>
         </ng-container>
       </ng-template>
     </td-chart-series-tooltip>

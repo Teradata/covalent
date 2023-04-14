@@ -125,11 +125,11 @@ export class PipesComponent {
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <!-- original output -->
-        <h3 matLine>Digits: { { log.digits } }</h3>
+        <h3 matListItemTitle>Digits: { { log.digits } }</h3>
         <!-- output with digits pipe -->
-        <p matLine>Converted: { { log.digits | digits } }</p>
+        <p matListItemLine>Converted: { { log.digits | digits } }</p>
         <!-- output with precision aurgument -->
-        <p matLine>With precision argument: { { log.digits | digits:log.precision } } </p>
+        <p matListItemLine>With precision argument: { { log.digits | digits:log.precision } } </p>
       </mat-list-item>
     </mat-list>
   `;
@@ -137,11 +137,11 @@ export class PipesComponent {
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <!-- original output -->
-        <h3 matLine>Bytes: { { log.bytes } }</h3>
+        <h3 matListItemTitle>Bytes: { { log.bytes } }</h3>
         <!-- output with bytes pipe -->
-        <p matLine>Converted: { { log.bytes | bytes } }</p>
+        <p matListItemLine>Converted: { { log.bytes | bytes } }</p>
         <!-- output with precision aurgument -->
-        <p matLine>With precision argument: { { log.bytes | bytes:log.precision } } </p>
+        <p matListItemLine>With precision argument: { { log.bytes | bytes:log.precision } } </p>
       </mat-list-item>
     </mat-list>
   `;
@@ -149,11 +149,11 @@ export class PipesComponent {
   <mat-list>
     <mat-list-item *ngFor="let log of logs">
       <!-- original output -->
-      <h3 matLine>Bytes: { { log.bytes } }</h3>
+      <h3 matListItemTitle>Bytes: { { log.bytes } }</h3>
       <!-- output with bytes pipe -->
-      <p matLine>Converted: { { log.bytes | decimalBytes } }</p>
+      <p matListItemLine>Converted: { { log.bytes | decimalBytes } }</p>
       <!-- output with precision aurgument -->
-      <p matLine>With precision argument: { { log.bytes | decimalBytes:log.precision } } </p>
+      <p matListItemLine>With precision argument: { { log.bytes | decimalBytes:log.precision } } </p>
     </mat-list-item>
   </mat-list>
   `;
@@ -181,11 +181,11 @@ export class PipesComponent {
   <mat-list>
     <mat-list-item *ngFor="let log of logs">
       <!-- Start and end time output -->
-      <h3 matLine>{ { log.timestamp } } | End Time: { { log.timestampend } }</h3>
+      <h3 matListItemTitle>{ { log.timestamp } } | End Time: { { log.timestampend } }</h3>
       <!-- output with timeDifference pipe -->
-      <p matLine>Difference: { { log.timestamp | timeDifference:log.timestampend } }</p>
+      <p matListItemLine>Difference: { { log.timestamp | timeDifference:log.timestampend } }</p>
       <!-- outputs the time difference relative to the current time -->
-      <p matLine>Difference relative to current time: { { log.timestamp | timeDifference } }</p>
+      <p matListItemLine>Difference relative to current time: { { log.timestamp | timeDifference } }</p>
     </mat-list-item>
   </mat-list> 
   `;
@@ -193,9 +193,9 @@ export class PipesComponent {
   <mat-list>
     <mat-list-item *ngFor="let log of logs">
       <!-- original value output -->
-      <h3 matLine>Original value: <code>{ { log.text_value } }</code></h3>
+      <h3 matListItemTitle>Original value: <code>{ { log.text_value } }</code></h3>
       <!-- truncated value output -->
-      <p matLine>Truncate with a length value of <code>{ { log.truncate_length } }</code>: { { log.text_value | truncate:log.truncate_length } }</p>
+      <p matListItemLine>Truncate with a length value of <code>{ { log.truncate_length } }</code>: { { log.text_value | truncate:log.truncate_length } }</p>
     </mat-list-item>
   </mat-list>
   `;

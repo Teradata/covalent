@@ -1,13 +1,13 @@
 <mat-list [attr.dense]="dense ? true : null">
   <ng-template let-line let-last="last" ngFor [ngForOf]="lines">
     <mat-list-item>
-      <h4 matLine>
+      <h4 matListItemTitle>
         {{ line.line }}
       </h4>
-      <p *ngFor="let subline of line.sublines" matLine>
+      <p *ngFor="let subline of line.sublines" matListItemLine>
         {{ subline }}
       </p>
-      <mat-divider *ngIf="!last"></mat-divider>
+      <mat-divider *ngIf="!last" matListItemLine></mat-divider>
     </mat-list-item>
   </ng-template>
 </mat-list>

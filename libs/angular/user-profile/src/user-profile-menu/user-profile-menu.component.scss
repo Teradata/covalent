@@ -7,7 +7,7 @@
 
 ::ng-deep mat-list-item:not(:first-child),
 ::ng-deep [mat-list-item] {
-  .mat-list-item-content .mat-icon[matListAvatar] {
+  .mat-list-item-content .mat-icon[matListItemAvatar] {
     background: none;
   }
 }

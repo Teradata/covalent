@@ -17,15 +17,20 @@
 </td-message>
 <div class="push-bottom-xxl pad-bottom-xxl">
   <div class="pad-right-sm pad-left-sm push-bottom-lg">
-    <h1 class="mat-display-1 content-title push-bottom-sm text-caps">
+    <h1 class="mat-h1 content-title push-bottom-sm text-caps">
       {{ component?.name }}
     </h1>
-    <h3 class="mat-subheading-2 tc-grey-600" [style.maxWidth.px]="500">
+    <h3 class="mat-h3 tc-grey-600" [style.maxWidth.px]="500">
       {{ component?.description }}
     </h3>
   </div>
 
-  <nav mat-tab-nav-bar color="accent" class="push-bottom-lg">
+  <nav
+    mat-tab-nav-bar
+    color="accent"
+    class="push-bottom-lg"
+    [tabPanel]="tabPanel"
+  >
     <a
       mat-tab-link
       *ngFor="let link of navLinks"
@@ -38,5 +43,7 @@
     </a>
   </nav>
 
-  <router-outlet></router-outlet>
+  <mat-tab-nav-panel #tabPanel>
+    <router-outlet></router-outlet>
+  </mat-tab-nav-panel>
 </div>

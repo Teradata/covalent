@@ -53,7 +53,7 @@ function createTable(rows, cols) {
 
 const html = `<div layout="row" layout-align="start center" class="pad-xs pad-bottom-none">
   <span flex="none" hide-xs class="push-right mat-body-1">Editor Language</span>
-  <mat-form-field floatLabel="never">
+  <mat-form-field >
     <mat-select [(ngModel)]="editorLanguage" (ngModelChange)="changeLanguage()" placeholder="Editor Language">
       <mat-option value="sql">SQL</mat-option>
       <mat-option value="javascript">JavaScript</mat-option>

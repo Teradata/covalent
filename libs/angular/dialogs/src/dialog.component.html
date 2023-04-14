@@ -1,12 +1,10 @@
-<div class="td-dialog-wrapper">
-  <h3 class="td-dialog-title" *ngIf="dialogTitle.length > 0">
-    <ng-content select="[tdDialogTitle]"></ng-content>
-  </h3>
-  <div class="td-dialog-content" *ngIf="dialogContent.length > 0">
-    <ng-content select="[tdDialogContent]"></ng-content>
-  </div>
-  <div class="td-dialog-actions" *ngIf="dialogActions.length > 0">
-    <span class="td-dialog-spacer"></span>
-    <ng-content select="[tdDialogActions]"></ng-content>
-  </div>
+<div mat-dialog-title *ngIf="dialogTitle.length > 0">
+  <ng-content select="[tdDialogTitle]"></ng-content>
 </div>
+<mat-dialog-content class="td-dialog-content" *ngIf="dialogContent.length > 0">
+  <ng-content select="[tdDialogContent]"></ng-content>
+</mat-dialog-content>
+<mat-dialog-actions class="td-dialog-actions" *ngIf="dialogActions.length > 0">
+  <span class="td-dialog-spacer"></span>
+  <ng-content select="[tdDialogActions]"></ng-content>
+</mat-dialog-actions>

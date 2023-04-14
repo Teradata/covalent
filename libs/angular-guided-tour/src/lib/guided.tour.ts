@@ -91,8 +91,9 @@ const defaultStepOptions: TourStep = {
   },
 };
 
-const MAT_ICON_BUTTON = 'mat-icon-button material-icons mat-button-base';
-const MAT_BUTTON = 'mat-button-base mat-button';
+const MAT_ICON_BUTTON =
+  'mdc-icon-button material-icons mat-mdc-icon-button mat-mdc-button-base';
+const MAT_BUTTON = 'mdc-button mat-mdc-button mat-mdc-button-base';
 const MAT_BUTTON_INVISIBLE = 'shepherd-void-button';
 
 export class CovalentGuidedTour extends TourButtonsActions {
