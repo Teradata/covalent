@@ -15,7 +15,6 @@ import { GitHubService } from '../../services/github.service';
 @Component({
   selector: 'td-toolbar',
   templateUrl: '././toolbar.component.html',
-  styleUrls: ['././toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
   dir: 'ltr' | 'rtl' = getDirection();

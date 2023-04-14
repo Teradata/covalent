@@ -9,15 +9,12 @@
   // [layout="row"]
   flex-direction: row;
   // [layout-align="end center"]
-  align-items: baseline;
   align-content: center;
   max-width: 100%;
   justify-content: flex-end;
 
   .td-search-icon {
-    // [flex="none"]
-    flex: 0 0 auto;
-    align-self: center;
+    margin-top: 4px;
   }
 
   td-search-input {
@@ -34,4 +31,12 @@
       }
     }
   }
+}
+
+.mat-toolbar
+  :host
+  ::ng-deep
+  .mdc-text-field:not(.mdc-text-field--disabled)
+  .mdc-text-field__input {
+  color: #ffffff;
 }

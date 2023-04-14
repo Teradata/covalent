@@ -8,12 +8,16 @@
     [style.-webkit-box-flex]="1"
   >
     <mat-card>
-      <mat-card-title *ngIf="cardTitle">{{ cardTitle }}</mat-card-title>
-      <mat-card-subtitle *ngIf="cardSubtitle">{{
-        cardSubtitle
-      }}</mat-card-subtitle>
+      <mat-card-header>
+        <mat-card-title *ngIf="cardTitle">{{ cardTitle }}</mat-card-title>
+        <mat-card-subtitle *ngIf="cardSubtitle">{{
+          cardSubtitle
+        }}</mat-card-subtitle>
+      </mat-card-header>
       <mat-divider *ngIf="cardTitle || cardSubtitle"></mat-divider>
-      <ng-content></ng-content>
+      <mat-card-content>
+        <ng-content></ng-content>
+      </mat-card-content>
     </mat-card>
     <ng-content select="[td-after-card]"></ng-content>
   </div>

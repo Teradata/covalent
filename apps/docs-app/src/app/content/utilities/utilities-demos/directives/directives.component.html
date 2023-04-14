@@ -1,5 +1,5 @@
 <section class="push-bottom-xl">
-  <h1 class="push-bottom-sm mat-display-1">Directives</h1>
+  <h1 class="push-bottom-sm mat-h1">Directives</h1>
 
   <p class="tc-grey-600 push-bottom-md">Core Covalent directives</p>
 </section>
@@ -25,14 +25,13 @@
 <mat-card
   tdFullScreen
   #tdFullScreen="tdFullScreen"
-  class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none text-break"
+  class="mat-elevation-z0 push-bottom-lg push-none text-break"
 >
-  <mat-card-header layout="row">
-    <mat-card-title flex>Fullscreen directive</mat-card-title>
+  <mat-card-header>
+    <mat-card-title>Fullscreen directive</mat-card-title>
   </mat-card-header>
-  <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="mat-body-1">
+    <p class="mat-body-2">
       Use
       <code>tdFullScreen</code>
       directive on any element you want full screen.
@@ -100,11 +99,12 @@
   </mat-card-actions>
 </mat-card>
 
-<mat-card class="mat-elevation-z0 push-bottom-lg bgc-grey-50 push-none">
-  <mat-card-title>Autotrim directive</mat-card-title>
-  <mat-divider></mat-divider>
+<mat-card class="mat-elevation-z0 push-bottom-lg push-none">
+  <mat-card-header
+    ><mat-card-title>Autotrim directive</mat-card-title></mat-card-header
+  >
   <mat-card-content>
-    <p class="mat-body-1">
+    <p class="mat-body-2">
       Use
       <code>tdAutoTrim</code>
       on an input to automatically trim the characters.

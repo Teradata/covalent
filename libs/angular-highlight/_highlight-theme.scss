@@ -3,7 +3,7 @@
 /**
 * Mimicking VS Dark+ theme as closely as possible
 */
-@mixin covalent-highlight-theme() {
+@mixin covalent-highlight-theme($theme-or-config) {
   td-highlight {
     background: #1e1e21;
 

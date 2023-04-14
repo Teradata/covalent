@@ -2,7 +2,7 @@
   mat-list-item,
   .mat-list-item-content {
     mat-icon {
-      &[matListAvatar] {
+      &[matListItemAvatar] {
         align-items: center;
         align-content: center;
         justify-content: center;
@@ -14,9 +14,5 @@
   .mat-icon.mat-icon-logo {
     height: 24px;
     width: 100px;
-  }
-
-  .mat-icon {
-    flex-shrink: 0;
   }
 }

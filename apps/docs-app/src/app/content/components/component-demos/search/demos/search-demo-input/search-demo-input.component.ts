@@ -8,12 +8,7 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
   templateUrl: './search-demo-input.component.html',
 })
 export class SearchDemoInputComponent {
-  public appearanceOptions: MatFormFieldAppearance[] = [
-    'fill',
-    'legacy',
-    'outline',
-    'standard',
-  ];
+  public appearanceOptions: MatFormFieldAppearance[] = ['fill', 'outline'];
   public appearance: MatFormFieldAppearance = this.appearanceOptions[1];
   searchInputTerm = '';
   debounce = 0;

@@ -16,24 +16,23 @@ import {
   LoadingType,
   LoadingStrategy,
 } from '../loading.component';
+import { MatProgressBar } from '@angular/material/progress-bar';
 
 describe('Directive: Loading', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [
-          TdLoadingDefaultTestComponent,
-          TdLoadingBasicTestComponent,
-          TdLoadingDuplicationTestComponent,
-          TdLoadingStarUntilAsyncTestComponent,
-          TdLoadingNamedErrorStarUntilAsyncTestComponent,
-          TdLoadingBooleanTemplateUntilTestComponent,
-        ],
-        imports: [NoopAnimationsModule, CovalentLoadingModule],
-      });
-      TestBed.compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        TdLoadingDefaultTestComponent,
+        TdLoadingBasicTestComponent,
+        TdLoadingDuplicationTestComponent,
+        TdLoadingStarUntilAsyncTestComponent,
+        TdLoadingNamedErrorStarUntilAsyncTestComponent,
+        TdLoadingBooleanTemplateUntilTestComponent,
+      ],
+      imports: [NoopAnimationsModule, CovalentLoadingModule],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should render a spinner, replace strategy, primary color by default', (done) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
@@ -260,30 +259,24 @@ describe('Directive: Loading', () => {
           expect(
             fixture.debugElement
               .query(By.css('mat-progress-bar'))
-              .componentInstance._primaryTransform()
-          ).toEqual({
-            transform: 'scale3d(0.2, 1, 1)',
-          });
+              .componentInstance._getPrimaryBarTransform()
+          ).toEqual('scaleX(0.2)');
 
           loadingService.setValue('name', 50);
           fixture.detectChanges();
           expect(
             fixture.debugElement
-              .query(By.css('mat-progress-bar'))
-              .componentInstance._primaryTransform()
-          ).toEqual({
-            transform: 'scale3d(0.5, 1, 1)',
-          });
+              .query(By.directive(MatProgressBar))
+              .componentInstance._getPrimaryBarTransform()
+          ).toEqual('scaleX(0.5)');
 
           loadingService.setValue('name', 100);
           fixture.detectChanges();
           expect(
             fixture.debugElement
               .query(By.css('mat-progress-bar'))
-              .componentInstance._primaryTransform()
-          ).toEqual({
-            transform: 'scale3d(1, 1, 1)',
-          });
+              .componentInstance._getPrimaryBarTransform()
+          ).toEqual('scaleX(1)');
 
           loadingService.resolve('name');
           fixture.detectChanges();

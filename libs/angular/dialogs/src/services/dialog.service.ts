@@ -199,6 +199,11 @@ export class TdDialogService {
       const dialogElement: HTMLElement = <HTMLElement>(
         this._document.getElementById(matDialogRef.id)
       );
+
+      if (!dialogElement) {
+        return;
+      }
+
       const draggableElement: DragRef =
         this._dragDrop.createDrag(dialogElement);
 
