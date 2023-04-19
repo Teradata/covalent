@@ -1,3 +1,13 @@
+# [6.0.0-beta.1](https://github.com/Teradata/covalent/compare/v5.0.2...v6.0.0-beta.1) (2023-04-19)
+
+### Features
+
+- **upgrade:** upgrading ng 15 ([bbf28eb](https://github.com/Teradata/covalent/commit/bbf28eb0a8cc026c97b1d4a5690ec00177180396))
+
+### BREAKING CHANGES
+
+- **upgrade:** upgraading to latest angular 15
+
 ## [5.0.2](https://github.com/Teradata/covalent/compare/v5.0.1...v5.0.2) (2023-03-15)
 
 ### Bug Fixes
