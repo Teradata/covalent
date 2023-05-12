@@ -403,12 +403,12 @@ export class TdFlavoredMarkdownComponent
         label: string
       ) => {
         componentRef.instance.checked = !!checked.trim();
-        componentRef.instance.disabled = true;
+        componentRef.instance.ariaLabel = label;
         componentRef.instance.labelPosition = 'after';
         this._renderer.setProperty(
           (<HTMLElement>(
             componentRef.instance._elementRef.nativeElement
-          )).getElementsByClassName('mat-checkbox-label')[0],
+          )).getElementsByTagName('label')[0],
           'innerHTML',
           label
         );
