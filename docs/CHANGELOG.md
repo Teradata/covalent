@@ -1,3 +1,9 @@
+# [6.0.0-beta.2](https://github.com/Teradata/covalent/compare/v6.0.0-beta.1...v6.0.0-beta.2) (2023-05-12)
+
+### Bug Fixes
+
+- **markdown:** fix for flavored markdown checkboxes ([3c77911](https://github.com/Teradata/covalent/commit/3c77911907850e07618ae7f0e0b9415ddfc725fd))
+
 # [6.0.0-beta.1](https://github.com/Teradata/covalent/compare/v5.0.2...v6.0.0-beta.1) (2023-04-19)
 
 ### Features
