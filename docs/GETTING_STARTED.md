@@ -70,41 +70,40 @@ See the [material theming guide](https://github.com/angular/material2/blob/maste
 
 A theme file is a simple Sass file that defines your palettes and passes them to mixins that output the corresponding styles. A typical theme file will look something like this:
 
-```css
-@import '~@angular/material/theming';
-@import '~@covalent/core/theming/all-theme';
+```scss
+@use '@angular/material' as mat;
+@use '@covalent/core/theming/all-theme' as cov;
 
 // (optional) Additional themes
-@import '~@covalent/markdown/markdown-theme';
-@import '~@covalent/highlight/highlight-theme';
+@use '@covalent/markdown/markdown-theme' as markdown;
+@use '@covalent/highlight/highlight-theme' as highlight;
 
 // Define a custom typography config that overrides the font-family
 // or any typography level.
-$typography: mat-typography-config(
+$typography: mat.define-typography-config(
   $font-family: 'Roboto, monospace',
-  $headline: mat-typography-level(32px, 48px, 700)
+  $headline: mat.define-typography-level(32px, 48px, 700)
 );
 
-@include mat-core(
+mat.core(
   $typography
 ); // $typography is an **optional** argument for the mat-core
 
-$primary: mat-palette($mat-orange, 800, 100, 900);
-$accent: mat-palette($mat-light-blue, 600, 100, 900);
+$primary: mat.define-palette($mat-orange, 800, 100, 900);
+$accent: mat.define-palette($mat-light-blue, 600, 100, 900);
+$warn: mat.define-palette($mat-red, 600, 100, 900);
 
-$warn: mat-palette($mat-red, 600, 100, 900);
+$theme: mat.define-light-theme($primary, $accent, $warn);
 
-$theme: mat-light-theme($primary, $accent, $warn);
-
-@include angular-material-theme($theme);
-@include covalent-theme(
+mat.angular-material-theme($theme);
+cov.covalent-theme(
   $theme,
   $typography
 ); // $typography is an **optional** argument for the covalent-theme
 
 // (optional) Additional themes
-@include covalent-markdown-theme($theme);
-@include covalent-highlight-theme();
+markdown.covalent-markdown-theme($theme);
+highligh.covalent-highlight-theme();
 ```
 
 You only need this single Sass file; you do not need to use Sass to style the rest of your app.

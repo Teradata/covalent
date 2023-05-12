@@ -1,4 +1,4 @@
-@import '@angular/material/theming';
+@use '@angular/material' as mat;
 
 @mixin covalent-markdown-theme($theme) {
   $accent: map-get($theme, accent);
@@ -7,63 +7,63 @@
 
   td-markdown {
     a {
-      color: mat-color($accent);
+      color: mat.get-color-from-palette($accent);
     }
 
     h1,
     h2 {
-      border-bottom-color: mat-color($foreground, divider);
+      border-bottom-color: mat.get-color-from-palette($foreground, divider);
     }
 
     h3,
     h4,
     h5,
     h6 {
-      color: mat-color($foreground, secondary-text);
+      color: mat.get-color-from-palette($foreground, secondary-text);
     }
 
     hr {
-      border-color: mat-color($foreground, divider);
+      border-color: mat.get-color-from-palette($foreground, divider);
     }
 
     blockquote {
-      color: mat-color($foreground, secondary-text);
-      border-left-color: mat-color($foreground, divider);
+      color: mat.get-color-from-palette($foreground, secondary-text);
+      border-left-color: mat.get-color-from-palette($foreground, divider);
     }
 
     table {
       th,
       td {
-        border-color: mat-color($foreground, dividers);
+        border-color: mat.get-color-from-palette($foreground, dividers);
       }
 
       tr {
-        border-top-color: mat-color($foreground, dividers);
+        border-top-color: mat.get-color-from-palette($foreground, dividers);
 
         &:nth-child(2n) {
-          background-color: mat-color($foreground, dividers);
+          background-color: mat.get-color-from-palette($foreground, dividers);
         }
       }
     }
 
     img {
-      background-color: mat-color($background, card);
+      background-color: mat.get-color-from-palette($background, card);
     }
 
     code {
-      background-color: mat-color($background, hover);
+      background-color: mat.get-color-from-palette($background, hover);
     }
 
     .highlight pre,
     pre {
-      background-color: mat-color($background, app-bar);
+      background-color: mat.get-color-from-palette($background, app-bar);
     }
 
     kbd {
-      color: mat-color($foreground, secondary-text);
-      background-color: mat-color($background, app-bar);
-      border-color: mat-color($foreground, divider);
-      border-bottom-color: mat-color($foreground, disabled);
+      color: mat.get-color-from-palette($foreground, secondary-text);
+      background-color: mat.get-color-from-palette($background, app-bar);
+      border-color: mat.get-color-from-palette($foreground, divider);
+      border-bottom-color: mat.get-color-from-palette($foreground, disabled);
     }
   }
 }

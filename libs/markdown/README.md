@@ -63,18 +63,18 @@ export class MyModule {}
 This module comes with its own Covalent theme which uses the material theme which is used by importing our theme scss file.
 
 ```scss
-@import '~@angular/material/theming';
-@import '~@covalent/markdown/markdown-theme';
+@use '@angular/material/theming' as mat;
+@use '@covalent/markdown/markdown-theme' as markdown;
 
-@include mat-core();
+@include mat.core();
 
-$primary: mat-palette($mat-orange, 800);
-$accent: mat-palette($mat-light-blue, 600, A100, A400);
-$warn: mat-palette($mat-red, 600);
+$primary: mat.define-palette($mat-orange, 800);
+$accent: mat.define-palette($mat-light-blue, 600, A100, A400);
+$warn: mat.define-palette($mat-red, 600);
 
-$theme: mat-light-theme($primary, $accent, $warn);
+$theme: mat.define-light-theme($primary, $accent, $warn);
 
-@include covalent-markdown-theme($theme);
+@include markdown.covalent-markdown-theme($theme);
 ```
 
 ## Example

@@ -8,6 +8,13 @@
     display: none;
   }
 
+  ::ng-deep {
+    .mdc-button__label {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   /**
   * Class that is added ondragenter by the [TdFileDrop] directive.
   */

@@ -75,25 +75,25 @@ export class MyModule {}
 This module comes with its own Covalent theme which uses the material theme which is used by importing our theme scss file. It also depends on all the covalent themes since the components being rendered by this module are from other packages.
 
 ```scss
-@import '~@angular/material/theming';
-@import '~@covalent/core/theming/all-theme';
-@import '~@covalent/markdown/markdown-theme';
-@import '~@covalent/highlight/highlight-theme';
-@import '~@covalent/flavored-markdown/flavored-markdown-theme';
+@use '@angular/material' as mat;
+@use '@covalent/core/theming/all-theme' as cov;
+@use '@covalent/markdown/markdown-theme' as markdown;
+@use '@covalent/highlight/highlight-theme' as highlight;
+@use '@covalent/flavored-markdown/flavored-markdown-theme' as markdown-flavored;
 
-@include mat-core();
+@include mat.core();
 
-$primary: mat-palette($mat-orange, 800);
-$accent: mat-palette($mat-light-blue, 600, A100, A400);
-$warn: mat-palette($mat-red, 600);
+$primary: mat.define-palette($mat-orange, 800);
+$accent: mat.define-palette($mat-light-blue, 600, A100, A400);
+$warn: mat.define-palette($mat-red, 600);
 
-$theme: mat-light-theme($primary, $accent, $warn);
+$theme: mat.define-light-theme($primary, $accent, $warn);
 
 @include mat.all-component-themes($theme);
-@include covalent-theme($theme);
-@include covalent-markdown-theme($theme);
-@include covalent-highlight-theme();
-@include covalent-flavored-markdown-theme($theme);
+@include cov.covalent-theme($theme);
+@include markdown.covalent-markdown-theme($theme);
+@include highlight.covalent-highlight-theme();
+@include markdown-flavored.covalent-flavored-markdown-theme($theme);
 ```
 
 ## Example
