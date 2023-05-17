@@ -1,0 +1,32 @@
+<td-dialog>
+  <ng-container tdDialogTitle *ngIf="title">{{ title }}</ng-container>
+  <ng-container tdDialogContent>
+    <span class="td-dialog-message">{{ message }}</span>
+    <form #form="ngForm" novalidate>
+      <div class="td-dialog-input-wrapper">
+        <mat-form-field class="td-dialog-input">
+          <input
+            matInput
+            #input
+            (keydown.enter)="$event.preventDefault(); form.valid && accept()"
+            [(ngModel)]="value"
+            name="value"
+            required
+          />
+        </mat-form-field>
+      </div>
+    </form>
+  </ng-container>
+  <ng-container tdDialogActions>
+    <button mat-button #closeBtn (click)="cancel()">{{ cancelButton }}</button>
+    <button
+      mat-button
+      color="accent"
+      #acceptBtn
+      [disabled]="!form.valid"
+      (click)="accept()"
+    >
+      {{ acceptButton }}
+    </button>
+  </ng-container>
+</td-dialog>

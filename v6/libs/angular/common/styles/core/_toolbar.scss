@@ -1,0 +1,53 @@
+@mixin td-toolbar-utilities() {
+  body[dense] mat-toolbar,
+  body[dense] mat-toolbar-row,
+  mat-toolbar[dense],
+  mat-toolbar-row[dense] {
+    &.mat-toolbar-multiple-rows {
+      .mat-toolbar-row,
+      .mat-toolbar-single-row {
+        height: 48px;
+      }
+    }
+
+    &.mat-toolbar-single-row,
+    &.mat-toolbar-row {
+      height: 48px;
+    }
+  }
+
+  mat-toolbar {
+    [mat-button] {
+      &:first-of-type:not(:last-child) {
+        margin-left: -6px;
+
+        [dir='rtl'] & {
+          margin-right: -6px;
+          margin-left: 0;
+        }
+      }
+
+      &:last-of-type:not(:first-child) {
+        margin-right: -6px;
+
+        [dir='rtl'] & {
+          margin-left: -6px;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .mat-icon-logo {
+      margin-right: 10px;
+
+      [dir='rtl'] & {
+        margin-left: 10px;
+        margin-right: 0;
+      }
+    }
+
+    [mat-icon-button] {
+      margin: 0 6px;
+    }
+  }
+}

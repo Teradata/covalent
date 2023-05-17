@@ -1,0 +1,155 @@
+@use '@material/drawer';
+@use '@material/feature-targeting/feature-targeting';
+@use '@material/rtl/rtl';
+
+@include drawer.core-styles();
+@include drawer.dismissible-core-styles();
+@include drawer.modal-core-styles();
+
+:host {
+  --mdc-theme-surface: var(--mdc-theme-background);
+  --mdc-list-vertical-padding: 0;
+}
+
+.app-shell {
+  background-color: var(--mdc-theme-surface);
+  display: grid;
+  grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
+  min-height: 100vh;
+
+  // TD Tiger stripe
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: 100%;
+    z-index: 1000;
+    background-color: #f3753f;
+  }
+}
+
+.main {
+  grid-area: main;
+  overflow: auto;
+  height: 100vh;
+  border-left: 1px solid;
+  border-color: var(--mdc-theme-border, rgba(black, 0.12));
+}
+
+.help {
+  grid-area: help;
+  width: 320px;
+  height: 100vh;
+  overflow-y: auto;
+  border-left: 1px solid;
+  border-color: var(--mdc-theme-border, rgba(black, 0.12));
+  transition-property: width;
+  transition-duration: 200ms;
+
+  &.help--closed {
+    width: 0;
+  }
+}
+
+[name='mini-list']::slotted(*) {
+  display: block;
+  width: 320px;
+  height: 100vh;
+  overflow: auto;
+  border-left: 1px solid;
+  border-color: var(--mdc-theme-border, rgba(black, 0.12));
+
+  @media only screen and (max-width: 1000px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+nav.navigation {
+  grid-area: nav;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 0;
+
+  .toggle-drawer {
+    margin: 8px auto;
+  }
+
+  .navigation-toolbar {
+    display: flex;
+    align-items: center;
+  }
+
+  slot[name='logo'] {
+    display: none;
+  }
+
+  &.mdc-drawer--open {
+    .toggle-drawer {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+
+    slot[name='logo'] {
+      display: block;
+    }
+  }
+}
+
+[divider] {
+  border-bottom: 1px solid;
+  margin: 16px;
+  border-color: var(--mdc-theme-border, rgba(black, 0.12));
+}
+
+/* Open/Collapse Animation in Desktop */
+@media only screen and (min-width: 768px) {
+  nav.navigation {
+    display: flex;
+    flex-direction: column;
+    transition-property: width;
+    transition-duration: 200ms;
+    transform: none;
+    background-color: transparent;
+  }
+
+  .mdc-drawer--dismissible {
+    display: block;
+    width: 72px;
+    position: static;
+  }
+
+  .mdc-drawer--open {
+    width: 256px;
+  }
+
+  .mdc-drawer--opening {
+    width: 256px;
+    transition-duration: 200ms;
+  }
+
+  .mdc-drawer--closing {
+    width: 72px;
+    transition-duration: 200ms;
+  }
+
+  .header {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'header' 'main' 'mini-list' 'help';
+  }
+
+  [name='help']::slotted(*),
+  .main {
+    height: auto;
+    width: auto;
+    border: none;
+  }
+}

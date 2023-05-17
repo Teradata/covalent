@@ -1,0 +1,10 @@
+<button
+  mat-icon-button
+  [cdkCopyToClipboard]="copiedContent"
+  class="copy-button"
+  [matTooltip]="copyTooltip"
+  #tooltip="matTooltip"
+  (cdkCopyToClipboardCopied)="textCopied($event)"
+>
+  <mat-icon role="img">content_copy</mat-icon>
+</button>

@@ -1,0 +1,15 @@
+Using td-code-editor component as a custom dynamic element <br /><br />
+<td-dynamic-forms [elements]="customElements">
+  <ng-template let-element ngFor [ngForOf]="customElements">
+    <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+      <br />Validation:
+      <span *ngIf="control.touched || !control.pristine">
+        <span *ngIf="control.hasError('required')"
+          >This field cannot be empty</span
+        >
+      </span>
+    </ng-template>
+  </ng-template>
+</td-dynamic-forms>
+
+<em>Try typing then leaving field blank to see error validation</em> <br />

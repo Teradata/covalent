@@ -1,0 +1,30 @@
+{
+  "name": "@covalent/core",
+  "version": "0.0.0-COVALENT",
+  "exports": {
+    ".": {
+      "sass": "./theming/_all-theme.scss"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "peerDependencies": {
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "@angular/forms": "0.0.0-NG",
+    "@angular/router": "0.0.0-NG",
+    "@angular/cdk": "0.0.0-MATERIAL",
+    "@angular/material": "0.0.0-MATERIAL",
+    "@covalent/core": "0.0.0-COVALENT"
+  },
+  "dependencies": {
+    "tslib": "0.0.0-TSLIB"
+  }
+}
