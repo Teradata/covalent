@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
+import {
+  IMarkdownNavigatorItem,
+  EMarkdownNavigatorType,
+} from '@covalent/markdown-navigator';
 
 @Component({
   selector: 'markdown-navigator-demo-basic',
@@ -8,6 +11,9 @@ import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 })
 export class MarkdownNavigatorDemoBasicComponent {
   items: IMarkdownNavigatorItem[] = [
+    {
+      type: EMarkdownNavigatorType.DOC_SEARCH,
+    },
     {
       title: 'RxJS',
       description: 'Reactive programming',

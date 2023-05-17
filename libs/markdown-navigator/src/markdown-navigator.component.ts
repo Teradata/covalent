@@ -24,9 +24,14 @@ import { HttpClient } from '@angular/common/http';
 import { ICopyCodeTooltips } from '@covalent/highlight';
 import { firstValueFrom } from 'rxjs';
 
+export enum EMarkdownNavigatorType {
+  DEFAULT = 'default',
+  DOC_SEARCH = 'doc_search',
+}
 export interface IMarkdownNavigatorItem {
   id?: string;
   title?: string;
+  type?: EMarkdownNavigatorType;
   url?: string;
   httpOptions?: object;
   markdownString?: string; // raw markdown
@@ -124,7 +129,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   historyStack: IMarkdownNavigatorItem[] = []; // history
   currentMarkdownItem?: IMarkdownNavigatorItem; // currently rendered
   currentMenuItems?: IMarkdownNavigatorItem[] = []; // current menu items
-
+  itemTypes = EMarkdownNavigatorType;
   loading = false;
 
   markdownLoaderError?: string;

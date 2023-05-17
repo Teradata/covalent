@@ -1,0 +1,47 @@
+<td-search-box
+  placeholder="Search docs"
+  [alwaysVisible]="true"
+  (searchDebounce)="doDocSuggest($event)"
+></td-search-box>
+
+<ng-container *ngIf="suggestResults$ | async as suggestions">
+  Choose from these topics:
+
+  <mat-list>
+    <mat-list-item
+      *ngFor="let suggestion of suggestions"
+      (click)="suggestionClicked(suggestion)"
+    >
+      {{ suggestion.value }}
+    </mat-list-item>
+  </mat-list>
+</ng-container>
+
+<ng-container *ngIf="topicResults$ | async as topics">
+  Choose a document to view:
+
+  <mat-list>
+    <mat-list-item
+      *ngFor="let topic of topics"
+      (click)="topicClicked(topic.topic)"
+    >
+      {{ topic.topic.title }}
+    </mat-list-item>
+  </mat-list>
+
+  <pre>{{ documentResult$ | async | json }}</pre>
+</ng-container>
+
+<!-- <td-search-box placeholder="Search docs" [alwaysVisible]="true" (searchDebounce)="doDocSearch($event)"></td-search-box>
+
+<ng-container *ngIf="docSearchResults$ | async as results">
+  Choose from these topics:
+
+  <mat-list>
+    <mat-list-item *ngFor="let result of results" (click)="resultClicked(result)">
+      {{ result.title }}
+    </mat-list-item>
+  </mat-list>
+
+  <pre>{{ documentResult$ | async | json }}</pre>
+</ng-container> -->

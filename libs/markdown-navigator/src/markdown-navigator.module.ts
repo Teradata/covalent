@@ -13,6 +13,8 @@ import { CovalentMessageModule } from '@covalent/core/message';
 import { TdMarkdownNavigatorWindowDirective } from './markdown-navigator-window-directive/markdown-navigator-window.directive';
 import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window-service/markdown-navigator-window.service';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
+import { CovalentSearchModule } from '@covalent/core/search';
+import { DocSearchComponent } from './doc-search/doc-search.component';
 
 @NgModule({
   imports: [
@@ -28,11 +30,13 @@ import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
     CovalentDialogsModule,
     CovalentFlavoredMarkdownModule,
     CovalentMessageModule,
+    CovalentSearchModule,
   ],
   declarations: [
     TdMarkdownNavigatorComponent,
     TdMarkdownNavigatorWindowComponent,
     TdMarkdownNavigatorWindowDirective,
+    DocSearchComponent,
   ],
   exports: [
     TdMarkdownNavigatorComponent,
