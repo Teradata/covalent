@@ -44,6 +44,7 @@ Certain covalent version are meant for certain angular versions, and here is the
 |       3.X        | 9.X / 10.X / 11.x |
 |       4.X        |    12.X / 13.X    |
 |       5.X        |       14.X        |
+|       6.X        |       15.X        |
 
 ## Browser Support
 
