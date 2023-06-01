@@ -1,3 +1,17 @@
+# [6.0.0](https://github.com/Teradata/covalent/compare/v5.0.2...v6.0.0) (2023-05-17)
+
+### Bug Fixes
+
+- **markdown:** fix for flavored markdown checkboxes ([ee4e806](https://github.com/Teradata/covalent/commit/ee4e806a6b78313fe2f91c9624f699325e93beea))
+
+### Features
+
+- **upgrade:** upgrading ng 15 ([64ecb56](https://github.com/Teradata/covalent/commit/64ecb5642c22f56084bf697fd3b8c43aec6e4ca0))
+
+### BREAKING CHANGES
+
+- **upgrade:** upgraading to latest angular 15
+
 # [6.0.0-beta.2](https://github.com/Teradata/covalent/compare/v6.0.0-beta.1...v6.0.0-beta.2) (2023-05-12)
 
 ### Bug Fixes
