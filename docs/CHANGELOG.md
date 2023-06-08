@@ -1,3 +1,9 @@
+## [6.0.1](https://github.com/Teradata/covalent/compare/v6.0.0...v6.0.1) (2023-06-08)
+
+### Bug Fixes
+
+- **components:** build fix for components not publishing to npm ([058972b](https://github.com/Teradata/covalent/commit/058972ba0b93de4f7a314a727d3e830dcaa4ef3f))
+
 # [6.0.0](https://github.com/Teradata/covalent/compare/v5.0.2...v6.0.0) (2023-05-17)
 
 ### Bug Fixes
