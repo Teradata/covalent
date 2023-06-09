@@ -2,7 +2,14 @@
   "name": "@covalent/components",
   "version": "0.0.0-COVALENT",
   "description": "a catalog of material components for covalent",
-  "main": "index.js",
+  "main": "covalent.umd.js",
+  "module": "covalent.mjs",
+  "exports": {
+    ".": {
+      "import": "./covalent.js",
+      "require": "./covalent.umd.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/teradata/covalent.git"

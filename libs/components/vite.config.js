@@ -10,7 +10,6 @@ module.exports = defineConfig({
       formats: ['es', 'umd'],
     },
     rollupOptions: {
-      external: [/^lit/, /^@material/],
       output: {
         chunkFileNames: '[name].mjs',
       },
