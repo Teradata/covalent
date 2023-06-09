@@ -9,3 +9,7 @@ declare module '*.css' {
   const css: CSSResult;
   export default css;
 }
+declare module '*?inline' {
+  const contents:{default: string}
+  export = contents
+}
