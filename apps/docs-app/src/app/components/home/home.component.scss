@@ -51,6 +51,13 @@
   background-position: right bottom;
 }
 
+@media (prefers-color-scheme: dark) {
+  .banner {
+    background-image: none;
+  }
+
+}
+
 .banner-lg {
   background-size: 80%;
 }

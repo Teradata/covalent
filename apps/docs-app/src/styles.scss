@@ -72,6 +72,8 @@ $theme: mat.define-light-theme(
     typography: $my-typography,
   )
 );
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -87,6 +89,10 @@ $theme: mat.define-light-theme(
 @include covalent-guided-tour-theme($theme);
 @include teradata-brand($theme);
 
+.content-image-block {
+  background-color: map-get($background, card);
+}
+
 body .mat-card {
   border-radius: 8px;
 }
@@ -97,6 +103,8 @@ body .mat-card {
   $accent-dark: mat-palette($td-orange, 800, 200, 900);
   $warn-dark: mat-palette($mat-red, 600, 200, 900);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+  $background: map-get($theme-dark, background);
+
   @include mat.all-component-themes($theme-dark);
   @include covalent-theme($theme-dark);
   @include covalent-markdown-theme($theme-dark);
@@ -106,11 +114,13 @@ body .mat-card {
   @include covalent-markdown-navigator-theme($theme-dark);
   @include teradata-brand($theme-dark);
   @include covalent-guided-tour-theme($theme-dark);
+
+  .content-image-block {
+    background-color: map-get($background, card);
+  }
 }
 
 /* ------------------------------------------------------------------------------- */
-$foreground: map-get($theme, foreground);
-$background: map-get($theme, background);
 
 // Apply theme for this app
 .bgc-contrast {
