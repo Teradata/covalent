@@ -695,6 +695,10 @@ body {
   // Links
   a {
     text-decoration: none;
-    color: #000000de;
+    color: mat-color($accent, darker);
+  }
+
+  .tc-td-secondary {
+    color: map-get($foreground, secondary-text);
   }
 }

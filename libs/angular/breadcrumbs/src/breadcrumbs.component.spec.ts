@@ -244,7 +244,7 @@ describe('Component: Breadcrumbs', () => {
         <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
         <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
         <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
-        <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+        <td-breadcrumb class="tc-td-secondary">Manage List</td-breadcrumb>
       </td-breadcrumbs>
     </div>
   `,
