@@ -1,3 +1,9 @@
+## [6.0.4](https://github.com/Teradata/covalent/compare/v6.0.3...v6.0.4) (2023-06-12)
+
+### Bug Fixes
+
+- **components:** adjustments to consuming library ([5a567c3](https://github.com/Teradata/covalent/commit/5a567c347a2bee9eccf0839975f72552be59ecb5))
+
 ## [6.0.3](https://github.com/Teradata/covalent/compare/v6.0.2...v6.0.3) (2023-06-12)
 
 ### Bug Fixes
