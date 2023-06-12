@@ -1,3 +1,9 @@
+## [6.0.3](https://github.com/Teradata/covalent/compare/v6.0.2...v6.0.3) (2023-06-12)
+
+### Bug Fixes
+
+- **docs:** adding better dark mode support ([ee18951](https://github.com/Teradata/covalent/commit/ee18951881c5362cf4418b9e36c7bc964697feb7))
+
 ## [6.0.2](https://github.com/Teradata/covalent/compare/v6.0.1...v6.0.2) (2023-06-09)
 
 ### Bug Fixes
