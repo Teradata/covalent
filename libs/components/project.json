@@ -8,6 +8,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
+          "mkdir -p dist/libs/components/",
           "vite build --config libs/components/vite.config.js  --outDir dist/libs/components",
           "./node_modules/.bin/tsc --project libs/components/tsconfig.lib.json  --declaration --declarationMap --emitDeclarationOnly  --outDir dist/",
           "cp libs/components/package.json dist/libs/components"

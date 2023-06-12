@@ -4,6 +4,7 @@
   "description": "a catalog of material components for covalent",
   "main": "covalent.umd.js",
   "module": "covalent.mjs",
+  "types": "src/index.d.ts",
   "exports": {
     ".": {
       "import": "./covalent.js",

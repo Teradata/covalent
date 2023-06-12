@@ -43,6 +43,6 @@ import('./tree-list/tree-list');
 import('./tree-list/tree-list-item');
 import('./typography/typography');
 
-import '../theme/theme.scss?raw';
+import '../theme/theme.scss';
 
 export {};
