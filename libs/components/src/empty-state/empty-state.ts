@@ -6,12 +6,12 @@ import '../icon/icon';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-empty-state': CovalentEmptyStateBase;
+    'cv-empty-state': CovalentEmptyState;
   }
 }
 
 @customElement('cv-empty-state')
-export class CovalentEmptyStateBase extends LitElement {
+export class CovalentEmptyState extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -57,3 +57,5 @@ export class CovalentEmptyStateBase extends LitElement {
     `;
   }
 }
+
+export default CovalentEmptyState;

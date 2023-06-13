@@ -5,9 +5,9 @@ import {
   queryAssignedElements,
 } from 'lit/decorators.js';
 import { styles as listBaseStyles } from '@material/mwc-list/mwc-list.css';
-import { CovalentListBase } from './list';
+import { CovalentList } from './list';
 import styles from './list-expansion.scss?inline';
-import { CovalentListItemBase } from './list-item';
+import { CovalentListItem } from './list-item';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -16,7 +16,7 @@ declare global {
 }
 
 @customElement('cv-expansion-list')
-export class CovalentExpansionList extends CovalentListBase {
+export class CovalentExpansionList extends CovalentList {
   static override styles = [
     css`
       ${unsafeCSS(listBaseStyles)}
@@ -37,7 +37,7 @@ export class CovalentExpansionList extends CovalentListBase {
   navOpen = false;
 
   @queryAssignedElements({ slot: 'expansionHeader' })
-  expansionHeader!: CovalentListItemBase[];
+  expansionHeader!: CovalentListItem[];
 
   constructor() {
     super();
@@ -59,3 +59,5 @@ export class CovalentExpansionList extends CovalentListBase {
     `;
   }
 }
+
+export default CovalentExpansionList;

@@ -6,11 +6,13 @@ import styles from './drawer.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-drawer': CovalentDrawerBase;
+    'cv-drawer': CovalentDrawer;
   }
 }
 
 @customElement('cv-drawer')
-export class CovalentDrawerBase extends DrawerBase {
+export class CovalentDrawer extends DrawerBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentDrawer

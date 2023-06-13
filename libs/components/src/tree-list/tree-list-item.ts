@@ -81,3 +81,5 @@ export class CovalentTreeListItem extends LitElement {
     this.dispatchEvent(event);
   }
 }
+
+export default CovalentTreeListItem;

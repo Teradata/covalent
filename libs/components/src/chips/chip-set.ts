@@ -22,3 +22,6 @@ declare global {
     'cv-chip-set': CovalentChipSet;
   }
 }
+
+
+export default CovalentChipSet;

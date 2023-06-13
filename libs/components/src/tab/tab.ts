@@ -6,11 +6,13 @@ import styles from './tab.scss?inline'
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-tab': CovalentTabBase;
+    'cv-tab': CovalentTab;
   }
 }
 
 @customElement('cv-tab')
-export class CovalentTabBase extends TabBase {
+export class CovalentTab extends TabBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentTab;

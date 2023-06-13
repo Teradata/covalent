@@ -22,3 +22,5 @@ declare global {
     'cv-alert': CovalentAlert;
   }
 }
+
+export default CovalentAlert;

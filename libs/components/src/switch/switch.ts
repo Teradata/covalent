@@ -6,11 +6,13 @@ import styles from './switch.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-switch': CovalentSwitchBase;
+    'cv-switch': CovalentSwitch;
   }
 }
 
 @customElement('cv-switch')
-export class CovalentSwitchBase extends SwitchBase {
+export class CovalentSwitch extends SwitchBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentSwitch;

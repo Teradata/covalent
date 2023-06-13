@@ -2,10 +2,10 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentTabBase } from './tab';
+import { CovalentTab } from './tab';
 
 describe('Tab', () => {
   it('should work', () => {
-    expect(new CovalentTabBase()).toBeDefined();
+    expect(new CovalentTab()).toBeDefined();
   });
 });

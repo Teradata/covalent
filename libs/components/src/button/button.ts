@@ -5,11 +5,13 @@ import { styles as baseStyles } from '@material/mwc-button/styles.css';
 import styles from './button.scss?inline';
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-button': CovalentButtonBase;
+    'cv-button': CovalentButton;
   }
 }
 
 @customElement('cv-button')
-export class CovalentButtonBase extends ButtonBase {
+export class CovalentButton extends ButtonBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentButton;

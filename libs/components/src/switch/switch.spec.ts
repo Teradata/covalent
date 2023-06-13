@@ -2,10 +2,10 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentSwitchBase } from './switch';
+import { CovalentSwitch } from './switch';
 
 describe('Switch', () => {
   it('should work', () => {
-    expect(new CovalentSwitchBase()).toBeDefined();
+    expect(new CovalentSwitch()).toBeDefined();
   });
 });

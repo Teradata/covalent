@@ -6,12 +6,12 @@ import styles from './textfield.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-textfield': CovalentTextFieldBase;
+    'cv-textfield': CovalentTextField;
   }
 }
 
 @customElement('cv-textfield')
-export class CovalentTextFieldBase extends TextFieldBase {
+export class CovalentTextField extends TextFieldBase {
   static override styles = [
     baseTextFieldStyles,
     css`
@@ -19,3 +19,5 @@ export class CovalentTextFieldBase extends TextFieldBase {
     `,
   ];
 }
+
+export default CovalentTextField;

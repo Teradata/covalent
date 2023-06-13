@@ -2,10 +2,10 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentTextFieldBase } from './textfield';
+import { CovalentTextField } from './textfield';
 
 describe('Text field', () => {
   it('should work', () => {
-    expect(new CovalentTextFieldBase()).toBeDefined();
+    expect(new CovalentTextField()).toBeDefined();
   });
 });
