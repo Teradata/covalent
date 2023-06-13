@@ -22,3 +22,5 @@ declare global {
     'cv-action-ribbon': CovalentActionRibbon;
   }
 }
+
+export default CovalentActionRibbon;

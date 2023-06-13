@@ -7,12 +7,12 @@ import styles from './tooltip.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-tooltip': CovalentTooltipBase;
+    'cv-tooltip': CovalentTooltip;
   }
 }
 
 @customElement('cv-tooltip')
-export class CovalentTooltipBase extends LitElement {
+export class CovalentTooltip extends LitElement {
   protected mdcFoundation!: MDCTooltipFoundation;
   protected readonly mdcFoundationClass = MDCTooltipFoundation;
   static override styles = [
@@ -179,3 +179,5 @@ export class CovalentTooltipBase extends LitElement {
     `;
   }
 }
+
+export default CovalentTooltip;

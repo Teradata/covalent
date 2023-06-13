@@ -9,12 +9,12 @@ import styles from './list-item.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-list-item': CovalentListItemBase;
+    'cv-list-item': CovalentListItem;
   }
 }
 
 @customElement('cv-list-item')
-export class CovalentListItemBase extends ListItemBase {
+export class CovalentListItem extends ListItemBase {
   static override styles = [
     css`
       ${unsafeCSS(listItemStyle)}
@@ -41,3 +41,5 @@ export class CovalentListItemBase extends ListItemBase {
     return html` ${this.renderRipple()} ${arrow} ${graphic} ${text} ${meta} `;
   }
 }
+
+export default CovalentListItem;

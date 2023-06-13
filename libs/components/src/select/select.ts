@@ -6,11 +6,13 @@ import styles from './select.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-select': CovalentSelectBase;
+    'cv-select': CovalentSelect;
   }
 }
 
 @customElement('cv-select')
-export class CovalentSelectBase extends SelectBase {
+export class CovalentSelect extends SelectBase {
   static override styles = [css`${unsafeCSS(styles)}`, baseStyles];
 }
+
+export default CovalentSelect;

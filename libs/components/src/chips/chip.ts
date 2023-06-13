@@ -22,3 +22,5 @@ declare global {
     'cv-chip': CovalentChip;
   }
 }
+
+export default CovalentChip;

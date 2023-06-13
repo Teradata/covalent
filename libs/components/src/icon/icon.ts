@@ -12,3 +12,5 @@ declare global {
 export class CovalentIcon extends Icon {
   static override styles = [styles];
 }
+
+export default CovalentIcon

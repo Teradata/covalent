@@ -5,15 +5,17 @@ import styles from './card.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-card': CovalentCardBase;
+    'cv-card': CovalentCard;
   }
 }
 
 @customElement('cv-card')
-export class CovalentCardBase extends CardBase {
+export class CovalentCard extends CardBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
     `,
   ];
 }
+
+export default CovalentCard;

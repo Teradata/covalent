@@ -51,3 +51,5 @@ export class CovalentTextLockup extends LitElement {
     return this.icon ? html`<cv-icon>${this.icon}</cv-icon>` : nothing;
   }
 }
+
+export default CovalentTextLockup;

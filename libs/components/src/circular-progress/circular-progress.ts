@@ -4,11 +4,13 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-circular-progress': CovalentCircularProgressBase;
+    'cv-circular-progress': CovalentCircularProgress;
   }
 }
 
 @customElement('cv-circular-progress')
-export class CovalentCircularProgressBase extends CircularProgressBase {
+export class CovalentCircularProgress extends CircularProgressBase {
   static override styles = [styles];
 }
+
+export default CovalentCircularProgress;

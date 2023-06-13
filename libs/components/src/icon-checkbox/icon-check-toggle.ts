@@ -8,12 +8,12 @@ import styles from './icon-checkbox.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-icon-check-item': CovalentIconCheckToggleBase;
+    'cv-icon-check-item': CovalentIconCheckToggle;
   }
 }
 
 @customElement('cv-checkbox-icon')
-export class CovalentIconCheckToggleBase extends CheckboxBase {
+export class CovalentIconCheckToggle extends CheckboxBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -37,9 +37,7 @@ export class CovalentIconCheckToggleBase extends CheckboxBase {
       '--height': `${this.height}px`,
     };
     return html`
-        <div class="${classMap(classes)} container" style="${styleMap(
-      styles
-    )}" @click="${this._handleClick}">
+        <div class="${classMap(classes)} container" style="${styleMap(styles)}" @click="${this._handleClick}">
             <input type="checkbox" class="mdc-checkbox__native-control"></input>
             <div class="mdc-toggle__background">
                 <svg class="mdc-toggle__checkmark ${classMap(
@@ -59,3 +57,5 @@ export class CovalentIconCheckToggleBase extends CheckboxBase {
     this.checked = !this.checked;
   }
 }
+
+export default CovalentIconCheckToggle

@@ -4,11 +4,13 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-menu': CovalentMenuBase;
+    'cv-menu': CovalentMenu;
   }
 }
 
 @customElement('cv-menu')
-export class CovalentMenuBase extends MenuBase {
+export class CovalentMenu extends MenuBase {
   static override styles = [styles];
 }
+
+export default CovalentMenu;

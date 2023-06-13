@@ -6,11 +6,14 @@ import styles from './icon-button.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-icon-button': CovalentIconButtonBase;
+    'cv-icon-button': CovalentIconButton;
   }
 }
 
 @customElement('cv-icon-button')
-export class CovalentIconButtonBase extends IconButtonBase {
+export class CovalentIconButton extends IconButtonBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+
+export default CovalentIconButton;

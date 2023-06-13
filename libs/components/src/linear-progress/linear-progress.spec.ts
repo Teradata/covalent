@@ -2,10 +2,10 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentLinearProgressBase } from './linear-progress';
+import { CovalentLinearProgress } from './linear-progress';
 
 describe('Linear progress', () => {
   it('should work', () => {
-    expect(new CovalentLinearProgressBase()).toBeDefined();
+    expect(new CovalentLinearProgress()).toBeDefined();
   });
 });

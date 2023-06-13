@@ -2,10 +2,10 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentSelectBase } from './select';
+import { CovalentSelect } from './select';
 
 describe('Select', () => {
   it('should work', () => {
-    expect(new CovalentSelectBase()).toBeDefined();
+    expect(new CovalentSelect()).toBeDefined();
   });
 });

@@ -6,11 +6,13 @@ import styles from './checkbox.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-checkbox': CovalentCheckboxBase;
+    'cv-checkbox': CovalentCheckbox;
   }
 }
 
 @customElement('cv-checkbox')
-export class CovalentCheckboxBase extends CheckboxBase {
+export class CovalentCheckbox extends CheckboxBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentCheckbox;

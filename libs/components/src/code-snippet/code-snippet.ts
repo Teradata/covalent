@@ -6,12 +6,12 @@ import hljs from 'highlight.js/lib/common';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-code-snippet': CovalentCodeSnippetBase;
+    'cv-code-snippet': CovalentCodeSnippet;
   }
 }
 
 @customElement('cv-code-snippet')
-export class CovalentCodeSnippetBase extends LitElement {
+export class CovalentCodeSnippet extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -83,3 +83,5 @@ export class CovalentCodeSnippetBase extends LitElement {
     </div>`;
   }
 }
+
+export default CovalentCodeSnippet;

@@ -6,11 +6,13 @@ import styles from './radio.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-radio': CovalentRadioBase;
+    'cv-radio': CovalentRadio;
   }
 }
 
 @customElement('cv-radio')
-export class CovalentRadioBase extends RadioBase {
+export class CovalentRadio extends RadioBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentRadio;
