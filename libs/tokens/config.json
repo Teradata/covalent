@@ -4,10 +4,10 @@
     "json": {
       "transformGroup": "assets",
       "prefix": "cv",
-      "buildPath": "build/json/",
+      "buildPath": "dist/libs/tokens/",
       "files": [
         {
-          "destination": "variables.json",
+          "destination": "index.json",
           "format": "json"
         }
       ]
@@ -17,7 +17,7 @@
       "buildPath": "dist/libs/tokens/",
       "files": [
         {
-          "destination": "_variables.scss",
+          "destination": "_index.scss",
           "format": "scss/map-deep"
         }
       ]
@@ -25,10 +25,10 @@
     "css": {
       "transformGroup": "css",
       "prefix": "cv",
-      "buildPath": "build/css/",
+      "buildPath": "dist/libs/tokens/",
       "files": [
         {
-          "destination": "variables.css",
+          "destination": "index.css",
           "format": "css/variables"
         }
       ]
@@ -42,14 +42,14 @@
         "color/css"
       ],
       "prefix": "cv",
-      "buildPath": "build/js/",
+      "buildPath": "dist/libs/tokens/",
       "files": [
         {
-          "destination": "variables.js",
+          "destination": "index.js",
           "format": "javascript/es6"
         },
         {
-          "destination": "variables.d.ts",
+          "destination": "index.d.ts",
           "format": "typescript/es6-declarations"
         }
       ]

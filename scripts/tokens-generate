@@ -1,0 +1,26 @@
+#!/bin/bash
+version=$1
+branch=main
+tokens_gen_dir="libs/tokens/_generated"
+
+git remote set-url origin https://$GITHUB_TOKEN@github.com/Teradata/covalent.git
+
+echo "Checking out $branch branch"
+git fetch
+git checkout $branch
+
+echo "Create or replace tokens generated dir"
+rm -rf ./$tokens_gen_dir
+mkdir -p $tokens_gen_dir
+cp -r ./dist/libs/tokens/* ./$tokens_gen_dir/
+
+echo "Configuring GIT User"
+git config user.name github-actions
+git config user.email github-actions@github.com
+
+echo 'Tracking files'
+git add -A $tokens_gen_dir
+echo 'Commiting files'
+git commit --no-verify -a -m "build(tokens): tokens update for $version"
+echo "Pushing files into $branch branch"
+git push origin $branch --force
