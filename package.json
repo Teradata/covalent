@@ -19,6 +19,7 @@
     "format:check": "nx format",
     "format:write": "nx format:write",
     "ghpages:deploy": "VERSION=$(echo v${npm_package_version} | cut -c1-2) && npm run build docs-app -- --base-href=/covalent/$VERSION/ && bash scripts/ghpages-deploy $VERSION",
+    "tokens:generate": "VERSION=$(echo v${npm_package_version} | cut -c1-2) && npm run build tokens && bash scripts/tokens-generate $VERSION",
     "release:prepare": "npx nx run-many --target=build --all && node ./scripts/version-placeholder ./dist",
     "style-dictionary": "cd libs/tokens && style-dictionary build",
     "storybook": "npx start-storybook -c libs/components/.storybook",
