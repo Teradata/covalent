@@ -1,3 +1,9 @@
+## [6.0.5](https://github.com/Teradata/covalent/compare/v6.0.4...v6.0.5) (2023-06-15)
+
+### Bug Fixes
+
+- **components:** adding secondary entry points for modules ([a41c8c8](https://github.com/Teradata/covalent/commit/a41c8c8a5f9b1c6a294bc7242d2d339ba4488700))
+
 ## [6.0.4](https://github.com/Teradata/covalent/compare/v6.0.3...v6.0.4) (2023-06-12)
 
 ### Bug Fixes
