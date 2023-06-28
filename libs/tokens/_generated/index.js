@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 15 Jun 2023 15:49:38 GMT
+ * Generated on Wed, 28 Jun 2023 13:49:01 GMT
  */
 
 export const CvLightPrimary = "#007373";
