@@ -1,3 +1,9 @@
+## [6.1.1](https://github.com/Teradata/covalent/compare/v6.1.0...v6.1.1) (2023-06-28)
+
+### Bug Fixes
+
+- ** components:** removing vendor plugin ([ae8e953](https://github.com/Teradata/covalent/commit/ae8e95391becfa365085ac601d514cd874fac46c))
+
 # [6.1.0](https://github.com/Teradata/covalent/compare/v6.0.5...v6.1.0) (2023-06-28)
 
 ### Features
