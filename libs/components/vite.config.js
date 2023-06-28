@@ -1,4 +1,4 @@
-const { defineConfig, splitVendorChunkPlugin } = require('vite');
+const { defineConfig } = require('vite');
 
 // https://vitejs.dev/config/
 module.exports = defineConfig({
@@ -53,12 +53,6 @@ module.exports = defineConfig({
       ],
       name: 'Covalent',
     },
-    rollupOptions: {
-      output: {
-        exports: 'named',
-        chunkFileNames: '[name].mjs',
-      },
-    },
   },
   test: {
     coverage: {
@@ -70,5 +64,4 @@ module.exports = defineConfig({
       dir: '../../node_modules/.vitest',
     },
   },
-  plugins: [splitVendorChunkPlugin()],
 });
