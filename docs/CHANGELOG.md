@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/Teradata/covalent/compare/v6.0.5...v6.1.0) (2023-06-28)
+
+### Features
+
+- **token:** adding nx support to tokens project ([5f4c71a](https://github.com/Teradata/covalent/commit/5f4c71a740c757960b43eccee70acda49165c40f))
+- **tokens:** packaging changes, add GH action ([aca3792](https://github.com/Teradata/covalent/commit/aca3792654277113059559996cc9aa99691a9f56))
+
 ## [6.0.5](https://github.com/Teradata/covalent/compare/v6.0.4...v6.0.5) (2023-06-15)
 
 ### Bug Fixes
