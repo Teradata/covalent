@@ -1,3 +1,9 @@
+## [6.1.2](https://github.com/Teradata/covalent/compare/v6.1.1...v6.1.2) (2023-07-10)
+
+### Bug Fixes
+
+- add support for markdown syntax in table cells ([a0ff5a6](https://github.com/Teradata/covalent/commit/a0ff5a68d1536814eb07c3537a3c1a8b881989e9))
+
 ## [6.1.1](https://github.com/Teradata/covalent/compare/v6.1.0...v6.1.1) (2023-06-28)
 
 ### Bug Fixes
