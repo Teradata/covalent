@@ -70,6 +70,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "easymde": "^2.16.1",
     "echarts": "^5.3.0",
+    "echarts-stat": "^1.2.0",
     "echarts-wordcloud": "^2.0.0",
     "highlight.js": "^11.4.0",
     "lit": "^2.2.8",

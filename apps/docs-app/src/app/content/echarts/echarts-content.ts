@@ -75,6 +75,20 @@ export const createEchartDetails: any = [
     ),
   },
   {
+    name: 'Histogram',
+    id: 'histogram',
+    description: '',
+    apiDocUrl: 'libs/angular-echarts/histogram/README.md',
+    overviewDocUrl: '',
+    icon: 'bar_chart_4_bars',
+    category: chartTypes.name,
+    route: '/echarts/histogram',
+    color: '',
+    demo: import('./echarts-demos/histogram/demos/histogram-demo.module').then(
+      (mod: any) => mod.HistogramDemoModule
+    ),
+  },
+  {
     name: 'Map',
     id: 'map',
     description: '',

@@ -50,6 +50,9 @@
       "@covalent/echarts/graph": [
         "libs/angular-echarts/graph/src/public_api.ts"
       ],
+      "@covalent/echarts/histogram": [
+        "libs/angular-echarts/histogram/src/public_api.ts"
+      ],
       "@covalent/echarts/line": ["libs/angular-echarts/line/src/public_api.ts"],
       "@covalent/echarts/map": ["libs/angular-echarts/map/src/public_api.ts"],
       "@covalent/echarts/pie": ["libs/angular-echarts/pie/src/public_api.ts"],
