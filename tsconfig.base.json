@@ -47,6 +47,9 @@
       "@covalent/echarts": ["libs/angular-echarts/src/public_api.ts"],
       "@covalent/echarts/bar": ["libs/angular-echarts/bar/src/public_api.ts"],
       "@covalent/echarts/base": ["libs/angular-echarts/base/src/public_api.ts"],
+      "@covalent/echarts/clustering": [
+        "libs/angular-echarts/clustering/src/public_api.ts"
+      ],
       "@covalent/echarts/graph": [
         "libs/angular-echarts/graph/src/public_api.ts"
       ],

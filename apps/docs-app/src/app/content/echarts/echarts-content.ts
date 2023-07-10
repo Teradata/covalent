@@ -61,6 +61,20 @@ export const createEchartDetails: any = [
   //     import('./echarts-demos/combination/demos/combination-demo.module').then((mod: any) => mod.CombinationDemoModule),
   // },
   {
+    name: 'Clustering',
+    id: 'clustering',
+    description: '',
+    apiDocUrl: 'libs/angular-echarts/clustering/README.md',
+    overviewDocUrl: '',
+    icon: 'scatter_plot',
+    category: chartTypes.name,
+    route: '/echarts/clustering',
+    color: '',
+    demo: import(
+      './echarts-demos/clustering/demos/clustering-demo.module'
+    ).then((mod: any) => mod.ClusteringDemoModule),
+  },
+  {
     name: 'Graph',
     id: 'graph',
     description: '',
