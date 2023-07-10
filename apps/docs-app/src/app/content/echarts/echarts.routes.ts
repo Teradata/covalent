@@ -44,6 +44,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'histogram',
+        loadChildren: () =>
+          import('./echarts-demos/histogram/histogram.module').then(
+            (m: any) => m.HistogramModule
+          ),
+      },
+      {
         path: 'line',
         loadChildren: () =>
           import('./echarts-demos/line/line.module').then(
