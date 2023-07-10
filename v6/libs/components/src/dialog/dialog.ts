@@ -6,11 +6,13 @@ import styles from './dialog.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-dialog': CovalentDialogBase;
+    'cv-dialog': CovalentDialog;
   }
 }
 
 @customElement('cv-dialog')
-export class CovalentDialogBase extends DialogBase {
+export class CovalentDialog extends DialogBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentDialog;

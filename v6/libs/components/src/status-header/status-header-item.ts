@@ -28,3 +28,5 @@ export class CovalentStatusHeaderItem extends LitElement {
     return html`<span>${this.label}</span> <slot></slot>`;
   }
 }
+
+export default CovalentStatusHeaderItem;

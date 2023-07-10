@@ -4,11 +4,13 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-slider': CovalentSliderBase;
+    'cv-slider': CovalentSlider;
   }
 }
 
 @customElement('cv-slider')
-export class CovalentSliderBase extends SliderSingleBase {
+export class CovalentSlider extends SliderSingleBase {
   static override styles = [styles];
 }
+
+export default CovalentSlider;

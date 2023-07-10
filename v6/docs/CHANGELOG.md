@@ -1,3 +1,34 @@
+## [6.1.1](https://github.com/Teradata/covalent/compare/v6.1.0...v6.1.1) (2023-06-28)
+
+### Bug Fixes
+
+- ** components:** removing vendor plugin ([ae8e953](https://github.com/Teradata/covalent/commit/ae8e95391becfa365085ac601d514cd874fac46c))
+
+# [6.1.0](https://github.com/Teradata/covalent/compare/v6.0.5...v6.1.0) (2023-06-28)
+
+### Features
+
+- **token:** adding nx support to tokens project ([5f4c71a](https://github.com/Teradata/covalent/commit/5f4c71a740c757960b43eccee70acda49165c40f))
+- **tokens:** packaging changes, add GH action ([aca3792](https://github.com/Teradata/covalent/commit/aca3792654277113059559996cc9aa99691a9f56))
+
+## [6.0.5](https://github.com/Teradata/covalent/compare/v6.0.4...v6.0.5) (2023-06-15)
+
+### Bug Fixes
+
+- **components:** adding secondary entry points for modules ([a41c8c8](https://github.com/Teradata/covalent/commit/a41c8c8a5f9b1c6a294bc7242d2d339ba4488700))
+
+## [6.0.4](https://github.com/Teradata/covalent/compare/v6.0.3...v6.0.4) (2023-06-12)
+
+### Bug Fixes
+
+- **components:** adjustments to consuming library ([5a567c3](https://github.com/Teradata/covalent/commit/5a567c347a2bee9eccf0839975f72552be59ecb5))
+
+## [6.0.3](https://github.com/Teradata/covalent/compare/v6.0.2...v6.0.3) (2023-06-12)
+
+### Bug Fixes
+
+- **docs:** adding better dark mode support ([ee18951](https://github.com/Teradata/covalent/commit/ee18951881c5362cf4418b9e36c7bc964697feb7))
+
 ## [6.0.2](https://github.com/Teradata/covalent/compare/v6.0.1...v6.0.2) (2023-06-09)
 
 ### Bug Fixes

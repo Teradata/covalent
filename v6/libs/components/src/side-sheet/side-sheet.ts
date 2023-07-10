@@ -1,7 +1,7 @@
 import { css, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from '@material/mwc-dialog/mwc-dialog.css';
-import { CovalentDialogBase } from '../dialog/dialog';
+import { CovalentDialog } from '../dialog/dialog';
 import baseStyles from './side-sheet.scss?inline';
 
 declare global {
@@ -16,7 +16,7 @@ declare global {
  * @slot - This element has a slot
  */
 @customElement('cv-side-sheet')
-export class CovalentSideSheet extends CovalentDialogBase {
+export class CovalentSideSheet extends CovalentDialog {
   static override styles = [
     styles,
     css`

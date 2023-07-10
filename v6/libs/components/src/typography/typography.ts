@@ -23,3 +23,5 @@ export class CovalentTypography extends LitElement {
     return html`<slot class="mdc-typography--${this.scale}"></slot>`;
   }
 }
+
+export default CovalentTypography;

@@ -2,10 +2,10 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentCheckboxBase } from './checkbox';
+import { CovalentCheckbox } from './checkbox';
 
 describe('Check box', () => {
   it('should work', () => {
-    expect(new CovalentCheckboxBase()).toBeDefined();
+    expect(new CovalentCheckbox()).toBeDefined();
   });
 });

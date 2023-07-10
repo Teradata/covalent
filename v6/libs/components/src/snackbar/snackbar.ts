@@ -6,11 +6,13 @@ import styles from './snackbar.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-snackbar': CovalentSnackbarBase;
+    'cv-snackbar': CovalentSnackbar;
   }
 }
 
 @customElement('cv-snackbar')
-export class CovalentSnackbarBase extends SnackbarBase {
+export class CovalentSnackbar extends SnackbarBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentSnackbar;

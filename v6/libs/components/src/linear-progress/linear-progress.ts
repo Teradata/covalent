@@ -6,11 +6,13 @@ import styles from './linear-progress.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-linear-progress': CovalentLinearProgressBase;
+    'cv-linear-progress': CovalentLinearProgress;
   }
 }
 
 @customElement('cv-linear-progress')
-export class CovalentLinearProgressBase extends LinearProgressBase {
+export class CovalentLinearProgress extends LinearProgressBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentLinearProgress;

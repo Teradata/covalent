@@ -8,12 +8,12 @@ import styles from './icon-radio.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-icon-radio-item': CovalentIconRadioToggleBase;
+    'cv-icon-radio-item': CovalentIconRadioToggle;
   }
 }
 
 @customElement('cv-radio-icon')
-export class CovalentIconRadioToggleBase extends RadioBase {
+export class CovalentIconRadioToggle extends RadioBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -33,9 +33,7 @@ export class CovalentIconRadioToggleBase extends RadioBase {
       '--height': `${this.height}px`,
     };
     return html`
-        <div class="${classMap(classes)} container" style="${styleMap(
-      styles
-    )}" @click="${() => {
+        <div class="${classMap(classes)} container" style="${styleMap(styles)}" @click="${() => {
       this.checked = true;
     }}">
             <input type="radio" class="mdc-radio__native-control"></input>
@@ -49,3 +47,5 @@ export class CovalentIconRadioToggleBase extends RadioBase {
     `;
   }
 }
+
+export default CovalentIconRadioToggle;

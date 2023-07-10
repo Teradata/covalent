@@ -7,12 +7,12 @@ import { customElement } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-formfield': CovalentFormfieldBase;
+    'cv-formfield': CovalentFormfield;
   }
 }
 
 @customElement('cv-formfield')
-export class CovalentFormfieldBase extends FormfieldBase {
+export class CovalentFormfield extends FormfieldBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -20,3 +20,5 @@ export class CovalentFormfieldBase extends FormfieldBase {
     baseStyles,
   ];
 }
+
+export default CovalentFormfield

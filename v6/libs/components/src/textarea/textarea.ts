@@ -7,11 +7,13 @@ import styles from '../textfield/textfield.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-textarea': CovalentTextAreaBase;
+    'cv-textarea': CovalentTextArea;
   }
 }
 
 @customElement('cv-textarea')
-export class CovalentTextAreaBase extends TextAreaBase {
+export class CovalentTextArea extends TextAreaBase {
   static override styles = [textfieldStyles, baseTextAreaStyles, css`${unsafeCSS(styles)}`];
 }
+
+export default CovalentTextArea;

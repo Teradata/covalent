@@ -125,3 +125,5 @@ export class CovalentAppShell extends DrawerBase {
     `;
   }
 }
+
+export default CovalentAppShell;

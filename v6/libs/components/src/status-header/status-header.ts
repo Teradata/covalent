@@ -22,3 +22,5 @@ declare global {
     'cv-status-header': CovalentStatusHeader;
   }
 }
+
+export default CovalentStatusHeader;

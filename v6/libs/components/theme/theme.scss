@@ -1,9 +1,10 @@
-@use '../../tokens/build/scss/variables' as variables;
+@use '../../tokens/_generated/_index.scss' as variables;
 @use '../src/icon/icon' as icon;
 @use '../src/skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
 @use './mixins' as theme;
 
-@include icon.core-styles(); // TODO - include future support in icons css
+@include icon.core-styles();  // TODO - include future support in icons css
+
 @include skeleton.core-styles(); // TODO - should include support
 
 // TODO should be moved to consuming app - DOCS NEEDED

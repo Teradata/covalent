@@ -49,3 +49,5 @@ const handleSelect = (e: Event): void => {
   // Add the selected styling to the currently selected item.
   current!.classList.add('selected');
 };
+
+export default CovalentTreeList;

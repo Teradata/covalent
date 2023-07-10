@@ -2,10 +2,10 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentSliderBase } from './slider';
+import { CovalentSlider } from './slider';
 
 describe('Slider', () => {
   it('should work', () => {
-    expect(new CovalentSliderBase()).toBeDefined();
+    expect(new CovalentSlider()).toBeDefined();
   });
 });

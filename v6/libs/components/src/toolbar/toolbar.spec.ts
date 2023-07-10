@@ -2,10 +2,10 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentToolbarBase } from './toolbar';
+import { CovalentToolbar } from './toolbar';
 
 describe('Toolbar', () => {
   it('should work', () => {
-    expect(new CovalentToolbarBase()).toBeDefined();
+    expect(new CovalentToolbar()).toBeDefined();
   });
 });
