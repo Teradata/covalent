@@ -37,6 +37,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'clustering',
+        loadChildren: () =>
+          import('./echarts-demos/clustering/clustering.module').then(
+            (m: any) => m.ClusteringModule
+          ),
+      },
+      {
         path: 'graph',
         loadChildren: () =>
           import('./echarts-demos/graph/graph.module').then(
