@@ -57,7 +57,9 @@ export interface ITdFlavoredMarkDownTableColumn {
           <mat-header-cell *matHeaderCellDef mat-sort-header>{{
             column.label
           }}</mat-header-cell>
-          <mat-cell *matCellDef="let row">{{ row[column.name] }}</mat-cell>
+          <mat-cell *matCellDef="let row"
+            ><td-markdown>{{ row[column.name] }}</td-markdown></mat-cell
+          >
         </ng-container>
       </ng-template>
       <!-- Header and Row Declarations -->
