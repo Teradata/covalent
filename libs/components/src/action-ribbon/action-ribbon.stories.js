@@ -17,7 +17,7 @@ export default {
 };
 
 export const Neutral = ({
-  label = 'Neutral',
+  label = 'No changes',
   color,
   icon,
   saveDisabled = false,
