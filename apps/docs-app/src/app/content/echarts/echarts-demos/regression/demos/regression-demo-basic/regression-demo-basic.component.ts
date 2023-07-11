@@ -5,18 +5,20 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
+import { TdRegressionType } from '@covalent/echarts/regression';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
-  selector: 'clustering-demo-basic',
-  styleUrls: ['./clustering-demo-basic.component.scss'],
-  templateUrl: './clustering-demo-basic.component.html',
+  selector: 'regression-demo-basic',
+  styleUrls: ['./regression-demo-basic.component.scss'],
+  templateUrl: './regression-demo-basic.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ClusteringDemoBasicComponent implements OnInit {
+export class RegressionDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();
   selectedTheme!: string;
-  showCentroids = false;
+  regressionTypes = ['linear', 'exponential', 'logarithmic', 'polynomial'];
+  selectedRegressionType: TdRegressionType = 'linear';
 
   constructor(
     private _cdr: ChangeDetectorRef,

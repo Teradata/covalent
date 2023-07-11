@@ -59,6 +59,9 @@
       "@covalent/echarts/line": ["libs/angular-echarts/line/src/public_api.ts"],
       "@covalent/echarts/map": ["libs/angular-echarts/map/src/public_api.ts"],
       "@covalent/echarts/pie": ["libs/angular-echarts/pie/src/public_api.ts"],
+      "@covalent/echarts/regression": [
+        "libs/angular-echarts/regression/src/public_api.ts"
+      ],
       "@covalent/echarts/sankey": [
         "libs/angular-echarts/sankey/src/public_api.ts"
       ],
