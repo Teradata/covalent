@@ -79,6 +79,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'regression',
+        loadChildren: () =>
+          import('./echarts-demos/regression/regression.module').then(
+            (m: any) => m.RegressionModule
+          ),
+      },
+      {
         path: 'sankey',
         loadChildren: () =>
           import('./echarts-demos/sankey/sankey.module').then(

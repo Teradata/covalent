@@ -6,12 +6,6 @@
 
 #### Inputs
 
-- config?: any
-  - Sets the JS config object if you choose to not use the property inputs.
-  - Note: [config] input properties will override input values
-
-There are also lots of property inputs like:
-
 - id?: string
   - It can be used to refer the component in option or API.
 - name?: string

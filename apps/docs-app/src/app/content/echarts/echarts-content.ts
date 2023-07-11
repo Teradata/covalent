@@ -144,6 +144,20 @@ export const createEchartDetails: any = [
     ),
   },
   {
+    name: 'Regression',
+    id: 'regression',
+    description: '',
+    apiDocUrl: 'libs/angular-echarts/regression/README.md',
+    overviewDocUrl: '',
+    icon: 'trending_up',
+    category: chartTypes.name,
+    route: '/echarts/regression',
+    color: '',
+    demo: import(
+      './echarts-demos/regression/demos/regression-demo.module'
+    ).then((mod: any) => mod.RegressionDemoModule),
+  },
+  {
     name: 'Sankey',
     id: 'sankey',
     description: '',
