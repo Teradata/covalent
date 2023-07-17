@@ -3,11 +3,27 @@
 @use '../src/skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
 @use './mixins' as theme;
 
-@include icon.core-styles();  // TODO - include future support in icons css
+@import '../../icons/covalent-icons.css';
 
+@include icon.core-styles(); // TODO - include future support in icons css
 @include skeleton.core-styles(); // TODO - should include support
 
-// TODO should be moved to consuming app - DOCS NEEDED
+// Define the base theme using light tokens w/ dark tokens overriting for prefers-color-scheme:dark
+:root {
+  @include theme.components-theme(
+    map-get(variables.$tokens, light),
+    map-get(variables.$tokens, typography)
+  );
+
+  @media (prefers-color-scheme: dark) {
+    @include theme.components-theme(
+      map-get(variables.$tokens, dark),
+      map-get(variables.$tokens, typography)
+    );
+  }
+}
+
+// For convience re-define theme tokens scoped to a light/dark class
 .light {
   @include theme.components-theme(
     map-get(variables.$tokens, light),

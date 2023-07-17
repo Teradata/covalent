@@ -5,6 +5,15 @@
   "projectType": "library",
   "implicitDependencies": ["tokens"],
   "targets": {
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cd libs/components/ && vite"
+        ],
+        "parallel": false
+      }
+    },
     "build": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {

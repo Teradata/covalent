@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Covalent - components</title>
 
-    <script type="module" src="src/index.ts"></script>
-    <script type="module" src="theme/theme.scss"></script>
+    <!-- CSS Reset -->
+    <link href="reset.css" rel="stylesheet" />
 
-    <link
-      href="theme/theme.scss?inline"
-      rel="stylesheet"
-    />
+    <!-- Main entry point to include all of Covalent Components-->
+    <script type="module" src="src/index.ts"></script>
+    <link href="theme/theme.scss" rel="stylesheet" />
 
     <!-- Poppins Font Typography & Material Icons Font --->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,12 +20,6 @@
       href="https://fonts.googleapis.com/css?family=Material+Icons|Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <!-- Required styles for Covalent icons -->
-    <!-- Required styles for Covalent components -->
-    
-
-
-
   </head>
   <body>
     <cv-app-shell appName="[App Name]">
@@ -54,12 +47,7 @@
         ></path>
       </svg>
 
-      <cv-list
-        class="navigation-rail"
-        slot="navigation"
-        activatable
-        listitemtagname="cv-nav-list-item"
-      >
+      <cv-list class="navigation-rail" slot="navigation" activatable>
         <cv-nav-list-item class="home-item" graphic="avatar">
           <span>Vantage</span>
           <cv-icon class="covalent-icon teradata-circle" slot="graphic"
@@ -190,7 +178,7 @@
         </div>
       </div>
       <div slot="mini-list">
-        <cv-toolbar divider dense>
+        <cv-toolbar divider>
           <span slot="title">[Page name]</span>
           <cv-icon-button
             slot="actionItems"
@@ -204,25 +192,21 @@
             <span>[Object name]</span>
             <span slot="secondary">Secondary info</span>
           </cv-list-item>
-          <li divider role="separator"></li>
           <cv-list-item graphic="avatar" twoline>
             <cv-icon class="covalent-icon" slot="graphic">server</cv-icon>
             <span>[Object name]</span>
             <span slot="secondary">Secondary info</span>
           </cv-list-item>
-          <li divider role="separator"></li>
           <cv-list-item graphic="avatar" twoline activated>
             <cv-icon class="covalent-icon" slot="graphic">server</cv-icon>
             <span>[Object name]</span>
             <span slot="secondary">Secondary info</span>
           </cv-list-item>
-          <li divider role="separator"></li>
           <cv-list-item graphic="avatar" twoline>
             <cv-icon class="covalent-icon" slot="graphic">server</cv-icon>
             <span>[Object name]</span>
             <span slot="secondary">Secondary info</span>
           </cv-list-item>
-          <li divider role="separator"></li>
         </cv-list>
       </div>
 
@@ -260,7 +244,18 @@
           >Bulk action</cv-button
         >
       </cv-action-ribbon>
-
     </cv-app-shell>
+
+    <script>
+      var appShell = document.querySelector('cv-app-shell');
+      document.querySelector('.help-item').addEventListener('click', () => {
+        appShell.helpOpen = !appShell.helpOpen;
+        alert;
+      });
+
+      document.querySelector('.help-close').addEventListener('click', () => {
+        appShell.helpOpen = false;
+      });
+    </script>
   </body>
 </html>

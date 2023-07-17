@@ -60,6 +60,12 @@ module.exports = defineConfig({
       },
     },
   },
+  server: {
+    fs: {
+      // Allow serving files from one level up to the project root
+      allow: ['..'],
+    },
+  },
   test: {
     coverage: {
       provider: 'c8',
@@ -70,5 +76,6 @@ module.exports = defineConfig({
       dir: '../../node_modules/.vitest',
     },
   },
+  cacheDir: '../../node_modules/.vite',
   plugins: [splitVendorChunkPlugin()],
 });
