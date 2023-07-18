@@ -16,7 +16,12 @@ export default {
   },
 };
 
-export const Neutral = ({ label, color, icon, saveDisabled = false }) => {
+export const Neutral = ({
+  label = 'No changes',
+  color,
+  icon,
+  saveDisabled = false,
+}) => {
   return `
     <cv-action-ribbon
       labelText="${label}"
