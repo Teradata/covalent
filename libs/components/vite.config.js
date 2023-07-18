@@ -1,4 +1,4 @@
-const { defineConfig, splitVendorChunkPlugin } = require('vite');
+const { defineConfig } = require('vite');
 
 // https://vitejs.dev/config/
 module.exports = defineConfig({
@@ -52,12 +52,6 @@ module.exports = defineConfig({
         'libs/components/src/typography/typography',
       ],
       name: 'Covalent',
-    },
-    rollupOptions: {
-      output: {
-        exports: 'named',
-        chunkFileNames: '[name].mjs',
-      },
     },
   },
   server: {
