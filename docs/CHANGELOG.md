@@ -1,3 +1,10 @@
+## [6.1.3](https://github.com/Teradata/covalent/compare/v6.1.2...v6.1.3) (2023-07-18)
+
+### Bug Fixes
+
+- **components:** set default label text for button ([dde0252](https://github.com/Teradata/covalent/commit/dde02521af05fefc5215f7c60b283dcee2930e34))
+- **label:** adding set default label for neutral to "No changes" ([bf594ae](https://github.com/Teradata/covalent/commit/bf594aea5eb59ac94fc48fef24f9b393bcd179d9))
+
 ## [6.1.2](https://github.com/Teradata/covalent/compare/v6.1.1...v6.1.2) (2023-07-10)
 
 ### Bug Fixes
