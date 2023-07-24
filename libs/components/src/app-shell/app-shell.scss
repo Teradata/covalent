@@ -52,13 +52,12 @@
   }
 }
 
-[name='mini-list']::slotted(*) {
+[name='mini-list'] {
   display: block;
-  width: 320px;
-  height: 100vh;
-  overflow: auto;
   border-left: 1px solid;
   border-color: var(--mdc-theme-border, rgba(black, 0.12));
+  width: 320px;
+  height: 100vh;
 
   @media only screen and (max-width: 1000px) {
     & {

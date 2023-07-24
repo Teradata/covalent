@@ -1,4 +1,4 @@
-const { defineConfig } = require('vite');
+const { defineConfig, splitVendorChunkPlugin } = require('vite');
 
 // https://vitejs.dev/config/
 module.exports = defineConfig({
@@ -53,6 +53,21 @@ module.exports = defineConfig({
       ],
       name: 'Covalent',
     },
+    rollupOptions: {
+      output: {
+        exports: 'named',
+        chunkFileNames: '[name].mjs',
+        manualChunks: {
+          'mwc-ripple': ['@material/mwc-ripple/mwc-ripple.js']
+        }
+      },
+    },
+  },
+  server: {
+    fs: {
+      // Allow serving files from one level up to the project root
+      allow: ['..'],
+    },
   },
   test: {
     coverage: {
@@ -64,4 +79,6 @@ module.exports = defineConfig({
       dir: '../../node_modules/.vitest',
     },
   },
+  cacheDir: '../../node_modules/.vite',
+  plugins: [splitVendorChunkPlugin()],
 });

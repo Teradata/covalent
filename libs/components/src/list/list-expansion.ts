@@ -7,7 +7,7 @@ import {
 import { styles as listBaseStyles } from '@material/mwc-list/mwc-list.css';
 import { CovalentList } from './list';
 import styles from './list-expansion.scss?inline';
-import { CovalentListItem } from './list-item';
+import CovalentNavRailListItem from './nav-list-item';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -37,7 +37,7 @@ export class CovalentExpansionList extends CovalentList {
   navOpen = false;
 
   @queryAssignedElements({ slot: 'expansionHeader' })
-  expansionHeader!: CovalentListItem[];
+  expansionHeader!: CovalentNavRailListItem[];
 
   constructor() {
     super();
@@ -50,6 +50,21 @@ export class CovalentExpansionList extends CovalentList {
       el.activated = this.open;
       el.selected = this.open;
     });
+  }
+
+  override attributeChangedCallback(name: string, _old: string, value: string) {
+    super.attributeChangedCallback(name, _old, value);
+
+    if (name === 'navopen') {
+      this.expansionHeader.forEach((el) => {
+        if (value === 'true') {
+          el.navOpen = !!value;
+          el.setAttribute('navopen', value);
+        } else {
+          el.removeAttribute('navopen');
+        }
+      });
+    }
   }
 
   override render() {
