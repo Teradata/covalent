@@ -57,9 +57,6 @@ module.exports = defineConfig({
       output: {
         exports: 'named',
         chunkFileNames: '[name].mjs',
-        manualChunks: {
-          'mwc-ripple': ['@material/mwc-ripple/mwc-ripple.js']
-        }
       },
     },
   },
