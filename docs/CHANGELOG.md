@@ -1,3 +1,9 @@
+## [6.2.3](https://github.com/Teradata/covalent/compare/v6.2.2...v6.2.3) (2023-07-24)
+
+### Bug Fixes
+
+- **components:** reverting vit.config.js to earlier version ([#2043](https://github.com/Teradata/covalent/issues/2043)) ([b873ad3](https://github.com/Teradata/covalent/commit/b873ad3c503db501853ac4d47e1a161a665da39c))
+
 ## [6.2.2](https://github.com/Teradata/covalent/compare/v6.2.1...v6.2.2) (2023-07-24)
 
 ### Bug Fixes
