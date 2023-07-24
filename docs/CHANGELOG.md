@@ -1,3 +1,10 @@
+## [6.2.1](https://github.com/Teradata/covalent/compare/v6.2.0...v6.2.1) (2023-07-24)
+
+### Bug Fixes
+
+- **components:** app-shell navigation style updates ([#2039](https://github.com/Teradata/covalent/issues/2039)) ([8c60882](https://github.com/Teradata/covalent/commit/8c60882cd1d0ec2c872eeb40c0d0e27880b74a6a))
+- **components:** icon-radio rendering ([9e0da07](https://github.com/Teradata/covalent/commit/9e0da07c0d2a58554b3c020eadb5a198103e1d13))
+
 # [6.2.0](https://github.com/Teradata/covalent/compare/v6.1.3...v6.2.0) (2023-07-24)
 
 ### Features
