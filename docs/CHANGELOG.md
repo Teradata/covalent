@@ -1,3 +1,9 @@
+## [6.2.2](https://github.com/Teradata/covalent/compare/v6.2.1...v6.2.2) (2023-07-24)
+
+### Bug Fixes
+
+- **components:** update vite config w/ no manual chunks ([d08fc4e](https://github.com/Teradata/covalent/commit/d08fc4e07c9ed689bf7e1109bc0d83ee9c3907e8))
+
 ## [6.2.1](https://github.com/Teradata/covalent/compare/v6.2.0...v6.2.1) (2023-07-24)
 
 ### Bug Fixes
