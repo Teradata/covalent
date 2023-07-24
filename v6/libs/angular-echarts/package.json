@@ -22,6 +22,7 @@
     "@angular/common": "0.0.0-NG",
     "@angular/core": "0.0.0-NG",
     "echarts": "0.0.0-ECHARTS",
+    "echarts-stat": "0.0.0-ECHARTS-STAT",
     "echarts-wordcloud": "0.0.0-WORDCLOUD"
   },
   "dependencies": {
