@@ -1,3 +1,11 @@
+# [6.2.0](https://github.com/Teradata/covalent/compare/v6.1.3...v6.2.0) (2023-07-24)
+
+### Features
+
+- added clustering example 📈 ([5be9968](https://github.com/Teradata/covalent/commit/5be9968d9be3e99f01d1dbf62a5f29690b8f0d31))
+- added echarts-stat and histogram example 📊 ([3d4d84e](https://github.com/Teradata/covalent/commit/3d4d84e407792799c2e14e48289cce540fa401a5))
+- added regression example 📈 ([04d34e7](https://github.com/Teradata/covalent/commit/04d34e73ff96b990e2698ff32781684237e6e311))
+
 ## [6.1.3](https://github.com/Teradata/covalent/compare/v6.1.2...v6.1.3) (2023-07-18)
 
 ### Bug Fixes
