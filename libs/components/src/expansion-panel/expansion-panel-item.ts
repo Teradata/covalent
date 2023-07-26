@@ -51,7 +51,8 @@ export class ExpansionPanelItem extends LitElement {
           <span class="title">${this.title}</span>
           <span class="contentPreview">${this.contentPreview}</span>
 
-          <cv-icon>person</cv-icon>
+          <cv-icon class="closedIcon">expand_more</cv-icon>
+          <cv-icon class="openedIcon">expand_less</cv-icon>
         </div>
 
         <div class="content">
