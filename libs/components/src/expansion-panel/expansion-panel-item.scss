@@ -1,0 +1,123 @@
+:host([isTopPanel]) {
+  .panel {
+    border-radius: 8px 8px 0px 0px;
+  }
+}
+
+:host([isBottomPanel]) {
+  .panel {
+    border-radius: 0px 0px 8px 8px;
+  }
+}
+
+:host([isSinglePanel]) {
+  .panel {
+    border-radius: 8px 8px 8px 8px;
+  }
+}
+
+:host([openInnerPanel]) {
+  .panel {
+    border-radius: 8px 8px 8px 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    display: block;
+  }
+}
+
+:host([openTopPanel]) {
+  .panel {
+    border-radius: 8px 8px 8px 8px;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    display: block;
+  }
+}
+
+:host([openBottomPanel]) {
+  .panel {
+    border-radius: 8px 8px 8px 8px;
+    margin-top: 10px;
+  }
+
+  .content {
+    display: block;
+  }
+}
+
+:host([belowOpenInnerPanel]) {
+  .panel {
+    border-radius: 8px 8px 0px 0px;
+  }
+}
+
+:host([aboveOpenInnerPanel]) {
+  .panel {
+    border-radius: 0px 0px 8px 8px;
+  }
+}
+
+:host([separateSinglePanel]) {
+  .panel {
+    border-radius: 8px 8px 8px 8px;
+  }
+}
+
+:host {
+  .panel {
+    background-color: var(--mdc-theme-surface, #ffffff);
+    width: 550px;
+
+    border-bottom: 1px solid var(--cv-light-divider, rgba(0, 0, 0, 0.12));
+  }
+
+  .header {
+    padding: 15px;
+    white-space: nowrap;
+  }
+
+  .title {
+    padding-right: 100px;
+
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    font-family: var(--mdc-typography-body2-font-family, Arial);
+    font-size: var(--mdc-typography-body2-font-size, 14px);
+    font-style: normal;
+    font-weight: var(--mdc-typography-body2-font-weight, 400);
+    line-height: var(--mdc-typography-body2-line-height, 20px);
+    letter-spacing: 0.25px;
+  }
+
+  .contentPreview {
+    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
+    font-family: var(--mdc-typography-body2-font-family, Arial);
+    font-size: var(--mdc-typography-body2-font-size, 14px);
+    font-style: normal;
+    font-weight: var(--mdc-typography-body2-font-weight, 400);
+    line-height: var(--mdc-typography-body2-line-height, 20px);
+    letter-spacing: 0.25px;
+  }
+
+  .content {
+    padding: 15px;
+    display: none;
+
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    font-family: var(--mdc-typography-body2-font-family, Arial);
+    font-size: var(--mdc-typography-body2-font-size, 14px);
+    font-style: normal;
+    font-weight: var(--mdc-typography-body2-font-weight, 400);
+    line-height: var(--mdc-typography-body2-line-height, 20px);
+    letter-spacing: 0.25px;
+  }
+
+  hr {
+    margin: 0;
+    border-color: var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
+  }
+}
