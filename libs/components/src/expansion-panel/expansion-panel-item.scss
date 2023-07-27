@@ -153,6 +153,23 @@
     letter-spacing: 0.25px;
   }
 
+  ::slotted(cv-action-ribbion) {
+    margin: 0 -16px;
+  }
+
+  .footer {
+    padding-top: 20px;
+    // min-height: 72px;
+
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    font-family: var(--mdc-typography-body2-font-family, Arial);
+    font-size: var(--mdc-typography-body2-font-size, 14px);
+    font-style: normal;
+    font-weight: var(--mdc-typography-body2-font-weight, 400);
+    line-height: var(--mdc-typography-body2-line-height, 20px);
+    letter-spacing: 0.25px;
+  }
+
   hr {
     margin: 0;
     border-color: var(--mdc-theme-border, rgba(0, 0, 0, 0.12));

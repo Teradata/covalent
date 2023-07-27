@@ -2,6 +2,7 @@ import { LitElement, css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './expansion-panel-item.scss?inline';
 import '../icon/icon';
+import '../action-ribbon/action-ribbon';
 
 @customElement('expansion-panel-item')
 export class ExpansionPanelItem extends LitElement {
@@ -10,11 +11,9 @@ export class ExpansionPanelItem extends LitElement {
       ${unsafeCSS(styles)}
     `,
   ];
-  static override shadowRootOptions: ShadowRootInit = {
-    mode: 'open',
-  };
 
   @property({ type: Number }) index = 0;
+
   @property({ type: Boolean, reflect: true, attribute: 'open' }) open = false;
   @property({ type: Boolean, reflect: true, attribute: 'isTopPanel' })
   isTopPanel = false;
@@ -34,8 +33,7 @@ export class ExpansionPanelItem extends LitElement {
   belowOpenInnerPanel = false;
   @property({ type: Boolean, reflect: true, attribute: 'aboveOpenInnerPanel' })
   aboveOpenInnerPanel = false;
-  // if the panel right below the top panel
-  // or right above the bottom panel is opened,
+  // if the panel right below the top panel or right above the bottom panel is opened,
   // the very top or bottom panel becomes a single panel
   @property({ type: Boolean, reflect: true, attribute: 'separateSinglePanel' })
   separateSinglePanel = false;
@@ -57,6 +55,9 @@ export class ExpansionPanelItem extends LitElement {
 
         <div class="content">
           <span>${this.content}</span>
+          <div class="footer">
+            <slot name="footer"></slot>
+          </div>
         </div>
       </div>
     `;
@@ -85,7 +86,6 @@ export class ExpansionPanelItem extends LitElement {
       },
     });
     window.dispatchEvent(event);
-    // this.dispatchEvent(event);
   }
 }
 

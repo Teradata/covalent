@@ -1,0 +1,62 @@
+<!-- expansion-panel-overview.stories.mdx -->
+
+import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Components/Expansion-Panel/Overview"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  #story--example-button--outlined,
+  #story--example-button--text {
+    margin-right: 8px;
+  }
+`}</style>
+
+# Expansion panel
+
+## Anatomy
+
+Set of expandable panels stacked up similar to data table.
+
+#### Interactions and behavior
+
+- Click on the expandable panel anywhere to get the extra information.
+- Unexpanded items group into single cards, one before and one after the open panel.
+- The expanded panel separates into its own card. Only one panel may be open at a time.
+
+<Canvas>
+  <form>
+    <expansion-panel>
+      <expansion-panel-item></expansion-panel-item>
+    </expansion-panel>
+  </form>
+</Canvas>
+
+---
+
+## Common mistakes
+
+#### Call to action placement on expanded panel
+
+Do not add any call to action (button/link) on the expansion panel header because
+the expansion panel header is clickable and when clicked on expanded state, it
+collapses the panel. If absolutely needed, the call to actions can be added at
+the bottom of expanded region.
+
+<Canvas>
+  <form>
+    <expansion-panel>
+      <expansion-panel-item></expansion-panel-item>
+    </expansion-panel>
+    <expansion-panel>
+      <expansion-panel-item></expansion-panel-item>
+    </expansion-panel>
+  </form>
+</Canvas>
