@@ -40,7 +40,7 @@ export class ExpansionPanelItem extends LitElement {
 
   @property({ type: String }) title = 'Title';
   @property({ type: String }) contentPreview = 'Content preview';
-  @property({ type: Boolean, attribute: 'panelFooter' }) panelFooter = true;
+  @property({ type: Boolean, reflect: true }) panelFooter = false;
   @property({ type: Boolean, attribute: 'noSurface' }) noSurface = false;
 
   render() {

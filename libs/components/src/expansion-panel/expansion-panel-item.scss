@@ -7,6 +7,7 @@
 :host([isBottomPanel]) {
   .panel {
     border-radius: 0px 0px 8px 8px;
+    border-bottom: 0px;
   }
 }
 
@@ -21,6 +22,7 @@
     border-radius: 8px 8px 8px 8px;
     margin-top: 16px;
     margin-bottom: 16px;
+    border-bottom: 0px;
   }
 
   .header {
@@ -45,6 +47,7 @@
   .panel {
     border-radius: 8px 8px 8px 8px;
     margin-bottom: 16px;
+    border-bottom: 0px;
   }
 
   .header {
@@ -69,6 +72,7 @@
   .panel {
     border-radius: 8px 8px 8px 8px;
     margin-top: 16px;
+    border-bottom: 0px;
   }
 
   .header {
@@ -145,6 +149,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
+    padding-left: 16px;
+
     color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
     font-family: var(--mdc-typography-body1-font-family, Arial);
     font-size: var(--mdc-typography-body1-font-size, 14px);
@@ -152,6 +158,11 @@
     font-weight: var(--mdc-typography-body1-font-weight, 400);
     line-height: var(--mdc-typography-body1-line-height, 20px);
     letter-spacing: 0.25px;
+  }
+
+  cv-icon {
+    padding-left: 16px;
+    margin-left: auto;
   }
 
   // ::slotted(cv-action-ribbion) {
@@ -178,12 +189,6 @@
     padding: 16px 24px 16px 24px;
 
     border-top: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
-  }
-
-  cv-icon {
-    padding-left: 15px;
-    padding-right: 24px;
-    margin-left: auto;
   }
 
   .openedIcon {
