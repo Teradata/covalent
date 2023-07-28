@@ -19,11 +19,16 @@
 :host([openInnerPanel]) {
   .panel {
     border-radius: 8px 8px 8px 8px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 
-  .content {
+  .header {
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  .dropdown {
     display: block;
   }
 
@@ -39,10 +44,15 @@
 :host([openTopPanel]) {
   .panel {
     border-radius: 8px 8px 8px 8px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
-  .content {
+  .header {
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  .dropdown {
     display: block;
   }
 
@@ -58,10 +68,15 @@
 :host([openBottomPanel]) {
   .panel {
     border-radius: 8px 8px 8px 8px;
-    margin-top: 10px;
+    margin-top: 16px;
   }
 
-  .content {
+  .header {
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  .dropdown {
     display: block;
   }
 
@@ -96,20 +111,19 @@
   .panel {
     background-color: var(--mdc-theme-surface, #ffffff);
     width: 550px;
-    border-bottom: 1px solid var(--cv-light-divider, rgba(0, 0, 0, 0.12));
+    border-bottom: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
   }
 
   .header {
-    padding: 15px;
-    white-space: nowrap;
+    min-height: 48px;
+    max-height: 48px;
+    padding: 0px 24px 0px 24px;
 
     display: flex;
     align-items: center;
   }
 
   .title {
-    padding-left: 5px;
-    margin-right: 5px;
     min-width: 130px;
     max-width: 130px;
 
@@ -118,11 +132,11 @@
     white-space: nowrap;
 
     color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
-    font-family: var(--mdc-typography-body2-font-family, Arial);
-    font-size: var(--mdc-typography-body2-font-size, 14px);
+    font-family: var(--mdc-typography-body1-font-family, Arial);
+    font-size: var(--mdc-typography-body1-font-size, 14px);
     font-style: normal;
-    font-weight: var(--mdc-typography-body2-font-weight, 400);
-    line-height: var(--mdc-typography-body2-line-height, 20px);
+    font-weight: var(--mdc-typography-body1-font-weight, 400);
+    line-height: var(--mdc-typography-body1-line-height, 20px);
     letter-spacing: 0.25px;
   }
 
@@ -132,51 +146,43 @@
     white-space: nowrap;
 
     color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
-    font-family: var(--mdc-typography-body2-font-family, Arial);
-    font-size: var(--mdc-typography-body2-font-size, 14px);
+    font-family: var(--mdc-typography-body1-font-family, Arial);
+    font-size: var(--mdc-typography-body1-font-size, 14px);
     font-style: normal;
-    font-weight: var(--mdc-typography-body2-font-weight, 400);
-    line-height: var(--mdc-typography-body2-line-height, 20px);
+    font-weight: var(--mdc-typography-body1-font-weight, 400);
+    line-height: var(--mdc-typography-body1-line-height, 20px);
+    letter-spacing: 0.25px;
+  }
+
+  // ::slotted(cv-action-ribbion) {
+  //   margin: 0 -16px;
+  // }
+
+  .dropdown {
+    display: none;
+
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    font-family: var(--mdc-typography-body1-font-family, Arial);
+    font-size: var(--mdc-typography-body1-font-size, 14px);
+    font-style: normal;
+    font-weight: var(--mdc-typography-body1-font-weight, 400);
+    line-height: var(--mdc-typography-body1-line-height, 20px);
     letter-spacing: 0.25px;
   }
 
   .content {
-    display: none;
-    padding: 20px;
-
-    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
-    font-family: var(--mdc-typography-body2-font-family, Arial);
-    font-size: var(--mdc-typography-body2-font-size, 14px);
-    font-style: normal;
-    font-weight: var(--mdc-typography-body2-font-weight, 400);
-    line-height: var(--mdc-typography-body2-line-height, 20px);
-    letter-spacing: 0.25px;
-  }
-
-  ::slotted(cv-action-ribbion) {
-    margin: 0 -16px;
+    padding: 0px 24px 16px 24px;
   }
 
   .footer {
-    padding-top: 20px;
-    // min-height: 72px;
+    padding: 16px 24px 16px 24px;
 
-    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
-    font-family: var(--mdc-typography-body2-font-family, Arial);
-    font-size: var(--mdc-typography-body2-font-size, 14px);
-    font-style: normal;
-    font-weight: var(--mdc-typography-body2-font-weight, 400);
-    line-height: var(--mdc-typography-body2-line-height, 20px);
-    letter-spacing: 0.25px;
-  }
-
-  hr {
-    margin: 0;
-    border-color: var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
+    border-top: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
   }
 
   cv-icon {
     padding-left: 15px;
+    padding-right: 24px;
     margin-left: auto;
   }
 

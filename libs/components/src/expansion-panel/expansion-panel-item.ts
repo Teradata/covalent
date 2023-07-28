@@ -40,7 +40,8 @@ export class ExpansionPanelItem extends LitElement {
 
   @property({ type: String }) title = 'Title';
   @property({ type: String }) contentPreview = 'Content preview';
-  @property({ type: String }) content = 'Content';
+  @property({ type: Boolean, attribute: 'panelFooter' }) panelFooter = true;
+  @property({ type: Boolean, attribute: 'noSurface' }) noSurface = false;
 
   render() {
     return html`
@@ -53,11 +54,18 @@ export class ExpansionPanelItem extends LitElement {
           <cv-icon class="openedIcon">expand_less</cv-icon>
         </div>
 
-        <div class="content">
-          <span>${this.content}</span>
-          <div class="footer">
-            <slot name="footer"></slot>
+        <div class="dropdown">
+          <div class="content">
+            <slot name="content"></slot>
           </div>
+
+          ${this.panelFooter
+            ? html`
+                <div class="footer">
+                  <slot name="footer"></slot>
+                </div>
+              `
+            : ''}
         </div>
       </div>
     `;
