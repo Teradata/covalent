@@ -3,7 +3,7 @@
     "font-family": { "value": "Arial, sans-serif", "type": "fontFamilies" },
 
     "headline1-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "headline1-font-size": { "value": "96px", "type": "fontSizes" },
@@ -11,7 +11,7 @@
     "headline1-line-height": { "value": "112px", "type": "lineHeights" },
 
     "headline2-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "headline2-font-size": { "value": "60px", "type": "fontSizes" },
@@ -19,7 +19,7 @@
     "headline2-line-height": { "value": "84px", "type": "lineHeights" },
 
     "headline3-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "headline3-font-size": { "value": "48px", "type": "fontSizes" },
@@ -27,7 +27,7 @@
     "headline3-line-height": { "value": "64px", "type": "lineHeights" },
 
     "headline4-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "headline4-font-size": { "value": "34px", "type": "fontSizes" },
@@ -35,7 +35,7 @@
     "headline4-line-height": { "value": "48px", "type": "lineHeights" },
 
     "headline5-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "headline5-font-size": { "value": "24px", "type": "fontSizes" },
@@ -43,7 +43,7 @@
     "headline5-line-height": { "value": "36px", "type": "lineHeights" },
 
     "headline6-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "headline6-font-size": { "value": "20px", "type": "fontSizes" },
@@ -51,7 +51,7 @@
     "headline6-line-height": { "value": "28px", "type": "lineHeights" },
 
     "subtitle1-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "subtitle1-font-size": { "value": "14px", "type": "fontSizes" },
@@ -59,7 +59,7 @@
     "subtitle1-line-height": { "value": "20px", "type": "lineHeights" },
 
     "subtitle2-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "subtitle2-font-size": { "value": "16px", "type": "fontSizes" },
@@ -83,7 +83,7 @@
     "body2-line-height": { "value": "20px", "type": "lineHeights" },
 
     "button-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies"
     },
     "button-font-size": { "value": "14px", "type": "fontSizes" },

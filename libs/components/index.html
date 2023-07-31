@@ -17,8 +17,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Material+Icons|Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
     />
   </head>
   <body>
@@ -48,11 +52,13 @@
       </svg>
 
       <cv-list class="navigation-rail" slot="navigation" activatable>
-
         <cv-nav-list-item graphic="avatar">
           <cv-icon class="home-icon" slot="graphic">language</cv-icon>
           Production
-          <cv-icon-button class="section-selector" icon="arrow_drop_down"></cv-icon-button>
+          <cv-icon-button
+            class="section-selector"
+            icon="arrow_drop_down"
+          ></cv-icon-button>
         </cv-nav-list-item>
 
         <cv-nav-list-item graphic="avatar">
@@ -256,7 +262,7 @@
       var appShell = document.querySelector('cv-app-shell');
       var sectionMenu = document.querySelector('#section-menu');
       var sectionSelector = document.querySelector('.section-selector');
-  
+
       document.querySelector('.help-item').addEventListener('click', () => {
         appShell.helpOpen = !appShell.helpOpen;
         alert;

@@ -1,7 +1,6 @@
-
 /**
  * Do not edit directly
- * Generated on Wed, 28 Jun 2023 13:58:40 GMT
+ * Generated on Fri, 28 Jul 2023 19:28:24 GMT
  */
 
 $light-primary: #007373 !default;
@@ -108,12 +107,12 @@ $dark-surface-secondary-highlight-hover: rgba(#045c5c, 0.6) !default;
 $dark-surface-positive: #336033 !default;
 $dark-surface-positive-highlight: rgba(#336033, 0.4) !default;
 $dark-surface-positive-highlight-hover: rgba(#336033, 0.6) !default;
-$dark-surface-caution: #704C16 !default;
-$dark-surface-caution-highlight: rgba(#704C16, 0.4) !default;
-$dark-surface-caution-highlight-hover: rgba(#704C16, 0.6) !default;
-$dark-surface-negative: #883E32 !default;
-$dark-surface-negative-highlight: rgba(#883E32, 0.4) !default;
-$dark-surface-negative-highlight-hover: rgba(#883E32, 0.6) !default;
+$dark-surface-caution: #704c16 !default;
+$dark-surface-caution-highlight: rgba(#704c16, 0.4) !default;
+$dark-surface-caution-highlight-hover: rgba(#704c16, 0.6) !default;
+$dark-surface-negative: #883e32 !default;
+$dark-surface-negative-highlight: rgba(#883e32, 0.4) !default;
+$dark-surface-negative-highlight-hover: rgba(#883e32, 0.6) !default;
 $dark-surface-neutral: #43515a !default;
 $dark-surface-neutral-highlight: rgba(#43515a, 0.4) !default;
 $dark-surface-neutral-highlight-hover: rgba(#43515a, 0.6) !default;
@@ -433,35 +432,35 @@ $teradata-slate-1800: #0c0e0f !default;
 $teradata-slate-1900: #060708 !default;
 $teradata-slate-2000: #020203 !default;
 $typography-font-family: Arial, sans-serif !default;
-$typography-headline1-font-family: 'Poppins', sans-serif !default;
+$typography-headline1-font-family: 'Inter', sans-serif !default;
 $typography-headline1-font-size: 96px !default;
 $typography-headline1-font-weight: 500 !default;
 $typography-headline1-line-height: 112px !default;
-$typography-headline2-font-family: 'Poppins', sans-serif !default;
+$typography-headline2-font-family: 'Inter', sans-serif !default;
 $typography-headline2-font-size: 60px !default;
 $typography-headline2-font-weight: 600 !default;
 $typography-headline2-line-height: 84px !default;
-$typography-headline3-font-family: 'Poppins', sans-serif !default;
+$typography-headline3-font-family: 'Inter', sans-serif !default;
 $typography-headline3-font-size: 48px !default;
 $typography-headline3-font-weight: 600 !default;
 $typography-headline3-line-height: 64px !default;
-$typography-headline4-font-family: 'Poppins', sans-serif !default;
+$typography-headline4-font-family: 'Inter', sans-serif !default;
 $typography-headline4-font-size: 34px !default;
 $typography-headline4-font-weight: 700 !default;
 $typography-headline4-line-height: 48px !default;
-$typography-headline5-font-family: 'Poppins', sans-serif !default;
+$typography-headline5-font-family: 'Inter', sans-serif !default;
 $typography-headline5-font-size: 24px !default;
 $typography-headline5-font-weight: 700 !default;
 $typography-headline5-line-height: 36px !default;
-$typography-headline6-font-family: 'Poppins', sans-serif !default;
+$typography-headline6-font-family: 'Inter', sans-serif !default;
 $typography-headline6-font-size: 20px !default;
 $typography-headline6-font-weight: 700 !default;
 $typography-headline6-line-height: 28px !default;
-$typography-subtitle1-font-family: 'Poppins', sans-serif !default;
+$typography-subtitle1-font-family: 'Inter', sans-serif !default;
 $typography-subtitle1-font-size: 14px !default;
 $typography-subtitle1-font-weight: 600 !default;
 $typography-subtitle1-line-height: 20px !default;
-$typography-subtitle2-font-family: 'Poppins', sans-serif !default;
+$typography-subtitle2-font-family: 'Inter', sans-serif !default;
 $typography-subtitle2-font-size: 16px !default;
 $typography-subtitle2-font-weight: 600 !default;
 $typography-subtitle2-line-height: 24px !default;
@@ -473,7 +472,7 @@ $typography-body2-font-family: Arial, sans-serif !default;
 $typography-body2-font-size: 14px !default;
 $typography-body2-font-weight: 400 !default;
 $typography-body2-line-height: 20px !default;
-$typography-button-font-family: 'Poppins', sans-serif !default;
+$typography-button-font-family: 'Inter', sans-serif !default;
 $typography-button-font-size: 14px !default;
 $typography-button-font-weight: 600 !default;
 $typography-button-line-height: 16px !default;
@@ -518,7 +517,8 @@ $tokens: (
     'surface-accent-highlight-hover': $light-surface-accent-highlight-hover,
     'surface-secondary': $light-surface-secondary,
     'surface-secondary-highlight': $light-surface-secondary-highlight,
-    'surface-secondary-highlight-hover': $light-surface-secondary-highlight-hover,
+    'surface-secondary-highlight-hover':
+      $light-surface-secondary-highlight-hover,
     'surface-positive': $light-surface-positive,
     'surface-positive-highlight': $light-surface-positive-highlight,
     'surface-positive-highlight-hover': $light-surface-positive-highlight-hover,
@@ -549,7 +549,7 @@ $tokens: (
     'text-secondary-on-dark': $light-text-secondary-on-dark,
     'text-hint-on-dark': $light-text-hint-on-dark,
     'text-disabled-on-dark': $light-text-disabled-on-dark,
-    'text-icon-on-dark': $light-text-icon-on-dark
+    'text-icon-on-dark': $light-text-icon-on-dark,
   ),
   'dark': (
     'primary': $dark-primary,
@@ -617,7 +617,7 @@ $tokens: (
     'text-secondary-on-dark': $dark-text-secondary-on-dark,
     'text-hint-on-dark': $dark-text-hint-on-dark,
     'text-disabled-on-dark': $dark-text-disabled-on-dark,
-    'text-icon-on-dark': $dark-text-icon-on-dark
+    'text-icon-on-dark': $dark-text-icon-on-dark,
   ),
   'material': (
     'red-50': $material-red-50,
@@ -873,7 +873,7 @@ $tokens: (
     'blue-grey-600': $material-blue-grey-600,
     'blue-grey-700': $material-blue-grey-700,
     'blue-grey-800': $material-blue-grey-800,
-    'blue-grey-900': $material-blue-grey-900
+    'blue-grey-900': $material-blue-grey-900,
   ),
   'teradata': (
     'teal-50': $teradata-teal-50,
@@ -917,7 +917,7 @@ $tokens: (
     'slate-1700': $teradata-slate-1700,
     'slate-1800': $teradata-slate-1800,
     'slate-1900': $teradata-slate-1900,
-    'slate-2000': $teradata-slate-2000
+    'slate-2000': $teradata-slate-2000,
   ),
   'typography': (
     'font-family': $typography-font-family,
@@ -968,6 +968,6 @@ $tokens: (
     'caption-font-family': $typography-caption-font-family,
     'caption-font-size': $typography-caption-font-size,
     'caption-font-weight': $typography-caption-font-weight,
-    'caption-line-height': $typography-caption-line-height
-  )
+    'caption-line-height': $typography-caption-line-height,
+  ),
 );
