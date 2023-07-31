@@ -22,7 +22,7 @@
     />
   </head>
   <body>
-    <cv-app-shell appName="[App Name]">
+    <cv-app-shell appName="[App Name]" sectionName="Environments">
       <svg
         slot="logo"
         class="logo logo-light"
@@ -48,15 +48,16 @@
       </svg>
 
       <cv-list class="navigation-rail" slot="navigation" activatable>
-        <cv-nav-list-item class="home-item" graphic="avatar">
-          <span>Vantage</span>
-          <cv-icon class="covalent-icon teradata-circle" slot="graphic"
-            >teradata</cv-icon
-          >
-          <cv-icon class="covalent-icon teradata-no-circle" slot="graphic"
-            >teradata_nocircle</cv-icon
-          >
+
+        <cv-nav-list-item graphic="avatar">
+          <cv-icon class="home-icon" slot="graphic">language</cv-icon>
+          Production
+          <cv-icon-button class="section-selector" icon="arrow_drop_down"></cv-icon-button>
+        </cv-nav-list-item>
+
+        <cv-nav-list-item graphic="avatar">
           <cv-icon class="home-icon" slot="graphic">home</cv-icon>
+          Home
         </cv-nav-list-item>
 
         <cv-expansion-list activatable>
@@ -246,8 +247,16 @@
       </cv-action-ribbon>
     </cv-app-shell>
 
+    <cv-menu absolute id="section-menu">
+      <cv-list-item>Production</cv-list-item>
+      <cv-list-item>Development</cv-list-item>
+    </cv-menu>
+
     <script>
       var appShell = document.querySelector('cv-app-shell');
+      var sectionMenu = document.querySelector('#section-menu');
+      var sectionSelector = document.querySelector('.section-selector');
+  
       document.querySelector('.help-item').addEventListener('click', () => {
         appShell.helpOpen = !appShell.helpOpen;
         alert;
@@ -256,6 +265,12 @@
       document.querySelector('.help-close').addEventListener('click', () => {
         appShell.helpOpen = false;
       });
+
+      sectionSelector.addEventListener('click', function () {
+        sectionMenu.open = !sectionMenu.open;
+      });
+
+      sectionMenu.anchor = sectionSelector;
     </script>
   </body>
 </html>

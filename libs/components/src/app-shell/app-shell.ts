@@ -39,8 +39,22 @@ export class CovalentAppShell extends DrawerBase {
   @property()
   appName = '';
 
-  @property({ type: Boolean })
+  /**
+   * The name of the section shown above the navigation
+   */
+  @property()
+  sectionName = '';
+
+  @property({ type: Boolean, reflect: true })
+  miniListOpen = false;
+
+  @property({ type: Boolean, reflect: true })
   helpOpen = false;
+
+  private forcedOpen = false;
+  private hovered = false;
+
+  private navHoverTimeout?: number;
 
   constructor() {
     super();
@@ -48,12 +62,12 @@ export class CovalentAppShell extends DrawerBase {
     this.resizeEvent();
   }
 
-  private _toggleOpen() {
+  private _toggleOpen(forcedOpen = false) {
     if (this.mdcFoundation.isOpening() || this.mdcFoundation.isClosing()) {
       return;
     }
 
-    this.open = !this.open;
+    this.open = forcedOpen === true ? forcedOpen : !this.open;
 
     [...this.navigationListElements, ...this.userMenuElements].forEach((el) =>
       el.setAttribute('navopen', this.open.toString())
@@ -62,6 +76,42 @@ export class CovalentAppShell extends DrawerBase {
     this.dispatchEvent(
       new Event('CovalentAppShell:toggle', { bubbles: true, composed: true })
     );
+
+    this.requestUpdate();
+  }
+
+  private _handleMenuClick() {
+    this.forcedOpen = !this.forcedOpen;
+    this._toggleOpen(this.forcedOpen);
+
+    this.forcedOpen = this.open;
+    this.hovered = false;
+  }
+
+  private _handleNavMouseOver() {
+    clearTimeout(this.navHoverTimeout);
+
+    if (this.open || this.forcedOpen) {
+      return;
+    }
+
+    this.navHoverTimeout = setTimeout(() => {
+      this.hovered = true;
+      this._toggleOpen();
+    }, 200);
+  }
+
+  private _handleNavMouseOut() {
+    clearTimeout(this.navHoverTimeout);
+
+    if (!this.open || this.forcedOpen) {
+      return;
+    }
+
+    this.navHoverTimeout = setTimeout(() => {
+      this.hovered = false;
+      this._toggleOpen();
+    }, 350);
   }
 
   resizeEvent() {
@@ -85,12 +135,26 @@ export class CovalentAppShell extends DrawerBase {
     window.removeEventListener('resize', this.resizeEvent);
   }
 
+  protected renderSection() {
+    return this.sectionName
+      ? html`<div class="current-section">
+          <cv-icon-button icon="arrow_back"></cv-icon-button>
+          <span>${this.sectionName}</span>
+        </div>`
+      : nothing;
+  }
+
   override render() {
     const dismissible = this.type === 'dismissible' || this.type === 'modal';
     const modal = this.type === 'modal';
     const classes = {
+      'cov-drawer--forcedOpen': this.forcedOpen,
+      'cov-appshell--minilist': this.miniListOpen,
+    };
+    const drawerClasses = {
       'mdc-drawer--dismissible': dismissible,
       'mdc-drawer--modal': modal,
+      'cov-drawer--hovered': this.hovered,
     };
     const helpPanelClasses = {
       'help--closed': !this.helpOpen,
@@ -104,27 +168,32 @@ export class CovalentAppShell extends DrawerBase {
       : nothing;
 
     return html`
-      <div class="app-shell">
+      <div class="app-shell ${classMap(classes)}">
         <span class="header"
           ><cv-top-app-bar-fixed centerTitle>
             <cv-icon-button
               class="toggle-drawer"
-              @click=${this._toggleOpen}
+              @click=${this._handleMenuClick}
               slot="navigationIcon"
               icon="menu"
             ></cv-icon-button>
             <span slot="title">${this.appName}</span>
           </cv-top-app-bar-fixed>
         </span>
-        <nav class="navigation mdc-drawer ${classMap(classes)}">
+        <nav
+          class="navigation mdc-drawer ${classMap(drawerClasses)}"
+          @mouseover="${this._handleNavMouseOver}"
+          @mouseout="${this._handleNavMouseOut}"
+        >
           <div class="navigation-toolbar">
             <cv-icon-button
-              @click=${this._toggleOpen}
+              @click="${this._handleMenuClick}"
               class="toggle-drawer"
               icon="menu"
             ></cv-icon-button>
             <slot name="logo"></slot>
           </div>
+          ${this.renderSection()}
           <slot name="navigation"></slot>
           <div style="display:flex; flex:1;"></div>
           <div divider></div>
