@@ -35,6 +35,16 @@
   height: 100vh;
   border-left: 1px solid;
   border-color: var(--mdc-theme-border, rgba(black, 0.12));
+
+  /* Desktop only styles */
+  @media only screen and (min-width: 768px) {
+    :not(.cov-drawer--forcedOpen) & {
+      margin-left: 72px;
+    }
+    .cov-appshell--minilist & {
+      margin-left: 0;
+    }
+  }
 }
 
 .help {
@@ -49,15 +59,43 @@
 
   &.help--closed {
     width: 0;
+    border: none;
   }
 }
 
+.current-section {
+  align-items: center;
+  border-bottom: 1px solid var(--mdc-theme-border);
+  display: flex;
+  column-gap: 12px;
+  font-size: var(--mdc-typography-body2-font-size);
+  font-family: var(--mdc-typography-body2-font-family);
+  font-weight: 600;
+  justify-content: flex-start;
+  overflow: hidden;
+  min-height: 48px;
+  padding: 8px 16px 8px 12px;
+  position: relative;
+  text-align: left;
+}
+
 [name='mini-list'] {
-  display: block;
+  display: none;
   border-left: 1px solid;
   border-color: var(--mdc-theme-border, rgba(black, 0.12));
   width: 320px;
   height: 100vh;
+
+  /* Desktop only styles */
+  @media only screen and (min-width: 768px) {
+    .cov-appshell--minilist & {
+      display: block;
+    }
+
+    :not(.cov-drawer--forcedOpen) & {
+      margin-left: 72px;
+    }
+  }
 
   @media only screen and (max-width: 1000px) {
     & {
@@ -77,6 +115,7 @@ nav.navigation {
   }
 
   .navigation-toolbar {
+    border-bottom: 1px solid var(--mdc-theme-border);
     display: flex;
     align-items: center;
   }
@@ -85,7 +124,21 @@ nav.navigation {
     display: none;
   }
 
+  slot[name='navigation'] {
+    margin-top: 8px;
+    display: block;
+  }
+
+  :not(.cov-drawer--forcedOpen) & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
   &.mdc-drawer--open {
+    background-color: var(--mdc-theme-surface);
+
     .toggle-drawer {
       margin-left: 12px;
       margin-right: 12px;
@@ -94,6 +147,11 @@ nav.navigation {
     slot[name='logo'] {
       display: block;
     }
+  }
+
+  &.cov-drawer--hovered {
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
+      0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
   }
 }
 

@@ -7,6 +7,9 @@
 
   slot::slotted(*) {
     height: 32px;
+    font-weight: var(--mdc-typography-body2-font-weight);
+    border-radius: 0px 28px 28px 0px;
+    margin-right: 16px;
   }
 }
 
