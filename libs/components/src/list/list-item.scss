@@ -8,8 +8,6 @@
 }
 
 :host([childItem]) {
-  height: 32px;
-
   .mdc-deprecated-list-item__text {
     padding-left: 56px;
   }
