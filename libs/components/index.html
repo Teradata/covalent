@@ -52,11 +52,13 @@
       </svg>
 
       <cv-list class="navigation-rail" slot="navigation" activatable>
-
         <cv-nav-list-item graphic="avatar">
           <cv-icon class="home-icon" slot="graphic">language</cv-icon>
           Production
-          <cv-icon-button class="section-selector" icon="arrow_drop_down"></cv-icon-button>
+          <cv-icon-button
+            class="section-selector"
+            icon="arrow_drop_down"
+          ></cv-icon-button>
         </cv-nav-list-item>
 
         <cv-nav-list-item graphic="avatar">
@@ -260,7 +262,7 @@
       var appShell = document.querySelector('cv-app-shell');
       var sectionMenu = document.querySelector('#section-menu');
       var sectionSelector = document.querySelector('.section-selector');
-  
+
       document.querySelector('.help-item').addEventListener('click', () => {
         appShell.helpOpen = !appShell.helpOpen;
         alert;

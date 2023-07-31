@@ -108,12 +108,12 @@
   --cv-dark-surface-positive: #336033;
   --cv-dark-surface-positive-highlight: rgba(#336033, 0.4);
   --cv-dark-surface-positive-highlight-hover: rgba(#336033, 0.6);
-  --cv-dark-surface-caution: #704C16;
-  --cv-dark-surface-caution-highlight: rgba(#704C16, 0.4);
-  --cv-dark-surface-caution-highlight-hover: rgba(#704C16, 0.6);
-  --cv-dark-surface-negative: #883E32;
-  --cv-dark-surface-negative-highlight: rgba(#883E32, 0.4);
-  --cv-dark-surface-negative-highlight-hover: rgba(#883E32, 0.6);
+  --cv-dark-surface-caution: #704c16;
+  --cv-dark-surface-caution-highlight: rgba(#704c16, 0.4);
+  --cv-dark-surface-caution-highlight-hover: rgba(#704c16, 0.6);
+  --cv-dark-surface-negative: #883e32;
+  --cv-dark-surface-negative-highlight: rgba(#883e32, 0.4);
+  --cv-dark-surface-negative-highlight-hover: rgba(#883e32, 0.6);
   --cv-dark-surface-neutral: #43515a;
   --cv-dark-surface-neutral-highlight: rgba(#43515a, 0.4);
   --cv-dark-surface-neutral-highlight-hover: rgba(#43515a, 0.6);
