@@ -3,6 +3,7 @@
   font-size: var(--mdc-typography-body2-font-size);
   font-weight: 600;
   line-height: var(--mdc-typography-body2-line-height);
+  text-align: left;
 }
 
 ::slotted(.section-selector) {
@@ -24,7 +25,7 @@
 
 :host([graphic='avatar']:not([navopen])) {
   border-radius: 100%;
-  margin: 0 auto;
+  margin: 0 0 0 12px;
   padding: 0;
   width: 48px;
   height: 48px;
@@ -114,7 +115,5 @@
 
   height: 48px;
   font-size: 0;
-  padding: 0;
-  justify-content: center;
-  align-content: center;
+  padding: 0px 0px 0px 15px;
 }
