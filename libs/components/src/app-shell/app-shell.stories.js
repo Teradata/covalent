@@ -40,7 +40,7 @@ const updateActionRibbon = () => {
   }
 };
 
-const Template = ({ navClick }) => {
+const Template = ({ navClick, appName = '[App name]', sectionTitle = '' }) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -81,7 +81,7 @@ const Template = ({ navClick }) => {
         }
     }
     </style>
-    <cv-app-shell appName="[App Name]">
+    <cv-app-shell ${appName ? `appName="${appName}"` : '' } ${sectionTitle ? `sectionName="${sectionTitle}"` : '' }>
       <svg
         slot="logo"
         class="logo logo-light"
@@ -111,30 +111,24 @@ const Template = ({ navClick }) => {
         slot="navigation"
         activatable
       >
-        <cv-nav-list-item class="home-item" graphic="avatar">
-          <span>Vantage</span>
-          <cv-icon class="covalent-icon teradata-circle" slot="graphic"
-            >teradata</cv-icon
-          >
-          <cv-icon class="covalent-icon teradata-no-circle" slot="graphic"
-            >teradata_nocircle</cv-icon
-          >
-          <cv-icon class="home-icon" slot="graphic">home</cv-icon>
-        </cv-nav-list-item>
+      <cv-nav-list-item graphic="avatar">
+        <cv-icon class="home-icon" slot="graphic">home</cv-icon>
+        Home
+      </cv-nav-list-item>
 
-        <cv-expansion-list activatable>
-          <cv-nav-list-item slot="expansionHeader" graphic="avatar" hasChildren>
-            Editor
-            <cv-icon class="covalent-icon" slot="graphic"
-              >product_editor</cv-icon
-            >
-          </cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-        </cv-expansion-list>
+      <cv-expansion-list activatable>
+        <cv-nav-list-item slot="expansionHeader" graphic="avatar" hasChildren>
+          Editor
+          <cv-icon class="covalent-icon" slot="graphic"
+            >product_editor</cv-icon
+          >
+        </cv-nav-list-item>
+        <cv-nav-list-item>Scripts</cv-nav-list-item>
+        <cv-nav-list-item>Scripts</cv-nav-list-item>
+        <cv-nav-list-item>Scripts</cv-nav-list-item>
+        <cv-nav-list-item>Scripts</cv-nav-list-item>
+        <cv-nav-list-item>Scripts</cv-nav-list-item>
+      </cv-expansion-list>
 
         <cv-nav-list-item graphic="avatar">
           <span>Sites</span>
@@ -314,3 +308,8 @@ const Template = ({ navClick }) => {
 };
 
 export const Basic = Template.bind({});
+
+export const sectionTitle = Template.bind({});
+sectionTitle.args = {
+  sectionTitle: 'Environments' 
+}
