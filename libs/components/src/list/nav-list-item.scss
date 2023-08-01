@@ -23,6 +23,12 @@
   }
 }
 
+:host([activated]) {
+  ::slotted(cv-icon[slot='graphic']) {
+    color: var(--mdc-theme-primary);
+  }
+}
+
 :host([graphic='avatar']:not([navopen])) {
   border-radius: 100%;
   margin: 0 0 0 12px;
@@ -38,58 +44,6 @@
 
 :host([graphic='avatar']:not([twoline])) {
   height: 48px;
-}
-
-:host(.home-item) {
-  ::slotted(.teradata-no-circle) {
-    --mdc-list-item-graphic-size: 40px;
-    --mdc-icon-size: 40px;
-
-    display: none;
-  }
-
-  ::slotted(.home-icon) {
-    display: none;
-
-    &:hover .covalent-icon {
-      display: none;
-    }
-  }
-}
-
-:host(.home-item:hover) {
-  ::slotted(.home-icon) {
-    display: block;
-  }
-
-  ::slotted(.teradata-circle) {
-    display: none;
-  }
-
-  ::slotted(.teradata-no-circle) {
-    display: none;
-  }
-}
-
-:host(.home-item:not([navopen])) {
-  background-color: #ff5f02;
-
-  --mdc-ripple-color: #ffffff;
-  --mdc-theme-text-icon-on-background: #ffffff;
-
-  ::slotted(.teradata-circle) {
-    display: none;
-  }
-
-  ::slotted(.teradata-no-circle) {
-    display: block;
-  }
-}
-
-:host(.home-item:hover:not([navopen])) {
-  ::slotted(.teradata-no-circle) {
-    display: none;
-  }
 }
 
 :host(.beta-list-item) {
