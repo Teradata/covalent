@@ -67,7 +67,7 @@ export class CovalentAppShell extends DrawerBase {
       return;
     }
 
-    this.open = forcedOpen === true ? forcedOpen : !this.open;
+    this.open = forcedOpen ? forcedOpen : !this.open;
 
     [...this.navigationListElements, ...this.userMenuElements].forEach((el) =>
       el.setAttribute('navopen', this.open.toString())
@@ -81,10 +81,10 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private _handleMenuClick() {
-    this.forcedOpen = !this.forcedOpen;
-    this._toggleOpen(this.forcedOpen);
+    // Forcefully toggle the open/close state
+    this._toggleOpen(!this.forcedOpen);
 
-    this.forcedOpen = this.open;
+    this.forcedOpen = true;
     this.hovered = false;
   }
 
@@ -95,10 +95,8 @@ export class CovalentAppShell extends DrawerBase {
       return;
     }
 
-    this.navHoverTimeout = setTimeout(() => {
-      this.hovered = true;
-      this._toggleOpen();
-    }, 200);
+    this.hovered = true;
+    this.navHoverTimeout = setTimeout(() => this._toggleOpen(), 350);    
   }
 
   private _handleNavMouseOut() {
@@ -108,10 +106,13 @@ export class CovalentAppShell extends DrawerBase {
       return;
     }
 
-    this.navHoverTimeout = setTimeout(() => {
-      this.hovered = false;
-      this._toggleOpen();
-    }, 350);
+    this.navHoverTimeout = setTimeout(() => this._toggleOpen(), 350);
+  }
+
+  private _handleDrawerClosed () {
+    this.forcedOpen = false;
+    this.hovered = false;
+    this.requestUpdate();
   }
 
   resizeEvent() {
@@ -127,11 +128,13 @@ export class CovalentAppShell extends DrawerBase {
 
   override connectedCallback() {
     super.connectedCallback();
+    this.addEventListener('MDCDrawer:closed', this._handleDrawerClosed)
     window.addEventListener('resize', () => this.resizeEvent());
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
+    this.removeEventListener('MDCDrawer:closed', this._handleDrawerClosed)
     window.removeEventListener('resize', this.resizeEvent);
   }
 
@@ -150,11 +153,11 @@ export class CovalentAppShell extends DrawerBase {
     const classes = {
       'cov-drawer--forcedOpen': this.forcedOpen,
       'cov-appshell--minilist': this.miniListOpen,
+      'cov-drawer--hovered': this.hovered,
     };
     const drawerClasses = {
       'mdc-drawer--dismissible': dismissible,
       'mdc-drawer--modal': modal,
-      'cov-drawer--hovered': this.hovered,
     };
     const helpPanelClasses = {
       'help--closed': !this.helpOpen,
