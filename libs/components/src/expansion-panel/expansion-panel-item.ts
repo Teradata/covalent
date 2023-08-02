@@ -41,11 +41,16 @@ export class ExpansionPanelItem extends LitElement {
   @property({ type: String }) title = 'Title';
   @property({ type: String }) contentPreview = 'Content preview';
   @property({ type: Boolean, reflect: true }) panelFooter = false;
-  @property({ type: Boolean, attribute: 'noSurface' }) noSurface = false;
+  @property({ type: Boolean, reflect: true }) noSurface = false;
 
   render() {
     return html`
-      <div class="panel">
+      <div
+        class="panel"
+        style="background-color: ${this.noSurface
+          ? 'transparent'
+          : 'var(--mdc-theme-surface, #ffffff)'}"
+      >
         <div class="header" @click=${this._toggleContent}>
           <span class="title">${this.title}</span>
           <span class="contentPreview">${this.contentPreview}</span>

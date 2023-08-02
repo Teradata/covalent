@@ -4,6 +4,7 @@
   }
 }
 
+// :host([isBottomPanel]), :host([isBottomPanel]) {
 :host([isBottomPanel]) {
   .panel {
     border-radius: 0px 0px 8px 8px;
@@ -113,7 +114,6 @@
 
 :host {
   .panel {
-    background-color: var(--mdc-theme-surface, #ffffff);
     width: 550px;
     border-bottom: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
   }
@@ -187,7 +187,6 @@
 
   .footer {
     padding: 16px 24px 16px 24px;
-
     border-top: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
   }
 

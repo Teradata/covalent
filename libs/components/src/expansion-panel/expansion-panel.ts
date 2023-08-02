@@ -14,11 +14,6 @@ export class ExpansionPanel extends LitElement {
     this.firstUpdated();
   }
 
-  // constructor() {
-  //   super();
-  //   this.addEventListener('cv-expansionPanel-togglePanel', (e) => console.log('EVENT RECEIVED'));
-  // }
-
   render() {
     return html`
       <div class="container">

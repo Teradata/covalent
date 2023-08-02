@@ -38,11 +38,16 @@ export const ExpansionPanel = ({ icon }) => {
       <expansion-panel-item
       title="Title"
       contentPreview="This content preview is short"
+      panelFooter
       >
         <div slot="content">
-          Content
         </div>
-        <div slot="footer">
+        <div slot="footer" style="display:flex; align-items:center">
+          <div style="color:rgba(255, 255, 255, 0.54)">You have unsaved changes</div>
+          <div style="margin-left:auto">
+            <cv-button outlined label="Cancel"></cv-button>
+            <cv-button raised label="Save" class="primary accent"></cv-button>
+          </div>
         </div>
       </expansion-panel-item>
 
@@ -56,7 +61,7 @@ export const ExpansionPanel = ({ icon }) => {
       </expansion-panel-item>
 
       <expansion-panel-item
-      title="Longer title"
+      title="Very very very very very very very veryv long title"
       contentPreview=""
       >
         <div slot="content">
