@@ -146,9 +146,9 @@ export class TdChartSeriesTreemapComponent
   implements ITdTreemapSeries
 {
   @Input() override config?: any = {};
-  @Input() override id?: string;
-  @Input() override name?: string;
-  @Input() override data?: any;
+  @Input() declare id?: string;
+  @Input() declare name?: string;
+  @Input() declare data?: any;
   @Input() zlevel?: number;
   @Input() z?: number;
   @Input() left?: string | number;
@@ -178,7 +178,7 @@ export class TdChartSeriesTreemapComponent
   @Input() upperLabel?: ITdTreemapUpperLabel;
   @Input() breadcrumb?: ITdTreemapBreadcrumb;
   @Input() emphasis?: ITdTreemapEmphasis;
-  @Input() override tooltip?: ITdSeriesTooltip;
+  @Input() declare tooltip: ITdSeriesTooltip;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('treemap', _optionsService);

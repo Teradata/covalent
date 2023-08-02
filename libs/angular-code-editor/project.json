@@ -22,6 +22,14 @@
       },
       "defaultConfiguration": "production"
     },
+    "test-test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/angular-code-editor"],
+      "options": {
+        "jestConfig": "libs/angular-code-editor/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
     "test": {
       "executor": "@angular-builders/custom-webpack:karma",
       "options": {
@@ -46,7 +54,7 @@
       }
     },
     "scsslint": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           {
