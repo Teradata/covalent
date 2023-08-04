@@ -1,3 +1,17 @@
+# [6.3.0-beta.1](https://github.com/Teradata/covalent/compare/v6.2.3...v6.3.0-beta.1) (2023-08-04)
+
+### Bug Fixes
+
+- **compnents:** nav behavior updates ([50b2d69](https://github.com/Teradata/covalent/commit/50b2d69cc31e02419b21f3922509cb602d014331))
+- **components:** nav updates ([22854d6](https://github.com/Teradata/covalent/commit/22854d6e15b77631ec1480af7af7c04e981a6ef3))
+- **components:** update appshell story ([eaf5add](https://github.com/Teradata/covalent/commit/eaf5addf8b2a26838adb38ac84c2f15a2152a8bd))
+
+### Features
+
+- **components:** nav updates ([afc478b](https://github.com/Teradata/covalent/commit/afc478b96df8c2485f4f93b5dcc016075d0b395e))
+- **components:** updating nav UX ([f4578ea](https://github.com/Teradata/covalent/commit/f4578ea71325362f44ad930f60f1e87d4ae44181))
+- **tokens:** new font inter ([94b3241](https://github.com/Teradata/covalent/commit/94b3241dd02ee7ca91138a37a62d4bddb3a0d36c))
+
 ## [6.2.3](https://github.com/Teradata/covalent/compare/v6.2.2...v6.2.3) (2023-07-24)
 
 ### Bug Fixes
