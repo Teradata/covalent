@@ -121,7 +121,7 @@
     align-items: center;
   }
   .title {
-    max-width: var(--cv-expansion-panel-item-title-width, 200px);
+    width: var(--cv-expansion-panel-item-title-width, 200px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

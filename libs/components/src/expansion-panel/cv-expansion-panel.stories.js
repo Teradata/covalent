@@ -22,8 +22,6 @@ export const ExpansionPanel = ({ icon }) => {
   return `
     <cv-expansion-panel titleWidth='300px' noSurface>
 
-      <h1>TEST</h1>
-
       <cv-expansion-panel-item
       title="Title"
       contentPreview="Content preview"
