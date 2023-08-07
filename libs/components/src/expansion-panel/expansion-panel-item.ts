@@ -17,17 +17,12 @@ export class ExpansionPanelItem extends LitElement {
   @property({ type: Boolean, reflect: true, attribute: 'open' }) open = false;
   @property({ type: Boolean, reflect: true, attribute: 'isTopPanel' })
   isTopPanel = false;
+  @property({ type: Boolean, reflect: true, attribute: 'isInnerPanel' })
+  isInnerPanel = false;
   @property({ type: Boolean, reflect: true, attribute: 'isBottomPanel' })
   isBottomPanel = false;
   @property({ type: Boolean, reflect: true, attribute: 'isSinglePanel' })
   isSinglePanel = false;
-
-  @property({ type: Boolean, reflect: true, attribute: 'openTopPanel' })
-  openTopPanel = false;
-  @property({ type: Boolean, reflect: true, attribute: 'openBottomPanel' })
-  openBottomPanel = false;
-  @property({ type: Boolean, reflect: true, attribute: 'openInnerPanel' })
-  openInnerPanel = false;
 
   @property({ type: Boolean, reflect: true, attribute: 'belowOpenInnerPanel' })
   belowOpenInnerPanel = false;
@@ -40,20 +35,18 @@ export class ExpansionPanelItem extends LitElement {
 
   @property({ type: String }) title = 'Title';
   @property({ type: String }) contentPreview = 'Content preview';
-  @property({ type: Boolean, reflect: true }) panelFooter = false;
+  @property({ type: Boolean, reflect: true }) showFooter = false;
   @property({ type: Boolean, reflect: true }) noSurface = false;
+  @property({ type: Boolean, reflect: true }) showContentPreview = false;
 
   render() {
     return html`
-      <div
-        class="panel"
-        style="background-color: ${this.noSurface
-          ? 'transparent'
-          : 'var(--mdc-theme-surface, #ffffff)'}"
-      >
+      <div class="panel">
         <div class="header" @click=${this._toggleContent}>
           <span class="title">${this.title}</span>
-          <span class="contentPreview">${this.contentPreview}</span>
+          <span class="contentPreview"
+            >${this.showContentPreview ? this.contentPreview : ''}</span
+          >
 
           <cv-icon class="closedIcon">expand_more</cv-icon>
           <cv-icon class="openedIcon">expand_less</cv-icon>
@@ -64,7 +57,7 @@ export class ExpansionPanelItem extends LitElement {
             <slot name="content"></slot>
           </div>
 
-          ${this.panelFooter
+          ${this.showFooter
             ? html`
                 <div class="footer">
                   <slot name="footer"></slot>
@@ -77,9 +70,6 @@ export class ExpansionPanelItem extends LitElement {
   }
 
   resetPanel() {
-    this.openTopPanel = false;
-    this.openBottomPanel = false;
-    this.openInnerPanel = false;
     this.belowOpenInnerPanel = false;
     this.aboveOpenInnerPanel = false;
     this.separateSinglePanel = false;

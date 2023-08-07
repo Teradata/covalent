@@ -20,12 +20,13 @@ export default {
 
 export const ExpansionPanel = ({ icon }) => {
   return `
-    <expansion-panel>
+    <expansion-panel noSurface>
 
       <expansion-panel-item
       title="Title"
-      contentPreview="Lorem ipsum dolor sit amet, consectetur adipiscing..."
-      panelFooter
+      contentPreview="Content preview"
+      showFooter
+      showContentPreview
       >
         <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -36,9 +37,10 @@ export const ExpansionPanel = ({ icon }) => {
       </expansion-panel-item>
 
       <expansion-panel-item
-      title="Title"
-      contentPreview="This content preview is short"
-      panelFooter
+      title="Lorem ipsum dolor sit amet, consectetur"
+      contentPreview="Content preview"
+      showFooter
+      showContentPreview
       >
         <div slot="content">
         </div>
@@ -52,8 +54,9 @@ export const ExpansionPanel = ({ icon }) => {
       </expansion-panel-item>
 
       <expansion-panel-item
-      title="Title"
-      contentPreview="This content preview is looooooooooooooooooooooooong"
+      title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+      contentPreview="Content preview"
+      showContentPreview
       >
         <div slot="content">
           Content
@@ -61,21 +64,12 @@ export const ExpansionPanel = ({ icon }) => {
       </expansion-panel-item>
 
       <expansion-panel-item
-      title="Very very very very very very very veryv long title"
-      contentPreview=""
+      title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      contentPreview="Content preview"
       >
         <div slot="content">
           Content
         </div>      
-      </expansion-panel-item>
-
-      <expansion-panel-item
-      title="Much much much longer title"
-      contentPreview="Lorem ipsum dolor sit amet, consectetur adipiscing..."
-      >
-        <div slot="content">
-          Content
-        </div>       
       </expansion-panel-item>
 
     </expansion-panel>

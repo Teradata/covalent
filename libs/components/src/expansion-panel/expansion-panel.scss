@@ -1,0 +1,3 @@
+:host([noSurface]) ::slotted(*) {
+  --mdc-theme-surface: transparent;
+}
