@@ -1,10 +1,10 @@
 import { LitElement, css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import styles from './expansion-panel-item.scss?inline';
+import styles from './cv-expansion-panel-item.scss?inline';
 import '../icon/icon';
 import '../action-ribbon/action-ribbon';
 
-@customElement('expansion-panel-item')
+@customElement('cv-expansion-panel-item')
 export class ExpansionPanelItem extends LitElement {
   static override styles = [
     css`
@@ -94,6 +94,6 @@ export class ExpansionPanelItem extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'expansion-panel-item': ExpansionPanelItem;
+    'cv-expansion-panel-item': ExpansionPanelItem;
   }
 }

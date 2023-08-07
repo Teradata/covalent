@@ -4,9 +4,9 @@ import {
   property,
   queryAssignedElements,
 } from 'lit/decorators.js';
-import styles from './expansion-panel.scss?inline';
+import styles from './cv-expansion-panel.scss?inline';
 
-@customElement('expansion-panel')
+@customElement('cv-expansion-panel')
 export class ExpansionPanel extends LitElement {
   static override styles = [
     css`
@@ -22,6 +22,7 @@ export class ExpansionPanel extends LitElement {
   }
 
   @property({ type: Boolean, reflect: true }) noSurface = false;
+  @property({ type: String }) titleWidth = '150px';
 
   render() {
     return html`
@@ -35,7 +36,7 @@ export class ExpansionPanel extends LitElement {
 
   private _handleToggle = (e: Event): void => {
     const items: any[] = Array.from(
-      document.querySelectorAll('expansion-panel-item')
+      document.querySelectorAll('cv-expansion-panel-item')
     );
     let panel = items[e.detail.index];
     let toggledOpen = panel.open;
@@ -70,9 +71,14 @@ export class ExpansionPanel extends LitElement {
   };
 
   protected override firstUpdated() {
+    this.style.setProperty(
+      '--cv-expansion-panel-item-title-width',
+      this.titleWidth
+    );
+
     // All expandable-panel components.
     const items: any[] = Array.from(
-      document.querySelectorAll('expansion-panel-item')
+      document.querySelectorAll('cv-expansion-panel-item')
     );
     if (items.length == 1) {
       items[0].isSinglePanel = true;
@@ -97,6 +103,6 @@ export class ExpansionPanel extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'expansion-panel': ExpansionPanel;
+    'cv-expansion-panel': ExpansionPanel;
   }
 }

@@ -1,0 +1,7 @@
+:host([noSurface]) {
+  --mdc-theme-surface: transparent;
+}
+
+// ::slotted(.title) {
+//     width: var(--cv-expansion-panel-item-title-width, 150px);
+// }

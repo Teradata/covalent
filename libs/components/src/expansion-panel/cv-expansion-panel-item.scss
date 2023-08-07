@@ -46,7 +46,7 @@
   }
 }
 
-:host([open], [isTopPanel]) {
+:host([open][isTopPanel]) {
   .panel {
     border-radius: 8px 8px 8px 8px;
     margin-bottom: 16px;
@@ -67,7 +67,7 @@
   }
 }
 
-:host([open], [isBottomPanel]) {
+:host([open][isBottomPanel]) {
   .panel {
     border-radius: 8px 8px 8px 8px;
     margin-top: 16px;
@@ -121,7 +121,7 @@
     align-items: center;
   }
   .title {
-    max-width: var(--cv-expansion-panel-item-width, 530px);
+    max-width: var(--cv-expansion-panel-item-title-width, 200px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

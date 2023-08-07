@@ -1,5 +1,5 @@
-import './expansion-panel';
-import './expansion-panel-item';
+import './cv-expansion-panel';
+import './cv-expansion-panel-item';
 import '../icon/icon';
 import '../action-ribbon/action-ribbon';
 import '../button/button';
@@ -20,9 +20,11 @@ export default {
 
 export const ExpansionPanel = ({ icon }) => {
   return `
-    <expansion-panel noSurface>
+    <cv-expansion-panel titleWidth='300px' noSurface>
 
-      <expansion-panel-item
+      <h1>TEST</h1>
+
+      <cv-expansion-panel-item
       title="Title"
       contentPreview="Content preview"
       showFooter
@@ -34,9 +36,9 @@ export const ExpansionPanel = ({ icon }) => {
         <div slot="footer">
           Basic footer
         </div>
-      </expansion-panel-item>
+      </cv-expansion-panel-item>
 
-      <expansion-panel-item
+      <cv-expansion-panel-item
       title="Lorem ipsum dolor sit amet, consectetur"
       contentPreview="Content preview"
       showFooter
@@ -51,9 +53,9 @@ export const ExpansionPanel = ({ icon }) => {
             <cv-button raised label="Save" class="primary accent"></cv-button>
           </div>
         </div>
-      </expansion-panel-item>
+      </cv-expansion-panel-item>
 
-      <expansion-panel-item
+      <cv-expansion-panel-item
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
       contentPreview="Content preview"
       showContentPreview
@@ -61,17 +63,17 @@ export const ExpansionPanel = ({ icon }) => {
         <div slot="content">
           Content
         </div>
-      </expansion-panel-item>
+      </cv-expansion-panel-item>
 
-      <expansion-panel-item
+      <cv-expansion-panel-item
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
       contentPreview="Content preview"
       >
         <div slot="content">
           Content
         </div>      
-      </expansion-panel-item>
+      </cv-expansion-panel-item>
 
-    </expansion-panel>
+    </cv-expansion-panel>
     `;
 };
