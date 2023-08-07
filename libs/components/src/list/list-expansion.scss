@@ -1,9 +1,6 @@
 .mdc-deprecated-list {
-  --mdc-list-side-padding: 72px;
 
-  transition: transform 0.15s ease-out;
-  overflow: hidden;
-  height: var(--cv-list-menu-height, 0);
+
 
   slot::slotted(*) {
     height: 32px;
@@ -12,10 +9,52 @@
     margin-right: 16px;
   }
 }
+:host {
+  flex-direction: column;
+  overflow: visible;
+  height: inherit !important; 
+  background: none;
+  margin:0 16px 0 0;
+  padding: 0;
 
-:host([open]) {
-  ul {
-    transition: min-height 0.25s ease-in;
-    height: var(--cv-list-menu-height, inherit);
-  }
+  --mdc-ripple-color: transparent;
+  --mdc-list-side-padding: 0;
+}
+
+:host([activated]){
+  --mdc-ripple-color: transparent;
+}
+
+
+.expansion-header {
+  --mdc-ripple-color: var(--mdc-theme-primary);
+  border-radius: 0px 28px 28px 0px;
+  position: relative;
+  height: 48px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+.expansion-header-inner {
+  padding: 0 16px;
+}
+
+.expansion-icon {
+  padding-left: 16px;
+}
+.expansion-panel {
+  display: block;
+  width: 100%;
+  height: var(--cv-list-menu-height, 0);
+  --mdc-list-side-padding: 72px;
+
+  transition: transform 0.15s ease-out;
+  overflow: hidden;
+
+}
+:host([open]) .expansion-panel {
+  transition: min-height 0.25s ease-in;
+  height: var(--cv-list-menu-height, inherit);
 }

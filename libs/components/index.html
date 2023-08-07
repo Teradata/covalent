@@ -51,6 +51,8 @@
         ></path>
       </svg>
 
+      <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>
+
       <cv-list class="navigation-rail" slot="navigation" activatable>
         <cv-nav-list-item graphic="avatar">
           <cv-icon class="home-icon" slot="graphic">language</cv-icon>
@@ -66,18 +68,18 @@
           Home
         </cv-nav-list-item>
 
-        <cv-expansion-list activatable>
-          <cv-nav-list-item slot="expansionHeader" graphic="avatar" hasChildren>
-            Editor
-            <cv-icon class="covalent-icon" slot="graphic"
+        <cv-expansion-list graphic="avatar" hasChildren>
+          <span>Editor</span>
+          <cv-icon class="covalent-icon" slot="graphic"
               >product_editor</cv-icon
             >
-          </cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
+          <cv-list class="subnav" slot="expansion-panel" activatable>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+            <cv-nav-list-item>Scripts</cv-nav-list-item>
+          </cv-list>
         </cv-expansion-list>
 
         <cv-nav-list-item graphic="avatar">

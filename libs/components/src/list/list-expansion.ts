@@ -4,8 +4,6 @@ import {
   property,
   queryAssignedElements,
 } from 'lit/decorators.js';
-import { styles as listBaseStyles } from '@material/mwc-list/mwc-list.css';
-import { CovalentList } from './list';
 import styles from './list-expansion.scss?inline';
 import CovalentNavRailListItem from './nav-list-item';
 
@@ -16,14 +14,12 @@ declare global {
 }
 
 @customElement('cv-expansion-list')
-export class CovalentExpansionList extends CovalentList {
+export class CovalentExpansionList extends CovalentNavRailListItem {
   static override styles = [
     css`
-      ${unsafeCSS(listBaseStyles)}
+      ${unsafeCSS(styles)},
     `,
-    css`
-      ${unsafeCSS(styles)}
-    `,
+    ...super.styles,
   ];
   static override shadowRootOptions: ShadowRootInit = {
     mode: 'open',
@@ -68,9 +64,24 @@ export class CovalentExpansionList extends CovalentList {
   }
 
   override render() {
+    const text = this.renderText();
+    const graphic = this.graphic ? this.renderGraphic() : nothing;
+    const meta = this.hasMeta ? this.renderMeta() : nothing;
+    const arrowIcon = this.open ? 'arrow_drop_down' : 'arrow_right';
+    const arrow = this.navOpen
+      ? html`<cv-icon class="expansion-icon">${arrowIcon}</cv-icon>`
+      : nothing;
+    const childSlot = html`<slot name="child"></slot>`;
+
     return html`
-      <slot name="expansionHeader" @click=${this._toggleOpen}></slot>
-      ${this.navOpen ? super.render() : nothing}
+      <div @click=${this._toggleOpen} class="expansion-header">
+        ${this.renderRipple()} ${arrow} ${graphic} ${text} ${meta} ${childSlot}
+      </div>
+      ${this.navOpen
+        ? html`<div class="expansion-panel">
+            <slot name="expansion-panel"></slot>
+          </div>`
+        : nothing}
     `;
   }
 }

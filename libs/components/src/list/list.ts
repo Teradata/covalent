@@ -1,11 +1,13 @@
-import { ListBase } from '@material/mwc-list/mwc-list-base';
-import { styles } from '@material/mwc-list/mwc-list.css';
+import { css, unsafeCSS } from 'lit';
 import {
   customElement,
   property,
   queryAssignedElements,
 } from 'lit/decorators.js';
+import { ListBase } from '@material/mwc-list/mwc-list-base';
+import { styles as baseStyles } from '@material/mwc-list/mwc-list.css';
 import CovalentNavRailListItem from './nav-list-item';
+import styles from './list.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -21,7 +23,10 @@ export class CovalentList extends ListBase {
   @property({ type: Boolean, reflect: true })
   navOpen = false;
 
-  static override styles = [styles];
+  static override styles = [
+    baseStyles,
+    css`${unsafeCSS(styles)}`,
+  ];
 
   override async getUpdateComplete() {
     this.slotElements.forEach((el) => {
