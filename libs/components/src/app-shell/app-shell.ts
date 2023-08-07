@@ -109,6 +109,14 @@ export class CovalentAppShell extends DrawerBase {
     this.navHoverTimeout = setTimeout(() => this._toggleOpen(), 350);
   }
 
+  private _handleNavClick() {
+    clearTimeout(this.navHoverTimeout);
+
+    if (this.hovered) {
+      this._toggleOpen();
+    }
+  }
+
   private _handleDrawerClosed () {
     this.forcedOpen = false;
     this.hovered = false;
@@ -141,7 +149,7 @@ export class CovalentAppShell extends DrawerBase {
   protected renderSection() {
     return this.sectionName
       ? html`<div class="current-section">
-          <cv-icon-button icon="arrow_back"></cv-icon-button>
+            <slot name="section-action"></slot>
           <span>${this.sectionName}</span>
         </div>`
       : nothing;
@@ -185,6 +193,7 @@ export class CovalentAppShell extends DrawerBase {
         </span>
         <nav
           class="navigation mdc-drawer ${classMap(drawerClasses)}"
+          @click=${this._handleNavClick}
           @mouseover="${this._handleNavMouseOver}"
           @mouseout="${this._handleNavMouseOut}"
         >
