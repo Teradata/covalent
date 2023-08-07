@@ -1,3 +1,9 @@
+# [6.3.0-beta.2](https://github.com/Teradata/covalent/compare/v6.3.0-beta.1...v6.3.0-beta.2) (2023-08-07)
+
+### Features
+
+- **components:** new nav style update ([6254f56](https://github.com/Teradata/covalent/commit/6254f56991e5f7d7c6655a724b624b31b9eedbb4))
+
 # [6.3.0-beta.1](https://github.com/Teradata/covalent/compare/v6.2.3...v6.3.0-beta.1) (2023-08-04)
 
 ### Bug Fixes
