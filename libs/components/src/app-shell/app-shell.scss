@@ -9,6 +9,22 @@
 :host {
   --mdc-theme-surface: var(--mdc-theme-background);
   --mdc-list-vertical-padding: 0;
+  --cv-list-padding-right: 0;
+  --cv-list-item-border-radius: 100%;
+  --cv-list-item-width: 48px;
+  --cv-list-item-graphic-margin-left: 0;
+  --cv-list-menu-height: 0;
+  --cv-list-item-expansion-icon-size: 0;
+}
+
+:host([open]) {
+  --cv-list-padding-right: 16px;
+  --cv-list-item-border-radius:  0 28px 28px 0;
+  --cv-list-item-width: 100%;
+  --cv-list-item-graphic-margin-left: 12px;
+  --cv-list-item-expansion-icon-margin: -24px;
+  --cv-list-item-expansion-icon-size: 24px;
+  --cv-list-menu-height: inherit;
 }
 
 .app-shell {
