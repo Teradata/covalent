@@ -1,5 +1,5 @@
 import { css, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 import { CovalentListItem } from './list-item';
 import { styles as controlStyle } from '@material/mwc-list/mwc-control-list-item.css';
 import { styles as listItemStyle } from '@material/mwc-list/mwc-list-item.css';
