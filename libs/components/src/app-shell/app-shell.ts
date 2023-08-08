@@ -69,10 +69,6 @@ export class CovalentAppShell extends DrawerBase {
 
     this.open = forcedOpen ? forcedOpen : !this.open;
 
-    [...this.navigationListElements, ...this.userMenuElements].forEach((el) =>
-      el.setAttribute('navopen', this.open.toString())
-    );
-
     this.dispatchEvent(
       new Event('CovalentAppShell:toggle', { bubbles: true, composed: true })
     );
@@ -110,11 +106,13 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private _handleNavClick() {
-    clearTimeout(this.navHoverTimeout);
+    // clearTimeout(this.navHoverTimeout);
 
-    if (this.hovered) {
-      this._toggleOpen();
-    }
+    // if (this.hovered) {
+    //   this._toggleOpen();
+    //   this.hovered = false;
+    //   this.forcedOpen = false;
+    // }
   }
 
   private _handleDrawerClosed () {

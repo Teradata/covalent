@@ -79,22 +79,6 @@ const CheckRadioTemplate = ({ listType }) => {
     </cv-list>`;
 };
 
-const SubItemTemplate = ({ selected }) => {
-  return `
-    <cv-list activatable>
-        <li><cv-list-item>Item 0</cv-list-item></li>
-        <li><cv-list-item graphic="avatar" ${
-          selected ? `selected activated` : null
-        } hasChildren>
-          Item 1
-            <cv-icon slot="graphic">settings</cv-icon>
-        </cv-list-item></li>
-        <li><cv-list-item childItem> SubItems 0</cv-list-item></li>
-        <li><cv-list-item>Item 2</cv-list-item></li>
-        <li><cv-list-item>Item 3</cv-list-item></li>
-    </cv-list>`;
-};
-
 export const Basic = BasicTemplate.bind({});
 Basic.args = {
   selected: false,
@@ -122,5 +106,3 @@ ChecksAndRadios.argTypes = {
     defaultValue: 'check',
   },
 };
-
-export const SubItems = SubItemTemplate.bind({});

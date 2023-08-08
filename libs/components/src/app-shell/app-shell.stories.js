@@ -116,18 +116,18 @@ const Template = ({ navClick, appName = '[App name]', sectionTitle = '' }) => {
         Home
       </cv-nav-list-item>
 
-      <cv-expansion-list activatable>
-        <cv-nav-list-item slot="expansionHeader" graphic="avatar" hasChildren>
-          Editor
-          <cv-icon class="covalent-icon" slot="graphic"
-            >product_editor</cv-icon
-          >
-        </cv-nav-list-item>
-        <cv-nav-list-item>Scripts</cv-nav-list-item>
-        <cv-nav-list-item>Scripts</cv-nav-list-item>
-        <cv-nav-list-item>Scripts</cv-nav-list-item>
-        <cv-nav-list-item>Scripts</cv-nav-list-item>
-        <cv-nav-list-item>Scripts</cv-nav-list-item>
+      <cv-expansion-list graphic="avatar" hasChildren activatable>
+        Editor
+        <cv-icon class="covalent-icon" slot="graphic"
+          >product_editor</cv-icon
+        >
+        <cv-list  class="subnav" slot="expansion-panel">
+          <cv-nav-list-item>Scripts</cv-nav-list-item>
+          <cv-nav-list-item>Scripts</cv-nav-list-item>
+          <cv-nav-list-item>Scripts</cv-nav-list-item>
+          <cv-nav-list-item>Scripts</cv-nav-list-item>
+          <cv-nav-list-item>Scripts</cv-nav-list-item>
+        </cv-list>
       </cv-expansion-list>
 
         <cv-nav-list-item graphic="avatar">

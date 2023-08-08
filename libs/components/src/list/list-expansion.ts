@@ -29,9 +29,6 @@ export class CovalentExpansionList extends CovalentNavRailListItem {
   @property({ type: Boolean, reflect: true })
   open = false;
 
-  @property({ type: Boolean, reflect: true })
-  navOpen = false;
-
   @queryAssignedElements({ slot: 'expansionHeader' })
   expansionHeader!: CovalentNavRailListItem[];
 
@@ -48,40 +45,21 @@ export class CovalentExpansionList extends CovalentNavRailListItem {
     });
   }
 
-  override attributeChangedCallback(name: string, _old: string, value: string) {
-    super.attributeChangedCallback(name, _old, value);
-
-    if (name === 'navopen') {
-      this.expansionHeader.forEach((el) => {
-        if (value === 'true') {
-          el.navOpen = !!value;
-          el.setAttribute('navopen', value);
-        } else {
-          el.removeAttribute('navopen');
-        }
-      });
-    }
-  }
-
   override render() {
     const text = this.renderText();
     const graphic = this.graphic ? this.renderGraphic() : nothing;
     const meta = this.hasMeta ? this.renderMeta() : nothing;
     const arrowIcon = this.open ? 'arrow_drop_down' : 'arrow_right';
-    const arrow = this.navOpen
-      ? html`<cv-icon class="expansion-icon">${arrowIcon}</cv-icon>`
-      : nothing;
+    const arrow = html`<cv-icon class="expansion-icon">${arrowIcon}</cv-icon>`;
     const childSlot = html`<slot name="child"></slot>`;
 
     return html`
       <div @click=${this._toggleOpen} class="expansion-header">
         ${this.renderRipple()} ${arrow} ${graphic} ${text} ${meta} ${childSlot}
       </div>
-      ${this.navOpen
-        ? html`<div class="expansion-panel">
-            <slot name="expansion-panel"></slot>
-          </div>`
-        : nothing}
+      <div class="expansion-panel">
+        <slot name="expansion-panel"></slot>
+      </div>
     `;
   }
 }

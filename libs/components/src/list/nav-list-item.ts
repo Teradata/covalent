@@ -29,9 +29,6 @@ export class CovalentNavRailListItem extends CovalentListItem {
     `,
   ];
 
-  @property({ type: Boolean, reflect: true })
-  navOpen = false;
-
   constructor() {
     super();
   }
