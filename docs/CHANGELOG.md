@@ -17,6 +17,18 @@
 
 ### Bug Fixes
 
+- **components:** list ([e5218ff](https://github.com/Teradata/covalent/commit/e5218ff86c1302e46828d00a3b7ca520192cd683))
+- **components:** nav styling updates ([862acaa](https://github.com/Teradata/covalent/commit/862acaad5d9df89602d9fe8330759cac79edf417))
+- **components:** navigation styling updartes ([8f80f11](https://github.com/Teradata/covalent/commit/8f80f116137dbe91ccff98c9bc85ef03d57dc3b3))
+
+### Features
+
+- **components:** new nav style update ([6254f56](https://github.com/Teradata/covalent/commit/6254f56991e5f7d7c6655a724b624b31b9eedbb4))
+
+# [6.3.0-beta.2](https://github.com/Teradata/covalent/compare/v6.3.0-beta.1...v6.3.0-beta.2) (2023-08-08)
+
+### Bug Fixes
+
 - **components:** nav styling updates ([862acaa](https://github.com/Teradata/covalent/commit/862acaad5d9df89602d9fe8330759cac79edf417))
 - **components:** navigation styling updartes ([8f80f11](https://github.com/Teradata/covalent/commit/8f80f116137dbe91ccff98c9bc85ef03d57dc3b3))
 
