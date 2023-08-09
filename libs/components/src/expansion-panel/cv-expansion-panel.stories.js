@@ -20,7 +20,7 @@ export default {
 
 export const ExpansionPanel = ({ icon }) => {
   return `
-    <cv-expansion-panel titleWidth='300px' noSurface>
+    <cv-expansion-panel titleWidth='16em'>
 
       <cv-expansion-panel-item
       title="Title"
@@ -29,7 +29,7 @@ export const ExpansionPanel = ({ icon }) => {
       showContentPreview
       >
         <div slot="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+         culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
         <div slot="footer">
           Basic footer
@@ -37,7 +37,7 @@ export const ExpansionPanel = ({ icon }) => {
       </cv-expansion-panel-item>
 
       <cv-expansion-panel-item
-      title="Lorem ipsum dolor sit amet, consectetur"
+      title="Lorem ipsum dolor sit amet"
       contentPreview="Content preview"
       showFooter
       showContentPreview
@@ -64,7 +64,7 @@ export const ExpansionPanel = ({ icon }) => {
       </cv-expansion-panel-item>
 
       <cv-expansion-panel-item
-      title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      title="Lorem ipsum dolor"
       contentPreview="Content preview"
       >
         <div slot="content">

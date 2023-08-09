@@ -38,28 +38,28 @@ export class ExpansionPanel extends LitElement {
     const items: any[] = Array.from(
       document.querySelectorAll('cv-expansion-panel-item')
     );
-    let panel = items[e.detail.index];
-    let toggledOpen = panel.open;
 
-    // reset panels to default closed styling
+    let toggledPanelIndex = e.detail.index;
+    let panel = items[toggledPanelIndex];
+
+    // close the currently open panel if there is one
     items.forEach((item) => {
-      item.resetPanel();
+      if (item != panel) {
+        item.resetPanel();
+      }
     });
 
-    if (toggledOpen) {
-      // reopen the currently selected panel
-      panel.open = true;
-
+    if (panel.open) {
       items.forEach((item) => {
         // Format the panel above and below the opened panel
-        if (item.index == e.detail.index - 1) {
+        if (item.index == toggledPanelIndex - 1) {
           if (item.index == 0) {
             // if this is the top panel
             item.separateSinglePanel = true;
           } else {
             item.aboveOpenInnerPanel = true;
           }
-        } else if (item.index == e.detail.index + 1) {
+        } else if (item.index == toggledPanelIndex + 1) {
           if (item.index == items.length - 1) {
             item.separateSinglePanel = true;
           }
@@ -67,6 +67,7 @@ export class ExpansionPanel extends LitElement {
         }
       });
     }
+
     console.log(items);
   };
 
@@ -75,6 +76,10 @@ export class ExpansionPanel extends LitElement {
       '--cv-expansion-panel-item-title-width',
       this.titleWidth
     );
+
+    if (this.noSurface) {
+      this.style.setProperty('--mdc-theme-surface', 'transparent');
+    }
 
     // All expandable-panel components.
     const items: any[] = Array.from(
