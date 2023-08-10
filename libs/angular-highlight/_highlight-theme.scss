@@ -6,11 +6,13 @@
 @mixin covalent-highlight-theme($theme-or-config) {
   .dark-theme td-highlight {
     background-color: #1a1c1d;
+
     .highlight {
       color: #abb2bf;
     }
+
     .raw {
-      color: rgba(255, 255, 255, 0.87);
+      color: rgba(255, 255, 255, 87%);
     }
 
     .hljs-comment,
@@ -75,11 +77,13 @@
 
   td-highlight {
     background-color: #eeeeee;
+
     .highlight {
       color: #383a42;
     }
+
     .raw {
-      color: rgba(0, 0, 0, 0.87);
+      color: rgba(0, 0, 0, 87%);
     }
 
     .hljs-comment,
