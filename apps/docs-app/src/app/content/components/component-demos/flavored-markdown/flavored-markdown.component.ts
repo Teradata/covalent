@@ -29,5 +29,17 @@ export class FlavoredMarkdownDemoComponent {
 |VantageCloud Enterprise on Azure|Teradata-to-TeradataTo setup and configure the required PrivateLink endpoint on VantageCloud Enterprise, open a [PrivateLink change request](https://www.google.com) on the VantageCloud Enterprise customer support portal.|
 |VantageCore (on-premises)|Teradata-to-Teradata|
 |**This text is bolded**|*this text is italicized*|
+
+
+## Code 
+\`\`\`typescript
+this._renderer.appendChild(this._elementRef.nativeElement, preElement); // long long long long line
+
+import { Component } from '@angular/core';
+export class AppComponent {
+  title = 'my-app';
+  constructor() {}
+}
+\`\`\`
   `;
 }
