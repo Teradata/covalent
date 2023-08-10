@@ -55,15 +55,14 @@ export class ExpansionPanelItem extends LitElement {
         <div class="dropdown">
           <div class="content">
             <slot name="content"></slot>
+            ${this.showFooter
+              ? html`
+                  <div class="footer">
+                    <slot name="footer"></slot>
+                  </div>
+                `
+              : ''}
           </div>
-
-          ${this.showFooter
-            ? html`
-                <div class="footer">
-                  <slot name="footer"></slot>
-                </div>
-              `
-            : ''}
         </div>
       </div>
     `;
