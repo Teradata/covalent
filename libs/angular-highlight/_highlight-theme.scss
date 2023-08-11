@@ -6,14 +6,18 @@
 @mixin covalent-highlight-theme($theme) {
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
+
   .raw-and-copy-buttons {
     border-color: map-get($foreground, divider);
+
     .mat-button-toggle {
       background-color: inherit;
       color: map-get($foreground, text);
+
       mat-icon {
         color: map-get($foreground, icon);
       }
+
       & + .mat-button-toggle {
         border-left-color: map-get($foreground, divider);
       }
