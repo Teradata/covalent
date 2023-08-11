@@ -3,7 +3,23 @@
 /**
 * Mimicking VS Dark+ theme as closely as possible
 */
-@mixin covalent-highlight-theme($theme-or-config) {
+@mixin covalent-highlight-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  .raw-and-copy-buttons {
+    border-color: map-get($foreground, divider);
+    .mat-button-toggle {
+      background-color: inherit;
+      color: map-get($foreground, text);
+      mat-icon {
+        color: map-get($foreground, icon);
+      }
+      & + .mat-button-toggle {
+        border-left-color: map-get($foreground, divider);
+      }
+    }
+  }
+
   .dark-theme td-highlight {
     background-color: #1a1c1d;
 
