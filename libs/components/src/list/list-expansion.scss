@@ -7,7 +7,6 @@
 
   --mdc-ripple-color: transparent;
   --mdc-list-side-padding: 0;
-  --cv-list-item-border-radius: 0;
   --cv-list-item-graphic-margin-left: 12px;
 }
 
@@ -17,7 +16,7 @@
 
 .expansion-header {
   --mdc-ripple-color: var(--mdc-theme-primary);
-  border-radius: 0px 28px 28px 0px;
+  border-radius: var(--cv-list-item-border-radius);
   position: relative;
   height: 48px;
   width: 100%;
