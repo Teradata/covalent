@@ -13,6 +13,12 @@
 ### Features
 
 - add raw code toggle to highlight component and update highlight theme ([#2044](https://github.com/Teradata/covalent/issues/2044)) ([8bfb682](https://github.com/Teradata/covalent/commit/8bfb6820deca222080b3b026de5a336d4d33d221))
+# [6.3.0-beta.4](https://github.com/Teradata/covalent/compare/v6.3.0-beta.3...v6.3.0-beta.4) (2023-08-14)
+
+### Bug Fixes
+
+- **componets:** nav styling updates ([c0d6765](https://github.com/Teradata/covalent/commit/c0d6765ddc410f6114d4f1152e32307631423769))
+
 # [6.3.0-beta.3](https://github.com/Teradata/covalent/compare/v6.3.0-beta.2...v6.3.0-beta.3) (2023-08-08)
 
 ### Features
