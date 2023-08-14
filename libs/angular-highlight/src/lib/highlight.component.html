@@ -5,6 +5,9 @@
 
   <div #copyComponent *ngIf="copyCodeToClipboard">
     <td-copy-code-button
+      [toggleRawButton]="toggleRawButton"
+      [rawToggleLabels]="rawToggleLabels"
+      (toggleRaw)="toggleRawClicked()"
       [copiedContent]="copyContent"
       [copyCodeToClipboard]="copyCodeToClipboard"
       [copyCodeTooltips]="copyCodeTooltips"
