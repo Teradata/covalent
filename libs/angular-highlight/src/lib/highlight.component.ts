@@ -13,7 +13,10 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatTooltip } from '@angular/material/tooltip';
-import { ICopyCodeTooltips } from './copy-code-button/copy-code-button.component';
+import {
+  ICopyCodeTooltips,
+  IRawToggleLabels,
+} from './copy-code-button/copy-code-button.component';
 
 import hljs from 'highlight.js';
 
@@ -28,6 +31,8 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   private _content!: string;
   private _lang = 'typescript';
 
+  private _showRaw = false;
+
   /**
    * content?: string
    *
@@ -39,6 +44,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   @Input()
   set content(content: string) {
     this._content = content;
+    console.log(this._content);
     if (this._initialized) {
       this._loadContent(this._content);
     }
@@ -57,6 +63,20 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
    * Tooltips for copy button to copy and upon copying.
    */
   @Input() copyCodeTooltips?: ICopyCodeTooltips = {};
+
+  /**
+   * toggleRawButton?: boolean
+   *
+   * Display button to toggle raw code.
+   */
+  @Input() toggleRawButton = false;
+
+  /**
+   * rawToggleLabels?: IRawToggleLabels
+   *
+   * Labels for raw toggle button.
+   */
+  @Input() rawToggleLabels?: IRawToggleLabels = {};
 
   /**
    * lang?: string
@@ -106,12 +126,11 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
 
   ngAfterViewInit(): void {
     if (!this._content) {
-      this._loadContent(
-        (<HTMLElement>this.highlightComp.nativeElement).textContent
-      );
-    } else {
-      this._loadContent(this._content);
+      this._content =
+        (<HTMLElement>this.highlightComp.nativeElement).textContent || '';
     }
+    this._loadContent(this._content);
+
     this._initialized = true;
   }
 
@@ -127,6 +146,18 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
     }
   }
 
+  toggleRawClicked(): void {
+    this._showRaw = !this._showRaw;
+    this._elementRef.nativeElement.querySelector('pre').style.display = this
+      ._showRaw
+      ? 'none'
+      : 'block';
+    this._elementRef.nativeElement.querySelector('.raw').style.display = this
+      ._showRaw
+      ? 'block'
+      : 'none';
+  }
+
   /**
    * General method to parse a string of code into HTML Elements and load them into the container
    */
@@ -138,8 +169,9 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
         'innerHTML',
         ''
       );
-      // Parse html string into actual HTML elements.
-      this._elementFromString(this._render(code));
+
+      this._elementFromString(code);
+
       if (this.copyCodeToClipboard) {
         this._renderer.appendChild(
           this._elementRef.nativeElement,
@@ -150,7 +182,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
     this.contentReady.emit();
   }
 
-  private _elementFromString(codeStr: string): HTMLPreElement {
+  private _elementFromString(codeStr: string): void {
     // Renderer2 doesnt have a parsing method, so we have to sanitize and use [innerHTML]
     // to parse the string into DOM element for now.
     const preElement: HTMLPreElement = this._renderer.createElement('pre');
@@ -159,9 +191,20 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
     this._renderer.appendChild(preElement, codeElement);
     // Set .highlight class into <code> element
     this._renderer.addClass(codeElement, 'highlight');
+
+    const highlightedCode = this._render(codeStr);
+
     codeElement.innerHTML =
-      this._domSanitizer.sanitize(SecurityContext.HTML, codeStr) ?? '';
-    return preElement;
+      this._domSanitizer.sanitize(SecurityContext.HTML, highlightedCode) ?? '';
+
+    if (this.toggleRawButton) {
+      const divElement: HTMLDivElement = this._renderer.createElement('div');
+      divElement.className = 'raw';
+      this._renderer.appendChild(this._elementRef.nativeElement, divElement);
+      divElement.innerHTML =
+        this._domSanitizer.sanitize(SecurityContext.HTML, codeStr) ?? '';
+      this._renderer.setStyle(divElement, 'display', 'none');
+    }
   }
 
   private _render(contents: string): string {
