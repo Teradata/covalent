@@ -1,5 +1,9 @@
 import { css, html, nothing, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {
+  customElement,
+  property,
+  queryAssignedElements,
+} from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { DrawerBase } from '@material/mwc-drawer/mwc-drawer-base';
 import styles from './app-shell.scss?inline';
@@ -23,6 +27,12 @@ export class CovalentAppShell extends DrawerBase {
     `,
   ];
 
+  @queryAssignedElements({ slot: 'navigation' })
+  navigationListElements!: HTMLElement[];
+
+  @queryAssignedElements({ slot: 'user-menu' })
+  userMenuElements!: HTMLElement[];
+
   /**
    * The name of the application to show in the small app bar
    */
@@ -44,6 +54,11 @@ export class CovalentAppShell extends DrawerBase {
     }
 
     this.open = !this.open;
+
+    [...this.navigationListElements, ...this.userMenuElements].forEach((el) =>
+      el.setAttribute('navopen', this.open.toString())
+    );
+
     this.dispatchEvent(
       new Event('CovalentAppShell:toggle', { bubbles: true, composed: true })
     );

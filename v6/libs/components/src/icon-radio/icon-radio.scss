@@ -1,5 +1,3 @@
-@use '@material/ripple';
-
 :host {
   .mdc-radio__background {
     position: absolute;
@@ -12,39 +10,32 @@
   width: 100%;
 }
 
-.container {
+.mdc-radio {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
   row-gap: 8px;
-  width: var(--width);
-  height: var(--height);
+  width: var(--cv-icon-radio-width, 200px);
+  height: var(--cv-icon-radio-height, 160px);
   border: solid 2px var(--mdc-theme-border);
   border-radius: 8px;
   color: var(--mdc-theme-text-primary-on-background);
-  @include ripple.surface;
-  @include ripple.radius-unbounded;
-  @include ripple.states;
 }
 
-.container::after,
-.container::before {
-  border-radius: 8px;
+.mdc-radio--touch .mdc-radio__native-control {
+  width: 100%;
+  height: 100%;
 }
 
-.container:hover {
-  cursor: pointer;
-}
-
-.checked {
+:host([checked]) .mdc-radio {
   border: solid 2px var(--mdc-theme-primary);
   background-color: var(--mdc-theme-surface-primary-highlight);
-}
 
-.checked:hover {
-  background-color: var(--mdc-theme-surface-primary-highlight-hover);
+  &:hover {
+    background-color: var(--mdc-theme-surface-primary-highlight-hover);
+  }
 }
 
 [name='icon']::slotted(*) {
@@ -67,15 +58,4 @@
   font-size: var(--mdc-typography-body2-font-size);
   font-weight: var(--mdc-typography-body2-font-weight);
   line-height: var(--mdc-typography-body2-line-height);
-}
-
-.mdc-radio__outer-circle {
-  border-color: var(--mdc-theme-text-icon-on-background);
-}
-
-.mdc-radio__native-control:enabled:checked
-  + .mdc-radio__background
-  .mdc-radio__outer-circle,
-.mdc-radio__inner-circle {
-  border-color: var(--mdc-theme-secondary, #018786);
 }

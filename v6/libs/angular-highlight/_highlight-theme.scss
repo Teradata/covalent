@@ -3,98 +3,166 @@
 /**
 * Mimicking VS Dark+ theme as closely as possible
 */
-@mixin covalent-highlight-theme($theme-or-config) {
-  td-highlight {
-    background: #1e1e21;
+@mixin covalent-highlight-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .raw-and-copy-buttons {
+    border-color: map-get($foreground, divider);
+
+    .mat-button-toggle {
+      background-color: inherit;
+      color: map-get($foreground, text);
+
+      mat-icon {
+        color: map-get($foreground, icon);
+      }
+
+      & + .mat-button-toggle {
+        border-left-color: map-get($foreground, divider);
+      }
+    }
+  }
+
+  .dark-theme td-highlight {
+    background-color: #1a1c1d;
 
     .highlight {
-      color: $light-primary-text;
+      color: #abb2bf;
     }
 
-    .copy-button {
-      color: $light-primary-text;
+    .raw {
+      color: rgba(255, 255, 255, 87%);
     }
 
     .hljs-comment,
     .hljs-quote {
-      color: #608b4e;
-    }
-
-    .hljs-tag,
-    .hljs-name,
-    .hljs-selector-tag,
-    .hljs-literal {
-      color: #569cd6;
-    }
-
-    .hljs-keyword {
-      color: #c288bf;
-    }
-
-    .hljs-attr,
-    //.hljs-params, // Remove param color for now
-    .hljs-attribute {
-      color: #9cdcfe;
-    }
-
-    .hljs-string,
-    .hljs-selector-attr,
-    .hljs-regexp,
-    .hljs-link {
-      color: #ce9178;
-    }
-
-    .hljs-selector-id,
-    .hljs-selector-class,
-    .hljs-selector-pseudo {
-      color: #d7ba7d;
-    }
-
-    .hljs-meta {
-      color: #dcdcaa;
-    }
-
-    /* stylelint-disable selector-class-pattern */
-    .hljs-built_in,
-    .hljs-builtin-name,
-    .hljs-type,
-    .hljs-section,
-    .hljs-class .hljs-title,
-    .hljs-symbol,
-    .hljs-bullet {
-      color: #4ec9b0;
-    }
-    /* stylelint-enable selector-class-pattern */
-
-    .hljs-number {
-      color: #b5cea8;
-    }
-
-    .hljs-variable,
-    .hljs-template-variable {
-      color: #9fddfc;
-    }
-
-    .hljs-deletion {
-      color: #ffc8bd;
-    }
-
-    .hljs-addition {
-      background-color: #baeeba;
-    }
-
-    .hljs-emphasis {
+      color: #5c6370;
       font-style: italic;
     }
 
     .hljs-doctag,
-    .hljs-strong {
-      font-weight: bold;
+    .hljs-formula,
+    .hljs-keyword {
+      color: #c678dd;
     }
 
-    .hljs-formula {
-      background-color: #eeeeee;
+    .hljs-deletion,
+    .hljs-name,
+    .hljs-tag,
+    .hljs-section,
+    .hljs-selector-tag,
+    .hljs-subst {
+      color: #e06c75;
+    }
+
+    .hljs-literal {
+      color: #56b6c2;
+    }
+
+    .hljs-addition,
+    .hljs-attribute,
+    .hljs-meta .hljs-string,
+    .hljs-regexp,
+    .hljs-string {
+      color: #98c379;
+    }
+
+    .hljs-attr,
+    .hljs-number,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-pseudo,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable {
+      color: #d19a66;
+    }
+
+    .hljs-bullet,
+    .hljs-link,
+    .hljs-meta,
+    .hljs-selector-id,
+    .hljs-symbol,
+    .hljs-title {
+      color: #61aeee;
+    }
+
+    .hljs-built_in,
+    .hljs-class .hljs-title,
+    .hljs-title.class_ {
+      color: #e6c07b;
+    }
+  }
+
+  td-highlight {
+    background-color: #eeeeee;
+
+    .highlight {
+      color: #383a42;
+    }
+
+    .raw {
+      color: rgba(0, 0, 0, 87%);
+    }
+
+    .hljs-comment,
+    .hljs-quote {
+      color: #a0a1a7;
       font-style: italic;
+    }
+
+    .hljs-doctag,
+    .hljs-formula,
+    .hljs-keyword {
+      color: #a626a4;
+    }
+
+    .hljs-deletion,
+    .hljs-name,
+    .hljs-tag,
+    .hljs-section,
+    .hljs-selector-tag,
+    .hljs-subst {
+      color: #e45649;
+    }
+
+    .hljs-literal {
+      color: #0184bb;
+    }
+
+    .hljs-addition,
+    .hljs-attribute,
+    .hljs-meta .hljs-string,
+    .hljs-regexp,
+    .hljs-string {
+      color: #50a14f;
+    }
+
+    .hljs-attr,
+    .hljs-number,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-pseudo,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable {
+      color: #986801;
+    }
+
+    .hljs-bullet,
+    .hljs-link,
+    .hljs-meta,
+    .hljs-selector-id,
+    .hljs-symbol,
+    .hljs-title {
+      color: #4078f2;
+    }
+
+    .hljs-built_in,
+    .hljs-class .hljs-title,
+    .hljs-title.class_ {
+      color: #c18401;
     }
   }
 }

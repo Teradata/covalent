@@ -33,7 +33,11 @@ import {
   TdFlavoredListComponent,
   IFlavoredListItem,
 } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent, ICopyCodeTooltips } from '@covalent/highlight';
+import {
+  TdHighlightComponent,
+  ICopyCodeTooltips,
+  IRawToggleLabels,
+} from '@covalent/highlight';
 
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 
@@ -206,6 +210,20 @@ export class TdFlavoredMarkdownComponent
    * Tooltips for copy button to copy and upon copying.
    */
   @Input() copyCodeTooltips?: ICopyCodeTooltips = {};
+
+  /**
+   * toggleRawCode?: boolean
+   *
+   * Display button to toggle raw code view
+   */
+  @Input() toggleRawCode = false;
+
+  /**
+   * rawToggleLabels?: IRawToggleLabels
+   *
+   * Labels for raw code toggle button
+   */
+  @Input() rawToggleLabels?: IRawToggleLabels = {};
 
   /**
    * useCfmList?: boolean = false;
@@ -466,6 +484,8 @@ export class TdFlavoredMarkdownComponent
         }
         componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
         componentRef.instance.copyCodeTooltips = this.copyCodeTooltips;
+        componentRef.instance.toggleRawButton = this.toggleRawCode;
+        componentRef.instance.rawToggleLabels = this.rawToggleLabels;
         componentRef.instance.content = codeblock;
       }
     );

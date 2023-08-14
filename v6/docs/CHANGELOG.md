@@ -1,3 +1,30 @@
+## [6.2.3](https://github.com/Teradata/covalent/compare/v6.2.2...v6.2.3) (2023-07-24)
+
+### Bug Fixes
+
+- **components:** reverting vit.config.js to earlier version ([#2043](https://github.com/Teradata/covalent/issues/2043)) ([b873ad3](https://github.com/Teradata/covalent/commit/b873ad3c503db501853ac4d47e1a161a665da39c))
+
+## [6.2.2](https://github.com/Teradata/covalent/compare/v6.2.1...v6.2.2) (2023-07-24)
+
+### Bug Fixes
+
+- **components:** update vite config w/ no manual chunks ([d08fc4e](https://github.com/Teradata/covalent/commit/d08fc4e07c9ed689bf7e1109bc0d83ee9c3907e8))
+
+## [6.2.1](https://github.com/Teradata/covalent/compare/v6.2.0...v6.2.1) (2023-07-24)
+
+### Bug Fixes
+
+- **components:** app-shell navigation style updates ([#2039](https://github.com/Teradata/covalent/issues/2039)) ([8c60882](https://github.com/Teradata/covalent/commit/8c60882cd1d0ec2c872eeb40c0d0e27880b74a6a))
+- **components:** icon-radio rendering ([9e0da07](https://github.com/Teradata/covalent/commit/9e0da07c0d2a58554b3c020eadb5a198103e1d13))
+
+# [6.2.0](https://github.com/Teradata/covalent/compare/v6.1.3...v6.2.0) (2023-07-24)
+
+### Features
+
+- added clustering example 📈 ([5be9968](https://github.com/Teradata/covalent/commit/5be9968d9be3e99f01d1dbf62a5f29690b8f0d31))
+- added echarts-stat and histogram example 📊 ([3d4d84e](https://github.com/Teradata/covalent/commit/3d4d84e407792799c2e14e48289cce540fa401a5))
+- added regression example 📈 ([04d34e7](https://github.com/Teradata/covalent/commit/04d34e73ff96b990e2698ff32781684237e6e311))
+
 ## [6.1.3](https://github.com/Teradata/covalent/compare/v6.1.2...v6.1.3) (2023-07-18)
 
 ### Bug Fixes
