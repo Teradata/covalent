@@ -54,8 +54,6 @@ export class CovalentAppShell extends DrawerBase {
   private forcedOpen = false;
   private hovered = false;
 
-  private navHoverTimeout?: number;
-
   constructor() {
     super();
 
@@ -85,34 +83,21 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private _handleNavMouseOver() {
-    clearTimeout(this.navHoverTimeout);
-
     if (this.open || this.forcedOpen) {
       return;
     }
 
     this.hovered = true;
-    this.navHoverTimeout = setTimeout(() => this._toggleOpen(), 350);    
+    this._toggleOpen();
   }
 
   private _handleNavMouseOut() {
-    clearTimeout(this.navHoverTimeout);
 
     if (!this.open || this.forcedOpen) {
       return;
     }
 
-    this.navHoverTimeout = setTimeout(() => this._toggleOpen(), 350);
-  }
-
-  private _handleNavClick() {
-    // clearTimeout(this.navHoverTimeout);
-
-    // if (this.hovered) {
-    //   this._toggleOpen();
-    //   this.hovered = false;
-    //   this.forcedOpen = false;
-    // }
+    this._toggleOpen();
   }
 
   private _handleDrawerClosed () {
@@ -191,9 +176,8 @@ export class CovalentAppShell extends DrawerBase {
         </span>
         <nav
           class="navigation mdc-drawer ${classMap(drawerClasses)}"
-          @click=${this._handleNavClick}
-          @mouseover="${this._handleNavMouseOver}"
-          @mouseout="${this._handleNavMouseOut}"
+          @mouseenter="${this._handleNavMouseOver}"
+          @mouseleave="${this._handleNavMouseOut}"
         >
           <div class="navigation-toolbar">
             <cv-icon-button
