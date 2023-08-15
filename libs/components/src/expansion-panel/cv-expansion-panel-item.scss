@@ -45,6 +45,9 @@
   .openedIcon {
     display: inline-block;
   }
+  ::slotted([slot='content']) {
+    padding-bottom: 16px;
+  }
 }
 
 :host([open][isTopPanel]) {
@@ -66,6 +69,9 @@
   .openedIcon {
     display: inline-block;
   }
+  ::slotted([slot='content']) {
+    padding-bottom: 16px;
+  }
 }
 
 :host([open][isBottomPanel]) {
@@ -86,6 +92,9 @@
   }
   .openedIcon {
     display: inline-block;
+  }
+  ::slotted([slot='content']) {
+    padding-bottom: 16px;
   }
 }
 
@@ -163,10 +172,6 @@
   }
 
   .dropdown {
-    // max-height:0px;
-    // overflow-y:hidden;
-    // opacity:0;
-
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.5s;
@@ -181,9 +186,12 @@
   }
 
   .content {
-    padding: 0px 24px 0px 24px;
-
+    // adding bottom padding here breaks it
     overflow-y: hidden;
+  }
+
+  ::slotted([slot='content']) {
+    padding: 0px 24px 16px 24px;
   }
 
   .footer {
