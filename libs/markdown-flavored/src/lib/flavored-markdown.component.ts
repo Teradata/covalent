@@ -33,7 +33,11 @@ import {
   TdFlavoredListComponent,
   IFlavoredListItem,
 } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent, ICopyCodeTooltips } from '@covalent/highlight';
+import {
+  TdHighlightComponent,
+  ICopyCodeTooltips,
+  IRawToggleLabels,
+} from '@covalent/highlight';
 
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 
@@ -98,7 +102,8 @@ export class TdFlavoredMarkdownButtonComponent {
   @Input() text = '';
   @Input() data = '';
   @Output()
-  clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
+  clicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> =
+    new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
   emitClick(): void {
     this.clicked.emit({ text: this.text, data: this.data });
   }
@@ -205,6 +210,20 @@ export class TdFlavoredMarkdownComponent
   @Input() copyCodeTooltips?: ICopyCodeTooltips = {};
 
   /**
+   * toggleRawCode?: boolean
+   *
+   * Display button to toggle raw code view
+   */
+  @Input() toggleRawCode = false;
+
+  /**
+   * rawToggleLabels?: IRawToggleLabels
+   *
+   * Labels for raw code toggle button
+   */
+  @Input() rawToggleLabels?: IRawToggleLabels = {};
+
+  /**
    * useCfmList?: boolean = false;
    * Use CFM list component instead of vanilla markdown list. Used in covalent documentation app.
    */
@@ -223,7 +242,8 @@ export class TdFlavoredMarkdownComponent
    * Is an object containing text and data of button
    */
   @Output()
-  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> = new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
+  buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent> =
+    new EventEmitter<ITdFlavoredMarkdownButtonClickEvent>();
 
   @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true })
   container!: TdFlavoredMarkdownContainerDirective;
@@ -462,6 +482,8 @@ export class TdFlavoredMarkdownComponent
         }
         componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
         componentRef.instance.copyCodeTooltips = this.copyCodeTooltips;
+        componentRef.instance.toggleRawButton = this.toggleRawCode;
+        componentRef.instance.rawToggleLabels = this.rawToggleLabels;
         componentRef.instance.content = codeblock;
       }
     );

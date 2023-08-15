@@ -31,5 +31,7 @@
     "channel": "next"
   },{
     "name": "main" 
+  },{
+    "name": "release/4.x.x"
   }]
 }
