@@ -107,12 +107,14 @@
 :host([aboveOpenInnerPanel]) {
   .panel {
     border-radius: 0px 0px 8px 8px;
+    border-bottom: none;
   }
 }
 
 :host([separateSinglePanel]) {
   .panel {
     border-radius: 8px 8px 8px 8px;
+    border-bottom: none;
   }
 }
 

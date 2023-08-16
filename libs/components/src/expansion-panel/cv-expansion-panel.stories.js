@@ -44,6 +44,7 @@ export const ExpansionPanel = ({ icon }) => {
       >
         <div slot="content">
         </div>
+        <div slot="content">Mxollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
         <div slot="footer" style="display:flex; align-items:center">
           <div style="color:rgba(255, 255, 255, 0.54)">You have unsaved changes</div>
           <div style="margin-left:auto">
