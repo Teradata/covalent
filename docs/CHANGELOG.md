@@ -1,3 +1,13 @@
+# [4.16.0](https://github.com/Teradata/covalent/compare/v4.15.0...v4.16.0) (2023-08-16)
+
+### Bug Fixes
+
+- add theme and release config ([4ab8190](https://github.com/Teradata/covalent/commit/4ab8190d1d13786561a1fb1d7eebcb4f1cc6f482))
+
+### Features
+
+- cherry-pick in raw code toggle from 8bfb682 ([dd363e3](https://github.com/Teradata/covalent/commit/dd363e313a443352d2e4591f135a29eb4035a4d0))
+
 # [4.15.0](https://github.com/Teradata/covalent/compare/v4.14.0...v4.15.0) (2022-12-08)
 
 ### Bug Fixes
