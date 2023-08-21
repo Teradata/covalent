@@ -1,3 +1,9 @@
+## [4.16.2](https://github.com/Teradata/covalent/compare/v4.16.1...v4.16.2) (2023-08-21)
+
+### Bug Fixes
+
+- use is-dark value for highlight theme ([d921e61](https://github.com/Teradata/covalent/commit/d921e619a18c67316cc02ad6dfcf51dfdda40d6a))
+
 ## [4.16.1](https://github.com/Teradata/covalent/compare/v4.16.0...v4.16.1) (2023-08-21)
 
 ### Bug Fixes
