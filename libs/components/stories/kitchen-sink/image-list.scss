@@ -1,6 +1,0 @@
-@use '@material/image-list';
-
-// Image list
-.mdc-image-list {
-  @include image-list.masonry-columns(2);
-}

@@ -1,0 +1,717 @@
+<!-- kitchen-sink.stories.mdx -->
+
+import '../src/card/card';
+import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Patterns/Kitchen Sink"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+
+  .sbdocs-content {
+    display: grid;
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  .example {
+  }
+  .example-action-ribbons {
+  }
+  .example-code-snippet {
+    max-width: 1000px;
+  }
+  .example-menu cv-menu {
+    display: block;
+    height: 20rem;
+    position: relative;
+  }
+
+`}</style>
+
+# Kitchen Sink
+
+Here's a general overview of lots of components on a single page, to quickly
+see color, sizing, and other relationships between items.
+
+<div className="example example-action-ribbons">
+
+## Action ribbons
+
+{' '}
+<cv-action-ribbon labelText="No changes" state="undefined" null>
+  <cv-button slot="action-items" outlined>
+    Cancel
+  </cv-button>
+  <cv-button slot="action-items" null raised>
+    Save
+  </cv-button>
+</cv-action-ribbon>
+<cv-action-ribbon labelText="You have unsaved changes" state="active" null>
+  <cv-button slot="action-items" outlined>
+    Cancel
+  </cv-button>
+  <cv-button slot="action-items" null raised>
+    Save
+  </cv-button>
+</cv-action-ribbon>
+<cv-action-ribbon labelText="(3/3) items selected" state="positive" null>
+  <cv-button slot="action-items" outlined>
+    Cancel
+  </cv-button>
+  <cv-button slot="action-items" null raised>
+    Save
+  </cv-button>
+</cv-action-ribbon>
+<cv-action-ribbon
+  labelText="The name field may not contain numbers"
+  state="negative"
+  null
+>
+  <cv-button slot="action-items" outlined>
+    Cancel
+  </cv-button>
+  <cv-button slot="action-items" null raised>
+    Save
+  </cv-button>
+</cv-action-ribbon>
+<cv-action-ribbon
+  labelText="These changes will increase your monthly spend rate"
+  state="caution"
+  null
+>
+  <cv-button slot="action-items" outlined>
+    Cancel
+  </cv-button>
+  <cv-button slot="action-items" null raised>
+    Save
+  </cv-button>
+</cv-action-ribbon>
+
+</div>
+<div className="example example-alerts">
+
+#### Alerts
+
+##### Full-page
+
+{' '}
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="undefined"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="active"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="positive"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="negative"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="caution"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+
+##### Inline
+
+{' '}
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="undefined"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+  inline
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="active"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+  inline
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="positive"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+  inline
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="negative"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+  inline
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+<cv-alert
+  titleText="Alert title"
+  descriptionText="Alert description"
+  state="caution"
+  icon="info_outline"
+  iconAriaLabel="info_outline"
+  inline
+>
+  <cv-button slot="action-items">Button Text</cv-button>
+</cv-alert>
+
+</div>
+<div className="example example-buttons">
+
+#### Buttons
+
+##### Text
+
+<cv-button text showIcon icon="lightbulb" label="Text button"></cv-button>
+<cv-button text showIcon icon="lightbulb" isPrimary label="Text button"></cv-button>
+<cv-button text showIcon icon="lightbulb" isNegative label="Text button"></cv-button>
+<cv-button text showIcon icon="lightbulb" disabled label="Text button"></cv-button>
+<cv-button text showIcon icon="lightbulb" disabled isPrimary label="Text button"></cv-button>
+<cv-button text showIcon icon="lightbulb" disabled isNegative label="Text button"></cv-button>
+
+<cv-button text showIcon dense icon="lightbulb" label="Text button"></cv-button>
+<cv-button text showIcon dense icon="lightbulb" isPrimary label="Text button"></cv-button>
+<cv-button text showIcon dense icon="lightbulb" isNegative label="Text button"></cv-button>
+<cv-button text showIcon dense icon="lightbulb" disabled label="Text button"></cv-button>
+<cv-button text showIcon dense icon="lightbulb" disabled isPrimary label="Text button"></cv-button>
+<cv-button text showIcon dense icon="lightbulb" disabled isNegative label="Text button"></cv-button>
+
+##### Outline
+
+<cv-button outlined showIcon icon="lightbulb" label="Outlined button"></cv-button>
+<cv-button outlined showIcon icon="lightbulb" isPrimary label="Outlined button"></cv-button>
+<cv-button outlined showIcon icon="lightbulb" isNegative label="Outlined button"></cv-button>
+<cv-button outlined showIcon icon="lightbulb" disabled label="Outlined button"></cv-button>
+<cv-button outlined showIcon icon="lightbulb" disabled isPrimary label="Outlined button"></cv-button>
+<cv-button outlined showIcon icon="lightbulb" disabled isNegative label="Outlined button"></cv-button>
+
+<cv-button outlined showIcon dense icon="lightbulb" label="Outlined button"></cv-button>
+<cv-button outlined showIcon dense icon="lightbulb" isPrimary label="Outlined button"></cv-button>
+<cv-button outlined showIcon dense icon="lightbulb" isNegative label="Outlined button"></cv-button>
+<cv-button outlined showIcon dense icon="lightbulb" disabled label="Outlined button"></cv-button>
+<cv-button outlined showIcon dense icon="lightbulb" disabled isPrimary label="Outlined button"></cv-button>
+<cv-button outlined showIcon dense icon="lightbulb" disabled isNegative label="Outlined button"></cv-button>
+
+##### Raised
+
+<cv-button raised showIcon icon="lightbulb" label="Contained button"></cv-button>
+<cv-button raised showIcon icon="lightbulb" isPrimary label="Contained button"></cv-button>
+<cv-button raised showIcon icon="lightbulb" isNegative label="Contained button"></cv-button>
+<cv-button raised showIcon icon="lightbulb" disabled label="Contained button"></cv-button>
+<cv-button raised showIcon icon="lightbulb" disabled isPrimary label="Contained button"></cv-button>
+<cv-button raised showIcon icon="lightbulb" disabled isNegative label="Contained button"></cv-button>
+
+<cv-button raised showIcon dense icon="lightbulb" label="Contained button"></cv-button>
+<cv-button raised showIcon dense icon="lightbulb" isPrimary label="Contained button"></cv-button>
+<cv-button raised showIcon dense icon="lightbulb" isNegative label="Contained button"></cv-button>
+<cv-button raised showIcon dense icon="lightbulb" disabled label="Contained button"></cv-button>
+<cv-button raised showIcon dense icon="lightbulb" disabled isPrimary label="Contained button"></cv-button>
+<cv-button raised showIcon dense icon="lightbulb" disabled isNegative label="Contained button"></cv-button>
+
+</div>
+<div className="example example-alerts">
+
+#### Circular progress
+
+<cv-circular-progress indeterminate></cv-circular-progress>
+<cv-circular-progress determinate progress=".4"></cv-circular-progress>
+
+</div>
+<div className="example example-checkboxes">
+
+#### Checkboxes
+
+<cv-checkbox></cv-checkbox>
+<cv-checkbox checked></cv-checkbox>
+<cv-checkbox indeterminate></cv-checkbox>
+
+<cv-checkbox disabled></cv-checkbox>
+<cv-checkbox checked disabled></cv-checkbox>
+<cv-checkbox indeterminate disabled></cv-checkbox>
+
+{' '}
+<cv-formfield label="Apples">
+  <cv-checkbox></cv-checkbox>
+</cv-formfield>
+<cv-formfield label="Bananas">
+  <cv-checkbox checked></cv-checkbox>
+</cv-formfield>
+<cv-formfield label="Cherries">
+  <cv-checkbox indeterminate></cv-checkbox>
+</cv-formfield>
+
+{' '}
+<cv-formfield label="Apples">
+  <cv-checkbox disabled></cv-checkbox>
+</cv-formfield>
+<cv-formfield label="Bananas">
+  <cv-checkbox checked disabled></cv-checkbox>
+</cv-formfield>
+<cv-formfield label="Cherries">
+  <cv-checkbox indeterminate disabled></cv-checkbox>
+</cv-formfield>
+
+</div>
+<div className="example example-chips">
+
+#### Chips
+
+{' '}
+<cv-chip-set label="test chips">
+  <cv-chip label="Chip"></cv-chip>
+  <cv-chip label="Chip 2" state="secondary"></cv-chip>
+  <cv-chip label="Chip 3" state="positive"></cv-chip>
+  <cv-chip label="Chip 4" state="caution"></cv-chip>
+  <cv-chip label="Chip 5" state="negative"></cv-chip>
+</cv-chip-set>
+<cv-chip-set label="selectable test chips" selectable activeIndex="0">
+  <cv-chip label="Chip 6" filter></cv-chip>
+  <cv-chip label="Chip 7" filter state="secondary"></cv-chip>
+  <cv-chip label="Chip 8" filter state="positive"></cv-chip>
+  <cv-chip label="Chip 9" filter state="caution"></cv-chip>
+  <cv-chip label="Chip 10" filter state="negative"></cv-chip>
+</cv-chip-set>
+
+</div>
+<div className="example example-code-snippet">
+
+#### Code snippet
+
+TODO: Figure out the height and width on this
+
+{' '}
+<cv-code-snippet label="SQL" maxHeight="300" language="sql">
+  <cv-icon-button slot="actionItems" id="theme-toggle"></cv-icon-button>
+  <cv-icon-button slot="actionItems" icon="content_copy"></cv-icon-button>
+  SELECT * FROM load_to_teradata ( ON ( SELECT "class" AS class_col, "variable"
+  AS variable_col, "type" AS type_col, category, cnt, "sum" AS sum_col, "sumSq",
+  "totalCnt" FROM aster_nb_modelSC ) tdpid ('sdt12432.labs.teradata.com')
+  username ('sample_user') password ('sample_user') target_table
+  ('td_nb_modelSC') );
+</cv-code-snippet>
+
+</div>
+<div className="example example-empty-states">
+
+#### Empty state
+
+{' '}
+<cv-empty-state
+  headline="You don't have access to this area"
+  subtitle="You don't have permission to view this application. Please contact your system administrator for further details."
+  icon="work"
+>
+  <cv-button slot="buttons">Button Text</cv-button>
+  <cv-button slot="buttons">Button Text</cv-button>
+</cv-empty-state>
+
+</div>
+<div className="example example-cards">
+
+#### Card with action
+
+{' '}
+<cv-card cardTitle="Card Title">
+  <cv-empty-state
+    headline=""
+    subtitle="You don't have access to this area"
+    card
+  >
+    <cv-button slot="buttons">Button Text</cv-button>
+  </cv-empty-state>
+</cv-card>
+
+</div>
+<div className="example example-icons">
+
+#### icon
+
+<cv-icon>lightbulb</cv-icon>
+<cv-icon class="covalent-icon">product_editor</cv-icon>
+
+</div>
+<div className="example example-icon-buttons">
+
+#### Icon button
+
+<cv-icon-button icon="lightbulb" null selected></cv-icon-button>
+<cv-icon-button icon="lightbulb" disabled></cv-icon-button>
+<cv-icon-button-toggle icon="lightbulb" disabled isOn></cv-icon-button-toggle>
+
+TODO: Needed toggle version
+
+</div>
+  <div className="example example-icon-checkboxes">
+
+#### Icon checkbox
+
+{' '}
+<cv-checkbox-icon width="200" height="160">
+  <cv-icon slot="icon">work</cv-icon>
+  <div slot="text">Balanced</div>
+  <div slot="text">Every week</div>
+</cv-checkbox-icon>
+<cv-checkbox-icon width="200" height="160">
+  <cv-icon slot="icon">work</cv-icon>
+  <div slot="text">Balanced</div>
+  <div slot="text">Every week</div>
+</cv-checkbox-icon>
+
+</div>
+<div className="example example-icon-radios">
+
+#### Icon radio
+
+{' '}
+<cv-radio-icon width="200" height="160">
+  <cv-icon slot="icon">work</cv-icon>
+  <div slot="text">Balanced</div>
+  <div slot="text">Every week</div>
+</cv-radio-icon>
+<cv-radio-icon width="200" height="160">
+  <cv-icon slot="icon">work</cv-icon>
+  <div slot="text">Balanced</div>
+  <div slot="text">Every week</div>
+</cv-radio-icon>
+
+</div>
+<div className="example example-linear-progress">
+
+#### Linear progress
+
+<cv-linear-progress indeterminate></cv-linear-progress>
+<cv-linear-progress determinate progress=".6"></cv-linear-progress>
+<cv-linear-progress determinate buffer=".2" progress=".4"></cv-linear-progress>
+
+</div>
+<div className="example example-menu">
+
+#### Menu
+
+TODO: Get the container to accept the menu height instead of absolutely forcing item
+TODO: Prevent menus from closing when I click anywhere else
+TODO: Get menu to show active states
+
+{' '}
+<cv-menu open>
+  <cv-list-item>one</cv-list-item>
+  <cv-list-item>two</cv-list-item>
+  <cv-list-item>three</cv-list-item>
+  <cv-list-item disabled>
+    <div>four</div>
+  </cv-list-item>
+  <li divider></li>
+  <cv-list-item>aaa</cv-list-item>
+  <cv-list-item>bbb</cv-list-item>
+</cv-menu>
+
+{' '}
+<cv-menu multi open>
+  <cv-list-item selected group="a" graphic="icon">
+    <cv-icon slot="graphic">check</cv-icon>
+    <span>a-one</span>
+  </cv-list-item>
+  <cv-list-item group="a" graphic="icon">
+    <cv-icon slot="graphic">check</cv-icon>
+    <span>a-two</span>
+  </cv-list-item>
+  <cv-list-item group="a" graphic="icon">
+    <cv-icon slot="graphic">check</cv-icon>
+    <span>a-three</span>
+  </cv-list-item>
+  <li divider></li>
+  <cv-list-item selected group="b" graphic="icon">
+    <cv-icon slot="graphic">check</cv-icon>
+    <span>b-one</span>
+  </cv-list-item>
+  <cv-list-item group="b" graphic="icon">
+    <cv-icon slot="graphic">check</cv-icon>
+    <span>b-two</span>
+  </cv-list-item>
+</cv-menu>
+
+</div>
+<div className="example example-radio-buttons">
+
+#### Radio buttons
+
+TODO: Why are some of these not showing checked?
+TODO: Why isn't the nesting working?
+
+<cv-radio></cv-radio>
+<cv-radio checked></cv-radio>
+
+<cv-radio disabled></cv-radio>
+<cv-radio checked disabled></cv-radio>
+
+{' '}
+<cv-formfield label="Apples">
+  <cv-radio></cv-radio>
+</cv-formfield>
+<cv-formfield label="Bananas">
+  <cv-radio checked></cv-radio>
+</cv-formfield>
+
+{' '}
+<cv-formfield label="Cherries">
+  <cv-radio disabled></cv-radio>
+</cv-formfield>
+<cv-formfield label="Dates">
+  <cv-radio checked disabled></cv-radio>
+</cv-formfield>
+<cv-formfield label="Small Dates">
+  <cv-radio class="child" disabled></cv-radio>
+</cv-formfield>
+<cv-formfield label="Large dates">
+  <cv-radio class="child" disabled></cv-radio>
+</cv-formfield>
+
+</div>
+<div className="example example-selects">
+
+#### Select
+
+TODO: Show disabled state
+TODO: Show error state
+
+{' '}
+<cv-select
+  label="outlined"
+  validationMessage="This Field is Required"
+  outlined
+  null
+  null
+  null
+>
+  <cv-list-item selected></cv-list-item>
+  <cv-list-item null value="0">
+    Item 0
+  </cv-list-item>
+  <cv-list-item null value="1">
+    Item 1
+  </cv-list-item>
+  <cv-list-item null value="2">
+    Item 2
+  </cv-list-item>
+  <cv-list-item null value="3">
+    Item 3
+  </cv-list-item>
+</cv-select>
+
+{' '}
+<cv-select
+  label="outlined"
+  validationMessage="This Field is Required"
+  outlined
+  icon="event"
+  null
+  null
+>
+  <cv-list-item selected></cv-list-item>
+  <cv-list-item graphic="icon" value="0">
+    Item 0
+  </cv-list-item>
+  <cv-list-item graphic="icon" value="1">
+    Item 1
+  </cv-list-item>
+  <cv-list-item graphic="icon" value="2">
+    Item 2
+  </cv-list-item>
+  <cv-list-item graphic="icon" value="3">
+    Item 3
+  </cv-list-item>
+</cv-select>
+
+{' '}
+<cv-select
+  label="outlined"
+  validationMessage="This Field is Required"
+  outlined
+  null
+  helper="Helper Text"
+  null
+>
+  <cv-list-item selected></cv-list-item>
+  <cv-list-item null value="0">
+    Item 0
+  </cv-list-item>
+  <cv-list-item null value="1">
+    Item 1
+  </cv-list-item>
+  <cv-list-item null value="2">
+    Item 2
+  </cv-list-item>
+  <cv-list-item null value="3">
+    Item 3
+  </cv-list-item>
+</cv-select>
+
+</div>
+<div className="example example-sliders">
+
+#### Slider
+
+<cv-slider value="25"></cv-slider>
+<cv-slider value="25" discrete markers></cv-slider>
+<cv-slider value="25" disabled></cv-slider>
+<cv-slider-range valueStart="15" valueEnd="45"></cv-slider-range>
+
+</div>
+<div className="example example-snackbar">
+
+#### Snackbar
+
+TODO: Get this to show, and not time out
+
+{' '}
+<cv-snackbar labelText="New user created" open>
+  <cv-button slot="action">RETRY</cv-button>
+  <cv-icon-button icon="close" slot="dismiss"></cv-icon-button>
+</cv-snackbar>
+
+</div>
+<div className="example example-switches">
+
+#### Switches
+
+{' '}
+<cv-formfield label="Apples">
+  <cv-switch disabled></cv-switch>
+</cv-formfield>
+<cv-formfield label="Bananas">
+  <cv-switch></cv-switch>
+</cv-formfield>
+<cv-formfield label="Cherries">
+  <cv-switch checked></cv-switch>
+</cv-formfield>
+
+</div>
+<div className="example example-text-fields">
+
+#### Text field
+
+<cv-textfield label="outlined" outlined null null null></cv-textfield>
+<cv-textfield label="outlined" outlined icon="lightbulb" null null></cv-textfield>
+<cv-textfield label="outlined" value="Value" outlined null helper="Helper Text" null></cv-textfield>
+
+</div>
+<div className="example example-textareas">
+
+#### Textarea
+
+<cv-textarea label="outlined" outlined null null></cv-textarea>
+
+</div>
+<div className="example example-toolbars">
+
+#### Toolbar
+
+{' '}
+<cv-toolbar>
+  <cv-typography slot="title" scale="title">
+    Page title
+  </cv-typography>
+  <cv-icon-button icon="filter_list" slot="actionItems"></cv-icon-button>
+  <cv-icon-button icon="search" slot="actionItems"></cv-icon-button>
+  <cv-icon-button icon="add" slot="actionItems"></cv-icon-button>
+  <cv-button outlined slot="actionItems">
+    BUTTON TEXT
+  </cv-button>
+  <cv-button outlined slot="actionItems">
+    BUTTON TEXT
+  </cv-button>
+</cv-toolbar>
+
+</div>
+<div className="example example-tree-lists">
+
+#### Tree list
+
+{' '}
+<cv-tree-list>
+  <cv-tree-list-item icon="description">
+    <div slot="label">PDCRAdmin</div>
+  </cv-tree-list-item>
+  <cv-tree-list-item icon="description" isOpen="true">
+    <div slot="label">PDCRAdmin</div>
+    <cv-tree-list-item icon="description" slot="nest" indentLevel="1">
+      <div slot="label">PDCRAdmin</div>
+    </cv-tree-list-item>
+    <cv-tree-list-item
+      icon="description"
+      slot="nest"
+      isOpen="true"
+      indentLevel="1"
+    >
+      <div slot="label">PDCRAdmin</div>
+      <cv-tree-list-item icon="description" slot="nest" indentLevel="2">
+        <div slot="label">PDCRAdmin</div>
+      </cv-tree-list-item>
+      <cv-tree-list-item icon="description" slot="nest" indentLevel="2">
+        <div slot="label">PDCRAdmin</div>
+        <cv-tree-list-item icon="description" slot="nest" indentLevel="3">
+          <div slot="label">PDCRAdmin</div>
+          <cv-tree-list-item icon="description" slot="nest" indentLevel="4">
+            <div slot="label">PDCRAdmin</div>
+          </cv-tree-list-item>
+        </cv-tree-list-item>
+      </cv-tree-list-item>
+    </cv-tree-list-item>
+  </cv-tree-list-item>
+  <cv-tree-list-item icon="description">
+    <div slot="label">PDCRAdmin</div>
+  </cv-tree-list-item>
+  <cv-tree-list-item icon="description">
+    <div slot="label">PDCRAdmin</div>
+  </cv-tree-list-item>
+</cv-tree-list>
+
+</div>

@@ -6,15 +6,17 @@
 
 .mdc-top-app-bar__title {
   padding-left: 0;
+  font-family: var(--mdc-typography-title-font-family);
+  font-size: var(--mdc-typography-title-font-size);
+  font-weight: var(--mdc-typography-title-font-weight);
+  line-height: var(--mdc-typography-title-line-height);
 }
 
-@media screen and (max-width: 768px) {
-  .mdc-top-app-bar__title {
-    font-family: var(--mdc-typography-subtitle2-font-family);
-    font-size: var(--mdc-typography-subtitle2-font-size);
-    font-weight: var(--mdc-typography-subtitle2-font-weight);
-    line-height: var(--mdc-typography-subtitle2-line-height);
-  }
+.mdc-top-app-bar__title {
+  font-family: var(--mdc-typography-subtitle2-font-family);
+  font-size: var(--mdc-typography-subtitle2-font-size);
+  font-weight: var(--mdc-typography-subtitle2-font-weight);
+  line-height: var(--mdc-typography-subtitle2-line-height);
 }
 
 .mdc-top-app-bar {
