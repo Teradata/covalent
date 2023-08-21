@@ -1,3 +1,9 @@
+## [4.16.1](https://github.com/Teradata/covalent/compare/v4.16.0...v4.16.1) (2023-08-21)
+
+### Bug Fixes
+
+- td-highlight theme scss ([9b62059](https://github.com/Teradata/covalent/commit/9b62059318ad9cc5e6995e261a9b6e2f825a619f))
+
 # [4.16.0](https://github.com/Teradata/covalent/compare/v4.15.0...v4.16.0) (2023-08-16)
 
 ### Bug Fixes
