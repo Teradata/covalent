@@ -34,19 +34,16 @@ export class CovalentExpansionPanelItem extends LitElement {
   separateSinglePanel = false;
 
   @property({ type: String }) title = 'Title';
-  @property({ type: String }) contentPreview = 'Content preview';
+  @property({ type: String }) contentPreview = '';
   @property({ type: Boolean, reflect: true }) showFooter = false;
   @property({ type: Boolean, reflect: true }) noSurface = false;
-  @property({ type: Boolean, reflect: true }) showContentPreview = false;
 
   render() {
     return html`
       <div class="panel">
         <div class="header" @click=${this._toggleContent}>
           <span class="title">${this.title}</span>
-          <span class="contentPreview"
-            >${this.showContentPreview ? this.contentPreview : ''}</span
-          >
+          <span class="contentPreview">${this.contentPreview}</span>
 
           <cv-icon class="closedIcon">expand_more</cv-icon>
           <cv-icon class="openedIcon">expand_less</cv-icon>

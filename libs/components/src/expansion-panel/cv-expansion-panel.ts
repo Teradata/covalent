@@ -3,7 +3,6 @@ import {
   customElement,
   property,
   queryAssignedElements,
-  queryAssignedNodes,
 } from 'lit/decorators.js';
 import styles from './cv-expansion-panel.scss?inline';
 import { CovalentExpansionPanelItem } from './cv-expansion-panel-item';
@@ -15,13 +14,6 @@ export class CovalentExpansionPanel extends LitElement {
       ${unsafeCSS(styles)}
     `,
   ];
-
-  // connectedCallback(): void {
-  //   window.addEventListener('cv-expansionPanel-togglePanel', (e) =>
-  //     this._handleToggle(e)
-  //   );
-  //   this.firstUpdated();
-  // }
 
   @property({ type: Boolean, reflect: true }) noSurface = false;
   @property({ type: String }) titleWidth = '150px';
@@ -40,13 +32,17 @@ export class CovalentExpansionPanel extends LitElement {
   private _handleToggle = (e: Event): void => {
     let toggledPanelIndex = e.detail.index;
     let panel = this.panelItems[toggledPanelIndex];
+    let open = panel.open;
 
     // close the currently open panel if there is one
     this.panelItems.forEach((item) => {
-      if (item != panel) {
-        item.resetPanel();
-      }
+      item.resetPanel();
     });
+
+    if (open) {
+      panel.open = true;
+    }
+
     if (panel.open) {
       this.panelItems.forEach((item) => {
         // Format the panel above and below the opened panel

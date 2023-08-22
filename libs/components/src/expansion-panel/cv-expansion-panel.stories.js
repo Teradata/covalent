@@ -27,7 +27,6 @@ export const ExpansionPanel = ({ icon }) => {
       title="Title"
       contentPreview="Content preview"
       showFooter
-      showContentPreview
       >
         <div slot="content">
          culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -41,7 +40,6 @@ export const ExpansionPanel = ({ icon }) => {
       title="Lorem ipsum dolor sit amet"
       contentPreview="Content preview"
       showFooter
-      showContentPreview
       >
         <div slot="content">Mxollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
         <div slot="footer" style="display:flex; align-items:center">
@@ -56,7 +54,6 @@ export const ExpansionPanel = ({ icon }) => {
       <cv-expansion-panel-item
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
       contentPreview="Content preview"
-      showContentPreview
       >
         <div slot="content">
           Content
@@ -65,7 +62,6 @@ export const ExpansionPanel = ({ icon }) => {
 
       <cv-expansion-panel-item
       title="Lorem ipsum dolor"
-      contentPreview="Content preview"
       >
         <div slot="content">
           Content
