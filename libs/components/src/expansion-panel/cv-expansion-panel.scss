@@ -3,6 +3,41 @@
   background-color: red;
 }
 
-cv-expansion-panel:last-child {
-  color: red;
+::slotted(*:last-child) {
+  background-color: red;
 }
+
+// ::slotted(*:last-of-type) {
+//   .panel {
+//     border-radius: 0px 0px 8px 8px;
+//     border-bottom: 0px;
+//   }
+// }
+
+// ::slotted(cv-expansion-panel-item:last-c) {
+//   .panel {
+//     border-radius: 0px 0px 8px 8px;
+//     border-bottom: 0px;
+//   }
+// }
+
+// ::slotted(cv-expansion-panel-item:last-of-type) {
+//   .panel {
+//     border-radius: 0px 0px 8px 8px;
+//     border-bottom: 0px;
+//   }
+// }
+
+// ::slotted(content:last-child) {
+//   .panel {
+//     border-radius: 0px 0px 8px 8px;
+//     border-bottom: 0px;
+//   }
+// }
+
+// ::slotted(content:last-of-type) {
+//   .panel {
+//     border-radius: 0px 0px 8px 8px;
+//     border-bottom: 0px;
+//   }
+// }

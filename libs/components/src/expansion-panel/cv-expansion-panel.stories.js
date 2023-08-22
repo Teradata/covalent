@@ -20,6 +20,7 @@ export default {
 
 export const ExpansionPanel = ({ icon }) => {
   return `
+
     <cv-expansion-panel titleWidth='16em'>
 
       <cv-expansion-panel-item
@@ -42,8 +43,6 @@ export const ExpansionPanel = ({ icon }) => {
       showFooter
       showContentPreview
       >
-        <div slot="content">
-        </div>
         <div slot="content">Mxollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
         <div slot="footer" style="display:flex; align-items:center">
           <div style="color:rgba(255, 255, 255, 0.54)">You have unsaved changes</div>

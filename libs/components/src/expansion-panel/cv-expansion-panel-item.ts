@@ -5,7 +5,7 @@ import '../icon/icon';
 import '../action-ribbon/action-ribbon';
 
 @customElement('cv-expansion-panel-item')
-export class ExpansionPanelItem extends LitElement {
+export class CovalentExpansionPanelItem extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -93,6 +93,6 @@ export class ExpansionPanelItem extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-expansion-panel-item': ExpansionPanelItem;
+    'cv-expansion-panel-item': CovalentExpansionPanelItem;
   }
 }

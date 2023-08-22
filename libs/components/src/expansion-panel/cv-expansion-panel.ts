@@ -3,11 +3,13 @@ import {
   customElement,
   property,
   queryAssignedElements,
+  queryAssignedNodes,
 } from 'lit/decorators.js';
 import styles from './cv-expansion-panel.scss?inline';
+import { CovalentExpansionPanelItem } from './cv-expansion-panel-item';
 
 @customElement('cv-expansion-panel')
-export class ExpansionPanel extends LitElement {
+export class CovalentExpansionPanel extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -23,6 +25,9 @@ export class ExpansionPanel extends LitElement {
 
   @property({ type: Boolean, reflect: true }) noSurface = false;
   @property({ type: String }) titleWidth = '150px';
+  @queryAssignedElements() panelItems!: CovalentExpansionPanelItem[];
+  @queryAssignedNodes({ slot: 'mainSlot', flatten: true })
+  panelItems2!: CovalentExpansionPanelItem[];
 
   render() {
     return html`
@@ -35,6 +40,12 @@ export class ExpansionPanel extends LitElement {
   }
 
   private _handleToggle = (e: Event): void => {
+    console.log('items');
+    console.log(this.panelItems);
+
+    console.log('items2');
+    console.log(this.panelItems2);
+
     const items: any[] = Array.from(
       document.querySelectorAll('cv-expansion-panel-item')
     );
@@ -48,7 +59,7 @@ export class ExpansionPanel extends LitElement {
         item.resetPanel();
       }
     });
-
+    console.log(items);
     if (panel.open) {
       items.forEach((item) => {
         // Format the panel above and below the opened panel
@@ -67,8 +78,6 @@ export class ExpansionPanel extends LitElement {
         }
       });
     }
-
-    console.log(items);
   };
 
   protected override firstUpdated() {
@@ -102,12 +111,11 @@ export class ExpansionPanel extends LitElement {
         i++;
       });
     }
-    console.log(items);
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-expansion-panel': ExpansionPanel;
+    'cv-expansion-panel': CovalentExpansionPanel;
   }
 }
