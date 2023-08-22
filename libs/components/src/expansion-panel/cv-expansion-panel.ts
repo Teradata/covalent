@@ -16,18 +16,16 @@ export class CovalentExpansionPanel extends LitElement {
     `,
   ];
 
-  connectedCallback(): void {
-    window.addEventListener('cv-expansionPanel-togglePanel', (e) =>
-      this._handleToggle(e)
-    );
-    this.firstUpdated();
-  }
+  // connectedCallback(): void {
+  //   window.addEventListener('cv-expansionPanel-togglePanel', (e) =>
+  //     this._handleToggle(e)
+  //   );
+  //   this.firstUpdated();
+  // }
 
   @property({ type: Boolean, reflect: true }) noSurface = false;
   @property({ type: String }) titleWidth = '150px';
   @queryAssignedElements() panelItems!: CovalentExpansionPanelItem[];
-  @queryAssignedNodes({ slot: 'mainSlot', flatten: true })
-  panelItems2!: CovalentExpansionPanelItem[];
 
   render() {
     return html`
@@ -40,28 +38,17 @@ export class CovalentExpansionPanel extends LitElement {
   }
 
   private _handleToggle = (e: Event): void => {
-    console.log('items');
-    console.log(this.panelItems);
-
-    console.log('items2');
-    console.log(this.panelItems2);
-
-    const items: any[] = Array.from(
-      document.querySelectorAll('cv-expansion-panel-item')
-    );
-
     let toggledPanelIndex = e.detail.index;
-    let panel = items[toggledPanelIndex];
+    let panel = this.panelItems[toggledPanelIndex];
 
     // close the currently open panel if there is one
-    items.forEach((item) => {
+    this.panelItems.forEach((item) => {
       if (item != panel) {
         item.resetPanel();
       }
     });
-    console.log(items);
     if (panel.open) {
-      items.forEach((item) => {
+      this.panelItems.forEach((item) => {
         // Format the panel above and below the opened panel
         if (item.index == toggledPanelIndex - 1) {
           if (item.index == 0) {
@@ -71,7 +58,7 @@ export class CovalentExpansionPanel extends LitElement {
             item.aboveOpenInnerPanel = true;
           }
         } else if (item.index == toggledPanelIndex + 1) {
-          if (item.index == items.length - 1) {
+          if (item.index == this.panelItems.length - 1) {
             item.separateSinglePanel = true;
           }
           item.belowOpenInnerPanel = true;
@@ -80,7 +67,11 @@ export class CovalentExpansionPanel extends LitElement {
     }
   };
 
-  protected override firstUpdated() {
+  firstUpdated() {
+    window.addEventListener('cv-expansionPanel-togglePanel', (e) =>
+      this._handleToggle(e)
+    );
+
     this.style.setProperty(
       '--cv-expansion-panel-item-title-width',
       this.titleWidth
@@ -90,19 +81,15 @@ export class CovalentExpansionPanel extends LitElement {
       this.style.setProperty('--mdc-theme-surface', 'transparent');
     }
 
-    // All expandable-panel components.
-    const items: any[] = Array.from(
-      document.querySelectorAll('cv-expansion-panel-item')
-    );
-    if (items.length == 1) {
-      items[0].isSinglePanel = true;
+    if (this.panelItems.length == 1) {
+      this.panelItems[0].isSinglePanel = true;
     } else {
       // set index and type of each panel
       let i = 0;
-      items.forEach((item) => {
+      this.panelItems.forEach((item) => {
         if (i == 0) {
           item.isTopPanel = true;
-        } else if (i == items.length - 1) {
+        } else if (i == this.panelItems.length - 1) {
           item.isBottomPanel = true;
         } else {
           item.isInnerPanel = true;
