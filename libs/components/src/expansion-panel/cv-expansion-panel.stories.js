@@ -20,7 +20,6 @@ export default {
 
 export const ExpansionPanel = ({ icon }) => {
   return `
-
     <cv-expansion-panel titleWidth='16em'>
 
       <cv-expansion-panel-item

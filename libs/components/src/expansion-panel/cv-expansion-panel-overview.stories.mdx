@@ -17,6 +17,9 @@ import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
   #story--example-button--text {
     margin-right: 8px;
   }
+  .sbdocs .docs-story {
+    background:black;
+  }
 `}</style>
 
 # Expansion panel
@@ -32,8 +35,20 @@ Set of expandable panels stacked up similar to data table.
 - The expanded panel separates into its own card. Only one panel may be open at a time.
 
 <Canvas>
-  <cv-expansion-panel titleWidth="16em" noSurface>
+  <cv-expansion-panel titleWidth="16em">
     <cv-expansion-panel-item title="Title" contentPreview="Content preview">
+      <div slot="content">Content</div>
+    </cv-expansion-panel-item>
+    <cv-expansion-panel-item
+      title="Lorem ipsum dolor"
+      contentPreview="Content preview"
+    >
+      <div slot="content">Content</div>
+    </cv-expansion-panel-item>
+    <cv-expansion-panel-item
+      title="Lorem ipsum dolor"
+      contentPreview="Content preview"
+    >
       <div slot="content">Content</div>
     </cv-expansion-panel-item>
     <cv-expansion-panel-item
@@ -58,11 +73,20 @@ the bottom of expanded region.
 
 <Canvas>
   <form>
-    <expansion-panel>
-      <cv-expansion-panel-item></cv-expansion-panel-item>
-    </expansion-panel>
-    <expansion-panel>
-      <cv-expansion-panel-item></cv-expansion-panel-item>
-    </expansion-panel>
+    <cv-expansion-panel titleWidth="16em">
+      <cv-expansion-panel-item title="Title" contentPreview="Content preview">
+        <div slot="content">Content</div>
+      </cv-expansion-panel-item>
+    </cv-expansion-panel>
+  </form>
+</Canvas>
+
+<Canvas>
+  <form>
+    <cv-expansion-panel titleWidth="16em">
+      <cv-expansion-panel-item title="Title" contentPreview="Content preview">
+        <div slot="content">Content</div>
+      </cv-expansion-panel-item>
+    </cv-expansion-panel>
   </form>
 </Canvas>

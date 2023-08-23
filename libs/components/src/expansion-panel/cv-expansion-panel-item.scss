@@ -7,7 +7,7 @@
 :host([isBottomPanel]) {
   .panel {
     border-radius: 0px 0px 8px 8px;
-    border-bottom: 0px;
+    border: none;
   }
 }
 
@@ -30,8 +30,6 @@
     margin-top: 16px;
     margin-bottom: 16px;
     border-bottom: 0px;
-
-    // max-height:500px;
   }
   .header {
     min-height: 64px;
@@ -99,6 +97,25 @@
   }
 }
 
+:host([open][isSinglePanel]) {
+  .header {
+    min-height: 64px;
+    max-height: 64px;
+  }
+  .dropdown {
+    grid-template-rows: 1fr;
+  }
+  .closedIcon {
+    display: none;
+  }
+  .openedIcon {
+    display: inline-block;
+  }
+  ::slotted([slot='content']) {
+    padding-bottom: 16px;
+  }
+}
+
 :host([belowOpenInnerPanel]) {
   .panel {
     border-radius: 8px 8px 0px 0px;
@@ -124,12 +141,7 @@
     width: 550px;
     border-bottom: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
     background-color: var(--mdc-theme-surface, #ffffff);
-
-    // max-height: 48px;
-    // overflow-y:hidden;
-
-    // transition: max-height 1s, margin-bottom .3s, margin-top .3s;
-    transition: margin-bottom 0.5s, margin-top 0.5s, border-radius 0.5s;
+    transition: margin-bottom 0.5s, margin-top 0.5s;
   }
   .header {
     min-height: 48px;
@@ -138,6 +150,8 @@
 
     display: flex;
     align-items: center;
+
+    transition: min-height 0.5s, max-height 0.5s;
   }
   .title {
     width: var(--cv-expansion-panel-item-title-width, 200px);
@@ -189,7 +203,6 @@
   }
 
   .content {
-    // adding bottom padding here breaks it
     overflow-y: hidden;
   }
 
