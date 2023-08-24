@@ -1,3 +1,13 @@
+# [7.0.0](https://github.com/Teradata/covalent/compare/v6.3.0...v7.0.0) (2023-08-24)
+
+### Features
+
+- **ng:** covalent ng support upgrade ([8ea0563](https://github.com/Teradata/covalent/commit/8ea0563a795d35b7bcff6660e03088590665c812))
+
+### BREAKING CHANGES
+
+- **ng:** upgrade angular 16 (#2050)
+
 # [6.3.0](https://github.com/Teradata/covalent/compare/v6.2.3...v6.3.0) (2023-08-14)
 
 ### Features
