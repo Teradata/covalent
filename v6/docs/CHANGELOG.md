@@ -1786,10 +1786,7 @@ import { HttpInterceptorService, CovalentHttpModule } from '@covalent/http';
 After:
 
 ```typescript
-import {
-  HttpInterceptorService,
-  CovalentHttpModule,
-} from '@covalent/http-deprec';
+import { HttpInterceptorService, CovalentHttpModule } from '@covalent/http-deprec';
 ```
 
 Our new `http` module has a different usage and uses `@angular/common/http` under the covers. You can find more about it by clicking [here](https://teradata.github.io/covalent/#/components/http).
@@ -2433,13 +2430,7 @@ The following inputs are:
 Before:
 
 ```html
-<td-paging-bar
-  #pagingBar
-  [pageSizes]="[50,100,200,500,1000]"
-  [pageSize]="pageSize"
-  [total]="1345"
-  (change)="change($event)"
->
+<td-paging-bar #pagingBar [pageSizes]="[50,100,200,500,1000]" [pageSize]="pageSize" [total]="1345" (change)="change($event)">
   <span td-paging-bar-label hide-xs>Rows per page:</span>
   <span>{{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span></span>
 </td-paging-bar>
@@ -2448,17 +2439,10 @@ Before:
 After:
 
 ```html
-<td-paging-bar
-  #pagingBar
-  [pageSize]="pageSize"
-  [total]="1345"
-  (change)="change($event)"
->
+<td-paging-bar #pagingBar [pageSize]="pageSize" [total]="1345" (change)="change($event)">
   <span hide-xs>Rows per page:</span>
   <md-select [(ngModel)]="pageSize">
-    <md-option *ngFor="let size of [50,100,200,500,1000]" [value]="size">
-      {{size}}
-    </md-option>
+    <md-option *ngFor="let size of [50,100,200,500,1000]" [value]="size"> {{size}} </md-option>
   </md-select>
   <span>{{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span></span>
 </td-paging-bar>
@@ -2607,9 +2591,7 @@ Before:
 
 ```html
 <td-layout-nav-list #navList toolbarTitle="Title">
-  <div td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
-    Sidenav Content
-  </div>
+  <div td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">Sidenav Content</div>
   <div td-toolbar-content>Toolbar content</div>
   Content
   <td-layout-nav-list></td-layout-nav-list
@@ -2623,9 +2605,7 @@ After:
   <button md-icon-button td-menu-button tdLayoutToggle>
     <md-icon>menu</md-icon>
   </button>
-  <div td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
-    Sidenav Content
-  </div>
+  <div td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">Sidenav Content</div>
   <div td-toolbar-content>
     <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>
@@ -2643,9 +2623,7 @@ Before:
 ```html
 <td-layout-manage-list #manageList>
   <md-toolbar td-sidenav-content></md-toolbar>
-  <div td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
-    Sidenav Content
-  </div>
+  <div td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">Sidenav Content</div>
   <div td-toolbar-content>Toolbar content</div>
   Content
   <td-layout-manage-list></td-layout-manage-list
@@ -2657,9 +2635,7 @@ After:
 ```html
 <td-layout-manage-list>
   <md-toolbar td-sidenav-content></md-toolbar>
-  <div td-sidenav-content [tdLayoutManageListClose]="false">
-    Sidenav Content
-  </div>
+  <div td-sidenav-content [tdLayoutManageListClose]="false">Sidenav Content</div>
   <md-toolbar>
     <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>
@@ -2686,18 +2662,11 @@ e.g.
     <td-layout-manage-list>
       <md-toolbar td-sidenav-content> Section Title </md-toolbar>
       <!-- [tdLayoutManageListClose] makes this button's click close the td-layout-manage-list sidenav -->
-      <div td-sidenav-content tdLayoutManageListClose>
-        Manage List Sidenav Content
-      </div>
+      <div td-sidenav-content tdLayoutManageListClose>Manage List Sidenav Content</div>
       <td-layout-nav toolbarTitle="Page Title">
         <!-- [tdLayoutManageListOpen] makes this button's click close the td-layout-manage-list sidenav -->
         <!-- [hideWhenOpened] is used to hide the button when the sidenav is opened -->
-        <button
-          md-icon-button
-          td-menu-button
-          tdLayoutManageListOpen
-          [hideWhenOpened]="true"
-        >
+        <button md-icon-button td-menu-button tdLayoutManageListOpen [hideWhenOpened]="true">
           <md-icon>arrow_back</md-icon>
         </button>
         Content
@@ -2790,14 +2759,7 @@ This will also allow the developer to create custom filters both locally and ser
 e.g.
 
 ```html
-<td-chips
-  [items]="filteredStrings"
-  [(ngModel)]="stringsModel"
-  placeholder="Enter autocomplete strings"
-  (inputChange)="filterStrings($event)"
-  requireMatch
->
-</td-chips>
+<td-chips [items]="filteredStrings" [(ngModel)]="stringsModel" placeholder="Enter autocomplete strings" (inputChange)="filterStrings($event)" requireMatch> </td-chips>
 ```
 
 ```typescript
@@ -3103,16 +3065,9 @@ These selectors were deprecated a few releases back so it should be ok to remove
   Usage:
 
   ```html
-  <td-file-upload
-    #singleFileUpload
-    (upload)="uploadEvent($event)"
-    [disabled]="disabled"
-  >
-    <md-icon>file_upload</md-icon
-    ><span>{{ singleFileUpload.files?.name }}</span>
-    <template td-file-input-label>
-      <md-icon>attach_file</md-icon><span>Choose a file...</span>
-    </template>
+  <td-file-upload #singleFileUpload (upload)="uploadEvent($event)" [disabled]="disabled">
+    <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+    <template td-file-input-label> <md-icon>attach_file</md-icon><span>Choose a file...</span> </template>
   </td-file-upload>
   ```
 
@@ -3357,14 +3312,7 @@ Usage:
 
 ```html
 <td-layout>
-  <td-navigation-drawer
-    sidenavTitle="title"
-    logo="logoName"
-    name="User Name"
-    email="user@email.com"
-    backgroundUrl="safeUrl/to/background"
-    color="none"
-  >
+  <td-navigation-drawer sidenavTitle="title" logo="logoName" name="User Name" email="user@email.com" backgroundUrl="safeUrl/to/background" color="none">
     Main Content
     <div td-navigation-drawer-menu>Menu Content</div>
   </td-navigation-drawer>
@@ -3379,33 +3327,11 @@ Usage:
 Usage:
 
 ```html
-<td-layout-manage-list
-  #manageList
-  [opened]="media.registerQuery('gt-sm') | async"
-  [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
-  [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'"
->
-  <md-nav-list
-    td-sidenav-content
-    (click)="!media.query('gt-sm') && manageList.close()"
-  ></md-nav-list
-></td-layout-manage-list>
+<td-layout-manage-list #manageList [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'" [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'"> <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()"></md-nav-list></td-layout-manage-list>
 ```
 
 ```html
-<td-layout-nav-list
-  #navList
-  logo="assets:teradata"
-  toolbarTitle="Covalent"
-  [opened]="media.registerQuery('gt-sm') | async"
-  [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
-  [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'"
->
-  <md-nav-list
-    td-sidenav-content
-    (click)="!media.query('gt-sm') && navList.close()"
-  ></md-nav-list
-></td-layout-nav-list>
+<td-layout-nav-list #navList logo="assets:teradata" toolbarTitle="Covalent" [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'" [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'"> <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()"></md-nav-list></td-layout-nav-list>
 ```
 
 ```typescript
@@ -3663,12 +3589,7 @@ ngAfterViewInit(): void {
   Usage:
 
   ```html
-  <td-notification-count
-    color="primary | accent | warn"
-    [notifications]="boolean | number"
-  >
-    ... // could be an icon <md-icon>notifications</md-icon> or empty
-  </td-notification-count>
+  <td-notification-count color="primary | accent | warn" [notifications]="boolean | number"> ... // could be an icon <md-icon>notifications</md-icon> or empty </td-notification-count>
   ```
 
 - **notifications:** Added examples and demo for a `notifications` menu usage. ([746fe3caec62a77bc69b50a2fc0bfcf9b0a9a695](https://github.com/Teradata/covalent/commit/746fe3caec62a77bc69b50a2fc0bfcf9b0a9a695))
@@ -3709,11 +3630,7 @@ Before (deprecated):
 ```html
 <td-layout title="Covalent">
   <td-layout-nav-list title="Covalent">
-    <td-layout-nav title="Covalent">
-      <td-layout-card-over
-        title="Title"
-        subtitle="Subtitle"
-      ></td-layout-card-over></td-layout-nav></td-layout-nav-list
+    <td-layout-nav title="Covalent"> <td-layout-card-over title="Title" subtitle="Subtitle"></td-layout-card-over></td-layout-nav></td-layout-nav-list
 ></td-layout>
 ```
 
@@ -3722,11 +3639,7 @@ After:
 ```html
 <td-layout sidenavTitle="Title">
   <td-layout-nav-list toolbarTitle="Title">
-    <td-layout-nav toolbarTitle="Title">
-      <td-layout-card-over
-        cardTitle="Title"
-        cardSubtitle="Subtitle"
-      ></td-layout-card-over></td-layout-nav></td-layout-nav-list
+    <td-layout-nav toolbarTitle="Title"> <td-layout-card-over cardTitle="Title" cardSubtitle="Subtitle"></td-layout-card-over></td-layout-nav></td-layout-nav-list
 ></td-layout>
 ```
 
@@ -3756,38 +3669,13 @@ $theme: md-light-theme($primary, $accent, $warn);
 Before:
 
 ```html
-<td-data-table
-  [data]="data"
-  [columns]="columns"
-  sortBy="age"
-  title="title"
-  sortOrder="DESC"
-  pagination="true"
-  pageSize="5"
-  sorting="true"
-  search="true"
-  rowSelection="true"
-  multiple="true"
-  search="true"
->
-</td-data-table>
+<td-data-table [data]="data" [columns]="columns" sortBy="age" title="title" sortOrder="DESC" pagination="true" pageSize="5" sorting="true" search="true" rowSelection="true" multiple="true" search="true"> </td-data-table>
 ```
 
 After:
 
 ```html
-<td-data-table
-  [data]="filteredData"
-  [columns]="columns"
-  [selectable]="selectable"
-  [multiple]="multiple"
-  [sortable]="true"
-  [sortBy]="sortBy"
-  [(ngModel)]="selectedRows"
-  [sortOrder]="sortOrder"
-  (sortChange)="sort($event)"
->
-</td-data-table>
+<td-data-table [data]="filteredData" [columns]="columns" [selectable]="selectable" [multiple]="multiple" [sortable]="true" [sortBy]="sortBy" [(ngModel)]="selectedRows" [sortOrder]="sortOrder" (sortChange)="sort($event)"> </td-data-table>
 ```
 
 - **steps:** Remove [td-step-content] to fix bug with template referencing. ([5d87249e9a13561ff2bb14fd3ebf41393f902230](https://github.com/Teradata/covalent/commit/5d87249e9a13561ff2bb14fd3ebf41393f902230))
@@ -3796,18 +3684,14 @@ Before:
 
 ```html
 <td-step>
-  <template td-step-content>
-    ... add content that will be shown when the step is "active"
-  </template>
+  <template td-step-content> ... add content that will be shown when the step is "active" </template>
 </td-step>
 ```
 
 After:
 
 ```html
-<td-step>
-  ... add content that will be shown when the step is "active"
-</td-step>
+<td-step> ... add content that will be shown when the step is "active" </td-step>
 ```
 
 ## Bug Fixes
@@ -3836,17 +3720,7 @@ Usage:
 
 ```html
 <table td-data-table>
-  <th
-    td-data-table-column
-    [name]="colName"
-    [numeric]="numeric"
-    [active]="true|false"
-    [sortable]="true|false"
-    [sortOrder]="colName"
-    (sortChange)="handleSort($event)"
-  >
-    ...
-  </th>
+  <th td-data-table-column [name]="colName" [numeric]="numeric" [active]="true|false" [sortable]="true|false" [sortOrder]="colName" (sortChange)="handleSort($event)">...</th>
   <tr td-data-table-row>
     <td td-data-table-cell [numeric]="column.numeric">...</td>
   </tr>
@@ -3863,14 +3737,7 @@ Usage:
 
 ```html
 <td-data-table [data]="{'type': 'test'}" [columns]="['type']">
-  <template
-    tdDataTableTemplate="type"
-    let-value="value"
-    let-row="row"
-    let-column="column"
-  >
-    ...
-  </template>
+  <template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column"> ... </template>
 </td-data-table>
 ```
 
@@ -3881,15 +3748,9 @@ Usage:
 
 ```html
 <td-expansion-panel label="label" sublabel="sublabel">
-  <template td-expansion-panel-header>
-    ... add header content (overrides label and sublabel)
-  </template>
-  <template td-expansion-panel-label>
-    ... add label content (if not used, falls back to [label] input)
-  </template>
-  <template td-expansion-panel-sublabel>
-    ... add sublabel content (if not used, falls back to [sublabel] input)
-  </template>
+  <template td-expansion-panel-header> ... add header content (overrides label and sublabel) </template>
+  <template td-expansion-panel-label> ... add label content (if not used, falls back to [label] input) </template>
+  <template td-expansion-panel-sublabel> ... add sublabel content (if not used, falls back to [sublabel] input) </template>
   ...
 </td-expansion-panel>
 ```
@@ -3900,9 +3761,7 @@ Usage:
 
 ```html
 <td-step label="Label">
-  <template td-step-label>
-    ... add label content (if not used, falls back to [label] input)
-  </template>
+  <template td-step-label> ... add label content (if not used, falls back to [label] input) </template>
   ... add content that will be shown when the step is "active"
 </td-step>
 ```

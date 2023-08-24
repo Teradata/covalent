@@ -175,7 +175,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
 
   protected _prepareTour(
     originalSteps: ITourStep[],
-    finishLabel: string = 'finish'
+    finishLabel = 'finish'
   ): ITourStep[] {
     // create Subjects for back and forward events
     const backEvent$: Subject<void> = new Subject<void>();

@@ -92,7 +92,7 @@ export function isGithubHref(href?: string): boolean {
   }
 }
 
-export function isRawGithubHref(href: string = ''): boolean {
+export function isRawGithubHref(href = ''): boolean {
   try {
     const temp: URL = new URL(href);
     return temp.hostname === RAW_GITHUB_HOSTNAME;

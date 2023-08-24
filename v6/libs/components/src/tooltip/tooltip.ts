@@ -59,6 +59,7 @@ export class CovalentTooltip extends LitElement {
           width: this.mdcRoot.clientWidth,
           height: this.mdcRoot.clientHeight,
         }),
+      getTooltipCaretBoundingRect: () => this.mdcRoot.getBoundingClientRect() ?? null,
       getAnchorBoundingRect: () => this.anchor?.getBoundingClientRect() ?? null,
       getParentBoundingRect: () =>
         this.renderRoot.getRootNode().parentElement?.getBoundingClientRect() ??
@@ -68,6 +69,7 @@ export class CovalentTooltip extends LitElement {
       setAnchorAttribute: (attr: string, value: string) =>
         this.anchor?.setAttribute(attr, value),
       isRTL: () => false,
+      isInstanceOfElement:(eventTarget: EventTarget | null) => eventTarget instanceof Element,
       anchorContainsElement: (element: HTMLElement) =>
         this.anchor?.contains(element) ?? false,
       tooltipContainsElement: (element: HTMLElement) => this.contains(element),
@@ -89,7 +91,7 @@ export class CovalentTooltip extends LitElement {
       deregisterWindowEventHandler: (evtType, handler) =>
         window.removeEventListener(evtType, handler),
       notifyHidden: () => this.dispatchEvent(new Event(events.HIDDEN)),
-      getTooltipCaretBoundingRect: () => null,
+      notifyShown: () => this.dispatchEvent(new Event(events.SHOWN)),
       setTooltipCaretStyle: () => {
         //
       },

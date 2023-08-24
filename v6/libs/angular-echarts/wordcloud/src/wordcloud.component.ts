@@ -87,7 +87,7 @@ export class TdChartSeriesWordcloudComponent
   extends TdSeriesDirective
   implements ITdWordcloudSeries
 {
-  @Input() override data?: ITdWordCloudData[];
+  @Input() declare data?: ITdWordCloudData[];
   @Input() shape?: TdWordcloudShape;
   @Input() left?: string | number;
   @Input() top?: string | number;

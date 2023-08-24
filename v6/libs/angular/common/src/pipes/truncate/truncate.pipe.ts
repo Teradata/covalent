@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'truncate',
 })
 export class TdTruncatePipe implements PipeTransform {
-  transform(text: any, length: number = 54): string {
+  transform(text: any, length = 54): string {
     if (typeof text !== 'string') {
       return '';
     }

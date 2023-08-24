@@ -9,8 +9,8 @@
  */
 export function convertObjectsToCSV(
   objects: any[],
-  keySeparator: string = ',',
-  lineSeparator: string = '\r\n'
+  keySeparator = ',',
+  lineSeparator = '\r\n'
 ): string {
   if (!objects) {
     return '';
@@ -57,9 +57,9 @@ export function convertObjectsToCSV(
  */
 export function convertCSVToJSON(
   csv: string,
-  keySeparator: string = ',',
-  lineSeparator: string = '\r\n',
-  indent: number = 2
+  keySeparator = ',',
+  lineSeparator = '\r\n',
+  indent = 2
 ): string {
   if (!csv) {
     return '';
@@ -98,6 +98,6 @@ export function convertCSVToJSON(
  * @param json object to be converted
  * @param indent optional parameter indicating space indentation for pretty output. Default is 2.
  */
-export function formatJSON(json: object, indent: number = 2): string {
+export function formatJSON(json: object, indent = 2): string {
   return JSON.stringify(json, undefined, indent);
 }

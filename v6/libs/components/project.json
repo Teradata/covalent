@@ -6,7 +6,7 @@
   "implicitDependencies": ["tokens"],
   "targets": {
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "cd libs/components/ && vite"
@@ -15,7 +15,7 @@
       }
     },
     "build": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "mkdir -p dist/libs/components/",
@@ -28,7 +28,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": ["vitest -r libs/components -c vite.config.js -w false"],
         "parallel": false,
@@ -43,7 +43,7 @@
       }
     },
     "scsslint": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           {
@@ -53,7 +53,7 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           {
@@ -63,7 +63,7 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           {

@@ -23,8 +23,8 @@ export function downloadCSV(fileBaseName: string, csv: string): void {
 export function downloadJSON(
   fileBaseName: string,
   json: string,
-  format: boolean = false,
-  indent: number = 2
+  format = false,
+  indent = 2
 ): void {
   downloadFile(
     `${fileBaseName}.json`,
@@ -47,8 +47,8 @@ export function downloadJSON(
 export function downloadObjectsToCSV(
   fileBaseName: string,
   objects: any[],
-  keySeparator: string = ',',
-  lineSeparator: string = '\r\n'
+  keySeparator = ',',
+  lineSeparator = '\r\n'
 ): void {
   downloadFile(
     `${fileBaseName}.csv`,
@@ -69,7 +69,7 @@ export function downloadObjectsToCSV(
 export function downloadObjectsToJSON(
   fileBaseName: string,
   objects: any[],
-  indent: number = 2
+  indent = 2
 ): void {
   downloadFile(
     `${fileBaseName}.json`,
@@ -88,7 +88,7 @@ export function downloadObjectsToJSON(
 export function downloadFile(
   fileName: string,
   contents: string,
-  mimeType: string = 'text/plain'
+  mimeType = 'text/plain'
 ): void {
   if (!fileName || !contents) {
     return;
