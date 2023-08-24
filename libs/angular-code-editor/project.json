@@ -20,7 +20,14 @@
           "tsConfig": "libs/angular-code-editor/tsconfig.lib.json"
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "projects": ["angular"],
+          "target": "build",
+          "params": "ignore"
+        }
+      ]
     },
     "test": {
       "executor": "@nrwl/jest:jest",

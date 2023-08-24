@@ -19,7 +19,14 @@
           "tsConfig": "libs/markdown-flavored/tsconfig.lib.json"
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "projects": ["markdown"],
+          "target": "build",
+          "params": "ignore"
+        }
+      ]
     },
     "test": {
       "executor": "@nrwl/jest:jest",
