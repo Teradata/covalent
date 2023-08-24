@@ -20,7 +20,7 @@ import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 // Use esm version to support shipping subset of languages and features
-import { editor, languages, IDisposable } from 'monaco-editor';
+import { editor, languages, IDisposable } from 'monaco-editor/esm/vs/editor/editor.api';
 
 import {
   mixinControlValueAccessor,

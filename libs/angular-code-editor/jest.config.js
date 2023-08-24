@@ -1,3 +1,5 @@
+const esModules = ['monaco-editor'];
+
 module.exports = {
   displayName: 'angular',
   preset: '../../jest.preset.js',
@@ -15,9 +17,8 @@ module.exports = {
     ],
   },
   transformIgnorePatterns: [
-    'node_modules/(?!.*\\.mjs$)',
-    'node_modules/(?!monaco-editor).+\\.js$'
-],
+    `<rootDir>/node_modules/(?!.*\\.mjs$|${esModules.join('|')})`, // jest-preset-angular
+  ],
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

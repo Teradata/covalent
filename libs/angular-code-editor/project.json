@@ -22,26 +22,12 @@
       },
       "defaultConfiguration": "production"
     },
-    "test-test": {
+    "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/angular-code-editor"],
       "options": {
         "jestConfig": "libs/angular-code-editor/jest.config.js",
         "passWithNoTests": true
-      }
-    },
-    "test": {
-      "executor": "@angular-builders/custom-webpack:karma",
-      "options": {
-        "customWebpackConfig": {
-          "path": "./monaco-webpack.config.js",
-          "mergeStrategies": {
-            "module.rules": "replace"
-          }
-        },
-        "main": "libs/angular-code-editor/src/test.ts",
-        "tsConfig": "libs/angular-code-editor/tsconfig.spec.json",
-        "karmaConfig": "libs/angular-code-editor/karma.conf.js"
       }
     },
     "lint": {

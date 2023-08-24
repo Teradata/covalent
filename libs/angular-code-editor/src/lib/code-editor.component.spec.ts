@@ -9,6 +9,20 @@ import { TdCodeEditorComponent } from './code-editor.component';
 import { FormsModule } from '@angular/forms';
 import { covalentThemeName, covalentThemeConf } from './editor.theme';
 
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  })),
+});
+
 // to be able to test fullscreen when running headless in travis
 interface IFsDocument extends HTMLDocument {
   webkitExitFullscreen?: () => void;
@@ -72,18 +86,13 @@ const language: any = {
   ],
 };
 
-describe('test', ()=> {
-  it('should work', ()=> {
-
-  })
-})
 
 describe('Component: App', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [
-         // TdCodeEditorComponent,
+          TdCodeEditorComponent,
           TestMultipleEditorsComponent,
           TestEditorOptionsComponent,
           TestTwoWayBindingWithValueComponent,
