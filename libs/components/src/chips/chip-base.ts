@@ -118,7 +118,7 @@ export class ChipBase extends LitElement {
       '.mdc-evolution-chip__action'
     );
     for (let i = 0; i < actionEls.length; i++) {
-      const action = new MDCChipAction(actionEls[i]);
+      const action = new MDCChipAction(actionEls[i] as HTMLElement);
       this.actions.set(action.actionType(), action);
       actionEls[i].addEventListener(
         MDCChipActionEvents.INTERACTION,
