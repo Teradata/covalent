@@ -61,7 +61,7 @@ export class TdChartSeriesRegressionComponent
   extends TdChartSeriesScatterComponent
   implements ITdRegressionSeries, OnChanges
 {
-  @Input() override data?: number[][];
+  @Input() declare data?: number[][];
   @Input() regressionType?: TdRegressionType;
   @Input() polinomialOrder?: number;
 

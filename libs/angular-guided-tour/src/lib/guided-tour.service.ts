@@ -131,7 +131,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
 
   // Finds the right registered tour by using queryParams
   // finishes any other tour and starts the new one.
-  initializeOnQueryParams(queryParam: string = 'tour'): Observable<ParamMap> {
+  initializeOnQueryParams(queryParam = 'tour'): Observable<ParamMap> {
     return this._route.queryParamMap.pipe(
       debounceTime(100),
       tap((params: ParamMap) => {

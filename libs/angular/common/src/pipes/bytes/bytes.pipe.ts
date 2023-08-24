@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TdBytesPipe implements PipeTransform {
   /* `bytes` needs to be `any` or TypeScript complains
   Tried both `number` and `number | string` */
-  transform(bytes: any, precision: number = 2): string {
+  transform(bytes: any, precision = 2): string {
     if (bytes === 0) {
       return '0 B';
     } else if (isNaN(parseInt(bytes, 10))) {

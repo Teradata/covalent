@@ -61,6 +61,9 @@ module.exports = defineConfig({
     },
   },
   test: {
+    deps: {
+      inline: [/safevalues/] // fix @material/chips issue
+    },
     coverage: {
       provider: 'c8',
       enabled: true,
