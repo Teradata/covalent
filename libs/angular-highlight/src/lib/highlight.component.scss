@@ -6,6 +6,7 @@ $padding: 16px;
   overflow-x: auto;
   padding: $padding;
   display: flex;
+  position: relative;
 
   pre,
   code,
@@ -35,6 +36,10 @@ $padding: 16px;
     padding: 0;
     overflow-wrap: break-word;
     white-space: pre-wrap;
+  }
+
+  div.raw {
+    flex-grow: 1;
   }
 
   .highlight {
