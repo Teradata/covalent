@@ -1,6 +1,8 @@
 <!-- expansion-panel-overview.stories.mdx -->
 
 import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
+import '../button/button';
+import incorrectExample from './cv-expansion-panel-incorrect-example.png';
 
 <Meta
   title="Components/Expansion-Panel/Overview"
@@ -19,6 +21,13 @@ import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
   }
   .sbdocs .docs-story {
     background:black;
+  }
+  .buttonFooter{
+    display:flex; 
+    align-items:center;
+  }
+  .buttonContainer {
+    margin-left:auto;
   }
 `}</style>
 
@@ -71,15 +80,32 @@ the expansion panel header is clickable and when clicked on expanded state, it
 collapses the panel. If absolutely needed, the call to actions can be added at
 the bottom of expanded region.
 
+##### Correct
+
 <Canvas>
   <form>
     <cv-expansion-panel titleWidth="16em">
-      <cv-expansion-panel-item title="Title" contentPreview="Content preview">
-        <div slot="content">Content</div>
+      <cv-expansion-panel-item
+        title="Title"
+        contentPreview="Content preview"
+        showFooter
+      >
+        <div slot="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+        <div slot="footer" class="buttonFooter">
+          <div>You have unsaved changes</div>
+          <div class="buttonContainer">
+            <cv-button outlined label="Cancel"></cv-button>
+            <cv-button raised label="Save" class="primary accent"></cv-button>
+          </div>
+        </div>
       </cv-expansion-panel-item>
     </cv-expansion-panel>
   </form>
 </Canvas>
+
+##### Incorrect
 
 <Canvas>
   <form>
