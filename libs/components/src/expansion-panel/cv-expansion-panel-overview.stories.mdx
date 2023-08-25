@@ -29,6 +29,12 @@ import incorrectExample from './cv-expansion-panel-incorrect-example.png';
   .buttonContainer {
     margin-left:auto;
   }
+  cv-button {
+    margin-left:5px;
+  }
+  img {
+    width:550px;
+  }
 `}</style>
 
 # Expansion panel
@@ -107,12 +113,4 @@ the bottom of expanded region.
 
 ##### Incorrect
 
-<Canvas>
-  <form>
-    <cv-expansion-panel titleWidth="16em">
-      <cv-expansion-panel-item title="Title" contentPreview="Content preview">
-        <div slot="content">Content</div>
-      </cv-expansion-panel-item>
-    </cv-expansion-panel>
-  </form>
-</Canvas>
+<img src={incorrectExample} alt="Incorrect footer use" />
