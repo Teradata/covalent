@@ -13,20 +13,20 @@
 
 :host([isSinglePanel]) {
   .panel {
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px;
     border: none;
   }
 }
 
 :host([isInnerPanel]) {
   .panel {
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0px;
   }
 }
 
 :host([open][isInnerPanel]) {
   .panel {
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px;
     margin-top: 16px;
     margin-bottom: 16px;
     border-bottom: 0px;
@@ -51,7 +51,7 @@
 
 :host([open][isTopPanel]) {
   .panel {
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px;
     margin-bottom: 16px;
     border-bottom: 0px;
   }
@@ -75,7 +75,7 @@
 
 :host([open][isBottomPanel]) {
   .panel {
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px;
     margin-top: 16px;
     border-bottom: 0px;
   }
@@ -131,7 +131,7 @@
 
 :host([separateSinglePanel]) {
   .panel {
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px;
     border-bottom: none;
   }
 }
@@ -139,18 +139,16 @@
 :host {
   .panel {
     width: 550px;
-    border-bottom: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
+    border-bottom: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 12%));
     background-color: var(--mdc-theme-surface, #ffffff);
     transition: margin-bottom 0.5s, margin-top 0.5s;
   }
   .header {
     min-height: 48px;
     max-height: 48px;
-    padding: 0px 24px 0px 24px;
-
+    padding: 0px 24px;
     display: flex;
     align-items: center;
-
     transition: min-height 0.5s, max-height 0.5s;
   }
   .title {
@@ -158,8 +156,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 87%));
     font-family: var(--mdc-typography-body1-font-family, Arial);
     font-size: var(--mdc-typography-body1-font-size, 14px);
     font-style: normal;
@@ -174,7 +171,7 @@
 
     padding-left: 16px;
 
-    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
+    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 54%));
     font-family: var(--mdc-typography-body1-font-family, Arial);
     font-size: var(--mdc-typography-body1-font-size, 14px);
     font-style: normal;
@@ -192,8 +189,7 @@
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.5s;
-
-    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 87%));
     font-family: var(--mdc-typography-body1-font-family, Arial);
     font-size: var(--mdc-typography-body1-font-size, 14px);
     font-style: normal;
@@ -212,9 +208,8 @@
 
   .footer {
     overflow-y: hidden;
-
-    padding: 16px 24px 16px 24px;
-    border-top: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 0.12));
+    padding: 16px 24px;
+    border-top: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 12%));
   }
 
   .openedIcon {
