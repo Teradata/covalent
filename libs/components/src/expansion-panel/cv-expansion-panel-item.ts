@@ -2,7 +2,6 @@ import { LitElement, css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './cv-expansion-panel-item.scss?inline';
 import '../icon/icon';
-import '../action-ribbon/action-ribbon';
 
 @customElement('cv-expansion-panel-item')
 export class CovalentExpansionPanelItem extends LitElement {
