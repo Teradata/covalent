@@ -1,0 +1,42 @@
+<!-- tabs-overview.stories.mdx -->
+
+import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Components/Tabs/Overview"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  
+  mwc-tab-bar {
+    border-bottom: 1px solid var(--mdc-theme-border);
+  }
+  .sbdocs .docs-story {
+    min-height: 8rem;
+  }
+
+`}</style>
+
+# Tabs
+
+## Basics
+
+- Add 16px padding to the left and right of the tabs
+
+---
+
+## Examples
+
+<Canvas>
+  <cv-tab-bar>
+    <cv-tab label="Tab one"></cv-tab>
+    <cv-tab label="Tab two"></cv-tab>
+    <cv-tab label="Tab three"></cv-tab>
+  </cv-tab-bar>
+</Canvas>

@@ -1,0 +1,243 @@
+{
+  "name": "@covalent/components",
+  "version": "0.0.0-COVALENT",
+  "description": "a catalog of material components for covalent",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    },
+    "./action-ribbon": {
+      "types": "./action-ribbon/action-ribbon.d.ts",
+      "import": "./action-ribbon.mjs",
+      "require": "./action-ribbon.js"
+    },
+    "./alert": {
+      "types": "./alert/alert.d.ts",
+      "import": "./alert.mjs",
+      "require": "./alert.js"
+    },
+    "./app-shell": {
+      "types": "./app-shell/app-shell.d.ts",
+      "import": "./app-shell.mjs",
+      "require": "./app-shell.js"
+    },
+    "./button": {
+      "types": "./button/button.d.ts",
+      "import": "./button.mjs",
+      "require": "./button.js"
+    },
+    "./checkbox": {
+      "types": "./checkbox/checkbox.d.ts",
+      "import": "./checkbox.mjs",
+      "require": "./checkbox.js"
+    },
+    "./card": {
+      "types": "./card/card.d.ts",
+      "import": "./card.mjs",
+      "require": "./card.js"
+    },
+    "./circular-progress": {
+      "types": "./circular-progress/circular-progress.d.ts",
+      "import": "./circular-progress.mjs",
+      "require": "./circular-progress.js"
+    },
+    "./code-snippet": {
+      "types": "./code-snippet/code-snippet.d.ts",
+      "import": "./code-snippet.mjs",
+      "require": "./code-snippet.js"
+    },
+    "./dialog": {
+      "types": "./dialog/dialog.d.ts",
+      "import": "./dialog.mjs",
+      "require": "./dialog.js"
+    },
+    "./drawer": {
+      "types": "./drawer/drawer.d.ts",
+      "import": "./drawer.mjs",
+      "require": "./drawer.js"
+    },
+    "./empty-state": {
+      "types": "./empty-state/empty-state.d.ts",
+      "import": "./empty-state.mjs",
+      "require": "./empty-state.js"
+    },
+    "./icon": {
+      "types": "./icon/icon.d.ts",
+      "import": "./icon.mjs",
+      "require": "./icon.js"
+    },
+    "./icon-button": {
+      "types": "./icon-button/icon-button.d.ts",
+      "import": "./icon-button.mjs",
+      "require": "./icon-button.js"
+    },
+    "./icon-check-toggle": {
+      "types": "./icon-checkbox/icon-checkbox.d.ts",
+      "import": "./icon-checkbox.mjs",
+      "require": "./icon-checkbox.js"
+    },
+    "./icon-radio-toggle": {
+      "types": "./icon-radio-toggle/icon-radio-toggle.d.ts",
+      "import": "./icon-radio-toggle.mjs",
+      "require": "./icon-radio-toggle.js"
+    },
+    "./linear-progress": {
+      "types": "./linear-progress/linear-progress.d.ts",
+      "import": "./linear-progress.mjs",
+      "require": "./linear-progress.js"
+    },
+    "./list/check-list-item": {
+      "types": "./list/check-list-item.d.ts",
+      "import": "./check-list-item.mjs",
+      "require": "./check-list-item.js"
+    },
+    "./list/list": {
+      "types": "./list/list.d.ts",
+      "import": "./list.mjs",
+      "require": "./list.js"
+    },
+    "./list/list-expansion": {
+      "types": "./list/list-expansion.d.ts",
+      "import": "./list-expansion.mjs",
+      "require": "./list-expansion.js"
+    },
+    "./list/list-item": {
+      "types": "./list/list-item.d.ts",
+      "import": "./list-item.mjs",
+      "require": "./list-item.js"
+    },
+    "./list/nav-list-item": {
+      "types": "./list/nav-list-item.d.ts",
+      "import": "./nav-list-item.mjs",
+      "require": "./nav-list-item.js"
+    },
+    "./list/radio-list-item": {
+      "types": "./list/radio-list-item.d.ts",
+      "import": "./radio-list-item.mjs",
+      "require": "./radio-list-item.js"
+    },
+    "./menu": {
+      "types": "./menu/menu.d.ts",
+      "import": "./menu.mjs",
+      "require": "./menu.js"
+    },
+    "./radio": {
+      "types": "./radio/radio.d.ts",
+      "import": "./radio.mjs",
+      "require": "./radio.js"
+    },
+    "./select": {
+      "types": "./select/select.d.ts",
+      "import": "./select.mjs",
+      "require": "./select.js"
+    },
+    "./side-sheet": {
+      "types": "./side-sheet/side-sheet.d.ts",
+      "import": "./side-sheet.mjs",
+      "require": "./side-sheet.js"
+    },
+    "./slider": {
+      "types": "./slider/slider.d.ts",
+      "import": "./slider.mjs",
+      "require": "./slider.js"
+    },
+    "./slider-range": {
+      "types": "./slider/slider-range.d.ts",
+      "import": "./slider-range.mjs",
+      "require": "./slider-range.js"
+    },
+    "./snackbar": {
+      "types": "./snackbar/snackbar.d.ts",
+      "import": "./snackbar.mjs",
+      "require": "./snackbar.js"
+    },
+    "./status-header": {
+      "types": "./status-header.d.ts",
+      "import": "./status-header.mjs",
+      "require": "./status-header.js"
+    },
+    "./status-header-item": {
+      "types": "./status-header/status-header-item.d.ts",
+      "import": "./status-header-item.mjs",
+      "require": "./status-header-item.js"
+    },
+    "./switch": {
+      "types": "./switch/switch.d.ts",
+      "import": "./switch.mjs",
+      "require": "./switch.js"
+    },
+    "./tab": {
+      "types": "./tab/tab.d.ts",
+      "import": "./tab.mjs",
+      "require": "./tab.js"
+    },
+    "./tab-bar": {
+      "types": "./tab/tab-bar.d.ts",
+      "import": "./tab-bar.mjs",
+      "require": "./tab-bar.js"
+    },
+    "./textarea": {
+      "types": "./textarea/textarea.d.ts",
+      "import": "./textarea.mjs",
+      "require": "./textarea.js"
+    },
+    "./textfield": {
+      "types": "./textfield/textfield.d.ts",
+      "import": "./textfield.mjs",
+      "require": "./textfield.js"
+    },
+    "./text-lockup": {
+      "types": "./text-lockup/text-lockup.d.ts",
+      "import": "./text-lockup.mjs",
+      "require": "./text-lockup.js"
+    },
+    "./toolbar": {
+      "types": "./toolbar/toolbar.d.ts",
+      "import": "./toolbar.mjs",
+      "require": "./toolbar.js"
+    },
+    "./tooltip": {
+      "types": "./tooltip/tooltip.d.ts",
+      "import": "./tooltip.mjs",
+      "require": "./tooltip.js"
+    },
+    "./top-app-bar": {
+      "types": "./top-app-bar/top-app-bar.d.ts",
+      "import": "./top-app-bar.mjs",
+      "require": "./top-app-bar.js"
+    },
+    "./top-app-bar-fixed": {
+      "types": "./top-app-bar/top-app-bar-fixed.d.ts",
+      "import": "./top-app-bar-fixed.mjs",
+      "require": "./top-app-bar-fixed.js"
+    },
+    "./tree-list": {
+      "types": "./tree-list/tree-list.d.ts",
+      "import": "./tree-list.mjs",
+      "require": "./tree-list.js"
+    },
+    "./tree-list-item": {
+      "types": "./tree-list/tree-list-item.d.ts",
+      "import": "./tree-list-item.mjs",
+      "require": "./tree-list-item.js"
+    },
+    "./typography": {
+      "types": "./typography/typography.d.ts",
+      "import": "./typography.mjs",
+      "require": "./typography.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX"
+}

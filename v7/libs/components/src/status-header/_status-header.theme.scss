@@ -1,0 +1,79 @@
+@mixin theme {
+  .status-header {
+    --cv-status-header-background: transparent;
+    --cv-status-header-icon-background: var(
+      --mdc-theme-surface-neutral-highlight-hover
+    );
+    --cv-status-header-icon-color: var(--mdc-theme-text-icon-on-background);
+    --cv-status-header-status-color: var(--mdc-theme-on-surface);
+
+    background-color: var(--cv-status-header-background);
+
+    .status-header-content {
+      max-width: inherit;
+      flex-direction: column;
+    }
+
+    .status-header-icon {
+      background-color: var(--cv-status-header-icon-background);
+      color: var(--cv-status-header-icon-color);
+    }
+
+    .status-header-text {
+      --mdc-theme-primary: var(--mdc-theme-surface-neutral-highlight-hover);
+      --mdc-theme-on-surface: var(--mdc-theme-text-icon-on-background);
+
+      color: var(--cv-status-header-status-color);
+    }
+
+    .status-header-helper {
+      color: var(--mdc-theme-text-secondary-on-background);
+    }
+
+    .status-header-title-text {
+      color: var(--mdc-theme-on-surface);
+    }
+
+    &.active {
+      --cv-status-header-background: var(
+        --mdc-theme-surface-secondary-highlight
+      );
+      --cv-status-header-icon-background: var(
+        --mdc-theme-surface-secondary-highlight-hover
+      );
+      --cv-status-header-icon-color: var(--mdc-theme-secondary);
+      --cv-status-header-status-color: var(--mdc-theme-secondary);
+    }
+
+    &.caution {
+      --cv-status-header-background: var(--mdc-theme-surface-caution-highlight);
+      --cv-status-header-icon-background: var(
+        --mdc-theme-surface-caution-highlight-hover
+      );
+      --cv-status-header-icon-color: var(--mdc-theme-caution);
+      --cv-status-header-status-color: var(--mdc-theme-caution);
+    }
+
+    &.error {
+      --cv-status-header-background: var(
+        --mdc-theme-surface-negative-highlight
+      );
+      --cv-status-header-icon-background: var(
+        --mdc-theme-surface-negative-highlight-hover
+      );
+      --cv-status-header-icon-color: var(--mdc-theme-negative);
+      --cv-status-header-status-color: var(--mdc-theme-negative);
+    }
+
+    &.positive {
+      --cv-status-header-background: var(
+        --mdc-theme-surface-positive-highlight
+      );
+      --cv-status-header-icon-background: var(
+        --mdc-theme-surface-positive-highlight-hover
+      );
+      --cv-status-header-icon-color: var(--mdc-theme-positive);
+      --cv-status-header-status-color: var(--mdc-theme-positive);
+    }
+  }
+}

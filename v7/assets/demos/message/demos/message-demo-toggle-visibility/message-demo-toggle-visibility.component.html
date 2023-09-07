@@ -1,0 +1,19 @@
+<td-message
+  #messageDemo
+  class="pad-sm push-bottom"
+  color="primary"
+  label="Manage visibility"
+  sublabel="Click the button to hide message"
+>
+  <button td-message-actions mat-icon-button (click)="messageDemo.close()">
+    <mat-icon>cancel</mat-icon>
+  </button>
+</td-message>
+<button
+  mat-button
+  color="accent"
+  class="push-top-sm pull-bottom"
+  (click)="messageDemo.toggle()"
+>
+  Toggle Visibility
+</button>

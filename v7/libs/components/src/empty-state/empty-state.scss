@@ -1,0 +1,54 @@
+@use '@material/typography/mdc-typography';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.icon-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: var(--mdc-theme-background);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.covalent-icon {
+  font-size: 40px;
+  color: var(--mdc-theme-text-secondary-on-background);
+}
+
+.mdc-typography--headline6 {
+  font-family: var(--mdc-typography-headline6-font-family);
+  font-size: var(--mdc-typography-headline6-font-size);
+  font-weight: var(--mdc-typography-headline6-font-weight);
+  line-height: var(--mdc-typography-headline6-line-height);
+  color: var(--mdc-theme-text-secondary-on-background);
+  margin: 16px 0 8px;
+}
+
+.mdc-typography--caption {
+  font-family: var(--mdc-typography-caption-font-family);
+  font-size: var(--mdc-typography-caption-font-size);
+  font-weight: var(--mdc-typography-caption-font-weight);
+  line-height: var(--mdc-typography-caption-line-height);
+  color: var(--mdc-theme-text-secondary-on-background);
+  margin: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0 20px;
+  margin-top: 16px;
+}
+
+h6 {
+  margin: 16px;
+}

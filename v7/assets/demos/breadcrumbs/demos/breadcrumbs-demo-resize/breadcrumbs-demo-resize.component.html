@@ -1,0 +1,38 @@
+<td-breadcrumbs #breadcrumbs>
+  <a
+    td-breadcrumb
+    [routerLink]="['/components', 'breadcrumbs', 'examples']"
+    [queryParams]="{ query: 1 }"
+    >Home</a
+  >
+  <a
+    td-breadcrumb
+    [routerLink]="['/components', 'breadcrumbs', 'examples']"
+    [queryParams]="{ query: 2 }"
+  >
+    Breadcrumb 1
+  </a>
+  <a
+    td-breadcrumb
+    [routerLink]="['/components', 'breadcrumbs', 'examples']"
+    [queryParams]="{ query: 3 }"
+  >
+    Breadcrumb 2
+  </a>
+  <a
+    td-breadcrumb
+    [routerLink]="['/components', 'breadcrumbs', 'examples']"
+    [queryParams]="{ query: 4 }"
+  >
+    Breadcrumb 3
+  </a>
+  <td-breadcrumb>Current</td-breadcrumb>
+</td-breadcrumbs>
+<mat-divider></mat-divider>
+<div>
+  <p>Total Breadcrumbs Count: {{ breadcrumbs?.count }}</p>
+  <p>
+    Hidden Breadcrumbs Count (shrink window to see):
+    {{ breadcrumbs?.hiddenBreadcrumbs?.length }}
+  </p>
+</div>
