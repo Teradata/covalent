@@ -23,9 +23,9 @@ export class CovalentExpansionPanel extends LitElement {
   }
 
   private _handleToggle = (e: CustomEvent): void => {
-    let toggledPanelIndex = e.detail.index;
-    let panel = this.panelItems[toggledPanelIndex];
-    let open = panel.open;
+    const toggledPanelIndex = e.detail.index;
+    const panel = this.panelItems[toggledPanelIndex];
+    const open = panel.open;
 
     // close the currently open panel if there is one
     this.panelItems.forEach((item) => {

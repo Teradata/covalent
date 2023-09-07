@@ -74,7 +74,7 @@ export class CovalentExpansionPanelItem extends LitElement {
   private _toggleContent() {
     this.open = !this.open;
 
-    let event = new CustomEvent('cv-expansionPanel-togglePanel', {
+    const event = new CustomEvent('cv-expansionPanel-togglePanel', {
       detail: {
         message: `Panel opened: ${this}`,
         bubbles: true,
