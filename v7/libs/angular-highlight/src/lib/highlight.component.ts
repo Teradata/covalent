@@ -44,7 +44,6 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   @Input()
   set content(content: string) {
     this._content = content;
-    console.log(this._content);
     if (this._initialized) {
       this._loadContent(this._content);
     }

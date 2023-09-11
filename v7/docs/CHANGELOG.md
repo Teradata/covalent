@@ -1,3 +1,9 @@
+# [7.1.0](https://github.com/Teradata/covalent/compare/v7.0.0...v7.1.0) (2023-09-07)
+
+### Features
+
+- **components:** expansion panel web component ([#2051](https://github.com/Teradata/covalent/issues/2051)) ([63f6640](https://github.com/Teradata/covalent/commit/63f664040b6776ec1f14ec85222a38a23a883127))
+
 # [7.0.0](https://github.com/Teradata/covalent/compare/v6.3.0...v7.0.0) (2023-08-24)
 
 ### Features
