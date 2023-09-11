@@ -1,3 +1,9 @@
+## [4.16.3](https://github.com/Teradata/covalent/compare/v4.16.2...v4.16.3) (2023-09-11)
+
+### Bug Fixes
+
+- remove console logs ([7fedc52](https://github.com/Teradata/covalent/commit/7fedc52af76f7cf56ead2f992b6d98e6ec10c895))
+
 ## [4.16.2](https://github.com/Teradata/covalent/compare/v4.16.1...v4.16.2) (2023-08-21)
 
 ### Bug Fixes
