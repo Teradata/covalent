@@ -84,7 +84,6 @@ export class TdCopyCodeButtonComponent {
   }
 
   copyClicked(): void {
-    console.log('copyClicked');
     this.copyButton.checked = false;
   }
 }
