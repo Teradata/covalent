@@ -68,19 +68,22 @@
           Home
         </cv-nav-list-item>
 
-        <cv-expansion-list graphic="avatar" hasChildren>
+        <cv-nav-list-item graphic="avatar" hasChildren>
           <span>Editor</span>
-          <cv-icon class="covalent-icon" slot="graphic"
-              >product_editor</cv-icon
-            >
-          <cv-list class="subnav" slot="expansion-panel" activatable>
+          <cv-icon class="covalent-icon" slot="graphic">product_editor</cv-icon>
+          <cv-list
+            class="subnav"
+            slot="expansion-panel"
+            activatable
+            rootTabbable
+          >
             <cv-nav-list-item>Scripts</cv-nav-list-item>
             <cv-nav-list-item>Scripts</cv-nav-list-item>
             <cv-nav-list-item>Scripts</cv-nav-list-item>
             <cv-nav-list-item>Scripts</cv-nav-list-item>
             <cv-nav-list-item>Scripts</cv-nav-list-item>
           </cv-list>
-        </cv-expansion-list>
+        </cv-nav-list-item>
 
         <cv-nav-list-item graphic="avatar">
           <span>Sites</span>
