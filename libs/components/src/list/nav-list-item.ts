@@ -2,7 +2,6 @@ import { css, html, nothing, unsafeCSS } from 'lit';
 import {
   customElement,
   property,
-  queryAssignedElements,
   queryAssignedNodes,
 } from 'lit/decorators.js';
 import { CovalentListItem } from './list-item';
@@ -38,7 +37,7 @@ export class CovalentNavRailListItem extends CovalentListItem {
   @queryAssignedNodes({ slot: 'expansion-panel' })
   expansionPanelElements!: CovalentList[];
 
-  lastKeySelected: number;
+  lastKeySelected = 0;
 
   @property({ type: Boolean, reflect: true })
   open = false;
@@ -50,11 +49,14 @@ export class CovalentNavRailListItem extends CovalentListItem {
     super();
   }
 
-  private _toggleOpen() {
+  private _toggleOpen(event: Event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
     this.open = !this.open;
     this.selected = this.open;
     this.activated = this.open;
   }
+
   private _handleKeydown(event: KeyboardEvent) {
     if (!this.hasChildren) {
       return;
@@ -65,7 +67,7 @@ export class CovalentNavRailListItem extends CovalentListItem {
       event.stopImmediatePropagation();
       // Toggle only if target press is header else make sure the top headers is deselected
       if ((event.target as CovalentNavRailListItem).hasChildren) {
-        this._toggleOpen();
+        this._toggleOpen(event);
       } else {
         this._deselectHeader();
       }
