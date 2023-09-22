@@ -1,3 +1,26 @@
+# [7.1.0-beta.1](https://github.com/Teradata/covalent/compare/v7.0.0...v7.1.0-beta.1) (2023-09-22)
+
+### Bug Fixes
+
+- **compnents:** nav behavior updates ([2607713](https://github.com/Teradata/covalent/commit/260771387f62c1cd8172598d60eac5bae36e5ce4))
+- **components:** list ([95b50f1](https://github.com/Teradata/covalent/commit/95b50f156fe72c5c6f1785dc18df07f9e9150dbd))
+- **components:** nav styling updates ([526008a](https://github.com/Teradata/covalent/commit/526008ad9884a3ad647dbcc5c19fb9c086d87168))
+- **components:** nav updates ([788c7ab](https://github.com/Teradata/covalent/commit/788c7ab4c9a2c3d65543ac4aeeac6f32636e2c83))
+- **components:** navigation styling updartes ([87906fa](https://github.com/Teradata/covalent/commit/87906fa3da9cf692764c733cb0ce123d410b8882))
+- **components:** update appshell story ([b3ad246](https://github.com/Teradata/covalent/commit/b3ad2463dca33a0cb2054914c909436995b67a9a))
+- **componets:** nav styling updates ([01a944f](https://github.com/Teradata/covalent/commit/01a944fcf70c2a1d5af8116fd058fcde374eca8a))
+
+### Features
+
+- **components:** nav updates ([e4a7054](https://github.com/Teradata/covalent/commit/e4a705436b470f5c37e93195c0789c7c44b341a4))
+- **components:** navigation expansion enhancements ([3498394](https://github.com/Teradata/covalent/commit/349839469228d509da777c13fe2a05e932f0b599))
+- **components:** navigation expansion enhancements ([c0e7d3e](https://github.com/Teradata/covalent/commit/c0e7d3ef72f58eee4915c4c8b475177c76ef02f7))
+- **components:** new nav style update ([3f064bf](https://github.com/Teradata/covalent/commit/3f064bf4c94d39a161b54e67f6c1ab51381c9e5c))
+- **components:** update ([fbe0923](https://github.com/Teradata/covalent/commit/fbe09230c7f88905f44faebadb04e145df0ea945))
+- **components:** update ([715fb05](https://github.com/Teradata/covalent/commit/715fb05ed88fea869a5c0010a3b2970c0201a41f))
+- **components:** updating nav UX ([1dbd1f7](https://github.com/Teradata/covalent/commit/1dbd1f7531e98e7855ab3f4f53a71ee3f5ab011c))
+- **tokens:** new font inter ([5dae606](https://github.com/Teradata/covalent/commit/5dae60641ecd3796a059dbd93b2aac407dc9f967))
+
 # [7.0.0](https://github.com/Teradata/covalent/compare/v6.3.0...v7.0.0) (2023-08-24)
 
 ### Features
@@ -13,6 +36,7 @@
 ### Features
 
 - add raw code toggle to highlight component and update highlight theme ([#2044](https://github.com/Teradata/covalent/issues/2044)) ([8bfb682](https://github.com/Teradata/covalent/commit/8bfb6820deca222080b3b026de5a336d4d33d221))
+
 # [6.3.0-beta.4](https://github.com/Teradata/covalent/compare/v6.3.0-beta.3...v6.3.0-beta.4) (2023-08-14)
 
 ### Bug Fixes
