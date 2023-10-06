@@ -19,7 +19,7 @@
 
 :host([open]) {
   --cv-list-padding-right: 16px;
-  --cv-list-item-border-radius:  0 28px 28px 0;
+  --cv-list-item-border-radius: 0 28px 28px 0;
   --cv-list-item-width: 100%;
   --cv-list-item-graphic-margin-left: 12px;
   --cv-list-item-expansion-icon-margin: -24px;
@@ -54,7 +54,8 @@
 
   /* Desktop only styles */
   @media only screen and (min-width: 768px) {
-    .cov-drawer--hovered &, &.cov-drawer--hovered-closing {
+    .cov-drawer--hovered &,
+    &.cov-drawer--hovered-closing {
       margin-left: 72px;
     }
     :not(.cov-drawer--forcedOpen) & {
@@ -148,7 +149,7 @@ nav.navigation {
     display: block;
   }
 
-  :not(.cov-drawer--forcedOpen) & ,
+  :not(.cov-drawer--forcedOpen) &,
   :not(.cov-drawer--forcedOpen) &.mdc-drawer--closed,
   :not(.cov-drawer--forcedOpen) &.mdc-drawer--closing {
     position: absolute;
