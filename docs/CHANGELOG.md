@@ -1,3 +1,9 @@
+# [7.1.0-beta.2](https://github.com/Teradata/covalent/compare/v7.1.0-beta.1...v7.1.0-beta.2) (2023-10-06)
+
+### Features
+
+- **updates:** app shell style fixes ([ff7b12a](https://github.com/Teradata/covalent/commit/ff7b12aeb914a2a8bcd255ca632744b30786c968))
+
 # [7.1.0-beta.1](https://github.com/Teradata/covalent/compare/v7.0.0...v7.1.0-beta.1) (2023-09-22)
 
 ### Bug Fixes
