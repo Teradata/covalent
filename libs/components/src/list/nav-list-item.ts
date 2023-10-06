@@ -2,11 +2,12 @@ import { css, html, nothing, unsafeCSS } from 'lit';
 import {
   customElement,
   property,
-  queryAssignedNodes,
+  queryAssignedElements,
 } from 'lit/decorators.js';
 import { CovalentListItem } from './list-item';
 import { styles as controlStyle } from '@material/mwc-list/mwc-control-list-item.css';
 import { styles as listItemStyle } from '@material/mwc-list/mwc-list-item.css';
+import { RequestSelectedDetail } from '@material/mwc-list/mwc-list-item-base';
 import styles from './list-item.scss?inline';
 import navListStyles from './nav-list-item.scss?inline';
 import CovalentList from './list';
@@ -34,7 +35,7 @@ export class CovalentNavRailListItem extends CovalentListItem {
     `,
   ];
 
-  @queryAssignedNodes({ slot: 'expansion-panel' })
+  @queryAssignedElements({ slot: 'expansion-panel', flatten: true })
   expansionPanelElements!: CovalentList[];
 
   lastKeySelected = 0;
@@ -45,31 +46,31 @@ export class CovalentNavRailListItem extends CovalentListItem {
   @property({ type: Boolean, reflect: true })
   hasChildren = false;
 
-  constructor() {
-    super();
-  }
+  activated = false;
 
-  private _toggleOpen(event: Event) {
-    event.preventDefault();
-    event.stopImmediatePropagation();
+  private _toggleOpen() {
     this.open = !this.open;
-    this.selected = this.open;
-    this.activated = this.open;
   }
 
   private _handleKeydown(event: KeyboardEvent) {
+    const firstEl = this.expansionPanelElements[0];
+    const nextIndex = firstEl ? firstEl?.getFocusedItemIndex() : 0;
+    const totalItems = firstEl?.items.length ?? 0;
+
     if (!this.hasChildren) {
       return;
     }
+
+    // transform to a switch case
 
     if (event.code === 'Enter') {
       event.preventDefault();
       event.stopImmediatePropagation();
       // Toggle only if target press is header else make sure the top headers is deselected
       if ((event.target as CovalentNavRailListItem).hasChildren) {
-        this._toggleOpen(event);
+        this._toggleOpen();
       } else {
-        this._deselectHeader();
+        this._deselectHeader(event);
       }
       return;
     }
@@ -77,10 +78,6 @@ export class CovalentNavRailListItem extends CovalentListItem {
     if (!this.open) {
       return;
     }
-
-    const firstEl = this.expansionPanelElements[0];
-    const nextIndex = firstEl.getFocusedItemIndex();
-    const totalItems = firstEl.items.length;
 
     // Arrow up from top sub item
     if (
@@ -99,14 +96,12 @@ export class CovalentNavRailListItem extends CovalentListItem {
     if (event.code === 'ArrowDown' && nextIndex === -1) {
       event.preventDefault();
       event.stopImmediatePropagation();
-      //this._deselectHeader();
       firstEl.focusItemAtIndex(0);
       this.lastKeySelected = 0;
     }
     if (event.code === 'ArrowUp' && nextIndex !== -1) {
       event.preventDefault();
       event.stopImmediatePropagation();
-      //this._deselectHeader();
       firstEl.focusItemAtIndex(nextIndex);
       this.lastKeySelected = nextIndex;
     }
@@ -118,34 +113,33 @@ export class CovalentNavRailListItem extends CovalentListItem {
     ) {
       event.preventDefault();
       event.stopImmediatePropagation();
-      //this._deselectHeader();
       firstEl.focusItemAtIndex(nextIndex);
       this.lastKeySelected = nextIndex;
     }
   }
 
-  private _deselectHeader() {
-    setTimeout(() => {
-      this.selected = false;
-      this.activated = false;
-      this.blur();
+  private _handleRequestSelected(event: Event) {
+    const ev = event as CustomEvent<RequestSelectedDetail>;
+    if (
+      this.hasChildren &&
+      ev.detail.selected === false &&
+      ev.detail.source === 'property'
+    ) {
+      this._deselectChildren();
+    }
+  }
+
+  private _deselectChildren() {
+    this.expansionPanelElements.forEach((subnav) => {
+      subnav.items.forEach((items) => (items.selected = false));
     });
   }
 
-  override connectedCallback() {
-    super.connectedCallback();
-
-    this.addEventListener('keydown', this._handleKeydown);
-  }
-
-  override disconnectedCallback() {
-    super.disconnectedCallback();
-
-    this.removeEventListener('keydown', this._handleKeydown);
-  }
-
-  override render() {
-    return this.hasChildren ? this.renderExpansionItem() : super.render();
+  private _deselectHeader(event: Event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    this.fireRequestSelected(false, 'interaction');
+    this.activated = false;
   }
 
   renderExpansionItem() {
@@ -154,7 +148,6 @@ export class CovalentNavRailListItem extends CovalentListItem {
     const meta = this.hasMeta ? this.renderMeta() : nothing;
     const arrowIcon = this.open ? 'arrow_drop_down' : 'arrow_right';
     const arrow = html`<cv-icon class="expansion-icon">${arrowIcon}</cv-icon>`;
-    const childSlot = html`<slot name="child"></slot>`;
 
     return html`
       <div
@@ -163,12 +156,30 @@ export class CovalentNavRailListItem extends CovalentListItem {
         @keydown=${this._toggleOpen}
         class="expansion-header"
       >
-        ${this.renderRipple()} ${arrow} ${graphic} ${text} ${meta} ${childSlot}
+        ${this.renderRipple()} ${arrow} ${graphic} ${text} ${meta}
       </div>
       <div class="expansion-panel" @click=${this._deselectHeader}>
         <slot name="expansion-panel"></slot>
       </div>
     `;
+  }
+
+  override connectedCallback() {
+    super.connectedCallback();
+
+    this.addEventListener('keydown', this._handleKeydown);
+    this.addEventListener('request-selected', this._handleRequestSelected);
+  }
+
+  override disconnectedCallback() {
+    super.disconnectedCallback();
+
+    this.removeEventListener('keydown', this._handleKeydown);
+    this.addEventListener('request-selected', this._handleRequestSelected);
+  }
+
+  override render() {
+    return this.hasChildren ? this.renderExpansionItem() : super.render();
   }
 }
 
