@@ -9,7 +9,7 @@ import styles from './status-header.scss?inline';
  * @slot - This element has a slot
  */
 @customElement('cv-status-header')
-export class CovalentStatusHeader extends StatusHeaderBase {
+export default class CovalentStatusHeader extends StatusHeaderBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -22,5 +22,3 @@ declare global {
     'cv-status-header': CovalentStatusHeader;
   }
 }
-
-export default CovalentStatusHeader;

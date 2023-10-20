@@ -12,7 +12,7 @@ declare global {
 }
 
 @customElement('cv-tooltip')
-export class CovalentTooltip extends LitElement {
+export default class CovalentTooltip extends LitElement {
   protected mdcFoundation!: MDCTooltipFoundation;
   protected readonly mdcFoundationClass = MDCTooltipFoundation;
   static override styles = [
@@ -181,5 +181,3 @@ export class CovalentTooltip extends LitElement {
     `;
   }
 }
-
-export default CovalentTooltip;

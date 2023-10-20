@@ -10,12 +10,10 @@ declare global {
 }
 
 @customElement('cv-card')
-export class CovalentCard extends CardBase {
+export default class CovalentCard extends CardBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
     `,
   ];
 }
-
-export default CovalentCard;

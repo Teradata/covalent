@@ -9,8 +9,6 @@ declare global {
 }
 
 @customElement('cv-tab-bar')
-export class CovalentTabBar extends TabBarBase {
+export default class CovalentTabBar extends TabBarBase {
   static override styles = [styles];
 }
-
-export default CovalentTabBar;

@@ -11,7 +11,7 @@ declare global {
 }
 
 @customElement('cv-textfield')
-export class CovalentTextField extends TextFieldBase {
+export default class CovalentTextField extends TextFieldBase {
   static override styles = [
     baseTextFieldStyles,
     css`
@@ -19,5 +19,3 @@ export class CovalentTextField extends TextFieldBase {
     `,
   ];
 }
-
-export default CovalentTextField;

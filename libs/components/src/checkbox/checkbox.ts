@@ -11,8 +11,6 @@ declare global {
 }
 
 @customElement('cv-checkbox')
-export class CovalentCheckbox extends CheckboxBase {
+export default class CovalentCheckbox extends CheckboxBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
-
-export default CovalentCheckbox;

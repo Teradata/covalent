@@ -9,8 +9,6 @@ declare global {
 }
 
 @customElement('cv-icon')
-export class CovalentIcon extends Icon {
+export default class CovalentIcon extends Icon {
   static override styles = [styles];
 }
-
-export default CovalentIcon

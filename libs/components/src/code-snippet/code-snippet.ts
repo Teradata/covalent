@@ -11,7 +11,7 @@ declare global {
 }
 
 @customElement('cv-code-snippet')
-export class CovalentCodeSnippet extends LitElement {
+export default class CovalentCodeSnippet extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -83,5 +83,3 @@ export class CovalentCodeSnippet extends LitElement {
     </div>`;
   }
 }
-
-export default CovalentCodeSnippet;

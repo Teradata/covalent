@@ -20,7 +20,7 @@ declare global {
  * @slot - This element has a slot
  */
 @customElement('cv-app-shell')
-export class CovalentAppShell extends DrawerBase {
+export default class CovalentAppShell extends DrawerBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -203,5 +203,3 @@ export class CovalentAppShell extends DrawerBase {
     `;
   }
 }
-
-export default CovalentAppShell;

@@ -11,7 +11,7 @@ declare global {
 }
 
 @customElement('cv-radio-icon')
-export class CovalentIconRadioToggle extends RadioBase {
+export default class CovalentIconRadioToggle extends RadioBase {
   static override styles = [
     radioStyle,
     css`
@@ -39,5 +39,3 @@ export class CovalentIconRadioToggle extends RadioBase {
     return html`${iconSlot}${textSlot}${ripple}`;
   }
 }
-
-export default CovalentIconRadioToggle;

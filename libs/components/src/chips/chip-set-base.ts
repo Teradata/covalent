@@ -18,7 +18,7 @@ import { MDCChipSetFoundation } from '@material/chips/chip-set/foundation';
 import { announce } from '@material/dom/announce';
 import { property, query } from 'lit/decorators.js';
 import { html, LitElement, PropertyValues } from 'lit';
-import { CovalentChip } from './chip';
+import CovalentChip from './chip';
 
 export class ChipSetBase extends LitElement {
   protected mdcFoundation!: MDCChipSetFoundation;

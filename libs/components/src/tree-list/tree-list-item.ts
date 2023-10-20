@@ -10,7 +10,7 @@ declare global {
 }
 
 @customElement('cv-tree-list-item')
-export class CovalentTreeListItem extends LitElement {
+export default class CovalentTreeListItem extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -81,5 +81,3 @@ export class CovalentTreeListItem extends LitElement {
     this.dispatchEvent(event);
   }
 }
-
-export default CovalentTreeListItem;

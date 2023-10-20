@@ -9,7 +9,7 @@ declare global {
 }
 // Wraps cv-tree-list-item components
 @customElement('cv-tree-list')
-export class CovalentTreeList extends LitElement {
+export default class CovalentTreeList extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -49,5 +49,3 @@ const handleSelect = (e: Event): void => {
   // Add the selected styling to the currently selected item.
   current!.classList.add('selected');
 };
-
-export default CovalentTreeList;

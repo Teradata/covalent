@@ -10,12 +10,10 @@ declare global {
 }
 
 @customElement('cv-toolbar')
-export class CovalentToolbar extends TopAppBarBase {
+export default class CovalentToolbar extends TopAppBarBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
     `,
   ];
 }
-
-export default CovalentToolbar;

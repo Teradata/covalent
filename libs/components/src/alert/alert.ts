@@ -9,7 +9,7 @@ import styles from './alert.scss?inline';
  * @slot - This element has a slot
  */
 @customElement('cv-alert')
-export class CovalentAlert extends AlertBase {
+export default class CovalentAlert extends AlertBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -22,5 +22,3 @@ declare global {
     'cv-alert': CovalentAlert;
   }
 }
-
-export default CovalentAlert;

@@ -10,7 +10,7 @@ declare global {
 }
 
 @customElement('cv-text-lockup')
-export class CovalentTextLockup extends LitElement {
+export default class CovalentTextLockup extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -51,5 +51,3 @@ export class CovalentTextLockup extends LitElement {
     return this.icon ? html`<cv-icon>${this.icon}</cv-icon>` : nothing;
   }
 }
-
-export default CovalentTextLockup;

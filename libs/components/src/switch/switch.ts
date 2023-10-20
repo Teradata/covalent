@@ -11,8 +11,6 @@ declare global {
 }
 
 @customElement('cv-switch')
-export class CovalentSwitch extends SwitchBase {
+export default class CovalentSwitch extends SwitchBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
-
-export default CovalentSwitch;

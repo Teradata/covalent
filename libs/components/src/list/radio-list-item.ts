@@ -10,8 +10,6 @@ declare global {
 }
 
 @customElement('cv-radio-list-item')
-export class CovalentRadioListItem extends RadioListItemBase {
+export default class CovalentRadioListItem extends RadioListItemBase {
   static override styles = [styles, controlStyle];
 }
-
-export default CovalentRadioListItem;

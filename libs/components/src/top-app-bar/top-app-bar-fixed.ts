@@ -11,7 +11,7 @@ declare global {
 }
 
 @customElement('cv-top-app-bar-fixed')
-export class CovalentTopAppBarFixed extends TopAppBarFixedBase {
+export default class CovalentTopAppBarFixed extends TopAppBarFixedBase {
   static override styles = [
     styles,
     css`
@@ -19,5 +19,3 @@ export class CovalentTopAppBarFixed extends TopAppBarFixedBase {
     `,
   ];
 }
-
-export default CovalentTopAppBarFixed;

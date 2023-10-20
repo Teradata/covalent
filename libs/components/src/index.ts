@@ -4,6 +4,8 @@ export * from './app-shell/app-shell';
 export * from './button/button';
 export * from './checkbox/checkbox';
 export * from './card/card';
+export * from './chips/chip';
+export * from './chips/chip-set';
 export * from './circular-progress/circular-progress';
 export * from './code-snippet/code-snippet';
 export * from './dialog/dialog';

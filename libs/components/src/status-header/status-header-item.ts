@@ -14,7 +14,7 @@ declare global {
  * @slot - This element has a slot
  */
 @customElement('cv-status-header-item')
-export class CovalentStatusHeaderItem extends LitElement {
+export default class CovalentStatusHeaderItem extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -28,5 +28,3 @@ export class CovalentStatusHeaderItem extends LitElement {
     return html`<span>${this.label}</span> <slot></slot>`;
   }
 }
-
-export default CovalentStatusHeaderItem;

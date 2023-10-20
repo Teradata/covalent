@@ -9,8 +9,6 @@ declare global {
 }
 
 @customElement('cv-menu')
-export class CovalentMenu extends MenuBase {
+export default class CovalentMenu extends MenuBase {
   static override styles = [styles];
 }
-
-export default CovalentMenu;

@@ -10,8 +10,6 @@ declare global {
 }
 
 @customElement('cv-check-list-item')
-export class CovalentCheckListItem extends CheckListItemBase {
+export default class CovalentCheckListItem extends CheckListItemBase {
   static override styles = [styles, controlStyle];
 }
-
-export default CovalentCheckListItem;

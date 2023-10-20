@@ -11,8 +11,6 @@ declare global {
 }
 
 @customElement('cv-snackbar')
-export class CovalentSnackbar extends SnackbarBase {
+export default class CovalentSnackbar extends SnackbarBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
-
-export default CovalentSnackbar;

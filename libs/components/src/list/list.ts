@@ -11,11 +11,9 @@ declare global {
 }
 
 @customElement('cv-list')
-export class CovalentList extends ListBase {
+export default class CovalentList extends ListBase {
   static override styles = [
     baseStyles,
     css`${unsafeCSS(styles)}`,
   ];
 }
-
-export default CovalentList;

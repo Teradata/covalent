@@ -11,7 +11,7 @@ declare global {
 }
 
 @customElement('cv-empty-state')
-export class CovalentEmptyState extends LitElement {
+export default class CovalentEmptyState extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -57,5 +57,3 @@ export class CovalentEmptyState extends LitElement {
     `;
   }
 }
-
-export default CovalentEmptyState;

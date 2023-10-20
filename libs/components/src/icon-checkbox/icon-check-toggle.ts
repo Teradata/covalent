@@ -13,7 +13,7 @@ declare global {
 }
 
 @customElement('cv-checkbox-icon')
-export class CovalentIconCheckToggle extends CheckboxBase {
+export default class CovalentIconCheckToggle extends CheckboxBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -57,5 +57,3 @@ export class CovalentIconCheckToggle extends CheckboxBase {
     this.checked = !this.checked;
   }
 }
-
-export default CovalentIconCheckToggle

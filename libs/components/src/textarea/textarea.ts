@@ -12,8 +12,6 @@ declare global {
 }
 
 @customElement('cv-textarea')
-export class CovalentTextArea extends TextAreaBase {
+export default class CovalentTextArea extends TextAreaBase {
   static override styles = [textfieldStyles, baseTextAreaStyles, css`${unsafeCSS(styles)}`];
 }
-
-export default CovalentTextArea;

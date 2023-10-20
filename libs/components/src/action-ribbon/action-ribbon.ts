@@ -9,7 +9,7 @@ import styles from './action-ribbon.scss?inline';
  * @slot - This element has a slot
  */
 @customElement('cv-action-ribbon')
-export class CovalentActionRibbon extends ActionRibbonBase {
+export default class CovalentActionRibbon extends ActionRibbonBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -22,5 +22,3 @@ declare global {
     'cv-action-ribbon': CovalentActionRibbon;
   }
 }
-
-export default CovalentActionRibbon;

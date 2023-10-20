@@ -9,7 +9,7 @@ import styles from './chip-set.scss?inline';
  * @slot - This element has a slot
  */
 @customElement('cv-chip-set')
-export class CovalentChipSet extends ChipSetBase {
+export default class CovalentChipSet extends ChipSetBase {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -22,6 +22,3 @@ declare global {
     'cv-chip-set': CovalentChipSet;
   }
 }
-
-
-export default CovalentChipSet;

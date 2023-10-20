@@ -11,8 +11,6 @@ declare global {
 }
 
 @customElement('cv-select')
-export class CovalentSelect extends SelectBase {
+export default class CovalentSelect extends SelectBase {
   static override styles = [css`${unsafeCSS(styles)}`, baseStyles];
 }
-
-export default CovalentSelect;

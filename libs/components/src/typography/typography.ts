@@ -9,7 +9,7 @@ declare global {
 }
 
 @customElement('cv-typography')
-export class CovalentTypography extends LitElement {
+export default class CovalentTypography extends LitElement {
   static override styles = [
     css`
       ${unsafeCSS(styles)}
@@ -23,5 +23,3 @@ export class CovalentTypography extends LitElement {
     return html`<slot class="mdc-typography--${this.scale}"></slot>`;
   }
 }
-
-export default CovalentTypography;

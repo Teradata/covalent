@@ -11,8 +11,6 @@ declare global {
 }
 
 @customElement('cv-dialog')
-export class CovalentDialog extends DialogBase {
+export default class CovalentDialog extends DialogBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
-
-export default CovalentDialog;

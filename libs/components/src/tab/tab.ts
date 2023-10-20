@@ -11,8 +11,6 @@ declare global {
 }
 
 @customElement('cv-tab')
-export class CovalentTab extends TabBase {
+export default class CovalentTab extends TabBase {
   static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 }
-
-export default CovalentTab;
