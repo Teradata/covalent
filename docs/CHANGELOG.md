@@ -1,3 +1,9 @@
+# [7.1.0-beta.3](https://github.com/Teradata/covalent/compare/v7.1.0-beta.2...v7.1.0-beta.3) (2023-10-20)
+
+### Features
+
+- **components:** changing up name default exports ([d512920](https://github.com/Teradata/covalent/commit/d51292010f3593d76798f863eb81b599a19a2aa3))
+
 # [7.1.0-beta.2](https://github.com/Teradata/covalent/compare/v7.1.0-beta.1...v7.1.0-beta.2) (2023-10-06)
 
 ### Features
