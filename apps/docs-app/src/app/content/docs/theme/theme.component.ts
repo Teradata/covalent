@@ -21,7 +21,7 @@ export class ThemeComponent {
   // Define a custom typography config that overrides the font-family
   // or any typography level.
   $typography: mat.define-typography-config(
-    $font-family: 'Roboto, monospace',
+    $font-family: 'Inter, monospace',
     $headline: mat.define-typography-level(32px, 48px, 700)
   );
   

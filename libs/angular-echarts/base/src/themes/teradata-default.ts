@@ -1,6 +1,6 @@
 /* tslint:disable */
 export default {
-  color: ['#4d5b62', '#008ab6', '#f3753f', '#2cc0bf', '#fed887'],
+  color: ['#4d5b62', '#008ab6', '#ff5f02', '#2cc0bf', '#fed887'],
   backgroundColor: 'transparent',
   textStyle: {},
   title: {
@@ -170,7 +170,7 @@ export default {
     symbolSize: '6',
     symbol: 'emptyCircle',
     smooth: true,
-    color: ['#4d5b62', '#008ab6', '#f3753f', '#2cc0bf', '#fed887'],
+    color: ['#4d5b62', '#008ab6', '#ff5f02', '#2cc0bf', '#fed887'],
     label: {
       normal: {
         textStyle: {
@@ -430,7 +430,7 @@ export default {
     },
   },
   visualMap: {
-    color: ['#4d5b62', '#008ab6', '#f3753f', '#2cc0bf', '#fed887'],
+    color: ['#4d5b62', '#008ab6', '#ff5f02', '#2cc0bf', '#fed887'],
   },
   dataZoom: {
     backgroundColor: 'rgba(255,255,255,0)',

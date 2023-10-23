@@ -20,7 +20,14 @@
           "tsConfig": "libs/markdown/tsconfig.lib.json"
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "projects": ["angular", "angular-highlight"],
+          "target": "build",
+          "params": "ignore"
+        }
+      ]
     },
     "test": {
       "executor": "@nrwl/jest:jest",

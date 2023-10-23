@@ -7,8 +7,12 @@
 @import '../../../libs/angular-guided-tour/guided-tour-theme';
 @import '../../../libs/angular-guided-tour/styles/guided-tour.scss';
 
-// Import Roboto styles from google apis CDN
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+// Teradata brand
+/* stylelint-disable-next-line no-invalid-position-at-import-rule */
+@import './teradata-branding';
+
+// Import Inter styles from google apis CDN
+@import url('https://fonts.googleapis.com/css?family=Inter:300,400,500');
 
 // Plus imports for other components in your app.
 
@@ -30,10 +34,6 @@ $my-typography: mat.define-typography-config();
 
 // Setting the toolbar to the proper spec weight
 @include mat-toolbar-typography($custom-toolbar-typography);
-
-// Teradata brand
-/* stylelint-disable-next-line no-invalid-position-at-import-rule */
-@import './teradata-branding';
 
 // Include the core styles for Covalent
 @include covalent-core();
@@ -72,13 +72,21 @@ $theme: mat.define-light-theme(
     typography: $my-typography,
   )
 );
+$theme: map_merge(
+  $theme,
+  (
+    background: $td-light-theme-background,
+    foreground: $td-light-theme-foreground,
+  )
+);
+
 $foreground: map-get($theme, foreground);
 $background: map-get($theme, background);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-//@include mat.all-component-themes($theme);
+@include mat.all-component-themes($theme);
 @include covalent-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme($theme);
@@ -100,9 +108,16 @@ body .mat-card {
 // Dark theme
 @media (prefers-color-scheme: dark) {
   $primary-dark: mat-palette($td-slate, 800, 200, 900);
-  $accent-dark: mat-palette($td-orange, 800, 200, 900);
+  $accent-dark: mat-palette($td-orange, 500);
   $warn-dark: mat-palette($mat-red, 600, 200, 900);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+  $theme-dark: map_merge(
+    $theme-dark,
+    (
+      background: $td-dark-theme-background,
+      foreground: $td-dark-theme-foreground,
+    )
+  );
   $background: map-get($theme-dark, background);
 
   @include mat.all-component-themes($theme-dark);

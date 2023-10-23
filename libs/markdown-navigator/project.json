@@ -22,7 +22,7 @@
       "defaultConfiguration": "production",
       "dependsOn": [
         {
-          "projects": ["markdown-flavored"],
+          "projects": ["angular", "angular-highlight", "markdown-flavored"],
           "target": "build",
           "params": "ignore"
         }
