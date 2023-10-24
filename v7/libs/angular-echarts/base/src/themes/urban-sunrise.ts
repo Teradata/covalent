@@ -1,6 +1,6 @@
 /* tslint:disable */
 export default {
-  color: ['#667279', '#979ea4', '#caced0', '#ffbb9c', '#fd986d', '#F3753F'],
+  color: ['#667279', '#979ea4', '#caced0', '#ffbb9c', '#fd986d', '#ff5f02'],
   backgroundColor: 'transparent',
   textStyle: {},
   title: {
@@ -146,9 +146,9 @@ export default {
   candlestick: {
     itemStyle: {
       normal: {
-        color: '#f3753f',
+        color: '#ff5f02',
         color0: 'transparent',
-        borderColor: '#f3753f',
+        borderColor: '#ff5f02',
         borderColor0: '#667279',
         borderWidth: '2',
       },
@@ -170,7 +170,7 @@ export default {
     symbolSize: '6',
     symbol: 'emptyCircle',
     smooth: true,
-    color: ['#667279', '#979ea4', '#caced0', '#ffbb9c', '#fd986d', '#F3753F'],
+    color: ['#667279', '#979ea4', '#caced0', '#ffbb9c', '#fd986d', '#ff5f02'],
     label: {
       normal: {
         textStyle: {
@@ -413,7 +413,7 @@ export default {
       },
     },
     checkpointStyle: {
-      color: '#f3753f',
+      color: '#ff5f02',
       borderColor: 'rgba(255,178,72,0.41)',
     },
     label: {
@@ -430,7 +430,7 @@ export default {
     },
   },
   visualMap: {
-    color: ['#667279', '#979ea4', '#caced0', '#ffbb9c', '#fd986d', '#F3753F'],
+    color: ['#667279', '#979ea4', '#caced0', '#ffbb9c', '#fd986d', '#ff5f02'],
   },
   dataZoom: {
     backgroundColor: 'rgba(255,255,255,0)',

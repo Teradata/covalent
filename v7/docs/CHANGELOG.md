@@ -1,3 +1,9 @@
+## [7.1.1](https://github.com/Teradata/covalent/compare/v7.1.0...v7.1.1) (2023-09-11)
+
+### Bug Fixes
+
+- remove console logs ([9c36907](https://github.com/Teradata/covalent/commit/9c36907de86c06bf2fda172519721c9d6acc7c40))
+
 # [7.1.0](https://github.com/Teradata/covalent/compare/v7.0.0...v7.1.0) (2023-09-07)
 
 ### Features

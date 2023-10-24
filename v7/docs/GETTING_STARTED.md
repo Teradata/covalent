@@ -81,7 +81,7 @@ A theme file is a simple Sass file that defines your palettes and passes them to
 // Define a custom typography config that overrides the font-family
 // or any typography level.
 $typography: mat.define-typography-config(
-  $font-family: 'Roboto, monospace',
+  $font-family: 'Inter, monospace',
   $headline: mat.define-typography-level(32px, 48px, 700)
 );
 
@@ -121,10 +121,7 @@ The covalent utility CSS classes can be included via `platform.css` file either 
 **src/index.html**
 
 ```html
-<link
-  href="../node_modules/@covalent/core/common/platform.css"
-  rel="stylesheet"
-/>
+<link href="../node_modules/@covalent/core/common/platform.css" rel="stylesheet" />
 ```
 
 or
