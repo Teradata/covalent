@@ -1,11 +1,17 @@
 @font-face {
   font-family: 'covalent-icons';
-  src: url('./covalent-icons.ttf?poo9er') format('truetype'),
-    url('./covalent-icons.woff?poo9er') format('woff'),
-    url('./covalent-icons.svg?poo9er#covalent-icons') format('svg');
+  src: url('./covalent-icons.eot?x0fu5w');
+  src: url('./covalent-icons.eot?x0fu5w#iefix') format('embedded-opentype'),
+    url('./covalent-icons.ttf?x0fu5w') format('truetype'),
+    url('./covalent-icons.woff?x0fu5w') format('woff'),
+    url('./covalent-icons.svg?x0fu5w#covalent-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
+}
+
+.covalent-icon {
+  --mdc-icon-font: 'covalent-icons';
 }
 
 [class^='icon-'],

@@ -44,6 +44,7 @@
     "slate-1900": { "value": "#060708", "type": "color" },
     "slate-2000": { "value": "#020203", "type": "color" },
 
+
     "orange-100": { "value": "#FFCFB3", "type": "color" },
     "orange-200": { "value": "#FFAF81", "type": "color" },
     "orange-300": { "value": "#FF8F4E", "type": "color" },
