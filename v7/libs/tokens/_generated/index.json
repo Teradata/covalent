@@ -440,7 +440,7 @@
     "background": {
       "value": "#f5f5f5",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{material.grey-100}",
@@ -459,7 +459,7 @@
     "surface": {
       "value": "white",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "white",
@@ -478,7 +478,7 @@
     "surface-canvas": {
       "value": "#eee",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{material.grey-200}",
@@ -497,7 +497,7 @@
     "surface-primary": {
       "value": "#85dddc",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.teal-200}",
@@ -516,7 +516,7 @@
     "surface-primary-highlight": {
       "value": "rgba(#85dddc, 0.1)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-200}, 0.1)",
@@ -535,7 +535,7 @@
     "surface-primary-highlight-hover": {
       "value": "rgba(#85dddc, 0.2)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-200}, 0.2)",
@@ -554,7 +554,7 @@
     "surface-accent": {
       "value": "#85dddc",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.teal-200}",
@@ -573,7 +573,7 @@
     "surface-accent-highlight": {
       "value": "rgba(#85dddc, 0.1)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-200}, 0.1)",
@@ -592,7 +592,7 @@
     "surface-accent-highlight-hover": {
       "value": "rgba(#85dddc, 0.2)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-200}, 0.2)",
@@ -611,7 +611,7 @@
     "surface-secondary": {
       "value": "#85dddc",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.teal-200}",
@@ -630,7 +630,7 @@
     "surface-secondary-highlight": {
       "value": "rgba(#85dddc, 0.1)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-200}, 0.1)",
@@ -649,7 +649,7 @@
     "surface-secondary-highlight-hover": {
       "value": "rgba(#85dddc, 0.2)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-200}, 0.2)",
@@ -668,7 +668,7 @@
     "surface-positive": {
       "value": "#a5d6a7",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{material.green-200}",
@@ -687,7 +687,7 @@
     "surface-positive-highlight": {
       "value": "rgba(#a5d6a7, 0.1)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({material.green-200}, 0.1)",
@@ -706,7 +706,7 @@
     "surface-positive-highlight-hover": {
       "value": "rgba(#a5d6a7, 0.2)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({material.green-200}, 0.2)",
@@ -725,7 +725,7 @@
     "surface-caution": {
       "value": "#ffb74d",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{material.orange-300}",
@@ -744,7 +744,7 @@
     "surface-caution-highlight": {
       "value": "rgba(#ffb74d, 0.1)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({material.orange-300}, 0.1)",
@@ -763,7 +763,7 @@
     "surface-caution-highlight-hover": {
       "value": "rgba(#ffb74d, 0.2)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({material.orange-300}, 0.2)",
@@ -782,7 +782,7 @@
     "surface-negative": {
       "value": "#e57373",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{material.red-300}",
@@ -801,7 +801,7 @@
     "surface-negative-highlight": {
       "value": "rgba(#e57373, 0.1)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({material.red-300}, 0.1)",
@@ -820,7 +820,7 @@
     "surface-negative-highlight-hover": {
       "value": "rgba(#e57373, 0.2)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({material.red-300}, 0.2)",
@@ -839,7 +839,7 @@
     "surface-neutral": {
       "value": "#bdbdbd",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{material.grey-400}",
@@ -858,7 +858,7 @@
     "surface-neutral-highlight": {
       "value": "rgba(#bdbdbd, 0.04)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({material.grey-400}, 0.04)",
@@ -877,7 +877,7 @@
     "surface-neutral-highlight-hover": {
       "value": "rgba(#bdbdbd, 0.08)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({material.grey-400}, 0.08)",
@@ -896,7 +896,7 @@
     "surface-emphasis": {
       "value": "#afb6b9",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.slate-200}",
@@ -915,7 +915,7 @@
     "surface-emphasis-highlight": {
       "value": "rgba(#afb6b9, 0.1)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.slate-200}, 0.1)",
@@ -934,7 +934,7 @@
     "surface-emphasis-highlight-hover": {
       "value": "rgba(#afb6b9, 0.2)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.slate-200}, 0.2)",
@@ -1696,7 +1696,7 @@
     "background": {
       "value": "#161c1f",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.slate-1500}",
@@ -1715,7 +1715,7 @@
     "surface": {
       "value": "#28353b",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.slate-1100}",
@@ -1734,7 +1734,7 @@
     "surface-canvas": {
       "value": "#101314",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.slate-1700}",
@@ -1753,7 +1753,7 @@
     "surface-primary": {
       "value": "#045c5c",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.teal-1200}",
@@ -1772,7 +1772,7 @@
     "surface-primary-highlight": {
       "value": "rgba(#045c5c, 0.4)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-1200}, 0.4)",
@@ -1791,7 +1791,7 @@
     "surface-primary-highlight-hover": {
       "value": "rgba(#045c5c, 0.6)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-1200}, 0.6)",
@@ -1810,7 +1810,7 @@
     "surface-accent": {
       "value": "#045c5c",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.teal-1200}",
@@ -1829,7 +1829,7 @@
     "surface-accent-highlight": {
       "value": "rgba(#045c5c, 0.4)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-1200}, 0.4)",
@@ -1848,7 +1848,7 @@
     "surface-accent-highlight-hover": {
       "value": "rgba(#045c5c, 0.6)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-1200}, 0.6)",
@@ -1867,7 +1867,7 @@
     "surface-secondary": {
       "value": "#045c5c",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.teal-1200}",
@@ -1886,7 +1886,7 @@
     "surface-secondary-highlight": {
       "value": "rgba(#045c5c, 0.4)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-1200}, 0.4)",
@@ -1905,7 +1905,7 @@
     "surface-secondary-highlight-hover": {
       "value": "rgba(#045c5c, 0.6)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.teal-1200}, 0.6)",
@@ -1924,7 +1924,7 @@
     "surface-positive": {
       "value": "#336033",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "#336033",
@@ -1943,7 +1943,7 @@
     "surface-positive-highlight": {
       "value": "rgba(#336033, 0.4)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba(#336033, 0.4)",
@@ -1962,7 +1962,7 @@
     "surface-positive-highlight-hover": {
       "value": "rgba(#336033, 0.6)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba(#336033, 0.6)",
@@ -1981,7 +1981,7 @@
     "surface-caution": {
       "value": "#704C16",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "#704C16",
@@ -2000,7 +2000,7 @@
     "surface-caution-highlight": {
       "value": "rgba(#704C16, 0.4)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba(#704C16, 0.4)",
@@ -2019,7 +2019,7 @@
     "surface-caution-highlight-hover": {
       "value": "rgba(#704C16, 0.6)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba(#704C16, 0.6)",
@@ -2038,7 +2038,7 @@
     "surface-negative": {
       "value": "#883E32",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "#883E32",
@@ -2057,7 +2057,7 @@
     "surface-negative-highlight": {
       "value": "rgba(#883E32, 0.4)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba(#883E32, 0.4)",
@@ -2076,7 +2076,7 @@
     "surface-negative-highlight-hover": {
       "value": "rgba(#883E32, 0.6)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba(#883E32, 0.6)",
@@ -2095,7 +2095,7 @@
     "surface-neutral": {
       "value": "#43515a",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.slate-800}",
@@ -2114,7 +2114,7 @@
     "surface-neutral-highlight": {
       "value": "rgba(#43515a, 0.4)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.slate-800}, 0.4)",
@@ -2133,7 +2133,7 @@
     "surface-neutral-highlight-hover": {
       "value": "rgba(#43515a, 0.6)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.slate-800}, 0.6)",
@@ -2152,7 +2152,7 @@
     "surface-emphasis": {
       "value": "#43515a",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "{teradata.slate-800}",
@@ -2171,7 +2171,7 @@
     "surface-emphasis-highlight": {
       "value": "rgba(#43515a, 0.4)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.slate-800}, 0.4)",
@@ -2190,7 +2190,7 @@
     "surface-emphasis-highlight-hover": {
       "value": "rgba(#43515a, 0.6)",
       "type": "color",
-      "filePath": "libs/tokens/src/color/palettes/surface.json",
+      "filePath": "libs/tokens/src/color/surface.json",
       "isSource": true,
       "original": {
         "value": "rgba({teradata.slate-800}, 0.6)",
@@ -7343,7 +7343,7 @@
     "teal-50": {
       "value": "#def9f8",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#def9f8",
@@ -7362,7 +7362,7 @@
     "teal-100": {
       "value": "#b2ebea",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#b2ebea",
@@ -7381,7 +7381,7 @@
     "teal-200": {
       "value": "#85dddc",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#85dddc",
@@ -7400,7 +7400,7 @@
     "teal-300": {
       "value": "#59cecd",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#59cecd",
@@ -7419,7 +7419,7 @@
     "teal-400": {
       "value": "#2cc0bf",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#2cc0bf",
@@ -7438,7 +7438,7 @@
     "teal-500": {
       "value": "#00b2b1",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#00b2b1",
@@ -7457,7 +7457,7 @@
     "teal-600": {
       "value": "#00a2a2",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#00a2a2",
@@ -7476,7 +7476,7 @@
     "teal-700": {
       "value": "#009392",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#009392",
@@ -7495,7 +7495,7 @@
     "teal-800": {
       "value": "#008383",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#008383",
@@ -7514,7 +7514,7 @@
     "teal-900": {
       "value": "#007373",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#007373",
@@ -7533,7 +7533,7 @@
     "teal-1000": {
       "value": "#016b6b",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#016b6b",
@@ -7552,7 +7552,7 @@
     "teal-1100": {
       "value": "#036464",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#036464",
@@ -7571,7 +7571,7 @@
     "teal-1200": {
       "value": "#045c5c",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#045c5c",
@@ -7590,7 +7590,7 @@
     "teal-1300": {
       "value": "#055454",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#055454",
@@ -7609,7 +7609,7 @@
     "teal-1400": {
       "value": "#074d4d",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#074d4d",
@@ -7628,7 +7628,7 @@
     "teal-1500": {
       "value": "#084545",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#084545",
@@ -7647,7 +7647,7 @@
     "teal-1600": {
       "value": "#0a3e3e",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#0a3e3e",
@@ -7666,7 +7666,7 @@
     "teal-1700": {
       "value": "#0b3636",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#0b3636",
@@ -7685,7 +7685,7 @@
     "teal-1800": {
       "value": "#0c2e2e",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#0c2e2e",
@@ -7704,7 +7704,7 @@
     "teal-1900": {
       "value": "#0e2727",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#0e2727",
@@ -7723,7 +7723,7 @@
     "teal-2000": {
       "value": "#0f1f1f",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#0f1f1f",
@@ -7742,7 +7742,7 @@
     "slate-50": {
       "value": "#e3e7e8",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#e3e7e8",
@@ -7761,7 +7761,7 @@
     "slate-100": {
       "value": "#c9cfd1",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#c9cfd1",
@@ -7780,7 +7780,7 @@
     "slate-200": {
       "value": "#afb6b9",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#afb6b9",
@@ -7799,7 +7799,7 @@
     "slate-300": {
       "value": "#959ea2",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#959ea2",
@@ -7818,7 +7818,7 @@
     "slate-400": {
       "value": "#7b858a",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#7b858a",
@@ -7837,7 +7837,7 @@
     "slate-500": {
       "value": "#616d73",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#616d73",
@@ -7856,7 +7856,7 @@
     "slate-600": {
       "value": "#57646b",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#57646b",
@@ -7875,7 +7875,7 @@
     "slate-700": {
       "value": "#4d5b62",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#4d5b62",
@@ -7894,7 +7894,7 @@
     "slate-800": {
       "value": "#43515a",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#43515a",
@@ -7913,7 +7913,7 @@
     "slate-900": {
       "value": "#394851",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#394851",
@@ -7932,7 +7932,7 @@
     "slate-1000": {
       "value": "#2e3d42",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#2e3d42",
@@ -7951,7 +7951,7 @@
     "slate-1100": {
       "value": "#28353b",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#28353b",
@@ -7970,7 +7970,7 @@
     "slate-1200": {
       "value": "#222e33",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#222e33",
@@ -7989,7 +7989,7 @@
     "slate-1300": {
       "value": "#1f282e",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#1f282e",
@@ -8008,7 +8008,7 @@
     "slate-1400": {
       "value": "#1a2126",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#1a2126",
@@ -8027,7 +8027,7 @@
     "slate-1500": {
       "value": "#161c1f",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#161c1f",
@@ -8046,7 +8046,7 @@
     "slate-1600": {
       "value": "#14171a",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#14171a",
@@ -8065,7 +8065,7 @@
     "slate-1700": {
       "value": "#101314",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#101314",
@@ -8084,7 +8084,7 @@
     "slate-1800": {
       "value": "#0c0e0f",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#0c0e0f",
@@ -8103,7 +8103,7 @@
     "slate-1900": {
       "value": "#060708",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#060708",
@@ -8122,7 +8122,7 @@
     "slate-2000": {
       "value": "#020203",
       "type": "color",
-      "filePath": "libs/tokens/src/color/teradata.json",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
       "isSource": true,
       "original": {
         "value": "#020203",
@@ -8136,6 +8136,177 @@
       "path": [
         "teradata",
         "slate-2000"
+      ]
+    },
+    "orange-100": {
+      "value": "#FFCFB3",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#FFCFB3",
+        "type": "color"
+      },
+      "name": "orange-100",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-100"
+      },
+      "path": [
+        "teradata",
+        "orange-100"
+      ]
+    },
+    "orange-200": {
+      "value": "#FFAF81",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#FFAF81",
+        "type": "color"
+      },
+      "name": "orange-200",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-200"
+      },
+      "path": [
+        "teradata",
+        "orange-200"
+      ]
+    },
+    "orange-300": {
+      "value": "#FF8F4E",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#FF8F4E",
+        "type": "color"
+      },
+      "name": "orange-300",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-300"
+      },
+      "path": [
+        "teradata",
+        "orange-300"
+      ]
+    },
+    "orange-400": {
+      "value": "#FF7728",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#FF7728",
+        "type": "color"
+      },
+      "name": "orange-400",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-400"
+      },
+      "path": [
+        "teradata",
+        "orange-400"
+      ]
+    },
+    "orange-500": {
+      "value": "#FF5F02",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#FF5F02",
+        "type": "color"
+      },
+      "name": "orange-500",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-500"
+      },
+      "path": [
+        "teradata",
+        "orange-500"
+      ]
+    },
+    "orange-600": {
+      "value": "#F05800",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#F05800",
+        "type": "color"
+      },
+      "name": "orange-600",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-600"
+      },
+      "path": [
+        "teradata",
+        "orange-600"
+      ]
+    },
+    "orange-700": {
+      "value": "#E54900",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#E54900",
+        "type": "color"
+      },
+      "name": "orange-700",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-700"
+      },
+      "path": [
+        "teradata",
+        "orange-700"
+      ]
+    },
+    "orange-800": {
+      "value": "#D83B03",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#D83B03",
+        "type": "color"
+      },
+      "name": "orange-800",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-800"
+      },
+      "path": [
+        "teradata",
+        "orange-800"
+      ]
+    },
+    "orange-900": {
+      "value": "#C23200",
+      "type": "color",
+      "filePath": "libs/tokens/src/color/palettes/teradata.json",
+      "isSource": true,
+      "original": {
+        "value": "#C23200",
+        "type": "color"
+      },
+      "name": "orange-900",
+      "attributes": {
+        "category": "teradata",
+        "type": "orange-900"
+      },
+      "path": [
+        "teradata",
+        "orange-900"
       ]
     }
   },
@@ -8160,12 +8331,12 @@
       ]
     },
     "headline1-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "headline1-font-family",
@@ -8236,12 +8407,12 @@
       ]
     },
     "headline2-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "headline2-font-family",
@@ -8312,12 +8483,12 @@
       ]
     },
     "headline3-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "headline3-font-family",
@@ -8388,12 +8559,12 @@
       ]
     },
     "headline4-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "headline4-font-family",
@@ -8464,12 +8635,12 @@
       ]
     },
     "headline5-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "headline5-font-family",
@@ -8540,12 +8711,12 @@
       ]
     },
     "headline6-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "headline6-font-family",
@@ -8616,12 +8787,12 @@
       ]
     },
     "subtitle1-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "subtitle1-font-family",
@@ -8692,12 +8863,12 @@
       ]
     },
     "subtitle2-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "subtitle2-font-family",
@@ -8920,12 +9091,12 @@
       ]
     },
     "button-font-family": {
-      "value": "'Poppins', sans-serif",
+      "value": "'Inter', sans-serif",
       "type": "fontFamilies",
       "filePath": "libs/tokens/src/typography/typography.json",
       "isSource": true,
       "original": {
-        "value": "'Poppins', sans-serif",
+        "value": "'Inter', sans-serif",
         "type": "fontFamilies"
       },
       "name": "button-font-family",

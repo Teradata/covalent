@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 24 Aug 2023 18:12:48 GMT
+ * Generated on Tue, 24 Oct 2023 15:22:33 GMT
  */
 
 export const CvLightPrimary : string;
@@ -431,6 +431,15 @@ export const CvTeradataSlate1700 : string;
 export const CvTeradataSlate1800 : string;
 export const CvTeradataSlate1900 : string;
 export const CvTeradataSlate2000 : string;
+export const CvTeradataOrange100 : string;
+export const CvTeradataOrange200 : string;
+export const CvTeradataOrange300 : string;
+export const CvTeradataOrange400 : string;
+export const CvTeradataOrange500 : string;
+export const CvTeradataOrange600 : string;
+export const CvTeradataOrange700 : string;
+export const CvTeradataOrange800 : string;
+export const CvTeradataOrange900 : string;
 export const CvTypographyFontFamily : string;
 export const CvTypographyHeadline1FontFamily : string;
 export const CvTypographyHeadline1FontSize : string;

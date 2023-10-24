@@ -1,3 +1,9 @@
+# [7.2.0](https://github.com/Teradata/covalent/compare/v7.1.1...v7.2.0) (2023-10-24)
+
+### Features
+
+- **angular:** updating Teradata branding colors and fonts ([#2059](https://github.com/Teradata/covalent/issues/2059)) ([b606521](https://github.com/Teradata/covalent/commit/b606521b0270fa04a2519a20936885416d20c2d8))
+
 ## [7.1.1](https://github.com/Teradata/covalent/compare/v7.1.0...v7.1.1) (2023-09-11)
 
 ### Bug Fixes
