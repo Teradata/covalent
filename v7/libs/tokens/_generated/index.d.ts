@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 24 Oct 2023 15:22:33 GMT
+ * Generated on Tue, 24 Oct 2023 16:42:01 GMT
  */
 
 export const CvLightPrimary : string;
