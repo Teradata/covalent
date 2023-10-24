@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 24 Aug 2023 18:12:48 GMT
+ * Generated on Tue, 24 Oct 2023 15:22:33 GMT
  */
 
 export const CvLightPrimary = "#007373";
@@ -431,36 +431,45 @@ export const CvTeradataSlate1700 = "#101314";
 export const CvTeradataSlate1800 = "#0c0e0f";
 export const CvTeradataSlate1900 = "#060708";
 export const CvTeradataSlate2000 = "#020203";
+export const CvTeradataOrange100 = "#FFCFB3";
+export const CvTeradataOrange200 = "#FFAF81";
+export const CvTeradataOrange300 = "#FF8F4E";
+export const CvTeradataOrange400 = "#FF7728";
+export const CvTeradataOrange500 = "#FF5F02";
+export const CvTeradataOrange600 = "#F05800";
+export const CvTeradataOrange700 = "#E54900";
+export const CvTeradataOrange800 = "#D83B03";
+export const CvTeradataOrange900 = "#C23200";
 export const CvTypographyFontFamily = "Arial, sans-serif";
-export const CvTypographyHeadline1FontFamily = "'Poppins', sans-serif";
+export const CvTypographyHeadline1FontFamily = "'Inter', sans-serif";
 export const CvTypographyHeadline1FontSize = "96px";
 export const CvTypographyHeadline1FontWeight = "500";
 export const CvTypographyHeadline1LineHeight = "112px";
-export const CvTypographyHeadline2FontFamily = "'Poppins', sans-serif";
+export const CvTypographyHeadline2FontFamily = "'Inter', sans-serif";
 export const CvTypographyHeadline2FontSize = "60px";
 export const CvTypographyHeadline2FontWeight = "600";
 export const CvTypographyHeadline2LineHeight = "84px";
-export const CvTypographyHeadline3FontFamily = "'Poppins', sans-serif";
+export const CvTypographyHeadline3FontFamily = "'Inter', sans-serif";
 export const CvTypographyHeadline3FontSize = "48px";
 export const CvTypographyHeadline3FontWeight = "600";
 export const CvTypographyHeadline3LineHeight = "64px";
-export const CvTypographyHeadline4FontFamily = "'Poppins', sans-serif";
+export const CvTypographyHeadline4FontFamily = "'Inter', sans-serif";
 export const CvTypographyHeadline4FontSize = "34px";
 export const CvTypographyHeadline4FontWeight = "700";
 export const CvTypographyHeadline4LineHeight = "48px";
-export const CvTypographyHeadline5FontFamily = "'Poppins', sans-serif";
+export const CvTypographyHeadline5FontFamily = "'Inter', sans-serif";
 export const CvTypographyHeadline5FontSize = "24px";
 export const CvTypographyHeadline5FontWeight = "700";
 export const CvTypographyHeadline5LineHeight = "36px";
-export const CvTypographyHeadline6FontFamily = "'Poppins', sans-serif";
+export const CvTypographyHeadline6FontFamily = "'Inter', sans-serif";
 export const CvTypographyHeadline6FontSize = "20px";
 export const CvTypographyHeadline6FontWeight = "700";
 export const CvTypographyHeadline6LineHeight = "28px";
-export const CvTypographySubtitle1FontFamily = "'Poppins', sans-serif";
+export const CvTypographySubtitle1FontFamily = "'Inter', sans-serif";
 export const CvTypographySubtitle1FontSize = "14px";
 export const CvTypographySubtitle1FontWeight = "600";
 export const CvTypographySubtitle1LineHeight = "20px";
-export const CvTypographySubtitle2FontFamily = "'Poppins', sans-serif";
+export const CvTypographySubtitle2FontFamily = "'Inter', sans-serif";
 export const CvTypographySubtitle2FontSize = "16px";
 export const CvTypographySubtitle2FontWeight = "600";
 export const CvTypographySubtitle2LineHeight = "24px";
@@ -472,7 +481,7 @@ export const CvTypographyBody2FontFamily = "Arial, sans-serif";
 export const CvTypographyBody2FontSize = "14px";
 export const CvTypographyBody2FontWeight = "400";
 export const CvTypographyBody2LineHeight = "20px";
-export const CvTypographyButtonFontFamily = "'Poppins', sans-serif";
+export const CvTypographyButtonFontFamily = "'Inter', sans-serif";
 export const CvTypographyButtonFontSize = "14px";
 export const CvTypographyButtonFontWeight = "600";
 export const CvTypographyButtonLineHeight = "16px";

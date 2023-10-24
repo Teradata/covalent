@@ -1,7 +1,7 @@
 
 /**
  * Do not edit directly
- * Generated on Thu, 24 Aug 2023 18:12:48 GMT
+ * Generated on Tue, 24 Oct 2023 15:22:33 GMT
  */
 
 $light-primary: #007373 !default;
@@ -432,36 +432,45 @@ $teradata-slate-1700: #101314 !default;
 $teradata-slate-1800: #0c0e0f !default;
 $teradata-slate-1900: #060708 !default;
 $teradata-slate-2000: #020203 !default;
+$teradata-orange-100: #FFCFB3 !default;
+$teradata-orange-200: #FFAF81 !default;
+$teradata-orange-300: #FF8F4E !default;
+$teradata-orange-400: #FF7728 !default;
+$teradata-orange-500: #FF5F02 !default;
+$teradata-orange-600: #F05800 !default;
+$teradata-orange-700: #E54900 !default;
+$teradata-orange-800: #D83B03 !default;
+$teradata-orange-900: #C23200 !default;
 $typography-font-family: Arial, sans-serif !default;
-$typography-headline1-font-family: 'Poppins', sans-serif !default;
+$typography-headline1-font-family: 'Inter', sans-serif !default;
 $typography-headline1-font-size: 96px !default;
 $typography-headline1-font-weight: 500 !default;
 $typography-headline1-line-height: 112px !default;
-$typography-headline2-font-family: 'Poppins', sans-serif !default;
+$typography-headline2-font-family: 'Inter', sans-serif !default;
 $typography-headline2-font-size: 60px !default;
 $typography-headline2-font-weight: 600 !default;
 $typography-headline2-line-height: 84px !default;
-$typography-headline3-font-family: 'Poppins', sans-serif !default;
+$typography-headline3-font-family: 'Inter', sans-serif !default;
 $typography-headline3-font-size: 48px !default;
 $typography-headline3-font-weight: 600 !default;
 $typography-headline3-line-height: 64px !default;
-$typography-headline4-font-family: 'Poppins', sans-serif !default;
+$typography-headline4-font-family: 'Inter', sans-serif !default;
 $typography-headline4-font-size: 34px !default;
 $typography-headline4-font-weight: 700 !default;
 $typography-headline4-line-height: 48px !default;
-$typography-headline5-font-family: 'Poppins', sans-serif !default;
+$typography-headline5-font-family: 'Inter', sans-serif !default;
 $typography-headline5-font-size: 24px !default;
 $typography-headline5-font-weight: 700 !default;
 $typography-headline5-line-height: 36px !default;
-$typography-headline6-font-family: 'Poppins', sans-serif !default;
+$typography-headline6-font-family: 'Inter', sans-serif !default;
 $typography-headline6-font-size: 20px !default;
 $typography-headline6-font-weight: 700 !default;
 $typography-headline6-line-height: 28px !default;
-$typography-subtitle1-font-family: 'Poppins', sans-serif !default;
+$typography-subtitle1-font-family: 'Inter', sans-serif !default;
 $typography-subtitle1-font-size: 14px !default;
 $typography-subtitle1-font-weight: 600 !default;
 $typography-subtitle1-line-height: 20px !default;
-$typography-subtitle2-font-family: 'Poppins', sans-serif !default;
+$typography-subtitle2-font-family: 'Inter', sans-serif !default;
 $typography-subtitle2-font-size: 16px !default;
 $typography-subtitle2-font-weight: 600 !default;
 $typography-subtitle2-line-height: 24px !default;
@@ -473,7 +482,7 @@ $typography-body2-font-family: Arial, sans-serif !default;
 $typography-body2-font-size: 14px !default;
 $typography-body2-font-weight: 400 !default;
 $typography-body2-line-height: 20px !default;
-$typography-button-font-family: 'Poppins', sans-serif !default;
+$typography-button-font-family: 'Inter', sans-serif !default;
 $typography-button-font-size: 14px !default;
 $typography-button-font-weight: 600 !default;
 $typography-button-line-height: 16px !default;
@@ -917,7 +926,16 @@ $tokens: (
     'slate-1700': $teradata-slate-1700,
     'slate-1800': $teradata-slate-1800,
     'slate-1900': $teradata-slate-1900,
-    'slate-2000': $teradata-slate-2000
+    'slate-2000': $teradata-slate-2000,
+    'orange-100': $teradata-orange-100,
+    'orange-200': $teradata-orange-200,
+    'orange-300': $teradata-orange-300,
+    'orange-400': $teradata-orange-400,
+    'orange-500': $teradata-orange-500,
+    'orange-600': $teradata-orange-600,
+    'orange-700': $teradata-orange-700,
+    'orange-800': $teradata-orange-800,
+    'orange-900': $teradata-orange-900
   ),
   'typography': (
     'font-family': $typography-font-family,
