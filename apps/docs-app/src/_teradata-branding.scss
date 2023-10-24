@@ -873,7 +873,7 @@ body {
     }
   }
 
-  // Active side nav 
+  // Active side nav
   .doc-nav a.doc-nav-link.active {
     &::before {
       background-color: $accent-highlight-hover;
