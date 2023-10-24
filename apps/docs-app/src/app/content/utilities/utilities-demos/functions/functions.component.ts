@@ -45,7 +45,7 @@ export class FunctionsDemoComponent {
       </mat-form-field>
     </div>
   </form>
-  <button mat-raised-button color="none" (click)="doCopyToClipboard()" class="text-upper">
+  <button mat-raised-button color="primary" (click)="doCopyToClipboard()" class="text-upper">
     Copy To Clipboard
   </button>
   `;
@@ -66,14 +66,14 @@ export class FunctionsDemoComponent {
   convertCodeHtml = `
   <h4>Input CSV:</h4> 
   <td-highlight [content]="csv"></td-highlight>
-  <button mat-raised-button color="none" (click)="doConvertCSVToJSON()" class="text-upper push-top-sm">
+  <button mat-raised-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper push-top-sm">
     Convert CSV
   </button>
   <h4>Output JSON:</h4>
   <td-highlight [content]="jsonOutput"></td-highlight> 
   <h4>Input Objects:</h4> 
   <td-highlight [content]="objectsString"></td-highlight>
-  <button mat-raised-button color="none" (click)="doConvertObjectsToCSV()" class="text-upper push-top-sm">
+  <button mat-raised-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper push-top-sm">
     Convert Objects
   </button>
   <h4>Output CSV:</h4>
@@ -118,22 +118,22 @@ export class FunctionsDemoComponent {
   downloadCodeHtml = `
   <h4>CSV:</h4> 
   <td-highlight [content]="csv"></td-highlight> 
-  <button mat-raised-button color="none" (click)="doDownloadCSV()" class="text-upper push-top-sm">
+  <button mat-raised-button color="primary" (click)="doDownloadCSV()" class="text-upper push-top-sm">
     Download CSV
   </button> 
   <h4>JSON:</h4>
   <td-highlight [content]="json"></td-highlight> 
-  <button mat-raised-button color="none" (click)="doDownloadJSON()" class="text-upper push-top-sm">
+  <button mat-raised-button color="primary" (click)="doDownloadJSON()" class="text-upper push-top-sm">
     Download JSON
   </button> 
   <h4>Objects:</h4> 
   <td-highlight [content]="objectsString"></td-highlight> 
-  <button mat-raied-button color="none" (click)="doDownloadObjectsToCSV()" class="text-upper push-top-sm">
+  <button mat-raied-button color="primary" (click)="doDownloadObjectsToCSV()" class="text-upper push-top-sm">
     Download To CSV
   </button> 
   <h4>Objects:</h4>
   <td-highlight [content]="objectsString"></td-highlight> 
-  <button mat-raised-button color="none" (click)="doDownloadObjectsToJSON()" class="text-upper push-top-sm"> 
+  <button mat-raised-button color="primary" (click)="doDownloadObjectsToJSON()" class="text-upper push-top-sm"> 
     Download To JSON
   </button> 
   <form> 
@@ -149,7 +149,7 @@ export class FunctionsDemoComponent {
       </mat-form-field>
     </div> 
   </form>
-  <button mat-raised-button color="none" (click)="doDownloadFile()" class="text-upper"> 
+  <button mat-raised-button color="primary" (click)="doDownloadFile()" class="text-upper"> 
     Download
   </button>
   `;

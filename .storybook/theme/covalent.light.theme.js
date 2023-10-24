@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import brandImage from './teradata-dark.svg';
+import brandImage from './teradata.svg';
 
 export default create({
   base: 'light',

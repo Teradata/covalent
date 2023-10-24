@@ -42,6 +42,17 @@
     "slate-1700": { "value": "#101314", "type": "color" },
     "slate-1800": { "value": "#0c0e0f", "type": "color" },
     "slate-1900": { "value": "#060708", "type": "color" },
-    "slate-2000": { "value": "#020203", "type": "color" }
+    "slate-2000": { "value": "#020203", "type": "color" },
+
+
+    "orange-100": { "value": "#FFCFB3", "type": "color" },
+    "orange-200": { "value": "#FFAF81", "type": "color" },
+    "orange-300": { "value": "#FF8F4E", "type": "color" },
+    "orange-400": { "value": "#FF7728", "type": "color" },
+    "orange-500": { "value": "#FF5F02", "type": "color" },
+    "orange-600": { "value": "#F05800", "type": "color" },
+    "orange-700": { "value": "#E54900", "type": "color" },
+    "orange-800": { "value": "#D83B03", "type": "color" },
+    "orange-900": { "value": "#C23200", "type": "color" }
   }
 }
