@@ -1,3 +1,13 @@
+# [7.3.0](https://github.com/Teradata/covalent/compare/v7.2.0...v7.3.0) (2023-10-24)
+
+### Bug Fixes
+
+- use is-dark for highligh dark theme ([#2053](https://github.com/Teradata/covalent/issues/2053)) ([b728bc1](https://github.com/Teradata/covalent/commit/b728bc1bc320a5f3efa74c39da35ff1304ebb425))
+
+### Features
+
+- **icons:** update to teradata icons ([#2061](https://github.com/Teradata/covalent/issues/2061)) ([55b36a2](https://github.com/Teradata/covalent/commit/55b36a2431cb52fe1c9e861ac0c65ac4acbf6801))
+
 # [7.2.0](https://github.com/Teradata/covalent/compare/v7.1.1...v7.2.0) (2023-10-24)
 
 ### Features
