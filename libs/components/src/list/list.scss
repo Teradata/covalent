@@ -11,7 +11,7 @@
 :host(.subnav) ::slotted(*) {
     height: 32px;
     font-weight: var(--mdc-typography-body2-font-weight);
-    border-radius: 0px 28px 28px 0px;
+    border-radius: 0 28px 28px 0;
     padding: 0;
 }
 

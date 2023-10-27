@@ -58,9 +58,11 @@
     &.cov-drawer--hovered-closing {
       margin-left: 72px;
     }
+
     :not(.cov-drawer--forced-open) & {
       margin-left: 72px;
     }
+
     .cov-drawer--open & {
       margin-left: 0;
     }
@@ -112,7 +114,7 @@
       display: block;
     }
 
-    :not(.cov-drawer--forcedOpen) & {
+    :not(.cov-drawer--forced-open) & {
       margin-left: 72px;
     }
   }
@@ -149,9 +151,9 @@ nav.navigation {
     display: block;
   }
 
-  :not(.cov-drawer--forcedOpen) &,
-  :not(.cov-drawer--forcedOpen) &.mdc-drawer--closed,
-  :not(.cov-drawer--forcedOpen) &.mdc-drawer--closing {
+  :not(.cov-drawer--forced-open) &,
+  :not(.cov-drawer--forced-open) &.mdc-drawer--closed,
+  :not(.cov-drawer--forced-open) &.mdc-drawer--closing {
     position: absolute;
     top: 0;
     left: 0;
@@ -172,8 +174,8 @@ nav.navigation {
   }
 
   .cov-drawer--hovered & {
-    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
-      0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 20%),
+      0 24px 38px 3px rgba(0, 0, 0, 14%), 0 9px 46px 8px rgba(0, 0, 0, 12%);
     border-right: 1px solid var(--mdc-theme-border);
   }
 }
