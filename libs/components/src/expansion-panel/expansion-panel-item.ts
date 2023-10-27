@@ -1,6 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import styles from './cv-expansion-panel-item.scss?inline';
+import styles from './expansion-panel-item.scss?inline';
 import '../icon/icon';
 
 @customElement('cv-expansion-panel-item')

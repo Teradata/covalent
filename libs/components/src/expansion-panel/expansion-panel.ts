@@ -4,7 +4,7 @@ import {
   property,
   queryAssignedElements,
 } from 'lit/decorators.js';
-import { CovalentExpansionPanelItem } from './cv-expansion-panel-item';
+import { CovalentExpansionPanelItem } from './expansion-panel-item';
 
 @customElement('cv-expansion-panel')
 export class CovalentExpansionPanel extends LitElement {
