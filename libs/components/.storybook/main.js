@@ -30,4 +30,5 @@ module.exports = {
       assetsInclude: ['**/*.html'],
     });
   },
+  framework: '@storybook/html-vite'
 };

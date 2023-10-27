@@ -10,6 +10,10 @@
       "import": "./index.mjs",
       "require": "./index.js"
     },
+    "./style.css": {
+      "import": "./style.css",
+      "require": "./style.css"
+    },
     "./action-ribbon": {
       "types": "./action-ribbon/action-ribbon.d.ts",
       "import": "./action-ribbon.mjs",
@@ -39,6 +43,16 @@
       "types": "./card/card.d.ts",
       "import": "./card.mjs",
       "require": "./card.js"
+    },
+    "./chip": {
+      "types": "./chips/chip.d.ts",
+      "import": "./chip.mjs",
+      "require": "./chip.js"
+    },
+    "./chip-set": {
+      "types": "./chip/chip-set.d.ts",
+      "import": "./chip-set.mjs",
+      "require": "./chip-set.js"
     },
     "./circular-progress": {
       "types": "./circular-progress/circular-progress.d.ts",
@@ -99,11 +113,6 @@
       "types": "./list/list.d.ts",
       "import": "./list.mjs",
       "require": "./list.js"
-    },
-    "./list/list-expansion": {
-      "types": "./list/list-expansion.d.ts",
-      "import": "./list-expansion.mjs",
-      "require": "./list-expansion.js"
     },
     "./list/list-item": {
       "types": "./list/list-item.d.ts",

@@ -68,7 +68,7 @@ const TwoLineTemplate = ({ icon, style, required, helper }) => {
     </cv-list>`;
 };
 
-const CheckRadioTemplate = ({ listType }) => {
+const CheckRadioTemplate = ({ listType = 'check' }) => {
   return `
     <cv-list multi>
         <li><cv-${listType}-list-item selected>Item 0</cv-${listType}-list-item></li>
@@ -119,7 +119,6 @@ ChecksAndRadios.argTypes = {
   listType: {
     options: ['check', 'radio'],
     control: { type: 'radio' },
-    defaultValue: 'check',
   },
 };
 

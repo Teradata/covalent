@@ -4,10 +4,6 @@ import '../icon/icon';
 export default {
   title: 'Components/Tooltip',
   argTypes: {
-    content: {
-      control: 'text',
-      defaultValue: "I'm a tooltip!",
-    },
     showDelayInMs: {
       control: 'number',
       label: 'show delay in milliseconds',
@@ -16,6 +12,9 @@ export default {
       control: 'number',
       label: 'hide delay in milliseconds',
     },
+  },
+  args: {
+    content: "I'm a tooltip!",
   },
 };
 

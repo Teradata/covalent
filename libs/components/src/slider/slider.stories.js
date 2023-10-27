@@ -6,19 +6,10 @@ export default {
   parameters: {
     layout: 'padded',
   },
-  argTypes: {
-    discrete: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    disabled: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    markers: {
-      control: 'boolean',
-      defaultValue: false,
-    },
+  args: {
+    discrete: false,
+    disabled: false,
+    markers: false,
   },
 };
 

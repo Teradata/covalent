@@ -1,4 +1,4 @@
-<!-- guide-representing-state.stories.mdx -->
+{/* guide-representing-state.stories.mdx */}
 
 import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
 
@@ -12,7 +12,8 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
   }}
 />
 
-<style>{`
+<style>
+  {`
   .caution {
     color: var(--mdc-theme-caution);
   }
@@ -33,7 +34,8 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
     margin: 0 auto;
     max-width: 30rem;
   }
-`}</style>
+  `}
+</style>
 
 # Representing state
 
@@ -73,7 +75,7 @@ Show as a byline in your list item. Do not use the list icon - this is reserved 
         Warning
       </span>
       <cv-icon slot="graphic" class="inverted">
-        tag_faces
+        sentiment_very_satisfied
       </cv-icon>
     </cv-list-item>
     <li divider role="separator"></li>
@@ -84,7 +86,7 @@ Show as a byline in your list item. Do not use the list icon - this is reserved 
         Error
       </span>
       <cv-icon slot="graphic" class="inverted">
-        tag_faces
+        sentiment_very_satisfied
       </cv-icon>
     </cv-list-item>
     <li divider role="separator"></li>
@@ -95,7 +97,7 @@ Show as a byline in your list item. Do not use the list icon - this is reserved 
         Successful
       </span>
       <cv-icon slot="graphic" class="inverted">
-        tag_faces
+        sentiment_very_satisfied
       </cv-icon>
     </cv-list-item>
     <li divider role="separator"></li>
@@ -235,10 +237,14 @@ This is often too heavy-handed. Be careful.
 Use an alert component appropriate to the context. See the Alerts doc for more detail.
 
 <Canvas>
-  <div class="mdc-card">
-    <div class="mdc-card__primary-action">
-      Card Content
-      <div class="mdc-card__ripple"></div>
-    </div>
-  </div>
+  <cv-card cardtitle="Card title">
+    <cv-alert
+      titletext="Alert title"
+      descriptiontext="alert description"
+      state="active"
+      icon="info"
+      inline
+    ></cv-alert>
+    <div style={{ padding: '16px' }}>Card Content</div>
+  </cv-card>
 </Canvas>

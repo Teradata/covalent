@@ -2,17 +2,8 @@ import './icon-radio-toggle';
 
 export default {
   title: 'Components/Icon Radio',
-  argTypes: {
-    iconOnly: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-  },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/xrXnnUqmcOWk5YfmY6zcqg/Tabs?node-id=1484%3A37281',
-    },
+  args: {
+    iconOnly: false,
   },
 };
 

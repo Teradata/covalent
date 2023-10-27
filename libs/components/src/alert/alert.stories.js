@@ -6,25 +6,20 @@ export default {
     layout: 'padded',
   },
   argTypes: {
-    title: {
-      control: 'text',
-      defaultValue: 'Alert title',
-    },
-    description: {
-      control: 'text',
-      defaultValue: 'Alert description',
-    },
     state: {
       options: ['neutral', 'active', 'positive', 'negative', 'caution'],
       control: { type: 'select' },
-      defaultValue: 'active',
     },
     actionElement: {
       options: ['button', 'close icon', 'none'],
       control: { type: 'select' },
-      defaultValue: 'button',
     },
-    onClick: { action: 'onClick' },
+  },
+  args: {
+    title: 'Alert title',
+    description: 'Alert description',
+    state: 'active',
+    actionElement: 'button',
   },
 };
 
@@ -48,7 +43,7 @@ export const PageLevel = ({
       break;
     case 'active':
     default:
-      icon = 'info_outline';
+      icon = 'info';
   }
 
   return `

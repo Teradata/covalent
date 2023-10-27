@@ -3,9 +3,6 @@ import './tab';
 
 export default {
   title: 'Components/Tabs',
-  argTypes: {
-    onClick: { action: 'onClick' },
-  },
 };
 
 const Template = ({ icon, activeIndex = 0 }) => {

@@ -1,4 +1,4 @@
-<!-- color-use.stories.mdx -->
+{/* color-use.stories.mdx */}
 
 import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
 
@@ -12,12 +12,10 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
   }}
 />
 
-<style>{`
+<style>
+  {`
     {/* EXAMPLE */}
     
-    cv-button {
-      border-radius: 8px;
-    }
     .textfield-primary {
       --mdc-text-field-outlined-hover-border-color: var(--mdc-theme-primary);
       --mdc-text-field-label-ink-color: var(--mdc-theme-primary);
@@ -78,16 +76,12 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
         color: white;
     }
     .darkText cv-button {
-        --mdc-theme-primary: var(--mdc-theme-text-primary-on-dark);
-        --mdc-button-outline-color: white;
         margin-right: 8px;
     }
     .light {
         background-color: #F5F5F5;
     }
     .lightText cv-button {
-        --mdc-theme-primary: var(--mdc-theme-text-primary-on-dark);
-        --mdc-button-outline-color: black;
         margin-right: 8px;
     }
     .dialog {
@@ -217,9 +211,7 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
     .neutralHighlightHover {
         background-color: var(--mdc-theme-surface-neutral-highlight-hover);
     }
-    .primary {
-      background-color: var(--mdc-theme-surface-primary);
-    }
+
     .primaryHighlight {
         background-color: var(--mdc-theme-surface-primary-highlight);
     }
@@ -295,7 +287,8 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
       background: #28353B;
       color: var(--mdc-theme-text-secondary-on-dark);
     }
-`}</style>
+  `}
+</style>
 
 # Color use
 
@@ -386,8 +379,8 @@ Each color is defined in both a light and dark version. These are designed to wo
         tempor incididunt ut labore et dolore magna aliqua.
       </div>
       <div class="dialogActions">
-        <cv-button outlined>BUTTON TEXT</cv-button>
-        <cv-button class="dark primary">BUTTON TEXT</cv-button>
+        <cv-button label="BUTTON TEXT" outlined></cv-button>
+        <cv-button label="BUTTON TEXT" raised></cv-button>
       </div>
     </div>
   </div>
@@ -432,10 +425,8 @@ Each color is defined in both a light and dark version. These are designed to wo
       </div>
     </div>
     <div slot="card-actions" class="mdc-card__action-buttons">
-      <cv-button outlined class="whiteOutline">
-        BUTTON TEXT
-      </cv-button>
-      <cv-button class="primary">BUTTON TEXT</cv-button>
+      <cv-button label="Button Text" outlined></cv-button>
+      <cv-button label="Button Text" raised></cv-button>
     </div>
   </cv-card>
   <div class="cardContainer">
@@ -467,8 +458,8 @@ Each color is defined in both a light and dark version. These are designed to wo
         tempor incididunt ut labore et dolore magna aliqua.
       </div>
       <div class="dialogActions">
-        <cv-button outlined>BUTTON TEXT</cv-button>
-        <cv-button class="light primary">BUTTON TEXT</cv-button>
+        <cv-button label="Button text" outlined></cv-button>
+        <cv-button label="Button text" raised></cv-button>
       </div>
     </div>
   </div>

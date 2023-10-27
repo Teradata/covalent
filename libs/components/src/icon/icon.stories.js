@@ -121,21 +121,15 @@ export default {
     icon: {
       options: MAT_ICON_LIST,
       control: { type: 'select' },
-      defaultValue: 'houseboat',
     },
     size: {
       options: ['64px', '48px', '24px', '16px'],
       control: { type: 'select' },
-      defaultValue: '48px',
     },
-
-    onClick: { action: 'onClick' },
   },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/aDX2Rc1OIJ9tWgMcAvKRXv/Section?node-id=22%3A1453',
-    },
+  args: {
+    icon: 'houseboat',
+    size: '48px',
   },
 };
 
@@ -161,6 +155,8 @@ CovalentIcons.parameters = {
 CovalentIcons.argTypes = {
   icon: {
     options: COV_ICON_LIST,
-    defaultValue: 'product_editor',
   },
+};
+CovalentIcons.args = {
+  icon: 'product_editor',
 };

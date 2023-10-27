@@ -3,34 +3,13 @@ import './chip-set';
 
 export default {
   title: 'Components/Chips',
-  argTypes: {
-    label: { control: 'text', defaultValue: 'Chip' },
-    icon: {
-      control: 'text',
-      defaultValue: 'houseboat',
-    },
-    showIcon: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    trailingIcon: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    disabled: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    avatar: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-  },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/aDX2Rc1OIJ9tWgMcAvKRXv/Section?node-id=22%3A1453',
-    },
+  args: {
+    label: 'Chip',
+    icon: 'houseboat',
+    showIcon: false,
+    trailingIcon: false,
+    disabled: false,
+    avatar: false,
   },
 };
 

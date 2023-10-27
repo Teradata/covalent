@@ -6,11 +6,10 @@ export default {
     style: {
       options: ['outlined', 'filled'],
       control: { type: 'radio' },
-      defaultValue: 'outlined',
     },
-    required: {
-      control: 'boolean',
-    },
+  },
+  args: {
+    style: 'outlined',
   },
 };
 
