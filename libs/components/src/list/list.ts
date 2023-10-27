@@ -14,7 +14,9 @@ declare global {
 export class CovalentList extends ListBase {
   static override styles = [
     baseStyles,
-    css`${unsafeCSS(styles)}`,
+    css`
+      ${unsafeCSS(styles)}
+    `,
   ];
 }
 

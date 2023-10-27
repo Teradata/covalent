@@ -46,7 +46,7 @@ export class CovalentAppShell extends DrawerBase {
   sectionName = '';
 
   @property({ type: Boolean, reflect: true })
-  miniListOpen = false;
+  drawerOpen = false;
 
   @property({ type: Boolean, reflect: true })
   helpOpen = false;
@@ -92,7 +92,6 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private _handleNavMouseOut() {
-
     if (!this.open || this.forcedOpen) {
       return;
     }
@@ -100,7 +99,7 @@ export class CovalentAppShell extends DrawerBase {
     this._toggleOpen();
   }
 
-  private _handleDrawerClosed () {
+  private _handleDrawerClosed() {
     this.forcedOpen = false;
     this.hovered = false;
     this.requestUpdate();
@@ -119,20 +118,20 @@ export class CovalentAppShell extends DrawerBase {
 
   override connectedCallback() {
     super.connectedCallback();
-    this.addEventListener('MDCDrawer:closed', this._handleDrawerClosed)
+    this.addEventListener('MDCDrawer:closed', this._handleDrawerClosed);
     window.addEventListener('resize', () => this.resizeEvent());
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener('MDCDrawer:closed', this._handleDrawerClosed)
+    this.removeEventListener('MDCDrawer:closed', this._handleDrawerClosed);
     window.removeEventListener('resize', this.resizeEvent);
   }
 
   protected renderSection() {
     return this.sectionName
       ? html`<div class="current-section">
-            <slot name="section-action"></slot>
+          <slot name="section-action"></slot>
           <span>${this.sectionName}</span>
         </div>`
       : nothing;
@@ -142,8 +141,8 @@ export class CovalentAppShell extends DrawerBase {
     const dismissible = this.type === 'dismissible' || this.type === 'modal';
     const modal = this.type === 'modal';
     const classes = {
-      'cov-drawer--forcedOpen': this.forcedOpen,
-      'cov-appshell--minilist': this.miniListOpen,
+      'cov-drawer--forced-open': this.forcedOpen,
+      'cov-drawer--open': this.drawerOpen,
       'cov-drawer--hovered': this.hovered,
     };
     const drawerClasses = {

@@ -38,7 +38,6 @@ export class CovalentNavRailListItem extends CovalentListItem {
   @queryAssignedElements({ slot: 'expansion-panel', flatten: true })
   expansionPanelElements!: CovalentList[];
 
-  lastKeySelected = 0;
 
   @property({ type: Boolean, reflect: true })
   open = false;
@@ -47,6 +46,8 @@ export class CovalentNavRailListItem extends CovalentListItem {
   hasChildren = false;
 
   activated = false;
+
+  private lastKeySelected = 0;
 
   private _toggleOpen() {
     this.open = !this.open;
