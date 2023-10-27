@@ -1,24 +1,21 @@
-import './cv-expansion-panel';
-import './cv-expansion-panel-item';
+import './expansion-panel';
+import './expansion-panel-item';
 import '../icon/icon';
 import '../action-ribbon/action-ribbon';
 import '../button/button';
 import '../icon/icon';
 
 export default {
-  title: 'Components/Expansion Panel',
-  argTypes: {
-    icon: {
-      control: 'text',
-      defaultValue: 'description',
-    },
+  title: 'Components/Expansion panel',
+  args: {
+    icon: 'description',
   },
   parameters: {
     layout: 'centered',
   },
 };
 
-export const ExpansionPanel = ({ icon }) => {
+export const Basic = ({ icon }) => {
   return `
     <cv-expansion-panel titleWidth='16em'>
 

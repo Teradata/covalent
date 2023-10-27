@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 import { it, describe, expect } from 'vitest';
-import { CovalentExpansionPanel } from './cv-expansion-panel';
+import { CovalentExpansionPanel } from './expansion-panel';
 
 describe('Expansion panel', () => {
   it('should work', () => {
