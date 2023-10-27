@@ -1,3 +1,9 @@
+# [7.4.0-beta.2](https://github.com/Teradata/covalent/compare/v7.4.0-beta.1...v7.4.0-beta.2) (2023-10-27)
+
+### Features
+
+- **components:** app-shell attribute update ([4d1ff3f](https://github.com/Teradata/covalent/commit/4d1ff3fe8d5ab2a9859edd01a1989b2f72f8e1b7))
+
 # [7.4.0-beta.1](https://github.com/Teradata/covalent/compare/v7.3.0...v7.4.0-beta.1) (2023-10-24)
 
 ### Bug Fixes
