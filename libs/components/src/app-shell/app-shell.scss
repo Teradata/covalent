@@ -58,10 +58,10 @@
     &.cov-drawer--hovered-closing {
       margin-left: 72px;
     }
-    :not(.cov-drawer--forcedOpen) & {
+    :not(.cov-drawer--forced-open) & {
       margin-left: 72px;
     }
-    .cov-appshell--minilist & {
+    .cov-drawer--open & {
       margin-left: 0;
     }
   }
