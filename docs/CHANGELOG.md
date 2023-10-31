@@ -1,3 +1,9 @@
+## [7.3.1](https://github.com/Teradata/covalent/compare/v7.3.0...v7.3.1) (2023-10-31)
+
+### Bug Fixes
+
+- **docs:** angular docs code highlight theme ([#2062](https://github.com/Teradata/covalent/issues/2062)) ([891ce94](https://github.com/Teradata/covalent/commit/891ce9468323b424b834973ec779cc91f9ce2e43))
+
 # [7.3.0](https://github.com/Teradata/covalent/compare/v7.2.0...v7.3.0) (2023-10-24)
 
 ### Bug Fixes
