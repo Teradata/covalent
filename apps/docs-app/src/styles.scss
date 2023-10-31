@@ -90,7 +90,6 @@ $background: map-get($theme, background);
 @include covalent-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme($theme);
-@import 'highlight.js/styles/vs.css';
 @include covalent-flavored-markdown-theme($theme);
 @include covalent-markdown-navigator-theme($theme);
 @include covalent-markdown-navigator-typography($custom-typography);
@@ -123,8 +122,7 @@ body .mat-card {
   @include mat.all-component-themes($theme-dark);
   @include covalent-theme($theme-dark);
   @include covalent-markdown-theme($theme-dark);
-  @include covalent-highlight-theme($theme);
-  @import 'highlight.js/styles/dark';
+  @include covalent-highlight-theme($theme-dark);
   @include covalent-flavored-markdown-theme($theme-dark);
   @include covalent-markdown-navigator-theme($theme-dark);
   @include teradata-brand($theme-dark);
