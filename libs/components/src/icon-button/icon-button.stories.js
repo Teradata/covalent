@@ -7,13 +7,11 @@ export default {
     icon: {
       control: 'select',
       options: Object.keys(iconList),
-      defaultValue: 'houseboat',
     },
-    disabled: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    onClick: { action: 'onClick' },
+  },
+  args: {
+    icon: 'houseboat',
+    disabled: false,
   },
 };
 

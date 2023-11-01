@@ -2,7 +2,7 @@ import './code-snippet';
 import '../icon-button/icon-button';
 import '../button/button';
 
-import addons from '@storybook/addons';
+import { addons } from '@storybook/preview-api';
 import {
   DARK_MODE_EVENT_NAME,
   UPDATE_DARK_MODE_EVENT_NAME,
@@ -33,31 +33,13 @@ SELECT * FROM load_to_teradata (
 
 export default {
   title: 'Components/Code snippet',
-  argTypes: {
-    hideHeader: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    inline: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    label: {
-      control: 'text',
-      defaultValue: 'Example',
-    },
-    language: {
-      control: 'text',
-      defaultValue: 'sql',
-    },
-    content: {
-      control: 'text',
-      defaultValue: sqlContent,
-    },
-    maxHeight: {
-      control: 'number',
-      defaultValue: 0,
-    },
+  args: {
+    hideHeader: false,
+    inline: false,
+    label: 'Example.sql',
+    language: 'sql',
+    content: sqlContent,
+    maxHeight: 0,
   },
 };
 

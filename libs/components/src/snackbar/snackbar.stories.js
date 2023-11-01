@@ -4,19 +4,10 @@ import '../icon-button/icon-button';
 
 export default {
   title: 'Components/Snackbar',
-  argTypes: {
-    stacked: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    leading: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    label: {
-      control: 'text',
-      defaultValue: "Can't send photo. Retry in 5 seconds.",
-    },
+  args: {
+    stacked: false,
+    leading: false,
+    label: "Can't send photo. Retry in 5 seconds.",
   },
 };
 

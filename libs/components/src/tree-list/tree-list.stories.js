@@ -2,11 +2,8 @@ import './tree-list';
 import './tree-list-item';
 export default {
   title: 'Components/Tree List',
-  argTypes: {
-    icon: {
-      control: 'text',
-      defaultValue: 'description',
-    },
+  args: {
+    icon: 'description',
   },
   parameters: {
     layout: 'centered',

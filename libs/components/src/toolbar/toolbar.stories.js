@@ -2,41 +2,16 @@ import './toolbar';
 
 export default {
   title: 'Components/Toolbar',
-  argTypes: {
-    dense: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    title: {
-      control: 'text',
-      defaultValue: 'Page title',
-    },
-    filter: {
-      control: 'boolean',
-      defaultValue: true,
-    },
-    search: {
-      control: 'boolean',
-      defaultValue: true,
-    },
-    add: {
-      control: 'boolean',
-      defaultValue: true,
-    },
-    secondaryAction: {
-      control: 'boolean',
-      defaultValue: true,
-    },
-    action: {
-      control: 'boolean',
-      defaultValue: true,
-    },
+  args: {
+    title: 'Page title',
+    dense: false,
+    filter: true,
+    search: true,
+    add: true,
+    secondaryAction: true,
+    action: true,
   },
   parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/OZGyytUGDqjqoyvftu1Kid/Toolbars?node-id=49%3A579',
-    },
     layout: 'fullscreen',
   },
 };

@@ -85,7 +85,10 @@ export const StatusHeader = () => {
         </style>
         <cv-button raised>Open side sheet</cv-button>
         <cv-side-sheet noPadding>
-          ${ActiveStatusHeader({state:'active'})}
+          ${ActiveStatusHeader({
+            state: 'active',
+            title: 'Example status from a side sheet',
+          })}
           ${tableRowSelectionContent}
         </cv-side-sheet>
     `;

@@ -3,19 +3,10 @@ import tableContent from '../../stories/demos/table.content.html?raw';
 
 export default {
   title: 'Components/Cards',
-  argTypes: {
-    outlined: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    actionBar: {
-      control: 'boolean',
-      defaultValue: true,
-    },
-    cardTitle: {
-      control: 'text',
-      defaultValue: '',
-    },
+  args: {
+    cardTitle: 'Card title',
+    outlined: false,
+    actionBar: false,
   },
 };
 

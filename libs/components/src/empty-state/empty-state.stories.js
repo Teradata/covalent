@@ -4,40 +4,13 @@ import '../card/card';
 
 export default {
   title: 'Components/Empty State',
-  argTypes: {
-    // Page args
-    headline: {
-      control: 'text',
-      defaultValue: "You don't have access to this area",
-      description: 'Sets the main message of the empty alert',
-    },
-    subtitle: {
-      control: 'text',
-      defaultValue:
-        "You don't have permission to view this application.\nPlease contact your system administrator for further details.",
-      description: 'Sets a more detailed message below the headline',
-    },
-    action: {
-      control: 'boolean',
-      defaultValue: false,
-      description: 'Will render a button if true',
-    },
-    twoActions: {
-      control: 'boolean',
-      defaultValue: true,
-      description: 'Will render two buttons if true',
-    },
-    icon: {
-      control: 'text',
-      defaultValue: 'work',
-      description: 'Adds an icon to the empty alert',
-    },
-  },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/b7geqz0aCeDo4NbzTBWAiw/Empty-states?node-id=19%3A115',
-    },
+  args: {
+    headline: "You don't have access to this area",
+    subtitle:
+      "You don't have permission to view this application.\nPlease contact your system administrator for further details.",
+    action: false,
+    twoActions: true,
+    icon: 'work',
   },
 };
 
@@ -104,7 +77,6 @@ const Card = ({
       <cv-empty-state 
       headline="${headline}" 
       subtitle="${subtitle}"
-      slot="empty-state"
       card
       >
           ${

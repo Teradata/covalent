@@ -10,34 +10,19 @@ All components are published in npm and available on any CDN that host npm modul
 
 ```html
 <!-- using a specific version -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@covalent/components@4.10.0/theme.css"
-/>
-<script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@covalent/components@4.10.0/index.js"
-></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/index.mjs"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/style.css" />
 
 <!-- using the latest version -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/theme.css"
-/>
-<script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/index.js"
-></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/index.mjs"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/style.css" />
 ```
 
 the component bundles are also available individually
 
 ```html
 <!-- just include the button component -->
-<script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/button.js"
-></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/button.mjs"></script>
 ```
 
 ### Basic usage
@@ -48,8 +33,8 @@ once the script is loaded, its now possible to start using our custom HTML eleme
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/theme.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/index.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/index.mjs"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/style.css" />
   </head>
   <body>
     <cv-button raised>Hello world<cv-button>
@@ -79,7 +64,7 @@ Applications using angular can use covalent components in the same way they use 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 
-import '@covalent/components/button.js';
+import '@covalent/components/button';
 
 @component({
   standalone: true,

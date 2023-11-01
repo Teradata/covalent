@@ -8,9 +8,7 @@
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "cd libs/components/ && vite"
-        ],
+        "commands": ["cd libs/components/ && vite"],
         "parallel": false
       }
     },
@@ -57,7 +55,7 @@
       "options": {
         "commands": [
           {
-            "command": "npx start-storybook -c libs/components/.storybook"
+            "command": "storybook dev -c libs/components/.storybook"
           }
         ]
       }
@@ -67,7 +65,7 @@
       "options": {
         "commands": [
           {
-            "command": "npx build-storybook -c libs/components/.storybook -o dist/storybook/components"
+            "command": "storybook build -c libs/components/.storybook -o dist/storybook/components"
           }
         ]
       }

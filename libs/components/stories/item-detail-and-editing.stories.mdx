@@ -1,4 +1,4 @@
-<!-- item-detail-and-editing.stories.mdx -->
+{/* item-detail-and-editing.stories.mdx */}
 
 import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
 
@@ -12,12 +12,11 @@ import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
   }}
 />
 
-<style>{`
+<style>
+  {`
     .container {
         display: flex;
         flex-direction: column;
-        width: 960px;
-        height: 400px;
         border-radius: 8px;
         border: var(--mdc-theme-border) 1px solid;
         margin-top: 24px;
@@ -52,7 +51,7 @@ import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
         margin-left: 16px;
         margin-top: 8px;
     }
-    .sbdocs .sbdocs-hr {
+    .sbdocs hr {
         margin-top: 0;
         padding-bottom: 16px;
     }
@@ -85,7 +84,6 @@ import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
         margin-top: 16px;
     }
     .divider {
-      width: 960px;
       border: solid 1px var(--mdc-theme-border);
       margin-top: 72px;
       margin-bottom: 24px;
@@ -105,7 +103,7 @@ import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
     .changes-container-item > div:last-of-type {
         width: 60%;
     }
-    .changes-container .sbdocs .sbdocs-hr {
+    .changes-container hr {
         padding: 0;
     }
     .changes-title {
@@ -208,7 +206,8 @@ import { Canvas, Meta, DocsContainer } from '@storybook/addon-docs';
     .new-text-block {
         margin-top: 16px;
     }
-`}</style>
+  `}
+</style>
 
 # Item detail & editing
 
@@ -222,19 +221,15 @@ For content that’s intended to be browsed for information, display in read-onl
       Interdum pellentesque cras ornare porttitor tellus ante.
     </div>
     <div class="actions">
-      <cv-button outlined slot="buttonActions">
-        Action
-      </cv-button>
-      <cv-button outlined slot="buttonActions">
-        Action
-      </cv-button>
+      <cv-button outlined slot="buttonActions" label="Action"></cv-button>
+      <cv-button outlined slot="buttonActions" label="Action"></cv-button>
     </div>
   </div>
   <cv-tab-bar activeIndex="0">
-    <cv-tab null label="Details"></cv-tab>
-    <cv-tab null label="Tab 2"></cv-tab>
-    <cv-tab null label="Tab 3"></cv-tab>
-    <cv-tab null label="Tab 4"></cv-tab>
+    <cv-tab label="Details"></cv-tab>
+    <cv-tab label="Tab 2"></cv-tab>
+    <cv-tab label="Tab 3"></cv-tab>
+    <cv-tab label="Tab 4"></cv-tab>
   </cv-tab-bar>
   <hr />
   <div class="content">
@@ -275,10 +270,10 @@ Editing takes place in context, not in a separate view. Show form fields by defa
         Elit in semper faucibus aliquam. Nisl, augue porta eu urna.
       </div>
       <cv-tab-bar activeIndex="0">
-        <cv-tab null label="Details ●"></cv-tab>
-        <cv-tab null label="Tab 2"></cv-tab>
-        <cv-tab null label="Tab 3"></cv-tab>
-        <cv-tab null label="Tab 4"></cv-tab>
+        <cv-tab label="Details ●"></cv-tab>
+        <cv-tab label="Tab 2"></cv-tab>
+        <cv-tab label="Tab 3"></cv-tab>
+        <cv-tab label="Tab 4"></cv-tab>
       </cv-tab-bar>
       <hr />
       <div class="list-item list-item-blue-bg">
@@ -344,19 +339,15 @@ Editing takes place in context, not in a separate view. Show form fields by defa
     </div>
     <div class="changes-example">
       <cv-tab-bar activeIndex="0">
-        <cv-tab null label="Details"></cv-tab>
-        <cv-tab null label="Tab 2"></cv-tab>
-        <cv-tab null label="Tab 3"></cv-tab>
-        <cv-tab null label="Tab 4"></cv-tab>
+        <cv-tab label="Details"></cv-tab>
+        <cv-tab label="Tab 2"></cv-tab>
+        <cv-tab label="Tab 3"></cv-tab>
+        <cv-tab label="Tab 4"></cv-tab>
       </cv-tab-bar>
       <hr />
-      <cv-action-ribbon labelText="No changes" state="undefined" null>
-        <cv-button slot="action-items" outlined>
-          Cancel
-        </cv-button>
-        <cv-button slot="action-items" raised disabled>
-          Save
-        </cv-button>
+      <cv-action-ribbon labelText="No changes">
+        <cv-button slot="action-items" label="Cancel" outlined></cv-button>
+        <cv-button slot="action-items" label="Save" raised disabled></cv-button>
       </cv-action-ribbon>
       <div class="action-ribbon-bottom-content">
         <div class="skeleton-text">
@@ -406,23 +397,15 @@ Editing takes place in context, not in a separate view. Show form fields by defa
     </div>
     <div class="changes-example">
       <cv-tab-bar activeIndex="0">
-        <cv-tab null label="Details ●"></cv-tab>
-        <cv-tab null label="Tab 2"></cv-tab>
-        <cv-tab null label="Tab 3"></cv-tab>
-        <cv-tab null label="Tab 4"></cv-tab>
+        <cv-tab label="Details ●"></cv-tab>
+        <cv-tab label="Tab 2"></cv-tab>
+        <cv-tab label="Tab 3"></cv-tab>
+        <cv-tab label="Tab 4"></cv-tab>
       </cv-tab-bar>
       <hr />
-      <cv-action-ribbon
-        labelText="You have unsaved changes"
-        state="active"
-        null
-      >
-        <cv-button slot="action-items" outlined>
-          Cancel
-        </cv-button>
-        <cv-button slot="action-items" raised>
-          Save
-        </cv-button>
+      <cv-action-ribbon labelText="You have unsaved changes" state="active">
+        <cv-button slot="action-items" label="Cancel" outlined></cv-button>
+        <cv-button slot="action-items" label="Save" raised></cv-button>
       </cv-action-ribbon>
       <div class="action-ribbon-bottom-content">
         <div class="skeleton-text">
