@@ -109,7 +109,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, default is used.
    */
-  @Input() color?: 'accent' | 'primary' | 'warn';
+  @Input() color: 'accent' | 'primary' | 'warn' = 'primary';
 
   /**
    * navigationRoute?: string

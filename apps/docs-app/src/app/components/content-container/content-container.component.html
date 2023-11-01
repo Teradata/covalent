@@ -1,5 +1,10 @@
 <mat-sidenav-container fullscreen>
-  <mat-sidenav mode="side" [style.width.px]="280" [style.z-index]="1" opened>
+  <mat-sidenav
+    mode="side"
+    [style.width.px]="280"
+    [style.z-index]="1"
+    [opened]="(isSmall | async) === false"
+  >
     <app-sidenav-content></app-sidenav-content>
   </mat-sidenav>
   <mat-sidenav-content>
