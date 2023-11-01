@@ -4,33 +4,26 @@ import iconList from '../../../icons/material-codepoints.json';
 const MAT_ICON_LIST = Object.keys(iconList);
 
 export default {
-  title: 'Components/Text lockup',
+  title: 'Basics/Typography/Text lockup',
   argTypes: {
     scale: {
       options: ['large', 'small'],
       control: { type: 'radio' },
-      defaultValue: 'small',
-    },
-    text: {
-      control: 'text',
-      defaultValue: 'TDICAM-8523411',
     },
     icon: {
       options: MAT_ICON_LIST,
       control: { type: 'select' },
     },
-    subText: {
-      control: 'text',
-      defaultValue: 'environment Id',
-    },
     subTextState: {
       options: ['active', 'positive', 'negative', 'caution'],
       control: { type: 'select' },
     },
-    subTextTrailing: {
-      control: 'boolean',
-      defaultValue: false,
-    },
+  },
+  args: {
+    scale: 'small',
+    text: 'TDICAM-8523411',
+    subText: 'environment Id',
+    subTextTrailing: false,
   },
 };
 

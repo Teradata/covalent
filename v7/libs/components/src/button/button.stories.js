@@ -2,48 +2,15 @@ import './button';
 
 export default {
   title: 'Components/Button',
-  argTypes: {
-    label: { control: 'text', defaultValue: 'Button' },
-    icon: {
-      control: 'text',
-      defaultValue: 'houseboat',
-    },
-    showIcon: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    trailingIcon: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    style: {
-      control: {
-        disable: true,
-      },
-    },
-    disabled: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    dense: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    onClick: { action: 'onClick' },
-    isNegative: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-    isPrimary: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-  },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/aDX2Rc1OIJ9tWgMcAvKRXv/Section?node-id=22%3A1453',
-    },
+  args: {
+    label: 'Button',
+    icon: 'houseboat',
+    showIcon: false,
+    trailingIcon: false,
+    disabled: false,
+    dense: false,
+    isNegative: false,
+    isPrimary: false,
   },
 };
 

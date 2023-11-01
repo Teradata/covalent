@@ -3,9 +3,7 @@ import '../formfield/formfield';
 
 export default {
   title: 'Components/Radio',
-  argTypes: {
-    onClick: { action: 'onClick' },
-  },
+  argTypes: {},
 };
 
 const Template = ({ disabled }) => {

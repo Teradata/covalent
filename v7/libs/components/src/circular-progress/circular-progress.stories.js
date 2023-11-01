@@ -7,8 +7,11 @@ export default {
       control: { type: 'range', max: 1, min: 0, step: 0.1 },
     },
     density: {
-      control: { type: 'range', defaultValue: 0, min: -8, max: 50 },
+      control: { type: 'range', min: -8, max: 50 },
     },
+  },
+  args: {
+    density: 0,
   },
 };
 

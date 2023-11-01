@@ -12,7 +12,6 @@ export default {
     icon: {
       control: 'text',
     },
-    onClick: { action: 'onClick' },
   },
 };
 

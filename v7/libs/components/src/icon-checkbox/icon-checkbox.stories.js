@@ -2,26 +2,10 @@ import './icon-check-toggle';
 
 export default {
   title: 'Components/Icon Checkbox',
-  argTypes: {
-    width: {
-      control: 'text',
-      defaultValue: '200',
-      description: 'Can take either a number or fill',
-    },
-    height: {
-      control: 'text',
-      defaultValue: '160',
-    },
-    iconOnly: {
-      control: 'boolean',
-      defaultValue: false,
-    },
-  },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/xrXnnUqmcOWk5YfmY6zcqg/Tabs?node-id=1484%3A37281',
-    },
+  args: {
+    width: 200,
+    height: 160,
+    iconOnly: false,
   },
 };
 

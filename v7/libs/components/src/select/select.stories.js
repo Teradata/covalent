@@ -7,12 +7,10 @@ export default {
     style: {
       options: ['outlined', 'filled'],
       control: { type: 'radio' },
-      defaultValue: 'outlined',
     },
-    required: {
-      control: 'boolean',
-    },
-    onSelect: { action: 'onClick' },
+  },
+  args: {
+    style: 'outlined',
   },
 };
 

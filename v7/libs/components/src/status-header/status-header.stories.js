@@ -7,23 +7,16 @@ export default {
     layout: 'fullscreen',
   },
   argTypes: {
-    title: {
-      control: 'text',
-      defaultValue: 'Item details',
-    },
     state: {
       options: ['active', 'caution', 'error', 'positive', 'neutral'],
       control: { type: 'select' },
-      defaultValue: 'neutral',
     },
-    status: {
-      control: 'text',
-      defaultValue: 'Status',
-    },
-    icon: {
-      control: 'text',
-      defaultValue: 'Status',
-    },
+  },
+  args: {
+    state: 'neutral',
+    title: 'Item details',
+    status: 'Status',
+    icon: 'Status',
   },
 };
 

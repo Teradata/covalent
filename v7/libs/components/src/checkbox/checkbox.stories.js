@@ -3,9 +3,7 @@ import '../formfield/formfield';
 
 export default {
   title: 'Components/Checkbox',
-  argTypes: {
-    onClick: { action: 'onClick' },
-  },
+  argTypes: {},
 };
 
 const Template = ({ label = 'Bananas', disabled }) => {
