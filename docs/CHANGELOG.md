@@ -1,3 +1,10 @@
+# [7.4.0](https://github.com/Teradata/covalent/compare/v7.3.1...v7.4.0) (2023-11-01)
+
+### Features
+
+- **components:** app shell update ([#2067](https://github.com/Teradata/covalent/issues/2067)) ([87c4686](https://github.com/Teradata/covalent/commit/87c4686a9231548d620fbee8a27b27add007ae95))
+- **components:** upgrading storybook to v7 ([#2064](https://github.com/Teradata/covalent/issues/2064)) ([efd2598](https://github.com/Teradata/covalent/commit/efd2598c9fd8fb67450030aa70dbd48e2fe3e511))
+
 ## [7.3.1](https://github.com/Teradata/covalent/compare/v7.3.0...v7.3.1) (2023-10-31)
 
 ### Bug Fixes
