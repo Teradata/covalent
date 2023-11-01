@@ -24,7 +24,6 @@ module.exports = defineConfig({
         'libs/components/src/linear-progress/linear-progress',
         'libs/components/src/list/check-list-item',
         'libs/components/src/list/list',
-        'libs/components/src/list/list-expansion',
         'libs/components/src/list/list-item',
         'libs/components/src/list/nav-list-item',
         'libs/components/src/list/radio-list-item',

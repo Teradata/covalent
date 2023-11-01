@@ -18,7 +18,6 @@ export * from './icon-radio/icon-radio-toggle';
 export * from './linear-progress/linear-progress';
 export * from './list/check-list-item';
 export * from './list/list';
-export * from './list/list-expansion';
 export * from './list/list-item';
 export * from './list/nav-list-item';
 export * from './list/radio-list-item';
