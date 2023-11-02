@@ -1,7 +1,0 @@
-@import 'colors-dark';
-@import 'colors-light';
-
-@mixin covalent-colors() {
-  @include td-colors-light();
-  @include td-colors-dark();
-}
