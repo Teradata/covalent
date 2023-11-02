@@ -50,7 +50,7 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm ci
-      - run: npx nx affected --target=e2e --base=${{ github.event.pull_request.base.sha }}
+      - run: NODE_OPTIONS=--max_old_space_size=4096 npx nx affected --target=e2e --base=${{ github.event.pull_request.base.sha }}
 
   build:
     runs-on: ubuntu-latest
