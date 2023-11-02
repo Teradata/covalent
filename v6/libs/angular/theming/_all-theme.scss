@@ -1,0 +1,26 @@
+@import '../breadcrumbs/breadcrumbs-theme';
+@import '../common/common-theme';
+@import '../layout/layout-theme';
+@import '../loading/loading-theme';
+@import '../file/file-theme';
+@import '../dialogs/dialog-theme';
+@import '../json-formatter/json-formatter-theme';
+@import '../message/message-theme';
+@import '../side-sheet/side-sheet.theme';
+// import the covalent mixins
+@import '../common/styles/styles';
+@import '../typography/all-typography';
+
+// Create a theme.
+@mixin covalent-theme($theme, $config: null) {
+  @include td-typography($config);
+  @include td-breadcrumbs-theme($theme);
+  @include td-common-theme($theme);
+  @include td-layout-theme($theme);
+  @include td-loading-theme($theme);
+  @include td-file-theme($theme);
+  @include td-dialog-theme($theme);
+  @include td-json-formatter-theme($theme);
+  @include td-message-theme($theme);
+  @include td-side-sheet-theme($theme);
+}

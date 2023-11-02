@@ -1,0 +1,39 @@
+<button
+  *ngIf="!trigger.text"
+  mat-icon-button
+  id="{{ trigger.id }}"
+  [matMenuTriggerFor]="menu.childMenu"
+>
+  <mat-icon
+    *ngIf="trigger.svgIcon"
+    [class]="trigger.iconClasses"
+    [svgIcon]="trigger.svgIcon"
+  ></mat-icon>
+  <mat-icon *ngIf="trigger.icon" [class]="trigger.iconClasses">{{
+    trigger.icon
+  }}</mat-icon>
+</button>
+<button
+  *ngIf="trigger.text"
+  mat-button
+  id="{{ trigger.id }}"
+  [matMenuTriggerFor]="menu.childMenu"
+>
+  <mat-icon
+    *ngIf="trigger.svgIcon"
+    [class]="trigger.iconClasses"
+    [svgIcon]="trigger.svgIcon"
+  ></mat-icon>
+  <mat-icon *ngIf="trigger.icon" [class]="trigger.iconClasses">{{
+    trigger.icon
+  }}</mat-icon>
+  <span *ngIf="trigger.text">
+    {{ trigger.text }}
+  </span>
+</button>
+
+<td-dynamic-menu-item
+  #menu
+  [items]="items"
+  (itemClicked)="emitClicked($event)"
+></td-dynamic-menu-item>

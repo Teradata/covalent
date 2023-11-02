@@ -1,3 +1,131 @@
+# [4.14.0](https://github.com/Teradata/covalent/compare/v4.13.0...v4.14.0) (2022-12-08)
+
+### Features
+
+- **components:** adding text lockup component ([1c4299c](https://github.com/Teradata/covalent/commit/1c4299cecfa7c7a0157d902f64f7328c80b35483))
+
+# [4.13.0](https://github.com/Teradata/covalent/compare/v4.12.3...v4.13.0) (2022-12-02)
+
+### Bug Fixes
+
+- change theme toggle icons ([465711e](https://github.com/Teradata/covalent/commit/465711ec611228f5dd312284372217201cfba48a))
+
+### Features
+
+- **components:** adding code snippet component ([355b6f7](https://github.com/Teradata/covalent/commit/355b6f798a83662180b4fadb34d5303769e861cf))
+- **tokens:** adding code snippet tokens ([a37300f](https://github.com/Teradata/covalent/commit/a37300f7c8e7f0ce0f54187a9e3ce9d73ec475fa))
+
+## [4.12.3](https://github.com/Teradata/covalent/compare/v4.12.2...v4.12.3) (2022-11-15)
+
+### Bug Fixes
+
+- **components:** exporting sidesheet in build ([b56c928](https://github.com/Teradata/covalent/commit/b56c928f963e7e6b3317136f7116e1b0ef89be9c))
+
+## [4.12.2](https://github.com/Teradata/covalent/compare/v4.12.1...v4.12.2) (2022-11-14)
+
+### Bug Fixes
+
+- **components:** card and toolbar style adjustments ([ef39ea2](https://github.com/Teradata/covalent/commit/ef39ea27878e3928d867e862534cd9900a756b9c))
+
+## [4.12.1](https://github.com/Teradata/covalent/compare/v4.12.0...v4.12.1) (2022-11-10)
+
+### Bug Fixes
+
+- **components:** fixes for button, icon toggle, card ([fd10507](https://github.com/Teradata/covalent/commit/fd10507ae4549379c5111484c431e6b294d9d6e4))
+- **components:** removing boilerplate code from toolbar ([f07cdae](https://github.com/Teradata/covalent/commit/f07cdae57ede83745089cc3ae57a77200e679a91))
+- **package:** update dependency list ([ac59f54](https://github.com/Teradata/covalent/commit/ac59f54b90b30433f4107a7e403c0e0f65cabc3b))
+
+# [4.12.0](https://github.com/Teradata/covalent/compare/v4.11.0...v4.12.0) (2022-11-10)
+
+### Features
+
+- **components:** adding typography web component ([6122bbd](https://github.com/Teradata/covalent/commit/6122bbdf7845f91167bdf6fa7d906b5eb7766520))
+
+# [4.11.0](https://github.com/Teradata/covalent/compare/v4.10.2...v4.11.0) (2022-11-09)
+
+### Features
+
+- **components:** adding [@divrags](https://github.com/divrags) status header component ([e045495](https://github.com/Teradata/covalent/commit/e0454958a1fa3bc63a4f3f4a413bc7cd1c73a4d7))
+- **components:** adding sidesheet component ([5f2cc07](https://github.com/Teradata/covalent/commit/5f2cc0793286832858dae831bd6773bc67538fcd))
+- **components:** adjustments from review comments ([6ff03db](https://github.com/Teradata/covalent/commit/6ff03db9ab0b10d6709c474b634606146e04108d))
+
+## [4.10.2](https://github.com/Teradata/covalent/compare/v4.10.1...v4.10.2) (2022-11-07)
+
+### Bug Fixes
+
+- **build:** fix to npm not publishing all packages ([ae36afc](https://github.com/Teradata/covalent/commit/ae36afc76a6438ccf79d9108c4363817ebe05a8a))
+
+## [4.10.1](https://github.com/Teradata/covalent/compare/v4.10.0...v4.10.1) (2022-11-07)
+
+### Bug Fixes
+
+- display urls with query params in list ([5a8f270](https://github.com/Teradata/covalent/commit/5a8f2707f1db25f7aff8d34441de671b680631cd))
+- **markdown:** add check for CRLF in markdown, put CFM list behind flag ([0f58869](https://github.com/Teradata/covalent/commit/0f588693f3746f2e7bf3848fb8fe1fba35a216ac))
+
+# [4.10.0](https://github.com/Teradata/covalent/compare/v4.9.0...v4.10.0) (2022-10-26)
+
+### Features
+
+- **components:** rearranging libs & cleanup ([dee789c](https://github.com/Teradata/covalent/commit/dee789c54722dd1316228cde68a4380f2e2769bf))
+
+# [4.9.0](https://github.com/Teradata/covalent/compare/v4.8.2...v4.9.0) (2022-09-30)
+
+### Features
+
+- **components:** adding basic tests ([db4550a](https://github.com/Teradata/covalent/commit/db4550a4984d23abbfe9d803d2f802be4b05bd5e))
+
+## [4.8.2](https://github.com/Teradata/covalent/compare/v4.8.1...v4.8.2) (2022-09-29)
+
+### Bug Fixes
+
+- **components:** storybook preview css path ([0c21783](https://github.com/Teradata/covalent/commit/0c2178397cb3f4b3e7a82c7f3daeb4603e047166))
+
+## [4.8.1](https://github.com/Teradata/covalent/compare/v4.8.0...v4.8.1) (2022-09-29)
+
+### Bug Fixes
+
+- **componets:** deploy to npm & chromatic ci ([970c163](https://github.com/Teradata/covalent/commit/970c163b4e602a9cf780d0b0a0203c82ea325a7e))
+
+# [4.8.0](https://github.com/Teradata/covalent/compare/v4.7.1...v4.8.0) (2022-09-29)
+
+### Bug Fixes
+
+- uncommented mixin in theme file ([a59ece7](https://github.com/Teradata/covalent/commit/a59ece787ec94d9fbc4f9393a90dda7d3ddaf952))
+
+### Features
+
+- add color use guide to covalent ([33aad1b](https://github.com/Teradata/covalent/commit/33aad1bcc58cad929ae76d67fa1eeed092142f26))
+
+## [4.7.1](https://github.com/Teradata/covalent/compare/v4.7.0...v4.7.1) (2022-09-29)
+
+### Bug Fixes
+
+- **nx:** side sheet behavior change ([4e6c0f8](https://github.com/Teradata/covalent/commit/4e6c0f8d9e6ec7ff90d3c8fb2ca6904b3b3458dc))
+- **nx:** side sheet behavior change ([a15e022](https://github.com/Teradata/covalent/commit/a15e02239b94b9ac0141d001590c8a23a8877e75))
+
+# [4.7.0](https://github.com/Teradata/covalent/compare/v4.6.2...v4.7.0) (2022-09-28)
+
+### Features
+
+- add info and help guide ([2c8a702](https://github.com/Teradata/covalent/commit/2c8a7025a9b99c3a202814ed53c004437c5a27cb))
+
+## [4.6.2](https://github.com/Teradata/covalent/compare/v4.6.1...v4.6.2) (2022-09-28)
+
+### Bug Fixes
+
+- **editor:** remove grey border ([c0c773d](https://github.com/Teradata/covalent/commit/c0c773d36d5a4f9fcfbe39c3e42ff5ec404eb972))
+
+## [4.6.1](https://github.com/Teradata/covalent/compare/v4.6.0...v4.6.1) (2022-09-21)
+
+### Bug Fixes
+
+- **markdown-flavored:** teardown subscription when the view is destroyed ([119ea5e](https://github.com/Teradata/covalent/commit/119ea5ed94fe12fa43413d871115d1451a957c49))
+
+### Performance Improvements
+
+- **file:** do not run change detection on `click` and `keyup` events when the `td-file-input` button is clicked ([823e7e4](https://github.com/Teradata/covalent/commit/823e7e431ca0500cc66b705bda49a4ccd1603718))
+- **file:** do not run change detection on `dragover` event ([72495eb](https://github.com/Teradata/covalent/commit/72495eb0adb28a4c9eb2985ad593897ed868faa5))
+
 # [4.6.0](https://github.com/Teradata/covalent/compare/v4.5.0...v4.6.0) (2022-09-06)
 
 ### Features

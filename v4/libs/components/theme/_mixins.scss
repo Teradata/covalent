@@ -1,0 +1,364 @@
+// Covalent themed components
+@use '../src/button/button.theme' as button;
+@use '../src/card/card.theme' as card;
+@use '../src/checkbox/checkbox.theme' as checkbox;
+@use '../src/chips/chips.theme' as chips;
+@use '../src/data-table/data-table.theme' as data-table;
+@use '../src/dialog/dialog.theme' as dialog;
+@use '../src/drawer/drawer.theme' as drawer;
+@use '../src/icon-button/icon-button.theme' as icon-button;
+@use '../src/linear-progress/linear-progress.theme' as linear-progress;
+@use '../src/list/list.theme' as lists;
+@use '../src/radio/radio.theme' as radio;
+@use '../src/select/select.theme' as select;
+@use '../src/snackbar/snackbar.theme' as snack-bar;
+@use '../src/switch/switch.theme' as switch;
+@use '../src/tab/tab.theme' as tab;
+@use '../src/textfield/textfield.theme' as textfield;
+@use '../src/top-app-bar/top-app-bar.theme' as top-app-bar;
+
+@mixin components-theme($theme, $typography) {
+  // Foreground colors
+  --mdc-theme-primary: #{map-get($theme, primary)};
+  --mdc-theme-secondary: #{map-get($theme, secondary)};
+  --mdc-theme-error: #{map-get($theme, error)};
+  --mdc-theme-negative: #{map-get($theme, error)};
+  --mdc-theme-positive: #{map-get($theme, positive)};
+  --mdc-theme-caution: #{map-get($theme, caution)};
+  --mdc-theme-emphasis: #{map-get($theme, emphasis)};
+
+  // Alias for primary
+  --mdc-theme-accent: #{map-get($theme, accent)};
+
+  // Background colors
+  --mdc-theme-background: #{map-get($theme, background)};
+  --mdc-ripple-color: #{map-get($theme, on-surface)};
+  --mdc-theme-surface: #{map-get($theme, surface)};
+  --mdc-theme-surface-canvas: #{map-get($theme, surface-canvas)};
+  --mdc-theme-surface-primary: #{map-get($theme, surface-primary)};
+  --mdc-theme-surface-primary-highlight: #{map-get(
+      $theme,
+      surface-primary-highlight
+    )};
+  --mdc-theme-surface-primary-highlight-hover: #{map-get(
+      $theme,
+      surface-primary-highlight-hover
+    )};
+  --mdc-theme-surface-secondary: #{map-get($theme, surface-secondary)};
+  --mdc-theme-surface-secondary-highlight: #{map-get(
+      $theme,
+      surface-secondary-highlight
+    )};
+  --mdc-theme-surface-secondary-highlight-hover: #{map-get(
+      $theme,
+      surface-secondary-highlight-hover
+    )};
+  --mdc-theme-surface-caution: #{map-get($theme, surface-caution)};
+  --mdc-theme-surface-caution-highlight: #{map-get(
+      $theme,
+      surface-caution-highlight
+    )};
+  --mdc-theme-surface-caution-highlight-hover: #{map-get(
+      $theme,
+      surface-caution-highlight-hover
+    )};
+  --mdc-theme-surface-negative: #{map-get($theme, surface-negative)};
+  --mdc-theme-surface-negative-highlight: #{map-get(
+      $theme,
+      surface-negative-highlight
+    )};
+  --mdc-theme-surface-negative-highlight-hover: #{map-get(
+      $theme,
+      surface-negative-highlight-hover
+    )};
+  --mdc-theme-surface-positive: #{map-get($theme, surface-positive)};
+  --mdc-theme-surface-positive-highlight: #{map-get(
+      $theme,
+      surface-positive-highlight
+    )};
+  --mdc-theme-surface-positive-highlight-hover: #{map-get(
+      $theme,
+      surface-positive-highlight-hover
+    )};
+  --mdc-theme-surface-neutral: #{map-get($theme, surface-neutral)};
+  --mdc-theme-surface-neutral-highlight: #{map-get(
+      $theme,
+      surface-neutral-highlight
+    )};
+  --mdc-theme-surface-neutral-highlight-hover: #{map-get(
+      $theme,
+      surface-neutral-highlight-hover
+    )};
+  --mdc-theme-surface-emphasis: #{map-get($theme, surface-emphasis)};
+  --mdc-theme-surface-emphasis-highlight: #{map-get(
+      $theme,
+      surface-emphasis-highlight
+    )};
+  --mdc-theme-surface-emphasis-highlight-hover: #{map-get(
+      $theme,
+      surface-emphasis-highlight-hover
+    )};
+  --mdc-theme-on-primary: #{map-get($theme, on-primary)};
+  --mdc-theme-on-secondary: #{map-get($theme, on-secondary)};
+  --mdc-theme-on-surface: #{map-get($theme, on-surface)};
+  --mdc-theme-border: #{map-get($theme, divider)};
+
+  // Alias for primary
+  --mdc-theme-surface-accent: #{map-get($theme, surface-primary)};
+  --mdc-theme-surface-accent-highlight: #{map-get(
+      $theme,
+      surface-primary-highlight
+    )};
+  --mdc-theme-surface-accent-highlight-hover: #{map-get(
+      $theme,
+      surface-primary-highlight-hover
+    )};
+
+  // Typography
+  --mdc-typography-font-family: #{map-get($typography, font-family)};
+  --mdc-typography-headline1-font-family: #{map-get(
+      $typography,
+      headline1-font-family
+    )};
+  --mdc-typography-headline1-font-size: #{map-get(
+      $typography,
+      headline1-font-size
+    )};
+  --mdc-typography-headline1-font-weight: #{map-get(
+      $typography,
+      headline1-font-weight
+    )};
+  --mdc-typography-headline1-line-height: #{map-get(
+      $typography,
+      headline1-line-height
+    )};
+  --mdc-typography-headline2-font-family: #{map-get(
+      $typography,
+      headline2-font-family
+    )};
+  --mdc-typography-headline2-font-size: #{map-get(
+      $typography,
+      headline2-font-size
+    )};
+  --mdc-typography-headline2-font-weight: #{map-get(
+      $typography,
+      headline2-font-weight
+    )};
+  --mdc-typography-headline2-line-height: #{map-get(
+      $typography,
+      headline2-line-height
+    )};
+  --mdc-typography-headline3-font-family: #{map-get(
+      $typography,
+      headline3-font-family
+    )};
+  --mdc-typography-headline3-font-size: #{map-get(
+      $typography,
+      headline3-font-size
+    )};
+  --mdc-typography-headline3-font-weight: #{map-get(
+      $typography,
+      headline3-font-weight
+    )};
+  --mdc-typography-headline3-line-height: #{map-get(
+      $typography,
+      headline3-line-height
+    )};
+  --mdc-typography-headline4-font-family: #{map-get(
+      $typography,
+      headline4-font-family
+    )};
+  --mdc-typography-headline4-font-size: #{map-get(
+      $typography,
+      headline4-font-size
+    )};
+  --mdc-typography-headline4-font-weight: #{map-get(
+      $typography,
+      headline4-font-weight
+    )};
+  --mdc-typography-headline4-line-height: #{map-get(
+      $typography,
+      headline4-line-height
+    )};
+  --mdc-typography-headline5-font-family: #{map-get(
+      $typography,
+      headline5-font-family
+    )};
+  --mdc-typography-headline5-font-size: #{map-get(
+      $typography,
+      headline5-font-size
+    )};
+  --mdc-typography-headline5-font-weight: #{map-get(
+      $typography,
+      headline5-font-weight
+    )};
+  --mdc-typography-headline5-line-height: #{map-get(
+      $typography,
+      headline5-line-height
+    )};
+  --mdc-typography-headline6-font-family: #{map-get(
+      $typography,
+      headline6-font-family
+    )};
+  --mdc-typography-headline6-font-size: #{map-get(
+      $typography,
+      headline6-font-size
+    )};
+  --mdc-typography-headline6-font-weight: #{map-get(
+      $typography,
+      headline6-font-weight
+    )};
+  --mdc-typography-headline6-line-height: #{map-get(
+      $typography,
+      headline6-line-height
+    )};
+  --mdc-typography-subtitle1-font-family: #{map-get(
+      $typography,
+      subtitle1-font-family
+    )};
+  --mdc-typography-subtitle1-font-size: #{map-get(
+      $typography,
+      subtitle1-font-size
+    )};
+  --mdc-typography-subtitle1-font-weight: #{map-get(
+      $typography,
+      subtitle1-font-weight
+    )};
+  --mdc-typography-subtitle1-line-height: #{map-get(
+      $typography,
+      subtitle1-line-height
+    )};
+  --mdc-typography-subtitle2-font-family: #{map-get(
+      $typography,
+      subtitle2-font-family
+    )};
+  --mdc-typography-subtitle2-font-size: #{map-get(
+      $typography,
+      subtitle2-font-size
+    )};
+  --mdc-typography-subtitle2-font-weight: #{map-get(
+      $typography,
+      subtitle2-font-weight
+    )};
+  --mdc-typography-subtitle2-line-height: #{map-get(
+      $typography,
+      subtitle2-line-height
+    )};
+  --mdc-typography-body1-font-family: var(--mdc-typography-font-family);
+  --mdc-typography-body1-font-size: #{map-get($typography, body1-font-size)};
+  --mdc-typography-body1-font-weight: #{map-get($typography, body1-font-weight)};
+  --mdc-typography-body1-line-height: #{map-get($typography, body1-line-height)};
+  --mdc-typography-body2-font-family: var(--mdc-typography-font-family);
+  --mdc-typography-body2-font-size: #{map-get($typography, body2-font-size)};
+  --mdc-typography-body2-font-weight: #{map-get($typography, body2-font-weight)};
+  --mdc-typography-body2-line-height: #{map-get($typography, body2-line-height)};
+  --mdc-typography-button-font-family: #{map-get(
+      $typography,
+      button-font-family
+    )};
+  --mdc-typography-button-font-size: #{map-get($typography, button-font-size)};
+  --mdc-typography-button-font-weight: #{map-get(
+      $typography,
+      button-font-weight
+    )};
+  --mdc-typography-button-line-height: #{map-get(
+      $typography,
+      button-line-height
+    )};
+  --mdc-typography-caption-font-family: var(--mdc-typography-font-family);
+  --mdc-typography-caption-font-size: #{map-get($typography, caption-font-size)};
+  --mdc-typography-caption-font-weight: #{map-get(
+      $typography,
+      caption-font-weight
+    )};
+  --mdc-typography-caption-line-height: #{map-get(
+      $typography,
+      caption-line-height
+    )};
+
+  // Text
+  --mdc-theme-text-primary-on-background: #{map-get(
+      $theme,
+      text-primary-on-background
+    )};
+  --mdc-theme-text-secondary-on-background: #{map-get(
+      $theme,
+      text-secondary-on-background
+    )};
+  --mdc-theme-text-hint-on-background: #{map-get(
+      $theme,
+      text-hint-on-background
+    )};
+  --mdc-theme-text-disabled-on-background: #{map-get(
+      $theme,
+      text-disabled-on-background
+    )};
+  --mdc-theme-text-icon-on-background: #{map-get(
+      $theme,
+      text-icon-on-background
+    )};
+  --mdc-theme-text-primary-on-light: #{map-get($theme, text-primary-on-light)};
+  --mdc-theme-text-secondary-on-light: #{map-get(
+      $theme,
+      text-secondary-on-light
+    )};
+  --mdc-theme-text-hint-on-light: #{map-get($theme, text-hint-on-light)};
+  --mdc-theme-text-disabled-on-light: #{map-get($theme, text-disabled-on-light)};
+  --mdc-theme-text-icon-on-light: #{map-get($theme, text-icon-on-light)};
+  --mdc-theme-text-primary-on-dark: #{map-get($theme, text-primary-on-dark)};
+  --mdc-theme-text-secondary-on-dark: #{map-get($theme, text-secondary-on-dark)};
+  --mdc-theme-text-hint-on-dark: #{map-get($theme, text-hint-on-dark)};
+  --mdc-theme-text-disabled-on-dark: #{map-get($theme, text-disabled-on-dark)};
+  --mdc-theme-text-icon-on-dark: #{map-get($theme, text-icon-on-dark)};
+
+  // Covalent Specific variables
+  --covalent-theme-text-logo-on-background: #{map-get(
+      $theme,
+      text-logo-on-background
+    )};
+
+  // Shape
+  --mdc-shape-small: 8px;
+  --mdc-shape-medium: 8px;
+
+  // Code snippet colors
+  --cov-theme-code-snippet-color: #{map-get($theme, code-snippet-color)};
+  --cov-theme-code-snippet-comment: #{map-get($theme, code-snippet-comment)};
+  --cov-theme-code-snippet-keyword: #{map-get($theme, code-snippet-keyword)};
+  --cov-theme-code-snippet-selector: #{map-get($theme, code-snippet-selector)};
+  --cov-theme-code-snippet-literal: #{map-get($theme, code-snippet-literal)};
+  --cov-theme-code-snippet-string: #{map-get($theme, code-snippet-string)};
+  --cov-theme-code-snippet-variable: #{map-get($theme, code-snippet-variable)};
+  --cov-theme-code-snippet-title: #{map-get($theme, code-snippet-title)};
+  --cov-theme-code-snippet-class: #{map-get($theme, code-snippet-class)};
+
+  @include button.button-theme($theme);
+  @include card.card-theme($theme);
+  @include checkbox.checkbox-theme($theme);
+  @include chips.chips-theme($theme);
+  @include data-table.data-table-theme($theme);
+  @include dialog.dialog-theme($theme);
+  @include drawer.drawer-theme($theme);
+  @include icon-button.icon-button-theme($theme);
+  @include linear-progress.linear-progress-theme($theme);
+  @include lists.lists-theme($theme);
+  @include radio.radio-theme($theme);
+  @include select.select-theme($theme);
+  @include snack-bar.snack-bar-theme($theme);
+  @include switch.switch-theme($theme);
+  @include tab.tab-theme($theme);
+  @include textfield.text-field-theme($theme);
+  @include top-app-bar.top-app-bar-theme($theme);
+
+  color: var(--mdc-theme-text-primary-on-background);
+
+  // Links
+  a[href] {
+    color: var(--mdc-theme-secondary);
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

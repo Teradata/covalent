@@ -1,0 +1,58 @@
+{
+  "source": ["libs/tokens/src/**/*.json"],
+  "platforms": {
+    "json": {
+      "transformGroup": "assets",
+      "prefix": "cv",
+      "buildPath": "dist/libs/tokens/",
+      "files": [
+        {
+          "destination": "index.json",
+          "format": "json"
+        }
+      ]
+    },
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "dist/libs/tokens/",
+      "files": [
+        {
+          "destination": "_index.scss",
+          "format": "scss/map-deep"
+        }
+      ]
+    },
+    "css": {
+      "transformGroup": "css",
+      "prefix": "cv",
+      "buildPath": "dist/libs/tokens/",
+      "files": [
+        {
+          "destination": "index.css",
+          "format": "css/variables"
+        }
+      ]
+    },
+    "js": {
+      "transformGroup": "js",
+      "transforms": [
+        "attribute/cti",
+        "name/cti/pascal",
+        "size/rem",
+        "color/css"
+      ],
+      "prefix": "cv",
+      "buildPath": "dist/libs/tokens/",
+      "files": [
+        {
+          "destination": "index.js",
+          "format": "javascript/es6"
+        },
+        {
+          "destination": "index.d.ts",
+          "format": "typescript/es6-declarations"
+        }
+      ]
+    }
+  }
+}

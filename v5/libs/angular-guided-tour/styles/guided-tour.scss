@@ -1,0 +1,251 @@
+$mat-icon-font: 'Material Icons', sans-serif;
+
+.shepherd-content,
+.shepherd-arrow::before {
+  @include mat-elevation-transition;
+  @include mat-elevation(4);
+}
+
+.shepherd-element:hover {
+  .shepherd-content,
+  .shepherd-arrow::before {
+    @include mat-elevation(8);
+  }
+}
+
+.shepherd-arrow::after {
+  content: '';
+  position: absolute;
+  z-index: 9999;
+  box-shadow: none;
+}
+
+.shepherd-highlight {
+  @include mat-elevation(1);
+}
+
+// remove arrow if shepherd centerd the tooltip
+.shepherd-element.shepherd-centered {
+  .shepherd-arrow {
+    display: none;
+  }
+}
+
+.shepherd-element[data-popper-placement^='top'] > .shepherd-arrow::after,
+.shepherd-element[data-popper-placement^='bottom'] > .shepherd-arrow::after {
+  width: 48px;
+  height: 24px;
+  left: -16px;
+}
+
+.shepherd-element[data-popper-placement^='top'] > .shepherd-arrow::after {
+  bottom: 8px;
+}
+
+.shepherd-element[data-popper-placement^='bottom'] > .shepherd-arrow::after {
+  top: 8px;
+}
+
+.shepherd-element[data-popper-placement^='left'] > .shepherd-arrow::after,
+.shepherd-element[data-popper-placement^='right'] > .shepherd-arrow::after {
+  width: 16px;
+  height: 48px;
+  bottom: -16px;
+}
+
+.shepherd-element[data-popper-placement^='left'] > .shepherd-arrow::after {
+  right: 8px;
+}
+
+.shepherd-element[data-popper-placement^='right'] > .shepherd-arrow::after {
+  left: 8px;
+}
+
+.shepherd-button {
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1.5rem;
+
+  &.material-icons {
+    font-family: $mat-icon-font;
+    font-size: 24px;
+  }
+}
+
+.shepherd-button,
+.shepherd-cancel-icon {
+  transition: all 0.3s ease;
+}
+
+.shepherd-button:disabled {
+  cursor: not-allowed;
+}
+
+.shepherd-header {
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 2em;
+  padding: 0.75rem 0.75rem 0 1rem;
+}
+
+.shepherd-footer {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0.75rem 0.75rem;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  align-content: center;
+}
+
+.shepherd-progress {
+  margin-left: 8px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.shepherd-footer .shepherd-button:last-child {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.shepherd-cancel-icon {
+  background: none;
+  font-size: 1.6em;
+  font-family: $mat-icon-font;
+  position: relative;
+  border-width: 0;
+  // Work around for having material icon as close button
+  // Shepherd uses a span with 'x' string as content and aria-label hidden,
+  // hence, doing this won't affect accessibility.
+  span {
+    color: transparent;
+
+    &::after {
+      content: 'close';
+      font-size: 20px;
+      position: absolute;
+      right: 50%;
+      transform: translate(50%);
+    }
+  }
+}
+
+.shepherd-title {
+  display: flex;
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.shepherd-text {
+  margin: 0 8px 16px;
+  padding: 0 8px;
+}
+
+.shepherd-text p {
+  margin-top: 0;
+}
+
+.shepherd-text p:last-child {
+  margin-bottom: 0;
+}
+
+.shepherd-content {
+  border-radius: 5px;
+  outline: none;
+  padding: 0;
+}
+
+.shepherd-element {
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 20%);
+  max-width: 400px;
+  min-width: 400px;
+  min-height: 100px;
+  opacity: 0;
+  outline: none;
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+
+.shepherd-enabled.shepherd-element {
+  opacity: 1;
+}
+
+.shepherd-element[data-popper-reference-hidden]:not(.shepherd-centered) {
+  opacity: 0;
+}
+
+.shepherd-element,
+.shepherd-element *,
+.shepherd-element ::after,
+.shepherd-element ::before {
+  box-sizing: border-box;
+}
+
+.shepherd-arrow,
+.shepherd-arrow::before {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  z-index: 9998;
+}
+
+.shepherd-arrow::before {
+  content: '';
+  transform: rotate(45deg);
+}
+
+.shepherd-element[data-popper-placement^='top'] > .shepherd-arrow {
+  bottom: -8px;
+}
+
+.shepherd-element[data-popper-placement^='bottom'] > .shepherd-arrow {
+  top: -8px;
+}
+
+.shepherd-element[data-popper-placement^='left'] > .shepherd-arrow {
+  right: -8px;
+}
+
+.shepherd-element[data-popper-placement^='right'] > .shepherd-arrow {
+  left: -8px;
+}
+
+.shepherd-target-click-disabled.shepherd-enabled.shepherd-target,
+.shepherd-target-click-disabled.shepherd-enabled.shepherd-target * {
+  pointer-events: none;
+}
+
+.shepherd-modal-overlay-container {
+  filter: progid:dximagetransform.microsoft.gradient.alpha(Opacity=50);
+  filter: alpha(opacity=50);
+  height: 0;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s ease-out, height 0ms 0.3s, opacity 0.3s 0ms;
+  width: 100vw;
+  z-index: 9997;
+}
+
+.shepherd-modal-overlay-container.shepherd-modal-is-visible {
+  height: 100vh;
+  opacity: 0.5;
+  transition: all 0.3s ease-out, height 0s 0s, opacity 0.3s 0s;
+}
+
+.shepherd-modal-overlay-container.shepherd-modal-is-visible path {
+  pointer-events: all;
+}

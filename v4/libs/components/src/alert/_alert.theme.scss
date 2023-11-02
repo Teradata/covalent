@@ -1,6 +1,7 @@
 @mixin theme() {
   .mdc-banner {
     --mdc-theme-surface: var(--mdc-theme-surface-neutral);
+
     background-color: var(--mdc-theme-surface);
 
     .mdc-banner__graphic {
@@ -28,8 +29,10 @@
 
     &.caution {
       --mdc-theme-surface: var(--mdc-theme-surface-caution);
+
       &.td-banner--inline {
         --mdc-theme-surface: var(--mdc-theme-surface-caution-highlight);
+
         .mdc-banner__graphic,
         .mdc-banner__text {
           --mdc-theme-surface: var(--mdc-theme-caution);
@@ -37,10 +40,13 @@
         }
       }
     }
+
     &.negative {
       --mdc-theme-surface: var(--mdc-theme-surface-negative);
+
       &.td-banner--inline {
         --mdc-theme-surface: var(--mdc-theme-surface-negative-highlight);
+
         .mdc-banner__graphic,
         .mdc-banner__text {
           --mdc-theme-surface: var(--mdc-theme-negative);
@@ -48,10 +54,13 @@
         }
       }
     }
+
     &.active {
       --mdc-theme-surface: var(--mdc-theme-surface-secondary);
+
       &.td-banner--inline {
         --mdc-theme-surface: var(--mdc-theme-surface-secondary-highlight);
+
         .mdc-banner__graphic,
         .mdc-banner__text {
           --mdc-theme-surface: var(--mdc-theme-secondary);
@@ -59,10 +68,13 @@
         }
       }
     }
+
     &.positive {
       --mdc-theme-surface: var(--mdc-theme-surface-positive);
+
       &.td-banner--inline {
         --mdc-theme-surface: var(--mdc-theme-surface-positive-highlight);
+
         .mdc-banner__graphic,
         .mdc-banner__text {
           --mdc-theme-surface: var(--mdc-theme-positive);

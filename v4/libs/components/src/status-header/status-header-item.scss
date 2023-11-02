@@ -1,0 +1,17 @@
+:host {
+  --td-status-header-item-width: 178px;
+
+  display: flex;
+  padding: 14px 16px;
+  align-items: center;
+  font-family: var(--mdc-typography-body2-font-family);
+  font-size: var(--mdc-typography-body2-font-size);
+  font-weight: var(--mdc-typography-body2-font-weight);
+  line-height: var(--mdc-typography-body2-line-height);
+}
+
+span {
+  display: inline-block;
+  width: var(--td-status-header-item-width);
+  color: var(--mdc-theme-text-secondary-on-background);
+}

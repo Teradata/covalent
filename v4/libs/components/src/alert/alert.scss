@@ -19,6 +19,7 @@ $query: feature-targeting.all();
     @include elevation-mixins.overlay-surface-position($query: $query);
     @include elevation-mixins.overlay-dimensions(100%, $query: $query);
     @include elevation-mixins.elevation(1, $query: $query);
+
     overflow: hidden;
     border: none;
 

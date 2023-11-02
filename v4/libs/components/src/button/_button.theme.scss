@@ -12,20 +12,13 @@
   }
 
   // --- apply accent color --- //
-  td-button[outlined].accent.primary,
-  td-button[raised].accent.primary,
-  td-button[text].accent.primary {
+  td-button.accent.primary {
     --mdc-theme-primary: #{map-get($theme, primary)};
     --mdc-button-outline-color: var(--mdc-theme-primary);
   }
 
   // --- apply error color --- //
-  td-button[outlined].destructive.primary,
-  td-button[raised].destructive.primary,
-  td-button[text].destructive.primary,
-  td-button[outlined].negative.primary, // Same thing, just using "negative" alias
-  td-button[raised].negative.primary,
-  td-button[text].negative.primary {
+  td-button.destructive.primary {
     --mdc-theme-primary: var(--mdc-theme-error);
     --mdc-button-outline-color: var(--mdc-theme-error);
   }
@@ -40,12 +33,15 @@
     &.accent {
       --mdc-theme-primary: #{map-get($theme, primary)};
       --mdc-button-outline-color: var(--mdc-theme-primary);
+
       border-color: var(--mdc-button-outline-color);
     }
+
     &.destructive,
     &.negative {
       --mdc-theme-primary: #{map-get($theme, error)};
       --mdc-button-outline-color: var(--mdc-theme-primary);
+
       border-color: var(--mdc-button-outline-color);
     }
   }

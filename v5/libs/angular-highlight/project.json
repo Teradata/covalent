@@ -1,0 +1,53 @@
+{
+  "projectType": "library",
+  "root": "libs/angular-highlight",
+  "sourceRoot": "libs/angular-highlight/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/angular-highlight"],
+      "options": {
+        "project": "libs/angular-highlight/ng-package.json",
+        "tailwindConfig": "libs/angular-highlight/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-highlight/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-highlight/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/angular-highlight"],
+      "options": {
+        "jestConfig": "libs/angular-highlight/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-highlight/src/**/*.ts",
+          "libs/angular-highlight/src/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/angular-highlight/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

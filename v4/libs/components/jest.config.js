@@ -1,3 +1,5 @@
+const esModules = ['@material', '@lit', 'lit', 'lit-scss-loader'].join('|');
+
 module.exports = {
   displayName: 'components',
   preset: '../../jest.preset.js',
@@ -7,8 +9,9 @@ module.exports = {
     },
   },
   transform: {
-    '^.+\\.[tj]sx?$': 'ts-jest',
+    '^.+\\.[tj]s$': 'ts-jest',
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
+  moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/libs/components',
 };

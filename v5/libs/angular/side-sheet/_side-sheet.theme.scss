@@ -1,0 +1,8 @@
+@mixin td-side-sheet-theme($theme) {
+  $background: map-get($theme, background);
+  $dialog: map-get($background, dialog);
+
+  .td-side-sheet-container {
+    background-color: $dialog;
+  }
+}

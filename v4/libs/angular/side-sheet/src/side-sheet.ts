@@ -38,7 +38,7 @@ import { filter, take } from 'rxjs/operators';
 import { Directionality } from '@angular/cdk/bidi';
 
 import { CovalentSideSheetRef } from './side-sheet-ref';
-import { CovalentSideSheetConfig } from './side-sheet.config';
+import { SubPageMode, CovalentSideSheetConfig } from './side-sheet.config';
 
 @Directive()
 export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
@@ -98,12 +98,22 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
       this.openSideSheets.slice(-1)[0];
     const prevOverlayRef = prevSideSheetRef?.overlayRef;
 
-    // Animate previous side sheet to full width
-    if (prevOverlayRef?.overlayElement) {
+    if (
+      prevOverlayRef?.overlayElement &&
+      config.subPageMode !== SubPageMode.none
+    ) {
       prevOverlayRef.overlayElement.style.transition = `${AnimationDurations.COMPLEX} ${AnimationCurves.DECELERATION_CURVE}`;
-      prevOverlayRef.overlayElement.style.minWidth = `${
-        (window as any).innerWidth
-      }px`;
+      if (config.subPageMode === SubPageMode.pushed) {
+        // Animate previous side sheet to full width
+        prevOverlayRef.overlayElement.style.minWidth = `${
+          (window as any).innerWidth
+        }px`;
+      } else if (config.subPageMode === SubPageMode.shifted) {
+        // Animate previous side sheet to current sidesheet width + 200px
+        prevOverlayRef.overlayElement.style.minWidth = `${
+          sideSheetRef.overlayRef.overlayElement.offsetWidth + 200
+        }px`;
+      }
     }
 
     // Revert the previous side sheet config & size

@@ -1,0 +1,31 @@
+<mat-toolbar
+  [color]="toolbarColor"
+  class="td-window-dialog-toolbar"
+  [style.min-height.px]="toolbarHeight"
+  [style.cursor]="docked ? 'inherit' : 'move'"
+>
+  <mat-toolbar-row [style.height.px]="toolbarHeight">
+    <div layout="row" layout-align="start center" flex>
+      <span class="mat-title td-window-dialog-title truncate" flex>
+        {{ title }}
+      </span>
+      <!-- TODO: Resizing a drag-and-drop element was not working so removed docking/undocking for now-->
+      <!-- <button mat-icon-button [matTooltip]="toggleDockedStateLabel" (click)="toggleDockedState()">
+        <mat-icon [attr.aria-label]="toggleDockedStateLabel">
+          {{ docked ? 'unfold_more' : 'unfold_less' }}
+        </mat-icon>
+      </button> -->
+
+      <button
+        mat-icon-button
+        [matTooltip]="closeLabel ?? ''"
+        (click)="closed.emit()"
+        class="td-window-dialog-close"
+        [attr.data-test]="'close-button'"
+      >
+        <mat-icon [attr.aria-label]="closeLabel">close</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<ng-content></ng-content>

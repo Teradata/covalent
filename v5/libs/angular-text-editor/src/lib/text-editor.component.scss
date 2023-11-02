@@ -1,0 +1,6 @@
+:host ::ng-deep {
+  // intentionally omitting file extension
+  // see: https://stackoverflow.com/questions/48806765/import-styles-in-angular-components-styles-with-ng-deep
+  /* stylelint-disable-next-line no-invalid-position-at-import-rule */
+  @import '~easymde/dist/easymde.min';
+}

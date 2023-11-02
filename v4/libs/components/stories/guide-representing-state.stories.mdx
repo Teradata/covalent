@@ -1,0 +1,244 @@
+<!-- guide-representing-state.stories.mdx -->
+
+import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Guides/Representing state"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  .caution {
+    color: var(--mdc-theme-caution);
+  }
+  .positive {
+    color: var(--mdc-theme-positive);
+  }
+  .negative {
+    color: var(--mdc-theme-negative);
+  }
+  .status_lockup {
+    display: flex;
+  }
+  .status_lockup mwc-icon {
+    margin-right: 8px;
+  }
+
+  .docs-story mwc-list {
+    margin: 0 auto;
+    max-width: 30rem;
+  }
+`}</style>
+
+# Representing state
+
+## Basics
+
+For giving opinionated feedback. Error messages, loading, status indicators, etc.
+
+---
+
+## State types
+
+| Use case          | Icon                                                                     | Icon handle       | Icon set | Color               |
+| ----------------- | ------------------------------------------------------------------------ | ----------------- | -------- | ------------------- |
+| Cancelled         | <td-icon>not_interested</td-icon>                                        | not_interested    | Material | Icon disabled       |
+| Caution / warning | <td-icon class="caution">warning</td-icon>                               | warning           | Material | Foreground caution  |
+| Changed           | <td-icon class="covalent-icon">state_changed</td-icon>                   | state_changed     | Covalent | Foreground primary  |
+| Error             | <td-icon class="negative">error</td-icon>                                | error             | Material | Foreground negative |
+| Paused            | <td-icon>pause</td-icon>                                                 | pause             | Material | Icon                |
+| Pending / waiting | <td-icon class="covalent-icon">loader_dots</td-icon>                     | loader_dots       | Covalent | Icon                |
+| Running           | <td-circular-progress indeterminate density="-6"></td-circular-progress> | circular progress | Covalent | Icon                |
+| Success           | <td-icon class="positive">check</td-icon>                                | check             | Material | Foreground positive |
+
+---
+
+## Usage
+
+### In lists
+
+Show as a byline in your list item. Do not use the list icon - this is reserved for showing object type.
+
+<Canvas>
+  <td-list>
+    <td-list-item twoline graphic="avatar">
+      <span>User Name</span>
+      <span slot="secondary" class="status-caution">
+        <td-icon>warning</td-icon>
+        Warning
+      </span>
+      <td-icon slot="graphic" class="inverted">
+        tag_faces
+      </td-icon>
+    </td-list-item>
+    <li divider role="separator"></li>
+    <td-list-item twoline graphic="avatar">
+      <span>User Name</span>
+      <span slot="secondary" class="status-negative">
+        <td-icon>error</td-icon>
+        Error
+      </span>
+      <td-icon slot="graphic" class="inverted">
+        tag_faces
+      </td-icon>
+    </td-list-item>
+    <li divider role="separator"></li>
+    <td-list-item twoline graphic="avatar">
+      <span>User Name</span>
+      <span slot="secondary" class="status-positive">
+        <td-icon>check</td-icon>
+        Successful
+      </span>
+      <td-icon slot="graphic" class="inverted">
+        tag_faces
+      </td-icon>
+    </td-list-item>
+    <li divider role="separator"></li>
+  </td-list>
+</Canvas>
+
+---
+
+### In data tables
+
+Show a status column in your data tables
+Try to put the status column last (or nearly last).
+
+<table class="mdc-data-table__table" aria-label="Dessert calories">
+  <thead>
+    <tr class="mdc-data-table__header-row">
+      <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+        Title
+      </th>
+      <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+        Description
+      </th>
+      <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+        Status
+      </th>
+    </tr>
+  </thead>
+  <tbody class="mdc-data-table__content">
+    <tr class="mdc-data-table__row" data-row-id="u0">
+      <td class="mdc-data-table__cell" id="r0">
+        Title
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell">
+        Lorem ipsum dolor sit amet, consecte...
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell state_positive">
+        <div class="status_lockup">
+          <td-icon class="positive">check</td-icon> Successful
+        </div>
+      </td>
+    </tr>
+    <tr class="mdc-data-table__row" data-row-id="u1">
+      <td class="mdc-data-table__cell" id="r1">
+        Title
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell">
+        Lorem ipsum dolor sit amet, consecte...
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell state_caution">
+        <div class="status_lockup">
+          <td-icon class="caution">warning</td-icon> Some things didn't work
+        </div>
+      </td>
+    </tr>
+    <tr class="mdc-data-table__row" data-row-id="u1">
+      <td class="mdc-data-table__cell" id="r1">
+        Title
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell">
+        Lorem ipsum dolor sit amet, consecte...
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell state_negative">
+        <div class="status_lockup">
+          <td-icon class="negative">error</td-icon> Failed
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Optional - Highlight the affected row
+
+If necessary, you may highlight the entire row with the appropriate background color.
+This is often too heavy-handed. Be careful.
+
+<table class="mdc-data-table__table" aria-label="Dessert calories">
+  <thead>
+    <tr class="mdc-data-table__header-row">
+      <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+        Title
+      </th>
+      <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+        Description
+      </th>
+      <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+        Status
+      </th>
+    </tr>
+  </thead>
+  <tbody class="mdc-data-table__content">
+    <tr class="mdc-data-table__row highlight_positive" data-row-id="u0">
+      <td class="mdc-data-table__cell" id="r0">
+        Title
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell">
+        Lorem ipsum dolor sit amet, consecte...
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell state_positive">
+        <div class="status_lockup">
+          <td-icon class="positive">check</td-icon> Successful
+        </div>
+      </td>
+    </tr>
+    <tr class="mdc-data-table__row highlight_caution" data-row-id="u1">
+      <td class="mdc-data-table__cell" id="r1">
+        Title
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell">
+        Lorem ipsum dolor sit amet, consecte...
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell state_caution">
+        <div class="status_lockup">
+          <td-icon class="caution">warning</td-icon> Some things didn't work
+        </div>
+      </td>
+    </tr>
+    <tr class="mdc-data-table__row highlight_negative" data-row-id="u1">
+      <td class="mdc-data-table__cell" id="r1">
+        Title
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell">
+        Lorem ipsum dolor sit amet, consecte...
+      </td>
+      <td class="mdc-data-table__cell mdc-data-table__cell state_negative">
+        <div class="status_lockup">
+          <td-icon class="negative">error</td-icon> Failed
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+### In dialogs, sheets and cards
+
+Use an alert component appropriate to the context. See the Alerts doc for more detail.
+
+<Canvas>
+  <div class="mdc-card">
+    <div class="mdc-card__primary-action">
+      Card Content
+      <div class="mdc-card__ripple"></div>
+    </div>
+  </div>
+</Canvas>

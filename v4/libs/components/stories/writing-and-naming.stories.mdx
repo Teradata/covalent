@@ -1,0 +1,157 @@
+<!-- writing-and-naming.stories.mdx -->
+
+import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Guides/Writing and naming"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  .caution {
+    color: var(--mdc-theme-caution);
+  }
+  .positive {
+    color: var(--mdc-theme-positive);
+  }
+  .negative {
+    color: var(--mdc-theme-negative);
+  }
+  .status_lockup {
+    display: flex;
+  }
+  .status_lockup td-icon {
+    margin-right: 8px;
+  }
+  #button-incorrect {
+    --mdc-typography-button-text-transform: none;
+  }
+`}</style>
+
+# Writing and naming
+
+## Capitalization
+
+We do not use title case. Page titles, actions, modal titles, etc should use sentence case. Sentence case capitalizes the first letter of the first word.
+
+###### See also
+
+<div className="link-list">
+  <a
+    className="link-item link-article"
+    href="https://medium.com/@jsaito/making-a-case-for-letter-case-19d09f653c98"
+    target="_blank"
+  >
+    Making a case for letter case
+  </a>
+</div>
+
+#### Page titles, section titles & labels
+
+Use sentence case for these and any items not explicitly mentioned in this doc.
+
+| <div class="status_lockup positive"><td-icon class="positive">check</td-icon> Correct</div> | <div class="status_lockup negative"><td-icon class="negative">error</td-icon> Incorrect</div> |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Are you sure you want to delete this item?                                                  | Are You Sure You Want to Delete This Item?                                                    |
+| Page title                                                                                  | Page Title                                                                                    |
+| Edit user John Doe                                                                          | Edit User John Doe                                                                            |
+| Host name                                                                                   | Host Name                                                                                     |
+
+#### Buttons
+
+Buttons use all caps. This is a specific design exception that breaks the above rule.
+
+| <div class="status_lockup positive"><td-icon class="positive">check</td-icon> Correct</div> | <div class="status_lockup negative"><td-icon class="negative">error</td-icon> Incorrect</div> |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| <td-button id="button-correct" outlined label="Button action"></td-button>                  | <td-button id="button-incorrect" outlined label="Button action"></td-button>                  |
+
+#### Email and web addresses
+
+When writing out an email address or website URL, use all lowercase.
+
+| <div class="status_lockup positive"><td-icon class="positive">check</td-icon> Correct</div> | <div class="status_lockup negative"><td-icon class="negative">error</td-icon> Incorrect</div> |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| john.doe&#64;teradata.com                                                                   | John.Doe&#64;Teradata.Com                                                                     | // Have to use the html character code for the @ symbol so markdown doesn't automatically make this into a link |
+| teradata.com                                                                                | Teradata.Com                                                                                  |
+
+#### Which capitalization to use
+
+| Context           | Case to use   |
+| ----------------- | ------------- |
+| Page title        | Sentence case |
+| Section title     | Sentence case |
+| Body content      | Sentence case |
+| Button            | All caps      |
+| Email address     | Lowercase     |
+| Web address / URL | Lowercase     |
+
+---
+
+## Write UI copy as if you're having a conversation
+
+#### Interface communicating to the User
+
+Most items on a page are going to be the interface communicating something to the user. Write them as though the interface is talking to the user.
+
+| <div class="status_lockup positive"><td-icon class="positive">check</td-icon> Correct</div> | <div class="status_lockup negative"><td-icon class="negative">error</td-icon> Incorrect</div> |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Your bookmarks                                                                              | My bookmarks                                                                                  |
+
+#### User communicating to the interface
+
+Commands such as buttons, menu items, etc. are the user giving the interface an order. Write them in first person:
+
+| <div class="status_lockup positive"><td-icon class="positive">check</td-icon> Correct</div> | <div class="status_lockup negative"><td-icon class="negative">error</td-icon> Incorrect</div> |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Show all my bookmarks                                                                       | Show all your bookmarks                                                                       |
+
+---
+
+## Active voice
+
+Use active voice. Avoid passive voice.
+
+In active voice, the subject of the sentence does the action. In passive voice, the subject of the sentence has the action done to it.
+
+Words like "was" and "by" may indicate that you're writing in passive voice. Scan for these words and rework sentences where they appear.
+
+###### See also
+
+<div className="link-list">
+  <a
+    className="link-item link-article"
+    href="https://medium.com/@jsaito/making-a-case-for-letter-case-19d09f653c98"
+    target="_blank"
+  >
+    Making a case for letter case
+  </a>
+</div>
+
+#### Exception
+
+Sometimes you want to specifically emphasize the action over the subject. In some cases, this is fine:
+
+| <div class="status_lockup caution"><td-icon class="caution">warning</td-icon> Be careful</div> |
+| ---------------------------------------------------------------------------------------------- |
+| Your account was flagged by our abuse team                                                     |
+
+---
+
+## Words to Avoid
+
+Some phrases carry connotations that we want to avoid. Make sure to use one of these recommended alternatives.
+
+| Don't use | Use instead                                                               |
+| --------- | ------------------------------------------------------------------------- |
+| Abort     | Cancel, stop                                                              |
+| Blacklist | Blocklist                                                                 |
+| Execute   | Start (to begin or initialize), Run (to perform a function or to operate) |
+| Execution | Operation                                                                 |
+| Master    | Primary, active, main, parent (to show a hierarchical relationship)       |
+| Slave     | Secondary, standby, worker, child (to show a hierarchical relationship)   |
+| Whitelist | Allowlist                                                                 |

@@ -1,0 +1,18 @@
+.mdc-deprecated-list {
+  --mdc-list-side-padding: 72px;
+
+  transition: transform 0.15s ease-out;
+  overflow: hidden;
+  height: var(--cv-list-menu-height, 0);
+
+  slot::slotted(*) {
+    height: 32px;
+  }
+}
+
+:host([open]) {
+  ul {
+    transition: min-height 0.25s ease-in;
+    height: var(--cv-list-menu-height, inherit);
+  }
+}

@@ -1,0 +1,10 @@
+<div id="go-back-navigation-demo">
+  <button mat-raised-button color="accent" (click)="startTour()">
+    Start tour
+  </button>
+  <h3 id="step-1">Step 1</h3>
+  <button mat-raised-button id="advance-button" [routerLink]="['/']">
+    Step 2, click to navigate to step 3
+  </button>
+  <h3 id="step-4">Step 4</h3>
+</div>

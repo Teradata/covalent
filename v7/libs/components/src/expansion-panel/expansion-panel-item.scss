@@ -1,0 +1,238 @@
+:host([isTopPanel]) {
+  .panel {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+:host([isBottomPanel]) {
+  .panel {
+    border-radius: 0 0 8px 8px;
+    border: none;
+  }
+}
+
+:host([isSinglePanel]) {
+  .panel {
+    border-radius: 8px;
+    border: none;
+  }
+}
+
+:host([isInnerPanel]) {
+  .panel {
+    border-radius: 0;
+  }
+}
+
+:host([open][isInnerPanel]) {
+  .panel {
+    border-radius: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-bottom: 0;
+  }
+
+  .header {
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  .dropdown {
+    grid-template-rows: 1fr;
+  }
+
+  .closedIcon {
+    display: none;
+  }
+
+  .openedIcon {
+    display: inline-block;
+  }
+
+  ::slotted([slot='content']) {
+    padding-bottom: 16px;
+  }
+}
+
+:host([open][isTopPanel]) {
+  .panel {
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border-bottom: 0;
+  }
+
+  .header {
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  .dropdown {
+    grid-template-rows: 1fr;
+  }
+
+  .closedIcon {
+    display: none;
+  }
+
+  .openedIcon {
+    display: inline-block;
+  }
+
+  ::slotted([slot='content']) {
+    padding-bottom: 16px;
+  }
+}
+
+:host([open][isBottomPanel]) {
+  .panel {
+    border-radius: 8px;
+    margin-top: 16px;
+    border-bottom: 0;
+  }
+
+  .header {
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  .dropdown {
+    grid-template-rows: 1fr;
+  }
+
+  .closedIcon {
+    display: none;
+  }
+
+  .openedIcon {
+    display: inline-block;
+  }
+
+  ::slotted([slot='content']) {
+    padding-bottom: 16px;
+  }
+}
+
+:host([open][isSinglePanel]) {
+  .header {
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  .dropdown {
+    grid-template-rows: 1fr;
+  }
+
+  .closedIcon {
+    display: none;
+  }
+
+  .openedIcon {
+    display: inline-block;
+  }
+
+  ::slotted([slot='content']) {
+    padding-bottom: 16px;
+  }
+}
+
+:host([belowOpenInnerPanel]) {
+  .panel {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+:host([aboveOpenInnerPanel]) {
+  .panel {
+    border-radius: 0 0 8px 8px;
+    border-bottom: none;
+  }
+}
+
+:host([separateSinglePanel]) {
+  .panel {
+    border-radius: 8px;
+    border-bottom: none;
+  }
+}
+
+:host {
+  .panel {
+    width: 550px;
+    border-bottom: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 12%));
+    background-color: var(--mdc-theme-surface, #ffffff);
+    transition: margin-bottom 0.5s, margin-top 0.5s;
+  }
+
+  .header {
+    min-height: 48px;
+    max-height: 48px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    transition: min-height 0.5s, max-height 0.5s;
+  }
+
+  .title {
+    width: var(--cv-expansion-panel-item-title-width, 200px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 87%));
+    font-family: var(--mdc-typography-body1-font-family, Arial);
+    font-size: var(--mdc-typography-body1-font-size, 14px);
+    font-style: normal;
+    font-weight: var(--mdc-typography-body1-font-weight, 400);
+    line-height: var(--mdc-typography-body1-line-height, 20px);
+    letter-spacing: 0.25px;
+  }
+
+  .contentPreview {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 16px;
+    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 54%));
+    font-family: var(--mdc-typography-body1-font-family, Arial);
+    font-size: var(--mdc-typography-body1-font-size, 14px);
+    font-style: normal;
+    font-weight: var(--mdc-typography-body1-font-weight, 400);
+    line-height: var(--mdc-typography-body1-line-height, 20px);
+    letter-spacing: 0.25px;
+  }
+
+  cv-icon {
+    padding-left: 16px;
+    margin-left: auto;
+  }
+
+  .dropdown {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s;
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 87%));
+    font-family: var(--mdc-typography-body1-font-family, Arial);
+    font-size: var(--mdc-typography-body1-font-size, 14px);
+    font-style: normal;
+    font-weight: var(--mdc-typography-body1-font-weight, 400);
+    line-height: var(--mdc-typography-body1-line-height, 20px);
+    letter-spacing: 0.25px;
+  }
+
+  .content {
+    overflow-y: hidden;
+  }
+
+  ::slotted([slot='content']) {
+    padding: 0 24px 16px;
+  }
+
+  .footer {
+    overflow-y: hidden;
+    padding: 16px 24px;
+    border-top: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 12%));
+  }
+
+  .openedIcon {
+    display: none;
+  }
+}

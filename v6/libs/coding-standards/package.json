@@ -1,0 +1,35 @@
+{
+  "name": "@covalent/coding-standards",
+  "version": "0.0.0-COVALENT",
+  "description": "Teradata Covalent coding standards regarding linting, commit standards, & more",
+  "keywords": [
+    "covalent"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata",
+  "contributors": [
+    "Christian Memije <christian.memije@teradata.com>"
+  ],
+  "peerDependencies": {
+    "codelyzer": "^5.2.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-angular": "^8.1.0",
+    "husky": "^2.7.0",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1",
+    "stylelint": "^13.1.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-standard": "^20.0.0",
+    "tslint": "^5.20.0",
+    "tslint-angular": "^3.0.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-sonarts": "1.9.0"
+  }
+}

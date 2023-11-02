@@ -1,0 +1,13 @@
+<td-dialog>
+  <div tdDialogTitle *ngIf="title">
+    {{ title }}
+  </div>
+  <div tdDialogContent>
+    <span class="td-dialog-message">{{ message }}</span>
+  </div>
+  <div tdDialogActions>
+    <button mat-button color="accent" (click)="close()">
+      {{ closeButton }}
+    </button>
+  </div>
+</td-dialog>

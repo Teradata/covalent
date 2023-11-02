@@ -1,0 +1,15 @@
+<td-menu class="user-profile-menu">
+  <!--header-->
+  <mat-list td-menu-header>
+    <mat-list-item *ngIf="name || email" (click)="_blockEvent($event)">
+      <mat-icon matListAvatar>person</mat-icon>
+      <span matLine *ngIf="name" class="mat-body-1">{{ name }}</span>
+      <span matLine *ngIf="email">{{ email }}</span>
+    </mat-list-item>
+    <ng-content select="[td-user-info-list]"></ng-content>
+  </mat-list>
+  <!--content-->
+  <mat-action-list>
+    <ng-content select="[td-user-action-list]"></ng-content>
+  </mat-action-list>
+</td-menu>

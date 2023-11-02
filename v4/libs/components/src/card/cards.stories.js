@@ -1,5 +1,5 @@
 import './card';
-import * as tableContent from '../../../../stories/demos/table.content.html';
+import * as tableContent from '../../stories/demos/table.content.html';
 
 export default {
   title: 'Components/Cards',
@@ -26,7 +26,7 @@ export const Basic = ({ outlined, actionBar, cardTitle }) => {
     ${actionBar ? 'actionBar' : ''}
     ${outlined ? 'outlined' : ''}
   >
-    <div slot="card-content">${tableContent}</div>
+    ${tableContent}
     <div slot="card-actions" class="mdc-card__action-buttons">
       <button class="mdc-button mdc-card__action mdc-card__action--button">
         <div class="mdc-button__ripple"></div>

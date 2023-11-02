@@ -1,0 +1,15 @@
+@import 'general';
+@import 'pad';
+@import 'pull';
+@import 'push';
+@import 'size';
+@import 'text';
+
+@mixin covalent-utilities() {
+  @include td-general-utilities();
+  @include td-padding-utilities();
+  @include td-pulling-utilities();
+  @include td-pushing-utilities();
+  @include td-size-utilities();
+  @include td-text-utilities();
+}

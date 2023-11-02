@@ -1,0 +1,36 @@
+<p>Editor Running in Browser:</p>
+<div layout="row" layout-align="start center">
+  <td-code-editor
+    #editor
+    class="editor"
+    theme="vs"
+    [language]="editorLanguage"
+    [(ngModel)]="editorVal"
+    flex
+  ></td-code-editor>
+</div>
+<p>Editor Output:</p>
+<div layout="row" layout-align="start center">
+  <td-highlight
+    class="editor"
+    flex
+    [content]="editorVal"
+    [codeLang]="editorLanguage"
+  ></td-highlight>
+</div>
+
+<div layout="row" layout-align="start center" class="pad-xs pad-bottom-none">
+  <span flex="none" hide-xs class="push-right mat-body-1">Editor Language</span>
+  <mat-form-field floatLabel="never">
+    <mat-select
+      [(ngModel)]="editorLanguage"
+      (ngModelChange)="changeLanguage()"
+      placeholder="Editor Language"
+    >
+      <mat-option value="html">HTML</mat-option>
+      <mat-option value="javascript">JavaScript</mat-option>
+      <mat-option value="typescript">TypeScript</mat-option>
+      <mat-option value="sql">SQL</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
