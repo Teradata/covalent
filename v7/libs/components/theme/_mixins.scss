@@ -294,6 +294,7 @@
   --mdc-theme-text-hint-on-dark: #{map-get($theme, text-hint-on-dark)};
   --mdc-theme-text-disabled-on-dark: #{map-get($theme, text-disabled-on-dark)};
   --mdc-theme-text-icon-on-dark: #{map-get($theme, text-icon-on-dark)};
+  --mdc-icon-font: 'Material Symbols Outlined';
 
   // Covalent Specific variables
   --covalent-theme-text-logo-on-background: #{map-get(

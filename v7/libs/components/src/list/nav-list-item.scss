@@ -1,22 +1,33 @@
 :host {
   font-family: var(--mdc-typography-font-family);
-  font-size: var(--mdc-typography-body1-font-size);
-  font-weight: var(--mdc-typography-body1-font-weight);
-  line-height: var(--mdc-typography-body1-line-height);
-}
-
-:host([navopen]) {
-  border-radius: 0 28px 28px 0;
+  font-size: var(--mdc-typography-body2-font-size);
+  font-weight: 600;
+  line-height: var(--mdc-typography-body2-line-height);
+  text-align: left;
+  border-radius: var(--cv-list-item-border-radius, 28px);
   transition: border-radius 100ms ease-out;
-  margin-right: 16px;
+  width: var(--cv-list-item-width, 100%);
 }
 
-:host([graphic='avatar']:not([navopen])) {
-  border-radius: 100%;
-  margin: 0 auto 8px;
+::slotted(.section-selector) {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+:host([activated]) {
+  ::slotted(cv-icon[slot='graphic']) {
+    color: var(--mdc-theme-primary);
+  }
+}
+
+:host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
+  margin-left: var(--cv-list-item-graphic-margin-left, 12px);
+}
+
+:host([graphic='avatar']) {
   padding: 0;
-  width: 48px;
-  height: 48px;
 
   ::slotted(cv-icon[slot='graphic']) {
     margin-left: 8px;
@@ -24,82 +35,92 @@
   }
 }
 
-:host(.home-item) {
-  ::slotted(.teradata-no-circle) {
-    --mdc-list-item-graphic-size: 40px;
-    --mdc-icon-size: 40px;
-
-    display: none;
-  }
-
-  ::slotted(.home-icon) {
-    display: none;
-
-    &:hover .covalent-icon {
-      display: none;
-    }
-  }
-}
-
-:host(.home-item:hover) {
-  ::slotted(.home-icon) {
-    display: block;
-  }
-
-  ::slotted(.teradata-circle) {
-    display: none;
-  }
-
-  ::slotted(.teradata-no-circle) {
-    display: none;
-  }
-}
-
-:host(.home-item:not([navopen])) {
-  background-color: #ff5f02;
-
-  --mdc-ripple-color: #ffffff;
-  --mdc-theme-text-icon-on-background: #ffffff;
-
-  ::slotted(.teradata-circle) {
-    display: none;
-  }
-
-  ::slotted(.teradata-no-circle) {
-    display: block;
-  }
-}
-
-:host(.home-item:hover:not([navopen])) {
-  ::slotted(.teradata-no-circle) {
-    display: none;
-  }
+:host([graphic='avatar']:not([twoline])) {
+  height: 48px;
 }
 
 :host(.beta-list-item) {
   --mdc-theme-primary: var(--mdc-theme-surface-caution);
   --mdc-list-item-meta-size: 20px;
   --mdc-list-item-graphic-size: 40px;
-  --mdc-list-item-graphic-margin: 15px;
+  --mdc-list-item-graphic-margin: 0;
   --mdc-typography-subtitle1-font-size: var(
     --mdc-typography-subtitle2-font-size
   );
   --mdc-typography-body2-font-size: var(--mdc-typography-caption-font-size);
 
   margin-bottom: 8px;
-  font-size: var(--mdc-typography-subtitle1-font-size);
   margin-right: 0;
   border-radius: 0;
-}
-
-:host(.beta-list-item:not([navopen])) {
-  --mdc-list-item-graphic-margin: 0;
-  --mdc-typography-subtitle1-font-size: 0;
-  --mdc-typography-body2-font-size: 0;
-
   height: 48px;
   font-size: 0;
+  padding: 0 0 0 15px;
+}
+
+:host([hasChildren]) {
+  flex-direction: column;
+  overflow: visible;
+  height: inherit !important;
+  background: none;
   padding: 0;
-  justify-content: center;
-  align-content: center;
+
+  --mdc-list-side-padding: 0;
+  --cv-list-item-graphic-margin-left: 12px;
+}
+
+:host([hasChildren][open]:hover:not([activated])) {
+  .expansion-header {
+    --mdc-ripple-color: transparent;
+
+    &:hover {
+      --mdc-ripple-color: var(--mdc-theme-primary);
+    }
+  }
+}
+
+.expansion-header {
+  border-radius: var(--cv-list-item-border-radius);
+  position: relative;
+  height: 48px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.expansion-header-inner {
+  padding: 0 16px;
+}
+
+.expansion-icon {
+  margin-right: var(--cv-list-item-expansion-icon-margin, -12px);
+  font-size: var(--cv-list-item-expansion-icon-size, --mdc-icon-size);
+  color: var(
+    --cv-list-item-text-icon-on-background,
+    var(--mdc-theme-text-icon-on-background)
+  );
+}
+
+.expansion-panel {
+  display: block;
+  width: 100%;
+  height: var(--cv-list-menu-height, 0);
+
+  --mdc-list-side-padding: 72px;
+
+  transition: transform 0.15s ease-out;
+  overflow: hidden;
+}
+
+:host([open][hasChildren]:not([twoline])) {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+
+  .expansion-panel {
+    transition: min-height 0.25s ease-in;
+    height: var(--cv-list-menu-height, inherit);
+  }
 }
