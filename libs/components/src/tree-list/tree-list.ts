@@ -32,22 +32,22 @@ document.addEventListener('select', (e: Event) => {
 const handleSelect = (e: Event): void => {
   // All cv-tree-list-item components.
   const items: any[] = Array.from(
-    document.querySelectorAll('cv-tree-list-item')
+    document?.querySelectorAll('cv-tree-list-item')
   );
 
   // Currently selected item.
   const target: HTMLElement = e.target as HTMLElement;
-  const current = target.shadowRoot!.querySelector('div.itemContent');
+  const current = target.shadowRoot?.querySelector('div.itemContent');
 
   // Find previously selected element and remove the styling.
   items.forEach((item) => {
     item
-      .shadowRoot!.querySelector('div.itemContent')
+      .shadowRoot?.querySelector('div.itemContent')
       ?.classList.remove('selected');
   });
 
   // Add the selected styling to the currently selected item.
-  current!.classList.add('selected');
+  current?.classList.add('selected');
 };
 
 export default CovalentTreeList;
