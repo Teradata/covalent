@@ -1,3 +1,9 @@
+## [7.4.2](https://github.com/Teradata/covalent/compare/v7.4.1...v7.4.2) (2023-11-06)
+
+### Bug Fixes
+
+- **components:** tree list item js error ([#2071](https://github.com/Teradata/covalent/issues/2071)) ([2ee44df](https://github.com/Teradata/covalent/commit/2ee44df6e298f668b868ed2d010c279c1d219940))
+
 ## [7.4.1](https://github.com/Teradata/covalent/compare/v7.4.0...v7.4.1) (2023-11-02)
 
 ### Bug Fixes
