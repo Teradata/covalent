@@ -5,6 +5,21 @@
       background-color: transparent;
     }
 
+    a[target='_blank'] {
+      display: inline-flex;
+      align-items: center;
+
+      &::after {
+        content: 'open_in_new';
+        font-family: 'Material Icons', sans-serif;
+        padding-left: 2px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
     a:active,
     a:hover {
       outline-width: 0;
