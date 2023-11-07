@@ -2,9 +2,17 @@
 
 @include card.core-styles;
 
+.mdc-typography--headline5 {
+  font-family: var(--mdc-typography-headline5-font-family);
+  font-size: var(--mdc-typography-headline5-font-size);
+  font-weight: var(--mdc-typography-headline5-font-weight);
+  line-height: var(--mdc-typography-headline5-line-height);
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
 .mdc-card__actions {
   color: var(--mdc-theme-text-primary-on-background);
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .mdc-card__actions:first-of-type {

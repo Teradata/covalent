@@ -1,3 +1,6 @@
+import '../icon/icon';
+import '../linear-progress/linear-progress';
+
 // Example Content
 import tableContent from '../../stories/demos/table.content.html?raw';
 import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
