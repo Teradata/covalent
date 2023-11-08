@@ -36,13 +36,13 @@ npm install @covalent/text-editor
 
 ## Setup
 
-Import the **CovalentTextEditorModule** in your NgModule:
+Import the **TdTextEditorComponent** in your NgModule:
 
 ```typescript
-import { CovalentTextEditorModule } from '@covalent/text-editor';
+import { TdTextEditorComponent } from '@covalent/text-editor';
 @NgModule({
   imports: [
-    CovalentTextEditorModule,
+    TdTextEditorComponent,
     ...
   ],
   ...

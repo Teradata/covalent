@@ -24,13 +24,13 @@ The tree is collapsable/expandable so you can navigate through its nodes.
 
 ## Setup
 
-Import the [CovalentJsonFormatterModule] in your NgModule:
+Import the [TdJsonFormatterComponent] in your NgModule:
 
 ```typescript
-import { CovalentJsonFormatterModule } from '@covalent/core/json-formatter';
+import { TdJsonFormatterComponent } from '@covalent/core/json-formatter';
 @NgModule({
   imports: [
-    CovalentJsonFormatterModule,
+    TdJsonFormatterComponent,
     ...
   ],
   ...
@@ -45,6 +45,5 @@ Simply add the component and pass the object to be formatted as a [data] input.
 Example for HTML usage:
 
 ```html
-<td-json-formatter [data]="object" key="root" [levelsOpen]="1">
-</td-json-formatter>
+<td-json-formatter [data]="object" key="root" [levelsOpen]="1"> </td-json-formatter>
 ```

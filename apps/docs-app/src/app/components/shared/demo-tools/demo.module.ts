@@ -5,7 +5,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
@@ -15,7 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
   exports: [DemoComponent],
   imports: [
     /** Covalent Modules */
-    CovalentHighlightModule,
+    TdHighlightComponent,
     MatToolbarModule,
     /** Angular Modules */
     CommonModule,

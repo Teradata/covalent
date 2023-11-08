@@ -63,7 +63,9 @@ interface IDialogDimensions {
   height: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TdMarkdownNavigatorWindowService {
   private _renderer2: Renderer2;
   private dragRef!: DragRef;

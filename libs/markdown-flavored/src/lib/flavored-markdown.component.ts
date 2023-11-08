@@ -24,8 +24,8 @@ import {
 } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -40,6 +40,8 @@ import {
 } from '@covalent/highlight';
 
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 export interface ITdFlavoredMarkdownButtonClickEvent {
   text: string;
@@ -71,6 +73,8 @@ export interface ITdFlavoredMarkDownTableColumn {
       <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
   `,
+  standalone: true,
+  imports: [CommonModule, MatTableModule, MatSortModule, TdMarkdownComponent],
 })
 export class TdFlavoredMarkdownTableComponent implements OnInit, AfterViewInit {
   @Input() columnDefs: ITdFlavoredMarkDownTableColumn[] = [];
@@ -98,6 +102,8 @@ export class TdFlavoredMarkdownTableComponent implements OnInit, AfterViewInit {
       {{ text }}
     </button>
   `,
+  standalone: true,
+  imports: [MatButtonModule],
 })
 export class TdFlavoredMarkdownButtonComponent {
   @HostBinding('style.display') display = 'inline-block';
@@ -113,6 +119,7 @@ export class TdFlavoredMarkdownButtonComponent {
 
 @Directive({
   selector: '[tdFlavoredMarkdownContainer]',
+  standalone: true,
 })
 export class TdFlavoredMarkdownContainerDirective {
   constructor(
@@ -140,6 +147,8 @@ export type IReplacerFunc<T> = (
   styleUrls: ['./flavored-markdown.component.scss'],
   templateUrl: './flavored-markdown.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [TdFlavoredMarkdownContainerDirective],
 })
 export class TdFlavoredMarkdownComponent
   implements AfterViewInit, OnChanges, OnDestroy

@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
-import { CovalentMarkdownModule } from '@covalent/markdown';
+import { TdMarkdownComponent } from '@covalent/markdown';
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { MarkdownDemoComponent } from './markdown.component';
@@ -24,7 +24,7 @@ const routes: Routes = setComponentRoutes({
     MatIconModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentMarkdownModule,
+    TdMarkdownComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

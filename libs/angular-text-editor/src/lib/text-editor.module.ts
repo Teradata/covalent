@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
-
 import { TdTextEditorComponent } from './text-editor.component';
 
+/**
+ * @deprecated since version 8.x, modules are no longer needed use standalone components instead
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [TdTextEditorComponent],
+  imports: [TdTextEditorComponent],
   exports: [TdTextEditorComponent],
-  bootstrap: [TdTextEditorComponent],
 })
 export class CovalentTextEditorModule {}

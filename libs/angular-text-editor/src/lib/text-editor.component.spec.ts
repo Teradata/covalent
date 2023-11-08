@@ -8,20 +8,17 @@ import { Component, ViewChild } from '@angular/core';
 import { TdTextEditorComponent } from './text-editor.component';
 
 describe('Component: TextEditor', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [
-          TdTextEditorComponent,
-          TestTextEditorComponent,
-          TestTextEditorResetComponent,
-          TestTextEditorOptionsComponent,
-        ],
-        imports: [],
-      });
-      TestBed.compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        TestTextEditorComponent,
+        TestTextEditorResetComponent,
+        TestTextEditorOptionsComponent,
+      ],
+      imports: [TdTextEditorComponent],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should initialize the markdown editor and set value and test ngModel', (done) => {
     inject([], () => {

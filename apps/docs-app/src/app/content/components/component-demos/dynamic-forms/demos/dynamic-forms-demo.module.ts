@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { TdCodeEditorComponent } from '@covalent/code-editor';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { DynamicFormsDemoArrayComponent } from './dynamic-forms-demo-array/dynamic-forms-demo-array.component';
 import { DynamicFormsDemoTextComponent } from './dynamic-forms-demo-text/dynamic-forms-demo-text.component';
 import { DynamicFormsDemoBooleanComponent } from './dynamic-forms-demo-boolean/dynamic-forms-demo-boolean.component';
@@ -13,11 +15,10 @@ import { TdTestDynamicComponent } from './dynamic-forms-demo-custom-elements/dyn
 import { DynamicFormsDemoDateComponent } from './dynamic-forms-demo-date/dynamic-forms-demo-date.component';
 import { DynamicFormsDemoFileInputComponent } from './dynamic-forms-demo-file-input/dynamic-forms-demo-file-input.component';
 import { DynamicFormsDemoNumberComponent } from './dynamic-forms-demo-number/dynamic-forms-demo-number.component';
-import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+
 import { DynamicFormsDemoComponent } from './dynamic-forms-demo.component';
 import { DynamicFormsDemoRoutingModule } from './dynamic-forms-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { CovalentCodeEditorModule } from '@covalent/code-editor';
     DynamicFormsDemoRoutingModule,
     /** Covalent Modules */
     CovalentDynamicFormsModule,
-    CovalentCodeEditorModule,
+    TdCodeEditorComponent,
     /** Angular Modules */
     CommonModule,
     FormsModule,

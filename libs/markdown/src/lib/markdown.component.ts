@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   AfterViewInit,
@@ -181,6 +182,8 @@ function changeStyleAlignmentToClass(html: string) {
   selector: 'td-markdown',
   styleUrls: ['./markdown.component.scss'],
   templateUrl: './markdown.component.html',
+  standalone: true,
+  imports: [CommonModule],
 })
 export class TdMarkdownComponent
   implements OnChanges, AfterViewInit, OnDestroy

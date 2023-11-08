@@ -1,7 +1,8 @@
 import { Component, Input, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { slideInUpAnimation } from '../../app.animations';
-import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
+import { TdFlavoredMarkdownLoaderComponent } from '@covalent/flavored-markdown';
+import { TdMarkdownLoaderService } from '@covalent/markdown';
 
 @Component({
   selector: 'td-readme-loader',
@@ -9,7 +10,7 @@ import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
   styleUrls: ['./readme-loader.component.scss'],
   templateUrl: './readme-loader.component.html',
   animations: [slideInUpAnimation],
-  imports: [CovalentFlavoredMarkdownModule],
+  imports: [TdFlavoredMarkdownLoaderComponent],
 })
 export class TdReadmeLoaderComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;

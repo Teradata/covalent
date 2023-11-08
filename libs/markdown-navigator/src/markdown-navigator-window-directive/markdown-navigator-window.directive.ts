@@ -6,6 +6,7 @@ import {
 
 @Directive({
   selector: '[tdMarkdownNavigatorWindow]',
+  standalone: true,
 })
 export class TdMarkdownNavigatorWindowDirective {
   @Input('tdMarkdownNavigatorWindow') config?: IMarkdownNavigatorWindowConfig;

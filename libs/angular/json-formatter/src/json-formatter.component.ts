@@ -6,6 +6,9 @@ import {
   Optional,
 } from '@angular/core';
 import { Dir } from '@angular/cdk/bidi';
+import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 import { tdCollapseAnimation } from './collapse.animation';
 
 @Component({
@@ -13,6 +16,8 @@ import { tdCollapseAnimation } from './collapse.animation';
   selector: 'td-json-formatter',
   styleUrls: ['./json-formatter.component.scss'],
   templateUrl: './json-formatter.component.html',
+  standalone: true,
+  imports: [CommonModule, MatTooltipModule, MatIconModule],
   animations: [tdCollapseAnimation],
 })
 export class TdJsonFormatterComponent {

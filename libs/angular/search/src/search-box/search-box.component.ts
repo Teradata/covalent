@@ -17,9 +17,13 @@ import {
   animate,
   AUTO_STYLE,
 } from '@angular/animations';
+import { FormsModule } from '@angular/forms';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
 import { noop } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 export class TdSearchBoxBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
@@ -36,6 +40,14 @@ export class TdSearchBoxBase {
   selector: 'td-search-box',
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    TdSearchInputComponent,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('inputState', [

@@ -24,7 +24,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 
 import { SidenavContentModule } from '../../components/shared/sidenav-content/sidenav-content.module';
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
@@ -62,7 +62,7 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
     MatMenuModule,
     /** Covalent Modules */
     CovalentLayoutModule,
-    CovalentHighlightModule,
+    TdHighlightComponent,
     DocumentationToolsModule,
     ToolbarModule,
     ComponentDetailsModule,

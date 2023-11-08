@@ -6,8 +6,13 @@ import {
   EventEmitter,
   Output,
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatButtonToggle } from '@angular/material/button-toggle';
-import { MatTooltip } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule, MatTooltip } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 export interface ICopyCodeTooltips {
   copy?: string;
@@ -23,11 +28,21 @@ export interface IRawToggleLabels {
   selector: 'td-copy-code-button',
   templateUrl: './copy-code-button.component.html',
   styleUrls: ['./copy-code-button.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    ClipboardModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatButtonModule,
+  ],
 })
 export class TdCopyCodeButtonComponent {
   // private _copyCodeTooltips: ICopyCodeTooltips = {};
   @Input() copiedContent!: string;
-  @Input() copyCodeToClipboard = false;
+  @Input() copyCodeToClipboard? = false;
   /**
    * copyCodeTooltips?: ICopyCodeTooltips
    *

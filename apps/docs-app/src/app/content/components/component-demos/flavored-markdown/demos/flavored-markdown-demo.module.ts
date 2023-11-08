@@ -4,7 +4,10 @@ import { FlavoredMarkdownDemoBasicComponent } from './flavored-markdown-demo-bas
 import { FlavoredMarkdownDemoInlineComponent } from './flavored-markdown-demo-inline/flavored-markdown-demo-inline.component';
 import { FlavoredMarkdownDemoTablesComponent } from './flavored-markdown-demo-tables/flavored-markdown-demo-tables.component';
 import { FlavoredMarkdownDemoLoaderComponent } from './flavored-markdown-demo-loader/flavored-markdown-demo-loader.component';
-import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
+import {
+  TdFlavoredMarkdownComponent,
+  TdFlavoredMarkdownLoaderComponent,
+} from '@covalent/flavored-markdown';
 import { FlavoredMarkdownDemoComponent } from './flavored-markdown-demo.component';
 import { FlavoredMarkdownDemoRoutingModule } from './flavored-markdown-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
@@ -24,7 +27,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DemoModule,
     FlavoredMarkdownDemoRoutingModule,
     /** Covalent Modules */
-    CovalentFlavoredMarkdownModule,
+    TdFlavoredMarkdownComponent,
+    TdFlavoredMarkdownLoaderComponent,
     MatSnackBarModule,
     /** Angular Modules */
     CommonModule,

@@ -6,7 +6,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { TdDynamicMenuComponent } from './dynamic-menu.component';
+import { TdDynamicMenuComponent } from './src/dynamic-menu.component';
 import { TdDynamicMenuItemComponent } from './src/dynamic-menu-item/dynamic-menu-item.component';
 import { TdDynamicMenuLinkComponent } from './src/dynamic-menu-item/dynamic-menu-link/dynamic-menu-link.component';
 

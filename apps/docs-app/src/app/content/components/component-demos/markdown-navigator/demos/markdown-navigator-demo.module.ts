@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+import {
+  TdMarkdownNavigatorComponent,
+  TdMarkdownNavigatorWindowComponent,
+  TdMarkdownNavigatorWindowDirective,
+} from '@covalent/markdown-navigator';
 import { MarkdownNavigatorDemoComponent } from './markdown-navigator-demo.component';
 import { MarkdownNavigatorDemoRoutingModule } from './markdown-navigator-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
@@ -22,7 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { MarkdownNavigatorDemoAnchorComponent } from './markdown-navigator-demo-anchor/markdown-navigator-demo-anchor.component';
 import { MarkdownNavigatorBasicSharedModule } from './markdown-navigator-demo-basic/markdown-navigator-demo-basic-shared';
 import { MarkdownNavigatorDemoEditorComponent } from './markdown-navigator-demo-editor/markdown-navigator-demo-editor.component';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { TdCodeEditorComponent } from '@covalent/code-editor';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MarkdownNavigatorDemoChildrenUrlStartAtComponent } from './markdown-navigator-demo-children-url-start-at/markdown-navigator-demo-children-url-start-at.component';
 import { MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent } from './markdown-navigator-demo-start-at-onclick-children-url/markdown-navigator-demo-start-at-onclick-children-url.component';
@@ -49,8 +53,10 @@ import { MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent } from './markd
     MarkdownNavigatorDemoRoutingModule,
     MarkdownNavigatorBasicSharedModule,
     /** Covalent Modules */
-    CovalentMarkdownNavigatorModule,
-    CovalentCodeEditorModule,
+    TdMarkdownNavigatorComponent,
+    TdMarkdownNavigatorWindowComponent,
+    TdMarkdownNavigatorWindowDirective,
+    TdCodeEditorComponent,
     /** Angular Modules */
     CommonModule,
     MatButtonModule,

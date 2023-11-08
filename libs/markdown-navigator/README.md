@@ -55,9 +55,9 @@ interface ICopyCodeTooltips {
 ## Setup
 
 ```typescript
-import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+import { TdMarkdownNavigatorComponent } from '@covalent/markdown-navigator';
 @NgModule({
-  imports: [CovalentMarkdownNavigatorModule],
+  imports: [TdMarkdownNavigatorComponent],
 })
 export class MyModule {}
 ```
@@ -125,9 +125,9 @@ A component that contains a MarkdownNavigator component and a toolbar
 ## Setup
 
 ```typescript
-import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+import { TdMarkdownNavigatorComponent } from '@covalent/markdown-navigator';
 @NgModule({
-  imports: [CovalentMarkdownNavigatorModule],
+  imports: [TdMarkdownNavigatorComponent],
 })
 export class MyModule {}
 ```
@@ -166,9 +166,9 @@ interface IMarkdownNavigatorWindowConfig {
 ## Setup
 
 ```typescript
-import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+import { TdMarkdownNavigatorComponent } from '@covalent/markdown-navigator';
 @NgModule({
-  imports: [CovalentMarkdownNavigatorModule],
+  imports: [TdMarkdownNavigatorComponent],
 })
 export class MyModule {}
 ```
@@ -176,27 +176,20 @@ export class MyModule {}
 ## Usage
 
 ```typescript
-import {
-  TdMarkdownNavigatorWindowComponent,
-  TdMarkdownNavigatorWindowService,
-  IMarkdownNavigatorItem,
-} from '@covalent/markdown-navigator';
+import { TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowService, IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
 
 export class SampleComponent {
-  constructor(
-    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService
-  ) {}
+  constructor(private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) {}
 
   ngOnInit(): void {
-    const ref: MatDialogRef<TdMarkdownNavigatorWindowComponent> =
-      this._markdownNavigatorWindowService.open({
-        items: [
-          {
-            url: 'https://github.com/Teradata/covalent/blob/main/README.md',
-          },
-        ],
-      });
+    const ref: MatDialogRef<TdMarkdownNavigatorWindowComponent> = this._markdownNavigatorWindowService.open({
+      items: [
+        {
+          url: 'https://github.com/Teradata/covalent/blob/main/README.md',
+        },
+      ],
+    });
     ref.afterOpened().subscribe(() => {});
     ref.afterClosed().subscribe(() => {});
   }
@@ -219,9 +212,9 @@ A directive that calls the TdMarkdownNavigatorWindowService open method on click
 ## Setup
 
 ```typescript
-import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
+import { TdMarkdownNavigatorComponent } from '@covalent/markdown-navigator';
 @NgModule({
-  imports: [CovalentMarkdownNavigatorModule],
+  imports: [TdMarkdownNavigatorComponent],
 })
 export class MyModule {}
 ```
@@ -231,11 +224,5 @@ export class MyModule {}
 Example:
 
 ```html
-<button
-  mat-button
-  [tdMarkdownNavigatorWindow]="{ items: [] }"
-  [disabled]="false"
->
-  Open window
-</button>
+<button mat-button [tdMarkdownNavigatorWindow]="{ items: [] }" [disabled]="false">Open window</button>
 ```

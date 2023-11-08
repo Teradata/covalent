@@ -31,8 +31,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentMarkdownModule } from '@covalent/markdown';
+import { TdHighlightComponent } from '@covalent/highlight';
+import { TdMarkdownComponent } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentFileModule } from '@covalent/core/file';
@@ -74,8 +74,8 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
     MatExpansionModule,
     /** Covalent Modules */
     CovalentLayoutModule,
-    CovalentHighlightModule,
-    CovalentMarkdownModule,
+    TdHighlightComponent,
+    TdMarkdownComponent,
     CovalentDynamicFormsModule,
     ToolbarModule,
     TranslateModule.forRoot({

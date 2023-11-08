@@ -13,7 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 import { CovalentFileModule } from '@covalent/core/file';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { FileInputDemoComponent } from './file-input.component';
 
@@ -39,7 +39,7 @@ const routes: Routes = setComponentRoutes({
     ComponentDetailsModule,
     // Covalent
     CovalentFileModule,
-    CovalentHighlightModule,
+    TdHighlightComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { TextEditorDemoComponent } from './text-editor.component';
-import { CovalentTextEditorModule } from '@covalent/text-editor';
+import { TdTextEditorComponent } from '@covalent/text-editor';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: TextEditorDemoComponent,
@@ -26,7 +26,7 @@ const routes: Routes = setComponentRoutes({
     FormsModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentTextEditorModule,
+    TdTextEditorComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

@@ -16,7 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 import { CovalentLayoutModule } from '@covalent/core/layout';
@@ -43,7 +43,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatExpansionModule,
     /** Covalent Modules */
     CovalentLayoutModule,
-    CovalentHighlightModule,
+    TdHighlightComponent,
     CovalentCommonModule,
     DocumentationToolsModule,
     layoutsRoutes,

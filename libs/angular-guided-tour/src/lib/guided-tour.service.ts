@@ -50,7 +50,9 @@ export interface IGuidedTourEvent {
   tour: any;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CovalentGuidedTourService extends CovalentGuidedTour {
   private _toursMap: Map<string, IGuidedTour> = new Map<string, IGuidedTour>();
   private _tourStepURLs: Map<string, string> = new Map<string, string>();

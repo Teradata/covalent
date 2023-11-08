@@ -42,7 +42,7 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentStepsModule  } from '@covalent/core/steps';
 /* any other core modules */
 // (optional) Additional Covalent Modules imports
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
@@ -52,7 +52,7 @@ import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
     CovalentLayoutModule,
     CovalentStepsModule,
     // (optional) Additional Covalent Modules imports
-    CovalentHighlightModule,
+    TdHighlightComponent,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
     CovalentBaseEchartsModule,
