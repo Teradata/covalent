@@ -15,11 +15,9 @@ export default {
   },
 };
 
-const Template = ({ disabled, icon, onClick }) => {
+const Template = ({ disabled, icon }) => {
   return `
-    <cv-icon-button id="myIconButton"
-      ${icon ? `icon="${icon}"` : null}
-      ${disabled ? `disabled` : null}>
+    <cv-icon-button icon="${icon}" ${disabled ? `disabled` : ``}>
     </cv-icon-button>`;
 };
 

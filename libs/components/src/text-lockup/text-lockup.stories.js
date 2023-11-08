@@ -4,7 +4,7 @@ import iconList from '../../../icons/material-codepoints.json';
 const MAT_ICON_LIST = Object.keys(iconList);
 
 export default {
-  title: 'Basics/Typography/Text lockup',
+  title: 'Components/Text lockup',
   argTypes: {
     scale: {
       options: ['large', 'small'],

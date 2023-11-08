@@ -1,6 +1,7 @@
 import './top-app-bar';
 import './top-app-bar-fixed';
 import topAppBarComponent from '../../stories/demos/top-app-bar.component';
+import '../data-table/data-table.stories.scss';
 
 export default {
   title: 'Components/Top App Bar',

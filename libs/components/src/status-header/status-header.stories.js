@@ -1,5 +1,7 @@
 import './status-header';
 import './status-header-item';
+import '../icon/icon';
+import '../circular-progress/circular-progress';
 
 export default {
   title: 'Components/Status Header',
@@ -30,9 +32,14 @@ const renderIcon = (state, icon) => {
   }
 };
 
-const HeaderWithTabs = ({ state = 'neutral', status, title, icon }) => {
+const HeaderWithTabs = ({
+  state = 'neutral',
+  status = 'status',
+  title = 'title',
+  icon,
+}) => {
   return `
-    <cv-status-header state="${state}" statusText="${status}" statusHelper="Status" titleText="${title}">
+    <cv-status-header state="${state}" statusText="${status}" statusHelper="secondary text" titleText="${title}">
       ${renderIcon(state, icon)}
 
       <cv-icon-button slot="status-header-actions" icon="close" dialogAction="close" ></cv-icon-button>

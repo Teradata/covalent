@@ -1,5 +1,6 @@
 import './card';
 import tableContent from '../../stories/demos/table.content.html?raw';
+import '../data-table/data-table.stories.scss';
 
 export default {
   title: 'Components/Cards',
