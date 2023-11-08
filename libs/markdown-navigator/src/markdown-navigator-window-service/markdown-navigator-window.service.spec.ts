@@ -4,16 +4,16 @@ import {
   waitForAsync,
   ComponentFixture,
 } from '@angular/core/testing';
-import { CovalentMarkdownNavigatorModule } from '../markdown-navigator.module';
 import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { firstValueFrom } from 'rxjs';
 import {
   IMarkdownNavigatorItem,
   DEFAULT_MARKDOWN_NAVIGATOR_LABELS,
+  TdMarkdownNavigatorComponent,
 } from '../markdown-navigator.component';
 import {
   TdMarkdownNavigatorWindowComponent,
@@ -24,6 +24,7 @@ import {
   compareByTitle,
 } from '../markdown-navigator.component.spec';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 const RAW_MARKDOWN_HEADING = 'Heading';
 const RAW_MARKDOWN = `# ${RAW_MARKDOWN_HEADING}`;
@@ -56,7 +57,12 @@ describe('MarkdownNavigatorWindowService', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
+      imports: [
+        NoopAnimationsModule,
+        TdMarkdownNavigatorComponent,
+        MatDialogModule,
+        HttpClientTestingModule,
+      ],
       declarations: [TestComponent],
       providers: [
         {

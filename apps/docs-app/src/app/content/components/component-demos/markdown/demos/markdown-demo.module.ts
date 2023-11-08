@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarkdownDemoBasicComponent } from './markdown-demo-basic/markdown-demo-basic.component';
-import { CovalentMarkdownModule } from '@covalent/markdown';
+import { TdMarkdownComponent } from '@covalent/markdown';
 import { MarkdownDemoComponent } from './markdown-demo.component';
 import { MarkdownDemoRoutingModule } from './markdown-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
@@ -23,7 +23,7 @@ import { MatCardModule } from '@angular/material/card';
     DemoModule,
     MarkdownDemoRoutingModule,
     /** Covalent Modules */
-    CovalentMarkdownModule,
+    TdMarkdownComponent,
     /** Angular Modules */
     CommonModule,
     MatButtonModule,

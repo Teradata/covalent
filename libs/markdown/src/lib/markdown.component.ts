@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   AfterViewInit,
@@ -161,6 +162,8 @@ function addIdsToHeadings(html: string): string {
   selector: 'td-markdown',
   styleUrls: ['./markdown.component.scss'],
   templateUrl: './markdown.component.html',
+  standalone: true,
+  imports: [CommonModule],
 })
 export class TdMarkdownComponent
   implements OnChanges, AfterViewInit, OnDestroy

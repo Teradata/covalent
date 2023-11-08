@@ -44,13 +44,13 @@ npm i -save @covalent/markdown
 
 ## Setup
 
-Then, import the **CovalentMarkdownModule** in your NgModule:
+Then, import the **TdMarkdownComponent** in your NgModule:
 
 ```typescript
-import { CovalentMarkdownModule } from '@covalent/markdown';
+import { TdMarkdownComponent } from '@covalent/markdown';
 @NgModule({
   imports: [
-    CovalentMarkdownModule,
+    TdMarkdownComponent,
     ...
   ],
   ...

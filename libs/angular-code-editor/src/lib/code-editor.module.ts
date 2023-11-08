@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
-
 import { TdCodeEditorComponent } from './code-editor.component';
 
+/**
+ * @deprecated since version 8.x, modules are no longer needed use standalone components instead
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [TdCodeEditorComponent],
+  imports: [TdCodeEditorComponent],
   exports: [TdCodeEditorComponent],
-  bootstrap: [TdCodeEditorComponent],
 })
 export class CovalentCodeEditorModule {}

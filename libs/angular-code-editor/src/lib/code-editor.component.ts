@@ -13,14 +13,18 @@ import {
   Inject,
   PLATFORM_ID,
 } from '@angular/core';
-import { isPlatformServer } from '@angular/common';
+import { CommonModule, isPlatformServer } from '@angular/common';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable, of, Subject } from 'rxjs';
 import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 // Use esm version to support shipping subset of languages and features
-import { editor, languages, IDisposable } from 'monaco-editor/esm/vs/editor/editor.api';
+import {
+  editor,
+  languages,
+  IDisposable,
+} from 'monaco-editor/esm/vs/editor/editor.api';
 
 import {
   mixinControlValueAccessor,
@@ -47,6 +51,8 @@ export const _TdCodeEditorMixinBase = mixinControlValueAccessor(
   selector: 'td-code-editor',
   templateUrl: './code-editor.component.html',
   styleUrls: ['./code-editor.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

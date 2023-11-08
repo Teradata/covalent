@@ -13,13 +13,13 @@
 
 ## Setup
 
-Import the **[CovalentUserProfileModule]** in your NgModule:
+Import the **[TdUserProfileComponent]** in your NgModule:
 
 ```typescript
-import { CovalentUserProfileModule } from '@covalent/core/user-profile';
+import { TdUserProfileComponent } from '@covalent/core/user-profile';
 @NgModule({
   imports: [
-    CovalentUserProfileModule,
+    TdUserProfileComponent,
     ...
   ],
   ...
@@ -32,8 +32,7 @@ export class MyModule {}
 Basic Example:
 
 ```html
-<td-user-profile name="daffy duck" email="daffy.duck@teradata.com">
-</td-user-profile>
+<td-user-profile name="daffy duck" email="daffy.duck@teradata.com"> </td-user-profile>
 ```
 
 Example with all inputs and projected content:

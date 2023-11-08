@@ -13,16 +13,28 @@ import {
   EventEmitter,
   SecurityContext,
 } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {
   removeLeadingHash,
   isAnchorLink,
   TdMarkdownLoaderService,
 } from '@covalent/markdown';
-import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import {
+  ITdFlavoredMarkdownButtonClickEvent,
+  TdFlavoredMarkdownComponent,
+  TdFlavoredMarkdownLoaderComponent,
+} from '@covalent/flavored-markdown';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ICopyCodeTooltips } from '@covalent/highlight';
 import { firstValueFrom } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { TdMessageComponent } from '@covalent/core/message';
+import { TdBreadcrumbsComponent } from '@covalent/core/breadcrumbs';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -60,6 +72,20 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
   selector: 'td-markdown-navigator',
   templateUrl: './markdown-navigator.component.html',
   styleUrls: ['./markdown-navigator.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    // material
+    MatButtonModule,
+    MatTooltipModule,
+    MatListModule,
+    MatIconModule,
+    MatProgressBarModule,
+    TdBreadcrumbsComponent,
+    TdMessageComponent,
+    TdFlavoredMarkdownComponent,
+    TdFlavoredMarkdownLoaderComponent,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdMarkdownNavigatorComponent implements OnChanges {

@@ -11,7 +11,7 @@ import { covalentThemeName, covalentThemeConf } from './editor.theme';
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation(query => ({
+  value: jest.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -86,23 +86,19 @@ const language: any = {
   ],
 };
 
-
 describe('Component: App', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [
-          TdCodeEditorComponent,
-          TestMultipleEditorsComponent,
-          TestEditorOptionsComponent,
-          TestTwoWayBindingWithValueComponent,
-          TestTwoWayBindingWithNgModelComponent,
-        ],
-        imports: [FormsModule],
-      });
-      TestBed.compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        TestMultipleEditorsComponent,
+        TestEditorOptionsComponent,
+        TestTwoWayBindingWithValueComponent,
+        TestTwoWayBindingWithNgModelComponent,
+      ],
+      imports: [FormsModule, TdCodeEditorComponent],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should set the editor value and retrieve that same value from editor', (done) => {
     inject([], () => {

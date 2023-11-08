@@ -111,13 +111,13 @@ Reference the webpack file in your angular.json build config.
 ...
 ```
 
-Import the **CovalentCodeEditorModule** in your NgModule:
+Import the **TdCodeEditorComponent** in your NgModule:
 
 ```typescript
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { TdCodeEditorComponent } from '@covalent/code-editor';
 @NgModule({
   imports: [
-    CovalentCodeEditorModule,
+    TdCodeEditorComponent,
     ...
   ],
   ...
@@ -128,17 +128,7 @@ export class MyModule {}
 ## Example
 
 ```html
-<td-code-editor
-  [style.height.px]="200"
-  editorStyle="border:0;"
-  flex
-  theme="vs"
-  language="sql"
-  [editorOptions]="{readOnly:true, fontSize:20}"
-  [(ngModel)]="model"
-  (ngModelChange)="callBackFunc()"
->
-</td-code-editor>
+<td-code-editor [style.height.px]="200" editorStyle="border:0;" flex theme="vs" language="sql" [editorOptions]="{readOnly:true, fontSize:20}" [(ngModel)]="model" (ngModelChange)="callBackFunc()"> </td-code-editor>
 ```
 
 ## Running unit tests

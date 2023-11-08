@@ -16,14 +16,18 @@ import { MatTooltip } from '@angular/material/tooltip';
 import {
   ICopyCodeTooltips,
   IRawToggleLabels,
+  TdCopyCodeButtonComponent,
 } from './copy-code-button/copy-code-button.component';
 
 import hljs from 'highlight.js';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'td-highlight',
   styleUrls: ['./highlight.component.scss'],
   templateUrl: './highlight.component.html',
+  standalone: true,
+  imports: [CommonModule, TdCopyCodeButtonComponent],
 })
 export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   private _initialized = false;

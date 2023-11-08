@@ -56,13 +56,13 @@ npm i -save @covalent/flavored-markdown
 
 ## Setup
 
-Then, import the **CovalentFlavoredMarkdownModule** in your NgModule:
+Then, import the **TdFlavoredMarkdownComponent** in your NgModule:
 
 ```typescript
-import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
+import { TdFlavoredMarkdownComponent } from '@covalent/flavored-markdown';
 @NgModule({
   imports: [
-    CovalentFlavoredMarkdownModule,
+    TdFlavoredMarkdownComponent,
     ...
   ],
   ...
@@ -99,9 +99,7 @@ $theme: mat.define-light-theme($primary, $accent, $warn);
 ## Example
 
 ```html
-<td-flavored-markdown>
-  - [x] checked action - [ ] unchecked action + list item + list item
-</td-flavored-markdown>
+<td-flavored-markdown> - [x] checked action - [ ] unchecked action + list item + list item </td-flavored-markdown>
 ```
 
 ## TdFlavoredMarkdownLoaderComponent: td-flavored-markdown-loader
@@ -140,8 +138,5 @@ A component that fetches markdown from a GitHub url and renders it using `<td-fl
 ## Example
 
 ```html
-<td-flavored-markdown-loader
-  [url]="'https://github.com/Teradata/covalent/blob/main/README.md'"
->
-</td-flavored-markdown-loader>
+<td-flavored-markdown-loader [url]="'https://github.com/Teradata/covalent/blob/main/README.md'"> </td-flavored-markdown-loader>
 ```

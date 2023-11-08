@@ -22,6 +22,7 @@ let TD_LOADING_NEXT_ID = 0;
 
 @Directive({
   selector: '[tdLoading]',
+  standalone: true,
 })
 export class TdLoadingDirective implements OnInit, OnDestroy {
   private _context: TdLoadingContext = new TdLoadingContext();

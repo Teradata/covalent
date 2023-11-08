@@ -1,22 +1,15 @@
 import { Type } from '@angular/core';
 import { NgModule } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
+import { TdMessageComponent } from './message.component';
 
-import {
-  TdMessageComponent,
-  TdMessageContainerDirective,
-} from './message.component';
+const TD_MESSAGE: Type<any>[] = [TdMessageComponent];
 
-const TD_MESSAGE: Type<any>[] = [
-  TdMessageComponent,
-  TdMessageContainerDirective,
-];
-
+/**
+ * @deprecated since version 8.x, modules are no longer needed use standalone components instead
+ */
 @NgModule({
-  imports: [CommonModule, MatIconModule],
-  declarations: [TD_MESSAGE],
+  imports: [TD_MESSAGE],
   exports: [TD_MESSAGE],
 })
 export class CovalentMessageModule {}

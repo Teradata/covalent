@@ -13,6 +13,12 @@ import {
   ElementRef,
   NgZone,
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import {
   trigger,
   state,
@@ -49,6 +55,14 @@ export const _TdSearchInputMixinBase =
   selector: 'td-search-input',
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss'],
+  standalone: true,
+  imports: [
+    FormsModule,
+    CommonModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('searchState', [

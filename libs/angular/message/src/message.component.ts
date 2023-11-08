@@ -12,11 +12,14 @@ import {
   HostListener,
   ChangeDetectorRef,
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 import { tdCollapseAnimation } from './collapse.animation';
 
 @Directive({
   selector: '[tdMessageContainer]',
+  standalone: true,
 })
 export class TdMessageContainerDirective {
   constructor(public viewContainer: ViewContainerRef) {}
@@ -26,6 +29,8 @@ export class TdMessageContainerDirective {
   selector: 'td-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss'],
+  standalone: true,
+  imports: [CommonModule, MatIconModule, TdMessageContainerDirective],
   animations: [tdCollapseAnimation],
 })
 export class TdMessageComponent implements AfterViewInit {

@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatIconModule } from '@angular/material/icon';
-
 import { TdJsonFormatterComponent } from './json-formatter.component';
 
+/**
+ * @deprecated since version 8.x, modules are no longer needed use standalone components instead
+ */
 @NgModule({
-  imports: [CommonModule, MatTooltipModule, MatIconModule],
-  declarations: [TdJsonFormatterComponent],
+  imports: [TdJsonFormatterComponent],
   exports: [TdJsonFormatterComponent],
 })
 export class CovalentJsonFormatterModule {}

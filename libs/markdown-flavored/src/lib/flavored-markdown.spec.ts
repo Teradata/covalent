@@ -1,7 +1,9 @@
 import { TestBed, waitForAsync, ComponentFixture } from '@angular/core/testing';
 import { Component, Output, EventEmitter } from '@angular/core';
-import { CovalentFlavoredMarkdownModule } from './flavored-markdown.module';
-import { ITdFlavoredMarkdownButtonClickEvent } from './flavored-markdown.component';
+import {
+  TdFlavoredMarkdownComponent,
+  ITdFlavoredMarkdownButtonClickEvent,
+} from './flavored-markdown.component';
 
 @Component({
   template: `
@@ -20,7 +22,7 @@ class TdFlavoredMarkdownTestComponent {
 describe('Component: TdFlavoredMarkdown should: ', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CovalentFlavoredMarkdownModule],
+      imports: [TdFlavoredMarkdownComponent],
       declarations: [TdFlavoredMarkdownTestComponent],
     });
     TestBed.compileComponents();

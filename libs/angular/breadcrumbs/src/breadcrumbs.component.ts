@@ -22,6 +22,7 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   styleUrls: ['./breadcrumbs.component.scss'],
   templateUrl: './breadcrumbs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class TdBreadcrumbsComponent
   implements OnInit, AfterContentInit, OnDestroy

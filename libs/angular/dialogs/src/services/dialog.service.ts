@@ -46,7 +46,9 @@ export interface IDraggableRefs<T> {
   dragRefSubject: Subject<DragRef>;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TdDialogService {
   private _renderer2: Renderer2;
 

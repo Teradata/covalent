@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CovalentGuidedTourService } from './guided-tour.service';
 
+/**
+ * @deprecated since version 8.x, this module is no longer needed, import CovalentGuidedTourService where needed
+ */
 @NgModule({
-  imports: [CommonModule],
   providers: [CovalentGuidedTourService],
-  declarations: [],
-  exports: [],
 })
 export class CovalentGuidedTourModule {}
