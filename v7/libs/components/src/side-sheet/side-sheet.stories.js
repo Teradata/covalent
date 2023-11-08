@@ -2,6 +2,7 @@ import './side-sheet';
 import '../button/button';
 import { Active as ActiveStatusHeader } from '../status-header/status-header.stories';
 import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
+import '../data-table/data-table.stories.scss';
 
 export default {
   title: 'Components/Side sheet',

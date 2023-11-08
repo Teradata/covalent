@@ -1,3 +1,15 @@
+## [7.4.2](https://github.com/Teradata/covalent/compare/v7.4.1...v7.4.2) (2023-11-06)
+
+### Bug Fixes
+
+- **components:** tree list item js error ([#2071](https://github.com/Teradata/covalent/issues/2071)) ([2ee44df](https://github.com/Teradata/covalent/commit/2ee44df6e298f668b868ed2d010c279c1d219940))
+
+## [7.4.1](https://github.com/Teradata/covalent/compare/v7.4.0...v7.4.1) (2023-11-02)
+
+### Bug Fixes
+
+- **docs:** hide side nave on mobile ([#2069](https://github.com/Teradata/covalent/issues/2069)) ([175587b](https://github.com/Teradata/covalent/commit/175587b3a285e109f00ec4dba899260494102b5c))
+
 # [7.4.0](https://github.com/Teradata/covalent/compare/v7.3.1...v7.4.0) (2023-11-01)
 
 ### Features

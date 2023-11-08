@@ -3,7 +3,7 @@ import '../icon/icon';
 import '../card/card';
 
 export default {
-  title: 'Components/Empty State',
+  title: 'Components/Empty state',
   args: {
     headline: "You don't have access to this area",
     subtitle:

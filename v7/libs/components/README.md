@@ -10,11 +10,11 @@ All components are published in npm and available on any CDN that host npm modul
 
 ```html
 <!-- using a specific version -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/index.mjs"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/+esm"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/style.css" />
 
 <!-- using the latest version -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/index.mjs"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/+esm"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/style.css" />
 ```
 
@@ -33,11 +33,11 @@ once the script is loaded, its now possible to start using our custom HTML eleme
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/index.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/+esm"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/style.css" />
   </head>
   <body>
-    <cv-button raised>Hello world<cv-button>
+    <cv-button label="Hello world" raised></cv-button>
   </body>
 </html>
 ```
@@ -69,7 +69,7 @@ import '@covalent/components/button';
 @component({
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  template: '<cv-button>Hello world</cv-button>',
+  template: '<cv-button label="Hello world" raised></cv-button>',
 })
 export class AppComponent {}
 ```

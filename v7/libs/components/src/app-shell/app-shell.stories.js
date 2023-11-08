@@ -1,4 +1,5 @@
 import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
+import '../data-table/data-table.stories.scss';
 
 import './app-shell';
 import '../action-ribbon/action-ribbon';
@@ -38,7 +39,7 @@ const updateActionRibbon = () => {
   }
 };
 
-const Template = ({ navClick, appName = '[App name]', sectionTitle = '' }) => {
+const Template = ({ appName = '[App name]', sectionTitle = '' }) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {

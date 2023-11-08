@@ -30,8 +30,9 @@ const Template = ({ label, leading, stacked }) => {
     <cv-snackbar
        class="my-snackbar"
        labelText="${label}"
-       ${leading ? 'leading' : null}
-       ${stacked ? 'stacked' : null}>
+       ${leading ? 'leading' : ''}
+       ${stacked ? 'stacked' : ''}
+       open>
       <cv-button slot="action">RETRY</cv-button>
       <cv-icon-button icon="close" slot="dismiss"></cv-icon-button>
     </cv-snackbar>`;

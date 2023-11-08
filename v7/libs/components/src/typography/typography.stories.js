@@ -1,7 +1,7 @@
 import './typography';
 
 export default {
-  title: 'Basics/Typography/Text',
+  title: 'Components/Text',
 };
 
 export const Basic = () => {

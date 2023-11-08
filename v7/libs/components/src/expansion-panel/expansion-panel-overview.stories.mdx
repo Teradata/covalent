@@ -1,10 +1,11 @@
-{/* expansion-panel-overview.stories.mdx */}
-
 import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
+import './expansion-panel';
+import './expansion-panel-item';
 import '../button/button';
+import incorrectExample from './expansion-panel-incorrect-example.png';
 
 <Meta
-  title="Components/Expansion-Panel/Overview"
+  title="Components/Expansion-Panel"
   parameters={{
     layout: 'fullscreen',
     previewTabs: {
@@ -18,9 +19,6 @@ import '../button/button';
   #story--example-button--outlined,
   #story--example-button--text {
     margin-right: 8px;
-  }
-  .sbdocs .docs-story {
-    background:black;
   }
   .buttonFooter{
     display:flex; 
