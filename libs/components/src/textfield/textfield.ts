@@ -18,6 +18,8 @@ export class CovalentTextField extends TextFieldBase {
       ${unsafeCSS(styles)}
     `,
   ];
+
+  override outlined = true;
 }
 
 export default CovalentTextField;

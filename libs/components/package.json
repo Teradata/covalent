@@ -80,6 +80,16 @@
       "import": "./empty-state.mjs",
       "require": "./empty-state.js"
     },
+    "./expansion-panel": {
+      "types": "./expansion-panel/expansion-panel.d.ts",
+      "import": "./expansion-panel.mjs",
+      "require": "./expansion-panel.js"
+    },
+    "./expansion-panel-item": {
+      "types": "./expansion-panel/expansion-panel-item.d.ts",
+      "import": "./expansion-panel-item.mjs",
+      "require": "./expansion-panel-item.js"
+    },
     "./icon": {
       "types": "./icon/icon.d.ts",
       "import": "./icon.mjs",
