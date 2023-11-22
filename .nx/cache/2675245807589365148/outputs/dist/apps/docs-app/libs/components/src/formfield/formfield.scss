@@ -1,8 +1,0 @@
-@use '@material/rtl';
-
-::slotted(cv-switch) {
-  margin-right: 10px;
-  @include rtl.rtl {
-    margin-left: 10px;
-  }
-}

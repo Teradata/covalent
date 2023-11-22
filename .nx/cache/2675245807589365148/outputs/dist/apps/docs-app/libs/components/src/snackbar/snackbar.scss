@@ -1,8 +1,0 @@
-:host {
-  --mdc-snackbar-action-color: var(--mdc-theme-text-primary-on-dark);
-  --mdc-theme-text-primary-on-background: var(--mdc-theme-text-primary-on-dark);
-
-  ::slotted(cv-icon-button) {
-    color: var(--mdc-theme-text-icon-on-dark);
-  }
-}
