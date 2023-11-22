@@ -44,6 +44,12 @@
 
 - remove dialogs in the overview page and fix link issues ([#2075](https://github.com/Teradata/covalent/issues/2075)) ([d8d9229](https://github.com/Teradata/covalent/commit/d8d9229352fe26764ff565fcc0142b5c7ad859d9))
 
+# [7.5.0-beta.2](https://github.com/Teradata/covalent/compare/v7.5.0-beta.1...v7.5.0-beta.2) (2023-11-22)
+
+### Bug Fixes
+
+- **components:** fixes from feature testing ([7cf18e6](https://github.com/Teradata/covalent/commit/7cf18e6bd29249a1773c0ee0ea8a8d19ee373810))
+
 # [7.5.0-beta.1](https://github.com/Teradata/covalent/compare/v7.4.2...v7.5.0-beta.1) (2023-11-22)
 
 ### Features
