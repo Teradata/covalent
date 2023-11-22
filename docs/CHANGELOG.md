@@ -1,3 +1,9 @@
+# [7.5.0-beta.1](https://github.com/Teradata/covalent/compare/v7.4.2...v7.5.0-beta.1) (2023-11-22)
+
+### Features
+
+- **components:** theme and packaging adjustments ([6150c61](https://github.com/Teradata/covalent/commit/6150c61e00bd819390cb7a664d972dc8fdc04c33))
+
 ## [7.4.2](https://github.com/Teradata/covalent/compare/v7.4.1...v7.4.2) (2023-11-06)
 
 ### Bug Fixes
