@@ -1,6 +1,7 @@
 import './empty-state';
 import '../icon/icon';
 import '../card/card';
+import '../button/button';
 
 export default {
   title: 'Components/Empty state',
