@@ -154,7 +154,7 @@
     "jest-preset-angular": "13.1.1",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "ng-packagr": "16.1.0",
-    "nx": "17.x.x",
+    "nx": "16.7.4",
     "postcss-preset-env": "^9.1.0",
     "postcss-scss": "^4.0.6",
     "prettier": "^2.5.1",
