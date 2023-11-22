@@ -1,0 +1,96 @@
+@use '@material/ripple';
+
+.mdc-ripple-surface {
+  @include ripple.surface;
+  @include ripple.radius-bounded(50%);
+  @include ripple.states;
+}
+
+.mdc-ripple-surface::after,
+.mdc-ripple-surface::before {
+  border-radius: 0 16px 16px 0;
+}
+
+.itemContent {
+  // .itemContent is a div so its width will be the width of its parent.
+  padding: 0 32px 0 var(--indent);
+  margin-right: 16px;
+}
+
+.itemContent:hover {
+  cursor: pointer;
+  background-color: var(--mdc-theme-surface-neutral-highlight-hover);
+  border-radius: 0 16px 16px 0;
+}
+
+.selected {
+  background-color: var(--mdc-theme-surface-primary-highlight);
+  color: var(--mdc-theme-primary);
+  border-radius: 0 16px 16px 0;
+}
+
+.selected:hover {
+  background-color: var(--mdc-theme-surface-primary-highlight-hover);
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  padding: 4px 0;
+}
+
+[name='label']::slotted(*) {
+  font-family: var(--mdc-typography-body1-font-family);
+  font-size: var(--mdc-typography-body1-font-size);
+  font-weight: var(--mdc-typography-body1-font-weight);
+  line-height: var(--mdc-typography-body1-line-height);
+  letter-spacing: 0.25px;
+  padding-left: 16px;
+}
+
+[name='extraContent']::slotted(*) {
+  padding-left: 64px;
+  padding-bottom: 4px;
+  margin-top: -4px;
+  letter-spacing: 0.4px;
+  color: var(--mdc-theme-text-secondary-on-background);
+  font-family: var(--mdc-typography-caption-font-family);
+  font-size: var(--mdc-typography-caption-font-size);
+  font-weight: var(--mdc-typography-caption-font-weight);
+  line-height: var(--mdc-typography-caption-line-height);
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  flex-direction: column;
+}
+
+.endOfNest {
+  padding: 8px;
+  padding-left: calc(var(--indent) + 20px);
+  letter-spacing: 0.4px;
+  user-select: none;
+  color: var(--mdc-theme-text-disabled-on-background);
+  font-family: var(--mdc-typography-caption-font-family);
+  font-size: var(--mdc-typography-caption-font-size);
+  font-weight: var(--mdc-typography-caption-font-weight);
+  line-height: var(--mdc-typography-caption-line-height);
+}
+
+.arrowIcon {
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
+.open {
+  transition: transform 100ms ease-out;
+  transform: rotate(90deg);
+}
+
+.close {
+  transition: transform 100ms ease-in;
+  transform: rotate(0deg);
+}

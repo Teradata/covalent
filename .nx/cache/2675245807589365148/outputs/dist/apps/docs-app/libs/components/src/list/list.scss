@@ -1,0 +1,22 @@
+:host {
+  padding-right: var(--cv-list-padding-right, 16px);
+}
+
+:host(.subnav) {
+  --cv-list-padding-right: 0;
+  --cv-list-item-text-padding: 68px;
+}
+
+:host(.subnav) ::slotted(*) {
+  height: 32px;
+  font-weight: var(--mdc-typography-body2-font-weight);
+  border-radius: 0 28px 28px 0;
+  padding: 0;
+}
+
+.mdc-deprecated-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
