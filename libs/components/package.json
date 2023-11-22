@@ -90,6 +90,11 @@
       "import": "./expansion-panel-item.mjs",
       "require": "./expansion-panel-item.js"
     },
+    "./formfield": {
+      "types": "./formfield/formfield.d.ts",
+      "import": "./formfield.mjs",
+      "require": "./formfield.js"
+    },
     "./icon": {
       "types": "./icon/icon.d.ts",
       "import": "./icon.mjs",
