@@ -8,6 +8,9 @@ import { classMap } from 'lit/directives/class-map.js';
 import { DrawerBase } from '@material/mwc-drawer/mwc-drawer-base';
 import styles from './app-shell.scss?inline';
 
+import '../top-app-bar/top-app-bar-fixed';
+import '../icon-button/icon-button';
+
 declare global {
   interface HTMLElementTagNameMap {
     'cv-app-shell': CovalentAppShell;
