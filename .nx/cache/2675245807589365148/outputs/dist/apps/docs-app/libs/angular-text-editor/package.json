@@ -1,0 +1,32 @@
+{
+  "name": "@covalent/text-editor",
+  "version": "0.0.0-COVALENT",
+  "description": "Teradata UI Platform Text Editor Module",
+  "keywords": [
+    "angular",
+    "covalent",
+    "easymde",
+    "markdown",
+    "text",
+    "editor",
+    "electron",
+    "reusable"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "peerDependencies": {
+    "easymde": "0.0.0-EASYMDE",
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG"
+  },
+  "dependencies": {
+    "tslib": "0.0.0-TSLIB"
+  }
+}

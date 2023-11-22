@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx build",
+    "startTime": "2023-11-22T18:27:42.384Z",
+    "endTime": "2023-11-22T18:32:18.966Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "docs-app:build:production",
+      "target": "build",
+      "projectName": "docs-app",
+      "hash": "2675245807589365148",
+      "startTime": "2023-11-22T18:27:42.395Z",
+      "endTime": "2023-11-22T18:32:18.878Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    }
+  ]
+}

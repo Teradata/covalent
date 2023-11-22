@@ -1,0 +1,32 @@
+<mat-button-toggle-group
+  multiple
+  class="raw-and-copy-buttons"
+  *ngIf="toggleRawButton; else button"
+>
+  <mat-button-toggle (click)="toggleRawClicked()" #rawButton>{{
+    rawToggleText
+  }}</mat-button-toggle>
+  <mat-button-toggle
+    [cdkCopyToClipboard]="copiedContent"
+    [matTooltip]="copyTooltip"
+    #tooltip="matTooltip"
+    #copyButton
+    (click)="copyClicked()"
+    (cdkCopyToClipboardCopied)="textCopied($event)"
+  >
+    <mat-icon width>content_copy</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>
+
+<ng-template #button>
+  <button
+    mat-icon-button
+    [cdkCopyToClipboard]="copiedContent"
+    class="copy-button"
+    [matTooltip]="copyTooltip"
+    #tooltip="matTooltip"
+    (cdkCopyToClipboardCopied)="textCopied($event)"
+  >
+    <mat-icon role="img">content_copy</mat-icon>
+  </button>
+</ng-template>
