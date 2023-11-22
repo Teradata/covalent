@@ -4,7 +4,6 @@ import '../data-table/data-table.stories.scss';
 import './app-shell';
 import '../action-ribbon/action-ribbon';
 import '../icon/icon';
-import '../icon-button/icon-button';
 import '../list/list';
 import '../list/list-item';
 import '../list/nav-list-item';

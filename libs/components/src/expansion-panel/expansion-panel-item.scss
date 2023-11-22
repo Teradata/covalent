@@ -157,7 +157,6 @@
 
 :host {
   .panel {
-    width: 550px;
     border-bottom: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 12%));
     background-color: var(--mdc-theme-surface, #ffffff);
     transition: margin-bottom 0.5s, margin-top 0.5s;
@@ -222,8 +221,9 @@
     overflow-y: hidden;
   }
 
-  ::slotted([slot='content']) {
-    padding: 0 24px 16px;
+  .content slot {
+    display: block;
+    padding: 0 24px;
   }
 
   .footer {
