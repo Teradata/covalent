@@ -292,6 +292,8 @@
   table {
     font-family: var(--mdc-typography-subtitle2-font-family);
 
+
+
     thead th {
       height: 3.5rem;
     }
@@ -306,6 +308,7 @@
       }
     }
     tr td {
+      background-color: var(--mdc-theme-surface) !important;
       border: none;
       border-bottom: 1px solid var(--mdc-theme-border);
       color: var(--mdc-theme-text-secondary-on-background);
@@ -393,6 +396,10 @@
           border-color: var(--mdc-theme-surface-canvas);
         }
       }
+    }
+
+    &.sbdocs.sb-unstyled > div:first-child {
+      background-color: var(--mdc-theme-surface);
     }
   }
 }
