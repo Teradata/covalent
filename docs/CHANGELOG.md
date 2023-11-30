@@ -1,3 +1,9 @@
+# [7.5.0-beta.3](https://github.com/Teradata/covalent/compare/v7.5.0-beta.2...v7.5.0-beta.3) (2023-11-30)
+
+### Bug Fixes
+
+- **markdown-navigator:** fixing misaligned icons ([3286a82](https://github.com/Teradata/covalent/commit/3286a82657b91f0a8f7c7e9b52661a31d2d9e3c3))
+
 # [7.5.0-beta.2](https://github.com/Teradata/covalent/compare/v7.5.0-beta.1...v7.5.0-beta.2) (2023-11-22)
 
 ### Bug Fixes
