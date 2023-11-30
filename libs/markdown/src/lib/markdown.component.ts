@@ -157,6 +157,26 @@ function addIdsToHeadings(html: string): string {
   return html;
 }
 
+function changeStyleAlignmentToClass(html: string) {
+  if (html) {
+    const document: Document = new DOMParser().parseFromString(
+      html,
+      'text/html'
+    );
+    ['right', 'center', 'left'].forEach((alignment: string) => {
+      document
+        .querySelectorAll(`[style*='text-align:${alignment}']`)
+        .forEach((style: Element) => {
+          style.setAttribute('class', `markdown-align-${alignment}`);
+        });
+    });
+
+    return new XMLSerializer().serializeToString(document);
+  }
+
+  return html;
+}
+
 @Component({
   selector: 'td-markdown',
   styleUrls: ['./markdown.component.scss'],
@@ -328,8 +348,12 @@ export class TdMarkdownComponent
     // to parse the string into DOM element for now.
     const div: HTMLDivElement = this._renderer.createElement('div');
     this._renderer.appendChild(this._elementRef.nativeElement, div);
+
     const html: string =
-      this._domSanitizer.sanitize(SecurityContext.HTML, markupStr) ?? '';
+      this._domSanitizer.sanitize(
+        SecurityContext.HTML,
+        changeStyleAlignmentToClass(markupStr)
+      ) ?? '';
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(
       html,
       this._hostedUrl

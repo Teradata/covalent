@@ -631,5 +631,17 @@
       margin: 0 0.2em 0.25em -1.6em;
       vertical-align: middle;
     }
+
+    td.markdown-align-center {
+      text-align: center;
+    }
+
+    td.markdown-align-left {
+      text-align: left;
+    }
+
+    td.markdown-align-right {
+      text-align: right;
+    }
   }
 }
