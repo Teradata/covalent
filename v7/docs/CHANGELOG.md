@@ -1,3 +1,9 @@
+## [7.4.3](https://github.com/Teradata/covalent/compare/v7.4.2...v7.4.3) (2023-11-29)
+
+### Bug Fixes
+
+- remove dialogs in the overview page and fix link issues ([#2075](https://github.com/Teradata/covalent/issues/2075)) ([d8d9229](https://github.com/Teradata/covalent/commit/d8d9229352fe26764ff565fcc0142b5c7ad859d9))
+
 ## [7.4.2](https://github.com/Teradata/covalent/compare/v7.4.1...v7.4.2) (2023-11-06)
 
 ### Bug Fixes
