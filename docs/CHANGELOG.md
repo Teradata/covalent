@@ -1,3 +1,9 @@
+## [7.4.4](https://github.com/Teradata/covalent/compare/v7.4.3...v7.4.4) (2023-12-01)
+
+### Bug Fixes
+
+- correction in links to not break in production ([#2078](https://github.com/Teradata/covalent/issues/2078)) ([6c686e6](https://github.com/Teradata/covalent/commit/6c686e6d2efa8475292ff429fb74e6d09f7cf20f))
+
 ## [7.4.3](https://github.com/Teradata/covalent/compare/v7.4.2...v7.4.3) (2023-11-29)
 
 ### Bug Fixes
