@@ -10,10 +10,14 @@
         {{ title }}
       </span>
 
-      <button mat-icon-button [matTooltip]="toggleDockedStateLabel ?? ''" (click)="toggleDockedState()">
-        <mat-icon [attr.aria-label]="toggleDockedStateLabel">
-          {{ docked ? 'unfold_more' : 'unfold_less' }}
-        </mat-icon>
+      <button
+        mat-icon-button
+        [matTooltip]="toggleDockedStateLabel ?? ''"
+        (click)="toggleDockedState()"
+      >
+        <mat-icon [attr.aria-label]="toggleDockedStateLabel"
+          >dock_to_right</mat-icon
+        >
       </button>
 
       <button

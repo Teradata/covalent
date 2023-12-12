@@ -128,6 +128,7 @@ export class ResizableDraggableDialog {
       this._renderer2.setStyle(element, 'position', 'absolute');
       this._renderer2.setStyle(element, 'width', cornerWidth);
       this._renderer2.setStyle(element, 'height', cornerWidth);
+      this._renderer2.setStyle(element, 'z-index', 1);
       this._renderer2.appendChild(this._getDialogWrapper(), element);
 
       let cursor: cursors;
@@ -144,7 +145,7 @@ export class ResizableDraggableDialog {
         rightLeft = horizontalAlignment.right;
 
         const icon: HTMLElement = this._renderer2.createElement('i');
-        this._renderer2.addClass(icon, 'material-icons');
+        this._renderer2.addClass(icon, 'material-symbols-outlined');
         this._renderer2.appendChild(
           icon,
           this._renderer2.createText('filter_list')
@@ -156,6 +157,7 @@ export class ResizableDraggableDialog {
           `rotate(${315}deg) translate(0px, ${offset})`
         );
         this._renderer2.setStyle(icon, 'font-size', cornerWidth);
+        this._renderer2.setStyle(icon, 'z-index', 1);
       } else if (corner === corners.bottomLeft) {
         cursor = cursors.nesw;
         topBottom = verticalAlignment.bottom;
