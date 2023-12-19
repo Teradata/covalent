@@ -1,3 +1,15 @@
+## [7.4.6](https://github.com/Teradata/covalent/compare/v7.4.5...v7.4.6) (2023-12-19)
+
+### Bug Fixes
+
+- dark style issues ([#2083](https://github.com/Teradata/covalent/issues/2083)) ([c1a62e7](https://github.com/Teradata/covalent/commit/c1a62e71b958a92214344657ea115e53b41ce414))
+
+## [7.4.5](https://github.com/Teradata/covalent/compare/v7.4.4...v7.4.5) (2023-12-19)
+
+### Bug Fixes
+
+- issue 2074 - tables are rendered differently in a list ([#2082](https://github.com/Teradata/covalent/issues/2082)) ([c8ff2a3](https://github.com/Teradata/covalent/commit/c8ff2a3b264c899d0f65830db7b42e54548dea5e))
+
 ## [7.4.4](https://github.com/Teradata/covalent/compare/v7.4.3...v7.4.4) (2023-12-01)
 
 ### Bug Fixes
