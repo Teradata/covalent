@@ -330,4 +330,22 @@
       text-decoration: none;
     }
   }
+
+  .sbdocs.sbdocs-preview.sb-unstyled {
+    > div {
+      &:first-child {
+        background-color: inherit;
+      }
+    }
+  }
+
+  .sbdocs-content {
+    table {
+      .docblock-argstable-body {
+        td {
+          background-color: inherit;
+        }
+      }
+    }
+  }
 }
