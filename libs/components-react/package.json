@@ -1,0 +1,11 @@
+{
+  "name": "@covalent/components-react",
+  "version": "0.0.1",
+  "dependencies": {
+    "@covalent/components": "latest",
+    "react": "^18.2.0"
+  },
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts"
+}
