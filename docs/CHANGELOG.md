@@ -1,3 +1,13 @@
+# [8.0.0](https://github.com/Teradata/covalent/compare/v7.4.7...v8.0.0) (2024-01-03)
+
+### Features
+
+- upgrade packages to support angular 17 ([#2076](https://github.com/Teradata/covalent/issues/2076)) ([c523137](https://github.com/Teradata/covalent/commit/c523137d2d5b1cf4f632ae3d0c3581f78b8d9ea4))
+
+### BREAKING CHANGES
+
+- Co-authored-by: Victor <victor.alcantaragarcia@teradata.com>
+
 ## [7.4.7](https://github.com/Teradata/covalent/compare/v7.4.6...v7.4.7) (2023-12-19)
 
 ### Bug Fixes
