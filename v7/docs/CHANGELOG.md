@@ -1,3 +1,9 @@
+## [7.4.7](https://github.com/Teradata/covalent/compare/v7.4.6...v7.4.7) (2023-12-19)
+
+### Bug Fixes
+
+- correction in markdown table alignment ([#2077](https://github.com/Teradata/covalent/issues/2077)) ([f3bdc02](https://github.com/Teradata/covalent/commit/f3bdc02b00792c65579c3fbf0a886441247b9c41))
+
 ## [7.4.6](https://github.com/Teradata/covalent/compare/v7.4.5...v7.4.6) (2023-12-19)
 
 ### Bug Fixes
