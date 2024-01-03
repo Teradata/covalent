@@ -17,11 +17,11 @@
 // Plus imports for other components in your app.
 
 // Custom typography
-$custom-typography: mat-typography-config(
-  $button: mat-typography-level(14px, 14px, 400),
+$custom-typography: mat.define-typography-config(
+  $button: mat.define-typography-level(14px, 14px, 400),
 );
-$custom-toolbar-typography: mat-typography-config(
-  $title: mat-typography-level(20px, 32px, 400),
+$custom-toolbar-typography: mat.define-typography-config(
+  $headline-6: mat.define-typography-level(20px, 32px, 400),
 );
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -29,11 +29,10 @@ $custom-toolbar-typography: mat-typography-config(
 @include mat.core();
 
 // Use the default configuration.
-$my-typography: mat.define-typography-config();
-@include mat.typography-hierarchy($my-typography);
+@include mat.typography-hierarchy($custom-typography);
 
 // Setting the toolbar to the proper spec weight
-@include mat-toolbar-typography($custom-toolbar-typography);
+@include mat.toolbar-typography($custom-toolbar-typography);
 
 // Include the core styles for Covalent
 @include covalent-core();
@@ -69,7 +68,7 @@ $theme: mat.define-light-theme(
       on-secondary: '#ff0000',
       warn: $warn,
     ),
-    typography: $my-typography,
+    typography: $custom-typography,
   )
 );
 $theme: map_merge(
@@ -106,10 +105,10 @@ body .mat-card {
 
 // Dark theme
 @media (prefers-color-scheme: dark) {
-  $primary-dark: mat-palette($td-slate, 800, 200, 900);
-  $accent-dark: mat-palette($td-orange, 500);
-  $warn-dark: mat-palette($mat-red, 600, 200, 900);
-  $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+  $primary-dark: mat.define-palette($td-slate, 800, 200, 900);
+  $accent-dark: mat.define-palette($td-orange, 500);
+  $warn-dark: mat.define-palette($mat-red, 600, 200, 900);
+  $theme-dark: mat.define-dark-theme($primary-dark, $accent-dark, $warn-dark);
   $theme-dark: map_merge(
     $theme-dark,
     (

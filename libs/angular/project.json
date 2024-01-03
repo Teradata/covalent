@@ -6,7 +6,7 @@
   "prefix": "covalent",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular"],
       "options": {
         "project": "libs/angular/ng-package.json",
@@ -43,7 +43,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
           "libs/angular/src/**/*.ts",

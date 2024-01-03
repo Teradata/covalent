@@ -6,7 +6,7 @@
   "prefix": "covalent",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/markdown-navigator"],
       "options": {
         "project": "libs/markdown-navigator/ng-package.json"
@@ -37,7 +37,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
           "libs/markdown-navigator/src/**/*.ts",

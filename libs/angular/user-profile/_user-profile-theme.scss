@@ -10,7 +10,7 @@
 
   td-user-profile-menu {
     .mat-list-base .mat-list-item .mat-line:nth-child(n + 2) {
-      @include mat-typography-level-to-styles($config, caption);
+      font: mat.get-theme-typography($config, caption);
     }
   }
 }

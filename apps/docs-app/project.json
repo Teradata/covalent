@@ -90,10 +90,10 @@
       "executor": "@angular-builders/custom-webpack:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "docs-app:build:production"
+          "buildTarget": "docs-app:build:production"
         },
         "development": {
-          "browserTarget": "docs-app:build:development"
+          "buildTarget": "docs-app:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -101,11 +101,11 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "docs-app:build"
+        "buildTarget": "docs-app:build"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
           "apps/docs-app/src/**/*.ts",

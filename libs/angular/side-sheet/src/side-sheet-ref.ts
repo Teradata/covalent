@@ -3,10 +3,7 @@ import { FocusOrigin } from '@angular/cdk/a11y';
 import { DialogRef } from '@angular/cdk/dialog';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { BasePortalOutlet } from '@angular/cdk/portal';
-import {
-  MatDialogRef,
-  _MatDialogContainerBase,
-} from '@angular/material/dialog';
+import { MatDialogRef, MatDialogContainer } from '@angular/material/dialog';
 import { CovalentSideSheetConfig } from './side-sheet.config';
 
 // Counter for unique dialog ids.
@@ -17,7 +14,7 @@ export class CovalentSideSheetRef<T, R = any> extends MatDialogRef<T, R> {
   constructor(
     public overlayRef: OverlayRef,
     public config: CovalentSideSheetConfig,
-    public override _containerInstance: _MatDialogContainerBase,
+    public override _containerInstance: MatDialogContainer,
     override readonly id: string = `td-side-sheet-${uniqueId++}`
   ) {
     const ref = new DialogRef<R, T>(overlayRef, config);

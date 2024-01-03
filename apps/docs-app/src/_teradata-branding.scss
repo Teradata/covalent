@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 /**
 * Colors
 */
@@ -250,14 +252,14 @@ $td-light-theme-background: (
 // Foreground palette for light themes.
 $td-light-theme-foreground: (
   base: black,
-  divider: $dark-dividers,
-  dividers: $dark-dividers,
-  disabled: $dark-disabled-text,
+  divider: map-get(mat.$light-theme-foreground-palette, 'divider'),
+  dividers: map-get(mat.$light-theme-foreground-palette, 'dividers'),
+  disabled: map-get(mat.$light-theme-foreground-palette, 'disabled'),
   disabled-button: rgba(black, 0.26),
-  disabled-text: $dark-disabled-text,
+  disabled-text: map-get(mat.$light-theme-foreground-palette, 'disabled-text'),
   elevation: black,
-  hint-text: $dark-disabled-text,
-  secondary-text: $dark-secondary-text,
+  hint-text: map-get(mat.$light-theme-foreground-palette, 'disabled-text'),
+  secondary-text: map-get(mat.$light-theme-foreground-palette, 'secondary-text'),
   icon: rgba(black, 0.54),
   icons: rgba(black, 0.54),
   text: rgba(black, 0.87),
@@ -318,14 +320,14 @@ $td-dark-theme-background: (
 // Foreground palette for dark themes.
 $td-dark-theme-foreground: (
   base: white,
-  divider: $light-dividers,
-  dividers: $light-dividers,
-  disabled: $light-disabled-text,
+  divider: map-get(mat.$dark-theme-foreground-palette, 'divider'),
+  dividers: map-get(mat.$dark-theme-foreground-palette, 'dividers'),
+  disabled: map-get(mat.$dark-theme-foreground-palette, 'disabled'),
   disabled-button: rgba(white, 0.3),
-  disabled-text: $light-disabled-text,
+  disabled-text: map-get(mat.$dark-theme-foreground-palette, 'disabled-text'),
   elevation: black,
-  hint-text: $light-disabled-text,
-  secondary-text: $light-secondary-text,
+  hint-text: map-get(mat.$dark-theme-foreground-palette, 'disabled-text'),
+  secondary-text: map-get(mat.$dark-theme-foreground-palette, 'secondary-text'),
   icon: white,
   icons: white,
   text: white,
@@ -444,7 +446,7 @@ body {
 
   .bgc-td-orange-100,
   .bgc-td-orange-50 {
-    background-color: mat-color($td-orange, 50);
+    background-color: mat-color($td-orange, 100);
   }
 
   .tc-td-orange,
@@ -470,7 +472,7 @@ body {
 
   .tc-td-orange-100,
   .tc-td-orange-50 {
-    color: mat-color($td-orange, 50);
+    color: mat-color($td-orange, 100);
   }
 
   .fill-td-orange,
@@ -496,7 +498,7 @@ body {
 
   .fill-td-orange-100,
   .fill-td-orange-50 {
-    fill: mat-color($td-orange, 50);
+    fill: mat-color($td-orange, 100);
   }
   // Yellow
   .bgc-td-yellow,
