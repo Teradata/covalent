@@ -15,9 +15,7 @@ Covalent is Teradata's design system used to create Teradata branded experiences
 
 ## Setup
 
-- Ensure you have Node 12.20.x+ and NPM 6+ installed.
-- Install Angular CLI `npm i -g @angular/cli`
-- Install Typescript `npm i -g typescript`
+- Ensure you have Node 18.12.0+
 - Install Node packages `npm ci`
 - Run local build `npm run start`
 
@@ -38,14 +36,15 @@ Covalent is Teradata's design system used to create Teradata branded experiences
 
 Certain covalent version are meant for certain angular versions, and here is the matrix:
 
-|     Covalent     |      Angular      |
-| :--------------: | :---------------: |
-|       2.X        |        8.X        |
-|       3.X        | 9.X / 10.X / 11.x |
-|       4.X        |    12.X / 13.X    |
-|       5.X        |       14.X        |
-|       6.X        |       15.X        |
-|       7.X        |       16.X        |
+| Covalent |      Angular      |
+| :------: | :---------------: |
+|   2.X    |        8.X        |
+|   3.X    | 9.X / 10.X / 11.x |
+|   4.X    |    12.X / 13.X    |
+|   5.X    |       14.X        |
+|   6.X    |       15.X        |
+|   7.X    |       16.X        |
+|   8.X    |       17.X        |
 
 ## Browser Support
 

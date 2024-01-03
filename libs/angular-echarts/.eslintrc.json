@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "extends": [
-        "plugin:@nrwl/nx/angular",
+        "plugin:@nx/angular",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
@@ -26,13 +26,13 @@
           }
         ],
         "@angular-eslint/no-inputs-metadata-property": "off",
-        "@nrwl/nx/enforce-module-boundaries": "off",
+        "@nx/enforce-module-boundaries": "off",
         "@typescript-eslint/ban-types": "off"
       }
     },
     {
       "files": ["*.html"],
-      "extends": ["plugin:@nrwl/nx/angular-template"],
+      "extends": ["plugin:@nx/angular-template"],
       "rules": {}
     }
   ]

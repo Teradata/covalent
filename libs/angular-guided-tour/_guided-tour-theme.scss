@@ -9,15 +9,15 @@
   }
 
   .shepherd-title {
-    @include mat-typography-level-to-styles($config, subheading-2);
+    font: mat.get-theme-typography($config, subtitle-2);
   }
 
   .shepherd-text {
-    @include mat-typography-level-to-styles($config, body-1);
+    font: mat.get-theme-typography($config, body-1);
   }
 
   .shepherd-progress {
-    @include mat-typography-level-to-styles($config, body-1);
+    font: mat.get-theme-typography($config, body-1);
   }
 }
 
@@ -65,10 +65,10 @@
     min-width: 0;
     margin: 0;
     padding: 0;
-    width: $mat-icon-button-size;
-    height: $mat-icon-button-size;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
-    line-height: $mat-icon-button-size;
+    line-height: 40px;
     border-radius: 50%;
   }
 
