@@ -1,0 +1,22 @@
+<td-window-dialog
+  [toolbarColor]="toolbarColor"
+  [docked]="docked"
+  [title]="titleLabel"
+  [toggleDockedStateLabel]="toggleDockedStateLabel"
+  [closeLabel]="closeLabel"
+  (dockToggled)="toggleDockedState()"
+  (closed)="closed.emit()"
+>
+  <td-markdown-navigator
+    [items]="items"
+    [labels]="markdownNavigatorLabels"
+    [style.display]="docked ? 'none' : 'inherit'"
+    [startAt]="startAt"
+    [compareWith]="compareWith"
+    [footer]="footer"
+    [copyCodeToClipboard]="copyCodeToClipboard"
+    [copyCodeTooltips]="copyCodeTooltips"
+    (buttonClicked)="buttonClicked.emit($event)"
+    (itemSelected)="itemSelected.emit($event)"
+  ></td-markdown-navigator>
+</td-window-dialog>

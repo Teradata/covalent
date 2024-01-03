@@ -1,0 +1,11 @@
+@use '@material/checkbox'; // Required only for data table with row selection.
+@use '@material/icon-button/icon-button'; // Required only for data table with column sorting.
+@use '@material/linear-progress'; // Required only for data table with linear progress
+@use '@material/select/styles'; // Required only for data table with pagination
+@use '@material/data-table/data-table';
+
+@include checkbox.core-styles;
+@include linear-progress.core-styles;
+@include icon-button.core-styles;
+@include data-table.core-styles;
+@include data-table.theme-baseline;

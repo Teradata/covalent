@@ -1,0 +1,47 @@
+<div class="field-container" layout="row" layout-align="start center">
+  <mat-button-toggle-group
+    name="mode"
+    (change)="modeChange()"
+    [(ngModel)]="debounce"
+  >
+    <mat-button-toggle matTooltip="Enter/Clear Events" [value]="0">
+      <mat-icon>search</mat-icon>
+      Enter/Clear
+    </mat-button-toggle>
+    <mat-button-toggle matTooltip="Debounce Events" [value]="1">
+      <mat-icon>keyboard</mat-icon>
+      Debounce
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+<div class="field-container" layout="row" layout-align="start center">
+  <label class="push-right-xs">Appearance:</label>
+  <mat-radio-group [(ngModel)]="appearance">
+    <mat-radio-button *ngFor="let option of appearanceOptions" [value]="option">
+      {{ option }}
+    </mat-radio-button>
+  </mat-radio-group>
+</div>
+<p>Search Value: {{ searchInputTerm || 'Empty' }}</p>
+<div layout-gt-xs="row">
+  <div flex-gt-xs="40">
+    <td-search-input
+      *ngIf="debounce"
+      [appearance]="appearance"
+      [showUnderline]="true"
+      placeholder="Search using debounce"
+      (searchDebounce)="searchChange($event)"
+      (clear)="modeChange()"
+      searchIcon="image_search"
+    ></td-search-input>
+    <td-search-input
+      *ngIf="!debounce"
+      [appearance]="appearance"
+      [showUnderline]="true"
+      placeholder="Search using enter/clear"
+      (search)="searchChange($event)"
+      (clear)="modeChange()"
+      searchIcon="search"
+    ></td-search-input>
+  </div>
+</div>

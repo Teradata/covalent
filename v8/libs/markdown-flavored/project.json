@@ -1,0 +1,60 @@
+{
+  "name": "markdown-flavored",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/markdown-flavored/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/libs/markdown-flavored"],
+      "options": {
+        "project": "libs/markdown-flavored/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/markdown-flavored/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/markdown-flavored/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "projects": ["markdown"],
+          "target": "build",
+          "params": "ignore"
+        }
+      ]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/markdown-flavored"],
+      "options": {
+        "jestConfig": "libs/markdown-flavored/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/markdown-flavored/src/**/*.ts",
+          "libs/markdown-flavored/src/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/markdown-flavored/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}
