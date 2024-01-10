@@ -1,12 +1,19 @@
-
 :host {
-  --mdc-text-field-label-ink-color: var(--mdc-theme-text-secondary-on-background);
+  --mdc-text-field-label-ink-color: var(
+    --mdc-theme-text-secondary-on-background
+  );
   --mdc-text-field-ink-color: var(--mdc-theme-text-secondary-on-background);
   --mdc-text-field-fill-color: var(--mdc-theme-surface-canvas);
   --mdc-text-field-idle-line-color: var(--mdc-theme-border);
   --mdc-text-field-hover-line-color: var(--mdc-theme-text-icon-on-background);
   --mdc-text-field-outlined-idle-border-color: var(--mdc-theme-border);
-  --mdc-text-field-outlined-hover-border-color: var(--mdc-theme-text-icon-on-background);
+  --mdc-text-field-outlined-hover-border-color: var(
+    --mdc-theme-text-icon-on-background
+  );
+}
+
+:host([dense]) {
+  height: 48px;
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {

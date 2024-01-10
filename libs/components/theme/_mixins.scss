@@ -249,6 +249,7 @@
       $typography,
       button-line-height
     )};
+  --mdc-typography-button-text-transform: none;
   --mdc-typography-caption-font-family: var(--mdc-typography-font-family);
   --mdc-typography-caption-font-size: #{map-get($typography, caption-font-size)};
   --mdc-typography-caption-font-weight: #{map-get(
@@ -297,6 +298,10 @@
   --mdc-icon-font: 'Material Symbols Outlined';
 
   // Covalent Specific variables
+  --cov-theme-surface-container-lowest: #{map-get(
+      $theme,
+      surface-container-lowest
+    )};
   --covalent-theme-text-logo-on-background: #{map-get(
       $theme,
       text-logo-on-background
