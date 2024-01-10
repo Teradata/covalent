@@ -1,3 +1,10 @@
+# [7.5.0-beta.4](https://github.com/Teradata/covalent/compare/v7.5.0-beta.3...v7.5.0-beta.4) (2024-01-10)
+
+### Features
+
+- **markdown:** updating navigator docked mode ([d5aa605](https://github.com/Teradata/covalent/commit/d5aa605d248417272600f33c984aa5fd24bacfe3))
+- **tokens:** updating tokens for covalent m3 ([db425aa](https://github.com/Teradata/covalent/commit/db425aa6066d7a70657d6505d98a352d1e5747c4))
+
 # [7.5.0-beta.3](https://github.com/Teradata/covalent/compare/v7.5.0-beta.2...v7.5.0-beta.3) (2023-11-30)
 
 ### Bug Fixes
