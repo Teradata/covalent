@@ -1,23 +1,8 @@
-
 /**
  * Do not edit directly
- * Generated on Tue, 24 Oct 2023 16:42:01 GMT
+ * Generated on Wed, 10 Jan 2024 18:05:07 GMT
  */
 
-$light-primary: #007373 !default;
-$light-secondary: #007373 !default;
-$light-error: #b11d00 !default;
-$light-positive: #0a7e07 !default;
-$light-caution: #ff8f00 !default;
-$light-negative: #b11d00 !default;
-$light-on-primary: white !default;
-$light-on-secondary: white !default;
-$light-on-background: rgba(0, 0, 0, 0.87) !default;
-$light-on-surface: rgba(0, 0, 0, 0.87) !default;
-$light-on-error: white !default;
-$light-divider: rgba(0, 0, 0, 0.12) !default;
-$light-emphasis: #546e7a !default;
-$light-accent: #007373 !default;
 $light-code-snippet-color: #383a42 !default;
 $light-code-snippet-comment: #a0a1a7 !default;
 $light-code-snippet-keyword: #a626a4 !default;
@@ -27,63 +12,63 @@ $light-code-snippet-string: #50a14f !default;
 $light-code-snippet-variable: #986801 !default;
 $light-code-snippet-title: #4078f2 !default;
 $light-code-snippet-class: #c18401 !default;
-$light-background: #f5f5f5 !default;
-$light-surface: white !default;
-$light-surface-canvas: #eee !default;
-$light-surface-primary: #85dddc !default;
-$light-surface-primary-highlight: rgba(#85dddc, 0.1) !default;
-$light-surface-primary-highlight-hover: rgba(#85dddc, 0.2) !default;
-$light-surface-accent: #85dddc !default;
-$light-surface-accent-highlight: rgba(#85dddc, 0.1) !default;
-$light-surface-accent-highlight-hover: rgba(#85dddc, 0.2) !default;
-$light-surface-secondary: #85dddc !default;
-$light-surface-secondary-highlight: rgba(#85dddc, 0.1) !default;
-$light-surface-secondary-highlight-hover: rgba(#85dddc, 0.2) !default;
-$light-surface-positive: #a5d6a7 !default;
-$light-surface-positive-highlight: rgba(#a5d6a7, 0.1) !default;
-$light-surface-positive-highlight-hover: rgba(#a5d6a7, 0.2) !default;
-$light-surface-caution: #ffb74d !default;
-$light-surface-caution-highlight: rgba(#ffb74d, 0.1) !default;
-$light-surface-caution-highlight-hover: rgba(#ffb74d, 0.2) !default;
-$light-surface-negative: #e57373 !default;
-$light-surface-negative-highlight: rgba(#e57373, 0.1) !default;
-$light-surface-negative-highlight-hover: rgba(#e57373, 0.2) !default;
-$light-surface-neutral: #bdbdbd !default;
-$light-surface-neutral-highlight: rgba(#bdbdbd, 0.04) !default;
-$light-surface-neutral-highlight-hover: rgba(#bdbdbd, 0.08) !default;
-$light-surface-emphasis: #afb6b9 !default;
-$light-surface-emphasis-highlight: rgba(#afb6b9, 0.1) !default;
-$light-surface-emphasis-highlight-hover: rgba(#afb6b9, 0.2) !default;
-$light-text-primary-on-background: rgba(0, 0, 0, 0.87) !default;
-$light-text-secondary-on-background: rgba(0, 0, 0, 0.54) !default;
-$light-text-hint-on-background: rgba(0, 0, 0, 0.38) !default;
-$light-text-disabled-on-background: rgba(0, 0, 0, 0.38) !default;
-$light-text-icon-on-background: rgba(0, 0, 0, 0.54) !default;
+$light-primary: #3053f4ff !default;
+$light-secondary: #5b5d72ff !default;
+$light-error: #ae1209ff !default;
+$light-positive: #036600ff !default;
+$light-caution: #f38800ff !default;
+$light-negative: #ae1209ff !default;
+$light-on-primary: #ffffffff !default;
+$light-on-secondary: #ffffffff !default;
+$light-on-background: #161c1fff !default;
+$light-on-surface: #1e1d1eff !default;
+$light-on-error: #ffffffff !default;
+$light-divider: #d5d3d8ff !default;
+$light-emphasis: #b10142ff !default;
+$light-accent: #3053f4ff !default;
+$light-background: #f5f5f5ff !default;
+$light-surface: #fdf9fcff !default;
+$light-surface-canvas: #f8f5f8ff !default;
+$light-surface-primary: #ececfeff !default;
+$light-surface-primary-highlight: #3053f414 !default;
+$light-surface-primary-highlight-hover: #3053f414 !default;
+$light-surface-accent: #ececfeff !default;
+$light-surface-accent-highlight: #3053f414 !default;
+$light-surface-accent-highlight-hover: #3053f414 !default;
+$light-surface-secondary: #dfe1f9ff !default;
+$light-surface-secondary-highlight: #5b5d7214 !default;
+$light-surface-secondary-highlight-hover: #5b5d7214 !default;
+$light-surface-positive: #8fcc8eff !default;
+$light-surface-positive-highlight: #03660014 !default;
+$light-surface-positive-highlight-hover: #03660014 !default;
+$light-surface-caution: #ffcc8cff !default;
+$light-surface-caution-highlight: #f3880014 !default;
+$light-surface-caution-highlight-hover: #f3880014 !default;
+$light-surface-negative: #ffb2aeff !default;
+$light-surface-negative-highlight: #ae120914 !default;
+$light-surface-negative-highlight-hover: #ae120914 !default;
+$light-surface-neutral: #76757dff !default;
+$light-surface-neutral-highlight: rgba(#76757dff, 0.04) !default;
+$light-surface-neutral-highlight-hover: rgba(#76757dff, 0.08) !default;
+$light-surface-emphasis: #e8b3c6ff !default;
+$light-surface-emphasis-highlight: #b1014214 !default;
+$light-surface-emphasis-highlight-hover: #b1014214 !default;
+$light-text-primary-on-background: #1e1d1eff !default;
+$light-text-secondary-on-background: #5c5b5fff !default;
+$light-text-hint-on-background: #5c5b5fff !default;
+$light-text-disabled-on-background: #5c5b5fff !default;
+$light-text-icon-on-background: #191c1ebd !default;
 $light-text-logo-on-background: #354145 !default;
-$light-text-primary-on-light: rgba(0, 0, 0, 0.87) !default;
-$light-text-secondary-on-light: rgba(0, 0, 0, 0.54) !default;
-$light-text-hint-on-light: rgba(0, 0, 0, 0.38) !default;
-$light-text-disabled-on-light: rgba(0, 0, 0, 0.38) !default;
-$light-text-icon-on-light: rgba(0, 0, 0, 0.54) !default;
-$light-text-primary-on-dark: white !default;
-$light-text-secondary-on-dark: rgba(255, 255, 255, 0.7) !default;
-$light-text-hint-on-dark: rgba(255, 255, 255, 0.5) !default;
-$light-text-disabled-on-dark: rgba(255, 255, 255, 0.5) !default;
-$light-text-icon-on-dark: white !default;
-$dark-primary: #59cecd !default;
-$dark-secondary: #59cecd !default;
-$dark-error: #f46f5a !default;
-$dark-positive: #42bd41 !default;
-$dark-caution: #ffb74d !default;
-$dark-negative: #f46f5a !default;
-$dark-on-primary: rgba(0, 0, 0, 0.87) !default;
-$dark-on-secondary: rgba(0, 0, 0, 0.87) !default;
-$dark-on-background: white !default;
-$dark-on-surface: white !default;
-$dark-on-error: rgba(0, 0, 0, 0.87) !default;
-$dark-divider: rgba(255, 255, 255, 0.2) !default;
-$dark-emphasis: #b0bec5 !default;
-$dark-accent: #59cecd !default;
+$light-text-primary-on-light: #1e1d1eff !default;
+$light-text-secondary-on-light: #5c5b5fff !default;
+$light-text-hint-on-light: #5c5b5fff !default;
+$light-text-disabled-on-light: #5c5b5fff !default;
+$light-text-icon-on-light: #191c1ebd !default;
+$light-text-primary-on-dark: #ebe8ecff !default;
+$light-text-secondary-on-dark: #d5d3d8ff !default;
+$light-text-hint-on-dark: #d5d3d8ff !default;
+$light-text-disabled-on-dark: #d5d3d8ff !default;
+$light-text-icon-on-dark: #f8f9fbbd !default;
 $dark-code-snippet-color: #abb2bf !default;
 $dark-code-snippet-comment: #5c6370 !default;
 $dark-code-snippet-keyword: #c678dd !default;
@@ -93,49 +78,818 @@ $dark-code-snippet-string: #98c379 !default;
 $dark-code-snippet-variable: #d19a66 !default;
 $dark-code-snippet-title: #61aeee !default;
 $dark-code-snippet-class: #e6c07b !default;
-$dark-background: #161c1f !default;
-$dark-surface: #28353b !default;
-$dark-surface-canvas: #101314 !default;
-$dark-surface-primary: #045c5c !default;
-$dark-surface-primary-highlight: rgba(#045c5c, 0.4) !default;
-$dark-surface-primary-highlight-hover: rgba(#045c5c, 0.6) !default;
-$dark-surface-accent: #045c5c !default;
-$dark-surface-accent-highlight: rgba(#045c5c, 0.4) !default;
-$dark-surface-accent-highlight-hover: rgba(#045c5c, 0.6) !default;
-$dark-surface-secondary: #045c5c !default;
-$dark-surface-secondary-highlight: rgba(#045c5c, 0.4) !default;
-$dark-surface-secondary-highlight-hover: rgba(#045c5c, 0.6) !default;
-$dark-surface-positive: #336033 !default;
-$dark-surface-positive-highlight: rgba(#336033, 0.4) !default;
-$dark-surface-positive-highlight-hover: rgba(#336033, 0.6) !default;
-$dark-surface-caution: #704C16 !default;
-$dark-surface-caution-highlight: rgba(#704C16, 0.4) !default;
-$dark-surface-caution-highlight-hover: rgba(#704C16, 0.6) !default;
-$dark-surface-negative: #883E32 !default;
-$dark-surface-negative-highlight: rgba(#883E32, 0.4) !default;
-$dark-surface-negative-highlight-hover: rgba(#883E32, 0.6) !default;
-$dark-surface-neutral: #43515a !default;
-$dark-surface-neutral-highlight: rgba(#43515a, 0.4) !default;
-$dark-surface-neutral-highlight-hover: rgba(#43515a, 0.6) !default;
-$dark-surface-emphasis: #43515a !default;
-$dark-surface-emphasis-highlight: rgba(#43515a, 0.4) !default;
-$dark-surface-emphasis-highlight-hover: rgba(#43515a, 0.6) !default;
-$dark-text-primary-on-background: white !default;
-$dark-text-secondary-on-background: rgba(255, 255, 255, 0.7) !default;
-$dark-text-hint-on-background: rgba(255, 255, 255, 0.5) !default;
-$dark-text-disabled-on-background: rgba(255, 255, 255, 0.5) !default;
-$dark-text-icon-on-background: white !default;
-$dark-text-logo-on-background: white !default;
-$dark-text-primary-on-light: rgba(0, 0, 0, 0.87) !default;
-$dark-text-secondary-on-light: rgba(0, 0, 0, 0.54) !default;
-$dark-text-hint-on-light: rgba(0, 0, 0, 0.38) !default;
-$dark-text-disabled-on-light: rgba(0, 0, 0, 0.38) !default;
-$dark-text-icon-on-light: rgba(0, 0, 0, 0.54) !default;
-$dark-text-primary-on-dark: white !default;
-$dark-text-secondary-on-dark: rgba(255, 255, 255, 0.7) !default;
-$dark-text-hint-on-dark: rgba(255, 255, 255, 0.5) !default;
-$dark-text-disabled-on-dark: rgba(255, 255, 255, 0.5) !default;
-$dark-text-icon-on-dark: white !default;
+$dark-primary: #889fffff !default;
+$dark-secondary: #c3c5ddff !default;
+$dark-error: #fd7d69ff !default;
+$dark-positive: #55bc54ff !default;
+$dark-caution: #ffb775ff !default;
+$dark-negative: #fd7d69ff !default;
+$dark-on-primary: #111a28ff !default;
+$dark-on-secondary: #171a2cff !default;
+$dark-on-background: #f5f5f5ff !default;
+$dark-on-surface: #ebe8ecff !default;
+$dark-on-error: #331915ff !default;
+$dark-divider: #3e3e41ff !default;
+$dark-emphasis: #ffa0c3ff !default;
+$dark-accent: #889fffff !default;
+$dark-background: #161c1fff !default;
+$dark-surface: #161616ff !default;
+$dark-surface-canvas: #252426ff !default;
+$dark-surface-primary: #1d2c43ff !default;
+$dark-surface-primary-highlight: #889fff14 !default;
+$dark-surface-primary-highlight-hover: #889fff14 !default;
+$dark-surface-accent: #1d2c43ff !default;
+$dark-surface-accent-highlight: #889fff14 !default;
+$dark-surface-accent-highlight-hover: #889fff14 !default;
+$dark-surface-secondary: #484b5fff !default;
+$dark-surface-secondary-highlight: #c3c5dd14 !default;
+$dark-surface-secondary-highlight-hover: #c3c5dd14 !default;
+$dark-surface-positive: #224b22ff !default;
+$dark-surface-positive-highlight: #55bc5414 !default;
+$dark-surface-positive-highlight-hover: #55bc5414 !default;
+$dark-surface-caution: #66492fff !default;
+$dark-surface-caution-highlight: #ffb77514 !default;
+$dark-surface-caution-highlight-hover: #ffb77514 !default;
+$dark-surface-negative: #65322aff !default;
+$dark-surface-negative-highlight: #fd7d6914 !default;
+$dark-surface-negative-highlight-hover: #fd7d6914 !default;
+$dark-surface-neutral: #76757dff !default;
+$dark-surface-neutral-highlight: rgba(#76757dff, 0.04) !default;
+$dark-surface-neutral-highlight-hover: rgba(#76757dff, 0.08) !default;
+$dark-surface-emphasis: #4c303aff !default;
+$dark-surface-emphasis-highlight: #ffa0c314 !default;
+$dark-surface-emphasis-highlight-hover: #ffa0c314 !default;
+$dark-text-primary-on-background: #ebe8ecff !default;
+$dark-text-secondary-on-background: #d5d3d8ff !default;
+$dark-text-hint-on-background: #d5d3d8ff !default;
+$dark-text-disabled-on-background: #d5d3d8ff !default;
+$dark-text-icon-on-background: #f8f9fbbd !default;
+$dark-text-logo-on-background: #354145 !default;
+$dark-text-primary-on-light: #1e1d1eff !default;
+$dark-text-secondary-on-light: #5c5b5fff !default;
+$dark-text-hint-on-light: #5c5b5fff !default;
+$dark-text-disabled-on-light: #5c5b5fff !default;
+$dark-text-icon-on-light: #191c1ebd !default;
+$dark-text-primary-on-dark: #ebe8ecff !default;
+$dark-text-secondary-on-dark: #d5d3d8ff !default;
+$dark-text-hint-on-dark: #d5d3d8ff !default;
+$dark-text-disabled-on-dark: #d5d3d8ff !default;
+$dark-text-icon-on-dark: #f8f9fbbd !default;
+$material-3-colors-light-primary-primary: #3053f4ff !default;
+$material-3-colors-light-primary-primary-container: #ececfeff !default;
+$material-3-colors-light-primary-on-primary: #ffffffff !default;
+$material-3-colors-light-primary-primary-fixed: #dee0ffff !default;
+$material-3-colors-light-primary-primary-fixed-dim: #bac3ffff !default;
+$material-3-colors-light-primary-primary-8: #3053f414 !default;
+$material-3-colors-light-primary-primary-12: #3053f41f !default;
+$material-3-colors-light-primary-on-primary-container: #00115aff !default;
+$material-3-colors-light-primary-inverse-primary: #bac3ffff !default;
+$material-3-colors-light-primary-on-primary-12: #ffffff1f !default;
+$material-3-colors-light-primary-on-primary-8: #ffffff14 !default;
+$material-3-colors-light-primary-primary-16: #3053f429 !default;
+$material-3-colors-light-primary-on-primary-container-12: #00115a1f !default;
+$material-3-colors-light-primary-on-primary-16: #ffffff29 !default;
+$material-3-colors-light-primary-on-primary-container-8: #00115a14 !default;
+$material-3-colors-light-primary-on-primary-container-16: #00115a29 !default;
+$material-3-colors-light-primary-inverse-primary-12: #bac3ff1f !default;
+$material-3-colors-light-primary-inverse-primary-8: #bac3ff14 !default;
+$material-3-colors-light-primary-inverse-primary-16: #bac3ff29 !default;
+$material-3-colors-light-primary-on-primary-74: #ffffffbd !default;
+$material-3-colors-light-secondary-secondary: #5b5d72ff !default;
+$material-3-colors-light-secondary-secondary-container: #dfe1f9ff !default;
+$material-3-colors-light-secondary-on-secondary: #ffffffff !default;
+$material-3-colors-light-secondary-on-secondary-container: #171a2cff !default;
+$material-3-colors-light-secondary-secondary-fixed: #dfe1f9ff !default;
+$material-3-colors-light-secondary-secondary-fixed-dim: #c3c5ddff !default;
+$material-3-colors-light-secondary-on-secondary-container-8: #171a2c14 !default;
+$material-3-colors-light-secondary-on-secondary-container-16: #171a2cff !default;
+$material-3-colors-light-secondary-on-secondary-container-12: #171a2c03 !default;
+$material-3-colors-light-secondary-on-secondary-8: #ffffff14 !default;
+$material-3-colors-light-secondary-on-secondary-12: #ffffff1f !default;
+$material-3-colors-light-secondary-on-secondary-16: #ffffff29 !default;
+$material-3-colors-light-tertiary-tertiary: #ff5f02ff !default;
+$material-3-colors-light-tertiary-tertiary-container: #ffdbceff !default;
+$material-3-colors-light-tertiary-on-tertiary: #ffffffff !default;
+$material-3-colors-light-tertiary-on-tertiary-container: #481300ff !default;
+$material-3-colors-light-tertiary-tertiary-fixed: #ffdbceff !default;
+$material-3-colors-light-tertiary-tertiary-fixed-dim: #ffc0a8ff !default;
+$material-3-colors-light-tertiary-on-tertiary-container-8: #48130014 !default;
+$material-3-colors-light-tertiary-on-tertiary-container-12: #4813001f !default;
+$material-3-colors-light-tertiary-on-tertiary-8: #ffffff14 !default;
+$material-3-colors-light-tertiary-on-tertiary-12: #ffffff1f !default;
+$material-3-colors-light-tertiary-on-tertiary-16: #ffffff29 !default;
+$material-3-colors-light-tertiary-on-tertiary-container-16: #48130029 !default;
+$material-3-colors-light-tertiary-tertiary-8: #ff5f0214 !default;
+$material-3-colors-light-tertiary-tertiary-12: #ff5f021f !default;
+$material-3-colors-light-tertiary-tertiary-16: #ff5f0229 !default;
+$material-3-colors-light-surface-surface: #fdf9fcff !default;
+$material-3-colors-light-surface-surface-dim: #e5e2e6ff !default;
+$material-3-colors-light-surface-surface-bright: #fdf9fcff !default;
+$material-3-colors-light-surface-surface-container-lowest: #ffffffff !default;
+$material-3-colors-light-surface-surface-container-low: #faf7faff !default;
+$material-3-colors-light-surface-surface-container: #f8f5f8ff !default;
+$material-3-colors-light-surface-surface-container-high: #f6f3f6ff !default;
+$material-3-colors-light-surface-surface-container-highest: #f4f1f4ff !default;
+$material-3-colors-light-surface-on-surface: #1e1d1eff !default;
+$material-3-colors-light-surface-on-surface-variant: #5c5b5fff !default;
+$material-3-colors-light-surface-inverse-surface: #3e3e41ff !default;
+$material-3-colors-light-surface-inverse-on-surface: #f6f3f6ff !default;
+$material-3-colors-light-surface-on-surface-8: #191c1e14 !default;
+$material-3-colors-light-surface-on-surface-12: #191c1e1f !default;
+$material-3-colors-light-surface-on-surface-38: #191c1e61 !default;
+$material-3-colors-light-surface-on-surface-16: #191c1e29 !default;
+$material-3-colors-light-surface-on-surface-variant-8: #40484c14 !default;
+$material-3-colors-light-surface-on-surface-variant-12: #40484c1f !default;
+$material-3-colors-light-surface-surface-variant: #ebe8ecff !default;
+$material-3-colors-light-surface-on-surface-variant-16: #40484c29 !default;
+$material-3-colors-light-surface-inverse-on-surface-12: #f8f9fb1f !default;
+$material-3-colors-light-surface-inverse-on-surface-8: #f8f9fb14 !default;
+$material-3-colors-light-surface-inverse-on-surface-16: #f8f9fb1f !default;
+$material-3-colors-light-surface-on-surface-74: #191c1ebd !default;
+$material-3-colors-light-background-background: #f5f5f5ff !default;
+$material-3-colors-light-background-on-background: #161c1fff !default;
+$material-3-colors-light-negative-negative: #ae1209ff !default;
+$material-3-colors-light-negative-negative-container: #ffb2aeff !default;
+$material-3-colors-light-negative-on-negative: #ffffffff !default;
+$material-3-colors-light-negative-on-negative-container: #110201ff !default;
+$material-3-colors-light-negative-negative-12: #ae12091f !default;
+$material-3-colors-light-negative-negative-8: #ae120914 !default;
+$material-3-colors-light-negative-negative-16: #ae120929 !default;
+$material-3-colors-light-negative-on-negative-8: #ffffff14 !default;
+$material-3-colors-light-negative-on-negative-12: #ffffff1f !default;
+$material-3-colors-light-negative-on-negative-16: #ffffff29 !default;
+$material-3-colors-light-positive-positive: #036600ff !default;
+$material-3-colors-light-positive-positive-container: #8fcc8eff !default;
+$material-3-colors-light-positive-on-positive: #ffffffff !default;
+$material-3-colors-light-positive-on-positive-container: #000a00ff !default;
+$material-3-colors-light-positive-positive-16: #0366001f !default;
+$material-3-colors-light-positive-positive-12: #03660029 !default;
+$material-3-colors-light-positive-positive-8: #03660014 !default;
+$material-3-colors-light-positive-on-positive-8: #ffffff14 !default;
+$material-3-colors-light-positive-on-positive-12: #ffffff1f !default;
+$material-3-colors-light-positive-on-positive-16: #ffffff29 !default;
+$material-3-colors-light-positive-on-positive-container-8: #000a0014 !default;
+$material-3-colors-light-positive-on-positive-container-12: #000a001f !default;
+$material-3-colors-light-positive-on-positive-container-16: #000a0029 !default;
+$material-3-colors-light-caution-caution: #f38800ff !default;
+$material-3-colors-light-caution-caution-container: #ffcc8cff !default;
+$material-3-colors-light-caution-on-caution: #ffffffff !default;
+$material-3-colors-light-caution-on-caution-container: #180e00ff !default;
+$material-3-colors-light-caution-caution-16: #f3880029 !default;
+$material-3-colors-light-caution-caution-12: #f388001f !default;
+$material-3-colors-light-caution-caution-8: #f3880014 !default;
+$material-3-colors-light-caution-on-caution-8: #ffffff14 !default;
+$material-3-colors-light-caution-on-caution-12: #ffffff1f !default;
+$material-3-colors-light-caution-on-caution-16: #ffffff29 !default;
+$material-3-colors-light-caution-on-caution-container-8: #180e0014 !default;
+$material-3-colors-light-caution-on-caution-container-12: #180e001f !default;
+$material-3-colors-light-caution-on-caution-container-16: #180e0029 !default;
+$material-3-colors-light-outline-outline: #70787dff !default;
+$material-3-colors-light-outline-outline-variant: #d5d3d8ff !default;
+$material-3-colors-light-outline-outline-8: #70787d14 !default;
+$material-3-colors-light-outline-outline-12: #70787d1f !default;
+$material-3-colors-light-outline-outline-16: #70787d29 !default;
+$material-3-colors-light-shadow-shadow: #000000ff !default;
+$material-3-colors-light-scrim-scrim: #000000ff !default;
+$material-3-colors-light-wireframe-wf-blue: #0098c9ff !default;
+$material-3-colors-light-wireframe-wireframe-white: #ffffffff !default;
+$material-3-colors-light-emphasis-emphasis: #b10142ff !default;
+$material-3-colors-light-emphasis-emphasis-container: #e8b3c6ff !default;
+$material-3-colors-light-emphasis-on-emphasis: #ffffffff !default;
+$material-3-colors-light-emphasis-on-emphasis-container: #120007ff !default;
+$material-3-colors-light-emphasis-emphasis-8: #b1014214 !default;
+$material-3-colors-light-emphasis-emphasis-12: #b101421f !default;
+$material-3-colors-light-emphasis-emphasis-16: #b1014229 !default;
+$material-3-colors-light-emphasis-on-emphasis-8: #ffffff14 !default;
+$material-3-colors-light-emphasis-on-emphasis-12: #ffffff1f !default;
+$material-3-colors-light-emphasis-on-emphasis-16: #ffffff29 !default;
+$material-3-colors-light-emphasis-on-emphasis-container-8: #180e0014 !default;
+$material-3-colors-light-emphasis-on-emphasis-container-12: #180e001f !default;
+$material-3-colors-light-emphasis-on-emphasis-container-16: #180e0029 !default;
+$material-3-colors-dark-primary-primary: #889fffff !default;
+$material-3-colors-dark-primary-primary-container: #1d2c43ff !default;
+$material-3-colors-dark-primary-on-primary: #111a28ff !default;
+$material-3-colors-dark-primary-primary-fixed: #dee0ffff !default;
+$material-3-colors-dark-primary-primary-fixed-dim: #bac3ffff !default;
+$material-3-colors-dark-primary-primary-8: #889fff14 !default;
+$material-3-colors-dark-primary-primary-12: #889fff1f !default;
+$material-3-colors-dark-primary-on-primary-container: #b7c4ffff !default;
+$material-3-colors-dark-primary-inverse-primary: #324369ff !default;
+$material-3-colors-dark-primary-on-primary-12: #111a281f !default;
+$material-3-colors-dark-primary-on-primary-8: #111a2814 !default;
+$material-3-colors-dark-primary-primary-16: #889fff29 !default;
+$material-3-colors-dark-primary-on-primary-container-12: #b7c4ff1f !default;
+$material-3-colors-dark-primary-on-primary-16: #111a2829 !default;
+$material-3-colors-dark-primary-on-primary-container-8: #b7c4ff14 !default;
+$material-3-colors-dark-primary-on-primary-container-16: #b7c4ff29 !default;
+$material-3-colors-dark-primary-inverse-primary-12: #3243691f !default;
+$material-3-colors-dark-primary-inverse-primary-8: #32436914 !default;
+$material-3-colors-dark-primary-inverse-primary-16: #32436929 !default;
+$material-3-colors-dark-primary-on-primary-74: #111a28bd !default;
+$material-3-colors-dark-secondary-secondary: #c3c5ddff !default;
+$material-3-colors-dark-secondary-secondary-container: #484b5fff !default;
+$material-3-colors-dark-secondary-on-secondary: #171a2cff !default;
+$material-3-colors-dark-secondary-on-secondary-container: #616378ff !default;
+$material-3-colors-dark-secondary-secondary-fixed: #dfe1f9ff !default;
+$material-3-colors-dark-secondary-secondary-fixed-dim: #c3c5ddff !default;
+$material-3-colors-dark-secondary-on-secondary-container-8: #61637814 !default;
+$material-3-colors-dark-secondary-on-secondary-container-16: #61637829 !default;
+$material-3-colors-dark-secondary-on-secondary-container-12: #6163781f !default;
+$material-3-colors-dark-secondary-on-secondary-8: #171a2c14 !default;
+$material-3-colors-dark-secondary-on-secondary-12: #171a2c1f !default;
+$material-3-colors-dark-secondary-on-secondary-16: #171a2c29 !default;
+$material-3-colors-dark-tertiary-tertiary: #ff5f02ff !default;
+$material-3-colors-dark-tertiary-tertiary-container: #492313ff !default;
+$material-3-colors-dark-tertiary-on-tertiary: #331300ff !default;
+$material-3-colors-dark-tertiary-on-tertiary-container: #f79e79ff !default;
+$material-3-colors-dark-tertiary-tertiary-fixed: #ffdbceff !default;
+$material-3-colors-dark-tertiary-tertiary-fixed-dim: #ffc0a8ff !default;
+$material-3-colors-dark-tertiary-on-tertiary-container-8: #f79e7914 !default;
+$material-3-colors-dark-tertiary-on-tertiary-container-12: #f79e791f !default;
+$material-3-colors-dark-tertiary-on-tertiary-8: #33130014 !default;
+$material-3-colors-dark-tertiary-on-tertiary-12: #3313001f !default;
+$material-3-colors-dark-tertiary-on-tertiary-16: #33130029 !default;
+$material-3-colors-dark-tertiary-on-tertiary-container-16: #f79e7929 !default;
+$material-3-colors-dark-tertiary-tertiary-8: #ff5f0214 !default;
+$material-3-colors-dark-tertiary-tertiary-12: #ff5f021f !default;
+$material-3-colors-dark-tertiary-tertiary-16: #ff5f0229 !default;
+$material-3-colors-dark-surface-surface: #161616ff !default;
+$material-3-colors-dark-surface-surface-dim: #0e0e0eff !default;
+$material-3-colors-dark-surface-surface-bright: #4a4a4dff !default;
+$material-3-colors-dark-surface-surface-container-lowest: #000000ff !default;
+$material-3-colors-dark-surface-surface-container-low: #1e1d1eff !default;
+$material-3-colors-dark-surface-surface-container: #252426ff !default;
+$material-3-colors-dark-surface-surface-container-high: #2c2b2dff !default;
+$material-3-colors-dark-surface-surface-container-highest: #323134ff !default;
+$material-3-colors-dark-surface-on-surface: #ebe8ecff !default;
+$material-3-colors-dark-surface-on-surface-variant: #d5d3d8ff !default;
+$material-3-colors-dark-surface-inverse-surface: #ebe8ecff !default;
+$material-3-colors-dark-surface-inverse-on-surface: #3e3e41ff !default;
+$material-3-colors-dark-surface-on-surface-8: #f8f9fb14 !default;
+$material-3-colors-dark-surface-on-surface-12: #f8f9fb1f !default;
+$material-3-colors-dark-surface-on-surface-38: #f8f9fb61 !default;
+$material-3-colors-dark-surface-on-surface-16: #f8f9fb29 !default;
+$material-3-colors-dark-surface-on-surface-variant-8: #c0c6cc14 !default;
+$material-3-colors-dark-surface-on-surface-variant-12: #c0c6cc1f !default;
+$material-3-colors-dark-surface-surface-variant: #5c5b5fff !default;
+$material-3-colors-dark-surface-on-surface-variant-16: #c0c6cc29 !default;
+$material-3-colors-dark-surface-inverse-on-surface-12: #161c1f1f !default;
+$material-3-colors-dark-surface-inverse-on-surface-8: #161c1f14 !default;
+$material-3-colors-dark-surface-inverse-on-surface-16: #161c1f29 !default;
+$material-3-colors-dark-surface-on-surface-74: #f8f9fbbd !default;
+$material-3-colors-dark-background-background: #161c1fff !default;
+$material-3-colors-dark-background-on-background: #f5f5f5ff !default;
+$material-3-colors-dark-negative-negative: #fd7d69ff !default;
+$material-3-colors-dark-negative-negative-container: #65322aff !default;
+$material-3-colors-dark-negative-on-negative: #331915ff !default;
+$material-3-colors-dark-negative-on-negative-container: #ffac9fff !default;
+$material-3-colors-dark-negative-negative-12: #fd7d691f !default;
+$material-3-colors-dark-negative-negative-8: #fd7d6914 !default;
+$material-3-colors-dark-negative-negative-16: #fd7d6929 !default;
+$material-3-colors-dark-negative-on-negative-8: #33191514 !default;
+$material-3-colors-dark-negative-on-negative-12: #3319151f !default;
+$material-3-colors-dark-negative-on-negative-16: #33191529 !default;
+$material-3-colors-dark-positive-positive: #55bc54ff !default;
+$material-3-colors-dark-positive-positive-container: #224b22ff !default;
+$material-3-colors-dark-positive-on-positive: #112611ff !default;
+$material-3-colors-dark-positive-on-positive-container: #91d890ff !default;
+$material-3-colors-dark-positive-positive-16: #55bc541f !default;
+$material-3-colors-dark-positive-positive-12: #55bc5429 !default;
+$material-3-colors-dark-positive-positive-8: #55bc5414 !default;
+$material-3-colors-dark-positive-on-positive-8: #11261114 !default;
+$material-3-colors-dark-positive-on-positive-12: #1126111f !default;
+$material-3-colors-dark-positive-on-positive-16: #11261129 !default;
+$material-3-colors-dark-positive-on-positive-container-8: #91d89014 !default;
+$material-3-colors-dark-positive-on-positive-container-12: #91d8901f !default;
+$material-3-colors-dark-positive-on-positive-container-16: #91d89029 !default;
+$material-3-colors-dark-caution-caution: #ffb775ff !default;
+$material-3-colors-dark-caution-caution-container: #66492fff !default;
+$material-3-colors-dark-caution-on-caution: #332517ff !default;
+$material-3-colors-dark-caution-on-caution-container: #ffcd9eff !default;
+$material-3-colors-dark-caution-caution-16: #ffb77529 !default;
+$material-3-colors-dark-caution-caution-12: #ffb7751f !default;
+$material-3-colors-dark-caution-caution-8: #ffb77514 !default;
+$material-3-colors-dark-caution-on-caution-8: #3325171f !default;
+$material-3-colors-dark-caution-on-caution-12: #3325171f !default;
+$material-3-colors-dark-caution-on-caution-16: #33251729 !default;
+$material-3-colors-dark-caution-on-caution-container-8: #ffead714 !default;
+$material-3-colors-dark-caution-on-caution-container-12: #ffead71f !default;
+$material-3-colors-dark-caution-on-caution-container-16: #ffead729 !default;
+$material-3-colors-dark-outline-outline: #8a9296ff !default;
+$material-3-colors-dark-outline-outline-variant: #3e3e41ff !default;
+$material-3-colors-dark-outline-outline-8: #8a929614 !default;
+$material-3-colors-dark-outline-outline-12: #8a92961f !default;
+$material-3-colors-dark-outline-outline-16: #8a929629 !default;
+$material-3-colors-dark-shadow-shadow: #000000ff !default;
+$material-3-colors-dark-scrim-scrim: #000000ff !default;
+$material-3-colors-dark-wireframe-wf-blue: #0098c9ff !default;
+$material-3-colors-dark-wireframe-wireframe-white: #ffffffff !default;
+$material-3-colors-dark-emphasis-emphasis: #ffa0c3ff !default;
+$material-3-colors-dark-emphasis-emphasis-container: #4c303aff !default;
+$material-3-colors-dark-emphasis-on-emphasis: #191013ff !default;
+$material-3-colors-dark-emphasis-on-emphasis-container: #ffbdd5ff !default;
+$material-3-colors-dark-emphasis-emphasis-8: #ffa0c314 !default;
+$material-3-colors-dark-emphasis-emphasis-12: #ffa0c31f !default;
+$material-3-colors-dark-emphasis-emphasis-16: #ffa0c329 !default;
+$material-3-colors-dark-emphasis-on-emphasis-8: #33202714 !default;
+$material-3-colors-dark-emphasis-on-emphasis-12: #3320271f !default;
+$material-3-colors-dark-emphasis-on-emphasis-16: #33202729 !default;
+$material-3-colors-dark-emphasis-on-emphasis-container-8: #ffbdd514 !default;
+$material-3-colors-dark-emphasis-on-emphasis-container-12: #ffbdd51f !default;
+$material-3-colors-dark-emphasis-on-emphasis-container-16: #ffbdd529 !default;
+$tonal-palettes-digital-blue-light-0: #000000ff !default;
+$tonal-palettes-digital-blue-light-10: #00115aff !default;
+$tonal-palettes-digital-blue-light-20: #00208eff !default;
+$tonal-palettes-digital-blue-light-30: #0436d3ff !default;
+$tonal-palettes-digital-blue-light-40: #3053f4ff !default;
+$tonal-palettes-digital-blue-light-50: #4967ffff !default;
+$tonal-palettes-digital-blue-light-60: #7187ffff !default;
+$tonal-palettes-digital-blue-light-70: #96a5ffff !default;
+$tonal-palettes-digital-blue-light-80: #bac3ffff !default;
+$tonal-palettes-digital-blue-light-90: #dee0ffff !default;
+$tonal-palettes-digital-blue-light-91: #e1e3fdff !default;
+$tonal-palettes-digital-blue-light-92: #e5e5feff !default;
+$tonal-palettes-digital-blue-light-93: #e8e9feff !default;
+$tonal-palettes-digital-blue-light-94: #ececfeff !default;
+$tonal-palettes-digital-blue-light-95: #f0efffff !default;
+$tonal-palettes-digital-blue-light-98: #fbf8ffff !default;
+$tonal-palettes-digital-blue-light-100: #ffffffff !default;
+$tonal-palettes-digital-blue-dark-0: #000000ff !default;
+$tonal-palettes-digital-blue-dark-10: #0c121bff !default;
+$tonal-palettes-digital-blue-dark-20: #111a28ff !default;
+$tonal-palettes-digital-blue-dark-30: #1d2c43ff !default;
+$tonal-palettes-digital-blue-dark-40: #324369ff !default;
+$tonal-palettes-digital-blue-dark-50: #485a8eff !default;
+$tonal-palettes-digital-blue-dark-60: #5d71b4ff !default;
+$tonal-palettes-digital-blue-dark-70: #7388d9ff !default;
+$tonal-palettes-digital-blue-dark-80: #889fffff !default;
+$tonal-palettes-digital-blue-dark-90: #b7c4ffff !default;
+$tonal-palettes-digital-blue-dark-91: #bec9feff !default;
+$tonal-palettes-digital-blue-dark-92: #c6cffdff !default;
+$tonal-palettes-digital-blue-dark-93: #ced5feff !default;
+$tonal-palettes-digital-blue-dark-94: #d5dbfeff !default;
+$tonal-palettes-digital-blue-dark-95: #dde1ffff !default;
+$tonal-palettes-digital-blue-dark-98: #efefffff !default;
+$tonal-palettes-digital-blue-dark-100: #ffffffff !default;
+$tonal-palettes-orange-light-0: #000000ff !default;
+$tonal-palettes-orange-light-10: #481300ff !default;
+$tonal-palettes-orange-light-20: #8d3001ff !default;
+$tonal-palettes-orange-light-30: #cf4b00ff !default;
+$tonal-palettes-orange-light-40: #ff5f02ff !default;
+$tonal-palettes-orange-light-50: #ff7a42ff !default;
+$tonal-palettes-orange-light-60: #ff986dff !default;
+$tonal-palettes-orange-light-70: #ffa47eff !default;
+$tonal-palettes-orange-light-80: #ffc0a8ff !default;
+$tonal-palettes-orange-light-90: #ffdbceff !default;
+$tonal-palettes-orange-light-95: #ffede7ff !default;
+$tonal-palettes-orange-light-98: #fff8f6ff !default;
+$tonal-palettes-orange-light-100: #ffffffff !default;
+$tonal-palettes-orange-dark-0: #000000ff !default;
+$tonal-palettes-orange-dark-10: #190900ff !default;
+$tonal-palettes-orange-dark-20: #331300ff !default;
+$tonal-palettes-orange-dark-30: #492313ff !default;
+$tonal-palettes-orange-dark-40: #612e1aff !default;
+$tonal-palettes-orange-dark-50: #aa512dff !default;
+$tonal-palettes-orange-dark-60: #c25d33ff !default;
+$tonal-palettes-orange-dark-70: #db683aff !default;
+$tonal-palettes-orange-dark-80: #f37440ff !default;
+$tonal-palettes-orange-dark-90: #f79e79ff !default;
+$tonal-palettes-orange-dark-95: #fdc4a4ff !default;
+$tonal-palettes-orange-dark-98: #fef1ecff !default;
+$tonal-palettes-orange-dark-100: #ffffffff !default;
+$tonal-palettes-navy-light-0: #000000ff !default;
+$tonal-palettes-navy-light-10: #02121fff !default;
+$tonal-palettes-navy-light-20: #011829ff !default;
+$tonal-palettes-navy-light-30: #011829ff !default;
+$tonal-palettes-navy-light-40: #012640ff !default;
+$tonal-palettes-navy-light-50: #033251ff !default;
+$tonal-palettes-navy-light-60: #0d4264ff !default;
+$tonal-palettes-navy-light-70: #39719aff !default;
+$tonal-palettes-navy-light-80: #73a1c9ff !default;
+$tonal-palettes-navy-light-90: #99b9d8ff !default;
+$tonal-palettes-navy-light-95: #c1d1e2ff !default;
+$tonal-palettes-navy-light-98: #e9f1f9ff !default;
+$tonal-palettes-navy-light-100: #ffffffff !default;
+$tonal-palettes-navy-dark-0: #000000ff !default;
+$tonal-palettes-navy-dark-10: #001d33ff !default;
+$tonal-palettes-navy-dark-20: #003354ff !default;
+$tonal-palettes-navy-dark-30: #004a77ff !default;
+$tonal-palettes-navy-dark-40: #00639cff !default;
+$tonal-palettes-navy-dark-50: #257cbcff !default;
+$tonal-palettes-navy-dark-60: #4896d7ff !default;
+$tonal-palettes-navy-dark-70: #66b1f4ff !default;
+$tonal-palettes-navy-dark-80: #98cbffff !default;
+$tonal-palettes-navy-dark-90: #cfe5ffff !default;
+$tonal-palettes-navy-dark-95: #e8f2ffff !default;
+$tonal-palettes-navy-dark-98: #f7f9ffff !default;
+$tonal-palettes-navy-dark-100: #ffffffff !default;
+$tonal-palettes-negative-light-0: #000000ff !default;
+$tonal-palettes-negative-light-10: #110201ff !default;
+$tonal-palettes-negative-light-20: #460704ff !default;
+$tonal-palettes-negative-light-30: #7a0d06ff !default;
+$tonal-palettes-negative-light-40: #ae1209ff !default;
+$tonal-palettes-negative-light-50: #b62a22ff !default;
+$tonal-palettes-negative-light-60: #be413aff !default;
+$tonal-palettes-negative-light-70: #c65953ff !default;
+$tonal-palettes-negative-light-80: #e0938eff !default;
+$tonal-palettes-negative-light-90: #ffb2aeff !default;
+$tonal-palettes-negative-light-95: #ffc9c7ff !default;
+$tonal-palettes-negative-light-98: #ffdcdbff !default;
+$tonal-palettes-negative-light-100: #ffffffff !default;
+$tonal-palettes-negative-dark-0: #000000ff !default;
+$tonal-palettes-negative-dark-10: #190c0aff !default;
+$tonal-palettes-negative-dark-20: #331915ff !default;
+$tonal-palettes-negative-dark-30: #65322aff !default;
+$tonal-palettes-negative-dark-40: #984b3fff !default;
+$tonal-palettes-negative-dark-50: #b1584aff !default;
+$tonal-palettes-negative-dark-60: #ca6454ff !default;
+$tonal-palettes-negative-dark-70: #e4715fff !default;
+$tonal-palettes-negative-dark-80: #fd7d69ff !default;
+$tonal-palettes-negative-dark-90: #ffac9fff !default;
+$tonal-palettes-negative-dark-95: #ffd2cbff !default;
+$tonal-palettes-negative-dark-98: #fff2f0ff !default;
+$tonal-palettes-negative-dark-100: #ffffffff !default;
+$tonal-palettes-caution-light-0: #000000ff !default;
+$tonal-palettes-caution-light-10: #180e00ff !default;
+$tonal-palettes-caution-light-20: #613600ff !default;
+$tonal-palettes-caution-light-30: #aa5f00ff !default;
+$tonal-palettes-caution-light-40: #f38800ff !default;
+$tonal-palettes-caution-light-50: #f4941aff !default;
+$tonal-palettes-caution-light-60: #f5a033ff !default;
+$tonal-palettes-caution-light-70: #f7ac4dff !default;
+$tonal-palettes-caution-light-80: #f8b866ff !default;
+$tonal-palettes-caution-light-90: #ffcc8cff !default;
+$tonal-palettes-caution-light-95: #ffdcb0ff !default;
+$tonal-palettes-caution-light-98: #fef3e6ff !default;
+$tonal-palettes-caution-light-100: #ffffffff !default;
+$tonal-palettes-caution-dark-0: #000000ff !default;
+$tonal-palettes-caution-dark-10: #19120cff !default;
+$tonal-palettes-caution-dark-20: #332517ff !default;
+$tonal-palettes-caution-dark-30: #66492fff !default;
+$tonal-palettes-caution-dark-40: #996e46ff !default;
+$tonal-palettes-caution-dark-50: #b38052ff !default;
+$tonal-palettes-caution-dark-60: #cc925eff !default;
+$tonal-palettes-caution-dark-70: #e6a569ff !default;
+$tonal-palettes-caution-dark-80: #ffb775ff !default;
+$tonal-palettes-caution-dark-90: #ffcd9eff !default;
+$tonal-palettes-caution-dark-95: #ffe2c8ff !default;
+$tonal-palettes-caution-dark-98: #fff8f1ff !default;
+$tonal-palettes-caution-dark-100: #ffffffff !default;
+$tonal-palettes-positive-light-0: #000000ff !default;
+$tonal-palettes-positive-light-10: #000a00ff !default;
+$tonal-palettes-positive-light-20: #012900ff !default;
+$tonal-palettes-positive-light-30: #024700ff !default;
+$tonal-palettes-positive-light-40: #036600ff !default;
+$tonal-palettes-positive-light-50: #1c751aff !default;
+$tonal-palettes-positive-light-60: #358533ff !default;
+$tonal-palettes-positive-light-70: #4f944dff !default;
+$tonal-palettes-positive-light-80: #68a366ff !default;
+$tonal-palettes-positive-light-90: #8fcc8eff !default;
+$tonal-palettes-positive-light-95: #b5e8b3ff !default;
+$tonal-palettes-positive-light-98: #daf6daff !default;
+$tonal-palettes-positive-light-100: #ffffffff !default;
+$tonal-palettes-positive-dark-0: #000000ff !default;
+$tonal-palettes-positive-dark-10: #081308ff !default;
+$tonal-palettes-positive-dark-20: #112611ff !default;
+$tonal-palettes-positive-dark-30: #224b22ff !default;
+$tonal-palettes-positive-dark-40: #337132ff !default;
+$tonal-palettes-positive-dark-50: #3b843bff !default;
+$tonal-palettes-positive-dark-60: #449643ff !default;
+$tonal-palettes-positive-dark-70: #4da94cff !default;
+$tonal-palettes-positive-dark-80: #55bc54ff !default;
+$tonal-palettes-positive-dark-90: #91d890ff !default;
+$tonal-palettes-positive-dark-95: #bbe4bbff !default;
+$tonal-palettes-positive-dark-98: #eef8eeff !default;
+$tonal-palettes-positive-dark-100: #ffffffff !default;
+$tonal-palettes-emphasis-light-0: #000000ff !default;
+$tonal-palettes-emphasis-light-10: #120007ff !default;
+$tonal-palettes-emphasis-light-20: #47001aff !default;
+$tonal-palettes-emphasis-light-30: #7c012eff !default;
+$tonal-palettes-emphasis-light-40: #b10142ff !default;
+$tonal-palettes-emphasis-light-50: #b91a55ff !default;
+$tonal-palettes-emphasis-light-60: #c13468ff !default;
+$tonal-palettes-emphasis-light-70: #c84d7bff !default;
+$tonal-palettes-emphasis-light-80: #d880a1ff !default;
+$tonal-palettes-emphasis-light-90: #e8b3c6ff !default;
+$tonal-palettes-emphasis-light-95: #efccd9ff !default;
+$tonal-palettes-emphasis-light-98: #f7e6ecff !default;
+$tonal-palettes-emphasis-light-100: #ffffffff !default;
+$tonal-palettes-emphasis-dark-0: #000000ff !default;
+$tonal-palettes-emphasis-dark-10: #191013ff !default;
+$tonal-palettes-emphasis-dark-20: #332027ff !default;
+$tonal-palettes-emphasis-dark-30: #4c303aff !default;
+$tonal-palettes-emphasis-dark-40: #66404eff !default;
+$tonal-palettes-emphasis-dark-50: #b37089ff !default;
+$tonal-palettes-emphasis-dark-60: #cc809cff !default;
+$tonal-palettes-emphasis-dark-70: #e690b0ff !default;
+$tonal-palettes-emphasis-dark-80: #ffa0c3ff !default;
+$tonal-palettes-emphasis-dark-90: #ffbdd5ff !default;
+$tonal-palettes-emphasis-dark-95: #ffd9e7ff !default;
+$tonal-palettes-emphasis-dark-98: #fff6f9ff !default;
+$tonal-palettes-emphasis-dark-100: #ffffffff !default;
+$tonal-palettes-secondary-light-0: #000000ff !default;
+$tonal-palettes-secondary-light-10: #171a2cff !default;
+$tonal-palettes-secondary-light-20: #2c2f42ff !default;
+$tonal-palettes-secondary-light-30: #434659ff !default;
+$tonal-palettes-secondary-light-40: #5b5d72ff !default;
+$tonal-palettes-secondary-light-50: #73768bff !default;
+$tonal-palettes-secondary-light-60: #8d8fa6ff !default;
+$tonal-palettes-secondary-light-70: #a8aac1ff !default;
+$tonal-palettes-secondary-light-80: #c3c5ddff !default;
+$tonal-palettes-secondary-light-90: #dfe1f9ff !default;
+$tonal-palettes-secondary-light-95: #f0efffff !default;
+$tonal-palettes-secondary-light-98: #fbf8ffff !default;
+$tonal-palettes-secondary-light-100: #ffffffff !default;
+$tonal-palettes-secondary-dark-0: #000000ff !default;
+$tonal-palettes-secondary-dark-10: #171a2cff !default;
+$tonal-palettes-secondary-dark-20: #303245ff !default;
+$tonal-palettes-secondary-dark-30: #484b5fff !default;
+$tonal-palettes-secondary-dark-40: #616378ff !default;
+$tonal-palettes-secondary-dark-50: #797c91ff !default;
+$tonal-palettes-secondary-dark-60: #9294aaff !default;
+$tonal-palettes-secondary-dark-70: #aaadc4ff !default;
+$tonal-palettes-secondary-dark-80: #c3c5ddff !default;
+$tonal-palettes-secondary-dark-90: #dfe1f9ff !default;
+$tonal-palettes-secondary-dark-95: #eaebfbff !default;
+$tonal-palettes-secondary-dark-98: #f4f5fdff !default;
+$tonal-palettes-secondary-dark-100: #ffffffff !default;
+$tonal-palettes-neutral-light-0: #000000ff !default;
+$tonal-palettes-neutral-light-2: #000000ff !default;
+$tonal-palettes-neutral-light-3: #020202ff !default;
+$tonal-palettes-neutral-light-4: #060506ff !default;
+$tonal-palettes-neutral-light-5: #0a090aff !default;
+$tonal-palettes-neutral-light-6: #0e0e0eff !default;
+$tonal-palettes-neutral-light-7: #121212ff !default;
+$tonal-palettes-neutral-light-8: #161616ff !default;
+$tonal-palettes-neutral-light-9: #1a191aff !default;
+$tonal-palettes-neutral-light-10: #1e1d1eff !default;
+$tonal-palettes-neutral-light-11: #222122ff !default;
+$tonal-palettes-neutral-light-12: #252426ff !default;
+$tonal-palettes-neutral-light-13: #292829ff !default;
+$tonal-palettes-neutral-light-14: #2c2b2dff !default;
+$tonal-palettes-neutral-light-15: #2f2e30ff !default;
+$tonal-palettes-neutral-light-16: #323134ff !default;
+$tonal-palettes-neutral-light-17: #353537ff !default;
+$tonal-palettes-neutral-light-18: #38383bff !default;
+$tonal-palettes-neutral-light-19: #3b3b3eff !default;
+$tonal-palettes-neutral-light-20: #3e3e41ff !default;
+$tonal-palettes-neutral-light-21: #414144ff !default;
+$tonal-palettes-neutral-light-22: #444447ff !default;
+$tonal-palettes-neutral-light-23: #47474aff !default;
+$tonal-palettes-neutral-light-24: #4a4a4dff !default;
+$tonal-palettes-neutral-light-25: #4d4d50ff !default;
+$tonal-palettes-neutral-light-30: #5c5b5fff !default;
+$tonal-palettes-neutral-light-35: #68686eff !default;
+$tonal-palettes-neutral-light-40: #76757dff !default;
+$tonal-palettes-neutral-light-50: #8f8e97ff !default;
+$tonal-palettes-neutral-light-60: #a6a6adff !default;
+$tonal-palettes-neutral-light-70: #bebdc3ff !default;
+$tonal-palettes-neutral-light-80: #d5d3d8ff !default;
+$tonal-palettes-neutral-light-87: #e5e2e6ff !default;
+$tonal-palettes-neutral-light-90: #ebe8ecff !default;
+$tonal-palettes-neutral-light-91: #eeeaeeff !default;
+$tonal-palettes-neutral-light-92: #f0edf0ff !default;
+$tonal-palettes-neutral-light-93: #f2eff2ff !default;
+$tonal-palettes-neutral-light-94: #f4f1f4ff !default;
+$tonal-palettes-neutral-light-95: #f6f3f6ff !default;
+$tonal-palettes-neutral-light-96: #f8f5f8ff !default;
+$tonal-palettes-neutral-light-97: #faf7faff !default;
+$tonal-palettes-neutral-light-98: #fdf9fcff !default;
+$tonal-palettes-neutral-light-99: #fffbfeff !default;
+$tonal-palettes-neutral-light-100: #ffffffff !default;
+$tonal-palettes-neutral-dark-0: #000000ff !default;
+$tonal-palettes-neutral-dark-2: #000000ff !default;
+$tonal-palettes-neutral-dark-3: #020202ff !default;
+$tonal-palettes-neutral-dark-4: #060506ff !default;
+$tonal-palettes-neutral-dark-5: #0a090aff !default;
+$tonal-palettes-neutral-dark-6: #0e0e0eff !default;
+$tonal-palettes-neutral-dark-7: #121212ff !default;
+$tonal-palettes-neutral-dark-8: #161616ff !default;
+$tonal-palettes-neutral-dark-9: #1a191aff !default;
+$tonal-palettes-neutral-dark-10: #1e1d1eff !default;
+$tonal-palettes-neutral-dark-11: #222122ff !default;
+$tonal-palettes-neutral-dark-12: #252426ff !default;
+$tonal-palettes-neutral-dark-13: #292829ff !default;
+$tonal-palettes-neutral-dark-14: #2c2b2dff !default;
+$tonal-palettes-neutral-dark-15: #2f2e30ff !default;
+$tonal-palettes-neutral-dark-16: #323134ff !default;
+$tonal-palettes-neutral-dark-17: #353537ff !default;
+$tonal-palettes-neutral-dark-18: #38383bff !default;
+$tonal-palettes-neutral-dark-19: #3b3b3eff !default;
+$tonal-palettes-neutral-dark-20: #3e3e41ff !default;
+$tonal-palettes-neutral-dark-21: #414144ff !default;
+$tonal-palettes-neutral-dark-22: #444447ff !default;
+$tonal-palettes-neutral-dark-23: #47474aff !default;
+$tonal-palettes-neutral-dark-24: #4a4a4dff !default;
+$tonal-palettes-neutral-dark-25: #4d4d50ff !default;
+$tonal-palettes-neutral-dark-30: #5c5b5fff !default;
+$tonal-palettes-neutral-dark-35: #68686eff !default;
+$tonal-palettes-neutral-dark-40: #76757dff !default;
+$tonal-palettes-neutral-dark-50: #8f8e97ff !default;
+$tonal-palettes-neutral-dark-60: #a6a6adff !default;
+$tonal-palettes-neutral-dark-70: #bebdc3ff !default;
+$tonal-palettes-neutral-dark-80: #d5d3d8ff !default;
+$tonal-palettes-neutral-dark-87: #e5e2e6ff !default;
+$tonal-palettes-neutral-dark-90: #ebe8ecff !default;
+$tonal-palettes-neutral-dark-91: #eeeaeeff !default;
+$tonal-palettes-neutral-dark-92: #f0edf0ff !default;
+$tonal-palettes-neutral-dark-93: #f2eff2ff !default;
+$tonal-palettes-neutral-dark-94: #f4f1f4ff !default;
+$tonal-palettes-neutral-dark-95: #f6f3f6ff !default;
+$tonal-palettes-neutral-dark-96: #f8f5f8ff !default;
+$tonal-palettes-neutral-dark-97: #faf7faff !default;
+$tonal-palettes-neutral-dark-98: #fdf9fcff !default;
+$tonal-palettes-neutral-dark-99: #fffbfeff !default;
+$tonal-palettes-neutral-dark-100: #ffffffff !default;
+$states-primary-light-hover: #3053f414 !default;
+$states-primary-light-focus: #3053f41f !default;
+$states-primary-light-press: #3053f41f !default;
+$states-primary-light-drag: #3053f429 !default;
+$states-primary-dark-hover: #889fff14 !default;
+$states-primary-dark-focus: #889fff1f !default;
+$states-primary-dark-press: #889fff1f !default;
+$states-primary-dark-drag: #889fff29 !default;
+$states-on-primary-light-hover: #ffffff14 !default;
+$states-on-primary-light-focus: #ffffff1f !default;
+$states-on-primary-light-press: #ffffff1f !default;
+$states-on-primary-light-drag: #ffffff29 !default;
+$states-on-primary-dark-hover: #111a2814 !default;
+$states-on-primary-dark-focus: #111a281f !default;
+$states-on-primary-dark-press: #111a281f !default;
+$states-on-primary-dark-drag: #111a2829 !default;
+$states-on-primary-container-light-hover: #00115a14 !default;
+$states-on-primary-container-light-focus: #00115a1f !default;
+$states-on-primary-container-light-press: #00115a1f !default;
+$states-on-primary-container-light-drag: #00115a29 !default;
+$states-on-primary-container-dark-hover: #b7c4ff14 !default;
+$states-on-primary-container-dark-focus: #b7c4ff1f !default;
+$states-on-primary-container-dark-press: #b7c4ff1f !default;
+$states-on-primary-container-dark-drag: #b7c4ff29 !default;
+$states-inverse-primary-light-hover: #bac3ff14 !default;
+$states-inverse-primary-light-focus: #bac3ff1f !default;
+$states-inverse-primary-light-press: #bac3ff1f !default;
+$states-inverse-primary-light-drag: #bac3ff29 !default;
+$states-inverse-primary-dark-hover: #32436914 !default;
+$states-inverse-primary-dark-focus: #3243691f !default;
+$states-inverse-primary-dark-press: #3243691f !default;
+$states-inverse-primary-dark-drag: #32436929 !default;
+$states-tertiary-tertiary-hover: #ff5f0214 !default;
+$states-tertiary-tertiary-press: #ff5f021f !default;
+$states-tertiary-tertiary-focus: #ff5f021f !default;
+$states-tertiary-tertiary-drag: #ff5f0229 !default;
+$states-on-tertiary-light-hover: #ffffff14 !default;
+$states-on-tertiary-light-press: #ffffff1f !default;
+$states-on-tertiary-light-focus: #ffffff1f !default;
+$states-on-tertiary-light-drag: #ffffff29 !default;
+$states-on-tertiary-dark-hover: #33130014 !default;
+$states-on-tertiary-dark-press: #3313001f !default;
+$states-on-tertiary-dark-focus: #3313001f !default;
+$states-on-tertiary-dark-drag: #33130029 !default;
+$states-on-tertiary-container-light-hover: #48130014 !default;
+$states-on-tertiary-container-light-press: #4813001f !default;
+$states-on-tertiary-container-light-focus: #4813001f !default;
+$states-on-tertiary-container-light-drag: #48130029 !default;
+$states-on-tertiary-container-dark-hover: #f79e7914 !default;
+$states-on-tertiary-container-dark-press: #f79e791f !default;
+$states-on-tertiary-container-dark-focus: #f79e791f !default;
+$states-on-tertiary-container-dark-drag: #f79e7929 !default;
+$states-negative-light-hover: #ae120914 !default;
+$states-negative-light-press: #ae12091f !default;
+$states-negative-light-focus: #ae12091f !default;
+$states-negative-light-drag: #ae120929 !default;
+$states-negative-dark-hover: #fd7d6914 !default;
+$states-negative-dark-press: #fd7d691f !default;
+$states-negative-dark-focus: #fd7d691f !default;
+$states-negative-dark-drag: #fd7d6929 !default;
+$states-on-negative-light-hover: #ffffff14 !default;
+$states-on-negative-light-press: #ffffff1f !default;
+$states-on-negative-light-focus: #ffffff1f !default;
+$states-on-negative-light-drag: #ffffff29 !default;
+$states-on-negative-dark-hover: #33191514 !default;
+$states-on-negative-dark-press: #3319151f !default;
+$states-on-negative-dark-focus: #3319151f !default;
+$states-on-negative-dark-drag: #33191529 !default;
+$states-positive-light-hover: #03660014 !default;
+$states-positive-light-press: #0366001f !default;
+$states-positive-light-focus: #0366001f !default;
+$states-positive-light-drag: #03660029 !default;
+$states-positive-dark-hover: #55bc5414 !default;
+$states-positive-dark-press: #55bc541f !default;
+$states-positive-dark-focus: #55bc541f !default;
+$states-positive-dark-drag: #55bc5429 !default;
+$states-on-positive-dark-hover: #11261114 !default;
+$states-on-positive-dark-press: #1126111f !default;
+$states-on-positive-dark-focus: #1126111f !default;
+$states-on-positive-dark-drag: #11261129 !default;
+$states-on-positive-light-hover: #ffffff14 !default;
+$states-on-positive-light-press: #ffffff1f !default;
+$states-on-positive-light-focus: #ffffff1f !default;
+$states-on-positive-light-drag: #ffffff29 !default;
+$states-on-positive-container-light-hover: #000a0014 !default;
+$states-on-positive-container-light-focus: #000a001f !default;
+$states-on-positive-container-light-press: #000a001f !default;
+$states-on-positive-container-light-drag: #000a0029 !default;
+$states-on-positive-container-dark-hover: #91d89014 !default;
+$states-on-positive-container-dark-press: #91d8901f !default;
+$states-on-positive-container-dark-focus: #91d8901f !default;
+$states-on-positive-container-dark-drag: #91d89029 !default;
+$states-caution-light-hover: #f3880014 !default;
+$states-caution-light-press: #f388001f !default;
+$states-caution-light-focus: #f388001f !default;
+$states-caution-light-drag: #f3880029 !default;
+$states-caution-dark-hover: #ffb77514 !default;
+$states-caution-dark-press: #ffb7751f !default;
+$states-caution-dark-focus: #ffb7751f !default;
+$states-caution-dark-drag: #ffb77529 !default;
+$states-on-caution-light-hover: #ffffff14 !default;
+$states-on-caution-light-press: #ffffff1f !default;
+$states-on-caution-light-focus: #ffffff1f !default;
+$states-on-caution-light-drag: #ffffff29 !default;
+$states-on-caution-dark-hover: #33251714 !default;
+$states-on-caution-dark-press: #3325171f !default;
+$states-on-caution-dark-focus: #3325171f !default;
+$states-on-caution-dark-drag: #33251729 !default;
+$states-on-caution-container-light-hover: #180e0014 !default;
+$states-on-caution-container-light-press: #180e001f !default;
+$states-on-caution-container-light-focus: #180e001f !default;
+$states-on-caution-container-light-color: #180e0029 !default;
+$states-on-caution-container-dark-hover: #ffead714 !default;
+$states-on-caution-container-dark-press: #ffead71f !default;
+$states-on-caution-container-dark-focus: #ffead71f !default;
+$states-on-caution-container-dark-drag: #ffead729 !default;
+$states-emphasis-light-hover: #b1014214 !default;
+$states-emphasis-light-press: #b101421f !default;
+$states-emphasis-light-focus: #b101421f !default;
+$states-emphasis-light-color: #b1014229 !default;
+$states-emphasis-dark-hover: #ffa0c314 !default;
+$states-emphasis-dark-press: #ffa0c31f !default;
+$states-emphasis-dark-focus: #ffa0c31f !default;
+$states-emphasis-dark-drag: #ffa0c329 !default;
+$states-on-emphasis-light-hover: #ffffff14 !default;
+$states-on-emphasis-light-press: #ffffff1f !default;
+$states-on-emphasis-light-focus: #ffffff1f !default;
+$states-on-emphasis-light-drag: #ffffff29 !default;
+$states-on-emphasis-dark-hover: #33202714 !default;
+$states-on-emphasis-dark-press: #3320271f !default;
+$states-on-emphasis-dark-focus: #3320271f !default;
+$states-on-emphasis-dark-drag: #33202729 !default;
+$states-on-emphasis-container-light-hover: #180e0014 !default;
+$states-on-emphasis-container-light-press: #180e001f !default;
+$states-on-emphasis-container-light-focus: #180e001f !default;
+$states-on-emphasis-container-light-drag: #180e0029 !default;
+$states-on-emphasis-container-dark-hover: #ffbdd514 !default;
+$states-on-emphasis-container-dark-press: #ffbdd51f !default;
+$states-on-emphasis-container-dark-focus: #ffbdd51f !default;
+$states-on-emphasis-container-dark-drag: #ffbdd529 !default;
+$states-secondary-light-hover: #5b5d7214 !default;
+$states-secondary-light-press: #5b5d721f !default;
+$states-secondary-light-focus: #5b5d721f !default;
+$states-secondary-light-drag: #5b5d7229 !default;
+$states-secondary-dark-hover: #c3c5dd14 !default;
+$states-secondary-dark-press: #c3c5dd1f !default;
+$states-secondary-dark-focus: #c3c5dd1f !default;
+$states-secondary-dark-drag: #c3c5dd29 !default;
+$states-on-secondary-light-hover: #ffffff14 !default;
+$states-on-secondary-light-press: #ffffff1f !default;
+$states-on-secondary-light-focus: #ffffff1f !default;
+$states-on-secondary-light-drag: #ffffff29 !default;
+$states-on-secondary-dark-hover: #171a2c14 !default;
+$states-on-secondary-dark-press: #171a2c1f !default;
+$states-on-secondary-dark-focus: #171a2c1f !default;
+$states-on-secondary-dark-drag: #171a2c29 !default;
+$states-on-secondary-container-light-hover: #171a2c14 !default;
+$states-on-secondary-container-light-press: #171a2c1f !default;
+$states-on-secondary-container-light-focus: #171a2c03 !default;
+$states-on-secondary-container-light-drag: #171a2cff !default;
+$states-on-secondary-container-dark-hover: #61637814 !default;
+$states-on-secondary-container-dark-press: #6163781f !default;
+$states-on-secondary-container-dark-focus: #6163781f !default;
+$states-on-secondary-container-dark-drag: #61637829 !default;
+$states-on-surface-dark-hover: #f8f9fb14 !default;
+$states-on-surface-dark-press: #f8f9fb1f !default;
+$states-on-surface-dark-focus: #f8f9fb1f !default;
+$states-on-surface-dark-drag: #f8f9fb29 !default;
+$states-on-surface-light-hover: #191c1e14 !default;
+$states-on-surface-light-press: #191c1e1f !default;
+$states-on-surface-light-focus: #191c1e1f !default;
+$states-on-surface-light-drag: #191c1e29 !default;
+$states-on-surface-variant-dark-hover: #c0c6cc14 !default;
+$states-on-surface-variant-dark-press: #c0c6cc1f !default;
+$states-on-surface-variant-dark-drag: #c0c6cc29 !default;
+$states-on-surface-variant-dark-focus: #c0c6cc1f !default;
+$states-on-surface-variant-light-hover: #40484c14 !default;
+$states-on-surface-variant-light-press: #40484c1f !default;
+$states-on-surface-variant-light-focus: #40484c1f !default;
+$states-on-surface-variant-light-drag: #40484c29 !default;
+$states-color-3: #ffffffff !default;
+$states-inverse-on-surface-dark-hover: #161c1f14 !default;
+$states-inverse-on-surface-dark-focus: #161c1f1f !default;
+$states-inverse-on-surface-dark-press: #161c1f1f !default;
+$states-inverse-on-surface-dark-drag: #161c1f29 !default;
+$states-inverse-on-surface-light-hover: #f8f9fb14 !default;
+$states-inverse-on-surface-light-press: #f8f9fb1f !default;
+$states-inverse-on-surface-light-focus: #f8f9fb1f !default;
+$states-inverse-on-surface-light-drag: #f8f9fb29 !default;
 $material-red-50: #ffebee !default;
 $material-red-100: #ffcdd2 !default;
 $material-red-200: #ef9a9a !default;
@@ -432,15 +1186,15 @@ $teradata-slate-1700: #101314 !default;
 $teradata-slate-1800: #0c0e0f !default;
 $teradata-slate-1900: #060708 !default;
 $teradata-slate-2000: #020203 !default;
-$teradata-orange-100: #FFCFB3 !default;
-$teradata-orange-200: #FFAF81 !default;
-$teradata-orange-300: #FF8F4E !default;
-$teradata-orange-400: #FF7728 !default;
-$teradata-orange-500: #FF5F02 !default;
-$teradata-orange-600: #F05800 !default;
-$teradata-orange-700: #E54900 !default;
-$teradata-orange-800: #D83B03 !default;
-$teradata-orange-900: #C23200 !default;
+$teradata-orange-100: #ffcfb3 !default;
+$teradata-orange-200: #ffaf81 !default;
+$teradata-orange-300: #ff8f4e !default;
+$teradata-orange-400: #ff7728 !default;
+$teradata-orange-500: #ff5f02 !default;
+$teradata-orange-600: #f05800 !default;
+$teradata-orange-700: #e54900 !default;
+$teradata-orange-800: #d83b03 !default;
+$teradata-orange-900: #c23200 !default;
 $typography-font-family: Arial, sans-serif !default;
 $typography-headline1-font-family: 'Inter', sans-serif !default;
 $typography-headline1-font-size: 96px !default;
@@ -493,6 +1247,15 @@ $typography-caption-line-height: 16px !default;
 
 $tokens: (
   'light': (
+    'code-snippet-color': $light-code-snippet-color,
+    'code-snippet-comment': $light-code-snippet-comment,
+    'code-snippet-keyword': $light-code-snippet-keyword,
+    'code-snippet-selector': $light-code-snippet-selector,
+    'code-snippet-literal': $light-code-snippet-literal,
+    'code-snippet-string': $light-code-snippet-string,
+    'code-snippet-variable': $light-code-snippet-variable,
+    'code-snippet-title': $light-code-snippet-title,
+    'code-snippet-class': $light-code-snippet-class,
     'primary': $light-primary,
     'secondary': $light-secondary,
     'error': $light-error,
@@ -507,15 +1270,6 @@ $tokens: (
     'divider': $light-divider,
     'emphasis': $light-emphasis,
     'accent': $light-accent,
-    'code-snippet-color': $light-code-snippet-color,
-    'code-snippet-comment': $light-code-snippet-comment,
-    'code-snippet-keyword': $light-code-snippet-keyword,
-    'code-snippet-selector': $light-code-snippet-selector,
-    'code-snippet-literal': $light-code-snippet-literal,
-    'code-snippet-string': $light-code-snippet-string,
-    'code-snippet-variable': $light-code-snippet-variable,
-    'code-snippet-title': $light-code-snippet-title,
-    'code-snippet-class': $light-code-snippet-class,
     'background': $light-background,
     'surface': $light-surface,
     'surface-canvas': $light-surface-canvas,
@@ -527,7 +1281,8 @@ $tokens: (
     'surface-accent-highlight-hover': $light-surface-accent-highlight-hover,
     'surface-secondary': $light-surface-secondary,
     'surface-secondary-highlight': $light-surface-secondary-highlight,
-    'surface-secondary-highlight-hover': $light-surface-secondary-highlight-hover,
+    'surface-secondary-highlight-hover':
+      $light-surface-secondary-highlight-hover,
     'surface-positive': $light-surface-positive,
     'surface-positive-highlight': $light-surface-positive-highlight,
     'surface-positive-highlight-hover': $light-surface-positive-highlight-hover,
@@ -558,9 +1313,18 @@ $tokens: (
     'text-secondary-on-dark': $light-text-secondary-on-dark,
     'text-hint-on-dark': $light-text-hint-on-dark,
     'text-disabled-on-dark': $light-text-disabled-on-dark,
-    'text-icon-on-dark': $light-text-icon-on-dark
+    'text-icon-on-dark': $light-text-icon-on-dark,
   ),
   'dark': (
+    'code-snippet-color': $dark-code-snippet-color,
+    'code-snippet-comment': $dark-code-snippet-comment,
+    'code-snippet-keyword': $dark-code-snippet-keyword,
+    'code-snippet-selector': $dark-code-snippet-selector,
+    'code-snippet-literal': $dark-code-snippet-literal,
+    'code-snippet-string': $dark-code-snippet-string,
+    'code-snippet-variable': $dark-code-snippet-variable,
+    'code-snippet-title': $dark-code-snippet-title,
+    'code-snippet-class': $dark-code-snippet-class,
     'primary': $dark-primary,
     'secondary': $dark-secondary,
     'error': $dark-error,
@@ -575,15 +1339,6 @@ $tokens: (
     'divider': $dark-divider,
     'emphasis': $dark-emphasis,
     'accent': $dark-accent,
-    'code-snippet-color': $dark-code-snippet-color,
-    'code-snippet-comment': $dark-code-snippet-comment,
-    'code-snippet-keyword': $dark-code-snippet-keyword,
-    'code-snippet-selector': $dark-code-snippet-selector,
-    'code-snippet-literal': $dark-code-snippet-literal,
-    'code-snippet-string': $dark-code-snippet-string,
-    'code-snippet-variable': $dark-code-snippet-variable,
-    'code-snippet-title': $dark-code-snippet-title,
-    'code-snippet-class': $dark-code-snippet-class,
     'background': $dark-background,
     'surface': $dark-surface,
     'surface-canvas': $dark-surface-canvas,
@@ -626,7 +1381,1110 @@ $tokens: (
     'text-secondary-on-dark': $dark-text-secondary-on-dark,
     'text-hint-on-dark': $dark-text-hint-on-dark,
     'text-disabled-on-dark': $dark-text-disabled-on-dark,
-    'text-icon-on-dark': $dark-text-icon-on-dark
+    'text-icon-on-dark': $dark-text-icon-on-dark,
+  ),
+  'material 3 colors': (
+    'light': (
+      'primary': (
+        'primary': $material-3-colors-light-primary-primary,
+        'primary-container': $material-3-colors-light-primary-primary-container,
+        'on-primary': $material-3-colors-light-primary-on-primary,
+        'primary-fixed': $material-3-colors-light-primary-primary-fixed,
+        'primary-fixed-dim': $material-3-colors-light-primary-primary-fixed-dim,
+        'primary-8%': $material-3-colors-light-primary-primary-8,
+        'primary-12%': $material-3-colors-light-primary-primary-12,
+        'on-primary-container':
+          $material-3-colors-light-primary-on-primary-container,
+        'inverse-primary': $material-3-colors-light-primary-inverse-primary,
+        'on-primary-12%': $material-3-colors-light-primary-on-primary-12,
+        'on-primary-8%': $material-3-colors-light-primary-on-primary-8,
+        'primary-16%': $material-3-colors-light-primary-primary-16,
+        'on-primary-container-12%':
+          $material-3-colors-light-primary-on-primary-container-12,
+        'on-primary-16%': $material-3-colors-light-primary-on-primary-16,
+        'on-primary-container-8%':
+          $material-3-colors-light-primary-on-primary-container-8,
+        'on-primary-container-16%':
+          $material-3-colors-light-primary-on-primary-container-16,
+        'inverse-primary-12%':
+          $material-3-colors-light-primary-inverse-primary-12,
+        'inverse-primary-8%': $material-3-colors-light-primary-inverse-primary-8,
+        'inverse-primary-16%':
+          $material-3-colors-light-primary-inverse-primary-16,
+        'on-primary-74%': $material-3-colors-light-primary-on-primary-74,
+      ),
+      'secondary': (
+        'secondary': $material-3-colors-light-secondary-secondary,
+        'secondary-container':
+          $material-3-colors-light-secondary-secondary-container,
+        'on-secondary': $material-3-colors-light-secondary-on-secondary,
+        'on-secondary-container':
+          $material-3-colors-light-secondary-on-secondary-container,
+        'secondary-fixed': $material-3-colors-light-secondary-secondary-fixed,
+        'secondary-fixed-dim':
+          $material-3-colors-light-secondary-secondary-fixed-dim,
+        'on-secondary-container-8%':
+          $material-3-colors-light-secondary-on-secondary-container-8,
+        'on-secondary-container-16%':
+          $material-3-colors-light-secondary-on-secondary-container-16,
+        'on-secondary-container-12%':
+          $material-3-colors-light-secondary-on-secondary-container-12,
+        'on-secondary-8%': $material-3-colors-light-secondary-on-secondary-8,
+        'on-secondary-12%': $material-3-colors-light-secondary-on-secondary-12,
+        'on-secondary-16%': $material-3-colors-light-secondary-on-secondary-16,
+      ),
+      'tertiary': (
+        'tertiary': $material-3-colors-light-tertiary-tertiary,
+        'tertiary-container':
+          $material-3-colors-light-tertiary-tertiary-container,
+        'on-tertiary': $material-3-colors-light-tertiary-on-tertiary,
+        'on-tertiary-container':
+          $material-3-colors-light-tertiary-on-tertiary-container,
+        'tertiary-fixed': $material-3-colors-light-tertiary-tertiary-fixed,
+        'tertiary-fixed-dim':
+          $material-3-colors-light-tertiary-tertiary-fixed-dim,
+        'on-tertiary-container-8%':
+          $material-3-colors-light-tertiary-on-tertiary-container-8,
+        'on-tertiary-container-12%':
+          $material-3-colors-light-tertiary-on-tertiary-container-12,
+        'on-tertiary-8%': $material-3-colors-light-tertiary-on-tertiary-8,
+        'on-tertiary-12%': $material-3-colors-light-tertiary-on-tertiary-12,
+        'on-tertiary-16%': $material-3-colors-light-tertiary-on-tertiary-16,
+        'on-tertiary-container-16%':
+          $material-3-colors-light-tertiary-on-tertiary-container-16,
+        'tertiary-8%': $material-3-colors-light-tertiary-tertiary-8,
+        'tertiary-12%': $material-3-colors-light-tertiary-tertiary-12,
+        'tertiary-16%': $material-3-colors-light-tertiary-tertiary-16,
+      ),
+      'surface': (
+        'surface': $material-3-colors-light-surface-surface,
+        'surface-dim': $material-3-colors-light-surface-surface-dim,
+        'surface-bright': $material-3-colors-light-surface-surface-bright,
+        'surface-container-lowest':
+          $material-3-colors-light-surface-surface-container-lowest,
+        'surface-container-low':
+          $material-3-colors-light-surface-surface-container-low,
+        'surface-container': $material-3-colors-light-surface-surface-container,
+        'surface-container-high':
+          $material-3-colors-light-surface-surface-container-high,
+        'surface-container-highest':
+          $material-3-colors-light-surface-surface-container-highest,
+        'on-surface': $material-3-colors-light-surface-on-surface,
+        'on-surface-variant':
+          $material-3-colors-light-surface-on-surface-variant,
+        'inverse-surface': $material-3-colors-light-surface-inverse-surface,
+        'inverse-on-surface':
+          $material-3-colors-light-surface-inverse-on-surface,
+        'on-surface-8%': $material-3-colors-light-surface-on-surface-8,
+        'on-surface-12%': $material-3-colors-light-surface-on-surface-12,
+        'on-surface-38%': $material-3-colors-light-surface-on-surface-38,
+        'on-surface-16%': $material-3-colors-light-surface-on-surface-16,
+        'on-surface-variant-8%':
+          $material-3-colors-light-surface-on-surface-variant-8,
+        'on-surface-variant-12%':
+          $material-3-colors-light-surface-on-surface-variant-12,
+        'surface-variant': $material-3-colors-light-surface-surface-variant,
+        'on-surface-variant-16%':
+          $material-3-colors-light-surface-on-surface-variant-16,
+        'inverse-on-surface-12%':
+          $material-3-colors-light-surface-inverse-on-surface-12,
+        'inverse-on-surface-8%':
+          $material-3-colors-light-surface-inverse-on-surface-8,
+        'inverse-on-surface-16%':
+          $material-3-colors-light-surface-inverse-on-surface-16,
+        'on-surface-74%': $material-3-colors-light-surface-on-surface-74,
+      ),
+      'background': (
+        'background': $material-3-colors-light-background-background,
+        'on-background': $material-3-colors-light-background-on-background,
+      ),
+      'negative': (
+        'negative': $material-3-colors-light-negative-negative,
+        'negative-container':
+          $material-3-colors-light-negative-negative-container,
+        'on-negative': $material-3-colors-light-negative-on-negative,
+        'on-negative-container':
+          $material-3-colors-light-negative-on-negative-container,
+        'negative-12%': $material-3-colors-light-negative-negative-12,
+        'negative-8%': $material-3-colors-light-negative-negative-8,
+        'negative-16%': $material-3-colors-light-negative-negative-16,
+        'on-negative-8%': $material-3-colors-light-negative-on-negative-8,
+        'on-negative-12%': $material-3-colors-light-negative-on-negative-12,
+        'on-negative-16%': $material-3-colors-light-negative-on-negative-16,
+      ),
+      'positive': (
+        'positive': $material-3-colors-light-positive-positive,
+        'positive-container':
+          $material-3-colors-light-positive-positive-container,
+        'on-positive': $material-3-colors-light-positive-on-positive,
+        'on-positive-container':
+          $material-3-colors-light-positive-on-positive-container,
+        'positive-16%': $material-3-colors-light-positive-positive-16,
+        'positive-12%': $material-3-colors-light-positive-positive-12,
+        'positive-8%': $material-3-colors-light-positive-positive-8,
+        'on-positive-8%': $material-3-colors-light-positive-on-positive-8,
+        'on-positive-12%': $material-3-colors-light-positive-on-positive-12,
+        'on-positive-16%': $material-3-colors-light-positive-on-positive-16,
+        'on-positive-container-8%':
+          $material-3-colors-light-positive-on-positive-container-8,
+        'on-positive-container-12%':
+          $material-3-colors-light-positive-on-positive-container-12,
+        'on-positive-container-16%':
+          $material-3-colors-light-positive-on-positive-container-16,
+      ),
+      'caution': (
+        'caution': $material-3-colors-light-caution-caution,
+        'caution-container': $material-3-colors-light-caution-caution-container,
+        'on-caution': $material-3-colors-light-caution-on-caution,
+        'on-caution-container':
+          $material-3-colors-light-caution-on-caution-container,
+        'caution-16%': $material-3-colors-light-caution-caution-16,
+        'caution-12%': $material-3-colors-light-caution-caution-12,
+        'caution-8%': $material-3-colors-light-caution-caution-8,
+        'on-caution-8%': $material-3-colors-light-caution-on-caution-8,
+        'on-caution-12%': $material-3-colors-light-caution-on-caution-12,
+        'on-caution-16%': $material-3-colors-light-caution-on-caution-16,
+        'on-caution-container-8%':
+          $material-3-colors-light-caution-on-caution-container-8,
+        'on-caution-container-12%':
+          $material-3-colors-light-caution-on-caution-container-12,
+        'on-caution-container-16%':
+          $material-3-colors-light-caution-on-caution-container-16,
+      ),
+      'outline': (
+        'outline': $material-3-colors-light-outline-outline,
+        'outline-variant': $material-3-colors-light-outline-outline-variant,
+        'outline-8%': $material-3-colors-light-outline-outline-8,
+        'outline-12%': $material-3-colors-light-outline-outline-12,
+        'outline-16%': $material-3-colors-light-outline-outline-16,
+      ),
+      'shadow': (
+        'shadow': $material-3-colors-light-shadow-shadow,
+      ),
+      'scrim': (
+        'scrim': $material-3-colors-light-scrim-scrim,
+      ),
+      'wireframe': (
+        'wf blue': $material-3-colors-light-wireframe-wf-blue,
+        'wireframe white': $material-3-colors-light-wireframe-wireframe-white,
+      ),
+      'emphasis': (
+        'emphasis': $material-3-colors-light-emphasis-emphasis,
+        'emphasis-container':
+          $material-3-colors-light-emphasis-emphasis-container,
+        'on-emphasis': $material-3-colors-light-emphasis-on-emphasis,
+        'on-emphasis-container':
+          $material-3-colors-light-emphasis-on-emphasis-container,
+        'emphasis-8%': $material-3-colors-light-emphasis-emphasis-8,
+        'emphasis-12%': $material-3-colors-light-emphasis-emphasis-12,
+        'emphasis-16%': $material-3-colors-light-emphasis-emphasis-16,
+        'on-emphasis-8%': $material-3-colors-light-emphasis-on-emphasis-8,
+        'on-emphasis-12%': $material-3-colors-light-emphasis-on-emphasis-12,
+        'on-emphasis-16%': $material-3-colors-light-emphasis-on-emphasis-16,
+        'on-emphasis-container-8%':
+          $material-3-colors-light-emphasis-on-emphasis-container-8,
+        'on-emphasis-container-12%':
+          $material-3-colors-light-emphasis-on-emphasis-container-12,
+        'on-emphasis-container-16%':
+          $material-3-colors-light-emphasis-on-emphasis-container-16,
+      ),
+    ),
+    'dark': (
+      'primary': (
+        'primary': $material-3-colors-dark-primary-primary,
+        'primary-container': $material-3-colors-dark-primary-primary-container,
+        'on-primary': $material-3-colors-dark-primary-on-primary,
+        'primary-fixed': $material-3-colors-dark-primary-primary-fixed,
+        'primary-fixed-dim': $material-3-colors-dark-primary-primary-fixed-dim,
+        'primary-8%': $material-3-colors-dark-primary-primary-8,
+        'primary-12%': $material-3-colors-dark-primary-primary-12,
+        'on-primary-container':
+          $material-3-colors-dark-primary-on-primary-container,
+        'inverse-primary': $material-3-colors-dark-primary-inverse-primary,
+        'on-primary-12%': $material-3-colors-dark-primary-on-primary-12,
+        'on-primary-8%': $material-3-colors-dark-primary-on-primary-8,
+        'primary-16%': $material-3-colors-dark-primary-primary-16,
+        'on-primary-container-12%':
+          $material-3-colors-dark-primary-on-primary-container-12,
+        'on-primary-16%': $material-3-colors-dark-primary-on-primary-16,
+        'on-primary-container-8%':
+          $material-3-colors-dark-primary-on-primary-container-8,
+        'on-primary-container-16%':
+          $material-3-colors-dark-primary-on-primary-container-16,
+        'inverse-primary-12%':
+          $material-3-colors-dark-primary-inverse-primary-12,
+        'inverse-primary-8%': $material-3-colors-dark-primary-inverse-primary-8,
+        'inverse-primary-16%':
+          $material-3-colors-dark-primary-inverse-primary-16,
+        'on-primary-74%': $material-3-colors-dark-primary-on-primary-74,
+      ),
+      'secondary': (
+        'secondary': $material-3-colors-dark-secondary-secondary,
+        'secondary-container':
+          $material-3-colors-dark-secondary-secondary-container,
+        'on-secondary': $material-3-colors-dark-secondary-on-secondary,
+        'on-secondary-container':
+          $material-3-colors-dark-secondary-on-secondary-container,
+        'secondary-fixed': $material-3-colors-dark-secondary-secondary-fixed,
+        'secondary-fixed-dim':
+          $material-3-colors-dark-secondary-secondary-fixed-dim,
+        'on-secondary-container-8%':
+          $material-3-colors-dark-secondary-on-secondary-container-8,
+        'on-secondary-container-16%':
+          $material-3-colors-dark-secondary-on-secondary-container-16,
+        'on-secondary-container-12%':
+          $material-3-colors-dark-secondary-on-secondary-container-12,
+        'on-secondary-8%': $material-3-colors-dark-secondary-on-secondary-8,
+        'on-secondary-12%': $material-3-colors-dark-secondary-on-secondary-12,
+        'on-secondary-16%': $material-3-colors-dark-secondary-on-secondary-16,
+      ),
+      'tertiary': (
+        'tertiary': $material-3-colors-dark-tertiary-tertiary,
+        'tertiary-container':
+          $material-3-colors-dark-tertiary-tertiary-container,
+        'on-tertiary': $material-3-colors-dark-tertiary-on-tertiary,
+        'on-tertiary-container':
+          $material-3-colors-dark-tertiary-on-tertiary-container,
+        'tertiary-fixed': $material-3-colors-dark-tertiary-tertiary-fixed,
+        'tertiary-fixed-dim':
+          $material-3-colors-dark-tertiary-tertiary-fixed-dim,
+        'on-tertiary-container-8%':
+          $material-3-colors-dark-tertiary-on-tertiary-container-8,
+        'on-tertiary-container-12%':
+          $material-3-colors-dark-tertiary-on-tertiary-container-12,
+        'on-tertiary-8%': $material-3-colors-dark-tertiary-on-tertiary-8,
+        'on-tertiary-12%': $material-3-colors-dark-tertiary-on-tertiary-12,
+        'on-tertiary-16%': $material-3-colors-dark-tertiary-on-tertiary-16,
+        'on-tertiary-container-16%':
+          $material-3-colors-dark-tertiary-on-tertiary-container-16,
+        'tertiary-8%': $material-3-colors-dark-tertiary-tertiary-8,
+        'tertiary-12%': $material-3-colors-dark-tertiary-tertiary-12,
+        'tertiary-16%': $material-3-colors-dark-tertiary-tertiary-16,
+      ),
+      'surface': (
+        'surface': $material-3-colors-dark-surface-surface,
+        'surface-dim': $material-3-colors-dark-surface-surface-dim,
+        'surface-bright': $material-3-colors-dark-surface-surface-bright,
+        'surface-container-lowest':
+          $material-3-colors-dark-surface-surface-container-lowest,
+        'surface-container-low':
+          $material-3-colors-dark-surface-surface-container-low,
+        'surface-container': $material-3-colors-dark-surface-surface-container,
+        'surface-container-high':
+          $material-3-colors-dark-surface-surface-container-high,
+        'surface-container-highest':
+          $material-3-colors-dark-surface-surface-container-highest,
+        'on-surface': $material-3-colors-dark-surface-on-surface,
+        'on-surface-variant': $material-3-colors-dark-surface-on-surface-variant,
+        'inverse-surface': $material-3-colors-dark-surface-inverse-surface,
+        'inverse-on-surface': $material-3-colors-dark-surface-inverse-on-surface,
+        'on-surface-8%': $material-3-colors-dark-surface-on-surface-8,
+        'on-surface-12%': $material-3-colors-dark-surface-on-surface-12,
+        'on-surface-38%': $material-3-colors-dark-surface-on-surface-38,
+        'on-surface-16%': $material-3-colors-dark-surface-on-surface-16,
+        'on-surface-variant-8%':
+          $material-3-colors-dark-surface-on-surface-variant-8,
+        'on-surface-variant-12%':
+          $material-3-colors-dark-surface-on-surface-variant-12,
+        'surface-variant': $material-3-colors-dark-surface-surface-variant,
+        'on-surface-variant-16%':
+          $material-3-colors-dark-surface-on-surface-variant-16,
+        'inverse-on-surface-12%':
+          $material-3-colors-dark-surface-inverse-on-surface-12,
+        'inverse-on-surface-8%':
+          $material-3-colors-dark-surface-inverse-on-surface-8,
+        'inverse-on-surface-16%':
+          $material-3-colors-dark-surface-inverse-on-surface-16,
+        'on-surface-74%': $material-3-colors-dark-surface-on-surface-74,
+      ),
+      'background': (
+        'background': $material-3-colors-dark-background-background,
+        'on-background': $material-3-colors-dark-background-on-background,
+      ),
+      'negative': (
+        'negative': $material-3-colors-dark-negative-negative,
+        'negative-container':
+          $material-3-colors-dark-negative-negative-container,
+        'on-negative': $material-3-colors-dark-negative-on-negative,
+        'on-negative-container':
+          $material-3-colors-dark-negative-on-negative-container,
+        'negative-12%': $material-3-colors-dark-negative-negative-12,
+        'negative-8%': $material-3-colors-dark-negative-negative-8,
+        'negative-16%': $material-3-colors-dark-negative-negative-16,
+        'on-negative-8%': $material-3-colors-dark-negative-on-negative-8,
+        'on-negative-12%': $material-3-colors-dark-negative-on-negative-12,
+        'on-negative-16%': $material-3-colors-dark-negative-on-negative-16,
+      ),
+      'positive': (
+        'positive': $material-3-colors-dark-positive-positive,
+        'positive-container':
+          $material-3-colors-dark-positive-positive-container,
+        'on-positive': $material-3-colors-dark-positive-on-positive,
+        'on-positive-container':
+          $material-3-colors-dark-positive-on-positive-container,
+        'positive-16%': $material-3-colors-dark-positive-positive-16,
+        'positive-12%': $material-3-colors-dark-positive-positive-12,
+        'positive-8%': $material-3-colors-dark-positive-positive-8,
+        'on-positive-8%': $material-3-colors-dark-positive-on-positive-8,
+        'on-positive-12%': $material-3-colors-dark-positive-on-positive-12,
+        'on-positive-16%': $material-3-colors-dark-positive-on-positive-16,
+        'on-positive-container-8%':
+          $material-3-colors-dark-positive-on-positive-container-8,
+        'on-positive-container-12%':
+          $material-3-colors-dark-positive-on-positive-container-12,
+        'on-positive-container-16%':
+          $material-3-colors-dark-positive-on-positive-container-16,
+      ),
+      'caution': (
+        'caution': $material-3-colors-dark-caution-caution,
+        'caution-container': $material-3-colors-dark-caution-caution-container,
+        'on-caution': $material-3-colors-dark-caution-on-caution,
+        'on-caution-container':
+          $material-3-colors-dark-caution-on-caution-container,
+        'caution-16%': $material-3-colors-dark-caution-caution-16,
+        'caution-12%': $material-3-colors-dark-caution-caution-12,
+        'caution-8%': $material-3-colors-dark-caution-caution-8,
+        'on-caution-8%': $material-3-colors-dark-caution-on-caution-8,
+        'on-caution-12%': $material-3-colors-dark-caution-on-caution-12,
+        'on-caution-16%': $material-3-colors-dark-caution-on-caution-16,
+        'on-caution-container-8%':
+          $material-3-colors-dark-caution-on-caution-container-8,
+        'on-caution-container-12%':
+          $material-3-colors-dark-caution-on-caution-container-12,
+        'on-caution-container-16%':
+          $material-3-colors-dark-caution-on-caution-container-16,
+      ),
+      'outline': (
+        'outline': $material-3-colors-dark-outline-outline,
+        'outline-variant': $material-3-colors-dark-outline-outline-variant,
+        'outline-8%': $material-3-colors-dark-outline-outline-8,
+        'outline-12%': $material-3-colors-dark-outline-outline-12,
+        'outline-16%': $material-3-colors-dark-outline-outline-16,
+      ),
+      'shadow': (
+        'shadow': $material-3-colors-dark-shadow-shadow,
+      ),
+      'scrim': (
+        'scrim': $material-3-colors-dark-scrim-scrim,
+      ),
+      'wireframe': (
+        'wf blue': $material-3-colors-dark-wireframe-wf-blue,
+        'wireframe white': $material-3-colors-dark-wireframe-wireframe-white,
+      ),
+      'emphasis': (
+        'emphasis': $material-3-colors-dark-emphasis-emphasis,
+        'emphasis-container':
+          $material-3-colors-dark-emphasis-emphasis-container,
+        'on-emphasis': $material-3-colors-dark-emphasis-on-emphasis,
+        'on-emphasis-container':
+          $material-3-colors-dark-emphasis-on-emphasis-container,
+        'emphasis-8%': $material-3-colors-dark-emphasis-emphasis-8,
+        'emphasis-12%': $material-3-colors-dark-emphasis-emphasis-12,
+        'emphasis-16%': $material-3-colors-dark-emphasis-emphasis-16,
+        'on-emphasis-8%': $material-3-colors-dark-emphasis-on-emphasis-8,
+        'on-emphasis-12%': $material-3-colors-dark-emphasis-on-emphasis-12,
+        'on-emphasis-16%': $material-3-colors-dark-emphasis-on-emphasis-16,
+        'on-emphasis-container-8%':
+          $material-3-colors-dark-emphasis-on-emphasis-container-8,
+        'on-emphasis-container-12%':
+          $material-3-colors-dark-emphasis-on-emphasis-container-12,
+        'on-emphasis-container-16%':
+          $material-3-colors-dark-emphasis-on-emphasis-container-16,
+      ),
+    ),
+  ),
+  'tonal palettes': (
+    'digital blue': (
+      'light': (
+        '0': $tonal-palettes-digital-blue-light-0,
+        '10': $tonal-palettes-digital-blue-light-10,
+        '20': $tonal-palettes-digital-blue-light-20,
+        '30': $tonal-palettes-digital-blue-light-30,
+        '40': $tonal-palettes-digital-blue-light-40,
+        '50': $tonal-palettes-digital-blue-light-50,
+        '60': $tonal-palettes-digital-blue-light-60,
+        '70': $tonal-palettes-digital-blue-light-70,
+        '80': $tonal-palettes-digital-blue-light-80,
+        '90': $tonal-palettes-digital-blue-light-90,
+        '91': $tonal-palettes-digital-blue-light-91,
+        '92': $tonal-palettes-digital-blue-light-92,
+        '93': $tonal-palettes-digital-blue-light-93,
+        '94': $tonal-palettes-digital-blue-light-94,
+        '95': $tonal-palettes-digital-blue-light-95,
+        '98': $tonal-palettes-digital-blue-light-98,
+        '100': $tonal-palettes-digital-blue-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-digital-blue-dark-0,
+        '10': $tonal-palettes-digital-blue-dark-10,
+        '20': $tonal-palettes-digital-blue-dark-20,
+        '30': $tonal-palettes-digital-blue-dark-30,
+        '40': $tonal-palettes-digital-blue-dark-40,
+        '50': $tonal-palettes-digital-blue-dark-50,
+        '60': $tonal-palettes-digital-blue-dark-60,
+        '70': $tonal-palettes-digital-blue-dark-70,
+        '80': $tonal-palettes-digital-blue-dark-80,
+        '90': $tonal-palettes-digital-blue-dark-90,
+        '91': $tonal-palettes-digital-blue-dark-91,
+        '92': $tonal-palettes-digital-blue-dark-92,
+        '93': $tonal-palettes-digital-blue-dark-93,
+        '94': $tonal-palettes-digital-blue-dark-94,
+        '95': $tonal-palettes-digital-blue-dark-95,
+        '98': $tonal-palettes-digital-blue-dark-98,
+        '100': $tonal-palettes-digital-blue-dark-100,
+      ),
+    ),
+    'orange': (
+      'light': (
+        '0': $tonal-palettes-orange-light-0,
+        '10': $tonal-palettes-orange-light-10,
+        '20': $tonal-palettes-orange-light-20,
+        '30': $tonal-palettes-orange-light-30,
+        '40': $tonal-palettes-orange-light-40,
+        '50': $tonal-palettes-orange-light-50,
+        '60': $tonal-palettes-orange-light-60,
+        '70': $tonal-palettes-orange-light-70,
+        '80': $tonal-palettes-orange-light-80,
+        '90': $tonal-palettes-orange-light-90,
+        '95': $tonal-palettes-orange-light-95,
+        '98': $tonal-palettes-orange-light-98,
+        '100': $tonal-palettes-orange-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-orange-dark-0,
+        '10': $tonal-palettes-orange-dark-10,
+        '20': $tonal-palettes-orange-dark-20,
+        '30': $tonal-palettes-orange-dark-30,
+        '40': $tonal-palettes-orange-dark-40,
+        '50': $tonal-palettes-orange-dark-50,
+        '60': $tonal-palettes-orange-dark-60,
+        '70': $tonal-palettes-orange-dark-70,
+        '80': $tonal-palettes-orange-dark-80,
+        '90': $tonal-palettes-orange-dark-90,
+        '95': $tonal-palettes-orange-dark-95,
+        '98': $tonal-palettes-orange-dark-98,
+        '100': $tonal-palettes-orange-dark-100,
+      ),
+    ),
+    'navy': (
+      'light': (
+        '0': $tonal-palettes-navy-light-0,
+        '10': $tonal-palettes-navy-light-10,
+        '20': $tonal-palettes-navy-light-20,
+        '30': $tonal-palettes-navy-light-30,
+        '40': $tonal-palettes-navy-light-40,
+        '50': $tonal-palettes-navy-light-50,
+        '60': $tonal-palettes-navy-light-60,
+        '70': $tonal-palettes-navy-light-70,
+        '80': $tonal-palettes-navy-light-80,
+        '90': $tonal-palettes-navy-light-90,
+        '95': $tonal-palettes-navy-light-95,
+        '98': $tonal-palettes-navy-light-98,
+        '100': $tonal-palettes-navy-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-navy-dark-0,
+        '10': $tonal-palettes-navy-dark-10,
+        '20': $tonal-palettes-navy-dark-20,
+        '30': $tonal-palettes-navy-dark-30,
+        '40': $tonal-palettes-navy-dark-40,
+        '50': $tonal-palettes-navy-dark-50,
+        '60': $tonal-palettes-navy-dark-60,
+        '70': $tonal-palettes-navy-dark-70,
+        '80': $tonal-palettes-navy-dark-80,
+        '90': $tonal-palettes-navy-dark-90,
+        '95': $tonal-palettes-navy-dark-95,
+        '98': $tonal-palettes-navy-dark-98,
+        '100': $tonal-palettes-navy-dark-100,
+      ),
+    ),
+    'negative': (
+      'light': (
+        '0': $tonal-palettes-negative-light-0,
+        '10': $tonal-palettes-negative-light-10,
+        '20': $tonal-palettes-negative-light-20,
+        '30': $tonal-palettes-negative-light-30,
+        '40': $tonal-palettes-negative-light-40,
+        '50': $tonal-palettes-negative-light-50,
+        '60': $tonal-palettes-negative-light-60,
+        '70': $tonal-palettes-negative-light-70,
+        '80': $tonal-palettes-negative-light-80,
+        '90': $tonal-palettes-negative-light-90,
+        '95': $tonal-palettes-negative-light-95,
+        '98': $tonal-palettes-negative-light-98,
+        '100': $tonal-palettes-negative-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-negative-dark-0,
+        '10': $tonal-palettes-negative-dark-10,
+        '20': $tonal-palettes-negative-dark-20,
+        '30': $tonal-palettes-negative-dark-30,
+        '40': $tonal-palettes-negative-dark-40,
+        '50': $tonal-palettes-negative-dark-50,
+        '60': $tonal-palettes-negative-dark-60,
+        '70': $tonal-palettes-negative-dark-70,
+        '80': $tonal-palettes-negative-dark-80,
+        '90': $tonal-palettes-negative-dark-90,
+        '95': $tonal-palettes-negative-dark-95,
+        '98': $tonal-palettes-negative-dark-98,
+        '100': $tonal-palettes-negative-dark-100,
+      ),
+    ),
+    'caution': (
+      'light': (
+        '0': $tonal-palettes-caution-light-0,
+        '10': $tonal-palettes-caution-light-10,
+        '20': $tonal-palettes-caution-light-20,
+        '30': $tonal-palettes-caution-light-30,
+        '40': $tonal-palettes-caution-light-40,
+        '50': $tonal-palettes-caution-light-50,
+        '60': $tonal-palettes-caution-light-60,
+        '70': $tonal-palettes-caution-light-70,
+        '80': $tonal-palettes-caution-light-80,
+        '90': $tonal-palettes-caution-light-90,
+        '95': $tonal-palettes-caution-light-95,
+        '98': $tonal-palettes-caution-light-98,
+        '100': $tonal-palettes-caution-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-caution-dark-0,
+        '10': $tonal-palettes-caution-dark-10,
+        '20': $tonal-palettes-caution-dark-20,
+        '30': $tonal-palettes-caution-dark-30,
+        '40': $tonal-palettes-caution-dark-40,
+        '50': $tonal-palettes-caution-dark-50,
+        '60': $tonal-palettes-caution-dark-60,
+        '70': $tonal-palettes-caution-dark-70,
+        '80': $tonal-palettes-caution-dark-80,
+        '90': $tonal-palettes-caution-dark-90,
+        '95': $tonal-palettes-caution-dark-95,
+        '98': $tonal-palettes-caution-dark-98,
+        '100': $tonal-palettes-caution-dark-100,
+      ),
+    ),
+    'positive': (
+      'light': (
+        '0': $tonal-palettes-positive-light-0,
+        '10': $tonal-palettes-positive-light-10,
+        '20': $tonal-palettes-positive-light-20,
+        '30': $tonal-palettes-positive-light-30,
+        '40': $tonal-palettes-positive-light-40,
+        '50': $tonal-palettes-positive-light-50,
+        '60': $tonal-palettes-positive-light-60,
+        '70': $tonal-palettes-positive-light-70,
+        '80': $tonal-palettes-positive-light-80,
+        '90': $tonal-palettes-positive-light-90,
+        '95': $tonal-palettes-positive-light-95,
+        '98': $tonal-palettes-positive-light-98,
+        '100': $tonal-palettes-positive-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-positive-dark-0,
+        '10': $tonal-palettes-positive-dark-10,
+        '20': $tonal-palettes-positive-dark-20,
+        '30': $tonal-palettes-positive-dark-30,
+        '40': $tonal-palettes-positive-dark-40,
+        '50': $tonal-palettes-positive-dark-50,
+        '60': $tonal-palettes-positive-dark-60,
+        '70': $tonal-palettes-positive-dark-70,
+        '80': $tonal-palettes-positive-dark-80,
+        '90': $tonal-palettes-positive-dark-90,
+        '95': $tonal-palettes-positive-dark-95,
+        '98': $tonal-palettes-positive-dark-98,
+        '100': $tonal-palettes-positive-dark-100,
+      ),
+    ),
+    'emphasis': (
+      'light': (
+        '0': $tonal-palettes-emphasis-light-0,
+        '10': $tonal-palettes-emphasis-light-10,
+        '20': $tonal-palettes-emphasis-light-20,
+        '30': $tonal-palettes-emphasis-light-30,
+        '40': $tonal-palettes-emphasis-light-40,
+        '50': $tonal-palettes-emphasis-light-50,
+        '60': $tonal-palettes-emphasis-light-60,
+        '70': $tonal-palettes-emphasis-light-70,
+        '80': $tonal-palettes-emphasis-light-80,
+        '90': $tonal-palettes-emphasis-light-90,
+        '95': $tonal-palettes-emphasis-light-95,
+        '98': $tonal-palettes-emphasis-light-98,
+        '100': $tonal-palettes-emphasis-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-emphasis-dark-0,
+        '10': $tonal-palettes-emphasis-dark-10,
+        '20': $tonal-palettes-emphasis-dark-20,
+        '30': $tonal-palettes-emphasis-dark-30,
+        '40': $tonal-palettes-emphasis-dark-40,
+        '50': $tonal-palettes-emphasis-dark-50,
+        '60': $tonal-palettes-emphasis-dark-60,
+        '70': $tonal-palettes-emphasis-dark-70,
+        '80': $tonal-palettes-emphasis-dark-80,
+        '90': $tonal-palettes-emphasis-dark-90,
+        '95': $tonal-palettes-emphasis-dark-95,
+        '98': $tonal-palettes-emphasis-dark-98,
+        '100': $tonal-palettes-emphasis-dark-100,
+      ),
+    ),
+    'secondary': (
+      'light': (
+        '0': $tonal-palettes-secondary-light-0,
+        '10': $tonal-palettes-secondary-light-10,
+        '20': $tonal-palettes-secondary-light-20,
+        '30': $tonal-palettes-secondary-light-30,
+        '40': $tonal-palettes-secondary-light-40,
+        '50': $tonal-palettes-secondary-light-50,
+        '60': $tonal-palettes-secondary-light-60,
+        '70': $tonal-palettes-secondary-light-70,
+        '80': $tonal-palettes-secondary-light-80,
+        '90': $tonal-palettes-secondary-light-90,
+        '95': $tonal-palettes-secondary-light-95,
+        '98': $tonal-palettes-secondary-light-98,
+        '100': $tonal-palettes-secondary-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-secondary-dark-0,
+        '10': $tonal-palettes-secondary-dark-10,
+        '20': $tonal-palettes-secondary-dark-20,
+        '30': $tonal-palettes-secondary-dark-30,
+        '40': $tonal-palettes-secondary-dark-40,
+        '50': $tonal-palettes-secondary-dark-50,
+        '60': $tonal-palettes-secondary-dark-60,
+        '70': $tonal-palettes-secondary-dark-70,
+        '80': $tonal-palettes-secondary-dark-80,
+        '90': $tonal-palettes-secondary-dark-90,
+        '95': $tonal-palettes-secondary-dark-95,
+        '98': $tonal-palettes-secondary-dark-98,
+        '100': $tonal-palettes-secondary-dark-100,
+      ),
+    ),
+    'neutral': (
+      'light': (
+        '0': $tonal-palettes-neutral-light-0,
+        '2': $tonal-palettes-neutral-light-2,
+        '3': $tonal-palettes-neutral-light-3,
+        '4': $tonal-palettes-neutral-light-4,
+        '5': $tonal-palettes-neutral-light-5,
+        '6': $tonal-palettes-neutral-light-6,
+        '7': $tonal-palettes-neutral-light-7,
+        '8': $tonal-palettes-neutral-light-8,
+        '9': $tonal-palettes-neutral-light-9,
+        '10': $tonal-palettes-neutral-light-10,
+        '11': $tonal-palettes-neutral-light-11,
+        '12': $tonal-palettes-neutral-light-12,
+        '13': $tonal-palettes-neutral-light-13,
+        '14': $tonal-palettes-neutral-light-14,
+        '15': $tonal-palettes-neutral-light-15,
+        '16': $tonal-palettes-neutral-light-16,
+        '17': $tonal-palettes-neutral-light-17,
+        '18': $tonal-palettes-neutral-light-18,
+        '19': $tonal-palettes-neutral-light-19,
+        '20': $tonal-palettes-neutral-light-20,
+        '21': $tonal-palettes-neutral-light-21,
+        '22': $tonal-palettes-neutral-light-22,
+        '23': $tonal-palettes-neutral-light-23,
+        '24': $tonal-palettes-neutral-light-24,
+        '25': $tonal-palettes-neutral-light-25,
+        '30': $tonal-palettes-neutral-light-30,
+        '35': $tonal-palettes-neutral-light-35,
+        '40': $tonal-palettes-neutral-light-40,
+        '50': $tonal-palettes-neutral-light-50,
+        '60': $tonal-palettes-neutral-light-60,
+        '70': $tonal-palettes-neutral-light-70,
+        '80': $tonal-palettes-neutral-light-80,
+        '87': $tonal-palettes-neutral-light-87,
+        '90': $tonal-palettes-neutral-light-90,
+        '91': $tonal-palettes-neutral-light-91,
+        '92': $tonal-palettes-neutral-light-92,
+        '93': $tonal-palettes-neutral-light-93,
+        '94': $tonal-palettes-neutral-light-94,
+        '95': $tonal-palettes-neutral-light-95,
+        '96': $tonal-palettes-neutral-light-96,
+        '97': $tonal-palettes-neutral-light-97,
+        '98': $tonal-palettes-neutral-light-98,
+        '99': $tonal-palettes-neutral-light-99,
+        '100': $tonal-palettes-neutral-light-100,
+      ),
+      'dark': (
+        '0': $tonal-palettes-neutral-dark-0,
+        '2': $tonal-palettes-neutral-dark-2,
+        '3': $tonal-palettes-neutral-dark-3,
+        '4': $tonal-palettes-neutral-dark-4,
+        '5': $tonal-palettes-neutral-dark-5,
+        '6': $tonal-palettes-neutral-dark-6,
+        '7': $tonal-palettes-neutral-dark-7,
+        '8': $tonal-palettes-neutral-dark-8,
+        '9': $tonal-palettes-neutral-dark-9,
+        '10': $tonal-palettes-neutral-dark-10,
+        '11': $tonal-palettes-neutral-dark-11,
+        '12': $tonal-palettes-neutral-dark-12,
+        '13': $tonal-palettes-neutral-dark-13,
+        '14': $tonal-palettes-neutral-dark-14,
+        '15': $tonal-palettes-neutral-dark-15,
+        '16': $tonal-palettes-neutral-dark-16,
+        '17': $tonal-palettes-neutral-dark-17,
+        '18': $tonal-palettes-neutral-dark-18,
+        '19': $tonal-palettes-neutral-dark-19,
+        '20': $tonal-palettes-neutral-dark-20,
+        '21': $tonal-palettes-neutral-dark-21,
+        '22': $tonal-palettes-neutral-dark-22,
+        '23': $tonal-palettes-neutral-dark-23,
+        '24': $tonal-palettes-neutral-dark-24,
+        '25': $tonal-palettes-neutral-dark-25,
+        '30': $tonal-palettes-neutral-dark-30,
+        '35': $tonal-palettes-neutral-dark-35,
+        '40': $tonal-palettes-neutral-dark-40,
+        '50': $tonal-palettes-neutral-dark-50,
+        '60': $tonal-palettes-neutral-dark-60,
+        '70': $tonal-palettes-neutral-dark-70,
+        '80': $tonal-palettes-neutral-dark-80,
+        '87': $tonal-palettes-neutral-dark-87,
+        '90': $tonal-palettes-neutral-dark-90,
+        '91': $tonal-palettes-neutral-dark-91,
+        '92': $tonal-palettes-neutral-dark-92,
+        '93': $tonal-palettes-neutral-dark-93,
+        '94': $tonal-palettes-neutral-dark-94,
+        '95': $tonal-palettes-neutral-dark-95,
+        '96': $tonal-palettes-neutral-dark-96,
+        '97': $tonal-palettes-neutral-dark-97,
+        '98': $tonal-palettes-neutral-dark-98,
+        '99': $tonal-palettes-neutral-dark-99,
+        '100': $tonal-palettes-neutral-dark-100,
+      ),
+    ),
+  ),
+  'states': (
+    'primary': (
+      'light': (
+        'hover': $states-primary-light-hover,
+        'focus': $states-primary-light-focus,
+        'press': $states-primary-light-press,
+        'drag': $states-primary-light-drag,
+      ),
+      'dark': (
+        'hover': $states-primary-dark-hover,
+        'focus': $states-primary-dark-focus,
+        'press': $states-primary-dark-press,
+        'drag': $states-primary-dark-drag,
+      ),
+    ),
+    'on-primary': (
+      'light': (
+        'hover': $states-on-primary-light-hover,
+        'focus': $states-on-primary-light-focus,
+        'press': $states-on-primary-light-press,
+        'drag': $states-on-primary-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-primary-dark-hover,
+        'focus': $states-on-primary-dark-focus,
+        'press': $states-on-primary-dark-press,
+        'drag': $states-on-primary-dark-drag,
+      ),
+    ),
+    'on-primary-container': (
+      'light': (
+        'hover': $states-on-primary-container-light-hover,
+        'focus': $states-on-primary-container-light-focus,
+        'press': $states-on-primary-container-light-press,
+        'drag': $states-on-primary-container-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-primary-container-dark-hover,
+        'focus': $states-on-primary-container-dark-focus,
+        'press': $states-on-primary-container-dark-press,
+        'drag': $states-on-primary-container-dark-drag,
+      ),
+    ),
+    'inverse-primary': (
+      'light': (
+        'hover': $states-inverse-primary-light-hover,
+        'focus': $states-inverse-primary-light-focus,
+        'press': $states-inverse-primary-light-press,
+        'drag': $states-inverse-primary-light-drag,
+      ),
+      'dark': (
+        'hover': $states-inverse-primary-dark-hover,
+        'focus': $states-inverse-primary-dark-focus,
+        'press': $states-inverse-primary-dark-press,
+        'drag': $states-inverse-primary-dark-drag,
+      ),
+    ),
+    'tertiary': (
+      'tertiary': (
+        'hover': $states-tertiary-tertiary-hover,
+        'press': $states-tertiary-tertiary-press,
+        'focus': $states-tertiary-tertiary-focus,
+        'drag': $states-tertiary-tertiary-drag,
+      ),
+    ),
+    'on-tertiary': (
+      'light': (
+        'hover': $states-on-tertiary-light-hover,
+        'press': $states-on-tertiary-light-press,
+        'focus': $states-on-tertiary-light-focus,
+        'drag': $states-on-tertiary-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-tertiary-dark-hover,
+        'press': $states-on-tertiary-dark-press,
+        'focus': $states-on-tertiary-dark-focus,
+        'drag': $states-on-tertiary-dark-drag,
+      ),
+    ),
+    'on-tertiary-container': (
+      'light': (
+        'hover': $states-on-tertiary-container-light-hover,
+        'press': $states-on-tertiary-container-light-press,
+        'focus': $states-on-tertiary-container-light-focus,
+        'drag': $states-on-tertiary-container-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-tertiary-container-dark-hover,
+        'press': $states-on-tertiary-container-dark-press,
+        'focus': $states-on-tertiary-container-dark-focus,
+        'drag': $states-on-tertiary-container-dark-drag,
+      ),
+    ),
+    'negative': (
+      'light': (
+        'hover': $states-negative-light-hover,
+        'press': $states-negative-light-press,
+        'focus': $states-negative-light-focus,
+        'drag': $states-negative-light-drag,
+      ),
+      'dark': (
+        'hover': $states-negative-dark-hover,
+        'press': $states-negative-dark-press,
+        'focus': $states-negative-dark-focus,
+        'drag': $states-negative-dark-drag,
+      ),
+    ),
+    'on-negative': (
+      'light': (
+        'hover': $states-on-negative-light-hover,
+        'press': $states-on-negative-light-press,
+        'focus': $states-on-negative-light-focus,
+        'drag': $states-on-negative-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-negative-dark-hover,
+        'press': $states-on-negative-dark-press,
+        'focus': $states-on-negative-dark-focus,
+        'drag': $states-on-negative-dark-drag,
+      ),
+    ),
+    'positive': (
+      'light': (
+        'hover': $states-positive-light-hover,
+        'press': $states-positive-light-press,
+        'focus': $states-positive-light-focus,
+        'drag': $states-positive-light-drag,
+      ),
+      'dark': (
+        'hover': $states-positive-dark-hover,
+        'press': $states-positive-dark-press,
+        'focus': $states-positive-dark-focus,
+        'drag': $states-positive-dark-drag,
+      ),
+    ),
+    'on-positive': (
+      'dark': (
+        'hover': $states-on-positive-dark-hover,
+        'press': $states-on-positive-dark-press,
+        'focus': $states-on-positive-dark-focus,
+        'drag': $states-on-positive-dark-drag,
+      ),
+      'light': (
+        'hover': $states-on-positive-light-hover,
+        'press': $states-on-positive-light-press,
+        'focus': $states-on-positive-light-focus,
+        'drag': $states-on-positive-light-drag,
+      ),
+    ),
+    'on-positive-container': (
+      'light': (
+        'hover': $states-on-positive-container-light-hover,
+        'focus': $states-on-positive-container-light-focus,
+        'press': $states-on-positive-container-light-press,
+        'drag': $states-on-positive-container-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-positive-container-dark-hover,
+        'press': $states-on-positive-container-dark-press,
+        'focus': $states-on-positive-container-dark-focus,
+        'drag': $states-on-positive-container-dark-drag,
+      ),
+    ),
+    'caution': (
+      'light': (
+        'hover': $states-caution-light-hover,
+        'press': $states-caution-light-press,
+        'focus': $states-caution-light-focus,
+        'drag': $states-caution-light-drag,
+      ),
+      'dark': (
+        'hover': $states-caution-dark-hover,
+        'press': $states-caution-dark-press,
+        'focus': $states-caution-dark-focus,
+        'drag': $states-caution-dark-drag,
+      ),
+    ),
+    'on-caution': (
+      'light': (
+        'hover': $states-on-caution-light-hover,
+        'press': $states-on-caution-light-press,
+        'focus': $states-on-caution-light-focus,
+        'drag': $states-on-caution-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-caution-dark-hover,
+        'press': $states-on-caution-dark-press,
+        'focus': $states-on-caution-dark-focus,
+        'drag': $states-on-caution-dark-drag,
+      ),
+    ),
+    'on-caution-container': (
+      'light': (
+        'hover': $states-on-caution-container-light-hover,
+        'press': $states-on-caution-container-light-press,
+        'focus': $states-on-caution-container-light-focus,
+        'color': $states-on-caution-container-light-color,
+      ),
+      'dark': (
+        'hover': $states-on-caution-container-dark-hover,
+        'press': $states-on-caution-container-dark-press,
+        'focus': $states-on-caution-container-dark-focus,
+        'drag': $states-on-caution-container-dark-drag,
+      ),
+    ),
+    'emphasis': (
+      'light': (
+        'hover': $states-emphasis-light-hover,
+        'press': $states-emphasis-light-press,
+        'focus': $states-emphasis-light-focus,
+        'color': $states-emphasis-light-color,
+      ),
+      'dark': (
+        'hover': $states-emphasis-dark-hover,
+        'press': $states-emphasis-dark-press,
+        'focus': $states-emphasis-dark-focus,
+        'drag': $states-emphasis-dark-drag,
+      ),
+    ),
+    'on-emphasis': (
+      'light': (
+        'hover': $states-on-emphasis-light-hover,
+        'press': $states-on-emphasis-light-press,
+        'focus': $states-on-emphasis-light-focus,
+        'drag': $states-on-emphasis-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-emphasis-dark-hover,
+        'press': $states-on-emphasis-dark-press,
+        'focus': $states-on-emphasis-dark-focus,
+        'drag': $states-on-emphasis-dark-drag,
+      ),
+    ),
+    'on-emphasis-container': (
+      'light': (
+        'hover': $states-on-emphasis-container-light-hover,
+        'press': $states-on-emphasis-container-light-press,
+        'focus': $states-on-emphasis-container-light-focus,
+        'drag': $states-on-emphasis-container-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-emphasis-container-dark-hover,
+        'press': $states-on-emphasis-container-dark-press,
+        'focus': $states-on-emphasis-container-dark-focus,
+        'drag': $states-on-emphasis-container-dark-drag,
+      ),
+    ),
+    'secondary': (
+      'light': (
+        'hover': $states-secondary-light-hover,
+        'press': $states-secondary-light-press,
+        'focus': $states-secondary-light-focus,
+        'drag': $states-secondary-light-drag,
+      ),
+      'dark': (
+        'hover': $states-secondary-dark-hover,
+        'press': $states-secondary-dark-press,
+        'focus': $states-secondary-dark-focus,
+        'drag': $states-secondary-dark-drag,
+      ),
+    ),
+    'on-secondary': (
+      'light': (
+        'hover': $states-on-secondary-light-hover,
+        'press': $states-on-secondary-light-press,
+        'focus': $states-on-secondary-light-focus,
+        'drag': $states-on-secondary-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-secondary-dark-hover,
+        'press': $states-on-secondary-dark-press,
+        'focus': $states-on-secondary-dark-focus,
+        'drag': $states-on-secondary-dark-drag,
+      ),
+    ),
+    'on-secondary-container': (
+      'light': (
+        'hover': $states-on-secondary-container-light-hover,
+        'press': $states-on-secondary-container-light-press,
+        'focus': $states-on-secondary-container-light-focus,
+        'drag': $states-on-secondary-container-light-drag,
+      ),
+      'dark': (
+        'hover': $states-on-secondary-container-dark-hover,
+        'press': $states-on-secondary-container-dark-press,
+        'focus': $states-on-secondary-container-dark-focus,
+        'drag': $states-on-secondary-container-dark-drag,
+      ),
+    ),
+    'on-surface': (
+      'dark': (
+        'hover': $states-on-surface-dark-hover,
+        'press': $states-on-surface-dark-press,
+        'focus': $states-on-surface-dark-focus,
+        'drag': $states-on-surface-dark-drag,
+      ),
+      'light': (
+        'hover': $states-on-surface-light-hover,
+        'press': $states-on-surface-light-press,
+        'focus': $states-on-surface-light-focus,
+        'drag': $states-on-surface-light-drag,
+      ),
+    ),
+    'on-surface-variant': (
+      'dark': (
+        'hover': $states-on-surface-variant-dark-hover,
+        'press': $states-on-surface-variant-dark-press,
+        'drag': $states-on-surface-variant-dark-drag,
+        'focus': $states-on-surface-variant-dark-focus,
+      ),
+      'light': (
+        'hover': $states-on-surface-variant-light-hover,
+        'press': $states-on-surface-variant-light-press,
+        'focus': $states-on-surface-variant-light-focus,
+        'drag': $states-on-surface-variant-light-drag,
+      ),
+    ),
+    'color 3': $states-color-3,
+    'inverse-on-surface': (
+      'dark': (
+        'hover': $states-inverse-on-surface-dark-hover,
+        'focus': $states-inverse-on-surface-dark-focus,
+        'press': $states-inverse-on-surface-dark-press,
+        'drag': $states-inverse-on-surface-dark-drag,
+      ),
+      'light': (
+        'hover': $states-inverse-on-surface-light-hover,
+        'press': $states-inverse-on-surface-light-press,
+        'focus': $states-inverse-on-surface-light-focus,
+        'drag': $states-inverse-on-surface-light-drag,
+      ),
+    ),
   ),
   'material': (
     'red-50': $material-red-50,
@@ -882,7 +2740,7 @@ $tokens: (
     'blue-grey-600': $material-blue-grey-600,
     'blue-grey-700': $material-blue-grey-700,
     'blue-grey-800': $material-blue-grey-800,
-    'blue-grey-900': $material-blue-grey-900
+    'blue-grey-900': $material-blue-grey-900,
   ),
   'teradata': (
     'teal-50': $teradata-teal-50,
@@ -935,7 +2793,7 @@ $tokens: (
     'orange-600': $teradata-orange-600,
     'orange-700': $teradata-orange-700,
     'orange-800': $teradata-orange-800,
-    'orange-900': $teradata-orange-900
+    'orange-900': $teradata-orange-900,
   ),
   'typography': (
     'font-family': $typography-font-family,
@@ -986,6 +2844,6 @@ $tokens: (
     'caption-font-family': $typography-caption-font-family,
     'caption-font-size': $typography-caption-font-size,
     'caption-font-weight': $typography-caption-font-weight,
-    'caption-line-height': $typography-caption-line-height
-  )
+    'caption-line-height': $typography-caption-line-height,
+  ),
 );
