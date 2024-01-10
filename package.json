@@ -105,7 +105,7 @@
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-angular": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
-    "@covalent/tokens": "8.1.0-beta.6",
+    "@covalent/tokens": "latest",
     "@nx/angular": "17.3.1",
     "@nx/cypress": "17.3.1",
     "@nx/eslint": "17.3.1",

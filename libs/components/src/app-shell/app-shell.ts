@@ -11,6 +11,8 @@ import styles from './app-shell.scss?inline';
 import '../top-app-bar/top-app-bar-fixed';
 import '../icon-button/icon-button';
 
+import '../card/card';
+
 declare global {
   interface HTMLElementTagNameMap {
     'cv-app-shell': CovalentAppShell;
@@ -53,6 +55,12 @@ export class CovalentAppShell extends DrawerBase {
 
   @property({ type: Boolean, reflect: true })
   helpOpen = false;
+
+  /**
+   * Wrap the main area with a contained card surface
+   */
+  @property({ type: Boolean, reflect: true })
+  contained = false;
 
   /**
    * Force the left navigation visibly open
@@ -145,9 +153,15 @@ export class CovalentAppShell extends DrawerBase {
     return this.sectionName
       ? html`<div class="current-section">
           <slot name="section-action"></slot>
-          <span>${this.sectionName}</span>
+          <span class="current-section-name">${this.sectionName}</span>
         </div>`
       : nothing;
+  }
+
+  protected renderMain() {
+    return this.contained
+      ? html`<cv-card><slot></slot></cv-card>`
+      : html`<slot></slot>`;
   }
 
   override render() {
@@ -201,13 +215,13 @@ export class CovalentAppShell extends DrawerBase {
           </div>
           ${this.renderSection()}
           <slot name="navigation"></slot>
-          <div style="display:flex; flex:1;"></div>
-          <div divider></div>
-          <slot name="user-menu"></slot>
         </nav>
         ${scrim}
         <slot name="mini-list"></slot>
-        <div class="main mdc-drawer-app-content"><slot></slot></div>
+        <div class="main mdc-drawer-app-content">
+          <slot name="user-menu"></slot>
+          ${this.renderMain()}
+        </div>
         <div class="help ${classMap(helpPanelClasses)}">
           <slot name="help"></slot>
         </div>
