@@ -39,6 +39,14 @@
 - correction in links to not break in production ([#2078](https://github.com/Teradata/covalent/issues/2078)) ([6c686e6](https://github.com/Teradata/covalent/commit/6c686e6d2efa8475292ff429fb74e6d09f7cf20f))
 
 ## [7.4.3](https://github.com/Teradata/covalent/compare/v7.4.2...v7.4.3) (2023-11-29)
+# [7.5.0-beta.4](https://github.com/Teradata/covalent/compare/v7.5.0-beta.3...v7.5.0-beta.4) (2024-01-10)
+
+### Features
+
+- **markdown:** updating navigator docked mode ([d5aa605](https://github.com/Teradata/covalent/commit/d5aa605d248417272600f33c984aa5fd24bacfe3))
+- **tokens:** updating tokens for covalent m3 ([db425aa](https://github.com/Teradata/covalent/commit/db425aa6066d7a70657d6505d98a352d1e5747c4))
+
+# [7.5.0-beta.3](https://github.com/Teradata/covalent/compare/v7.5.0-beta.2...v7.5.0-beta.3) (2023-11-30)
 
 ### Bug Fixes
 
