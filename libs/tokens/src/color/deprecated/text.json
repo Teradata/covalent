@@ -1,0 +1,128 @@
+{
+  "light": {
+    "text-primary-on-background": {
+      "value": "{material 3 colors.light.surface.on-surface}",
+      "type": "color"
+    },
+    "text-secondary-on-background": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-hint-on-background": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-disabled-on-background": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-icon-on-background": {
+      "value": "{material 3 colors.light.surface.on-surface-74%}",
+      "type": "color"
+    },
+    "text-logo-on-background": { "value": "#354145", "type": "color" },
+    "text-primary-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface}",
+      "type": "color"
+    },
+    "text-secondary-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-hint-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-disabled-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-icon-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface-74%}",
+      "type": "color"
+    },
+    "text-primary-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface}",
+      "type": "color"
+    },
+    "text-secondary-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-hint-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-disabled-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-icon-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface-74%}",
+      "type": "color"
+    }
+  },
+  "dark": {
+    "text-primary-on-background": {
+      "value": "{material 3 colors.dark.surface.on-surface}",
+      "type": "color"
+    },
+    "text-secondary-on-background": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-hint-on-background": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-disabled-on-background": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-icon-on-background": {
+      "value": "{material 3 colors.dark.surface.on-surface-74%}",
+      "type": "color"
+    },
+    "text-logo-on-background": { "value": "#354145", "type": "color" },
+    "text-primary-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface}",
+      "type": "color"
+    },
+    "text-secondary-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-hint-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-disabled-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-icon-on-light": {
+      "value": "{material 3 colors.light.surface.on-surface-74%}",
+      "type": "color"
+    },
+    "text-primary-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface}",
+      "type": "color"
+    },
+    "text-secondary-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-hint-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-disabled-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface-variant}",
+      "type": "color"
+    },
+    "text-icon-on-dark": {
+      "value": "{material 3 colors.dark.surface.on-surface-74%}",
+      "type": "color"
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "light": {
+    "primary": {
+      "value": "{material 3 colors.light.primary.primary}",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "{material 3 colors.light.secondary.secondary}",
+      "type": "color"
+    },
+    "error": {
+      "value": "{material 3 colors.light.negative.negative}",
+      "type": "color"
+    },
+    "positive": {
+      "value": "{material 3 colors.light.positive.positive}",
+      "type": "color"
+    },
+    "caution": {
+      "value": "{material 3 colors.light.caution.caution}",
+      "type": "color"
+    },
+    "negative": {
+      "value": "{material 3 colors.light.negative.negative}",
+      "type": "color"
+    },
+    "on-primary": {
+      "value": "{material 3 colors.light.primary.on-primary}",
+      "type": "color"
+    },
+    "on-secondary": {
+      "value": "{material 3 colors.light.secondary.on-secondary}",
+      "type": "color"
+    },
+    "on-background": {
+      "value": "{material 3 colors.light.background.on-background}",
+      "type": "color"
+    },
+    "on-surface": {
+      "value": "{material 3 colors.light.surface.on-surface}",
+      "type": "color"
+    },
+    "on-error": {
+      "value": "{material 3 colors.light.negative.on-negative}",
+      "type": "color"
+    },
+    "divider": {
+      "value": "{material 3 colors.light.outline.outline-variant}",
+      "type": "color"
+    },
+    "emphasis": {
+      "value": "{material 3 colors.light.emphasis.emphasis}",
+      "type": "color"
+    },
+    "accent": {
+      "value": "{material 3 colors.light.primary.primary}",
+      "type": "color"
+    }
+  },
+  "dark": {
+    "primary": {
+      "value": "{material 3 colors.dark.primary.primary}",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "{material 3 colors.dark.secondary.secondary}",
+      "type": "color"
+    },
+    "error": {
+      "value": "{material 3 colors.dark.negative.negative}",
+      "type": "color"
+    },
+    "positive": {
+      "value": "{material 3 colors.dark.positive.positive}",
+      "type": "color"
+    },
+    "caution": {
+      "value": "{material 3 colors.dark.caution.caution}",
+      "type": "color"
+    },
+    "negative": {
+      "value": "{material 3 colors.dark.negative.negative}",
+      "type": "color"
+    },
+    "on-primary": {
+      "value": "{material 3 colors.dark.primary.on-primary}",
+      "type": "color"
+    },
+    "on-secondary": {
+      "value": "{material 3 colors.dark.secondary.on-secondary}",
+      "type": "color"
+    },
+    "on-background": {
+      "value": "{material 3 colors.dark.background.on-background}",
+      "type": "color"
+    },
+    "on-surface": {
+      "value": "{material 3 colors.dark.surface.on-surface}",
+      "type": "color"
+    },
+    "on-error": {
+      "value": "{material 3 colors.dark.negative.on-negative}",
+      "type": "color"
+    },
+    "divider": {
+      "value": "{material 3 colors.dark.outline.outline-variant}",
+      "type": "color"
+    },
+    "emphasis": {
+      "value": "{material 3 colors.dark.emphasis.emphasis}",
+      "type": "color"
+    },
+    "accent": {
+      "value": "{material 3 colors.dark.primary.primary}",
+      "type": "color"
+    }
+  }
+}
