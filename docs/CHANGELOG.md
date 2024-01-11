@@ -1,3 +1,9 @@
+# [7.5.0-beta.5](https://github.com/Teradata/covalent/compare/v7.5.0-beta.4...v7.5.0-beta.5) (2024-01-11)
+
+### Bug Fixes
+
+- **storybook:** update to storybook theme ([984a227](https://github.com/Teradata/covalent/commit/984a227756d61cadc86e1aa459d8a6df7c05be6e))
+
 # [7.5.0-beta.4](https://github.com/Teradata/covalent/compare/v7.5.0-beta.3...v7.5.0-beta.4) (2024-01-10)
 
 ### Features
