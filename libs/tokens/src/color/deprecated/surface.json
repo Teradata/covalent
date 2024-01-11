@@ -9,7 +9,7 @@
       "type": "color"
     },
     "surface-canvas": {
-      "value": "{material 3 colors.light.surface.surface-container}",
+      "value": "{material 3 colors.light.surface.surface-container-lowest}",
       "type": "color"
     },
 
@@ -34,7 +34,7 @@
       "type": "color"
     },
     "surface-accent-highlight-hover": {
-      "value": "{material 3 colors.light.primary.primary-8%}",
+      "value": "{material 3 colors.light.primary.primary-12%}",
       "type": "color"
     },
 

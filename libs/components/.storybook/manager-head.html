@@ -13,13 +13,15 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
-  .light #storybook-explorer-tree a.sidebar-item[data-selected='true'] {
-    background-color: rgba(133, 221, 220, 0.1);
-    color: #007373;
+
+  .light #storybook-explorer-tree .sidebar-item[data-selected='false'] svg {
+    color: var(--cv-light-secondary);
   }
-  .light #storybook-explorer-tree a.sidebar-item[data-selected='true'] svg {
-    color: #007373;
+
+  .dark #storybook-explorer-tree .sidebar-item[data-selected='false'] svg {
+    color: var(--cv-dark-secondary);
   }
+
   .light #storybook-explorer-tree a.sidebar-item svg {
     color: rgba(0, 0, 0, 0.54);
   }
@@ -29,14 +31,6 @@
   .light #storybook-explorer-tree a.sidebar-item:hover,
   .light a.sidebar-item:focus {
     background-color: rgba(0, 0, 0, 0.04);
-  }
-
-  #storybook-explorer-tree a.sidebar-item[data-selected='true'] {
-    background-color: rgba(4, 92, 92, 0.4);
-    color: #59cecd;
-  }
-  #storybook-explorer-tree a.sidebar-item[data-selected='true'] svg {
-    color: #59cecd;
   }
   #storybook-explorer-tree a.sidebar-item svg {
     color: #ffffff;
