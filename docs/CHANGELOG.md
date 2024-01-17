@@ -1,3 +1,9 @@
+# [8.1.0-beta.2](https://github.com/Teradata/covalent/compare/v8.1.0-beta.1...v8.1.0-beta.2) (2024-01-17)
+
+### Features
+
+- **branding:** updated tokens path ([2152bc2](https://github.com/Teradata/covalent/commit/2152bc2492a089506d539d50217b1d2ea58205de))
+
 # [8.1.0-beta.1](https://github.com/Teradata/covalent/compare/v8.0.0...v8.1.0-beta.1) (2024-01-17)
 
 ### Bug Fixes
