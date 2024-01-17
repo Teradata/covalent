@@ -5,18 +5,32 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$td-tonal-palettes: map-get(variables.$tokens, 'tonal palettes');
+$td-theme: map-get(variables.$tokens, 'theme');
+$td-theme-dark: map-get($td-theme, 'dark');
+$td-dark-palettes: map-get($td-theme-dark, 'palettes');
+$td-dark-colors: map-get($td-theme-dark, 'colors');
+
+$td-theme-light: map-get($td-theme, 'light');
+$td-light-palettes: map-get($td-theme-light, 'palettes');
+$td-light-colors: map-get($td-theme-light, 'colors');
 
 // Digital blue
-$td-digital-blue: map-get($td-tonal-palettes, 'digital blue');
-$td-digital-blue-light: map-get($td-digital-blue, light);
-$td-digital-blue-dark: map-get($td-digital-blue, dark);
 // Add contrast for angular palette
 $td-digital-blue-light: map-merge(
-  $td-digital-blue-light,
+  (
+    '30': map-get($td-light-palettes, 'digital blue 30'),
+    '40': map-get($td-light-palettes, 'digital blue 40'),
+    '50': map-get($td-light-palettes, 'digital blue 50'),
+    '500': map-get($td-light-palettes, 'digital blue 50'),
+    '60': map-get($td-light-palettes, 'digital blue 60'),
+    '70': map-get($td-light-palettes, 'digital blue 70'),
+    '80': map-get($td-light-palettes, 'digital blue 80'),
+    '90': map-get($td-light-palettes, 'digital blue 90'),
+  ),
   (
     contrast: (
       '30': variables.$light-on-primary,
+      '40': variables.$light-on-primary,
       '50': variables.$light-on-primary,
       '500': variables.$light-on-primary,
       '60': variables.$light-on-primary,
@@ -27,10 +41,20 @@ $td-digital-blue-light: map-merge(
   )
 );
 $td-digital-blue-dark: map-merge(
-  $td-digital-blue-dark,
+  (
+    '30': map-get($td-dark-palettes, 'digital blue 30'),
+    '40': map-get($td-dark-palettes, 'digital blue 40'),
+    '50': map-get($td-dark-palettes, 'digital blue 50'),
+    '500': map-get($td-dark-palettes, 'digital blue 50'),
+    '60': map-get($td-dark-palettes, 'digital blue 60'),
+    '70': map-get($td-dark-palettes, 'digital blue 70'),
+    '80': map-get($td-dark-palettes, 'digital blue 80'),
+    '90': map-get($td-dark-palettes, 'digital blue 90'),
+  ),
   (
     contrast: (
       '30': variables.$dark-on-primary,
+      '40': variables.$dark-on-primary,
       '50': variables.$dark-on-primary,
       '500': variables.$dark-on-primary,
       '60': variables.$dark-on-primary,
@@ -42,38 +66,104 @@ $td-digital-blue-dark: map-merge(
 );
 
 // Secondary
-$td-secondary: map-get($td-tonal-palettes, 'secondary');
-$td-secondary-light: map-get($td-secondary, light);
-$td-secondary-dark: map-get($td-secondary, dark);
 // Add contrast for angular palette
 $td-secondary-light: map-merge(
-  $td-secondary-light,
   (
-    contrast: $td-secondary-dark,
+    '30': map-get($td-light-palettes, 'secondary 30'),
+    '40': map-get($td-light-palettes, 'secondary 40'),
+    '50': map-get($td-light-palettes, 'secondary 50'),
+    '500': map-get($td-light-palettes, 'secondary 50'),
+    '60': map-get($td-light-palettes, 'secondary 60'),
+    '70': map-get($td-light-palettes, 'secondary 70'),
+    '80': map-get($td-light-palettes, 'secondary 80'),
+    '90': map-get($td-light-palettes, 'secondary 90'),
+  ),
+  (
+    contrast: (
+      '30': variables.$light-on-secondary,
+      '40': variables.$light-on-secondary,
+      '50': variables.$light-on-secondary,
+      '500': variables.$light-on-secondary,
+      '60': variables.$light-on-secondary,
+      '70': variables.$light-on-secondary,
+      '80': variables.$light-on-secondary,
+      '90': variables.$light-on-secondary,
+    ),
   )
 );
 $td-secondary-dark: map-merge(
-  $td-secondary-dark,
   (
-    contrast: $td-secondary-light,
+    '30': map-get($td-dark-palettes, 'secondary 30'),
+    '40': map-get($td-dark-palettes, 'secondary 40'),
+    '50': map-get($td-dark-palettes, 'secondary 50'),
+    '500': map-get($td-dark-palettes, 'secondary 50'),
+    '60': map-get($td-dark-palettes, 'secondary 60'),
+    '70': map-get($td-dark-palettes, 'secondary 70'),
+    '80': map-get($td-dark-palettes, 'secondary 80'),
+    '90': map-get($td-dark-palettes, 'secondary 90'),
+  ),
+  (
+    contrast: (
+      '30': variables.$dark-on-secondary,
+      '40': variables.$dark-on-secondary,
+      '50': variables.$dark-on-secondary,
+      '500': variables.$dark-on-secondary,
+      '60': variables.$dark-on-secondary,
+      '70': variables.$dark-on-secondary,
+      '80': variables.$dark-on-secondary,
+      '90': variables.$dark-on-secondary,
+    ),
   )
 );
 
 // Warn
-$td-warn: map-get($td-tonal-palettes, 'negative');
-$td-warn-light: map-get($td-warn, light);
-$td-warn-dark: map-get($td-warn, dark);
 // Add contrast for angular palette
 $td-warn-light: map-merge(
-  $td-warn-light,
   (
-    contrast: $td-warn-dark,
+    '30': map-get($td-light-palettes, 'negative 30'),
+    '40': map-get($td-light-palettes, 'negative 40'),
+    '50': map-get($td-light-palettes, 'negative 50'),
+    '500': map-get($td-light-palettes, 'negative 50'),
+    '60': map-get($td-light-palettes, 'negative 60'),
+    '70': map-get($td-light-palettes, 'negative 70'),
+    '80': map-get($td-light-palettes, 'negative 80'),
+    '90': map-get($td-light-palettes, 'negative 90'),
+  ),
+  (
+    contrast: (
+      '30': variables.$theme-light-colors-on-negative,
+      '40': variables.$theme-light-colors-on-negative,
+      '50': variables.$theme-light-colors-on-negative,
+      '500': variables.$theme-light-colors-on-negative,
+      '60': variables.$theme-light-colors-on-negative,
+      '70': variables.$theme-light-colors-on-negative,
+      '80': variables.$theme-light-colors-on-negative,
+      '90': variables.$theme-light-colors-on-negative,
+    ),
   )
 );
 $td-warn-dark: map-merge(
-  $td-warn-dark,
   (
-    contrast: $td-warn-light,
+    '30': map-get($td-dark-palettes, 'negative 30'),
+    '40': map-get($td-dark-palettes, 'negative 40'),
+    '50': map-get($td-dark-palettes, 'negative 50'),
+    '500': map-get($td-dark-palettes, 'negative 50'),
+    '60': map-get($td-dark-palettes, 'negative 60'),
+    '70': map-get($td-dark-palettes, 'negative 70'),
+    '80': map-get($td-dark-palettes, 'negative 80'),
+    '90': map-get($td-dark-palettes, 'negative 90'),
+  ),
+  (
+    contrast: (
+      '30': variables.$theme-dark-colors-on-negative,
+      '40': variables.$theme-dark-colors-on-negative,
+      '50': variables.$theme-dark-colors-on-negative,
+      '500': variables.$theme-dark-colors-on-negative,
+      '60': variables.$theme-dark-colors-on-negative,
+      '70': variables.$theme-dark-colors-on-negative,
+      '80': variables.$theme-dark-colors-on-negative,
+      '90': variables.$theme-dark-colors-on-negative,
+    ),
   )
 );
 
@@ -93,25 +183,25 @@ $td-warn-dark: $td-warn-dark;
 // Background palette for light themes.
 // todo: need to re-catalog used variables
 $td-light-theme-background: (
-  status-bar: variables.$material-3-colors-light-surface-surface-container,
+  status-bar: variables.$theme-light-colors-surface-container,
   app-bar: variables.$light-surface,
-  background: variables.$material-3-colors-light-surface-surface,
+  background: variables.$theme-light-colors-surface,
   canvas: variables.$light-surface-canvas,
-  card: variables.$material-3-colors-light-surface-surface-container
+  card: variables.$theme-light-colors-surface-container
     /*** card color = surface color ***/,
-  dialog: variables.$material-3-colors-light-surface-surface-container-high,
+  dialog: variables.$theme-light-colors-surface-container-high,
   hover: variables.$light-surface-primary-highlight-hover,
-  disabled-button: variables.$material-3-colors-light-surface-surface-dim,
-  disabled-button-toggle: variables.$material-3-colors-light-surface-surface-dim,
-  disabled-list-option: variables.$material-3-colors-light-surface-surface-dim,
+  disabled-button: variables.$theme-light-colors-surface-dim,
+  disabled-button-toggle: variables.$theme-light-colors-surface-dim,
+  disabled-list-option: variables.$theme-light-colors-surface-dim,
   raised-button: variables.$light-surface-primary,
   focused-button: variables.$light-surface-primary-highlight,
-  selected-button: variables.$material-3-colors-light-surface-surface-dim,
+  selected-button: variables.$theme-light-colors-surface-dim,
   selected-disabled-button:
-    variables.$material-3-colors-light-surface-surface-dim,
-  unselected-chip: variables.$material-3-colors-light-surface-surface-variant,
-  tooltip: variables.$material-3-colors-light-surface-surface-container-highest,
-  overlay: variables.$material-3-colors-light-scrim-scrim,
+    variables.$theme-light-colors-surface-dim,
+  unselected-chip: variables.$theme-light-colors-surface-variant,
+  tooltip: variables.$theme-light-colors-surface-container-highest,
+  overlay: variables.$theme-light-colors-scrim,
   accent: variables.$light-accent,
   accent-highlight: variables.$light-surface-accent-highlight,
   accent-highlight-hover: variables.$light-surface-accent-highlight-hover,
@@ -141,51 +231,51 @@ $td-light-theme-foreground: (
   base: variables.$light-on-background,
   divider: variables.$light-divider,
   dividers: variables.$light-divider,
-  disabled: variables.$material-3-colors-light-surface-on-surface-38,
-  disabled-button: variables.$material-3-colors-light-surface-on-surface-38,
-  disabled-text: variables.$material-3-colors-light-surface-on-surface-38,
+  disabled: variables.$theme-light-colors-on-surface-38,
+  disabled-button: variables.$theme-light-colors-on-surface-38,
+  disabled-text: variables.$theme-light-colors-on-surface-38,
   elevation: black,
   // todo: need to work out elevation
-  hint-text: variables.$material-3-colors-light-surface-on-surface-variant,
-  secondary-text: variables.$material-3-colors-light-surface-on-surface-variant,
+  hint-text: variables.$theme-light-colors-on-surface-variant,
+  secondary-text: variables.$theme-light-colors-on-surface-variant,
   icon: variables.$light-text-icon-on-background,
   icons: variables.$light-text-icon-on-background,
   text: variables.$light-on-surface,
   slider-min: variables.$light-on-surface,
-  slider-off: variables.$material-3-colors-light-surface-on-surface-8,
-  slider-off-active: variables.$material-3-colors-light-surface-on-surface-16,
-  accent: variables.$material-3-colors-light-primary-on-primary,
-  emphasis: variables.$material-3-colors-light-emphasis-on-emphasis,
-  caution: variables.$material-3-colors-light-caution-on-caution,
-  negative: variables.$material-3-colors-light-negative-on-negative,
+  slider-off: variables.$theme-light-colors-on-surface-8,
+  slider-off-active: variables.$theme-light-colors-on-surface-16,
+  accent: variables.$theme-light-colors-on-primary,
+  emphasis: variables.$theme-light-colors-on-emphasis,
+  caution: variables.$theme-light-colors-on-caution,
+  negative: variables.$theme-light-colors-on-negative,
   neutral: variables.$light-on-surface,
   // todo: need to work out on-neutral tokens
-  positive: variables.$material-3-colors-light-positive-on-positive,
-  primary: variables.$material-3-colors-light-primary-on-primary,
+  positive: variables.$theme-light-colors-on-positive,
+  primary: variables.$theme-light-colors-on-primary,
 );
 
 // Background palette for dark themes.
 // todo: need to re-catalog used variables
 $td-dark-theme-background: (
-  status-bar: variables.$material-3-colors-dark-surface-surface-container-lowest,
-  app-bar: variables.$material-3-colors-dark-surface-surface-container-low,
-  background: variables.$material-3-colors-dark-surface-surface,
+  status-bar: variables.$theme-dark-colors-surface-container-lowest,
+  app-bar: variables.$theme-dark-colors-surface-container-low,
+  background: variables.$theme-dark-colors-surface,
   canvas: variables.$dark-surface-canvas,
-  card: variables.$material-3-colors-dark-surface-surface-container
+  card: variables.$theme-dark-colors-surface-container
     /*** card color = surface color ***/,
-  dialog: variables.$material-3-colors-dark-surface-surface-container-high,
+  dialog: variables.$theme-dark-colors-surface-container-high,
   hover: variables.$dark-surface-primary-highlight-hover,
-  disabled-button: variables.$material-3-colors-dark-surface-surface-dim,
-  disabled-button-toggle: variables.$material-3-colors-dark-surface-surface-dim,
-  disabled-list-option: variables.$material-3-colors-dark-surface-surface-dim,
+  disabled-button: variables.$theme-dark-colors-surface-dim,
+  disabled-button-toggle: variables.$theme-dark-colors-surface-dim,
+  disabled-list-option: variables.$theme-dark-colors-surface-dim,
   raised-button: variables.$dark-surface-primary,
   focused-button: variables.$dark-surface-primary-highlight,
-  selected-button: variables.$material-3-colors-dark-surface-surface-dim,
+  selected-button: variables.$theme-dark-colors-surface-dim,
   selected-disabled-button:
-    variables.$material-3-colors-dark-surface-surface-dim,
-  unselected-chip: variables.$material-3-colors-dark-surface-surface-variant,
-  tooltip: variables.$material-3-colors-dark-surface-surface-container-highest,
-  overlay: variables.$material-3-colors-dark-scrim-scrim,
+    variables.$theme-dark-colors-surface-dim,
+  unselected-chip: variables.$theme-dark-colors-surface-variant,
+  tooltip: variables.$theme-dark-colors-surface-container-highest,
+  overlay: variables.$theme-dark-colors-scrim,
   accent: variables.$dark-accent,
   accent-highlight: variables.$dark-surface-accent-highlight,
   accent-highlight-hover: variables.$dark-surface-accent-highlight-hover,
@@ -215,27 +305,27 @@ $td-dark-theme-foreground: (
   base: variables.$dark-on-background,
   divider: variables.$dark-divider,
   dividers: variables.$dark-divider,
-  disabled: variables.$material-3-colors-dark-surface-on-surface-38,
-  disabled-button: variables.$material-3-colors-dark-surface-on-surface-38,
-  disabled-text: variables.$material-3-colors-dark-surface-on-surface-38,
+  disabled: variables.$theme-dark-colors-on-surface-38,
+  disabled-button: variables.$theme-dark-colors-on-surface-38,
+  disabled-text: variables.$theme-dark-colors-on-surface-38,
   elevation: black,
   // todo: need to work out elevation
-  hint-text: variables.$material-3-colors-dark-surface-on-surface-variant,
-  secondary-text: variables.$material-3-colors-dark-surface-on-surface-variant,
+  hint-text: variables.$theme-dark-colors-on-surface-variant,
+  secondary-text: variables.$theme-dark-colors-on-surface-variant,
   icon: variables.$dark-text-icon-on-background,
   icons: variables.$dark-text-icon-on-background,
   text: variables.$dark-on-surface,
   slider-min: variables.$dark-on-surface,
-  slider-off: variables.$material-3-colors-dark-surface-on-surface-8,
-  slider-off-active: variables.$material-3-colors-dark-surface-on-surface-16,
-  accent: variables.$material-3-colors-dark-primary-on-primary,
-  emphasis: variables.$material-3-colors-dark-emphasis-on-emphasis,
-  caution: variables.$material-3-colors-dark-caution-on-caution,
-  negative: variables.$material-3-colors-dark-negative-on-negative,
+  slider-off: variables.$theme-dark-colors-on-surface-8,
+  slider-off-active: variables.$theme-dark-colors-on-surface-16,
+  accent: variables.$theme-dark-colors-on-primary,
+  emphasis: variables.$theme-dark-colors-on-emphasis,
+  caution: variables.$theme-dark-colors-on-caution,
+  negative: variables.$theme-dark-colors-on-negative,
   neutral: variables.$dark-on-surface,
   // todo: need to work out on-neutral tokens
-  positive: variables.$material-3-colors-dark-positive-on-positive,
-  primary: variables.$material-3-colors-dark-primary-on-primary,
+  positive: variables.$theme-dark-colors-on-positive,
+  primary: variables.$theme-dark-colors-on-primary,
 );
 
 // Custom typography
