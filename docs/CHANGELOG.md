@@ -1,3 +1,9 @@
+# [8.1.0-beta.3](https://github.com/Teradata/covalent/compare/v8.1.0-beta.2...v8.1.0-beta.3) (2024-01-17)
+
+### Bug Fixes
+
+- **components:** update td logo in storybook ([0687fcf](https://github.com/Teradata/covalent/commit/0687fcfdc02ef2f6540c1cdac03d175b9f076029))
+
 # [8.1.0-beta.2](https://github.com/Teradata/covalent/compare/v8.1.0-beta.1...v8.1.0-beta.2) (2024-01-17)
 
 ### Features
