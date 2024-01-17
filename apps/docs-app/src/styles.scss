@@ -62,7 +62,7 @@ $background: map-get($td-light-theme, background);
 }
 
 .cv-surface-high {
-  background-color: variables.$material-3-colors-light-surface-surface-container-high;
+  background-color: variables.$theme-light-colors-surface-container-high;
 }
 
 body .mat-card {
@@ -87,7 +87,7 @@ body .mat-card {
   }
 
   .cv-surface-high {
-    background-color: variables.$material-3-colors-dark-surface-surface-container-high;
+    background-color: variables.$theme-dark-colors-surface-container-high;
   }
 }
 

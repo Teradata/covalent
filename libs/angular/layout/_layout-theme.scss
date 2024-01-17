@@ -55,12 +55,8 @@
   td-layout-card-over,
   td-navigation-drawer,
   td-layout {
-    --mat-sidenav-container-background-color: var(
-      --mat-sidenav-content-background-color
-    );
-    --mat-expansion-container-background-color: var(
-      --mat-sidenav-content-background-color
-    );
+    --mat-sidenav-container-background-color: var(--mat-sidenav-content-background-color);
+    --mat-expansion-container-background-color: var(--mat-sidenav-content-background-color);
 
     mat-toolbar {
       @include mat-elevation(1);
@@ -97,8 +93,6 @@
   }
 
   .td-layout-footer {
-    // background: mat-color($background, app-bar);
-    // color: mat-color($foreground, text);
     @include mat-elevation(2);
 
     &.mat-primary {

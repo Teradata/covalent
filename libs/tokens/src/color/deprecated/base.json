@@ -1,117 +1,117 @@
 {
   "light": {
     "primary": {
-      "value": "{material 3 colors.light.primary.primary}",
+      "value": "{theme.light.colors.primary}",
       "type": "color"
     },
     "secondary": {
-      "value": "{material 3 colors.light.secondary.secondary}",
+      "value": "{theme.light.colors.secondary}",
       "type": "color"
     },
     "error": {
-      "value": "{material 3 colors.light.negative.negative}",
+      "value": "{theme.light.colors.negative}",
       "type": "color"
     },
     "positive": {
-      "value": "{material 3 colors.light.positive.positive}",
+      "value": "{theme.light.colors.positive}",
       "type": "color"
     },
     "caution": {
-      "value": "{material 3 colors.light.caution.caution}",
+      "value": "{theme.light.colors.caution}",
       "type": "color"
     },
     "negative": {
-      "value": "{material 3 colors.light.negative.negative}",
+      "value": "{theme.light.colors.negative}",
       "type": "color"
     },
     "on-primary": {
-      "value": "{material 3 colors.light.primary.on-primary}",
+      "value": "{theme.light.colors.on-primary}",
       "type": "color"
     },
     "on-secondary": {
-      "value": "{material 3 colors.light.secondary.on-secondary}",
+      "value": "{theme.light.colors.on-secondary}",
       "type": "color"
     },
     "on-background": {
-      "value": "{material 3 colors.light.background.on-background}",
+      "value": "{theme.light.colors.on-surface}",
       "type": "color"
     },
     "on-surface": {
-      "value": "{material 3 colors.light.surface.on-surface}",
+      "value": "{theme.light.colors.on-surface}",
       "type": "color"
     },
     "on-error": {
-      "value": "{material 3 colors.light.negative.on-negative}",
+      "value": "{theme.light.colors.on-negative}",
       "type": "color"
     },
     "divider": {
-      "value": "{material 3 colors.light.outline.outline-variant}",
+      "value": "{theme.light.colors.outline-variant}",
       "type": "color"
     },
     "emphasis": {
-      "value": "{material 3 colors.light.emphasis.emphasis}",
+      "value": "{theme.light.colors.emphasis}",
       "type": "color"
     },
     "accent": {
-      "value": "{material 3 colors.light.primary.primary}",
+      "value": "{theme.light.colors.primary}",
       "type": "color"
     }
   },
   "dark": {
     "primary": {
-      "value": "{material 3 colors.dark.primary.primary}",
+      "value": "{theme.dark.colors.primary}",
       "type": "color"
     },
     "secondary": {
-      "value": "{material 3 colors.dark.secondary.secondary}",
+      "value": "{theme.dark.colors.secondary}",
       "type": "color"
     },
     "error": {
-      "value": "{material 3 colors.dark.negative.negative}",
+      "value": "{theme.dark.colors.negative}",
       "type": "color"
     },
     "positive": {
-      "value": "{material 3 colors.dark.positive.positive}",
+      "value": "{theme.dark.colors.positive}",
       "type": "color"
     },
     "caution": {
-      "value": "{material 3 colors.dark.caution.caution}",
+      "value": "{theme.dark.colors.caution}",
       "type": "color"
     },
     "negative": {
-      "value": "{material 3 colors.dark.negative.negative}",
+      "value": "{theme.dark.colors.negative}",
       "type": "color"
     },
     "on-primary": {
-      "value": "{material 3 colors.dark.primary.on-primary}",
+      "value": "{theme.dark.colors.on-primary}",
       "type": "color"
     },
     "on-secondary": {
-      "value": "{material 3 colors.dark.secondary.on-secondary}",
+      "value": "{theme.dark.colors.on-secondary}",
       "type": "color"
     },
     "on-background": {
-      "value": "{material 3 colors.dark.background.on-background}",
+      "value": "{theme.dark.colors.on-surface}",
       "type": "color"
     },
     "on-surface": {
-      "value": "{material 3 colors.dark.surface.on-surface}",
+      "value": "{theme.dark.colors.on-surface}",
       "type": "color"
     },
     "on-error": {
-      "value": "{material 3 colors.dark.negative.on-negative}",
+      "value": "{theme.dark.colors.on-negative}",
       "type": "color"
     },
     "divider": {
-      "value": "{material 3 colors.dark.outline.outline-variant}",
+      "value": "{theme.dark.colors.outline-variant}",
       "type": "color"
     },
     "emphasis": {
-      "value": "{material 3 colors.dark.emphasis.emphasis}",
+      "value": "{theme.dark.colors.emphasis}",
       "type": "color"
     },
     "accent": {
-      "value": "{material 3 colors.dark.primary.primary}",
+      "value": "{theme.dark.colors.primary}",
       "type": "color"
     }
   }
