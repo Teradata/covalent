@@ -1,0 +1,455 @@
+@use '@angular/material' as mat;
+@use '../../../libs/tokens/_generated/_index' as variables;
+
+// Customer Teradata brand palette
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$td-tonal-palettes: map-get(variables.$tokens, 'tonal palettes');
+
+// Digital blue
+$td-digital-blue: map-get($td-tonal-palettes, 'digital blue');
+$td-digital-blue-light: map-get($td-digital-blue, light);
+$td-digital-blue-dark: map-get($td-digital-blue, dark);
+// Add contrast for angular palette
+$td-digital-blue-light: map-merge(
+  $td-digital-blue-light,
+  (
+    contrast: (
+      '30': variables.$light-on-primary,
+      '50': variables.$light-on-primary,
+      '500': variables.$light-on-primary,
+      '60': variables.$light-on-primary,
+      '70': variables.$light-on-primary,
+      '80': variables.$light-on-primary,
+      '90': variables.$light-on-primary,
+    ),
+  )
+);
+$td-digital-blue-dark: map-merge(
+  $td-digital-blue-dark,
+  (
+    contrast: (
+      '30': variables.$dark-on-primary,
+      '50': variables.$dark-on-primary,
+      '500': variables.$dark-on-primary,
+      '60': variables.$dark-on-primary,
+      '70': variables.$dark-on-primary,
+      '80': variables.$dark-on-primary,
+      '90': variables.$dark-on-primary,
+    ),
+  )
+);
+
+// Secondary
+$td-secondary: map-get($td-tonal-palettes, 'secondary');
+$td-secondary-light: map-get($td-secondary, light);
+$td-secondary-dark: map-get($td-secondary, dark);
+// Add contrast for angular palette
+$td-secondary-light: map-merge(
+  $td-secondary-light,
+  (
+    contrast: $td-secondary-dark,
+  )
+);
+$td-secondary-dark: map-merge(
+  $td-secondary-dark,
+  (
+    contrast: $td-secondary-light,
+  )
+);
+
+// Warn
+$td-warn: map-get($td-tonal-palettes, 'negative');
+$td-warn-light: map-get($td-warn, light);
+$td-warn-dark: map-get($td-warn, dark);
+// Add contrast for angular palette
+$td-warn-light: map-merge(
+  $td-warn-light,
+  (
+    contrast: $td-warn-dark,
+  )
+);
+$td-warn-dark: map-merge(
+  $td-warn-dark,
+  (
+    contrast: $td-warn-light,
+  )
+);
+
+$td-primary: $td-digital-blue-light;
+$td-secondary: $td-secondary-light;
+$td-accent: $td-digital-blue-light;
+// The warn palette is optional (defaults to red).
+$td-warn: $td-warn-light;
+
+// Dark theme tokens
+$td-primary-dark: $td-digital-blue-dark;
+$td-secondary-dark: $td-secondary-dark;
+$td-accent-dark: $td-digital-blue-dark;
+// The warn palette is optional (defaults to red).
+$td-warn-dark: $td-warn-dark;
+
+// Background palette for light themes.
+// todo: need to re-catalog used variables
+$td-light-theme-background: (
+  status-bar: variables.$material-3-colors-light-surface-surface-container,
+  app-bar: variables.$light-surface,
+  background: variables.$material-3-colors-light-surface-surface,
+  canvas: variables.$light-surface-canvas,
+  card: variables.$material-3-colors-light-surface-surface-container
+    /*** card color = surface color ***/,
+  dialog: variables.$material-3-colors-light-surface-surface-container-high,
+  hover: variables.$light-surface-primary-highlight-hover,
+  disabled-button: variables.$material-3-colors-light-surface-surface-dim,
+  disabled-button-toggle: variables.$material-3-colors-light-surface-surface-dim,
+  disabled-list-option: variables.$material-3-colors-light-surface-surface-dim,
+  raised-button: variables.$light-surface-primary,
+  focused-button: variables.$light-surface-primary-highlight,
+  selected-button: variables.$material-3-colors-light-surface-surface-dim,
+  selected-disabled-button:
+    variables.$material-3-colors-light-surface-surface-dim,
+  unselected-chip: variables.$material-3-colors-light-surface-surface-variant,
+  tooltip: variables.$material-3-colors-light-surface-surface-container-highest,
+  overlay: variables.$material-3-colors-light-scrim-scrim,
+  accent: variables.$light-accent,
+  accent-highlight: variables.$light-surface-accent-highlight,
+  accent-highlight-hover: variables.$light-surface-accent-highlight-hover,
+  emphasis: variables.$light-emphasis,
+  emphasis-highlight: variables.$light-surface-emphasis-highlight,
+  emphasis-highlight-hover: variables.$light-surface-emphasis-highlight,
+  caution: variables.$light-surface-caution,
+  caution-highlight: variables.$light-surface-caution-highlight,
+  caution-highlight-hover: variables.$light-surface-caution-highlight-hover,
+  negative: variables.$light-surface-negative,
+  negative-highlight: variables.$light-surface-negative-highlight,
+  negative-highlight-hover: variables.$light-surface-negative-highlight-hover,
+  neutral: variables.$light-surface-neutral,
+  neutral-highlight: variables.$light-surface-neutral-highlight,
+  neutral-highlight-hover: variables.$light-surface-neutral-highlight-hover,
+  positive: variables.$light-surface-positive,
+  positive-highlight: variables.$light-surface-positive-highlight,
+  positive-highlight-hover: variables.$light-surface-positive-highlight-hover,
+  primary: variables.$light-surface-primary,
+  primary-highlight: variables.$light-surface-primary-highlight,
+  primary-highlight-hover: variables.$light-surface-primary-highlight-hover,
+);
+
+// Foreground palette for light themes.
+// todo: need to re-catalog used variables
+$td-light-theme-foreground: (
+  base: variables.$light-on-background,
+  divider: variables.$light-divider,
+  dividers: variables.$light-divider,
+  disabled: variables.$material-3-colors-light-surface-on-surface-38,
+  disabled-button: variables.$material-3-colors-light-surface-on-surface-38,
+  disabled-text: variables.$material-3-colors-light-surface-on-surface-38,
+  elevation: black,
+  // todo: need to work out elevation
+  hint-text: variables.$material-3-colors-light-surface-on-surface-variant,
+  secondary-text: variables.$material-3-colors-light-surface-on-surface-variant,
+  icon: variables.$light-text-icon-on-background,
+  icons: variables.$light-text-icon-on-background,
+  text: variables.$light-on-surface,
+  slider-min: variables.$light-on-surface,
+  slider-off: variables.$material-3-colors-light-surface-on-surface-8,
+  slider-off-active: variables.$material-3-colors-light-surface-on-surface-16,
+  accent: variables.$material-3-colors-light-primary-on-primary,
+  emphasis: variables.$material-3-colors-light-emphasis-on-emphasis,
+  caution: variables.$material-3-colors-light-caution-on-caution,
+  negative: variables.$material-3-colors-light-negative-on-negative,
+  neutral: variables.$light-on-surface,
+  // todo: need to work out on-neutral tokens
+  positive: variables.$material-3-colors-light-positive-on-positive,
+  primary: variables.$material-3-colors-light-primary-on-primary,
+);
+
+// Background palette for dark themes.
+// todo: need to re-catalog used variables
+$td-dark-theme-background: (
+  status-bar: variables.$material-3-colors-dark-surface-surface-container-lowest,
+  app-bar: variables.$material-3-colors-dark-surface-surface-container-low,
+  background: variables.$material-3-colors-dark-surface-surface,
+  canvas: variables.$dark-surface-canvas,
+  card: variables.$material-3-colors-dark-surface-surface-container
+    /*** card color = surface color ***/,
+  dialog: variables.$material-3-colors-dark-surface-surface-container-high,
+  hover: variables.$dark-surface-primary-highlight-hover,
+  disabled-button: variables.$material-3-colors-dark-surface-surface-dim,
+  disabled-button-toggle: variables.$material-3-colors-dark-surface-surface-dim,
+  disabled-list-option: variables.$material-3-colors-dark-surface-surface-dim,
+  raised-button: variables.$dark-surface-primary,
+  focused-button: variables.$dark-surface-primary-highlight,
+  selected-button: variables.$material-3-colors-dark-surface-surface-dim,
+  selected-disabled-button:
+    variables.$material-3-colors-dark-surface-surface-dim,
+  unselected-chip: variables.$material-3-colors-dark-surface-surface-variant,
+  tooltip: variables.$material-3-colors-dark-surface-surface-container-highest,
+  overlay: variables.$material-3-colors-dark-scrim-scrim,
+  accent: variables.$dark-accent,
+  accent-highlight: variables.$dark-surface-accent-highlight,
+  accent-highlight-hover: variables.$dark-surface-accent-highlight-hover,
+  emphasis: variables.$dark-emphasis,
+  emphasis-highlight: variables.$dark-surface-emphasis-highlight,
+  emphasis-highlight-hover: variables.$dark-surface-emphasis-highlight,
+  caution: variables.$dark-surface-caution,
+  caution-highlight: variables.$dark-surface-caution-highlight,
+  caution-highlight-hover: variables.$dark-surface-caution-highlight-hover,
+  negative: variables.$dark-surface-negative,
+  negative-highlight: variables.$dark-surface-negative-highlight,
+  negative-highlight-hover: variables.$dark-surface-negative-highlight-hover,
+  neutral: variables.$dark-surface-neutral,
+  neutral-highlight: variables.$dark-surface-neutral-highlight,
+  neutral-highlight-hover: variables.$dark-surface-neutral-highlight-hover,
+  positive: variables.$dark-surface-positive,
+  positive-highlight: variables.$dark-surface-positive-highlight,
+  positive-highlight-hover: variables.$dark-surface-positive-highlight-hover,
+  primary: variables.$dark-surface-primary,
+  primary-highlight: variables.$dark-surface-primary-highlight,
+  primary-highlight-hover: variables.$dark-surface-primary-highlight-hover,
+);
+
+// Foreground palette for dark themes.
+// todo: need to re-catalog used variables
+$td-dark-theme-foreground: (
+  base: variables.$dark-on-background,
+  divider: variables.$dark-divider,
+  dividers: variables.$dark-divider,
+  disabled: variables.$material-3-colors-dark-surface-on-surface-38,
+  disabled-button: variables.$material-3-colors-dark-surface-on-surface-38,
+  disabled-text: variables.$material-3-colors-dark-surface-on-surface-38,
+  elevation: black,
+  // todo: need to work out elevation
+  hint-text: variables.$material-3-colors-dark-surface-on-surface-variant,
+  secondary-text: variables.$material-3-colors-dark-surface-on-surface-variant,
+  icon: variables.$dark-text-icon-on-background,
+  icons: variables.$dark-text-icon-on-background,
+  text: variables.$dark-on-surface,
+  slider-min: variables.$dark-on-surface,
+  slider-off: variables.$material-3-colors-dark-surface-on-surface-8,
+  slider-off-active: variables.$material-3-colors-dark-surface-on-surface-16,
+  accent: variables.$material-3-colors-dark-primary-on-primary,
+  emphasis: variables.$material-3-colors-dark-emphasis-on-emphasis,
+  caution: variables.$material-3-colors-dark-caution-on-caution,
+  negative: variables.$material-3-colors-dark-negative-on-negative,
+  neutral: variables.$dark-on-surface,
+  // todo: need to work out on-neutral tokens
+  positive: variables.$material-3-colors-dark-positive-on-positive,
+  primary: variables.$material-3-colors-dark-primary-on-primary,
+);
+
+// Custom typography
+$td-custom-typography: mat.define-typography-config(
+  $button: mat.define-typography-level(14px, 14px, 400),
+);
+$td-custom-toolbar-typography: mat.define-typography-config(
+  $headline-6: mat.define-typography-level(20px, 32px, 400),
+);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$td-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette($td-primary, '40', '30', '60'),
+      secondary: mat.define-palette($td-secondary, '40', '30', '60'),
+      accent: mat.define-palette($td-accent, '40', '30', '60'),
+      warn: mat.define-palette($td-warn, '40', '30', '60'),
+      on-secondary: variables.$light-on-secondary,
+    ),
+    typography: $td-custom-typography,
+  )
+);
+$td-light-theme: mat.private-deep-merge-all(
+  $td-light-theme,
+  (
+    color: (
+      background: $td-light-theme-background,
+      foreground: $td-light-theme-foreground,
+    ),
+  )
+);
+
+$td-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: mat.define-palette($td-primary-dark, '80', '70', '90'),
+      secondary: mat.define-palette($td-secondary-dark, '80', '70', '90'),
+      accent: mat.define-palette($td-accent-dark, '80', '70', '90'),
+      warn: mat.define-palette($td-warn-dark, '80', '70', '90'),
+      on-secondary: variables.$dark-on-secondary,
+    ),
+    typography: $td-custom-typography,
+  )
+);
+$td-dark-theme: mat.private-deep-merge-all(
+  $td-dark-theme,
+  (
+    color: (
+      background: $td-dark-theme-background,
+      foreground: $td-dark-theme-foreground,
+    ),
+  )
+);
+
+@mixin teradata-brand($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark-theme: map-get($theme, is-dark);
+  $accent-highlight: map-get($background, accent-highlight);
+  $accent-highlight-hover: map-get($background, accent-highlight-hover);
+  $on-primary: map-get($foreground, primary);
+  $on-accent: map-get($foreground, accent);
+
+  .mat-toolbar.mat-primary {
+    --mat-toolbar-container-text-color: #{$on-primary};
+  }
+
+  // Logo alignment
+  .mat-icon.mat-icon-logo {
+    fill: variables.$teradata-orange-500;
+    position: relative;
+    top: -2px;
+
+    @if $is-dark-theme {
+      fill: #ffffff;
+    }
+
+    // Logo + title alignment
+    & + .mat-title,
+    & + span {
+      position: relative;
+      top: 1px;
+      text-transform: uppercase;
+    }
+
+    & + .td-navigation-drawer-title {
+      top: 2px;
+    }
+  }
+  // Spacing before logo in main toolbar
+  .mat-toolbar {
+    .mdc-icon-button + .mat-icon-logo,
+    .mdc-icon-button + span > .mat-icon-logo {
+      margin-left: 10px;
+    }
+
+    .mat-icon-logo {
+      margin-right: 16px;
+    }
+  }
+  // Logo in card title alignment
+  .mat-card-title {
+    .mat-icon-logo {
+      margin-right: 8px;
+    }
+  }
+
+  // Apply theme for this app
+  body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: 100%;
+    z-index: 999;
+    background-color: mat-color($accent);
+  }
+
+  // Active icon color in list nav
+  .mat-drawer {
+    mat-nav-list {
+      .mat-list-item {
+        &.active {
+          font-weight: bold;
+          color: $on-accent;
+
+          .mat-icon.mat-list-avatar {
+            background-color: mat-color($accent);
+            color: mat-color($accent);
+            fill: mat-color($accent);
+          }
+
+          .mat-icon.mat-list-icon {
+            color: mat-color($accent);
+            fill: mat-color($accent);
+          }
+        }
+      }
+
+      &[dense] {
+        .mat-icon.mat-list-avatar {
+          min-width: 36px;
+        }
+      }
+    }
+  }
+
+  // Active icon color in list nav
+  mat-nav-list {
+    [mat-list-item].active {
+      mat-icon[matListItemAvatar] {
+        background-color: mat-color($accent);
+        color: mat-color($accent);
+      }
+
+      mat-icon[matListIcon] {
+        color: mat-color($accent);
+      }
+    }
+  }
+
+  td-layout-nav {
+    mat-toolbar {
+      z-index: 2;
+      @include mat-elevation(3);
+    }
+  }
+
+  // Active top nav
+  nav.docs-nav {
+    a {
+      line-height: 4;
+      display: block;
+      font-size: 1.1428em;
+      letter-spacing: 0.0764em;
+      position: relative;
+
+      &.active {
+        &::after {
+          content: '';
+          position: absolute;
+          height: 3px;
+          bottom: 0;
+          width: 100%;
+          background-color: mat-color($accent);
+          left: 0;
+        }
+      }
+    }
+  }
+
+  // Active side nav
+  .doc-nav a.doc-nav-link {
+    &.active::before {
+      background-color: $accent-highlight;
+    }
+    &:hover {
+      &::before {
+        background-color: $accent-highlight-hover;
+      }
+    }
+  }
+
+  // Links
+  a {
+    text-decoration: none;
+    color: mat-color($accent);
+  }
+
+  .tc-td-secondary {
+    color: map-get($foreground, secondary-text);
+  }
+}

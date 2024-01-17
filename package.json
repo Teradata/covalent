@@ -13,7 +13,7 @@
     "sb": "storybook",
     "postinstall": "node ./decorate-angular-cli.js",
     "prepare": "husky install",
-    "start": "nx serve",
+    "start": "nx serve docs-app",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx lint",

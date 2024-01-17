@@ -22,7 +22,7 @@
     <ng-container *ngIf="!item.children || item.children.length === 0">
       <ng-container *ngIf="!item.link && !item.action">
         <mat-divider class="group-divider" *ngIf="index > 0"></mat-divider>
-        <div class="group-label text-sm">{{ item.text }}</div>
+        <div class="group-label tc-td-secondary text-sm">{{ item.text }}</div>
       </ng-container>
       <ng-container *ngIf="item.link || item.action">
         <div mat-menu-item class="pad-none">
