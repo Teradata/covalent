@@ -1,3 +1,18 @@
+# [8.1.0-beta.1](https://github.com/Teradata/covalent/compare/v8.0.0...v8.1.0-beta.1) (2024-01-17)
+
+### Bug Fixes
+
+- **components:** fixes from feature testing ([cd0975e](https://github.com/Teradata/covalent/commit/cd0975e83292dc7eeef1f08a1611ac80a6bbbd63))
+- **markdown-navigator:** fixing misaligned icons ([bc9e66a](https://github.com/Teradata/covalent/commit/bc9e66afa9080182c4809edc6b1d2b5c6a40bead))
+- **storybook:** update to storybook theme ([aba127f](https://github.com/Teradata/covalent/commit/aba127f65686293fb15d75ab72424e12aede592a))
+
+### Features
+
+- **branding:** updated angular material theme ([e6a6fc0](https://github.com/Teradata/covalent/commit/e6a6fc06f70d3c7b1798124768968fdffb0f29bb))
+- **components:** theme and packaging adjustments ([74cd910](https://github.com/Teradata/covalent/commit/74cd9104bd777484bdb5680e8cf45d41d0cb47ec))
+- **markdown:** updating navigator docked mode ([332708a](https://github.com/Teradata/covalent/commit/332708a53dd17a7e5b1c7f7ced07a53fc3757f88))
+- **tokens:** updating tokens for covalent m3 ([941f20b](https://github.com/Teradata/covalent/commit/941f20be56f91f950a0e99c44107f09251b185bf))
+
 # [8.0.0](https://github.com/Teradata/covalent/compare/v7.4.7...v8.0.0) (2024-01-03)
 
 ### Features
@@ -33,6 +48,7 @@
 - correction in links to not break in production ([#2078](https://github.com/Teradata/covalent/issues/2078)) ([6c686e6](https://github.com/Teradata/covalent/commit/6c686e6d2efa8475292ff429fb74e6d09f7cf20f))
 
 ## [7.4.3](https://github.com/Teradata/covalent/compare/v7.4.2...v7.4.3) (2023-11-29)
+
 # [7.5.0-beta.5](https://github.com/Teradata/covalent/compare/v7.5.0-beta.4...v7.5.0-beta.5) (2024-01-11)
 
 ### Bug Fixes
