@@ -1,8 +1,9 @@
-# [8.1.0](https://github.com/Teradata/covalent/compare/v8.0.0...v8.1.0) (2024-02-13)
+# [8.1.0-beta.2](https://github.com/Teradata/covalent/compare/v8.1.0-beta.1...v8.1.0-beta.2) (2024-01-17)
 
 ### Features
 
-- **icons:** adding icons as nx lib & npm package ([#2093](https://github.com/Teradata/covalent/issues/2093)) ([ea15282](https://github.com/Teradata/covalent/commit/ea1528208b0f53be427b4f4876a033cd7e76e399))
+- **branding:** updated tokens path ([2152bc2](https://github.com/Teradata/covalent/commit/2152bc2492a089506d539d50217b1d2ea58205de))
+
 # [8.1.0-beta.1](https://github.com/Teradata/covalent/compare/v8.0.0...v8.1.0-beta.1) (2024-01-17)
 
 ### Bug Fixes
