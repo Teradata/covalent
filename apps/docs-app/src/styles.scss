@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use '../../../libs/tokens/_generated/_index' as variables;
 @import '../../../libs/angular/theming/all-theme';
 @import '../../../libs/markdown/markdown-theme';
 @import '../../../libs/angular-highlight/highlight-theme';
@@ -6,33 +7,23 @@
 @import '../../../libs/markdown-navigator/markdon-navigator-theme';
 @import '../../../libs/angular-guided-tour/guided-tour-theme';
 @import '../../../libs/angular-guided-tour/styles/guided-tour.scss';
-
 // Teradata brand
-/* stylelint-disable-next-line no-invalid-position-at-import-rule */
-@import './teradata-branding';
+@import '../../../libs/angular/theming/teradata-branding';
 
 // Import Inter styles from google apis CDN
 @import url('https://fonts.googleapis.com/css?family=Inter:300,400,500');
 
 // Plus imports for other components in your app.
 
-// Custom typography
-$custom-typography: mat.define-typography-config(
-  $button: mat.define-typography-level(14px, 14px, 400),
-);
-$custom-toolbar-typography: mat.define-typography-config(
-  $headline-6: mat.define-typography-level(20px, 32px, 400),
-);
-
 // Include the base styles for Angular Material core. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 @include mat.core();
 
 // Use the default configuration.
-@include mat.typography-hierarchy($custom-typography);
+@include mat.typography-hierarchy($td-custom-typography);
 
 // Setting the toolbar to the proper spec weight
-@include mat.toolbar-typography($custom-toolbar-typography);
+@include mat.toolbar-typography($td-custom-toolbar-typography);
 
 // Include the core styles for Covalent
 @include covalent-core();
@@ -50,53 +41,28 @@ $mat-font-url: './';
 // Include covalent color classes
 @include covalent-colors();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue.
-$primary: mat.define-palette($td-slate, 700, 100, 900);
-$accent: mat.define-palette($td-teal, 800, 200, 900);
-
-// The warn palette is optional (defaults to red).
-$warn: mat.define-palette($mat-red, 600, 200, 900);
-
-// Create the theme object (a Sass map containing all of the palettes).
-$theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $primary,
-      accent: $accent,
-      on-secondary: '#ff0000',
-      warn: $warn,
-    ),
-    typography: $custom-typography,
-  )
-);
-$theme: map_merge(
-  $theme,
-  (
-    background: $td-light-theme-background,
-    foreground: $td-light-theme-foreground,
-  )
-);
-
-$foreground: map-get($theme, foreground);
-$background: map-get($theme, background);
+$foreground: map-get($td-light-theme, foreground);
+$background: map-get($td-light-theme, background);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($theme);
-@include covalent-theme($theme);
-@include covalent-markdown-theme($theme);
-@include covalent-highlight-theme($theme);
-@include covalent-flavored-markdown-theme($theme);
-@include covalent-markdown-navigator-theme($theme);
-@include covalent-markdown-navigator-typography($custom-typography);
-@include covalent-guided-tour-theme($theme);
-@include teradata-brand($theme);
+@include mat.all-component-themes($td-light-theme);
+@include covalent-theme($td-light-theme);
+@include covalent-markdown-theme($td-light-theme);
+@include covalent-highlight-theme($td-light-theme);
+@include covalent-flavored-markdown-theme($td-light-theme);
+@include covalent-markdown-navigator-theme($td-light-theme);
+@include covalent-markdown-navigator-typography($td-custom-typography);
+@include covalent-guided-tour-theme($td-light-theme);
+@include teradata-brand($td-light-theme);
 
-.content-image-block {
-  background-color: map-get($background, card);
+.mat-app-background {
+  background-color: map-get($background, background);
+}
+
+.cv-surface-high {
+  background-color: variables.$material-3-colors-light-surface-surface-container-high;
 }
 
 body .mat-card {
@@ -105,30 +71,23 @@ body .mat-card {
 
 // Dark theme
 @media (prefers-color-scheme: dark) {
-  $primary-dark: mat.define-palette($td-slate, 800, 200, 900);
-  $accent-dark: mat.define-palette($td-orange, 500);
-  $warn-dark: mat.define-palette($mat-red, 600, 200, 900);
-  $theme-dark: mat.define-dark-theme($primary-dark, $accent-dark, $warn-dark);
-  $theme-dark: map_merge(
-    $theme-dark,
-    (
-      background: $td-dark-theme-background,
-      foreground: $td-dark-theme-foreground,
-    )
-  );
-  $background: map-get($theme-dark, background);
+  $background: map-get($td-dark-theme, background);
 
-  @include mat.all-component-themes($theme-dark);
-  @include covalent-theme($theme-dark);
-  @include covalent-markdown-theme($theme-dark);
-  @include covalent-highlight-theme($theme-dark);
-  @include covalent-flavored-markdown-theme($theme-dark);
-  @include covalent-markdown-navigator-theme($theme-dark);
-  @include teradata-brand($theme-dark);
-  @include covalent-guided-tour-theme($theme-dark);
+  @include mat.all-component-themes($td-dark-theme);
+  @include covalent-theme($td-dark-theme);
+  @include covalent-markdown-theme($td-dark-theme);
+  @include covalent-highlight-theme($td-dark-theme);
+  @include covalent-flavored-markdown-theme($td-dark-theme);
+  @include covalent-markdown-navigator-theme($td-dark-theme);
+  @include teradata-brand($td-dark-theme);
+  @include covalent-guided-tour-theme($td-dark-theme);
 
-  .content-image-block {
-    background-color: map-get($background, card);
+  .mat-app-background {
+    background-color: map-get($background, background);
+  }
+
+  .cv-surface-high {
+    background-color: variables.$material-3-colors-dark-surface-surface-container-high;
   }
 }
 

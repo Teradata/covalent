@@ -64,7 +64,7 @@ export class NavViewComponent {
   `;
   navViewBasicHtml = `
     <td-layout>
-      <td-navigation-drawer flex sidenavTitle="Covalent" logo="teradata-dark" name="Firstname Lastname" email="firstname.lastname@company.com">
+      <td-navigation-drawer flex sidenavTitle="Covalent" logo="teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
           <a mat-list-item><mat-icon>home</mat-icon>Home</a>
         </mat-nav-list>
@@ -84,7 +84,7 @@ export class NavViewComponent {
   `;
   navViewFullHtml = `
     <td-layout>
-      <td-navigation-drawer flex sidenavTitle="Covalent" logo="teradata-dark" name="Firstname Lastname" email="firstname.lastname@company.com">
+      <td-navigation-drawer flex sidenavTitle="Covalent" logo="teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
           <a *ngFor="let item of routes" mat-list-item><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
         </mat-nav-list>

@@ -31,20 +31,6 @@
     &::before {
       border-radius: 0 20px 20px 0;
     }
-
-    &:hover {
-      &::before {
-        background-color: #0000000d;
-        opacity: 1;
-      }
-    }
-  }
-
-  a.doc-nav-link.active {
-    &::before {
-      opacity: 1;
-      background-color: #00969626;
-    }
   }
 
   .mat-expansion-panel {

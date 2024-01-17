@@ -55,6 +55,13 @@
   td-layout-card-over,
   td-navigation-drawer,
   td-layout {
+    --mat-sidenav-container-background-color: var(
+      --mat-sidenav-content-background-color
+    );
+    --mat-expansion-container-background-color: var(
+      --mat-sidenav-content-background-color
+    );
+
     mat-toolbar {
       @include mat-elevation(1);
 
@@ -90,8 +97,8 @@
   }
 
   .td-layout-footer {
-    background: mat-color($background, app-bar);
-    color: mat-color($foreground, text);
+    // background: mat-color($background, app-bar);
+    // color: mat-color($foreground, text);
     @include mat-elevation(2);
 
     &.mat-primary {
@@ -99,7 +106,7 @@
 
       &,
       mat-icon {
-        color: mat-color($primary, default-contrast);
+        color: mat-color($primary);
       }
     }
 
@@ -108,7 +115,7 @@
 
       &,
       mat-icon {
-        color: mat-color($accent, default-contrast);
+        color: mat-color($accent);
       }
     }
 
@@ -117,12 +124,12 @@
 
       &,
       mat-icon {
-        color: mat-color($warn, default-contrast);
+        color: mat-color($warn);
       }
     }
 
     .mat-mdc-button {
-      --mdc-text-button-label-text-color: mat-color($foreground, text);
+      --mdc-text-button-label-text-color: #{mat-color($foreground, text)};
     }
   }
 }
