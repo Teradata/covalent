@@ -1,10 +1,11 @@
-<div
-  class="content-image-block push-bottom-md"
-  flex
-  layout="row"
-  layout-align="center center"
->
-  <ng-template [cdkPortalOutlet]="contentPlaceholder"></ng-template>
-</div>
-
-<div class="pad-top">Some long description about this component</div>
+<mat-card>
+  <mat-card-content
+    class="content-image-block push-bottom-md"
+    flex
+    layout="row"
+    layout-align="center center"
+  >
+    <ng-template [cdkPortalOutlet]="contentPlaceholder"></ng-template>
+    <div class="pad-top">Some long description about this component</div>
+  </mat-card-content>
+</mat-card>

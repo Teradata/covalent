@@ -31,7 +31,7 @@
     background: mat-color($background, focused-button);
   }
 
-  .shepherd-button,
+  .shepherd-button.mat-mdc-button:not(:disabled),
   .shepherd-cancel-icon,
   .shepherd-has-title .shepherd-content .shepherd-cancel-icon,
   .shepherd-title,
