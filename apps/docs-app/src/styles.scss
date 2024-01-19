@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@use '../../../libs/tokens/_generated/_index' as variables;
+@use '@covalent/tokens' as variables;
 @import '../../../libs/angular/theming/all-theme';
 @import '../../../libs/markdown/markdown-theme';
 @import '../../../libs/angular-highlight/highlight-theme';
