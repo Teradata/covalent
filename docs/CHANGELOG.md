@@ -1,3 +1,9 @@
+# [8.1.0-beta.4](https://github.com/Teradata/covalent/compare/v8.1.0-beta.3...v8.1.0-beta.4) (2024-01-19)
+
+### Bug Fixes
+
+- **angular:** adjustment to td branding scss file name ([2ed2079](https://github.com/Teradata/covalent/commit/2ed2079559b0e94771143ac37bf8ece89321b49b))
+
 # [8.1.0-beta.3](https://github.com/Teradata/covalent/compare/v8.1.0-beta.2...v8.1.0-beta.3) (2024-01-17)
 
 ### Bug Fixes
