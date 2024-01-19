@@ -1,7 +1,6 @@
-
 /**
  * Do not edit directly
- * Generated on Wed, 17 Jan 2024 18:09:55 GMT
+ * Generated on Fri, 19 Jan 2024 17:21:16 GMT
  */
 
 $light-code-snippet-color: #383a42 !default;
@@ -13,45 +12,45 @@ $light-code-snippet-string: #50a14f !default;
 $light-code-snippet-variable: #986801 !default;
 $light-code-snippet-title: #4078f2 !default;
 $light-code-snippet-class: #c18401 !default;
-$light-primary: #324369ff !default;
-$light-secondary: #5b5d72ff !default;
-$light-error: #984b3fff !default;
-$light-positive: #337132ff !default;
-$light-caution: #996e46ff !default;
-$light-negative: #984b3fff !default;
+$light-primary: #3053f4ff !default;
+$light-secondary: #616378ff !default;
+$light-error: #ae1209ff !default;
+$light-positive: #036600ff !default;
+$light-caution: #f38800ff !default;
+$light-negative: #ae1209ff !default;
 $light-on-primary: #ffffffff !default;
 $light-on-secondary: #ffffffff !default;
 $light-on-background: #1e1d1eff !default;
 $light-on-surface: #1e1d1eff !default;
 $light-on-error: #ffffffff !default;
 $light-divider: #d5d3d8ff !default;
-$light-emphasis: #66404eff !default;
-$light-accent: #324369ff !default;
+$light-emphasis: #b10142ff !default;
+$light-accent: #3053f4ff !default;
 $light-background: #fdf9fcff !default;
 $light-surface: #fdf9fcff !default;
 $light-surface-canvas: #ffffffff !default;
-$light-surface-primary: #d5dbfeff !default;
+$light-surface-primary: #ececfeff !default;
 $light-surface-primary-highlight: #3053f414 !default;
 $light-surface-primary-highlight-hover: #3053f414 !default;
-$light-surface-accent: #d5dbfeff !default;
+$light-surface-accent: #ececfeff !default;
 $light-surface-accent-highlight: #3053f414 !default;
 $light-surface-accent-highlight-hover: #3053f41f !default;
 $light-surface-secondary: #dfe1f9ff !default;
-$light-surface-secondary-highlight: #c3c5dd14 !default;
-$light-surface-secondary-highlight-hover: #c3c5dd14 !default;
-$light-surface-positive: #91d890ff !default;
+$light-surface-secondary-highlight: #61637814 !default;
+$light-surface-secondary-highlight-hover: #61637814 !default;
+$light-surface-positive: #8fcc8eff !default;
 $light-surface-positive-highlight: #03660014 !default;
 $light-surface-positive-highlight-hover: #03660014 !default;
-$light-surface-caution: #ffcd9eff !default;
+$light-surface-caution: #ffcc8cff !default;
 $light-surface-caution-highlight: #f3880014 !default;
 $light-surface-caution-highlight-hover: #f3880014 !default;
-$light-surface-negative: #ffac9fff !default;
+$light-surface-negative: #ffb2aeff !default;
 $light-surface-negative-highlight: #ae120914 !default;
 $light-surface-negative-highlight-hover: #ae120914 !default;
 $light-surface-neutral: #76757dff !default;
 $light-surface-neutral-highlight: rgba(#76757dff, 0.04) !default;
 $light-surface-neutral-highlight-hover: rgba(#76757dff, 0.08) !default;
-$light-surface-emphasis: #ffbdd5ff !default;
+$light-surface-emphasis: #e8b3c6ff !default;
 $light-surface-emphasis-highlight: #b1014214 !default;
 $light-surface-emphasis-highlight-hover: #b1014214 !default;
 $light-text-primary-on-background: #1e1d1eff !default;
@@ -288,17 +287,17 @@ $theme-light-palettes-digital-blue-91: #e1e3fdff !default;
 $theme-light-palettes-digital-blue-92: #e5e5feff !default;
 $theme-light-palettes-digital-blue-93: #e8e9feff !default;
 $theme-light-palettes-digital-blue-94: #ececfeff !default;
-$theme-light-colors-primary: #324369ff !default;
-$theme-light-colors-primary-container: #d5dbfeff !default;
+$theme-light-colors-primary: #3053f4ff !default;
+$theme-light-colors-primary-container: #ececfeff !default;
 $theme-light-colors-on-primary: #ffffffff !default;
-$theme-light-colors-secondary: #5b5d72ff !default;
+$theme-light-colors-secondary: #616378ff !default;
 $theme-light-colors-secondary-container: #dfe1f9ff !default;
 $theme-light-colors-on-secondary: #ffffffff !default;
 $theme-light-colors-on-secondary-container: #171a2cff !default;
-$theme-light-colors-tertiary: #612e1aff !default;
-$theme-light-colors-tertiary-container: #f79e79ff !default;
+$theme-light-colors-tertiary: #ff5f02ff !default;
+$theme-light-colors-tertiary-container: #ffdbceff !default;
 $theme-light-colors-on-tertiary: #ffffffff !default;
-$theme-light-colors-on-tertiary-container: #190900ff !default;
+$theme-light-colors-on-tertiary-container: #481300ff !default;
 $theme-light-colors-surface: #fdf9fcff !default;
 $theme-light-colors-surface-dim: #e5e2e6ff !default;
 $theme-light-colors-surface-bright: #fdf9fcff !default;
@@ -311,34 +310,34 @@ $theme-light-colors-on-surface: #1e1d1eff !default;
 $theme-light-colors-on-surface-variant: #5c5b5fff !default;
 $theme-light-colors-inverse-surface: #3e3e41ff !default;
 $theme-light-colors-inverse-on-surface: #f6f3f6ff !default;
-$theme-light-colors-negative: #984b3fff !default;
-$theme-light-colors-negative-container: #ffac9fff !default;
+$theme-light-colors-negative: #ae1209ff !default;
+$theme-light-colors-negative-container: #ffb2aeff !default;
 $theme-light-colors-on-negative: #ffffffff !default;
-$theme-light-colors-on-negative-container: #190c0aff !default;
-$theme-light-colors-positive: #337132ff !default;
-$theme-light-colors-positive-container: #91d890ff !default;
+$theme-light-colors-on-negative-container: #110201ff !default;
+$theme-light-colors-positive: #036600ff !default;
+$theme-light-colors-positive-container: #8fcc8eff !default;
 $theme-light-colors-on-positive: #ffffffff !default;
-$theme-light-colors-on-positive-container: #081308ff !default;
-$theme-light-colors-caution: #996e46ff !default;
-$theme-light-colors-caution-container: #ffcd9eff !default;
+$theme-light-colors-on-positive-container: #000a00ff !default;
+$theme-light-colors-caution: #f38800ff !default;
+$theme-light-colors-caution-container: #ffcc8cff !default;
 $theme-light-colors-on-caution: #ffffffff !default;
-$theme-light-colors-on-caution-container: #19120cff !default;
+$theme-light-colors-on-caution-container: #180e00ff !default;
 $theme-light-colors-outline: #76757dff !default;
 $theme-light-colors-outline-variant: #d5d3d8ff !default;
 $theme-light-colors-shadow: #000000ff !default;
 $theme-light-colors-scrim: #000000ff !default;
-$theme-light-colors-primary-fixed: #bac3ffff !default;
-$theme-light-colors-primary-fixed-dim: #889fffff !default;
+$theme-light-colors-primary-fixed: #dee0ffff !default;
+$theme-light-colors-primary-fixed-dim: #bac3ffff !default;
 $theme-light-colors-secondary-fixed: #dfe1f9ff !default;
 $theme-light-colors-secondary-fixed-dim: #c3c5ddff !default;
-$theme-light-colors-tertiary-fixed: #f79e79ff !default;
-$theme-light-colors-tertiary-fixed-dim: #f37440ff !default;
+$theme-light-colors-tertiary-fixed: #ffdbceff !default;
+$theme-light-colors-tertiary-fixed-dim: #ffc0a8ff !default;
 $theme-light-colors-primary-8: #3053f414 !default;
 $theme-light-colors-primary-12: #3053f41f !default;
 $theme-light-colors-on-surface-8: #1e1d1e14 !default;
 $theme-light-colors-on-surface-12: #1e1d1e1f !default;
-$theme-light-colors-on-primary-container: #0c121bff !default;
-$theme-light-colors-inverse-primary: #889fffff !default;
+$theme-light-colors-on-primary-container: #00115aff !default;
+$theme-light-colors-inverse-primary: #bac3ffff !default;
 $theme-light-colors-on-surface-38: #1e1d1e61 !default;
 $theme-light-colors-on-surface-16: #1e1d1e29 !default;
 $theme-light-colors-on-primary-12: #ffffff1f !default;
@@ -355,10 +354,10 @@ $theme-light-colors-outline-8: #76757d14 !default;
 $theme-light-colors-outline-12: #76757d1f !default;
 $theme-light-colors-outline-16: #76757d29 !default;
 $theme-light-colors-surface-variant: #ebe8ecff !default;
-$theme-light-colors-emphasis: #66404eff !default;
-$theme-light-colors-emphasis-container: #ffbdd5ff !default;
+$theme-light-colors-emphasis: #b10142ff !default;
+$theme-light-colors-emphasis-container: #e8b3c6ff !default;
 $theme-light-colors-on-emphasis: #ffffffff !default;
-$theme-light-colors-on-emphasis-container: #191013ff !default;
+$theme-light-colors-on-emphasis-container: #120007ff !default;
 $theme-light-colors-positive-16: #03660029 !default;
 $theme-light-colors-caution-16: #f3880029 !default;
 $theme-light-colors-negative-12: #ae12091f !default;
@@ -436,7 +435,7 @@ $theme-light-colors-inverse-secondary-8: #c3c5dd14 !default;
 $theme-light-colors-inverse-secondary-12: #c3c5dd1f !default;
 $theme-light-colors-inverse-secondary-16: #c3c5dd29 !default;
 $theme-light-colors-on-tertiary-74: #ffffffbd !default;
-$theme-light-colors-inverse-tertiary: #612e1aff !default;
+$theme-light-colors-inverse-tertiary: #ff5f02ff !default;
 $theme-light-colors-inverse-tertiary-8: #ff5f0214 !default;
 $theme-light-colors-inverse-tertiary-12: #ff5f021f !default;
 $theme-light-colors-inverse-tertiary-16: #ff5f0229 !default;
@@ -543,106 +542,106 @@ $theme-light-on-negative-container-hover: #11020114 !default;
 $theme-light-on-negative-container-press: #1102011f !default;
 $theme-light-on-negative-container-focus: #1102011f !default;
 $theme-light-on-negative-container-drag: #11020129 !default;
-$theme-light-states-primary-hover: #bac3ff14 !default;
-$theme-light-states-primary-focus: #bac3ff1f !default;
-$theme-light-states-primary-press: #bac3ff1f !default;
-$theme-light-states-primary-drag: #bac3ff29 !default;
-$theme-light-states-on-primary-hover: #111a2814 !default;
-$theme-light-states-on-primary-focus: #111a281f !default;
-$theme-light-states-on-primary-press: #111a281f !default;
-$theme-light-states-on-primary-drag: #111a2829 !default;
-$theme-light-states-on-primary-container-hover: #dde1ff14 !default;
-$theme-light-states-on-primary-container-focus: #dde1ff1f !default;
-$theme-light-states-on-primary-container-press: #dde1ff1f !default;
-$theme-light-states-on-primary-container-drag: #dde1ff29 !default;
-$theme-light-states-inverse-primary-hover: #3053f414 !default;
-$theme-light-states-inverse-primary-focus: #3053f41f !default;
-$theme-light-states-inverse-primary-press: #3053f41f !default;
-$theme-light-states-inverse-primary-drag: #3053f429 !default;
+$theme-light-states-primary-hover: #3053f414 !default;
+$theme-light-states-primary-focus: #3053f41f !default;
+$theme-light-states-primary-press: #3053f41f !default;
+$theme-light-states-primary-drag: #3053f429 !default;
+$theme-light-states-on-primary-hover: #ffffff14 !default;
+$theme-light-states-on-primary-focus: #ffffff1f !default;
+$theme-light-states-on-primary-press: #ffffff1f !default;
+$theme-light-states-on-primary-drag: #ffffff29 !default;
+$theme-light-states-on-primary-container-hover: #00115a14 !default;
+$theme-light-states-on-primary-container-focus: #00115a1f !default;
+$theme-light-states-on-primary-container-press: #00115a1f !default;
+$theme-light-states-on-primary-container-drag: #00115a29 !default;
+$theme-light-states-inverse-primary-hover: #bac3ff14 !default;
+$theme-light-states-inverse-primary-focus: #bac3ff1f !default;
+$theme-light-states-inverse-primary-press: #bac3ff1f !default;
+$theme-light-states-inverse-primary-drag: #bac3ff29 !default;
 $theme-light-states-tertiary-hover: #ff5f0214 !default;
 $theme-light-states-tertiary-press: #ff5f021f !default;
 $theme-light-states-tertiary-focus: #ff5f021f !default;
 $theme-light-states-tertiary-drag: #ff5f0229 !default;
-$theme-light-states-on-tertiary-hover: #612e1a14 !default;
-$theme-light-states-on-tertiary-press: #612e1a1f !default;
-$theme-light-states-on-tertiary-focus: #612e1a1f !default;
-$theme-light-states-on-tertiary-drag: #612e1a29 !default;
-$theme-light-states-on-tertiary-container-hover: #fef1ec14 !default;
-$theme-light-states-on-tertiary-container-press: #fef1ec1f !default;
-$theme-light-states-on-tertiary-container-focus: #fef1ec1f !default;
-$theme-light-states-on-tertiary-container-drag: #fef1ec29 !default;
-$theme-light-states-negative-hover: #fd7d6914 !default;
-$theme-light-states-negative-press: #fd7d691f !default;
-$theme-light-states-negative-focus: #fd7d691f !default;
-$theme-light-states-negative-drag: #fd7d6929 !default;
-$theme-light-states-on-negative-hover: #33191514 !default;
-$theme-light-states-on-negative-press: #3319151f !default;
-$theme-light-states-on-negative-focus: #3319151f !default;
-$theme-light-states-on-negative-drag: #33191529 !default;
-$theme-light-states-positive-hover: #91d89014 !default;
-$theme-light-states-positive-press: #91d89029 !default;
-$theme-light-states-positive-focus: #91d89029 !default;
-$theme-light-states-positive-drag: #91d8901f !default;
-$theme-light-states-on-positive-hover: #11261114 !default;
-$theme-light-states-on-positive-press: #1126111f !default;
-$theme-light-states-on-positive-focus: #1126111f !default;
-$theme-light-states-on-positive-drag: #11261129 !default;
-$theme-light-states-on-positive-container-hover: #91d89014 !default;
-$theme-light-states-on-positive-container-focus: #91d8901f !default;
-$theme-light-states-on-positive-container-press: #91d8901f !default;
-$theme-light-states-on-positive-container-drag: #91d89029 !default;
-$theme-light-states-caution-hover: #ffb77514 !default;
-$theme-light-states-caution-press: #ffb7751f !default;
-$theme-light-states-caution-focus: #ffb7751f !default;
-$theme-light-states-caution-drag: #ffb77529 !default;
-$theme-light-states-on-caution-hover: #66492f1f !default;
-$theme-light-states-on-caution-press: #66492f1f !default;
-$theme-light-states-on-caution-focus: #66492f1f !default;
-$theme-light-states-on-caution-drag: #66492f29 !default;
-$theme-light-states-on-caution-container-hover: #19120c14 !default;
-$theme-light-states-on-caution-container-press: #19120c14 !default;
-$theme-light-states-on-caution-container-focus: #19120c1f !default;
-$theme-light-states-on-caution-container-drag: #19120c29 !default;
-$theme-light-states-emphasis-hover: #cc809c14 !default;
-$theme-light-states-emphasis-press: #cc809c1f !default;
-$theme-light-states-emphasis-focus: #cc809c1f !default;
-$theme-light-states-emphasis-drag: #cc809c29 !default;
-$theme-light-states-on-emphasis-hover: #19101314 !default;
-$theme-light-states-on-emphasis-press: #1910131f !default;
-$theme-light-states-on-emphasis-focus: #1910131f !default;
-$theme-light-states-on-emphasis-drag: #19101329 !default;
-$theme-light-states-on-emphasis-container-hover: #ffd9e714 !default;
-$theme-light-states-on-emphasis-container-press: #ffd9e71f !default;
-$theme-light-states-on-emphasis-container-focus: #ffd9e71f !default;
-$theme-light-states-on-emphasis-container-drag: #ffd9e729 !default;
-$theme-light-states-secondary-hover: #c3c5dd14 !default;
-$theme-light-states-secondary-press: #c3c5dd1f !default;
-$theme-light-states-secondary-focus: #c3c5dd1f !default;
-$theme-light-states-secondary-drag: #c3c5dd29 !default;
-$theme-light-states-on-secondary-hover: #171a2c14 !default;
-$theme-light-states-on-secondary-press: #171a2c1f !default;
-$theme-light-states-on-secondary-focus: #171a2c1f !default;
-$theme-light-states-on-secondary-drag: #171a2c29 !default;
-$theme-light-states-on-secondary-container-hover: #5b5d7214 !default;
-$theme-light-states-on-secondary-container-press: #5b5d721f !default;
-$theme-light-states-on-secondary-container-focus: #5b5d721f !default;
-$theme-light-states-on-secondary-container-drag: #61637829 !default;
-$theme-light-states-on-surface-hover: #ebe8ec14 !default;
-$theme-light-states-on-surface-press: #ebe8ec1f !default;
-$theme-light-states-on-surface-focus: #ebe8ec1f !default;
-$theme-light-states-on-surface-drag: #ebe8ec29 !default;
-$theme-light-states-on-surface-variant-hover: #d5d3d814 !default;
-$theme-light-states-on-surface-variant-press: #d5d3d81f !default;
-$theme-light-states-on-surface-variant-focus: #d5d3d81f !default;
-$theme-light-states-on-surface-variant-drag: #d5d3d829 !default;
-$theme-light-states-inverse-on-surface-hover: #3e3e4114 !default;
-$theme-light-states-inverse-on-surface-press: #3e3e411f !default;
-$theme-light-states-inverse-on-surface-focus: #3e3e411f !default;
-$theme-light-states-inverse-on-surface-drag: #3e3e4129 !default;
-$theme-light-states-on-negative-container-hover: #ffac9f14 !default;
-$theme-light-states-on-negative-container-press: #ffac9f1f !default;
-$theme-light-states-on-negative-container-focus: #ffac9f1f !default;
-$theme-light-states-on-negative-container-drag: #ffac9f29 !default;
+$theme-light-states-on-tertiary-hover: #ffffff14 !default;
+$theme-light-states-on-tertiary-press: #ffffff1f !default;
+$theme-light-states-on-tertiary-focus: #ffffff1f !default;
+$theme-light-states-on-tertiary-drag: #ffffff29 !default;
+$theme-light-states-on-tertiary-container-hover: #48130014 !default;
+$theme-light-states-on-tertiary-container-press: #4813001f !default;
+$theme-light-states-on-tertiary-container-focus: #4813001f !default;
+$theme-light-states-on-tertiary-container-drag: #48130029 !default;
+$theme-light-states-negative-hover: #ae120914 !default;
+$theme-light-states-negative-press: #ae12091f !default;
+$theme-light-states-negative-focus: #ae12091f !default;
+$theme-light-states-negative-drag: #ae120929 !default;
+$theme-light-states-on-negative-hover: #ffffff14 !default;
+$theme-light-states-on-negative-press: #ffffff1f !default;
+$theme-light-states-on-negative-focus: #ffffff1f !default;
+$theme-light-states-on-negative-drag: #ffffff29 !default;
+$theme-light-states-positive-hover: #03660014 !default;
+$theme-light-states-positive-press: #03660029 !default;
+$theme-light-states-positive-focus: #03660029 !default;
+$theme-light-states-positive-drag: #0366001f !default;
+$theme-light-states-on-positive-hover: #ffffff14 !default;
+$theme-light-states-on-positive-press: #ffffff1f !default;
+$theme-light-states-on-positive-focus: #ffffff1f !default;
+$theme-light-states-on-positive-drag: #ffffff29 !default;
+$theme-light-states-on-positive-container-hover: #000a0014 !default;
+$theme-light-states-on-positive-container-focus: #000a001f !default;
+$theme-light-states-on-positive-container-press: #000a001f !default;
+$theme-light-states-on-positive-container-drag: #000a0029 !default;
+$theme-light-states-caution-hover: #f3880014 !default;
+$theme-light-states-caution-press: #f388001f !default;
+$theme-light-states-caution-focus: #f388001f !default;
+$theme-light-states-caution-drag: #f3880029 !default;
+$theme-light-states-on-caution-hover: #ffffff14 !default;
+$theme-light-states-on-caution-press: #ffffff1f !default;
+$theme-light-states-on-caution-focus: #ffffff1f !default;
+$theme-light-states-on-caution-drag: #ffffff29 !default;
+$theme-light-states-on-caution-container-hover: #180e0014 !default;
+$theme-light-states-on-caution-container-press: #180e0014 !default;
+$theme-light-states-on-caution-container-focus: #180e001f !default;
+$theme-light-states-on-caution-container-drag: #180e0029 !default;
+$theme-light-states-emphasis-hover: #b1014214 !default;
+$theme-light-states-emphasis-press: #b101421f !default;
+$theme-light-states-emphasis-focus: #b101421f !default;
+$theme-light-states-emphasis-drag: #b1014229 !default;
+$theme-light-states-on-emphasis-hover: #ffffff14 !default;
+$theme-light-states-on-emphasis-press: #ffffff1f !default;
+$theme-light-states-on-emphasis-focus: #ffffff1f !default;
+$theme-light-states-on-emphasis-drag: #ffffff29 !default;
+$theme-light-states-on-emphasis-container-hover: #12000714 !default;
+$theme-light-states-on-emphasis-container-press: #1200071f !default;
+$theme-light-states-on-emphasis-container-focus: #1200071f !default;
+$theme-light-states-on-emphasis-container-drag: #180e0029 !default;
+$theme-light-states-secondary-hover: #61637814 !default;
+$theme-light-states-secondary-press: #6163781f !default;
+$theme-light-states-secondary-focus: #6163781f !default;
+$theme-light-states-secondary-drag: #61637829 !default;
+$theme-light-states-on-secondary-hover: #ffffff14 !default;
+$theme-light-states-on-secondary-press: #ffffff1f !default;
+$theme-light-states-on-secondary-focus: #ffffff1f !default;
+$theme-light-states-on-secondary-drag: #ffffff29 !default;
+$theme-light-states-on-secondary-container-hover: #171a2c14 !default;
+$theme-light-states-on-secondary-container-press: #171a2c1f !default;
+$theme-light-states-on-secondary-container-focus: #171a2c1f !default;
+$theme-light-states-on-secondary-container-drag: #171a2c29 !default;
+$theme-light-states-on-surface-hover: #1e1d1e14 !default;
+$theme-light-states-on-surface-press: #1e1d1e1f !default;
+$theme-light-states-on-surface-focus: #1e1d1e1f !default;
+$theme-light-states-on-surface-drag: #1e1d1e29 !default;
+$theme-light-states-on-surface-variant-hover: #5c5b5f14 !default;
+$theme-light-states-on-surface-variant-press: #5c5b5f1f !default;
+$theme-light-states-on-surface-variant-focus: #5c5b5f1f !default;
+$theme-light-states-on-surface-variant-drag: #5c5b5f29 !default;
+$theme-light-states-inverse-on-surface-hover: #f6f3f614 !default;
+$theme-light-states-inverse-on-surface-press: #f6f3f61f !default;
+$theme-light-states-inverse-on-surface-focus: #f6f3f61f !default;
+$theme-light-states-inverse-on-surface-drag: #f6f3f61f !default;
+$theme-light-states-on-negative-container-hover: #11020114 !default;
+$theme-light-states-on-negative-container-press: #1102011f !default;
+$theme-light-states-on-negative-container-focus: #1102011f !default;
+$theme-light-states-on-negative-container-drag: #11020129 !default;
 $theme-dark-palettes-digital-blue-100: #ffffffff !default;
 $theme-dark-palettes-digital-blue-98: #efefffff !default;
 $theme-dark-palettes-digital-blue-95: #dde1ffff !default;
@@ -1446,15 +1445,15 @@ $teradata-slate-1700: #101314 !default;
 $teradata-slate-1800: #0c0e0f !default;
 $teradata-slate-1900: #060708 !default;
 $teradata-slate-2000: #020203 !default;
-$teradata-orange-100: #FFCFB3 !default;
-$teradata-orange-200: #FFAF81 !default;
-$teradata-orange-300: #FF8F4E !default;
-$teradata-orange-400: #FF7728 !default;
-$teradata-orange-500: #FF5F02 !default;
-$teradata-orange-600: #F05800 !default;
-$teradata-orange-700: #E54900 !default;
-$teradata-orange-800: #D83B03 !default;
-$teradata-orange-900: #C23200 !default;
+$teradata-orange-100: #ffcfb3 !default;
+$teradata-orange-200: #ffaf81 !default;
+$teradata-orange-300: #ff8f4e !default;
+$teradata-orange-400: #ff7728 !default;
+$teradata-orange-500: #ff5f02 !default;
+$teradata-orange-600: #f05800 !default;
+$teradata-orange-700: #e54900 !default;
+$teradata-orange-800: #d83b03 !default;
+$teradata-orange-900: #c23200 !default;
 $typography-font-family: Arial, sans-serif !default;
 $typography-headline1-font-family: 'Inter', sans-serif !default;
 $typography-headline1-font-size: 96px !default;
@@ -1541,7 +1540,8 @@ $tokens: (
     'surface-accent-highlight-hover': $light-surface-accent-highlight-hover,
     'surface-secondary': $light-surface-secondary,
     'surface-secondary-highlight': $light-surface-secondary-highlight,
-    'surface-secondary-highlight-hover': $light-surface-secondary-highlight-hover,
+    'surface-secondary-highlight-hover':
+      $light-surface-secondary-highlight-hover,
     'surface-positive': $light-surface-positive,
     'surface-positive-highlight': $light-surface-positive-highlight,
     'surface-positive-highlight-hover': $light-surface-positive-highlight-hover,
@@ -1572,7 +1572,7 @@ $tokens: (
     'text-secondary-on-dark': $light-text-secondary-on-dark,
     'text-hint-on-dark': $light-text-hint-on-dark,
     'text-disabled-on-dark': $light-text-disabled-on-dark,
-    'text-icon-on-dark': $light-text-icon-on-dark
+    'text-icon-on-dark': $light-text-icon-on-dark,
   ),
   'dark': (
     'code-snippet-color': $dark-code-snippet-color,
@@ -1640,7 +1640,7 @@ $tokens: (
     'text-secondary-on-dark': $dark-text-secondary-on-dark,
     'text-hint-on-dark': $dark-text-hint-on-dark,
     'text-disabled-on-dark': $dark-text-disabled-on-dark,
-    'text-icon-on-dark': $dark-text-icon-on-dark
+    'text-icon-on-dark': $dark-text-icon-on-dark,
   ),
   'theme': (
     'light': (
@@ -1796,7 +1796,7 @@ $tokens: (
         'digital blue 91': $theme-light-palettes-digital-blue-91,
         'digital blue 92': $theme-light-palettes-digital-blue-92,
         'digital blue 93': $theme-light-palettes-digital-blue-93,
-        'digital blue 94': $theme-light-palettes-digital-blue-94
+        'digital blue 94': $theme-light-palettes-digital-blue-94,
       ),
       'colors': (
         'primary': $theme-light-colors-primary,
@@ -1817,7 +1817,8 @@ $tokens: (
         'surface-container-low': $theme-light-colors-surface-container-low,
         'surface-container': $theme-light-colors-surface-container,
         'surface-container-high': $theme-light-colors-surface-container-high,
-        'surface-container-highest': $theme-light-colors-surface-container-highest,
+        'surface-container-highest':
+          $theme-light-colors-surface-container-highest,
         'on-surface': $theme-light-colors-on-surface,
         'on-surface-variant': $theme-light-colors-on-surface-variant,
         'inverse-surface': $theme-light-colors-inverse-surface,
@@ -1857,11 +1858,14 @@ $tokens: (
         'primary-16%': $theme-light-colors-primary-16,
         'on-surface-variant-8%': $theme-light-colors-on-surface-variant-8,
         'on-tertiary-container-8%': $theme-light-colors-on-tertiary-container-8,
-        'on-tertiary-container-12%': $theme-light-colors-on-tertiary-container-12,
+        'on-tertiary-container-12%':
+          $theme-light-colors-on-tertiary-container-12,
         'on-primary-container-12%': $theme-light-colors-on-primary-container-12,
         'on-surface-variant-12%': $theme-light-colors-on-surface-variant-12,
-        'on-secondary-container-8%': $theme-light-colors-on-secondary-container-8,
-        'on-secondary-container-16%': $theme-light-colors-on-secondary-container-16,
+        'on-secondary-container-8%':
+          $theme-light-colors-on-secondary-container-8,
+        'on-secondary-container-16%':
+          $theme-light-colors-on-secondary-container-16,
         'outline-8%': $theme-light-colors-outline-8,
         'outline-12%': $theme-light-colors-outline-12,
         'outline-16%': $theme-light-colors-outline-16,
@@ -1873,7 +1877,8 @@ $tokens: (
         'positive-16%': $theme-light-colors-positive-16,
         'caution-16%': $theme-light-colors-caution-16,
         'negative-12%': $theme-light-colors-negative-12,
-        'on-secondary-container-12%': $theme-light-colors-on-secondary-container-12,
+        'on-secondary-container-12%':
+          $theme-light-colors-on-secondary-container-12,
         'on-primary-16%': $theme-light-colors-on-primary-16,
         'on-primary-container-8%': $theme-light-colors-on-primary-container-8,
         'on-primary-container-16%': $theme-light-colors-on-primary-container-16,
@@ -1883,7 +1888,8 @@ $tokens: (
         'on-tertiary-8%': $theme-light-colors-on-tertiary-8,
         'on-tertiary-12%': $theme-light-colors-on-tertiary-12,
         'on-tertiary-16%': $theme-light-colors-on-tertiary-16,
-        'on-tertiary-container-16%': $theme-light-colors-on-tertiary-container-16,
+        'on-tertiary-container-16%':
+          $theme-light-colors-on-tertiary-container-16,
         'on-surface-variant-16%': $theme-light-colors-on-surface-variant-16,
         'negative-8%': $theme-light-colors-negative-8,
         'negative-16%': $theme-light-colors-negative-16,
@@ -1893,8 +1899,10 @@ $tokens: (
         'on-positive-12%': $theme-light-colors-on-positive-12,
         'on-positive-16%': $theme-light-colors-on-positive-16,
         'on-positive-container-8%': $theme-light-colors-on-positive-container-8,
-        'on-positive-container-12%': $theme-light-colors-on-positive-container-12,
-        'on-positive-container-16%': $theme-light-colors-on-positive-container-16,
+        'on-positive-container-12%':
+          $theme-light-colors-on-positive-container-12,
+        'on-positive-container-16%':
+          $theme-light-colors-on-positive-container-16,
         'caution-12%': $theme-light-colors-caution-12,
         'caution-8%': $theme-light-colors-caution-8,
         'on-caution-8%': $theme-light-colors-on-caution-8,
@@ -1913,8 +1921,10 @@ $tokens: (
         'on-emphasis-12%': $theme-light-colors-on-emphasis-12,
         'on-emphasis-16%': $theme-light-colors-on-emphasis-16,
         'on-emphasis-container-8%': $theme-light-colors-on-emphasis-container-8,
-        'on-emphasis-container-12%': $theme-light-colors-on-emphasis-container-12,
-        'on-emphasis-container-16%': $theme-light-colors-on-emphasis-container-16,
+        'on-emphasis-container-12%':
+          $theme-light-colors-on-emphasis-container-12,
+        'on-emphasis-container-16%':
+          $theme-light-colors-on-emphasis-container-16,
         'inverse-on-surface-12%': $theme-light-colors-inverse-on-surface-12,
         'inverse-primary-12%': $theme-light-colors-inverse-primary-12,
         'inverse-on-surface-8%': $theme-light-colors-inverse-on-surface-8,
@@ -1926,14 +1936,22 @@ $tokens: (
         'tertiary-8%': $theme-light-colors-tertiary-8,
         'tertiary-12%': $theme-light-colors-tertiary-12,
         'tertiary-16%': $theme-light-colors-tertiary-16,
-        'surface-container-lowest-blue': $theme-light-colors-surface-container-lowest-blue,
-        'surface-container-low-blue': $theme-light-colors-surface-container-low-blue,
-        'surface-container-high-blue': $theme-light-colors-surface-container-high-blue,
-        'surface-container-highest-blue': $theme-light-colors-surface-container-highest-blue,
-        'surface-container-lowest-navy': $theme-light-colors-surface-container-lowest-navy,
-        'surface-container-low-navy': $theme-light-colors-surface-container-low-navy,
-        'surface-container-high-navy': $theme-light-colors-surface-container-high-navy,
-        'surface-container-highest-navy': $theme-light-colors-surface-container-highest-navy,
+        'surface-container-lowest-blue':
+          $theme-light-colors-surface-container-lowest-blue,
+        'surface-container-low-blue':
+          $theme-light-colors-surface-container-low-blue,
+        'surface-container-high-blue':
+          $theme-light-colors-surface-container-high-blue,
+        'surface-container-highest-blue':
+          $theme-light-colors-surface-container-highest-blue,
+        'surface-container-lowest-navy':
+          $theme-light-colors-surface-container-lowest-navy,
+        'surface-container-low-navy':
+          $theme-light-colors-surface-container-low-navy,
+        'surface-container-high-navy':
+          $theme-light-colors-surface-container-high-navy,
+        'surface-container-highest-navy':
+          $theme-light-colors-surface-container-highest-navy,
         'surface-blue': $theme-light-colors-surface-blue,
         'surface-navy': $theme-light-colors-surface-navy,
         'surface-container-blue': $theme-light-colors-surface-container-blue,
@@ -1952,8 +1970,10 @@ $tokens: (
         'inverse-tertiary-12%': $theme-light-colors-inverse-tertiary-12,
         'inverse-tertiary-16%': $theme-light-colors-inverse-tertiary-16,
         'on-negative-container-8%': $theme-light-colors-on-negative-container-8,
-        'on-negative-container-12%': $theme-light-colors-on-negative-container-12,
-        'on-negative-container-16%': $theme-light-colors-on-negative-container-16
+        'on-negative-container-12%':
+          $theme-light-colors-on-negative-container-12,
+        'on-negative-container-16%':
+          $theme-light-colors-on-negative-container-16,
       ),
       'primary-hover': $theme-light-primary-hover,
       'primary-focus': $theme-light-primary-focus,
@@ -2064,10 +2084,14 @@ $tokens: (
         'on-primary-focus': $theme-light-states-on-primary-focus,
         'on-primary-press': $theme-light-states-on-primary-press,
         'on-primary-drag': $theme-light-states-on-primary-drag,
-        'on-primary-container-hover': $theme-light-states-on-primary-container-hover,
-        'on-primary-container-focus': $theme-light-states-on-primary-container-focus,
-        'on-primary-container-press': $theme-light-states-on-primary-container-press,
-        'on-primary-container-drag': $theme-light-states-on-primary-container-drag,
+        'on-primary-container-hover':
+          $theme-light-states-on-primary-container-hover,
+        'on-primary-container-focus':
+          $theme-light-states-on-primary-container-focus,
+        'on-primary-container-press':
+          $theme-light-states-on-primary-container-press,
+        'on-primary-container-drag':
+          $theme-light-states-on-primary-container-drag,
         'inverse-primary-hover': $theme-light-states-inverse-primary-hover,
         'inverse-primary-focus': $theme-light-states-inverse-primary-focus,
         'inverse-primary-press': $theme-light-states-inverse-primary-press,
@@ -2080,10 +2104,14 @@ $tokens: (
         'on-tertiary-press': $theme-light-states-on-tertiary-press,
         'on-tertiary-focus': $theme-light-states-on-tertiary-focus,
         'on-tertiary-drag': $theme-light-states-on-tertiary-drag,
-        'on-tertiary-container-hover': $theme-light-states-on-tertiary-container-hover,
-        'on-tertiary-container-press': $theme-light-states-on-tertiary-container-press,
-        'on-tertiary-container-focus': $theme-light-states-on-tertiary-container-focus,
-        'on-tertiary-container-drag': $theme-light-states-on-tertiary-container-drag,
+        'on-tertiary-container-hover':
+          $theme-light-states-on-tertiary-container-hover,
+        'on-tertiary-container-press':
+          $theme-light-states-on-tertiary-container-press,
+        'on-tertiary-container-focus':
+          $theme-light-states-on-tertiary-container-focus,
+        'on-tertiary-container-drag':
+          $theme-light-states-on-tertiary-container-drag,
         'negative-hover': $theme-light-states-negative-hover,
         'negative-press': $theme-light-states-negative-press,
         'negative-focus': $theme-light-states-negative-focus,
@@ -2100,10 +2128,14 @@ $tokens: (
         'on-positive-press': $theme-light-states-on-positive-press,
         'on-positive-focus': $theme-light-states-on-positive-focus,
         'on-positive-drag': $theme-light-states-on-positive-drag,
-        'on-positive-container-hover': $theme-light-states-on-positive-container-hover,
-        'on-positive-container-focus': $theme-light-states-on-positive-container-focus,
-        'on-positive-container-press': $theme-light-states-on-positive-container-press,
-        'on-positive-container-drag': $theme-light-states-on-positive-container-drag,
+        'on-positive-container-hover':
+          $theme-light-states-on-positive-container-hover,
+        'on-positive-container-focus':
+          $theme-light-states-on-positive-container-focus,
+        'on-positive-container-press':
+          $theme-light-states-on-positive-container-press,
+        'on-positive-container-drag':
+          $theme-light-states-on-positive-container-drag,
         'caution-hover': $theme-light-states-caution-hover,
         'caution-press': $theme-light-states-caution-press,
         'caution-focus': $theme-light-states-caution-focus,
@@ -2112,10 +2144,14 @@ $tokens: (
         'on-caution-press': $theme-light-states-on-caution-press,
         'on-caution-focus': $theme-light-states-on-caution-focus,
         'on-caution-drag': $theme-light-states-on-caution-drag,
-        'on-caution-container-hover': $theme-light-states-on-caution-container-hover,
-        'on-caution-container-press': $theme-light-states-on-caution-container-press,
-        'on-caution-container-focus': $theme-light-states-on-caution-container-focus,
-        'on-caution-container-drag': $theme-light-states-on-caution-container-drag,
+        'on-caution-container-hover':
+          $theme-light-states-on-caution-container-hover,
+        'on-caution-container-press':
+          $theme-light-states-on-caution-container-press,
+        'on-caution-container-focus':
+          $theme-light-states-on-caution-container-focus,
+        'on-caution-container-drag':
+          $theme-light-states-on-caution-container-drag,
         'emphasis-hover': $theme-light-states-emphasis-hover,
         'emphasis-press': $theme-light-states-emphasis-press,
         'emphasis-focus': $theme-light-states-emphasis-focus,
@@ -2124,10 +2160,14 @@ $tokens: (
         'on-emphasis-press': $theme-light-states-on-emphasis-press,
         'on-emphasis-focus': $theme-light-states-on-emphasis-focus,
         'on-emphasis-drag': $theme-light-states-on-emphasis-drag,
-        'on-emphasis-container-hover': $theme-light-states-on-emphasis-container-hover,
-        'on-emphasis-container-press': $theme-light-states-on-emphasis-container-press,
-        'on-emphasis-container-focus': $theme-light-states-on-emphasis-container-focus,
-        'on-emphasis-container-drag': $theme-light-states-on-emphasis-container-drag,
+        'on-emphasis-container-hover':
+          $theme-light-states-on-emphasis-container-hover,
+        'on-emphasis-container-press':
+          $theme-light-states-on-emphasis-container-press,
+        'on-emphasis-container-focus':
+          $theme-light-states-on-emphasis-container-focus,
+        'on-emphasis-container-drag':
+          $theme-light-states-on-emphasis-container-drag,
         'secondary-hover': $theme-light-states-secondary-hover,
         'secondary-press': $theme-light-states-secondary-press,
         'secondary-focus': $theme-light-states-secondary-focus,
@@ -2136,10 +2176,14 @@ $tokens: (
         'on-secondary-press': $theme-light-states-on-secondary-press,
         'on-secondary-focus': $theme-light-states-on-secondary-focus,
         'on-secondary-drag': $theme-light-states-on-secondary-drag,
-        'on-secondary-container-hover': $theme-light-states-on-secondary-container-hover,
-        'on-secondary-container-press': $theme-light-states-on-secondary-container-press,
-        'on-secondary-container-focus': $theme-light-states-on-secondary-container-focus,
-        'on-secondary-container-drag': $theme-light-states-on-secondary-container-drag,
+        'on-secondary-container-hover':
+          $theme-light-states-on-secondary-container-hover,
+        'on-secondary-container-press':
+          $theme-light-states-on-secondary-container-press,
+        'on-secondary-container-focus':
+          $theme-light-states-on-secondary-container-focus,
+        'on-secondary-container-drag':
+          $theme-light-states-on-secondary-container-drag,
         'on-surface-hover': $theme-light-states-on-surface-hover,
         'on-surface-press': $theme-light-states-on-surface-press,
         'on-surface-focus': $theme-light-states-on-surface-focus,
@@ -2152,11 +2196,15 @@ $tokens: (
         'inverse-on-surface-press': $theme-light-states-inverse-on-surface-press,
         'inverse-on-surface-focus': $theme-light-states-inverse-on-surface-focus,
         'inverse-on-surface-drag': $theme-light-states-inverse-on-surface-drag,
-        'on-negative-container-hover': $theme-light-states-on-negative-container-hover,
-        'on-negative-container-press': $theme-light-states-on-negative-container-press,
-        'on-negative-container-focus': $theme-light-states-on-negative-container-focus,
-        'on-negative-container-drag': $theme-light-states-on-negative-container-drag
-      )
+        'on-negative-container-hover':
+          $theme-light-states-on-negative-container-hover,
+        'on-negative-container-press':
+          $theme-light-states-on-negative-container-press,
+        'on-negative-container-focus':
+          $theme-light-states-on-negative-container-focus,
+        'on-negative-container-drag':
+          $theme-light-states-on-negative-container-drag,
+      ),
     ),
     'dark': (
       'palettes': (
@@ -2311,7 +2359,7 @@ $tokens: (
         'digital blue 91': $theme-dark-palettes-digital-blue-91,
         'digital blue 92': $theme-dark-palettes-digital-blue-92,
         'digital blue 93': $theme-dark-palettes-digital-blue-93,
-        'digital blue 94': $theme-dark-palettes-digital-blue-94
+        'digital blue 94': $theme-dark-palettes-digital-blue-94,
       ),
       'colors': (
         'primary': $theme-dark-colors-primary,
@@ -2332,7 +2380,8 @@ $tokens: (
         'surface-container-low': $theme-dark-colors-surface-container-low,
         'surface-container': $theme-dark-colors-surface-container,
         'surface-container-high': $theme-dark-colors-surface-container-high,
-        'surface-container-highest': $theme-dark-colors-surface-container-highest,
+        'surface-container-highest':
+          $theme-dark-colors-surface-container-highest,
         'on-surface': $theme-dark-colors-on-surface,
         'on-surface-variant': $theme-dark-colors-on-surface-variant,
         'inverse-surface': $theme-dark-colors-inverse-surface,
@@ -2376,7 +2425,8 @@ $tokens: (
         'on-primary-container-12%': $theme-dark-colors-on-primary-container-12,
         'on-surface-variant-12%': $theme-dark-colors-on-surface-variant-12,
         'on-secondary-container-8%': $theme-dark-colors-on-secondary-container-8,
-        'on-secondary-container-16%': $theme-dark-colors-on-secondary-container-16,
+        'on-secondary-container-16%':
+          $theme-dark-colors-on-secondary-container-16,
         'outline-8%': $theme-dark-colors-outline-8,
         'outline-12%': $theme-dark-colors-outline-12,
         'outline-16%': $theme-dark-colors-outline-16,
@@ -2388,7 +2438,8 @@ $tokens: (
         'positive-16%': $theme-dark-colors-positive-16,
         'caution-16%': $theme-dark-colors-caution-16,
         'negative-12%': $theme-dark-colors-negative-12,
-        'on-secondary-container-12%': $theme-dark-colors-on-secondary-container-12,
+        'on-secondary-container-12%':
+          $theme-dark-colors-on-secondary-container-12,
         'on-primary-16%': $theme-dark-colors-on-primary-16,
         'on-primary-container-8%': $theme-dark-colors-on-primary-container-8,
         'on-primary-container-16%': $theme-dark-colors-on-primary-container-16,
@@ -2441,14 +2492,22 @@ $tokens: (
         'tertiary-8%': $theme-dark-colors-tertiary-8,
         'tertiary-12%': $theme-dark-colors-tertiary-12,
         'tertiary-16%': $theme-dark-colors-tertiary-16,
-        'surface-container-lowest-blue': $theme-dark-colors-surface-container-lowest-blue,
-        'surface-container-low-blue': $theme-dark-colors-surface-container-low-blue,
-        'surface-container-high-blue': $theme-dark-colors-surface-container-high-blue,
-        'surface-container-highest-blue': $theme-dark-colors-surface-container-highest-blue,
-        'surface-container-lowest-navy': $theme-dark-colors-surface-container-lowest-navy,
-        'surface-container-low-navy': $theme-dark-colors-surface-container-low-navy,
-        'surface-container-high-navy': $theme-dark-colors-surface-container-high-navy,
-        'surface-container-highest-navy': $theme-dark-colors-surface-container-highest-navy,
+        'surface-container-lowest-blue':
+          $theme-dark-colors-surface-container-lowest-blue,
+        'surface-container-low-blue':
+          $theme-dark-colors-surface-container-low-blue,
+        'surface-container-high-blue':
+          $theme-dark-colors-surface-container-high-blue,
+        'surface-container-highest-blue':
+          $theme-dark-colors-surface-container-highest-blue,
+        'surface-container-lowest-navy':
+          $theme-dark-colors-surface-container-lowest-navy,
+        'surface-container-low-navy':
+          $theme-dark-colors-surface-container-low-navy,
+        'surface-container-high-navy':
+          $theme-dark-colors-surface-container-high-navy,
+        'surface-container-highest-navy':
+          $theme-dark-colors-surface-container-highest-navy,
         'surface-blue': $theme-dark-colors-surface-blue,
         'surface-navy': $theme-dark-colors-surface-navy,
         'surface-container-blue': $theme-dark-colors-surface-container-blue,
@@ -2468,7 +2527,7 @@ $tokens: (
         'inverse-tertiary-16%': $theme-dark-colors-inverse-tertiary-16,
         'on-negative-container-8%': $theme-dark-colors-on-negative-container-8,
         'on-negative-container-12%': $theme-dark-colors-on-negative-container-12,
-        'on-negative-container-16%': $theme-dark-colors-on-negative-container-16
+        'on-negative-container-16%': $theme-dark-colors-on-negative-container-16,
       ),
       'primary-hover': $theme-dark-primary-hover,
       'primary-focus': $theme-dark-primary-focus,
@@ -2579,10 +2638,14 @@ $tokens: (
         'on-primary-focus': $theme-dark-states-on-primary-focus,
         'on-primary-press': $theme-dark-states-on-primary-press,
         'on-primary-drag': $theme-dark-states-on-primary-drag,
-        'on-primary-container-hover': $theme-dark-states-on-primary-container-hover,
-        'on-primary-container-focus': $theme-dark-states-on-primary-container-focus,
-        'on-primary-container-press': $theme-dark-states-on-primary-container-press,
-        'on-primary-container-drag': $theme-dark-states-on-primary-container-drag,
+        'on-primary-container-hover':
+          $theme-dark-states-on-primary-container-hover,
+        'on-primary-container-focus':
+          $theme-dark-states-on-primary-container-focus,
+        'on-primary-container-press':
+          $theme-dark-states-on-primary-container-press,
+        'on-primary-container-drag':
+          $theme-dark-states-on-primary-container-drag,
         'inverse-primary-hover': $theme-dark-states-inverse-primary-hover,
         'inverse-primary-focus': $theme-dark-states-inverse-primary-focus,
         'inverse-primary-press': $theme-dark-states-inverse-primary-press,
@@ -2595,10 +2658,14 @@ $tokens: (
         'on-tertiary-press': $theme-dark-states-on-tertiary-press,
         'on-tertiary-focus': $theme-dark-states-on-tertiary-focus,
         'on-tertiary-drag': $theme-dark-states-on-tertiary-drag,
-        'on-tertiary-container-hover': $theme-dark-states-on-tertiary-container-hover,
-        'on-tertiary-container-press': $theme-dark-states-on-tertiary-container-press,
-        'on-tertiary-container-focus': $theme-dark-states-on-tertiary-container-focus,
-        'on-tertiary-container-drag': $theme-dark-states-on-tertiary-container-drag,
+        'on-tertiary-container-hover':
+          $theme-dark-states-on-tertiary-container-hover,
+        'on-tertiary-container-press':
+          $theme-dark-states-on-tertiary-container-press,
+        'on-tertiary-container-focus':
+          $theme-dark-states-on-tertiary-container-focus,
+        'on-tertiary-container-drag':
+          $theme-dark-states-on-tertiary-container-drag,
         'negative-hover': $theme-dark-states-negative-hover,
         'negative-press': $theme-dark-states-negative-press,
         'negative-focus': $theme-dark-states-negative-focus,
@@ -2615,10 +2682,14 @@ $tokens: (
         'on-positive-press': $theme-dark-states-on-positive-press,
         'on-positive-focus': $theme-dark-states-on-positive-focus,
         'on-positive-drag': $theme-dark-states-on-positive-drag,
-        'on-positive-container-hover': $theme-dark-states-on-positive-container-hover,
-        'on-positive-container-focus': $theme-dark-states-on-positive-container-focus,
-        'on-positive-container-press': $theme-dark-states-on-positive-container-press,
-        'on-positive-container-drag': $theme-dark-states-on-positive-container-drag,
+        'on-positive-container-hover':
+          $theme-dark-states-on-positive-container-hover,
+        'on-positive-container-focus':
+          $theme-dark-states-on-positive-container-focus,
+        'on-positive-container-press':
+          $theme-dark-states-on-positive-container-press,
+        'on-positive-container-drag':
+          $theme-dark-states-on-positive-container-drag,
         'caution-hover': $theme-dark-states-caution-hover,
         'caution-press': $theme-dark-states-caution-press,
         'caution-focus': $theme-dark-states-caution-focus,
@@ -2627,10 +2698,14 @@ $tokens: (
         'on-caution-press': $theme-dark-states-on-caution-press,
         'on-caution-focus': $theme-dark-states-on-caution-focus,
         'on-caution-drag': $theme-dark-states-on-caution-drag,
-        'on-caution-container-hover': $theme-dark-states-on-caution-container-hover,
-        'on-caution-container-press': $theme-dark-states-on-caution-container-press,
-        'on-caution-container-focus': $theme-dark-states-on-caution-container-focus,
-        'on-caution-container-drag': $theme-dark-states-on-caution-container-drag,
+        'on-caution-container-hover':
+          $theme-dark-states-on-caution-container-hover,
+        'on-caution-container-press':
+          $theme-dark-states-on-caution-container-press,
+        'on-caution-container-focus':
+          $theme-dark-states-on-caution-container-focus,
+        'on-caution-container-drag':
+          $theme-dark-states-on-caution-container-drag,
         'emphasis-hover': $theme-dark-states-emphasis-hover,
         'emphasis-press': $theme-dark-states-emphasis-press,
         'emphasis-focus': $theme-dark-states-emphasis-focus,
@@ -2639,10 +2714,14 @@ $tokens: (
         'on-emphasis-press': $theme-dark-states-on-emphasis-press,
         'on-emphasis-focus': $theme-dark-states-on-emphasis-focus,
         'on-emphasis-drag': $theme-dark-states-on-emphasis-drag,
-        'on-emphasis-container-hover': $theme-dark-states-on-emphasis-container-hover,
-        'on-emphasis-container-press': $theme-dark-states-on-emphasis-container-press,
-        'on-emphasis-container-focus': $theme-dark-states-on-emphasis-container-focus,
-        'on-emphasis-container-drag': $theme-dark-states-on-emphasis-container-drag,
+        'on-emphasis-container-hover':
+          $theme-dark-states-on-emphasis-container-hover,
+        'on-emphasis-container-press':
+          $theme-dark-states-on-emphasis-container-press,
+        'on-emphasis-container-focus':
+          $theme-dark-states-on-emphasis-container-focus,
+        'on-emphasis-container-drag':
+          $theme-dark-states-on-emphasis-container-drag,
         'secondary-hover': $theme-dark-states-secondary-hover,
         'secondary-press': $theme-dark-states-secondary-press,
         'secondary-focus': $theme-dark-states-secondary-focus,
@@ -2651,10 +2730,14 @@ $tokens: (
         'on-secondary-press': $theme-dark-states-on-secondary-press,
         'on-secondary-focus': $theme-dark-states-on-secondary-focus,
         'on-secondary-drag': $theme-dark-states-on-secondary-drag,
-        'on-secondary-container-hover': $theme-dark-states-on-secondary-container-hover,
-        'on-secondary-container-press': $theme-dark-states-on-secondary-container-press,
-        'on-secondary-container-focus': $theme-dark-states-on-secondary-container-focus,
-        'on-secondary-container-drag': $theme-dark-states-on-secondary-container-drag,
+        'on-secondary-container-hover':
+          $theme-dark-states-on-secondary-container-hover,
+        'on-secondary-container-press':
+          $theme-dark-states-on-secondary-container-press,
+        'on-secondary-container-focus':
+          $theme-dark-states-on-secondary-container-focus,
+        'on-secondary-container-drag':
+          $theme-dark-states-on-secondary-container-drag,
         'on-surface-hover': $theme-dark-states-on-surface-hover,
         'on-surface-press': $theme-dark-states-on-surface-press,
         'on-surface-focus': $theme-dark-states-on-surface-focus,
@@ -2667,12 +2750,16 @@ $tokens: (
         'inverse-on-surface-press': $theme-dark-states-inverse-on-surface-press,
         'inverse-on-surface-focus': $theme-dark-states-inverse-on-surface-focus,
         'inverse-on-surface-drag': $theme-dark-states-inverse-on-surface-drag,
-        'on-negative-container-hover': $theme-dark-states-on-negative-container-hover,
-        'on-negative-container-press': $theme-dark-states-on-negative-container-press,
-        'on-negative-container-focus': $theme-dark-states-on-negative-container-focus,
-        'on-negative-container-drag': $theme-dark-states-on-negative-container-drag
-      )
-    )
+        'on-negative-container-hover':
+          $theme-dark-states-on-negative-container-hover,
+        'on-negative-container-press':
+          $theme-dark-states-on-negative-container-press,
+        'on-negative-container-focus':
+          $theme-dark-states-on-negative-container-focus,
+        'on-negative-container-drag':
+          $theme-dark-states-on-negative-container-drag,
+      ),
+    ),
   ),
   'material': (
     'red-50': $material-red-50,
@@ -2928,7 +3015,7 @@ $tokens: (
     'blue-grey-600': $material-blue-grey-600,
     'blue-grey-700': $material-blue-grey-700,
     'blue-grey-800': $material-blue-grey-800,
-    'blue-grey-900': $material-blue-grey-900
+    'blue-grey-900': $material-blue-grey-900,
   ),
   'teradata': (
     'teal-50': $teradata-teal-50,
@@ -2981,7 +3068,7 @@ $tokens: (
     'orange-600': $teradata-orange-600,
     'orange-700': $teradata-orange-700,
     'orange-800': $teradata-orange-800,
-    'orange-900': $teradata-orange-900
+    'orange-900': $teradata-orange-900,
   ),
   'typography': (
     'font-family': $typography-font-family,
@@ -3032,6 +3119,6 @@ $tokens: (
     'caption-font-family': $typography-caption-font-family,
     'caption-font-size': $typography-caption-font-size,
     'caption-font-weight': $typography-caption-font-weight,
-    'caption-line-height': $typography-caption-line-height
-  )
+    'caption-line-height': $typography-caption-line-height,
+  ),
 );
