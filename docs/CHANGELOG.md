@@ -1,3 +1,9 @@
+# [8.1.0-beta.5](https://github.com/Teradata/covalent/compare/v8.1.0-beta.4...v8.1.0-beta.5) (2024-01-19)
+
+### Bug Fixes
+
+- **angular:** update tokens import for theme ([cca2aa3](https://github.com/Teradata/covalent/commit/cca2aa304b75e9bcb53b7d49a7d24f2ecde3151c))
+
 # [8.1.0-beta.4](https://github.com/Teradata/covalent/compare/v8.1.0-beta.3...v8.1.0-beta.4) (2024-01-19)
 
 ### Bug Fixes
