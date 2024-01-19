@@ -197,8 +197,7 @@ $td-light-theme-background: (
   raised-button: variables.$light-surface-primary,
   focused-button: variables.$light-surface-primary-highlight,
   selected-button: variables.$theme-light-colors-surface-dim,
-  selected-disabled-button:
-    variables.$theme-light-colors-surface-dim,
+  selected-disabled-button: variables.$theme-light-colors-surface-dim,
   unselected-chip: variables.$theme-light-colors-surface-variant,
   tooltip: variables.$theme-light-colors-surface-container-highest,
   overlay: variables.$theme-light-colors-scrim,
@@ -271,8 +270,7 @@ $td-dark-theme-background: (
   raised-button: variables.$dark-surface-primary,
   focused-button: variables.$dark-surface-primary-highlight,
   selected-button: variables.$theme-dark-colors-surface-dim,
-  selected-disabled-button:
-    variables.$theme-dark-colors-surface-dim,
+  selected-disabled-button: variables.$theme-dark-colors-surface-dim,
   unselected-chip: variables.$theme-dark-colors-surface-variant,
   tooltip: variables.$theme-dark-colors-surface-container-highest,
   overlay: variables.$theme-dark-colors-scrim,
