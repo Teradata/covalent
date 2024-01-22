@@ -41,7 +41,6 @@ $mat-font-url: './';
 // Include covalent color classes
 @include covalent-colors();
 
-$foreground: map-get($td-light-theme, foreground);
 $background: map-get($td-light-theme, background);
 
 // Include theme styles for core and each component used in your app.
@@ -79,8 +78,8 @@ body .mat-card {
   @include covalent-highlight-theme($td-dark-theme);
   @include covalent-flavored-markdown-theme($td-dark-theme);
   @include covalent-markdown-navigator-theme($td-dark-theme);
-  @include teradata-brand($td-dark-theme);
   @include covalent-guided-tour-theme($td-dark-theme);
+  @include teradata-brand($td-dark-theme);
 
   .mat-app-background {
     background-color: map-get($background, background);
