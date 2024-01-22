@@ -15,11 +15,11 @@ export default {
   },
 };
 
-const Template = ({ disabled, label, checked, onChange }) => {
+const Template = ({ disabled, label = 'On/Off', checked, onChange }) => {
   const switchInput = document.createElement('cv-switch');
   switchInput.checked = checked;
   switchInput.disabled = disabled;
-  switchInput.ariaLabel = 'Example switch button'
+  switchInput.ariaLabel = label;
 
   switchInput.addEventListener('change', onChange);
 
@@ -31,12 +31,11 @@ const Template = ({ disabled, label, checked, onChange }) => {
     return formfield;
   }
 
-  return switchInput;
+  return `
+    <cv-formfield label="${label}" aria-label="${label}">
+      <cv-switch></cv-switch>
+    </cv-formfield>
+  `;
 };
 
 export const Basic = Template.bind({});
-
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  label: 'Bananas',
-};
