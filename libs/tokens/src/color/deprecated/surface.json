@@ -91,15 +91,15 @@
     },
 
     "surface-neutral": {
-      "value": "{theme.light.palettes.neutral 40}",
+      "value": "{theme.light.colors.surface-container-low}",
       "type": "color"
     },
     "surface-neutral-highlight": {
-      "value": "rgba({theme.light.palettes.neutral 40}, 0.04)",
+      "value": "rgba({theme.light.colors.surface-container-low}, 0.04)",
       "type": "color"
     },
     "surface-neutral-highlight-hover": {
-      "value": "rgba({theme.light.palettes.neutral 40}, 0.08)",
+      "value": "rgba({theme.light.colors.surface-container-low}, 0.08)",
       "type": "color"
     },
     "surface-emphasis": {
@@ -207,15 +207,15 @@
     },
 
     "surface-neutral": {
-      "value": "{theme.dark.palettes.neutral 40}",
+      "value": "{theme.light.colors.surface-container-low}",
       "type": "color"
     },
     "surface-neutral-highlight": {
-      "value": "rgba({theme.dark.palettes.neutral 40}, 0.04)",
+      "value": "rgba({theme.light.colors.surface-container-low}, 0.04)",
       "type": "color"
     },
     "surface-neutral-highlight-hover": {
-      "value": "rgba({theme.dark.palettes.neutral 40}, 0.08)",
+      "value": "rgba({theme.light.colors.surface-container-low}, 0.08)",
       "type": "color"
     },
     "surface-emphasis": {
