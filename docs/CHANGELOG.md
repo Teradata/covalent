@@ -1,3 +1,9 @@
+# [8.1.0-beta.6](https://github.com/Teradata/covalent/compare/v8.1.0-beta.5...v8.1.0-beta.6) (2024-01-22)
+
+### Bug Fixes
+
+- **tokens:** rearrange file structure ([ce4a722](https://github.com/Teradata/covalent/commit/ce4a7226cee3d47d195dbab630237b40820b3fe1))
+
 # [8.1.0-beta.5](https://github.com/Teradata/covalent/compare/v8.1.0-beta.4...v8.1.0-beta.5) (2024-01-22)
 
 ### Bug Fixes
