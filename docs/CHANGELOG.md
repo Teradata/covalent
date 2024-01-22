@@ -9,6 +9,21 @@
 - **tokens:** drinking champagne ([ec6b352](https://github.com/Teradata/covalent/commit/ec6b352e2c1e4079b3c95be3e008e623504e4fc7))
 - **tokens:** updating nuetral color ([66d6bfd](https://github.com/Teradata/covalent/commit/66d6bfd56d307c30bbbee76040deffb1b56fa427))
 
+### Features
+
+- **tokens:** theme update ([a001d00](https://github.com/Teradata/covalent/commit/a001d00a2d8ba6127461c64def9c75243dfd5f18))
+
+# [8.1.0-beta.5](https://github.com/Teradata/covalent/compare/v8.1.0-beta.4...v8.1.0-beta.5) (2024-01-22)
+
+### Bug Fixes
+
+- **angular:** update tokens import for theme ([cca2aa3](https://github.com/Teradata/covalent/commit/cca2aa304b75e9bcb53b7d49a7d24f2ecde3151c))
+- **angular:** update tokens reference ([d0fb665](https://github.com/Teradata/covalent/commit/d0fb665fd913815e7e4f5d072216a89b2d3f0fd5))
+- **components:** theme tokens reference change ([68296de](https://github.com/Teradata/covalent/commit/68296de653e1ea880de7b068ad5be11bc05e7b4b))
+- **components:** updating generated tokens ([4df0124](https://github.com/Teradata/covalent/commit/4df0124ac0abb41e0e1cd1bcd8ca13b6734e5ce0))
+- **tokens:** drinking champagne ([ec6b352](https://github.com/Teradata/covalent/commit/ec6b352e2c1e4079b3c95be3e008e623504e4fc7))
+- **tokens:** updating nuetral color ([66d6bfd](https://github.com/Teradata/covalent/commit/66d6bfd56d307c30bbbee76040deffb1b56fa427))
+
 # [8.1.0-beta.5](https://github.com/Teradata/covalent/compare/v8.1.0-beta.4...v8.1.0-beta.5) (2024-01-22)
 
 ### Bug Fixes
