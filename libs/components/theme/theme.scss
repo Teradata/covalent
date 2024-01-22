@@ -2,7 +2,7 @@
 @use '../src/skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
 @use './mixins' as theme;
 
-@import '@covalent/tokens';
+@use '@covalent/tokens/index.scss' as tokens;
 
 @import '../../icons/covalent-icons.css';
 
@@ -12,14 +12,14 @@
 // Define the base theme using light tokens w/ dark tokens overriting for prefers-color-scheme:dark
 :root {
   @include theme.components-theme(
-    map-get($tokens, light),
-    map-get($tokens, typography)
+    map-get(tokens.$tokens, 'light'),
+    map-get(tokens.$tokens, typography)
   );
 
   @media (prefers-color-scheme: dark) {
     @include theme.components-theme(
-      map-get($tokens, dark),
-      map-get($tokens, typography)
+      map-get(tokens.$tokens, 'dark'),
+      map-get(tokens.$tokens, typography)
     );
   }
 }
@@ -27,14 +27,14 @@
 // For convience re-define theme tokens scoped to a light/dark class
 .light {
   @include theme.components-theme(
-    map-get($tokens, light),
-    map-get($tokens, typography)
+    map-get(tokens.$tokens, 'light'),
+    map-get(tokens.$tokens, typography)
   );
 }
 
 .dark {
   @include theme.components-theme(
-    map-get($tokens, dark),
-    map-get($tokens, typography)
+    map-get(tokens.$tokens, 'dark'),
+    map-get(tokens.$tokens, typography)
   );
 }
