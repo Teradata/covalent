@@ -18,49 +18,65 @@ $td-light-colors: map-get($td-theme-light, 'colors');
 // Add contrast for angular palette
 $td-digital-blue-light: map-merge(
   (
+    '200': map-get($td-light-palettes, 'digital blue 20'),
     '30': map-get($td-light-palettes, 'digital blue 30'),
+    '300': map-get($td-light-palettes, 'digital blue 30'),
     '40': map-get($td-light-palettes, 'digital blue 40'),
     '50': map-get($td-light-palettes, 'digital blue 50'),
     '500': map-get($td-light-palettes, 'digital blue 50'),
     '60': map-get($td-light-palettes, 'digital blue 60'),
+    '600': map-get($td-light-palettes, 'digital blue 60'),
     '70': map-get($td-light-palettes, 'digital blue 70'),
     '80': map-get($td-light-palettes, 'digital blue 80'),
     '90': map-get($td-light-palettes, 'digital blue 90'),
+    '900': map-get($td-light-palettes, 'digital blue 90'),
   ),
   (
     contrast: (
+      '20': $light-on-primary,
       '30': $light-on-primary,
+      '300': $light-on-primary,
       '40': $light-on-primary,
       '50': $light-on-primary,
       '500': $light-on-primary,
       '60': $light-on-primary,
+      '600': $light-on-primary,
       '70': $light-on-primary,
       '80': $light-on-primary,
       '90': $light-on-primary,
+      '900': $light-on-primary,
     ),
   )
 );
 $td-digital-blue-dark: map-merge(
   (
+    '200': map-get($td-dark-palettes, 'digital blue 20'),
     '30': map-get($td-dark-palettes, 'digital blue 30'),
+    '300': map-get($td-dark-palettes, 'digital blue 30'),
     '40': map-get($td-dark-palettes, 'digital blue 40'),
     '50': map-get($td-dark-palettes, 'digital blue 50'),
     '500': map-get($td-dark-palettes, 'digital blue 50'),
     '60': map-get($td-dark-palettes, 'digital blue 60'),
+    '600': map-get($td-dark-palettes, 'digital blue 60'),
     '70': map-get($td-dark-palettes, 'digital blue 70'),
     '80': map-get($td-dark-palettes, 'digital blue 80'),
     '90': map-get($td-dark-palettes, 'digital blue 90'),
+    '900': map-get($td-dark-palettes, 'digital blue 90'),
   ),
   (
     contrast: (
+      '200': $dark-on-primary,
       '30': $dark-on-primary,
+      '300': $dark-on-primary,
       '40': $dark-on-primary,
       '50': $dark-on-primary,
       '500': $dark-on-primary,
       '60': $dark-on-primary,
+      '600': $dark-on-primary,
       '70': $dark-on-primary,
       '80': $dark-on-primary,
       '90': $dark-on-primary,
+      '900': $dark-on-primary,
     ),
   )
 );
@@ -183,8 +199,8 @@ $td-warn-dark: $td-warn-dark;
 // Background palette for light themes.
 // todo: need to re-catalog used variables
 $td-light-theme-background: (
-  status-bar: $theme-light-colors-surface-container,
-  app-bar: $light-surface,
+  status-bar: $theme-light-colors-surface-container-lowest,
+  app-bar: $theme-light-colors-surface-container-low,
   background: $theme-light-colors-surface,
   canvas: $light-surface-canvas,
   card: $theme-light-colors-surface-container
@@ -383,7 +399,7 @@ $td-dark-theme: mat.private-deep-merge-all(
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
-  $background: map-get($theme, background);
+  $background: map-get(map-get($theme, color), background);
   $foreground: map-get($theme, foreground);
   $is-dark-theme: map-get($theme, is-dark);
   $accent-highlight: map-get($background, accent-highlight);
@@ -395,6 +411,13 @@ $td-dark-theme: mat.private-deep-merge-all(
     --mat-toolbar-container-text-color: #{$on-primary};
   }
 
+  :root {
+    --mdc-list-list-item-leading-avatar-color: #{map-get(
+        $background,
+        disabled-button
+      )};
+  }
+
   // Logo alignment
   .mat-icon.mat-icon-logo {
     fill: $teradata-orange-500;
@@ -403,18 +426,6 @@ $td-dark-theme: mat.private-deep-merge-all(
 
     @if $is-dark-theme {
       fill: #ffffff;
-    }
-
-    // Logo + title alignment
-    & + .mat-title,
-    & + span {
-      position: relative;
-      top: 1px;
-      text-transform: uppercase;
-    }
-
-    & + .td-navigation-drawer-title {
-      top: 2px;
     }
   }
   // Spacing before logo in main toolbar
@@ -489,44 +500,14 @@ $td-dark-theme: mat.private-deep-merge-all(
     }
   }
 
-  td-layout-nav {
-    mat-toolbar {
-      z-index: 2;
-      @include mat-elevation(3);
-    }
-  }
-
-  // Active top nav
-  nav.docs-nav {
-    a {
-      line-height: 4;
-      display: block;
-      font-size: 1.1428em;
-      letter-spacing: 0.0764em;
-      position: relative;
-
-      &.active {
-        &::after {
-          content: '';
-          position: absolute;
-          height: 3px;
-          bottom: 0;
-          width: 100%;
-          background-color: mat-color($accent);
-          left: 0;
-        }
-      }
-    }
-  }
-
   // Active side nav
   .doc-nav a.doc-nav-link {
     &.active::before {
-      background-color: $accent-highlight;
+      background-color: mat-color($accent);
     }
     &:hover {
       &::before {
-        background-color: $accent-highlight-hover;
+        background-color: mat-color($accent);
       }
     }
   }
