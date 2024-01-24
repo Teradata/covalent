@@ -1,3 +1,5 @@
+@use '../../../common/styles/elevation';
+
 .td-menu-button {
   margin-left: 0;
 
@@ -50,5 +52,10 @@
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
+  }
+
+  mat-toolbar {
+    z-index: 2;
+    @include elevation.mat-elevation(3);
   }
 }

@@ -8,16 +8,19 @@
   </mat-toolbar-row>
   <mat-tab-group *ngIf="viewCode">
     <mat-tab label="HTML">
+      <mat-divider></mat-divider>
       <td-highlight codeLang="html">
         {{ htmlFile }}
       </td-highlight>
     </mat-tab>
     <mat-tab label="TS">
+      <mat-divider></mat-divider>
       <td-highlight codeLang="typescript">
         {{ typescriptFile }}
       </td-highlight>
     </mat-tab>
     <mat-tab label="SCSS" *ngIf="stylesFile">
+      <mat-divider></mat-divider>
       <td-highlight codeLang="scss">
         {{ stylesFile }}
       </td-highlight>
