@@ -1,0 +1,35 @@
+{
+  "statusSets": [
+    {
+      "id": "main",
+      "title": "Status",
+      "statuses": [
+        {
+          "id": "draft",
+          "title": "Draft",
+          "color": "#9b9b9b"
+        },
+        {
+          "id": "needsDesign",
+          "title": "Needs Design",
+          "color": "#FC0"
+        },
+        {
+          "id": "needsDev",
+          "title": "Needs Development",
+          "color": "#FC0"
+        },
+        {
+          "id": "needsReview",
+          "title": "Needs Review",
+          "color": "#FC0"
+        },
+        {
+          "id": "ready",
+          "title": "Ready",
+          "color": "#2ECC40"
+        }
+      ]
+    }
+  ]
+}
