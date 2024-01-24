@@ -25,7 +25,11 @@
     "style-dictionary": "cd libs/tokens && style-dictionary build",
     "storybook": "storybook dev -c libs/components/.storybook",
     "build-storybook": "storybook build -c libs/components/.storybook -o dist/storybook/components",
-    "chromatic": "npx chromatic"
+    "chromatic": "npx chromatic",
+    "ks:build": "knapsack --config knapsack/knapsack.config.js build",
+    "ks:start": "knapsack --config knapsack/knapsack.config.js start",
+    "ks:serve": "NODE_ENV=production knapsack --config knapsack/knapsack.config.js serve",
+    "ks:test": "knapsack --config knapsack/knapsack.config.js test"
   },
   "dependencies": {
     "@angular/animations": "17.x.x",
@@ -171,6 +175,8 @@
     "ts-jest": "29.1.1",
     "typescript": "5.3.3",
     "vite": "^4.5.2",
-    "vitest": "^0.27.2"
+    "vitest": "^0.27.2",
+    "@knapsack/app": "^4.41.12",
+    "@knapsack/renderer-web-components": "^4.41.12"
   }
 }
