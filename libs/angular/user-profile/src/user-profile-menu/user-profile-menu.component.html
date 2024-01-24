@@ -3,7 +3,7 @@
   <mat-list td-menu-header>
     <mat-list-item *ngIf="name || email" (click)="_blockEvent($event)">
       <mat-icon matListItemAvatar>person</mat-icon>
-      <span matListItemLine *ngIf="name" class="mat-body-1">{{ name }}</span>
+      <span matListItemTitle *ngIf="name">{{ name }}</span>
       <span matListItemLine *ngIf="email">{{ email }}</span>
     </mat-list-item>
     <ng-content select="[td-user-info-list]"></ng-content>

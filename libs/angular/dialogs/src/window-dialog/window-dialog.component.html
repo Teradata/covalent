@@ -6,6 +6,7 @@
 >
   <mat-toolbar-row [style.height.px]="toolbarHeight">
     <div layout="row" layout-align="start center" flex>
+      <ng-content select="[tdWindowDialogTitle]"></ng-content>
       <span class="mat-title td-window-dialog-title truncate" flex>
         {{ title }}
       </span>

@@ -19,11 +19,14 @@ import { Subject, takeUntil } from 'rxjs';
   selector: 'draggable-resizable-window-dialog',
   template: `
     <td-window-dialog
-      [title]="'Draggable resizable window dialog'"
       [toolbarColor]="'accent'"
       [closeLabel]="'Close'"
       (closed)="closed.emit()"
     >
+      <mat-tab-group mat-stretch-tabs="false" tdWindowDialogTitle>
+        <mat-tab label="Help"></mat-tab>
+        <mat-tab label="Ask.ai"></mat-tab>
+      </mat-tab-group>
       <div [style.padding.em]="1">
         <p>Comes with a handy toolbar</p>
         <p>Draggable via the toolbar</p>
@@ -58,15 +61,14 @@ export class DialogsDemoDraggableResizableWindowComponent implements OnDestroy {
     const {
       matDialogRef,
       dragRefSubject,
-    }: IDraggableRefs<DraggableResizableWindowDialogComponent> = this._dialogService.openDraggable(
-      {
+    }: IDraggableRefs<DraggableResizableWindowDialogComponent> =
+      this._dialogService.openDraggable({
         component: DraggableResizableWindowDialogComponent,
         dragHandleSelectors: ['mat-toolbar'],
         config: {
           panelClass: ['td-window-dialog'], // pass this class in to ensure certain css is properly added
         },
-      }
-    );
+      });
 
     // listen to close event
     matDialogRef.componentInstance.closed

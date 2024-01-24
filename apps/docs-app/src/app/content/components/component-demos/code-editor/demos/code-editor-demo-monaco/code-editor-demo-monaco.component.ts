@@ -9,7 +9,7 @@ import { editor } from 'monaco-editor';
 export class CodeEditorDemoMonacoComponent {
   private _editor: any;
 
-  editorTheme = 'vs';
+  editorTheme = 'cov-light';
   editorVal = `var rows = prompt("How many rows for your multiplication table?");
 var cols = prompt("How many columns for your multiplication table?");
 if(rows == "" || rows == null)

@@ -1,6 +1,6 @@
 @mixin covalent-highlight-theme($theme) {
   $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $background: map-get(map-get($theme, color), background);
   $is-dark: map-get($theme, is-dark);
 
   .raw-and-copy-buttons {
@@ -21,7 +21,8 @@
   }
 
   td-highlight {
-    background-color: if($is-dark, #1a1c1d, #eeeeee);
+    background-color: map-get($background, status-bar);
+    padding: 8px;
 
     .highlight {
       color: if($is-dark, #abb2bf, #383a42);
@@ -89,5 +90,11 @@
     .hljs-title.class_ {
       color: if($is-dark, #e6c07b, #c18401);
     }
+  }
+
+  code {
+    padding: 2px;
+    background-color: map-get($background, status-bar);
+    color: map-get($foreground, base);
   }
 }

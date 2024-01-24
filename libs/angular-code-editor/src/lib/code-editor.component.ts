@@ -20,7 +20,17 @@ import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 // Use esm version to support shipping subset of languages and features
-import { editor, languages, IDisposable } from 'monaco-editor/esm/vs/editor/editor.api';
+import {
+  editor,
+  languages,
+  IDisposable,
+} from 'monaco-editor/esm/vs/editor/editor.api';
+
+import { covalentThemeConf, covalentThemeName } from './editor.theme';
+import {
+  covalentDarkThemeConf,
+  covalentDarkThemeName,
+} from './editor.theme-dark';
 
 import {
   mixinControlValueAccessor,
@@ -65,11 +75,12 @@ export class TdCodeEditorComponent
 
   private _editorStyle = 'width:100%;height:100%;';
   private _value = '';
-  private _theme = 'vs';
+  private _theme = covalentThemeName;
   private _language = 'javascript';
   private _subject: Subject<string> = new Subject();
   private _editorInnerContainer: string =
     'editorInnerContainer' + uniqueCounter++;
+  private _monaco = editor;
   private _editor!: editor.IStandaloneCodeEditor;
   private _fromEditor = false;
   private _componentInitialized = false;
@@ -176,7 +187,7 @@ export class TdCodeEditorComponent
 
   applyLanguage(): void {
     if (this._language) {
-      editor.setModelLanguage(
+      this._monaco.setModelLanguage(
         this._editor.getModel() as editor.ITextModel,
         this._language
       );
@@ -201,8 +212,11 @@ export class TdCodeEditorComponent
       );
 
       // Define a new theme that constains only rules that match this language
-      editor.defineTheme(language.customTheme.id, language.customTheme.theme);
-      this._theme = language.customTheme.id;
+      this._monaco.defineTheme(
+        language.customTheme.id,
+        language.customTheme.theme
+      );
+      this.theme = language.customTheme.id;
 
       this._disposables.push(
         languages.registerCompletionItemProvider(language.id, {
@@ -222,6 +236,12 @@ export class TdCodeEditorComponent
         css,
       ];
     }
+  }
+
+  registerTheme(id: string, theme: editor.IStandaloneThemeData) {
+    // Define a new theme that constains only rules that match this language
+    this._monaco.defineTheme(id, theme);
+    this.theme = id;
   }
 
   /**
@@ -327,7 +347,10 @@ export class TdCodeEditorComponent
     const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
     containerDiv.id = this._editorInnerContainer;
 
-    this._editor = editor.create(
+    this.registerTheme(covalentDarkThemeName, covalentDarkThemeConf);
+    this.registerTheme(covalentThemeName, covalentThemeConf);
+
+    this._editor = this._monaco.create(
       containerDiv,
       Object.assign(
         {

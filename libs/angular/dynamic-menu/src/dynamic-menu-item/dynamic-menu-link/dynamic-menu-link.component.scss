@@ -10,4 +10,10 @@
   .new-tab-icon {
     margin: 0 0 0 16px;
   }
+
+  .item-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

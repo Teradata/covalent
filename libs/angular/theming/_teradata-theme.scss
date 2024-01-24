@@ -215,7 +215,7 @@ $td-light-theme-background: (
   selected-button: $theme-light-colors-surface-dim,
   selected-disabled-button: $theme-light-colors-surface-dim,
   unselected-chip: $theme-light-colors-surface-variant,
-  tooltip: $theme-light-colors-surface-container-highest,
+  tooltip: $theme-light-colors-inverse-surface,
   overlay: $theme-light-colors-scrim,
   accent: $light-accent,
   accent-highlight: $light-surface-accent-highlight,
@@ -267,6 +267,7 @@ $td-light-theme-foreground: (
   // todo: need to work out on-neutral tokens
   positive: $theme-light-colors-on-positive,
   primary: $theme-light-colors-on-primary,
+  inverse-on-surface: $theme-light-colors-inverse-on-surface,
 );
 
 // Background palette for dark themes.
@@ -288,7 +289,7 @@ $td-dark-theme-background: (
   selected-button: $theme-dark-colors-surface-dim,
   selected-disabled-button: $theme-dark-colors-surface-dim,
   unselected-chip: $theme-dark-colors-surface-variant,
-  tooltip: $theme-dark-colors-surface-container-highest,
+  tooltip: $theme-dark-colors-inverse-surface,
   overlay: $theme-dark-colors-scrim,
   accent: $dark-accent,
   accent-highlight: $dark-surface-accent-highlight,
@@ -340,6 +341,7 @@ $td-dark-theme-foreground: (
   // todo: need to work out on-neutral tokens
   positive: $theme-dark-colors-on-positive,
   primary: $theme-dark-colors-on-primary,
+  inverse-on-surface: $theme-dark-colors-inverse-on-surface,
 );
 
 // Custom typography
@@ -381,6 +383,7 @@ $td-dark-theme: mat.define-dark-theme(
       accent: mat.define-palette($td-accent-dark, '80', '70', '90'),
       warn: mat.define-palette($td-warn-dark, '80', '70', '90'),
       on-secondary: $dark-on-secondary,
+      on-inverse-surface: $theme-dark-colors-inverse-surface,
     ),
     typography: $td-custom-typography,
   )
@@ -399,8 +402,9 @@ $td-dark-theme: mat.private-deep-merge-all(
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
-  $background: map-get(map-get($theme, color), background);
-  $foreground: map-get($theme, foreground);
+  $theme-color: map-get($theme, color);
+  $background: map-get($theme-color, background);
+  $foreground: map-get($theme-color, foreground);
   $is-dark-theme: map-get($theme, is-dark);
   $accent-highlight: map-get($background, accent-highlight);
   $accent-highlight-hover: map-get($background, accent-highlight-hover);
@@ -415,6 +419,11 @@ $td-dark-theme: mat.private-deep-merge-all(
     --mdc-list-list-item-leading-avatar-color: #{map-get(
         $background,
         disabled-button
+      )};
+
+    --mdc-plain-tooltip-supporting-text-color: #{map-get(
+        $foreground,
+        inverse-on-surface
       )};
   }
 

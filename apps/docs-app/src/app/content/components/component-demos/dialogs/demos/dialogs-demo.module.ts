@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CovalentDialogsModule } from '@covalent/core/dialogs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { DialogsDemoComponent } from './dialogs-demo.component';
 import {
   DialogsDemoDraggableComponent,
@@ -40,6 +41,7 @@ import {
     CommonModule,
     MatButtonModule,
     MatIconModule,
+    MatTabsModule,
   ],
 })
 export class DialogsDemoModule {}

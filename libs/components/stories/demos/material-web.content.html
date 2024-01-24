@@ -405,154 +405,67 @@
         <!-- Button -->
         <section class="component-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/buttons.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Button
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Button</cv-typography>
           </div>
           <div class="component-wrapper button-component-wrapper">
-            <button class="mdc-button mdc-button--raised">
-              <span class="mdc-button__ripple"></span>
-              Button
-            </button>
-            <button class="mdc-button">
-              <span class="mdc-button__ripple"></span>
-              Button
-            </button>
-            <button class="mdc-button mdc-button--outlined">
-              <span class="mdc-button__ripple"></span>
-              Button
-            </button>
+            <cv-button label="button"></cv-button>
+            <cv-button outlined label="button"></cv-button>
+            <cv-button raised label="button"></cv-button>
           </div>
         </section>
 
         <!-- Top app bar -->
         <section class="component-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/app-bars-top.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Top App Bar
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Top app bar</cv-typography>
           </div>
           <div class="component-wrapper top-bar-component-wrapper">
-            <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-              <div class="mdc-top-app-bar__row">
-                <section
-                  class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
-                >
-                  <a class="material-icons mdc-top-app-bar__navigation-icon"
-                    >menu</a
-                  >
-                  <span class="mdc-top-app-bar__title">Headline 6</span>
-                </section>
-                <section
-                  class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
-                  role="toolbar"
-                >
-                  <a
-                    class="material-icons mdc-icon-button mdc-top-app-bar__action-item"
-                    aria-label="Share"
-                    alt="Share"
-                    >share</a
-                  >
-                  <a
-                    class="material-icons mdc-icon-button mdc-top-app-bar__action-item"
-                    aria-label="Bookmark this page"
-                    alt="Bookmark this page"
-                    >bookmark</a
-                  >
-                  <a
-                    class="material-icons mdc-icon-button mdc-top-app-bar__action-item"
-                    aria-label="Search this page"
-                    alt="Search this page"
-                    >search</a
-                  >
-                </section>
-              </div>
-            </header>
+            <cv-top-app-bar>
+              <cv-icon-button
+                slot="navigationIcon"
+                icon="menu_open"
+              ></cv-icon-button>
+              <div slot="title">App Bar Title</div>
+
+              <cv-icon-button
+                icon="filter_list"
+                slot="actionItems"
+              ></cv-icon-button>
+              <cv-icon-button icon="search" slot="actionItems"></cv-icon-button>
+              <cv-icon-button icon="add" slot="actionItems"></cv-icon-button>
+            </cv-top-app-bar>
           </div>
         </section>
 
         <!-- Drawer -->
         <section class="component-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/navigation-drawer.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Drawer
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Drawer</cv-typography>
           </div>
           <div class="component-wrapper drawer-component-wrapper">
-            <aside class="mdc-drawer">
+            <cv-drawer open>
               <div class="mdc-drawer__header">
                 <h3 class="mdc-drawer__title">Headline 6</h3>
                 <h6 class="mdc-drawer__subtitle">Body 2</h6>
               </div>
-              <div class="mdc-list-divider"></div>
-              <div class="mdc-drawer__content">
-                <nav class="mdc-list" role="listbox">
-                  <a
-                    class="mdc-list-item mdc-list-item--activated"
-                    aria-selected="true"
-                  >
-                    <i
-                      class="material-icons mdc-deprecated-list-item__graphic"
-                      aria-hidden="true"
-                      >inbox</i
-                    >
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </a>
-                  <a class="mdc-list-item">
-                    <i
-                      class="material-icons mdc-deprecated-list-item__graphic"
-                      aria-hidden="true"
-                      >star</i
-                    >
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </a>
-                  <a class="mdc-list-item">
-                    <i
-                      class="material-icons mdc-deprecated-list-item__graphic"
-                      aria-hidden="true"
-                      >bookmark</i
-                    >
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </a>
-                  <a class="mdc-list-item">
-                    <i
-                      class="material-icons mdc-deprecated-list-item__graphic"
-                      aria-hidden="true"
-                      >send</i
-                    >
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </a>
-                  <a class="mdc-list-item">
-                    <i
-                      class="material-icons mdc-deprecated-list-item__graphic"
-                      aria-hidden="true"
-                      >drafts</i
-                    >
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </a>
-                </nav>
-              </div>
-            </aside>
+              <cv-list selectable>
+                <cv-list-item graphic="avatar">
+                  <cv-icon slot="graphic">inbox</cv-icon>Body 2
+                </cv-list-item>
+                <cv-list-item graphic="avatar">
+                  <cv-icon slot="graphic">star</cv-icon>Body 2
+                </cv-list-item>
+                <cv-list-item graphic="avatar">
+                  <cv-icon slot="graphic">bookmark</cv-icon>Body 2
+                </cv-list-item>
+                <cv-list-item graphic="avatar">
+                  <cv-icon slot="graphic">send</cv-icon>Body 2
+                </cv-list-item>
+                <cv-list-item graphic="avatar">
+                  <cv-icon slot="graphic">drafts</cv-icon>Body 2
+                </cv-list-item>
+              </cv-list>
+            </cv-drawer>
           </div>
         </section>
 
@@ -601,36 +514,13 @@
           <!-- Menu -->
           <section class="component-section menu-section">
             <div class="section-header">
-              <a
-                href="https://material.io/design/components/menus.html"
-                class="mdc-typography--button"
-                target="_blank"
-              >
-                Menu
-                <i class="material-icons">open_in_new</i>
-              </a>
+              <cv-typography scale="headline5">Menu</cv-typography>
             </div>
-            <div class="component-wrapper">
-              <div class="mdc-menu-surface--anchor">
-                <div class="mdc-menu mdc-menu-surface mdc-menu-surface--open">
-                  <ul
-                    class="mdc-list"
-                    role="menu"
-                    aria-hidden="true"
-                    aria-orientation="vertical"
-                    tabindex="-1"
-                  >
-                    <li class="mdc-list-item" role="menuitem">
-                      <span class="mdc-list-item__ripple"></span>
-                      <span class="mdc-list-item__text">A Menu Item</span>
-                    </li>
-                    <li class="mdc-list-item" role="menuitem">
-                      <span class="mdc-list-item__ripple"></span>
-                      <span class="mdc-list-item__text">Another Menu Item</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div class="component-wrapper" style="position: relative">
+              <cv-menu open>
+                <cv-list-item>A menu item</cv-list-item>
+                <cv-list-item>Anothrt menu item</cv-list-item>
+              </cv-menu>
             </div>
           </section>
         </div>
@@ -638,33 +528,20 @@
         <!-- Linear progress -->
         <section class="component-section linear-progress-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/progress-indicators.html#linear-progress-indicators"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Linear Progress
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Linear progress</cv-typography>
           </div>
           <div class="component-wrapper linear-progress-component-wrapper">
-            <div
-              role="progressbar"
-              class="mdc-linear-progress mdc-linear-progress--indeterminate"
-            >
-              <div class="mdc-linear-progress__buffering-dots"></div>
-              <div class="mdc-linear-progress__buffer"></div>
-              <div
-                class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
-              >
-                <span class="mdc-linear-progress__bar-inner"></span>
-              </div>
-              <div
-                class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
-              >
-                <span class="mdc-linear-progress__bar-inner"></span>
-              </div>
-            </div>
+            <cv-linear-progress indeterminate></cv-linear-progress>
+          </div>
+        </section>
+
+        <!-- Circular progress -->
+        <section class="component-section linear-progress-section">
+          <div class="section-header">
+            <cv-typography scale="headline5">Circular progress</cv-typography>
+          </div>
+          <div class="component-wrapper linear-progress-component-wrapper">
+            <cv-circular-progress indeterminate></cv-circular-progress>
           </div>
         </section>
 
@@ -672,109 +549,31 @@
           <!-- Switch -->
           <section class="component-section switch-section">
             <div class="section-header">
-              <a
-                href="https://material.io/design/components/selection-controls.html#switches"
-                class="mdc-typography--button"
-                target="_blank"
-              >
-                Switch
-                <i class="material-icons">open_in_new</i>
-              </a>
+              <cv-typography scale="headline5">Switch</cv-typography>
             </div>
-            <div class="component-wrapper switch-component-wrapper">
-              <button
-                id="basic-switch"
-                class="mdc-switch mdc-switch--unselected"
-                type="button"
-                role="switch"
-                aria-checked="false"
-              >
-                <div class="mdc-switch__track"></div>
-                <div class="mdc-switch__handle-track">
-                  <div class="mdc-switch__handle">
-                    <div class="mdc-switch__shadow">
-                      <div class="mdc-elevation-overlay"></div>
-                    </div>
-                    <div class="mdc-switch__ripple"></div>
-                    <div class="mdc-switch__icons">
-                      <svg
-                        class="mdc-switch__icon mdc-switch__icon--on"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M19.69,5.23L8.96,15.96l-4.23-4.23L2.96,13.5l6,6L21.46,7L19.69,5.23z"
-                        />
-                      </svg>
-                      <svg
-                        class="mdc-switch__icon mdc-switch__icon--off"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M20 13H4v-2h16v2z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </button>
-              <label for="basic-switch">off/on</label>
+
+            <div class="component-wrapper">
+              <cv-formfield label="On/Off">
+                <cv-switch></cv-switch>
+              </cv-formfield>
             </div>
           </section>
 
           <!-- Checkbox -->
           <section class="component-section">
             <div class="section-header">
-              <a
-                href="https://material.io/design/components/selection-controls.html#checkboxes"
-                class="mdc-typography--button"
-                target="_blank"
-              >
-                Checkbox
-                <i class="material-icons">open_in_new</i>
-              </a>
+              <cv-typography scale="headline5">Checkbox</cv-typography>
             </div>
             <div class="component-wrapper checkbox-component-wrapper">
-              <div class="mdc-checkbox">
-                <input type="checkbox" class="mdc-checkbox__native-control" />
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
-                    <path
-                      class="mdc-checkbox__checkmark-path"
-                      fill="none"
-                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    />
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-              </div>
-              <div class="mdc-checkbox indeterminate-checkbox">
-                <input type="checkbox" class="mdc-checkbox__native-control" />
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
-                    <path
-                      class="mdc-checkbox__checkmark-path"
-                      fill="none"
-                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    />
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-              </div>
-              <div class="mdc-checkbox">
-                <input
-                  type="checkbox"
-                  class="mdc-checkbox__native-control"
-                  checked
-                />
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
-                    <path
-                      class="mdc-checkbox__checkmark-path"
-                      fill="none"
-                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    />
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-              </div>
+              <cv-formfield label="Option 1">
+                <cv-checkbox></cv-checkbox>
+              </cv-formfield>
+              <cv-formfield label="Option 2">
+                <cv-checkbox></cv-checkbox>
+              </cv-formfield>
+              <cv-formfield label="Option 3">
+                <cv-checkbox checked></cv-checkbox>
+              </cv-formfield>
             </div>
           </section>
         </div>
@@ -783,71 +582,28 @@
           <!-- Radio -->
           <section class="component-section">
             <div class="section-header">
-              <a
-                href="https://material.io/design/components/selection-controls.html#radio-buttons"
-                class="mdc-typography--button"
-                target="_blank"
-              >
-                Radio Button
-                <i class="material-icons">open_in_new</i>
-              </a>
+              <cv-typography scale="headline5">Radio</cv-typography>
             </div>
             <div class="component-wrapper radio-component-wrapper">
-              <div class="mdc-radio">
-                <input
-                  class="mdc-radio__native-control"
-                  type="radio"
-                  id="radio-1"
-                  name="radios"
-                  checked
-                />
-                <div class="mdc-radio__background">
-                  <div class="mdc-radio__outer-circle"></div>
-                  <div class="mdc-radio__inner-circle"></div>
-                </div>
-              </div>
-              <div class="mdc-radio">
-                <input
-                  class="mdc-radio__native-control"
-                  type="radio"
-                  id="radio-2"
-                  name="radios"
-                  checked
-                />
-                <div class="mdc-radio__background">
-                  <div class="mdc-radio__outer-circle"></div>
-                  <div class="mdc-radio__inner-circle"></div>
-                </div>
-              </div>
+              <cv-formfield label="Option 1">
+                <cv-radio></cv-radio>
+              </cv-formfield>
+              <cv-formfield label="Option 2">
+                <cv-radio></cv-radio>
+              </cv-formfield>
+              <cv-formfield label="Option 3">
+                <cv-radio checked></cv-radio>
+              </cv-formfield>
             </div>
           </section>
 
           <!-- Icon button -->
           <section class="component-section">
             <div class="section-header">
-              <a
-                href="https://material.io/design/components/buttons.html#toggle-button"
-                class="mdc-typography--button"
-                target="_blank"
-              >
-                Icon Button
-                <i class="material-icons">open_in_new</i>
-              </a>
+              <cv-typography scale="headline5">Icon button</cv-typography>
             </div>
             <div class="component-wrapper icon-button-component-wrapper">
-              <button
-                id="icon-toggle-button"
-                class="mdc-icon-button"
-                aria-label="Add to favorites"
-                aria-pressed="false"
-              >
-                <div class="mdc-icon-button__ripple"></div>
-                <i
-                  class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on"
-                  >music_off</i
-                >
-                <i class="material-icons mdc-icon-button__icon">music_note</i>
-              </button>
+              <cv-icon-button icon="music_note"> </cv-icon-button>
             </div>
           </section>
         </div>
@@ -855,329 +611,34 @@
         <!-- Chips -->
         <section class="component-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/chips.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Chips
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Chips</cv-typography>
           </div>
           <div
             class="component-wrapper chips-component-wrapper chips-component-wrapper-1"
           >
-            <span
-              class="mdc-evolution-chip-set"
-              role="listbox"
-              aria-orientation="horizontal"
-              aria-multiselectable="true"
-            >
-              <span class="mdc-evolution-chip-set__chips" role="presentation">
-                <span class="mdc-evolution-chip" role="row" id="c1">
-                  <span
-                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-                    role="gridcell"
-                  >
-                    <button
-                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                      type="button"
-                      tabindex="-1"
-                    >
-                      <span
-                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                      ></span>
-                      <span class="mdc-evolution-chip__text-label"
-                        >Regular chip</span
-                      >
-                    </button>
-                  </span>
-                </span>
-                <span
-                  class="mdc-evolution-chip mdc-evolution-chip--with-trailing-action"
-                  role="row"
-                  id="c2"
-                  data-mdc-deletable="true"
-                >
-                  <span
-                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-                    role="gridcell"
-                  >
-                    <button
-                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                      type="button"
-                      tabindex="0"
-                    >
-                      <span
-                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                      ></span>
-                      <span class="mdc-evolution-chip__text-label"
-                        >Trialing chip</span
-                      >
-                    </button>
-                  </span>
-                  <span
-                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--trailing"
-                    role="gridcell"
-                  >
-                    <button
-                      class="mdc-evolution-chip__action mdc-evolution-chip__action--trailing"
-                      type="button"
-                      tabindex="-1"
-                      aria-label="Remove chip foo"
-                    >
-                      <span
-                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--trailing"
-                      ></span>
-                      <span
-                        class="mdc-evolution-chip__icon material-icons mdc-evolution-chip__icon--trailing"
-                        >close</span
-                      >
-                    </button>
-                  </span>
-                </span>
-
-                <span
-                  class="mdc-evolution-chip mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--with-primary-icon"
-                  role="row"
-                  id="c0"
-                >
-                  <span
-                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-                    role="gridcell"
-                  >
-                    <button
-                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                      type="button"
-                      tabindex="0"
-                    >
-                      <span
-                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                      ></span>
-                      <span class="mdc-evolution-chip__graphic">
-                        <span
-                          class="mdc-evolution-chip__icon mdc-evolution-chip__icon--primary material-icons"
-                          >favorite</span
-                        >
-                      </span>
-                      <span class="mdc-evolution-chip__text-label"
-                        >Leading chip</span
-                      >
-                    </button>
-                  </span>
-                </span>
-
-                <span
-                  class="mdc-evolution-chip mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--with-primary-icon mdc-evolution-chip--with-avatar"
-                  role="row"
-                  id="c0"
-                >
-                  <span
-                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-                    role="gridcell"
-                  >
-                    <button
-                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                      type="button"
-                      tabindex="0"
-                    >
-                      <span
-                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                      ></span>
-                      <span class="mdc-evolution-chip__graphic">
-                        <span
-                          class="mdc-evolution-chip__icon mdc-evolution-chip__icon--primary material-icons"
-                          style="background: rgba(0, 0, 0, 0.3)"
-                          >person</span
-                        >
-                      </span>
-                      <span class="mdc-evolution-chip__text-label"
-                        >Avatar chip</span
-                      >
-                    </button>
-                  </span>
-                </span>
-
-                <span
-                  class="mdc-evolution-chip mdc-evolution-chip--disabled"
-                  role="row"
-                  id="c1"
-                >
-                  <span
-                    class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-                    role="gridcell"
-                  >
-                    <button
-                      class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                      type="button"
-                      tabindex="-1"
-                      disabled
-                    >
-                      <span
-                        class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                      ></span>
-                      <span class="mdc-evolution-chip__text-label"
-                        >Disabled chip</span
-                      >
-                    </button>
-                  </span>
-                </span>
-
-                <span
-                  class="mdc-evolution-chip mdc-evolution-chip--filter mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--selectable"
-                  role="presentation"
-                  id="c5"
-                >
-                  <span
-                    class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                    role="option"
-                    aria-selected="false"
-                    tabindex="0"
-                  >
-                    <span
-                      class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                    ></span>
-                    <span class="mdc-evolution-chip__graphic">
-                      <span class="mdc-evolution-chip__checkmark">
-                        <svg
-                          class="mdc-evolution-chip__checkmark-svg"
-                          viewBox="-2 -3 30 30"
-                        >
-                          <path
-                            class="mdc-evolution-chip__checkmark-path"
-                            fill="none"
-                            stroke="black"
-                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span class="mdc-evolution-chip__text-label"
-                      >Filter chip</span
-                    >
-                  </span>
-                </span>
-
-                <span
-                  class="mdc-evolution-chip mdc-evolution-chip--filter mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--selectable"
-                  role="presentation"
-                  id="c6"
-                >
-                  <span
-                    class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                    role="option"
-                    aria-selected="false"
-                    tabindex="0"
-                    data-mdc-deletable="true"
-                  >
-                    <span
-                      class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                    ></span>
-                    <span class="mdc-evolution-chip__graphic">
-                      <span class="mdc-evolution-chip__checkmark">
-                        <svg
-                          class="mdc-evolution-chip__checkmark-svg"
-                          viewBox="-2 -3 30 30"
-                        >
-                          <path
-                            class="mdc-evolution-chip__checkmark-path"
-                            fill="none"
-                            stroke="black"
-                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span class="mdc-evolution-chip__text-label"
-                      >Filter chip</span
-                    >
-                  </span>
-                </span>
-              </span>
-            </span>
+            <cv-chip-set>
+              <cv-chip label="Regular chip"></cv-chip>
+              <cv-chip label="Icon chip" icon="houseboat"></cv-chip>
+              <cv-chip
+                label="Trailing icon chip"
+                icon="houseboat"
+                trailingIcon
+              ></cv-chip>
+              <cv-chip
+                label="Trailing icon chip"
+                icon="houseboat"
+                avatar
+              ></cv-chip>
+              <cv-chip label="Disabled chip" disabled></cv-chip>
+            </cv-chip-set>
           </div>
           <div
             class="component-wrapper chips-component-wrapper chips-component-wrapper-2"
           >
-            <span
-              class="mdc-evolution-chip-set"
-              role="listbox"
-              aria-orientation="horizontal"
-              aria-multiselectable="false"
-            >
-              <span class="mdc-evolution-chip-set__chips" role="presentation">
-                <span
-                  class="mdc-evolution-chip mdc-evolution-chip--filter mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--selectable mdc-evolution-chip--selected"
-                  role="presentation"
-                  id="c20"
-                >
-                  <span
-                    class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                    role="option"
-                    aria-selected="false"
-                    tabindex="0"
-                  >
-                    <span
-                      class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                    ></span>
-                    <span class="mdc-evolution-chip__graphic">
-                      <span class="mdc-evolution-chip__checkmark">
-                        <svg
-                          class="mdc-evolution-chip__checkmark-svg"
-                          viewBox="-2 -3 30 30"
-                        >
-                          <path
-                            class="mdc-evolution-chip__checkmark-path"
-                            fill="none"
-                            stroke="black"
-                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span class="mdc-evolution-chip__text-label"
-                      >Filter chip</span
-                    >
-                  </span>
-                </span>
-
-                <span
-                  class="mdc-evolution-chip mdc-evolution-chip--filter mdc-evolution-chip--with-primary-graphic mdc-evolution-chip--selectable"
-                  role="presentation"
-                  id="c21"
-                >
-                  <span
-                    class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
-                    role="option"
-                    aria-selected="false"
-                    tabindex="0"
-                    data-mdc-deletable="true"
-                  >
-                    <span
-                      class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
-                    ></span>
-                    <span class="mdc-evolution-chip__graphic">
-                      <span class="mdc-evolution-chip__checkmark">
-                        <svg
-                          class="mdc-evolution-chip__checkmark-svg"
-                          viewBox="-2 -3 30 30"
-                        >
-                          <path
-                            class="mdc-evolution-chip__checkmark-path"
-                            fill="none"
-                            stroke="black"
-                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span class="mdc-evolution-chip__text-label"
-                      >Filter chip</span
-                    >
-                  </span>
-                </span>
-              </span>
-            </span>
+            <cv-chip-set selectable>
+              <cv-chip label="Filter chip 1" filter></cv-chip>
+              <cv-chip label="Filter chip 2" filter></cv-chip>
+            </cv-chip-set>
           </div>
         </section>
 
@@ -1185,110 +646,16 @@
           <!-- Select -->
           <section class="component-section select-component">
             <div class="section-header">
-              <a
-                href="https://material.io/develop/web/components/input-controls/select-menus/"
-                class="mdc-typography--button"
-                target="_blank"
-              >
-                Select
-                <i class="material-icons">open_in_new</i>
-              </a>
+              <cv-typography scale="headline5">Select</cv-typography>
             </div>
             <div class="component-wrapper">
-              <div class="mdc-select mdc-select--filled demo-width-class">
-                <div
-                  class="mdc-select__anchor"
-                  role="button"
-                  aria-haspopup="listbox"
-                  aria-expanded="false"
-                  aria-labelledby="demo-label demo-selected-text"
+              <cv-select label="Food group" outlined>
+                <cv-list-item value="1"
+                  >Bread, Cereal, Rice, and Pasta</cv-list-item
                 >
-                  <span class="mdc-select__ripple"></span>
-                  <span id="demo-label" class="mdc-floating-label"
-                    >Pick a Food Group</span
-                  >
-                  <span class="mdc-select__selected-text-container">
-                    <span
-                      id="demo-selected-text"
-                      class="mdc-select__selected-text"
-                    ></span>
-                  </span>
-                  <span class="mdc-select__dropdown-icon">
-                    <svg
-                      class="mdc-select__dropdown-icon-graphic"
-                      viewBox="7 10 10 5"
-                      focusable="false"
-                    >
-                      <polygon
-                        class="mdc-select__dropdown-icon-inactive"
-                        stroke="none"
-                        fill-rule="evenodd"
-                        points="7 10 12 15 17 10"
-                      ></polygon>
-                      <polygon
-                        class="mdc-select__dropdown-icon-active"
-                        stroke="none"
-                        fill-rule="evenodd"
-                        points="7 15 12 10 17 15"
-                      ></polygon>
-                    </svg>
-                  </span>
-                  <span class="mdc-line-ripple"></span>
-                </div>
-
-                <div
-                  class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
-                >
-                  <ul
-                    class="mdc-deprecated-list"
-                    role="listbox"
-                    aria-label="Food picker listbox"
-                  >
-                    <li
-                      class="mdc-deprecated-list-item mdc-deprecated-list-item--selected"
-                      aria-selected="true"
-                      data-value=""
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="grains"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Bread, Cereal, Rice, and Pasta
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item mdc-deprecated-list-item--disabled"
-                      aria-selected="false"
-                      data-value="vegetables"
-                      aria-disabled="true"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Vegetables
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="fruit"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Fruit
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                <cv-list-item value="2">Vegetables</cv-list-item>
+                <cv-list-item value="3">Fruit</cv-list-item>
+              </cv-select>
             </div>
           </section>
 
@@ -1297,89 +664,13 @@
             <div class="section-header"><!-- Hold space for layout --></div>
             <div class="component-wrapper">
               <div class="mdc-select mdc-select--outlined">
-                <div
-                  class="mdc-select__anchor"
-                  aria-labelledby="outlined-select-label"
-                >
-                  <span class="mdc-notched-outline">
-                    <span class="mdc-notched-outline__leading"></span>
-                    <span class="mdc-notched-outline__notch">
-                      <span
-                        id="outlined-select-label"
-                        class="mdc-floating-label"
-                        >Pick a Food Group</span
-                      >
-                    </span>
-                    <span class="mdc-notched-outline__trailing"></span>
-                  </span>
-                  <span class="mdc-select__selected-text-container">
-                    <span
-                      id="demo-selected-text"
-                      class="mdc-select__selected-text"
-                    ></span>
-                  </span>
-                  <span class="mdc-select__dropdown-icon">
-                    <svg
-                      class="mdc-select__dropdown-icon-graphic"
-                      viewBox="7 10 10 5"
-                      focusable="false"
-                    >
-                      <polygon
-                        class="mdc-select__dropdown-icon-inactive"
-                        stroke="none"
-                        fill-rule="evenodd"
-                        points="7 10 12 15 17 10"
-                      ></polygon>
-                      <polygon
-                        class="mdc-select__dropdown-icon-active"
-                        stroke="none"
-                        fill-rule="evenodd"
-                        points="7 15 12 10 17 15"
-                      ></polygon>
-                    </svg>
-                  </span>
-                  <div
-                    class="mdc-select__menu mdc-menu mdc-menu-surface"
-                    role="listbox"
+                <cv-select label="Food group" placeholder="Pick a food group">
+                  <cv-list-item value="1"
+                    >Bread, Cereal, Rice, and Pasta</cv-list-item
                   >
-                    <ul class="mdc-list">
-                      <li
-                        class="mdc-list-item"
-                        data-value=""
-                        role="option"
-                      ></li>
-                      <li
-                        class="mdc-list-item"
-                        data-value="outlined-item1"
-                        role="option"
-                      >
-                        Body 2
-                      </li>
-                      <li
-                        class="mdc-list-item"
-                        data-value="outlined-item2"
-                        aria-selected="true"
-                        role="option"
-                      >
-                        Body 2
-                      </li>
-                      <li
-                        class="mdc-list-item"
-                        data-value="outlined-item3"
-                        role="option"
-                      >
-                        Body 2
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!-- Other elements from the select remain. -->
-                <div
-                  class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
-                >
-                  ...
-                </div>
+                  <cv-list-item value="2">Vegetables</cv-list-item>
+                  <cv-list-item value="3">Fruit</cv-list-item>
+                </cv-select>
               </div>
             </div>
           </section>
@@ -1388,168 +679,35 @@
         <!-- List -->
         <section class="component-section list-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/lists.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              List
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">List</cv-typography>
           </div>
           <div class="component-wrapper">
-            <ul class="mdc-list">
-              <li class="mdc-list-item" tabindex="0">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">Single-line item</span>
-              </li>
-              <li class="mdc-list-item">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">Single-line item</span>
-              </li>
-              <li class="mdc-list-item">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">Single-line item</span>
-              </li>
-            </ul>
+            <cv-list>
+              <cv-list-item>Single-line item</cv-list-item>
+              <cv-list-item>Single-line item</cv-list-item>
+              <cv-list-item>Single-line item</cv-list-item>
+            </cv-list>
 
-            <ul class="mdc-list mdc-list--two-line mdc-list--avatar-list">
-              <li class="mdc-list-item" tabindex="0">
-                <span class="mdc-list-item__ripple"></span>
-                <span
-                  class="mdc-deprecated-list-item__graphic material-icons"
-                  aria-hidden="true"
-                  >child_care</span
-                >
-                <span class="mdc-list-item__text">
-                  <span class="mdc-list-item__primary-text">Two-line item</span>
-                  <span class="mdc-list-item__secondary-text"
-                    >Secondary text</span
-                  >
-                </span>
-              </li>
-              <li role="separator" class="mdc-list-divider"></li>
-              <li class="mdc-list-item">
-                <span class="mdc-list-item__ripple"></span>
-                <span
-                  class="mdc-deprecated-list-item__graphic material-icons"
-                  aria-hidden="true"
-                  >child_care</span
-                >
-                <span class="mdc-list-item__text">
-                  <span class="mdc-list-item__primary-text">Two-line item</span>
-                  <span class="mdc-list-item__secondary-text"
-                    >Secondary text</span
-                  >
-                </span>
-              </li>
-              <li role="separator" class="mdc-list-divider"></li>
-              <li class="mdc-list-item">
-                <span class="mdc-list-item__ripple"></span>
-                <span
-                  class="mdc-deprecated-list-item__graphic material-icons"
-                  aria-hidden="true"
-                  >child_care</span
-                >
-                <span class="mdc-list-item__text">
-                  <span class="mdc-list-item__primary-text">Two-line item</span>
-                  <span class="mdc-list-item__secondary-text"
-                    >Secondary text</span
-                  >
-                </span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Deprecated List -->
-        <section class="component-section list-section">
-          <div class="section-header">
-            <a
-              href="https://material.io/design/components/lists.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              List (Deprecated)
-              <i class="material-icons">open_in_new</i>
-            </a>
-          </div>
-          <div class="component-wrapper">
-            <ul class="mdc-deprecated-list">
-              <li class="mdc-deprecated-list-item" tabindex="0">
-                <span class="mdc-deprecated-list-item__ripple"></span>
-                <span class="mdc-deprecated-list-item__text"
-                  >Single-line item</span
-                >
-              </li>
-              <li class="mdc-deprecated-list-item">
-                <span class="mdc-deprecated-list-item__ripple"></span>
-                <span class="mdc-deprecated-list-item__text"
-                  >Single-line item</span
-                >
-              </li>
-              <li class="mdc-deprecated-list-item">
-                <span class="mdc-deprecated-list-item__ripple"></span>
-                <span class="mdc-deprecated-list-item__text"
-                  >Single-line item</span
-                >
-              </li>
-            </ul>
-
-            <ul
-              class="mdc-deprecated-list mdc-deprecated-list--two-line mdc-deprecated-list--avatar-list"
-            >
-              <li class="mdc-deprecated-list-item" tabindex="0">
-                <span class="mdc-deprecated-list-item__ripple"></span>
-                <span
-                  class="mdc-deprecated-list-item__graphic material-icons"
-                  aria-hidden="true"
-                  >child_care</span
-                >
-                <span class="mdc-deprecated-list-item__text">
-                  <span class="mdc-deprecated-list-item__primary-text"
-                    >Two-line item</span
-                  >
-                  <span class="mdc-deprecated-list-item__secondary-text"
-                    >Secondary text</span
-                  >
-                </span>
-              </li>
-              <li role="separator" class="mdc-deprecated-list-divider"></li>
-              <li class="mdc-deprecated-list-item">
-                <span class="mdc-deprecated-list-item__ripple"></span>
-                <span
-                  class="mdc-deprecated-list-item__graphic material-icons"
-                  aria-hidden="true"
-                  >child_care</span
-                >
-                <span class="mdc-deprecated-list-item__text">
-                  <span class="mdc-deprecated-list-item__primary-text"
-                    >Two-line item</span
-                  >
-                  <span class="mdc-deprecated-list-item__secondary-text"
-                    >Secondary text</span
-                  >
-                </span>
-              </li>
-              <li role="separator" class="mdc-deprecated-list-divider"></li>
-              <li class="mdc-deprecated-list-item">
-                <span class="mdc-deprecated-list-item__ripple"></span>
-                <span
-                  class="mdc-deprecated-list-item__graphic material-icons"
-                  aria-hidden="true"
-                  >child_care</span
-                >
-                <span class="mdc-deprecated-list-item__text">
-                  <span class="mdc-deprecated-list-item__primary-text"
-                    >Two-line item</span
-                  >
-                  <span class="mdc-deprecated-list-item__secondary-text"
-                    >Secondary text</span
-                  >
-                </span>
-              </li>
-            </ul>
+            <cv-list selectable>
+              <cv-list-item graphic="avatar" hasMeta twoline>
+                Single-line item
+                <span slot="secondary">Secondary line</span>
+                <cv-icon slot="graphic">child_care</cv-icon>
+                <cv-icon slot="meta">info</cv-icon>
+              </cv-list-item>
+              <cv-list-item graphic="avatar" hasMeta twoline>
+                Single-line item
+                <span slot="secondary">Secondary line</span>
+                <cv-icon slot="graphic">child_care</cv-icon>
+                <cv-icon slot="meta">info</cv-icon>
+              </cv-list-item>
+              <cv-list-item graphic="avatar" hasMeta twoline>
+                Single-line item
+                <span slot="secondary">Secondary line</span>
+                <cv-icon slot="graphic">child_care</cv-icon>
+                <cv-icon slot="meta">info</cv-icon>
+              </cv-list-item>
+            </cv-list>
           </div>
         </section>
 
@@ -1803,225 +961,76 @@
         <!-- Text field -->
         <section class="component-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/text-fields.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Text field
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Text field</cv-typography>
           </div>
           <div
             class="component-wrapper text-field-component-wrapper text-field-component-wrapper-1"
           >
-            <label
-              class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trialing-icon"
+            <cv-textfield
+              label="Your name"
+              helper="Assistive text"
+              icon="visibility"
             >
-              <span class="mdc-notched-outline">
-                <span class="mdc-notched-outline__leading"></span>
-                <span class="mdc-notched-outline__notch">
-                  <span class="mdc-floating-label" id="my-label-id"
-                    >Your Name</span
-                  >
-                </span>
-                <span class="mdc-notched-outline__trailing"></span>
-              </span>
-              <input
-                type="text"
-                class="mdc-text-field__input"
-                aria-labelledby="my-label-id"
-              />
-              <i
-                class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
-                >visibility</i
-              >
-            </label>
-            <div class="mdc-text-field-helper-line">
-              <div
-                class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-              >
-                Assistive text
-              </div>
-            </div>
-          </div>
-          <div
-            class="component-wrapper text-field-component-wrapper text-field-component-wrapper-2"
-          >
-            <label
-              class="mdc-text-field mdc-text-field--filled mdc-text-field--with-leading-icon"
+            </cv-textfield>
+            <cv-textfield
+              label="Your name"
+              helper="Assistive text"
+              icon="visibility"
+              filled
             >
-              <span class="mdc-text-field__ripple"></span>
-              <span class="mdc-floating-label" id="my-label-id">Hint text</span>
-              <i
-                class="material-icons mdc-text-field__icon mdc-text-field__icon--leading"
-                >visibility</i
-              >
-              <input
-                class="mdc-text-field__input"
-                type="text"
-                aria-labelledby="my-label-id"
-              />
-              <span class="mdc-line-ripple"></span>
-            </label>
-            <div class="mdc-text-field-helper-line">
-              <div
-                class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-              >
-                Assistive text
-              </div>
-            </div>
+            </cv-textfield>
           </div>
         </section>
 
         <!-- Tabs -->
         <section class="component-section tabs-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/tabs.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Tabs
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Tabs</cv-typography>
           </div>
           <div class="component-wrapper">
-            <div class="mdc-tab-bar" role="tablist">
-              <div class="mdc-tab-scroller">
-                <div class="mdc-tab-scroller__scroll-area">
-                  <div class="mdc-tab-scroller__scroll-content">
-                    <button
-                      class="mdc-tab mdc-tab--active"
-                      role="tab"
-                      aria-selected="true"
-                      tabindex="0"
-                    >
-                      <span class="mdc-tab__content">
-                        <span class="mdc-tab__text-label">Button</span>
-                      </span>
-                      <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                        <span
-                          class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
-                        ></span>
-                      </span>
-                      <span class="mdc-tab__ripple"></span>
-                    </button>
-                    <button
-                      class="mdc-tab"
-                      role="tab"
-                      aria-selected="true"
-                      tabindex="0"
-                    >
-                      <span class="mdc-tab__content">
-                        <span class="mdc-tab__text-label">Button</span>
-                      </span>
-                      <span class="mdc-tab-indicator">
-                        <span
-                          class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
-                        ></span>
-                      </span>
-                      <span class="mdc-tab__ripple"></span>
-                    </button>
-                    <button
-                      class="mdc-tab"
-                      role="tab"
-                      aria-selected="true"
-                      tabindex="0"
-                    >
-                      <span class="mdc-tab__content">
-                        <span class="mdc-tab__text-label">Button</span>
-                      </span>
-                      <span class="mdc-tab-indicator">
-                        <span
-                          class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
-                        ></span>
-                      </span>
-                      <span class="mdc-tab__ripple"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <cv-tab-bar>
+              <cv-tab label="Tab one"></cv-tab>
+              <cv-tab label="Tab two"></cv-tab>
+              <cv-tab label="Tab three"></cv-tab>
+            </cv-tab-bar>
           </div>
         </section>
 
         <!-- Slider -->
         <section class="component-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/sliders.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Slider
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Slider</cv-typography>
           </div>
           <div class="component-wrapper">
-            <div class="mdc-slider">
-              <input
-                class="mdc-slider__input"
-                type="range"
-                min="0"
-                max="100"
-                value="50"
-                name="volume"
-                aria-label="Continuous slider demo"
-              />
-              <div class="mdc-slider__track">
-                <div class="mdc-slider__track--inactive"></div>
-                <div class="mdc-slider__track--active">
-                  <div class="mdc-slider__track--active_fill"></div>
-                </div>
-              </div>
-              <div class="mdc-slider__thumb">
-                <div class="mdc-slider__thumb-knob"></div>
-              </div>
-            </div>
+            <cv-slider></cv-slider>
           </div>
         </section>
 
         <!-- Snackbar -->
         <section class="component-section snackbar-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/snackbars.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Snackbar
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Snackbar</cv-typography>
           </div>
-          <div class="component-wrapper">
-            <div class="mdc-snackbar mdc-snackbar--open">
-              <div class="mdc-snackbar__surface">
-                <div
-                  class="mdc-snackbar__label"
-                  role="status"
-                  aria-live="polite"
-                >
-                  Marked as favorite.
-                </div>
-              </div>
-            </div>
+          <div
+            class="component-wrapper"
+            style="position: relative; overflow: hidden"
+          >
+            <cv-snackbar labelText="Marked as favorite." open>
+              <cv-button slot="action">Undo</cv-button>
+            </cv-snackbar>
           </div>
         </section>
 
         <!-- Dialog -->
         <section class="component-section dialog-component-section">
           <div class="section-header">
-            <a
-              href="https://material.io/design/components/dialogs.html"
-              class="mdc-typography--button"
-              target="_blank"
-            >
-              Dialog
-              <i class="material-icons">open_in_new</i>
-            </a>
+            <cv-typography scale="headline5">Dialog</cv-typography>
           </div>
           <div class="component-wrapper dialog-component-wrapper">
+            <cv-dialog>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </cv-dialog>
             <div
               class="mdc-dialog mdc-dialog--open"
               role="alertdialog"

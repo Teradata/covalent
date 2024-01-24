@@ -1,14 +1,7 @@
 .user-profile-menu {
   [td-menu-header] {
     text-align: left;
-    padding-bottom: 0;
-  }
-}
-
-::ng-deep mat-list-item:not(:first-child),
-::ng-deep [mat-list-item] {
-  .mat-list-item-content .mat-icon[matListItemAvatar] {
-    background: none;
+    padding: 0;
   }
 }
 
@@ -20,6 +13,10 @@
   .mat-action-list .mat-divider,
   .mat-divider {
     margin: 8px 0;
+  }
+
+  .mdc-list {
+    padding: 0;
   }
 
   // TODO remove all styles below when bug gets addressed in td-menu in Covalent
