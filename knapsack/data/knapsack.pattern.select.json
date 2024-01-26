@@ -1,48 +1,46 @@
 {
-  "id": "text",
-  "title": "Text",
+  "id": "select",
+  "title": "Select",
   "description": "",
-  "statuses": {
-    "main": "needsDev"
-  },
+  "statuses": {},
   "templates": [
     {
-      "id": "web-components-FXCMXD35mF",
-      "title": "Web component",
-      "path": "../../dist/libs/components/typography.mjs",
-      "alias": "cv-typography",
+      "id": "web-components-qWXTtv81jY",
+      "title": "cv-select",
+      "path": "../../dist/libs/components/select.mjs",
+      "alias": "cv-select",
       "templateLanguageId": "web-components",
       "spec": {
         "slots": {
           "default": {
-            "allowedPatternIds": [],
+            "allowedPatternIds": ["list-item"],
             "title": "default",
-            "disallowText": false,
-            "isRequired": true,
-            "allowOnlyOne": true
+            "disallowText": true
           }
         },
         "props": {
           "$schema": "http://json-schema.org/draft-07/schema",
           "description": "",
           "type": "object",
-          "required": ["scale"],
+          "required": ["required", "outlined"],
           "properties": {
-            "scale": {
+            "label": {
               "type": "string"
+            },
+            "validationMessage": {
+              "type": "string"
+            },
+            "required": {
+              "type": "string"
+            },
+            "outlined": {
+              "type": "boolean",
+              "default": true
             }
           }
         }
       },
-      "demoIds": [
-        "RV5V-zEoUJ",
-        "uKKiquKOJq",
-        "XqxbTjPFZB",
-        "CkH7TzkgbA",
-        "iH3DCGMPTw",
-        "oY0W5ALQ1q",
-        "pvszcppjX8"
-      ],
+      "demoIds": ["sWH6jqeBc"],
       "blockIds": []
     }
   ],
@@ -53,7 +51,7 @@
     },
     {
       "type": "template",
-      "id": "web-components-FXCMXD35mF"
+      "id": "web-components-qWXTtv81jY"
     }
   ],
   "subPages": [

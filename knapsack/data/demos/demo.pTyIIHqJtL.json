@@ -1,0 +1,11 @@
+{
+  "id": "pTyIIHqJtL",
+  "title": "Main",
+  "type": "data",
+  "patternId": "card",
+  "templateId": "web-components-mU8MX1FHrF",
+  "data": {
+    "props": {},
+    "slots": {}
+  }
+}

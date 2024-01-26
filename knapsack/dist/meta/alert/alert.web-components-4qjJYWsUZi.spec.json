@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "titleText": {
+      "type": "string",
+      "default": "Alert title"
+    },
+    "descriptionText": {
+      "type": "string",
+      "default": "Alert description"
+    },
+    "icon": {
+      "type": "string",
+      "default": "info"
+    },
+    "state": {
+      "type": "string"
+    },
+    "iconAriaLabel": {
+      "type": "string",
+      "title": "Alert title"
+    },
+    "inline": {
+      "type": "boolean"
+    }
+  }
+}

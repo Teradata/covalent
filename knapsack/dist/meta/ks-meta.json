@@ -24,20 +24,6 @@
     {
       "patternId": "text",
       "templateId": "web-components-FXCMXD35mF",
-      "demoId": "oY0W5ALQ1q",
-      "assetSetId": "default",
-      "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=oY0W5ALQ1q&isInIframe=false&wrapHtml=true"
-    },
-    {
-      "patternId": "text",
-      "templateId": "web-components-FXCMXD35mF",
-      "demoId": "pvszcppjX8",
-      "assetSetId": "default",
-      "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=pvszcppjX8&isInIframe=false&wrapHtml=true"
-    },
-    {
-      "patternId": "text",
-      "templateId": "web-components-FXCMXD35mF",
       "demoId": "RV5V-zEoUJ",
       "assetSetId": "default",
       "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=RV5V-zEoUJ&isInIframe=false&wrapHtml=true"
@@ -52,13 +38,6 @@
     {
       "patternId": "text",
       "templateId": "web-components-FXCMXD35mF",
-      "demoId": "CkH7TzkgbA",
-      "assetSetId": "default",
-      "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=CkH7TzkgbA&isInIframe=false&wrapHtml=true"
-    },
-    {
-      "patternId": "text",
-      "templateId": "web-components-FXCMXD35mF",
       "demoId": "XqxbTjPFZB",
       "assetSetId": "default",
       "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=XqxbTjPFZB&isInIframe=false&wrapHtml=true"
@@ -66,9 +45,30 @@
     {
       "patternId": "text",
       "templateId": "web-components-FXCMXD35mF",
+      "demoId": "CkH7TzkgbA",
+      "assetSetId": "default",
+      "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=CkH7TzkgbA&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "text",
+      "templateId": "web-components-FXCMXD35mF",
       "demoId": "iH3DCGMPTw",
       "assetSetId": "default",
       "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=iH3DCGMPTw&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "text",
+      "templateId": "web-components-FXCMXD35mF",
+      "demoId": "oY0W5ALQ1q",
+      "assetSetId": "default",
+      "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=oY0W5ALQ1q&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "text",
+      "templateId": "web-components-FXCMXD35mF",
+      "demoId": "pvszcppjX8",
+      "assetSetId": "default",
+      "url": "/api/v1/render?patternId=text&templateId=web-components-FXCMXD35mF&assetSetId=default&demoId=pvszcppjX8&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "textfield",

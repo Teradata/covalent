@@ -1,0 +1,82 @@
+{
+  "id": "status-header",
+  "title": "Status header",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-UDLnfGbB2W",
+      "title": "Web components",
+      "path": "../../dist/libs/components/status-header.mjs",
+      "alias": "cv-status-header",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "status-header-actions": {
+            "allowedPatternIds": ["icon-button"],
+            "title": "status-header-actions",
+            "disallowText": true
+          },
+          "status-header-icon": {
+            "allowedPatternIds": ["icon", "circular-progress"],
+            "title": "status-header-icon",
+            "disallowText": true,
+            "allowOnlyOne": true,
+            "isTemplateReference": false
+          },
+          "status-header-text": {
+            "allowedPatternIds": ["status-header-item"],
+            "title": "status-header-text",
+            "disallowText": true
+          },
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "titleText": {
+              "type": "string",
+              "default": "Active item details"
+            },
+            "statusText": {
+              "type": "string",
+              "default": "In progress"
+            },
+            "statusHelper": {
+              "type": "string",
+              "default": "the helper text for the status"
+            },
+            "state": {
+              "type": "string",
+              "default": "active"
+            }
+          }
+        }
+      },
+      "demoIds": ["1OH1Dga5C0"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-UDLnfGbB2W"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

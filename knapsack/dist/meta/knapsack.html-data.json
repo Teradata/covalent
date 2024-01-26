@@ -68,6 +68,700 @@
           "description": "(required)"
         }
       ]
+    },
+    {
+      "name": "cv-alert",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/alert/web-components-4qjJYWsUZi"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "titleText",
+          "description": ""
+        },
+        {
+          "name": "descriptionText",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "state",
+          "description": ""
+        },
+        {
+          "name": "iconAriaLabel",
+          "description": ""
+        },
+        {
+          "name": "inline",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-action-ribbon",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/action-ribbon/web-components-v3gk7O39kO"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "labelText",
+          "description": ""
+        },
+        {
+          "name": "state",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-code-snippet",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/code-snippet/web-components-MmKtwF24Vv"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "language",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-circular-progress",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/circular-progress/web-components-iMsVIQ6gtb"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "indeterminate",
+          "description": "boolean"
+        },
+        {
+          "name": "progress",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-linear-progress",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/linear-progress/web-components-2ew8-hMQkv"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "indeterminate",
+          "description": "boolean"
+        },
+        {
+          "name": "buffer",
+          "description": ""
+        },
+        {
+          "name": "progress",
+          "description": ""
+        },
+        {
+          "name": "reverse",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-text-lockup",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/text-lockup/web-components-4Aa-qjh3vF"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "subText",
+          "description": ""
+        },
+        {
+          "name": "scale",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-textarea",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/text-area/web-components-48rzn99y9G"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "placeholder",
+          "description": ""
+        },
+        {
+          "name": "helper",
+          "description": ""
+        },
+        {
+          "name": "outlined",
+          "description": "boolean"
+        },
+        {
+          "name": "required",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-slider",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/slider/web-components-LpKATlK5H"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "markers",
+          "description": "boolean"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean"
+        },
+        {
+          "name": "discrete",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-slider-range",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/slider/web-components-33Z9-C4Qs"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "disable",
+          "description": "boolean"
+        },
+        {
+          "name": "discrete",
+          "description": "boolean"
+        },
+        {
+          "name": "markers",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-icon-button",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-button/web-components-ctiCe2sAX"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "icon",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-checkbox-icon",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-checkbox/web-components-jTiv8OpG9M"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "name": "cv-icon",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon/web-components-N8bzRbfpuX"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "name": "cv-toolbar",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/toolbar/web-components-A6-16QhSaM"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "dense",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-empty-state",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/empty-state/web-components-E0GwXgHJv"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "headline",
+          "description": ""
+        },
+        {
+          "name": "subtitle",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-tooltip",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tooltip/web-components-erhVvpq9vk"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "open",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-card",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/card/web-components-mU8MX1FHrF"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "cardTitle",
+          "description": ""
+        },
+        {
+          "name": "outlined",
+          "description": "boolean"
+        },
+        {
+          "name": "actionBar",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-radio",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/radio/web-components-qk2MWcBipT"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-app-shell",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/app-shell/web-components-z8r4uoVkf"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "appName",
+          "description": ""
+        },
+        {
+          "name": "sectionName",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-radio-icon",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-radio/web-components-gmBL6Mhy4"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "name": "cv-status-header",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/status-header/web-components-UDLnfGbB2W"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "titleText",
+          "description": ""
+        },
+        {
+          "name": "statusText",
+          "description": ""
+        },
+        {
+          "name": "statusHelper",
+          "description": ""
+        },
+        {
+          "name": "state",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-status-header-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/status-header-item/web-components-55FkYSafco"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-side-sheet",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/side-sheet/web-components-UMR43JQszt"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "open",
+          "description": "(required) boolean"
+        },
+        {
+          "name": "heading",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-dialog",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/dialog/web-components-S9Ia0KOrya"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "heading",
+          "description": ""
+        },
+        {
+          "name": "open",
+          "description": "(required) boolean"
+        },
+        {
+          "name": "hideActions",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-menu",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/menu/web-components-hY3y1MyhrP"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "open",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/list/web-components-fObxCsu2i8"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "name": "cv-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/list-item/web-components-ytRTf8wtxn"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "graphic",
+          "description": ""
+        },
+        {
+          "name": "twoLine",
+          "description": "boolean"
+        },
+        {
+          "name": "value",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-select",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/select/web-components-qWXTtv81jY"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "validationMessage",
+          "description": ""
+        },
+        {
+          "name": "required",
+          "description": "(required)"
+        },
+        {
+          "name": "outlined",
+          "description": "(required) boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-snackbar",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/snackbar/web-components-3ERE1Ai9lo"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "open",
+          "description": "(required) boolean"
+        },
+        {
+          "name": "labelText",
+          "description": ""
+        },
+        {
+          "name": "stacked",
+          "description": "boolean"
+        },
+        {
+          "name": "leading",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-tab-bar",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tabs/web-components-kjFGUA31tg"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "name": "cv-tab",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tab/web-components-1-Bf2NwL1T"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "(required)"
+        },
+        {
+          "name": "icon",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-top-app-bar",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/top-app-bar/web-components-bdJKZJwv0h"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "centerTitle",
+          "description": "boolean"
+        },
+        {
+          "name": "prominent",
+          "description": "boolean"
+        },
+        {
+          "name": "dense",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-top-app-bar-fixed",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/top-app-bar-fixed/web-components-d0oZXgy7Uj"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "centerTitle",
+          "description": "boolean"
+        },
+        {
+          "name": "prominent",
+          "description": "boolean"
+        },
+        {
+          "name": "dense",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-tree-list",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tree-list/web-components-Ue0Hy3Asb"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "name": "cv-tree-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tree-list-item/web-components-1jOFYZB9ms"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "icon",
+          "description": ""
+        }
+      ]
     }
   ]
 }

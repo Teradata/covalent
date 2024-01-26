@@ -1,0 +1,24 @@
+{
+  "id": "tnvgSz6pjh",
+  "title": "Main",
+  "type": "data",
+  "patternId": "alert",
+  "templateId": "web-components-4qjJYWsUZi",
+  "data": {
+    "props": {
+      "titleText": "Alert title",
+      "descriptionText": "Alert description",
+      "icon": "info"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "F84crA5Gx4",
+  "title": "Main",
+  "type": "data",
+  "patternId": "side-sheet",
+  "templateId": "web-components-UMR43JQszt",
+  "data": {
+    "props": {
+      "open": true,
+      "heading": "Sample side sheet"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Here lies the side sheet content"
+        }
+      ]
+    }
+  },
+  "height": 502,
+  "width": 895
+}

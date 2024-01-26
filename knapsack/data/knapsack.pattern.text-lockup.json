@@ -1,48 +1,37 @@
 {
-  "id": "text",
-  "title": "Text",
+  "id": "text-lockup",
+  "title": "Text lockup",
   "description": "",
-  "statuses": {
-    "main": "needsDev"
-  },
+  "statuses": {},
   "templates": [
     {
-      "id": "web-components-FXCMXD35mF",
-      "title": "Web component",
-      "path": "../../dist/libs/components/typography.mjs",
-      "alias": "cv-typography",
+      "id": "web-components-4Aa-qjh3vF",
+      "title": "cv-text-lockup",
+      "path": "../../dist/libs/components/text-lockup.mjs",
+      "alias": "cv-text-lockup",
       "templateLanguageId": "web-components",
       "spec": {
         "slots": {
           "default": {
-            "allowedPatternIds": [],
-            "title": "default",
-            "disallowText": false,
-            "isRequired": true,
-            "allowOnlyOne": true
+            "title": "default"
           }
         },
         "props": {
           "$schema": "http://json-schema.org/draft-07/schema",
           "description": "",
           "type": "object",
-          "required": ["scale"],
+          "required": [],
           "properties": {
+            "subText": {
+              "type": "string"
+            },
             "scale": {
               "type": "string"
             }
           }
         }
       },
-      "demoIds": [
-        "RV5V-zEoUJ",
-        "uKKiquKOJq",
-        "XqxbTjPFZB",
-        "CkH7TzkgbA",
-        "iH3DCGMPTw",
-        "oY0W5ALQ1q",
-        "pvszcppjX8"
-      ],
+      "demoIds": ["WWgMBRroJw"],
       "blockIds": []
     }
   ],
@@ -53,7 +42,7 @@
     },
     {
       "type": "template",
-      "id": "web-components-FXCMXD35mF"
+      "id": "web-components-4Aa-qjh3vF"
     }
   ],
   "subPages": [

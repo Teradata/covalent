@@ -1,4 +1,19 @@
 byId:
+  action-ribbon:
+    id: action-ribbon
+    name: Action ribbon
+    parentId: test-page
+    path: /pattern/action-ribbon
+  alert:
+    id: alert
+    name: Alert
+    parentId: test-page
+    path: /pattern/alert
+  app-shell:
+    id: app-shell
+    name: App shell
+    parentId: test-page
+    path: /pattern/app-shell
   breadcrumbs:
     id: breadcrumbs
     name: Breadcrumbs
@@ -9,11 +24,131 @@ byId:
     name: Button
     parentId: test-page
     path: /pattern/button
+  card:
+    id: card
+    name: Card
+    parentId: test-page
+    path: /pattern/card
   checkbox:
     id: checkbox
     name: Checkbox
     parentId: test-page
     path: /pattern/checkbox
+  circular-progress:
+    id: circular-progress
+    name: Circular progress
+    parentId: test-page
+    path: /pattern/circular-progress
+  code-snippet:
+    id: code-snippet
+    name: Code snippet
+    parentId: test-page
+    path: /pattern/code-snippet
+  dialog:
+    id: dialog
+    name: Dialog
+    parentId: test-page
+    path: /pattern/dialog
+  empty-state:
+    id: empty-state
+    name: Empty state
+    parentId: test-page
+    path: /pattern/empty-state
+  expansion-panel:
+    id: expansion-panel
+    name: Expansion panel
+    parentId: test-page
+    path: /pattern/expansion-panel
+  icon:
+    id: icon
+    name: Icon
+    parentId: test-page
+    path: /pattern/icon
+  icon-button:
+    id: icon-button
+    name: Icon button
+    parentId: test-page
+    path: /pattern/icon-button
+  icon-checkbox:
+    id: icon-checkbox
+    name: Icon checkbox
+    parentId: test-page
+    path: /pattern/icon-checkbox
+  icon-radio:
+    id: icon-radio
+    name: Icon radio
+    parentId: test-page
+    path: /pattern/icon-radio
+  linear-progress:
+    id: linear-progress
+    name: Linear progress
+    parentId: test-page
+    path: /pattern/linear-progress
+  list:
+    id: list
+    name: List
+    parentId: test-page
+    path: /pattern/list
+  list-item:
+    id: list-item
+    name: List item
+    parentId: list
+    path: /pattern/list-item
+  menu:
+    id: menu
+    name: Menu
+    parentId: test-page
+    path: /pattern/menu
+  radio:
+    id: radio
+    name: Radio
+    parentId: test-page
+    path: /pattern/radio
+  select:
+    id: select
+    name: Select
+    parentId: test-page
+    path: /pattern/select
+  side-sheet:
+    id: side-sheet
+    name: Side sheet
+    parentId: test-page
+    path: /pattern/side-sheet
+  slider:
+    id: slider
+    name: Slider
+    parentId: test-page
+    path: /pattern/slider
+  snackbar:
+    id: snackbar
+    name: Snackbar
+    parentId: test-page
+    path: /pattern/snackbar
+  status-header:
+    id: status-header
+    name: Status header
+    parentId: test-page
+    path: /pattern/status-header
+  status-header-item:
+    id: status-header-item
+    name: Status header item
+    parentId: status-header
+    path: /pattern/status-header-item
+  switch:
+    id: switch
+    name: Switch
+    parentId: test-page
+    path: /pattern/switch
+  tab:
+    id: tab
+    name: tab
+    parentId: tabs
+    path: /pattern/tab
+  tabs:
+    id: tabs
+    name: Tabs
+    parentId: test-page
+    path: /pattern/tabs
   test-page:
     id: test-page
     name: components
@@ -24,21 +159,90 @@ byId:
     name: Text
     parentId: test-page
     path: /pattern/text
+  text-area:
+    id: text-area
+    name: Text area
+    parentId: test-page
+    path: /pattern/text-area
+  text-lockup:
+    id: text-lockup
+    name: Text lockup
+    parentId: test-page
+    path: /pattern/text-lockup
   textfield:
     id: textfield
     name: Textfield
     parentId: test-page
     path: /pattern/textfield
-  tokens:
-    id: tokens
-    name: tokens
+  toolbar:
+    id: toolbar
+    name: Toolbar
     parentId: test-page
-    path: /pages/tokens
+    path: /pattern/toolbar
+  tooltip:
+    id: tooltip
+    name: Tooltip
+    parentId: test-page
+    path: /pattern/tooltip
+  top-app-bar:
+    id: top-app-bar
+    name: Top app bar
+    parentId: test-page
+    path: /pattern/top-app-bar
+  top-app-bar-fixed:
+    id: top-app-bar-fixed
+    name: Top app bar fixed
+    parentId: top-app-bar
+    path: /pattern/top-app-bar-fixed
+  tree-list:
+    id: tree-list
+    name: Tree list
+    parentId: test-page
+    path: /pattern/tree-list
+  tree-list-item:
+    id: tree-list-item
+    name: Tree list item
+    parentId: tree-list
+    path: /pattern/tree-list-item
 order:
   - test-page
+  - alert
+  - action-ribbon
+  - card
   - text
+  - textfield
+  - text-area
+  - text-lockup
   - button
   - checkbox
-  - textfield
+  - radio
+  - icon
+  - icon-button
+  - icon-checkbox
+  - icon-radio
   - breadcrumbs
-  - tokens
+  - code-snippet
+  - circular-progress
+  - linear-progress
+  - slider
+  - toolbar
+  - switch
+  - empty-state
+  - tooltip
+  - app-shell
+  - status-header
+  - status-header-item
+  - side-sheet
+  - dialog
+  - menu
+  - list
+  - list-item
+  - select
+  - snackbar
+  - expansion-panel
+  - tabs
+  - tab
+  - top-app-bar
+  - top-app-bar-fixed
+  - tree-list
+  - tree-list-item

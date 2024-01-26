@@ -1,0 +1,11 @@
+{
+  "id": "boILoye9Gi",
+  "title": "Main",
+  "type": "data",
+  "patternId": "menu",
+  "templateId": "web-components-hY3y1MyhrP",
+  "data": {
+    "props": {},
+    "slots": {}
+  }
+}
