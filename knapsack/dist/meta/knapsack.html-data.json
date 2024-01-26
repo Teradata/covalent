@@ -1,0 +1,73 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "cv-button",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/button/web-components-raE1x4tYL"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "outlined",
+          "description": "boolean"
+        },
+        {
+          "name": "raised",
+          "description": "boolean"
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "trailingIcon",
+          "description": "boolean"
+        },
+        {
+          "name": "dense",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-checkbox",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/checkbox/web-components-29FbeDQWhM"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-typography",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/text/web-components-FXCMXD35mF"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "scale",
+          "description": "(required)"
+        }
+      ]
+    }
+  ]
+}
