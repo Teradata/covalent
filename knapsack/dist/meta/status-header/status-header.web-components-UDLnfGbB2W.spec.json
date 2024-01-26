@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "titleText": {
+      "type": "string",
+      "default": "Active item details"
+    },
+    "statusText": {
+      "type": "string",
+      "default": "In progress"
+    },
+    "statusHelper": {
+      "type": "string",
+      "default": "the helper text for the status"
+    },
+    "state": {
+      "type": "string",
+      "default": "active"
+    }
+  }
+}

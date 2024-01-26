@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "headline": {
+      "type": "string",
+      "default": "You don't have access to this area"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "You don't have permission to view this application. Please contact your system administrator for further details."
+    },
+    "icon": {
+      "type": "string",
+      "default": "lock"
+    }
+  }
+}

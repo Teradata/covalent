@@ -44,11 +44,14 @@ byId:
     name: Code snippet
     parentId: test-page
     path: /pattern/code-snippet
+<<<<<<< HEAD
   dark:
     id: dark
     name: Dark
     parentId: tokens
     path: /pages/dark
+=======
+>>>>>>> 86f75a84 (docs(design): updating knapsack docs pages)
   dialog:
     id: dialog
     name: Dialog
@@ -84,11 +87,14 @@ byId:
     name: Icon radio
     parentId: test-page
     path: /pattern/icon-radio
+<<<<<<< HEAD
   light:
     id: light
     name: Light
     parentId: tokens
     path: /pages/light
+=======
+>>>>>>> 86f75a84 (docs(design): updating knapsack docs pages)
   linear-progress:
     id: linear-progress
     name: Linear progress
@@ -150,7 +156,10 @@ byId:
     parentId: test-page
     path: /pattern/switch
   tab:
+<<<<<<< HEAD
     hidden: true
+=======
+>>>>>>> 86f75a84 (docs(design): updating knapsack docs pages)
     id: tab
     name: tab
     parentId: tabs
@@ -185,11 +194,14 @@ byId:
     name: Text field
     parentId: test-page
     path: /pattern/textfield
+<<<<<<< HEAD
   tokens:
     id: tokens
     name: Tokens
     parentId: root
     path: /pages/tokens
+=======
+>>>>>>> 86f75a84 (docs(design): updating knapsack docs pages)
   toolbar:
     id: toolbar
     name: Toolbar
@@ -207,7 +219,11 @@ byId:
     path: /pattern/top-app-bar
   top-app-bar-fixed:
     id: top-app-bar-fixed
+<<<<<<< HEAD
     name: Top app bar - fixed
+=======
+    name: Top app bar fixed
+>>>>>>> 86f75a84 (docs(design): updating knapsack docs pages)
     parentId: top-app-bar
     path: /pattern/top-app-bar-fixed
   tree-list:
@@ -220,6 +236,7 @@ byId:
     name: Tree list item
     parentId: tree-list
     path: /pattern/tree-list-item
+<<<<<<< HEAD
   typography:
     id: typography
     name: Typography
@@ -268,12 +285,55 @@ order:
   - tabs
   - tab
   - tooltip
+=======
+order:
+  - test-page
+  - alert
+  - action-ribbon
+  - card
+  - text
+  - textfield
+  - text-area
+  - text-lockup
+  - button
+  - checkbox
+  - radio
+  - icon
+  - icon-button
+  - icon-checkbox
+  - icon-radio
+  - breadcrumbs
+  - code-snippet
+  - circular-progress
+  - linear-progress
+  - slider
+  - toolbar
+  - switch
+  - empty-state
+  - tooltip
+  - app-shell
+  - status-header
+  - status-header-item
+  - side-sheet
+  - dialog
+  - menu
+  - list
+  - list-item
+  - select
+  - snackbar
+  - expansion-panel
+  - tabs
+  - tab
+>>>>>>> 86f75a84 (docs(design): updating knapsack docs pages)
   - top-app-bar
   - top-app-bar-fixed
   - tree-list
   - tree-list-item
+<<<<<<< HEAD
   - tokens
   - writing
   - light
   - dark
   - typography
+=======
+>>>>>>> 86f75a84 (docs(design): updating knapsack docs pages)
