@@ -11,4 +11,5 @@
 export interface AppShell {
   appName?: string;
   sectionName?: string;
+  helpOpen?: boolean;
 }

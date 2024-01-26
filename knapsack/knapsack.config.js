@@ -1,6 +1,7 @@
 const {
   KnapsackWebComponentRenderer,
 } = require('@knapsack/renderer-web-components');
+const { KnapsackAngularRenderer } = require('@knapsack/renderer-angular');
 const { configureKnapsack } = require('@knapsack/app');
 const { join } = require('path');
 const { version } = require('./../package.json');

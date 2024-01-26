@@ -11,6 +11,9 @@
     "sectionName": {
       "type": "string",
       "default": "[Section name]"
+    },
+    "helpOpen": {
+      "type": "boolean"
     }
   }
 }
