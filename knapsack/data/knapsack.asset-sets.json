@@ -13,6 +13,9 @@
         },
         {
           "src": "../../dist/libs/components/style.css"
+        },
+        {
+          "src": "../public/material-fonts-icons.css"
         }
       ]
     }

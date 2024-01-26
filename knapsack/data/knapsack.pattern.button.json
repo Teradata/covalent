@@ -55,10 +55,6 @@
       "id": "overview"
     },
     {
-      "type": "subPage",
-      "id": "YEbiEAOyBP"
-    },
-    {
       "type": "template",
       "id": "web-components-raE1x4tYL"
     }
@@ -67,11 +63,6 @@
     {
       "id": "overview",
       "title": "Overview",
-      "blockIds": []
-    },
-    {
-      "title": "Untitled",
-      "id": "YEbiEAOyBP",
       "blockIds": []
     }
   ]

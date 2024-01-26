@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-4qjJYWsUZi",
-      "title": "cv-alert",
+      "title": "Web components",
       "path": "../../dist/libs/components/alert.mjs",
       "alias": "cv-alert",
       "templateLanguageId": "web-components",

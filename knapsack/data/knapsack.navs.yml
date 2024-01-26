@@ -140,6 +140,7 @@ byId:
     parentId: test-page
     path: /pattern/switch
   tab:
+    hidden: true
     id: tab
     name: tab
     parentId: tabs
@@ -156,7 +157,7 @@ byId:
     path: /pages/test-page
   text:
     id: text
-    name: Text
+    name: Typography
     parentId: test-page
     path: /pattern/text
   text-area:
@@ -171,7 +172,7 @@ byId:
     path: /pattern/text-lockup
   textfield:
     id: textfield
-    name: Textfield
+    name: Text field
     parentId: test-page
     path: /pattern/textfield
   toolbar:
@@ -208,14 +209,14 @@ order:
   - test-page
   - alert
   - action-ribbon
+  - app-shell
+  - button
   - card
+  - checkbox
   - text
   - textfield
   - text-area
   - text-lockup
-  - button
-  - checkbox
-  - radio
   - icon
   - icon-button
   - icon-checkbox
@@ -223,25 +224,25 @@ order:
   - breadcrumbs
   - code-snippet
   - circular-progress
-  - linear-progress
   - slider
   - toolbar
-  - switch
-  - empty-state
-  - tooltip
-  - app-shell
-  - status-header
-  - status-header-item
-  - side-sheet
   - dialog
-  - menu
+  - empty-state
+  - expansion-panel
+  - linear-progress
   - list
   - list-item
+  - menu
+  - radio
   - select
+  - side-sheet
   - snackbar
-  - expansion-panel
+  - status-header
+  - status-header-item
+  - switch
   - tabs
   - tab
+  - tooltip
   - top-app-bar
   - top-app-bar-fixed
   - tree-list

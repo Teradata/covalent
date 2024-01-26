@@ -5,7 +5,16 @@
   "patternId": "tooltip",
   "templateId": "web-components-erhVvpq9vk",
   "data": {
-    "props": {},
-    "slots": {}
+    "props": {
+      "open": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Im a tooltip"
+        }
+      ]
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "text",
-  "title": "Text",
+  "title": "Typography",
   "description": "",
   "statuses": {
     "main": "needsDev"
@@ -8,7 +8,7 @@
   "templates": [
     {
       "id": "web-components-FXCMXD35mF",
-      "title": "Web component",
+      "title": "Web components",
       "path": "../../dist/libs/components/typography.mjs",
       "alias": "cv-typography",
       "templateLanguageId": "web-components",

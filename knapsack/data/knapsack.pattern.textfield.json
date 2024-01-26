@@ -1,12 +1,12 @@
 {
   "id": "textfield",
-  "title": "Textfield",
+  "title": "Text field",
   "description": "",
   "statuses": {},
   "templates": [
     {
       "id": "web-components-M4zyalwdNJ",
-      "title": "Web Components",
+      "title": "Web components",
       "path": "../../dist/libs/components/textfield.mjs",
       "alias": "cv-textfield",
       "templateLanguageId": "web-components",

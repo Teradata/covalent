@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-S9Ia0KOrya",
-      "title": "cv-dialog",
+      "title": "Web components",
       "path": "../../dist/libs/components/dialog.mjs",
       "alias": "cv-dialog",
       "templateLanguageId": "web-components",

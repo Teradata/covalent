@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-1-Bf2NwL1T",
-      "title": "Web Components",
+      "title": "Web components",
       "path": "../../dist/libs/components/tab.mjs",
       "alias": "cv-tab",
       "templateLanguageId": "web-components",

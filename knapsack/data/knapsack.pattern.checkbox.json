@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-29FbeDQWhM",
-      "title": "Web Components",
+      "title": "Web components",
       "path": "../../dist/libs/components/checkbox.mjs",
       "alias": "cv-checkbox",
       "templateLanguageId": "web-components",

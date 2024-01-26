@@ -6,6 +6,27 @@
   "templateId": "web-components-Ue0Hy3Asb",
   "data": {
     "props": {},
-    "slots": {}
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "tree-list-item",
+          "templateId": "web-components-1jOFYZB9ms",
+          "demoId": "7gFch0E4yr"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "tree-list-item",
+          "templateId": "web-components-1jOFYZB9ms",
+          "demoId": "7gFch0E4yr"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "tree-list-item",
+          "templateId": "web-components-1jOFYZB9ms",
+          "demoId": "7gFch0E4yr"
+        }
+      ]
+    }
   }
 }

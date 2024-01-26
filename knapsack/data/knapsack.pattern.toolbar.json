@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-A6-16QhSaM",
-      "title": "cv-toolbar",
+      "title": "Web components",
       "path": "../../dist/libs/components/toolbar.mjs",
       "alias": "cv-toolbar",
       "templateLanguageId": "web-components",

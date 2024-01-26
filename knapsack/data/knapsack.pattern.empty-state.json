@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-E0GwXgHJv",
-      "title": "cv-empty-state",
+      "title": "Web components",
       "path": "../../dist/libs/components/empty-state.mjs",
       "alias": "cv-empty-state",
       "templateLanguageId": "web-components",

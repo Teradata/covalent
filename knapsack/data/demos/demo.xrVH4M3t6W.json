@@ -5,7 +5,20 @@
   "patternId": "action-ribbon",
   "templateId": "web-components-v3gk7O39kO",
   "data": {
-    "props": {},
-    "slots": {}
+    "props": {
+      "labelText": "You have unsaved changes",
+      "state": "active",
+      "icon": "info"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ]
+    }
   }
 }

@@ -16,7 +16,9 @@
             "title": "text"
           },
           "icon": {
-            "title": "icon"
+            "allowedPatternIds": ["icon"],
+            "title": "icon",
+            "disallowText": true
           }
         },
         "props": {

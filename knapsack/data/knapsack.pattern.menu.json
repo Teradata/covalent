@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-hY3y1MyhrP",
-      "title": "cv-menu",
+      "title": "Web components",
       "path": "../../dist/libs/components/menu.mjs",
       "alias": "cv-menu",
       "templateLanguageId": "web-components",

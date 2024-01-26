@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-mU8MX1FHrF",
-      "title": "cv-card",
+      "title": "Web components",
       "path": "../../dist/libs/components/card.mjs",
       "alias": "cv-card",
       "templateLanguageId": "web-components",

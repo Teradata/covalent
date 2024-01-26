@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-MmKtwF24Vv",
-      "title": "cv-code-snippet",
+      "title": "Web components",
       "path": "../../dist/libs/components/code-snippet.mjs",
       "alias": "cv-code-snippet",
       "templateLanguageId": "web-components",
@@ -16,8 +16,9 @@
             "title": "default"
           },
           "actionItems": {
-            "allowedPatternIds": ["button"],
-            "title": "actionItems"
+            "allowedPatternIds": ["button", "icon-button"],
+            "title": "actionItems",
+            "disallowText": true
           }
         },
         "props": {

@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-N8bzRbfpuX",
-      "title": "cv-icon",
+      "title": "Web components",
       "path": "../../dist/libs/components/icon.mjs",
       "alias": "cv-icon",
       "templateLanguageId": "web-components",

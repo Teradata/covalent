@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-qWXTtv81jY",
-      "title": "cv-select",
+      "title": "Web components",
       "path": "../../dist/libs/components/select.mjs",
       "alias": "cv-select",
       "templateLanguageId": "web-components",
