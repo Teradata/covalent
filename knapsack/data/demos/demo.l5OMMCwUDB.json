@@ -1,0 +1,18 @@
+{
+  "id": "l5OMMCwUDB",
+  "title": "Main",
+  "type": "data",
+  "patternId": "breadcrumbs",
+  "templateId": "angular-kJmJyws4E",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Home"
+        }
+      ]
+    }
+  }
+}

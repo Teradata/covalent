@@ -1,0 +1,35 @@
+{
+  "id": "textfield",
+  "title": "Textfield",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-M4zyalwdNJ",
+      "title": "Web Components",
+      "path": "../../dist/libs/components/textfield.mjs",
+      "alias": "cv-textfield",
+      "templateLanguageId": "web-components",
+      "spec": {},
+      "demoIds": ["zYujvGxjlZ"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-M4zyalwdNJ"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

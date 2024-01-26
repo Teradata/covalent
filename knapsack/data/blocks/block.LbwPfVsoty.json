@@ -1,0 +1,13 @@
+{
+  "id": "LbwPfVsoty",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "table-list",
+    "tokenType": "",
+    "groupIds": []
+  },
+  "header": {
+    "showHeader": false
+  },
+  "spacing": "large"
+}

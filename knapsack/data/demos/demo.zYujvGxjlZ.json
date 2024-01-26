@@ -1,0 +1,11 @@
+{
+  "id": "zYujvGxjlZ",
+  "title": "Main",
+  "type": "data",
+  "patternId": "textfield",
+  "templateId": "web-components-M4zyalwdNJ",
+  "data": {
+    "props": {},
+    "slots": {}
+  }
+}

@@ -1,2 +1,44 @@
-byId: {}
-order: []
+byId:
+  breadcrumbs:
+    id: breadcrumbs
+    name: Breadcrumbs
+    parentId: test-page
+    path: /pattern/breadcrumbs
+  button:
+    id: button
+    name: Button
+    parentId: test-page
+    path: /pattern/button
+  checkbox:
+    id: checkbox
+    name: Checkbox
+    parentId: test-page
+    path: /pattern/checkbox
+  test-page:
+    id: test-page
+    name: components
+    parentId: root
+    path: /pages/test-page
+  text:
+    id: text
+    name: Text
+    parentId: test-page
+    path: /pattern/text
+  textfield:
+    id: textfield
+    name: Textfield
+    parentId: test-page
+    path: /pattern/textfield
+  tokens:
+    id: tokens
+    name: tokens
+    parentId: test-page
+    path: /pages/tokens
+order:
+  - test-page
+  - text
+  - button
+  - checkbox
+  - textfield
+  - breadcrumbs
+  - tokens
