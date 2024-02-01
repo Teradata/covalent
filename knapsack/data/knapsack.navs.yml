@@ -211,6 +211,7 @@ order:
   - action-ribbon
   - app-shell
   - button
+  - breadcrumbs
   - card
   - checkbox
   - text
@@ -221,7 +222,6 @@ order:
   - icon-button
   - icon-checkbox
   - icon-radio
-  - breadcrumbs
   - code-snippet
   - circular-progress
   - slider

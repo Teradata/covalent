@@ -6,9 +6,9 @@
   "templates": [
     {
       "id": "web-components-fObxCsu2i8",
-      "title": "Web components",
-      "path": "../../dist/libs/components/list-item.mjs",
-      "alias": "cv-list-item",
+      "title": "cv-list",
+      "path": "../../dist/libs/components/list.mjs",
+      "alias": "cv-list",
       "templateLanguageId": "web-components",
       "spec": {
         "slots": {

@@ -1,0 +1,16 @@
+{
+  "id": "efMDYO09RW",
+  "blockType": "guidelines",
+  "data": {
+    "guidelines": [
+      {
+        "id": "eOF6ehKfju",
+        "type": "do"
+      },
+      {
+        "id": "0R3DK8hkZH",
+        "type": "dont"
+      }
+    ]
+  }
+}

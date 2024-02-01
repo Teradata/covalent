@@ -1,0 +1,14 @@
+{
+  "id": "IxXMQMFkBT",
+  "title": "close icon",
+  "description": "A description",
+  "type": "data",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX",
+  "data": {
+    "props": {
+      "icon": "close"
+    },
+    "slots": {}
+  }
+}

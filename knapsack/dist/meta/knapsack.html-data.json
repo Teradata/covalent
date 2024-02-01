@@ -327,7 +327,7 @@
       ]
     },
     {
-      "name": "cv-list-item",
+      "name": "cv-list",
       "description": "",
       "references": [
         {
