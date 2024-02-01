@@ -153,7 +153,7 @@
     "jest-esm-transformer": "^1.0.0",
     "jest-preset-angular": "13.1.1",
     "monaco-editor-webpack-plugin": "^7.1.0",
-    "ng-packagr": "17.1.2",
+    "ng-packagr": "17.0.3",
     "nx": "17.3.1",
     "postcss-preset-env": "^9.1.0",
     "postcss-scss": "^4.0.6",
