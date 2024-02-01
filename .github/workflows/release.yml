@@ -20,7 +20,7 @@ jobs:
           node-version: 18
           cache: npm
       - name: Install dependencies
-        run: npx ci
+        run: npm ci
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH }}
