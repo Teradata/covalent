@@ -1,3 +1,13 @@
+# [8.1.0-beta.7](https://github.com/Teradata/covalent/compare/v8.1.0-beta.6...v8.1.0-beta.7) (2024-02-01)
+
+### Bug Fixes
+
+- **angular:** adjust dynamic forms input theme ([7be3292](https://github.com/Teradata/covalent/commit/7be3292938e840b7c9dec5ace7e0b3367b074a78))
+
+### Features
+
+- **markdown-navigator:** adjustment to breadcrumb title ([a4e5d1c](https://github.com/Teradata/covalent/commit/a4e5d1c351b6de31355ccb779ee88281b03084ea))
+
 # [8.1.0-beta.6](https://github.com/Teradata/covalent/compare/v8.1.0-beta.5...v8.1.0-beta.6) (2024-01-22)
 
 ### Bug Fixes
