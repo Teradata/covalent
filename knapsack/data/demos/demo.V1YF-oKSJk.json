@@ -1,0 +1,20 @@
+{
+  "id": "V1YF-oKSJk",
+  "title": "Main",
+  "type": "data",
+  "patternId": "tooltip",
+  "templateId": "web-components-erhVvpq9vk",
+  "data": {
+    "props": {
+      "open": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Im a tooltip"
+        }
+      ]
+    }
+  }
+}

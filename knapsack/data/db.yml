@@ -1,0 +1,27 @@
+blocks:
+  settings:
+    tokens:
+      rootFontSize: 16px
+demos:
+  settings: {}
+settings:
+  logoUrl: ''
+  theme:
+    appearance:
+      customFonts: []
+      navigation:
+        primaryNav: {}
+        secondaryNav: {}
+        tabs: {}
+      pageElements:
+        bodyText: {}
+        headingLarge: {}
+        headingMedium: {}
+        headingSmall: {}
+        headingXLarge: {}
+        headingXSmall: {}
+        link: {}
+        pageDescription: {}
+        pageTitle: {}
+    version: 10
+  title: ''

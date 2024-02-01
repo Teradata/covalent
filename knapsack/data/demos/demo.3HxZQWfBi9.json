@@ -1,0 +1,13 @@
+{
+  "id": "3HxZQWfBi9",
+  "title": "Main",
+  "type": "data",
+  "patternId": "tab",
+  "templateId": "web-components-1-Bf2NwL1T",
+  "data": {
+    "props": {
+      "label": "Tab label "
+    },
+    "slots": {}
+  }
+}

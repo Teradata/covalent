@@ -1,0 +1,16 @@
+id: homepage
+title: Hey this works
+blockIds: []
+settings:
+  pageHeader:
+    backgroundColor:
+      colorValue: '#6A4CEC'
+      type: value
+    textColorTitle:
+      colorValue: '#FFFFFF'
+      type: value
+    textColorDescription:
+      colorValue: '#FFFFFF'
+      type: value
+    size: large
+description: covalent design system

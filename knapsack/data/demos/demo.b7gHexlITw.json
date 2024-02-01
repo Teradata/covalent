@@ -1,0 +1,13 @@
+{
+  "id": "b7gHexlITw",
+  "title": "Main",
+  "type": "data",
+  "patternId": "circular-progress",
+  "templateId": "web-components-iMsVIQ6gtb",
+  "data": {
+    "props": {
+      "indeterminate": true
+    },
+    "slots": {}
+  }
+}

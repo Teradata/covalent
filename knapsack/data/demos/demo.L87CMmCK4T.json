@@ -1,0 +1,11 @@
+{
+  "id": "L87CMmCK4T",
+  "title": "Main",
+  "type": "data",
+  "patternId": "text-area",
+  "templateId": "web-components-48rzn99y9G",
+  "data": {
+    "props": {},
+    "slots": {}
+  }
+}
