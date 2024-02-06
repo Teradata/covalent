@@ -1,0 +1,62 @@
+{
+  "id": "text-area",
+  "title": "Text area",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-48rzn99y9G",
+      "title": "Web components",
+      "path": "../../dist/libs/components/textarea.mjs",
+      "alias": "cv-textarea",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "label": {
+              "type": "string",
+              "default": "Text area label"
+            },
+            "placeholder": {
+              "type": "string"
+            },
+            "helper": {
+              "type": "string"
+            },
+            "outlined": {
+              "type": "boolean",
+              "default": true
+            },
+            "required": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["L87CMmCK4T"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-48rzn99y9G"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

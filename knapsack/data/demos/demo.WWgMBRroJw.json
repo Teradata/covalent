@@ -1,0 +1,20 @@
+{
+  "id": "WWgMBRroJw",
+  "title": "Main",
+  "type": "data",
+  "patternId": "text-lockup",
+  "templateId": "web-components-4Aa-qjh3vF",
+  "data": {
+    "props": {
+      "subText": "environment Id"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "BXCVP-8523411"
+        }
+      ]
+    }
+  }
+}

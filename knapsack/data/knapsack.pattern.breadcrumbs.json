@@ -1,0 +1,48 @@
+{
+  "id": "breadcrumbs",
+  "title": "Breadcrumbs",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "angular-kJmJyws4E",
+      "title": "Angular",
+      "path": "../../dist/libs/angular/fesm2022/covalent-core-breadcrumbs.mjs",
+      "alias": "TdBreadcrumbComponent",
+      "templateLanguageId": "angular",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        }
+      },
+      "demoIds": ["l5OMMCwUDB"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "angular-kJmJyws4E"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": ["yakWym5jjp"]
+    }
+  ]
+}

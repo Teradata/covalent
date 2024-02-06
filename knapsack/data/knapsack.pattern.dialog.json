@@ -1,0 +1,86 @@
+{
+  "id": "dialog",
+  "title": "Dialog",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-S9Ia0KOrya",
+      "title": "Web components",
+      "path": "../../dist/libs/components/dialog.mjs",
+      "alias": "cv-dialog",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          },
+          "secondaryAction": {
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "icon",
+              "switch",
+              "icon-button"
+            ],
+            "title": "secondaryAction",
+            "disallowText": true,
+            "allowOnlyOne": false
+          },
+          "primaryAction": {
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "icon",
+              "icon-button",
+              "switch"
+            ],
+            "title": "primaryAction",
+            "disallowText": true
+          },
+          "newSlot": {
+            "title": "New Slot"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["open"],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "default": "Sample dialog title"
+            },
+            "open": {
+              "type": "boolean",
+              "default": true
+            },
+            "hideActions": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["yovRt8o986"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-S9Ia0KOrya"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

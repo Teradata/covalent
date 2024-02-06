@@ -1,0 +1,18 @@
+{
+  "id": "bn4zy44TYR",
+  "title": "Main",
+  "type": "data",
+  "patternId": "icon",
+  "templateId": "web-components-N8bzRbfpuX",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "houseboat"
+        }
+      ]
+    }
+  }
+}

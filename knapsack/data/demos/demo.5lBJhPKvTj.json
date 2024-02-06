@@ -1,0 +1,23 @@
+{
+  "id": "5lBJhPKvTj",
+  "title": "Main",
+  "type": "data",
+  "patternId": "app-shell",
+  "templateId": "web-components-z8r4uoVkf",
+  "data": {
+    "props": {
+      "appName": "[App name]",
+      "sectionName": "[Section name]"
+    },
+    "slots": {
+      "section-action": [
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "BueNSFTYn"
+        }
+      ]
+    }
+  }
+}

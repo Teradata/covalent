@@ -1,0 +1,48 @@
+{
+  "id": "radio",
+  "title": "Radio",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-qk2MWcBipT",
+      "title": "Web components",
+      "path": "../../dist/libs/components/radio.mjs",
+      "alias": "cv-radio",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "disabled": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["RMPpKHlzd"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-qk2MWcBipT"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}
