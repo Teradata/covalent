@@ -64,6 +64,10 @@ $background: map-get($td-light-theme, background);
   background-color: variables.$theme-light-colors-surface-container-high;
 }
 
+.icon-avatar {
+  background-color: variables.$theme-light-colors-surface-container;
+}
+
 body .mat-card {
   border-radius: 8px;
 }
@@ -87,6 +91,10 @@ body .mat-card {
 
   .cv-surface-high {
     background-color: variables.$theme-dark-colors-surface-container-high;
+  }
+
+  .icon-avatar {
+    background-color: variables.$theme-dark-colors-surface-container;
   }
 }
 
