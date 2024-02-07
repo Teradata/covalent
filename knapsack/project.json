@@ -1,0 +1,16 @@
+{
+  "name": "knapsack",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "data",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-script",
+      "outputs": ["{workspaceRoot}/knapsack/dist"],
+      "options": {
+        "script": "build"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@covalent/knapsack",
+  "version": "0.0.0-COVALENT",
+  "private": true,
+  "scripts": {
+    "build": "knapsack build",
+    "start": "knapsack start",
+    "serve": "NODE_ENV=production knapsack serve",
+    "test": "knapsack test"
+  },
+  "dependencies": {
+    "@knapsack/app": "^4.41.14",
+    "@knapsack/renderer-angular": "^4.41.14",
+    "@knapsack/renderer-web-components": "^4.41.14"
+  }
+}
