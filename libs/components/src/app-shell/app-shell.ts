@@ -54,7 +54,9 @@ export class CovalentAppShell extends DrawerBase {
   @property({ type: Boolean, reflect: true })
   helpOpen = false;
 
-  private forcedOpen = false;
+  @property({ type: Boolean, reflect: true })
+  forcedOpen = false;
+
   private hovered = false;
 
   constructor() {
@@ -80,6 +82,8 @@ export class CovalentAppShell extends DrawerBase {
   private _handleMenuClick() {
     // Forcefully toggle the open/close state
     this._toggleOpen(!this.forcedOpen);
+
+    this.dispatchEvent(new Event('CovalentAppShell:menuClick'));
 
     this.forcedOpen = true;
     this.hovered = false;
