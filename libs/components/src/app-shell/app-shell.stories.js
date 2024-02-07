@@ -38,7 +38,11 @@ const updateActionRibbon = () => {
   }
 };
 
-const Template = ({ appName = '[App name]', sectionTitle = '' }) => {
+const Template = ({
+  appName = '[App name]',
+  sectionTitle = '',
+  forcedOpen = false,
+}) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -79,9 +83,11 @@ const Template = ({ appName = '[App name]', sectionTitle = '' }) => {
         }
     }
     </style>
-    <cv-app-shell ${appName ? `appName="${appName}"` : ''} ${
-    sectionTitle ? `sectionName="${sectionTitle}"` : ''
-  }>
+    <cv-app-shell 
+    ${appName ? `appName="${appName}"` : ''} 
+    ${sectionTitle ? `sectionName="${sectionTitle}"` : ''}
+    ${forcedOpen ? `forcedOpen open` : ''}
+    >
 
       <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>
 
@@ -310,4 +316,9 @@ export const Basic = Template.bind({});
 export const sectionTitle = Template.bind({});
 sectionTitle.args = {
   sectionTitle: 'Environments',
+};
+
+export const forcedOpen = Template.bind({});
+forcedOpen.args = {
+  forcedOpen: true,
 };
