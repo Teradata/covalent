@@ -54,6 +54,9 @@ export class CovalentAppShell extends DrawerBase {
   @property({ type: Boolean, reflect: true })
   helpOpen = false;
 
+  /**
+   * Force the left navigation visibly open
+   */
   @property({ type: Boolean, reflect: true })
   forcedOpen = false;
 
