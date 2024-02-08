@@ -83,6 +83,9 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private _handleMenuClick() {
+    this.mdcRoot.dispatchEvent(
+      new Event('transitionend', { bubbles: true, composed: true })
+    );
     // Forcefully toggle the open/close state
     this._toggleOpen(!this.forcedOpen);
 
@@ -152,7 +155,7 @@ export class CovalentAppShell extends DrawerBase {
     const modal = this.type === 'modal';
     const classes = {
       'cov-drawer--forced-open': this.forcedOpen,
-      'cov-drawer--open': this.drawerOpen,
+      'cov-drawer--open': this.drawerOpen || this.forcedOpen,
       'cov-drawer--hovered': this.hovered,
     };
     const drawerClasses = {
