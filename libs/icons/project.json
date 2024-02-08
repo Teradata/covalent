@@ -1,0 +1,21 @@
+{
+  "name": "icons",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/icons",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/libs/icons"],
+      "options": {
+        "commands": [
+          "mkdir -p dist/libs/icons",
+          "cp libs/icons/covalent-icons.* dist/libs/icons",
+          "cp libs/icons/package.json dist/libs/icons"
+        ],
+        "parallel": false
+      }
+    }
+  },
+  "tags": []
+}
