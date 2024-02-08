@@ -1,3 +1,4 @@
+
 /**
  * Do not edit directly
  * Generated on Tue, 24 Oct 2023 16:42:01 GMT
@@ -107,12 +108,12 @@ $dark-surface-secondary-highlight-hover: rgba(#045c5c, 0.6) !default;
 $dark-surface-positive: #336033 !default;
 $dark-surface-positive-highlight: rgba(#336033, 0.4) !default;
 $dark-surface-positive-highlight-hover: rgba(#336033, 0.6) !default;
-$dark-surface-caution: #704c16 !default;
-$dark-surface-caution-highlight: rgba(#704c16, 0.4) !default;
-$dark-surface-caution-highlight-hover: rgba(#704c16, 0.6) !default;
-$dark-surface-negative: #883e32 !default;
-$dark-surface-negative-highlight: rgba(#883e32, 0.4) !default;
-$dark-surface-negative-highlight-hover: rgba(#883e32, 0.6) !default;
+$dark-surface-caution: #704C16 !default;
+$dark-surface-caution-highlight: rgba(#704C16, 0.4) !default;
+$dark-surface-caution-highlight-hover: rgba(#704C16, 0.6) !default;
+$dark-surface-negative: #883E32 !default;
+$dark-surface-negative-highlight: rgba(#883E32, 0.4) !default;
+$dark-surface-negative-highlight-hover: rgba(#883E32, 0.6) !default;
 $dark-surface-neutral: #43515a !default;
 $dark-surface-neutral-highlight: rgba(#43515a, 0.4) !default;
 $dark-surface-neutral-highlight-hover: rgba(#43515a, 0.6) !default;
@@ -431,15 +432,15 @@ $teradata-slate-1700: #101314 !default;
 $teradata-slate-1800: #0c0e0f !default;
 $teradata-slate-1900: #060708 !default;
 $teradata-slate-2000: #020203 !default;
-$teradata-orange-100: #ffcfb3 !default;
-$teradata-orange-200: #ffaf81 !default;
-$teradata-orange-300: #ff8f4e !default;
-$teradata-orange-400: #ff7728 !default;
-$teradata-orange-500: #ff5f02 !default;
-$teradata-orange-600: #f05800 !default;
-$teradata-orange-700: #e54900 !default;
-$teradata-orange-800: #d83b03 !default;
-$teradata-orange-900: #c23200 !default;
+$teradata-orange-100: #FFCFB3 !default;
+$teradata-orange-200: #FFAF81 !default;
+$teradata-orange-300: #FF8F4E !default;
+$teradata-orange-400: #FF7728 !default;
+$teradata-orange-500: #FF5F02 !default;
+$teradata-orange-600: #F05800 !default;
+$teradata-orange-700: #E54900 !default;
+$teradata-orange-800: #D83B03 !default;
+$teradata-orange-900: #C23200 !default;
 $typography-font-family: Arial, sans-serif !default;
 $typography-headline1-font-family: 'Inter', sans-serif !default;
 $typography-headline1-font-size: 96px !default;
@@ -526,8 +527,7 @@ $tokens: (
     'surface-accent-highlight-hover': $light-surface-accent-highlight-hover,
     'surface-secondary': $light-surface-secondary,
     'surface-secondary-highlight': $light-surface-secondary-highlight,
-    'surface-secondary-highlight-hover':
-      $light-surface-secondary-highlight-hover,
+    'surface-secondary-highlight-hover': $light-surface-secondary-highlight-hover,
     'surface-positive': $light-surface-positive,
     'surface-positive-highlight': $light-surface-positive-highlight,
     'surface-positive-highlight-hover': $light-surface-positive-highlight-hover,
@@ -558,7 +558,7 @@ $tokens: (
     'text-secondary-on-dark': $light-text-secondary-on-dark,
     'text-hint-on-dark': $light-text-hint-on-dark,
     'text-disabled-on-dark': $light-text-disabled-on-dark,
-    'text-icon-on-dark': $light-text-icon-on-dark,
+    'text-icon-on-dark': $light-text-icon-on-dark
   ),
   'dark': (
     'primary': $dark-primary,
@@ -626,7 +626,7 @@ $tokens: (
     'text-secondary-on-dark': $dark-text-secondary-on-dark,
     'text-hint-on-dark': $dark-text-hint-on-dark,
     'text-disabled-on-dark': $dark-text-disabled-on-dark,
-    'text-icon-on-dark': $dark-text-icon-on-dark,
+    'text-icon-on-dark': $dark-text-icon-on-dark
   ),
   'material': (
     'red-50': $material-red-50,
@@ -882,7 +882,7 @@ $tokens: (
     'blue-grey-600': $material-blue-grey-600,
     'blue-grey-700': $material-blue-grey-700,
     'blue-grey-800': $material-blue-grey-800,
-    'blue-grey-900': $material-blue-grey-900,
+    'blue-grey-900': $material-blue-grey-900
   ),
   'teradata': (
     'teal-50': $teradata-teal-50,
@@ -935,7 +935,7 @@ $tokens: (
     'orange-600': $teradata-orange-600,
     'orange-700': $teradata-orange-700,
     'orange-800': $teradata-orange-800,
-    'orange-900': $teradata-orange-900,
+    'orange-900': $teradata-orange-900
   ),
   'typography': (
     'font-family': $typography-font-family,
@@ -986,6 +986,6 @@ $tokens: (
     'caption-font-family': $typography-caption-font-family,
     'caption-font-size': $typography-caption-font-size,
     'caption-font-weight': $typography-caption-font-weight,
-    'caption-line-height': $typography-caption-line-height,
-  ),
+    'caption-line-height': $typography-caption-line-height
+  )
 );
