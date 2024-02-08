@@ -133,24 +133,20 @@ export default {
   },
 };
 
-const Template = ({ icon, size }, ...args) => {
-  const icoElem = document.createElement('cv-icon');
-  icoElem.innerText = icon;
-  icoElem.style.fontSize = size;
-
-  if (args[0].parameters.showCovIcons) {
-    icoElem.className = 'covalent-icon';
-  }
-
-  return icoElem;
+const Template = ({ icon, size, covalent }) => {
+  return `
+    <style>
+    :root {
+      --mdc-icon-size: ${size}
+    }
+    </style>
+    <cv-icon ${covalent ? `covalent` : ''}>${icon}</cv-icon>
+  `;
 };
 
 export const MaterialIcons = Template.bind({});
 
 export const CovalentIcons = Template.bind({});
-CovalentIcons.parameters = {
-  showCovIcons: true,
-};
 
 CovalentIcons.argTypes = {
   icon: {
@@ -159,4 +155,5 @@ CovalentIcons.argTypes = {
 };
 CovalentIcons.args = {
   icon: 'product_editor',
+  covalent: true,
 };
