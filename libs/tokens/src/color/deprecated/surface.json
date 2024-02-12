@@ -43,11 +43,11 @@
       "type": "color"
     },
     "surface-secondary-highlight": {
-      "value": "{theme.light.states.secondary-hover}",
+      "value": "{theme.light.colors.secondary-8%}",
       "type": "color"
     },
     "surface-secondary-highlight-hover": {
-      "value": "{theme.light.states.secondary-hover}",
+      "value": "{theme.light.colors.secondary-8%}",
       "type": "color"
     },
 
@@ -159,11 +159,11 @@
       "type": "color"
     },
     "surface-secondary-highlight": {
-      "value": "{theme.dark.states.secondary-hover}",
+      "value": "{theme.dark.colors.secondary-8%}",
       "type": "color"
     },
     "surface-secondary-highlight-hover": {
-      "value": "{theme.dark.states.secondary-hover}",
+      "value": "{theme.dark.colors.secondary-8%}",
       "type": "color"
     },
 
