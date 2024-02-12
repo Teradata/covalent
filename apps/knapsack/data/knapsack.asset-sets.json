@@ -1,0 +1,23 @@
+{
+  "globalAssetSetIds": ["default"],
+  "allAssetSets": {
+    "default": {
+      "id": "default",
+      "title": "default",
+      "assets": [
+        {
+          "src": "../../../dist/libs/components/index.mjs",
+          "attributes": {
+            "type": "module"
+          }
+        },
+        {
+          "src": "../../../dist/libs/components/style.css"
+        },
+        {
+          "src": "../public/material-fonts-icons.css"
+        }
+      ]
+    }
+  }
+}

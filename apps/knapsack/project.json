@@ -1,0 +1,49 @@
+{
+    "name": "knapsack",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/knapsack",
+    "projectType": "application",
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "outputs": ["{workspaceRoot}/dist/apps/knapsack"],
+        "options": {
+          "commands": [
+            "knapsack --config apps/knapsack/knapsack.config.js build"
+          ],
+          "parallel": false
+        }
+      },
+      "start": {
+        "executor": "nx:run-commands",
+        "outputs": ["{workspaceRoot}/dist/apps/knapsack"],
+        "options": {
+          "commands": [
+            "knapsack --config apps/knapsack/knapsack.config.js start"
+          ],
+          "parallel": false
+        }
+      },
+      "serve": {
+        "executor": "nx:run-commands",
+        "outputs": ["{workspaceRoot}/dist/apps/knapsack"],
+        "options": {
+          "commands": [
+            "NODE_ENV=production knapsack --config apps/knapsack/knapsack.config.js serve"
+          ],
+          "parallel": false
+        }
+      },
+      "test": {
+        "executor": "nx:run-commands",
+        "outputs": ["{workspaceRoot}/dist/apps/knapsack"],
+        "options": {
+          "commands": [
+            "knapsack --config apps/knapsack/knapsack.config.js test"
+          ],
+          "parallel": false
+        }
+      }
+    },
+    "tags": []
+  }

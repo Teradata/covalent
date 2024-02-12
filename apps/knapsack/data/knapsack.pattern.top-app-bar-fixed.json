@@ -1,0 +1,77 @@
+{
+  "id": "top-app-bar-fixed",
+  "title": "Top app bar - fixed",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-d0oZXgy7Uj",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/top-app-bar-fixed.mjs",
+      "alias": "cv-top-app-bar-fixed",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "navigationIcon": {
+            "allowedPatternIds": ["icon", "icon-button"],
+            "title": "navigationIcon"
+          },
+          "title": {
+            "title": "title"
+          },
+          "actionItems": {
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "text",
+              "icon-button",
+              "radio",
+              "icon",
+              "switch"
+            ],
+            "title": "actionItems"
+          },
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "centerTitle": {
+              "type": "boolean"
+            },
+            "prominent": {
+              "type": "boolean"
+            },
+            "dense": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["RQLhdtbJlh"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-d0oZXgy7Uj"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

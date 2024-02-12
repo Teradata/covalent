@@ -14,7 +14,7 @@
     "postinstall": "node ./decorate-angular-cli.js",
     "prepare": "husky install",
     "start": "nx serve docs-app",
-    "build": "nx run-many --target build && npm run ks:build",
+    "build": "nx run-many --target build",
     "test": "nx test",
     "lint": "nx lint",
     "format:check": "nx format",
@@ -25,11 +25,7 @@
     "style-dictionary": "cd libs/tokens && style-dictionary build",
     "storybook": "storybook dev -c libs/components/.storybook",
     "build-storybook": "storybook build -c libs/components/.storybook -o dist/storybook/components",
-    "chromatic": "npx chromatic",
-    "ks:build": "knapsack --config knapsack/knapsack.config.js build",
-    "ks:start": "knapsack --config knapsack/knapsack.config.js start",
-    "ks:serve": "NODE_ENV=production knapsack --config knapsack/knapsack.config.js serve",
-    "ks:test": "knapsack --config knapsack/knapsack.config.js test"
+    "chromatic": "npx chromatic"
   },
   "dependencies": {
     "@angular/animations": "17.x.x",
