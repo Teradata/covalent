@@ -268,3 +268,9 @@ order:
   - tabs
   - tab
   - tooltip
+  - top-app-bar
+  - top-app-bar-fixed
+  - tree-list
+  - tree-list-item
+  - tokens
+  - writing
