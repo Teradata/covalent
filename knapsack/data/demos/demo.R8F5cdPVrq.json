@@ -21,7 +21,18 @@
           "text": "App Bar Title"
         }
       ],
-      "navigationIcon": [],
+      "navigationIcon": [
+        {
+          "type": "text",
+          "text": ""
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "BueNSFTYn"
+        }
+      ],
       "default": [
         {
           "type": "template-demo",

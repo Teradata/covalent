@@ -7,7 +7,7 @@ import { DecimalPipe } from '@angular/common';
 export class TdDigitsPipe implements PipeTransform {
   private _decimalPipe: DecimalPipe;
 
-  constructor(@Inject(LOCALE_ID) private _locale: string = 'en') {
+  constructor(@Inject(LOCALE_ID) private _locale = 'en') {
     this._decimalPipe = new DecimalPipe(this._locale);
   }
 

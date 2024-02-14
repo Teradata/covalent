@@ -2,7 +2,6 @@ id: homepage
 title: covalent design system
 blockIds:
   - sboFE6eFek
-  - sboFE6eFek
 settings:
   pageHeader:
     backgroundColor:
