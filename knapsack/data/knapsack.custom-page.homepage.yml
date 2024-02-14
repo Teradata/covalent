@@ -1,6 +1,8 @@
 id: homepage
-title: Covalent Design System
-blockIds: []
+title: covalent design system
+blockIds:
+  - sboFE6eFek
+  - sboFE6eFek
 settings:
   pageHeader:
     backgroundColor:
@@ -13,4 +15,4 @@ settings:
       type: design-token
       tokenName: theme.light.colors.on-surface-38%
     size: large
-description: covalent design system
+description: ''
