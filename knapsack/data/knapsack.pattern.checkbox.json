@@ -1,0 +1,52 @@
+{
+  "id": "checkbox",
+  "title": "Checkbox",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-29FbeDQWhM",
+      "title": "Web components",
+      "path": "../../dist/libs/components/checkbox.mjs",
+      "alias": "cv-checkbox",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "checked": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["ee2EneFvzS"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-29FbeDQWhM"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

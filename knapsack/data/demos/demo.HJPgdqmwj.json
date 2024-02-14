@@ -1,0 +1,37 @@
+{
+  "id": "HJPgdqmwj",
+  "title": "Main",
+  "type": "data",
+  "patternId": "code-snippet",
+  "templateId": "web-components-MmKtwF24Vv",
+  "data": {
+    "props": {
+      "label": "Example.sql",
+      "language": "sql"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "SELECT * FROM load_to_teradata (\nON (\n    SELECT \"class\" AS class_col,\n            \"variable\" AS variable_col,\n            \"type\" AS type_col,\n            category,\n            cnt,\n            \"sum\" AS sum_col,\n            \"sumSq\",\n            \"totalCnt\"\n    FROM aster_nb_modelSC\n    )\n    tdpid ('sdt12432.labs.teradata.com')\n    username ('sample_user')\n    password ('sample_user')\n    target_table ('td_nb_modelSC')\n);"
+        }
+      ],
+      "action-items": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ],
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ]
+    }
+  }
+}

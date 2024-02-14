@@ -1,0 +1,63 @@
+{
+  "id": "empty-state",
+  "title": "Empty state",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-E0GwXgHJv",
+      "title": "Web components",
+      "path": "../../dist/libs/components/empty-state.mjs",
+      "alias": "cv-empty-state",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "buttons": {
+            "allowedPatternIds": ["button"],
+            "title": "buttons",
+            "disallowText": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "headline": {
+              "type": "string",
+              "default": "You don't have access to this area"
+            },
+            "subtitle": {
+              "type": "string",
+              "default": "You don't have permission to view this application. Please contact your system administrator for further details."
+            },
+            "icon": {
+              "type": "string",
+              "default": "lock"
+            }
+          }
+        }
+      },
+      "demoIds": ["8QAZfNvobo"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-E0GwXgHJv"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

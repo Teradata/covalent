@@ -1,0 +1,32 @@
+{
+  "id": "NXMdeiHjKO",
+  "title": "Main",
+  "type": "data",
+  "patternId": "toolbar",
+  "templateId": "web-components-A6-16QhSaM",
+  "data": {
+    "props": {},
+    "slots": {
+      "title": [
+        {
+          "type": "text",
+          "text": "Title toolbar"
+        }
+      ],
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "BueNSFTYn"
+        }
+      ]
+    }
+  }
+}

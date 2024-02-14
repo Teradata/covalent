@@ -1,0 +1,46 @@
+{
+  "id": "R8F5cdPVrq",
+  "title": "Main",
+  "type": "data",
+  "patternId": "top-app-bar",
+  "templateId": "web-components-bdJKZJwv0h",
+  "data": {
+    "props": {},
+    "slots": {
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "BueNSFTYn"
+        }
+      ],
+      "title": [
+        {
+          "type": "text",
+          "text": "App Bar Title"
+        }
+      ],
+      "navigationIcon": [
+        {
+          "type": "text",
+          "text": ""
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "BueNSFTYn"
+        }
+      ],
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "empty-state",
+          "templateId": "web-components-E0GwXgHJv",
+          "demoId": "8QAZfNvobo"
+        }
+      ]
+    }
+  }
+}

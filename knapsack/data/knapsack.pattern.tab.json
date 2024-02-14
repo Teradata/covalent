@@ -1,0 +1,52 @@
+{
+  "id": "tab",
+  "title": "tab",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-1-Bf2NwL1T",
+      "title": "Web components",
+      "path": "../../dist/libs/components/tab.mjs",
+      "alias": "cv-tab",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["label"],
+          "properties": {
+            "label": {
+              "type": "string",
+              "default": "Tab label "
+            },
+            "icon": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "demoIds": ["3HxZQWfBi9"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-1-Bf2NwL1T"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}
