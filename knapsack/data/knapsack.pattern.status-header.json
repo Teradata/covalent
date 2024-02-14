@@ -13,7 +13,7 @@
       "spec": {
         "slots": {
           "status-header-actions": {
-            "allowedPatternIds": ["icon-button"],
+            "allowedPatternIds": ["icon-button", "icon"],
             "title": "status-header-actions",
             "disallowText": true
           },

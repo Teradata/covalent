@@ -5,13 +5,13 @@ blockIds:
 settings:
   pageHeader:
     backgroundColor:
-      colorValue: '#6A4CEC'
-      type: value
+      type: design-token
+      tokenName: theme.light.colors.surface-container
     textColorTitle:
-      colorValue: '#FFFFFF'
-      type: value
+      type: design-token
+      tokenName: theme.light.colors.on-surface
     textColorDescription:
-      colorValue: '#FFFFFF'
-      type: value
+      type: design-token
+      tokenName: theme.light.colors.on-surface-38%
     size: large
 description: ''

@@ -1,0 +1,9 @@
+{
+  "id": "aA1VvxNR64",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.light.colors"]
+  }
+}

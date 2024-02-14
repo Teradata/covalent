@@ -1,0 +1,23 @@
+{
+  "id": "pJiVmUgf8f",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Most items on a page are going to be the interface communicating something to the user. Write them as though the interface is talking to the user.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

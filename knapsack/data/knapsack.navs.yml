@@ -44,6 +44,11 @@ byId:
     name: Code snippet
     parentId: test-page
     path: /pattern/code-snippet
+  dark:
+    id: dark
+    name: Dark
+    parentId: tokens
+    path: /pages/dark
   dialog:
     id: dialog
     name: Dialog
@@ -79,6 +84,11 @@ byId:
     name: Icon radio
     parentId: test-page
     path: /pattern/icon-radio
+  light:
+    id: light
+    name: Light
+    parentId: tokens
+    path: /pages/light
   linear-progress:
     id: linear-progress
     name: Linear progress
@@ -152,7 +162,7 @@ byId:
     path: /pattern/tabs
   test-page:
     id: test-page
-    name: components
+    name: Components
     parentId: root
     path: /pages/test-page
   text:
@@ -175,6 +185,11 @@ byId:
     name: Text field
     parentId: test-page
     path: /pattern/textfield
+  tokens:
+    id: tokens
+    name: Tokens
+    parentId: root
+    path: /pages/tokens
   toolbar:
     id: toolbar
     name: Toolbar
@@ -192,7 +207,7 @@ byId:
     path: /pattern/top-app-bar
   top-app-bar-fixed:
     id: top-app-bar-fixed
-    name: Top app bar fixed
+    name: Top app bar - fixed
     parentId: top-app-bar
     path: /pattern/top-app-bar-fixed
   tree-list:
@@ -205,12 +220,23 @@ byId:
     name: Tree list item
     parentId: tree-list
     path: /pattern/tree-list-item
+  typography:
+    id: typography
+    name: Typography
+    parentId: tokens
+    path: /pages/typography
+  writing:
+    id: writing
+    name: Writing
+    parentId: root
+    path: /pages/writing
 order:
   - test-page
   - alert
-  - action-ribbon
   - app-shell
+  - action-ribbon
   - button
+  - breadcrumbs
   - card
   - checkbox
   - text
@@ -221,7 +247,6 @@ order:
   - icon-button
   - icon-checkbox
   - icon-radio
-  - breadcrumbs
   - code-snippet
   - circular-progress
   - slider
@@ -247,3 +272,8 @@ order:
   - top-app-bar-fixed
   - tree-list
   - tree-list-item
+  - tokens
+  - writing
+  - light
+  - dark
+  - typography

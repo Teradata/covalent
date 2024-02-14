@@ -1,0 +1,23 @@
+{
+  "id": "5xTRsUNoq",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "There are often many ways to say the same thing. Ways we’ve chosen some for consistency.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

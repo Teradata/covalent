@@ -1,0 +1,56 @@
+{
+  "id": "YQCNLSCfim",
+  "data": {
+    "guidelines": [
+      {
+        "id": "jFu2MXSQJ",
+        "type": "do",
+        "image": {
+          "alt": "Correct example of active voice: \"Marti logged into the account\"",
+          "src": "https://knapsack.imgix.net/site/covalent/active-voice-correct-plmqywgpo1png"
+        }
+      },
+      {
+        "id": "OeCwEeMs1Q",
+        "type": "dont",
+        "image": {
+          "alt": "Correct example of active voice: \"The account was logged into by Marti\"",
+          "src": "https://knapsack.imgix.net/site/covalent/active-voice-incorrect-nkmitrriwqpng"
+        }
+      },
+      {
+        "id": "103xkv51WR",
+        "type": "caution",
+        "image": {
+          "alt": "Cautionary example of active voice: \"Your account was flagged by our abuse team\"",
+          "src": "https://knapsack.imgix.net/site/covalent/active-voice-caution-dijt4vtkz5png"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Sometimes you want to specifically emphasize the action over the subject. ",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "gridStyles": {
+      "columns": "3",
+      "centered": false
+    },
+    "tileStyles": {
+      "imageSize": "large",
+      "imageRounded": true,
+      "imageOutlined": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

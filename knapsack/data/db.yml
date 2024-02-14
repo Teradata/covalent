@@ -1,27 +1,80 @@
 blocks:
   settings:
+    guidelines:
+      colorCaution:
+        tokenName: theme.light.colors.caution
+        type: design-token
+      colorDo:
+        tokenName: theme.light.colors.positive
+        type: design-token
+      colorDont:
+        tokenName: theme.light.colors.negative
+        type: design-token
     tokens:
+      nameDisplayFormat: cssVar
       rootFontSize: 16px
 demos:
   settings: {}
 settings:
-  logoUrl: ''
+  favicon: https://knapsack.imgix.net/site/covalent/favicon-4v5hnagck0ico
+  hideTitleInNavigation: false
+  logoUrl: https://knapsack.imgix.net/site/covalent/teradata-zalegzixrisvg
   theme:
     appearance:
-      customFonts: []
+      customFonts:
+        - family: Inter
+          src:
+            - format: woff2
+              path: https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2
+              type: url
+          style: normal
+          weight: ''
       navigation:
-        primaryNav: {}
-        secondaryNav: {}
-        tabs: {}
+        primaryNav:
+          accentColor:
+            tokenName: theme.light.colors.primary
+            type: design-token
+          fontFamily: Inter
+          hoverColor:
+            tokenName: theme.light.colors.primary-24%
+            type: design-token
+          textColor:
+            tokenName: theme.light.colors.primary
+            type: design-token
+          textTransform: inherit
+        secondaryNav:
+          accentColor:
+            tokenName: theme.light.colors.primary
+            type: design-token
+          fontFamily: Inter
+          textColor:
+            tokenName: theme.light.colors.on-surface
+            type: design-token
+          textTransform: inherit
+        tabs:
+          accentColor:
+            tokenName: theme.light.colors.primary
+            type: design-token
+          fontFamily: Inter
+          textTransform: inherit
       pageElements:
-        bodyText: {}
-        headingLarge: {}
-        headingMedium: {}
-        headingSmall: {}
-        headingXLarge: {}
-        headingXSmall: {}
+        bodyText:
+          fontFamily: Inter
+        headingLarge:
+          fontFamily: Inter
+        headingMedium:
+          fontFamily: Inter
+        headingSmall:
+          fontFamily: Inter
+        headingXLarge:
+          fontFamily: Inter
+        headingXSmall:
+          fontFamily: Inter
         link: {}
-        pageDescription: {}
-        pageTitle: {}
+        pageDescription:
+          fontFamily: Inter
+        pageTitle:
+          fontFamily: Inter
     version: 10
-  title: ''
+  title: Covalent
+
