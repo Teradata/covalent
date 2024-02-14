@@ -17,10 +17,10 @@ jobs:
         with:
           token: ${{ secrets.SEMANTIC_RELEASE_GH }}
           persist-credentials: false
-      - name: Use Node.js 16
+      - name: Use Node.js 18
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
           cache: npm
       - name: Install dependencies
         run: npx ci

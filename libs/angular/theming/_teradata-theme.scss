@@ -505,6 +505,7 @@ $td-dark-theme: mat.private-deep-merge-all(
     &.active::before {
       background-color: mat-color($accent);
     }
+
     &:hover {
       &::before {
         background-color: mat-color($accent);
