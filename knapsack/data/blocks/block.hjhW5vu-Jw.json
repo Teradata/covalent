@@ -1,0 +1,25 @@
+{
+  "id": "hjhW5vu-Jw",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Email and web addresses",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "autoFocus": true
+  },
+  "blockType": "text-editor"
+}

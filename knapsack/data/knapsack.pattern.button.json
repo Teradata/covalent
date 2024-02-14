@@ -1,0 +1,69 @@
+{
+  "id": "button",
+  "title": "Button",
+  "description": "",
+  "statuses": {
+    "main": "needsDev"
+  },
+  "templates": [
+    {
+      "id": "web-components-raE1x4tYL",
+      "title": "Web component",
+      "path": "../../dist/libs/components/button.js",
+      "alias": "cv-button",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "outlined": {
+              "type": "boolean",
+              "default": true
+            },
+            "raised": {
+              "type": "boolean",
+              "default": false
+            },
+            "icon": {
+              "type": "string"
+            },
+            "trailingIcon": {
+              "type": "boolean",
+              "default": false
+            },
+            "dense": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      },
+      "demoIds": ["E5ymzzEPs"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-raE1x4tYL"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

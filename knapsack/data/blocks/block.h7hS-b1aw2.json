@@ -1,0 +1,24 @@
+{
+  "id": "h7hS-b1aw2",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use sentence case for these and any items not explicitly mentioned in this doc.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "autoFocus": true
+  },
+  "blockType": "text-editor"
+}

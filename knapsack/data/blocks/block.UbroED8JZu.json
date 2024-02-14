@@ -1,0 +1,25 @@
+{
+  "id": "UbroED8JZu",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Words to avoid",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "autoFocus": true
+  },
+  "blockType": "text-editor"
+}

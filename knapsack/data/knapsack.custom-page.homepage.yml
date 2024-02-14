@@ -1,0 +1,16 @@
+id: homepage
+title: Covalent Design System
+blockIds: []
+settings:
+  pageHeader:
+    backgroundColor:
+      type: design-token
+      tokenName: theme.light.colors.surface-container
+    textColorTitle:
+      type: design-token
+      tokenName: theme.light.colors.on-surface
+    textColorDescription:
+      type: design-token
+      tokenName: theme.light.colors.on-surface-38%
+    size: large
+description: covalent design system

@@ -1,0 +1,24 @@
+{
+  "id": "vh5oOh8nE",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Some phrases carry connotations that we want to avoid. Make sure to use one of these recommended alternatives.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "autoFocus": true
+  },
+  "blockType": "text-editor"
+}

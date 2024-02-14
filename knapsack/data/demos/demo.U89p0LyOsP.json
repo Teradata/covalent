@@ -1,0 +1,11 @@
+{
+  "id": "U89p0LyOsP",
+  "title": "Main",
+  "type": "data",
+  "patternId": "switch",
+  "templateId": "web-components-tGj2TvSrpD",
+  "data": {
+    "props": {},
+    "slots": {}
+  }
+}

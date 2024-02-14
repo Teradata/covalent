@@ -1,0 +1,20 @@
+{
+  "id": "expansion-panel",
+  "title": "Expansion panel",
+  "description": "",
+  "statuses": {},
+  "templates": [],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

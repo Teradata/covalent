@@ -1,0 +1,72 @@
+{
+  "id": "alert",
+  "title": "Alert",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-4qjJYWsUZi",
+      "title": "Web components",
+      "path": "../../dist/libs/components/alert.mjs",
+      "alias": "cv-alert",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "action-items": {
+            "allowedPatternIds": ["button", "checkbox"],
+            "title": "action-items"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "titleText": {
+              "type": "string",
+              "default": "Alert title"
+            },
+            "descriptionText": {
+              "type": "string",
+              "default": "Alert description"
+            },
+            "icon": {
+              "type": "string",
+              "default": "info"
+            },
+            "state": {
+              "type": "string"
+            },
+            "iconAriaLabel": {
+              "type": "string",
+              "title": "Alert title"
+            },
+            "inline": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["tnvgSz6pjh"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-4qjJYWsUZi"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

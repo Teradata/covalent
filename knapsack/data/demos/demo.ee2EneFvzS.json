@@ -1,0 +1,15 @@
+{
+  "id": "ee2EneFvzS",
+  "title": "Main",
+  "type": "data",
+  "patternId": "checkbox",
+  "templateId": "web-components-29FbeDQWhM",
+  "data": {
+    "props": {
+      "checked": true
+    },
+    "slots": {
+      "default": []
+    }
+  }
+}

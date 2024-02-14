@@ -1,0 +1,37 @@
+{
+  "id": "yovRt8o986",
+  "title": "Main",
+  "type": "data",
+  "patternId": "dialog",
+  "templateId": "web-components-S9Ia0KOrya",
+  "data": {
+    "props": {
+      "heading": "Sample dialog title",
+      "open": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Sample dialog content goes here"
+        }
+      ],
+      "secondaryAction": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ],
+      "primaryAction": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ]
+    }
+  }
+}

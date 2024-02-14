@@ -1,0 +1,24 @@
+{
+  "id": "7QOC5AFu6j",
+  "data": {
+    "guidelines": [
+      {
+        "id": "jFu2MXSQJ",
+        "type": "do",
+        "image": {
+          "alt": "Correct example of the user communicating to the interface: \"Show all my bookmarks\"",
+          "src": "https://knapsack.imgix.net/site/covalent/user-to-interface-communication-correct-xj2dzwqpxopng"
+        }
+      },
+      {
+        "id": "OeCwEeMs1Q",
+        "type": "dont",
+        "image": {
+          "alt": "Correct example of the user communicating to the interface: \"Show all your bookmarks\"",
+          "src": "https://knapsack.imgix.net/site/covalent/user-to-interface-communication-incorrect-ynny746gulpng"
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

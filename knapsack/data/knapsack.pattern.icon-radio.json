@@ -1,0 +1,55 @@
+{
+  "id": "icon-radio",
+  "title": "Icon radio",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-gmBL6Mhy4",
+      "title": "Web components",
+      "path": "../../dist/libs/components/icon-radio-toggle.mjs",
+      "alias": "cv-radio-icon",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "icon": {
+            "allowedPatternIds": ["icon"],
+            "title": "icon",
+            "disallowText": true
+          },
+          "text": {
+            "title": "text",
+            "allowOnlyOne": false,
+            "isRequired": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        }
+      },
+      "demoIds": ["3VTw68n4F5"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-gmBL6Mhy4"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

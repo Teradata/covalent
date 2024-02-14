@@ -1,0 +1,20 @@
+{
+  "id": "YHuTizup8",
+  "title": "Main",
+  "type": "data",
+  "patternId": "status-header",
+  "templateId": "web-components-55FkYSafco",
+  "data": {
+    "props": {
+      "label": "Status header item label"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Status header item value"
+        }
+      ]
+    }
+  }
+}
