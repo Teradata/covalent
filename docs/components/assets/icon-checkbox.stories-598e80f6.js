@@ -103,4 +103,3 @@ import{i as k,r as u,x as h,e as _}from"./query-assigned-elements-9f88bee1.js";i
         </div>
   \`;
 }`,...(b=(x=r.parameters)==null?void 0:x.docs)==null?void 0:b.source}}};const U=["Template","WithGrid"];export{a as Template,r as WithGrid,U as __namedExportsOrder,R as default};
-//# sourceMappingURL=icon-checkbox.stories-598e80f6.js.map

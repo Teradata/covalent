@@ -29,4 +29,3 @@
  * Copyright 2021 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */var D;const wt=((D=window.HTMLSlotElement)===null||D===void 0?void 0:D.prototype.assignedElements)!=null?(n,t)=>n.assignedElements(t):(n,t)=>n.assignedNodes(t).filter(e=>e.nodeType===Node.ELEMENT_NODE);function Tt(n){const{slot:t,selector:e}=n??{};return Ct({descriptor:s=>({get(){var i;const r="slot"+(t?`[name=${t}]`:":not([name])"),o=(i=this.renderRoot)===null||i===void 0?void 0:i.querySelector(r),a=o!=null?wt(o,n):[];return e?a.filter(l=>l.matches(e)):a},enumerable:!0,configurable:!0})})}export{u as A,bt as D,g as T,Nt as e,Pt as i,Tt as l,Ct as o,ct as r,H as s,Ht as x};
-//# sourceMappingURL=query-assigned-elements-9f88bee1.js.map

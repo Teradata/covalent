@@ -337,4 +337,3 @@ const i=`<div>
   </p>
 </div>
 `;export{i as l};
-//# sourceMappingURL=lorem-ipsum.content-89678e1d.js.map

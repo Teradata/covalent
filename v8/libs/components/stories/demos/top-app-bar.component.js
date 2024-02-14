@@ -1,7 +1,5 @@
-import '@material/mwc-top-app-bar';
-import '@material/mwc-top-app-bar-fixed';
-import '@material/mwc-button';
-import '@material/mwc-icon-button';
+import '../../src/icon-button/icon-button';
+import '../../src/button/button';
 
 // Example Content
 import loremIpsumContent from './lorem-ipsum.content.html?raw';

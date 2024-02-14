@@ -4,7 +4,6 @@ import '../data-table/data-table.stories.scss';
 import './app-shell';
 import '../action-ribbon/action-ribbon';
 import '../icon/icon';
-import '../icon-button/icon-button';
 import '../list/list';
 import '../list/list-item';
 import '../list/nav-list-item';
@@ -39,7 +38,11 @@ const updateActionRibbon = () => {
   }
 };
 
-const Template = ({ appName = '[App name]', sectionTitle = '' }) => {
+const Template = ({
+  appName = '[App name]',
+  sectionTitle = '',
+  forcedOpen = false,
+}) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -80,9 +83,11 @@ const Template = ({ appName = '[App name]', sectionTitle = '' }) => {
         }
     }
     </style>
-    <cv-app-shell ${appName ? `appName="${appName}"` : ''} ${
-    sectionTitle ? `sectionName="${sectionTitle}"` : ''
-  }>
+    <cv-app-shell 
+    ${appName ? `appName="${appName}"` : ''} 
+    ${sectionTitle ? `sectionName="${sectionTitle}"` : ''}
+    ${forcedOpen ? `forcedOpen open` : ''}
+    >
 
       <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>
 
@@ -311,4 +316,9 @@ export const Basic = Template.bind({});
 export const sectionTitle = Template.bind({});
 sectionTitle.args = {
   sectionTitle: 'Environments',
+};
+
+export const forcedOpen = Template.bind({});
+forcedOpen.args = {
+  forcedOpen: true,
 };

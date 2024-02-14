@@ -1,8 +1,7 @@
-@use '../../tokens/_generated/_index.scss' as variables;
+@use '@covalent/tokens/index.scss' as tokens;
 @use '../src/icon/icon' as icon;
 @use '../src/skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
 @use './mixins' as theme;
-
 @import '../../icons/covalent-icons.css';
 
 @include icon.core-styles(); // TODO - include future support in icons css
@@ -11,14 +10,14 @@
 // Define the base theme using light tokens w/ dark tokens overriting for prefers-color-scheme:dark
 :root {
   @include theme.components-theme(
-    map-get(variables.$tokens, light),
-    map-get(variables.$tokens, typography)
+    map-get(tokens.$tokens, 'light'),
+    map-get(tokens.$tokens, typography)
   );
 
   @media (prefers-color-scheme: dark) {
     @include theme.components-theme(
-      map-get(variables.$tokens, dark),
-      map-get(variables.$tokens, typography)
+      map-get(tokens.$tokens, 'dark'),
+      map-get(tokens.$tokens, typography)
     );
   }
 }
@@ -26,14 +25,14 @@
 // For convience re-define theme tokens scoped to a light/dark class
 .light {
   @include theme.components-theme(
-    map-get(variables.$tokens, light),
-    map-get(variables.$tokens, typography)
+    map-get(tokens.$tokens, 'light'),
+    map-get(tokens.$tokens, typography)
   );
 }
 
 .dark {
   @include theme.components-theme(
-    map-get(variables.$tokens, dark),
-    map-get(variables.$tokens, typography)
+    map-get(tokens.$tokens, 'dark'),
+    map-get(tokens.$tokens, typography)
   );
 }

@@ -47,7 +47,12 @@
     <link href="./sb-addons/storybook-dark-mode-esm-preset-8/manager-bundle.js" rel="modulepreload" />
     
     <link href="./sb-addons/libs-components-storybook-9/manager-bundle.js" rel="modulepreload" />
-      <style>
+      <link
+  href="https://cdn.jsdelivr.net/npm/@covalent/tokens@8.1.0-beta.6/index.css"
+  rel="stylesheet"
+/>
+<style>
+  /* Storybook theme overrides */
   .sidebar-header {
     max-width: 213px;
   }
@@ -62,48 +67,21 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
-  .light #storybook-explorer-tree a.sidebar-item[data-selected='true'] {
-    background-color: rgba(133, 221, 220, 0.1);
-    color: #007373;
+  .light #storybook-explorer-tree .sidebar-item[data-selected='true'],
+  .light #storybook-explorer-tree .sidebar-item[data-selected='true'] svg {
+    color: var(--cv-light-on-primary);
   }
-  .light #storybook-explorer-tree a.sidebar-item[data-selected='true'] svg {
-    color: #007373;
-  }
-  .light #storybook-explorer-tree a.sidebar-item svg {
-    color: rgba(0, 0, 0, 0.54);
-  }
-  .light #storybook-explorer-tree a.sidebar-item[data-selected='true']:hover {
-    background-color: rgba(133, 221, 220, 0.2);
-  }
-  .light #storybook-explorer-tree a.sidebar-item:hover,
-  .light a.sidebar-item:focus {
-    background-color: rgba(0, 0, 0, 0.04);
+  .dark #storybook-explorer-tree .sidebar-item[data-selected='true'],
+  .dark #storybook-explorer-tree .sidebar-item[data-selected='true'] svg {
+    color: var(--cv-dark-on-primary);
   }
 
-  #storybook-explorer-tree a.sidebar-item[data-selected='true'] {
-    background-color: rgba(4, 92, 92, 0.4);
-    color: #59cecd;
+  .light #storybook-explorer-tree .sidebar-item[data-selected='false'] svg {
+    color: var(--cv-light-secondary);
   }
-  #storybook-explorer-tree a.sidebar-item[data-selected='true'] svg {
-    color: #59cecd;
-  }
-  #storybook-explorer-tree a.sidebar-item svg {
-    color: #ffffff;
-  }
-  #storybook-explorer-tree a.sidebar-item[data-selected='true']:hover {
-    background-color: rgba(4, 92, 92, 0.6);
-  }
-  #storybook-explorer-tree a.sidebar-item:hover,
-  .light a.sidebar-item:focus {
-    background-color: hsla(0, 0%, 100%, 0.04);
-  }
-  .sidebar-item#components-dialog--anatomy,
-  .sidebar-item#components-dialog--logout,
-  .sidebar-item#components-dialog--udf {
-    display: none;
-  }
-  .sidebar-item + a {
-    display: none;
+
+  .dark #storybook-explorer-tree .sidebar-item[data-selected='false'] svg {
+    color: var(--cv-dark-secondary);
   }
 </style>
  
@@ -129,6 +107,7 @@
   "storyStoreV7": true,
   "argTypeTargetsV7": true,
   "legacyDecoratorFileOrder": false,
+  "disallowImplicitActionsInRenderV8": false,
   "legacyMdx1": true
 };
         

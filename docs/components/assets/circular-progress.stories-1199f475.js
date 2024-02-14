@@ -21,4 +21,3 @@ import"./circular-progress-33ef1f71.js";import"./tslib.es6-4b90b051.js";import".
   progressBar.ariaLabel = 'Example progress bar';
   return progressBar;
 }`,...(p=(i=s.parameters)==null?void 0:i.docs)==null?void 0:p.source}}};const S=["Indeterminate","Determinate"];export{s as Determinate,r as Indeterminate,S as __namedExportsOrder,L as default};
-//# sourceMappingURL=circular-progress.stories-1199f475.js.map

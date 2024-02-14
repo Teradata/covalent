@@ -105,4 +105,3 @@ import{o as H,x as D,i as k,e as x}from"./query-assigned-elements-9f88bee1.js";i
  * Copyright 2020 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */class E{constructor(t){this.startPress=e=>{t().then(r=>{r&&r.startPress(e)})},this.endPress=()=>{t().then(e=>{e&&e.endPress()})},this.startFocus=()=>{t().then(e=>{e&&e.startFocus()})},this.endFocus=()=>{t().then(e=>{e&&e.endFocus()})},this.startHover=()=>{t().then(e=>{e&&e.startHover()})},this.endHover=()=>{t().then(e=>{e&&e.endHover()})}}}export{E as R,Y as e};
-//# sourceMappingURL=ripple-handlers-20d146be.js.map

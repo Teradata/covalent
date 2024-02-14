@@ -26,4 +26,3 @@
   user-select: none;
 }
 `,u.appendChild(t)}}if(!HTMLElement.prototype.hasOwnProperty("inert")){var T=new I(document);Object.defineProperty(HTMLElement.prototype,"inert",{enumerable:!0,get:function(){return this.hasAttribute("inert")},set:function(t){T.setInert(this,t)}})}})();
-//# sourceMappingURL=inert.esm-a76031cb.js.map

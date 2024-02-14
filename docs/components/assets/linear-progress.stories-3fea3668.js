@@ -25,4 +25,3 @@ import"./linear-progress-72d91f9c.js";import"./query-assigned-elements-9f88bee1.
   progressBar.ariaLabel = 'Example progress bar';
   return progressBar;
 }`,...(i=(p=s.parameters)==null?void 0:p.docs)==null?void 0:i.source}}};const h=["Indeterminate","Determinate"];export{s as Determinate,e as Indeterminate,h as __namedExportsOrder,_ as default};
-//# sourceMappingURL=linear-progress.stories-3fea3668.js.map

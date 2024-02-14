@@ -76,4 +76,3 @@ const a=`<div class="mdc-data-table" style="display: flex">
   </div>
 </div>
 `;export{a as t};
-//# sourceMappingURL=table-progress-indicator.content-e5032734.js.map

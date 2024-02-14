@@ -91,4 +91,3 @@ import"./checkbox-3f495f9c.js";import"./formfield-9ab06265.js";import"./query-as
                 <cv-checkbox class="child" checked></cv-checkbox>
             </cv-formfield>\`;
 }`,...(h=(m=l.parameters)==null?void 0:m.docs)==null?void 0:h.source}}};const A=["Basic","Disabled","WithLabel"];export{n as Basic,a as Disabled,l as WithLabel,A as __namedExportsOrder,z as default};
-//# sourceMappingURL=checkbox.stories-3d75d0bf.js.map

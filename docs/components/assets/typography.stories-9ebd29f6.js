@@ -32,4 +32,3 @@ import{i as c,r as l,s as f,x as d,e as v}from"./query-assigned-elements-9f88bee
     <cv-typography scale="body2">Body 2</cv-typography>
   \`;
 }`,...(m=(s=a.parameters)==null?void 0:s.docs)==null?void 0:m.source}}};const k=["Basic"];export{a as Basic,k as __namedExportsOrder,H as default};
-//# sourceMappingURL=typography.stories-9ebd29f6.js.map

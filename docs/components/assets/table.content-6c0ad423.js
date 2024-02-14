@@ -63,4 +63,3 @@ const a=`<div class="mdc-data-table" style="display: flex" style="display: flex"
   </div>
 </div>
 `;export{a as t};
-//# sourceMappingURL=table.content-6c0ad423.js.map

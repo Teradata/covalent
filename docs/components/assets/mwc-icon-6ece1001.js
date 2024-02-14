@@ -7,4 +7,3 @@ import{_ as o}from"./tslib.es6-4b90b051.js";import{i as n,s as e,x as i,e as s}f
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */let t=class extends e{render(){return i`<span><slot></slot></span>`}};t.styles=[r];t=o([s("mwc-icon")],t);export{t as I};
-//# sourceMappingURL=mwc-icon-6ece1001.js.map

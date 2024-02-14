@@ -21,4 +21,3 @@ import"./icon-dab2e138.js";import{i as m}from"./material-codepoints-6ade1b53.js"
   }
   return icoElem;
 }`,...(i=(c=e.parameters)==null?void 0:c.docs)==null?void 0:i.source}}};const E=["MaterialIcons","CovalentIcons"];export{e as CovalentIcons,r as MaterialIcons,E as __namedExportsOrder,y as default};
-//# sourceMappingURL=icon.stories-0cfbedea.js.map

@@ -145,60 +145,15 @@ export class TdMarkdownNavigatorWindowService {
   }
 
   private _handleEvents(): void {
-    let position: Point;
-    let dimensions: IDialogDimensions;
     this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe(() =>
       this.close()
     );
-    this.markdownNavigatorWindowDialog.componentInstance.dockToggled.subscribe(
-      (docked: boolean) => {
-        if (docked) {
-          this.markdownNavigatorWindowDialog.componentInstance.docked = false;
-          this.markdownNavigatorWindowDialog.updateSize(
-            dimensions.width,
-            dimensions.height
-          );
-          this.markdownNavigatorWindowDialog.updatePosition({
-            top: '0px',
-            right: '0px',
-            bottom: '0px',
-            left: '0px',
-          });
-          this.dragRef.setFreeDragPosition(position);
-          this.dragRef.disabled = false;
-          this.resizableDraggableDialog.attach();
-        } else {
-          dimensions = this._getDialogSize(this.markdownNavigatorWindowDialog);
-          position = this.dragRef.getFreeDragPosition();
-          this.markdownNavigatorWindowDialog.componentInstance.docked = true;
-          this.markdownNavigatorWindowDialog.updateSize(
-            DEFAULT_WIDTH,
-            MIN_HEIGHT
-          );
-          this.markdownNavigatorWindowDialog.updatePosition(DEFAULT_POSITION);
-          this.dragRef.reset();
-          this.dragRef.disabled = true;
-          this.resizableDraggableDialog.detach();
-        }
-      }
-    );
+
     this.markdownNavigatorWindowDialog
       .afterClosed()
       .toPromise()
       .then(() => {
         this.markdownNavigatorWindowDialogsOpen--;
       });
-  }
-
-  private _getDialogSize(
-    dialogRef: MatDialogRef<TdMarkdownNavigatorWindowComponent>
-  ): IDialogDimensions {
-    const { width, height } = getComputedStyle(
-      this._document.getElementById(dialogRef.id).parentElement
-    );
-    return {
-      width,
-      height,
-    };
   }
 }

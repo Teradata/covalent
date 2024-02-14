@@ -32,4 +32,3 @@ import{i as h,r as y,x as n,e as g}from"./query-assigned-elements-9f88bee1.js";i
       </cv-radio-icon>
   \`;
 }`,...(p=(m=c.parameters)==null?void 0:m.docs)==null?void 0:p.source}}};const F=["Template"];export{c as Template,F as __namedExportsOrder,A as default};
-//# sourceMappingURL=icon-radio.stories-5edc8abe.js.map

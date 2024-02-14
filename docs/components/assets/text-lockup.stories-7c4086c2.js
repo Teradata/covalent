@@ -76,4 +76,3 @@ import{i as _,r as z,s as I,x as g,A as O,e as C}from"./query-assigned-elements-
       \${subTextTrailing ? 'trailingSubText' : ''}>\${text}</cv-text-lockup>
   \`;
 }`,...(w=(L=p.parameters)==null?void 0:L.docs)==null?void 0:w.source}}};const F=["textLockup","textLockupLarge","textLockupTrailing","textLockupWithIcon"];export{F as __namedExportsOrder,q as default,s as textLockup,l as textLockupLarge,u as textLockupTrailing,p as textLockupWithIcon};
-//# sourceMappingURL=text-lockup.stories-7c4086c2.js.map

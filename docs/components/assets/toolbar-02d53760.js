@@ -2,4 +2,3 @@ import{i as c,r as n,e as m}from"./query-assigned-elements-9f88bee1.js";import{T
 `;var l=Object.defineProperty,g=Object.getOwnPropertyDescriptor,h=(e,a,o,t)=>{for(var p=t>1?void 0:t?g(a,o):a,r=e.length-1,d;r>=0;r--)(d=e[r])&&(p=(t?d(a,o,p):d(p))||p);return t&&p&&l(a,o,p),p};let i=class extends b{};i.styles=[c`
       ${n(s)}
     `];i=h([m("cv-toolbar")],i);
-//# sourceMappingURL=toolbar-02d53760.js.map

@@ -16,4 +16,3 @@ import{s as _,x as h,i as f,r as u,e as v}from"./query-assigned-elements-9f88bee
 `;var P=Object.defineProperty,F=Object.getOwnPropertyDescriptor,A=(o,e,r,a)=>{for(var n=a>1?void 0:a?F(e,r):e,c=o.length-1,d;c>=0;c--)(d=o[c])&&(n=(a?d(e,r,n):d(n))||n);return a&&n&&P(e,r,n),n};let p=class extends t{};p.styles=[f`
       ${u(O)}
     `];p=A([v("cv-action-ribbon")],p);
-//# sourceMappingURL=action-ribbon-30ef7d5c.js.map

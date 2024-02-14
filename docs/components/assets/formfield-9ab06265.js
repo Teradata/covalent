@@ -78,4 +78,3 @@ import{x as u,i as m,r as h,e as y}from"./query-assigned-elements-9f88bee1.js";i
 `;var k=Object.defineProperty,j=Object.getOwnPropertyDescriptor,B=(r,e,t,i)=>{for(var o=i>1?void 0:i?j(e,t):e,d=r.length-1,s;d>=0;d--)(s=r[d])&&(o=(i?s(e,t,o):s(o))||o);return i&&o&&k(e,t,o),o};let c=class extends n{};c.styles=[m`
       ${h(R)}
     `,P];c=B([y("cv-formfield")],c);
-//# sourceMappingURL=formfield-9ab06265.js.map

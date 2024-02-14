@@ -17,4 +17,3 @@ import{s,x as m,i as _,r as f,e as b}from"./query-assigned-elements-9f88bee1.js"
 `;var v=Object.defineProperty,x=Object.getOwnPropertyDescriptor,w=(d,i,e,a)=>{for(var r=a>1?void 0:a?x(i,e):i,c=d.length-1,t;c>=0;c--)(t=d[c])&&(r=(a?t(i,e,r):t(r))||r);return a&&r&&v(i,e,r),r};let l=class extends o{};l.styles=[_`
       ${f(y)}
     `];l=w([b("cv-card")],l);
-//# sourceMappingURL=card-358fb0a4.js.map

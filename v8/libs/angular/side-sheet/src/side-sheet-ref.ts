@@ -15,7 +15,7 @@ export class CovalentSideSheetRef<T, R = any> extends MatDialogRef<T, R> {
     public overlayRef: OverlayRef,
     public config: CovalentSideSheetConfig,
     public override _containerInstance: MatDialogContainer,
-    override readonly id: string = `td-side-sheet-${uniqueId++}`
+    override readonly id = `td-side-sheet-${uniqueId++}`
   ) {
     const ref = new DialogRef<R, T>(overlayRef, config);
     super(ref, config, _containerInstance);
