@@ -18,7 +18,8 @@
           ]
         }
       ]
-    }
+    },
+    "autoFocus": true
   },
   "blockType": "text-editor"
 }
