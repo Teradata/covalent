@@ -27,8 +27,8 @@ module.exports = {
           allow: ['../../'],
         },
       },
-      assetsInclude: ['**/*.html'],
+      assetsInclude: ['/sb-preview/runtime.js', '**/*.html'],
     });
   },
-  framework: '@storybook/html-vite'
+  framework: '@storybook/html-vite',
 };

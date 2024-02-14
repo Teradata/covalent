@@ -26,11 +26,7 @@ To toggle/close/open the manage list sidenav from child layouts/components, you 
 Example:
 
 ```html
-<button
-  mat-icon-button
-  [tdLayoutManageListToggle]="true"
-  [hideWhenOpened]="true"
->
+<button mat-icon-button [tdLayoutManageListToggle]="true" [hideWhenOpened]="true">
   // or tdLayoutManageListOpen / tdLayoutManageListClose
   <mat-icon>menu</mat-icon>
 </button>
@@ -73,8 +69,6 @@ Example for Manage List Layout / Nav Layout combo:
     ... main content
     <td-layout-footer-inner> ... sub footer content </td-layout-footer-inner>
   </td-layout-manage-list>
-  <td-layout-footer color="primary">
-    // color is optional ... main footer content
-  </td-layout-footer>
+  <td-layout-footer> // color is optional ... main footer content </td-layout-footer>
 </td-layout-nav>
 ```

@@ -1,11 +1,20 @@
 @use '@material/typography/mdc-typography';
 
+:host {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  max-width: 360px;
+  margin: auto;
 }
 
 .icon-background {
@@ -15,7 +24,7 @@
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background-color: var(--mdc-theme-background);
+  background-color: var(--mdc-theme-surface-neutral-highlight);
   margin-left: auto;
   margin-right: auto;
 }

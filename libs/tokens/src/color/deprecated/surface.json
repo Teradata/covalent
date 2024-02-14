@@ -1,0 +1,234 @@
+{
+  "light": {
+    "background": {
+      "value": "{theme.light.colors.surface}",
+      "type": "color"
+    },
+    "surface": {
+      "value": "{theme.light.colors.surface}",
+      "type": "color"
+    },
+    "surface-canvas": {
+      "value": "{theme.light.colors.surface-container-lowest}",
+      "type": "color"
+    },
+
+    "surface-primary": {
+      "value": "{theme.light.colors.primary-container}",
+      "type": "color"
+    },
+    "surface-primary-highlight": {
+      "value": "{theme.light.colors.primary-8%}",
+      "type": "color"
+    },
+    "surface-primary-highlight-hover": {
+      "value": "{theme.light.colors.primary-8%}",
+      "type": "color"
+    },
+    "surface-accent": {
+      "value": "{theme.light.colors.primary-container}",
+      "type": "color"
+    },
+    "surface-accent-highlight": {
+      "value": "{theme.light.colors.primary-8%}",
+      "type": "color"
+    },
+    "surface-accent-highlight-hover": {
+      "value": "{theme.light.colors.primary-12%}",
+      "type": "color"
+    },
+
+    "surface-secondary": {
+      "value": "{theme.light.colors.secondary-container}",
+      "type": "color"
+    },
+    "surface-secondary-highlight": {
+      "value": "{theme.light.colors.secondary-8%}",
+      "type": "color"
+    },
+    "surface-secondary-highlight-hover": {
+      "value": "{theme.light.colors.secondary-8%}",
+      "type": "color"
+    },
+
+    "surface-positive": {
+      "value": "{theme.light.colors.positive-container}",
+      "type": "color"
+    },
+    "surface-positive-highlight": {
+      "value": "{theme.light.colors.positive-8%}",
+      "type": "color"
+    },
+    "surface-positive-highlight-hover": {
+      "value": "{theme.light.colors.positive-8%}",
+      "type": "color"
+    },
+
+    "surface-caution": {
+      "value": "{theme.light.colors.caution-container}",
+      "type": "color"
+    },
+    "surface-caution-highlight": {
+      "value": "{theme.light.colors.caution-8%}",
+      "type": "color"
+    },
+    "surface-caution-highlight-hover": {
+      "value": "{theme.light.colors.caution-8%}",
+      "type": "color"
+    },
+
+    "surface-negative": {
+      "value": "{theme.light.colors.negative-container}",
+      "type": "color"
+    },
+    "surface-negative-highlight": {
+      "value": "{theme.light.colors.negative-8%}",
+      "type": "color"
+    },
+    "surface-negative-highlight-hover": {
+      "value": "{theme.light.colors.negative-8%}",
+      "type": "color"
+    },
+
+    "surface-neutral": {
+      "value": "{theme.light.colors.surface-container-low}",
+      "type": "color"
+    },
+    "surface-neutral-highlight": {
+      "value": "rgba({theme.light.colors.surface-container-low}, 0.04)",
+      "type": "color"
+    },
+    "surface-neutral-highlight-hover": {
+      "value": "rgba({theme.light.colors.surface-container-low}, 0.08)",
+      "type": "color"
+    },
+    "surface-emphasis": {
+      "value": "{theme.light.colors.emphasis-container}",
+      "type": "color"
+    },
+    "surface-emphasis-highlight": {
+      "value": "{theme.light.colors.emphasis-8%}",
+      "type": "color"
+    },
+    "surface-emphasis-highlight-hover": {
+      "value": "{theme.light.colors.emphasis-8%}",
+      "type": "color"
+    }
+  },
+  "dark": {
+    "background": {
+      "value": "{theme.dark.colors.surface}",
+      "type": "color"
+    },
+    "surface": {
+      "value": "{theme.dark.colors.surface}",
+      "type": "color"
+    },
+    "surface-canvas": {
+      "value": "{theme.dark.colors.surface-container}",
+      "type": "color"
+    },
+
+    "surface-primary": {
+      "value": "{theme.dark.colors.primary-container}",
+      "type": "color"
+    },
+    "surface-primary-highlight": {
+      "value": "{theme.dark.colors.primary-8%}",
+      "type": "color"
+    },
+    "surface-primary-highlight-hover": {
+      "value": "{theme.dark.colors.primary-8%}",
+      "type": "color"
+    },
+    "surface-accent": {
+      "value": "{theme.dark.colors.primary-container}",
+      "type": "color"
+    },
+    "surface-accent-highlight": {
+      "value": "{theme.dark.colors.primary-8%}",
+      "type": "color"
+    },
+    "surface-accent-highlight-hover": {
+      "value": "{theme.dark.colors.primary-8%}",
+      "type": "color"
+    },
+
+    "surface-secondary": {
+      "value": "{theme.dark.colors.secondary-container}",
+      "type": "color"
+    },
+    "surface-secondary-highlight": {
+      "value": "{theme.dark.colors.secondary-8%}",
+      "type": "color"
+    },
+    "surface-secondary-highlight-hover": {
+      "value": "{theme.dark.colors.secondary-8%}",
+      "type": "color"
+    },
+
+    "surface-positive": {
+      "value": "{theme.dark.colors.positive-container}",
+      "type": "color"
+    },
+    "surface-positive-highlight": {
+      "value": "{theme.dark.colors.positive-8%}",
+      "type": "color"
+    },
+    "surface-positive-highlight-hover": {
+      "value": "{theme.dark.colors.positive-8%}",
+      "type": "color"
+    },
+
+    "surface-caution": {
+      "value": "{theme.dark.colors.caution-container}",
+      "type": "color"
+    },
+    "surface-caution-highlight": {
+      "value": "{theme.dark.colors.caution-8%}",
+      "type": "color"
+    },
+    "surface-caution-highlight-hover": {
+      "value": "{theme.dark.colors.caution-8%}",
+      "type": "color"
+    },
+
+    "surface-negative": {
+      "value": "{theme.dark.colors.negative-container}",
+      "type": "color"
+    },
+    "surface-negative-highlight": {
+      "value": "{theme.dark.colors.negative-8%}",
+      "type": "color"
+    },
+    "surface-negative-highlight-hover": {
+      "value": "{theme.dark.colors.negative-8%}",
+      "type": "color"
+    },
+
+    "surface-neutral": {
+      "value": "{theme.light.colors.surface-container-low}",
+      "type": "color"
+    },
+    "surface-neutral-highlight": {
+      "value": "rgba({theme.light.colors.surface-container-low}, 0.04)",
+      "type": "color"
+    },
+    "surface-neutral-highlight-hover": {
+      "value": "rgba({theme.light.colors.surface-container-low}, 0.08)",
+      "type": "color"
+    },
+    "surface-emphasis": {
+      "value": "{theme.dark.colors.emphasis-container}",
+      "type": "color"
+    },
+    "surface-emphasis-highlight": {
+      "value": "{theme.dark.colors.emphasis-8%}",
+      "type": "color"
+    },
+    "surface-emphasis-highlight-hover": {
+      "value": "{theme.dark.colors.emphasis-8%}",
+      "type": "color"
+    }
+  }
+}

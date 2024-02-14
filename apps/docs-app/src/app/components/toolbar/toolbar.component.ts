@@ -53,7 +53,11 @@ export class ToolbarComponent implements OnInit {
   get activeTheme(): string | null {
     return localStorage.getItem('theme');
   }
-  theme(theme: string): void {
+  set activeTheme(theme: string) {
     localStorage.setItem('theme', theme);
+  }
+
+  theme(theme: string): void {
+    this.activeTheme = theme;
   }
 }

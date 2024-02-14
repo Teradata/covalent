@@ -1,6 +1,6 @@
 <td-layout class="home">
   <div>
-    <section class="banner">
+    <section class="banner mat-app-background">
       <div layout="row" layout-align="center center">
         <div class="max-width">
           <div layout="row" layout-align="space-between center">
@@ -141,10 +141,8 @@
                     layout-align="start center"
                     class="push-bottom-xs"
                   >
-                    <div class="icon-avatar bgc-grey-200 push-right">
-                      <mat-icon>
-                        <span class="tc-td-slate">{{ item.icon }}</span>
-                      </mat-icon>
+                    <div class="icon-avatar push-right">
+                      <mat-icon>{{ item.icon }}</mat-icon>
                     </div>
 
                     <div
@@ -166,7 +164,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="cv-surface-high">
       <div layout="row" layout-align="center center">
         <div class="max-width">
           <div layout="row" class="pad-top pad-bottom">
@@ -214,7 +212,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="cv-surface-high">
       <div layout="row" layout-align="center center">
         <div class="max-width">
           <div layout="row" class="pad-top pad-bottom">
@@ -261,7 +259,7 @@
       </div>
     </section>
   </div>
-  <td-layout-footer color="primary">
+  <td-layout-footer>
     <div layout-gt-xs="row" layout-align="start center">
       <div class="mat-caption">
         ©2016 - {{ year }} Teradata. All Rights Reserved

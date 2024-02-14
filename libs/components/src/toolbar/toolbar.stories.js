@@ -1,5 +1,8 @@
 import './toolbar';
 
+import '../button/button';
+import '../icon-button/icon-button';
+
 export default {
   title: 'Components/Toolbar',
   args: {

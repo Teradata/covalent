@@ -1,24 +1,35 @@
 import { create } from '@storybook/theming';
 import brandImage from './teradata.svg';
+import {
+  CvLightPrimary,
+  CvLightAccent,
+  CvLightSurface,
+  CvLightBackground,
+  CvDarkOnBackground,
+  CvLightOnBackground,
+  CvLightTextIconOnBackground,
+} from '@covalent/tokens';
 
 export default create({
   base: 'light',
 
-  colorPrimary: '#43515a',
-  colorSecondary: '#007373',
+  colorPrimary: CvLightPrimary,
+  colorSecondary: CvLightAccent,
 
   // UI
-  appBg: '#ffffff',
-  appContentBg: '#f5f5f5',
+  appBg: CvLightBackground,
+  appContentBg: CvLightSurface,
   appBorderRadius: '8px',
 
   // Text colors
-  textColor: 'rgba(0,0,0,0.87)',
-  textInverseColor: 'rgba(255,255,255,0.87)',
+  textColor: CvLightOnBackground,
+  textInverseColor: CvDarkOnBackground,
 
   // Toolbar default and active colors
-  barSelectedColor: '#007373',
-  barBg: '#f5f5f5',
+  barTextColor: CvLightTextIconOnBackground,
+  barSelectedColor: CvLightPrimary,
+  barHoverColor: CvLightAccent,
+  barBg: CvLightSurface,
 
   // Form colors
   inputBg: 'transparent',
@@ -27,13 +38,4 @@ export default create({
   brandTitle: 'Teradata Design System',
   // brandUrl: 'https://teradata.lol',
   brandImage,
-
-  layoutMargin: '48px',
-
-  // Addon themes
-  addonActionsTheme: {
-    // ...chromeLight,
-    // BASE_FONT_FAMILY: typography.fonts.mono,
-    BASE_BACKGROUND_COLOR: '#f5f5f5',
-  },
 });

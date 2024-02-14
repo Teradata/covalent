@@ -1,5 +1,7 @@
 import dialogComponent from '../../stories/demos/dialog.component';
 import './dialog';
+import '../button/button';
+import '../textfield/textfield';
 
 export default {
   title: 'Components/Dialog',
