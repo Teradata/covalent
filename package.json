@@ -81,7 +81,7 @@
     "showdown": "^2.1.0",
     "skeleton-elements": "^4.0.1",
     "tslib": "^2.0.0",
-    "zone.js": "0.14.3"
+    "zone.js": "0.13.1"
   },
   "resolutions": {
     "@material/slider": "15.0.0-canary.b994146f6.0",
