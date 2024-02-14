@@ -1,3 +1,9 @@
+# [8.2.0](https://github.com/Teradata/covalent/compare/v8.1.0...v8.2.0) (2024-02-14)
+
+### Features
+
+- **tokens:** new Teradata branding ([#2092](https://github.com/Teradata/covalent/issues/2092)) ([8ee9d51](https://github.com/Teradata/covalent/commit/8ee9d5170cc617dd1f663ff6b4c89fc77201a3a1))
+
 # [8.2.0-beta.1](https://github.com/Teradata/covalent/compare/v8.1.0...v8.2.0-beta.1) (2024-02-14)
 
 ### Bug Fixes
