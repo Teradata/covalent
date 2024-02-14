@@ -73,7 +73,7 @@ body .mat-card {
 }
 
 // Dark theme
-@media (prefers-color-scheme: dark) {
+.theme-dark {
   $background: map-get($td-dark-theme, background);
 
   @include mat.all-component-themes($td-dark-theme);
