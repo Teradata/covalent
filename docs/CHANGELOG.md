@@ -1,3 +1,40 @@
+# [8.2.0-beta.1](https://github.com/Teradata/covalent/compare/v8.1.0...v8.2.0-beta.1) (2024-02-14)
+
+### Bug Fixes
+
+- **angular:** adjust dynamic forms input theme ([c36252b](https://github.com/Teradata/covalent/commit/c36252b1b7d3230c0e9a1e71cc947e18360ebfc3))
+- **angular:** adjustment to td branding scss file name ([fdac747](https://github.com/Teradata/covalent/commit/fdac747f252e52c20141e961e3bc5370f1b31523))
+- **angular:** update tokens import for theme ([367c69e](https://github.com/Teradata/covalent/commit/367c69e9e707e64704144c0df85dad45d26627d5))
+- **angular:** update tokens reference ([c1b118d](https://github.com/Teradata/covalent/commit/c1b118d8f7f2f04ce54bc2a359ff653b446ff0d3))
+- **components:** app shell open property ([f584e6e](https://github.com/Teradata/covalent/commit/f584e6e3e820ad2f32cca632ddb8f7e214ed1589))
+- **components:** app shell open property ([d47cbf7](https://github.com/Teradata/covalent/commit/d47cbf7a5b0bdf518dfe387b7fc4c91c2821e902))
+- **components:** app shell open property ([40177ff](https://github.com/Teradata/covalent/commit/40177ff41f544fd9594046980c5a6816d29a0174))
+- **components:** app shell open property ([2590710](https://github.com/Teradata/covalent/commit/2590710727bf5452fb88b2cd087804db0490b121))
+- **components:** fixes from feature testing ([20fbcf4](https://github.com/Teradata/covalent/commit/20fbcf42b720d33cf0a2bce0550fa3040ab4105e))
+- **components:** theme tokens reference change ([fb03d60](https://github.com/Teradata/covalent/commit/fb03d602bc058b354ad089ed00ababbdbd90f3bc))
+- **components:** update td logo in storybook ([3952dce](https://github.com/Teradata/covalent/commit/3952dcecdaff62b4db4e0e17a9bce113f3519584))
+- **components:** updating generated tokens ([a7b4134](https://github.com/Teradata/covalent/commit/a7b41340acd3947de98f73e5c7b0d32a9026f5f4))
+- **markdown-navigator:** fixing misaligned icons ([d089f35](https://github.com/Teradata/covalent/commit/d089f353eba9c0e1559b4455101bac927dda8eb9))
+- **storybook:** update to storybook theme ([dee2699](https://github.com/Teradata/covalent/commit/dee26990e7d9a26126d1b4339464b501cf6ed13c))
+- **tokens:** drinking champagne ([4ef0fd6](https://github.com/Teradata/covalent/commit/4ef0fd67363ebd4cce50d9da0537dfd79289d93b))
+- **tokens:** rearrange file structure ([a4613fc](https://github.com/Teradata/covalent/commit/a4613fc842a1c99f52af07c6ad0f3e03827d3eb5))
+- **tokens:** updating nuetral color ([b89815c](https://github.com/Teradata/covalent/commit/b89815cd39a6ecca61ef9d4368662b769ca45097))
+
+### Features
+
+- **branding:** updated angular material theme ([2601e56](https://github.com/Teradata/covalent/commit/2601e56364ba45206b6a9d125187a4c8ab177ae4))
+- **branding:** updated tokens path ([9ff862f](https://github.com/Teradata/covalent/commit/9ff862f8d45d28f8037ed4c05cbbf4db29342a30))
+- **components:** adding a menu click event to appshell ([68fd432](https://github.com/Teradata/covalent/commit/68fd432afd0c8f7ae59792004bd364b1673a9687))
+- **components:** adding forced open property ([71741e8](https://github.com/Teradata/covalent/commit/71741e8f9482a6bd4aa3bc4894b27e6b39555b24))
+- **components:** theme and packaging adjustments ([25ae8bb](https://github.com/Teradata/covalent/commit/25ae8bb7b65a8c3c460f4194c4a4458847b11fe1))
+- **components:** theme update ([969b032](https://github.com/Teradata/covalent/commit/969b032dc1e4de85173f5336e04fc096fa6b57e2))
+- **components:** theme update ([db6a052](https://github.com/Teradata/covalent/commit/db6a052c54ba763d3f71f0d4bbd4a64c236d2222))
+- **markdown-navigator:** adjustment to breadcrumb title ([9692539](https://github.com/Teradata/covalent/commit/9692539e7e16501c5e30f44ede72eb053760f4e5))
+- **markdown:** updating navigator docked mode ([7c4cc7c](https://github.com/Teradata/covalent/commit/7c4cc7c135d1cada1d1adc50b95ab8d357f26f9a))
+- **tokens:** theme update ([9db1680](https://github.com/Teradata/covalent/commit/9db1680cc82c90314200f1130916f6c6851ea031))
+- **tokens:** updates to covalent token values ([c2918ab](https://github.com/Teradata/covalent/commit/c2918abff352de88fa53c4a1d0126625a0c280f3))
+- **tokens:** updating tokens for covalent m3 ([d429258](https://github.com/Teradata/covalent/commit/d429258783d1d597b35a18a1721211f3bac51a2d))
+
 # [8.1.0-beta.1](https://github.com/Teradata/covalent/compare/v8.0.0...v8.1.0-beta.1) (2024-02-12)
 
 ### Bug Fixes
