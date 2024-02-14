@@ -24,6 +24,20 @@
         "image": {
           "alt": "Cautionary example of active voice: \"Your account was flagged by our abuse team\"",
           "src": "https://knapsack.imgix.net/site/covalent/active-voice-caution-dijt4vtkz5png"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Sometimes you want to specifically emphasize the action over the subject. ",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
         }
       }
     ],
