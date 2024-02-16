@@ -15,6 +15,6 @@ module.exports = configureKnapsack({
   plugins: [],
   cloud: {
     siteId: 'covalent',
-    repoRoot: join(__dirname, '..'),
+    repoRoot: join(__dirname, '../../'),
   },
 });
