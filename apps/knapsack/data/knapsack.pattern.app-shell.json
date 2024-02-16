@@ -1,0 +1,76 @@
+{
+  "id": "app-shell",
+  "title": "App shell",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-z8r4uoVkf",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/app-shell.mjs",
+      "alias": "cv-app-shell",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          },
+          "logo": {
+            "title": "logo"
+          },
+          "navigation": {
+            "title": "navigation"
+          },
+          "help": {
+            "title": "help"
+          },
+          "section-action": {
+            "allowedPatternIds": ["icon-button"],
+            "title": "section-action"
+          },
+          "user-menu": {
+            "title": "user-menu"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "appName": {
+              "type": "string",
+              "default": "[App name]"
+            },
+            "sectionName": {
+              "type": "string",
+              "default": "[Section name]"
+            },
+            "helpOpen": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["5lBJhPKvTj"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-z8r4uoVkf"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

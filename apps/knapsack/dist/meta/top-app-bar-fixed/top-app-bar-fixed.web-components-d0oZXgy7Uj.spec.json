@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "centerTitle": {
+      "type": "boolean"
+    },
+    "prominent": {
+      "type": "boolean"
+    },
+    "dense": {
+      "type": "boolean"
+    }
+  }
+}

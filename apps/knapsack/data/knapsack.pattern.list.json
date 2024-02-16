@@ -1,0 +1,50 @@
+{
+  "id": "list",
+  "title": "List",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-fObxCsu2i8",
+      "title": "cv-list",
+      "path": "../../../dist/libs/components/list.mjs",
+      "alias": "cv-list",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "allowedPatternIds": ["list-item"],
+            "title": "default",
+            "disallowText": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        }
+      },
+      "demoIds": ["R-bXJMtJi"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-fObxCsu2i8"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

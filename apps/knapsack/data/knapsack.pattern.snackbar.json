@@ -1,0 +1,70 @@
+{
+  "id": "snackbar",
+  "title": "Snackbar",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-3ERE1Ai9lo",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/snackbar.mjs",
+      "alias": "cv-snackbar",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "action": {
+            "allowedPatternIds": ["button", "icon-button"],
+            "title": "action",
+            "disallowText": true
+          },
+          "dismiss": {
+            "allowedPatternIds": ["icon-button"],
+            "title": "dismiss",
+            "disallowText": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["open"],
+          "properties": {
+            "open": {
+              "type": "boolean",
+              "default": true
+            },
+            "labelText": {
+              "type": "string",
+              "default": "Can't send photo. Retry in 5 seconds."
+            },
+            "stacked": {
+              "type": "boolean"
+            },
+            "leading": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["5aKkBtql-E"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-3ERE1Ai9lo"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

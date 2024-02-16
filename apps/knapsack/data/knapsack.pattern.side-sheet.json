@@ -1,0 +1,57 @@
+{
+  "id": "side-sheet",
+  "title": "Side sheet",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-UMR43JQszt",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/side-sheet.mjs",
+      "alias": "cv-side-sheet",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["open"],
+          "properties": {
+            "open": {
+              "type": "boolean",
+              "default": true
+            },
+            "heading": {
+              "type": "string",
+              "default": "Sample side sheet"
+            }
+          }
+        }
+      },
+      "demoIds": ["F84crA5Gx4"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-UMR43JQszt"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

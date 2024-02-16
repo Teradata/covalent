@@ -1,0 +1,35 @@
+{
+  "id": "switch",
+  "title": "Switch",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-tGj2TvSrpD",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/switch.mjs",
+      "alias": "cv-switch",
+      "templateLanguageId": "web-components",
+      "spec": {},
+      "demoIds": ["U89p0LyOsP"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-tGj2TvSrpD"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

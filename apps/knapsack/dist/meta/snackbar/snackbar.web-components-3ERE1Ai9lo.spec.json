@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": ["open"],
+  "properties": {
+    "open": {
+      "type": "boolean",
+      "default": true
+    },
+    "labelText": {
+      "type": "string",
+      "default": "Can't send photo. Retry in 5 seconds."
+    },
+    "stacked": {
+      "type": "boolean"
+    },
+    "leading": {
+      "type": "boolean"
+    }
+  }
+}

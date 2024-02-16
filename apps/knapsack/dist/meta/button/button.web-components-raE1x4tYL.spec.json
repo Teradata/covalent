@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "outlined": {
+      "type": "boolean",
+      "default": true
+    },
+    "raised": {
+      "type": "boolean",
+      "default": false
+    },
+    "icon": {
+      "type": "string"
+    },
+    "trailingIcon": {
+      "type": "boolean",
+      "default": false
+    },
+    "dense": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

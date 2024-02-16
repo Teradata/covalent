@@ -1,0 +1,59 @@
+{
+  "id": "linear-progress",
+  "title": "Linear progress",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-2ew8-hMQkv",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/linear-progress.mjs",
+      "alias": "cv-linear-progress",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "indeterminate": {
+              "type": "boolean",
+              "default": true
+            },
+            "buffer": {
+              "type": "number"
+            },
+            "progress": {
+              "type": "string"
+            },
+            "reverse": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      },
+      "demoIds": ["lXYaxeRM4L"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-2ew8-hMQkv"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

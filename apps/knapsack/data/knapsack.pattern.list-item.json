@@ -1,0 +1,70 @@
+{
+  "id": "list-item",
+  "title": "List item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-ytRTf8wtxn",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/list-item.mjs",
+      "alias": "cv-list-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          },
+          "secondary": {
+            "title": "secondary"
+          },
+          "graphic": {
+            "allowedPatternIds": ["circular-progress", "icon"],
+            "title": "graphic"
+          },
+          "meta": {
+            "allowedPatternIds": ["icon"],
+            "title": "meta"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "graphic": {
+              "type": "string"
+            },
+            "twoLine": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "string",
+              "default": "list item value"
+            }
+          }
+        }
+      },
+      "demoIds": ["qgGc8WUNHQ"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-ytRTf8wtxn"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}
