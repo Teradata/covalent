@@ -1,3 +1,9 @@
+# [8.3.0-beta.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.3.0-beta.1) (2024-02-16)
+
+### Features
+
+- **components:** updating text in story for app shell ([dabd2c7](https://github.com/Teradata/covalent/commit/dabd2c7bb76b73fde6bf9afa659b41ffc23c62e8))
+
 # [8.2.0](https://github.com/Teradata/covalent/compare/v8.1.0...v8.2.0) (2024-02-14)
 
 ### Features
