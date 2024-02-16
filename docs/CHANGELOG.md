@@ -15,6 +15,11 @@
 ### Bug Fixes
 
 - **tokens:** updating logo on background ([#2098](https://github.com/Teradata/covalent/issues/2098)) ([e560cc9](https://github.com/Teradata/covalent/commit/e560cc9efe8ee5744e38a1274823292341b5bac5))
+# [8.3.0-beta.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.3.0-beta.1) (2024-02-16)
+
+### Features
+
+- **components:** updating text in story for app shell ([dabd2c7](https://github.com/Teradata/covalent/commit/dabd2c7bb76b73fde6bf9afa659b41ffc23c62e8))
 
 # [8.2.0](https://github.com/Teradata/covalent/compare/v8.1.0...v8.2.0) (2024-02-14)
 
