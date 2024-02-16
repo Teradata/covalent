@@ -25,7 +25,8 @@
     "style-dictionary": "cd libs/tokens && style-dictionary build",
     "storybook": "storybook dev -c libs/components/.storybook",
     "build-storybook": "storybook build -c libs/components/.storybook -o dist/storybook/components",
-    "chromatic": "npx chromatic"
+    "chromatic": "npx chromatic",
+    "knapsack:serve": "NODE_ENV=production knapsack --config apps/knapsack/knapsack.config.js serve"
   },
   "dependencies": {
     "@angular/animations": "17.x.x",

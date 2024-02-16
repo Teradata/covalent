@@ -1,1 +1,1 @@
-web: npx nx run knapsack:serve
+web: npm run knapsack:serve
