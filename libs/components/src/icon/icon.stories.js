@@ -16,6 +16,7 @@ const COV_ICON_LIST = [
   'compute_profile_dark',
   'compute_profile_light',
   'connected_identity',
+  'data_management',
   'data_preparation',
   'data_source',
   'database',
