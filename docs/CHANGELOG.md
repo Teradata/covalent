@@ -1,3 +1,9 @@
+# [8.3.0-beta.3](https://github.com/Teradata/covalent/compare/v8.3.0-beta.2...v8.3.0-beta.3) (2024-02-20)
+
+### Bug Fixes
+
+- **compoents:** updating tokens import path ([b5294c8](https://github.com/Teradata/covalent/commit/b5294c834fcbf57c4a72242b198d0fcf7c900005))
+
 # [8.3.0-beta.2](https://github.com/Teradata/covalent/compare/v8.3.0-beta.1...v8.3.0-beta.2) (2024-02-20)
 
 ### Bug Fixes
