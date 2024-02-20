@@ -1,14 +1,9 @@
-# [8.3.0](https://github.com/Teradata/covalent/compare/v8.2.1...v8.3.0) (2024-02-20)
-
-### Features
-
-- **icons:** adding data management icon ([#2101](https://github.com/Teradata/covalent/issues/2101)) ([498144d](https://github.com/Teradata/covalent/commit/498144d014d1a40afd9f906a14f905739de73288))
-
-## [8.2.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.2.1) (2024-02-16)
+# [8.3.0-beta.3](https://github.com/Teradata/covalent/compare/v8.3.0-beta.2...v8.3.0-beta.3) (2024-02-20)
 
 ### Bug Fixes
 
-- **tokens:** updating logo on background ([#2098](https://github.com/Teradata/covalent/issues/2098)) ([e560cc9](https://github.com/Teradata/covalent/commit/e560cc9efe8ee5744e38a1274823292341b5bac5))
+- **compoents:** updating tokens import path ([b5294c8](https://github.com/Teradata/covalent/commit/b5294c834fcbf57c4a72242b198d0fcf7c900005))
+
 # [8.3.0-beta.2](https://github.com/Teradata/covalent/compare/v8.3.0-beta.1...v8.3.0-beta.2) (2024-02-20)
 
 ### Bug Fixes
