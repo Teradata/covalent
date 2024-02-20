@@ -9,6 +9,12 @@
 ### Bug Fixes
 
 - **tokens:** updating logo on background ([#2098](https://github.com/Teradata/covalent/issues/2098)) ([e560cc9](https://github.com/Teradata/covalent/commit/e560cc9efe8ee5744e38a1274823292341b5bac5))
+# [8.3.0-beta.2](https://github.com/Teradata/covalent/compare/v8.3.0-beta.1...v8.3.0-beta.2) (2024-02-20)
+
+### Bug Fixes
+
+- **components:** adding packages for secondary ([3e0c211](https://github.com/Teradata/covalent/commit/3e0c211c442cbbdbd80f45b1392cc27e144af13e))
+
 # [8.3.0-beta.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.3.0-beta.1) (2024-02-16)
 
 ### Features
