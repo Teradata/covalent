@@ -170,13 +170,12 @@ export class CovalentAppShell extends DrawerBase {
       'cov-drawer--forced-open': this.forcedOpen,
       'cov-drawer--open': this.drawerOpen || this.forcedOpen,
       'cov-drawer--hovered': this.hovered,
+      'cov-help--open': this.helpOpen,
+      'cov-help--closed': !this.helpOpen,
     };
     const drawerClasses = {
       'mdc-drawer--dismissible': dismissible,
       'mdc-drawer--modal': modal,
-    };
-    const helpPanelClasses = {
-      'help--closed': !this.helpOpen,
     };
 
     const scrim = modal
@@ -221,7 +220,7 @@ export class CovalentAppShell extends DrawerBase {
           <slot name="user-menu"></slot>
           ${this.renderMain()}
         </div>
-        <div class="help ${classMap(helpPanelClasses)}">
+        <div class="help">
           <slot name="help"></slot>
         </div>
       </div>

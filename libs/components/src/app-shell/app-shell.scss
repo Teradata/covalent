@@ -33,12 +33,14 @@
   background-color: var(--mdc-theme-surface);
   display: grid;
   grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
-  min-height: 100vh;
+  min-height: 100%;
+  position: fixed;
+  width: 100%;
 
   // TD Tiger stripe
   &::after {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 2px;
     width: 100%;
@@ -48,12 +50,13 @@
 }
 
 .main {
-  grid-area: main;
-  overflow: visible;
   height: 100vh;
+  grid-area: main;
+  overflow: scroll;
+  transition: margin 200ms ease-in-out;
 
   cv-card {
-    margin: 0 12px 12px 0;
+    margin: 0 12px 12px;
     display: block;
   }
 
@@ -69,20 +72,26 @@
     }
 
     .cov-drawer--open & {
-      margin-left: 0;
+      margin-left: 256px;
     }
+  }
+
+  .cov-help--open & {
+    margin-right: 320px;
   }
 }
 
 .help {
   grid-area: help;
+  position: fixed;
+  right: 0;
   width: 320px;
   height: 100vh;
   overflow-y: auto;
   transition-property: width;
   transition-duration: 200ms;
 
-  &.help--closed {
+  .cov-help--closed & {
     width: 0;
     border: none;
   }
@@ -139,6 +148,7 @@ nav.navigation {
   height: 100vh;
   overflow-y: auto;
   border-right: 0;
+  position: fixed;
 
   .toggle-drawer {
     margin: 8px auto;
@@ -161,7 +171,6 @@ nav.navigation {
   :not(.cov-drawer--forced-open) &,
   :not(.cov-drawer--forced-open) &.mdc-drawer--closed,
   :not(.cov-drawer--forced-open) &.mdc-drawer--closing {
-    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;

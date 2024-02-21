@@ -16,6 +16,7 @@ const COV_ICON_LIST = [
   'compute_profile_dark',
   'compute_profile_light',
   'connected_identity',
+  'data_management',
   'data_preparation',
   'data_source',
   'database',
@@ -139,7 +140,7 @@ const Template = ({ icon, size }, ...args) => {
   icoElem.style.fontSize = size;
 
   if (args[0].parameters.showCovIcons) {
-    icoElem.attributes = 'covalent-icon';
+    icoElem.className = 'covalent-icon';
   }
 
   return icoElem;
