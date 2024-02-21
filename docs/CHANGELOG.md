@@ -11,6 +11,18 @@
 - **icons:** adding data management icon ([#2101](https://github.com/Teradata/covalent/issues/2101)) ([498144d](https://github.com/Teradata/covalent/commit/498144d014d1a40afd9f906a14f905739de73288))
 
 ## [8.2.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.2.1) (2024-02-16)
+# [8.4.0-beta.1](https://github.com/Teradata/covalent/compare/v8.3.0...v8.4.0-beta.1) (2024-02-21)
+
+### Bug Fixes
+
+- **compoents:** updating tokens import path ([028a855](https://github.com/Teradata/covalent/commit/028a8557435a6d2123f0fe226c93204e80d0f99c))
+- **components:** adding packages for secondary ([920921b](https://github.com/Teradata/covalent/commit/920921bcb408aa197da144e2e025f3bbcd8ea5e9))
+
+### Features
+
+- **appshell:** updating scrolling behavior ([ab68edc](https://github.com/Teradata/covalent/commit/ab68edc4f1d6a15805b8c26477957e6b480a1fb8))
+- **components:** updating text in story for app shell ([d8d8bb5](https://github.com/Teradata/covalent/commit/d8d8bb5a075c79d2f116349aa34b87887dad131e))
+
 # [8.3.0-beta.3](https://github.com/Teradata/covalent/compare/v8.3.0-beta.2...v8.3.0-beta.3) (2024-02-20)
 
 ### Bug Fixes
