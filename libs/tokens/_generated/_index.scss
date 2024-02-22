@@ -1,3 +1,4 @@
+
 /**
  * Do not edit directly
  * Generated on Fri, 16 Feb 2024 16:23:15 GMT
@@ -49,7 +50,7 @@ $light-text-secondary-on-background: #5c5b5fff !default;
 $light-text-hint-on-background: #5c5b5fff !default;
 $light-text-disabled-on-background: #1e1d1e61 !default;
 $light-text-icon-on-background: #5c5b5fff !default;
-$light-text-logo-on-background: #ff5f02 !default;
+$light-text-logo-on-background: #FF5F02 !default;
 $light-text-primary-on-light: #1e1d1eff !default;
 $light-text-secondary-on-light: #5c5b5fff !default;
 $light-text-hint-on-light: #5c5b5fff !default;
@@ -177,15 +178,15 @@ $teradata-slate-1700: #101314 !default;
 $teradata-slate-1800: #0c0e0f !default;
 $teradata-slate-1900: #060708 !default;
 $teradata-slate-2000: #020203 !default;
-$teradata-orange-100: #ffcfb3 !default;
-$teradata-orange-200: #ffaf81 !default;
-$teradata-orange-300: #ff8f4e !default;
-$teradata-orange-400: #ff7728 !default;
-$teradata-orange-500: #ff5f02 !default;
-$teradata-orange-600: #f05800 !default;
-$teradata-orange-700: #e54900 !default;
-$teradata-orange-800: #d83b03 !default;
-$teradata-orange-900: #c23200 !default;
+$teradata-orange-100: #FFCFB3 !default;
+$teradata-orange-200: #FFAF81 !default;
+$teradata-orange-300: #FF8F4E !default;
+$teradata-orange-400: #FF7728 !default;
+$teradata-orange-500: #FF5F02 !default;
+$teradata-orange-600: #F05800 !default;
+$teradata-orange-700: #E54900 !default;
+$teradata-orange-800: #D83B03 !default;
+$teradata-orange-900: #C23200 !default;
 $theme-light-palettes-digital-blue-100: #ffffffff !default;
 $theme-light-palettes-digital-blue-98: #fbf8ffff !default;
 $theme-light-palettes-digital-blue-95: #f0efffff !default;
@@ -1191,8 +1192,7 @@ $tokens: (
     'surface-accent-highlight-hover': $light-surface-accent-highlight-hover,
     'surface-secondary': $light-surface-secondary,
     'surface-secondary-highlight': $light-surface-secondary-highlight,
-    'surface-secondary-highlight-hover':
-      $light-surface-secondary-highlight-hover,
+    'surface-secondary-highlight-hover': $light-surface-secondary-highlight-hover,
     'surface-positive': $light-surface-positive,
     'surface-positive-highlight': $light-surface-positive-highlight,
     'surface-positive-highlight-hover': $light-surface-positive-highlight-hover,
@@ -1232,7 +1232,7 @@ $tokens: (
     'code-snippet-string': $light-code-snippet-string,
     'code-snippet-variable': $light-code-snippet-variable,
     'code-snippet-title': $light-code-snippet-title,
-    'code-snippet-class': $light-code-snippet-class,
+    'code-snippet-class': $light-code-snippet-class
   ),
   'dark': (
     'primary': $dark-primary,
@@ -1300,7 +1300,7 @@ $tokens: (
     'code-snippet-string': $dark-code-snippet-string,
     'code-snippet-variable': $dark-code-snippet-variable,
     'code-snippet-title': $dark-code-snippet-title,
-    'code-snippet-class': $dark-code-snippet-class,
+    'code-snippet-class': $dark-code-snippet-class
   ),
   'teradata': (
     'teal-50': $teradata-teal-50,
@@ -1353,7 +1353,7 @@ $tokens: (
     'orange-600': $teradata-orange-600,
     'orange-700': $teradata-orange-700,
     'orange-800': $teradata-orange-800,
-    'orange-900': $teradata-orange-900,
+    'orange-900': $teradata-orange-900
   ),
   'theme': (
     'light': (
@@ -1509,7 +1509,7 @@ $tokens: (
         'digital blue 91': $theme-light-palettes-digital-blue-91,
         'digital blue 92': $theme-light-palettes-digital-blue-92,
         'digital blue 93': $theme-light-palettes-digital-blue-93,
-        'digital blue 94': $theme-light-palettes-digital-blue-94,
+        'digital blue 94': $theme-light-palettes-digital-blue-94
       ),
       'colors': (
         'primary': $theme-light-colors-primary,
@@ -1530,8 +1530,7 @@ $tokens: (
         'surface-container-low': $theme-light-colors-surface-container-low,
         'surface-container': $theme-light-colors-surface-container,
         'surface-container-high': $theme-light-colors-surface-container-high,
-        'surface-container-highest':
-          $theme-light-colors-surface-container-highest,
+        'surface-container-highest': $theme-light-colors-surface-container-highest,
         'on-surface': $theme-light-colors-on-surface,
         'on-surface-variant': $theme-light-colors-on-surface-variant,
         'inverse-surface': $theme-light-colors-inverse-surface,
@@ -1571,14 +1570,11 @@ $tokens: (
         'primary-16%': $theme-light-colors-primary-16,
         'on-surface-variant-8%': $theme-light-colors-on-surface-variant-8,
         'on-tertiary-container-8%': $theme-light-colors-on-tertiary-container-8,
-        'on-tertiary-container-12%':
-          $theme-light-colors-on-tertiary-container-12,
+        'on-tertiary-container-12%': $theme-light-colors-on-tertiary-container-12,
         'on-primary-container-12%': $theme-light-colors-on-primary-container-12,
         'on-surface-variant-12%': $theme-light-colors-on-surface-variant-12,
-        'on-secondary-container-8%':
-          $theme-light-colors-on-secondary-container-8,
-        'on-secondary-container-16%':
-          $theme-light-colors-on-secondary-container-16,
+        'on-secondary-container-8%': $theme-light-colors-on-secondary-container-8,
+        'on-secondary-container-16%': $theme-light-colors-on-secondary-container-16,
         'outline-8%': $theme-light-colors-outline-8,
         'outline-12%': $theme-light-colors-outline-12,
         'outline-16%': $theme-light-colors-outline-16,
@@ -1590,8 +1586,7 @@ $tokens: (
         'positive-16%': $theme-light-colors-positive-16,
         'caution-16%': $theme-light-colors-caution-16,
         'negative-12%': $theme-light-colors-negative-12,
-        'on-secondary-container-12%':
-          $theme-light-colors-on-secondary-container-12,
+        'on-secondary-container-12%': $theme-light-colors-on-secondary-container-12,
         'on-primary-16%': $theme-light-colors-on-primary-16,
         'on-primary-container-8%': $theme-light-colors-on-primary-container-8,
         'on-primary-container-16%': $theme-light-colors-on-primary-container-16,
@@ -1601,8 +1596,7 @@ $tokens: (
         'on-tertiary-8%': $theme-light-colors-on-tertiary-8,
         'on-tertiary-12%': $theme-light-colors-on-tertiary-12,
         'on-tertiary-16%': $theme-light-colors-on-tertiary-16,
-        'on-tertiary-container-16%':
-          $theme-light-colors-on-tertiary-container-16,
+        'on-tertiary-container-16%': $theme-light-colors-on-tertiary-container-16,
         'on-surface-variant-16%': $theme-light-colors-on-surface-variant-16,
         'negative-8%': $theme-light-colors-negative-8,
         'negative-16%': $theme-light-colors-negative-16,
@@ -1612,10 +1606,8 @@ $tokens: (
         'on-positive-12%': $theme-light-colors-on-positive-12,
         'on-positive-16%': $theme-light-colors-on-positive-16,
         'on-positive-container-8%': $theme-light-colors-on-positive-container-8,
-        'on-positive-container-12%':
-          $theme-light-colors-on-positive-container-12,
-        'on-positive-container-16%':
-          $theme-light-colors-on-positive-container-16,
+        'on-positive-container-12%': $theme-light-colors-on-positive-container-12,
+        'on-positive-container-16%': $theme-light-colors-on-positive-container-16,
         'caution-12%': $theme-light-colors-caution-12,
         'caution-8%': $theme-light-colors-caution-8,
         'on-caution-8%': $theme-light-colors-on-caution-8,
@@ -1634,10 +1626,8 @@ $tokens: (
         'on-emphasis-12%': $theme-light-colors-on-emphasis-12,
         'on-emphasis-16%': $theme-light-colors-on-emphasis-16,
         'on-emphasis-container-8%': $theme-light-colors-on-emphasis-container-8,
-        'on-emphasis-container-12%':
-          $theme-light-colors-on-emphasis-container-12,
-        'on-emphasis-container-16%':
-          $theme-light-colors-on-emphasis-container-16,
+        'on-emphasis-container-12%': $theme-light-colors-on-emphasis-container-12,
+        'on-emphasis-container-16%': $theme-light-colors-on-emphasis-container-16,
         'inverse-on-surface-12%': $theme-light-colors-inverse-on-surface-12,
         'inverse-primary-12%': $theme-light-colors-inverse-primary-12,
         'inverse-on-surface-8%': $theme-light-colors-inverse-on-surface-8,
@@ -1663,10 +1653,8 @@ $tokens: (
         'inverse-tertiary-12%': $theme-light-colors-inverse-tertiary-12,
         'inverse-tertiary-16%': $theme-light-colors-inverse-tertiary-16,
         'on-negative-container-8%': $theme-light-colors-on-negative-container-8,
-        'on-negative-container-12%':
-          $theme-light-colors-on-negative-container-12,
-        'on-negative-container-16%':
-          $theme-light-colors-on-negative-container-16,
+        'on-negative-container-12%': $theme-light-colors-on-negative-container-12,
+        'on-negative-container-16%': $theme-light-colors-on-negative-container-16,
         'on-surface-4%': $theme-light-colors-on-surface-4,
         'on-surface-variant-4%': $theme-light-colors-on-surface-variant-4,
         'inverse-on-surface-4%': $theme-light-colors-inverse-on-surface-4,
@@ -1676,8 +1664,7 @@ $tokens: (
         'inverse-primary-4%': $theme-light-colors-inverse-primary-4,
         'secondary-4%': $theme-light-colors-secondary-4,
         'on-secondary-4%': $theme-light-colors-on-secondary-4,
-        'on-secondary-container-4%':
-          $theme-light-colors-on-secondary-container-4,
+        'on-secondary-container-4%': $theme-light-colors-on-secondary-container-4,
         'inverse-secondary-4%': $theme-light-colors-inverse-secondary-4,
         'tertiary-4%': $theme-light-colors-tertiary-4,
         'on-tertiary-4%': $theme-light-colors-on-tertiary-4,
@@ -1709,8 +1696,8 @@ $tokens: (
         'background': $theme-light-colors-background,
         'surface-variant-8%': $theme-light-colors-surface-variant-8,
         'surface-variant-12%': $theme-light-colors-surface-variant-12,
-        'surface-variant-16%': $theme-light-colors-surface-variant-16,
-      ),
+        'surface-variant-16%': $theme-light-colors-surface-variant-16
+      )
     ),
     'dark': (
       'palettes': (
@@ -1865,7 +1852,7 @@ $tokens: (
         'digital blue 91': $theme-dark-palettes-digital-blue-91,
         'digital blue 92': $theme-dark-palettes-digital-blue-92,
         'digital blue 93': $theme-dark-palettes-digital-blue-93,
-        'digital blue 94': $theme-dark-palettes-digital-blue-94,
+        'digital blue 94': $theme-dark-palettes-digital-blue-94
       ),
       'colors': (
         'primary': $theme-dark-colors-primary,
@@ -1886,8 +1873,7 @@ $tokens: (
         'surface-container-low': $theme-dark-colors-surface-container-low,
         'surface-container': $theme-dark-colors-surface-container,
         'surface-container-high': $theme-dark-colors-surface-container-high,
-        'surface-container-highest':
-          $theme-dark-colors-surface-container-highest,
+        'surface-container-highest': $theme-dark-colors-surface-container-highest,
         'on-surface': $theme-dark-colors-on-surface,
         'on-surface-variant': $theme-dark-colors-on-surface-variant,
         'inverse-surface': $theme-dark-colors-inverse-surface,
@@ -1931,8 +1917,7 @@ $tokens: (
         'on-primary-container-12%': $theme-dark-colors-on-primary-container-12,
         'on-surface-variant-12%': $theme-dark-colors-on-surface-variant-12,
         'on-secondary-container-8%': $theme-dark-colors-on-secondary-container-8,
-        'on-secondary-container-16%':
-          $theme-dark-colors-on-secondary-container-16,
+        'on-secondary-container-16%': $theme-dark-colors-on-secondary-container-16,
         'outline-8%': $theme-dark-colors-outline-8,
         'outline-12%': $theme-dark-colors-outline-12,
         'outline-16%': $theme-dark-colors-outline-16,
@@ -1944,8 +1929,7 @@ $tokens: (
         'positive-16%': $theme-dark-colors-positive-16,
         'caution-16%': $theme-dark-colors-caution-16,
         'negative-12%': $theme-dark-colors-negative-12,
-        'on-secondary-container-12%':
-          $theme-dark-colors-on-secondary-container-12,
+        'on-secondary-container-12%': $theme-dark-colors-on-secondary-container-12,
         'on-primary-16%': $theme-dark-colors-on-primary-16,
         'on-primary-container-8%': $theme-dark-colors-on-primary-container-8,
         'on-primary-container-16%': $theme-dark-colors-on-primary-container-16,
@@ -2055,9 +2039,9 @@ $tokens: (
         'background': $theme-dark-colors-background,
         'surface-variant-8%': $theme-dark-colors-surface-variant-8,
         'surface-variant-12%': $theme-dark-colors-surface-variant-12,
-        'surface-variant-16%': $theme-dark-colors-surface-variant-16,
-      ),
-    ),
+        'surface-variant-16%': $theme-dark-colors-surface-variant-16
+      )
+    )
   ),
   'material': (
     'red-50': $material-red-50,
@@ -2313,7 +2297,7 @@ $tokens: (
     'blue-grey-600': $material-blue-grey-600,
     'blue-grey-700': $material-blue-grey-700,
     'blue-grey-800': $material-blue-grey-800,
-    'blue-grey-900': $material-blue-grey-900,
+    'blue-grey-900': $material-blue-grey-900
   ),
   'typography': (
     'font-family': $typography-font-family,
@@ -2364,6 +2348,6 @@ $tokens: (
     'caption-font-family': $typography-caption-font-family,
     'caption-font-size': $typography-caption-font-size,
     'caption-font-weight': $typography-caption-font-weight,
-    'caption-line-height': $typography-caption-line-height,
-  ),
+    'caption-line-height': $typography-caption-line-height
+  )
 );

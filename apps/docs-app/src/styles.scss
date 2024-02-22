@@ -42,10 +42,7 @@ $mat-font-url: './';
 @include covalent-colors();
 
 $background: map-get($td-light-theme, background);
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+@include mat.core-theme($td-light-theme);
 @include mat.all-component-themes($td-light-theme);
 @include covalent-theme($td-light-theme);
 @include covalent-markdown-theme($td-light-theme);
@@ -75,8 +72,8 @@ body .mat-card {
 // Dark theme
 .theme-dark {
   $background: map-get($td-dark-theme, background);
-
-  @include mat.all-component-themes($td-dark-theme);
+  @include mat.core-theme($td-dark-theme);
+  @include mat.all-component-colors($td-dark-theme);
   @include covalent-theme($td-dark-theme);
   @include covalent-markdown-theme($td-dark-theme);
   @include covalent-highlight-theme($td-dark-theme);
