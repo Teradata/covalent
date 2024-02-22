@@ -20,7 +20,7 @@
       "value": "{theme.light.colors.on-surface-variant}",
       "type": "color"
     },
-    "text-logo-on-background": { "value": "#354145", "type": "color" },
+    "text-logo-on-background": { "value": "#FF5F02", "type": "color" },
     "text-primary-on-light": {
       "value": "{theme.light.colors.on-surface}",
       "type": "color"
@@ -83,7 +83,7 @@
       "value": "{theme.dark.colors.on-surface-variant}",
       "type": "color"
     },
-    "text-logo-on-background": { "value": "#354145", "type": "color" },
+    "text-logo-on-background": { "value": "#ffffff", "type": "color" },
     "text-primary-on-light": {
       "value": "{theme.light.colors.on-surface}",
       "type": "color"
