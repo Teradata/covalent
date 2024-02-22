@@ -11,6 +11,12 @@
 - **icons:** adding data management icon ([#2101](https://github.com/Teradata/covalent/issues/2101)) ([498144d](https://github.com/Teradata/covalent/commit/498144d014d1a40afd9f906a14f905739de73288))
 
 ## [8.2.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.2.1) (2024-02-16)
+# [8.4.0-beta.3](https://github.com/Teradata/covalent/compare/v8.4.0-beta.2...v8.4.0-beta.3) (2024-02-22)
+
+### Features
+
+- **appshell:** sticky scrolling for headers ([a0fcd86](https://github.com/Teradata/covalent/commit/a0fcd86d4ba3a9d95d8b8cef2d625737d8b830e1))
+
 # [8.4.0-beta.2](https://github.com/Teradata/covalent/compare/v8.4.0-beta.1...v8.4.0-beta.2) (2024-02-22)
 
 ### Bug Fixes
