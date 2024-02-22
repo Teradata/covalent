@@ -11,6 +11,12 @@
 - **icons:** adding data management icon ([#2101](https://github.com/Teradata/covalent/issues/2101)) ([498144d](https://github.com/Teradata/covalent/commit/498144d014d1a40afd9f906a14f905739de73288))
 
 ## [8.2.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.2.1) (2024-02-16)
+# [8.4.0-beta.2](https://github.com/Teradata/covalent/compare/v8.4.0-beta.1...v8.4.0-beta.2) (2024-02-22)
+
+### Bug Fixes
+
+- **app-shell:** mobile styles with help open ([0042c17](https://github.com/Teradata/covalent/commit/0042c173e6f73036d729d3716bfc6e167ee0a823))
+
 # [8.4.0-beta.1](https://github.com/Teradata/covalent/compare/v8.3.0...v8.4.0-beta.1) (2024-02-21)
 
 ### Bug Fixes
