@@ -8,15 +8,17 @@
     a[target='_blank'] {
       display: inline-flex;
       align-items: center;
+      position: relative;
+      padding-right: 16px;
 
       &::after {
         content: 'open_in_new';
-        font-family: 'Material Icons', sans-serif;
+        font-family: var(--mdc-icon-font, 'Material Symbols Outlined');
         padding-left: 2px;
-
-        &:hover {
-          text-decoration: none;
-        }
+        text-decoration: none;
+        position: absolute;
+        right: 0;
+        top: 1px;
       }
     }
 
