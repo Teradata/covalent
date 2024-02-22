@@ -130,6 +130,13 @@
   }
 }
 
+[name='user-menu'] {
+  position: sticky;
+  top: 0;
+  display: block;
+  z-index: 1;
+}
+
 [name='mini-list'] {
   display: none;
   width: 320px;
@@ -159,6 +166,7 @@ nav.navigation {
   overflow-y: auto;
   border-right: 0;
   position: fixed;
+  background-color: var(--mdc-theme-surface);
 
   .toggle-drawer {
     margin: 8px auto;
@@ -167,6 +175,10 @@ nav.navigation {
   .navigation-toolbar {
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--mdc-theme-surface);
+    z-index: 2;
   }
 
   slot[name='logo'] {

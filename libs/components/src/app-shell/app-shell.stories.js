@@ -157,7 +157,7 @@ const Template = ({
         </cv-nav-list-item>
       </cv-list>
 
-      <cv-toolbar slot="user-menu" >
+      <cv-toolbar slot="user-menu" sticky>
        <span slot="title" style="display:flex; align-items: center">
         <cv-typography scale="body1">All environments</cv-typography>
         <cv-icon>arrow_drop_down</cv-icon>
@@ -170,7 +170,7 @@ const Template = ({
       </cv-toolbar>
 
       <div slot="help" class="mdc-typography">
-        <cv-toolbar>
+        <cv-toolbar sticky>
           <span slot="title">Help</span>
           <cv-icon-button
             slot="actionItems"
