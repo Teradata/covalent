@@ -174,7 +174,8 @@ const Template = ({
           <span slot="title">Help</span>
           <cv-icon-button
             slot="actionItems"
-            icon="open_in_browser"
+            icon="undock"
+            covalent-icons
           ></cv-icon-button>
           <cv-icon-button
             slot="actionItems"
@@ -183,37 +184,37 @@ const Template = ({
           ></cv-icon-button>
         </cv-toolbar>
         <div style="padding: 16px">
-          <h3 class="mdc-typography--subtitle2">
+          <cv-typography scale="headline5">
             Ultricies nunc massa, id ut felis sed varius accumsan platea.
-          </h3>
-          <p class="mdc-typography--body1">
+          </cv-typography><br />
+          <cv-typography scale="body1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
             tincidunt lectus risus, id aliquet mi congue sed.
-          </p>
-          <p class="mdc-typography--body1">
+          </cv-typography><br />
+          <cv-typography scale="body1">
             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
             pouere cubilia curae; Phasellus tincidunt eros arcu, sollicitudin
             laoreet urna aliquet eget.
-          </p>
-          <p class="mdc-typography--body1">
+          </cv-typography><br />
+          <cv-typography scale="body1">
             Phasellus porta sed libero vel vulputate. Quisque non nisl sem.
             Pellentesque nec pretium magna, et vestibulum neque. Mauris molestie
             eros quis nisi pretium,
-          </p>
-          <p class="mdc-typography--body1">
+          </cv-typography><br />
+          <cv-typography scale="body1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
             tincidunt lectus risus, id aliquet mi congue sed.
-          </p>
-          <p class="mdc-typography--body1">
+          </cv-typography><br />
+          <cv-typography scale="body1">
             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
             pouere cubilia curae; Phasellus tincidunt eros arcu, sollicitudin
             laoreet urna aliquet eget.
-          </p>
-          <p class="mdc-typography--body1">
+          </cv-typography><br />
+          <cv-typography scale="body1">
             Phasellus porta sed libero vel vulputate. Quisque non nisl sem.
             Pellentesque nec pretium magna, et vestibulum neque. Mauris molestie
             eros quis nisi pretium,
-          </p>
+          </cv-typography>
         </div>
       </div>
       <div slot="mini-list">

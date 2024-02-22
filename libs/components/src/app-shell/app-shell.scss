@@ -34,8 +34,6 @@
   display: grid;
   grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
   min-height: 100%;
-  position: fixed;
-  width: 100%;
 
   // TD Tiger stripe
   &::after {
@@ -46,6 +44,11 @@
     width: 100%;
     z-index: 1000;
     background-color: #ff5f02;
+  }
+  /* Desktop only styles */
+  @media only screen and (min-width: 768px) {
+    position: fixed;
+    width: 100%;
   }
 }
 
@@ -74,10 +77,10 @@
     .cov-drawer--open & {
       margin-left: 256px;
     }
-  }
 
-  .cov-help--open & {
-    margin-right: 320px;
+    .cov-help--open & {
+      margin-right: 320px;
+    }
   }
 }
 
@@ -94,6 +97,13 @@
   .cov-help--closed & {
     width: 0;
     border: none;
+  }
+
+  /* Mobile only styles */
+  @media only screen and (max-width: 768px) {
+    background-color: var(--mdc-theme-surface);
+    width: 100%;
+    z-index: 100;
   }
 }
 
