@@ -1,3 +1,9 @@
+## [8.3.1](https://github.com/Teradata/covalent/compare/v8.3.0...v8.3.1) (2024-02-22)
+
+### Bug Fixes
+
+- **markdown:** external icon for target \_blank ([#2070](https://github.com/Teradata/covalent/issues/2070)) ([13280fc](https://github.com/Teradata/covalent/commit/13280fc1b858c4dfb6a8fd4d13cc7624078f8bd2))
+
 # [8.3.0](https://github.com/Teradata/covalent/compare/v8.2.1...v8.3.0) (2024-02-20)
 
 ### Features
