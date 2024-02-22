@@ -12,7 +12,14 @@
           "npx knapsack --config apps/knapsack/knapsack.config.js build"
         ],
         "parallel": false
-      }
+      },
+      "dependsOn": [
+        {
+          "projects": ["components"],
+          "target": "build",
+          "params": "ignore"
+        }
+      ]
     },
     "start": {
       "executor": "nx:run-commands",
@@ -22,7 +29,8 @@
           "npx knapsack --config apps/knapsack/knapsack.config.js start"
         ],
         "parallel": false
-      }
+      },
+      "dependsOn": ["build"]
     },
     "serve": {
       "executor": "nx:run-commands",
@@ -32,7 +40,8 @@
           "NODE_ENV=production npx knapsack --config apps/knapsack/knapsack.config.js serve"
         ],
         "parallel": false
-      }
+      },
+      "dependsOn": ["build"]
     },
     "test": {
       "executor": "nx:run-commands",
@@ -42,7 +51,14 @@
           "npx knapsack --config apps/knapsack/knapsack.config.js test"
         ],
         "parallel": false
-      }
+      },
+      "dependsOn": [
+        {
+          "projects": ["components"],
+          "target": "build",
+          "params": "ignore"
+        }
+      ]
     }
   },
   "tags": []
