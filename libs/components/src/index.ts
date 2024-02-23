@@ -11,6 +11,9 @@ export * from './code-snippet/code-snippet';
 export * from './dialog/dialog';
 export * from './drawer/drawer';
 export * from './empty-state/empty-state';
+export * from './expansion-panel/expansion-panel';
+export * from './expansion-panel/expansion-panel-item';
+export * from './formfield/formfield';
 export * from './icon/icon';
 export * from './icon-button/icon-button';
 export * from './icon-checkbox/icon-check-toggle';
@@ -44,4 +47,4 @@ export * from './tree-list/tree-list';
 export * from './tree-list/tree-list-item';
 export * from './typography/typography';
 
-import '../theme/theme.scss';
+import './index.scss';

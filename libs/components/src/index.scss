@@ -1,7 +1,7 @@
 @use '@covalent/tokens/index.scss' as tokens;
-@use '../src/icon/icon' as icon;
-@use '../src/skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
-@use './mixins' as theme;
+@use './icon/icon' as icon;
+@use './skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
+@use './theme/mixins' as theme;
 @import '../../icons/covalent-icons.css';
 
 @include icon.core-styles(); // TODO - include future support in icons css

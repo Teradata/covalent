@@ -31,7 +31,7 @@
       }
     },
     "build-scss": {
-      "builder": "nx:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "mkdir -p dist/libs/angular/common/",
