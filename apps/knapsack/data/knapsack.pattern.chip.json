@@ -1,0 +1,53 @@
+{
+  "id": "chip",
+  "title": "Chip",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-7wYRPSnEZH",
+      "title": "Web Components",
+      "path": "../../../dist/libs/components/chip-set.mjs",
+      "alias": "cv-chip-set",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "allowedPatternIds": ["chip-item"],
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["selectable"],
+          "properties": {
+            "selectable": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["HyZJsWXVOc"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-7wYRPSnEZH"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

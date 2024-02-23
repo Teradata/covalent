@@ -1,9 +1,10 @@
 {
-  "id": "aA1VvxNR64",
+  "id": "s8qcpKF1wh",
   "blockType": "design-tokens",
   "data": {
     "demoId": "color-swatch",
     "tokenType": "color",
-    "groupIds": ["theme.light.colors"]
+    "groupIds": ["theme.light.palettes"],
+    "include": "emphasis"
   }
 }

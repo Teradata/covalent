@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-fObxCsu2i8",
-      "title": "cv-list",
+      "title": "Web Components",
       "path": "../../../dist/libs/components/list.mjs",
       "alias": "cv-list",
       "templateLanguageId": "web-components",

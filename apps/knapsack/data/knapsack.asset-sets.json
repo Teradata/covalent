@@ -1,18 +1,46 @@
 {
-  "globalAssetSetIds": ["default"],
+  "globalAssetSetIds": ["light", "dark"],
   "allAssetSets": {
-    "default": {
-      "id": "default",
-      "title": "default",
+    "light": {
+      "id": "light",
+      "title": "Light",
       "assets": [
         {
           "src": "../../../dist/libs/components/index.mjs",
+          "includedRenderers": ["web-components"],
           "attributes": {
             "type": "module"
           }
         },
         {
-          "src": "../../../dist/libs/components/style.css"
+          "src": "../../../dist/libs/components/theme/light-theme.css",
+          "includedRenderers": ["web-components"]
+        },
+        {
+          "src": "../public/ks-overrides.css"
+        },
+        {
+          "src": "../public/material-fonts-icons.css"
+        }
+      ]
+    },
+    "dark": {
+      "id": "dark",
+      "title": "Dark",
+      "assets": [
+        {
+          "src": "../../../dist/libs/components/index.mjs",
+          "includedRenderers": ["web-components"],
+          "attributes": {
+            "type": "module"
+          }
+        },
+        {
+          "src": "../public/ks-overrides.css"
+        },
+        {
+          "src": "../../../dist/libs/components/theme/dark-theme.css",
+          "includedRenderers": ["web-components"]
         },
         {
           "src": "../public/material-fonts-icons.css"

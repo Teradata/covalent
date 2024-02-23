@@ -1,0 +1,32 @@
+{
+  "id": "Yu7DvlfMdG",
+  "title": "Main",
+  "type": "data",
+  "patternId": "expansion-panel",
+  "templateId": "web-components-Vj98q2D8hw",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "expansion-panel-item",
+          "templateId": "web-components-vBLifAApG",
+          "demoId": "w0H1gm2jvp"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "expansion-panel-item",
+          "templateId": "web-components-vBLifAApG",
+          "demoId": "w0H1gm2jvp"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "expansion-panel-item",
+          "templateId": "web-components-vBLifAApG",
+          "demoId": "w0H1gm2jvp"
+        }
+      ]
+    }
+  }
+}

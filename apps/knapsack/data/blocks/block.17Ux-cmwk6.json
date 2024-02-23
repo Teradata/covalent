@@ -1,0 +1,11 @@
+{
+  "id": "17Ux-cmwk6",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.dark.colors"],
+    "include": "emphasis",
+    "exclude": "on"
+  }
+}

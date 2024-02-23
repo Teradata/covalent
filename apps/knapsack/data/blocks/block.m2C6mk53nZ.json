@@ -1,0 +1,10 @@
+{
+  "id": "m2C6mk53nZ",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.light.palettes"],
+    "include": "digital"
+  }
+}

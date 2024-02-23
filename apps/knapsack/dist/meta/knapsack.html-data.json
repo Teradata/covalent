@@ -162,6 +162,46 @@
       ]
     },
     {
+      "name": "cv-chip-set",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/chip/web-components-7wYRPSnEZH"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "selectable",
+          "description": "(required) boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-chip",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/chip-item/web-components-vegaZgkE47"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "(required)"
+        },
+        {
+          "name": "state",
+          "description": ""
+        },
+        {
+          "name": "filter",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
       "name": "cv-circular-progress",
       "description": "",
       "references": [
@@ -245,6 +285,42 @@
         },
         {
           "name": "icon",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-expansion-panel",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/expansion-panel/web-components-Vj98q2D8hw"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "noSurface",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-expansion-panel-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/expansion-panel-item/web-components-vBLifAApG"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "title",
+          "description": ""
+        },
+        {
+          "name": "contentPreview",
           "description": ""
         }
       ]

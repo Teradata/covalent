@@ -1,0 +1,11 @@
+{
+  "id": "0pGlu50vut",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.dark.palettes"],
+    "include": "positive",
+    "exclude": ""
+  }
+}

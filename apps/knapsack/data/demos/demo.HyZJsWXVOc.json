@@ -1,0 +1,34 @@
+{
+  "id": "HyZJsWXVOc",
+  "title": "Main",
+  "type": "data",
+  "patternId": "chip",
+  "templateId": "web-components-7wYRPSnEZH",
+  "data": {
+    "props": {
+      "selectable": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "chip-item",
+          "templateId": "web-components-vegaZgkE47",
+          "demoId": "zDg2SpdOHk"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "chip-item",
+          "templateId": "web-components-vegaZgkE47",
+          "demoId": "zDg2SpdOHk"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "chip-item",
+          "templateId": "web-components-vegaZgkE47",
+          "demoId": "zDg2SpdOHk"
+        }
+      ]
+    }
+  }
+}

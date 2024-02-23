@@ -1,0 +1,11 @@
+{
+  "id": "ReqAiACI1c",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.dark.colors"],
+    "include": "secondary",
+    "exclude": "on-"
+  }
+}
