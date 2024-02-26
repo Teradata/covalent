@@ -4,9 +4,11 @@
   font-weight: 600;
   line-height: var(--mdc-typography-body2-line-height);
   text-align: left;
-  border-radius: var(--cv-list-item-border-radius, 28px);
+  border-radius: var(--cv-list-item-border-radius, 100px);
   transition: border-radius 100ms ease-out;
   width: var(--cv-list-item-width, 100%);
+
+  --mdc-list-item-graphic-margin: 8px;
 }
 
 ::slotted(.section-selector) {
@@ -65,7 +67,7 @@
   padding: 0;
 
   --mdc-list-side-padding: 0;
-  --cv-list-item-graphic-margin-left: 12px;
+  --cv-list-item-graphic-margin-left: 0;
 }
 
 :host([hasChildren][open]:hover:not([activated])) {
@@ -79,14 +81,18 @@
 }
 
 .expansion-header {
-  border-radius: var(--cv-list-item-border-radius);
   position: relative;
   height: 48px;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-shrink: 0;
   align-items: center;
+
+  mwc-ripple {
+    border-radius: var(--cv-list-item-border-radius);
+    overflow: hidden;
+  }
 }
 
 .expansion-header-inner {
@@ -94,7 +100,7 @@
 }
 
 .expansion-icon {
-  margin-right: var(--cv-list-item-expansion-icon-margin, -12px);
+  margin-right: var(--cv-list-item-expansion-icon-margin, 0);
   font-size: var(--cv-list-item-expansion-icon-size, --mdc-icon-size);
   color: var(
     --cv-list-item-text-icon-on-background,

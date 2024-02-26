@@ -2,6 +2,10 @@
 
 @include card.core-styles;
 
+.mdc-card {
+  --mdc-theme-surface: var(--cov-theme-surface-container-lowest, #ffffff);
+}
+
 .mdc-typography--headline5 {
   font-family: var(--mdc-typography-headline5-font-family);
   font-size: var(--mdc-typography-headline5-font-size);
