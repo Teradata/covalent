@@ -1,6 +1,6 @@
 import { parameters as mainParameters } from '../../../.storybook/preview';
 
-import '../theme/theme.scss';
+import '../src/index.scss';
 import '../../../.storybook/theme/markdown-elements.scss';
 
 export const parameters = {

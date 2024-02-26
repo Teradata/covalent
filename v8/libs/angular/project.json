@@ -22,16 +22,8 @@
       },
       "defaultConfiguration": "production"
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/angular"],
-      "options": {
-        "jestConfig": "libs/angular/jest.config.js",
-        "passWithNoTests": true
-      }
-    },
     "build-scss": {
-      "builder": "nx:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "mkdir -p dist/libs/angular/common/",
@@ -40,6 +32,14 @@
           "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/angular/theming/prebuilt/:./dist/libs/angular/theming/prebuilt/"
         ],
         "parallel": false
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/angular"],
+      "options": {
+        "jestConfig": "libs/angular/jest.config.js",
+        "passWithNoTests": true
       }
     },
     "lint": {
