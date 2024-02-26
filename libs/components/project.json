@@ -34,7 +34,8 @@
         ],
         "parallel": false
       },
-      "outputs": ["{workspaceRoot}/dist/libs/components/theme"]
+      "outputs": ["{workspaceRoot}/dist/libs/components/theme"],
+      "dependsOn": ["build"]
     },
     "test": {
       "executor": "nx:run-commands",
