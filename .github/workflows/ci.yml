@@ -69,3 +69,4 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx nx affected --target=build --base=${{ github.event.pull_request.base.sha }}
+      - run: npx nx affected --target=build-scss --base=${{ github.event.pull_request.base.sha }}
