@@ -1,5 +1,5 @@
 // Covalent themed components
-@use '../src/data-table/data-table.theme' as data-table;
+@use '../data-table/data-table.theme' as data-table;
 
 @mixin components-theme($theme, $typography) {
   // Foreground colors
