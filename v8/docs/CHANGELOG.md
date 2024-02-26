@@ -1,3 +1,9 @@
+# [8.5.0](https://github.com/Teradata/covalent/compare/v8.4.0...v8.5.0) (2024-02-26)
+
+### Features
+
+- **components:** separating theme into light/dark files ([#2106](https://github.com/Teradata/covalent/issues/2106)) ([9c2c486](https://github.com/Teradata/covalent/commit/9c2c48667f1c0c47d8fda7254035de477843c2be))
+
 # [8.4.0](https://github.com/Teradata/covalent/compare/v8.3.1...v8.4.0) (2024-02-26)
 
 ### Features
