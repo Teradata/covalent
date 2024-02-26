@@ -1,0 +1,52 @@
+{
+  "id": "expansion-panel-item",
+  "title": "Expansion panel item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-vBLifAApG",
+      "title": "Web Components",
+      "path": " ../../../dist/libs/components/checkbox.mjs",
+      "alias": "cv-expansion-panel-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "title": {
+              "type": "string",
+              "default": "Title"
+            },
+            "contentPreview": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "demoIds": ["w0H1gm2jvp"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-vBLifAApG"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

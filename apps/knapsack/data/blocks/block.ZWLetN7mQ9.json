@@ -1,0 +1,11 @@
+{
+  "id": "ZWLetN7mQ9",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.dark.colors", "theme.light.colors"],
+    "include": "caution",
+    "exclude": ""
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "RpNVeUD4VR",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.light.colors"],
+    "include": "caution-",
+    "exclude": "-on-"
+  }
+}

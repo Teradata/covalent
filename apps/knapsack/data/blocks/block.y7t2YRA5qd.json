@@ -2,6 +2,23 @@
   "id": "y7t2YRA5qd",
   "blockType": "text-editor",
   "data": {
-    "content": {}
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 3
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Light Primary"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

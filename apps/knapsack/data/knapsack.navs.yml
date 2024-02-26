@@ -34,6 +34,16 @@ byId:
     name: Checkbox
     parentId: test-page
     path: /pattern/checkbox
+  chip:
+    id: chip
+    name: Chip
+    parentId: test-page
+    path: /pattern/chip
+  chip-item:
+    id: chip-item
+    name: Chip item
+    parentId: chip
+    path: /pattern/chip-item
   circular-progress:
     id: circular-progress
     name: Circular progress
@@ -42,12 +52,22 @@ byId:
   code-snippet:
     id: code-snippet
     name: Code snippet
-    parentId: test-page
+    parentId: checkbox
     path: /pattern/code-snippet
+  colors:
+    id: colors
+    name: Dark
+    parentId: light
+    path: /pages/colors
+  colors-okgyf0rxrr:
+    id: colors-okgyf0rxrr
+    name: Light
+    parentId: light
+    path: /pages/colors-okgyf0rxrr
   dark:
     id: dark
     name: Dark
-    parentId: tokens
+    parentId: palettes-lm0uu73t4r
     path: /pages/dark
   dialog:
     id: dialog
@@ -64,6 +84,12 @@ byId:
     name: Expansion panel
     parentId: test-page
     path: /pattern/expansion-panel
+  expansion-panel-item:
+    hidden: true
+    id: expansion-panel-item
+    name: Expansion panel item
+    parentId: expansion-panel
+    path: /pattern/expansion-panel-item
   icon:
     id: icon
     name: Icon
@@ -86,8 +112,8 @@ byId:
     path: /pattern/icon-radio
   light:
     id: light
-    name: Light
-    parentId: tokens
+    name: Colors
+    parentId: typography
     path: /pages/light
   linear-progress:
     id: linear-progress
@@ -100,6 +126,7 @@ byId:
     parentId: test-page
     path: /pattern/list
   list-item:
+    hidden: true
     id: list-item
     name: List item
     parentId: list
@@ -109,6 +136,16 @@ byId:
     name: Menu
     parentId: test-page
     path: /pattern/menu
+  palettes:
+    id: palettes
+    name: Light
+    parentId: palettes-lm0uu73t4r
+    path: /pages/palettes
+  palettes-lm0uu73t4r:
+    id: palettes-lm0uu73t4r
+    name: Palettes
+    parentId: tokens
+    path: /pages/palettes-lm0uu73t4r
   radio:
     id: radio
     name: Radio
@@ -235,10 +272,14 @@ order:
   - alert
   - app-shell
   - action-ribbon
-  - button
   - breadcrumbs
+  - button
   - card
   - checkbox
+  - code-snippet
+  - chip
+  - chip-item
+  - circular-progress
   - text
   - textfield
   - text-area
@@ -247,13 +288,12 @@ order:
   - icon-button
   - icon-checkbox
   - icon-radio
-  - code-snippet
-  - circular-progress
   - slider
   - toolbar
   - dialog
   - empty-state
   - expansion-panel
+  - expansion-panel-item
   - linear-progress
   - list
   - list-item
@@ -273,7 +313,11 @@ order:
   - tree-list
   - tree-list-item
   - tokens
-  - writing
-  - light
-  - dark
   - typography
+  - light
+  - colors-okgyf0rxrr
+  - colors
+  - palettes-lm0uu73t4r
+  - palettes
+  - dark
+  - writing

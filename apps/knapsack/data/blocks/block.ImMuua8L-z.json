@@ -1,0 +1,11 @@
+{
+  "id": "ImMuua8L-z",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.light.palettes"],
+    "include": "neutral",
+    "exclude": ""
+  }
+}

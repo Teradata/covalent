@@ -1,0 +1,11 @@
+{
+  "id": "3aOfl99XQO",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.light.palettes"],
+    "include": "positive",
+    "exclude": ""
+  }
+}

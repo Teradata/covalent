@@ -1,0 +1,55 @@
+{
+  "id": "chip-item",
+  "title": "Chip item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-vegaZgkE47",
+      "title": "Web Components",
+      "path": "../../../dist/libs/components/chip.mjs",
+      "alias": "cv-chip",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["label"],
+          "properties": {
+            "label": {
+              "type": "string",
+              "default": "Chip"
+            },
+            "state": {
+              "type": "string"
+            },
+            "filter": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["zDg2SpdOHk"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-vegaZgkE47"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "FONQaoI-jL",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["theme.dark.palettes"],
+    "include": "secondary"
+  }
+}

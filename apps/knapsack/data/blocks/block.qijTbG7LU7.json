@@ -1,0 +1,24 @@
+{
+  "id": "qijTbG7LU7",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 3
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Caution"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

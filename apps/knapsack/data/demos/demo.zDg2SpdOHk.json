@@ -1,0 +1,14 @@
+{
+  "id": "zDg2SpdOHk",
+  "title": "Main",
+  "type": "data",
+  "patternId": "chip-item",
+  "templateId": "web-components-vegaZgkE47",
+  "data": {
+    "props": {
+      "label": "Chip",
+      "filter": true
+    },
+    "slots": {}
+  }
+}
