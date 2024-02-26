@@ -1,3 +1,9 @@
+# [8.4.0](https://github.com/Teradata/covalent/compare/v8.3.1...v8.4.0) (2024-02-26)
+
+### Features
+
+- **app-shell:** refresh app shell UX ([#2102](https://github.com/Teradata/covalent/issues/2102)) ([a46449e](https://github.com/Teradata/covalent/commit/a46449ec782ed8e1ab04a8ea0db5c5e9fcf296af))
+
 # [8.4.0-beta.1](https://github.com/Teradata/covalent/compare/v8.3.1...v8.4.0-beta.1) (2024-02-26)
 
 ### Bug Fixes
