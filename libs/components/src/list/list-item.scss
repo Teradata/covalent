@@ -6,3 +6,8 @@
 .mdc-deprecated-list-item__text {
   padding-left: var(--cv-list-item-text-padding, 0);
 }
+
+.mdc-deprecated-list-item__meta {
+  display: flex;
+  align-items: center;
+}

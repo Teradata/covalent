@@ -10,6 +10,7 @@
   --mdc-theme-surface: var(--mdc-theme-background);
   --mdc-list-vertical-padding: 0;
   --cv-list-padding-right: 0;
+  --cv-list-padding-left: 12px;
   --cv-list-item-border-radius: 100%;
   --cv-list-item-width: 48px;
   --cv-list-item-graphic-margin-left: 0;
@@ -18,10 +19,11 @@
 }
 
 :host([open]) {
-  --cv-list-padding-right: 16px;
-  --cv-list-item-border-radius: 0 28px 28px 0;
+  --cv-list-padding-right: 12px;
+  --cv-list-padding-left: 12px;
+  --cv-list-item-border-radius: 100px;
   --cv-list-item-width: 100%;
-  --cv-list-item-graphic-margin-left: 12px;
+  --cv-list-item-graphic-margin-left: 0;
   --cv-list-item-expansion-icon-margin: -24px;
   --cv-list-item-expansion-icon-size: 24px;
   --cv-list-menu-height: inherit;
@@ -31,26 +33,36 @@
   background-color: var(--mdc-theme-surface);
   display: grid;
   grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
-  min-height: 100vh;
+  min-height: 100%;
 
   // TD Tiger stripe
   &::after {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 2px;
     width: 100%;
     z-index: 1000;
     background-color: #ff5f02;
   }
+
+  /* Desktop only styles */
+  @media only screen and (min-width: 768px) {
+    position: fixed;
+    width: 100%;
+  }
 }
 
 .main {
-  grid-area: main;
-  overflow: auto;
   height: 100vh;
-  border-left: 1px solid;
-  border-color: var(--mdc-theme-border, rgba(black, 0.12));
+  grid-area: main;
+  overflow: scroll;
+  transition: margin 200ms ease-in-out;
+
+  cv-card {
+    margin: 0 12px 12px;
+    display: block;
+  }
 
   /* Desktop only styles */
   @media only screen and (min-width: 768px) {
@@ -64,32 +76,41 @@
     }
 
     .cov-drawer--open & {
-      margin-left: 0;
+      margin-left: 256px;
+    }
+
+    .cov-help--open & {
+      margin-right: 320px;
     }
   }
 }
 
 .help {
   grid-area: help;
+  position: fixed;
+  right: 0;
   width: 320px;
   height: 100vh;
   overflow-y: auto;
-  border-left: 1px solid;
-  border-color: var(--mdc-theme-border, rgba(black, 0.12));
   transition-property: width;
   transition-duration: 200ms;
 
-  &.help--closed {
+  .cov-help--closed & {
     width: 0;
     border: none;
+  }
+
+  /* Mobile only styles */
+  @media only screen and (max-width: 768px) {
+    background-color: var(--mdc-theme-surface);
+    width: 100%;
+    z-index: 100;
   }
 }
 
 .current-section {
   align-items: center;
-  border-bottom: 1px solid var(--mdc-theme-border);
   display: flex;
-  column-gap: 12px;
   font-size: var(--mdc-typography-body2-font-size);
   font-family: var(--mdc-typography-body2-font-family);
   font-weight: 600;
@@ -99,12 +120,26 @@
   padding: 8px 16px 8px 12px;
   position: relative;
   text-align: left;
+
+  .current-section-name {
+    opacity: 0;
+    transition: opacity 150ms;
+
+    :host([open]) & {
+      opacity: 1;
+    }
+  }
+}
+
+[name='user-menu'] {
+  position: sticky;
+  top: 0;
+  display: block;
+  z-index: 1;
 }
 
 [name='mini-list'] {
   display: none;
-  border-left: 1px solid;
-  border-color: var(--mdc-theme-border, rgba(black, 0.12));
   width: 320px;
   height: 100vh;
 
@@ -131,15 +166,20 @@ nav.navigation {
   height: 100vh;
   overflow-y: auto;
   border-right: 0;
+  position: fixed;
+  background-color: var(--mdc-theme-surface);
 
   .toggle-drawer {
     margin: 8px auto;
   }
 
   .navigation-toolbar {
-    border-bottom: 1px solid var(--mdc-theme-border);
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--mdc-theme-surface);
+    z-index: 2;
   }
 
   slot[name='logo'] {
@@ -154,18 +194,15 @@ nav.navigation {
   :not(.cov-drawer--forced-open) &,
   :not(.cov-drawer--forced-open) &.mdc-drawer--closed,
   :not(.cov-drawer--forced-open) &.mdc-drawer--closing {
-    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
   }
 
   &.mdc-drawer--open {
-    background-color: var(--mdc-theme-surface);
-
     .toggle-drawer {
       margin-left: 12px;
-      margin-right: 12px;
+      margin-right: 0;
     }
 
     slot[name='logo'] {
@@ -177,6 +214,7 @@ nav.navigation {
     box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 20%),
       0 24px 38px 3px rgba(0, 0, 0, 14%), 0 9px 46px 8px rgba(0, 0, 0, 12%);
     border-right: 1px solid var(--mdc-theme-border);
+    background-color: var(--mdc-theme-surface);
   }
 }
 

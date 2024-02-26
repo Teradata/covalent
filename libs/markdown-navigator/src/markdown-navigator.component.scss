@@ -9,6 +9,7 @@
 
   .breadcrumb-current-title {
     margin-bottom: 16px;
+    padding-left: 16px;
   }
 
   .breadcrumb-end-icon {
@@ -32,6 +33,10 @@
 
   .td-markdown-list > .mat-list {
     padding-top: 0;
+  }
+
+  td-breadcrumbs {
+    padding: 8px 8px 0 16px;
   }
 
   td-flavored-markdown-loader {

@@ -1,3 +1,17 @@
+# [8.4.0-beta.1](https://github.com/Teradata/covalent/compare/v8.3.1...v8.4.0-beta.1) (2024-02-26)
+
+### Bug Fixes
+
+- **app-shell:** mobile styles with help open ([224c8f6](https://github.com/Teradata/covalent/commit/224c8f67589c22cf6676b3ef4798e0dc9a3a3064))
+- **compoents:** updating tokens import path ([be89cc7](https://github.com/Teradata/covalent/commit/be89cc73bd331365df9698667b02c6bfc8afe452))
+- **components:** adding packages for secondary ([488e970](https://github.com/Teradata/covalent/commit/488e9707e9db8a8c4381e68271e5697140504843))
+
+### Features
+
+- **appshell:** sticky scrolling for headers ([0f679ec](https://github.com/Teradata/covalent/commit/0f679ec2be4ec6059a09b194dc8e32c6ee3e939c))
+- **appshell:** updating scrolling behavior ([66e2b30](https://github.com/Teradata/covalent/commit/66e2b30b8849944eb0e9b6b59ad51a002e3873f7))
+- **components:** updating text in story for app shell ([5d6c30a](https://github.com/Teradata/covalent/commit/5d6c30a2ba8e42a0ed304c2441cd3c2e5988e9f1))
+
 ## [8.3.1](https://github.com/Teradata/covalent/compare/v8.3.0...v8.3.1) (2024-02-22)
 
 ### Bug Fixes
@@ -12,9 +26,47 @@
 
 ## [8.2.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.2.1) (2024-02-16)
 
+# [8.4.0-beta.3](https://github.com/Teradata/covalent/compare/v8.4.0-beta.2...v8.4.0-beta.3) (2024-02-22)
+
+### Features
+
+- **appshell:** sticky scrolling for headers ([a0fcd86](https://github.com/Teradata/covalent/commit/a0fcd86d4ba3a9d95d8b8cef2d625737d8b830e1))
+
+# [8.4.0-beta.2](https://github.com/Teradata/covalent/compare/v8.4.0-beta.1...v8.4.0-beta.2) (2024-02-22)
+
 ### Bug Fixes
 
-- **tokens:** updating logo on background ([#2098](https://github.com/Teradata/covalent/issues/2098)) ([e560cc9](https://github.com/Teradata/covalent/commit/e560cc9efe8ee5744e38a1274823292341b5bac5))
+- **app-shell:** mobile styles with help open ([0042c17](https://github.com/Teradata/covalent/commit/0042c173e6f73036d729d3716bfc6e167ee0a823))
+
+# [8.4.0-beta.1](https://github.com/Teradata/covalent/compare/v8.3.0...v8.4.0-beta.1) (2024-02-21)
+
+### Bug Fixes
+
+- **compoents:** updating tokens import path ([028a855](https://github.com/Teradata/covalent/commit/028a8557435a6d2123f0fe226c93204e80d0f99c))
+- **components:** adding packages for secondary ([920921b](https://github.com/Teradata/covalent/commit/920921bcb408aa197da144e2e025f3bbcd8ea5e9))
+
+### Features
+
+- **appshell:** updating scrolling behavior ([ab68edc](https://github.com/Teradata/covalent/commit/ab68edc4f1d6a15805b8c26477957e6b480a1fb8))
+- **components:** updating text in story for app shell ([d8d8bb5](https://github.com/Teradata/covalent/commit/d8d8bb5a075c79d2f116349aa34b87887dad131e))
+
+# [8.3.0-beta.3](https://github.com/Teradata/covalent/compare/v8.3.0-beta.2...v8.3.0-beta.3) (2024-02-20)
+
+### Bug Fixes
+
+- **compoents:** updating tokens import path ([b5294c8](https://github.com/Teradata/covalent/commit/b5294c834fcbf57c4a72242b198d0fcf7c900005))
+
+# [8.3.0-beta.2](https://github.com/Teradata/covalent/compare/v8.3.0-beta.1...v8.3.0-beta.2) (2024-02-20)
+
+### Bug Fixes
+
+- **components:** adding packages for secondary ([3e0c211](https://github.com/Teradata/covalent/commit/3e0c211c442cbbdbd80f45b1392cc27e144af13e))
+
+# [8.3.0-beta.1](https://github.com/Teradata/covalent/compare/v8.2.0...v8.3.0-beta.1) (2024-02-16)
+
+### Features
+
+- **components:** updating text in story for app shell ([dabd2c7](https://github.com/Teradata/covalent/commit/dabd2c7bb76b73fde6bf9afa659b41ffc23c62e8))
 
 # [8.2.0](https://github.com/Teradata/covalent/compare/v8.1.0...v8.2.0) (2024-02-14)
 
