@@ -98,6 +98,13 @@
       surface-primary-highlight-hover
     )};
 
+  // Tooltip
+  --mdc-plain-tooltip-container-color: #{map-get($theme, inverse-surface)};
+  --mdc-plain-tooltip-supporting-text-color: #{map-get(
+      $theme,
+      inverse-on-surface
+    )};
+
   // Typography
   --mdc-typography-font-family: #{map-get($typography, font-family)};
   --mdc-typography-headline1-font-family: #{map-get(
@@ -298,6 +305,8 @@
   --mdc-icon-font: 'Material Symbols Outlined';
 
   // Covalent Specific variables
+  --cov-theme-on-surface-variant: #{map-get($theme, on-surface-variant)};
+  --cov-theme-surface-container: #{map-get($theme, surface-container)};
   --cov-theme-surface-container-lowest: #{map-get(
       $theme,
       surface-container-lowest

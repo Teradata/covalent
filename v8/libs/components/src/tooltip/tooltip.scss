@@ -1,12 +1,16 @@
 @use '@material/tooltip/tooltip-theme' as tooltip-theme;
 @use '@material/tooltip/styles' as tooltip;
 
-@include tooltip-theme.rich-text-ink-color(
-  var(--mdc-theme-text-primary-on-background),
-  var(--mdc-theme-text-primary-on-background),
-  var(--mdc-theme-accent)
+@include tooltip-theme.fill-color(var(--mdc-plain-tooltip-container-color));
+@include tooltip-theme.label-ink-color(
+  var(--mdc-plain-tooltip-supporting-text-color)
 );
 
 .mdc-tooltip {
-  @include tooltip-theme.rich-fill-color(var(--mdc-theme-surface));
+  @include tooltip-theme.rich-fill-color(var(--cov-theme-surface-container));
+  @include tooltip-theme.rich-text-ink-color(
+    var(--cv-theme-on-surface-variant),
+    var(--cv-theme-on-surface-variant),
+    var(--mdc-theme-accent)
+  );
 }

@@ -163,7 +163,7 @@ import{t as K}from"./table-row-selection.content-2dc6f2e9.js";/* empty css      
       <div class="expansion-panel" @click=${this._deselectHeader}>
         <slot name="expansion-panel"></slot>
       </div>
-    `}connectedCallback(){super.connectedCallback(),this.addEventListener("keydown",this._handleKeydown),this.addEventListener("request-selected",this._handleRequestSelected)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("keydown",this._handleKeydown),this.addEventListener("request-selected",this._handleRequestSelected)}renderMeta(){const e=this.open?"arrow_drop_down":"arrow_right",t=c`<cv-icon slot="meta" class="expansion-icon"
+    `}connectedCallback(){super.connectedCallback(),this.addEventListener("keydown",this._handleKeydown),this.addEventListener("request-selected",this._handleRequestSelected)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("keydown",this._handleKeydown),this.addEventListener("request-selected",this._handleRequestSelected)}renderMeta(){const e=this.open?"arrow_drop_up":"arrow_drop_down",t=c`<cv-icon slot="meta" class="expansion-icon"
       >${e}</cv-icon
     >`;return c` <span class="mdc-deprecated-list-item__meta material-icons">
       ${t}
