@@ -23,4 +23,12 @@
   @include td-json-formatter-theme($theme);
   @include td-message-theme($theme);
   @include td-side-sheet-theme($theme);
+
+  $foreground: map-get(map-get($theme, color), foreground);
+  $inverse-on-surface: map-get($foreground, inverse-on-surface);
+
+  .mdc-tooltip__surface {
+    // Tooltip fix to override the correct fill color in MDC styles
+    --mdc-plain-tooltip-supporting-text-color: #{$inverse-on-surface};
+  }
 }
