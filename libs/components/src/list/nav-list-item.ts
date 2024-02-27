@@ -177,7 +177,7 @@ export class CovalentNavRailListItem extends CovalentListItem {
   }
 
   protected override renderMeta() {
-    const arrowIcon = this.open ? 'arrow_drop_down' : 'arrow_right';
+    const arrowIcon = this.open ? 'arrow_drop_up' : 'arrow_drop_down';
     const arrow = html`<cv-icon slot="meta" class="expansion-icon"
       >${arrowIcon}</cv-icon
     >`;
