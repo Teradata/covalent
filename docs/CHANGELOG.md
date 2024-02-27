@@ -1,3 +1,9 @@
+## [8.5.1](https://github.com/Teradata/covalent/compare/v8.5.0...v8.5.1) (2024-02-27)
+
+### Bug Fixes
+
+- **docs-app:** adjusting how docs pulls active theme ([#2109](https://github.com/Teradata/covalent/issues/2109)) ([e4de3ce](https://github.com/Teradata/covalent/commit/e4de3cea67f5d961de247128b905a874e4c1a560))
+
 # [8.5.0](https://github.com/Teradata/covalent/compare/v8.4.0...v8.5.0) (2024-02-26)
 
 ### Features
