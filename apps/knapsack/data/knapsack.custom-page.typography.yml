@@ -2,3 +2,7 @@ title: Typography
 id: typography
 blockIds:
   - NiGVnAPPLN
+settings:
+  pageHeader:
+    backgroundOverlay: false
+    backgroundSize: cover

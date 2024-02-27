@@ -40,6 +40,7 @@ byId:
     parentId: test-page
     path: /pattern/chip
   chip-item:
+    hidden: true
     id: chip-item
     name: Chip item
     parentId: chip
@@ -52,7 +53,7 @@ byId:
   code-snippet:
     id: code-snippet
     name: Code snippet
-    parentId: checkbox
+    parentId: test-page
     path: /pattern/code-snippet
   colors:
     id: colors
@@ -113,7 +114,7 @@ byId:
   light:
     id: light
     name: Colors
-    parentId: typography
+    parentId: tokens
     path: /pages/light
   linear-progress:
     id: linear-progress
@@ -177,6 +178,7 @@ byId:
     parentId: test-page
     path: /pattern/status-header
   status-header-item:
+    hidden: true
     id: status-header-item
     name: Status header item
     parentId: status-header
@@ -243,6 +245,7 @@ byId:
     parentId: test-page
     path: /pattern/top-app-bar
   top-app-bar-fixed:
+    hidden: true
     id: top-app-bar-fixed
     name: Top app bar - fixed
     parentId: top-app-bar
@@ -253,6 +256,7 @@ byId:
     parentId: test-page
     path: /pattern/tree-list
   tree-list-item:
+    hidden: true
     id: tree-list-item
     name: Tree list item
     parentId: tree-list
@@ -280,6 +284,7 @@ order:
   - chip
   - chip-item
   - circular-progress
+  - dialog
   - text
   - textfield
   - text-area
@@ -290,7 +295,6 @@ order:
   - icon-radio
   - slider
   - toolbar
-  - dialog
   - empty-state
   - expansion-panel
   - expansion-panel-item
@@ -313,11 +317,11 @@ order:
   - tree-list
   - tree-list-item
   - tokens
-  - typography
   - light
   - colors-okgyf0rxrr
   - colors
   - palettes-lm0uu73t4r
   - palettes
   - dark
+  - typography
   - writing
