@@ -1,3 +1,9 @@
+## [8.5.2](https://github.com/Teradata/covalent/compare/v8.5.1...v8.5.2) (2024-02-27)
+
+### Bug Fixes
+
+- **tooltip:** adjusting theming values for tooltips ([#2110](https://github.com/Teradata/covalent/issues/2110)) ([5f869b1](https://github.com/Teradata/covalent/commit/5f869b11e046d2383aded9250fb6b3ddf27f60d1))
+
 ## [8.5.1](https://github.com/Teradata/covalent/compare/v8.5.0...v8.5.1) (2024-02-27)
 
 ### Bug Fixes
