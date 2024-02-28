@@ -1,0 +1,24 @@
+{
+  "id": "5xpGHBKghM",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "cweiSnutDo",
+        "link": {
+          "name": "Light",
+          "path": "/pages/colors-okgyf0rxrr"
+        },
+        "title": "Light"
+      },
+      {
+        "id": "TDWgxYSYDB",
+        "link": {
+          "name": "Dark",
+          "path": "/pages/colors"
+        },
+        "title": "Dark"
+      }
+    ]
+  },
+  "blockType": "shortcut-tiles"
+}

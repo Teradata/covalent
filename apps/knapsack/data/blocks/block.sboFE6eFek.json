@@ -1,7 +1,29 @@
 {
   "id": "sboFE6eFek",
   "data": {
-    "content": {}
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "horizontalRule"
+        },
+        {
+          "type": "horizontalRule"
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
   },
   "blockType": "text-editor"
 }
