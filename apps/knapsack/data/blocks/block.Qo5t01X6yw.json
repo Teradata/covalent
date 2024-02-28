@@ -1,0 +1,32 @@
+{
+  "id": "Qo5t01X6yw",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "559G8Sc3xT",
+        "link": {
+          "name": "Colors",
+          "path": "/pages/light"
+        },
+        "title": "Colors"
+      },
+      {
+        "id": "pRAnFh6Ab4",
+        "link": {
+          "name": "Palettes",
+          "path": "/pages/palettes-lm0uu73t4r"
+        },
+        "title": "Palettes"
+      },
+      {
+        "id": "ti-ArumOqC",
+        "link": {
+          "name": "Typography",
+          "path": "/pages/typography"
+        },
+        "title": "Typography"
+      }
+    ]
+  },
+  "blockType": "shortcut-tiles"
+}

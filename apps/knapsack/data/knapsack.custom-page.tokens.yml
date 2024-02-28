@@ -1,3 +1,10 @@
 title: Tokens
 id: tokens
-blockIds: []
+blockIds:
+  - Qo5t01X6yw
+settings:
+  pageHeader:
+    backgroundColor:
+      type: design-token
+      tokenName: theme.light.colors.surface
+    backgroundSize: cover

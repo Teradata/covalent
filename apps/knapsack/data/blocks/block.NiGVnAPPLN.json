@@ -3,7 +3,7 @@
   "blockType": "design-tokens",
   "data": {
     "demoId": "table-list",
-    "tokenType": "string",
+    "tokenType": "",
     "groupIds": ["typography"]
   }
 }

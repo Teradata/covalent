@@ -6,5 +6,8 @@
     "tokenType": "color",
     "groupIds": ["theme.light.palettes"],
     "include": "digital"
+  },
+  "header": {
+    "showHeader": false
   }
 }
