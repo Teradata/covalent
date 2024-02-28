@@ -25,5 +25,10 @@
   },
   "dependencies": {
     "tslib": "0.0.0-TSLIB"
+  },
+  "exports": {
+    "./markdown-theme": {
+      "sass": "./_markdown-theme.scss"
+    }
   }
 }
