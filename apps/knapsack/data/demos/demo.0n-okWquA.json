@@ -1,0 +1,23 @@
+{
+  "id": "0n-okWquA",
+  "title": "Radio",
+  "description": "A description",
+  "type": "data",
+  "patternId": "form-field",
+  "templateId": "web-components-I5Sx1HQnJ",
+  "data": {
+    "props": {
+      "label": "Radio field label"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "radio",
+          "templateId": "web-components-qk2MWcBipT",
+          "demoId": "RMPpKHlzd"
+        }
+      ]
+    }
+  }
+}

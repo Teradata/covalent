@@ -1,0 +1,22 @@
+{
+  "id": "v3IaS3HWdf",
+  "title": "sub item",
+  "description": "A description",
+  "type": "data",
+  "patternId": "naviigation-list-item",
+  "templateId": "web-components-Qtmmi7N-aL",
+  "data": {
+    "props": {
+      "hasChildren": false,
+      "graphic": "avatar"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "sub item"
+        }
+      ]
+    }
+  }
+}

@@ -36,14 +36,6 @@
       ],
       "attributes": [
         {
-          "name": "titleText",
-          "description": ""
-        },
-        {
-          "name": "descriptionText",
-          "description": ""
-        },
-        {
           "name": "icon",
           "description": ""
         },
@@ -52,12 +44,20 @@
           "description": ""
         },
         {
+          "name": "inline",
+          "description": "boolean"
+        },
+        {
+          "name": "titleText",
+          "description": ""
+        },
+        {
           "name": "iconAriaLabel",
           "description": ""
         },
         {
-          "name": "inline",
-          "description": "boolean"
+          "name": "descriptionText",
+          "description": ""
         }
       ]
     },
@@ -81,6 +81,14 @@
         },
         {
           "name": "helpOpen",
+          "description": "boolean"
+        },
+        {
+          "name": "contained",
+          "description": "boolean"
+        },
+        {
+          "name": "open",
           "description": "boolean"
         }
       ]
@@ -146,6 +154,38 @@
       ]
     },
     {
+      "name": "cv-check-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/check-list-item/web-components-M18BFFHM3h"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "left",
+          "description": "boolean"
+        },
+        {
+          "name": "selected",
+          "description": "boolean"
+        },
+        {
+          "name": "graphic",
+          "description": ""
+        },
+        {
+          "name": "hasMeta",
+          "description": "boolean"
+        },
+        {
+          "name": "twoLine",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
       "name": "cv-checkbox",
       "description": "",
       "references": [
@@ -157,6 +197,14 @@
       "attributes": [
         {
           "name": "checked",
+          "description": "boolean"
+        },
+        {
+          "name": "indeterminate",
+          "description": "boolean"
+        },
+        {
+          "name": "disabled",
           "description": "boolean"
         }
       ]
@@ -326,6 +374,22 @@
       ]
     },
     {
+      "name": "cv-formfield",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/form-field/web-components-I5Sx1HQnJ"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "(required)"
+        }
+      ]
+    },
+    {
       "name": "cv-icon",
       "description": "",
       "references": [
@@ -361,7 +425,16 @@
           "url": "http://localhost:3999/pattern/icon-checkbox/web-components-jTiv8OpG9M"
         }
       ],
-      "attributes": []
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "boolean"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean"
+        }
+      ]
     },
     {
       "name": "cv-radio-icon",
@@ -372,7 +445,16 @@
           "url": "http://localhost:3999/pattern/icon-radio/web-components-gmBL6Mhy4"
         }
       ],
-      "attributes": []
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "boolean"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean"
+        }
+      ]
     },
     {
       "name": "cv-linear-progress",
@@ -411,7 +493,16 @@
           "url": "http://localhost:3999/pattern/list/web-components-fObxCsu2i8"
         }
       ],
-      "attributes": []
+      "attributes": [
+        {
+          "name": "activatible",
+          "description": "boolean"
+        },
+        {
+          "name": "graphic",
+          "description": ""
+        }
+      ]
     },
     {
       "name": "cv-list-item",
@@ -432,8 +523,8 @@
           "description": "boolean"
         },
         {
-          "name": "value",
-          "description": ""
+          "name": "hasMeta",
+          "description": "boolean"
         }
       ]
     },
@@ -454,6 +545,34 @@
       ]
     },
     {
+      "name": "cv-nav-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/naviigation-list-item/web-components-Qtmmi7N-aL"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "hasChildren",
+          "description": "boolean"
+        },
+        {
+          "name": "hasMeta",
+          "description": "boolean"
+        },
+        {
+          "name": "twoLine",
+          "description": "boolean"
+        },
+        {
+          "name": "graphic",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "cv-radio",
       "description": "",
       "references": [
@@ -464,8 +583,32 @@
       ],
       "attributes": [
         {
+          "name": "checked",
+          "description": "boolean"
+        },
+        {
           "name": "disabled",
           "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-radio-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/radio-list-item/web-components-fwKtEBOnv"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "left",
+          "description": "boolean"
+        },
+        {
+          "name": "graphic",
+          "description": ""
         }
       ]
     },
@@ -633,6 +776,22 @@
       "attributes": [
         {
           "name": "label",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-switch",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/switch/web-components-tGj2TvSrpD"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "disabled",
           "description": ""
         }
       ]

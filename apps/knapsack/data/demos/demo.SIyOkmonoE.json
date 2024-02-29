@@ -1,0 +1,42 @@
+{
+  "id": "SIyOkmonoE",
+  "title": "Sub navigation",
+  "description": "A description",
+  "type": "data",
+  "patternId": "list",
+  "templateId": "web-components-fObxCsu2i8",
+  "data": {
+    "props": {
+      "activatible": true,
+      "graphic": "avatar"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "naviigation-list-item",
+          "templateId": "web-components-Qtmmi7N-aL",
+          "demoId": "v3IaS3HWdf"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "naviigation-list-item",
+          "templateId": "web-components-Qtmmi7N-aL",
+          "demoId": "v3IaS3HWdf"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "naviigation-list-item",
+          "templateId": "web-components-Qtmmi7N-aL",
+          "demoId": "v3IaS3HWdf"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "naviigation-list-item",
+          "templateId": "web-components-Qtmmi7N-aL",
+          "demoId": "v3IaS3HWdf"
+        }
+      ]
+    }
+  }
+}

@@ -8,4 +8,7 @@
  * Run Knapsack again to regenerate this file.
  */
 
-export interface IconCheckbox {}
+export interface IconCheckbox {
+  checked?: boolean;
+  disabled?: boolean;
+}

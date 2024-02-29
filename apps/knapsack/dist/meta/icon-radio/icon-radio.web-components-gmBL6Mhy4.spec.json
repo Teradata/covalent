@@ -3,5 +3,12 @@
   "description": "",
   "type": "object",
   "required": [],
-  "properties": {}
+  "properties": {
+    "checked": {
+      "type": "boolean"
+    },
+    "disabled": {
+      "type": "boolean"
+    }
+  }
 }

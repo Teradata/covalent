@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-Vj98q2D8hw",
-      "title": "Web Components",
+      "title": "Web components",
       "path": "../../../dist/libs/components/expansion-panel.mjs",
       "alias": "cv-expansion-panel",
       "templateLanguageId": "web-components",

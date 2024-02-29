@@ -10,9 +10,8 @@
     "twoLine": {
       "type": "boolean"
     },
-    "value": {
-      "type": "string",
-      "default": "list item value"
+    "hasMeta": {
+      "type": "boolean"
     }
   }
 }

@@ -11,3 +11,9 @@
   display: flex;
   align-items: center;
 }
+
+.mdc-deprecated-list-item__meta ::slotted(*),
+.mdc-deprecated-list-item__graphic ::slotted(*) {
+  display: flex;
+  align-items: center;
+}

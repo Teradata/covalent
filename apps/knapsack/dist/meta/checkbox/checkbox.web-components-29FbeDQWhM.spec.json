@@ -6,6 +6,12 @@
   "properties": {
     "checked": {
       "type": "boolean"
+    },
+    "indeterminate": {
+      "type": "boolean"
+    },
+    "disabled": {
+      "type": "boolean"
     }
   }
 }

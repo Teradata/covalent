@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-7wYRPSnEZH",
-      "title": "Web Components",
+      "title": "Web components",
       "path": "../../../dist/libs/components/chip-set.mjs",
       "alias": "cv-chip-set",
       "templateLanguageId": "web-components",

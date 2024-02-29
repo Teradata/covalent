@@ -11,5 +11,5 @@
 export interface ListItem {
   graphic?: string;
   twoLine?: boolean;
-  value?: string;
+  hasMeta?: boolean;
 }

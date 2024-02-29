@@ -19,7 +19,9 @@
             "title": "logo"
           },
           "navigation": {
-            "title": "navigation"
+            "allowedPatternIds": ["list"],
+            "title": "navigation",
+            "disallowText": true
           },
           "help": {
             "title": "help"
@@ -47,6 +49,12 @@
               "default": "[Section name]"
             },
             "helpOpen": {
+              "type": "boolean"
+            },
+            "contained": {
+              "type": "boolean"
+            },
+            "open": {
               "type": "boolean"
             }
           }

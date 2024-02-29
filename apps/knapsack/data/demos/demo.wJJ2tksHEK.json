@@ -1,0 +1,18 @@
+{
+  "id": "wJJ2tksHEK",
+  "title": "raised",
+  "description": "A description",
+  "type": "data",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL",
+  "data": {
+    "props": {
+      "outlined": false,
+      "raised": true,
+      "trailingIcon": false,
+      "dense": false,
+      "label": "button label"
+    },
+    "slots": {}
+  }
+}

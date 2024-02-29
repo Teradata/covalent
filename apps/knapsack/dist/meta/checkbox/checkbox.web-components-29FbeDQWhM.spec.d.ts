@@ -10,4 +10,6 @@
 
 export interface Checkbox {
   checked?: boolean;
+  indeterminate?: boolean;
+  disabled?: boolean;
 }

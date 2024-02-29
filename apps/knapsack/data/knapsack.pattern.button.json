@@ -8,7 +8,7 @@
   "templates": [
     {
       "id": "web-components-raE1x4tYL",
-      "title": "Web component",
+      "title": "Web components",
       "path": "../../../dist/libs/components/button.js",
       "alias": "cv-button",
       "templateLanguageId": "web-components",
@@ -45,7 +45,7 @@
           }
         }
       },
-      "demoIds": ["E5ymzzEPs"],
+      "demoIds": ["E5ymzzEPs", "wJJ2tksHEK"],
       "blockIds": []
     }
   ],

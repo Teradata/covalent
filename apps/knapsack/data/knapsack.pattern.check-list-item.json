@@ -1,0 +1,75 @@
+{
+  "id": "check-list-item",
+  "title": "Check list item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-M18BFFHM3h",
+      "title": "Web Components",
+      "path": "../../../dist/libs/components/check-list-item.mjs",
+      "alias": "cv-check-list-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          },
+          "graphic": {
+            "allowedPatternIds": ["icon"],
+            "title": "graphic",
+            "disallowText": true,
+            "allowOnlyOne": true
+          },
+          "secondary": {
+            "title": "secondary",
+            "allowOnlyOne": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "left": {
+              "type": "boolean"
+            },
+            "selected": {
+              "type": "boolean"
+            },
+            "graphic": {
+              "type": "string",
+              "default": "avatar"
+            },
+            "hasMeta": {
+              "type": "boolean"
+            },
+            "twoLine": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["CvFKcI1eN0"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-M18BFFHM3h"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

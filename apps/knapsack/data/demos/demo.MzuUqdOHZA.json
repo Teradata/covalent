@@ -1,0 +1,28 @@
+{
+  "id": "MzuUqdOHZA",
+  "title": "Main",
+  "type": "data",
+  "patternId": "radio-list-item",
+  "templateId": "web-components-fwKtEBOnv",
+  "data": {
+    "props": {
+      "graphic": "avatar"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Radio list item"
+        }
+      ],
+      "graphic": [
+        {
+          "type": "template-demo",
+          "patternId": "icon",
+          "templateId": "web-components-N8bzRbfpuX",
+          "demoId": "bn4zy44TYR"
+        }
+      ]
+    }
+  }
+}

@@ -4,6 +4,9 @@
   "type": "object",
   "required": [],
   "properties": {
+    "checked": {
+      "type": "boolean"
+    },
     "disabled": {
       "type": "boolean"
     }

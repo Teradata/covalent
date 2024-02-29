@@ -8,4 +8,7 @@
  * Run Knapsack again to regenerate this file.
  */
 
-export interface IconRadio {}
+export interface IconRadio {
+  checked?: boolean;
+  disabled?: boolean;
+}

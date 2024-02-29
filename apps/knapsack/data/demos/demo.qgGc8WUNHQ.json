@@ -7,7 +7,8 @@
   "data": {
     "props": {
       "twoLine": false,
-      "graphic": "avatar"
+      "graphic": "avatar",
+      "hasMeta": false
     },
     "slots": {
       "default": [
@@ -24,14 +25,18 @@
       ],
       "graphic": [
         {
-          "type": "text",
-          "text": ""
-        },
-        {
           "type": "template-demo",
           "patternId": "icon",
           "templateId": "web-components-N8bzRbfpuX",
           "demoId": "bn4zy44TYR"
+        }
+      ],
+      "meta": [
+        {
+          "type": "template-demo",
+          "patternId": "icon",
+          "templateId": "web-components-N8bzRbfpuX",
+          "demoId": "ezyQjAA-T1"
         }
       ]
     }

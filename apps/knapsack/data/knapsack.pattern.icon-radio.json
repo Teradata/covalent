@@ -28,7 +28,14 @@
           "description": "",
           "type": "object",
           "required": [],
-          "properties": {}
+          "properties": {
+            "checked": {
+              "type": "boolean"
+            },
+            "disabled": {
+              "type": "boolean"
+            }
+          }
         }
       },
       "demoIds": ["3VTw68n4F5"],

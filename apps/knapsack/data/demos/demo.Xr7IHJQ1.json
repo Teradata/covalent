@@ -1,0 +1,19 @@
+{
+  "id": "Xr7IHJQ1",
+  "title": "Close",
+  "description": "A description",
+  "type": "data",
+  "patternId": "icon",
+  "templateId": "web-components-N8bzRbfpuX",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "close"
+        }
+      ]
+    }
+  }
+}

@@ -3,5 +3,14 @@
   "description": "",
   "type": "object",
   "required": [],
-  "properties": {}
+  "properties": {
+    "activatible": {
+      "type": "boolean",
+      "default": true
+    },
+    "graphic": {
+      "type": "string",
+      "default": "avatar"
+    }
+  }
 }
