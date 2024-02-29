@@ -31,5 +31,10 @@
   },
   "dependencies": {
     "tslib": "0.0.0-TSLIB"
+  },
+  "exports": {
+    "./flavored-markdown-theme": {
+      "sass": "./_flavored-markdown-theme.scss"
+    }
   }
 }

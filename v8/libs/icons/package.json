@@ -4,7 +4,11 @@
   "description": "Icons for covalent design system",
   "exports": {
     ".": {
-      "sass": "./covalent-icons.css"
+      "sass": "./covalent-icons.scss",
+      "style": "./covalent-icons.css"
+    },
+    "./variables": {
+      "sass": "./covalent-icons-variables.scss"
     }
   },
   "repository": {
