@@ -12,5 +12,11 @@
     "url": "https://github.com/teradata/covalent/issues"
   },
   "license": "MIT",
-  "author": "Teradata UX"
+  "author": "Teradata UX",
+  "exports": {
+    ".": {
+      "sass": "./_index.scss",
+      "style": "./index.css"
+    }
+  }
 }
