@@ -42,6 +42,10 @@
             "graphic": {
               "type": "string",
               "default": "avatar"
+            },
+            "subNav": {
+              "type": "boolean",
+              "default": true
             }
           }
         }

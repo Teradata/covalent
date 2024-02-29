@@ -25,6 +25,12 @@
             "open": {
               "type": "boolean",
               "default": true
+            },
+            "hidedelay": {
+              "title": "Hide delay",
+              "description": "Delay to hide tooltip in MS",
+              "type": "number",
+              "default": 5000
             }
           }
         }

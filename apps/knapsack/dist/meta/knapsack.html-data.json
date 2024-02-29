@@ -501,6 +501,10 @@
         {
           "name": "graphic",
           "description": ""
+        },
+        {
+          "name": "subNav",
+          "description": "boolean"
         }
       ]
     },
@@ -896,6 +900,46 @@
       ]
     },
     {
+      "name": "cv-textfield",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/textfield/web-components-M4zyalwdNJ"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "placeholder",
+          "description": ""
+        },
+        {
+          "name": "helper",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "iconTrailing",
+          "description": ""
+        },
+        {
+          "name": "required",
+          "description": "boolean"
+        },
+        {
+          "name": "dense",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
       "name": "cv-toolbar",
       "description": "",
       "references": [
@@ -924,6 +968,10 @@
         {
           "name": "open",
           "description": "boolean"
+        },
+        {
+          "name": "hidedelay",
+          "description": "Delay to hide tooltip in MS"
         }
       ]
     },

@@ -16,15 +16,27 @@
       "actionItems": [
         {
           "type": "template-demo",
-          "patternId": "button",
-          "templateId": "web-components-raE1x4tYL",
-          "demoId": "E5ymzzEPs"
+          "patternId": "textfield",
+          "templateId": "web-components-M4zyalwdNJ",
+          "demoId": "tU8Ze3Af9p"
         },
         {
           "type": "template-demo",
           "patternId": "icon-button",
           "templateId": "web-components-ctiCe2sAX",
           "demoId": "i-aFgnERP"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "MWNDJ0YT9M"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "iyfHwphwcs"
         }
       ]
     }
