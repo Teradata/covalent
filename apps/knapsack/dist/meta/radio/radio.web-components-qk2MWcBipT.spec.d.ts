@@ -9,5 +9,6 @@
  */
 
 export interface Radio {
+  checked?: boolean;
   disabled?: boolean;
 }

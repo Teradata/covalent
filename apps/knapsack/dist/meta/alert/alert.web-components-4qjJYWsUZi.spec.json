@@ -1,30 +1,31 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "description": "",
   "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "required": [],
   "properties": {
-    "titleText": {
-      "type": "string",
-      "default": "Alert title"
-    },
-    "descriptionText": {
-      "type": "string",
-      "default": "Alert description"
-    },
     "icon": {
       "type": "string",
       "default": "info"
     },
     "state": {
-      "type": "string"
+      "type": "string",
+      "default": "active"
+    },
+    "inline": {
+      "type": "boolean"
+    },
+    "titleText": {
+      "type": "string",
+      "default": "Alert title"
     },
     "iconAriaLabel": {
       "type": "string",
       "title": "Alert title"
     },
-    "inline": {
-      "type": "boolean"
+    "descriptionText": {
+      "type": "string",
+      "default": "Alert description"
     }
-  }
+  },
+  "description": ""
 }

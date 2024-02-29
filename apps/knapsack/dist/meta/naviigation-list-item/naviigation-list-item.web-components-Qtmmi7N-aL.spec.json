@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "hasChildren": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasMeta": {
+      "type": "boolean"
+    },
+    "twoLine": {
+      "type": "boolean"
+    },
+    "graphic": {
+      "type": "string",
+      "default": "avatar"
+    }
+  }
+}

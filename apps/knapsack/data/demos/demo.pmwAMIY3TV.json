@@ -1,0 +1,22 @@
+{
+  "id": "pmwAMIY3TV",
+  "title": "Checkbox",
+  "type": "data",
+  "patternId": "form-field",
+  "templateId": "web-components-I5Sx1HQnJ",
+  "data": {
+    "props": {
+      "label": "Form field label"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "checkbox",
+          "templateId": "web-components-29FbeDQWhM",
+          "demoId": "ee2EneFvzS"
+        }
+      ]
+    }
+  }
+}

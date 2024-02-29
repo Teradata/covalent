@@ -1,0 +1,61 @@
+{
+  "id": "radio-list-item",
+  "title": "Radio list item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-fwKtEBOnv",
+      "title": "Web Components",
+      "path": "../../../dist/libs/components/radio-list-item.mjs",
+      "alias": "cv-radio-list-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          },
+          "graphic": {
+            "allowedPatternIds": ["icon"],
+            "title": "graphic",
+            "disallowText": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "left": {
+              "type": "boolean"
+            },
+            "graphic": {
+              "type": "string",
+              "default": "avatar"
+            }
+          }
+        }
+      },
+      "demoIds": ["MzuUqdOHZA"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-fwKtEBOnv"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

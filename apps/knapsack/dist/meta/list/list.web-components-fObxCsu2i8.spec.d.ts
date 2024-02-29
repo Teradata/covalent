@@ -8,4 +8,7 @@
  * Run Knapsack again to regenerate this file.
  */
 
-export interface List {}
+export interface List {
+  activatible?: boolean;
+  graphic?: string;
+}

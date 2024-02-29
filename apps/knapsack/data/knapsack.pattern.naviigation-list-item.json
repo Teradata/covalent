@@ -1,0 +1,81 @@
+{
+  "id": "naviigation-list-item",
+  "title": "Navigation list item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-Qtmmi7N-aL",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/nav-list-item.mjs",
+      "alias": "cv-nav-list-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          },
+          "expansion-panel": {
+            "allowedPatternIds": ["list"],
+            "title": "expansion-panel",
+            "allowOnlyOne": true,
+            "disallowText": true
+          },
+          "meta": {
+            "title": "meta"
+          },
+          "secondary": {
+            "title": "secondary"
+          },
+          "graphic": {
+            "allowedPatternIds": ["icon"],
+            "title": "graphic",
+            "allowOnlyOne": true,
+            "disallowText": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "hasChildren": {
+              "type": "boolean",
+              "default": true
+            },
+            "hasMeta": {
+              "type": "boolean"
+            },
+            "twoLine": {
+              "type": "boolean"
+            },
+            "graphic": {
+              "type": "string",
+              "default": "avatar"
+            }
+          }
+        }
+      },
+      "demoIds": ["E5NLCltz6", "v3IaS3HWdf"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-Qtmmi7N-aL"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

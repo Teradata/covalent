@@ -1,0 +1,14 @@
+{
+  "id": "MQBKTe4GON",
+  "title": "Arrow back",
+  "description": "A description",
+  "type": "data",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX",
+  "data": {
+    "props": {
+      "icon": "arrow_back"
+    },
+    "slots": {}
+  }
+}

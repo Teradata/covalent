@@ -10,7 +10,20 @@
       "path": "../../../dist/libs/components/switch.mjs",
       "alias": "cv-switch",
       "templateLanguageId": "web-components",
-      "spec": {},
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "disabled": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "demoIds": ["U89p0LyOsP"],
       "blockIds": []
     }

@@ -5,7 +5,33 @@
   "patternId": "card",
   "templateId": "web-components-mU8MX1FHrF",
   "data": {
-    "props": {},
-    "slots": {}
+    "props": {
+      "cardTitle": "Card title",
+      "actionBar": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "empty-state",
+          "templateId": "web-components-E0GwXgHJv",
+          "demoId": "8QAZfNvobo"
+        }
+      ],
+      "card-actions": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "BueNSFTYn"
+        }
+      ]
+    }
   }
 }

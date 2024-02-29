@@ -11,10 +11,10 @@
 type AlertTitle = string;
 
 export interface Alert {
-  titleText?: string;
-  descriptionText?: string;
   icon?: string;
   state?: string;
-  iconAriaLabel?: AlertTitle;
   inline?: boolean;
+  titleText?: string;
+  iconAriaLabel?: AlertTitle;
+  descriptionText?: string;
 }

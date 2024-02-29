@@ -29,6 +29,12 @@ byId:
     name: Card
     parentId: test-page
     path: /pattern/card
+  check-list-item:
+    hidden: true
+    id: check-list-item
+    name: Check list item
+    parentId: list
+    path: /pattern/check-list-item
   checkbox:
     id: checkbox
     name: Checkbox
@@ -91,6 +97,11 @@ byId:
     name: Expansion panel item
     parentId: expansion-panel
     path: /pattern/expansion-panel-item
+  form-field:
+    id: form-field
+    name: Form Field
+    parentId: test-page
+    path: /pattern/form-field
   icon:
     id: icon
     name: Icon
@@ -137,6 +148,12 @@ byId:
     name: Menu
     parentId: test-page
     path: /pattern/menu
+  naviigation-list-item:
+    hidden: true
+    id: naviigation-list-item
+    name: Navigation list item
+    parentId: list
+    path: /pattern/naviigation-list-item
   palettes:
     id: palettes
     name: Light
@@ -152,6 +169,12 @@ byId:
     name: Radio
     parentId: test-page
     path: /pattern/radio
+  radio-list-item:
+    hidden: true
+    id: radio-list-item
+    name: Radio list item
+    parentId: list
+    path: /pattern/radio-list-item
   select:
     id: select
     name: Select
@@ -285,37 +308,41 @@ order:
   - chip-item
   - circular-progress
   - dialog
-  - text
-  - textfield
-  - text-area
-  - text-lockup
+  - empty-state
+  - expansion-panel
+  - expansion-panel-item
+  - form-field
   - icon
   - icon-button
   - icon-checkbox
   - icon-radio
-  - slider
-  - toolbar
-  - empty-state
-  - expansion-panel
-  - expansion-panel-item
   - linear-progress
   - list
   - list-item
+  - naviigation-list-item
+  - check-list-item
+  - radio-list-item
   - menu
   - radio
   - select
   - side-sheet
+  - slider
   - snackbar
   - status-header
   - status-header-item
   - switch
   - tabs
   - tab
+  - toolbar
   - tooltip
   - top-app-bar
   - top-app-bar-fixed
   - tree-list
   - tree-list-item
+  - text-area
+  - textfield
+  - text-lockup
+  - text
   - tokens
   - light
   - colors-okgyf0rxrr

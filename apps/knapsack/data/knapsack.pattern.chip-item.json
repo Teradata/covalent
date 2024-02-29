@@ -6,7 +6,7 @@
   "templates": [
     {
       "id": "web-components-vegaZgkE47",
-      "title": "Web Components",
+      "title": "Web components",
       "path": "../../../dist/libs/components/chip.mjs",
       "alias": "cv-chip",
       "templateLanguageId": "web-components",

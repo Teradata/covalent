@@ -6,16 +6,27 @@
   "templates": [
     {
       "id": "web-components-fObxCsu2i8",
-      "title": "Web Components",
+      "title": "Web components",
       "path": "../../../dist/libs/components/list.mjs",
       "alias": "cv-list",
       "templateLanguageId": "web-components",
       "spec": {
         "slots": {
           "default": {
-            "allowedPatternIds": ["list-item"],
+            "allowedPatternIds": [
+              "list-item",
+              "check-list-item",
+              "naviigation-list-item",
+              "radio-list-item"
+            ],
             "title": "default",
             "disallowText": true
+          },
+          "graphic": {
+            "allowedPatternIds": ["icon"],
+            "title": "graphic",
+            "disallowText": true,
+            "allowOnlyOne": true
           }
         },
         "props": {
@@ -23,10 +34,25 @@
           "description": "",
           "type": "object",
           "required": [],
-          "properties": {}
+          "properties": {
+            "activatible": {
+              "type": "boolean",
+              "default": true
+            },
+            "graphic": {
+              "type": "string",
+              "default": "avatar"
+            }
+          }
         }
       },
-      "demoIds": ["R-bXJMtJi"],
+      "demoIds": [
+        "R-bXJMtJi",
+        "kyAJAxMx7u",
+        "kaReFY5Pwj",
+        "hjXCY4fSqY",
+        "SIyOkmonoE"
+      ],
       "blockIds": []
     }
   ],

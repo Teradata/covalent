@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "left": {
+      "type": "boolean"
+    },
+    "selected": {
+      "type": "boolean"
+    },
+    "graphic": {
+      "type": "string",
+      "default": "avatar"
+    },
+    "hasMeta": {
+      "type": "boolean"
+    },
+    "twoLine": {
+      "type": "boolean"
+    }
+  }
+}

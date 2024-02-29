@@ -7,7 +7,10 @@
   "data": {
     "props": {
       "appName": "[App name]",
-      "sectionName": "[Section name]"
+      "sectionName": "[Section name]",
+      "contained": true,
+      "forcedOpen": true,
+      "open": true
     },
     "slots": {
       "section-action": [
@@ -15,7 +18,37 @@
           "type": "template-demo",
           "patternId": "icon-button",
           "templateId": "web-components-ctiCe2sAX",
-          "demoId": "BueNSFTYn"
+          "demoId": "MQBKTe4GON"
+        }
+      ],
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "tabs",
+          "templateId": "web-components-kjFGUA31tg",
+          "demoId": "GOJxN1FZx"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "empty-state",
+          "templateId": "web-components-E0GwXgHJv",
+          "demoId": "8QAZfNvobo"
+        }
+      ],
+      "navigation": [
+        {
+          "type": "template-demo",
+          "patternId": "list",
+          "templateId": "web-components-fObxCsu2i8",
+          "demoId": "hjXCY4fSqY"
+        }
+      ],
+      "user-menu": [
+        {
+          "type": "template-demo",
+          "patternId": "toolbar",
+          "templateId": "web-components-A6-16QhSaM",
+          "demoId": "NXMdeiHjKO"
         }
       ]
     }
