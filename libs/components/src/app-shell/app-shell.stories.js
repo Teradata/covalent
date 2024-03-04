@@ -132,8 +132,8 @@ const Template = ({
         <span>Editor</span>
         <cv-icon class="covalent-icon" slot="graphic">product_editor</cv-icon>
         <cv-list
-          class="subnav"
           slot="expansion-panel"
+          subNav
           activatable>
           <cv-nav-list-item>Scripts</cv-nav-list-item>
           <cv-nav-list-item>Scripts</cv-nav-list-item>
