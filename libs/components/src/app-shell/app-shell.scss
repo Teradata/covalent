@@ -6,7 +6,7 @@
 @include drawer.dismissible-core-styles();
 @include drawer.modal-core-styles();
 
-:host {
+:host .navigation {
   --mdc-theme-surface: var(--mdc-theme-background);
   --mdc-list-vertical-padding: 0;
   --cv-list-padding-right: 0;
@@ -18,7 +18,7 @@
   --cv-list-item-expansion-icon-size: 0;
 }
 
-:host([open]) {
+:host([open]) .navigation {
   --cv-list-padding-right: 12px;
   --cv-list-padding-left: 12px;
   --cv-list-item-border-radius: 100px;
