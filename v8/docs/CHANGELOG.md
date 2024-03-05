@@ -1,3 +1,9 @@
+## [8.5.3](https://github.com/Teradata/covalent/compare/v8.5.2...v8.5.3) (2024-02-29)
+
+### Bug Fixes
+
+- **packages:** add exports confg for scss files ([#2112](https://github.com/Teradata/covalent/issues/2112)) ([144218a](https://github.com/Teradata/covalent/commit/144218ad4173d6c954a2fd9fb3371530a5e57577))
+
 ## [8.5.2](https://github.com/Teradata/covalent/compare/v8.5.1...v8.5.2) (2024-02-27)
 
 ### Bug Fixes
