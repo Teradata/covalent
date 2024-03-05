@@ -8,6 +8,12 @@
  * Run Knapsack again to regenerate this file.
  */
 
+/**
+ * Delay to hide tooltip in MS
+ */
+type HideDelay = number;
+
 export interface Tooltip {
   open?: boolean;
+  hidedelay?: HideDelay;
 }

@@ -296,9 +296,9 @@ byId:
     path: /pages/writing
 order:
   - test-page
+  - action-ribbon
   - alert
   - app-shell
-  - action-ribbon
   - breadcrumbs
   - button
   - card

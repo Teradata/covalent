@@ -8,7 +8,7 @@
   "data": {
     "props": {
       "activatible": true,
-      "graphic": "avatar"
+      "subNav": true
     },
     "slots": {
       "default": [

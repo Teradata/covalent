@@ -5,7 +5,12 @@
   "patternId": "textfield",
   "templateId": "web-components-M4zyalwdNJ",
   "data": {
-    "props": {},
+    "props": {
+      "placeholder": "Placeholder",
+      "helper": "helper text",
+      "label": "Text field",
+      "icon": "person"
+    },
     "slots": {}
   }
 }

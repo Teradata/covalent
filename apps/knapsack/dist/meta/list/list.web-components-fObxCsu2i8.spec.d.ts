@@ -11,4 +11,5 @@
 export interface List {
   activatible?: boolean;
   graphic?: string;
+  subNav?: boolean;
 }

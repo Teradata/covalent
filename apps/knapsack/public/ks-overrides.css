@@ -1,3 +1,8 @@
 body {
   background-color: var(--mdc-theme-background);
 }
+
+cv-app-shell {
+  display: block;
+  margin: -8px;
+}

@@ -7,8 +7,7 @@
   "templateId": "web-components-Qtmmi7N-aL",
   "data": {
     "props": {
-      "hasChildren": false,
-      "graphic": "avatar"
+      "hasChildren": false
     },
     "slots": {
       "default": [
