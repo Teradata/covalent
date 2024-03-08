@@ -37,9 +37,9 @@ import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
 - Include an icon in your button only in specific circumstances
 
 <Canvas>
-  <cv-button id="text-button" text label="Text button"></cv-button>
-  <cv-button id="outlined-button" outlined label="Outlined button"></cv-button>
-  <cv-button id="contained-button" raised label="Contained button"></cv-button>
+  <cv-button label="Text button"></cv-button>
+  <cv-button label="Outlined button" outlined></cv-button>
+  <cv-button label="Contained button" raised></cv-button>
 </Canvas>
 
 ---
@@ -49,22 +49,15 @@ import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
 Buttons contain a text label and optional icon.
 
 <Canvas>
-  <form>
-    <cv-button id="no-icon" raised label="No icon"></cv-button>
-    <cv-button
-      id="left-icon"
-      raised
-      label="Left icon"
-      icon="sailing"
-    ></cv-button>
-    <cv-button
-      id="right-icon"
-      raised
-      label="Right icon"
-      icon="sailing"
-      trailingIcon="true"
-    ></cv-button>
-  </form>
+  <cv-button id="no-icon" raised label="No icon"></cv-button>
+  <cv-button id="left-icon" raised label="Left icon" icon="sailing"></cv-button>
+  <cv-button
+    id="right-icon"
+    raised
+    label="Right icon"
+    icon="sailing"
+    trailingIcon="true"
+  ></cv-button>
 </Canvas>
 
 ### Spacing
@@ -72,11 +65,9 @@ Buttons contain a text label and optional icon.
 Separate all buttons with an 8px gap.
 
 <Canvas>
-  <form>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button outlined label="Button"></cv-button>
-  </form>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button outlined label="Button"></cv-button>
 </Canvas>
 
 ---
@@ -96,11 +87,9 @@ Place the primary action to the right, followed by secondary actions.
 3.  Lesser functions as icon buttons
 
 <Canvas>
-  <form>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button raised label="Primary" class="primary accent"></cv-button>
-  </form>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button raised label="Primary" class="primary accent"></cv-button>
 </Canvas>
 
 ### In footers
@@ -108,11 +97,9 @@ Place the primary action to the right, followed by secondary actions.
 In footers (such as card, dialog, page, or sheet footers) align all buttons to the right, but place destructive actions to the left to minimize accidental clicks.
 
 <Canvas>
-  <form>
-    <cv-button outlined label="Delete" class="destructive"></cv-button>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button raised label="Primary" class="primary accent"></cv-button>
-  </form>
+  <cv-button outlined label="Delete" class="destructive"></cv-button>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button raised label="Primary" class="primary accent"></cv-button>
 </Canvas>
 
 ---
@@ -122,10 +109,8 @@ In footers (such as card, dialog, page, or sheet footers) align all buttons to t
 Use “default” outline buttons for everything except the primary action (if any).
 
 <Canvas>
-  <form>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button outlined label="Button"></cv-button>
-  </form>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button outlined label="Button"></cv-button>
 </Canvas>
 
 ### Primary action
@@ -133,11 +118,9 @@ Use “default” outline buttons for everything except the primary action (if a
 If the page has a primary action, use an “accent” contained button.
 
 <Canvas>
-  <form>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button raised label="Primary" class="primary accent"></cv-button>
-  </form>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button raised label="Primary" class="primary accent"></cv-button>
 </Canvas>
 
 ### Destructive action
@@ -150,7 +133,7 @@ If the primary action is a destructive one (for example, it deletes some data), 
   <form>
     <cv-button outlined label="Button"></cv-button>
     <cv-button outlined label="Button"></cv-button>
-    <cv-button raised label="Delete" class="destructive primary"></cv-button>
+    <cv-button raised label="Delete" color="negative"></cv-button>
   </form>
 </Canvas>
 
@@ -159,9 +142,7 @@ If the primary action is a destructive one (for example, it deletes some data), 
 If the destructive action is not the primary action, do not use the negative color. This calls extra attention to it, and we want the focus to remain on the primary action.
 
 <Canvas>
-  <form>
-    <cv-button outlined label="Delete" class="destructive"></cv-button>
-    <cv-button outlined label="Button"></cv-button>
-    <cv-button raised label="Primary" class="primary accent"></cv-button>
-  </form>
+  <cv-button outlined label="Delete" class="destructive"></cv-button>
+  <cv-button outlined label="Button"></cv-button>
+  <cv-button raised label="Primary"></cv-button>
 </Canvas>
