@@ -9,8 +9,23 @@ export default {
     trailingIcon: false,
     disabled: false,
     dense: false,
-    isNegative: false,
-    isPrimary: false,
+  },
+  argTypes: {
+    style: {
+      options: ['raised', 'outlined'],
+      control: { type: 'select' },
+    },
+    color: {
+      options: [
+        'primary',
+        'secondary',
+        'emphasis',
+        'positive',
+        'negative',
+        'caution',
+      ],
+      control: { type: 'select' },
+    },
   },
 };
 
@@ -20,10 +35,9 @@ const Template = ({
   trailingIcon,
   icon,
   style,
+  color,
   disabled,
   dense,
-  isNegative,
-  isPrimary,
 }) => {
   return `<cv-button id="myButton"
                       label="${label}"
@@ -32,10 +46,8 @@ const Template = ({
                       ${dense ? 'dense' : ''}
                       ${disabled ? 'disabled' : ''}
                       ${style}
-                      class="${isNegative ? `negative` : ''} ${
-    isPrimary ? `primary` : ''
-  }"
-         </cv-button>`;
+                      ${color ? `color="${color}"` : ''}>         
+        </cv-button>`;
 };
 
 export const Contained = Template.bind({});
@@ -51,6 +63,36 @@ Outlined.args = {
 export const Text = Template.bind({});
 Text.args = {
   style: 'text',
+};
+
+export const secondary = Template.bind({});
+secondary.args = {
+  style: 'raised',
+  color: 'secondary',
+};
+
+export const emphasis = Template.bind({});
+emphasis.args = {
+  style: 'raised',
+  color: 'emphasis',
+};
+
+export const caution = Template.bind({});
+caution.args = {
+  style: 'raised',
+  color: 'caution',
+};
+
+export const negative = Template.bind({});
+negative.args = {
+  style: 'raised',
+  color: 'negative',
+};
+
+export const positive = Template.bind({});
+positive.args = {
+  style: 'raised',
+  color: 'positive',
 };
 
 export const dense = Template.bind({});
