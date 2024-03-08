@@ -305,6 +305,24 @@
   --mdc-icon-font: 'Material Symbols Outlined';
 
   // Covalent Specific variables
+  --cv-theme-primary: #{map-get($theme, primary)};
+  --cv-theme-on-primary: #{map-get($theme, on-primary)};
+  --cv-theme-secondary: #{map-get($theme, secondary)};
+  --cv-theme-on-secondary: #{map-get($theme, on-secondary)};
+  --cv-theme-emphasis: #{map-get($theme, emphasis)};
+  --cv-theme-on-emphasis: #{map-get($theme, on-emphasis)};
+  --cv-theme-caution: #{map-get($theme, caution)};
+  --cv-theme-on-caution: #{map-get($theme, on-caution)};
+  --cv-theme-negative: #{map-get($theme, negative)};
+  --cv-theme-on-negative: #{map-get($theme, on-negative)};
+  --cv-theme-positive: #{map-get($theme, positive)};
+  --cv-theme-on-positive: #{map-get($theme, on-positive)};
+  --cv-theme-neutral: #{map-get($theme, neutral)};
+  --cv-theme-on-neutral: #{map-get($theme, on-neutral)};
+
+  --cv-theme-inverse-surface: #{map-get($theme, inverse-surface)};
+  --cv-theme-inverse-on-surface: #{map-get($theme, inverse-on-surface)};
+  --cv-theme-outline: #{map-get($theme, outline)};
   --cov-theme-on-surface-variant: #{map-get($theme, on-surface-variant)};
   --cov-theme-surface-container: #{map-get($theme, surface-container)};
   --cov-theme-surface-container-lowest: #{map-get(
