@@ -140,7 +140,7 @@ const Template = ({ icon, size }, ...args) => {
   icoElem.style.fontSize = size;
 
   if (args[0].parameters.showCovIcons) {
-    icoElem.className = 'covalent-icon';
+    icoElem.setAttribute('iconFont', 'covalent-icons');
   }
 
   return icoElem;
