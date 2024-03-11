@@ -331,6 +331,12 @@
   --cov-theme-code-snippet-title: #{map-get($theme, code-snippet-title)};
   --cov-theme-code-snippet-class: #{map-get($theme, code-snippet-class)};
 
+  // Code font styles
+  --cov-theme-code-font-family: #{map-get($typography, code-font-family)};
+  --cov-theme-code-font-size: #{map-get($typography, code-font-size)};
+  --cov-theme-code-font-weight: #{map-get($typography, code-font-weight)};
+  --cov-theme-code-line-height: #{map-get($typography, code-line-height)};
+
   @include data-table.data-table-theme($theme);
 
   color: var(--mdc-theme-text-primary-on-background);
