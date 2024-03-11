@@ -7,7 +7,8 @@
   .covalent-icon,
   .covalent-icons,
   [covalent-icon],
-  [covalent-icons] {
+  [covalent-icons],
+  [iconFont='covalent-icons'] {
     --mdc-icon-font: 'covalent-icons';
   }
 }
