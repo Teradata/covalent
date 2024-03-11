@@ -1,3 +1,9 @@
+## [8.5.4](https://github.com/Teradata/covalent/compare/v8.5.3...v8.5.4) (2024-03-11)
+
+### Bug Fixes
+
+- remove token generation scripts, workflows and related files ([#2116](https://github.com/Teradata/covalent/issues/2116)) ([40db061](https://github.com/Teradata/covalent/commit/40db061028d8afb2f74ff944203578174a9066cd))
+
 ## [8.5.3](https://github.com/Teradata/covalent/compare/v8.5.2...v8.5.3) (2024-02-29)
 
 ### Bug Fixes
