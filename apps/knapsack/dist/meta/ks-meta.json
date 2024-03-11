@@ -393,6 +393,34 @@
       "url": "/api/v1/render?patternId=icon-button&templateId=web-components-ctiCe2sAX&assetSetId=dark&demoId=i-aFgnERP&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "icon-button",
+      "templateId": "web-components-ctiCe2sAX",
+      "demoId": "MWNDJ0YT9M",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon-button&templateId=web-components-ctiCe2sAX&assetSetId=light&demoId=MWNDJ0YT9M&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-button",
+      "templateId": "web-components-ctiCe2sAX",
+      "demoId": "MWNDJ0YT9M",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon-button&templateId=web-components-ctiCe2sAX&assetSetId=dark&demoId=MWNDJ0YT9M&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-button",
+      "templateId": "web-components-ctiCe2sAX",
+      "demoId": "iyfHwphwcs",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon-button&templateId=web-components-ctiCe2sAX&assetSetId=light&demoId=iyfHwphwcs&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-button",
+      "templateId": "web-components-ctiCe2sAX",
+      "demoId": "iyfHwphwcs",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon-button&templateId=web-components-ctiCe2sAX&assetSetId=dark&demoId=iyfHwphwcs&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "icon-checkbox",
       "templateId": "web-components-jTiv8OpG9M",
       "demoId": "FTt0oVydi1",
@@ -871,6 +899,20 @@
       "demoId": "zYujvGxjlZ",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=textfield&templateId=web-components-M4zyalwdNJ&assetSetId=dark&demoId=zYujvGxjlZ&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "textfield",
+      "templateId": "web-components-M4zyalwdNJ",
+      "demoId": "tU8Ze3Af9p",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=textfield&templateId=web-components-M4zyalwdNJ&assetSetId=light&demoId=tU8Ze3Af9p&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "textfield",
+      "templateId": "web-components-M4zyalwdNJ",
+      "demoId": "tU8Ze3Af9p",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=textfield&templateId=web-components-M4zyalwdNJ&assetSetId=dark&demoId=tU8Ze3Af9p&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "toolbar",
