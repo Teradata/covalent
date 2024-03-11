@@ -7,7 +7,7 @@
 );
 
 .mdc-tooltip {
-  @include tooltip-theme.rich-fill-color(var(--cov-theme-surface-container));
+  @include tooltip-theme.rich-fill-color(var(--cv-theme-surface-container));
   @include tooltip-theme.rich-text-ink-color(
     var(--cv-theme-on-surface-variant),
     var(--cv-theme-on-surface-variant),
