@@ -32,6 +32,14 @@
 ### Bug Fixes
 
 - remove token generation scripts, workflows and related files ([#2116](https://github.com/Teradata/covalent/issues/2116)) ([40db061](https://github.com/Teradata/covalent/commit/40db061028d8afb2f74ff944203578174a9066cd))
+# [8.6.0-beta.1](https://github.com/Teradata/covalent/compare/v8.5.3...v8.6.0-beta.1) (2024-03-11)
+
+### Features
+
+- **components:** adding iconFont attribute support for covalent icons ([0919654](https://github.com/Teradata/covalent/commit/0919654156332f52aa50a42fccbfb5df079877f6))
+- **components:** button color support ([1f29d52](https://github.com/Teradata/covalent/commit/1f29d529570b9e9612c026df21e75d8273f17b63))
+- **components:** moving theme file to a prebuilt folder ([c74cfa1](https://github.com/Teradata/covalent/commit/c74cfa16278b18f154190bab95bf5698d077a6da))
+- **tokens:** normalizing tokens to use cv prefix ([b0c89fb](https://github.com/Teradata/covalent/commit/b0c89fbc40ac2d50337413e4af9b75198d5b79ff))
 
 ## [8.5.3](https://github.com/Teradata/covalent/compare/v8.5.2...v8.5.3) (2024-02-29)
 
