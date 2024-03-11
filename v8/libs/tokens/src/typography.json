@@ -96,6 +96,14 @@
     },
     "caption-font-size": { "value": "12px", "type": "fontSizes" },
     "caption-font-weight": { "value": "400", "type": "fontWeights" },
-    "caption-line-height": { "value": "16px", "type": "lineHeights" }
+    "caption-line-height": { "value": "16px", "type": "lineHeights" },
+
+    "code-font-family": {
+      "value": "Menlo",
+      "type": "fontFamilies"
+    },
+    "code-font-size": { "value": "12px", "type": "fontSizes" },
+    "code-font-weight": { "value": "400", "type": "fontWeights" },
+    "code-line-height": { "value": "20px", "type": "lineHeights" }
   }
 }
