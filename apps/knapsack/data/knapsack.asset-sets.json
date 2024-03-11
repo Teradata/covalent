@@ -13,7 +13,7 @@
           }
         },
         {
-          "src": "../../../dist/libs/components/theme/light-theme.css",
+          "src": "../../../dist/libs/components/theme/prebuilt/light-theme.css",
           "includedRenderers": ["web-components"]
         },
         {
@@ -39,7 +39,7 @@
           "src": "../public/ks-overrides.css"
         },
         {
-          "src": "../../../dist/libs/components/theme/dark-theme.css",
+          "src": "../../../dist/libs/components/theme/prebuilt/dark-theme.css",
           "includedRenderers": ["web-components"]
         },
         {
