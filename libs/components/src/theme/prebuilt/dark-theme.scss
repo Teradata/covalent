@@ -1,5 +1,5 @@
 @use '@covalent/tokens/index.scss' as tokens;
-@use './mixins' as theme;
+@use '../_mixins' as theme;
 
 $theme-tokens: map-get(tokens.$tokens, 'theme');
 $dark-tokens: map-get($theme-tokens, 'dark');
