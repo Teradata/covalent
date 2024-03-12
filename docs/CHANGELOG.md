@@ -12,6 +12,20 @@
 
 ### Bug Fixes
 
+- **build:** fix semantic release ([8672458](https://github.com/Teradata/covalent/commit/867245832be838e6de4377885f01b03bed11b55d))
+- **components:** adjusting theme package exports ([8951062](https://github.com/Teradata/covalent/commit/89510622780be0fcd0d984793b8dac48cac7191b))
+
+### Features
+
+- **components:** adding iconFont attribute support for covalent icons ([ed31212](https://github.com/Teradata/covalent/commit/ed3121253c4ff5c8263c6e7134c81b695480a3e5))
+- **components:** button color support ([13ffc06](https://github.com/Teradata/covalent/commit/13ffc06f0b63861a25da9f5c0757eac676d8061e))
+- **components:** moving theme file to a prebuilt folder ([41e7bf6](https://github.com/Teradata/covalent/commit/41e7bf643935d52bedb95f52bbacae1a7a1cb991))
+- **tokens:** normalizing tokens to use cv prefix ([b8efbbc](https://github.com/Teradata/covalent/commit/b8efbbcc57c15aa4c9084d87053dc678246c2b53))
+
+# [8.6.0-beta.1](https://github.com/Teradata/covalent/compare/v8.5.5...v8.6.0-beta.1) (2024-03-12)
+
+### Bug Fixes
+
 - **components:** adjusting theme package exports in npm ([8951062](https://github.com/Teradata/covalent/commit/89510622780be0fcd0d984793b8dac48cac7191b))
 
 ### Features
