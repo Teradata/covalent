@@ -7,13 +7,13 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "sass": "./style.css",
+      "style": "./style.css",
       "import": "./index.mjs",
       "require": "./index.js"
     },
-    "./style.css": {
-      "import": "./style.css",
-      "require": "./style.css"
+    "./style.css": "./style.css",
+    "./theme": {
+      "sass": "./theme/_index.scss"
     },
     "./action-ribbon": {
       "types": "./action-ribbon/action-ribbon.d.ts",

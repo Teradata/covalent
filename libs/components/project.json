@@ -30,6 +30,7 @@
       "options": {
         "commands": [
           "mkdir -p dist/libs/components/theme/prebuilt",
+          "cp libs/components/src/theme/*.scss dist/libs/components/theme/",
           "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/components/src/theme/prebuilt:./dist/libs/components/theme/prebuilt"
         ],
         "parallel": false
