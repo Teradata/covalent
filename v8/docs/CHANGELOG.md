@@ -1,3 +1,9 @@
+## [8.5.5](https://github.com/Teradata/covalent/compare/v8.5.4...v8.5.5) (2024-03-11)
+
+### Bug Fixes
+
+- add Menlo font to code snippet and highlight components ([#2115](https://github.com/Teradata/covalent/issues/2115)) ([6bcd603](https://github.com/Teradata/covalent/commit/6bcd60325d526840896dee39cc8a874bbf1b189f))
+
 ## [8.5.4](https://github.com/Teradata/covalent/compare/v8.5.3...v8.5.4) (2024-03-11)
 
 ### Bug Fixes
