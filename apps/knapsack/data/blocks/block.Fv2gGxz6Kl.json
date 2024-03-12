@@ -142,7 +142,7 @@
                       "content": [
                         {
                           "type": "text",
-                          "text": "mwc-checkbox"
+                          "text": "cv-checkbox"
                         }
                       ]
                     }
