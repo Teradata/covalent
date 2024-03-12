@@ -1,6 +1,3 @@
-// Covalent themed components
-@use '../data-table/data-table.theme' as data-table;
-
 @mixin css-variable-theme-tokens($theme, $prefix: 'cv') {
   @each $key, $value in $theme {
     --#{$prefix}-theme-#{$key}: #{map-get($theme, $key)};
@@ -316,36 +313,4 @@
   // Shape
   --mdc-shape-small: 8px;
   --mdc-shape-medium: 8px;
-
-  @include data-table.data-table-theme($theme);
-
-  color: var(--mdc-theme-text-primary-on-background);
-
-  // Links
-  a[href] {
-    color: var(--mdc-theme-secondary);
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .sbdocs.sbdocs-preview.sb-unstyled {
-    > div {
-      &:first-child {
-        background-color: inherit;
-      }
-    }
-  }
-
-  .sbdocs-content {
-    table {
-      .docblock-argstable-body {
-        td {
-          background-color: inherit;
-        }
-      }
-    }
-  }
 }

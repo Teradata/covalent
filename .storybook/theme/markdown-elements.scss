@@ -1,3 +1,27 @@
+@use '@covalent/tokens' as tokens;
+@use '../../libs/components/src/theme/mixins' as theme;
+
+$theme-tokens: map-get(tokens.$tokens, 'theme');
+$light-tokens: map-get($theme-tokens, 'light');
+$light-colors: map-get($light-tokens, 'colors');
+$dark-tokens: map-get($theme-tokens, 'dark');
+$dark-colors: map-get($dark-tokens, 'colors');
+
+// For convience re-define theme tokens scoped to a light/dark class
+.light {
+  @include theme.components-theme(
+    map-merge($light-colors, map-get(tokens.$tokens, light)),
+    map-get(tokens.$tokens, typography)
+  );
+}
+
+.dark {
+  @include theme.components-theme(
+    map-merge($dark-colors, map-get(tokens.$tokens, dark)),
+    map-get(tokens.$tokens, typography)
+  );
+}
+
 .sb-show-main {
   background-color: var(--mdc-theme-surface);
 
@@ -75,6 +99,10 @@
         padding: 0 1rem;
         vertical-align: middle;
       }
+    }
+
+    .docblock-argstable-body td {
+      background-color: inherit;
     }
   }
 }
@@ -294,8 +322,6 @@
   }
   table {
     font-family: var(--mdc-typography-subtitle2-font-family);
-
-
 
     thead th {
       height: 3.5rem;

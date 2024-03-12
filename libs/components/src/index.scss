@@ -1,45 +1,24 @@
 @use '@covalent/tokens' as tokens;
+@use './theme' as theme;
 @use './icon/icon' as icon;
 @use './skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
-@use './theme/mixins' as theme;
+@use './data-table/data-table.theme' as data-table;
 @import '../../icons/covalent-icons.css';
-
-@include icon.core-styles(); // TODO - include future support in icons css
-@include skeleton.core-styles(); // TODO - should include support
 
 $theme-tokens: map-get(tokens.$tokens, 'theme');
 $light-tokens: map-get($theme-tokens, 'light');
 $light-colors: map-get($light-tokens, 'colors');
-$dark-tokens: map-get($theme-tokens, 'dark');
-$dark-colors: map-get($dark-tokens, 'colors');
+// Deprecated tokens
+$light-colors: map-merge($light-colors, map-get(tokens.$tokens, 'light'));
+$typography: map-get(tokens.$tokens, 'typography');
 
-$merged: map-merge($light-colors, map-get(tokens.$tokens, light));
 // Define the base theme using light tokens w/ dark tokens overriting for prefers-color-scheme:dark
 :root {
-  @include theme.components-theme(
-    map-merge($light-colors, map-get(tokens.$tokens, light)),
-    map-get(tokens.$tokens, typography)
-  );
+  @include theme.components-theme($light-colors, $typography);
 
-  @media (prefers-color-scheme: dark) {
-    @include theme.components-theme(
-      map-merge($dark-colors, map-get(tokens.$tokens, dark)),
-      map-get(tokens.$tokens, typography)
-    );
-  }
-}
+  @include data-table.data-table-theme($light-colors);
+  @include icon.core-styles(); // TODO - include future support in icons css
+  @include skeleton.core-styles(
 
-// For convience re-define theme tokens scoped to a light/dark class
-.light {
-  @include theme.components-theme(
-    map-merge($light-colors, map-get(tokens.$tokens, light)),
-    map-get(tokens.$tokens, typography)
-  );
-}
-
-.dark {
-  @include theme.components-theme(
-    map-merge($dark-colors, map-get(tokens.$tokens, dark)),
-    map-get(tokens.$tokens, typography)
-  );
+  ); // TODO - should include support for text and block
 }
