@@ -12,7 +12,7 @@
 
 ### Bug Fixes
 
-- **components:** adjusting theme package exports ([8951062](https://github.com/Teradata/covalent/commit/89510622780be0fcd0d984793b8dac48cac7191b))
+- **components:** adjusting theme package exports in npm ([8951062](https://github.com/Teradata/covalent/commit/89510622780be0fcd0d984793b8dac48cac7191b))
 
 ### Features
 
