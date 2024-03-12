@@ -5,13 +5,29 @@
   "required": [],
   "properties": {
     "checked": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Whether the checkbox is checked.",
+      "default": false
     },
     "indeterminate": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "When a checkbox is the parent of a set of child checkboxes, the indeterminate state is used on the parent to indicate that some but not all of its children are checked.",
+      "default": false
     },
     "disabled": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "When true, the checkbox cannot be interacted with, and renders in muted colors.",
+      "default": false
+    },
+    "reducedTouchTarget": {
+      "description": "When true, the checkbox remove padding for touchscreens and increase density. Note, the checkbox will no longer meet accessibility guidelines for touch.",
+      "type": "boolean",
+      "default": false
+    },
+    "value": {
+      "description": "The value that will be included if the checkbox is submitted in a form.",
+      "type": "string",
+      "default": ""
     }
   }
 }

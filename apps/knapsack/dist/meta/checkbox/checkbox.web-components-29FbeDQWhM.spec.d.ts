@@ -9,7 +9,24 @@
  */
 
 export interface Checkbox {
+  /**
+   * Whether the checkbox is checked.
+   */
   checked?: boolean;
+  /**
+   * When a checkbox is the parent of a set of child checkboxes, the indeterminate state is used on the parent to indicate that some but not all of its children are checked.
+   */
   indeterminate?: boolean;
+  /**
+   * When true, the checkbox cannot be interacted with, and renders in muted colors.
+   */
   disabled?: boolean;
+  /**
+   * When true, the checkbox remove padding for touchscreens and increase density. Note, the checkbox will no longer meet accessibility guidelines for touch.
+   */
+  reducedTouchTarget?: boolean;
+  /**
+   * The value that will be included if the checkbox is submitted in a form.
+   */
+  value?: string;
 }
