@@ -2,8 +2,6 @@
   "name": "@covalent/tokens",
   "version": "0.0.0-COVALENT",
   "description": "Design tokens for covalent design system",
-  "main": "index.js",
-  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/teradata/covalent.git"
@@ -16,7 +14,9 @@
   "exports": {
     ".": {
       "sass": "./_index.scss",
-      "style": "./index.css"
+      "style": "./index.css",
+      "types": "./index.d.ts",
+      "default": "./index.js"
     }
   }
 }
