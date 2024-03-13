@@ -36,15 +36,20 @@ export class CovalentCodeSnippet extends LitElement {
   @property()
   maxHeight?: number;
 
-  _code = '';
+  private _code = '';
 
-  firstUpdated() {
+  highlight() {
+    this._code = '';
     this._codeItems.forEach((codeEl) => {
       this._code += hljs.highlight(codeEl.textContent ?? '', {
         language: this.language ?? '',
       }).value;
       this.requestUpdate();
     });
+  }
+
+  firstUpdated() {
+    this.highlight();
   }
 
   override render() {
@@ -63,17 +68,16 @@ export class CovalentCodeSnippet extends LitElement {
     };
     classes[`language-${this.language}`] = true;
     const container = document.createElement('div');
-    container.innerHTML = this._code ? this._code.trim() : '<slot></slot>';
+    container.innerHTML = this._code.trim();
 
     let styleHeight;
     if (this.maxHeight && this.maxHeight > 0) {
       styleHeight = `max-height: ${this.maxHeight}px`;
     }
 
-    return html`<pre
-      style="${styleHeight}"
-      part="container"
-    ><code class="${classMap(classes)}">${container}</code></pre>`;
+    return html`<pre style="${styleHeight} part="container"><code class="${classMap(
+      classes
+    )}">${container}</code></pre><slot class="code-slot"></slot>`;
   }
 
   renderHeader() {
