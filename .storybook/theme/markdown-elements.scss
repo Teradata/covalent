@@ -1,7 +1,6 @@
 @use '@covalent/tokens' as tokens;
 @use '../../libs/components/src/theme' as theme;
 @use '../../libs/components/src/data-table/data-table.theme' as data-table;
-@use '../../libs/components/src/icon/icon.theme' as icon;
 
 $theme-tokens: map-get(tokens.$tokens, 'theme');
 $light-tokens: map-get($theme-tokens, 'light');
@@ -11,8 +10,6 @@ $dark-colors: map-get($dark-tokens, 'colors');
 // Merge deprecated tokens
 $light-colors: map-merge($light-colors, map-get(tokens.$tokens, light));
 $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
-
-@include icon.core-styles();
 
 // For convience re-define theme tokens scoped to a light/dark class
 .light {
@@ -33,6 +30,7 @@ $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
 
 .sb-show-main {
   background-color: var(--mdc-theme-surface);
+  color: var(--cv-theme-on-surface);
 
   .sbdocs-wrapper {
     padding-top: 0;
@@ -718,7 +716,6 @@ pre.prismjs {
 }
 
 /* -- Dark theme -- */
-
 .dark pre.prismjs {
   /**
     * Coldark Theme for Prism.js
