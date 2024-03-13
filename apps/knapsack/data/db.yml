@@ -2,13 +2,13 @@ blocks:
   settings:
     guidelines:
       colorCaution:
-        tokenName: theme.light.colors.caution
+        tokenName: cv.theme.light.colors.caution
         type: design-token
       colorDo:
-        tokenName: theme.light.colors.positive
+        tokenName: cv.theme.light.colors.positive
         type: design-token
       colorDont:
-        tokenName: theme.light.colors.negative
+        tokenName: cv.theme.light.colors.negative
         type: design-token
     tokens:
       nameDisplayFormat: cssVar
@@ -32,30 +32,36 @@ settings:
       navigation:
         primaryNav:
           accentColor:
-            tokenName: theme.light.colors.primary
+            tokenName: cv.theme.light.colors.primary
+            type: design-token
+          backgroundColor:
+            tokenName: cv.theme.light.colors.background
             type: design-token
           fontFamily: Inter
           hoverColor:
-            tokenName: theme.light.colors.primary-24%
+            tokenName: cv.theme.light.colors.primary-24%
             type: design-token
           textColor:
-            tokenName: theme.light.colors.primary
+            tokenName: cv.theme.light.colors.primary
             type: design-token
           textTransform: inherit
         secondaryNav:
           accentColor:
-            tokenName: theme.light.colors.primary
+            tokenName: cv.theme.light.colors.primary
             type: design-token
           fontFamily: Inter
           textColor:
-            tokenName: theme.light.colors.on-surface
+            tokenName: cv.theme.light.colors.on-surface
             type: design-token
           textTransform: inherit
         tabs:
           accentColor:
-            tokenName: theme.light.colors.primary
+            tokenName: cv.theme.light.colors.primary
             type: design-token
           fontFamily: Inter
+          textColor:
+            tokenName: cv.theme.light.colors.on-surface
+            type: design-token
           textTransform: inherit
       pageElements:
         bodyText:
