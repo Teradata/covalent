@@ -1,6 +1,6 @@
 import { parameters as mainParameters } from '../../../.storybook/preview';
 
-import '../src/index.scss';
+import '../../icons/covalent-icons.scss';
 import '../../../.storybook/theme/markdown-elements.scss';
 
 export const parameters = {

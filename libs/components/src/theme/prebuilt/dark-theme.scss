@@ -9,7 +9,7 @@ $typography: map-get(tokens.$tokens, 'typography');
 // Deprecated tokens
 $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, 'dark'));
 
-// Define the base theme using dark tokens w/ dark tokens overriding for prefers-color-scheme:dark
+// Define the base theme using dark tokens w/ dark tokens
 :root {
   @include theme.components-theme($dark-colors, $typography);
 

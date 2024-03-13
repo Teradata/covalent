@@ -1,11 +1,18 @@
 @use '@covalent/tokens' as tokens;
 @use '../../libs/components/src/theme' as theme;
+@use '../../libs/components/src/data-table/data-table.theme' as data-table;
+@use '../../libs/components/src/icon/icon.theme' as icon;
 
 $theme-tokens: map-get(tokens.$tokens, 'theme');
 $light-tokens: map-get($theme-tokens, 'light');
 $light-colors: map-get($light-tokens, 'colors');
 $dark-tokens: map-get($theme-tokens, 'dark');
 $dark-colors: map-get($dark-tokens, 'colors');
+// Merge deprecated tokens
+$light-colors: map-merge($light-colors, map-get(tokens.$tokens, light));
+$dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
+
+@include icon.core-styles();
 
 // For convience re-define theme tokens scoped to a light/dark class
 .light {
@@ -13,6 +20,7 @@ $dark-colors: map-get($dark-tokens, 'colors');
     map-merge($light-colors, map-get(tokens.$tokens, light)),
     map-get(tokens.$tokens, typography)
   );
+  @include data-table.data-table-theme($light-colors);
 }
 
 .dark {
@@ -20,6 +28,7 @@ $dark-colors: map-get($dark-tokens, 'colors');
     map-merge($dark-colors, map-get(tokens.$tokens, dark)),
     map-get(tokens.$tokens, typography)
   );
+  @include data-table.data-table-theme($dark-colors);
 }
 
 .sb-show-main {
