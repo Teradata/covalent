@@ -1,3 +1,9 @@
+# [8.7.0-beta.2](https://github.com/Teradata/covalent/compare/v8.7.0-beta.1...v8.7.0-beta.2) (2024-03-13)
+
+### Bug Fixes
+
+- **icons:** adding variables to npm package ([54c01f0](https://github.com/Teradata/covalent/commit/54c01f08c900cdf9d516b666f1dade76fdbc5e08))
+
 # [8.7.0-beta.1](https://github.com/Teradata/covalent/compare/v8.6.0...v8.7.0-beta.1) (2024-03-13)
 
 ### Bug Fixes
