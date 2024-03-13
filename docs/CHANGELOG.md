@@ -1,3 +1,9 @@
+# [8.7.0-beta.4](https://github.com/Teradata/covalent/compare/v8.7.0-beta.3...v8.7.0-beta.4) (2024-03-13)
+
+### Bug Fixes
+
+- **components:** theme exports ([6fe7cc2](https://github.com/Teradata/covalent/commit/6fe7cc2479b796585fdc3d27942146ff96a69868))
+
 # [8.7.0-beta.3](https://github.com/Teradata/covalent/compare/v8.7.0-beta.2...v8.7.0-beta.3) (2024-03-13)
 
 ### Features
