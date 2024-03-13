@@ -1,4 +1,4 @@
-@use '@covalent/tokens/index.scss' as tokens;
+@use '@covalent/tokens' as tokens;
 @use './mixins' as theme;
 
 // Define the base theme using light tokens w/ dark tokens overriting for prefers-color-scheme:dark

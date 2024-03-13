@@ -1,4 +1,4 @@
-@use '@covalent/tokens/index.scss' as tokens;
+@use '@covalent/tokens' as tokens;
 @use './icon/icon' as icon;
 @use './skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
 @use './theme/mixins' as theme;
