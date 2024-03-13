@@ -1,5 +1,5 @@
 @use '@covalent/tokens' as tokens;
-@use '../../libs/components/src/theme/mixins' as theme;
+@use '../../libs/components/src/theme' as theme;
 
 $theme-tokens: map-get(tokens.$tokens, 'theme');
 $light-tokens: map-get($theme-tokens, 'light');
