@@ -1,3 +1,9 @@
+# [8.7.0-beta.7](https://github.com/Teradata/covalent/compare/v8.7.0-beta.6...v8.7.0-beta.7) (2024-03-13)
+
+### Bug Fixes
+
+- **components:** list style adjustments ([2441444](https://github.com/Teradata/covalent/commit/24414449f68af72c28bfa90eb3ad0e8d55d14019))
+
 # [8.7.0-beta.6](https://github.com/Teradata/covalent/compare/v8.7.0-beta.5...v8.7.0-beta.6) (2024-03-13)
 
 ### Features
