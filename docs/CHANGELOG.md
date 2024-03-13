@@ -1,3 +1,9 @@
+# [8.7.0-beta.6](https://github.com/Teradata/covalent/compare/v8.7.0-beta.5...v8.7.0-beta.6) (2024-03-13)
+
+### Features
+
+- **components:** card full height property ([fd2b27d](https://github.com/Teradata/covalent/commit/fd2b27dfc82b4e8e307f033c8fcd39051e5fa365))
+
 # [8.7.0-beta.5](https://github.com/Teradata/covalent/compare/v8.7.0-beta.4...v8.7.0-beta.5) (2024-03-13)
 
 ### Features
