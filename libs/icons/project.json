@@ -10,6 +10,7 @@
       "options": {
         "commands": [
           "mkdir -p dist/libs/icons",
+          "cp libs/icons/covalent-icons*.scss dist/libs/icons",
           "cp libs/icons/covalent-icons.* dist/libs/icons",
           "cp libs/icons/package.json dist/libs/icons"
         ],
