@@ -1,3 +1,9 @@
+# [8.7.0-beta.5](https://github.com/Teradata/covalent/compare/v8.7.0-beta.4...v8.7.0-beta.5) (2024-03-13)
+
+### Features
+
+- **icons:** moving icon styles support to icons package ([37c7c5d](https://github.com/Teradata/covalent/commit/37c7c5dfc12a3c80ae417eec71b25a49dca05e16))
+
 # [8.7.0-beta.4](https://github.com/Teradata/covalent/compare/v8.7.0-beta.3...v8.7.0-beta.4) (2024-03-13)
 
 ### Bug Fixes
