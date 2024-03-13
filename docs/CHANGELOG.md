@@ -1,3 +1,9 @@
+# [8.7.0-beta.3](https://github.com/Teradata/covalent/compare/v8.7.0-beta.2...v8.7.0-beta.3) (2024-03-13)
+
+### Features
+
+- **components:** removing dep on needing style css file ([cc5d218](https://github.com/Teradata/covalent/commit/cc5d218f62bf8dd14b17f0161a474de36431fb8c))
+
 # [8.7.0-beta.2](https://github.com/Teradata/covalent/compare/v8.7.0-beta.1...v8.7.0-beta.2) (2024-03-13)
 
 ### Bug Fixes
