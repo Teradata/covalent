@@ -1,24 +1,3 @@
-@use '@covalent/tokens' as tokens;
-@use './theme' as theme;
-@use './icon/icon' as icon;
-@use './skeleton/skeleton.styles' as skeleton; // TODO - should be a component for text and block
-@use './data-table/data-table.theme' as data-table;
-@import '../../icons/covalent-icons.css';
-
-$theme-tokens: map-get(tokens.$tokens, 'theme');
-$light-tokens: map-get($theme-tokens, 'light');
-$light-colors: map-get($light-tokens, 'colors');
-// Deprecated tokens
-$light-colors: map-merge($light-colors, map-get(tokens.$tokens, 'light'));
-$typography: map-get(tokens.$tokens, 'typography');
-
-// Define the base theme using light tokens w/ dark tokens overriting for prefers-color-scheme:dark
-:root {
-  @include theme.components-theme($light-colors, $typography);
-
-  @include data-table.data-table-theme($light-colors);
-  @include icon.core-styles(); // TODO - include future support in icons css
-  @include skeleton.core-styles(
-
-  ); // TODO - should include support for text and block
-}
+@forward './theme' show components-theme;
+@forward './icon/icon.theme' show core-styles;
+@forward './data-table/data-table.theme' show data-table-theme;
