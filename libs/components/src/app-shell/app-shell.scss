@@ -29,6 +29,17 @@
   --cv-list-menu-height: inherit;
 }
 
+:host([helpOpen]) {
+  /* Mobile only styles */
+  @media only screen and (max-width: 768px) {
+    .app-shell,
+    .main {
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
+}
+
 .app-shell {
   background-color: var(--mdc-theme-surface);
   display: grid;
@@ -56,7 +67,7 @@
 .main {
   height: 100vh;
   grid-area: main;
-  overflow: scroll;
+  overflow: auto;
   transition: margin 200ms ease-in-out;
 
   cv-card {
