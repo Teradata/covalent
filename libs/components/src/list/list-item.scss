@@ -22,14 +22,6 @@
 
 .mdc-deprecated-list-item__secondary-text {
   --mdc-icon-size: var(--mdc-typography-body2-font-size);
-
-  display: flex;
-  align-items: center;
-
-  ::slotted(*) {
-    display: flex;
-    align-items: center;
-  }
 }
 
 .mdc-deprecated-list-item__meta {
