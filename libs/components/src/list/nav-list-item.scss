@@ -25,12 +25,16 @@
 }
 
 :host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
+  --mdc-theme-text-icon-on-background: var(--cv-theme-on-surface);
+
   margin-left: var(--cv-list-item-graphic-margin-left, 12px);
   padding-left: 4px;
+  background-color: transparent;
 }
 
 :host([graphic='avatar']) {
   padding: 0;
+  background-color: transparent;
 }
 
 :host([graphic='avatar']:not([twoline])) {
