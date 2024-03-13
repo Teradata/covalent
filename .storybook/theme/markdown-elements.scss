@@ -12,7 +12,7 @@ $light-colors: map-merge($light-colors, map-get(tokens.$tokens, light));
 $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
 
 // For convience re-define theme tokens scoped to a light/dark class
-.light {
+:root {
   @include theme.components-theme(
     map-merge($light-colors, map-get(tokens.$tokens, light)),
     map-get(tokens.$tokens, typography)
