@@ -1,3 +1,9 @@
+# [8.7.0-beta.9](https://github.com/Teradata/covalent/compare/v8.7.0-beta.8...v8.7.0-beta.9) (2024-03-13)
+
+### Bug Fixes
+
+- **components:** nav list style adjustments ([094726c](https://github.com/Teradata/covalent/commit/094726ce284b60bc4eb86b64eb7667ae72655070))
+
 # [8.7.0-beta.8](https://github.com/Teradata/covalent/compare/v8.7.0-beta.7...v8.7.0-beta.8) (2024-03-13)
 
 ### Bug Fixes
