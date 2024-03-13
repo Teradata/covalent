@@ -31,6 +31,7 @@
         "commands": [
           "mkdir -p dist/libs/components/theme/prebuilt",
           "cp libs/components/src/index.scss dist/libs/components",
+          "cp libs/components/src/theme/_index.scss dist/libs/components/theme",
           "cp libs/components/src/icon/*theme.scss dist/libs/components/icon",
           "mkdir -p dist/libs/components/data-table",
           "cp libs/components/src/data-table/*theme.scss dist/libs/components/data-table",
