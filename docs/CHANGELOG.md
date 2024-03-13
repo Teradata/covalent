@@ -1,14 +1,9 @@
-# [8.7.0](https://github.com/Teradata/covalent/compare/v8.6.1...v8.7.0) (2024-03-18)
-
-### Features
-
-- **components:** create a badge web component ([#2121](https://github.com/Teradata/covalent/issues/2121)) ([148c9c3](https://github.com/Teradata/covalent/commit/148c9c32ec7d250e7b5d32e080e498300604e51b))
-
-## [8.6.1](https://github.com/Teradata/covalent/compare/v8.6.0...v8.6.1) (2024-03-14)
+# [8.7.0-beta.2](https://github.com/Teradata/covalent/compare/v8.7.0-beta.1...v8.7.0-beta.2) (2024-03-13)
 
 ### Bug Fixes
 
-- **icons:** fix path exports ([#2122](https://github.com/Teradata/covalent/issues/2122)) ([d99e623](https://github.com/Teradata/covalent/commit/d99e623a50f75ca04f3fb3d44f7e316a6992e43a))
+- **icons:** adding variables to npm package ([54c01f0](https://github.com/Teradata/covalent/commit/54c01f08c900cdf9d516b666f1dade76fdbc5e08))
+
 # [8.7.0-beta.1](https://github.com/Teradata/covalent/compare/v8.6.0...v8.7.0-beta.1) (2024-03-13)
 
 ### Bug Fixes
