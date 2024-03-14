@@ -1,3 +1,26 @@
+# [8.7.0-beta.1](https://github.com/Teradata/covalent/compare/v8.6.0...v8.7.0-beta.1) (2024-03-14)
+
+### Bug Fixes
+
+- **build:** fix semantic release ([d71cc27](https://github.com/Teradata/covalent/commit/d71cc271f3bb814aaf387e2e15a2ada80a36f194))
+- **components:** adjusting theme package exports ([ae6cdfd](https://github.com/Teradata/covalent/commit/ae6cdfd6c9a4a08618d5ddbd24b5fd9b9f17f588))
+- **components:** list style adjustments ([46c475b](https://github.com/Teradata/covalent/commit/46c475b4b6cbabd885ec3c09ca81f0c971a90f58))
+- **components:** nav list style adjustments ([e289b2e](https://github.com/Teradata/covalent/commit/e289b2e6409180991cf14cd3e3b503b7ae1e4dea))
+- **components:** removing list style updates ([524d94b](https://github.com/Teradata/covalent/commit/524d94b38d840a1dc7793ce97bf016a69ce5d974))
+- **components:** theme exports ([422ed6d](https://github.com/Teradata/covalent/commit/422ed6db9eecf023425f29c11873f5d1812239a1))
+- **components:** theme path ([aba4bf2](https://github.com/Teradata/covalent/commit/aba4bf2ef313112b8a701730ebbf97b7e1e72c20))
+- **icons:** fix path exports ([#2122](https://github.com/Teradata/covalent/issues/2122)) ([d99e623](https://github.com/Teradata/covalent/commit/d99e623a50f75ca04f3fb3d44f7e316a6992e43a))
+
+### Features
+
+- **components:** adding iconFont attribute support for covalent icons ([9bb3ff1](https://github.com/Teradata/covalent/commit/9bb3ff1dff48123ee727cc68c73027134f717f4a))
+- **components:** button color support ([286feb8](https://github.com/Teradata/covalent/commit/286feb89ea8546ecc1e77b4c85da2805d526fa5d))
+- **components:** card full height property ([38ab49d](https://github.com/Teradata/covalent/commit/38ab49dc199ef36250d159b4376357feae4349f8))
+- **components:** moving theme file to a prebuilt folder ([b079ffd](https://github.com/Teradata/covalent/commit/b079ffd3ba8c4330e43810eccc3b790f77266d8d))
+- **components:** removing dep on needing style css file ([fa9e0bf](https://github.com/Teradata/covalent/commit/fa9e0bf35d6922c5f657e6632982383c638f79aa))
+- **icons:** moving icon styles support to icons package ([03c2977](https://github.com/Teradata/covalent/commit/03c2977665a8599d091998257afb8bf7ddfd1761))
+- **tokens:** normalizing tokens to use cv prefix ([2827195](https://github.com/Teradata/covalent/commit/2827195494d374bf6d03cd0b63f59f9f764a1433))
+
 # [8.7.0-beta.9](https://github.com/Teradata/covalent/compare/v8.7.0-beta.8...v8.7.0-beta.9) (2024-03-13)
 
 ### Bug Fixes
