@@ -4,7 +4,7 @@
   "data": {
     "demoId": "color-swatch",
     "tokenType": "color",
-    "groupIds": ["theme.dark.colors"],
+    "groupIds": ["cv.theme.dark.colors"],
     "include": "caution",
     "exclude": ""
   }
