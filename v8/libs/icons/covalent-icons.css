@@ -8,6 +8,15 @@
   font-display: block;
 }
 
+/* Support mdc icon font variable */
+.covalent-icon,
+.covalent-icons,
+[covalent-icon],
+[covalent-icons],
+[iconFont='covalent-icons'] {
+  --mdc-icon-font: 'covalent-icons';
+}
+
 [class^='cov-'],
 [class*=' cov-'] {
   /* use !important to prevent issues with browser extensions that change fonts */

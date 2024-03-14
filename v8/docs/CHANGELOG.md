@@ -1,3 +1,14 @@
+# [8.6.0](https://github.com/Teradata/covalent/compare/v8.5.5...v8.6.0) (2024-03-13)
+
+### Bug Fixes
+
+- **tokens:** export path ([8f6e877](https://github.com/Teradata/covalent/commit/8f6e8770c53768c9a6f3cb642973bb459bcedc47))
+- **tokens:** import path ([ce6d533](https://github.com/Teradata/covalent/commit/ce6d5336ea127bcbd9935cc52f46452e736feae6))
+
+### Features
+
+- **tokens:** updating referenced tokens package ([8cb243c](https://github.com/Teradata/covalent/commit/8cb243c314d7cb57f4215a08f30d99a4cf088e59))
+
 ## [8.5.5](https://github.com/Teradata/covalent/compare/v8.5.4...v8.5.5) (2024-03-11)
 
 ### Bug Fixes
