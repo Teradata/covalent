@@ -1,3 +1,9 @@
+## [8.6.1](https://github.com/Teradata/covalent/compare/v8.6.0...v8.6.1) (2024-03-14)
+
+### Bug Fixes
+
+- **icons:** fix path exports ([#2122](https://github.com/Teradata/covalent/issues/2122)) ([d99e623](https://github.com/Teradata/covalent/commit/d99e623a50f75ca04f3fb3d44f7e316a6992e43a))
+
 # [8.6.0](https://github.com/Teradata/covalent/compare/v8.5.5...v8.6.0) (2024-03-13)
 
 ### Bug Fixes

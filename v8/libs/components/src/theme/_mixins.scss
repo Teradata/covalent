@@ -315,6 +315,8 @@
       $theme,
       text-logo-on-background
     )};
+  --cov-theme-color-negative: #{map-get($theme, negative)};
+  --cov-theme-color-on-negative: #{map-get($theme, on-negative)};
 
   // Shape
   --mdc-shape-small: 8px;
