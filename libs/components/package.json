@@ -30,6 +30,11 @@
       "import": "./app-shell.mjs",
       "require": "./app-shell.js"
     },
+    "./badge": {
+      "types": "./badge/badge.d.ts",
+      "import": "./badge.mjs",
+      "require": "./badge.js"
+    },
     "./button": {
       "types": "./button/button.d.ts",
       "import": "./button.mjs",
