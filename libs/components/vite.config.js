@@ -13,6 +13,7 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/action-ribbon/action-ribbon',
           'libs/components/src/alert/alert',
           'libs/components/src/app-shell/app-shell',
+          'libs/components/src/badge/badge',
           'libs/components/src/button/button',
           'libs/components/src/checkbox/checkbox',
           'libs/components/src/card/card',
