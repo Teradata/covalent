@@ -3,6 +3,7 @@ import './badge';
 import '../icon/icon';
 import '../list/list-item';
 import '../list/list';
+import '../typography/typography';
 
 export default {
   title: 'Components/Badge',
