@@ -1,3 +1,9 @@
+# [8.7.0](https://github.com/Teradata/covalent/compare/v8.6.1...v8.7.0) (2024-03-18)
+
+### Features
+
+- **components:** create a badge web component ([#2121](https://github.com/Teradata/covalent/issues/2121)) ([148c9c3](https://github.com/Teradata/covalent/commit/148c9c32ec7d250e7b5d32e080e498300604e51b))
+
 ## [8.6.1](https://github.com/Teradata/covalent/compare/v8.6.0...v8.6.1) (2024-03-14)
 
 ### Bug Fixes
