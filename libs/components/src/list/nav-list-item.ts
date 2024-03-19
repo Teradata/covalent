@@ -178,11 +178,11 @@ export class CovalentNavRailListItem extends CovalentListItem {
 
   protected override renderMeta() {
     const arrowIcon = this.open ? 'arrow_drop_up' : 'arrow_drop_down';
-    const arrow = html`<cv-icon slot="meta" class="expansion-icon"
-      >${arrowIcon}</cv-icon
-    >`;
+    const arrow = this.hasChildren
+      ? html`<cv-icon class="expansion-icon">${arrowIcon}</cv-icon>`
+      : '';
 
-    return html` <span class="mdc-deprecated-list-item__meta material-icons">
+    return html`<span class="mdc-deprecated-list-item__meta material-icons">
       ${arrow}
       <slot name="meta"></slot>
     </span>`;
