@@ -13,7 +13,8 @@
       "spec": {
         "slots": {
           "default": {
-            "title": "default"
+            "title": "default",
+            "description": "The default slot for the content of the card"
           },
           "card-actions": {
             "allowedPatternIds": [
@@ -24,7 +25,8 @@
               "icon",
               "icon-button"
             ],
-            "title": "card-actions"
+            "title": "card-actions",
+            "description": "The slot for action items to be included in the card"
           }
         },
         "props": {
@@ -35,19 +37,26 @@
           "properties": {
             "cardTitle": {
               "type": "string",
-              "default": "Card title"
+              "default": "Card title",
+              "description": "The title of the card"
             },
             "outlined": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Style the card as an outline variant"
             },
             "actionBar": {
+              "type": "boolean",
+              "description": "Displays the action bar"
+            },
+            "interactive": {
+              "description": "Displays the ripple affect in primary area",
               "type": "boolean"
             }
           }
         }
       },
       "demoIds": ["pTyIIHqJtL", "sNLUIRYsNz"],
-      "blockIds": []
+      "blockIds": ["744NeKvS9M"]
     }
   ],
   "tabs": [

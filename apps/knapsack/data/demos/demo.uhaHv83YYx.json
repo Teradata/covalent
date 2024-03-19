@@ -1,0 +1,23 @@
+{
+  "id": "uhaHv83YYx",
+  "title": "Icon with a small badge",
+  "description": "A description",
+  "type": "data",
+  "patternId": "badge",
+  "templateId": "web-components-40aOlYC6I9",
+  "data": {
+    "props": {
+      "size": "small"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "icon",
+          "templateId": "web-components-N8bzRbfpuX",
+          "demoId": "bn4zy44TYR"
+        }
+      ]
+    }
+  }
+}

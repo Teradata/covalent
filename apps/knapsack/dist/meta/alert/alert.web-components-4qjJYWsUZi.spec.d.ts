@@ -8,13 +8,30 @@
  * Run Knapsack again to regenerate this file.
  */
 
-type AlertTitle = string;
-
 export interface Alert {
+  /**
+   * Icon added to the alert
+   */
   icon?: string;
+  /**
+   * State representation which can take the values:
+   * active|negative|positive|caution
+   */
   state?: string;
+  /**
+   * Displays the alert inline with its container
+   */
   inline?: boolean;
+  /**
+   * Title of the alert
+   */
   titleText?: string;
-  iconAriaLabel?: AlertTitle;
+  /**
+   * aria-label for the icon
+   */
+  iconAriaLabel?: string;
+  /**
+   * Description of the alert
+   */
   descriptionText?: string;
 }

@@ -9,6 +9,24 @@
  */
 
 export interface CodeSnippet {
+  /**
+   * Label displayed in the header of the code snippet
+   */
   label?: string;
+  /**
+   * The language used in the code snippet
+   */
   language?: string;
+  /**
+   * Displays the code snippet as an inline element
+   */
+  inline?: boolean;
+  /**
+   * Hides the header
+   */
+  hideHeader?: boolean;
+  /**
+   * Sets the max height of the code snippet in pixels
+   */
+  maxHeight?: number;
 }

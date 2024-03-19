@@ -9,7 +9,25 @@
  */
 
 export interface ActionRibbon {
+  /**
+   * Text to be displayed in the action ribbon
+   */
   labelText?: string;
+  /**
+   * State representation which can take the values:
+   * active|negative|positive|caution
+   */
   state?: string;
+  /**
+   * Icon added to the action ribbon
+   */
   icon?: string;
+  /**
+   * aria-label of the icon
+   */
+  iconAriaLabel?: string;
+  /**
+   * Centers the action ribbon
+   */
+  centered?: boolean;
 }

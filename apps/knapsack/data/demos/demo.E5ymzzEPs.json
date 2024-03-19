@@ -6,7 +6,16 @@
   "templateId": "web-components-raE1x4tYL",
   "data": {
     "props": {
-      "label": "test"
+      "label": "test",
+      "trailingIcon": false,
+      "icon": "chat",
+      "raised": false,
+      "unelevated": false,
+      "outlined": true,
+      "dense": false,
+      "disabled": false,
+      "expandContent": false,
+      "fullwidth": false
     },
     "slots": {}
   }

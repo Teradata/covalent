@@ -8,7 +8,9 @@
     "props": {
       "labelText": "You have unsaved changes",
       "state": "active",
-      "icon": "info"
+      "centered": false,
+      "icon": "info",
+      "iconAriaLabel": "info"
     },
     "slots": {
       "action-items": [

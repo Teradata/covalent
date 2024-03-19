@@ -21,32 +21,50 @@
           "required": [],
           "properties": {
             "label": {
+              "description": "Label to display for the button, and aria-label",
               "type": "string"
-            },
-            "outlined": {
-              "type": "boolean",
-              "default": true
-            },
-            "raised": {
-              "type": "boolean",
-              "default": false
             },
             "icon": {
-              "type": "string"
+              "type": "string",
+              "description": "Icon to display, and aria-label value when label is not defined"
             },
-            "trailingIcon": {
-              "type": "boolean",
-              "default": false
+            "raised": {
+              "description": "Creates a contained button that is elevated above the surface",
+              "type": "boolean"
+            },
+            "unelevated": {
+              "description": "Creates a contained button that is flush with the surface",
+              "type": "boolean"
+            },
+            "outlined": {
+              "description": "Creates an outlined button that is flush with the surface",
+              "type": "boolean"
             },
             "dense": {
-              "type": "boolean",
-              "default": false
+              "description": "Makes the button text and container slightly smaller",
+              "type": "boolean"
+            },
+            "disabled": {
+              "description": "Disabled buttons cannot be interacted with and have no visual interaction effect",
+              "type": "boolean"
+            },
+            "expandContent": {
+              "description": "When true, the space after the label and before any trailing icon, where default slotted content is rendered, is expanded to fit the available space inside the button",
+              "type": "boolean"
+            },
+            "fullwidth": {
+              "description": "When true, the button is expanded to fit the entire available space.",
+              "type": "boolean"
+            },
+            "trailingIcon": {
+              "description": "When true, icon will be displayed after label",
+              "type": "boolean"
             }
           }
         }
       },
       "demoIds": ["E5ymzzEPs", "wJJ2tksHEK"],
-      "blockIds": []
+      "blockIds": ["Yy3EHn1oaI"]
     }
   ],
   "tabs": [

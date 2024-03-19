@@ -14,7 +14,8 @@
         "slots": {
           "action-items": {
             "allowedPatternIds": ["button", "checkbox"],
-            "title": "action-items"
+            "title": "action-items",
+            "description": "Action items for the action-ribbon"
           }
         },
         "props": {
@@ -25,20 +26,32 @@
           "properties": {
             "labelText": {
               "type": "string",
-              "default": "You have unsaved changes"
+              "default": "You have unsaved changes",
+              "description": "Text to be displayed in the action ribbon"
             },
             "state": {
               "type": "string",
-              "default": "active"
+              "default": "active",
+              "description": "State representation which can take the values:\nactive|negative|positive|caution"
             },
             "icon": {
-              "type": "string"
+              "type": "string",
+              "description": "Icon added to the action ribbon"
+            },
+            "iconAriaLabel": {
+              "type": "string",
+              "description": "aria-label of the icon"
+            },
+            "centered": {
+              "description": "Centers the action ribbon",
+              "type": "boolean",
+              "default": false
             }
           }
         }
       },
       "demoIds": ["xrVH4M3t6W"],
-      "blockIds": []
+      "blockIds": ["vd3AOFR1Fb", "s7sSsuyqQk"]
     }
   ],
   "tabs": [
