@@ -6,7 +6,10 @@
   "templateId": "web-components-I5Sx1HQnJ",
   "data": {
     "props": {
-      "label": "Form field label"
+      "label": "Form field",
+      "alignEnd": false,
+      "spaceBetween": false,
+      "nowrap": false
     },
     "slots": {
       "default": [

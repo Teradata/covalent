@@ -9,7 +9,29 @@
  */
 
 export interface ChipItem {
+  /**
+   * The text label of the chip
+   */
   label: string;
+  /**
+   * The state representation with the values: secondary|negative|positive|caution
+   */
   state?: string;
+  icon?: string;
+  /**
+   * Sets the filter chip variant
+   */
   filter?: boolean;
+  /**
+   * Moves the icon to a trailing position
+   */
+  trailingIcon?: boolean;
+  /**
+   * Treats the leading icon like an avatar
+   */
+  avatar?: boolean;
+  /**
+   * Disables the chip
+   */
+  disabled?: boolean;
 }

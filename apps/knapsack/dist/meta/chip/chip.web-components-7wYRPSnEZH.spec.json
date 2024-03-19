@@ -5,7 +5,20 @@
   "required": ["selectable"],
   "properties": {
     "selectable": {
+      "type": "boolean",
+      "description": "Sets the chips as selectable/actionable"
+    },
+    "multi": {
+      "description": "Sets the chips as mulit-selectable",
       "type": "boolean"
+    },
+    "label": {
+      "type": "string",
+      "description": "The arial label for the the chip set"
+    },
+    "activeIndex": {
+      "description": "Sets the chip at the provided Index as active",
+      "type": "number"
     }
   }
 }

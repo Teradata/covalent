@@ -1,0 +1,19 @@
+{
+  "id": "DINJPi6iZ",
+  "title": "Icon",
+  "description": "A description",
+  "type": "data",
+  "patternId": "chip-item",
+  "templateId": "web-components-vegaZgkE47",
+  "data": {
+    "props": {
+      "label": "Person",
+      "state": "caution",
+      "icon": "person",
+      "trailingIcon": false,
+      "disabled": false,
+      "avatar": false
+    },
+    "slots": {}
+  }
+}

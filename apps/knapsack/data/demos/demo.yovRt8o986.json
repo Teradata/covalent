@@ -6,8 +6,13 @@
   "templateId": "web-components-S9Ia0KOrya",
   "data": {
     "props": {
+      "open": true,
       "heading": "Sample dialog title",
-      "open": true
+      "scrimClickAction": "close",
+      "escapeKeyAction": "close",
+      "defaultAction": "close",
+      "actionAttribute": "dialogAction",
+      "initialFocusAttribute": "dialogInitialFocus"
     },
     "slots": {
       "default": [

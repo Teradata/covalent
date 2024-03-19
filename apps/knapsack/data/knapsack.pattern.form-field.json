@@ -16,7 +16,8 @@
             "allowedPatternIds": ["radio", "checkbox", "switch"],
             "title": "default",
             "disallowText": true,
-            "allowOnlyOne": true
+            "allowOnlyOne": true,
+            "description": "The slot for the input element that this form field provides a label for."
           }
         },
         "props": {
@@ -27,13 +28,26 @@
           "properties": {
             "label": {
               "type": "string",
-              "default": "Form field label"
+              "default": "Form field label",
+              "description": "The text to display for the label and sets a11y label on input. (visually overriden by slotted label)"
+            },
+            "alignEnd": {
+              "description": "Aligns the component at the end of the label.",
+              "type": "boolean"
+            },
+            "spaceBetween": {
+              "description": "Add space between the component and the label as the formfield grows.",
+              "type": "boolean"
+            },
+            "nowrap": {
+              "description": "Prevents the label from wrapping and overflow text is ellipsed.",
+              "type": "boolean"
             }
           }
         }
       },
       "demoIds": ["pmwAMIY3TV", "0n-okWquA", "1cr3GRlfdT"],
-      "blockIds": []
+      "blockIds": ["lep5sH9bL0"]
     }
   ],
   "tabs": [

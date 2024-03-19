@@ -301,7 +301,19 @@
       "attributes": [
         {
           "name": "selectable",
-          "description": "(required) boolean"
+          "description": "(required) boolean Sets the chips as selectable/actionable"
+        },
+        {
+          "name": "multi",
+          "description": "boolean Sets the chips as mulit-selectable"
+        },
+        {
+          "name": "label",
+          "description": "The arial label for the the chip set"
+        },
+        {
+          "name": "activeIndex",
+          "description": "Sets the chip at the provided Index as active"
         }
       ]
     },
@@ -317,35 +329,31 @@
       "attributes": [
         {
           "name": "label",
-          "description": "(required)"
+          "description": "(required) The text label of the chip"
         },
         {
           "name": "state",
+          "description": "The state representation with the values: secondary|negative|positive|caution"
+        },
+        {
+          "name": "icon",
           "description": ""
         },
         {
           "name": "filter",
-          "description": "boolean"
-        }
-      ]
-    },
-    {
-      "name": "cv-circular-progress",
-      "description": "",
-      "references": [
-        {
-          "name": "Knapsack Docs",
-          "url": "http://localhost:3999/pattern/circular-progress/web-components-iMsVIQ6gtb"
-        }
-      ],
-      "attributes": [
-        {
-          "name": "indeterminate",
-          "description": "boolean"
+          "description": "boolean Sets the filter chip variant"
         },
         {
-          "name": "progress",
-          "description": ""
+          "name": "trailingIcon",
+          "description": "boolean Moves the icon to a trailing position"
+        },
+        {
+          "name": "avatar",
+          "description": "boolean Treats the leading icon like an avatar"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disables the chip"
         }
       ]
     },
@@ -392,16 +400,40 @@
       ],
       "attributes": [
         {
-          "name": "heading",
-          "description": ""
-        },
-        {
           "name": "open",
-          "description": "(required) boolean"
+          "description": "(required) boolean Opens the dialog when true"
         },
         {
           "name": "hideActions",
-          "description": "boolean"
+          "description": "boolean Hides the actions footer of the dialog. Needed to remove excess padding when no actions are slotted in."
+        },
+        {
+          "name": "stacked",
+          "description": "boolean Stacks the action buttons."
+        },
+        {
+          "name": "heading",
+          "description": "Heading text of the dialog"
+        },
+        {
+          "name": "scrimClickAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent clicks outside the dialog from closing the dialog."
+        },
+        {
+          "name": "escapeKeyAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog."
+        },
+        {
+          "name": "defaultAction",
+          "description": "Action to be emitted with the closing and closed events when <cv-dialog>.open is toggled"
+        },
+        {
+          "name": "actionAttribute",
+          "description": "Attribute to read in light dom of dialog for closing action value"
+        },
+        {
+          "name": "initialFocusAttribute",
+          "description": "Attribute to search for in light dom for initial focus on dialog open."
         }
       ]
     },
@@ -417,15 +449,19 @@
       "attributes": [
         {
           "name": "headline",
-          "description": ""
+          "description": "The headline of the empty state"
         },
         {
           "name": "subtitle",
-          "description": ""
+          "description": "The subtitle displayed below the headline"
         },
         {
           "name": "icon",
-          "description": ""
+          "description": "The icon displayed in the empty state"
+        },
+        {
+          "name": "card",
+          "description": "boolean Styles the empty state like a card"
         }
       ]
     },
@@ -477,7 +513,19 @@
       "attributes": [
         {
           "name": "label",
-          "description": "(required)"
+          "description": "(required) The text to display for the label and sets a11y label on input. (visually overriden by slotted label)"
+        },
+        {
+          "name": "alignEnd",
+          "description": "boolean Aligns the component at the end of the label."
+        },
+        {
+          "name": "spaceBetween",
+          "description": "boolean Add space between the component and the label as the formfield grows."
+        },
+        {
+          "name": "nowrap",
+          "description": "boolean Prevents the label from wrapping and overflow text is ellipsed."
         }
       ]
     },
@@ -504,7 +552,19 @@
       "attributes": [
         {
           "name": "icon",
-          "description": ""
+          "description": "Icon to display, and aria-label value when label is not defined."
+        },
+        {
+          "name": "aria-label",
+          "description": "aria-label for the icon button."
+        },
+        {
+          "name": "aria-haspopup",
+          "description": "Indicates the availability and type of an interactive popup element, such as menu or dialog, that can be triggered by the button."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect."
         }
       ]
     },

@@ -9,5 +9,20 @@
  */
 
 export interface FormField {
+  /**
+   * The text to display for the label and sets a11y label on input. (visually overriden by slotted label)
+   */
   label: string;
+  /**
+   * Aligns the component at the end of the label.
+   */
+  alignEnd?: boolean;
+  /**
+   * Add space between the component and the label as the formfield grows.
+   */
+  spaceBetween?: boolean;
+  /**
+   * Prevents the label from wrapping and overflow text is ellipsed.
+   */
+  nowrap?: boolean;
 }

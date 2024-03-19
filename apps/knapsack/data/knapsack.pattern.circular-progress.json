@@ -1,52 +1,6 @@
 {
   "id": "circular-progress",
-  "title": "Circular progress",
-  "description": "",
-  "statuses": {},
-  "templates": [
-    {
-      "id": "web-components-iMsVIQ6gtb",
-      "title": "Web components",
-      "path": "../../../dist/libs/components/circular-progress.mjs",
-      "alias": "cv-circular-progress",
-      "templateLanguageId": "web-components",
-      "spec": {
-        "slots": {},
-        "props": {
-          "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "",
-          "type": "object",
-          "required": [],
-          "properties": {
-            "indeterminate": {
-              "type": "boolean",
-              "default": true
-            },
-            "progress": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "demoIds": ["b7gHexlITw"],
-      "blockIds": []
-    }
-  ],
-  "tabs": [
-    {
-      "type": "subPage",
-      "id": "overview"
-    },
-    {
-      "type": "template",
-      "id": "web-components-iMsVIQ6gtb"
-    }
-  ],
-  "subPages": [
-    {
-      "id": "overview",
-      "title": "Overview",
-      "blockIds": []
-    }
-  ]
+  "title": "circular-progress",
+  "templates": [],
+  "tabs": []
 }

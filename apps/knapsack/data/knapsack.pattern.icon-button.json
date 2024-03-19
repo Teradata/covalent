@@ -11,7 +11,12 @@
       "alias": "cv-icon-button",
       "templateLanguageId": "web-components",
       "spec": {
-        "slots": {},
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "Optional <img> or <svg> to display instead of using an icon font"
+          }
+        },
         "props": {
           "$schema": "http://json-schema.org/draft-07/schema",
           "description": "",
@@ -20,7 +25,20 @@
           "properties": {
             "icon": {
               "type": "string",
-              "default": "houseboat"
+              "default": "houseboat",
+              "description": "Icon to display, and aria-label value when label is not defined."
+            },
+            "aria-label": {
+              "type": "string",
+              "description": "aria-label for the icon button."
+            },
+            "aria-haspopup": {
+              "type": "string",
+              "description": "Indicates the availability and type of an interactive popup element, such as menu or dialog, that can be triggered by the button."
+            },
+            "disabled": {
+              "description": "Disabled buttons cannot be interacted with and have no visual interaction effect.",
+              "type": "boolean"
             }
           }
         }
@@ -33,7 +51,7 @@
         "MWNDJ0YT9M",
         "iyfHwphwcs"
       ],
-      "blockIds": []
+      "blockIds": ["1VJfetutLY"]
     }
   ],
   "tabs": [

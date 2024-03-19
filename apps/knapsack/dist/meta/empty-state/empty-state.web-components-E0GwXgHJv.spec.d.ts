@@ -9,7 +9,20 @@
  */
 
 export interface EmptyState {
+  /**
+   * The headline of the empty state
+   */
   headline?: string;
+  /**
+   * The subtitle displayed below the headline
+   */
   subtitle?: string;
+  /**
+   * The icon displayed in the empty state
+   */
   icon?: string;
+  /**
+   * Styles the empty state like a card
+   */
+  card?: boolean;
 }
