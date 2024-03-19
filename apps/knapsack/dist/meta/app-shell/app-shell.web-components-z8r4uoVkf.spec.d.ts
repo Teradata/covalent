@@ -9,9 +9,28 @@
  */
 
 export interface AppShell {
+  /**
+   * Name of the application to show in the small app bar
+   */
   appName?: string;
+  /**
+   * Name of the section shown above the navigation
+   */
   sectionName?: string;
+  /**
+   * Opens the help section
+   */
   helpOpen?: boolean;
+  /**
+   * Opens the drawer
+   */
+  drawerOpen?: boolean;
+  /**
+   * Wraps the main area with a contained card surface
+   */
   contained?: boolean;
-  open?: boolean;
+  /**
+   * Force the left navigation visibly open
+   */
+  forcedOpen?: boolean;
 }

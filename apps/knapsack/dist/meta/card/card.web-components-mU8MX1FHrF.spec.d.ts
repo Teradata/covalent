@@ -9,7 +9,20 @@
  */
 
 export interface Card {
+  /**
+   * The title of the card
+   */
   cardTitle?: string;
+  /**
+   * Style the card as an outline variant
+   */
   outlined?: boolean;
+  /**
+   * Displays the action bar
+   */
   actionBar?: boolean;
+  /**
+   * Displays the ripple affect in primary area
+   */
+  interactive?: boolean;
 }

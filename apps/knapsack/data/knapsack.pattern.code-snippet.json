@@ -13,12 +13,14 @@
       "spec": {
         "slots": {
           "default": {
-            "title": "default"
+            "title": "default",
+            "description": "Default slot for the content of code snippet"
           },
           "actionItems": {
             "allowedPatternIds": ["button", "icon-button"],
             "title": "actionItems",
-            "disallowText": true
+            "disallowText": true,
+            "description": "Slot for the action items of the code snippet"
           }
         },
         "props": {
@@ -29,17 +31,31 @@
           "properties": {
             "label": {
               "type": "string",
-              "default": "Example.sql"
+              "default": "Example.sql",
+              "description": "Label displayed in the header of the code snippet"
             },
             "language": {
               "type": "string",
-              "default": "sql"
+              "default": "sql",
+              "description": "The language used in the code snippet"
+            },
+            "inline": {
+              "description": "Displays the code snippet as an inline element",
+              "type": "boolean"
+            },
+            "hideHeader": {
+              "description": "Hides the header",
+              "type": "boolean"
+            },
+            "maxHeight": {
+              "description": "Sets the max height of the code snippet in pixels",
+              "type": "number"
             }
           }
         }
       },
       "demoIds": ["HJPgdqmwj"],
-      "blockIds": []
+      "blockIds": ["X0XuYUkOFk"]
     }
   ],
   "tabs": [

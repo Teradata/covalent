@@ -6,9 +6,11 @@
   "templateId": "web-components-4qjJYWsUZi",
   "data": {
     "props": {
+      "icon": "info",
+      "state": "active",
       "titleText": "Alert title",
-      "descriptionText": "Alert description",
-      "icon": "info"
+      "iconAriaLabel": "info",
+      "descriptionText": "Alert description"
     },
     "slots": {
       "action-items": [

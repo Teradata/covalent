@@ -6,20 +6,29 @@
   "properties": {
     "appName": {
       "type": "string",
-      "default": "[App name]"
+      "default": "[App name]",
+      "description": "Name of the application to show in the small app bar"
     },
     "sectionName": {
       "type": "string",
-      "default": "[Section name]"
+      "default": "[Section name]",
+      "description": "Name of the section shown above the navigation"
     },
     "helpOpen": {
+      "type": "boolean",
+      "description": "Opens the help section"
+    },
+    "drawerOpen": {
+      "description": "Opens the drawer",
       "type": "boolean"
     },
     "contained": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Wraps the main area with a contained card surface"
     },
-    "open": {
-      "type": "boolean"
+    "forcedOpen": {
+      "type": "boolean",
+      "description": "Force the left navigation visibly open"
     }
   }
 }

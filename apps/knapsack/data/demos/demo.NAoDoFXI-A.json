@@ -1,0 +1,20 @@
+{
+  "id": "NAoDoFXI-A",
+  "title": "Main",
+  "type": "data",
+  "patternId": "badge",
+  "templateId": "web-components-40aOlYC6I9",
+  "data": {
+    "props": {
+      "content": "1000",
+      "max": 99,
+      "size": "large",
+      "showZero": true,
+      "verticalAlignment": "top",
+      "horizontalAlignment": "right"
+    },
+    "slots": {
+      "default": []
+    }
+  }
+}

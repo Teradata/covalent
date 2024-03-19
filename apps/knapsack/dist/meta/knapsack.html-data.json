@@ -13,15 +13,23 @@
       "attributes": [
         {
           "name": "labelText",
-          "description": ""
+          "description": "Text to be displayed in the action ribbon"
         },
         {
           "name": "state",
-          "description": ""
+          "description": "State representation which can take the values:\nactive|negative|positive|caution"
         },
         {
           "name": "icon",
-          "description": ""
+          "description": "Icon added to the action ribbon"
+        },
+        {
+          "name": "iconAriaLabel",
+          "description": "aria-label of the icon"
+        },
+        {
+          "name": "centered",
+          "description": "boolean Centers the action ribbon"
         }
       ]
     },
@@ -37,27 +45,27 @@
       "attributes": [
         {
           "name": "icon",
-          "description": ""
+          "description": "Icon added to the alert"
         },
         {
           "name": "state",
-          "description": ""
+          "description": "State representation which can take the values:\nactive|negative|positive|caution"
         },
         {
           "name": "inline",
-          "description": "boolean"
+          "description": "boolean Displays the alert inline with its container"
         },
         {
           "name": "titleText",
-          "description": ""
+          "description": "Title of the alert"
         },
         {
           "name": "iconAriaLabel",
-          "description": ""
+          "description": "aria-label for the icon"
         },
         {
           "name": "descriptionText",
-          "description": ""
+          "description": "Description of the alert"
         }
       ]
     },
@@ -73,23 +81,67 @@
       "attributes": [
         {
           "name": "appName",
-          "description": ""
+          "description": "Name of the application to show in the small app bar"
         },
         {
           "name": "sectionName",
-          "description": ""
+          "description": "Name of the section shown above the navigation"
         },
         {
           "name": "helpOpen",
-          "description": "boolean"
+          "description": "boolean Opens the help section"
+        },
+        {
+          "name": "drawerOpen",
+          "description": "boolean Opens the drawer"
         },
         {
           "name": "contained",
-          "description": "boolean"
+          "description": "boolean Wraps the main area with a contained card surface"
         },
         {
-          "name": "open",
-          "description": "boolean"
+          "name": "forcedOpen",
+          "description": "boolean Force the left navigation visibly open"
+        }
+      ]
+    },
+    {
+      "name": "cv-badge",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/badge/web-components-40aOlYC6I9"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "content",
+          "description": "The content to be displayed in the badge"
+        },
+        {
+          "name": "max",
+          "description": "Caps the value of badge content"
+        },
+        {
+          "name": "size",
+          "description": "Sets the size of the badge with the values:\nsmall | large"
+        },
+        {
+          "name": "hideBadge",
+          "description": "boolean Controls the visibility of the badge"
+        },
+        {
+          "name": "verticalAlignment",
+          "description": "Aligns the badge vertically in the wrapped element with values: top | bottom"
+        },
+        {
+          "name": "horizontalAlignment",
+          "description": "Aligns the badge horizontally in the wrapped element with values: left | right"
+        },
+        {
+          "name": "showZero",
+          "description": "boolean Shows the badge when content is zero"
         }
       ]
     },
@@ -105,27 +157,43 @@
       "attributes": [
         {
           "name": "label",
-          "description": ""
-        },
-        {
-          "name": "outlined",
-          "description": "boolean"
-        },
-        {
-          "name": "raised",
-          "description": "boolean"
+          "description": "Label to display for the button, and aria-label"
         },
         {
           "name": "icon",
-          "description": ""
+          "description": "Icon to display, and aria-label value when label is not defined"
         },
         {
-          "name": "trailingIcon",
-          "description": "boolean"
+          "name": "raised",
+          "description": "boolean Creates a contained button that is elevated above the surface"
+        },
+        {
+          "name": "unelevated",
+          "description": "boolean Creates a contained button that is flush with the surface"
+        },
+        {
+          "name": "outlined",
+          "description": "boolean Creates an outlined button that is flush with the surface"
         },
         {
           "name": "dense",
-          "description": "boolean"
+          "description": "boolean Makes the button text and container slightly smaller"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect"
+        },
+        {
+          "name": "expandContent",
+          "description": "boolean When true, the space after the label and before any trailing icon, where default slotted content is rendered, is expanded to fit the available space inside the button"
+        },
+        {
+          "name": "fullwidth",
+          "description": "boolean When true, the button is expanded to fit the entire available space."
+        },
+        {
+          "name": "trailingIcon",
+          "description": "boolean When true, icon will be displayed after label"
         }
       ]
     },
@@ -141,15 +209,19 @@
       "attributes": [
         {
           "name": "cardTitle",
-          "description": ""
+          "description": "The title of the card"
         },
         {
           "name": "outlined",
-          "description": "boolean"
+          "description": "boolean Style the card as an outline variant"
         },
         {
           "name": "actionBar",
-          "description": "boolean"
+          "description": "boolean Displays the action bar"
+        },
+        {
+          "name": "interactive",
+          "description": "boolean Displays the ripple affect in primary area"
         }
       ]
     },
@@ -289,11 +361,23 @@
       "attributes": [
         {
           "name": "label",
-          "description": ""
+          "description": "Label displayed in the header of the code snippet"
         },
         {
           "name": "language",
-          "description": ""
+          "description": "The language used in the code snippet"
+        },
+        {
+          "name": "inline",
+          "description": "boolean Displays the code snippet as an inline element"
+        },
+        {
+          "name": "hideHeader",
+          "description": "boolean Hides the header"
+        },
+        {
+          "name": "maxHeight",
+          "description": "Sets the max height of the code snippet in pixels"
         }
       ]
     },
