@@ -115,7 +115,7 @@
                               "type": "code"
                             }
                           ],
-                          "text": "CircularProgress.closed"
+                          "text": "CovalentCircularProgress.closed"
                         },
                         {
                           "type": "text",
@@ -195,7 +195,7 @@
                               "type": "code"
                             }
                           ],
-                          "text": "CircularProgress.closed"
+                          "text": "CovalentCircularProgress.closed"
                         },
                         {
                           "type": "text",

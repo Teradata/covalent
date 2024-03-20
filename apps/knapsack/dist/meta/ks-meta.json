@@ -211,6 +211,20 @@
       "url": "/api/v1/render?patternId=chip-item&templateId=web-components-vegaZgkE47&assetSetId=dark&demoId=DINJPi6iZ&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "circular-progress",
+      "templateId": "web-components-rw6v6c4fnU",
+      "demoId": "gMTyjmInaG",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=circular-progress&templateId=web-components-rw6v6c4fnU&assetSetId=light&demoId=gMTyjmInaG&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "circular-progress",
+      "templateId": "web-components-rw6v6c4fnU",
+      "demoId": "gMTyjmInaG",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=circular-progress&templateId=web-components-rw6v6c4fnU&assetSetId=dark&demoId=gMTyjmInaG&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "code-snippet",
       "templateId": "web-components-MmKtwF24Vv",
       "demoId": "HJPgdqmwj",
