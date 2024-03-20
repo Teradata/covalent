@@ -14,7 +14,8 @@
         "slots": {
           "default": {
             "allowedPatternIds": ["expansion-panel-item"],
-            "title": "default"
+            "title": "default",
+            "description": "The default slot for expansion panel items"
           }
         },
         "props": {
@@ -24,13 +25,19 @@
           "required": [],
           "properties": {
             "noSurface": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Sets the theme surface to transparent"
+            },
+            "titleWidth": {
+              "type": "string",
+              "description": "Sets the width of the title",
+              "default": "150px"
             }
           }
         }
       },
-      "demoIds": ["Yu7DvlfMdG"],
-      "blockIds": []
+      "demoIds": ["Yu7DvlfMdG", "noRKlgh7xK"],
+      "blockIds": ["88PKWyDzOF"]
     }
   ],
   "tabs": [

@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "indeterminate": {
+      "description": "Sets the circular-progress into its indeterminate state.",
+      "type": "boolean",
+      "default": true
+    },
+    "progress": {
+      "description": "Sets the progress bar's value. Value should be between [0, 1].",
+      "type": "number",
+      "default": 0
+    },
+    "density": {
+      "description": "Sets the progress indicator's sizing based on density scale. Minimum value is -8. Each unit change in density scale corresponds to 4px change in side dimensions. The stroke width adjusts automatically.",
+      "type": "number",
+      "default": 0
+    },
+    "closed": {
+      "description": "Sets the progress indicator to the closed state. Sets content opacity to 0. Typically should be set to true when loading has finished.",
+      "type": "boolean"
+    }
+  }
+}

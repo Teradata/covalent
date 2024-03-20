@@ -1,12 +1,12 @@
 {
-  "id": "Yu7DvlfMdG",
-  "title": "Main",
+  "id": "noRKlgh7xK",
+  "title": "With content and footer",
+  "description": "A description",
   "type": "data",
   "patternId": "expansion-panel",
   "templateId": "web-components-Vj98q2D8hw",
   "data": {
     "props": {
-      "noSurface": false,
       "titleWidth": "150px"
     },
     "slots": {
@@ -15,19 +15,13 @@
           "type": "template-demo",
           "patternId": "expansion-panel-item",
           "templateId": "web-components-vBLifAApG",
-          "demoId": "w0H1gm2jvp"
+          "demoId": "6tUMrwwjoe"
         },
         {
           "type": "template-demo",
           "patternId": "expansion-panel-item",
           "templateId": "web-components-vBLifAApG",
-          "demoId": "w0H1gm2jvp"
-        },
-        {
-          "type": "template-demo",
-          "patternId": "expansion-panel-item",
-          "templateId": "web-components-vBLifAApG",
-          "demoId": "w0H1gm2jvp"
+          "demoId": "6tUMrwwjoe"
         }
       ]
     }
