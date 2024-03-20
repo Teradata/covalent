@@ -11,7 +11,8 @@
 
     <!-- Main entry point to include all of Covalent Components-->
     <script type="module" src="src/index.ts"></script>
-    <link href="src/index.scss" rel="stylesheet" />
+    <link href="src/theme/prebuilt/light-theme.scss" rel="stylesheet" />
+    <link href="public/index.scss" rel="stylesheet" />
 
     <!-- Inter Font Typography & Material Icons Font --->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,7 +33,7 @@
         width="103"
         height="20"
         viewBox="0 0 103 20"
-        style="fill: var(--covalent-theme-text-logo-on-background)"
+        style="fill: var(--cv-theme-text-logo-on-background)"
         fill="none"
       >
         <path
@@ -84,12 +85,7 @@
         <cv-nav-list-item graphic="avatar" hasChildren>
           <span>Editor</span>
           <cv-icon class="covalent-icon" slot="graphic">product_editor</cv-icon>
-          <cv-list
-            class="subnav"
-            slot="expansion-panel"
-            activatable
-            rootTabbable
-          >
+          <cv-list slot="expansion-panel" subNav activatable rootTabbable>
             <cv-nav-list-item>Scripts</cv-nav-list-item>
             <cv-nav-list-item>Scripts</cv-nav-list-item>
             <cv-nav-list-item>Scripts</cv-nav-list-item>

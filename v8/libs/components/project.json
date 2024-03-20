@@ -29,8 +29,10 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "mkdir -p dist/libs/components/theme/",
-          "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/components/src/theme/:./dist/libs/components/theme/"
+          "mkdir -p dist/libs/components/theme/prebuilt",
+          "cp libs/components/src/index.scss dist/libs/components",
+          "cp libs/components/src/theme/_index.scss dist/libs/components/theme",
+          "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/components/src/theme/prebuilt:./dist/libs/components/theme/prebuilt"
         ],
         "parallel": false
       },

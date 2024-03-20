@@ -11,11 +11,9 @@ All components are published in npm and available on any CDN that host npm modul
 ```html
 <!-- using a specific version -->
 <script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/+esm"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/style.css" />
 
 <!-- using the latest version -->
 <script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@latest/+esm"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/style.css" />
 ```
 
 the component bundles are also available individually
@@ -34,7 +32,7 @@ once the script is loaded, its now possible to start using our custom HTML eleme
 <html>
   <head>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@covalent/components@x.x.x/+esm"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/components@latest/theme/prebuilt/light-theme.css" />
   </head>
   <body>
     <cv-button label="Hello world" raised></cv-button>

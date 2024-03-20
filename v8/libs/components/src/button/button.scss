@@ -1,18 +1,26 @@
 :host {
-    // --- set default to neutral --- //
-    --mdc-button-outline-color: var(--mdc-theme-text-icon-on-background);
-    --mdc-theme-primary: var(--mdc-theme-text-primary-on-background);
-
+  // override MDC button color
+  --mdc-button-outline-color: var(--cv-theme-outline);
 }
 
-// --- apply accent color --- //
-:host(.accent.primary) {
-    --mdc-theme-primary: var(--mdc-theme-accent);
-    --mdc-button-outline-color: var(--mdc-theme-accent);
+@mixin buttonColor($colorMap) {
+  @each $color, $value in $colorMap {
+    :host([color='#{$color}']) {
+      --mdc-theme-primary: var(--cv-theme-#{$value});
+      --mdc-theme-on-primary: var(--cv-theme-on-#{$value});
+    }
+  }
 }
 
-// --- apply error color --- //
-:host(.destructive.primary) {
-    --mdc-theme-primary: var(--mdc-theme-error);
-    --mdc-button-outline-color: var(--mdc-theme-error);
-}
+// --- apply button color --- //
+@include buttonColor(
+  (
+    'primary': 'primary',
+    'secondary': 'secondary',
+    'emphasis': 'emphasis',
+    'neutral': 'neutral',
+    'caution': 'caution',
+    'negative': 'negative',
+    'positive': 'positive',
+  )
+);

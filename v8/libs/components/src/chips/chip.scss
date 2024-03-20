@@ -3,10 +3,10 @@
 @include chip.core-styles();
 
 .mdc-evolution-chip {
-  background-color: var(--mdc-theme-surface-neutral);
+  background-color: var(--cv-theme-surface-container);
 
   .mdc-evolution-chip__text-label {
-    color: var(--mdc-theme-text-primary-on-background);
+    color: var(--cv-theme-on-surface-container);
   }
 
   .mdc-evolution-chip__icon {
