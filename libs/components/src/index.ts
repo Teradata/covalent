@@ -47,5 +47,3 @@ export * from './top-app-bar/top-app-bar-fixed';
 export * from './tree-list/tree-list';
 export * from './tree-list/tree-list-item';
 export * from './typography/typography';
-
-import './index.scss';

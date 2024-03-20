@@ -6,7 +6,7 @@
 @include drawer.dismissible-core-styles();
 @include drawer.modal-core-styles();
 
-:host {
+:host .navigation {
   --mdc-theme-surface: var(--mdc-theme-background);
   --mdc-list-vertical-padding: 0;
   --cv-list-padding-right: 0;
@@ -18,7 +18,7 @@
   --cv-list-item-expansion-icon-size: 0;
 }
 
-:host([open]) {
+:host([open]) .navigation {
   --cv-list-padding-right: 12px;
   --cv-list-padding-left: 12px;
   --cv-list-item-border-radius: 100px;
@@ -27,6 +27,17 @@
   --cv-list-item-expansion-icon-margin: -24px;
   --cv-list-item-expansion-icon-size: 24px;
   --cv-list-menu-height: inherit;
+}
+
+:host([helpOpen]) {
+  /* Mobile only styles */
+  @media only screen and (max-width: 768px) {
+    .app-shell,
+    .main {
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
 }
 
 .app-shell {
@@ -56,7 +67,7 @@
 .main {
   height: 100vh;
   grid-area: main;
-  overflow: scroll;
+  overflow: auto;
   transition: margin 200ms ease-in-out;
 
   cv-card {
@@ -113,6 +124,7 @@
   display: flex;
   font-size: var(--mdc-typography-body2-font-size);
   font-family: var(--mdc-typography-body2-font-family);
+  color: var(--cv-theme-on-surface);
   font-weight: 600;
   justify-content: flex-start;
   overflow: hidden;
@@ -213,7 +225,6 @@ nav.navigation {
   .cov-drawer--hovered & {
     box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 20%),
       0 24px 38px 3px rgba(0, 0, 0, 14%), 0 9px 46px 8px rgba(0, 0, 0, 12%);
-    border-right: 1px solid var(--mdc-theme-border);
     background-color: var(--mdc-theme-surface);
   }
 }
@@ -232,7 +243,6 @@ nav.navigation {
     transition-property: width;
     transition-duration: 200ms;
     transform: none;
-    background-color: transparent;
   }
 
   .mdc-drawer--dismissible {

@@ -7,13 +7,14 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "sass": "./style.css",
+      "sass": "./index.scss",
       "import": "./index.mjs",
       "require": "./index.js"
     },
-    "./style.css": {
-      "import": "./style.css",
-      "require": "./style.css"
+    "./icon/icon.theme": "./icon/_icon.theme.scss",
+    "./data-table.theme": "./data-table/_data-table.theme.scss",
+    "./theme": {
+      "sass": "./theme/_index.scss"
     },
     "./action-ribbon": {
       "types": "./action-ribbon/action-ribbon.d.ts",

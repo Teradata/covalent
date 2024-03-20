@@ -8,7 +8,7 @@
   transition: border-radius 100ms ease-out;
   width: var(--cv-list-item-width, 100%);
 
-  --mdc-list-item-graphic-margin: 8px;
+  --mdc-list-item-graphic-margin: 4px;
 }
 
 ::slotted(.section-selector) {
@@ -25,16 +25,16 @@
 }
 
 :host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
+  --mdc-theme-text-icon-on-background: var(--cv-theme-on-surface);
+
   margin-left: var(--cv-list-item-graphic-margin-left, 12px);
+  padding-left: 4px;
+  background-color: transparent;
 }
 
 :host([graphic='avatar']) {
   padding: 0;
-
-  ::slotted(cv-icon[slot='graphic']) {
-    margin-left: 8px;
-    background: transparent;
-  }
+  background-color: transparent;
 }
 
 :host([graphic='avatar']:not([twoline])) {

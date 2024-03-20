@@ -1,5 +1,36 @@
+@use '@covalent/tokens' as tokens;
+@use '../../libs/components/src/theme' as theme;
+@use '../../libs/components/src/data-table/data-table.theme' as data-table;
+
+$theme-tokens: map-get(tokens.$tokens, 'theme');
+$light-tokens: map-get($theme-tokens, 'light');
+$light-colors: map-get($light-tokens, 'colors');
+$dark-tokens: map-get($theme-tokens, 'dark');
+$dark-colors: map-get($dark-tokens, 'colors');
+// Merge deprecated tokens
+$light-colors: map-merge($light-colors, map-get(tokens.$tokens, light));
+$dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
+
+// For convience re-define theme tokens scoped to a light/dark class
+:root {
+  @include theme.components-theme(
+    map-merge($light-colors, map-get(tokens.$tokens, light)),
+    map-get(tokens.$tokens, typography)
+  );
+  @include data-table.data-table-theme($light-colors);
+}
+
+.dark {
+  @include theme.components-theme(
+    map-merge($dark-colors, map-get(tokens.$tokens, dark)),
+    map-get(tokens.$tokens, typography)
+  );
+  @include data-table.data-table-theme($dark-colors);
+}
+
 .sb-show-main {
   background-color: var(--mdc-theme-surface);
+  color: var(--cv-theme-on-surface);
 
   .sbdocs-wrapper {
     padding-top: 0;
@@ -75,6 +106,10 @@
         padding: 0 1rem;
         vertical-align: middle;
       }
+    }
+
+    .docblock-argstable-body td {
+      background-color: inherit;
     }
   }
 }
@@ -294,8 +329,6 @@
   }
   table {
     font-family: var(--mdc-typography-subtitle2-font-family);
-
-
 
     thead th {
       height: 3.5rem;
@@ -683,7 +716,6 @@ pre.prismjs {
 }
 
 /* -- Dark theme -- */
-
 .dark pre.prismjs {
   /**
     * Coldark Theme for Prism.js

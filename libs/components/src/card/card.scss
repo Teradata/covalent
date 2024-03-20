@@ -2,8 +2,21 @@
 
 @include card.core-styles;
 
+:host([fullHeight]) {
+  display: block;
+  height: 100%;
+}
+
 .mdc-card {
-  --mdc-theme-surface: var(--cov-theme-surface-container-lowest, #ffffff);
+  --mdc-theme-surface: var(--cv-theme-surface-container-lowest, #ffffff);
+
+  &.cv-height-full {
+    height: 100%;
+
+    .mdc-card__primary-action {
+      height: 100%;
+    }
+  }
 }
 
 .mdc-typography--headline5 {

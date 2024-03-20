@@ -1,7 +1,13 @@
-// Covalent themed components
-@use '../data-table/data-table.theme' as data-table;
+@mixin css-variable-theme-tokens($theme, $prefix: 'cv') {
+  @each $key, $value in $theme {
+    --#{$prefix}-theme-#{$key}: #{map-get($theme, $key)};
+  }
+}
 
 @mixin components-theme($theme, $typography) {
+  // Covalent theme tokens as css variables
+  @include css-variable-theme-tokens($theme);
+
   // Foreground colors
   --mdc-theme-primary: #{map-get($theme, primary)};
   --mdc-theme-secondary: #{map-get($theme, secondary)};
@@ -304,70 +310,7 @@
   --mdc-theme-text-icon-on-dark: #{map-get($theme, text-icon-on-dark)};
   --mdc-icon-font: 'Material Symbols Outlined';
 
-  // Covalent Specific variables
-  --cov-theme-on-surface-variant: #{map-get($theme, on-surface-variant)};
-  --cov-theme-surface-container: #{map-get($theme, surface-container)};
-  --cov-theme-surface-container-lowest: #{map-get(
-      $theme,
-      surface-container-lowest
-    )};
-  --covalent-theme-text-logo-on-background: #{map-get(
-      $theme,
-      text-logo-on-background
-    )};
-  --cov-theme-color-negative: #{map-get($theme, negative)};
-  --cov-theme-color-on-negative: #{map-get($theme, on-negative)};
-
   // Shape
   --mdc-shape-small: 8px;
   --mdc-shape-medium: 8px;
-
-  // Code snippet colors
-  --cov-theme-code-snippet-color: #{map-get($theme, code-snippet-color)};
-  --cov-theme-code-snippet-comment: #{map-get($theme, code-snippet-comment)};
-  --cov-theme-code-snippet-keyword: #{map-get($theme, code-snippet-keyword)};
-  --cov-theme-code-snippet-selector: #{map-get($theme, code-snippet-selector)};
-  --cov-theme-code-snippet-literal: #{map-get($theme, code-snippet-literal)};
-  --cov-theme-code-snippet-string: #{map-get($theme, code-snippet-string)};
-  --cov-theme-code-snippet-variable: #{map-get($theme, code-snippet-variable)};
-  --cov-theme-code-snippet-title: #{map-get($theme, code-snippet-title)};
-  --cov-theme-code-snippet-class: #{map-get($theme, code-snippet-class)};
-
-  // Code font styles
-  --cov-theme-code-font-family: #{map-get($typography, code-font-family)};
-  --cov-theme-code-font-size: #{map-get($typography, code-font-size)};
-  --cov-theme-code-font-weight: #{map-get($typography, code-font-weight)};
-  --cov-theme-code-line-height: #{map-get($typography, code-line-height)};
-
-  @include data-table.data-table-theme($theme);
-
-  color: var(--mdc-theme-text-primary-on-background);
-
-  // Links
-  a[href] {
-    color: var(--mdc-theme-secondary);
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .sbdocs.sbdocs-preview.sb-unstyled {
-    > div {
-      &:first-child {
-        background-color: inherit;
-      }
-    }
-  }
-
-  .sbdocs-content {
-    table {
-      .docblock-argstable-body {
-        td {
-          background-color: inherit;
-        }
-      }
-    }
-  }
 }
