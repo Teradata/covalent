@@ -17,7 +17,7 @@ export interface Alert {
    * State representation which can take the values:
    * active|negative|positive|caution
    */
-  state?: string;
+  state?: 'active' | 'negative' | 'positive' | 'caution';
   /**
    * Displays the alert inline with its container
    */

@@ -10,8 +10,9 @@
       "description": "The text label of the chip"
     },
     "state": {
+      "description": "The state representation with the values: secondary|negative|positive|caution",
       "type": "string",
-      "description": "The state representation with the values: secondary|negative|positive|caution"
+      "enum": ["secondary", "negative", "positive", "caution"]
     },
     "icon": {
       "type": "string"

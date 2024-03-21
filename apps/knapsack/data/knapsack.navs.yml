@@ -51,7 +51,6 @@ byId:
     parentId: test-page
     path: /pattern/chip
   chip-item:
-    hidden: true
     id: chip-item
     name: Chip item
     parentId: chip
@@ -97,7 +96,6 @@ byId:
     parentId: test-page
     path: /pattern/expansion-panel
   expansion-panel-item:
-    hidden: true
     id: expansion-panel-item
     name: Expansion panel item
     parentId: expansion-panel

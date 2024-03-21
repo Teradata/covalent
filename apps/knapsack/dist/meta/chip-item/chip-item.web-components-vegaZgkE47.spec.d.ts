@@ -16,7 +16,7 @@ export interface ChipItem {
   /**
    * The state representation with the values: secondary|negative|positive|caution
    */
-  state?: string;
+  state?: 'secondary' | 'negative' | 'positive' | 'caution';
   icon?: string;
   /**
    * Sets the filter chip variant

@@ -17,6 +17,20 @@
         },
         {
           "name": "state",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
           "description": "State representation which can take the values:\nactive|negative|positive|caution"
         },
         {
@@ -49,6 +63,20 @@
         },
         {
           "name": "state",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
           "description": "State representation which can take the values:\nactive|negative|positive|caution"
         },
         {
@@ -125,6 +153,14 @@
         },
         {
           "name": "size",
+          "values": [
+            {
+              "name": "small"
+            },
+            {
+              "name": "large"
+            }
+          ],
           "description": "Sets the size of the badge with the values:\nsmall | large"
         },
         {
@@ -133,10 +169,26 @@
         },
         {
           "name": "verticalAlignment",
+          "values": [
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
           "description": "Aligns the badge vertically in the wrapped element with values: top | bottom"
         },
         {
           "name": "horizontalAlignment",
+          "values": [
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            }
+          ],
           "description": "Aligns the badge horizontally in the wrapped element with values: left | right"
         },
         {
@@ -333,6 +385,20 @@
         },
         {
           "name": "state",
+          "values": [
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
           "description": "The state representation with the values: secondary|negative|positive|caution"
         },
         {

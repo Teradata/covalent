@@ -12,6 +12,8 @@
       "open": false,
       "showFooter": false
     },
-    "slots": {}
+    "slots": {
+      "content": []
+    }
   }
 }

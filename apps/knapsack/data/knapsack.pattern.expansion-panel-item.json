@@ -7,7 +7,7 @@
     {
       "id": "web-components-vBLifAApG",
       "title": "Web Components",
-      "path": " ../../../dist/libs/components/checkbox.mjs",
+      "path": " ../../../dist/libs/components/expansion-panel-item.mjs",
       "alias": "cv-expansion-panel-item",
       "templateLanguageId": "web-components",
       "spec": {
