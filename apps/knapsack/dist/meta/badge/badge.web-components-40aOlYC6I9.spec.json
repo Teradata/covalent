@@ -13,20 +13,23 @@
       "type": "number"
     },
     "size": {
+      "description": "Sets the size of the badge with the values:\nsmall | large",
       "type": "string",
-      "description": "Sets the size of the badge with the values:\nsmall | large"
+      "enum": ["small", "large"]
     },
     "hideBadge": {
       "description": "Controls the visibility of the badge",
       "type": "boolean"
     },
     "verticalAlignment": {
+      "description": "Aligns the badge vertically in the wrapped element with values: top | bottom",
       "type": "string",
-      "description": "Aligns the badge vertically in the wrapped element with values: top | bottom"
+      "enum": ["top", "bottom"]
     },
     "horizontalAlignment": {
+      "description": "Aligns the badge horizontally in the wrapped element with values: left | right",
       "type": "string",
-      "description": "Aligns the badge horizontally in the wrapped element with values: left | right"
+      "enum": ["left", "right"]
     },
     "showZero": {
       "description": "Shows the badge when content is zero",

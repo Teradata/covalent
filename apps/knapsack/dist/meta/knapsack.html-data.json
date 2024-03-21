@@ -17,6 +17,20 @@
         },
         {
           "name": "state",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
           "description": "State representation which can take the values:\nactive|negative|positive|caution"
         },
         {
@@ -49,6 +63,20 @@
         },
         {
           "name": "state",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
           "description": "State representation which can take the values:\nactive|negative|positive|caution"
         },
         {
@@ -125,6 +153,14 @@
         },
         {
           "name": "size",
+          "values": [
+            {
+              "name": "small"
+            },
+            {
+              "name": "large"
+            }
+          ],
           "description": "Sets the size of the badge with the values:\nsmall | large"
         },
         {
@@ -133,10 +169,26 @@
         },
         {
           "name": "verticalAlignment",
+          "values": [
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
           "description": "Aligns the badge vertically in the wrapped element with values: top | bottom"
         },
         {
           "name": "horizontalAlignment",
+          "values": [
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            }
+          ],
           "description": "Aligns the badge horizontally in the wrapped element with values: left | right"
         },
         {
@@ -301,7 +353,19 @@
       "attributes": [
         {
           "name": "selectable",
-          "description": "(required) boolean"
+          "description": "(required) boolean Sets the chips as selectable/actionable"
+        },
+        {
+          "name": "multi",
+          "description": "boolean Sets the chips as mulit-selectable"
+        },
+        {
+          "name": "label",
+          "description": "The arial label for the the chip set"
+        },
+        {
+          "name": "activeIndex",
+          "description": "Sets the chip at the provided Index as active"
         }
       ]
     },
@@ -317,15 +381,45 @@
       "attributes": [
         {
           "name": "label",
-          "description": "(required)"
+          "description": "(required) The text label of the chip"
         },
         {
           "name": "state",
+          "values": [
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
+          "description": "The state representation with the values: secondary|negative|positive|caution"
+        },
+        {
+          "name": "icon",
           "description": ""
         },
         {
           "name": "filter",
-          "description": "boolean"
+          "description": "boolean Sets the filter chip variant"
+        },
+        {
+          "name": "trailingIcon",
+          "description": "boolean Moves the icon to a trailing position"
+        },
+        {
+          "name": "avatar",
+          "description": "boolean Treats the leading icon like an avatar"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disables the chip"
         }
       ]
     },
@@ -335,17 +429,25 @@
       "references": [
         {
           "name": "Knapsack Docs",
-          "url": "http://localhost:3999/pattern/circular-progress/web-components-iMsVIQ6gtb"
+          "url": "http://localhost:3999/pattern/circular-progress/web-components-rw6v6c4fnU"
         }
       ],
       "attributes": [
         {
           "name": "indeterminate",
-          "description": "boolean"
+          "description": "boolean Sets the circular-progress into its indeterminate state."
         },
         {
           "name": "progress",
-          "description": ""
+          "description": "Sets the progress bar's value. Value should be between [0, 1]."
+        },
+        {
+          "name": "density",
+          "description": "Sets the progress indicator's sizing based on density scale. Minimum value is -8. Each unit change in density scale corresponds to 4px change in side dimensions. The stroke width adjusts automatically."
+        },
+        {
+          "name": "closed",
+          "description": "boolean Sets the progress indicator to the closed state. Sets content opacity to 0. Typically should be set to true when loading has finished."
         }
       ]
     },
@@ -392,16 +494,40 @@
       ],
       "attributes": [
         {
-          "name": "heading",
-          "description": ""
-        },
-        {
           "name": "open",
-          "description": "(required) boolean"
+          "description": "(required) boolean Opens the dialog when true"
         },
         {
           "name": "hideActions",
-          "description": "boolean"
+          "description": "boolean Hides the actions footer of the dialog. Needed to remove excess padding when no actions are slotted in."
+        },
+        {
+          "name": "stacked",
+          "description": "boolean Stacks the action buttons."
+        },
+        {
+          "name": "heading",
+          "description": "Heading text of the dialog"
+        },
+        {
+          "name": "scrimClickAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent clicks outside the dialog from closing the dialog."
+        },
+        {
+          "name": "escapeKeyAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog."
+        },
+        {
+          "name": "defaultAction",
+          "description": "Action to be emitted with the closing and closed events when <cv-dialog>.open is toggled"
+        },
+        {
+          "name": "actionAttribute",
+          "description": "Attribute to read in light dom of dialog for closing action value"
+        },
+        {
+          "name": "initialFocusAttribute",
+          "description": "Attribute to search for in light dom for initial focus on dialog open."
         }
       ]
     },
@@ -417,15 +543,19 @@
       "attributes": [
         {
           "name": "headline",
-          "description": ""
+          "description": "The headline of the empty state"
         },
         {
           "name": "subtitle",
-          "description": ""
+          "description": "The subtitle displayed below the headline"
         },
         {
           "name": "icon",
-          "description": ""
+          "description": "The icon displayed in the empty state"
+        },
+        {
+          "name": "card",
+          "description": "boolean Styles the empty state like a card"
         }
       ]
     },
@@ -441,7 +571,11 @@
       "attributes": [
         {
           "name": "noSurface",
-          "description": "boolean"
+          "description": "boolean Sets the theme surface to transparent"
+        },
+        {
+          "name": "titleWidth",
+          "description": "Sets the width of the title"
         }
       ]
     },
@@ -457,11 +591,55 @@
       "attributes": [
         {
           "name": "title",
-          "description": ""
+          "description": "The title of the panel item"
         },
         {
           "name": "contentPreview",
-          "description": ""
+          "description": "The content preview text of the panel item"
+        },
+        {
+          "name": "index",
+          "description": "Sets the index of the panel item"
+        },
+        {
+          "name": "open",
+          "description": "boolean Expands the panel item when true"
+        },
+        {
+          "name": "isTopPanel",
+          "description": "boolean True for the top most panel item in an expansion panel"
+        },
+        {
+          "name": "isBottomPanel",
+          "description": "boolean True for the bottom most panel item in an expansion panel"
+        },
+        {
+          "name": "isInnerPanel",
+          "description": "boolean True for the inner panel items in an expansion panel"
+        },
+        {
+          "name": "isSinglePanel",
+          "description": "boolean True if the expansion panel has a single panel item"
+        },
+        {
+          "name": "belowOpenInnerPanel",
+          "description": "boolean True for the panel item below an open inner panel in an expansion panel"
+        },
+        {
+          "name": "aboveOpenInnerPanel",
+          "description": "boolean True for the panel item above an open inner panel in an expansion panel"
+        },
+        {
+          "name": "separateSinglePanel",
+          "description": "boolean If the panel right below the top panel or right above the bottom panel is opened, the very top or bottom panel becomes a single panel."
+        },
+        {
+          "name": "showFooter",
+          "description": "boolean Shows the footer in the panel item"
+        },
+        {
+          "name": "noSurface",
+          "description": "boolean Sets the theme surface to transparent"
         }
       ]
     },
@@ -477,7 +655,19 @@
       "attributes": [
         {
           "name": "label",
-          "description": "(required)"
+          "description": "(required) The text to display for the label and sets a11y label on input. (visually overriden by slotted label)"
+        },
+        {
+          "name": "alignEnd",
+          "description": "boolean Aligns the component at the end of the label."
+        },
+        {
+          "name": "spaceBetween",
+          "description": "boolean Add space between the component and the label as the formfield grows."
+        },
+        {
+          "name": "nowrap",
+          "description": "boolean Prevents the label from wrapping and overflow text is ellipsed."
         }
       ]
     },
@@ -504,7 +694,19 @@
       "attributes": [
         {
           "name": "icon",
-          "description": ""
+          "description": "Icon to display, and aria-label value when label is not defined."
+        },
+        {
+          "name": "aria-label",
+          "description": "aria-label for the icon button."
+        },
+        {
+          "name": "aria-haspopup",
+          "description": "Indicates the availability and type of an interactive popup element, such as menu or dialog, that can be triggered by the button."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect."
         }
       ]
     },

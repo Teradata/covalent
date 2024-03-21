@@ -10,9 +10,9 @@
       "description": "Icon added to the alert"
     },
     "state": {
+      "description": "State representation which can take the values:\nactive|negative|positive|caution",
       "type": "string",
-      "default": "active",
-      "description": "State representation which can take the values:\nactive|negative|positive|caution"
+      "enum": ["active", "negative", "positive", "caution"]
     },
     "inline": {
       "type": "boolean",

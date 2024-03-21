@@ -1,0 +1,35 @@
+{
+  "id": "6tUMrwwjoe",
+  "title": "With content and footer",
+  "description": "A description",
+  "type": "data",
+  "patternId": "expansion-panel-item",
+  "templateId": "web-components-vBLifAApG",
+  "data": {
+    "props": {
+      "title": "Expansion Panel Item",
+      "index": 0,
+      "contentPreview": "Panel item with content and footer",
+      "open": true,
+      "showFooter": true
+    },
+    "slots": {
+      "content": [
+        {
+          "type": "template-demo",
+          "patternId": "empty-state",
+          "templateId": "web-components-E0GwXgHJv",
+          "demoId": "8QAZfNvobo"
+        }
+      ],
+      "footer": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ]
+    }
+  }
+}

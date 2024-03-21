@@ -17,7 +17,7 @@ export interface ActionRibbon {
    * State representation which can take the values:
    * active|negative|positive|caution
    */
-  state?: string;
+  state?: 'active' | 'negative' | 'positive' | 'caution';
   /**
    * Icon added to the action ribbon
    */

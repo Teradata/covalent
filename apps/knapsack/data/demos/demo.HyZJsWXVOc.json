@@ -6,7 +6,10 @@
   "templateId": "web-components-7wYRPSnEZH",
   "data": {
     "props": {
-      "selectable": false
+      "selectable": true,
+      "activeIndex": 0,
+      "label": "chip-set",
+      "multi": false
     },
     "slots": {
       "default": [

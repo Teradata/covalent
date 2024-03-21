@@ -6,7 +6,8 @@
   "templateId": "web-components-ctiCe2sAX",
   "data": {
     "props": {
-      "icon": "houseboat"
+      "icon": "houseboat",
+      "disabled": false
     },
     "slots": {}
   }

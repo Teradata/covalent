@@ -5,7 +5,13 @@
   "required": [],
   "properties": {
     "noSurface": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Sets the theme surface to transparent"
+    },
+    "titleWidth": {
+      "type": "string",
+      "description": "Sets the width of the title",
+      "default": "150px"
     }
   }
 }

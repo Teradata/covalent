@@ -7,8 +7,13 @@
   "data": {
     "props": {
       "title": "Title",
-      "contentPreview": "content preview"
+      "index": 0,
+      "contentPreview": "content preview",
+      "open": false,
+      "showFooter": false
     },
-    "slots": {}
+    "slots": {
+      "content": []
+    }
   }
 }

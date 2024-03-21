@@ -9,5 +9,12 @@
  */
 
 export interface ExpansionPanel {
+  /**
+   * Sets the theme surface to transparent
+   */
   noSurface?: boolean;
+  /**
+   * Sets the width of the title
+   */
+  titleWidth?: string;
 }

@@ -4,16 +4,48 @@
   "type": "object",
   "required": ["open"],
   "properties": {
-    "heading": {
-      "type": "string",
-      "default": "Sample dialog title"
-    },
     "open": {
       "type": "boolean",
-      "default": true
+      "default": true,
+      "description": "Opens the dialog when true"
     },
     "hideActions": {
+      "type": "boolean",
+      "description": "Hides the actions footer of the dialog. Needed to remove excess padding when no actions are slotted in."
+    },
+    "stacked": {
+      "description": "Stacks the action buttons.",
       "type": "boolean"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Sample dialog title",
+      "description": "Heading text of the dialog"
+    },
+    "scrimClickAction": {
+      "type": "string",
+      "description": "Setting this attribute to an empty string \"\" will prevent clicks outside the dialog from closing the dialog.",
+      "default": "close"
+    },
+    "escapeKeyAction": {
+      "type": "string",
+      "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog.",
+      "default": "close"
+    },
+    "defaultAction": {
+      "type": "string",
+      "description": "Action to be emitted with the closing and closed events when <cv-dialog>.open is toggled",
+      "default": "close"
+    },
+    "actionAttribute": {
+      "type": "string",
+      "description": "Attribute to read in light dom of dialog for closing action value",
+      "default": "dialogAction"
+    },
+    "initialFocusAttribute": {
+      "type": "string",
+      "description": "Attribute to search for in light dom for initial focus on dialog open.",
+      "default": "dialogInitialFocus"
     }
   }
 }

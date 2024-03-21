@@ -21,7 +21,7 @@ export interface Badge {
    * Sets the size of the badge with the values:
    * small | large
    */
-  size?: string;
+  size?: 'small' | 'large';
   /**
    * Controls the visibility of the badge
    */
@@ -29,11 +29,11 @@ export interface Badge {
   /**
    * Aligns the badge vertically in the wrapped element with values: top | bottom
    */
-  verticalAlignment?: string;
+  verticalAlignment?: 'top' | 'bottom';
   /**
    * Aligns the badge horizontally in the wrapped element with values: left | right
    */
-  horizontalAlignment?: string;
+  horizontalAlignment?: 'left' | 'right';
   /**
    * Shows the badge when content is zero
    */

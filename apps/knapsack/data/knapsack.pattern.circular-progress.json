@@ -1,11 +1,9 @@
 {
   "id": "circular-progress",
   "title": "Circular progress",
-  "description": "",
-  "statuses": {},
   "templates": [
     {
-      "id": "web-components-iMsVIQ6gtb",
+      "id": "web-components-rw6v6c4fnU",
       "title": "Web components",
       "path": "../../../dist/libs/components/circular-progress.mjs",
       "alias": "cv-circular-progress",
@@ -14,38 +12,49 @@
         "slots": {},
         "props": {
           "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "",
           "type": "object",
           "required": [],
           "properties": {
             "indeterminate": {
+              "description": "Sets the circular-progress into its indeterminate state.",
               "type": "boolean",
               "default": true
             },
             "progress": {
-              "type": "number"
+              "description": "Sets the progress bar's value. Value should be between [0, 1].",
+              "type": "number",
+              "default": 0
+            },
+            "density": {
+              "description": "Sets the progress indicator's sizing based on density scale. Minimum value is -8. Each unit change in density scale corresponds to 4px change in side dimensions. The stroke width adjusts automatically.",
+              "type": "number",
+              "default": 0
+            },
+            "closed": {
+              "description": "Sets the progress indicator to the closed state. Sets content opacity to 0. Typically should be set to true when loading has finished.",
+              "type": "boolean"
             }
           }
         }
       },
-      "demoIds": ["b7gHexlITw"],
-      "blockIds": []
+      "demoIds": ["gMTyjmInaG"],
+      "blockIds": ["CyfCWrMIG1", "ihKMdBkEA", "Mi9xn1repz"]
     }
   ],
   "tabs": [
     {
       "type": "subPage",
-      "id": "overview"
+      "id": "kWQoZ3d4QL"
     },
     {
       "type": "template",
-      "id": "web-components-iMsVIQ6gtb"
+      "id": "web-components-rw6v6c4fnU"
     }
   ],
   "subPages": [
     {
-      "id": "overview",
       "title": "Overview",
+      "id": "kWQoZ3d4QL",
       "blockIds": []
     }
   ]

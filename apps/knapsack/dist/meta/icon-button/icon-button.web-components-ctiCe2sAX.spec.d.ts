@@ -9,5 +9,20 @@
  */
 
 export interface IconButton {
+  /**
+   * Icon to display, and aria-label value when label is not defined.
+   */
   icon?: string;
+  /**
+   * aria-label for the icon button.
+   */
+  'aria-label'?: string;
+  /**
+   * Indicates the availability and type of an interactive popup element, such as menu or dialog, that can be triggered by the button.
+   */
+  'aria-haspopup'?: string;
+  /**
+   * Disabled buttons cannot be interacted with and have no visual interaction effect.
+   */
+  disabled?: boolean;
 }

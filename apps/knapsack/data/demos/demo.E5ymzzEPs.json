@@ -8,7 +8,6 @@
     "props": {
       "label": "test",
       "trailingIcon": false,
-      "icon": "chat",
       "raised": false,
       "unelevated": false,
       "outlined": true,

@@ -9,5 +9,20 @@
  */
 
 export interface Chip {
+  /**
+   * Sets the chips as selectable/actionable
+   */
   selectable: boolean;
+  /**
+   * Sets the chips as mulit-selectable
+   */
+  multi?: boolean;
+  /**
+   * The arial label for the the chip set
+   */
+  label?: string;
+  /**
+   * Sets the chip at the provided Index as active
+   */
+  activeIndex?: number;
 }

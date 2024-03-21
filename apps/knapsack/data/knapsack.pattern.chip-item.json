@@ -20,19 +20,38 @@
           "properties": {
             "label": {
               "type": "string",
-              "default": "Chip"
+              "default": "Chip",
+              "description": "The text label of the chip"
             },
             "state": {
+              "description": "The state representation with the values: secondary|negative|positive|caution",
+              "type": "string",
+              "enum": ["secondary", "negative", "positive", "caution"]
+            },
+            "icon": {
               "type": "string"
             },
             "filter": {
+              "description": "Sets the filter chip variant",
+              "type": "boolean"
+            },
+            "trailingIcon": {
+              "description": "Moves the icon to a trailing position",
+              "type": "boolean"
+            },
+            "avatar": {
+              "description": "Treats the leading icon like an avatar",
+              "type": "boolean"
+            },
+            "disabled": {
+              "description": "Disables the chip",
               "type": "boolean"
             }
           }
         }
       },
-      "demoIds": ["zDg2SpdOHk"],
-      "blockIds": []
+      "demoIds": ["zDg2SpdOHk", "DINJPi6iZ"],
+      "blockIds": ["aIt5CbQR8h"]
     }
   ],
   "tabs": [

@@ -9,6 +9,56 @@
  */
 
 export interface ExpansionPanelItem {
+  /**
+   * The title of the panel item
+   */
   title?: string;
+  /**
+   * The content preview text of the panel item
+   */
   contentPreview?: string;
+  /**
+   * Sets the index of the panel item
+   */
+  index?: number;
+  /**
+   * Expands the panel item when true
+   */
+  open?: boolean;
+  /**
+   * True for the top most panel item in an expansion panel
+   */
+  isTopPanel?: boolean;
+  /**
+   * True for the bottom most panel item in an expansion panel
+   */
+  isBottomPanel?: boolean;
+  /**
+   * True for the inner panel items in an expansion panel
+   */
+  isInnerPanel?: boolean;
+  /**
+   * True if the expansion panel has a single panel item
+   */
+  isSinglePanel?: boolean;
+  /**
+   * True for the panel item below an open inner panel in an expansion panel
+   */
+  belowOpenInnerPanel?: boolean;
+  /**
+   * True for the panel item above an open inner panel in an expansion panel
+   */
+  aboveOpenInnerPanel?: boolean;
+  /**
+   * If the panel right below the top panel or right above the bottom panel is opened, the very top or bottom panel becomes a single panel.
+   */
+  separateSinglePanel?: boolean;
+  /**
+   * Shows the footer in the panel item
+   */
+  showFooter?: boolean;
+  /**
+   * Sets the theme surface to transparent
+   */
+  noSurface?: boolean;
 }

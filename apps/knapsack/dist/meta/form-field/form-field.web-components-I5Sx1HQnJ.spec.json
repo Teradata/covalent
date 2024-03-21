@@ -6,7 +6,20 @@
   "properties": {
     "label": {
       "type": "string",
-      "default": "Form field label"
+      "default": "Form field label",
+      "description": "The text to display for the label and sets a11y label on input. (visually overriden by slotted label)"
+    },
+    "alignEnd": {
+      "description": "Aligns the component at the end of the label.",
+      "type": "boolean"
+    },
+    "spaceBetween": {
+      "description": "Add space between the component and the label as the formfield grows.",
+      "type": "boolean"
+    },
+    "nowrap": {
+      "description": "Prevents the label from wrapping and overflow text is ellipsed.",
+      "type": "boolean"
     }
   }
 }

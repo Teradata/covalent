@@ -6,7 +6,9 @@
   "templateId": "web-components-iMsVIQ6gtb",
   "data": {
     "props": {
-      "indeterminate": true
+      "indeterminate": true,
+      "progress": 0,
+      "density": 0
     },
     "slots": {}
   }
