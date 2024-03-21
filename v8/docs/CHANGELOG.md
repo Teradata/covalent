@@ -1,3 +1,9 @@
+# [8.8.0](https://github.com/Teradata/covalent/compare/v8.7.0...v8.8.0) (2024-03-20)
+
+### Features
+
+- **components:** updating theme mixin and styling updates ([#2126](https://github.com/Teradata/covalent/issues/2126)) ([302e287](https://github.com/Teradata/covalent/commit/302e2874fdd0245316475e46419612c872aa8914))
+
 # [8.8.0-beta.1](https://github.com/Teradata/covalent/compare/v8.7.0...v8.8.0-beta.1) (2024-03-19)
 
 ### Bug Fixes
