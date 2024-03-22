@@ -79,6 +79,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "open() => void"
                         }
                       ]
@@ -154,6 +159,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "close() => void"
                         }
                       ]

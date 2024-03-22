@@ -123,6 +123,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "action"
                         }
                       ]
@@ -145,6 +150,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "cv-list"
                         }
                       ]
@@ -167,6 +177,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "ActionDetail *"
                         }
                       ]
@@ -189,7 +204,7 @@
                       "content": [
                         {
                           "type": "text",
-                          "text": "Fired when a selection has been made via click or keyboard aciton."
+                          "text": "Fired when a selection has been made via click or keyboard action."
                         }
                       ]
                     }
@@ -216,6 +231,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "selected"
                         }
                       ]
@@ -238,6 +258,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "cv-list"
                         }
                       ]
@@ -260,6 +285,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "SelectedDetail **"
                         }
                       ]

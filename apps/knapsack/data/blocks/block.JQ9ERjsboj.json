@@ -150,6 +150,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "cv-side-sheet"
                         }
                       ]
@@ -253,6 +258,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "cv-side-sheet"
                         }
                       ]
@@ -359,6 +369,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "cv-side-sheet"
                         }
                       ]
@@ -462,6 +477,11 @@
                       "content": [
                         {
                           "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ],
                           "text": "cv-side-sheet"
                         }
                       ]
