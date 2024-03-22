@@ -1,0 +1,23 @@
+{
+  "id": "0dX3ojt8-P",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "* See cv-list's Events section for more details"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

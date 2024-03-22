@@ -1,0 +1,24 @@
+{
+  "id": "T0V2X8g9lD",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 4
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Methods"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -9,6 +9,20 @@
  */
 
 export interface SideSheet {
-  open: boolean;
+  /**
+   * Heading of the side sheet.
+   */
   heading?: string;
+  /**
+   * Opens the side sheet
+   */
+  open: boolean;
+  /**
+   * When true occupies the entire viewport width.
+   */
+  pushed?: boolean;
+  /**
+   * Removes the padding in the side sheet
+   */
+  noPadding?: boolean;
 }

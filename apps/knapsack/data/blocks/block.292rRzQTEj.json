@@ -1,0 +1,23 @@
+{
+  "id": "292rRzQTEj",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "* DefaultValidity is: "
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

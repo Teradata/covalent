@@ -1,0 +1,48 @@
+{
+  "id": "yobugdVoLz",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "** "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "IndexDiff"
+            },
+            {
+              "type": "text",
+              "text": " is an interface of the following type:"
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": null
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "interface IndexDiff {\n  added: number[];\n  removed: number[];\n}"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -6,15 +6,40 @@
   "properties": {
     "activatible": {
       "type": "boolean",
-      "default": true
-    },
-    "graphic": {
-      "type": "string",
-      "default": "avatar"
+      "default": true,
+      "description": "Sets activated attribute on selected items which provides a focus-persistent highlight."
     },
     "subNav": {
       "type": "boolean",
       "default": true
+    },
+    "rootTabbable": {
+      "description": "When true, sets tabindex=\"0\" on the internal list. Otherwise sets tabindex=\"-1\".",
+      "type": "boolean"
+    },
+    "multi": {
+      "description": "When true, enables selection of multiple items. This will result in index being of type Set<number> and selected returning ListItemBase[].",
+      "type": "boolean"
+    },
+    "wrapFocus": {
+      "description": "When true, pressing up on the keyboard when focused on the first item will focus the last item and down when focused on the last item will focus the first item.",
+      "type": "boolean"
+    },
+    "noninteractive": {
+      "description": "When true, disables focus and pointer events (thus ripples) on the list. Used for display-only lists.",
+      "type": "boolean"
+    },
+    "itemRoles": {
+      "type": "string",
+      "description": "Determines what role attribute to set on all list items."
+    },
+    "innerAriaLabel": {
+      "type": "string",
+      "description": "aria-label of the internal <ul> element."
+    },
+    "innerRole": {
+      "type": "string",
+      "description": "Role of the internal <ul> element."
     }
   }
 }

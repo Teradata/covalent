@@ -13,12 +13,22 @@
       "spec": {
         "slots": {
           "default": {
-            "title": "default"
+            "title": "default",
+            "description": "Primary text to display in the list item. Note, text must be wrapped in an inline node to be styled for disabled variant."
           },
           "graphic": {
             "allowedPatternIds": ["icon"],
             "title": "graphic",
-            "disallowText": true
+            "disallowText": true,
+            "description": "First tile graphic to display when graphic attribute is defined."
+          },
+          "meta": {
+            "title": "meta",
+            "description": "Last tile meta icon or text to display when hasMeta is true."
+          },
+          "secondary": {
+            "title": "secondary",
+            "description": "Secondary text displayed below primary text of a two-line list item."
           }
         },
         "props": {
@@ -27,18 +37,70 @@
           "type": "object",
           "required": [],
           "properties": {
+            "graphic": {
+              "description": "Determines which graphic layout to show and enables the graphic slot when value is not control or null.",
+              "type": "string",
+              "enum": ["avatar", "icon", "medium", "large", "control"]
+            },
+            "group": {
+              "type": "string",
+              "description": "Used to group the internal radios together."
+            },
+            "value": {
+              "type": "string",
+              "description": "Value associated with this list item."
+            },
+            "tabindex": {
+              "description": "Reflects tabindex and sets internal tab indices.",
+              "type": "number"
+            },
+            "text": {
+              "type": "string",
+              "description": "Trimmed textContent of the list item."
+            },
             "left": {
+              "type": "boolean",
+              "description": "Displays the checkbox on the left. Overrides graphic."
+            },
+            "disabled": {
+              "description": "Reflects disabled and sets internal disabled attributes.",
               "type": "boolean"
             },
-            "graphic": {
-              "type": "string",
-              "default": "avatar"
+            "twoline": {
+              "description": "Activates the two-line variant and enables the secondary slot.",
+              "type": "boolean"
+            },
+            "activated": {
+              "description": "Activates focus-persistent ripple.",
+              "type": "boolean"
+            },
+            "multipleGraphics": {
+              "description": "Allows arbitrary width for multiple slotted graphics.",
+              "type": "boolean"
+            },
+            "hasMeta": {
+              "description": "Activates the meta layout tile and enables the meta slot.",
+              "type": "boolean"
+            },
+            "noninteractive": {
+              "description": "Disables focus and pointer events for the list item.",
+              "type": "boolean"
+            },
+            "selected": {
+              "description": "Denotes that the list item is selected.",
+              "type": "boolean"
             }
           }
         }
       },
       "demoIds": ["MzuUqdOHZA"],
-      "blockIds": []
+      "blockIds": [
+        "pmzUZU9rnt",
+        "2sSUXzyiMC",
+        "OTnte2BvYW",
+        "FYbA1byyCL",
+        "1XCYXdiONL"
+      ]
     }
   ],
   "tabs": [

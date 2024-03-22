@@ -13,18 +13,22 @@
       "spec": {
         "slots": {
           "default": {
-            "title": "default"
+            "title": "default",
+            "description": "Primary text to display in the list item. Note, text must be wrapped in an inline node to be styled for disabled variant."
           },
           "secondary": {
-            "title": "secondary"
+            "title": "secondary",
+            "description": "Secondary text displayed below primary text of a two-line list item."
           },
           "graphic": {
             "allowedPatternIds": ["circular-progress", "icon"],
-            "title": "graphic"
+            "title": "graphic",
+            "description": "First tile graphic to display when graphic attribute is defined."
           },
           "meta": {
             "allowedPatternIds": ["icon"],
-            "title": "meta"
+            "title": "meta",
+            "description": "Last tile meta icon or text to display when hasMeta is true."
           }
         },
         "props": {
@@ -34,19 +38,66 @@
           "required": [],
           "properties": {
             "graphic": {
-              "type": "string"
+              "description": "Determines which graphic layout to show and enables the graphic slot.",
+              "type": "string",
+              "enum": ["avatar", "icon", "medium", "large", "control"]
             },
-            "twoLine": {
-              "type": "boolean"
+            "text": {
+              "type": "string",
+              "description": "Trimmed textContent of the list item."
+            },
+            "value": {
+              "type": "string",
+              "description": "Value associated with this list item"
+            },
+            "tabindex": {
+              "description": "Reflects tabindex and sets internal tab indices.",
+              "type": "number",
+              "default": -1
+            },
+            "group": {
+              "type": "string",
+              "description": "Used to group items together"
             },
             "hasMeta": {
+              "description": "Activates the meta layout tile and enables the meta slot.",
+              "type": "boolean"
+            },
+            "disabled": {
+              "description": "Reflects disabled and sets internal disabled attributes.",
+              "type": "boolean"
+            },
+            "twoline": {
+              "description": "Activates the two-line variant and enables the secondary slot.",
+              "type": "boolean"
+            },
+            "activated": {
+              "description": "Activates focus-persistent ripple.",
+              "type": "boolean"
+            },
+            "multipleGraphics": {
+              "description": "Allows arbitrary width for multiple slotted graphics.",
+              "type": "boolean"
+            },
+            "noninteractive": {
+              "description": "Disables focus and pointer events for the list item.",
+              "type": "boolean"
+            },
+            "selected": {
+              "description": "Denotes that the list item is selected.",
               "type": "boolean"
             }
           }
         }
       },
       "demoIds": ["qgGc8WUNHQ"],
-      "blockIds": []
+      "blockIds": [
+        "YXo0qnpuD8",
+        "9sl5tCUSJ7",
+        "kCkF5j-h4Q",
+        "gRg4GR8qdT",
+        "xNiQAA96b5"
+      ]
     }
   ],
   "tabs": [

@@ -9,7 +9,52 @@
  */
 
 export interface ListItem {
-  graphic?: string;
-  twoLine?: boolean;
+  /**
+   * Determines which graphic layout to show and enables the graphic slot.
+   */
+  graphic?: 'avatar' | 'icon' | 'medium' | 'large' | 'control';
+  /**
+   * Trimmed textContent of the list item.
+   */
+  text?: string;
+  /**
+   * Value associated with this list item
+   */
+  value?: string;
+  /**
+   * Reflects tabindex and sets internal tab indices.
+   */
+  tabindex?: number;
+  /**
+   * Used to group items together
+   */
+  group?: string;
+  /**
+   * Activates the meta layout tile and enables the meta slot.
+   */
   hasMeta?: boolean;
+  /**
+   * Reflects disabled and sets internal disabled attributes.
+   */
+  disabled?: boolean;
+  /**
+   * Activates the two-line variant and enables the secondary slot.
+   */
+  twoline?: boolean;
+  /**
+   * Activates focus-persistent ripple.
+   */
+  activated?: boolean;
+  /**
+   * Allows arbitrary width for multiple slotted graphics.
+   */
+  multipleGraphics?: boolean;
+  /**
+   * Disables focus and pointer events for the list item.
+   */
+  noninteractive?: boolean;
+  /**
+   * Denotes that the list item is selected.
+   */
+  selected?: boolean;
 }

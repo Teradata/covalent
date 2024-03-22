@@ -13,25 +13,30 @@
       "spec": {
         "slots": {
           "default": {
-            "title": "default"
+            "title": "default",
+            "description": "Primary text to display in the list item. Note, text must be wrapped in an inline node to be styled for disabled variant."
           },
           "expansion-panel": {
             "allowedPatternIds": ["list"],
             "title": "expansion-panel",
             "allowOnlyOne": true,
-            "disallowText": true
+            "disallowText": true,
+            "description": "Expansion panel to be displayed in the navigation list item"
           },
           "meta": {
-            "title": "meta"
+            "title": "meta",
+            "description": "Last tile meta icon or text to display when hasMeta is true."
           },
           "secondary": {
-            "title": "secondary"
+            "title": "secondary",
+            "description": "Secondary text displayed below primary text of a two-line list item."
           },
           "graphic": {
             "allowedPatternIds": ["icon"],
             "title": "graphic",
             "allowOnlyOne": true,
-            "disallowText": true
+            "disallowText": true,
+            "description": "First tile graphic to display when graphic attribute is defined."
           }
         },
         "props": {
@@ -40,25 +45,77 @@
           "type": "object",
           "required": [],
           "properties": {
+            "graphic": {
+              "description": "Determines which graphic layout to show and enables the graphic slot.",
+              "type": "string",
+              "enum": ["avatar", "icon", "medium", "large", "control"]
+            },
+            "text": {
+              "type": "string",
+              "description": "Trimmed textContent of the list item."
+            },
+            "value": {
+              "type": "string",
+              "description": "Value associated with this list item"
+            },
+            "tabindex": {
+              "description": "Reflects tabindex and sets internal tab indices.",
+              "type": "number",
+              "default": -1
+            },
+            "group": {
+              "type": "string",
+              "description": "Used to group items together"
+            },
+            "open": {
+              "description": "Determines if the navigation list item is open",
+              "type": "boolean"
+            },
             "hasChildren": {
               "type": "boolean",
-              "default": true
+              "default": true,
+              "description": "Determines if the navigation list item has children"
             },
             "hasMeta": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Activates the meta layout tile and enables the meta slot."
             },
             "twoLine": {
+              "type": "boolean",
+              "description": "Activates the two-line variant and enables the secondary slot."
+            },
+            "disabled": {
+              "description": "Reflects disabled and sets internal disabled attributes.",
               "type": "boolean"
             },
-            "graphic": {
-              "type": "string",
-              "default": "avatar"
+            "activated": {
+              "description": "Activates focus-persistent ripple.",
+              "type": "boolean"
+            },
+            "multipleGraphics": {
+              "description": "Allows arbitrary width for multiple slotted graphics.",
+              "type": "boolean"
+            },
+            "noninteractive": {
+              "description": "Disables focus and pointer events for the list item.",
+              "type": "boolean"
+            },
+            "selected": {
+              "description": "Denotes that the list item is selected.",
+              "type": "boolean"
             }
           }
         }
       },
       "demoIds": ["E5NLCltz6", "v3IaS3HWdf"],
-      "blockIds": []
+      "blockIds": [
+        "Wdqk5XYGTw",
+        "Hx66pD86Br",
+        "HjV0ITGaZ",
+        "Cwtgdebs0y",
+        "cKyCNcqRnb",
+        "x1WDwX94wA"
+      ]
     }
   ],
   "tabs": [

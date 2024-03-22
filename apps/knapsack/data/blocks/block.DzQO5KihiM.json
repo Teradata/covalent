@@ -1,0 +1,36 @@
+{
+  "id": "DzQO5KihiM",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "* See "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "cv-list"
+            },
+            {
+              "type": "text",
+              "text": "'s Events section for more details."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

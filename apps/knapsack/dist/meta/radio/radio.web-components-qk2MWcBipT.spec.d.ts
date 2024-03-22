@@ -9,6 +9,28 @@
  */
 
 export interface Radio {
+  /**
+   * Specifies whether this radio button is the currently-selected one in its group. Maps to the native checked attribute.
+   */
   checked?: boolean;
+  /**
+   * If true, this radio button cannot be selected or de-selected. Maps to the native disabled attribute.
+   */
   disabled?: boolean;
+  /**
+   * If true, this radio button will use a global, document-level scope for its selection group rather than its local shadow root.
+   */
+  global?: boolean;
+  /**
+   * When true, the radio removes touch target that extends beyond visual boundary of the component. Set to false by default to meet Material accessibility guidelines.
+   */
+  reducedTouchTarget?: boolean;
+  /**
+   * Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group. Maps to the native name attribute.
+   */
+  name?: string;
+  /**
+   * Value of the input for form submission. Maps to the native value attribute.
+   */
+  value?: string;
 }
