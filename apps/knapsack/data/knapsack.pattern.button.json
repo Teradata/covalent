@@ -1,7 +1,7 @@
 {
   "id": "button",
   "title": "Button",
-  "description": "",
+  "description": "Common buttons prompt most actions in a UI",
   "statuses": {
     "main": "needsDev"
   },
@@ -75,13 +75,25 @@
     {
       "type": "template",
       "id": "web-components-raE1x4tYL"
+    },
+    {
+      "id": "0FNWLRc1DE",
+      "type": "designSrc"
     }
   ],
   "subPages": [
     {
       "id": "overview",
       "title": "Overview",
-      "blockIds": []
+      "blockIds": ["eKyEb1kEVx"]
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "0FNWLRc1DE": {
+      "id": "0FNWLRc1DE",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7073:36396"
+    }
+  }
 }

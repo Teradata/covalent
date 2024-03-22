@@ -99,8 +99,13 @@
                       },
                       "content": [
                         {
-                          "text": "Foreground - Icon",
-                          "type": "text"
+                          "text": "--cv-theme--on-surface-variant",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -148,8 +153,13 @@
                       },
                       "content": [
                         {
-                          "text": "Foreground - Text (secondary)",
-                          "type": "text"
+                          "text": "--cv-theme--on-surface-variant",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }

@@ -8,13 +8,13 @@
         {
           "type": "heading",
           "attrs": {
-            "textAlign": "left",
-            "level": 2
+            "level": 1,
+            "textAlign": "left"
           },
           "content": [
             {
-              "type": "text",
-              "text": "Negative"
+              "text": "Negative",
+              "type": "text"
             }
           ]
         }

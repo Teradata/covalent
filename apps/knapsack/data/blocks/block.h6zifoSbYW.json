@@ -99,8 +99,13 @@
                       },
                       "content": [
                         {
-                          "text": "Foreground - Negative",
-                          "type": "text"
+                          "text": "--cv-theme-negative",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -148,8 +153,13 @@
                       },
                       "content": [
                         {
-                          "text": "Background - Negative highlight",
-                          "type": "text"
+                          "text": "--cv-theme-negative-8",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }

@@ -99,8 +99,13 @@
                       },
                       "content": [
                         {
-                          "text": "Foreground - Accent",
-                          "type": "text"
+                          "text": "--cv-theme-primary",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }

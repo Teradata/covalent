@@ -99,8 +99,13 @@
                       },
                       "content": [
                         {
-                          "text": "Foreground - Accent",
-                          "type": "text"
+                          "text": "--cv-theme-primary",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -148,8 +153,13 @@
                       },
                       "content": [
                         {
-                          "text": "Background - Accent highlight",
-                          "type": "text"
+                          "text": "--cv-theme-primary-8",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }
