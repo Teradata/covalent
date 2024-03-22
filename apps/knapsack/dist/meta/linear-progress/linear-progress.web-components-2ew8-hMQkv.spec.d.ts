@@ -9,8 +9,24 @@
  */
 
 export interface LinearProgress {
-  indeterminate?: boolean;
+  /**
+   * Sets the buffer progress bar's value. Value should be between [0, 1]. Setting this value to be less than 1 will reveal moving, buffering dots.
+   */
   buffer?: number;
+  /**
+   * Sets the primary progress bar's value. Value should be between [0, 1].
+   */
   progress?: string;
+  /**
+   * Sets the linear-progress into its indeterminate state.
+   */
+  indeterminate?: boolean;
+  /**
+   * Reverses the direction of the linear progress indicator.
+   */
   reverse?: boolean;
+  /**
+   * Sets the progress indicator to the closed state. Sets content opactiy to 0. Typically should be set to true when loading has finished.
+   */
+  closed?: boolean;
 }

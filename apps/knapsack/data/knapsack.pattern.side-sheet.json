@@ -13,7 +13,8 @@
       "spec": {
         "slots": {
           "default": {
-            "title": "default"
+            "title": "default",
+            "description": "The default slot for all the content in the side sheet"
           }
         },
         "props": {
@@ -22,19 +23,29 @@
           "type": "object",
           "required": ["open"],
           "properties": {
-            "open": {
-              "type": "boolean",
-              "default": true
-            },
             "heading": {
               "type": "string",
-              "default": "Sample side sheet"
+              "default": "Sample side sheet",
+              "description": "Heading of the side sheet."
+            },
+            "open": {
+              "type": "boolean",
+              "default": true,
+              "description": "Opens the side sheet"
+            },
+            "pushed": {
+              "type": "boolean",
+              "description": "When true occupies the entire viewport width."
+            },
+            "noPadding": {
+              "type": "boolean",
+              "description": "Removes the padding in the side sheet"
             }
           }
         }
       },
       "demoIds": ["F84crA5Gx4"],
-      "blockIds": []
+      "blockIds": ["kARHHBzg1i", "uAbJfOoUvH", "JQ9ERjsboj", "alXcZHiCL8"]
     }
   ],
   "tabs": [

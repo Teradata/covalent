@@ -9,6 +9,28 @@
  */
 
 export interface IconCheckbox {
+  /**
+   * True when the icon checkbox is checked
+   */
   checked?: boolean;
+  /**
+   * Disables the icon checkbox and renders in muted colors.
+   */
   disabled?: boolean;
+  /**
+   * Displays the icon without any text in the icon checkbox
+   */
+  iconOnly?: boolean;
+  /**
+   * The value that will be included if the checkbox is submitted in a form.
+   */
+  value?: string;
+  /**
+   * Sets the width of the icon checkbox
+   */
+  width?: string;
+  /**
+   * Sets the height of the icon checkbox
+   */
+  height?: string;
 }

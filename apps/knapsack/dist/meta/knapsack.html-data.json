@@ -288,24 +288,73 @@
       ],
       "attributes": [
         {
+          "name": "graphic",
+          "values": [
+            {
+              "name": "avatar"
+            },
+            {
+              "name": "icon"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "control"
+            }
+          ],
+          "description": "Determines which graphic layout to show and enables the graphic slot when value is not control or null."
+        },
+        {
+          "name": "value",
+          "description": "Value associated with this list item."
+        },
+        {
+          "name": "group",
+          "description": "Used to group items together"
+        },
+        {
+          "name": "text",
+          "description": "Trimmed textContent of the list item."
+        },
+        {
+          "name": "tabindex",
+          "description": "Reflects tabindex and sets internal tab indices."
+        },
+        {
           "name": "left",
-          "description": "boolean"
+          "description": "boolean Displays the checkbox on the left. Overrides graphic."
         },
         {
           "name": "selected",
-          "description": "boolean"
-        },
-        {
-          "name": "graphic",
-          "description": ""
+          "description": "boolean Denotes that the list item is selected."
         },
         {
           "name": "hasMeta",
-          "description": "boolean"
+          "description": "boolean Activates the meta layout tile and enables the meta slot."
         },
         {
           "name": "twoLine",
-          "description": "boolean"
+          "description": "boolean Activates the two-line variant and enables the secondary slot."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Reflects disabled and sets internal disabled attributes."
+        },
+        {
+          "name": "activated",
+          "description": "boolean Activates focus-persistent ripple."
+        },
+        {
+          "name": "multipleGraphics",
+          "description": "boolean Allows arbitrary width for multiple slotted graphics."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean Disables focus and pointer events for the list item."
         }
       ]
     },
@@ -722,11 +771,27 @@
       "attributes": [
         {
           "name": "checked",
-          "description": "boolean"
+          "description": "boolean True when the icon checkbox is checked"
         },
         {
           "name": "disabled",
-          "description": "boolean"
+          "description": "boolean Disables the icon checkbox and renders in muted colors."
+        },
+        {
+          "name": "iconOnly",
+          "description": "boolean Displays the icon without any text in the icon checkbox"
+        },
+        {
+          "name": "value",
+          "description": "The value that will be included if the checkbox is submitted in a form."
+        },
+        {
+          "name": "width",
+          "description": "Sets the width of the icon checkbox"
+        },
+        {
+          "name": "height",
+          "description": "Sets the height of the icon checkbox"
         }
       ]
     },
@@ -742,11 +807,23 @@
       "attributes": [
         {
           "name": "checked",
-          "description": "boolean"
+          "description": "boolean True when the icon radio is checked"
         },
         {
           "name": "disabled",
-          "description": "boolean"
+          "description": "boolean Disables the icon radio and renders in muted colors."
+        },
+        {
+          "name": "iconOnly",
+          "description": "boolean Displays the icon without any text in the icon radio"
+        },
+        {
+          "name": "value",
+          "description": "Value of the input for form submission. Maps to the native value attribute."
+        },
+        {
+          "name": "name",
+          "description": "Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group. Maps to the native name attribute."
         }
       ]
     },
@@ -761,20 +838,24 @@
       ],
       "attributes": [
         {
-          "name": "indeterminate",
-          "description": "boolean"
-        },
-        {
           "name": "buffer",
-          "description": ""
+          "description": "Sets the buffer progress bar's value. Value should be between [0, 1]. Setting this value to be less than 1 will reveal moving, buffering dots."
         },
         {
           "name": "progress",
-          "description": ""
+          "description": "Sets the primary progress bar's value. Value should be between [0, 1]."
+        },
+        {
+          "name": "indeterminate",
+          "description": "boolean Sets the linear-progress into its indeterminate state."
         },
         {
           "name": "reverse",
-          "description": "boolean"
+          "description": "boolean Reverses the direction of the linear progress indicator."
+        },
+        {
+          "name": "closed",
+          "description": "boolean Sets the progress indicator to the closed state. Sets content opactiy to 0. Typically should be set to true when loading has finished."
         }
       ]
     },
@@ -790,15 +871,39 @@
       "attributes": [
         {
           "name": "activatible",
-          "description": "boolean"
-        },
-        {
-          "name": "graphic",
-          "description": ""
+          "description": "boolean Sets activated attribute on selected items which provides a focus-persistent highlight."
         },
         {
           "name": "subNav",
           "description": "boolean"
+        },
+        {
+          "name": "rootTabbable",
+          "description": "boolean When true, sets tabindex=\"0\" on the internal list. Otherwise sets tabindex=\"-1\"."
+        },
+        {
+          "name": "multi",
+          "description": "boolean When true, enables selection of multiple items. This will result in index being of type Set<number> and selected returning ListItemBase[]."
+        },
+        {
+          "name": "wrapFocus",
+          "description": "boolean When true, pressing up on the keyboard when focused on the first item will focus the last item and down when focused on the last item will focus the first item."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean When true, disables focus and pointer events (thus ripples) on the list. Used for display-only lists."
+        },
+        {
+          "name": "itemRoles",
+          "description": "Determines what role attribute to set on all list items."
+        },
+        {
+          "name": "innerAriaLabel",
+          "description": "aria-label of the internal <ul> element."
+        },
+        {
+          "name": "innerRole",
+          "description": "Role of the internal <ul> element."
         }
       ]
     },
@@ -814,15 +919,68 @@
       "attributes": [
         {
           "name": "graphic",
-          "description": ""
+          "values": [
+            {
+              "name": "avatar"
+            },
+            {
+              "name": "icon"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "control"
+            }
+          ],
+          "description": "Determines which graphic layout to show and enables the graphic slot."
         },
         {
-          "name": "twoLine",
-          "description": "boolean"
+          "name": "text",
+          "description": "Trimmed textContent of the list item."
+        },
+        {
+          "name": "value",
+          "description": "Value associated with this list item"
+        },
+        {
+          "name": "tabindex",
+          "description": "Reflects tabindex and sets internal tab indices."
+        },
+        {
+          "name": "group",
+          "description": "Used to group items together"
         },
         {
           "name": "hasMeta",
-          "description": "boolean"
+          "description": "boolean Activates the meta layout tile and enables the meta slot."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Reflects disabled and sets internal disabled attributes."
+        },
+        {
+          "name": "twoline",
+          "description": "boolean Activates the two-line variant and enables the secondary slot."
+        },
+        {
+          "name": "activated",
+          "description": "boolean Activates focus-persistent ripple."
+        },
+        {
+          "name": "multipleGraphics",
+          "description": "boolean Allows arbitrary width for multiple slotted graphics."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean Disables focus and pointer events for the list item."
+        },
+        {
+          "name": "selected",
+          "description": "boolean Denotes that the list item is selected."
         }
       ]
     },
@@ -838,7 +996,131 @@
       "attributes": [
         {
           "name": "open",
-          "description": "boolean"
+          "description": "boolean Opens the menu."
+        },
+        {
+          "name": "anchor",
+          "description": "Determines from which element the floating menu should calculate sizing and position offsets. In the default case, both mwc-menu and the anchor should share a parent with position:relative. Changing anchor typically requires absolute or fixed. Takes one of: HTMLElement | null"
+        },
+        {
+          "name": "corner",
+          "values": [
+            {
+              "name": "TOP_LEFT"
+            },
+            {
+              "name": "TOP_RIGHT"
+            },
+            {
+              "name": "BOTTOM_LEFT"
+            },
+            {
+              "name": "BOTTOM_RIGHT"
+            },
+            {
+              "name": "TOP_START"
+            },
+            {
+              "name": "TOP_END"
+            },
+            {
+              "name": "BOTTOM_START"
+            },
+            {
+              "name": "BOTTOM_END"
+            }
+          ],
+          "description": ""
+        },
+        {
+          "name": "menuCorner",
+          "values": [
+            {
+              "name": "START"
+            },
+            {
+              "name": "END"
+            }
+          ],
+          "description": "Horizontal corner of the menu from which the menu should position itself. NOTE: Only horizontal corners are supported."
+        },
+        {
+          "name": "x",
+          "description": "Sets horizontal position when absolute. When given an anchor, sets horizontal position relative to anchor at given corner. Requires y not to be null."
+        },
+        {
+          "name": "y",
+          "description": "Sets vertical position when absolute. When given an anchor, sets vertical position relative to anchor at given corner. Requires x not to be null."
+        },
+        {
+          "name": "defaultFocus",
+          "values": [
+            {
+              "name": "NONE"
+            },
+            {
+              "name": "LIST_ROOT"
+            },
+            {
+              "name": "FIRST_ITEM"
+            },
+            {
+              "name": "LAST_ITEM"
+            }
+          ],
+          "description": "Item to focus upon menu open."
+        },
+        {
+          "name": "innerAriaLabel",
+          "description": "Proxies to cv-list's innerAriaLabel property."
+        },
+        {
+          "name": "innerRole",
+          "values": [
+            {
+              "name": "menu"
+            },
+            {
+              "name": "listbox"
+            }
+          ],
+          "description": "Proxies to cv-list's innerRole property"
+        },
+        {
+          "name": "quick",
+          "description": "boolean Whether to skip the opening animation."
+        },
+        {
+          "name": "absolute",
+          "description": "boolean Makes the menu's position absolute which will be relative to whichever ancestor has position:relative. Setting x and y will modify the menu's left and top. Setting anchor will attempt to position the menu to the anchor."
+        },
+        {
+          "name": "fixed",
+          "description": "boolean Makes the menu's position fixed which will be relative to the window. Setting x and y will modify the menu's left and top. Setting anchor will attempt to position the menu to the anchor's immediate position before opening."
+        },
+        {
+          "name": "forceGroupSelection",
+          "description": "boolean Forces a menu group to have a selected item by preventing deselection of menu items in menu groups via user interaction."
+        },
+        {
+          "name": "fullwidth",
+          "description": "boolean Sets surface width to 100%."
+        },
+        {
+          "name": "stayOpenOnBodyClick",
+          "description": "boolean Prevents the menu from closing when clicking outside the menu."
+        },
+        {
+          "name": "wrapFocus",
+          "description": "boolean Proxies to cv-list's wrapFocus property."
+        },
+        {
+          "name": "multi",
+          "description": "boolean Proxies to cv-list's multi property."
+        },
+        {
+          "name": "activatable",
+          "description": "boolean Proxies to cv-list's activatable property."
         }
       ]
     },
@@ -853,20 +1135,77 @@
       ],
       "attributes": [
         {
+          "name": "graphic",
+          "values": [
+            {
+              "name": "avatar"
+            },
+            {
+              "name": "icon"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "control"
+            }
+          ],
+          "description": "Determines which graphic layout to show and enables the graphic slot."
+        },
+        {
+          "name": "text",
+          "description": "Trimmed textContent of the list item."
+        },
+        {
+          "name": "value",
+          "description": "Value associated with this list item"
+        },
+        {
+          "name": "tabindex",
+          "description": "Reflects tabindex and sets internal tab indices."
+        },
+        {
+          "name": "group",
+          "description": "Used to group items together"
+        },
+        {
+          "name": "open",
+          "description": "boolean Determines if the navigation list item is open"
+        },
+        {
           "name": "hasChildren",
-          "description": "boolean"
+          "description": "boolean Determines if the navigation list item has children"
         },
         {
           "name": "hasMeta",
-          "description": "boolean"
+          "description": "boolean Activates the meta layout tile and enables the meta slot."
         },
         {
           "name": "twoLine",
-          "description": "boolean"
+          "description": "boolean Activates the two-line variant and enables the secondary slot."
         },
         {
-          "name": "graphic",
-          "description": ""
+          "name": "disabled",
+          "description": "boolean Reflects disabled and sets internal disabled attributes."
+        },
+        {
+          "name": "activated",
+          "description": "boolean Activates focus-persistent ripple."
+        },
+        {
+          "name": "multipleGraphics",
+          "description": "boolean Allows arbitrary width for multiple slotted graphics."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean Disables focus and pointer events for the list item."
+        },
+        {
+          "name": "selected",
+          "description": "boolean Denotes that the list item is selected."
         }
       ]
     },
@@ -882,11 +1221,27 @@
       "attributes": [
         {
           "name": "checked",
-          "description": "boolean"
+          "description": "boolean Specifies whether this radio button is the currently-selected one in its group. Maps to the native checked attribute."
         },
         {
           "name": "disabled",
-          "description": "boolean"
+          "description": "boolean If true, this radio button cannot be selected or de-selected. Maps to the native disabled attribute."
+        },
+        {
+          "name": "global",
+          "description": "boolean If true, this radio button will use a global, document-level scope for its selection group rather than its local shadow root."
+        },
+        {
+          "name": "reducedTouchTarget",
+          "description": "boolean When true, the radio removes touch target that extends beyond visual boundary of the component. Set to false by default to meet Material accessibility guidelines."
+        },
+        {
+          "name": "name",
+          "description": "Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group. Maps to the native name attribute."
+        },
+        {
+          "name": "value",
+          "description": "Value of the input for form submission. Maps to the native value attribute."
         }
       ]
     },
@@ -901,12 +1256,73 @@
       ],
       "attributes": [
         {
-          "name": "left",
-          "description": "boolean"
+          "name": "graphic",
+          "values": [
+            {
+              "name": "avatar"
+            },
+            {
+              "name": "icon"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "control"
+            }
+          ],
+          "description": "Determines which graphic layout to show and enables the graphic slot when value is not control or null."
         },
         {
-          "name": "graphic",
-          "description": ""
+          "name": "group",
+          "description": "Used to group the internal radios together."
+        },
+        {
+          "name": "value",
+          "description": "Value associated with this list item."
+        },
+        {
+          "name": "tabindex",
+          "description": "Reflects tabindex and sets internal tab indices."
+        },
+        {
+          "name": "text",
+          "description": "Trimmed textContent of the list item."
+        },
+        {
+          "name": "left",
+          "description": "boolean Displays the checkbox on the left. Overrides graphic."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Reflects disabled and sets internal disabled attributes."
+        },
+        {
+          "name": "twoline",
+          "description": "boolean Activates the two-line variant and enables the secondary slot."
+        },
+        {
+          "name": "activated",
+          "description": "boolean Activates focus-persistent ripple."
+        },
+        {
+          "name": "multipleGraphics",
+          "description": "boolean Allows arbitrary width for multiple slotted graphics."
+        },
+        {
+          "name": "hasMeta",
+          "description": "boolean Activates the meta layout tile and enables the meta slot."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean Disables focus and pointer events for the list item."
+        },
+        {
+          "name": "selected",
+          "description": "boolean Denotes that the list item is selected."
         }
       ]
     },
@@ -922,19 +1338,47 @@
       "attributes": [
         {
           "name": "label",
-          "description": ""
+          "description": "Sets floating label value. NOTE: The label will not float if the selected item has a falsey value property."
+        },
+        {
+          "name": "value",
+          "description": "The select control's value determined by the value property of the currently selected list item. Setting value will attempt to select a list-item with the same value. If one does not match, it will set itself to \"\" and the index to -1. Setting value before the list item is attached will not select the item."
         },
         {
           "name": "validationMessage",
-          "description": ""
+          "description": "Message to show in the error color when the select is invalid. (Helper text will not be visible)"
+        },
+        {
+          "name": "helper",
+          "description": "Helper text to display below the select. Always displays by default."
+        },
+        {
+          "name": "icon",
+          "description": "Leading icon to display in select. See mwc-icon. Note: for proper list spacing, each list item must have graphic=\"icon\" or graphic=\"avatar\" to be set."
         },
         {
           "name": "required",
-          "description": "(required)"
+          "description": "(required) boolean Displays error state if value is empty and select is blurred."
         },
         {
           "name": "outlined",
-          "description": "(required) boolean"
+          "description": "(required) boolean Whether or not to show the material outlined variant."
+        },
+        {
+          "name": "naturalMenuWidth",
+          "description": "boolean Sets the dropdown menu's width to auto."
+        },
+        {
+          "name": "fixedMenuPosition",
+          "description": "boolean Sets the dropdown menu's position to fixed. This is useful when the select is inside of a stacking context e.g. inside of an mwc-dialog. Note, that --mdc-menu-min-width or --mdc-menu-max-width may have to be set to resize the menu to the width anchor."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Whether or not the select should be disabled."
+        },
+        {
+          "name": "validateOnInitialRender",
+          "description": "boolean Runs validation check on initial render."
         }
       ]
     },
@@ -949,12 +1393,20 @@
       ],
       "attributes": [
         {
-          "name": "open",
-          "description": "(required) boolean"
+          "name": "heading",
+          "description": "Heading of the side sheet."
         },
         {
-          "name": "heading",
-          "description": ""
+          "name": "open",
+          "description": "(required) boolean Opens the side sheet"
+        },
+        {
+          "name": "pushed",
+          "description": "boolean When true occupies the entire viewport width."
+        },
+        {
+          "name": "noPadding",
+          "description": "boolean Removes the padding in the side sheet"
         }
       ]
     },

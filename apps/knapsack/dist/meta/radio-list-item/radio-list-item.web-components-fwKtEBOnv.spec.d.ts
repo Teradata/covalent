@@ -9,6 +9,56 @@
  */
 
 export interface RadioListItem {
+  /**
+   * Determines which graphic layout to show and enables the graphic slot when value is not control or null.
+   */
+  graphic?: 'avatar' | 'icon' | 'medium' | 'large' | 'control';
+  /**
+   * Used to group the internal radios together.
+   */
+  group?: string;
+  /**
+   * Value associated with this list item.
+   */
+  value?: string;
+  /**
+   * Reflects tabindex and sets internal tab indices.
+   */
+  tabindex?: number;
+  /**
+   * Trimmed textContent of the list item.
+   */
+  text?: string;
+  /**
+   * Displays the checkbox on the left. Overrides graphic.
+   */
   left?: boolean;
-  graphic?: string;
+  /**
+   * Reflects disabled and sets internal disabled attributes.
+   */
+  disabled?: boolean;
+  /**
+   * Activates the two-line variant and enables the secondary slot.
+   */
+  twoline?: boolean;
+  /**
+   * Activates focus-persistent ripple.
+   */
+  activated?: boolean;
+  /**
+   * Allows arbitrary width for multiple slotted graphics.
+   */
+  multipleGraphics?: boolean;
+  /**
+   * Activates the meta layout tile and enables the meta slot.
+   */
+  hasMeta?: boolean;
+  /**
+   * Disables focus and pointer events for the list item.
+   */
+  noninteractive?: boolean;
+  /**
+   * Denotes that the list item is selected.
+   */
+  selected?: boolean;
 }

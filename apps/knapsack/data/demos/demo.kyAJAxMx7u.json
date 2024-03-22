@@ -7,7 +7,12 @@
   "templateId": "web-components-fObxCsu2i8",
   "data": {
     "props": {
-      "activatible": true
+      "activatible": true,
+      "subNav": false,
+      "items": {},
+      "selected": {},
+      "index": {},
+      "graphic": "avatar"
     },
     "slots": {
       "default": [

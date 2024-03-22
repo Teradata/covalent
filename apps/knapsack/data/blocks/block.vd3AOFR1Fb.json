@@ -174,7 +174,7 @@
     }
   },
   "header": {
-    "showHeader": true,
+    "showHeader": false,
     "title": "Methods"
   }
 }

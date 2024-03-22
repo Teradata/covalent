@@ -9,5 +9,81 @@
  */
 
 export interface Menu {
+  /**
+   * Opens the menu.
+   */
   open?: boolean;
+  /**
+   * Determines from which element the floating menu should calculate sizing and position offsets. In the default case, both mwc-menu and the anchor should share a parent with position:relative. Changing anchor typically requires absolute or fixed. Takes one of: HTMLElement | null
+   */
+  anchor?: string;
+  corner?:
+    | 'TOP_LEFT'
+    | 'TOP_RIGHT'
+    | 'BOTTOM_LEFT'
+    | 'BOTTOM_RIGHT'
+    | 'TOP_START'
+    | 'TOP_END'
+    | 'BOTTOM_START'
+    | 'BOTTOM_END';
+  /**
+   * Horizontal corner of the menu from which the menu should position itself. NOTE: Only horizontal corners are supported.
+   */
+  menuCorner?: 'START' | 'END';
+  /**
+   * Sets horizontal position when absolute. When given an anchor, sets horizontal position relative to anchor at given corner. Requires y not to be null.
+   */
+  x?: number;
+  /**
+   * Sets vertical position when absolute. When given an anchor, sets vertical position relative to anchor at given corner. Requires x not to be null.
+   */
+  y?: number;
+  /**
+   * Item to focus upon menu open.
+   */
+  defaultFocus?: 'NONE' | 'LIST_ROOT' | 'FIRST_ITEM' | 'LAST_ITEM';
+  /**
+   * Proxies to cv-list's innerAriaLabel property.
+   */
+  innerAriaLabel?: string;
+  /**
+   * Proxies to cv-list's innerRole property
+   */
+  innerRole?: 'menu' | 'listbox';
+  /**
+   * Whether to skip the opening animation.
+   */
+  quick?: boolean;
+  /**
+   * Makes the menu's position absolute which will be relative to whichever ancestor has position:relative. Setting x and y will modify the menu's left and top. Setting anchor will attempt to position the menu to the anchor.
+   */
+  absolute?: boolean;
+  /**
+   * Makes the menu's position fixed which will be relative to the window. Setting x and y will modify the menu's left and top. Setting anchor will attempt to position the menu to the anchor's immediate position before opening.
+   */
+  fixed?: boolean;
+  /**
+   * Forces a menu group to have a selected item by preventing deselection of menu items in menu groups via user interaction.
+   */
+  forceGroupSelection?: boolean;
+  /**
+   * Sets surface width to 100%.
+   */
+  fullwidth?: boolean;
+  /**
+   * Prevents the menu from closing when clicking outside the menu.
+   */
+  stayOpenOnBodyClick?: boolean;
+  /**
+   * Proxies to cv-list's wrapFocus property.
+   */
+  wrapFocus?: boolean;
+  /**
+   * Proxies to cv-list's multi property.
+   */
+  multi?: boolean;
+  /**
+   * Proxies to cv-list's activatable property.
+   */
+  activatable?: boolean;
 }

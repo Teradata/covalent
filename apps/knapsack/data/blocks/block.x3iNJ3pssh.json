@@ -1,0 +1,48 @@
+{
+  "id": "x3iNJ3pssh",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "* "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "ActionDetail"
+            },
+            {
+              "type": "text",
+              "text": " is an interface of the following type:"
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": null
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "interface ActionDetail {\n  index: number;\n}"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

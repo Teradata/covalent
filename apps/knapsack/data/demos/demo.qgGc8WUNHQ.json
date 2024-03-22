@@ -6,6 +6,7 @@
   "templateId": "web-components-ytRTf8wtxn",
   "data": {
     "props": {
+      "tabindex": -1,
       "twoLine": false,
       "graphic": "avatar",
       "hasMeta": false

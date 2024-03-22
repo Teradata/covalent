@@ -5,7 +5,11 @@
   "patternId": "linear-progress",
   "templateId": "web-components-2ew8-hMQkv",
   "data": {
-    "props": {},
+    "props": {
+      "indeterminate": true,
+      "reverse": false,
+      "closed": false
+    },
     "slots": {}
   }
 }

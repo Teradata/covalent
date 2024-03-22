@@ -1,0 +1,48 @@
+{
+  "id": "OTnte2BvYW",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "* "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "RequestSelectedDetail"
+            },
+            {
+              "type": "text",
+              "text": " is an interface of the following type:"
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": null
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "interface RequestSelectedDetail {\n  selected: boolean;\n  source: 'interaction'|'property';\n}"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

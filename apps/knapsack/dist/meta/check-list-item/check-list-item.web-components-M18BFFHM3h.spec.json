@@ -4,20 +4,57 @@
   "type": "object",
   "required": [],
   "properties": {
+    "graphic": {
+      "description": "Determines which graphic layout to show and enables the graphic slot when value is not control or null.",
+      "type": "string",
+      "enum": ["avatar", "icon", "medium", "large", "control"]
+    },
+    "value": {
+      "type": "string",
+      "description": "Value associated with this list item."
+    },
+    "group": {
+      "type": "string",
+      "description": "Used to group items together"
+    },
+    "text": {
+      "type": "string",
+      "description": "Trimmed textContent of the list item."
+    },
+    "tabindex": {
+      "description": "Reflects tabindex and sets internal tab indices.",
+      "type": "number"
+    },
     "left": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Displays the checkbox on the left. Overrides graphic."
     },
     "selected": {
-      "type": "boolean"
-    },
-    "graphic": {
-      "type": "string",
-      "default": "avatar"
+      "type": "boolean",
+      "description": "Denotes that the list item is selected."
     },
     "hasMeta": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Activates the meta layout tile and enables the meta slot."
     },
     "twoLine": {
+      "type": "boolean",
+      "description": "Activates the two-line variant and enables the secondary slot."
+    },
+    "disabled": {
+      "description": "Reflects disabled and sets internal disabled attributes.",
+      "type": "boolean"
+    },
+    "activated": {
+      "description": "Activates focus-persistent ripple.",
+      "type": "boolean"
+    },
+    "multipleGraphics": {
+      "description": "Allows arbitrary width for multiple slotted graphics.",
+      "type": "boolean"
+    },
+    "noninteractive": {
+      "description": "Disables focus and pointer events for the list item.",
       "type": "boolean"
     }
   }

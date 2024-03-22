@@ -5,7 +5,13 @@
   "patternId": "list",
   "templateId": "web-components-fObxCsu2i8",
   "data": {
-    "props": {},
+    "props": {
+      "activatible": true,
+      "subNav": false,
+      "items": {},
+      "selected": {},
+      "index": {}
+    },
     "slots": {
       "default": [
         {

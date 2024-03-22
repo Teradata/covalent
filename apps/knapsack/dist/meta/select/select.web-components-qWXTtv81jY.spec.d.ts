@@ -9,8 +9,48 @@
  */
 
 export interface Select {
+  /**
+   * Sets floating label value. NOTE: The label will not float if the selected item has a falsey value property.
+   */
   label?: string;
+  /**
+   * The select control's value determined by the value property of the currently selected list item. Setting value will attempt to select a list-item with the same value. If one does not match, it will set itself to "" and the index to -1. Setting value before the list item is attached will not select the item.
+   */
+  value?: string;
+  /**
+   * Message to show in the error color when the select is invalid. (Helper text will not be visible)
+   */
   validationMessage?: string;
-  required: string;
+  /**
+   * Helper text to display below the select. Always displays by default.
+   */
+  helper?: string;
+  /**
+   * Leading icon to display in select. See mwc-icon. Note: for proper list spacing, each list item must have graphic="icon" or graphic="avatar" to be set.
+   */
+  icon?: string;
+  /**
+   * Displays error state if value is empty and select is blurred.
+   */
+  required: boolean;
+  /**
+   * Whether or not to show the material outlined variant.
+   */
   outlined: boolean;
+  /**
+   * Sets the dropdown menu's width to auto.
+   */
+  naturalMenuWidth?: boolean;
+  /**
+   * Sets the dropdown menu's position to fixed. This is useful when the select is inside of a stacking context e.g. inside of an mwc-dialog. Note, that --mdc-menu-min-width or --mdc-menu-max-width may have to be set to resize the menu to the width anchor.
+   */
+  fixedMenuPosition?: boolean;
+  /**
+   * Whether or not the select should be disabled.
+   */
+  disabled?: boolean;
+  /**
+   * Runs validation check on initial render.
+   */
+  validateOnInitialRender?: boolean;
 }

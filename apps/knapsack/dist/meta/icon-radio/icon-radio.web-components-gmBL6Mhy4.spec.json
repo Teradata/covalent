@@ -5,10 +5,24 @@
   "required": [],
   "properties": {
     "checked": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "True when the icon radio is checked"
     },
     "disabled": {
+      "type": "boolean",
+      "description": "Disables the icon radio and renders in muted colors."
+    },
+    "iconOnly": {
+      "description": "Displays the icon without any text in the icon radio",
       "type": "boolean"
+    },
+    "value": {
+      "type": "string",
+      "description": "Value of the input for form submission. Maps to the native value attribute."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group. Maps to the native name attribute."
     }
   }
 }
