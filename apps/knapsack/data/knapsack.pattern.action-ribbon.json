@@ -1,7 +1,7 @@
 {
   "id": "action-ribbon",
   "title": "Action ribbon",
-  "description": "",
+  "description": "Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.",
   "statuses": {},
   "templates": [
     {
@@ -68,7 +68,57 @@
     {
       "id": "overview",
       "title": "Overview",
-      "blockIds": []
+      "blockIds": [
+        "eoYSn9Yrdo",
+        "zocaUxSRSz",
+        "Uz3dQxAX-n",
+        "thh-22knqp",
+        "ZK8LyBinox",
+        "PFC7cX2aF0",
+        "6rqLytvaFs",
+        "XCT2aN2Nrb",
+        "v7BEEY6B9e",
+        "466eQvPys",
+        "oQXrwAxDTv",
+        "tISrkHkfAA",
+        "WHM4iCalw",
+        "5ADgJ2oIdE",
+        "jrGP4hwjgV",
+        "QboPzLeuo",
+        "Tl1SJztl17",
+        "tmMKME3X8o",
+        "gJbrxd8w3u",
+        "E9X7RkPjL6",
+        "iwXt0PYB4f",
+        "h6zifoSbYW",
+        "ZLzuLEQO6n",
+        "O7SLhoTrc7",
+        "CoGP4K5ttX",
+        "b8Foq4l-U",
+        "2yHqdpL2om",
+        "H54-mVe-p",
+        "3wnfnwTXgG",
+        "R1wSZmt-TF",
+        "HQx3w73gvK",
+        "zlD291QgrQ",
+        "Cv3Xr8VlBo",
+        "B1K2JFNHkt",
+        "rtPCzklJvh",
+        "fcbxW9fx6B",
+        "OLPC86ntOi",
+        "CM5okK93mA",
+        "lz6847hm1q",
+        "u-SaGSXLzK",
+        "hhoBvzHMuk",
+        "nymUCCPXpO",
+        "w8KdbVy5x",
+        "b8thzdh4QQ",
+        "MZy0lSp2MK",
+        "Yq-MTdzfns",
+        "DcP2cc8Bg7",
+        "OEyAa6Yh6",
+        "gYAVv4-IHV"
+      ]
     }
   ]
 }

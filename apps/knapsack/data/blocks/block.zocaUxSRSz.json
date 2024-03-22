@@ -1,0 +1,17 @@
+{
+  "id": "zocaUxSRSz",
+  "data": {
+    "imageSize": "full",
+    "images": [
+      {
+        "src": "https://knapsack.imgix.net/site/covalent/action-ribbon-anatomy-2ksswh2repng",
+        "caption": "action-ribbon--anatomy.png"
+      }
+    ]
+  },
+  "size": "medium",
+  "blockType": "image-block",
+  "header": {
+    "showHeader": false
+  }
+}

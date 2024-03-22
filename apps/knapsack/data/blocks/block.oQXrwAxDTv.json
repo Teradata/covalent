@@ -1,0 +1,20 @@
+{
+  "id": "oQXrwAxDTv",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "kWaxxxQydP",
+        "link": {
+          "name": "Color use",
+          "path": "/pages/color-use"
+        },
+        "title": "See also: Color use"
+      }
+    ]
+  },
+  "blockType": "shortcut-tiles",
+  "header": {
+    "showHeader": false
+  },
+  "spacing": "small"
+}
