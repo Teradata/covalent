@@ -99,8 +99,13 @@
                       },
                       "content": [
                         {
-                          "text": "Foreground - Positive",
-                          "type": "text"
+                          "text": "--cv-theme-positive",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -148,8 +153,13 @@
                       },
                       "content": [
                         {
-                          "text": "Background - Positive highlight",
-                          "type": "text"
+                          "text": "--cv-theme-positive-8",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }

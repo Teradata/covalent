@@ -99,8 +99,13 @@
                       },
                       "content": [
                         {
-                          "text": "Foreground - Caution",
-                          "type": "text"
+                          "text": "--cv-theme-caution",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -148,8 +153,13 @@
                       },
                       "content": [
                         {
-                          "text": "Background - Caution highlight",
-                          "type": "text"
+                          "text": "--cv-theme-caution-8",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }
