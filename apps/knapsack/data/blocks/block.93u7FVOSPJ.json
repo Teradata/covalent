@@ -1,0 +1,36 @@
+{
+  "id": "93u7FVOSPJ",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "NYZp56rve7",
+        "link": {
+          "path": "https://github.com/Teradata/covalent/tree/main/libs/components#getting-started",
+          "external": true
+        },
+        "title": "Getting started",
+        "description": "A quick how to guide on including these components in a html page"
+      },
+      {
+        "id": "reKm8mV71v",
+        "link": {
+          "path": "https://teradata.github.io/covalent/docs/components/?path=/docs/introduction--overview",
+          "external": true
+        },
+        "title": "Storybook",
+        "description": "Older documentation, useful while we flesh out this new site"
+      }
+    ],
+    "gridStyles": {
+      "columns": "2",
+      "centered": false
+    },
+    "tileStyles": {
+      "rounded": true,
+      "outlined": true,
+      "imageSize": "none",
+      "titleSize": "xsmall"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
