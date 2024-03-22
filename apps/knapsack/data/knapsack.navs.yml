@@ -65,6 +65,11 @@ byId:
     name: Code snippet
     parentId: test-page
     path: /pattern/code-snippet
+  color-use:
+    id: color-use
+    name: Color use
+    parentId: guides
+    path: /pages/color-use
   colors:
     id: colors
     name: Dark
@@ -105,6 +110,11 @@ byId:
     name: Form Field
     parentId: test-page
     path: /pattern/form-field
+  guides:
+    id: guides
+    name: Guides
+    parentId: root
+    path: ''
   icon:
     id: icon
     name: Icon
@@ -298,6 +308,7 @@ byId:
     parentId: root
     path: /pages/writing
 order:
+  - guides
   - test-page
   - action-ribbon
   - alert
@@ -356,3 +367,4 @@ order:
   - dark
   - typography
   - writing
+  - color-use
