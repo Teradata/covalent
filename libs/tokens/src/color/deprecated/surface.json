@@ -18,11 +18,11 @@
       "type": "color"
     },
     "surface-primary-highlight": {
-      "value": "{theme.light.colors.primary-8%}",
+      "value": "{theme.light.colors.primary-8}",
       "type": "color"
     },
     "surface-primary-highlight-hover": {
-      "value": "{theme.light.colors.primary-8%}",
+      "value": "{theme.light.colors.primary-8}",
       "type": "color"
     },
     "surface-accent": {
@@ -30,11 +30,11 @@
       "type": "color"
     },
     "surface-accent-highlight": {
-      "value": "{theme.light.colors.primary-8%}",
+      "value": "{theme.light.colors.primary-8}",
       "type": "color"
     },
     "surface-accent-highlight-hover": {
-      "value": "{theme.light.colors.primary-12%}",
+      "value": "{theme.light.colors.primary-12}",
       "type": "color"
     },
 
@@ -43,11 +43,11 @@
       "type": "color"
     },
     "surface-secondary-highlight": {
-      "value": "{theme.light.colors.secondary-8%}",
+      "value": "{theme.light.colors.secondary-8}",
       "type": "color"
     },
     "surface-secondary-highlight-hover": {
-      "value": "{theme.light.colors.secondary-8%}",
+      "value": "{theme.light.colors.secondary-8}",
       "type": "color"
     },
 
@@ -56,11 +56,11 @@
       "type": "color"
     },
     "surface-positive-highlight": {
-      "value": "{theme.light.colors.positive-8%}",
+      "value": "{theme.light.colors.positive-8}",
       "type": "color"
     },
     "surface-positive-highlight-hover": {
-      "value": "{theme.light.colors.positive-8%}",
+      "value": "{theme.light.colors.positive-8}",
       "type": "color"
     },
 
@@ -69,11 +69,11 @@
       "type": "color"
     },
     "surface-caution-highlight": {
-      "value": "{theme.light.colors.caution-8%}",
+      "value": "{theme.light.colors.caution-8}",
       "type": "color"
     },
     "surface-caution-highlight-hover": {
-      "value": "{theme.light.colors.caution-8%}",
+      "value": "{theme.light.colors.caution-8}",
       "type": "color"
     },
 
@@ -82,11 +82,11 @@
       "type": "color"
     },
     "surface-negative-highlight": {
-      "value": "{theme.light.colors.negative-8%}",
+      "value": "{theme.light.colors.negative-8}",
       "type": "color"
     },
     "surface-negative-highlight-hover": {
-      "value": "{theme.light.colors.negative-8%}",
+      "value": "{theme.light.colors.negative-8}",
       "type": "color"
     },
 
@@ -107,11 +107,11 @@
       "type": "color"
     },
     "surface-emphasis-highlight": {
-      "value": "{theme.light.colors.emphasis-8%}",
+      "value": "{theme.light.colors.emphasis-8}",
       "type": "color"
     },
     "surface-emphasis-highlight-hover": {
-      "value": "{theme.light.colors.emphasis-8%}",
+      "value": "{theme.light.colors.emphasis-8}",
       "type": "color"
     }
   },
@@ -134,11 +134,11 @@
       "type": "color"
     },
     "surface-primary-highlight": {
-      "value": "{theme.dark.colors.primary-8%}",
+      "value": "{theme.dark.colors.primary-8}",
       "type": "color"
     },
     "surface-primary-highlight-hover": {
-      "value": "{theme.dark.colors.primary-8%}",
+      "value": "{theme.dark.colors.primary-8}",
       "type": "color"
     },
     "surface-accent": {
@@ -146,11 +146,11 @@
       "type": "color"
     },
     "surface-accent-highlight": {
-      "value": "{theme.dark.colors.primary-8%}",
+      "value": "{theme.dark.colors.primary-8}",
       "type": "color"
     },
     "surface-accent-highlight-hover": {
-      "value": "{theme.dark.colors.primary-8%}",
+      "value": "{theme.dark.colors.primary-8}",
       "type": "color"
     },
 
@@ -159,11 +159,11 @@
       "type": "color"
     },
     "surface-secondary-highlight": {
-      "value": "{theme.dark.colors.secondary-8%}",
+      "value": "{theme.dark.colors.secondary-8}",
       "type": "color"
     },
     "surface-secondary-highlight-hover": {
-      "value": "{theme.dark.colors.secondary-8%}",
+      "value": "{theme.dark.colors.secondary-8}",
       "type": "color"
     },
 
@@ -172,11 +172,11 @@
       "type": "color"
     },
     "surface-positive-highlight": {
-      "value": "{theme.dark.colors.positive-8%}",
+      "value": "{theme.dark.colors.positive-8}",
       "type": "color"
     },
     "surface-positive-highlight-hover": {
-      "value": "{theme.dark.colors.positive-8%}",
+      "value": "{theme.dark.colors.positive-8}",
       "type": "color"
     },
 
@@ -185,11 +185,11 @@
       "type": "color"
     },
     "surface-caution-highlight": {
-      "value": "{theme.dark.colors.caution-8%}",
+      "value": "{theme.dark.colors.caution-8}",
       "type": "color"
     },
     "surface-caution-highlight-hover": {
-      "value": "{theme.dark.colors.caution-8%}",
+      "value": "{theme.dark.colors.caution-8}",
       "type": "color"
     },
 
@@ -198,11 +198,11 @@
       "type": "color"
     },
     "surface-negative-highlight": {
-      "value": "{theme.dark.colors.negative-8%}",
+      "value": "{theme.dark.colors.negative-8}",
       "type": "color"
     },
     "surface-negative-highlight-hover": {
-      "value": "{theme.dark.colors.negative-8%}",
+      "value": "{theme.dark.colors.negative-8}",
       "type": "color"
     },
 
@@ -223,11 +223,11 @@
       "type": "color"
     },
     "surface-emphasis-highlight": {
-      "value": "{theme.dark.colors.emphasis-8%}",
+      "value": "{theme.dark.colors.emphasis-8}",
       "type": "color"
     },
     "surface-emphasis-highlight-hover": {
-      "value": "{theme.dark.colors.emphasis-8%}",
+      "value": "{theme.dark.colors.emphasis-8}",
       "type": "color"
     }
   }
