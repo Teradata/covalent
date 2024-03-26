@@ -111,6 +111,11 @@
       "import": "./icon-button.mjs",
       "require": "./icon-button.js"
     },
+    "./icon-button-toggle": {
+      "types": "./icon-button-toggle/icon-button-toggle.d.ts",
+      "import": "./icon-button-toggle.mjs",
+      "require": "./icon-button-toggle.js"
+    },
     "./icon-check-toggle": {
       "types": "./icon-checkbox/icon-checkbox.d.ts",
       "import": "./icon-checkbox.mjs",
