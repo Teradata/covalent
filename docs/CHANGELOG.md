@@ -1,3 +1,9 @@
+## [8.8.1](https://github.com/Teradata/covalent/compare/v8.8.0...v8.8.1) (2024-03-26)
+
+### Bug Fixes
+
+- **tokens:** remove % from scss variable names ([16f2ae6](https://github.com/Teradata/covalent/commit/16f2ae647b5c15f950149e58efe02d1dd18fbf34))
+
 # [8.8.0](https://github.com/Teradata/covalent/compare/v8.7.0...v8.8.0) (2024-03-20)
 
 ### Features
