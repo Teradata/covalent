@@ -1,6 +1,5 @@
 import './icon-button-toggle';
 import iconList from '../../../icons/material-codepoints.json';
-import '@material/mwc-icon-button-toggle/mwc-icon-button-toggle';
 
 export default {
   title: 'Components/Icon Button Toggle',
