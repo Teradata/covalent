@@ -29,6 +29,7 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/formfield/formfield',
           'libs/components/src/icon/icon',
           'libs/components/src/icon-button/icon-button',
+          'libs/components/src/icon-button-toggle/icon-button-toggle',
           'libs/components/src/icon-checkbox/icon-check-toggle',
           'libs/components/src/icon-radio/icon-radio-toggle',
           'libs/components/src/linear-progress/linear-progress',
