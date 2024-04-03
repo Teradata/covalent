@@ -1466,15 +1466,35 @@
       "attributes": [
         {
           "name": "disable",
-          "description": "boolean"
+          "description": "boolean Disables the slider, preventing interaction."
         },
         {
           "name": "discrete",
-          "description": "boolean"
+          "description": "boolean Displays a numeric value label upon pressing the thumb which allows the user to select an exact value."
         },
         {
-          "name": "markers",
-          "description": "boolean"
+          "name": "withTickMarks",
+          "description": "Displays tick marks which represent predetermind values to which the user can move the slider. NOTE: the slider must be discrete to display tick marks, and to function correctly, there must be an integer amount of total steps within the range. i.e. (max - min) % step === 0"
+        },
+        {
+          "name": "valueStart",
+          "description": "Current value of the start thumb handle."
+        },
+        {
+          "name": "valueEnd",
+          "description": "Current value of the end thumb handle."
+        },
+        {
+          "name": "min",
+          "description": "Value representing the minimum allowed value."
+        },
+        {
+          "name": "max",
+          "description": "Value representing the maximum allowed value."
+        },
+        {
+          "name": "step",
+          "description": "Step for value quantization."
         }
       ]
     },

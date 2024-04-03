@@ -5,13 +5,36 @@
   "required": [],
   "properties": {
     "disable": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Disables the slider, preventing interaction."
     },
     "discrete": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Displays a numeric value label upon pressing the thumb which allows the user to select an exact value."
     },
-    "markers": {
-      "type": "boolean"
+    "withTickMarks": {
+      "description": "Displays tick marks which represent predetermind values to which the user can move the slider. NOTE: the slider must be discrete to display tick marks, and to function correctly, there must be an integer amount of total steps within the range. i.e. (max - min) % step === 0",
+      "type": "number"
+    },
+    "valueStart": {
+      "description": "Current value of the start thumb handle.",
+      "type": "number"
+    },
+    "valueEnd": {
+      "description": "Current value of the end thumb handle.",
+      "type": "number"
+    },
+    "min": {
+      "description": "Value representing the minimum allowed value.",
+      "type": "number"
+    },
+    "max": {
+      "description": "Value representing the maximum allowed value.",
+      "type": "number"
+    },
+    "step": {
+      "description": "Step for value quantization.",
+      "type": "number"
     }
   }
 }
