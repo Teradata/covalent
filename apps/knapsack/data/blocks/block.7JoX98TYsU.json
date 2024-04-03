@@ -1,0 +1,70 @@
+{
+  "id": "7JoX98TYsU",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 4
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "References"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://www.npmjs.com/package/@material/mwc-switch",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "MWC switch"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-switch--overview",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "Covalent design system - Switch"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -3,5 +3,11 @@
   "description": "",
   "type": "object",
   "required": [],
-  "properties": {}
+  "properties": {
+    "activeIndex": {
+      "description": "Index of tab that is active.",
+      "type": "number",
+      "default": 0
+    }
+  }
 }

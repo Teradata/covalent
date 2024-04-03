@@ -18,20 +18,48 @@
           "type": "object",
           "required": [],
           "properties": {
-            "markers": {
-              "type": "boolean"
+            "value": {
+              "description": "Current value of the slider.",
+              "type": "number",
+              "default": 0
+            },
+            "valueEnd": {
+              "description": "Proxy of value.",
+              "type": "number",
+              "default": 0
+            },
+            "min": {
+              "description": "Value representing the minimum allowed value.",
+              "type": "number",
+              "default": 0
+            },
+            "max": {
+              "description": "Value representing the minimum allowed value.",
+              "type": "number"
+            },
+            "step": {
+              "description": "Step for value quantization.",
+              "type": "number",
+              "default": 1
+            },
+            "withTickMarks": {
+              "description": "Displays tick marks which represent predetermind values to which the user can move the slider. NOTE: the slider must be discrete to display tick marks, and to function correctly, there must be an integer amount of total steps within the range. i.e. (max - min) % step === 0",
+              "type": "number",
+              "default": 0
             },
             "disabled": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Disables the slider, preventing interaction."
             },
             "discrete": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Displays a numeric value label upon pressing the thumb which allows the user to select an exact value."
             }
           }
         }
       },
       "demoIds": ["x9f-h1BpY"],
-      "blockIds": []
+      "blockIds": ["h-NMutwzX", "Ha6DM9A4dN", "GMRsbMVus8", "g8kzZbVQWM"]
     },
     {
       "id": "web-components-33Z9-C4Qs",

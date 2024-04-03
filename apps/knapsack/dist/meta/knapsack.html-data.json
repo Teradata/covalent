@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "cv-action-ribbon",
-      "description": "",
+      "description": "Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -199,7 +199,7 @@
     },
     {
       "name": "cv-button",
-      "description": "",
+      "description": "Common buttons prompt most actions in a UI",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1421,16 +1421,36 @@
       ],
       "attributes": [
         {
-          "name": "markers",
-          "description": "boolean"
+          "name": "value",
+          "description": "Current value of the slider."
+        },
+        {
+          "name": "valueEnd",
+          "description": "Proxy of value."
+        },
+        {
+          "name": "min",
+          "description": "Value representing the minimum allowed value."
+        },
+        {
+          "name": "max",
+          "description": "Value representing the minimum allowed value."
+        },
+        {
+          "name": "step",
+          "description": "Step for value quantization."
+        },
+        {
+          "name": "withTickMarks",
+          "description": "Displays tick marks which represent predetermind values to which the user can move the slider. NOTE: the slider must be discrete to display tick marks, and to function correctly, there must be an integer amount of total steps within the range. i.e. (max - min) % step === 0"
         },
         {
           "name": "disabled",
-          "description": "boolean"
+          "description": "boolean Disables the slider, preventing interaction."
         },
         {
           "name": "discrete",
-          "description": "boolean"
+          "description": "boolean Displays a numeric value label upon pressing the thumb which allows the user to select an exact value."
         }
       ]
     },
@@ -1470,19 +1490,27 @@
       "attributes": [
         {
           "name": "open",
-          "description": "(required) boolean"
-        },
-        {
-          "name": "labelText",
-          "description": ""
-        },
-        {
-          "name": "stacked",
-          "description": "boolean"
+          "description": "(required) boolean Whether the snackbar is currently open."
         },
         {
           "name": "leading",
-          "description": "boolean"
+          "description": "boolean Enables the leading layout (see above)."
+        },
+        {
+          "name": "stacked",
+          "description": "boolean Enables the stacked layout."
+        },
+        {
+          "name": "closeOnEscape",
+          "description": "boolean Whether the snackbar closes when it is focused and the user presses the ESC key. Defaults to false."
+        },
+        {
+          "name": "timeoutMs",
+          "description": "Automatic dismiss timeout in milliseconds. Value must be between 4000 and 10000 (or -1 to disable the timeout completely) or an error will be thrown. Defaults to 5000 (5 seconds)."
+        },
+        {
+          "name": "labelText",
+          "description": "The text content of the label element."
         }
       ]
     },
@@ -1498,19 +1526,36 @@
       "attributes": [
         {
           "name": "titleText",
-          "description": ""
+          "description": "Title of the status header."
         },
         {
           "name": "statusText",
-          "description": ""
+          "description": "Text for the current status."
         },
         {
           "name": "statusHelper",
-          "description": ""
+          "description": "Helper text for the current status."
         },
         {
           "name": "state",
-          "description": ""
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            },
+            {
+              "name": "error"
+            },
+            {
+              "name": "neutral"
+            }
+          ],
+          "description": "Current state of the status header."
         }
       ]
     },
@@ -1526,7 +1571,7 @@
       "attributes": [
         {
           "name": "label",
-          "description": ""
+          "description": "Label for the status header item."
         }
       ]
     },
@@ -1541,8 +1586,20 @@
       ],
       "attributes": [
         {
+          "name": "selected",
+          "description": "boolean If true, the switch is on. If false, the switch is off."
+        },
+        {
           "name": "disabled",
-          "description": ""
+          "description": "boolean Indicates whether or not the switch is disabled."
+        },
+        {
+          "name": "name",
+          "description": "The form name of the switch."
+        },
+        {
+          "name": "value",
+          "description": "The value of the switch to submit in a form when selected."
         }
       ]
     },
@@ -1558,11 +1615,39 @@
       "attributes": [
         {
           "name": "label",
-          "description": "(required)"
+          "description": "(required) Text label to display in tab."
         },
         {
           "name": "icon",
-          "description": ""
+          "description": "Material design icon name to display (overridden by slotted icon)."
+        },
+        {
+          "name": "indicatorIcon",
+          "description": "Material design icon name to display as the indicator."
+        },
+        {
+          "name": "hasImageIcon",
+          "description": "boolean Displays a slot to show an image icon."
+        },
+        {
+          "name": "isFadingIndicator",
+          "description": "boolean Indicator fades in and out instead of sliding."
+        },
+        {
+          "name": "minWidth",
+          "description": "boolean Shrinks tab as narrow as possible without causing text to wrap."
+        },
+        {
+          "name": "isMinWidthIndicator",
+          "description": "boolean Shrinks indicator to be the size of the content."
+        },
+        {
+          "name": "stacked",
+          "description": "boolean Stacks icon on top of label text."
+        },
+        {
+          "name": "active",
+          "description": "boolean Indicates whether the tab's indicator is active."
         }
       ]
     },
@@ -1575,7 +1660,12 @@
           "url": "http://localhost:3999/pattern/tabs/web-components-kjFGUA31tg"
         }
       ],
-      "attributes": []
+      "attributes": [
+        {
+          "name": "activeIndex",
+          "description": "Index of tab that is active."
+        }
+      ]
     },
     {
       "name": "cv-typography",
@@ -1697,7 +1787,23 @@
       "attributes": [
         {
           "name": "dense",
-          "description": "boolean"
+          "description": "boolean Makes the bar a little smaller for higher density applications."
+        },
+        {
+          "name": "centerTitle",
+          "description": "boolean Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
+        },
+        {
+          "name": "prominent",
+          "description": "Makes the bar much taller, can be combined with dense."
+        },
+        {
+          "name": "scrollTarget",
+          "description": "Element used to listen for scroll events. (Type: HTMLElement | Window)"
+        },
+        {
+          "name": "sticky",
+          "description": "boolean Position is sticky when scrolled."
         }
       ]
     },
@@ -1712,12 +1818,24 @@
       ],
       "attributes": [
         {
-          "name": "open",
-          "description": "boolean"
+          "name": "persistent",
+          "description": "boolean Makes the tooltip persistent."
+        },
+        {
+          "name": "rich",
+          "description": "boolean Displays the rich tooltip."
+        },
+        {
+          "name": "richTitle",
+          "description": "The title of the rich tooltip."
         },
         {
           "name": "hidedelay",
           "description": "Delay to hide tooltip in MS"
+        },
+        {
+          "name": "showDelay",
+          "description": "Delay to show the tooltip in MS"
         }
       ]
     },
@@ -1733,15 +1851,19 @@
       "attributes": [
         {
           "name": "centerTitle",
-          "description": "boolean"
+          "description": "boolean Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
         },
         {
           "name": "prominent",
-          "description": "boolean"
+          "description": "boolean Makes the bar much taller, can be combined with dense."
         },
         {
           "name": "dense",
-          "description": "boolean"
+          "description": "boolean Makes the bar a little smaller for higher density applications."
+        },
+        {
+          "name": "scrollTarget",
+          "description": "Element used to listen for scroll events. (Type: HTMLElement | Window)"
         }
       ]
     },
@@ -1757,15 +1879,19 @@
       "attributes": [
         {
           "name": "centerTitle",
-          "description": "boolean"
+          "description": "boolean Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
         },
         {
           "name": "prominent",
-          "description": "boolean"
+          "description": "boolean Makes the bar much taller, can be combined with dense."
         },
         {
           "name": "dense",
-          "description": "boolean"
+          "description": "boolean Makes the bar a little smaller for higher density applications."
+        },
+        {
+          "name": "scrollTarget",
+          "description": "Element used to listen for scroll events."
         }
       ]
     },

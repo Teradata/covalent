@@ -5,6 +5,23 @@
   "required": [],
   "properties": {
     "dense": {
+      "type": "boolean",
+      "description": "Makes the bar a little smaller for higher density applications."
+    },
+    "centerTitle": {
+      "description": "Centers the title horizontally. Only meant to be used with 0 or 1 actionItems.",
+      "type": "boolean"
+    },
+    "prominent": {
+      "type": "string",
+      "description": "Makes the bar much taller, can be combined with dense."
+    },
+    "scrollTarget": {
+      "description": "Element used to listen for scroll events. (Type: HTMLElement | Window)",
+      "type": "string"
+    },
+    "sticky": {
+      "description": "Position is sticky when scrolled.",
       "type": "boolean"
     }
   }

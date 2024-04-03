@@ -1,0 +1,70 @@
+{
+  "id": "BhmFof8UfV",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 4
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "References"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://www.npmjs.com/package/@material/tooltip/v/10.0.0-canary.6863fd43a.0",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "MDC tooltip"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-tooltip--overview",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "Covalent design system - Tooltip"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

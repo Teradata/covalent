@@ -9,5 +9,20 @@
  */
 
 export interface Switch {
-  disabled?: string;
+  /**
+   * If true, the switch is on. If false, the switch is off.
+   */
+  selected?: boolean;
+  /**
+   * Indicates whether or not the switch is disabled.
+   */
+  disabled?: boolean;
+  /**
+   * The form name of the switch.
+   */
+  name?: string;
+  /**
+   * The value of the switch to submit in a form when selected.
+   */
+  value?: string;
 }

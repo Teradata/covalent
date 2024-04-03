@@ -14,10 +14,13 @@
         "slots": {
           "navigationIcon": {
             "allowedPatternIds": ["icon", "icon-button"],
-            "title": "navigationIcon"
+            "title": "navigationIcon",
+            "description": "One <cv-icon-button> element to use for the left icon.",
+            "allowOnlyOne": true
           },
           "title": {
-            "title": "title"
+            "title": "title",
+            "description": "One <mwc-icon-button> element to use for the left icon."
           },
           "actionItems": {
             "allowedPatternIds": [
@@ -29,10 +32,12 @@
               "icon",
               "switch"
             ],
-            "title": "actionItems"
+            "title": "actionItems",
+            "description": "A number of <cv-icon-button> elements to use for action icons on the right side. "
           },
           "default": {
-            "title": "default"
+            "title": "default",
+            "description": "Scrollable content to display under the bar. This may be the entire application."
           }
         },
         "props": {
@@ -42,19 +47,28 @@
           "required": [],
           "properties": {
             "centerTitle": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
             },
             "prominent": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Makes the bar much taller, can be combined with dense."
             },
             "dense": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Makes the bar a little smaller for higher density applications."
+            },
+            "scrollTarget": {
+              "description": "Element used to listen for scroll events.",
+              "type": "object",
+              "required": [],
+              "properties": {}
             }
           }
         }
       },
       "demoIds": ["RQLhdtbJlh"],
-      "blockIds": []
+      "blockIds": ["FPXkiXsWDH", "nOAmfOanrd"]
     }
   ],
   "tabs": [
