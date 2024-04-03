@@ -1,0 +1,17 @@
+:host {
+  border-radius: 50%;
+  color: var(--cv-theme-on-surface-variant);
+}
+
+:host([disabled]) {
+  background-color: transparent;
+}
+
+:host([on]) {
+  --mdc-ripple-press-opacity: 0.16;
+  --mdc-ripple-hover-opacity: 0.12;
+  --mdc-ripple-focus-opacity: 0.16;
+
+  background-color: var(--cv-theme-primary-8);
+  color: var(--cv-theme-primary);
+}
