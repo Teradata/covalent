@@ -14,6 +14,21 @@
 type HideDelay = number;
 
 export interface Tooltip {
-  open?: boolean;
+  /**
+   * Makes the tooltip persistent.
+   */
+  persistent?: boolean;
+  /**
+   * Displays the rich tooltip.
+   */
+  rich?: boolean;
+  /**
+   * The title of the rich tooltip.
+   */
+  richTitle?: string;
   hidedelay?: HideDelay;
+  /**
+   * Delay to show the tooltip in MS
+   */
+  showDelay?: string;
 }

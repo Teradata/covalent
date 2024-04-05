@@ -6,7 +6,8 @@
   "properties": {
     "label": {
       "type": "string",
-      "default": "Status header item label"
+      "default": "Status header item label",
+      "description": "Label for the status header item."
     }
   }
 }

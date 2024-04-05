@@ -9,6 +9,40 @@
  */
 
 export interface Tab {
+  /**
+   * Text label to display in tab.
+   */
   label: string;
+  /**
+   * Material design icon name to display (overridden by slotted icon).
+   */
   icon?: string;
+  /**
+   * Material design icon name to display as the indicator.
+   */
+  indicatorIcon?: string;
+  /**
+   * Displays a slot to show an image icon.
+   */
+  hasImageIcon?: boolean;
+  /**
+   * Indicator fades in and out instead of sliding.
+   */
+  isFadingIndicator?: boolean;
+  /**
+   * Shrinks tab as narrow as possible without causing text to wrap.
+   */
+  minWidth?: boolean;
+  /**
+   * Shrinks indicator to be the size of the content.
+   */
+  isMinWidthIndicator?: boolean;
+  /**
+   * Stacks icon on top of label text.
+   */
+  stacked?: boolean;
+  /**
+   * Indicates whether the tab's indicator is active.
+   */
+  active?: boolean;
 }

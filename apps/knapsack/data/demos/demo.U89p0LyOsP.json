@@ -5,7 +5,11 @@
   "patternId": "switch",
   "templateId": "web-components-tGj2TvSrpD",
   "data": {
-    "props": {},
+    "props": {
+      "selected": false,
+      "disabled": false,
+      "value": "on"
+    },
     "slots": {}
   }
 }

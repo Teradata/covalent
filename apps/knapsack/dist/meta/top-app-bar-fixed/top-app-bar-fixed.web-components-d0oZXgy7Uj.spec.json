@@ -5,13 +5,22 @@
   "required": [],
   "properties": {
     "centerTitle": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
     },
     "prominent": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Makes the bar much taller, can be combined with dense."
     },
     "dense": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Makes the bar a little smaller for higher density applications."
+    },
+    "scrollTarget": {
+      "description": "Element used to listen for scroll events.",
+      "type": "object",
+      "required": [],
+      "properties": {}
     }
   }
 }

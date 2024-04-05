@@ -9,7 +9,36 @@
  */
 
 export interface Slider {
+  /**
+   * Disables the slider, preventing interaction.
+   */
   disable?: boolean;
+  /**
+   * Displays a numeric value label upon pressing the thumb which allows the user to select an exact value.
+   */
   discrete?: boolean;
-  markers?: boolean;
+  /**
+   * Displays tick marks which represent predetermind values to which the user can move the slider. NOTE: the slider must be discrete to display tick marks, and to function correctly, there must be an integer amount of total steps within the range. i.e. (max - min) % step === 0
+   */
+  withTickMarks?: number;
+  /**
+   * Current value of the start thumb handle.
+   */
+  valueStart?: number;
+  /**
+   * Current value of the end thumb handle.
+   */
+  valueEnd?: number;
+  /**
+   * Value representing the minimum allowed value.
+   */
+  min?: number;
+  /**
+   * Value representing the maximum allowed value.
+   */
+  max?: number;
+  /**
+   * Step for value quantization.
+   */
+  step?: number;
 }

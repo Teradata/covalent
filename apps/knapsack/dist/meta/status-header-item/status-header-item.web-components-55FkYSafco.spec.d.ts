@@ -9,5 +9,8 @@
  */
 
 export interface StatusHeaderItem {
+  /**
+   * Label for the status header item.
+   */
   label?: string;
 }

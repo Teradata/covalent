@@ -6,10 +6,40 @@
   "properties": {
     "label": {
       "type": "string",
-      "default": "Tab label "
+      "default": "Tab label ",
+      "description": "Text label to display in tab."
     },
     "icon": {
-      "type": "string"
+      "type": "string",
+      "description": "Material design icon name to display (overridden by slotted icon)."
+    },
+    "indicatorIcon": {
+      "type": "string",
+      "description": "Material design icon name to display as the indicator."
+    },
+    "hasImageIcon": {
+      "description": "Displays a slot to show an image icon.",
+      "type": "boolean"
+    },
+    "isFadingIndicator": {
+      "description": "Indicator fades in and out instead of sliding.",
+      "type": "boolean"
+    },
+    "minWidth": {
+      "description": "Shrinks tab as narrow as possible without causing text to wrap.",
+      "type": "boolean"
+    },
+    "isMinWidthIndicator": {
+      "description": "Shrinks indicator to be the size of the content.",
+      "type": "boolean"
+    },
+    "stacked": {
+      "description": "Stacks icon on top of label text.",
+      "type": "boolean"
+    },
+    "active": {
+      "description": "Indicates whether the tab's indicator is active.",
+      "type": "boolean"
     }
   }
 }

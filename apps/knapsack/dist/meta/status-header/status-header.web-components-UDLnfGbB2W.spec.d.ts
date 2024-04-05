@@ -9,8 +9,20 @@
  */
 
 export interface StatusHeader {
+  /**
+   * Title of the status header.
+   */
   titleText?: string;
+  /**
+   * Text for the current status.
+   */
   statusText?: string;
+  /**
+   * Helper text for the current status.
+   */
   statusHelper?: string;
-  state?: string;
+  /**
+   * Current state of the status header.
+   */
+  state?: 'active' | 'positive' | 'caution' | 'error' | 'neutral';
 }

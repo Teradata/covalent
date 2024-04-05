@@ -1,0 +1,58 @@
+{
+  "id": "GMRsbMVus8",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "* "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "Thumb"
+            },
+            {
+              "type": "text",
+              "text": " is a TypeScript enum exported by this component with types "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "START"
+            },
+            {
+              "type": "text",
+              "text": " and "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "END"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

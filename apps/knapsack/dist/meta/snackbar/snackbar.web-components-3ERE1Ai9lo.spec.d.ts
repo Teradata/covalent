@@ -9,8 +9,28 @@
  */
 
 export interface Snackbar {
+  /**
+   * Whether the snackbar is currently open.
+   */
   open: boolean;
-  labelText?: string;
-  stacked?: boolean;
+  /**
+   * Enables the leading layout (see above).
+   */
   leading?: boolean;
+  /**
+   * Enables the stacked layout.
+   */
+  stacked?: boolean;
+  /**
+   * Whether the snackbar closes when it is focused and the user presses the ESC key. Defaults to false.
+   */
+  closeOnEscape?: boolean;
+  /**
+   * Automatic dismiss timeout in milliseconds. Value must be between 4000 and 10000 (or -1 to disable the timeout completely) or an error will be thrown. Defaults to 5000 (5 seconds).
+   */
+  timeoutMs?: string;
+  /**
+   * The text content of the label element.
+   */
+  labelText?: string;
 }

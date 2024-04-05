@@ -4,8 +4,21 @@
   "type": "object",
   "required": [],
   "properties": {
+    "selected": {
+      "description": "If true, the switch is on. If false, the switch is off.",
+      "type": "boolean"
+    },
     "disabled": {
-      "type": "string"
+      "description": "Indicates whether or not the switch is disabled.",
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string",
+      "description": "The form name of the switch."
+    },
+    "value": {
+      "type": "string",
+      "description": "The value of the switch to submit in a form when selected."
     }
   }
 }
