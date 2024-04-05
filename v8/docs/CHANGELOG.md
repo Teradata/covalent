@@ -1,3 +1,9 @@
+# [8.9.0](https://github.com/Teradata/covalent/compare/v8.8.1...v8.9.0) (2024-04-03)
+
+### Features
+
+- **icon-button-toggle:** create new web component icon-button-toggle ([#2135](https://github.com/Teradata/covalent/issues/2135)) ([e0813c5](https://github.com/Teradata/covalent/commit/e0813c5dd9ddafbcced2e9984cedd6aadd22ab96))
+
 ## [8.8.1](https://github.com/Teradata/covalent/compare/v8.8.0...v8.8.1) (2024-03-26)
 
 ### Bug Fixes
