@@ -1,6 +1,8 @@
 import { MenuBase } from '@material/mwc-menu/mwc-menu-base';
-import { styles } from '@material/mwc-menu/mwc-menu.css';
+import { styles as baseStyles } from '@material/mwc-menu/mwc-menu.css';
+import styles from './menu.scss?inline';
 import { customElement } from 'lit/decorators.js';
+import { css, unsafeCSS } from 'lit';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -10,7 +12,12 @@ declare global {
 
 @customElement('cv-menu')
 export class CovalentMenu extends MenuBase {
-  static override styles = [styles];
+  static override styles = [
+    baseStyles,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
 export default CovalentMenu;
