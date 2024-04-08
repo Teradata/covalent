@@ -68,6 +68,10 @@
             "fullwidth": {
               "description": "When true, the button is expanded to fit the entire available space.",
               "type": "boolean"
+            },
+            "trailingIcon": {
+              "description": "When true, icon will be displayed after label",
+              "type": "boolean"
             }
           }
         }

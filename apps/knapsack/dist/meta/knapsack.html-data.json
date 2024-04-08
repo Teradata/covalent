@@ -269,6 +269,10 @@
         {
           "name": "fullwidth",
           "description": "boolean When true, the button is expanded to fit the entire available space."
+        },
+        {
+          "name": "trailingIcon",
+          "description": "boolean When true, icon will be displayed after label"
         }
       ]
     },

@@ -56,4 +56,8 @@ export interface Button {
    * When true, the button is expanded to fit the entire available space.
    */
   fullwidth?: boolean;
+  /**
+   * When true, icon will be displayed after label
+   */
+  trailingIcon?: boolean;
 }
