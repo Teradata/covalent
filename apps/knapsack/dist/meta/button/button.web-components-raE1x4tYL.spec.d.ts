@@ -18,6 +18,17 @@ export interface Button {
    */
   icon?: string;
   /**
+   * Applies the button color
+   */
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'emphasis'
+    | 'neutral'
+    | 'caution'
+    | 'negative'
+    | 'positive';
+  /**
    * Creates a contained button that is elevated above the surface
    */
   raised?: boolean;
@@ -45,8 +56,4 @@ export interface Button {
    * When true, the button is expanded to fit the entire available space.
    */
   fullwidth?: boolean;
-  /**
-   * When true, icon will be displayed after label
-   */
-  trailingIcon?: boolean;
 }

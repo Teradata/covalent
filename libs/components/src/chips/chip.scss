@@ -22,6 +22,10 @@
     background-color: var(--mdc-theme-surface-primary);
   }
 
+  &.positive {
+    background-color: var(--cv-theme-surface-positive);
+  }
+
   &.negative {
     background-color: var(--mdc-theme-surface-negative);
   }
