@@ -216,6 +216,33 @@
           "description": "Icon to display, and aria-label value when label is not defined"
         },
         {
+          "name": "color",
+          "values": [
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "emphasis"
+            },
+            {
+              "name": "neutral"
+            },
+            {
+              "name": "caution"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            }
+          ],
+          "description": "Applies the button color"
+        },
+        {
           "name": "raised",
           "description": "boolean Creates a contained button that is elevated above the surface"
         },

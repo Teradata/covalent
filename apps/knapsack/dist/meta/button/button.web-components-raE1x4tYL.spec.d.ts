@@ -18,6 +18,17 @@ export interface Button {
    */
   icon?: string;
   /**
+   * Applies the button color
+   */
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'emphasis'
+    | 'neutral'
+    | 'caution'
+    | 'negative'
+    | 'positive';
+  /**
    * Creates a contained button that is elevated above the surface
    */
   raised?: boolean;

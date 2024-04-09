@@ -28,6 +28,19 @@
               "type": "string",
               "description": "Icon to display, and aria-label value when label is not defined"
             },
+            "color": {
+              "type": "string",
+              "enum": [
+                "primary",
+                "secondary",
+                "emphasis",
+                "neutral",
+                "caution",
+                "negative",
+                "positive"
+              ],
+              "description": "Applies the button color"
+            },
             "raised": {
               "description": "Creates a contained button that is elevated above the surface",
               "type": "boolean"

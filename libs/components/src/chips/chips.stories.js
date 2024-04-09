@@ -64,6 +64,11 @@ Caution.args = {
   state: 'caution',
 };
 
+export const Positive = Template.bind({});
+Positive.args = {
+  state: 'positive',
+};
+
 export const Negative = Template.bind({});
 Negative.args = {
   state: 'negative',
