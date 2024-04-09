@@ -30,6 +30,10 @@
   align-items: center;
 }
 
+:host(:not([left])) .mdc-deprecated-list-item__meta {
+  width: auto;
+}
+
 .mdc-deprecated-list-item__meta ::slotted(*),
 .mdc-deprecated-list-item__graphic ::slotted(*) {
   display: flex;
