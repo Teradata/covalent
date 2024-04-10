@@ -32,6 +32,7 @@
 
 :host(:not([left])) .mdc-deprecated-list-item__meta {
   width: auto;
+  min-width: 40px;
 }
 
 .mdc-deprecated-list-item__meta ::slotted(*),

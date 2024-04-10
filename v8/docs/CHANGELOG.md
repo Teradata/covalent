@@ -1,3 +1,9 @@
+## [8.9.1](https://github.com/Teradata/covalent/compare/v8.9.0...v8.9.1) (2024-04-09)
+
+### Bug Fixes
+
+- **components:** fix color issues in button and chip ([#2141](https://github.com/Teradata/covalent/issues/2141)) ([74f0106](https://github.com/Teradata/covalent/commit/74f01064169cf1abf64e012620c29a2269ed4099))
+
 # [8.9.0](https://github.com/Teradata/covalent/compare/v8.8.1...v8.9.0) (2024-04-03)
 
 ### Features
