@@ -1,3 +1,9 @@
+## [8.9.2](https://github.com/Teradata/covalent/compare/v8.9.1...v8.9.2) (2024-04-10)
+
+### Bug Fixes
+
+- **components:** fix to meta list width ([97c7e56](https://github.com/Teradata/covalent/commit/97c7e56275b31be5f311f46ebe7414999a5355c4))
+
 ## [8.9.1](https://github.com/Teradata/covalent/compare/v8.9.0...v8.9.1) (2024-04-09)
 
 ### Bug Fixes

@@ -41,6 +41,13 @@
   height: 48px;
 }
 
+:host([selected]),
+:host([activated]) {
+  .mdc-deprecated-list-item__graphic.material-icons {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
 :host(.beta-list-item) {
   --mdc-theme-primary: var(--mdc-theme-surface-caution);
   --mdc-list-item-meta-size: 20px;

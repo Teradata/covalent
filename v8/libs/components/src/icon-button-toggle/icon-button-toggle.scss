@@ -14,4 +14,8 @@
 
   background-color: var(--cv-theme-primary-8);
   color: var(--cv-theme-primary);
+
+  .material-icons {
+    font-variation-settings: 'FILL' 1;
+  }
 }
