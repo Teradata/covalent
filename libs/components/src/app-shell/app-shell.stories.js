@@ -4,6 +4,7 @@ import '../data-table/data-table.stories.scss';
 import './app-shell';
 import '../action-ribbon/action-ribbon';
 import '../icon/icon';
+import '../icon-button-toggle/icon-button-toggle';
 import '../select/select';
 import '../list/list';
 import '../list/list-item';
@@ -55,16 +56,18 @@ const Template = ({
     'DOMContentLoaded',
     () => {
       const dataTableEl = document.querySelector('.mdc-data-table');
+      const helpItem = document.querySelector('.help-item');
       appShell = document.querySelector('cv-app-shell');
       banner = document.querySelector('cv-action-ribbon');
       dataTable = new MDCDataTable(dataTableEl);
 
-      document.querySelector('.help-item').addEventListener('click', () => {
+      helpItem.addEventListener('click', () => {
         appShell.helpOpen = !appShell.helpOpen;
       });
 
       document.querySelector('.help-close').addEventListener('click', () => {
         appShell.helpOpen = false;
+        helpItem.on = false;
       });
 
       setTimeout(updateActionRibbon, 150);
@@ -165,7 +168,7 @@ const Template = ({
        
        <cv-textfield slot="actionItems" icon="forum" placeholder="Message ask.ai" dense></cv-textfield>
        <cv-icon-button slot="actionItems" icon="notifications"></cv-icon-button>
-       <cv-icon-button slot="actionItems" icon="help" class="help-item"></cv-icon-button>
+       <cv-icon-button-toggle slot="actionItems" onIcon="help" offIcon="help" class="help-item"></cv-icon-button-toggle>
        <cv-icon-button slot="actionItems" icon="person"></cv-icon-button>
       </cv-toolbar>
 
