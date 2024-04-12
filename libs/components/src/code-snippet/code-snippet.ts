@@ -75,12 +75,11 @@ export class CovalentCodeSnippet extends LitElement {
       styleHeight = `max-height: ${this.maxHeight}px`;
     }
 
-    return html`
-      <pre style="${styleHeight}" part="container">
-        <code class="${classMap(classes)}">${container}</code>
-      </pre>
-      <slot class="code-slot"></slot>
-    `;
+    return html` <pre
+        style="${styleHeight}"
+        part="container"
+      ><code class="${classMap(classes)}">${container}</code></pre>
+      <slot class="code-slot"></slot>`;
   }
 
   renderHeader() {
