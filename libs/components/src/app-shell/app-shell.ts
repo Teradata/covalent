@@ -67,6 +67,12 @@ export class CovalentAppShell extends DrawerBase {
   @property({ type: Boolean, reflect: true })
   forcedOpen = false;
 
+  /**
+   * Make the content area full width
+   */
+  @property({ type: Boolean, reflect: true })
+  fullWidth = false;
+
   private hovered = false;
 
   constructor() {
@@ -172,6 +178,7 @@ export class CovalentAppShell extends DrawerBase {
       'cov-drawer--hovered': this.hovered,
       'cov-help--open': this.helpOpen,
       'cov-help--closed': !this.helpOpen,
+      'cov-content--full-width': this.fullWidth,
     };
     const drawerClasses = {
       'mdc-drawer--dismissible': dismissible,
@@ -217,8 +224,10 @@ export class CovalentAppShell extends DrawerBase {
         ${scrim}
         <slot name="mini-list"></slot>
         <div class="main mdc-drawer-app-content">
-          <slot name="user-menu"></slot>
-          ${this.renderMain()}
+          <div class="main-wrapper">
+            <slot name="user-menu"></slot>
+            ${this.renderMain()}
+          </div>
         </div>
         <div class="help">
           <slot name="help"></slot>

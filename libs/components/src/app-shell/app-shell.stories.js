@@ -20,6 +20,7 @@ export default {
   title: 'Patterns/App Shell',
   args: {
     contained: true,
+    fullWidth: false,
   },
   argTypes: {
     navClick: { action: 'clicked' },
@@ -50,6 +51,7 @@ const Template = ({
   sectionTitle = '',
   forcedOpen = false,
   contained = true,
+  fullWidth = false
 }) => {
   document.addEventListener(
     'DOMContentLoaded',
@@ -96,6 +98,7 @@ const Template = ({
     ${sectionTitle ? `sectionName="${sectionTitle}"` : ''}
     ${forcedOpen ? `forcedOpen open` : ''}
     ${contained ? `contained` : ''}
+    ${fullWidth ? `fullWidth` : ''}
     >
 
       <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>

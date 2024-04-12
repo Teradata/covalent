@@ -70,6 +70,17 @@
   overflow: auto;
   transition: margin 200ms ease-in-out;
 
+  .main-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+
+    .cov-content--full-width & {
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
   cv-card {
     margin: 0 12px 12px;
     display: block;
@@ -92,6 +103,12 @@
 
     .cov-help--open & {
       margin-right: 320px;
+    }
+  }
+
+  @media only screen and (max-width: 1600px) {
+    .main-wrapper {
+      max-width: 960px;
     }
   }
 }
