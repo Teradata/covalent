@@ -1,3 +1,14 @@
+# [8.10.0](https://github.com/Teradata/covalent/compare/v8.9.2...v8.10.0) (2024-04-12)
+
+### Bug Fixes
+
+- **components:** padding adjustment and scrolling fix ([#2142](https://github.com/Teradata/covalent/issues/2142)) ([434f2ad](https://github.com/Teradata/covalent/commit/434f2adaf20fba98cd6ba4b279b477fecf791317))
+
+### Features
+
+- **components:** adding fill to toggled on icon button ([#2144](https://github.com/Teradata/covalent/issues/2144)) ([f1dee1c](https://github.com/Teradata/covalent/commit/f1dee1c6b27d5ba5d4603af500ae50c009650b84))
+- **components:** adding full width attribute to the appshell ([#2143](https://github.com/Teradata/covalent/issues/2143)) ([5c37982](https://github.com/Teradata/covalent/commit/5c3798272a429a9deb860efb00316f46326d0e6d))
+
 ## [8.9.2](https://github.com/Teradata/covalent/compare/v8.9.1...v8.9.2) (2024-04-10)
 
 ### Bug Fixes
