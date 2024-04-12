@@ -124,18 +124,23 @@
           slot="actionItems"
           icon="notifications"
         ></cv-icon-button>
-        <cv-icon-button
+        <cv-icon-button-toggle
           slot="actionItems"
-          icon="help"
+          onIcon="help"
+          offIcon="help"
           class="help-item"
-        ></cv-icon-button>
+        ></cv-icon-button-toggle>
         <cv-icon-button slot="actionItems" icon="person"></cv-icon-button>
       </cv-toolbar>
 
       <div slot="help" class="mdc-typography">
         <cv-toolbar sticky>
           <span slot="title">Help</span>
-          <cv-icon-button slot="actionItems" icon="undock"></cv-icon-button>
+          <cv-icon-button
+            slot="actionItems"
+            icon="undock"
+            iconFont="covalent-icons"
+          ></cv-icon-button>
           <cv-icon-button
             slot="actionItems"
             icon="close"
@@ -261,14 +266,16 @@
       var appShell = document.querySelector('cv-app-shell');
       var sectionMenu = document.querySelector('#section-menu');
       var sectionSelector = document.querySelector('.section-selector');
+      var helpClose = document.querySelector('.help-close');
+      var helpItem = document.querySelector('.help-item');
 
-      document.querySelector('.help-item').addEventListener('click', () => {
+      helpItem.addEventListener('click', () => {
         appShell.helpOpen = !appShell.helpOpen;
-        alert;
       });
 
-      document.querySelector('.help-close').addEventListener('click', () => {
+      helpClose.addEventListener('click', () => {
         appShell.helpOpen = false;
+        helpItem.on = false;
       });
 
       sectionSelector.addEventListener('click', function () {
