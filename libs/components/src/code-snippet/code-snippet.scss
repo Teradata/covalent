@@ -13,11 +13,10 @@
 
   pre {
     margin: 0;
-    padding: 16px 0;
     overflow: auto;
 
     code.hljs.cv-code-snippet {
-      padding: 0 16px;
+      padding: 16px;
       display: block;
       overflow-x: auto;
       font-family: var(--cv-theme-code-font-family);
