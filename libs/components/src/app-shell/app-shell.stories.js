@@ -51,7 +51,7 @@ const Template = ({
   sectionTitle = '',
   forcedOpen = false,
   contained = true,
-  fullWidth = false
+  fullWidth = false,
 }) => {
   document.addEventListener(
     'DOMContentLoaded',
@@ -303,4 +303,9 @@ sectionTitle.args = {
 export const forcedOpen = Template.bind({});
 forcedOpen.args = {
   forcedOpen: true,
+};
+
+export const fullWidth = Template.bind({});
+fullWidth.args = {
+  fullWidth: true,
 };
