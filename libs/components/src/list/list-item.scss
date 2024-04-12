@@ -40,10 +40,3 @@
   display: flex;
   align-items: center;
 }
-
-
-:host([selected]), :host([activated]) {
-  .material-icons {
-    font-variation-settings: 'FILL' 1;
-  }
-}
