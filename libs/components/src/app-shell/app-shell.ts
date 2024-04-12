@@ -133,7 +133,7 @@ export class CovalentAppShell extends DrawerBase {
 
   resizeEvent() {
     // TODO should be configurable outside appshell
-    const mql = window.matchMedia('(max-width: 800px)');
+    const mql = window.matchMedia('(max-width: 767px)');
     if (mql.matches && this.type !== 'modal') {
       this.type = 'modal';
     } else if (!mql.matches && this.type !== 'dismissible') {
