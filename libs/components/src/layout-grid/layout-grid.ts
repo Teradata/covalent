@@ -11,7 +11,6 @@ declare global {
 @customElement('cv-layout-grid')
 export class CovalentLayoutGrid extends LitElement {
   static styles = unsafeCSS(styles);
-  //static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
 
   render() {
     return html`<div class="mdc-layout-grid">

@@ -1,0 +1,15 @@
+@use '@material/layout-grid/mdc-layout-grid';
+
+:host {
+  display: block;
+}
+
+.mdc-layout-grid {
+  background-color: rgba(224, 224, 224, 0.2);
+  min-width: 384px;
+}
+
+.mdc-layout-grid-item {
+  background-color: rgba(148, 34, 34, 0.2);
+  height: 100px;
+}

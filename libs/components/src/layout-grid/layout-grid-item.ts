@@ -1,12 +1,22 @@
-import { LitElement, html, unsafeCSS } from 'lit';
+import { LitElement, css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './layout-grid-item.scss';
 
+declare global {
+  interface HTMLElementTagNameMap {
+    'cv-layout-grid-item': CovalentLayoutGridItem;
+  }
+}
+
 @customElement('cv-layout-grid-item')
 export class CovalentLayoutGridItem extends LitElement {
-  static styles = unsafeCSS(styles);
+  static override styles = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 
-  @property({ type: Number, reflect: true }) span = 4;
+  @property({ type: Number }) span = 4;
 
   render() {
     return html`
