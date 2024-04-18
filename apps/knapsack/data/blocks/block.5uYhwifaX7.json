@@ -1,0 +1,56 @@
+{
+  "id": "5uYhwifaX7",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": null,
+            "src": "https://knapsack.imgix.net/site/covalent/anatomy-2cwb-omjzipng",
+            "title": null
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "What happened",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "This should be the first part of the message. It’s the header if the message appears in a dialog. It’s the first sentence if the message is on the page level.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Write it from the perspective of the user, not the system. In other words, talk about the user impact, not something about the system. For example, focus on what the user intended to do but couldn’t do because of the error. Be as specific about the problem as possible.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "hbrik123MP",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": null,
+            "src": "https://knapsack.imgix.net/site/covalent/pagebanner1-w045a3pkupng",
+            "title": null
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

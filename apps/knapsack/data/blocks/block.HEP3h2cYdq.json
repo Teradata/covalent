@@ -1,0 +1,102 @@
+{
+  "id": "HEP3h2cYdq",
+  "data": {
+    "gridStyles": {
+      "columns": "2",
+      "centered": false
+    },
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "imageOutlined": true,
+      "headerBeforeImage": false
+    },
+    "guidelines": [
+      {
+        "id": "U86BZngQrO",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "The system timed out. Please try again.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "We’re experiencing an issue in the system.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "kvoP1Nd7jQ",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "We’re sorry, but the system timed out. Please try again.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "We’re sorry, but we’re experiencing an issue in the system.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

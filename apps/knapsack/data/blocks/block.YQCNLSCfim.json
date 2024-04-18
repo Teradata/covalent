@@ -52,5 +52,8 @@
       "headerBeforeImage": false
     }
   },
-  "blockType": "guidelines"
+  "blockType": "guidelines",
+  "header": {
+    "showHeader": false
+  }
 }

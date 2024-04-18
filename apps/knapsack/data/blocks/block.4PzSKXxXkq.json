@@ -1,5 +1,5 @@
 {
-  "id": "u86qEoEoti",
+  "id": "4PzSKXxXkq",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 3,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Page titles, section titles & labels",
+              "text": "Page-level banner",
               "type": "text"
             }
           ]

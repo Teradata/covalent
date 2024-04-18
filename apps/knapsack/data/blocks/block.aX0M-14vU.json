@@ -1,0 +1,19 @@
+{
+  "id": "aX0M-14vU",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": null,
+            "src": "https://knapsack.imgix.net/site/covalent/pagebanner2-okh7-6kp4png",
+            "title": null
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

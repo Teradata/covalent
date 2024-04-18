@@ -10,6 +10,7 @@ blocks:
       colorDont:
         tokenName: cv.theme.light.colors.negative
         type: design-token
+      headerSize: h5
     tokens:
       nameDisplayFormat: cssVar
       rootFontSize: 16px

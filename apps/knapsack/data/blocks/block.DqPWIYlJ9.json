@@ -1,0 +1,54 @@
+{
+  "id": "DqPWIYlJ9",
+  "data": {
+    "gridStyles": {
+      "columns": "2",
+      "centered": false
+    },
+    "guidelines": [
+      {
+        "id": "U86BZngQrO",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The system timed out. Please try again.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "kvoP1Nd7jQ",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Oops! The system timed out. Try again.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "imageOutlined": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

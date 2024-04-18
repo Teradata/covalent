@@ -1,0 +1,23 @@
+{
+  "id": "Godk2A2Lj3",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The user needs to spend a considerable amount of time or effort to resolve the error, such as looking for a fix in the knowledge base or contacting Support. In high-severity situations, we find it necessary to catch the user’s attention in communicating the enough right details, hence the need to be elaborate and display the message in a modal dialog. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

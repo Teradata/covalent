@@ -8,13 +8,7 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Some phrases carry connotations that we want to avoid. Make sure to use one of these recommended alternatives.",
-              "type": "text"
-            }
-          ]
+          }
         }
       ]
     }

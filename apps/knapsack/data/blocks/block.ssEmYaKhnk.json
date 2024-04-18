@@ -1,0 +1,48 @@
+{
+  "id": "ssEmYaKhnk",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 4,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "please ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use “please” sparingly.  ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Exception: Consider saying “please” only if the absence of it makes the message sound demanding or a little too terse to be human. Read your draft out loud to see if you do need the word.    ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

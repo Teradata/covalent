@@ -95,6 +95,11 @@ byId:
     name: Empty state
     parentId: test-page
     path: /pattern/empty-state
+  error-messages:
+    id: error-messages
+    name: Errors
+    parentId: product-and-ui
+    path: /pages/error-messages
   expansion-panel:
     id: expansion-panel
     name: Expansion panel
@@ -177,6 +182,11 @@ byId:
     name: Palettes
     parentId: tokens
     path: /pages/palettes-lm0uu73t4r
+  product-and-ui:
+    id: product-and-ui
+    name: Product & UI
+    parentId: writing
+    path: ''
   radio:
     id: radio
     name: Radio
@@ -304,11 +314,12 @@ byId:
     path: /pages/typography
   writing:
     id: writing
-    name: Writing
+    name: Content Design
     parentId: root
     path: /pages/writing
 order:
   - guides
+  - color-use
   - test-page
   - action-ribbon
   - alert
@@ -367,4 +378,5 @@ order:
   - dark
   - typography
   - writing
-  - color-use
+  - product-and-ui
+  - error-messages
