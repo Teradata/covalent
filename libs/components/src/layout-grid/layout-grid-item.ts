@@ -1,32 +1,25 @@
-import { LitElement, css, html, unsafeCSS } from 'lit';
+import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import styles from './layout-grid-item.scss';
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'cv-layout-grid-item': CovalentLayoutGridItem;
-  }
-}
+import styleText from '@material/layout-grid/dist/mdc.layout-grid.css?inline';
 
 @customElement('cv-layout-grid-item')
 export class CovalentLayoutGridItem extends LitElement {
-  static override styles = [
-    css`
-      ${unsafeCSS(styles)}
-    `,
-  ];
+  static styles = unsafeCSS([styleText]);
 
-  @property({ type: Number }) span = 4;
+  @property({ type: Number }) columns = 4;
 
-  render() {
+  /* createRenderRoot() {
+      return this;
+    } */
+
+  protected render() {
     return html`
       <div
-        class="mdc-layout-grid__cell mdc-layout-grid__cell--span-${this.span}"
+        class="mdc-layout-grid__cell mdc-layout-grid__cell--span--${this
+          .columns}"
       >
         <slot></slot>
       </div>
     `;
   }
 }
-
-export default CovalentLayoutGridItem;
