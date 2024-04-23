@@ -27,6 +27,13 @@ settings:
   favicon: https://knapsack.imgix.net/site/covalent/favicon-4v5hnagck0ico
   hideTitleInNavigation: false
   logoUrl: https://knapsack.imgix.net/site/covalent/teradata-zalegzixrisvg
+  pages:
+    tableOfContents:
+      exclude:
+        - h3
+        - h4
+        - h5
+        - h6
   theme:
     appearance:
       customFonts:
