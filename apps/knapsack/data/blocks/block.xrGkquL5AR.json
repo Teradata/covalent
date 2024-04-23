@@ -149,6 +149,12 @@
           ]
         },
         {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
           "type": "horizontalRule"
         },
         {
@@ -159,7 +165,7 @@
           },
           "content": [
             {
-              "text": "Use voice and tone",
+              "text": "Be supportive and transparent",
               "type": "text"
             }
           ]
@@ -172,19 +178,6 @@
           "content": [
             {
               "text": "Voice and tone are strategic tools we use to help users accomplish goals and more easily relate to the Teradata system at hand. Teradata has a unique voice that manifests confidence and compassion. From marketing to product to support, we speak in the same consistent voice.",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 3,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Be supportive and transparent",
               "type": "text"
             }
           ]
