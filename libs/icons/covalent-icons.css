@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'covalent-icons';
-  src: url('./covalent-icons.ttf?ekxpxe') format('truetype'),
-    url('./covalent-icons.woff?ekxpxe') format('woff'),
-    url('./covalent-icons.svg?ekxpxe#covalent-icons') format('svg');
+  src: url('./covalent-icons.ttf?sn0lb0') format('truetype'),
+    url('./covalent-icons.woff?sn0lb0') format('woff'),
+    url('./covalent-icons.svg?sn0lb0#covalent-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -43,6 +43,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-advanced_sql:before {
+  content: '\e96e';
+}
 .cov-data_management:before {
   content: '\e96d';
 }
