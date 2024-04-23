@@ -94,6 +94,12 @@
           ]
         },
         {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
           "type": "heading",
           "attrs": {
             "level": 3,
@@ -146,12 +152,6 @@
           "type": "horizontalRule"
         },
         {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          }
-        },
-        {
           "type": "heading",
           "attrs": {
             "level": 2,
@@ -159,7 +159,7 @@
           },
           "content": [
             {
-              "text": "Using voice and tone",
+              "text": "Use voice and tone",
               "type": "text"
             }
           ]
