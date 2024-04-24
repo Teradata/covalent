@@ -17,9 +17,9 @@ import {
   NgZone,
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { TemplatePortalDirective } from '@angular/cdk/portal';
+import { PortalModule, TemplatePortalDirective } from '@angular/cdk/portal';
 import { ENTER } from '@angular/cdk/keycodes';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fromEvent, merge, Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import {
@@ -28,9 +28,15 @@ import {
   mixinControlValueAccessor,
   mixinDisabled,
 } from '@covalent/core/common';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { TdFileSelectDirective } from '../directives/file-select.directive';
+import { TdFileDropDirective } from '../directives/file-drop.directive';
 
 @Directive({
   selector: '[tdFileInputLabel]ng-template',
+  standalone: true,
 })
 export class TdFileInputLabelDirective extends TemplatePortalDirective {
   constructor(
@@ -63,6 +69,17 @@ export const _TdFileInputMixinBase = mixinControlValueAccessor(
   inputs: ['disabled', 'value'],
   styleUrls: ['./file-input.component.scss'],
   templateUrl: './file-input.component.html',
+  standalone: true,
+  imports: [
+    FormsModule,
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    PortalModule,
+    TdFileSelectDirective,
+    TdFileDropDirective,
+    TdFileInputLabelDirective,
+  ],
 })
 export class TdFileInputComponent
   extends _TdFileInputMixinBase

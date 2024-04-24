@@ -11,6 +11,7 @@ import {
   CdkPortalOutlet,
   ComponentPortal,
   DomPortal,
+  PortalModule,
   TemplatePortal,
 } from '@angular/cdk/portal';
 import { DOCUMENT } from '@angular/common';
@@ -30,8 +31,17 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { MatCommonModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { tdSideSheetAnimations } from './side-sheet.animation';
 import { CovalentSideSheetConfig } from './side-sheet.config';
+import {
+  CovalentSideSheetActionsDirective,
+  CovalentSideSheetCloseDirective,
+  CovalentSideSheetContentDirective,
+  CovalentSideSheetTitleDirective,
+  CovalentSideSheetWrapperDirective,
+} from './side-sheet.content-directives';
 
 export function _getFocusedElementPierceShadowDom(): HTMLElement | null {
   let activeElement =
@@ -250,6 +260,17 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.Default,
   animations: [tdSideSheetAnimations.sideSheetContainer],
+  standalone: true,
+  imports: [
+    PortalModule,
+    MatDialogModule,
+    MatCommonModule,
+    CovalentSideSheetActionsDirective,
+    CovalentSideSheetCloseDirective,
+    CovalentSideSheetContentDirective,
+    CovalentSideSheetTitleDirective,
+    CovalentSideSheetWrapperDirective,
+  ],
 })
 export class CovalentSideSheetContainerComponent extends _CovalentSideSheetContainerBase {
   /** State of the side-sheet animation. */

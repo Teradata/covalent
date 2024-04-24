@@ -14,6 +14,7 @@ import {
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { SidesheetDemoComponent } from './sidesheet-demo.component';
 import { SidesheetDemoRoutingModule } from './sidesheet-demo-routing.module';
+import { CovalentSideSheetContainerComponent } from 'libs/angular/side-sheet/src/side-sheet-container';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { SidesheetDemoRoutingModule } from './sidesheet-demo-routing.module';
     DemoModule,
     SidesheetDemoRoutingModule,
     /** Covalent Modules */
-    CovalentSideSheetModule,
+    CovalentSideSheetContainerComponent,
     /** Angular Modules */
     CommonModule,
     MatIconModule,

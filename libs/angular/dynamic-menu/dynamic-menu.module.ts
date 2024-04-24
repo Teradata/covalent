@@ -1,30 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { TdDynamicMenuComponent } from './src/dynamic-menu.component';
 import { TdDynamicMenuItemComponent } from './src/dynamic-menu-item/dynamic-menu-item.component';
 import { TdDynamicMenuLinkComponent } from './src/dynamic-menu-item/dynamic-menu-link/dynamic-menu-link.component';
 
+/**
+ * @deprecated since version 8.x, modules are no longer needed use standalone components instead
+ */
 @NgModule({
-  declarations: [
+  imports: [
     TdDynamicMenuComponent,
     TdDynamicMenuItemComponent,
     TdDynamicMenuLinkComponent,
   ],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatTooltipModule,
-  ],
-  providers: [],
   exports: [
     TdDynamicMenuComponent,
     TdDynamicMenuItemComponent,

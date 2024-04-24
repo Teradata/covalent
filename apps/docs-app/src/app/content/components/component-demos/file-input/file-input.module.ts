@@ -12,10 +12,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
-import { CovalentFileModule } from '@covalent/core/file';
 import { TdHighlightComponent } from '@covalent/highlight';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { FileInputDemoComponent } from './file-input.component';
+import {
+  TdFileInputComponent,
+  TdFileUploadComponent,
+} from '@covalent/core/file';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: FileInputDemoComponent,
@@ -38,7 +41,8 @@ const routes: Routes = setComponentRoutes({
     MatTabsModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentFileModule,
+    TdFileInputComponent,
+    TdFileUploadComponent,
     TdHighlightComponent,
     // Docs
     // Routes

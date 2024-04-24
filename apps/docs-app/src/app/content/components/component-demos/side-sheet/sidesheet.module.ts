@@ -15,6 +15,7 @@ import { CovalentSideSheetModule } from '@covalent/core/side-sheet';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { SidesheetDemoComponent } from './sidesheet.component';
 import { MatButtonModule } from '@angular/material/button';
+import { CovalentSideSheetContainerComponent } from 'libs/angular/side-sheet/src/side-sheet-container';
 
 const routes: Routes = setComponentRoutes({
   overviewDemoComponent: SidesheetDemoComponent,
@@ -38,7 +39,7 @@ const routes: Routes = setComponentRoutes({
     ComponentDetailsModule,
     // Covalent
     TdHighlightComponent,
-    CovalentSideSheetModule,
+    CovalentSideSheetContainerComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

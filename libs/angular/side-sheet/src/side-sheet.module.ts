@@ -1,35 +1,13 @@
 import { NgModule } from '@angular/core';
-import { PortalModule } from '@angular/cdk/portal';
-import { MatCommonModule } from '@angular/material/core';
-import { MatDialogModule } from '@angular/material/dialog';
-
 import { CovalentSideSheet } from './side-sheet';
 import { CovalentSideSheetContainerComponent } from './side-sheet-container';
-import {
-  CovalentSideSheetActionsDirective,
-  CovalentSideSheetCloseDirective,
-  CovalentSideSheetContentDirective,
-  CovalentSideSheetTitleDirective,
-  CovalentSideSheetWrapperDirective,
-} from './side-sheet.content-directives';
 
+/**
+ * @deprecated since version 8.x, modules are no longer needed use standalone components instead
+ */
 @NgModule({
-  declarations: [
-    CovalentSideSheetContainerComponent,
-    CovalentSideSheetActionsDirective,
-    CovalentSideSheetCloseDirective,
-    CovalentSideSheetContentDirective,
-    CovalentSideSheetTitleDirective,
-    CovalentSideSheetWrapperDirective,
-  ],
-  exports: [
-    CovalentSideSheetActionsDirective,
-    CovalentSideSheetCloseDirective,
-    CovalentSideSheetContentDirective,
-    CovalentSideSheetTitleDirective,
-    CovalentSideSheetWrapperDirective,
-  ],
-  imports: [PortalModule, MatDialogModule, MatCommonModule],
+  imports: [CovalentSideSheetContainerComponent],
+  exports: [CovalentSideSheetContainerComponent],
   providers: [CovalentSideSheet],
 })
 export class CovalentSideSheetModule {}

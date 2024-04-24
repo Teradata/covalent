@@ -10,7 +10,10 @@ import { ComponentOverviewComponent } from './component-overview.component';
 import { RouterModule } from '@angular/router';
 import { DocumentationToolsModule } from '../../../documentation-tools';
 import { CovalentCommonModule } from '@covalent/core/common';
-import { CovalentFileModule } from '@covalent/core/file';
+import {
+  TdFileInputComponent,
+  TdFileUploadComponent,
+} from '@covalent/core/file';
 @NgModule({
   declarations: [ComponentOverviewComponent],
   exports: [ComponentOverviewComponent],
@@ -25,7 +28,8 @@ import { CovalentFileModule } from '@covalent/core/file';
     /** Covalent Modules */
     CovalentCommonModule,
     DocumentationToolsModule,
-    CovalentFileModule,
+    TdFileInputComponent,
+    TdFileUploadComponent,
   ],
 })
 export class ComponentOverviewModule {}

@@ -22,6 +22,7 @@ let dialogElementUid = 0;
 @Directive({
   selector: '[td-side-sheet-close], [CovalentSideSheetClose]',
   exportAs: 'CovalentSideSheetClose',
+  standalone: true,
 })
 export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
   /** Screenreader label for the button. */
@@ -92,6 +93,7 @@ export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
 @Directive({
   selector: '[td-side-sheet-title], [CovalentSideSheetTitle]',
   exportAs: 'CovalentSideSheetTitle',
+  standalone: true,
 })
 export class CovalentSideSheetTitleDirective implements OnInit {
   /** Unique id for the dialog title. If none is supplied, it will be auto-generated. */
@@ -132,6 +134,7 @@ export class CovalentSideSheetTitleDirective implements OnInit {
  */
 @Directive({
   selector: `[td-side-sheet-content], td-side-sheet-content, [CovalentSideSheetContent]`,
+  standalone: true,
 })
 export class CovalentSideSheetContentDirective {
   @HostBinding('class.td-side-sheet-content') tdSideSheetContent = true;
@@ -143,6 +146,7 @@ export class CovalentSideSheetContentDirective {
  */
 @Directive({
   selector: `[td-side-sheet-actions], td-side-sheet-actions, [CovalentSideSheetActions]`,
+  standalone: true,
 })
 export class CovalentSideSheetActionsDirective {
   @HostBinding('class.td-side-sheet-actions') tdSideSheetActions = true;
@@ -153,6 +157,7 @@ export class CovalentSideSheetActionsDirective {
  */
 @Directive({
   selector: `[td-side-sheet-wrapper], td-side-sheet-wrapper, [CovalentSideSheetWrapper]`,
+  standalone: true,
 })
 export class CovalentSideSheetWrapperDirective {
   @HostBinding('class.td-side-sheet-wrapper') tdSideSheetWrapper = true;

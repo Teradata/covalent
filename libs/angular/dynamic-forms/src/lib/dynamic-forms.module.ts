@@ -12,8 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
-import { CovalentFileModule } from '@covalent/core/file';
-
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
 import {
   TdDynamicElementComponent,
@@ -30,6 +28,10 @@ import { TdDynamicCheckboxComponent } from './dynamic-elements/dynamic-checkbox/
 import { TdDynamicSliderComponent } from './dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from './dynamic-elements/dynamic-select/dynamic-select.component';
 import { TdDynamicDatepickerComponent } from './dynamic-elements/dynamic-datepicker/dynamic-datepicker.component';
+import {
+  TdFileInputComponent,
+  TdFileUploadComponent,
+} from '@covalent/core/file';
 
 const TD_DYNAMIC_FORMS: Type<any>[] = [
   TdDynamicFormsComponent,
@@ -76,7 +78,8 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     MatIconModule,
     MatButtonModule,
     MatDatepickerModule,
-    CovalentFileModule,
+    TdFileInputComponent,
+    TdFileUploadComponent,
   ],
   exports: [...TD_DYNAMIC_FORMS, ...TD_DYNAMIC_FORMS_ENTRY_COMPONENTS],
   providers: [DYNAMIC_FORMS_PROVIDER],

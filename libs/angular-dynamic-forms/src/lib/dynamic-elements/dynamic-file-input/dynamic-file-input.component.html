@@ -2,7 +2,7 @@
   <mat-form-field
     tdFileDrop
     class="td-dynamic-file-input-field"
-    [disabled]="control.disabled"
+    [attr.disabled]="control.disabled"
     (fileDrop)="_handlefileDrop($event)"
     (click)="!control.disabled && fileInput.inputElement.click()"
     (keyup.enter)="!control.disabled && fileInput.inputElement.click()"

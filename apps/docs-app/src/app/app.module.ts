@@ -35,7 +35,6 @@ import { TdHighlightComponent } from '@covalent/highlight';
 import { TdMarkdownComponent } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { CovalentLayoutModule } from '@covalent/core/layout';
-import { CovalentFileModule } from '@covalent/core/file';
 
 import { SidenavContentModule } from './components/shared/sidenav-content/sidenav-content.module';
 
@@ -51,6 +50,10 @@ import {
 import { ContentContainerModule } from './components/content-container/content-container.module';
 import { HomeComponent } from './components/home/home.component';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
+import {
+  TdFileInputComponent,
+  TdFileUploadComponent,
+} from '@covalent/core/file';
 
 @NgModule({
   declarations: [DocsAppComponent, HomeComponent], // directives, components, and pipes owned by this NgModule
@@ -76,6 +79,8 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
     CovalentLayoutModule,
     TdHighlightComponent,
     TdMarkdownComponent,
+    TdFileInputComponent,
+    TdFileUploadComponent,
     CovalentDynamicFormsModule,
     ToolbarModule,
     TranslateModule.forRoot({
@@ -88,7 +93,6 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
     SidenavContentModule,
     ContentContainerModule,
     appRoutes,
-    CovalentFileModule,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
