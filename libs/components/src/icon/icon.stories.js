@@ -4,6 +4,7 @@ import iconList from '../../../icons/material-codepoints.json';
 const MAT_ICON_LIST = Object.keys(iconList);
 
 const COV_ICON_LIST = [
+  'advanced_sql',
   'alias_arrow',
   'api',
   'api_ondark',
