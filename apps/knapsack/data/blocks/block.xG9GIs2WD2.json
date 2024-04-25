@@ -1,0 +1,27 @@
+{
+  "id": "xG9GIs2WD2",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": null,
+            "src": "https://knapsack.imgix.net/site/covalent/severe-alert1-bzihgegxcpng",
+            "title": null
+          }
+        },
+        {
+          "type": "image",
+          "attrs": {
+            "alt": null,
+            "src": "https://knapsack.imgix.net/site/covalent/severe-alert2-dhaqbm1moqpng",
+            "title": null
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

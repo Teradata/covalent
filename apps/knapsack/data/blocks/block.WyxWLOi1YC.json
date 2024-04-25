@@ -1,0 +1,36 @@
+{
+  "id": "WyxWLOi1YC",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 4,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "fail, failure ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Do not use. Errors present a stressful situation to the user. Be supportive by speaking to them in a positive way.     ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

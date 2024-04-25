@@ -1,18 +1,17 @@
 {
-  "id": "hbI8eTg02l",
+  "id": "wfdVlvFi0",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Word list",
+              "text": "Be supportive and transparent",
               "type": "text"
             }
           ]

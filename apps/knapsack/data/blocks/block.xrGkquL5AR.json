@@ -1,0 +1,201 @@
+{
+  "id": "xrGkquL5AR",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The underlying cause",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Explaining the underlying cause is optional depending on the context. It’s helpful to have an explanation of why something happened if the additional layer of transparency helps increase a user’s understanding of the system. For example, instead of just saying “The system timed out,” it’s more helpful to include an explanation like this, “The system took too long validating your shared data.”",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Here’s when including the cause ",
+              "type": "text"
+            },
+            {
+              "text": "isn’t",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " helpful:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "When excessive information gives a feeling of chaos or uncertainty, it gets in the way of useful, usable information. For example, “We couldn’t connect to the server due to too much traffic, a configuration error, or a bad request.”",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "When, due to limited space, the “what happened” and “how to fix it” information get compromised to include the underlying cause of the error",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "How to fix it",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "This part tells the user what they can do about the error. If there’s nothing for them to do, then explain what the product is doing. Often a path forward that’s simple and actionable is helpful. If the actions will require the user to take more effort, as shown in the message anatomy, explain clearly while keeping the content concise.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Linking to a help article can be useful, but only if that article is specific and descriptive to the error’s use case.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Avoid generic, catch-all resolutions like “Contact your IT administrator for details.”",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "horizontalRule"
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Be supportive and transparent",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Voice and tone are strategic tools we use to help users accomplish goals and more easily relate to the Teradata system at hand. Teradata has a unique voice that manifests confidence and compassion. From marketing to product to support, we speak in the same consistent voice.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When you write error messages, you continue to speak in that confident and compassionate voice but flex your voice to be supportive and transparent. We own up to our mistakes. This means we refer to Teradata as “we” and to the user as “you” to clearly communicate what went wrong, who’s taking what action to help, and who needs to take action in the error message. Using “we” also helps show the humanness behind the software.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "JBHxBIuebj",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Match design components to the chosen message",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Choose your design component based on the error message—not the other way around. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Essentially, user impact determines the message and how it should be displayed on the UI. Significant user impact means the user needs to spend a considerable amount of time or effort to resolve the issue. This diagram illustrates the 3 severity levels based on user impact. Throughout the scale, we speak in a consistent tone but may be elaborate, brief, or somewhere in between depending on the situation. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "attrs": {
+            "alt": null,
+            "src": "https://knapsack.imgix.net/site/covalent/tone-scale-u2emglm2expng",
+            "title": null
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

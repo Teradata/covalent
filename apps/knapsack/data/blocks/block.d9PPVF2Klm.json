@@ -1,0 +1,36 @@
+{
+  "id": "d9PPVF2Klm",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 4,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "oops ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "\"Oops\" can sound irreverent. Avoid using words like this to downplay an error or sound friendly.        ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

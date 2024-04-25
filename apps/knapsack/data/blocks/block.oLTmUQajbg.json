@@ -1,5 +1,5 @@
 {
-  "id": "h7hS-b1aw2",
+  "id": "oLTmUQajbg",
   "data": {
     "content": {
       "type": "doc",
@@ -11,7 +11,7 @@
           },
           "content": [
             {
-              "text": "Use sentence case for these and any items not explicitly mentioned in this doc.",
+              "text": "The error results in a relatively small inconvenience for the user. In minor-severity situations, we can be brief and less “in-your-face” by using a page-level banner.",
               "type": "text"
             }
           ]

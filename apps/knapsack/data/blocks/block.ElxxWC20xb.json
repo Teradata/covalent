@@ -1,0 +1,36 @@
+{
+  "id": "ElxxWC20xb",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 4,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Are you sure? ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Do not use. Saying “Are you sure?” implies you’re questioning the user. Instead of asking questions, confirm the user-intended action and communicate what they need to know.         ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
