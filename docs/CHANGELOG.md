@@ -1,3 +1,9 @@
+# [8.11.0](https://github.com/Teradata/covalent/compare/v8.10.1...v8.11.0) (2024-04-25)
+
+### Features
+
+- **tokens:** Update code tokens ([#2148](https://github.com/Teradata/covalent/issues/2148)) ([dca94c3](https://github.com/Teradata/covalent/commit/dca94c3d05ad3d25212819452fca3205e956ad0a))
+
 ## [8.10.1](https://github.com/Teradata/covalent/compare/v8.10.0...v8.10.1) (2024-04-12)
 
 ### Bug Fixes
