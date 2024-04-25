@@ -1,3 +1,9 @@
+## [8.10.1](https://github.com/Teradata/covalent/compare/v8.10.0...v8.10.1) (2024-04-12)
+
+### Bug Fixes
+
+- **components:** adjusting whitespace causing style issue ([#2145](https://github.com/Teradata/covalent/issues/2145)) ([a6c1536](https://github.com/Teradata/covalent/commit/a6c153684608e0a60cdb1a529b7706518bf0756d))
+
 # [8.10.0](https://github.com/Teradata/covalent/compare/v8.9.2...v8.10.0) (2024-04-12)
 
 ### Bug Fixes
