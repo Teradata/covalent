@@ -1,3 +1,9 @@
+# [8.12.0](https://github.com/Teradata/covalent/compare/v8.11.0...v8.12.0) (2024-04-25)
+
+### Features
+
+- **icons:** add advanced sql icon ([#2147](https://github.com/Teradata/covalent/issues/2147)) ([73b6a76](https://github.com/Teradata/covalent/commit/73b6a7650c478fcd5c3df2b7fc419de08c885b9c))
+
 # [8.11.0](https://github.com/Teradata/covalent/compare/v8.10.1...v8.11.0) (2024-04-25)
 
 ### Features
