@@ -5,7 +5,16 @@
   "patternId": "text-area",
   "templateId": "web-components-48rzn99y9G",
   "data": {
-    "props": {},
+    "props": {
+      "label": "Text area label",
+      "outlined": true,
+      "validityState": {},
+      "willValidate": {},
+      "validityTransform": {},
+      "disabled": false,
+      "charCounter": true,
+      "maxLength": 80
+    },
     "slots": {}
   }
 }

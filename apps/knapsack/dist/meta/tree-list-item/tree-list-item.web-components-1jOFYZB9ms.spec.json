@@ -5,7 +5,20 @@
   "required": [],
   "properties": {
     "icon": {
-      "type": "string"
+      "type": "string",
+      "description": "Optional icon for each list item."
+    },
+    "isOpen": {
+      "description": "Whether a list item is open.",
+      "type": "boolean"
+    },
+    "indentLevel": {
+      "description": "Indicates which nest level a list item is at.",
+      "type": "number"
+    },
+    "indentMultiple": {
+      "description": "How much left padding (px) to add for nested elements.",
+      "type": "number"
     }
   }
 }

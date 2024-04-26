@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "on": {
+      "description": "Whether the toggle is activated.",
+      "type": "boolean"
+    },
+    "disabled": {
+      "description": "Disabled buttons cannot be interacted with and have no visual interaction effect.",
+      "type": "boolean"
+    },
+    "onIcon": {
+      "type": "string",
+      "description": "Icon to display when on is true."
+    },
+    "offIcon": {
+      "type": "string",
+      "description": "Icon to display when on is false."
+    },
+    "aria-label": {
+      "type": "string",
+      "description": "Accessible label for the button."
+    },
+    "ariaLabelOn": {
+      "type": "string",
+      "description": "aria-label of the button when on is true. If set, ariaLabelOff must also be set."
+    },
+    "ariaLabelOff": {
+      "type": "string",
+      "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
+    }
+  }
+}

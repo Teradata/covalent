@@ -5,10 +5,26 @@
   "required": [],
   "properties": {
     "subText": {
-      "type": "string"
+      "type": "string",
+      "description": "Sub text for the text lockup."
     },
     "scale": {
-      "type": "string"
+      "type": "string",
+      "enum": ["large", "small"],
+      "description": "Sets the size of the lockup."
+    },
+    "icon": {
+      "type": "string",
+      "description": "Leading icon for the subtext."
+    },
+    "state": {
+      "type": "string",
+      "enum": ["active", "positive", "negative", "caution"],
+      "description": "Sets the state of the lockup."
+    },
+    "trailingSubText": {
+      "type": "boolean",
+      "description": "Positions the subtext in trailing position of the lockup."
     }
   }
 }

@@ -9,11 +9,132 @@
  */
 
 export interface Textfield {
+  /**
+   * The input control's value.
+   */
+  value?: string;
+  /**
+   * A string specifying the type of control to render.
+   */
+  type?:
+    | 'text'
+    | 'search'
+    | 'tel'
+    | 'url'
+    | 'email'
+    | 'password'
+    | 'date'
+    | 'month'
+    | 'week'
+    | 'time'
+    | 'datetime-local'
+    | 'number'
+    | 'color';
+  /**
+   * Sets floating label value.
+   */
   label?: string;
+  /**
+   * Sets the name attribute on the internal textarea.
+   */
+  name?: string;
+  /**
+   * Sets disappearing input placeholder.
+   */
   placeholder?: string;
+  /**
+   * Helper text to display below the input. Display default only when focused.
+   */
   helper?: string;
-  icon?: string;
-  iconTrailing?: string;
+  /**
+   * Always show the helper text despite focus.
+   */
+  helperPersistent?: boolean;
+  /**
+   * Whether or not to show the material outlined variant.
+   */
+  outlined?: boolean;
+  /**
+   * Displays error state if value is empty and input is blurred.
+   */
   required?: boolean;
+  /**
+   * Whether or not the input should be disabled.
+   */
+  disabled?: boolean;
   dense?: boolean;
+  /**
+   * Prefix text to display before the input.
+   */
+  prefix?: string;
+  /**
+   * Suffix text to display after the input.
+   */
+  suffix?: string;
+  /**
+   * HTMLInputElement.prototype.pattern (empty string will unset attribute)
+   */
+  pattern?: string;
+  /**
+   * HTMLInputElement.prototype.min (empty string will unset attribute)
+   */
+  min?: string;
+  /**
+   * 	HTMLInputElement.prototype.max (empty string will unset attribute)
+   */
+  max?: string;
+  /**
+   * HTMLInputElement.prototype.size (null will unset attribute)
+   */
+  size?: number;
+  /**
+   * HTMLInputElement.prototype.step (null will unset attribute)
+   */
+  step?: number;
+  /**
+   * Leading icon to display in input. See cv-icon.
+   */
+  icon?: string;
+  /**
+   * Trailing icon to display in input. See cv-icon.
+   */
+  iconTrailing?: string;
+  /**
+   * Maximum length input to accept.
+   */
+  maxLength?: number;
+  /**
+   * Note: requires maxLength to be set. Display character counter with max length.
+   */
+  charCounter?: boolean;
+  /**
+   * The ValidityState of the textfield. (Read only)
+   */
+  validity?: {
+    [k: string]: any;
+  };
+  /**
+   * Reports validity on value change rather than only on blur.
+   */
+  autoValidate?: boolean;
+  /**
+   * Message to show in the error color when the textarea is invalid. (Helper text will not be visible)
+   */
+  validationMessage?: string;
+  /**
+   * HTMLInputElement.prototype.willValidate (Read only)
+   */
+  willValidate?: {
+    [k: string]: any;
+  };
+  /**
+   * Callback called before each validation check.
+   */
+  validityTransform?: {
+    [k: string]: any;
+  };
+  /**
+   * Runs validation check on initial render.
+   */
+  validateOnInitialRender?: boolean;
 }

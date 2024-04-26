@@ -13,15 +13,18 @@
       "spec": {
         "slots": {
           "label": {
-            "title": "label"
+            "title": "label",
+            "description": "Label of the tree list item."
           },
           "extraContent": {
-            "title": "extraContent"
+            "title": "extraContent",
+            "description": "Slot to display extra content below the label."
           },
           "nest": {
-            "allowedPatternIds": ["tree-list-item"],
+            "allowedPatternIds": ["tree-list-item", "tree-list"],
             "title": "nest",
-            "disallowText": true
+            "disallowText": true,
+            "description": "Slot for the nested content."
           }
         },
         "props": {
@@ -31,13 +34,26 @@
           "required": [],
           "properties": {
             "icon": {
-              "type": "string"
+              "type": "string",
+              "description": "Optional icon for each list item."
+            },
+            "isOpen": {
+              "description": "Whether a list item is open.",
+              "type": "boolean"
+            },
+            "indentLevel": {
+              "description": "Indicates which nest level a list item is at.",
+              "type": "number"
+            },
+            "indentMultiple": {
+              "description": "How much left padding (px) to add for nested elements.",
+              "type": "number"
             }
           }
         }
       },
       "demoIds": ["7gFch0E4yr"],
-      "blockIds": []
+      "blockIds": ["vOWS2s6YnC"]
     }
   ],
   "tabs": [

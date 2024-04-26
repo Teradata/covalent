@@ -15,11 +15,12 @@
       "spec": {
         "slots": {
           "default": {
-            "allowedPatternIds": [],
+            "allowedPatternIds": ["text"],
             "title": "default",
             "disallowText": false,
             "isRequired": true,
-            "allowOnlyOne": true
+            "allowOnlyOne": true,
+            "description": "The default slot for text."
           }
         },
         "props": {
@@ -29,7 +30,23 @@
           "required": ["scale"],
           "properties": {
             "scale": {
-              "type": "string"
+              "type": "string",
+              "description": "The typography scale to be applied.",
+              "enum": [
+                "headline1",
+                "headline2",
+                "headline3",
+                "headline4",
+                "headline5",
+                "headline6",
+                "subtitle1",
+                "subtitle2",
+                "body1",
+                "body2",
+                "caption",
+                "button",
+                "overline"
+              ]
             }
           }
         }
@@ -43,7 +60,7 @@
         "oY0W5ALQ1q",
         "pvszcppjX8"
       ],
-      "blockIds": []
+      "blockIds": ["LJ954lat1"]
     }
   ],
   "tabs": [

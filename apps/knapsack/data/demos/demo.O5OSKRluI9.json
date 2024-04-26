@@ -1,0 +1,14 @@
+{
+  "id": "O5OSKRluI9",
+  "title": "Main",
+  "type": "data",
+  "patternId": "icon-button-toggle",
+  "templateId": "web-components-6kGMXrj-eP",
+  "data": {
+    "props": {
+      "onIcon": "flashlight_on",
+      "offIcon": "flashlight_off"
+    },
+    "slots": {}
+  }
+}

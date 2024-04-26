@@ -9,7 +9,11 @@
       "placeholder": "Placeholder",
       "helper": "helper text",
       "label": "Text field",
-      "icon": "person"
+      "icon": "person",
+      "outlined": true,
+      "validity": {},
+      "willValidate": {},
+      "validityTransform": {}
     },
     "slots": {}
   }

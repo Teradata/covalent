@@ -6,7 +6,9 @@
   "templateId": "web-components-4Aa-qjh3vF",
   "data": {
     "props": {
-      "subText": "environment Id"
+      "subText": "environment Id",
+      "scale": "small",
+      "trailingSubText": false
     },
     "slots": {
       "default": [

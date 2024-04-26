@@ -16,7 +16,8 @@
             "allowedPatternIds": ["tree-list-item"],
             "title": "default",
             "disallowText": true,
-            "isRequired": true
+            "isRequired": true,
+            "description": "The default slot for tree list items"
           }
         },
         "props": {
@@ -28,7 +29,7 @@
         }
       },
       "demoIds": ["RjMe6Q4mA"],
-      "blockIds": []
+      "blockIds": ["1IxvkUcEJw"]
     }
   ],
   "tabs": [
