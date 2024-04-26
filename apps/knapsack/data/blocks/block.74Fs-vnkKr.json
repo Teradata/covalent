@@ -1,6 +1,5 @@
 {
-  "id": "qijTbG7LU7",
-  "blockType": "text-editor",
+  "id": "74Fs-vnkKr",
   "data": {
     "content": {
       "type": "doc",
@@ -13,12 +12,13 @@
           },
           "content": [
             {
-              "text": "Surface",
+              "text": "Caution",
               "type": "text"
             }
           ]
         }
       ]
     }
-  }
+  },
+  "blockType": "text-editor"
 }

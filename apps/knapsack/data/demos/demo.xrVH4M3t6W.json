@@ -9,7 +9,7 @@
       "labelText": "You have unsaved changes",
       "state": "active",
       "centered": false,
-      "icon": "info",
+      "icon": "houseboat",
       "iconAriaLabel": "info"
     },
     "slots": {

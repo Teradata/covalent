@@ -1,0 +1,22 @@
+{
+  "id": "Ioe5-CDp2",
+  "data": {
+    "type": "warning",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Under construction",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "large",
+  "blockType": "callout"
+}

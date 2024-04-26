@@ -8,13 +8,13 @@
         {
           "type": "heading",
           "attrs": {
-            "textAlign": "left",
-            "level": 3
+            "level": 3,
+            "textAlign": "left"
           },
           "content": [
             {
-              "type": "text",
-              "text": "Caution"
+              "text": "Surface",
+              "type": "text"
             }
           ]
         }

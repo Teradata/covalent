@@ -92,6 +92,10 @@
     {
       "id": "0FNWLRc1DE",
       "type": "designSrc"
+    },
+    {
+      "id": "lklkHlAPzR",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -104,6 +108,12 @@
   "designSrcComponentsById": {
     "0FNWLRc1DE": {
       "id": "0FNWLRc1DE",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7073:36396"
+    },
+    "lklkHlAPzR": {
+      "id": "lklkHlAPzR",
       "title": "Figma Component",
       "fileId": "KvXVAmYdCVAS7hzkOa73Em",
       "componentId": "7073:36396"

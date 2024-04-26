@@ -2,8 +2,8 @@
   "id": "NiGVnAPPLN",
   "blockType": "design-tokens",
   "data": {
-    "demoId": "table-list",
+    "demoId": "simple-list",
     "tokenType": "string",
-    "groupIds": ["typography"]
+    "groupIds": ["cv.typography"]
   }
 }

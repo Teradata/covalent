@@ -11,7 +11,7 @@
       "raised": true,
       "trailingIcon": false,
       "dense": false,
-      "label": "button label"
+      "label": "Find a fix"
     },
     "slots": {}
   }

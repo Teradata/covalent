@@ -4,8 +4,8 @@
   "data": {
     "demoId": "color-swatch",
     "tokenType": "color",
-    "groupIds": ["cv.theme.light.colors"],
+    "groupIds": ["cv.theme.light"],
     "include": "primary",
-    "exclude": "on-"
+    "exclude": "-4"
   }
 }
