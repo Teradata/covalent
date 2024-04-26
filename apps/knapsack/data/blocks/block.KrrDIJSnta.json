@@ -1,0 +1,14 @@
+{
+  "id": "KrrDIJSnta",
+  "data": {
+    "demoId": "color-swatch",
+    "groupIds": ["cv.theme.dark.colors"],
+    "tokenType": "color",
+    "include": "surface",
+    "exclude": "on-"
+  },
+  "blockType": "design-tokens",
+  "header": {
+    "showHeader": false
+  }
+}

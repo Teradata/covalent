@@ -100,6 +100,11 @@ byId:
     name: Errors
     parentId: product-and-ui
     path: /pages/error-messages
+  errors:
+    id: errors
+    name: Errors
+    parentId: guides
+    path: /pages/errors
   expansion-panel:
     id: expansion-panel
     name: Expansion panel
@@ -140,6 +145,12 @@ byId:
     name: Icon radio
     parentId: test-page
     path: /pattern/icon-radio
+  launch-list:
+    hidden: true
+    id: launch-list
+    name: Launch list
+    parentId: test-page
+    path: /pages/launch-list
   light:
     id: light
     name: Colors
@@ -313,6 +324,7 @@ byId:
     parentId: tokens
     path: /pages/typography
   writing:
+    hidden: true
     id: writing
     name: Content Design
     parentId: root
@@ -376,7 +388,9 @@ order:
   - palettes-lm0uu73t4r
   - palettes
   - dark
+  - launch-list
   - typography
   - writing
+  - errors
   - product-and-ui
   - error-messages
