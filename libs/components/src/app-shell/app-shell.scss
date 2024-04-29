@@ -100,10 +100,6 @@
     .cov-drawer--open & {
       margin-left: 256px;
     }
-
-    .cov-help--open & {
-      margin-right: 320px;
-    }
   }
 
   @media only screen and (max-width: 1600px) {
@@ -115,13 +111,41 @@
 
 .help {
   grid-area: help;
-  position: fixed;
+  position: relative;
   right: 0;
+  overflow: hidden;
   width: 320px;
   height: 100vh;
   overflow-y: auto;
   transition-property: width;
   transition-duration: 200ms;
+
+  .resize-handle {
+    position: absolute;
+    left: 0;
+    width: 10px;
+    height: 100vh;
+    cursor: ew-resize;
+    z-index: 1100;
+    user-select: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--mdc-theme-primary);
+      transform: translateX(-50%);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
 
   .cov-help--closed & {
     width: 0;

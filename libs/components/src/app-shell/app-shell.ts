@@ -31,6 +31,11 @@ export class CovalentAppShell extends DrawerBase {
     `,
   ];
 
+  element = document.querySelector('.help');
+  helpWidth = 0;
+  private _startX!: number;
+  private _startWidth!: number;
+
   @queryAssignedElements({ slot: 'navigation' })
   navigationListElements!: HTMLElement[];
 
@@ -77,8 +82,77 @@ export class CovalentAppShell extends DrawerBase {
 
   constructor() {
     super();
-
+    this._resize = this._resize.bind(this);
+    this._stopResize = this._stopResize.bind(this);
+    this._startResizing = this._startResizing.bind(this);
+    this._setupEventListeners();
+    window.addEventListener('DOMContentLoaded', () => {
+      this.setupHelpPanelListeners();
+    });
     this.resizeEvent();
+  }
+
+  setupHelpPanelListeners() {
+    const helpToggle = document.querySelector('.help-item');
+    const helpClose = document.querySelector('.help-close');
+
+    helpToggle?.addEventListener('click', () => {
+      this.toggleHelpPanel();
+    });
+
+    helpClose?.addEventListener('click', () => {
+      this.toggleHelpPanel(false);
+    });
+  }
+
+  toggleHelpPanel(open?: boolean) {
+    this.helpOpen = open !== undefined ? open : !this.helpOpen;
+    if (window.innerWidth > 768) {
+      this.helpWidth = this.helpOpen ? 320 : 0;
+    } else {
+      this.helpWidth = this.helpOpen ? window.innerWidth : 0;
+    }
+    this.requestUpdate();
+  }
+
+  private _setupEventListeners() {
+    window.addEventListener('DOMContentLoaded', () => {
+      const helpToggle = document.querySelector('.help-item');
+      const helpClose = document.querySelector('.help-close');
+
+      helpToggle?.addEventListener('click', () => {
+        this.helpOpen = !this.helpOpen;
+        this.helpWidth = this.helpOpen ? 320 : 0;
+        this.requestUpdate();
+      });
+
+      helpClose?.addEventListener('click', () => {
+        this.helpOpen = false;
+        this.helpWidth = 0;
+        this.requestUpdate();
+      });
+    });
+  }
+
+  private _startResizing(event: MouseEvent) {
+    this._startX = event.clientX;
+    this._startWidth = this.helpWidth;
+    document.addEventListener('mousemove', this._resize);
+    document.addEventListener('mouseup', this._stopResize);
+  }
+
+  private _resize(event: MouseEvent) {
+    const diff = event.clientX - this._startX;
+    const newWidth = Math.max(320, Math.min(600, this._startWidth - diff));
+    if (this.helpWidth !== newWidth) {
+      this.helpWidth = newWidth;
+      this.requestUpdate();
+    }
+  }
+
+  private _stopResize() {
+    document.removeEventListener('mousemove', this._resize);
+    document.removeEventListener('mouseup', this._stopResize);
   }
 
   private _toggleOpen(forcedOpen = false) {
@@ -229,7 +303,12 @@ export class CovalentAppShell extends DrawerBase {
             ${this.renderMain()}
           </div>
         </div>
-        <div class="help">
+        <div
+          class="help"
+          style="width: ${this.helpWidth}px;"
+          @mousedown="${this._startResizing}"
+        >
+          <div class="resize-handle"></div>
           <slot name="help"></slot>
         </div>
       </div>
