@@ -3,23 +3,6 @@
   padding-left: var(--cv-list-padding-left, 0);
 }
 
-:host(.subnav) ::slotted(*),
-:host([subnav]) ::slotted(*) {
-  height: 32px;
-  font-weight: var(--mdc-typography-body2-font-weight);
-  border-radius: var(--cv-list-item-border-radius, 100px);
-  padding: 0;
-  padding-right: var(--cv-list-padding-right, 12px);
-  padding-left: var(--cv-list-padding-left, 12px);
-}
-
-:host(.subnav),
-:host([subnav]) {
-  --cv-list-padding-right: 0;
-  --cv-list-padding-left: 0;
-  --cv-list-item-text-padding: 48px;
-}
-
 .mdc-deprecated-list {
   width: 100%;
 }

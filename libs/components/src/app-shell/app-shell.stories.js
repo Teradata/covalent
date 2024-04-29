@@ -143,13 +143,12 @@ const Template = ({
         <cv-icon class="covalent-icon" slot="graphic">product_editor</cv-icon>
         <cv-list
           slot="expansion-panel"
-          subNav
           activatable>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
-          <cv-nav-list-item>Scripts</cv-nav-list-item>
+          <cv-nav-list-item subNav>Scripts</cv-nav-list-item>
+          <cv-nav-list-item subNav>Scripts</cv-nav-list-item>
+          <cv-nav-list-item subNav>Scripts</cv-nav-list-item>
+          <cv-nav-list-item subNav>Scripts</cv-nav-list-item>
+          <cv-nav-list-item subNav>Scripts</cv-nav-list-item>
         </cv-list>
       </cv-nav-list-item>
 

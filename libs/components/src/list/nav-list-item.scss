@@ -11,17 +11,25 @@
   --mdc-list-item-graphic-margin: 4px;
 }
 
-::slotted(.section-selector) {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
+::slotted(cv-list) {
+  --cv-list-padding-right: 0;
+  --cv-list-padding-left: 0;
+  --cv-list-item-text-padding: 48px;
 }
 
 :host([activated]) {
   ::slotted(cv-icon[slot='graphic']) {
     color: var(--mdc-theme-primary);
   }
+}
+
+:host([subnav]) {
+  height: 32px;
+  font-weight: var(--mdc-typography-body2-font-weight);
+  border-radius: var(--cv-list-item-border-radius, 100px);
+  padding: 0;
+  padding-right: var(--cv-list-padding-right, 12px);
+  padding-left: var(--cv-list-padding-left, 12px);
 }
 
 :host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
