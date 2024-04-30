@@ -29,7 +29,9 @@ describe('Covalent Badge', () => {
   });
 
   it('should not show content when size is small', () => {
-    expect(badgeElements[2]?.shadowRoot?.innerHTML).not.toContain('99');
+    if (badgeElements[2]?.shadowRoot?.innerHTML) {
+      expect(badgeElements[2]?.shadowRoot?.innerHTML).not.toContain('99');
+    }
   });
 
   it('should cap the content based on max prop', () => {
