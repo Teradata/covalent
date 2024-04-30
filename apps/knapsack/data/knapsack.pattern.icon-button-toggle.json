@@ -1,0 +1,84 @@
+{
+  "id": "icon-button-toggle",
+  "title": "Icon button toggle",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-6kGMXrj-eP",
+      "title": "Web Components",
+      "path": "../../../dist/libs/components/icon-button-toggle.mjs",
+      "alias": "cv-icon-button-toggle",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "onIcon": {
+            "title": "onIcon",
+            "description": "Optional <img> or <svg> to display instead of using an icon font for the onIcon property.",
+            "allowedPatternIds": ["icon"]
+          },
+          "offIcon": {
+            "title": "offIcon",
+            "description": "Optional <img> or <svg> to display instead of using an icon font for the offIcon property.",
+            "allowedPatternIds": ["icon"]
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "on": {
+              "description": "Whether the toggle is activated.",
+              "type": "boolean"
+            },
+            "disabled": {
+              "description": "Disabled buttons cannot be interacted with and have no visual interaction effect.",
+              "type": "boolean"
+            },
+            "onIcon": {
+              "type": "string",
+              "description": "Icon to display when on is true."
+            },
+            "offIcon": {
+              "type": "string",
+              "description": "Icon to display when on is false."
+            },
+            "aria-label": {
+              "type": "string",
+              "description": "Accessible label for the button."
+            },
+            "ariaLabelOn": {
+              "type": "string",
+              "description": "aria-label of the button when on is true. If set, ariaLabelOff must also be set."
+            },
+            "ariaLabelOff": {
+              "type": "string",
+              "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
+            }
+          }
+        }
+      },
+      "demoIds": ["O5OSKRluI9"],
+      "blockIds": ["F2ROXe7JZl", "TXAQGWjjCa", "alNcNybgOB"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-6kGMXrj-eP"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

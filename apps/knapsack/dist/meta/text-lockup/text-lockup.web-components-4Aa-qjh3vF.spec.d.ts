@@ -9,6 +9,24 @@
  */
 
 export interface TextLockup {
+  /**
+   * Sub text for the text lockup.
+   */
   subText?: string;
-  scale?: string;
+  /**
+   * Sets the size of the lockup.
+   */
+  scale?: 'large' | 'small';
+  /**
+   * Leading icon for the subtext.
+   */
+  icon?: string;
+  /**
+   * Sets the state of the lockup.
+   */
+  state?: 'active' | 'positive' | 'negative' | 'caution';
+  /**
+   * Positions the subtext in trailing position of the lockup.
+   */
+  trailingSubText?: boolean;
 }

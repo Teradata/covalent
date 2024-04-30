@@ -1726,7 +1726,48 @@
       "attributes": [
         {
           "name": "scale",
-          "description": "(required)"
+          "values": [
+            {
+              "name": "headline1"
+            },
+            {
+              "name": "headline2"
+            },
+            {
+              "name": "headline3"
+            },
+            {
+              "name": "headline4"
+            },
+            {
+              "name": "headline5"
+            },
+            {
+              "name": "headline6"
+            },
+            {
+              "name": "subtitle1"
+            },
+            {
+              "name": "subtitle2"
+            },
+            {
+              "name": "body1"
+            },
+            {
+              "name": "body2"
+            },
+            {
+              "name": "caption"
+            },
+            {
+              "name": "button"
+            },
+            {
+              "name": "overline"
+            }
+          ],
+          "description": "(required) The typography scale to be applied."
         }
       ]
     },
@@ -1741,24 +1782,129 @@
       ],
       "attributes": [
         {
+          "name": "rows",
+          "description": "Sets number of visible text lines."
+        },
+        {
+          "name": "cols",
+          "description": "Sets the visible width of the textarea."
+        },
+        {
+          "name": "value",
+          "description": "The input control's value."
+        },
+        {
+          "name": "type",
+          "values": [
+            {
+              "name": "text"
+            },
+            {
+              "name": "search"
+            },
+            {
+              "name": "tel"
+            },
+            {
+              "name": "url"
+            },
+            {
+              "name": "email"
+            },
+            {
+              "name": "password"
+            },
+            {
+              "name": "date"
+            },
+            {
+              "name": "month"
+            },
+            {
+              "name": "week"
+            },
+            {
+              "name": "time"
+            },
+            {
+              "name": "datetime-local"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "color"
+            }
+          ],
+          "description": "A string specifying the type of control to render."
+        },
+        {
           "name": "label",
-          "description": ""
+          "description": "Sets floating label value."
+        },
+        {
+          "name": "name",
+          "description": "Sets the name attribute on the internal textarea."
         },
         {
           "name": "placeholder",
-          "description": ""
+          "description": "Sets disappearing input placeholder."
         },
         {
           "name": "helper",
-          "description": ""
+          "description": "Helper text to display below the input. Display default only when focused."
+        },
+        {
+          "name": "helperPersistent",
+          "description": "boolean Always show the helper text despite focus."
         },
         {
           "name": "outlined",
-          "description": "boolean"
+          "description": "boolean Whether or not to show the material outlined variant."
         },
         {
           "name": "required",
-          "description": "boolean"
+          "description": "boolean Displays error state if value is empty and input is blurred."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Whether or not the input should be disabled."
+        },
+        {
+          "name": "icon",
+          "description": "Leading icon to display in input. See cv-icon."
+        },
+        {
+          "name": "iconTrailing",
+          "description": "Trailing icon to display in input. See cv-icon."
+        },
+        {
+          "name": "maxLength",
+          "description": "Maximum length input to accept."
+        },
+        {
+          "name": "charCounter",
+          "description": "boolean Note: requires maxLength to be set. Display character counter with max length."
+        },
+        {
+          "name": "validationMessage",
+          "description": "Message to show in the error color when the textarea is invalid. (Helper text will not be visible)"
+        },
+        {
+          "name": "validityState",
+          "description": "The ValidityState of the textfield. (Read only)"
+        },
+        {
+          "name": "willValidate",
+          "description": "HTMLInputElement.prototype.willValidate (Read only)"
+        },
+        {
+          "name": "validityTransform",
+          "description": "Callback called before each validation check."
+        },
+        {
+          "name": "validateOnInitialRender",
+          "description": "boolean Runs validation check on initial render."
         }
       ]
     },
@@ -1774,11 +1920,45 @@
       "attributes": [
         {
           "name": "subText",
-          "description": ""
+          "description": "Sub text for the text lockup."
         },
         {
           "name": "scale",
-          "description": ""
+          "values": [
+            {
+              "name": "large"
+            },
+            {
+              "name": "small"
+            }
+          ],
+          "description": "Sets the size of the lockup."
+        },
+        {
+          "name": "icon",
+          "description": "Leading icon for the subtext."
+        },
+        {
+          "name": "state",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "caution"
+            }
+          ],
+          "description": "Sets the state of the lockup."
+        },
+        {
+          "name": "trailingSubText",
+          "description": "boolean Positions the subtext in trailing position of the lockup."
         }
       ]
     },
@@ -1793,32 +1973,157 @@
       ],
       "attributes": [
         {
+          "name": "value",
+          "description": "The input control's value."
+        },
+        {
+          "name": "type",
+          "values": [
+            {
+              "name": "text"
+            },
+            {
+              "name": "search"
+            },
+            {
+              "name": "tel"
+            },
+            {
+              "name": "url"
+            },
+            {
+              "name": "email"
+            },
+            {
+              "name": "password"
+            },
+            {
+              "name": "date"
+            },
+            {
+              "name": "month"
+            },
+            {
+              "name": "week"
+            },
+            {
+              "name": "time"
+            },
+            {
+              "name": "datetime-local"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "color"
+            }
+          ],
+          "description": "A string specifying the type of control to render."
+        },
+        {
           "name": "label",
-          "description": ""
+          "description": "Sets floating label value."
+        },
+        {
+          "name": "name",
+          "description": "Sets the name attribute on the internal textarea."
         },
         {
           "name": "placeholder",
-          "description": ""
+          "description": "Sets disappearing input placeholder."
         },
         {
           "name": "helper",
-          "description": ""
+          "description": "Helper text to display below the input. Display default only when focused."
         },
         {
-          "name": "icon",
-          "description": ""
+          "name": "helperPersistent",
+          "description": "boolean Always show the helper text despite focus."
         },
         {
-          "name": "iconTrailing",
-          "description": ""
+          "name": "outlined",
+          "description": "boolean Whether or not to show the material outlined variant."
         },
         {
           "name": "required",
-          "description": "boolean"
+          "description": "boolean Displays error state if value is empty and input is blurred."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Whether or not the input should be disabled."
         },
         {
           "name": "dense",
           "description": "boolean"
+        },
+        {
+          "name": "prefix",
+          "description": "Prefix text to display before the input."
+        },
+        {
+          "name": "suffix",
+          "description": "Suffix text to display after the input."
+        },
+        {
+          "name": "pattern",
+          "description": "HTMLInputElement.prototype.pattern (empty string will unset attribute)"
+        },
+        {
+          "name": "min",
+          "description": "HTMLInputElement.prototype.min (empty string will unset attribute)"
+        },
+        {
+          "name": "max",
+          "description": "\tHTMLInputElement.prototype.max (empty string will unset attribute)"
+        },
+        {
+          "name": "size",
+          "description": "HTMLInputElement.prototype.size (null will unset attribute)"
+        },
+        {
+          "name": "step",
+          "description": "HTMLInputElement.prototype.step (null will unset attribute)"
+        },
+        {
+          "name": "icon",
+          "description": "Leading icon to display in input. See cv-icon."
+        },
+        {
+          "name": "iconTrailing",
+          "description": "Trailing icon to display in input. See cv-icon."
+        },
+        {
+          "name": "maxLength",
+          "description": "Maximum length input to accept."
+        },
+        {
+          "name": "charCounter",
+          "description": "boolean Note: requires maxLength to be set. Display character counter with max length."
+        },
+        {
+          "name": "validity",
+          "description": "The ValidityState of the textfield. (Read only)"
+        },
+        {
+          "name": "autoValidate",
+          "description": "boolean Reports validity on value change rather than only on blur."
+        },
+        {
+          "name": "validationMessage",
+          "description": "Message to show in the error color when the textarea is invalid. (Helper text will not be visible)"
+        },
+        {
+          "name": "willValidate",
+          "description": "HTMLInputElement.prototype.willValidate (Read only)"
+        },
+        {
+          "name": "validityTransform",
+          "description": "Callback called before each validation check."
+        },
+        {
+          "name": "validateOnInitialRender",
+          "description": "boolean Runs validation check on initial render."
         }
       ]
     },
@@ -1965,7 +2270,59 @@
       "attributes": [
         {
           "name": "icon",
-          "description": ""
+          "description": "Optional icon for each list item."
+        },
+        {
+          "name": "isOpen",
+          "description": "boolean Whether a list item is open."
+        },
+        {
+          "name": "indentLevel",
+          "description": "Indicates which nest level a list item is at."
+        },
+        {
+          "name": "indentMultiple",
+          "description": "How much left padding (px) to add for nested elements."
+        }
+      ]
+    },
+    {
+      "name": "cv-icon-button-toggle",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-button-toggle/web-components-6kGMXrj-eP"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "on",
+          "description": "boolean Whether the toggle is activated."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect."
+        },
+        {
+          "name": "onIcon",
+          "description": "Icon to display when on is true."
+        },
+        {
+          "name": "offIcon",
+          "description": "Icon to display when on is false."
+        },
+        {
+          "name": "aria-label",
+          "description": "Accessible label for the button."
+        },
+        {
+          "name": "ariaLabelOn",
+          "description": "aria-label of the button when on is true. If set, ariaLabelOff must also be set."
+        },
+        {
+          "name": "ariaLabelOff",
+          "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
         }
       ]
     }

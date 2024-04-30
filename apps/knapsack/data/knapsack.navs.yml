@@ -135,6 +135,11 @@ byId:
     name: Icon button
     parentId: test-page
     path: /pattern/icon-button
+  icon-button-toggle:
+    id: icon-button-toggle
+    name: Icon button toggle
+    parentId: test-page
+    path: /pattern/icon-button-toggle
   icon-checkbox:
     id: icon-checkbox
     name: Icon checkbox
@@ -313,7 +318,6 @@ byId:
     parentId: test-page
     path: /pattern/tree-list
   tree-list-item:
-    hidden: true
     id: tree-list-item
     name: Tree list item
     parentId: tree-list
@@ -352,6 +356,7 @@ order:
   - form-field
   - icon
   - icon-button
+  - icon-button-toggle
   - icon-checkbox
   - icon-radio
   - linear-progress

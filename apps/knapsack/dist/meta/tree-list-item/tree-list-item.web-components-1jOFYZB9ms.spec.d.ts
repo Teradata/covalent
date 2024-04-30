@@ -9,5 +9,20 @@
  */
 
 export interface TreeListItem {
+  /**
+   * Optional icon for each list item.
+   */
   icon?: string;
+  /**
+   * Whether a list item is open.
+   */
+  isOpen?: boolean;
+  /**
+   * Indicates which nest level a list item is at.
+   */
+  indentLevel?: number;
+  /**
+   * How much left padding (px) to add for nested elements.
+   */
+  indentMultiple?: number;
 }

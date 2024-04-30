@@ -4,25 +4,137 @@
   "type": "object",
   "required": [],
   "properties": {
+    "value": {
+      "type": "string",
+      "description": "The input control's value."
+    },
+    "type": {
+      "description": "A string specifying the type of control to render.",
+      "type": "string",
+      "enum": [
+        "text",
+        "search",
+        "tel",
+        "url",
+        "email",
+        "password",
+        "date",
+        "month",
+        "week",
+        "time",
+        "datetime-local",
+        "number",
+        "color"
+      ]
+    },
     "label": {
-      "type": "string"
+      "type": "string",
+      "description": "Sets floating label value."
+    },
+    "name": {
+      "type": "string",
+      "description": "Sets the name attribute on the internal textarea."
     },
     "placeholder": {
-      "type": "string"
+      "type": "string",
+      "description": "Sets disappearing input placeholder."
     },
     "helper": {
-      "type": "string"
+      "type": "string",
+      "description": "Helper text to display below the input. Display default only when focused."
     },
-    "icon": {
-      "type": "string"
+    "helperPersistent": {
+      "description": "Always show the helper text despite focus.",
+      "type": "boolean"
     },
-    "iconTrailing": {
-      "type": "string"
+    "outlined": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether or not to show the material outlined variant."
     },
     "required": {
+      "type": "boolean",
+      "description": "Displays error state if value is empty and input is blurred."
+    },
+    "disabled": {
+      "description": "Whether or not the input should be disabled.",
       "type": "boolean"
     },
     "dense": {
+      "type": "boolean"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "Prefix text to display before the input."
+    },
+    "suffix": {
+      "type": "string",
+      "description": "Suffix text to display after the input."
+    },
+    "pattern": {
+      "type": "string",
+      "description": "HTMLInputElement.prototype.pattern (empty string will unset attribute)"
+    },
+    "min": {
+      "type": "string",
+      "description": "HTMLInputElement.prototype.min (empty string will unset attribute)"
+    },
+    "max": {
+      "type": "string",
+      "description": "\tHTMLInputElement.prototype.max (empty string will unset attribute)"
+    },
+    "size": {
+      "description": "HTMLInputElement.prototype.size (null will unset attribute)",
+      "type": "number"
+    },
+    "step": {
+      "description": "HTMLInputElement.prototype.step (null will unset attribute)",
+      "type": "number"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Leading icon to display in input. See cv-icon."
+    },
+    "iconTrailing": {
+      "type": "string",
+      "description": "Trailing icon to display in input. See cv-icon."
+    },
+    "maxLength": {
+      "description": "Maximum length input to accept.",
+      "type": "number"
+    },
+    "charCounter": {
+      "description": "Note: requires maxLength to be set. Display character counter with max length.",
+      "type": "boolean"
+    },
+    "validity": {
+      "description": "The ValidityState of the textfield. (Read only)",
+      "type": "object",
+      "required": [],
+      "properties": {}
+    },
+    "autoValidate": {
+      "description": "Reports validity on value change rather than only on blur.",
+      "type": "boolean"
+    },
+    "validationMessage": {
+      "type": "string",
+      "description": "Message to show in the error color when the textarea is invalid. (Helper text will not be visible)"
+    },
+    "willValidate": {
+      "description": "HTMLInputElement.prototype.willValidate (Read only)",
+      "type": "object",
+      "required": [],
+      "properties": {}
+    },
+    "validityTransform": {
+      "description": "Callback called before each validation check.",
+      "type": "object",
+      "required": [],
+      "properties": {}
+    },
+    "validateOnInitialRender": {
+      "description": "Runs validation check on initial render.",
       "type": "boolean"
     }
   }

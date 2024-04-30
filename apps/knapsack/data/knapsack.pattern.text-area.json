@@ -18,28 +18,118 @@
           "type": "object",
           "required": [],
           "properties": {
+            "rows": {
+              "description": "Sets number of visible text lines.",
+              "type": "number"
+            },
+            "cols": {
+              "description": "Sets the visible width of the textarea.",
+              "type": "number"
+            },
+            "value": {
+              "type": "string",
+              "description": "The input control's value."
+            },
+            "type": {
+              "description": "A string specifying the type of control to render.",
+              "type": "string",
+              "enum": [
+                "text",
+                "search",
+                "tel",
+                "url",
+                "email",
+                "password",
+                "date",
+                "month",
+                "week",
+                "time",
+                "datetime-local",
+                "number",
+                "color"
+              ]
+            },
             "label": {
               "type": "string",
-              "default": "Text area label"
+              "default": "Text area label",
+              "description": "Sets floating label value."
+            },
+            "name": {
+              "type": "string",
+              "description": "Sets the name attribute on the internal textarea."
             },
             "placeholder": {
-              "type": "string"
+              "type": "string",
+              "description": "Sets disappearing input placeholder."
             },
             "helper": {
-              "type": "string"
+              "type": "string",
+              "description": "Helper text to display below the input. Display default only when focused."
+            },
+            "helperPersistent": {
+              "description": "Always show the helper text despite focus.",
+              "type": "boolean"
             },
             "outlined": {
               "type": "boolean",
-              "default": true
+              "default": true,
+              "description": "Whether or not to show the material outlined variant."
             },
             "required": {
+              "type": "boolean",
+              "description": "Displays error state if value is empty and input is blurred."
+            },
+            "disabled": {
+              "description": "Whether or not the input should be disabled.",
+              "type": "boolean"
+            },
+            "icon": {
+              "type": "string",
+              "description": "Leading icon to display in input. See cv-icon."
+            },
+            "iconTrailing": {
+              "type": "string",
+              "description": "Trailing icon to display in input. See cv-icon."
+            },
+            "maxLength": {
+              "description": "Maximum length input to accept.",
+              "type": "number"
+            },
+            "charCounter": {
+              "description": "Note: requires maxLength to be set. Display character counter with max length.",
+              "type": "boolean"
+            },
+            "validationMessage": {
+              "type": "string",
+              "description": "Message to show in the error color when the textarea is invalid. (Helper text will not be visible)"
+            },
+            "validityState": {
+              "description": "The ValidityState of the textfield. (Read only)",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            },
+            "willValidate": {
+              "description": "HTMLInputElement.prototype.willValidate (Read only)",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            },
+            "validityTransform": {
+              "description": "Callback called before each validation check.",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            },
+            "validateOnInitialRender": {
+              "description": "Runs validation check on initial render.",
               "type": "boolean"
             }
           }
         }
       },
       "demoIds": ["L87CMmCK4T"],
-      "blockIds": []
+      "blockIds": ["pPRan5hcfd", "n2RHrAA8aN"]
     }
   ],
   "tabs": [
