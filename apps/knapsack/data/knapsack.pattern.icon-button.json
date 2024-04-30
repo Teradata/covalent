@@ -1,0 +1,74 @@
+{
+  "id": "icon-button",
+  "title": "Icon button",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-ctiCe2sAX",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/icon-button.mjs",
+      "alias": "cv-icon-button",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "Optional <img> or <svg> to display instead of using an icon font"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "icon": {
+              "type": "string",
+              "default": "houseboat",
+              "description": "Icon to display, and aria-label value when label is not defined."
+            },
+            "aria-label": {
+              "type": "string",
+              "description": "aria-label for the icon button."
+            },
+            "aria-haspopup": {
+              "type": "string",
+              "description": "Indicates the availability and type of an interactive popup element, such as menu or dialog, that can be triggered by the button."
+            },
+            "disabled": {
+              "description": "Disabled buttons cannot be interacted with and have no visual interaction effect.",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": [
+        "BueNSFTYn",
+        "IxXMQMFkBT",
+        "MQBKTe4GON",
+        "i-aFgnERP",
+        "MWNDJ0YT9M",
+        "iyfHwphwcs"
+      ],
+      "blockIds": ["1VJfetutLY"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-ctiCe2sAX"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "list",
+  "title": "List",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-fObxCsu2i8",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/list.mjs",
+      "alias": "cv-list",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "allowedPatternIds": [
+              "list-item",
+              "check-list-item",
+              "naviigation-list-item",
+              "radio-list-item"
+            ],
+            "title": "default",
+            "disallowText": true,
+            "description": "The slot to display content in the lists internal <ul> element."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "activatible": {
+              "type": "boolean",
+              "default": true,
+              "description": "Sets activated attribute on selected items which provides a focus-persistent highlight."
+            },
+            "subNav": {
+              "type": "boolean",
+              "default": true
+            },
+            "rootTabbable": {
+              "description": "When true, sets tabindex=\"0\" on the internal list. Otherwise sets tabindex=\"-1\".",
+              "type": "boolean"
+            },
+            "multi": {
+              "description": "When true, enables selection of multiple items. This will result in index being of type Set<number> and selected returning ListItemBase[].",
+              "type": "boolean"
+            },
+            "wrapFocus": {
+              "description": "When true, pressing up on the keyboard when focused on the first item will focus the last item and down when focused on the last item will focus the first item.",
+              "type": "boolean"
+            },
+            "noninteractive": {
+              "description": "When true, disables focus and pointer events (thus ripples) on the list. Used for display-only lists.",
+              "type": "boolean"
+            },
+            "itemRoles": {
+              "type": "string",
+              "description": "Determines what role attribute to set on all list items."
+            },
+            "innerAriaLabel": {
+              "type": "string",
+              "description": "aria-label of the internal <ul> element."
+            },
+            "innerRole": {
+              "type": "string",
+              "description": "Role of the internal <ul> element."
+            }
+          }
+        }
+      },
+      "demoIds": [
+        "R-bXJMtJi",
+        "kyAJAxMx7u",
+        "kaReFY5Pwj",
+        "hjXCY4fSqY",
+        "SIyOkmonoE"
+      ],
+      "blockIds": [
+        "d2f4Z5kwYu",
+        "pLTa5C5TZ8",
+        "2Ufymh0HeX",
+        "7ohNXo2fz",
+        "x3iNJ3pssh",
+        "8wD26pZwAB",
+        "yobugdVoLz",
+        "Qnk7m3kaYK"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-fObxCsu2i8"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "card",
+  "title": "Card",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-mU8MX1FHrF",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/card.mjs",
+      "alias": "cv-card",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "The default slot for the content of the card"
+          },
+          "card-actions": {
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "text",
+              "switch",
+              "icon",
+              "icon-button"
+            ],
+            "title": "card-actions",
+            "description": "The slot for action items to be included in the card"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "cardTitle": {
+              "type": "string",
+              "default": "Card title",
+              "description": "The title of the card"
+            },
+            "outlined": {
+              "type": "boolean",
+              "description": "Style the card as an outline variant"
+            },
+            "actionBar": {
+              "type": "boolean",
+              "description": "Displays the action bar"
+            },
+            "interactive": {
+              "description": "Displays the ripple affect in primary area",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["pTyIIHqJtL", "sNLUIRYsNz"],
+      "blockIds": ["744NeKvS9M"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-mU8MX1FHrF"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

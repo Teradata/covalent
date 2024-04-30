@@ -1,7 +1,7 @@
-<td-layout #layout [class]="activeTheme" [dir]="dir">
+<td-layout #layout [dir]="dir">
   <td-navigation-drawer
     sidenavTitle="Covalent"
-    [logo]="activeTheme === 'theme-dark' ? 'teradata' : 'teradata-dark'"
+    logo="teradata"
     navigationRoute="/"
     flex
   >
@@ -26,7 +26,7 @@
         hide-xs
         [routerLink]="['/']"
         class="mat-icon-logo cursor-pointer"
-        svgIcon="teradata-dark"
+        svgIcon="teradata"
       ></mat-icon>
       <span
         [routerLink]="['/']"

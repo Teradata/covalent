@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "labelText": {
+      "type": "string",
+      "default": "You have unsaved changes",
+      "description": "Text to be displayed in the action ribbon"
+    },
+    "state": {
+      "description": "State representation which can take the values:\nactive|negative|positive|caution",
+      "type": "string",
+      "enum": ["active", "negative", "positive", "caution"]
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon added to the action ribbon"
+    },
+    "iconAriaLabel": {
+      "type": "string",
+      "description": "aria-label of the icon"
+    },
+    "centered": {
+      "description": "Centers the action ribbon",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

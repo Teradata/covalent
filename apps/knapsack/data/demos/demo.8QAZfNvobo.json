@@ -1,0 +1,44 @@
+{
+  "id": "8QAZfNvobo",
+  "title": "Main",
+  "type": "data",
+  "patternId": "empty-state",
+  "templateId": "web-components-E0GwXgHJv",
+  "data": {
+    "props": {
+      "headline": "You don't have access to this area",
+      "subtitle": "You don't have permission to view this application. Please contact your system administrator for further details.",
+      "icon": "lock"
+    },
+    "slots": {
+      "button": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ],
+      "buttons": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ]
+    }
+  }
+}

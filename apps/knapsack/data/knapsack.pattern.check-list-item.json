@@ -1,0 +1,125 @@
+{
+  "id": "check-list-item",
+  "title": "Check list item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-M18BFFHM3h",
+      "title": "Web Components",
+      "path": "../../../dist/libs/components/check-list-item.mjs",
+      "alias": "cv-check-list-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "Primary text to display in the list item. Note, text must be wrapped in an inline node to be styled for disabled variant."
+          },
+          "graphic": {
+            "allowedPatternIds": ["icon"],
+            "title": "graphic",
+            "disallowText": true,
+            "allowOnlyOne": true,
+            "description": "First tile graphic to display when graphic attribute is defined."
+          },
+          "secondary": {
+            "title": "secondary",
+            "allowOnlyOne": true,
+            "description": "Secondary text displayed below primary text of a two-line list item."
+          },
+          "meta": {
+            "title": "meta",
+            "description": "Last tile meta icon or text to display when hasMeta is true."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "graphic": {
+              "description": "Determines which graphic layout to show and enables the graphic slot when value is not control or null.",
+              "type": "string",
+              "enum": ["avatar", "icon", "medium", "large", "control"]
+            },
+            "value": {
+              "type": "string",
+              "description": "Value associated with this list item."
+            },
+            "group": {
+              "type": "string",
+              "description": "Used to group items together"
+            },
+            "text": {
+              "type": "string",
+              "description": "Trimmed textContent of the list item."
+            },
+            "tabindex": {
+              "description": "Reflects tabindex and sets internal tab indices.",
+              "type": "number"
+            },
+            "left": {
+              "type": "boolean",
+              "description": "Displays the checkbox on the left. Overrides graphic."
+            },
+            "selected": {
+              "type": "boolean",
+              "description": "Denotes that the list item is selected."
+            },
+            "hasMeta": {
+              "type": "boolean",
+              "description": "Activates the meta layout tile and enables the meta slot."
+            },
+            "twoLine": {
+              "type": "boolean",
+              "description": "Activates the two-line variant and enables the secondary slot."
+            },
+            "disabled": {
+              "description": "Reflects disabled and sets internal disabled attributes.",
+              "type": "boolean"
+            },
+            "activated": {
+              "description": "Activates focus-persistent ripple.",
+              "type": "boolean"
+            },
+            "multipleGraphics": {
+              "description": "Allows arbitrary width for multiple slotted graphics.",
+              "type": "boolean"
+            },
+            "noninteractive": {
+              "description": "Disables focus and pointer events for the list item.",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["CvFKcI1eN0"],
+      "blockIds": [
+        "TQqfxanFrG",
+        "lWK-nx4EE",
+        "J0PdtL3AXY",
+        "9PM8oxxPfs",
+        "U4DOI1SpC8"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-M18BFFHM3h"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

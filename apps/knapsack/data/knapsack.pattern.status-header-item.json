@@ -1,0 +1,55 @@
+{
+  "id": "status-header-item",
+  "title": "Status header item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-55FkYSafco",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/status-header-item.js",
+      "alias": "cv-status-header-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "The default slot for other elements to be displayed in the status header item."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "label": {
+              "type": "string",
+              "default": "Status header item label",
+              "description": "Label for the status header item."
+            }
+          }
+        }
+      },
+      "demoIds": ["YHuTizup8"],
+      "blockIds": ["IlFuarr90N"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-55FkYSafco"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

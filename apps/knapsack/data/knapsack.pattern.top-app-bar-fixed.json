@@ -1,0 +1,91 @@
+{
+  "id": "top-app-bar-fixed",
+  "title": "Top app bar - fixed",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-d0oZXgy7Uj",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/top-app-bar-fixed.mjs",
+      "alias": "cv-top-app-bar-fixed",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "navigationIcon": {
+            "allowedPatternIds": ["icon", "icon-button"],
+            "title": "navigationIcon",
+            "description": "One <cv-icon-button> element to use for the left icon.",
+            "allowOnlyOne": true
+          },
+          "title": {
+            "title": "title",
+            "description": "One <mwc-icon-button> element to use for the left icon."
+          },
+          "actionItems": {
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "text",
+              "icon-button",
+              "radio",
+              "icon",
+              "switch"
+            ],
+            "title": "actionItems",
+            "description": "A number of <cv-icon-button> elements to use for action icons on the right side. "
+          },
+          "default": {
+            "title": "default",
+            "description": "Scrollable content to display under the bar. This may be the entire application."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "centerTitle": {
+              "type": "boolean",
+              "description": "Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
+            },
+            "prominent": {
+              "type": "boolean",
+              "description": "Makes the bar much taller, can be combined with dense."
+            },
+            "dense": {
+              "type": "boolean",
+              "description": "Makes the bar a little smaller for higher density applications."
+            },
+            "scrollTarget": {
+              "description": "Element used to listen for scroll events.",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            }
+          }
+        }
+      },
+      "demoIds": ["RQLhdtbJlh"],
+      "blockIds": ["FPXkiXsWDH", "nOAmfOanrd"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-d0oZXgy7Uj"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

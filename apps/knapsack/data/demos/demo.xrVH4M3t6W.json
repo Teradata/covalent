@@ -1,0 +1,26 @@
+{
+  "id": "xrVH4M3t6W",
+  "title": "Main",
+  "type": "data",
+  "patternId": "action-ribbon",
+  "templateId": "web-components-v3gk7O39kO",
+  "data": {
+    "props": {
+      "labelText": "You have unsaved changes",
+      "state": "active",
+      "centered": false,
+      "icon": "info",
+      "iconAriaLabel": "info"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ]
+    }
+  }
+}

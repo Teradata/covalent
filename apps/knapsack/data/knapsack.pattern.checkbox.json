@@ -1,0 +1,70 @@
+{
+  "id": "checkbox",
+  "title": "Checkbox",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-29FbeDQWhM",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/checkbox.mjs",
+      "alias": "cv-checkbox",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "checked": {
+              "type": "boolean",
+              "description": "Whether the checkbox is checked.",
+              "default": false
+            },
+            "indeterminate": {
+              "type": "boolean",
+              "description": "When a checkbox is the parent of a set of child checkboxes, the indeterminate state is used on the parent to indicate that some but not all of its children are checked.",
+              "default": false
+            },
+            "disabled": {
+              "type": "boolean",
+              "description": "When true, the checkbox cannot be interacted with, and renders in muted colors.",
+              "default": false
+            },
+            "reducedTouchTarget": {
+              "description": "When true, the checkbox remove padding for touchscreens and increase density. Note, the checkbox will no longer meet accessibility guidelines for touch.",
+              "type": "boolean",
+              "default": false
+            },
+            "value": {
+              "description": "The value that will be included if the checkbox is submitted in a form.",
+              "type": "string",
+              "default": ""
+            }
+          }
+        }
+      },
+      "demoIds": ["ee2EneFvzS"],
+      "blockIds": ["Fv2gGxz6Kl", "xtFF-HCkz", "sI9T2CK0mW"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-29FbeDQWhM"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

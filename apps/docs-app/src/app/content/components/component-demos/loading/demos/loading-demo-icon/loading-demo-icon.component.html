@@ -1,13 +1,13 @@
 <mat-list>
   <ng-template let-item let-last="last" ngFor [ngForOf]="itemList">
     <mat-list-item>
-      <div matListItemAvatar>
+      <div matListItemIcon>
         <ng-template
           tdLoading
           [tdLoadingUntil]="!item.value"
           [tdLoadingStrategy]="loadingStrategy.Overlay"
         >
-          <mat-icon matListItemAvatar>settings_backup_restore</mat-icon>
+          <mat-icon>settings_backup_restore</mat-icon>
         </ng-template>
       </div>
       <h3 matListItemTitle>{{ item.label }}</h3>

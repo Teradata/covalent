@@ -5,6 +5,23 @@
       background-color: transparent;
     }
 
+    a[target='_blank'] {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      padding-right: 16px;
+
+      &::after {
+        content: 'open_in_new';
+        font-family: var(--mdc-icon-font, 'Material Symbols Outlined');
+        padding-left: 2px;
+        text-decoration: none;
+        position: absolute;
+        right: 0;
+        top: 1px;
+      }
+    }
+
     a:active,
     a:hover {
       outline-width: 0;
@@ -630,6 +647,18 @@
     .task-list-item input {
       margin: 0 0.2em 0.25em -1.6em;
       vertical-align: middle;
+    }
+
+    td.markdown-align-center {
+      text-align: center;
+    }
+
+    td.markdown-align-left {
+      text-align: left;
+    }
+
+    td.markdown-align-right {
+      text-align: right;
     }
   }
 }

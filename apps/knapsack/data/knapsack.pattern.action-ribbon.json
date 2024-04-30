@@ -1,0 +1,125 @@
+{
+  "id": "action-ribbon",
+  "title": "Action ribbon",
+  "description": "Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-v3gk7O39kO",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/action-ribbon.mjs",
+      "alias": "cv-action-ribbon",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "action-items": {
+            "allowedPatternIds": ["button", "checkbox"],
+            "title": "action-items",
+            "description": "Action items for the action-ribbon"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "labelText": {
+              "type": "string",
+              "default": "You have unsaved changes",
+              "description": "Text to be displayed in the action ribbon"
+            },
+            "state": {
+              "description": "State representation which can take the values:\nactive|negative|positive|caution",
+              "type": "string",
+              "enum": ["active", "negative", "positive", "caution"]
+            },
+            "icon": {
+              "type": "string",
+              "description": "Icon added to the action ribbon"
+            },
+            "iconAriaLabel": {
+              "type": "string",
+              "description": "aria-label of the icon"
+            },
+            "centered": {
+              "description": "Centers the action ribbon",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      },
+      "demoIds": ["xrVH4M3t6W"],
+      "blockIds": ["T0V2X8g9lD", "vd3AOFR1Fb", "s7sSsuyqQk"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-v3gk7O39kO"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": [
+        "B2EzynPRu8",
+        "eoYSn9Yrdo",
+        "zocaUxSRSz",
+        "Uz3dQxAX-n",
+        "thh-22knqp",
+        "ZK8LyBinox",
+        "PFC7cX2aF0",
+        "6rqLytvaFs",
+        "XCT2aN2Nrb",
+        "v7BEEY6B9e",
+        "466eQvPys",
+        "oQXrwAxDTv",
+        "tISrkHkfAA",
+        "WHM4iCalw",
+        "5ADgJ2oIdE",
+        "jrGP4hwjgV",
+        "QboPzLeuo",
+        "Tl1SJztl17",
+        "tmMKME3X8o",
+        "gJbrxd8w3u",
+        "E9X7RkPjL6",
+        "iwXt0PYB4f",
+        "h6zifoSbYW",
+        "ZLzuLEQO6n",
+        "O7SLhoTrc7",
+        "CoGP4K5ttX",
+        "b8Foq4l-U",
+        "2yHqdpL2om",
+        "H54-mVe-p",
+        "3wnfnwTXgG",
+        "R1wSZmt-TF",
+        "HQx3w73gvK",
+        "zlD291QgrQ",
+        "Cv3Xr8VlBo",
+        "B1K2JFNHkt",
+        "rtPCzklJvh",
+        "fcbxW9fx6B",
+        "OLPC86ntOi",
+        "CM5okK93mA",
+        "lz6847hm1q",
+        "u-SaGSXLzK",
+        "hhoBvzHMuk",
+        "nymUCCPXpO",
+        "w8KdbVy5x",
+        "b8thzdh4QQ",
+        "MZy0lSp2MK",
+        "Yq-MTdzfns",
+        "DcP2cc8Bg7",
+        "OEyAa6Yh6",
+        "gYAVv4-IHV"
+      ]
+    }
+  ]
+}

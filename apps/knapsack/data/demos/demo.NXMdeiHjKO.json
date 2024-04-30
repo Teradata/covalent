@@ -1,0 +1,44 @@
+{
+  "id": "NXMdeiHjKO",
+  "title": "Main",
+  "type": "data",
+  "patternId": "toolbar",
+  "templateId": "web-components-A6-16QhSaM",
+  "data": {
+    "props": {},
+    "slots": {
+      "title": [
+        {
+          "type": "text",
+          "text": "Title toolbar"
+        }
+      ],
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "patternId": "textfield",
+          "templateId": "web-components-M4zyalwdNJ",
+          "demoId": "tU8Ze3Af9p"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "i-aFgnERP"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "MWNDJ0YT9M"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "iyfHwphwcs"
+        }
+      ]
+    }
+  }
+}

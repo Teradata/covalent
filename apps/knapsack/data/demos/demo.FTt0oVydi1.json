@@ -1,0 +1,38 @@
+{
+  "id": "FTt0oVydi1",
+  "title": "Main",
+  "type": "data",
+  "patternId": "icon-checkbox",
+  "templateId": "web-components-jTiv8OpG9M",
+  "data": {
+    "props": {
+      "width": "200",
+      "height": "160",
+      "checked": false,
+      "disabled": false,
+      "indeterminate": false,
+      "iconOnly": false,
+      "reducedTouchTarget": false
+    },
+    "slots": {
+      "icon": [
+        {
+          "type": "template-demo",
+          "patternId": "icon",
+          "templateId": "web-components-N8bzRbfpuX",
+          "demoId": "bn4zy44TYR"
+        }
+      ],
+      "text": [
+        {
+          "type": "text",
+          "text": "Balance"
+        },
+        {
+          "type": "text",
+          "text": "Every week"
+        }
+      ]
+    }
+  }
+}

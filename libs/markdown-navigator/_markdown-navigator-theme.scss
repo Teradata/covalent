@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+
+@mixin covalent-markdown-navigator-typography($fontConfig) {
+  td-markdown-navigator {
+    td-breadcrumbs .mat-button {
+      font: mat.get-theme-typography($fontConfig, caption);
+    }
+
+    .breadcrumb-current-title {
+      font: mat.get-theme-typography($fontConfig, headline-5);
+    }
+  }
+}
+
+@mixin covalent-markdown-navigator-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $secondary: map-get($foreground, secondary-text);
+
+  td-markdown-navigator {
+    td-breadcrumbs {
+      color: $secondary;
+    }
+  }
+}

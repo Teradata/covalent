@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "checked": {
+      "type": "boolean",
+      "description": "True when the icon checkbox is checked"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Disables the icon checkbox and renders in muted colors."
+    },
+    "iconOnly": {
+      "description": "Displays the icon without any text in the icon checkbox",
+      "type": "boolean"
+    },
+    "value": {
+      "type": "string",
+      "description": "The value that will be included if the checkbox is submitted in a form."
+    },
+    "width": {
+      "type": "string",
+      "description": "Sets the width of the icon checkbox",
+      "default": "200"
+    },
+    "height": {
+      "type": "string",
+      "description": "Sets the height of the icon checkbox",
+      "default": "160"
+    }
+  }
+}

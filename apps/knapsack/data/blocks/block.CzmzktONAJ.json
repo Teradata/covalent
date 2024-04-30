@@ -1,0 +1,11 @@
+{
+  "id": "CzmzktONAJ",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["cv.theme.light.palettes"],
+    "include": "negative",
+    "exclude": ""
+  }
+}

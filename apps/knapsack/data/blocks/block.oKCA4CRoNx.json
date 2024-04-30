@@ -1,0 +1,23 @@
+{
+  "id": "oKCA4CRoNx",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Words like \"was\" and \"by\" may indicate that you're writing in passive voice. Scan for these words and rework sentences where they appear.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

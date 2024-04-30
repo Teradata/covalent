@@ -1,0 +1,11 @@
+{
+  "id": "KCxPtt27ce",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["cv.theme.dark.colors"],
+    "include": "positive",
+    "exclude": "on"
+  }
+}

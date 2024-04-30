@@ -1,0 +1,76 @@
+{
+  "id": "tooltip",
+  "title": "Tooltip",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-erhVvpq9vk",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/tooltip.mjs",
+      "alias": "cv-tooltip",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "The default slot for tooltip content."
+          },
+          "actionItems": {
+            "title": "actionItems",
+            "description": "The slot for action items of a rich tooltip."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "persistent": {
+              "description": "Makes the tooltip persistent.",
+              "type": "boolean"
+            },
+            "rich": {
+              "description": "Displays the rich tooltip.",
+              "type": "boolean"
+            },
+            "richTitle": {
+              "type": "string",
+              "description": "The title of the rich tooltip."
+            },
+            "hidedelay": {
+              "title": "Hide delay",
+              "description": "Delay to hide tooltip in MS",
+              "type": "number",
+              "default": 5000
+            },
+            "showDelay": {
+              "type": "string",
+              "description": "Delay to show the tooltip in MS"
+            }
+          }
+        }
+      },
+      "demoIds": ["V1YF-oKSJk"],
+      "blockIds": ["BhmFof8UfV"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-erhVvpq9vk"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

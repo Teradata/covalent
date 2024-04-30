@@ -1,6 +1,7 @@
 export * from './action-ribbon/action-ribbon';
 export * from './alert/alert';
 export * from './app-shell/app-shell';
+export * from './badge/badge';
 export * from './button/button';
 export * from './checkbox/checkbox';
 export * from './card/card';
@@ -11,8 +12,12 @@ export * from './code-snippet/code-snippet';
 export * from './dialog/dialog';
 export * from './drawer/drawer';
 export * from './empty-state/empty-state';
+export * from './expansion-panel/expansion-panel';
+export * from './expansion-panel/expansion-panel-item';
+export * from './formfield/formfield';
 export * from './icon/icon';
 export * from './icon-button/icon-button';
+export * from './icon-button-toggle/icon-button-toggle';
 export * from './icon-checkbox/icon-check-toggle';
 export * from './icon-radio/icon-radio-toggle';
 export * from './linear-progress/linear-progress';
@@ -43,5 +48,3 @@ export * from './top-app-bar/top-app-bar-fixed';
 export * from './tree-list/tree-list';
 export * from './tree-list/tree-list-item';
 export * from './typography/typography';
-
-import '../theme/theme.scss';

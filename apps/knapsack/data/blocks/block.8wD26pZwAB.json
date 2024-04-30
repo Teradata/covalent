@@ -1,0 +1,48 @@
+{
+  "id": "8wD26pZwAB",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "** "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "SelectedDetail"
+            },
+            {
+              "type": "text",
+              "text": " is an interface of the following type:"
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": null
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "interface SelectedDetail<T extends MWCListIndex = MWCListIndex> {\n  index: T;\n  diff: T extends Set<number> ? IndexDiff: undefined;\n}"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

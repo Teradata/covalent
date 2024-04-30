@@ -1,0 +1,19 @@
+{
+  "id": "w0H1gm2jvp",
+  "title": "Main",
+  "type": "data",
+  "patternId": "expansion-panel-item",
+  "templateId": "web-components-vBLifAApG",
+  "data": {
+    "props": {
+      "title": "Title",
+      "index": 0,
+      "contentPreview": "content preview",
+      "open": false,
+      "showFooter": false
+    },
+    "slots": {
+      "content": []
+    }
+  }
+}

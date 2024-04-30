@@ -1,0 +1,23 @@
+{
+  "id": "kTGZW9oTpg",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "In active voice, the subject of the sentence does the action. In passive voice, the subject of the sentence has the action done to it.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

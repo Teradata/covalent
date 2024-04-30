@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "The content to be displayed in the badge"
+    },
+    "max": {
+      "description": "Caps the value of badge content",
+      "type": "number"
+    },
+    "size": {
+      "description": "Sets the size of the badge with the values:\nsmall | large",
+      "type": "string",
+      "enum": ["small", "large"]
+    },
+    "hideBadge": {
+      "description": "Controls the visibility of the badge",
+      "type": "boolean"
+    },
+    "verticalAlignment": {
+      "description": "Aligns the badge vertically in the wrapped element with values: top | bottom",
+      "type": "string",
+      "enum": ["top", "bottom"]
+    },
+    "horizontalAlignment": {
+      "description": "Aligns the badge horizontally in the wrapped element with values: left | right",
+      "type": "string",
+      "enum": ["left", "right"]
+    },
+    "showZero": {
+      "description": "Shows the badge when content is zero",
+      "type": "boolean"
+    }
+  }
+}

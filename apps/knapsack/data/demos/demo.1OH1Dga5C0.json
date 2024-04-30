@@ -1,0 +1,65 @@
+{
+  "id": "1OH1Dga5C0",
+  "title": "Main",
+  "type": "data",
+  "patternId": "status-header",
+  "templateId": "web-components-UDLnfGbB2W",
+  "data": {
+    "props": {
+      "titleText": "Active item details",
+      "statusText": "In progress",
+      "statusHelper": "the helper text for the status",
+      "state": "active"
+    },
+    "slots": {
+      "status-header-actions": [
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "IxXMQMFkBT"
+        }
+      ],
+      "status-header-icon": [
+        {
+          "type": "template-demo",
+          "patternId": "circular-progress",
+          "templateId": "web-components-rw6v6c4fnU",
+          "demoId": "gMTyjmInaG"
+        }
+      ],
+      "status-header-text": [
+        {
+          "type": "template-demo",
+          "patternId": "status-header-item",
+          "templateId": "web-components-55FkYSafco",
+          "demoId": "YHuTizup8"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "status-header-item",
+          "templateId": "web-components-55FkYSafco",
+          "demoId": "YHuTizup8"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "status-header-item",
+          "templateId": "web-components-55FkYSafco",
+          "demoId": "YHuTizup8"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "status-header-item",
+          "templateId": "web-components-55FkYSafco",
+          "demoId": "YHuTizup8"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "status-header-item",
+          "templateId": "web-components-55FkYSafco",
+          "demoId": "YHuTizup8"
+        }
+      ]
+    }
+  }
+}

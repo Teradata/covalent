@@ -2,9 +2,34 @@
 
 @include card.core-styles;
 
+:host([fullHeight]) {
+  display: block;
+  height: 100%;
+}
+
+.mdc-card {
+  --mdc-theme-surface: var(--cv-theme-surface-container-lowest, #ffffff);
+
+  &.cv-height-full {
+    height: 100%;
+
+    .mdc-card__primary-action {
+      height: 100%;
+    }
+  }
+}
+
+.mdc-typography--headline5 {
+  font-family: var(--mdc-typography-headline5-font-family);
+  font-size: var(--mdc-typography-headline5-font-size);
+  font-weight: var(--mdc-typography-headline5-font-weight);
+  line-height: var(--mdc-typography-headline5-line-height);
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
 .mdc-card__actions {
   color: var(--mdc-theme-text-primary-on-background);
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .mdc-card__actions:first-of-type {

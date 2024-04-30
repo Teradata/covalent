@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": ["label"],
+  "properties": {
+    "label": {
+      "type": "string",
+      "default": "Chip",
+      "description": "The text label of the chip"
+    },
+    "state": {
+      "description": "The state representation with the values: secondary|negative|positive|caution",
+      "type": "string",
+      "enum": ["secondary", "negative", "positive", "caution"]
+    },
+    "icon": {
+      "type": "string"
+    },
+    "filter": {
+      "description": "Sets the filter chip variant",
+      "type": "boolean"
+    },
+    "trailingIcon": {
+      "description": "Moves the icon to a trailing position",
+      "type": "boolean"
+    },
+    "avatar": {
+      "description": "Treats the leading icon like an avatar",
+      "type": "boolean"
+    },
+    "disabled": {
+      "description": "Disables the chip",
+      "type": "boolean"
+    }
+  }
+}

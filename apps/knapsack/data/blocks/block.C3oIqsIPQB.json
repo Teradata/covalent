@@ -1,0 +1,9 @@
+{
+  "id": "C3oIqsIPQB",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["light", "dark"]
+  }
+}

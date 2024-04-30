@@ -7,25 +7,16 @@
   display: flex;
   flex-direction: column;
 
-  td-breadcrumbs::ng-deep {
-    margin: 16px 16px 8px;
-
-    mat-icon {
-      font-size: 16px;
-      margin-left: 1px;
-      margin-right: 0;
-      margin-top: -1px;
-    }
+  .breadcrumb-current-title {
+    margin-bottom: 16px;
+    padding-left: 16px;
   }
 
   .breadcrumb-end-icon {
-    line-height: 16px;
-    margin-top: 1px;
-  }
-
-  .breadcrumb-current-title {
-    font-weight: 700;
-    margin: 0 16px 16px;
+    margin-left: 8px;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
   }
 
   .scroll-area {
@@ -42,6 +33,10 @@
 
   .td-markdown-list > .mat-list {
     padding-top: 0;
+  }
+
+  td-breadcrumbs {
+    padding: 8px 8px 0 16px;
   }
 
   td-flavored-markdown-loader {

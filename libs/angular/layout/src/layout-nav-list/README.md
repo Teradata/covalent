@@ -74,16 +74,7 @@ To disable the sidenav action, just set the input to false.
 Example for Nav List Layout:
 
 ```html
-<td-layout-nav-list
-  sidenavTitle="title"
-  logo="logo"
-  icon="icon"
-  opened="true"
-  mode="side"
-  sidenavWidth="350px"
-  color="primary"
-  navigationRoute="/"
->
+<td-layout-nav-list sidenavTitle="title" logo="logo" icon="icon" opened="true" mode="side" sidenavWidth="350px" navigationRoute="/">
   <button mat-icon-button td-menu-button>
     // can use `[tdLayoutToggle]` to toggle main sidenav
     <mat-icon>menu</mat-icon>
@@ -98,8 +89,6 @@ Example for Nav List Layout:
   <div td-toolbar-content>... right toolbar content</div>
   ... main content
   <td-layout-footer-inner> ... sub footer content </td-layout-footer-inner>
-  <td-layout-footer color="primary">
-    // color is optional ... main footer content
-  </td-layout-footer>
+  <td-layout-footer> // color is optional ... main footer content </td-layout-footer>
 </td-layout-nav-list>
 ```

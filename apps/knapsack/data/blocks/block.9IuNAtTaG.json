@@ -1,0 +1,23 @@
+{
+  "id": "9IuNAtTaG",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "We do not use title case. Page titles, actions, modal titles, etc should use sentence case. Sentence case capitalizes the first letter of the first word.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

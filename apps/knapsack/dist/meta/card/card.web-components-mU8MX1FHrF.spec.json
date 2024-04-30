@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "cardTitle": {
+      "type": "string",
+      "default": "Card title",
+      "description": "The title of the card"
+    },
+    "outlined": {
+      "type": "boolean",
+      "description": "Style the card as an outline variant"
+    },
+    "actionBar": {
+      "type": "boolean",
+      "description": "Displays the action bar"
+    },
+    "interactive": {
+      "description": "Displays the ripple affect in primary area",
+      "type": "boolean"
+    }
+  }
+}

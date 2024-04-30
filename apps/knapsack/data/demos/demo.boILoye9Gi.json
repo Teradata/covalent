@@ -1,0 +1,34 @@
+{
+  "id": "boILoye9Gi",
+  "title": "Main",
+  "type": "data",
+  "patternId": "menu",
+  "templateId": "web-components-hY3y1MyhrP",
+  "data": {
+    "props": {
+      "open": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "list-item",
+          "templateId": "web-components-ytRTf8wtxn",
+          "demoId": "qgGc8WUNHQ"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "list-item",
+          "templateId": "web-components-ytRTf8wtxn",
+          "demoId": "qgGc8WUNHQ"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "list-item",
+          "templateId": "web-components-ytRTf8wtxn",
+          "demoId": "qgGc8WUNHQ"
+        }
+      ]
+    }
+  }
+}

@@ -11,6 +11,12 @@ export class MarkdownDemoComponent {
     # Heading (H1)
     ## Sub Heading (H2)
     ### Steps (H3)
+
+    | Tables        | Are           | Cool  |
+    | ------------- |:-------------:| -----:|
+    | **col 3 is**  | right-aligned | $1600 |
+    | col 2 is      | *centered*    |   $12 |
+    | zebra stripes | are neat      |    $1 |
   `;
 
   jumpToH1(): void {

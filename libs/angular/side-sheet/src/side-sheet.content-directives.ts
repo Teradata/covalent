@@ -116,8 +116,8 @@ export class CovalentSideSheetTitleDirective implements OnInit {
       Promise.resolve().then(() => {
         const container = this._dialogRef._containerInstance;
 
-        if (container && !container._ariaLabelledBy) {
-          container._ariaLabelledBy = this.id;
+        if (container && !container._ariaLabelledByQueue.includes(this.id)) {
+          container._ariaLabelledByQueue.push(this.id);
         }
       });
     } else {

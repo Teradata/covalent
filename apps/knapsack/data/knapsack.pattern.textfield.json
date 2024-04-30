@@ -1,0 +1,66 @@
+{
+  "id": "textfield",
+  "title": "Text field",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-M4zyalwdNJ",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/textfield.mjs",
+      "alias": "cv-textfield",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "placeholder": {
+              "type": "string"
+            },
+            "helper": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "iconTrailing": {
+              "type": "string"
+            },
+            "required": {
+              "type": "boolean"
+            },
+            "dense": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["zYujvGxjlZ", "tU8Ze3Af9p"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-M4zyalwdNJ"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

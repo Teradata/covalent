@@ -31,7 +31,17 @@ export class ToolbarComponent implements OnInit {
     private _dir: Dir,
     @Inject(DOCUMENT) private _document: any
   ) {
+    const localTheme = localStorage.getItem('theme');
+
     this._dir.dir = this.dir;
+
+    // Set active theme from user dark theme preference if not set locally
+    this.activeTheme =
+      localTheme ??
+      (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'theme-dark'
+        : 'theme-light');
   }
 
   async ngOnInit(): Promise<void> {
@@ -53,7 +63,15 @@ export class ToolbarComponent implements OnInit {
   get activeTheme(): string | null {
     return localStorage.getItem('theme');
   }
+  set activeTheme(activeTheme: string) {
+    document.querySelector('body')?.classList.remove('theme-dark');
+    document.querySelector('body')?.classList.remove('theme-light');
+
+    localStorage.setItem('theme', activeTheme);
+    document.querySelector('body')?.classList.add(activeTheme);
+  }
+
   theme(theme: string): void {
-    localStorage.setItem('theme', theme);
+    this.activeTheme = theme;
   }
 }

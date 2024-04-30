@@ -1,0 +1,144 @@
+{
+  "id": "menu",
+  "title": "Menu",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-hY3y1MyhrP",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/menu.mjs",
+      "alias": "cv-menu",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "allowedPatternIds": ["list-item"],
+            "title": "default",
+            "disallowText": true,
+            "description": "Content to display in the menus internal <cv-list> element."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "open": {
+              "type": "boolean",
+              "default": true,
+              "description": "Opens the menu."
+            },
+            "anchor": {
+              "type": "string",
+              "description": "Determines from which element the floating menu should calculate sizing and position offsets. In the default case, both mwc-menu and the anchor should share a parent with position:relative. Changing anchor typically requires absolute or fixed. Takes one of: HTMLElement | null"
+            },
+            "corner": {
+              "type": "string",
+              "enum": [
+                "TOP_LEFT",
+                "TOP_RIGHT",
+                "BOTTOM_LEFT",
+                "BOTTOM_RIGHT",
+                "TOP_START",
+                "TOP_END",
+                "BOTTOM_START",
+                "BOTTOM_END"
+              ]
+            },
+            "menuCorner": {
+              "description": "Horizontal corner of the menu from which the menu should position itself. NOTE: Only horizontal corners are supported.",
+              "type": "string",
+              "enum": ["START", "END"]
+            },
+            "x": {
+              "description": "Sets horizontal position when absolute. When given an anchor, sets horizontal position relative to anchor at given corner. Requires y not to be null.",
+              "type": "number"
+            },
+            "y": {
+              "description": "Sets vertical position when absolute. When given an anchor, sets vertical position relative to anchor at given corner. Requires x not to be null.",
+              "type": "number"
+            },
+            "defaultFocus": {
+              "description": "Item to focus upon menu open.",
+              "type": "string",
+              "enum": ["NONE", "LIST_ROOT", "FIRST_ITEM", "LAST_ITEM"]
+            },
+            "innerAriaLabel": {
+              "type": "string",
+              "description": "Proxies to cv-list's innerAriaLabel property."
+            },
+            "innerRole": {
+              "description": "Proxies to cv-list's innerRole property",
+              "type": "string",
+              "enum": ["menu", "listbox"]
+            },
+            "quick": {
+              "description": "Whether to skip the opening animation.",
+              "type": "boolean"
+            },
+            "absolute": {
+              "description": "Makes the menu's position absolute which will be relative to whichever ancestor has position:relative. Setting x and y will modify the menu's left and top. Setting anchor will attempt to position the menu to the anchor.",
+              "type": "boolean"
+            },
+            "fixed": {
+              "description": "Makes the menu's position fixed which will be relative to the window. Setting x and y will modify the menu's left and top. Setting anchor will attempt to position the menu to the anchor's immediate position before opening.",
+              "type": "boolean"
+            },
+            "forceGroupSelection": {
+              "description": "Forces a menu group to have a selected item by preventing deselection of menu items in menu groups via user interaction.",
+              "type": "boolean"
+            },
+            "fullwidth": {
+              "description": "Sets surface width to 100%.",
+              "type": "boolean"
+            },
+            "stayOpenOnBodyClick": {
+              "description": "Prevents the menu from closing when clicking outside the menu.",
+              "type": "boolean"
+            },
+            "wrapFocus": {
+              "description": "Proxies to cv-list's wrapFocus property.",
+              "type": "boolean"
+            },
+            "multi": {
+              "description": "Proxies to cv-list's multi property.",
+              "type": "boolean"
+            },
+            "activatable": {
+              "description": "Proxies to cv-list's activatable property.",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["boILoye9Gi"],
+      "blockIds": [
+        "MNWCL2mIGs",
+        "dPlJPL5Jcu",
+        "JbCt0FJ6u",
+        "MVgOOr6WnP",
+        "0dX3ojt8-P",
+        "HYX-451UaR"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-hY3y1MyhrP"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

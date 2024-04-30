@@ -74,6 +74,7 @@ export class ChipBase extends LitElement {
       'mdc-evolution-chip--selectable': this.filter,
       'mdc-evolution-chip--with-avatar': this.avatar,
       secondary: this.state === 'secondary',
+      positive: this.state === 'positive',
       negative: this.state === 'negative',
       caution: this.state === 'caution',
     };

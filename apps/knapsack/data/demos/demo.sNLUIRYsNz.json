@@ -1,0 +1,23 @@
+{
+  "id": "sNLUIRYsNz",
+  "title": "Expansion panel",
+  "description": "A description",
+  "type": "data",
+  "patternId": "card",
+  "templateId": "web-components-mU8MX1FHrF",
+  "data": {
+    "props": {
+      "cardTitle": "Card title"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "expansion-panel",
+          "templateId": "web-components-Vj98q2D8hw",
+          "demoId": "Yu7DvlfMdG"
+        }
+      ]
+    }
+  }
+}

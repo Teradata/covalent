@@ -7,6 +7,10 @@
   /* For max height */
   overflow: hidden;
 
+  .code-slot {
+    display: none;
+  }
+
   pre {
     margin: 0;
     padding: 16px 0;
@@ -16,23 +20,27 @@
       padding: 0 16px;
       display: block;
       overflow-x: auto;
+      font-family: var(--cv-theme-code-font-family);
+      font-size: var(--cv-theme-code-font-size);
+      font-weight: var(--cv-theme-code-font-weight);
+      line-height: var(--cv-theme-code-line-height);
     }
   }
 
   .hljs {
-    color: var(--cov-theme-code-snippet-color, #abb2bf);
+    color: var(--cv-theme-code-snippet-color, #abb2bf);
   }
 
   .hljs-comment,
   .hljs-quote {
-    color: var(--cov-theme-code-snippet-comment, #5c6370);
+    color: var(--cv-theme-code-snippet-comment, #5c6370);
     font-style: italic;
   }
 
   .hljs-doctag,
   .hljs-formula,
   .hljs-keyword {
-    color: var(--cov-theme-code-snippet-keyword, #c678dd);
+    color: var(--cv-theme-code-snippet-keyword, #c678dd);
   }
 
   .hljs-deletion,
@@ -40,11 +48,11 @@
   .hljs-section,
   .hljs-selector-tag,
   .hljs-subst {
-    color: var(--cov-theme-code-snippet-selector, #e06c75);
+    color: var(--cv-theme-code-snippet-selector, #e06c75);
   }
 
   .hljs-literal {
-    color: var(--cov-theme-code-snippet-literal, #56b6c2);
+    color: var(--cv-theme-code-snippet-literal, #56b6c2);
   }
 
   .hljs-addition,
@@ -52,7 +60,7 @@
   .hljs-meta .hljs-string,
   .hljs-regexp,
   .hljs-string {
-    color: var(--cov-theme-code-snippet-string, #98c379);
+    color: var(--cv-theme-code-snippet-string, #98c379);
   }
 
   .hljs-attr,
@@ -63,7 +71,7 @@
   .hljs-template-variable,
   .hljs-type,
   .hljs-variable {
-    color: var(--cov-theme-code-snippet-variable, #d19a66);
+    color: var(--cv-theme-code-snippet-variable, #d19a66);
   }
 
   .hljs-bullet,
@@ -72,13 +80,13 @@
   .hljs-selector-id,
   .hljs-symbol,
   .hljs-title {
-    color: var(--cov-theme-code-snippet-title, #61aeee);
+    color: var(--cv-theme-code-snippet-title, #61aeee);
   }
 
   .hljs-built_in,
   .hljs-class .hljs-title,
   .hljs-title.class_ {
-    color: var(--cov-theme-code-snippet-class, #e6c07b);
+    color: var(--cv-theme-code-snippet-class, #e6c07b);
   }
 
   .hljs-emphasis {

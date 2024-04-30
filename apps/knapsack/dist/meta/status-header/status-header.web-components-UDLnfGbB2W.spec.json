@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "titleText": {
+      "type": "string",
+      "default": "Active item details",
+      "description": "Title of the status header."
+    },
+    "statusText": {
+      "type": "string",
+      "default": "In progress",
+      "description": "Text for the current status."
+    },
+    "statusHelper": {
+      "type": "string",
+      "default": "the helper text for the status",
+      "description": "Helper text for the current status."
+    },
+    "state": {
+      "description": "Current state of the status header.",
+      "type": "string",
+      "enum": ["active", "positive", "caution", "error", "neutral"]
+    }
+  }
+}

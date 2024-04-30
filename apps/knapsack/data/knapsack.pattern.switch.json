@@ -1,0 +1,61 @@
+{
+  "id": "switch",
+  "title": "Switch",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-tGj2TvSrpD",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/switch.mjs",
+      "alias": "cv-switch",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "selected": {
+              "description": "If true, the switch is on. If false, the switch is off.",
+              "type": "boolean"
+            },
+            "disabled": {
+              "description": "Indicates whether or not the switch is disabled.",
+              "type": "boolean"
+            },
+            "name": {
+              "type": "string",
+              "description": "The form name of the switch."
+            },
+            "value": {
+              "type": "string",
+              "description": "The value of the switch to submit in a form when selected."
+            }
+          }
+        }
+      },
+      "demoIds": ["U89p0LyOsP"],
+      "blockIds": ["7JoX98TYsU"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-tGj2TvSrpD"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

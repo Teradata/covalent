@@ -4,6 +4,9 @@
   "exports": {
     ".": {
       "sass": "./theming/_all-theme.scss"
+    },
+    "./theming/*": {
+      "sass": "./theming/*.scss"
     }
   },
   "repository": {

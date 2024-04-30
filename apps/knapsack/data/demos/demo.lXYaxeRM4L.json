@@ -1,0 +1,15 @@
+{
+  "id": "lXYaxeRM4L",
+  "title": "Main",
+  "type": "data",
+  "patternId": "linear-progress",
+  "templateId": "web-components-2ew8-hMQkv",
+  "data": {
+    "props": {
+      "indeterminate": true,
+      "reverse": false,
+      "closed": false
+    },
+    "slots": {}
+  }
+}

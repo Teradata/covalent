@@ -6,7 +6,7 @@
   "prefix": "covalent",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular"],
       "options": {
         "project": "libs/angular/ng-package.json",
@@ -22,16 +22,8 @@
       },
       "defaultConfiguration": "production"
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/angular"],
-      "options": {
-        "jestConfig": "libs/angular/jest.config.js",
-        "passWithNoTests": true
-      }
-    },
     "build-scss": {
-      "builder": "nx:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "mkdir -p dist/libs/angular/common/",
@@ -42,8 +34,16 @@
         "parallel": false
       }
     },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/angular"],
+      "options": {
+        "jestConfig": "libs/angular/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
           "libs/angular/src/**/*.ts",

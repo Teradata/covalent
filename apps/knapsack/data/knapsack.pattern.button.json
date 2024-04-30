@@ -1,0 +1,112 @@
+{
+  "id": "button",
+  "title": "Button",
+  "description": "Common buttons prompt most actions in a UI",
+  "statuses": {
+    "main": "needsDev"
+  },
+  "templates": [
+    {
+      "id": "web-components-raE1x4tYL",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/button.js",
+      "alias": "cv-button",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "label": {
+              "description": "Label to display for the button, and aria-label",
+              "type": "string"
+            },
+            "icon": {
+              "type": "string",
+              "description": "Icon to display, and aria-label value when label is not defined"
+            },
+            "color": {
+              "type": "string",
+              "enum": [
+                "primary",
+                "secondary",
+                "emphasis",
+                "neutral",
+                "caution",
+                "negative",
+                "positive"
+              ],
+              "description": "Applies the button color"
+            },
+            "raised": {
+              "description": "Creates a contained button that is elevated above the surface",
+              "type": "boolean"
+            },
+            "unelevated": {
+              "description": "Creates a contained button that is flush with the surface",
+              "type": "boolean"
+            },
+            "outlined": {
+              "description": "Creates an outlined button that is flush with the surface",
+              "type": "boolean"
+            },
+            "dense": {
+              "description": "Makes the button text and container slightly smaller",
+              "type": "boolean"
+            },
+            "disabled": {
+              "description": "Disabled buttons cannot be interacted with and have no visual interaction effect",
+              "type": "boolean"
+            },
+            "expandContent": {
+              "description": "When true, the space after the label and before any trailing icon, where default slotted content is rendered, is expanded to fit the available space inside the button",
+              "type": "boolean"
+            },
+            "fullwidth": {
+              "description": "When true, the button is expanded to fit the entire available space.",
+              "type": "boolean"
+            },
+            "trailingIcon": {
+              "description": "When true, icon will be displayed after label",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["E5ymzzEPs", "wJJ2tksHEK"],
+      "blockIds": ["Yy3EHn1oaI"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-raE1x4tYL"
+    },
+    {
+      "id": "0FNWLRc1DE",
+      "type": "designSrc"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": ["eKyEb1kEVx"]
+    }
+  ],
+  "designSrcComponentsById": {
+    "0FNWLRc1DE": {
+      "id": "0FNWLRc1DE",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7073:36396"
+    }
+  }
+}

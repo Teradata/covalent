@@ -1,0 +1,105 @@
+{
+  "id": "select",
+  "title": "Select",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-qWXTtv81jY",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/select.mjs",
+      "alias": "cv-select",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "allowedPatternIds": ["list-item"],
+            "title": "default",
+            "disallowText": true,
+            "description": "Content to display in the selects internal <cv-menu> element."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["required", "outlined"],
+          "properties": {
+            "label": {
+              "type": "string",
+              "description": "Sets floating label value. NOTE: The label will not float if the selected item has a falsey value property."
+            },
+            "value": {
+              "type": "string",
+              "description": "The select control's value determined by the value property of the currently selected list item. Setting value will attempt to select a list-item with the same value. If one does not match, it will set itself to \"\" and the index to -1. Setting value before the list item is attached will not select the item."
+            },
+            "validationMessage": {
+              "type": "string",
+              "description": "Message to show in the error color when the select is invalid. (Helper text will not be visible)"
+            },
+            "helper": {
+              "type": "string",
+              "description": "Helper text to display below the select. Always displays by default."
+            },
+            "icon": {
+              "type": "string",
+              "description": "Leading icon to display in select. See mwc-icon. Note: for proper list spacing, each list item must have graphic=\"icon\" or graphic=\"avatar\" to be set."
+            },
+            "required": {
+              "description": "Displays error state if value is empty and select is blurred.",
+              "type": "boolean"
+            },
+            "outlined": {
+              "type": "boolean",
+              "default": true,
+              "description": "Whether or not to show the material outlined variant."
+            },
+            "naturalMenuWidth": {
+              "description": "Sets the dropdown menu's width to auto.",
+              "type": "boolean"
+            },
+            "fixedMenuPosition": {
+              "description": "Sets the dropdown menu's position to fixed. This is useful when the select is inside of a stacking context e.g. inside of an mwc-dialog. Note, that --mdc-menu-min-width or --mdc-menu-max-width may have to be set to resize the menu to the width anchor.",
+              "type": "boolean"
+            },
+            "disabled": {
+              "description": "Whether or not the select should be disabled.",
+              "type": "boolean"
+            },
+            "validateOnInitialRender": {
+              "description": "Runs validation check on initial render.",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["sWH6jqeBc"],
+      "blockIds": [
+        "xfxc6pm6wB",
+        "292rRzQTEj",
+        "3lwZAwzyfx",
+        "7IIE4f0aOE",
+        "hUe8lWLcIB",
+        "DzQO5KihiM",
+        "LL9jRKkGGl"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-qWXTtv81jY"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

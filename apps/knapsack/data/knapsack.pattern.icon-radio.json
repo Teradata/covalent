@@ -1,0 +1,78 @@
+{
+  "id": "icon-radio",
+  "title": "Icon radio",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-gmBL6Mhy4",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/icon-radio-toggle.mjs",
+      "alias": "cv-radio-icon",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "icon": {
+            "allowedPatternIds": ["icon"],
+            "title": "icon",
+            "disallowText": true,
+            "description": "The slot for the icon in icon radio"
+          },
+          "text": {
+            "title": "text",
+            "allowOnlyOne": false,
+            "isRequired": true,
+            "description": "The slot for the text in icon radio"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "checked": {
+              "type": "boolean",
+              "description": "True when the icon radio is checked"
+            },
+            "disabled": {
+              "type": "boolean",
+              "description": "Disables the icon radio and renders in muted colors."
+            },
+            "iconOnly": {
+              "description": "Displays the icon without any text in the icon radio",
+              "type": "boolean"
+            },
+            "value": {
+              "type": "string",
+              "description": "Value of the input for form submission. Maps to the native value attribute."
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group. Maps to the native name attribute."
+            }
+          }
+        }
+      },
+      "demoIds": ["3VTw68n4F5"],
+      "blockIds": ["SEcZjEZngE", "9dkNVSkdsb", "7-GQ3UPjhR"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-gmBL6Mhy4"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "badge",
+  "title": "Badge",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-40aOlYC6I9",
+      "title": "Web Components",
+      "path": "../../../dist/libs/components/badge.mjs",
+      "alias": "cv-badge",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "allowedPatternIds": ["icon", "icon-button"],
+            "title": "default",
+            "description": "The default slot for elements which are wrapped inside the badge (icon or icon button)."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "content": {
+              "type": "string",
+              "description": "The content to be displayed in the badge"
+            },
+            "max": {
+              "description": "Caps the value of badge content",
+              "type": "number"
+            },
+            "size": {
+              "description": "Sets the size of the badge with the values:\nsmall | large",
+              "type": "string",
+              "enum": ["small", "large"]
+            },
+            "hideBadge": {
+              "description": "Controls the visibility of the badge",
+              "type": "boolean"
+            },
+            "verticalAlignment": {
+              "description": "Aligns the badge vertically in the wrapped element with values: top | bottom",
+              "type": "string",
+              "enum": ["top", "bottom"]
+            },
+            "horizontalAlignment": {
+              "description": "Aligns the badge horizontally in the wrapped element with values: left | right",
+              "type": "string",
+              "enum": ["left", "right"]
+            },
+            "showZero": {
+              "description": "Shows the badge when content is zero",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["NAoDoFXI-A", "laNQ9RRdMn", "uhaHv83YYx"],
+      "blockIds": ["PLFtD8oW-j"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-40aOlYC6I9"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

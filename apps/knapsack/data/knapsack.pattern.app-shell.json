@@ -1,0 +1,99 @@
+{
+  "id": "app-shell",
+  "title": "App shell",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-z8r4uoVkf",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/app-shell.mjs",
+      "alias": "cv-app-shell",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "The default slot for the main area with content"
+          },
+          "logo": {
+            "title": "logo",
+            "description": "The slot for the logo to be displayed in the left navigation"
+          },
+          "navigation": {
+            "allowedPatternIds": ["list"],
+            "title": "navigation",
+            "disallowText": true,
+            "description": "The slot for left navigation"
+          },
+          "help": {
+            "title": "help",
+            "description": "The slot for the help section"
+          },
+          "section-action": {
+            "allowedPatternIds": ["icon-button"],
+            "title": "section-action",
+            "description": "The slot for section action in left navigation"
+          },
+          "user-menu": {
+            "title": "user-menu",
+            "description": "The slot for user menu above the main area"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "appName": {
+              "type": "string",
+              "default": "[App name]",
+              "description": "Name of the application to show in the small app bar"
+            },
+            "sectionName": {
+              "type": "string",
+              "default": "[Section name]",
+              "description": "Name of the section shown above the navigation"
+            },
+            "helpOpen": {
+              "type": "boolean",
+              "description": "Opens the help section"
+            },
+            "drawerOpen": {
+              "description": "Opens the drawer",
+              "type": "boolean"
+            },
+            "contained": {
+              "type": "boolean",
+              "description": "Wraps the main area with a contained card surface"
+            },
+            "forcedOpen": {
+              "type": "boolean",
+              "description": "Force the left navigation visibly open"
+            }
+          }
+        }
+      },
+      "demoIds": ["5lBJhPKvTj"],
+      "blockIds": ["tcFrjF5zqd"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-z8r4uoVkf"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

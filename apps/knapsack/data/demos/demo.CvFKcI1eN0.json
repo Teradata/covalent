@@ -1,0 +1,38 @@
+{
+  "id": "CvFKcI1eN0",
+  "title": "Main",
+  "type": "data",
+  "patternId": "check-list-item",
+  "templateId": "web-components-M18BFFHM3h",
+  "data": {
+    "props": {
+      "graphic": "avatar",
+      "selected": true,
+      "left": false,
+      "hasMeta": true,
+      "twoLine": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Check list item"
+        }
+      ],
+      "graphic": [
+        {
+          "type": "template-demo",
+          "patternId": "icon",
+          "templateId": "web-components-N8bzRbfpuX",
+          "demoId": "bn4zy44TYR"
+        }
+      ],
+      "secondary": [
+        {
+          "type": "text",
+          "text": "secondary text"
+        }
+      ]
+    }
+  }
+}

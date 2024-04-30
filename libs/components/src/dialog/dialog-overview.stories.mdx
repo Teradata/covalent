@@ -1,38 +1,14 @@
-{/* dialog-overview.stories.mdx */}
-
 import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
 
 <Meta
-  title="Components/Dialog/Overview"
+  title="Components/Dialog"
   parameters={{
-    docs: {
-      inlineStories: true,
-    },
     layout: 'fullscreen',
     previewTabs: {
       canvas: { hidden: true },
     },
   }}
 />
-
-<style>
-  {`
-  #story--components-dialog--anatomy > div,
-  #story--components-dialog--logout > div,
-  #story--components-dialog--udf > div {
-    height: 20rem !important;
-  }
-  .preview-dark {
-    display: none;
-  }
-  .dark .preview-light {
-    display: none;
-  }
-  .dark .preview-dark {
-    display: block;
-  }
-  `}
-</style>
 
 # Dialogs
 
@@ -54,9 +30,13 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
 
 ## Examples
 
+### Logout
+
 <Pre>
   <Story id="components-dialog--logout" />
 </Pre>
+
+### Destructive dialog
 
 <Pre>
   <Story id="components-dialog--udf" />

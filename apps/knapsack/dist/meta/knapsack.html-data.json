@@ -1,0 +1,1973 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "cv-action-ribbon",
+      "description": "Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/action-ribbon/web-components-v3gk7O39kO"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "labelText",
+          "description": "Text to be displayed in the action ribbon"
+        },
+        {
+          "name": "state",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
+          "description": "State representation which can take the values:\nactive|negative|positive|caution"
+        },
+        {
+          "name": "icon",
+          "description": "Icon added to the action ribbon"
+        },
+        {
+          "name": "iconAriaLabel",
+          "description": "aria-label of the icon"
+        },
+        {
+          "name": "centered",
+          "description": "boolean Centers the action ribbon"
+        }
+      ]
+    },
+    {
+      "name": "cv-alert",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/alert/web-components-4qjJYWsUZi"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "icon",
+          "description": "Icon added to the alert"
+        },
+        {
+          "name": "state",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
+          "description": "State representation which can take the values:\nactive|negative|positive|caution"
+        },
+        {
+          "name": "inline",
+          "description": "boolean Displays the alert inline with its container"
+        },
+        {
+          "name": "titleText",
+          "description": "Title of the alert"
+        },
+        {
+          "name": "iconAriaLabel",
+          "description": "aria-label for the icon"
+        },
+        {
+          "name": "descriptionText",
+          "description": "Description of the alert"
+        }
+      ]
+    },
+    {
+      "name": "cv-app-shell",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/app-shell/web-components-z8r4uoVkf"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "appName",
+          "description": "Name of the application to show in the small app bar"
+        },
+        {
+          "name": "sectionName",
+          "description": "Name of the section shown above the navigation"
+        },
+        {
+          "name": "helpOpen",
+          "description": "boolean Opens the help section"
+        },
+        {
+          "name": "drawerOpen",
+          "description": "boolean Opens the drawer"
+        },
+        {
+          "name": "contained",
+          "description": "boolean Wraps the main area with a contained card surface"
+        },
+        {
+          "name": "forcedOpen",
+          "description": "boolean Force the left navigation visibly open"
+        }
+      ]
+    },
+    {
+      "name": "cv-badge",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/badge/web-components-40aOlYC6I9"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "content",
+          "description": "The content to be displayed in the badge"
+        },
+        {
+          "name": "max",
+          "description": "Caps the value of badge content"
+        },
+        {
+          "name": "size",
+          "values": [
+            {
+              "name": "small"
+            },
+            {
+              "name": "large"
+            }
+          ],
+          "description": "Sets the size of the badge with the values:\nsmall | large"
+        },
+        {
+          "name": "hideBadge",
+          "description": "boolean Controls the visibility of the badge"
+        },
+        {
+          "name": "verticalAlignment",
+          "values": [
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
+          "description": "Aligns the badge vertically in the wrapped element with values: top | bottom"
+        },
+        {
+          "name": "horizontalAlignment",
+          "values": [
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            }
+          ],
+          "description": "Aligns the badge horizontally in the wrapped element with values: left | right"
+        },
+        {
+          "name": "showZero",
+          "description": "boolean Shows the badge when content is zero"
+        }
+      ]
+    },
+    {
+      "name": "cv-button",
+      "description": "Common buttons prompt most actions in a UI",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/button/web-components-raE1x4tYL"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Label to display for the button, and aria-label"
+        },
+        {
+          "name": "icon",
+          "description": "Icon to display, and aria-label value when label is not defined"
+        },
+        {
+          "name": "color",
+          "values": [
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "emphasis"
+            },
+            {
+              "name": "neutral"
+            },
+            {
+              "name": "caution"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            }
+          ],
+          "description": "Applies the button color"
+        },
+        {
+          "name": "raised",
+          "description": "boolean Creates a contained button that is elevated above the surface"
+        },
+        {
+          "name": "unelevated",
+          "description": "boolean Creates a contained button that is flush with the surface"
+        },
+        {
+          "name": "outlined",
+          "description": "boolean Creates an outlined button that is flush with the surface"
+        },
+        {
+          "name": "dense",
+          "description": "boolean Makes the button text and container slightly smaller"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect"
+        },
+        {
+          "name": "expandContent",
+          "description": "boolean When true, the space after the label and before any trailing icon, where default slotted content is rendered, is expanded to fit the available space inside the button"
+        },
+        {
+          "name": "fullwidth",
+          "description": "boolean When true, the button is expanded to fit the entire available space."
+        },
+        {
+          "name": "trailingIcon",
+          "description": "boolean When true, icon will be displayed after label"
+        }
+      ]
+    },
+    {
+      "name": "cv-card",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/card/web-components-mU8MX1FHrF"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "cardTitle",
+          "description": "The title of the card"
+        },
+        {
+          "name": "outlined",
+          "description": "boolean Style the card as an outline variant"
+        },
+        {
+          "name": "actionBar",
+          "description": "boolean Displays the action bar"
+        },
+        {
+          "name": "interactive",
+          "description": "boolean Displays the ripple affect in primary area"
+        }
+      ]
+    },
+    {
+      "name": "cv-check-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/check-list-item/web-components-M18BFFHM3h"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "graphic",
+          "values": [
+            {
+              "name": "avatar"
+            },
+            {
+              "name": "icon"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "control"
+            }
+          ],
+          "description": "Determines which graphic layout to show and enables the graphic slot when value is not control or null."
+        },
+        {
+          "name": "value",
+          "description": "Value associated with this list item."
+        },
+        {
+          "name": "group",
+          "description": "Used to group items together"
+        },
+        {
+          "name": "text",
+          "description": "Trimmed textContent of the list item."
+        },
+        {
+          "name": "tabindex",
+          "description": "Reflects tabindex and sets internal tab indices."
+        },
+        {
+          "name": "left",
+          "description": "boolean Displays the checkbox on the left. Overrides graphic."
+        },
+        {
+          "name": "selected",
+          "description": "boolean Denotes that the list item is selected."
+        },
+        {
+          "name": "hasMeta",
+          "description": "boolean Activates the meta layout tile and enables the meta slot."
+        },
+        {
+          "name": "twoLine",
+          "description": "boolean Activates the two-line variant and enables the secondary slot."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Reflects disabled and sets internal disabled attributes."
+        },
+        {
+          "name": "activated",
+          "description": "boolean Activates focus-persistent ripple."
+        },
+        {
+          "name": "multipleGraphics",
+          "description": "boolean Allows arbitrary width for multiple slotted graphics."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean Disables focus and pointer events for the list item."
+        }
+      ]
+    },
+    {
+      "name": "cv-checkbox",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/checkbox/web-components-29FbeDQWhM"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "boolean Whether the checkbox is checked."
+        },
+        {
+          "name": "indeterminate",
+          "description": "boolean When a checkbox is the parent of a set of child checkboxes, the indeterminate state is used on the parent to indicate that some but not all of its children are checked."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean When true, the checkbox cannot be interacted with, and renders in muted colors."
+        },
+        {
+          "name": "reducedTouchTarget",
+          "description": "boolean When true, the checkbox remove padding for touchscreens and increase density. Note, the checkbox will no longer meet accessibility guidelines for touch."
+        },
+        {
+          "name": "value",
+          "description": "The value that will be included if the checkbox is submitted in a form."
+        }
+      ]
+    },
+    {
+      "name": "cv-chip-set",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/chip/web-components-7wYRPSnEZH"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "selectable",
+          "description": "(required) boolean Sets the chips as selectable/actionable"
+        },
+        {
+          "name": "multi",
+          "description": "boolean Sets the chips as mulit-selectable"
+        },
+        {
+          "name": "label",
+          "description": "The arial label for the the chip set"
+        },
+        {
+          "name": "activeIndex",
+          "description": "Sets the chip at the provided Index as active"
+        }
+      ]
+    },
+    {
+      "name": "cv-chip",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/chip-item/web-components-vegaZgkE47"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "(required) The text label of the chip"
+        },
+        {
+          "name": "state",
+          "values": [
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            }
+          ],
+          "description": "The state representation with the values: secondary|negative|positive|caution"
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "filter",
+          "description": "boolean Sets the filter chip variant"
+        },
+        {
+          "name": "trailingIcon",
+          "description": "boolean Moves the icon to a trailing position"
+        },
+        {
+          "name": "avatar",
+          "description": "boolean Treats the leading icon like an avatar"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disables the chip"
+        }
+      ]
+    },
+    {
+      "name": "cv-circular-progress",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/circular-progress/web-components-rw6v6c4fnU"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "indeterminate",
+          "description": "boolean Sets the circular-progress into its indeterminate state."
+        },
+        {
+          "name": "progress",
+          "description": "Sets the progress bar's value. Value should be between [0, 1]."
+        },
+        {
+          "name": "density",
+          "description": "Sets the progress indicator's sizing based on density scale. Minimum value is -8. Each unit change in density scale corresponds to 4px change in side dimensions. The stroke width adjusts automatically."
+        },
+        {
+          "name": "closed",
+          "description": "boolean Sets the progress indicator to the closed state. Sets content opacity to 0. Typically should be set to true when loading has finished."
+        }
+      ]
+    },
+    {
+      "name": "cv-code-snippet",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/code-snippet/web-components-MmKtwF24Vv"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Label displayed in the header of the code snippet"
+        },
+        {
+          "name": "language",
+          "description": "The language used in the code snippet"
+        },
+        {
+          "name": "inline",
+          "description": "boolean Displays the code snippet as an inline element"
+        },
+        {
+          "name": "hideHeader",
+          "description": "boolean Hides the header"
+        },
+        {
+          "name": "maxHeight",
+          "description": "Sets the max height of the code snippet in pixels"
+        }
+      ]
+    },
+    {
+      "name": "cv-dialog",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/dialog/web-components-S9Ia0KOrya"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "open",
+          "description": "(required) boolean Opens the dialog when true"
+        },
+        {
+          "name": "hideActions",
+          "description": "boolean Hides the actions footer of the dialog. Needed to remove excess padding when no actions are slotted in."
+        },
+        {
+          "name": "stacked",
+          "description": "boolean Stacks the action buttons."
+        },
+        {
+          "name": "heading",
+          "description": "Heading text of the dialog"
+        },
+        {
+          "name": "scrimClickAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent clicks outside the dialog from closing the dialog."
+        },
+        {
+          "name": "escapeKeyAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog."
+        },
+        {
+          "name": "defaultAction",
+          "description": "Action to be emitted with the closing and closed events when <cv-dialog>.open is toggled"
+        },
+        {
+          "name": "actionAttribute",
+          "description": "Attribute to read in light dom of dialog for closing action value"
+        },
+        {
+          "name": "initialFocusAttribute",
+          "description": "Attribute to search for in light dom for initial focus on dialog open."
+        }
+      ]
+    },
+    {
+      "name": "cv-empty-state",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/empty-state/web-components-E0GwXgHJv"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "headline",
+          "description": "The headline of the empty state"
+        },
+        {
+          "name": "subtitle",
+          "description": "The subtitle displayed below the headline"
+        },
+        {
+          "name": "icon",
+          "description": "The icon displayed in the empty state"
+        },
+        {
+          "name": "card",
+          "description": "boolean Styles the empty state like a card"
+        }
+      ]
+    },
+    {
+      "name": "cv-expansion-panel",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/expansion-panel/web-components-Vj98q2D8hw"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "noSurface",
+          "description": "boolean Sets the theme surface to transparent"
+        },
+        {
+          "name": "titleWidth",
+          "description": "Sets the width of the title"
+        }
+      ]
+    },
+    {
+      "name": "cv-expansion-panel-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/expansion-panel-item/web-components-vBLifAApG"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "title",
+          "description": "The title of the panel item"
+        },
+        {
+          "name": "contentPreview",
+          "description": "The content preview text of the panel item"
+        },
+        {
+          "name": "index",
+          "description": "Sets the index of the panel item"
+        },
+        {
+          "name": "open",
+          "description": "boolean Expands the panel item when true"
+        },
+        {
+          "name": "isTopPanel",
+          "description": "boolean True for the top most panel item in an expansion panel"
+        },
+        {
+          "name": "isBottomPanel",
+          "description": "boolean True for the bottom most panel item in an expansion panel"
+        },
+        {
+          "name": "isInnerPanel",
+          "description": "boolean True for the inner panel items in an expansion panel"
+        },
+        {
+          "name": "isSinglePanel",
+          "description": "boolean True if the expansion panel has a single panel item"
+        },
+        {
+          "name": "belowOpenInnerPanel",
+          "description": "boolean True for the panel item below an open inner panel in an expansion panel"
+        },
+        {
+          "name": "aboveOpenInnerPanel",
+          "description": "boolean True for the panel item above an open inner panel in an expansion panel"
+        },
+        {
+          "name": "separateSinglePanel",
+          "description": "boolean If the panel right below the top panel or right above the bottom panel is opened, the very top or bottom panel becomes a single panel."
+        },
+        {
+          "name": "showFooter",
+          "description": "boolean Shows the footer in the panel item"
+        },
+        {
+          "name": "noSurface",
+          "description": "boolean Sets the theme surface to transparent"
+        }
+      ]
+    },
+    {
+      "name": "cv-formfield",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/form-field/web-components-I5Sx1HQnJ"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "(required) The text to display for the label and sets a11y label on input. (visually overriden by slotted label)"
+        },
+        {
+          "name": "alignEnd",
+          "description": "boolean Aligns the component at the end of the label."
+        },
+        {
+          "name": "spaceBetween",
+          "description": "boolean Add space between the component and the label as the formfield grows."
+        },
+        {
+          "name": "nowrap",
+          "description": "boolean Prevents the label from wrapping and overflow text is ellipsed."
+        }
+      ]
+    },
+    {
+      "name": "cv-icon",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon/web-components-N8bzRbfpuX"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "name": "cv-icon-button",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-button/web-components-ctiCe2sAX"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "icon",
+          "description": "Icon to display, and aria-label value when label is not defined."
+        },
+        {
+          "name": "aria-label",
+          "description": "aria-label for the icon button."
+        },
+        {
+          "name": "aria-haspopup",
+          "description": "Indicates the availability and type of an interactive popup element, such as menu or dialog, that can be triggered by the button."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect."
+        }
+      ]
+    },
+    {
+      "name": "cv-checkbox-icon",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-checkbox/web-components-jTiv8OpG9M"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "boolean True when the icon checkbox is checked"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disables the icon checkbox and renders in muted colors."
+        },
+        {
+          "name": "iconOnly",
+          "description": "boolean Displays the icon without any text in the icon checkbox"
+        },
+        {
+          "name": "value",
+          "description": "The value that will be included if the checkbox is submitted in a form."
+        },
+        {
+          "name": "width",
+          "description": "Sets the width of the icon checkbox"
+        },
+        {
+          "name": "height",
+          "description": "Sets the height of the icon checkbox"
+        }
+      ]
+    },
+    {
+      "name": "cv-radio-icon",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-radio/web-components-gmBL6Mhy4"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "boolean True when the icon radio is checked"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disables the icon radio and renders in muted colors."
+        },
+        {
+          "name": "iconOnly",
+          "description": "boolean Displays the icon without any text in the icon radio"
+        },
+        {
+          "name": "value",
+          "description": "Value of the input for form submission. Maps to the native value attribute."
+        },
+        {
+          "name": "name",
+          "description": "Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group. Maps to the native name attribute."
+        }
+      ]
+    },
+    {
+      "name": "cv-linear-progress",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/linear-progress/web-components-2ew8-hMQkv"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "buffer",
+          "description": "Sets the buffer progress bar's value. Value should be between [0, 1]. Setting this value to be less than 1 will reveal moving, buffering dots."
+        },
+        {
+          "name": "progress",
+          "description": "Sets the primary progress bar's value. Value should be between [0, 1]."
+        },
+        {
+          "name": "indeterminate",
+          "description": "boolean Sets the linear-progress into its indeterminate state."
+        },
+        {
+          "name": "reverse",
+          "description": "boolean Reverses the direction of the linear progress indicator."
+        },
+        {
+          "name": "closed",
+          "description": "boolean Sets the progress indicator to the closed state. Sets content opactiy to 0. Typically should be set to true when loading has finished."
+        }
+      ]
+    },
+    {
+      "name": "cv-list",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/list/web-components-fObxCsu2i8"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "activatible",
+          "description": "boolean Sets activated attribute on selected items which provides a focus-persistent highlight."
+        },
+        {
+          "name": "subNav",
+          "description": "boolean"
+        },
+        {
+          "name": "rootTabbable",
+          "description": "boolean When true, sets tabindex=\"0\" on the internal list. Otherwise sets tabindex=\"-1\"."
+        },
+        {
+          "name": "multi",
+          "description": "boolean When true, enables selection of multiple items. This will result in index being of type Set<number> and selected returning ListItemBase[]."
+        },
+        {
+          "name": "wrapFocus",
+          "description": "boolean When true, pressing up on the keyboard when focused on the first item will focus the last item and down when focused on the last item will focus the first item."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean When true, disables focus and pointer events (thus ripples) on the list. Used for display-only lists."
+        },
+        {
+          "name": "itemRoles",
+          "description": "Determines what role attribute to set on all list items."
+        },
+        {
+          "name": "innerAriaLabel",
+          "description": "aria-label of the internal <ul> element."
+        },
+        {
+          "name": "innerRole",
+          "description": "Role of the internal <ul> element."
+        }
+      ]
+    },
+    {
+      "name": "cv-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/list-item/web-components-ytRTf8wtxn"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "graphic",
+          "values": [
+            {
+              "name": "avatar"
+            },
+            {
+              "name": "icon"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "control"
+            }
+          ],
+          "description": "Determines which graphic layout to show and enables the graphic slot."
+        },
+        {
+          "name": "text",
+          "description": "Trimmed textContent of the list item."
+        },
+        {
+          "name": "value",
+          "description": "Value associated with this list item"
+        },
+        {
+          "name": "tabindex",
+          "description": "Reflects tabindex and sets internal tab indices."
+        },
+        {
+          "name": "group",
+          "description": "Used to group items together"
+        },
+        {
+          "name": "hasMeta",
+          "description": "boolean Activates the meta layout tile and enables the meta slot."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Reflects disabled and sets internal disabled attributes."
+        },
+        {
+          "name": "twoline",
+          "description": "boolean Activates the two-line variant and enables the secondary slot."
+        },
+        {
+          "name": "activated",
+          "description": "boolean Activates focus-persistent ripple."
+        },
+        {
+          "name": "multipleGraphics",
+          "description": "boolean Allows arbitrary width for multiple slotted graphics."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean Disables focus and pointer events for the list item."
+        },
+        {
+          "name": "selected",
+          "description": "boolean Denotes that the list item is selected."
+        }
+      ]
+    },
+    {
+      "name": "cv-menu",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/menu/web-components-hY3y1MyhrP"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "open",
+          "description": "boolean Opens the menu."
+        },
+        {
+          "name": "anchor",
+          "description": "Determines from which element the floating menu should calculate sizing and position offsets. In the default case, both mwc-menu and the anchor should share a parent with position:relative. Changing anchor typically requires absolute or fixed. Takes one of: HTMLElement | null"
+        },
+        {
+          "name": "corner",
+          "values": [
+            {
+              "name": "TOP_LEFT"
+            },
+            {
+              "name": "TOP_RIGHT"
+            },
+            {
+              "name": "BOTTOM_LEFT"
+            },
+            {
+              "name": "BOTTOM_RIGHT"
+            },
+            {
+              "name": "TOP_START"
+            },
+            {
+              "name": "TOP_END"
+            },
+            {
+              "name": "BOTTOM_START"
+            },
+            {
+              "name": "BOTTOM_END"
+            }
+          ],
+          "description": ""
+        },
+        {
+          "name": "menuCorner",
+          "values": [
+            {
+              "name": "START"
+            },
+            {
+              "name": "END"
+            }
+          ],
+          "description": "Horizontal corner of the menu from which the menu should position itself. NOTE: Only horizontal corners are supported."
+        },
+        {
+          "name": "x",
+          "description": "Sets horizontal position when absolute. When given an anchor, sets horizontal position relative to anchor at given corner. Requires y not to be null."
+        },
+        {
+          "name": "y",
+          "description": "Sets vertical position when absolute. When given an anchor, sets vertical position relative to anchor at given corner. Requires x not to be null."
+        },
+        {
+          "name": "defaultFocus",
+          "values": [
+            {
+              "name": "NONE"
+            },
+            {
+              "name": "LIST_ROOT"
+            },
+            {
+              "name": "FIRST_ITEM"
+            },
+            {
+              "name": "LAST_ITEM"
+            }
+          ],
+          "description": "Item to focus upon menu open."
+        },
+        {
+          "name": "innerAriaLabel",
+          "description": "Proxies to cv-list's innerAriaLabel property."
+        },
+        {
+          "name": "innerRole",
+          "values": [
+            {
+              "name": "menu"
+            },
+            {
+              "name": "listbox"
+            }
+          ],
+          "description": "Proxies to cv-list's innerRole property"
+        },
+        {
+          "name": "quick",
+          "description": "boolean Whether to skip the opening animation."
+        },
+        {
+          "name": "absolute",
+          "description": "boolean Makes the menu's position absolute which will be relative to whichever ancestor has position:relative. Setting x and y will modify the menu's left and top. Setting anchor will attempt to position the menu to the anchor."
+        },
+        {
+          "name": "fixed",
+          "description": "boolean Makes the menu's position fixed which will be relative to the window. Setting x and y will modify the menu's left and top. Setting anchor will attempt to position the menu to the anchor's immediate position before opening."
+        },
+        {
+          "name": "forceGroupSelection",
+          "description": "boolean Forces a menu group to have a selected item by preventing deselection of menu items in menu groups via user interaction."
+        },
+        {
+          "name": "fullwidth",
+          "description": "boolean Sets surface width to 100%."
+        },
+        {
+          "name": "stayOpenOnBodyClick",
+          "description": "boolean Prevents the menu from closing when clicking outside the menu."
+        },
+        {
+          "name": "wrapFocus",
+          "description": "boolean Proxies to cv-list's wrapFocus property."
+        },
+        {
+          "name": "multi",
+          "description": "boolean Proxies to cv-list's multi property."
+        },
+        {
+          "name": "activatable",
+          "description": "boolean Proxies to cv-list's activatable property."
+        }
+      ]
+    },
+    {
+      "name": "cv-nav-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/naviigation-list-item/web-components-Qtmmi7N-aL"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "graphic",
+          "values": [
+            {
+              "name": "avatar"
+            },
+            {
+              "name": "icon"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "control"
+            }
+          ],
+          "description": "Determines which graphic layout to show and enables the graphic slot."
+        },
+        {
+          "name": "text",
+          "description": "Trimmed textContent of the list item."
+        },
+        {
+          "name": "value",
+          "description": "Value associated with this list item"
+        },
+        {
+          "name": "tabindex",
+          "description": "Reflects tabindex and sets internal tab indices."
+        },
+        {
+          "name": "group",
+          "description": "Used to group items together"
+        },
+        {
+          "name": "open",
+          "description": "boolean Determines if the navigation list item is open"
+        },
+        {
+          "name": "hasChildren",
+          "description": "boolean Determines if the navigation list item has children"
+        },
+        {
+          "name": "hasMeta",
+          "description": "boolean Activates the meta layout tile and enables the meta slot."
+        },
+        {
+          "name": "twoLine",
+          "description": "boolean Activates the two-line variant and enables the secondary slot."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Reflects disabled and sets internal disabled attributes."
+        },
+        {
+          "name": "activated",
+          "description": "boolean Activates focus-persistent ripple."
+        },
+        {
+          "name": "multipleGraphics",
+          "description": "boolean Allows arbitrary width for multiple slotted graphics."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean Disables focus and pointer events for the list item."
+        },
+        {
+          "name": "selected",
+          "description": "boolean Denotes that the list item is selected."
+        }
+      ]
+    },
+    {
+      "name": "cv-radio",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/radio/web-components-qk2MWcBipT"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "boolean Specifies whether this radio button is the currently-selected one in its group. Maps to the native checked attribute."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean If true, this radio button cannot be selected or de-selected. Maps to the native disabled attribute."
+        },
+        {
+          "name": "global",
+          "description": "boolean If true, this radio button will use a global, document-level scope for its selection group rather than its local shadow root."
+        },
+        {
+          "name": "reducedTouchTarget",
+          "description": "boolean When true, the radio removes touch target that extends beyond visual boundary of the component. Set to false by default to meet Material accessibility guidelines."
+        },
+        {
+          "name": "name",
+          "description": "Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group. Maps to the native name attribute."
+        },
+        {
+          "name": "value",
+          "description": "Value of the input for form submission. Maps to the native value attribute."
+        }
+      ]
+    },
+    {
+      "name": "cv-radio-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/radio-list-item/web-components-fwKtEBOnv"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "graphic",
+          "values": [
+            {
+              "name": "avatar"
+            },
+            {
+              "name": "icon"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "control"
+            }
+          ],
+          "description": "Determines which graphic layout to show and enables the graphic slot when value is not control or null."
+        },
+        {
+          "name": "group",
+          "description": "Used to group the internal radios together."
+        },
+        {
+          "name": "value",
+          "description": "Value associated with this list item."
+        },
+        {
+          "name": "tabindex",
+          "description": "Reflects tabindex and sets internal tab indices."
+        },
+        {
+          "name": "text",
+          "description": "Trimmed textContent of the list item."
+        },
+        {
+          "name": "left",
+          "description": "boolean Displays the checkbox on the left. Overrides graphic."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Reflects disabled and sets internal disabled attributes."
+        },
+        {
+          "name": "twoline",
+          "description": "boolean Activates the two-line variant and enables the secondary slot."
+        },
+        {
+          "name": "activated",
+          "description": "boolean Activates focus-persistent ripple."
+        },
+        {
+          "name": "multipleGraphics",
+          "description": "boolean Allows arbitrary width for multiple slotted graphics."
+        },
+        {
+          "name": "hasMeta",
+          "description": "boolean Activates the meta layout tile and enables the meta slot."
+        },
+        {
+          "name": "noninteractive",
+          "description": "boolean Disables focus and pointer events for the list item."
+        },
+        {
+          "name": "selected",
+          "description": "boolean Denotes that the list item is selected."
+        }
+      ]
+    },
+    {
+      "name": "cv-select",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/select/web-components-qWXTtv81jY"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Sets floating label value. NOTE: The label will not float if the selected item has a falsey value property."
+        },
+        {
+          "name": "value",
+          "description": "The select control's value determined by the value property of the currently selected list item. Setting value will attempt to select a list-item with the same value. If one does not match, it will set itself to \"\" and the index to -1. Setting value before the list item is attached will not select the item."
+        },
+        {
+          "name": "validationMessage",
+          "description": "Message to show in the error color when the select is invalid. (Helper text will not be visible)"
+        },
+        {
+          "name": "helper",
+          "description": "Helper text to display below the select. Always displays by default."
+        },
+        {
+          "name": "icon",
+          "description": "Leading icon to display in select. See mwc-icon. Note: for proper list spacing, each list item must have graphic=\"icon\" or graphic=\"avatar\" to be set."
+        },
+        {
+          "name": "required",
+          "description": "(required) boolean Displays error state if value is empty and select is blurred."
+        },
+        {
+          "name": "outlined",
+          "description": "(required) boolean Whether or not to show the material outlined variant."
+        },
+        {
+          "name": "naturalMenuWidth",
+          "description": "boolean Sets the dropdown menu's width to auto."
+        },
+        {
+          "name": "fixedMenuPosition",
+          "description": "boolean Sets the dropdown menu's position to fixed. This is useful when the select is inside of a stacking context e.g. inside of an mwc-dialog. Note, that --mdc-menu-min-width or --mdc-menu-max-width may have to be set to resize the menu to the width anchor."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Whether or not the select should be disabled."
+        },
+        {
+          "name": "validateOnInitialRender",
+          "description": "boolean Runs validation check on initial render."
+        }
+      ]
+    },
+    {
+      "name": "cv-side-sheet",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/side-sheet/web-components-UMR43JQszt"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "heading",
+          "description": "Heading of the side sheet."
+        },
+        {
+          "name": "open",
+          "description": "(required) boolean Opens the side sheet"
+        },
+        {
+          "name": "pushed",
+          "description": "boolean When true occupies the entire viewport width."
+        },
+        {
+          "name": "noPadding",
+          "description": "boolean Removes the padding in the side sheet"
+        }
+      ]
+    },
+    {
+      "name": "cv-slider",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/slider/web-components-LpKATlK5H"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "value",
+          "description": "Current value of the slider."
+        },
+        {
+          "name": "valueEnd",
+          "description": "Proxy of value."
+        },
+        {
+          "name": "min",
+          "description": "Value representing the minimum allowed value."
+        },
+        {
+          "name": "max",
+          "description": "Value representing the minimum allowed value."
+        },
+        {
+          "name": "step",
+          "description": "Step for value quantization."
+        },
+        {
+          "name": "withTickMarks",
+          "description": "Displays tick marks which represent predetermind values to which the user can move the slider. NOTE: the slider must be discrete to display tick marks, and to function correctly, there must be an integer amount of total steps within the range. i.e. (max - min) % step === 0"
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disables the slider, preventing interaction."
+        },
+        {
+          "name": "discrete",
+          "description": "boolean Displays a numeric value label upon pressing the thumb which allows the user to select an exact value."
+        }
+      ]
+    },
+    {
+      "name": "cv-slider-range",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/slider/web-components-33Z9-C4Qs"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "disable",
+          "description": "boolean Disables the slider, preventing interaction."
+        },
+        {
+          "name": "discrete",
+          "description": "boolean Displays a numeric value label upon pressing the thumb which allows the user to select an exact value."
+        },
+        {
+          "name": "withTickMarks",
+          "description": "Displays tick marks which represent predetermind values to which the user can move the slider. NOTE: the slider must be discrete to display tick marks, and to function correctly, there must be an integer amount of total steps within the range. i.e. (max - min) % step === 0"
+        },
+        {
+          "name": "valueStart",
+          "description": "Current value of the start thumb handle."
+        },
+        {
+          "name": "valueEnd",
+          "description": "Current value of the end thumb handle."
+        },
+        {
+          "name": "min",
+          "description": "Value representing the minimum allowed value."
+        },
+        {
+          "name": "max",
+          "description": "Value representing the maximum allowed value."
+        },
+        {
+          "name": "step",
+          "description": "Step for value quantization."
+        }
+      ]
+    },
+    {
+      "name": "cv-snackbar",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/snackbar/web-components-3ERE1Ai9lo"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "open",
+          "description": "(required) boolean Whether the snackbar is currently open."
+        },
+        {
+          "name": "leading",
+          "description": "boolean Enables the leading layout (see above)."
+        },
+        {
+          "name": "stacked",
+          "description": "boolean Enables the stacked layout."
+        },
+        {
+          "name": "closeOnEscape",
+          "description": "boolean Whether the snackbar closes when it is focused and the user presses the ESC key. Defaults to false."
+        },
+        {
+          "name": "timeoutMs",
+          "description": "Automatic dismiss timeout in milliseconds. Value must be between 4000 and 10000 (or -1 to disable the timeout completely) or an error will be thrown. Defaults to 5000 (5 seconds)."
+        },
+        {
+          "name": "labelText",
+          "description": "The text content of the label element."
+        }
+      ]
+    },
+    {
+      "name": "cv-status-header",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/status-header/web-components-UDLnfGbB2W"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "titleText",
+          "description": "Title of the status header."
+        },
+        {
+          "name": "statusText",
+          "description": "Text for the current status."
+        },
+        {
+          "name": "statusHelper",
+          "description": "Helper text for the current status."
+        },
+        {
+          "name": "state",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "caution"
+            },
+            {
+              "name": "error"
+            },
+            {
+              "name": "neutral"
+            }
+          ],
+          "description": "Current state of the status header."
+        }
+      ]
+    },
+    {
+      "name": "cv-status-header-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/status-header-item/web-components-55FkYSafco"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Label for the status header item."
+        }
+      ]
+    },
+    {
+      "name": "cv-switch",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/switch/web-components-tGj2TvSrpD"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "selected",
+          "description": "boolean If true, the switch is on. If false, the switch is off."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Indicates whether or not the switch is disabled."
+        },
+        {
+          "name": "name",
+          "description": "The form name of the switch."
+        },
+        {
+          "name": "value",
+          "description": "The value of the switch to submit in a form when selected."
+        }
+      ]
+    },
+    {
+      "name": "cv-tab",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tab/web-components-1-Bf2NwL1T"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": "(required) Text label to display in tab."
+        },
+        {
+          "name": "icon",
+          "description": "Material design icon name to display (overridden by slotted icon)."
+        },
+        {
+          "name": "indicatorIcon",
+          "description": "Material design icon name to display as the indicator."
+        },
+        {
+          "name": "hasImageIcon",
+          "description": "boolean Displays a slot to show an image icon."
+        },
+        {
+          "name": "isFadingIndicator",
+          "description": "boolean Indicator fades in and out instead of sliding."
+        },
+        {
+          "name": "minWidth",
+          "description": "boolean Shrinks tab as narrow as possible without causing text to wrap."
+        },
+        {
+          "name": "isMinWidthIndicator",
+          "description": "boolean Shrinks indicator to be the size of the content."
+        },
+        {
+          "name": "stacked",
+          "description": "boolean Stacks icon on top of label text."
+        },
+        {
+          "name": "active",
+          "description": "boolean Indicates whether the tab's indicator is active."
+        }
+      ]
+    },
+    {
+      "name": "cv-tab-bar",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tabs/web-components-kjFGUA31tg"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "activeIndex",
+          "description": "Index of tab that is active."
+        }
+      ]
+    },
+    {
+      "name": "cv-typography",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/text/web-components-FXCMXD35mF"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "scale",
+          "description": "(required)"
+        }
+      ]
+    },
+    {
+      "name": "cv-textarea",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/text-area/web-components-48rzn99y9G"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "placeholder",
+          "description": ""
+        },
+        {
+          "name": "helper",
+          "description": ""
+        },
+        {
+          "name": "outlined",
+          "description": "boolean"
+        },
+        {
+          "name": "required",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-text-lockup",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/text-lockup/web-components-4Aa-qjh3vF"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "subText",
+          "description": ""
+        },
+        {
+          "name": "scale",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "cv-textfield",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/textfield/web-components-M4zyalwdNJ"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "placeholder",
+          "description": ""
+        },
+        {
+          "name": "helper",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "iconTrailing",
+          "description": ""
+        },
+        {
+          "name": "required",
+          "description": "boolean"
+        },
+        {
+          "name": "dense",
+          "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-toolbar",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/toolbar/web-components-A6-16QhSaM"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "dense",
+          "description": "boolean Makes the bar a little smaller for higher density applications."
+        },
+        {
+          "name": "centerTitle",
+          "description": "boolean Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
+        },
+        {
+          "name": "prominent",
+          "description": "Makes the bar much taller, can be combined with dense."
+        },
+        {
+          "name": "scrollTarget",
+          "description": "Element used to listen for scroll events. (Type: HTMLElement | Window)"
+        },
+        {
+          "name": "sticky",
+          "description": "boolean Position is sticky when scrolled."
+        }
+      ]
+    },
+    {
+      "name": "cv-tooltip",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tooltip/web-components-erhVvpq9vk"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "persistent",
+          "description": "boolean Makes the tooltip persistent."
+        },
+        {
+          "name": "rich",
+          "description": "boolean Displays the rich tooltip."
+        },
+        {
+          "name": "richTitle",
+          "description": "The title of the rich tooltip."
+        },
+        {
+          "name": "hidedelay",
+          "description": "Delay to hide tooltip in MS"
+        },
+        {
+          "name": "showDelay",
+          "description": "Delay to show the tooltip in MS"
+        }
+      ]
+    },
+    {
+      "name": "cv-top-app-bar",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/top-app-bar/web-components-bdJKZJwv0h"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "centerTitle",
+          "description": "boolean Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
+        },
+        {
+          "name": "prominent",
+          "description": "boolean Makes the bar much taller, can be combined with dense."
+        },
+        {
+          "name": "dense",
+          "description": "boolean Makes the bar a little smaller for higher density applications."
+        },
+        {
+          "name": "scrollTarget",
+          "description": "Element used to listen for scroll events. (Type: HTMLElement | Window)"
+        }
+      ]
+    },
+    {
+      "name": "cv-top-app-bar-fixed",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/top-app-bar-fixed/web-components-d0oZXgy7Uj"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "centerTitle",
+          "description": "boolean Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
+        },
+        {
+          "name": "prominent",
+          "description": "boolean Makes the bar much taller, can be combined with dense."
+        },
+        {
+          "name": "dense",
+          "description": "boolean Makes the bar a little smaller for higher density applications."
+        },
+        {
+          "name": "scrollTarget",
+          "description": "Element used to listen for scroll events."
+        }
+      ]
+    },
+    {
+      "name": "cv-tree-list",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tree-list/web-components-Ue0Hy3Asb"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "name": "cv-tree-list-item",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/tree-list-item/web-components-1jOFYZB9ms"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "icon",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

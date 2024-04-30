@@ -1,0 +1,51 @@
+{
+  "globalAssetSetIds": ["light", "dark"],
+  "allAssetSets": {
+    "light": {
+      "id": "light",
+      "title": "Light",
+      "assets": [
+        {
+          "src": "../../../dist/libs/components/index.mjs",
+          "includedRenderers": ["web-components"],
+          "attributes": {
+            "type": "module"
+          }
+        },
+        {
+          "src": "../../../dist/libs/components/theme/prebuilt/light-theme.css",
+          "includedRenderers": ["web-components"]
+        },
+        {
+          "src": "../public/ks-overrides.css"
+        },
+        {
+          "src": "../public/material-fonts-icons.css"
+        }
+      ]
+    },
+    "dark": {
+      "id": "dark",
+      "title": "Dark",
+      "assets": [
+        {
+          "src": "../../../dist/libs/components/index.mjs",
+          "includedRenderers": ["web-components"],
+          "attributes": {
+            "type": "module"
+          }
+        },
+        {
+          "src": "../public/ks-overrides.css"
+        },
+        {
+          "src": "../../../dist/libs/components/theme/prebuilt/dark-theme.css",
+          "includedRenderers": ["web-components"]
+        },
+        {
+          "src": "../public/material-fonts-icons.css"
+        }
+      ]
+    }
+  }
+}

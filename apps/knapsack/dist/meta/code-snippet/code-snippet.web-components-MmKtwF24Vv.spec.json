@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "label": {
+      "type": "string",
+      "default": "Example.sql",
+      "description": "Label displayed in the header of the code snippet"
+    },
+    "language": {
+      "type": "string",
+      "default": "sql",
+      "description": "The language used in the code snippet"
+    },
+    "inline": {
+      "description": "Displays the code snippet as an inline element",
+      "type": "boolean"
+    },
+    "hideHeader": {
+      "description": "Hides the header",
+      "type": "boolean"
+    },
+    "maxHeight": {
+      "description": "Sets the max height of the code snippet in pixels",
+      "type": "number"
+    }
+  }
+}

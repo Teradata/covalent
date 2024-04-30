@@ -1,0 +1,20 @@
+{
+  "id": "breadcrumbs",
+  "title": "Breadcrumbs",
+  "description": "",
+  "statuses": {},
+  "templates": [],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": ["yakWym5jjp"]
+    }
+  ]
+}

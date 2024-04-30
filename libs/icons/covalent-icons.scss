@@ -1,0 +1,600 @@
+@import './covalent-icons-variables';
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ekxpxe')
+      format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ekxpxe')
+      format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ekxpxe##{$icomoon-font-family}')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Support mdc icon font variable */
+.covalent-icon,
+.covalent-icons,
+[covalent-icon],
+[covalent-icons],
+[iconFont='covalent-icons'] {
+  --mdc-icon-font: '#{$icomoon-font-family}';
+}
+
+[class^='cov-'],
+[class*=' cov-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga=1';
+  -moz-font-feature-settings: 'liga';
+  -ms-font-feature-settings: 'liga' 1;
+  font-feature-settings: 'liga';
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cov-data_management {
+  &:before {
+    content: $cov-data_management;
+  }
+}
+.cov-compute_cluster_group {
+  &:before {
+    content: $cov-compute_cluster_group;
+  }
+}
+.cov-compute_cluster {
+  &:before {
+    content: $cov-compute_cluster;
+  }
+}
+.cov-compute_profile_dark {
+  &:before {
+    content: $cov-compute_profile_dark;
+  }
+}
+.cov-compute_profile_light {
+  &:before {
+    content: $cov-compute_profile_light;
+  }
+}
+.cov-primary_cluster {
+  &:before {
+    content: $cov-primary_cluster;
+  }
+}
+.cov-alias_arrow {
+  &:before {
+    content: $cov-alias_arrow;
+  }
+}
+.cov-api {
+  &:before {
+    content: $cov-api;
+  }
+}
+.cov-api_ondark {
+  &:before {
+    content: $cov-api_ondark;
+  }
+}
+.cov-application {
+  &:before {
+    content: $cov-application;
+  }
+}
+.cov-bucket {
+  &:before {
+    content: $cov-bucket;
+  }
+}
+.cov-cluster_analysis {
+  &:before {
+    content: $cov-cluster_analysis;
+  }
+}
+.cov-column {
+  &:before {
+    content: $cov-column;
+  }
+}
+.cov-connected_identity {
+  &:before {
+    content: $cov-connected_identity;
+  }
+}
+.cov-data_preparation {
+  &:before {
+    content: $cov-data_preparation;
+  }
+}
+.cov-data_source {
+  &:before {
+    content: $cov-data_source;
+  }
+}
+.cov-database {
+  &:before {
+    content: $cov-database;
+  }
+}
+.cov-database_changed {
+  &:before {
+    content: $cov-database_changed;
+  }
+}
+.cov-database_edit {
+  &:before {
+    content: $cov-database_edit;
+  }
+}
+.cov-database_foreign {
+  &:before {
+    content: $cov-database_foreign;
+  }
+}
+.cov-database_lab {
+  &:before {
+    content: $cov-database_lab;
+  }
+}
+.cov-database_search {
+  &:before {
+    content: $cov-database_search;
+  }
+}
+.cov-database_synced {
+  &:before {
+    content: $cov-database_synced;
+  }
+}
+.cov-disconnect {
+  &:before {
+    content: $cov-disconnect;
+  }
+}
+.cov-dock_right {
+  &:before {
+    content: $cov-dock_right;
+  }
+}
+.cov-engine {
+  &:before {
+    content: $cov-engine;
+  }
+}
+.cov-file {
+  &:before {
+    content: $cov-file;
+  }
+}
+.cov-file_changed {
+  &:before {
+    content: $cov-file_changed;
+  }
+}
+.cov-file_edit {
+  &:before {
+    content: $cov-file_edit;
+  }
+}
+.cov-file_foreign {
+  &:before {
+    content: $cov-file_foreign;
+  }
+}
+.cov-file_lab {
+  &:before {
+    content: $cov-file_lab;
+  }
+}
+.cov-file_search {
+  &:before {
+    content: $cov-file_search;
+  }
+}
+.cov-file_synced {
+  &:before {
+    content: $cov-file_synced;
+  }
+}
+.cov-formula {
+  &:before {
+    content: $cov-formula;
+  }
+}
+.cov-lab {
+  &:before {
+    content: $cov-lab;
+  }
+}
+.cov-loader_dots {
+  &:before {
+    content: $cov-loader_dots;
+  }
+}
+.cov-machine_learning_ondark {
+  &:before {
+    content: $cov-machine_learning_ondark;
+  }
+}
+.cov-machine_learning {
+  &:before {
+    content: $cov-machine_learning;
+  }
+}
+.cov-model {
+  &:before {
+    content: $cov-model;
+  }
+}
+.cov-model_ondark {
+  &:before {
+    content: $cov-model_ondark;
+  }
+}
+.cov-model_configuration {
+  &:before {
+    content: $cov-model_configuration;
+  }
+}
+.cov-model_configuration_ondark {
+  &:before {
+    content: $cov-model_configuration_ondark;
+  }
+}
+.cov-no_results {
+  &:before {
+    content: $cov-no_results;
+  }
+}
+.cov-node_branch {
+  &:before {
+    content: $cov-node_branch;
+  }
+}
+.cov-node_merge {
+  &:before {
+    content: $cov-node_merge;
+  }
+}
+.cov-node_notification {
+  &:before {
+    content: $cov-node_notification;
+  }
+}
+.cov-node_notification_ondark {
+  &:before {
+    content: $cov-node_notification_ondark;
+  }
+}
+.cov-object_storage {
+  &:before {
+    content: $cov-object_storage;
+  }
+}
+.cov-object_storage_ondark {
+  &:before {
+    content: $cov-object_storage_ondark;
+  }
+}
+.cov-operations {
+  &:before {
+    content: $cov-operations;
+  }
+}
+.cov-operators_divide {
+  &:before {
+    content: $cov-operators_divide;
+  }
+}
+.cov-operators_equals {
+  &:before {
+    content: $cov-operators_equals;
+  }
+}
+.cov-operators_greater_than {
+  &:before {
+    content: $cov-operators_greater_than;
+  }
+}
+.cov-operators_greater_than_or_equal {
+  &:before {
+    content: $cov-operators_greater_than_or_equal;
+  }
+}
+.cov-operators_less_than {
+  &:before {
+    content: $cov-operators_less_than;
+  }
+}
+.cov-operators_less_than_or_equal {
+  &:before {
+    content: $cov-operators_less_than_or_equal;
+  }
+}
+.cov-operators_multiply {
+  &:before {
+    content: $cov-operators_multiply;
+  }
+}
+.cov-operators_not_equal {
+  &:before {
+    content: $cov-operators_not_equal;
+  }
+}
+.cov-operators_parentheses {
+  &:before {
+    content: $cov-operators_parentheses;
+  }
+}
+.cov-operators_parenthesis_left {
+  &:before {
+    content: $cov-operators_parenthesis_left;
+  }
+}
+.cov-operators_parenthesis_right {
+  &:before {
+    content: $cov-operators_parenthesis_right;
+  }
+}
+.cov-operators_subtract {
+  &:before {
+    content: $cov-operators_subtract;
+  }
+}
+.cov-outbound_campaign_manager {
+  &:before {
+    content: $cov-outbound_campaign_manager;
+  }
+}
+.cov-product_analyst {
+  &:before {
+    content: $cov-product_analyst;
+  }
+}
+.cov-product_console {
+  &:before {
+    content: $cov-product_console;
+  }
+}
+.cov-product_editor {
+  &:before {
+    content: $cov-product_editor;
+  }
+}
+.cov-resize_northeast {
+  &:before {
+    content: $cov-resize_northeast;
+  }
+}
+.cov-resize_northwest {
+  &:before {
+    content: $cov-resize_northwest;
+  }
+}
+.cov-resize_southeast {
+  &:before {
+    content: $cov-resize_southeast;
+  }
+}
+.cov-resize_southwest {
+  &:before {
+    content: $cov-resize_southwest;
+  }
+}
+.cov-rules {
+  &:before {
+    content: $cov-rules;
+  }
+}
+.cov-rules_ondark {
+  &:before {
+    content: $cov-rules_ondark;
+  }
+}
+.cov-rules_insert {
+  &:before {
+    content: $cov-rules_insert;
+  }
+}
+.cov-rules_insert_ondark {
+  &:before {
+    content: $cov-rules_insert_ondark;
+  }
+}
+.cov-rules_select {
+  &:before {
+    content: $cov-rules_select;
+  }
+}
+.cov-rules_select_ondark {
+  &:before {
+    content: $cov-rules_select_ondark;
+  }
+}
+.cov-script {
+  &:before {
+    content: $cov-script;
+  }
+}
+.cov-script_ondark {
+  &:before {
+    content: $cov-script_ondark;
+  }
+}
+.cov-script_macro {
+  &:before {
+    content: $cov-script_macro;
+  }
+}
+.cov-script_macro_ondark {
+  &:before {
+    content: $cov-script_macro_ondark;
+  }
+}
+.cov-script_sql {
+  &:before {
+    content: $cov-script_sql;
+  }
+}
+.cov-script_sql_ondark {
+  &:before {
+    content: $cov-script_sql_ondark;
+  }
+}
+.cov-script_stored_procedure {
+  &:before {
+    content: $cov-script_stored_procedure;
+  }
+}
+.cov-script_stored_procedure_ondark {
+  &:before {
+    content: $cov-script_stored_procedure_ondark;
+  }
+}
+.cov-segmentation {
+  &:before {
+    content: $cov-segmentation;
+  }
+}
+.cov-server {
+  &:before {
+    content: $cov-server;
+  }
+}
+.cov-server_changed {
+  &:before {
+    content: $cov-server_changed;
+  }
+}
+.cov-server_edit {
+  &:before {
+    content: $cov-server_edit;
+  }
+}
+.cov-server_foreign {
+  &:before {
+    content: $cov-server_foreign;
+  }
+}
+.cov-server_lab {
+  &:before {
+    content: $cov-server_lab;
+  }
+}
+.cov-server_search {
+  &:before {
+    content: $cov-server_search;
+  }
+}
+.cov-server_synced {
+  &:before {
+    content: $cov-server_synced;
+  }
+}
+.cov-sftp {
+  &:before {
+    content: $cov-sftp;
+  }
+}
+.cov-sftp_ondark {
+  &:before {
+    content: $cov-sftp_ondark;
+  }
+}
+.cov-table {
+  &:before {
+    content: $cov-table;
+  }
+}
+.cov-table_changed {
+  &:before {
+    content: $cov-table_changed;
+  }
+}
+.cov-table_edit {
+  &:before {
+    content: $cov-table_edit;
+  }
+}
+.cov-table_foreign {
+  &:before {
+    content: $cov-table_foreign;
+  }
+}
+.cov-table_lab {
+  &:before {
+    content: $cov-table_lab;
+  }
+}
+.cov-table_search {
+  &:before {
+    content: $cov-table_search;
+  }
+}
+.cov-table_synced {
+  &:before {
+    content: $cov-table_synced;
+  }
+}
+.cov-teradata {
+  &:before {
+    content: $cov-teradata;
+  }
+}
+.cov-teradata_nocircle {
+  &:before {
+    content: $cov-teradata_nocircle;
+  }
+}
+.cov-text_analysis {
+  &:before {
+    content: $cov-text_analysis;
+  }
+}
+.cov-undock {
+  &:before {
+    content: $cov-undock;
+  }
+}
+.cov-variable {
+  &:before {
+    content: $cov-variable;
+  }
+}
+.cov-variable_ondark {
+  &:before {
+    content: $cov-variable_ondark;
+  }
+}
+.cov-view_sankey {
+  &:before {
+    content: $cov-view_sankey;
+  }
+}
+.cov-wand {
+  &:before {
+    content: $cov-wand;
+  }
+}
+.cov-workflow {
+  &:before {
+    content: $cov-workflow;
+  }
+}

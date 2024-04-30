@@ -1,7 +1,7 @@
 import { parameters as mainParameters } from '../../../.storybook/preview';
 
-import '../theme/theme.scss';
-import '../../../.storybook/theme/markdown-elements.scss';
+import '../../icons/covalent-icons.scss';
+import '../../../.storybook/theme/theme.scss';
 
 export const parameters = {
   options: {

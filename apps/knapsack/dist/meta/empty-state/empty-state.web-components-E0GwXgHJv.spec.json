@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "headline": {
+      "type": "string",
+      "default": "You don't have access to this area",
+      "description": "The headline of the empty state"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "You don't have permission to view this application. Please contact your system administrator for further details.",
+      "description": "The subtitle displayed below the headline"
+    },
+    "icon": {
+      "type": "string",
+      "default": "lock",
+      "description": "The icon displayed in the empty state"
+    },
+    "card": {
+      "description": "Styles the empty state like a card",
+      "type": "boolean"
+    }
+  }
+}

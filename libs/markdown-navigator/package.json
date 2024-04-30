@@ -34,5 +34,10 @@
   },
   "dependencies": {
     "tslib": "0.0.0-TSLIB"
+  },
+  "exports": {
+    "./markdown-navigator-theme": {
+      "sass": "./_markdown-navigator-theme.scss"
+    }
   }
 }

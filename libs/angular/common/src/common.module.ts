@@ -1,8 +1,9 @@
 import { Type } from '@angular/core';
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MAT_ICON_DEFAULT_OPTIONS } from '@angular/material/icon';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 /**
  * Directives
@@ -36,6 +37,16 @@ const TD_PIPES: Type<any>[] = [
   TdTruncatePipe,
 ];
 
+const TD_DEFAULT_ICON_OPTIONS = {
+  provide: MAT_ICON_DEFAULT_OPTIONS,
+  useValue: { fontSet: 'material-symbols-outlined' },
+};
+
+const TD_DEFAULT_FORM_FIELD_OPTIONS = {
+  provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  useValue: { appearance: 'outline' },
+};
+
 /**
  * Services
  */
@@ -47,6 +58,11 @@ import { IconService } from './services/icon.service';
   imports: [FormsModule, CommonModule],
   declarations: [TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
   exports: [FormsModule, CommonModule, TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
-  providers: [RouterPathService, IconService],
+  providers: [
+    RouterPathService,
+    IconService,
+    TD_DEFAULT_ICON_OPTIONS,
+    TD_DEFAULT_FORM_FIELD_OPTIONS,
+  ],
 })
 export class CovalentCommonModule {}

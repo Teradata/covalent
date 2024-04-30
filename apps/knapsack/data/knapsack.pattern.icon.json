@@ -1,0 +1,53 @@
+{
+  "id": "icon",
+  "title": "Icon",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-N8bzRbfpuX",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/icon.mjs",
+      "alias": "cv-icon",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "disallowText": false,
+            "allowOnlyOne": true,
+            "isTemplateReference": false,
+            "isRequired": true,
+            "description": "The name of the icon to display (e.g. shopping_cart). See Material Icons for an index of all available icons."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        }
+      },
+      "demoIds": ["bn4zy44TYR", "Xr7IHJQ1", "8VqxwwTyJ", "ezyQjAA-T1"],
+      "blockIds": ["Wi5zWBMuy7"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-N8bzRbfpuX"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

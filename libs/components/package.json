@@ -7,13 +7,14 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "sass": "./style.css",
+      "sass": "./index.scss",
       "import": "./index.mjs",
       "require": "./index.js"
     },
-    "./style.css": {
-      "import": "./style.css",
-      "require": "./style.css"
+    "./icon/icon.theme": "./icon/_icon.theme.scss",
+    "./data-table.theme": "./data-table/_data-table.theme.scss",
+    "./theme": {
+      "sass": "./theme/_index.scss"
     },
     "./action-ribbon": {
       "types": "./action-ribbon/action-ribbon.d.ts",
@@ -29,6 +30,11 @@
       "types": "./app-shell/app-shell.d.ts",
       "import": "./app-shell.mjs",
       "require": "./app-shell.js"
+    },
+    "./badge": {
+      "types": "./badge/badge.d.ts",
+      "import": "./badge.mjs",
+      "require": "./badge.js"
     },
     "./button": {
       "types": "./button/button.d.ts",
@@ -80,6 +86,21 @@
       "import": "./empty-state.mjs",
       "require": "./empty-state.js"
     },
+    "./expansion-panel": {
+      "types": "./expansion-panel/expansion-panel.d.ts",
+      "import": "./expansion-panel.mjs",
+      "require": "./expansion-panel.js"
+    },
+    "./expansion-panel-item": {
+      "types": "./expansion-panel/expansion-panel-item.d.ts",
+      "import": "./expansion-panel-item.mjs",
+      "require": "./expansion-panel-item.js"
+    },
+    "./formfield": {
+      "types": "./formfield/formfield.d.ts",
+      "import": "./formfield.mjs",
+      "require": "./formfield.js"
+    },
     "./icon": {
       "types": "./icon/icon.d.ts",
       "import": "./icon.mjs",
@@ -89,6 +110,11 @@
       "types": "./icon-button/icon-button.d.ts",
       "import": "./icon-button.mjs",
       "require": "./icon-button.js"
+    },
+    "./icon-button-toggle": {
+      "types": "./icon-button-toggle/icon-button-toggle.d.ts",
+      "import": "./icon-button-toggle.mjs",
+      "require": "./icon-button-toggle.js"
     },
     "./icon-check-toggle": {
       "types": "./icon-checkbox/icon-checkbox.d.ts",

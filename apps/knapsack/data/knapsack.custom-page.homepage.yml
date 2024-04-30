@@ -1,0 +1,22 @@
+id: homepage
+title: Covalent Design System
+blockIds:
+  - Q7qj81IntK
+  - 93u7FVOSPJ
+settings:
+  pageHeader:
+    backgroundColor:
+      type: design-token
+      tokenName: cv.theme.dark.colors.background
+    textColorTitle:
+      type: design-token
+      tokenName: cv.theme.dark.colors.inverse-surface
+    textColorDescription:
+      type: design-token
+      tokenName: cv.theme.dark.colors.inverse-surface
+    size: large
+    backgroundImage: https://knapsack.imgix.net/site/covalent/globe-dark-g7nfo60ljmsvg
+    hideText: false
+    backgroundSize: cover
+    backgroundOverlay: true
+description: For Teradata products

@@ -28,5 +28,10 @@
   },
   "dependencies": {
     "tslib": "0.0.0-TSLIB"
+  },
+  "exports": {
+    "./highlight-theme": {
+      "sass": "./_highlight-theme.scss"
+    }
   }
 }

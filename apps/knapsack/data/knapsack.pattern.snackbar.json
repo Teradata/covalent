@@ -1,0 +1,83 @@
+{
+  "id": "snackbar",
+  "title": "Snackbar",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-3ERE1Ai9lo",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/snackbar.mjs",
+      "alias": "cv-snackbar",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "action": {
+            "allowedPatternIds": ["button", "icon-button"],
+            "title": "action",
+            "disallowText": true,
+            "description": "Optional <cv-button> which closes the snackbar with reason 'action'."
+          },
+          "dismiss": {
+            "allowedPatternIds": ["icon-button"],
+            "title": "dismiss",
+            "disallowText": true,
+            "description": "Optional <cv-icon-button> which closes the snackbar with reason 'dismiss'."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["open"],
+          "properties": {
+            "open": {
+              "type": "boolean",
+              "default": true,
+              "description": "Whether the snackbar is currently open."
+            },
+            "leading": {
+              "type": "boolean",
+              "description": "Enables the leading layout (see above)."
+            },
+            "stacked": {
+              "type": "boolean",
+              "description": "Enables the stacked layout."
+            },
+            "closeOnEscape": {
+              "description": "Whether the snackbar closes when it is focused and the user presses the ESC key. Defaults to false.",
+              "type": "boolean"
+            },
+            "timeoutMs": {
+              "description": "Automatic dismiss timeout in milliseconds. Value must be between 4000 and 10000 (or -1 to disable the timeout completely) or an error will be thrown. Defaults to 5000 (5 seconds).",
+              "type": "string"
+            },
+            "labelText": {
+              "type": "string",
+              "description": "The text content of the label element."
+            }
+          }
+        }
+      },
+      "demoIds": ["5aKkBtql-E"],
+      "blockIds": ["xfL63ciNa", "pKs3OLNbvF", "GSVdeIILdE"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-3ERE1Ai9lo"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

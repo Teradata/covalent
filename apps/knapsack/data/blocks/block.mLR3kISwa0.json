@@ -1,0 +1,24 @@
+{
+  "id": "mLR3kISwa0",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Emphasis",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

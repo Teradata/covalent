@@ -1,0 +1,23 @@
+{
+  "id": "3lwZAwzyfx",
+  "blockType": "code-snippet",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": "typescript"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "ts { badInput: false, customError: false, patternMismatch: false, rangeOverflow: false, rangeUnderflow: false, stepMismatch: false, tooLong: false, tooShort: false, typeMismatch: false, valid: true, valueMissing: false }"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

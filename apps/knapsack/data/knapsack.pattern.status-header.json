@@ -1,0 +1,89 @@
+{
+  "id": "status-header",
+  "title": "Status header",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-UDLnfGbB2W",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/status-header.mjs",
+      "alias": "cv-status-header",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "status-header-actions": {
+            "allowedPatternIds": ["icon-button", "icon"],
+            "title": "status-header-actions",
+            "disallowText": true,
+            "description": "Header action elements for the status header."
+          },
+          "status-header-icon": {
+            "allowedPatternIds": ["icon", "circular-progress"],
+            "title": "status-header-icon",
+            "disallowText": true,
+            "allowOnlyOne": true,
+            "isTemplateReference": false,
+            "description": "Icon to be displayed beside the status header text."
+          },
+          "status-header-text": {
+            "allowedPatternIds": ["status-header-item"],
+            "title": "status-header-text",
+            "disallowText": true
+          },
+          "default": {
+            "title": "default",
+            "description": "The deafult slot for other content to be displayed in the status header."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "titleText": {
+              "type": "string",
+              "default": "Active item details",
+              "description": "Title of the status header."
+            },
+            "statusText": {
+              "type": "string",
+              "default": "In progress",
+              "description": "Text for the current status."
+            },
+            "statusHelper": {
+              "type": "string",
+              "default": "the helper text for the status",
+              "description": "Helper text for the current status."
+            },
+            "state": {
+              "description": "Current state of the status header.",
+              "type": "string",
+              "enum": ["active", "positive", "caution", "error", "neutral"]
+            }
+          }
+        }
+      },
+      "demoIds": ["1OH1Dga5C0"],
+      "blockIds": ["9nbtEWvt9"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-UDLnfGbB2W"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

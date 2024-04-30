@@ -38,7 +38,6 @@ export class CovalentNavRailListItem extends CovalentListItem {
   @queryAssignedElements({ slot: 'expansion-panel', flatten: true })
   expansionPanelElements!: CovalentList[];
 
-
   @property({ type: Boolean, reflect: true })
   open = false;
 
@@ -146,9 +145,7 @@ export class CovalentNavRailListItem extends CovalentListItem {
   renderExpansionItem() {
     const text = this.renderText();
     const graphic = this.graphic ? this.renderGraphic() : nothing;
-    const meta = this.hasMeta ? this.renderMeta() : nothing;
-    const arrowIcon = this.open ? 'arrow_drop_down' : 'arrow_right';
-    const arrow = html`<cv-icon class="expansion-icon">${arrowIcon}</cv-icon>`;
+    const meta = this.renderMeta();
 
     return html`
       <div
@@ -157,7 +154,7 @@ export class CovalentNavRailListItem extends CovalentListItem {
         @keydown=${this._toggleOpen}
         class="expansion-header"
       >
-        ${this.renderRipple()} ${arrow} ${graphic} ${text} ${meta}
+        ${this.renderRipple()} ${graphic} ${text} ${meta}
       </div>
       <div class="expansion-panel" @click=${this._deselectHeader}>
         <slot name="expansion-panel"></slot>
@@ -177,6 +174,18 @@ export class CovalentNavRailListItem extends CovalentListItem {
 
     this.removeEventListener('keydown', this._handleKeydown);
     this.addEventListener('request-selected', this._handleRequestSelected);
+  }
+
+  protected override renderMeta() {
+    const arrowIcon = this.open ? 'arrow_drop_up' : 'arrow_drop_down';
+    const arrow = this.hasChildren
+      ? html`<cv-icon class="expansion-icon">${arrowIcon}</cv-icon>`
+      : '';
+
+    return html`<span class="mdc-deprecated-list-item__meta material-icons">
+      ${arrow}
+      <slot name="meta"></slot>
+    </span>`;
   }
 
   override render() {

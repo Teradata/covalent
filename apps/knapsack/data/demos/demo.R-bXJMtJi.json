@@ -1,0 +1,32 @@
+{
+  "id": "R-bXJMtJi",
+  "title": "Main",
+  "type": "data",
+  "patternId": "list",
+  "templateId": "web-components-fObxCsu2i8",
+  "data": {
+    "props": {
+      "activatible": true,
+      "subNav": false,
+      "items": {},
+      "selected": {},
+      "index": {}
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "list-item",
+          "templateId": "web-components-ytRTf8wtxn",
+          "demoId": "qgGc8WUNHQ"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "list-item",
+          "templateId": "web-components-ytRTf8wtxn",
+          "demoId": "qgGc8WUNHQ"
+        }
+      ]
+    }
+  }
+}

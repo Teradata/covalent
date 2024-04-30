@@ -226,11 +226,4 @@ export class DocsAppComponent {
     // set direction
     this.dir = getDirection();
   }
-
-  get activeTheme(): string {
-    return localStorage.getItem('theme') ?? '';
-  }
-  theme(theme: string): void {
-    localStorage.setItem('theme', theme);
-  }
 }

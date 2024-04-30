@@ -17,5 +17,10 @@ module.exports = {
   features: {
     legacyMdx1: true, // 👈 Enables MDX v1 support
   },
+  docs: {
+    //👇 See the table below for the list of supported options
+    autodocs: true,
+    defaultName: 'Overview',
+  },
   staticDirs: [join(__dirname, './public')],
 };

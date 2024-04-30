@@ -1,0 +1,26 @@
+{
+  "id": "tnvgSz6pjh",
+  "title": "Main",
+  "type": "data",
+  "patternId": "alert",
+  "templateId": "web-components-4qjJYWsUZi",
+  "data": {
+    "props": {
+      "icon": "info",
+      "state": "active",
+      "titleText": "Alert title",
+      "iconAriaLabel": "info",
+      "descriptionText": "Alert description"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ]
+    }
+  }
+}

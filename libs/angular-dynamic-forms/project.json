@@ -6,7 +6,7 @@
   "prefix": "covalent",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular-dynamic-forms"],
       "options": {
         "project": "libs/angular-dynamic-forms/ng-package.json",
@@ -20,7 +20,14 @@
           "tsConfig": "libs/angular-dynamic-forms/tsconfig.lib.json"
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "projects": ["angular"],
+          "target": "build",
+          "params": "ignore"
+        }
+      ]
     },
     "test": {
       "executor": "@nrwl/jest:jest",
@@ -31,7 +38,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
           "libs/angular-dynamic-forms/src/**/*.ts",

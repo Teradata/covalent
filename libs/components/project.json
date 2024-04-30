@@ -21,9 +21,23 @@
           "./node_modules/.bin/tsc --project libs/components/tsconfig.lib.json  --declaration --declarationMap --emitDeclarationOnly --outDir dist/libs/components",
           "cp libs/components/package.json dist/libs/components"
         ],
-        "parallel": false,
-        "outputPath": "dist/libs/components"
-      }
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/libs/components"]
+    },
+    "build-scss": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "mkdir -p dist/libs/components/theme/prebuilt",
+          "cp libs/components/src/index.scss dist/libs/components",
+          "cp libs/components/src/theme/_index.scss dist/libs/components/theme",
+          "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/components/src/theme/prebuilt:./dist/libs/components/theme/prebuilt"
+        ],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/libs/components/theme"],
+      "dependsOn": ["build"]
     },
     "test": {
       "executor": "nx:run-commands",
@@ -34,7 +48,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/components/**/*.ts"]

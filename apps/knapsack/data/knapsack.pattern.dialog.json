@@ -1,0 +1,126 @@
+{
+  "id": "dialog",
+  "title": "Dialog",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-S9Ia0KOrya",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/dialog.mjs",
+      "alias": "cv-dialog",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "Primary content area. May contain a list, a form, or prose."
+          },
+          "secondaryAction": {
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "icon",
+              "switch",
+              "icon-button"
+            ],
+            "title": "secondaryAction",
+            "disallowText": true,
+            "allowOnlyOne": false,
+            "description": "Footer area containing the dialog's secondary action button."
+          },
+          "primaryAction": {
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "icon",
+              "icon-button",
+              "switch"
+            ],
+            "title": "primaryAction",
+            "disallowText": true,
+            "description": "Footer area containing the dialog's primary action button."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["open"],
+          "properties": {
+            "open": {
+              "type": "boolean",
+              "default": true,
+              "description": "Opens the dialog when true"
+            },
+            "hideActions": {
+              "type": "boolean",
+              "description": "Hides the actions footer of the dialog. Needed to remove excess padding when no actions are slotted in."
+            },
+            "stacked": {
+              "description": "Stacks the action buttons.",
+              "type": "boolean"
+            },
+            "heading": {
+              "type": "string",
+              "default": "Sample dialog title",
+              "description": "Heading text of the dialog"
+            },
+            "scrimClickAction": {
+              "type": "string",
+              "description": "Setting this attribute to an empty string \"\" will prevent clicks outside the dialog from closing the dialog.",
+              "default": "close"
+            },
+            "escapeKeyAction": {
+              "type": "string",
+              "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog.",
+              "default": "close"
+            },
+            "defaultAction": {
+              "type": "string",
+              "description": "Action to be emitted with the closing and closed events when <cv-dialog>.open is toggled",
+              "default": "close"
+            },
+            "actionAttribute": {
+              "type": "string",
+              "description": "Attribute to read in light dom of dialog for closing action value",
+              "default": "dialogAction"
+            },
+            "initialFocusAttribute": {
+              "type": "string",
+              "description": "Attribute to search for in light dom for initial focus on dialog open.",
+              "default": "dialogInitialFocus"
+            }
+          }
+        }
+      },
+      "demoIds": ["yovRt8o986"],
+      "blockIds": [
+        "qJo5uTJEn3",
+        "cT2x20EdNp",
+        "ToPwHs3IQ3",
+        "tweFdTxy1L",
+        "Z1JqAQWncl",
+        "ZLo3IFS9xW",
+        "YGNzaxhU6"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-S9Ia0KOrya"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

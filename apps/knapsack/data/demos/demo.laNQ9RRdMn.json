@@ -1,0 +1,28 @@
+{
+  "id": "laNQ9RRdMn",
+  "title": "Icon button",
+  "description": "A description",
+  "type": "data",
+  "patternId": "badge",
+  "templateId": "web-components-40aOlYC6I9",
+  "data": {
+    "props": {
+      "content": "33",
+      "max": 99,
+      "size": "large",
+      "verticalAlignment": "top",
+      "horizontalAlignment": "right",
+      "showZero": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "BueNSFTYn"
+        }
+      ]
+    }
+  }
+}

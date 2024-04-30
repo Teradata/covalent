@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "centerTitle": {
+      "type": "boolean",
+      "description": "Centers the title horizontally. Only meant to be used with 0 or 1 actionItems."
+    },
+    "prominent": {
+      "type": "boolean",
+      "description": "Makes the bar much taller, can be combined with dense."
+    },
+    "dense": {
+      "type": "boolean",
+      "description": "Makes the bar a little smaller for higher density applications."
+    },
+    "scrollTarget": {
+      "description": "Element used to listen for scroll events. (Type: HTMLElement | Window)",
+      "type": "object",
+      "required": [],
+      "properties": {}
+    }
+  }
+}

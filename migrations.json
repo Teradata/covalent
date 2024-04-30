@@ -1,18 +1,81 @@
 {
   "migrations": [
     {
-      "version": "15.0.0-0",
-      "description": "Updates the Angular Material to v15",
-      "factory": "./ng-update/index_bundled#updateToV15",
-      "package": "@angular/material",
-      "name": "migration-v15"
+      "cli": "nx",
+      "version": "17.3.0-beta.6",
+      "description": "Updates the nx wrapper.",
+      "implementation": "./src/migrations/update-17-3-0/update-nxw",
+      "package": "nx",
+      "name": "17.3.0-update-nx-wrapper"
     },
     {
-      "version": "15.0.0-0",
-      "description": "Updates the Angular CDK to v15",
-      "factory": "./ng-update/index#updateToV15",
-      "package": "@angular/cdk",
-      "name": "migration-v15"
+      "version": "17.2.0-beta.0",
+      "description": "Simplify eslintFilePatterns",
+      "implementation": "./src/migrations/update-17-2-0/simplify-eslint-patterns",
+      "package": "@nx/eslint",
+      "name": "simplify-eslint-patterns"
+    },
+    {
+      "version": "17.2.9",
+      "description": "Move executor options to target defaults",
+      "implementation": "./src/migrations/update-17-2-9/move-options-to-target-defaults",
+      "package": "@nx/eslint",
+      "name": "move-options-to-target-defaults"
+    },
+    {
+      "cli": "nx",
+      "version": "17.2.0-beta.2",
+      "description": "Rename '@nx/angular:webpack-dev-server' executor to '@nx/angular:dev-server'",
+      "factory": "./src/migrations/update-17-2-0/rename-webpack-dev-server",
+      "package": "@nx/angular",
+      "name": "rename-webpack-dev-server-executor"
+    },
+    {
+      "cli": "nx",
+      "version": "17.3.0-beta.10",
+      "requires": {
+        "@angular/core": ">=17.1.0"
+      },
+      "description": "Update the @angular/cli package version to ~17.1.0.",
+      "factory": "./src/migrations/update-17-3-0/update-angular-cli",
+      "package": "@nx/angular",
+      "name": "update-angular-cli-version-17-1-0"
+    },
+    {
+      "cli": "nx",
+      "version": "17.3.0-beta.10",
+      "requires": {
+        "@angular/core": ">=17.1.0"
+      },
+      "description": "Add 'browser-sync' as dev dependency when '@angular-devkit/build-angular:ssr-dev-server' or '@nx/angular:module-federation-dev-ssr' is used.",
+      "factory": "./src/migrations/update-17-3-0/add-browser-sync-dependency",
+      "package": "@nx/angular",
+      "name": "add-browser-sync-dependency"
+    },
+    {
+      "cli": "nx",
+      "version": "17.3.0-beta.10",
+      "requires": {
+        "@angular/core": ">=17.1.0"
+      },
+      "description": "Add 'autoprefixer' as dev dependency when '@nx/angular:ng-packagr-lite' or '@nx/angular:package` is used.",
+      "factory": "./src/migrations/update-17-3-0/add-autoprefixer-dependency",
+      "package": "@nx/angular",
+      "name": "add-autoprefixer-dependency"
+    },
+    {
+      "version": "17.2.0-beta.0",
+      "description": "Simplify eslintFilePatterns",
+      "implementation": "./src/migrations/update-17-2-0/simplify-eslint-patterns",
+      "package": "@nx/linter",
+      "name": "simplify-eslint-patterns"
+    },
+    {
+      "version": "17.2.9",
+      "description": "Move executor options to target defaults",
+      "implementation": "./src/migrations/update-17-2-9/move-options-to-target-defaults",
+      "package": "@nx/linter",
+      "name": "move-options-to-target-defaults"
     }
   ]
 }

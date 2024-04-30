@@ -1,0 +1,10 @@
+{
+  "id": "kqAjNU6PeQ",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "color-swatch",
+    "tokenType": "color",
+    "groupIds": ["cv.theme.dark.palettes"],
+    "include": "digital"
+  }
+}

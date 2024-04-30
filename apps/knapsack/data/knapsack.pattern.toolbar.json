@@ -1,0 +1,85 @@
+{
+  "id": "toolbar",
+  "title": "Toolbar",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-A6-16QhSaM",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/toolbar.mjs",
+      "alias": "cv-toolbar",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "title": {
+            "title": "title",
+            "description": "A <div> or <span> that will be used as the title text."
+          },
+          "actionItems": {
+            "allowedPatternIds": ["icon-button", "textfield"],
+            "title": "actionItems",
+            "description": "A number of <cv-icon-button> elements to use for action icons on the right side."
+          },
+          "navigationIcon": {
+            "allowedPatternIds": ["icon-button"],
+            "title": "navigationIcon",
+            "description": "One <cv-icon-button> element to use for the left icon.",
+            "allowOnlyOne": true
+          },
+          "default": {
+            "title": "default",
+            "description": "Scrollable content to display under the bar. This may be the entire application."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "dense": {
+              "type": "boolean",
+              "description": "Makes the bar a little smaller for higher density applications."
+            },
+            "centerTitle": {
+              "description": "Centers the title horizontally. Only meant to be used with 0 or 1 actionItems.",
+              "type": "boolean"
+            },
+            "prominent": {
+              "type": "string",
+              "description": "Makes the bar much taller, can be combined with dense."
+            },
+            "scrollTarget": {
+              "description": "Element used to listen for scroll events. (Type: HTMLElement | Window)",
+              "type": "string"
+            },
+            "sticky": {
+              "description": "Position is sticky when scrolled.",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["NXMdeiHjKO"],
+      "blockIds": ["IRWOjWCkbH", "1vU2Q5vIku"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-A6-16QhSaM"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

@@ -115,32 +115,24 @@
 
       <div class="mdc-data-table__pagination-navigation">
         <div class="mdc-data-table__pagination-total">1‑10 of 100</div>
-        <button
-          class="mdc-icon-button material-icons mdc-data-table__pagination-button"
+        <cv-icon
+          class="mdc-data-table__pagination-button"
           data-first-page="true"
           disabled
-        >
-          <div class="mdc-button__icon">first_page</div>
-        </button>
-        <button
-          class="mdc-icon-button material-icons mdc-data-table__pagination-button"
+          >first_page
+        </cv-icon>
+        <cv-icon
+          class="mdc-data-table__pagination-button"
           data-prev-page="true"
           disabled
+          >chevron_left
+        </cv-icon>
+        <cv-icon class="mdc-data-table__pagination-button" data-next-page="true"
+          >chevron_right</cv-icon
         >
-          <div class="mdc-button__icon">chevron_left</div>
-        </button>
-        <button
-          class="mdc-icon-button material-icons mdc-data-table__pagination-button"
-          data-next-page="true"
+        <cv-icon class="mdc-data-table__pagination-button" data-last-page="true"
+          >last_page</cv-icon
         >
-          <div class="mdc-button__icon">chevron_right</div>
-        </button>
-        <button
-          class="mdc-icon-button material-icons mdc-data-table__pagination-button"
-          data-last-page="true"
-        >
-          <div class="mdc-button__icon">last_page</div>
-        </button>
       </div>
     </div>
   </div>

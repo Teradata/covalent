@@ -1,0 +1,60 @@
+{
+  "id": "tree-list-item",
+  "title": "Tree list item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-1jOFYZB9ms",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/tree-list.mjs",
+      "alias": "cv-tree-list-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "label": {
+            "title": "label"
+          },
+          "extraContent": {
+            "title": "extraContent"
+          },
+          "nest": {
+            "allowedPatternIds": ["tree-list-item"],
+            "title": "nest",
+            "disallowText": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "icon": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "demoIds": ["7gFch0E4yr"],
+      "blockIds": []
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-1jOFYZB9ms"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

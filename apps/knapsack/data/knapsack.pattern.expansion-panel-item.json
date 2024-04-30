@@ -1,0 +1,108 @@
+{
+  "id": "expansion-panel-item",
+  "title": "Expansion panel item",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-vBLifAApG",
+      "title": "Web Components",
+      "path": " ../../../dist/libs/components/expansion-panel-item.mjs",
+      "alias": "cv-expansion-panel-item",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "content": {
+            "title": "content",
+            "description": "The slot for content in the panel item"
+          },
+          "footer": {
+            "title": "footer",
+            "description": "The slot for footer in a panel item"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "title": {
+              "type": "string",
+              "default": "Title",
+              "description": "The title of the panel item"
+            },
+            "contentPreview": {
+              "type": "string",
+              "description": "The content preview text of the panel item"
+            },
+            "index": {
+              "description": "Sets the index of the panel item",
+              "type": "number",
+              "default": 0
+            },
+            "open": {
+              "description": "Expands the panel item when true",
+              "type": "boolean"
+            },
+            "isTopPanel": {
+              "description": "True for the top most panel item in an expansion panel",
+              "type": "boolean"
+            },
+            "isBottomPanel": {
+              "description": "True for the bottom most panel item in an expansion panel",
+              "type": "boolean"
+            },
+            "isInnerPanel": {
+              "description": "True for the inner panel items in an expansion panel",
+              "type": "boolean"
+            },
+            "isSinglePanel": {
+              "description": "True if the expansion panel has a single panel item",
+              "type": "boolean"
+            },
+            "belowOpenInnerPanel": {
+              "description": "True for the panel item below an open inner panel in an expansion panel",
+              "type": "boolean"
+            },
+            "aboveOpenInnerPanel": {
+              "description": "True for the panel item above an open inner panel in an expansion panel",
+              "type": "boolean"
+            },
+            "separateSinglePanel": {
+              "description": "If the panel right below the top panel or right above the bottom panel is opened, the very top or bottom panel becomes a single panel.",
+              "type": "boolean"
+            },
+            "showFooter": {
+              "description": "Shows the footer in the panel item",
+              "type": "boolean"
+            },
+            "noSurface": {
+              "description": "Sets the theme surface to transparent",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["w0H1gm2jvp", "6tUMrwwjoe"],
+      "blockIds": ["Bdwfks5lD", "ZyjEXVnvDD"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-vBLifAApG"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

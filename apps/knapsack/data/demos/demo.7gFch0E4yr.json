@@ -1,0 +1,26 @@
+{
+  "id": "7gFch0E4yr",
+  "title": "Main",
+  "type": "data",
+  "patternId": "tree-list-item",
+  "templateId": "web-components-1jOFYZB9ms",
+  "data": {
+    "props": {
+      "icon": "description"
+    },
+    "slots": {
+      "label": [
+        {
+          "type": "text",
+          "text": "Tree list item"
+        }
+      ],
+      "extraContent": [
+        {
+          "type": "text",
+          "text": "Secondary text"
+        }
+      ]
+    }
+  }
+}

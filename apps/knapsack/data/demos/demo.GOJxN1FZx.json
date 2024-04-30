@@ -1,0 +1,32 @@
+{
+  "id": "GOJxN1FZx",
+  "title": "Main",
+  "type": "data",
+  "patternId": "tabs",
+  "templateId": "web-components-kjFGUA31tg",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "tab",
+          "templateId": "web-components-1-Bf2NwL1T",
+          "demoId": "3HxZQWfBi9"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "tab",
+          "templateId": "web-components-1-Bf2NwL1T",
+          "demoId": "3HxZQWfBi9"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "tab",
+          "templateId": "web-components-1-Bf2NwL1T",
+          "demoId": "3HxZQWfBi9"
+        }
+      ]
+    }
+  }
+}

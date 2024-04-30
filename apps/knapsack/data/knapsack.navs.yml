@@ -1,0 +1,370 @@
+byId:
+  action-ribbon:
+    id: action-ribbon
+    name: Action ribbon
+    parentId: test-page
+    path: /pattern/action-ribbon
+  alert:
+    id: alert
+    name: Alert
+    parentId: test-page
+    path: /pattern/alert
+  app-shell:
+    id: app-shell
+    name: App shell
+    parentId: test-page
+    path: /pattern/app-shell
+  badge:
+    id: badge
+    name: Badge
+    parentId: test-page
+    path: /pattern/badge
+  breadcrumbs:
+    id: breadcrumbs
+    name: Breadcrumbs
+    parentId: test-page
+    path: /pattern/breadcrumbs
+  button:
+    id: button
+    name: Button
+    parentId: test-page
+    path: /pattern/button
+  card:
+    id: card
+    name: Card
+    parentId: test-page
+    path: /pattern/card
+  check-list-item:
+    hidden: true
+    id: check-list-item
+    name: Check list item
+    parentId: list
+    path: /pattern/check-list-item
+  checkbox:
+    id: checkbox
+    name: Checkbox
+    parentId: test-page
+    path: /pattern/checkbox
+  chip:
+    id: chip
+    name: Chip
+    parentId: test-page
+    path: /pattern/chip
+  chip-item:
+    id: chip-item
+    name: Chip item
+    parentId: chip
+    path: /pattern/chip-item
+  circular-progress:
+    id: circular-progress
+    name: Circular progress
+    parentId: test-page
+    path: /pattern/circular-progress
+  code-snippet:
+    id: code-snippet
+    name: Code snippet
+    parentId: test-page
+    path: /pattern/code-snippet
+  color-use:
+    id: color-use
+    name: Color use
+    parentId: guides
+    path: /pages/color-use
+  colors:
+    id: colors
+    name: Dark
+    parentId: light
+    path: /pages/colors
+  colors-okgyf0rxrr:
+    id: colors-okgyf0rxrr
+    name: Light
+    parentId: light
+    path: /pages/colors-okgyf0rxrr
+  dark:
+    id: dark
+    name: Dark
+    parentId: palettes-lm0uu73t4r
+    path: /pages/dark
+  dialog:
+    id: dialog
+    name: Dialog
+    parentId: test-page
+    path: /pattern/dialog
+  empty-state:
+    id: empty-state
+    name: Empty state
+    parentId: test-page
+    path: /pattern/empty-state
+  expansion-panel:
+    id: expansion-panel
+    name: Expansion panel
+    parentId: test-page
+    path: /pattern/expansion-panel
+  expansion-panel-item:
+    id: expansion-panel-item
+    name: Expansion panel item
+    parentId: expansion-panel
+    path: /pattern/expansion-panel-item
+  form-field:
+    id: form-field
+    name: Form Field
+    parentId: test-page
+    path: /pattern/form-field
+  guides:
+    id: guides
+    name: Guides
+    parentId: root
+    path: ''
+  icon:
+    id: icon
+    name: Icon
+    parentId: test-page
+    path: /pattern/icon
+  icon-button:
+    id: icon-button
+    name: Icon button
+    parentId: test-page
+    path: /pattern/icon-button
+  icon-checkbox:
+    id: icon-checkbox
+    name: Icon checkbox
+    parentId: test-page
+    path: /pattern/icon-checkbox
+  icon-radio:
+    id: icon-radio
+    name: Icon radio
+    parentId: test-page
+    path: /pattern/icon-radio
+  light:
+    id: light
+    name: Colors
+    parentId: tokens
+    path: /pages/light
+  linear-progress:
+    id: linear-progress
+    name: Linear progress
+    parentId: test-page
+    path: /pattern/linear-progress
+  list:
+    id: list
+    name: List
+    parentId: test-page
+    path: /pattern/list
+  list-item:
+    hidden: true
+    id: list-item
+    name: List item
+    parentId: list
+    path: /pattern/list-item
+  menu:
+    id: menu
+    name: Menu
+    parentId: test-page
+    path: /pattern/menu
+  naviigation-list-item:
+    hidden: true
+    id: naviigation-list-item
+    name: Navigation list item
+    parentId: list
+    path: /pattern/naviigation-list-item
+  palettes:
+    id: palettes
+    name: Light
+    parentId: palettes-lm0uu73t4r
+    path: /pages/palettes
+  palettes-lm0uu73t4r:
+    id: palettes-lm0uu73t4r
+    name: Palettes
+    parentId: tokens
+    path: /pages/palettes-lm0uu73t4r
+  radio:
+    id: radio
+    name: Radio
+    parentId: test-page
+    path: /pattern/radio
+  radio-list-item:
+    hidden: true
+    id: radio-list-item
+    name: Radio list item
+    parentId: list
+    path: /pattern/radio-list-item
+  select:
+    id: select
+    name: Select
+    parentId: test-page
+    path: /pattern/select
+  side-sheet:
+    id: side-sheet
+    name: Side sheet
+    parentId: test-page
+    path: /pattern/side-sheet
+  slider:
+    id: slider
+    name: Slider
+    parentId: test-page
+    path: /pattern/slider
+  snackbar:
+    id: snackbar
+    name: Snackbar
+    parentId: test-page
+    path: /pattern/snackbar
+  status-header:
+    id: status-header
+    name: Status header
+    parentId: test-page
+    path: /pattern/status-header
+  status-header-item:
+    hidden: true
+    id: status-header-item
+    name: Status header item
+    parentId: status-header
+    path: /pattern/status-header-item
+  switch:
+    id: switch
+    name: Switch
+    parentId: test-page
+    path: /pattern/switch
+  tab:
+    hidden: true
+    id: tab
+    name: tab
+    parentId: tabs
+    path: /pattern/tab
+  tabs:
+    id: tabs
+    name: Tabs
+    parentId: test-page
+    path: /pattern/tabs
+  test-page:
+    id: test-page
+    name: Components
+    parentId: root
+    path: /pages/test-page
+  text:
+    id: text
+    name: Typography
+    parentId: test-page
+    path: /pattern/text
+  text-area:
+    id: text-area
+    name: Text area
+    parentId: test-page
+    path: /pattern/text-area
+  text-lockup:
+    id: text-lockup
+    name: Text lockup
+    parentId: test-page
+    path: /pattern/text-lockup
+  textfield:
+    id: textfield
+    name: Text field
+    parentId: test-page
+    path: /pattern/textfield
+  tokens:
+    id: tokens
+    name: Tokens
+    parentId: root
+    path: /pages/tokens
+  toolbar:
+    id: toolbar
+    name: Toolbar
+    parentId: test-page
+    path: /pattern/toolbar
+  tooltip:
+    id: tooltip
+    name: Tooltip
+    parentId: test-page
+    path: /pattern/tooltip
+  top-app-bar:
+    id: top-app-bar
+    name: Top app bar
+    parentId: test-page
+    path: /pattern/top-app-bar
+  top-app-bar-fixed:
+    hidden: true
+    id: top-app-bar-fixed
+    name: Top app bar - fixed
+    parentId: top-app-bar
+    path: /pattern/top-app-bar-fixed
+  tree-list:
+    id: tree-list
+    name: Tree list
+    parentId: test-page
+    path: /pattern/tree-list
+  tree-list-item:
+    hidden: true
+    id: tree-list-item
+    name: Tree list item
+    parentId: tree-list
+    path: /pattern/tree-list-item
+  typography:
+    id: typography
+    name: Typography
+    parentId: tokens
+    path: /pages/typography
+  writing:
+    id: writing
+    name: Writing
+    parentId: root
+    path: /pages/writing
+order:
+  - guides
+  - test-page
+  - action-ribbon
+  - alert
+  - app-shell
+  - badge
+  - breadcrumbs
+  - button
+  - card
+  - checkbox
+  - code-snippet
+  - chip
+  - chip-item
+  - circular-progress
+  - dialog
+  - empty-state
+  - expansion-panel
+  - expansion-panel-item
+  - form-field
+  - icon
+  - icon-button
+  - icon-checkbox
+  - icon-radio
+  - linear-progress
+  - list
+  - list-item
+  - naviigation-list-item
+  - check-list-item
+  - radio-list-item
+  - menu
+  - radio
+  - select
+  - side-sheet
+  - slider
+  - snackbar
+  - status-header
+  - status-header-item
+  - switch
+  - tabs
+  - tab
+  - toolbar
+  - tooltip
+  - top-app-bar
+  - top-app-bar-fixed
+  - tree-list
+  - tree-list-item
+  - text-area
+  - textfield
+  - text-lockup
+  - text
+  - tokens
+  - light
+  - colors-okgyf0rxrr
+  - colors
+  - palettes-lm0uu73t4r
+  - palettes
+  - dark
+  - typography
+  - writing
+  - color-use

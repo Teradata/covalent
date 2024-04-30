@@ -1,0 +1,24 @@
+{
+  "id": "9Q9Qg-LtnC",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "LYFg57xRfd",
+        "link": {
+          "name": "Light",
+          "path": "/pages/palettes"
+        },
+        "title": "Light"
+      },
+      {
+        "id": "2IqMLyAJJe",
+        "link": {
+          "name": "Dark",
+          "path": "/pages/dark"
+        },
+        "title": "Dark"
+      }
+    ]
+  },
+  "blockType": "shortcut-tiles"
+}

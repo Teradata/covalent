@@ -1,0 +1,45 @@
+{
+  "id": "qgGc8WUNHQ",
+  "title": "Main",
+  "type": "data",
+  "patternId": "list-item",
+  "templateId": "web-components-ytRTf8wtxn",
+  "data": {
+    "props": {
+      "tabindex": -1,
+      "twoLine": false,
+      "graphic": "avatar",
+      "hasMeta": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "List item"
+        }
+      ],
+      "secondary": [
+        {
+          "type": "text",
+          "text": "secondary text"
+        }
+      ],
+      "graphic": [
+        {
+          "type": "template-demo",
+          "patternId": "icon",
+          "templateId": "web-components-N8bzRbfpuX",
+          "demoId": "bn4zy44TYR"
+        }
+      ],
+      "meta": [
+        {
+          "type": "template-demo",
+          "patternId": "icon",
+          "templateId": "web-components-N8bzRbfpuX",
+          "demoId": "ezyQjAA-T1"
+        }
+      ]
+    }
+  }
+}

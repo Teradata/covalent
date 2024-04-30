@@ -1,0 +1,23 @@
+{
+  "id": "1cr3GRlfdT",
+  "title": "Switch",
+  "description": "A description",
+  "type": "data",
+  "patternId": "form-field",
+  "templateId": "web-components-I5Sx1HQnJ",
+  "data": {
+    "props": {
+      "label": "Form field label"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "switch",
+          "templateId": "web-components-tGj2TvSrpD",
+          "demoId": "U89p0LyOsP"
+        }
+      ]
+    }
+  }
+}

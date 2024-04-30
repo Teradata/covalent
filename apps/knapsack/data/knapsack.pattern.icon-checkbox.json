@@ -1,0 +1,82 @@
+{
+  "id": "icon-checkbox",
+  "title": "Icon checkbox",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-jTiv8OpG9M",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/icon-check-toggle.mjs",
+      "alias": "cv-checkbox-icon",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "text": {
+            "title": "text",
+            "description": "The slot for the text in the icon checkbox"
+          },
+          "icon": {
+            "allowedPatternIds": ["icon"],
+            "title": "icon",
+            "disallowText": true,
+            "description": "The slot for the icon in the icon checkbox"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "checked": {
+              "type": "boolean",
+              "description": "True when the icon checkbox is checked"
+            },
+            "disabled": {
+              "type": "boolean",
+              "description": "Disables the icon checkbox and renders in muted colors."
+            },
+            "iconOnly": {
+              "description": "Displays the icon without any text in the icon checkbox",
+              "type": "boolean"
+            },
+            "value": {
+              "type": "string",
+              "description": "The value that will be included if the checkbox is submitted in a form."
+            },
+            "width": {
+              "type": "string",
+              "description": "Sets the width of the icon checkbox",
+              "default": "200"
+            },
+            "height": {
+              "type": "string",
+              "description": "Sets the height of the icon checkbox",
+              "default": "160"
+            }
+          }
+        }
+      },
+      "demoIds": ["FTt0oVydi1"],
+      "blockIds": ["CkbsHp0-Q", "iYLjSsyG4R", "sTSxU871L1"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-jTiv8OpG9M"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

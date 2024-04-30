@@ -1,4 +1,5 @@
 import './code-snippet';
+import '../dialog/dialog';
 import '../icon-button/icon-button';
 import '../button/button';
 

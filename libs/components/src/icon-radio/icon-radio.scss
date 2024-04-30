@@ -1,4 +1,6 @@
 :host {
+  --mdc-radio-unchecked-color: var(--mdc-theme-text-icon-on-background);
+
   .mdc-radio__background {
     position: absolute;
     top: 8px;

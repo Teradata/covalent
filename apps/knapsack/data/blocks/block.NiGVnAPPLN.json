@@ -1,0 +1,9 @@
+{
+  "id": "NiGVnAPPLN",
+  "blockType": "design-tokens",
+  "data": {
+    "demoId": "table-list",
+    "tokenType": "string",
+    "groupIds": ["typography"]
+  }
+}

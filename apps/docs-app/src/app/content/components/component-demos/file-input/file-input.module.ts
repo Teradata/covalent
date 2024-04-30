@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
+
 import { TdHighlightComponent } from '@covalent/highlight';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { FileInputDemoComponent } from './file-input.component';

@@ -1,0 +1,87 @@
+{
+  "id": "tab",
+  "title": "tab",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-1-Bf2NwL1T",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/tab.mjs",
+      "alias": "cv-tab",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "icon": {
+            "title": "icon",
+            "description": "Slotted icon to display. Only available if hasImageIcon or icon are defined."
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": ["label"],
+          "properties": {
+            "label": {
+              "type": "string",
+              "default": "Tab label ",
+              "description": "Text label to display in tab."
+            },
+            "icon": {
+              "type": "string",
+              "description": "Material design icon name to display (overridden by slotted icon)."
+            },
+            "indicatorIcon": {
+              "type": "string",
+              "description": "Material design icon name to display as the indicator."
+            },
+            "hasImageIcon": {
+              "description": "Displays a slot to show an image icon.",
+              "type": "boolean"
+            },
+            "isFadingIndicator": {
+              "description": "Indicator fades in and out instead of sliding.",
+              "type": "boolean"
+            },
+            "minWidth": {
+              "description": "Shrinks tab as narrow as possible without causing text to wrap.",
+              "type": "boolean"
+            },
+            "isMinWidthIndicator": {
+              "description": "Shrinks indicator to be the size of the content.",
+              "type": "boolean"
+            },
+            "stacked": {
+              "description": "Stacks icon on top of label text.",
+              "type": "boolean"
+            },
+            "active": {
+              "description": "Indicates whether the tab's indicator is active.",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["3HxZQWfBi9"],
+      "blockIds": ["g2INAb2GcM", "LwcyN6P2pv", "IkQJr1t3t", "NUw1Dsl5un"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-1-Bf2NwL1T"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

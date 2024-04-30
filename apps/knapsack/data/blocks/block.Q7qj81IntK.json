@@ -1,0 +1,21 @@
+{
+  "id": "Q7qj81IntK",
+  "data": {
+    "type": "warning",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "These docs are under heavy construction. Ping us on Slack: @odubya for development questions and @adam for design related topics.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout"
+}

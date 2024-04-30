@@ -1,5 +1,6 @@
 import './card';
 import tableContent from '../../stories/demos/table.content.html?raw';
+import '../data-table/data-table.stories.scss';
 
 export default {
   title: 'Components/Cards',
@@ -7,15 +8,17 @@ export default {
     cardTitle: 'Card title',
     outlined: false,
     actionBar: false,
+    fullHeight: false,
   },
 };
 
-export const Basic = ({ outlined, actionBar, cardTitle }) => {
+export const Basic = ({ outlined, fullHeight, actionBar, cardTitle }) => {
   return `
   <cv-card 
     cardTitle='${cardTitle}'
     ${actionBar ? 'actionBar' : ''}
     ${outlined ? 'outlined' : ''}
+    ${fullHeight ? 'fullHeight' : ''}
   >
     ${tableContent}
     <div slot="card-actions" class="mdc-card__action-buttons">

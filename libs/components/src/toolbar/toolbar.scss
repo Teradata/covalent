@@ -4,6 +4,11 @@
   display: block;
 }
 
+:host([sticky]) {
+  position: sticky;
+  top: 0;
+}
+
 .mdc-top-app-bar__title {
   padding-left: 0;
 }

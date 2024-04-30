@@ -1,0 +1,80 @@
+{
+  "id": "alert",
+  "title": "Alert",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-4qjJYWsUZi",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/alert.mjs",
+      "alias": "cv-alert",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "icon": {
+              "type": "string",
+              "default": "info",
+              "description": "Icon added to the alert"
+            },
+            "state": {
+              "description": "State representation which can take the values:\nactive|negative|positive|caution",
+              "type": "string",
+              "enum": ["active", "negative", "positive", "caution"]
+            },
+            "inline": {
+              "type": "boolean",
+              "description": "Displays the alert inline with its container"
+            },
+            "titleText": {
+              "type": "string",
+              "default": "Alert title",
+              "description": "Title of the alert"
+            },
+            "iconAriaLabel": {
+              "type": "string",
+              "default": "aria-label for the icon",
+              "description": "aria-label for the icon"
+            },
+            "descriptionText": {
+              "type": "string",
+              "default": "Alert description",
+              "description": "Description of the alert"
+            }
+          }
+        },
+        "slots": {
+          "action-items": {
+            "allowedPatternIds": ["button", "checkbox"],
+            "title": "action-items",
+            "description": "Action items that can be added to the alert"
+          }
+        }
+      },
+      "demoIds": ["tnvgSz6pjh"],
+      "blockIds": ["RILkEnTgSL", "av87gquwW3", "pbJlBMxTth"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-4qjJYWsUZi"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

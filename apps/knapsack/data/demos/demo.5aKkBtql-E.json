@@ -1,0 +1,31 @@
+{
+  "id": "5aKkBtql-E",
+  "title": "Main",
+  "type": "data",
+  "patternId": "snackbar",
+  "templateId": "web-components-3ERE1Ai9lo",
+  "data": {
+    "props": {
+      "open": true,
+      "labelText": "Can't send photo. Retry in 5 seconds."
+    },
+    "slots": {
+      "action": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "E5ymzzEPs"
+        }
+      ],
+      "dismiss": [
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "BueNSFTYn"
+        }
+      ]
+    }
+  }
+}
