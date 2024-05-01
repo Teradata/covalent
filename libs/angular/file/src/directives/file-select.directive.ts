@@ -5,6 +5,7 @@ import { NgModel } from '@angular/forms';
 
 @Directive({
   selector: '[tdFileSelect]',
+  standalone: true,
 })
 export class TdFileSelectDirective {
   private _multiple = false;

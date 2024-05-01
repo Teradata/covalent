@@ -20,13 +20,13 @@ Main injectable to import and call the `open` method with any TemplateRef or Com
 
 ## Setup
 
-Import the [CovalentSideSheetModule] in your NgModule:
+Import the [CovalentSideSheetContainerComponent] in your NgModule:
 
 ```typescript
-import { CovalentSideSheetModule } from '@covalent/core/side-sheet';
+import { CovalentSideSheetContainerComponent } from '@covalent/core/side-sheet';
 @NgModule({
   imports: [
-    CovalentSideSheetModule,
+    CovalentSideSheetContainerComponent,
     ...
   ],
   ...

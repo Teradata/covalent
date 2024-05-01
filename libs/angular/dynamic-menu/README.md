@@ -60,18 +60,31 @@ export interface ITdDynamicMenuLinkClickEvent {
 
 ## Setup
 
-Import the **[CovalentDynamicMenuModule]** in your NgModule:
+Import the **[TdDynamicMenuComponent]** in your NgModule or your standalone component:
 
 ```typescript
-import { CovalentDynamicMenuModule } from '@covalent/core/dynamic-menu';
+import { TdDynamicMenuComponent } from '@covalent/core/dynamic-menu';
+
 @NgModule({
   imports: [
-    CovalentDynamicMenuModule,
+    TdDynamicMenuComponent,
     ...
   ],
   ...
 })
 export class MyModule {}
+
+OR
+
+@Component({
+  ...
+  standalone: true,
+  imports: [
+    ...
+    TdDynamicMenuComponent
+  ]
+})
+export class MyComponent {}
 ```
 
 ## Usage

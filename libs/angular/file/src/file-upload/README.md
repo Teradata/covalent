@@ -7,19 +7,7 @@ Perfect component for file selection and upload in simple flows. Uses `TdFileInp
 Example for usage:
 
 ```html
-<td-file-upload
-  #fileUpload
-  [(ngModel)]="files"
-  defaultColor="accent"
-  activeColor="warn"
-  cancelColor="primary"
-  (selectFile)="selectEvent($event)"
-  (upload)="uploadEvent($event)"
-  (cancel)="cancelEvent()"
-  accept=".ext,.anotherExt"
-  [disabled]="disabled"
-  multiple
->
+<td-file-upload #fileUpload [(ngModel)]="files" defaultColor="accent" activeColor="warn" cancelColor="primary" (selectFile)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
   <mat-icon>file_upload</mat-icon><span>{{ files?.name }}</span>
   <ng-template td-file-input-label>
     <mat-icon>attach_file</mat-icon>
@@ -89,13 +77,15 @@ export class Demo {
 
 ## Setup
 
-Import the [CovalentFileModule] in your NgModule:
+Import the [TdFileInputComponent, TdFileUploadComponent,] in your NgModule:
 
 ```typescript
-import { CovalentFileModule } from '@covalent/core/file';
+import { TdFileInputComponent } from '@covalent/core/file';
+import { TdFileUploadComponent } from '@covalent/core/file';
 @NgModule({
   imports: [
-    CovalentFileModule,
+    TdFileInputComponent,
+    TdFileUploadComponent,
     ...
   ],
   ...

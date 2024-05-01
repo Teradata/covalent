@@ -15,7 +15,9 @@ export interface IUploadExtras {
   params?: { [param: string]: string | string[] };
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TdFileService {
   private _progressSubject: Subject<number> = new Subject<number>();
   private _progressObservable: Observable<number>;

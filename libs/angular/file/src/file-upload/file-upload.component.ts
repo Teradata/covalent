@@ -14,9 +14,16 @@ import {
   TdFileInputComponent,
   TdFileInputLabelDirective,
 } from '../file-input/file-input.component';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { noop } from 'rxjs';
-
+import {
+  NG_VALUE_ACCESSOR,
+  ControlValueAccessor,
+  FormsModule,
+} from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { TdFileSelectDirective } from '../directives/file-select.directive';
+import { TdFileDropDirective } from '../directives/file-drop.directive';
 export class TdFileUploadBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
 }
@@ -33,6 +40,17 @@ export class TdFileUploadBase {
   selector: 'td-file-upload',
   styleUrls: ['./file-upload.component.scss'],
   templateUrl: './file-upload.component.html',
+  standalone: true,
+  imports: [
+    TdFileInputComponent,
+    MatIconModule,
+    MatButtonModule,
+    FormsModule,
+    CommonModule,
+    TdFileSelectDirective,
+    TdFileDropDirective,
+    TdFileInputLabelDirective,
+  ],
 })
 export class TdFileUploadComponent implements ControlValueAccessor {
   private _multiple = false;

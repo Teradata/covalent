@@ -328,7 +328,9 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
 /**
  * Service to open Covalent Design side-sheet.
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CovalentSideSheet extends _CovalentSideSheetBase<CovalentSideSheetContainerComponent> {
   constructor(
     overlay: Overlay,
