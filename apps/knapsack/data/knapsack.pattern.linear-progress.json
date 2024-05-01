@@ -1,8 +1,10 @@
 {
   "id": "linear-progress",
   "title": "Linear progress",
-  "description": "",
-  "statuses": {},
+  "description": "Visual indication of progress displayed in a linear format.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-2ew8-hMQkv",

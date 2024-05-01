@@ -1,8 +1,10 @@
 {
   "id": "app-shell",
   "title": "App shell",
-  "description": "",
-  "statuses": {},
+  "description": "The structural foundation of an application, including its layout and navigation.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-z8r4uoVkf",

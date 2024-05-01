@@ -1,8 +1,10 @@
 {
   "id": "tabs",
   "title": "Tabs",
-  "description": "",
-  "statuses": {},
+  "description": "Navigation element allowing users to switch between different sections or views.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-kjFGUA31tg",

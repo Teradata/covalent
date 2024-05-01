@@ -253,7 +253,7 @@ byId:
   tab:
     hidden: true
     id: tab
-    name: tab
+    name: Tab item
     parentId: tabs
     path: /pattern/tab
   tabs:

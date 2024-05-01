@@ -1,8 +1,10 @@
 {
   "id": "code-snippet",
   "title": "Code snippet",
-  "description": "",
-  "statuses": {},
+  "description": "Portion of code displayed within an interface, often for demonstration or explanation.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-MmKtwF24Vv",

@@ -1,8 +1,10 @@
 {
   "id": "naviigation-list-item",
   "title": "Navigation list item",
-  "description": "",
-  "statuses": {},
+  "description": "Item within a navigation menu or list.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-Qtmmi7N-aL",

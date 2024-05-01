@@ -1,8 +1,10 @@
 {
   "id": "switch",
   "title": "Switch",
-  "description": "",
-  "statuses": {},
+  "description": "Toggle control allowing users to switch between two states.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-tGj2TvSrpD",

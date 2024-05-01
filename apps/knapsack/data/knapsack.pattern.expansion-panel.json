@@ -1,8 +1,10 @@
 {
   "id": "expansion-panel",
   "title": "Expansion panel",
-  "description": "",
-  "statuses": {},
+  "description": "Collapsible panel revealing additional content when expanded.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-Vj98q2D8hw",

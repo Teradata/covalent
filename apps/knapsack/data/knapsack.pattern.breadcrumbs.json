@@ -1,8 +1,10 @@
 {
   "id": "breadcrumbs",
   "title": "Breadcrumbs",
-  "description": "",
-  "statuses": {},
+  "description": "Navigation aid displaying the user's location within a website or application hierarchy.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [],
   "tabs": [
     {

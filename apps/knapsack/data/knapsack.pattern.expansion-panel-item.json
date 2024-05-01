@@ -1,8 +1,10 @@
 {
   "id": "expansion-panel-item",
   "title": "Expansion panel item",
-  "description": "",
-  "statuses": {},
+  "description": "Individual item within an expansion panel.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-vBLifAApG",

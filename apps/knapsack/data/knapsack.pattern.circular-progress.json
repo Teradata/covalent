@@ -57,5 +57,9 @@
       "id": "kWQoZ3d4QL",
       "blockIds": []
     }
-  ]
+  ],
+  "description": "Visual indication of progress displayed in a circular format.",
+  "statuses": {
+    "main": "needsReview"
+  }
 }

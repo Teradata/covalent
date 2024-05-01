@@ -1,8 +1,10 @@
 {
   "id": "card",
   "title": "Card",
-  "description": "",
-  "statuses": {},
+  "description": "Container presenting information or content in a visually distinct format.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-mU8MX1FHrF",

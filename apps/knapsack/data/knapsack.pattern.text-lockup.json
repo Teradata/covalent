@@ -1,8 +1,10 @@
 {
   "id": "text-lockup",
   "title": "Text lockup",
-  "description": "",
-  "statuses": {},
+  "description": "Grouping of text elements with a consistent style or layout.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-4Aa-qjh3vF",

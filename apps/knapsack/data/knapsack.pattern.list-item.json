@@ -1,8 +1,10 @@
 {
   "id": "list-item",
   "title": "List item",
-  "description": "",
-  "statuses": {},
+  "description": "Individual item within a list.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-ytRTf8wtxn",

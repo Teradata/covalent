@@ -3,7 +3,7 @@
   "title": "Button",
   "description": "Common buttons prompt most actions in a UI",
   "statuses": {
-    "main": "needsDev"
+    "main": "needsReview"
   },
   "templates": [
     {

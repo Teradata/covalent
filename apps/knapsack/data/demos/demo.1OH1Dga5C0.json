@@ -28,38 +28,7 @@
           "demoId": "gMTyjmInaG"
         }
       ],
-      "status-header-text": [
-        {
-          "type": "template-demo",
-          "patternId": "status-header-item",
-          "templateId": "web-components-55FkYSafco",
-          "demoId": "YHuTizup8"
-        },
-        {
-          "type": "template-demo",
-          "patternId": "status-header-item",
-          "templateId": "web-components-55FkYSafco",
-          "demoId": "YHuTizup8"
-        },
-        {
-          "type": "template-demo",
-          "patternId": "status-header-item",
-          "templateId": "web-components-55FkYSafco",
-          "demoId": "YHuTizup8"
-        },
-        {
-          "type": "template-demo",
-          "patternId": "status-header-item",
-          "templateId": "web-components-55FkYSafco",
-          "demoId": "YHuTizup8"
-        },
-        {
-          "type": "template-demo",
-          "patternId": "status-header-item",
-          "templateId": "web-components-55FkYSafco",
-          "demoId": "YHuTizup8"
-        }
-      ]
+      "status-header-text": []
     }
   }
 }

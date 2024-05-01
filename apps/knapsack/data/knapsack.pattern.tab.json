@@ -1,8 +1,10 @@
 {
   "id": "tab",
-  "title": "tab",
-  "description": "",
-  "statuses": {},
+  "title": "Tab item",
+  "description": "A component that organizes content across different screens, data sets, and other interactions",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-1-Bf2NwL1T",

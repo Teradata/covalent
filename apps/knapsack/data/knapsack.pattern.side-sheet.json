@@ -1,8 +1,10 @@
 {
   "id": "side-sheet",
   "title": "Side sheet",
-  "description": "",
-  "statuses": {},
+  "description": "Panel displayed on the side of the screen, often used for navigation or additional content.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-UMR43JQszt",

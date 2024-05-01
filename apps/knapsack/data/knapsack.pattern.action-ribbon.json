@@ -3,7 +3,7 @@
   "title": "Action ribbon",
   "description": "Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.",
   "statuses": {
-    "main": "draft"
+    "main": "needsReview"
   },
   "templates": [
     {

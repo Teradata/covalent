@@ -1,8 +1,10 @@
 {
   "id": "checkbox",
   "title": "Checkbox",
-  "description": "",
-  "statuses": {},
+  "description": "Interactive element allowing users to select one or more options from a list.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-29FbeDQWhM",

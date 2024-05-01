@@ -1,8 +1,10 @@
 {
   "id": "radio-list-item",
   "title": "Radio list item",
-  "description": "",
-  "statuses": {},
+  "description": "An item in a list that a user can mark selected or unselected.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-fwKtEBOnv",

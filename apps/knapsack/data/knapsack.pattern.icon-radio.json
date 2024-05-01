@@ -1,8 +1,10 @@
 {
   "id": "icon-radio",
   "title": "Icon radio",
-  "description": "",
-  "statuses": {},
+  "description": "Radio button styled with an icon as its visual representation.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-gmBL6Mhy4",

@@ -1,8 +1,10 @@
 {
   "id": "status-header",
   "title": "Status header",
-  "description": "",
-  "statuses": {},
+  "description": "Header section indicating the status or context of the content.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-UDLnfGbB2W",
