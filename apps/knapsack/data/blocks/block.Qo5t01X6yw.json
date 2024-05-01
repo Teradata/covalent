@@ -8,7 +8,8 @@
           "name": "Colors",
           "path": "/pages/light"
         },
-        "title": "Colors"
+        "title": "Colors",
+        "description": "color tokens leverage our meticulously crafted palette tokens, enabling effortless creation of stunning color schemes"
       },
       {
         "id": "pRAnFh6Ab4",
@@ -16,7 +17,8 @@
           "name": "Palettes",
           "path": "/pages/palettes-lm0uu73t4r"
         },
-        "title": "Palettes"
+        "title": "Palettes",
+        "description": "A vibrant spectrum of branded colors, ensuring seamless harmony and consistent visual appeal"
       },
       {
         "id": "ti-ArumOqC",
@@ -24,7 +26,8 @@
           "name": "Typography",
           "path": "/pages/typography"
         },
-        "title": "Typography"
+        "title": "Typography",
+        "description": "Typography helps make text legible and visually pleasing"
       }
     ]
   },

@@ -5,15 +5,15 @@
     "templateId": "web-components-4qjJYWsUZi",
     "hideControls": true,
     "playgroundUi": {
-      "allowResizing": false,
+      "allowResizing": true,
       "showSchemaForm": true,
-      "showCodeSnippet": false,
-      "demoSize": "landscape"
+      "showCodeSnippet": true,
+      "demoSize": "portrait"
     },
-    "allowResizing": false,
-    "showCodeSnippet": false,
+    "allowResizing": true,
+    "showCodeSnippet": true,
     "showSchemaForm": true,
-    "demoSize": "landscape",
+    "demoSize": "portrait",
     "patternId": "alert"
   },
   "blockType": "pattern-template-block"

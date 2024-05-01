@@ -6,5 +6,7 @@ settings:
   pageHeader:
     backgroundColor:
       type: design-token
-      tokenName: cv.theme.light.colors.surface
+      tokenName: cv.theme.light.colors.surface-container-low
     backgroundSize: cover
+    backgroundOverlay: false
+description: consistent variables defining visual and functional properties across the design system
