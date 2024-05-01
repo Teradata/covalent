@@ -1,8 +1,10 @@
 {
   "id": "icon",
   "title": "Icon",
-  "description": "",
-  "statuses": {},
+  "description": "Symbol representing an action, object, or concept.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-N8bzRbfpuX",

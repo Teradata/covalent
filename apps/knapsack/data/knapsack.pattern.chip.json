@@ -1,8 +1,10 @@
 {
   "id": "chip",
   "title": "Chip",
-  "description": "",
-  "statuses": {},
+  "description": "Compact visual element representing an attribute, action, or choice.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-7wYRPSnEZH",

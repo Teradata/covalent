@@ -1,8 +1,10 @@
 {
   "id": "tree-list",
   "title": "Tree list",
-  "description": "",
-  "statuses": {},
+  "description": "Hierarchical list structure displaying data in a tree-like format.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-Ue0Hy3Asb",

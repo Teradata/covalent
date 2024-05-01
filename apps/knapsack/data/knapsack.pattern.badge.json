@@ -1,8 +1,10 @@
 {
   "id": "badge",
   "title": "Badge",
-  "description": "",
-  "statuses": {},
+  "description": "A small visual element indicating status or providing additional information.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-40aOlYC6I9",

@@ -1,8 +1,10 @@
 {
   "id": "tooltip",
   "title": "Tooltip",
-  "description": "",
-  "statuses": {},
+  "description": "Small pop-up box providing additional information when hovering over an element.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-erhVvpq9vk",

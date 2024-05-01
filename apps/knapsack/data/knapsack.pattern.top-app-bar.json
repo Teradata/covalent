@@ -1,8 +1,10 @@
 {
   "id": "top-app-bar",
   "title": "Top app bar",
-  "description": "",
-  "statuses": {},
+  "description": "Horizontal bar at the top of an application containing navigation and other controls.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-bdJKZJwv0h",

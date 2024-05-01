@@ -1,9 +1,9 @@
 {
   "id": "text",
   "title": "Typography",
-  "description": "",
+  "description": "Styling and formatting of text.",
   "statuses": {
-    "main": "needsDev"
+    "main": "needsReview"
   },
   "templates": [
     {

@@ -1,8 +1,10 @@
 {
   "id": "textfield",
   "title": "Text field",
-  "description": "",
-  "statuses": {},
+  "description": "Input field allowing users to enter a single line of text.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-M4zyalwdNJ",

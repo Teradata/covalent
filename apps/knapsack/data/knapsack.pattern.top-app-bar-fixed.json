@@ -1,8 +1,10 @@
 {
   "id": "top-app-bar-fixed",
   "title": "Top app bar - fixed",
-  "description": "",
-  "statuses": {},
+  "description": "Fixed-positioned top app bar that remains visible when scrolling.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-d0oZXgy7Uj",

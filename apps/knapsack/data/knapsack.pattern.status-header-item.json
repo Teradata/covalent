@@ -1,8 +1,10 @@
 {
   "id": "status-header-item",
   "title": "Status header item",
-  "description": "",
-  "statuses": {},
+  "description": "Item within a status header.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-55FkYSafco",

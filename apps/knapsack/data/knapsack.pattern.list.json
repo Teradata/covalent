@@ -1,8 +1,10 @@
 {
   "id": "list",
   "title": "List",
-  "description": "",
-  "statuses": {},
+  "description": "Collection of items displayed vertically or horizontally.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-fObxCsu2i8",

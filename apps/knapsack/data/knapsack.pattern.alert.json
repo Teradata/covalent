@@ -1,8 +1,10 @@
 {
   "id": "alert",
   "title": "Alert",
-  "description": "",
-  "statuses": {},
+  "description": "Notification informing users about important information or events.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-4qjJYWsUZi",

@@ -1,8 +1,10 @@
 {
   "id": "empty-state",
   "title": "Empty state",
-  "description": "",
-  "statuses": {},
+  "description": "Placeholder content displayed when there is no data to show.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-E0GwXgHJv",

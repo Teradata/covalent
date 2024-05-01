@@ -1,8 +1,10 @@
 {
   "id": "text-area",
   "title": "Text area",
-  "description": "",
-  "statuses": {},
+  "description": "Input field allowing users to enter multiple lines of text.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-48rzn99y9G",

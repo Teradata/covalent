@@ -1,8 +1,10 @@
 {
   "id": "chip-item",
   "title": "Chip item",
-  "description": "",
-  "statuses": {},
+  "description": "Individual item within a chip list.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-vegaZgkE47",

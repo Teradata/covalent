@@ -1,8 +1,10 @@
 {
   "id": "toolbar",
   "title": "Toolbar",
-  "description": "",
-  "statuses": {},
+  "description": "Styling and formatting of text within an interface.",
+  "statuses": {
+    "main": "needsReview"
+  },
   "templates": [
     {
       "id": "web-components-A6-16QhSaM",
