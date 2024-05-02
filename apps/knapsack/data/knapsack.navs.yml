@@ -328,7 +328,6 @@ byId:
     parentId: tokens
     path: /pages/typography
   writing:
-    hidden: true
     id: writing
     name: Content Design
     parentId: root
