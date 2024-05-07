@@ -68,7 +68,6 @@
   height: 100vh;
   grid-area: main;
   overflow: auto;
-  transition: margin 200ms ease-in-out;
 
   .main-wrapper {
     margin: 0 auto;
@@ -111,14 +110,11 @@
 
 .help {
   grid-area: help;
-  position: relative;
+  position: fixed;
   right: 0;
-  overflow: hidden;
-  width: 320px;
+  width: var(--help-width, 320px);
   height: 100vh;
   overflow-y: auto;
-  transition-property: width;
-  transition-duration: 200ms;
 
   .resize-handle {
     position: absolute;
@@ -142,7 +138,8 @@
       opacity: 0;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &.resizing::after {
       opacity: 1;
     }
   }
@@ -176,7 +173,7 @@
 
   .current-section-name {
     opacity: 0;
-    transition: opacity 150ms;
+    transition: opacity 200ms;
 
     :host([open]) & {
       opacity: 1;
