@@ -17,24 +17,24 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Sample dialog content goes here"
+          "text": "Sample dialog content goes here",
+          "type": "text"
         }
       ],
       "secondaryAction": [
         {
           "type": "template-demo",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
-          "templateId": "web-components-raE1x4tYL",
-          "demoId": "E5ymzzEPs"
+          "templateId": "web-components-raE1x4tYL"
         }
       ],
       "primaryAction": [
         {
           "type": "template-demo",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
-          "templateId": "web-components-raE1x4tYL",
-          "demoId": "E5ymzzEPs"
+          "templateId": "web-components-raE1x4tYL"
         }
       ]
     }

@@ -1,0 +1,42 @@
+{
+  "id": "z7uw3T1AvI",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "JDv5ZPaFQS",
+        "link": {
+          "name": "Color use",
+          "path": "/pages/color-use"
+        },
+        "title": "Color use"
+      },
+      {
+        "id": "MqrMiHpq-5",
+        "link": {
+          "name": "Errors",
+          "path": "/pages/errors"
+        },
+        "title": "Errors"
+      },
+      {
+        "id": "VoWngXyGWI",
+        "link": {
+          "name": "New pattern process",
+          "path": "/pages/new-pattern-process"
+        },
+        "title": "New pattern process"
+      }
+    ],
+    "gridStyles": {
+      "columns": "3",
+      "centered": false
+    },
+    "tileStyles": {
+      "rounded": true,
+      "outlined": true,
+      "imageSize": "none",
+      "titleSize": "small"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

@@ -17,17 +17,17 @@
       "content": [
         {
           "type": "template-demo",
+          "demoId": "8QAZfNvobo",
           "patternId": "empty-state",
-          "templateId": "web-components-E0GwXgHJv",
-          "demoId": "8QAZfNvobo"
+          "templateId": "web-components-E0GwXgHJv"
         }
       ],
       "footer": [
         {
           "type": "template-demo",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
-          "templateId": "web-components-raE1x4tYL",
-          "demoId": "E5ymzzEPs"
+          "templateId": "web-components-raE1x4tYL"
         }
       ]
     }

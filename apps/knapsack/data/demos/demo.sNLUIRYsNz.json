@@ -13,9 +13,9 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "Yu7DvlfMdG",
           "patternId": "expansion-panel",
-          "templateId": "web-components-Vj98q2D8hw",
-          "demoId": "Yu7DvlfMdG"
+          "templateId": "web-components-Vj98q2D8hw"
         }
       ]
     }

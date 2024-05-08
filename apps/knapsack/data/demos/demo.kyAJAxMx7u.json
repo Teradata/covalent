@@ -18,21 +18,21 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "CvFKcI1eN0",
           "patternId": "check-list-item",
-          "templateId": "web-components-M18BFFHM3h",
-          "demoId": "CvFKcI1eN0"
+          "templateId": "web-components-M18BFFHM3h"
         },
         {
           "type": "template-demo",
+          "demoId": "CvFKcI1eN0",
           "patternId": "check-list-item",
-          "templateId": "web-components-M18BFFHM3h",
-          "demoId": "CvFKcI1eN0"
+          "templateId": "web-components-M18BFFHM3h"
         },
         {
           "type": "template-demo",
+          "demoId": "CvFKcI1eN0",
           "patternId": "check-list-item",
-          "templateId": "web-components-M18BFFHM3h",
-          "demoId": "CvFKcI1eN0"
+          "templateId": "web-components-M18BFFHM3h"
         }
       ]
     }

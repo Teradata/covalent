@@ -9,8 +9,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "houseboat"
+          "text": "houseboat",
+          "type": "text"
         }
       ]
     }

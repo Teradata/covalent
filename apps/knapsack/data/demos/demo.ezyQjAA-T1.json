@@ -10,8 +10,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "chevron_right"
+          "text": "chevron_right",
+          "type": "text"
         }
       ]
     }

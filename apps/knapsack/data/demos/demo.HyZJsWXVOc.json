@@ -15,21 +15,21 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "zDg2SpdOHk",
           "patternId": "chip-item",
-          "templateId": "web-components-vegaZgkE47",
-          "demoId": "zDg2SpdOHk"
+          "templateId": "web-components-vegaZgkE47"
         },
         {
           "type": "template-demo",
+          "demoId": "zDg2SpdOHk",
           "patternId": "chip-item",
-          "templateId": "web-components-vegaZgkE47",
-          "demoId": "zDg2SpdOHk"
+          "templateId": "web-components-vegaZgkE47"
         },
         {
           "type": "template-demo",
+          "demoId": "zDg2SpdOHk",
           "patternId": "chip-item",
-          "templateId": "web-components-vegaZgkE47",
-          "demoId": "zDg2SpdOHk"
+          "templateId": "web-components-vegaZgkE47"
         }
       ]
     }

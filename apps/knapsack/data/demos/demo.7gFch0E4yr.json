@@ -11,14 +11,14 @@
     "slots": {
       "label": [
         {
-          "type": "text",
-          "text": "Tree list item"
+          "text": "Tree list item",
+          "type": "text"
         }
       ],
       "extraContent": [
         {
-          "type": "text",
-          "text": "Secondary text"
+          "text": "Secondary text",
+          "type": "text"
         }
       ]
     }

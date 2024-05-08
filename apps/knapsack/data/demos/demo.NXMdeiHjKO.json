@@ -9,34 +9,34 @@
     "slots": {
       "title": [
         {
-          "type": "text",
-          "text": "Title toolbar"
+          "text": "Title toolbar",
+          "type": "text"
         }
       ],
       "actionItems": [
         {
           "type": "template-demo",
+          "demoId": "tU8Ze3Af9p",
           "patternId": "textfield",
-          "templateId": "web-components-M4zyalwdNJ",
-          "demoId": "tU8Ze3Af9p"
+          "templateId": "web-components-M4zyalwdNJ"
         },
         {
           "type": "template-demo",
+          "demoId": "i-aFgnERP",
           "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX",
-          "demoId": "i-aFgnERP"
+          "templateId": "web-components-ctiCe2sAX"
         },
         {
           "type": "template-demo",
+          "demoId": "MWNDJ0YT9M",
           "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX",
-          "demoId": "MWNDJ0YT9M"
+          "templateId": "web-components-ctiCe2sAX"
         },
         {
           "type": "template-demo",
+          "demoId": "iyfHwphwcs",
           "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX",
-          "demoId": "iyfHwphwcs"
+          "templateId": "web-components-ctiCe2sAX"
         }
       ]
     }

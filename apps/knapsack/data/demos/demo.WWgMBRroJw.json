@@ -13,8 +13,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "BXCVP-8523411"
+          "text": "BXCVP-8523411",
+          "type": "text"
         }
       ]
     }

@@ -15,9 +15,9 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "ee2EneFvzS",
           "patternId": "checkbox",
-          "templateId": "web-components-29FbeDQWhM",
-          "demoId": "ee2EneFvzS"
+          "templateId": "web-components-29FbeDQWhM"
         }
       ]
     }

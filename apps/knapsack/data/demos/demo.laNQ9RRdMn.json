@@ -18,9 +18,9 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "BueNSFTYn",
           "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX",
-          "demoId": "BueNSFTYn"
+          "templateId": "web-components-ctiCe2sAX"
         }
       ]
     }

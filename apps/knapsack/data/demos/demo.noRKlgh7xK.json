@@ -13,15 +13,15 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "6tUMrwwjoe",
           "patternId": "expansion-panel-item",
-          "templateId": "web-components-vBLifAApG",
-          "demoId": "6tUMrwwjoe"
+          "templateId": "web-components-vBLifAApG"
         },
         {
           "type": "template-demo",
+          "demoId": "6tUMrwwjoe",
           "patternId": "expansion-panel-item",
-          "templateId": "web-components-vBLifAApG",
-          "demoId": "6tUMrwwjoe"
+          "templateId": "web-components-vBLifAApG"
         }
       ]
     }

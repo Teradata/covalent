@@ -26,7 +26,17 @@
         },
         "title": "Typography"
       }
-    ]
+    ],
+    "gridStyles": {
+      "columns": "3",
+      "centered": false
+    },
+    "tileStyles": {
+      "rounded": true,
+      "outlined": true,
+      "imageSize": "none",
+      "titleSize": "small"
+    }
   },
   "blockType": "shortcut-tiles"
 }

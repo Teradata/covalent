@@ -14,30 +14,30 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "List item"
+          "text": "List item",
+          "type": "text"
         }
       ],
       "secondary": [
         {
-          "type": "text",
-          "text": "secondary text"
+          "text": "secondary text",
+          "type": "text"
         }
       ],
       "graphic": [
         {
           "type": "template-demo",
+          "demoId": "bn4zy44TYR",
           "patternId": "icon",
-          "templateId": "web-components-N8bzRbfpuX",
-          "demoId": "bn4zy44TYR"
+          "templateId": "web-components-N8bzRbfpuX"
         }
       ],
       "meta": [
         {
           "type": "template-demo",
+          "demoId": "ezyQjAA-T1",
           "patternId": "icon",
-          "templateId": "web-components-N8bzRbfpuX",
-          "demoId": "ezyQjAA-T1"
+          "templateId": "web-components-N8bzRbfpuX"
         }
       ]
     }

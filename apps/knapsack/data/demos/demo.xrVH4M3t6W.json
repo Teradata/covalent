@@ -16,9 +16,9 @@
       "action-items": [
         {
           "type": "template-demo",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
-          "templateId": "web-components-raE1x4tYL",
-          "demoId": "E5ymzzEPs"
+          "templateId": "web-components-raE1x4tYL"
         }
       ]
     }
