@@ -13,9 +13,9 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "RMPpKHlzd",
           "patternId": "radio",
-          "templateId": "web-components-qk2MWcBipT",
-          "demoId": "RMPpKHlzd"
+          "templateId": "web-components-qk2MWcBipT"
         }
       ]
     }

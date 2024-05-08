@@ -11,8 +11,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Status header item value"
+          "text": "Status header item value",
+          "type": "text"
         }
       ]
     }

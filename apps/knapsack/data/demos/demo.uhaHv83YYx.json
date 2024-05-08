@@ -13,9 +13,9 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "bn4zy44TYR",
           "patternId": "icon",
-          "templateId": "web-components-N8bzRbfpuX",
-          "demoId": "bn4zy44TYR"
+          "templateId": "web-components-N8bzRbfpuX"
         }
       ]
     }

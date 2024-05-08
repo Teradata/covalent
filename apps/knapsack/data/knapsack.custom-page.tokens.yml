@@ -4,7 +4,5 @@ blockIds:
   - Qo5t01X6yw
 settings:
   pageHeader:
-    backgroundColor:
-      type: design-token
-      tokenName: cv.theme.light.colors.surface
     backgroundSize: cover
+description: Standardized building blocks that we use across all our UI elements, in both design and code

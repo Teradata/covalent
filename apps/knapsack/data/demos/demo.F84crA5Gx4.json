@@ -12,8 +12,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Here lies the side sheet content"
+          "text": "Here lies the side sheet content",
+          "type": "text"
         }
       ]
     }

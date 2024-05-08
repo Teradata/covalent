@@ -13,23 +13,23 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "8QAZfNvobo",
           "patternId": "empty-state",
-          "templateId": "web-components-E0GwXgHJv",
-          "demoId": "8QAZfNvobo"
+          "templateId": "web-components-E0GwXgHJv"
         }
       ],
       "card-actions": [
         {
           "type": "template-demo",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
-          "templateId": "web-components-raE1x4tYL",
-          "demoId": "E5ymzzEPs"
+          "templateId": "web-components-raE1x4tYL"
         },
         {
           "type": "template-demo",
+          "demoId": "BueNSFTYn",
           "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX",
-          "demoId": "BueNSFTYn"
+          "templateId": "web-components-ctiCe2sAX"
         }
       ]
     }

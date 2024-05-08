@@ -11,8 +11,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Im a tooltip"
+          "text": "Im a tooltip",
+          "type": "text"
         }
       ]
     }

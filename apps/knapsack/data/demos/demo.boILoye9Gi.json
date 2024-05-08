@@ -12,21 +12,21 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "qgGc8WUNHQ",
           "patternId": "list-item",
-          "templateId": "web-components-ytRTf8wtxn",
-          "demoId": "qgGc8WUNHQ"
+          "templateId": "web-components-ytRTf8wtxn"
         },
         {
           "type": "template-demo",
+          "demoId": "qgGc8WUNHQ",
           "patternId": "list-item",
-          "templateId": "web-components-ytRTf8wtxn",
-          "demoId": "qgGc8WUNHQ"
+          "templateId": "web-components-ytRTf8wtxn"
         },
         {
           "type": "template-demo",
+          "demoId": "qgGc8WUNHQ",
           "patternId": "list-item",
-          "templateId": "web-components-ytRTf8wtxn",
-          "demoId": "qgGc8WUNHQ"
+          "templateId": "web-components-ytRTf8wtxn"
         }
       ]
     }

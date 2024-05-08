@@ -68,7 +68,7 @@ byId:
   color-use:
     id: color-use
     name: Color use
-    parentId: guides
+    parentId: guidesss
     path: /pages/color-use
   colors:
     id: colors
@@ -103,7 +103,7 @@ byId:
   errors:
     id: errors
     name: Errors
-    parentId: guides
+    parentId: guidesss
     path: /pages/errors
   expansion-panel:
     id: expansion-panel
@@ -120,11 +120,11 @@ byId:
     name: Form Field
     parentId: test-page
     path: /pattern/form-field
-  guides:
-    id: guides
+  guidesss:
+    id: guidesss
     name: Guides
     parentId: root
-    path: ''
+    path: /pages/guidesss
   icon:
     id: icon
     name: Icon
@@ -188,6 +188,11 @@ byId:
     name: Navigation list item
     parentId: list
     path: /pattern/naviigation-list-item
+  new-pattern-process:
+    id: new-pattern-process
+    name: New pattern process
+    parentId: guidesss
+    path: /pages/new-pattern-process
   palettes:
     id: palettes
     name: Light
@@ -333,8 +338,10 @@ byId:
     parentId: root
     path: /pages/writing
 order:
-  - guides
+  - guidesss
   - color-use
+  - errors
+  - new-pattern-process
   - test-page
   - action-ribbon
   - alert
@@ -385,6 +392,7 @@ order:
   - textfield
   - text-lockup
   - text
+  - launch-list
   - tokens
   - light
   - colors-okgyf0rxrr
@@ -392,9 +400,7 @@ order:
   - palettes-lm0uu73t4r
   - palettes
   - dark
-  - launch-list
   - typography
   - writing
-  - errors
   - product-and-ui
   - error-messages

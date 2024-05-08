@@ -13,21 +13,21 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "MzuUqdOHZA",
           "patternId": "radio-list-item",
-          "templateId": "web-components-fwKtEBOnv",
-          "demoId": "MzuUqdOHZA"
+          "templateId": "web-components-fwKtEBOnv"
         },
         {
           "type": "template-demo",
+          "demoId": "MzuUqdOHZA",
           "patternId": "radio-list-item",
-          "templateId": "web-components-fwKtEBOnv",
-          "demoId": "MzuUqdOHZA"
+          "templateId": "web-components-fwKtEBOnv"
         },
         {
           "type": "template-demo",
+          "demoId": "MzuUqdOHZA",
           "patternId": "radio-list-item",
-          "templateId": "web-components-fwKtEBOnv",
-          "demoId": "MzuUqdOHZA"
+          "templateId": "web-components-fwKtEBOnv"
         }
       ]
     }

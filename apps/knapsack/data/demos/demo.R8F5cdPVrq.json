@@ -10,24 +10,24 @@
       "actionItems": [
         {
           "type": "template-demo",
+          "demoId": "BueNSFTYn",
           "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX",
-          "demoId": "BueNSFTYn"
+          "templateId": "web-components-ctiCe2sAX"
         }
       ],
       "title": [
         {
-          "type": "text",
-          "text": "App Bar Title"
+          "text": "App Bar Title",
+          "type": "text"
         }
       ],
       "navigationIcon": [],
       "default": [
         {
           "type": "template-demo",
+          "demoId": "8QAZfNvobo",
           "patternId": "empty-state",
-          "templateId": "web-components-E0GwXgHJv",
-          "demoId": "8QAZfNvobo"
+          "templateId": "web-components-E0GwXgHJv"
         }
       ]
     }

@@ -15,17 +15,17 @@
       "status-header-actions": [
         {
           "type": "template-demo",
+          "demoId": "IxXMQMFkBT",
           "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX",
-          "demoId": "IxXMQMFkBT"
+          "templateId": "web-components-ctiCe2sAX"
         }
       ],
       "status-header-icon": [
         {
           "type": "template-demo",
+          "demoId": "gMTyjmInaG",
           "patternId": "circular-progress",
-          "templateId": "web-components-rw6v6c4fnU",
-          "demoId": "gMTyjmInaG"
+          "templateId": "web-components-rw6v6c4fnU"
         }
       ],
       "status-header-text": []

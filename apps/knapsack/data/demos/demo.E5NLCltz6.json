@@ -12,24 +12,24 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Navigation item"
+          "text": "Navigation item",
+          "type": "text"
         }
       ],
       "graphic": [
         {
           "type": "template-demo",
+          "demoId": "bn4zy44TYR",
           "patternId": "icon",
-          "templateId": "web-components-N8bzRbfpuX",
-          "demoId": "bn4zy44TYR"
+          "templateId": "web-components-N8bzRbfpuX"
         }
       ],
       "expansion-panel": [
         {
           "type": "template-demo",
+          "demoId": "SIyOkmonoE",
           "patternId": "list",
-          "templateId": "web-components-fObxCsu2i8",
-          "demoId": "SIyOkmonoE"
+          "templateId": "web-components-fObxCsu2i8"
         }
       ]
     }

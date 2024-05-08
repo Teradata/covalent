@@ -12,8 +12,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "sub item"
+          "text": "sub item",
+          "type": "text"
         }
       ]
     }

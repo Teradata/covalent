@@ -10,8 +10,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "arrow_back"
+          "text": "arrow_back",
+          "type": "text"
         }
       ]
     }

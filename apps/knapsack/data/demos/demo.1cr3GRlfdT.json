@@ -13,9 +13,9 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "U89p0LyOsP",
           "patternId": "switch",
-          "templateId": "web-components-tGj2TvSrpD",
-          "demoId": "U89p0LyOsP"
+          "templateId": "web-components-tGj2TvSrpD"
         }
       ]
     }
