@@ -31,6 +31,11 @@ export class CovalentAppShell extends DrawerBase {
     `,
   ];
 
+  element = document.querySelector('.help');
+  helpWidth = 0;
+  private _startX!: number;
+  private _startWidth!: number;
+
   @queryAssignedElements({ slot: 'navigation' })
   navigationListElements!: HTMLElement[];
 
@@ -77,8 +82,120 @@ export class CovalentAppShell extends DrawerBase {
 
   constructor() {
     super();
+    this._resize = this._resize.bind(this);
+    this._stopResize = this._stopResize.bind(this);
+    this._startResizing = this._startResizing.bind(this);
+    this._setupEventListeners();
+    window.addEventListener('DOMContentLoaded', () => {
+      this.setupHelpPanelListeners();
+      this.resizeEvent();
+      const storedWidth = localStorage.getItem('helpWidth');
+      if (storedWidth) {
+        this.helpWidth = parseInt(storedWidth, 10);
+        this.updateHelpPanelWidth();
+      }
+    });
+  }
 
-    this.resizeEvent();
+  setupHelpPanelListeners() {
+    const helpToggle = document.querySelector('.help-item');
+    const helpClose = document.querySelector('.help-close');
+
+    helpToggle?.addEventListener('click', () => {
+      this.toggleHelpPanel();
+    });
+
+    helpClose?.addEventListener('click', () => {
+      this.toggleHelpPanel(false);
+    });
+  }
+
+  toggleHelpPanel(open?: boolean) {
+    this.helpOpen = open !== undefined ? open : !this.helpOpen;
+    if (this.helpOpen) {
+      const storedWidth = localStorage.getItem('helpWidth');
+      this.helpWidth = storedWidth ? parseInt(storedWidth, 10) : 320;
+    } else {
+      this.helpWidth = 0;
+    }
+    this.updateHelpPanelWidth();
+    this.requestUpdate();
+  }
+
+  private _setupEventListeners() {
+    window.addEventListener('DOMContentLoaded', () => {
+      const helpToggle = document.querySelector('.help-item');
+      const helpClose = document.querySelector('.help-close');
+
+      helpToggle?.addEventListener('click', () => {
+        this.helpOpen = !this.helpOpen;
+        this.helpWidth = this.helpOpen ? 320 : 0;
+        this.requestUpdate();
+      });
+
+      helpClose?.addEventListener('click', () => {
+        this.helpOpen = false;
+        this.helpWidth = 0;
+        this.requestUpdate();
+      });
+    });
+  }
+
+  override firstUpdated() {
+    const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
+    if (resizeHandle) {
+      resizeHandle.addEventListener('mousedown', (event) => {
+        if (event instanceof MouseEvent) {
+          this._startResizing(event);
+        }
+      });
+
+      resizeHandle.addEventListener('dblclick', () => {
+        if (this.helpWidth > 320 || this.helpWidth !== 320) {
+          this.helpWidth = 320;
+          localStorage.setItem('helpWidth', '320');
+          this.updateHelpPanelWidth();
+          this.requestUpdate();
+        }
+      });
+    }
+  }
+
+  private _startResizing(event: MouseEvent) {
+    const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
+    if (event.target === resizeHandle) {
+      this._startX = event.clientX;
+      this._startWidth = this.helpWidth;
+      document.addEventListener('mousemove', this._resize);
+      document.addEventListener('mouseup', this._stopResize);
+      (event.target as HTMLElement).classList.add('resizing');
+    }
+  }
+
+  private _resize(event: MouseEvent) {
+    const diff = event.clientX - this._startX;
+    const windowWidth = window.innerWidth;
+    const mainMinWidth = 600;
+    const maxWidthForHelp = Math.max(320, windowWidth - mainMinWidth);
+    const newWidth = Math.max(
+      320,
+      Math.min(maxWidthForHelp, this._startWidth - diff)
+    );
+    if (this.helpWidth !== newWidth) {
+      this.helpWidth = newWidth;
+      localStorage.setItem('helpWidth', this.helpWidth.toString());
+      this.updateHelpPanelWidth();
+    }
+    event.preventDefault();
+  }
+
+  private _stopResize() {
+    document.removeEventListener('mousemove', this._resize);
+    document.removeEventListener('mouseup', this._stopResize);
+    const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
+    if (resizeHandle) {
+      resizeHandle.classList.remove('resizing');
+    }
   }
 
   private _toggleOpen(forcedOpen = false) {
@@ -93,6 +210,16 @@ export class CovalentAppShell extends DrawerBase {
     );
 
     this.requestUpdate();
+  }
+
+  private updateHelpPanelWidth() {
+    const helpPanel = this.shadowRoot?.querySelector('.help') as HTMLElement;
+    const mainPanel = this.shadowRoot?.querySelector('.main') as HTMLElement;
+
+    if (helpPanel && mainPanel) {
+      helpPanel.style.setProperty('--help-width', `${this.helpWidth}px`);
+      mainPanel.style.marginRight = `${this.helpWidth}px`;
+    }
   }
 
   private _handleMenuClick() {
@@ -229,7 +356,8 @@ export class CovalentAppShell extends DrawerBase {
             ${this.renderMain()}
           </div>
         </div>
-        <div class="help">
+        <div class="help" @mousedown="${this._startResizing}">
+          <div class="resize-handle"></div>
           <slot name="help"></slot>
         </div>
       </div>
