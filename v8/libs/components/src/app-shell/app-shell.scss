@@ -68,7 +68,6 @@
   height: 100vh;
   grid-area: main;
   overflow: auto;
-  transition: margin 200ms ease-in-out;
 
   .main-wrapper {
     margin: 0 auto;
@@ -100,10 +99,6 @@
     .cov-drawer--open & {
       margin-left: 256px;
     }
-
-    .cov-help--open & {
-      margin-right: 320px;
-    }
   }
 
   @media only screen and (max-width: 1600px) {
@@ -117,11 +112,37 @@
   grid-area: help;
   position: fixed;
   right: 0;
-  width: 320px;
+  width: var(--help-width, 320px);
   height: 100vh;
   overflow-y: auto;
-  transition-property: width;
-  transition-duration: 200ms;
+
+  .resize-handle {
+    position: absolute;
+    left: 0;
+    width: 10px;
+    height: 100vh;
+    cursor: ew-resize;
+    z-index: 1100;
+    user-select: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--mdc-theme-primary);
+      transform: translateX(-50%);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    &:hover::after,
+    &.resizing::after {
+      opacity: 1;
+    }
+  }
 
   .cov-help--closed & {
     width: 0;
@@ -152,7 +173,7 @@
 
   .current-section-name {
     opacity: 0;
-    transition: opacity 150ms;
+    transition: opacity 200ms;
 
     :host([open]) & {
       opacity: 1;
