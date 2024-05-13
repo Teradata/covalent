@@ -174,7 +174,13 @@ export class CovalentAppShell extends DrawerBase {
 
   private _resize(event: MouseEvent) {
     const diff = event.clientX - this._startX;
-    const newWidth = Math.max(320, Math.min(600, this._startWidth - diff));
+    const windowWidth = window.innerWidth;
+    const mainMinWidth = 600;
+    const maxWidthForHelp = Math.max(320, windowWidth - mainMinWidth);
+    const newWidth = Math.max(
+      320,
+      Math.min(maxWidthForHelp, this._startWidth - diff)
+    );
     if (this.helpWidth !== newWidth) {
       this.helpWidth = newWidth;
       localStorage.setItem('helpWidth', this.helpWidth.toString());
