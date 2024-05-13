@@ -1,3 +1,9 @@
+## [8.12.1](https://github.com/Teradata/covalent/compare/v8.12.0...v8.12.1) (2024-05-13)
+
+### Bug Fixes
+
+- **app-shell:** enhancement to be resizable app-shell ([#2152](https://github.com/Teradata/covalent/issues/2152)) ([1e4d9fc](https://github.com/Teradata/covalent/commit/1e4d9fc1565e020ec6c92f1da3483dc3141f1c4e))
+
 # [8.12.0](https://github.com/Teradata/covalent/compare/v8.11.0...v8.12.0) (2024-04-25)
 
 ### Features
