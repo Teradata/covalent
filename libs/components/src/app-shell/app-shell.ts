@@ -141,26 +141,6 @@ export class CovalentAppShell extends DrawerBase {
     });
   }
 
-  override firstUpdated() {
-    const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
-    if (resizeHandle) {
-      resizeHandle.addEventListener('mousedown', (event) => {
-        if (event instanceof MouseEvent) {
-          this._startResizing(event);
-        }
-      });
-
-      resizeHandle.addEventListener('dblclick', () => {
-        if (this.helpWidth > 320 || this.helpWidth !== 320) {
-          this.helpWidth = 320;
-          localStorage.setItem('helpWidth', '320');
-          this.updateHelpPanelWidth();
-          this.requestUpdate();
-        }
-      });
-    }
-  }
-
   private _startResizing(event: MouseEvent) {
     const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
     if (event.target === resizeHandle) {
@@ -170,6 +150,15 @@ export class CovalentAppShell extends DrawerBase {
       document.addEventListener('mouseup', this._stopResize);
       (event.target as HTMLElement).classList.add('resizing');
     }
+
+    resizeHandle?.addEventListener('dblclick', () => {
+      if (this.helpWidth > 320 || this.helpWidth !== 320) {
+        this.helpWidth = 320;
+        localStorage.setItem('helpWidth', '320');
+        this.updateHelpPanelWidth();
+        this.requestUpdate();
+      }
+    });
   }
 
   private _resize(event: MouseEvent) {

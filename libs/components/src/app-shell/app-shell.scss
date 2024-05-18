@@ -68,6 +68,7 @@
   height: 100vh;
   grid-area: main;
   overflow: auto;
+  transition: margin-left 200ms ease-in-out;
 
   .main-wrapper {
     margin: 0 auto;
@@ -291,6 +292,7 @@ nav.navigation {
 
   .mdc-drawer--open {
     width: 256px;
+    transition-duration: 200ms;
   }
 
   .mdc-drawer--opening {
