@@ -82,13 +82,13 @@ export class CovalentAppShell extends DrawerBase {
 
   constructor() {
     super();
+    this.resizeEvent();
     this._resize = this._resize.bind(this);
     this._stopResize = this._stopResize.bind(this);
     this._startResizing = this._startResizing.bind(this);
     this._setupEventListeners();
     window.addEventListener('DOMContentLoaded', () => {
       this.setupHelpPanelListeners();
-      this.resizeEvent();
       const storedWidth = localStorage.getItem('helpWidth');
       if (storedWidth) {
         this.helpWidth = parseInt(storedWidth, 10);
@@ -202,13 +202,10 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private updateHelpPanelWidth() {
-    const helpPanel = this.shadowRoot?.querySelector('.help') as HTMLElement;
-    const mainPanel = this.shadowRoot?.querySelector('.main') as HTMLElement;
-
-    if (helpPanel && mainPanel) {
-      helpPanel.style.setProperty('--help-width', `${this.helpWidth}px`);
-      mainPanel.style.marginRight = `${this.helpWidth}px`;
-    }
+    const appShell = this.shadowRoot?.querySelector(
+      '.app-shell'
+    ) as HTMLElement;
+    appShell?.style.setProperty('--cv-help-width', `${this.helpWidth}px`);
   }
 
   private _handleMenuClick() {
