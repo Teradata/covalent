@@ -68,6 +68,7 @@
   height: 100vh;
   grid-area: main;
   overflow: auto;
+  transition: margin-left 200ms ease-in-out;
 
   .main-wrapper {
     margin: 0 auto;
@@ -99,6 +100,10 @@
     .cov-drawer--open & {
       margin-left: 256px;
     }
+
+    .cov-help--open & {
+      margin-right: var(--cv-help-width, 320px);
+    }
   }
 
   @media only screen and (max-width: 1600px) {
@@ -112,7 +117,7 @@
   grid-area: help;
   position: fixed;
   right: 0;
-  width: var(--help-width, 320px);
+  width: var(--cv-help-width, 320px);
   height: 100vh;
   overflow-y: auto;
 
@@ -142,6 +147,14 @@
     &.resizing::after {
       opacity: 1;
     }
+  }
+
+  :host([resizing]) .resize-handle {
+    display: block;
+  }
+
+  :host(:not([resizing])) .resize-handle {
+    display: none;
   }
 
   .cov-help--closed & {
@@ -291,6 +304,7 @@ nav.navigation {
 
   .mdc-drawer--open {
     width: 256px;
+    transition-duration: 200ms;
   }
 
   .mdc-drawer--opening {
