@@ -61,6 +61,12 @@ export class CovalentAppShell extends DrawerBase {
   helpOpen = false;
 
   /**
+   * Make help resizable with drag/drop handle
+   */
+  @property({ type: Boolean, reflect: true })
+  helpResizable = false;
+
+  /**
    * Wrap the main area with a contained card surface
    */
   @property({ type: Boolean, reflect: true })
@@ -82,13 +88,13 @@ export class CovalentAppShell extends DrawerBase {
 
   constructor() {
     super();
+    this.resizeEvent();
     this._resize = this._resize.bind(this);
     this._stopResize = this._stopResize.bind(this);
     this._startResizing = this._startResizing.bind(this);
     this._setupEventListeners();
     window.addEventListener('DOMContentLoaded', () => {
       this.setupHelpPanelListeners();
-      this.resizeEvent();
       const storedWidth = localStorage.getItem('helpWidth');
       if (storedWidth) {
         this.helpWidth = parseInt(storedWidth, 10);
@@ -141,27 +147,9 @@ export class CovalentAppShell extends DrawerBase {
     });
   }
 
-  override firstUpdated() {
-    const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
-    if (resizeHandle) {
-      resizeHandle.addEventListener('mousedown', (event) => {
-        if (event instanceof MouseEvent) {
-          this._startResizing(event);
-        }
-      });
-
-      resizeHandle.addEventListener('dblclick', () => {
-        if (this.helpWidth > 320 || this.helpWidth !== 320) {
-          this.helpWidth = 320;
-          localStorage.setItem('helpWidth', '320');
-          this.updateHelpPanelWidth();
-          this.requestUpdate();
-        }
-      });
-    }
-  }
-
   private _startResizing(event: MouseEvent) {
+    if (!this.helpResizable) return;
+
     const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
     if (event.target === resizeHandle) {
       this._startX = event.clientX;
@@ -170,6 +158,15 @@ export class CovalentAppShell extends DrawerBase {
       document.addEventListener('mouseup', this._stopResize);
       (event.target as HTMLElement).classList.add('resizing');
     }
+
+    resizeHandle?.addEventListener('dblclick', () => {
+      if (this.helpWidth > 320 || this.helpWidth !== 320) {
+        this.helpWidth = 320;
+        localStorage.setItem('helpWidth', '320');
+        this.updateHelpPanelWidth();
+        this.requestUpdate();
+      }
+    });
   }
 
   private _resize(event: MouseEvent) {
@@ -213,13 +210,10 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private updateHelpPanelWidth() {
-    const helpPanel = this.shadowRoot?.querySelector('.help') as HTMLElement;
-    const mainPanel = this.shadowRoot?.querySelector('.main') as HTMLElement;
-
-    if (helpPanel && mainPanel) {
-      helpPanel.style.setProperty('--help-width', `${this.helpWidth}px`);
-      mainPanel.style.marginRight = `${this.helpWidth}px`;
-    }
+    const appShell = this.shadowRoot?.querySelector(
+      '.app-shell'
+    ) as HTMLElement;
+    appShell?.style.setProperty('--cv-help-width', `${this.helpWidth}px`);
   }
 
   private _handleMenuClick() {
@@ -357,7 +351,9 @@ export class CovalentAppShell extends DrawerBase {
           </div>
         </div>
         <div class="help" @mousedown="${this._startResizing}">
-          <div class="resize-handle"></div>
+          ${this.helpResizable
+            ? html`<div class="resize-handle"></div>`
+            : nothing}
           <slot name="help"></slot>
         </div>
       </div>
