@@ -156,7 +156,7 @@ export class CovalentAppShell extends DrawerBase {
       this._startWidth = this.helpWidth;
       document.addEventListener('mousemove', this._resize);
       document.addEventListener('mouseup', this._stopResize);
-      (event.target as HTMLElement).classList.add('resizing');
+      (event.target as HTMLElement).classList.add('helpResizable');
     }
 
     resizeHandle?.addEventListener('dblclick', () => {
@@ -191,7 +191,7 @@ export class CovalentAppShell extends DrawerBase {
     document.removeEventListener('mouseup', this._stopResize);
     const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
     if (resizeHandle) {
-      resizeHandle.classList.remove('resizing');
+      resizeHandle.classList.remove('helpResizable');
     }
   }
 

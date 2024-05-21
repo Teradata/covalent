@@ -22,7 +22,7 @@ export default {
   args: {
     contained: true,
     fullWidth: false,
-    resizing: true,
+    helpResizable: true,
   },
   argTypes: {
     navClick: { action: 'clicked' },
@@ -54,7 +54,7 @@ const Template = ({
   forcedOpen = false,
   contained = true,
   fullWidth = false,
-  resizing = true,
+  helpResizable = true,
 }) => {
   document.addEventListener(
     'DOMContentLoaded',
@@ -104,7 +104,7 @@ const Template = ({
     ${forcedOpen ? `forcedOpen open` : ''}
     ${contained ? `contained` : ''}
     ${fullWidth ? `fullWidth` : ''}
-    ${resizing ? `resizing` : ''}
+    ${helpResizable ? `helpResizable` : ''}
     
     >
 
@@ -317,7 +317,7 @@ fullWidth.args = {
   fullWidth: true,
 };
 
-export const resizing = Template.bind({});
-resizing.args = {
-  resizing: true,
+export const helpResizable = Template.bind({});
+helpResizable.args = {
+  helpResizable: true,
 };
