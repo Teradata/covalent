@@ -22,6 +22,7 @@ export default {
   args: {
     contained: true,
     fullWidth: false,
+    resizing: true,
   },
   argTypes: {
     navClick: { action: 'clicked' },
@@ -53,6 +54,7 @@ const Template = ({
   forcedOpen = false,
   contained = true,
   fullWidth = false,
+  resizing = true,
 }) => {
   document.addEventListener(
     'DOMContentLoaded',
@@ -102,6 +104,8 @@ const Template = ({
     ${forcedOpen ? `forcedOpen open` : ''}
     ${contained ? `contained` : ''}
     ${fullWidth ? `fullWidth` : ''}
+    ${resizing ? `resizing` : ''}
+    
     >
 
       <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>
@@ -311,4 +315,9 @@ forcedOpen.args = {
 export const fullWidth = Template.bind({});
 fullWidth.args = {
   fullWidth: true,
+};
+
+export const resizing = Template.bind({});
+resizing.args = {
+  resizing: true,
 };

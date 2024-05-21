@@ -149,6 +149,14 @@
     }
   }
 
+  :host([resizing]) .resize-handle {
+    display: block;
+  }
+
+  :host(:not([resizing])) .resize-handle {
+    display: none;
+  }
+
   .cov-help--closed & {
     width: 0;
     border: none;
