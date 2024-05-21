@@ -61,6 +61,12 @@ export class CovalentAppShell extends DrawerBase {
   helpOpen = false;
 
   /**
+   * Make help resizable with drag/drop handle
+   */
+  @property({ type: Boolean, reflect: true })
+  helpResizable = false;
+
+  /**
    * Wrap the main area with a contained card surface
    */
   @property({ type: Boolean, reflect: true })
@@ -77,12 +83,6 @@ export class CovalentAppShell extends DrawerBase {
    */
   @property({ type: Boolean, reflect: true })
   fullWidth = false;
-
-  /**
-   * Make help resizable
-   */
-  @property({ type: Boolean, reflect: true })
-  resizing = false;
 
   private hovered = false;
 
@@ -148,7 +148,7 @@ export class CovalentAppShell extends DrawerBase {
   }
 
   private _startResizing(event: MouseEvent) {
-    if (!this.resizing) return;
+    if (!this.helpResizable) return;
 
     const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
     if (event.target === resizeHandle) {
@@ -351,7 +351,9 @@ export class CovalentAppShell extends DrawerBase {
           </div>
         </div>
         <div class="help" @mousedown="${this._startResizing}">
-          ${this.resizing ? html`<div class="resize-handle"></div>` : nothing}
+          ${this.helpResizable
+            ? html`<div class="resize-handle"></div>`
+            : nothing}
           <slot name="help"></slot>
         </div>
       </div>
