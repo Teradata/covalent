@@ -105,6 +105,9 @@
             "selected": {
               "description": "Denotes that the list item is selected.",
               "type": "boolean"
+            },
+            "subnav": {
+              "type": "boolean"
             }
           }
         }

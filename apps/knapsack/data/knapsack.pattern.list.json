@@ -37,10 +37,6 @@
               "default": true,
               "description": "Sets activated attribute on selected items which provides a focus-persistent highlight."
             },
-            "subNav": {
-              "type": "boolean",
-              "default": true
-            },
             "rootTabbable": {
               "description": "When true, sets tabindex=\"0\" on the internal list. Otherwise sets tabindex=\"-1\".",
               "type": "boolean"

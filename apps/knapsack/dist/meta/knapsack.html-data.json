@@ -49,7 +49,7 @@
     },
     {
       "name": "cv-alert",
-      "description": "",
+      "description": "Notification informing users about important information or events.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -99,7 +99,7 @@
     },
     {
       "name": "cv-app-shell",
-      "description": "",
+      "description": "The structural foundation of an application, including its layout and navigation.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -135,7 +135,7 @@
     },
     {
       "name": "cv-badge",
-      "description": "",
+      "description": "A small visual element indicating status or providing additional information.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -278,7 +278,7 @@
     },
     {
       "name": "cv-card",
-      "description": "",
+      "description": "Container presenting information or content in a visually distinct format.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -306,7 +306,7 @@
     },
     {
       "name": "cv-check-list-item",
-      "description": "",
+      "description": "An item in a list that users can mark as completed or incomplete.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -387,7 +387,7 @@
     },
     {
       "name": "cv-checkbox",
-      "description": "",
+      "description": "Interactive element allowing users to select one or more options from a list.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -419,7 +419,7 @@
     },
     {
       "name": "cv-chip-set",
-      "description": "",
+      "description": "Compact visual element representing an attribute, action, or choice.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -447,7 +447,7 @@
     },
     {
       "name": "cv-chip",
-      "description": "",
+      "description": "Individual item within a chip list.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -501,7 +501,7 @@
     },
     {
       "name": "cv-circular-progress",
-      "description": "",
+      "description": "Visual indication of progress displayed in a circular format.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -529,7 +529,7 @@
     },
     {
       "name": "cv-code-snippet",
-      "description": "",
+      "description": "Portion of code displayed within an interface, often for demonstration or explanation.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -561,7 +561,7 @@
     },
     {
       "name": "cv-dialog",
-      "description": "",
+      "description": "Modal window prompting users for input or displaying critical information.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -609,7 +609,7 @@
     },
     {
       "name": "cv-empty-state",
-      "description": "",
+      "description": "Placeholder content displayed when there is no data to show.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -637,7 +637,7 @@
     },
     {
       "name": "cv-expansion-panel",
-      "description": "",
+      "description": "Collapsible panel revealing additional content when expanded.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -657,7 +657,7 @@
     },
     {
       "name": "cv-expansion-panel-item",
-      "description": "",
+      "description": "Individual item within an expansion panel.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -721,7 +721,7 @@
     },
     {
       "name": "cv-formfield",
-      "description": "",
+      "description": "Input field within a form for users to enter data.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -749,7 +749,7 @@
     },
     {
       "name": "cv-icon",
-      "description": "",
+      "description": "Symbol representing an action, object, or concept.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -760,7 +760,7 @@
     },
     {
       "name": "cv-icon-button",
-      "description": "",
+      "description": "Button with an icon as the primary visual element.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -787,8 +787,48 @@
       ]
     },
     {
+      "name": "cv-icon-button-toggle",
+      "description": "Toggle button featuring an icon as the visual indicator of its state.",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-button-toggle/web-components-6kGMXrj-eP"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "on",
+          "description": "boolean Whether the toggle is activated."
+        },
+        {
+          "name": "disabled",
+          "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect."
+        },
+        {
+          "name": "onIcon",
+          "description": "Icon to display when on is true."
+        },
+        {
+          "name": "offIcon",
+          "description": "Icon to display when on is false."
+        },
+        {
+          "name": "aria-label",
+          "description": "Accessible label for the button."
+        },
+        {
+          "name": "ariaLabelOn",
+          "description": "aria-label of the button when on is true. If set, ariaLabelOff must also be set."
+        },
+        {
+          "name": "ariaLabelOff",
+          "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
+        }
+      ]
+    },
+    {
       "name": "cv-checkbox-icon",
-      "description": "",
+      "description": "Checkbox styled with an icon as its visual representation.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -824,7 +864,7 @@
     },
     {
       "name": "cv-radio-icon",
-      "description": "",
+      "description": "Radio button styled with an icon as its visual representation.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -856,7 +896,7 @@
     },
     {
       "name": "cv-linear-progress",
-      "description": "",
+      "description": "Visual indication of progress displayed in a linear format.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -888,7 +928,7 @@
     },
     {
       "name": "cv-list",
-      "description": "",
+      "description": "Collection of items displayed vertically or horizontally.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -899,10 +939,6 @@
         {
           "name": "activatible",
           "description": "boolean Sets activated attribute on selected items which provides a focus-persistent highlight."
-        },
-        {
-          "name": "subNav",
-          "description": "boolean"
         },
         {
           "name": "rootTabbable",
@@ -936,7 +972,7 @@
     },
     {
       "name": "cv-list-item",
-      "description": "",
+      "description": "Individual item within a list.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1013,7 +1049,7 @@
     },
     {
       "name": "cv-menu",
-      "description": "",
+      "description": "Collection of options or actions presented in an overlay in list format.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1153,7 +1189,7 @@
     },
     {
       "name": "cv-nav-list-item",
-      "description": "",
+      "description": "Item within a navigation menu or list.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1233,12 +1269,16 @@
         {
           "name": "selected",
           "description": "boolean Denotes that the list item is selected."
+        },
+        {
+          "name": "subnav",
+          "description": "boolean"
         }
       ]
     },
     {
       "name": "cv-radio",
-      "description": "",
+      "description": "A control that allows users to select only one option from a set.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1274,7 +1314,7 @@
     },
     {
       "name": "cv-radio-list-item",
-      "description": "",
+      "description": "An item in a list that a user can mark selected or unselected.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1355,7 +1395,7 @@
     },
     {
       "name": "cv-select",
-      "description": "",
+      "description": "Interactive menu allowing users to choose from a list of options.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1411,7 +1451,7 @@
     },
     {
       "name": "cv-side-sheet",
-      "description": "",
+      "description": "Panel displayed on the side of the screen, often used for navigation or additional content.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1439,7 +1479,7 @@
     },
     {
       "name": "cv-slider",
-      "description": "",
+      "description": "Input control allowing users to select a value within a range.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1483,7 +1523,7 @@
     },
     {
       "name": "cv-slider-range",
-      "description": "",
+      "description": "Input control allowing users to select a value within a range.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1527,7 +1567,7 @@
     },
     {
       "name": "cv-snackbar",
-      "description": "",
+      "description": "Temporary notification displayed at the bottom of the screen.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1563,7 +1603,7 @@
     },
     {
       "name": "cv-status-header",
-      "description": "",
+      "description": "Header section indicating the status or context of the content.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1608,7 +1648,7 @@
     },
     {
       "name": "cv-status-header-item",
-      "description": "",
+      "description": "Item within a status header.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1624,7 +1664,7 @@
     },
     {
       "name": "cv-switch",
-      "description": "",
+      "description": "Toggle control allowing users to switch between two states.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1652,7 +1692,7 @@
     },
     {
       "name": "cv-tab",
-      "description": "",
+      "description": "A component that organizes content across different screens, data sets, and other interactions",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1700,7 +1740,7 @@
     },
     {
       "name": "cv-tab-bar",
-      "description": "",
+      "description": "Navigation element allowing users to switch between different sections or views.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1716,7 +1756,7 @@
     },
     {
       "name": "cv-typography",
-      "description": "",
+      "description": "Styling and formatting of text.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1773,7 +1813,7 @@
     },
     {
       "name": "cv-textarea",
-      "description": "",
+      "description": "Input field allowing users to enter multiple lines of text.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1910,7 +1950,7 @@
     },
     {
       "name": "cv-text-lockup",
-      "description": "",
+      "description": "Grouping of text elements with a consistent style or layout.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1964,7 +2004,7 @@
     },
     {
       "name": "cv-textfield",
-      "description": "",
+      "description": "Input field allowing users to enter a single line of text.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -2129,7 +2169,7 @@
     },
     {
       "name": "cv-toolbar",
-      "description": "",
+      "description": "Styling and formatting of text within an interface.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -2161,7 +2201,7 @@
     },
     {
       "name": "cv-tooltip",
-      "description": "",
+      "description": "Small pop-up box providing additional information when hovering over an element.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -2193,7 +2233,7 @@
     },
     {
       "name": "cv-top-app-bar",
-      "description": "",
+      "description": "Horizontal bar at the top of an application containing navigation and other controls.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -2221,7 +2261,7 @@
     },
     {
       "name": "cv-top-app-bar-fixed",
-      "description": "",
+      "description": "Fixed-positioned top app bar that remains visible when scrolling.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -2249,7 +2289,7 @@
     },
     {
       "name": "cv-tree-list",
-      "description": "",
+      "description": "Hierarchical list structure displaying data in a tree-like format.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -2260,7 +2300,7 @@
     },
     {
       "name": "cv-tree-list-item",
-      "description": "",
+      "description": "Item within a tree list.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -2283,46 +2323,6 @@
         {
           "name": "indentMultiple",
           "description": "How much left padding (px) to add for nested elements."
-        }
-      ]
-    },
-    {
-      "name": "cv-icon-button-toggle",
-      "description": "",
-      "references": [
-        {
-          "name": "Knapsack Docs",
-          "url": "http://localhost:3999/pattern/icon-button-toggle/web-components-6kGMXrj-eP"
-        }
-      ],
-      "attributes": [
-        {
-          "name": "on",
-          "description": "boolean Whether the toggle is activated."
-        },
-        {
-          "name": "disabled",
-          "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect."
-        },
-        {
-          "name": "onIcon",
-          "description": "Icon to display when on is true."
-        },
-        {
-          "name": "offIcon",
-          "description": "Icon to display when on is false."
-        },
-        {
-          "name": "aria-label",
-          "description": "Accessible label for the button."
-        },
-        {
-          "name": "ariaLabelOn",
-          "description": "aria-label of the button when on is true. If set, ariaLabelOff must also be set."
-        },
-        {
-          "name": "ariaLabelOff",
-          "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
         }
       ]
     }

@@ -505,6 +505,20 @@
       "url": "/api/v1/render?patternId=icon-button&templateId=web-components-ctiCe2sAX&assetSetId=dark&demoId=iyfHwphwcs&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "icon-button-toggle",
+      "templateId": "web-components-6kGMXrj-eP",
+      "demoId": "O5OSKRluI9",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon-button-toggle&templateId=web-components-6kGMXrj-eP&assetSetId=light&demoId=O5OSKRluI9&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-button-toggle",
+      "templateId": "web-components-6kGMXrj-eP",
+      "demoId": "O5OSKRluI9",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon-button-toggle&templateId=web-components-6kGMXrj-eP&assetSetId=dark&demoId=O5OSKRluI9&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "icon-checkbox",
       "templateId": "web-components-jTiv8OpG9M",
       "demoId": "FTt0oVydi1",

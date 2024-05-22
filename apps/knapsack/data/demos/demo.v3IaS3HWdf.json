@@ -7,7 +7,9 @@
   "templateId": "web-components-Qtmmi7N-aL",
   "data": {
     "props": {
-      "hasChildren": false
+      "hasChildren": false,
+      "tabindex": -1,
+      "subnav": true
     },
     "slots": {
       "default": [
