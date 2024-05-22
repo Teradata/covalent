@@ -144,16 +144,16 @@
     }
 
     &:hover::after,
-    &.resizing::after {
+    &.helpResizable::after {
       opacity: 1;
     }
   }
 
-  :host([resizing]) .resize-handle {
+  :host([helpResizable]) .resize-handle {
     display: block;
   }
 
-  :host(:not([resizing])) .resize-handle {
+  :host(:not([helpResizable])) .resize-handle {
     display: none;
   }
 
