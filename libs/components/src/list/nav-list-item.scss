@@ -11,7 +11,7 @@
   --mdc-list-item-graphic-margin: 4px;
 }
 
-::slotted(cv-list) {
+::slotted(*) {
   --cv-list-padding-right: 0;
   --cv-list-padding-left: 0;
   --cv-list-item-text-padding: 48px;
@@ -99,13 +99,14 @@
   position: relative;
   height: 48px;
   width: 100%;
-  overflow: visible;
+  border-radius: var(--cv-list-item-border-radius, 100px);
+  overflow: hidden;
   display: flex;
   flex-shrink: 0;
   align-items: center;
 
   mwc-ripple {
-    border-radius: var(--cv-list-item-border-radius);
+    border-radius: var(--cv-list-item-border-radius, 100px);
     overflow: hidden;
   }
 }
