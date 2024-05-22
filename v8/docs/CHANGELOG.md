@@ -1,3 +1,9 @@
+## [8.12.2](https://github.com/Teradata/covalent/compare/v8.12.1...v8.12.2) (2024-05-21)
+
+### Bug Fixes
+
+- **app-shell:** fix nav-list menu ([#2162](https://github.com/Teradata/covalent/issues/2162)) ([80f7780](https://github.com/Teradata/covalent/commit/80f7780e843a6c906b736588c56af00b0ebc2f28))
+
 ## [8.12.1](https://github.com/Teradata/covalent/compare/v8.12.0...v8.12.1) (2024-05-13)
 
 ### Bug Fixes
