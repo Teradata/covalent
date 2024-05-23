@@ -1,3 +1,9 @@
+## [8.12.3](https://github.com/Teradata/covalent/compare/v8.12.2...v8.12.3) (2024-05-22)
+
+### Bug Fixes
+
+- **app-shell:** small fix to works fine the resizable ([#2163](https://github.com/Teradata/covalent/issues/2163)) ([ae0f78a](https://github.com/Teradata/covalent/commit/ae0f78aeb649ce51d060b952a49acf8eb96b0de6))
+
 ## [8.12.2](https://github.com/Teradata/covalent/compare/v8.12.1...v8.12.2) (2024-05-21)
 
 ### Bug Fixes
