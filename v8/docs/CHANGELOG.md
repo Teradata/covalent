@@ -1,3 +1,9 @@
+# [8.13.0](https://github.com/Teradata/covalent/compare/v8.12.3...v8.13.0) (2024-05-23)
+
+### Features
+
+- **components:** moving subnav property to nav-item component ([#2153](https://github.com/Teradata/covalent/issues/2153)) ([bc09f20](https://github.com/Teradata/covalent/commit/bc09f2074595f85ebb826ba9258fcdd30049ffe2))
+
 ## [8.12.3](https://github.com/Teradata/covalent/compare/v8.12.2...v8.12.3) (2024-05-22)
 
 ### Bug Fixes
