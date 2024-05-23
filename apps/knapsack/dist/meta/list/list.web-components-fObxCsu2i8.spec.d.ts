@@ -13,7 +13,6 @@ export interface List {
    * Sets activated attribute on selected items which provides a focus-persistent highlight.
    */
   activatible?: boolean;
-  subNav?: boolean;
   /**
    * When true, sets tabindex="0" on the internal list. Otherwise sets tabindex="-1".
    */

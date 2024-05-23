@@ -65,4 +65,5 @@ export interface NaviigationListItem {
    * Denotes that the list item is selected.
    */
   selected?: boolean;
+  subnav?: boolean;
 }
