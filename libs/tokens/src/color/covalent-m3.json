@@ -4438,7 +4438,7 @@
             }
           }
         },
-        "on-emphasis-4%4": {
+        "on-emphasis-4-4": {
           "type": "color",
           "value": "#ffffff0a",
           "blendMode": "normal",
@@ -9117,7 +9117,7 @@
             }
           }
         },
-        "on-emphasis-4%4": {
+        "on-emphasis-4-4": {
           "type": "color",
           "value": "#1910130a",
           "blendMode": "normal",

@@ -1,0 +1,162 @@
+:host {
+  --mdc-dialog-content-ink-color: var(--cv-theme-on-surface-variant);
+  --mdc-dialog-heading-ink-color: var(--cv-theme-on-surface);
+  --mdc-dialog-min-width: 96vw;
+  --mdc-shape-medium: 12px;
+  --mdc-theme-surface: var(--cv-theme-surface-container-lowest);
+  --mdc-typography-headline6-font-size: 20px;
+  --mdc-typography-headline6-font-weight: 500;
+
+  .mdc-dialog {
+    &.error .status-dialog__state {
+      background-color: var(--cv-theme-negative-8);
+
+      cv-icon {
+        color: var(--cv-theme-negative);
+      }
+    }
+
+    &.positive .status-dialog__state {
+      background-color: var(--cv-theme-positive-8);
+
+      cv-icon {
+        color: var(--cv-theme-positive);
+      }
+    }
+
+    &.warning .status-dialog__state {
+      background-color: var(--cv-theme-caution-8);
+
+      cv-icon {
+        color: var(--cv-theme-caution);
+      }
+    }
+  }
+
+  .mdc-dialog .mdc-dialog__surface {
+    max-width: calc(100vw - 40px);
+  }
+
+  .mdc-dialog .mdc-dialog__content {
+    padding: 9px 16px 16px;
+  }
+
+  .mdc-dialog__actions {
+    padding: 0 16px 16px;
+  }
+
+  .mdc-dialog__title {
+    max-width: calc(100% - 62px);
+    padding: 0 16px;
+  }
+
+  .mdc-dialog__title::before {
+    display: none;
+  }
+}
+
+.status-dialog__arrow-icon {
+  margin-top: 2px;
+
+  &.open {
+    transform: rotate(0deg);
+    transition: transform 250ms ease-out;
+  }
+
+  &.close {
+    transform: rotate(180deg);
+    transition: transform 250ms ease-in;
+  }
+}
+
+.status-dialog__container {
+  align-items: stretch;
+  display: flex;
+}
+
+.status-dialog__content {
+  flex: 1;
+}
+
+.status-dialog__details {
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.status-dialog__heading {
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-between;
+  padding-top: 6px;
+  width: 100%;
+
+  &.no-heading {
+    justify-content: flex-end;
+  }
+}
+
+.status-dialog__state {
+  --mdc-icon-size: 32px;
+
+  padding: 16px;
+
+  cv-icon {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
+.status-dialog__toggle-details {
+  align-items: center;
+  color: var(--cv-theme-primary);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  padding: 0.5rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  :host {
+    --mdc-dialog-min-width: 575px;
+
+    .mdc-dialog .mdc-dialog__surface {
+      max-width: 575px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :host {
+    .status-dialog__container {
+      flex-direction: column;
+    }
+
+    .status-dialog__state {
+      padding: 4px;
+
+      cv-icon {
+        display: none;
+      }
+    }
+
+    .mdc-dialog {
+      &.error .status-dialog__state {
+        background-color: var(--cv-theme-negative);
+      }
+
+      &.positive .status-dialog__state {
+        background-color: var(-cv-theme-positive);
+      }
+
+      &.warning .status-dialog__state {
+        background-color: var(--cv-theme-caution);
+      }
+    }
+  }
+}
