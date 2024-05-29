@@ -1603,7 +1603,7 @@
     },
     {
       "name": "cv-status-dialog",
-      "description": "",
+      "description": "Modal window displaying messages indicating the status, along with optional details.",
       "references": [
         {
           "name": "Knapsack Docs",
