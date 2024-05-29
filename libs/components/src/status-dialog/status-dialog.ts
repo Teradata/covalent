@@ -6,7 +6,6 @@ import { classMap } from 'lit/directives/class-map.js';
 import CovalentDialog from '../dialog/dialog';
 import styles from './status-dialog.scss?inline';
 import '../icon/icon';
-import '../icon-button/icon-button';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -121,7 +120,7 @@ export class CovalentStatusDialog extends CovalentDialog {
     }
     return html`<span class="${classMap(headingClasses)}">
       ${heading}
-      <cv-icon-button icon="close" @click=${this.close}></cv-icon-button>
+      <cv-icon @click=${this.close}>close</cv-icon>
     </span>`;
   }
 
@@ -141,6 +140,11 @@ export class CovalentStatusDialog extends CovalentDialog {
       'mdc-dialog__actions': !this.hideActions,
     };
 
+    const contentClasses = {
+      'mdc-dialog__content': true,
+      'padding-bottom': this.hideActions,
+    };
+
     return html` <div
       class="mdc-dialog ${classMap(classes)}"
       role="alertdialog"
@@ -156,7 +160,7 @@ export class CovalentStatusDialog extends CovalentDialog {
             </div>
             <div class="status-dialog__content">
               ${heading}
-              <div id="content" class="mdc-dialog__content">
+              <div id="content" class="${classMap(contentClasses)}">
                 <slot id="contentSlot"></slot>
                 ${details}
               </div>

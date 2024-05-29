@@ -1,4 +1,3 @@
-import '../icon-button/icon-button';
 import '../code-snippet/code-snippet';
 import '../button/button';
 import '../icon/icon';

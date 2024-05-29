@@ -4,6 +4,9 @@
   --mdc-dialog-min-width: 96vw;
   --mdc-shape-medium: 12px;
   --mdc-theme-surface: var(--cv-theme-surface-container-lowest);
+  --mdc-typography-body1-font-family: var(
+    --cv-typography-subtitle1-font-family
+  );
   --mdc-typography-headline6-font-size: 20px;
   --mdc-typography-headline6-font-weight: 500;
 
@@ -38,7 +41,11 @@
   }
 
   .mdc-dialog .mdc-dialog__content {
-    padding: 9px 16px 16px;
+    padding: 0 16px;
+
+    &.padding-bottom {
+      padding-bottom: 2rem;
+    }
   }
 
   .mdc-dialog__actions {
@@ -51,8 +58,8 @@
   }
 
   .mdc-dialog__title {
-    max-width: calc(100% - 62px);
-    padding: 0 16px;
+    flex: 1;
+    padding: 0;
   }
 
   .mdc-dialog__title::before {
@@ -104,21 +111,27 @@
 }
 
 .status-dialog__heading {
-  align-items: center;
+  align-items: start;
+  box-sizing: border-box;
   display: inline-flex;
   justify-content: space-between;
-  padding: 6px 0;
+  padding: 18px 16px;
   width: 100%;
 
   &.no-heading {
     justify-content: flex-end;
+  }
+
+  cv-icon {
+    cursor: pointer;
+    line-height: 28px;
   }
 }
 
 .status-dialog__state {
   --mdc-icon-size: 32px;
 
-  padding: 16px;
+  padding: 14px 16px 0;
 
   cv-icon {
     font-variation-settings: 'FILL' 1;
@@ -135,7 +148,7 @@
   font-weight: 400;
   letter-spacing: 0.25px;
   line-height: 20px;
-  padding: 0.5rem 0;
+  padding: 16px 0;
 }
 
 @media screen and (min-width: 600px) {
@@ -152,10 +165,6 @@
   :host {
     .status-dialog__container {
       flex-direction: column;
-    }
-
-    .status-dialog__heading {
-      padding: 16px 0;
     }
 
     .status-dialog__state {
