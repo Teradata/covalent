@@ -1602,6 +1602,69 @@
       ]
     },
     {
+      "name": "cv-status-dialog",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/status-dialog/web-components-klayJh8gA"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "state",
+          "values": [
+            {
+              "name": "error"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "warning"
+            }
+          ],
+          "description": "Current state of the status dialog"
+        },
+        {
+          "name": "heading",
+          "description": "Header text of the status dialog"
+        },
+        {
+          "name": "open",
+          "description": "boolean Whether the status dialog is open"
+        },
+        {
+          "name": "hideActions",
+          "description": "boolean Whether the actions section is hidden"
+        },
+        {
+          "name": "stacked",
+          "description": "boolean Stacks the action buttons"
+        },
+        {
+          "name": "scrimClickAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent clicks outside the dialog from closing the dialog."
+        },
+        {
+          "name": "escapeKeyAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog."
+        },
+        {
+          "name": "defaultAction",
+          "description": "Action to be emitted with the closing and closed events when <cv-status-dialog>.open is toggled"
+        },
+        {
+          "name": "actionAttribute",
+          "description": "Attribute to read in light dom of dialog for closing action value"
+        },
+        {
+          "name": "initialFocusAttribute",
+          "description": "Attribute to search for in light dom for initial focus on dialog open."
+        }
+      ]
+    },
+    {
       "name": "cv-status-header",
       "description": "Header section indicating the status or context of the content.",
       "references": [

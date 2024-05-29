@@ -39,6 +39,7 @@ export class CovalentStatusDialog extends CovalentDialog {
   /**
    * Whether the expand details link is shown
    */
+  @state()
   showDetailsLink = false;
 
   static override styles = [

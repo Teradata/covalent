@@ -1,0 +1,35 @@
+{
+  "id": "ugxYH4hy3",
+  "title": "Main",
+  "type": "data",
+  "patternId": "status-dialog",
+  "templateId": "web-components-klayJh8gA",
+  "data": {
+    "props": {
+      "state": "error",
+      "heading": "Title for the dialog",
+      "open": true,
+      "scrimClickAction": "close",
+      "escapeKeyAction": "close",
+      "defaultAction": "close",
+      "actionAttribute": "dialogAction",
+      "initialFocusAttribute": "dialogInitialFocus"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Error message / content to be displayed."
+        }
+      ],
+      "primaryAction": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "wJJ2tksHEK"
+        }
+      ]
+    }
+  }
+}

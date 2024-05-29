@@ -1,0 +1,39 @@
+{
+  "id": "RWQsKmRljq",
+  "title": "Main",
+  "type": "data",
+  "patternId": "code-snippet",
+  "templateId": "web-components-MmKtwF24Vv",
+  "data": {
+    "props": {
+      "label": "Example.sql",
+      "language": "sql",
+      "hideHeader": true,
+      "inline": true
+    },
+    "slots": {
+      "default": [
+        {
+          "text": "SELECT * FROM aster_nb_modelSC;",
+          "type": "text"
+        }
+      ],
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "E5ymzzEPs",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ],
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "demoId": "E5ymzzEPs",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  }
+}

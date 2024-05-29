@@ -1,0 +1,20 @@
+{
+  "id": "gGO6DoUZYB",
+  "title": "Body 1",
+  "type": "data",
+  "patternId": "text",
+  "templateId": "web-components-FXCMXD35mF",
+  "data": {
+    "props": {
+      "scale": "body1"
+    },
+    "slots": {
+      "default": [
+        {
+          "text": "We’re experiencing an issue in the system, so the users didn’t get added.",
+          "type": "text"
+        }
+      ]
+    }
+  }
+}
