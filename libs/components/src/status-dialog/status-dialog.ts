@@ -121,9 +121,11 @@ export class CovalentStatusDialog extends CovalentDialog {
     }
     return html`<span class="${classMap(headingClasses)}">
       ${heading}
-      <div class="status-dialog__close-icon">
-        <cv-icon-button icon="close" @click=${this.close}></cv-icon-button>
-      </div>
+      <cv-icon-button
+        class="status-dialog__close-icon"
+        icon="close"
+        @click=${this.close}
+      ></cv-icon-button>
     </span>`;
   }
 

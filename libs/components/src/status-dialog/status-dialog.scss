@@ -61,7 +61,7 @@
     flex: 1;
     line-height: 24px;
     margin: 0;
-    padding: 0;
+    padding: 0 40px 0 0;
   }
 
   .mdc-dialog__title::before {
@@ -86,11 +86,6 @@
     transform: rotate(180deg);
     transition: transform 250ms ease-in;
   }
-}
-
-.status-dialog__close-icon {
-  padding: 12px;
-  position: relative;
 }
 
 .status-dialog__container {
@@ -131,10 +126,10 @@
     justify-content: flex-end;
   }
 
-  cv-icon-button {
+  .status-dialog__close-icon {
     position: absolute;
-    right: -14px;
-    top: -8px;
+    right: 8px;
+    top: 10px;
   }
 }
 
@@ -175,6 +170,10 @@
   :host {
     .status-dialog__container {
       flex-direction: column;
+    }
+
+    .status-dialog__heading .status-dialog__close-icon {
+      top: 18px;
     }
 
     .status-dialog__state {
