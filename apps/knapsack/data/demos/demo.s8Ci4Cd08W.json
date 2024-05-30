@@ -1,0 +1,18 @@
+{
+  "id": "s8Ci4Cd08W",
+  "data": {
+    "props": {
+      "icon": "info",
+      "titleText": "Alert title",
+      "iconAriaLabel": "aria-label for the icon",
+      "descriptionText": "Alert description",
+      "inline": true
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Neutral (inline)",
+  "patternId": "alert",
+  "templateId": "web-components-4qjJYWsUZi",
+  "description": "Use for messages that require less visual prominence"
+}

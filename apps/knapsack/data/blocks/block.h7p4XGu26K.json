@@ -1,0 +1,10 @@
+{
+  "id": "h7p4XGu26K",
+  "data": {
+    "md": [
+      "# Inline alerts\n- Use these for messaging inside card, dialogs and other containers\n- Provide a short alert title that describes the situation clearly and succinctly\n- If a longer message is required, it can be included within the alert description\n- Use an icon and color to indicate severity of the alert\n- A single-action text button or close icon can be placed inside of an alert"
+    ],
+    "columns": 1
+  },
+  "blockType": "markdown-block"
+}

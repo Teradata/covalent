@@ -1,0 +1,20 @@
+{
+  "id": "bdkr5jktLp",
+  "data": {
+    "demoId": "t7e3P48Pkm",
+    "templateId": "web-components-4qjJYWsUZi",
+    "hideControls": true,
+    "playgroundUi": {
+      "allowResizing": false,
+      "showSchemaForm": true,
+      "showCodeSnippet": false,
+      "demoSize": "landscape"
+    },
+    "allowResizing": false,
+    "showCodeSnippet": false,
+    "showSchemaForm": true,
+    "demoSize": "landscape",
+    "patternId": "alert"
+  },
+  "blockType": "pattern-template-block"
+}

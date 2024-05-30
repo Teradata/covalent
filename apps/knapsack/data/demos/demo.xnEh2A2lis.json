@@ -1,0 +1,19 @@
+{
+  "id": "xnEh2A2lis",
+  "data": {
+    "props": {
+      "icon": "error",
+      "titleText": "Alert title",
+      "iconAriaLabel": "aria-label for the icon",
+      "descriptionText": "Alert description",
+      "state": "negative",
+      "inline": true
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Negative (inline)",
+  "patternId": "alert",
+  "templateId": "web-components-4qjJYWsUZi",
+  "description": "Use to indicate that a critical or blocking error has occurred"
+}

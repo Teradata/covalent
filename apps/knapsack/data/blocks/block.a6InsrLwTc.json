@@ -1,0 +1,52 @@
+{
+  "id": "a6InsrLwTc",
+  "data": {
+    "guidelines": [
+      {
+        "id": "Xcd9B06M9R",
+        "type": "do",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/alerts-responsive-design-correct-jthr4pynpng",
+          "title": "Correct"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Icon and buttons maintain their position relative to the top of the alert even if the content expands.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "VJaLpVps9",
+        "type": "dont",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/alerts-responsive-design-incorrect-8gsix3x5hpng",
+          "title": "Incorrect"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The icon and buttons should not vertically center when the alert grows in height.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

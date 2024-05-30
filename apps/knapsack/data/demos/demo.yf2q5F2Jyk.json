@@ -1,0 +1,19 @@
+{
+  "id": "yf2q5F2Jyk",
+  "data": {
+    "props": {
+      "icon": "check",
+      "titleText": "Alert title",
+      "iconAriaLabel": "aria-label for the icon",
+      "descriptionText": "Alert description",
+      "state": "positive",
+      "inline": true
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Positive (inline)",
+  "patternId": "alert",
+  "templateId": "web-components-4qjJYWsUZi",
+  "description": "Use to indicate that a task or process has completed successfully"
+}
