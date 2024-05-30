@@ -1,6 +1,7 @@
 import '../code-snippet/code-snippet';
 import '../button/button';
 import '../icon/icon';
+import '../icon-button/icon-button';
 import './status-dialog';
 
 const dialogContent = {

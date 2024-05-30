@@ -59,6 +59,8 @@
 
   .mdc-dialog__title {
     flex: 1;
+    line-height: 24px;
+    margin: 0;
     padding: 0;
   }
 
@@ -86,6 +88,11 @@
   }
 }
 
+.status-dialog__close-icon {
+  padding: 12px;
+  position: relative;
+}
+
 .status-dialog__container {
   display: flex;
 }
@@ -111,6 +118,8 @@
 }
 
 .status-dialog__heading {
+  --mdc-icon-button-size: 40px;
+
   align-items: start;
   box-sizing: border-box;
   display: inline-flex;
@@ -122,9 +131,10 @@
     justify-content: flex-end;
   }
 
-  cv-icon {
-    cursor: pointer;
-    line-height: 28px;
+  cv-icon-button {
+    position: absolute;
+    right: -14px;
+    top: -8px;
   }
 }
 

@@ -6,6 +6,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import CovalentDialog from '../dialog/dialog';
 import styles from './status-dialog.scss?inline';
 import '../icon/icon';
+import '../icon-button/icon-button';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -120,7 +121,9 @@ export class CovalentStatusDialog extends CovalentDialog {
     }
     return html`<span class="${classMap(headingClasses)}">
       ${heading}
-      <cv-icon @click=${this.close}>close</cv-icon>
+      <div class="status-dialog__close-icon">
+        <cv-icon-button icon="close" @click=${this.close}></cv-icon-button>
+      </div>
     </span>`;
   }
 
