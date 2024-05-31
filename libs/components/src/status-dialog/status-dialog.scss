@@ -2,13 +2,17 @@
   --mdc-dialog-content-ink-color: var(--cv-theme-on-surface-variant);
   --mdc-dialog-heading-ink-color: var(--cv-theme-on-surface);
   --mdc-dialog-min-width: 96vw;
-  --mdc-shape-medium: 12px;
+  --mdc-shape-medium: calc((var(--mdc-shape-small)) * 1.5);
   --mdc-theme-surface: var(--cv-theme-surface-container-lowest);
   --mdc-typography-body1-font-family: var(
     --cv-typography-subtitle1-font-family
   );
-  --mdc-typography-headline6-font-size: 20px;
-  --mdc-typography-headline6-font-weight: 500;
+  --mdc-typography-headline6-font-size: var(
+    --cv-typography-headline6-font-size
+  );
+  --mdc-typography-headline6-font-weight: var(
+    --cv-typography-headline1-font-weight
+  );
 
   .mdc-dialog {
     &.error .status-dialog__state {
@@ -59,7 +63,7 @@
 
   .mdc-dialog__title {
     flex: 1;
-    line-height: 24px;
+    line-height: var(--cv-typography-body1-line-height);
     margin: 0;
     padding: 0 40px 0 0;
   }
