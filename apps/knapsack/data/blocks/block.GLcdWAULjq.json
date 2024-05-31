@@ -1,0 +1,24 @@
+{
+  "id": "GLcdWAULjq",
+  "data": {
+    "demoId": "uhaHv83YYx",
+    "templateId": "web-components-40aOlYC6I9",
+    "hideControls": true,
+    "playgroundUi": {
+      "allowResizing": false,
+      "showSchemaForm": true,
+      "showCodeSnippet": false,
+      "demoSize": "landscape"
+    },
+    "allowResizing": false,
+    "showCodeSnippet": false,
+    "showSchemaForm": true,
+    "demoSize": "landscape",
+    "patternId": "badge"
+  },
+  "size": "medium",
+  "blockType": "pattern-template-block",
+  "header": {
+    "showHeader": false
+  }
+}
