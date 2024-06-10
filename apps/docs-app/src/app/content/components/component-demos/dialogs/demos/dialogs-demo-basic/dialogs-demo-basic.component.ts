@@ -38,4 +38,16 @@ export class DialogsDemoBasicComponent {
       acceptButton: 'Ok',
     });
   }
+
+  openStatus(): void {
+    this._dialogService.openStatus({
+      title: 'Status dialog',
+      disableClose: true,
+      closeButton: 'Close',
+      state: 'error',
+      details: 'Additional information about the error.',
+      message:
+        'This is how simple it is to create a status dialog with this wrapper service.',
+    });
+  }
 }

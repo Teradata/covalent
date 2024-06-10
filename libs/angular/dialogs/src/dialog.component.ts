@@ -15,6 +15,9 @@ export class TdDialogContentDirective {}
 @Directive({ selector: '[tdDialogActions]' })
 export class TdDialogActionsDirective {}
 
+@Directive({ selector: '[tdDialogStatus]' })
+export class TdDialogStatusDirective {}
+
 @Component({
   selector: 'td-dialog',
   templateUrl: './dialog.component.html',
@@ -27,6 +30,8 @@ export class TdDialogComponent implements AfterContentInit {
   dialogContent!: QueryList<TdDialogContentDirective>;
   @ContentChildren(TdDialogActionsDirective, { descendants: true })
   dialogActions!: QueryList<TdDialogActionsDirective>;
+  @ContentChildren(TdDialogStatusDirective, { descendants: true })
+  dialogStatus!: QueryList<TdDialogStatusDirective>;
 
   ngAfterContentInit(): void {
     if (this.dialogTitle.length > 1) {
@@ -37,6 +42,9 @@ export class TdDialogComponent implements AfterContentInit {
     }
     if (this.dialogActions.length > 1) {
       throw new Error('Duplicate td-dialog-actions component at in td-dialog.');
+    }
+    if (this.dialogStatus.length > 1) {
+      throw new Error('Duplicate td-dialog-status component at in td-dialog.');
     }
   }
 }

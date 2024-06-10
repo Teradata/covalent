@@ -1,3 +1,11 @@
+.td-dialog {
+  width: 100%;
+}
+
+.td-dialog-wrapper {
+  display: flex;
+}
+
 .td-dialog-actions {
   // [layout="row"]
   flex-direction: row;
@@ -21,5 +29,15 @@
     padding-left: 8px;
     padding-right: 8px;
     min-width: 64px;
+  }
+
+  ::ng-deep .td-status-dialog___button {
+    padding: 9px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .td-dialog-wrapper {
+    flex-direction: column;
   }
 }

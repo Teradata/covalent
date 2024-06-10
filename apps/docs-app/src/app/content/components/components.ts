@@ -77,7 +77,7 @@ export const createComponentDetails: IComponentDetails[] = [
     name: 'Dialogs',
     id: 'dialogs',
     description:
-      'Quick way to use alert, confirm, prompt, and draggable dialogs',
+      'Quick way to use alert, confirm, prompt, draggable and status dialogs',
     apiDocUrl: 'libs/angular/dialogs/README.md',
     icon: 'open_in_browser',
     category: buttons.name,
