@@ -191,6 +191,11 @@
       "import": "./snackbar.mjs",
       "require": "./snackbar.js"
     },
+    "./status-dialog": {
+      "types": "./status-dialog.d.ts",
+      "import": "./status-dialog.mjs",
+      "require": "./status-dialog.js"
+    },
     "./status-header": {
       "types": "./status-header.d.ts",
       "import": "./status-header.mjs",
