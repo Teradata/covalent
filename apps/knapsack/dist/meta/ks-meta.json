@@ -789,6 +789,20 @@
       "url": "/api/v1/render?patternId=snackbar&templateId=web-components-3ERE1Ai9lo&assetSetId=dark&demoId=5aKkBtql-E&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "status-dialog",
+      "templateId": "web-components-klayJh8gA",
+      "demoId": "ugxYH4hy3",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=status-dialog&templateId=web-components-klayJh8gA&assetSetId=light&demoId=ugxYH4hy3&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "status-dialog",
+      "templateId": "web-components-klayJh8gA",
+      "demoId": "ugxYH4hy3",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=status-dialog&templateId=web-components-klayJh8gA&assetSetId=dark&demoId=ugxYH4hy3&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "status-header",
       "templateId": "web-components-UDLnfGbB2W",
       "demoId": "1OH1Dga5C0",

@@ -239,6 +239,11 @@ byId:
     name: Snackbar
     parentId: test-page
     path: /pattern/snackbar
+  status-dialog:
+    id: status-dialog
+    name: Status dialog
+    parentId: test-page
+    path: /pattern/status-dialog
   status-header:
     id: status-header
     name: Status header
@@ -377,6 +382,7 @@ order:
   - side-sheet
   - slider
   - snackbar
+  - status-dialog
   - status-header
   - status-header-item
   - switch

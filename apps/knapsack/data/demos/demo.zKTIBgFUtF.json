@@ -1,0 +1,47 @@
+{
+  "id": "zKTIBgFUtF",
+  "title": "With details",
+  "description": "Status dialog with additional details.",
+  "type": "data",
+  "patternId": "status-dialog",
+  "templateId": "web-components-klayJh8gA",
+  "data": {
+    "props": {
+      "state": "error",
+      "heading": "Couldn’t add data sharing users",
+      "open": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "text",
+          "templateId": "web-components-FXCMXD35mF",
+          "demoId": "gGO6DoUZYB"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "text",
+          "templateId": "web-components-FXCMXD35mF",
+          "demoId": "w8HgPvaR-Q"
+        }
+      ],
+      "primaryAction": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "wJJ2tksHEK"
+        }
+      ],
+      "details": [
+        {
+          "type": "template-demo",
+          "patternId": "code-snippet",
+          "templateId": "web-components-MmKtwF24Vv",
+          "demoId": "RWQsKmRljq"
+        }
+      ]
+    }
+  }
+}

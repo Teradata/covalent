@@ -1,0 +1,127 @@
+{
+  "id": "status-dialog",
+  "title": "Status dialog",
+  "description": "Modal window displaying messages indicating the status, along with optional details.",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-klayJh8gA",
+      "title": "Web Components",
+      "alias": "cv-status-dialog",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "Default slot for the content"
+          },
+          "details": {
+            "title": "details",
+            "description": "Slot for the details to be displayed when show details is clicked"
+          },
+          "primaryAction": {
+            "title": "primaryAction",
+            "description": "Primary action item for the status dialog",
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "icon",
+              "icon-button",
+              "switch"
+            ]
+          },
+          "secondaryAction": {
+            "title": "secondaryAction",
+            "description": "Secondary action item for the status dialog",
+            "allowedPatternIds": [
+              "button",
+              "checkbox",
+              "icon",
+              "icon-button",
+              "switch"
+            ]
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "state": {
+              "title": "state",
+              "description": "Current state of the status dialog",
+              "type": "string",
+              "enum": ["error", "positive", "warning"],
+              "default": "error"
+            },
+            "heading": {
+              "type": "string",
+              "title": "Heading",
+              "description": "Header text of the status dialog"
+            },
+            "open": {
+              "title": "open",
+              "description": "Whether the status dialog is open",
+              "type": "boolean"
+            },
+            "hideActions": {
+              "title": "hideActions",
+              "description": "Whether the actions section is hidden",
+              "type": "boolean"
+            },
+            "stacked": {
+              "title": "stacked",
+              "description": "Stacks the action buttons",
+              "type": "boolean"
+            },
+            "scrimClickAction": {
+              "type": "string",
+              "description": "Setting this attribute to an empty string \"\" will prevent clicks outside the dialog from closing the dialog.",
+              "title": "scrimClickAction"
+            },
+            "escapeKeyAction": {
+              "type": "string",
+              "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog.",
+              "title": "escapeKeyAction"
+            },
+            "defaultAction": {
+              "type": "string",
+              "description": "Action to be emitted with the closing and closed events when <cv-status-dialog>.open is toggled",
+              "title": "defaultAction"
+            },
+            "actionAttribute": {
+              "type": "string",
+              "description": "Attribute to read in light dom of dialog for closing action value",
+              "title": "actionAttribute"
+            },
+            "initialFocusAttribute": {
+              "type": "string",
+              "description": "Attribute to search for in light dom for initial focus on dialog open.",
+              "title": "initialFocusAttribute"
+            }
+          }
+        }
+      },
+      "demoIds": ["ugxYH4hy3", "zKTIBgFUtF"],
+      "blockIds": ["rnzsD82PRe", "ch7bxp4bx4", "Qo-480hmaQ", "fgqB5u79e"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "web-components-klayJh8gA"
+    }
+  ],
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blockIds": []
+    }
+  ]
+}

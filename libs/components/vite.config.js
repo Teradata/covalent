@@ -45,6 +45,7 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/slider/slider',
           'libs/components/src/slider/slider-range',
           'libs/components/src/snackbar/snackbar',
+          'libs/components/src/status-dialog/status-dialog',
           'libs/components/src/status-header/status-header',
           'libs/components/src/status-header/status-header-item',
           'libs/components/src/switch/switch',

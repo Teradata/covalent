@@ -33,6 +33,7 @@ export * from './side-sheet/side-sheet';
 export * from './slider/slider';
 export * from './slider/slider-range';
 export * from './snackbar/snackbar';
+export * from './status-dialog/status-dialog';
 export * from './status-header/status-header';
 export * from './status-header/status-header-item';
 export * from './switch/switch';
