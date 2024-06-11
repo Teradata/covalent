@@ -1,3 +1,9 @@
+# [8.14.0](https://github.com/Teradata/covalent/compare/v8.13.0...v8.14.0) (2024-06-11)
+
+### Features
+
+- **status-dialog:** angular component for status dialog ([#2169](https://github.com/Teradata/covalent/issues/2169)) ([7971409](https://github.com/Teradata/covalent/commit/7971409b5a630b25563e18abde07f08942920915))
+
 # [8.13.0](https://github.com/Teradata/covalent/compare/v8.12.3...v8.13.0) (2024-05-23)
 
 ### Features
