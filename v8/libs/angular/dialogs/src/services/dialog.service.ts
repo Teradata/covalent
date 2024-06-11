@@ -12,6 +12,11 @@ import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.componen
 import { DragDrop, DragRef } from '@angular/cdk/drag-drop';
 import { DOCUMENT } from '@angular/common';
 import { Subject } from 'rxjs';
+import {
+  TdStatusDialogStates,
+  TdStatusDialogComponent,
+  TdStatusDialogDetailsLabels,
+} from '../status-dialog/status-dialog.component';
 
 export interface IDialogConfig extends MatDialogConfig {
   title?: string;
@@ -30,6 +35,12 @@ export interface IConfirmConfig extends IDialogConfig {
 
 export interface IPromptConfig extends IConfirmConfig {
   value?: string;
+}
+
+export interface IStatusConfig extends IAlertConfig {
+  state?: TdStatusDialogStates;
+  details?: string;
+  detailsLabels?: TdStatusDialogDetailsLabels;
 }
 
 export interface IDraggableConfig<T> {
@@ -245,5 +256,45 @@ export class TdDialogService {
     dialogConfig.width = '400px';
     Object.assign(dialogConfig, config);
     return dialogConfig;
+  }
+
+  /**
+   * params:
+   * - config: IStatusConfig {
+   *     closeButton?: string;
+   *     details?: string;
+   *     detailsLabels?: TdStatusDialogDetailsLabels;
+   *     message: string;
+   *     state?: 'error' | 'positive' | 'warning'
+   *     title?: string;
+   *     viewContainerRef?: ViewContainerRef;
+   * }
+   *
+   * Opens a status dialog with the provided config.
+   * Returns an MatDialogRef<TdStatusDialogComponent> object.
+   */
+  public openStatus(
+    config: IStatusConfig
+  ): MatDialogRef<TdStatusDialogComponent> {
+    config.panelClass = 'td-status-dialog';
+    config.autoFocus = false;
+    config.width = '575px';
+    config.maxWidth = '96vw';
+    const dialogConfig: MatDialogConfig = this._createConfig(config);
+    const dialogRef: MatDialogRef<TdStatusDialogComponent> =
+      this._dialogService.open(TdStatusDialogComponent, dialogConfig);
+    const statusDialogComponent: TdStatusDialogComponent =
+      dialogRef.componentInstance;
+    statusDialogComponent.title = config.title;
+    statusDialogComponent.message = config.message;
+    statusDialogComponent.state = config.state;
+    statusDialogComponent.details = config.details;
+    if (config.detailsLabels) {
+      statusDialogComponent.detailsLabels = config.detailsLabels;
+    }
+    if (config.closeButton) {
+      statusDialogComponent.closeButton = config.closeButton;
+    }
+    return dialogRef;
   }
 }

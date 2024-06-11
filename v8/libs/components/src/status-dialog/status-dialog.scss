@@ -193,7 +193,7 @@
       }
 
       &.positive .status-dialog__state {
-        background-color: var(-cv-theme-positive);
+        background-color: var(--cv-theme-positive);
       }
 
       &.warning .status-dialog__state {
