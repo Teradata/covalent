@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?sn0lb0')
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?44ite4')
       format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?sn0lb0')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?44ite4')
       format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?sn0lb0##{$icomoon-font-family}')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?44ite4##{$icomoon-font-family}')
       format('svg');
   font-weight: normal;
   font-style: normal;
@@ -48,6 +48,656 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-attribution {
+  &:before {
+    content: $cov-attribution;
+  }
+}
+.cov-cluster_analysis_outlined {
+  &:before {
+    content: $cov-cluster_analysis_outlined;
+  }
+}
+.cov-compute_cluster_outlined {
+  &:before {
+    content: $cov-compute_cluster_outlined;
+  }
+}
+.cov-compute_cluster_profile_outlined {
+  &:before {
+    content: $cov-compute_cluster_profile_outlined;
+  }
+}
+.cov-compute_cluster_profile {
+  &:before {
+    content: $cov-compute_cluster_profile;
+  }
+}
+.cov-compute_groups_outlined {
+  &:before {
+    content: $cov-compute_groups_outlined;
+  }
+}
+.cov-compute_groups {
+  &:before {
+    content: $cov-compute_groups;
+  }
+}
+.cov-data_source_type_amazon_outlined {
+  &:before {
+    content: $cov-data_source_type_amazon_outlined;
+  }
+}
+.cov-data_source_type_amazon {
+  &:before {
+    content: $cov-data_source_type_amazon;
+  }
+}
+.cov-data_source_type_azure_outlined {
+  &:before {
+    content: $cov-data_source_type_azure_outlined;
+  }
+}
+.cov-data_source_type_azure {
+  &:before {
+    content: $cov-data_source_type_azure;
+  }
+}
+.cov-data_source_type_cloudera_outlined {
+  &:before {
+    content: $cov-data_source_type_cloudera_outlined;
+  }
+}
+.cov-data_source_type_cloudera {
+  &:before {
+    content: $cov-data_source_type_cloudera;
+  }
+}
+.cov-data_source_type_hdinsight_outlined {
+  &:before {
+    content: $cov-data_source_type_hdinsight_outlined;
+  }
+}
+.cov-data_source_type_hdinsight {
+  &:before {
+    content: $cov-data_source_type_hdinsight;
+  }
+}
+.cov-data_source_type_microsoft_outlined {
+  &:before {
+    content: $cov-data_source_type_microsoft_outlined;
+  }
+}
+.cov-data_source_type_microsoft {
+  &:before {
+    content: $cov-data_source_type_microsoft;
+  }
+}
+.cov-data_source_type_teradata_outlined {
+  &:before {
+    content: $cov-data_source_type_teradata_outlined;
+  }
+}
+.cov-data_source_type_teradata {
+  &:before {
+    content: $cov-data_source_type_teradata;
+  }
+}
+.cov-database_changed_outlined {
+  &:before {
+    content: $cov-database_changed_outlined;
+  }
+}
+.cov-database_close {
+  &:before {
+    content: $cov-database_close;
+  }
+}
+.cov-database_edit_outlined {
+  &:before {
+    content: $cov-database_edit_outlined;
+  }
+}
+.cov-database_foreign_outlined {
+  &:before {
+    content: $cov-database_foreign_outlined;
+  }
+}
+.cov-database_lab_outlined {
+  &:before {
+    content: $cov-database_lab_outlined;
+  }
+}
+.cov-database_none_outlined {
+  &:before {
+    content: $cov-database_none_outlined;
+  }
+}
+.cov-database_none {
+  &:before {
+    content: $cov-database_none;
+  }
+}
+.cov-database_outlined {
+  &:before {
+    content: $cov-database_outlined;
+  }
+}
+.cov-database_search_outlined {
+  &:before {
+    content: $cov-database_search_outlined;
+  }
+}
+.cov-database_synced_outlined {
+  &:before {
+    content: $cov-database_synced_outlined;
+  }
+}
+.cov-database_unreachable_outlined {
+  &:before {
+    content: $cov-database_unreachable_outlined;
+  }
+}
+.cov-dock_right_outlined {
+  &:before {
+    content: $cov-dock_right_outlined;
+  }
+}
+.cov-file_changed_outlined {
+  &:before {
+    content: $cov-file_changed_outlined;
+  }
+}
+.cov-file_edit_outlined {
+  &:before {
+    content: $cov-file_edit_outlined;
+  }
+}
+.cov-file_foreign_outlined {
+  &:before {
+    content: $cov-file_foreign_outlined;
+  }
+}
+.cov-file_lab_outlined {
+  &:before {
+    content: $cov-file_lab_outlined;
+  }
+}
+.cov-file_outlined {
+  &:before {
+    content: $cov-file_outlined;
+  }
+}
+.cov-file_searched_outlined {
+  &:before {
+    content: $cov-file_searched_outlined;
+  }
+}
+.cov-file_synced_outlined {
+  &:before {
+    content: $cov-file_synced_outlined;
+  }
+}
+.cov-machine_learning_outlined {
+  &:before {
+    content: $cov-machine_learning_outlined;
+  }
+}
+.cov-model_configuration_outlined {
+  &:before {
+    content: $cov-model_configuration_outlined;
+  }
+}
+.cov-model_outlined {
+  &:before {
+    content: $cov-model_outlined;
+  }
+}
+.cov-operators_add_outlined {
+  &:before {
+    content: $cov-operators_add_outlined;
+  }
+}
+.cov-operators_add {
+  &:before {
+    content: $cov-operators_add;
+  }
+}
+.cov-operators_between_outlined {
+  &:before {
+    content: $cov-operators_between_outlined;
+  }
+}
+.cov-operators_between {
+  &:before {
+    content: $cov-operators_between;
+  }
+}
+.cov-operators_divide_outlined {
+  &:before {
+    content: $cov-operators_divide_outlined;
+  }
+}
+.cov-operators_equals_outlined {
+  &:before {
+    content: $cov-operators_equals_outlined;
+  }
+}
+.cov-operators_greater_than_or_equal_outlined {
+  &:before {
+    content: $cov-operators_greater_than_or_equal_outlined;
+  }
+}
+.cov-operators_greater_than_outlined {
+  &:before {
+    content: $cov-operators_greater_than_outlined;
+  }
+}
+.cov-operators_less_than_or_equal_outlined {
+  &:before {
+    content: $cov-operators_less_than_or_equal_outlined;
+  }
+}
+.cov-operators_less_than_outlined {
+  &:before {
+    content: $cov-operators_less_than_outlined;
+  }
+}
+.cov-operators_multiply_outlined {
+  &:before {
+    content: $cov-operators_multiply_outlined;
+  }
+}
+.cov-operators_not_equal_outlined {
+  &:before {
+    content: $cov-operators_not_equal_outlined;
+  }
+}
+.cov-operators_parentheses_outlined {
+  &:before {
+    content: $cov-operators_parentheses_outlined;
+  }
+}
+.cov-operators_parenthesis_left_outlined {
+  &:before {
+    content: $cov-operators_parenthesis_left_outlined;
+  }
+}
+.cov-operators_parenthesis_right_outlined {
+  &:before {
+    content: $cov-operators_parenthesis_right_outlined;
+  }
+}
+.cov-operators_subtract_outlined {
+  &:before {
+    content: $cov-operators_subtract_outlined;
+  }
+}
+.cov-primary_cluster_outlined {
+  &:before {
+    content: $cov-primary_cluster_outlined;
+  }
+}
+.cov-product_analyst_outlined {
+  &:before {
+    content: $cov-product_analyst_outlined;
+  }
+}
+.cov-product_appcenter_outlined {
+  &:before {
+    content: $cov-product_appcenter_outlined;
+  }
+}
+.cov-product_appcenter {
+  &:before {
+    content: $cov-product_appcenter;
+  }
+}
+.cov-product_console_outlined {
+  &:before {
+    content: $cov-product_console_outlined;
+  }
+}
+.cov-product_cx_outlined {
+  &:before {
+    content: $cov-product_cx_outlined;
+  }
+}
+.cov-product_cx {
+  &:before {
+    content: $cov-product_cx;
+  }
+}
+.cov-product_editor_outlined {
+  &:before {
+    content: $cov-product_editor_outlined;
+  }
+}
+.cov-product_jupyterhub_outlined {
+  &:before {
+    content: $cov-product_jupyterhub_outlined;
+  }
+}
+.cov-product_jupyterhub {
+  &:before {
+    content: $cov-product_jupyterhub;
+  }
+}
+.cov-product_modelops_outlined {
+  &:before {
+    content: $cov-product_modelops_outlined;
+  }
+}
+.cov-product_modelops {
+  &:before {
+    content: $cov-product_modelops;
+  }
+}
+.cov-product_outbound_campaign_manager_outlined {
+  &:before {
+    content: $cov-product_outbound_campaign_manager_outlined;
+  }
+}
+.cov-product_outbound_campaign_manager {
+  &:before {
+    content: $cov-product_outbound_campaign_manager;
+  }
+}
+.cov-product_querygrid_outlined {
+  &:before {
+    content: $cov-product_querygrid_outlined;
+  }
+}
+.cov-product_querygrid {
+  &:before {
+    content: $cov-product_querygrid;
+  }
+}
+.cov-product_streams_outlined {
+  &:before {
+    content: $cov-product_streams_outlined;
+  }
+}
+.cov-product_streams {
+  &:before {
+    content: $cov-product_streams;
+  }
+}
+.cov-product_vantage_outlined {
+  &:before {
+    content: $cov-product_vantage_outlined;
+  }
+}
+.cov-product_vantage {
+  &:before {
+    content: $cov-product_vantage;
+  }
+}
+.cov-product_viewpoint_outlined {
+  &:before {
+    content: $cov-product_viewpoint_outlined;
+  }
+}
+.cov-product_viewpoint {
+  &:before {
+    content: $cov-product_viewpoint;
+  }
+}
+.cov-resize_northeast_outlined {
+  &:before {
+    content: $cov-resize_northeast_outlined;
+  }
+}
+.cov-resize_northwest_outlined {
+  &:before {
+    content: $cov-resize_northwest_outlined;
+  }
+}
+.cov-resize_southeast_outlined {
+  &:before {
+    content: $cov-resize_southeast_outlined;
+  }
+}
+.cov-resize_southwest_outlined {
+  &:before {
+    content: $cov-resize_southwest_outlined;
+  }
+}
+.cov-sankey_outlined {
+  &:before {
+    content: $cov-sankey_outlined;
+  }
+}
+.cov-sankey {
+  &:before {
+    content: $cov-sankey;
+  }
+}
+.cov-script_management_outlined {
+  &:before {
+    content: $cov-script_management_outlined;
+  }
+}
+.cov-script_management {
+  &:before {
+    content: $cov-script_management;
+  }
+}
+.cov-script_outlined {
+  &:before {
+    content: $cov-script_outlined;
+  }
+}
+.cov-script_sql_outlined {
+  &:before {
+    content: $cov-script_sql_outlined;
+  }
+}
+.cov-script_stored_procedure_outlined {
+  &:before {
+    content: $cov-script_stored_procedure_outlined;
+  }
+}
+.cov-server_changed_outlined {
+  &:before {
+    content: $cov-server_changed_outlined;
+  }
+}
+.cov-server_edit_outlined {
+  &:before {
+    content: $cov-server_edit_outlined;
+  }
+}
+.cov-server_foreign_outlined {
+  &:before {
+    content: $cov-server_foreign_outlined;
+  }
+}
+.cov-server_lab_outlined {
+  &:before {
+    content: $cov-server_lab_outlined;
+  }
+}
+.cov-server_outlined {
+  &:before {
+    content: $cov-server_outlined;
+  }
+}
+.cov-server_search_outlined {
+  &:before {
+    content: $cov-server_search_outlined;
+  }
+}
+.cov-server_synced_outlined {
+  &:before {
+    content: $cov-server_synced_outlined;
+  }
+}
+.cov-server_workspace_outlined {
+  &:before {
+    content: $cov-server_workspace_outlined;
+  }
+}
+.cov-server_workspace {
+  &:before {
+    content: $cov-server_workspace;
+  }
+}
+.cov-state_cancelled_outlined {
+  &:before {
+    content: $cov-state_cancelled_outlined;
+  }
+}
+.cov-state_cancelled {
+  &:before {
+    content: $cov-state_cancelled;
+  }
+}
+.cov-state_caution_outlined {
+  &:before {
+    content: $cov-state_caution_outlined;
+  }
+}
+.cov-state_caution {
+  &:before {
+    content: $cov-state_caution;
+  }
+}
+.cov-state_changed_outlined {
+  &:before {
+    content: $cov-state_changed_outlined;
+  }
+}
+.cov-state_changed_running_outlined {
+  &:before {
+    content: $cov-state_changed_running_outlined;
+  }
+}
+.cov-state_changed_running {
+  &:before {
+    content: $cov-state_changed_running;
+  }
+}
+.cov-state_changed {
+  &:before {
+    content: $cov-state_changed;
+  }
+}
+.cov-state_negative_outlined {
+  &:before {
+    content: $cov-state_negative_outlined;
+  }
+}
+.cov-state_negative {
+  &:before {
+    content: $cov-state_negative;
+  }
+}
+.cov-state_paused_outlined {
+  &:before {
+    content: $cov-state_paused_outlined;
+  }
+}
+.cov-state_paused {
+  &:before {
+    content: $cov-state_paused;
+  }
+}
+.cov-state_pending_outlined {
+  &:before {
+    content: $cov-state_pending_outlined;
+  }
+}
+.cov-state_pending {
+  &:before {
+    content: $cov-state_pending;
+  }
+}
+.cov-state_positive_outlined {
+  &:before {
+    content: $cov-state_positive_outlined;
+  }
+}
+.cov-state_positive {
+  &:before {
+    content: $cov-state_positive;
+  }
+}
+.cov-state_running_outlined {
+  &:before {
+    content: $cov-state_running_outlined;
+  }
+}
+.cov-state_running {
+  &:before {
+    content: $cov-state_running;
+  }
+}
+.cov-table_changed_outlined {
+  &:before {
+    content: $cov-table_changed_outlined;
+  }
+}
+.cov-table_edit_outlined {
+  &:before {
+    content: $cov-table_edit_outlined;
+  }
+}
+.cov-table_foreign_outlined {
+  &:before {
+    content: $cov-table_foreign_outlined;
+  }
+}
+.cov-table_lab_outlined {
+  &:before {
+    content: $cov-table_lab_outlined;
+  }
+}
+.cov-table_outlined {
+  &:before {
+    content: $cov-table_outlined;
+  }
+}
+.cov-table_search_outlined {
+  &:before {
+    content: $cov-table_search_outlined;
+  }
+}
+.cov-table_synced-copy_outlined {
+  &:before {
+    content: $cov-table_synced-copy_outlined;
+  }
+}
+.cov-teradata_nobackground {
+  &:before {
+    content: $cov-teradata_nobackground;
+  }
+}
+.cov-teradata_outlined {
+  &:before {
+    content: $cov-teradata_outlined;
+  }
+}
+.cov-text_analysis_outlined {
+  &:before {
+    content: $cov-text_analysis_outlined;
+  }
+}
+.cov-undock_outlined {
+  &:before {
+    content: $cov-undock_outlined;
+  }
+}
+.cov-user_defined_function_outlined {
+  &:before {
+    content: $cov-user_defined_function_outlined;
+  }
+}
+.cov-user_defined_function {
+  &:before {
+    content: $cov-user_defined_function;
+  }
+}
 .cov-advanced_sql {
   &:before {
     content: $cov-advanced_sql;
