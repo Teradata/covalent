@@ -8,7 +8,9 @@ To integrate new custom Covalent icons, follow these steps::
 
 1. Begin by uploading the new icon SVG file to the [svgs](https://github.com/Teradata/covalent/tree/main/libs/icons/svgs) folder. All SVG files must be stripped of extra content, including fill color. The SVG should only contain one path. Here is an example of an accepted SVG:
 
+```css
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
+```
 
 2. Login to [IcoMoon](https://icomoon.io/) and navigate to the [IcoMoon App](https://icomoon.io/app/#/select).
 3. Unzip the existing `covalent-icons-v<X.X>.zip` file, available [here](https://github.com/Teradata/covalent/tree/main/libs/icons).
