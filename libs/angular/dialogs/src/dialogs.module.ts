@@ -12,10 +12,12 @@ import {
   TdDialogTitleDirective,
   TdDialogActionsDirective,
   TdDialogContentDirective,
+  TdDialogStatusDirective,
 } from './dialog.component';
 import { TdAlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { TdPromptDialogComponent } from './prompt-dialog/prompt-dialog.component';
+import { TdStatusDialogComponent } from './status-dialog/status-dialog.component';
 import { TdDialogService } from './services/dialog.service';
 import { TdWindowDialogComponent } from './window-dialog/window-dialog.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -27,6 +29,7 @@ const TD_DIALOGS: Type<any>[] = [
   TdConfirmDialogComponent,
   TdPromptDialogComponent,
   TdDialogComponent,
+  TdDialogStatusDirective,
   TdDialogTitleDirective,
   TdDialogActionsDirective,
   TdDialogContentDirective,
@@ -34,6 +37,7 @@ const TD_DIALOGS: Type<any>[] = [
   TdAlertDialogComponent,
   TdConfirmDialogComponent,
   TdPromptDialogComponent,
+  TdStatusDialogComponent,
 ];
 
 @NgModule({

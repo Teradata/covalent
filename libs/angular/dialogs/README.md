@@ -16,6 +16,8 @@ Note: if no [ViewContainerRef] is provided, [TdDialogService] will throw an erro
   - Opens a confirm dialog with the provided config.
 - openPrompt: function(IPromptConfig): MatDialogRef<TdPromptDialogComponent>
   - Opens a prompt dialog with the provided config.
+- openStatus: function(IStatusConfig): MatDialogRef<TdStatusDialogComponent>
+  - Opens a status dialog with the provided config.
 - open: function<T>(component: ComponentType<T>, config: MatDialogConfig): MatDialogRef<T>
   - Wrapper function over the open() method in MatDialog. Opens a modal dialog containing the given component.
 - openDraggable: function<T>(IDraggableConfig<T>): MatDialogRef<T>
@@ -87,6 +89,28 @@ export class Demo {
     });
   }
 
+  openStatus(): void {
+    this._dialogService.openStatus({
+      closeButton: 'Close', //OPTIONAL, defaults to 'CLOSE'
+      details: 'Additional information about the error.', //OPTIONAL, additional details to be displayed in the message
+      detailsLabels: {
+        showDetailsLabel: 'Show more details',
+        hideDetailsLabel: 'Hide more details'
+      }, //OPTIONAL, defaults to 'Show details' and 'Hide details'
+      disableClose: true, // defaults to false
+      message:
+        'This is how simple it is to create a status dialog with this wrapper service.',
+      state: 'error', // represents the state ('error' | 'positive' | 'warning') of the dialog, defaults to 'error'
+      title: 'Status dialog', //OPTIONAL, hides if not provided
+    }).afterClosed().subscribe((newValue: string) => {
+      if (newValue) {
+        // DO SOMETHING
+      } else {
+        // DO SOMETHING ELSE
+      }
+    });;
+  }
+
   openDraggable(): void {
     this._dialogService.openDraggable({
       component: DraggableDemoComponent,
@@ -150,25 +174,15 @@ A utility to make a draggable dialog resizable.
 ```
 
 ```ts
-const {
-  matDialogRef,
-  dragRefSubject,
-}: IDraggableRefs<DraggableResizableDialogComponent> = this._dialogService.openDraggable(
-  {
-    component: DraggableResizableDialogComponent,
-    // CSS selectors of element(s) inside the component meant to be drag handle(s)
-    dragHandleSelectors: ['.drag-handle'],
-  }
-);
+const { matDialogRef, dragRefSubject }: IDraggableRefs<DraggableResizableDialogComponent> = this._dialogService.openDraggable({
+  component: DraggableResizableDialogComponent,
+  // CSS selectors of element(s) inside the component meant to be drag handle(s)
+  dragHandleSelectors: ['.drag-handle'],
+});
 
 let resizableDraggableDialog: ResizableDraggableDialog;
 dragRefSubject.subscribe((dragRf: DragRef) => {
-  resizableDraggableDialog = new ResizableDraggableDialog(
-    this._document,
-    this._renderer2,
-    matDialogRef,
-    dragRf
-  );
+  resizableDraggableDialog = new ResizableDraggableDialog(this._document, this._renderer2, matDialogRef, dragRf);
 });
 
 // Detach resize-ability event listeners after dialog closes
@@ -200,12 +214,7 @@ A component that can be utilized to create a dialog with a toolbar
 ```ts
 @Component({
   template: `
-    <td-window-dialog
-      [title]="'Title'"
-      [toolbarColor]="'accent'"
-      [closeLabel]="'Close'"
-      (closed)="closed.emit()"
-    >
+    <td-window-dialog [title]="'Title'" [toolbarColor]="'accent'" [closeLabel]="'Close'" (closed)="closed.emit()">
       <p>Comes with a handy toolbar</p>
     </td-window-dialog>
   `,
@@ -216,8 +225,7 @@ export class DraggableResizableWindowDialogComponent {
 ```
 
 ```ts
-const matDialogRef: MatDialogRef<DraggableResizableWindowDialogComponent> =
-  this._dialogService.open(DraggableResizableWindowDialogComponent);
+const matDialogRef: MatDialogRef<DraggableResizableWindowDialogComponent> = this._dialogService.open(DraggableResizableWindowDialogComponent);
 // listen to close event
 matDialogRef.componentInstance.closed.subscribe(() => matDialogRef.close());
 ```

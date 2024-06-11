@@ -1,10 +1,24 @@
-<div mat-dialog-title *ngIf="dialogTitle.length > 0">
-  <ng-content select="[tdDialogTitle]"></ng-content>
+<div class="td-dialog-wrapper">
+  <ng-content
+    *ngIf="dialogStatus.length > 0"
+    select="[tdDialogStatus]"
+  ></ng-content>
+  <section class="td-dialog">
+    <div mat-dialog-title *ngIf="dialogTitle.length > 0">
+      <ng-content select="[tdDialogTitle]"></ng-content>
+    </div>
+    <mat-dialog-content
+      class="td-dialog-content"
+      *ngIf="dialogContent.length > 0"
+    >
+      <ng-content select="[tdDialogContent]"></ng-content>
+    </mat-dialog-content>
+    <mat-dialog-actions
+      class="td-dialog-actions"
+      *ngIf="dialogActions.length > 0"
+    >
+      <span class="td-dialog-spacer"></span>
+      <ng-content select="[tdDialogActions]"></ng-content>
+    </mat-dialog-actions>
+  </section>
 </div>
-<mat-dialog-content class="td-dialog-content" *ngIf="dialogContent.length > 0">
-  <ng-content select="[tdDialogContent]"></ng-content>
-</mat-dialog-content>
-<mat-dialog-actions class="td-dialog-actions" *ngIf="dialogActions.length > 0">
-  <span class="td-dialog-spacer"></span>
-  <ng-content select="[tdDialogActions]"></ng-content>
-</mat-dialog-actions>

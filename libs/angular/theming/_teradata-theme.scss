@@ -397,6 +397,12 @@ $td-dark-theme: mat.private-deep-merge-all(
   )
 );
 
+@mixin css-variable-theme-tokens($theme, $prefix: 'cv') {
+  @each $key, $value in $theme {
+    --#{$prefix}-theme-#{$key}: #{map-get($theme, $key)};
+  }
+}
+
 @mixin teradata-brand($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
@@ -418,6 +424,12 @@ $td-dark-theme: mat.private-deep-merge-all(
         $background,
         disabled-button
       )};
+
+    @include css-variable-theme-tokens($td-light-colors);
+  }
+
+  .theme-dark {
+    @include css-variable-theme-tokens($td-dark-colors);
   }
 
   // Logo alignment
