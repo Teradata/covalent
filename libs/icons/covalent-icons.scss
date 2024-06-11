@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?44ite4')
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?4u71px')
       format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?44ite4')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?4u71px')
       format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?44ite4##{$icomoon-font-family}')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?4u71px##{$icomoon-font-family}')
       format('svg');
   font-weight: normal;
   font-style: normal;
@@ -48,6 +48,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-attribution_outlined {
+  &:before {
+    content: $cov-attribution_outlined;
+  }
+}
 .cov-attribution {
   &:before {
     content: $cov-attribution;
@@ -58,19 +63,14 @@
     content: $cov-cluster_analysis_outlined;
   }
 }
+.cov-compute_cluster_group_outlined {
+  &:before {
+    content: $cov-compute_cluster_group_outlined;
+  }
+}
 .cov-compute_cluster_outlined {
   &:before {
     content: $cov-compute_cluster_outlined;
-  }
-}
-.cov-compute_cluster_profile_outlined {
-  &:before {
-    content: $cov-compute_cluster_profile_outlined;
-  }
-}
-.cov-compute_cluster_profile {
-  &:before {
-    content: $cov-compute_cluster_profile;
   }
 }
 .cov-compute_groups_outlined {
@@ -81,6 +81,16 @@
 .cov-compute_groups {
   &:before {
     content: $cov-compute_groups;
+  }
+}
+.cov-compute_profile_outlined {
+  &:before {
+    content: $cov-compute_profile_outlined;
+  }
+}
+.cov-compute_profile {
+  &:before {
+    content: $cov-compute_profile;
   }
 }
 .cov-data_source_type_amazon_outlined {
@@ -148,11 +158,6 @@
     content: $cov-database_changed_outlined;
   }
 }
-.cov-database_close {
-  &:before {
-    content: $cov-database_close;
-  }
-}
 .cov-database_edit_outlined {
   &:before {
     content: $cov-database_edit_outlined;
@@ -198,6 +203,11 @@
     content: $cov-database_unreachable_outlined;
   }
 }
+.cov-database_unreachable {
+  &:before {
+    content: $cov-database_unreachable;
+  }
+}
 .cov-dock_right_outlined {
   &:before {
     content: $cov-dock_right_outlined;
@@ -228,9 +238,9 @@
     content: $cov-file_outlined;
   }
 }
-.cov-file_searched_outlined {
+.cov-file_search_outlined {
   &:before {
-    content: $cov-file_searched_outlined;
+    content: $cov-file_search_outlined;
   }
 }
 .cov-file_synced_outlined {
@@ -688,14 +698,14 @@
     content: $cov-undock_outlined;
   }
 }
-.cov-user_defined_function_outlined {
-  &:before {
-    content: $cov-user_defined_function_outlined;
-  }
-}
 .cov-user_defined_function {
   &:before {
     content: $cov-user_defined_function;
+  }
+}
+.cov-user_defined_function_outlined {
+  &:before {
+    content: $cov-user_defined_function_outlined;
   }
 }
 .cov-advanced_sql {
