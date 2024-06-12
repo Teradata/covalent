@@ -105,7 +105,7 @@ export class CovalentNavRailListItem extends CovalentListItem {
       firstEl.focusItemAtIndex(nextIndex);
       this.lastKeySelected = nextIndex;
     }
-    // Allow arrow up/down if within boundry
+    // Allow arrow up/down if within boundary
     if (
       (event.code === 'ArrowDown' || event.code === 'ArrowUp') &&
       nextIndex !== -1 &&

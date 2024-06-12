@@ -159,13 +159,13 @@ export class TdLoadingService {
       return true;
     } else {
       // if it doesnt exist, set a timeout so its registered after change detection happens
-      // this in case "register" occured on the `ngOnInit` lifehook cycle.
+      // this in case "register" occurred on the `ngOnInit` lifehook cycle.
       if (!this._timeouts[name]) {
         this._timeouts[name] = setTimeout(() => {
           this.register(name, registers);
         });
       } else {
-        // if it timeout occured and still doesnt exist, it means the tiemout wasnt needed so we clear it.
+        // if it timeout occurred and still doesn't exist, it means the timeout wasn't needed so we clear it.
         this._clearTimeout(name);
       }
     }
