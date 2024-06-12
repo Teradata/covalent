@@ -29,6 +29,31 @@ settings:
   logoUrl: https://knapsack.imgix.net/site/covalent/teradata-zalegzixrisvg
   theme:
     appearance:
+      customFonts:
+        - family: Inter Regular
+          src:
+            - format: woff2
+              path: >-
+                https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2
+              type: url
+          style: normal
+          weight: 400
+        - family: Inter Medium
+          src:
+            - format: woff2
+              path: >-
+                https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAZ9hiJ-Ek-_EeA.woff2
+              type: url
+          style: normal
+          weight: 500
+        - family: Inter Light
+          src:
+            - format: woff2
+              path: >-
+                https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfAZ9hiJ-Ek-_EeA.woff2
+              type: url
+          style: normal
+          weight: 300
       navigation:
         primaryNav:
           accentColor:
@@ -37,7 +62,7 @@ settings:
           backgroundColor:
             tokenName: cv.theme.light.colors.surface
             type: design-token
-          fontFamily: Inter
+          fontFamily: Inter Regular
           hoverColor:
             tokenName: cv.theme.light.colors.on-surface-38%
             type: design-token
@@ -49,7 +74,7 @@ settings:
           accentColor:
             tokenName: cv.theme.light.colors.primary
             type: design-token
-          fontFamily: Inter
+          fontFamily: Inter Regular
           textColor:
             tokenName: cv.theme.light.colors.on-surface
             type: design-token
@@ -58,28 +83,83 @@ settings:
           accentColor:
             tokenName: cv.theme.light.colors.primary
             type: design-token
-          fontFamily: Inter
+          fontFamily: Inter Regular
           textColor:
             tokenName: cv.theme.light.colors.on-surface
             type: design-token
           textTransform: inherit
       pageElements:
         bodyText:
-          fontFamily: Inter
+          fontFamily: Inter Regular
+          fontSize:
+            min:
+              unit: px
+              value: 16
+          fontWeight: 400
+          lineHeight: '1.5'
+          textTransform: inherit
         headingLarge:
-          fontFamily: Inter
+          fontFamily: Inter Regular
+          fontSize:
+            min:
+              unit: px
+              value: 24
+          fontWeight: 400
+          lineHeight: '1.5'
+          textTransform: inherit
         headingMedium:
-          fontFamily: Inter
+          fontFamily: Inter Regular
+          fontSize:
+            min:
+              unit: px
+              value: 20
+          fontWeight: 400
+          lineHeight: '1.2'
+          textTransform: inherit
         headingSmall:
-          fontFamily: Inter
+          fontFamily: Inter Regular
+          fontSize:
+            min:
+              unit: px
+              value: 16
+          fontWeight: 400
+          lineHeight: '1.75'
+          textTransform: inherit
         headingXLarge:
-          fontFamily: Inter
+          fontFamily: Inter Regular
+          fontSize:
+            min:
+              unit: px
+              value: 34
+          fontWeight: 400
+          lineHeight: '1.235'
+          textTransform: inherit
         headingXSmall:
-          fontFamily: Inter
+          fontFamily: Inter Regular
+          fontSize:
+            min:
+              unit: px
+              value: 14
+          fontWeight: 400
+          lineHeight: '1.57'
+          textTransform: inherit
         link: {}
         pageDescription:
-          fontFamily: Inter
+          fontFamily: Inter Regular
+          fontSize:
+            min:
+              unit: px
+              value: 24
+          lineHeight: '1.5'
+          textTransform: inherit
         pageTitle:
-          fontFamily: Inter
+          fontFamily: Inter Regular
+          fontSize:
+            min:
+              unit: px
+              value: 48
+          fontWeight: 400
+          lineHeight: '1.167'
+          textTransform: inherit
     version: 10
   title: Covalent
