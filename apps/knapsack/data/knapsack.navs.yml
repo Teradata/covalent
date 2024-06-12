@@ -182,12 +182,12 @@ byId:
     name: Menu
     parentId: test-page
     path: /pattern/menu
-  naviigation-list-item:
+  navigation-list-item:
     hidden: true
-    id: naviigation-list-item
+    id: navigation-list-item
     name: Navigation list item
     parentId: list
-    path: /pattern/naviigation-list-item
+    path: /pattern/navigation-list-item
   new-pattern-process:
     id: new-pattern-process
     name: New pattern process
@@ -373,7 +373,7 @@ order:
   - linear-progress
   - list
   - list-item
-  - naviigation-list-item
+  - navigation-list-item
   - check-list-item
   - radio-list-item
   - menu

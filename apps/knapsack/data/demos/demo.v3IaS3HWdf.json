@@ -3,7 +3,7 @@
   "title": "sub item",
   "description": "A description",
   "type": "data",
-  "patternId": "naviigation-list-item",
+  "patternId": "navigation-list-item",
   "templateId": "web-components-Qtmmi7N-aL",
   "data": {
     "props": {
