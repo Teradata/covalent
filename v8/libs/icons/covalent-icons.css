@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'covalent-icons';
-  src: url('./covalent-icons.ttf?sn0lb0') format('truetype'),
-    url('./covalent-icons.woff?sn0lb0') format('woff'),
-    url('./covalent-icons.svg?sn0lb0#covalent-icons') format('svg');
+  src: url('./covalent-icons.ttf?4u71px') format('truetype'),
+    url('./covalent-icons.woff?4u71px') format('woff'),
+    url('./covalent-icons.svg?4u71px#covalent-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -43,6 +43,402 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-attribution_outlined:before {
+  content: '\e96f';
+}
+.cov-attribution:before {
+  content: '\e970';
+}
+.cov-cluster_analysis_outlined:before {
+  content: '\e971';
+}
+.cov-compute_cluster_group_outlined:before {
+  content: '\e972';
+}
+.cov-compute_cluster_outlined:before {
+  content: '\e973';
+}
+.cov-compute_groups_outlined:before {
+  content: '\e974';
+}
+.cov-compute_groups:before {
+  content: '\e975';
+}
+.cov-compute_profile_outlined:before {
+  content: '\e976';
+}
+.cov-compute_profile:before {
+  content: '\e977';
+}
+.cov-data_source_type_amazon_outlined:before {
+  content: '\e978';
+}
+.cov-data_source_type_amazon:before {
+  content: '\e979';
+}
+.cov-data_source_type_azure_outlined:before {
+  content: '\e97a';
+}
+.cov-data_source_type_azure:before {
+  content: '\e97b';
+}
+.cov-data_source_type_cloudera_outlined:before {
+  content: '\e97c';
+}
+.cov-data_source_type_cloudera:before {
+  content: '\e97d';
+}
+.cov-data_source_type_hdinsight_outlined:before {
+  content: '\e97e';
+}
+.cov-data_source_type_hdinsight:before {
+  content: '\e97f';
+}
+.cov-data_source_type_microsoft_outlined:before {
+  content: '\e980';
+}
+.cov-data_source_type_microsoft:before {
+  content: '\e981';
+}
+.cov-data_source_type_teradata_outlined:before {
+  content: '\e982';
+}
+.cov-data_source_type_teradata:before {
+  content: '\e983';
+}
+.cov-database_changed_outlined:before {
+  content: '\e984';
+}
+.cov-database_edit_outlined:before {
+  content: '\e985';
+}
+.cov-database_foreign_outlined:before {
+  content: '\e986';
+}
+.cov-database_lab_outlined:before {
+  content: '\e987';
+}
+.cov-database_none_outlined:before {
+  content: '\e988';
+}
+.cov-database_none:before {
+  content: '\e989';
+}
+.cov-database_outlined:before {
+  content: '\e98a';
+}
+.cov-database_search_outlined:before {
+  content: '\e98b';
+}
+.cov-database_synced_outlined:before {
+  content: '\e98c';
+}
+.cov-database_unreachable_outlined:before {
+  content: '\e98d';
+}
+.cov-database_unreachable:before {
+  content: '\e98e';
+}
+.cov-dock_right_outlined:before {
+  content: '\e98f';
+}
+.cov-file_changed_outlined:before {
+  content: '\e990';
+}
+.cov-file_edit_outlined:before {
+  content: '\e991';
+}
+.cov-file_foreign_outlined:before {
+  content: '\e992';
+}
+.cov-file_lab_outlined:before {
+  content: '\e993';
+}
+.cov-file_outlined:before {
+  content: '\e994';
+}
+.cov-file_search_outlined:before {
+  content: '\e995';
+}
+.cov-file_synced_outlined:before {
+  content: '\e996';
+}
+.cov-machine_learning_outlined:before {
+  content: '\e997';
+}
+.cov-model_configuration_outlined:before {
+  content: '\e998';
+}
+.cov-model_outlined:before {
+  content: '\e999';
+}
+.cov-operators_add_outlined:before {
+  content: '\e99a';
+}
+.cov-operators_add:before {
+  content: '\e99b';
+}
+.cov-operators_between_outlined:before {
+  content: '\e99c';
+}
+.cov-operators_between:before {
+  content: '\e99d';
+}
+.cov-operators_divide_outlined:before {
+  content: '\e99e';
+}
+.cov-operators_equals_outlined:before {
+  content: '\e99f';
+}
+.cov-operators_greater_than_or_equal_outlined:before {
+  content: '\e9a0';
+}
+.cov-operators_greater_than_outlined:before {
+  content: '\e9a1';
+}
+.cov-operators_less_than_or_equal_outlined:before {
+  content: '\e9a2';
+}
+.cov-operators_less_than_outlined:before {
+  content: '\e9a3';
+}
+.cov-operators_multiply_outlined:before {
+  content: '\e9a4';
+}
+.cov-operators_not_equal_outlined:before {
+  content: '\e9a5';
+}
+.cov-operators_parentheses_outlined:before {
+  content: '\e9a6';
+}
+.cov-operators_parenthesis_left_outlined:before {
+  content: '\e9a7';
+}
+.cov-operators_parenthesis_right_outlined:before {
+  content: '\e9a8';
+}
+.cov-operators_subtract_outlined:before {
+  content: '\e9a9';
+}
+.cov-primary_cluster_outlined:before {
+  content: '\e9aa';
+}
+.cov-product_analyst_outlined:before {
+  content: '\e9ab';
+}
+.cov-product_appcenter_outlined:before {
+  content: '\e9ac';
+}
+.cov-product_appcenter:before {
+  content: '\e9ad';
+}
+.cov-product_console_outlined:before {
+  content: '\e9ae';
+}
+.cov-product_cx_outlined:before {
+  content: '\e9af';
+}
+.cov-product_cx:before {
+  content: '\e9b0';
+}
+.cov-product_editor_outlined:before {
+  content: '\e9b1';
+}
+.cov-product_jupyterhub_outlined:before {
+  content: '\e9b2';
+}
+.cov-product_jupyterhub:before {
+  content: '\e9b3';
+}
+.cov-product_modelops_outlined:before {
+  content: '\e9b4';
+}
+.cov-product_modelops:before {
+  content: '\e9b5';
+}
+.cov-product_outbound_campaign_manager_outlined:before {
+  content: '\e9b6';
+}
+.cov-product_outbound_campaign_manager:before {
+  content: '\e9b7';
+}
+.cov-product_querygrid_outlined:before {
+  content: '\e9b8';
+}
+.cov-product_querygrid:before {
+  content: '\e9b9';
+}
+.cov-product_streams_outlined:before {
+  content: '\e9ba';
+}
+.cov-product_streams:before {
+  content: '\e9bb';
+}
+.cov-product_vantage_outlined:before {
+  content: '\e9bc';
+}
+.cov-product_vantage:before {
+  content: '\e9bd';
+}
+.cov-product_viewpoint_outlined:before {
+  content: '\e9be';
+}
+.cov-product_viewpoint:before {
+  content: '\e9bf';
+}
+.cov-resize_northeast_outlined:before {
+  content: '\e9c0';
+}
+.cov-resize_northwest_outlined:before {
+  content: '\e9c1';
+}
+.cov-resize_southeast_outlined:before {
+  content: '\e9c2';
+}
+.cov-resize_southwest_outlined:before {
+  content: '\e9c3';
+}
+.cov-sankey_outlined:before {
+  content: '\e9c4';
+}
+.cov-sankey:before {
+  content: '\e9c5';
+}
+.cov-script_management_outlined:before {
+  content: '\e9c6';
+}
+.cov-script_management:before {
+  content: '\e9c7';
+}
+.cov-script_outlined:before {
+  content: '\e9c8';
+}
+.cov-script_sql_outlined:before {
+  content: '\e9c9';
+}
+.cov-script_stored_procedure_outlined:before {
+  content: '\e9ca';
+}
+.cov-server_changed_outlined:before {
+  content: '\e9cb';
+}
+.cov-server_edit_outlined:before {
+  content: '\e9cc';
+}
+.cov-server_foreign_outlined:before {
+  content: '\e9cd';
+}
+.cov-server_lab_outlined:before {
+  content: '\e9ce';
+}
+.cov-server_outlined:before {
+  content: '\e9cf';
+}
+.cov-server_search_outlined:before {
+  content: '\e9d0';
+}
+.cov-server_synced_outlined:before {
+  content: '\e9d1';
+}
+.cov-server_workspace_outlined:before {
+  content: '\e9d2';
+}
+.cov-server_workspace:before {
+  content: '\e9d3';
+}
+.cov-state_cancelled_outlined:before {
+  content: '\e9d4';
+}
+.cov-state_cancelled:before {
+  content: '\e9d5';
+}
+.cov-state_caution_outlined:before {
+  content: '\e9d6';
+}
+.cov-state_caution:before {
+  content: '\e9d7';
+}
+.cov-state_changed_outlined:before {
+  content: '\e9d8';
+}
+.cov-state_changed_running_outlined:before {
+  content: '\e9d9';
+}
+.cov-state_changed_running:before {
+  content: '\e9da';
+}
+.cov-state_changed:before {
+  content: '\e9db';
+}
+.cov-state_negative_outlined:before {
+  content: '\e9dc';
+}
+.cov-state_negative:before {
+  content: '\e9dd';
+}
+.cov-state_paused_outlined:before {
+  content: '\e9de';
+}
+.cov-state_paused:before {
+  content: '\e9df';
+}
+.cov-state_pending_outlined:before {
+  content: '\e9e0';
+}
+.cov-state_pending:before {
+  content: '\e9e1';
+}
+.cov-state_positive_outlined:before {
+  content: '\e9e2';
+}
+.cov-state_positive:before {
+  content: '\e9e3';
+}
+.cov-state_running_outlined:before {
+  content: '\e9e4';
+}
+.cov-state_running:before {
+  content: '\e9e5';
+}
+.cov-table_changed_outlined:before {
+  content: '\e9e6';
+}
+.cov-table_edit_outlined:before {
+  content: '\e9e7';
+}
+.cov-table_foreign_outlined:before {
+  content: '\e9e8';
+}
+.cov-table_lab_outlined:before {
+  content: '\e9e9';
+}
+.cov-table_outlined:before {
+  content: '\e9ea';
+}
+.cov-table_search_outlined:before {
+  content: '\e9eb';
+}
+.cov-table_synced-copy_outlined:before {
+  content: '\e9ec';
+}
+.cov-teradata_nobackground:before {
+  content: '\e9ed';
+}
+.cov-teradata_outlined:before {
+  content: '\e9ee';
+}
+.cov-text_analysis_outlined:before {
+  content: '\e9ef';
+}
+.cov-undock_outlined:before {
+  content: '\e9f0';
+}
+.cov-user_defined_function:before {
+  content: '\e9f1';
+}
+.cov-user_defined_function_outlined:before {
+  content: '\e9f2';
+}
 .cov-advanced_sql:before {
   content: '\e96e';
 }
