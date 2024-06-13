@@ -12,7 +12,7 @@ export interface IconButtonToggle {
   /**
    * Whether the toggle is activated.
    */
-  on?: boolean;
+  toggledOn?: boolean;
   /**
    * Disabled buttons cannot be interacted with and have no visual interaction effect.
    */
