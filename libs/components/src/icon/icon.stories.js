@@ -32,6 +32,7 @@ const COV_ICON_LIST = [
 
   'connected_identity',
   'data_management',
+  'data_management_outlined',
   'data_preparation',
   'data_source',
   'database',

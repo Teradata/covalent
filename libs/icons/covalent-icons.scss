@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?4u71px')
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?u85vj6')
       format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?4u71px')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?u85vj6')
       format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?4u71px##{$icomoon-font-family}')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?u85vj6##{$icomoon-font-family}')
       format('svg');
   font-weight: normal;
   font-style: normal;
@@ -48,6 +48,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-data_management_outlined {
+  &:before {
+    content: $cov-data_management_outlined;
+  }
+}
 .cov-attribution_outlined {
   &:before {
     content: $cov-attribution_outlined;
