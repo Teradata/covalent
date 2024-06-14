@@ -17,15 +17,15 @@ export default {
     onIcon: 'flashlight_on',
     offIcon: 'flashlight_off',
     disabled: false,
-    on: false,
+    toggledOn: false,
   },
 };
 
-const Template = ({ disabled, onIcon, offIcon, on }) => {
+const Template = ({ disabled, onIcon, offIcon, toggledOn }) => {
   return `
     <cv-icon-button-toggle onIcon="${onIcon}" offIcon="${offIcon}"${
     disabled ? ` disabled` : ``
-  }${on ? ' on' : ''}>
+  }${toggledOn ? ' toggledOn' : ''}>
     </cv-icon-button-toggle>`;
 };
 
