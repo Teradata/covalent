@@ -2,6 +2,87 @@
   "id": "F2ROXe7JZl",
   "blockType": "text-editor",
   "data": {
-    "content": {}
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "*Note: Due to Angular's restriction on setting properties that start with the prefix "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "on"
+            },
+            {
+              "type": "text",
+              "text": ", the property "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "on"
+            },
+            {
+              "type": "text",
+              "text": " in "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "mwc-icon-button-toggle"
+            },
+            {
+              "type": "text",
+              "text": " has been substituted with "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "toggledOn"
+            },
+            {
+              "type": "text",
+              "text": " within "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "cv-icon-button-toggle"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
+        }
+      ]
+    }
   }
 }
