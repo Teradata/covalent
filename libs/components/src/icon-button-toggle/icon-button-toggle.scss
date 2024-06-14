@@ -7,7 +7,7 @@
   background-color: transparent;
 }
 
-:host([toggledOn]) {
+:host([on]) {
   --mdc-ripple-press-opacity: 0.16;
   --mdc-ripple-hover-opacity: 0.12;
   --mdc-ripple-focus-opacity: 0.16;
