@@ -659,32 +659,32 @@
       "url": "/api/v1/render?patternId=menu&templateId=web-components-hY3y1MyhrP&assetSetId=dark&demoId=boILoye9Gi&isInIframe=false&wrapHtml=true"
     },
     {
-      "patternId": "naviigation-list-item",
+      "patternId": "navigation-list-item",
       "templateId": "web-components-Qtmmi7N-aL",
       "demoId": "E5NLCltz6",
       "assetSetId": "light",
-      "url": "/api/v1/render?patternId=naviigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=light&demoId=E5NLCltz6&isInIframe=false&wrapHtml=true"
+      "url": "/api/v1/render?patternId=navigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=light&demoId=E5NLCltz6&isInIframe=false&wrapHtml=true"
     },
     {
-      "patternId": "naviigation-list-item",
+      "patternId": "navigation-list-item",
       "templateId": "web-components-Qtmmi7N-aL",
       "demoId": "E5NLCltz6",
       "assetSetId": "dark",
-      "url": "/api/v1/render?patternId=naviigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=dark&demoId=E5NLCltz6&isInIframe=false&wrapHtml=true"
+      "url": "/api/v1/render?patternId=navigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=dark&demoId=E5NLCltz6&isInIframe=false&wrapHtml=true"
     },
     {
-      "patternId": "naviigation-list-item",
+      "patternId": "navigation-list-item",
       "templateId": "web-components-Qtmmi7N-aL",
       "demoId": "v3IaS3HWdf",
       "assetSetId": "light",
-      "url": "/api/v1/render?patternId=naviigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=light&demoId=v3IaS3HWdf&isInIframe=false&wrapHtml=true"
+      "url": "/api/v1/render?patternId=navigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=light&demoId=v3IaS3HWdf&isInIframe=false&wrapHtml=true"
     },
     {
-      "patternId": "naviigation-list-item",
+      "patternId": "navigation-list-item",
       "templateId": "web-components-Qtmmi7N-aL",
       "demoId": "v3IaS3HWdf",
       "assetSetId": "dark",
-      "url": "/api/v1/render?patternId=naviigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=dark&demoId=v3IaS3HWdf&isInIframe=false&wrapHtml=true"
+      "url": "/api/v1/render?patternId=navigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=dark&demoId=v3IaS3HWdf&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "radio",
