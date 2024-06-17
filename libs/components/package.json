@@ -101,6 +101,11 @@
       "import": "./formfield.mjs",
       "require": "./formfield.js"
     },
+    "./fullscreen-takeover": {
+      "types": "./fullscreen-takeover/fullscreen-takeover.d.ts",
+      "import": "./fullscreen-takeover.mjs",
+      "require": "./fullscreen-takeover.js"
+    },
     "./icon": {
       "types": "./icon/icon.d.ts",
       "import": "./icon.mjs",

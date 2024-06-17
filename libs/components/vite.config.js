@@ -27,6 +27,7 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/expansion-panel/expansion-panel',
           'libs/components/src/expansion-panel/expansion-panel-item',
           'libs/components/src/formfield/formfield',
+          'libs/components/src/fullscreen-takeover/fullscreen-takeover',
           'libs/components/src/icon/icon',
           'libs/components/src/icon-button/icon-button',
           'libs/components/src/icon-button-toggle/icon-button-toggle',
