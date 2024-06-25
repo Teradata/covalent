@@ -1,3 +1,9 @@
+# [8.15.0-beta.1](https://github.com/Teradata/covalent/compare/v8.14.1...v8.15.0-beta.1) (2024-06-25)
+
+### Features
+
+- **notebook-pov:** add notebook, cell and editor web components ([409f0f5](https://github.com/Teradata/covalent/commit/409f0f5a24a49eb3dea2ed1a49dea7e5c6cc3e8b))
+
 ## [8.14.1](https://github.com/Teradata/covalent/compare/v8.14.0...v8.14.1) (2024-06-14)
 
 ### Bug Fixes
