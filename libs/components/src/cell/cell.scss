@@ -1,0 +1,59 @@
+:host {
+  --mdc-icon-button-size: 24px;
+
+  font-family: var(--mdc-typography-body1-font-family);
+  height: 100%;
+  width: 100%;
+}
+
+.selection-indicator {
+  background-color: var(--cv-theme-primary);
+  border-radius: 2px;
+  margin-top: 2px;
+  visibility: hidden;
+  width: 8px;
+}
+
+.timesExecuted {
+  color: var(--cv-theme-outline-variant);
+  min-height: var(--mdc-icon-button-size);
+  min-width: var(--mdc-icon-button-size);
+}
+
+.cell {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+
+  &:hover,
+  &.focused,
+  &.selected {
+    .selection-indicator {
+      visibility: visible;
+    }
+
+    .timesExecuted {
+      color: var(--cv-theme-primary);
+    }
+  }
+}
+
+.cellWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+.cellCodeWrapper {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+
+  .editor-output-wrapper {
+    width: calc(95% - 8px);
+  }
+}
+
+.output {
+  margin: 0.5rem 0.25rem;
+}

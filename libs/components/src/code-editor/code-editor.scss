@@ -1,0 +1,24 @@
+:host {
+  --editor-width: 100%;
+  --editor-height: 100%;
+
+  .monaco-editor {
+    .lines-content.monaco-editor-background {
+      height: var(--editor-height);
+      margin-left: 4px;
+      width: var(--editor-width);
+    }
+  }
+
+  .monaco-editor.focused {
+    border: 1px solid var(--cv-theme-primary);
+  }
+}
+
+.editor {
+  height: var(--editor-height);
+  min-height: var(--editor-height);
+  min-width: var(--editor-height);
+  padding-top: 2px;
+  width: var(--editor-width);
+}

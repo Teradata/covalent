@@ -1,0 +1,55 @@
+:host {
+  --cv-notebook-height: 100%;
+  --cv-notebook-width: 100%;
+
+  cv-cell {
+    cursor: move;
+
+    &.dragged {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  cv-icon-button button {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
+.notebook {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.notebookCells {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: calc(100% - 106px);
+  overflow: auto;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.notebookActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+:host .notebookHeaderActions {
+  --mdc-icon-button-size: 28px;
+  --mdc-icon-size: 20px;
+
+  align-items: center;
+  border: 1px solid var(--cv-theme-outline-variant);
+  box-shadow: 0px 0px 2px 0px var(--cv-theme-on-positive-container-16);
+  box-sizing: border-box;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+}
+
+.drag-over {
+  border-bottom: 1.5px solid var(--cv-theme-primary);
+}
