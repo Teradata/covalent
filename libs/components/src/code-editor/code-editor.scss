@@ -2,6 +2,8 @@
   --editor-width: 100%;
   --editor-height: 100%;
 
+  box-sizing: border-box;
+
   .monaco-editor {
     .lines-content.monaco-editor-background {
       height: var(--editor-height);
@@ -18,7 +20,7 @@
 .editor {
   height: var(--editor-height);
   min-height: var(--editor-height);
-  min-width: var(--editor-height);
+  max-width: calc(var(--editor-width) - 2px);
   padding-top: 2px;
   width: var(--editor-width);
 }

@@ -66,6 +66,11 @@ export class CovalentCell extends LitElement {
     lineDecorationsWidth: 0,
     lineNumbersMinChars: 0,
     renderLineHighlight: 'none',
+    overviewRulerLanes: 0,
+    hideCursorInOverviewRuler: true,
+    scrollbar: {
+      vertical: 'hidden',
+    },
   };
 
   static override styles = [
