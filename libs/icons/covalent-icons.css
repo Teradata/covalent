@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'covalent-icons';
-  src: url('./covalent-icons.ttf?4u71px') format('truetype'),
-    url('./covalent-icons.woff?4u71px') format('woff'),
-    url('./covalent-icons.svg?4u71px#covalent-icons') format('svg');
+  src: url('./covalent-icons.ttf?ghk5lw') format('truetype'),
+    url('./covalent-icons.woff?ghk5lw') format('woff'),
+    url('./covalent-icons.svg?ghk5lw#covalent-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -43,6 +43,252 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-disconnect_outlined:before {
+  content: '\e9e4';
+}
+.cov-product_consumption_outlined:before {
+  content: '\ea3e';
+}
+.cov-product_consumption:before {
+  content: '\ea3f';
+}
+.cov-advanced_sql_outlined:before {
+  content: '\e9d9';
+}
+.cov-alias_arrow_outlined:before {
+  content: '\e9da';
+}
+.cov-api_outlined:before {
+  content: '\e9e0';
+}
+.cov-application_outlined:before {
+  content: '\e9e1';
+}
+.cov-auto_refresh_off_outlined:before {
+  content: '\e9f4';
+}
+.cov-auto_refresh_off:before {
+  content: '\e9f5';
+}
+.cov-auto_refresh_on_outlined:before {
+  content: '\e9f6';
+}
+.cov-auto_refresh_on:before {
+  content: '\e9f7';
+}
+.cov-autorefresh_pause_outlined:before {
+  content: '\e9f8';
+}
+.cov-autorefresh_pause:before {
+  content: '\e9f9';
+}
+.cov-autorenew_off_outlined:before {
+  content: '\e9fa';
+}
+.cov-autorenew_off:before {
+  content: '\e9fb';
+}
+.cov-autorenew_on_outlined:before {
+  content: '\e9fc';
+}
+.cov-autorenew_on:before {
+  content: '\e9fd';
+}
+.cov-branch_outlined:before {
+  content: '\e9fe';
+}
+.cov-branch:before {
+  content: '\e9ff';
+}
+.cov-bucket_outlined:before {
+  content: '\ea00';
+}
+.cov-code_deployed_outlined:before {
+  content: '\ea01';
+}
+.cov-code_deployed_retired_outlined:before {
+  content: '\ea02';
+}
+.cov-code_deployed_retired:before {
+  content: '\ea03';
+}
+.cov-code_deployed:before {
+  content: '\ea04';
+}
+.cov-code_fork_outlined:before {
+  content: '\ea05';
+}
+.cov-code_fork:before {
+  content: '\ea06';
+}
+.cov-column_outlined:before {
+  content: '\ea07';
+}
+.cov-connected_identity_outlined:before {
+  content: '\ea08';
+}
+.cov-created_document_outlined:before {
+  content: '\ea09';
+}
+.cov-created_document:before {
+  content: '\ea0a';
+}
+.cov-data_preparation_outlined:before {
+  content: '\ea0b';
+}
+.cov-data_protection_outlined:before {
+  content: '\ea0c';
+}
+.cov-data_protection:before {
+  content: '\ea0d';
+}
+.cov-data_sharing_outlined:before {
+  content: '\ea0e';
+}
+.cov-data_sharing:before {
+  content: '\ea0f';
+}
+.cov-data_source_outlined:before {
+  content: '\ea10';
+}
+.cov-data_transformation_services_outlined:before {
+  content: '\ea11';
+}
+.cov-data_transformation_services:before {
+  content: '\ea12';
+}
+.cov-engine_outlined:before {
+  content: '\ea13';
+}
+.cov-engine_sql_outlined:before {
+  content: '\ea14';
+}
+.cov-engine_sql:before {
+  content: '\ea15';
+}
+.cov-filter_clear_outlined:before {
+  content: '\ea16';
+}
+.cov-filter_clear:before {
+  content: '\ea17';
+}
+.cov-formula_outlined:before {
+  content: '\ea18';
+}
+.cov-lab_outlined:before {
+  content: '\ea19';
+}
+.cov-managed_services_outlined:before {
+  content: '\ea1a';
+}
+.cov-managed_services:before {
+  content: '\ea1b';
+}
+.cov-merge_outlined:before {
+  content: '\ea1c';
+}
+.cov-merge:before {
+  content: '\ea1d';
+}
+.cov-no_results_outlined:before {
+  content: '\ea1e';
+}
+.cov-node_notification_outlined:before {
+  content: '\ea1f';
+}
+.cov-nos_outlined:before {
+  content: '\ea20';
+}
+.cov-nos:before {
+  content: '\ea21';
+}
+.cov-object_browser_view_outlined:before {
+  content: '\ea22';
+}
+.cov-object_browser_view:before {
+  content: '\ea23';
+}
+.cov-object_storage_outlined:before {
+  content: '\ea24';
+}
+.cov-operations_outlined:before {
+  content: '\ea25';
+}
+.cov-pin_outlined:before {
+  content: '\ea26';
+}
+.cov-pinned:before {
+  content: '\ea27';
+}
+.cov-placeholder_outlined:before {
+  content: '\ea28';
+}
+.cov-placeholder:before {
+  content: '\ea29';
+}
+.cov-product_reports_outlined:before {
+  content: '\ea2a';
+}
+.cov-product_reports:before {
+  content: '\ea2b';
+}
+.cov-professional_services_outlined:before {
+  content: '\ea2c';
+}
+.cov-professional_services:before {
+  content: '\ea2d';
+}
+.cov-report_outlined:before {
+  content: '\ea2e';
+}
+.cov-report:before {
+  content: '\ea2f';
+}
+.cov-row_outlined:before {
+  content: '\ea30';
+}
+.cov-row:before {
+  content: '\ea31';
+}
+.cov-rules_insert_outlined:before {
+  content: '\ea32';
+}
+.cov-rules_outlined:before {
+  content: '\ea33';
+}
+.cov-rules_select_outlined:before {
+  content: '\ea34';
+}
+.cov-segmentation_outlined:before {
+  content: '\ea35';
+}
+.cov-sftp_outlined:before {
+  content: '\ea36';
+}
+.cov-system_outlined:before {
+  content: '\ea37';
+}
+.cov-system:before {
+  content: '\ea38';
+}
+.cov-table_synced_outlined:before {
+  content: '\ea39';
+}
+.cov-teradata_nobackground_outlined:before {
+  content: '\ea3a';
+}
+.cov-variable_outlined:before {
+  content: '\ea3b';
+}
+.cov-wand_outlined:before {
+  content: '\ea3c';
+}
+.cov-workflow_outlined:before {
+  content: '\ea3d';
+}
+.cov-data_management_outlined:before {
+  content: '\e9f3';
+}
 .cov-attribution_outlined:before {
   content: '\e96f';
 }
@@ -361,12 +607,6 @@
 .cov-state_changed_outlined:before {
   content: '\e9d8';
 }
-.cov-state_changed_running_outlined:before {
-  content: '\e9d9';
-}
-.cov-state_changed_running:before {
-  content: '\e9da';
-}
 .cov-state_changed:before {
   content: '\e9db';
 }
@@ -382,23 +622,11 @@
 .cov-state_paused:before {
   content: '\e9df';
 }
-.cov-state_pending_outlined:before {
-  content: '\e9e0';
-}
-.cov-state_pending:before {
-  content: '\e9e1';
-}
 .cov-state_positive_outlined:before {
   content: '\e9e2';
 }
 .cov-state_positive:before {
   content: '\e9e3';
-}
-.cov-state_running_outlined:before {
-  content: '\e9e4';
-}
-.cov-state_running:before {
-  content: '\e9e5';
 }
 .cov-table_changed_outlined:before {
   content: '\e9e6';
