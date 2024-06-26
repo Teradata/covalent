@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?4u71px')
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ghk5lw')
       format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?4u71px')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ghk5lw')
       format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?4u71px##{$icomoon-font-family}')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ghk5lw##{$icomoon-font-family}')
       format('svg');
   font-weight: normal;
   font-style: normal;
@@ -48,6 +48,416 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-disconnect_outlined {
+  &:before {
+    content: $cov-disconnect_outlined;
+  }
+}
+.cov-product_consumption_outlined {
+  &:before {
+    content: $cov-product_consumption_outlined;
+  }
+}
+.cov-product_consumption {
+  &:before {
+    content: $cov-product_consumption;
+  }
+}
+.cov-advanced_sql_outlined {
+  &:before {
+    content: $cov-advanced_sql_outlined;
+  }
+}
+.cov-alias_arrow_outlined {
+  &:before {
+    content: $cov-alias_arrow_outlined;
+  }
+}
+.cov-api_outlined {
+  &:before {
+    content: $cov-api_outlined;
+  }
+}
+.cov-application_outlined {
+  &:before {
+    content: $cov-application_outlined;
+  }
+}
+.cov-auto_refresh_off_outlined {
+  &:before {
+    content: $cov-auto_refresh_off_outlined;
+  }
+}
+.cov-auto_refresh_off {
+  &:before {
+    content: $cov-auto_refresh_off;
+  }
+}
+.cov-auto_refresh_on_outlined {
+  &:before {
+    content: $cov-auto_refresh_on_outlined;
+  }
+}
+.cov-auto_refresh_on {
+  &:before {
+    content: $cov-auto_refresh_on;
+  }
+}
+.cov-autorefresh_pause_outlined {
+  &:before {
+    content: $cov-autorefresh_pause_outlined;
+  }
+}
+.cov-autorefresh_pause {
+  &:before {
+    content: $cov-autorefresh_pause;
+  }
+}
+.cov-autorenew_off_outlined {
+  &:before {
+    content: $cov-autorenew_off_outlined;
+  }
+}
+.cov-autorenew_off {
+  &:before {
+    content: $cov-autorenew_off;
+  }
+}
+.cov-autorenew_on_outlined {
+  &:before {
+    content: $cov-autorenew_on_outlined;
+  }
+}
+.cov-autorenew_on {
+  &:before {
+    content: $cov-autorenew_on;
+  }
+}
+.cov-branch_outlined {
+  &:before {
+    content: $cov-branch_outlined;
+  }
+}
+.cov-branch {
+  &:before {
+    content: $cov-branch;
+  }
+}
+.cov-bucket_outlined {
+  &:before {
+    content: $cov-bucket_outlined;
+  }
+}
+.cov-code_deployed_outlined {
+  &:before {
+    content: $cov-code_deployed_outlined;
+  }
+}
+.cov-code_deployed_retired_outlined {
+  &:before {
+    content: $cov-code_deployed_retired_outlined;
+  }
+}
+.cov-code_deployed_retired {
+  &:before {
+    content: $cov-code_deployed_retired;
+  }
+}
+.cov-code_deployed {
+  &:before {
+    content: $cov-code_deployed;
+  }
+}
+.cov-code_fork_outlined {
+  &:before {
+    content: $cov-code_fork_outlined;
+  }
+}
+.cov-code_fork {
+  &:before {
+    content: $cov-code_fork;
+  }
+}
+.cov-column_outlined {
+  &:before {
+    content: $cov-column_outlined;
+  }
+}
+.cov-connected_identity_outlined {
+  &:before {
+    content: $cov-connected_identity_outlined;
+  }
+}
+.cov-created_document_outlined {
+  &:before {
+    content: $cov-created_document_outlined;
+  }
+}
+.cov-created_document {
+  &:before {
+    content: $cov-created_document;
+  }
+}
+.cov-data_preparation_outlined {
+  &:before {
+    content: $cov-data_preparation_outlined;
+  }
+}
+.cov-data_protection_outlined {
+  &:before {
+    content: $cov-data_protection_outlined;
+  }
+}
+.cov-data_protection {
+  &:before {
+    content: $cov-data_protection;
+  }
+}
+.cov-data_sharing_outlined {
+  &:before {
+    content: $cov-data_sharing_outlined;
+  }
+}
+.cov-data_sharing {
+  &:before {
+    content: $cov-data_sharing;
+  }
+}
+.cov-data_source_outlined {
+  &:before {
+    content: $cov-data_source_outlined;
+  }
+}
+.cov-data_transformation_services_outlined {
+  &:before {
+    content: $cov-data_transformation_services_outlined;
+  }
+}
+.cov-data_transformation_services {
+  &:before {
+    content: $cov-data_transformation_services;
+  }
+}
+.cov-engine_outlined {
+  &:before {
+    content: $cov-engine_outlined;
+  }
+}
+.cov-engine_sql_outlined {
+  &:before {
+    content: $cov-engine_sql_outlined;
+  }
+}
+.cov-engine_sql {
+  &:before {
+    content: $cov-engine_sql;
+  }
+}
+.cov-filter_clear_outlined {
+  &:before {
+    content: $cov-filter_clear_outlined;
+  }
+}
+.cov-filter_clear {
+  &:before {
+    content: $cov-filter_clear;
+  }
+}
+.cov-formula_outlined {
+  &:before {
+    content: $cov-formula_outlined;
+  }
+}
+.cov-lab_outlined {
+  &:before {
+    content: $cov-lab_outlined;
+  }
+}
+.cov-managed_services_outlined {
+  &:before {
+    content: $cov-managed_services_outlined;
+  }
+}
+.cov-managed_services {
+  &:before {
+    content: $cov-managed_services;
+  }
+}
+.cov-merge_outlined {
+  &:before {
+    content: $cov-merge_outlined;
+  }
+}
+.cov-merge {
+  &:before {
+    content: $cov-merge;
+  }
+}
+.cov-no_results_outlined {
+  &:before {
+    content: $cov-no_results_outlined;
+  }
+}
+.cov-node_notification_outlined {
+  &:before {
+    content: $cov-node_notification_outlined;
+  }
+}
+.cov-nos_outlined {
+  &:before {
+    content: $cov-nos_outlined;
+  }
+}
+.cov-nos {
+  &:before {
+    content: $cov-nos;
+  }
+}
+.cov-object_browser_view_outlined {
+  &:before {
+    content: $cov-object_browser_view_outlined;
+  }
+}
+.cov-object_browser_view {
+  &:before {
+    content: $cov-object_browser_view;
+  }
+}
+.cov-object_storage_outlined {
+  &:before {
+    content: $cov-object_storage_outlined;
+  }
+}
+.cov-operations_outlined {
+  &:before {
+    content: $cov-operations_outlined;
+  }
+}
+.cov-pin_outlined {
+  &:before {
+    content: $cov-pin_outlined;
+  }
+}
+.cov-pinned {
+  &:before {
+    content: $cov-pinned;
+  }
+}
+.cov-placeholder_outlined {
+  &:before {
+    content: $cov-placeholder_outlined;
+  }
+}
+.cov-placeholder {
+  &:before {
+    content: $cov-placeholder;
+  }
+}
+.cov-product_reports_outlined {
+  &:before {
+    content: $cov-product_reports_outlined;
+  }
+}
+.cov-product_reports {
+  &:before {
+    content: $cov-product_reports;
+  }
+}
+.cov-professional_services_outlined {
+  &:before {
+    content: $cov-professional_services_outlined;
+  }
+}
+.cov-professional_services {
+  &:before {
+    content: $cov-professional_services;
+  }
+}
+.cov-report_outlined {
+  &:before {
+    content: $cov-report_outlined;
+  }
+}
+.cov-report {
+  &:before {
+    content: $cov-report;
+  }
+}
+.cov-row_outlined {
+  &:before {
+    content: $cov-row_outlined;
+  }
+}
+.cov-row {
+  &:before {
+    content: $cov-row;
+  }
+}
+.cov-rules_insert_outlined {
+  &:before {
+    content: $cov-rules_insert_outlined;
+  }
+}
+.cov-rules_outlined {
+  &:before {
+    content: $cov-rules_outlined;
+  }
+}
+.cov-rules_select_outlined {
+  &:before {
+    content: $cov-rules_select_outlined;
+  }
+}
+.cov-segmentation_outlined {
+  &:before {
+    content: $cov-segmentation_outlined;
+  }
+}
+.cov-sftp_outlined {
+  &:before {
+    content: $cov-sftp_outlined;
+  }
+}
+.cov-system_outlined {
+  &:before {
+    content: $cov-system_outlined;
+  }
+}
+.cov-system {
+  &:before {
+    content: $cov-system;
+  }
+}
+.cov-table_synced_outlined {
+  &:before {
+    content: $cov-table_synced_outlined;
+  }
+}
+.cov-teradata_nobackground_outlined {
+  &:before {
+    content: $cov-teradata_nobackground_outlined;
+  }
+}
+.cov-variable_outlined {
+  &:before {
+    content: $cov-variable_outlined;
+  }
+}
+.cov-wand_outlined {
+  &:before {
+    content: $cov-wand_outlined;
+  }
+}
+.cov-workflow_outlined {
+  &:before {
+    content: $cov-workflow_outlined;
+  }
+}
+.cov-data_management_outlined {
+  &:before {
+    content: $cov-data_management_outlined;
+  }
+}
 .cov-attribution_outlined {
   &:before {
     content: $cov-attribution_outlined;
@@ -578,16 +988,6 @@
     content: $cov-state_changed_outlined;
   }
 }
-.cov-state_changed_running_outlined {
-  &:before {
-    content: $cov-state_changed_running_outlined;
-  }
-}
-.cov-state_changed_running {
-  &:before {
-    content: $cov-state_changed_running;
-  }
-}
 .cov-state_changed {
   &:before {
     content: $cov-state_changed;
@@ -613,16 +1013,6 @@
     content: $cov-state_paused;
   }
 }
-.cov-state_pending_outlined {
-  &:before {
-    content: $cov-state_pending_outlined;
-  }
-}
-.cov-state_pending {
-  &:before {
-    content: $cov-state_pending;
-  }
-}
 .cov-state_positive_outlined {
   &:before {
     content: $cov-state_positive_outlined;
@@ -631,16 +1021,6 @@
 .cov-state_positive {
   &:before {
     content: $cov-state_positive;
-  }
-}
-.cov-state_running_outlined {
-  &:before {
-    content: $cov-state_running_outlined;
-  }
-}
-.cov-state_running {
-  &:before {
-    content: $cov-state_running;
   }
 }
 .cov-table_changed_outlined {
