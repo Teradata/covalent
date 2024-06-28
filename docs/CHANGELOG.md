@@ -1,3 +1,9 @@
+# [8.15.0-beta.2](https://github.com/Teradata/covalent/compare/v8.15.0-beta.1...v8.15.0-beta.2) (2024-06-28)
+
+### Features
+
+- **notebook:** add custom events for cell actions ([93cbfb5](https://github.com/Teradata/covalent/commit/93cbfb5c41215fde8cc955308915861125e13562))
+
 # [8.15.0-beta.1](https://github.com/Teradata/covalent/compare/v8.14.1...v8.15.0-beta.1) (2024-06-25)
 
 ### Features
