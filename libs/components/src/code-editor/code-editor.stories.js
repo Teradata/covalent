@@ -31,7 +31,7 @@ export default {
 
 const Template = ({ theme, language, code }) => {
   return `
-  <div style="width: 800px; height: 400px">
+  <div style="width: 800px; height: 100%">
     <cv-code-editor language="${language}" theme="${theme}" code="${code}">
     </cv-code-editor>
   </div>

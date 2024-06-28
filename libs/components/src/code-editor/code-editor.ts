@@ -7,36 +7,7 @@ import styles from './code-editor.scss?inline';
 // -- Monaco Editor Imports --
 import * as monaco from 'monaco-editor';
 import baseStyles from 'monaco-editor/min/vs/editor/editor.main.css?inline';
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-expect-error
-import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
-// @ts-expect-error
-import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
-// @ts-expect-error
-import cssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker';
-// @ts-expect-error
-import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
-// @ts-expect-error
-import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
-/* eslint-enable no-alert */
 
-self.MonacoEnvironment = {
-  getWorker(_: string, label: string) {
-    if (label === 'json') {
-      return new jsonWorker();
-    }
-    if (label === 'css' || label === 'scss' || label === 'less') {
-      return new cssWorker();
-    }
-    if (label === 'html' || label === 'handlebars' || label === 'razor') {
-      return new htmlWorker();
-    }
-    if (label === 'typescript' || label === 'javascript') {
-      return new tsWorker();
-    }
-    return new editorWorker();
-  },
-};
 @customElement('cv-code-editor')
 export class CovalentCodeEditor extends LitElement {
   /**
@@ -150,7 +121,6 @@ export class CovalentCodeEditor extends LitElement {
           composed: true,
         })
       );
-      this.adjustHeight();
     });
   }
 
@@ -177,7 +147,12 @@ export class CovalentCodeEditor extends LitElement {
         );
       });
 
+      this.editor?.onDidContentSizeChange(() => {
+        this.adjustHeight();
+      });
+
       this.adjustHeight();
+
       window
         .matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change', this._setTheme);

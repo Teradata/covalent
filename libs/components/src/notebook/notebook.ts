@@ -1,6 +1,5 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import markdownit from 'markdown-it';
 import styles from './notebook.scss?inline';
 import '../cell/cell';
 import '../icon/icon';
@@ -141,8 +140,7 @@ export class CovalentNotebook extends LitElement {
 
   convertMarkdowntoHTML(cell: CellData) {
     if (cell.language === 'markdown' && cell.code) {
-      const md = markdownit();
-      cell.output = md.render(cell.code);
+      cell.output = cell.code;
       cell.showEditor = false;
     }
   }
