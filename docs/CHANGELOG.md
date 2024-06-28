@@ -1,3 +1,9 @@
+# [8.15.0-beta.3](https://github.com/Teradata/covalent/compare/v8.15.0-beta.2...v8.15.0-beta.3) (2024-06-28)
+
+### Bug Fixes
+
+- **notebook:** change code editor height adjustment logic ([46f445f](https://github.com/Teradata/covalent/commit/46f445f95dacc04f5bde1c814b5bc6206def0b27))
+
 # [8.15.0-beta.2](https://github.com/Teradata/covalent/compare/v8.15.0-beta.1...v8.15.0-beta.2) (2024-06-28)
 
 ### Features
