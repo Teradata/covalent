@@ -130,9 +130,13 @@ export class CovalentNotebook extends LitElement {
   runCell() {
     if (this._selectedCellIndex !== null) {
       const cell = this.cells[this._selectedCellIndex];
-      this.convertMarkdowntoHTML(cell);
-      this.requestUpdate();
+      if (cell.language === 'markdown') {
+        this.convertMarkdowntoHTML(cell);
+      } else {
+        this.dispatchCustomCellEvent('run-cell', cell);
+      }
     }
+    this.requestUpdate();
   }
 
   convertMarkdowntoHTML(cell: CellData) {
@@ -181,6 +185,21 @@ export class CovalentNotebook extends LitElement {
     }
   }
 
+  dispatchCustomCellEvent(name: string, cell?: CellData) {
+    if (!cell && this._selectedCellIndex) {
+      cell = this.cells[this._selectedCellIndex];
+    }
+    if (cell) {
+      this.dispatchEvent(
+        new CustomEvent(name, {
+          bubbles: true,
+          cancelable: true,
+          detail: { cell },
+        })
+      );
+    }
+  }
+
   protected firstUpdated(): void {
     this.cells.forEach((cell) => this.convertMarkdowntoHTML(cell));
     this.requestUpdate();
@@ -210,9 +229,18 @@ export class CovalentNotebook extends LitElement {
           icon="play_arrow"
           @click="${this.runCell}"
         ></cv-icon-button>
-        <cv-icon-button icon="stop"></cv-icon-button>
-        <cv-icon-button icon="refresh"></cv-icon-button>
-        <cv-icon-button icon="fast_forward"></cv-icon-button>
+        <cv-icon-button
+          icon="stop"
+          @click="${() => this.dispatchCustomCellEvent('interrupt-cell')}"
+        ></cv-icon-button>
+        <cv-icon-button
+          icon="refresh"
+          @click="${() => this.dispatchCustomCellEvent('refresh-cell')}"
+        ></cv-icon-button>
+        <cv-icon-button
+          icon="fast_forward"
+          @click="${() => this.dispatchCustomCellEvent('refresh-run-all-cell')}"
+        ></cv-icon-button>
       </section>
       <section class="notebookCells">
         ${this.cells.map(
