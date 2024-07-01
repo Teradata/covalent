@@ -1,3 +1,9 @@
+# [8.15.0-beta.4](https://github.com/Teradata/covalent/compare/v8.15.0-beta.3...v8.15.0-beta.4) (2024-07-01)
+
+### Bug Fixes
+
+- **notebooks:** update monaco editor configuration ([310b2a8](https://github.com/Teradata/covalent/commit/310b2a89097efbafb369531f9148d4e87e8092b4))
+
 # [8.15.0-beta.3](https://github.com/Teradata/covalent/compare/v8.15.0-beta.2...v8.15.0-beta.3) (2024-06-28)
 
 ### Bug Fixes
