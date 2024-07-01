@@ -98,11 +98,12 @@ export class CovalentCodeEditor extends LitElement {
       inherit: true,
       rules: [],
       colors: {
-        'editor.background': '#fdf9fc',
+        'editor.background': '#f6f3f6ff',
       },
     });
     this.editor = monaco.editor.create(container, {
       ...this.options,
+      fontLigatures: '',
       value: this.getCode(),
       language: this.getLang(),
       theme: this.getTheme(),

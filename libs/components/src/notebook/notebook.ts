@@ -1,5 +1,6 @@
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import markdownit from 'markdown-it';
 import styles from './notebook.scss?inline';
 import '../cell/cell';
 import '../icon/icon';
@@ -26,8 +27,14 @@ export class CovalentNotebook extends LitElement {
   /**
    * The cells in a notebook
    */
-  @property({ type: Object })
+  @property({ type: Array })
   cells: CellData[] = [];
+
+  /**
+   * Default language for cells in the notebook
+   */
+  @property({ type: String })
+  defaultLanguage!: string;
 
   private _draggedCellIndex: number | null = null;
 
@@ -140,7 +147,8 @@ export class CovalentNotebook extends LitElement {
 
   convertMarkdowntoHTML(cell: CellData) {
     if (cell.language === 'markdown' && cell.code) {
-      cell.output = cell.code;
+      const md = markdownit({ html: true });
+      cell.output = md.render(cell.code);
       cell.showEditor = false;
     }
   }
@@ -183,6 +191,57 @@ export class CovalentNotebook extends LitElement {
     }
   }
 
+  initializeMonaco(): void {
+    // Define the MonacoEnvironment to specify the worker URL
+    window.MonacoEnvironment = {
+      getWorker: function (_moduleId, label) {
+        switch (label) {
+          case 'json':
+            return new Worker(
+              new URL(
+                '../../../../node_modules/monaco-editor/esm/vs/language/json/json.worker',
+                import.meta.url
+              ),
+              { type: 'module' }
+            );
+          case 'css':
+            return new Worker(
+              new URL(
+                '../../../../node_modules/monaco-editor/esm/vs/language/css/css.worker',
+                import.meta.url
+              ),
+              { type: 'module' }
+            );
+          case 'html':
+            return new Worker(
+              new URL(
+                '../../../../node_modules/monaco-editor/esm/vs/language/html/html.worker',
+                import.meta.url
+              ),
+              { type: 'module' }
+            );
+          case 'typescript':
+          case 'javascript':
+            return new Worker(
+              new URL(
+                '../../../../node_modules/monaco-editor/esm/vs/language/typescript/ts.worker',
+                import.meta.url
+              ),
+              { type: 'module' }
+            );
+          default:
+            return new Worker(
+              new URL(
+                '../../../../node_modules/monaco-editor/esm/vs/editor/editor.worker.js',
+                import.meta.url
+              ),
+              { type: 'module' }
+            );
+        }
+      },
+    };
+  }
+
   dispatchCustomCellEvent(name: string, cell?: CellData) {
     if (!cell && this._selectedCellIndex) {
       cell = this.cells[this._selectedCellIndex];
@@ -198,7 +257,14 @@ export class CovalentNotebook extends LitElement {
     }
   }
 
+  protected updated(changedProperties: PropertyValues): void {
+    if (changedProperties.has('cells')) {
+      this.cells.forEach((cell) => this.convertMarkdowntoHTML(cell));
+    }
+  }
+
   protected firstUpdated(): void {
+    this.initializeMonaco();
     this.cells.forEach((cell) => this.convertMarkdowntoHTML(cell));
     this.requestUpdate();
   }
@@ -271,15 +337,13 @@ export class CovalentNotebook extends LitElement {
       <section class="notebookActions">
         <cv-button
           outlined
-          @click=${() => this.addCell({ code: '', language: 'sql' })}
+          @click=${() =>
+            this.addCell({
+              code: '',
+              language: this.defaultLanguage || 'python',
+            })}
         >
-          <cv-icon style="font-size: 20px;">add</cv-icon>SQL cell
-        </cv-button>
-        <cv-button
-          outlined
-          @click=${() => this.addCell({ code: '', language: 'python' })}
-        >
-          <cv-icon style="font-size: 20px;">add</cv-icon>Python cell
+          <cv-icon style="font-size: 20px;">add</cv-icon>Code cell
         </cv-button>
         <cv-button
           outlined
