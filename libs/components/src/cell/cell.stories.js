@@ -5,15 +5,15 @@ export default {
   args: {
     code: '',
     index: 0,
-    language: 'sql',
-    output: 'Heres my output!',
+    language: 'markdown',
     selected: false,
+    timesExecuted: 2,
   },
 };
 
-const Template = ({ code, index, language, selected }) => {
+const Template = ({ code, index, language, selected, timesExecuted }) => {
   return `<div style="width: 800px; ">
-            <cv-cell code="${code}" index="${index}" language="${language}" ${
+            <cv-cell code="${code}" index="${index}" language="${language}" timesExecuted="${timesExecuted}" ${
     selected ? 'selected' : ''
   }></cv-cell>
           </div>`;

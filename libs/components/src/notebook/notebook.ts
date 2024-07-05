@@ -1,4 +1,11 @@
-import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
+import {
+  css,
+  html,
+  LitElement,
+  PropertyValues,
+  TemplateResult,
+  unsafeCSS,
+} from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import markdownit from 'markdown-it';
 import styles from './notebook.scss?inline';
@@ -6,6 +13,8 @@ import '../cell/cell';
 import '../icon/icon';
 import '../icon-button/icon-button';
 import '../button/button';
+import '../select/select';
+import '../list/list-item';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -15,11 +24,28 @@ declare global {
 
 interface CellData {
   code: string;
-  language: string;
-  output?: HTMLElement | string;
-  selected?: boolean;
+  errors?: string[];
   index?: number;
+  inputs?: { password: boolean; prompt: string }[];
+  language: string;
+  outputs?: {
+    data: {
+      [key: string]: string;
+    };
+    metadata?: {
+      [key: string]: string;
+    };
+    outputType?: string;
+  }[];
+  selected?: boolean;
   showEditor?: boolean;
+  timesExecuted?: number;
+}
+
+interface CellType {
+  type: string;
+  name: string;
+  selected?: boolean;
 }
 
 @customElement('cv-notebook')
@@ -31,22 +57,116 @@ export class CovalentNotebook extends LitElement {
   cells: CellData[] = [];
 
   /**
+   * The cell types in a notebook
+   */
+  @property({ type: Array })
+  cellTypes: CellType[] = [];
+
+  /**
+   * The selected cell type for a cell
+   */
+  @property({ type: String })
+  cellType!: string;
+
+  /**
    * Default language for cells in the notebook
    */
   @property({ type: String })
   defaultLanguage!: string;
 
+  private _clipboardCell: CellData | null = null;
+
   private _draggedCellIndex: number | null = null;
 
   private _selectedCellIndex: number | null = null;
-
-  private _clipboardCell: CellData | null = null;
 
   static override styles = [
     css`
       ${unsafeCSS(styles)}
     `,
   ];
+
+  // Add a cell to the notebook
+  addCell(cellData: CellData) {
+    this.cells = [...this.cells, cellData];
+    this.requestUpdate();
+  }
+
+  // Copy the selected cell
+  copyCell() {
+    if (this._selectedCellIndex !== null) {
+      this._clipboardCell = { ...this.cells[this._selectedCellIndex] };
+    }
+  }
+
+  // Cut the selected cell
+  cutCell() {
+    if (this._selectedCellIndex !== null) {
+      this._clipboardCell = this.cells[this._selectedCellIndex];
+      this.cells.splice(this._selectedCellIndex, 1);
+      this._selectedCellIndex = null;
+      this.requestUpdate();
+    }
+  }
+
+  // Delete the selected cell
+  deleteCell() {
+    if (this._selectedCellIndex !== null) {
+      this.cells.splice(this._selectedCellIndex, 1);
+      this._selectedCellIndex = null;
+      this.requestUpdate();
+    }
+  }
+
+  // Deselect all the cells
+  deselectAllCells() {
+    this.cells.forEach((cell) => (cell.selected = false));
+  }
+
+  // Dispatch a custom cell event
+  dispatchCustomCellEvent(name: string, cell?: CellData) {
+    if (!cell && this._selectedCellIndex) {
+      cell = this.cells[this._selectedCellIndex];
+    }
+    if (cell) {
+      this.dispatchEvent(
+        new CustomEvent(name, {
+          bubbles: true,
+          cancelable: true,
+          detail: { cell, index: this._selectedCellIndex },
+        })
+      );
+    }
+  }
+
+  protected firstUpdated(): void {
+    if (this.cells.length) {
+      this.cells.forEach((cell) => {
+        cell.showEditor = this.shouldRenderEditor(cell);
+      });
+      this.selectCell(0);
+      this.requestUpdate();
+    }
+    this.initializeMonaco();
+  }
+
+  // Dispatch an event when the cell type is changed
+  handleCellTypeChange(e: CustomEvent) {
+    const cellType = this.cellTypes[e.detail.index];
+    this.dispatchEvent(
+      new CustomEvent('cell-type-changed', {
+        bubbles: true,
+        cancelable: true,
+        detail: { index: this._selectedCellIndex, cellType },
+      })
+    );
+  }
+
+  // Called whenever the code changes in the cell editor
+  handleCodeChange(e: CustomEvent, index: number) {
+    const cell = this.cells[index];
+    cell.code = e.detail.code;
+  }
 
   handleDragStart(e: DragEvent, index: number) {
     this._draggedCellIndex = index;
@@ -103,91 +223,27 @@ export class CovalentNotebook extends LitElement {
     this.removeCSS('dragged', document);
   }
 
-  removeCSS(className: string, targetElement: Document | ShadowRoot | null) {
-    const elements = targetElement?.querySelectorAll(className);
-    elements?.forEach((element) => element.classList.remove(className));
-  }
-
-  addCell(cellData: CellData) {
-    this.cells = [...this.cells, cellData];
-    this.requestUpdate();
-  }
-
-  deleteCell() {
-    if (this._selectedCellIndex !== null) {
-      this.cells.splice(this._selectedCellIndex, 1);
-      this._selectedCellIndex = null;
-      this.requestUpdate();
+  // Handle enter key event of cell input
+  handleInputKeydown(event: KeyboardEvent) {
+    const inputElement = this.shadowRoot?.querySelector(
+      '#cell-input'
+    ) as HTMLInputElement;
+    if (event.key === 'Enter' && inputElement) {
+      this.dispatchEvent(
+        new CustomEvent('input-entered', {
+          bubbles: true,
+          cancelable: true,
+          detail: { value: inputElement.value },
+        })
+      );
     }
   }
 
-  deselectAllCells() {
-    this.cells.forEach((cell) => (cell.selected = false));
-  }
-
-  selectCell(index: number) {
-    this.deselectAllCells();
-    this._selectedCellIndex = index;
-    const cell = this.cells[index];
-    cell.selected = true;
-    this.requestUpdate();
-  }
-
-  runCell() {
-    if (this._selectedCellIndex !== null) {
-      const cell = this.cells[this._selectedCellIndex];
-      if (cell.language === 'markdown') {
-        this.convertMarkdowntoHTML(cell);
-      } else {
-        this.dispatchCustomCellEvent('run-cell', cell);
-      }
-    }
-    this.requestUpdate();
-  }
-
-  convertMarkdowntoHTML(cell: CellData) {
-    if (cell.language === 'markdown' && cell.code) {
-      const md = markdownit({ html: true });
-      cell.output = md.render(cell.code);
-      cell.showEditor = false;
-    }
-  }
-
-  handleCodeChange(e: CustomEvent, index: number) {
-    const cell = this.cells[index];
-    cell.code = e.detail.code;
-  }
-
+  // Shows the cell editor on clicking output for markdown cells
   handleOutputCLick(index: number) {
     const cell = this.cells[index];
-    cell.showEditor = true;
-  }
-
-  cutCell() {
-    if (this._selectedCellIndex !== null) {
-      this._clipboardCell = this.cells[this._selectedCellIndex];
-      this.cells.splice(this._selectedCellIndex, 1);
-      this._selectedCellIndex = null;
-      this.requestUpdate();
-    }
-  }
-
-  copyCell() {
-    if (this._selectedCellIndex !== null) {
-      this._clipboardCell = { ...this.cells[this._selectedCellIndex] };
-    }
-  }
-
-  pasteCell() {
-    if (this._clipboardCell !== null) {
-      const index =
-        this._selectedCellIndex !== null
-          ? this._selectedCellIndex + 1
-          : this.cells.length;
-      this.cells.splice(index, 0, { ...this._clipboardCell });
-      this.cells = this.cells.map((cell, idx) => ({ ...cell, index: idx }));
-      this._selectedCellIndex = index;
-      this.requestUpdate();
+    if (cell.language === 'markdown') {
+      cell.showEditor = true;
     }
   }
 
@@ -242,31 +298,48 @@ export class CovalentNotebook extends LitElement {
     };
   }
 
-  dispatchCustomCellEvent(name: string, cell?: CellData) {
-    if (!cell && this._selectedCellIndex) {
-      cell = this.cells[this._selectedCellIndex];
-    }
-    if (cell) {
-      this.dispatchEvent(
-        new CustomEvent(name, {
-          bubbles: true,
-          cancelable: true,
-          detail: { cell },
-        })
-      );
-    }
-  }
-
-  protected updated(changedProperties: PropertyValues): void {
-    if (changedProperties.has('cells')) {
-      this.cells.forEach((cell) => this.convertMarkdowntoHTML(cell));
+  // Paste the copied/cut cell in the desired position
+  pasteCell() {
+    if (this._clipboardCell !== null) {
+      const index =
+        this._selectedCellIndex !== null
+          ? this._selectedCellIndex + 1
+          : this.cells.length;
+      this.cells.splice(index, 0, { ...this._clipboardCell });
+      this.cells = this.cells.map((cell, idx) => ({ ...cell, index: idx }));
+      this._selectedCellIndex = index;
+      this.requestUpdate();
     }
   }
 
-  protected firstUpdated(): void {
-    this.initializeMonaco();
-    this.cells.forEach((cell) => this.convertMarkdowntoHTML(cell));
-    this.requestUpdate();
+  renderCellOutput(cell: CellData): TemplateResult<1> {
+    if (cell.outputs?.length) {
+      return html`${cell.outputs.map(
+        (output) =>
+          html`${output.data &&
+          Object.keys(output.data).map((key) => {
+            const content = document.createElement('div');
+            const md = markdownit({ html: true });
+            switch (key) {
+              case 'text/markdown':
+                content.innerHTML = md.render(output.data[key]);
+                break;
+              case 'text/html':
+                // content.innerHTML = output.data[key];
+                break;
+              case 'image/png': {
+                const image = document.createElement('img');
+                image.style.maxWidth = '100%';
+                image.src = `data:image/png;base64, ${output.data[key]}`;
+                content.appendChild(image);
+                break;
+              }
+            }
+            return content;
+          })}`
+      )}`;
+    }
+    return html``;
   }
 
   protected render() {
@@ -305,6 +378,20 @@ export class CovalentNotebook extends LitElement {
           icon="fast_forward"
           @click="${() => this.dispatchCustomCellEvent('refresh-run-all-cell')}"
         ></cv-icon-button>
+        <cv-select
+          label="Cell type"
+          outlined
+          value=${this.cellType}
+          @selected="${(eventData: CustomEvent) =>
+            this.handleCellTypeChange(eventData)}"
+        >
+          ${this.cellTypes?.map(
+            (cellType) =>
+              html`<cv-list-item value="${cellType.type}"
+                >${cellType.name}</cv-list-item
+              >`
+          )}
+        </cv-select>
       </section>
       <section class="notebookCells">
         ${this.cells.map(
@@ -314,6 +401,7 @@ export class CovalentNotebook extends LitElement {
               .index="${index}"
               .language="${cell.language}"
               .showEditor="${cell.showEditor !== false}"
+              .timesExecuted="${cell.timesExecuted}"
               id="cell-${index}"
               draggable="true"
               @dragstart="${(e: DragEvent) => this.handleDragStart(e, index)}"
@@ -328,9 +416,30 @@ export class CovalentNotebook extends LitElement {
             >
               <div
                 slot="output"
-                .innerHTML="${cell.output || ''}"
                 @click="${() => this.handleOutputCLick(index)}"
-              ></div>
+              >
+                ${this.renderCellOutput(cell)}
+              </div>
+              ${cell.inputs?.length &&
+              cell.inputs.map(
+                (input) => html`
+                  <div class="input-container" slot="input">
+                    <cv-typography scale="body2">
+                      ${input.prompt}:
+                    </cv-typography>
+                    <input
+                      id="cell-input"
+                      type="${input.password ? 'password' : 'text'}"
+                      @keydown="${this.handleInputKeydown}"
+                      placeholder="Press enter"
+                    />
+                  </div>
+                `
+              )}
+              ${cell.errors?.length &&
+              html`<cv-typography class="error" slot="error" scale="body2">
+                ${cell.errors && cell.errors.map((error) => html`${error}`)}
+              </cv-typography>`}
             </cv-cell>`
         )}
       </section>
@@ -353,6 +462,43 @@ export class CovalentNotebook extends LitElement {
         </cv-button>
       </section>
     </div>`;
+  }
+
+  removeCSS(className: string, targetElement: Document | ShadowRoot | null) {
+    const elements = targetElement?.querySelectorAll(className);
+    elements?.forEach((element) => element.classList.remove(className));
+  }
+
+  runCell() {
+    if (this._selectedCellIndex !== null) {
+      const cell = this.cells[this._selectedCellIndex];
+      this.dispatchCustomCellEvent('run-cell', cell);
+    }
+    this.requestUpdate();
+  }
+
+  selectCell(index: number) {
+    this.deselectAllCells();
+    this._selectedCellIndex = index;
+    const cell = this.cells[index];
+    cell.selected = true;
+    this.cellType = cell.language === 'markdown' ? 'markdown' : 'code';
+    this.requestUpdate();
+  }
+
+  shouldRenderEditor(cell: CellData): boolean {
+    return (
+      cell.language !== 'markdown' ||
+      (cell.language === 'markdown' && !cell.outputs?.length)
+    );
+  }
+
+  protected updated(_changedProperties: PropertyValues): void {
+    if (_changedProperties.has('cells')) {
+      this.cells.forEach((cell) => {
+        cell.showEditor = this.shouldRenderEditor(cell);
+      });
+    }
   }
 }
 

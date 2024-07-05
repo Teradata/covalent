@@ -5,6 +5,20 @@
   width: 100%;
 }
 
+cv-code-snippet {
+  background-color: var(--cv-theme-surface-container-high);
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 0 0.25rem;
+}
+
+cv-code-snippet::part(code) {
+  font-size: var(--mdc-typography-body2-font-size);
+  line-height: var(--mdc-typography-body2-line-height);
+  padding: 1px 0;
+  white-space: pre-wrap;
+}
+
 .selection-indicator {
   background-color: var(--cv-theme-primary);
   border-radius: 2px;
@@ -15,6 +29,7 @@
 
 .timesExecuted {
   color: var(--cv-theme-outline-variant);
+  margin: 0 2rem;
   min-height: var(--mdc-icon-button-size);
   min-width: var(--mdc-icon-button-size);
 }
@@ -40,19 +55,20 @@
 .cellWrapper {
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 100%;
 }
 
 .cellCodeWrapper {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
+}
 
-  .editor-output-wrapper {
-    width: calc(95% - 8px);
-  }
+.cellOutputWrapper {
+  width: 100%;
 }
 
 .output {
-  margin: 0.5rem 0.25rem;
+  margin: 0.75rem 0.25rem 0.5rem;
+  max-width: 100%;
 }

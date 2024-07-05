@@ -75,14 +75,9 @@ export class CovalentCodeEditor extends LitElement {
     );
   }
 
-  setValue(value: string) {
-    this.editor?.setValue(value);
-  }
-
-  getValue() {
-    const value = this.editor?.getValue();
-    return value;
-  }
+  private setTheme = () => {
+    monaco.editor.setTheme(this.getTheme());
+  };
 
   adjustHeight() {
     if (this.editor && this.container.value) {
@@ -109,19 +104,6 @@ export class CovalentCodeEditor extends LitElement {
       theme: this.getTheme(),
       automaticLayout: true,
       scrollBeyondLastLine: false,
-    });
-  }
-
-  onModelChange() {
-    this.editor?.onDidChangeModelContent(() => {
-      this.code = this.getValue();
-      this.dispatchEvent(
-        new CustomEvent('code-change', {
-          detail: { code: this.code },
-          bubbles: true,
-          composed: true,
-        })
-      );
     });
   }
 
@@ -156,8 +138,34 @@ export class CovalentCodeEditor extends LitElement {
 
       window
         .matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener('change', this._setTheme);
+        .addEventListener('change', this.setTheme);
     }
+  }
+
+  getValue() {
+    const value = this.editor?.getValue();
+    return value;
+  }
+
+  onModelChange() {
+    this.editor?.onDidChangeModelContent(() => {
+      this.code = this.getValue();
+      this.dispatchEvent(
+        new CustomEvent('code-change', {
+          detail: { code: this.code },
+          bubbles: true,
+          composed: true,
+        })
+      );
+    });
+  }
+
+  render() {
+    return html` <main ${ref(this.container)} class="editor"></main> `;
+  }
+
+  setValue(value: string) {
+    this.editor?.setValue(value);
   }
 
   updated(changedProperties: PropertyValues) {
@@ -175,17 +183,9 @@ export class CovalentCodeEditor extends LitElement {
     }
   }
 
-  render() {
-    return html` <main ${ref(this.container)} class="editor"></main> `;
-  }
-
-  private _setTheme = () => {
-    monaco.editor.setTheme(this.getTheme());
-  };
-
   override disconnectedCallback(): void {
     this.editor?.dispose();
-    window.removeEventListener('change', this._setTheme);
+    window.removeEventListener('change', this.setTheme);
     super.disconnectedCallback();
   }
 }

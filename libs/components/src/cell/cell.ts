@@ -2,7 +2,9 @@ import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './cell.scss?inline';
 import { classMap } from 'lit/directives/class-map.js';
+
 import '../code-editor/code-editor';
+import '../code-snippet/code-snippet';
 import '../icon-button/icon-button';
 import '../typography/typography';
 
@@ -104,23 +106,34 @@ export class CovalentCell extends LitElement {
       if (editor) {
         editor.code = this.code;
         editor.language = this.language;
+      } else {
+        const codeSnippet = this.shadowRoot?.querySelector('cv-code-snippet');
+        if (codeSnippet && !this.selected) {
+          codeSnippet.language = this.language;
+        }
       }
     }
   }
 
   renderEditor() {
-    const editor = html`<cv-code-editor
-      @code-change="${this.handleCodeChange}"
-      @editor-focus="${() => this.setEditorFocus(true)}"
-      @editor-blur="${() => this.setEditorFocus(false)}"
-      .code="${this.code}"
-      .language="${this.language}"
-      .options="${this.editorOptions}"
-    ></cv-code-editor>`;
+    const editor = this.selected
+      ? html`<cv-code-editor
+          @code-change="${this.handleCodeChange}"
+          @editor-focus="${() => this.setEditorFocus(true)}"
+          @editor-blur="${() => this.setEditorFocus(false)}"
+          .code="${this.code}"
+          .language="${this.language}"
+          .options="${this.editorOptions}"
+        ></cv-code-editor>`
+      : html`<cv-code-snippet hideHeader .language="${this.language}"
+          >${this.code}</cv-code-snippet
+        >`;
 
-    const output = html`<cv-typography class="output" scale="body1">
-      <slot name="output"></slot>
-    </cv-typography>`;
+    const output = html`<slot name="error"></slot>
+      <cv-typography class="output" scale="body1">
+        <slot name="output"></slot>
+        <slot name="input"></slot>
+      </cv-typography>`;
 
     return html`${this.showEditor ? editor : ''}${(!this.showEditor &&
       this.language === 'markdown') ||
@@ -142,12 +155,10 @@ export class CovalentCell extends LitElement {
           <div class="cellCodeWrapper">
             <span class="timesExecuted">
               ${this.showEditor
-                ? html`[${this.timesExecuted === 0
-                    ? '  '
-                    : this.timesExecuted}]:`
+                ? html`[${!this.timesExecuted ? '  ' : this.timesExecuted}]:`
                 : ''}
             </span>
-            <div class="editor-output-wrapper">${this.renderEditor()}</div>
+            <div class="cellOutputWrapper">${this.renderEditor()}</div>
           </div>
         </div>
       </div>
