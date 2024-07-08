@@ -1,3 +1,9 @@
+# [8.15.0-beta.5](https://github.com/Teradata/covalent/compare/v8.15.0-beta.4...v8.15.0-beta.5) (2024-07-08)
+
+### Bug Fixes
+
+- **cell:** set minimum height for code snippet ([12771d3](https://github.com/Teradata/covalent/commit/12771d39c58ac0ad6b0fa6855060e535b1d1becf))
+
 # [8.15.0-beta.4](https://github.com/Teradata/covalent/compare/v8.15.0-beta.3...v8.15.0-beta.4) (2024-07-01)
 
 ### Bug Fixes
