@@ -207,7 +207,13 @@ export class CovalentNotebook extends LitElement {
       this.cells = this.cells.map((cell, idx) => ({ ...cell, index: idx }));
 
       this._draggedCellIndex = null;
-      this.requestUpdate();
+      this.dispatchEvent(
+        new CustomEvent('drag-finished', {
+          bubbles: true,
+          cancelable: true,
+          detail: { cells: this.cells },
+        })
+      );
     }
   }
 
@@ -325,7 +331,7 @@ export class CovalentNotebook extends LitElement {
                 content.innerHTML = md.render(output.data[key]);
                 break;
               case 'text/html':
-                // content.innerHTML = output.data[key];
+                content.innerHTML = output.data[key];
                 break;
               case 'image/png': {
                 const image = document.createElement('img');

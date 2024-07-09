@@ -25,7 +25,7 @@ cv-code-snippet::part(code) {
   border-radius: 2px;
   margin-top: 2px;
   visibility: hidden;
-  width: 8px;
+  min-width: 8px;
 }
 
 .timesExecuted {
@@ -66,7 +66,7 @@ cv-code-snippet::part(code) {
 }
 
 .cellOutputWrapper {
-  width: 100%;
+  width: calc(100% - 96px);
 }
 
 .output {
