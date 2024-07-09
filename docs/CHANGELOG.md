@@ -1,3 +1,9 @@
+# [8.15.0-beta.6](https://github.com/Teradata/covalent/compare/v8.15.0-beta.5...v8.15.0-beta.6) (2024-07-09)
+
+### Bug Fixes
+
+- **code-editor:** register supported programming languages ([99f0cd1](https://github.com/Teradata/covalent/commit/99f0cd1990afaff65faab6bf2b585bf3a71abf91))
+
 # [8.15.0-beta.5](https://github.com/Teradata/covalent/compare/v8.15.0-beta.4...v8.15.0-beta.5) (2024-07-08)
 
 ### Bug Fixes
