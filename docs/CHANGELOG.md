@@ -1,3 +1,9 @@
+# [8.15.0-beta.7](https://github.com/Teradata/covalent/compare/v8.15.0-beta.6...v8.15.0-beta.7) (2024-07-09)
+
+### Features
+
+- **notebooks:** render html output in cells ([23c128e](https://github.com/Teradata/covalent/commit/23c128ed7cf5cb5d09fb9909e286ce61af70230c))
+
 # [8.15.0-beta.6](https://github.com/Teradata/covalent/compare/v8.15.0-beta.5...v8.15.0-beta.6) (2024-07-09)
 
 ### Bug Fixes
