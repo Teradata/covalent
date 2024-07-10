@@ -1,10 +1,8 @@
 const { defineConfig } = require('vite');
-import monacoEditorPlugin from 'vite-plugin-monaco-editor';
 
 // https://vitejs.dev/config/
 module.exports = defineConfig(({ mode }) => {
   return {
-    plugins: [monacoEditorPlugin({})],
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode),
     },
@@ -68,6 +66,9 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/typography/typography',
         ],
         name: 'Covalent',
+      },
+      rollupOptions: {
+        external: ['monaco-editor'],
       },
     },
     server: {

@@ -5,7 +5,7 @@ import { createRef, Ref, ref } from 'lit/directives/ref.js';
 import styles from './code-editor.scss?inline';
 
 // -- Monaco Editor Imports --
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js';
+import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import baseStyles from 'monaco-editor/min/vs/editor/editor.main.css?inline';
 
 // Register all language contributions
@@ -41,7 +41,7 @@ export class CovalentCodeEditor extends LitElement {
   /**
    * Editor instance
    */
-  editor?: monaco.editor.IStandaloneCodeEditor;
+  editor?: editor.IStandaloneCodeEditor;
   /**
    * Theme of the editor
    */
@@ -57,8 +57,8 @@ export class CovalentCodeEditor extends LitElement {
   /**
    * Options that can be ste for the editor
    */
-  @property({ type: Object }) options?: monaco.editor.IEditorOptions &
-    monaco.editor.IGlobalEditorOptions;
+  @property({ type: Object }) options?: editor.IEditorOptions &
+    editor.IGlobalEditorOptions;
 
   static styles = [
     css`
@@ -100,7 +100,7 @@ export class CovalentCodeEditor extends LitElement {
   }
 
   private setTheme = () => {
-    monaco.editor.setTheme(this.getTheme());
+    editor.setTheme(this.getTheme());
   };
 
   adjustHeight() {
@@ -112,7 +112,7 @@ export class CovalentCodeEditor extends LitElement {
   }
 
   createEditor(container: HTMLElement) {
-    monaco.editor.defineTheme('my-theme', {
+    editor.defineTheme('my-theme', {
       base: 'vs',
       inherit: true,
       rules: [],
@@ -121,7 +121,7 @@ export class CovalentCodeEditor extends LitElement {
       },
     });
 
-    this.editor = monaco.editor.create(container, {
+    this.editor = editor.create(container, {
       ...this.options,
       fontLigatures: '',
       value: this.getCode(),
@@ -201,8 +201,8 @@ export class CovalentCodeEditor extends LitElement {
       }
     }
     if (changedProperties.has('language') && this.editor) {
-      monaco.editor.setModelLanguage(
-        this.editor.getModel() as monaco.editor.ITextModel,
+      editor.setModelLanguage(
+        this.editor.getModel() as editor.ITextModel,
         this.language || ''
       );
     }
