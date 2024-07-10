@@ -81,9 +81,10 @@ describe('Component: Markdown', () => {
     it(
       'should render empty static content',
       waitForAsync(() => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownEmptyStaticContentTestRenderingComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownEmptyStaticContentTestRenderingComponent> =
+          TestBed.createComponent(
+            TdMarkdownEmptyStaticContentTestRenderingComponent
+          );
         const element: HTMLElement = fixture.nativeElement;
 
         expect(
@@ -108,9 +109,10 @@ describe('Component: Markdown', () => {
     it(
       'should render markup from static content',
       waitForAsync(() => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownStaticContentTestRenderingComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownStaticContentTestRenderingComponent> =
+          TestBed.createComponent(
+            TdMarkdownStaticContentTestRenderingComponent
+          );
         const element: HTMLElement = fixture.nativeElement;
 
         expect(
@@ -141,9 +143,10 @@ describe('Component: Markdown', () => {
     it(
       'should render newlines as <br/> if simpleLineBreaks is true',
       waitForAsync(() => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownSimpleLineBreaksTestRenderingComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownSimpleLineBreaksTestRenderingComponent> =
+          TestBed.createComponent(
+            TdMarkdownSimpleLineBreaksTestRenderingComponent
+          );
         const component: TdMarkdownSimpleLineBreaksTestRenderingComponent =
           fixture.debugElement.componentInstance;
         component.simpleLineBreaks = true;
@@ -179,9 +182,10 @@ describe('Component: Markdown', () => {
     it(
       'should not render newlines as <br/> if simpleLineBreaks is false',
       waitForAsync(() => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownSimpleLineBreaksTestRenderingComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownSimpleLineBreaksTestRenderingComponent> =
+          TestBed.createComponent(
+            TdMarkdownSimpleLineBreaksTestRenderingComponent
+          );
         const component: TdMarkdownSimpleLineBreaksTestRenderingComponent =
           fixture.debugElement.componentInstance;
         component.simpleLineBreaks = false;
@@ -217,9 +221,10 @@ describe('Component: Markdown', () => {
     it(
       'should render markup from dynamic content',
       waitForAsync(() => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownDymanicContentTestRenderingComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownDymanicContentTestRenderingComponent> =
+          TestBed.createComponent(
+            TdMarkdownDymanicContentTestRenderingComponent
+          );
         const component: TdMarkdownDymanicContentTestRenderingComponent =
           fixture.debugElement.componentInstance;
         component.content = `
@@ -258,9 +263,10 @@ describe('Component: Markdown', () => {
     it(
       'should render markup from dynamic content incorrectly',
       waitForAsync(() => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownDymanicContentTestRenderingComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownDymanicContentTestRenderingComponent> =
+          TestBed.createComponent(
+            TdMarkdownDymanicContentTestRenderingComponent
+          );
         const component: TdMarkdownDymanicContentTestRenderingComponent =
           fixture.debugElement.componentInstance;
         component.content = `
@@ -293,9 +299,8 @@ describe('Component: Markdown', () => {
     it(
       'should jump to anchor when anchor input is changed',
       waitForAsync(async () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownAnchorsTestEventsComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownAnchorsTestEventsComponent> =
+          TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
         const component: TdMarkdownAnchorsTestEventsComponent =
           fixture.debugElement.componentInstance;
         component.content = anchorTestMarkdown();
@@ -333,9 +338,8 @@ describe('Component: Markdown', () => {
     it(
       'should jump to anchor if an anchor link is clicked',
       waitForAsync(async () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownAnchorsTestEventsComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownAnchorsTestEventsComponent> =
+          TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
         const component: TdMarkdownAnchorsTestEventsComponent =
           fixture.debugElement.componentInstance;
         component.content = anchorTestMarkdown();
@@ -375,9 +379,8 @@ describe('Component: Markdown', () => {
     );
 
     it('should jump to anchor if an anchor link is clicked but should not run change detection', async () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdMarkdownAnchorsTestEventsComponent
-      );
+      const fixture: ComponentFixture<TdMarkdownAnchorsTestEventsComponent> =
+        TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
       const component: TdMarkdownAnchorsTestEventsComponent =
         fixture.debugElement.componentInstance;
       component.content = anchorTestMarkdown();
@@ -407,9 +410,8 @@ describe('Component: Markdown', () => {
 
     it('should emit `contentReady` and should not run change detection', fakeAsync(() => {
       const contentReadySpy: jest.Mock = jest.fn();
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdMarkdownAnchorsTestEventsComponent
-      );
+      const fixture: ComponentFixture<TdMarkdownAnchorsTestEventsComponent> =
+        TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
       const component: TdMarkdownAnchorsTestEventsComponent =
         fixture.debugElement.componentInstance;
       component.anchor = 'heading 1';
@@ -435,9 +437,8 @@ describe('Component: Markdown', () => {
     it(
       'should jump to anchor if an anchor link is clicked regardless of lang',
       waitForAsync(async () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownAnchorsTestEventsComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownAnchorsTestEventsComponent> =
+          TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
         const component: TdMarkdownAnchorsTestEventsComponent =
           fixture.debugElement.componentInstance;
         component.content = anchorTestNonEnglishMarkdown();
@@ -479,9 +480,8 @@ describe('Component: Markdown', () => {
     it(
       'should generate the proper urls',
       waitForAsync(async () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownLinksTestEventsComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownLinksTestEventsComponent> =
+          TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
         const component: TdMarkdownLinksTestEventsComponent =
           fixture.debugElement.componentInstance;
 
@@ -554,9 +554,8 @@ describe('Component: Markdown', () => {
     it(
       'should generate the proper image urls',
       waitForAsync(async () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdMarkdownLinksTestEventsComponent
-        );
+        const fixture: ComponentFixture<TdMarkdownLinksTestEventsComponent> =
+          TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
         const component: TdMarkdownLinksTestEventsComponent =
           fixture.debugElement.componentInstance;
 
@@ -628,9 +627,10 @@ describe('Component: Markdown', () => {
       it(
         'should be fired only once after display renders empty static content',
         waitForAsync(() => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(
-            TdMarkdownEmptyStaticContentTestEventsComponent
-          );
+          const fixture: ComponentFixture<TdMarkdownEmptyStaticContentTestEventsComponent> =
+            TestBed.createComponent(
+              TdMarkdownEmptyStaticContentTestEventsComponent
+            );
           const component: TdMarkdownEmptyStaticContentTestEventsComponent =
             fixture.debugElement.componentInstance;
 
@@ -647,9 +647,8 @@ describe('Component: Markdown', () => {
       it(
         'should be fired only once after display renders markup from static content',
         waitForAsync(() => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(
-            TdMarkdownStaticContentTestEventsComponent
-          );
+          const fixture: ComponentFixture<TdMarkdownStaticContentTestEventsComponent> =
+            TestBed.createComponent(TdMarkdownStaticContentTestEventsComponent);
           const component: TdMarkdownStaticContentTestEventsComponent =
             fixture.debugElement.componentInstance;
 
@@ -666,9 +665,10 @@ describe('Component: Markdown', () => {
       it(
         'should be fired only once after display renders initial markup from dynamic content',
         waitForAsync(() => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(
-            TdMarkdownDynamicContentTestEventsComponent
-          );
+          const fixture: ComponentFixture<TdMarkdownDynamicContentTestEventsComponent> =
+            TestBed.createComponent(
+              TdMarkdownDynamicContentTestEventsComponent
+            );
           const component: TdMarkdownDynamicContentTestEventsComponent =
             fixture.debugElement.componentInstance;
           jest.spyOn(component, 'tdMarkdownContentIsReady');
@@ -694,9 +694,10 @@ describe('Component: Markdown', () => {
       it(
         `should be fired twice after changing the initial rendered markup dynamic content`,
         waitForAsync(() => {
-          const fixture: ComponentFixture<any> = TestBed.createComponent(
-            TdMarkdownDynamicContentTestEventsComponent
-          );
+          const fixture: ComponentFixture<TdMarkdownDynamicContentTestEventsComponent> =
+            TestBed.createComponent(
+              TdMarkdownDynamicContentTestEventsComponent
+            );
           const component: TdMarkdownDynamicContentTestEventsComponent =
             fixture.debugElement.componentInstance;
           jest.spyOn(component, 'tdMarkdownContentIsReady');
