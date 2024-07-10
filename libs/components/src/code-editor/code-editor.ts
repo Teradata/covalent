@@ -5,7 +5,7 @@ import { createRef, Ref, ref } from 'lit/directives/ref.js';
 import styles from './code-editor.scss?inline';
 
 // -- Monaco Editor Imports --
-import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
+import { editor } from 'monaco-editor/esm/vs/editor/editor.api.js';
 import baseStyles from 'monaco-editor/min/vs/editor/editor.main.css?inline';
 
 // Register all language contributions

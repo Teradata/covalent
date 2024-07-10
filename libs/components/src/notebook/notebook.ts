@@ -273,6 +273,8 @@ export class CovalentNotebook extends LitElement {
           html`${output.data &&
           Object.keys(output.data).map((key) => {
             const content = document.createElement('div');
+            content.style.maxWidth = '100%';
+            content.style.overflow = 'auto';
             const md = markdownit({ html: true });
             switch (key) {
               case 'text/markdown':
