@@ -1,8 +1,10 @@
 const { defineConfig } = require('vite');
+import monacoEditorPlugin from 'vite-plugin-monaco-editor';
 
 // https://vitejs.dev/config/
 module.exports = defineConfig(({ mode }) => {
   return {
+    plugins: [monacoEditorPlugin({})],
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode),
     },

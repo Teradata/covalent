@@ -71,6 +71,7 @@ export class CovalentCell extends LitElement {
     overviewRulerLanes: 0,
     hideCursorInOverviewRuler: true,
     scrollbar: {
+      alwaysConsumeMouseWheel: false,
       vertical: 'hidden',
     },
   };

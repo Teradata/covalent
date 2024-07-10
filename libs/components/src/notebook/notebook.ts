@@ -147,7 +147,6 @@ export class CovalentNotebook extends LitElement {
       this.selectCell(0);
       this.requestUpdate();
     }
-    this.initializeMonaco();
   }
 
   // Dispatch an event when the cell type is changed
@@ -251,57 +250,6 @@ export class CovalentNotebook extends LitElement {
     if (cell.language === 'markdown') {
       cell.showEditor = true;
     }
-  }
-
-  initializeMonaco(): void {
-    // Define the MonacoEnvironment to specify the worker URL
-    window.MonacoEnvironment = {
-      getWorker: function (_moduleId, label) {
-        switch (label) {
-          case 'json':
-            return new Worker(
-              new URL(
-                '../../../../node_modules/monaco-editor/esm/vs/language/json/json.worker',
-                import.meta.url
-              ),
-              { type: 'module' }
-            );
-          case 'css':
-            return new Worker(
-              new URL(
-                '../../../../node_modules/monaco-editor/esm/vs/language/css/css.worker',
-                import.meta.url
-              ),
-              { type: 'module' }
-            );
-          case 'html':
-            return new Worker(
-              new URL(
-                '../../../../node_modules/monaco-editor/esm/vs/language/html/html.worker',
-                import.meta.url
-              ),
-              { type: 'module' }
-            );
-          case 'typescript':
-          case 'javascript':
-            return new Worker(
-              new URL(
-                '../../../../node_modules/monaco-editor/esm/vs/language/typescript/ts.worker',
-                import.meta.url
-              ),
-              { type: 'module' }
-            );
-          default:
-            return new Worker(
-              new URL(
-                '../../../../node_modules/monaco-editor/esm/vs/editor/editor.worker.js',
-                import.meta.url
-              ),
-              { type: 'module' }
-            );
-        }
-      },
-    };
   }
 
   // Paste the copied/cut cell in the desired position
