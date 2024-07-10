@@ -491,6 +491,7 @@ describe('Component: Markdown', () => {
         const NON_RAW_LINK = 'https://github.com/Teradata/covalent/blob/main/';
         const RAW_LINK =
           'https://raw.githubusercontent.com/Teradata/covalent/main/';
+        const RELATIVE_LINK = 'assets/covalent/';
         const EXTERNAL_URL = 'https://angular.io/';
         const SUB_DIRECTORY = 'docs/';
         const links: string[][] = [
@@ -521,11 +522,6 @@ describe('Component: Markdown', () => {
           markdown += `* [${link[0]}](${link[0]}) \n`;
         });
         component.content = markdown;
-        component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
-
-        fixture.detectChanges();
-        await fixture.whenStable();
-
         const anchorElements: HTMLAnchorElement[] =
           fixture.debugElement.nativeElement.querySelectorAll('a');
         function checkAnchors(): void {
@@ -538,15 +534,23 @@ describe('Component: Markdown', () => {
           );
         }
 
-        checkAnchors();
-        component.hostedUrl = `${NON_RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
-
+        component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
         fixture.detectChanges();
         await fixture.whenStable();
+        checkAnchors();
 
+        component.hostedUrl = `${NON_RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+        fixture.detectChanges();
+        await fixture.whenStable();
+        checkAnchors();
+
+        component.hostedUrl = `${RELATIVE_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+        fixture.detectChanges();
+        await fixture.whenStable();
         checkAnchors();
       })
     );
+
     it(
       'should generate the proper image urls',
       waitForAsync(async () => {
@@ -562,6 +566,7 @@ describe('Component: Markdown', () => {
         const NON_RAW_LINK = 'https://github.com/Teradata/covalent/blob/main/';
         const RAW_LINK =
           'https://raw.githubusercontent.com/Teradata/covalent/main/';
+        const RELATIVE_LINK = 'assets/covalent/';
         const EXTERNAL_IMG =
           'https://angular.io/assets/images/logos/angular/angular.svg';
         const SUB_DIRECTORY = 'dir/';
@@ -587,10 +592,6 @@ describe('Component: Markdown', () => {
           markdown += `* ![${link[0]}](${link[0]}) \n`;
         });
         component.content = markdown;
-        component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
-
-        fixture.detectChanges();
-        await fixture.whenStable();
 
         const imageElements: HTMLImageElement[] =
           fixture.debugElement.nativeElement.querySelectorAll('img');
@@ -604,12 +605,19 @@ describe('Component: Markdown', () => {
           );
         }
 
-        checkImages();
-        component.hostedUrl = `${NON_RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
-
+        component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
         fixture.detectChanges();
         await fixture.whenStable();
+        checkImages();
 
+        component.hostedUrl = `${NON_RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+        fixture.detectChanges();
+        await fixture.whenStable();
+        checkImages();
+
+        component.hostedUrl = `${RELATIVE_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+        fixture.detectChanges();
+        await fixture.whenStable();
         checkImages();
       })
     );
