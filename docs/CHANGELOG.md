@@ -1,3 +1,9 @@
+# [8.15.0-beta.9](https://github.com/Teradata/covalent/compare/v8.15.0-beta.8...v8.15.0-beta.9) (2024-07-10)
+
+### Bug Fixes
+
+- **build:** reduce build size for components ([6a32f72](https://github.com/Teradata/covalent/commit/6a32f725b78ae3414f9c04f51f566093cc71dd84))
+
 # [8.15.0-beta.8](https://github.com/Teradata/covalent/compare/v8.15.0-beta.7...v8.15.0-beta.8) (2024-07-10)
 
 ### Bug Fixes
