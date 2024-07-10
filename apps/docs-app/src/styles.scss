@@ -66,7 +66,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme(
-
+  $theme
 ); // OR @import '~highlight.js/styles/vs.css';
 @include covalent-flavored-markdown-theme($theme);
 @include covalent-markdown-navigator-theme($theme);

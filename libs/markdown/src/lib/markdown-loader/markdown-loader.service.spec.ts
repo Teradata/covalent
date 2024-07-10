@@ -2,7 +2,7 @@ import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { TdMarkdownLoaderService } from './markdown-loader.service';
 import { CovalentMarkdownModule } from '../markdown.module';
 
-const SAMPLE_HEADING = 'Covalent: UI Platform based on Angular-Material';
+const SAMPLE_HEADING = 'Covalent Design System';
 
 const RAW_GH_URL =
   'https://raw.githubusercontent.com/Teradata/covalent/main/README.md';
