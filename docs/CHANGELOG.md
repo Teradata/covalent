@@ -1,3 +1,9 @@
+# [8.15.0-beta.8](https://github.com/Teradata/covalent/compare/v8.15.0-beta.7...v8.15.0-beta.8) (2024-07-10)
+
+### Bug Fixes
+
+- **build:** use monaco plugin for components build ([39cdf5b](https://github.com/Teradata/covalent/commit/39cdf5ba50dc2af1de5b5b49c47f3c7289576f47))
+
 # [8.15.0-beta.7](https://github.com/Teradata/covalent/compare/v8.15.0-beta.6...v8.15.0-beta.7) (2024-07-09)
 
 ### Features
