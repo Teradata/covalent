@@ -1,3 +1,9 @@
+# [8.15.0-beta.10](https://github.com/Teradata/covalent/compare/v8.15.0-beta.9...v8.15.0-beta.10) (2024-07-10)
+
+### Bug Fixes
+
+- **notebooks:** fix cell output overflow issue ([bd67819](https://github.com/Teradata/covalent/commit/bd67819149ea9150127e7d87bc3dd74ecf1f8e0a))
+
 # [8.15.0-beta.9](https://github.com/Teradata/covalent/compare/v8.15.0-beta.8...v8.15.0-beta.9) (2024-07-10)
 
 ### Bug Fixes
