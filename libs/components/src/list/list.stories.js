@@ -11,10 +11,10 @@ export default {
   },
 };
 
-const BasicTemplate = ({ selected }) => {
+const BasicTemplate = ({ selected, disabled }) => {
   return `
     <cv-list activatable>
-        <cv-list-item>Item 0</cv-list-item>
+        <cv-list-item ${disabled ? `disabled` : null}>Item 0</cv-list-item>
         <cv-list-item ${
           selected ? `selected activated` : null
         }>Item 1</cv-list-item>
@@ -85,6 +85,7 @@ const CheckRadioTemplate = ({ listType = 'check' }) => {
 export const Basic = BasicTemplate.bind({});
 Basic.args = {
   selected: false,
+  disabled: false,
 };
 
 export const WithAvatar = IconTemplate.bind({});
