@@ -1,3 +1,9 @@
+## [8.14.1](https://github.com/Teradata/covalent/compare/v8.14.0...v8.14.1) (2024-06-14)
+
+### Bug Fixes
+
+- **icon-button-toggle:** replace property on with toggledOn ([#2175](https://github.com/Teradata/covalent/issues/2175)) ([d5d8d5d](https://github.com/Teradata/covalent/commit/d5d8d5d45752206fd024c2e4381845c5ea778785))
+
 # [8.14.0](https://github.com/Teradata/covalent/compare/v8.13.0...v8.14.0) (2024-06-11)
 
 ### Features
