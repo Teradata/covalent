@@ -13,6 +13,13 @@
 
 :host([disabled]) {
   color: var(--cv-theme-on-surface-38);
+
+  &:host([graphic='avatar']) .mdc-deprecated-list-item__graphic,
+  .mdc-deprecated-list-item__meta {
+    --mdc-theme-text-icon-on-background: var(
+      --cv-theme-on-primary-container-16
+    );
+  }
 }
 
 .mdc-deprecated-list-item__meta.material-icons ::slotted(cv-icon) {

@@ -23,10 +23,10 @@ const BasicTemplate = ({ selected, disabled }) => {
     </cv-list>`;
 };
 
-const IconTemplate = ({ icon, iconStyle = 'avatar' }) => {
+const IconTemplate = ({ icon, iconStyle = 'avatar', disabled }) => {
   return `
     <cv-list>
-        <cv-list-item graphic="${iconStyle}">
+        <cv-list-item graphic="${iconStyle}" ${disabled ? `disabled` : null}>
             <span>${iconStyle} 0</span>
             <cv-icon slot="graphic">${icon}</cv-icon>
         </cv-list-item>
@@ -49,10 +49,10 @@ const IconTemplate = ({ icon, iconStyle = 'avatar' }) => {
     </cv-list>`;
 };
 
-const TwoLineTemplate = ({ icon, style, required, helper }) => {
+const TwoLineTemplate = ({ icon, style, required, helper, disabled }) => {
   return `
     <cv-list>
-        <cv-list-item twoline>
+        <cv-list-item twoline ${disabled ? `disabled` : null}>
             <span>Item 0</span>
             <span slot="secondary">Secondary line</span>
         </cv-list-item>
@@ -71,10 +71,12 @@ const TwoLineTemplate = ({ icon, style, required, helper }) => {
     </cv-list>`;
 };
 
-const CheckRadioTemplate = ({ listType = 'check' }) => {
+const CheckRadioTemplate = ({ listType = 'check', disabled }) => {
   return `
     <cv-list multi>
-        <cv-${listType}-list-item selected>Item 0</cv-${listType}-list-item>
+        <cv-${listType}-list-item selected ${
+    disabled ? `disabled` : null
+  }>Item 0</cv-${listType}-list-item>
         <cv-${listType}-list-item selected>Item 1</cv-${listType}-list-item>
         <li divider role="separator" padded></li>
         <cv-${listType}-list-item left selected>Item 2 (left)</cv-${listType}-list-item>
@@ -92,6 +94,7 @@ export const WithAvatar = IconTemplate.bind({});
 WithAvatar.args = {
   icon: 'folder',
   iconStyle: 'avatar',
+  disabled: false,
 };
 WithAvatar.argTypes = {
   iconStyle: {
@@ -101,8 +104,14 @@ WithAvatar.argTypes = {
 };
 
 export const TwoLine = TwoLineTemplate.bind({});
+TwoLine.args = {
+  disabled: false,
+};
 
 export const ChecksAndRadios = CheckRadioTemplate.bind({});
+ChecksAndRadios.args = {
+  disabled: false,
+};
 ChecksAndRadios.argTypes = {
   listType: {
     options: ['check', 'radio'],
