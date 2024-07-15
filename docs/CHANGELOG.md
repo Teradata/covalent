@@ -1,3 +1,9 @@
+# [8.15.0-beta.12](https://github.com/Teradata/covalent/compare/v8.15.0-beta.11...v8.15.0-beta.12) (2024-07-15)
+
+### Bug Fixes
+
+- **notebooks:** fix UI bugs in notebook ([9164507](https://github.com/Teradata/covalent/commit/91645072293b52262b16bd623a02c19bb64e3fd7))
+
 # [8.15.0-beta.11](https://github.com/Teradata/covalent/compare/v8.15.0-beta.10...v8.15.0-beta.11) (2024-07-15)
 
 ### Features
