@@ -1,3 +1,10 @@
+## [8.14.2](https://github.com/Teradata/covalent/compare/v8.14.1...v8.14.2) (2024-07-12)
+
+### Bug Fixes
+
+- **components:** list item disabled ([#2184](https://github.com/Teradata/covalent/issues/2184)) ([207630d](https://github.com/Teradata/covalent/commit/207630de62edb56328278aa166546a29238a7a1e))
+- **markdown:** allow relative paths ([#2185](https://github.com/Teradata/covalent/issues/2185)) ([3aeae73](https://github.com/Teradata/covalent/commit/3aeae73a784cb604252e5b9aaf12ce5084942d3a))
+
 ## [8.14.1](https://github.com/Teradata/covalent/compare/v8.14.0...v8.14.1) (2024-06-14)
 
 ### Bug Fixes
