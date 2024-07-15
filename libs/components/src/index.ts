@@ -3,7 +3,7 @@ export * from './alert/alert';
 export * from './app-shell/app-shell';
 export * from './badge/badge';
 export * from './button/button';
-export * from './cell/cell';
+export * from './notebook-cell/notebook-cell';
 export * from './checkbox/checkbox';
 export * from './card/card';
 export * from './chips/chip';

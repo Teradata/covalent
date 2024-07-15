@@ -41,10 +41,10 @@
       "import": "./button.mjs",
       "require": "./button.js"
     },
-    "./cell": {
-      "types": "./cell/cell.d.ts",
-      "import": "./cell.mjs",
-      "require": "./cell.js"
+    "./notebook-cell": {
+      "types": "./notebook-cell/notebook-cell.d.ts",
+      "import": "./notebook-cell.mjs",
+      "require": "./notebook-cell.js"
     },
     "./checkbox": {
       "types": "./checkbox/checkbox.d.ts",

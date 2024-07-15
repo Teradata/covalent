@@ -27,6 +27,7 @@ cv-code-editor {
 .selectionIndicator {
   background-color: var(--cv-theme-primary);
   border-radius: 2px;
+  cursor: move;
   margin-top: 2px;
   visibility: hidden;
   min-width: 8px;
@@ -34,21 +35,21 @@ cv-code-editor {
 
 .timesExecuted {
   color: var(--cv-theme-outline-variant);
+  cursor: move;
   display: inline-flex;
   font-family: var(--mdc-typography-body2-font-family);
   font-size: var(--mdc-typography-body2-font-size);
+  height: 100%;
   justify-content: end;
   line-height: var(--mdc-typography-body2-line-height);
-  padding: 0 0.75rem;
-  min-width: 8%;
-  max-width: 8%;
+  text-wrap: nowrap;
 
   .executionCount {
     box-sizing: border-box;
     display: inline-block;
-    max-width: 70%;
-    padding: 0 2px;
+    max-width: 32px;
     overflow: hidden;
+    padding: 0 2px;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -85,18 +86,21 @@ cv-code-editor {
 }
 
 .cellCodeWrapper {
-  align-items: flex-start;
+  align-items: start;
   display: flex;
-  justify-content: space-between;
-  width: calc(100% - 8px);
+  gap: 0.75rem;
+  justify-content: end;
+  width: calc(100% - 2rem);
 }
 
 .cellOutputWrapper {
-  max-width: 90%;
-  min-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 92%;
+  min-width: 92%;
 }
 
 .output {
-  margin: 0.75rem 0.25rem 0.5rem;
   max-width: 100%;
 }

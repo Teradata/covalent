@@ -3,18 +3,21 @@ import {
   html,
   LitElement,
   PropertyValues,
+  render,
   TemplateResult,
   unsafeCSS,
 } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import markdownit from 'markdown-it';
 import styles from './notebook.scss?inline';
-import '../cell/cell';
+import '../alert/alert';
+import '../button/button';
+import '../notebook-cell/notebook-cell';
+import '../code-snippet/code-snippet';
 import '../icon/icon';
 import '../icon-button/icon-button';
-import '../button/button';
-import '../select/select';
 import '../list/list-item';
+import '../select/select';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -89,8 +92,9 @@ export class CovalentNotebook extends LitElement {
 
   // Add a cell to the notebook
   addCell(cellData: CellData) {
-    this.cells = [...this.cells, cellData];
-    this.requestUpdate();
+    this._clipboardCell = { ...cellData };
+    this.pasteCell();
+    this._clipboardCell = null;
   }
 
   // Copy the selected cell
@@ -104,9 +108,7 @@ export class CovalentNotebook extends LitElement {
   cutCell() {
     if (this._selectedCellIndex !== null) {
       this._clipboardCell = this.cells[this._selectedCellIndex];
-      this.cells.splice(this._selectedCellIndex, 1);
-      this._selectedCellIndex = null;
-      this.requestUpdate();
+      this.deleteCell();
     }
   }
 
@@ -115,7 +117,7 @@ export class CovalentNotebook extends LitElement {
     if (this._selectedCellIndex !== null) {
       this.cells.splice(this._selectedCellIndex, 1);
       this._selectedCellIndex = null;
-      this.requestUpdate();
+      this.dispatchUpdatedCells();
     }
   }
 
@@ -131,13 +133,23 @@ export class CovalentNotebook extends LitElement {
     }
     if (cell) {
       this.dispatchEvent(
-        new CustomEvent(name, {
+        new CustomEvent('cell-action', {
           bubbles: true,
           cancelable: true,
-          detail: { cell, index: this._selectedCellIndex },
+          detail: { cell, index: this._selectedCellIndex, action: name },
         })
       );
     }
+  }
+
+  dispatchUpdatedCells(): void {
+    this.dispatchEvent(
+      new CustomEvent('cells-updated', {
+        bubbles: true,
+        cancelable: true,
+        detail: { cells: this.cells },
+      })
+    );
   }
 
   protected firstUpdated(): void {
@@ -148,6 +160,27 @@ export class CovalentNotebook extends LitElement {
       this.selectCell(0);
       this.requestUpdate();
     }
+  }
+
+  getDragImage(cellIndex: number): HTMLElement {
+    const cell = this.cells[cellIndex];
+
+    const template = html`
+      <div class="dragImage" style="min-width: 300px;">
+        <cv-notebook-cell
+          .code="${cell.code}"
+          .language="${cell.language}"
+          .timesExecuted="${cell.timesExecuted || 0}"
+          .loading="${cell.loading}"
+          .selected="false"
+          .showEditor="false"
+        ></cv-notebook-cell>
+      </div>
+    `;
+    const container = document.createElement('div');
+    render(template, container);
+
+    return container;
   }
 
   // Dispatch an event when the cell type is changed
@@ -176,6 +209,19 @@ export class CovalentNotebook extends LitElement {
       target.classList.add('dragged');
       e.dataTransfer.effectAllowed = 'move';
       e.dataTransfer.setData('text/plain', index.toString());
+
+      // Get a custom drag image
+      const dragImageContainer = this.getDragImage(index);
+      const dragImage = dragImageContainer.firstElementChild as HTMLElement;
+      dragImage.style.position = 'absolute';
+      dragImage.style.top = '-1000px'; // Move off-screen
+      document.body.appendChild(dragImage);
+      e.dataTransfer.setDragImage(dragImage, 0, 0);
+
+      // Clean up drag image after drag starts
+      setTimeout(() => {
+        document.body.removeChild(dragImage);
+      }, 0);
     }
   }
 
@@ -193,6 +239,7 @@ export class CovalentNotebook extends LitElement {
     this.handleDragLeave(e);
     if (this._draggedCellIndex !== null) {
       const draggedCell = this.cells[this._draggedCellIndex];
+      draggedCell.selected = true;
       this.cells = [
         ...this.cells.slice(0, this._draggedCellIndex),
         ...this.cells.slice(this._draggedCellIndex + 1),
@@ -207,13 +254,7 @@ export class CovalentNotebook extends LitElement {
       this.cells = this.cells.map((cell, idx) => ({ ...cell, index: idx }));
 
       this._draggedCellIndex = null;
-      this.dispatchEvent(
-        new CustomEvent('drag-finished', {
-          bubbles: true,
-          cancelable: true,
-          detail: { cells: this.cells },
-        })
-      );
+      this.dispatchUpdatedCells();
     }
   }
 
@@ -260,10 +301,12 @@ export class CovalentNotebook extends LitElement {
         this._selectedCellIndex !== null
           ? this._selectedCellIndex + 1
           : this.cells.length;
+      this.deselectAllCells();
+      this._clipboardCell.selected = true;
       this.cells.splice(index, 0, { ...this._clipboardCell });
       this.cells = this.cells.map((cell, idx) => ({ ...cell, index: idx }));
       this._selectedCellIndex = index;
-      this.requestUpdate();
+      this.dispatchUpdatedCells();
     }
   }
 
@@ -287,6 +330,7 @@ export class CovalentNotebook extends LitElement {
               case 'image/png': {
                 const image = document.createElement('img');
                 image.style.maxWidth = '100%';
+                image.draggable = false;
                 image.src = `data:image/png;base64, ${output.data[key]}`;
                 content.appendChild(image);
                 break;
@@ -302,7 +346,6 @@ export class CovalentNotebook extends LitElement {
   protected render() {
     return html`<div class="notebook">
       <section class="notebookHeaderActions">
-        <cv-icon-button class="filledIcon" icon="save"></cv-icon-button>
         <cv-icon-button
           icon="content_cut"
           @click="${this.cutCell}"
@@ -353,7 +396,7 @@ export class CovalentNotebook extends LitElement {
       <section class="notebookCells">
         ${this.cells.map(
           (cell, index) =>
-            html`<cv-cell
+            html`<cv-notebook-cell
               .code="${cell.code}"
               .index="${index}"
               .language="${cell.language}"
@@ -361,7 +404,6 @@ export class CovalentNotebook extends LitElement {
               .timesExecuted="${cell.timesExecuted}"
               .loading="${cell.loading}"
               id="cell-${index}"
-              draggable="true"
               @dragstart="${(e: DragEvent) => this.handleDragStart(e, index)}"
               @dragover="${(e: DragEvent) => this.handleDragOver(e)}"
               @dragleave="${(e: DragEvent) => this.handleDragLeave(e)}"
@@ -395,10 +437,20 @@ export class CovalentNotebook extends LitElement {
                 `
               )}
               ${cell.errors?.length &&
-              html`<cv-typography class="error" slot="error" scale="body2">
-                ${cell.errors && cell.errors.map((error) => html`${error}`)}
-              </cv-typography>`}
-            </cv-cell>`
+              html`<div slot="error">
+                ${cell.errors &&
+                cell.errors.map(
+                  (error) => html`<cv-alert
+                    descriptionText="${error}"
+                    state="negative"
+                    icon="error"
+                    iconAriaLabel="error"
+                    inline
+                  >
+                  </cv-alert>`
+                )}
+              </div>`}
+            </cv-notebook-cell>`
         )}
       </section>
       <section class="notebookActions">

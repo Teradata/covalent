@@ -1,7 +1,7 @@
-import './cell';
+import './notebook-cell';
 
 export default {
-  title: 'Components/Cell',
+  title: 'Components/Notebook Cell',
   args: {
     code: '',
     index: 0,
@@ -23,10 +23,10 @@ const Template = ({
   timesExecuted,
 }) => {
   return `<div style="width: 800px; ">
-            <cv-cell code="${code}" index="${index}" language="${language}" timesExecuted="${timesExecuted}" ${
+            <cv-notebook-cell code="${code}" index="${index}" language="${language}" timesExecuted="${timesExecuted}" ${
     showEditor ? 'showEditor' : ''
   } ${selected ? 'selected' : ''} ${loading ? 'loading' : ''}
-  ></cv-cell>
+  ></cv-notebook-cell>
           </div>`;
 };
 

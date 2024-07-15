@@ -15,7 +15,7 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/app-shell/app-shell',
           'libs/components/src/badge/badge',
           'libs/components/src/button/button',
-          'libs/components/src/cell/cell',
+          'libs/components/src/notebook-cell/notebook-cell',
           'libs/components/src/checkbox/checkbox',
           'libs/components/src/card/card',
           'libs/components/src/chips/chip',

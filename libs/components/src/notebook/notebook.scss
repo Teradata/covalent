@@ -2,9 +2,7 @@
   --cv-notebook-height: 100%;
   --cv-notebook-width: 100%;
 
-  cv-cell {
-    cursor: move;
-
+  cv-notebook-cell {
     &.dragged {
       transform: translate3d(0, 0, 0);
     }
@@ -16,10 +14,6 @@
 }
 
 .error {
-  background-color: var(--cv-theme-negative-8);
-  border: 1px solid var(--cv-theme-negative-24);
-  box-sizing: border-box;
-  color: var(--cv-theme-on-negative-container-20);
   margin: 0.75rem 1px;
   padding: 0 0.25rem;
 }

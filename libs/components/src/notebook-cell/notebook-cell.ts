@@ -1,6 +1,6 @@
 import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import styles from './cell.scss?inline';
+import styles from './notebook-cell.scss?inline';
 import { classMap } from 'lit/directives/class-map.js';
 
 import '../code-editor/code-editor';
@@ -10,7 +10,7 @@ import '../typography/typography';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cv-cell': CovalentCell;
+    'cv-notebook-cell': CovalentNotebookCell;
   }
 }
 
@@ -18,8 +18,8 @@ enum CvCellEvents {
   RUN_CODE = 'cell-run-code',
 }
 
-@customElement('cv-cell')
-export class CovalentCell extends LitElement {
+@customElement('cv-notebook-cell')
+export class CovalentNotebookCell extends LitElement {
   /**
    * The index of the cell in a notebook
    */
@@ -137,7 +137,7 @@ export class CovalentCell extends LitElement {
           >${this.code}</cv-code-snippet
         >`;
 
-    const output = html`<slot name="error"></slot>
+    const output = html` <div class="errors"><slot name="error"></slot></div>
       <cv-typography class="output" scale="body1">
         <slot name="output"></slot>
         <slot name="input"></slot>
@@ -152,12 +152,13 @@ export class CovalentCell extends LitElement {
 
   renderExecutionCount() {
     let executionCount = html`&nbsp;`;
-    if (this.showEditor) {
-      if (this.loading) {
-        executionCount = html`<span class="loading">*</span>`;
-      } else if (this.timesExecuted) {
-        executionCount = html`${this.timesExecuted}`;
-      }
+    if (this.language === 'markdown') {
+      return executionCount;
+    }
+    if (this.loading) {
+      executionCount = html`<span class="loading">*</span>`;
+    } else {
+      executionCount = html`${this.timesExecuted || ' '}`;
     }
     return html`[<span class="executionCount">${executionCount}</span>] :`;
   }
@@ -170,14 +171,18 @@ export class CovalentCell extends LitElement {
     };
     return html`
       <div class="${classMap(classes)}">
-        <span class="selectionIndicator"></span>
+        <span class="selectionIndicator" draggable="true"></span>
         <div class="cellCodeWrapper">
-          <span class="timesExecuted">${this.renderExecutionCount()}</span>
-          <div class="cellOutputWrapper">${this.renderEditor()}</div>
+          <span class="timesExecuted" draggable="true"
+            >${this.renderExecutionCount()}</span
+          >
+          <div class="cellOutputWrapper" draggable="false">
+            ${this.renderEditor()}
+          </div>
         </div>
       </div>
     `;
   }
 }
 
-export default CovalentCell;
+export default CovalentNotebookCell;
