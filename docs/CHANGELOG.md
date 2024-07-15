@@ -1,3 +1,9 @@
+# [8.15.0-beta.11](https://github.com/Teradata/covalent/compare/v8.15.0-beta.10...v8.15.0-beta.11) (2024-07-15)
+
+### Features
+
+- **notebooks:** add a loading indicator for cells ([353387f](https://github.com/Teradata/covalent/commit/353387fae365b0d2c04735ac26b244ed2cda6582))
+
 # [8.15.0-beta.10](https://github.com/Teradata/covalent/compare/v8.15.0-beta.9...v8.15.0-beta.10) (2024-07-10)
 
 ### Bug Fixes
