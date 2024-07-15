@@ -28,6 +28,7 @@ interface CellData {
   index?: number;
   inputs?: { password: boolean; prompt: string }[];
   language: string;
+  loading?: boolean;
   outputs?: {
     data: {
       [key: string]: string;
@@ -358,6 +359,7 @@ export class CovalentNotebook extends LitElement {
               .language="${cell.language}"
               .showEditor="${cell.showEditor !== false}"
               .timesExecuted="${cell.timesExecuted}"
+              .loading="${cell.loading}"
               id="cell-${index}"
               draggable="true"
               @dragstart="${(e: DragEvent) => this.handleDragStart(e, index)}"

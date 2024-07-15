@@ -39,6 +39,12 @@ export class CovalentCell extends LitElement {
   language = '';
 
   /**
+   * Whether the cell is loading
+   */
+  @property({ type: Boolean, reflect: true })
+  loading = false;
+
+  /**
    * Whether the cell is selected
    */
   @property({ type: Boolean, reflect: true })
@@ -110,10 +116,11 @@ export class CovalentCell extends LitElement {
       } else {
         const codeSnippet = this.shadowRoot?.querySelector('cv-code-snippet');
         if (codeSnippet && !this.selected) {
-          codeSnippet.language = this.language;
+          codeSnippet.highlight();
         }
       }
     }
+    super.updated(changedProperties);
   }
 
   renderEditor() {
@@ -143,6 +150,18 @@ export class CovalentCell extends LitElement {
       : ''}`;
   }
 
+  renderExecutionCount() {
+    let executionCount = html`&nbsp;`;
+    if (this.showEditor) {
+      if (this.loading) {
+        executionCount = html`<span class="loading">*</span>`;
+      } else if (this.timesExecuted) {
+        executionCount = html`${this.timesExecuted}`;
+      }
+    }
+    return html`[<span class="executionCount">${executionCount}</span>] :`;
+  }
+
   protected render() {
     const classes = {
       cell: true,
@@ -151,16 +170,10 @@ export class CovalentCell extends LitElement {
     };
     return html`
       <div class="${classMap(classes)}">
-        <span class="selection-indicator"></span>
-        <div class="cellWrapper">
-          <div class="cellCodeWrapper">
-            <span class="timesExecuted">
-              ${this.showEditor
-                ? html`[${!this.timesExecuted ? '  ' : this.timesExecuted}]:`
-                : ''}
-            </span>
-            <div class="cellOutputWrapper">${this.renderEditor()}</div>
-          </div>
+        <span class="selectionIndicator"></span>
+        <div class="cellCodeWrapper">
+          <span class="timesExecuted">${this.renderExecutionCount()}</span>
+          <div class="cellOutputWrapper">${this.renderEditor()}</div>
         </div>
       </div>
     `;

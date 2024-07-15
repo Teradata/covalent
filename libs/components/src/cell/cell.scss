@@ -20,7 +20,11 @@ cv-code-snippet::part(code) {
   white-space: pre-wrap;
 }
 
-.selection-indicator {
+cv-code-editor {
+  margin-top: -1px;
+}
+
+.selectionIndicator {
   background-color: var(--cv-theme-primary);
   border-radius: 2px;
   margin-top: 2px;
@@ -30,9 +34,30 @@ cv-code-snippet::part(code) {
 
 .timesExecuted {
   color: var(--cv-theme-outline-variant);
-  margin: 0 2rem;
-  min-height: var(--mdc-icon-button-size);
-  min-width: var(--mdc-icon-button-size);
+  display: inline-flex;
+  font-family: var(--mdc-typography-body2-font-family);
+  font-size: var(--mdc-typography-body2-font-size);
+  justify-content: end;
+  line-height: var(--mdc-typography-body2-line-height);
+  padding: 0 0.75rem;
+  min-width: 8%;
+  max-width: 8%;
+
+  .executionCount {
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 70%;
+    padding: 0 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .loading {
+    font-size: var(--mdc-typography-headline6-font-size);
+    position: relative;
+    top: 0.275rem;
+  }
 }
 
 .cell {
@@ -43,7 +68,7 @@ cv-code-snippet::part(code) {
   &:hover,
   &.focused,
   &.selected {
-    .selection-indicator {
+    .selectionIndicator {
       visibility: visible;
     }
 
@@ -63,10 +88,12 @@ cv-code-snippet::part(code) {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
+  width: calc(100% - 8px);
 }
 
 .cellOutputWrapper {
-  width: calc(100% - 96px);
+  max-width: 90%;
+  min-width: 90%;
 }
 
 .output {

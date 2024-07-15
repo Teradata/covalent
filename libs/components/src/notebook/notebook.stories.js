@@ -18,12 +18,14 @@ export default {
           },
         ],
         errors: ['Error: Could not load data.'],
+        timesExecuted: 1,
       },
       {
         code: 'select * from table_name;',
         language: 'sql',
         outputs: [{ data: { 'text/markdown': 'heres some output' } }],
         inputs: [{ prompt: 'enter password', password: true }],
+        loading: true,
       },
       {
         code: `
