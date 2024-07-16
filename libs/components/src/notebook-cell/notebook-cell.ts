@@ -171,7 +171,10 @@ export class CovalentNotebookCell extends LitElement {
     };
     return html`
       <div class="${classMap(classes)}">
-        <span class="selectionIndicator" draggable="true"></span>
+        <div class="selectionIndicatorWrapper" draggable="true">
+          <div class="selectionIndicator"></div>
+        </div>
+
         <div class="cellCodeWrapper">
           <span class="timesExecuted" draggable="true"
             >${this.renderExecutionCount()}</span

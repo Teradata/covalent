@@ -32,7 +32,8 @@
   flex-direction: column;
   gap: 0.5rem;
   height: calc(100% - 106px);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 1rem;
   width: 100%;
 }

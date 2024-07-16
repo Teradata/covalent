@@ -17,7 +17,6 @@ export default {
             output_type: 'display_data',
           },
         ],
-        errors: ['Error: Could not load data.'],
         timesExecuted: 12121,
       },
       {
