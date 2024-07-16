@@ -1,3 +1,9 @@
+# [8.15.0-beta.13](https://github.com/Teradata/covalent/compare/v8.15.0-beta.12...v8.15.0-beta.13) (2024-07-16)
+
+### Features
+
+- **notebooks:** keyboard actions for the cells ([42a3ed4](https://github.com/Teradata/covalent/commit/42a3ed4e895add0ceebf85d7cf3397df30091e1e))
+
 # [8.15.0-beta.12](https://github.com/Teradata/covalent/compare/v8.15.0-beta.11...v8.15.0-beta.12) (2024-07-15)
 
 ### Bug Fixes
