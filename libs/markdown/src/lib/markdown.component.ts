@@ -30,6 +30,7 @@ import * as showdown from 'showdown';
 function isAbsoluteUrl(currentHref: string): boolean {
   // Regular Expression to check url
   const RgExp = new RegExp('^(?:[a-z]+:)?//', 'i');
+  console.log('test', RgExp.test(currentHref));
   return RgExp.test(currentHref);
 }
 
