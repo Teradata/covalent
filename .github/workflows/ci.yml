@@ -2,7 +2,7 @@ name: Covalent CI
 
 on:
   pull_request:
-    branches: [main, release/4.x.x]
+    branches: [main, release/4.16.x]
 
 jobs:
   lint:
