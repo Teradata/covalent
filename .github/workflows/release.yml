@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [main, develop, release/4.x.x]
+    branches: [{ name: 'main' }, { name: 'develop' }, { name: 'release/4.x.x' }]
 
 jobs:
   release:
