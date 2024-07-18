@@ -1,3 +1,15 @@
+# [4.17.0](https://github.com/Teradata/covalent/compare/v4.16.3...v4.17.0) (2024-07-18)
+
+### Bug Fixes
+
+- add v4 branch to release pipeline ([9a0fc63](https://github.com/Teradata/covalent/commit/9a0fc632cdaacd91ae9480335c70298f328afd95))
+- **icon:** update to use material icons outline ([#2160](https://github.com/Teradata/covalent/issues/2160)) ([4256ec4](https://github.com/Teradata/covalent/commit/4256ec43fdc121128e146170ae19fc73f09e3850))
+- **markdown:** allow relative paths ([#2191](https://github.com/Teradata/covalent/issues/2191)) ([36933f3](https://github.com/Teradata/covalent/commit/36933f3c15cdd5fe0980daa13358e907917a0268))
+
+### Features
+
+- add raw code toggle to highlight component and update theme ([fe0fbc2](https://github.com/Teradata/covalent/commit/fe0fbc2ae8f343729300a56bd0b4ff01cbabfdb8))
+
 ## [4.16.3](https://github.com/Teradata/covalent/compare/v4.16.2...v4.16.3) (2023-09-11)
 
 ### Bug Fixes
