@@ -1,3 +1,9 @@
+## [8.14.3](https://github.com/Teradata/covalent/compare/v8.14.2...v8.14.3) (2024-07-18)
+
+### Bug Fixes
+
+- **components:** adjusting textfield placeholder size ([#2187](https://github.com/Teradata/covalent/issues/2187)) ([2509276](https://github.com/Teradata/covalent/commit/2509276cef121eee02b5515673fe48f11fe0a296))
+
 ## [8.14.2](https://github.com/Teradata/covalent/compare/v8.14.1...v8.14.2) (2024-07-12)
 
 ### Bug Fixes
