@@ -32,7 +32,7 @@
   },{
     "name": "main"
   },{
-    "name": "release/4.x.x"
+    "name": "release/4.x.x",
     "channel": "4.x",
     "range": "4.x"
   }]
