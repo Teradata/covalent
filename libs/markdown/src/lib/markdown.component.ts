@@ -91,13 +91,14 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
             const hrefWithoutHash: string = removeTrailingHash(
               link.getAttribute('href')
             );
-
-            url.href = generateHref(currentHref, hrefWithoutHash);
+            // since this might be a relative path, don't assign it to url.href
+            // relative path won't be a valid href to assign to URL
+            const newHref = generateHref(currentHref, hrefWithoutHash);
 
             if (originalHash) {
               url.hash = genHeadingId(originalHash);
             }
-            link.href = url.href;
+            link.href = newHref;
           }
           link.target = '_blank';
         } else {
