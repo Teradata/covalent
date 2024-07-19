@@ -1,3 +1,9 @@
+## [4.17.1](https://github.com/Teradata/covalent/compare/v4.17.0...v4.17.1) (2024-07-19)
+
+### Bug Fixes
+
+- **markdown:** relative href links in md and minor styling ([#2194](https://github.com/Teradata/covalent/issues/2194)) ([44aea1e](https://github.com/Teradata/covalent/commit/44aea1ed3d2737c6d777c713993f7c0b217a7d10))
+
 # [4.17.0](https://github.com/Teradata/covalent/compare/v4.16.3...v4.17.0) (2024-07-18)
 
 ### Bug Fixes
