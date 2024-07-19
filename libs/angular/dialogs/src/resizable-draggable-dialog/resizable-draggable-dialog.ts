@@ -144,7 +144,7 @@ export class ResizableDraggableDialog {
         rightLeft = horizontalAlignment.right;
 
         const icon: HTMLElement = this._renderer2.createElement('i');
-        this._renderer2.addClass(icon, 'material-icons');
+        this._renderer2.addClass(icon, 'material-icons-outlined');
         this._renderer2.appendChild(
           icon,
           this._renderer2.createText('filter_list')
