@@ -1,4 +1,4 @@
-import"./card-f8385c9e.js";import{t as v}from"./table.content-6c0ad423.js";/* empty css                           */import"./query-assigned-elements-9f88bee1.js";import"./class-map-018c3a6a.js";import"./property-f36ea729.js";const g={title:"Components/Cards",args:{cardTitle:"Card title",outlined:!1,actionBar:!1,fullHeight:!1}},t=({outlined:l,fullHeight:s,actionBar:d,cardTitle:u})=>`
+import"./card-9307c940.js";import{t as v}from"./table.content-6c0ad423.js";/* empty css                           */import"./query-assigned-elements-9f88bee1.js";import"./class-map-018c3a6a.js";import"./property-f36ea729.js";const g={title:"Components/Cards",args:{cardTitle:"Card title",outlined:!1,actionBar:!1,fullHeight:!1}},t=({outlined:l,fullHeight:s,actionBar:d,cardTitle:u})=>`
   <cv-card 
     cardTitle='${u}'
     ${d?"actionBar":""}

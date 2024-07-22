@@ -4,10 +4,12 @@ import{s,x as l,i as _,r as f,e as g}from"./query-assigned-elements-9f88bee1.js"
               ${this.cardTitle}
             </div>
           `:""}
-      <div class="mdc-card__primary-action">
-        <slot></slot>
-        ${this.interactive?l`<div class="mdc-card__ripple"></div>`:""}
-      </div>
+      ${this.interactive?l`
+            <div class="mdc-card__primary-action">
+              <slot></slot>
+              <div class="mdc-card__ripple"></div>
+            </div>
+          `:l`<slot></slot>`}
       ${this.actionBar?l`
             <div class="mdc-card__actions">
               <slot name="card-actions"></slot>
