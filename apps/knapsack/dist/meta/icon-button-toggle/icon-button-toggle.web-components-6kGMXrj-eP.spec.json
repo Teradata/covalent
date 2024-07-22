@@ -4,7 +4,7 @@
   "type": "object",
   "required": [],
   "properties": {
-    "toggledOn": {
+    "on": {
       "description": "Whether the toggle is activated.",
       "type": "boolean"
     },

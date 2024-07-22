@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@use '@covalent/tokens' as variables;
+@import '../../../libs/angular/theming/all-theme';
+@import '../../../libs/markdown/markdown-theme';
+@import '../../../libs/angular-highlight/highlight-theme';
+@import '../../../libs/markdown-flavored/flavored-markdown-theme';
+@import '../../../libs/markdown-navigator/markdown-navigator-theme';
+@import '../../../libs/angular-guided-tour/guided-tour-theme';
+@import '../../../libs/angular-guided-tour/styles/guided-tour.scss';
+// Teradata brand
+@import '../../../libs/angular/theming/teradata-theme';
+
+@include mat.core-theme($td-dark-theme);
+@include mat.all-component-themes($td-dark-theme);
+@include covalent-theme($td-dark-theme);
+@include covalent-markdown-theme($td-dark-theme);
+@include covalent-highlight-theme($td-dark-theme);
+@include covalent-flavored-markdown-theme($td-dark-theme);
+@include covalent-markdown-navigator-theme($td-dark-theme);
+@include covalent-guided-tour-theme($td-dark-theme);

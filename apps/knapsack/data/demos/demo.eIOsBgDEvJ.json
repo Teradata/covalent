@@ -1,0 +1,12 @@
+{
+  "id": "eIOsBgDEvJ",
+  "title": "New Variation",
+  "description": "A description",
+  "type": "data",
+  "patternId": "button",
+  "templateId": "angular-i3OR9O7kXg",
+  "data": {
+    "props": {},
+    "slots": {}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "1tbPqUI8qS",
+  "title": "Main",
+  "type": "data",
+  "patternId": "breadcrumbs",
+  "templateId": "angular-AERk0Cfhtm",
+  "data": {
+    "props": {},
+    "slots": {}
+  }
+}
