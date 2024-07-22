@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+@use '@covalent/tokens' as variables;
+@import '../../../libs/angular/theming/all-theme';
+@import '../../../libs/markdown/markdown-theme';
+@import '../../../libs/angular-highlight/highlight-theme';
+@import '../../../libs/markdown-flavored/flavored-markdown-theme';
+@import '../../../libs/markdown-navigator/markdown-navigator-theme';
+@import '../../../libs/angular-guided-tour/guided-tour-theme';
+@import '../../../libs/angular-guided-tour/styles/guided-tour.scss';
+// Teradata brand
+@import '../../../libs/angular/theming/teradata-theme';
+
+// Import Inter styles from google apis CDN
+@import url('https://fonts.googleapis.com/css?family=Inter:300,400,500');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@include mat.core();
+@include covalent-core();
+@include covalent-utilities();
+@include covalent-layout();
+@include covalent-colors();
+@include covalent-material-icons();

@@ -1,0 +1,32 @@
+{
+  "id": "5QJfHMXB7",
+  "title": "Main",
+  "type": "data",
+  "patternId": "breadcrumbs",
+  "templateId": "angular-Gf9hp0rJ0",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "breadcrumbs",
+          "templateId": "angular-is5CEIoQN",
+          "demoId": "096QEJzzaN"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "breadcrumbs",
+          "templateId": "angular-is5CEIoQN",
+          "demoId": "096QEJzzaN"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "breadcrumbs",
+          "templateId": "angular-is5CEIoQN",
+          "demoId": "096QEJzzaN"
+        }
+      ]
+    }
+  }
+}
