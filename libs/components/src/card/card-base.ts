@@ -56,7 +56,7 @@ export class CardBase extends LitElement {
               <div class="mdc-card__ripple"></div>
             </div>
           `
-        : '<slot></slot>'}
+        : html`<slot></slot>`}
       ${this.actionBar
         ? html`
             <div class="mdc-card__actions">
