@@ -1,3 +1,9 @@
+## [4.17.2](https://github.com/Teradata/covalent/compare/v4.17.1...v4.17.2) (2024-07-22)
+
+### Bug Fixes
+
+- **draggable-handle:** use correct icon ([#2197](https://github.com/Teradata/covalent/issues/2197)) ([ffe7de0](https://github.com/Teradata/covalent/commit/ffe7de0f3ac5bd9d3f7fd43d45b12c5ff2e60139))
+
 ## [4.17.1](https://github.com/Teradata/covalent/compare/v4.17.0...v4.17.1) (2024-07-19)
 
 ### Bug Fixes
