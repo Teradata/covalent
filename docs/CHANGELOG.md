@@ -1,3 +1,9 @@
+## [8.14.4](https://github.com/Teradata/covalent/compare/v8.14.3...v8.14.4) (2024-07-22)
+
+### Bug Fixes
+
+- **components:** styling adjustment to cards web component ([#2198](https://github.com/Teradata/covalent/issues/2198)) ([fdab895](https://github.com/Teradata/covalent/commit/fdab895401df48ed9c4a42848709175b689ffc69))
+
 ## [8.14.3](https://github.com/Teradata/covalent/compare/v8.14.2...v8.14.3) (2024-07-18)
 
 ### Bug Fixes
