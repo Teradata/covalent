@@ -23,6 +23,16 @@
   }
 }
 
+:host([selected]:not([activated])) .expansion-header {
+  transition: background-color 250ms ease-in, color 250ms ease-in;
+  background-color: var(--cv-list-item-selected-background-color);
+  color: var(--cv-list-item-selected-color);
+
+  .mdc-deprecated-list-item__graphic {
+    --mdc-theme-text-icon-on-background: var(--cv-list-item-selected-color);
+  }
+}
+
 :host([subnav]) {
   height: 32px;
   font-weight: var(--mdc-typography-body2-font-weight);
