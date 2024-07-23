@@ -1,3 +1,9 @@
+# [8.15.0-beta.14](https://github.com/Teradata/covalent/compare/v8.15.0-beta.13...v8.15.0-beta.14) (2024-07-23)
+
+### Bug Fixes
+
+- **notebook:** show markdown editor on dbl click ([3db7f07](https://github.com/Teradata/covalent/commit/3db7f0788a610e5ba2b5e3b6bc90aa7e5698a51a))
+
 # [8.15.0-beta.13](https://github.com/Teradata/covalent/compare/v8.15.0-beta.12...v8.15.0-beta.13) (2024-07-16)
 
 ### Features
