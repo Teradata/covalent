@@ -1,3 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-    <path d="M9 19v3H7v-3h2zm4 0v3h-2v-3h2zm4 0v3h-2v-3h2zM16 6a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2zm6 9v2h-3v-2h3zM5 15v2H2v-2h3zm10-2h-4v2h4v-2zm7-2v2h-3v-2h3zM5 11v2H2v-2h3zm17-4v2h-3V7h3zM5 7v2H2V7h3zm4-5v3H7V2h2zm4 0v3h-2V2h2zm4 0v3h-2V2h2z"/>
+
+<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+  <path d="M1,11h3v2H1v-2ZM1,17h3v-2H1v2ZM1,9h3v-2H1v2ZM9,1h-2v3h2V1ZM17,1h-2v3h2V1ZM7,23h2v-3h-2v3ZM13,1h-2v3h2V1ZM11,23h2v-3h-2v3ZM20,13h3v-2h-3v2ZM20,7v2h3v-2h-3ZM20,17h3v-2h-3v2ZM15,23h2v-3h-2v3ZM19,7.33v9.33c0,1.29-1.05,2.33-2.33,2.33H7.33c-1.29,0-2.33-1.05-2.33-2.33V7.33c0-1.29,1.05-2.33,2.33-2.33h9.33c1.29,0,2.33,1.05,2.33,2.33ZM16,14h-4v2h4v-2Z"/>
 </svg>
