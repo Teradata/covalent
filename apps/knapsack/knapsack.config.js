@@ -16,7 +16,7 @@ module.exports = configureKnapsack({
     new KnapsackAngularRenderer({
       angularJsonPath: join(
         __dirname,
-        '../knapsack-renderer-angular-app/project.json'
+        '../knapsack-renderer-angular-app/angular-deprecated.json'
       ),
     }),
   ],
