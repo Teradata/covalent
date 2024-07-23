@@ -169,6 +169,7 @@ export class CovalentAppShell extends DrawerBase {
         this.helpWidth = 320;
         localStorage.setItem('helpWidth', '320');
         this.updateHelpPanelWidth();
+        this.requestUpdate();
       }
     });
 
