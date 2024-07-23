@@ -85,6 +85,9 @@ export class CovalentAppShell extends DrawerBase {
   fullWidth = false;
 
   private hovered = false;
+  private hoverTimeout: number | undefined;
+  private hoverEntryDuration = 250;
+  private hoverExitDuration = 250;
 
   constructor() {
     super();
@@ -229,22 +232,35 @@ export class CovalentAppShell extends DrawerBase {
     this.hovered = false;
   }
 
-  private _handleNavMouseOver() {
-    if (this.open || this.forcedOpen) {
-      return;
-    }
-
+  private _handleNavMouseOver = () => {
     this.hovered = true;
-    this._toggleOpen();
-  }
 
-  private _handleNavMouseOut() {
-    if (!this.open || this.forcedOpen) {
-      return;
+    // clear timeout if user hovers over nav before it closes
+    clearTimeout(this.hoverTimeout);
+
+    if (!this.open && !this.forcedOpen) {
+      this.hoverTimeout = setTimeout(() => {
+        if (this.hovered) {
+          this._toggleOpen();
+        }
+      }, this.hoverEntryDuration);
     }
+  };
 
-    this._toggleOpen();
-  }
+  private _handleNavMouseOut = () => {
+    this.hovered = false;
+
+    // clear timeout if user leaves nav before it opens
+    clearTimeout(this.hoverTimeout);
+
+    if (this.open && !this.forcedOpen) {
+      this.hoverTimeout = setTimeout(() => {
+        if (!this.hovered) {
+          this._toggleOpen();
+        }
+      }, this.hoverExitDuration);
+    }
+  };
 
   private _handleDrawerClosed() {
     this.forcedOpen = false;
