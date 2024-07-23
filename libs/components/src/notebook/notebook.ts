@@ -7,6 +7,7 @@ import {
   TemplateResult,
   unsafeCSS,
 } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { customElement, property } from 'lit/decorators.js';
 import markdownit from 'markdown-it';
 import styles from './notebook.scss?inline';
@@ -262,13 +263,18 @@ export class CovalentNotebook extends LitElement {
   // Dispatch an event when the cell type is changed
   handleCellTypeChange(e: CustomEvent) {
     const cellType = this.cellTypes[e.detail.index];
-    this.dispatchEvent(
-      new CustomEvent('cell-type-changed', {
-        bubbles: true,
-        cancelable: true,
-        detail: { index: this._selectedCellIndex, cellType },
-      })
-    );
+    if (
+      this._selectedCellIndex &&
+      this.cells[this._selectedCellIndex].cell_type !== cellType.type
+    ) {
+      this.dispatchEvent(
+        new CustomEvent('cell-type-changed', {
+          bubbles: true,
+          cancelable: true,
+          detail: { index: this._selectedCellIndex, cellType },
+        })
+      );
+    }
   }
 
   // Called whenever the code changes in the cell editor
@@ -348,6 +354,7 @@ export class CovalentNotebook extends LitElement {
 
   // Handle enter key event of cell input
   handleInputKeydown(event: KeyboardEvent) {
+    event.stopImmediatePropagation();
     const inputElement = this.shadowRoot?.querySelector(
       '#cell-input'
     ) as HTMLInputElement;
@@ -359,6 +366,7 @@ export class CovalentNotebook extends LitElement {
           detail: { value: inputElement.value },
         })
       );
+      inputElement.blur();
     }
   }
 
@@ -396,6 +404,7 @@ export class CovalentNotebook extends LitElement {
     const cell = this.cells[index];
     if (cell.language === 'markdown') {
       cell.showEditor = true;
+      this.dispatchUpdatedCells();
     }
   }
 
@@ -421,27 +430,28 @@ export class CovalentNotebook extends LitElement {
         (output) =>
           html`${output.data &&
           Object.keys(output.data).map((key) => {
-            const content = document.createElement('div');
-            content.style.maxWidth = '100%';
-            content.style.overflow = 'auto';
             const md = markdownit({ html: true });
             switch (key) {
               case 'text/markdown':
-                content.innerHTML = md.render(output.data[key]);
-                break;
+                return html`<div class="output-container">
+                  ${unsafeHTML(md.render(output.data[key]))}
+                </div>`;
               case 'text/html':
-                content.innerHTML = output.data[key];
-                break;
+                return html`<div class="output-container">
+                  ${unsafeHTML(output.data[key])}
+                </div>`;
               case 'image/png': {
-                const image = document.createElement('img');
-                image.style.maxWidth = '100%';
-                image.draggable = false;
-                image.src = `data:image/png;base64, ${output.data[key]}`;
-                content.appendChild(image);
-                break;
+                return html`<div class="output-container">
+                  <img
+                    class="output-image"
+                    draggable="false"
+                    src=${`data:image/png;base64, ${output.data[key]}`}
+                  />
+                </div>`;
               }
+              default:
+                return html``;
             }
-            return content;
           })}`
       )}`;
     }
@@ -521,7 +531,7 @@ export class CovalentNotebook extends LitElement {
             >
               <div
                 slot="output"
-                @click="${() => this.handleOutputCLick(index)}"
+                @dblclick="${() => this.handleOutputCLick(index)}"
               >
                 ${this.renderCellOutput(cell)}
               </div>
@@ -530,13 +540,14 @@ export class CovalentNotebook extends LitElement {
                 (input) => html`
                   <div class="input-container" slot="input">
                     <cv-typography scale="body2">
-                      ${input.prompt}:
+                      ${input.prompt}
                     </cv-typography>
                     <input
                       id="cell-input"
                       type="${input.password ? 'password' : 'text'}"
                       @keydown="${this.handleInputKeydown}"
                       placeholder="Press enter"
+                      autofocus
                     />
                   </div>
                 `
@@ -588,12 +599,14 @@ export class CovalentNotebook extends LitElement {
   }
 
   selectCell(index: number) {
-    this.deselectAllCells();
-    this._selectedCellIndex = index;
-    const cell = this.cells[index];
-    cell.selected = true;
-    this.cellType = cell.language === 'markdown' ? 'markdown' : 'code';
-    this.requestUpdate();
+    if (index !== this._selectedCellIndex) {
+      this.deselectAllCells();
+      this._selectedCellIndex = index;
+      const cell = this.cells[index];
+      cell.selected = true;
+      this.cellType = cell.language === 'markdown' ? 'markdown' : 'code';
+      this.requestUpdate();
+    }
   }
 
   shouldRenderEditor(cell: CellData): boolean {

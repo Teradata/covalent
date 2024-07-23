@@ -73,3 +73,12 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+.output-container {
+  max-width: 100%;
+  overflow: auto;
+
+  .output-image {
+    max-width: 100%;
+  }
+}
