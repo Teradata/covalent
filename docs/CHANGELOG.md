@@ -1,3 +1,9 @@
+# [8.15.0](https://github.com/Teradata/covalent/compare/v8.14.4...v8.15.0) (2024-07-23)
+
+### Features
+
+- **components:** add delay to app shell navigation hover ([#2186](https://github.com/Teradata/covalent/issues/2186)) ([a9463d2](https://github.com/Teradata/covalent/commit/a9463d2522b1274e47f2d26aa86ad96a29c0c043))
+
 ## [8.14.4](https://github.com/Teradata/covalent/compare/v8.14.3...v8.14.4) (2024-07-22)
 
 ### Bug Fixes
