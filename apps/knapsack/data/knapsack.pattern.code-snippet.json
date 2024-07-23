@@ -59,6 +59,16 @@
       },
       "demoIds": ["HJPgdqmwj"],
       "blockIds": ["X0XuYUkOFk"]
+    },
+    {
+      "id": "angular-iELIz8VEV",
+      "title": "HighlightDemoTsComponent",
+      "path": "../../docs-app/src/app/content/components/component-demos/highlight/demos/highlight-demo-ts/highlight-demo-ts.component.ts",
+      "alias": "HighlightDemoTsComponent",
+      "templateLanguageId": "angular",
+      "spec": {},
+      "demoIds": ["acYMakGJM"],
+      "blockIds": []
     }
   ],
   "tabs": [
@@ -67,8 +77,12 @@
       "type": "subPage"
     },
     {
-      "id": "web-components-MmKtwF24Vv",
-      "type": "template"
+      "type": "template",
+      "id": "web-components-MmKtwF24Vv"
+    },
+    {
+      "type": "template",
+      "id": "angular-iELIz8VEV"
     }
   ],
   "subPages": [
