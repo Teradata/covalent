@@ -11,7 +11,15 @@ module.exports = configureKnapsack({
   dist: join(__dirname, './dist'),
   public: join(__dirname, './public'),
   version,
-  templateRenderers: [new KnapsackWebComponentRenderer()],
+  templateRenderers: [
+    new KnapsackWebComponentRenderer(),
+    new KnapsackAngularRenderer({
+      angularJsonPath: join(
+        __dirname,
+        '../knapsack-renderer-angular-app/project.json'
+      ),
+    }),
+  ],
   plugins: [],
   cloud: {
     siteId: 'covalent',

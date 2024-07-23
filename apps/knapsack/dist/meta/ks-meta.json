@@ -29,6 +29,146 @@
       "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=tnvgSz6pjh&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "vmDFzhOhSn",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=vmDFzhOhSn&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "vmDFzhOhSn",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=vmDFzhOhSn&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "S4K35ZGdnu",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=S4K35ZGdnu&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "S4K35ZGdnu",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=S4K35ZGdnu&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "WosGIC3IsN",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=WosGIC3IsN&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "WosGIC3IsN",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=WosGIC3IsN&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "t7e3P48Pkm",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=t7e3P48Pkm&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "t7e3P48Pkm",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=t7e3P48Pkm&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "pYd0j3oNrI",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=pYd0j3oNrI&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "pYd0j3oNrI",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=pYd0j3oNrI&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "xnEh2A2lis",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=xnEh2A2lis&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "xnEh2A2lis",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=xnEh2A2lis&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "LATgTeg21H",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=LATgTeg21H&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "LATgTeg21H",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=LATgTeg21H&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "yf2q5F2Jyk",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=yf2q5F2Jyk&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "yf2q5F2Jyk",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=yf2q5F2Jyk&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "CE5x5TaMa2",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=CE5x5TaMa2&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "CE5x5TaMa2",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=CE5x5TaMa2&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "s8Ci4Cd08W",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=s8Ci4Cd08W&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "s8Ci4Cd08W",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=s8Ci4Cd08W&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "app-shell",
       "templateId": "web-components-z8r4uoVkf",
       "demoId": "5lBJhPKvTj",
@@ -85,6 +225,90 @@
       "url": "/api/v1/render?patternId=badge&templateId=web-components-40aOlYC6I9&assetSetId=dark&demoId=uhaHv83YYx&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-Gf9hp0rJ0",
+      "demoId": "5QJfHMXB7",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-Gf9hp0rJ0&assetSetId=light&demoId=5QJfHMXB7&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-Gf9hp0rJ0",
+      "demoId": "5QJfHMXB7",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-Gf9hp0rJ0&assetSetId=dark&demoId=5QJfHMXB7&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-is5CEIoQN",
+      "demoId": "096QEJzzaN",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-is5CEIoQN&assetSetId=light&demoId=096QEJzzaN&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-is5CEIoQN",
+      "demoId": "096QEJzzaN",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-is5CEIoQN&assetSetId=dark&demoId=096QEJzzaN&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-jGbLDr2WcO",
+      "demoId": "MN7DqPtmoD",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-jGbLDr2WcO&assetSetId=light&demoId=MN7DqPtmoD&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-jGbLDr2WcO",
+      "demoId": "MN7DqPtmoD",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-jGbLDr2WcO&assetSetId=dark&demoId=MN7DqPtmoD&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-ztIBW-5za",
+      "demoId": "We6lDdW5q",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-ztIBW-5za&assetSetId=light&demoId=We6lDdW5q&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-ztIBW-5za",
+      "demoId": "We6lDdW5q",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-ztIBW-5za&assetSetId=dark&demoId=We6lDdW5q&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-AERk0Cfhtm",
+      "demoId": "1tbPqUI8qS",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-AERk0Cfhtm&assetSetId=light&demoId=1tbPqUI8qS&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-AERk0Cfhtm",
+      "demoId": "1tbPqUI8qS",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-AERk0Cfhtm&assetSetId=dark&demoId=1tbPqUI8qS&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-TheApaL7KN",
+      "demoId": "Moug9QDOJ",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-TheApaL7KN&assetSetId=light&demoId=Moug9QDOJ&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-TheApaL7KN",
+      "demoId": "Moug9QDOJ",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-TheApaL7KN&assetSetId=dark&demoId=Moug9QDOJ&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "button",
       "templateId": "web-components-raE1x4tYL",
       "demoId": "E5ymzzEPs",
@@ -113,6 +337,48 @@
       "url": "/api/v1/render?patternId=button&templateId=web-components-raE1x4tYL&assetSetId=dark&demoId=wJJ2tksHEK&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "button",
+      "templateId": "angular-i3OR9O7kXg",
+      "demoId": "CRFHBobaZj",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=button&templateId=angular-i3OR9O7kXg&assetSetId=light&demoId=CRFHBobaZj&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "button",
+      "templateId": "angular-i3OR9O7kXg",
+      "demoId": "CRFHBobaZj",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=button&templateId=angular-i3OR9O7kXg&assetSetId=dark&demoId=CRFHBobaZj&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "button",
+      "templateId": "angular-i3OR9O7kXg",
+      "demoId": "eIOsBgDEvJ",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=button&templateId=angular-i3OR9O7kXg&assetSetId=light&demoId=eIOsBgDEvJ&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "button",
+      "templateId": "angular-i3OR9O7kXg",
+      "demoId": "eIOsBgDEvJ",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=button&templateId=angular-i3OR9O7kXg&assetSetId=dark&demoId=eIOsBgDEvJ&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "button",
+      "templateId": "angular-l0dkiDOl59",
+      "demoId": "KsL4I9wtF",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=button&templateId=angular-l0dkiDOl59&assetSetId=light&demoId=KsL4I9wtF&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "button",
+      "templateId": "angular-l0dkiDOl59",
+      "demoId": "KsL4I9wtF",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=button&templateId=angular-l0dkiDOl59&assetSetId=dark&demoId=KsL4I9wtF&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "card",
       "templateId": "web-components-mU8MX1FHrF",
       "demoId": "pTyIIHqJtL",
@@ -139,6 +405,20 @@
       "demoId": "sNLUIRYsNz",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=card&templateId=web-components-mU8MX1FHrF&assetSetId=dark&demoId=sNLUIRYsNz&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "card",
+      "templateId": "angular-K2H0Gg5PuL",
+      "demoId": "nrW1VpRzc",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=card&templateId=angular-K2H0Gg5PuL&assetSetId=light&demoId=nrW1VpRzc&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "card",
+      "templateId": "angular-K2H0Gg5PuL",
+      "demoId": "nrW1VpRzc",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=card&templateId=angular-K2H0Gg5PuL&assetSetId=dark&demoId=nrW1VpRzc&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "check-list-item",
@@ -237,6 +517,20 @@
       "demoId": "HJPgdqmwj",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=code-snippet&templateId=web-components-MmKtwF24Vv&assetSetId=dark&demoId=HJPgdqmwj&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "code-snippet",
+      "templateId": "angular-iELIz8VEV",
+      "demoId": "acYMakGJM",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=code-snippet&templateId=angular-iELIz8VEV&assetSetId=light&demoId=acYMakGJM&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "code-snippet",
+      "templateId": "angular-iELIz8VEV",
+      "demoId": "acYMakGJM",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=code-snippet&templateId=angular-iELIz8VEV&assetSetId=dark&demoId=acYMakGJM&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "dialog",
@@ -645,6 +939,62 @@
       "url": "/api/v1/render?patternId=list-item&templateId=web-components-ytRTf8wtxn&assetSetId=dark&demoId=qgGc8WUNHQ&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "markdown",
+      "templateId": "angular-76kuTOt7xg",
+      "demoId": "8CT5OuXWVF",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=markdown&templateId=angular-76kuTOt7xg&assetSetId=light&demoId=8CT5OuXWVF&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "markdown",
+      "templateId": "angular-76kuTOt7xg",
+      "demoId": "8CT5OuXWVF",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=markdown&templateId=angular-76kuTOt7xg&assetSetId=dark&demoId=8CT5OuXWVF&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "markdown",
+      "templateId": "angular-DOCHa-3a5",
+      "demoId": "ufP9COntU",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=markdown&templateId=angular-DOCHa-3a5&assetSetId=light&demoId=ufP9COntU&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "markdown",
+      "templateId": "angular-DOCHa-3a5",
+      "demoId": "ufP9COntU",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=markdown&templateId=angular-DOCHa-3a5&assetSetId=dark&demoId=ufP9COntU&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "markdown",
+      "templateId": "angular-rIK-ohXCKD",
+      "demoId": "N99JEci7ee",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=markdown&templateId=angular-rIK-ohXCKD&assetSetId=light&demoId=N99JEci7ee&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "markdown",
+      "templateId": "angular-rIK-ohXCKD",
+      "demoId": "N99JEci7ee",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=markdown&templateId=angular-rIK-ohXCKD&assetSetId=dark&demoId=N99JEci7ee&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "markdown",
+      "templateId": "angular-55sYMjzqfM",
+      "demoId": "ccQeGrGaEF",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=markdown&templateId=angular-55sYMjzqfM&assetSetId=light&demoId=ccQeGrGaEF&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "markdown",
+      "templateId": "angular-55sYMjzqfM",
+      "demoId": "ccQeGrGaEF",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=markdown&templateId=angular-55sYMjzqfM&assetSetId=dark&demoId=ccQeGrGaEF&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "menu",
       "templateId": "web-components-hY3y1MyhrP",
       "demoId": "boILoye9Gi",
@@ -801,6 +1151,20 @@
       "demoId": "ugxYH4hy3",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=status-dialog&templateId=web-components-klayJh8gA&assetSetId=dark&demoId=ugxYH4hy3&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "status-dialog",
+      "templateId": "web-components-klayJh8gA",
+      "demoId": "zKTIBgFUtF",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=status-dialog&templateId=web-components-klayJh8gA&assetSetId=light&demoId=zKTIBgFUtF&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "status-dialog",
+      "templateId": "web-components-klayJh8gA",
+      "demoId": "zKTIBgFUtF",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=status-dialog&templateId=web-components-klayJh8gA&assetSetId=dark&demoId=zKTIBgFUtF&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "status-header",

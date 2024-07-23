@@ -5,11 +5,128 @@
   "statuses": {
     "main": "needsReview"
   },
-  "templates": [],
+  "templates": [
+    {
+      "id": "angular-Gf9hp0rJ0",
+      "title": "TdBreadcrumbsComponent",
+      "path": "../../../libs/angular/breadcrumbs/src/public_api.ts",
+      "alias": "TdBreadcrumbsComponent",
+      "templateLanguageId": "angular",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "isRequired": true,
+            "allowOnlyOne": true
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Navigation aid displaying the user's location within a website or application hierarchy.",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        }
+      },
+      "demoIds": ["5QJfHMXB7"],
+      "blockIds": []
+    },
+    {
+      "id": "angular-is5CEIoQN",
+      "title": "TdBreadcrumbComponent",
+      "path": "../../../libs/angular/breadcrumbs/src/public_api.ts",
+      "alias": "TdBreadcrumbComponent",
+      "templateLanguageId": "angular",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Navigation aid displaying the user's location within a website or application hierarchy.",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "demoIds": ["096QEJzzaN"],
+      "blockIds": []
+    },
+    {
+      "id": "angular-jGbLDr2WcO",
+      "title": "BreadcrumbsDemoBasicComponent",
+      "path": "../../docs-app/src/app/content/components/component-demos/breadcrumbs/demos/breadcrumbs-demo-basic/breadcrumbs-demo-basic.component.ts",
+      "alias": "BreadcrumbsDemoBasicComponent",
+      "templateLanguageId": "angular",
+      "spec": {},
+      "demoIds": ["MN7DqPtmoD"],
+      "blockIds": []
+    },
+    {
+      "id": "angular-ztIBW-5za",
+      "title": "BreadcrumbsResizeBasicComponent",
+      "path": "../../docs-app/src/app/content/components/component-demos/breadcrumbs/demos/breadcrumbs-demo-resize/breadcrumbs-demo-resize.component.ts",
+      "alias": "BreadcrumbsResizeBasicComponent",
+      "templateLanguageId": "angular",
+      "spec": {},
+      "demoIds": ["We6lDdW5q"],
+      "blockIds": []
+    },
+    {
+      "id": "angular-AERk0Cfhtm",
+      "title": "BreadcrumbsDemoCustomSeparatorComponent",
+      "path": "../../docs-app/src/app/content/components/component-demos/breadcrumbs/demos/breadcrumbs-demo-custom-separator/breadcrumbs-demo-custom-separator.component.ts",
+      "alias": "BreadcrumbsDemoCustomSeparatorComponent",
+      "templateLanguageId": "angular",
+      "spec": {},
+      "demoIds": ["1tbPqUI8qS"],
+      "blockIds": []
+    },
+    {
+      "id": "angular-TheApaL7KN",
+      "title": "BreadcrumbsDemoComponent",
+      "path": "../../docs-app/src/app/content/components/component-demos/breadcrumbs/demos/breadcrumbs-demo.component.ts",
+      "alias": "BreadcrumbsDemoComponent",
+      "templateLanguageId": "angular",
+      "spec": {},
+      "demoIds": ["Moug9QDOJ"],
+      "blockIds": []
+    }
+  ],
   "tabs": [
     {
       "type": "subPage",
       "id": "overview"
+    },
+    {
+      "type": "template",
+      "id": "angular-Gf9hp0rJ0"
+    },
+    {
+      "type": "template",
+      "id": "angular-is5CEIoQN"
+    },
+    {
+      "type": "template",
+      "id": "angular-jGbLDr2WcO"
+    },
+    {
+      "type": "template",
+      "id": "angular-ztIBW-5za"
+    },
+    {
+      "type": "template",
+      "id": "angular-AERk0Cfhtm"
+    },
+    {
+      "type": "template",
+      "id": "angular-TheApaL7KN"
     }
   ],
   "subPages": [

@@ -24,6 +24,9 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# Knapsack
+/apps/knapsack-renderer-angular-app/src/dist/
+
 # misc
 /.sass-cache
 /connect.lock

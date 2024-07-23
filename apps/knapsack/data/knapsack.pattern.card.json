@@ -59,6 +59,29 @@
       },
       "demoIds": ["pTyIIHqJtL", "sNLUIRYsNz"],
       "blockIds": ["744NeKvS9M"]
+    },
+    {
+      "id": "angular-K2H0Gg5PuL",
+      "title": "MatCard",
+      "path": "@angular/material/card",
+      "alias": "MatCard",
+      "templateLanguageId": "angular",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Container presenting information or content in a visually distinct format.",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        }
+      },
+      "demoIds": ["nrW1VpRzc"],
+      "blockIds": []
     }
   ],
   "tabs": [
@@ -69,6 +92,10 @@
     {
       "type": "template",
       "id": "web-components-mU8MX1FHrF"
+    },
+    {
+      "type": "template",
+      "id": "angular-K2H0Gg5PuL"
     }
   ],
   "subPages": [

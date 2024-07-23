@@ -177,6 +177,11 @@ byId:
     name: List item
     parentId: list
     path: /pattern/list-item
+  markdown:
+    id: markdown
+    name: Markdown
+    parentId: test-page
+    path: /pattern/markdown
   menu:
     id: menu
     name: Menu
@@ -410,3 +415,4 @@ order:
   - writing
   - product-and-ui
   - error-messages
+  - markdown

@@ -10,7 +10,7 @@
       "trailingIcon": false,
       "raised": false,
       "unelevated": false,
-      "outlined": true,
+      "outlined": false,
       "dense": false,
       "disabled": false,
       "expandContent": false,
