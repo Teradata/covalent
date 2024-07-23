@@ -1,3 +1,14 @@
+# [8.16.0](https://github.com/Teradata/covalent/compare/v8.15.0...v8.16.0) (2024-07-23)
+
+### Bug Fixes
+
+- **components:** background styles to selected nav item ([b39a556](https://github.com/Teradata/covalent/commit/b39a5563a63e5a527e1a8aa847b28ad6a5130803))
+
+### Features
+
+- fixed issue with icon file upload ([21a9093](https://github.com/Teradata/covalent/commit/21a90939230e4dce0371f956d2bdfce9981dc23e))
+- re-attempting new icon uploads ([00fd7e1](https://github.com/Teradata/covalent/commit/00fd7e1dd2414a57ba1033eb91963abc608f440e))
+
 # [8.15.0](https://github.com/Teradata/covalent/compare/v8.14.4...v8.15.0) (2024-07-23)
 
 ### Features
