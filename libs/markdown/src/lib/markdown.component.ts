@@ -12,6 +12,7 @@ import {
   HostBinding,
   NgZone,
   OnDestroy,
+  OnInit,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
@@ -26,6 +27,7 @@ import {
 } from './markdown-utils/markdown-utils';
 
 import * as showdown from 'showdown';
+import { fromEvent, map, merge, of, Subscription } from 'rxjs';
 
 function isAbsoluteUrl(currentHref: string): boolean {
   // Regular Expression to check url
@@ -180,7 +182,7 @@ function addIdsToHeadings(html: string): string {
   templateUrl: './markdown.component.html',
 })
 export class TdMarkdownComponent
-  implements OnChanges, AfterViewInit, OnDestroy
+  implements OnChanges, AfterViewInit, OnDestroy, OnInit
 {
   private _content!: string;
   private _simpleLineBreaks = false;
@@ -244,12 +246,19 @@ export class TdMarkdownComponent
    */
   @Output() contentReady: EventEmitter<void> = new EventEmitter<void>();
 
+  networkStatus = false;
+  networkStatus$: Subscription = Subscription.EMPTY;
+
   constructor(
     private _renderer: Renderer2,
     private _elementRef: ElementRef,
     private _domSanitizer: DomSanitizer,
     private _ngZone: NgZone
   ) {}
+
+  ngOnInit(): void {
+    this.checkNetworkStatus();
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
@@ -295,7 +304,21 @@ export class TdMarkdownComponent
   }
 
   ngOnDestroy(): void {
+    this.networkStatus$.unsubscribe();
     this._anchorListener?.();
+  }
+
+  checkNetworkStatus() {
+    this.networkStatus = navigator.onLine;
+    this.networkStatus$ = merge(
+      of(null),
+      fromEvent(window, 'online'),
+      fromEvent(window, 'offline')
+    )
+      .pipe(map(() => navigator.onLine))
+      .subscribe((status) => {
+        this.networkStatus = status;
+      });
   }
 
   refresh(): void {
