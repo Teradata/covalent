@@ -1,5 +1,5 @@
 {
-  "id": "vBumvBsrtL",
+  "id": "XoaPFtwMxo",
   "data": {
     "content": {
       "type": "doc",
@@ -11,7 +11,7 @@
           },
           "content": [
             {
-              "text": "Use active voice. Avoid passive voice.",
+              "text": "When introducing a workflow that may not be familiar to the audience, speak about the job to be done before introducing the Teradata task. In other words, give them a reason to care about the actions you want them to take.",
               "type": "text"
             }
           ]

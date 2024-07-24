@@ -1,0 +1,48 @@
+{
+  "id": "ghSKSzEm6Z",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Confident and knowledgeable",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "As a leading data analytics and warehouse company, we are confident and knowledgeable. We’re determined to help our users achieve their goals, big and small. We deliver the right information to the right person at the right time. We’re dedicated to helping our users feel empowered to drive decision making with their data work. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Because we stay informed about our users’ jobs to be done through continuous learning, we behave perceptively anticipating what they need next and talking about opportunity to help them achieve more.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

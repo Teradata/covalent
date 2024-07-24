@@ -1,0 +1,23 @@
+{
+  "id": "7XuzLlOPj0",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Lead with the user's desired outcome, not technical details that enable that outcome. Determining what users don't need, or when they truly need something on their path to job completion, is just as important as anticipating what they need. As a trusted guide, we speak immediately to user goals.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

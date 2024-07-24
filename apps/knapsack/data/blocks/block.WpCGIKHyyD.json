@@ -1,0 +1,61 @@
+{
+  "id": "WpCGIKHyyD",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Simple and reliable",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Our target audiences are business analysts, data scientists, data engineers, and IT administrators who work at large enterprises. They work with large amounts of data and an array of tools.",
+              "type": "text"
+            },
+            {
+              "text": " ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": "We are a reliable solution to their data needs, making sure they always know what our product is about, what it does, and how it can help them.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Our users have technical expertise, but we don’t expect them to know how to use our product. So, when we speak, we keep it simple and easy to understand. To achieve that, we use words they’re familiar with, keep out Teradata-specific jargon, and structure the conversation.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
