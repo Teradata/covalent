@@ -1,5 +1,5 @@
 {
-  "id": "C61J3PXJ2O",
+  "id": "RFZYbNniF2",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,19 @@
           },
           "content": [
             {
-              "text": "Active voice",
+              "text": "Writing standards",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Coming soon",
               "type": "text"
             }
           ]

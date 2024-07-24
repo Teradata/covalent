@@ -1,18 +1,17 @@
 {
-  "id": "wSNrAg8mrg",
+  "id": "yAFNXq5Ceq",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Interface communicating to the user",
+              "text": "When you’re introducing a user interface, speak to user needs more than interface design. Avoid the word “feature.” Instead, speak of what they can accomplish, not what they can access.",
               "type": "text"
             }
           ]

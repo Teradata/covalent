@@ -1,5 +1,5 @@
 {
-  "id": "hECHBj2FEg",
+  "id": "kPoME7qwtX",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,19 @@
           },
           "content": [
             {
-              "text": "Which capitalization to use",
+              "text": "Word list",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Coming soon",
               "type": "text"
             }
           ]

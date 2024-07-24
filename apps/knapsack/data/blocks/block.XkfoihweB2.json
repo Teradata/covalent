@@ -1,5 +1,5 @@
 {
-  "id": "pJiVmUgf8f",
+  "id": "XkfoihweB2",
   "data": {
     "content": {
       "type": "doc",
@@ -11,8 +11,13 @@
           },
           "content": [
             {
-              "text": "Most items on a page are going to be the interface communicating something to the user. Write them as though the interface is talking to the user.",
-              "type": "text"
+              "text": "Building blocks in the relationship",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         }

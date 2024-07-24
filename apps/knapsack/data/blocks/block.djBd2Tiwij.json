@@ -1,0 +1,36 @@
+{
+  "id": "djBd2Tiwij",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "It's about them, not us",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Teradata exists for our customers and users. We’ll know we’ve done a good job when they appreciate us for who we are, and they trust us because they can see themselves in our product. This means we design for moments of truth. Those are the times when our users are most receptive and when we’ll have the most impact on their experience and their perception of Teradata.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
