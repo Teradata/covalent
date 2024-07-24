@@ -34,7 +34,7 @@ function isAbsoluteUrl(currentHref: string): boolean {
 }
 
 // TODO: assumes it is a github url
-// allow override somehow
+// handles absolute and relative URLs
 function generateHref(currentHref: string, relativeHref: string): string {
   if (currentHref && relativeHref) {
     if (isAbsoluteUrl(currentHref)) {
