@@ -1,3 +1,9 @@
+## [4.17.3](https://github.com/Teradata/covalent/compare/v4.17.2...v4.17.3) (2024-07-24)
+
+### Bug Fixes
+
+- **markdown:** updates comment ([#2203](https://github.com/Teradata/covalent/issues/2203)) ([b7ebd84](https://github.com/Teradata/covalent/commit/b7ebd848d10daf1b151803dc90cc8021d16f76a3))
+
 ## [4.17.2](https://github.com/Teradata/covalent/compare/v4.17.1...v4.17.2) (2024-07-22)
 
 ### Bug Fixes
