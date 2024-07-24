@@ -1,0 +1,72 @@
+{
+  "id": "65KfvQ3E",
+  "data": {
+    "guidelines": [
+      {
+        "id": "nx9hvEaZ07",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Give your team access",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Create the first database admin who can then add additional roles and permissions to help everyone do their data work.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "0WV1uyhUAx",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Create a database admin",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use the credentials you set up previously to create a database admin.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "gridStyles": {
+      "columns": "2",
+      "centered": true
+    },
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "imageOutlined": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

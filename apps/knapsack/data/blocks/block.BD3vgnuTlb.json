@@ -1,0 +1,488 @@
+{
+  "id": "BD3vgnuTlb",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "table",
+          "attrs": {
+            "equalColumns": true
+          },
+          "content": [
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "User needs",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Jobs to be done and Teradata-specific tasks",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "User desires",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "hardBreak"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "What they want beyond the functional experience",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Teradata character's desires",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "The way we show up in the relationship",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "orderedList",
+                      "attrs": {
+                        "start": 1
+                      },
+                      "content": [
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I need you to guide me through each task.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I need you to connect me to people and data sources quickly and effectively",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I need you to speak simple, familiar, and relevant language",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I need to maintain control of my data and its quality and governance.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I need you to help me get unstuck when I encounter errors.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "orderedList",
+                      "attrs": {
+                        "start": 1
+                      },
+                      "content": [
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want to feel confident and accomplished with my data work.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want you to recognize my sense of purpose, motivation, excitement, and dedication in driving meaningful outcomes with data endeavors.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want you to treat me like a smart professional.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want you to make it easy for me to meet quality, security, and regulatory guidelines.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want to feel supported.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "orderedList",
+                      "attrs": {
+                        "start": 1
+                      },
+                      "content": [
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want to provide the easiest paths to get a job done.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want to provide cohesive experiences from one context to another.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want to foster trust, confidence, and transparency in decision making.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want them to know we have their backs.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "I want to provide easy ways to get out of issues without the user getting frustrated.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "In essence, I want to let them know we focus on creating value and delivering delightful solutions.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "table"
+}

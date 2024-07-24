@@ -1,0 +1,47 @@
+{
+  "id": "obIc3QEfDp",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "A Teradata task can be more onerous than the user would prefer. Completing it might feel like a major accomplishment. But drawing too much attention to the work’s completion might reinforce its difficulty.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "A congratulatory voice in this case might come across as “You survived installing this difficult thing in Teradata!” Which runs counter to our desire to create value, not wrestle matches that make the product “go.”",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Oftentimes, tasks are means to the user's end goals (the moments of truth). Instead of celebrations, let them know they've completed a task and guide them to the next thing.   ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

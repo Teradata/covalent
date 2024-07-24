@@ -1,18 +1,17 @@
 {
-  "id": "Fu7eaBg5tE",
+  "id": "eA1vl-JCiR",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Write UI copy as if you’re having a conversation",
+              "text": "Omit unnecessary words. A rhetorical question such as “What’s XYZ?” asks the user to think. This runs counter to our desire to provide and advise in the easiest way possible.",
               "type": "text"
             }
           ]
