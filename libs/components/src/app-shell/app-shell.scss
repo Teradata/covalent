@@ -70,11 +70,18 @@
   }
 }
 
+.cov-help--resizing {
+  .main,
+  .help {
+    transition-duration: 0ms;
+  }
+}
+
 .main {
   height: 100vh;
   grid-area: main;
   overflow: auto;
-  transition: margin-left 200ms ease-in-out;
+  transition: margin-left 200ms ease-in-out, margin-right 200ms ease-in-out;
 
   .main-wrapper {
     margin: 0 auto;
@@ -124,6 +131,7 @@
   position: fixed;
   right: 0;
   width: var(--cv-help-width, 320px);
+  transition: width 200ms;
   height: 100vh;
   overflow-y: auto;
 
