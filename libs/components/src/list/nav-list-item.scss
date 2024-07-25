@@ -41,13 +41,14 @@
 }
 
 :host([subnav]) {
+  --cv-list-item-text-padding: 16px;
+
   height: 32px;
   font-weight: var(--mdc-typography-body2-font-weight);
   border-radius: var(--cv-list-item-border-radius, 100px);
   padding: 0;
   padding-right: var(--cv-list-padding-right, 12px);
   padding-left: var(--cv-list-padding-left, 12px);
-  --cv-list-item-text-padding: 16px;
 }
 
 :host([graphic='avatar']) .mdc-deprecated-list-item__graphic {

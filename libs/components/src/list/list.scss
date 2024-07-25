@@ -14,9 +14,10 @@
 
 :host(.subnav),
 :host([subnav]) {
-  padding-left: 32px;
   --cv-list-padding-right: 0;
   --cv-list-padding-left: 16px;
+
+  padding-left: 32px;
 }
 
 .mdc-deprecated-list {

@@ -52,6 +52,7 @@
 
 .app-shell {
   --mdc-theme-surface: var(--mdc-theme-background);
+
   background-color: var(--mdc-theme-background);
   display: grid;
   grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
@@ -104,7 +105,7 @@
   }
 
   cv-card {
-    margin: 0 0 24px 0;
+    margin: 0 0 24px;
     display: block;
 
     &.wrapper-card {
