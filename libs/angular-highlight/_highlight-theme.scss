@@ -1,11 +1,9 @@
 @import '@angular/material/theming';
 
-/**
-* Mimicking VS Dark+ theme as closely as possible
-*/
 @mixin covalent-highlight-theme($theme) {
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
+  $is-dark: map-get($theme, is-dark);
 
   .raw-and-copy-buttons {
     border-color: map-get($foreground, divider);
@@ -24,98 +22,27 @@
     }
   }
 
-  .dark-theme td-highlight {
-    background-color: #1a1c1d;
-
-    .highlight {
-      color: #abb2bf;
-    }
-
-    .raw {
-      color: rgba(255, 255, 255, 87%);
-    }
-
-    .hljs-comment,
-    .hljs-quote {
-      color: #5c6370;
-      font-style: italic;
-    }
-
-    .hljs-doctag,
-    .hljs-formula,
-    .hljs-keyword {
-      color: #c678dd;
-    }
-
-    .hljs-deletion,
-    .hljs-name,
-    .hljs-tag,
-    .hljs-section,
-    .hljs-selector-tag,
-    .hljs-subst {
-      color: #e06c75;
-    }
-
-    .hljs-literal {
-      color: #56b6c2;
-    }
-
-    .hljs-addition,
-    .hljs-attribute,
-    .hljs-meta .hljs-string,
-    .hljs-regexp,
-    .hljs-string {
-      color: #98c379;
-    }
-
-    .hljs-attr,
-    .hljs-number,
-    .hljs-selector-attr,
-    .hljs-selector-class,
-    .hljs-selector-pseudo,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-variable {
-      color: #d19a66;
-    }
-
-    .hljs-bullet,
-    .hljs-link,
-    .hljs-meta,
-    .hljs-selector-id,
-    .hljs-symbol,
-    .hljs-title {
-      color: #61aeee;
-    }
-
-    .hljs-built_in,
-    .hljs-class .hljs-title,
-    .hljs-title.class_ {
-      color: #e6c07b;
-    }
-  }
-
   td-highlight {
-    background-color: #eeeeee;
+    background-color: if($is-dark, #1a1c1d, #eeeeee);
 
     .highlight {
-      color: #383a42;
+      color: if($is-dark, #abb2bf, #383a42);
     }
 
     .raw {
-      color: rgba(0, 0, 0, 87%);
+      color: if($is-dark, rgba(255, 255, 255, 87%), rgba(0, 0, 0, 87%));
     }
 
     .hljs-comment,
     .hljs-quote {
-      color: #a0a1a7;
+      color: if($is-dark, #5c6370, #a0a1a7);
       font-style: italic;
     }
 
     .hljs-doctag,
     .hljs-formula,
     .hljs-keyword {
-      color: #a626a4;
+      color: if($is-dark, #c678dd, #a626a4);
     }
 
     .hljs-deletion,
@@ -124,11 +51,11 @@
     .hljs-section,
     .hljs-selector-tag,
     .hljs-subst {
-      color: #e45649;
+      color: if($is-dark, #e06c75, #e45649);
     }
 
     .hljs-literal {
-      color: #0184bb;
+      color: if($is-dark, #56b6c2, #0184bb);
     }
 
     .hljs-addition,
@@ -136,7 +63,7 @@
     .hljs-meta .hljs-string,
     .hljs-regexp,
     .hljs-string {
-      color: #50a14f;
+      color: if($is-dark, #98c379, #50a14f);
     }
 
     .hljs-attr,
@@ -147,7 +74,7 @@
     .hljs-template-variable,
     .hljs-type,
     .hljs-variable {
-      color: #986801;
+      color: if($is-dark, #d19a66, #986801);
     }
 
     .hljs-bullet,
@@ -156,13 +83,13 @@
     .hljs-selector-id,
     .hljs-symbol,
     .hljs-title {
-      color: #4078f2;
+      color: if($is-dark, #61aeee, #4078f2);
     }
 
     .hljs-built_in,
     .hljs-class .hljs-title,
     .hljs-title.class_ {
-      color: #c18401;
+      color: if($is-dark, #e6c07b, #c18401);
     }
   }
 }
