@@ -262,6 +262,7 @@
       $typography,
       button-line-height
     )};
+  --mdc-typography-button-letter-spacing: 0;
   --mdc-typography-button-text-transform: none;
   --mdc-typography-caption-font-family: var(--mdc-typography-font-family);
   --mdc-typography-caption-font-size: #{map-get($typography, caption-font-size)};

@@ -30,7 +30,7 @@ $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
 
 .sb-show-main {
   background-color: var(--mdc-theme-surface);
-  color: var(--cv-theme-on-surface);
+  color: var(--cv-theme-on-surface-variant);
 
   .sbdocs-wrapper {
     padding-top: 0;
@@ -41,6 +41,19 @@ $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
     background-size: auto 24rem;
     color: var(--mdc-theme-text-secondary-on-background);
     padding: 4rem 1.5rem 1.5rem;
+  }
+
+  // Header typography should be darker color
+  cv-typography[scale='headline1'],
+  cv-typography[scale='headline2'],
+  cv-typography[scale='headline3'],
+  cv-typography[scale='headline4'],
+  cv-typography[scale='headline5'],
+  cv-typography[scale='headline6'],
+  cv-typography[scale='subtitle1'],
+  cv-typography[scale='subtitle2'],
+  cv-typography[scale='button'] {
+    color: var(--cv-theme-on-surface);
   }
 }
 .dark .sbdocs-wrapper {
