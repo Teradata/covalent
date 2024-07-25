@@ -1,3 +1,9 @@
+## [4.17.4](https://github.com/Teradata/covalent/compare/v4.17.3...v4.17.4) (2024-07-25)
+
+### Bug Fixes
+
+- use is-dark for highligh dark theme ([#2053](https://github.com/Teradata/covalent/issues/2053)) ([#2205](https://github.com/Teradata/covalent/issues/2205)) ([b59fa28](https://github.com/Teradata/covalent/commit/b59fa2877aa5ebb1a041cabb3018aa18223e64f7))
+
 ## [4.17.3](https://github.com/Teradata/covalent/compare/v4.17.2...v4.17.3) (2024-07-24)
 
 ### Bug Fixes
