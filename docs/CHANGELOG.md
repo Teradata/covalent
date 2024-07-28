@@ -1,3 +1,9 @@
+# [8.15.0-beta.15](https://github.com/Teradata/covalent/compare/v8.15.0-beta.14...v8.15.0-beta.15) (2024-07-28)
+
+### Bug Fixes
+
+- **notebooks:** dispatch an event when cell content is edited ([da825bb](https://github.com/Teradata/covalent/commit/da825bb91aeb1feae3ffc3f4707dba3fff444ae6))
+
 # [8.15.0-beta.14](https://github.com/Teradata/covalent/compare/v8.15.0-beta.13...v8.15.0-beta.14) (2024-07-23)
 
 ### Bug Fixes
