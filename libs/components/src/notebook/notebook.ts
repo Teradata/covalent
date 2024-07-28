@@ -123,6 +123,7 @@ export class CovalentNotebook extends LitElement {
     }
   }
 
+  // Create a new cell object
   createNewCell(cellType: string): CellData {
     const language =
       cellType === 'markdown' ? cellType : this.defaultLanguage || 'python';
@@ -151,7 +152,9 @@ export class CovalentNotebook extends LitElement {
   // Delete the selected cell
   deleteCell() {
     if (this._selectedCellIndex !== null) {
-      this.cells.splice(this._selectedCellIndex, 1);
+      this.cells = this.cells.filter(
+        (_, index) => index !== this._selectedCellIndex
+      );
       const selectedCellIndex = Math.min(
         this._selectedCellIndex + 1,
         this.cells.length - 1
@@ -172,7 +175,8 @@ export class CovalentNotebook extends LitElement {
     document.removeEventListener('keydown', this._handleKeydown);
   }
 
-  // Dispatch a custom cell event
+  // Dispatch a custom cell action event
+  // It handles actions like: run-cell, interrupt-cell, refresh-cell etc
   dispatchCustomCellEvent(name: string, cell?: CellData) {
     if (!cell && this._selectedCellIndex) {
       cell = this.cells[this._selectedCellIndex];
@@ -211,6 +215,7 @@ export class CovalentNotebook extends LitElement {
   getDragImage(cellIndex: number): HTMLElement {
     const cell = this.cells[cellIndex];
 
+    // This is the drag image seen when a cell is being dragged
     const template = html`
       <div class="dragImage" style="width: 80%;">
         <cv-notebook-cell
@@ -238,6 +243,8 @@ export class CovalentNotebook extends LitElement {
       '#notebook-cells'
     ) as HTMLElement;
 
+    /* Check the current position of the selected cell within the container
+    and scroll to it's position */
     if (selectedCellElement && container) {
       const containerRect = container.getBoundingClientRect();
       const cellRect = selectedCellElement.getBoundingClientRect();
@@ -263,10 +270,7 @@ export class CovalentNotebook extends LitElement {
   // Dispatch an event when the cell type is changed
   handleCellTypeChange(e: CustomEvent) {
     const cellType = this.cellTypes[e.detail.index];
-    if (
-      this._selectedCellIndex &&
-      this.cells[this._selectedCellIndex].cell_type !== cellType.type
-    ) {
+    if (this._selectedCellIndex !== null) {
       this.dispatchEvent(
         new CustomEvent('cell-type-changed', {
           bubbles: true,
@@ -281,6 +285,7 @@ export class CovalentNotebook extends LitElement {
   handleCodeChange(e: CustomEvent, index: number) {
     const cell = this.cells[index];
     cell.code = e.detail.code;
+    this.dispatchCustomCellEvent('edit-cell', cell);
   }
 
   handleDragStart(e: DragEvent, index: number) {
@@ -336,6 +341,7 @@ export class CovalentNotebook extends LitElement {
       this.cells = this.cells.map((cell, idx) => ({ ...cell, index: idx }));
 
       this._draggedCellIndex = null;
+      // Dispatch an event with updated cells
       this.dispatchUpdatedCells();
     }
   }
@@ -370,14 +376,17 @@ export class CovalentNotebook extends LitElement {
     }
   }
 
+  // Handle keyboard actions within the notebook
   private _handleKeydown(event: KeyboardEvent) {
     let selectedCellIndex = this.cells?.findIndex((cell) => cell.selected);
     switch (event.key) {
       case 'ArrowUp':
+        // Navigate to the cell above the current cell
         selectedCellIndex = Math.max(selectedCellIndex - 1, 0);
         this.scrollToSelectedCell(selectedCellIndex);
         break;
       case 'ArrowDown':
+        // Navigate to the cell below the current cell
         selectedCellIndex = Math.min(
           selectedCellIndex + 1,
           this.cells.length - 1
@@ -385,9 +394,11 @@ export class CovalentNotebook extends LitElement {
         this.scrollToSelectedCell(selectedCellIndex);
         break;
       case 'Enter':
+        // Pressing Shift + Enter key should run the cell
         if (event.shiftKey) {
           this.runCell();
         } else {
+          // Pressing the Enter key should add focus to the code editor
           const selectedCellElement = this.shadowRoot?.querySelector(
             `#cell-${selectedCellIndex}`
           );
@@ -404,6 +415,7 @@ export class CovalentNotebook extends LitElement {
     const cell = this.cells[index];
     if (cell.language === 'markdown') {
       cell.showEditor = true;
+      this.cells = this.cells.map((cell) => cell);
       this.dispatchUpdatedCells();
     }
   }
@@ -415,11 +427,10 @@ export class CovalentNotebook extends LitElement {
         this._selectedCellIndex !== null
           ? this._selectedCellIndex + 1
           : this.cells.length;
-      this.deselectAllCells();
       this._clipboardCell.selected = true;
       this.cells.splice(index, 0, { ...this._clipboardCell });
       this.cells = this.cells.map((cell, idx) => ({ ...cell, index: idx }));
-      this._selectedCellIndex = index;
+      this.selectCell(index);
       this.dispatchUpdatedCells();
     }
   }
@@ -433,6 +444,7 @@ export class CovalentNotebook extends LitElement {
             const md = markdownit({ html: true });
             switch (key) {
               case 'text/markdown':
+                // converts markdown to html
                 return html`<div class="output-container">
                   ${unsafeHTML(md.render(output.data[key]))}
                 </div>`;
@@ -440,12 +452,15 @@ export class CovalentNotebook extends LitElement {
                 return html`<div class="output-container">
                   ${unsafeHTML(output.data[key])}
                 </div>`;
-              case 'image/png': {
+              case 'image/png':
+              case 'image/jpg': {
                 return html`<div class="output-container">
                   <img
                     class="output-image"
                     draggable="false"
-                    src=${`data:image/png;base64, ${output.data[key]}`}
+                    src=${`data:image/${
+                      key.includes('jpg') ? 'jpg' : 'png'
+                    };base64, ${output.data[key]}`}
                   />
                 </div>`;
               }
@@ -483,15 +498,15 @@ export class CovalentNotebook extends LitElement {
         ></cv-icon-button>
         <cv-icon-button
           icon="stop"
-          @click="${() => this.dispatchCustomCellEvent('interrupt-cell')}"
+          @click="${() => this.dispatchCustomCellEvent('interrupt-kernel')}"
         ></cv-icon-button>
         <cv-icon-button
           icon="refresh"
-          @click="${() => this.dispatchCustomCellEvent('refresh-cell')}"
+          @click="${() => this.dispatchCustomCellEvent('refresh')}"
         ></cv-icon-button>
         <cv-icon-button
           icon="fast_forward"
-          @click="${() => this.dispatchCustomCellEvent('refresh-run-all-cell')}"
+          @click="${() => this.dispatchCustomCellEvent('refresh-run-all')}"
         ></cv-icon-button>
         <cv-select
           label="Cell type"
@@ -580,6 +595,7 @@ export class CovalentNotebook extends LitElement {
     </div>`;
   }
 
+  // Remove a css class from a target element
   removeCSS(className: string, targetElement: Document | ShadowRoot | null) {
     const elements = targetElement?.querySelectorAll(className);
     elements?.forEach((element) => element.classList.remove(className));
@@ -609,6 +625,7 @@ export class CovalentNotebook extends LitElement {
     }
   }
 
+  // Whether a code editor should be shown in the cell
   shouldRenderEditor(cell: CellData): boolean {
     return (
       cell.language !== 'markdown' ||
@@ -619,12 +636,13 @@ export class CovalentNotebook extends LitElement {
   protected updated(_changedProperties: PropertyValues): void {
     if (_changedProperties.has('cells')) {
       this.cells.forEach((cell, index) => {
-        cell.showEditor = this.shouldRenderEditor(cell);
+        // If user input is requested in a cell, scroll to it's position
         if (cell.inputs?.length) {
           this.scrollToSelectedCell(index);
         }
       });
     }
+    super.updated(_changedProperties);
   }
 }
 
