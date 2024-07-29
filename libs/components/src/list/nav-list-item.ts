@@ -61,8 +61,6 @@ export class CovalentNavRailListItem extends CovalentListItem {
       return;
     }
 
-    // transform to a switch case
-
     if (event.code === 'Enter') {
       event.preventDefault();
       event.stopImmediatePropagation();
