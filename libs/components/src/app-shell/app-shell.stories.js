@@ -179,8 +179,8 @@ const Template = ({
       </cv-toolbar>
 
       <div slot="help" class="help-panel mdc-typography">
-        <cv-toolbar sticky style="padding-left: 12px; margin-right: -8px;">
-          <span slot="title">Help</span>
+        <cv-toolbar sticky>
+          <span slot="title" style="padding-left: 12px;">Help</span>
           <cv-icon-button
             slot="actionItems"
             icon="undock"
@@ -190,6 +190,7 @@ const Template = ({
             slot="actionItems"
             icon="close"
             class="help-close"
+            style="margin-right: -4px;"
           ></cv-icon-button>
         </cv-toolbar>
         <div class="help-content" style="padding: 16px 24px 24px">

@@ -27,9 +27,8 @@ $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
 }
 
 :host {
-  display: block;
-
   color: var(--cv-theme-on-surface-variant);
+  display: block;
 }
 
 // Header typography should be darker color
