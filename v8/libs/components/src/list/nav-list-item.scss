@@ -114,6 +114,8 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
+  background-color: var(--cv-list-item-background-color);
+  color: var(--cv-list-item-text-color);
 
   mwc-ripple {
     border-radius: var(--cv-list-item-border-radius, 100px);
