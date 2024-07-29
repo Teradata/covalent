@@ -105,7 +105,7 @@ const Template = ({
     ${contained ? `contained` : ''}
     ${fullWidth ? `fullWidth` : ''}
     ${helpResizable ? `helpResizable` : ''}
-    
+
     >
 
       <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>
@@ -188,7 +188,7 @@ const Template = ({
           ></cv-icon-button>
           <cv-icon-button
             slot="actionItems"
-            icon="close"I
+            icon="close"
             class="help-close"
           ></cv-icon-button>
         </cv-toolbar>
