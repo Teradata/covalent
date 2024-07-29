@@ -1,3 +1,19 @@
+# [8.15.0-beta.16](https://github.com/Teradata/covalent/compare/v8.15.0-beta.15...v8.15.0-beta.16) (2024-07-29)
+
+### Bug Fixes
+
+- **components:** background styles to selected nav item ([5e6e108](https://github.com/Teradata/covalent/commit/5e6e108c58d284e0a468ec5b51cd0be3cf8d0e7a))
+- **components:** adjusting textfield placeholder size ([#2187](https://github.com/Teradata/covalent/issues/2187)) ([35e61c3](https://github.com/Teradata/covalent/commit/35e61c3de69ebd835dae6493fcb81cebf17be4b7))
+- **components:** list item disabled ([#2184](https://github.com/Teradata/covalent/issues/2184)) ([4ba3ab2](https://github.com/Teradata/covalent/commit/4ba3ab2df5c8bcf4cd411f420edcf5343da43254))
+- **components:** styling adjustment to cards web component ([#2198](https://github.com/Teradata/covalent/issues/2198)) ([4d0995a](https://github.com/Teradata/covalent/commit/4d0995a4b220fe6dd410e5e4375ecea179379715))
+- **markdown:** allow relative paths ([#2185](https://github.com/Teradata/covalent/issues/2185)) ([8b76e80](https://github.com/Teradata/covalent/commit/8b76e80a40272a75fa64ef297b856cd5a15d4193))
+
+### Features
+
+- **components:** add delay to app shell navigation hover ([#2186](https://github.com/Teradata/covalent/issues/2186)) ([f9f9c9a](https://github.com/Teradata/covalent/commit/f9f9c9a0224de2b478234a47f1facae57754457b))
+- fixed issue with icon file upload ([a6635b8](https://github.com/Teradata/covalent/commit/a6635b88ca786292f01567d4c5b8333dc783f06e))
+- re-attempting new icon uploads ([374281b](https://github.com/Teradata/covalent/commit/374281b0ef61a3c0d70e35b0614d1601b5ba5b19))
+
 # [8.16.0](https://github.com/Teradata/covalent/compare/v8.15.0...v8.16.0) (2024-07-23)
 
 ### Bug Fixes
