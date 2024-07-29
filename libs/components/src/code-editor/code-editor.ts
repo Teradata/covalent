@@ -41,7 +41,7 @@ export class CovalentCodeEditor extends LitElement {
    */
   @property() code?: string;
   /**
-   * Options that can be ste for the editor
+   * Options that can be set for the editor
    */
   @property({ type: Object }) options?: editor.IEditorOptions &
     editor.IGlobalEditorOptions;
@@ -123,6 +123,8 @@ export class CovalentCodeEditor extends LitElement {
       this.createEditor(this.container.value);
 
       this.onModelChange();
+
+      // Dispatch event when editor is focused
       this.editor?.onDidFocusEditorText(() => {
         this.dispatchEvent(
           new CustomEvent('editor-focus', {
@@ -132,6 +134,7 @@ export class CovalentCodeEditor extends LitElement {
         );
       });
 
+      // Dispatch event when editor is blurred
       this.editor?.onDidBlurEditorText(() => {
         this.dispatchEvent(
           new CustomEvent('editor-blur', {
@@ -141,6 +144,7 @@ export class CovalentCodeEditor extends LitElement {
         );
       });
 
+      // Adjust the height of the editor when content changes, to avoid vertical scroll bar
       this.editor?.onDidContentSizeChange(() => {
         this.adjustHeight();
       });
@@ -161,6 +165,7 @@ export class CovalentCodeEditor extends LitElement {
   onModelChange() {
     this.editor?.onDidChangeModelContent(() => {
       this.code = this.getValue();
+      // Dispatch event when code in the editor is changed
       this.dispatchEvent(
         new CustomEvent('code-change', {
           detail: { code: this.code },
@@ -187,6 +192,7 @@ export class CovalentCodeEditor extends LitElement {
       }
     }
     if (changedProperties.has('language') && this.editor) {
+      // Update monaco editor language when language prop is changed
       editor.setModelLanguage(
         this.editor.getModel() as editor.ITextModel,
         this.language || ''

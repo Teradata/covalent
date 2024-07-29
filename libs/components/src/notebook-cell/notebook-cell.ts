@@ -18,6 +18,11 @@ enum CvCellEvents {
   RUN_CODE = 'cell-run-code',
 }
 
+/**
+ * Notebook cell
+ *
+ * @slot - This element has a slot
+ */
 @customElement('cv-notebook-cell')
 export class CovalentNotebookCell extends LitElement {
   /**
@@ -110,10 +115,12 @@ export class CovalentNotebookCell extends LitElement {
   protected updated(changedProperties: PropertyValues) {
     if (changedProperties.has('code') || changedProperties.has('language')) {
       const editor = this.shadowRoot?.querySelector('cv-code-editor');
+      // Update the editor instance's code and language properties
       if (editor) {
         editor.code = this.code;
         editor.language = this.language;
       } else {
+        // Update the code in code-snippet component
         const codeSnippet = this.shadowRoot?.querySelector('cv-code-snippet');
         if (codeSnippet && !this.selected) {
           codeSnippet.highlight();
@@ -124,6 +131,7 @@ export class CovalentNotebookCell extends LitElement {
   }
 
   renderEditor() {
+    // Show editor when the cell is selected and show code snippet otherwise
     const editor = this.selected
       ? html`<cv-code-editor
           @code-change="${this.handleCodeChange}"
