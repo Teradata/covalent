@@ -1,0 +1,84 @@
+:host {
+  --cv-notebook-height: 100%;
+  --cv-notebook-width: 100%;
+
+  cv-notebook-cell {
+    &.dragged {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  cv-icon-button button {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
+.error {
+  margin: 0.75rem 1px;
+  padding: 0 0.25rem;
+}
+
+.notebook {
+  background-color: var(--cv-theme-surface-container-lowest);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.notebookCells {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: calc(100% - 106px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem;
+  width: 100%;
+}
+
+.notebookActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+:host .notebookHeaderActions {
+  --cv-select-height: 2.25rem;
+  --cv-select-label-top-position: -25.25px;
+  --mdc-icon-button-size: 40px;
+  --mdc-icon-size: 22px;
+
+  align-items: center;
+  border: 1px solid var(--cv-theme-outline-variant);
+  box-shadow: 0 0 2px 0 var(--cv-theme-on-positive-container-16);
+  box-sizing: border-box;
+  display: flex;
+  gap: 0.15rem;
+  padding: 7px 0.25rem;
+
+  cv-select {
+    margin-left: 0.5rem;
+  }
+}
+
+.drag-over {
+  border-bottom: 1.5px solid var(--cv-theme-primary);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.output-container {
+  max-width: 100%;
+  overflow: auto;
+
+  .output-image {
+    max-width: 100%;
+  }
+}

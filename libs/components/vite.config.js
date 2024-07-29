@@ -20,6 +20,7 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/chips/chip',
           'libs/components/src/chips/chip-set',
           'libs/components/src/circular-progress/circular-progress',
+          'libs/components/src/code-editor/code-editor',
           'libs/components/src/code-snippet/code-snippet',
           'libs/components/src/dialog/dialog',
           'libs/components/src/drawer/drawer',
@@ -39,6 +40,8 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/list/nav-list-item',
           'libs/components/src/list/radio-list-item',
           'libs/components/src/menu/menu',
+          'libs/components/src/notebook/notebook',
+          'libs/components/src/notebook-cell/notebook-cell',
           'libs/components/src/radio/radio',
           'libs/components/src/select/select',
           'libs/components/src/side-sheet/side-sheet',
@@ -63,6 +66,9 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/typography/typography',
         ],
         name: 'Covalent',
+        rollupOptions: {
+          external: ['monaco-editor'],
+        },
       },
     },
     server: {

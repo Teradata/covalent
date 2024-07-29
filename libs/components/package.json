@@ -66,6 +66,11 @@
       "import": "./circular-progress.mjs",
       "require": "./circular-progress.js"
     },
+    "./code-editor": {
+      "types": "./code-editor/code-editor.d.ts",
+      "import": "./code-editor.mjs",
+      "require": "./code-editor.js"
+    },
     "./code-snippet": {
       "types": "./code-snippet/code-snippet.d.ts",
       "import": "./code-snippet.mjs",
@@ -160,6 +165,16 @@
       "types": "./menu/menu.d.ts",
       "import": "./menu.mjs",
       "require": "./menu.js"
+    },
+    "./notebook": {
+      "types": "./notebook/notebook.d.ts",
+      "import": "./notebook.mjs",
+      "require": "./notebook.js"
+    },
+    "./notebook-cell": {
+      "types": "./notebook-cell/notebook-cell.d.ts",
+      "import": "./notebook-cell.mjs",
+      "require": "./notebook-cell.js"
     },
     "./radio": {
       "types": "./radio/radio.d.ts",
