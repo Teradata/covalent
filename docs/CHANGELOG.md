@@ -1,3 +1,9 @@
+## [8.16.1](https://github.com/Teradata/covalent/compare/v8.16.0...v8.16.1) (2024-07-29)
+
+### Bug Fixes
+
+- **components:** style fix for nav item when active ([#2207](https://github.com/Teradata/covalent/issues/2207)) ([64f173a](https://github.com/Teradata/covalent/commit/64f173a7ddb8137abafb9b76593f3ccd0d8b39b4))
+
 # [8.16.0](https://github.com/Teradata/covalent/compare/v8.15.0...v8.16.0) (2024-07-23)
 
 ### Bug Fixes
