@@ -1,9 +1,3 @@
-# [8.15.0-beta.1](https://github.com/Teradata/covalent/compare/v8.14.1...v8.15.0-beta.1) (2024-07-29)
-
-### Features
-
-- **notebooks:** notebook, cell, code-editor components ([7db557b](https://github.com/Teradata/covalent/commit/7db557b6c370f32dc1825f24dac0a457cad32805))
-
 ## [8.16.1](https://github.com/Teradata/covalent/compare/v8.16.0...v8.16.1) (2024-07-29)
 
 ### Bug Fixes
