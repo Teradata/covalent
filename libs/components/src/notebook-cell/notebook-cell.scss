@@ -1,0 +1,115 @@
+:host {
+  --mdc-icon-button-size: 24px;
+
+  font-family: var(--mdc-typography-body1-font-family);
+  width: 100%;
+}
+
+cv-code-snippet {
+  background-color: var(--cv-theme-surface-container-high);
+  border-radius: 0;
+  box-sizing: border-box;
+  min-height: 21px;
+  padding: 0 0.25rem;
+}
+
+cv-code-snippet::part(code) {
+  font-size: var(--mdc-typography-body2-font-size);
+  line-height: var(--mdc-typography-body2-line-height);
+  padding: 1px 0;
+  white-space: pre-wrap;
+}
+
+cv-code-editor {
+  margin-top: -1px;
+}
+
+.selectionIndicator {
+  background-color: var(--cv-theme-primary);
+  border-radius: 2px;
+  cursor: move;
+  height: 100%;
+  margin-top: 2px;
+  visibility: hidden;
+}
+
+.selectionIndicatorWrapper {
+  min-width: 8px;
+
+  &:hover {
+    .selectionIndicator {
+      visibility: visible;
+    }
+  }
+}
+
+.timesExecuted {
+  color: var(--cv-theme-outline-variant);
+  cursor: move;
+  display: inline-flex;
+  font-family: var(--mdc-typography-body2-font-family);
+  font-size: var(--mdc-typography-body2-font-size);
+  height: 100%;
+  justify-content: end;
+  line-height: var(--mdc-typography-body2-line-height);
+  width: 50px;
+  text-wrap: nowrap;
+
+  .executionCount {
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 32px;
+    overflow: hidden;
+    padding: 0 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .loading {
+    font-size: var(--mdc-typography-headline6-font-size);
+    position: relative;
+    top: 0.275rem;
+  }
+}
+
+.cell {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+
+  &.focused,
+  &.selected {
+    .selectionIndicator {
+      visibility: visible;
+    }
+
+    .timesExecuted {
+      color: var(--cv-theme-primary);
+    }
+  }
+}
+
+.cellWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cellCodeWrapper {
+  align-items: start;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: end;
+  width: calc(100% - 1.5rem);
+}
+
+.cellOutputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: calc(100% - 58px);
+}
+
+.output {
+  max-width: 100%;
+}

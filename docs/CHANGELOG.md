@@ -1,3 +1,99 @@
+# [8.15.0-beta.17](https://github.com/Teradata/covalent/compare/v8.15.0-beta.16...v8.15.0-beta.17) (2024-07-29)
+
+### Bug Fixes
+
+- **components:** revert merge conflicts ([5208f9d](https://github.com/Teradata/covalent/commit/5208f9d65775b56b0c3855052bdddca16f7eb1b8))
+
+# [8.15.0-beta.15](https://github.com/Teradata/covalent/compare/v8.15.0-beta.14...v8.15.0-beta.15) (2024-07-28)
+
+### Bug Fixes
+
+- **notebooks:** dispatch an event when cell content is edited ([da825bb](https://github.com/Teradata/covalent/commit/da825bb91aeb1feae3ffc3f4707dba3fff444ae6))
+
+# [8.15.0-beta.14](https://github.com/Teradata/covalent/compare/v8.15.0-beta.13...v8.15.0-beta.14) (2024-07-23)
+
+### Bug Fixes
+
+- **notebook:** show markdown editor on dbl click ([3db7f07](https://github.com/Teradata/covalent/commit/3db7f0788a610e5ba2b5e3b6bc90aa7e5698a51a))
+
+# [8.15.0-beta.13](https://github.com/Teradata/covalent/compare/v8.15.0-beta.12...v8.15.0-beta.13) (2024-07-16)
+
+### Features
+
+- **notebooks:** keyboard actions for the cells ([42a3ed4](https://github.com/Teradata/covalent/commit/42a3ed4e895add0ceebf85d7cf3397df30091e1e))
+
+# [8.15.0-beta.12](https://github.com/Teradata/covalent/compare/v8.15.0-beta.11...v8.15.0-beta.12) (2024-07-15)
+
+### Bug Fixes
+
+- **notebooks:** fix UI bugs in notebook ([9164507](https://github.com/Teradata/covalent/commit/91645072293b52262b16bd623a02c19bb64e3fd7))
+
+# [8.15.0-beta.11](https://github.com/Teradata/covalent/compare/v8.15.0-beta.10...v8.15.0-beta.11) (2024-07-15)
+
+### Features
+
+- **notebooks:** add a loading indicator for cells ([353387f](https://github.com/Teradata/covalent/commit/353387fae365b0d2c04735ac26b244ed2cda6582))
+
+# [8.15.0-beta.10](https://github.com/Teradata/covalent/compare/v8.15.0-beta.9...v8.15.0-beta.10) (2024-07-10)
+
+### Bug Fixes
+
+- **notebooks:** fix cell output overflow issue ([bd67819](https://github.com/Teradata/covalent/commit/bd67819149ea9150127e7d87bc3dd74ecf1f8e0a))
+
+# [8.15.0-beta.9](https://github.com/Teradata/covalent/compare/v8.15.0-beta.8...v8.15.0-beta.9) (2024-07-10)
+
+### Bug Fixes
+
+- **build:** reduce build size for components ([6a32f72](https://github.com/Teradata/covalent/commit/6a32f725b78ae3414f9c04f51f566093cc71dd84))
+
+# [8.15.0-beta.8](https://github.com/Teradata/covalent/compare/v8.15.0-beta.7...v8.15.0-beta.8) (2024-07-10)
+
+### Bug Fixes
+
+- **build:** use monaco plugin for components build ([39cdf5b](https://github.com/Teradata/covalent/commit/39cdf5ba50dc2af1de5b5b49c47f3c7289576f47))
+
+# [8.15.0-beta.7](https://github.com/Teradata/covalent/compare/v8.15.0-beta.6...v8.15.0-beta.7) (2024-07-09)
+
+### Features
+
+- **notebooks:** render html output in cells ([23c128e](https://github.com/Teradata/covalent/commit/23c128ed7cf5cb5d09fb9909e286ce61af70230c))
+
+# [8.15.0-beta.6](https://github.com/Teradata/covalent/compare/v8.15.0-beta.5...v8.15.0-beta.6) (2024-07-09)
+
+### Bug Fixes
+
+- **code-editor:** register supported programming languages ([99f0cd1](https://github.com/Teradata/covalent/commit/99f0cd1990afaff65faab6bf2b585bf3a71abf91))
+
+# [8.15.0-beta.5](https://github.com/Teradata/covalent/compare/v8.15.0-beta.4...v8.15.0-beta.5) (2024-07-08)
+
+### Bug Fixes
+
+- **cell:** set minimum height for code snippet ([12771d3](https://github.com/Teradata/covalent/commit/12771d39c58ac0ad6b0fa6855060e535b1d1becf))
+
+# [8.15.0-beta.4](https://github.com/Teradata/covalent/compare/v8.15.0-beta.3...v8.15.0-beta.4) (2024-07-01)
+
+### Bug Fixes
+
+- **notebooks:** update monaco editor configuration ([310b2a8](https://github.com/Teradata/covalent/commit/310b2a89097efbafb369531f9148d4e87e8092b4))
+
+# [8.15.0-beta.3](https://github.com/Teradata/covalent/compare/v8.15.0-beta.2...v8.15.0-beta.3) (2024-06-28)
+
+### Bug Fixes
+
+- **notebook:** change code editor height adjustment logic ([46f445f](https://github.com/Teradata/covalent/commit/46f445f95dacc04f5bde1c814b5bc6206def0b27))
+
+# [8.15.0-beta.2](https://github.com/Teradata/covalent/compare/v8.15.0-beta.1...v8.15.0-beta.2) (2024-06-28)
+
+### Features
+
+- **notebook:** add custom events for cell actions ([93cbfb5](https://github.com/Teradata/covalent/commit/93cbfb5c41215fde8cc955308915861125e13562))
+
+# [8.15.0-beta.1](https://github.com/Teradata/covalent/compare/v8.14.1...v8.15.0-beta.1) (2024-06-25)
+
+### Features
+
+- **notebook-pov:** add notebook, cell and editor web components ([409f0f5](https://github.com/Teradata/covalent/commit/409f0f5a24a49eb3dea2ed1a49dea7e5c6cc3e8b))
+
 ## [8.14.1](https://github.com/Teradata/covalent/compare/v8.14.0...v8.14.1) (2024-06-14)
 
 ### Bug Fixes

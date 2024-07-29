@@ -78,7 +78,7 @@ export class CovalentCodeSnippet extends LitElement {
     return html` <pre
         style="${styleHeight}"
         part="container"
-      ><code class="${classMap(classes)}">${container}</code></pre>
+      ><code part="code" class="${classMap(classes)}">${container}</code></pre>
       <slot class="code-slot"></slot>`;
   }
 
