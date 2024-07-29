@@ -1,3 +1,9 @@
+# [8.15.0-beta.17](https://github.com/Teradata/covalent/compare/v8.15.0-beta.16...v8.15.0-beta.17) (2024-07-29)
+
+### Bug Fixes
+
+- **components:** revert merge conflicts ([5208f9d](https://github.com/Teradata/covalent/commit/5208f9d65775b56b0c3855052bdddca16f7eb1b8))
+
 # [8.15.0-beta.15](https://github.com/Teradata/covalent/compare/v8.15.0-beta.14...v8.15.0-beta.15) (2024-07-28)
 
 ### Bug Fixes
