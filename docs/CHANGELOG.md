@@ -1,54 +1,92 @@
-# [8.15.0-beta.16](https://github.com/Teradata/covalent/compare/v8.15.0-beta.15...v8.15.0-beta.16) (2024-07-29)
+# [8.15.0-beta.15](https://github.com/Teradata/covalent/compare/v8.15.0-beta.14...v8.15.0-beta.15) (2024-07-28)
 
 ### Bug Fixes
 
-- **components:** background styles to selected nav item ([5e6e108](https://github.com/Teradata/covalent/commit/5e6e108c58d284e0a468ec5b51cd0be3cf8d0e7a))
-- **components:** adjusting textfield placeholder size ([#2187](https://github.com/Teradata/covalent/issues/2187)) ([35e61c3](https://github.com/Teradata/covalent/commit/35e61c3de69ebd835dae6493fcb81cebf17be4b7))
-- **components:** list item disabled ([#2184](https://github.com/Teradata/covalent/issues/2184)) ([4ba3ab2](https://github.com/Teradata/covalent/commit/4ba3ab2df5c8bcf4cd411f420edcf5343da43254))
-- **components:** styling adjustment to cards web component ([#2198](https://github.com/Teradata/covalent/issues/2198)) ([4d0995a](https://github.com/Teradata/covalent/commit/4d0995a4b220fe6dd410e5e4375ecea179379715))
-- **markdown:** allow relative paths ([#2185](https://github.com/Teradata/covalent/issues/2185)) ([8b76e80](https://github.com/Teradata/covalent/commit/8b76e80a40272a75fa64ef297b856cd5a15d4193))
+- **notebooks:** dispatch an event when cell content is edited ([da825bb](https://github.com/Teradata/covalent/commit/da825bb91aeb1feae3ffc3f4707dba3fff444ae6))
+
+# [8.15.0-beta.14](https://github.com/Teradata/covalent/compare/v8.15.0-beta.13...v8.15.0-beta.14) (2024-07-23)
+
+### Bug Fixes
+
+- **notebook:** show markdown editor on dbl click ([3db7f07](https://github.com/Teradata/covalent/commit/3db7f0788a610e5ba2b5e3b6bc90aa7e5698a51a))
+
+# [8.15.0-beta.13](https://github.com/Teradata/covalent/compare/v8.15.0-beta.12...v8.15.0-beta.13) (2024-07-16)
 
 ### Features
 
-- **components:** add delay to app shell navigation hover ([#2186](https://github.com/Teradata/covalent/issues/2186)) ([f9f9c9a](https://github.com/Teradata/covalent/commit/f9f9c9a0224de2b478234a47f1facae57754457b))
-- fixed issue with icon file upload ([a6635b8](https://github.com/Teradata/covalent/commit/a6635b88ca786292f01567d4c5b8333dc783f06e))
-- re-attempting new icon uploads ([374281b](https://github.com/Teradata/covalent/commit/374281b0ef61a3c0d70e35b0614d1601b5ba5b19))
+- **notebooks:** keyboard actions for the cells ([42a3ed4](https://github.com/Teradata/covalent/commit/42a3ed4e895add0ceebf85d7cf3397df30091e1e))
 
-# [8.16.0](https://github.com/Teradata/covalent/compare/v8.15.0...v8.16.0) (2024-07-23)
+# [8.15.0-beta.12](https://github.com/Teradata/covalent/compare/v8.15.0-beta.11...v8.15.0-beta.12) (2024-07-15)
 
 ### Bug Fixes
 
-- **components:** background styles to selected nav item ([b39a556](https://github.com/Teradata/covalent/commit/b39a5563a63e5a527e1a8aa847b28ad6a5130803))
+- **notebooks:** fix UI bugs in notebook ([9164507](https://github.com/Teradata/covalent/commit/91645072293b52262b16bd623a02c19bb64e3fd7))
+
+# [8.15.0-beta.11](https://github.com/Teradata/covalent/compare/v8.15.0-beta.10...v8.15.0-beta.11) (2024-07-15)
 
 ### Features
 
-- fixed issue with icon file upload ([21a9093](https://github.com/Teradata/covalent/commit/21a90939230e4dce0371f956d2bdfce9981dc23e))
-- re-attempting new icon uploads ([00fd7e1](https://github.com/Teradata/covalent/commit/00fd7e1dd2414a57ba1033eb91963abc608f440e))
+- **notebooks:** add a loading indicator for cells ([353387f](https://github.com/Teradata/covalent/commit/353387fae365b0d2c04735ac26b244ed2cda6582))
 
-# [8.15.0](https://github.com/Teradata/covalent/compare/v8.14.4...v8.15.0) (2024-07-23)
+# [8.15.0-beta.10](https://github.com/Teradata/covalent/compare/v8.15.0-beta.9...v8.15.0-beta.10) (2024-07-10)
+
+### Bug Fixes
+
+- **notebooks:** fix cell output overflow issue ([bd67819](https://github.com/Teradata/covalent/commit/bd67819149ea9150127e7d87bc3dd74ecf1f8e0a))
+
+# [8.15.0-beta.9](https://github.com/Teradata/covalent/compare/v8.15.0-beta.8...v8.15.0-beta.9) (2024-07-10)
+
+### Bug Fixes
+
+- **build:** reduce build size for components ([6a32f72](https://github.com/Teradata/covalent/commit/6a32f725b78ae3414f9c04f51f566093cc71dd84))
+
+# [8.15.0-beta.8](https://github.com/Teradata/covalent/compare/v8.15.0-beta.7...v8.15.0-beta.8) (2024-07-10)
+
+### Bug Fixes
+
+- **build:** use monaco plugin for components build ([39cdf5b](https://github.com/Teradata/covalent/commit/39cdf5ba50dc2af1de5b5b49c47f3c7289576f47))
+
+# [8.15.0-beta.7](https://github.com/Teradata/covalent/compare/v8.15.0-beta.6...v8.15.0-beta.7) (2024-07-09)
 
 ### Features
 
-- **components:** add delay to app shell navigation hover ([#2186](https://github.com/Teradata/covalent/issues/2186)) ([a9463d2](https://github.com/Teradata/covalent/commit/a9463d2522b1274e47f2d26aa86ad96a29c0c043))
+- **notebooks:** render html output in cells ([23c128e](https://github.com/Teradata/covalent/commit/23c128ed7cf5cb5d09fb9909e286ce61af70230c))
 
-## [8.14.4](https://github.com/Teradata/covalent/compare/v8.14.3...v8.14.4) (2024-07-22)
-
-### Bug Fixes
-
-- **components:** styling adjustment to cards web component ([#2198](https://github.com/Teradata/covalent/issues/2198)) ([fdab895](https://github.com/Teradata/covalent/commit/fdab895401df48ed9c4a42848709175b689ffc69))
-
-## [8.14.3](https://github.com/Teradata/covalent/compare/v8.14.2...v8.14.3) (2024-07-18)
+# [8.15.0-beta.6](https://github.com/Teradata/covalent/compare/v8.15.0-beta.5...v8.15.0-beta.6) (2024-07-09)
 
 ### Bug Fixes
 
-- **components:** adjusting textfield placeholder size ([#2187](https://github.com/Teradata/covalent/issues/2187)) ([2509276](https://github.com/Teradata/covalent/commit/2509276cef121eee02b5515673fe48f11fe0a296))
+- **code-editor:** register supported programming languages ([99f0cd1](https://github.com/Teradata/covalent/commit/99f0cd1990afaff65faab6bf2b585bf3a71abf91))
 
-## [8.14.2](https://github.com/Teradata/covalent/compare/v8.14.1...v8.14.2) (2024-07-12)
+# [8.15.0-beta.5](https://github.com/Teradata/covalent/compare/v8.15.0-beta.4...v8.15.0-beta.5) (2024-07-08)
 
 ### Bug Fixes
 
-- **components:** list item disabled ([#2184](https://github.com/Teradata/covalent/issues/2184)) ([207630d](https://github.com/Teradata/covalent/commit/207630de62edb56328278aa166546a29238a7a1e))
-- **markdown:** allow relative paths ([#2185](https://github.com/Teradata/covalent/issues/2185)) ([3aeae73](https://github.com/Teradata/covalent/commit/3aeae73a784cb604252e5b9aaf12ce5084942d3a))
+- **cell:** set minimum height for code snippet ([12771d3](https://github.com/Teradata/covalent/commit/12771d39c58ac0ad6b0fa6855060e535b1d1becf))
+
+# [8.15.0-beta.4](https://github.com/Teradata/covalent/compare/v8.15.0-beta.3...v8.15.0-beta.4) (2024-07-01)
+
+### Bug Fixes
+
+- **notebooks:** update monaco editor configuration ([310b2a8](https://github.com/Teradata/covalent/commit/310b2a89097efbafb369531f9148d4e87e8092b4))
+
+# [8.15.0-beta.3](https://github.com/Teradata/covalent/compare/v8.15.0-beta.2...v8.15.0-beta.3) (2024-06-28)
+
+### Bug Fixes
+
+- **notebook:** change code editor height adjustment logic ([46f445f](https://github.com/Teradata/covalent/commit/46f445f95dacc04f5bde1c814b5bc6206def0b27))
+
+# [8.15.0-beta.2](https://github.com/Teradata/covalent/compare/v8.15.0-beta.1...v8.15.0-beta.2) (2024-06-28)
+
+### Features
+
+- **notebook:** add custom events for cell actions ([93cbfb5](https://github.com/Teradata/covalent/commit/93cbfb5c41215fde8cc955308915861125e13562))
+
+# [8.15.0-beta.1](https://github.com/Teradata/covalent/compare/v8.14.1...v8.15.0-beta.1) (2024-06-25)
+
+### Features
+
+- **notebook-pov:** add notebook, cell and editor web components ([409f0f5](https://github.com/Teradata/covalent/commit/409f0f5a24a49eb3dea2ed1a49dea7e5c6cc3e8b))
 
 ## [8.14.1](https://github.com/Teradata/covalent/compare/v8.14.0...v8.14.1) (2024-06-14)
 

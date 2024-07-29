@@ -27,41 +27,25 @@ import {
 
 import * as showdown from 'showdown';
 
-function isAbsoluteUrl(currentHref: string): boolean {
-  // Regular Expression to check url
-  const RgExp = new RegExp('^(?:[a-z]+:)?//', 'i');
-  return RgExp.test(currentHref);
-}
-
 // TODO: assumes it is a github url
 // allow override somehow
-function generateHref(currentHref: string, relativeHref: string): string {
+function generateAbsoluteHref(
+  currentHref: string,
+  relativeHref: string
+): string {
   if (currentHref && relativeHref) {
-    if (isAbsoluteUrl(currentHref)) {
-      const currentUrl: URL = new URL(currentHref);
-      const path: string = currentUrl.pathname
-        .split('/')
-        .slice(1, -1)
-        .join('/');
-      const correctUrl: URL = new URL(currentHref);
+    const currentUrl: URL = new URL(currentHref);
+    const path: string = currentUrl.pathname.split('/').slice(1, -1).join('/');
+    const correctUrl: URL = new URL(currentHref);
 
-      if (relativeHref.startsWith('/')) {
-        // url is relative to top level
-        const orgAndRepo: string = path.split('/').slice(0, 3).join('/');
-        correctUrl.pathname = `${orgAndRepo}${relativeHref}`;
-      } else {
-        correctUrl.pathname = `${path}/${relativeHref}`;
-      }
-      return correctUrl.href;
+    if (relativeHref.startsWith('/')) {
+      // url is relative to top level
+      const orgAndRepo: string = path.split('/').slice(0, 3).join('/');
+      correctUrl.pathname = `${orgAndRepo}${relativeHref}`;
     } else {
-      const path: string = currentHref.split('/').slice(0, -1).join('/');
-
-      if (relativeHref.startsWith('/')) {
-        return `${path}${relativeHref}`;
-      } else {
-        return `${path}/${relativeHref}`;
-      }
+      correctUrl.pathname = `${path}/${relativeHref}`;
     }
+    return correctUrl.href;
   }
   return '';
 }
@@ -92,7 +76,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
               link.getAttribute('href')
             );
 
-            url.href = generateHref(currentHref, hrefWithoutHash);
+            url.href = generateAbsoluteHref(currentHref, hrefWithoutHash);
 
             if (originalHash) {
               url.hash = genHeadingId(originalHash);
@@ -134,7 +118,7 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
             image.src = rawGithubHref(src);
           }
         } catch {
-          image.src = generateHref(
+          image.src = generateAbsoluteHref(
             isGithubHref(currentHref)
               ? rawGithubHref(currentHref)
               : currentHref,

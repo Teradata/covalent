@@ -16,8 +16,6 @@
   --cv-list-item-graphic-margin-left: 0;
   --cv-list-menu-height: 0;
   --cv-list-item-expansion-icon-size: 0;
-  --cv-list-item-selected-background-color: var(--cv-theme-primary-24);
-  --cv-list-item-selected-color: var(--cv-theme-primary);
 }
 
 :host([open]) .navigation {
@@ -29,10 +27,6 @@
   --cv-list-item-expansion-icon-margin: -24px;
   --cv-list-item-expansion-icon-size: 24px;
   --cv-list-menu-height: inherit;
-  --cv-list-item-selected-background-color: var(
-    --cv-theme-on-surface-variant-8
-  );
-  --cv-list-item-selected-color: var(--cv-theme-on-surface-variant);
 }
 
 :host([helpOpen]) {
@@ -70,18 +64,11 @@
   }
 }
 
-.cov-help--resizing {
-  .main,
-  .help {
-    transition-duration: 0ms;
-  }
-}
-
 .main {
   height: 100vh;
   grid-area: main;
   overflow: auto;
-  transition: margin-left 200ms ease-in-out, margin-right 200ms ease-in-out;
+  transition: margin-left 200ms ease-in-out;
 
   .main-wrapper {
     margin: 0 auto;
@@ -131,7 +118,6 @@
   position: fixed;
   right: 0;
   width: var(--cv-help-width, 320px);
-  transition: width 200ms;
   height: 100vh;
   overflow-y: auto;
 

@@ -10,17 +10,6 @@
   --mdc-text-field-outlined-hover-border-color: var(
     --mdc-theme-text-icon-on-background
   );
-  --mdc-typography-subtitle1-font-family: var(
-    --mdc-typography-body1-font-family
-  );
-  --mdc-typography-subtitle1-font-size: var(
-    --mdc-typography-body1-font-size,
-    1rem
-  );
-  --mdc-typography-subtitle1-font-weight: var(
-    --mdc-typography-body1-font-weight,
-    400
-  );
 }
 
 :host([dense]) {

@@ -4,11 +4,6 @@ byId:
     name: Action ribbon
     parentId: test-page
     path: /pattern/action-ribbon
-  adapting-tone-by-situation:
-    id: adapting-tone-by-situation
-    name: Adapting tone by situation
-    parentId: voice-and-tone
-    path: /pages/adapting-tone-by-situation
   alert:
     id: alert
     name: Alert
@@ -342,14 +337,9 @@ byId:
     name: Typography
     parentId: tokens
     path: /pages/typography
-  voice-and-tone:
-    id: voice-and-tone
-    name: Voice and tone
-    parentId: writing
-    path: /pages/voice-and-tone
   writing:
     id: writing
-    name: Content at Teradata
+    name: Content Design
     parentId: root
     path: /pages/writing
 order:
@@ -418,7 +408,5 @@ order:
   - dark
   - typography
   - writing
-  - voice-and-tone
   - product-and-ui
   - error-messages
-  - adapting-tone-by-situation

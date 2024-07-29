@@ -11,10 +11,10 @@ export default {
   },
 };
 
-const BasicTemplate = ({ selected, disabled }) => {
+const BasicTemplate = ({ selected }) => {
   return `
     <cv-list activatable>
-        <cv-list-item ${disabled ? `disabled` : null}>Item 0</cv-list-item>
+        <cv-list-item>Item 0</cv-list-item>
         <cv-list-item ${
           selected ? `selected activated` : null
         }>Item 1</cv-list-item>
@@ -23,10 +23,10 @@ const BasicTemplate = ({ selected, disabled }) => {
     </cv-list>`;
 };
 
-const IconTemplate = ({ icon, iconStyle = 'avatar', disabled }) => {
+const IconTemplate = ({ icon, iconStyle = 'avatar' }) => {
   return `
     <cv-list>
-        <cv-list-item graphic="${iconStyle}" ${disabled ? `disabled` : null}>
+        <cv-list-item graphic="${iconStyle}">
             <span>${iconStyle} 0</span>
             <cv-icon slot="graphic">${icon}</cv-icon>
         </cv-list-item>
@@ -49,10 +49,10 @@ const IconTemplate = ({ icon, iconStyle = 'avatar', disabled }) => {
     </cv-list>`;
 };
 
-const TwoLineTemplate = ({ icon, style, required, helper, disabled }) => {
+const TwoLineTemplate = ({ icon, style, required, helper }) => {
   return `
     <cv-list>
-        <cv-list-item twoline ${disabled ? `disabled` : null}>
+        <cv-list-item twoline>
             <span>Item 0</span>
             <span slot="secondary">Secondary line</span>
         </cv-list-item>
@@ -71,12 +71,10 @@ const TwoLineTemplate = ({ icon, style, required, helper, disabled }) => {
     </cv-list>`;
 };
 
-const CheckRadioTemplate = ({ listType = 'check', disabled }) => {
+const CheckRadioTemplate = ({ listType = 'check' }) => {
   return `
     <cv-list multi>
-        <cv-${listType}-list-item selected ${
-    disabled ? `disabled` : null
-  }>Item 0</cv-${listType}-list-item>
+        <cv-${listType}-list-item selected>Item 0</cv-${listType}-list-item>
         <cv-${listType}-list-item selected>Item 1</cv-${listType}-list-item>
         <li divider role="separator" padded></li>
         <cv-${listType}-list-item left selected>Item 2 (left)</cv-${listType}-list-item>
@@ -87,14 +85,12 @@ const CheckRadioTemplate = ({ listType = 'check', disabled }) => {
 export const Basic = BasicTemplate.bind({});
 Basic.args = {
   selected: false,
-  disabled: false,
 };
 
 export const WithAvatar = IconTemplate.bind({});
 WithAvatar.args = {
   icon: 'folder',
   iconStyle: 'avatar',
-  disabled: false,
 };
 WithAvatar.argTypes = {
   iconStyle: {
@@ -104,14 +100,8 @@ WithAvatar.argTypes = {
 };
 
 export const TwoLine = TwoLineTemplate.bind({});
-TwoLine.args = {
-  disabled: false,
-};
 
 export const ChecksAndRadios = CheckRadioTemplate.bind({});
-ChecksAndRadios.args = {
-  disabled: false,
-};
 ChecksAndRadios.argTypes = {
   listType: {
     options: ['check', 'radio'],

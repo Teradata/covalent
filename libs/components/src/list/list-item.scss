@@ -11,15 +11,6 @@
   border-radius: 9999px;
 }
 
-:host([disabled]) {
-  color: var(--cv-theme-on-surface-38);
-
-  &:host([graphic='avatar']) .mdc-deprecated-list-item__graphic,
-  .mdc-deprecated-list-item__meta {
-    --mdc-theme-text-icon-on-background: var(--cv-theme-on-surface-38);
-  }
-}
-
 .mdc-deprecated-list-item__meta.material-icons ::slotted(cv-icon) {
   font-family: var(--mdc-icon-font);
   font-size: var(--mdc-icon-size, 24px);

@@ -177,7 +177,7 @@
                               "type": "code"
                             }
                           ],
-                          "text": "on"
+                          "text": "toggledOn"
                         },
                         {
                           "type": "text",

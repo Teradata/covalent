@@ -35,7 +35,6 @@ export class CovalentAppShell extends DrawerBase {
   helpWidth = 0;
   private _startX!: number;
   private _startWidth!: number;
-  private _resizing = false;
 
   @queryAssignedElements({ slot: 'navigation' })
   navigationListElements!: HTMLElement[];
@@ -86,9 +85,6 @@ export class CovalentAppShell extends DrawerBase {
   fullWidth = false;
 
   private hovered = false;
-  private hoverTimeout: number | undefined;
-  private hoverEntryDuration = 250;
-  private hoverExitDuration = 250;
 
   constructor() {
     super();
@@ -158,7 +154,6 @@ export class CovalentAppShell extends DrawerBase {
     if (event.target === resizeHandle) {
       this._startX = event.clientX;
       this._startWidth = this.helpWidth;
-      this._resizing = true;
       document.addEventListener('mousemove', this._resize);
       document.addEventListener('mouseup', this._stopResize);
       (event.target as HTMLElement).classList.add('helpResizable');
@@ -172,8 +167,6 @@ export class CovalentAppShell extends DrawerBase {
         this.requestUpdate();
       }
     });
-
-    this.requestUpdate();
   }
 
   private _resize(event: MouseEvent) {
@@ -196,13 +189,10 @@ export class CovalentAppShell extends DrawerBase {
   private _stopResize() {
     document.removeEventListener('mousemove', this._resize);
     document.removeEventListener('mouseup', this._stopResize);
-    this._resizing = false;
     const resizeHandle = this.shadowRoot?.querySelector('.resize-handle');
     if (resizeHandle) {
       resizeHandle.classList.remove('helpResizable');
     }
-
-    this.requestUpdate();
   }
 
   private _toggleOpen(forcedOpen = false) {
@@ -239,35 +229,22 @@ export class CovalentAppShell extends DrawerBase {
     this.hovered = false;
   }
 
-  private _handleNavMouseOver = () => {
+  private _handleNavMouseOver() {
+    if (this.open || this.forcedOpen) {
+      return;
+    }
+
     this.hovered = true;
+    this._toggleOpen();
+  }
 
-    // clear timeout if user hovers over nav before it closes
-    clearTimeout(this.hoverTimeout);
-
-    if (!this.open && !this.forcedOpen) {
-      this.hoverTimeout = setTimeout(() => {
-        if (this.hovered) {
-          this._toggleOpen();
-        }
-      }, this.hoverEntryDuration);
+  private _handleNavMouseOut() {
+    if (!this.open || this.forcedOpen) {
+      return;
     }
-  };
 
-  private _handleNavMouseOut = () => {
-    this.hovered = false;
-
-    // clear timeout if user leaves nav before it opens
-    clearTimeout(this.hoverTimeout);
-
-    if (this.open && !this.forcedOpen) {
-      this.hoverTimeout = setTimeout(() => {
-        if (!this.hovered) {
-          this._toggleOpen();
-        }
-      }, this.hoverExitDuration);
-    }
-  };
+    this._toggleOpen();
+  }
 
   private _handleDrawerClosed() {
     this.forcedOpen = false;
@@ -322,7 +299,6 @@ export class CovalentAppShell extends DrawerBase {
       'cov-drawer--hovered': this.hovered,
       'cov-help--open': this.helpOpen,
       'cov-help--closed': !this.helpOpen,
-      'cov-help--resizing': this._resizing,
       'cov-content--full-width': this.fullWidth,
     };
     const drawerClasses = {
