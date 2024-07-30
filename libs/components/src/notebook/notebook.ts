@@ -577,7 +577,6 @@ export class CovalentNotebook extends LitElement {
                     state="negative"
                     icon="error"
                     iconAriaLabel="error"
-                    inline
                   >
                   </cv-alert>`
                 )}

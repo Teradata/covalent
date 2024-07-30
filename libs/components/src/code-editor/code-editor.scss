@@ -1,14 +1,14 @@
 :host {
-  --editor-width: 100%;
-  --editor-height: 100%;
+  --cv-editor-width: 100%;
+  --cv-editor-height: 100%;
 
   box-sizing: border-box;
 
   .monaco-editor {
     .lines-content.monaco-editor-background {
-      height: var(--editor-height);
+      height: var(--cv-editor-height);
       margin-left: 4px;
-      width: var(--editor-width);
+      width: var(--cv-editor-width);
     }
   }
 
@@ -18,9 +18,9 @@
 }
 
 .editor {
-  height: var(--editor-height);
-  min-height: var(--editor-height);
-  max-width: calc(var(--editor-width) - 2px);
+  height: var(--cv-editor-height);
+  min-height: var(--cv-editor-height);
+  max-width: calc(var(--cv-editor-width) - 2px);
   padding-top: 2px;
-  width: var(--editor-width);
+  width: var(--cv-editor-width);
 }
