@@ -1,3 +1,9 @@
+# [8.17.0](https://github.com/Teradata/covalent/compare/v8.16.1...v8.17.0) (2024-07-31)
+
+### Features
+
+- **components:** optimizing the main theme file ([#2210](https://github.com/Teradata/covalent/issues/2210)) ([69facc1](https://github.com/Teradata/covalent/commit/69facc16ca93d9e7a41ab459b326e93684e63aac))
+
 ## [8.16.1](https://github.com/Teradata/covalent/compare/v8.16.0...v8.16.1) (2024-07-29)
 
 ### Bug Fixes
