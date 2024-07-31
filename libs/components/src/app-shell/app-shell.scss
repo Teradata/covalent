@@ -17,6 +17,7 @@
   --cv-list-padding-left: 12px;
   --cv-list-item-border-radius: 100%;
   --cv-list-item-width: 48px;
+  --cv-list-item-height: 48px;
   --cv-list-item-graphic-margin-left: 0;
   --cv-list-menu-height: 0;
   --cv-list-item-expansion-icon-size: 0;
@@ -29,6 +30,7 @@
   --cv-list-padding-left: 12px;
   --cv-list-item-border-radius: 100px;
   --cv-list-item-width: 100%;
+  --cv-list-item-height: inherit;
   --cv-list-item-graphic-margin-left: 0;
   --cv-list-item-expansion-icon-margin: -24px;
   --cv-list-item-expansion-icon-size: 24px;
@@ -274,10 +276,11 @@ nav.navigation {
     top: 0;
     background-color: var(--mdc-theme-background);
     z-index: 2;
+    padding-left: var(--cv-list-padding-left, 0);
   }
 
   slot[name='logo'] {
-    display: none;
+    display: block;
   }
 
   slot[name='navigation'] {
@@ -291,16 +294,21 @@ nav.navigation {
     top: 0;
     left: 0;
     bottom: 0;
+
+    slot[name='logo'] {
+      transition: all 200ms;
+      opacity: 0;
+    }
   }
 
   &.mdc-drawer--open {
     .toggle-drawer {
-      margin-left: 12px;
+      margin-left: 0;
       margin-right: 0;
     }
 
     slot[name='logo'] {
-      display: block;
+      opacity: 1;
     }
   }
 
@@ -323,7 +331,6 @@ nav.navigation {
     display: flex;
     flex-direction: column;
     transition-property: width;
-    transition-duration: 200ms;
     transform: none;
   }
 
