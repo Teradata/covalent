@@ -10,6 +10,8 @@
 .mdc-card {
   --mdc-theme-surface: var(--cv-theme-surface-container-lowest, #ffffff);
 
+  box-shadow: none;
+
   &.cv-height-full {
     height: 100%;
 

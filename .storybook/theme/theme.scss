@@ -30,7 +30,6 @@ $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
 
 .sb-show-main {
   background-color: var(--mdc-theme-surface);
-  color: var(--cv-theme-on-surface);
 
   .sbdocs-wrapper {
     padding-top: 0;
