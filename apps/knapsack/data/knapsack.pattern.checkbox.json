@@ -3,7 +3,8 @@
   "title": "Checkbox",
   "description": "Interactive element allowing users to select one or more options from a list.",
   "statuses": {
-    "main": "needsReview"
+    "main": "needsReview",
+    "XQn0s6hkh9": "UPHFPB1cG"
   },
   "templates": [
     {
@@ -66,7 +67,7 @@
     {
       "id": "overview",
       "title": "Overview",
-      "blockIds": ["2Vc2CAzoJ2", "9LdAB1x7Nz", "KLBIYPkEr"]
+      "blockIds": []
     }
   ]
 }

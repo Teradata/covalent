@@ -3,7 +3,9 @@
   "title": "Alert",
   "description": "Notification informing users about important information or events.",
   "statuses": {
-    "main": "needsReview"
+    "main": "needsReview",
+    "Mh7xwTui": "draft",
+    "XQn0s6hkh9": "CQYElkMtIw"
   },
   "templates": [
     {
