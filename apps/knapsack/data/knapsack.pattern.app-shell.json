@@ -3,7 +3,9 @@
   "title": "App shell",
   "description": "The structural foundation of an application, including its layout and navigation.",
   "statuses": {
-    "main": "needsReview"
+    "main": "needsReview",
+    "Mh7xwTui": "needsDesign",
+    "XQn0s6hkh9": "UPHFPB1cG"
   },
   "templates": [
     {

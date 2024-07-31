@@ -1,33 +1,132 @@
 {
   "statusSets": [
     {
-      "id": "main",
-      "title": "Status",
+      "id": "Mh7xwTui",
+      "title": "Documentation",
       "statuses": [
         {
-          "id": "draft",
-          "title": "Draft",
-          "color": "#9b9b9b"
-        },
-        {
           "id": "needsDesign",
-          "title": "Needs Design",
-          "color": "#FC0"
+          "color": "#f00",
+          "title": "Not started"
         },
         {
-          "id": "needsDev",
-          "title": "Needs Development",
-          "color": "#FC0"
+          "id": "draft",
+          "color": "#ccc",
+          "title": "Draft"
         },
         {
           "id": "needsReview",
-          "title": "Needs Review",
-          "color": "#FC0"
+          "color": "#FC0",
+          "title": "Needs review"
         },
         {
           "id": "ready",
-          "title": "Ready",
-          "color": "#2ECC40"
+          "color": "#2ECC40",
+          "title": "Ready"
+        }
+      ]
+    },
+    {
+      "id": "main",
+      "title": "Design",
+      "statuses": [
+        {
+          "id": "needsDesign",
+          "color": "#f00",
+          "title": "Not started"
+        },
+        {
+          "id": "draft",
+          "color": "#ccc",
+          "title": "Draft"
+        },
+        {
+          "id": "needsReview",
+          "color": "#FC0",
+          "title": "Needs review"
+        },
+        {
+          "id": "ready",
+          "color": "#2ECC40",
+          "title": "Ready"
+        }
+      ]
+    },
+    {
+      "id": "XQn0s6hkh9",
+      "title": "Web component",
+      "statuses": [
+        {
+          "id": "0Sd3zkLgeA",
+          "color": "#ff0000",
+          "title": "Not started"
+        },
+        {
+          "id": "UPHFPB1cG",
+          "color": "#ccc",
+          "title": "Draft"
+        },
+        {
+          "id": "CQYElkMtIw",
+          "color": "#fc0",
+          "title": "Needs review"
+        },
+        {
+          "id": "n1ziNeAx",
+          "color": "#06C900",
+          "title": "Ready"
+        }
+      ]
+    },
+    {
+      "id": "Q6-ISXfQAV",
+      "title": "Angular",
+      "statuses": [
+        {
+          "id": "0Sd3zkLgeA",
+          "color": "#ff0000",
+          "title": "Not started"
+        },
+        {
+          "id": "UPHFPB1cG",
+          "color": "#ccc",
+          "title": "Draft"
+        },
+        {
+          "id": "CQYElkMtIw",
+          "color": "#fc0",
+          "title": "Needs review"
+        },
+        {
+          "id": "n1ziNeAx",
+          "color": "#06C900",
+          "title": "Ready"
+        }
+      ]
+    },
+    {
+      "id": "6JOhpB7mod",
+      "title": "Content",
+      "statuses": [
+        {
+          "id": "needsDesign",
+          "color": "#f00",
+          "title": "Not started"
+        },
+        {
+          "id": "draft",
+          "color": "#ccc",
+          "title": "Draft"
+        },
+        {
+          "id": "needsReview",
+          "color": "#FC0",
+          "title": "Needs review"
+        },
+        {
+          "id": "ready",
+          "color": "#2ECC40",
+          "title": "Ready"
         }
       ]
     }
