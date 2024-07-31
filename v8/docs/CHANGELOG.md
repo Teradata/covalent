@@ -1,3 +1,9 @@
+## [8.17.1](https://github.com/Teradata/covalent/compare/v8.17.0...v8.17.1) (2024-07-31)
+
+### Bug Fixes
+
+- **tokens:** update tokens to latest ([#2211](https://github.com/Teradata/covalent/issues/2211)) ([87fccab](https://github.com/Teradata/covalent/commit/87fccab4e71eaf135dcbf440c51ef2a51f50d8ba))
+
 # [8.17.0](https://github.com/Teradata/covalent/compare/v8.16.1...v8.17.0) (2024-07-31)
 
 ### Features
