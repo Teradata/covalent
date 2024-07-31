@@ -69,7 +69,8 @@
 }
 
 :host([selected]),
-:host([activated]) {
+:host([activated]),
+:host([hasActivatedChild]) {
   .mdc-deprecated-list-item__graphic.material-icons {
     font-variation-settings: 'FILL' 1;
   }
