@@ -1,4 +1,4 @@
-import"./typography-b37cfa81.js";import"./query-assigned-elements-9f88bee1.js";import"./property-f36ea729.js";const r={title:"Components/Text"},a=()=>`
+import"./typography-39598c1f.js";import"./query-assigned-elements-9f88bee1.js";import"./property-f36ea729.js";const r={title:"Components/Text"},a=()=>`
     <cv-typography scale="headline1">Headline 1</cv-typography>
     <cv-typography scale="headline2">Headline 2</cv-typography>
     <cv-typography scale="headline3">Headline 3</cv-typography>
