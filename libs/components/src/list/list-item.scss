@@ -4,10 +4,10 @@
 }
 
 :host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
-  --mdc-theme-text-icon-on-background: var(--cv-theme-on-primary-container);
+  --mdc-theme-text-icon-on-background: var(--cv-theme-on-secondary-container);
 
-  color: var(--cv-theme-on-primary-container);
-  background-color: var(--cv-theme-primary-container);
+  color: var(--cv-theme-on-secondary-container);
+  background-color: var(--cv-theme-secondary-container);
   border-radius: 9999px;
 }
 

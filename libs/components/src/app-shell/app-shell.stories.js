@@ -88,7 +88,7 @@ const Template = ({
     .hidden-large {
         display: none;
     }
- 
+
     @media only screen and (max-width: 800px) {
         .hidden-large {
             display:flex;
@@ -98,24 +98,24 @@ const Template = ({
         }
     }
     </style>
-    <cv-app-shell 
-    ${appName ? `appName="${appName}"` : ''} 
+    <cv-app-shell
+    ${appName ? `appName="${appName}"` : ''}
     ${sectionTitle ? `sectionName="${sectionTitle}"` : ''}
     ${forcedOpen ? `forcedOpen open` : ''}
     ${contained ? `contained` : ''}
     ${fullWidth ? `fullWidth` : ''}
     ${helpResizable ? `helpResizable` : ''}
-    
+
     >
 
       <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>
 
       <svg
-        slot="logo" 
-        width="103" 
+        slot="logo"
+        width="103"
         height="20"
         viewBox="0 0 103 20"
-        style="fill: var(--cv-theme-text-logo-on-background)" 
+        style="fill: var(--cv-theme-text-logo-on-background)"
         fill="none">
         <path d="M0 2.30182H3.53561V5.6615H7.47898V8.88045H3.53561V14.5072C3.53561 15.9632 4.26909 16.4391 5.30341 16.4391H7.47898V19.658H5.30341C1.68575 19.658 0 18.0358 0 14.5072V2.30182Z" />
         <path d="M15.9376 19.9907C11.5865 19.9907 8.67492 17.0506 8.67492 12.6854C8.67492 8.32008 11.5318 5.32374 15.7461 5.32374C19.9605 5.32374 22.708 8.17934 22.708 12.5446C22.708 12.9643 22.6806 13.4121 22.5986 13.9443H12.3746C12.7003 15.9043 13.8714 16.828 15.9923 16.828C17.325 16.828 18.3046 16.2395 18.685 15.4565H22.33C21.5145 18.1714 19.2295 19.9907 15.9376 19.9907ZM12.4293 10.9787H19.0107C18.6577 9.21565 17.6233 8.37637 15.7461 8.37637C13.9783 8.37637 12.8371 9.27194 12.4293 10.9787Z" />
@@ -127,7 +127,7 @@ const Template = ({
         <path d="M89.2555 19.8218C86.7542 19.8218 84.7676 18.3096 84.7676 15.1751C84.7676 12.6009 86.3439 10.8379 89.8795 10.8379H92.9527V10.4183C92.9527 9.13121 92.1645 8.59898 90.2053 8.59898C88.8999 8.59898 87.8656 8.73972 86.4509 9.15936V5.88412C87.5399 5.57706 88.8999 5.38004 90.5036 5.38004C94.5837 5.38004 96.4858 6.97416 96.4858 10.4183V19.6555H93.0323V18.8443L92.2441 19.1795C91.2371 19.5992 90.2053 19.8244 89.253 19.8244L89.2555 19.8218ZM91.1874 16.5466L92.9552 15.7636V13.6935H90.2624C89.0392 13.6935 88.3032 14.282 88.3032 15.2058C88.3032 16.2984 89.0367 16.828 89.9616 16.828C90.342 16.828 90.7771 16.7154 91.1849 16.5491L91.1874 16.5466Z" />
         <path d="M98.5296 18.0588C98.5296 16.9943 99.3451 16.1551 100.407 16.1551C101.468 16.1551 102.284 16.9943 102.284 18.0588C102.284 19.1233 101.441 19.9907 100.407 19.9907C99.3725 19.9907 98.5296 19.1233 98.5296 18.0588Z" />
       </svg>
-      
+
       <cv-list
         class="navigation-rail"
         slot="navigation"
@@ -171,16 +171,16 @@ const Template = ({
         <cv-typography scale="body1">All environments</cv-typography>
         <cv-icon>arrow_drop_down</cv-icon>
        </span>
-       
-       <cv-textfield slot="actionItems" icon="forum" placeholder="Message ask.ai" dense></cv-textfield>
+
+       <cv-textfield slot="actionItems" icon="forum" placeholder="Message ask.ai" style="margin-right: 8px" dense></cv-textfield>
        <cv-icon-button slot="actionItems" icon="notifications"></cv-icon-button>
        <cv-icon-button-toggle slot="actionItems" onIcon="help" offIcon="help" class="help-item"></cv-icon-button-toggle>
-       <cv-icon-button slot="actionItems" icon="person"></cv-icon-button>
+       <cv-icon-button slot="actionItems" icon="person" style="margin-right: -12px"></cv-icon-button>
       </cv-toolbar>
 
-      <div slot="help" class="mdc-typography">
+      <div slot="help" class="help-panel mdc-typography">
         <cv-toolbar sticky>
-          <span slot="title">Help</span>
+          <span slot="title" style="padding-left: 12px;">Help</span>
           <cv-icon-button
             slot="actionItems"
             icon="undock"
@@ -190,9 +190,10 @@ const Template = ({
             slot="actionItems"
             icon="close"
             class="help-close"
+            style="margin-right: -4px;"
           ></cv-icon-button>
         </cv-toolbar>
-        <div style="padding: 16px">
+        <div class="help-content" style="padding: 16px 24px 24px">
           <cv-typography scale="headline5">
             Ultricies nunc massa, id ut felis sed varius accumsan platea.
           </cv-typography><br />
