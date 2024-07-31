@@ -1,0 +1,45 @@
+{
+  "id": "n3b0GzrZLL",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "xVjeBOx3xd",
+        "link": {
+          "name": "Voice and tone",
+          "path": "/pages/voice-and-tone"
+        },
+        "title": "Voice and tone",
+        "description": "Learn what voice and tone means and how to apply our voice and choose the right tone for whatever you're building."
+      },
+      {
+        "id": "QsbJH2mkIM",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "Word list",
+        "description": "Coming soon"
+      },
+      {
+        "id": "07Xr7jDGMN",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "Writing standards",
+        "description": "Coming soon"
+      }
+    ],
+    "gridStyles": {
+      "columns": "3",
+      "centered": false
+    },
+    "tileStyles": {
+      "rounded": true,
+      "outlined": true,
+      "imageSize": "none",
+      "titleSize": "xsmall"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

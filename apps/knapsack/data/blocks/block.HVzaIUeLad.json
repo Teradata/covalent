@@ -16,5 +16,10 @@
     "demoSize": "landscape",
     "patternId": "alert"
   },
-  "blockType": "pattern-template-block"
+  "blockType": "pattern-template-block",
+  "header": {
+    "showHeader": true,
+    "title": "Negative alerts",
+    "description": "Use to indicate that a critical or blocking error has occurred"
+  }
 }
