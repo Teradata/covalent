@@ -309,7 +309,7 @@ export class CovalentAppShell extends DrawerBase {
 
   protected renderMain() {
     return this.contained
-      ? html`<cv-card><slot></slot></cv-card>`
+      ? html`<cv-card class="wrapper-card"><slot></slot></cv-card>`
       : html`<slot></slot>`;
   }
 
