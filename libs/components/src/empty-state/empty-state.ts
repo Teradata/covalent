@@ -39,7 +39,7 @@ export class CovalentEmptyState extends LitElement {
         ${this.subtitle
           ? html` <p
               key="{line}"
-              class="mdc-typography--caption"
+              class="mdc-typography--body2"
               style=${this.headline ? '' : 'margin-top:16px;'}
             >
               ${this.subtitle.split(/\n/).map((line) => {

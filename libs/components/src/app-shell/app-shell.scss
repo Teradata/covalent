@@ -6,6 +6,10 @@
 @include drawer.dismissible-core-styles();
 @include drawer.modal-core-styles();
 
+:host {
+  --cv-border-radius-outer: 28px;
+}
+
 :host .navigation {
   --mdc-theme-surface: var(--mdc-theme-background);
   --mdc-list-vertical-padding: 0;
@@ -47,7 +51,9 @@
 }
 
 .app-shell {
-  background-color: var(--mdc-theme-surface);
+  --mdc-theme-surface: var(--mdc-theme-background);
+
+  background-color: var(--mdc-theme-background);
   display: grid;
   grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
   min-height: 100%;
@@ -67,6 +73,10 @@
   @media only screen and (min-width: 768px) {
     position: fixed;
     width: 100%;
+  }
+
+  .main-wrapper > :host(cv-card) .mdc-card {
+    border-radius: var(--cv-border-radius-outer);
   }
 }
 
@@ -95,8 +105,12 @@
   }
 
   cv-card {
-    margin: 0 12px 12px;
+    margin: 0 0 24px;
     display: block;
+
+    &.wrapper-card {
+      --mdc-shape-medium: var(--cv-border-radius-outer);
+    }
   }
 
   /* Desktop only styles */
@@ -104,14 +118,17 @@
     .cov-drawer--hovered &,
     &.cov-drawer--hovered-closing {
       margin-left: 72px;
+      margin-right: 24px;
     }
 
     :not(.cov-drawer--forced-open) & {
       margin-left: 72px;
+      margin-right: 24px;
     }
 
     .cov-drawer--open & {
       margin-left: 256px;
+      margin-right: 24px;
     }
 
     .cov-help--open & {
@@ -138,7 +155,7 @@
   .resize-handle {
     position: absolute;
     left: 0;
-    width: 10px;
+    width: 8px;
     height: 100vh;
     cursor: ew-resize;
     z-index: 1100;
@@ -147,9 +164,9 @@
     &::after {
       content: '';
       position: absolute;
-      left: 50%;
+      left: 1px;
       top: 0;
-      width: 2px;
+      width: 4px;
       height: 100%;
       background-color: var(--mdc-theme-primary);
       transform: translateX(-50%);
@@ -244,7 +261,7 @@ nav.navigation {
   overflow-y: auto;
   border-right: 0;
   position: fixed;
-  background-color: var(--mdc-theme-surface);
+  background-color: var(--mdc-theme-background);
 
   .toggle-drawer {
     margin: 8px auto;
@@ -255,7 +272,7 @@ nav.navigation {
     align-items: center;
     position: sticky;
     top: 0;
-    background-color: var(--mdc-theme-surface);
+    background-color: var(--mdc-theme-background);
     z-index: 2;
   }
 
