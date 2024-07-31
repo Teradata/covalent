@@ -2,7 +2,9 @@ title: Tokens
 id: tokens
 blockIds:
   - Qo5t01X6yw
+  - kYPRydWrI2
 settings:
   pageHeader:
     backgroundSize: cover
-description: Standardized building blocks that we use across all our UI elements, in both design and code
+    backgroundOverlay: false
+description: Standardized styles that we use across all our UI elements, in both design and code.
