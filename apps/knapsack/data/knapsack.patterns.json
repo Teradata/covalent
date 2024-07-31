@@ -27,27 +27,6 @@
       ]
     },
     {
-      "id": "wXMAFo7YT",
-      "title": "Content",
-      "statuses": [
-        {
-          "id": "p26kiqU2BA",
-          "color": "#ccc",
-          "title": "Not started"
-        },
-        {
-          "id": "zlzEOk92vq",
-          "color": "#ffed00",
-          "title": "In progress"
-        },
-        {
-          "id": "cl7cA-Evbq",
-          "color": "#00ca20",
-          "title": "Complete"
-        }
-      ]
-    },
-    {
       "id": "main",
       "title": "Design",
       "statuses": [
