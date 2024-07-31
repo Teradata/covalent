@@ -1,0 +1,14 @@
+{
+  "id": "3NiTL71PTB",
+  "data": {
+    "props": {
+      "icon": "filter_list",
+      "disabled": false
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX"
+}

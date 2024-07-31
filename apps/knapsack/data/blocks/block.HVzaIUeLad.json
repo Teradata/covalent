@@ -21,5 +21,6 @@
     "showHeader": true,
     "title": "Negative alerts",
     "description": "Use to indicate that a critical or blocking error has occurred"
-  }
+  },
+  "spacing": "small"
 }

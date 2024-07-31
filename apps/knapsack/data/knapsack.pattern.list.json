@@ -90,12 +90,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-fObxCsu2i8"
+      "id": "web-components-fObxCsu2i8",
+      "type": "template"
     }
   ],
   "subPages": [

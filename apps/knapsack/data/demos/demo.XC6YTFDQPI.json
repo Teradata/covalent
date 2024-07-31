@@ -1,0 +1,22 @@
+{
+  "id": "XC6YTFDQPI",
+  "data": {
+    "props": {
+      "dense": false,
+      "label": "Save",
+      "raised": true,
+      "disabled": false,
+      "outlined": false,
+      "fullwidth": false,
+      "unelevated": false,
+      "trailingIcon": false,
+      "expandContent": false,
+      "color": "primary"
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL"
+}

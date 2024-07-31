@@ -1,0 +1,32 @@
+{
+  "id": "78JmyZgiv8",
+  "data": {
+    "props": {
+      "labelText": "(3/3) items selected",
+      "centered": false,
+      "state": "positive",
+      "icon": "check"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "XCeCWjKRk1",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "pKdkUghqUN",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  },
+  "type": "data",
+  "title": "Positive",
+  "patternId": "action-ribbon",
+  "templateId": "web-components-v3gk7O39kO",
+  "description": "A description"
+}

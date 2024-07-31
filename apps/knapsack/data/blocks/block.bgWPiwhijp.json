@@ -16,5 +16,11 @@
     "demoSize": "landscape",
     "patternId": "alert"
   },
-  "blockType": "pattern-template-block"
+  "blockType": "pattern-template-block",
+  "header": {
+    "showHeader": true,
+    "title": "Neutral alerts",
+    "description": "Use for messages that require less visual prominence"
+  },
+  "spacing": "small"
 }

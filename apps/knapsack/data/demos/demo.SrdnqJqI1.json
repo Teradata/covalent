@@ -1,0 +1,14 @@
+{
+  "id": "SrdnqJqI1",
+  "data": {
+    "props": {
+      "icon": "delete",
+      "disabled": false
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX"
+}
