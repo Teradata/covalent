@@ -8,7 +8,8 @@
           "name": "Colors",
           "path": "/pages/light"
         },
-        "title": "Colors"
+        "title": "Colors",
+        "description": "Named according to their function, these are carefully chosen from our palettes to ensure accessibility and visual appeal."
       },
       {
         "id": "pRAnFh6Ab4",
@@ -16,7 +17,8 @@
           "name": "Palettes",
           "path": "/pages/palettes-lm0uu73t4r"
         },
-        "title": "Palettes"
+        "title": "Palettes",
+        "description": "A base set of brand-appropriate color sequences, from which we pull for specific uses."
       },
       {
         "id": "ti-ArumOqC",
@@ -24,7 +26,8 @@
           "name": "Typography",
           "path": "/pages/typography"
         },
-        "title": "Typography"
+        "title": "Typography",
+        "description": "Text standards designed for legibility and visual appeal."
       }
     ],
     "gridStyles": {
