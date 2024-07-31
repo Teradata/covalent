@@ -3,7 +3,9 @@
   "title": "Badge",
   "description": "A small visual element indicating status or providing additional information.",
   "statuses": {
-    "main": "needsReview"
+    "main": "needsReview",
+    "Mh7xwTui": "draft",
+    "XQn0s6hkh9": "UPHFPB1cG"
   },
   "templates": [
     {
