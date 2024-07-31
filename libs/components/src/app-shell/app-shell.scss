@@ -15,7 +15,7 @@
   --mdc-list-vertical-padding: 0;
   --cv-list-padding-right: 0;
   --cv-list-padding-left: 12px;
-  --cv-list-item-border-radius: 100%;
+  --cv-list-item-border-radius: 100px;
   --cv-list-item-width: 48px;
   --cv-list-item-height: 48px;
   --cv-list-item-graphic-margin-left: 0;
@@ -28,7 +28,6 @@
 :host([open]) .navigation {
   --cv-list-padding-right: 12px;
   --cv-list-padding-left: 12px;
-  --cv-list-item-border-radius: 100px;
   --cv-list-item-width: 100%;
   --cv-list-item-height: inherit;
   --cv-list-item-graphic-margin-left: 0;
