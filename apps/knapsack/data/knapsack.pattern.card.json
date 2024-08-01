@@ -64,12 +64,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-mU8MX1FHrF"
+      "id": "web-components-mU8MX1FHrF",
+      "type": "template"
     }
   ],
   "subPages": [

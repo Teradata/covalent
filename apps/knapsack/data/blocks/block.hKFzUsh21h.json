@@ -1,9 +1,0 @@
-{
-  "id": "hKFzUsh21h",
-  "data": {
-    "url": "https://covalent-workspace-3e0dddf5c0ce.herokuapp.com/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&dataId=21d63d0cca0668670c81de32b73e6116&isInIframe=false&wrapHtml=true",
-    "height": "200",
-    "clickToInteract": false
-  },
-  "blockType": "generic-iframe"
-}

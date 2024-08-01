@@ -1,26 +1,31 @@
 {
   "id": "xrVH4M3t6W",
-  "title": "Main",
+  "title": "Default / inactive",
   "type": "data",
   "patternId": "action-ribbon",
   "templateId": "web-components-v3gk7O39kO",
   "data": {
     "props": {
-      "labelText": "You have unsaved changes",
-      "state": "active",
+      "labelText": "No changes",
       "centered": false,
-      "icon": "houseboat",
       "iconAriaLabel": "info"
     },
     "slots": {
       "action-items": [
         {
           "type": "template-demo",
-          "demoId": "E5ymzzEPs",
+          "demoId": "6ZTcBHrLz1",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "rd9LeSdX5u",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }
       ]
     }
-  }
+  },
+  "description": "No changes"
 }

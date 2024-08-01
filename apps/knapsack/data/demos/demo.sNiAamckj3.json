@@ -1,0 +1,36 @@
+{
+  "id": "sNiAamckj3",
+  "data": {
+    "props": {
+      "labelText": "0 items selected",
+      "centered": false
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "3NiTL71PTB",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "qLPgPbaWNT",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "SrdnqJqI1",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        }
+      ]
+    }
+  },
+  "type": "data",
+  "title": "Bulk selection default / inactive",
+  "patternId": "action-ribbon",
+  "templateId": "web-components-v3gk7O39kO",
+  "description": "A description"
+}

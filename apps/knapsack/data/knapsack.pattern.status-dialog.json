@@ -112,12 +112,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-klayJh8gA"
+      "id": "web-components-klayJh8gA",
+      "type": "template"
     }
   ],
   "subPages": [

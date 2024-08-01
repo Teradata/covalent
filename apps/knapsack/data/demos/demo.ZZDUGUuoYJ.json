@@ -1,0 +1,22 @@
+{
+  "id": "ZZDUGUuoYJ",
+  "data": {
+    "props": {
+      "dense": false,
+      "label": "Cancel",
+      "raised": false,
+      "disabled": false,
+      "outlined": true,
+      "fullwidth": false,
+      "unelevated": false,
+      "trailingIcon": false,
+      "expandContent": false,
+      "color": "secondary"
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL"
+}
