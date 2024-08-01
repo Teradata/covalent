@@ -211,6 +211,7 @@ export class CovalentAppShell extends DrawerBase {
     }
 
     this.open = forcedOpen ? forcedOpen : !this.open;
+    this.forcedOpen = forcedOpen;
 
     this.dispatchEvent(
       new Event('CovalentAppShell:toggle', { bubbles: true, composed: true })
@@ -235,7 +236,6 @@ export class CovalentAppShell extends DrawerBase {
 
     this.dispatchEvent(new Event('CovalentAppShell:menuClick'));
 
-    this.forcedOpen = true;
     this.hovered = false;
   }
 

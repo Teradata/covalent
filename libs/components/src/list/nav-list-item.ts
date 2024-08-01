@@ -140,6 +140,17 @@ export class CovalentNavRailListItem extends CovalentListItem {
     this.activated = false;
   }
 
+  private _updateMaxHeight(open = this.open) {
+    const content = this.shadowRoot?.querySelector('.expansion-panel');
+
+    if (open) {
+      const contentHeight = content?.scrollHeight;
+      this.style.setProperty('--cv-list-menu-height', `${contentHeight}px`);
+    } else {
+      this.style.setProperty('--cv-list-menu-height', `0`);
+    }
+  }
+
   renderExpansionItem() {
     const text = this.renderText();
     const graphic = this.graphic ? this.renderGraphic() : nothing;
@@ -184,6 +195,22 @@ export class CovalentNavRailListItem extends CovalentListItem {
       ${arrow}
       <slot name="meta"></slot>
     </span>`;
+  }
+
+  override firstUpdated() {
+    super.firstUpdated();
+
+    if (this.hasChildren) {
+      this._updateMaxHeight();
+    }
+  }
+
+  override updated(changedProperties: Map<string | number | symbol, unknown>) {
+    super.updated(changedProperties);
+
+    if (changedProperties.has('open') && this.hasChildren) {
+      this._updateMaxHeight();
+    }
   }
 
   override render() {
