@@ -1,0 +1,30 @@
+{
+  "id": "I15dIgeIM4",
+  "data": {
+    "props": {
+      "centered": false,
+      "labelText": "Queued"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "WwXdzK1ET4",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "Q80743k89E",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  },
+  "type": "data",
+  "title": "Pending",
+  "patternId": "action-ribbon",
+  "templateId": "web-components-v3gk7O39kO",
+  "description": "A description"
+}

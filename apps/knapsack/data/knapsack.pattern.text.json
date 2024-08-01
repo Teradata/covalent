@@ -66,12 +66,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-FXCMXD35mF"
+      "id": "web-components-FXCMXD35mF",
+      "type": "template"
     }
   ],
   "subPages": [

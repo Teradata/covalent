@@ -78,12 +78,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-4qjJYWsUZi"
+      "id": "web-components-4qjJYWsUZi",
+      "type": "template"
     }
   ],
   "subPages": [
@@ -98,31 +98,21 @@
         "a6InsrLwTc",
         "zIQV2Ma9vH",
         "YlQCN5mV4X",
-        "1951-ccxBh",
         "HVzaIUeLad",
-        "0zquFzGyBA",
         "xg8m7ddOp",
-        "h83zHryRsF",
         "fqP1DfpZt3",
-        "A9-fak7l-z",
         "bdkr5jktLp",
-        "pqEZBhbKND",
         "bgWPiwhijp",
         "zvYc5hL8pV",
         "h7p4XGu26K",
-        "DWYhXPGy7X",
         "bZSa-BYZjT",
-        "FUvMTxdOh8",
         "NNtso0urVj",
-        "Bv0qhKCDXY",
         "Tg6b4c0IqE",
-        "Irv3QXCNsU",
         "KB3Coqs2h",
-        "mf5PO8ToH",
         "GkA7GAw-cW",
         "ChOAoD1GAW",
-        "e5qBMCqUng",
-        "okXvNrcCzH",
+        "yssGoQuPit",
+        "t3dtMwLdUI",
         "LBE3NyBRxu"
       ]
     }

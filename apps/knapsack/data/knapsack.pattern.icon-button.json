@@ -59,12 +59,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-ctiCe2sAX"
+      "id": "web-components-ctiCe2sAX",
+      "type": "template"
     }
   ],
   "subPages": [

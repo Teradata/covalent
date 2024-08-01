@@ -1,0 +1,25 @@
+{
+  "id": "aQE9OP2U6t",
+  "data": {
+    "props": {
+      "centered": false,
+      "labelText": "1 item selected",
+      "state": "active"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "SrdnqJqI1",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        }
+      ]
+    }
+  },
+  "type": "data",
+  "title": "Bulk selection active",
+  "patternId": "action-ribbon",
+  "templateId": "web-components-v3gk7O39kO",
+  "description": "A description"
+}

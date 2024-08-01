@@ -119,16 +119,16 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-LpKATlK5H"
+      "id": "web-components-LpKATlK5H",
+      "type": "template"
     },
     {
-      "type": "template",
-      "id": "web-components-33Z9-C4Qs"
+      "id": "web-components-33Z9-C4Qs",
+      "type": "template"
     }
   ],
   "subPages": [

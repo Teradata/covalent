@@ -17,7 +17,7 @@
       "spec": {
         "slots": {
           "action-items": {
-            "allowedPatternIds": ["button", "checkbox"],
+            "allowedPatternIds": ["button", "checkbox", "icon-button"],
             "title": "action-items",
             "description": "Action items for the action-ribbon"
           }
@@ -54,18 +54,28 @@
           }
         }
       },
-      "demoIds": ["xrVH4M3t6W"],
+      "demoIds": [
+        "xrVH4M3t6W",
+        "SBpuLooid9",
+        "3ueuxC011k",
+        "04wy8HmIJl",
+        "78JmyZgiv8",
+        "PX4CXlob7k",
+        "I15dIgeIM4",
+        "sNiAamckj3",
+        "aQE9OP2U6t"
+      ],
       "blockIds": ["T0V2X8g9lD", "vd3AOFR1Fb", "s7sSsuyqQk"]
     }
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-v3gk7O39kO"
+      "id": "web-components-v3gk7O39kO",
+      "type": "template"
     }
   ],
   "subPages": [
@@ -86,31 +96,19 @@
         "466eQvPys",
         "oQXrwAxDTv",
         "tISrkHkfAA",
-        "WHM4iCalw",
-        "5ADgJ2oIdE",
+        "I9didIrYoT",
         "jrGP4hwjgV",
-        "QboPzLeuo",
-        "Tl1SJztl17",
+        "ywaB7Egy1N",
         "tmMKME3X8o",
-        "gJbrxd8w3u",
-        "E9X7RkPjL6",
+        "kl02xFVDZy",
         "iwXt0PYB4f",
-        "3hiyk1p47W",
-        "hKFzUsh21h",
-        "HkRQNfMQcT",
-        "Vx8bcprP",
-        "Sn8SY0xUil",
-        "h6zifoSbYW",
-        "ZLzuLEQO6n",
+        "4nbWM07gPF",
         "O7SLhoTrc7",
-        "CoGP4K5ttX",
-        "b8Foq4l-U",
+        "XNWuFvz1W",
         "2yHqdpL2om",
-        "H54-mVe-p",
-        "3wnfnwTXgG",
+        "8cfj5G1OPi",
         "R1wSZmt-TF",
-        "HQx3w73gvK",
-        "zlD291QgrQ",
+        "bT3UjEN5DK",
         "Cv3Xr8VlBo",
         "B1K2JFNHkt",
         "rtPCzklJvh",

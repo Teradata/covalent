@@ -16,5 +16,11 @@
     "demoSize": "landscape",
     "patternId": "alert"
   },
-  "blockType": "pattern-template-block"
+  "blockType": "pattern-template-block",
+  "header": {
+    "showHeader": true,
+    "title": "Caution alerts",
+    "description": "Use to indicate that a non-critical error has occurred"
+  },
+  "spacing": "small"
 }
