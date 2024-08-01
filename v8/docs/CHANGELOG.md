@@ -1,3 +1,9 @@
+# [8.18.0](https://github.com/Teradata/covalent/compare/v8.17.1...v8.18.0) (2024-08-01)
+
+### Features
+
+- **components:** animations for app shell navigation ([#2216](https://github.com/Teradata/covalent/issues/2216)) ([707db71](https://github.com/Teradata/covalent/commit/707db7119c854749b9241de191a785dff4647f55))
+
 ## [8.17.1](https://github.com/Teradata/covalent/compare/v8.17.0...v8.17.1) (2024-07-31)
 
 ### Bug Fixes
