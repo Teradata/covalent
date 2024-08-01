@@ -16,5 +16,11 @@
     "demoSize": "landscape",
     "patternId": "alert"
   },
-  "blockType": "pattern-template-block"
+  "blockType": "pattern-template-block",
+  "header": {
+    "showHeader": true,
+    "title": "Positive alerts",
+    "description": "Use to indicate that a task or process has completed successfully"
+  },
+  "spacing": "small"
 }

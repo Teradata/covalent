@@ -1,0 +1,32 @@
+{
+  "id": "3ueuxC011k",
+  "data": {
+    "props": {
+      "labelText": "These changes will increase your monthly spend rate",
+      "centered": false,
+      "state": "caution",
+      "icon": "warning"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "ZZDUGUuoYJ",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "MYNaMsq9yp",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  },
+  "type": "data",
+  "title": "Caution",
+  "patternId": "action-ribbon",
+  "templateId": "web-components-v3gk7O39kO",
+  "description": "A description"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "qLPgPbaWNT",
+  "data": {
+    "props": {
+      "icon": "search",
+      "disabled": false
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "04wy8HmIJl",
+  "data": {
+    "props": {
+      "labelText": "The name field may not contain numbers",
+      "centered": false,
+      "state": "negative",
+      "icon": "error"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "gNG4RvNBge",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "FZlffUUrKg",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  },
+  "type": "data",
+  "title": "Negative",
+  "patternId": "action-ribbon",
+  "templateId": "web-components-v3gk7O39kO",
+  "description": "A description"
+}

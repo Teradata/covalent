@@ -10,5 +10,6 @@
     ]
   },
   "size": "medium",
-  "blockType": "image-block"
+  "blockType": "image-block",
+  "spacing": "medium"
 }

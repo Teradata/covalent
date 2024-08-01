@@ -72,12 +72,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-1-Bf2NwL1T"
+      "id": "web-components-1-Bf2NwL1T",
+      "type": "template"
     }
   ],
   "subPages": [

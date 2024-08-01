@@ -1,0 +1,31 @@
+{
+  "id": "SBpuLooid9",
+  "data": {
+    "props": {
+      "labelText": "You have unsaved changes",
+      "centered": false,
+      "state": "active"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "fEpQE4YYHT",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "XC6YTFDQPI",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  },
+  "type": "data",
+  "title": "Active",
+  "patternId": "action-ribbon",
+  "templateId": "web-components-v3gk7O39kO",
+  "description": "A description"
+}

@@ -59,12 +59,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "overview"
+      "id": "overview",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-vegaZgkE47"
+      "id": "web-components-vegaZgkE47",
+      "type": "template"
     }
   ],
   "subPages": [

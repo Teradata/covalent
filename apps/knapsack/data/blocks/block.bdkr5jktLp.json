@@ -16,5 +16,11 @@
     "demoSize": "landscape",
     "patternId": "alert"
   },
-  "blockType": "pattern-template-block"
+  "blockType": "pattern-template-block",
+  "header": {
+    "showHeader": true,
+    "description": "Use for general informational messages",
+    "title": "Informational alerts"
+  },
+  "spacing": "small"
 }
