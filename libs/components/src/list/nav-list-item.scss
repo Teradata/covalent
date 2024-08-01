@@ -1,3 +1,5 @@
+@use '@material/animation';
+
 :host {
   font-family: var(--mdc-typography-font-family);
   font-size: var(--mdc-typography-body2-font-size);
@@ -5,7 +7,8 @@
   line-height: var(--mdc-typography-body2-line-height);
   text-align: left;
   border-radius: var(--cv-list-item-border-radius, 100px);
-  transition: border-radius 100ms ease-out;
+  transition: border-radius 200ms animation.$standard-curve-timing-function,
+    width 200ms animation.$standard-curve-timing-function;
   width: var(--cv-list-item-width, 100%);
   color: var(--cv-theme-on-surface-variant);
 
@@ -31,7 +34,8 @@
 }
 
 :host([selected]:not([activated])) .expansion-header {
-  transition: background-color 250ms ease-in, color 250ms ease-in;
+  transition: background-color 250ms animation.$standard-curve-timing-function
+    color 250ms animation.$standard-curve-timing-function;
   background-color: var(--cv-list-item-selected-background-color);
   color: var(--cv-list-item-selected-color);
 
@@ -76,28 +80,10 @@
   }
 }
 
-:host(.beta-list-item) {
-  --mdc-theme-primary: var(--mdc-theme-surface-caution);
-  --mdc-list-item-meta-size: 20px;
-  --mdc-list-item-graphic-size: 40px;
-  --mdc-list-item-graphic-margin: 0;
-  --mdc-typography-subtitle1-font-size: var(
-    --mdc-typography-subtitle2-font-size
-  );
-  --mdc-typography-body2-font-size: var(--mdc-typography-caption-font-size);
-
-  margin-bottom: 8px;
-  margin-right: 0;
-  border-radius: 0;
-  height: 48px;
-  font-size: 0;
-  padding: 0 0 0 15px;
-}
-
 :host([hasChildren]) {
   flex-direction: column;
   overflow: visible;
-  height: inherit !important;
+  height: var(--cv-list-item-height, inherit) !important;
   background: none;
   padding: 0;
 
@@ -153,12 +139,11 @@
 .expansion-panel {
   display: block;
   width: 100%;
-  height: var(--cv-list-menu-height, 0);
+  max-height: var(--cv-list-menu-height, 0);
+  overflow: hidden;
+  transition: max-height 200ms animation.$acceleration-curve-timing-function;
 
   --mdc-list-side-padding: 72px;
-
-  transition: transform 0.15s ease-out;
-  overflow: hidden;
 }
 
 :host([open][hasChildren]:not([twoline])) {
@@ -168,7 +153,7 @@
   border-radius: 0;
 
   .expansion-panel {
-    transition: min-height 0.25s ease-in;
-    height: var(--cv-list-menu-height, inherit);
+    transition-timing-function: animation.$deceleration-curve-timing-function;
+    max-height: var(--cv-list-menu-height, 0);
   }
 }
