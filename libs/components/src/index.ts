@@ -15,6 +15,7 @@ export * from './empty-state/empty-state';
 export * from './expansion-panel/expansion-panel';
 export * from './expansion-panel/expansion-panel-item';
 export * from './formfield/formfield';
+export * from './fullscreen-takeover/fullscreen-takeover';
 export * from './icon/icon';
 export * from './icon-button/icon-button';
 export * from './icon-button-toggle/icon-button-toggle';
