@@ -15,12 +15,16 @@
   }
 
   // provides consumer an option to set height
-  .mdc-select--outlined .mdc-select__anchor {
+  .mdc-select--outlined .mdc-select__anchor,
+  .mdc-select--filled .mdc-select__anchor {
     height: var(--cv-select-height, 56px);
   }
 
   // provides consumer an option to adjust the position of label in the outlined version
   .mdc-select--outlined:not(.mdc-select--with-leading-icon)
+    .mdc-select__anchor
+    .mdc-floating-label--float-above,
+  .mdc-select--filled:not(.mdc-select--with-leading-icon)
     .mdc-select__anchor
     .mdc-floating-label--float-above {
     transform: translateY(var(--cv-select-label-top-position, -37.25px))

@@ -46,8 +46,7 @@
 }
 
 :host .notebookHeaderActions {
-  --cv-select-height: 2.25rem;
-  --cv-select-label-top-position: -25.25px;
+  --cv-select-height: 54px;
   --mdc-icon-button-size: 40px;
   --mdc-icon-size: 22px;
 
@@ -57,10 +56,18 @@
   box-sizing: border-box;
   display: flex;
   gap: 0.15rem;
+  height: 56px;
   padding: 7px 0.25rem;
+  z-index: 2;
+}
+
+.cell-type {
+  height: 56px;
+  margin-left: 0.5rem;
 
   cv-select {
-    margin-left: 0.5rem;
+    position: relative;
+    top: 2px;
   }
 }
 

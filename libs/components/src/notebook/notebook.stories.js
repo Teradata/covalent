@@ -138,10 +138,22 @@ Tables are created and populated using SQL`,
       { type: 'code', name: 'Code' },
     ],
     cellType: 'code',
+    labels: {
+      run: 'Run cell',
+      add: 'Add cell',
+      addCodeCell: 'Add code cell',
+      addMarkdownCell: 'Add marldown cell',
+      cellInputPlaceholder: 'Press enter',
+      cellType: 'Cell type',
+      cut: 'Cut cell',
+      copy: 'Copy cell',
+      paste: 'Paste cell',
+      delete: 'Delete cell',
+    },
   },
 };
 
-const Template = ({ cells, cellType, cellTypes }) => {
+const Template = ({ cells, cellType, cellTypes, labels }) => {
   const notebookContainer = document.createElement('div');
   notebookContainer.style.width = '60vw';
   notebookContainer.style.height = '50vh';
@@ -149,6 +161,7 @@ const Template = ({ cells, cellType, cellTypes }) => {
   notebook.cells = cells;
   notebook.cellTypes = cellTypes;
   notebook.cellType = cellType;
+  notebook.labels = labels;
   notebookContainer.appendChild(notebook);
   return notebookContainer;
 };

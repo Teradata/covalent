@@ -19,6 +19,8 @@ import '../icon/icon';
 import '../icon-button/icon-button';
 import '../list/list-item';
 import '../select/select';
+import '../tooltip/tooltip';
+import CovalentTooltip from '../tooltip/tooltip';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -60,6 +62,19 @@ interface CellType {
   selected?: boolean;
 }
 
+interface Labels {
+  add: string;
+  addCodeCell: string;
+  addMarkdownCell: string;
+  cellInputPlaceholder: string;
+  cellType: string;
+  copy: string;
+  cut: string;
+  delete: string;
+  paste: string;
+  run: string;
+}
+
 @customElement('cv-notebook')
 export class CovalentNotebook extends LitElement {
   /**
@@ -85,6 +100,12 @@ export class CovalentNotebook extends LitElement {
    */
   @property({ type: String })
   defaultLanguage!: string;
+
+  /**
+   * Tooltip/aria labels for action items in the notebook
+   */
+  @property({ type: Object })
+  labels?: Labels;
 
   private _clipboardCell: CellData | null = null;
 
@@ -210,6 +231,23 @@ export class CovalentNotebook extends LitElement {
       this.selectCell(0);
       this.requestUpdate();
     }
+    const actionButtons = [
+      'run',
+      'add',
+      'cut',
+      'copy',
+      'paste',
+      'delete',
+      'add-markdown',
+      'add-code',
+    ];
+    actionButtons.forEach((action) => {
+      const actionButton = this.renderRoot.querySelector(`#${action}-cell`);
+      const tooltip = this.renderRoot.querySelector(`#${action}-cell-tooltip`);
+      if (actionButton instanceof HTMLElement && tooltip) {
+        (tooltip as CovalentTooltip).anchor = actionButton;
+      }
+    });
   }
 
   getDragImage(cellIndex: number): HTMLElement {
@@ -473,55 +511,74 @@ export class CovalentNotebook extends LitElement {
     return html``;
   }
 
+  renderTooltip(anchorId: string, content: string): TemplateResult<1> {
+    return html`<cv-tooltip
+      id="${anchorId}-tooltip"
+      showDelay="100"
+      hideDelay="100"
+      >${content}</cv-tooltip
+    >`;
+  }
+
   protected render() {
     return html`<div class="notebook">
       <section class="notebookHeaderActions">
         <cv-icon-button
+          icon="play_arrow"
+          @click="${this.runCell}"
+          id="run-cell"
+        ></cv-icon-button>
+        ${this.labels?.run && this.renderTooltip('run-cell', this.labels.run)}
+        <cv-icon-button
+          icon="add"
+          @click="${() => this.addCell(this.cellType)}"
+          id="add-cell"
+        ></cv-icon-button>
+        ${this.labels?.add && this.renderTooltip('add-cell', this.labels.add)}
+        <cv-icon-button
           icon="content_cut"
           @click="${this.cutCell}"
+          id="cut-cell"
         ></cv-icon-button>
+        ${this.labels?.cut && this.renderTooltip('cut-cell', this.labels.cut)}
         <cv-icon-button
           icon="content_copy"
           @click="${this.copyCell}"
+          id="copy-cell"
         ></cv-icon-button>
+        ${this.labels?.copy &&
+        this.renderTooltip('copy-cell', this.labels.copy)}
         <cv-icon-button
           icon="content_paste"
           @click="${this.pasteCell}"
+          id="paste-cell"
         ></cv-icon-button>
+        ${this.labels?.paste &&
+        this.renderTooltip('paste-cell', this.labels.paste)}
         <cv-icon-button
           icon="delete"
           @click="${this.deleteCell}"
+          id="delete-cell"
         ></cv-icon-button>
-        <cv-icon-button
-          icon="play_arrow"
-          @click="${this.runCell}"
-        ></cv-icon-button>
-        <cv-icon-button
-          icon="stop"
-          @click="${() => this.dispatchCustomCellEvent('interrupt-kernel')}"
-        ></cv-icon-button>
-        <cv-icon-button
-          icon="refresh"
-          @click="${() => this.dispatchCustomCellEvent('refresh')}"
-        ></cv-icon-button>
-        <cv-icon-button
-          icon="fast_forward"
-          @click="${() => this.dispatchCustomCellEvent('refresh-run-all')}"
-        ></cv-icon-button>
-        <cv-select
-          label="Cell type"
-          outlined
-          value=${this.cellType}
-          @selected="${(eventData: CustomEvent) =>
-            this.handleCellTypeChange(eventData)}"
-        >
-          ${this.cellTypes?.map(
-            (cellType) =>
-              html`<cv-list-item value="${cellType.type}"
-                >${cellType.name}</cv-list-item
-              >`
-          )}
-        </cv-select>
+        ${this.labels?.delete &&
+        this.renderTooltip('delete-cell', this.labels.delete)}
+        <div class="cell-type">
+          <cv-select
+            label=${this.labels?.cellType}
+            icon="code"
+            filled
+            value=${this.cellType}
+            @selected="${(eventData: CustomEvent) =>
+              this.handleCellTypeChange(eventData)}"
+          >
+            ${this.cellTypes?.map(
+              (cellType) =>
+                html`<cv-list-item value="${cellType.type}"
+                  >${cellType.name}</cv-list-item
+                >`
+            )}
+          </cv-select>
+        </div>
       </section>
       <section class="notebookCells" id="notebook-cells">
         ${this.cells.map(
@@ -561,7 +618,7 @@ export class CovalentNotebook extends LitElement {
                       id="cell-input"
                       type="${input.password ? 'password' : 'text'}"
                       @keydown="${this.handleInputKeydown}"
-                      placeholder="Press enter"
+                      placeholder="${this.labels?.cellInputPlaceholder}"
                       autofocus
                     />
                   </div>
@@ -572,7 +629,6 @@ export class CovalentNotebook extends LitElement {
                 ${cell.errors &&
                 cell.errors.map(
                   (error) => html`<cv-alert
-                    titleText="Error!"
                     descriptionText="${error}"
                     state="negative"
                     icon="error"
@@ -585,12 +641,24 @@ export class CovalentNotebook extends LitElement {
         )}
       </section>
       <section class="notebookActions">
-        <cv-button outlined @click=${() => this.addCell('code')}>
+        <cv-button
+          outlined
+          @click=${() => this.addCell('code')}
+          id="add-code-cell"
+        >
           <cv-icon style="font-size: 20px;">add</cv-icon>Code cell
         </cv-button>
-        <cv-button outlined @click=${() => this.addCell('markdown')}>
+        ${this.labels?.addCodeCell &&
+        this.renderTooltip('add-code-cell', this.labels.addCodeCell)}
+        <cv-button
+          outlined
+          @click=${() => this.addCell('markdown')}
+          id="add-markdown-cell"
+        >
           <cv-icon style="font-size: 20px;">add</cv-icon>Markdown
         </cv-button>
+        ${this.labels?.addMarkdownCell &&
+        this.renderTooltip('add-markdown-cell', this.labels.addMarkdownCell)}
       </section>
     </div>`;
   }
@@ -609,6 +677,8 @@ export class CovalentNotebook extends LitElement {
       // Select the next cell after running the current cell
       if (this._selectedCellIndex + 1 < this.cells.length) {
         this.scrollToSelectedCell(this._selectedCellIndex + 1);
+      } else {
+        this.addCell(this.cellType);
       }
     }
     this.requestUpdate();
