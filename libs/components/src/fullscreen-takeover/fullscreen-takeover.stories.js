@@ -55,6 +55,8 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
   }${helpOpen ? ' helpOpen' : ''}${
     open ? ' open' : ''
   } escapeKeyAction="${escapeKeyAction}">
+    <!-- Content to be rendered in the fullscreen takover component -->
+    <!-- Replace with any content as desired -->
     <div style="margin: 0.5rem;">
         <cv-toolbar>
             <span slot="title">
@@ -110,7 +112,7 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
                 </div>
             </div>
             <div
-                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; flex: 1">
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 1rem; flex: 1">
                 <cv-radio-icon>
                     <cv-icon slot="icon">work</cv-icon>
                     <div slot="text">Balanced</div>
@@ -134,6 +136,8 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
             </div>
         </div>
     </div>
+    <!-- Content rendered in the help section of the component -->
+    <!-- Replace with any content as desired -->
     <div slot="help">
         <cv-toolbar sticky>
             <span slot="title">Help</span>

@@ -51,15 +51,27 @@ export class CovalentFullscreenTakeover extends LitElement {
   @property({ type: Boolean, reflect: true })
   helpResizable = false;
 
+  /**
+   * DOM element of the container div
+   */
   @query('.fullscreen-container')
   container!: HTMLDivElement;
 
+  /**
+   * DOM element of the help panel
+   */
   @query('#help-panel')
   helpPanel!: HTMLElement;
 
+  /**
+   * DOM element of the resize handler
+   */
   @query('.resize-handle')
   resizeHandle!: HTMLElement;
 
+  /**
+   * Whether the help section is being resized
+   */
   private _isResizing = false;
 
   private _handleClose(): void {
@@ -89,6 +101,7 @@ export class CovalentFullscreenTakeover extends LitElement {
       }
     `;
 
+    // Adding styles for the ease effect when component is opened
     const styleElement = document.createElement('style');
     styleElement.textContent = styles;
     dialog?.appendChild(styleElement);
@@ -97,6 +110,7 @@ export class CovalentFullscreenTakeover extends LitElement {
   }
 
   openHelpPanel(): void {
+    // Set width of the help panel
     const savedWidth =
       parseInt(localStorage.getItem('fullscreenHelpWidth') || '') || 320;
     this.setHelpPanelWidth(this.helpOpen ? `${savedWidth}px` : '0');
@@ -130,6 +144,7 @@ export class CovalentFullscreenTakeover extends LitElement {
     }
   }
 
+  // Called when the resize handler is dragged to resize the help panel
   private _resizerMouseMove(e: MouseEvent): void {
     if (!this.container || !this.helpPanel || !this._isResizing) return;
     const containerRect = this.container.getBoundingClientRect();
@@ -141,6 +156,7 @@ export class CovalentFullscreenTakeover extends LitElement {
     }
   }
 
+  // Called when dragging is finished (i.e. mouse up event on resize handler)
   private _resizerMouseUp(): void {
     this._isResizing = false;
     this.helpPanel.classList.remove('resizing');
@@ -149,6 +165,7 @@ export class CovalentFullscreenTakeover extends LitElement {
     document.removeEventListener('mousemove', this._resizerMouseMove);
   }
 
+  // Called when dragging starts (i.e. mouse down event on resize handler)
   private _startResizing(e: MouseEvent): void {
     if (e.target !== this.resizeHandle) return;
     this._isResizing = true;
