@@ -1,3 +1,9 @@
+## [8.18.1](https://github.com/Teradata/covalent/compare/v8.18.0...v8.18.1) (2024-08-07)
+
+### Bug Fixes
+
+- **tokens:** adding index as pkg.json export ([#2219](https://github.com/Teradata/covalent/issues/2219)) ([506e2a6](https://github.com/Teradata/covalent/commit/506e2a62b1d61ebf1c9a1d8091cf203fd4c6adae))
+
 # [8.18.0](https://github.com/Teradata/covalent/compare/v8.17.1...v8.18.0) (2024-08-01)
 
 ### Features
