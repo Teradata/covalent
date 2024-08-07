@@ -17,6 +17,9 @@
       "style": "./index.css",
       "types": "./index.d.ts",
       "default": "./index.js"
+    },
+    "./index.css": {
+      "default": "./index.css"
     }
   }
 }
