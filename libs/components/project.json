@@ -15,6 +15,12 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
+        "customWebpackConfig": {
+          "path": "./monaco-webpack.config.js",
+          "mergeRules": {
+            "module.rules": "prepend"
+          }
+        },
         "commands": [
           "mkdir -p dist/libs/components/",
           "vite build --config libs/components/vite.config.js  --outDir dist/libs/components",
