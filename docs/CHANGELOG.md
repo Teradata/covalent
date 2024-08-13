@@ -1,3 +1,9 @@
+# [8.19.0](https://github.com/Teradata/covalent/compare/v8.18.1...v8.19.0) (2024-08-13)
+
+### Features
+
+- **notebook-cell:** add code editor and notebook cell components ([#2220](https://github.com/Teradata/covalent/issues/2220)) ([69bcea9](https://github.com/Teradata/covalent/commit/69bcea9b08174e314632fe07fcfa9f94090e725d))
+
 ## [8.18.1](https://github.com/Teradata/covalent/compare/v8.18.0...v8.18.1) (2024-08-07)
 
 ### Bug Fixes
