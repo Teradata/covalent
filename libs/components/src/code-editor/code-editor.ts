@@ -2,6 +2,7 @@ import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { createRef, Ref, ref } from 'lit/directives/ref.js';
 
+import { cvEditorDarkTheme, cvEditorLightTheme } from './code-editor.theme';
 import styles from './code-editor.scss?inline';
 
 // -- Monaco Editor Imports --
@@ -17,7 +18,6 @@ import 'monaco-editor/esm/vs/basic-languages/python/python.contribution';
 import 'monaco-editor/esm/vs/basic-languages/sql/sql.contribution';
 import 'monaco-editor/esm/vs/basic-languages/markdown/markdown.contribution';
 import 'monaco-editor/esm/vs/basic-languages/r/r.contribution';
-import { cvEditorDarkTheme, cvEditorLightTheme } from './code-editor.theme';
 
 @customElement('cv-code-editor')
 export class CovalentCodeEditor extends LitElement {

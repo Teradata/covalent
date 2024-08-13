@@ -50,7 +50,7 @@ const Template = ({
                 <cv-typography scale="headline4" style="margin:1rem 0;">Create and Populate Tables</cv-typography>
                 <cv-typography scale="body1">Tables are created and populated using SQL</cv-typography>
               </div>
-              <div slot="context-menu">
+              <div slot="context-menu" style="background-color: white;">
                 <cv-list activatable>
                   <cv-list-item>Cut</cv-list-item>
                   <cv-list-item>Copy</cv-list-item>
