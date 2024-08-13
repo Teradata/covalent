@@ -106,7 +106,7 @@
   }
 
   cv-card {
-    margin: 0 0 24px;
+    margin: 0 0 12px;
     display: block;
 
     &.wrapper-card {
@@ -119,21 +119,22 @@
     .cov-drawer--hovered &,
     &.cov-drawer--hovered-closing {
       margin-left: 72px;
-      margin-right: 24px;
+      padding-right: 24px;
     }
 
     :not(.cov-drawer--forced-open) & {
       margin-left: 72px;
-      margin-right: 24px;
+      padding-right: 24px;
     }
 
     .cov-drawer--open & {
       margin-left: 256px;
-      margin-right: 24px;
+      padding-right: 24px;
     }
 
     .cov-help--open & {
       margin-right: var(--cv-help-width, 320px);
+      padding-right: 0;
     }
   }
 
