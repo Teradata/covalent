@@ -29,7 +29,7 @@ export const cvEditorDarkTheme = {
     { token: 'tag', foreground: tokens.CvDarkCodeSnippetSelector },
     { token: 'attribute.name', foreground: tokens.CvDarkCodeSnippetVariable },
     { token: 'attribute.value', foreground: tokens.CvDarkCodeSnippetString },
-    { token: 'invalid', foreground: '#f44747' },
+    { token: 'invalid', foreground: tokens.CvDarkNegative },
     { token: 'strong', fontStyle: 'bold' },
     { token: 'emphasis', fontStyle: 'italic' },
     {
@@ -77,7 +77,7 @@ export const cvEditorLightTheme = {
     { token: 'tag', foreground: tokens.CvLightCodeSnippetSelector },
     { token: 'attribute.name', foreground: tokens.CvLightCodeSnippetVariable },
     { token: 'attribute.value', foreground: tokens.CvLightCodeSnippetString },
-    { token: 'invalid', foreground: '#f44747' },
+    { token: 'invalid', foreground: tokens.CvLightNegative },
     { token: 'strong', fontStyle: 'bold' },
     { token: 'emphasis', fontStyle: 'italic' },
     {
