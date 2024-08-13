@@ -30,6 +30,8 @@ const Template = ({
   hideEditor,
   theme,
   timesExecuted,
+  error,
+  output,
 }) => {
   return `<div style="width: 80vw;">
             <cv-notebook-cell code="${code}" index="${index}" language="${language}" timesExecuted="${timesExecuted}" editorTheme="${theme}" ${
@@ -37,32 +39,48 @@ const Template = ({
   } ${selected ? 'selected' : ''} ${loading ? 'loading' : ''} ${
     hideCount ? 'hideCount' : ''
   }>
-              <div slot="error" style="margin-top: 1rem;">
-                <cv-alert
-                    descriptionText="Could not load data!"
-                    state="negative"
-                    icon="error"
-                    iconAriaLabel="error"
-                  >
-                  </cv-alert>
-              </div>
-              <div slot="output">
-                <cv-typography scale="headline4" style="margin:1rem 0;">Create and Populate Tables</cv-typography>
-                <cv-typography scale="body1">Tables are created and populated using SQL</cv-typography>
-              </div>
-              <div slot="context-menu" style="background-color: white;">
-                <cv-list activatable>
-                  <cv-list-item>Cut</cv-list-item>
-                  <cv-list-item>Copy</cv-list-item>
-                  <cv-list-item>Paste</cv-list-item>
-                  <cv-list-item disabled><div>Delete</div></cv-list-item>
-                  <li divider></li>
-                  <cv-list-item>Clear outputs</cv-list-item>
-                  <cv-list-item>Restart</cv-list-item>
-                </cv-cv-list>
-              </div>
-            </cv-notebook-cell>
-          </div>`;
+      ${
+        error &&
+        `<div slot="error" style="margin-top: 1rem;">
+          <cv-alert
+              descriptionText="Could not load data!"
+              state="negative"
+              icon="error"
+              iconAriaLabel="error"
+            >
+            </cv-alert>
+        </div>`
+      }
+      ${
+        output &&
+        `<div slot="output">
+          <cv-typography scale="headline4" style="margin:1rem 0;">Create and Populate Tables</cv-typography>
+          <cv-typography scale="body1">Tables are created and populated using SQL</cv-typography>
+        </div>`
+      }
+      <div slot="context-menu" style="background-color: white;">
+        <cv-list activatable>
+          <cv-list-item>Cut</cv-list-item>
+          <cv-list-item>Copy</cv-list-item>
+          <cv-list-item>Paste</cv-list-item>
+          <cv-list-item disabled><div>Delete</div></cv-list-item>
+          <li divider></li>
+          <cv-list-item>Clear outputs</cv-list-item>
+          <cv-list-item>Restart</cv-list-item>
+        </cv-cv-list>
+      </div>
+    </cv-notebook-cell>
+  </div>`;
 };
 
 export const Basic = Template.bind({});
+
+export const Error = Template.bind({});
+Error.args = {
+  error: true,
+};
+
+export const WithOutput = Template.bind({});
+WithOutput.args = {
+  output: true,
+};
