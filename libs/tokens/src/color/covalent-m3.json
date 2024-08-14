@@ -1770,7 +1770,7 @@
           "value": "#fdf9fc29",
           "blendMode": "normal"
         },
-        "on-surface-variant-38%": {
+        "on-surface-variant-38": {
           "type": "color",
           "value": "#59627b61",
           "blendMode": "normal"
@@ -3727,7 +3727,7 @@
           "value": "#00000029",
           "blendMode": "normal"
         },
-        "on-surface-variant-38%": {
+        "on-surface-variant-38": {
           "type": "color",
           "value": "#d5d3d861",
           "blendMode": "normal"
