@@ -16,6 +16,7 @@ export function genHeadingId(str: string): string {
   if (str) {
     return removeLeadingHash(
       str
+        .replace(/<[^>]+>/g, '') // remove html tags from heading ids
         .replace(/(_|-|\s)+/g, '')
         // Remove certain special chars to create heading ids similar to those in github
         // borrowed from showdown
@@ -63,6 +64,22 @@ export function isAnchorLink(anchor?: HTMLAnchorElement): boolean {
   }
   return false;
 }
+
+export function isFileLink(
+  anchor: HTMLAnchorElement,
+  fileExtensions: string[] | undefined
+): boolean {
+  if (fileExtensions && fileExtensions.length) {
+    const href = anchor.getAttribute('href');
+    if (href) {
+      return fileExtensions.some((fileExtension) =>
+        href.endsWith(fileExtension)
+      );
+    }
+  }
+  return false;
+}
+
 const RAW_GITHUB_HOSTNAME = 'raw.githubusercontent.com';
 
 export function rawGithubHref(githubHref?: string): string {

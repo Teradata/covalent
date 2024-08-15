@@ -98,6 +98,7 @@ export class CovalentNotebookCell extends LitElement {
     lineNumbers: 'off',
     lineDecorationsWidth: 0,
     lineNumbersMinChars: 0,
+    renderIndentGuides: false,
     renderLineHighlight: 'none',
     overviewRulerLanes: 0,
     hideCursorInOverviewRuler: true,

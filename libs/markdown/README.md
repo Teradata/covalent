@@ -27,12 +27,21 @@ By default, `--dev` build will log the following message in the console to let y
   - If markdown contains relative paths, this is required to generate correct urls.
 
 - anchor?: string
+
   - Anchor to jump to.
+
+- fileLinkExtensions?: string[]
+  - The file extensions to monitor within anchor tags.
+  - Clicking links that end with these extensions will prevent the default action and emit 'fileClicked' event.
 
 #### Events
 
 - contentReady: undefined
+
   - Event emitted after the markdown content rendering is finished.
+
+- fileClicked: URL
+  - Emitted when an anchor tag is clicked and its 'href' matches one of the extensions in 'fileLinkExtensions'.
 
 ## Installation
 
