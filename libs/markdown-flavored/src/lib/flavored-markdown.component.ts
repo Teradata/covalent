@@ -232,7 +232,7 @@ export class TdFlavoredMarkdownComponent
   @Input() useCfmList? = false;
 
   /**
-   * The file extension to monitor for in anchor tags. If an anchor's `href` ends
+   * The file extensions to monitor for in anchor tags. If an anchor's `href` ends
    * with this extension, an event will be triggered insetad of performing the default action.
    * Example values: ".ipynb", ".zip", ".docx"
    */

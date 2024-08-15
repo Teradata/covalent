@@ -16,7 +16,6 @@ export function genHeadingId(str: string): string {
   if (str) {
     return removeLeadingHash(
       str
-        .replace(/<[^>]+>/g, '') // remove html tags from heading ids
         .replace(/(_|-|\s)+/g, '')
         // Remove certain special chars to create heading ids similar to those in github
         // borrowed from showdown

@@ -82,6 +82,7 @@ function normalizeHtmlHrefs(
       .forEach((link: HTMLAnchorElement) => {
         const url: URL = new URL(link.href);
         const originalHash: string = url.hash;
+        const isFileAnchorLink = isFileLink(link, fileLinkExtensions);
         if (isAnchorLink(link)) {
           if (originalHash) {
             url.hash = genHeadingId(originalHash);
@@ -90,10 +91,7 @@ function normalizeHtmlHrefs(
         } else if (url.host === window.location.host) {
           // hosts match, meaning URL MIGHT have been malformed by showdown
           // url is a relative url or just a link to a part of the application
-          if (
-            url.pathname.endsWith('.md') ||
-            isFileLink(link, fileLinkExtensions)
-          ) {
+          if (url.pathname.endsWith('.md') || isFileAnchorLink) {
             // only check .md urls or urls ending with the fileLinkExtensions
 
             const hrefWithoutHash: string = removeTrailingHash(
@@ -107,7 +105,7 @@ function normalizeHtmlHrefs(
             }
             link.href = url.href;
           }
-          link.target = '_blank';
+          link.target = isFileAnchorLink ? '_self' : '_blank';
         } else {
           // url is absolute
           if (url.pathname.endsWith('.md')) {
@@ -173,7 +171,8 @@ function addIdsToHeadings(html: string): string {
     document
       .querySelectorAll('h1, h2, h3, h4, h5, h6')
       .forEach((heading: Element) => {
-        const id: string = genHeadingId(heading.innerHTML);
+        const strippedInnerHTML = stripAllHtmlTags(heading.innerHTML);
+        const id: string = genHeadingId(strippedInnerHTML);
         heading.setAttribute('id', id);
       });
     return new XMLSerializer().serializeToString(document);
@@ -199,6 +198,19 @@ function changeStyleAlignmentToClass(html: string) {
   }
 
   return html;
+}
+
+// Strips all the html tags in the html sand returns the text
+function stripAllHtmlTags(input: string): string {
+  let sanitized = input;
+  let previous;
+
+  do {
+    previous = sanitized;
+    sanitized = sanitized.replace(/<[^>]+>/g, '');
+  } while (previous !== sanitized);
+
+  return sanitized;
 }
 
 @Component({
@@ -267,7 +279,7 @@ export class TdMarkdownComponent
   }
 
   /**
-   * The file extension to monitor for in anchor tags. If an anchor's `href` ends
+   * The file extensions to monitor for in anchor tags. If an anchor's `href` ends
    * with these extensions, an event will be emitted instead of performing the default click action.
    * Example values: [".ipynb", ".zip", ".docx"]
    */
