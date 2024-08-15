@@ -1,3 +1,9 @@
+## [8.19.1](https://github.com/Teradata/covalent/compare/v8.19.0...v8.19.1) (2024-08-14)
+
+### Bug Fixes
+
+- **styles:** correct persistent unneeded vertical scrollbar ([#2221](https://github.com/Teradata/covalent/issues/2221)) ([2b9b283](https://github.com/Teradata/covalent/commit/2b9b2838c42f4b39f780b70f42639e84b69f0d06))
+
 # [8.19.0](https://github.com/Teradata/covalent/compare/v8.18.1...v8.19.0) (2024-08-13)
 
 ### Features
