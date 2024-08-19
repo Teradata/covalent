@@ -1,3 +1,9 @@
+## [8.20.1](https://github.com/Teradata/covalent/compare/v8.20.0...v8.20.1) (2024-08-19)
+
+### Bug Fixes
+
+- **notebook-cell:** prevent shift+enter action in cell editor ([#2226](https://github.com/Teradata/covalent/issues/2226)) ([9e299e4](https://github.com/Teradata/covalent/commit/9e299e4c463df3e63a4945d1c9b4ae07ef2b7d25))
+
 # [8.20.0](https://github.com/Teradata/covalent/compare/v8.19.1...v8.20.0) (2024-08-19)
 
 ### Features
