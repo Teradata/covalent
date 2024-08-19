@@ -1,3 +1,9 @@
+# [8.20.0](https://github.com/Teradata/covalent/compare/v8.19.1...v8.20.0) (2024-08-19)
+
+### Features
+
+- **flavored-markdown:** add support for file url clicks ([#2225](https://github.com/Teradata/covalent/issues/2225)) ([51f4a3c](https://github.com/Teradata/covalent/commit/51f4a3ca21ab9465595722374ed67114c4806baf))
+
 ## [8.19.1](https://github.com/Teradata/covalent/compare/v8.19.0...v8.19.1) (2024-08-14)
 
 ### Bug Fixes
