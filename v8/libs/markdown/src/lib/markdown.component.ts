@@ -23,6 +23,7 @@ import {
   isGithubHref,
   isRawGithubHref,
   renderVideoElements,
+  isFileLink,
 } from './markdown-utils/markdown-utils';
 
 import * as showdown from 'showdown';
@@ -66,7 +67,11 @@ function generateHref(currentHref: string, relativeHref: string): string {
   return '';
 }
 
-function normalizeHtmlHrefs(html: string, currentHref: string): string {
+function normalizeHtmlHrefs(
+  html: string,
+  currentHref: string,
+  fileLinkExtensions?: string[]
+): string {
   if (currentHref) {
     const document: Document = new DOMParser().parseFromString(
       html,
@@ -77,6 +82,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
       .forEach((link: HTMLAnchorElement) => {
         const url: URL = new URL(link.href);
         const originalHash: string = url.hash;
+        const isFileAnchorLink = isFileLink(link, fileLinkExtensions);
         if (isAnchorLink(link)) {
           if (originalHash) {
             url.hash = genHeadingId(originalHash);
@@ -85,8 +91,8 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
         } else if (url.host === window.location.host) {
           // hosts match, meaning URL MIGHT have been malformed by showdown
           // url is a relative url or just a link to a part of the application
-          if (url.pathname.endsWith('.md')) {
-            // only check .md urls
+          if (url.pathname.endsWith('.md') || isFileAnchorLink) {
+            // only check .md urls or urls ending with the fileLinkExtensions
 
             const hrefWithoutHash: string = removeTrailingHash(
               link.getAttribute('href')
@@ -99,7 +105,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
             }
             link.href = url.href;
           }
-          link.target = '_blank';
+          link.target = isFileAnchorLink ? '_self' : '_blank';
         } else {
           // url is absolute
           if (url.pathname.endsWith('.md')) {
@@ -165,7 +171,8 @@ function addIdsToHeadings(html: string): string {
     document
       .querySelectorAll('h1, h2, h3, h4, h5, h6')
       .forEach((heading: Element) => {
-        const id: string = genHeadingId(heading.innerHTML);
+        const strippedInnerHTML = stripAllHtmlTags(heading.innerHTML);
+        const id: string = genHeadingId(strippedInnerHTML);
         heading.setAttribute('id', id);
       });
     return new XMLSerializer().serializeToString(document);
@@ -193,6 +200,19 @@ function changeStyleAlignmentToClass(html: string) {
   return html;
 }
 
+// Strips all the html tags in the html sand returns the text
+function stripAllHtmlTags(input: string): string {
+  let sanitized = input;
+  let previous;
+
+  do {
+    previous = sanitized;
+    sanitized = sanitized.replace(/<[^>]+>/g, '');
+  } while (previous !== sanitized);
+
+  return sanitized;
+}
+
 @Component({
   selector: 'td-markdown',
   styleUrls: ['./markdown.component.scss'],
@@ -206,6 +226,7 @@ export class TdMarkdownComponent
   private _hostedUrl!: string;
   private _anchor!: string;
   private _viewInit = false;
+  private _fileLinkExtensions!: string[] | undefined;
   private _anchorListener?: VoidFunction;
   /**
    * .td-markdown class added to host so ::ng-deep gets scoped.
@@ -258,6 +279,22 @@ export class TdMarkdownComponent
   }
 
   /**
+   * The file extensions to monitor for in anchor tags. If an anchor's `href` ends
+   * with these extensions, an event will be emitted instead of performing the default click action.
+   * Example values: [".ipynb", ".zip", ".docx"]
+   */
+  @Input()
+  set fileLinkExtensions(extensions: string[] | undefined) {
+    this._fileLinkExtensions = extensions;
+  }
+
+  /**
+   * Event emitted when an anchor tag with an `href` matching the specified
+   * fileLinkExtensions is clicked. The emitted value is the URL of the clicked anchor.
+   */
+  @Output() fileLinkClicked = new EventEmitter<URL>();
+
+  /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
    */
@@ -307,6 +344,11 @@ export class TdMarkdownComponent
             isAnchorLink(<HTMLAnchorElement>element)
           ) {
             this.handleAnchorClicks(event);
+          } else if (
+            element.matches('a[href]') &&
+            isFileLink(<HTMLAnchorElement>element, this._fileLinkExtensions)
+          ) {
+            this.handleFileAnchorClicks(event);
           }
         }
       );
@@ -359,6 +401,12 @@ export class TdMarkdownComponent
     scrollToAnchor(this._elementRef.nativeElement, hash, true);
   }
 
+  private handleFileAnchorClicks(event: Event): void {
+    event.preventDefault();
+    const url: URL = new URL((<HTMLAnchorElement>event.target).href);
+    this.fileLinkClicked.emit(url);
+  }
+
   private _elementFromString(markupStr: string): HTMLDivElement {
     // Renderer2 doesnt have a parsing method, so we have to sanitize and use [innerHTML]
     // to parse the string into DOM element for now.
@@ -372,7 +420,8 @@ export class TdMarkdownComponent
       ) ?? '';
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(
       html,
-      this._hostedUrl
+      this._hostedUrl,
+      this._fileLinkExtensions
     );
     const htmlWithAbsoluteImgSrcs: string = normalizeImageSrcs(
       htmlWithAbsoluteHrefs,

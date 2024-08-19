@@ -1,94 +1,197 @@
 import * as tokens from '@covalent/tokens';
 
-export const cvEditorDarkTheme = {
-  base: 'vs-dark',
-  inherit: true,
-  rules: [
-    {
-      token: '',
-      foreground: tokens.CvDarkCodeSnippetColor,
-      background: tokens.CvThemeDarkColorsSurface,
+const getTheme = (theme: 'Light' | 'Dark') => {
+  return {
+    base: theme === 'Light' ? 'vs' : 'vs-dark',
+    inherit: true,
+    rules: [
+      {
+        token: '',
+        foreground: tokens[`Cv${theme}CodeSnippetColor`],
+        background: tokens[`Cv${theme}Surface`],
+      },
+      {
+        token: 'arbitration-variable',
+        foreground: tokens[`Cv${theme}CodeSnippetVariable`],
+      },
+      {
+        token: 'arbitration-variable.invalid',
+        foreground: tokens[`Cv${theme}Negative`],
+      },
+      {
+        token: 'attribute.name',
+        foreground: tokens[`Cv${theme}CodeSnippetVariable`],
+      },
+      {
+        token: 'attribute.value',
+        foreground: tokens[`Cv${theme}CodeSnippetVariable`],
+      },
+      {
+        token: 'attribute.value.number',
+        foreground: tokens[`Cv${theme}CodeSnippetVariable`],
+      },
+      {
+        token: 'attribute.value.unit',
+        foreground: tokens[`Cv${theme}CodeSnippetVariable`],
+      },
+      {
+        token: 'attribute.value.html',
+        foreground: tokens[`Cv${theme}CodeSnippetString`],
+      },
+      {
+        token: 'attribute.value.xml',
+        foreground: tokens[`Cv${theme}CodeSnippetLiteral`],
+      },
+      {
+        token: 'builtins',
+        foreground: tokens[`Cv${theme}CodeSnippetClass`],
+      },
+      {
+        token: 'class',
+        foreground: tokens[`Cv${theme}CodeSnippetClass`],
+      },
+      {
+        token: 'comment',
+        foreground: tokens[`Cv${theme}CodeSnippetComment`],
+        fontStyle: 'italic',
+      },
+      {
+        token: 'constant',
+        foreground: tokens[`Cv${theme}CodeSnippetLiteral`],
+      },
+      {
+        token: 'delimiter',
+        foreground: tokens[`CvTheme${theme}ColorsOnSurface`],
+      },
+      {
+        token: 'delimiter.html',
+        foreground: tokens[`Cv${theme}CodeSnippetSelector`],
+      },
+      {
+        token: 'delimiter.xml',
+        foreground: tokens[`Cv${theme}CodeSnippetSelector`],
+      },
+      {
+        token: 'doctag',
+        foreground: tokens[`Cv${theme}CodeSnippetKeyword`],
+      },
+      {
+        token: 'emphasis',
+        fontStyle: 'italic',
+      },
+      {
+        token: 'formula',
+        foreground: tokens[`Cv${theme}CodeSnippetKeyword`],
+      },
+      {
+        token: 'function',
+        foreground: tokens[`Cv${theme}CodeSnippetTitle`],
+      },
+      {
+        token: 'invalid',
+        foreground: tokens[`Cv${theme}Negative`],
+      },
+      { token: 'key', foreground: tokens[`Cv${theme}CodeSnippetString`] },
+      {
+        token: 'keyword',
+        foreground: tokens[`Cv${theme}CodeSnippetKeyword`],
+      },
+      {
+        token: 'keyword.json',
+        foreground: tokens[`Cv${theme}CodeSnippetTitle`],
+        fontStyle: 'bold italic',
+      },
+      {
+        token: 'link',
+        foreground: tokens[`Cv${theme}CodeSnippetTitle`],
+        fontStyle: 'underline',
+      },
+      {
+        token: 'literal',
+        foreground: tokens[`Cv${theme}CodeSnippetLiteral`],
+      },
+      {
+        token: 'meta',
+        foreground: tokens[`Cv${theme}CodeSnippetTitle`],
+      },
+      {
+        token: 'number',
+        foreground: tokens[`Cv${theme}CodeSnippetVariable`],
+      },
+      {
+        token: 'operator',
+        foreground: tokens[`Cv${theme}CodeSnippetLiteral`],
+      },
+      { token: 'predefined', foreground: tokens[`Cv${theme}CodeSnippetTitle`] },
+      {
+        token: 'predefined.sql',
+        foreground: tokens[`Cv${theme}CodeSnippetTitle`],
+      },
+      {
+        token: 'predefined.python',
+        foreground: tokens[`Cv${theme}CodeSnippetClass`],
+      },
+      {
+        token: 'punctuation',
+        foreground: tokens[`Cv${theme}CodeSnippetColor`],
+      },
+      {
+        token: 'string',
+        foreground: tokens[`Cv${theme}CodeSnippetString`],
+      },
+      {
+        token: 'string.sql',
+        foreground: tokens[`Cv${theme}CodeSnippetString`],
+      },
+      {
+        token: 'string.key.json',
+        foreground: tokens[`Cv${theme}CodeSnippetString`],
+      },
+      {
+        token: 'string.value.json',
+        foreground: tokens[`Cv${theme}CodeSnippetString`],
+      },
+      {
+        token: 'strong',
+        fontStyle: 'bold',
+      },
+      {
+        token: 'tag',
+        foreground: tokens[`Cv${theme}CodeSnippetSelector`],
+      },
+      {
+        token: 'tag.id.jade',
+        foreground: tokens[`Cv${theme}CodeSnippetClass`],
+      },
+      {
+        token: 'tag.class.jade',
+        foreground: tokens[`Cv${theme}CodeSnippetClass`],
+      },
+      {
+        token: 'type',
+        foreground: tokens[`Cv${theme}CodeSnippetClass`],
+      },
+      {
+        token: 'variable',
+        foreground: tokens[`Cv${theme}CodeSnippetVariable`],
+      },
+    ],
+    colors: {
+      comment: tokens[`Cv${theme}CodeSnippetComment`],
+      'editor.background': tokens[`Cv${theme}Surface`],
+      'editor.foreground': tokens[`CvTheme${theme}ColorsOnSurface`],
+      'editorCursor.foreground': tokens[`Cv${theme}TextSecondaryOnBackground`],
+      'editorLineNumber.activeForeground':
+        tokens[`CvTheme${theme}ColorsOnSurface74`],
+      'editorLineNumber.foreground': tokens[`CvTheme${theme}ColorsOnSurface38`],
+      'editor.lineHighlightBackground':
+        tokens[`CvTheme${theme}ColorsSurfaceContainerLow`],
+      'inputValidation.errorBackground': tokens[`Cv${theme}Negative`],
+      'inputValidation.errorBorder': 'rgba(229, 115, 115, 0.1)',
     },
-    {
-      token: 'comment',
-      foreground: tokens.CvDarkCodeSnippetComment,
-      fontStyle: 'italic',
-    },
-    { token: 'keyword', foreground: tokens.CvDarkCodeSnippetKeyword },
-    { token: 'variable', foreground: tokens.CvDarkCodeSnippetVariable },
-    { token: 'string', foreground: tokens.CvDarkCodeSnippetString },
-    { token: 'number', foreground: tokens.CvDarkCodeSnippetVariable },
-    { token: 'type', foreground: tokens.CvDarkCodeSnippetClass },
-    { token: 'class', foreground: tokens.CvDarkCodeSnippetClass },
-    { token: 'function', foreground: tokens.CvDarkCodeSnippetTitle },
-    { token: 'operator', foreground: tokens.CvDarkCodeSnippetLiteral },
-    { token: 'constant', foreground: tokens.CvDarkCodeSnippetLiteral },
-    { token: 'builtin', foreground: tokens.CvDarkCodeSnippetClass },
-    { token: 'punctuation', foreground: tokens.CvDarkCodeSnippetColor },
-    { token: 'meta', foreground: tokens.CvDarkCodeSnippetTitle },
-    { token: 'tag', foreground: tokens.CvDarkCodeSnippetSelector },
-    { token: 'attribute.name', foreground: tokens.CvDarkCodeSnippetVariable },
-    { token: 'attribute.value', foreground: tokens.CvDarkCodeSnippetString },
-    { token: 'invalid', foreground: tokens.CvDarkNegative },
-    { token: 'strong', fontStyle: 'bold' },
-    { token: 'emphasis', fontStyle: 'italic' },
-    {
-      token: 'link',
-      foreground: tokens.CvDarkCodeSnippetTitle,
-      fontStyle: 'underline',
-    },
-  ],
-  colors: {
-    'editor.background': tokens.CvThemeDarkColorsSurface,
-    'editor.foreground': tokens.CvDarkCodeSnippetColor,
-    'editorCursor.foreground': tokens.CvDarkTextSecondaryOnBackground,
-  },
+  };
 };
 
-export const cvEditorLightTheme = {
-  base: 'vs',
-  inherit: true,
-  rules: [
-    {
-      token: '',
-      foreground: tokens.CvLightCodeSnippetColor,
-      background: tokens.CvLightSurfaceCanvas,
-    },
-    {
-      token: 'comment',
-      foreground: tokens.CvLightCodeSnippetComment,
-      fontStyle: 'italic',
-    },
-    { token: 'keyword', foreground: tokens.CvLightCodeSnippetKeyword },
-    { token: 'doctag', foreground: tokens.CvLightCodeSnippetKeyword },
-    { token: 'formula', foreground: tokens.CvLightCodeSnippetKeyword },
-    { token: 'variable', foreground: tokens.CvLightCodeSnippetVariable },
-    { token: 'string', foreground: tokens.CvLightCodeSnippetString },
-    { token: 'number', foreground: tokens.CvLightCodeSnippetVariable },
-    { token: 'type', foreground: tokens.CvLightCodeSnippetClass },
-    { token: 'class', foreground: tokens.CvLightCodeSnippetClass },
-    { token: 'function', foreground: tokens.CvLightCodeSnippetTitle },
-    { token: 'literal', foreground: tokens.CvLightCodeSnippetLiteral },
-    { token: 'operator', foreground: tokens.CvLightCodeSnippetLiteral },
-    { token: 'constant', foreground: tokens.CvLightCodeSnippetLiteral },
-    { token: 'builtin', foreground: tokens.CvLightCodeSnippetClass },
-    { token: 'punctuation', foreground: tokens.CvLightCodeSnippetColor },
-    { token: 'meta', foreground: tokens.CvLightCodeSnippetTitle },
-    { token: 'tag', foreground: tokens.CvLightCodeSnippetSelector },
-    { token: 'attribute.name', foreground: tokens.CvLightCodeSnippetVariable },
-    { token: 'attribute.value', foreground: tokens.CvLightCodeSnippetString },
-    { token: 'invalid', foreground: tokens.CvLightNegative },
-    { token: 'strong', fontStyle: 'bold' },
-    { token: 'emphasis', fontStyle: 'italic' },
-    {
-      token: 'link',
-      foreground: tokens.CvLightCodeSnippetTitle,
-      fontStyle: 'underline',
-    },
-  ],
-  colors: {
-    'editor.background': tokens.CvThemeLightColorsSurface,
-    'editor.foreground': tokens.CvLightCodeSnippetColor,
-    'editorCursor.foreground': tokens.CvLightTextSecondaryOnBackground,
-  },
-};
+export const cvEditorDarkTheme = getTheme('Dark');
+
+export const cvEditorLightTheme = getTheme('Light');

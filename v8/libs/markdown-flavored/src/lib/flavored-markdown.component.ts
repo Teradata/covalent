@@ -232,6 +232,20 @@ export class TdFlavoredMarkdownComponent
   @Input() useCfmList? = false;
 
   /**
+   * The file extensions to monitor for in anchor tags. If an anchor's `href` ends
+   * with this extension, an event will be triggered insetad of performing the default action.
+   * Example values: ".ipynb", ".zip", ".docx"
+   */
+  @Input()
+  fileLinkExtensions?: string[];
+
+  /**
+   * Event emitted when an anchor tag with an `href` matching the specified
+   * file link extension is clicked. The emitted value is the `href` of the clicked anchor.
+   */
+  @Output() fileLinkClicked = new EventEmitter<URL>();
+
+  /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
    */
@@ -377,6 +391,13 @@ export class TdFlavoredMarkdownComponent
       contentRef.instance.content = markdown;
       contentRef.instance.hostedUrl = this._hostedUrl;
       contentRef.instance.simpleLineBreaks = this._simpleLineBreaks;
+      contentRef.instance.fileLinkExtensions = this.fileLinkExtensions;
+      contentRef.instance.fileLinkClicked
+        .pipe(takeUntil(this._destroy$))
+        .subscribe((url: URL) => {
+          console.log(url);
+          this.fileLinkClicked.emit(url);
+        });
       contentRef.instance.refresh();
       this.container.viewContainerRef.insert(
         contentRef.hostView,
