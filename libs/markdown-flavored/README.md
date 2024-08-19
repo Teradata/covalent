@@ -21,6 +21,9 @@ This component uses `<td-markdown>` to render the markdown. See `<td-markdown>`'
   - Display copy button on code snippets to copy code to clipboard.
 - copyCodeTooltips?: ICopyCodeTooltips
   - Tooltips for copy button to copy and upon copying.
+- fileLinkExtensions?: string[]
+  - The file extensions to monitor within anchor tags.
+  - Clicking links that end with these extensions will prevent the default action and emit 'fileClicked' event.
 
 For reference:
 
@@ -35,6 +38,8 @@ interface ICopyCodeTooltips {
 
 - buttonClicked: ITdFlavoredMarkdownButtonClickEvent
   - Emitted when a button is clicked
+- fileClicked: URL
+  - Emitted when an anchor tag is clicked and its 'href' matches one of the extensions in 'fileLinkExtensions'.
 
 #### Events
 
@@ -99,9 +104,7 @@ $theme: mat.define-light-theme($primary, $accent, $warn);
 ## Example
 
 ```html
-<td-flavored-markdown>
-  - [x] checked action - [ ] unchecked action + list item + list item
-</td-flavored-markdown>
+<td-flavored-markdown> - [x] checked action - [ ] unchecked action + list item + list item </td-flavored-markdown>
 ```
 
 ## TdFlavoredMarkdownLoaderComponent: td-flavored-markdown-loader
@@ -140,8 +143,5 @@ A component that fetches markdown from a GitHub url and renders it using `<td-fl
 ## Example
 
 ```html
-<td-flavored-markdown-loader
-  [url]="'https://github.com/Teradata/covalent/blob/main/README.md'"
->
-</td-flavored-markdown-loader>
+<td-flavored-markdown-loader [url]="'https://github.com/Teradata/covalent/blob/main/README.md'"> </td-flavored-markdown-loader>
 ```
