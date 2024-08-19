@@ -2,6 +2,11 @@ import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import styles from './notebook-cell.scss?inline';
 import { classMap } from 'lit/directives/class-map.js';
+import {
+  KeyCode,
+  KeyMod,
+  editor,
+} from 'monaco-editor/esm/vs/editor/editor.api.js';
 
 import '../code-editor/code-editor';
 import '../code-snippet/code-snippet';
@@ -79,6 +84,8 @@ export class CovalentNotebookCell extends LitElement {
   @property({ type: String })
   editorTheme = '';
 
+  private _editor!: editor.IStandaloneCodeEditor;
+
   private _editorFocused = false;
 
   @state()
@@ -153,6 +160,13 @@ export class CovalentNotebookCell extends LitElement {
     this.requestUpdate();
   }
 
+  setEditorInstance(e: CustomEvent) {
+    this._editor = e.detail.editor;
+    this._editor.addCommand(KeyMod.Shift | KeyCode.Enter, () => {
+      // Prevent the default shift enter action (inserts line below) and do nothing
+    });
+  }
+
   showContextMenu(e: MouseEvent) {
     e.preventDefault();
     const cells = document.querySelectorAll('cv-notebook-cell');
@@ -219,6 +233,7 @@ export class CovalentNotebookCell extends LitElement {
     const editor = this.selected
       ? html`<cv-code-editor
           @code-change="${this.handleCodeChange}"
+          @editor-ready="${this.setEditorInstance}"
           @editor-focus="${() => this.setEditorFocus(true)}"
           @editor-blur="${() => this.setEditorFocus(false)}"
           .code="${this.code}"

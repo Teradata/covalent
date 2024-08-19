@@ -116,6 +116,15 @@ export class CovalentCodeEditor extends LitElement {
       automaticLayout: true,
       scrollBeyondLastLine: false,
     });
+
+    // Notify when the editor instance is created/ready
+    this.dispatchEvent(
+      new CustomEvent('editor-ready', {
+        detail: { editor: this.editor },
+        bubbles: true,
+        composed: true,
+      })
+    );
   }
 
   override disconnectedCallback(): void {
@@ -161,6 +170,10 @@ export class CovalentCodeEditor extends LitElement {
         .matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change', this.setTheme);
     }
+  }
+
+  getEditorInstance() {
+    return this.editor;
   }
 
   getValue() {

@@ -33,7 +33,7 @@ const Template = ({
   error,
   output,
 }) => {
-  return `<div style="width: 80vw;">
+  return `<div style="width: 60vw;">
             <cv-notebook-cell code="${code}" index="${index}" language="${language}" timesExecuted="${timesExecuted}" editorTheme="${theme}" ${
     hideEditor ? 'hideEditor' : ''
   } ${selected ? 'selected' : ''} ${loading ? 'loading' : ''} ${
