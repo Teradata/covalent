@@ -29,7 +29,11 @@
           "description": "",
           "type": "object",
           "required": [],
-          "properties": {}
+          "properties": {
+            "iconfont": {
+              "type": "string"
+            }
+          }
         }
       },
       "demoIds": ["bn4zy44TYR", "Xr7IHJQ1", "8VqxwwTyJ", "ezyQjAA-T1"],
