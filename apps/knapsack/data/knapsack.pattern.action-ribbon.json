@@ -20,6 +20,9 @@
             "allowedPatternIds": ["button", "checkbox", "icon-button"],
             "title": "action-items",
             "description": "Action items for the action-ribbon"
+          },
+          "icon": {
+            "title": "icon"
           }
         },
         "props": {
