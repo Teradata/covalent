@@ -8,9 +8,20 @@
           "name": "Toolbar",
           "path": "/pattern/toolbar"
         },
-        "title": "See also: Toolbar"
+        "title": "See also",
+        "description": "Toolbars"
       }
-    ]
+    ],
+    "gridStyles": {
+      "columns": "3",
+      "centered": false
+    },
+    "tileStyles": {
+      "rounded": true,
+      "outlined": true,
+      "imageSize": "none",
+      "titleSize": "xsmall"
+    }
   },
   "size": "medium",
   "blockType": "shortcut-tiles"

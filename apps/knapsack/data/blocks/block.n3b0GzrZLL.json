@@ -38,8 +38,11 @@
       "rounded": true,
       "outlined": true,
       "imageSize": "none",
-      "titleSize": "xsmall"
+      "titleSize": "large"
     }
   },
-  "blockType": "shortcut-tiles"
+  "blockType": "shortcut-tiles",
+  "header": {
+    "showHeader": false
+  }
 }

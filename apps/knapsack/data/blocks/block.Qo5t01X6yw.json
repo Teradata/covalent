@@ -38,7 +38,7 @@
       "rounded": true,
       "outlined": true,
       "imageSize": "none",
-      "titleSize": "small"
+      "titleSize": "large"
     }
   },
   "blockType": "shortcut-tiles"
