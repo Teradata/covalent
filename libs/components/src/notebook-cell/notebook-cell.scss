@@ -1,5 +1,5 @@
 :host {
-  --mdc-icon-button-size: 24px;
+  --mdc-icon-button-size: 2rem;
 
   font-family: var(--mdc-typography-body1-font-family);
   width: 100%;
@@ -48,6 +48,8 @@ cv-code-editor {
 }
 
 .timesExecuted {
+  --cv-icon-button-cursor: grab;
+
   align-items: center;
   box-sizing: border-box;
   color: var(--cv-theme-on-surface-38);
@@ -62,15 +64,21 @@ cv-code-editor {
     overflow: hidden;
     text-align: right;
     text-overflow: ellipsis;
+    user-select: none;
     white-space: nowrap;
     width: 50px;
   }
 
-  cv-icon {
+  cv-icon-button {
     color: var(--cv-theme-on-surface-variant);
+    cursor: grab;
     padding: 0.5rem;
     visibility: hidden;
     transition: visibility 0.3s ease;
+
+    &:active {
+      --cv-icon-button-cursor: grabbing;
+    }
   }
 }
 
@@ -82,7 +90,7 @@ cv-code-editor {
   }
 
   &:hover {
-    cv-icon {
+    cv-icon-button {
       visibility: visible;
     }
   }

@@ -278,23 +278,19 @@ export class CovalentNotebookCell extends LitElement {
       focused: this._editorFocused,
     };
     return html`
-      <div
-        class="${classMap(classes)}"
-        draggable="true"
-        @contextmenu=${this.showContextMenu}
-      >
-        <div class="selectionIndicatorWrapper" draggable="false">
+      <div class="${classMap(classes)}" @contextmenu=${this.showContextMenu}>
+        <div class="selectionIndicatorWrapper">
           <div class="selectionIndicator"></div>
         </div>
 
-        <div class="timesExecutedWrapper" draggable="false">
+        <div class="timesExecutedWrapper">
           <div class="timesExecuted">
-            <cv-icon>drag_indicator</cv-icon>
+            <cv-icon-button icon="drag_indicator"></cv-icon-button>
             <div class="executionCount">${this.renderExecutionCount()}</div>
           </div>
         </div>
 
-        <div class="cellOutputWrapper" draggable="false">
+        <div class="cellOutputWrapper">
           ${this.renderEditor()} ${this.renderOutput()}
         </div>
       </div>
