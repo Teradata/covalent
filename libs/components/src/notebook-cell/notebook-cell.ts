@@ -2,11 +2,7 @@ import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import styles from './notebook-cell.scss?inline';
 import { classMap } from 'lit/directives/class-map.js';
-import {
-  KeyCode,
-  KeyMod,
-  editor,
-} from 'monaco-editor/esm/vs/editor/editor.api.js';
+import { KeyCode, editor } from 'monaco-editor/esm/vs/editor/editor.api.js';
 
 import '../code-editor/code-editor';
 import '../code-snippet/code-snippet';
@@ -17,10 +13,6 @@ declare global {
   interface HTMLElementTagNameMap {
     'cv-notebook-cell': CovalentNotebookCell;
   }
-}
-
-enum CvCellEvents {
-  RUN_CODE = 'cell-run-code',
 }
 
 /**
@@ -145,16 +137,6 @@ export class CovalentNotebookCell extends LitElement {
     this.code = e.detail.code;
   }
 
-  handleRun() {
-    this.dispatchEvent(
-      new CustomEvent(CvCellEvents.RUN_CODE, {
-        detail: { index: this.index, code: this.code },
-        bubbles: true,
-        composed: true,
-      })
-    );
-  }
-
   setEditorFocus(e: CustomEvent, setFocus: boolean) {
     e.stopImmediatePropagation();
     this._editorFocused = setFocus;
@@ -164,8 +146,11 @@ export class CovalentNotebookCell extends LitElement {
   setEditorInstance(e: CustomEvent) {
     e.stopImmediatePropagation();
     this._editor = e.detail.editor;
-    this._editor.addCommand(KeyMod.Shift | KeyCode.Enter, () => {
-      // Prevent the default shift enter action (inserts line below) and do nothing
+    this._editor.onKeyDown((e) => {
+      if (e.shiftKey && e.keyCode === KeyCode.Enter) {
+        e.preventDefault(); // Prevents adding a new line
+        // The event will still propagate and can be capture with an event listener
+      }
     });
   }
 
