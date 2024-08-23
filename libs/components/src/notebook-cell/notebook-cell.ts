@@ -79,7 +79,7 @@ export class CovalentNotebookCell extends LitElement {
   hideCount = false;
 
   /**
-   * Whether the execution count is shown
+   * Theme for the code editor
    */
   @property({ type: String })
   editorTheme = '';
@@ -155,12 +155,14 @@ export class CovalentNotebookCell extends LitElement {
     );
   }
 
-  setEditorFocus(setFocus: boolean) {
+  setEditorFocus(e: CustomEvent, setFocus: boolean) {
+    e.stopImmediatePropagation();
     this._editorFocused = setFocus;
     this.requestUpdate();
   }
 
   setEditorInstance(e: CustomEvent) {
+    e.stopImmediatePropagation();
     this._editor = e.detail.editor;
     this._editor.addCommand(KeyMod.Shift | KeyCode.Enter, () => {
       // Prevent the default shift enter action (inserts line below) and do nothing
@@ -234,8 +236,8 @@ export class CovalentNotebookCell extends LitElement {
       ? html`<cv-code-editor
           @code-change="${this.handleCodeChange}"
           @editor-ready="${this.setEditorInstance}"
-          @editor-focus="${() => this.setEditorFocus(true)}"
-          @editor-blur="${() => this.setEditorFocus(false)}"
+          @editor-focus="${(e: CustomEvent) => this.setEditorFocus(e, true)}"
+          @editor-blur="${(e: CustomEvent) => this.setEditorFocus(e, false)}"
           .code="${this.code}"
           .language="${this.language}"
           .options="${this.editorOptions}"
