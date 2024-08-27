@@ -1,3 +1,9 @@
+## [8.20.2](https://github.com/Teradata/covalent/compare/v8.20.1...v8.20.2) (2024-08-27)
+
+### Bug Fixes
+
+- **notebook-cell:** fix drag and drop issues ([#2229](https://github.com/Teradata/covalent/issues/2229)) ([d3116fe](https://github.com/Teradata/covalent/commit/d3116fe19f77e7cc51d66132a3ecba0afdc9da4f))
+
 ## [8.20.1](https://github.com/Teradata/covalent/compare/v8.20.0...v8.20.1) (2024-08-19)
 
 ### Bug Fixes
