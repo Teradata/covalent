@@ -40,7 +40,7 @@ By default, `--dev` build will log the following message in the console to let y
 
   - Event emitted after the markdown content rendering is finished.
 
-- fileLinkClicked: URL
+- fileClicked: URL
   - Emitted when an anchor tag is clicked and its 'href' matches one of the extensions in 'fileLinkExtensions'.
 
 ## Installation

@@ -38,7 +38,7 @@ interface ICopyCodeTooltips {
 
 - buttonClicked: ITdFlavoredMarkdownButtonClickEvent
   - Emitted when a button is clicked
-- fileLinkClicked: URL
+- fileClicked: URL
   - Emitted when an anchor tag is clicked and its 'href' matches one of the extensions in 'fileLinkExtensions'.
 
 #### Events
