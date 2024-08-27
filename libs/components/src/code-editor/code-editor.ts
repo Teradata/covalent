@@ -121,7 +121,7 @@ export class CovalentCodeEditor extends LitElement {
     this.dispatchEvent(
       new CustomEvent('editor-ready', {
         detail: { editor: this.editor },
-        bubbles: true,
+        bubbles: false,
         composed: true,
       })
     );
@@ -143,7 +143,7 @@ export class CovalentCodeEditor extends LitElement {
       this.editor?.onDidFocusEditorText(() => {
         this.dispatchEvent(
           new CustomEvent('editor-focus', {
-            bubbles: true,
+            bubbles: false,
             composed: true,
           })
         );
@@ -153,7 +153,7 @@ export class CovalentCodeEditor extends LitElement {
       this.editor?.onDidBlurEditorText(() => {
         this.dispatchEvent(
           new CustomEvent('editor-blur', {
-            bubbles: true,
+            bubbles: false,
             composed: true,
           })
         );
