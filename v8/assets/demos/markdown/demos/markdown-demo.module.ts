@@ -8,6 +8,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { MarkdownDemoAnchorJumpingComponent } from './markdown-demo-anchor-jumping/markdown-demo-anchor-jumping.component';
 import { MarkdownDemoHostedUrlComponent } from './markdown-demo-hosted-url/markdown-demo-hosted-url.component';
 import { MarkdownDemoYoutubeComponent } from './markdown-demo-youtube/markdown-demo-youtube.component';
+import { MarkdownDemoFileUrlComponent } from './markdown-demo-file-url/markdown-demo-file-url.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     MarkdownDemoAnchorJumpingComponent,
     MarkdownDemoHostedUrlComponent,
     MarkdownDemoYoutubeComponent,
+    MarkdownDemoFileUrlComponent,
   ],
   imports: [
     DemoModule,

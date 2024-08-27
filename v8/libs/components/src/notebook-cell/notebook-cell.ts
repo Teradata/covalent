@@ -2,11 +2,7 @@ import { css, html, LitElement, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import styles from './notebook-cell.scss?inline';
 import { classMap } from 'lit/directives/class-map.js';
-import {
-  KeyCode,
-  KeyMod,
-  editor,
-} from 'monaco-editor/esm/vs/editor/editor.api.js';
+import { KeyCode, editor } from 'monaco-editor/esm/vs/editor/editor.api.js';
 
 import '../code-editor/code-editor';
 import '../code-snippet/code-snippet';
@@ -17,10 +13,6 @@ declare global {
   interface HTMLElementTagNameMap {
     'cv-notebook-cell': CovalentNotebookCell;
   }
-}
-
-enum CvCellEvents {
-  RUN_CODE = 'cell-run-code',
 }
 
 /**
@@ -79,7 +71,7 @@ export class CovalentNotebookCell extends LitElement {
   hideCount = false;
 
   /**
-   * Whether the execution count is shown
+   * Theme for the code editor
    */
   @property({ type: String })
   editorTheme = '';
@@ -145,25 +137,20 @@ export class CovalentNotebookCell extends LitElement {
     this.code = e.detail.code;
   }
 
-  handleRun() {
-    this.dispatchEvent(
-      new CustomEvent(CvCellEvents.RUN_CODE, {
-        detail: { index: this.index, code: this.code },
-        bubbles: true,
-        composed: true,
-      })
-    );
-  }
-
-  setEditorFocus(setFocus: boolean) {
+  setEditorFocus(e: CustomEvent, setFocus: boolean) {
+    e.stopImmediatePropagation();
     this._editorFocused = setFocus;
     this.requestUpdate();
   }
 
   setEditorInstance(e: CustomEvent) {
+    e.stopImmediatePropagation();
     this._editor = e.detail.editor;
-    this._editor.addCommand(KeyMod.Shift | KeyCode.Enter, () => {
-      // Prevent the default shift enter action (inserts line below) and do nothing
+    this._editor.onKeyDown((e) => {
+      if (e.shiftKey && e.keyCode === KeyCode.Enter) {
+        e.preventDefault(); // Prevents adding a new line
+        // The event will still propagate and can be capture with an event listener
+      }
     });
   }
 
@@ -234,8 +221,8 @@ export class CovalentNotebookCell extends LitElement {
       ? html`<cv-code-editor
           @code-change="${this.handleCodeChange}"
           @editor-ready="${this.setEditorInstance}"
-          @editor-focus="${() => this.setEditorFocus(true)}"
-          @editor-blur="${() => this.setEditorFocus(false)}"
+          @editor-focus="${(e: CustomEvent) => this.setEditorFocus(e, true)}"
+          @editor-blur="${(e: CustomEvent) => this.setEditorFocus(e, false)}"
           .code="${this.code}"
           .language="${this.language}"
           .options="${this.editorOptions}"
@@ -278,23 +265,19 @@ export class CovalentNotebookCell extends LitElement {
       focused: this._editorFocused,
     };
     return html`
-      <div
-        class="${classMap(classes)}"
-        draggable="true"
-        @contextmenu=${this.showContextMenu}
-      >
-        <div class="selectionIndicatorWrapper" draggable="false">
+      <div class="${classMap(classes)}" @contextmenu=${this.showContextMenu}>
+        <div class="selectionIndicatorWrapper">
           <div class="selectionIndicator"></div>
         </div>
 
-        <div class="timesExecutedWrapper" draggable="false">
+        <div class="timesExecutedWrapper">
           <div class="timesExecuted">
-            <cv-icon>drag_indicator</cv-icon>
+            <cv-icon-button icon="drag_indicator"></cv-icon-button>
             <div class="executionCount">${this.renderExecutionCount()}</div>
           </div>
         </div>
 
-        <div class="cellOutputWrapper" draggable="false">
+        <div class="cellOutputWrapper">
           ${this.renderEditor()} ${this.renderOutput()}
         </div>
       </div>

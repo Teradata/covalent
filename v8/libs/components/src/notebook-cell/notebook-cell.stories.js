@@ -15,7 +15,7 @@ export default {
     selected: true,
     hideCount: false,
     hideEditor: false,
-    theme: 'cv-light',
+    editorTheme: 'cv-light',
     timesExecuted: 2,
   },
 };
@@ -28,13 +28,13 @@ const Template = ({
   selected,
   hideCount,
   hideEditor,
-  theme,
+  editorTheme,
   timesExecuted,
   error,
   output,
 }) => {
   return `<div style="width: 60vw;">
-            <cv-notebook-cell code="${code}" index="${index}" language="${language}" timesExecuted="${timesExecuted}" editorTheme="${theme}" ${
+            <cv-notebook-cell code="${code}" index="${index}" language="${language}" timesExecuted="${timesExecuted}" editorTheme="${editorTheme}" ${
     hideEditor ? 'hideEditor' : ''
   } ${selected ? 'selected' : ''} ${loading ? 'loading' : ''} ${
     hideCount ? 'hideCount' : ''
