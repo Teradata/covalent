@@ -142,13 +142,15 @@ export class CovalentNavRailListItem extends CovalentListItem {
 
   private _updateMaxHeight(open = this.open) {
     const content = this.shadowRoot?.querySelector('.expansion-panel');
+    let contentHeight = '0';
 
     if (open) {
-      const contentHeight = content?.scrollHeight;
-      this.style.setProperty('--cv-list-menu-height', `${contentHeight}px`);
-    } else {
-      this.style.setProperty('--cv-list-menu-height', `0`);
+      contentHeight = content?.scrollHeight
+        ? `${content.scrollHeight}px`
+        : 'inherit';
     }
+
+    this.style.setProperty('--cv-list-menu-height', contentHeight);
   }
 
   renderExpansionItem() {
