@@ -154,6 +154,6 @@
 
   .expansion-panel {
     transition-timing-function: animation.$deceleration-curve-timing-function;
-    max-height: var(--cv-list-menu-height, 0);
+    max-height: var(--cv-list-menu-height, inherit);
   }
 }
