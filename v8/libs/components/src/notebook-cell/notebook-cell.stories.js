@@ -58,6 +58,7 @@ const Template = ({
           <cv-typography scale="body1">Tables are created and populated using SQL</cv-typography>
         </div>`
       }
+      <cv-icon-button slot="drag-handle" icon="drag_indicator" style="padding: 0.5rem"></cv-icon-button>
       <div slot="context-menu" style="background-color: white;">
         <cv-list activatable>
           <cv-list-item>Cut</cv-list-item>

@@ -1,3 +1,9 @@
+## [8.20.3](https://github.com/Teradata/covalent/compare/v8.20.2...v8.20.3) (2024-08-28)
+
+### Bug Fixes
+
+- **components:** fix to nav item when rendered initially open ([#2231](https://github.com/Teradata/covalent/issues/2231)) ([a903faf](https://github.com/Teradata/covalent/commit/a903faf3760dca645efe43fa38c6590d25ca5541))
+
 ## [8.20.2](https://github.com/Teradata/covalent/compare/v8.20.1...v8.20.2) (2024-08-27)
 
 ### Bug Fixes
