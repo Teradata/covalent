@@ -272,7 +272,7 @@ export class CovalentNotebookCell extends LitElement {
 
         <div class="timesExecutedWrapper">
           <div class="timesExecuted">
-            <cv-icon-button icon="drag_indicator"></cv-icon-button>
+            <slot class="dragHandle" name="drag-handle"></slot>
             <div class="executionCount">${this.renderExecutionCount()}</div>
           </div>
         </div>
