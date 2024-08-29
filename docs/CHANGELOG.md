@@ -1,3 +1,9 @@
+## [8.20.4](https://github.com/Teradata/covalent/compare/v8.20.3...v8.20.4) (2024-08-29)
+
+### Bug Fixes
+
+- **notebook-cell:** add a slot for drag handle ([00e6b75](https://github.com/Teradata/covalent/commit/00e6b753e993b76fb0ebf6e4b1001d7c0b5b5a5b))
+
 ## [8.20.3](https://github.com/Teradata/covalent/compare/v8.20.2...v8.20.3) (2024-08-28)
 
 ### Bug Fixes
