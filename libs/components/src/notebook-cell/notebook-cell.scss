@@ -70,10 +70,9 @@ cv-code-editor {
     width: 50px;
   }
 
-  cv-icon-button {
+  .dragHandle {
     color: var(--cv-theme-on-surface-variant);
     cursor: grab;
-    padding: 0.5rem;
     visibility: hidden;
     transition: visibility 0.3s ease;
 
@@ -91,7 +90,7 @@ cv-code-editor {
   }
 
   &:hover {
-    cv-icon-button {
+    .dragHandle {
       visibility: visible;
     }
   }
