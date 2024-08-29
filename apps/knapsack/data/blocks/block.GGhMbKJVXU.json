@@ -1,0 +1,28 @@
+{
+  "id": "GGhMbKJVXU",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "sign in, sign out ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

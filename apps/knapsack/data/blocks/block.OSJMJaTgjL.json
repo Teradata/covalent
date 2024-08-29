@@ -1,0 +1,23 @@
+{
+  "id": "OSJMJaTgjL",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Avoid using the noun or adjective form such as \"sign-in\" or \"signed-out.\" Instead, use the verb form because it gives the most clarity.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
