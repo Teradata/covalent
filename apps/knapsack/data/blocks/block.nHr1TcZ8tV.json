@@ -1,0 +1,231 @@
+{
+  "id": "nHr1TcZ8tV",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Don't use ",
+              "type": "text"
+            },
+            {
+              "text": "log in",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "login",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "log into",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "log on",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "logon",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "log onto",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "log off",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "log out",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "logout",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "signin",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "sign-in",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "sign into",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "sign-off, sign off",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "sign on",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", or ",
+              "type": "text"
+            },
+            {
+              "text": "sign-on ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": "(with the exception of ",
+              "type": "text"
+            },
+            {
+              "text": "single sign-on)",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

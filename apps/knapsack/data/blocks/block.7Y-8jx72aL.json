@@ -1,0 +1,54 @@
+{
+  "id": "7Y-8jx72aL",
+  "data": {
+    "guidelines": [
+      {
+        "id": "yolnD2kVVt",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "You've been inactive for some time. To protect your account, we’ll sign you out in 3 minutes.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "P4-XntimF1",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "You've been inactive for some time. To protect your account, we'll log you out in 3 minutes.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "gridStyles": {
+      "columns": "2",
+      "centered": true
+    },
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "imageOutlined": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

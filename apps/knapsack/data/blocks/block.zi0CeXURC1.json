@@ -1,0 +1,54 @@
+{
+  "id": "zi0CeXURC1",
+  "data": {
+    "guidelines": [
+      {
+        "id": "yolnD2kVVt",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Sign in to start your trial.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "P4-XntimF1",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use the sign-in to start your trial.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "gridStyles": {
+      "columns": "2",
+      "centered": true
+    },
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "imageOutlined": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

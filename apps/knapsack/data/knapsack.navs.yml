@@ -352,6 +352,11 @@ byId:
     name: Voice and tone
     parentId: writing
     path: /pages/voice-and-tone
+  word-list:
+    id: word-list
+    name: Word list
+    parentId: writing
+    path: /pages/word-list
   writing:
     id: writing
     name: Content at Teradata
@@ -428,3 +433,4 @@ order:
   - error-messages
   - adapting-tone-by-situation
   - split-button
+  - word-list
