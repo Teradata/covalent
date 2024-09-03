@@ -24,7 +24,7 @@
               ]
             },
             {
-              "text": " to mean adding something or a person that already exits to a working area in the user's Teradata system. For example, if you're adding an existing user to your database, use \"add.\" If the user doesn't exist yet, use ",
+              "text": " to mean adding a thing or person that already exists. For example, if you're adding an existing user to your database, use \"add.\" If the user doesn't exist yet, use ",
               "type": "text"
             },
             {
