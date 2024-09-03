@@ -1,0 +1,61 @@
+{
+  "id": "VfN5P6R3AJ",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use ",
+              "type": "text"
+            },
+            {
+              "text": "add",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " to mean adding something or a person that already exits to a working area in the user's Teradata system. For example, if you're adding an existing user to your database, use \"add.\" If the user doesn't exist yet, use ",
+              "type": "text"
+            },
+            {
+              "text": "create",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "See also create.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
