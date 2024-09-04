@@ -1,0 +1,16 @@
+{
+  "id": "t1CfBDrtut",
+  "title": "Main",
+  "type": "data",
+  "patternId": "code-editor",
+  "templateId": "web-components-JulJ63YyUz",
+  "data": {
+    "props": {
+      "options": {},
+      "theme": "cv-light",
+      "language": "sql",
+      "code": "SELECT * FROM aster_nb_modelSC;"
+    },
+    "slots": {}
+  }
+}

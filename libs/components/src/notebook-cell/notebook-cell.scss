@@ -57,6 +57,7 @@ cv-code-editor {
   display: flex;
   font-family: var(--cv-typography-subtitle2-font-family);
   font-size: var(--cv-typography-subtitle2-font-size);
+  gap: 0.5rem;
   height: 56px;
   line-height: var(--cv-typography-headline6-line-height);
 
@@ -67,14 +68,15 @@ cv-code-editor {
     text-overflow: ellipsis;
     user-select: none;
     white-space: nowrap;
-    width: 50px;
+    width: 52px;
   }
 
   .dragHandle {
     color: var(--cv-theme-on-surface-variant);
     cursor: grab;
-    visibility: hidden;
+    padding-left: 0.5rem;
     transition: visibility 0.3s ease;
+    visibility: hidden;
 
     &:active {
       --cv-icon-button-cursor: grabbing;
@@ -140,15 +142,27 @@ cv-code-editor {
 .cellOutputWrapper {
   display: flex;
   flex-direction: column;
-  max-width: calc(100% - 95px);
+  max-width: calc(100% - 130px);
   flex: 1;
 }
 
 .contextMenu {
-  overflow: auto;
-  position: absolute;
+  background-color: var(--cv-theme-surface-canvas);
+  border-radius: 8px;
+  box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
   visibility: hidden;
   z-index: 1000;
+}
+
+.contextMenuContent {
+  border-radius: 4px;
+  flex-grow: 1;
+  max-height: 100%;
+  overflow: auto;
 }
 
 .contextMenu.open {

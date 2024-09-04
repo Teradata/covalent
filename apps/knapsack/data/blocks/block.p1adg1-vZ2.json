@@ -1,0 +1,46 @@
+{
+  "id": "p1adg1-vZ2",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "References"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "http://localhost:58107/?path=/docs/components-code-editor--overview",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "Covalent design system - Code editor"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

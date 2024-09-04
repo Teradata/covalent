@@ -1,0 +1,27 @@
+{
+  "id": "tMM8dM4L3g",
+  "title": "Main",
+  "type": "data",
+  "patternId": "notebook-cell",
+  "templateId": "web-components-dlfSUMV1v",
+  "data": {
+    "props": {
+      "code": "Select * from DBC.UserInfo;",
+      "language": "sql",
+      "editorTheme": "cv-light",
+      "selected": true,
+      "timesExecuted": 2
+    },
+    "slots": {
+      "drag-handle": [
+        {
+          "type": "template-demo",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "wjN6p0NzFt",
+          "reactKey": "f90d6590-8f60-49a9-ac02-3336ef96557e"
+        }
+      ]
+    }
+  }
+}

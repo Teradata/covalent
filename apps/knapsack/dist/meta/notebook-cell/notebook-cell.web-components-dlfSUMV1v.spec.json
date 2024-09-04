@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Code to be displayed in the editor.",
+      "title": "code"
+    },
+    "editorTheme": {
+      "type": "string",
+      "title": "editorTheme",
+      "description": "Accepts any monaco editor theme, with predefined options 'cv-light' and 'cv-dark'."
+    },
+    "hideCount": {
+      "type": "boolean",
+      "title": "hideCount",
+      "description": "Toggles the visibility of the execution count display."
+    },
+    "hideEditor": {
+      "type": "boolean",
+      "title": "hideEditor",
+      "description": "Toggles the visibility of the code editor."
+    },
+    "index": {
+      "type": "number",
+      "title": "index",
+      "description": "Index or position of the component within a list."
+    },
+    "language": {
+      "type": "string",
+      "description": "Programming language used for syntax highlighting in the editor.",
+      "title": "language"
+    },
+    "loading": {
+      "type": "boolean",
+      "title": "loading",
+      "description": "Indicates whether the component is in a loading state."
+    },
+    "selected": {
+      "type": "boolean",
+      "title": "selected",
+      "description": "Indicates whether the component is currently selected."
+    },
+    "timesExecuted": {
+      "type": "number",
+      "title": "timesExecuted",
+      "description": "Number of times the code has been executed."
+    }
+  }
+}

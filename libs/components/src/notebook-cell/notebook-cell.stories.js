@@ -58,8 +58,8 @@ const Template = ({
           <cv-typography scale="body1">Tables are created and populated using SQL</cv-typography>
         </div>`
       }
-      <cv-icon-button slot="drag-handle" icon="drag_indicator" style="padding: 0.5rem"></cv-icon-button>
-      <div slot="context-menu" style="background-color: white;">
+      <cv-icon-button slot="drag-handle" icon="drag_indicator"></cv-icon-button>
+      <div slot="context-menu">
         <cv-list activatable>
           <cv-list-item>Cut</cv-list-item>
           <cv-list-item>Copy</cv-list-item>
@@ -68,7 +68,7 @@ const Template = ({
           <li divider></li>
           <cv-list-item>Clear outputs</cv-list-item>
           <cv-list-item>Restart</cv-list-item>
-        </cv-cv-list>
+        </cv-list>
       </div>
     </cv-notebook-cell>
   </div>`;

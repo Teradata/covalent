@@ -65,6 +65,11 @@ byId:
     name: Circular progress
     parentId: test-page
     path: /pattern/circular-progress
+  code-editor:
+    id: code-editor
+    name: Code editor
+    parentId: test-page
+    path: /pattern/code-editor
   code-snippet:
     id: code-snippet
     name: Code snippet
@@ -198,6 +203,11 @@ byId:
     name: New pattern process
     parentId: guidesss
     path: /pages/new-pattern-process
+  notebook-cell:
+    id: notebook-cell
+    name: Notebook cell
+    parentId: test-page
+    path: /pattern/notebook-cell
   palettes:
     id: palettes
     name: Light
@@ -376,6 +386,7 @@ order:
   - button
   - card
   - checkbox
+  - code-editor
   - code-snippet
   - chip
   - chip-item
@@ -397,6 +408,7 @@ order:
   - check-list-item
   - radio-list-item
   - menu
+  - notebook-cell
   - radio
   - select
   - side-sheet
