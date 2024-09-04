@@ -1,0 +1,14 @@
+{
+  "type": "data",
+  "id": "wjN6p0NzFt",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX",
+  "title": "drag indicator",
+  "description": "",
+  "data": {
+    "props": {
+      "icon": "drag_indicator"
+    },
+    "slots": {}
+  }
+}

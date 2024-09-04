@@ -272,7 +272,9 @@ export class CovalentNotebookCell extends LitElement {
 
         <div class="timesExecutedWrapper">
           <div class="timesExecuted">
-            <slot class="dragHandle" name="drag-handle"></slot>
+            <div class="dragHandle">
+              <slot name="drag-handle"></slot>
+            </div>
             <div class="executionCount">${this.renderExecutionCount()}</div>
           </div>
         </div>
@@ -286,7 +288,9 @@ export class CovalentNotebookCell extends LitElement {
         style="left: ${this._menuPosition.left}px; top: ${this._menuPosition
           .top}px; max-height: ${this._menuMaxHeight}"
       >
-        <slot name="context-menu"></slot>
+        <div class="contextMenuContent">
+          <slot name="context-menu"></slot>
+        </div>
       </div>
     `;
   }

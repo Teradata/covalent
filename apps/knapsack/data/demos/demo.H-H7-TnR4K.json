@@ -1,0 +1,36 @@
+{
+  "type": "data",
+  "id": "H-H7-TnR4K",
+  "patternId": "notebook-cell",
+  "templateId": "web-components-dlfSUMV1v",
+  "title": "Output",
+  "description": "",
+  "data": {
+    "props": {
+      "code": "Select * from DBC.UserInfo;",
+      "editorTheme": "cv-light",
+      "selected": true,
+      "timesExecuted": 1,
+      "language": "sql",
+      "index": 0
+    },
+    "slots": {
+      "error": [],
+      "output": [
+        {
+          "type": "template-demo",
+          "patternId": "text",
+          "templateId": "web-components-FXCMXD35mF",
+          "demoId": "I8QaXfk3hy",
+          "reactKey": "1899055f-970c-4794-a63a-aa245205fe8c"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "text",
+          "templateId": "web-components-FXCMXD35mF",
+          "demoId": "8hSkkY-kWb"
+        }
+      ]
+    }
+  }
+}

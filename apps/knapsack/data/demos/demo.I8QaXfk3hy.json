@@ -1,0 +1,21 @@
+{
+  "id": "I8QaXfk3hy",
+  "title": "Headline 5",
+  "description": "A description",
+  "type": "data",
+  "patternId": "text",
+  "templateId": "web-components-FXCMXD35mF",
+  "data": {
+    "props": {
+      "scale": "headline5"
+    },
+    "slots": {
+      "default": [
+        {
+          "text": "The quick brown fox jumps over the lazy dog",
+          "type": "text"
+        }
+      ]
+    }
+  }
+}

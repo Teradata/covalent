@@ -1,0 +1,66 @@
+{
+  "id": "code-editor",
+  "title": "Code editor",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-JulJ63YyUz",
+      "title": "Web Components",
+      "alias": "cv-code-editor",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "code": {
+              "type": "string",
+              "title": "code",
+              "description": "Default code to be displayed in the editor."
+            },
+            "language": {
+              "type": "string",
+              "title": "language",
+              "description": "Programming language used for syntax highlighting in the editor."
+            },
+            "theme": {
+              "type": "string",
+              "title": "theme",
+              "description": "Accepts any monaco editor theme, with predefined options 'cv-light' and 'cv-dark'."
+            },
+            "options": {
+              "title": "options",
+              "description": "Configuration object for the editor, combining both IEditorOptions and IGlobalEditorOptions from Monaco Editor.",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            }
+          }
+        }
+      },
+      "demoIds": ["t1CfBDrtut"],
+      "blockIds": ["2xEdtegyGe", "ujyNk0CnK", "p1adg1-vZ2"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "mHOSWvq6PS"
+    },
+    {
+      "type": "template",
+      "id": "web-components-JulJ63YyUz"
+    }
+  ],
+  "subPages": [
+    {
+      "title": "Overview",
+      "id": "mHOSWvq6PS",
+      "blockIds": []
+    }
+  ]
+}

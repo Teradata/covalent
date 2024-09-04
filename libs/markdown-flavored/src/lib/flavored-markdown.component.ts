@@ -395,7 +395,6 @@ export class TdFlavoredMarkdownComponent
       contentRef.instance.fileLinkClicked
         .pipe(takeUntil(this._destroy$))
         .subscribe((url: URL) => {
-          console.log(url);
           this.fileLinkClicked.emit(url);
         });
       contentRef.instance.refresh();
