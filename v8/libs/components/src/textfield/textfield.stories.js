@@ -10,10 +10,19 @@ export default {
   },
   args: {
     style: 'outlined',
+    disabled: false,
   },
 };
 
-const Template = ({ icon, iconTrailing, label, style, required, helper }) => {
+const Template = ({
+  icon,
+  iconTrailing,
+  label,
+  style,
+  disabled,
+  required,
+  helper,
+}) => {
   return `
         <cv-textfield 
             label="${label ?? style}"
@@ -26,6 +35,7 @@ const Template = ({ icon, iconTrailing, label, style, required, helper }) => {
                 : null
             }
             ${helper ? `helper="${helper}"` : null}
+            ${disabled ? `disabled` : null}
             ${required ? `required` : null}>
         </cv-textfield>`;
 };
