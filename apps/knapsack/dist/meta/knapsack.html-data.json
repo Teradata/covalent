@@ -528,6 +528,34 @@
       ]
     },
     {
+      "name": "cv-code-editor",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/code-editor/web-components-JulJ63YyUz"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "code",
+          "description": "Default code to be displayed in the editor."
+        },
+        {
+          "name": "language",
+          "description": "Programming language used for syntax highlighting in the editor."
+        },
+        {
+          "name": "theme",
+          "description": "Accepts any monaco editor theme, with predefined options 'cv-light' and 'cv-dark'."
+        },
+        {
+          "name": "options",
+          "description": "Configuration object for the editor, combining both IEditorOptions and IGlobalEditorOptions from Monaco Editor."
+        }
+      ]
+    },
+    {
       "name": "cv-code-snippet",
       "description": "Portion of code displayed within an interface, often for demonstration or explanation.",
       "references": [
@@ -1273,6 +1301,54 @@
         {
           "name": "subnav",
           "description": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "cv-notebook-cell",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/notebook-cell/web-components-dlfSUMV1v"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "code",
+          "description": "Code to be displayed in the editor."
+        },
+        {
+          "name": "editorTheme",
+          "description": "Accepts any monaco editor theme, with predefined options 'cv-light' and 'cv-dark'."
+        },
+        {
+          "name": "hideCount",
+          "description": "boolean Toggles the visibility of the execution count display."
+        },
+        {
+          "name": "hideEditor",
+          "description": "boolean Toggles the visibility of the code editor."
+        },
+        {
+          "name": "index",
+          "description": "Index or position of the component within a list."
+        },
+        {
+          "name": "language",
+          "description": "Programming language used for syntax highlighting in the editor."
+        },
+        {
+          "name": "loading",
+          "description": "boolean Indicates whether the component is in a loading state."
+        },
+        {
+          "name": "selected",
+          "description": "boolean Indicates whether the component is currently selected."
+        },
+        {
+          "name": "timesExecuted",
+          "description": "Number of times the code has been executed."
         }
       ]
     },

@@ -225,6 +225,20 @@
       "url": "/api/v1/render?patternId=circular-progress&templateId=web-components-rw6v6c4fnU&assetSetId=dark&demoId=gMTyjmInaG&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "code-editor",
+      "templateId": "web-components-JulJ63YyUz",
+      "demoId": "t1CfBDrtut",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=code-editor&templateId=web-components-JulJ63YyUz&assetSetId=light&demoId=t1CfBDrtut&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "code-editor",
+      "templateId": "web-components-JulJ63YyUz",
+      "demoId": "t1CfBDrtut",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=code-editor&templateId=web-components-JulJ63YyUz&assetSetId=dark&demoId=t1CfBDrtut&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "code-snippet",
       "templateId": "web-components-MmKtwF24Vv",
       "demoId": "HJPgdqmwj",
@@ -685,6 +699,34 @@
       "demoId": "v3IaS3HWdf",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=navigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=dark&demoId=v3IaS3HWdf&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "notebook-cell",
+      "templateId": "web-components-dlfSUMV1v",
+      "demoId": "tMM8dM4L3g",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=light&demoId=tMM8dM4L3g&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "notebook-cell",
+      "templateId": "web-components-dlfSUMV1v",
+      "demoId": "tMM8dM4L3g",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=dark&demoId=tMM8dM4L3g&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "notebook-cell",
+      "templateId": "web-components-dlfSUMV1v",
+      "demoId": "H-H7-TnR4K",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=light&demoId=H-H7-TnR4K&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "notebook-cell",
+      "templateId": "web-components-dlfSUMV1v",
+      "demoId": "H-H7-TnR4K",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=dark&demoId=H-H7-TnR4K&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "radio",
