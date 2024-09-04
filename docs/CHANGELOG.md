@@ -1,3 +1,9 @@
+## [8.20.5](https://github.com/Teradata/covalent/compare/v8.20.4...v8.20.5) (2024-09-04)
+
+### Bug Fixes
+
+- **components:** color for disabled state ([#2234](https://github.com/Teradata/covalent/issues/2234)) ([179b78f](https://github.com/Teradata/covalent/commit/179b78fbb3424c633f753f9fb42e639638faef4b))
+
 ## [8.20.4](https://github.com/Teradata/covalent/compare/v8.20.3...v8.20.4) (2024-08-29)
 
 ### Bug Fixes
