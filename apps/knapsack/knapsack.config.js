@@ -12,12 +12,12 @@ module.exports = configureKnapsack({
   public: join(__dirname, './public'),
   version,
   templateRenderers: [
-    new KnapsackWebComponentRenderer(),
+    new KnapsackWebComponentRenderer({}),
     new KnapsackAngularRenderer({
-      angularJsonPath: join(
-        __dirname,
-        '../knapsack-renderer-angular-app/angular-deprecated.json'
-      ),
+      customNgModulePath: join(__dirname, './ks.module.ts'),
+      pkgPathAliases: {
+        '@covalent/core': join(__dirname, '../../dist/libs/angular/'),
+      },
     }),
   ],
   plugins: [],
