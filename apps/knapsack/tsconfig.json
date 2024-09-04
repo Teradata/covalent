@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "types": [],
+    "paths": {
+      "@covalent/core/*": ["../../dist/libs/angular/*"]
+    }
+  }
+}
