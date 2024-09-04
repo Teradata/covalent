@@ -10,15 +10,17 @@ export default {
   },
   args: {
     style: 'outlined',
+    disabled: false,
   },
 };
 
-const Template = ({ label, style, required, helper }) => {
+const Template = ({ label, style, disabled, required, helper }) => {
   return `
         <cv-textarea 
             label="${label ?? style}"
             ${style}
             ${helper ? `helper="${helper}"` : null}
+            ${disabled ? `disabled` : null}
             ${required ? `required` : null}>
         </cv-textarea>`;
 };
