@@ -21,14 +21,6 @@
         {
           "projects": ["components"],
           "target": "build-scss"
-        },
-        {
-          "projects": ["knapsack-renderer-angular"],
-          "target": "build"
-        },
-        {
-          "projects": ["knapsack-renderer-angular"],
-          "target": "build-scss"
         }
       ]
     },
