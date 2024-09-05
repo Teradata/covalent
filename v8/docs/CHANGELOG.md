@@ -1,3 +1,10 @@
+## [8.20.6](https://github.com/Teradata/covalent/compare/v8.20.5...v8.20.6) (2024-09-04)
+
+### Bug Fixes
+
+- **docs:** add knapsack docs for cell and code editor ([bc0bf6b](https://github.com/Teradata/covalent/commit/bc0bf6be2ea48392ea28408b2453cf1270c5303b))
+- **lint:** fix scss lint errors ([e178c8d](https://github.com/Teradata/covalent/commit/e178c8d09a4ac409185c8d230a091f4b28b57865))
+
 ## [8.20.5](https://github.com/Teradata/covalent/compare/v8.20.4...v8.20.5) (2024-09-04)
 
 ### Bug Fixes
