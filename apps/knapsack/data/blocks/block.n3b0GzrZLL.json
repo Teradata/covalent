@@ -14,8 +14,8 @@
       {
         "id": "QsbJH2mkIM",
         "link": {
-          "path": "#",
-          "external": false
+          "name": "Word list",
+          "path": "/pages/word-list"
         },
         "title": "Word list",
         "description": "Use the word list to ensure consistency and easy-to-understand content in what you're working on."
