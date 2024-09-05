@@ -10,6 +10,7 @@ import {
   ElementRef,
   Input,
   HostBinding,
+  AfterViewInit,
 } from '@angular/core';
 
 import { fromEvent, Subject } from 'rxjs';
@@ -24,7 +25,7 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbsComponent
-  implements OnInit, AfterContentInit, OnDestroy
+  implements OnInit, AfterContentInit, AfterViewInit, OnDestroy
 {
   private _resizing = false;
   private _separatorIcon = 'chevron_right';
@@ -67,6 +68,12 @@ export class TdBreadcrumbsComponent
           }, 100);
         }
       });
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this._calculateVisibility();
+    });
   }
 
   ngAfterContentInit(): void {
