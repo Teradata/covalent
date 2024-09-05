@@ -2,7 +2,9 @@
   "id": "notebook-cell",
   "title": "Notebook cell",
   "description": "",
-  "statuses": {},
+  "statuses": {
+    "XQn0s6hkh9": "n1ziNeAx"
+  },
   "templates": [
     {
       "id": "web-components-dlfSUMV1v",
