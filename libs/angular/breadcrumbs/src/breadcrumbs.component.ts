@@ -71,9 +71,7 @@ export class TdBreadcrumbsComponent
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this._calculateVisibility();
-    });
+    this._waitToCalculateVisibility();
   }
 
   ngAfterContentInit(): void {
@@ -82,6 +80,7 @@ export class TdBreadcrumbsComponent
     this._breadcrumbs.changes
       .pipe(startWith(this._breadcrumbs))
       .subscribe(() => {
+        this._waitToCalculateVisibility();
         this.setCrumbIcons();
         this._changeDetectorRef.markForCheck();
       });
@@ -162,5 +161,11 @@ export class TdBreadcrumbsComponent
 
     this.hiddenBreadcrumbs = hiddenCrumbs;
     this._changeDetectorRef.markForCheck();
+  }
+
+  private _waitToCalculateVisibility(): void {
+    setTimeout(() => {
+      this._calculateVisibility();
+    });
   }
 }
