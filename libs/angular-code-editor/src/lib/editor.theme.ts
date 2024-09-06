@@ -246,7 +246,8 @@ const getTheme = (theme: 'Light' | 'Dark') => {
       'editor.lineHighlightBackground':
         tokens[`CvTheme${theme}ColorsSurfaceContainerLow`],
       'inputValidation.errorBackground': tokens[`Cv${theme}Negative`],
-      'inputValidation.errorBorder': 'rgba(229, 115, 115, 0.1)',
+      'inputValidation.errorBorder':
+        tokens[`CvTheme${theme}PalettesNegative95`],
     },
   };
 };
