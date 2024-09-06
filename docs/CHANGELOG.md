@@ -1,3 +1,9 @@
+## [8.20.7](https://github.com/Teradata/covalent/compare/v8.20.6...v8.20.7) (2024-09-06)
+
+### Bug Fixes
+
+- **breadcrumbs:** fix rendering issues on load ([#2239](https://github.com/Teradata/covalent/issues/2239)) ([744f1e0](https://github.com/Teradata/covalent/commit/744f1e082321c837bbf57b5b9ee7a84106986dc6))
+
 ## [8.20.6](https://github.com/Teradata/covalent/compare/v8.20.5...v8.20.6) (2024-09-04)
 
 ### Bug Fixes
