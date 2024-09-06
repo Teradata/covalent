@@ -187,11 +187,13 @@ const getTheme = (theme: 'Light' | 'Dark') => {
       'editor.lineHighlightBackground':
         tokens[`CvTheme${theme}ColorsSurfaceContainerLow`],
       'inputValidation.errorBackground': tokens[`Cv${theme}Negative`],
-      'inputValidation.errorBorder': 'rgba(229, 115, 115, 0.1)',
+      'inputValidation.errorBorder':
+        tokens[`CvTheme${theme}PalettesNegative95`],
     },
   };
 };
 
+// Any changes to these themes should also be reflected in the angular-code-editor theme.
 export const cvEditorDarkTheme = getTheme('Dark');
 
 export const cvEditorLightTheme = getTheme('Light');

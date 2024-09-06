@@ -20,12 +20,17 @@ import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 // Use esm version to support shipping subset of languages and features
-import { editor, languages, IDisposable } from 'monaco-editor/esm/vs/editor/editor.api';
+import {
+  editor,
+  languages,
+  IDisposable,
+} from 'monaco-editor/esm/vs/editor/editor.api';
 
 import {
   mixinControlValueAccessor,
   mixinDisabled,
 } from '@covalent/core/common';
+import { cvEditorDarkTheme, cvEditorLightTheme } from './editor.theme';
 
 const noop = () => {
   // empty method
@@ -65,7 +70,7 @@ export class TdCodeEditorComponent
 
   private _editorStyle = 'width:100%;height:100%;';
   private _value = '';
-  private _theme = 'vs';
+  private _theme = 'cv-light';
   private _language = 'javascript';
   private _subject: Subject<string> = new Subject();
   private _editorInnerContainer: string =
@@ -326,6 +331,17 @@ export class TdCodeEditorComponent
 
     const containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
     containerDiv.id = this._editorInnerContainer;
+
+    // Add teradata branded themes
+    editor.defineTheme(
+      'cv-light',
+      cvEditorLightTheme as editor.IStandaloneThemeData
+    );
+
+    editor.defineTheme(
+      'cv-dark',
+      cvEditorDarkTheme as editor.IStandaloneThemeData
+    );
 
     this._editor = editor.create(
       containerDiv,
