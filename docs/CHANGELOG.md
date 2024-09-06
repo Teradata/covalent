@@ -1,3 +1,9 @@
+## [8.20.8](https://github.com/Teradata/covalent/compare/v8.20.7...v8.20.8) (2024-09-06)
+
+### Bug Fixes
+
+- **styles:** add covalent theming to angular code editor ([#2241](https://github.com/Teradata/covalent/issues/2241)) ([5ed320e](https://github.com/Teradata/covalent/commit/5ed320eeaa6995871c12dadc70630f0791ca9646))
+
 ## [8.20.7](https://github.com/Teradata/covalent/compare/v8.20.6...v8.20.7) (2024-09-06)
 
 ### Bug Fixes
