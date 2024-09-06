@@ -7,20 +7,16 @@ import { CovalentUserProfileModule } from '@covalent/core/user-profile';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-// import { BreadcrumbsDemoModule } from '../../docs-app/src/app/content/components/component-demos/breadcrumbs/demos/breadcrumbs-demo.module';
-// import { FlavoredMarkdownDemoModule } from '../../docs-app/src/app/content/components/component-demos/flavored-markdown/demos/flavored-markdown-demo.module';
-// import { HighlightDemoModule } from '../../docs-app/src/app/content/components/component-demos/highlight/demos/highlight-demo.module';
+import { CovalentCommonModule } from '@covalent/core/common';
 
 @NgModule({
   imports: [
     CommonModule,
     MatButtonModule,
     MatCardModule,
+    CovalentCommonModule,
     CovalentUserProfileModule,
     CovalentBreadcrumbsModule,
-    // BreadcrumbsDemoModule,
-    // FlavoredMarkdownDemoModule,
-    // HighlightDemoModule,
   ],
   exports: [CovalentUserProfileModule, CovalentBreadcrumbsModule],
 })

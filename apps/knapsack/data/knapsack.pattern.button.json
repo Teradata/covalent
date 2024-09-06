@@ -109,17 +109,8 @@
         }
       },
       "demoIds": ["CRFHBobaZj", "eIOsBgDEvJ"],
-      "blockIds": []
-    },
-    {
-      "id": "angular-l0dkiDOl59",
-      "title": "MatIconButton",
-      "path": "@angular/material/button",
-      "alias": "MatIconButton",
-      "templateLanguageId": "angular",
-      "spec": {},
-      "demoIds": ["KsL4I9wtF"],
-      "blockIds": []
+      "blockIds": [],
+      "assetSetIds": ["light"]
     }
   ],
   "tabs": [
@@ -134,10 +125,6 @@
     {
       "type": "template",
       "id": "angular-i3OR9O7kXg"
-    },
-    {
-      "type": "template",
-      "id": "angular-l0dkiDOl59"
     }
   ],
   "subPages": [

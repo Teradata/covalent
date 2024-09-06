@@ -19,7 +19,7 @@
           }
         },
         {
-          "src": "../../../node_modules/.cache/@knapsack/app/knapsack-renderer-angular/theme-light.css",
+          "src": "../../../dist/libs/angular/theming/prebuilt/all-theme-light.css",
           "includedRenderers": ["angular"]
         },
         {
@@ -54,7 +54,7 @@
           }
         },
         {
-          "src": "../../../node_modules/.cache/@knapsack/app/knapsack-renderer-angular/theme-dark.css",
+          "src": "../../../dist/libs/angular/theming/prebuilt/all-theme-dark.css",
           "includedRenderers": ["angular"]
         },
         {

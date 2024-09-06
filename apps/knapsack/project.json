@@ -21,6 +21,14 @@
         {
           "projects": ["components"],
           "target": "build-scss"
+        },
+        {
+          "projects": ["angular"],
+          "target": "build"
+        },
+        {
+          "projects": ["angular"],
+          "target": "build-scss"
         }
       ]
     },

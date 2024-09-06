@@ -2,7 +2,7 @@ byId:
   action-ribbon:
     id: action-ribbon
     name: Action ribbon
-    parentId: test-page
+    parentId: components
     path: /pattern/action-ribbon
   adapting-tone-by-situation:
     id: adapting-tone-by-situation
@@ -12,32 +12,32 @@ byId:
   alert:
     id: alert
     name: Alert
-    parentId: test-page
+    parentId: components
     path: /pattern/alert
   app-shell:
     id: app-shell
     name: App shell
-    parentId: test-page
+    parentId: components
     path: /pattern/app-shell
   badge:
     id: badge
     name: Badge
-    parentId: test-page
+    parentId: components
     path: /pattern/badge
   breadcrumbs:
     id: breadcrumbs
     name: Breadcrumbs
-    parentId: test-page
+    parentId: components
     path: /pattern/breadcrumbs
   button:
     id: button
     name: Button
-    parentId: test-page
+    parentId: components
     path: /pattern/button
   card:
     id: card
     name: Card
-    parentId: test-page
+    parentId: components
     path: /pattern/card
   check-list-item:
     hidden: true
@@ -48,12 +48,12 @@ byId:
   checkbox:
     id: checkbox
     name: Checkbox
-    parentId: test-page
+    parentId: components
     path: /pattern/checkbox
   chip:
     id: chip
     name: Chip
-    parentId: test-page
+    parentId: components
     path: /pattern/chip
   chip-item:
     id: chip-item
@@ -63,7 +63,7 @@ byId:
   circular-progress:
     id: circular-progress
     name: Circular progress
-    parentId: test-page
+    parentId: components
     path: /pattern/circular-progress
   code-editor:
     id: code-editor
@@ -73,12 +73,12 @@ byId:
   code-snippet:
     id: code-snippet
     name: Code snippet
-    parentId: test-page
+    parentId: components
     path: /pattern/code-snippet
   color-use:
     id: color-use
     name: Color use
-    parentId: guidesss
+    parentId: guides
     path: /pages/color-use
   colors:
     id: colors
@@ -90,6 +90,11 @@ byId:
     name: Light
     parentId: light
     path: /pages/colors-okgyf0rxrr
+  components:
+    id: components
+    name: Components
+    parentId: root
+    path: /pages/components
   dark:
     id: dark
     name: Dark
@@ -98,12 +103,12 @@ byId:
   dialog:
     id: dialog
     name: Dialog
-    parentId: test-page
+    parentId: components
     path: /pattern/dialog
   empty-state:
     id: empty-state
     name: Empty state
-    parentId: test-page
+    parentId: components
     path: /pattern/empty-state
   error-messages:
     id: error-messages
@@ -113,12 +118,12 @@ byId:
   errors:
     id: errors
     name: Errors
-    parentId: guidesss
+    parentId: guides
     path: /pages/errors
   expansion-panel:
     id: expansion-panel
     name: Expansion panel
-    parentId: test-page
+    parentId: components
     path: /pattern/expansion-panel
   expansion-panel-item:
     id: expansion-panel-item
@@ -128,43 +133,43 @@ byId:
   form-field:
     id: form-field
     name: Form Field
-    parentId: test-page
+    parentId: components
     path: /pattern/form-field
-  guidesss:
-    id: guidesss
+  guides:
+    id: guides
     name: Guides
     parentId: root
-    path: /pages/guidesss
+    path: /pages/guides
   icon:
     id: icon
     name: Icon
-    parentId: test-page
+    parentId: components
     path: /pattern/icon
   icon-button:
     id: icon-button
     name: Icon button
-    parentId: test-page
+    parentId: components
     path: /pattern/icon-button
   icon-button-toggle:
     id: icon-button-toggle
     name: Icon button toggle
-    parentId: test-page
+    parentId: components
     path: /pattern/icon-button-toggle
   icon-checkbox:
     id: icon-checkbox
     name: Icon checkbox
-    parentId: test-page
+    parentId: components
     path: /pattern/icon-checkbox
   icon-radio:
     id: icon-radio
     name: Icon radio
-    parentId: test-page
+    parentId: components
     path: /pattern/icon-radio
   launch-list:
     hidden: true
     id: launch-list
     name: Launch list
-    parentId: test-page
+    parentId: components
     path: /pages/launch-list
   light:
     id: light
@@ -174,12 +179,12 @@ byId:
   linear-progress:
     id: linear-progress
     name: Linear progress
-    parentId: test-page
+    parentId: components
     path: /pattern/linear-progress
   list:
     id: list
     name: List
-    parentId: test-page
+    parentId: components
     path: /pattern/list
   list-item:
     hidden: true
@@ -187,15 +192,10 @@ byId:
     name: List item
     parentId: list
     path: /pattern/list-item
-  markdown:
-    id: markdown
-    name: Markdown
-    parentId: test-page
-    path: /pattern/markdown
   menu:
     id: menu
     name: Menu
-    parentId: test-page
+    parentId: components
     path: /pattern/menu
   navigation-list-item:
     hidden: true
@@ -206,7 +206,7 @@ byId:
   new-pattern-process:
     id: new-pattern-process
     name: New pattern process
-    parentId: guidesss
+    parentId: guides
     path: /pages/new-pattern-process
   notebook-cell:
     id: notebook-cell
@@ -231,7 +231,7 @@ byId:
   radio:
     id: radio
     name: Radio
-    parentId: test-page
+    parentId: components
     path: /pattern/radio
   radio-list-item:
     hidden: true
@@ -242,22 +242,22 @@ byId:
   select:
     id: select
     name: Select
-    parentId: test-page
+    parentId: components
     path: /pattern/select
   side-sheet:
     id: side-sheet
     name: Side sheet
-    parentId: test-page
+    parentId: components
     path: /pattern/side-sheet
   slider:
     id: slider
     name: Slider
-    parentId: test-page
+    parentId: components
     path: /pattern/slider
   snackbar:
     id: snackbar
     name: Snackbar
-    parentId: test-page
+    parentId: components
     path: /pattern/snackbar
   split-button:
     id: split-button
@@ -267,12 +267,12 @@ byId:
   status-dialog:
     id: status-dialog
     name: Status dialog
-    parentId: test-page
+    parentId: components
     path: /pattern/status-dialog
   status-header:
     id: status-header
     name: Status header
-    parentId: test-page
+    parentId: components
     path: /pattern/status-header
   status-header-item:
     hidden: true
@@ -283,7 +283,7 @@ byId:
   switch:
     id: switch
     name: Switch
-    parentId: test-page
+    parentId: components
     path: /pattern/switch
   tab:
     hidden: true
@@ -294,32 +294,27 @@ byId:
   tabs:
     id: tabs
     name: Tabs
-    parentId: test-page
+    parentId: components
     path: /pattern/tabs
-  test-page:
-    id: test-page
-    name: Components
-    parentId: root
-    path: /pages/test-page
   text:
     id: text
     name: Typography
-    parentId: test-page
+    parentId: components
     path: /pattern/text
   text-area:
     id: text-area
     name: Text area
-    parentId: test-page
+    parentId: components
     path: /pattern/text-area
   text-lockup:
     id: text-lockup
     name: Text lockup
-    parentId: test-page
+    parentId: components
     path: /pattern/text-lockup
   textfield:
     id: textfield
     name: Text field
-    parentId: test-page
+    parentId: components
     path: /pattern/textfield
   tokens:
     id: tokens
@@ -329,17 +324,17 @@ byId:
   toolbar:
     id: toolbar
     name: Toolbar
-    parentId: test-page
+    parentId: components
     path: /pattern/toolbar
   tooltip:
     id: tooltip
     name: Tooltip
-    parentId: test-page
+    parentId: components
     path: /pattern/tooltip
   top-app-bar:
     id: top-app-bar
     name: Top app bar
-    parentId: test-page
+    parentId: components
     path: /pattern/top-app-bar
   top-app-bar-fixed:
     hidden: true
@@ -350,7 +345,7 @@ byId:
   tree-list:
     id: tree-list
     name: Tree list
-    parentId: test-page
+    parentId: components
     path: /pattern/tree-list
   tree-list-item:
     id: tree-list-item
@@ -378,11 +373,11 @@ byId:
     parentId: root
     path: /pages/writing
 order:
-  - guidesss
+  - guides
   - color-use
   - errors
   - new-pattern-process
-  - test-page
+  - components
   - action-ribbon
   - alert
   - app-shell
