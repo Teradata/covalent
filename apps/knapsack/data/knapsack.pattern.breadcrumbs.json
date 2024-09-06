@@ -23,9 +23,7 @@
       "path": "@covalent/core/breadcrumbs",
       "alias": "TdBreadcrumbComponent",
       "templateLanguageId": "angular",
-      "spec": {
-        "isInferred": true
-      },
+      "spec": {},
       "demoIds": ["096QEJzzaN"],
       "blockIds": []
     }
