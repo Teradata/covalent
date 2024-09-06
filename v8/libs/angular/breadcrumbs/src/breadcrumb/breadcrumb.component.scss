@@ -5,7 +5,7 @@
     flex-direction: row;
     align-items: center;
     align-content: center;
-    max-width: 100%;
+    flex-shrink: 0;
     justify-content: flex-end;
 
     ::ng-deep > * {
