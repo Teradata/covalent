@@ -122,6 +122,9 @@ MIT
 @covalent/text-editor
 MIT
 
+@covalent/tokens
+MIT
+
 @ngx-translate/core
 MIT
 
