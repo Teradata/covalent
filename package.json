@@ -130,9 +130,6 @@
     "@storybook/mdx1-csf": "^1.0.0",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "7.6.15",
-    "@swc-node/register": "~1.6.7",
-    "@swc/core": "~1.3.85",
-    "@swc/helpers": "~0.5.2",
     "@types/echarts": "^4.9.13",
     "@types/jest": "29.5.11",
     "@types/jsdom": "^20.0.0",
@@ -178,7 +175,6 @@
     "ts-jest": "29.1.1",
     "typescript": "5.3.3",
     "vite": "^4.5.3",
-    "vitest": "^0.27.2",
-    "webpack": "^5.94.0"
+    "vitest": "^0.27.2"
   }
 }
