@@ -10,6 +10,7 @@ import {
   ElementRef,
   Input,
   HostBinding,
+  AfterViewInit,
 } from '@angular/core';
 
 import { fromEvent, Subject } from 'rxjs';
@@ -24,7 +25,7 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbsComponent
-  implements OnInit, AfterContentInit, OnDestroy
+  implements OnInit, AfterContentInit, AfterViewInit, OnDestroy
 {
   private _resizing = false;
   private _separatorIcon = 'chevron_right';
@@ -69,12 +70,17 @@ export class TdBreadcrumbsComponent
       });
   }
 
+  ngAfterViewInit(): void {
+    this._waitToCalculateVisibility();
+  }
+
   ngAfterContentInit(): void {
     // Note: doesn't need to unsubscribe since `QueryList.changes`
     // gets completed by Angular when the view is destroyed.
     this._breadcrumbs.changes
       .pipe(startWith(this._breadcrumbs))
       .subscribe(() => {
+        this._waitToCalculateVisibility();
         this.setCrumbIcons();
         this._changeDetectorRef.markForCheck();
       });
@@ -155,5 +161,11 @@ export class TdBreadcrumbsComponent
 
     this.hiddenBreadcrumbs = hiddenCrumbs;
     this._changeDetectorRef.markForCheck();
+  }
+
+  private _waitToCalculateVisibility(): void {
+    setTimeout(() => {
+      this._calculateVisibility();
+    });
   }
 }
