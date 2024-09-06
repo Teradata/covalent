@@ -17,6 +17,10 @@ module.exports = configureKnapsack({
       customNgModulePath: join(__dirname, './ks.module.ts'),
       pkgPathAliases: {
         '@covalent/core': join(__dirname, '../../dist/libs/angular/'),
+        '@covalent/core/breadcrumbs': join(
+          __dirname,
+          '../../dist/libs/angular/breadcrumbs'
+        ),
       },
     }),
   ],
