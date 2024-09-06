@@ -15,10 +15,124 @@
       "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=xrVH4M3t6W&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "SBpuLooid9",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&demoId=SBpuLooid9&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "SBpuLooid9",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=SBpuLooid9&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "3ueuxC011k",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&demoId=3ueuxC011k&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "3ueuxC011k",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=3ueuxC011k&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "04wy8HmIJl",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&demoId=04wy8HmIJl&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "04wy8HmIJl",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=04wy8HmIJl&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "78JmyZgiv8",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&demoId=78JmyZgiv8&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "78JmyZgiv8",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=78JmyZgiv8&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "PX4CXlob7k",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&demoId=PX4CXlob7k&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "PX4CXlob7k",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=PX4CXlob7k&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "I15dIgeIM4",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&demoId=I15dIgeIM4&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "I15dIgeIM4",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=I15dIgeIM4&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "sNiAamckj3",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&demoId=sNiAamckj3&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "sNiAamckj3",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=sNiAamckj3&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "aQE9OP2U6t",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=light&demoId=aQE9OP2U6t&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "action-ribbon",
+      "templateId": "web-components-v3gk7O39kO",
+      "demoId": "aQE9OP2U6t",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=action-ribbon&templateId=web-components-v3gk7O39kO&assetSetId=dark&demoId=aQE9OP2U6t&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "alert",
       "templateId": "web-components-4qjJYWsUZi",
       "demoId": "tnvgSz6pjh",
       "assetSetId": "light",
+      "width": 806,
+      "height": 94,
       "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=light&demoId=tnvgSz6pjh&isInIframe=false&wrapHtml=true"
     },
     {
@@ -26,6 +140,8 @@
       "templateId": "web-components-4qjJYWsUZi",
       "demoId": "tnvgSz6pjh",
       "assetSetId": "dark",
+      "width": 806,
+      "height": 94,
       "url": "/api/v1/render?patternId=alert&templateId=web-components-4qjJYWsUZi&assetSetId=dark&demoId=tnvgSz6pjh&isInIframe=false&wrapHtml=true"
     },
     {
@@ -433,6 +549,20 @@
       "demoId": "gMTyjmInaG",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=circular-progress&templateId=web-components-rw6v6c4fnU&assetSetId=dark&demoId=gMTyjmInaG&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "code-editor",
+      "templateId": "web-components-JulJ63YyUz",
+      "demoId": "t1CfBDrtut",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=code-editor&templateId=web-components-JulJ63YyUz&assetSetId=light&demoId=t1CfBDrtut&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "code-editor",
+      "templateId": "web-components-JulJ63YyUz",
+      "demoId": "t1CfBDrtut",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=code-editor&templateId=web-components-JulJ63YyUz&assetSetId=dark&demoId=t1CfBDrtut&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "code-snippet",
@@ -895,6 +1025,34 @@
       "demoId": "v3IaS3HWdf",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=navigation-list-item&templateId=web-components-Qtmmi7N-aL&assetSetId=dark&demoId=v3IaS3HWdf&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "notebook-cell",
+      "templateId": "web-components-dlfSUMV1v",
+      "demoId": "tMM8dM4L3g",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=light&demoId=tMM8dM4L3g&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "notebook-cell",
+      "templateId": "web-components-dlfSUMV1v",
+      "demoId": "tMM8dM4L3g",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=dark&demoId=tMM8dM4L3g&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "notebook-cell",
+      "templateId": "web-components-dlfSUMV1v",
+      "demoId": "H-H7-TnR4K",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=light&demoId=H-H7-TnR4K&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "notebook-cell",
+      "templateId": "web-components-dlfSUMV1v",
+      "demoId": "H-H7-TnR4K",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=dark&demoId=H-H7-TnR4K&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "radio",
