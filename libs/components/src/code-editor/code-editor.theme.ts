@@ -192,6 +192,7 @@ const getTheme = (theme: 'Light' | 'Dark') => {
   };
 };
 
+// Any changes to these themes should also be reflected in the angular-code-editor theme.
 export const cvEditorDarkTheme = getTheme('Dark');
 
 export const cvEditorLightTheme = getTheme('Light');

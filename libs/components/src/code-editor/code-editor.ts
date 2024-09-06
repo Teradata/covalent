@@ -92,20 +92,16 @@ export class CovalentCodeEditor extends LitElement {
 
   createEditor(container: HTMLElement) {
     // uses covalent light colors
-    editor.defineTheme('cv-light', {
-      base: 'vs',
-      inherit: true,
-      rules: cvEditorLightTheme.rules,
-      colors: cvEditorLightTheme.colors,
-    });
+    editor.defineTheme(
+      'cv-light',
+      cvEditorLightTheme as editor.IStandaloneThemeData
+    );
 
     // uses covalent dark colors
-    editor.defineTheme('cv-dark', {
-      base: 'vs-dark',
-      inherit: true,
-      rules: cvEditorDarkTheme.rules,
-      colors: cvEditorDarkTheme.colors,
-    });
+    editor.defineTheme(
+      'cv-dark',
+      cvEditorDarkTheme as editor.IStandaloneThemeData
+    );
 
     this.editor = editor.create(container, {
       ...this.options,
