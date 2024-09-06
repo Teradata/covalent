@@ -341,34 +341,6 @@
       "url": "/api/v1/render?patternId=badge&templateId=web-components-40aOlYC6I9&assetSetId=dark&demoId=uhaHv83YYx&isInIframe=false&wrapHtml=true"
     },
     {
-      "patternId": "breadcrumbs",
-      "templateId": "angular-Gf9hp0rJ0",
-      "demoId": "5QJfHMXB7",
-      "assetSetId": "light",
-      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-Gf9hp0rJ0&assetSetId=light&demoId=5QJfHMXB7&isInIframe=false&wrapHtml=true"
-    },
-    {
-      "patternId": "breadcrumbs",
-      "templateId": "angular-Gf9hp0rJ0",
-      "demoId": "5QJfHMXB7",
-      "assetSetId": "dark",
-      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-Gf9hp0rJ0&assetSetId=dark&demoId=5QJfHMXB7&isInIframe=false&wrapHtml=true"
-    },
-    {
-      "patternId": "breadcrumbs",
-      "templateId": "angular-is5CEIoQN",
-      "demoId": "096QEJzzaN",
-      "assetSetId": "light",
-      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-is5CEIoQN&assetSetId=light&demoId=096QEJzzaN&isInIframe=false&wrapHtml=true"
-    },
-    {
-      "patternId": "breadcrumbs",
-      "templateId": "angular-is5CEIoQN",
-      "demoId": "096QEJzzaN",
-      "assetSetId": "dark",
-      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-is5CEIoQN&assetSetId=dark&demoId=096QEJzzaN&isInIframe=false&wrapHtml=true"
-    },
-    {
       "patternId": "button",
       "templateId": "web-components-raE1x4tYL",
       "demoId": "E5ymzzEPs",

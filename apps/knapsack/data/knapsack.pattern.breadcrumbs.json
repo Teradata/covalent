@@ -6,40 +6,11 @@
     "main": "needsReview",
     "XQn0s6hkh9": "UPHFPB1cG"
   },
-  "templates": [
-    {
-      "id": "angular-Gf9hp0rJ0",
-      "title": "Angular - Breadcrumbs",
-      "path": "@covalent/core/breadcrumbs",
-      "alias": "TdBreadcrumbsComponent",
-      "templateLanguageId": "angular",
-      "spec": {},
-      "demoIds": ["5QJfHMXB7"],
-      "blockIds": []
-    },
-    {
-      "id": "angular-is5CEIoQN",
-      "title": "Angular - Breadcrumb",
-      "path": "@covalent/core/breadcrumbs",
-      "alias": "TdBreadcrumbComponent",
-      "templateLanguageId": "angular",
-      "spec": {},
-      "demoIds": ["096QEJzzaN"],
-      "blockIds": []
-    }
-  ],
+  "templates": [],
   "tabs": [
     {
       "id": "overview",
       "type": "subPage"
-    },
-    {
-      "type": "template",
-      "id": "angular-Gf9hp0rJ0"
-    },
-    {
-      "type": "template",
-      "id": "angular-is5CEIoQN"
     }
   ],
   "subPages": [
