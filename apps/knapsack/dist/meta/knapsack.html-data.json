@@ -784,7 +784,12 @@
           "url": "http://localhost:3999/pattern/icon/web-components-N8bzRbfpuX"
         }
       ],
-      "attributes": []
+      "attributes": [
+        {
+          "name": "iconfont",
+          "description": ""
+        }
+      ]
     },
     {
       "name": "cv-icon-button",

@@ -80,6 +80,37 @@
       },
       "demoIds": ["E5ymzzEPs", "wJJ2tksHEK"],
       "blockIds": ["Yy3EHn1oaI"]
+    },
+    {
+      "id": "angular-i3OR9O7kXg",
+      "title": "Angular",
+      "path": "@angular/material/button",
+      "alias": "MatButton",
+      "templateLanguageId": "angular",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Common buttons prompt most actions in a UI",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "color": {
+              "type": "string"
+            },
+            "raised": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "demoIds": ["CRFHBobaZj", "eIOsBgDEvJ"],
+      "blockIds": [],
+      "assetSetIds": ["light"]
     }
   ],
   "tabs": [
@@ -90,6 +121,10 @@
     {
       "id": "web-components-raE1x4tYL",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-i3OR9O7kXg"
     }
   ],
   "subPages": [

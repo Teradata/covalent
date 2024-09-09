@@ -14,13 +14,25 @@
         },
         {
           "src": "../../../dist/libs/components/theme/prebuilt/light-theme.css",
-          "includedRenderers": ["web-components"]
+          "attributes": {
+            "type": "text/css"
+          }
         },
         {
-          "src": "../public/ks-overrides.css"
+          "src": "../../../dist/libs/angular/theming/prebuilt/all-theme-light.css",
+          "includedRenderers": ["angular"]
         },
         {
-          "src": "../public/material-fonts-icons.css"
+          "src": "../public/ks-overrides.css",
+          "attributes": {
+            "type": "text/css"
+          }
+        },
+        {
+          "src": "../public/material-fonts-icons.css",
+          "attributes": {
+            "type": "text/css"
+          }
         }
       ]
     },
@@ -36,14 +48,26 @@
           }
         },
         {
-          "src": "../public/ks-overrides.css"
-        },
-        {
           "src": "../../../dist/libs/components/theme/prebuilt/dark-theme.css",
-          "includedRenderers": ["web-components"]
+          "attributes": {
+            "type": "text/css"
+          }
         },
         {
-          "src": "../public/material-fonts-icons.css"
+          "src": "../../../dist/libs/angular/theming/prebuilt/all-theme-dark.css",
+          "includedRenderers": ["angular"]
+        },
+        {
+          "src": "../public/ks-overrides.css",
+          "attributes": {
+            "type": "text/css"
+          }
+        },
+        {
+          "src": "../public/material-fonts-icons.css",
+          "attributes": {
+            "type": "text/css"
+          }
         }
       ]
     }

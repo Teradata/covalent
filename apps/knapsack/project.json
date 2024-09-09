@@ -6,7 +6,7 @@
   "targets": {
     "build": {
       "executor": "nx:run-commands",
-      "outputs": ["{workspaceRoot}/dist/apps/knapsack"],
+      "outputs": ["{workspaceRoot}/node_modules/.cache/@knapsack/app"],
       "options": {
         "commands": [
           "npx knapsack --config apps/knapsack/knapsack.config.js build"
@@ -21,12 +21,20 @@
         {
           "projects": ["components"],
           "target": "build-scss"
+        },
+        {
+          "projects": ["angular"],
+          "target": "build"
+        },
+        {
+          "projects": ["angular"],
+          "target": "build-scss"
         }
       ]
     },
     "start": {
       "executor": "nx:run-commands",
-      "outputs": ["{workspaceRoot}/dist/apps/knapsack"],
+      "outputs": ["{workspaceRoot}/node_modules/.cache/@knapsack/app"],
       "options": {
         "commands": [
           "npx knapsack --config apps/knapsack/knapsack.config.js start"
@@ -37,7 +45,7 @@
     },
     "serve": {
       "executor": "nx:run-commands",
-      "outputs": ["{workspaceRoot}/dist/apps/knapsack"],
+      "outputs": ["{workspaceRoot}/node_modules/.cache/@knapsack/app"],
       "options": {
         "commands": [
           "NODE_ENV=production npx knapsack --config apps/knapsack/knapsack.config.js serve"
@@ -48,7 +56,7 @@
     },
     "test": {
       "executor": "nx:run-commands",
-      "outputs": ["{workspaceRoot}/dist/apps/knapsack"],
+      "outputs": ["{workspaceRoot}/node_modules/.cache/@knapsack/app"],
       "options": {
         "commands": [
           "npx knapsack --config apps/knapsack/knapsack.config.js test"
@@ -62,6 +70,14 @@
         },
         {
           "projects": ["components"],
+          "target": "build-scss"
+        },
+        {
+          "projects": ["angular"],
+          "target": "build"
+        },
+        {
+          "projects": ["angular"],
           "target": "build-scss"
         }
       ]
