@@ -11,7 +11,19 @@ module.exports = configureKnapsack({
   dist: join(__dirname, './dist'),
   public: join(__dirname, './public'),
   version,
-  templateRenderers: [new KnapsackWebComponentRenderer()],
+  templateRenderers: [
+    new KnapsackWebComponentRenderer({}),
+    new KnapsackAngularRenderer({
+      customNgModulePath: join(__dirname, './ks.module.ts'),
+      pkgPathAliases: {
+        '@covalent/core': join(__dirname, '../../dist/libs/angular/'),
+        '@covalent/core/breadcrumbs': join(
+          __dirname,
+          '../../dist/libs/angular/breadcrumbs'
+        ),
+      },
+    }),
+  ],
   plugins: [],
   cloud: {
     siteId: 'covalent',

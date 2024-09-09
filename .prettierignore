@@ -4,3 +4,4 @@
 /coverage
 
 /.nx/cache
+.angular

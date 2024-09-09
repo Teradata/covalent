@@ -3,5 +3,9 @@
   "description": "",
   "type": "object",
   "required": [],
-  "properties": {}
+  "properties": {
+    "iconfont": {
+      "type": "string"
+    }
+  }
 }

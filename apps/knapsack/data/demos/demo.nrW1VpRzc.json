@@ -1,0 +1,24 @@
+{
+  "id": "nrW1VpRzc",
+  "title": "Main",
+  "type": "data",
+  "patternId": "card",
+  "templateId": "angular-K2H0Gg5PuL",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "angular-i3OR9O7kXg",
+          "demoId": "CRFHBobaZj"
+        },
+        {
+          "type": "text",
+          "text": "card content"
+        }
+      ]
+    }
+  }
+}

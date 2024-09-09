@@ -1,0 +1,20 @@
+{
+  "id": "CRFHBobaZj",
+  "title": "Main",
+  "type": "data",
+  "patternId": "button",
+  "templateId": "angular-i3OR9O7kXg",
+  "data": {
+    "props": {
+      "color": "accent"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "testing out this button"
+        }
+      ]
+    }
+  }
+}

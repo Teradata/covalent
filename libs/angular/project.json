@@ -32,7 +32,8 @@
           "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/angular/theming/prebuilt/:./dist/libs/angular/theming/prebuilt/"
         ],
         "parallel": false
-      }
+      },
+      "dependsOn": ["build"]
     },
     "test": {
       "executor": "@nrwl/jest:jest",

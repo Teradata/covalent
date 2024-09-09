@@ -8,4 +8,6 @@
  * Run Knapsack again to regenerate this file.
  */
 
-export interface Icon {}
+export interface Icon {
+  iconfont?: string;
+}
