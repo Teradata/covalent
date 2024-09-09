@@ -830,7 +830,7 @@
       ],
       "attributes": [
         {
-          "name": "on",
+          "name": "toggledOn",
           "description": "boolean Whether the toggle is activated."
         },
         {
