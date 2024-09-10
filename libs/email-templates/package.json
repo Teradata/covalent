@@ -1,0 +1,19 @@
+{
+  "name": "@covalent/email-templates",
+  "version": "0.0.0-COVALENT",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "dependencies": {
+    "tslib": "0.0.0-TSLIB",
+    "mjml-browser": "^4.15.3"
+  },
+  "license": "MIT",
+  "author": "Teradata UX"
+}

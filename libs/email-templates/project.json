@@ -1,0 +1,57 @@
+{
+  "name": "email-templates",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/email-templates/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "tsc -p libs/email-templates/tsconfig.lib.json --declaration --declarationMap --emitDeclarationOnly --outDir dist/libs/email-templates",
+          "cp libs/email-templates/package.json dist/libs/email-templates/"
+        ],
+        "parallel": false
+      },
+      "dependsOn": ["build-scss", "build-files"]
+    },
+    "build-scss": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "postcss libs/email-templates/src/styles/styles.scss -o libs/email-templates/src/styles/_generated.css"
+        ]
+      }
+    },
+    "build-files": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/libs/email-templates",
+        "main": "libs/email-templates/src/index.ts",
+        "tsConfig": "libs/email-templates/tsconfig.json",
+        "webpackConfig": "libs/email-templates/webpack.config.js"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/email-templates/**/*.ts"]
+      }
+    },
+    "scsslint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/email-templates/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

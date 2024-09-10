@@ -1,0 +1,250 @@
+<mjml>
+  <mj-head>
+    <mj-raw>
+      <meta name="color-scheme" content="light" />
+      <meta name="supported-color-schemes" content="light" />
+    </mj-raw>
+  </mj-head>
+  <mj-body css-class="body bg-white">
+    <mj-section mj-class="p-1_75 pt-2">
+      <mj-column>
+        <mj-image
+          align="left"
+          width="126px"
+          mj-class="p-0"
+          src="https://cdn.jsdelivr.net/gh/bsahitya/wysiwyg-email-editor/public/images/primary-logo.png"
+          alt=""
+        />
+      </mj-column>
+      <mj-column>
+        <mj-text align="right" mj-class="small">
+          <a href="https://www.teradata.com" alt="">View in browser</a></mj-text
+        >
+      </mj-column>
+    </mj-section>
+    <mj-wrapper mj-class="p-0 pl-1_75 pr-1_75">
+      <mj-section mj-class="pb-0">
+        <mj-column width="50%">
+          <mj-text mj-class="eyebrow bold"> Modernization Workshop </mj-text>
+          <mj-text align="left">
+            <div class="orange-line"></div>
+          </mj-text>
+          <mj-text mj-class="marketing-h1 pt-0_75"
+            >Transform your business vision into reality</mj-text
+          >
+          <mj-text mj-class="pt-1_25">
+            Give your analytics ecosystem a tune-up with our free Modernization
+            Workshop.
+          </mj-text>
+          <mj-button
+            mj-class="button pt-1_5"
+            css-class="cta-button"
+            align="left"
+            href="https://www.teradata.com/"
+          >
+            Learn how &nbsp; →
+          </mj-button>
+        </mj-column>
+        <mj-column width="50%"
+          ><mj-image
+            mj-class="pr-0"
+            src="https://cdn.jsdelivr.net/gh/bsahitya/wysiwyg-email-editor/public/images/marketing-person.png"
+            alt=""
+        /></mj-column>
+      </mj-section>
+
+      <mj-section mj-class="pt-2">
+        <mj-column>
+          <mj-text mj-class="eyebrow bold"> Benefits </mj-text>
+          <mj-text align="left">
+            <div class="orange-line"></div>
+          </mj-text>
+          <mj-text mj-class="marketing-h2 pt-0_75">
+            Find the answers you need to ensure your business thrives
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <mj-section>
+        <mj-column>
+          <mj-image
+            mj-class="pl-0"
+            width="26px"
+            src="https://cdn.jsdelivr.net/gh/bsahitya/wysiwyg-email-editor/public/images/insights.png"
+            alt=""
+            align="left"
+          />
+          <mj-text mj-class="marketing-h3 pb-0_5"> Insights</mj-text>
+          <mj-text>
+            Make smarter decisions based on clean data, not assumptions.
+          </mj-text>
+        </mj-column>
+        <mj-column>
+          <mj-image
+            mj-class="pl-0"
+            width="26px"
+            src="https://cdn.jsdelivr.net/gh/bsahitya/wysiwyg-email-editor/public/images/analytics.png"
+            alt=""
+            align="left"
+          /><mj-text mj-class="marketing-h3 pb-0_5"> Analytics</mj-text>
+          <mj-text>
+            Improve business outcomes with analytic best practices.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <mj-section mj-class="pt-1_5">
+        <mj-column width="65%">
+          <mj-text mj-class="marketing-h3 pt-0_5 pb-0_5">
+            Key points of analysis
+          </mj-text>
+          <mj-text>
+            The demands of scale, complexity, and speed increase exponentially
+            every year. We’ll review key areas of your business to equip your
+            organization with the right tools to meet these demands at every
+            level.
+          </mj-text>
+        </mj-column>
+        <mj-column width="35%">
+          <mj-image
+            mj-class="pr-0 img-rounded"
+            src="https://cdn.jsdelivr.net/gh/bsahitya/wysiwyg-email-editor/public/images/people.png"
+            alt=""
+            align="right"
+          />
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-section mj-class="p-0">
+      <mj-column mj-class="help" css-class="bg-primary">
+        <mj-text mj-class="marketing-h2 color-white" css-class="color-white"
+          >Let’s fast-track you to peak data optimization</mj-text
+        >
+        <mj-text mj-class="pt-1" css-class="color-white">
+          Choose our two-week workshop to receive a full analysis of your
+          business analytics and technology maturity. Or, select the one-week
+          workshop to gain insights on strengths and areas for improvement in
+          business analytics.
+        </mj-text>
+        <mj-button
+          mj-class="button pt-1_5 pb-0"
+          css-class="primary-button"
+          align="left"
+          href="https://www.teradata.com/"
+        >
+          Get started &nbsp; →
+        </mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section mj-class="p-0 help" css-class="bg-gray-25">
+      <mj-column width="100%">
+        <mj-social
+          mode="horizontal"
+          icon-size="16px"
+          border-radius="50px"
+          align="center"
+          padding="0 0 16px"
+        >
+          <mj-social-element
+            name="x"
+            href="https://www.twitter.com"
+            css-class="social-icon"
+          >
+          </mj-social-element>
+          <mj-social-element
+            name="facebook"
+            href="https://www.facebook.com"
+            css-class="social-icon"
+          >
+          </mj-social-element>
+
+          <mj-social-element
+            name="linkedin"
+            href="https://www.linkedin.com"
+            css-class="social-icon"
+          >
+          </mj-social-element>
+
+          <mj-social-element
+            name="youtube"
+            href="https://www.linkedin.com"
+            css-class="social-icon"
+          >
+          </mj-social-element>
+
+          <mj-social-element
+            name="instagram"
+            href="https://www.instagram.com"
+            css-class="social-icon"
+          >
+          </mj-social-element>
+        </mj-social>
+      </mj-column>
+
+      <mj-column width="100%">
+        <mj-text
+          mj-class="footer-info"
+          css-class="color-gray-500"
+          align="center"
+        >
+          To manage your email communication preferences, click
+          <a
+            href="https://answers.teradata.com/email-preferences?elqTrackId=774fd2ae01fc489797082657c9c670b0"
+            alt=""
+            >here</a
+          >.
+        </mj-text>
+
+        <mj-text
+          mj-class="footer-info pt-1_5"
+          css-class="color-gray-500"
+          align="center"
+        >
+          To unsubscribe from all future marketing emails from Teradata, click
+          <a
+            href="https://answers.teradata.com/email-preferences?elqTrackId=774fd2ae01fc489797082657c9c670b0"
+            alt=""
+            >here</a
+          >.
+        </mj-text>
+
+        <mj-text
+          mj-class="footer-info"
+          css-class="color-gray-500"
+          align="center"
+        >
+          View our global privacy
+          <a
+            href="https://www.teradata.com/privacy?elqTrackId=b344162cc02544c8b953f0d3b5429a39"
+            alt=""
+            >policy</a
+          >.
+        </mj-text>
+
+        <mj-text
+          mj-class="footer-info pt-1 pb-1"
+          css-class="color-gray-500"
+          align="center"
+        >
+          Teradata Corporation 17095 Via Del Campo, San Diego, CA 92127, USA
+        </mj-text>
+
+        <mj-text
+          mj-class="footer-info bold"
+          css-class="color-gray-500"
+          align="center"
+        >
+          <a href="www.teradata.com" alt="">www.teradata.com</a>
+        </mj-text>
+        <mj-text
+          mj-class="footer-info"
+          css-class="color-gray-500"
+          align="center"
+        >
+          Copyright © 2024, Teradata Corporation
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
