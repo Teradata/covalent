@@ -1,24 +1,17 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/libs/email-templates", // Output directory for compiled files and declarations
-    "declaration": true, // Generate declaration files
-    "declarationMap": true, // Generate declaration maps
-    "rootDir": "src", // Root directory for source files
-    "typeRoots": ["../../node_modules/@types"], // Type roots for type definitions
+    "outDir": "../../dist/libs/email-templates",
+    "declaration": true,
+    "declarationMap": true,
+    "rootDir": "src",
+    "typeRoots": ["../../node_modules/@types"],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
     "alwaysStrict": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.mjml", // Include MJML files
-    "src/**/*.css" // Include CSS files
-  ],
-  "exclude": [
-    "node_modules",
-    "dist" // Exclude output directory
-  ]
+  "include": ["src/**/*.ts", "src/**/*.mjml", "src/**/*.css"],
+  "exclude": ["node_modules", "dist"]
 }

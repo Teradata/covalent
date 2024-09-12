@@ -4,8 +4,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "ES2022",
-    "declaration": false, // No need to generate declarations here
-    "outDir": "dist",
+    "declaration": false,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
