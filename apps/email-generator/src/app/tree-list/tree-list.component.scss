@@ -1,0 +1,63 @@
+/* General List Styles */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Node Styling */
+.tree-node {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--cv-teradata-slate-900);
+  border-radius: 8px;
+  margin: 0.25rem 0;
+}
+
+.tree-node:hover {
+  background-color: #f5f5f5; /* Light hover background */
+}
+
+.tree-node.active {
+  font-weight: 600;
+  background-color: var(
+    --cv-light-surface-primary-highlight
+  ); /* Active background */
+}
+
+.tree-node-title {
+  flex: 1;
+}
+
+/* Chevron Button Styling */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  padding: 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+/* Span Styling for Tree Node Title */
+span {
+  cursor: pointer;
+}
+
+/* Child List Indentation */
+ul ul {
+  padding-left: 20px;
+  margin-left: 5px;
+}
+
+/* Child Node Styling */
+ul ul .tree-node {
+  padding-left: 10px;
+}

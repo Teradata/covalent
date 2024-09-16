@@ -1,0 +1,27 @@
+<div class="app">
+  <div class="title">
+    <span
+      class="material-symbols-outlined menu-icon"
+      (click)="toggleSideSheet()"
+    >
+      menu
+    </span>
+    <img
+      src="https://cdn.jsdelivr.net/gh/bsahitya/wysiwyg-email-editor/public/images/teradata.svg"
+      alt=""
+    />
+    <h2>Email generator</h2>
+  </div>
+  <app-editor [value]="selectedTemplate"></app-editor>
+</div>
+<app-side-sheet
+  [isOpen]="isSideSheetOpen"
+  (closeSheet)="toggleSideSheet()"
+  title="Templates"
+>
+  <app-tree-list
+    #template
+    [nodes]="templateNodes"
+    (itemClick)="selectTemplate($event)"
+  ></app-tree-list>
+</app-side-sheet>

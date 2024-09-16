@@ -1,0 +1,15 @@
+<div class="side-sheet" [class.open]="isOpen">
+  <div class="side-sheet-content">
+    <div class="side-sheet-title">
+      <h3>{{ title }}</h3>
+      <span
+        class="material-symbols-outlined close-icon"
+        (click)="closeSideSheet()"
+      >
+        close
+      </span>
+    </div>
+    <ng-content></ng-content>
+    <!-- Placeholder for dynamic content -->
+  </div>
+</div>

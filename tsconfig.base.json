@@ -81,6 +81,7 @@
       "@covalent/echarts/wordcloud": [
         "libs/angular-echarts/wordcloud/src/public_api.ts"
       ],
+      "@covalent/email-templates": ["libs/email-templates/src/index.ts"],
       "@covalent/flavored-markdown": [
         "libs/markdown-flavored/src/public_api.ts"
       ],
