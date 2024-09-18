@@ -1,0 +1,24 @@
+<div class="editor-container">
+  <div class="editor-left">
+    <div class="buttons">
+      <button (click)="formatCode()">FORMAT</button>
+      <button (click)="handleCopyClick('mjml')">COPY MJML</button>
+      <button (click)="handleCopyClick('html')">COPY HTML</button>
+    </div>
+    <td-code-editor
+      (editorInitialized)="handleEditorInitialisation($event)"
+      [style.height]="'calc(100vh - 125px)'"
+      language="html"
+      [editorOptions]="{
+        minimap: { enabled: false },
+        scrollBeyondLastLine: false,
+      }"
+      [theme]="'cv-light'"
+      [value]="value"
+      (editorValueChange)="handleValueChange()"
+    ></td-code-editor>
+  </div>
+  <div class="editor-right">
+    <app-preview [html]="htmlContent"></app-preview>
+  </div>
+</div>

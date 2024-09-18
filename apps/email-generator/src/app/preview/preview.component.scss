@@ -1,0 +1,8 @@
+.preview-container {
+  background-color: var(--cv-light-surface-canvas);
+  border: 1px solid var(--cv-theme-light-colors-outline-variant);
+  border-radius: 5px;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}

@@ -1,0 +1,39 @@
+<ul>
+  <ng-container
+    *ngTemplateOutlet="treeListTemplate; context: { $implicit: nodes }"
+  ></ng-container>
+</ul>
+
+<ng-template #treeListTemplate let-nodes>
+  <ng-container *ngFor="let node of nodes">
+    <li>
+      <div class="tree-node" [ngClass]="{ active: activeNode === node.title }">
+        <button
+          *ngIf="node.templates"
+          class="chevron"
+          (click)="handleToggle(node.title)"
+        >
+          <span class="material-symbols-outlined">
+            {{ isNodeExpanded(node) ? 'keyboard_arrow_down' : 'chevron_right' }}
+          </span>
+        </button>
+        <span
+          class="tree-node-title"
+          (click)="node.value && handleClick(node.value, node.title)"
+        >
+          {{ node.title | sentenceCase }}
+        </span>
+      </div>
+      <ng-container *ngIf="node.templates && isNodeExpanded(node)">
+        <ul>
+          <ng-container
+            *ngTemplateOutlet="
+              treeListTemplate;
+              context: { $implicit: node.templates }
+            "
+          ></ng-container>
+        </ul>
+      </ng-container>
+    </li>
+  </ng-container>
+</ng-template>

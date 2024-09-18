@@ -1,0 +1,138 @@
+<mj-attributes>
+  <mj-text padding="0" />
+  <mj-all
+    font-family="Inter, 'Open Sans', 'Helvetica Neue', sans-serif, -apple-system"
+  />
+  <mj-text
+    padding="0"
+    font-size="16px"
+    font-style="normal"
+    font-weight="400"
+    line-height="22px"
+  />
+  <mj-class
+    name="title"
+    font-size="20px"
+    font-style="normal"
+    font-weight="600"
+    line-height="26px"
+    letter-spacing="-0.4px"
+  />
+  <mj-class
+    name="section-title"
+    font-size="26px"
+    font-style="normal"
+    font-weight="300"
+    line-height="34px"
+    letter-spacing="-0.78px"
+  />
+  <mj-class
+    name="button"
+    height="50px"
+    padding="16px 0"
+    border-radius="12px"
+    font-family="Helvetica"
+    font-size="15px"
+    font-style="normal"
+    font-weight="700"
+    line-height="22px"
+  />
+  <mj-class name="bold" font-weight="600" />
+  <mj-class
+    name="small"
+    font-weight="300"
+    font-size="11px"
+    line-height="normal"
+  />
+  <mj-class name="underline" text-decoration="underline" />
+  <mj-class
+    name="eyebrow"
+    font-size="14px"
+    font-style="normal"
+    font-weight="400"
+    line-height="22px"
+  />
+  <mj-class name="p-0" padding="0" />
+  <mj-class name="p-0_25" padding="0.25rem" />
+  <mj-class name="p-0_5" padding="0.5rem" />
+  <mj-class name="p-0_75" padding="0.75rem" />
+  <mj-class name="p-1" padding="1rem" />
+  <mj-class name="p-1_25" padding="1.25rem" />
+  <mj-class name="p-1_5" padding="1.5rem" />
+  <mj-class name="p-1_75" padding="1.75rem" />
+  <mj-class name="p-2" padding="2rem" />
+  <mj-class name="pt-0" padding-top="0" />
+  <mj-class name="pt-0_25" padding-top="0.25rem" />
+  <mj-class name="pt-0_5" padding-top="0.5rem" />
+  <mj-class name="pt-0_75" padding-top="0.75rem" />
+  <mj-class name="pt-1" padding-top="1rem" />
+  <mj-class name="pt-1_25" padding-top="1.25rem" />
+  <mj-class name="pt-1_5" padding-top="1.5rem" />
+  <mj-class name="pt-1_75" padding-top="1.75rem" />
+  <mj-class name="pt-2" padding-top="2rem" />
+  <mj-class name="pb-0" padding-bottom="0" />
+  <mj-class name="pb-0_25" padding-bottom="0.25rem" />
+  <mj-class name="pb-0_5" padding-bottom="0.5rem" />
+  <mj-class name="pb-0_75" padding-bottom="0.75rem" />
+  <mj-class name="pb-1" padding-bottom="1rem" />
+  <mj-class name="pb-1_25" padding-bottom="1.25rem" />
+  <mj-class name="pb-1_5" padding-bottom="1.5rem" />
+  <mj-class name="pb-1_75" padding-bottom="1.75rem" />
+  <mj-class name="pb-2" padding-bottom="2rem" />
+  <mj-class name="pl-0" padding-left="0" />
+  <mj-class name="pl-0_25" padding-left="0.25rem" />
+  <mj-class name="pl-0_5" padding-left="0.5rem" />
+  <mj-class name="pl-0_75" padding-left="0.75rem" />
+  <mj-class name="pl-1" padding-left="1rem" />
+  <mj-class name="pl-1_25" padding-left="1.25rem" />
+  <mj-class name="pl-1_5" padding-left="1.5rem" />
+  <mj-class name="pl-1_75" padding-left="1.75rem" />
+  <mj-class name="pl-2" padding-left="2rem" />
+  <mj-class name="pr-0" padding-right="0" />
+  <mj-class name="pr-0_25" padding-right="0.25rem" />
+  <mj-class name="pr-0_5" padding-right="0.5rem" />
+  <mj-class name="pr-0_75" padding-right="0.75rem" />
+  <mj-class name="pr-1" padding-right="1rem" />
+  <mj-class name="pr-1_25" padding-right="1.25rem" />
+  <mj-class name="pr-1_5" padding-right="1.5rem" />
+  <mj-class name="pr-1_75" padding-right="1.75rem" />
+  <mj-class name="pr-2" padding-right="2rem" />
+  <mj-class name="help" padding="30px 35px" />
+  <mj-class name="help-text" line-height="26px" />
+  <mj-class
+    name="footer-info"
+    text-align="center"
+    font-size="12px"
+    font-style="normal"
+    font-weight="400"
+    line-height="18px"
+  />
+  <mj-class
+    name="marketing-h1"
+    font-size="32px"
+    font-family="Helvetica"
+    font-style="normal"
+    font-weight="300"
+    line-height="40px"
+    letter-spacing="-0.32px"
+  />
+  <mj-class
+    name="marketing-h2"
+    font-size="26px"
+    font-family="Helvetica Neue"
+    font-style="normal"
+    font-weight="300"
+    line-height="34px"
+  />
+  <mj-class
+    name="marketing-h3"
+    font-size="20px"
+    font-family="Helvetica Neue"
+    font-style="normal"
+    font-weight="700"
+    line-height="28px"
+  />
+  <mj-class name="align-left" text-align="left" />
+  <mj-class name="img-rounded" border-radius="8px" />
+  <mj-class name="social-link" border-radius="50px" padding="5px" />
+</mj-attributes>

@@ -55,6 +55,15 @@
     "e2e": {
       "inputs": ["default", "^production"],
       "cache": true
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "@nx/vite:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "nxCloudAccessToken": "ZGI4NjZjMTUtZjViMS00NDNmLTgyMTktNTIyMWViNWJhNDNjfHJlYWQ="
