@@ -1,0 +1,117 @@
+@import '@covalent/tokens';
+
+:root {
+  color-scheme: light;
+  supported-color-schemes: light;
+}
+
+a {
+  color: inherit !important;
+}
+
+.body div,
+.body p {
+  color: var(--cv-teradata-slate-900) !important;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.bg-gray-25 {
+  background-color: var(--cv-theme-light-palettes-neutral-97) !important;
+}
+
+.bg-orange {
+  background-color: var(--cv-theme-light-palettes-orange-40) !important;
+}
+
+.bg-primary,
+.cta-button p,
+.cta-button a,
+.cta-button td,
+.social-icon table {
+  background-color: var(--cv-theme-light-palettes-navy-13) !important;
+  color: var(--cv-light-on-primary) !important;
+}
+
+.bg-white {
+  background-color: var(--cv-light-surface-canvas) !important;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--cv-light-divider);
+}
+
+.border-left {
+  border-left: 1px solid var(--cv-light-divider);
+}
+
+.border-right {
+  border-right: 1px solid var(--cv-light-divider);
+}
+
+.border-top {
+  border-top: 1px solid var(--cv-light-divider);
+}
+
+.color-white div,
+.color-white p,
+.color-white a {
+  color: var(--cv-light-on-primary) !important;
+}
+
+.color-gray-500 div,
+.color-gray-500 p {
+  color: var(--cv-theme-light-palettes-neutral-40) !important;
+}
+
+.color-slate-900 div,
+.color-slate-900 p {
+  color: var(--cv-teradata-slate-900) !important;
+}
+
+.footer-info {
+  color: var(--cv-theme-light-palettes-neutral-40, #5e7484);
+}
+
+.list li {
+  margin: 0.5rem 0;
+}
+
+.orange-line {
+  border-radius: 2px;
+  border-top: 2px solid var(--cv-theme-light-palettes-orange-40) !important;
+  width: 18px;
+}
+
+.primary-button p,
+.primary-button a,
+.primary-button td {
+  background-color: var(--cv-light-primary) !important;
+  color: var(--cv-light-on-primary) !important;
+}
+
+.social-icon table td {
+  padding: 5px;
+}
+
+.section-title div {
+  color: var(--cv-teradata-slate-800) !important;
+}
+
+.title div {
+  color: var(--cv-teradata-slate-900) !important;
+}

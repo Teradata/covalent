@@ -1,0 +1,167 @@
+<mjml>
+  <mj-head>
+    <mj-raw>
+      <meta name="color-scheme" content="light" />
+      <meta name="supported-color-schemes" content="light" />
+    </mj-raw>
+  </mj-head>
+  <mj-body css-class="body bg-white">
+    <mj-section mj-class="p-0">
+      <mj-column width="100%">
+        <mj-image
+          mj-class="p-0"
+          src="https://cdn.jsdelivr.net/gh/bsahitya/wysiwyg-email-editor/public/images/hero-image.png"
+          alt=""
+        />
+      </mj-column>
+    </mj-section>
+    <mj-wrapper mj-class="p-0 pl-1_75 pr-1_75">
+      <mj-section mj-class="pt-1_25 pb-2">
+        <mj-column width="100%">
+          <mj-text
+            mj-class="section-title pb-1"
+            css-class="section-title color-slate-900 title"
+          >
+            Welcome to VantageCloud Lake
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-text css-class="color-slate-900">
+            Hello [user], <br /><br />Thank you for joining VantageCloud Lake.
+            Your account is now ready for you to use. As an organization admin,
+            you also have an account on the Support Portal. The link to the
+            Support Portal is located under 'Resources to get you started' at
+            the bottom of this email.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="pt-1_5" css-class="border-top">
+        <mj-column>
+          <mj-text mj-class="section-title pb-0_5" css-class="section-title">
+            New to Teradata?
+          </mj-text>
+          <mj-text>
+            You first need to verify your email and create your password.
+          </mj-text>
+          <mj-button
+            mj-class="button pt-1_5"
+            css-class="cta-button"
+            align="left"
+            href="https://www.teradata.com/"
+          >
+            Verify email and create your password →
+          </mj-button>
+
+          <mj-text mj-class="eyebrow" css-class="color-gray-500">
+            Existing Teradata user?
+            <a href="https://www.teradata.com/" alt="">Login</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="pb-2" css-class="border-bottom">
+        <mj-column width="100%">
+          <mj-text mj-class="title pb-0_75" css-class="title">
+            Your account information
+          </mj-text>
+        </mj-column>
+        <mj-column width="40%">
+          <mj-text mj-class="bold">Account name: </mj-text>
+        </mj-column>
+        <mj-column width="60%">
+          <mj-text>CREDIT SAISON </mj-text>
+        </mj-column>
+        <mj-column width="40%">
+          <mj-text mj-class="bold pt-0_25">Console URL: </mj-text>
+        </mj-column>
+        <mj-column width="60%">
+          <mj-text mj-class="pt-0_25"
+            ><a href="https://trcs.innovationlabs.teradata.com/" alt=""
+              >https://trcs.innovationlabs.teradata.com/</a
+            ></mj-text
+          >
+        </mj-column>
+        <mj-column width="40%">
+          <mj-text mj-class="bold pt-0_25">Username: </mj-text>
+        </mj-column>
+        <mj-column width="60%">
+          <mj-text mj-class="pt-0_25">name@gmail.com</mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="pt-2">
+        <mj-column width="100%">
+          <mj-text mj-class="section-title" css-class="section-title">
+            Resources to get you started
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-text mj-class="bold" css-class="list">
+            <ul>
+              <li>
+                <a href="https://docs.teradata.com/p/VantageCloud/Lake" alt=""
+                  >VantageCloud Lake Documentation</a
+                >
+              </li>
+              <li>
+                <a href="https://support.teradata.com/csm" alt=""
+                  >Support Portal</a
+                >
+              </li>
+            </ul>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+    <mj-section mj-class="p-0">
+      <mj-column mj-class="help" css-class="bg-primary">
+        <mj-text mj-class="title color-white" css-class="color-white"
+          >Need help?</mj-text
+        >
+        <mj-text mj-class="pt-1 help-text" css-class="color-white">
+          After logging in, access the in-product help.
+        </mj-text>
+        <mj-text mj-class="pt-1_25 help-text" css-class="color-white">
+          Contact our
+          <a href="https://www.teradata.com/" alt="" mj-class="bold"
+            >Teradata Sales team</a
+          >
+          throughout the duration of your trail if you have any questions.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section mj-class="p-0">
+      <mj-column mj-class="help" css-class="bg-gray-25" width="100%">
+        <mj-text
+          mj-class="footer-info"
+          css-class="color-gray-500"
+          align="center"
+        >
+          View our global
+          <a href="https://www.teradata.com/privacy" alt="">privacy policy</a>
+        </mj-text>
+
+        <mj-text
+          mj-class="footer-info pt-1 pb-1"
+          css-class="color-gray-500"
+          align="center"
+        >
+          Teradata Corporation 17095 Via Del Campo, San Diego, CA 92127, USA
+        </mj-text>
+
+        <mj-text
+          mj-class="footer-info bold"
+          css-class="color-gray-500"
+          align="center"
+        >
+          <a href="www.teradata.com" alt="">www.teradata.com</a>
+        </mj-text>
+        <mj-text
+          mj-class="footer-info"
+          css-class="color-gray-500"
+          align="center"
+        >
+          Copyright © 2024, Teradata Corporation
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
