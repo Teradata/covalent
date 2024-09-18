@@ -1,0 +1,56 @@
+.buttons {
+  background-color: var(--cv-light-surface-neutral);
+  border-bottom: 1px solid var(--cv-theme-light-colors-outline-variant);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.buttons button {
+  background-color: var(--cv-light-surface-canvas);
+  border: 1px solid var(--cv-theme-light-colors-outline-variant);
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  font-family: Inter;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: background-color 15ms ease-in;
+}
+
+.buttons button:hover {
+  background-color: var(--cv-light-secondary);
+  color: var(--cv-light-on-secondary);
+}
+
+.editor-container {
+  display: flex;
+  height: calc(100vh - 72px);
+  box-sizing: border-box;
+}
+
+.editor-left {
+  flex: 1;
+  border: 1px solid var(--cv-theme-light-colors-outline-variant);
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+.editor-right {
+  flex: 1;
+  margin: 0 10px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.preview-content {
+  border-radius: 5px;
+  border-top: 1px solid var(--cv-theme-light-colors-outline-variant);
+  padding: 10px;
+  overflow-y: auto;
+  height: 100%;
+}
