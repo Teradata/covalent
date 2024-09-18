@@ -1,3 +1,9 @@
+# [8.21.0](https://github.com/Teradata/covalent/compare/v8.20.8...v8.21.0) (2024-09-18)
+
+### Features
+
+- **email-templates:** library and app for email generation ([#2243](https://github.com/Teradata/covalent/issues/2243)) ([ad32f51](https://github.com/Teradata/covalent/commit/ad32f51852e637dbe45d7dc1a27cf1e7e1edb18a))
+
 ## [8.20.8](https://github.com/Teradata/covalent/compare/v8.20.7...v8.20.8) (2024-09-06)
 
 ### Bug Fixes
