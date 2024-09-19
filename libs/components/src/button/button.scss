@@ -1,6 +1,8 @@
 :host {
   // override MDC button color
   --mdc-button-outline-color: var(--cv-theme-outline);
+  // override MDC button text tranform
+  --mdc-typography-button-text-transform: none;
 }
 
 @mixin buttonColor($colorMap) {

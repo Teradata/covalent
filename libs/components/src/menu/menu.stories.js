@@ -61,7 +61,7 @@ export const Basic = (args) => {
     menuProps += `${key}="${value}" `;
 
   return `
-    <cv-button id="basicButton" raised label="Open Menu"></cv-button>
+    <cv-button id="basicButton" raised label="Open menu"></cv-button>
     <cv-menu 
       id="basicMenu"
       ${menuProps}

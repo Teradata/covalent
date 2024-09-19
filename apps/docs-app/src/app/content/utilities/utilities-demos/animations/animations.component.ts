@@ -133,7 +133,7 @@ export class AnimationsComponent {
     <mat-card>
       <mat-card-title>Fade Card</mat-card-title>
       <mat-card-content>Fade in or out with a click!</mat-card-content>
-      <mat-card-actions><button mat-raised-button color="primary" (click)="triggerState = !triggerState">Fade Out</button></mat-card-actions>
+      <mat-card-actions><button mat-raised-button color="primary" (click)="triggerState = !triggerState">Fade out</button></mat-card-actions>
     </mat-card>
   </div>
   `;
