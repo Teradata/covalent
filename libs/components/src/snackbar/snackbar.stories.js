@@ -26,14 +26,14 @@ const Template = ({ label, leading, stacked }) => {
   );
 
   return `
-    <cv-button class="show-snackbar-button">Toggle Snackbar</cv-button>
+    <cv-button class="show-snackbar-button">Toggle snackbar</cv-button>
     <cv-snackbar
        class="my-snackbar"
        labelText="${label}"
        ${leading ? 'leading' : ''}
        ${stacked ? 'stacked' : ''}
        open>
-      <cv-button slot="action">RETRY</cv-button>
+      <cv-button slot="action">Retry</cv-button>
       <cv-icon-button icon="close" slot="dismiss"></cv-icon-button>
     </cv-snackbar>`;
 };

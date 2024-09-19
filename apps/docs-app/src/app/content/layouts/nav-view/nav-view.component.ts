@@ -122,7 +122,7 @@ export class NavViewComponent {
               <mat-card-title>Alerts</mat-card-title> <mat-card-subtitle>Items requiring attention</mat-card-subtitle>
               <mat-divider></mat-divider> <mat-card-content> card content </mat-card-content> <mat-divider></mat-divider>
               <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/logs']"> <span>View More</span> </a>
+                <a mat-button color="accent" [routerLink]="['/logs']"> <span>View more</span> </a>
               </mat-card-actions>
             </mat-card>
             <mat-card>
@@ -131,7 +131,7 @@ export class NavViewComponent {
               <mat-divider></mat-divider>
               <mat-card-content> card content </mat-card-content>
               <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/product']"> <span>View More</span> </a>
+                <a mat-button color="accent" [routerLink]="['/product']"> <span>View more</span> </a>
               </mat-card-actions>
             </mat-card>
           </div>

@@ -6,19 +6,17 @@ import { CovalentMessageModule } from './message.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: Message', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, CovalentMessageModule],
-        declarations: [
-          TdMessageBasicTestComponent,
-          TdMessageContentTestComponent,
-          TdMessageOpenedTestComponent,
-        ],
-      });
-      TestBed.compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, CovalentMessageModule],
+      declarations: [
+        TdMessageBasicTestComponent,
+        TdMessageContentTestComponent,
+        TdMessageOpenedTestComponent,
+      ],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should set label, sublabel and color `primary`, `red` and then change to color `accent`', (done) => {
     const fixture: ComponentFixture<any> = TestBed.createComponent(
@@ -340,7 +338,7 @@ class TdMessageBasicTestComponent {
 @Component({
   template: `
     <td-message [label]="label" [sublabel]="sublabel" [color]="color">
-      <button td-message-actions>BUTTON</button>
+      <button td-message-actions>Button</button>
     </td-message>
   `,
 })

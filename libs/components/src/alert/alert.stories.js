@@ -56,7 +56,7 @@ export const PageLevel = ({
           ${inline ? `inline` : ''}>
           ${
             actionElement === 'button'
-              ? `<cv-button slot="action-items">Button Text</cv-button>`
+              ? `<cv-button slot="action-items">Button text</cv-button>`
               : ''
           }
           ${
