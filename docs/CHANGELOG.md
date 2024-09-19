@@ -1,3 +1,10 @@
+## [8.21.1](https://github.com/Teradata/covalent/compare/v8.21.0...v8.21.1) (2024-09-19)
+
+### Bug Fixes
+
+- **button:** change button text in flavored markdown ([9936de8](https://github.com/Teradata/covalent/commit/9936de8f016d285d0742d88669cdf95951cb1165))
+- **button:** change button text to sentence case ([fe7a2d9](https://github.com/Teradata/covalent/commit/fe7a2d92482335a76844280c9d0a280d17f42443))
+
 # [8.21.0](https://github.com/Teradata/covalent/compare/v8.20.8...v8.21.0) (2024-09-18)
 
 ### Features
