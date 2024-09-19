@@ -24,7 +24,7 @@ import { By } from '@angular/platform-browser';
         color="warn"
         (click)="myDirective.exitFullScreen()"
       >
-        exit Fullscreen
+        Exit fullscreen
       </button>
     </div>
   `,

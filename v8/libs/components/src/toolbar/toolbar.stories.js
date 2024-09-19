@@ -48,12 +48,12 @@ export const Toolbar = ({
       }
       ${
         secondaryAction
-          ? '<cv-button outlined slot="actionItems">BUTTON TEXT</cv-button>'
+          ? '<cv-button outlined slot="actionItems">Button text</cv-button>'
           : ''
       }
       ${
         action
-          ? '<cv-button outlined slot="actionItems">BUTTON TEXT</cv-button>'
+          ? '<cv-button outlined slot="actionItems">Button text</cv-button>'
           : ''
       }
     </cv-toolbar>
