@@ -171,7 +171,7 @@ export class CardOverComponent {
           </mat-card-content>
           <mat-divider></mat-divider>
           <mat-card-actions>
-            <button mat-button color="accent" class="text-upper">Edit</button>
+            <button mat-button color="accent">Edit</button>
           </mat-card-actions>
         </td-layout-card-over>
       </td-layout-nav>

@@ -61,7 +61,7 @@ Rich.args = {
       pretium vitae est et dapibus. Aenean sit amet felis eu lorem fermentum
       aliquam sit amet sit amet eros.
       <a class="mdc-tooltip__content-link" href="http://teradata.com" target="_blank">Learn more</a>.
-      <cv-button slot="actionItems" label="action"></button>
+      <cv-button slot="actionItems" label="Action"></button>
   `,
 };
 

@@ -180,8 +180,8 @@ export class ManageListComponent {
                 <mat-card-content> card content </mat-card-content>
                 <mat-divider></mat-divider>
                 <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
-                  <span>View More</span>
+                <a mat-button color="accent" [routerLink]="['/']">
+                  <span>View more</span>
                 </a>
                 </mat-card-actions>
               </mat-card>
@@ -192,8 +192,8 @@ export class ManageListComponent {
                 <mat-card-content> card content </mat-card-content>
                 <mat-divider></mat-divider>
                 <mat-card-actions>
-                  <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
-                    <span>View More</span>
+                  <a mat-button color="accent" [routerLink]="['/']">
+                    <span>View more</span>
                   </a>
                 </mat-card-actions>
               </mat-card>
@@ -206,7 +206,7 @@ export class ManageListComponent {
               <mat-card-content> card content </mat-card-content>
               <mat-divider></mat-divider>
               <mat-card-actions>
-                <a mat-button color="accent" class="text-upper"[routerLink]="['/']"><span>View More</span> </a>
+                <a mat-button color="accent" [routerLink]="['/']"><span>View more</span> </a>
               </mat-card-actions>
             </mat-card>
             <mat-card>
@@ -216,7 +216,7 @@ export class ManageListComponent {
               <mat-card-content> card content </mat-card-content>
               <mat-divider></mat-divider>
               <mat-card-actions>
-                <a mat-button color="accent" class="text-upper" [routerLink]="['/']"> <span>View More</span></a>
+                <a mat-button color="accent" [routerLink]="['/']"> <span>View more</span></a>
               </mat-card-actions>
             </mat-card>
           </div>

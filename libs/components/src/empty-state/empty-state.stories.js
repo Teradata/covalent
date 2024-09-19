@@ -25,13 +25,13 @@ export const Page = ({ headline, subtitle, action, twoActions, icon }) => {
   >
     ${
       action && !twoActions
-        ? '<cv-button slot="buttons">Button Text</cv-button>'
+        ? '<cv-button slot="buttons">Button text</cv-button>'
         : ''
     }
     ${
       twoActions
-        ? '<cv-button slot="buttons">Button Text</cv-button>\n\
-    <cv-button slot="buttons">Button Text</cv-button>'
+        ? '<cv-button slot="buttons">Button text</cv-button>\n\
+    <cv-button slot="buttons">Button text</cv-button>'
         : ''
     }
 </cv-empty-state>`;
@@ -82,13 +82,13 @@ const Card = ({
       >
           ${
             action && !twoActions
-              ? '<cv-button slot="buttons">Button Text</cv-button>'
+              ? '<cv-button slot="buttons">Button text</cv-button>'
               : ''
           }
           ${
             twoActions
-              ? '<cv-button slot="buttons">Button Text</cv-button>\n\
-          <cv-button slot="buttons">Button Text</cv-button>'
+              ? '<cv-button slot="buttons">Button text</cv-button>\n\
+          <cv-button slot="buttons">Button text</cv-button>'
               : ''
           }
       </cv-empty-state>

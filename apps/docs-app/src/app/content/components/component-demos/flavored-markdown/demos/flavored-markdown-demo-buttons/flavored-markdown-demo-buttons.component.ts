@@ -11,9 +11,9 @@ export class FlavoredMarkdownDemoButtonsComponent {
   buttonsFlavoredMarkdown = `
     ## Buttons
 
-    [Go to Mars](#data={"planet": "mars"})
+    [Go to mars](#data={"planet": "mars"})
     ---
-    [Go to Jupiter](#data={"planet": "Jupiter"})
+    [Go to jupiter](#data={"planet": "Jupiter"})
   `;
 
   constructor(private _snackBar: MatSnackBar) {}

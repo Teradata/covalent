@@ -36,13 +36,8 @@
             </mat-form-field>
           </div>
         </form>
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="doCopyToClipboard()"
-          class="text-upper"
-        >
-          Copy To Clipboard
+        <button mat-raised-button color="primary" (click)="doCopyToClipboard()">
+          Copy to clipboard
         </button>
       </mat-tab>
       <mat-tab>
@@ -83,7 +78,7 @@
           mat-raised-button
           color="primary"
           (click)="doConvertCSVToJSON()"
-          class="text-upper push-top-sm"
+          class="push-top-sm"
         >
           Convert CSV
         </button>
@@ -100,9 +95,9 @@
           mat-raised-button
           color="primary"
           (click)="doConvertObjectsToCSV()"
-          class="text-upper push-top-sm"
+          class="push-top-sm"
         >
-          Convert Objects
+          Convert objects
         </button>
         <h4>Output CSV:</h4>
         <td-highlight [content]="csvOutput"></td-highlight>
@@ -143,7 +138,7 @@
           mat-raised-button
           color="primary"
           (click)="doDownloadCSV()"
-          class="text-upper push-top-sm"
+          class="push-top-sm"
         >
           Download CSV
         </button>
@@ -158,7 +153,7 @@
           mat-raised-button
           color="primary"
           (click)="doDownloadJSON()"
-          class="text-upper push-top-sm"
+          class="push-top-sm"
         >
           Download JSON
         </button>
@@ -174,9 +169,9 @@
           mat-raised-button
           color="primary"
           (click)="doDownloadObjectsToCSV()"
-          class="text-upper push-top-sm"
+          class="push-top-sm"
         >
-          Download To CSV
+          Download to CSV
         </button>
         <h3 class="mat-title pad-top-lg">downloadObjectsToJSON</h3>
         <p>
@@ -189,9 +184,9 @@
           mat-raised-button
           color="primary"
           (click)="doDownloadObjectsToJSON()"
-          class="text-upper push-top-sm"
+          class="push-top-sm"
         >
-          Download To JSON
+          Download to JSON
         </button>
         <h3 class="mat-title pad-top-lg">download</h3>
         <p>
@@ -232,7 +227,7 @@
           mat-raised-button
           color="primary"
           (click)="doDownloadFile()"
-          class="text-upper push-sm"
+          class="push-sm"
         >
           Download
         </button>
@@ -266,13 +261,8 @@
         <p>
           Read file as UTF-8 text. Return string contents on read completion.
         </p>
-        <button
-          mat-raised-button
-          class="text-upper"
-          color="primary"
-          (click)="fileInput.click()"
-        >
-          Choose File
+        <button mat-raised-button color="primary" (click)="fileInput.click()">
+          Choose file
           <input
             #fileInput
             type="file"
