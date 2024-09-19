@@ -1,0 +1,19 @@
+{
+  "type": "data",
+  "id": "1jEA6T5Yx",
+  "patternId": "breadcrumb",
+  "templateId": "angular-AV1XyEgcDV",
+  "title": "New Variation",
+  "description": "",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Current page"
+        }
+      ]
+    }
+  }
+}

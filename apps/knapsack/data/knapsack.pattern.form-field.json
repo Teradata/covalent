@@ -51,6 +51,61 @@
       },
       "demoIds": ["pmwAMIY3TV", "0n-okWquA", "1cr3GRlfdT"],
       "blockIds": ["lep5sH9bL0"]
+    },
+    {
+      "id": "angular-CnxrMDH0L6",
+      "title": "Angular",
+      "path": "@angular/material/form-field",
+      "alias": "MatFormField",
+      "templateLanguageId": "angular",
+      "spec": {
+        "props": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "hideRequiredMarker": {
+              "type": "boolean",
+              "description": "Whether the required marker should be hidden."
+            },
+            "color": {
+              "type": "string",
+              "enum": ["primary", "accent", "warn"],
+              "description": "The color palette for the form field."
+            },
+            "floatLabel": {
+              "type": "string",
+              "enum": ["auto", "always"],
+              "description": "Whether the label should always float or float as the user types."
+            },
+            "appearance": {
+              "type": "string",
+              "enum": ["fill", "outline"],
+              "description": "The form field appearance style."
+            },
+            "subscriptSizing": {
+              "type": "string",
+              "enum": ["fixed", "dynamic"],
+              "description": "Whether the form field should reserve space for one line of hint/error text (default)\nor to have the spacing grow from 0px as needed based on the size of the hint/error content.\nNote that when using dynamic sizing, layout shifts will occur when hint/error text changes."
+            },
+            "hintLabel": {
+              "type": "string",
+              "description": "Text for the form field hint."
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Input field within a form for users to enter data."
+        },
+        "slots": {
+          "default": {
+            "title": "default"
+          },
+          "mat-label": {
+            "title": "mat-label"
+          }
+        }
+      },
+      "demoIds": ["IT0IGQTOzN"],
+      "blockIds": ["6zCKlviIcV", "8H16KgYtn", "fCWyyxuwc8"]
     }
   ],
   "tabs": [
@@ -61,6 +116,10 @@
     {
       "id": "web-components-I5Sx1HQnJ",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-CnxrMDH0L6"
     }
   ],
   "subPages": [

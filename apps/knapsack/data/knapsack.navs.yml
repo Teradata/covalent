@@ -24,6 +24,11 @@ byId:
     name: Badge
     parentId: components
     path: /pattern/badge
+  breadcrumb:
+    id: breadcrumb
+    name: Breadcrumb
+    parentId: breadcrumbs
+    path: /pattern/breadcrumb
   breadcrumbs:
     id: breadcrumbs
     name: Breadcrumbs
@@ -213,6 +218,11 @@ byId:
     name: Notebook cell
     parentId: test-page
     path: /pattern/notebook-cell
+  option:
+    id: option
+    name: Option
+    parentId: select
+    path: /pattern/option
   palettes:
     id: palettes
     name: Light
@@ -383,7 +393,9 @@ order:
   - app-shell
   - badge
   - breadcrumbs
+  - breadcrumb
   - button
+  - split-button
   - card
   - checkbox
   - code-editor
@@ -411,6 +423,7 @@ order:
   - notebook-cell
   - radio
   - select
+  - option
   - side-sheet
   - slider
   - snackbar
@@ -441,8 +454,7 @@ order:
   - typography
   - writing
   - voice-and-tone
+  - adapting-tone-by-situation
   - product-and-ui
   - error-messages
-  - adapting-tone-by-situation
-  - split-button
   - word-list

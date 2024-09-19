@@ -1,0 +1,22 @@
+{
+  "id": "YniIfjIXfF",
+  "title": "Main",
+  "type": "data",
+  "patternId": "button",
+  "templateId": "angular-i3OR9O7kXg",
+  "data": {
+    "props": {
+      "color": "accent",
+      "disableRipple": false,
+      "disabled": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Basic button"
+        }
+      ]
+    }
+  }
+}

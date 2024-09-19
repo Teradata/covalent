@@ -5,7 +5,9 @@
   "patternId": "card",
   "templateId": "angular-K2H0Gg5PuL",
   "data": {
-    "props": {},
+    "props": {
+      "appearance": "raised"
+    },
     "slots": {
       "default": [
         {

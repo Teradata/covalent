@@ -41,6 +41,59 @@
       },
       "demoIds": ["Yu7DvlfMdG", "noRKlgh7xK"],
       "blockIds": ["88PKWyDzOF"]
+    },
+    {
+      "id": "angular-QIglT9cfQ5",
+      "title": "Angular",
+      "path": "@angular/material/expansion",
+      "alias": "MatExpansionPanel",
+      "templateLanguageId": "angular",
+      "spec": {
+        "props": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "expanded": {
+              "type": "boolean",
+              "description": "Whether the AccordionItem is expanded."
+            },
+            "hideToggle": {
+              "type": "boolean",
+              "description": "Whether the toggle indicator should be hidden."
+            },
+            "togglePosition": {
+              "type": "string",
+              "enum": ["before", "after"],
+              "description": "The position of the expansion indicator."
+            },
+            "disabled": {
+              "description": "Whether the AccordionItem is disabled.",
+              "type": "boolean"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Collapsible panel revealing additional content when expanded."
+        },
+        "slots": {
+          "mat-expansion-panel-header": {
+            "title": "mat-expansion-panel-header"
+          },
+          "default": {
+            "title": "default"
+          },
+          "mat-action-row": {
+            "title": "mat-action-row"
+          }
+        }
+      },
+      "demoIds": ["ho54aGPH2V"],
+      "blockIds": [
+        "1BHp2q07mB",
+        "NkY-O2r1Vm",
+        "EZo0tmTOGy",
+        "jJngK6Ddnb",
+        "fODNakSeeh"
+      ]
     }
   ],
   "tabs": [
@@ -51,6 +104,10 @@
     {
       "id": "web-components-Vj98q2D8hw",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-QIglT9cfQ5"
     }
   ],
   "subPages": [

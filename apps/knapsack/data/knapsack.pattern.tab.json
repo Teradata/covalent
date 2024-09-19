@@ -68,6 +68,82 @@
       },
       "demoIds": ["3HxZQWfBi9"],
       "blockIds": ["g2INAb2GcM", "LwcyN6P2pv", "IkQJr1t3t", "NUw1Dsl5un"]
+    },
+    {
+      "id": "angular-zXFWEiMoKj",
+      "title": "Angular",
+      "path": "@angular/material/tabs",
+      "alias": "MatTab",
+      "templateLanguageId": "angular",
+      "spec": {
+        "props": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "disabled": {
+              "type": "boolean",
+              "description": "whether the tab is disabled."
+            },
+            "textLabel": {
+              "type": "string",
+              "description": "Plain text label for the tab, used when there is no template label."
+            },
+            "ariaLabel": {
+              "type": "string",
+              "description": "Aria label for the tab."
+            },
+            "ariaLabelledby": {
+              "type": "string",
+              "description": "Reference to the element that the tab is labelled by.\nWill be cleared if `aria-label` is set at the same time."
+            },
+            "label": {
+              "type": "string",
+              "description": "Label for the tab."
+            },
+            "bodyClass": {
+              "description": "Classes to be passed to the tab mat-tab-body container.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "labelClass": {
+              "description": "Classes to be passed to the tab label inside the mat-tab-header container.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "isActive": {
+              "description": "Whether the tab is currently active.",
+              "type": "boolean"
+            },
+            "origin": {
+              "description": "The initial relatively index origin of the tab if it was created and selected after there was already a selected tab. Provides context of what position the tab should originate from.",
+              "type": "number"
+            },
+            "position": {
+              "description": "The relatively indexed position where 0 represents the center, negative is left, and positive represents the right.",
+              "type": "number"
+            },
+            "templateLabel": {
+              "description": "Content for the tab label given by <ng-template mat-tab-label>.",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "A component that organizes content across different screens, data sets, and other interactions"
+        },
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        }
+      },
+      "demoIds": ["liIAA7AHaM"],
+      "blockIds": ["688957J8AW"]
     }
   ],
   "tabs": [
@@ -78,6 +154,10 @@
     {
       "id": "web-components-1-Bf2NwL1T",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-zXFWEiMoKj"
     }
   ],
   "subPages": [

@@ -86,6 +86,110 @@
         "DzQO5KihiM",
         "LL9jRKkGGl"
       ]
+    },
+    {
+      "id": "angular-n9X1RJ2v5c",
+      "title": "Angular",
+      "path": "@angular/material/select",
+      "alias": "MatSelect",
+      "templateLanguageId": "angular",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Interactive menu allowing users to choose from a list of options.",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "ariaLabel": {
+              "type": "string",
+              "description": "Aria label of the select."
+            },
+            "ariaLabelledby": {
+              "type": "string",
+              "description": "Input that can be used to specify the aria-labelledby attribute."
+            },
+            "compareWith": {
+              "description": "Function to compare the option values with the selected values. The first argument is a value from an option. The second is a value from the selection. A boolean should be returned.",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            },
+            "disableOptionCentering": {
+              "description": "Whether to center the active option over the trigger.",
+              "type": "boolean"
+            },
+            "disableRipple": {
+              "description": "Whether ripples in the select are disabled.",
+              "type": "boolean"
+            },
+            "disabled": {
+              "description": "Whether the select is disabled.",
+              "type": "boolean"
+            },
+            "errorStateMatcher": {
+              "description": "Object used to control when error messages are shown.",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            },
+            "hideSingleSelectionIndicator": {
+              "description": "Whether checkmark indicator for single-selection options is hidden.",
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string",
+              "description": "Unique id of the element."
+            },
+            "multiple": {
+              "description": "Whether the user should be allowed to select multiple options.",
+              "type": "boolean"
+            },
+            "panelClass": {
+              "description": "Classes to be passed to the select panel. Supports the same syntax as ngClass.",
+              "type": "string"
+            },
+            "panelWidth": {
+              "type": "string",
+              "description": "Width of the panel. If set to auto, the panel will match the trigger width. If set to null or an empty string, the panel will grow to match the longest option's text."
+            },
+            "placeholder": {
+              "type": "string",
+              "description": "Placeholder to be shown if no value has been selected."
+            },
+            "required": {
+              "description": "Whether the component is required.",
+              "type": "boolean"
+            },
+            "sortComparator": {
+              "description": "Function used to sort the values in a select in multiple mode. Follows the same logic as Array.prototype.sort.",
+              "type": "object",
+              "required": [],
+              "properties": {}
+            },
+            "typeaheadDebounceInterval": {
+              "description": "Time to wait in milliseconds after the last keystroke before moving focus to an item.",
+              "type": "number"
+            },
+            "value": {
+              "description": "Value of the select control.",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "demoIds": ["Go4ZYiw5NE"],
+      "blockIds": [
+        "IyZ6Dx0xLW",
+        "tq3Bxybiyt",
+        "BpOOOV4CJM",
+        "HplWZS4e",
+        "vlfP0PBZn"
+      ]
     }
   ],
   "tabs": [
@@ -96,6 +200,10 @@
     {
       "id": "web-components-qWXTtv81jY",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-n9X1RJ2v5c"
     }
   ],
   "subPages": [

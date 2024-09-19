@@ -830,10 +830,6 @@
       ],
       "attributes": [
         {
-          "name": "toggledOn",
-          "description": "boolean Whether the toggle is activated."
-        },
-        {
           "name": "disabled",
           "description": "boolean Disabled buttons cannot be interacted with and have no visual interaction effect."
         },
@@ -856,6 +852,10 @@
         {
           "name": "ariaLabelOff",
           "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
+        },
+        {
+          "name": "toggledOn",
+          "description": "boolean Whether the toggle is activated."
         }
       ]
     },

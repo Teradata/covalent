@@ -1,0 +1,21 @@
+{
+  "id": "liIAA7AHaM",
+  "title": "Main",
+  "type": "data",
+  "patternId": "tab",
+  "templateId": "angular-zXFWEiMoKj",
+  "data": {
+    "props": {
+      "textLabel": "Tab",
+      "label": "Tab 1"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Tab content"
+        }
+      ]
+    }
+  }
+}

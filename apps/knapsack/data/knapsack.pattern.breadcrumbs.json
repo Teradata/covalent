@@ -6,11 +6,28 @@
     "main": "needsReview",
     "XQn0s6hkh9": "UPHFPB1cG"
   },
-  "templates": [],
+  "templates": [
+    {
+      "id": "angular-XvIkfbJ0SX",
+      "title": "Angular",
+      "path": "@covalent/core/breadcrumbs",
+      "alias": "TdBreadcrumbsComponent",
+      "templateLanguageId": "angular",
+      "spec": {
+        "isInferred": true
+      },
+      "demoIds": ["CaWaliE5It"],
+      "blockIds": ["qw3G9Dzi0m"]
+    }
+  ],
   "tabs": [
     {
       "id": "overview",
       "type": "subPage"
+    },
+    {
+      "type": "template",
+      "id": "angular-XvIkfbJ0SX"
     }
   ],
   "subPages": [

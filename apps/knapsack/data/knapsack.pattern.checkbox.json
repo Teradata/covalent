@@ -51,6 +51,81 @@
       },
       "demoIds": ["ee2EneFvzS"],
       "blockIds": ["Fv2gGxz6Kl", "xtFF-HCkz", "sI9T2CK0mW"]
+    },
+    {
+      "id": "angular-gRDniyofOa",
+      "title": "Angular",
+      "path": "@angular/material/checkbox",
+      "alias": "MatCheckbox",
+      "templateLanguageId": "angular",
+      "spec": {
+        "props": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "ariaLabel": {
+              "type": "string",
+              "description": "Attached to the aria-label attribute of the host element. In most cases, aria-labelledby will\ntake precedence so this may be omitted."
+            },
+            "ariaLabelledby": {
+              "type": "string",
+              "description": "Users can specify the `aria-labelledby` attribute which will be forwarded to the input element"
+            },
+            "ariaDescribedby": {
+              "type": "string",
+              "description": "The 'aria-describedby' attribute is read after the element's label and field type."
+            },
+            "id": {
+              "type": "string",
+              "description": "A unique id for the checkbox input. If none is supplied, it will be auto-generated."
+            },
+            "required": {
+              "type": "boolean",
+              "description": "Whether the checkbox is required."
+            },
+            "labelPosition": {
+              "type": "string",
+              "enum": ["before", "after"],
+              "description": "Whether the label should appear after or before the checkbox. Defaults to 'after'"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name value will be applied to the input element if present"
+            },
+            "checked": {
+              "title": "checked",
+              "type": "boolean",
+              "description": "Whether the checkbox is checked."
+            },
+            "disabled": {
+              "title": "disabled",
+              "type": "boolean",
+              "description": "Whether the checkbox is disabled."
+            },
+            "indeterminate": {
+              "type": "boolean",
+              "title": "indeterminate",
+              "description": "Whether the checkbox is in an indeterminate state."
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Interactive element allowing users to select one or more options from a list."
+        },
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        }
+      },
+      "demoIds": ["uVAi12nEiV"],
+      "blockIds": [
+        "xms3a6T9vf",
+        "5ddjwe2MUw",
+        "HN5Oe-S48m",
+        "1lgYaC7j7B",
+        "tHyr2zRuBZ",
+        "QzEdEJgDBG"
+      ]
     }
   ],
   "tabs": [
@@ -61,6 +136,10 @@
     {
       "id": "web-components-29FbeDQWhM",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-gRDniyofOa"
     }
   ],
   "subPages": [

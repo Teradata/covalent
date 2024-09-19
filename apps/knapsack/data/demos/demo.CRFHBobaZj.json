@@ -6,13 +6,15 @@
   "templateId": "angular-i3OR9O7kXg",
   "data": {
     "props": {
-      "color": "accent"
+      "color": "accent",
+      "disableRipple": false,
+      "disabled": false
     },
     "slots": {
       "default": [
         {
           "type": "text",
-          "text": "testing out this button"
+          "text": "Basic button"
         }
       ]
     }

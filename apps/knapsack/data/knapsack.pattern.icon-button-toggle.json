@@ -32,10 +32,6 @@
           "type": "object",
           "required": [],
           "properties": {
-            "on": {
-              "description": "Whether the toggle is activated.",
-              "type": "boolean"
-            },
             "disabled": {
               "description": "Disabled buttons cannot be interacted with and have no visual interaction effect.",
               "type": "boolean"
@@ -59,6 +55,11 @@
             "ariaLabelOff": {
               "type": "string",
               "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
+            },
+            "toggledOn": {
+              "title": "toggledOn",
+              "description": "Whether the toggle is activated.",
+              "type": "boolean"
             }
           }
         }

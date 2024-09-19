@@ -63,26 +63,15 @@
     },
     {
       "id": "angular-K2H0Gg5PuL",
-      "title": "MatCard",
+      "title": "Angular",
       "path": "@angular/material/card",
       "alias": "MatCard",
       "templateLanguageId": "angular",
       "spec": {
-        "slots": {
-          "default": {
-            "title": "default"
-          }
-        },
-        "props": {
-          "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "Container presenting information or content in a visually distinct format.",
-          "type": "object",
-          "required": [],
-          "properties": {}
-        }
+        "isInferred": true
       },
       "demoIds": ["nrW1VpRzc"],
-      "blockIds": []
+      "blockIds": ["CSfldGKb8K"]
     }
   ],
   "tabs": [

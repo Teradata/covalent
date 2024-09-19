@@ -1,0 +1,19 @@
+{
+  "type": "data",
+  "id": "eARWwnOo3v",
+  "patternId": "chip-item",
+  "templateId": "angular-H2h86F5wNR",
+  "title": "New Variation",
+  "description": "",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Chip 2"
+        }
+      ]
+    }
+  }
+}

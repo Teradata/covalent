@@ -1,0 +1,13 @@
+{
+  "id": "MqzTEZy-eE",
+  "title": "Main",
+  "type": "data",
+  "patternId": "select",
+  "templateId": "angular-n9X1RJ2v5c",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": []
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "option",
+  "title": "Option",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "angular-tOZognkt7v",
+      "title": "Angular",
+      "path": "@angular/material/core",
+      "alias": "MatOption",
+      "templateLanguageId": "angular",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "disabled": {
+              "description": "Whether the option is disabled.",
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string",
+              "description": "The unique ID of the option."
+            },
+            "value": {
+              "type": "string",
+              "description": "The form value of the option."
+            },
+            "active": {
+              "description": "Whether or not the option is currently active and ready to be selected. An active option displays styles as if it is focused, but the focus is actually retained somewhere else. This comes in handy for components like autocomplete where focus must remain on the input.",
+              "type": "boolean"
+            },
+            "disableRipple": {
+              "description": "Whether ripples for the option are disabled.",
+              "type": "boolean"
+            },
+            "hideSingleSelectionIndicator": {
+              "description": "Whether to display checkmark for single-selection.",
+              "type": "boolean"
+            },
+            "multiple": {
+              "description": "Whether the wrapping component is in multiple selection mode.",
+              "type": "boolean"
+            },
+            "selected": {
+              "description": "Whether or not the option is currently selected.",
+              "type": "boolean"
+            },
+            "viewValue": {
+              "type": "string",
+              "description": "The displayed value of the option. It is necessary to show the selected option in the select's trigger."
+            },
+            "group": {
+              "type": "string",
+              "description": "MatOptGroup it belongs to."
+            }
+          }
+        }
+      },
+      "demoIds": ["uySIMBZRt1"],
+      "blockIds": [
+        "4xSY6kEjnh",
+        "99R7nOCtby",
+        "0YCoCx6MDP",
+        "GohN3xDezK",
+        "LDREx4Q3O"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "template",
+      "id": "angular-tOZognkt7v"
+    }
+  ],
+  "subPages": []
+}

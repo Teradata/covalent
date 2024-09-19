@@ -1,0 +1,32 @@
+{
+  "id": "iyRKsxaWa7",
+  "title": "Main",
+  "type": "data",
+  "patternId": "tabs",
+  "templateId": "angular-80NRNjBCg",
+  "data": {
+    "props": {
+      "fitInkBarToContent": false,
+      "stretchTabs": false,
+      "dynamicHeight": true,
+      "headerPosition": "above",
+      "disableRipple": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "tab",
+          "templateId": "angular-zXFWEiMoKj",
+          "demoId": "KyzllGVdCG"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "tab",
+          "templateId": "angular-zXFWEiMoKj",
+          "demoId": "uF-ydsTaaM"
+        }
+      ]
+    }
+  }
+}

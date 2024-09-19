@@ -1,0 +1,21 @@
+{
+  "type": "data",
+  "id": "uF-ydsTaaM",
+  "patternId": "tab",
+  "templateId": "angular-zXFWEiMoKj",
+  "title": "New Variation",
+  "description": "",
+  "data": {
+    "props": {
+      "label": "Tab 2"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Tab 2 content"
+        }
+      ]
+    }
+  }
+}

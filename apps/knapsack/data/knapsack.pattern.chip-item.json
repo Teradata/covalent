@@ -55,6 +55,44 @@
       },
       "demoIds": ["zDg2SpdOHk", "DINJPi6iZ"],
       "blockIds": ["aIt5CbQR8h"]
+    },
+    {
+      "id": "angular-H2h86F5wNR",
+      "title": "Angular",
+      "path": "@angular/material/chips",
+      "alias": "MatChip",
+      "templateLanguageId": "angular",
+      "spec": {
+        "props": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "selectable": {
+              "type": "boolean",
+              "description": "Whether or not the chip is selectable.\n\nWhen a chip is not selectable, changes to its selected state are always\nignored. By default an option chip is selectable, and it becomes\nnon-selectable if its parent chip list is not selectable."
+            },
+            "selected": {
+              "type": "boolean",
+              "description": "Whether the chip is selected."
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Individual item within a chip list."
+        },
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        }
+      },
+      "demoIds": ["xsFAzpdZAH"],
+      "blockIds": [
+        "mYBMKNiW4u",
+        "PER9YZRkFw",
+        "pQurywlTn",
+        "imDVsDmWKc",
+        "eO0ABKMeEW"
+      ]
     }
   ],
   "tabs": [
@@ -65,6 +103,10 @@
     {
       "id": "web-components-vegaZgkE47",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-H2h86F5wNR"
     }
   ],
   "subPages": [

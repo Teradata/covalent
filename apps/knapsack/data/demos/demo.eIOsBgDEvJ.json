@@ -6,7 +6,17 @@
   "patternId": "button",
   "templateId": "angular-i3OR9O7kXg",
   "data": {
-    "props": {},
-    "slots": {}
+    "props": {
+      "disabled": false,
+      "color": "accent"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Raised"
+        }
+      ]
+    }
   }
 }

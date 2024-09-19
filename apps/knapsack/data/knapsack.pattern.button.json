@@ -88,29 +88,43 @@
       "alias": "MatButton",
       "templateLanguageId": "angular",
       "spec": {
-        "slots": {
-          "default": {
-            "title": "default"
-          }
-        },
         "props": {
-          "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "Common buttons prompt most actions in a UI",
           "type": "object",
           "required": [],
           "properties": {
             "color": {
-              "type": "string"
+              "type": "string",
+              "description": "Theme color palette of the button"
             },
-            "raised": {
-              "type": "boolean"
+            "disableRipple": {
+              "type": "boolean",
+              "description": "Whether the ripple effect is disabled or not."
+            },
+            "disabled": {
+              "type": "boolean",
+              "description": "Whether the button is disabled."
+            },
+            "ariaDisabled": {
+              "type": "boolean",
+              "description": "`aria-disabled` value of the button."
+            },
+            "disabledInteractive": {
+              "type": "boolean",
+              "description": "Natively disabled buttons prevent focus and any pointer events from reaching the button.\nIn some scenarios this might not be desirable, because it can prevent users from finding out\nwhy the button is disabled (e.g. via tooltip).\n\nEnabling this input will change the button so that it is styled to be disabled and will be\nmarked as `aria-disabled`, but it will allow the button to receive events and focus.\n\nNote that by enabling this, you need to set the `tabindex` yourself if the button isn't\nmeant to be tabbable and you have to prevent the button action (e.g. form submissions)."
             }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Common buttons prompt most actions in a UI"
+        },
+        "slots": {
+          "default": {
+            "title": "default"
           }
         }
       },
       "demoIds": ["CRFHBobaZj", "eIOsBgDEvJ"],
-      "blockIds": [],
-      "assetSetIds": ["light"]
+      "blockIds": ["Kp6vsoacfc", "Hp2wnbJwJ6", "O3Nl84qdwl"],
+      "assetSetIds": ["light", "dark"]
     }
   ],
   "tabs": [

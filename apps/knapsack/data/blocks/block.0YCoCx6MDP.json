@@ -1,0 +1,24 @@
+{
+  "id": "0YCoCx6MDP",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Events"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

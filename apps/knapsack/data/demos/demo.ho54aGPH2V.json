@@ -1,0 +1,35 @@
+{
+  "id": "ho54aGPH2V",
+  "title": "Main",
+  "type": "data",
+  "patternId": "expansion-panel",
+  "templateId": "angular-QIglT9cfQ5",
+  "data": {
+    "props": {
+      "expanded": true,
+      "hideToggle": false
+    },
+    "slots": {
+      "mat-expansion-panel-header": [
+        {
+          "type": "text",
+          "text": "Expansion panel title"
+        }
+      ],
+      "default": [
+        {
+          "type": "text",
+          "text": "Content to be displayed"
+        }
+      ],
+      "mat-action-row": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "angular-i3OR9O7kXg",
+          "demoId": "YniIfjIXfF"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "uVAi12nEiV",
+  "title": "Main",
+  "type": "data",
+  "patternId": "checkbox",
+  "templateId": "angular-gRDniyofOa",
+  "data": {
+    "props": {
+      "required": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Label"
+        }
+      ]
+    }
+  }
+}

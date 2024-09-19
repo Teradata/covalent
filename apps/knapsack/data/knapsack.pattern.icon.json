@@ -38,6 +38,118 @@
       },
       "demoIds": ["bn4zy44TYR", "Xr7IHJQ1", "8VqxwwTyJ", "ezyQjAA-T1"],
       "blockIds": ["Wi5zWBMuy7"]
+    },
+    {
+      "id": "angular-srTiVBJO6w",
+      "title": "Angular",
+      "path": "@angular/material/icon",
+      "alias": "MatIcon",
+      "templateLanguageId": "angular",
+      "spec": {
+        "props": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "color": {
+              "type": "string",
+              "description": "Theme palette color of the icon."
+            },
+            "inline": {
+              "type": "boolean",
+              "description": "Whether the icon should be inlined, automatically sizing the icon to match the font size of\nthe element the icon is contained in."
+            },
+            "svgIcon": {
+              "type": "string",
+              "description": "Name of the icon in the SVG icon set."
+            },
+            "fontSet": {
+              "type": "string",
+              "description": "Font set that the icon is a part of."
+            },
+            "fontIcon": {
+              "type": "string",
+              "description": "Name of an icon within a font set."
+            }
+          }
+        },
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        },
+        "extraDocs": [
+          {
+            "id": "overview",
+            "title": "Overview",
+            "description": "",
+            "tableRows": [
+              {
+                "Title": "Standalone Component",
+                "Description": "Yes"
+              },
+              {
+                "Title": "Selector",
+                "Description": "`<mat-icon>`"
+              },
+              {
+                "Title": "Package",
+                "Description": "`@angular/material/icon`"
+              },
+              {
+                "Title": "Named Export",
+                "Description": "`MatIcon`"
+              }
+            ]
+          },
+          {
+            "id": "inputs",
+            "title": "Inputs",
+            "description": "",
+            "tableRows": [
+              {
+                "Input Name": "`color`",
+                "Template Name": "`color`",
+                "Type": "`string`"
+              },
+              {
+                "Input Name": "`inline`",
+                "Template Name": "`inline`",
+                "Type": "`boolean`"
+              },
+              {
+                "Input Name": "`svgIcon`",
+                "Template Name": "`svgIcon`",
+                "Type": "`string`"
+              },
+              {
+                "Input Name": "`fontSet`",
+                "Template Name": "`fontSet`",
+                "Type": "`string`"
+              },
+              {
+                "Input Name": "`fontIcon`",
+                "Template Name": "`fontIcon`",
+                "Type": "`string`"
+              }
+            ]
+          },
+          {
+            "id": "slots",
+            "title": "Slots",
+            "description": "",
+            "tableRows": [
+              {
+                "Slot Name": "`default`",
+                "Slot Title": "default"
+              }
+            ]
+          }
+        ],
+        "hidePropsTable": true,
+        "hideSlotsTable": true
+      },
+      "demoIds": ["9ijtuCyB64"],
+      "blockIds": ["dhG9hiw3t"]
     }
   ],
   "tabs": [
@@ -48,6 +160,10 @@
     {
       "id": "web-components-N8bzRbfpuX",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-srTiVBJO6w"
     }
   ],
   "subPages": [

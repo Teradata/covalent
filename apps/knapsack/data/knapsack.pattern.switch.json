@@ -42,6 +42,18 @@
       },
       "demoIds": ["U89p0LyOsP"],
       "blockIds": ["7JoX98TYsU"]
+    },
+    {
+      "id": "angular-uAgdhZB5qu",
+      "title": "Angular",
+      "path": "@angular/material/slide-toggle",
+      "alias": "MatSlideToggle",
+      "templateLanguageId": "angular",
+      "spec": {
+        "isInferred": true
+      },
+      "demoIds": ["qkhGFl6eMn"],
+      "blockIds": ["XK3aXNujtl", "zY5-y31M4", "oshHs8MB7"]
     }
   ],
   "tabs": [
@@ -52,6 +64,10 @@
     {
       "id": "web-components-tGj2TvSrpD",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-uAgdhZB5qu"
     }
   ],
   "subPages": [

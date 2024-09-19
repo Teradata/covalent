@@ -1,0 +1,21 @@
+{
+  "id": "qkhGFl6eMn",
+  "title": "Main",
+  "type": "data",
+  "patternId": "switch",
+  "templateId": "angular-uAgdhZB5qu",
+  "data": {
+    "props": {
+      "checked": false,
+      "hideIcon": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Switch"
+        }
+      ]
+    }
+  }
+}

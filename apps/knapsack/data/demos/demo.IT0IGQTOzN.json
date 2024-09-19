@@ -1,0 +1,30 @@
+{
+  "id": "IT0IGQTOzN",
+  "title": "Select",
+  "type": "data",
+  "patternId": "form-field",
+  "templateId": "angular-CnxrMDH0L6",
+  "data": {
+    "props": {
+      "floatLabel": "auto",
+      "color": "primary",
+      "appearance": "fill"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "select",
+          "templateId": "angular-n9X1RJ2v5c",
+          "demoId": "MqzTEZy-eE"
+        }
+      ],
+      "mat-label": [
+        {
+          "type": "text",
+          "text": "Select an option"
+        }
+      ]
+    }
+  }
+}

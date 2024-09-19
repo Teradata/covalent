@@ -48,6 +48,42 @@
       },
       "demoIds": ["HyZJsWXVOc"],
       "blockIds": ["jTmZN54g7h"]
+    },
+    {
+      "id": "angular-d9gqyQFThC",
+      "title": "Angular",
+      "path": "@angular/material/chips",
+      "alias": "MatChipSet",
+      "templateLanguageId": "angular",
+      "spec": {
+        "props": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "disabled": {
+              "type": "boolean",
+              "description": "Whether the chip set is disabled."
+            },
+            "role": {
+              "type": "string",
+              "description": "The ARIA role applied to the chip set."
+            },
+            "tabIndex": {
+              "type": "number",
+              "description": "Tabindex of the chip set."
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Compact visual element representing an attribute, action, or choice."
+        },
+        "slots": {
+          "default": {
+            "title": "default"
+          }
+        }
+      },
+      "demoIds": ["fb6Vwa6Z5k"],
+      "blockIds": ["ej9M3XuR7", "mlXAubuC-Z", "ppkMXJR90"]
     }
   ],
   "tabs": [
@@ -58,6 +94,10 @@
     {
       "id": "web-components-7wYRPSnEZH",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-d9gqyQFThC"
     }
   ],
   "subPages": [

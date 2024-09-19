@@ -1,0 +1,18 @@
+{
+  "id": "Vgnqy37WLh",
+  "title": "Main",
+  "type": "data",
+  "patternId": "chip-item",
+  "templateId": "angular-H2h86F5wNR",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Chip"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "9ijtuCyB64",
+  "title": "Main",
+  "type": "data",
+  "patternId": "icon",
+  "templateId": "angular-srTiVBJO6w",
+  "data": {
+    "props": {
+      "fontSet": "material-symbols-outlined",
+      "inline": false,
+      "color": "black"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "home"
+        }
+      ]
+    }
+  }
+}

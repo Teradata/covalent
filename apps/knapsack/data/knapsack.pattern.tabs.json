@@ -38,6 +38,24 @@
       },
       "demoIds": ["GOJxN1FZx"],
       "blockIds": ["dJNb1Ltoh2", "GvHpI-zPtX", "OTtOCcSkgG"]
+    },
+    {
+      "id": "angular-80NRNjBCg",
+      "title": "Angular",
+      "path": "@angular/material/tabs",
+      "alias": "MatTabGroup",
+      "templateLanguageId": "angular",
+      "spec": {
+        "isInferred": true
+      },
+      "demoIds": ["iyRKsxaWa7"],
+      "blockIds": [
+        "yvpbZmaQGn",
+        "toWe2mPomu",
+        "RnZGasrKP8",
+        "g-BTVhepJX",
+        "yR82ogiqK"
+      ]
     }
   ],
   "tabs": [
@@ -48,6 +66,10 @@
     {
       "id": "web-components-kjFGUA31tg",
       "type": "template"
+    },
+    {
+      "type": "template",
+      "id": "angular-80NRNjBCg"
     }
   ],
   "subPages": [

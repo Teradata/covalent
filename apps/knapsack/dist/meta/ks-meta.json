@@ -341,6 +341,34 @@
       "url": "/api/v1/render?patternId=badge&templateId=web-components-40aOlYC6I9&assetSetId=dark&demoId=uhaHv83YYx&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "breadcrumb",
+      "templateId": "angular-AV1XyEgcDV",
+      "demoId": "fYUgXzxsB",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=breadcrumb&templateId=angular-AV1XyEgcDV&assetSetId=light&demoId=fYUgXzxsB&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumb",
+      "templateId": "angular-AV1XyEgcDV",
+      "demoId": "fYUgXzxsB",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=breadcrumb&templateId=angular-AV1XyEgcDV&assetSetId=dark&demoId=fYUgXzxsB&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-XvIkfbJ0SX",
+      "demoId": "CaWaliE5It",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-XvIkfbJ0SX&assetSetId=light&demoId=CaWaliE5It&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "breadcrumbs",
+      "templateId": "angular-XvIkfbJ0SX",
+      "demoId": "CaWaliE5It",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=breadcrumbs&templateId=angular-XvIkfbJ0SX&assetSetId=dark&demoId=CaWaliE5It&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "button",
       "templateId": "web-components-raE1x4tYL",
       "demoId": "E5ymzzEPs",
@@ -467,6 +495,20 @@
       "url": "/api/v1/render?patternId=checkbox&templateId=web-components-29FbeDQWhM&assetSetId=dark&demoId=ee2EneFvzS&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "checkbox",
+      "templateId": "angular-gRDniyofOa",
+      "demoId": "uVAi12nEiV",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=checkbox&templateId=angular-gRDniyofOa&assetSetId=light&demoId=uVAi12nEiV&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "checkbox",
+      "templateId": "angular-gRDniyofOa",
+      "demoId": "uVAi12nEiV",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=checkbox&templateId=angular-gRDniyofOa&assetSetId=dark&demoId=uVAi12nEiV&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "chip",
       "templateId": "web-components-7wYRPSnEZH",
       "demoId": "HyZJsWXVOc",
@@ -479,6 +521,20 @@
       "demoId": "HyZJsWXVOc",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=chip&templateId=web-components-7wYRPSnEZH&assetSetId=dark&demoId=HyZJsWXVOc&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "chip",
+      "templateId": "angular-d9gqyQFThC",
+      "demoId": "fb6Vwa6Z5k",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=chip&templateId=angular-d9gqyQFThC&assetSetId=light&demoId=fb6Vwa6Z5k&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "chip",
+      "templateId": "angular-d9gqyQFThC",
+      "demoId": "fb6Vwa6Z5k",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=chip&templateId=angular-d9gqyQFThC&assetSetId=dark&demoId=fb6Vwa6Z5k&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "chip-item",
@@ -507,6 +563,20 @@
       "demoId": "DINJPi6iZ",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=chip-item&templateId=web-components-vegaZgkE47&assetSetId=dark&demoId=DINJPi6iZ&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "chip-item",
+      "templateId": "angular-H2h86F5wNR",
+      "demoId": "xsFAzpdZAH",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=chip-item&templateId=angular-H2h86F5wNR&assetSetId=light&demoId=xsFAzpdZAH&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "chip-item",
+      "templateId": "angular-H2h86F5wNR",
+      "demoId": "xsFAzpdZAH",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=chip-item&templateId=angular-H2h86F5wNR&assetSetId=dark&demoId=xsFAzpdZAH&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "circular-progress",
@@ -607,6 +677,20 @@
       "url": "/api/v1/render?patternId=expansion-panel&templateId=web-components-Vj98q2D8hw&assetSetId=dark&demoId=noRKlgh7xK&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "expansion-panel",
+      "templateId": "angular-QIglT9cfQ5",
+      "demoId": "ho54aGPH2V",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=expansion-panel&templateId=angular-QIglT9cfQ5&assetSetId=light&demoId=ho54aGPH2V&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "expansion-panel",
+      "templateId": "angular-QIglT9cfQ5",
+      "demoId": "ho54aGPH2V",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=expansion-panel&templateId=angular-QIglT9cfQ5&assetSetId=dark&demoId=ho54aGPH2V&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "expansion-panel-item",
       "templateId": "web-components-vBLifAApG",
       "demoId": "w0H1gm2jvp",
@@ -677,6 +761,20 @@
       "url": "/api/v1/render?patternId=form-field&templateId=web-components-I5Sx1HQnJ&assetSetId=dark&demoId=1cr3GRlfdT&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "form-field",
+      "templateId": "angular-CnxrMDH0L6",
+      "demoId": "IT0IGQTOzN",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=form-field&templateId=angular-CnxrMDH0L6&assetSetId=light&demoId=IT0IGQTOzN&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "form-field",
+      "templateId": "angular-CnxrMDH0L6",
+      "demoId": "IT0IGQTOzN",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=form-field&templateId=angular-CnxrMDH0L6&assetSetId=dark&demoId=IT0IGQTOzN&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "icon",
       "templateId": "web-components-N8bzRbfpuX",
       "demoId": "bn4zy44TYR",
@@ -731,6 +829,20 @@
       "demoId": "ezyQjAA-T1",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=icon&templateId=web-components-N8bzRbfpuX&assetSetId=dark&demoId=ezyQjAA-T1&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon",
+      "templateId": "angular-srTiVBJO6w",
+      "demoId": "9ijtuCyB64",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon&templateId=angular-srTiVBJO6w&assetSetId=light&demoId=9ijtuCyB64&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon",
+      "templateId": "angular-srTiVBJO6w",
+      "demoId": "9ijtuCyB64",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon&templateId=angular-srTiVBJO6w&assetSetId=dark&demoId=9ijtuCyB64&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "icon-button",
@@ -1027,6 +1139,20 @@
       "url": "/api/v1/render?patternId=notebook-cell&templateId=web-components-dlfSUMV1v&assetSetId=dark&demoId=H-H7-TnR4K&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "option",
+      "templateId": "angular-tOZognkt7v",
+      "demoId": "uySIMBZRt1",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=option&templateId=angular-tOZognkt7v&assetSetId=light&demoId=uySIMBZRt1&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "option",
+      "templateId": "angular-tOZognkt7v",
+      "demoId": "uySIMBZRt1",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=option&templateId=angular-tOZognkt7v&assetSetId=dark&demoId=uySIMBZRt1&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "radio",
       "templateId": "web-components-qk2MWcBipT",
       "demoId": "RMPpKHlzd",
@@ -1067,6 +1193,20 @@
       "demoId": "sWH6jqeBc",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=select&templateId=web-components-qWXTtv81jY&assetSetId=dark&demoId=sWH6jqeBc&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "select",
+      "templateId": "angular-n9X1RJ2v5c",
+      "demoId": "Go4ZYiw5NE",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=select&templateId=angular-n9X1RJ2v5c&assetSetId=light&demoId=Go4ZYiw5NE&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "select",
+      "templateId": "angular-n9X1RJ2v5c",
+      "demoId": "Go4ZYiw5NE",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=select&templateId=angular-n9X1RJ2v5c&assetSetId=dark&demoId=Go4ZYiw5NE&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "side-sheet",
@@ -1199,6 +1339,20 @@
       "url": "/api/v1/render?patternId=switch&templateId=web-components-tGj2TvSrpD&assetSetId=dark&demoId=U89p0LyOsP&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "switch",
+      "templateId": "angular-uAgdhZB5qu",
+      "demoId": "qkhGFl6eMn",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=switch&templateId=angular-uAgdhZB5qu&assetSetId=light&demoId=qkhGFl6eMn&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "switch",
+      "templateId": "angular-uAgdhZB5qu",
+      "demoId": "qkhGFl6eMn",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=switch&templateId=angular-uAgdhZB5qu&assetSetId=dark&demoId=qkhGFl6eMn&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "tab",
       "templateId": "web-components-1-Bf2NwL1T",
       "demoId": "3HxZQWfBi9",
@@ -1213,6 +1367,20 @@
       "url": "/api/v1/render?patternId=tab&templateId=web-components-1-Bf2NwL1T&assetSetId=dark&demoId=3HxZQWfBi9&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "tab",
+      "templateId": "angular-zXFWEiMoKj",
+      "demoId": "liIAA7AHaM",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=tab&templateId=angular-zXFWEiMoKj&assetSetId=light&demoId=liIAA7AHaM&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "tab",
+      "templateId": "angular-zXFWEiMoKj",
+      "demoId": "liIAA7AHaM",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=tab&templateId=angular-zXFWEiMoKj&assetSetId=dark&demoId=liIAA7AHaM&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "tabs",
       "templateId": "web-components-kjFGUA31tg",
       "demoId": "GOJxN1FZx",
@@ -1225,6 +1393,20 @@
       "demoId": "GOJxN1FZx",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=tabs&templateId=web-components-kjFGUA31tg&assetSetId=dark&demoId=GOJxN1FZx&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "tabs",
+      "templateId": "angular-80NRNjBCg",
+      "demoId": "iyRKsxaWa7",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=tabs&templateId=angular-80NRNjBCg&assetSetId=light&demoId=iyRKsxaWa7&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "tabs",
+      "templateId": "angular-80NRNjBCg",
+      "demoId": "iyRKsxaWa7",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=tabs&templateId=angular-80NRNjBCg&assetSetId=dark&demoId=iyRKsxaWa7&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "text",

@@ -1,0 +1,27 @@
+{
+  "id": "breadcrumb",
+  "title": "Breadcrumb",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "angular-AV1XyEgcDV",
+      "title": "Angular",
+      "path": "@covalent/core/breadcrumbs",
+      "alias": "TdBreadcrumbComponent",
+      "templateLanguageId": "angular",
+      "spec": {
+        "isInferred": true
+      },
+      "demoIds": ["fYUgXzxsB"],
+      "blockIds": ["cdIf-umWl3"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "template",
+      "id": "angular-AV1XyEgcDV"
+    }
+  ],
+  "subPages": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "fb6Vwa6Z5k",
+  "title": "Main",
+  "type": "data",
+  "patternId": "chip",
+  "templateId": "angular-d9gqyQFThC",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "chip-item",
+          "templateId": "angular-H2h86F5wNR",
+          "demoId": "Vgnqy37WLh"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "chip-item",
+          "templateId": "angular-H2h86F5wNR",
+          "demoId": "eARWwnOo3v"
+        }
+      ]
+    }
+  }
+}

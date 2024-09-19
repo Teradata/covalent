@@ -1,0 +1,21 @@
+{
+  "id": "xsFAzpdZAH",
+  "title": "Main",
+  "type": "data",
+  "patternId": "chip-item",
+  "templateId": "angular-H2h86F5wNR",
+  "data": {
+    "props": {
+      "selectable": true,
+      "selected": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Chip"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "uySIMBZRt1",
+  "title": "Main",
+  "type": "data",
+  "patternId": "option",
+  "templateId": "angular-tOZognkt7v",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Option 1"
+        }
+      ]
+    }
+  }
+}
