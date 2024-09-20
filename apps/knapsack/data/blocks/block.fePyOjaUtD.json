@@ -1,0 +1,54 @@
+{
+  "id": "fePyOjaUtD",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Identify a place to show the video",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "A video can be placed in the help window, on the main UI, in a modal dialog, and more. Each comes with size restrictions. ",
+              "type": "text"
+            },
+            {
+              "text": "Work with the content team",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://forms.office.com/pages/responsepage.aspx?id=qstRkWv8SE-Ju4xKcZghOORK7hViMKBHnzNFpaIK4pZUQlZQQVRYUTI5UEZDNE5LVFY0TDBEVFVETi4u&route=shorturl",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " to identify the best place to show the video in product. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
