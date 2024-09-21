@@ -1,0 +1,55 @@
+{
+  "id": "EwJmtEcMiN",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Follow Teradata's brand guidelines",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use the Inter font for all captions and lower thirds as well as all other text that appears on screen. To learn more details, go to ",
+              "type": "text"
+            },
+            {
+              "text": "Brand Resources",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://teradata.seismic.com/app#/doccenter/1bbd33d9-2b54-49c6-8ec3-ed5c6476c417/doc/%252Fdd8401e4c1-b845-177b-4658-8a724a8f4b22%252Fdd92e50d90-1686-51e9-967b-40de6345998d%252Flfaa938b98-3752-4869-b1da-0219a282d192//?mode=view",
+                    "class": null,
+                    "target": "_blank"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ", then select Teradata Brand Guidelines. The video section starts on page 50 in the brand guidelines.  ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

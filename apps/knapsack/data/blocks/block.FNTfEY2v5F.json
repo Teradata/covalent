@@ -1,0 +1,54 @@
+{
+  "id": "FNTfEY2v5F",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Provide a transcript ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "If your video is a step-by-step tutorial, consider transcribing the content or supplementing it with more substantial getting started and/or tutorial information. ",
+              "type": "text"
+            },
+            {
+              "text": "Work with the content team",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://forms.office.com/pages/responsepage.aspx?id=qstRkWv8SE-Ju4xKcZghOORK7hViMKBHnzNFpaIK4pZUQlZQQVRYUTI5UEZDNE5LVFY0TDBEVFVETi4u&route=shorturl",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " to ensure a transcript is properly designed and presented along with the video. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

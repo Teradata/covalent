@@ -1,0 +1,36 @@
+{
+  "id": "cJtUAcXL70",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Have a strategy for sustaining video quality",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Video content quickly goes out of date, as Teradata makes product and design changes regularly. It's also possible that updates are needed outside development cycles. Have a plan for maintaining and updating the video. The plan should include working with your content and design partners to monitor all video content and revise or remove as needed.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
