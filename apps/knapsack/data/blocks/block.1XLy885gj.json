@@ -1,0 +1,54 @@
+{
+  "id": "1XLy885gj",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Make it translatable",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Contact ",
+              "type": "text"
+            },
+            {
+              "text": "the translation team",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://forms.office.com/r/bhKteTkhaK",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " to incorporate translation guidelines into your video content.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

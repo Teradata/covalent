@@ -1,0 +1,36 @@
+{
+  "id": "EjgDbbdbp",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Should we have a video?",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Ideally, the product or feature experience shouldn’t need video content. Don’t use video to explain an unnecessarily complicated product or feature. Instead, work with your design and content partners to create a better product experience.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
