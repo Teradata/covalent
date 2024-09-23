@@ -28,22 +28,21 @@
               "type": "text"
             },
             {
-              "text": "Brand Resources",
+              "text": "Teradata Brand Guidelines",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "https://teradata.seismic.com/app#/doccenter/1bbd33d9-2b54-49c6-8ec3-ed5c6476c417/doc/%252Fdd8401e4c1-b845-177b-4658-8a724a8f4b22%252Fdd92e50d90-1686-51e9-967b-40de6345998d%252Flfaa938b98-3752-4869-b1da-0219a282d192//?mode=view",
-                    "class": null,
-                    "target": "_blank"
+                    "href": "https://teradata.seismic.com/app#/doccenter/dc7eb2cf-bd2e-462a-a056-fcc02c9fd2f2/doc/%252[…]-8fa2-c7ae6601f745//?mode=view&parentPath=sessionStorage",
+                    "class": null
                   }
                 }
               ]
             },
             {
-              "text": ", then select Teradata Brand Guidelines. The video section starts on page 50 in the brand guidelines.  ",
+              "text": ". The video guidelines start on page 50.  ",
               "type": "text"
             }
           ]
