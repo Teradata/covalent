@@ -4,9 +4,6 @@ on:
   pull_request:
     branches: [main, beta]
 
-env:
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-
 jobs:
   lint:
     runs-on: ubuntu-latest
