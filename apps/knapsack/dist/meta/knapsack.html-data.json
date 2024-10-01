@@ -830,7 +830,7 @@
       ],
       "attributes": [
         {
-          "name": "toggledOn",
+          "name": "on",
           "description": "boolean Whether the toggle is activated."
         },
         {
@@ -2469,6 +2469,17 @@
           "description": "How much left padding (px) to add for nested elements."
         }
       ]
+    },
+    {
+      "name": "div",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/prototypes/web-components"
+        }
+      ],
+      "attributes": []
     }
   ]
 }

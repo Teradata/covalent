@@ -1,0 +1,30 @@
+{
+  "id": "prototypes",
+  "title": "Prototyping",
+  "hideFromComponentBlocks": true,
+  "hideFromOverviewBlocks": true,
+  "templates": [
+    {
+      "id": "web-components",
+      "templateLanguageId": "web-components",
+      "title": "Web Components",
+      "path": "",
+      "alias": "div",
+      "spec": {
+        "isInferred": false,
+        "props": {
+          "type": "object",
+          "properties": {}
+        },
+        "slots": {
+          "default": {
+            "title": "Content"
+          }
+        }
+      },
+      "demoIds": [],
+      "blockIds": []
+    }
+  ],
+  "tabs": []
+}
