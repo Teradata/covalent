@@ -27,6 +27,8 @@ settings:
   favicon: https://knapsack.imgix.net/site/covalent/favicon-4v5hnagck0ico
   hideTitleInNavigation: false
   logoUrl: https://knapsack.imgix.net/site/covalent/teradata-zalegzixrisvg
+  prototyping:
+    patternId: prototypes
   theme:
     appearance:
       customFonts:
