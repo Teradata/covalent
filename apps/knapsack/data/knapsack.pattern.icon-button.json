@@ -65,6 +65,10 @@
     {
       "id": "web-components-ctiCe2sAX",
       "type": "template"
+    },
+    {
+      "id": "ZZZZ8to-1X",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -73,5 +77,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "ZZZZ8to-1X": {
+      "id": "ZZZZ8to-1X",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "6969:23357"
+    }
+  }
 }

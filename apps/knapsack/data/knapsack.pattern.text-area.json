@@ -143,6 +143,10 @@
     {
       "id": "web-components-48rzn99y9G",
       "type": "template"
+    },
+    {
+      "id": "EuDJQnkHNR",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -151,5 +155,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "EuDJQnkHNR": {
+      "id": "EuDJQnkHNR",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "10246:14340"
+    }
+  }
 }

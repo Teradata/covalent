@@ -72,6 +72,10 @@
     {
       "id": "web-components-FXCMXD35mF",
       "type": "template"
+    },
+    {
+      "id": "NauWS97jPX",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -80,5 +84,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "NauWS97jPX": {
+      "id": "NauWS97jPX",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7117:26047"
+    }
+  }
 }

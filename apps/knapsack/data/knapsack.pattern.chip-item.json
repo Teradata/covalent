@@ -65,6 +65,10 @@
     {
       "id": "web-components-vegaZgkE47",
       "type": "template"
+    },
+    {
+      "id": "iJdPOAibd",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -73,5 +77,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "iJdPOAibd": {
+      "id": "iJdPOAibd",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "8169:5802"
+    }
+  }
 }
