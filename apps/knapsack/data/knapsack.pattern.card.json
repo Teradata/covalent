@@ -91,12 +91,12 @@
       "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-mU8MX1FHrF"
+      "id": "web-components-mU8MX1FHrF",
+      "type": "template"
     },
     {
-      "type": "template",
-      "id": "angular-K2H0Gg5PuL"
+      "id": "angular-K2H0Gg5PuL",
+      "type": "template"
     }
   ],
   "subPages": [
@@ -105,5 +105,6 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {}
 }

@@ -67,6 +67,14 @@
     {
       "id": "web-components-erhVvpq9vk",
       "type": "template"
+    },
+    {
+      "id": "dWvnmmuED9",
+      "type": "designSrc"
+    },
+    {
+      "id": "3Q0j9r3kpe",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -75,5 +83,19 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "dWvnmmuED9": {
+      "id": "dWvnmmuED9",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "5446:160191"
+    },
+    "3Q0j9r3kpe": {
+      "id": "3Q0j9r3kpe",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "5446:160182"
+    }
+  }
 }

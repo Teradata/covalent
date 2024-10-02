@@ -1,17 +1,11 @@
 {
   "id": "prototypes",
   "title": "Prototyping",
-  "hideFromComponentBlocks": true,
-  "hideFromOverviewBlocks": true,
   "templates": [
     {
       "id": "web-components",
-      "templateLanguageId": "web-components",
-      "title": "Web Components",
       "path": "",
-      "alias": "div",
       "spec": {
-        "isInferred": false,
         "props": {
           "type": "object",
           "properties": {}
@@ -20,11 +14,17 @@
           "default": {
             "title": "Content"
           }
-        }
+        },
+        "isInferred": false
       },
+      "alias": "div",
+      "title": "Web Components",
       "demoIds": [],
-      "blockIds": []
+      "blockIds": [],
+      "templateLanguageId": "web-components"
     }
   ],
+  "hideFromOverviewBlocks": true,
+  "hideFromComponentBlocks": true,
   "tabs": []
 }
