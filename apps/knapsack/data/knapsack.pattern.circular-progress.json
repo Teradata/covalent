@@ -49,6 +49,10 @@
     {
       "id": "web-components-rw6v6c4fnU",
       "type": "template"
+    },
+    {
+      "id": "nv8bNXg2fT",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -61,5 +65,13 @@
   "description": "Visual indication of progress displayed in a circular format.",
   "statuses": {
     "main": "needsReview"
+  },
+  "designSrcComponentsById": {
+    "nv8bNXg2fT": {
+      "id": "nv8bNXg2fT",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7165:24290"
+    }
   }
 }

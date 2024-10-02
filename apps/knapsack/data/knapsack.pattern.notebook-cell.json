@@ -90,12 +90,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "xbdeEwaU3n"
+      "id": "xbdeEwaU3n",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-dlfSUMV1v"
+      "id": "web-components-dlfSUMV1v",
+      "type": "template"
     }
   ],
   "subPages": [

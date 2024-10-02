@@ -123,8 +123,12 @@
       "type": "template"
     },
     {
-      "type": "template",
-      "id": "angular-i3OR9O7kXg"
+      "id": "angular-i3OR9O7kXg",
+      "type": "template"
+    },
+    {
+      "id": "PDwrptfdiz",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -134,5 +138,12 @@
       "blockIds": ["eKyEb1kEVx"]
     }
   ],
-  "designSrcComponentsById": {}
+  "designSrcComponentsById": {
+    "PDwrptfdiz": {
+      "id": "PDwrptfdiz",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7073:36396"
+    }
+  }
 }
