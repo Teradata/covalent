@@ -1,0 +1,26 @@
+{
+  "id": "u-2Q9Ua9Z4",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "horizontalRule"
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Our customers are not likely to use social identity providers. Including only identity providers they are likely to use keeps the sentence brief.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
