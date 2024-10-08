@@ -12,7 +12,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Create the root user for your trial database.",
+                  "text": "Create the root user for your trial environment.",
                   "type": "text"
                 }
               ]

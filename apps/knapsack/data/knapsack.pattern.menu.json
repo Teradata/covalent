@@ -135,10 +135,6 @@
     {
       "id": "web-components-hY3y1MyhrP",
       "type": "template"
-    },
-    {
-      "id": "gNp0i-Fjga",
-      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -147,13 +143,5 @@
       "title": "Overview",
       "blockIds": []
     }
-  ],
-  "designSrcComponentsById": {
-    "gNp0i-Fjga": {
-      "id": "gNp0i-Fjga",
-      "title": "Figma Component",
-      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "7605:20819"
-    }
-  }
+  ]
 }

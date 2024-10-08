@@ -60,10 +60,6 @@
     {
       "id": "web-components-qk2MWcBipT",
       "type": "template"
-    },
-    {
-      "id": "Himm98WRdz",
-      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -72,13 +68,5 @@
       "title": "Overview",
       "blockIds": []
     }
-  ],
-  "designSrcComponentsById": {
-    "Himm98WRdz": {
-      "id": "Himm98WRdz",
-      "title": "Figma Component",
-      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "7165:23930"
-    }
-  }
+  ]
 }
