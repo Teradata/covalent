@@ -48,10 +48,6 @@
     {
       "id": "web-components-kjFGUA31tg",
       "type": "template"
-    },
-    {
-      "id": "Gof-VlgTwb",
-      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -60,13 +56,5 @@
       "title": "Overview",
       "blockIds": []
     }
-  ],
-  "designSrcComponentsById": {
-    "Gof-VlgTwb": {
-      "id": "Gof-VlgTwb",
-      "title": "Figma Component",
-      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "7190:18319"
-    }
-  }
+  ]
 }

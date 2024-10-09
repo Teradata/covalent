@@ -58,10 +58,6 @@
     {
       "id": "web-components-2ew8-hMQkv",
       "type": "template"
-    },
-    {
-      "id": "AN4bwM-91R",
-      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -70,13 +66,5 @@
       "title": "Overview",
       "blockIds": []
     }
-  ],
-  "designSrcComponentsById": {
-    "AN4bwM-91R": {
-      "id": "AN4bwM-91R",
-      "title": "Figma Component",
-      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "7165:24278"
-    }
-  }
+  ]
 }
