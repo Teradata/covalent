@@ -11,11 +11,11 @@
           },
           "content": [
             {
-              "text": "When you’re guiding the user to accomplish a goal through a set of tasks and do want to give them a sense of what to expect next at the end of the tasks, using “What’s next” ",
+              "text": "When you guide the user to accomplish a goal through a set of tasks, you can give them a sense of what to expect next using “What’s next” ",
               "type": "text"
             },
             {
-              "text": "without the question mark",
+              "text": "without the question mark.",
               "type": "text",
               "marks": [
                 {
@@ -24,7 +24,7 @@
               ]
             },
             {
-              "text": " can give an engaging end to the storytelling. It can be a simple and helpful transition from one context to the next. ",
+              "text": " This can provide an engaging end to the storytelling. It can be a simple and helpful transition from one context to the next. ",
               "type": "text"
             }
           ]

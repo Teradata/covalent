@@ -79,10 +79,6 @@
     {
       "id": "web-components-v3gk7O39kO",
       "type": "template"
-    },
-    {
-      "id": "4Vd-VH-e-B",
-      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -135,13 +131,5 @@
         "gYAVv4-IHV"
       ]
     }
-  ],
-  "designSrcComponentsById": {
-    "4Vd-VH-e-B": {
-      "id": "4Vd-VH-e-B",
-      "title": "Figma Component",
-      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "7955:62085"
-    }
-  }
+  ]
 }

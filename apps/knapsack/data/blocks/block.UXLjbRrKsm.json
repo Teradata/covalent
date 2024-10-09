@@ -1,0 +1,23 @@
+{
+  "id": "UXLjbRrKsm",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "During onboarding, inspire users and increase their confidence by being real. Empower them by telling them what they can do. Don’t overpromise or use hyperbole. That’s not real. And that’s about the product, not the user.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

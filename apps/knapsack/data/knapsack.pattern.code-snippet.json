@@ -67,12 +67,8 @@
       "type": "subPage"
     },
     {
-      "id": "web-components-MmKtwF24Vv",
-      "type": "template"
-    },
-    {
-      "id": "CkPZlPtwlo",
-      "type": "designSrc"
+      "type": "template",
+      "id": "web-components-MmKtwF24Vv"
     }
   ],
   "subPages": [
@@ -81,13 +77,5 @@
       "title": "Overview",
       "blockIds": []
     }
-  ],
-  "designSrcComponentsById": {
-    "CkPZlPtwlo": {
-      "id": "CkPZlPtwlo",
-      "title": "Figma Component",
-      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "7910:53810"
-    }
-  }
+  ]
 }

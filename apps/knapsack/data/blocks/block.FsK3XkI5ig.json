@@ -11,7 +11,7 @@
           },
           "content": [
             {
-              "text": "Teradata has received plenty of feedback that our users don’t understand our internal jargon such as “DBC.” Find ways to remove the jargon, or minimize the impact of jargon if faced with technical constraints. The content design solution here is meant to bridge the gap by using commonly understood terms in the industry, in this case, “root user,” and explain the task in a way that's easy to understand.",
+              "text": "Teradata has received plenty of feedback that our users don’t understand our internal jargon such as “DBC.” Find ways to remove the jargon, or minimize the impact of jargon if faced with technical constraints. The content design solution here is meant to bridge the gap by using commonly understood industry terms, in this case, “root user,” and explain the task in a way that's easy to understand.",
               "type": "text"
             }
           ]

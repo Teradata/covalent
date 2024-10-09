@@ -74,10 +74,6 @@
     {
       "id": "web-components-3ERE1Ai9lo",
       "type": "template"
-    },
-    {
-      "id": "iA15IHiSRY",
-      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -86,13 +82,5 @@
       "title": "Overview",
       "blockIds": []
     }
-  ],
-  "designSrcComponentsById": {
-    "iA15IHiSRY": {
-      "id": "iA15IHiSRY",
-      "title": "Figma Component",
-      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "7979:30644"
-    }
-  }
+  ]
 }

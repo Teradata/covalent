@@ -48,12 +48,12 @@
   ],
   "tabs": [
     {
-      "id": "mHOSWvq6PS",
-      "type": "subPage"
+      "type": "subPage",
+      "id": "mHOSWvq6PS"
     },
     {
-      "id": "web-components-JulJ63YyUz",
-      "type": "template"
+      "type": "template",
+      "id": "web-components-JulJ63YyUz"
     }
   ],
   "subPages": [

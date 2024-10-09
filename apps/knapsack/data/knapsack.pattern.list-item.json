@@ -111,10 +111,6 @@
     {
       "id": "web-components-ytRTf8wtxn",
       "type": "template"
-    },
-    {
-      "id": "mlmA3XF858",
-      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -123,13 +119,5 @@
       "title": "Overview",
       "blockIds": []
     }
-  ],
-  "designSrcComponentsById": {
-    "mlmA3XF858": {
-      "id": "mlmA3XF858",
-      "title": "Figma Component",
-      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "7088:35905"
-    }
-  }
+  ]
 }

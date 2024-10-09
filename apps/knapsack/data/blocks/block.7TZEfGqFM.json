@@ -1,0 +1,69 @@
+{
+  "id": "7TZEfGqFM",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Tone spectrum",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The tone spectrum is a mental model for you as you choose the right tone according to your user's situation in their product experience. The sliding gradient represents all possible situations throughout the user journey. We can't describe them all, because so many factors are at play. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "We call out 3 example points on the spectrum, and each aligns with a situation and tone guideline. The three points are not absolute. ",
+              "type": "text"
+            },
+            {
+              "text": "The right tone could come from a combination of them or points in between.",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use the guidelines to help you apply the right tone to common situations users encounter, and adapt them to other situations along the spectrum. Ultimately, use what you know about the user in the specific situation, and be ready to make a judgement call with the many factors at play. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
