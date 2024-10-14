@@ -1,3 +1,9 @@
+## [8.21.2](https://github.com/Teradata/covalent/compare/v8.21.1...v8.21.2) (2024-10-14)
+
+### Bug Fixes
+
+- **code-editor:** add disable scroll option for code editor ([#2258](https://github.com/Teradata/covalent/issues/2258)) ([e4f7001](https://github.com/Teradata/covalent/commit/e4f7001ea4d4cadff5b9724c58e731d7e8cad0bb))
+
 ## [8.21.1](https://github.com/Teradata/covalent/compare/v8.21.0...v8.21.1) (2024-09-19)
 
 ### Bug Fixes
