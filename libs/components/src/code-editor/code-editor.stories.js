@@ -26,13 +26,16 @@ export default {
     theme: 'cv-light',
     code: sqlContent,
     language: 'sql',
+    disableScroll: false,
   },
 };
 
-const Template = ({ theme, language, code }) => {
+const Template = ({ theme, language, code, disableScroll }) => {
   return `
   <div style="width: 800px; height: 100%">
-    <cv-code-editor language="${language}" theme="${theme}" code="${code}">
+    <cv-code-editor language="${language}" theme="${theme}" code="${code}" ${
+    disableScroll ? 'disableScroll' : ''
+  }>
     </cv-code-editor>
   </div>
    `;
