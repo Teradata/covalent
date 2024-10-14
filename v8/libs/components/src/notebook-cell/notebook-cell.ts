@@ -227,6 +227,7 @@ export class CovalentNotebookCell extends LitElement {
           .language="${this.language}"
           .options="${this.editorOptions}"
           .theme="${this.editorTheme}"
+          disableScroll
         ></cv-code-editor>`
       : html`<cv-code-snippet hideHeader .language="${this.language}"
           >${this.code}</cv-code-snippet

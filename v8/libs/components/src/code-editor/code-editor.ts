@@ -42,6 +42,10 @@ export class CovalentCodeEditor extends LitElement {
    */
   @property() code?: string;
   /**
+   * Disable scroll bar and set the editor height based on content
+   */
+  @property({ type: Boolean, reflect: true }) disableScroll?: boolean = false;
+  /**
    * Options that can be set for the editor
    */
   @property({ type: Object }) options?: editor.IEditorOptions &
@@ -155,10 +159,12 @@ export class CovalentCodeEditor extends LitElement {
         );
       });
 
-      // Adjust the height of the editor when content changes, to avoid vertical scroll bar
-      this.editor?.onDidContentSizeChange(() => {
-        this.adjustHeight();
-      });
+      if (this.disableScroll) {
+        // Adjust the height of the editor when content changes, to avoid vertical scroll bar
+        this.editor?.onDidContentSizeChange(() => {
+          this.adjustHeight();
+        });
+      }
 
       this.adjustHeight();
 
