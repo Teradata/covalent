@@ -7,8 +7,8 @@
 
   td-flavored-markdown {
     :not(pre) > code {
-      background: #1e1e21;
-      color: mat-color($mat-grey, 50);
+      background: map-get($background, app-bar);
+      color: mat-color($foreground, secondary-text);
     }
 
     .mat-checkbox-disabled {
