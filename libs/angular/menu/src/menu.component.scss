@@ -11,11 +11,6 @@ $td-menu-spacing: 8px !default;
 }
 
 :host ::ng-deep {
-  [td-menu-header] {
-    padding: $td-menu-spacing;
-    text-align: center;
-  }
-
   mat-list,
   mat-list[dense],
   mat-nav-list,
