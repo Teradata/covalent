@@ -424,6 +424,10 @@ $td-dark-theme: mat.private-deep-merge-all(
         $background,
         disabled-button
       )};
+    --mdc-list-list-item-leading-icon-color: #{mat-color($foreground, icon)};
+    --mdc-list-list-item-hover-leading-icon-color: var(
+      --mdc-list-list-item-leading-icon-color
+    );
 
     @include css-variable-theme-tokens($td-light-colors);
   }
