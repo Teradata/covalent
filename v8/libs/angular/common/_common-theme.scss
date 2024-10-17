@@ -6,6 +6,7 @@
   $background: map-get($theme, background);
 
   mat-list-item,
+  [mat-list-item],
   .mat-list-item-content {
     mat-icon {
       color: mat-color($foreground, icon);

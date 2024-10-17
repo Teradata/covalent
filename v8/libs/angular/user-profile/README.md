@@ -32,8 +32,7 @@ export class MyModule {}
 Basic Example:
 
 ```html
-<td-user-profile name="daffy duck" email="daffy.duck@teradata.com">
-</td-user-profile>
+<td-user-profile name="daffy duck" email="daffy.duck@teradata.com"> </td-user-profile>
 ```
 
 Example with all inputs and projected content:
@@ -46,14 +45,13 @@ Example with all inputs and projected content:
   <ng-container td-user-info-list>
     <mat-list-item>
       <mat-icon matListItemAvatar>account_balance</mat-icon>
-      <span matListItemLine>default</span>
+      <span matListItemTitle>default</span>
       <span matListItemLine>organization</span>
     </mat-list-item>
   </ng-container>
   <ng-container td-user-action-list>
     <button mat-list-item>
-      <span matListItemAvatar></span>
-      <span matListItemLine>Sign out</span>
+      <span matListItemTitle>Sign out</span>
     </button>
   </ng-container>
 </td-user-profile>
