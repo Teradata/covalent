@@ -1,5 +1,5 @@
 {
-  "id": "YH03wvIdG6",
+  "id": "0o8mwyfGej",
   "data": {
     "content": {
       "type": "doc",
@@ -11,25 +11,13 @@
           },
           "content": [
             {
-              "text": "Product vision",
+              "text": "Months",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "To deliver exceptional user experiences through whatever platform our customers choose to use",
-              "type": "text"
             }
           ]
         }

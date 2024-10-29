@@ -1,0 +1,94 @@
+{
+  "id": "2OYCPY3xf0",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "table",
+          "attrs": {
+            "equalColumns": true
+          },
+          "content": [
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "right"
+                      },
+                      "content": [
+                        {
+                          "text": "Next run (PT)",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "right"
+                      },
+                      "content": [
+                        {
+                          "text": "Today, 11:00 PM",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "right"
+                      },
+                      "content": [
+                        {
+                          "text": "Saturday, 20 January, 11:00 PM",
+                          "type": "text"
+                        },
+                        {
+                          "type": "hardBreak"
+                        },
+                        {
+                          "text": "Saturday, 13 January, 11:00 PM",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "table",
+  "size": "medium",
+  "spacing": "large"
+}

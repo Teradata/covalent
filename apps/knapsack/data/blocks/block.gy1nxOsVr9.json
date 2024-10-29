@@ -1,18 +1,17 @@
 {
-  "id": "4PzSKXxXkq",
+  "id": "gy1nxOsVr9",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Page-level banner",
+              "text": "If a time zone has a standard time and a daylight time, do not use  abbreviations that distinguish between them. Some time zones, that do not have a daylight time, have Standard (S) in the name of their year-round time.",
               "type": "text"
             }
           ]

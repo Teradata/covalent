@@ -1,0 +1,93 @@
+{
+  "id": "bWyVWnOJT2",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "table",
+          "attrs": {
+            "equalColumns": true
+          },
+          "content": [
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "right"
+                      },
+                      "content": [
+                        {
+                          "text": "Last update (PT)",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "right"
+                      },
+                      "content": [
+                        {
+                          "text": "2 minutes ago",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "right"
+                      },
+                      "content": [
+                        {
+                          "text": "Friday, 26 January, 07:00 AM",
+                          "type": "text"
+                        },
+                        {
+                          "type": "hardBreak"
+                        },
+                        {
+                          "text": "Friday, 26 January, 05:45 AM",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "table",
+  "size": "medium"
+}

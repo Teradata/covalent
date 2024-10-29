@@ -1,23 +1,19 @@
 {
-  "id": "YH03wvIdG6",
+  "id": "qR-vEg0ltF",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Product vision",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Charts or graphs",
+              "type": "text"
             }
           ]
         },
@@ -28,7 +24,7 @@
           },
           "content": [
             {
-              "text": "To deliver exceptional user experiences through whatever platform our customers choose to use",
+              "text": "Simplify data by adding the time zone to the legend, so it doesn’t repeat on each item. ",
               "type": "text"
             }
           ]
@@ -36,5 +32,7 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "spacing": "large",
+  "size": "small"
 }

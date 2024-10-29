@@ -1,23 +1,32 @@
 {
-  "id": "YH03wvIdG6",
+  "id": "XDAuFStqad",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Product vision",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Date",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The basics",
+              "type": "text"
             }
           ]
         },
@@ -28,7 +37,7 @@
           },
           "content": [
             {
-              "text": "To deliver exceptional user experiences through whatever platform our customers choose to use",
+              "text": "Use day-month-year order.",
               "type": "text"
             }
           ]
