@@ -80,26 +80,11 @@ byId:
     name: Color use
     parentId: guides
     path: /pages/color-use
-  colors:
-    id: colors
-    name: Dark
-    parentId: light
-    path: /pages/colors
-  colors-okgyf0rxrr:
-    id: colors-okgyf0rxrr
-    name: Light
-    parentId: light
-    path: /pages/colors-okgyf0rxrr
   components:
     id: components
     name: Components
     parentId: root
     path: /pages/components
-  dark:
-    id: dark
-    name: Dark
-    parentId: palettes-lm0uu73t4r
-    path: /pages/dark
   dialog:
     id: dialog
     name: Dialog
@@ -213,16 +198,6 @@ byId:
     name: Notebook cell
     parentId: test-page
     path: /pattern/notebook-cell
-  palettes:
-    id: palettes
-    name: Light
-    parentId: palettes-lm0uu73t4r
-    path: /pages/palettes
-  palettes-lm0uu73t4r:
-    id: palettes-lm0uu73t4r
-    name: Palettes
-    parentId: tokens
-    path: /pages/palettes-lm0uu73t4r
   product-and-ui:
     id: product-and-ui
     name: Product & UI
@@ -438,11 +413,6 @@ order:
   - launch-list
   - tokens
   - light
-  - colors-okgyf0rxrr
-  - colors
-  - palettes-lm0uu73t4r
-  - palettes
-  - dark
   - typography
   - writing
   - voice-and-tone

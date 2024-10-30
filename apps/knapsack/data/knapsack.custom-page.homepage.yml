@@ -7,15 +7,16 @@ settings:
   pageHeader:
     backgroundColor:
       type: design-token
-      tokenName: cv.theme.dark.colors.background
+      colorValue: ''
+      tokenName: darkbackground
     textColorTitle:
       type: design-token
-      tokenName: cv.theme.dark.colors.inverse-surface
+      tokenName: inverseonsurface
     textColorDescription:
       type: design-token
-      tokenName: cv.theme.dark.colors.inverse-surface
+      tokenName: inverseonsurface
     size: large
-    backgroundImage: https://knapsack.imgix.net/site/covalent/globe-dark-g7nfo60ljmsvg
+    backgroundImage: https://knapsack.imgix.net/site/covalent/globe-dark-fvairlvl-hsvg
     hideText: false
     backgroundSize: cover
     backgroundOverlay: true
