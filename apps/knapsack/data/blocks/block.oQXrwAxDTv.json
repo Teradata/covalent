@@ -10,7 +10,10 @@
         },
         "title": "See also: Color use"
       }
-    ]
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
   },
   "blockType": "shortcut-tiles",
   "header": {

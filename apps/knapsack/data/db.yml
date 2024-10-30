@@ -2,15 +2,16 @@ blocks:
   settings:
     guidelines:
       colorCaution:
-        tokenName: cv.theme.light.colors.caution
+        tokenName: caution
         type: design-token
       colorDo:
-        tokenName: cv.theme.light.colors.positive
+        tokenName: positive
         type: design-token
       colorDont:
-        tokenName: cv.theme.light.colors.negative
+        tokenName: negative
         type: design-token
       headerSize: h5
+    showHeaderByDefault: false
     tokens:
       nameDisplayFormat: cssVar
       rootFontSize: 16px
@@ -21,9 +22,10 @@ settings:
     files:
       - fileId: KvXVAmYdCVAS7hzkOa73Em
         name: Covalent principles
+        priorVersion: '5395896674'
         type: figma
-        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=5395896674
-        version: '5395896674'
+        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2144565088908853155
+        version: '2144565088908853155'
   favicon: https://knapsack.imgix.net/site/covalent/favicon-4v5hnagck0ico
   hideTitleInNavigation: false
   logoUrl: https://knapsack.imgix.net/site/covalent/teradata-zalegzixrisvg
@@ -163,3 +165,8 @@ settings:
           textTransform: inherit
     version: 10
   title: Covalent
+  tokens:
+    theming:
+      enabledRendererIds:
+        - web-components
+        - angular

@@ -23,11 +23,11 @@
       {
         "id": "07Xr7jDGMN",
         "link": {
-          "path": "#",
-          "external": false
+          "name": "Date and time",
+          "path": "/pages/date-and-time"
         },
-        "title": "Writing standards",
-        "description": "Coming soon"
+        "title": "Date and time",
+        "description": "Follow these guidelines for clarity, consistency, and accurate translation."
       }
     ],
     "gridStyles": {
