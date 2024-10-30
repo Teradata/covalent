@@ -1,23 +1,19 @@
 {
-  "id": "YH03wvIdG6",
+  "id": "1n5EI0yFsK",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Product vision",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "User preferences",
+              "type": "text"
             }
           ]
         },
@@ -28,7 +24,7 @@
           },
           "content": [
             {
-              "text": "To deliver exceptional user experiences through whatever platform our customers choose to use",
+              "text": "Depending on user account settings for dates and times, the formats users see on a UI might vary from UI content you create. When designing for a UI, consider user date and time options and available space.",
               "type": "text"
             }
           ]

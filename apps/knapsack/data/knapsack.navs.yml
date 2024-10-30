@@ -85,6 +85,11 @@ byId:
     name: Components
     parentId: root
     path: /pages/components
+  date-and-time:
+    id: date-and-time
+    name: Date and time
+    parentId: product-and-ui
+    path: /pages/date-and-time
   dialog:
     id: dialog
     name: Dialog
@@ -422,3 +427,4 @@ order:
   - split-button
   - word-list
   - video
+  - date-and-time

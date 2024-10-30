@@ -1,5 +1,5 @@
 {
-  "id": "noy0G2tShz",
+  "id": "1t7cGNHDfc",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,50 @@
           },
           "content": [
             {
-              "text": "Modal dialog",
+              "text": "Time period",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "To indicate a time period, use an ",
+              "type": "text"
+            },
+            {
+              "text": "en dash",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://www.w3schools.com/charsets/ref_utf_punctuation.asp",
+                    "class": null,
+                    "target": "_blank"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " (not a hyphen) with no spaces between the times. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For a 12-hour clock, include the AM or PM after both times.",
               "type": "text"
             }
           ]
@@ -30,7 +73,7 @@
                   },
                   "content": [
                     {
-                      "text": "User impact: High",
+                      "text": "7:00 AM–10:30 AM ",
                       "type": "text"
                     }
                   ]
@@ -47,7 +90,7 @@
                   },
                   "content": [
                     {
-                      "text": "Severity: High",
+                      "text": "8:00 AM–5:00 PM",
                       "type": "text"
                     }
                   ]
@@ -64,7 +107,7 @@
                   },
                   "content": [
                     {
-                      "text": "Style: Elaborate ",
+                      "text": "16:30–18:30",
                       "type": "text"
                     }
                   ]

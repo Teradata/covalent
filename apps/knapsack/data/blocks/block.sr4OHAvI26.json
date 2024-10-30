@@ -1,18 +1,17 @@
 {
-  "id": "4PzSKXxXkq",
+  "id": "sr4OHAvI26",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Page-level banner",
+              "text": "Use a comma to separate a day and date.",
               "type": "text"
             }
           ]

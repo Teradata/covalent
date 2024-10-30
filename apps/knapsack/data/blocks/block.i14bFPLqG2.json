@@ -1,5 +1,5 @@
 {
-  "id": "noy0G2tShz",
+  "id": "i14bFPLqG2",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,19 @@
           },
           "content": [
             {
-              "text": "Modal dialog",
+              "text": "Seconds",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Include seconds only if they are relevant and provide value to the user.",
               "type": "text"
             }
           ]
@@ -30,7 +42,7 @@
                   },
                   "content": [
                     {
-                      "text": "User impact: High",
+                      "text": "7:40:12 AM",
                       "type": "text"
                     }
                   ]
@@ -47,24 +59,7 @@
                   },
                   "content": [
                     {
-                      "text": "Severity: High",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Style: Elaborate ",
+                      "text": "07:40:12 ",
                       "type": "text"
                     }
                   ]

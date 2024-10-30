@@ -1,0 +1,15 @@
+{
+  "id": "drRXDJVl4s",
+  "data": {
+    "imageSize": "full",
+    "images": [
+      {
+        "src": "https://knapsack.imgix.net/site/covalent/charting-timezone-ebvlzdpt9dpng",
+        "caption": "charting--timezone.png"
+      }
+    ]
+  },
+  "blockType": "image-block",
+  "spacing": "large",
+  "size": "large"
+}

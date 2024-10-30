@@ -29,7 +29,12 @@
                       "content": [
                         {
                           "text": "Tone",
-                          "type": "text"
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -51,7 +56,12 @@
                       "content": [
                         {
                           "text": "What this means",
-                          "type": "text"
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
                         }
                       ]
                     }

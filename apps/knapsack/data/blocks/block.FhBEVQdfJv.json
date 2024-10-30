@@ -1,23 +1,19 @@
 {
-  "id": "YH03wvIdG6",
+  "id": "FhBEVQdfJv",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Product vision",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Units of time",
+              "type": "text"
             }
           ]
         },
@@ -28,7 +24,7 @@
           },
           "content": [
             {
-              "text": "To deliver exceptional user experiences through whatever platform our customers choose to use",
+              "text": "Spell out units of time if space is available. Otherwise use these abbreviations, using the longer ones if you can.",
               "type": "text"
             }
           ]
