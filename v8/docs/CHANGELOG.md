@@ -1,3 +1,9 @@
+# [8.22.0](https://github.com/Teradata/covalent/compare/v8.21.2...v8.22.0) (2024-10-17)
+
+### Features
+
+- **user-menu:** fixed styles for user menu profile ([#2259](https://github.com/Teradata/covalent/issues/2259)) ([242fff0](https://github.com/Teradata/covalent/commit/242fff0006eb3f882feecd0bcdff9c97b41ab730))
+
 ## [8.21.2](https://github.com/Teradata/covalent/compare/v8.21.1...v8.21.2) (2024-10-14)
 
 ### Bug Fixes
