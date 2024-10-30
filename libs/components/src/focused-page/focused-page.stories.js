@@ -8,7 +8,7 @@ import '../typography/typography';
 import '../icon/icon';
 
 export default {
-  title: 'Components/Focused Page',
+  title: 'Components/Focused page',
   argTypes: {},
   args: {
     helpOpen: false,

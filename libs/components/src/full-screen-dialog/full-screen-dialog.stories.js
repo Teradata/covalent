@@ -9,7 +9,7 @@ import '../typography/typography';
 import '../icon/icon';
 
 export default {
-  title: 'Components/Full-screen Dialog',
+  title: 'Components/Full-screen dialog',
   argTypes: {},
   args: {
     helpOpen: false,
