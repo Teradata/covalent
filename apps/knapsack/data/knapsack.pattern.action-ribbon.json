@@ -79,6 +79,10 @@
     {
       "id": "web-components-v3gk7O39kO",
       "type": "template"
+    },
+    {
+      "id": "DGBIlJlEO",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -99,7 +103,7 @@
         "466eQvPys",
         "oQXrwAxDTv",
         "tISrkHkfAA",
-        "I9didIrYoT",
+        "B5gqAkUZgi",
         "jrGP4hwjgV",
         "ywaB7Egy1N",
         "tmMKME3X8o",
@@ -131,5 +135,13 @@
         "gYAVv4-IHV"
       ]
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "DGBIlJlEO": {
+      "id": "DGBIlJlEO",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7955:62085"
+    }
+  }
 }
