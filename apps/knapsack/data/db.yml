@@ -27,8 +27,8 @@ settings:
         url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2144565088908853155
         version: '2144565088908853155'
   favicon: https://knapsack.imgix.net/site/covalent/favicon-4v5hnagck0ico
-  hideTitleInNavigation: false
-  logoUrl: https://knapsack.imgix.net/site/covalent/teradata-zalegzixrisvg
+  hideTitleInNavigation: true
+  logoUrl: https://knapsack.imgix.net/site/covalent/td-covalent-wordmark-1dsxavbwltpng
   theme:
     appearance:
       customFonts:
