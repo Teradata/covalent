@@ -1,18 +1,17 @@
 {
-  "id": "4PzSKXxXkq",
+  "id": "65QSEPpUqD",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Page-level banner",
+              "text": "Don’t write dates with numerals only. ",
               "type": "text"
             }
           ]
