@@ -65,11 +65,6 @@ byId:
     name: Circular progress
     parentId: components
     path: /pattern/circular-progress
-  code-editor:
-    id: code-editor
-    name: Code editor
-    parentId: test-page
-    path: /pattern/code-editor
   code-snippet:
     id: code-snippet
     name: Code snippet
@@ -80,6 +75,11 @@ byId:
     name: Color use
     parentId: guides
     path: /pages/color-use
+  colors:
+    id: colors
+    name: Colors
+    parentId: tokens
+    path: /pages/colors
   components:
     id: components
     name: Components
@@ -156,11 +156,6 @@ byId:
     name: Launch list
     parentId: components
     path: /pages/launch-list
-  light:
-    id: light
-    name: Colors
-    parentId: tokens
-    path: /pages/light
   linear-progress:
     id: linear-progress
     name: Linear progress
@@ -193,11 +188,6 @@ byId:
     name: New pattern process
     parentId: guides
     path: /pages/new-pattern-process
-  notebook-cell:
-    id: notebook-cell
-    name: Notebook cell
-    parentId: test-page
-    path: /pattern/notebook-cell
   product-and-ui:
     id: product-and-ui
     name: Product & UI
@@ -364,9 +354,9 @@ order:
   - badge
   - breadcrumbs
   - button
+  - split-button
   - card
   - checkbox
-  - code-editor
   - code-snippet
   - chip
   - chip-item
@@ -388,7 +378,6 @@ order:
   - check-list-item
   - radio-list-item
   - menu
-  - notebook-cell
   - radio
   - select
   - side-sheet
@@ -412,13 +401,12 @@ order:
   - text
   - launch-list
   - tokens
-  - light
+  - colors
   - typography
   - writing
   - voice-and-tone
+  - adapting-tone-by-situation
   - product-and-ui
   - error-messages
-  - adapting-tone-by-situation
-  - split-button
-  - word-list
   - video
+  - word-list
