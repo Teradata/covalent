@@ -1,5 +1,5 @@
 {
-  "id": "noy0G2tShz",
+  "id": "ACgAozxv6",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,32 @@
           },
           "content": [
             {
-              "text": "Modal dialog",
+              "text": "Date and time separation",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "In prose, use ",
+              "type": "text"
+            },
+            {
+              "text": "at",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ".",
               "type": "text"
             }
           ]
@@ -30,13 +55,36 @@
                   },
                   "content": [
                     {
-                      "text": "User impact: High",
+                      "text": "Thursday, 17 October 2024 at 2:00 PM",
                       "type": "text"
                     }
                   ]
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "On a list page or  log, use a comma.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
             {
               "type": "listItem",
               "content": [
@@ -47,24 +95,7 @@
                   },
                   "content": [
                     {
-                      "text": "Severity: High",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Style: Elaborate ",
+                      "text": "17 Oct 2024, 2:00 PM",
                       "type": "text"
                     }
                   ]

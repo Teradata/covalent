@@ -1,5 +1,5 @@
 {
-  "id": "YH03wvIdG6",
+  "id": "blhbLMNKWC",
   "data": {
     "content": {
       "type": "doc",
@@ -11,13 +11,8 @@
           },
           "content": [
             {
-              "text": "Product vision",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "When possible, use the day's or month's full name. ",
+              "type": "text"
             }
           ]
         },
@@ -28,7 +23,7 @@
           },
           "content": [
             {
-              "text": "To deliver exceptional user experiences through whatever platform our customers choose to use",
+              "text": "If space is limited, use these 3-letter abbreviations. If you  include the month and the day, and need to abbreviate, abbreviate both.",
               "type": "text"
             }
           ]

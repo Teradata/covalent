@@ -1,18 +1,17 @@
 {
-  "id": "4PzSKXxXkq",
+  "id": "GkmIUqna",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Page-level banner",
+              "text": "Use our monospaced typeface to make sure content aligns well for easy comparison.",
               "type": "text"
             }
           ]

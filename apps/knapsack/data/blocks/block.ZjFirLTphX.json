@@ -1,18 +1,17 @@
 {
-  "id": "MVUbPSxVh",
+  "id": "ZjFirLTphX",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 3,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Stay neutral",
+              "text": "Mon",
               "type": "text"
             }
           ]
@@ -24,33 +23,7 @@
           },
           "content": [
             {
-              "text": "Be supportive and transparent, but stay neutral. Keep a neutral tone to avoid escalating an already-tense situation. This means to focus on communicating helpful information and avoid making them feel something by keeping our emotion in check.",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 3,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Words to avoid",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 4,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "sorry ",
+              "text": "Tue",
               "type": "text"
             }
           ]
@@ -62,7 +35,7 @@
           },
           "content": [
             {
-              "text": "Avoid saying \"sorry.\" Saying it implies an emotion the user may not be feeling. How we feel is irrelevant in error situations. The most important thing is to communicate what happened and how to fix it.",
+              "text": "Wed",
               "type": "text"
             }
           ]
@@ -74,7 +47,43 @@
           },
           "content": [
             {
-              "text": "Exception: Save “sorry” for grave errors, for example, when there’s data loss.",
+              "text": "Thu",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Fri",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Sat",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Sun",
               "type": "text"
             }
           ]
@@ -82,5 +91,7 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "size": "small",
+  "blockType": "text-editor",
+  "spacing": "small"
 }

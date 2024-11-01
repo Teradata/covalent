@@ -1,5 +1,5 @@
 {
-  "id": "noy0G2tShz",
+  "id": "RTT-awnhs",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,31 @@
           },
           "content": [
             {
-              "text": "Modal dialog",
+              "text": "24-hour format",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use numerals without AM or PM. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For hours under 10, include the leading 0. ",
               "type": "text"
             }
           ]
@@ -30,7 +54,7 @@
                   },
                   "content": [
                     {
-                      "text": "User impact: High",
+                      "text": "07:00",
                       "type": "text"
                     }
                   ]
@@ -47,29 +71,42 @@
                   },
                   "content": [
                     {
-                      "text": "Severity: High",
+                      "text": "13:45",
                       "type": "text"
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Tables have ",
+              "type": "text"
+            },
+            {
+              "text": "their own standards",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#tables",
+                    "class": null
+                  }
                 }
               ]
             },
             {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Style: Elaborate ",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
+              "text": " for leading zeros.",
+              "type": "text"
             }
           ]
         }

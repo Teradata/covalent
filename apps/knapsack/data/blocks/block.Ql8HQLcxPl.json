@@ -1,5 +1,5 @@
 {
-  "id": "EwJmtEcMiN",
+  "id": "Ql8HQLcxPl",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Follow the Teradata brand guidelines",
+              "text": "Date range",
               "type": "text"
             }
           ]
@@ -24,25 +24,26 @@
           },
           "content": [
             {
-              "text": "Use the Inter font for all captions and lower thirds as well as all other text that appears on screen. To learn more details, go to ",
+              "text": "To indicate a date range, use an ",
               "type": "text"
             },
             {
-              "text": "Brand Resources",
+              "text": "en dash",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "https://teradata.seismic.com/app#/doccenter/1bbd33d9-2b54-49c6-8ec3-ed5c6476c417/doc/%252Fdd8401e4c1-b845-177b-4658-8a724a8f4b22%252Fdd92e50d90-1686-51e9-967b-40de6345998d%252Flfaa938b98-3752-4869-b1da-0219a282d192//?mode=view",
-                    "class": null
+                    "href": "https://www.w3schools.com/charsets/ref_utf_punctuation.asp",
+                    "class": null,
+                    "target": "_blank"
                   }
                 }
               ]
             },
             {
-              "text": " (employees access only), then select the Teradata Brand Guidelines. In the brand guidelines, see the video section starting on page 50.  ",
+              "text": " (not a hyphen) with no spaces around it.",
               "type": "text"
             }
           ]

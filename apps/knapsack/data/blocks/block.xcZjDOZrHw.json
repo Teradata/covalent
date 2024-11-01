@@ -1,5 +1,5 @@
 {
-  "id": "noy0G2tShz",
+  "id": "xcZjDOZrHw",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,19 @@
           },
           "content": [
             {
-              "text": "Modal dialog",
+              "text": "Time zone",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "To include the time zone, use its abbreviation. For a 12-hour format, put the abbreviation after the AM or PM.",
               "type": "text"
             }
           ]
@@ -30,7 +42,7 @@
                   },
                   "content": [
                     {
-                      "text": "User impact: High",
+                      "text": "16:14 IST",
                       "type": "text"
                     }
                   ]
@@ -47,24 +59,7 @@
                   },
                   "content": [
                     {
-                      "text": "Severity: High",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Style: Elaborate ",
+                      "text": "4:00 PM CET",
                       "type": "text"
                     }
                   ]

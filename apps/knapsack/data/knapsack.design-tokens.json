@@ -11080,24 +11080,24 @@
     "$type": "color",
     "$value": "#F38800"
   },
-  "inverseonsurface": {
+  "inverse-background": {
+    "$type": "color",
+    "$value": "#1E1D1E"
+  },
+  "inverse-on-surface": {
     "$type": "color",
     "$value": "#F1F3F8"
   },
-  "inversesurface": {
+  "inverse-surface": {
     "$type": "color",
     "$value": "#3E4557"
   },
-  "onsurface": {
-    "$type": "color",
-    "$value": "#00233C"
-  },
-  "onsurfacevariant": {
+  "on-surface-variant": {
     "$type": "color",
     "$value": "#59627B"
   },
-  "darkbackground": {
+  "on-surface": {
     "$type": "color",
-    "$value": "#1E1D1E"
+    "$value": "#00233C"
   }
 }

@@ -1,18 +1,17 @@
 {
-  "id": "4PzSKXxXkq",
+  "id": "CFSgXjtwpl",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Page-level banner",
+              "text": "In prose, for days under 10, do not include a leading 0. ",
               "type": "text"
             }
           ]

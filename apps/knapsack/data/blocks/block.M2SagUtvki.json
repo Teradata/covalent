@@ -1,18 +1,17 @@
 {
-  "id": "4PzSKXxXkq",
+  "id": "M2SagUtvki",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Page-level banner",
+              "text": "Use 4 digits for the year.",
               "type": "text"
             }
           ]
