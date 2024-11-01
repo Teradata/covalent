@@ -5,3 +5,15 @@ blockIds:
 description: >-
   Our design system provides guidance for content designers, technical publication strategists, and anyone else who
   writes for Teradata products.
+settings:
+  pageHeader:
+    size: medium
+    backgroundColor:
+      type: design-token
+      tokenName: inversesurface
+    textColorDescription:
+      type: design-token
+      tokenName: inverseonsurface
+    textColorTitle:
+      type: design-token
+      tokenName: inverseonsurface

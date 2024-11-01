@@ -2,7 +2,3 @@ title: Typography
 id: typography
 blockIds:
   - qNXhstEiku
-settings:
-  pageHeader:
-    backgroundOverlay: false
-    backgroundSize: cover

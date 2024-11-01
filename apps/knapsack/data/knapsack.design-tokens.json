@@ -11080,24 +11080,24 @@
     "$type": "color",
     "$value": "#F38800"
   },
-  "inverse-background": {
-    "$type": "color",
-    "$value": "#1E1D1E"
-  },
-  "inverse-on-surface": {
-    "$type": "color",
-    "$value": "#F1F3F8"
-  },
-  "inverse-surface": {
-    "$type": "color",
-    "$value": "#3E4557"
-  },
-  "on-surface-variant": {
-    "$type": "color",
-    "$value": "#59627B"
-  },
   "on-surface": {
     "$type": "color",
     "$value": "#00233C"
+  },
+  "inversesurface": {
+    "$type": "color",
+    "$value": "#3E4557"
+  },
+  "onsurfacevariant": {
+    "$type": "color",
+    "$value": "#59627B"
+  },
+  "inversebackground": {
+    "$type": "color",
+    "$value": "#1E1D1E"
+  },
+  "inverseonsurface": {
+    "$type": "color",
+    "$value": "#F1F3F8"
   }
 }
