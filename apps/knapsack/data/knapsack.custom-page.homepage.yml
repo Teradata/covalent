@@ -8,13 +8,13 @@ settings:
     backgroundColor:
       type: design-token
       colorValue: ''
-      tokenName: darkbackground
+      tokenName: inverse-background
     textColorTitle:
       type: design-token
-      tokenName: inverseonsurface
+      tokenName: inverse-on-surface
     textColorDescription:
       type: design-token
-      tokenName: inverseonsurface
+      tokenName: inverse-on-surface
     size: large
     backgroundImage: https://knapsack.imgix.net/site/covalent/globe-dark-fvairlvl-hsvg
     hideText: false

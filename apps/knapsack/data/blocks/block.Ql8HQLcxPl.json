@@ -43,7 +43,7 @@
               ]
             },
             {
-              "text": " (not a hyphen) with spaces around it.",
+              "text": " (not a hyphen) with no spaces around it.",
               "type": "text"
             }
           ]
