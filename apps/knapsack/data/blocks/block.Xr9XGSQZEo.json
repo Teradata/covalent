@@ -495,5 +495,6 @@
       ]
     }
   },
-  "blockType": "table"
+  "blockType": "table",
+  "spacing": "large"
 }

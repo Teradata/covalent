@@ -8,10 +8,10 @@ settings:
     backgroundColor:
       type: design-token
       colorValue: ''
-      tokenName: inverse-background
+      tokenName: inversebackground
     textColorTitle:
       type: design-token
-      tokenName: inverse-on-surface
+      tokenName: inverseonsurface
     textColorDescription:
       type: design-token
       tokenName: inverse-on-surface
