@@ -1,6 +1,7 @@
-import { css, html, LitElement, TemplateResult, unsafeCSS } from 'lit';
+import { css, html, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './full-screen-dialog.scss?inline';
+import sideSheetStyles from '../side-sheet/side-sheet.scss?inline';
 import CovalentDialog from '../dialog/dialog';
 import '../focused-page/focused-page';
 
@@ -11,25 +12,14 @@ import '../focused-page/focused-page';
  */
 
 @customElement('cv-full-screen-dialog')
-export class CovalentFullscreenDialog extends LitElement {
+export class CovalentFullscreenDialog extends CovalentDialog {
   static override styles = [
     css`
-      ${unsafeCSS(CovalentDialog.styles)} ${unsafeCSS(styles)}
+      ${unsafeCSS(CovalentDialog.styles)} ${unsafeCSS(
+        sideSheetStyles
+      )} ${unsafeCSS(styles)}
     `,
   ];
-
-  /**
-   * Whether the component is open
-   */
-  @property({ type: Boolean, reflect: true })
-  open = false;
-
-  /**
-   * Action to be taken when escape button is clicked.
-   * Set it to '' to prevent any action.
-   */
-  @property({ type: String })
-  escapeKeyAction = 'close';
 
   /**
    * Whether the help section is open or not
@@ -43,49 +33,48 @@ export class CovalentFullscreenDialog extends LitElement {
   @property({ type: Boolean, reflect: true })
   helpResizable = false;
 
-  private _handleClose(): void {
-    this.open = false;
+  /**
+   * Since the default, action slots of mdc-dialog have been replaced with the focused page component,
+   * override this method to return focused page as the initial focus element
+   */
+  protected override getInitialFocusEl(): HTMLElement | null {
+    const initFocusSelector = `[${this.initialFocusAttribute}]`;
+
+    // only search light DOM. This typically handles all the cases
+    const lightDomQs = this.querySelector(initFocusSelector);
+
+    if (lightDomQs) {
+      return lightDomQs as HTMLElement;
+    }
+
+    const focusedPage = this.renderRoot.querySelector('cv-focused-page');
+    return focusedPage;
   }
 
-  protected firstUpdated(): void {
-    const dialog = this.renderRoot.querySelector('cv-dialog')?.shadowRoot;
-    const styles = `
-        .mdc-dialog--opening .mdc-dialog__container {
-          transform: translate(100%, 0);
-          transition: transform 150ms cubic-bezier(0.4, 0, 1, 1);
-        }
-  
-        .mdc-dialog--closing .mdc-dialog__container {
-          opacity: 1;
-          transform: translate(100%, 0);
-          transition: transform 150ms cubic-bezier(0, 0, 0.2, 1);
-        }
-      `;
-
-    // Adding styles for the ease effect when component is opened
-    const styleElement = document.createElement('style');
-    styleElement.textContent = styles;
-    dialog?.appendChild(styleElement);
-  }
-
-  protected render(): TemplateResult<1> {
-    return html`<cv-dialog
-      .open="${this.open}"
-      hideActions
-      scrumclickAction=""
-      escapeKeyAction="${this.escapeKeyAction}"
-      defaultAction="${this.escapeKeyAction}"
-      @closed="${this._handleClose}"
+  protected override render(): TemplateResult<1> {
+    return html` <div
+      class="mdc-dialog"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="title"
+      aria-describedby="content"
     >
-      <cv-focused-page
-        .helpOpen="${this.helpOpen}"
-        .helpResizable="${this.helpResizable}"
-        .hideTopBorder="${true}"
-      >
-        <slot></slot>
-        <slot name="help" slot="help"> </slot>
-      </cv-focused-page>
-    </cv-dialog>`;
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface">
+          <div id="content" class="mdc-dialog__content">
+            <cv-focused-page
+              .helpOpen="${this.helpOpen}"
+              .helpResizable="${this.helpResizable}"
+              .hideTopBorder="${true}"
+            >
+              <slot></slot>
+              <slot name="help" slot="help"> </slot>
+            </cv-focused-page>
+          </div>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>`;
   }
 }
 
