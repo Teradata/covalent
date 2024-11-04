@@ -24,14 +24,7 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
-      const helpCloseButton = document.body.querySelector('.help-close');
       const helpToggleButton = document.body.querySelector('.help-toggle');
-      helpCloseButton.addEventListener('click', () => {
-        const dialog = document.body.querySelector('#focused-page');
-        dialog.helpOpen = false;
-        helpToggleButton.on = false;
-        helpToggleButton.toggledOn = false;
-      });
 
       helpToggleButton.addEventListener('click', () => {
         const dialog = document.body.querySelector('#focused-page');
@@ -50,9 +43,7 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
     
     <cv-toolbar>
         <span slot="title">
-            <cv-typography scale="headline4">
-                Connect data source
-            </cv-typography>
+            Connect data source
         </span>
         <cv-icon-button-toggle onIcon="help" offIcon="help" class="help-toggle"
             slot="actionItems"></cv-icon-button-toggle>
@@ -129,7 +120,6 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
         <cv-toolbar sticky>
             <span slot="title" style="padding-left: 4px;">Help</span>
             <cv-icon-button slot="actionItems" icon="undock" covalent-icons></cv-icon-button>
-            <cv-icon-button slot="actionItems" icon="close" class="help-close"></cv-icon-button>
         </cv-toolbar>
         <div style="padding: 16px">
             <cv-typography scale="headline5">

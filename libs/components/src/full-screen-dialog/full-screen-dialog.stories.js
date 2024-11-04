@@ -24,7 +24,6 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
     'DOMContentLoaded',
     () => {
       const button = document.body.querySelector('#dialog-button');
-      const helpCloseButton = document.body.querySelector('.help-close');
       const helpToggleButton = document.body.querySelector('.help-toggle');
       const fullscreenCloseButton = document.body.querySelector(
         '.full-screen-dialog-close'
@@ -34,17 +33,11 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
         dialog.open = true;
       });
 
-      helpCloseButton.addEventListener('click', () => {
-        const dialog = document.body.querySelector('#dialog1');
-        dialog.helpOpen = false;
-        helpToggleButton.on = false;
-        helpToggleButton.toggledOn = false;
-      });
-
       helpToggleButton.addEventListener('click', () => {
         const dialog = document.body.querySelector('#dialog1');
         dialog.helpOpen = !dialog.helpOpen;
       });
+
       fullscreenCloseButton.addEventListener('click', () => {
         const dialog = document.body.querySelector('#dialog1');
         dialog.open = false;
@@ -65,9 +58,7 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
     
     <cv-toolbar>
         <span slot="title">
-            <cv-typography scale="headline4">
-                Connect data source
-            </cv-typography>
+          Connect data source
         </span>
         <cv-icon-button-toggle onIcon="help" offIcon="help" class="help-toggle"
             slot="actionItems"></cv-icon-button-toggle>
@@ -146,7 +137,6 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
         <cv-toolbar sticky>
             <span slot="title" style="padding-left: 4px;">Help</span>
             <cv-icon-button slot="actionItems" icon="undock" covalent-icons></cv-icon-button>
-            <cv-icon-button slot="actionItems" icon="close" class="help-close"></cv-icon-button>
         </cv-toolbar>
         <div style="padding: 16px">
             <cv-typography scale="headline5">
