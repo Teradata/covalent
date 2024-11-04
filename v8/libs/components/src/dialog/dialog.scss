@@ -1,6 +1,17 @@
-
 :host {
   --mdc-dialog-heading-ink-color: var(--mdc-theme-text-primary-on-background);
   --mdc-dialog-content-ink-color: var(--mdc-theme-text-primary-on-background);
-  --mdc-dialog-scroll-divider-color:  var(--mdc-theme-border);
+  --mdc-dialog-scroll-divider-color: var(--mdc-theme-border);
+
+  // Allow consumer to set border radius and height of the dialog
+  .mdc-dialog .mdc-dialog__surface {
+    border-radius: var(--cv-dialog-border-radius, var(--mdc-shape-medium, 4));
+    min-height: var(--mdc-dialog-min-height);
+  }
+
+  // Allow consumer to set padding of the dialog content
+  .mdc-dialog .mdc-dialog__content {
+    padding: var(--cv-dialog-vertical-padding, 20px)
+      var(--cv-dialog-horizontal-padding, 24px);
+  }
 }
