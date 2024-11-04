@@ -1,3 +1,16 @@
+# [8.23.0](https://github.com/Teradata/covalent/compare/v8.22.0...v8.23.0) (2024-11-04)
+
+### Bug Fixes
+
+- **components:** change full-screen dialog implementation ([67f10f7](https://github.com/Teradata/covalent/commit/67f10f7e06982d3d79f3e5497ca83af14fc36037))
+- **full-screen-dialog:** remove help close button ([5a32bcd](https://github.com/Teradata/covalent/commit/5a32bcd1c9f0ffa1cfc9f84c17c914667dc368dd))
+- **storybook:** update toggled state in fullscreen dialog ([c9ee07b](https://github.com/Teradata/covalent/commit/c9ee07b9d297017d6b4e16ef7e1755d07b3aacab))
+- **styles:** fix style lint errors ([da44e53](https://github.com/Teradata/covalent/commit/da44e53538334fc62b0df410947ea3873c3cca44))
+
+### Features
+
+- **components:** full screen dialog and focused page web components ([32c6c73](https://github.com/Teradata/covalent/commit/32c6c738a757d6ccad59c28594000853e305b8f4))
+
 # [8.22.0](https://github.com/Teradata/covalent/compare/v8.21.2...v8.22.0) (2024-10-17)
 
 ### Features
