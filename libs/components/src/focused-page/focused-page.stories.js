@@ -25,11 +25,14 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
     'DOMContentLoaded',
     () => {
       const helpCloseButton = document.body.querySelector('.help-close');
+      const helpToggleButton = document.body.querySelector('.help-toggle');
       helpCloseButton.addEventListener('click', () => {
         const dialog = document.body.querySelector('#focused-page');
         dialog.helpOpen = false;
+        helpToggleButton.on = false;
+        helpToggleButton.toggledOn = false;
       });
-      const helpToggleButton = document.body.querySelector('.help-toggle');
+
       helpToggleButton.addEventListener('click', () => {
         const dialog = document.body.querySelector('#focused-page');
         dialog.helpOpen = !dialog.helpOpen;
@@ -44,81 +47,80 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
   }${helpOpen ? ' helpOpen' : ''}${hideTopBorder ? ' hideTopBorder' : ''}>
     <!-- Content to be rendered in the focused page component -->
     <!-- Replace with any content as desired -->
-    <div style="margin: 0.5rem;">
-        <cv-toolbar>
-            <span slot="title">
-                <cv-typography scale="headline4">
-                    Connect data source
-                </cv-typography>
-            </span>
-            <cv-icon-button-toggle onIcon="help" offIcon="help" class="help-toggle"
-                slot="actionItems"></cv-icon-button-toggle>
-        </cv-toolbar>
-        <div style="display:flex; gap: 3rem; flex-wrap: wrap; padding: 2rem 1rem 1.5rem; max-width: 1200px">
-            <div>
-                <div style="display:flex;">
-                    <span>
-                        <cv-icon-button-toggle onIcon="info" offIcon="info" toggledOn></cv-icon-button-toggle>
-                    </span>
-                    <div style="display: inline-block; margin: 0 0 1rem 1rem;">
-                        <cv-typography scale="subtitle1">
-                            Select model
-                        </cv-typography>
-                        <cv-typography scale="caption">
-                            Select the industry data model for your organization
-                        </cv-typography>
-                    </div>
-                </div>
-                <div style="display:flex; margin-top: 1rem;">
-                    <span>
-                        <cv-icon-button-toggle onIcon="info" offIcon="info" toggledOn></cv-icon-button-toggle>
-                    </span>
-                    <div style="display: inline-block; margin: 0 0 1rem 1rem;">
-                        <cv-typography scale="subtitle1">
-                            Review details
-                        </cv-typography>
-                        <cv-typography scale="caption">
-                            Preview the selected model and sample schema
-                        </cv-typography>
-                    </div>
-                </div>
-                <div style="display:flex; margin-top: 1rem;">
-                    <span>
-                        <cv-icon-button-toggle onIcon="info" offIcon="info" toggledOn></cv-icon-button-toggle>
-                    </span>
-                    <div style="display: inline-block; margin: 0 0 1rem 1rem;">
-                        <cv-typography scale="subtitle1">
-                            Install
-                        </cv-typography>
-                        <cv-typography scale="caption">
-                            Acknowledge creation of database and install
-                        </cv-typography>
-                    </div>
+    
+    <cv-toolbar>
+        <span slot="title">
+            <cv-typography scale="headline4">
+                Connect data source
+            </cv-typography>
+        </span>
+        <cv-icon-button-toggle onIcon="help" offIcon="help" class="help-toggle"
+            slot="actionItems"></cv-icon-button-toggle>
+    </cv-toolbar>
+    <div style="display:flex; gap: 3rem; flex-wrap: wrap; padding: 2rem 1rem 1.5rem; max-width: 1200px">
+        <div>
+            <div style="display:flex;">
+                <span>
+                    <cv-icon-button-toggle onIcon="info" offIcon="info" toggledOn></cv-icon-button-toggle>
+                </span>
+                <div style="display: inline-block; margin: 0 0 1rem 1rem;">
+                    <cv-typography scale="subtitle1">
+                        Select model
+                    </cv-typography>
+                    <cv-typography scale="caption">
+                        Select the industry data model for your organization
+                    </cv-typography>
                 </div>
             </div>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 1rem; flex: 1">
-                <cv-radio-icon>
-                    <cv-icon slot="icon">work</cv-icon>
-                    <div slot="text">Balanced</div>
-                    <div slot="text">Every week</div>
-                </cv-radio-icon>
-                <cv-radio-icon>
-                    <cv-icon slot="icon">work</cv-icon>
-                    <div slot="text">Balanced</div>
-                    <div slot="text">Every week</div>
-                </cv-radio-icon>
-                <cv-radio-icon>
-                    <cv-icon slot="icon">work</cv-icon>
-                    <div slot="text">Balanced</div>
-                    <div slot="text">Every week</div>
-                </cv-radio-icon>
-                <cv-radio-icon>
-                    <cv-icon slot="icon">work</cv-icon>
-                    <div slot="text">Balanced</div>
-                    <div slot="text">Every week</div>
-                </cv-radio-icon>
+            <div style="display:flex; margin-top: 1rem;">
+                <span>
+                    <cv-icon-button-toggle onIcon="info" offIcon="info" toggledOn></cv-icon-button-toggle>
+                </span>
+                <div style="display: inline-block; margin: 0 0 1rem 1rem;">
+                    <cv-typography scale="subtitle1">
+                        Review details
+                    </cv-typography>
+                    <cv-typography scale="caption">
+                        Preview the selected model and sample schema
+                    </cv-typography>
+                </div>
             </div>
+            <div style="display:flex; margin-top: 1rem;">
+                <span>
+                    <cv-icon-button-toggle onIcon="info" offIcon="info" toggledOn></cv-icon-button-toggle>
+                </span>
+                <div style="display: inline-block; margin: 0 0 1rem 1rem;">
+                    <cv-typography scale="subtitle1">
+                        Install
+                    </cv-typography>
+                    <cv-typography scale="caption">
+                        Acknowledge creation of database and install
+                    </cv-typography>
+                </div>
+            </div>
+        </div>
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 1rem; flex: 1">
+            <cv-radio-icon>
+                <cv-icon slot="icon">work</cv-icon>
+                <div slot="text">Balanced</div>
+                <div slot="text">Every week</div>
+            </cv-radio-icon>
+            <cv-radio-icon>
+                <cv-icon slot="icon">work</cv-icon>
+                <div slot="text">Balanced</div>
+                <div slot="text">Every week</div>
+            </cv-radio-icon>
+            <cv-radio-icon>
+                <cv-icon slot="icon">work</cv-icon>
+                <div slot="text">Balanced</div>
+                <div slot="text">Every week</div>
+            </cv-radio-icon>
+            <cv-radio-icon>
+                <cv-icon slot="icon">work</cv-icon>
+                <div slot="text">Balanced</div>
+                <div slot="text">Every week</div>
+            </cv-radio-icon>
         </div>
     </div>
     <!-- Content rendered in the help section of the component -->
