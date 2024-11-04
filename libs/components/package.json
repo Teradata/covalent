@@ -101,10 +101,20 @@
       "import": "./expansion-panel-item.mjs",
       "require": "./expansion-panel-item.js"
     },
+    "./focused-page": {
+      "types": "./focused-page/focused-page.d.ts",
+      "import": "./focused-page.mjs",
+      "require": "./focused-page.js"
+    },
     "./formfield": {
       "types": "./formfield/formfield.d.ts",
       "import": "./formfield.mjs",
       "require": "./formfield.js"
+    },
+    "./full-screen-dialog": {
+      "types": "./full-screen-dialog/full-screen-dialog.d.ts",
+      "import": "./full-screen-dialog.mjs",
+      "require": "./full-screen-dialog.js"
     },
     "./icon": {
       "types": "./icon/icon.d.ts",
