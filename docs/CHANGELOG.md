@@ -1,3 +1,10 @@
+## [5.0.3](https://github.com/Teradata/covalent/compare/v5.0.2...v5.0.3) (2024-11-05)
+
+### Bug Fixes
+
+- **deps:** correct version of @angular/cdk (14.2.7 instead of 14.2.12) ([#2270](https://github.com/Teradata/covalent/issues/2270)) ([5517464](https://github.com/Teradata/covalent/commit/5517464f9939a89fcfa342ce71803d82c088a8ea))
+- trying to get 5.x.x out the door, try 2 😏 ([ddfe4d0](https://github.com/Teradata/covalent/commit/ddfe4d0208efff357cd3b4fdac68a89b0ed22f45))
+
 ## [5.0.2](https://github.com/Teradata/covalent/compare/v5.0.1...v5.0.2) (2023-03-15)
 
 ### Bug Fixes
