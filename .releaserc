@@ -30,6 +30,8 @@
     "prerelease": true,
     "channel": "next"
   },{
-    "name": "main" 
+    "name": "main"
+  },{
+    "name": "release/5.x.x"
   }]
 }
