@@ -59,6 +59,11 @@
             "ariaLabelOff": {
               "type": "string",
               "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
+            },
+            "toggledOn": {
+              "title": "toggledOn",
+              "description": "Angular restricts properties starting with 'on'. To work around this, use 'toggleOn' as an alternative to the 'on' property.",
+              "type": "boolean"
             }
           }
         }

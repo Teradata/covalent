@@ -748,6 +748,30 @@
       ]
     },
     {
+      "name": "cv-focused-page",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/focused-page/web-components-waQVQEThJD"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "helpResizable",
+          "description": "boolean Whether the help section is resizable"
+        },
+        {
+          "name": "helpOpen",
+          "description": "boolean Whether the help section is open"
+        },
+        {
+          "name": "hideTopBorder",
+          "description": "boolean Whether the top border is hidden"
+        }
+      ]
+    },
+    {
       "name": "cv-formfield",
       "description": "Input field within a form for users to enter data.",
       "references": [
@@ -772,6 +796,34 @@
         {
           "name": "nowrap",
           "description": "boolean Prevents the label from wrapping and overflow text is ellipsed."
+        }
+      ]
+    },
+    {
+      "name": "cv-full-screen-dialog",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/full-screen-dialog/web-components-HeDCLBaQf9"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "open",
+          "description": "boolean Whether the dialog is open or not"
+        },
+        {
+          "name": "escapeKeyAction",
+          "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog."
+        },
+        {
+          "name": "helpResizable",
+          "description": "boolean Whether the help section is resizable or not"
+        },
+        {
+          "name": "helpOpen",
+          "description": "boolean Whether the help section is open or not"
         }
       ]
     },
@@ -856,6 +908,10 @@
         {
           "name": "ariaLabelOff",
           "description": "aria-label of the button when on is false. If set, ariaLabelOn must also be set."
+        },
+        {
+          "name": "toggledOn",
+          "description": "boolean Angular restricts properties starting with 'on'. To work around this, use 'toggleOn' as an alternative to the 'on' property."
         }
       ]
     },
@@ -1356,6 +1412,17 @@
           "description": "Number of times the code has been executed."
         }
       ]
+    },
+    {
+      "name": "div",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/prototypes/web-components"
+        }
+      ],
+      "attributes": []
     },
     {
       "name": "cv-radio",
@@ -2469,17 +2536,6 @@
           "description": "How much left padding (px) to add for nested elements."
         }
       ]
-    },
-    {
-      "name": "div",
-      "description": "",
-      "references": [
-        {
-          "name": "Knapsack Docs",
-          "url": "http://localhost:3999/pattern/prototypes/web-components"
-        }
-      ],
-      "attributes": []
     }
   ]
 }

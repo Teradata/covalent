@@ -1,0 +1,14 @@
+{
+  "id": "hQ0j1CqZ7o",
+  "title": "help",
+  "description": "A description",
+  "type": "data",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX",
+  "data": {
+    "props": {
+      "icon": "help"
+    },
+    "slots": {}
+  }
+}

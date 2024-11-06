@@ -1,0 +1,14 @@
+{
+  "id": "KNfa5eZ4Q0",
+  "title": "person",
+  "description": "A description",
+  "type": "data",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX",
+  "data": {
+    "props": {
+      "icon": "person"
+    },
+    "slots": {}
+  }
+}

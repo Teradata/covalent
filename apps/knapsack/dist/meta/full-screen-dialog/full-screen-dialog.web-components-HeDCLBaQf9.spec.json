@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "open": {
+      "type": "boolean",
+      "description": "Whether the dialog is open or not"
+    },
+    "escapeKeyAction": {
+      "type": "string",
+      "default": "close",
+      "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog."
+    },
+    "helpResizable": {
+      "type": "boolean",
+      "description": "Whether the help section is resizable or not"
+    },
+    "helpOpen": {
+      "type": "boolean",
+      "description": "Whether the help section is open or not"
+    }
+  }
+}

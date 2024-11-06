@@ -120,11 +120,21 @@ byId:
     name: Expansion panel item
     parentId: expansion-panel
     path: /pattern/expansion-panel-item
+  focused-page:
+    id: focused-page
+    name: Focused page
+    parentId: components
+    path: /pattern/focused-page
   form-field:
     id: form-field
     name: Form Field
     parentId: components
     path: /pattern/form-field
+  full-screen-dialog:
+    id: full-screen-dialog
+    name: Full-screen dialog
+    parentId: components
+    path: /pattern/full-screen-dialog
   guides:
     id: guides
     name: Guides
@@ -370,7 +380,9 @@ order:
   - empty-state
   - expansion-panel
   - expansion-panel-item
+  - focused-page
   - form-field
+  - full-screen-dialog
   - icon
   - icon-button
   - icon-button-toggle

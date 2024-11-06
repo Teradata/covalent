@@ -1,0 +1,21 @@
+{
+  "id": "X0tZctZ8Lt",
+  "title": "Main",
+  "type": "data",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL",
+  "data": {
+    "props": {
+      "label": "test",
+      "trailingIcon": false,
+      "raised": false,
+      "unelevated": false,
+      "outlined": false,
+      "dense": false,
+      "disabled": false,
+      "expandContent": false,
+      "fullwidth": false
+    },
+    "slots": {}
+  }
+}

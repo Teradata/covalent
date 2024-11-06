@@ -1,0 +1,16 @@
+{
+  "id": "ItW6ZS10T4",
+  "title": "AI Chat",
+  "description": "A description",
+  "type": "data",
+  "patternId": "textfield",
+  "templateId": "web-components-M4zyalwdNJ",
+  "data": {
+    "props": {
+      "icon": "forum",
+      "placeholder": "Message Ask.ai",
+      "dense": true
+    },
+    "slots": {}
+  }
+}

@@ -8,11 +8,16 @@
  * Run Knapsack again to regenerate this file.
  */
 
+/**
+ * Angular restricts properties starting with 'on'. To work around this, use 'toggleOn' as an alternative to the 'on' property.
+ */
+type ToggledOn = boolean;
+
 export interface IconButtonToggle {
   /**
    * Whether the toggle is activated.
    */
-  toggledOn?: boolean;
+  on?: boolean;
   /**
    * Disabled buttons cannot be interacted with and have no visual interaction effect.
    */
@@ -37,4 +42,5 @@ export interface IconButtonToggle {
    * aria-label of the button when on is false. If set, ariaLabelOn must also be set.
    */
   ariaLabelOff?: string;
+  toggledOn?: ToggledOn;
 }

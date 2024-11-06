@@ -1,0 +1,14 @@
+{
+  "id": "dlvvA8bIk",
+  "title": "person",
+  "description": "A description",
+  "type": "data",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX",
+  "data": {
+    "props": {
+      "icon": "fullscreen"
+    },
+    "slots": {}
+  }
+}

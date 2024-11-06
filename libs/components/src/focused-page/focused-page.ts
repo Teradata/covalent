@@ -38,7 +38,7 @@ export class CovalentFocusedPage extends LitElement {
   helpResizable = false;
 
   /**
-   * Whether the help section is resizable
+   * Whether the top border is hidden
    */
   @property({ type: Boolean, reflect: true })
   hideTopBorder = false;

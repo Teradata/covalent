@@ -1,0 +1,66 @@
+{
+  "id": "focused-page",
+  "title": "Focused page",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-waQVQEThJD",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/focused-page.mjs",
+      "alias": "cv-focused-page",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "Default slot for content."
+          },
+          "help": {
+            "title": "help",
+            "description": "Slot for help panel content"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "helpResizable": {
+              "type": "boolean",
+              "description": "Whether the help section is resizable"
+            },
+            "helpOpen": {
+              "type": "boolean",
+              "description": "Whether the help section is open"
+            },
+            "hideTopBorder": {
+              "type": "boolean",
+              "description": "Whether the top border is hidden"
+            }
+          }
+        }
+      },
+      "demoIds": ["BNl6rXNkee"],
+      "blockIds": ["FpMdtnA4dy"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "oMAwFOtT2C"
+    },
+    {
+      "type": "template",
+      "id": "web-components-waQVQEThJD"
+    }
+  ],
+  "subPages": [
+    {
+      "title": "Overview",
+      "id": "oMAwFOtT2C",
+      "blockIds": []
+    }
+  ]
+}
