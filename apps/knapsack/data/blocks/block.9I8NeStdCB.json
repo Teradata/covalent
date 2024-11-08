@@ -1,0 +1,36 @@
+{
+  "id": "9I8NeStdCB",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "aZr6RjLvBS",
+        "link": {
+          "path": "https://m2.material.io/design/color/the-color-system.html",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-zc-urjolqmpng",
+        "title": "Material Design color system",
+        "description": "Our colors follow the model laid out by Material Design 2"
+      },
+      {
+        "id": "yw4ZIprLbc",
+        "link": {
+          "name": "Color",
+          "path": "/pages/colors-vvhchtke"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/color-ozqypeur8ppng",
+        "title": "Covalent",
+        "description": "Color tokens"
+      }
+    ],
+    "tileStyles": {
+      "rounded": true,
+      "outlined": true,
+      "imageSize": "small"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

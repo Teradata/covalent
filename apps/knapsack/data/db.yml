@@ -22,11 +22,11 @@ settings:
     files:
       - fileId: KvXVAmYdCVAS7hzkOa73Em
         name: Covalent principles
-        priorVersion: '5395896674'
+        priorVersion: '2148343839783403330'
         type: figma
-        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2144565088908853155
-        version: '2144565088908853155'
-  favicon: https://knapsack.imgix.net/site/covalent/favicon-4v5hnagck0ico
+        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2148415226966915421
+        version: '2148415226966915421'
+  favicon: https://knapsack.imgix.net/site/covalent/t-favicon-6zimud2smwpng
   hideTitleInNavigation: true
   logoUrl: https://knapsack.imgix.net/site/covalent/td-covalent-wordmark-1dsxavbwltpng
   theme:

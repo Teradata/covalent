@@ -1,6 +1,6 @@
 {
   "id": "chip",
-  "title": "Chip",
+  "title": "Chip set",
   "description": "Compact visual element representing an attribute, action, or choice.",
   "statuses": {
     "main": "needsReview",
@@ -58,6 +58,10 @@
     {
       "id": "web-components-7wYRPSnEZH",
       "type": "template"
+    },
+    {
+      "id": "shewLzsnN0",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -66,5 +70,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "shewLzsnN0": {
+      "id": "shewLzsnN0",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7914:54922"
+    }
+  }
 }

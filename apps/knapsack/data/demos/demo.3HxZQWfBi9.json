@@ -6,7 +6,7 @@
   "templateId": "web-components-1-Bf2NwL1T",
   "data": {
     "props": {
-      "label": "Tab label "
+      "label": "Tab label"
     },
     "slots": {}
   }

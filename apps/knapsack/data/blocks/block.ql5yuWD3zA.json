@@ -1,0 +1,17 @@
+{
+  "id": "ql5yuWD3zA",
+  "data": {
+    "exclude": "",
+    "include": "",
+    "groupIds": [
+      "collections.Typography.cv-typography-headline1-article",
+      "collections.Typography.cv-typography-headline2-article",
+      "collections.Typography.cv-typography-headline3-article",
+      "collections.Typography.cv-typography-headline4-article",
+      "collections.Typography.cv-typography-headline5-article",
+      "collections.Typography.cv-typography-headline6-article"
+    ],
+    "collectionId": "Typography"
+  },
+  "blockType": "design-token-collection"
+}

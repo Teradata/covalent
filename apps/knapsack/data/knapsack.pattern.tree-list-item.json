@@ -67,6 +67,10 @@
     {
       "id": "web-components-1jOFYZB9ms",
       "type": "template"
+    },
+    {
+      "id": "EYncUu-DGL",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -75,5 +79,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "EYncUu-DGL": {
+      "id": "EYncUu-DGL",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "8984:5076"
+    }
+  }
 }

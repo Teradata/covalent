@@ -1,0 +1,17 @@
+id: foundations
+title: Foundations
+blockIds:
+  - RnLZOF1krl
+settings:
+  pageHeader:
+    textColorTitle:
+      type: design-token
+      tokenName: inverseonsurface
+    textColorDescription:
+      type: design-token
+      tokenName: inverseonsurface
+    backgroundColor:
+      type: design-token
+      tokenName: inversesurface
+    size: medium
+description: The most fundamental level of the system. These are concepts or rules which influence everything else.

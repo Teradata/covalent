@@ -1,0 +1,10 @@
+{
+  "id": "j3bm9Px6M5",
+  "data": {
+    "exclude": "",
+    "include": "palettes",
+    "groupIds": ["collections.Theme.cv-theme-palettes"],
+    "collectionId": "Theme"
+  },
+  "blockType": "design-token-collection"
+}

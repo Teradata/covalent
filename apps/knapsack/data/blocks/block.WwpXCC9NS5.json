@@ -1,0 +1,36 @@
+{
+  "id": "WwpXCC9NS5",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Article typography",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For use in long-form content like articles, as opposed to in UI interface items like buttons or tables. These styles grow or shrink based on their container so that, for example, you have smaller text on a phone where large headers don't make sense.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

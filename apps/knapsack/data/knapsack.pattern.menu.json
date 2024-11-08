@@ -135,6 +135,10 @@
     {
       "id": "web-components-hY3y1MyhrP",
       "type": "template"
+    },
+    {
+      "id": "weTgTeNHB",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -143,5 +147,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "weTgTeNHB": {
+      "id": "weTgTeNHB",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7605:20819"
+    }
+  }
 }

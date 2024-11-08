@@ -1,0 +1,44 @@
+{
+  "id": "uaF6FeFcNZ",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "trMO8PI5xA",
+        "link": {
+          "name": "Alert",
+          "path": "/pattern/alert"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-alert-thumbnail-qom5ir8frnpng",
+        "title": "Alert",
+        "description": "Notification informing users about important information or events."
+      },
+      {
+        "id": "mFwqAJ8ZMK",
+        "link": {
+          "name": "Button",
+          "path": "/pattern/button"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-button-thumbnail-4eskvzswswpng",
+        "title": "Button",
+        "description": "Common buttons prompt most actions in a UI."
+      },
+      {
+        "id": "TfjR0ITKz",
+        "link": {
+          "name": "Dialog",
+          "path": "/pattern/dialog"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-dialog-thumbnail-fuohzo41epng",
+        "title": "Dialog",
+        "description": "Modal window prompting users for input or displaying critical information."
+      }
+    ],
+    "gridStyles": {
+      "columns": "4"
+    },
+    "tileStyles": {
+      "titleSize": "large"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

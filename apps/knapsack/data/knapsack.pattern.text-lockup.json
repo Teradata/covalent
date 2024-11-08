@@ -63,6 +63,10 @@
     {
       "id": "web-components-4Aa-qjh3vF",
       "type": "template"
+    },
+    {
+      "id": "BflsUymR2G",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -71,5 +75,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "BflsUymR2G": {
+      "id": "BflsUymR2G",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "10165:26068"
+    }
+  }
 }
