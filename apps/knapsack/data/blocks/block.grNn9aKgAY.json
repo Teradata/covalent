@@ -44,5 +44,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "spacing": "medium"
 }

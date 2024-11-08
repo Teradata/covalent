@@ -1,7 +1,26 @@
 {
   "id": "qNXhstEiku",
   "data": {
-    "collectionId": "Typography"
+    "collectionId": "Typography",
+    "exclude": "",
+    "groupIds": [
+      "collections.Typography.cv-typography-body1",
+      "collections.Typography.cv-typography-body2",
+      "collections.Typography.cv-typography-button",
+      "collections.Typography.cv-typography-caption",
+      "collections.Typography.cv-typography-code",
+      "collections.Typography.cv-typography-headline1",
+      "collections.Typography.cv-typography-headline3",
+      "collections.Typography.cv-typography-headline2",
+      "collections.Typography.cv-typography-headline4",
+      "collections.Typography.cv-typography-headline5",
+      "collections.Typography.cv-typography-headline6",
+      "collections.Typography.cv-typography-overline",
+      "collections.Typography.cv-typography-subtitle1",
+      "collections.Typography.cv-typography-subtitle2"
+    ],
+    "include": ""
   },
-  "blockType": "design-token-collection"
+  "blockType": "design-token-collection",
+  "spacing": "large"
 }

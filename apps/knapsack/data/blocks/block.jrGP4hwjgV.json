@@ -33,6 +33,5 @@
     }
   },
   "blockType": "text-editor",
-  "size": "medium",
-  "spacing": "medium"
+  "size": "small"
 }

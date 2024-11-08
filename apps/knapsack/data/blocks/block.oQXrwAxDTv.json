@@ -8,11 +8,16 @@
           "name": "Color use",
           "path": "/pages/color-use"
         },
-        "title": "See also: Color use"
+        "image": "https://knapsack.imgix.net/site/covalent/color-a9sxrztyqspng",
+        "title": "See also",
+        "description": "Color"
       }
     ],
     "tileStyles": {
-      "imageSize": "none"
+      "imageSize": "small"
+    },
+    "gridStyles": {
+      "columns": "3"
     }
   },
   "blockType": "shortcut-tiles",

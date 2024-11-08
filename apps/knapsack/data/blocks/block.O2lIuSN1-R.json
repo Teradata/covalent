@@ -1,5 +1,5 @@
 {
-  "id": "6rqLytvaFs",
+  "id": "O2lIuSN1-R",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Area of influence",
+              "text": "Interface typography",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Actions and messages delivered by the action ribbon apply ONLY to the region immediately below.",
+              "text": "For use in UI elements, like buttons, lists, tables, etc. This typography does not include vertical spacing or change size based on container size.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }

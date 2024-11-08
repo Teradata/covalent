@@ -1,5 +1,5 @@
 {
-  "id": "6rqLytvaFs",
+  "id": "iws4pudR8S",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Area of influence",
+              "text": "Teradata character and voice attributes",
               "type": "text"
             }
           ]
@@ -24,7 +24,20 @@
           },
           "content": [
             {
-              "text": "Actions and messages delivered by the action ribbon apply ONLY to the region immediately below.",
+              "text": "Think of the Teradata character as a ",
+              "type": "text"
+            },
+            {
+              "text": "trusted guide ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": "with these voice attributes:",
               "type": "text"
             }
           ]
@@ -32,6 +45,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }
