@@ -1,3 +1,23 @@
+# [5.1.0](https://github.com/Teradata/covalent/compare/v5.0.3...v5.1.0) (2024-11-08)
+
+### Bug Fixes
+
+- add theme and release config ([5304b70](https://github.com/Teradata/covalent/commit/5304b700cab151a73988e929a46495e8d7806363))
+- **draggable-handle:** use correct icon ([#2197](https://github.com/Teradata/covalent/issues/2197)) ([857857d](https://github.com/Teradata/covalent/commit/857857d61e9fba4211bf2123dc90e245dff4751e))
+- **icon:** update to use material icons outline ([#2160](https://github.com/Teradata/covalent/issues/2160)) ([9ab7e4a](https://github.com/Teradata/covalent/commit/9ab7e4a305885b12ead702792ee97816e475a87d))
+- **markdown:** allow relative paths ([#2191](https://github.com/Teradata/covalent/issues/2191)) ([c7ddd46](https://github.com/Teradata/covalent/commit/c7ddd4631fe6d4fca65d880c299f987b73271b47))
+- **markdown:** relative href links in md and minor styling ([#2194](https://github.com/Teradata/covalent/issues/2194)) ([cc70903](https://github.com/Teradata/covalent/commit/cc709035f14097202b63198ba74d85e91f445a62))
+- **markdown:** updates comment ([#2203](https://github.com/Teradata/covalent/issues/2203)) ([58681e0](https://github.com/Teradata/covalent/commit/58681e09cf207642bf36f2203f2f1731d0e9cdd3))
+- remove console logs ([40fbaec](https://github.com/Teradata/covalent/commit/40fbaecc1acfc76784cbaf5416bf6c6ce76ae5eb))
+- td-highlight theme scss ([2387664](https://github.com/Teradata/covalent/commit/2387664d8bd15e001fd3ba1902bf9500fb7960b7))
+- use is-dark for highligh dark theme ([#2053](https://github.com/Teradata/covalent/issues/2053)) ([#2205](https://github.com/Teradata/covalent/issues/2205)) ([9e93673](https://github.com/Teradata/covalent/commit/9e93673d7816616f34e324e16593dee27d413d9e))
+- use is-dark value for highlight theme ([1858c9f](https://github.com/Teradata/covalent/commit/1858c9f9b604880a8c82f1e05f23bededf1c58bb))
+
+### Features
+
+- add raw code toggle to highlight component and update theme ([ddb27fa](https://github.com/Teradata/covalent/commit/ddb27faee54646f5656faa93347d1ba889f4613d))
+- cherry-pick in raw code toggle from 8bfb682 ([870ef90](https://github.com/Teradata/covalent/commit/870ef90943d9443ba40f91fe73c4d6ad1961b244))
+
 ## [5.0.3](https://github.com/Teradata/covalent/compare/v5.0.2...v5.0.3) (2024-11-05)
 
 ### Bug Fixes
