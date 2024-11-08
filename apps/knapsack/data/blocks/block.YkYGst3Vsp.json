@@ -1,0 +1,10 @@
+{
+  "id": "YkYGst3Vsp",
+  "data": {
+    "exclude": "palettes",
+    "include": "",
+    "groupIds": ["collections.Theme.cv-theme"],
+    "collectionId": "Theme"
+  },
+  "blockType": "design-token-collection"
+}
