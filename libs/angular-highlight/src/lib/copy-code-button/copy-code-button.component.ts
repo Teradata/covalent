@@ -1,9 +1,22 @@
-import { Component, Input, ViewChild, HostListener } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  HostListener,
+  EventEmitter,
+  Output,
+} from '@angular/core';
+import { MatButtonToggle } from '@angular/material/button-toggle';
 import { MatTooltip } from '@angular/material/tooltip';
 
 export interface ICopyCodeTooltips {
   copy?: string;
   copied?: string;
+}
+
+export interface IRawToggleLabels {
+  viewRaw?: string;
+  viewCode?: string;
 }
 
 @Component({
@@ -22,12 +35,30 @@ export class TdCopyCodeButtonComponent {
    */
   @Input() copyCodeTooltips?: ICopyCodeTooltips = {};
 
+  @Input() toggleRawButton = false;
+  @Input() rawToggleLabels?: IRawToggleLabels = {};
+
+  rawToggle = false;
+
+  @Output() toggleRaw = new EventEmitter<boolean>();
+
+  @ViewChild('copyButton') copyButton!: MatButtonToggle;
+  @ViewChild('rawButton') rawButton!: MatButtonToggle;
+
   get copyTooltip(): string {
     return (this.copyCodeTooltips && this.copyCodeTooltips.copy) || 'Copy';
   }
 
   get copiedTooltip(): string {
     return (this.copyCodeTooltips && this.copyCodeTooltips.copied) || 'Copied';
+  }
+
+  get rawToggleText(): string {
+    if (this.rawToggle) {
+      return this.rawToggleLabels?.viewCode || 'View code';
+    } else {
+      return this.rawToggleLabels?.viewRaw || 'Raw';
+    }
   }
 
   @ViewChild('tooltip') tooltip!: MatTooltip;
@@ -44,5 +75,15 @@ export class TdCopyCodeButtonComponent {
     setTimeout(() => {
       this.tooltip.message = this.copyTooltip;
     }, 200);
+  }
+
+  toggleRawClicked(): void {
+    this.rawToggle = !this.rawToggle;
+    this.toggleRaw.emit();
+    this.rawButton.checked = false;
+  }
+
+  copyClicked(): void {
+    this.copyButton.checked = false;
   }
 }
