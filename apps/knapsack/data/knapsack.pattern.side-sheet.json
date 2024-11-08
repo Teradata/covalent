@@ -59,6 +59,10 @@
     {
       "id": "web-components-UMR43JQszt",
       "type": "template"
+    },
+    {
+      "id": "z6ILXTm5",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -67,5 +71,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "z6ILXTm5": {
+      "id": "z6ILXTm5",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "9650:9692"
+    }
+  }
 }

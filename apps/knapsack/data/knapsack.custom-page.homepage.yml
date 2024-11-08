@@ -14,10 +14,11 @@ settings:
       tokenName: inverseonsurface
     textColorDescription:
       type: design-token
-      tokenName: inverse-on-surface
+      tokenName: inverseonsurface
     size: large
     backgroundImage: https://knapsack.imgix.net/site/covalent/globe-dark-fvairlvl-hsvg
     hideText: false
     backgroundSize: cover
     backgroundOverlay: true
+  hideTableOfContents: false
 description: For Teradata products

@@ -48,12 +48,16 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "mHOSWvq6PS"
+      "id": "mHOSWvq6PS",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-JulJ63YyUz"
+      "id": "web-components-JulJ63YyUz",
+      "type": "template"
+    },
+    {
+      "id": "qm-hngcb2s",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -62,5 +66,13 @@
       "id": "mHOSWvq6PS",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "qm-hngcb2s": {
+      "id": "qm-hngcb2s",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7910:53810"
+    }
+  }
 }
