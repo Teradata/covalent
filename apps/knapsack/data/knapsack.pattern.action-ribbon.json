@@ -84,6 +84,10 @@
       "id": "DGBIlJlEO",
       "type": "designSrc",
       "minRoleNeeded": "ADMIN"
+    },
+    {
+      "id": "34uA0en9tB",
+      "type": "subPage"
     }
   ],
   "subPages": [
@@ -134,6 +138,11 @@
         "OEyAa6Yh6",
         "gYAVv4-IHV"
       ]
+    },
+    {
+      "id": "34uA0en9tB",
+      "title": "Code",
+      "blockIds": ["UjlWiJB4V3", "Cb5upJUkpf", "glvDIXMeB7", "pJB-kOoTbN"]
     }
   ],
   "designSrcComponentsById": {
