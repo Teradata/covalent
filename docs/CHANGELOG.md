@@ -1,3 +1,9 @@
+## [8.23.1](https://github.com/Teradata/covalent/compare/v8.23.0...v8.23.1) (2024-11-13)
+
+### Bug Fixes
+
+- **chromatic:** revert knapsack update ([2751d70](https://github.com/Teradata/covalent/commit/2751d700baf63b8758dd8a0d26764147a52b64df))
+
 # [8.23.0](https://github.com/Teradata/covalent/compare/v8.22.0...v8.23.0) (2024-11-04)
 
 ### Bug Fixes
