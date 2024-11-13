@@ -78,47 +78,10 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 1,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Teradata character and voice attributes",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Think of the Teradata character as a ",
-              "type": "text"
-            },
-            {
-              "text": "trusted guide ",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": "with these voice attributes:",
-              "type": "text"
-            }
-          ]
         }
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "spacing": "medium"
 }

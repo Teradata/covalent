@@ -3,15 +3,6 @@
   "data": {
     "shortcuts": [
       {
-        "id": "xVjeBOx3xd",
-        "link": {
-          "name": "Voice and tone",
-          "path": "/pages/voice-and-tone"
-        },
-        "title": "Voice and tone",
-        "description": "Learn what voice and tone means and how to apply our voice and choose the right tone for whatever you're building."
-      },
-      {
         "id": "QsbJH2mkIM",
         "link": {
           "name": "Word list",
@@ -31,7 +22,7 @@
       }
     ],
     "gridStyles": {
-      "columns": "3",
+      "columns": "4",
       "centered": false
     },
     "tileStyles": {

@@ -4,7 +4,7 @@
   "description": "Common buttons prompt most actions in a UI",
   "statuses": {
     "main": "needsReview",
-    "Mh7xwTui": "draft",
+    "Mh7xwTui": "needsReview",
     "XQn0s6hkh9": "UPHFPB1cG"
   },
   "templates": [
@@ -78,7 +78,7 @@
           }
         }
       },
-      "demoIds": ["E5ymzzEPs", "wJJ2tksHEK"],
+      "demoIds": ["LVG5iF-p9d", "E5ymzzEPs", "wJJ2tksHEK"],
       "blockIds": ["Yy3EHn1oaI"]
     },
     {
@@ -123,16 +123,63 @@
       "type": "template"
     },
     {
-      "type": "template",
-      "id": "angular-i3OR9O7kXg"
+      "id": "angular-i3OR9O7kXg",
+      "type": "template"
+    },
+    {
+      "id": "trCAw4vLd",
+      "type": "designSrc",
+      "minRoleNeeded": "ADMIN"
+    },
+    {
+      "id": "5MWUGBa7hT",
+      "type": "subPage",
+      "minRoleNeeded": "ADMIN"
     }
   ],
   "subPages": [
     {
       "id": "overview",
       "title": "Overview",
-      "blockIds": ["eKyEb1kEVx"]
+      "blockIds": [
+        "eKyEb1kEVx",
+        "vA1txcicpl",
+        "DWnWDOAQje",
+        "0GOHciaZcY",
+        "uU6KqvPxAA",
+        "PeBr3HAkat",
+        "gS3cbswW31",
+        "d0J1gksvmx",
+        "GjVEIYieck",
+        "UNAVUccljy",
+        "FZngr-FaDh",
+        "TVk4i5jd3j",
+        "jHKUIZtGs",
+        "8d6cc7VZj1",
+        "PXSnwt7tw",
+        "DXbDeKzqmu",
+        "Y69opKil",
+        "EXAFguj5o2",
+        "BUhr22uJM",
+        "5R9Wk5dFiE",
+        "UzPBLr6n6J",
+        "sNzdaLlfol",
+        "rYchMzJt5t",
+        "nkI70XwlYE"
+      ]
+    },
+    {
+      "id": "5MWUGBa7hT",
+      "title": "Comparison",
+      "blockIds": ["X6Oq0sGIKC", "6wNPU70UYl", "P6YQ-2gQlb"]
     }
   ],
-  "designSrcComponentsById": {}
+  "designSrcComponentsById": {
+    "trCAw4vLd": {
+      "id": "trCAw4vLd",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7073:36396"
+    }
+  }
 }

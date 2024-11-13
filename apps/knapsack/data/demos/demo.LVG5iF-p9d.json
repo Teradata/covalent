@@ -1,0 +1,19 @@
+{
+  "id": "LVG5iF-p9d",
+  "data": {
+    "props": {
+      "icon": "add",
+      "dense": false,
+      "label": "Label",
+      "raised": false,
+      "outlined": false,
+      "trailingIcon": true
+    },
+    "slots": {}
+  },
+  "type": "data",
+  "title": "Text",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL",
+  "description": "A description"
+}

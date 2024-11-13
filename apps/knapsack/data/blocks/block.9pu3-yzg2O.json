@@ -1,0 +1,26 @@
+{
+  "id": "9pu3-yzg2O",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "mqnJhOKKDz",
+        "link": {
+          "path": "https://fonts.google.com/icons",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/material-symbols-logo-uu4lgyfrvqpng",
+        "title": "Material Symbols",
+        "description": "We use the Material Symbols icon library wherever possible"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "small",
+      "titleSize": "xsmall"
+    },
+    "gridStyles": {
+      "columns": "4",
+      "centered": false
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

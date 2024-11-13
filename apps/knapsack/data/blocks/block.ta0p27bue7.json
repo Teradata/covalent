@@ -1,0 +1,24 @@
+{
+  "id": "ta0p27bue7",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "2Ll-vzaK5n",
+        "link": {
+          "path": "https://m2.material.io/design/color/the-color-system.html",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-a2kn72ynopng",
+        "title": "Material Design color system",
+        "description": "Our colors follow the model laid out by Material Design 2"
+      }
+    ],
+    "gridStyles": {
+      "columns": "4"
+    },
+    "tileStyles": {
+      "imageSize": "small"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

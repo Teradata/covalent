@@ -76,6 +76,10 @@
     {
       "id": "web-components-A6-16QhSaM",
       "type": "template"
+    },
+    {
+      "id": "OyvutmXQL9",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -84,5 +88,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "OyvutmXQL9": {
+      "id": "OyvutmXQL9",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7979:30733"
+    }
+  }
 }

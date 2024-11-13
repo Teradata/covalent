@@ -5,10 +5,11 @@
       {
         "id": "559G8Sc3xT",
         "link": {
-          "name": "Colors",
-          "path": "/pages/colors"
+          "name": "Color",
+          "path": "/pages/colors-vvhchtke"
         },
-        "title": "Colors",
+        "image": "https://knapsack.imgix.net/site/covalent/color-bn42asn3ympng",
+        "title": "Color",
         "description": "Named according to their function, these are carefully chosen from our palettes to ensure accessibility and visual appeal."
       },
       {
@@ -17,18 +18,19 @@
           "name": "Typography",
           "path": "/pages/typography"
         },
+        "image": "https://knapsack.imgix.net/site/covalent/typography-61tanxtl6png",
         "title": "Typography",
         "description": "Text standards designed for legibility and visual appeal."
       }
     ],
     "gridStyles": {
-      "columns": "3",
+      "columns": "4",
       "centered": false
     },
     "tileStyles": {
       "rounded": true,
       "outlined": true,
-      "imageSize": "none",
+      "imageSize": "small",
       "titleSize": "large"
     }
   },

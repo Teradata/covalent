@@ -65,6 +65,10 @@
     {
       "id": "web-components-ctiCe2sAX",
       "type": "template"
+    },
+    {
+      "id": "EjIfEqvq",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -73,5 +77,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "EjIfEqvq": {
+      "id": "EjIfEqvq",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "6969:23357"
+    }
+  }
 }

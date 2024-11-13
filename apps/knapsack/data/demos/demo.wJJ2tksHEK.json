@@ -1,6 +1,6 @@
 {
   "id": "wJJ2tksHEK",
-  "title": "raised",
+  "title": "Raised",
   "description": "A description",
   "type": "data",
   "patternId": "button",
@@ -9,9 +9,10 @@
     "props": {
       "outlined": false,
       "raised": true,
-      "trailingIcon": false,
+      "trailingIcon": true,
       "dense": false,
-      "label": "Find a fix"
+      "label": "Label",
+      "icon": "add"
     },
     "slots": {}
   }

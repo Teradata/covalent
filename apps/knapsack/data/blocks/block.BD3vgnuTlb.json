@@ -484,5 +484,6 @@
       ]
     }
   },
-  "blockType": "table"
+  "blockType": "table",
+  "spacing": "medium"
 }

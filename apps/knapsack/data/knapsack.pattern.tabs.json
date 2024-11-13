@@ -1,6 +1,6 @@
 {
   "id": "tabs",
-  "title": "Tabs",
+  "title": "Tab bar",
   "description": "Navigation element allowing users to switch between different sections or views.",
   "statuses": {
     "main": "needsReview",
@@ -48,6 +48,10 @@
     {
       "id": "web-components-kjFGUA31tg",
       "type": "template"
+    },
+    {
+      "id": "f2DdOADbRD",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -56,5 +60,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "f2DdOADbRD": {
+      "id": "f2DdOADbRD",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7190:18319"
+    }
+  }
 }

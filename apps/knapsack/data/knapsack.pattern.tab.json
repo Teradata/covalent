@@ -1,6 +1,6 @@
 {
   "id": "tab",
-  "title": "Tab item",
+  "title": "Tab",
   "description": "A component that organizes content across different screens, data sets, and other interactions",
   "statuses": {
     "main": "needsReview",
@@ -78,6 +78,10 @@
     {
       "id": "web-components-1-Bf2NwL1T",
       "type": "template"
+    },
+    {
+      "id": "WkQ2w2tDcv",
+      "type": "designSrc"
     }
   ],
   "subPages": [
@@ -86,5 +90,13 @@
       "title": "Overview",
       "blockIds": []
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "WkQ2w2tDcv": {
+      "id": "WkQ2w2tDcv",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7190:18117"
+    }
+  }
 }

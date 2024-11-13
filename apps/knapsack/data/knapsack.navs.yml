@@ -52,13 +52,13 @@ byId:
     path: /pattern/checkbox
   chip:
     id: chip
-    name: Chip
+    name: Chip set
     parentId: components
     path: /pattern/chip
   chip-item:
     id: chip-item
-    name: Chip item
-    parentId: chip
+    name: Chip
+    parentId: components
     path: /pattern/chip-item
   circular-progress:
     id: circular-progress
@@ -70,21 +70,31 @@ byId:
     name: Code snippet
     parentId: components
     path: /pattern/code-snippet
-  color-use:
-    id: color-use
-    name: Color use
-    parentId: guides
-    path: /pages/color-use
-  colors:
-    id: colors
-    name: Colors
+  color:
+    id: color
+    name: Color
+    parentId: foundations
+    path: /pages/color
+  colors-9gexmujiba:
+    id: colors-9gexmujiba
+    name: Palettes
     parentId: tokens
-    path: /pages/colors
+    path: /pages/colors-9gexmujiba
+  colors-vvhchtke:
+    id: colors-vvhchtke
+    name: Color
+    parentId: tokens
+    path: /pages/colors-vvhchtke
   components:
     id: components
     name: Components
     parentId: root
     path: /pages/components
+  content:
+    id: content
+    name: Content
+    parentId: root
+    path: /pages/content
   date-and-time:
     id: date-and-time
     name: Date and time
@@ -108,7 +118,7 @@ byId:
   errors:
     id: errors
     name: Errors
-    parentId: guides
+    parentId: patterns
     path: /pages/errors
   expansion-panel:
     id: expansion-panel
@@ -118,7 +128,7 @@ byId:
   expansion-panel-item:
     id: expansion-panel-item
     name: Expansion panel item
-    parentId: expansion-panel
+    parentId: components
     path: /pattern/expansion-panel-item
   focused-page:
     id: focused-page
@@ -130,16 +140,16 @@ byId:
     name: Form Field
     parentId: components
     path: /pattern/form-field
+  foundations:
+    id: foundations
+    name: Foundations
+    parentId: root
+    path: /pages/foundations
   full-screen-dialog:
     id: full-screen-dialog
     name: Full-screen dialog
     parentId: components
     path: /pattern/full-screen-dialog
-  guides:
-    id: guides
-    name: Guides
-    parentId: root
-    path: /pages/guides
   icon:
     id: icon
     name: Icon
@@ -165,12 +175,11 @@ byId:
     name: Icon radio
     parentId: components
     path: /pattern/icon-radio
-  launch-list:
-    hidden: true
-    id: launch-list
-    name: Launch list
-    parentId: components
-    path: /pages/launch-list
+  icons:
+    id: icons
+    name: Icons
+    parentId: foundations
+    path: /pages/icons
   linear-progress:
     id: linear-progress
     name: Linear progress
@@ -198,15 +207,15 @@ byId:
     name: Navigation list item
     parentId: list
     path: /pattern/navigation-list-item
-  new-pattern-process:
-    id: new-pattern-process
-    name: New pattern process
-    parentId: guides
-    path: /pages/new-pattern-process
+  patterns:
+    id: patterns
+    name: Patterns
+    parentId: root
+    path: /pages/patterns
   product-and-ui:
     id: product-and-ui
     name: Product & UI
-    parentId: writing
+    parentId: content
     path: ''
   radio:
     id: radio
@@ -242,7 +251,7 @@ byId:
   split-button:
     id: split-button
     name: Split button
-    parentId: button
+    parentId: components
     path: /pattern/split-button
   status-dialog:
     id: status-dialog
@@ -266,14 +275,13 @@ byId:
     parentId: components
     path: /pattern/switch
   tab:
-    hidden: true
     id: tab
-    name: Tab item
-    parentId: tabs
+    name: Tab
+    parentId: components
     path: /pattern/tab
   tabs:
     id: tabs
-    name: Tabs
+    name: Tab bar
     parentId: components
     path: /pattern/tabs
   text:
@@ -330,13 +338,18 @@ byId:
   tree-list-item:
     id: tree-list-item
     name: Tree list item
-    parentId: tree-list
+    parentId: components
     path: /pattern/tree-list-item
   typography:
     id: typography
     name: Typography
     parentId: tokens
     path: /pages/typography
+  typography-3shrxwkyk:
+    id: typography-3shrxwkyk
+    name: Typography
+    parentId: foundations
+    path: /pages/typography-3shrxwkyk
   video:
     id: video
     name: Video
@@ -345,23 +358,20 @@ byId:
   voice-and-tone:
     id: voice-and-tone
     name: Voice and tone
-    parentId: writing
+    parentId: foundations
     path: /pages/voice-and-tone
   word-list:
     id: word-list
     name: Word list
-    parentId: writing
+    parentId: content
     path: /pages/word-list
-  writing:
-    id: writing
-    name: Content at Teradata
-    parentId: root
-    path: /pages/writing
 order:
-  - guides
-  - color-use
-  - errors
-  - new-pattern-process
+  - foundations
+  - color
+  - icons
+  - typography-3shrxwkyk
+  - voice-and-tone
+  - adapting-tone-by-situation
   - components
   - action-ribbon
   - alert
@@ -369,12 +379,11 @@ order:
   - badge
   - breadcrumbs
   - button
-  - split-button
   - card
   - checkbox
   - code-snippet
-  - chip
   - chip-item
+  - chip
   - circular-progress
   - dialog
   - empty-state
@@ -400,6 +409,7 @@ order:
   - side-sheet
   - slider
   - snackbar
+  - split-button
   - status-dialog
   - status-header
   - status-header-item
@@ -416,15 +426,15 @@ order:
   - textfield
   - text-lockup
   - text
-  - launch-list
+  - patterns
   - tokens
-  - colors
+  - colors-vvhchtke
+  - colors-9gexmujiba
   - typography
-  - writing
-  - voice-and-tone
-  - adapting-tone-by-situation
+  - content
   - product-and-ui
   - error-messages
   - video
-  - word-list
   - date-and-time
+  - word-list
+  - errors
