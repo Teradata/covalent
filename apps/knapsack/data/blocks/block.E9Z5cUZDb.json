@@ -1,0 +1,67 @@
+{
+  "id": "E9Z5cUZDb",
+  "blockType": "text-editor",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 3
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Methods, listeners & events"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "This component extends "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "text": "cv-dialog"
+            },
+            {
+              "type": "text",
+              "text": ". Refer to  "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "/pattern/dialog?templateId=web-components-S9Ia0KOrya",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "dialog documentation"
+            },
+            {
+              "type": "text",
+              "text": " for a complete list of available methods, listeners and events."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

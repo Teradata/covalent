@@ -1,0 +1,44 @@
+{
+  "id": "zEuBGJ07fD",
+  "title": "Main",
+  "type": "data",
+  "patternId": "toolbar",
+  "templateId": "web-components-A6-16QhSaM",
+  "data": {
+    "props": {},
+    "slots": {
+      "title": [
+        {
+          "text": "Focused page demo",
+          "type": "text"
+        }
+      ],
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "demoId": "caLkiTT1G",
+          "patternId": "textfield",
+          "templateId": "web-components-M4zyalwdNJ"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "hQ0j1CqZ7o",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "qNNp2ML7a9",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "nMYOLTJGq",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        }
+      ]
+    }
+  }
+}

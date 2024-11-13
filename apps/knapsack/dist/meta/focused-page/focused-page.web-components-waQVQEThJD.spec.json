@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "helpResizable": {
+      "type": "boolean",
+      "description": "Whether the help section is resizable"
+    },
+    "helpOpen": {
+      "type": "boolean",
+      "description": "Whether the help section is open"
+    },
+    "hideTopBorder": {
+      "type": "boolean",
+      "description": "Whether the top border is hidden"
+    }
+  }
+}

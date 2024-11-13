@@ -1,0 +1,26 @@
+{
+  "id": "7neD2HUsv2",
+  "title": "Main",
+  "type": "data",
+  "patternId": "toolbar",
+  "templateId": "web-components-A6-16QhSaM",
+  "data": {
+    "props": {},
+    "slots": {
+      "title": [
+        {
+          "text": "Help",
+          "type": "text"
+        }
+      ],
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "demoId": "i9bqgQBzGV",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        }
+      ]
+    }
+  }
+}

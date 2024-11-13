@@ -1,0 +1,44 @@
+{
+  "id": "UCPV9gWi17",
+  "title": "Main",
+  "type": "data",
+  "patternId": "toolbar",
+  "templateId": "web-components-A6-16QhSaM",
+  "data": {
+    "props": {},
+    "slots": {
+      "title": [
+        {
+          "text": "Full-screen dialog demo",
+          "type": "text"
+        }
+      ],
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "demoId": "ItW6ZS10T4",
+          "patternId": "textfield",
+          "templateId": "web-components-M4zyalwdNJ"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "SzxYSwR0Ur",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "EWe7T417sl",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "KNfa5eZ4Q0",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        }
+      ]
+    }
+  }
+}

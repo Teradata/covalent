@@ -1,0 +1,56 @@
+{
+  "id": "BNl6rXNkee",
+  "title": "Main",
+  "type": "data",
+  "patternId": "focused-page",
+  "templateId": "web-components-waQVQEThJD",
+  "data": {
+    "props": {
+      "helpOpen": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "toolbar",
+          "templateId": "web-components-A6-16QhSaM",
+          "demoId": "zEuBGJ07fD"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "empty-state",
+          "templateId": "web-components-E0GwXgHJv",
+          "demoId": "06ZgV078BY"
+        }
+      ],
+      "help": [
+        {
+          "type": "template-demo",
+          "patternId": "toolbar",
+          "templateId": "web-components-A6-16QhSaM",
+          "demoId": "tRDah05o"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "text",
+          "templateId": "web-components-FXCMXD35mF",
+          "demoId": "Re7P9JqQls"
+        }
+      ]
+    },
+    "slotsOptions": {
+      "default": {
+        "layout": {
+          "value": "vertical"
+        },
+        "gap": {
+          "value": {
+            "type": "dimension",
+            "kind": "static",
+            "value": "100px"
+          }
+        }
+      }
+    }
+  }
+}

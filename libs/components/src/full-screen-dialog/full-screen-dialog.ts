@@ -1,7 +1,6 @@
 import { css, html, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './full-screen-dialog.scss?inline';
-import sideSheetStyles from '../side-sheet/side-sheet.scss?inline';
 import CovalentDialog from '../dialog/dialog';
 import '../focused-page/focused-page';
 
@@ -15,9 +14,7 @@ import '../focused-page/focused-page';
 export class CovalentFullscreenDialog extends CovalentDialog {
   static override styles = [
     css`
-      ${unsafeCSS(CovalentDialog.styles)} ${unsafeCSS(
-        sideSheetStyles
-      )} ${unsafeCSS(styles)}
+      ${unsafeCSS(CovalentDialog.styles)} ${unsafeCSS(styles)}
     `,
   ];
 

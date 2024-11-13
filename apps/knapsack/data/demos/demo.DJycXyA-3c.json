@@ -1,0 +1,58 @@
+{
+  "id": "DJycXyA-3c",
+  "title": "Main",
+  "type": "data",
+  "patternId": "full-screen-dialog",
+  "templateId": "web-components-HeDCLBaQf9",
+  "data": {
+    "props": {
+      "escapeKeyAction": "close",
+      "open": true,
+      "helpOpen": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "patternId": "toolbar",
+          "templateId": "web-components-A6-16QhSaM",
+          "demoId": "UCPV9gWi17"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "empty-state",
+          "templateId": "web-components-E0GwXgHJv",
+          "demoId": "5QIssuXE3s"
+        }
+      ],
+      "help": [
+        {
+          "type": "template-demo",
+          "patternId": "toolbar",
+          "templateId": "web-components-A6-16QhSaM",
+          "demoId": "7neD2HUsv2"
+        },
+        {
+          "type": "template-demo",
+          "patternId": "text",
+          "templateId": "web-components-FXCMXD35mF",
+          "demoId": "TkaR2KlMc"
+        }
+      ]
+    },
+    "slotsOptions": {
+      "default": {
+        "layout": {
+          "value": "vertical"
+        },
+        "gap": {
+          "value": {
+            "type": "dimension",
+            "kind": "static",
+            "value": "100px"
+          }
+        }
+      }
+    }
+  }
+}

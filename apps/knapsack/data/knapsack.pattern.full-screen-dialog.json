@@ -1,0 +1,71 @@
+{
+  "id": "full-screen-dialog",
+  "title": "Full-screen dialog",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-HeDCLBaQf9",
+      "title": "Web components",
+      "path": "../../../dist/libs/components/full-screen-dialog.mjs",
+      "alias": "cv-full-screen-dialog",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "default",
+            "description": "Default slot for content"
+          },
+          "help": {
+            "title": "help",
+            "description": "Slot for help content"
+          }
+        },
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "open": {
+              "type": "boolean",
+              "description": "Whether the dialog is open or not"
+            },
+            "escapeKeyAction": {
+              "type": "string",
+              "default": "close",
+              "description": "Setting this attribute to an empty string \"\" will prevent the escape key from closing the dialog."
+            },
+            "helpResizable": {
+              "type": "boolean",
+              "description": "Whether the help section is resizable or not"
+            },
+            "helpOpen": {
+              "type": "boolean",
+              "description": "Whether the help section is open or not"
+            }
+          }
+        }
+      },
+      "demoIds": ["DJycXyA-3c"],
+      "blockIds": ["E9Z5cUZDb", "nWcNDJiFHd"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "subPage",
+      "id": "F3B0y1kq"
+    },
+    {
+      "type": "template",
+      "id": "web-components-HeDCLBaQf9"
+    }
+  ],
+  "subPages": [
+    {
+      "title": "Overview",
+      "id": "F3B0y1kq",
+      "blockIds": []
+    }
+  ]
+}
