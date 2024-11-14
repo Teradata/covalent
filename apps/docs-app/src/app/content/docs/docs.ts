@@ -30,6 +30,12 @@ export const docsContentDetails: any = [
     category: gettingStarted.name,
   },
   {
+    name: 'Web Components',
+    docUrl: 'docs/COMPONENTS_QUICKSTART.md',
+    route: '/docs/get-started/web-components',
+    category: gettingStarted.name,
+  },
+  {
     name: 'SVG Icon Sets',
     docUrl: 'docs/GETTING_STARTED.md',
     route: '/docs/theming/icon-sets',
@@ -45,6 +51,12 @@ export const docsContentDetails: any = [
     name: 'Utility Sass Mixins',
     docUrl: 'docs/GETTING_STARTED.md',
     route: '/docs/theming/sass-mixins',
+    category: theming.name,
+  },
+  {
+    name: 'Web Components Theme',
+    docUrl: 'docs/COMPONENTS_THEMING.md',
+    route: '/docs/theming/web-components',
     category: theming.name,
   },
 ];

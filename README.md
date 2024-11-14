@@ -22,6 +22,7 @@ Covalent is Teradata's design system used to create Teradata branded experiences
 ---
 
 - [Getting Started](docs/GETTING_STARTED.md)
+- [Web Components](docs/COMPONENTS_QUICKSTART.md)
 - [Contributing Guidelines](docs/CONTRIBUTING.md)
 - [Developer Guide](docs/DEVELOPER_GUIDE.md)
 - [Upgrading](docs/UPGRADE.md)

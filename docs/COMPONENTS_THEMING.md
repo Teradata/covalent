@@ -7,7 +7,7 @@ In this guide we will help you understand and apply theming to your projects usi
 Before we dive into theming, ensure you have the following setup in your project:
 
 1. SCSS preprocessor installed.
-2. Covalent packages (`@covalent/tokens` and `@covalent/components`) installed in your project. read our [quick start guide](./COMPONENTS_QUICKSTART.md) if you havent yet.
+2. Covalent packages (`@covalent/tokens` and `@covalent/components`) installed in your project. read our [quick start guide](https://teradata.github.io/covalent/v8/#/docs/get-started/web-components) if you havent yet.
 3. Optionally install the `@covalent/icons` package to leverage the custom covalent icons font.
 
 ## Understanding Theming Tokens

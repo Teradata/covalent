@@ -60,9 +60,12 @@ export class AppComponent {}
 
 ## Additional Tips
 
-- **Exploring Components**: Visit the Covalent components storybook [documentation](https://teradata.github.io/covalent/docs/components/?path=/docs/introduction--overview) to explore the full range of components available for use in your projects.
-- **Theming**: Beyond the prebuilt light theme, Covalent offers theming capabilities to tailor the components to your branding needs. Explore the [theming documentation](./COMPONENTS_THEMING.md) to learn how to customize the look and feel of your components.
-- **Responsive Design**: Covalent components are built with responsiveness in mind. Test your application on various devices to ensure a consistent user experience.
-- **Web Components**: Learn more about the [web component standard](https://www.webcomponents.org/)
+**Exploring Components**: Visit the Covalent components storybook [documentation](https://teradata.github.io/covalent/docs/components/?path=/docs/introduction--overview) to explore the full range of components available for use in your projects.
+
+**Theming**: Beyond the prebuilt light theme, Covalent offers theming capabilities to tailor the components to your branding needs. Explore the [theming documentation](https://teradata.github.io/covalent/v8/#/docs/theming/web-components) to learn how to customize the look and feel of your components.
+
+**Responsive Design**: Covalent components are built with responsiveness in mind. Test your application on various devices to ensure a consistent user experience.
+
+**Web Components**: Learn more about the [web component standard](https://www.webcomponents.org/)
 
 Congratulations 🥳, you've successfully integrated Covalent web components into your project. Dive deeper into the documentation to fully leverage the power of Covalent in your web applications.
