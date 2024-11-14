@@ -3,6 +3,7 @@
 - [Source Structure](#source-structure)
 - [Adding a new platform feature (component/module/utility)](#adding-a-new-platform-feature-componentmoduleutility)
 - [Adding a new documentation component](#adding-a-new-documentation-component)
+- [Adding a new web component](./COMPONENTS_DEVELOPER_GUIDE.md)
 
 ## Source Structure
 

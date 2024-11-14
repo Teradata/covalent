@@ -45,7 +45,7 @@ const routes: Routes = [
           {
             path: 'web-components',
             component: TdReadmeLoaderComponent,
-            data: { resourceUrl: 'docs/COMPONENTS_THEMING.md' },
+            data: { resourceUrl: 'docs/COMPONENTS_DEVELOPER_GUIDE.md' },
           },
         ],
       },
