@@ -8,9 +8,15 @@
 
 **Component Name**:
 
-**Slots**: - `slot 1 name`: slot description - `slot 2 name`: slot description
+**Slots**:
 
-**Properties**: - `property 1 name`: property description - `property 2 name`: property description
+- `slot 1 name`: slot description
+- `slot 2 name`: slot description
+
+**Properties**:
+
+- `property 1 name`: property description
+- `property 2 name`: property description
 
 #### Test Steps
 
