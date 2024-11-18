@@ -1,3 +1,9 @@
+## [8.23.2](https://github.com/Teradata/covalent/compare/v8.23.1...v8.23.2) (2024-11-18)
+
+### Bug Fixes
+
+- **docs:** fix theming docs for angular components ([#2280](https://github.com/Teradata/covalent/issues/2280)) ([3bdd246](https://github.com/Teradata/covalent/commit/3bdd2464819e57705558944a5840d3096f002763))
+
 ## [8.23.1](https://github.com/Teradata/covalent/compare/v8.23.0...v8.23.1) (2024-11-13)
 
 ### Bug Fixes
