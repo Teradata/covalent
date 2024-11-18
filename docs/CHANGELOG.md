@@ -1,3 +1,13 @@
+# [9.0.0-beta.1](https://github.com/Teradata/covalent/compare/v8.23.2...v9.0.0-beta.1) (2024-11-18)
+
+### Features
+
+- **covalent:** upgrade to Angular 18 ([6587aba](https://github.com/Teradata/covalent/commit/6587abaea7892108be4b18ef81042b50d193df03))
+
+### BREAKING CHANGES
+
+- **covalent:** Upgrade covalent to Angular 18
+
 ## [8.23.2](https://github.com/Teradata/covalent/compare/v8.23.1...v8.23.2) (2024-11-18)
 
 ### Bug Fixes
