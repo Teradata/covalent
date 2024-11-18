@@ -6,12 +6,10 @@ import {
   transition,
   animate,
   AnimationTriggerMetadata,
-  AUTO_STYLE,
   query,
   animateChild,
   group,
 } from '@angular/animations';
-import { IAnimationOptions } from '../common/interfaces';
 
 /**
  * const tdHeadshakeAnimation

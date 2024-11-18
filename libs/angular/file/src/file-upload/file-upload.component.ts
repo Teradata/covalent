@@ -15,7 +15,6 @@ import {
   TdFileInputLabelDirective,
 } from '../file-input/file-input.component';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { noop } from 'rxjs';
 
 export class TdFileUploadBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
@@ -127,7 +126,8 @@ export class TdFileUploadComponent implements ControlValueAccessor {
    * cancel?: function
    * Event emitted when cancel button is clicked.
    */
-  @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
+  // eslint-disable-next-line @angular-eslint/no-output-native
+  @Output() cancel: EventEmitter<void> = new EventEmitter<void>(); // TODO: check if we can change the name of this emitter
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
