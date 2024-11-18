@@ -1,3 +1,9 @@
+# [9.0.0-beta.2](https://github.com/Teradata/covalent/compare/v9.0.0-beta.1...v9.0.0-beta.2) (2024-11-18)
+
+### Bug Fixes
+
+- **package:** fix angular versioning issues ([ea6330c](https://github.com/Teradata/covalent/commit/ea6330c7cddabbe7841cdfe88ff09fb9091cdbb8))
+
 # [9.0.0-beta.1](https://github.com/Teradata/covalent/compare/v8.23.2...v9.0.0-beta.1) (2024-11-18)
 
 ### Features
