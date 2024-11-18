@@ -92,9 +92,38 @@ export const Basic = Template.bind({});
 
 ## Step 6: Test the component
 
+**Manual testing**
+
 1. **Run Storybook** by executing the command `npm run storybook` to ensure the component renders correctly.
 2. Test all properties and slots within the component.
 3. Check for any console errors and resolve them as necessary.
+
+**Unit tests**
+
+1. **Create a new test file** in the component folder. Name it according to the component you are creating, e.g., `badge.spec.ts`.
+2. **Add unit tests** in the test file. Tests should follow the vitest framework. Refer to [Vitest Documentation](https://vitest.dev/guide/) for more details.
+
+Example test case:
+
+```typescript
+/**
+ * @vitest-environment jsdom
+ */
+import { it, describe, expect, beforeAll } from 'vitest';
+import { CovalentBadge } from './badge';
+
+describe('Covalent Badge', () => {
+  it('should work', () => {
+    expect(new CovalentBadge()).toBeDefined();
+  });
+});
+```
+
+3. **Run tests**: To execute the tests, use the following command:
+
+```bash
+npx nx run components:test
+```
 
 ## Step 7: Export the component for build inclusion
 
