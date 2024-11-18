@@ -63,7 +63,6 @@
       "inputs": ["production", "^production"]
     }
   },
-  "nxCloudId": "673778969f050256c167cdf7",
   "useInferencePlugins": false,
   "defaultBase": "main"
 }
