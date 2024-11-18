@@ -28,6 +28,11 @@ const routes: Routes = [
             component: TdReadmeLoaderComponent,
             data: { resourceUrl: 'docs/WHAT_IS_COVALENT.md' },
           },
+          {
+            path: 'web-components',
+            component: TdReadmeLoaderComponent,
+            data: { resourceUrl: 'docs/COMPONENTS_QUICKSTART.md' },
+          },
         ],
       },
       {
@@ -37,6 +42,11 @@ const routes: Routes = [
           { path: 'sass-mixins', component: UtilitySASSMixinsComponent },
           { path: 'icon-sets', component: IconsComponent },
           { path: 'custom-theme', component: ThemeComponent },
+          {
+            path: 'web-components',
+            component: TdReadmeLoaderComponent,
+            data: { resourceUrl: 'docs/COMPONENTS_THEMING.md' },
+          },
         ],
       },
     ],
