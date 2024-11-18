@@ -4,6 +4,12 @@ Covalent is a UI Platform focused on solving common enterprise needs. Covalent f
 
 <br/>
 
+## Compatibility
+
+The latest version of Covalent is now fully compatible with [**Angular 17**](https://v17.angular.io/start).
+
+<br/>
+
 ## What is included?
 
 Covalent modules live in separated npm packages:
