@@ -1,18 +1,20 @@
 {
-  "id": "bKlWE2O54",
+  "id": "AMtwv4TK-b",
   "data": {
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "13844:2153"
+        "nodeId": "13853:2255"
       }
     ],
     "columns": "1",
+    "layout": "grid",
     "imageStyles": {
+      "fit": "contain",
       "size": "large",
       "seamless": true
     }
   },
-  "size": "large",
-  "blockType": "design-src-tiles"
+  "blockType": "design-src-tiles",
+  "size": "large"
 }

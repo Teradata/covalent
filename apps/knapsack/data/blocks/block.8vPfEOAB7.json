@@ -1,14 +1,15 @@
 {
-  "id": "bKlWE2O54",
+  "id": "8vPfEOAB7",
   "data": {
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "13844:2153"
+        "nodeId": "13853:2269"
       }
     ],
     "columns": "1",
     "imageStyles": {
+      "fit": "contain",
       "size": "large",
       "seamless": true
     }
