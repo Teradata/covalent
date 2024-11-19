@@ -1,5 +1,5 @@
 {
-  "id": "t3dtMwLdUI",
+  "id": "im0hl6ACAA",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Overusing the title",
+              "text": "Caution alerts",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Your title should say what happened, and the description should give more detail.",
+              "text": "Use to indicate that a non-critical error has occurred.",
               "type": "text"
             }
           ]
@@ -32,5 +32,6 @@
       ]
     }
   },
+  "size": "small",
   "blockType": "text-editor"
 }

@@ -1,14 +1,10 @@
 {
-  "id": "LBE3NyBRxu",
+  "id": "FMTBoRTSjq",
   "data": {
     "guidelines": [
       {
-        "id": "UL7Eim7XGc",
+        "id": "HJmN9eCmX",
         "type": "do",
-        "image": {
-          "src": "https://knapsack.imgix.net/site/covalent/alert-common-mistakes-overusing-title-correct-motenhycg7png",
-          "title": "Correct"
-        },
         "content": {
           "type": "doc",
           "content": [
@@ -25,12 +21,8 @@
         }
       },
       {
-        "id": "WaI0kcOUfY",
+        "id": "QERa9kKw8",
         "type": "dont",
-        "image": {
-          "src": "https://knapsack.imgix.net/site/covalent/alert-common-mistakes-overusing-title-incorrect-edr3hzulecpng",
-          "title": "Incorrect"
-        },
         "content": {
           "type": "doc",
           "content": [
@@ -46,7 +38,12 @@
           ]
         }
       }
-    ]
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageOutlined": false,
+      "headerBeforeImage": false
+    }
   },
   "blockType": "guidelines"
 }
