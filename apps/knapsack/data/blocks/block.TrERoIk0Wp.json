@@ -1,0 +1,22 @@
+{
+  "id": "TrERoIk0Wp",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "13844:1206"
+      },
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "13844:2217"
+      }
+    ],
+    "columns": "2",
+    "imageStyles": {
+      "fit": "contain",
+      "size": "auto",
+      "seamless": true
+    }
+  },
+  "blockType": "design-src-tiles"
+}

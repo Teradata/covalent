@@ -6,5 +6,6 @@
     ],
     "columns": 1
   },
-  "blockType": "markdown-block"
+  "blockType": "markdown-block",
+  "spacing": "small"
 }
