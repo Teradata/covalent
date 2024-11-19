@@ -79,16 +79,10 @@ module.exports = defineConfig(({ mode }) => {
       },
     },
     test: {
-      deps: {
-        inline: [/safevalues/], // fix @material/chips issue
-      },
       coverage: {
-        provider: 'c8',
+        provider: 'v8',
         enabled: true,
         reportsDirectory: '../../coverage/libs/components',
-      },
-      cache: {
-        dir: '../../node_modules/.vitest',
       },
     },
     cacheDir: '../../node_modules/.vite',

@@ -16,7 +16,7 @@ import { TdBreadcrumbsComponent } from './breadcrumbs.component';
 const resizeEvent = document.createEvent('Event');
 resizeEvent.initEvent('resize', true, true);
 
-global.window.resizeTo = (width, height) => {
+global.window.resizeTo = (width) => {
   global.window.innerWidth = width || global.window.innerWidth;
   global.window.innerHeight = width || global.window.innerHeight;
   global.window.dispatchEvent(resizeEvent);
@@ -38,197 +38,174 @@ const sampleBreadcrumb: IBreadcrumbItem = { route: 'test', text: 'test' };
 export class FakeComponent {}
 
 describe('Component: Breadcrumbs', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [
-          TdBreadcrumbsTestComponent,
-          TdBreadcrumbsToolbarTestComponent,
-          TdBreadcrumbsSizeIconChangeTestComponent,
-          FakeComponent,
-        ],
-        imports: [
-          NoopAnimationsModule,
-          MatToolbarModule,
-          RouterTestingModule.withRoutes([
-            { path: '', component: FakeComponent },
-            { path: 'layouts', component: FakeComponent },
-            { path: 'layouts2', component: FakeComponent },
-            { path: 'layouts3', component: FakeComponent },
-          ]),
-          CovalentBreadcrumbsModule,
-        ],
-      });
-      TestBed.compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        TdBreadcrumbsTestComponent,
+        TdBreadcrumbsToolbarTestComponent,
+        TdBreadcrumbsSizeIconChangeTestComponent,
+        FakeComponent,
+      ],
+      imports: [
+        NoopAnimationsModule,
+        MatToolbarModule,
+        RouterTestingModule.withRoutes([
+          { path: '', component: FakeComponent },
+          { path: 'layouts', component: FakeComponent },
+          { path: 'layouts2', component: FakeComponent },
+          { path: 'layouts3', component: FakeComponent },
+        ]),
+        CovalentBreadcrumbsModule,
+      ],
+    });
+    TestBed.compileComponents();
+  }));
 
-  it(
-    'should render 5 Breadcrumbs',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdBreadcrumbsTestComponent
-        );
+  it('should render 5 Breadcrumbs', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdBreadcrumbsTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        const breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(
+          By.directive(TdBreadcrumbsComponent)
+        ).componentInstance;
+        expect(breadcrumbs.count).toBe(5);
+      });
+    })
+  ));
+
+  it('should change the separatorIcon', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdBreadcrumbsTestComponent);
+      const component: TdBreadcrumbsTestComponent =
+        fixture.debugElement.componentInstance;
+      component.separatorIcon = 'flight_land';
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(
+          fixture.debugElement
+            .queryAll(By.css('.td-breadcrumb'))[1]
+            .nativeElement.innerHTML.indexOf('flight_land')
+        ).toBeGreaterThan(-1);
+      });
+    })
+  ));
+
+  //TODO find a better way to test breadcrumb resizing
+  xit('should resize window and hide breadcrumbs', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdBreadcrumbsTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        document.body.style.width = '300px';
+        window.dispatchEvent(new Event('resize'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           const breadcrumbs: TdBreadcrumbsComponent =
             fixture.debugElement.query(
               By.directive(TdBreadcrumbsComponent)
             ).componentInstance;
-          expect(breadcrumbs.count).toBe(5);
+          expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(2);
         });
-      })
-    )
-  );
-
-  it(
-    'should change the separatorIcon',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdBreadcrumbsTestComponent
-        );
-        const component: TdBreadcrumbsTestComponent =
-          fixture.debugElement.componentInstance;
-        component.separatorIcon = 'flight_land';
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          expect(
-            fixture.debugElement
-              .queryAll(By.css('.td-breadcrumb'))[1]
-              .nativeElement.innerHTML.indexOf('flight_land')
-          ).toBeGreaterThan(-1);
-        });
-      })
-    )
-  );
-
-  //TODO find a better way to test breadcrumb resizing
-  xit(
-    'should resize window and hide breadcrumbs',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdBreadcrumbsTestComponent
-        );
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          document.body.style.width = '300px';
-          window.dispatchEvent(new Event('resize'));
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            const breadcrumbs: TdBreadcrumbsComponent =
-              fixture.debugElement.query(
-                By.directive(TdBreadcrumbsComponent)
-              ).componentInstance;
-            expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(2);
-          });
-        });
-      })
-    )
-  );
+      });
+    })
+  ));
 
   // TODO find a better way to test breadcrumb resizing
-  xit(
-    'should resize window and hide breadcrumbs with breadcrumb in mat-toolbar with padding',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdBreadcrumbsToolbarTestComponent
-        );
+  xit('should resize window and hide breadcrumbs with breadcrumb in mat-toolbar with padding', waitForAsync(
+    inject([], () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(
+        TdBreadcrumbsToolbarTestComponent
+      );
 
-        // Trigger the window resize event.
-        window.dispatchEvent(new Event('resize'));
+      // Trigger the window resize event.
+      window.dispatchEvent(new Event('resize'));
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.componentInstance.nativeElementWidth = 300;
+
         fixture.detectChanges();
+        fixture.detectChanges();
+        fixture.componentInstance.nativeElementWidth = 300;
         fixture.whenStable().then(() => {
-          fixture.componentInstance.nativeElementWidth = 300;
+          const breadcrumbs: TdBreadcrumbsComponent =
+            fixture.debugElement.query(
+              By.directive(TdBreadcrumbsComponent)
+            ).componentInstance;
 
-          fixture.detectChanges();
-          fixture.detectChanges();
-          fixture.componentInstance.nativeElementWidth = 300;
-          fixture.whenStable().then(() => {
-            const breadcrumbs: TdBreadcrumbsComponent =
-              fixture.debugElement.query(
-                By.directive(TdBreadcrumbsComponent)
-              ).componentInstance;
-
-            expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(3);
-          });
+          expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(3);
         });
-      })
-    )
-  );
+      });
+    })
+  ));
 
-  it(
-    'should react to change of breadcrumbs size & separator icon',
-    waitForAsync(
-      inject([], async () => {
-        const fixture: ComponentFixture<TdBreadcrumbsSizeIconChangeTestComponent> =
-          TestBed.createComponent(TdBreadcrumbsSizeIconChangeTestComponent);
+  it('should react to change of breadcrumbs size & separator icon', waitForAsync(
+    inject([], async () => {
+      const fixture = TestBed.createComponent(
+        TdBreadcrumbsSizeIconChangeTestComponent
+      );
 
-        fixture.detectChanges();
-        await fixture.whenStable();
-        fixture.detectChanges();
-        await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
 
-        let breadcrumbs: DebugElement = fixture.debugElement.query(
-          By.directive(TdBreadcrumbsComponent)
-        );
-        expect(breadcrumbs.children.length).toBe(1);
-        expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeFalsy();
-        const component: TdBreadcrumbsSizeIconChangeTestComponent =
-          fixture.debugElement.componentInstance;
-        component.breadcrumbItems = [
-          ...component.breadcrumbItems,
-          sampleBreadcrumb,
-        ];
+      let breadcrumbs: DebugElement = fixture.debugElement.query(
+        By.directive(TdBreadcrumbsComponent)
+      );
+      expect(breadcrumbs.children.length).toBe(1);
+      expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeFalsy();
+      const component: TdBreadcrumbsSizeIconChangeTestComponent =
+        fixture.debugElement.componentInstance;
+      component.breadcrumbItems = [
+        ...component.breadcrumbItems,
+        sampleBreadcrumb,
+      ];
 
-        fixture.detectChanges();
-        await fixture.whenStable();
-        fixture.detectChanges();
-        await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
 
-        breadcrumbs = fixture.debugElement.query(
-          By.directive(TdBreadcrumbsComponent)
-        );
-        expect(breadcrumbs.children.length).toBe(2);
-        expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeTruthy();
-        expect(
-          breadcrumbs.children[0].query(By.css('mat-icon')).nativeElement
-            .textContent
-        ).toContain('chevron_right');
-        expect(breadcrumbs.children[1].query(By.css('mat-icon'))).toBeFalsy();
-        component.separatorIcon = 'motorcycle';
+      breadcrumbs = fixture.debugElement.query(
+        By.directive(TdBreadcrumbsComponent)
+      );
+      expect(breadcrumbs.children.length).toBe(2);
+      expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeTruthy();
+      expect(
+        breadcrumbs.children[0].query(By.css('mat-icon')).nativeElement
+          .textContent
+      ).toContain('chevron_right');
+      expect(breadcrumbs.children[1].query(By.css('mat-icon'))).toBeFalsy();
+      component.separatorIcon = 'motorcycle';
 
-        fixture.detectChanges();
-        await fixture.whenStable();
-        fixture.detectChanges();
-        await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
 
-        breadcrumbs = fixture.debugElement.query(
-          By.directive(TdBreadcrumbsComponent)
-        );
-        expect(breadcrumbs.children.length).toBe(2);
-        expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeTruthy();
-        expect(
-          breadcrumbs.children[0].query(By.css('mat-icon')).nativeElement
-            .textContent
-        ).toContain('motorcycle');
-        expect(breadcrumbs.children[1].query(By.css('mat-icon'))).toBeFalsy();
+      breadcrumbs = fixture.debugElement.query(
+        By.directive(TdBreadcrumbsComponent)
+      );
+      expect(breadcrumbs.children.length).toBe(2);
+      expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeTruthy();
+      expect(
+        breadcrumbs.children[0].query(By.css('mat-icon')).nativeElement
+          .textContent
+      ).toContain('motorcycle');
+      expect(breadcrumbs.children[1].query(By.css('mat-icon'))).toBeFalsy();
 
-        component.breadcrumbItems = [sampleBreadcrumb];
+      component.breadcrumbItems = [sampleBreadcrumb];
 
-        fixture.detectChanges();
-        await fixture.whenStable();
-        fixture.detectChanges();
-        await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
+      fixture.detectChanges();
+      await fixture.whenStable();
 
-        expect(breadcrumbs.children.length).toBe(1);
-        expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeFalsy();
-      })
-    )
-  );
+      expect(breadcrumbs.children.length).toBe(1);
+      expect(breadcrumbs.children[0].query(By.css('mat-icon'))).toBeFalsy();
+    })
+  ));
 });
 
 @Component({

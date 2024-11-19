@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  waitForAsync,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { CovalentFileModule } from '../file.module';
 import { TdFileSelectDirective } from '../directives/file-select.directive';
@@ -11,59 +6,47 @@ import { TdFileSelectDirective } from '../directives/file-select.directive';
 import { By } from '@angular/platform-browser';
 
 describe('Directive: FileSelect', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdFileSelectBasicTestComponent],
-        imports: [CovalentFileModule],
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdFileSelectBasicTestComponent],
+      imports: [CovalentFileModule],
+    });
+    TestBed.compileComponents();
+  }));
+
+  it('should add multiple attr', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdFileSelectBasicTestComponent);
+      const component: TdFileSelectBasicTestComponent =
+        fixture.debugElement.componentInstance;
+      component.multiple = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        const directive: DebugElement = fixture.debugElement.query(
+          By.directive(TdFileSelectDirective)
+        );
+        expect((<any>directive.attributes).multiple).toBeDefined();
       });
-      TestBed.compileComponents();
     })
-  );
+  ));
 
-  it(
-    'should add multiple attr',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileSelectBasicTestComponent
+  it('should throw (fileSelect) event for a single file', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdFileSelectBasicTestComponent);
+      const component: TdFileSelectBasicTestComponent =
+        fixture.debugElement.componentInstance;
+      component.multiple = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        const directive: DebugElement = fixture.debugElement.query(
+          By.directive(TdFileSelectDirective)
         );
-        const component: TdFileSelectBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = true;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileSelectDirective)
-          );
-          expect((<any>directive.attributes).multiple).toBeDefined();
+        directive.triggerEventHandler('change', {
+          target: directive.nativeElement,
         });
-      })
-    )
-  );
-
-  it(
-    'should throw (fileSelect) event for a single file',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileSelectBasicTestComponent
-        );
-        const component: TdFileSelectBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          const directive: DebugElement = fixture.debugElement.query(
-            By.directive(TdFileSelectDirective)
-          );
-          directive.triggerEventHandler('change', {
-            target: directive.nativeElement,
-          });
-        });
-      })
-    )
-  );
+      });
+    })
+  ));
 });
 
 @Component({

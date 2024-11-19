@@ -1,7 +1,4 @@
 {
-  "affected": {
-    "defaultBase": "main"
-  },
   "cli": {
     "packageManager": "npm"
   },
@@ -65,5 +62,7 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     }
-  }
+  },
+  "useInferencePlugins": false,
+  "defaultBase": "main"
 }
