@@ -79,6 +79,11 @@ module.exports = defineConfig(({ mode }) => {
       },
     },
     test: {
+      server: {
+        deps: {
+          inline: [/safevalues/],
+        },
+      },
       coverage: {
         provider: 'v8',
         enabled: true,
