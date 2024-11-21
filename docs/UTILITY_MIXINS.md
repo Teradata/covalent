@@ -28,7 +28,7 @@ We also bundle the material icons
 
 ### Covalent Utilities Mixin
 
-To include [utility classes](https://teradata.github.io/covalent/#/utilities/styling), add the following:
+To include [utility classes](https://teradata.github.io/covalent/v9/#/utilities/styling), add the following:
 
 ```scss
 // Include covalent utility classes
@@ -55,7 +55,7 @@ To include the color classes, add the following:
 
 ### Example including every single mixin
 
-If you want to include everything, include the following snippet (or just include the `platform.css` as described in the [getting started](https://teradata.github.io/covalent/v8/#/docs/get-started/overview) docs)
+If you want to include everything, include the following snippet (or just include the `platform.css` as described in the [getting started](https://teradata.github.io/covalent/v9/#/docs/get-started/overview) docs)
 
 ```scss
 @import '@covalent/core/theming/all-theme';

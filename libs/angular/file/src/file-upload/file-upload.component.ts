@@ -102,7 +102,7 @@ export class TdFileUploadComponent implements ControlValueAccessor {
     return this._disabled;
   }
 
-  @Input() value?: unknown | undefined;
+  @Input() value?: File | FileList | undefined;
 
   /**
    * select?: function
@@ -131,7 +131,7 @@ export class TdFileUploadComponent implements ControlValueAccessor {
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
-  writeValue(value: unknown): void {
+  writeValue(value: File | FileList): void {
     this.value = value;
     this._changeDetectorRef.markForCheck();
   }
@@ -156,9 +156,11 @@ export class TdFileUploadComponent implements ControlValueAccessor {
   /**
    * Method executed when a file is selected.
    */
-  handleSelect(value: File | FileList): void {
-    this.value = value;
-    this.selectFile.emit(value);
+  handleSelect(value: File | FileList | undefined): void {
+    if (value) {
+      this.value = value;
+      this.selectFile.emit(value);
+    }
   }
 
   /**

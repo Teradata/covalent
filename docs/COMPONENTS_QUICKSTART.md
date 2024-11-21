@@ -40,6 +40,20 @@ This code snippet will render a Covalent button with the label "Hello world" on 
 
 Covalent components are designed to be easily customizable. You can modify attributes such as `label`, `raised`, and others to change the appearance and behavior of the components. Since web components are built with on top of web standards they also have full support for listening to fired events natively in the browser using `addEventListener`
 
+## Using ES imports
+
+### Installing
+
+Use your favorite package management tool to add covalent components to your project.
+
+```bash
+# Using npm
+npm install --save @covalent/components
+
+# Using yarn
+yarn add @covalent/components
+```
+
 ## Angular Integration
 
 Applications using angular can use covalent components in the same way they use HTML elements today adding [`CUSTOM_ELEMENTS_SCHEMA`](https://angular.io/api/core/CUSTOM_ELEMENTS_SCHEMA) schema to any Angular module or standalone component.
@@ -62,7 +76,7 @@ export class AppComponent {}
 
 **Exploring Components**: Visit the Covalent components storybook [documentation](https://teradata.github.io/covalent/docs/components/?path=/docs/introduction--overview) to explore the full range of components available for use in your projects.
 
-**Theming**: Beyond the prebuilt light theme, Covalent offers theming capabilities to tailor the components to your branding needs. Explore the [theming documentation](https://teradata.github.io/covalent/v8/#/docs/theming/web-components) to learn how to customize the look and feel of your components.
+**Theming**: Beyond the prebuilt light theme, Covalent offers theming capabilities to tailor the components to your branding needs. Explore the [theming documentation](https://teradata.github.io/covalent/v9/#/docs/theming/web-components) to learn how to customize the look and feel of your components.
 
 **Responsive Design**: Covalent components are built with responsiveness in mind. Test your application on various devices to ensure a consistent user experience.
 

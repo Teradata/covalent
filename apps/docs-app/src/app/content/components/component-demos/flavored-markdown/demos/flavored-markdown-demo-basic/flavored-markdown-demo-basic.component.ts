@@ -16,17 +16,16 @@ export class FlavoredMarkdownDemoBasicComponent {
     ## List
 
     + One
-      + subline
+        + subline
     + Two
     + Three
-      + subline
-      + second subline
-
-
-    | Tables        | Are           | Cool  |
-    | ------------- |:-------------:| -----:|
-    | **col 3 is**  | right-aligned | $1600 |
-    | col 2 is      | *centered*    |   $12 |
-    | zebra stripes | are neat      |    $1 |  
+        + subline
+        + second subline
+    + Table in a list:
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | **col 3 is**  | right-aligned | $1600 |
+      | col 2 is      | *centered*    |   $12 |
+      | zebra stripes | are neat      |    $1 |   
   `;
 }

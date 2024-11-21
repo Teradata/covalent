@@ -50,6 +50,7 @@ export interface ITdFlavoredMarkDownTableColumn {
   label: string;
   name: string;
   numeric: boolean;
+  centered: boolean;
 }
 
 @Component({
@@ -58,10 +59,21 @@ export interface ITdFlavoredMarkDownTableColumn {
       <!-- Column Definition -->
       <ng-template ngFor let-column [ngForOf]="columnDefs">
         <ng-container [matColumnDef]="column.name">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>{{
-            column.label
-          }}</mat-header-cell>
-          <mat-cell *matCellDef="let row"
+          <mat-header-cell
+            [ngClass]="{
+              'align-right': column.numeric,
+              'align-center': column.centered
+            }"
+            *matHeaderCellDef
+            mat-sort-header
+            >{{ column.label }}</mat-header-cell
+          >
+          <mat-cell
+            *matCellDef="let row"
+            [ngClass]="{
+              'align-right': column.numeric,
+              'align-center': column.centered
+            }"
             ><td-markdown>{{ row[column.name] }}</td-markdown></mat-cell
           >
         </ng-container>
@@ -81,6 +93,17 @@ export class TdFlavoredMarkdownTableComponent implements OnInit, AfterViewInit {
   dataSource!: MatTableDataSource<unknown>;
 
   ngOnInit(): void {
+    // Check if the first column is empty
+    const isFirstColumnEmpty =
+      this.columnDefs.length > 0 &&
+      this.columnDefs[0].label.trim() === '' && // Check if the header cell is empty
+      this.data.every((row: any) => !row[this.columnDefs[0].name]); // Check if all cells in the first column are empty
+
+    // If the first column is empty, remove it
+    if (isFirstColumnEmpty) {
+      this.columnDefs.shift(); // Remove the first column definition
+    }
+
     this.displayedColumns = this.columnDefs.map(
       (c: ITdFlavoredMarkDownTableColumn) => c.name
     );
@@ -512,7 +535,6 @@ export class TdFlavoredMarkdownComponent
   }
 
   private _replaceTables(markdown: string): string {
-    markdown = markdown.replaceAll('    |', '');
     const tableRgx =
       /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
     return this._replaceComponent(
@@ -573,6 +595,7 @@ export class TdFlavoredMarkdownComponent
               label: col,
               name: col ? col.toLowerCase().trim() : `column ${index}`,
               numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
+              centered: /^:--*[ \t]*:[ \t]*$/.test(alignment[index]),
             };
           }
         );
