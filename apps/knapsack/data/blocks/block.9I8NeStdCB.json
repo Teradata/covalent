@@ -10,7 +10,7 @@
         },
         "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-zc-urjolqmpng",
         "title": "Material Design color system",
-        "description": "Our colors follow the model laid out by Material Design 3"
+        "description": "Our colors follows the model laid out by Material Design 3"
       },
       {
         "id": "yw4ZIprLbc",
@@ -21,16 +21,6 @@
         "image": "https://knapsack.imgix.net/site/covalent/color-ozqypeur8ppng",
         "title": "Covalent",
         "description": "Color tokens"
-      },
-      {
-        "id": "NqI5iusZ4C",
-        "link": {
-          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8017-35193",
-          "external": true
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/fig-rrghh2cu-hpng",
-        "title": "Figma",
-        "description": "Figma Colors page"
       }
     ],
     "tileStyles": {
@@ -39,7 +29,7 @@
       "imageSize": "small"
     },
     "gridStyles": {
-      "columns": "4"
+      "columns": "3"
     }
   },
   "blockType": "shortcut-tiles"

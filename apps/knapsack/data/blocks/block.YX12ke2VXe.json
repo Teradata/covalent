@@ -1,22 +1,9 @@
 {
-  "id": "IyKjkvXqx3",
+  "id": "YX12ke2VXe",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Primary colors",
-              "type": "text"
-            }
-          ]
-        },
         {
           "type": "paragraph",
           "attrs": {
@@ -24,25 +11,25 @@
           },
           "content": [
             {
-              "text": "Use primary roles for the most prominent components across the UI, such as the FAB, high-emphasis buttons, and active states (",
+              "text": "The Covalent color system is built off of color role specifications from ",
               "type": "text"
             },
             {
-              "text": "M3",
+              "text": "Material Design 3",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "https://m3.material.io/styles/color/roles#41f55188-5c63-4107-ac41-822ebca8ae1b",
+                    "href": "https://m3.material.io/styles/color/roles",
                     "class": null
                   }
                 }
               ]
             },
             {
-              "text": ").",
+              "text": ".",
               "type": "text"
             }
           ]

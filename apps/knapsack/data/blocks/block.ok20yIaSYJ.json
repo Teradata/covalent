@@ -5,13 +5,9 @@
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
         "nodeId": "13876:3078"
-      },
-      {
-        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "13876:3171"
       }
     ],
-    "columns": "2",
+    "columns": "1",
     "imageStyles": {
       "fit": "contain",
       "size": "large",

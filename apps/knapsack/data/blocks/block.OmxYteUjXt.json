@@ -12,7 +12,19 @@
           },
           "content": [
             {
-              "text": "Light and dark modes",
+              "text": "Theming",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Each color is defined in both a light and dark version. These are designed to work together, and should not be changed. For example, when using the “emphasis” background color in light mode, you cannot use “accent” color in dark mode for the same element.",
               "type": "text"
             }
           ]

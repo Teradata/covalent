@@ -1,5 +1,5 @@
 {
-  "id": "IyKjkvXqx3",
+  "id": "ZNxKseIXgO",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Primary colors",
+              "text": "Tertiary colors",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Use primary roles for the most prominent components across the UI, such as the FAB, high-emphasis buttons, and active states (",
+              "text": "Use tertiary roles for contrasting accents that balance primary and secondary colors or bring heightened attention to an element such as an input field (",
               "type": "text"
             },
             {
@@ -35,14 +35,14 @@
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "https://m3.material.io/styles/color/roles#41f55188-5c63-4107-ac41-822ebca8ae1b",
+                    "href": "https://m3.material.io/styles/color/roles#727a0bf8-c95f-4f83-bc43-290d20f24e8e",
                     "class": null
                   }
                 }
               ]
             },
             {
-              "text": ").",
+              "text": "). ",
               "type": "text"
             }
           ]
