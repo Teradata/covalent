@@ -41,6 +41,7 @@
     "@knapsack/app": "^4.69.12",
     "@knapsack/renderer-angular": "^4.69.12",
     "@knapsack/renderer-web-components": "^4.69.12",
+    "@lit/react": "^1.0.6",
     "@material/banner": "15.0.0-canary.7f224ddd4.0",
     "@material/button": "15.0.0-canary.7f224ddd4.0",
     "@material/card": "15.0.0-canary.7f224ddd4.0",
@@ -96,7 +97,7 @@
     "shepherd.js": "^9.0.0",
     "showdown": "^2.1.0",
     "skeleton-elements": "^4.0.1",
-    "tslib": "^2.0.0",
+    "tslib": "^2.3.0",
     "zone.js": "0.13.1"
   },
   "resolutions": {
@@ -170,6 +171,7 @@
     "jest-environment-jsdom": "29.7.0",
     "jest-esm-transformer": "^1.0.0",
     "jest-preset-angular": "14.1.1",
+    "jsdom": "~22.1.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "ng-packagr": "18.2.1",
     "nx": "19.8.9",
@@ -191,9 +193,10 @@
     "stylelint-config-standard": "^25.0.0",
     "tailwindcss": "^3.0.2",
     "ts-jest": "29.1.1",
+    "ts-morph": "^24.0.0",
     "typescript": "5.5.4",
     "vite": "^5.4.11",
-    "vite-plugin-dts": "~2.3.0",
+    "vite-plugin-dts": "~3.8.1",
     "vitest": "^2.1.5"
   }
 }
