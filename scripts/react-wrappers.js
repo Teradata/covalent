@@ -41,11 +41,11 @@ const getEventList = (events) => {
           index === 0 ? word : word[0].toUpperCase() + word.slice(1)
         )
         .join('')}`;
-      return `\t\t${key}: '${event}'`; // Indent each line
+      return `    ${key}: '${event}'`; // Indent each line
     })
     .join(',\n'); // Add newlines between entries
 
-  return `{\n${content},\n\t},`; // Wrap with braces and add newlines
+  return `{\n${content},\n  },`; // Wrap with braces and add newlines
 };
 
 // Function to generate React wrapper for each component
@@ -68,9 +68,9 @@ import { ${componentName} as ${componentName}Web } from '@covalent/components';
 export const ${componentName} = createComponent({
   tagName: '${tagName}',
   elementClass: ${componentName}Web,
-  react: React,${events.length ? `\n\tevents: ${getEventList(events)}` : ''}
+  react: React,${events.length ? `\n  events: ${getEventList(events)}` : ''}
 });
-  `;
+`;
 
   // Test file for the React component
   const specContent = `import { ${componentName} } from './${componentName}';
@@ -79,7 +79,8 @@ describe('${componentName}', () => {
   it('should work', () => {
     expect(${componentName}).toBeTruthy();
   });
-});`;
+});
+`;
 
   fs.writeFileSync(reactFilePath, wrapperContent, 'utf8');
 
