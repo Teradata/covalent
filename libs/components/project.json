@@ -91,6 +91,13 @@
           }
         ]
       }
+    },
+    "build-exports": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node ./scripts/export-components"],
+        "parallel": false
+      }
     }
   },
   "tags": []

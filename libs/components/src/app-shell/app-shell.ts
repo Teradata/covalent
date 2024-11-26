@@ -86,7 +86,7 @@ export class CovalentAppShell extends DrawerBase {
   fullWidth = false;
 
   private hovered = false;
-  private hoverTimeout: number | undefined;
+  private hoverTimeout: any | undefined;
   private hoverEntryDuration = 250;
   private hoverExitDuration = 250;
 

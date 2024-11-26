@@ -41,15 +41,20 @@
       "import": "./button.mjs",
       "require": "./button.js"
     },
+    "./card": {
+      "types": "./card/card.d.ts",
+      "import": "./card.mjs",
+      "require": "./card.js"
+    },
     "./checkbox": {
       "types": "./checkbox/checkbox.d.ts",
       "import": "./checkbox.mjs",
       "require": "./checkbox.js"
     },
-    "./card": {
-      "types": "./card/card.d.ts",
-      "import": "./card.mjs",
-      "require": "./card.js"
+    "./check-list-item": {
+      "types": "./list/check-list-item.d.ts",
+      "import": "./check-list-item.mjs",
+      "require": "./check-list-item.js"
     },
     "./chip": {
       "types": "./chips/chip.d.ts",
@@ -57,7 +62,7 @@
       "require": "./chip.js"
     },
     "./chip-set": {
-      "types": "./chip/chip-set.d.ts",
+      "types": "./chips/chip-set.d.ts",
       "import": "./chip-set.mjs",
       "require": "./chip-set.js"
     },
@@ -132,12 +137,12 @@
       "require": "./icon-button-toggle.js"
     },
     "./icon-check-toggle": {
-      "types": "./icon-checkbox/icon-checkbox.d.ts",
-      "import": "./icon-checkbox.mjs",
-      "require": "./icon-checkbox.js"
+      "types": "./icon-checkbox/icon-check-toggle.d.ts",
+      "import": "./icon-check-toggle.mjs",
+      "require": "./icon-check-toggle.js"
     },
     "./icon-radio-toggle": {
-      "types": "./icon-radio-toggle/icon-radio-toggle.d.ts",
+      "types": "./icon-radio/icon-radio-toggle.d.ts",
       "import": "./icon-radio-toggle.mjs",
       "require": "./icon-radio-toggle.js"
     },
@@ -146,35 +151,25 @@
       "import": "./linear-progress.mjs",
       "require": "./linear-progress.js"
     },
-    "./list/check-list-item": {
-      "types": "./list/check-list-item.d.ts",
-      "import": "./check-list-item.mjs",
-      "require": "./check-list-item.js"
-    },
-    "./list/list": {
+    "./list": {
       "types": "./list/list.d.ts",
       "import": "./list.mjs",
       "require": "./list.js"
     },
-    "./list/list-item": {
+    "./list-item": {
       "types": "./list/list-item.d.ts",
       "import": "./list-item.mjs",
       "require": "./list-item.js"
-    },
-    "./list/nav-list-item": {
-      "types": "./list/nav-list-item.d.ts",
-      "import": "./nav-list-item.mjs",
-      "require": "./nav-list-item.js"
-    },
-    "./list/radio-list-item": {
-      "types": "./list/radio-list-item.d.ts",
-      "import": "./radio-list-item.mjs",
-      "require": "./radio-list-item.js"
     },
     "./menu": {
       "types": "./menu/menu.d.ts",
       "import": "./menu.mjs",
       "require": "./menu.js"
+    },
+    "./nav-list-item": {
+      "types": "./list/nav-list-item.d.ts",
+      "import": "./nav-list-item.mjs",
+      "require": "./nav-list-item.js"
     },
     "./notebook-cell": {
       "types": "./notebook-cell/notebook-cell.d.ts",
@@ -185,6 +180,11 @@
       "types": "./radio/radio.d.ts",
       "import": "./radio.mjs",
       "require": "./radio.js"
+    },
+    "./radio-list-item": {
+      "types": "./list/radio-list-item.d.ts",
+      "import": "./radio-list-item.mjs",
+      "require": "./radio-list-item.js"
     },
     "./select": {
       "types": "./select/select.d.ts",
@@ -212,12 +212,12 @@
       "require": "./snackbar.js"
     },
     "./status-dialog": {
-      "types": "./status-dialog.d.ts",
+      "types": "./status-dialog/status-dialog.d.ts",
       "import": "./status-dialog.mjs",
       "require": "./status-dialog.js"
     },
     "./status-header": {
-      "types": "./status-header.d.ts",
+      "types": "./status-header/status-header.d.ts",
       "import": "./status-header.mjs",
       "require": "./status-header.js"
     },
