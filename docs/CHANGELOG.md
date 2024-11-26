@@ -1,3 +1,9 @@
+# [9.0.0-beta.3](https://github.com/Teradata/covalent/compare/v9.0.0-beta.2...v9.0.0-beta.3) (2024-11-26)
+
+### Features
+
+- **react-components:** create react web components ([34ae0ef](https://github.com/Teradata/covalent/commit/34ae0efdb73daf84935d8713b51cd7bd0ac86f36))
+
 # [9.0.0-beta.2](https://github.com/Teradata/covalent/compare/v9.0.0-beta.1...v9.0.0-beta.2) (2024-11-18)
 
 ### Bug Fixes
