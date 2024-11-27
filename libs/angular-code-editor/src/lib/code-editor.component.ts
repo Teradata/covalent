@@ -20,11 +20,7 @@ import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 // Use esm version to support shipping subset of languages and features
-import {
-  editor,
-  languages,
-  IDisposable,
-} from 'monaco-editor/esm/vs/editor/editor.api';
+import { editor, languages, IDisposable } from 'monaco-editor';
 
 import {
   mixinControlValueAccessor,
@@ -133,7 +129,7 @@ export class TdCodeEditorComponent
 
   applyValue(): void {
     if (!this._fromEditor) {
-      this._editor.setValue(this._value);
+      this._editor.setValue(this._value || '');
     }
     this._fromEditor = false;
     this.propagateChange(this._value);
