@@ -92,7 +92,7 @@
     "highlight.js": "^11.9.0",
     "lit": "^2.2.8",
     "mjml-browser": "^4.15.3",
-    "monaco-editor": "^0.34.1",
+    "monaco-editor": "^0.52.0",
     "rxjs": "^7.4.0",
     "shepherd.js": "^9.0.0",
     "showdown": "^2.1.0",

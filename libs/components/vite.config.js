@@ -23,7 +23,9 @@ module.exports = defineConfig(({ mode }) => {
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode),
     },
-
+    optimizeDeps: {
+      include: ['monaco-editor'], // Ensure Monaco Editor is pre-bundled
+    },
     build: {
       lib: {
         entry: ['libs/components/src/index.ts', ...getComponentEntries()],
