@@ -1,3 +1,9 @@
+# [9.0.0-beta.4](https://github.com/Teradata/covalent/compare/v9.0.0-beta.3...v9.0.0-beta.4) (2024-11-26)
+
+### Bug Fixes
+
+- **styles:** fix badge and card styling issues ([af3dc7b](https://github.com/Teradata/covalent/commit/af3dc7b10ae91bc8af9905be26c0555dc3371f25))
+
 # [9.0.0-beta.3](https://github.com/Teradata/covalent/compare/v9.0.0-beta.2...v9.0.0-beta.3) (2024-11-26)
 
 ### Features
