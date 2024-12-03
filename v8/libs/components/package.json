@@ -136,6 +136,11 @@
       "import": "./icon-checkbox.mjs",
       "require": "./icon-checkbox.js"
     },
+    "./icon-lockup": {
+      "types": "./icon-lockup/icon-lockup.d.ts",
+      "import": "./icon-lockup.mjs",
+      "require": "./icon-lockup.js"
+    },
     "./icon-radio-toggle": {
       "types": "./icon-radio-toggle/icon-radio-toggle.d.ts",
       "import": "./icon-radio-toggle.mjs",

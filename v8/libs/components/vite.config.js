@@ -34,6 +34,7 @@ module.exports = defineConfig(({ mode }) => {
           'libs/components/src/icon-button/icon-button',
           'libs/components/src/icon-button-toggle/icon-button-toggle',
           'libs/components/src/icon-checkbox/icon-check-toggle',
+          'libs/components/src/icon-lockup/icon-lockup',
           'libs/components/src/icon-radio/icon-radio-toggle',
           'libs/components/src/linear-progress/linear-progress',
           'libs/components/src/list/check-list-item',
