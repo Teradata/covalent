@@ -1,0 +1,23 @@
+{
+  "type": "data",
+  "id": "8mt1FePOgA",
+  "patternId": "icon-lockup",
+  "templateId": "web-components-RPcggDLyDK",
+  "title": "Primary",
+  "description": "",
+  "data": {
+    "props": {
+      "scale": "body1",
+      "icon": "houseboat",
+      "state": "primary"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Lorem ipsum dolor"
+        }
+      ]
+    }
+  }
+}

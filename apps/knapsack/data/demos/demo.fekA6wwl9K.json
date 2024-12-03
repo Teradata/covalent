@@ -1,0 +1,23 @@
+{
+  "type": "data",
+  "id": "fekA6wwl9K",
+  "patternId": "icon-lockup",
+  "templateId": "web-components-RPcggDLyDK",
+  "title": "Positive",
+  "description": "",
+  "data": {
+    "props": {
+      "scale": "body1",
+      "icon": "check",
+      "state": "positive"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Lorem ipsum dolor"
+        }
+      ]
+    }
+  }
+}
