@@ -26,6 +26,12 @@
 
 - **covalent:** Upgrade covalent to Angular 18
 
+# [8.24.0](https://github.com/Teradata/covalent/compare/v8.23.2...v8.24.0) (2024-12-03)
+
+### Features
+
+- **icon-lockup:** add icon lockup component ([#2277](https://github.com/Teradata/covalent/issues/2277)) ([57abfde](https://github.com/Teradata/covalent/commit/57abfdee6e6309f30c6d70038a37868bd3888348))
+
 ## [8.23.2](https://github.com/Teradata/covalent/compare/v8.23.1...v8.23.2) (2024-11-18)
 
 ### Bug Fixes
