@@ -129,6 +129,11 @@
     "events": ["change"]
   },
   {
+    "name": "CovalentIconLockup",
+    "selector": "cv-icon-lockup",
+    "path": "./icon-lockup/icon-lockup"
+  },
+  {
     "name": "CovalentIconRadioToggle",
     "selector": "cv-radio-icon",
     "path": "./icon-radio/icon-radio-toggle",

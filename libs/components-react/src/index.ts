@@ -23,6 +23,7 @@ export * from './Icon/CovalentIcon';
 export * from './IconButton/CovalentIconButton';
 export * from './IconButtonToggle/CovalentIconButtonToggle';
 export * from './IconCheckbox/CovalentIconCheckToggle';
+export * from './IconLockup/CovalentIconLockup';
 export * from './IconRadio/CovalentIconRadioToggle';
 export * from './LinearProgress/CovalentLinearProgress';
 export * from './List/CovalentList';
