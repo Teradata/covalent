@@ -1,0 +1,47 @@
+.filled {
+  font-variation-settings: 'FILL' 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon-lockup {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  max-width: 100%;
+
+  cv-typography {
+    flex: 1 0 0;
+  }
+}
+
+.icon-lockup--primary,
+.icon-lockup--loading {
+  color: var(--cv-theme-primary);
+}
+
+.icon-lockup--positive {
+  color: var(--cv-theme-positive);
+}
+
+.icon-lockup--negative {
+  color: var(--cv-theme-negative);
+}
+
+.icon-lockup--caution {
+  color: var(--cv-theme-caution);
+}
+
+.text {
+  font-feature-settings: 'liga' off, 'clig' off;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trailing-icon {
+  flex-direction: row-reverse;
+}
