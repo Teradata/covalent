@@ -146,6 +146,11 @@
       "import": "./icon-lockup.mjs",
       "require": "./icon-lockup.js"
     },
+    "./icon-lockup": {
+      "types": "./icon-lockup/icon-lockup.d.ts",
+      "import": "./icon-lockup.mjs",
+      "require": "./icon-lockup.js"
+    },
     "./icon-radio-toggle": {
       "types": "./icon-radio/icon-radio-toggle.d.ts",
       "import": "./icon-radio-toggle.mjs",
