@@ -25,11 +25,9 @@
       "assets": ["dist/libs/*.tgz"]
     }]
   ],
-  "branches": [{
-    "name": "beta",
-    "prerelease": true,
-    "channel": "next"
-  },{
-    "name": "main" 
-  }]
+  "branches": [
+    { "name": "beta", "prerelease": true, "channel": "next" },
+    { "name": "main" },
+    { "name": "release/6.x.x", "range": "6.x", "prerelease": false }
+  ]
 }
