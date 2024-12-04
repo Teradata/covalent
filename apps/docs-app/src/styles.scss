@@ -85,7 +85,7 @@ $background: map-get($theme, background);
 @import 'highlight.js/styles/vs.css';
 @include covalent-flavored-markdown-theme($theme);
 @include covalent-markdown-navigator-theme($theme);
-@include covalent-markdown-navigator-typography($custom-typography);
+@include covalent-markdown-navigator-typography($my-typography);
 @include covalent-guided-tour-theme($theme);
 @include teradata-brand($theme);
 
