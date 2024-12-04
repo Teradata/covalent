@@ -345,21 +345,21 @@ $td-dark-theme-foreground: (
 );
 
 // Custom typography
-$td-custom-typography: mat.define-typography-config(
-  $button: mat.define-typography-level(14px, 14px, 400),
+$td-custom-typography: mat.m2-define-typography-config(
+  $button: mat.m2-define-typography-level(14px, 14px, 400),
 );
-$td-custom-toolbar-typography: mat.define-typography-config(
-  $headline-6: mat.define-typography-level(20px, 32px, 400),
+$td-custom-toolbar-typography: mat.m2-define-typography-config(
+  $headline-6: mat.m2-define-typography-level(20px, 32px, 400),
 );
 
 // Create the theme object (a Sass map containing all of the palettes).
-$td-light-theme: mat.define-light-theme(
+$td-light-theme: mat.m2-define-light-theme(
   (
     color: (
-      primary: mat.define-palette($td-primary, '40', '30', '60'),
-      secondary: mat.define-palette($td-secondary, '40', '30', '60'),
-      accent: mat.define-palette($td-accent, '40', '30', '60'),
-      warn: mat.define-palette($td-warn, '40', '30', '60'),
+      primary: mat.m2-define-palette($td-primary, '40', '30', '60'),
+      secondary: mat.m2-define-palette($td-secondary, '40', '30', '60'),
+      accent: mat.m2-define-palette($td-accent, '40', '30', '60'),
+      warn: mat.m2-define-palette($td-warn, '40', '30', '60'),
       on-secondary: $light-on-secondary,
     ),
     typography: $td-custom-typography,
@@ -375,13 +375,13 @@ $td-light-theme: mat.private-deep-merge-all(
   )
 );
 
-$td-dark-theme: mat.define-dark-theme(
+$td-dark-theme: mat.m2-define-dark-theme(
   (
     color: (
-      primary: mat.define-palette($td-primary-dark, '80', '70', '90'),
-      secondary: mat.define-palette($td-secondary-dark, '80', '70', '90'),
-      accent: mat.define-palette($td-accent-dark, '80', '70', '90'),
-      warn: mat.define-palette($td-warn-dark, '80', '70', '90'),
+      primary: mat.m2-define-palette($td-primary-dark, '80', '70', '90'),
+      secondary: mat.m2-define-palette($td-secondary-dark, '80', '70', '90'),
+      accent: mat.m2-define-palette($td-accent-dark, '80', '70', '90'),
+      warn: mat.m2-define-palette($td-warn-dark, '80', '70', '90'),
       on-secondary: $dark-on-secondary,
     ),
     typography: $td-custom-typography,

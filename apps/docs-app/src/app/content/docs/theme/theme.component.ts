@@ -15,13 +15,13 @@ export class ThemeComponent {
   @use '@angular/material' as mat;
 
   // (optional) Additional themes
-  @use '@covalent/markdown/markdown-theme' as markdown;
-  @use '@covalent/highlight/highlight-theme' as highlight;
-  @import '@covalent/flavored-markdown/flavored-markdown-theme';
+  @use "@covalent/markdown/markdown-theme" as markdown;
+  @use "@covalent/highlight/highlight-theme" as highlight;
+  @import "@covalent/flavored-markdown/flavored-markdown-theme";
 
   // Covalent core themes
-  @import '@covalent/core/theming/all-theme';
-  @import '@covalent/core/theming/teradata-theme';
+  @import "@covalent/core/theming/all-theme";
+  @import "@covalent/core/theming/teradata-theme";
 
   // Plus imports for other components in your app.
 
@@ -29,22 +29,22 @@ export class ThemeComponent {
 
   // Define a custom typography config that overrides the font-family
   // or any typography level.
-  $typography: mat.define-typography-config(
-    $font-family: 'Inter, monospace',
-    $headline-1: mat.define-typography-level(32px, 48px, 700),
+  $typography: mat.m2-define-typography-config(
+    $font-family: "Inter, monospace",
+    $headline-1: mat.m2-define-typography-level(32px, 48px, 700),
   );
 
   // Define the palettes for your theme using the Material Design palettes available in palette.scss
   // (imported above). For each palette, you can optionally specify a default, lighter, and darker
   // hue.
-  $primary: mat.define-palette($mat-blue, 700);
-  $accent: mat.define-palette($mat-orange, 800, A100, A400);
+  $primary: mat.m2-define-palette($mat-blue, 700);
+  $accent: mat.m2-define-palette($mat-orange, 800, A100, A400);
 
   // The warn palette is optional (defaults to red).
-  $warn: mat.define-palette($mat-red, 600);
+  $warn: mat.m2-define-palette($mat-red, 600);
 
   // Create the theme object (a Sass map containing all of the palettes).
-  $theme: mat.define-light-theme(
+  $theme: mat.m2-define-light-theme(
     (
       color: (
         primary: $primary,
@@ -54,6 +54,8 @@ export class ThemeComponent {
       typography: $typography,
     )
   );
+
+  @include mat.typography-hierarchy($theme, $back-compat: true);
 
   // Include the Angular Material styles using the custom theme
   @include mat.all-component-themes($theme);

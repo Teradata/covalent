@@ -7,63 +7,66 @@
 
   td-markdown {
     a {
-      color: mat.get-color-from-palette($accent);
+      color: mat.m2-get-color-from-palette($accent);
     }
 
     h1,
     h2 {
-      border-bottom-color: mat.get-color-from-palette($foreground, divider);
+      border-bottom-color: mat.m2-get-color-from-palette($foreground, divider);
     }
 
     h3,
     h4,
     h5,
     h6 {
-      color: mat.get-color-from-palette($foreground, secondary-text);
+      color: mat.m2-get-color-from-palette($foreground, secondary-text);
     }
 
     hr {
-      border-color: mat.get-color-from-palette($foreground, divider);
+      border-color: mat.m2-get-color-from-palette($foreground, divider);
     }
 
     blockquote {
-      color: mat.get-color-from-palette($foreground, secondary-text);
-      border-left-color: mat.get-color-from-palette($foreground, divider);
+      color: mat.m2-get-color-from-palette($foreground, secondary-text);
+      border-left-color: mat.m2-get-color-from-palette($foreground, divider);
     }
 
     table {
       th,
       td {
-        border-color: mat.get-color-from-palette($foreground, dividers);
+        border-color: mat.m2-get-color-from-palette($foreground, dividers);
       }
 
       tr {
-        border-top-color: mat.get-color-from-palette($foreground, dividers);
+        border-top-color: mat.m2-get-color-from-palette($foreground, dividers);
 
         &:nth-child(2n) {
-          background-color: mat.get-color-from-palette($foreground, dividers);
+          background-color: mat.m2-get-color-from-palette(
+            $foreground,
+            dividers
+          );
         }
       }
     }
 
     img {
-      background-color: mat.get-color-from-palette($background, card);
+      background-color: mat.m2-get-color-from-palette($background, card);
     }
 
     code {
-      background-color: mat.get-color-from-palette($background, hover);
+      background-color: mat.m2-get-color-from-palette($background, hover);
     }
 
     .highlight pre,
     pre {
-      background-color: mat.get-color-from-palette($background, app-bar);
+      background-color: mat.m2-get-color-from-palette($background, app-bar);
     }
 
     kbd {
-      color: mat.get-color-from-palette($foreground, secondary-text);
-      background-color: mat.get-color-from-palette($background, app-bar);
-      border-color: mat.get-color-from-palette($foreground, divider);
-      border-bottom-color: mat.get-color-from-palette($foreground, disabled);
+      color: mat.m2-get-color-from-palette($foreground, secondary-text);
+      background-color: mat.m2-get-color-from-palette($background, app-bar);
+      border-color: mat.m2-get-color-from-palette($foreground, divider);
+      border-bottom-color: mat.m2-get-color-from-palette($foreground, disabled);
     }
   }
 }

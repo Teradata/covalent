@@ -15,7 +15,6 @@ import {
   TdFileInputLabelDirective,
 } from '../file-input/file-input.component';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { noop } from 'rxjs';
 
 export class TdFileUploadBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
@@ -103,7 +102,7 @@ export class TdFileUploadComponent implements ControlValueAccessor {
     return this._disabled;
   }
 
-  @Input() value?: unknown | undefined;
+  @Input() value?: File | FileList | undefined;
 
   /**
    * select?: function
@@ -127,11 +126,12 @@ export class TdFileUploadComponent implements ControlValueAccessor {
    * cancel?: function
    * Event emitted when cancel button is clicked.
    */
-  @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
+  // eslint-disable-next-line @angular-eslint/no-output-native
+  @Output() cancel: EventEmitter<void> = new EventEmitter<void>(); // TODO: check if we can change the name of this emitter
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
-  writeValue(value: unknown): void {
+  writeValue(value: File | FileList): void {
     this.value = value;
     this._changeDetectorRef.markForCheck();
   }
@@ -156,9 +156,11 @@ export class TdFileUploadComponent implements ControlValueAccessor {
   /**
    * Method executed when a file is selected.
    */
-  handleSelect(value: File | FileList): void {
-    this.value = value;
-    this.selectFile.emit(value);
+  handleSelect(value: File | FileList | undefined): void {
+    if (value) {
+      this.value = value;
+      this.selectFile.emit(value);
+    }
   }
 
   /**

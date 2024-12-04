@@ -49,8 +49,10 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": ["vitest -r libs/components -c vite.config.js -w false"],
-        "parallel": false,
-        "outputPath": "coverage/libs/components"
+        "parallel": false
+      },
+      "coverage": {
+        "dir": "coverage/libs/components"
       }
     },
     "lint": {
@@ -88,6 +90,13 @@
             "command": "storybook build -c libs/components/.storybook -o dist/storybook/components"
           }
         ]
+      }
+    },
+    "build-exports": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node ./scripts/export-components"],
+        "parallel": false
       }
     }
   },

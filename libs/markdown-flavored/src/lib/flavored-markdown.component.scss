@@ -30,4 +30,14 @@ $code-font: 'Menlo', 'Monaco', 'Andale Mono', 'lucida console', 'Courier New',
     flex-direction: row;
     justify-content: space-between;
   }
+
+  mat-table {
+    .align-right {
+      justify-content: flex-end;
+    }
+
+    .align-center {
+      justify-content: center;
+    }
+  }
 }

@@ -323,7 +323,7 @@ export class CovalentGuidedTour extends TourButtonsActions {
               }
 
               const advanceArr$: Subject<void>[] = [];
-              advanceOn.forEach((_: any, i: number) => {
+              advanceOn.forEach((_: any) => {
                 const advanceEvent$: Subject<void> = new Subject<void>();
                 advanceArr$.push(advanceEvent$);
 

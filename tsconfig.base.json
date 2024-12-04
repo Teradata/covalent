@@ -17,6 +17,7 @@
     "paths": {
       "@covalent/code-editor": ["libs/angular-code-editor/src/public_api.ts"],
       "@covalent/components": ["libs/components/src/index.ts"],
+      "@covalent/components-react": ["libs/components-react/src/index.ts"],
       "@covalent/core": ["libs/angular/public_api.ts"],
       "@covalent/core/breadcrumbs": [
         "libs/angular/breadcrumbs/src/public_api.ts"

@@ -1,11 +1,11 @@
 @use '@angular/material' as mat;
 @import '../all-theme';
 
-$primary: mat.define-palette(mat.$blue-palette, 700);
-$accent: mat.define-palette(mat.$orange-palette, 800, A100, A400);
-$warn: mat.define-palette(mat.$red-palette, 600);
+$primary: mat.m2-define-palette(mat.$m2-blue-palette, 700);
+$accent: mat.m2-define-palette(mat.$m2-orange-palette, 800, A100, A400);
+$warn: mat.m2-define-palette(mat.$m2-red-palette, 600);
 
-$theme: mat.define-light-theme(
+$theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $primary,

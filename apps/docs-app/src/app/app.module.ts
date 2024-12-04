@@ -1,7 +1,11 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {
+  HttpClient,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -53,13 +57,13 @@ import { HomeComponent } from './components/home/home.component';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 
 @NgModule({
-  declarations: [DocsAppComponent, HomeComponent], // directives, components, and pipes owned by this NgModule
+  declarations: [DocsAppComponent, HomeComponent], // additional providers needed for this module
+  bootstrap: [DocsAppComponent],
   imports: [
     BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     BrowserModule,
-    HttpClientModule,
     /** Material Modules */
     MatButtonModule,
     MatListModule,
@@ -89,7 +93,7 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
     ContentContainerModule,
     appRoutes,
     CovalentFileModule,
-  ], // modules needed to run this module
+  ],
   providers: [
     appRoutingProviders,
     GitHubService,
@@ -101,7 +105,7 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
       deps: [TranslateService],
     },
     SelectivePreloadingStrategyService,
-  ], // additional providers needed for this module
-  bootstrap: [DocsAppComponent],
+    provideHttpClient(withInterceptorsFromDi()),
+  ],
 })
 export class AppModule {}

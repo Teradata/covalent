@@ -2,14 +2,22 @@ import { TestBed } from '@angular/core/testing';
 import { CovalentFileModule } from '../file.module';
 import { TdFileService } from './file.service';
 
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('Service: File', () => {
   let service: TdFileService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [CovalentFileModule, HttpClientTestingModule],
+      imports: [CovalentFileModule],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
     });
     service = TestBed.inject(TdFileService);
     jest.spyOn(XMLHttpRequest.prototype, 'open');

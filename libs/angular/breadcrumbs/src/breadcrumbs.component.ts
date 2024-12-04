@@ -75,10 +75,8 @@ export class TdBreadcrumbsComponent
   }
 
   ngAfterContentInit(): void {
-    // Note: doesn't need to unsubscribe since `QueryList.changes`
-    // gets completed by Angular when the view is destroyed.
     this._breadcrumbs.changes
-      .pipe(startWith(this._breadcrumbs))
+      .pipe(startWith(this._breadcrumbs), takeUntil(this._destroy$))
       .subscribe(() => {
         this._waitToCalculateVisibility();
         this.setCrumbIcons();

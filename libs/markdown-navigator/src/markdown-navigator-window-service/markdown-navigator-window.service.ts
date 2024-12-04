@@ -20,7 +20,7 @@ import {
   IDraggableRefs,
   ResizableDraggableDialog,
 } from '@covalent/core/dialogs';
-import { DragRef, Point } from '@angular/cdk/drag-drop';
+import { DragRef } from '@angular/cdk/drag-drop';
 import { DOCUMENT } from '@angular/common';
 import {
   IMarkdownNavigatorItem,
@@ -45,7 +45,6 @@ const CDK_OVERLAY_CUSTOM_CLASS = 'td-window-dialog';
 const DEFAULT_POSITION: DialogPosition = { bottom: '0px', right: '0px' };
 const DEFAULT_WIDTH = '360px';
 const DEFAULT_HEIGHT = '75vh';
-const MIN_HEIGHT = '56px';
 const MAX_WIDTH = '100vw';
 
 const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
@@ -57,11 +56,6 @@ const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
   width: DEFAULT_WIDTH,
   maxWidth: MAX_WIDTH,
 };
-
-interface IDialogDimensions {
-  width: string;
-  height: string;
-}
 
 @Injectable()
 export class TdMarkdownNavigatorWindowService {

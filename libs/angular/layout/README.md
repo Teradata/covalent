@@ -76,7 +76,7 @@ export class MyModule {}
 
 ### Theming
 
-See [theming](https://teradata.github.io/covalent/#/docs/theme) in the covalent docs for more info.
+See [theming](https://teradata.github.io/covalent/v8/#/docs/theming/custom-theme) in the covalent docs for more info.
 
 ## TdNavigationDrawerComponent - td-navigation-drawer
 
@@ -120,15 +120,7 @@ Example for Main Layout / Navigation Drawer Combo:
 
 ```html
 <td-layout>
-  <td-navigation-drawer
-    sidenavTitle="title"
-    logo="logo"
-    icon="icon"
-    name="name"
-    password="password"
-    color="color"
-    navigationRoute="/"
-  >
+  <td-navigation-drawer sidenavTitle="title" logo="logo" icon="icon" name="name" password="password" color="color" navigationRoute="/">
     .. main drawer content
     <div tdNavigationDrawerMenu>.. menu drawer content</div>
   </td-navigation-drawer>

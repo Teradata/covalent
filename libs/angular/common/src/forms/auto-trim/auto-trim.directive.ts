@@ -12,7 +12,7 @@ export class TdAutoTrimDirective {
    * Listens to host's (blur) event and trims value.
    */
   @HostListener('blur', ['$event'])
-  onBlur(event: Event): void {
+  onBlur(): void {
     if (
       this._model &&
       this._model.value &&

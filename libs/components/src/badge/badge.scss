@@ -21,23 +21,23 @@
   }
 
   &.top-right {
-    top: -2px;
-    right: -2px;
+    top: var(--cv-badge-position-y, -2px);
+    right: var(--cv-badge-position-x, -2px);
   }
 
   &.top-left {
-    top: -2px;
-    left: -2px;
+    top: var(--cv-badge-position-y, -2px);
+    left: var(--cv-badge-position-x, -2px);
   }
 
   &.bottom-right {
-    bottom: -2px;
-    right: -2px;
+    bottom: var(--cv-badge-position-y, -2px);
+    right: var(--cv-badge-position-x, -2px);
   }
 
   &.bottom-left {
-    bottom: -2px;
-    left: -2px;
+    bottom: var(--cv-badge-position-y, -2px);
+    left: var(--cv-badge-position-x, -2px);
   }
 
   &.isolated {

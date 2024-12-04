@@ -1,4 +1,4 @@
-import { TestBed, waitForAsync, ComponentFixture } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdMessageComponent } from './message.component';
@@ -19,9 +19,7 @@ describe('Component: Message', () => {
   }));
 
   it('should set label, sublabel and color `primary`, `red` and then change to color `accent`', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdMessageBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdMessageBasicTestComponent);
     const component: TdMessageBasicTestComponent =
       fixture.debugElement.componentInstance;
 
@@ -108,9 +106,7 @@ describe('Component: Message', () => {
   });
 
   it('should render the component with label and no sublabel', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdMessageBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdMessageBasicTestComponent);
     const component: TdMessageBasicTestComponent =
       fixture.debugElement.componentInstance;
 
@@ -130,9 +126,7 @@ describe('Component: Message', () => {
   });
 
   it('should render the component with a button content as actions', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdMessageContentTestComponent
-    );
+    const fixture = TestBed.createComponent(TdMessageContentTestComponent);
     const component: TdMessageContentTestComponent =
       fixture.debugElement.componentInstance;
 
@@ -149,9 +143,7 @@ describe('Component: Message', () => {
   });
 
   it('should render the component, close it and then open it', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdMessageBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdMessageBasicTestComponent);
     const component: TdMessageBasicTestComponent =
       fixture.debugElement.componentInstance;
     const message: TdMessageComponent = fixture.debugElement.query(
@@ -186,9 +178,7 @@ describe('Component: Message', () => {
   });
 
   it('should not render the component, open it and then close it', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdMessageOpenedTestComponent
-    );
+    const fixture = TestBed.createComponent(TdMessageOpenedTestComponent);
     const component: TdMessageOpenedTestComponent =
       fixture.debugElement.componentInstance;
     const message: TdMessageComponent = fixture.debugElement.query(
@@ -223,9 +213,7 @@ describe('Component: Message', () => {
   });
 
   it('should render the component, toggle it and then toggle it again', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdMessageBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdMessageBasicTestComponent);
     const component: TdMessageBasicTestComponent =
       fixture.debugElement.componentInstance;
     const message: TdMessageComponent = fixture.debugElement.query(
@@ -260,9 +248,7 @@ describe('Component: Message', () => {
   });
 
   it('should render the component, then [opened] to false', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdMessageOpenedTestComponent
-    );
+    const fixture = TestBed.createComponent(TdMessageOpenedTestComponent);
     const component: TdMessageOpenedTestComponent =
       fixture.debugElement.componentInstance;
 
@@ -286,9 +272,7 @@ describe('Component: Message', () => {
   });
 
   it('should not render the component, set [opened] to true and then [opened] to false', (done) => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdMessageOpenedTestComponent
-    );
+    const fixture = TestBed.createComponent(TdMessageOpenedTestComponent);
     const component: TdMessageOpenedTestComponent =
       fixture.debugElement.componentInstance;
 

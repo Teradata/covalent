@@ -35,13 +35,18 @@
       },
       "rules": {
         "rxjs/no-unsafe-takeuntil": "error",
-        "rxjs-angular/prefer-takeuntil": "warn"
+        "rxjs-angular/prefer-takeuntil": "warn",
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
       }
     },
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nx/javascript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
     }
   ]
 }

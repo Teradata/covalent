@@ -10,7 +10,6 @@ import {
   animateChild,
   group,
 } from '@angular/animations';
-import { IAnimationOptions } from '../common/interfaces';
 
 /**
  * const tdBounceAnimation

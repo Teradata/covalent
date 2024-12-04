@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
 import { PreviewComponent } from '../preview/preview.component';
-import { editor } from 'monaco-editor';
+import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import { getHtmlTemplate } from '@covalent/email-templates';
 import * as prettier from 'prettier';
 import parserHtml from 'prettier/parser-html'; // Use 'html' parser while working with MJML
