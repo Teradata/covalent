@@ -18,6 +18,18 @@
           ]
         },
         {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "These state colors are an example of semantic colors: colors that communicate semantic meaning. In this case, the state colors communicate whether the user is faced with an error, a warning, or success. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
           "type": "bulletList",
           "content": [
             {

@@ -1,9 +1,23 @@
 {
-  "id": "YX12ke2VXe",
+  "id": "glOIuRjmkg",
+  "blockType": "text-editor",
   "data": {
     "content": {
       "type": "doc",
       "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 4
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "References"
+            }
+          ]
+        },
         {
           "type": "paragraph",
           "attrs": {
@@ -11,31 +25,22 @@
           },
           "content": [
             {
-              "text": "The Covalent color system is built off of color role specifications from ",
-              "type": "text"
-            },
-            {
-              "text": "Material Design 3",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
+                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-icon-lockup--overview",
                     "rel": "noopener noreferrer nofollow",
-                    "href": "https://m3.material.io/styles/color/roles",
                     "class": null
                   }
                 }
-              ]
-            },
-            {
-              "text": " and used on all Covalent UI components.",
-              "type": "text"
+              ],
+              "text": "Covalent design system - Icon lockup"
             }
           ]
         }
       ]
     }
-  },
-  "blockType": "text-editor"
+  }
 }

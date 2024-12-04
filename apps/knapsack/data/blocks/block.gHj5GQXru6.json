@@ -10,7 +10,7 @@
     "columns": "1",
     "imageStyles": {
       "fit": "contain",
-      "size": "large",
+      "size": "auto",
       "seamless": true
     },
     "layout": "grid"

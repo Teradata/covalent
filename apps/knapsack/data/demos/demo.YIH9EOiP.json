@@ -1,0 +1,24 @@
+{
+  "type": "data",
+  "id": "YIH9EOiP",
+  "patternId": "icon-lockup",
+  "templateId": "web-components-RPcggDLyDK",
+  "title": "Caution",
+  "description": "",
+  "data": {
+    "props": {
+      "scale": "body1",
+      "icon": "warning",
+      "filledIcon": true,
+      "state": "caution"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Lorem ipsum dolor"
+        }
+      ]
+    }
+  }
+}

@@ -65,6 +65,11 @@ byId:
     name: Circular progress
     parentId: components
     path: /pattern/circular-progress
+  code-editor:
+    id: code-editor
+    name: Code editor
+    parentId: components
+    path: /pattern/code-editor
   code-snippet:
     id: code-snippet
     name: Code snippet
@@ -170,6 +175,11 @@ byId:
     name: Icon checkbox
     parentId: components
     path: /pattern/icon-checkbox
+  icon-lockup:
+    id: icon-lockup
+    name: Icon lockup
+    parentId: components
+    path: /pattern/icon-lockup
   icon-radio:
     id: icon-radio
     name: Icon radio
@@ -207,6 +217,11 @@ byId:
     name: Navigation list item
     parentId: list
     path: /pattern/navigation-list-item
+  notebook-cell:
+    id: notebook-cell
+    name: Notebook cell
+    parentId: components
+    path: /pattern/notebook-cell
   patterns:
     id: patterns
     name: Patterns
@@ -358,7 +373,7 @@ byId:
   voice-and-tone:
     id: voice-and-tone
     name: Voice and tone
-    parentId: foundations
+    parentId: content
     path: /pages/voice-and-tone
   word-list:
     id: word-list
@@ -370,8 +385,6 @@ order:
   - color
   - icons
   - typography-3shrxwkyk
-  - voice-and-tone
-  - adapting-tone-by-situation
   - components
   - action-ribbon
   - alert
@@ -381,6 +394,7 @@ order:
   - button
   - card
   - checkbox
+  - code-editor
   - code-snippet
   - chip-item
   - chip
@@ -396,6 +410,7 @@ order:
   - icon-button
   - icon-button-toggle
   - icon-checkbox
+  - icon-lockup
   - icon-radio
   - linear-progress
   - list
@@ -404,6 +419,7 @@ order:
   - check-list-item
   - radio-list-item
   - menu
+  - notebook-cell
   - radio
   - select
   - side-sheet
@@ -427,14 +443,16 @@ order:
   - text-lockup
   - text
   - patterns
+  - errors
   - tokens
   - colors-vvhchtke
   - colors-9gexmujiba
   - typography
   - content
+  - voice-and-tone
+  - adapting-tone-by-situation
   - product-and-ui
   - error-messages
   - video
   - date-and-time
   - word-list
-  - errors

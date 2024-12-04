@@ -1,0 +1,30 @@
+{
+  "type": "data",
+  "id": "mnXbWmndnd",
+  "patternId": "icon-lockup",
+  "templateId": "web-components-RPcggDLyDK",
+  "title": "Loading",
+  "description": "",
+  "data": {
+    "props": {
+      "scale": "body1",
+      "state": "primary"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Lorem ipsum dolor"
+        }
+      ],
+      "icon": [
+        {
+          "type": "template-demo",
+          "patternId": "circular-progress",
+          "templateId": "web-components-rw6v6c4fnU",
+          "demoId": "Cg0RVNBqem"
+        }
+      ]
+    }
+  }
+}

@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Each color is defined in both a light and dark version. These are designed to work together, and should not be changed. For example, when using the “emphasis” background color in light mode, you cannot use “accent” color in dark mode for the same element.",
+              "text": "Each color has both a light and dark version. Colors from the two versions should not be mixed. ",
               "type": "text"
             }
           ]

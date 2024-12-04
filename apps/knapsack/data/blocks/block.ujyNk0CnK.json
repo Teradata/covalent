@@ -172,12 +172,19 @@
                       "content": [
                         {
                           "type": "text",
-                          "marks": [
-                            {
-                              "type": "code"
-                            }
-                          ],
-                          "text": "{ editor: monaco.editor.IStandaloneCodeEditor }"
+                          "text": "{ editor: "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "monaco.editor.IStandaloneCodeEditor }"
                         }
                       ]
                     }
@@ -471,11 +478,6 @@
                       "content": [
                         {
                           "type": "text",
-                          "marks": [
-                            {
-                              "type": "code"
-                            }
-                          ],
                           "text": "{ code: this.code }"
                         }
                       ]
