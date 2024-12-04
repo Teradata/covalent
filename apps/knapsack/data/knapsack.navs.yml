@@ -358,7 +358,7 @@ byId:
   voice-and-tone:
     id: voice-and-tone
     name: Voice and tone
-    parentId: foundations
+    parentId: content
     path: /pages/voice-and-tone
   word-list:
     id: word-list
@@ -370,8 +370,6 @@ order:
   - color
   - icons
   - typography-3shrxwkyk
-  - voice-and-tone
-  - adapting-tone-by-situation
   - components
   - action-ribbon
   - alert
@@ -427,14 +425,16 @@ order:
   - text-lockup
   - text
   - patterns
+  - errors
   - tokens
   - colors-vvhchtke
   - colors-9gexmujiba
   - typography
   - content
+  - voice-and-tone
+  - adapting-tone-by-situation
   - product-and-ui
   - error-messages
   - video
   - date-and-time
   - word-list
-  - errors
