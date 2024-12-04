@@ -1,3 +1,24 @@
+# [6.4.0](https://github.com/Teradata/covalent/compare/v6.3.0...v6.4.0) (2024-12-04)
+
+### Bug Fixes
+
+- covalent-markdown-navigator-typography for Angular Material 15 ([808543e](https://github.com/Teradata/covalent/commit/808543e4ca5795b5b12b33600aff7ea354a3c72d))
+- **deps:** angular v15.2.10 [#2195](https://github.com/Teradata/covalent/issues/2195) ([53c130d](https://github.com/Teradata/covalent/commit/53c130d1c3b51b3c2728111fe11306357ccffbd1))
+- **deps:** correct version of @angular/cdk (14.2.7 instead of 14.2.12) ([#2270](https://github.com/Teradata/covalent/issues/2270)) ([8b13f82](https://github.com/Teradata/covalent/commit/8b13f82cefb34ebcb1cf6f3e5aacc6a3b140c466))
+- **draggable-handle:** use correct icon ([#2197](https://github.com/Teradata/covalent/issues/2197)) ([edc0dce](https://github.com/Teradata/covalent/commit/edc0dce95dfdf8eecd36da575b822ca8fb3d9354))
+- **icon:** update to use material icons outline ([#2160](https://github.com/Teradata/covalent/issues/2160)) ([9221116](https://github.com/Teradata/covalent/commit/922111621cab14708669aa8dae4949792dbb4ce2))
+- **markdown:** allow relative paths ([#2191](https://github.com/Teradata/covalent/issues/2191)) ([f32b7d9](https://github.com/Teradata/covalent/commit/f32b7d9600610f8f112da215044a4c0fafaa51e1))
+- **markdown:** relative href links in md and minor styling ([#2194](https://github.com/Teradata/covalent/issues/2194)) ([6334a69](https://github.com/Teradata/covalent/commit/6334a69e35cff90d46a547d9a120b1ec813228aa))
+- **markdown:** updates comment ([#2203](https://github.com/Teradata/covalent/issues/2203)) ([37730a2](https://github.com/Teradata/covalent/commit/37730a2d5efecca96eced4a2adb8e6a22a408739))
+- remove console logs ([1b6b0aa](https://github.com/Teradata/covalent/commit/1b6b0aa0f121f48292c174b2d0af462986abf260))
+- td-highlight theme scss ([7ebada1](https://github.com/Teradata/covalent/commit/7ebada106011ff0150770f3b5f5fd256f0ecd45b))
+- use is-dark for highligh dark theme ([#2053](https://github.com/Teradata/covalent/issues/2053)) ([#2205](https://github.com/Teradata/covalent/issues/2205)) ([a51f8e6](https://github.com/Teradata/covalent/commit/a51f8e6645705b9649568214bf9a8010407331c7))
+- use is-dark value for highlight theme ([1868a12](https://github.com/Teradata/covalent/commit/1868a12b6e2bb7338b97ed27de695fafe0570d45))
+
+### Features
+
+- add raw code toggle to highlight component and update theme ([1b88e33](https://github.com/Teradata/covalent/commit/1b88e33c2915cb93359200b766513b981f11c117))
+
 # [6.3.0](https://github.com/Teradata/covalent/compare/v6.2.3...v6.3.0) (2023-08-14)
 
 ### Features
