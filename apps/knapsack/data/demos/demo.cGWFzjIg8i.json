@@ -1,0 +1,24 @@
+{
+  "type": "data",
+  "id": "cGWFzjIg8i",
+  "patternId": "icon-lockup",
+  "templateId": "web-components-RPcggDLyDK",
+  "title": "Negative",
+  "description": "",
+  "data": {
+    "props": {
+      "scale": "body1",
+      "filledIcon": true,
+      "icon": "error",
+      "state": "negative"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "text",
+          "text": "Lorem ipsum dolor"
+        }
+      ]
+    }
+  }
+}

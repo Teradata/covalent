@@ -1,0 +1,49 @@
+{
+  "properties": {
+    "covalentIcon": {
+      "type": "boolean",
+      "description": "Whether the icon is a covalent icon."
+    },
+    "filledIcon": {
+      "type": "boolean",
+      "description": "Whether the icon is filled."
+    },
+    "icon": {
+      "type": "string",
+      "description": "The icon to display."
+    },
+    "scale": {
+      "type": "string",
+      "enum": [
+        "body1",
+        "body2",
+        "button",
+        "caption",
+        "headline1",
+        "headline2",
+        "headline3",
+        "headline4",
+        "headline5",
+        "headline6",
+        "overline",
+        "subtitle1",
+        "subtitle2"
+      ],
+      "default": "body1",
+      "description": "Scale of the component, controlling font-size and icon size. Default is \"body1\", but it can be set to other typography values to scale the component."
+    },
+    "trailingIcon": {
+      "type": "boolean",
+      "description": "If true, the icon is displayed after the text (trailing)."
+    },
+    "state": {
+      "description": "State of the component, used to apply different styles based on status.",
+      "type": "string",
+      "enum": ["caution", "negative", "positive", "primary"]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "",
+  "type": "object",
+  "required": []
+}

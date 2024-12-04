@@ -447,7 +447,7 @@
     },
     {
       "name": "cv-chip",
-      "description": "Individual item within a chip list.",
+      "description": "Individual item within a chip set.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -948,6 +948,97 @@
         {
           "name": "height",
           "description": "Sets the height of the icon checkbox"
+        }
+      ]
+    },
+    {
+      "name": "cv-icon-lockup",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon-lockup/web-components-RPcggDLyDK"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "covalentIcon",
+          "description": "boolean Whether the icon is a covalent icon."
+        },
+        {
+          "name": "filledIcon",
+          "description": "boolean Whether the icon is filled."
+        },
+        {
+          "name": "icon",
+          "description": "The icon to display."
+        },
+        {
+          "name": "scale",
+          "values": [
+            {
+              "name": "body1"
+            },
+            {
+              "name": "body2"
+            },
+            {
+              "name": "button"
+            },
+            {
+              "name": "caption"
+            },
+            {
+              "name": "headline1"
+            },
+            {
+              "name": "headline2"
+            },
+            {
+              "name": "headline3"
+            },
+            {
+              "name": "headline4"
+            },
+            {
+              "name": "headline5"
+            },
+            {
+              "name": "headline6"
+            },
+            {
+              "name": "overline"
+            },
+            {
+              "name": "subtitle1"
+            },
+            {
+              "name": "subtitle2"
+            }
+          ],
+          "description": "Scale of the component, controlling font-size and icon size. Default is \"body1\", but it can be set to other typography values to scale the component."
+        },
+        {
+          "name": "trailingIcon",
+          "description": "boolean If true, the icon is displayed after the text (trailing)."
+        },
+        {
+          "name": "state",
+          "values": [
+            {
+              "name": "caution"
+            },
+            {
+              "name": "negative"
+            },
+            {
+              "name": "positive"
+            },
+            {
+              "name": "primary"
+            }
+          ],
+          "description": "State of the component, used to apply different styles based on status."
         }
       ]
     },
