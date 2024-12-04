@@ -7,7 +7,7 @@
     }
 
     .breadcrumb-current-title {
-      @include mat.typography-level($fontConfig, headline);
+      @include mat.typography-level($fontConfig, headline-5);
     }
   }
 }
