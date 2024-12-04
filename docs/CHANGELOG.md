@@ -1,3 +1,9 @@
+## [6.4.2](https://github.com/Teradata/covalent/compare/v6.4.1...v6.4.2) (2024-12-04)
+
+### Bug Fixes
+
+- covalent-markdown-navigator-typography for Angular Material 15 ([2d0bdaf](https://github.com/Teradata/covalent/commit/2d0bdafe2c1a4ce2e7988988cadc78876a78cd31))
+
 ## [6.4.1](https://github.com/Teradata/covalent/compare/v6.4.0...v6.4.1) (2024-12-04)
 
 ### Bug Fixes
