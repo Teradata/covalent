@@ -1,3 +1,9 @@
+## [6.4.3](https://github.com/Teradata/covalent/compare/v6.4.2...v6.4.3) (2024-12-06)
+
+### Bug Fixes
+
+- **markdown-navigator:** matListItem directives for Angular Material 15 ([7f0fb5b](https://github.com/Teradata/covalent/commit/7f0fb5be012167949b406cfdf4f1d0e47bfded73))
+
 ## [6.4.2](https://github.com/Teradata/covalent/compare/v6.4.1...v6.4.2) (2024-12-04)
 
 ### Bug Fixes
