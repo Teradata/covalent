@@ -4,11 +4,6 @@ byId:
     name: Action ribbon
     parentId: components
     path: /pattern/action-ribbon
-  adapting-tone-by-situation:
-    id: adapting-tone-by-situation
-    name: Adapting tone by situation
-    parentId: voice-and-tone
-    path: /pages/adapting-tone-by-situation
   alert:
     id: alert
     name: Alert
@@ -190,6 +185,11 @@ byId:
     name: Icons
     parentId: foundations
     path: /pages/icons
+  inclusive-language-glnk25tux:
+    id: inclusive-language-glnk25tux
+    name: Inclusive language
+    parentId: content
+    path: /pages/inclusive-language-glnk25tux
   linear-progress:
     id: linear-progress
     name: Linear progress
@@ -450,9 +450,9 @@ order:
   - typography
   - content
   - voice-and-tone
-  - adapting-tone-by-situation
   - product-and-ui
   - error-messages
   - video
   - date-and-time
+  - inclusive-language-glnk25tux
   - word-list

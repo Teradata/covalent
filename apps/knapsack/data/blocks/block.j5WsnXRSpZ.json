@@ -1,5 +1,5 @@
 {
-  "id": "KpBSWEGwUa",
+  "id": "j5WsnXRSpZ",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Meeting users in the moment",
+              "text": "Figurative language",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "We converse with different types of users at different stages of their journey, from onboarding to business as usual to new-feature adoption, and points in between. We strive to understand a user’s needs in a situation, and we guide them using a tone that helps them then and there.",
+              "text": "This applies to customer-facing content and the possible exceptions include language syntax and programming code.",
               "type": "text"
             }
           ]
@@ -36,8 +36,13 @@
           },
           "content": [
             {
-              "text": "Naturally, along their journey users have different feelings. We’re mindful of that, without being presumptuous, when we choose our tone. But we can never truly know a user’s emotional state. That’s why we don’t imply that we know it in attempts to engage them.",
-              "type": "text"
+              "text": "abort",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },
@@ -48,7 +53,7 @@
           },
           "content": [
             {
-              "text": "Moment to moment, we use tone to engage users by meeting their needs while staying credible and authentic.",
+              "text": "Do not use figurative language that can be perceived as sensitive",
               "type": "text"
             }
           ]
