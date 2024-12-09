@@ -2,10 +2,7 @@
   "id": "status-header",
   "title": "Status header",
   "description": "Header section indicating the status or context of the content.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-UDLnfGbB2W",

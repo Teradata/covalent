@@ -2,10 +2,7 @@
   "id": "list-item",
   "title": "List item",
   "description": "Individual item within a list.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-ytRTf8wtxn",

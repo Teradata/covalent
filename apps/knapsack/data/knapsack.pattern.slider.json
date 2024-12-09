@@ -2,10 +2,7 @@
   "id": "slider",
   "title": "Slider",
   "description": "Input control allowing users to select a value within a range.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-LpKATlK5H",

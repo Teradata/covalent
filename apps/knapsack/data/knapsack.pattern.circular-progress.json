@@ -63,9 +63,7 @@
     }
   ],
   "description": "Visual indication of progress displayed in a circular format.",
-  "statuses": {
-    "main": "needsReview"
-  },
+  "statuses": {},
   "designSrcComponentsById": {
     "iwyZ7OFzor": {
       "id": "iwyZ7OFzor",

@@ -2,10 +2,7 @@
   "id": "tabs",
   "title": "Tab bar",
   "description": "Navigation element allowing users to switch between different sections or views.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-kjFGUA31tg",

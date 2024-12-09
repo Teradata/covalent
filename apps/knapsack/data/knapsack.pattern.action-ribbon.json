@@ -2,11 +2,7 @@
   "id": "action-ribbon",
   "title": "Action ribbon",
   "description": "Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.",
-  "statuses": {
-    "main": "needsReview",
-    "Mh7xwTui": "draft",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-v3gk7O39kO",

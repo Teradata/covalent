@@ -2,10 +2,7 @@
   "id": "tree-list-item",
   "title": "Tree list item",
   "description": "Item within a tree list.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-1jOFYZB9ms",

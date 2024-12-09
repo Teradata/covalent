@@ -2,10 +2,7 @@
   "id": "select",
   "title": "Select",
   "description": "Interactive menu allowing users to choose from a list of options.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-qWXTtv81jY",
