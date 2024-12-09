@@ -1,5 +1,5 @@
 {
-  "id": "Y-JVxTUya",
+  "id": "Sb6Fnw5zKI",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,29 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 3,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Things to consider",
+              "text": " Heading 3",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Text, text, text.",
               "type": "text"
             }
           ]
@@ -30,7 +47,7 @@
                   },
                   "content": [
                     {
-                      "text": "What is the user context?",
+                      "text": "bullet",
                       "type": "text"
                     }
                   ]
@@ -47,7 +64,7 @@
                   },
                   "content": [
                     {
-                      "text": "What did they do before, and what will they do after?",
+                      "text": "bullet",
                       "type": "text"
                     }
                   ]
@@ -64,41 +81,7 @@
                   },
                   "content": [
                     {
-                      "text": "What does the user need now? How might they be feeling?",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "What do you want, and not want, to convey?",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "How do you know when you've gone too far?",
+                      "text": "bullet",
                       "type": "text"
                     }
                   ]
@@ -106,6 +89,12 @@
               ]
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
         }
       ]
     }

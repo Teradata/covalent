@@ -1,19 +1,23 @@
 {
-  "id": "f-TlOFP3R8",
+  "id": "xvqRFf16vF",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Empowering and real",
-              "type": "text"
+              "text": "execute, hang, kill",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },
@@ -24,7 +28,7 @@
           },
           "content": [
             {
-              "text": "Situation: A user  sees this sentence at the beginning of a product's getting started guide.",
+              "text": "Do not use figurative language that can be perceived as violent",
               "type": "text"
             }
           ]

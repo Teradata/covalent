@@ -1,5 +1,5 @@
 {
-  "id": "yyvAnHItNj",
+  "id": "m9RDpCA4K",
   "data": {
     "content": {
       "type": "doc",
@@ -12,8 +12,13 @@
           },
           "content": [
             {
-              "text": "Straightforward and brief",
-              "type": "text"
+              "text": " Heading 2",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },
@@ -24,10 +29,16 @@
           },
           "content": [
             {
-              "text": "Situation: A user encounters a Help article (in the product) on how to complete a task. ",
+              "text": "This is content in a text block.",
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
         }
       ]
     }

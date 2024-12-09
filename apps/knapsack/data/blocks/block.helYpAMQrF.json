@@ -1,5 +1,5 @@
 {
-  "id": "K4Bfb-xLFz",
+  "id": "helYpAMQrF",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Transparent and neutral",
+              "text": "Culture",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Situation: While using a product, a user encounters an error.",
+              "text": "Do not use jargon, slang, colloquialisms, and idioms, especially those that refer to culture, folklore, and sports. They can be specific to certain groups of people or cultures, potentially excluding people who are not familiar with the references.",
               "type": "text"
             }
           ]
