@@ -2,10 +2,7 @@
   "id": "navigation-list-item",
   "title": "Navigation list item",
   "description": "Item within a navigation menu or list.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-Qtmmi7N-aL",

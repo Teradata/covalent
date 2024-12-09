@@ -2,10 +2,7 @@
   "id": "form-field",
   "title": "Form Field",
   "description": "Input field within a form for users to enter data.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-I5Sx1HQnJ",

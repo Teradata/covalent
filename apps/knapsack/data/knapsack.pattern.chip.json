@@ -2,10 +2,7 @@
   "id": "chip",
   "title": "Chip set",
   "description": "Compact visual element representing an attribute, action, or choice.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-7wYRPSnEZH",

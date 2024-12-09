@@ -2,10 +2,7 @@
   "id": "chip-item",
   "title": "Chip",
   "description": "Individual item within a chip set.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-vegaZgkE47",

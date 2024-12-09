@@ -2,10 +2,7 @@
   "id": "menu",
   "title": "Menu",
   "description": "Collection of options or actions presented in an overlay in list format.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-hY3y1MyhrP",

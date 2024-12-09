@@ -2,10 +2,7 @@
   "id": "radio",
   "title": "Radio",
   "description": "A control that allows users to select only one option from a set.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-qk2MWcBipT",

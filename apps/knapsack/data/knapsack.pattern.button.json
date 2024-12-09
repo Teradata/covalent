@@ -2,11 +2,7 @@
   "id": "button",
   "title": "Button",
   "description": "Common buttons prompt most actions in a UI",
-  "statuses": {
-    "main": "needsReview",
-    "Mh7xwTui": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-raE1x4tYL",

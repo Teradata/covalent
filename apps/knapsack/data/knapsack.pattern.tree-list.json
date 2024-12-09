@@ -2,10 +2,7 @@
   "id": "tree-list",
   "title": "Tree list",
   "description": "Hierarchical list structure displaying data in a tree-like format.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-Ue0Hy3Asb",

@@ -2,10 +2,7 @@
   "id": "icon-button",
   "title": "Icon button",
   "description": "Button with an icon as the primary visual element.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-ctiCe2sAX",

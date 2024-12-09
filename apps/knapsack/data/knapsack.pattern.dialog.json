@@ -2,10 +2,7 @@
   "id": "dialog",
   "title": "Dialog",
   "description": "Modal window prompting users for input or displaying critical information.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-S9Ia0KOrya",

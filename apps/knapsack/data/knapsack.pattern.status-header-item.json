@@ -2,10 +2,7 @@
   "id": "status-header-item",
   "title": "Status header item",
   "description": "Item within a status header.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-55FkYSafco",

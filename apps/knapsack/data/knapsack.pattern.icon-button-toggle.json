@@ -2,10 +2,7 @@
   "id": "icon-button-toggle",
   "title": "Icon button toggle",
   "description": "Toggle button featuring an icon as the visual indicator of its state.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-6kGMXrj-eP",
