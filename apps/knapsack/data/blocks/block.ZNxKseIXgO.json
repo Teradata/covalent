@@ -1,0 +1,54 @@
+{
+  "id": "ZNxKseIXgO",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Tertiary colors",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use tertiary roles for contrasting accents that balance primary and secondary colors or bring heightened attention to an element such as an input field (",
+              "type": "text"
+            },
+            {
+              "text": "M3",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://m3.material.io/styles/color/roles#727a0bf8-c95f-4f83-bc43-290d20f24e8e",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": "). ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

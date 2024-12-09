@@ -1,0 +1,54 @@
+{
+  "id": "VlxHDHtlm5",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Secondary colors",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use secondary roles for less prominent components in the UI such as filter chips (",
+              "type": "text"
+            },
+            {
+              "text": "M3",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://m3.material.io/styles/color/roles#290bcc49-b728-414c-8cc5-04336c1c799c",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ").",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

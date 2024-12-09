@@ -1,0 +1,41 @@
+{
+  "id": "YX12ke2VXe",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The Covalent color system is built off of color role specifications from ",
+              "type": "text"
+            },
+            {
+              "text": "Material Design 3",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://m3.material.io/styles/color/roles",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " and used on all Covalent UI components.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
