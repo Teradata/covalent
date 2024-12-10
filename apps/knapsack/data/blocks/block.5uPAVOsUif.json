@@ -1,0 +1,32 @@
+{
+  "id": "5uPAVOsUif",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Be scalable.",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": " Gain leverage by designing cohesive interfaces that can grow with our uses, within our ecosystem, and with our industry. There should be no isolated features, functionality, or experiences.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
