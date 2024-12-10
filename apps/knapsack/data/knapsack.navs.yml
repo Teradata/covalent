@@ -105,6 +105,11 @@ byId:
     name: Date and time
     parentId: product-and-ui
     path: /pages/date-and-time
+  design-principles:
+    id: design-principles
+    name: Design principles
+    parentId: foundations
+    path: /pages/design-principles
   dialog:
     id: dialog
     name: Dialog
@@ -382,6 +387,7 @@ byId:
     path: /pages/word-list
 order:
   - foundations
+  - design-principles
   - color
   - icons
   - typography-3shrxwkyk
