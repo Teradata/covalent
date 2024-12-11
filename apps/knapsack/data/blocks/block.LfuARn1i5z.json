@@ -1,0 +1,35 @@
+{
+  "id": "LfuARn1i5z",
+  "data": {
+    "items": [
+      {
+        "title": "Negative",
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14314:2654",
+        "description": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use to indicate that a critical or blocking error has occurred.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "contain",
+      "size": "xlarge",
+      "seamless": true
+    },
+    "hideComponentProps": true
+  },
+  "blockType": "design-src-tiles",
+  "spacing": "medium"
+}

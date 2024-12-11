@@ -1,0 +1,23 @@
+{
+  "id": "Ufyw8Ka0Dm",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "kUfMxUgCGV",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36756",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Figma component"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

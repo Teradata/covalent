@@ -1,0 +1,35 @@
+{
+  "id": "qAd1PYCqEY",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "yWKhx3JuW",
+        "link": {
+          "path": "https://m2.material.io",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/material-design-pwazvl9qpng",
+        "title": "Material Design",
+        "description": "Our system uses Material Design 2 as a foundation. Review their docs for further context and extensive examples."
+      },
+      {
+        "id": "fEa6ey12W",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/figma-dzmrsgqrhjpng",
+        "title": "Figma library",
+        "description": "All our foundational Figma components can be found in this library."
+      }
+    ],
+    "gridStyles": {
+      "columns": "4"
+    },
+    "tileStyles": {
+      "imageSize": "small",
+      "titleSize": "large"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

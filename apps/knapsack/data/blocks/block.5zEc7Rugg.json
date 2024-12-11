@@ -1,0 +1,35 @@
+{
+  "id": "5zEc7Rugg",
+  "data": {
+    "items": [
+      {
+        "title": "Positive",
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14311:557",
+        "description": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use to indicate that a task or process has completed successfully.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "contain",
+      "size": "xlarge",
+      "seamless": true
+    },
+    "hideComponentProps": true
+  },
+  "spacing": "medium",
+  "blockType": "design-src-tiles"
+}

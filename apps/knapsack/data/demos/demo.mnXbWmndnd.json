@@ -11,18 +11,18 @@
       "state": "primary"
     },
     "slots": {
-      "default": [
-        {
-          "type": "text",
-          "text": "Lorem ipsum dolor"
-        }
-      ],
       "icon": [
         {
           "type": "template-demo",
+          "demoId": "Cg0RVNBqem",
           "patternId": "circular-progress",
-          "templateId": "web-components-rw6v6c4fnU",
-          "demoId": "Cg0RVNBqem"
+          "templateId": "web-components-rw6v6c4fnU"
+        }
+      ],
+      "default": [
+        {
+          "text": "Lorem ipsum dolor",
+          "type": "text"
         }
       ]
     }

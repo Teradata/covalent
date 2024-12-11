@@ -7,15 +7,15 @@
   "description": "",
   "data": {
     "props": {
-      "scale": "body1",
       "icon": "houseboat",
+      "scale": "body1",
       "state": "primary"
     },
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Lorem ipsum dolor"
+          "text": "Lorem ipsum dolor",
+          "type": "text"
         }
       ]
     }

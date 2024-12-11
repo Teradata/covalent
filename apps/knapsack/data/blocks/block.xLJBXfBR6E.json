@@ -1,0 +1,34 @@
+{
+  "id": "xLJBXfBR6E",
+  "data": {
+    "items": [
+      {
+        "title": "Neutral",
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14314:2846",
+        "description": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use for messages that require less visual prominence.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "contain",
+      "size": "xlarge",
+      "seamless": true
+    },
+    "hideComponentProps": true
+  },
+  "blockType": "design-src-tiles"
+}
