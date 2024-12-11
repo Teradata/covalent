@@ -139,5 +139,21 @@
       "fileId": "KvXVAmYdCVAS7hzkOa73Em",
       "componentId": "7955:62085"
     }
+  },
+  "settings": {
+    "pageHeader": {
+      "backgroundColor": {
+        "type": "design-token",
+        "tokenName": "surface-variant"
+      },
+      "textColorDescription": {
+        "type": "design-token",
+        "tokenName": "on-surface-variant"
+      },
+      "textColorTitle": {
+        "type": "design-token",
+        "tokenName": "on-surface"
+      }
+    }
   }
 }

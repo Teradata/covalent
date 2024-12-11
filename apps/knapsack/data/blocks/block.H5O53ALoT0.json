@@ -1,18 +1,17 @@
 {
-  "id": "Dx-Uvpxsf5",
+  "id": "H5O53ALoT0",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Don't overuse the title",
+              "text": "An icon may be colored using any of the standard icon colors, or any of the foreground colors if representing a state such as an error or success.",
               "type": "text"
             }
           ]
@@ -24,7 +23,7 @@
           },
           "content": [
             {
-              "text": "Your title should say what happened, and the description should give more detail.",
+              "text": "Do not use other colors. If you need decorative color, consider using an avatar.",
               "type": "text"
             }
           ]
@@ -32,5 +31,7 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "size": "small",
+  "blockType": "text-editor",
+  "spacing": "medium"
 }

@@ -1,5 +1,5 @@
 {
-  "id": "Dx-Uvpxsf5",
+  "id": "r2qfg3P4VU",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Don't overuse the title",
+              "text": "Visualizations",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Your title should say what happened, and the description should give more detail.",
+              "text": "Use these when toggling between different views of data. For example, switching from a bar chart to a line graph.",
               "type": "text"
             }
           ]
@@ -32,5 +32,6 @@
       ]
     }
   },
+  "size": "small",
   "blockType": "text-editor"
 }

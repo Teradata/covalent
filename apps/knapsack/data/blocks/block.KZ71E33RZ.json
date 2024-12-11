@@ -1,0 +1,18 @@
+{
+  "id": "KZ71E33RZ",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14017:3275"
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "size": "large",
+      "seamless": true
+    }
+  },
+  "size": "large",
+  "blockType": "design-src-tiles"
+}

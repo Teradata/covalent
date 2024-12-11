@@ -125,12 +125,14 @@
     {
       "id": "trCAw4vLd",
       "type": "designSrc",
-      "minRoleNeeded": "ADMIN"
+      "minRoleNeeded": "ADMIN",
+      "hidden": true
     },
     {
       "id": "5MWUGBa7hT",
       "type": "subPage",
-      "minRoleNeeded": "ADMIN"
+      "minRoleNeeded": "ADMIN",
+      "hidden": true
     }
   ],
   "subPages": [

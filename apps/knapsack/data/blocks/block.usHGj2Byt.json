@@ -1,5 +1,5 @@
 {
-  "id": "Dx-Uvpxsf5",
+  "id": "usHGj2Byt",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Don't overuse the title",
+              "text": "Internal links",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Your title should say what happened, and the description should give more detail.",
+              "text": "Use a simple text color change to indicate the presence of a link, and an underline when hovered.",
               "type": "text"
             }
           ]
@@ -32,5 +32,7 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small",
+  "spacing": "small"
 }

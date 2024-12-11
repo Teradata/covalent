@@ -1,5 +1,5 @@
 {
-  "id": "Dx-Uvpxsf5",
+  "id": "c84RIwPTuN",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Don't overuse the title",
+              "text": "Functions",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Your title should say what happened, and the description should give more detail.",
+              "text": "We’ve standardized which icons we use for various use cases.",
               "type": "text"
             }
           ]
@@ -32,5 +32,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }

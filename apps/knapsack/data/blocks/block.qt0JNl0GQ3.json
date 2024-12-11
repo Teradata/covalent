@@ -1,0 +1,34 @@
+{
+  "id": "qt0JNl0GQ3",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "0G-6-mfmvs",
+        "link": {
+          "path": "https://github.com/Teradata/covalent/tree/main/libs/components#getting-started",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/github-vxn1wovnrnpng",
+        "title": "Covalent setup",
+        "description": "Instructions for accessing and running Covalent locally"
+      },
+      {
+        "id": "iAimQhNEKH",
+        "link": {
+          "path": "https://teradata.github.io/covalent/docs/components/?path=/docs/introduction--overview",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/storybook-icon-7m8kzc6tvhpng",
+        "title": "Storybook",
+        "description": "Older documentation, useful while we flesh out this new site"
+      }
+    ],
+    "gridStyles": {
+      "columns": "4"
+    },
+    "tileStyles": {
+      "titleSize": "large"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

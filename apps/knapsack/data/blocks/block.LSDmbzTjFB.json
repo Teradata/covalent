@@ -1,18 +1,17 @@
 {
-  "id": "yssGoQuPit",
+  "id": "LSDmbzTjFB",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Do's and don's",
+              "text": "For best readability, text should not exceed 75 characters per line. Here is a cheat sheet of max widths in pixels for various elements.",
               "type": "text"
             }
           ]
@@ -20,5 +19,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }

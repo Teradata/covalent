@@ -2,18 +2,4 @@ title: Tokens
 id: tokens
 blockIds:
   - Qo5t01X6yw
-settings:
-  pageHeader:
-    backgroundSize: cover
-    backgroundOverlay: false
-    backgroundColor:
-      type: design-token
-      tokenName: inversesurface
-    textColorTitle:
-      type: design-token
-      tokenName: inverseonsurface
-    textColorDescription:
-      type: design-token
-      tokenName: inverseonsurface
-    size: medium
 description: Standardized styles that we use across all our UI elements, in both design and code.

@@ -22,13 +22,29 @@ settings:
     files:
       - fileId: KvXVAmYdCVAS7hzkOa73Em
         name: Covalent principles
-        priorVersion: '2150569702836114658'
+        priorVersion: '2160280358132079993'
         type: figma
-        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2150585782634935158
-        version: '2150585782634935158'
+        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2160300453184258569
+        version: '2160300453184258569'
   favicon: https://knapsack.imgix.net/site/covalent/t-favicon-6zimud2smwpng
   hideTitleInNavigation: true
-  logoUrl: https://knapsack.imgix.net/site/covalent/td-covalent-wordmark-1dsxavbwltpng
+  logoUrl: https://knapsack.imgix.net/site/covalent/td-covalent-wordmark-sgyys2jeuwpng
+  pages:
+    defaultPageHeader:
+      backgroundColor:
+        tokenName: surface-variant
+        type: design-token
+      backgroundOverlay: false
+      backgroundSize: cover
+      hideText: false
+      size: auto
+      textColorDescription:
+        tokenName: on-surface-variant
+        type: design-token
+      textColorTitle:
+        tokenName: on-surface
+        type: design-token
+    tableOfContents: {}
   theme:
     appearance:
       customFonts:
@@ -59,35 +75,38 @@ settings:
       navigation:
         primaryNav:
           accentColor:
-            tokenName: cv.theme.light.colors.primary
+            tokenName: caution
             type: design-token
           backgroundColor:
-            tokenName: cv.theme.light.colors.surface
+            tokenName: surface-variant
             type: design-token
           fontFamily: Inter Regular
           hoverColor:
-            tokenName: cv.theme.light.colors.on-surface-38%
+            tokenName: on-surface-variant
             type: design-token
           textColor:
-            tokenName: cv.theme.light.colors.primary
+            tokenName: on-surface
             type: design-token
           textTransform: inherit
         secondaryNav:
           accentColor:
-            tokenName: cv.theme.light.colors.primary
+            tokenName: primary
+            type: design-token
+          backgroundColor:
+            tokenName: surface-variant
             type: design-token
           fontFamily: Inter Regular
           textColor:
-            tokenName: cv.theme.light.colors.on-surface
+            tokenName: on-surface-variant
             type: design-token
           textTransform: inherit
         tabs:
           accentColor:
-            tokenName: cv.theme.light.colors.primary
+            tokenName: caution
             type: design-token
           fontFamily: Inter Regular
           textColor:
-            tokenName: cv.theme.light.colors.on-surface
+            tokenName: on-surface
             type: design-token
           textTransform: inherit
       pageElements:
@@ -145,7 +164,11 @@ settings:
           fontWeight: 400
           lineHeight: '1.57'
           textTransform: inherit
-        link: {}
+        link:
+          textColor:
+            tokenName: on-secondary-container
+            type: design-token
+          underline: false
         pageDescription:
           fontFamily: Inter Regular
           fontSize:

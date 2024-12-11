@@ -1,0 +1,49 @@
+{
+  "id": "HQvSOahIDp",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Each icon sits within a 24x24 pixel square.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "They rarely fill this canvas, which is intentional. Since icons vary in thickness, we adjust their size on the canvas to make them look more like a set.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "This also aligns everything without any extra effort. If the canvases line up, the icons line up.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor",
+  "size": "small",
+  "spacing": "medium"
+}

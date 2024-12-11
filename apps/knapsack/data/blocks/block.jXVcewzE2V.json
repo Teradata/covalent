@@ -1,5 +1,5 @@
 {
-  "id": "Dx-Uvpxsf5",
+  "id": "jXVcewzE2V",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Don't overuse the title",
+              "text": "States",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Your title should say what happened, and the description should give more detail.",
+              "text": "For giving opinionated feedback. Error messages, loading, status indicators, etc.",
               "type": "text"
             }
           ]
@@ -32,5 +32,6 @@
       ]
     }
   },
+  "size": "small",
   "blockType": "text-editor"
 }

@@ -1,5 +1,5 @@
 {
-  "id": "Dx-Uvpxsf5",
+  "id": "Uop2NNJH1",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Don't overuse the title",
+              "text": "Icon sets",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Your title should say what happened, and the description should give more detail.",
+              "text": "We use two icon sets. For most items, we use icons from Material Symbols. When necessary, we create our own custom icons and provide those in our custom Covalent Icons set.",
               "type": "text"
             }
           ]
