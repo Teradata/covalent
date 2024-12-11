@@ -231,7 +231,7 @@
   position: sticky;
   top: 0;
   display: block;
-  z-index: 1;
+  z-index: var(--cv-app-shell-user-menu-z-index, 1);
 }
 
 [name='mini-list'] {
@@ -264,6 +264,10 @@ nav.navigation {
   border-right: 0;
   position: fixed;
   background-color: var(--mdc-theme-background);
+  z-index: var(
+    --cv-app-shell-navigation-z-index,
+    2
+  ); // must be greater than --cv-app-shell-user-menu-z-index
 
   .toggle-drawer {
     margin: 8px auto;
