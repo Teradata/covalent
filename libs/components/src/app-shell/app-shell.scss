@@ -264,7 +264,10 @@ nav.navigation {
   border-right: 0;
   position: fixed;
   background-color: var(--mdc-theme-background);
-  z-index: var(--cv-app-shell-navigation-z-index, 2);
+  z-index: var(
+    --cv-app-shell-navigation-z-index,
+    2
+  ); // must be greater than --cv-app-shell-user-menu-z-index
 
   .toggle-drawer {
     margin: 8px auto;
