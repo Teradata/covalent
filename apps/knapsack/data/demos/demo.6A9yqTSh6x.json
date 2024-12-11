@@ -11,8 +11,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Lorem ipsum dolor"
+          "text": "Lorem ipsum dolor",
+          "type": "text"
         }
       ]
     }

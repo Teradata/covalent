@@ -7,15 +7,15 @@
   "description": "",
   "data": {
     "props": {
-      "scale": "body1",
       "icon": "check",
+      "scale": "body1",
       "state": "positive"
     },
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Lorem ipsum dolor"
+          "text": "Lorem ipsum dolor",
+          "type": "text"
         }
       ]
     }

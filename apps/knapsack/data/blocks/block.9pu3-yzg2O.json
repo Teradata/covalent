@@ -9,8 +9,8 @@
           "external": true
         },
         "image": "https://knapsack.imgix.net/site/covalent/material-symbols-logo-uu4lgyfrvqpng",
-        "title": "Material Symbols",
-        "description": "We use the Material Symbols icon library wherever possible"
+        "title": "See also",
+        "description": "Material Symbols"
       }
     ],
     "tileStyles": {
@@ -22,5 +22,6 @@
       "centered": false
     }
   },
-  "blockType": "shortcut-tiles"
+  "blockType": "shortcut-tiles",
+  "spacing": "medium"
 }

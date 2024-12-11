@@ -4,15 +4,3 @@ blockIds:
   - uaF6FeFcNZ
   - yQUYdOcLyh
 description: Fundamental building blocks designed to enhance interaction and usability.
-settings:
-  pageHeader:
-    backgroundColor:
-      type: design-token
-      tokenName: inversesurface
-    textColorTitle:
-      type: design-token
-      tokenName: inverseonsurface
-    textColorDescription:
-      type: design-token
-      tokenName: inverseonsurface
-    size: medium

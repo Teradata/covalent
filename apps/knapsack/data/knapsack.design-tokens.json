@@ -11084,20 +11084,36 @@
     "$type": "color",
     "$value": "#00233C"
   },
-  "inversesurface": {
+  "surface-variant": {
     "$type": "color",
-    "$value": "#3E4557"
+    "$value": "#f8f9fb"
   },
-  "onsurfacevariant": {
-    "$type": "color",
-    "$value": "#59627B"
-  },
-  "inversebackground": {
+  "inverse-background": {
     "$type": "color",
     "$value": "#1E1D1E"
   },
-  "inverseonsurface": {
+  "inverse-on-surface": {
     "$type": "color",
     "$value": "#F1F3F8"
+  },
+  "inverse-surface": {
+    "$type": "color",
+    "$value": "#3E4557"
+  },
+  "on-surface-variant": {
+    "$type": "color",
+    "$value": "#59627B"
+  },
+  "secondary-container": {
+    "$type": "color",
+    "$value": "#DEEAFA"
+  },
+  "on-secondary-container": {
+    "$type": "color",
+    "$value": "#001D33"
+  },
+  "primary": {
+    "$type": "color",
+    "$value": "#3053F4"
   }
 }

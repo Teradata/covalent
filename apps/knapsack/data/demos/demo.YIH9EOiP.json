@@ -7,16 +7,16 @@
   "description": "",
   "data": {
     "props": {
-      "scale": "body1",
       "icon": "warning",
-      "filledIcon": true,
-      "state": "caution"
+      "scale": "body1",
+      "state": "caution",
+      "filledIcon": true
     },
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Lorem ipsum dolor"
+          "text": "Lorem ipsum dolor",
+          "type": "text"
         }
       ]
     }

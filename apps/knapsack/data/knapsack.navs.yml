@@ -105,6 +105,21 @@ byId:
     name: Date and time
     parentId: product-and-ui
     path: /pages/date-and-time
+  design-principles:
+    id: design-principles
+    name: Design principles
+    parentId: foundations
+    path: /pages/design-principles
+  designers:
+    id: designers
+    name: Designers
+    parentId: get-started
+    path: /pages/designers
+  developers:
+    id: developers
+    name: Developers
+    parentId: get-started
+    path: /pages/developers
   dialog:
     id: dialog
     name: Dialog
@@ -155,6 +170,11 @@ byId:
     name: Full-screen dialog
     parentId: components
     path: /pattern/full-screen-dialog
+  get-started:
+    id: get-started
+    name: Get started
+    parentId: root
+    path: /pages/get-started
   icon:
     id: icon
     name: Icon
@@ -381,10 +401,16 @@ byId:
     parentId: content
     path: /pages/word-list
 order:
+  - get-started
+  - designers
+  - developers
   - foundations
+  - design-principles
   - color
   - icons
   - typography-3shrxwkyk
+  - voice-and-tone
+  - adapting-tone-by-situation
   - components
   - action-ribbon
   - alert
@@ -394,7 +420,6 @@ order:
   - button
   - card
   - checkbox
-  - code-editor
   - code-snippet
   - chip-item
   - chip
@@ -410,7 +435,6 @@ order:
   - icon-button
   - icon-button-toggle
   - icon-checkbox
-  - icon-lockup
   - icon-radio
   - linear-progress
   - list
@@ -419,7 +443,6 @@ order:
   - check-list-item
   - radio-list-item
   - menu
-  - notebook-cell
   - radio
   - select
   - side-sheet
@@ -449,10 +472,11 @@ order:
   - colors-9gexmujiba
   - typography
   - content
-  - voice-and-tone
-  - adapting-tone-by-situation
   - product-and-ui
   - error-messages
   - video
   - date-and-time
   - word-list
+  - code-editor
+  - icon-lockup
+  - notebook-cell

@@ -2,15 +2,3 @@ id: patterns
 title: Patterns
 blockIds:
   - vXcUxlMtQr
-settings:
-  pageHeader:
-    textColorDescription:
-      type: design-token
-      tokenName: inverseonsurface
-    textColorTitle:
-      type: design-token
-      tokenName: inverseonsurface
-    backgroundColor:
-      type: design-token
-      tokenName: inversesurface
-    size: medium

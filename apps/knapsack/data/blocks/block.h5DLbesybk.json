@@ -1,0 +1,35 @@
+{
+  "id": "h5DLbesybk",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "meA89u6iBh",
+        "link": {
+          "name": "Designers",
+          "path": "/pages/designers"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/get-started-designers-69jmv8kkrapng",
+        "title": "Designers"
+      },
+      {
+        "id": "2HXcfa9rFt",
+        "link": {
+          "name": "Developers",
+          "path": "/pages/developers"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/get-started-developers-iynbusdnz6png",
+        "title": "Developers"
+      }
+    ],
+    "tileStyles": {
+      "rounded": true,
+      "outlined": true,
+      "titleSize": "large"
+    },
+    "gridStyles": {
+      "columns": "4",
+      "centered": false
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

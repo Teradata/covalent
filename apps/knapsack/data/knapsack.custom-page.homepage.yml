@@ -8,17 +8,17 @@ settings:
     backgroundColor:
       type: design-token
       colorValue: ''
-      tokenName: inversebackground
+      tokenName: inverse-background
     textColorTitle:
       type: design-token
-      tokenName: inverseonsurface
+      tokenName: inverse-on-surface
     textColorDescription:
       type: design-token
-      tokenName: inverseonsurface
-    size: large
+      tokenName: inverse-on-surface
+    size: medium
     backgroundImage: https://knapsack.imgix.net/site/covalent/globe-dark-fvairlvl-hsvg
     hideText: false
     backgroundSize: cover
     backgroundOverlay: true
-  hideTableOfContents: false
-description: For Teradata products
+  hideTableOfContents: true
+description: ''

@@ -6,12 +6,12 @@ settings:
   pageHeader:
     textColorTitle:
       type: design-token
-      tokenName: inverseonsurface
+      tokenName: on-surface
     textColorDescription:
       type: design-token
-      tokenName: inverseonsurface
+      tokenName: on-surface-variant
     backgroundColor:
       type: design-token
-      tokenName: inversesurface
-    size: medium
+      tokenName: surface-variant
+    size: auto
 description: The most fundamental level of the system. These are concepts or rules which influence everything else.

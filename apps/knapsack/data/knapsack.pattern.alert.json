@@ -78,55 +78,66 @@
       "type": "subPage"
     },
     {
+      "id": "syFSN1SPG",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-4qjJYWsUZi",
       "type": "template"
     },
     {
       "id": "VFcB0OS3SY",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [
     {
       "id": "overview",
-      "title": "Overview",
+      "title": "Usage",
       "blockIds": [
-        "0rZ0OosspG",
-        "bKlWE2O54",
+        "miZdjfO0o",
+        "Ufyw8Ka0Dm",
         "Eu7gLbvJd",
-        "3pS1ljDoD",
-        "TrERoIk0Wp",
-        "a6InsrLwTc",
-        "zIQV2Ma9vH",
-        "YlQCN5mV4X",
-        "QQBUzJEcGU",
-        "AMtwv4TK-b",
-        "im0hl6ACAA",
-        "8vPfEOAB7",
-        "LUkIDXUmWs",
-        "dSKFQZvua",
-        "Rnf7NusII",
-        "viH43U9umO",
-        "bugR29cLE",
-        "jzfgAWaKc4",
-        "zvYc5hL8pV",
-        "h7p4XGu26K",
-        "1yeLGI1D19",
-        "xu-K4urdZC",
-        "VLk8JmvJEd",
-        "VlsIZq3cI9",
-        "iS29p-62b",
-        "Ds5agrHj",
-        "jAy9aj-Gr5",
-        "F72rvT3jUb",
-        "iVxoJLCW9A",
-        "aB8GHteqAE",
+        "lNmJbVwFSG",
+        "79hYuB9zmU",
+        "UIzn6dTrAs",
+        "JjTPPE7SJr",
+        "mlMyDNdc",
         "ChOAoD1GAW",
         "IqfDGKonyI",
         "yssGoQuPit",
         "Dx-Uvpxsf5",
         "m2ZD8JXZJo",
-        "FMTBoRTSjq"
+        "FMTBoRTSjq",
+        "8pPRWGTRAH",
+        "qIHJvwBfU",
+        "TrERoIk0Wp",
+        "a6InsrLwTc"
+      ]
+    },
+    {
+      "id": "syFSN1SPG",
+      "title": "Style",
+      "blockIds": [
+        "0rZ0OosspG",
+        "bKlWE2O54",
+        "757No2ZPKM",
+        "MTXHP2wMF",
+        "igdMIrGbHw",
+        "ZI8Csk1wp8",
+        "5zEc7Rugg",
+        "8dIrflX3f9",
+        "nre5fjvPZk",
+        "ancMEaFQ1D",
+        "LfuARn1i5z",
+        "bjwP36baZI",
+        "4EvigbwHZS",
+        "ML4KBVvZwi",
+        "xLJBXfBR6E",
+        "yK1IYXpcjU",
+        "ypfZwjL-y5",
+        "06NBhVq4fp"
       ]
     }
   ],
@@ -136,6 +147,22 @@
       "title": "Figma Component",
       "fileId": "KvXVAmYdCVAS7hzkOa73Em",
       "componentId": "7727:15659"
+    }
+  },
+  "settings": {
+    "pageHeader": {
+      "backgroundColor": {
+        "type": "design-token",
+        "tokenName": "surface-variant"
+      },
+      "textColorDescription": {
+        "type": "design-token",
+        "tokenName": "on-surface-variant"
+      },
+      "textColorTitle": {
+        "type": "design-token",
+        "tokenName": "on-surface"
+      }
     }
   }
 }

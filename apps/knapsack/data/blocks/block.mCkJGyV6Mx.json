@@ -9,8 +9,18 @@
           "path": "/pages/typography"
         },
         "image": "https://knapsack.imgix.net/site/covalent/typography-rjcvx8vd6bpng",
-        "title": "Covalent",
+        "title": "See also",
         "description": "Typography tokens"
+      },
+      {
+        "id": "GCeJ5yKToH",
+        "link": {
+          "path": "https://m2.material.io/design/typography/the-type-system.html#type-scale",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-rlqdfe8xdpng",
+        "title": "See also",
+        "description": "Material Design type system"
       }
     ],
     "tileStyles": {
@@ -20,5 +30,6 @@
       "columns": "4"
     }
   },
-  "blockType": "shortcut-tiles"
+  "blockType": "shortcut-tiles",
+  "spacing": "large"
 }
