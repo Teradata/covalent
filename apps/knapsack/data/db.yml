@@ -166,7 +166,7 @@ settings:
           textTransform: inherit
         link:
           textColor:
-            tokenName: on-secondary-container
+            tokenName: primary
             type: design-token
           underline: false
         pageDescription:
