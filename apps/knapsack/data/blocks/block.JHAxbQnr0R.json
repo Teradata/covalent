@@ -1,13 +1,9 @@
 {
-  "id": "O2FSrtamNm",
+  "id": "JHAxbQnr0R",
   "data": {
-    "gridStyles": {
-      "columns": "2",
-      "centered": true
-    },
     "guidelines": [
       {
-        "id": "TbKgEi84d9",
+        "id": "54oCEROR9I",
         "type": "do",
         "content": {
           "type": "doc",
@@ -16,7 +12,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Examples include Azure Active Directory, Okta, and Ping.",
+                  "text": "Have the user sign in using their database admin account.",
                   "type": "text"
                 }
               ]
@@ -25,7 +21,7 @@
         }
       },
       {
-        "id": "DOFCYTlw5p",
+        "id": "QYkIYkcrzi",
         "type": "dont",
         "content": {
           "type": "doc",
@@ -34,7 +30,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Examples include Azure Active Directory, Okta, Ping, Google, Facebook, and Twitter.",
+                  "text": "Have the user sign in using his database admin account.",
                   "type": "text"
                 }
               ]
@@ -44,10 +40,7 @@
       }
     ],
     "tileStyles": {
-      "imageSize": "none",
-      "imageRounded": true,
-      "imageOutlined": true,
-      "headerBeforeImage": false
+      "imageSize": "none"
     }
   },
   "blockType": "guidelines"

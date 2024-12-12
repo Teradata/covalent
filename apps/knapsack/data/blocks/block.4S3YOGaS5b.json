@@ -1,18 +1,24 @@
 {
-  "id": "KfeIuYKj2w",
+  "id": "4S3YOGaS5b",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "We don’t want users to feel they have a lot to read. To help them complete tasks efficiently and feel good about it, write only what they need.",
-              "type": "text"
+              "text": "Heading 1",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },
@@ -23,10 +29,16 @@
           },
           "content": [
             {
-              "text": "Let's look at the example more closely.",
+              "text": "This is content in a text block.",
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
         }
       ]
     }

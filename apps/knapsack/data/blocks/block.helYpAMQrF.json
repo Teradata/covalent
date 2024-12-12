@@ -1,0 +1,36 @@
+{
+  "id": "helYpAMQrF",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Culture",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Do not use jargon, slang, colloquialisms, and idioms, especially those that refer to culture, folklore, and sports. They can be specific to certain groups of people or cultures, potentially excluding people who are not familiar with the references.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

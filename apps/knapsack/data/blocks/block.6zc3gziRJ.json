@@ -1,13 +1,9 @@
 {
-  "id": "5xYWkMJtI",
+  "id": "6zc3gziRJ",
   "data": {
-    "gridStyles": {
-      "columns": "2",
-      "centered": true
-    },
     "guidelines": [
       {
-        "id": "DOFCYTlw5p",
+        "id": "3hlj8oke-A",
         "type": "do",
         "content": {
           "type": "doc",
@@ -16,8 +12,13 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "An identity provider stores, secures, and authenticates the digital identities of users.",
-                  "type": "text"
+                  "text": "(Example TBD)",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
                 }
               ]
             }
@@ -25,7 +26,7 @@
         }
       },
       {
-        "id": "TbKgEi84d9",
+        "id": "akSIo5Ycvt",
         "type": "dont",
         "content": {
           "type": "doc",
@@ -34,8 +35,13 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "An identity provider stores, secures, and authenticates the digital identities of users, devices, or applications.",
-                  "type": "text"
+                  "text": "(Example TBD)",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
                 }
               ]
             }
@@ -44,10 +50,7 @@
       }
     ],
     "tileStyles": {
-      "imageSize": "none",
-      "imageRounded": true,
-      "imageOutlined": true,
-      "headerBeforeImage": false
+      "imageSize": "none"
     }
   },
   "blockType": "guidelines"
