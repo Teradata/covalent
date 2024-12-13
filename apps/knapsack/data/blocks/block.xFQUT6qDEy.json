@@ -1,13 +1,9 @@
 {
-  "id": "5xYWkMJtI",
+  "id": "xFQUT6qDEy",
   "data": {
-    "gridStyles": {
-      "columns": "2",
-      "centered": true
-    },
     "guidelines": [
       {
-        "id": "DOFCYTlw5p",
+        "id": "NWXTenviI8",
         "type": "do",
         "content": {
           "type": "doc",
@@ -16,7 +12,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "An identity provider stores, secures, and authenticates the digital identities of users.",
+                  "text": "You can turn on notifications.",
                   "type": "text"
                 }
               ]
@@ -25,7 +21,7 @@
         }
       },
       {
-        "id": "TbKgEi84d9",
+        "id": "O8XelRI3n",
         "type": "dont",
         "content": {
           "type": "doc",
@@ -34,7 +30,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "An identity provider stores, secures, and authenticates the digital identities of users, devices, or applications.",
+                  "text": "You can disable notifications.",
                   "type": "text"
                 }
               ]
@@ -44,10 +40,7 @@
       }
     ],
     "tileStyles": {
-      "imageSize": "none",
-      "imageRounded": true,
-      "imageOutlined": true,
-      "headerBeforeImage": false
+      "imageSize": "none"
     }
   },
   "blockType": "guidelines"

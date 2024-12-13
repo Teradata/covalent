@@ -1,9 +1,27 @@
 {
-  "id": "3nK9KuZ4DN",
+  "id": "4S3YOGaS5b",
   "data": {
     "content": {
       "type": "doc",
       "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Heading 1",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "paragraph",
           "attrs": {
@@ -11,23 +29,16 @@
           },
           "content": [
             {
-              "text": "The UI makes clear what the user needs to do before they select ",
-              "type": "text"
-            },
-            {
-              "text": "Add provider",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": ". ",
+              "text": "This is content in a text block.",
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
         }
       ]
     }

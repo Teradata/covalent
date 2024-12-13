@@ -1,13 +1,9 @@
 {
-  "id": "e0PZuHL0Fl",
+  "id": "KcqFjWhXyK",
   "data": {
-    "gridStyles": {
-      "columns": "2",
-      "centered": true
-    },
     "guidelines": [
       {
-        "id": "TbKgEi84d9",
+        "id": "FlsJF1pZB3",
         "type": "do",
         "content": {
           "type": "doc",
@@ -16,7 +12,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Sign in to the VantageCloud Lake Console.",
+                  "text": "Now, you can create your dashboard by selecting the widgets you want and arranging them the way you like.",
                   "type": "text"
                 }
               ]
@@ -25,7 +21,7 @@
         }
       },
       {
-        "id": "DOFCYTlw5p",
+        "id": "tq0iBMqPsR",
         "type": "dont",
         "content": {
           "type": "doc",
@@ -34,20 +30,20 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Sign in to the VantageCloud Lake Console with your username and password.",
+                  "text": "Creating your personalized dashboard using widgets is now a breeze.",
                   "type": "text"
                 }
               ]
+            },
+            {
+              "type": "paragraph"
             }
           ]
         }
       }
     ],
     "tileStyles": {
-      "imageSize": "none",
-      "imageRounded": true,
-      "imageOutlined": true,
-      "headerBeforeImage": false
+      "imageSize": "none"
     }
   },
   "blockType": "guidelines"

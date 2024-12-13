@@ -1,5 +1,5 @@
 {
-  "id": "K4Bfb-xLFz",
+  "id": "Z-k5iVAYJa",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Transparent and neutral",
+              "text": "Humor",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Situation: While using a product, a user encounters an error.",
+              "text": "Humor varies widely across cultures, and what one group finds funny, another may find offensive or perplexing. Humor that can be interpreted as racist, ageist, or sexist can make users feel excluded. Also, it can distract users from the primary purpose of the content, which is to ensure users can do the job they set out to do.",
               "type": "text"
             }
           ]
