@@ -1,17 +1,18 @@
 {
-  "id": "KfeIuYKj2w",
+  "id": "pMkYbcemPH",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "We don’t want users to feel they have a lot to read. To help them complete tasks efficiently and feel good about it, write only what they need.",
+              "text": "Gender",
               "type": "text"
             }
           ]
@@ -23,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Let's look at the example more closely.",
+              "text": "Avoid assumptions about gender and identity. If you know a person’s preferred pronouns, use them. Otherwise, use “they” and “them.”",
               "type": "text"
             }
           ]

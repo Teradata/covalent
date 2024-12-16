@@ -4,11 +4,6 @@ byId:
     name: Action ribbon
     parentId: components
     path: /pattern/action-ribbon
-  adapting-tone-by-situation:
-    id: adapting-tone-by-situation
-    name: Adapting tone by situation
-    parentId: voice-and-tone
-    path: /pages/adapting-tone-by-situation
   alert:
     id: alert
     name: Alert
@@ -210,6 +205,11 @@ byId:
     name: Icons
     parentId: foundations
     path: /pages/icons
+  inclusive-language-glnk25tux:
+    id: inclusive-language-glnk25tux
+    name: Inclusive language
+    parentId: content
+    path: /pages/inclusive-language-glnk25tux
   linear-progress:
     id: linear-progress
     name: Linear progress
@@ -401,16 +401,10 @@ byId:
     parentId: content
     path: /pages/word-list
 order:
-  - get-started
-  - designers
-  - developers
   - foundations
-  - design-principles
   - color
   - icons
   - typography-3shrxwkyk
-  - voice-and-tone
-  - adapting-tone-by-situation
   - components
   - action-ribbon
   - alert
@@ -420,6 +414,7 @@ order:
   - button
   - card
   - checkbox
+  - code-editor
   - code-snippet
   - chip-item
   - chip
@@ -435,6 +430,7 @@ order:
   - icon-button
   - icon-button-toggle
   - icon-checkbox
+  - icon-lockup
   - icon-radio
   - linear-progress
   - list
@@ -443,6 +439,7 @@ order:
   - check-list-item
   - radio-list-item
   - menu
+  - notebook-cell
   - radio
   - select
   - side-sheet
@@ -472,11 +469,14 @@ order:
   - colors-9gexmujiba
   - typography
   - content
+  - voice-and-tone
   - product-and-ui
   - error-messages
   - video
   - date-and-time
+  - inclusive-language-glnk25tux
   - word-list
-  - code-editor
-  - icon-lockup
-  - notebook-cell
+  - design-principles
+  - designers
+  - developers
+  - get-started

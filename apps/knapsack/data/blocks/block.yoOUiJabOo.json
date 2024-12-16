@@ -1,0 +1,48 @@
+{
+  "id": "yoOUiJabOo",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Disability",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use language that is direct, clear, and welcoming for all users, including people with disabilities. Avoid euphemisms or patronizing terms such as differently abled, special needs, or hearing impaired to refer to people with disabilities.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For example, avoid using “enable” and \"disable.” Instead use “turn on” and “turn off.”",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "FIjfxDGc8m",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Race",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Even if unintentional, language can exclude or harm people who have been historically marginalized due to their race, ethnicity, or culture. Consider the diverse experiences of users and be intentional about using language that is bias-free. For example, do not use expressions that may have racist origins or connotations.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

@@ -1,5 +1,5 @@
 {
-  "id": "f-TlOFP3R8",
+  "id": "m9RDpCA4K",
   "data": {
     "content": {
       "type": "doc",
@@ -12,8 +12,13 @@
           },
           "content": [
             {
-              "text": "Empowering and real",
-              "type": "text"
+              "text": " Heading 2",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },
@@ -24,10 +29,16 @@
           },
           "content": [
             {
-              "text": "Situation: A user  sees this sentence at the beginning of a product's getting started guide.",
+              "text": "This is content in a text block.",
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
         }
       ]
     }
