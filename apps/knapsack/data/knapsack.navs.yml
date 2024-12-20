@@ -401,7 +401,11 @@ byId:
     parentId: content
     path: /pages/word-list
 order:
+  - get-started
+  - designers
+  - developers
   - foundations
+  - design-principles
   - color
   - icons
   - typography-3shrxwkyk
@@ -414,7 +418,6 @@ order:
   - button
   - card
   - checkbox
-  - code-editor
   - code-snippet
   - chip-item
   - chip
@@ -430,7 +433,6 @@ order:
   - icon-button
   - icon-button-toggle
   - icon-checkbox
-  - icon-lockup
   - icon-radio
   - linear-progress
   - list
@@ -439,7 +441,6 @@ order:
   - check-list-item
   - radio-list-item
   - menu
-  - notebook-cell
   - radio
   - select
   - side-sheet
@@ -462,6 +463,9 @@ order:
   - textfield
   - text-lockup
   - text
+  - code-editor
+  - icon-lockup
+  - notebook-cell
   - patterns
   - errors
   - tokens
@@ -474,9 +478,5 @@ order:
   - error-messages
   - video
   - date-and-time
-  - inclusive-language-glnk25tux
   - word-list
-  - design-principles
-  - designers
-  - developers
-  - get-started
+  - inclusive-language-glnk25tux
