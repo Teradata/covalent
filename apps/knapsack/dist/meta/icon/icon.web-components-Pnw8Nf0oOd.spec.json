@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "Symbol representing an action, object, or concept.",
+  "type": "object",
+  "required": [],
+  "properties": {}
+}

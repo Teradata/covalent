@@ -35,6 +35,26 @@
       },
       "demoIds": ["bn4zy44TYR", "Xr7IHJQ1", "8VqxwwTyJ", "ezyQjAA-T1"],
       "blockIds": ["Wi5zWBMuy7"]
+    },
+    {
+      "id": "web-components-Pnw8Nf0oOd",
+      "title": "All icons",
+      "alias": "cv-icon-demo",
+      "templateLanguageId": "web-components",
+      "spec": {
+        "slots": {},
+        "props": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Symbol representing an action, object, or concept.",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "propOrder": [],
+        "slotOrder": []
+      },
+      "demoIds": ["iPghK4UYBt"],
+      "blockIds": []
     }
   ],
   "tabs": [
@@ -49,13 +69,18 @@
     {
       "id": "1KDWoTAzr",
       "type": "designSrc"
+    },
+    {
+      "type": "template",
+      "id": "web-components-Pnw8Nf0oOd",
+      "minRoleNeeded": "CONTRIBUTOR"
     }
   ],
   "subPages": [
     {
       "id": "overview",
       "title": "Overview",
-      "blockIds": []
+      "blockIds": ["FvKIrSQgq0"]
     }
   ],
   "designSrcComponentsById": {
