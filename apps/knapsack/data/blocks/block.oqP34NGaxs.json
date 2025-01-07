@@ -1,18 +1,24 @@
 {
-  "id": "PeBr3HAkat",
+  "id": "oqP34NGaxs",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Spacing",
+              "text": "Recommendations",
               "type": "text"
             }
           ]
@@ -24,7 +30,7 @@
           },
           "content": [
             {
-              "text": "Separate all buttons with an 8px gap.",
+              "text": "Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.",
               "type": "text"
             }
           ]
@@ -32,6 +38,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }

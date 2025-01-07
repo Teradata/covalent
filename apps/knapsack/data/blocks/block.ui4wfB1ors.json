@@ -1,0 +1,24 @@
+{
+  "id": "ui4wfB1ors",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "13746:1878"
+      }
+    ],
+    "columns": "2",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "corners": "rounded",
+      "seamless": true
+    },
+    "hideComponentProps": true
+  },
+  "blockType": "design-src-tiles",
+  "header": {
+    "showHeader": true,
+    "description": "Placement"
+  }
+}

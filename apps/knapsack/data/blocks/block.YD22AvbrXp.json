@@ -1,5 +1,5 @@
 {
-  "id": "UzPBLr6n6J",
+  "id": "YD22AvbrXp",
   "data": {
     "content": {
       "type": "doc",
@@ -7,13 +7,18 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "When the primary action is destructive",
-              "type": "text"
+              "text": "Additional Resources",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },
@@ -24,7 +29,7 @@
           },
           "content": [
             {
-              "text": "If the primary action is a destructive one (for example, it deletes some data), then it uses the negative color.",
+              "text": "Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences.",
               "type": "text"
             }
           ]
@@ -32,6 +37,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }

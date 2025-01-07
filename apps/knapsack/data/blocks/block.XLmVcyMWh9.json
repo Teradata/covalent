@@ -1,0 +1,26 @@
+{
+  "id": "XLmVcyMWh9",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": "Temporary image until the correct one is ready",
+            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img-5texvwkfdzpng",
+            "title": "Placeholder Image"
+          }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor",
+  "size": "medium"
+}
