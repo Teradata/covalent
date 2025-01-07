@@ -1,0 +1,22 @@
+{
+  "id": "HDJ-mm5I8B",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14625:42518"
+      },
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14649:45145"
+      }
+    ],
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
+    },
+    "columns": "2"
+  },
+  "blockType": "design-src-tiles"
+}

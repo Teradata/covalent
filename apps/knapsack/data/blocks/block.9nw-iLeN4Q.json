@@ -1,0 +1,74 @@
+{
+  "id": "9nw-iLeN4Q",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use drop-down menus when you need to present the user with a large set of options that would be impractical to display in full on the page. For smaller sets of options (e.g., yes/no or a handful of options), consider using ",
+              "type": "text"
+            },
+            {
+              "text": "radio buttons",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#",
+                    "class": null
+                  }
+                },
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": " or ",
+              "type": "text"
+            },
+            {
+              "text": "toggles",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#",
+                    "class": null
+                  }
+                },
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
