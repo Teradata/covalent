@@ -1,7 +1,7 @@
 {
   "id": "textfield",
   "title": "Text field",
-  "description": "Input field allowing users to enter a single line of text.",
+  "description": "A text field is an input element that allows users to type text into a form. It is used for capturing short text entries, such as names, email addresses, or any other single-line information. Text fields can be single-line or multi-line (text area) for longer inputs.",
   "statuses": {},
   "templates": [
     {
@@ -164,8 +164,16 @@
       "type": "subPage"
     },
     {
+      "id": "9Mdvi7DMmw",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-M4zyalwdNJ",
       "type": "template"
+    },
+    {
+      "id": "F5qKEkIOK",
+      "type": "subPage"
     },
     {
       "id": "oInUa-Io4h",
@@ -175,8 +183,61 @@
   "subPages": [
     {
       "id": "overview",
-      "title": "Overview",
-      "blockIds": []
+      "title": "Usage",
+      "blockIds": [
+        "6ULvt5a44e",
+        "zu4Bh9-Jy",
+        "kPIDRRElfv",
+        "cUd-whEf9s",
+        "AkveRooOM9",
+        "K9CPi9NfC6",
+        "l-v7rVbonI",
+        "JHqiyV1gju",
+        "fnwKhTw-Pn",
+        "bwxYYs-u5W",
+        "UQwGDX1xoe",
+        "ssKkS2PmHw",
+        "ncNUOm2Yg1",
+        "jbnzaPfaCa",
+        "cLp0Tvm8-5",
+        "UPQzlsCB0",
+        "j3MMv8VPYP",
+        "D6Mn4r7fsW"
+      ]
+    },
+    {
+      "id": "9Mdvi7DMmw",
+      "title": "Style",
+      "blockIds": [
+        "9OsZLsyiN",
+        "cOpUYn5Pt",
+        "PzwixtnJeC",
+        "c8QScryc1w",
+        "Y0Q7gWz343",
+        "cUYVO1Y7Oe",
+        "dFicVEgRrJ",
+        "mIQJiqMIdq",
+        "BdVMo-mLqJ",
+        "T43ESHQh8j",
+        "zZsemdqUgV",
+        "oNP92xOOxz",
+        "mHa9mhctN"
+      ]
+    },
+    {
+      "id": "F5qKEkIOK",
+      "title": "Accessibility",
+      "blockIds": [
+        "rZVYWc5TTu",
+        "l2nzYRA9Mr",
+        "OljzEqRx8X",
+        "FY1bg5dcyp",
+        "8sEiJwfk",
+        "Fy4XFUF1xk",
+        "zrtHQCJRKk",
+        "4bPh-5RyIt",
+        "fN-LE7Cy5I"
+      ]
     }
   ],
   "designSrcComponentsById": {

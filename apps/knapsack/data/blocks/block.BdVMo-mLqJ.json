@@ -1,0 +1,19 @@
+{
+  "id": "BdVMo-mLqJ",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14626:44545"
+      }
+    ],
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
+    },
+    "columns": "1"
+  },
+  "blockType": "design-src-tiles",
+  "spacing": "medium"
+}

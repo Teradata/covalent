@@ -1,0 +1,35 @@
+{
+  "id": "j3MMv8VPYP",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "q-h8xjXkii",
+        "link": {
+          "path": "https://material.angular.io/components/input/overview",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Material Angular component"
+      },
+      {
+        "id": "vHuVzRM0TK",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8054-37781",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Figma component"
+      }
+    ],
+    "tileStyles": {
+      "rounded": true,
+      "imageSize": "none",
+      "titleSize": "xsmall"
+    },
+    "gridStyles": {
+      "columns": "3",
+      "centered": false
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
