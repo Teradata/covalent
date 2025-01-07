@@ -1,5 +1,5 @@
 {
-  "id": "usHGj2Byt",
+  "id": "nXLZNqwrJa",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Internal links",
+              "text": "Principles",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Use the \"primary\" text color  to indicate the presence of a link. ",
+              "text": "Our type scale is a set of pre-made text styles that everyone on the team can use. It's similar to having a box of different-sized markers - you know exactly what each one will look like when you use it.",
               "type": "text"
             }
           ]
@@ -36,7 +36,7 @@
           },
           "content": [
             {
-              "text": "Add an underline when hovered.",
+              "text": "When designers and developers work together, they don't need to have long discussions about exact font sizes or styles. Instead, they can simply say \"use the headline1  here\" or \"this should be body2.\" It's a shared language that both teams understand.",
               "type": "text"
             }
           ]
@@ -44,7 +44,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small",
-  "spacing": "small"
+  "blockType": "text-editor"
 }

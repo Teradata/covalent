@@ -1,5 +1,5 @@
 {
-  "id": "usHGj2Byt",
+  "id": "l-G6YrrqRB",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Internal links",
+              "text": "Article typography",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Use the \"primary\" text color  to indicate the presence of a link. ",
+              "text": "Designed for long-form content like articles. ",
               "type": "text"
             }
           ]
@@ -36,7 +36,19 @@
           },
           "content": [
             {
-              "text": "Add an underline when hovered.",
+              "text": "Article typography includes  margin for legibility when appearing in long blocks of content. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "It will also adapt in size to its context.",
               "type": "text"
             }
           ]
@@ -44,7 +56,6 @@
       ]
     }
   },
-  "blockType": "text-editor",
   "size": "small",
-  "spacing": "small"
+  "blockType": "text-editor"
 }

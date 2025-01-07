@@ -1,5 +1,5 @@
 {
-  "id": "usHGj2Byt",
+  "id": "W-atjXaPQn",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Internal links",
+              "text": "Interface typography",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Use the \"primary\" text color  to indicate the presence of a link. ",
+              "text": "Used inside components and UI elements.",
               "type": "text"
             }
           ]
@@ -36,7 +36,19 @@
           },
           "content": [
             {
-              "text": "Add an underline when hovered.",
+              "text": " This typography does not have margin by default or change size responsively.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": " Instead,  the parent component can control these as necessary. ",
               "type": "text"
             }
           ]
@@ -45,6 +57,5 @@
     }
   },
   "blockType": "text-editor",
-  "size": "small",
-  "spacing": "small"
+  "size": "small"
 }

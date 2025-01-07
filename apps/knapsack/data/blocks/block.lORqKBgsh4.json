@@ -1,5 +1,5 @@
 {
-  "id": "yK1IYXpcjU",
+  "id": "lORqKBgsh4",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Typography",
+              "text": "States",
               "type": "text"
             }
           ]

@@ -1,5 +1,5 @@
 {
-  "id": "bkpqGQNuAN",
+  "id": "VlWhJxQNN",
   "data": {
     "content": {
       "type": "doc",
@@ -7,7 +7,7 @@
         {
           "type": "table",
           "attrs": {
-            "equalColumns": true
+            "equalColumns": false
           },
           "content": [
             {
@@ -28,7 +28,7 @@
                       },
                       "content": [
                         {
-                          "text": "Variants",
+                          "text": "Inline alert",
                           "type": "text",
                           "marks": [
                             {
@@ -43,38 +43,6 @@
                 {
                   "type": "tableHeader",
                   "attrs": {
-                    "colspan": 2,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "Purpose",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "bold"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "tableRow",
-              "content": [
-                {
-                  "type": "tableCell",
-                  "attrs": {
                     "colspan": 1,
                     "rowspan": 1,
                     "colwidth": null
@@ -87,43 +55,7 @@
                       },
                       "content": [
                         {
-                          "text": "Raised",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "link",
-                              "attrs": {
-                                "rel": "noopener noreferrer nofollow",
-                                "href": "/pattern/button?templateId=web-components-raE1x4tYL",
-                                "class": null
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "text": " button",
-                          "type": "text"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "tableCell",
-                  "attrs": {
-                    "colspan": 2,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "A Primary Button is used for the main action on a page or screen, such as \"Submit\" or \"Save.\"",
+                          "text": "Color token",
                           "type": "text"
                         }
                       ]
@@ -150,21 +82,7 @@
                       },
                       "content": [
                         {
-                          "text": "Outline",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "link",
-                              "attrs": {
-                                "rel": "noopener noreferrer nofollow",
-                                "href": "/pattern/button?templateId=web-components-raE1x4tYL",
-                                "class": null
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "text": " button",
+                          "text": "Background color",
                           "type": "text"
                         }
                       ]
@@ -174,7 +92,7 @@
                 {
                   "type": "tableCell",
                   "attrs": {
-                    "colspan": 2,
+                    "colspan": 1,
                     "rowspan": 1,
                     "colwidth": null
                   },
@@ -186,7 +104,7 @@
                       },
                       "content": [
                         {
-                          "text": "A Secondary button is used for less critical actions or alternatives, like \"Cancel\" or \"Back.\"",
+                          "text": "positive-container",
                           "type": "text"
                         }
                       ]
@@ -213,21 +131,7 @@
                       },
                       "content": [
                         {
-                          "text": "Text",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "link",
-                              "attrs": {
-                                "rel": "noopener noreferrer nofollow",
-                                "href": "/pattern/button?templateId=web-components-raE1x4tYL",
-                                "class": null
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "text": " button",
+                          "text": "Foreground color",
                           "type": "text"
                         }
                       ]
@@ -237,7 +141,7 @@
                 {
                   "type": "tableCell",
                   "attrs": {
-                    "colspan": 2,
+                    "colspan": 1,
                     "rowspan": 1,
                     "colwidth": null
                   },
@@ -249,7 +153,7 @@
                       },
                       "content": [
                         {
-                          "text": "A Tertiary button is used for less critical actions or alternatives, like \"Cancel\" or \"Back.\" ",
+                          "text": "on-positive-container",
                           "type": "text"
                         }
                       ]
@@ -263,5 +167,6 @@
       ]
     }
   },
+  "size": "medium",
   "blockType": "table"
 }

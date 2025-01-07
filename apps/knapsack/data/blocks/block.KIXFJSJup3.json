@@ -1,5 +1,5 @@
 {
-  "id": "tISrkHkfAA",
+  "id": "KIXFJSJup3",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Default/inactive",
+              "text": "Use cases",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Nothing in particular is happening",
+              "text": "We have two categories of typography, which are useful in different circumstances.",
               "type": "text"
             }
           ]
@@ -33,5 +33,5 @@
     }
   },
   "blockType": "text-editor",
-  "size": "small"
+  "spacing": "small"
 }

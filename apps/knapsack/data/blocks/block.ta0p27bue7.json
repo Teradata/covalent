@@ -3,21 +3,30 @@
   "data": {
     "shortcuts": [
       {
+        "id": "DsWyTJqgyh",
+        "link": {
+          "name": "Color",
+          "path": "/pages/color"
+        },
+        "title": "See also",
+        "description": "Color foundations"
+      },
+      {
         "id": "2Ll-vzaK5n",
         "link": {
           "path": "https://m2.material.io/design/color/the-color-system.html",
           "external": true
         },
         "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-a2kn72ynopng",
-        "title": "Material Design color system",
-        "description": "Our colors follow the model laid out by Material Design 2"
+        "title": "See also",
+        "description": "Material Design color doc"
       }
     ],
     "gridStyles": {
       "columns": "4"
     },
     "tileStyles": {
-      "imageSize": "small"
+      "imageSize": "none"
     }
   },
   "blockType": "shortcut-tiles"

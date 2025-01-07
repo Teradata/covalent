@@ -1,5 +1,5 @@
 {
-  "id": "u-SaGSXLzK",
+  "id": "PiAq0-7xsX",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Action placement order",
+              "text": "Additional resources",
               "type": "text"
             }
           ]
@@ -24,7 +24,19 @@
           },
           "content": [
             {
-              "text": "Use this order to help maintain consistency between applications.",
+              "text": "Can't find what you're looking for? We provide full documentation transparency. Here are additional resources to provide further clarity.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": " ",
               "type": "text"
             }
           ]
