@@ -1,0 +1,29 @@
+{
+  "id": "T1iwrobGSP",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "k6bvKfD1pr",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Web Content Accessibility Guidelines(WCAG) component standards"
+      },
+      {
+        "id": "Q-ziiaANw4",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Material accessibility component guidelines"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

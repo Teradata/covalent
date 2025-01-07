@@ -1,0 +1,62 @@
+{
+  "id": "QSP0-uNfnP",
+  "data": {
+    "guidelines": [
+      {
+        "id": "OgdN91Ioq",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use radio buttons for mutually exclusive choices (e.g., \"Male\" / \"Female,\" \"Credit Card\" / \"PayPal\").",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "jz3YcBHJQ6",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use radio buttons for selections where the user needs to choose more than one option—use ",
+                  "type": "text"
+                },
+                {
+                  "text": "checkboxes",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " for multiple selections",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}
