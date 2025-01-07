@@ -11,7 +11,25 @@
           },
           "content": [
             {
-              "text": "Use our monospaced typeface to make sure content aligns well for easy comparison.",
+              "text": "Use our ",
+              "type": "text"
+            },
+            {
+              "text": "code type scale",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/typography-3shrxwkyk",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " to make sure content aligns well for easy comparison.",
               "type": "text"
             }
           ]

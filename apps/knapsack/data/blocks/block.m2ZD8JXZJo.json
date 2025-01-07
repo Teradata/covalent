@@ -13,7 +13,7 @@
     ],
     "imageStyles": {
       "fit": "fill",
-      "size": "medium",
+      "size": "auto",
       "seamless": true
     },
     "columns": "2"

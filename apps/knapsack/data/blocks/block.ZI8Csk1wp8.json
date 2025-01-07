@@ -33,7 +33,13 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          }
+          },
+          "content": [
+            {
+              "text": "Use the \"state_positive\" Covalent icon.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

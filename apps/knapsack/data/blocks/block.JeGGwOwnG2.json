@@ -550,6 +550,5 @@
     }
   },
   "size": "large",
-  "blockType": "table",
-  "spacing": "medium"
+  "blockType": "table"
 }

@@ -4,16 +4,16 @@
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "14020:564"
+        "nodeId": "14357:2710"
       }
     ],
     "columns": "1",
     "imageStyles": {
-      "fit": "contain",
-      "size": "large",
+      "fit": "fill",
+      "size": "auto",
       "seamless": true
     }
   },
-  "size": "large",
-  "blockType": "design-src-tiles"
+  "blockType": "design-src-tiles",
+  "spacing": "small"
 }

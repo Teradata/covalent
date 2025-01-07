@@ -14,7 +14,7 @@
       }
     ],
     "tileStyles": {
-      "imageSize": "small"
+      "imageSize": "none"
     },
     "gridStyles": {
       "columns": "3"

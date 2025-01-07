@@ -8,7 +8,8 @@
       }
     ],
     "imageStyles": {
-      "size": "xlarge",
+      "fit": "fill",
+      "size": "auto",
       "seamless": true
     },
     "columns": "1"

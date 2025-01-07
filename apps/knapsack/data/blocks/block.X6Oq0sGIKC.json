@@ -14,8 +14,7 @@
     "columns": "1",
     "layout": "grid",
     "imageStyles": {
-      "fit": "contain",
-      "size": "auto",
+      "size": "medium",
       "seamless": true
     }
   },
