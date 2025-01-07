@@ -1,0 +1,114 @@
+{
+  "id": "7UsIajcidX",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Principles",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "At Teradata, our accessibility principles guide the creation of inclusive, high-quality digital experiences. We adhere to ",
+              "type": "text"
+            },
+            {
+              "text": "WCAG 2.2 AA",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://www.w3.org/TR/WCAG22/#wcag-2-layers-of-guidance",
+                    "class": null
+                  }
+                },
+                {
+                  "type": "underline"
+                }
+              ]
+            },
+            {
+              "text": " standards to ensure compliance and usability. These principles emphasize:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Embedding accessibility into the product lifecycle from design to deployment.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Focusing on semantic structure, visual clarity, and assistive technology compatibility.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Regularly auditing and refining for continuous improvement.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor",
+  "spacing": "small"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "cyLOHPulOB",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": null,
+            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img-hero--9rKnSwT8r.png",
+            "title": null
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
