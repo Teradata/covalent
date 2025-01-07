@@ -1,0 +1,28 @@
+{
+  "id": "Lhm3k306qa",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "MolavBKas5",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Web Content Accessibility Guidelines(WCAG) component standards"
+      },
+      {
+        "id": "MRvYbphZ-b",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

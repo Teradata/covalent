@@ -31,6 +31,16 @@
         "image": "https://knapsack.imgix.net/site/covalent/cv-dialog-thumbnail-fuohzo41epng",
         "title": "Dialog",
         "description": "Modal window prompting users for input or displaying critical information."
+      },
+      {
+        "id": "2Amfj1ANu",
+        "link": {
+          "name": "Select",
+          "path": "/pattern/select"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-select-thumbnail--rs0Fd8-qwl.png",
+        "title": "Select",
+        "description": "Interactive menu allowing users to choose from a list of options."
       }
     ],
     "gridStyles": {

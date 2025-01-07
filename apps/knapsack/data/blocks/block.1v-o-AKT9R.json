@@ -1,0 +1,72 @@
+{
+  "id": "1v-o-AKT9R",
+  "data": {
+    "guidelines": [
+      {
+        "id": "zjw5LOJIMV",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use a drop-down menu for long lists of options, such as selecting a country, state, or payment method. ",
+                  "type": "text"
+                },
+                {
+                  "type": "hardBreak"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "mXrjcashAb",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use drop-down menus for small sets of options—use ",
+                  "type": "text"
+                },
+                {
+                  "text": "radio buttons",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " instead.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "gridStyles": {
+      "centered": false
+    },
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "medium",
+  "header": {
+    "showHeader": false
+  }
+}
