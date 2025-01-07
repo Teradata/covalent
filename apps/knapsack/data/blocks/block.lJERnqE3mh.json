@@ -1,0 +1,35 @@
+{
+  "id": "lJERnqE3mh",
+  "data": {
+    "guidelines": [
+      {
+        "id": "GqBzDqjiUC",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Make sure each checkbox has a clear and concise label.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "6-UymrIUR",
+        "type": "dont"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}

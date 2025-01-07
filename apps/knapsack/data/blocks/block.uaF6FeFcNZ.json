@@ -33,14 +33,14 @@
         "description": "Modal window prompting users for input or displaying critical information."
       },
       {
-        "id": "VdADD8fVfx",
+        "id": "1Lj19elGu",
         "link": {
-          "name": "Text field",
-          "path": "/pattern/textfield"
+          "name": "Checkbox",
+          "path": "/pattern/checkbox"
         },
-        "image": "https://knapsack.imgix.net/site/covalent/cv-text-field-thumbnail--c9moImch2X.png",
-        "title": "Text field",
-        "description": "Input element that allows users to type text into a form."
+        "image": "https://knapsack.imgix.net/site/covalent/cv-checkbox-thumbnail--j2qPn87JP.png",
+        "title": "Checkbox",
+        "description": "Allows the user to select one or more options from a set of choices."
       }
     ],
     "gridStyles": {

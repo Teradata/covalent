@@ -1,33 +1,28 @@
 {
-  "id": "prqNWd26z",
+  "id": "lID0f8g2zH",
   "data": {
     "shortcuts": [
       {
-        "id": "hYrzeIy4To",
+        "id": "1qibihXQUj",
         "link": {
           "path": "#",
           "external": false
         },
         "title": "See also",
-        "description": "Angular Material component"
+        "description": "Web Content Accessibility Guidelines(WCAG) component standards"
       },
       {
-        "id": "mDN0epBBBi",
+        "id": "6ZN0fkArlP",
         "link": {
           "path": "#",
           "external": false
         },
         "title": "See also",
-        "description": "Figma component"
+        "description": "Material accessibility component guidelines"
       }
     ],
     "tileStyles": {
-      "rounded": true,
-      "imageSize": "none",
-      "titleSize": "xsmall"
-    },
-    "gridStyles": {
-      "columns": "3"
+      "imageSize": "none"
     }
   },
   "blockType": "shortcut-tiles"
