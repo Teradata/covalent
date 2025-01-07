@@ -1,0 +1,84 @@
+{
+  "id": "G8qw2BBDon",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Feature requests or issues",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Did you find an issue or have a feature request with one of our existing components? First, check through ",
+              "type": "text"
+            },
+            {
+              "text": "our GitHub Issues",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://github.com/Teradata/covalent/issues",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". If you don’t see it listed, go ahead and create an issue. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Also, if you do not find what you’re looking for, reach out via Slack in our ",
+              "type": "text"
+            },
+            {
+              "text": "#design-system",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://teradata.slack.com/archives/C02GW1QHBMZ",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " channel. We can help guide you in the right direction depending on your needs. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
