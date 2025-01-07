@@ -1,0 +1,49 @@
+{
+  "id": "l-v7rVbonI",
+  "data": {
+    "guidelines": [
+      {
+        "id": "LVVea-n5",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use text fields for short, single-line input, such as names, email addresses, and search queries.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "z0WVNu-4Fk",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Long input in text fields can cause frustration and reduce efficiency.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}

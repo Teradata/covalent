@@ -1,0 +1,29 @@
+{
+  "id": "fN-LE7Cy5I",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "BApx5-kV0y",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Web Content Accessibility Guidelines(WCAG) component standards"
+      },
+      {
+        "id": "AxmuvAl189",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Material accessibility component guidelines"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

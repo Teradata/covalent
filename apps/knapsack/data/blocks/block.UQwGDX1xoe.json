@@ -1,0 +1,43 @@
+{
+  "id": "UQwGDX1xoe",
+  "data": {
+    "guidelines": [
+      {
+        "id": "LVVea-n5",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Provide clear error messages and highlight incorrect fields if validation fails.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "z0WVNu-4Fk",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph"
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}
