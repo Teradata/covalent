@@ -132,9 +132,9 @@ byId:
     path: /pages/error-messages
   errors:
     id: errors
-    name: Errors
+    name: Error Messages
     parentId: patterns
-    path: /pages/errors
+    path: /pattern/errors
   expansion-panel:
     id: expansion-panel
     name: Expansion panel

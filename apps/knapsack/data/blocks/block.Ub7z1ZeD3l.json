@@ -1,0 +1,48 @@
+{
+  "id": "Ub7z1ZeD3l",
+  "data": {
+    "guidelines": [
+      {
+        "id": "zjw5LOJIMV",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "“The email address must include an ‘@’ symbol.”",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "mXrjcashAb",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "“Field invalid.”",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "xsmall",
+      "headerBeforeImage": true
+    }
+  },
+  "blockType": "guidelines"
+}
