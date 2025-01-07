@@ -1,0 +1,44 @@
+{
+  "id": "bZiSPhSfHL",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": "Placeholder",
+            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img-hero--sj1zUHf8G1.png",
+            "title": "Placeholder"
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "They are used for tasks that require immediate focus, such as confirmations, log-in forms, or input forms. Modals should be used sparingly to avoid disrupting the user experience. A modal typically requires the user to take action before they can continue interacting with the rest of the page. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "k-vI8epC",
+  "data": {
+    "guidelines": [
+      {
+        "id": "D1oE0NvYfS",
+        "type": "do"
+      },
+      {
+        "id": "doPEyP6rD",
+        "type": "dont"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}
