@@ -61,7 +61,8 @@
     },
     {
       "id": "dMBgw9Ywfa",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

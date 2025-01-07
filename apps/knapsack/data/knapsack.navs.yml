@@ -289,6 +289,7 @@ byId:
     parentId: components
     path: /pattern/snackbar
   split-button:
+    hidden: true
     id: split-button
     name: Split button
     parentId: components
@@ -406,7 +407,11 @@ byId:
     parentId: content
     path: /pages/word-list
 order:
+  - get-started
+  - designers
+  - developers
   - foundations
+  - design-principles
   - color
   - icons
   - typography-3shrxwkyk
@@ -419,11 +424,11 @@ order:
   - button
   - card
   - checkbox
-  - code-editor
   - code-snippet
   - chip-item
   - chip
   - circular-progress
+  - code-editor
   - dialog
   - empty-state
   - expansion-panel
@@ -479,10 +484,6 @@ order:
   - error-messages
   - video
   - date-and-time
-  - inclusive-language-glnk25tux
   - word-list
-  - design-principles
-  - designers
-  - developers
-  - get-started
+  - inclusive-language-glnk25tux
   - accessibility

@@ -22,10 +22,10 @@ settings:
     files:
       - fileId: KvXVAmYdCVAS7hzkOa73Em
         name: Covalent principles
-        priorVersion: '2168399301248015130'
+        priorVersion: '2163516225191154439'
         type: figma
-        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2169547398600601850
-        version: '2169547398600601850'
+        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2163559402458414784
+        version: '2163559402458414784'
   favicon: https://knapsack.imgix.net/site/covalent/t-favicon-6zimud2smwpng
   hideTitleInNavigation: true
   logoUrl: https://knapsack.imgix.net/site/covalent/td-covalent-wordmark-sgyys2jeuwpng
@@ -44,7 +44,12 @@ settings:
       textColorTitle:
         tokenName: on-surface
         type: design-token
-    tableOfContents: {}
+    tableOfContents:
+      exclude:
+        - h6
+        - h5
+        - h4
+        - h3
   theme:
     appearance:
       customFonts:

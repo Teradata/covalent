@@ -69,7 +69,8 @@
     },
     {
       "id": "4cvBUStbqg",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

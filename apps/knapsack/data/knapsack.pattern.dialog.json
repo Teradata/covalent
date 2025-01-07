@@ -117,7 +117,8 @@
     },
     {
       "id": "web-components-S9Ia0KOrya",
-      "type": "template"
+      "type": "template",
+      "hidden": true
     },
     {
       "id": "EPV5ONpvHo",
@@ -143,6 +144,38 @@
         "Mppda7siDo",
         "FBz3ir9D8E",
         "LPnQnVI7zL"
+      ]
+    },
+    {
+      "id": "oCySB2xNtB",
+      "title": "Style",
+      "blockIds": [
+        "GApyH6EUtK",
+        "afnLTvjGcu",
+        "roFCUmMQYR",
+        "k-vI8epC",
+        "nSljTnWxtP",
+        "SFmiRth235",
+        "92OScnUKJV",
+        "KwgBg45MC4"
+      ]
+    },
+    {
+      "id": "EPV5ONpvHo",
+      "title": "Accessibility",
+      "blockIds": [
+        "Vq5mlxyExd",
+        "i8TGdU8yuH",
+        "M4L8cdrIlC",
+        "t66bYNAlxw",
+        "ZWqQVyUN",
+        "h80cpT77ZP",
+        "nlJCn5nR-J",
+        "COVgQ3U0K",
+        "i3lwxTIuaI",
+        "2hVfiVTaBC",
+        "sOl8lj6xMa",
+        "2fQ7FlENU9"
       ]
     },
     {
