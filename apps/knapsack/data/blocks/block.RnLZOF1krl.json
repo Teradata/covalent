@@ -38,6 +38,14 @@
         "image": "https://knapsack.imgix.net/site/covalent/voice-and-tone-9drmogd1bpng",
         "title": "Voice and tone",
         "description": ""
+      },
+      {
+        "id": "KJOKFCKO0K",
+        "link": {
+          "name": "Accessibility",
+          "path": "/pages/accessibility"
+        },
+        "title": "Accessibility"
       }
     ],
     "tileStyles": {

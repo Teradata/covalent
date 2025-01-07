@@ -1,0 +1,52 @@
+{
+  "id": "YRpUGVl1Vl",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Accessibility practices",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Color and Contrast",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Prioritizing color contrast in all designs ensures readability for users with visual impairments, enabling clarity and usability for all.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "horizontalRule"
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

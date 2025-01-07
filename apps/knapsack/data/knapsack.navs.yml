@@ -1,4 +1,9 @@
 byId:
+  accessibility:
+    id: accessibility
+    name: Accessibility
+    parentId: foundations
+    path: /pages/accessibility
   action-ribbon:
     id: action-ribbon
     name: Action ribbon
@@ -480,3 +485,4 @@ order:
   - designers
   - developers
   - get-started
+  - accessibility
