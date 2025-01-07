@@ -1,5 +1,5 @@
 {
-  "id": "TVk4i5jd3j",
+  "id": "jNuxQ6SHNE",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "In footers",
+              "text": "Overview",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "In footers (such as card, dialog, page, or sheet footers) align all buttons to the right, but place destructive actions to the left to minimize accidental clicks.",
+              "text": "Buttons must be accessible to all users, ensuring equal interaction regardless of ability. They should have clear, descriptive labels, proper color contrast, and visible focus states to support usability and accessibility. ",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }

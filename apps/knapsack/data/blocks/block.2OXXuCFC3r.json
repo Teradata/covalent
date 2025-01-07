@@ -1,5 +1,5 @@
 {
-  "id": "eKyEb1kEVx",
+  "id": "2OXXuCFC3r",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,24 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Basics",
+              "text": "Keyboard Interactions",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Buttons should be fully operable via keyboard:",
               "type": "text"
             }
           ]
@@ -30,7 +42,16 @@
                   },
                   "content": [
                     {
-                      "text": "Each page can have only one primary action button",
+                      "text": "Enter/Return Key",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": Activates the button’s action.",
                       "type": "text"
                     }
                   ]
@@ -47,7 +68,16 @@
                   },
                   "content": [
                     {
-                      "text": "It is common and okay for some pages to have no primary action",
+                      "text": "Spacebar",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": Activates the button’s action, consistent with standard keyboard behavior.",
                       "type": "text"
                     }
                   ]
@@ -64,7 +94,7 @@
                   },
                   "content": [
                     {
-                      "text": "Include an icon in your button only in specific circumstances",
+                      "text": "Provide clear feedback, such as visual states (e.g., hover, focus, active), to indicate when the button is ready to be interacted with. ",
                       "type": "text"
                     }
                   ]
@@ -76,5 +106,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "medium"
 }

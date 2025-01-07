@@ -1,0 +1,49 @@
+{
+  "id": "7zyDAZ-Ekj",
+  "data": {
+    "guidelines": [
+      {
+        "id": "Wy6iR9LR1T",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "In button groups when the destructive button is not the primary, use secondary (outlined) or tertiary (text) styles for destructive actions to keep the primary action visually dominant and clear.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "SE7rcWhd7R",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use the negative color for secondary or less critical actions, as it distracts from the primary action and creates unnecessary visual weight.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

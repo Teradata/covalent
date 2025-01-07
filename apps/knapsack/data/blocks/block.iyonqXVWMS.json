@@ -1,18 +1,24 @@
 {
-  "id": "rYchMzJt5t",
+  "id": "iyonqXVWMS",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "When the destructive action is not the primary action",
+              "text": "Additional resources",
               "type": "text"
             }
           ]
@@ -24,7 +30,7 @@
           },
           "content": [
             {
-              "text": "If the destructive action is not the primary action, do not use the negative color. This calls extra attention to it, and we want the focus to remain on the primary action.",
+              "text": "Can't find what you're looking for? We provide full documentation transparency. Here are additional resources to provide further clarity ",
               "type": "text"
             }
           ]
@@ -32,6 +38,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }

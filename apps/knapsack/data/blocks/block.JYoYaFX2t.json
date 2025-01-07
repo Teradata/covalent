@@ -1,5 +1,5 @@
 {
-  "id": "DWnWDOAQje",
+  "id": "JYoYaFX2t",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Anatomy",
+              "text": "States",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Buttons contain a text label and optional icon.",
+              "text": "Use “default” outline buttons for everything except the primary action (if any).",
               "type": "text"
             }
           ]
@@ -32,6 +32,6 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "size": "small",
+  "blockType": "text-editor"
 }

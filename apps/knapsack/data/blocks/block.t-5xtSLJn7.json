@@ -1,0 +1,72 @@
+{
+  "id": "t-5xtSLJn7",
+  "data": {
+    "guidelines": [
+      {
+        "id": "Wy6iR9LR1T",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use one primary button per group of actions.",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " This ensures users clearly understand the most important action.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "SE7rcWhd7R",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Don’t use multiple primary buttons in the same layout.",
+                  "type": "text"
+                },
+                {
+                  "text": " ",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": "This creates confusion about which action is most important.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "small"
+}

@@ -1,5 +1,5 @@
 {
-  "id": "BUhr22uJM",
+  "id": "ZpUejgJBML",
   "data": {
     "items": [
       {
@@ -7,12 +7,17 @@
         "nodeId": "13746:2111"
       }
     ],
-    "columns": "1",
+    "columns": "2",
     "imageStyles": {
-      "size": "large",
+      "fit": "fill",
+      "size": "auto",
+      "corners": "rounded",
       "seamless": true
     }
   },
-  "size": "large",
+  "header": {
+    "showHeader": false,
+    "description": "Groupings & Types"
+  },
   "blockType": "design-src-tiles"
 }

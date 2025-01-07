@@ -1,0 +1,59 @@
+{
+  "id": "6O2lZatfcH",
+  "data": {
+    "guidelines": [
+      {
+        "id": "Wy6iR9LR1T",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use secondary buttons (outlined) for less critical actions.",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " These should complement the primary button without overshadowing it.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "SE7rcWhd7R",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Don’t place secondary buttons (outlined) to the right of the primary button. This breaks the priority flow.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "small"
+}

@@ -1,5 +1,5 @@
 {
-  "id": "UNAVUccljy",
+  "id": "g2IlLhbVxC",
   "data": {
     "content": {
       "type": "doc",
@@ -12,16 +12,25 @@
           },
           "content": [
             {
-              "text": "Sequence",
+              "text": "Content Guidelines",
               "type": "text"
             }
           ]
         },
         {
-          "type": "orderedList",
+          "type": "paragraph",
           "attrs": {
-            "start": 1
+            "textAlign": "left"
           },
+          "content": [
+            {
+              "text": "Buttons trigger actions. Actionable labels ensure clarity and ease of use.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
           "content": [
             {
               "type": "listItem",
@@ -33,14 +42,16 @@
                   },
                   "content": [
                     {
-                      "text": "Primary action button (if any)",
-                      "type": "text"
+                      "text": "Categorization",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
                     },
                     {
-                      "type": "hardBreak"
-                    },
-                    {
-                      "text": "Many pages will not have primary actions. This is OK.",
+                      "text": ": Use (Raised)primary buttons for main actions, (Outline)secondary for less critical actions.",
                       "type": "text"
                     }
                   ]
@@ -57,7 +68,16 @@
                   },
                   "content": [
                     {
-                      "text": "Secondary action buttons.",
+                      "text": "Voice & Tone",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": Action-oriented and concise.",
                       "type": "text"
                     }
                   ]
@@ -74,7 +94,16 @@
                   },
                   "content": [
                     {
-                      "text": "Lesser functions as icon buttons.",
+                      "text": "Word Limit",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": Limit labels to 2-4 words.",
                       "type": "text"
                     }
                   ]
@@ -86,6 +115,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }

@@ -1,0 +1,48 @@
+{
+  "id": "mDF1TkRFpH",
+  "data": {
+    "guidelines": [
+      {
+        "id": "Czw9hd6vd1",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Example Label: \"Submit\" ",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "LOQ22t-MDi",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Example label: \"Click here to submit\"",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": true
+    }
+  },
+  "blockType": "guidelines"
+}
