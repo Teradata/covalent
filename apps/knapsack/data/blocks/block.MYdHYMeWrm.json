@@ -1,0 +1,47 @@
+{
+  "id": "MYdHYMeWrm",
+  "data": {
+    "guidelines": [
+      {
+        "id": "D1oE0NvYfS",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use concise, action-oriented text. ",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "doPEyP6rD",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Overuse modals for non-essential information or task. ",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "headerBeforeImage": true
+    }
+  },
+  "blockType": "guidelines"
+}
