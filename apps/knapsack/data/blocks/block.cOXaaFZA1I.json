@@ -1,0 +1,20 @@
+{
+  "id": "cOXaaFZA1I",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "horizontalRule"
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
