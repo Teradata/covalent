@@ -33,14 +33,14 @@
         "description": "Modal window prompting users for input or displaying critical information."
       },
       {
-        "id": "2Amfj1ANu",
+        "id": "7te-ui8RBm",
         "link": {
-          "name": "Select",
-          "path": "/pattern/select"
+          "name": "Radio",
+          "path": "/pattern/radio"
         },
-        "image": "https://knapsack.imgix.net/site/covalent/cv-select-thumbnail--rs0Fd8-qwl.png",
-        "title": "Select",
-        "description": "Interactive menu allowing users to choose from a list of options."
+        "image": "https://knapsack.imgix.net/site/covalent/cv-radio-thumbnail--fvpuIG6ApX.png",
+        "title": "Radio",
+        "description": "Allows the user to select a single option from a set of mutually exclusive choices."
       }
     ],
     "gridStyles": {
