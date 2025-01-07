@@ -169,7 +169,8 @@
     },
     {
       "id": "web-components-M4zyalwdNJ",
-      "type": "template"
+      "type": "template",
+      "hidden": true
     },
     {
       "id": "F5qKEkIOK",

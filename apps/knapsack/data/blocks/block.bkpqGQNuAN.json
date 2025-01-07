@@ -87,7 +87,21 @@
                       },
                       "content": [
                         {
-                          "text": "Raised button",
+                          "text": "Raised",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "link",
+                              "attrs": {
+                                "rel": "noopener noreferrer nofollow",
+                                "href": "/pattern/button?templateId=web-components-raE1x4tYL",
+                                "class": null
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "text": " button",
                           "type": "text"
                         }
                       ]
@@ -109,22 +123,7 @@
                       },
                       "content": [
                         {
-                          "text": "Raised buttons are used for delivering a direct message. Raised buttons add dimension to flat UIs and provide prominence to actions.  ",
-                          "type": "text"
-                        },
-                        {
-                          "type": "hardBreak"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "In its default state, raised buttons are rectangular shaped and stand out more than flat buttons by adding dimension.  ",
+                          "text": "A Primary Button is used for the main action on a page or screen, such as \"Submit\" or \"Save.\"",
                           "type": "text"
                         }
                       ]
@@ -187,7 +186,7 @@
                       },
                       "content": [
                         {
-                          "text": "Outlined buttons are used for medium priority actions that are important, but not the primary action on the page. In its default state, outlined buttons have no fill. Outlined buttons often compliment filled buttons to indicate an alternative action in the user experience.   ",
+                          "text": "A Secondary button is used for less critical actions or alternatives, like \"Cancel\" or \"Back.\"",
                           "type": "text"
                         }
                       ]
@@ -250,7 +249,7 @@
                       },
                       "content": [
                         {
-                          "text": "Text buttons are used for lowest priority actions, especially when presenting the user with multiple options. In their default state, text buttons don’t have a visible container. This prevents distraction from content on the page.   ",
+                          "text": "A Tertiary button is used for less critical actions or alternatives, like \"Cancel\" or \"Back.\" ",
                           "type": "text"
                         }
                       ]

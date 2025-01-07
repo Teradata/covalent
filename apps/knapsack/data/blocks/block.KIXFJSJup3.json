@@ -1,5 +1,5 @@
 {
-  "id": "igdMIrGbHw",
+  "id": "KIXFJSJup3",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Color",
+              "text": "Use cases",
               "type": "text"
             }
           ]
@@ -21,10 +21,17 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          }
+          },
+          "content": [
+            {
+              "text": "We have two categories of typography, which are useful in different circumstances.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "spacing": "small"
 }

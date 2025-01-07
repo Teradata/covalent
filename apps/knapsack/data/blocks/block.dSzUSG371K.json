@@ -1,5 +1,5 @@
 {
-  "id": "06NBhVq4fp",
+  "id": "dSzUSG371K",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Icons",
+              "text": "Additional resources",
               "type": "text"
             }
           ]
@@ -24,7 +24,19 @@
           },
           "content": [
             {
-              "text": "Each color has a specific icon that is always used. Refer to the Colors section above.",
+              "text": "Can't find what you're looking for? We provide full documentation transparency. Here are additional resources to provide further clarity.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": " ",
               "type": "text"
             }
           ]
@@ -32,6 +44,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }

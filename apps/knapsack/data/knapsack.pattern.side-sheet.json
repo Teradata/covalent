@@ -59,7 +59,8 @@
     },
     {
       "id": "z6ILXTm5",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

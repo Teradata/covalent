@@ -57,7 +57,8 @@
     },
     {
       "id": "qm-hngcb2s",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

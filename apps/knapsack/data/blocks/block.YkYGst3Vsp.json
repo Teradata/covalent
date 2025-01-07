@@ -6,5 +6,6 @@
     "groupIds": ["collections.Theme.cv-theme"],
     "collectionId": "Theme"
   },
-  "blockType": "design-token-collection"
+  "blockType": "design-token-collection",
+  "spacing": "small"
 }

@@ -128,7 +128,8 @@
     },
     {
       "id": "UbxKUmH4n",
-      "type": "subPage"
+      "type": "subPage",
+      "minRoleNeeded": "VIEWER"
     },
     {
       "id": "trCAw4vLd",
@@ -163,7 +164,7 @@
     {
       "id": "5MWUGBa7hT",
       "title": "Comparison",
-      "blockIds": ["X6Oq0sGIKC", "6wNPU70UYl", "P6YQ-2gQlb"]
+      "blockIds": ["X6Oq0sGIKC", "P6YQ-2gQlb", "F0dGB3d5wo"]
     },
     {
       "id": "0KozkKiAif",

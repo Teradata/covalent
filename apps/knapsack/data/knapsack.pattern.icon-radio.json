@@ -69,7 +69,8 @@
     },
     {
       "id": "logfM7PUH0",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

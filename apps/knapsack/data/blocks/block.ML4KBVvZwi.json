@@ -28,6 +28,18 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Default to the \"info_outlined\" Material Symbols icon, but you may change this if the circumstance requires it.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

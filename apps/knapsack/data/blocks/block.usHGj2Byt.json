@@ -24,7 +24,19 @@
           },
           "content": [
             {
-              "text": "Use a simple text color change to indicate the presence of a link, and an underline when hovered.",
+              "text": "Use the \"primary\" text color  to indicate the presence of a link. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Add an underline when hovered.",
               "type": "text"
             }
           ]

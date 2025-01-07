@@ -15,21 +15,30 @@
       {
         "id": "GCeJ5yKToH",
         "link": {
-          "path": "https://m2.material.io/design/typography/the-type-system.html#type-scale",
+          "path": "https://m2.material.io/design/typography/the-type-system.html",
           "external": true
         },
         "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-rlqdfe8xdpng",
         "title": "See also",
         "description": "Material Design type system"
+      },
+      {
+        "id": "MSctNkJHCN",
+        "link": {
+          "path": "https://material.angular.io/guide/theming#typography",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Angular Material docs"
       }
     ],
     "tileStyles": {
-      "imageSize": "small"
+      "imageSize": "none"
     },
     "gridStyles": {
       "columns": "4"
     }
   },
   "blockType": "shortcut-tiles",
-  "spacing": "large"
+  "spacing": "medium"
 }

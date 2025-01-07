@@ -1,16 +1,16 @@
 {
-  "id": "4QOAg8gbhs",
+  "id": "BFJWY1wFz",
   "data": {
     "shortcuts": [
       {
         "id": "j8hzIv3aPo",
         "link": {
           "name": "Typography",
-          "path": "/pages/typography"
+          "path": "/pages/typography-3shrxwkyk"
         },
         "image": "https://knapsack.imgix.net/site/covalent/typography-rjcvx8vd6bpng",
         "title": "See also",
-        "description": "Typography tokens"
+        "description": "Typography foundations"
       },
       {
         "id": "GCeJ5yKToH",
@@ -30,6 +30,6 @@
       "imageSize": "none"
     }
   },
-  "spacing": "large",
+  "spacing": "medium",
   "blockType": "shortcut-tiles"
 }

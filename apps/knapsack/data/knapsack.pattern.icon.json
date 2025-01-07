@@ -48,7 +48,8 @@
     },
     {
       "id": "1KDWoTAzr",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [
