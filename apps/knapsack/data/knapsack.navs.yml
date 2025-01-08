@@ -407,9 +407,6 @@ byId:
     parentId: content
     path: /pages/word-list
 order:
-  - get-started
-  - designers
-  - developers
   - foundations
   - design-principles
   - color
@@ -424,11 +421,11 @@ order:
   - button
   - card
   - checkbox
+  - code-editor
   - code-snippet
   - chip-item
   - chip
   - circular-progress
-  - code-editor
   - dialog
   - empty-state
   - expansion-panel
@@ -486,4 +483,7 @@ order:
   - date-and-time
   - word-list
   - accessibility
+  - designers
+  - developers
+  - get-started
   - inclusive-language-glnk25tux
