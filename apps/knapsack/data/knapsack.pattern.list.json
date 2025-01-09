@@ -2,10 +2,7 @@
   "id": "list",
   "title": "List",
   "description": "Collection of items displayed vertically or horizontally.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-fObxCsu2i8",

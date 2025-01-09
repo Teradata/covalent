@@ -1,0 +1,39 @@
+{
+  "id": "66KT44qCx1",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Screen Reader Accessibility",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Seamless interaction for screen reader users ensures inclusive experiences. We prioritize logical content structure and compatibility with assistive tools.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "horizontalRule"
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

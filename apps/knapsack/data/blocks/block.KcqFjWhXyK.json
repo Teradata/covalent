@@ -1,0 +1,50 @@
+{
+  "id": "KcqFjWhXyK",
+  "data": {
+    "guidelines": [
+      {
+        "id": "FlsJF1pZB3",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Now, you can create your dashboard by selecting the widgets you want and arranging them the way you like.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "tq0iBMqPsR",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Creating your personalized dashboard using widgets is now a breeze.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph"
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}

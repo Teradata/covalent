@@ -1,0 +1,33 @@
+{
+  "id": "hd0MGNPaqG",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "5Vz49XObnn",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Web Content Accessibility Guidelines(WCAG) component  standards"
+      },
+      {
+        "id": "vTwlTnz8lE",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See Also",
+        "description": "Material accessibility component guidelines"
+      }
+    ],
+    "tileStyles": {
+      "rounded": true,
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "3"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

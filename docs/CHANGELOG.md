@@ -26,6 +26,12 @@
 
 - **covalent:** Upgrade covalent to Angular 18
 
+## [8.24.1](https://github.com/Teradata/covalent/compare/v8.24.0...v8.24.1) (2024-12-12)
+
+### Bug Fixes
+
+- **app-shell:** add css variables to set z-index of navbar ([1e8a16d](https://github.com/Teradata/covalent/commit/1e8a16dda191de5c3ba1ad00b196975aa96699dd))
+
 # [8.24.0](https://github.com/Teradata/covalent/compare/v8.23.2...v8.24.0) (2024-12-03)
 
 ### Features

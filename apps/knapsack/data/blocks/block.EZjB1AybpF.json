@@ -1,0 +1,26 @@
+{
+  "id": "EZjB1AybpF",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": "Placeholder",
+            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img--BYpMxZ3ZGT.png",
+            "title": "Placeholder"
+          }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  },
+  "size": "medium",
+  "blockType": "text-editor"
+}

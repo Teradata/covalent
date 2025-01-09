@@ -1,0 +1,35 @@
+{
+  "id": "nre5fjvPZk",
+  "data": {
+    "items": [
+      {
+        "title": "Caution",
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14314:2718",
+        "description": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use to indicate that a non-critical error has occurred",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
+    },
+    "hideComponentProps": true
+  },
+  "blockType": "design-src-tiles",
+  "spacing": "medium"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "PCABLXLhgq",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "These guidelines focus on using inclusive language in all customer-facing content. You'll see non-inclusive terms in programming language syntax or code. The guidelines provide you with ways to write around those terms and make a difference in promoting inclusive language.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

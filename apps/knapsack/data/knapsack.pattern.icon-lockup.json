@@ -1,0 +1,110 @@
+{
+  "id": "icon-lockup",
+  "title": "Icon lockup",
+  "description": "",
+  "statuses": {},
+  "templates": [
+    {
+      "id": "web-components-RPcggDLyDK",
+      "title": "Web components",
+      "templateLanguageId": "web-components",
+      "path": "../../../dist/libs/components/icon-lockup.mjs",
+      "alias": "cv-icon-lockup",
+      "spec": {
+        "slots": {
+          "default": {
+            "title": "Default",
+            "description": "Text content to be displayed."
+          },
+          "icon": {
+            "title": "Icon slot",
+            "description": "Content provided in the icon slot is displayed instead of the icon property."
+          }
+        },
+        "props": {
+          "properties": {
+            "covalentIcon": {
+              "type": "boolean",
+              "description": "Whether the icon is a covalent icon."
+            },
+            "filledIcon": {
+              "type": "boolean",
+              "description": "Whether the icon is filled."
+            },
+            "icon": {
+              "type": "string",
+              "description": "The icon to display."
+            },
+            "scale": {
+              "type": "string",
+              "enum": [
+                "body1",
+                "body2",
+                "caption",
+                "headline1",
+                "headline2",
+                "headline3",
+                "headline4",
+                "headline5",
+                "headline6",
+                "subtitle1",
+                "subtitle2",
+                "overline",
+                "button"
+              ],
+              "default": "body1",
+              "description": "Scale of the component, controlling font-size and icon size. Default is \"body1\", but it can be set to other typography values to scale the component."
+            },
+            "state": {
+              "description": "State of the component, used to apply different styles based on status.",
+              "type": "string",
+              "enum": ["caution", "negative", "positive", "primary"]
+            }
+          },
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "type": "object",
+          "required": []
+        },
+        "propOrder": [
+          "covalentIcon",
+          "filledIcon",
+          "icon",
+          "scale",
+          "state",
+          "trailingIcon"
+        ],
+        "slotOrder": ["default", "icon"]
+      },
+      "demoIds": [
+        "6A9yqTSh6x",
+        "YIH9EOiP",
+        "cGWFzjIg8i",
+        "fekA6wwl9K",
+        "8mt1FePOgA",
+        "mnXbWmndnd"
+      ],
+      "blockIds": ["glOIuRjmkg"]
+    }
+  ],
+  "tabs": [
+    {
+      "type": "template",
+      "id": "web-components-RPcggDLyDK"
+    },
+    {
+      "id": "hLUAWg6Vk",
+      "type": "designSrc",
+      "hidden": true
+    }
+  ],
+  "subPages": [],
+  "designSrcComponentsById": {
+    "hLUAWg6Vk": {
+      "id": "hLUAWg6Vk",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "8401:42851"
+    }
+  }
+}

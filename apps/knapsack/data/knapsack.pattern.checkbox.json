@@ -1,11 +1,8 @@
 {
   "id": "checkbox",
   "title": "Checkbox",
-  "description": "Interactive element allowing users to select one or more options from a list.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "description": "A checkbox allows the user to select one or more options from a set of choices. Unlike radio buttons, checkboxes allow for multiple selections, meaning the user can choose more than one option at a time.",
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-29FbeDQWhM",
@@ -59,19 +56,260 @@
       "type": "subPage"
     },
     {
+      "id": "62vWZCJLPg",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-29FbeDQWhM",
-      "type": "template"
+      "type": "template",
+      "hidden": true
     },
     {
       "id": "RaQ2Ydmf11",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
+    },
+    {
+      "id": "Nee355mf8h",
+      "type": "subPage"
     }
   ],
   "subPages": [
     {
       "id": "overview",
-      "title": "Overview",
-      "blockIds": []
+      "title": "Usage",
+      "blockIds": [
+        "xJX5cnKuVF",
+        "MunpLN3xbJ",
+        "dJzGYme3cZ",
+        "eYwF-0uO8k",
+        "LaqbFvN-wg",
+        "k3XCkEgQ5R",
+        "UYgruOd-SM",
+        "0gCdfhUSG",
+        "lJERnqE3mh",
+        "2BeCp1QjBB",
+        "HlOc06Acqb",
+        "YKlqsdT2P",
+        "VOcEVaQJfC",
+        "NmTK8O1AZh"
+      ]
+    },
+    {
+      "id": "62vWZCJLPg",
+      "title": "Style",
+      "blockIds": [
+        "fMNbtN0jL",
+        "4sOrDiUk9j",
+        "n59kj7bFMk",
+        "gUD4bX-VcH",
+        "9i840wb6go",
+        "N3E9Alp69",
+        "o8P2Q6-0lE",
+        "2wztw-2xB9",
+        "IjsKrg0W6",
+        "VeSQh-QaX",
+        "oD1xhVJXcf",
+        "Y7DoGpHg0",
+        "NhLIuQ8eh",
+        "cOXaaFZA1I",
+        "yL1O3sbFPw"
+      ]
+    },
+    {
+      "id": "Nee355mf8h",
+      "title": "Accessibility",
+      "blockIds": [
+        "LCwT1mFuE",
+        "auNVJoG9Ne",
+        "FKhaGJikWi",
+        "XMjQTyiywW",
+        "dp1XIRX19k",
+        "4ekeEXUOQE",
+        "mPonsNPy08",
+        "1-sMWy4pwA",
+        "lID0f8g2zH"
+      ]
+    },
+    {
+      "id": "62vWZCJLPg",
+      "title": "Style",
+      "blockIds": [
+        "fMNbtN0jL",
+        "4sOrDiUk9j",
+        "n59kj7bFMk",
+        "gUD4bX-VcH",
+        "9i840wb6go",
+        "N3E9Alp69",
+        "o8P2Q6-0lE",
+        "2wztw-2xB9",
+        "IjsKrg0W6",
+        "VeSQh-QaX",
+        "oD1xhVJXcf",
+        "Y7DoGpHg0",
+        "NhLIuQ8eh",
+        "cOXaaFZA1I",
+        "yL1O3sbFPw"
+      ]
+    },
+    {
+      "id": "Nee355mf8h",
+      "title": "Accessibility",
+      "blockIds": [
+        "LCwT1mFuE",
+        "auNVJoG9Ne",
+        "FKhaGJikWi",
+        "XMjQTyiywW",
+        "dp1XIRX19k",
+        "4ekeEXUOQE",
+        "mPonsNPy08",
+        "1-sMWy4pwA",
+        "lID0f8g2zH"
+      ]
+    },
+    {
+      "id": "62vWZCJLPg",
+      "title": "Style",
+      "blockIds": [
+        "fMNbtN0jL",
+        "4sOrDiUk9j",
+        "n59kj7bFMk",
+        "gUD4bX-VcH",
+        "9i840wb6go",
+        "N3E9Alp69",
+        "o8P2Q6-0lE",
+        "2wztw-2xB9",
+        "IjsKrg0W6",
+        "VeSQh-QaX",
+        "oD1xhVJXcf",
+        "Y7DoGpHg0",
+        "NhLIuQ8eh",
+        "cOXaaFZA1I",
+        "yL1O3sbFPw"
+      ]
+    },
+    {
+      "id": "Nee355mf8h",
+      "title": "Accessibility",
+      "blockIds": [
+        "LCwT1mFuE",
+        "auNVJoG9Ne",
+        "FKhaGJikWi",
+        "XMjQTyiywW",
+        "dp1XIRX19k",
+        "4ekeEXUOQE",
+        "mPonsNPy08",
+        "1-sMWy4pwA",
+        "lID0f8g2zH"
+      ]
+    },
+    {
+      "id": "62vWZCJLPg",
+      "title": "Style",
+      "blockIds": [
+        "fMNbtN0jL",
+        "4sOrDiUk9j",
+        "n59kj7bFMk",
+        "gUD4bX-VcH",
+        "9i840wb6go",
+        "N3E9Alp69",
+        "o8P2Q6-0lE",
+        "2wztw-2xB9",
+        "IjsKrg0W6",
+        "VeSQh-QaX",
+        "oD1xhVJXcf",
+        "Y7DoGpHg0",
+        "NhLIuQ8eh",
+        "cOXaaFZA1I",
+        "yL1O3sbFPw"
+      ]
+    },
+    {
+      "id": "Nee355mf8h",
+      "title": "Accessibility",
+      "blockIds": [
+        "LCwT1mFuE",
+        "auNVJoG9Ne",
+        "FKhaGJikWi",
+        "XMjQTyiywW",
+        "dp1XIRX19k",
+        "4ekeEXUOQE",
+        "mPonsNPy08",
+        "1-sMWy4pwA",
+        "lID0f8g2zH"
+      ]
+    },
+    {
+      "id": "62vWZCJLPg",
+      "title": "Style",
+      "blockIds": [
+        "fMNbtN0jL",
+        "4sOrDiUk9j",
+        "n59kj7bFMk",
+        "gUD4bX-VcH",
+        "9i840wb6go",
+        "N3E9Alp69",
+        "o8P2Q6-0lE",
+        "2wztw-2xB9",
+        "IjsKrg0W6",
+        "VeSQh-QaX",
+        "oD1xhVJXcf",
+        "Y7DoGpHg0",
+        "NhLIuQ8eh",
+        "cOXaaFZA1I",
+        "yL1O3sbFPw"
+      ]
+    },
+    {
+      "id": "Nee355mf8h",
+      "title": "Accessibility",
+      "blockIds": [
+        "LCwT1mFuE",
+        "auNVJoG9Ne",
+        "FKhaGJikWi",
+        "XMjQTyiywW",
+        "dp1XIRX19k",
+        "4ekeEXUOQE",
+        "mPonsNPy08",
+        "1-sMWy4pwA",
+        "lID0f8g2zH"
+      ]
+    },
+    {
+      "id": "62vWZCJLPg",
+      "title": "Style",
+      "blockIds": [
+        "fMNbtN0jL",
+        "4sOrDiUk9j",
+        "n59kj7bFMk",
+        "gUD4bX-VcH",
+        "9i840wb6go",
+        "N3E9Alp69",
+        "o8P2Q6-0lE",
+        "2wztw-2xB9",
+        "IjsKrg0W6",
+        "VeSQh-QaX",
+        "oD1xhVJXcf",
+        "Y7DoGpHg0",
+        "NhLIuQ8eh",
+        "cOXaaFZA1I",
+        "yL1O3sbFPw"
+      ]
+    },
+    {
+      "id": "Nee355mf8h",
+      "title": "Accessibility",
+      "blockIds": [
+        "LCwT1mFuE",
+        "auNVJoG9Ne",
+        "FKhaGJikWi",
+        "XMjQTyiywW",
+        "dp1XIRX19k",
+        "4ekeEXUOQE",
+        "mPonsNPy08",
+        "1-sMWy4pwA",
+        "lID0f8g2zH"
+      ]
     }
   ],
   "designSrcComponentsById": {

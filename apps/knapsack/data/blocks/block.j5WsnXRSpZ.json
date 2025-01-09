@@ -1,0 +1,36 @@
+{
+  "id": "j5WsnXRSpZ",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Figurative language",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Do not use figurative language that can be interpreted as insensitive or violent. You may need to work around such words that are established keywords in code, such as the keyword ABORT often used in programming languages and SQL. Minimize the use of the keyword in text and make sure to format it as a keyword. In Teradata documents, these types of commands or functions are frequently uppercase.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

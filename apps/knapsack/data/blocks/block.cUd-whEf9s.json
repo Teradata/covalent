@@ -1,0 +1,17 @@
+{
+  "id": "cUd-whEf9s",
+  "data": {
+    "patternId": "textfield",
+    "demoId": "zYujvGxjlZ",
+    "templateId": "web-components-M4zyalwdNJ",
+    "showSchemaForm": false,
+    "showCodeSnippet": true,
+    "hideControls": false,
+    "allowResizing": true
+  },
+  "blockType": "pattern-template-block",
+  "header": {
+    "showHeader": false,
+    "title": "Default Text Field"
+  }
+}

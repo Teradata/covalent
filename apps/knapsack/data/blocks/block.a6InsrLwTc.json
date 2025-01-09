@@ -43,5 +43,6 @@
       "imageSize": "none"
     }
   },
-  "blockType": "guidelines"
+  "blockType": "guidelines",
+  "spacing": "medium"
 }

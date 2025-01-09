@@ -22,5 +22,5 @@
     "include": ""
   },
   "blockType": "design-token-collection",
-  "spacing": "large"
+  "spacing": "medium"
 }

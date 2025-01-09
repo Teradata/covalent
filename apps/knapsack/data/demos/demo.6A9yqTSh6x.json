@@ -1,0 +1,20 @@
+{
+  "id": "6A9yqTSh6x",
+  "title": "Main",
+  "type": "data",
+  "patternId": "icon-lockup",
+  "templateId": "web-components-RPcggDLyDK",
+  "data": {
+    "props": {
+      "icon": "houseboat"
+    },
+    "slots": {
+      "default": [
+        {
+          "text": "Lorem ipsum dolor",
+          "type": "text"
+        }
+      ]
+    }
+  }
+}

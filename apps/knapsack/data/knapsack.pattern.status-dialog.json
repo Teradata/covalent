@@ -2,10 +2,7 @@
   "id": "status-dialog",
   "title": "Status dialog",
   "description": "Modal window displaying messages indicating the status, along with optional details.",
-  "statuses": {
-    "XQn0s6hkh9": "UPHFPB1cG",
-    "main": "draft"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-klayJh8gA",
@@ -121,7 +118,8 @@
     },
     {
       "id": "rbFiAQIYtM",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

@@ -2,10 +2,7 @@
   "id": "code-snippet",
   "title": "Code snippet",
   "description": "Portion of code displayed within an interface, often for demonstration or explanation.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-MmKtwF24Vv",
@@ -72,7 +69,8 @@
     },
     {
       "id": "4cvBUStbqg",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

@@ -2,10 +2,7 @@
   "id": "snackbar",
   "title": "Snackbar",
   "description": "Temporary notification displayed at the bottom of the screen.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-3ERE1Ai9lo",
@@ -77,7 +74,8 @@
     },
     {
       "id": "EujGB1e-TW",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

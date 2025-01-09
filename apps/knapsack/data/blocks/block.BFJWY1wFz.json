@@ -1,0 +1,35 @@
+{
+  "id": "BFJWY1wFz",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "j8hzIv3aPo",
+        "link": {
+          "name": "Typography",
+          "path": "/pages/typography-3shrxwkyk"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/typography-rjcvx8vd6bpng",
+        "title": "See also",
+        "description": "Typography foundations"
+      },
+      {
+        "id": "GCeJ5yKToH",
+        "link": {
+          "path": "https://m2.material.io/design/typography/the-type-system.html#type-scale",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-rlqdfe8xdpng",
+        "title": "See also",
+        "description": "Material Design type system"
+      }
+    ],
+    "gridStyles": {
+      "columns": "4"
+    },
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "spacing": "medium",
+  "blockType": "shortcut-tiles"
+}

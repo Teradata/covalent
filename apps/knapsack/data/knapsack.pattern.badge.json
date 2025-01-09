@@ -2,11 +2,7 @@
   "id": "badge",
   "title": "Badge",
   "description": "A small visual element indicating status or providing additional information.",
-  "statuses": {
-    "main": "needsReview",
-    "Mh7xwTui": "draft",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-40aOlYC6I9",
@@ -77,7 +73,8 @@
     },
     {
       "id": "jiV2y0ofOO",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

@@ -1,0 +1,35 @@
+{
+  "id": "HlOc06Acqb",
+  "data": {
+    "guidelines": [
+      {
+        "id": "GqBzDqjiUC",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Provide a \"select all\" checkbox when users may want to select all available options.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "6-UymrIUR",
+        "type": "dont"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}

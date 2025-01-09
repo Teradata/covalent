@@ -1,0 +1,37 @@
+{
+  "id": "H5O53ALoT0",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "An icon may be colored using any of the standard icon colors, or any of the foreground colors if representing a state such as an error or success.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Do not use other colors. If you need decorative color, consider using an avatar.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "small",
+  "blockType": "text-editor",
+  "spacing": "medium"
+}

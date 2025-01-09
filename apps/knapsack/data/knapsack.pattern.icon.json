@@ -2,10 +2,7 @@
   "id": "icon",
   "title": "Icon",
   "description": "Symbol representing an action, object, or concept.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-N8bzRbfpuX",
@@ -51,7 +48,8 @@
     },
     {
       "id": "1KDWoTAzr",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

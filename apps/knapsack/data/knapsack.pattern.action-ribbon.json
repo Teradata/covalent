@@ -2,11 +2,7 @@
   "id": "action-ribbon",
   "title": "Action ribbon",
   "description": "Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.",
-  "statuses": {
-    "main": "needsReview",
-    "Mh7xwTui": "draft",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-v3gk7O39kO",
@@ -77,22 +73,26 @@
       "type": "subPage"
     },
     {
+      "id": "G3tf4CzeNi",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-v3gk7O39kO",
       "type": "template"
     },
     {
       "id": "DGBIlJlEO",
       "type": "designSrc",
-      "minRoleNeeded": "ADMIN"
+      "minRoleNeeded": "ADMIN",
+      "hidden": true
     }
   ],
   "subPages": [
     {
       "id": "overview",
-      "title": "Overview",
+      "title": "Usage",
       "blockIds": [
-        "eoYSn9Yrdo",
-        "UeRfnaYgIy",
+        "miZdjfO0o",
         "Uz3dQxAX-n",
         "thh-22knqp",
         "POEs7jRZJ",
@@ -132,8 +132,26 @@
         "Yq-MTdzfns",
         "DcP2cc8Bg7",
         "OEyAa6Yh6",
-        "gYAVv4-IHV"
+        "lc9gBgn5Gn",
+        "dSzUSG371K",
+        "gYAVv4-IHV",
+        "dg432jHAEw"
       ]
+    },
+    {
+      "id": "G3tf4CzeNi",
+      "title": "Style",
+      "blockIds": ["eoYSn9Yrdo", "UeRfnaYgIy"]
+    },
+    {
+      "id": "G3tf4CzeNi",
+      "title": "Style",
+      "blockIds": ["eoYSn9Yrdo", "UeRfnaYgIy"]
+    },
+    {
+      "id": "G3tf4CzeNi",
+      "title": "Style",
+      "blockIds": ["eoYSn9Yrdo", "UeRfnaYgIy"]
     }
   ],
   "designSrcComponentsById": {
@@ -142,6 +160,22 @@
       "title": "Figma Component",
       "fileId": "KvXVAmYdCVAS7hzkOa73Em",
       "componentId": "7955:62085"
+    }
+  },
+  "settings": {
+    "pageHeader": {
+      "backgroundColor": {
+        "type": "design-token",
+        "tokenName": "surface-variant"
+      },
+      "textColorDescription": {
+        "type": "design-token",
+        "tokenName": "on-surface-variant"
+      },
+      "textColorTitle": {
+        "type": "design-token",
+        "tokenName": "on-surface"
+      }
     }
   }
 }

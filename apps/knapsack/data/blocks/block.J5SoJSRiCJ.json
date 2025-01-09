@@ -1,0 +1,23 @@
+{
+  "id": "J5SoJSRiCJ",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "1pdaa9GPzL",
+        "link": {
+          "name": "Errors",
+          "path": "/pages/errors"
+        },
+        "title": "See also",
+        "description": "Errors"
+      }
+    ],
+    "gridStyles": {
+      "columns": "4"
+    },
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

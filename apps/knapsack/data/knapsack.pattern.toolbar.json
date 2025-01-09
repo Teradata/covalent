@@ -2,10 +2,7 @@
   "id": "toolbar",
   "title": "Toolbar",
   "description": "Styling and formatting of text within an interface.",
-  "statuses": {
-    "main": "needsReview",
-    "XQn0s6hkh9": "UPHFPB1cG"
-  },
+  "statuses": {},
   "templates": [
     {
       "id": "web-components-A6-16QhSaM",
@@ -79,7 +76,8 @@
     },
     {
       "id": "OyvutmXQL9",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

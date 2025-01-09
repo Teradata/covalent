@@ -1,0 +1,33 @@
+{
+  "id": "NmTK8O1AZh",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "mUu6AXEwgl",
+        "link": {
+          "path": "https://material.angular.io/components/checkbox/overview",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Angular Material component"
+      },
+      {
+        "id": "10ibhcuxeN",
+        "link": {
+          "path": "https://www.figma.com/design/UTdDovL41gL90NQF7C7s59/Toggles?node-id=0-1",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Figma component"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "titleSize": "xsmall"
+    },
+    "gridStyles": {
+      "columns": "3"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

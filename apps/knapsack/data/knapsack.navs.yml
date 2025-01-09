@@ -1,14 +1,14 @@
 byId:
+  accessibility:
+    id: accessibility
+    name: Accessibility
+    parentId: foundations
+    path: /pages/accessibility
   action-ribbon:
     id: action-ribbon
     name: Action ribbon
     parentId: components
     path: /pattern/action-ribbon
-  adapting-tone-by-situation:
-    id: adapting-tone-by-situation
-    name: Adapting tone by situation
-    parentId: voice-and-tone
-    path: /pages/adapting-tone-by-situation
   alert:
     id: alert
     name: Alert
@@ -65,6 +65,11 @@ byId:
     name: Circular progress
     parentId: components
     path: /pattern/circular-progress
+  code-editor:
+    id: code-editor
+    name: Code editor
+    parentId: components
+    path: /pattern/code-editor
   code-snippet:
     id: code-snippet
     name: Code snippet
@@ -100,6 +105,21 @@ byId:
     name: Date and time
     parentId: product-and-ui
     path: /pages/date-and-time
+  design-principles:
+    id: design-principles
+    name: Design principles
+    parentId: foundations
+    path: /pages/design-principles
+  designers:
+    id: designers
+    name: Designers
+    parentId: get-started
+    path: /pages/designers
+  developers:
+    id: developers
+    name: Developers
+    parentId: get-started
+    path: /pages/developers
   dialog:
     id: dialog
     name: Dialog
@@ -117,9 +137,9 @@ byId:
     path: /pages/error-messages
   errors:
     id: errors
-    name: Errors
+    name: Error Messages
     parentId: patterns
-    path: /pages/errors
+    path: /pattern/errors
   expansion-panel:
     id: expansion-panel
     name: Expansion panel
@@ -150,6 +170,11 @@ byId:
     name: Full-screen dialog
     parentId: components
     path: /pattern/full-screen-dialog
+  get-started:
+    id: get-started
+    name: Get started
+    parentId: root
+    path: /pages/get-started
   icon:
     id: icon
     name: Icon
@@ -170,6 +195,11 @@ byId:
     name: Icon checkbox
     parentId: components
     path: /pattern/icon-checkbox
+  icon-lockup:
+    id: icon-lockup
+    name: Icon lockup
+    parentId: components
+    path: /pattern/icon-lockup
   icon-radio:
     id: icon-radio
     name: Icon radio
@@ -180,6 +210,11 @@ byId:
     name: Icons
     parentId: foundations
     path: /pages/icons
+  inclusive-language-glnk25tux:
+    id: inclusive-language-glnk25tux
+    name: Inclusive language
+    parentId: content
+    path: /pages/inclusive-language-glnk25tux
   linear-progress:
     id: linear-progress
     name: Linear progress
@@ -207,6 +242,11 @@ byId:
     name: Navigation list item
     parentId: list
     path: /pattern/navigation-list-item
+  notebook-cell:
+    id: notebook-cell
+    name: Notebook cell
+    parentId: components
+    path: /pattern/notebook-cell
   patterns:
     id: patterns
     name: Patterns
@@ -249,6 +289,7 @@ byId:
     parentId: components
     path: /pattern/snackbar
   split-button:
+    hidden: true
     id: split-button
     name: Split button
     parentId: components
@@ -358,7 +399,7 @@ byId:
   voice-and-tone:
     id: voice-and-tone
     name: Voice and tone
-    parentId: foundations
+    parentId: content
     path: /pages/voice-and-tone
   word-list:
     id: word-list
@@ -367,11 +408,10 @@ byId:
     path: /pages/word-list
 order:
   - foundations
+  - design-principles
   - color
   - icons
   - typography-3shrxwkyk
-  - voice-and-tone
-  - adapting-tone-by-situation
   - components
   - action-ribbon
   - alert
@@ -381,6 +421,7 @@ order:
   - button
   - card
   - checkbox
+  - code-editor
   - code-snippet
   - chip-item
   - chip
@@ -396,6 +437,7 @@ order:
   - icon-button
   - icon-button-toggle
   - icon-checkbox
+  - icon-lockup
   - icon-radio
   - linear-progress
   - list
@@ -404,6 +446,7 @@ order:
   - check-list-item
   - radio-list-item
   - menu
+  - notebook-cell
   - radio
   - select
   - side-sheet
@@ -427,14 +470,20 @@ order:
   - text-lockup
   - text
   - patterns
+  - errors
   - tokens
   - colors-vvhchtke
   - colors-9gexmujiba
   - typography
   - content
+  - voice-and-tone
   - product-and-ui
   - error-messages
   - video
   - date-and-time
   - word-list
-  - errors
+  - accessibility
+  - designers
+  - developers
+  - get-started
+  - inclusive-language-glnk25tux

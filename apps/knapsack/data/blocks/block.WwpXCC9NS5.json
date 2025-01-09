@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
@@ -24,7 +24,19 @@
           },
           "content": [
             {
-              "text": "For use in long-form content like articles, as opposed to in UI interface items like buttons or tables. These styles grow or shrink based on their container so that, for example, you have smaller text on a phone where large headers don't make sense.",
+              "text": "For use in long-form content like articles, rather than in UI interface items like buttons or tables. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "These styles grow or shrink based on their container so that—for example—you have smaller text on a phone where large headers don't make sense.",
               "type": "text"
             }
           ]
@@ -32,5 +44,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }

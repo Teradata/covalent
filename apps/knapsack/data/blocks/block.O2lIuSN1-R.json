@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
@@ -24,7 +24,19 @@
           },
           "content": [
             {
-              "text": "For use in UI elements, like buttons, lists, tables, etc. This typography does not include vertical spacing or change size based on container size.",
+              "text": "For use in UI elements, like buttons, lists, tables, etc. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "This typography does not include vertical spacing or change size based on container size.",
               "type": "text"
             }
           ]
@@ -32,5 +44,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }

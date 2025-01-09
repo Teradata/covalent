@@ -13,5 +13,6 @@
     ],
     "collectionId": "Typography"
   },
-  "blockType": "design-token-collection"
+  "blockType": "design-token-collection",
+  "spacing": "medium"
 }

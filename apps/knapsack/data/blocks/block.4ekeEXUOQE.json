@@ -1,0 +1,20 @@
+{
+  "id": "4ekeEXUOQE",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "image",
+          "attrs": {
+            "alt": null,
+            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img-ojdjwuicibpng",
+            "title": null
+          }
+        }
+      ]
+    }
+  },
+  "size": "medium",
+  "blockType": "text-editor"
+}
