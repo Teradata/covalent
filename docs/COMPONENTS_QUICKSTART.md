@@ -56,7 +56,7 @@ yarn add @covalent/components
 
 ## Angular Integration
 
-Applications using angular can use covalent components in the same way they use HTML elements today adding [`CUSTOM_ELEMENTS_SCHEMA`](https://angular.io/api/core/CUSTOM_ELEMENTS_SCHEMA) schema to any Angular module or standalone component.
+Applications using angular can use covalent components in the same way they use HTML elements today adding [`CUSTOM_ELEMENTS_SCHEMA`](https://angular.dev/api/core/CUSTOM_ELEMENTS_SCHEMA) schema to any Angular module or standalone component.
 
 ```javascript
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';

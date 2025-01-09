@@ -75,7 +75,7 @@ describe('Component: DynamicMenu', () => {
               {
                 text: 'Angular Homepage',
                 icon: 'star_rate',
-                link: 'https://angular.io/',
+                link: 'https://angular.dev/',
                 newTab: true,
               },
             ],

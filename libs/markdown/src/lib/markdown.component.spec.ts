@@ -452,7 +452,7 @@ describe('Component: Markdown', () => {
       const RAW_LINK =
         'https://raw.githubusercontent.com/Teradata/covalent/main/';
       const RELATIVE_LINK = 'assets/covalent/';
-      const EXTERNAL_URL = 'https://angular.io/';
+      const EXTERNAL_URL = 'https://angular.dev/';
       const SUB_DIRECTORY = 'docs/';
       const links: string[][] = [
         [`${ANCHOR}`, `${ANCHOR}`],
@@ -524,7 +524,7 @@ describe('Component: Markdown', () => {
         'https://raw.githubusercontent.com/Teradata/covalent/main/';
       const RELATIVE_LINK = 'assets/covalent/';
       const EXTERNAL_IMG =
-        'https://angular.io/assets/images/logos/angular/angular.svg';
+        'https://angular.dev/assets/images/logos/angular/angular.svg';
       const SUB_DIRECTORY = 'dir/';
       const SVG_IMG = 'src/assets/icons/covalent.svg';
       // these are not valid image urls
