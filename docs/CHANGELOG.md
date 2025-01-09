@@ -1,3 +1,9 @@
+## [8.24.2](https://github.com/Teradata/covalent/compare/v8.24.1...v8.24.2) (2025-01-09)
+
+### Bug Fixes
+
+- **components:** fix icon-checkbox notch color ([#2304](https://github.com/Teradata/covalent/issues/2304)) ([8162df1](https://github.com/Teradata/covalent/commit/8162df1d9b490ff61c6dba479433c4a4fdf9bef4))
+
 ## [8.24.1](https://github.com/Teradata/covalent/compare/v8.24.0...v8.24.1) (2024-12-12)
 
 ### Bug Fixes
