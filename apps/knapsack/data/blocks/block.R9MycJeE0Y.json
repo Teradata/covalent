@@ -1,0 +1,49 @@
+{
+  "id": "R9MycJeE0Y",
+  "data": {
+    "guidelines": [
+      {
+        "id": "Wy6iR9LR1T",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Place the destructive button as the primary action (aligned to the right) only when it represents the main task, such as deleting critical data. Use the negative color to emphasize caution.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "SE7rcWhd7R",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use a destructive button as the primary action unless it is the primary task. Misusing this placement can confuse users and increase the risk of accidental actions.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

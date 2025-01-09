@@ -3,6 +3,15 @@
   "data": {
     "shortcuts": [
       {
+        "id": "pwqzkoHQp0",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Angular Material component"
+      },
+      {
         "id": "kUfMxUgCGV",
         "link": {
           "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36756",
@@ -16,7 +25,7 @@
       "imageSize": "none"
     },
     "gridStyles": {
-      "columns": "4"
+      "columns": "3"
     }
   },
   "blockType": "shortcut-tiles"

@@ -1,0 +1,38 @@
+{
+  "id": "5hE3PoJgKK",
+  "data": {
+    "guidelines": [
+      {
+        "id": "OgdN91Ioq",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Label each radio button clearly and provide a grouping heading. ",
+                  "type": "text"
+                },
+                {
+                  "type": "hardBreak"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "jz3YcBHJQ6",
+        "type": "dont"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}

@@ -78,7 +78,8 @@
     },
     {
       "id": "WkQ2w2tDcv",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

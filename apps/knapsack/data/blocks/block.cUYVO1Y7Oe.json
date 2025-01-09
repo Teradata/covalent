@@ -1,0 +1,51 @@
+{
+  "id": "cUYVO1Y7Oe",
+  "data": {
+    "guidelines": [
+      {
+        "id": "dPJhgjsMGG",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Label: \"Email address\"",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "MGSoAVrR9g",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Label: \"Your email address goes here.\"",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": true
+    },
+    "gridStyles": {
+      "columns": "2"
+    }
+  },
+  "blockType": "guidelines"
+}

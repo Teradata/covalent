@@ -48,7 +48,8 @@
     },
     {
       "id": "f2DdOADbRD",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

@@ -129,7 +129,8 @@
     },
     {
       "id": "R3L8pTat9",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

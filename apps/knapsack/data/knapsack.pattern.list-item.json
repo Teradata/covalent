@@ -111,7 +111,8 @@
     },
     {
       "id": "UPQW8KAnwz",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

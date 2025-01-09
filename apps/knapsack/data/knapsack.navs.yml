@@ -1,4 +1,9 @@
 byId:
+  accessibility:
+    id: accessibility
+    name: Accessibility
+    parentId: foundations
+    path: /pages/accessibility
   action-ribbon:
     id: action-ribbon
     name: Action ribbon
@@ -132,9 +137,9 @@ byId:
     path: /pages/error-messages
   errors:
     id: errors
-    name: Errors
+    name: Error Messages
     parentId: patterns
-    path: /pages/errors
+    path: /pattern/errors
   expansion-panel:
     id: expansion-panel
     name: Expansion panel
@@ -284,6 +289,7 @@ byId:
     parentId: components
     path: /pattern/snackbar
   split-button:
+    hidden: true
     id: split-button
     name: Split button
     parentId: components
@@ -402,6 +408,7 @@ byId:
     path: /pages/word-list
 order:
   - foundations
+  - design-principles
   - color
   - icons
   - typography-3shrxwkyk
@@ -474,9 +481,9 @@ order:
   - error-messages
   - video
   - date-and-time
-  - inclusive-language-glnk25tux
   - word-list
-  - design-principles
+  - accessibility
   - designers
   - developers
   - get-started
+  - inclusive-language-glnk25tux

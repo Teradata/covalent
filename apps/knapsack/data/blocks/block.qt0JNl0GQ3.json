@@ -5,11 +5,11 @@
       {
         "id": "0G-6-mfmvs",
         "link": {
-          "path": "https://github.com/Teradata/covalent/tree/main/libs/components#getting-started",
+          "path": "https://github.com/Teradata/covalent/blob/main/docs/GETTING_STARTED.md",
           "external": true
         },
         "image": "https://knapsack.imgix.net/site/covalent/github-vxn1wovnrnpng",
-        "title": "Covalent setup",
+        "title": "Getting started",
         "description": "Instructions for accessing and running Covalent locally"
       },
       {
@@ -21,6 +21,16 @@
         "image": "https://knapsack.imgix.net/site/covalent/storybook-icon-7m8kzc6tvhpng",
         "title": "Storybook",
         "description": "Older documentation, useful while we flesh out this new site"
+      },
+      {
+        "id": "sT40IIybaA",
+        "link": {
+          "path": "https://github.com/Teradata/covalent/blob/main/docs/CONTRIBUTING.md",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/github--SHw1qjqR7Z.png",
+        "title": "Contribute to Covalent",
+        "description": "For contributing new components to Covalent review these guidelines"
       }
     ],
     "gridStyles": {
@@ -30,5 +40,10 @@
       "titleSize": "large"
     }
   },
-  "blockType": "shortcut-tiles"
+  "blockType": "shortcut-tiles",
+  "header": {
+    "showHeader": false,
+    "title": "Feature Requests or Issues",
+    "description": "Did you find an issue or have a feature request with one of our existing components? First, check through our GitHub Issues. If you don’t see it listed, go ahead and create an issue."
+  }
 }

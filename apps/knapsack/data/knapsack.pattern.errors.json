@@ -1,0 +1,94 @@
+{
+  "id": "errors",
+  "tabs": [
+    {
+      "id": "overview",
+      "type": "subPage"
+    },
+    {
+      "id": "R2euwwENQb",
+      "type": "subPage"
+    },
+    {
+      "id": "xjnUexUurf",
+      "type": "subPage"
+    },
+    {
+      "id": "nxIlWdbl4",
+      "type": "subPage"
+    }
+  ],
+  "title": "Error Messages",
+  "statuses": {},
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Inline",
+      "blockIds": [
+        "y9ktwTZeod",
+        "MnowOBJyfH",
+        "nHHM8ZY1t",
+        "Ub7z1ZeD3l",
+        "DVDzWQzzSF",
+        "vPdIHpvLwN",
+        "n4CtCM6G3b",
+        "AI-52Tm68o",
+        "I7Td22LZhY",
+        "mghF2eD1d"
+      ]
+    },
+    {
+      "id": "R2euwwENQb",
+      "title": "Page banner",
+      "blockIds": [
+        "Y8HzdS7gPp",
+        "s3qKyUsCT6",
+        "dPn29XKOdv",
+        "7jaO5sktdd",
+        "v5QzDxTnwZ",
+        "XR3LF00yVM",
+        "932llFVJGi",
+        "K6J-tEiJo",
+        "DAracnlVc",
+        "bwCcdGFTD"
+      ]
+    },
+    {
+      "id": "xjnUexUurf",
+      "title": "Modal",
+      "blockIds": [
+        "q-igZuXadc",
+        "gwdmBDCoI",
+        "UxEjaaxIkz",
+        "zX0mNiwTGt",
+        "RSU0NhIsTj",
+        "mOhFCMFtD8",
+        "1-RLsl7Jhv",
+        "4m7KIH2nAo",
+        "NuempuCpQ",
+        "ZwJCsnzjFv"
+      ]
+    },
+    {
+      "id": "nxIlWdbl4",
+      "title": "Accessibility",
+      "blockIds": [
+        "1NwM5yW9Fr",
+        "1c1Xcz9Mhz",
+        "jbtjPTfdVu",
+        "5yPvpBdgAV",
+        "Bit-OIAqKT",
+        "8YsZVFdQl3",
+        "Ceh3DYebCj",
+        "EZjB1AybpF",
+        "uZd36wHJs",
+        "toLzBUK2M9",
+        "ChIK-tkuaD",
+        "ep1h8wbZQl",
+        "Ack8CkSWL0"
+      ]
+    }
+  ],
+  "templates": [],
+  "description": "Error patterns provide users with feedback when something goes wrong. They help users understand the issue, prevent frustration, and guide them toward resolution. Error patterns include inline error messages, toast notifications, and full-page error states."
+}

@@ -1,7 +1,7 @@
 {
   "id": "radio",
   "title": "Radio",
-  "description": "A control that allows users to select only one option from a set.",
+  "description": "A radio button allows the user to select a single option from a set of mutually exclusive choices. It is typically used when only one option can be selected from a predefined set.",
   "statuses": {},
   "templates": [
     {
@@ -51,23 +51,258 @@
   ],
   "tabs": [
     {
-      "id": "overview",
+      "id": "hWOzVR2CNf",
+      "type": "subPage"
+    },
+    {
+      "id": "ZQmlgZUWa",
       "type": "subPage"
     },
     {
       "id": "web-components-qk2MWcBipT",
-      "type": "template"
+      "type": "template",
+      "hidden": true
     },
     {
       "id": "uJ77Os6iuR",
       "type": "designSrc"
+    },
+    {
+      "id": "overview",
+      "type": "subPage"
     }
   ],
   "subPages": [
     {
       "id": "overview",
-      "title": "Overview",
-      "blockIds": []
+      "title": "Accessibility",
+      "blockIds": [
+        "ZOIsdq8hnJ",
+        "YrfZRP-Egy",
+        "FM6O6xIE23",
+        "GvlFURk4Fu",
+        "Ffc5nwvpVQ",
+        "yQ4cRZaRp9",
+        "0jN69CFa7W",
+        "8lgv9xOXKz",
+        "T1iwrobGSP"
+      ]
+    },
+    {
+      "id": "ZQmlgZUWa",
+      "title": "Style",
+      "blockIds": [
+        "JEhmbC4qk5",
+        "DfKLdNMCsh",
+        "GJ6JWkU0EE",
+        "cuqa5xWXKg",
+        "fJ8hcNN1ml",
+        "nKC4nIcWkA",
+        "00vIwRzW1v",
+        "i2f7DhPDYg",
+        "wVeKmQ56N3",
+        "R2UxO8Kfca",
+        "nx0bSfwCGE",
+        "ViH27sP28s"
+      ]
+    },
+    {
+      "id": "hWOzVR2CNf",
+      "title": "Usage",
+      "blockIds": [
+        "VhNuPYcXNM",
+        "JILm3iUujX",
+        "YlINrUU5eC",
+        "ZPITzD8bqn",
+        "cmylBU351Z",
+        "DSKyHJKKbu",
+        "QSP0-uNfnP",
+        "yPnlDRjsDv",
+        "5hE3PoJgKK",
+        "zSSxTyOU8Z",
+        "3eLEkobE5v",
+        "prqNWd26z"
+      ]
+    },
+    {
+      "id": "ZQmlgZUWa",
+      "title": "Style",
+      "blockIds": [
+        "JEhmbC4qk5",
+        "DfKLdNMCsh",
+        "GJ6JWkU0EE",
+        "cuqa5xWXKg",
+        "fJ8hcNN1ml",
+        "nKC4nIcWkA",
+        "00vIwRzW1v",
+        "i2f7DhPDYg",
+        "wVeKmQ56N3",
+        "R2UxO8Kfca",
+        "nx0bSfwCGE",
+        "ViH27sP28s"
+      ]
+    },
+    {
+      "id": "hWOzVR2CNf",
+      "title": "Usage",
+      "blockIds": [
+        "VhNuPYcXNM",
+        "JILm3iUujX",
+        "YlINrUU5eC",
+        "ZPITzD8bqn",
+        "cmylBU351Z",
+        "DSKyHJKKbu",
+        "QSP0-uNfnP",
+        "yPnlDRjsDv",
+        "5hE3PoJgKK",
+        "zSSxTyOU8Z",
+        "3eLEkobE5v",
+        "prqNWd26z"
+      ]
+    },
+    {
+      "id": "ZQmlgZUWa",
+      "title": "Style",
+      "blockIds": [
+        "JEhmbC4qk5",
+        "DfKLdNMCsh",
+        "GJ6JWkU0EE",
+        "cuqa5xWXKg",
+        "fJ8hcNN1ml",
+        "nKC4nIcWkA",
+        "00vIwRzW1v",
+        "i2f7DhPDYg",
+        "wVeKmQ56N3",
+        "R2UxO8Kfca",
+        "nx0bSfwCGE",
+        "ViH27sP28s"
+      ]
+    },
+    {
+      "id": "hWOzVR2CNf",
+      "title": "Usage",
+      "blockIds": [
+        "VhNuPYcXNM",
+        "JILm3iUujX",
+        "YlINrUU5eC",
+        "ZPITzD8bqn",
+        "cmylBU351Z",
+        "DSKyHJKKbu",
+        "QSP0-uNfnP",
+        "yPnlDRjsDv",
+        "5hE3PoJgKK",
+        "zSSxTyOU8Z",
+        "3eLEkobE5v",
+        "prqNWd26z"
+      ]
+    },
+    {
+      "id": "ZQmlgZUWa",
+      "title": "Style",
+      "blockIds": [
+        "JEhmbC4qk5",
+        "DfKLdNMCsh",
+        "GJ6JWkU0EE",
+        "cuqa5xWXKg",
+        "fJ8hcNN1ml",
+        "nKC4nIcWkA",
+        "00vIwRzW1v",
+        "i2f7DhPDYg",
+        "wVeKmQ56N3",
+        "R2UxO8Kfca",
+        "nx0bSfwCGE",
+        "ViH27sP28s"
+      ]
+    },
+    {
+      "id": "hWOzVR2CNf",
+      "title": "Usage",
+      "blockIds": [
+        "VhNuPYcXNM",
+        "JILm3iUujX",
+        "YlINrUU5eC",
+        "ZPITzD8bqn",
+        "cmylBU351Z",
+        "DSKyHJKKbu",
+        "QSP0-uNfnP",
+        "yPnlDRjsDv",
+        "5hE3PoJgKK",
+        "zSSxTyOU8Z",
+        "3eLEkobE5v",
+        "prqNWd26z"
+      ]
+    },
+    {
+      "id": "ZQmlgZUWa",
+      "title": "Style",
+      "blockIds": [
+        "JEhmbC4qk5",
+        "DfKLdNMCsh",
+        "GJ6JWkU0EE",
+        "cuqa5xWXKg",
+        "fJ8hcNN1ml",
+        "nKC4nIcWkA",
+        "00vIwRzW1v",
+        "i2f7DhPDYg",
+        "wVeKmQ56N3",
+        "R2UxO8Kfca",
+        "nx0bSfwCGE",
+        "ViH27sP28s"
+      ]
+    },
+    {
+      "id": "hWOzVR2CNf",
+      "title": "Usage",
+      "blockIds": [
+        "VhNuPYcXNM",
+        "JILm3iUujX",
+        "YlINrUU5eC",
+        "ZPITzD8bqn",
+        "cmylBU351Z",
+        "DSKyHJKKbu",
+        "QSP0-uNfnP",
+        "yPnlDRjsDv",
+        "5hE3PoJgKK",
+        "zSSxTyOU8Z",
+        "3eLEkobE5v",
+        "prqNWd26z"
+      ]
+    },
+    {
+      "id": "ZQmlgZUWa",
+      "title": "Style",
+      "blockIds": [
+        "JEhmbC4qk5",
+        "DfKLdNMCsh",
+        "GJ6JWkU0EE",
+        "cuqa5xWXKg",
+        "fJ8hcNN1ml",
+        "nKC4nIcWkA",
+        "00vIwRzW1v",
+        "i2f7DhPDYg",
+        "wVeKmQ56N3",
+        "R2UxO8Kfca",
+        "nx0bSfwCGE",
+        "ViH27sP28s"
+      ]
+    },
+    {
+      "id": "hWOzVR2CNf",
+      "title": "Usage",
+      "blockIds": [
+        "VhNuPYcXNM",
+        "JILm3iUujX",
+        "YlINrUU5eC",
+        "ZPITzD8bqn",
+        "cmylBU351Z",
+        "DSKyHJKKbu",
+        "QSP0-uNfnP",
+        "yPnlDRjsDv",
+        "5hE3PoJgKK",
+        "zSSxTyOU8Z",
+        "3eLEkobE5v",
+        "prqNWd26z"
+      ]
     }
   ],
   "designSrcComponentsById": {

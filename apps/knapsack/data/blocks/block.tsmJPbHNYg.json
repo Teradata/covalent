@@ -1,0 +1,47 @@
+{
+  "id": "tsmJPbHNYg",
+  "data": {
+    "gridStyles": {
+      "centered": false
+    },
+    "guidelines": [
+      {
+        "id": "zjw5LOJIMV",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Ensure that the default or placeholder option is clear and instructive (e.g., \"Select a country\").",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "mXrjcashAb",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph"
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}

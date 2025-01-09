@@ -74,6 +74,8 @@
       "type": "template",
       "id": "web-components-Pnw8Nf0oOd",
       "minRoleNeeded": "CONTRIBUTOR"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

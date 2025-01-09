@@ -1,0 +1,48 @@
+{
+  "id": "nXLZNqwrJa",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Principles",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Our type scale is a set of pre-made text styles that everyone on the team can use. It's similar to having a box of different-sized markers - you know exactly what each one will look like when you use it.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When designers and developers work together, they don't need to have long discussions about exact font sizes or styles. Instead, they can simply say \"use the headline1  here\" or \"this should be body2.\" It's a shared language that both teams understand.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

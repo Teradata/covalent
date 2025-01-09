@@ -67,7 +67,8 @@
     },
     {
       "id": "zNAZahb3Z2",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

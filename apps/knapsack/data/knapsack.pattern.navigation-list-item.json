@@ -132,7 +132,8 @@
     },
     {
       "id": "c8SUVC6F4",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [

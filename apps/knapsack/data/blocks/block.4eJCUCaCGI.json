@@ -1,0 +1,35 @@
+{
+  "id": "4eJCUCaCGI",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Even though the Covalent components are built on Material Design, we maintain a distinct point of view within Covalent. The color palette, tokens, typography, iconography, and interaction patterns reflect Teradata's brand and our focus on delivering an excellent user experience.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The Covalent documentation uses the Teradata voice. In it, we focus on the user context and articulate the \"why,\" \"what,\" and \"how\" with product examples.  ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

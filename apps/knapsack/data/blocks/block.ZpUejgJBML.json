@@ -1,0 +1,23 @@
+{
+  "id": "ZpUejgJBML",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "13746:2111"
+      }
+    ],
+    "columns": "2",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "corners": "rounded",
+      "seamless": true
+    }
+  },
+  "header": {
+    "showHeader": false,
+    "description": "Groupings & Types"
+  },
+  "blockType": "design-src-tiles"
+}

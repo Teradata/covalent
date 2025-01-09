@@ -1,0 +1,23 @@
+{
+  "id": "OKRlTFkdcB",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "We're building a system that builds trust with the teams. When the system is trusted, adoption comes. We listen to the teams' feedback. To help people learn and apply the guidance, we prioritize a predictable information architecture with simple, clear, and update-to-date documentation with no extra or irrelevant content. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

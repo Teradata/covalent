@@ -94,7 +94,8 @@
     },
     {
       "id": "hLUAWg6Vk",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [],

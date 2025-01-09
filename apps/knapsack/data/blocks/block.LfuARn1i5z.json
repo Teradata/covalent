@@ -24,8 +24,8 @@
     ],
     "columns": "1",
     "imageStyles": {
-      "fit": "contain",
-      "size": "xlarge",
+      "fit": "fill",
+      "size": "auto",
       "seamless": true
     },
     "hideComponentProps": true

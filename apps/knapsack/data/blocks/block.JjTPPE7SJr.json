@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 3,
             "textAlign": "left"
           },
           "content": [
@@ -24,7 +24,19 @@
           },
           "content": [
             {
-              "text": "Use these for messaging inside card, dialogs and other containers. They are visually attached to the container around them, with no space between the alert and the edge of the container.",
+              "text": "Use these for messaging inside cards, dialogs and other containers.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": " They are visually attached to the container around them, with no space between the alert and the edge of the container.",
               "type": "text"
             }
           ]

@@ -6,38 +6,25 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
-          "attrs": {
-            "textAlign": "left",
-            "level": 4
-          },
-          "content": [
-            {
-              "type": "text",
-              "text": "References"
-            }
-          ]
-        },
-        {
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
           },
           "content": [
             {
+              "text": "MWC button",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
+                    "rel": "noopener noreferrer nofollow",
                     "href": "https://www.npmjs.com/package/@material/mwc-button",
-                    "target": "_blank",
-                    "rel": "noopener noreferrer nofollow",
-                    "class": null
+                    "class": null,
+                    "target": "_blank"
                   }
                 }
-              ],
-              "text": "MWC button"
+              ]
             }
           ]
         },
@@ -48,19 +35,19 @@
           },
           "content": [
             {
+              "text": "Covalent design system - Button",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
-                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-button--overview",
-                    "target": "_blank",
                     "rel": "noopener noreferrer nofollow",
-                    "class": null
+                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-button--overview",
+                    "class": null,
+                    "target": "_blank"
                   }
                 }
-              ],
-              "text": "Covalent design system - Button"
+              ]
             }
           ]
         }

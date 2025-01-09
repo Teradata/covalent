@@ -3,6 +3,16 @@
   "data": {
     "shortcuts": [
       {
+        "id": "XlPLjetEk2",
+        "link": {
+          "name": "Action ribbon",
+          "path": "/pattern/action-ribbon"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-action-ribbon-thumbnail--csV7OinxqY.png",
+        "title": "Action ribbon",
+        "description": "Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI."
+      },
+      {
         "id": "trMO8PI5xA",
         "link": {
           "name": "Alert",
@@ -23,6 +33,16 @@
         "description": "Common buttons prompt most actions in a UI."
       },
       {
+        "id": "1Lj19elGu",
+        "link": {
+          "name": "Checkbox",
+          "path": "/pattern/checkbox"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-checkbox-thumbnail--j2qPn87JP.png",
+        "title": "Checkbox",
+        "description": "Allows the user to select one or more options from a set of choices."
+      },
+      {
         "id": "TfjR0ITKz",
         "link": {
           "name": "Dialog",
@@ -31,6 +51,36 @@
         "image": "https://knapsack.imgix.net/site/covalent/cv-dialog-thumbnail-fuohzo41epng",
         "title": "Dialog",
         "description": "Modal window prompting users for input or displaying critical information."
+      },
+      {
+        "id": "XqXp3Psd1",
+        "link": {
+          "name": "Radio",
+          "path": "/pattern/radio"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-radio-thumbnail--j1KyKpIUwm.png",
+        "title": "Radio",
+        "description": "Allows the user to select a single option from a set of mutually exclusive choices."
+      },
+      {
+        "id": "gsUo5fHgD",
+        "link": {
+          "name": "Select",
+          "path": "/pattern/select"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-select-thumbnail--sxbmqVcWS.png",
+        "title": "Select",
+        "description": "Allows the user to choose from a list of options presented in a collapsible format"
+      },
+      {
+        "id": "VFcY7sVkVf",
+        "link": {
+          "name": "Text field",
+          "path": "/pattern/textfield"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-text-field-thumbnail--LTMwZEywCR.png",
+        "title": "Text field",
+        "description": "Allows users to type text into a form."
       }
     ],
     "gridStyles": {

@@ -4,12 +4,13 @@
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "13844:2153"
+        "nodeId": "14344:593"
       }
     ],
     "columns": "1",
     "imageStyles": {
-      "size": "large",
+      "fit": "fill",
+      "size": "auto",
       "seamless": true
     }
   },

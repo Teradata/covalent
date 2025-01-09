@@ -5,11 +5,12 @@
       {
         "id": "CHqTR5GQPA",
         "link": {
-          "name": "Errors",
-          "path": "/pages/errors"
+          "name": "Error Messages",
+          "path": "/pattern/errors"
         },
         "image": "https://knapsack.imgix.net/site/covalent/errors-ejbvtnhncnpng",
-        "title": "Errors"
+        "title": "Error Messages",
+        "description": "Error patterns give feedback, explain issues, and guide resolutions with messages, toasts, and error pages."
       }
     ],
     "tileStyles": {

@@ -14,9 +14,10 @@
     "columns": "1",
     "layout": "grid",
     "imageStyles": {
+      "size": "medium",
       "seamless": true
     }
   },
   "blockType": "design-src-tiles",
-  "size": "medium"
+  "size": "small"
 }

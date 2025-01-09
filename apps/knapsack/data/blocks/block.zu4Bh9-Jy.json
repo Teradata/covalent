@@ -1,0 +1,61 @@
+{
+  "id": "zu4Bh9-Jy",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use a text field when you need to capture short, free-form input from users. For longer text or paragraphs, consider using a ",
+              "type": "text"
+            },
+            {
+              "text": "text area",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noreferrer noopener",
+                    "href": "https://design.teradata.com/site/covalent/latest/pattern/text-area?subPageId=overview",
+                    "class": "Hyperlink SCXW171637503 BCX8",
+                    "target": "_blank"
+                  }
+                },
+                {
+                  "type": "bold"
+                },
+                {
+                  "type": "underline"
+                }
+              ]
+            },
+            {
+              "text": " instead.  ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

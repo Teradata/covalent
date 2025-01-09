@@ -1,0 +1,34 @@
+{
+  "id": "prqNWd26z",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "hYrzeIy4To",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Angular Material component"
+      },
+      {
+        "id": "mDN0epBBBi",
+        "link": {
+          "path": "#",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Figma component"
+      }
+    ],
+    "tileStyles": {
+      "rounded": true,
+      "imageSize": "none",
+      "titleSize": "xsmall"
+    },
+    "gridStyles": {
+      "columns": "3"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

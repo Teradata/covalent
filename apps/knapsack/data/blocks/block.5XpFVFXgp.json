@@ -1,0 +1,133 @@
+{
+  "id": "5XpFVFXgp",
+  "data": {
+    "gridStyles": {
+      "columns": "1",
+      "centered": false
+    },
+    "guidelines": [
+      {
+        "id": "zjw5LOJIMV",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "• Ensure the list of options is clearly labeled and sorted logically (e.g., alphabetically or by frequency of use). ",
+                  "type": "text"
+                },
+                {
+                  "type": "hardBreak"
+                },
+                {
+                  "text": "• Use drop-downs when there are many options but not when the list is small—use ",
+                  "type": "text"
+                },
+                {
+                  "text": "radio buttons",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " or ",
+                  "type": "text"
+                },
+                {
+                  "text": "checklists",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " for a more visible selection. ",
+                  "type": "text"
+                },
+                {
+                  "type": "hardBreak"
+                },
+                {
+                  "text": "• Always display a default or placeholder option that indicates the user needs to make a selection. ",
+                  "type": "text"
+                },
+                {
+                  "type": "hardBreak"
+                },
+                {
+                  "text": "• Ensure drop-downs are easy to interact with on both desktop and mobile devices. ",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "mXrjcashAb",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "• Make the drop-down list too long to scroll easily or too short to display all options at once. ",
+                  "type": "text"
+                },
+                {
+                  "type": "hardBreak"
+                },
+                {
+                  "text": "• Use a drop-down for a simple choice that could be better represented by a ",
+                  "type": "text"
+                },
+                {
+                  "text": "toggle",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " or ",
+                  "type": "text"
+                },
+                {
+                  "text": "radio button",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": ".",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "headerBeforeImage": true
+    }
+  },
+  "blockType": "guidelines"
+}

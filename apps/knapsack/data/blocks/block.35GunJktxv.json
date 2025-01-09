@@ -1,0 +1,75 @@
+{
+  "id": "35GunJktxv",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use button variants to prioritize actions: ",
+              "type": "text"
+            },
+            {
+              "text": "Raised",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": " for primary actions like \"Submit,\" ",
+              "type": "text"
+            },
+            {
+              "text": "Outlined",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": " for secondary actions like \"Cancel,\" and ",
+              "type": "text"
+            },
+            {
+              "text": "Text",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": " for less prominent, inline tasks. Each style ensures clarity and purpose.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

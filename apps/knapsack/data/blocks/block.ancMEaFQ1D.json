@@ -28,6 +28,18 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use the \"state_error\" Covalent icon.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

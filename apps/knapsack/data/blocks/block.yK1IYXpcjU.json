@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 3,
             "textAlign": "left"
           },
           "content": [
@@ -16,34 +16,9 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Headline: body-1",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Description: body-2",
-              "type": "text"
-            }
-          ]
         }
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "blockType": "text-editor"
 }
