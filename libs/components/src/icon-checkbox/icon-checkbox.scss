@@ -8,7 +8,7 @@
     width: 15px;
     height: 15px;
     border: none;
-    color: var(--mdc-theme-text-icon-on-dark);
+    color: var(--mdc-theme-on-primary);
   }
 
   .mdc-toggle__checkmark-path {
@@ -58,7 +58,7 @@
 .cornerFill {
   background: linear-gradient(
     225deg,
-    var(--mdc-theme-secondary) 28px,
+    var(--mdc-theme-primary) 28px,
     transparent 0
   );
 }
