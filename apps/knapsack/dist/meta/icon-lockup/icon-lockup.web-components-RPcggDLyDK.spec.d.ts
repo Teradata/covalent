@@ -27,7 +27,6 @@ export interface IconLockup {
   scale?:
     | 'body1'
     | 'body2'
-    | 'button'
     | 'caption'
     | 'headline1'
     | 'headline2'
@@ -35,13 +34,10 @@ export interface IconLockup {
     | 'headline4'
     | 'headline5'
     | 'headline6'
-    | 'overline'
     | 'subtitle1'
-    | 'subtitle2';
-  /**
-   * If true, the icon is displayed after the text (trailing).
-   */
-  trailingIcon?: boolean;
+    | 'subtitle2'
+    | 'overline'
+    | 'button';
   /**
    * State of the component, used to apply different styles based on status.
    */

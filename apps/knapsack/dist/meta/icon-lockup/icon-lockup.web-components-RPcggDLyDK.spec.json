@@ -17,7 +17,6 @@
       "enum": [
         "body1",
         "body2",
-        "button",
         "caption",
         "headline1",
         "headline2",
@@ -25,16 +24,13 @@
         "headline4",
         "headline5",
         "headline6",
-        "overline",
         "subtitle1",
-        "subtitle2"
+        "subtitle2",
+        "overline",
+        "button"
       ],
       "default": "body1",
       "description": "Scale of the component, controlling font-size and icon size. Default is \"body1\", but it can be set to other typography values to scale the component."
-    },
-    "trailingIcon": {
-      "type": "boolean",
-      "description": "If true, the icon is displayed after the text (trailing)."
     },
     "state": {
       "description": "State of the component, used to apply different styles based on status.",

@@ -19,6 +19,7 @@ export * from './focused-page/focused-page';
 export * from './formfield/formfield';
 export * from './full-screen-dialog/full-screen-dialog';
 export * from './icon/icon';
+export * from './icon/icon-demo';
 export * from './icon-button/icon-button';
 export * from './icon-button-toggle/icon-button-toggle';
 export * from './icon-checkbox/icon-check-toggle';
