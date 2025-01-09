@@ -265,6 +265,7 @@ const COV_ICON_LIST = [
   'sftp',
   'sftp_outlined',
   'sftp_ondark',
+  'slack',
   'state_cancelled',
   'state_cancelled_outlined',
   'state_caution',
