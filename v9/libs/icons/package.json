@@ -1,0 +1,23 @@
+{
+  "name": "@covalent/icons",
+  "version": "0.0.0-COVALENT",
+  "description": "Icons for covalent design system",
+  "exports": {
+    ".": {
+      "sass": "./covalent-icons.scss",
+      "style": "./covalent-icons.css"
+    },
+    "./variables": {
+      "sass": "./covalent-icons-variables.scss"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX"
+}

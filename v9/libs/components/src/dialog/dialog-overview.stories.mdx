@@ -1,0 +1,43 @@
+import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
+
+<Meta
+  title="Components/Dialog"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Dialogs
+
+## Basics
+
+- Use only when the user has to make a decision RIGHT NOW
+- It's always better to do the action and then allow an "undo" option rather than using an "Are you sure?" dialog
+- To notify the user less intrusively, consider using a [snackbar](?path=/story/components-snackbar--basic) instead
+
+---
+
+## Anatomy
+
+<Pre>
+  <Story id="components-dialog--anatomy" />
+</Pre>
+
+---
+
+## Examples
+
+### Logout
+
+<Pre>
+  <Story id="components-dialog--logout" />
+</Pre>
+
+### Destructive dialog
+
+<Pre>
+  <Story id="components-dialog--udf" />
+</Pre>

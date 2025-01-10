@@ -1,0 +1,24 @@
+@mixin core-styles() {
+  .skeleton-text * {
+    font-family: skeleton, sans-serif !important;
+  }
+
+  .skeleton-text {
+    --mdc-typography-headline1-font-family: 'skeleton';
+    --mdc-typography-headline2-font-family: 'skeleton';
+    --mdc-typography-headline3-font-family: 'skeleton';
+    --mdc-typography-headline4-font-family: 'skeleton';
+    --mdc-typography-headline5-font-family: 'skeleton';
+    --mdc-typography-headline6-font-family: 'skeleton';
+    --mdc-typography-subtitle1-font-family: 'skeleton';
+    --mdc-typography-subtitle2-font-family: 'skeleton';
+    --mdc-typography-button-font-family: 'skeleton';
+    --mdc-typography-caption-font-family: 'skeleton';
+    --mdc-typography-overline-font-family: 'skeleton';
+    --mdc-typography-body1-font-family: 'skeleton';
+    --mdc-typography-body2-font-family: 'skeleton';
+    --mdc-typography-body2-letter-spacing: -0.03em;
+    --mdc-theme-text-primary-on-background: #cccccc;
+    --skeleton-color: #cccccc;
+  }
+}

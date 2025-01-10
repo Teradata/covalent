@@ -1,0 +1,20 @@
+:host {
+  --cv-editor-width: 100%;
+  --cv-editor-height: 100%;
+
+  box-sizing: border-box;
+
+  .monaco-editor {
+    .lines-content.monaco-editor-background {
+      height: var(--cv-editor-height);
+      width: var(--cv-editor-width);
+    }
+  }
+}
+
+.editor {
+  height: var(--cv-editor-height);
+  min-height: var(--cv-editor-height);
+  max-width: calc(var(--cv-editor-width) - 2px);
+  width: var(--cv-editor-width);
+}

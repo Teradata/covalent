@@ -1,0 +1,29 @@
+{
+  "name": "@covalent/guided-tour",
+  "version": "0.0.0-COVALENT",
+  "description": "Covalent Guided Tour Module",
+  "keywords": [
+    "angular",
+    "covalent",
+    "shepherd",
+    "tour",
+    "guide",
+    "guided tour"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "shepherd.js": "0.0.0-SHEPHERD"
+  },
+  "dependencies": {
+    "tslib": "0.0.0-TSLIB"
+  }
+}
