@@ -1,3 +1,25 @@
+# [9.0.0](https://github.com/Teradata/covalent/compare/v8.24.2...v9.0.0) (2025-01-10)
+
+- Feat/angular 18 upgrade (#2283) ([90fe11c](https://github.com/Teradata/covalent/commit/90fe11cdb9cfd1119a403dd263ad2af191a75aba)), closes [#2283](https://github.com/Teradata/covalent/issues/2283)
+
+### BREAKING CHANGES
+
+- Upgrade covalent to Angular 18
+
+- build(nx): remove nx cloud id
+- fix(package): fix angular versioning issues
+- revert(version): remove beta version number
+- build(chromatic): use node 18
+- build(ci): fix failing component tests
+- docs(covalent): update docs for angular 18
+- feat(react-components): create react web components
+- fix(styles): fix badge and card styling issues
+- docs(components): update new component docs
+- build(components): upgrade monaco editor version
+- build(email-generator): fix build issues in libs
+- fix(package): remove duplicate icon lockup entry
+- docs(angular): updating angular.dev links
+
 # [9.0.0-beta.4](https://github.com/Teradata/covalent/compare/v9.0.0-beta.3...v9.0.0-beta.4) (2024-11-26)
 
 ### Bug Fixes
