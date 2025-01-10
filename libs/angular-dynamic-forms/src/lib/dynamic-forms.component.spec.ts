@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  waitForAsync,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component, NgModule, DebugElement } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import {
@@ -39,9 +34,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should create the component', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -52,9 +45,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -109,9 +100,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid because an input is required', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -152,9 +141,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid because a number is less than min', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -196,9 +183,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form valid', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -248,9 +233,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid because character length is less than minLength', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -287,9 +270,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid because character length is more than maxLength', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -326,9 +307,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form valid', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -366,9 +345,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid with custom validation', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -412,9 +389,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form invalid with Angular validation', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -455,9 +430,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements and show form valid with custom validations', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -512,9 +485,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render errors with manual validations', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -558,9 +529,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic elements with one element disabled', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -603,9 +572,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render disabled file input', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -637,9 +604,7 @@ describe('Component: TdDynamicForms', () => {
 
   it('should render dynamic custom element', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 
@@ -679,9 +644,7 @@ describe('Component: TdDynamicForms', () => {
 
   it(`should render the placeholder for input fields`, waitForAsync(
     inject([], async () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdDynamicFormsTestComponent
-      );
+      const fixture = TestBed.createComponent(TdDynamicFormsTestComponent);
       const component: TdDynamicFormsTestComponent =
         fixture.debugElement.componentInstance;
 

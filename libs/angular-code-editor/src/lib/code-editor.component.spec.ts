@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  ComponentFixture,
-  waitForAsync,
-} from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 import { TdCodeEditorComponent } from './code-editor.component';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +6,7 @@ import { covalentThemeName, covalentThemeConf } from './editor.theme';
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation(query => ({
+  value: jest.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -86,29 +81,24 @@ const language: any = {
   ],
 };
 
-
 describe('Component: App', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [
-          TdCodeEditorComponent,
-          TestMultipleEditorsComponent,
-          TestEditorOptionsComponent,
-          TestTwoWayBindingWithValueComponent,
-          TestTwoWayBindingWithNgModelComponent,
-        ],
-        imports: [FormsModule],
-      });
-      TestBed.compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        TdCodeEditorComponent,
+        TestMultipleEditorsComponent,
+        TestEditorOptionsComponent,
+        TestTwoWayBindingWithValueComponent,
+        TestTwoWayBindingWithNgModelComponent,
+      ],
+      imports: [FormsModule],
+    });
+    TestBed.compileComponents();
+  }));
 
   it('should set the editor value and retrieve that same value from editor', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdCodeEditorComponent
-      );
+      const fixture = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent =
         fixture.debugElement.componentInstance;
       fixture.changeDetectorRef.detectChanges();
@@ -131,9 +121,7 @@ describe('Component: App', () => {
 
   it('should register a custom language and custom theme and set to custom language', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdCodeEditorComponent
-      );
+      const fixture = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent =
         fixture.debugElement.componentInstance;
       fixture.changeDetectorRef.detectChanges();
@@ -158,9 +146,7 @@ describe('Component: App', () => {
 
   it('should remove style tags on destroy', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdCodeEditorComponent
-      );
+      const fixture = TestBed.createComponent(TdCodeEditorComponent);
 
       const component: TdCodeEditorComponent =
         fixture.debugElement.componentInstance;
@@ -190,9 +176,7 @@ describe('Component: App', () => {
 
   it('should set the editor style', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdCodeEditorComponent
-      );
+      const fixture = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent =
         fixture.debugElement.componentInstance;
       fixture.changeDetectorRef.detectChanges();
@@ -218,9 +202,7 @@ describe('Component: App', () => {
 
   it('should set the editor options and retrieve them', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TestEditorOptionsComponent
-      );
+      const fixture = TestBed.createComponent(TestEditorOptionsComponent);
       const component: TestEditorOptionsComponent =
         fixture.debugElement.componentInstance;
       fixture.changeDetectorRef.detectChanges();
@@ -236,9 +218,7 @@ describe('Component: App', () => {
 
   it('should show multiple editors and set the editors values and retrieve that same values from editors', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TestMultipleEditorsComponent
-      );
+      const fixture = TestBed.createComponent(TestMultipleEditorsComponent);
       const component: TestMultipleEditorsComponent =
         fixture.debugElement.componentInstance;
       fixture.changeDetectorRef.detectChanges();
@@ -279,9 +259,7 @@ describe('Component: App', () => {
 
   xit('should show editor in fullscreen mode and then unset fullscreen mode', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdCodeEditorComponent
-      );
+      const fixture = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent =
         fixture.debugElement.componentInstance;
       fixture.changeDetectorRef.detectChanges();
@@ -309,9 +287,7 @@ describe('Component: App', () => {
 
   it('should expose editor instance on editorInitialized event', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
-        TdCodeEditorComponent
-      );
+      const fixture = TestBed.createComponent(TdCodeEditorComponent);
       const component: TdCodeEditorComponent =
         fixture.debugElement.componentInstance;
       fixture.changeDetectorRef.detectChanges();
@@ -331,7 +307,7 @@ describe('Component: App', () => {
 
   it('should work with 2 way binding via value', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
+      const fixture = TestBed.createComponent(
         TestTwoWayBindingWithValueComponent
       );
       const component: TestTwoWayBindingWithValueComponent =
@@ -360,7 +336,7 @@ describe('Component: App', () => {
 
   it('should work with 2 way binding via ngModel', (done) => {
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
+      const fixture = TestBed.createComponent(
         TestTwoWayBindingWithNgModelComponent
       );
       const component: TestTwoWayBindingWithNgModelComponent =

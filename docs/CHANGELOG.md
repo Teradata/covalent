@@ -1,3 +1,31 @@
+# [9.0.0-beta.4](https://github.com/Teradata/covalent/compare/v9.0.0-beta.3...v9.0.0-beta.4) (2024-11-26)
+
+### Bug Fixes
+
+- **styles:** fix badge and card styling issues ([af3dc7b](https://github.com/Teradata/covalent/commit/af3dc7b10ae91bc8af9905be26c0555dc3371f25))
+
+# [9.0.0-beta.3](https://github.com/Teradata/covalent/compare/v9.0.0-beta.2...v9.0.0-beta.3) (2024-11-26)
+
+### Features
+
+- **react-components:** create react web components ([34ae0ef](https://github.com/Teradata/covalent/commit/34ae0efdb73daf84935d8713b51cd7bd0ac86f36))
+
+# [9.0.0-beta.2](https://github.com/Teradata/covalent/compare/v9.0.0-beta.1...v9.0.0-beta.2) (2024-11-18)
+
+### Bug Fixes
+
+- **package:** fix angular versioning issues ([ea6330c](https://github.com/Teradata/covalent/commit/ea6330c7cddabbe7841cdfe88ff09fb9091cdbb8))
+
+# [9.0.0-beta.1](https://github.com/Teradata/covalent/compare/v8.23.2...v9.0.0-beta.1) (2024-11-18)
+
+### Features
+
+- **covalent:** upgrade to Angular 18 ([6587aba](https://github.com/Teradata/covalent/commit/6587abaea7892108be4b18ef81042b50d193df03))
+
+### BREAKING CHANGES
+
+- **covalent:** Upgrade covalent to Angular 18
+
 ## [8.24.2](https://github.com/Teradata/covalent/compare/v8.24.1...v8.24.2) (2025-01-09)
 
 ### Bug Fixes

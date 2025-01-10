@@ -129,7 +129,7 @@ items: IMenuItem[] = [
       children: [
         {  // URL link
           text: 'Angular Homepage',
-          link: 'https://angular.io/',
+          link: 'https://angular.dev/',
           newTab: true,
         },
       ],
