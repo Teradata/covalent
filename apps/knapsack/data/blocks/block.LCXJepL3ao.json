@@ -1,9 +1,9 @@
 {
-  "id": "Ub7z1ZeD3l",
+  "id": "LCXJepL3ao",
   "data": {
     "guidelines": [
       {
-        "id": "zjw5LOJIMV",
+        "id": "tPCjjyQB0C",
         "type": "do",
         "content": {
           "type": "doc",
@@ -12,16 +12,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Link to the appropriate in-product help topic when more detailed information may be helpful beyond the brief message. ",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "text": "The standard phrase is \"Learn more.\" When it appears at the end of the message, always include a period within the hyperlink. This ensures consistency in the style and translation across the different languages.",
+                  "text": "Use short phrases. This means you can omit articles such as \"the.\" No ending punctuation is needed when the message has only one phrase.",
                   "type": "text"
                 }
               ]
@@ -30,7 +21,7 @@
         }
       },
       {
-        "id": "mXrjcashAb",
+        "id": "tobi2Ow-6",
         "type": "dont",
         "content": {
           "type": "doc",
@@ -39,7 +30,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Don't exceed the recommended 40 characters. ",
+                  "text": "Don't use periods when the message has only one phrase that's not a complete sentence. ",
                   "type": "text"
                 }
               ]

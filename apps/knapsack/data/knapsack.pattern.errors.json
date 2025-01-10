@@ -18,16 +18,20 @@
       "type": "subPage"
     }
   ],
-  "title": "Error Messages",
+  "title": "Errors",
   "statuses": {},
   "subPages": [
     {
       "id": "overview",
-      "title": "Inline",
+      "title": "Inline message",
       "blockIds": [
         "y9ktwTZeod",
         "MnowOBJyfH",
         "nHHM8ZY1t",
+        "UOAvS2msXU",
+        "LCXJepL3ao",
+        "oKGhL28y0a",
+        "z4sqfFGllv",
         "Ub7z1ZeD3l",
         "DVDzWQzzSF",
         "vPdIHpvLwN",
@@ -39,7 +43,7 @@
     },
     {
       "id": "R2euwwENQb",
-      "title": "Page banner",
+      "title": "Alert",
       "blockIds": [
         "Y8HzdS7gPp",
         "s3qKyUsCT6",
@@ -55,7 +59,7 @@
     },
     {
       "id": "xjnUexUurf",
-      "title": "Modal",
+      "title": "Dialog",
       "blockIds": [
         "q-igZuXadc",
         "gwdmBDCoI",
@@ -90,5 +94,5 @@
     }
   ],
   "templates": [],
-  "description": "Error patterns provide users with feedback when something goes wrong. They help users understand the issue, prevent frustration, and guide them toward resolution. Error patterns include inline error messages, toast notifications, and full-page error states."
+  "description": "Error patterns provide users with feedback when something goes wrong. They help users understand the issue, prevent frustration, and guide them toward resolution. Error patterns include inline message, alert, and dialog."
 }
