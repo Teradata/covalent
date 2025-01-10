@@ -10,7 +10,7 @@ describe('Covalent Badge', () => {
   beforeAll(() => {
     document.body.innerHTML = `<cv-badge content="99"></cv-badge>
       <cv-badge content="0" showZero="true"></cv-badge>
-      <cv-badge content="99" size="small"></cv-badge>
+      <cv-badge content="hello" size="small"></cv-badge>
       <cv-badge content="1000" max="999"></cv-badge>
       `;
     badgeElements = document.body.querySelectorAll('cv-badge');
@@ -30,7 +30,7 @@ describe('Covalent Badge', () => {
 
   it('should not show content when size is small', () => {
     if (badgeElements[2]?.shadowRoot?.innerHTML) {
-      expect(badgeElements[2]?.shadowRoot?.innerHTML).not.toContain('99');
+      expect(badgeElements[2]?.shadowRoot?.innerHTML).not.toContain('hello');
     }
   });
 

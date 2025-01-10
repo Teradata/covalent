@@ -127,46 +127,75 @@ npx nx run components:test
 
 ## Step 7: Export the component for build inclusion
 
-1. Open **libs/components/src/index.ts** and export the component as follows:
+1. Open **libs/components/component-config.json** and add component details as follows:
 
-```typescript
-export * from './badge/badge';
-```
+- **`name`**:  
+  The class name of the component, as defined in the component file.
 
-2. Open **libs/components/package.json** and add the component export:
+- **`selector`**:  
+  The selector for the component.
+
+- **`path`**:  
+  The relative path to the component file.
+
+- **`events`**:  
+  A list of events dispatched by the component.
+
+  **Important**: Always include events here!  
+  React wrapper components will not listen to events unless they are explicitly listed in this property.
 
 ```json
-"./badge": {
-    "types": "./badge/badge.d.ts",
-    "import": "./badge.mjs",
-    "require": "./badge.js"
-},
+[
+  ...,
+  {
+    "name": "CovalentBadge",
+    "selector": "cv-badge",
+    "path": "./badge/badge",
+    "events": ["change", "action"]
+  },
+  ...
+]
 ```
 
-3. Open **libs/components/vite.config.js** and include it in the build configuration:
+## Step 8: Generate library exports and React component wrappers
 
-```typescript
-const { defineConfig } = require('vite');
+#### Update library exports
 
-// https://vitejs.dev/config/
-module.exports = defineConfig(({ mode }) => {
-  return {
-    define: {
-      'process.env.NODE_ENV': JSON.stringify(mode),
-    },
-    build: {
-      lib: {
-        entry: [
-          // other entries...
-          'libs/components/src/badge/badge',
-          // other entries...
-        ],
-      },
-    },
-  };
-});
+Run the following command:
+
+```bash
+nx run components:build-exports
 ```
 
-## Step 8: Create a pull request
+**What it does:**
 
-Once everything is complete, create a pull request using the [new web component template](https://github.com/Teradata/covalent/tree/main/.github/NEW_WEB_COMPONENT_TEMPLATE.md).
+- Updates the `libs/components/package.json` file with the correct exports.
+- Updates the `libs/components/src/index.ts` file to include the necessary exports.
+
+**Important:**
+After running this command, verify the changes in both files to ensure the exports are accurate.
+
+#### Generate React wrappers
+
+Run the following command:
+
+```bash
+nx run components-react:generate-react-wrappers
+```
+
+**What it does:**
+
+- Creates a React wrapper component and its corresponding test file in the `libs/components-react/src` folder.
+- Updates the `libs/components-react/src/index.ts` file to include the new React wrapper component.
+
+**Note:**
+Review the generated React wrapper components and test files to ensure correctness.
+Run the following command to test the react wrapper component:
+
+```bash
+nx run components-react:test
+```
+
+## Step 9: Create a pull request
+
+Once everything is complete, include all the files and create a pull request using the [new web component template](https://github.com/Teradata/covalent/tree/main/.github/NEW_WEB_COMPONENT_TEMPLATE.md).

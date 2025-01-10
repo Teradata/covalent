@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  waitForAsync,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { ApplicationRef, Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -11,19 +6,15 @@ import { CovalentFileModule } from '../file.module';
 import { TdFileDropDirective } from './file-drop.directive';
 
 describe('Directive: FileDrop', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdFileDropBasicTestComponent],
-        imports: [CovalentFileModule],
-      });
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdFileDropBasicTestComponent],
+      imports: [CovalentFileModule],
+    });
+  }));
 
   it('should add/remove class on dragenter and dragleave', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.multiple = false;
@@ -38,9 +29,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should disable element and not add class on dragenter', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.disabled = true;
@@ -53,9 +42,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should not run change detection on dragenter and dragleave events', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     fixture.detectChanges();
     const directive: DebugElement = fixture.debugElement.query(
       By.directive(TdFileDropDirective)
@@ -85,9 +72,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should throw dragover event and add copy dropEffect for a single file', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.multiple = false;
@@ -107,9 +92,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should throw dragover event and not add copy dropEffect for a multiple file', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.multiple = false;
@@ -129,9 +112,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should throw dragover event and add copy dropEffect for a multiple file', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.multiple = true;
@@ -151,9 +132,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should throw dragover event and not add copy dropEffect on disabled state', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.multiple = false;
@@ -173,9 +152,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should not run change detection on dragover event', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.multiple = false;
@@ -204,9 +181,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should throw ondrop event for a single file', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.multiple = false;
@@ -226,9 +201,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should throw ondrop event for a multiple files', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.multiple = true;
@@ -247,9 +220,7 @@ describe('Directive: FileDrop', () => {
   });
 
   it('should not throw ondrop event for disabled state', () => {
-    const fixture: ComponentFixture<any> = TestBed.createComponent(
-      TdFileDropBasicTestComponent
-    );
+    const fixture = TestBed.createComponent(TdFileDropBasicTestComponent);
     const component: TdFileDropBasicTestComponent =
       fixture.debugElement.componentInstance;
     component.disabled = true;

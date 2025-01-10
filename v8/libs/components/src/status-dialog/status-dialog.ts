@@ -1,7 +1,6 @@
 import { css, html, unsafeCSS } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { styles as baseStyles } from '@material/mwc-dialog/mwc-dialog.css';
-import { cssClasses } from '@material/dialog/constants.js';
 import { classMap } from 'lit/directives/class-map.js';
 import CovalentDialog from '../dialog/dialog';
 import styles from './status-dialog.scss?inline';
@@ -131,7 +130,7 @@ export class CovalentStatusDialog extends CovalentDialog {
 
   override render() {
     const classes = {
-      [cssClasses.STACKED]: this.stacked,
+      'mdc-dialog--stacked': this.stacked,
       error: this.state === 'error',
       positive: this.state === 'positive',
       warning: this.state === 'warning',

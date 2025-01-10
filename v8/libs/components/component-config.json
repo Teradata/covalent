@@ -1,0 +1,313 @@
+[
+  {
+    "name": "CovalentActionRibbon",
+    "selector": "cv-action-ribbon",
+    "path": "./action-ribbon/action-ribbon"
+  },
+  {
+    "name": "CovalentAlert",
+    "selector": "cv-alert",
+    "path": "./alert/alert"
+  },
+  {
+    "name": "CovalentAppShell",
+    "selector": "cv-app-shell",
+    "path": "./app-shell/app-shell",
+    "events": ["toggle"]
+  },
+  {
+    "name": "CovalentBadge",
+    "selector": "cv-badge",
+    "path": "./badge/badge"
+  },
+  {
+    "name": "CovalentButton",
+    "selector": "cv-button",
+    "path": "./button/button"
+  },
+  {
+    "name": "CovalentCard",
+    "selector": "cv-card",
+    "path": "./card/card"
+  },
+  {
+    "name": "CovalentCheckbox",
+    "selector": "cv-checkbox",
+    "path": "./checkbox/checkbox",
+    "events": ["change"]
+  },
+  {
+    "name": "CovalentChip",
+    "selector": "cv-chip",
+    "path": "./chips/chip"
+  },
+  {
+    "name": "CovalentChipSet",
+    "selector": "cv-chip-set",
+    "path": "./chips/chip-set"
+  },
+  {
+    "name": "CovalentCircularProgress",
+    "selector": "cv-circular-progress",
+    "path": "./circular-progress/circular-progress"
+  },
+  {
+    "name": "CovalentCodeEditor",
+    "selector": "cv-code-editor",
+    "path": "./code-editor/code-editor",
+    "events": ["editor-ready", "editor-focus", "editor-blur", "code-change"]
+  },
+  {
+    "name": "CovalentCodeSnippet",
+    "selector": "cv-code-snippet",
+    "path": "./code-snippet/code-snippet"
+  },
+  {
+    "name": "CovalentDrawer",
+    "selector": "cv-drawer",
+    "path": "./drawer/drawer",
+    "events": ["opened", "closed"]
+  },
+  {
+    "name": "CovalentDialog",
+    "selector": "cv-dialog",
+    "path": "./dialog/dialog",
+    "events": ["opening", "opened", "closing", "closed"]
+  },
+  {
+    "name": "CovalentEmptyState",
+    "selector": "cv-empty-state",
+    "path": "./empty-state/empty-state"
+  },
+  {
+    "name": "CovalentExpansionPanel",
+    "selector": "cv-expansion-panel",
+    "path": "./expansion-panel/expansion-panel"
+  },
+  {
+    "name": "CovalentExpansionPanelItem",
+    "selector": "cv-expansion-panel-item",
+    "path": "./expansion-panel/expansion-panel-item",
+    "events": ["cv-expansionPanel-togglePanel"]
+  },
+  {
+    "name": "CovalentFocusedPage",
+    "selector": "cv-focused-page",
+    "path": "./focused-page/focused-page"
+  },
+  {
+    "name": "CovalentFormfield",
+    "selector": "cv-formfield",
+    "path": "./formfield/formfield"
+  },
+  {
+    "name": "CovalentFullscreenDialog",
+    "selector": "cv-full-screen-dialog",
+    "path": "./full-screen-dialog/full-screen-dialog",
+    "events": ["opening", "opened", "closing", "closed"]
+  },
+  {
+    "name": "CovalentIcon",
+    "selector": "cv-icon",
+    "path": "./icon/icon"
+  },
+  {
+    "name": "CovalentIconButton",
+    "selector": "cv-icon-button",
+    "path": "./icon-button/icon-button"
+  },
+  {
+    "name": "CovalentIconButtonToggle",
+    "selector": "cv-icon-button-toggle",
+    "path": "./icon-button-toggle/icon-button-toggle",
+    "events": ["icon-button-toggle-change"]
+  },
+  {
+    "name": "CovalentIconCheckToggle",
+    "selector": "cv-checkbox-icon",
+    "path": "./icon-checkbox/icon-check-toggle",
+    "events": ["change"]
+  },
+  {
+    "name": "CovalentIconLockup",
+    "selector": "cv-icon-lockup",
+    "path": "./icon-lockup/icon-lockup"
+  },
+  {
+    "name": "CovalentIconRadioToggle",
+    "selector": "cv-radio-icon",
+    "path": "./icon-radio/icon-radio-toggle",
+    "events": ["change"]
+  },
+  {
+    "name": "CovalentLinearProgress",
+    "selector": "cv-linear-progress",
+    "path": "./linear-progress/linear-progress"
+  },
+  {
+    "name": "CovalentList",
+    "selector": "cv-list",
+    "path": "./list/list",
+    "events": ["action", "selected"]
+  },
+  {
+    "name": "CovalentListItem",
+    "selector": "cv-list-item",
+    "path": "./list/list-item",
+    "events": ["request-selected"]
+  },
+  {
+    "name": "CovalentCheckListItem",
+    "selector": "cv-check-list-item",
+    "path": "./list/check-list-item",
+    "events": ["request-selected"]
+  },
+  {
+    "name": "CovalentRadioListItem",
+    "selector": "cv-radio-list-item",
+    "path": "./list/radio-list-item",
+    "events": ["request-selected"]
+  },
+  {
+    "name": "CovalentNavRailListItem",
+    "selector": "cv-nav-list-item",
+    "path": "./list/nav-list-item",
+    "events": ["request-selected"]
+  },
+  {
+    "name": "CovalentMenu",
+    "selector": "cv-menu",
+    "path": "./menu/menu",
+    "events": ["opened", "closing", "closed", "action", "selected"]
+  },
+  {
+    "name": "CovalentNotebookCell",
+    "selector": "cv-notebook-cell",
+    "path": "./notebook-cell/notebook-cell"
+  },
+  {
+    "name": "CovalentRadio",
+    "selector": "cv-radio",
+    "path": "./radio/radio",
+    "events": ["change"]
+  },
+  {
+    "name": "CovalentSelect",
+    "selector": "cv-select",
+    "path": "./select/select",
+    "events": ["opened", "closed", "selected"]
+  },
+  {
+    "name": "CovalentSideSheet",
+    "selector": "cv-side-sheet",
+    "path": "./side-sheet/side-sheet",
+    "events": ["opening", "opened", "closing", "closed"]
+  },
+  {
+    "name": "CovalentSlider",
+    "selector": "cv-slider",
+    "path": "./slider/slider",
+    "events": ["input", "change"]
+  },
+  {
+    "name": "CovalentSliderRange",
+    "selector": "cv-slider-range",
+    "path": "./slider/slider-range",
+    "events": ["input", "change"]
+  },
+  {
+    "name": "CovalentSnackbar",
+    "selector": "cv-snackbar",
+    "path": "./snackbar/snackbar",
+    "events": ["opening", "opened", "closing", "closed"]
+  },
+  {
+    "name": "CovalentStatusDialog",
+    "selector": "cv-status-dialog",
+    "path": "./status-dialog/status-dialog",
+    "events": ["opening", "opened", "closing", "closed"]
+  },
+  {
+    "name": "CovalentStatusHeader",
+    "selector": "cv-status-header",
+    "path": "./status-header/status-header"
+  },
+  {
+    "name": "CovalentStatusHeaderItem",
+    "selector": "cv-status-header-item",
+    "path": "./status-header/status-header-item"
+  },
+  {
+    "name": "CovalentSwitch",
+    "selector": "cv-switch",
+    "path": "./switch/switch"
+  },
+  {
+    "name": "CovalentTab",
+    "selector": "cv-tab",
+    "path": "./tab/tab",
+    "events": ["interacted"]
+  },
+  {
+    "name": "CovalentTabBar",
+    "selector": "cv-tab-bar",
+    "path": "./tab/tab-bar",
+    "events": ["activated"]
+  },
+  {
+    "name": "CovalentTextLockup",
+    "selector": "cv-text-lockup",
+    "path": "./text-lockup/text-lockup"
+  },
+  {
+    "name": "CovalentTextArea",
+    "selector": "cv-textarea",
+    "path": "./textarea/textarea"
+  },
+  {
+    "name": "CovalentTextField",
+    "selector": "cv-textfield",
+    "path": "./textfield/textfield"
+  },
+  {
+    "name": "CovalentToolbar",
+    "selector": "cv-toolbar",
+    "path": "./toolbar/toolbar",
+    "events": ["nav"]
+  },
+  {
+    "name": "CovalentTooltip",
+    "selector": "cv-tooltip",
+    "path": "./tooltip/tooltip"
+  },
+  {
+    "name": "CovalentTopAppBar",
+    "selector": "cv-top-app-bar",
+    "path": "./top-app-bar/top-app-bar",
+    "events": ["nav"]
+  },
+  {
+    "name": "CovalentTopAppBarFixed",
+    "selector": "cv-top-app-bar-fixed",
+    "path": "./top-app-bar/top-app-bar-fixed",
+    "events": ["nav"]
+  },
+  {
+    "name": "CovalentTreeList",
+    "selector": "cv-tree-list",
+    "path": "./tree-list/tree-list",
+    "events": ["nav"]
+  },
+  {
+    "name": "CovalentTreeListItem",
+    "selector": "cv-tree-list-item",
+    "path": "./tree-list/tree-list-item",
+    "events": ["select"]
+  },
+  {
+    "name": "CovalentTypography",
+    "selector": "cv-typography",
+    "path": "./typography/typography",
+    "events": ["select"]
+  }
+]

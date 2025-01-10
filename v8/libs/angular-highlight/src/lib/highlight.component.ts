@@ -18,7 +18,7 @@ import {
   IRawToggleLabels,
 } from './copy-code-button/copy-code-button.component';
 
-import hljs from 'highlight.js';
+import hljs, { HighlightResult } from 'highlight.js';
 
 @Component({
   selector: 'td-highlight',
@@ -237,7 +237,10 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
       .replace(/&gt;/gi, '>'); // replace with < and > to render HTML in Angular
     this.copyContent = codeToParse;
     // Parse code with highlight.js depending on language
-    const highlightedCode: any = hljs.highlight(this._lang, codeToParse, true);
+    const highlightedCode: HighlightResult = hljs.highlight(codeToParse, {
+      language: this._lang,
+      ignoreIllegals: true,
+    });
     highlightedCode.value = highlightedCode.value
       .replace(/=<span class="hljs-value">""<\/span>/gi, '')
       .replace('<head>', '')

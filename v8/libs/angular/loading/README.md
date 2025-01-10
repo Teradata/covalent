@@ -2,7 +2,7 @@
 
 Simply add the `tdLoading` attribute with a [name] value to the element you want to mask.
 
-Dont forget to add the asterisk syntax before the `tdLoading` directive if its not used in a `<ng-template>` element. More ingo on the asterisk (\*) syntax [here](https://angular.io/guide/structural-directives#asterisk)
+Dont forget to add the asterisk syntax before the `tdLoading` directive if its not used in a `<ng-template>` element. More ingo on the asterisk (\*) syntax [here](https://angular.dev/guide/directives/structural-directives)
 
 ## API Summary
 
@@ -87,11 +87,7 @@ export class MyModule {}
 Example for (\*) syntax:
 
 ```html
-<div
-  *tdLoading="'stringName'; type:'circular'; mode:'indeterminate'; strategy:'replace'; color:'primary'"
->
-  ...
-</div>
+<div *tdLoading="'stringName'; type:'circular'; mode:'indeterminate'; strategy:'replace'; color:'primary'">...</div>
 ```
 
 ```typescript
@@ -116,25 +112,13 @@ export class Demo {
 Exmaple for (\*) until async syntax:
 
 ```html
-<div
-  *tdLoading="let item until observable | async; type:'circular'; color:'primary'"
->
-  {{item}}
-</div>
+<div *tdLoading="let item until observable | async; type:'circular'; color:'primary'">{{item}}</div>
 ```
 
 Example for `<ng-template>` syntax:
 
 ```html
-<ng-template
-  tdLoading="stringName"
-  tdLoadingType="circular"
-  tdLoadingMode="indeterminate"
-  tdLoadingStrategy="replace"
-  tdLoadingColor="primary"
->
-  ...
-</ng-template>
+<ng-template tdLoading="stringName" tdLoadingType="circular" tdLoadingMode="indeterminate" tdLoadingStrategy="replace" tdLoadingColor="primary"> ... </ng-template>
 ```
 
 ```typescript

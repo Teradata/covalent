@@ -5,7 +5,7 @@
   [disabled]="disabled"
   [accept]="accept"
   [color]="defaultColor"
-  (selectFile)="(handleSelect)"
+  (selectFile)="handleSelect(value)"
 >
   <ng-template [cdkPortalOutlet]="inputLabel" [ngIf]="true"></ng-template>
 </td-file-input>
