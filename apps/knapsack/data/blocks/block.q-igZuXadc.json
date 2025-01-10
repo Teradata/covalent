@@ -29,57 +29,7 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Anatomy dictation specs",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
-          "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Summary of key visual elements",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Dictate anatomy examples",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          }
         }
       ]
     }

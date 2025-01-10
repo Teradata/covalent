@@ -137,7 +137,7 @@ byId:
     path: /pages/error-messages
   errors:
     id: errors
-    name: Error Messages
+    name: Errors
     parentId: patterns
     path: /pattern/errors
   expansion-panel:
