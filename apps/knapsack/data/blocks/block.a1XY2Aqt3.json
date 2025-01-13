@@ -1,0 +1,58 @@
+{
+  "id": "a1XY2Aqt3",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "In error messages, be transparent. Stay neutral to avoid escalating an already tense or unsatisfactory experience. Focus on communicating helpful information and avoid expressing feelings. For instance, avoid using words or phrases such as “we’re sorry.” See ",
+              "type": "text"
+            },
+            {
+              "text": "Errors",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/errors",
+                    "class": null
+                  }
+                },
+                {
+                  "type": "underline"
+                }
+              ]
+            },
+            {
+              "text": " ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/errors",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": "for more error message guidelines.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

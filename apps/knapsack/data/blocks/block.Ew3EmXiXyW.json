@@ -1,0 +1,89 @@
+{
+  "id": "Ew3EmXiXyW",
+  "data": {
+    "gridStyles": {
+      "columns": "2",
+      "centered": true
+    },
+    "guidelines": [
+      {
+        "id": "TbKgEi84d9",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Complete the information, then select ",
+                  "type": "text"
+                },
+                {
+                  "text": "Add provider",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": ".",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "DOFCYTlw5p",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Complete the information, then map the required claims (for OpenID Connect) or attribute values (for SAML).",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Select ",
+                  "type": "text"
+                },
+                {
+                  "text": "Add provider",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": ".",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageRounded": true,
+      "imageOutlined": true,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}
