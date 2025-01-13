@@ -1,3 +1,9 @@
+# [9.1.0](https://github.com/Teradata/covalent/compare/v9.0.0...v9.1.0) (2025-01-13)
+
+### Features
+
+- **icons:** add slack icon to covalent icons ([#2301](https://github.com/Teradata/covalent/issues/2301)) ([c6e1cd8](https://github.com/Teradata/covalent/commit/c6e1cd8c728111f004f81fc01f2a209750788162))
+
 # [9.0.0](https://github.com/Teradata/covalent/compare/v8.24.2...v9.0.0) (2025-01-10)
 
 - Feat/angular 18 upgrade (#2283) ([90fe11c](https://github.com/Teradata/covalent/commit/90fe11cdb9cfd1119a403dd263ad2af191a75aba)), closes [#2283](https://github.com/Teradata/covalent/issues/2283)
