@@ -1,4 +1,3 @@
-export * from './lib/dynamic-forms.module';
 export * from './lib/dynamic-forms.component';
 export * from './lib/dynamic-element.component';
 export * from './lib/services/dynamic-forms.service';

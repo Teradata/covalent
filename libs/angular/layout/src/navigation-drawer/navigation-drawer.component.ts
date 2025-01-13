@@ -21,6 +21,8 @@ import { takeUntil } from 'rxjs/operators';
 import { TdLayoutComponent } from '../layout.component';
 
 import { tdCollapseAnimation } from '@covalent/core/common';
+import { MatIcon } from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
 
 @Directive({
   selector: '[tdNavigationDrawerMenu]',
@@ -36,6 +38,7 @@ export class TdNavigationDrawerToolbarDirective {}
   selector: 'td-navigation-drawer',
   styleUrls: ['./navigation-drawer.component.scss'],
   templateUrl: './navigation-drawer.component.html',
+  imports: [MatIcon, MatToolbar],
   animations: [tdCollapseAnimation],
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
@@ -93,7 +96,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
-  @Input() logo?: string;
+  @Input() logo!: string;
 
   /**
    * avatar?: string

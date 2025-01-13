@@ -25,7 +25,16 @@ import {
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import {
+  MatCell,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderRow,
+  MatRow,
+  MatTable,
+  MatTableDataSource,
+  MatTableModule,
+} from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -40,6 +49,7 @@ import {
 } from '@covalent/highlight';
 
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
+import { CommonModule } from '@angular/common';
 
 export interface ITdFlavoredMarkdownButtonClickEvent {
   text: string;
@@ -54,6 +64,16 @@ export interface ITdFlavoredMarkDownTableColumn {
 }
 
 @Component({
+  imports: [
+    CommonModule,
+    MatTable,
+    MatColumnDef,
+    MatRow,
+    MatHeaderRow,
+    MatHeaderCell,
+    MatCell,
+    TdMarkdownComponent,
+  ],
   template: `
     <mat-table [dataSource]="dataSource" matSort>
       <!-- Column Definition -->
@@ -225,7 +245,7 @@ export class TdFlavoredMarkdownComponent
    * Display copy button on code snippets to copy code to clipboard.
    *
    */
-  @Input() copyCodeToClipboard? = false;
+  @Input() copyCodeToClipboard = false;
 
   /**
    * copyCodeTooltips?: ICopyCodeTooltips

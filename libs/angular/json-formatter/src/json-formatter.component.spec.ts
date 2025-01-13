@@ -1,7 +1,6 @@
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentJsonFormatterModule } from './json-formatter.module';
 import { TdJsonFormatterComponent } from './json-formatter.component';
 
 import { By } from '@angular/platform-browser';
@@ -10,7 +9,7 @@ describe('Component: JsonFormatter', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [TdJsonFormatterBasicTestComponent],
-      imports: [NoopAnimationsModule, CovalentJsonFormatterModule],
+      imports: [NoopAnimationsModule, TdJsonFormatterComponent],
     });
     TestBed.compileComponents();
   }));

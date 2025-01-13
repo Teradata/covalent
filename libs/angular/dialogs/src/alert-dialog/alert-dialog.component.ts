@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { TdDialogComponent } from '../dialog.component';
 
 @Component({
   selector: 'td-alert-dialog',
   templateUrl: './alert-dialog.component.html',
   styleUrls: ['./alert-dialog.component.scss'],
+  imports: [TdDialogComponent],
 })
 export class TdAlertDialogComponent {
   title?: string;

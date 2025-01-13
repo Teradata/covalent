@@ -6,8 +6,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentTreemapEchartsModule } from '@covalent/echarts/treemap';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartSeriesTreemapComponent } from '@covalent/echarts/treemap';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { TypesTreemapComponent } from './treemap.component';
@@ -26,8 +26,8 @@ const routes: Routes = setEchartRoutes({
     MatIconModule,
     // Covalent Echarts
     CovalentBaseEchartsModule,
-    CovalentTreemapEchartsModule,
-    CovalentTooltipEchartsModule,
+    TdChartSeriesTreemapComponent,
+    TdChartTooltipComponent,
     // Docs
     ComponentDetailsModule,
     DocumentationToolsModule,

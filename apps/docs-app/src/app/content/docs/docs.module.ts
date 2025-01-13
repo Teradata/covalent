@@ -24,14 +24,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 
 import { SidenavContentModule } from '../../components/shared/sidenav-content/sidenav-content.module';
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 import { RouterModule } from '@angular/router';
 import { ComponentDetailsModule } from '../../components/shared/component-details/component-details.module';
 import { docsRoutes } from './docs.routes';
-import { CovalentLayoutModule } from '@covalent/core/layout';
+import { TdLayoutComponent } from '@covalent/core/layout';
 
 @NgModule({
   declarations: [
@@ -61,8 +61,8 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
     MatToolbarModule,
     MatMenuModule,
     /** Covalent Modules */
-    CovalentLayoutModule,
-    CovalentHighlightModule,
+    TdLayoutComponent,
+    TdHighlightComponent,
     DocumentationToolsModule,
     ToolbarModule,
     ComponentDetailsModule,

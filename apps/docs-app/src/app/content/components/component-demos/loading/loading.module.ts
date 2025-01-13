@@ -12,9 +12,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
-import { CovalentLoadingModule } from '@covalent/core/loading';
+import { TdLoadingComponent } from '@covalent/core/loading';
 
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { setComponentRoutes } from '../../components';
 import { LoadingDemoComponent } from './loading.component';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
@@ -44,8 +44,8 @@ const routes: Routes = setComponentRoutes({
     DocumentationToolsModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentHighlightModule,
-    CovalentLoadingModule,
+    TdHighlightComponent,
+    TdLoadingComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

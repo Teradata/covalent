@@ -35,7 +35,7 @@ export interface IMarkdownNavigatorWindowConfig {
   toolbarColor?: ThemePalette;
   startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   compareWith?: IMarkdownNavigatorCompareWith;
-  copyCodeToClipboard?: boolean;
+  copyCodeToClipboard: boolean;
   copyCodeTooltips?: ICopyCodeTooltips;
   footer?: Type<any>;
 }

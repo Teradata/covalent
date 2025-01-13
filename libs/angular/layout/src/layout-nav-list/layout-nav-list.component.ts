@@ -1,14 +1,21 @@
 import { Component, Input, ViewChild, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MatSidenav, MatDrawerToggleResult } from '@angular/material/sidenav';
+import {
+  MatSidenav,
+  MatSidenavContainer,
+  MatDrawerToggleResult,
+} from '@angular/material/sidenav';
 
 import { ILayoutTogglable } from '../layout-toggle.class';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'td-layout-nav-list',
   styleUrls: ['./layout-nav-list.component.scss'],
   templateUrl: './layout-nav-list.component.html',
+  imports: [MatIcon, MatToolbar, MatSidenav, MatSidenavContainer],
 })
 export class TdLayoutNavListComponent implements ILayoutTogglable {
   @ViewChild(MatSidenav, { static: true }) sidenav!: MatSidenav;
@@ -32,7 +39,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
-  @Input() logo?: string;
+  @Input() logo!: string;
 
   /**
    * color?: 'accent' | 'primary' | 'warn'

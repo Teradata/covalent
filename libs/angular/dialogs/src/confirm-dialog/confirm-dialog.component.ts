@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatButton } from '@angular/material/button';
+import { TdDialogComponent } from '../dialog.component';
 
 @Component({
   selector: 'td-confirm-dialog',
   templateUrl: './confirm-dialog.component.html',
   styleUrls: ['./confirm-dialog.component.scss'],
+  imports: [TdDialogComponent, MatButton],
 })
 export class TdConfirmDialogComponent {
   title?: string;

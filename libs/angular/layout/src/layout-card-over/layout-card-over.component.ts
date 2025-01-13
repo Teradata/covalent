@@ -1,10 +1,27 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-
+import { MatToolbar } from '@angular/material/toolbar';
+import {
+  MatCard,
+  MatCardContent,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle,
+} from '@angular/material/card';
+import { MatDivider } from '@angular/material/divider';
 @Component({
   selector: 'td-layout-card-over',
   styleUrls: ['./layout-card-over.component.scss'],
   templateUrl: './layout-card-over.component.html',
+  imports: [
+    MatToolbar,
+    MatCard,
+    MatCardContent,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatDivider,
+  ],
 })
 export class TdLayoutCardOverComponent {
   /**

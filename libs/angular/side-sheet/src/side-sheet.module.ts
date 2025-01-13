@@ -14,14 +14,6 @@ import {
 } from './side-sheet.content-directives';
 
 @NgModule({
-  declarations: [
-    CovalentSideSheetContainerComponent,
-    CovalentSideSheetActionsDirective,
-    CovalentSideSheetCloseDirective,
-    CovalentSideSheetContentDirective,
-    CovalentSideSheetTitleDirective,
-    CovalentSideSheetWrapperDirective,
-  ],
   exports: [
     CovalentSideSheetActionsDirective,
     CovalentSideSheetCloseDirective,
@@ -29,7 +21,17 @@ import {
     CovalentSideSheetTitleDirective,
     CovalentSideSheetWrapperDirective,
   ],
-  imports: [PortalModule, MatDialogModule, MatCommonModule],
+  imports: [
+    PortalModule,
+    MatDialogModule,
+    MatCommonModule,
+    CovalentSideSheetContainerComponent,
+    CovalentSideSheetActionsDirective,
+    CovalentSideSheetCloseDirective,
+    CovalentSideSheetContentDirective,
+    CovalentSideSheetTitleDirective,
+    CovalentSideSheetWrapperDirective,
+  ],
   providers: [CovalentSideSheet],
 })
 export class CovalentSideSheetModule {}

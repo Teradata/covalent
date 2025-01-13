@@ -16,6 +16,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 import {
   ICopyCodeTooltips,
   IRawToggleLabels,
+  TdCopyCodeButtonComponent,
 } from './copy-code-button/copy-code-button.component';
 
 import hljs, { HighlightResult } from 'highlight.js';
@@ -24,6 +25,7 @@ import hljs, { HighlightResult } from 'highlight.js';
   selector: 'td-highlight',
   styleUrls: ['./highlight.component.scss'],
   templateUrl: './highlight.component.html',
+  imports: [TdCopyCodeButtonComponent],
 })
 export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   private _initialized = false;
@@ -54,7 +56,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
    *
    * Display copy button on code snippets to copy code to clipboard.
    */
-  @Input() copyCodeToClipboard? = false;
+  @Input() copyCodeToClipboard! = false;
 
   /**
    * copyCodeTooltips?: ICopyCodeTooltips

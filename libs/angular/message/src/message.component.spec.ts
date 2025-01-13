@@ -2,13 +2,13 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdMessageComponent } from './message.component';
-import { CovalentMessageModule } from './message.module';
+import { TdMessageComponent } from './message.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: Message', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentMessageModule],
+      imports: [NoopAnimationsModule, TdMessageComponent],
       declarations: [
         TdMessageBasicTestComponent,
         TdMessageContentTestComponent,

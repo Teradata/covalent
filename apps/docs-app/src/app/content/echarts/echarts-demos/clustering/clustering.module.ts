@@ -9,9 +9,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentClusteringEchartsModule } from '@covalent/echarts/clustering';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesClusteringComponent } from '@covalent/echarts/clustering';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { ClusteringBasicSharedModule } from './demos/clustering-demo-basic/clustering-demo-basic.shared';
@@ -32,9 +32,9 @@ const routes: Routes = setEchartRoutes({
     MatSlideToggleModule,
     // Covalent Echarts
     CovalentBaseEchartsModule,
-    CovalentClusteringEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartSeriesClusteringComponent,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     // Docs
     ComponentDetailsModule,
     DocumentationToolsModule,

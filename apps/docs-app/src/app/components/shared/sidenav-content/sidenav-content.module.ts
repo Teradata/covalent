@@ -6,7 +6,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { SidenavContentComponent } from './sidenav-content.component';
 
 import { RouterModule } from '@angular/router';
-import { CovalentLayoutModule } from '@covalent/core/layout';
+import { TdLayoutComponent } from '@covalent/core/layout';
 import { CovalentCommonModule } from '@covalent/core/common';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { CovalentCommonModule } from '@covalent/core/common';
     MatExpansionModule,
     /** Covalent Modules */
     CovalentCommonModule,
-    CovalentLayoutModule,
+    TdLayoutComponent,
   ],
 })
 export class SidenavContentModule {}

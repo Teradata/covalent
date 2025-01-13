@@ -5,10 +5,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
-import { CovalentHistogramEchartsModule } from '@covalent/echarts/histogram';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesBarComponent } from '@covalent/echarts/bar';
+import { TdChartSeriesHistogramComponent } from '@covalent/echarts/histogram';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 import { HistogramDemoBasicComponent } from './histogram-demo-basic.component';
 
 @NgModule({
@@ -16,15 +16,15 @@ import { HistogramDemoBasicComponent } from './histogram-demo-basic.component';
   imports: [
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentBarEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartSeriesBarComponent,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     /** Angular Modules */
     CommonModule,
     // Material
     MatSelectModule,
     MatIconModule,
-    CovalentHistogramEchartsModule,
+    TdChartSeriesHistogramComponent,
   ],
   exports: [HistogramDemoBasicComponent],
 })

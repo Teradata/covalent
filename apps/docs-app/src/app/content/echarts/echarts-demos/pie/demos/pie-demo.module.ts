@@ -5,8 +5,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { CovalentPieEchartsModule } from '@covalent/echarts/pie';
@@ -21,8 +21,8 @@ import { PieDemoRoutingModule } from './pie-demo-routing.module';
     PieDemoRoutingModule,
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     CovalentPieEchartsModule,
     /** Angular Modules */
     CommonModule,

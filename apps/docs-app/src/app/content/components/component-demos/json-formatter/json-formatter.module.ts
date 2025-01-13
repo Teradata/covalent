@@ -6,8 +6,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentJsonFormatterModule } from '@covalent/core/json-formatter';
+import { TdHighlightComponent } from '@covalent/highlight';
+import { TdJsonFormatterComponent } from '@covalent/core/json-formatter';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { JsonFormatterDemoComponent } from './json-formatter.component';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
@@ -27,8 +27,8 @@ const routes: Routes = setComponentRoutes({
     DocumentationToolsModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentHighlightModule,
-    CovalentJsonFormatterModule,
+    TdHighlightComponent,
+    TdJsonFormatterComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

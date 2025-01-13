@@ -7,9 +7,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentClusteringEchartsModule } from '@covalent/echarts/clustering';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesClusteringComponent } from '@covalent/echarts/clustering';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 import { ClusteringDemoBasicComponent } from './clustering-demo-basic.component';
 
 @NgModule({
@@ -17,10 +17,10 @@ import { ClusteringDemoBasicComponent } from './clustering-demo-basic.component'
   imports: [
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentClusteringEchartsModule,
+    TdChartSeriesClusteringComponent,
     CovalentCommonModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     /** Angular Modules */
     CommonModule,
     // Material

@@ -5,14 +5,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { LineDemoComponent } from './line-demo.component';
 import { LineDemoRoutingModule } from './line-demo-routing.module';
 import { LineDemoBasicComponent } from './line-demo-basic/line-demo-basic.component';
-import { CovalentLineEchartsModule } from '@covalent/echarts/line';
+import { TdChartSeriesLineComponent } from '@covalent/echarts/line';
 
 @NgModule({
   declarations: [LineDemoComponent, LineDemoBasicComponent],
@@ -21,9 +21,9 @@ import { CovalentLineEchartsModule } from '@covalent/echarts/line';
     LineDemoRoutingModule,
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
-    CovalentLineEchartsModule,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
+    TdChartSeriesLineComponent,
     /** Angular Modules */
     CommonModule,
     // Material

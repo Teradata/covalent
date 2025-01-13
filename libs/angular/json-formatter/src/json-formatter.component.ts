@@ -7,12 +7,15 @@ import {
 } from '@angular/core';
 import { Dir } from '@angular/cdk/bidi';
 import { tdCollapseAnimation } from './collapse.animation';
+import { MatTooltip } from '@angular/material/tooltip';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-json-formatter',
   styleUrls: ['./json-formatter.component.scss'],
   templateUrl: './json-formatter.component.html',
+  imports: [MatTooltip, MatIcon],
   animations: [tdCollapseAnimation],
 })
 export class TdJsonFormatterComponent {

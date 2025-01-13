@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { MarkdownNavigatorDemoAnchorComponent } from './markdown-navigator-demo-anchor/markdown-navigator-demo-anchor.component';
 import { MarkdownNavigatorBasicSharedModule } from './markdown-navigator-demo-basic/markdown-navigator-demo-basic-shared';
 import { MarkdownNavigatorDemoEditorComponent } from './markdown-navigator-demo-editor/markdown-navigator-demo-editor.component';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { TdCodeEditorComponent } from '@covalent/code-editor';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MarkdownNavigatorDemoChildrenUrlStartAtComponent } from './markdown-navigator-demo-children-url-start-at/markdown-navigator-demo-children-url-start-at.component';
 import { MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent } from './markdown-navigator-demo-start-at-onclick-children-url/markdown-navigator-demo-start-at-onclick-children-url.component';
@@ -50,7 +50,7 @@ import { MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent } from './markd
     MarkdownNavigatorBasicSharedModule,
     /** Covalent Modules */
     CovalentMarkdownNavigatorModule,
-    CovalentCodeEditorModule,
+    TdCodeEditorComponent,
     /** Angular Modules */
     CommonModule,
     MatButtonModule,
