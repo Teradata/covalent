@@ -3,6 +3,15 @@
   "data": {
     "shortcuts": [
       {
+        "id": "Lr4o2N0sC3",
+        "link": {
+          "name": "Design principles",
+          "path": "/pages/design-principles"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/foundationsdesign-principlesthumbnail--D5zNdIJECH.png",
+        "title": "Design principles"
+      },
+      {
         "id": "OtxKkEX1FI",
         "link": {
           "name": "Color",
@@ -10,15 +19,6 @@
         },
         "image": "https://knapsack.imgix.net/site/covalent/color-zlgynxnkvpng",
         "title": "Color"
-      },
-      {
-        "id": "e5vZWpD3an",
-        "link": {
-          "name": "Icons",
-          "path": "/pages/icons"
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/icons-jochax2ppzpng",
-        "title": "Icons"
       },
       {
         "id": "QfWJs0FvGa",
@@ -30,14 +30,22 @@
         "title": "Typography"
       },
       {
-        "id": "aAHr99CPu",
+        "id": "e5vZWpD3an",
         "link": {
-          "name": "Voice and tone",
-          "path": "/pages/voice-and-tone"
+          "name": "Icons",
+          "path": "/pages/icons"
         },
-        "image": "https://knapsack.imgix.net/site/covalent/voice-and-tone-9drmogd1bpng",
-        "title": "Voice and tone",
-        "description": ""
+        "image": "https://knapsack.imgix.net/site/covalent/icons-jochax2ppzpng",
+        "title": "Icons"
+      },
+      {
+        "id": "M4AvsgGFap",
+        "link": {
+          "name": "Accessibility",
+          "path": "/pages/accessibility"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/accessibility--9wTjMZheYM.png",
+        "title": "Accessibility"
       }
     ],
     "tileStyles": {
@@ -45,7 +53,7 @@
       "titleSize": "large"
     },
     "gridStyles": {
-      "columns": "4"
+      "columns": "3"
     }
   },
   "blockType": "shortcut-tiles"

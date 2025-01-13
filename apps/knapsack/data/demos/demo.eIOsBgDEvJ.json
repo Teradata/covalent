@@ -1,12 +1,22 @@
 {
   "id": "eIOsBgDEvJ",
-  "title": "New Variation",
+  "title": "Raised",
   "description": "A description",
   "type": "data",
   "patternId": "button",
   "templateId": "angular-i3OR9O7kXg",
   "data": {
-    "props": {},
-    "slots": {}
+    "props": {
+      "color": "accent",
+      "raised": true
+    },
+    "slots": {
+      "default": [
+        {
+          "text": "Label",
+          "type": "text"
+        }
+      ]
+    }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "id": "asxSFBoEND",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14798:34745"
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
+    }
+  },
+  "blockType": "design-src-tiles"
+}
