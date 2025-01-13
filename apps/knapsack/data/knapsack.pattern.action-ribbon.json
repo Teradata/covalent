@@ -83,8 +83,8 @@
     {
       "id": "DGBIlJlEO",
       "type": "designSrc",
-      "minRoleNeeded": "ADMIN",
-      "hidden": true
+      "hidden": true,
+      "minRoleNeeded": "ADMIN"
     }
   ],
   "subPages": [

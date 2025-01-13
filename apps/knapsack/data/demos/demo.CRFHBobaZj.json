@@ -1,6 +1,6 @@
 {
   "id": "CRFHBobaZj",
-  "title": "Main",
+  "title": "Text",
   "type": "data",
   "patternId": "button",
   "templateId": "angular-i3OR9O7kXg",
@@ -11,8 +11,8 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "testing out this button"
+          "text": "Label",
+          "type": "text"
         }
       ]
     }

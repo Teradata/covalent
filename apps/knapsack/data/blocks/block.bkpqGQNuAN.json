@@ -123,7 +123,7 @@
                       },
                       "content": [
                         {
-                          "text": "A Primary Button is used for the main action on a page or screen, such as \"Submit\" or \"Save.\"",
+                          "text": "A primary button is used for the main action on a page or screen, such as \"submit\" or \"save\".",
                           "type": "text"
                         }
                       ]
@@ -186,7 +186,7 @@
                       },
                       "content": [
                         {
-                          "text": "A Secondary button is used for less critical actions or alternatives, like \"Cancel\" or \"Back.\"",
+                          "text": "A secondary button is used for less critical actions or alternatives, like \"cancel\" or \"back\".",
                           "type": "text"
                         }
                       ]
@@ -249,7 +249,7 @@
                       },
                       "content": [
                         {
-                          "text": "A Tertiary button is used for less critical actions or alternatives, like \"Cancel\" or \"Back.\" ",
+                          "text": "A tertiary button is used for less critical actions or alternatives, like \"cancel\" or \"back\". ",
                           "type": "text"
                         }
                       ]

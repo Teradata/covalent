@@ -410,8 +410,9 @@ order:
   - foundations
   - design-principles
   - color
-  - icons
   - typography-3shrxwkyk
+  - icons
+  - accessibility
   - components
   - action-ribbon
   - alert
@@ -482,8 +483,7 @@ order:
   - video
   - date-and-time
   - word-list
-  - accessibility
+  - inclusive-language-glnk25tux
+  - get-started
   - designers
   - developers
-  - get-started
-  - inclusive-language-glnk25tux

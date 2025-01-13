@@ -53,12 +53,12 @@
   ],
   "tabs": [
     {
-      "type": "subPage",
-      "id": "F3B0y1kq"
+      "id": "F3B0y1kq",
+      "type": "subPage"
     },
     {
-      "type": "template",
-      "id": "web-components-HeDCLBaQf9"
+      "id": "web-components-HeDCLBaQf9",
+      "type": "template"
     }
   ],
   "subPages": [
