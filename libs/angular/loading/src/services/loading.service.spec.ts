@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentLoadingModule } from '../loading.module';
+import { TdLoadingComponent } from '../loading.module';
 import { TdLoadingService } from '../services/loading.service';
 import { LoadingType } from '../loading.component';
 
@@ -18,7 +18,7 @@ describe('Service: Loading', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [TdLoadingWrapperTestComponent],
-      imports: [NoopAnimationsModule, CovalentLoadingModule],
+      imports: [NoopAnimationsModule, TdLoadingComponent],
       providers: [
         {
           provide: OverlayContainer,

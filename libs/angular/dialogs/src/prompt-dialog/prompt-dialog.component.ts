@@ -6,14 +6,19 @@ import {
   NgZone,
   OnDestroy,
 } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatFormField } from '@angular/material/form-field';
 import { LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/keycodes';
 import { fromEvent, Subject, takeUntil } from 'rxjs';
+import { TdDialogComponent } from '../dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'td-prompt-dialog',
   templateUrl: './prompt-dialog.component.html',
   styleUrls: ['./prompt-dialog.component.scss'],
+  imports: [FormsModule, MatButton, MatFormField, TdDialogComponent],
 })
 export class TdPromptDialogComponent implements AfterViewInit, OnDestroy {
   title?: string;

@@ -1,12 +1,12 @@
 import { TestBed, waitForAsync, fakeAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { CovalentHighlightModule } from './highlight.module';
+import { TdHighlightComponent } from './highlight.module';
 
 describe('Component: Highlight', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CovalentHighlightModule],
+      imports: [TdHighlightComponent],
       declarations: [
         TdHighlightEmptyStaticTestRenderingComponent,
         TdHighlightStaticHtmlTestRenderingComponent,

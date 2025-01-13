@@ -5,7 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { BreadcrumbDemoComponent } from './breadcrumbs.component';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
+import {
+  TdBreadcrumbsComponent,
+  TdBreadcrumbComponent,
+} from '@covalent/core/breadcrumbs';
 import { setComponentRoutes } from '../../../../content/components/components';
 
 const routes: Routes = setComponentRoutes({
@@ -19,7 +22,8 @@ const routes: Routes = setComponentRoutes({
     CommonModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentBreadcrumbsModule,
+    TdBreadcrumbsComponent,
+    TdBreadcrumbComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

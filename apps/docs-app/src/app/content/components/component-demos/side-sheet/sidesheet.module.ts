@@ -10,7 +10,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { CovalentSideSheetModule } from '@covalent/core/side-sheet';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { SidesheetDemoComponent } from './sidesheet.component';
@@ -37,7 +37,7 @@ const routes: Routes = setComponentRoutes({
     MatToolbarModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentHighlightModule,
+    TdHighlightComponent,
     CovalentSideSheetModule,
     // Docs
     // Routes

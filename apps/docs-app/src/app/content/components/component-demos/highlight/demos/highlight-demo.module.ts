@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HighlightDemoHtmlComponent } from './highlight-demo-html/highlight-demo-html.component';
 import { HighlightDemoTsComponent } from './highlight-demo-ts/highlight-demo-ts.component';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { HighlightDemoComponent } from './highlight-demo.component';
 import { HighlightDemoRoutingModule } from './highlight-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
@@ -21,7 +21,7 @@ import { HighlightDemoCopyCodeComponent } from './highlight-demo-copy-code/highl
     DemoModule,
     HighlightDemoRoutingModule,
     /** Covalent Modules */
-    CovalentHighlightModule,
+    TdHighlightComponent,
     /** Angular Modules */
     CommonModule,
   ],

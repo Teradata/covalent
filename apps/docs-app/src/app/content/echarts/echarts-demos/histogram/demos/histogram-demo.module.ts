@@ -5,11 +5,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentLineEchartsModule } from '@covalent/echarts/line';
-import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
-import { CovalentHistogramEchartsModule } from '@covalent/echarts/histogram';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesLineComponent } from '@covalent/echarts/line';
+import { TdChartSeriesBarComponent } from '@covalent/echarts/bar';
+import { TdChartSeriesHistogramComponent } from '@covalent/echarts/histogram';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 import { HistogramBasicSharedModule } from './histogram-demo-basic/histogram-demo-basic.shared';
 
 import { HistogramDemoComponent } from './histogram-demo.component';
@@ -24,11 +24,11 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     HistogramDemoRoutingModule,
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentLineEchartsModule,
-    CovalentBarEchartsModule,
-    CovalentHistogramEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartSeriesLineComponent,
+    TdChartSeriesBarComponent,
+    TdChartSeriesHistogramComponent,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     /** Angular Modules */
     CommonModule,
     // Material

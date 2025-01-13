@@ -4,7 +4,7 @@ import { MessageDemoBasicSharedModule } from './message-demo-basic/message-demo-
 import { MessageDemoActionComponent } from './message-demo-action/message-demo-action.component';
 import { MessageDemoToggleVisibilityComponent } from './message-demo-toggle-visibility/message-demo-toggle-visibility.component';
 import { MessageDemoColorComponent } from './message-demo-color/message-demo-color.component';
-import { CovalentMessageModule } from '@covalent/core/message';
+import { TdMessageComponent } from '@covalent/core/message';
 import { MessageDemoComponent } from './message-demo.component';
 import { MessageDemoRoutingModule } from './message-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
@@ -25,7 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
     MessageDemoBasicSharedModule,
     MessageDemoRoutingModule,
     /** Covalent Modules */
-    CovalentMessageModule,
+    TdMessageComponent,
     /** Angular Modules */
     CommonModule,
     MatButtonModule,

@@ -8,11 +8,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentLineEchartsModule } from '@covalent/echarts/line';
-import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
-import { CovalentHistogramEchartsModule } from '@covalent/echarts/histogram';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesLineComponent } from '@covalent/echarts/line';
+import { TdChartSeriesBarComponent } from '@covalent/echarts/bar';
+import { TdChartSeriesHistogramComponent } from '@covalent/echarts/histogram';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { HistogramBasicSharedModule } from './demos/histogram-demo-basic/histogram-demo-basic.shared';
@@ -32,11 +32,11 @@ const routes: Routes = setEchartRoutes({
     MatIconModule,
     // Covalent Echarts
     CovalentBaseEchartsModule,
-    CovalentLineEchartsModule,
-    CovalentBarEchartsModule,
-    CovalentHistogramEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartSeriesLineComponent,
+    TdChartSeriesBarComponent,
+    TdChartSeriesHistogramComponent,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     // Docs
     ComponentDetailsModule,
     DocumentationToolsModule,

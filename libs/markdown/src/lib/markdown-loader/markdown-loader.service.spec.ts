@@ -1,6 +1,6 @@
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { TdMarkdownLoaderService } from './markdown-loader.service';
-import { CovalentMarkdownModule } from '../markdown.module';
+import { TdMarkdownComponent } from '../markdown.component';
 
 const SAMPLE_HEADING = 'Covalent Design System';
 
@@ -17,7 +17,7 @@ const UNREACHABLE_URL = 'https://github.com/Teradata/covalent/tree/main/src';
 describe('Service: MarkdownLoader', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CovalentMarkdownModule],
+      imports: [TdMarkdownComponent],
     });
   }));
 

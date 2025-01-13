@@ -3,7 +3,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
 import { LayoutDemoComponent } from './layout-demo.component';
 import { LayoutDemoSharedModule } from './layout-demo-basic/layout-demo.shared';
 import { LayoutDemoRoutingModule } from './layout-demo-routing.module';
-import { CovalentLayoutModule } from '@covalent/core/layout';
+import { TdLayoutComponent } from '@covalent/core/layout';
 
 @NgModule({
   declarations: [LayoutDemoComponent],
@@ -12,7 +12,7 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
     DemoModule,
     LayoutDemoRoutingModule,
     /** Covalent Modules */
-    CovalentLayoutModule,
+    TdLayoutComponent,
     /** Angular Modules */
   ],
 })

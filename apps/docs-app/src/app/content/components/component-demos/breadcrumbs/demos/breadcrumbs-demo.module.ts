@@ -10,7 +10,10 @@ import { BreadcrumbsDemoCustomSeparatorComponent } from './breadcrumbs-demo-cust
 import { BreadcrumbsResizeBasicComponent } from './breadcrumbs-demo-resize/breadcrumbs-demo-resize.component';
 import { BreadcrumbsDemoComponent } from './breadcrumbs-demo.component';
 
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
+import {
+  TdBreadcrumbsComponent,
+  TdBreadcrumbComponent,
+} from '@covalent/core/breadcrumbs';
 import { BreadcrumbsDemoRoutingModule } from './breadcrumbs-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 
@@ -29,7 +32,8 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     MatIconModule,
     BreadcrumbsDemoRoutingModule,
     /** Covalent Modules */
-    CovalentBreadcrumbsModule,
+    TdBreadcrumbsComponent,
+    TdBreadcrumbComponent,
     /** Angular Modules */
     CommonModule,
   ],

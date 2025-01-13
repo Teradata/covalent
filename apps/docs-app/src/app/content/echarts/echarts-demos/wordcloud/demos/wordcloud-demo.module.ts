@@ -5,14 +5,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentLineEchartsModule } from '@covalent/echarts/line';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesLineComponent } from '@covalent/echarts/line';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 
 import { WordcloudDemoComponent } from './wordcloud-demo.component';
 import { WordcloudDemoRoutingModule } from './wordcloud-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
-import { CovalentWordcloudEchartsModule } from '@covalent/echarts/wordcloud';
+import { TdChartSeriesWordcloudComponent } from '@covalent/echarts/wordcloud';
 import { WordcloudDemoSharedModule } from './wordcloud-demo-basic/wordcloud-demo.shared';
 
 @NgModule({
@@ -23,10 +23,10 @@ import { WordcloudDemoSharedModule } from './wordcloud-demo-basic/wordcloud-demo
     WordcloudDemoRoutingModule,
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentLineEchartsModule,
-    CovalentWordcloudEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartSeriesLineComponent,
+    TdChartSeriesWordcloudComponent,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     /** Angular Modules */
     CommonModule,
     // Material

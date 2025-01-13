@@ -10,8 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { setComponentRoutes } from '../../../../content/components/components';
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { TdHighlightComponent } from '@covalent/highlight';
+import { TdCodeEditorComponent } from '@covalent/code-editor';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { MatButtonModule } from '@angular/material/button';
 import { MarkdownNavigatorBasicSharedModule } from './demos/markdown-navigator-demo-basic/markdown-navigator-demo-basic-shared';
@@ -43,8 +43,8 @@ const routes: Routes = setComponentRoutes({
     MatTabsModule,
 
     // Covalent
-    CovalentHighlightModule,
-    CovalentCodeEditorModule,
+    TdHighlightComponent,
+    TdCodeEditorComponent,
 
     MarkdownNavigatorBasicSharedModule,
   ],

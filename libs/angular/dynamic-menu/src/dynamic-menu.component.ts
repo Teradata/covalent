@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import {
   IMenuItem,
   IMenuTrigger,
@@ -9,6 +10,7 @@ import {
   selector: 'td-dynamic-menu',
   styleUrls: ['dynamic-menu.component.scss'],
   templateUrl: './dynamic-menu.component.html',
+  imports: [MatIcon],
 })
 export class TdDynamicMenuComponent {
   @Input() trigger!: IMenuTrigger;

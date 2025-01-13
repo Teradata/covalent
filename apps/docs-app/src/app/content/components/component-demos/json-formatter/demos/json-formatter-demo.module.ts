@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JsonFormatterDemoBasicComponent } from './json-formatter-demo-basic/json-formatter-demo-basic.component';
-import { CovalentJsonFormatterModule } from '@covalent/core/json-formatter';
+import { TdJsonFormatterComponent } from '@covalent/core/json-formatter';
 import { JsonFormatterDemoComponent } from './json-formatter-demo.component';
 import { JsonFormatterDemoRoutingModule } from './json-formatter-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
@@ -12,7 +12,7 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     DemoModule,
     JsonFormatterDemoRoutingModule,
     /** Covalent Modules */
-    CovalentJsonFormatterModule,
+    TdJsonFormatterComponent,
     /** Angular Modules */
     CommonModule,
   ],

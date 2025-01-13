@@ -11,9 +11,11 @@ import {
   IMarkdownNavigatorItem,
   IMarkdownNavigatorLabels,
   IMarkdownNavigatorCompareWith,
+  TdMarkdownNavigatorComponent,
 } from '../markdown-navigator.component';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
 import { ICopyCodeTooltips } from '@covalent/highlight';
+import { TdWindowDialogComponent } from '@covalent/core/dialogs';
 
 export interface IMarkdownNavigatorWindowLabels
   extends IMarkdownNavigatorLabels {
@@ -34,6 +36,7 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowL
   selector: 'td-markdown-navigator-window',
   templateUrl: './markdown-navigator-window.component.html',
   styleUrls: ['./markdown-navigator-window.component.scss'],
+  imports: [TdMarkdownNavigatorComponent, TdWindowDialogComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdMarkdownNavigatorWindowComponent {
@@ -43,7 +46,7 @@ export class TdMarkdownNavigatorWindowComponent {
   @Input() startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
   @Input() compareWith?: IMarkdownNavigatorCompareWith;
   @Input() docked? = false;
-  @Input() copyCodeToClipboard? = false;
+  @Input() copyCodeToClipboard = false;
   @Input() copyCodeTooltips?: ICopyCodeTooltips = {};
   @Input() footer?: Type<any>;
 

@@ -7,7 +7,7 @@
   <mat-icon
     *ngIf="trigger.svgIcon"
     [class]="trigger.iconClasses"
-    [svgIcon]="trigger.svgIcon"
+    [svgIcon]="trigger.svgIcon ?? ''"
   ></mat-icon>
   <mat-icon *ngIf="trigger.icon" [class]="trigger.iconClasses">{{
     trigger.icon
@@ -22,7 +22,7 @@
   <mat-icon
     *ngIf="trigger.svgIcon"
     [class]="trigger.iconClasses"
-    [svgIcon]="trigger.svgIcon"
+    [svgIcon]="trigger.svgIcon ?? ''"
   ></mat-icon>
   <mat-icon *ngIf="trigger.icon" [class]="trigger.iconClasses">{{
     trigger.icon

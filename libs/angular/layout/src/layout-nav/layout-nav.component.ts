@@ -1,10 +1,13 @@
 import { Component, Input, Optional } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
 
 @Component({
   selector: 'td-layout-nav',
   styleUrls: ['./layout-nav.component.scss'],
   templateUrl: './layout-nav.component.html',
+  imports: [MatIcon, MatToolbar],
 })
 export class TdLayoutNavComponent {
   /**
@@ -27,7 +30,7 @@ export class TdLayoutNavComponent {
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
-  @Input() logo?: string;
+  @Input() logo!: string;
 
   /**
    * color?: 'accent' | 'primary' | 'warn'

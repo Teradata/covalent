@@ -6,8 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
-import { CovalentMessageModule } from '@covalent/core/message';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdMessageComponent } from '@covalent/core/message';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { MessageDemoBasicSharedModule } from './demos/message-demo-basic/message-demo-basic-shared';
@@ -33,8 +33,8 @@ const routes: Routes = setComponentRoutes({
     ComponentDetailsModule,
     // Covalent
     CovalentDialogsModule,
-    CovalentMessageModule,
-    CovalentHighlightModule,
+    TdMessageComponent,
+    TdHighlightComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

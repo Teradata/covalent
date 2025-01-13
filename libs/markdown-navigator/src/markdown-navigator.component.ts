@@ -18,11 +18,22 @@ import {
   isAnchorLink,
   TdMarkdownLoaderService,
 } from '@covalent/markdown';
-import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import {
+  ITdFlavoredMarkdownButtonClickEvent,
+  TdFlavoredMarkdownComponent,
+  TdFlavoredMarkdownLoaderComponent,
+} from '@covalent/flavored-markdown';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ICopyCodeTooltips } from '@covalent/highlight';
 import { firstValueFrom } from 'rxjs';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatDivider } from '@angular/material/divider';
+import { MatTooltip } from '@angular/material/tooltip';
+import { MatActionList } from '@angular/material/list';
+import { TdMessageComponent } from '@covalent/core/message';
+import { TdBreadcrumbsComponent } from '@covalent/core/breadcrumbs';
+import { MatProgressBar } from '@angular/material/progress-bar';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -60,6 +71,17 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
   selector: 'td-markdown-navigator',
   templateUrl: './markdown-navigator.component.html',
   styleUrls: ['./markdown-navigator.component.scss'],
+  imports: [
+    MatIcon,
+    MatDivider,
+    MatTooltip,
+    MatActionList,
+    MatProgressBar,
+    TdMessageComponent,
+    TdFlavoredMarkdownComponent,
+    TdFlavoredMarkdownLoaderComponent,
+    TdBreadcrumbsComponent,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdMarkdownNavigatorComponent implements OnChanges {
@@ -90,7 +112,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
    * Display copy button on code snippets to copy code to clipboard.
    *
    */
-  @Input() copyCodeToClipboard? = false;
+  @Input() copyCodeToClipboard = false;
 
   /**
    * copyCodeTooltips?: ICopyCodeTooltips

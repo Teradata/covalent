@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 
-import { CovalentMenuModule } from '../../menu/src/menu.module';
+import { TdMenuComponent } from '../../menu/src/menu.module';
 
 import { TdUserProfileComponent } from './user-profile.component';
 import { TdUserProfileMenuComponent } from './user-profile-menu/user-profile-menu.component';
@@ -13,20 +13,18 @@ describe('CovalentUserProfileComponent', () => {
   let component: TdUserProfileComponent;
   let fixture: ComponentFixture<TdUserProfileComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
-        imports: [
-          MatMenuModule,
-          MatIconModule,
-          MatButtonModule,
-          MatListModule,
-          CovalentMenuModule,
-        ],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TdUserProfileComponent, TdUserProfileMenuComponent],
+      imports: [
+        MatMenuModule,
+        MatIconModule,
+        MatButtonModule,
+        MatListModule,
+        TdMenuComponent,
+      ],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TdUserProfileComponent);

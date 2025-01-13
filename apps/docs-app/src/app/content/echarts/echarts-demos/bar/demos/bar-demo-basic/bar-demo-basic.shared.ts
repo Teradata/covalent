@@ -5,9 +5,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesBarComponent } from '@covalent/echarts/bar';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 import { BarDemoBasicComponent } from './bar-demo-basic.component';
 
 @NgModule({
@@ -15,9 +15,9 @@ import { BarDemoBasicComponent } from './bar-demo-basic.component';
   imports: [
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentBarEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartSeriesBarComponent,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     /** Angular Modules */
     CommonModule,
     // Material

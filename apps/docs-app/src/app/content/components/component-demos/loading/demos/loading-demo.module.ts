@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoadingDemoBasicComponent } from './loading-demo-basic/loading-demo-basic.component';
 import { LoadingDemoReplaceComponent } from './loading-demo-replace/loading-demo-replace.component';
 import { LoadingDemoObservableComponent } from './loading-demo-observable/loading-demo-observable.component';
-import { CovalentLoadingModule } from '@covalent/core/loading';
+import { TdLoadingComponent } from '@covalent/core/loading';
 import { LoadingDemoComponent } from './loading-demo.component';
 import { LoadingDemoRoutingModule } from './loading-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
@@ -26,7 +26,7 @@ import { MatListModule } from '@angular/material/list';
     DemoModule,
     LoadingDemoRoutingModule,
     /** Covalent Modules */
-    CovalentLoadingModule,
+    TdLoadingComponent,
     /** Angular Modules */
     CommonModule,
     MatButtonModule,

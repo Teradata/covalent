@@ -4,7 +4,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CovalentUserProfileModule } from '@covalent/core/user-profile';
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CovalentCommonModule } from '@covalent/core/common';
@@ -16,8 +15,7 @@ import { CovalentCommonModule } from '@covalent/core/common';
     MatCardModule,
     CovalentCommonModule,
     CovalentUserProfileModule,
-    CovalentBreadcrumbsModule,
   ],
-  exports: [CovalentUserProfileModule, CovalentBreadcrumbsModule],
+  exports: [CovalentUserProfileModule],
 })
 export default class KsModule {}

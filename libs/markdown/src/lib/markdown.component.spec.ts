@@ -7,7 +7,6 @@ import {
 } from '@angular/core/testing';
 import { ApplicationRef, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { CovalentMarkdownModule } from './markdown.module';
 import { TdMarkdownComponent } from './markdown.component';
 
 // Implementing scrollIntoView since its not implemented JSDOM
@@ -58,7 +57,7 @@ function anchorTestNonEnglishMarkdown(): string {
 describe('Component: Markdown', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CovalentMarkdownModule],
+      imports: [TdMarkdownComponent],
       declarations: [
         TdMarkdownEmptyStaticContentTestRenderingComponent,
         TdMarkdownStaticContentTestRenderingComponent,

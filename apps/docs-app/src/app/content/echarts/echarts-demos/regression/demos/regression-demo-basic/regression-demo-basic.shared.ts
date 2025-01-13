@@ -6,9 +6,9 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentRegressionEchartsModule } from '@covalent/echarts/regression';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesRegressionComponent } from '@covalent/echarts/regression';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 import { RegressionDemoBasicComponent } from './regression-demo-basic.component';
 
 @NgModule({
@@ -16,10 +16,10 @@ import { RegressionDemoBasicComponent } from './regression-demo-basic.component'
   imports: [
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentRegressionEchartsModule,
+    TdChartSeriesRegressionComponent,
     CovalentCommonModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     /** Angular Modules */
     CommonModule,
     // Material

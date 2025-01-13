@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { TdCodeEditorComponent } from '@covalent/code-editor';
 import { PreviewComponent } from '../preview/preview.component';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import { getHtmlTemplate } from '@covalent/email-templates';
@@ -10,7 +10,7 @@ import parserHtml from 'prettier/parser-html'; // Use 'html' parser while workin
 @Component({
   selector: 'app-editor',
   standalone: true,
-  imports: [CommonModule, CovalentCodeEditorModule, PreviewComponent],
+  imports: [CommonModule, TdCodeEditorComponent, PreviewComponent],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.scss',
 })

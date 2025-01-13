@@ -9,7 +9,6 @@ import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { CovalentBreadcrumbsModule } from './breadcrumbs.module';
 import { TdBreadcrumbsComponent } from './breadcrumbs.component';
 
 // Simulate window resize event
@@ -55,7 +54,7 @@ describe('Component: Breadcrumbs', () => {
           { path: 'layouts2', component: FakeComponent },
           { path: 'layouts3', component: FakeComponent },
         ]),
-        CovalentBreadcrumbsModule,
+        TdBreadcrumbsComponent,
       ],
     });
     TestBed.compileComponents();

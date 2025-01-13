@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { AnimationsComponent } from './utilities-demos/animations/animations.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { DocumentationToolsModule } from '../../documentation-tools';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { UtilityStylesComponent } from './utilities-demos/utility-styles/utility-styles.component';
 import { DirectivesComponent } from './utilities-demos/directives/directives.component';
 import { CovalentCommonModule } from '@covalent/core/common';
-import { CovalentMessageModule } from '@covalent/core/message';
+import { TdMessageComponent } from '@covalent/core/message';
 
 @NgModule({
   declarations: [
@@ -45,11 +45,11 @@ import { CovalentMessageModule } from '@covalent/core/message';
     MatListModule,
     MatButtonModule,
     // Covalent
-    CovalentHighlightModule,
+    TdHighlightComponent,
     CovalentCommonModule,
     ComponentOverviewModule,
     CovalentCommonModule,
-    CovalentMessageModule,
+    TdMessageComponent,
     // Documentation
     DocumentationToolsModule,
   ],

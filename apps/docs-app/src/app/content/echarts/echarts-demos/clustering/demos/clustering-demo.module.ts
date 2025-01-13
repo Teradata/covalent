@@ -6,9 +6,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentClusteringEchartsModule } from '@covalent/echarts/clustering';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartSeriesClusteringComponent } from '@covalent/echarts/clustering';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 import { ClusteringBasicSharedModule } from './clustering-demo-basic/clustering-demo-basic.shared';
 
 import { ClusteringDemoComponent } from './clustering-demo.component';
@@ -23,9 +23,9 @@ import { DemoModule } from '../../../../../components/shared/demo-tools/demo.mod
     ClusteringDemoRoutingModule,
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentClusteringEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
+    TdChartSeriesClusteringComponent,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
     /** Angular Modules */
     CommonModule,
     // Material

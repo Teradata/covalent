@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartSeriesTreeComponent } from '@covalent/echarts/tree';
 import { setEchartRoutes } from '../../echarts-content';
 import { DocumentationToolsModule } from '../../../../documentation-tools';
 import { TreeBasicSharedModule } from './demos/tree-demo-basic/tree-demo-basic.shared';
@@ -27,8 +27,8 @@ const routes: Routes = setEchartRoutes({
     MatIconModule,
     // Covalent Echarts
     CovalentBaseEchartsModule,
-    CovalentTreeEchartsModule,
-    CovalentTooltipEchartsModule,
+    TdChartSeriesTreeComponent,
+    TdChartTooltipComponent,
     // Docs
     ComponentDetailsModule,
     DocumentationToolsModule,

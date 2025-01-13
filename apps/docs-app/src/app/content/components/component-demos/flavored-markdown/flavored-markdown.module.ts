@@ -8,7 +8,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { FlavoredMarkdownDemoComponent } from './flavored-markdown.component';
 
@@ -28,7 +28,7 @@ const routes: Routes = setComponentRoutes({
     ComponentDetailsModule,
     // Covalent
     CovalentFlavoredMarkdownModule,
-    CovalentHighlightModule,
+    TdHighlightComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

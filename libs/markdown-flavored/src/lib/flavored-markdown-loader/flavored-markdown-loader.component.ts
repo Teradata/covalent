@@ -8,8 +8,13 @@ import {
   EventEmitter,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatProgressBar } from '@angular/material/progress-bar';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
-import { ITdFlavoredMarkdownButtonClickEvent } from '../flavored-markdown.component';
+import {
+  TdFlavoredMarkdownComponent,
+  ITdFlavoredMarkdownButtonClickEvent,
+} from '../flavored-markdown.component';
 import { ICopyCodeTooltips } from '@covalent/highlight';
 
 // TODO: make a td-markdown-loader component
@@ -18,6 +23,7 @@ import { ICopyCodeTooltips } from '@covalent/highlight';
   selector: 'td-flavored-markdown-loader',
   styleUrls: ['./flavored-markdown-loader.component.scss'],
   templateUrl: './flavored-markdown-loader.component.html',
+  imports: [CommonModule, MatProgressBar, TdFlavoredMarkdownComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
@@ -45,7 +51,7 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
    * Display copy button on code snippets to copy code to clipboard.
    *
    */
-  @Input() copyCodeToClipboard? = false;
+  @Input() copyCodeToClipboard = false;
 
   /**
    * copyCodeTooltips?: ICopyCodeTooltips

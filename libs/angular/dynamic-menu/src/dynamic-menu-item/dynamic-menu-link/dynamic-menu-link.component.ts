@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import {
   IMenuItem,
   ITdDynamicMenuLinkClickEvent,
@@ -8,6 +9,7 @@ import {
   selector: 'td-dynamic-menu-link',
   templateUrl: './dynamic-menu-link.component.html',
   styleUrls: ['./dynamic-menu-link.component.scss'],
+  imports: [MatIcon],
 })
 export class TdDynamicMenuLinkComponent {
   @Input() item!: IMenuItem;

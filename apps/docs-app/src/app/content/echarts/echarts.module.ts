@@ -18,7 +18,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { CovalentLayoutModule } from '@covalent/core/layout';
+import { TdLayoutComponent } from '@covalent/core/layout';
 import { CovalentCommonModule } from '@covalent/core/common';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
@@ -44,7 +44,7 @@ import { moduleRoutes } from './echarts.routes';
     MatMenuModule,
     MatTooltipModule,
     // Covalent Core
-    CovalentLayoutModule,
+    TdLayoutComponent,
     CovalentCommonModule,
     DocumentationToolsModule,
     moduleRoutes,

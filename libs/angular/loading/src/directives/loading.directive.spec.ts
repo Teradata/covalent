@@ -4,7 +4,7 @@ import { Observable, Subject, of } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { catchError } from 'rxjs/operators';
-import { CovalentLoadingModule } from '../loading.module';
+import { TdLoadingComponent } from '../loading.module';
 import { TdLoadingService } from '../services/loading.service';
 import {
   LoadingMode,
@@ -24,7 +24,7 @@ describe('Directive: Loading', () => {
         TdLoadingNamedErrorStarUntilAsyncTestComponent,
         TdLoadingBooleanTemplateUntilTestComponent,
       ],
-      imports: [NoopAnimationsModule, CovalentLoadingModule],
+      imports: [NoopAnimationsModule, TdLoadingComponent],
     });
     TestBed.compileComponents();
   }));

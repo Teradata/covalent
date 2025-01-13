@@ -5,9 +5,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { CodeEditorDemoBasicComponent } from './code-editor-demo-basic.component';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { TdCodeEditorComponent } from '@covalent/code-editor';
 
 @NgModule({
   declarations: [CodeEditorDemoBasicComponent],
@@ -18,8 +18,8 @@ import { CovalentCodeEditorModule } from '@covalent/code-editor';
     MatIconModule,
     MatSelectModule,
     /** Covalent Modules */
-    CovalentCodeEditorModule,
-    CovalentHighlightModule,
+    TdCodeEditorComponent,
+    TdHighlightComponent,
   ],
   exports: [CodeEditorDemoBasicComponent],
 })

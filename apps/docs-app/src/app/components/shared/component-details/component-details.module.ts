@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
 import { CovalentCommonModule } from '@covalent/core/common';
-import { CovalentMessageModule } from '@covalent/core/message';
+import { TdMessageComponent } from '@covalent/core/message';
 
 import {
   ComponentHeroComponent,
@@ -33,7 +33,7 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
     MatTabsModule,
     /** Covalent Modules */
     CovalentCommonModule,
-    CovalentMessageModule,
+    TdMessageComponent,
     DocumentationToolsModule,
   ],
   providers: [],

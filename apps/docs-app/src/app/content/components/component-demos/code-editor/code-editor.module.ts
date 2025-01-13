@@ -7,8 +7,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdCodeEditorComponent } from '@covalent/code-editor';
+import { TdHighlightComponent } from '@covalent/highlight';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
 import { setComponentRoutes } from '../../../../content/components/components';
@@ -30,8 +30,8 @@ const routes: Routes = setComponentRoutes({
     MatFormFieldModule,
     FormsModule,
     // Covalent
-    CovalentCodeEditorModule,
-    CovalentHighlightModule,
+    TdCodeEditorComponent,
+    TdHighlightComponent,
     ComponentDetailsModule,
     // Routes
     RouterModule.forChild(routes),

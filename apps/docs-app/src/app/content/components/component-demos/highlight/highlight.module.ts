@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { ComponentDetailsModule } from '../../../../components/shared/component-details/component-details.module';
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { setComponentRoutes } from '../../../../content/components/components';
 import { HighLightDemoCssSharedModule } from './demos/highlight-demo-css/highlight-demo-css-shared';
 import { HighlightDemoCssComponent } from './demos/highlight-demo-css/highlight-demo-css.component';
@@ -27,7 +27,7 @@ const routes: Routes = setComponentRoutes({
     DocumentationToolsModule,
     ComponentDetailsModule,
     // Covalent
-    CovalentHighlightModule,
+    TdHighlightComponent,
     // Docs
     // Routes
     RouterModule.forChild(routes),

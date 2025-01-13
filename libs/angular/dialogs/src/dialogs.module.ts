@@ -50,8 +50,8 @@ const TD_DIALOGS: Type<any>[] = [
     MatToolbarModule,
     MatTooltipModule,
     MatIconModule,
+    TD_DIALOGS,
   ],
-  declarations: [...TD_DIALOGS],
   exports: [...TD_DIALOGS],
   providers: [TdDialogService],
 })

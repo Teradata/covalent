@@ -5,9 +5,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
-import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
+import { TdChartSeriesTreeComponent } from '@covalent/echarts/tree';
 
 import { TreeDemoBasicComponent } from './tree-demo-basic.component';
 
@@ -16,9 +16,9 @@ import { TreeDemoBasicComponent } from './tree-demo-basic.component';
   imports: [
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
-    CovalentTreeEchartsModule,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
+    TdChartSeriesTreeComponent,
     /** Angular Modules */
     CommonModule,
     // Material

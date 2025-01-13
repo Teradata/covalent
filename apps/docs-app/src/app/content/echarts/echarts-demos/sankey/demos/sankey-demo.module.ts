@@ -5,14 +5,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
-import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
-import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
+import { TdChartTooltipComponent } from '@covalent/echarts/tooltip';
+import { TdChartToolboxComponent } from '@covalent/echarts/toolbox';
 
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { SankeyDemoBasicComponent } from './sankey-demo-basic/sankey-demo-basic.component';
 import { SankeyDemoComponent } from './sankey-demo.component';
 import { SankeyDemoRoutingModule } from './sankey-demo-routing.module';
-import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
+import { TdChartSeriesSankeyComponent } from '@covalent/echarts/sankey';
 
 @NgModule({
   declarations: [SankeyDemoBasicComponent, SankeyDemoComponent],
@@ -21,9 +21,9 @@ import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
     SankeyDemoRoutingModule,
     /** Covalent Modules */
     CovalentBaseEchartsModule,
-    CovalentTooltipEchartsModule,
-    CovalentToolboxEchartsModule,
-    CovalentSankeyEchartsModule,
+    TdChartTooltipComponent,
+    TdChartToolboxComponent,
+    TdChartSeriesSankeyComponent,
     /** Angular Modules */
     CommonModule,
     // Material
