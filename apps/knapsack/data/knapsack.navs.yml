@@ -9,6 +9,11 @@ byId:
     name: Action ribbon
     parentId: components
     path: /pattern/action-ribbon
+  adapting-tone-by-situation:
+    id: adapting-tone-by-situation
+    name: Adapting tone by situation
+    parentId: voice-and-tone
+    path: /pages/adapting-tone-by-situation
   alert:
     id: alert
     name: Alert
@@ -478,6 +483,7 @@ order:
   - typography
   - content
   - voice-and-tone
+  - adapting-tone-by-situation
   - product-and-ui
   - error-messages
   - video

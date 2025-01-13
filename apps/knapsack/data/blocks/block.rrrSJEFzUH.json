@@ -1,0 +1,612 @@
+{
+  "id": "rrrSJEFzUH",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "table",
+          "attrs": {
+            "equalColumns": true
+          },
+          "content": [
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "This",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableHeader",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Not this",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Add an identity provider",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "An identity provider stores, secures, and authenticates the digital identities of users. Examples include Azure Active Directory, Okta, and Ping.",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "VantageCloud Lake supports these provider types:",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "bulletList",
+                      "content": [
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "OpenID Connect",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "underline"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "SAML",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "underline"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "orderedList",
+                      "attrs": {
+                        "start": 1
+                      },
+                      "content": [
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "Sign in to the VantageCloud Lake Console.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "In ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Manage access",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ", select ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Identity providers",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ".",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "Select ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Add identity provider",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ", then the ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Provider type",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ".",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "Complete the information, then select ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Add provider",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ".",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Add an identity provider",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "An identity provider stores, secures, and authenticates the digital identities of users, devices, or applications. Examples include Azure Active Directory, Okta, Ping, Google, Facebook, and Twitter.",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "An authentication protocol is a set of rules and procedures that determine how entities prove their identities to each other. VantageCloud Lake supports these authentication protocols:",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "bulletList",
+                      "content": [
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "OpenID Connect",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "underline"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "SAML",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "underline"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "orderedList",
+                      "attrs": {
+                        "start": 1
+                      },
+                      "content": [
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "Sign in to the VantageCloud Lake Console with your username and password.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "In ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Manage access",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ", select ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Identity providers",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ".",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "Select ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Add identity provider",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": " and the ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Provider type",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ".",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "Complete the information, then map the required claim mappings (for OpenID Connect) or attribute values (for SAML).",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "attrs": {
+                                "textAlign": "left"
+                              },
+                              "content": [
+                                {
+                                  "text": "Select ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "Add provider",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": ".",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "table"
+}
