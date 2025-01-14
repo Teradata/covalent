@@ -3,7 +3,7 @@ import * as iconList from '../../../icons/material-codepoints.json';
 
 export const MAT_ICON_LIST = Object.keys(iconList);
 
-const COV_ICON_LIST = [
+export const COV_ICON_LIST = [
   'advanced_sql',
   'advanced_sql_outlined',
   'alias_arrow',
