@@ -11,10 +11,19 @@
         "image": "https://knapsack.imgix.net/site/covalent/material-symbols-logo-uu4lgyfrvqpng",
         "title": "See also",
         "description": "Material Symbols"
+      },
+      {
+        "id": "GVM4GNG2d2",
+        "link": {
+          "path": "#covalent-icons",
+          "external": false
+        },
+        "title": "See also",
+        "description": "Covalent icons"
       }
     ],
     "tileStyles": {
-      "imageSize": "small",
+      "imageSize": "none",
       "titleSize": "xsmall"
     },
     "gridStyles": {

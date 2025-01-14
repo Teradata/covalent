@@ -69,20 +69,13 @@
     {
       "id": "1KDWoTAzr",
       "type": "designSrc"
-    },
-    {
-      "type": "template",
-      "id": "web-components-Pnw8Nf0oOd",
-      "minRoleNeeded": "CONTRIBUTOR",
-      "type": "designSrc",
-      "hidden": true
     }
   ],
   "subPages": [
     {
       "id": "overview",
       "title": "Overview",
-      "blockIds": ["FvKIrSQgq0"]
+      "blockIds": []
     }
   ],
   "designSrcComponentsById": {
