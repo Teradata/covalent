@@ -1,0 +1,24 @@
+{
+  "id": "bdSIEUW-gk",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "These are custom icons we've created to supplement the ones provided by Material Symbols.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "large",
+  "blockType": "text-editor"
+}

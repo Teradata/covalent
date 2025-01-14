@@ -1,0 +1,25 @@
+{
+  "id": "fr19BbaAco",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Covalent icons",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "large",
+  "blockType": "text-editor"
+}

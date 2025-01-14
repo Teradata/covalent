@@ -718,5 +718,6 @@
     }
   },
   "size": "large",
-  "blockType": "table"
+  "blockType": "table",
+  "spacing": "medium"
 }
