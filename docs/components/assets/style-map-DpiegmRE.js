@@ -1,0 +1,5 @@
+import{T as d}from"./query-assigned-elements-CymsZmtQ.js";import{e as u,i as l,t as h}from"./directive-CF8sV3Lr.js";/**
+ * @license
+ * Copyright 2018 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */const o="important",c=" !"+o,f=u(class extends l{constructor(s){var t;if(super(s),s.type!==h.ATTRIBUTE||s.name!=="style"||((t=s.strings)===null||t===void 0?void 0:t.length)>2)throw Error("The `styleMap` directive must be used in the `style` attribute and must be the only part in the attribute.")}render(s){return Object.keys(s).reduce((t,n)=>{const e=s[n];return e==null?t:t+`${n=n.includes("-")?n:n.replace(/(?:^(webkit|moz|ms|o)|)(?=[A-Z])/g,"-$&").toLowerCase()}:${e};`},"")}update(s,[t]){const{style:n}=s.element;if(this.ht===void 0){this.ht=new Set;for(const e in t)this.ht.add(e);return this.render(t)}this.ht.forEach(e=>{t[e]==null&&(this.ht.delete(e),e.includes("-")?n.removeProperty(e):n[e]="")});for(const e in t){const r=t[e];if(r!=null){this.ht.add(e);const i=typeof r=="string"&&r.endsWith(c);e.includes("-")||i?n.setProperty(e,i?r.slice(0,-11):r,i?o:""):n[e]=r}}return d}});export{f as o};

@@ -1,0 +1,5 @@
+import{T as o}from"./query-assigned-elements-CymsZmtQ.js";import{e as a,i as h,t as u}from"./directive-CF8sV3Lr.js";/**
+ * @license
+ * Copyright 2018 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */const c=a(class extends h{constructor(n){var t;if(super(n),n.type!==u.ATTRIBUTE||n.name!=="class"||((t=n.strings)===null||t===void 0?void 0:t.length)>2)throw Error("`classMap()` can only be used in the `class` attribute and must be the only part in the attribute.")}render(n){return" "+Object.keys(n).filter(t=>n[t]).join(" ")+" "}update(n,[t]){var i,s;if(this.it===void 0){this.it=new Set,n.strings!==void 0&&(this.nt=new Set(n.strings.join(" ").split(/\s/).filter(e=>e!=="")));for(const e in t)t[e]&&!(!((i=this.nt)===null||i===void 0)&&i.has(e))&&this.it.add(e);return this.render(t)}const r=n.element.classList;this.it.forEach(e=>{e in t||(r.remove(e),this.it.delete(e))});for(const e in t){const d=!!t[e];d===this.it.has(e)||!((s=this.nt)===null||s===void 0)&&s.has(e)||(d?(r.add(e),this.it.add(e)):(r.remove(e),this.it.delete(e)))}return o}});export{c as o};
