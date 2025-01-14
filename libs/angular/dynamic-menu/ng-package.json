@@ -1,4 +1,3 @@
 {
-  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
-  "assets": ["./src/*.theme.scss"]
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json"
 }

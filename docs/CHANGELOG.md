@@ -1,3 +1,65 @@
+# [9.1.0](https://github.com/Teradata/covalent/compare/v9.0.0...v9.1.0) (2025-01-13)
+
+### Features
+
+- **icons:** add slack icon to covalent icons ([#2301](https://github.com/Teradata/covalent/issues/2301)) ([c6e1cd8](https://github.com/Teradata/covalent/commit/c6e1cd8c728111f004f81fc01f2a209750788162))
+
+# [9.0.0](https://github.com/Teradata/covalent/compare/v8.24.2...v9.0.0) (2025-01-10)
+
+- Feat/angular 18 upgrade (#2283) ([90fe11c](https://github.com/Teradata/covalent/commit/90fe11cdb9cfd1119a403dd263ad2af191a75aba)), closes [#2283](https://github.com/Teradata/covalent/issues/2283)
+
+### BREAKING CHANGES
+
+- Upgrade covalent to Angular 18
+
+- build(nx): remove nx cloud id
+- fix(package): fix angular versioning issues
+- revert(version): remove beta version number
+- build(chromatic): use node 18
+- build(ci): fix failing component tests
+- docs(covalent): update docs for angular 18
+- feat(react-components): create react web components
+- fix(styles): fix badge and card styling issues
+- docs(components): update new component docs
+- build(components): upgrade monaco editor version
+- build(email-generator): fix build issues in libs
+- fix(package): remove duplicate icon lockup entry
+- docs(angular): updating angular.dev links
+
+# [9.0.0-beta.4](https://github.com/Teradata/covalent/compare/v9.0.0-beta.3...v9.0.0-beta.4) (2024-11-26)
+
+### Bug Fixes
+
+- **styles:** fix badge and card styling issues ([af3dc7b](https://github.com/Teradata/covalent/commit/af3dc7b10ae91bc8af9905be26c0555dc3371f25))
+
+# [9.0.0-beta.3](https://github.com/Teradata/covalent/compare/v9.0.0-beta.2...v9.0.0-beta.3) (2024-11-26)
+
+### Features
+
+- **react-components:** create react web components ([34ae0ef](https://github.com/Teradata/covalent/commit/34ae0efdb73daf84935d8713b51cd7bd0ac86f36))
+
+# [9.0.0-beta.2](https://github.com/Teradata/covalent/compare/v9.0.0-beta.1...v9.0.0-beta.2) (2024-11-18)
+
+### Bug Fixes
+
+- **package:** fix angular versioning issues ([ea6330c](https://github.com/Teradata/covalent/commit/ea6330c7cddabbe7841cdfe88ff09fb9091cdbb8))
+
+# [9.0.0-beta.1](https://github.com/Teradata/covalent/compare/v8.23.2...v9.0.0-beta.1) (2024-11-18)
+
+### Features
+
+- **covalent:** upgrade to Angular 18 ([6587aba](https://github.com/Teradata/covalent/commit/6587abaea7892108be4b18ef81042b50d193df03))
+
+### BREAKING CHANGES
+
+- **covalent:** Upgrade covalent to Angular 18
+
+## [8.24.2](https://github.com/Teradata/covalent/compare/v8.24.1...v8.24.2) (2025-01-09)
+
+### Bug Fixes
+
+- **components:** fix icon-checkbox notch color ([#2304](https://github.com/Teradata/covalent/issues/2304)) ([8162df1](https://github.com/Teradata/covalent/commit/8162df1d9b490ff61c6dba479433c4a4fdf9bef4))
+
 ## [8.24.1](https://github.com/Teradata/covalent/compare/v8.24.0...v8.24.1) (2024-12-12)
 
 ### Bug Fixes

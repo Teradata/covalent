@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  waitForAsync,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { ApplicationRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
@@ -13,89 +8,48 @@ import { CovalentFileModule } from '../file.module';
 import { TdFileInputComponent } from '../file-input/file-input.component';
 
 describe('Component: FileInput', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [
-          TdFileInputBasicTestComponent,
-          TdFileInputModelTestComponent,
-        ],
-        imports: [FormsModule, CovalentFileModule],
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        TdFileInputBasicTestComponent,
+        TdFileInputModelTestComponent,
+      ],
+      imports: [FormsModule, CovalentFileModule],
+    });
+    TestBed.compileComponents();
+  }));
+
+  it('should render content inside .td-file-input button', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdFileInputBasicTestComponent);
+      const component: TdFileInputBasicTestComponent =
+        fixture.debugElement.componentInstance;
+      component.multiple = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(
+          fixture.debugElement.query(By.css('.td-file-input span'))
+        ).toBeTruthy();
       });
-      TestBed.compileComponents();
     })
-  );
+  ));
 
-  it(
-    'should render content inside .td-file-input button',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileInputBasicTestComponent
-        );
-        const component: TdFileInputBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          expect(
-            fixture.debugElement.query(By.css('.td-file-input span'))
-          ).toBeTruthy();
-        });
-      })
-    )
-  );
-
-  it(
-    'should mimic file selection and then clear it',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileInputBasicTestComponent
-        );
-        const component: TdFileInputBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
+  it('should mimic file selection and then clear it', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdFileInputBasicTestComponent);
+      const component: TdFileInputBasicTestComponent =
+        fixture.debugElement.componentInstance;
+      component.multiple = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.debugElement
+          .query(By.directive(TdFileInputComponent))
+          .componentInstance.handleSelect([{}]);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.debugElement
             .query(By.directive(TdFileInputComponent))
-            .componentInstance.handleSelect([{}]);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            fixture.debugElement
-              .query(By.directive(TdFileInputComponent))
-              .componentInstance.clear();
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              expect(
-                fixture.debugElement.query(By.directive(TdFileInputComponent))
-                  .componentInstance.value
-              ).toBeUndefined();
-            });
-          });
-        });
-      })
-    )
-  );
-
-  it(
-    'should mimic file selection and then clear it by disabling it',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileInputBasicTestComponent
-        );
-        const component: TdFileInputBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
-        component.disabled = false;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          fixture.debugElement
-            .query(By.directive(TdFileInputComponent))
-            .componentInstance.handleSelect([{}]);
-          component.disabled = true;
+            .componentInstance.clear();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             expect(
@@ -104,38 +58,56 @@ describe('Component: FileInput', () => {
             ).toBeUndefined();
           });
         });
-      })
-    )
-  );
+      });
+    })
+  ));
 
-  it(
-    'should mimic file (select) event',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileInputBasicTestComponent
-        );
-        const component: TdFileInputBasicTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
+  it('should mimic file selection and then clear it by disabling it', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdFileInputBasicTestComponent);
+      const component: TdFileInputBasicTestComponent =
+        fixture.debugElement.componentInstance;
+      component.multiple = false;
+      component.disabled = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.debugElement
+          .query(By.directive(TdFileInputComponent))
+          .componentInstance.handleSelect([{}]);
+        component.disabled = true;
         fixture.detectChanges();
-        expect(component.files).toBeUndefined();
         fixture.whenStable().then(() => {
-          fixture.debugElement
-            .query(By.directive(TdFileInputComponent))
-            .componentInstance.handleSelect([{}]);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(component.files).toBeTruthy();
-          });
+          expect(
+            fixture.debugElement.query(By.directive(TdFileInputComponent))
+              .componentInstance.value
+          ).toBeUndefined();
         });
-      })
-    )
-  );
+      });
+    })
+  ));
+
+  it('should mimic file (select) event', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdFileInputBasicTestComponent);
+      const component: TdFileInputBasicTestComponent =
+        fixture.debugElement.componentInstance;
+      component.multiple = false;
+      fixture.detectChanges();
+      expect(component.files).toBeUndefined();
+      fixture.whenStable().then(() => {
+        fixture.debugElement
+          .query(By.directive(TdFileInputComponent))
+          .componentInstance.handleSelect([{}]);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(component.files).toBeTruthy();
+        });
+      });
+    })
+  ));
 
   it('should not run change detection when the button is clicked, but should redirect the click to `<input />`', () => {
-    const fixture: ComponentFixture<TdFileInputBasicTestComponent> =
-      TestBed.createComponent(TdFileInputBasicTestComponent);
+    const fixture = TestBed.createComponent(TdFileInputBasicTestComponent);
     fixture.detectChanges();
     const appRef = TestBed.inject(ApplicationRef);
     jest.spyOn(appRef, 'tick');
@@ -153,62 +125,52 @@ describe('Component: FileInput', () => {
   });
 
   // Todo do we really want to support ng model?
-  xit(
-    'should mimic file selection event and check model',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileInputModelTestComponent
-        );
-        const component: TdFileInputModelTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
+  xit('should mimic file selection event and check model', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdFileInputModelTestComponent);
+      const component: TdFileInputModelTestComponent =
+        fixture.debugElement.componentInstance;
+      component.multiple = false;
+      fixture.detectChanges();
+      expect(component.files).toBeUndefined();
+      fixture.whenStable().then(() => {
+        fixture.debugElement
+          .query(By.directive(TdFileInputComponent))
+          .componentInstance.handleSelect([{}]);
         fixture.detectChanges();
-        expect(component.files).toBeUndefined();
         fixture.whenStable().then(() => {
-          fixture.debugElement
-            .query(By.directive(TdFileInputComponent))
-            .componentInstance.handleSelect([{}]);
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(component.files).toBeTruthy();
-          });
+          expect(component.files).toBeTruthy();
         });
-      })
-    )
-  );
+      });
+    })
+  ));
 
   // Todo do we really want to support ng model?
-  xit(
-    'should mimic file selection event and check model and then clear it by disabling it',
-    waitForAsync(
-      inject([], () => {
-        const fixture: ComponentFixture<any> = TestBed.createComponent(
-          TdFileInputModelTestComponent
-        );
-        const component: TdFileInputModelTestComponent =
-          fixture.debugElement.componentInstance;
-        component.multiple = false;
+  xit('should mimic file selection event and check model and then clear it by disabling it', waitForAsync(
+    inject([], () => {
+      const fixture = TestBed.createComponent(TdFileInputModelTestComponent);
+      const component: TdFileInputModelTestComponent =
+        fixture.debugElement.componentInstance;
+      component.multiple = false;
+      fixture.detectChanges();
+      expect(component.files).toBeUndefined();
+      fixture.whenStable().then(() => {
+        fixture.debugElement
+          .query(By.directive(TdFileInputComponent))
+          .componentInstance.handleSelect([{}]);
         fixture.detectChanges();
-        expect(component.files).toBeUndefined();
         fixture.whenStable().then(() => {
-          fixture.debugElement
-            .query(By.directive(TdFileInputComponent))
-            .componentInstance.handleSelect([{}]);
+          expect(component.files).toBeTruthy();
+          component.disabled = true;
+          fixture.componentRef.changeDetectorRef.detectChanges();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(component.files).toBeTruthy();
-            component.disabled = true;
-            fixture.componentRef.changeDetectorRef.detectChanges();
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              expect(component.files).toBeUndefined();
-            });
+            expect(component.files).toBeUndefined();
           });
         });
-      })
-    )
-  );
+      });
+    })
+  ));
 });
 
 @Component({

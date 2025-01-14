@@ -1,18 +1,17 @@
 {
-  "id": "JPWqPNwNe",
+  "id": "qebw1cvH7j",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Design principles",
+              "text": "The user, an organization admin who already set up their VantageCloud Lake account, expects to use a username and password. Besides, that's conventional.",
               "type": "text"
             }
           ]

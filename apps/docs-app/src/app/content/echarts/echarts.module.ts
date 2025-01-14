@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
@@ -39,7 +42,6 @@ import { moduleRoutes } from './echarts.routes';
     MatTabsModule,
     MatRippleModule,
     MatMenuModule,
-    HttpClientModule,
     MatTooltipModule,
     // Covalent Core
     CovalentLayoutModule,
@@ -49,5 +51,6 @@ import { moduleRoutes } from './echarts.routes';
     SidenavContentModule,
     ComponentOverviewModule,
   ],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class EchartsModule {}

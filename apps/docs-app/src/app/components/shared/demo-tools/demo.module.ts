@@ -6,7 +6,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CovalentHighlightModule } from '@covalent/highlight';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 
@@ -23,8 +26,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatIconModule,
     MatButtonModule,
-    HttpClientModule,
     MatDividerModule,
   ],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class DemoModule {}

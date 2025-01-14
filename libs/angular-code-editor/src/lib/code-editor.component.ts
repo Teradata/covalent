@@ -133,7 +133,7 @@ export class TdCodeEditorComponent
 
   applyValue(): void {
     if (!this._fromEditor) {
-      this._editor.setValue(this._value);
+      this._editor.setValue(this._value || '');
     }
     this._fromEditor = false;
     this.propagateChange(this._value);

@@ -1,0 +1,48 @@
+{
+  "id": "LCXJepL3ao",
+  "data": {
+    "guidelines": [
+      {
+        "id": "tPCjjyQB0C",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use short phrases. This means you can omit articles such as \"the.\" No ending punctuation is needed when the message has only one phrase.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "tobi2Ow-6",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Don't use periods when the message has only one phrase that's not a complete sentence. ",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

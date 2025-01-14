@@ -12,7 +12,16 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "“The email address must include an ‘@’ symbol.”",
+                  "text": "Link to the appropriate in-product help topic when more detailed information may be helpful beyond the brief message. ",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The standard phrase is \"Learn more.\" When it appears at the end of the message, always include a period within the hyperlink. This ensures consistency in the style and translation across the different languages.",
                   "type": "text"
                 }
               ]
@@ -30,7 +39,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "“Field invalid.”",
+                  "text": "Don't exceed the recommended 40 characters. ",
                   "type": "text"
                 }
               ]
@@ -40,8 +49,8 @@
       }
     ],
     "tileStyles": {
-      "imageSize": "xsmall",
-      "headerBeforeImage": true
+      "imageSize": "none",
+      "headerBeforeImage": false
     }
   },
   "blockType": "guidelines"
