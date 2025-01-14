@@ -7,6 +7,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
     "jsx": "react",
     "types": ["vitest", "./types.d.ts"]
   },

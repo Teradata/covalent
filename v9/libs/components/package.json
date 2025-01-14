@@ -126,6 +126,11 @@
       "import": "./icon.mjs",
       "require": "./icon.js"
     },
+    "./icon-demo": {
+      "types": "./icon/icon-demo.d.ts",
+      "import": "./icon-demo.mjs",
+      "require": "./icon-demo.js"
+    },
     "./icon-button": {
       "types": "./icon-button/icon-button.d.ts",
       "import": "./icon-button.mjs",
