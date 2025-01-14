@@ -412,7 +412,6 @@ byId:
     parentId: content
     path: /pages/word-list
 order:
-  - get-started
   - foundations
   - design-principles
   - color
@@ -491,5 +490,6 @@ order:
   - date-and-time
   - word-list
   - inclusive-language-glnk25tux
+  - get-started
   - designers
   - developers
