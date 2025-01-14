@@ -775,6 +775,20 @@
       "url": "/api/v1/render?patternId=icon&templateId=web-components-N8bzRbfpuX&assetSetId=dark&demoId=ezyQjAA-T1&isInIframe=false&wrapHtml=true"
     },
     {
+      "patternId": "icon",
+      "templateId": "web-components-Pnw8Nf0oOd",
+      "demoId": "iPghK4UYBt",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon&templateId=web-components-Pnw8Nf0oOd&assetSetId=light&demoId=iPghK4UYBt&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon",
+      "templateId": "web-components-Pnw8Nf0oOd",
+      "demoId": "iPghK4UYBt",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon&templateId=web-components-Pnw8Nf0oOd&assetSetId=dark&demoId=iPghK4UYBt&isInIframe=false&wrapHtml=true"
+    },
+    {
       "patternId": "icon-button",
       "templateId": "web-components-ctiCe2sAX",
       "demoId": "BueNSFTYn",
@@ -899,6 +913,76 @@
       "demoId": "6A9yqTSh6x",
       "assetSetId": "dark",
       "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=dark&demoId=6A9yqTSh6x&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "YIH9EOiP",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=light&demoId=YIH9EOiP&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "YIH9EOiP",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=dark&demoId=YIH9EOiP&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "cGWFzjIg8i",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=light&demoId=cGWFzjIg8i&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "cGWFzjIg8i",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=dark&demoId=cGWFzjIg8i&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "fekA6wwl9K",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=light&demoId=fekA6wwl9K&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "fekA6wwl9K",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=dark&demoId=fekA6wwl9K&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "8mt1FePOgA",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=light&demoId=8mt1FePOgA&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "8mt1FePOgA",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=dark&demoId=8mt1FePOgA&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "mnXbWmndnd",
+      "assetSetId": "light",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=light&demoId=mnXbWmndnd&isInIframe=false&wrapHtml=true"
+    },
+    {
+      "patternId": "icon-lockup",
+      "templateId": "web-components-RPcggDLyDK",
+      "demoId": "mnXbWmndnd",
+      "assetSetId": "dark",
+      "url": "/api/v1/render?patternId=icon-lockup&templateId=web-components-RPcggDLyDK&assetSetId=dark&demoId=mnXbWmndnd&isInIframe=false&wrapHtml=true"
     },
     {
       "patternId": "icon-radio",

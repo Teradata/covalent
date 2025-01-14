@@ -6,6 +6,12 @@
       "title": "Light",
       "assets": [
         {
+          "src": "../../../libs/icons/covalent-icons.css",
+          "attributes": {
+            "type": "text/css"
+          }
+        },
+        {
           "src": "../../../dist/libs/components/index.mjs",
           "includedRenderers": ["web-components"],
           "attributes": {
@@ -40,6 +46,12 @@
       "id": "dark",
       "title": "Dark",
       "assets": [
+        {
+          "src": "../../../libs/icons/covalent-icons.css",
+          "attributes": {
+            "type": "text/css"
+          }
+        },
         {
           "src": "../../../dist/libs/components/index.mjs",
           "includedRenderers": ["web-components"],

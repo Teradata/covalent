@@ -844,6 +844,17 @@
       ]
     },
     {
+      "name": "cv-icon-demo",
+      "description": "Symbol representing an action, object, or concept.",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/icon/web-components-Pnw8Nf0oOd"
+        }
+      ],
+      "attributes": []
+    },
+    {
       "name": "cv-icon-button",
       "description": "Button with an icon as the primary visual element.",
       "references": [
@@ -983,9 +994,6 @@
               "name": "body2"
             },
             {
-              "name": "button"
-            },
-            {
               "name": "caption"
             },
             {
@@ -1007,20 +1015,19 @@
               "name": "headline6"
             },
             {
-              "name": "overline"
-            },
-            {
               "name": "subtitle1"
             },
             {
               "name": "subtitle2"
+            },
+            {
+              "name": "overline"
+            },
+            {
+              "name": "button"
             }
           ],
           "description": "Scale of the component, controlling font-size and icon size. Default is \"body1\", but it can be set to other typography values to scale the component."
-        },
-        {
-          "name": "trailingIcon",
-          "description": "boolean If true, the icon is displayed after the text (trailing)."
         },
         {
           "name": "state",
