@@ -24,18 +24,89 @@
           },
           "content": [
             {
-              "text": "Page banner errors communicate system-wide issues or errors affecting multiple elements. They ensure users are aware of overarching problems while offering solutions or next steps. For a deeper dive, check ",
+              "text": "Alert-style error patterns communicate typically system-wide issues such as network outage or permission denials. The user may need to spend some amount of time or effort to fix an error. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Accessibility",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use ARIA attributes like ",
               "type": "text"
             },
             {
-              "text": "System-Wide Error Design",
+              "text": "aria-live=\"assertive\"",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": " to announce critical errors.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Supportive, neutral tone",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Focus on communicating how the user can fix the error. Avoid using emotionally charging words such as \"fail,\" \"oops,\" \"sorry,\" and \"please\" in these already-tense situations. Learn more in ",
+              "type": "text"
+            },
+            {
+              "text": "Content",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
-                    "rel": "noopener",
-                    "href": "#",
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/error-messages",
                     "class": null
                   }
                 }
@@ -54,181 +125,11 @@
           },
           "content": [
             {
-              "text": "Pattern Categorization",
+              "text": "Brevity",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": ": Page banners are classified as ",
-              "type": "text"
-            },
-            {
-              "text": "global errors",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": ", suitable for system or application-wide issues, such as network outages or permission denials.",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
-          "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Guidelines",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ":",
-                      "type": "text"
-                    }
-                  ]
-                },
-                {
-                  "type": "bulletList",
-                  "content": [
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Tone",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ": Be concise, action-oriented, and non-alarming (example: “We’re experiencing an issue. Please try again later.”).",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Clarity",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ": Clearly state what happened and any steps users can take.",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Placement",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ": Always position banners at the top of the page.",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Accessibility",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ": Use ARIA attributes like ",
-                              "type": "text"
-                            },
-                            {
-                              "text": "aria-live=\"assertive\"",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "code"
-                                }
-                              ]
-                            },
-                            {
-                              "text": " to announce critical errors.",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             }
@@ -238,7 +139,25 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          }
+          },
+          "content": [
+            {
+              "text": "An alert error is designed to display across a page or a container such as cards and dialogs. Use the header and supporting text to communicate briefly and clearly what happened and how to fix it.   ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Learn how to write for brevity in alert-style errors:",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

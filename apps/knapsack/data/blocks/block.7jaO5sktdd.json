@@ -12,7 +12,33 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "“Your session has timed out. Please log in again.”",
+                  "text": "Consider communicating ",
+                  "type": "text"
+                },
+                {
+                  "text": "what happened",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " and ",
+                  "type": "text"
+                },
+                {
+                  "text": "how to fix it",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " in the header. It allows you to include the most important information on the top and to cover more details in the supporting text if needed. ",
                   "type": "text"
                 }
               ]
@@ -30,7 +56,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "“Error detected.”",
+                  "text": "Don't be wordy. For example, use a link and succinct text to keep the entire message to 2 lines (including the header). ",
                   "type": "text"
                 }
               ]
@@ -40,7 +66,7 @@
       }
     ],
     "tileStyles": {
-      "imageSize": "xsmall",
+      "imageSize": "none",
       "headerBeforeImage": true
     }
   },

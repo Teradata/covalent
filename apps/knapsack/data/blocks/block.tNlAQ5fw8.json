@@ -1,5 +1,5 @@
 {
-  "id": "5uPAVOsUif",
+  "id": "tNlAQ5fw8",
   "data": {
     "content": {
       "type": "doc",
@@ -11,16 +11,25 @@
           },
           "content": [
             {
-              "text": "Be scalable.",
+              "text": "See more error message examples in ",
+              "type": "text"
+            },
+            {
+              "text": "Content",
               "type": "text",
               "marks": [
                 {
-                  "type": "bold"
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/error-messages",
+                    "class": null
+                  }
                 }
               ]
             },
             {
-              "text": " Gain leverage by designing cohesive interfaces that can grow with our uses, within our ecosystem, and with our industry. There should be no isolated features, functionality, or experiences.",
+              "text": ". ",
               "type": "text"
             }
           ]

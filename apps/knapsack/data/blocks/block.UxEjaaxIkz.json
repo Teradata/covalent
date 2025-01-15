@@ -24,25 +24,7 @@
           },
           "content": [
             {
-              "text": "Modal errors are used for critical issues that require the user’s immediate attention. They are ideal for interruptive events where further action is not possible until the issue is addressed. See ",
-              "type": "text"
-            },
-            {
-              "text": "Modal Design Principles",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "link",
-                  "attrs": {
-                    "rel": "noopener",
-                    "href": "#",
-                    "class": null
-                  }
-                }
-              ]
-            },
-            {
-              "text": " for more details.",
+              "text": "Dialog-style error patterns communicate critical issues that require the user’s immediate attention. Before they can move on, the user needs to spend a considerable amount of time or effort to resolve the error. In these high-severity situations, we find it necessary to catch the user’s attention, hence the need to display a modal dialog that interrupts the user workflows. ",
               "type": "text"
             }
           ]
@@ -54,181 +36,11 @@
           },
           "content": [
             {
-              "text": "Categorization",
+              "text": "Accessibility",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": ": Modals fall under ",
-              "type": "text"
-            },
-            {
-              "text": "critical and interruptive errors",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": ", designed to stop user workflows until the problem is acknowledged or resolved.",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
-          "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Guidelines",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ":",
-                      "type": "text"
-                    }
-                  ]
-                },
-                {
-                  "type": "bulletList",
-                  "content": [
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Tone",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ": Reassuring and direct, while offering clear recovery steps (e.g., “Your session has expired. Please log in again to continue.”).",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Clarity",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ": Provide actionable steps and avoid vague or overly technical language.",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Placement",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ": Ensure the modal is centered, with focus trapped within it until resolved.",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Accessibility",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ": Support Escape key dismissal, logical Tab order, and ARIA roles (",
-                              "type": "text"
-                            },
-                            {
-                              "text": "role=\"dialog\"",
-                              "type": "text",
-                              "marks": [
-                                {
-                                  "type": "code"
-                                }
-                              ]
-                            },
-                            {
-                              "text": ").",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             }
@@ -238,7 +50,107 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          }
+          },
+          "content": [
+            {
+              "text": "Support Escape key dismissal, logical Tab order, and ARIA roles (",
+              "type": "text"
+            },
+            {
+              "text": "role=\"dialog\"",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": ")",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Supportive, neutral tone",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Focus on communicating how the user can fix the error. Avoid using emotionally charging words such as \"fail,\" \"oops,\" \"sorry,\" and \"please\" in these already-tense situations. Learn more in ",
+              "type": "text"
+            },
+            {
+              "text": "Content",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/site/covalent/OWOrjRQqam/pages/error-messages",
+                    "class": null,
+                    "target": "_self"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Elaborate and structured",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": " ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Error messages often don’t provide enough right details to help the user get unstuck. We aim to be honest and easy to understand. Take advantage of the space in this pattern to identify the most helpful information and communicate it clearly and simply.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }
