@@ -27,5 +27,6 @@
       "imageSize": "none"
     }
   },
-  "blockType": "shortcut-tiles"
+  "blockType": "shortcut-tiles",
+  "spacing": "small"
 }
