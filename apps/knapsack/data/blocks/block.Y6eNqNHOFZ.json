@@ -1,18 +1,30 @@
 {
-  "id": "78KeehB9qV",
+  "id": "Y6eNqNHOFZ",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "We build on top of Material Design",
+              "text": " ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Projects to bookmark",
               "type": "text"
             }
           ]
@@ -24,7 +36,7 @@
           },
           "content": [
             {
-              "text": "We build on Material Design 2 as our design system foundation.",
+              "text": "You'll want to create some bookmarks to help keep organized in your day-to-day work. Add stars to the following projects:",
               "type": "text"
             }
           ]
@@ -32,6 +44,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "spacing": "small"
+  "blockType": "text-editor"
 }

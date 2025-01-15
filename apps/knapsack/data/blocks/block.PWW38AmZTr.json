@@ -15,5 +15,6 @@
     }
   },
   "size": "large",
-  "blockType": "design-src-tiles"
+  "blockType": "design-src-tiles",
+  "spacing": "small"
 }

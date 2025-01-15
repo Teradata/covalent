@@ -1,5 +1,5 @@
 {
-  "id": "FSJrgqvzsm",
+  "id": "InybWHO1DL",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Figma",
+              "text": "Resources",
               "type": "text"
             }
           ]
@@ -24,37 +24,20 @@
           },
           "content": [
             {
-              "text": "Our design tool of choice is Figma. To get started, visit ",
+              "text": "For project work, create a new document for each new JIRA ticket. To do this, clone the \"New feature template\" file linked below, and move it into the 💟 ",
               "type": "text"
             },
             {
-              "text": "figma.com",
+              "text": "Features",
               "type": "text",
               "marks": [
                 {
-                  "type": "link",
-                  "attrs": {
-                    "rel": "noopener noreferrer nofollow",
-                    "href": "https://figma.com",
-                    "class": null
-                  }
+                  "type": "bold"
                 }
               ]
             },
             {
-              "text": " and log in with your Teradata account.",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Once you're in, open up the Teradata UX team. ",
+              "text": " project. Then, rename it according to the guide below, and make sure to update the status card to match.",
               "type": "text"
             }
           ]

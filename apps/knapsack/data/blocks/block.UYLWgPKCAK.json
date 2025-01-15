@@ -1,0 +1,25 @@
+{
+  "id": "UYLWgPKCAK",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "fEa6ey12W",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/figma-dzmrsgqrhjpng",
+        "title": "Figma library",
+        "description": "All our foundational Figma components can be found in this library."
+      }
+    ],
+    "gridStyles": {
+      "columns": "3"
+    },
+    "tileStyles": {
+      "imageSize": "none",
+      "titleSize": "large"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "9EJAqQ4it",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "EjquKRCDRb",
+        "link": {
+          "path": "https://www.figma.com/design/ycgjUfyzs5F1ZucbTaqsSp/New-feature-template?node-id=670-1375&t=VbIRTdxyyCzaeGXJ-1",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/figma--adDES8PkE4.png",
+        "title": "Figma document",
+        "description": "New feature template"
+      },
+      {
+        "id": "b2qlzFb-rk",
+        "link": {
+          "path": "https://www.figma.com/files/project/20368833",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/figma--oJVAAv7-rj.png",
+        "title": "Figma project",
+        "description": "💟 Features"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

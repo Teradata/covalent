@@ -1,0 +1,20 @@
+{
+  "id": "4AKHjbj1mF",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "mGAVqw5Aj2",
+        "link": {
+          "name": "Figma organization",
+          "path": "/pages/figma-organization"
+        },
+        "title": "See also",
+        "description": "Figma organization"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
