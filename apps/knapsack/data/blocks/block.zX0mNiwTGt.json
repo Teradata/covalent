@@ -9,11 +9,172 @@
           "type": "doc",
           "content": [
             {
-              "type": "paragraph",
+              "type": "orderedList",
+              "attrs": {
+                "start": 1
+              },
               "content": [
                 {
-                  "text": "“Your changes couldn’t be saved due to a network error. Please check your connection and try again.”",
-                  "type": "text"
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Structure details of the message by: ",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "bulletList",
+                      "content": [
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "content": [
+                                {
+                                  "text": "Primary information:",
+                                  "type": "text"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "bulletList",
+                              "content": [
+                                {
+                                  "type": "listItem",
+                                  "content": [
+                                    {
+                                      "type": "paragraph",
+                                      "content": [
+                                        {
+                                          "text": "What happened",
+                                          "type": "text",
+                                          "marks": [
+                                            {
+                                              "type": "bold"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "text": " (header)",
+                                          "type": "text"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "listItem",
+                                  "content": [
+                                    {
+                                      "type": "paragraph",
+                                      "content": [
+                                        {
+                                          "text": "Underlying issue",
+                                          "type": "text",
+                                          "marks": [
+                                            {
+                                              "type": "bold"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "text": " if known and helpful to include (first paragraph)",
+                                          "type": "text"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "listItem",
+                                  "content": [
+                                    {
+                                      "type": "paragraph",
+                                      "content": [
+                                        {
+                                          "text": "How to fix it",
+                                          "type": "text",
+                                          "marks": [
+                                            {
+                                              "type": "bold"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "text": " (second paragraph)",
+                                          "type": "text"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "content": [
+                            {
+                              "type": "paragraph",
+                              "content": [
+                                {
+                                  "text": "Secondary information: Work with your engineering partner to provide ",
+                                  "type": "text"
+                                },
+                                {
+                                  "text": "error details",
+                                  "type": "text",
+                                  "marks": [
+                                    {
+                                      "type": "bold"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "text": " that users can provide when they contact Support.",
+                                  "type": "text"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Speak of the solution clearly and simply in the \"how to fix\" portion of the message. ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Provide a simple and actionable CTA in response to the recommended fix. ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -30,8 +191,55 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "“System failure.”",
+                  "text": "Don't say:",
                   "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "\"Unable.\" Instead use \"Couldn't.\" Which is inclusive without the \"able-\" language and accurate as it means someone tried doing something but couldn't. ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "\"There's a problem.\" Sweat the details to get the most helpful information.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "\"Done.\" Instead use a verb-led phrase to provide an actionable path forward. ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -40,7 +248,7 @@
       }
     ],
     "tileStyles": {
-      "imageSize": "xsmall",
+      "imageSize": "none",
       "headerBeforeImage": true
     }
   },

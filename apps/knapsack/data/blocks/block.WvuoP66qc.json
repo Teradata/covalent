@@ -1,5 +1,5 @@
 {
-  "id": "aV5phaJ18f",
+  "id": "WvuoP66qc",
   "data": {
     "content": {
       "type": "doc",
@@ -11,16 +11,7 @@
           },
           "content": [
             {
-              "text": "Be informed.",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": " Design continuous learning from user interactions and behaviors in mind.",
+              "text": "Learn how to write for dialog-style errors:",
               "type": "text"
             }
           ]

@@ -18,21 +18,7 @@
                       "type": "paragraph",
                       "content": [
                         {
-                          "text": "Use modals sparingly to avoid disrupting user flow.",
-                          "type": "text"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "content": [
-                        {
-                          "text": "Include clear actions like “Retry” or “Close” buttons.",
+                          "text": "Use modals only when the user's greatly inconvenienced in a high-severity situation.",
                           "type": "text"
                         }
                       ]
@@ -47,6 +33,20 @@
                       "content": [
                         {
                           "text": "Make modals accessible for keyboard and screen reader users.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Ensure the modal is centered, with focus trapped within it until resolved.",
                           "type": "text"
                         }
                       ]
