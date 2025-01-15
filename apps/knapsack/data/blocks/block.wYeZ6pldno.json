@@ -1,0 +1,58 @@
+{
+  "id": "wYeZ6pldno",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Overline",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "overline",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": " text goes above other elements to provide extra context. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "It appears in all caps and helps organize information, like putting \"BREAKING NEWS\" above a news headline.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor",
+  "size": "small"
+}

@@ -1,5 +1,5 @@
 {
-  "id": "bVwjZHqzBW",
+  "id": "ozX53DQomo",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Type scale",
+              "text": "Button",
               "type": "text"
             }
           ]
@@ -24,7 +24,16 @@
           },
           "content": [
             {
-              "text": "Our type scale is a collection of ready-to-use text styles. Each style has a specific name and comes with its own font size, weight, and spacing already set up. Here's what each style is for:",
+              "text": "button",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": " typography is used exclusively in buttons.",
               "type": "text"
             }
           ]
@@ -32,5 +41,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }

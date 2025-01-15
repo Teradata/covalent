@@ -11,25 +11,6 @@
         "image": "https://knapsack.imgix.net/site/covalent/typography-rjcvx8vd6bpng",
         "title": "See also",
         "description": "Typography tokens"
-      },
-      {
-        "id": "GCeJ5yKToH",
-        "link": {
-          "path": "https://m2.material.io/design/typography/the-type-system.html",
-          "external": true
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-rlqdfe8xdpng",
-        "title": "See also",
-        "description": "Material Design type system"
-      },
-      {
-        "id": "MSctNkJHCN",
-        "link": {
-          "path": "https://material.angular.io/guide/theming#typography",
-          "external": true
-        },
-        "title": "See also",
-        "description": "Angular Material docs"
       }
     ],
     "tileStyles": {
