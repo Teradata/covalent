@@ -1,5 +1,5 @@
 {
-  "id": "78KeehB9qV",
+  "id": "vp5YBQhsLE",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "We build on top of Material Design",
+              "text": "Workflow",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "We build on Material Design 2 as our design system foundation.",
+              "text": "We've created starter templates and naming schemes to help organize your work and coordinate with other team members. See the Figma organization doc for more details.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "spacing": "small"
+  "blockType": "text-editor"
 }

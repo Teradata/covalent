@@ -155,6 +155,11 @@ byId:
     name: Expansion panel item
     parentId: components
     path: /pattern/expansion-panel-item
+  figma-organization:
+    id: figma-organization
+    name: Figma organization
+    parentId: designers
+    path: /pages/figma-organization
   focused-page:
     id: focused-page
     name: Focused page
@@ -493,3 +498,4 @@ order:
   - inclusive-language-glnk25tux
   - designers
   - developers
+  - figma-organization

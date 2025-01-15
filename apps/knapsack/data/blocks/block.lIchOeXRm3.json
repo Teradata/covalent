@@ -1,5 +1,5 @@
 {
-  "id": "78KeehB9qV",
+  "id": "lIchOeXRm3",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "We build on top of Material Design",
+              "text": "Older examples",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "We build on Material Design 2 as our design system foundation.",
+              "text": "These projects are from a previous generation of the design system, but contain years worth of valuable examples to peruse. They're worth familiarizing yourself with, but be aware that they are visually out of date. ",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "spacing": "small"
+  "blockType": "text-editor"
 }

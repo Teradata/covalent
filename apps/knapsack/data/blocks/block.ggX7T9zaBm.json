@@ -1,5 +1,5 @@
 {
-  "id": "78KeehB9qV",
+  "id": "ggX7T9zaBm",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "We build on top of Material Design",
+              "text": "Figma status card",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "We build on Material Design 2 as our design system foundation.",
+              "text": "Change the content and state of the status card in your Figma file as you progress through the design process. If you're using the new feature template, it will be on the Overview page.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "spacing": "small"
+  "blockType": "text-editor"
 }
