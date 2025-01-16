@@ -5,6 +5,19 @@
       "type": "doc",
       "content": [
         {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Applications in the design system",
+              "type": "text"
+            }
+          ]
+        },
+        {
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
@@ -12,6 +25,18 @@
           "content": [
             {
               "text": "Covalent is the design system for the Teradata products. It serves a single purpose of providing a cohesive language for its primary audiences—the designers, content designers, and developers.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "They are the masterminds who shape the product experiences where their expertise directly impacts the quality of the outcome. To empower them with a cohesive language that guides them in building simple and intuitive experiences, here's how we apply the design principles in the making of the design system.",
               "type": "text"
             }
           ]
