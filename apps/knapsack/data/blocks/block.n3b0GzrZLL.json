@@ -3,13 +3,22 @@
   "data": {
     "shortcuts": [
       {
-        "id": "QsbJH2mkIM",
+        "id": "zDeXFT3Rrp",
         "link": {
-          "name": "Word list",
-          "path": "/pages/word-list"
+          "name": "Voice and tone",
+          "path": "/pages/voice-and-tone"
         },
-        "title": "Word list",
-        "description": "Use the word list to ensure consistency and easy-to-understand content in what you're working on."
+        "title": "Voice and tone",
+        "description": "Learn how to apply the Teradata voice and choose the right tone for what you're building."
+      },
+      {
+        "id": "0l3gxzVR4",
+        "link": {
+          "name": "Errors",
+          "path": "/pages/error-messages"
+        },
+        "title": "Errors",
+        "description": "The best error message is no error. Learn how to design useful messages when errors do happen."
       },
       {
         "id": "07Xr7jDGMN",
@@ -18,7 +27,34 @@
           "path": "/pages/date-and-time"
         },
         "title": "Date and time",
-        "description": "Follow these guidelines for clarity, consistency, and accurate translation."
+        "description": "Follow the guidelines for clarity, consistency, and accurate translation."
+      },
+      {
+        "id": "QsbJH2mkIM",
+        "link": {
+          "name": "Word list",
+          "path": "/pages/word-list"
+        },
+        "title": "Word list",
+        "description": "Use the word list to ensure jargon-free and consistent content."
+      },
+      {
+        "id": "rVPdcXN20U",
+        "link": {
+          "name": "Video",
+          "path": "/pages/video"
+        },
+        "title": "Video",
+        "description": "Making in-product video for a feature? Follow the guidelines."
+      },
+      {
+        "id": "aRIpZ6iGN3",
+        "link": {
+          "name": "Inclusive language",
+          "path": "/pages/inclusive-language-glnk25tux"
+        },
+        "title": "Inclusive language",
+        "description": "Create a welcoming experience for all. Learn how to write around non-inclusive terms in code."
       }
     ],
     "gridStyles": {

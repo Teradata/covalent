@@ -9,7 +9,25 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "These docs are under heavy construction. Ping us on Slack: @odubya for development questions and @adam for design related topics.",
+              "text": "We want to hear from you. Share questions or feedback on the ",
+              "type": "text"
+            },
+            {
+              "text": "#design-system",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://teradata.slack.com/archives/C02GW1QHBMZ",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " Slack channel. Someone on the design system team will get back to you shortly. ",
               "type": "text"
             }
           ]
