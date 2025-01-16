@@ -1,5 +1,5 @@
 {
-  "id": "p41XRV5d52",
+  "id": "vG5YCF3R3j",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 3,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Product-forward",
+              "text": "Be easy",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "We believe in fostering a robust contribution model. This approach helps us understand the intended growth, usage trajectory, and creation of new use cases. When we stay informed, it helps us make decisions to maintain the system as a reliable go-to-place and to shape the future of Teradata design across the products. ",
+              "text": "Simplify content and interactions and enable collaboration between AI and humans by focusing on usability and guiding users through the easiest paths to get a job done. ",
               "type": "text"
             }
           ]
@@ -32,5 +32,6 @@
       ]
     }
   },
+  "size": "small",
   "blockType": "text-editor"
 }

@@ -5,6 +5,19 @@
       "type": "doc",
       "content": [
         {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "A point of view",
+              "type": "text"
+            }
+          ]
+        },
+        {
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
