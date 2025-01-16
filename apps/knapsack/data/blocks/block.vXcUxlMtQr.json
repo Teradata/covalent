@@ -5,12 +5,19 @@
       {
         "id": "CHqTR5GQPA",
         "link": {
-          "name": "Error Messages",
-          "path": "/pattern/errors"
+          "name": "Errors",
+          "path": "/pages/errors"
         },
         "image": "https://knapsack.imgix.net/site/covalent/errors-ejbvtnhncnpng",
-        "title": "Error Messages",
-        "description": "Error patterns give feedback, explain issues, and guide resolutions with messages, toasts, and error pages."
+        "title": "Errors"
+      },
+      {
+        "id": "6KKetclTd",
+        "link": {
+          "name": "Get Started Cards",
+          "path": "/pattern/get-started-cards"
+        },
+        "title": "Get Started Cards"
       }
     ],
     "tileStyles": {

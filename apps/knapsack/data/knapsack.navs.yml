@@ -185,6 +185,11 @@ byId:
     name: Get started
     parentId: root
     path: /pages/get-started
+  get-started-cards:
+    id: get-started-cards
+    name: Get Started Cards
+    parentId: patterns
+    path: /pattern/get-started-cards
   icon:
     id: icon
     name: Icon
@@ -496,6 +501,7 @@ order:
   - date-and-time
   - word-list
   - inclusive-language-glnk25tux
+  - get-started-cards
   - designers
   - developers
   - figma-organization

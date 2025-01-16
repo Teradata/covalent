@@ -1,0 +1,29 @@
+{
+  "id": "get-started-cards",
+  "tabs": [
+    {
+      "id": "cD5CibJZlL",
+      "type": "subPage"
+    },
+    {
+      "id": "TXfPct2ysa",
+      "type": "subPage"
+    }
+  ],
+  "title": "Get Started Cards",
+  "statuses": {},
+  "subPages": [
+    {
+      "id": "cD5CibJZlL",
+      "title": "Onboarding",
+      "blockIds": []
+    },
+    {
+      "id": "TXfPct2ysa",
+      "title": "Accessibility",
+      "blockIds": []
+    }
+  ],
+  "templates": [],
+  "description": ""
+}
