@@ -1,6 +1,6 @@
 {
   "id": "icon-checkbox",
-  "title": "Icon checkbox",
+  "title": "Checkbox icon",
   "description": "Checkbox styled with an icon as its visual representation.",
   "statuses": {},
   "templates": [
@@ -75,8 +75,8 @@
   "subPages": [
     {
       "id": "overview",
-      "title": "Overview",
-      "blockIds": []
+      "title": "Usage",
+      "blockIds": ["csq5yJXReo", "w8GfiH8UjR"]
     }
   ]
 }

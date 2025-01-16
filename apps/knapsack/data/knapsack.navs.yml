@@ -167,7 +167,7 @@ byId:
     path: /pattern/focused-page
   form-field:
     id: form-field
-    name: Form Field
+    name: Form field
     parentId: components
     path: /pattern/form-field
   foundations:
@@ -207,7 +207,7 @@ byId:
     path: /pattern/icon-button-toggle
   icon-checkbox:
     id: icon-checkbox
-    name: Icon checkbox
+    name: Checkbox icon
     parentId: components
     path: /pattern/icon-checkbox
   icon-lockup:
@@ -217,7 +217,7 @@ byId:
     path: /pattern/icon-lockup
   icon-radio:
     id: icon-radio
-    name: Icon radio
+    name: Radio icon
     parentId: components
     path: /pattern/icon-radio
   icons:
@@ -423,6 +423,9 @@ byId:
     path: /pages/word-list
 order:
   - get-started
+  - designers
+  - figma-organization
+  - developers
   - foundations
   - design-principles
   - color
@@ -438,6 +441,7 @@ order:
   - button
   - card
   - checkbox
+  - icon-checkbox
   - code-editor
   - code-snippet
   - chip-item
@@ -453,9 +457,7 @@ order:
   - icon
   - icon-button
   - icon-button-toggle
-  - icon-checkbox
   - icon-lockup
-  - icon-radio
   - linear-progress
   - list
   - list-item
@@ -465,6 +467,7 @@ order:
   - menu
   - notebook-cell
   - radio
+  - icon-radio
   - select
   - side-sheet
   - slider
@@ -476,18 +479,19 @@ order:
   - switch
   - tabs
   - tab
+  - text-area
+  - textfield
+  - text-lockup
   - toolbar
   - tooltip
   - top-app-bar
   - top-app-bar-fixed
   - tree-list
   - tree-list-item
-  - text-area
-  - textfield
-  - text-lockup
   - text
   - patterns
   - errors
+  - get-started-cards
   - tokens
   - colors-vvhchtke
   - colors-9gexmujiba
@@ -501,7 +505,3 @@ order:
   - date-and-time
   - word-list
   - inclusive-language-glnk25tux
-  - get-started-cards
-  - designers
-  - developers
-  - figma-organization

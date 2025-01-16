@@ -89,6 +89,10 @@
   ],
   "tabs": [
     {
+      "id": "soHd2DEaVI",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-RPcggDLyDK",
       "type": "template"
     },
@@ -98,7 +102,13 @@
       "hidden": true
     }
   ],
-  "subPages": [],
+  "subPages": [
+    {
+      "id": "soHd2DEaVI",
+      "title": "Usage",
+      "blockIds": ["hDQ5LvDLl", "OyQin2qIcG"]
+    }
+  ],
   "designSrcComponentsById": {
     "hLUAWg6Vk": {
       "id": "hLUAWg6Vk",
