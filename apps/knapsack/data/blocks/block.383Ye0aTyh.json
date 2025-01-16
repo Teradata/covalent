@@ -1,0 +1,28 @@
+{
+  "id": "383Ye0aTyh",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "PulGjsoEWa",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7914-54907",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Chip set"
+      },
+      {
+        "id": "jSZRmmb-Pa",
+        "link": {
+          "path": "https://m2.material.io/components/chips",
+          "external": true
+        },
+        "title": "Material Design"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

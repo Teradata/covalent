@@ -1,0 +1,48 @@
+{
+  "id": "IGYqjdck99",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "GGfyXR7JNJ",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36810",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "gesOOgGVAU",
+        "link": {
+          "path": "https://www.figma.com/design/n808q0jZjqoPvyzXacqn9N/Menus?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy document",
+        "description": "Menus"
+      },
+      {
+        "id": "OSn-eqmsGX",
+        "link": {
+          "path": "https://m2.material.io/components/menus",
+          "external": true
+        },
+        "title": "Material Design"
+      },
+      {
+        "id": "HQ0WcEII0w",
+        "link": {
+          "path": "https://material.angular.io/components/menu/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Menus"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

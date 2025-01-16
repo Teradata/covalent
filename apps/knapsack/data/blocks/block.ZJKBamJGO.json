@@ -1,0 +1,29 @@
+{
+  "id": "ZJKBamJGO",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "92NNsPtlkC",
+        "link": {
+          "path": "https://www.figma.com/design/FxrGweRWPOb6EsOW1MenFL/Expansion-panels?m=auto&t=vBlOgv4letIOllWB-6",
+          "external": true
+        },
+        "title": "Legacy document",
+        "description": "Expansion panels"
+      },
+      {
+        "id": "65DVdZyBQX",
+        "link": {
+          "path": "https://material.angular.io/components/expansion/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Expansion panels"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

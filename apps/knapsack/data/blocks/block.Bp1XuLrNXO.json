@@ -1,0 +1,19 @@
+{
+  "id": "Bp1XuLrNXO",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "u1PJIkfwS4",
+        "link": {
+          "name": "Expansion panel",
+          "path": "/pattern/expansion-panel"
+        },
+        "title": "See also"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

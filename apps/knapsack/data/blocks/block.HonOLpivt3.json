@@ -1,0 +1,28 @@
+{
+  "id": "HonOLpivt3",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "V66u1GP2D4",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36770",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "9ExlPZwnvf",
+        "link": {
+          "path": "https://material.angular.io/components/button/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Buttons"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "7Cm5eVL9Ir",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "PCaNdCtgy",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7923-2250",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Icon button toggle"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

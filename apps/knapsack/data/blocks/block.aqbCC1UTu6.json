@@ -1,0 +1,36 @@
+{
+  "id": "aqbCC1UTu6",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "scmTdVvWTS",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8169-5797",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Chips"
+      },
+      {
+        "id": "2nCKbMBWMv",
+        "link": {
+          "path": "https://m2.material.io/components/chips",
+          "external": true
+        },
+        "title": "Material Design"
+      },
+      {
+        "id": "j8al8HXa3w",
+        "link": {
+          "path": "https://material.angular.io/components/chips/overview",
+          "external": true
+        },
+        "title": "Angular Material"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "SHMCTUy-7O",
+  "data": {
+    "type": "warning",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Design documentation coming soon. In the mean time, review the resources below.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout"
+}

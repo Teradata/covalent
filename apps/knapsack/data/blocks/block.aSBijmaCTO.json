@@ -1,0 +1,20 @@
+{
+  "id": "aSBijmaCTO",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "Mvi4Nj6SQb",
+        "link": {
+          "name": "Code snippet",
+          "path": "/pattern/code-snippet"
+        },
+        "title": "See also",
+        "description": "Code snippet"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

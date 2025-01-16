@@ -1,0 +1,37 @@
+{
+  "id": "PCa0Gp168e",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "cmVya4RhFf",
+        "link": {
+          "name": "Icons",
+          "path": "/pages/icons"
+        },
+        "title": "See also",
+        "description": "Foundations: Icons"
+      },
+      {
+        "id": "qlRfZZQnK",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36764",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Icon"
+      },
+      {
+        "id": "wk7fMB9ktP",
+        "link": {
+          "path": "https://material.angular.io/components/icon/overview",
+          "external": true
+        },
+        "title": "Angular Material"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
