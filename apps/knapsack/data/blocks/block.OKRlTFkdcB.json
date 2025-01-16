@@ -5,10 +5,29 @@
       "type": "doc",
       "content": [
         {
+          "type": "heading",
+          "attrs": {
+            "textAlign": "left",
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Trust"
+            }
+          ]
+        },
+        {
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          }
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "We're building a system that builds trust with the teams. When the system is trusted, adoption comes. We listen to the teams' feedback. To help people learn and apply the guidance, we prioritize a predictable information architecture with simple, clear, and update-to-date documentation with no extra or irrelevant content."
+            }
+          ]
         }
       ]
     }

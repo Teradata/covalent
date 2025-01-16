@@ -7,13 +7,13 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
-            "textAlign": "left"
+            "textAlign": "left",
+            "level": 3
           },
           "content": [
             {
-              "text": "Be easy",
-              "type": "text"
+              "type": "text",
+              "text": "Be easy"
             }
           ]
         },
@@ -24,8 +24,8 @@
           },
           "content": [
             {
-              "text": "Simplify content and interactions and enable collaboration between AI and humans by focusing on usability and guiding users through the easiest paths to get a job done. ",
-              "type": "text"
+              "type": "text",
+              "text": "Simplify content and interactions and enable collaboration between AI and humans by focusing on usability and guiding users through the easiest paths to get a job done. "
             }
           ]
         }

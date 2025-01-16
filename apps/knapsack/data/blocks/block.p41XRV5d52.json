@@ -1,0 +1,36 @@
+{
+  "id": "p41XRV5d52",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Product-forward",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "We believe in fostering a robust contribution model. This approach helps us understand the intended growth, usage trajectory, and creation of new use cases. When we stay informed, it helps us make decisions to maintain the system as a reliable go-to-place and to shape the future of Teradata design across the products. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
