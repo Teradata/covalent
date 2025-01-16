@@ -1,0 +1,28 @@
+{
+  "id": "zSUHpxYdKS",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "ADifkuEQx",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8983-5003",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "V6IKnvQHd1",
+        "link": {
+          "path": "https://material.angular.io/components/tree/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Tree"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

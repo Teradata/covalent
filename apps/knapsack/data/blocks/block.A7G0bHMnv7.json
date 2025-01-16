@@ -1,0 +1,49 @@
+{
+  "id": "A7G0bHMnv7",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "HMsjf5tfy8",
+        "link": {
+          "name": "List item",
+          "path": "/pattern/list-item"
+        },
+        "title": "See also",
+        "description": "List item"
+      },
+      {
+        "id": "Tk0-YSdmqd",
+        "link": {
+          "path": "https://www.figma.com/design/7olNUGb4brjY7hLX4tq1Tp/Lists?m=auto&t=vBlOgv4letIOllWB-6",
+          "external": true
+        },
+        "title": "Legacy document",
+        "description": "Lists"
+      },
+      {
+        "id": "TIF0Bec7PA",
+        "link": {
+          "path": "https://m2.material.io/components/lists",
+          "external": true
+        },
+        "title": "Material Design"
+      },
+      {
+        "id": "pDA-Jy5hIE",
+        "link": {
+          "path": "https://material.angular.io/components/list/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "List"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

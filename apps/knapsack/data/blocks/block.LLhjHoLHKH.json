@@ -1,0 +1,38 @@
+{
+  "id": "LLhjHoLHKH",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "rvvsXeXZK2",
+        "link": {
+          "path": "https://www.figma.com/design/gW8A14qsVzscCC3XoiE7oB/Cards?node-id=8-84",
+          "external": true
+        },
+        "title": "Legacy document",
+        "description": "Cards"
+      },
+      {
+        "id": "PUyIN68nwG",
+        "link": {
+          "path": "https://m2.material.io/components/cards",
+          "external": true
+        },
+        "title": "Material design",
+        "description": "Cards"
+      },
+      {
+        "id": "aqwVlEcSbk",
+        "link": {
+          "path": "https://material.angular.io/components/card/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Cards"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

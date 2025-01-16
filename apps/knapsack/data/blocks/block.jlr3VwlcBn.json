@@ -1,0 +1,37 @@
+{
+  "id": "jlr3VwlcBn",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "pgamDe9eVZ",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=10210-9789",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "wHuLG6Uen4",
+        "link": {
+          "path": "https://www.figma.com/design/lH1jQ0VQkqetm69ElI26gr/Inputs?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy document",
+        "description": "Inputs"
+      },
+      {
+        "id": "wxOJgWaHNT",
+        "link": {
+          "path": "https://material.angular.io/components/input/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Input"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

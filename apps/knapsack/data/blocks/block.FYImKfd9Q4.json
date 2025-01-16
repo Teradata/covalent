@@ -1,0 +1,48 @@
+{
+  "id": "FYImKfd9Q4",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "xTzEMw6RSf",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7893-24",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "1SGwKMteRh",
+        "link": {
+          "path": "https://www.figma.com/design/ivmr0E23qw3oQOg790cwoC/Progress-spinner?m=auto&t=vBlOgv4letIOllWB-6",
+          "external": true
+        },
+        "title": "Legacy document",
+        "description": "Progress spinner"
+      },
+      {
+        "id": "fTOfy1Aw2F",
+        "link": {
+          "path": "https://m2.material.io/components/progress-indicators",
+          "external": true
+        },
+        "title": "Material Design"
+      },
+      {
+        "id": "bi7c5rwpGc",
+        "link": {
+          "path": "https://material.angular.io/components/progress-spinner/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Progress spinner"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

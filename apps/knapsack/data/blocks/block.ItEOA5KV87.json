@@ -1,0 +1,28 @@
+{
+  "id": "ItEOA5KV87",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "S35qvvqSS",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=9965-44976",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "eq6prroWW",
+        "link": {
+          "name": "Tree list",
+          "path": "/pattern/tree-list"
+        },
+        "title": "See also",
+        "description": "Tree list"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

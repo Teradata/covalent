@@ -1,0 +1,20 @@
+{
+  "id": "sPqATmpqcX",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "yF8RfYT1W",
+        "link": {
+          "name": "Icon lockup",
+          "path": "/pattern/icon-lockup"
+        },
+        "title": "See also",
+        "description": "Icon lockup"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

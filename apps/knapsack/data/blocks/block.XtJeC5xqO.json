@@ -1,0 +1,28 @@
+{
+  "id": "XtJeC5xqO",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "OdXss-Mij1",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7915-2071",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Form field"
+      },
+      {
+        "id": "zw1punXL6r",
+        "link": {
+          "path": "https://material.angular.io/components/form-field/overview",
+          "external": true
+        },
+        "title": "Angular Material"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

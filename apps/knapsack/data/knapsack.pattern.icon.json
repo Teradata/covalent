@@ -68,14 +68,15 @@
     },
     {
       "id": "1KDWoTAzr",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [
     {
       "id": "overview",
-      "title": "Overview",
-      "blockIds": []
+      "title": "Usage",
+      "blockIds": ["SHMCTUy-7O", "PCa0Gp168e"]
     }
   ],
   "designSrcComponentsById": {

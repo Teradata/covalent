@@ -1,0 +1,47 @@
+{
+  "id": "wJsanghZOz",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "LT962ObOUt",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8074-25562",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "hEHrbpn80k",
+        "link": {
+          "path": "https://www.figma.com/design/5o27U9LkUuhyWCDC0BNpZN/Sliders?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy document"
+      },
+      {
+        "id": "36kJFo9pF",
+        "link": {
+          "path": "https://m2.material.io/components/sliders",
+          "external": true
+        },
+        "title": "Material Design"
+      },
+      {
+        "id": "kji039m-fY",
+        "link": {
+          "path": "https://material.angular.io/components/slider/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Sliders"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

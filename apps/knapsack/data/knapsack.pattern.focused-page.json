@@ -54,13 +54,26 @@
     {
       "id": "web-components-waQVQEThJD",
       "type": "template"
+    },
+    {
+      "id": "091iJhGdco",
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "subPages": [
     {
-      "title": "Overview",
+      "title": "Usage",
       "id": "oMAwFOtT2C",
-      "blockIds": []
+      "blockIds": ["GKfZ4MsZji", "z25hWhEN0T"]
     }
-  ]
+  ],
+  "designSrcComponentsById": {
+    "091iJhGdco": {
+      "id": "091iJhGdco",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "13618:13011"
+    }
+  }
 }

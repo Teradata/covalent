@@ -1,6 +1,6 @@
 {
   "id": "icon-radio",
-  "title": "Icon radio",
+  "title": "Radio icon",
   "description": "Radio button styled with an icon as its visual representation.",
   "statuses": {},
   "templates": [
@@ -76,8 +76,8 @@
   "subPages": [
     {
       "id": "overview",
-      "title": "Overview",
-      "blockIds": []
+      "title": "Usage",
+      "blockIds": ["NoeLCkJYP", "QpglwCoz0J"]
     }
   ],
   "designSrcComponentsById": {

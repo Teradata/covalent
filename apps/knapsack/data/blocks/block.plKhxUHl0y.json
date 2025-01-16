@@ -1,0 +1,28 @@
+{
+  "id": "plKhxUHl0y",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "zAh5INc4xl",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=13613-303",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Full-screen dialog"
+      },
+      {
+        "id": "rbIjIvWDBt",
+        "link": {
+          "path": "https://www.figma.com/design/6w5IaiDUeLVuAPsOBu9JYM/Full-screen-takeover?node-id=4460-42291&t=aTj3STGtCbCocR8w-4",
+          "external": true
+        },
+        "title": "New pattern document"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
