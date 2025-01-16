@@ -1,0 +1,47 @@
+{
+  "id": "BjXGmoHjwq",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "m1kVZuLSjU",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-9376",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Tooltip"
+      },
+      {
+        "id": "0m7lb3Diod",
+        "link": {
+          "path": "https://www.figma.com/design/vT5owGSUliHF9Wq0He5E9k/Tooltips?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy design"
+      },
+      {
+        "id": "WAo-Clsltd",
+        "link": {
+          "path": "https://m2.material.io/components/tooltips",
+          "external": true
+        },
+        "title": "Material Design"
+      },
+      {
+        "id": "ZRkLZmbUZW",
+        "link": {
+          "path": "https://material.angular.io/components/tooltip/overview",
+          "external": true
+        },
+        "title": "Angular Material"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

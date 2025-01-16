@@ -1,0 +1,38 @@
+{
+  "id": "cUrNq9vbV",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "ijgxrBS9DR",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-12561",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Typography"
+      },
+      {
+        "id": "JbRORCEyUS",
+        "link": {
+          "name": "Typography",
+          "path": "/pages/typography-3shrxwkyk"
+        },
+        "title": "See also",
+        "description": "Foundations: Typography"
+      },
+      {
+        "id": "h4ye3bHdBU",
+        "link": {
+          "name": "Typography",
+          "path": "/pages/typography"
+        },
+        "title": "See also",
+        "description": "Tokens: Typography"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

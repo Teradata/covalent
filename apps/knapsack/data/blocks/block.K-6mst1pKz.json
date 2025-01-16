@@ -1,0 +1,20 @@
+{
+  "id": "K-6mst1pKz",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "zzf0Kx37",
+        "link": {
+          "path": "https://www.figma.com/design/QEsEBeodi4w7nL2Gt2Xxlb/Status-header?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy document",
+        "description": "Status header"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

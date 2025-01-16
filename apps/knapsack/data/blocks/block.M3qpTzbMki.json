@@ -1,0 +1,27 @@
+{
+  "id": "M3qpTzbMki",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "jE0FxagEgO",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=9645-9007",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "Yy-kaWTDWW",
+        "link": {
+          "path": "https://www.figma.com/design/ZMAaI0GdLsu1UwHXgYLaHD/Sheets?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy design"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

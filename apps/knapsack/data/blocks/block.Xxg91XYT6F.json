@@ -1,0 +1,20 @@
+{
+  "id": "Xxg91XYT6F",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "CXJl2HI1oJ",
+        "link": {
+          "path": "https://www.figma.com/design/18vXeywqkVXdRO6Ta8RbZd/Notebook-cell-component?node-id=12361-7538",
+          "external": true
+        },
+        "title": "Current design",
+        "description": "Notebook cell"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

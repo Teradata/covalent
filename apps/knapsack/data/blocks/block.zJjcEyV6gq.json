@@ -1,0 +1,47 @@
+{
+  "id": "zJjcEyV6gq",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "y4o8CaCfPA",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-8141",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "zaClHZ-EdC",
+        "link": {
+          "path": "https://www.figma.com/design/UTdDovL41gL90NQF7C7s59/Toggles?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy document"
+      },
+      {
+        "id": "3omt3q3qSl",
+        "link": {
+          "path": "https://m2.material.io/components/switches",
+          "external": true
+        },
+        "title": "Material Design"
+      },
+      {
+        "id": "YSl1t08565",
+        "link": {
+          "path": "https://material.angular.io/components/slide-toggle/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Slide toggle"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

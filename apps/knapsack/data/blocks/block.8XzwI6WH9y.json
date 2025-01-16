@@ -1,0 +1,28 @@
+{
+  "id": "8XzwI6WH9y",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "RN8daWI7Wx",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=13258-107",
+          "external": true
+        },
+        "title": "Current documentation"
+      },
+      {
+        "id": "twDUUVM7-f",
+        "link": {
+          "path": "https://www.figma.com/design/bmY69C85hqtl96mP6bA4AK/Status-dialogs?node-id=4-16",
+          "external": true
+        },
+        "title": "New pattern document",
+        "description": "Status dialog"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

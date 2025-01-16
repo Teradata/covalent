@@ -1,0 +1,36 @@
+{
+  "id": "wMMForWZ2",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "Z3A4fweEND",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7979-30661",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "uNCQHFwJx7",
+        "link": {
+          "path": "https://www.figma.com/design/OZGyytUGDqjqoyvftu1Kid/Toolbars?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy document"
+      },
+      {
+        "id": "KSvb-Vp2Tq",
+        "link": {
+          "path": "https://material.angular.io/components/toolbar/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Toolbar"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

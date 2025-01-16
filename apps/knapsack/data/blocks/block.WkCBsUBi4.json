@@ -1,0 +1,28 @@
+{
+  "id": "WkCBsUBi4",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "QRrikjTUE3",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-9459",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "Oalmyjb7t",
+        "link": {
+          "name": "Tab",
+          "path": "/pattern/tab"
+        },
+        "title": "See also",
+        "description": "Tab"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "Q6b5CiqdXC",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "8pACOY6eY",
+        "link": {
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7979-30618",
+          "external": true
+        },
+        "title": "Current design"
+      },
+      {
+        "id": "7-6dNO8aTZ",
+        "link": {
+          "path": "https://www.figma.com/design/MEWVEe4Npq7Nw835hirQYs/Snackbars?m=auto&t=igsBXlZlwwHQzjtQ-6",
+          "external": true
+        },
+        "title": "Legacy document",
+        "description": "Snackbars"
+      },
+      {
+        "id": "wdYXr6WDSn",
+        "link": {
+          "path": "https://m2.material.io/components/snackbars",
+          "external": true
+        },
+        "title": "Material Design"
+      },
+      {
+        "id": "x7SLtd9vl1",
+        "link": {
+          "path": "https://material.angular.io/components/snack-bar/overview",
+          "external": true
+        },
+        "title": "Angular Material",
+        "description": "Snackbar"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
