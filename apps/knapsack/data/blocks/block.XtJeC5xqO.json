@@ -17,7 +17,8 @@
           "path": "https://material.angular.io/components/form-field/overview",
           "external": true
         },
-        "title": "Angular Material"
+        "title": "Angular Material",
+        "description": "Form field"
       }
     ],
     "tileStyles": {

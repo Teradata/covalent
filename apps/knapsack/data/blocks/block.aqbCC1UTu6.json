@@ -17,7 +17,8 @@
           "path": "https://m2.material.io/components/chips",
           "external": true
         },
-        "title": "Material Design"
+        "title": "Material Design",
+        "description": "Chips"
       },
       {
         "id": "j8al8HXa3w",
@@ -25,7 +26,8 @@
           "path": "https://material.angular.io/components/chips/overview",
           "external": true
         },
-        "title": "Angular Material"
+        "title": "Angular Material",
+        "description": "Chips"
       }
     ],
     "tileStyles": {

@@ -8,7 +8,8 @@
           "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8074-25562",
           "external": true
         },
-        "title": "Current design"
+        "title": "Current design",
+        "description": "Slider"
       },
       {
         "id": "hEHrbpn80k",
@@ -16,7 +17,8 @@
           "path": "https://www.figma.com/design/5o27U9LkUuhyWCDC0BNpZN/Sliders?m=auto&t=igsBXlZlwwHQzjtQ-6",
           "external": true
         },
-        "title": "Legacy document"
+        "title": "Legacy document",
+        "description": "Sliders"
       },
       {
         "id": "36kJFo9pF",
@@ -24,7 +26,8 @@
           "path": "https://m2.material.io/components/sliders",
           "external": true
         },
-        "title": "Material Design"
+        "title": "Material Design",
+        "description": "Sliders"
       },
       {
         "id": "kji039m-fY",

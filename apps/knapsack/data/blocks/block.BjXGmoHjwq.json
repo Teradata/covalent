@@ -17,7 +17,8 @@
           "path": "https://www.figma.com/design/vT5owGSUliHF9Wq0He5E9k/Tooltips?m=auto&t=igsBXlZlwwHQzjtQ-6",
           "external": true
         },
-        "title": "Legacy design"
+        "title": "Legacy design",
+        "description": "Tooltips"
       },
       {
         "id": "WAo-Clsltd",
@@ -25,7 +26,8 @@
           "path": "https://m2.material.io/components/tooltips",
           "external": true
         },
-        "title": "Material Design"
+        "title": "Material Design",
+        "description": "Tooltips"
       },
       {
         "id": "ZRkLZmbUZW",
@@ -33,7 +35,8 @@
           "path": "https://material.angular.io/components/tooltip/overview",
           "external": true
         },
-        "title": "Angular Material"
+        "title": "Angular Material",
+        "description": "Tooltip"
       }
     ],
     "tileStyles": {

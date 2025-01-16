@@ -8,7 +8,8 @@
           "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=9645-9007",
           "external": true
         },
-        "title": "Current design"
+        "title": "Current design",
+        "description": "Side sheet"
       },
       {
         "id": "Yy-kaWTDWW",
@@ -16,7 +17,8 @@
           "path": "https://www.figma.com/design/ZMAaI0GdLsu1UwHXgYLaHD/Sheets?m=auto&t=igsBXlZlwwHQzjtQ-6",
           "external": true
         },
-        "title": "Legacy design"
+        "title": "Legacy design",
+        "description": "Sheets"
       }
     ],
     "tileStyles": {

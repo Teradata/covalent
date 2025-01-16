@@ -8,7 +8,8 @@
           "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7979-30618",
           "external": true
         },
-        "title": "Current design"
+        "title": "Current design",
+        "description": "Snackbar"
       },
       {
         "id": "7-6dNO8aTZ",
@@ -25,7 +26,8 @@
           "path": "https://m2.material.io/components/snackbars",
           "external": true
         },
-        "title": "Material Design"
+        "title": "Material Design",
+        "description": "Snackbars"
       },
       {
         "id": "x7SLtd9vl1",
