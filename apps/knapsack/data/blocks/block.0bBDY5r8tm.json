@@ -1,0 +1,21 @@
+{
+  "id": "0bBDY5r8tm",
+  "data": {
+    "type": "warning",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Design documentation coming soon.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout"
+}

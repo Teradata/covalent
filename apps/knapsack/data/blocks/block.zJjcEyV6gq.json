@@ -8,7 +8,8 @@
           "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-8141",
           "external": true
         },
-        "title": "Current design"
+        "title": "Current design",
+        "description": "Switch"
       },
       {
         "id": "zaClHZ-EdC",
@@ -16,7 +17,8 @@
           "path": "https://www.figma.com/design/UTdDovL41gL90NQF7C7s59/Toggles?m=auto&t=igsBXlZlwwHQzjtQ-6",
           "external": true
         },
-        "title": "Legacy document"
+        "title": "Legacy document",
+        "description": "Toggles"
       },
       {
         "id": "3omt3q3qSl",
@@ -24,7 +26,8 @@
           "path": "https://m2.material.io/components/switches",
           "external": true
         },
-        "title": "Material Design"
+        "title": "Material Design",
+        "description": "Switches"
       },
       {
         "id": "YSl1t08565",

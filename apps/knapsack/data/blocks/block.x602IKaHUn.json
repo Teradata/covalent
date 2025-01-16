@@ -17,7 +17,8 @@
           "path": "https://www.figma.com/design/7olNUGb4brjY7hLX4tq1Tp/Lists?m=auto&t=igsBXlZlwwHQzjtQ-6",
           "external": true
         },
-        "title": "Legacy document"
+        "title": "Legacy document",
+        "description": "Lists"
       },
       {
         "id": "aug3PBDEsU",
@@ -25,7 +26,8 @@
           "path": "https://m2.material.io/components/lists",
           "external": true
         },
-        "title": "Material Design"
+        "title": "Material Design",
+        "description": "Lists"
       },
       {
         "id": "d8fpkW1mi0",

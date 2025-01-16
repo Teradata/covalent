@@ -1,15 +1,15 @@
 {
-  "id": "Bp1XuLrNXO",
+  "id": "6bHtuqra7P",
   "data": {
     "shortcuts": [
       {
-        "id": "u1PJIkfwS4",
+        "id": "vfG5qG64to",
         "link": {
-          "name": "Expansion panel",
-          "path": "/pattern/expansion-panel"
+          "name": "Status header",
+          "path": "/pattern/status-header"
         },
         "title": "See also",
-        "description": "Expansion panel"
+        "description": "Status header"
       }
     ],
     "tileStyles": {

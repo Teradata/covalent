@@ -8,7 +8,8 @@
           "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36810",
           "external": true
         },
-        "title": "Current design"
+        "title": "Current design",
+        "description": "Menu"
       },
       {
         "id": "gesOOgGVAU",
@@ -25,7 +26,8 @@
           "path": "https://m2.material.io/components/menus",
           "external": true
         },
-        "title": "Material Design"
+        "title": "Material Design",
+        "description": "Menus"
       },
       {
         "id": "HQ0WcEII0w",

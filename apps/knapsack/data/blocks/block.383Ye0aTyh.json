@@ -12,12 +12,13 @@
         "description": "Chip set"
       },
       {
-        "id": "jSZRmmb-Pa",
+        "id": "lboeTJSFNU",
         "link": {
-          "path": "https://m2.material.io/components/chips",
-          "external": true
+          "name": "Chip",
+          "path": "/pattern/chip-item"
         },
-        "title": "Material Design"
+        "title": "See also",
+        "description": "Chip"
       }
     ],
     "tileStyles": {
