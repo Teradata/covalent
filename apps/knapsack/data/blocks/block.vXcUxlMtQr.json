@@ -9,7 +9,8 @@
           "path": "/pages/errors"
         },
         "image": "https://knapsack.imgix.net/site/covalent/errors-ejbvtnhncnpng",
-        "title": "Errors"
+        "title": "Errors",
+        "description": "Design for errors based on user impact and severity level."
       },
       {
         "id": "6KKetclTd",
@@ -17,7 +18,8 @@
           "name": "Get Started Cards",
           "path": "/pattern/get-started-cards"
         },
-        "title": "Get Started Cards"
+        "title": "Get started cards",
+        "description": "Standardize actions to help users onboard and deliver value early"
       }
     ],
     "tileStyles": {
