@@ -66,6 +66,20 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Use checkboxes when users need to select more than one option.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
