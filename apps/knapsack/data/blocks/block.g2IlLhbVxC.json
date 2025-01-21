@@ -68,17 +68,13 @@
                   },
                   "content": [
                     {
-                      "text": "Voice & Tone",
+                      "text": "Use sentence style",
                       "type": "text",
                       "marks": [
                         {
                           "type": "bold"
                         }
                       ]
-                    },
-                    {
-                      "text": ": Action-oriented and concise.",
-                      "type": "text"
                     }
                   ]
                 }
@@ -103,7 +99,7 @@
                       ]
                     },
                     {
-                      "text": ": Limit labels to 2-4 words.",
+                      "text": ": Limit labels to 2-3 words.",
                       "type": "text"
                     }
                   ]
