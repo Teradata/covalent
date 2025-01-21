@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'td-component-hero',
   templateUrl: './component-hero.component.html',
   styleUrls: ['./component-hero.component.scss'],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class ComponentHeroComponent {
   resourceUrl: any;

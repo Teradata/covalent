@@ -14,6 +14,8 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   templateUrl: './wordcloud-demo-basic.component.html',
   styleUrls: ['./wordcloud-demo-basic.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class WordcloudDemoBasicComponent implements OnInit {
   themes: string[] = getThemes();

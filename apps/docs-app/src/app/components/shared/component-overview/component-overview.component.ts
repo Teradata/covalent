@@ -12,6 +12,8 @@ const ANGULAR_DOCS_URL = 'https://material.angular.io/';
   styleUrls: ['./component-overview.component.scss'],
   templateUrl: './component-overview.component.html',
   animations: [slideInUpAnimation],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class ComponentOverviewComponent implements OnInit, OnDestroy {
   @HostBinding('@routeAnimation') routeAnimation = true;

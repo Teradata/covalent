@@ -12,6 +12,8 @@ interface IRouteConfig {
   selector: 'layouts-card-over',
   styleUrls: ['./card-over.component.scss'],
   templateUrl: './card-over.component.html',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class CardOverComponent {
   routes: IRouteConfig[] = [

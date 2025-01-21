@@ -30,6 +30,8 @@ import {
     tdJelloAnimation,
     tdPulseAnimation,
   ],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class AnimationsComponent {
   @HostBinding('@routeAnimation') routeAnimation = true;

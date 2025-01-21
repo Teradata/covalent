@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { UtilityStylesComponent } from './utilities-demos/utility-styles/utility-styles.component';
 import { DirectivesComponent } from './utilities-demos/directives/directives.component';
-import { CovalentCommonModule } from '@covalent/core/common';
+import { CovalentCommonModule, TdFullscreenDirective } from '@covalent/core/common';
 import { TdMessageComponent } from '@covalent/core/message';
 
 @NgModule({
@@ -50,6 +50,7 @@ import { TdMessageComponent } from '@covalent/core/message';
     ComponentOverviewModule,
     CovalentCommonModule,
     TdMessageComponent,
+    TdFullscreenDirective,
     // Documentation
     DocumentationToolsModule,
   ],

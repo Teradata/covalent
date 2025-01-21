@@ -19,6 +19,8 @@ import {
   templateUrl: './functions.component.html',
   styleUrls: ['./functions.component.scss'],
   animations: [slideInUpAnimation],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class FunctionsDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation = true;

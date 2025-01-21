@@ -7,6 +7,8 @@ import { slideInUpAnimation } from '../../../../app.animations';
   styleUrls: ['./directives.component.scss'],
   templateUrl: './directives.component.html',
   animations: [slideInUpAnimation],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class DirectivesComponent {
   @HostBinding('@routeAnimation') routeAnimation = true;

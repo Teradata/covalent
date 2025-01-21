@@ -10,8 +10,7 @@ import { ComponentOverviewComponent } from './component-overview.component';
 import { RouterModule } from '@angular/router';
 import { DocumentationToolsModule } from '../../../documentation-tools';
 import { CovalentCommonModule } from '@covalent/core/common';
-import { CovalentFileModule } from '@covalent/core/file';
-@NgModule({
+]@NgModule({
   declarations: [ComponentOverviewComponent],
   exports: [ComponentOverviewComponent],
   imports: [
@@ -25,7 +24,6 @@ import { CovalentFileModule } from '@covalent/core/file';
     /** Covalent Modules */
     CovalentCommonModule,
     DocumentationToolsModule,
-    CovalentFileModule,
-  ],
+],
 })
 export class ComponentOverviewModule {}

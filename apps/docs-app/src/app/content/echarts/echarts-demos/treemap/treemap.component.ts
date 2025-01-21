@@ -12,6 +12,8 @@ import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
   templateUrl: './treemap.component.html',
   styleUrls: ['./treemap.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class TypesTreemapComponent implements OnInit {
   themes: string[] = getThemes();

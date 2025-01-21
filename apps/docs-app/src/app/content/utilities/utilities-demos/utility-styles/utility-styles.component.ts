@@ -7,6 +7,8 @@ import { slideInUpAnimation } from '../../../../app.animations';
   templateUrl: './utility-styles.component.html',
   styleUrls: ['./utility-styles.component.scss'],
   animations: [slideInUpAnimation],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class UtilityStylesComponent {
   @HostBinding('@routeAnimation') routeAnimation = true;

@@ -11,6 +11,8 @@ interface IRouteConfig {
   selector: 'layouts-nav-view',
   styleUrls: ['./nav-view.component.scss'],
   templateUrl: './nav-view.component.html',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class NavViewComponent {
   routes: IRouteConfig[] = [

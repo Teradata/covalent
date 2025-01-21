@@ -9,6 +9,7 @@
       "executor": "@angular-builders/custom-webpack:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "defaultStandalone": false,
         "customWebpackConfig": {
           "path": "./monaco-webpack.config.js",
           "mergeRules": {

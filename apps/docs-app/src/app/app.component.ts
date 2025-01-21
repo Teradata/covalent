@@ -10,6 +10,7 @@ import { getDirection } from './utilities/direction';
   selector: 'docs-covalent',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: false,
 })
 export class DocsAppComponent {
   // Current date
