@@ -5,12 +5,22 @@
       {
         "id": "0G-6-mfmvs",
         "link": {
-          "path": "https://github.com/Teradata/covalent/blob/main/docs/GETTING_STARTED.md",
+          "path": "https://github.com/Teradata/covalent/blob/main/docs/COMPONENTS_QUICKSTART.md",
           "external": true
         },
         "image": "https://knapsack.imgix.net/site/covalent/github-vxn1wovnrnpng",
-        "title": "Getting started",
-        "description": "Instructions for accessing and running Covalent locally"
+        "title": "Quick start",
+        "description": "get started coding with our web components library"
+      },
+      {
+        "id": "UIKDSxVaMK",
+        "link": {
+          "path": "https://github.com/Teradata/covalent/blob/main/docs/COMPONENTS_THEMING.md",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/github-shw1qjqr7z--5REKROui.png",
+        "title": "Tokens theming",
+        "description": "use covalent tokens with our web component library"
       },
       {
         "id": "iAimQhNEKH",
@@ -29,7 +39,7 @@
           "external": true
         },
         "image": "https://knapsack.imgix.net/site/covalent/github--SHw1qjqR7Z.png",
-        "title": "Contribute to Covalent",
+        "title": "Contribute",
         "description": "For contributing new components to Covalent review these guidelines"
       }
     ],
