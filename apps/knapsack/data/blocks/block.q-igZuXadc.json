@@ -21,7 +21,7 @@
           "type": "image",
           "attrs": {
             "alt": "placeholder",
-            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img--p5P-MefnD.png",
+            "src": "https://knapsack.imgix.net/site/covalent/errorshero-dialog--Xcr9VXKIf.png",
             "title": "placeholder"
           }
         },
@@ -29,7 +29,60 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          }
+          },
+          "content": [
+            {
+              "text": "Anatomy dictation specs",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Summary of key visual elements",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Dictate anatomy examples",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "horizontalRule"
         }
       ]
     }

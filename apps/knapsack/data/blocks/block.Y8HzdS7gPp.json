@@ -5,6 +5,14 @@
       "type": "doc",
       "content": [
         {
+          "type": "image",
+          "attrs": {
+            "alt": "placeholder",
+            "src": "https://knapsack.imgix.net/site/covalent/errorshero-alert--vEI6se-1Zg.png",
+            "title": "placeholder"
+          }
+        },
+        {
           "type": "heading",
           "attrs": {
             "level": 2,
@@ -12,27 +20,7 @@
           },
           "content": [
             {
-              "text": "Anatomy",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "attrs": {
-            "alt": "placeholder",
-            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img--p5P-MefnD.png",
-            "title": "placeholder"
-          }
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Anatomy dictation specs",
+              "text": "Anatomy ",
               "type": "text",
               "marks": [
                 {
@@ -43,7 +31,10 @@
           ]
         },
         {
-          "type": "bulletList",
+          "type": "orderedList",
+          "attrs": {
+            "start": 1
+          },
           "content": [
             {
               "type": "listItem",
@@ -55,8 +46,26 @@
                   },
                   "content": [
                     {
-                      "text": "Summary of key visual elements",
+                      "text": "Alert[default] error symbol:",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": " State icon alert component positioned left of the error message and is vertically-aligned to the top of its container. Color is ",
                       "type": "text"
+                    },
+                    {
+                      "text": "cv-theme/on-negative",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -72,8 +81,107 @@
                   },
                   "content": [
                     {
-                      "text": "Dictate anatomy examples",
+                      "text": "Alert Component:",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "orderedList",
+                  "attrs": {
+                    "start": 1
+                  },
+                  "content": [
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "Error Message",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "Secondar CTA (optional)",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "Close Button (optional)",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Alert[inline] error symbol:",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": " State icon alert component color ",
                       "type": "text"
+                    },
+                    {
+                      "text": "cv-theme/on-negative-container",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ]
                     }
                   ]
                 }
