@@ -2,3 +2,6 @@ id: patterns
 title: Patterns
 blockIds:
   - vXcUxlMtQr
+description: >-
+  A pattern represents the sum of a combination of components recommended to solve for common user problems such as
+  errors and onboarding.
