@@ -2,11 +2,31 @@ import { Component, Input, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin, Observable, Subject, Subscriber } from 'rxjs';
 import { catchError, map, takeUntil } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { TdHighlightComponent } from '@covalent/highlight';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'demo-component',
   styleUrls: ['./demo.component.scss'],
   templateUrl: './demo.component.html',
+  imports: [
+    /** Covalent Modules */
+    TdHighlightComponent,
+    MatToolbarModule,
+    /** Angular Modules */
+    CommonModule,
+    MatTabsModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+  ],
 })
 export class DemoComponent implements OnDestroy {
   @Input() demoId!: string;

@@ -12,6 +12,8 @@ interface IRouteConfig {
   selector: 'layouts-manage-list',
   styleUrls: ['./manage-list.component.scss'],
   templateUrl: './manage-list.component.html',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class ManageListComponent {
   routes: IRouteConfig[] = [

@@ -55,8 +55,8 @@ import { RouterPathService } from './services/router-path.service';
 import { IconService } from './services/icon.service';
 
 @NgModule({
-  imports: [FormsModule, CommonModule, TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
-  exports: [FormsModule, CommonModule, TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
+  imports: [FormsModule, CommonModule],
+  exports: [FormsModule, CommonModule],
   providers: [
     RouterPathService,
     IconService,

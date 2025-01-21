@@ -15,6 +15,8 @@ import { GitHubService } from '../../services/github.service';
 @Component({
   selector: 'td-toolbar',
   templateUrl: '././toolbar.component.html',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false
 })
 export class ToolbarComponent implements OnInit {
   dir: 'ltr' | 'rtl' = getDirection();

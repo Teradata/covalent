@@ -15,7 +15,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 export class TdFileDropBase {}
 
-@Directive({ selector: '[tdFileDrop]' })
+@Directive({ selector: '[tdFileDrop]', standalone: true })
 export class TdFileDropDirective implements OnInit, OnDestroy {
   private _multiple = false;
   private _dragenterListener?: VoidFunction;

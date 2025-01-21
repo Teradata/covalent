@@ -29,6 +29,7 @@ import {
   mixinDisabled,
 } from '@covalent/core/common';
 import { TdFileDropDirective } from '../public_api';
+import { MatButton } from '@angular/material/button';
 
 @Directive({
   selector: '[tdFileInputLabel]ng-template',
@@ -61,8 +62,8 @@ export const _TdFileInputMixinBase = mixinControlValueAccessor(
   ],
   selector: 'td-file-input',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'value'],
-  imports: [TdFileDropDirective],
+  inputs: ['disabled', 'value', 'formControl'],
+  imports: [TdFileDropDirective, MatButton],
   styleUrls: ['./file-input.component.scss'],
   templateUrl: './file-input.component.html',
 })

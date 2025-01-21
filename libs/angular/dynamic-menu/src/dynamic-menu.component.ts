@@ -5,12 +5,14 @@ import {
   IMenuTrigger,
   ITdDynamicMenuLinkClickEvent,
 } from './dynamic-menu.menu';
+import { MatMenuTrigger } from '@angular/material/menu';
+import { TdDynamicMenuItemComponent } from './dynamic-menu-item/dynamic-menu-item.component';
 
 @Component({
   selector: 'td-dynamic-menu',
   styleUrls: ['dynamic-menu.component.scss'],
   templateUrl: './dynamic-menu.component.html',
-  imports: [MatIcon],
+  imports: [MatIcon, MatMenuTrigger, TdDynamicMenuItemComponent],
 })
 export class TdDynamicMenuComponent {
   @Input() trigger!: IMenuTrigger;

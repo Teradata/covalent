@@ -19,6 +19,8 @@ interface ILogConfig {
   styleUrls: ['./pipes.component.scss'],
   templateUrl: './pipes.component.html',
   animations: [slideInUpAnimation],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class PipesComponent {
   @HostBinding('@routeAnimation') routeAnimation = true;

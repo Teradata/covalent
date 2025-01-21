@@ -35,11 +35,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-import { CovalentHighlightModule } from '@covalent/highlight';
+import { TdHighlightComponent } from '@covalent/highlight';
 import { TdMarkdownComponent } from '@covalent/markdown';
-import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
-import { CovalentLayoutModule } from '@covalent/core/layout';
-import { CovalentFileModule } from '@covalent/core/file';
+import { TdDynamicFormsComponent } from '@covalent/dynamic-forms';
+import { TdLayoutComponent } from '@covalent/core/layout';
+import { TdFileUploadComponent } from '@covalent/core/file';
 
 import { SidenavContentModule } from './components/shared/sidenav-content/sidenav-content.module';
 
@@ -77,10 +77,11 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
     MatSnackBarModule,
     MatExpansionModule,
     /** Covalent Modules */
-    CovalentLayoutModule,
-    CovalentHighlightModule,
+    TdLayoutComponent,
+    TdHighlightComponent,
     TdMarkdownComponent,
-    CovalentDynamicFormsModule,
+    TdDynamicFormsComponent,
+    TdFileUploadComponent,
     ToolbarModule,
     TranslateModule.forRoot({
       loader: {
@@ -92,7 +93,6 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
     SidenavContentModule,
     ContentContainerModule,
     appRoutes,
-    CovalentFileModule,
   ],
   providers: [
     appRoutingProviders,

@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-content-details',
   templateUrl: './content-details.component.html',
   styleUrls: ['./content-details.component.scss'],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class DetailsWrapperComponent implements OnInit {
   componentArray!: any[];
