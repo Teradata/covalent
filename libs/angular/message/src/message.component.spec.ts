@@ -8,8 +8,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 describe('Component: Message', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentMessageModule],
-      declarations: [
+      imports: [
+        NoopAnimationsModule, 
+        CovalentMessageModule,
         TdMessageBasicTestComponent,
         TdMessageContentTestComponent,
         TdMessageOpenedTestComponent,
@@ -312,6 +313,7 @@ describe('Component: Message', () => {
       [color]="color"
     ></td-message>
   `,
+  imports: [TdMessageComponent],
 })
 class TdMessageBasicTestComponent {
   label!: string;
@@ -325,6 +327,7 @@ class TdMessageBasicTestComponent {
       <button td-message-actions>Button</button>
     </td-message>
   `,
+  imports: [TdMessageComponent],
 })
 class TdMessageContentTestComponent {
   label = 'Label';
@@ -336,6 +339,7 @@ class TdMessageContentTestComponent {
   template: `
     <td-message [label]="label" [color]="color" [opened]="opened"></td-message>
   `,
+  imports: [TdMessageComponent],
 })
 class TdMessageOpenedTestComponent {
   label!: string;

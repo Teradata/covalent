@@ -4,6 +4,7 @@ import { TdMarkdownNavigatorComponent } from './markdown-navigator.component';
 import { TdMarkdownNavigatorWindowComponent } from './markdown-navigator-window/markdown-navigator-window.component';
 import { TdMarkdownNavigatorWindowDirective } from './markdown-navigator-window-directive/markdown-navigator-window.directive';
 import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window-service/markdown-navigator-window.service';
+import { TdDialogService } from '@covalent/core/dialogs';
 
 /**
  * @deprecated This module is deprecated and will be removed in future versions.
@@ -22,6 +23,6 @@ import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window-se
     TdMarkdownNavigatorWindowComponent,
     TdMarkdownNavigatorWindowDirective,
   ],
-  providers: [TdMarkdownNavigatorWindowService],
+  providers: [TdMarkdownNavigatorWindowService, TdDialogService],
 })
 export class CovalentMarkdownNavigatorModule {}

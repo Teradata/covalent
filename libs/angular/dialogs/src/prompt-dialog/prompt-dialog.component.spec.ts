@@ -37,8 +37,7 @@ describe('Component: TdPromptDialogComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentDialogsModule],
-      declarations: [TestComponent],
+      imports: [NoopAnimationsModule, CovalentDialogsModule, TestComponent],
     }).compileComponents();
   }));
 

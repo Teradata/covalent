@@ -9,8 +9,7 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular-code-editor"],
       "options": {
-        "project": "libs/angular-code-editor/ng-package.json",
-        "tailwindConfig": "libs/angular-code-editor/tailwind.config.js"
+        "project": "libs/angular-code-editor/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -30,7 +29,7 @@
       ]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/angular-code-editor"],
       "options": {
         "jestConfig": "libs/angular-code-editor/jest.config.js",

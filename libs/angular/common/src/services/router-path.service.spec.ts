@@ -1,6 +1,6 @@
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RouterPathService } from './router-path.service';
 
@@ -10,6 +10,7 @@ import { RouterPathService } from './router-path.service';
     <router-outlet></router-outlet>
     <div>fake</div>
   `,
+  imports: [RouterOutlet],
 })
 export class FakeComponent {}
 
@@ -21,8 +22,8 @@ describe('Service: RouterPath', () => {
           { path: '', component: FakeComponent },
           { path: 'foo', component: FakeComponent },
         ]),
+        FakeComponent
       ],
-      declarations: [FakeComponent],
       providers: [RouterPathService],
     });
     TestBed.compileComponents();

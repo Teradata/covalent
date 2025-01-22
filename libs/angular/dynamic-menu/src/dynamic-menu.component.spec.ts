@@ -1,7 +1,5 @@
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentDynamicMenuModule } from './dynamic-menu.module';
 import { IMenuTrigger, IMenuItem } from './dynamic-menu.menu';
 import { By, DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
@@ -10,12 +8,12 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { TdDynamicMenuComponent } from './dynamic-menu.component';
 
 describe('Component: DynamicMenu', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TdDynamicMenuBasicTestComponent],
-      imports: [NoopAnimationsModule, CovalentDynamicMenuModule],
+      imports: [TdDynamicMenuBasicTestComponent],
       providers: [
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
@@ -137,6 +135,7 @@ describe('Component: DynamicMenu', () => {
   template: `
     <td-dynamic-menu [trigger]="trigger" [items]="items"></td-dynamic-menu>
   `,
+  imports: [TdDynamicMenuComponent],
 })
 class TdDynamicMenuBasicTestComponent {
   trigger!: IMenuTrigger;

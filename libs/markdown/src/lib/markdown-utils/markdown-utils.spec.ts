@@ -51,7 +51,7 @@ describe('Markdown utils', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [JumpToAnchorTestComponent],
+        imports: [JumpToAnchorTestComponent],
       }).compileComponents();
     })
   );

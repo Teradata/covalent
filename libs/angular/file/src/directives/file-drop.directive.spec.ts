@@ -8,8 +8,7 @@ import { TdFileDropDirective } from './file-drop.directive';
 describe('Directive: FileDrop', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TdFileDropBasicTestComponent],
-      imports: [CovalentFileModule],
+      imports: [CovalentFileModule, TdFileDropBasicTestComponent],
     });
   }));
 
@@ -249,6 +248,7 @@ describe('Directive: FileDrop', () => {
       (fileDrop)="files = $event"
     ></div>
   `,
+  imports: [TdFileDropDirective],
 })
 class TdFileDropBasicTestComponent {
   multiple!: boolean;
