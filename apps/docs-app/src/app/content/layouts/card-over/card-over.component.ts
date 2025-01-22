@@ -8,6 +8,7 @@ interface IRouteConfig {
   description?: string;
 }
 @Component({
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'layouts-card-over',
   styleUrls: ['./card-over.component.scss'],
@@ -180,6 +181,7 @@ export class CardOverComponent {
   tdLayoutTypescript = `
     import { Component, ChangeDetectionStrategy } from '@angular/core';
     @Component({
+  standalone: false,
       changeDetection: ChangeDetectionStrategy.OnPush,
       selector: 'layouts-card-over',
       styleUrls: ['./card-over.component.scss'],

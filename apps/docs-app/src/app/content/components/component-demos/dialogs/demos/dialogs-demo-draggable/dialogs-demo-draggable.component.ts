@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TdDialogService } from '@covalent/core/dialogs';
 
 @Component({
+  standalone: false,
   selector: 'draggable-dialog',
   template: `
     <h2>Draggable dialog</h2>
@@ -14,6 +15,7 @@ import { TdDialogService } from '@covalent/core/dialogs';
 export class DraggableDialogComponent {}
 
 @Component({
+  standalone: false,
   selector: 'dialogs-demo-draggable',
   styleUrls: ['./dialogs-demo-draggable.component.scss'],
   templateUrl: './dialogs-demo-draggable.component.html',

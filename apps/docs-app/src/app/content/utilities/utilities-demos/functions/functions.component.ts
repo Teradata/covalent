@@ -15,6 +15,7 @@ import {
 } from '@covalent/core/common';
 
 @Component({
+  standalone: false,
   selector: 'td-functions',
   templateUrl: './functions.component.html',
   styleUrls: ['./functions.component.scss'],

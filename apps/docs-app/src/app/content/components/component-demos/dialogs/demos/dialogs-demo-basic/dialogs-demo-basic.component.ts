@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TdDialogService } from '@covalent/core/dialogs';
 
 @Component({
+  standalone: false,
   selector: 'dialogs-demo-basic',
   styleUrls: ['./dialogs-demo-basic.component.scss'],
   templateUrl: './dialogs-demo-basic.component.html',

@@ -1,13 +1,14 @@
 import { NgModule, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { TdChartSeriesMapComponent } from './map.component';
 
 export const MAP_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesMapComponent];
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [MAP_MODULE_COMPONENTS],
+  imports: [MAP_MODULE_COMPONENTS],
   exports: [MAP_MODULE_COMPONENTS],
 })
 export class CovalentMapEchartsModule {}

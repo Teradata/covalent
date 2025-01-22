@@ -3,6 +3,7 @@ import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
+  standalone: false,
   selector: 'flavored-markdown-demo-buttons',
   styleUrls: ['./flavored-markdown-demo-buttons.component.scss'],
   templateUrl: './flavored-markdown-demo-buttons.component.html',

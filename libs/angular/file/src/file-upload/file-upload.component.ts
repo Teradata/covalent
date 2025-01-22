@@ -14,7 +14,10 @@ import {
   TdFileInputComponent,
   TdFileInputLabelDirective,
 } from '../file-input/file-input.component';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 export class TdFileUploadBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
@@ -32,6 +35,7 @@ export class TdFileUploadBase {
   selector: 'td-file-upload',
   styleUrls: ['./file-upload.component.scss'],
   templateUrl: './file-upload.component.html',
+  imports: [CommonModule, FormsModule, TdFileInputComponent, MatButtonModule, MatIcon],
 })
 export class TdFileUploadComponent implements ControlValueAccessor {
   private _multiple = false;

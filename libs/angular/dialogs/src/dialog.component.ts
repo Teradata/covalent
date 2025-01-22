@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   Directive,
@@ -5,6 +6,7 @@ import {
   QueryList,
   AfterContentInit,
 } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Directive({ selector: '[tdDialogTitle]' })
 export class TdDialogTitleDirective {}
@@ -22,6 +24,7 @@ export class TdDialogStatusDirective {}
   selector: 'td-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
+  imports: [CommonModule, MatDialogModule],
 })
 export class TdDialogComponent implements AfterContentInit {
   @ContentChildren(TdDialogTitleDirective, { descendants: true })

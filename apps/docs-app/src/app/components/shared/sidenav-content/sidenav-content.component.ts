@@ -5,6 +5,7 @@ import { IsActiveMatchOptions, Router } from '@angular/router';
 import { ICombinedRouteGroup } from '../../../utilities/route-group';
 
 @Component({
+  standalone: false,
   selector: 'app-sidenav-content',
   templateUrl: './sidenav-content.component.html',
   styleUrls: ['./sidenav-content.component.scss'],

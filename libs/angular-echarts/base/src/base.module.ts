@@ -1,6 +1,4 @@
 import { NgModule, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { TdChartComponent } from './chart.component';
 import { TdChartXAxisComponent } from './axis/x-axis.component';
 import { TdChartYAxisComponent } from './axis/y-axis.component';
@@ -17,9 +15,12 @@ export const BASE_MODULE_COMPONENTS: Type<any>[] = [
 
 registerDefaultThemes();
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [BASE_MODULE_COMPONENTS],
+  imports: [BASE_MODULE_COMPONENTS],
   exports: [BASE_MODULE_COMPONENTS],
 })
 export class CovalentBaseEchartsModule {}

@@ -7,6 +7,7 @@ import {
 } from '@covalent/core/dynamic-menu';
 
 @Component({
+  standalone: false,
   selector: 'dynamic-menu-demo-basic',
   styleUrls: ['./dynamic-menu-demo-basic.component.scss'],
   templateUrl: './dynamic-menu-demo-basic.component.html',

@@ -15,6 +15,7 @@ interface ILogConfig {
 }
 
 @Component({
+  standalone: false,
   selector: 'pipes-demo',
   styleUrls: ['./pipes.component.scss'],
   templateUrl: './pipes.component.html',

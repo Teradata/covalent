@@ -8,6 +8,7 @@ import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'clustering-demo-basic',
   styleUrls: ['./clustering-demo-basic.component.scss'],
   templateUrl: './clustering-demo-basic.component.html',

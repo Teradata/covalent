@@ -9,6 +9,7 @@ import { TdHistogramBinningMethod } from '@covalent/echarts/histogram';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'histogram-demo-basic',
   styleUrls: ['./histogram-demo-basic.component.scss'],
   templateUrl: './histogram-demo-basic.component.html',

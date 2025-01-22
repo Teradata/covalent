@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ICopyCodeTooltips } from '@covalent/highlight';
 
 @Component({
+  standalone: false,
   selector: 'flavored-markdown-demo-inline',
   styleUrls: ['./flavored-markdown-demo-inline.component.scss'],
   templateUrl: './flavored-markdown-demo-inline.component.html',
@@ -16,6 +17,7 @@ export class FlavoredMarkdownDemoInlineComponent {
 
     \`\`\`typescript
       @Component({
+  standalone: false,
         selector: 'demo',
         styleUrls: ['./demo.component.scss'],
         templateUrl: './demo.component.html',

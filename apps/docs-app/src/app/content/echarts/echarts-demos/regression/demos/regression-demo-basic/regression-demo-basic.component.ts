@@ -9,6 +9,7 @@ import { TdRegressionType } from '@covalent/echarts/regression';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'regression-demo-basic',
   styleUrls: ['./regression-demo-basic.component.scss'],
   templateUrl: './regression-demo-basic.component.html',

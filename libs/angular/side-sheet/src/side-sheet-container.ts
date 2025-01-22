@@ -250,6 +250,7 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.Default,
   animations: [tdSideSheetAnimations.sideSheetContainer],
+  imports: [CdkPortalOutlet],
 })
 export class CovalentSideSheetContainerComponent extends _CovalentSideSheetContainerBase {
   /** State of the side-sheet animation. */

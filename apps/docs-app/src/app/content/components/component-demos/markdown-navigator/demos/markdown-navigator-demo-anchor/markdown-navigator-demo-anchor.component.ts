@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 
 @Component({
+  standalone: false,
   selector: 'markdown-navigator-demo-anchor',
   styleUrls: ['./markdown-navigator-demo-anchor.component.scss'],
   templateUrl: './markdown-navigator-demo-anchor.component.html',

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'markdown-demo-basic',
   styleUrls: ['./markdown-demo-basic.component.scss'],
   templateUrl: './markdown-demo-basic.component.html',

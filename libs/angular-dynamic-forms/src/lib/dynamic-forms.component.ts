@@ -13,21 +13,24 @@ import {
   UntypedFormGroup,
   UntypedFormBuilder,
   AbstractControl,
+  ReactiveFormsModule,
 } from '@angular/forms';
 
 import {
   TdDynamicFormsService,
   ITdDynamicElementConfig,
 } from './services/dynamic-forms.service';
-import { TdDynamicFormsErrorTemplateDirective } from './dynamic-element.component';
+import { TdDynamicElementComponent, TdDynamicFormsErrorTemplateDirective } from './dynamic-element.component';
 
 import { timer, Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'td-dynamic-forms',
   templateUrl: './dynamic-forms.component.html',
   styleUrls: ['./dynamic-forms.component.scss'],
+  imports: [CommonModule, TdDynamicElementComponent, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
@@ -195,7 +198,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
       this._renderedElements.push(Object.assign({}, elem));
     });
     // call a change detection since the whole form might change
-    this._changeDetectorRef.detectChanges();
+    //this._changeDetectorRef.detectChanges();
     timer(0)
       .toPromise()
       .then(() => {

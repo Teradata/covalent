@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'search-demo-box',
   styleUrls: ['./search-demo-box.component.scss'],
   templateUrl: './search-demo-box.component.html',

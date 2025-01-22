@@ -21,6 +21,10 @@ import { takeUntil } from 'rxjs/operators';
 import { TdLayoutComponent } from '../layout.component';
 
 import { tdCollapseAnimation } from '@covalent/core/common';
+import { CommonModule } from '@angular/common';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatIcon } from '@angular/material/icon';
+import { MatIconButton } from '@angular/material/button';
 
 @Directive({
   selector: '[tdNavigationDrawerMenu]',
@@ -37,6 +41,7 @@ export class TdNavigationDrawerToolbarDirective {}
   styleUrls: ['./navigation-drawer.component.scss'],
   templateUrl: './navigation-drawer.component.html',
   animations: [tdCollapseAnimation],
+  imports: [CommonModule, MatToolbar, MatIcon, MatIconButton],
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   private _menuToggled = false;

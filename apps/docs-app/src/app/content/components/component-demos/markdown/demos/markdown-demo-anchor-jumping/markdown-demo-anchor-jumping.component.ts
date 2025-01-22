@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'markdown-demo-anchor-jumping',
   styleUrls: ['./markdown-demo-anchor-jumping.component.scss'],
   templateUrl: './markdown-demo-anchor-jumping.component.html',

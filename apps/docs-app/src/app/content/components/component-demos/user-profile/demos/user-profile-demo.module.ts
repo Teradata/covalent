@@ -6,7 +6,7 @@ import { MatListModule } from '@angular/material/list';
 
 import { UserProfileDemoComponent } from './user-profile-demo.component';
 import { UserProfileDemoBasicComponent } from './user-profile-demo-basic/user-profile-demo-basic.component';
-import { CovalentUserProfileModule } from '@covalent/core/user-profile';
+import { TdUserProfileComponent } from '@covalent/core/user-profile';
 import { UserProfileDemoRoutingModule } from './user-profile-demo-routing.module';
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { UserProfileDemoListItemsSharedModule } from './user-profile-demo-list-items/user-profile-demo-list-items.module';
@@ -18,10 +18,10 @@ import { UserProfileDemoListItemsSharedModule } from './user-profile-demo-list-i
     // Material
     MatListModule,
     MatIconModule,
+    // Covalent
+    TdUserProfileComponent,
     UserProfileDemoListItemsSharedModule,
     UserProfileDemoRoutingModule,
-    /** Covalent Modules */
-    CovalentUserProfileModule,
     /** Angular Modules */
     CommonModule,
   ],
