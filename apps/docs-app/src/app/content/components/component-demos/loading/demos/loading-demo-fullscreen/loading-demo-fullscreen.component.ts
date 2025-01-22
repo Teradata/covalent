@@ -6,6 +6,7 @@ import {
 } from '@covalent/core/loading';
 
 @Component({
+  standalone: false,
   selector: 'loading-demo-fullscreen',
   styleUrls: ['./loading-demo-fullscreen.component.scss'],
   templateUrl: './loading-demo-fullscreen.component.html',

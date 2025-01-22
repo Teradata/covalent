@@ -16,6 +16,7 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'draggable-resizable-window-dialog',
   template: `
     <td-window-dialog
@@ -37,6 +38,7 @@ export class DraggableResizableWindowDialogComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'dialogs-demo-draggable-resizable-window',
   styleUrls: ['./dialogs-demo-draggable-resizable-window.component.scss'],
   templateUrl: './dialogs-demo-draggable-resizable-window.component.html',

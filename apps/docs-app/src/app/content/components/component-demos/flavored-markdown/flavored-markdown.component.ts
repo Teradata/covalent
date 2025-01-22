@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'flavored-markdown-demo',
   styleUrls: ['./flavored-markdown.component.scss'],
   templateUrl: './flavored-markdown.component.html',

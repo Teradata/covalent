@@ -9,11 +9,18 @@ import {
 import { MatDialogRef } from '@angular/material/dialog';
 import { LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/keycodes';
 import { fromEvent, Subject, takeUntil } from 'rxjs';
+import { FormsModule } from '@angular/forms';
+import { MatFormField } from '@angular/material/form-field';
+import { TdDialogActionsDirective, TdDialogComponent, TdDialogContentDirective, TdDialogTitleDirective } from '../dialog.component';
+import { CommonModule } from '@angular/common';
+import { MatInput } from '@angular/material/input';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'td-prompt-dialog',
   templateUrl: './prompt-dialog.component.html',
   styleUrls: ['./prompt-dialog.component.scss'],
+  imports: [CommonModule, FormsModule, MatFormField, MatInput, MatButton, TdDialogComponent, TdDialogTitleDirective, TdDialogContentDirective, TdDialogActionsDirective],
 })
 export class TdPromptDialogComponent implements AfterViewInit, OnDestroy {
   title?: string;

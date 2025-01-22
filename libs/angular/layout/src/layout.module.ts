@@ -1,16 +1,6 @@
 import { Type } from '@angular/core';
 import { NgModule } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { CovalentMenuModule } from '@covalent/core/menu';
-
 import { TdLayoutComponent } from './layout.component';
 import {
   TdLayoutToggleDirective,
@@ -66,19 +56,13 @@ const TD_LAYOUTS: Type<any>[] = [
   TdNavigationDrawerToolbarDirective,
 ];
 
+
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [
-    CommonModule,
-    ScrollingModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatDividerModule,
-    CovalentMenuModule,
-  ],
-  declarations: [...TD_LAYOUTS],
+  imports: [...TD_LAYOUTS],
   exports: [...TD_LAYOUTS],
 })
 export class CovalentLayoutModule {}

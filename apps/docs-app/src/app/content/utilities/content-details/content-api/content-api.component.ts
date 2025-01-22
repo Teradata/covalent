@@ -5,6 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { componentDetails } from '../../../components/components';
 
 @Component({
+  standalone: false,
   selector: 'app-content-api',
   templateUrl: './content-api.component.html',
   styleUrls: ['./content-api.component.scss'],

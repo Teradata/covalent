@@ -1,10 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, Optional } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'td-layout-nav',
   styleUrls: ['./layout-nav.component.scss'],
   templateUrl: './layout-nav.component.html',
+  imports: [CommonModule, MatToolbar, MatIcon],
 })
 export class TdLayoutNavComponent {
   /**

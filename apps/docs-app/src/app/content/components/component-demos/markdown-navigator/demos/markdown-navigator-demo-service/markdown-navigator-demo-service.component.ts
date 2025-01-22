@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TdMarkdownNavigatorWindowService } from '@covalent/markdown-navigator';
 
 @Component({
+  standalone: false,
   selector: 'markdown-navigator-demo-service',
   styleUrls: ['./markdown-navigator-demo-service.component.scss'],
   templateUrl: './markdown-navigator-demo-service.component.html',

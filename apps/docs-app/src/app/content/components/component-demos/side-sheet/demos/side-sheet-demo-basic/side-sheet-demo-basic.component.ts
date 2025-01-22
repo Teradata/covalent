@@ -2,6 +2,7 @@ import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
+  standalone: false,
   selector: 'side-sheet-demo-basic',
   templateUrl: './side-sheet-demo-basic.component.html',
   styleUrls: ['./side-sheet-demo-basic.component.scss'],

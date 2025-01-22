@@ -7,6 +7,7 @@ import {
 import { CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'sidesheet-demo',
   styleUrls: ['./sidesheet.component.scss'],

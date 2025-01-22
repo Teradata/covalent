@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 
-import { MatSidenav, MatDrawerToggleResult } from '@angular/material/sidenav';
+import { MatSidenav, MatDrawerToggleResult, MatSidenavContainer } from '@angular/material/sidenav';
 
 import { ILayoutTogglable } from '../layout-toggle.class';
 
@@ -8,6 +8,7 @@ import { ILayoutTogglable } from '../layout-toggle.class';
   selector: 'td-layout-manage-list',
   styleUrls: ['./layout-manage-list.component.scss'],
   templateUrl: './layout-manage-list.component.html',
+  imports: [MatSidenav, MatSidenavContainer],
 })
 export class TdLayoutManageListComponent implements ILayoutTogglable {
   @ViewChild(MatSidenav, { static: true }) sidenav!: MatSidenav;

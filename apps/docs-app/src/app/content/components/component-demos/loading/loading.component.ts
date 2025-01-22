@@ -8,6 +8,7 @@ import {
 import { slideInUpAnimation } from '../../../../app.animations';
 
 @Component({
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'loading-demo',
   styleUrls: ['./loading.component.scss'],

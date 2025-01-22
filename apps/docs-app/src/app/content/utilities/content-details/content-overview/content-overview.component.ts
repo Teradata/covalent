@@ -4,6 +4,7 @@ import { componentDetails } from '../../../../content/components/components';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'app-content-overview',
   templateUrl: './content-overview.component.html',
   styleUrls: ['./content-overview.component.scss'],

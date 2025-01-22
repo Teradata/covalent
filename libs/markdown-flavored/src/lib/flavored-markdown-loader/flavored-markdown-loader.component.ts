@@ -9,8 +9,10 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
-import { ITdFlavoredMarkdownButtonClickEvent } from '../flavored-markdown.component';
+import { ITdFlavoredMarkdownButtonClickEvent, TdFlavoredMarkdownComponent } from '../flavored-markdown.component';
 import { ICopyCodeTooltips } from '@covalent/highlight';
+import { MatProgressBar } from '@angular/material/progress-bar';
+import { CommonModule } from '@angular/common';
 
 // TODO: make a td-markdown-loader component
 
@@ -19,6 +21,7 @@ import { ICopyCodeTooltips } from '@covalent/highlight';
   styleUrls: ['./flavored-markdown-loader.component.scss'],
   templateUrl: './flavored-markdown-loader.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, MatProgressBar, TdFlavoredMarkdownComponent]
 })
 export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
   /**

@@ -5,6 +5,7 @@ import {
 } from '@covalent/dynamic-forms';
 
 @Component({
+  standalone: false,
   selector: 'dynamic-forms-demo-date',
   styleUrls: ['./dynamic-forms-demo-date.component.scss'],
   templateUrl: './dynamic-forms-demo-date.component.html',

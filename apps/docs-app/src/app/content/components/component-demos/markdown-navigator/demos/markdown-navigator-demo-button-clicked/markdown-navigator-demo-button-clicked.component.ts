@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 
 @Component({
+  standalone: false,
   selector: 'markdown-navigator-demo-button-clicked',
   styleUrls: ['./markdown-navigator-demo-button-clicked.component.scss'],
   templateUrl: './markdown-navigator-demo-button-clicked.component.html',

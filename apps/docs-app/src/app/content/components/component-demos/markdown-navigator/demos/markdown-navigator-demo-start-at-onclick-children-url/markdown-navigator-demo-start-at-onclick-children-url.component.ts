@@ -8,6 +8,7 @@ function compareByTitle(
   return o1.title === o2.title;
 }
 @Component({
+  standalone: false,
   selector: 'markdown-navigator-demo-start-at-onclick-children-url',
   templateUrl:
     './markdown-navigator-demo-start-at-onclick-children-url.component.html',

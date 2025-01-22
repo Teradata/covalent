@@ -1,10 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
+import { MatSlider, MatSliderThumb } from '@angular/material/slider';
 
 @Component({
   selector: 'td-dynamic-slider',
   styleUrls: ['./dynamic-slider.component.scss'],
   templateUrl: './dynamic-slider.component.html',
+  imports: [CommonModule, ReactiveFormsModule, MatSlider, MatSliderThumb],
 })
 export class TdDynamicSliderComponent {
   control!: UntypedFormControl;

@@ -25,7 +25,7 @@ import {
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -40,6 +40,8 @@ import {
 } from '@covalent/highlight';
 
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 export interface ITdFlavoredMarkdownButtonClickEvent {
   text: string;
@@ -83,6 +85,7 @@ export interface ITdFlavoredMarkDownTableColumn {
       <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
   `,
+  imports: [CommonModule, MatTableModule, TdMarkdownComponent],
 })
 export class TdFlavoredMarkdownTableComponent implements OnInit, AfterViewInit {
   @Input() columnDefs: ITdFlavoredMarkDownTableColumn[] = [];
@@ -121,6 +124,7 @@ export class TdFlavoredMarkdownTableComponent implements OnInit, AfterViewInit {
       {{ text }}
     </button>
   `,
+  imports: [MatButtonModule],
 })
 export class TdFlavoredMarkdownButtonComponent {
   @HostBinding('style.display') display = 'inline-block';
@@ -163,6 +167,7 @@ export type IReplacerFunc<T> = (
   styleUrls: ['./flavored-markdown.component.scss'],
   templateUrl: './flavored-markdown.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [TdFlavoredMarkdownContainerDirective],
 })
 export class TdFlavoredMarkdownComponent
   implements AfterViewInit, OnChanges, OnDestroy

@@ -2,16 +2,19 @@ import { Component } from '@angular/core';
 import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 
 @Component({
+  standalone: false,
   template: ` <p [style.padding.em]="1">Global footer</p> `,
 })
 export class MarkdownNavigatorDemoFooterGlobalExampleComponent {}
 
 @Component({
+  standalone: false,
   template: ` <p [style.padding.em]="1">Item footer</p> `,
 })
 export class MarkdownNavigatorDemoFooterItemExampleComponent {}
 
 @Component({
+  standalone: false,
   selector: 'markdown-navigator-demo-footer',
   styleUrls: ['./markdown-navigator-demo-footer.component.scss'],
   templateUrl: './markdown-navigator-demo-footer.component.html',

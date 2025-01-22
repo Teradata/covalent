@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatIcon } from '@angular/material/icon';
+import { TdDialogActionsDirective, TdDialogComponent, TdDialogContentDirective, TdDialogStatusDirective, TdDialogTitleDirective } from '../dialog.component';
+import { CommonModule } from '@angular/common';
+import { MatButton, MatIconButton } from '@angular/material/button';
 
 export type TdStatusDialogStates = 'error' | 'positive' | 'warning';
 
@@ -12,6 +16,7 @@ export type TdStatusDialogDetailsLabels = {
   selector: 'td-status-dialog',
   templateUrl: './status-dialog.component.html',
   styleUrls: ['./status-dialog.component.scss'],
+  imports: [CommonModule, MatIcon, MatIconButton, MatButton, TdDialogComponent, TdDialogTitleDirective, TdDialogContentDirective, TdDialogActionsDirective, TdDialogStatusDirective],
 })
 export class TdStatusDialogComponent {
   // Label of the close button in the footer

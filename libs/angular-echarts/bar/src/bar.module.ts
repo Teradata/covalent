@@ -1,13 +1,14 @@
 import { NgModule, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { TdChartSeriesBarComponent } from './bar.component';
 
 export const BAR_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesBarComponent];
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [BAR_MODULE_COMPONENTS],
+  imports: [BAR_MODULE_COMPONENTS],
   exports: [BAR_MODULE_COMPONENTS],
 })
 export class CovalentBarEchartsModule {}

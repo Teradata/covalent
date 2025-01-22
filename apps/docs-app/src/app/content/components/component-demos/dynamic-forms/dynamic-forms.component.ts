@@ -7,6 +7,7 @@ import {
 } from '@covalent/dynamic-forms';
 
 @Component({
+  standalone: false,
   selector: 'dynamic-forms-demo',
   styleUrls: ['./dynamic-forms.component.scss'],
   templateUrl: './dynamic-forms.component.html',

@@ -3,6 +3,7 @@ import { Component, HostBinding } from '@angular/core';
 import { slideInUpAnimation } from '../../../app.animations';
 
 @Component({
+  standalone: false,
   selector: 'utility-sass-mixins',
   styleUrls: ['./utility-sass-mixins.component.scss'],
   templateUrl: './utility-sass-mixins.component.html',

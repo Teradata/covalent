@@ -64,6 +64,7 @@ export class TdDynamicElementDirective {
   ],
   selector: 'td-dynamic-element',
   template: '<div tdDynamicContainer></div>',
+  imports: [TdDynamicElementDirective],
 })
 export class TdDynamicElementComponent
   extends _TdDynamicElementMixinBase

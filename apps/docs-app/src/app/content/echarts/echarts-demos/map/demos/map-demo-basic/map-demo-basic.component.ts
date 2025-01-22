@@ -3,6 +3,7 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
 import { usaJSON } from './geoJson-USA';
 
 @Component({
+  standalone: false,
   selector: 'map-demo-basic',
   templateUrl: './map-demo-basic.component.html',
   styleUrls: ['./map-demo-basic.component.scss'],

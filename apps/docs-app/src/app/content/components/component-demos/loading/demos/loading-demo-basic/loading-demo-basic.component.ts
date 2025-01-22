@@ -7,6 +7,7 @@ import {
 } from '@covalent/core/loading';
 
 @Component({
+  standalone: false,
   selector: 'loading-demo-basic',
   styleUrls: ['./loading-demo-basic.component.scss'],
   templateUrl: './loading-demo-basic.component.html',

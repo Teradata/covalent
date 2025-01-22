@@ -18,11 +18,20 @@ import {
   isAnchorLink,
   TdMarkdownLoaderService,
 } from '@covalent/markdown';
-import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import { CovalentFlavoredMarkdownModule, ITdFlavoredMarkdownButtonClickEvent, TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent } from '@covalent/flavored-markdown';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ICopyCodeTooltips } from '@covalent/highlight';
 import { firstValueFrom } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CovalentDialogsModule, TdDialogComponent } from '@covalent/core/dialogs';
+import { CovalentMessageModule, TdMessageComponent } from '@covalent/core/message';
+import { TdBreadcrumbsComponent } from '@covalent/core/breadcrumbs';
+import { CommonModule } from '@angular/common';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -61,6 +70,18 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
   templateUrl: './markdown-navigator.component.html',
   styleUrls: ['./markdown-navigator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatListModule,
+    MatIconModule,
+    MatProgressBarModule,
+    TdFlavoredMarkdownComponent,
+    TdFlavoredMarkdownLoaderComponent,
+    TdMessageComponent,
+    TdBreadcrumbsComponent,
+  ],
 })
 export class TdMarkdownNavigatorComponent implements OnChanges {
   /**

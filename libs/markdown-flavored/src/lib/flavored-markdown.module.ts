@@ -20,17 +20,6 @@ import { TdFlavoredMarkdownLoaderComponent } from './flavored-markdown-loader/fl
 
 @NgModule({
   imports: [
-    CommonModule,
-    MatCheckboxModule,
-    MatListModule,
-    MatProgressBarModule,
-    CovalentHighlightModule,
-    CovalentMarkdownModule,
-    MatButtonModule,
-    MatTableModule,
-    MatSortModule,
-  ],
-  declarations: [
     TdFlavoredListComponent,
     TdFlavoredMarkdownComponent,
     TdFlavoredMarkdownContainerDirective,

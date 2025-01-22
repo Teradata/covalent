@@ -20,16 +20,18 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material/input';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatFormField, MatFormFieldAppearance } from '@angular/material/form-field';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, skip, takeUntil } from 'rxjs/operators';
 import {
   IControlValueAccessor,
   mixinControlValueAccessor,
 } from '@covalent/core/common';
+import { MatIcon } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 export class TdSearchInputBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
@@ -50,6 +52,7 @@ export const _TdSearchInputMixinBase =
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, FormsModule, MatInput, MatFormField, MatIcon],
   animations: [
     trigger('searchState', [
       state(

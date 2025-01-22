@@ -6,6 +6,7 @@ import {
 } from '@covalent/guided-tour';
 
 @Component({
+  standalone: false,
   selector: 'guided-tour-demo-abort-on',
   styleUrls: ['./guided-tour-demo-abort-on.component.scss'],
   templateUrl: './guided-tour-demo-abort-on.component.html',

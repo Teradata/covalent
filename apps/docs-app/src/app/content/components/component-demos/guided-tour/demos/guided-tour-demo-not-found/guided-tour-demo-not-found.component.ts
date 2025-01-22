@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CovalentGuidedTourService, IGuidedTour } from '@covalent/guided-tour';
 
 @Component({
+  standalone: false,
   selector: 'guided-tour-demo-not-found',
   styleUrls: ['./guided-tour-demo-not-found.component.scss'],
   templateUrl: './guided-tour-demo-not-found.component.html',

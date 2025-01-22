@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -6,11 +7,13 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
 } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'td-breadcrumb, a[td-breadcrumb]',
   styleUrls: ['./breadcrumb.component.scss'],
   templateUrl: './breadcrumb.component.html',
+  imports: [CommonModule, MatIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbComponent implements AfterViewInit {
