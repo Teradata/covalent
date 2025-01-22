@@ -364,7 +364,7 @@ export class TdFlavoredMarkdownComponent
       // Remove all \r characters
       const startingWhitespaceRegex = new RegExp('^' + firstLineWhitespace);
       lines = lines.map(function (line: string): string {
-        return line.replace(startingWhitespaceRegex, '').replace('\r', '');
+        return line.replace(startingWhitespaceRegex, '').replaceAll('\r', '');
       });
 
       // Join lines again with line characters
