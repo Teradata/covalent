@@ -199,7 +199,7 @@
     },
     {
       "name": "cv-button",
-      "description": "Buttons are interactive components that guide and inform a user’s interaction through an experience. They signal actions and provide clear visual cues to help users accomplish their goals with confidence and efficiency.",
+      "description": "Common buttons prompt most actions in a UI",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -387,7 +387,7 @@
     },
     {
       "name": "cv-checkbox",
-      "description": "A checkbox allows the user to select one or more options from a set of choices. Unlike radio buttons, checkboxes allow for multiple selections, meaning the user can choose more than one option at a time.",
+      "description": "Interactive element allowing users to select one or more options from a list.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -589,7 +589,7 @@
     },
     {
       "name": "cv-dialog",
-      "description": "A dialog is a modal window that overlays the current page to grab the user’s attention.",
+      "description": "Modal window prompting users for input or displaying critical information.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1524,7 +1524,7 @@
     },
     {
       "name": "cv-radio",
-      "description": "A radio button allows the user to select a single option from a set of mutually exclusive choices. It is typically used when only one option can be selected from a predefined set.",
+      "description": "A control that allows users to select only one option from a set.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -1641,7 +1641,7 @@
     },
     {
       "name": "cv-select",
-      "description": "A drop-down menu, or select menu, allows the user to choose from a list of options presented in a collapsible format. Drop-downs are ideal when you have many options to present but want to save space on the form.",
+      "description": "Interactive menu allowing users to choose from a list of options.",
       "references": [
         {
           "name": "Knapsack Docs",
@@ -2313,7 +2313,7 @@
     },
     {
       "name": "cv-textfield",
-      "description": "A text field is an input element that allows users to type text into a form. It is used for capturing short text entries, such as names, email addresses, or any other single-line information. Text fields can be single-line or multi-line (text area) for longer inputs.",
+      "description": "Input field allowing users to enter a single line of text.",
       "references": [
         {
           "name": "Knapsack Docs",
