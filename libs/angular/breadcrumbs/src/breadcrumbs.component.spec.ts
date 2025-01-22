@@ -6,11 +6,13 @@ import {
 } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Component, DebugElement } from '@angular/core';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { CovalentBreadcrumbsModule } from './breadcrumbs.module';
 import { TdBreadcrumbsComponent } from './breadcrumbs.component';
+import { NgFor } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Simulate window resize event
 const resizeEvent = document.createEvent('Event');
@@ -34,29 +36,26 @@ const sampleBreadcrumb: IBreadcrumbItem = { route: 'test', text: 'test' };
     <router-outlet></router-outlet>
     <div>fake</div>
   `,
+  imports: [RouterOutlet],
 })
 export class FakeComponent {}
 
 describe('Component: Breadcrumbs', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TdBreadcrumbsTestComponent,
-        TdBreadcrumbsToolbarTestComponent,
-        TdBreadcrumbsSizeIconChangeTestComponent,
-        FakeComponent,
-      ],
       imports: [
-        NoopAnimationsModule,
-        MatToolbarModule,
         RouterTestingModule.withRoutes([
           { path: '', component: FakeComponent },
           { path: 'layouts', component: FakeComponent },
           { path: 'layouts2', component: FakeComponent },
           { path: 'layouts3', component: FakeComponent },
         ]),
-        CovalentBreadcrumbsModule,
+        TdBreadcrumbsTestComponent,
+        TdBreadcrumbsToolbarTestComponent,
+        TdBreadcrumbsSizeIconChangeTestComponent,
+        FakeComponent,
       ],
+      providers: [provideNoopAnimations()],
     });
     TestBed.compileComponents();
   }));
@@ -114,7 +113,7 @@ describe('Component: Breadcrumbs', () => {
   // TODO find a better way to test breadcrumb resizing
   xit('should resize window and hide breadcrumbs with breadcrumb in mat-toolbar with padding', waitForAsync(
     inject([], () => {
-      const fixture: ComponentFixture<any> = TestBed.createComponent(
+      const fixture: ComponentFixture<TdBreadcrumbsToolbarTestComponent> = TestBed.createComponent(
         TdBreadcrumbsToolbarTestComponent
       );
 
@@ -122,11 +121,9 @@ describe('Component: Breadcrumbs', () => {
       window.dispatchEvent(new Event('resize'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        fixture.componentInstance.nativeElementWidth = 300;
 
         fixture.detectChanges();
         fixture.detectChanges();
-        fixture.componentInstance.nativeElementWidth = 300;
         fixture.whenStable().then(() => {
           const breadcrumbs: TdBreadcrumbsComponent =
             fixture.debugElement.query(
@@ -225,6 +222,7 @@ describe('Component: Breadcrumbs', () => {
       </td-breadcrumbs>
     </div>
   `,
+  imports: [TdBreadcrumbsComponent, TdBreadcrumbComponent, RouterLink],
 })
 class TdBreadcrumbsTestComponent {
   separatorIcon = 'motorcycle';
@@ -249,6 +247,7 @@ class TdBreadcrumbsTestComponent {
       </mat-toolbar-row>
     </mat-toolbar>
   `,
+  imports: [TdBreadcrumbsComponent, TdBreadcrumbComponent, RouterLink, MatToolbarModule],
 })
 class TdBreadcrumbsToolbarTestComponent {
   separatorIcon = 'motorcycle';
@@ -269,6 +268,7 @@ class TdBreadcrumbsToolbarTestComponent {
       </td-breadcrumbs>
     </div>
   `,
+  imports: [TdBreadcrumbsComponent, TdBreadcrumbComponent, NgFor, RouterLink],
 })
 class TdBreadcrumbsSizeIconChangeTestComponent {
   breadcrumbItems: IBreadcrumbItem[] = [sampleBreadcrumb];

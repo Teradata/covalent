@@ -9,8 +9,7 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular-dynamic-forms"],
       "options": {
-        "project": "libs/angular-dynamic-forms/ng-package.json",
-        "tailwindConfig": "libs/angular-dynamic-forms/tailwind.config.js"
+        "project": "libs/angular-dynamic-forms/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -30,7 +29,7 @@
       ]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/angular-dynamic-forms"],
       "options": {
         "jestConfig": "libs/angular-dynamic-forms/jest.config.js",

@@ -18,7 +18,7 @@ import {
   isAnchorLink,
   TdMarkdownLoaderService,
 } from '@covalent/markdown';
-import { CovalentFlavoredMarkdownModule, ITdFlavoredMarkdownButtonClickEvent, TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent } from '@covalent/flavored-markdown';
+import { ITdFlavoredMarkdownButtonClickEvent, TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent } from '@covalent/flavored-markdown';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ICopyCodeTooltips } from '@covalent/highlight';
@@ -28,8 +28,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { CovalentDialogsModule, TdDialogComponent } from '@covalent/core/dialogs';
-import { CovalentMessageModule, TdMessageComponent } from '@covalent/core/message';
+import { TdDialogComponent } from '@covalent/core/dialogs';
+import { TdMessageComponent } from '@covalent/core/message';
 import { TdBreadcrumbsComponent } from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
 
@@ -82,6 +82,7 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
     TdMessageComponent,
     TdBreadcrumbsComponent,
   ],
+  providers: [TdMarkdownLoaderService],
 })
 export class TdMarkdownNavigatorComponent implements OnChanges {
   /**

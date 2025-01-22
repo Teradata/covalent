@@ -6,6 +6,7 @@ import {
   platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 import { By } from '@angular/platform-browser';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   template: `
@@ -28,6 +29,7 @@ import { By } from '@angular/platform-browser';
       </button>
     </div>
   `,
+  imports: [TdFullscreenDirective, MatButton],
 })
 class TdFullscreenTestComponent {}
 
@@ -45,7 +47,7 @@ describe('TdFullscreenDirective', () => {
       platformBrowserDynamicTesting()
     );
     TestBed.configureTestingModule({
-      declarations: [TdFullscreenTestComponent, TdFullscreenDirective],
+      imports: [TdFullscreenTestComponent, TdFullscreenDirective],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TdFullscreenTestComponent);

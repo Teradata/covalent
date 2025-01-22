@@ -1,13 +1,12 @@
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { CovalentBaseEchartsModule } from './base.module';
+import { TdChartComponent } from './chart.component';
 
 describe('Component: BaseEchart', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [TdBaseEchartsBasicTestComponent],
-        imports: [CovalentBaseEchartsModule],
+        imports: [TdBaseEchartsBasicTestComponent],
       });
       TestBed.compileComponents();
     })
@@ -26,6 +25,7 @@ describe('Component: BaseEchart', () => {
 @Component({
   selector: 'td-base-echarts-basic-test',
   template: ` <td-chart [style.height.px]="300"></td-chart> `,
+  imports: [TdChartComponent]
 })
 class TdBaseEchartsBasicTestComponent {
   plot: any = [

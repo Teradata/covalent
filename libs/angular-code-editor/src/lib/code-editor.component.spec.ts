@@ -84,14 +84,12 @@ const language: any = {
 describe('Component: App', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TdCodeEditorComponent,
+      imports: [
         TestMultipleEditorsComponent,
         TestEditorOptionsComponent,
         TestTwoWayBindingWithValueComponent,
         TestTwoWayBindingWithNgModelComponent,
       ],
-      imports: [FormsModule],
     });
     TestBed.compileComponents();
   }));
@@ -394,6 +392,7 @@ describe('Component: App', () => {
       ></td-code-editor>
     </div>
   `,
+  imports: [TdCodeEditorComponent],
 })
 class TestMultipleEditorsComponent {
   @ViewChild('editor1', { static: true }) editor1!: TdCodeEditorComponent;
@@ -414,6 +413,7 @@ class TestMultipleEditorsComponent {
       ></td-code-editor>
     </div>
   `,
+  imports: [TdCodeEditorComponent],
 })
 class TestEditorOptionsComponent {
   @ViewChild('editor1', { static: true }) editor1!: TdCodeEditorComponent;
@@ -430,6 +430,7 @@ class TestEditorOptionsComponent {
       ></td-code-editor>
     </div>
   `,
+  imports: [FormsModule, TdCodeEditorComponent], // needed for ngModel
 })
 class TestTwoWayBindingWithValueComponent {
   @ViewChild('editor', { static: true }) editor!: TdCodeEditorComponent;
@@ -447,6 +448,7 @@ class TestTwoWayBindingWithValueComponent {
       ></td-code-editor>
     </div>
   `,
+  imports: [FormsModule, TdCodeEditorComponent], // needed for ngModel
 })
 class TestTwoWayBindingWithNgModelComponent {
   @ViewChild('editor', { static: true }) editor!: TdCodeEditorComponent;

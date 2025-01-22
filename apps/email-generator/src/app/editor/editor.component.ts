@@ -5,7 +5,6 @@ import { PreviewComponent } from '../preview/preview.component';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import { getHtmlTemplate } from '@covalent/email-templates';
 import * as prettier from 'prettier';
-import parserHtml from 'prettier/parser-html'; // Use 'html' parser while working with MJML
 
 @Component({
   selector: 'app-editor',
@@ -49,13 +48,12 @@ export class EditorComponent {
     }
   }
 
-  formatCode() {
+  async formatCode() {
     if (this.editorInstance) {
       const unformattedCode = this.editorInstance.getValue();
       try {
-        const formattedCode = prettier.format(unformattedCode, {
+        const formattedCode = await prettier.format(unformattedCode, {
           parser: 'html', // Use 'html' parser for MJML
-          plugins: [parserHtml],
         });
         this.editorInstance.setValue(formattedCode);
       } catch (error) {

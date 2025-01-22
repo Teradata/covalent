@@ -25,6 +25,8 @@ import {
   DEEPLY_NESTED_TREE,
   compareByTitle,
 } from '../markdown-navigator.component.spec';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const RAW_MARKDOWN_HEADING = 'Heading';
 const RAW_MARKDOWN = `# ${RAW_MARKDOWN_HEADING}`;
@@ -62,6 +64,7 @@ async function wait(
       [compareWith]="compareWith"
     ></td-markdown-navigator-window>
   `,
+  imports: [TdMarkdownNavigatorWindowComponent],
 })
 class TdMarkdownNavigatorWindowTestComponent {
   items: IMarkdownNavigatorItem[] = [];
@@ -80,6 +83,7 @@ class TdMarkdownNavigatorWindowTestComponent {
       [labels]="labels"
     ></td-markdown-navigator-window>
   `,
+  imports: [TdMarkdownNavigatorWindowComponent],
 })
 class TdMarkdownNavigatorWindowWOColorTestComponent {
   items: IMarkdownNavigatorItem[] = [];
@@ -90,11 +94,11 @@ describe('MarkdownNavigatorWindowComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [
-          TdMarkdownNavigatorWindowTestComponent,
-          TdMarkdownNavigatorWindowWOColorTestComponent,
-        ],
-        imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
+        imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule, TdMarkdownNavigatorWindowTestComponent, TdMarkdownNavigatorWindowWOColorTestComponent],
+        providers: [
+          provideHttpClient(withInterceptorsFromDi()),
+          provideHttpClientTesting(),
+        ]
       }).compileComponents();
     })
   );

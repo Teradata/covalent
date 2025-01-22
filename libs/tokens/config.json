@@ -37,7 +37,7 @@
       "transformGroup": "js",
       "transforms": [
         "attribute/cti",
-        "name/cti/pascal",
+        "name/pascal",
         "size/rem",
         "color/css"
       ],

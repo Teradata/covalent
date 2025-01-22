@@ -1,798 +1,1440 @@
-export declare const cvThemeDarkPalettesNeutral0 = '#000000ff';
-export declare const cvThemeDarkColorsBackground = '#000000ff';
-export declare const cvThemeDarkPalettesCaution90 = '#ffcd9eff';
-export declare const cvThemeDarkColorsCaution = '#ffcd9eff';
-export declare const cvThemeDarkColorsCaution4 = '#ffb7750a';
-export declare const cvThemeDarkColorsCaution8 = '#ffb77514';
-export declare const cvThemeDarkColorsCaution12 = '#ffb7751f';
-export declare const cvThemeDarkColorsCaution16 = '#ffb77529';
-export declare const cvThemeDarkColorsCaution20 = '#ffb77533';
-export declare const cvThemeDarkColorsCaution24 = '#ffb7753d';
-export declare const cvThemeDarkColorsCaution38 = '#ffb77561';
-export declare const cvThemeDarkColorsCaution74 = '#ffb775bd';
-export declare const cvThemeDarkPalettesCaution30 = '#66492fff';
-export declare const cvThemeDarkColorsCautionContainer = '#66492fff';
-export declare const cvThemeDarkPalettesEmphasis60 = '#cc809cff';
-export declare const cvThemeDarkColorsEmphasis = '#cc809cff';
-export declare const cvThemeDarkColorsEmphasis4 = '#cc809c0a';
-export declare const cvThemeDarkColorsEmphasis8 = '#cc809c14';
-export declare const cvThemeDarkColorsEmphasis12 = '#cc809c1f';
-export declare const cvThemeDarkColorsEmphasis16 = '#cc809c29';
-export declare const cvThemeDarkColorsEmphasis20 = '#cc809c33';
-export declare const cvThemeDarkColorsEmphasis24 = '#cc809c3d';
-export declare const cvThemeDarkColorsEmphasis38 = '#cc809c61';
-export declare const cvThemeDarkColorsEmphasis74 = '#cc809cbd';
-export declare const cvThemeDarkPalettesEmphasis40 = '#66404eff';
-export declare const cvThemeDarkColorsEmphasisContainer = '#66404eff';
-export declare const cvThemeDarkPalettesNeutral20 = '#3e3e41ff';
-export declare const cvThemeDarkColorsInverseOnSurface = '#3e3e41ff';
-export declare const cvThemeDarkColorsInverseOnSurface4 = '#3e3e410a';
-export declare const cvThemeDarkColorsInverseOnSurface8 = '#3e3e4114';
-export declare const cvThemeDarkColorsInverseOnSurface12 = '#3e3e411f';
-export declare const cvThemeDarkColorsInverseOnSurface16 = '#3e3e4129';
-export declare const cvThemeDarkColorsInversePrimary = '#3053f4ff';
-export declare const cvThemeDarkColorsInversePrimary4 = '#3053f40a';
-export declare const cvThemeDarkColorsInversePrimary8 = '#3053f414';
-export declare const cvThemeDarkColorsInversePrimary12 = '#3053f41f';
-export declare const cvThemeDarkColorsInversePrimary16 = '#3053f429';
-export declare const cvThemeDarkPalettesSecondary40 = '#5b5d72ff';
-export declare const cvThemeDarkColorsInverseSecondary = '#5b5d72ff';
-export declare const cvThemeDarkColorsInverseSecondary4 = '#6163780a';
-export declare const cvThemeDarkColorsInverseSecondary8 = '#61637814';
-export declare const cvThemeDarkColorsInverseSecondary12 = '#6163781f';
-export declare const cvThemeDarkColorsInverseSecondary16 = '#61637829';
-export declare const cvThemeDarkPalettesNeutral90 = '#ebe8ecff';
-export declare const cvThemeDarkColorsInverseSurface = '#ebe8ecff';
-export declare const cvThemeDarkPalettesOrange40 = '#612e1aff';
-export declare const cvThemeDarkColorsInverseTertiary = '#612e1aff';
-export declare const cvThemeDarkColorsInverseTertiary4 = '#ff5f020a';
-export declare const cvThemeDarkColorsInverseTertiary8 = '#ff5f0214';
-export declare const cvThemeDarkColorsInverseTertiary12 = '#ff5f021f';
-export declare const cvThemeDarkColorsInverseTertiary16 = '#ff5f0229';
-export declare const cvThemeDarkColorsInverseTertiary38 = '#ff5f0261';
-export declare const cvThemeDarkColorsInverseTertiary74 = '#ff5f02bd';
-export declare const cvThemeDarkPalettesNegative80 = '#fd7d69ff';
-export declare const cvThemeDarkColorsNegative = '#fd7d69ff';
-export declare const cvThemeDarkColorsNegative4 = '#fd7d690a';
-export declare const cvThemeDarkColorsNegative8 = '#fd7d6914';
-export declare const cvThemeDarkColorsNegative12 = '#fd7d691f';
-export declare const cvThemeDarkColorsNegative16 = '#fd7d6929';
-export declare const cvThemeDarkColorsNegative20 = '#fd7d6933';
-export declare const cvThemeDarkColorsNegative24 = '#fd7d693d';
-export declare const cvThemeDarkColorsNegative38 = '#fd7d6961';
-export declare const cvThemeDarkColorsNegative74 = '#fd7d69bd';
-export declare const cvThemeDarkPalettesNegative30 = '#65322aff';
-export declare const cvThemeDarkColorsNegativeContainer = '#65322aff';
-export declare const cvThemeDarkColorsOnCaution = '#66492fff';
-export declare const cvThemeDarkColorsOnCaution4 = '#66492f0a';
-export declare const cvThemeDarkColorsOnCaution8 = '#66492f14';
-export declare const cvThemeDarkColorsOnCaution12 = '#66492f1f';
-export declare const cvThemeDarkColorsOnCaution16 = '#66492f29';
-export declare const cvThemeDarkColorsOnCaution38 = '#66492f61';
-export declare const cvThemeDarkColorsOnCaution74 = '#66492fbd';
-export declare const cvThemeDarkColorsOnCautionContainer = '#ffcd9eff';
-export declare const cvThemeDarkColorsOnCautionContainer4 = '#19120c0a';
-export declare const cvThemeDarkColorsOnCautionContainer8 = '#19120c14';
-export declare const cvThemeDarkColorsOnCautionContainer12 = '#19120c1f';
-export declare const cvThemeDarkColorsOnCautionContainer16 = '#19120c29';
-export declare const cvThemeDarkColorsOnCautionContainer38 = '#19120c61';
-export declare const cvThemeDarkColorsOnCautionContainer74 = '#19120cbd';
-export declare const cvThemeDarkPalettesEmphasis10 = '#191013ff';
-export declare const cvThemeDarkColorsOnEmphasis = '#191013ff';
-export declare const cvThemeDarkColorsOnEmphasis4 = '#1910130a';
-export declare const cvThemeDarkColorsOnEmphasis8 = '#19101314';
-export declare const cvThemeDarkColorsOnEmphasis12 = '#1910131f';
-export declare const cvThemeDarkColorsOnEmphasis16 = '#19101329';
-export declare const cvThemeDarkColorsOnEmphasis38 = '#19101361';
-export declare const cvThemeDarkColorsOnEmphasis74 = '#191013bd';
-export declare const cvThemeDarkPalettesEmphasis95 = '#ffd9e7ff';
-export declare const cvThemeDarkColorsOnEmphasisContainer = '#ffd9e7ff';
-export declare const cvThemeDarkColorsOnEmphasisContainer4 = '#ffd9e70a';
-export declare const cvThemeDarkColorsOnEmphasisContainer8 = '#ffd9e714';
-export declare const cvThemeDarkColorsOnEmphasisContainer12 = '#ffd9e71f';
-export declare const cvThemeDarkColorsOnEmphasisContainer16 = '#ffd9e729';
-export declare const cvThemeDarkColorsOnEmphasisContainer38 = '#ffd9e761';
-export declare const cvThemeDarkColorsOnEmphasisContainer74 = '#ffd9e7bd';
-export declare const cvThemeDarkPalettesNegative20 = '#331915ff';
-export declare const cvThemeDarkColorsOnNegative = '#331915ff';
-export declare const cvThemeDarkColorsOnNegative4 = '#3319150a';
-export declare const cvThemeDarkColorsOnNegative8 = '#33191514';
-export declare const cvThemeDarkColorsOnNegative12 = '#3319151f';
-export declare const cvThemeDarkColorsOnNegative16 = '#33191529';
-export declare const cvThemeDarkColorsOnNegative38 = '#33191561';
-export declare const cvThemeDarkColorsOnNegative74 = '#331915bd';
-export declare const cvThemeDarkPalettesNegative90 = '#ffac9fff';
-export declare const cvThemeDarkColorsOnNegativeContainer = '#ffac9fff';
-export declare const cvThemeDarkColorsOnNegativeContainer4 = '#ffac9f0a';
-export declare const cvThemeDarkColorsOnNegativeContainer8 = '#ffac9f14';
-export declare const cvThemeDarkColorsOnNegativeContainer12 = '#ffac9f1f';
-export declare const cvThemeDarkColorsOnNegativeContainer16 = '#ffac9f29';
-export declare const cvThemeDarkColorsOnNegativeContainer38 = '#ffac9f61';
-export declare const cvThemeDarkColorsOnNegativeContainer74 = '#ffac9fbd';
-export declare const cvThemeDarkPalettesPositive20 = '#112611ff';
-export declare const cvThemeDarkColorsOnPositive = '#112611ff';
-export declare const cvThemeDarkColorsOnPositive4 = '#1126110a';
-export declare const cvThemeDarkColorsOnPositive8 = '#11261114';
-export declare const cvThemeDarkColorsOnPositive12 = '#1126111f';
-export declare const cvThemeDarkColorsOnPositive16 = '#11261129';
-export declare const cvThemeDarkColorsOnPositive38 = '#11261161';
-export declare const cvThemeDarkColorsOnPositive74 = '#112611bd';
-export declare const cvThemeDarkPalettesPositive90 = '#91d890ff';
-export declare const cvThemeDarkColorsOnPositiveContainer = '#91d890ff';
-export declare const cvThemeDarkColorsOnPositiveContainer4 = '#91d8900a';
-export declare const cvThemeDarkColorsOnPositiveContainer8 = '#91d89014';
-export declare const cvThemeDarkColorsOnPositiveContainer12 = '#91d8901f';
-export declare const cvThemeDarkColorsOnPositiveContainer16 = '#91d89029';
-export declare const cvThemeDarkColorsOnPositiveContainer38 = '#91d89061';
-export declare const cvThemeDarkColorsOnPositiveContainer74 = '#91d890bd';
-export declare const cvThemeDarkPalettesDigitalBlue20 = '#111a28ff';
-export declare const cvThemeDarkColorsOnPrimary = '#111a28ff';
-export declare const cvThemeDarkColorsOnPrimary4 = '#111a280a';
-export declare const cvThemeDarkColorsOnPrimary8 = '#111a2814';
-export declare const cvThemeDarkColorsOnPrimary12 = '#111a281f';
-export declare const cvThemeDarkColorsOnPrimary16 = '#111a2829';
-export declare const cvThemeDarkColorsOnPrimary38 = '#111a2861';
-export declare const cvThemeDarkColorsOnPrimary74 = '#111a28bd';
-export declare const cvThemeDarkPalettesDigitalBlue95 = '#dde1ffff';
-export declare const cvThemeDarkColorsOnPrimaryContainer = '#dde1ffff';
-export declare const cvThemeDarkColorsOnPrimaryContainer4 = '#dde1ff0a';
-export declare const cvThemeDarkColorsOnPrimaryContainer8 = '#dde1ff14';
-export declare const cvThemeDarkColorsOnPrimaryContainer12 = '#dde1ff1f';
-export declare const cvThemeDarkColorsOnPrimaryContainer16 = '#dde1ff29';
-export declare const cvThemeDarkPalettesSecondary10 = '#171a2cff';
-export declare const cvThemeDarkColorsOnSecondary = '#171a2cff';
-export declare const cvThemeDarkColorsOnSecondary4 = '#171a2c0a';
-export declare const cvThemeDarkColorsOnSecondary8 = '#171a2c14';
-export declare const cvThemeDarkColorsOnSecondary12 = '#171a2c1f';
-export declare const cvThemeDarkColorsOnSecondary16 = '#171a2c29';
-export declare const cvThemeDarkColorsOnSecondary38 = '#171a2c61';
-export declare const cvThemeDarkColorsOnSecondary74 = '#171a2cbd';
-export declare const cvThemeDarkPalettesSecondary90 = '#dfe1f9ff';
-export declare const cvThemeDarkColorsOnSecondaryContainer = '#dfe1f9ff';
-export declare const cvThemeDarkColorsOnSecondaryContainer4 = '#5b5d720a';
-export declare const cvThemeDarkColorsOnSecondaryContainer8 = '#5b5d7214';
-export declare const cvThemeDarkColorsOnSecondaryContainer12 = '#5b5d721f';
-export declare const cvThemeDarkColorsOnSecondaryContainer16 = '#61637829';
-export declare const cvThemeDarkColorsOnSecondaryContainer38 = '#61637861';
-export declare const cvThemeDarkColorsOnSecondaryContainer74 = '#616378bd';
-export declare const cvThemeDarkColorsOnSurface = '#ebe8ecff';
-export declare const cvThemeDarkColorsOnSurface4 = '#ebe8ec0a';
-export declare const cvThemeDarkColorsOnSurface8 = '#ebe8ec14';
-export declare const cvThemeDarkColorsOnSurface12 = '#ebe8ec1f';
-export declare const cvThemeDarkColorsOnSurface16 = '#ebe8ec29';
-export declare const cvThemeDarkColorsOnSurface20 = '#ebe8ec33';
-export declare const cvThemeDarkColorsOnSurface38 = '#ebe8ec61';
-export declare const cvThemeDarkColorsOnSurface74 = '#ebe8ecbd';
-export declare const cvThemeDarkPalettesNeutral80 = '#d5d3d8ff';
-export declare const cvThemeDarkColorsOnSurfaceVariant = '#d5d3d8ff';
-export declare const cvThemeDarkColorsOnSurfaceVariant4 = '#d5d3d80a';
-export declare const cvThemeDarkColorsOnSurfaceVariant8 = '#d5d3d814';
-export declare const cvThemeDarkColorsOnSurfaceVariant12 = '#d5d3d81f';
-export declare const cvThemeDarkColorsOnSurfaceVariant16 = '#d5d3d829';
-export declare const cvThemeDarkColorsOnSurfaceVariant38 = '#d5d3d861';
-export declare const cvThemeDarkColorsOnTertiary = '#612e1aff';
-export declare const cvThemeDarkColorsOnTertiary4 = '#612e1a0a';
-export declare const cvThemeDarkColorsOnTertiary8 = '#612e1a14';
-export declare const cvThemeDarkColorsOnTertiary12 = '#612e1a1f';
-export declare const cvThemeDarkColorsOnTertiary16 = '#612e1a29';
-export declare const cvThemeDarkColorsOnTertiary38 = '#612e1a61';
-export declare const cvThemeDarkColorsOnTertiary74 = '#612e1abd';
-export declare const cvThemeDarkPalettesOrange98 = '#fef1ecff';
-export declare const cvThemeDarkColorsOnTertiaryContainer = '#fef1ecff';
-export declare const cvThemeDarkColorsOnTertiaryContainer4 = '#fef1ec0a';
-export declare const cvThemeDarkColorsOnTertiaryContainer8 = '#fef1ec14';
-export declare const cvThemeDarkColorsOnTertiaryContainer12 = '#fef1ec1f';
-export declare const cvThemeDarkColorsOnTertiaryContainer16 = '#fef1ec29';
-export declare const cvThemeDarkColorsOnTertiaryContainer38 = '#fef1ec61';
-export declare const cvThemeDarkColorsOnTertiaryContainer74 = '#fef1ecbd';
-export declare const cvThemeDarkPalettesNeutral50 = '#8f8e97ff';
-export declare const cvThemeDarkColorsOutline = '#8f8e97ff';
-export declare const cvThemeDarkColorsOutline8 = '#8f8e9714';
-export declare const cvThemeDarkColorsOutline12 = '#8f8e971f';
-export declare const cvThemeDarkColorsOutline16 = '#8f8e9729';
-export declare const cvThemeDarkColorsOutlineVariant = '#3e3e41ff';
-export declare const cvThemeDarkColorsPositive = '#91d890ff';
-export declare const cvThemeDarkColorsPositive4 = '#91d8900a';
-export declare const cvThemeDarkColorsPositive8 = '#91d89014';
-export declare const cvThemeDarkColorsPositive12 = '#91d8901f';
-export declare const cvThemeDarkColorsPositive16 = '#91d89029';
-export declare const cvThemeDarkColorsPositive20 = '#91d89033';
-export declare const cvThemeDarkColorsPositive24 = '#91d8903d';
-export declare const cvThemeDarkColorsPositive38 = '#91d89061';
-export declare const cvThemeDarkColorsPositive74 = '#91d890bd';
-export declare const cvThemeDarkPalettesPositive30 = '#224b22ff';
-export declare const cvThemeDarkColorsPositiveContainer = '#224b22ff';
-export declare const cvThemeDarkPalettesDigitalBlue90 = '#bac3ffff';
-export declare const cvThemeDarkColorsPrimary = '#bac3ffff';
-export declare const cvThemeDarkColorsPrimary4 = '#bac3ff0a';
-export declare const cvThemeDarkColorsPrimary8 = '#bac3ff14';
-export declare const cvThemeDarkColorsPrimary12 = '#bac3ff1f';
-export declare const cvThemeDarkColorsPrimary16 = '#bac3ff29';
-export declare const cvThemeDarkColorsPrimary20 = '#bac3ff33';
-export declare const cvThemeDarkColorsPrimary24 = '#bac3ff3d';
-export declare const cvThemeDarkPalettesDigitalBlue30 = '#1d2c43ff';
-export declare const cvThemeDarkColorsPrimaryContainer = '#1d2c43ff';
-export declare const cvThemeDarkColorsPrimaryFixed = '#dde1ffff';
-export declare const cvThemeDarkColorsPrimaryFixedDim = '#bac3ffff';
-export declare const cvThemeDarkColorsScrim = '#00000052';
-export declare const cvThemeDarkPalettesSecondary80 = '#c3c5ddff';
-export declare const cvThemeDarkColorsSecondary = '#c3c5ddff';
-export declare const cvThemeDarkColorsSecondary4 = '#c3c5dd0a';
-export declare const cvThemeDarkColorsSecondary8 = '#c3c5dd14';
-export declare const cvThemeDarkColorsSecondary12 = '#c3c5dd1f';
-export declare const cvThemeDarkColorsSecondary16 = '#c3c5dd29';
-export declare const cvThemeDarkPalettesSecondary30 = '#434659ff';
-export declare const cvThemeDarkColorsSecondaryContainer = '#434659ff';
-export declare const cvThemeDarkColorsSecondaryFixed = '#dfe1f9ff';
-export declare const cvThemeDarkColorsSecondaryFixedDim = '#c3c5ddff';
-export declare const cvThemeDarkColorsShadow = '#000000ff';
-export declare const cvThemeDarkPalettesNeutral8 = '#161616ff';
-export declare const cvThemeDarkColorsSurface = '#161616ff';
-export declare const cvThemeDarkPalettesNeutral24 = '#4a4a4dff';
-export declare const cvThemeDarkColorsSurfaceBright = '#4a4a4dff';
-export declare const cvThemeDarkPalettesNeutral14 = '#2c2b2dff';
-export declare const cvThemeDarkColorsSurfaceContainer = '#2c2b2dff';
-export declare const cvThemeDarkPalettesNeutral16 = '#323134ff';
-export declare const cvThemeDarkColorsSurfaceContainerHigh = '#323134ff';
-export declare const cvThemeDarkPalettesNeutral18 = '#38383bff';
-export declare const cvThemeDarkColorsSurfaceContainerHighest = '#38383bff';
-export declare const cvThemeDarkPalettesNeutral12 = '#252426ff';
-export declare const cvThemeDarkColorsSurfaceContainerLow = '#252426ff';
-export declare const cvThemeDarkPalettesNeutral10 = '#1e1d1eff';
-export declare const cvThemeDarkColorsSurfaceContainerLowest = '#1e1d1eff';
-export declare const cvThemeDarkPalettesNeutral6 = '#0e0e0eff';
-export declare const cvThemeDarkColorsSurfaceDim = '#0e0e0eff';
-export declare const cvThemeDarkColorsSurfaceVariant = '#000000ff';
-export declare const cvThemeDarkColorsSurfaceVariant8 = '#00000014';
-export declare const cvThemeDarkColorsSurfaceVariant12 = '#0000001f';
-export declare const cvThemeDarkColorsSurfaceVariant16 = '#00000029';
-export declare const cvThemeDarkColorsTertiary = '#ff5f02ff';
-export declare const cvThemeDarkColorsTertiary4 = '#ff5f020a';
-export declare const cvThemeDarkColorsTertiary8 = '#ff5f0214';
-export declare const cvThemeDarkColorsTertiary12 = '#ff5f021f';
-export declare const cvThemeDarkColorsTertiary16 = '#ff5f0229';
-export declare const cvThemeDarkPalettesOrange60 = '#c25d33ff';
-export declare const cvThemeDarkColorsTertiaryContainer = '#c25d33ff';
-export declare const cvThemeDarkPalettesOrange90 = '#f79e79ff';
-export declare const cvThemeDarkColorsTertiaryFixed = '#f79e79ff';
-export declare const cvThemeDarkPalettesOrange80 = '#f37440ff';
-export declare const cvThemeDarkColorsTertiaryFixedDim = '#f37440ff';
-export declare const cvThemeDarkPalettesCaution0 = '#000000ff';
-export declare const cvThemeDarkPalettesCaution10 = '#19120cff';
-export declare const cvThemeDarkPalettesCaution20 = '#332517ff';
-export declare const cvThemeDarkPalettesCaution40 = '#996e46ff';
-export declare const cvThemeDarkPalettesCaution50 = '#b38052ff';
-export declare const cvThemeDarkPalettesCaution60 = '#cc925eff';
-export declare const cvThemeDarkPalettesCaution70 = '#e6a569ff';
-export declare const cvThemeDarkPalettesCaution80 = '#ffb775ff';
-export declare const cvThemeDarkPalettesCaution95 = '#ffe2c8ff';
-export declare const cvThemeDarkPalettesCaution98 = '#fff8f1ff';
-export declare const cvThemeDarkPalettesCaution100 = '#ffffffff';
-export declare const cvThemeDarkPalettesDigitalBlue0 = '#000000ff';
-export declare const cvThemeDarkPalettesDigitalBlue10 = '#0c121bff';
-export declare const cvThemeDarkPalettesDigitalBlue40 = '#324369ff';
-export declare const cvThemeDarkPalettesDigitalBlue50 = '#485a8eff';
-export declare const cvThemeDarkPalettesDigitalBlue60 = '#5d71b4ff';
-export declare const cvThemeDarkPalettesDigitalBlue70 = '#7388d9ff';
-export declare const cvThemeDarkPalettesDigitalBlue80 = '#889fffff';
-export declare const cvThemeDarkPalettesDigitalBlue91 = '#bec9feff';
-export declare const cvThemeDarkPalettesDigitalBlue92 = '#c6cffdff';
-export declare const cvThemeDarkPalettesDigitalBlue93 = '#ced5feff';
-export declare const cvThemeDarkPalettesDigitalBlue94 = '#d5dbfeff';
-export declare const cvThemeDarkPalettesDigitalBlue98 = '#efefffff';
-export declare const cvThemeDarkPalettesDigitalBlue99 = '#fafaffff';
-export declare const cvThemeDarkPalettesDigitalBlue100 = '#ffffffff';
-export declare const cvThemeDarkPalettesEmphasis0 = '#000000ff';
-export declare const cvThemeDarkPalettesEmphasis20 = '#332027ff';
-export declare const cvThemeDarkPalettesEmphasis30 = '#4c303aff';
-export declare const cvThemeDarkPalettesEmphasis50 = '#b37089ff';
-export declare const cvThemeDarkPalettesEmphasis70 = '#e690b0ff';
-export declare const cvThemeDarkPalettesEmphasis80 = '#ffa0c3ff';
-export declare const cvThemeDarkPalettesEmphasis90 = '#ffbdd5ff';
-export declare const cvThemeDarkPalettesEmphasis98 = '#fff6f9ff';
-export declare const cvThemeDarkPalettesEmphasis100 = '#ffffffff';
-export declare const cvThemeDarkPalettesNavy0 = '#000000ff';
-export declare const cvThemeDarkPalettesNavy10 = '#001d33ff';
-export declare const cvThemeDarkPalettesNavy13 = '#00233cff';
-export declare const cvThemeDarkPalettesNavy20 = '#14324cff';
-export declare const cvThemeDarkPalettesNavy30 = '#2d4964ff';
-export declare const cvThemeDarkPalettesNavy40 = '#45617dff';
-export declare const cvThemeDarkPalettesNavy50 = '#5e7a97ff';
-export declare const cvThemeDarkPalettesNavy60 = '#7793b1ff';
-export declare const cvThemeDarkPalettesNavy70 = '#91aecdff';
-export declare const cvThemeDarkPalettesNavy80 = '#acc9e9ff';
-export declare const cvThemeDarkPalettesNavy90 = '#cfe5ffff';
-export declare const cvThemeDarkPalettesNavy95 = '#e8f2ffff';
-export declare const cvThemeDarkPalettesNavy98 = '#f8fafdff';
-export declare const cvThemeDarkPalettesNavy99 = '#fcfcffff';
-export declare const cvThemeDarkPalettesNavy100 = '#ffffffff';
-export declare const cvThemeDarkPalettesNegative0 = '#000000ff';
-export declare const cvThemeDarkPalettesNegative10 = '#190c0aff';
-export declare const cvThemeDarkPalettesNegative40 = '#984b3fff';
-export declare const cvThemeDarkPalettesNegative50 = '#b1584aff';
-export declare const cvThemeDarkPalettesNegative60 = '#ca6454ff';
-export declare const cvThemeDarkPalettesNegative70 = '#e4715fff';
-export declare const cvThemeDarkPalettesNegative95 = '#ffd2cbff';
-export declare const cvThemeDarkPalettesNegative98 = '#fff2f0ff';
-export declare const cvThemeDarkPalettesNegative100 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutral1 = '#000000ff';
-export declare const cvThemeDarkPalettesNeutral2 = '#000000ff';
-export declare const cvThemeDarkPalettesNeutral3 = '#020202ff';
-export declare const cvThemeDarkPalettesNeutral4 = '#060506ff';
-export declare const cvThemeDarkPalettesNeutral5 = '#0a090aff';
-export declare const cvThemeDarkPalettesNeutral7 = '#121212ff';
-export declare const cvThemeDarkPalettesNeutral9 = '#1a191aff';
-export declare const cvThemeDarkPalettesNeutral11 = '#222122ff';
-export declare const cvThemeDarkPalettesNeutral13 = '#292829ff';
-export declare const cvThemeDarkPalettesNeutral15 = '#2f2e30ff';
-export declare const cvThemeDarkPalettesNeutral17 = '#353537ff';
-export declare const cvThemeDarkPalettesNeutral19 = '#3b3b3eff';
-export declare const cvThemeDarkPalettesNeutral21 = '#414144ff';
-export declare const cvThemeDarkPalettesNeutral22 = '#444447ff';
-export declare const cvThemeDarkPalettesNeutral23 = '#47474aff';
-export declare const cvThemeDarkPalettesNeutral25 = '#4d4d50ff';
-export declare const cvThemeDarkPalettesNeutral30 = '#5c5b5fff';
-export declare const cvThemeDarkPalettesNeutral35 = '#68686eff';
-export declare const cvThemeDarkPalettesNeutral40 = '#76757dff';
-export declare const cvThemeDarkPalettesNeutral60 = '#a6a6adff';
-export declare const cvThemeDarkPalettesNeutral70 = '#bebdc3ff';
-export declare const cvThemeDarkPalettesNeutral87 = '#e5e2e6ff';
-export declare const cvThemeDarkPalettesNeutral91 = '#eeeaeeff';
-export declare const cvThemeDarkPalettesNeutral92 = '#f0edf0ff';
-export declare const cvThemeDarkPalettesNeutral93 = '#f2eff2ff';
-export declare const cvThemeDarkPalettesNeutral94 = '#f4f1f4ff';
-export declare const cvThemeDarkPalettesNeutral95 = '#f6f3f6ff';
-export declare const cvThemeDarkPalettesNeutral96 = '#f8f5f8ff';
-export declare const cvThemeDarkPalettesNeutral97 = '#faf7faff';
-export declare const cvThemeDarkPalettesNeutral98 = '#fdf9fcff';
-export declare const cvThemeDarkPalettesNeutral99 = '#fffbfeff';
-export declare const cvThemeDarkPalettesNeutral100 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant0 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant5 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant10 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant15 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant20 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant25 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant30 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant35 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant40 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant50 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant60 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant70 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant80 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant90 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant91 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant92 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant93 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant94 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant95 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant96 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant97 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant98 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant99 = '#ffffffff';
-export declare const cvThemeDarkPalettesNeutralVariant100 = '#ffffffff';
-export declare const cvThemeDarkPalettesOrange0 = '#000000ff';
-export declare const cvThemeDarkPalettesOrange10 = '#190900ff';
-export declare const cvThemeDarkPalettesOrange20 = '#331300ff';
-export declare const cvThemeDarkPalettesOrange30 = '#492313ff';
-export declare const cvThemeDarkPalettesOrange50 = '#aa512dff';
-export declare const cvThemeDarkPalettesOrange70 = '#db683aff';
-export declare const cvThemeDarkPalettesOrange95 = '#fdc4a4ff';
-export declare const cvThemeDarkPalettesOrange100 = '#ffffffff';
-export declare const cvThemeDarkPalettesPositive0 = '#000000ff';
-export declare const cvThemeDarkPalettesPositive10 = '#081308ff';
-export declare const cvThemeDarkPalettesPositive40 = '#337132ff';
-export declare const cvThemeDarkPalettesPositive50 = '#3b843bff';
-export declare const cvThemeDarkPalettesPositive60 = '#449643ff';
-export declare const cvThemeDarkPalettesPositive70 = '#4da94cff';
-export declare const cvThemeDarkPalettesPositive80 = '#55bc54ff';
-export declare const cvThemeDarkPalettesPositive95 = '#bbe4bbff';
-export declare const cvThemeDarkPalettesPositive98 = '#eef8eeff';
-export declare const cvThemeDarkPalettesPositive100 = '#ffffffff';
-export declare const cvThemeDarkPalettesSecondary0 = '#000000ff';
-export declare const cvThemeDarkPalettesSecondary20 = '#2c2f42ff';
-export declare const cvThemeDarkPalettesSecondary50 = '#73768bff';
-export declare const cvThemeDarkPalettesSecondary60 = '#8d8fa6ff';
-export declare const cvThemeDarkPalettesSecondary70 = '#a8aac1ff';
-export declare const cvThemeDarkPalettesSecondary95 = '#f0efffff';
-export declare const cvThemeDarkPalettesSecondary98 = '#fbf8ffff';
-export declare const cvThemeDarkPalettesSecondary100 = '#ffffffff';
-export declare const cvThemeLightPalettesNeutral98 = '#f8f9fbff';
-export declare const cvThemeLightColorsBackground = '#f8f9fbff';
-export declare const cvThemeLightPalettesCaution40 = '#f38800ff';
-export declare const cvThemeLightColorsCaution = '#f38800ff';
-export declare const cvThemeLightColorsCaution4 = '#f388000a';
-export declare const cvThemeLightColorsCaution8 = '#f3880014';
-export declare const cvThemeLightColorsCaution12 = '#f388001f';
-export declare const cvThemeLightColorsCaution16 = '#f3880029';
-export declare const cvThemeLightColorsCaution20 = '#f3880033';
-export declare const cvThemeLightColorsCaution24 = '#f388003d';
-export declare const cvThemeLightColorsCaution38 = '#f3880061';
-export declare const cvThemeLightColorsCaution74 = '#f38800bd';
-export declare const cvThemeLightPalettesCaution90 = '#ffcc8cff';
-export declare const cvThemeLightColorsCautionContainer = '#ffcc8cff';
-export declare const cvThemeLightPalettesEmphasis40 = '#b10142ff';
-export declare const cvThemeLightColorsEmphasis = '#b10142ff';
-export declare const cvThemeLightColorsEmphasis4 = '#b101420a';
-export declare const cvThemeLightColorsEmphasis8 = '#b1014214';
-export declare const cvThemeLightColorsEmphasis12 = '#b101421f';
-export declare const cvThemeLightColorsEmphasis16 = '#b1014229';
-export declare const cvThemeLightColorsEmphasis20 = '#b1014233';
-export declare const cvThemeLightColorsEmphasis24 = '#b101423d';
-export declare const cvThemeLightColorsEmphasis38 = '#b1014261';
-export declare const cvThemeLightColorsEmphasis74 = '#b10142bd';
-export declare const cvThemeLightPalettesEmphasis90 = '#e8b3c6ff';
-export declare const cvThemeLightColorsEmphasisContainer = '#e8b3c6ff';
-export declare const cvThemeLightPalettesNeutral95 = '#f1f3f8ff';
-export declare const cvThemeLightColorsInverseOnSurface = '#f1f3f8ff';
-export declare const cvThemeLightColorsInverseOnSurface4 = '#f6f3f60a';
-export declare const cvThemeLightColorsInverseOnSurface8 = '#f6f3f614';
-export declare const cvThemeLightColorsInverseOnSurface12 = '#f6f3f61f';
-export declare const cvThemeLightColorsInverseOnSurface16 = '#f6f3f61f';
-export declare const cvThemeLightPalettesDigitalBlue80 = '#bac3ffff';
-export declare const cvThemeLightColorsInversePrimary = '#bac3ffff';
-export declare const cvThemeLightColorsInversePrimary4 = '#bac3ff0a';
-export declare const cvThemeLightColorsInversePrimary8 = '#bac3ff14';
-export declare const cvThemeLightColorsInversePrimary12 = '#bac3ff1f';
-export declare const cvThemeLightColorsInversePrimary16 = '#bac3ff29';
-export declare const cvThemeLightPalettesNavy80 = '#bcd5f6ff';
-export declare const cvThemeLightPalettesSecondary80 = '#bcd5f6ff';
-export declare const cvThemeLightColorsInverseSecondary = '#bcd5f6ff';
-export declare const cvThemeLightColorsInverseSecondary4 = '#bcd5f60a';
-export declare const cvThemeLightColorsInverseSecondary8 = '#bcd5f614';
-export declare const cvThemeLightColorsInverseSecondary12 = '#bcd5f61f';
-export declare const cvThemeLightColorsInverseSecondary16 = '#c3c5dd29';
-export declare const cvThemeLightPalettesNeutral20 = '#3e4557ff';
-export declare const cvThemeLightColorsInverseSurface = '#3e4557ff';
-export declare const cvThemeLightPalettesOrange40 = '#ff5f02ff';
-export declare const cvThemeLightColorsInverseTertiary = '#ff5f02ff';
-export declare const cvThemeLightColorsInverseTertiary4 = '#ff5f020a';
-export declare const cvThemeLightColorsInverseTertiary8 = '#ff5f0214';
-export declare const cvThemeLightColorsInverseTertiary12 = '#ff5f021f';
-export declare const cvThemeLightColorsInverseTertiary16 = '#ff5f0229';
-export declare const cvThemeLightColorsInverseTertiary38 = '#ff5f0261';
-export declare const cvThemeLightColorsInverseTertiary74 = '#ff5f02bd';
-export declare const cvThemeLightPalettesNegative40 = '#ae1209ff';
-export declare const cvThemeLightColorsNegative = '#ae1209ff';
-export declare const cvThemeLightColorsNegative4 = '#ae12090a';
-export declare const cvThemeLightColorsNegative8 = '#ae120914';
-export declare const cvThemeLightColorsNegative12 = '#ae12091f';
-export declare const cvThemeLightColorsNegative16 = '#ae120929';
-export declare const cvThemeLightColorsNegative20 = '#ae120933';
-export declare const cvThemeLightColorsNegative24 = '#ae12093d';
-export declare const cvThemeLightColorsNegative38 = '#ae120961';
-export declare const cvThemeLightColorsNegative74 = '#ae1209bd';
-export declare const cvThemeLightPalettesNegative90 = '#ffb2aeff';
-export declare const cvThemeLightColorsNegativeContainer = '#ffb2aeff';
-export declare const cvThemeLightPalettesCaution100 = '#ffffffff';
-export declare const cvThemeLightColorsOnCaution = '#ffffffff';
-export declare const cvThemeLightColorsOnCaution4 = '#ffffff0a';
-export declare const cvThemeLightColorsOnCaution8 = '#ffffff14';
-export declare const cvThemeLightColorsOnCaution12 = '#ffffff1f';
-export declare const cvThemeLightColorsOnCaution16 = '#ffffff29';
-export declare const cvThemeLightColorsOnCaution38 = '#ffffff61';
-export declare const cvThemeLightColorsOnCaution74 = '#ffffffbd';
-export declare const cvThemeLightPalettesCaution10 = '#180e00ff';
-export declare const cvThemeLightColorsOnCautionContainer = '#180e00ff';
-export declare const cvThemeLightColorsOnCautionContainer4 = '#180e000a';
-export declare const cvThemeLightColorsOnCautionContainer8 = '#180e0014';
-export declare const cvThemeLightColorsOnCautionContainer12 = '#180e001f';
-export declare const cvThemeLightColorsOnCautionContainer16 = '#180e0029';
-export declare const cvThemeLightColorsOnCautionContainer38 = '#180e0061';
-export declare const cvThemeLightColorsOnCautionContainer74 = '#180e00bd';
-export declare const cvThemeLightPalettesEmphasis100 = '#ffffffff';
-export declare const cvThemeLightColorsOnEmphasis = '#ffffffff';
-export declare const cvThemeLightColorsOnEmphasis4 = '#ffffff0a';
-export declare const cvThemeLightColorsOnEmphasis8 = '#ffffff14';
-export declare const cvThemeLightColorsOnEmphasis12 = '#ffffff1f';
-export declare const cvThemeLightColorsOnEmphasis16 = '#ffffff29';
-export declare const cvThemeLightColorsOnEmphasis38 = '#ffffff61';
-export declare const cvThemeLightColorsOnEmphasis74 = '#ffffffbd';
-export declare const cvThemeLightPalettesEmphasis10 = '#120007ff';
-export declare const cvThemeLightColorsOnEmphasisContainer = '#120007ff';
-export declare const cvThemeLightColorsOnEmphasisContainer4 = '#1200070a';
-export declare const cvThemeLightColorsOnEmphasisContainer8 = '#12000714';
-export declare const cvThemeLightColorsOnEmphasisContainer12 = '#1200071f';
-export declare const cvThemeLightColorsOnEmphasisContainer16 = '#180e0029';
-export declare const cvThemeLightColorsOnEmphasisContainer38 = '#180e0061';
-export declare const cvThemeLightColorsOnEmphasisContainer74 = '#180e00bd';
-export declare const cvThemeLightPalettesNegative100 = '#ffffffff';
-export declare const cvThemeLightColorsOnNegative = '#ffffffff';
-export declare const cvThemeLightColorsOnNegative4 = '#ffffff0a';
-export declare const cvThemeLightColorsOnNegative8 = '#ffffff14';
-export declare const cvThemeLightColorsOnNegative12 = '#ffffff1f';
-export declare const cvThemeLightColorsOnNegative16 = '#ffffff29';
-export declare const cvThemeLightColorsOnNegative38 = '#ffffff61';
-export declare const cvThemeLightColorsOnNegative74 = '#ffffffbd';
-export declare const cvThemeLightPalettesNegative10 = '#110201ff';
-export declare const cvThemeLightColorsOnNegativeContainer = '#110201ff';
-export declare const cvThemeLightColorsOnNegativeContainer4 = '#1102010a';
-export declare const cvThemeLightColorsOnNegativeContainer8 = '#11020114';
-export declare const cvThemeLightColorsOnNegativeContainer12 = '#1102011f';
-export declare const cvThemeLightColorsOnNegativeContainer16 = '#11020129';
-export declare const cvThemeLightColorsOnNegativeContainer38 = '#11020161';
-export declare const cvThemeLightColorsOnNegativeContainer74 = '#110201bd';
-export declare const cvThemeLightPalettesPositive100 = '#ffffffff';
-export declare const cvThemeLightColorsOnPositive = '#ffffffff';
-export declare const cvThemeLightColorsOnPositive4 = '#ffffff0a';
-export declare const cvThemeLightColorsOnPositive8 = '#ffffff14';
-export declare const cvThemeLightColorsOnPositive12 = '#ffffff1f';
-export declare const cvThemeLightColorsOnPositive16 = '#ffffff29';
-export declare const cvThemeLightColorsOnPositive38 = '#ffffff61';
-export declare const cvThemeLightColorsOnPositive74 = '#ffffffbd';
-export declare const cvThemeLightPalettesPositive10 = '#000a00ff';
-export declare const cvThemeLightColorsOnPositiveContainer = '#000a00ff';
-export declare const cvThemeLightColorsOnPositiveContainer4 = '#000a000a';
-export declare const cvThemeLightColorsOnPositiveContainer8 = '#000a0014';
-export declare const cvThemeLightColorsOnPositiveContainer12 = '#000a001f';
-export declare const cvThemeLightColorsOnPositiveContainer16 = '#000a0029';
-export declare const cvThemeLightColorsOnPositiveContainer38 = '#000a0061';
-export declare const cvThemeLightColorsOnPositiveContainer74 = '#000a00bd';
-export declare const cvThemeLightPalettesDigitalBlue100 = '#ffffffff';
-export declare const cvThemeLightColorsOnPrimary = '#ffffffff';
-export declare const cvThemeLightColorsOnPrimary4 = '#ffffff0a';
-export declare const cvThemeLightColorsOnPrimary8 = '#ffffff14';
-export declare const cvThemeLightColorsOnPrimary12 = '#ffffff1f';
-export declare const cvThemeLightColorsOnPrimary16 = '#ffffff29';
-export declare const cvThemeLightColorsOnPrimary38 = '#ffffff61';
-export declare const cvThemeLightColorsOnPrimary74 = '#ffffffbd';
-export declare const cvThemeLightPalettesDigitalBlue10 = '#00115aff';
-export declare const cvThemeLightColorsOnPrimaryContainer = '#00115aff';
-export declare const cvThemeLightColorsOnPrimaryContainer4 = '#00115a0a';
-export declare const cvThemeLightColorsOnPrimaryContainer8 = '#00115a14';
-export declare const cvThemeLightColorsOnPrimaryContainer12 = '#00115a1f';
-export declare const cvThemeLightColorsOnPrimaryContainer16 = '#00115a29';
-export declare const cvThemeLightPalettesNavy100 = '#ffffffff';
-export declare const cvThemeLightPalettesSecondary100 = '#ffffffff';
-export declare const cvThemeLightColorsOnSecondary = '#ffffffff';
-export declare const cvThemeLightColorsOnSecondary4 = '#ffffff0a';
-export declare const cvThemeLightColorsOnSecondary8 = '#ffffff14';
-export declare const cvThemeLightColorsOnSecondary12 = '#ffffff1f';
-export declare const cvThemeLightColorsOnSecondary16 = '#ffffff29';
-export declare const cvThemeLightColorsOnSecondary38 = '#ffffff61';
-export declare const cvThemeLightColorsOnSecondary74 = '#ffffffbd';
-export declare const cvThemeLightPalettesNavy10 = '#001d33ff';
-export declare const cvThemeLightPalettesSecondary10 = '#001d33ff';
-export declare const cvThemeLightColorsOnSecondaryContainer = '#001d33ff';
-export declare const cvThemeLightColorsOnSecondaryContainer4 = '#001d330a';
-export declare const cvThemeLightColorsOnSecondaryContainer8 = '#001d3314';
-export declare const cvThemeLightColorsOnSecondaryContainer12 = '#001d331f';
-export declare const cvThemeLightColorsOnSecondaryContainer16 = '#001d3329';
-export declare const cvThemeLightColorsOnSecondaryContainer38 = '#001d3361';
-export declare const cvThemeLightColorsOnSecondaryContainer74 = '#001d33bd';
-export declare const cvThemeLightPalettesNavy13 = '#00233cff';
-export declare const cvThemeLightColorsOnSurface = '#00233cff';
-export declare const cvThemeLightColorsOnSurface4 = '#00233c0a';
-export declare const cvThemeLightColorsOnSurface8 = '#00233c14';
-export declare const cvThemeLightColorsOnSurface12 = '#00233c1f';
-export declare const cvThemeLightColorsOnSurface16 = '#00233c29';
-export declare const cvThemeLightColorsOnSurface20 = '#00233c33';
-export declare const cvThemeLightColorsOnSurface38 = '#00233c61';
-export declare const cvThemeLightColorsOnSurface74 = '#00233cbd';
-export declare const cvThemeLightPalettesNeutral30 = '#59627bff';
-export declare const cvThemeLightColorsOnSurfaceVariant = '#59627bff';
-export declare const cvThemeLightColorsOnSurfaceVariant4 = '#59627b0a';
-export declare const cvThemeLightColorsOnSurfaceVariant8 = '#59627b14';
-export declare const cvThemeLightColorsOnSurfaceVariant12 = '#59627b1f';
-export declare const cvThemeLightColorsOnSurfaceVariant16 = '#59627b29';
-export declare const cvThemeLightColorsOnSurfaceVariant38 = '#59627b61';
-export declare const cvThemeLightPalettesOrange100 = '#ffffffff';
-export declare const cvThemeLightColorsOnTertiary = '#ffffffff';
-export declare const cvThemeLightColorsOnTertiary4 = '#ffffff0a';
-export declare const cvThemeLightColorsOnTertiary8 = '#ffffff14';
-export declare const cvThemeLightColorsOnTertiary12 = '#ffffff1f';
-export declare const cvThemeLightColorsOnTertiary16 = '#ffffff29';
-export declare const cvThemeLightColorsOnTertiary38 = '#ffffff61';
-export declare const cvThemeLightColorsOnTertiary74 = '#ffffffbd';
-export declare const cvThemeLightPalettesOrange10 = '#481300ff';
-export declare const cvThemeLightColorsOnTertiaryContainer = '#481300ff';
-export declare const cvThemeLightColorsOnTertiaryContainer4 = '#4813000a';
-export declare const cvThemeLightColorsOnTertiaryContainer8 = '#48130014';
-export declare const cvThemeLightColorsOnTertiaryContainer12 = '#4813001f';
-export declare const cvThemeLightColorsOnTertiaryContainer16 = '#48130029';
-export declare const cvThemeLightColorsOnTertiaryContainer38 = '#48130061';
-export declare const cvThemeLightColorsOnTertiaryContainer74 = '#481300bd';
-export declare const cvThemeLightPalettesNeutral40 = '#727d9cff';
-export declare const cvThemeLightColorsOutline = '#727d9cff';
-export declare const cvThemeLightColorsOutline8 = '#727d9c14';
-export declare const cvThemeLightColorsOutline12 = '#727d9c1f';
-export declare const cvThemeLightColorsOutline16 = '#727d9c29';
-export declare const cvThemeLightPalettesNeutral80 = '#d1d5e7ff';
-export declare const cvThemeLightColorsOutlineVariant = '#d1d5e7ff';
-export declare const cvThemeLightPalettesPositive40 = '#036600ff';
-export declare const cvThemeLightColorsPositive = '#036600ff';
-export declare const cvThemeLightColorsPositive4 = '#0366000a';
-export declare const cvThemeLightColorsPositive8 = '#03660014';
-export declare const cvThemeLightColorsPositive12 = '#0366001f';
-export declare const cvThemeLightColorsPositive16 = '#03660029';
-export declare const cvThemeLightColorsPositive20 = '#03660033';
-export declare const cvThemeLightColorsPositive24 = '#0366003d';
-export declare const cvThemeLightColorsPositive38 = '#03660061';
-export declare const cvThemeLightColorsPositive74 = '#036600bd';
-export declare const cvThemeLightPalettesPositive90 = '#8fcc8eff';
-export declare const cvThemeLightColorsPositiveContainer = '#8fcc8eff';
-export declare const cvThemeLightPalettesDigitalBlue40 = '#3053f4ff';
-export declare const cvThemeLightColorsPrimary = '#3053f4ff';
-export declare const cvThemeLightColorsPrimary4 = '#3053f40a';
-export declare const cvThemeLightColorsPrimary8 = '#3053f414';
-export declare const cvThemeLightColorsPrimary12 = '#3053f41f';
-export declare const cvThemeLightColorsPrimary16 = '#3053f429';
-export declare const cvThemeLightColorsPrimary20 = '#3053f433';
-export declare const cvThemeLightColorsPrimary24 = '#3053f43d';
-export declare const cvThemeLightPalettesDigitalBlue94 = '#ececfeff';
-export declare const cvThemeLightColorsPrimaryContainer = '#ececfeff';
-export declare const cvThemeLightPalettesDigitalBlue90 = '#dee0ffff';
-export declare const cvThemeLightColorsPrimaryFixed = '#dee0ffff';
-export declare const cvThemeLightColorsPrimaryFixedDim = '#bac3ffff';
-export declare const cvThemeLightColorsScrim = '#00000052';
-export declare const cvThemeLightColorsSecondary = '#00233cff';
-export declare const cvThemeLightColorsSecondary4 = '#00233c0a';
-export declare const cvThemeLightColorsSecondary8 = '#00233c14';
-export declare const cvThemeLightColorsSecondary12 = '#00233c1f';
-export declare const cvThemeLightColorsSecondary16 = '#00233c29';
-export declare const cvThemeLightPalettesNavy90 = '#deeafaff';
-export declare const cvThemeLightPalettesSecondary90 = '#deeafaff';
-export declare const cvThemeLightColorsSecondaryContainer = '#deeafaff';
-export declare const cvThemeLightColorsSecondaryFixed = '#deeafaff';
-export declare const cvThemeLightColorsSecondaryFixedDim = '#bcd5f6ff';
-export declare const cvThemeLightPalettesNeutral0 = '#000000ff';
-export declare const cvThemeLightColorsShadow = '#000000ff';
-export declare const cvThemeLightColorsSurface = '#f8f9fbff';
-export declare const cvThemeLightColorsSurfaceBright = '#f8f9fbff';
-export declare const cvThemeLightPalettesNeutral94 = '#eff1f7ff';
-export declare const cvThemeLightColorsSurfaceContainer = '#eff1f7ff';
-export declare const cvThemeLightPalettesNeutral92 = '#ebedf5ff';
-export declare const cvThemeLightColorsSurfaceContainerHigh = '#ebedf5ff';
-export declare const cvThemeLightPalettesNeutral90 = '#e6e9f3ff';
-export declare const cvThemeLightColorsSurfaceContainerHighest = '#e6e9f3ff';
-export declare const cvThemeLightPalettesNeutral96 = '#f3f5f9ff';
-export declare const cvThemeLightColorsSurfaceContainerLow = '#f3f5f9ff';
-export declare const cvThemeLightPalettesNeutral100 = '#ffffffff';
-export declare const cvThemeLightColorsSurfaceContainerLowest = '#ffffffff';
-export declare const cvThemeLightPalettesNeutral87 = '#e0e3efff';
-export declare const cvThemeLightColorsSurfaceDim = '#e0e3efff';
-export declare const cvThemeLightColorsSurfaceVariant = '#f8f9fbff';
-export declare const cvThemeLightColorsSurfaceVariant8 = '#f8f9fb14';
-export declare const cvThemeLightColorsSurfaceVariant12 = '#f8f9fb1f';
-export declare const cvThemeLightColorsSurfaceVariant16 = '#fdf9fc29';
-export declare const cvThemeLightColorsTertiary = '#ff5f02ff';
-export declare const cvThemeLightColorsTertiary4 = '#ff5f020a';
-export declare const cvThemeLightColorsTertiary8 = '#ff5f0214';
-export declare const cvThemeLightColorsTertiary12 = '#ff5f021f';
-export declare const cvThemeLightColorsTertiary16 = '#ff5f0229';
-export declare const cvThemeLightPalettesOrange90 = '#ffdbceff';
-export declare const cvThemeLightColorsTertiaryContainer = '#ffdbceff';
-export declare const cvThemeLightColorsTertiaryFixed = '#ffdbceff';
-export declare const cvThemeLightPalettesOrange80 = '#ffc0a8ff';
-export declare const cvThemeLightColorsTertiaryFixedDim = '#ffc0a8ff';
-export declare const cvThemeLightPalettesCaution0 = '#000000ff';
-export declare const cvThemeLightPalettesCaution20 = '#613600ff';
-export declare const cvThemeLightPalettesCaution30 = '#aa5f00ff';
-export declare const cvThemeLightPalettesCaution50 = '#f4941aff';
-export declare const cvThemeLightPalettesCaution60 = '#f5a033ff';
-export declare const cvThemeLightPalettesCaution70 = '#f7ac4dff';
-export declare const cvThemeLightPalettesCaution80 = '#f8b866ff';
-export declare const cvThemeLightPalettesCaution95 = '#ffdcb0ff';
-export declare const cvThemeLightPalettesCaution98 = '#fef3e6ff';
-export declare const cvThemeLightPalettesDigitalBlue0 = '#000000ff';
-export declare const cvThemeLightPalettesDigitalBlue20 = '#00208eff';
-export declare const cvThemeLightPalettesDigitalBlue30 = '#0436d3ff';
-export declare const cvThemeLightPalettesDigitalBlue50 = '#4967ffff';
-export declare const cvThemeLightPalettesDigitalBlue60 = '#7187ffff';
-export declare const cvThemeLightPalettesDigitalBlue70 = '#96a5ffff';
-export declare const cvThemeLightPalettesDigitalBlue91 = '#e1e3fdff';
-export declare const cvThemeLightPalettesDigitalBlue92 = '#e5e5feff';
-export declare const cvThemeLightPalettesDigitalBlue93 = '#e8e9feff';
-export declare const cvThemeLightPalettesDigitalBlue95 = '#f0efffff';
-export declare const cvThemeLightPalettesDigitalBlue98 = '#fbf8ffff';
-export declare const cvThemeLightPalettesDigitalBlue99 = '#fefbffff';
-export declare const cvThemeLightPalettesEmphasis0 = '#000000ff';
-export declare const cvThemeLightPalettesEmphasis20 = '#47001aff';
-export declare const cvThemeLightPalettesEmphasis30 = '#7c012eff';
-export declare const cvThemeLightPalettesEmphasis50 = '#b91a55ff';
-export declare const cvThemeLightPalettesEmphasis60 = '#c13468ff';
-export declare const cvThemeLightPalettesEmphasis70 = '#c84d7bff';
-export declare const cvThemeLightPalettesEmphasis80 = '#d880a1ff';
-export declare const cvThemeLightPalettesEmphasis95 = '#efccd9ff';
-export declare const cvThemeLightPalettesEmphasis98 = '#f7e6ecff';
-export declare const cvThemeLightPalettesNavy0 = '#000000ff';
-export declare const cvThemeLightPalettesNavy20 = '#14324cff';
-export declare const cvThemeLightPalettesNavy30 = '#26547cff';
-export declare const cvThemeLightPalettesNavy40 = '#3672a8ff';
-export declare const cvThemeLightPalettesNavy50 = '#458fcfff';
-export declare const cvThemeLightPalettesNavy60 = '#60a9edff';
-export declare const cvThemeLightPalettesNavy70 = '#95bff1ff';
-export declare const cvThemeLightPalettesNavy95 = '#eef4fcff';
-export declare const cvThemeLightPalettesNavy98 = '#f8fafdff';
-export declare const cvThemeLightPalettesNavy99 = '#fbfcfeff';
-export declare const cvThemeLightPalettesNegative0 = '#000000ff';
-export declare const cvThemeLightPalettesNegative20 = '#460704ff';
-export declare const cvThemeLightPalettesNegative30 = '#7a0d06ff';
-export declare const cvThemeLightPalettesNegative50 = '#b62a22ff';
-export declare const cvThemeLightPalettesNegative60 = '#be413aff';
-export declare const cvThemeLightPalettesNegative70 = '#c65953ff';
-export declare const cvThemeLightPalettesNegative80 = '#e0938eff';
-export declare const cvThemeLightPalettesNegative95 = '#ffc9c7ff';
-export declare const cvThemeLightPalettesNegative98 = '#ffdcdbff';
-export declare const cvThemeLightPalettesNeutral1 = '#020305ff';
-export declare const cvThemeLightPalettesNeutral2 = '#05060aff';
-export declare const cvThemeLightPalettesNeutral3 = '#080a0fff';
-export declare const cvThemeLightPalettesNeutral4 = '#0a0d12ff';
-export declare const cvThemeLightPalettesNeutral5 = '#0d1016ff';
-export declare const cvThemeLightPalettesNeutral6 = '#10141aff';
-export declare const cvThemeLightPalettesNeutral7 = '#14181fff';
-export declare const cvThemeLightPalettesNeutral8 = '#171b24ff';
-export declare const cvThemeLightPalettesNeutral9 = '#1b1f29ff';
-export declare const cvThemeLightPalettesNeutral10 = '#1f232eff';
-export declare const cvThemeLightPalettesNeutral11 = '#222633ff';
-export declare const cvThemeLightPalettesNeutral12 = '#252a37ff';
-export declare const cvThemeLightPalettesNeutral13 = '#292e3cff';
-export declare const cvThemeLightPalettesNeutral14 = '#2c313fff';
-export declare const cvThemeLightPalettesNeutral15 = '#2f3443ff';
-export declare const cvThemeLightPalettesNeutral16 = '#333847ff';
-export declare const cvThemeLightPalettesNeutral17 = '#353b4bff';
-export declare const cvThemeLightPalettesNeutral18 = '#383e4fff';
-export declare const cvThemeLightPalettesNeutral19 = '#3b4153ff';
-export declare const cvThemeLightPalettesNeutral21 = '#41485bff';
-export declare const cvThemeLightPalettesNeutral22 = '#444b5fff';
-export declare const cvThemeLightPalettesNeutral23 = '#474e62ff';
-export declare const cvThemeLightPalettesNeutral24 = '#495166ff';
-export declare const cvThemeLightPalettesNeutral25 = '#4c546aff';
-export declare const cvThemeLightPalettesNeutral35 = '#66708cff';
-export declare const cvThemeLightPalettesNeutral50 = '#8e98b4ff';
-export declare const cvThemeLightPalettesNeutral60 = '#a4adc8ff';
-export declare const cvThemeLightPalettesNeutral70 = '#bbc1d9ff';
-export declare const cvThemeLightPalettesNeutral91 = '#e8ebf4ff';
-export declare const cvThemeLightPalettesNeutral93 = '#edeff6ff';
-export declare const cvThemeLightPalettesNeutral97 = '#f6f7fbff';
-export declare const cvThemeLightPalettesNeutral99 = '#fcfcfdff';
-export declare const cvThemeLightPalettesNeutralVariant0 = '#000000ff';
-export declare const cvThemeLightPalettesNeutralVariant5 = '#0f1114ff';
-export declare const cvThemeLightPalettesNeutralVariant10 = '#1a1c1eff';
-export declare const cvThemeLightPalettesNeutralVariant15 = '#242629ff';
-export declare const cvThemeLightPalettesNeutralVariant20 = '#2f3033ff';
-export declare const cvThemeLightPalettesNeutralVariant25 = '#3a3b3fff';
-export declare const cvThemeLightPalettesNeutralVariant30 = '#45474aff';
-export declare const cvThemeLightPalettesNeutralVariant35 = '#515256ff';
-export declare const cvThemeLightPalettesNeutralVariant40 = '#5d5e62ff';
-export declare const cvThemeLightPalettesNeutralVariant50 = '#76777aff';
-export declare const cvThemeLightPalettesNeutralVariant60 = '#8f9194ff';
-export declare const cvThemeLightPalettesNeutralVariant70 = '#aaabafff';
-export declare const cvThemeLightPalettesNeutralVariant80 = '#c6c6caff';
-export declare const cvThemeLightPalettesNeutralVariant90 = '#e2e2e6ff';
-export declare const cvThemeLightPalettesNeutralVariant91 = '#e4e4e9ff';
-export declare const cvThemeLightPalettesNeutralVariant92 = '#e7e7ecff';
-export declare const cvThemeLightPalettesNeutralVariant93 = '#eaeaefff';
-export declare const cvThemeLightPalettesNeutralVariant94 = '#ededf1ff';
-export declare const cvThemeLightPalettesNeutralVariant95 = '#f0f0f4ff';
-export declare const cvThemeLightPalettesNeutralVariant96 = '#f2f2f7ff';
-export declare const cvThemeLightPalettesNeutralVariant97 = '#f5f5faff';
-export declare const cvThemeLightPalettesNeutralVariant98 = '#f9f9fdff';
-export declare const cvThemeLightPalettesNeutralVariant99 = '#fcfcffff';
-export declare const cvThemeLightPalettesNeutralVariant100 = '#ffffffff';
-export declare const cvThemeLightPalettesOrange0 = '#000000ff';
-export declare const cvThemeLightPalettesOrange20 = '#8d3001ff';
-export declare const cvThemeLightPalettesOrange30 = '#cf4b00ff';
-export declare const cvThemeLightPalettesOrange50 = '#ff7a42ff';
-export declare const cvThemeLightPalettesOrange60 = '#ff986dff';
-export declare const cvThemeLightPalettesOrange70 = '#ffa47eff';
-export declare const cvThemeLightPalettesOrange95 = '#ffede7ff';
-export declare const cvThemeLightPalettesOrange98 = '#fff8f6ff';
-export declare const cvThemeLightPalettesPositive0 = '#000000ff';
-export declare const cvThemeLightPalettesPositive20 = '#012900ff';
-export declare const cvThemeLightPalettesPositive30 = '#024700ff';
-export declare const cvThemeLightPalettesPositive50 = '#1c751aff';
-export declare const cvThemeLightPalettesPositive60 = '#358533ff';
-export declare const cvThemeLightPalettesPositive70 = '#4f944dff';
-export declare const cvThemeLightPalettesPositive80 = '#68a366ff';
-export declare const cvThemeLightPalettesPositive95 = '#b5e8b3ff';
-export declare const cvThemeLightPalettesPositive98 = '#daf6daff';
-export declare const cvThemeLightPalettesSecondary0 = '#000000ff';
-export declare const cvThemeLightPalettesSecondary20 = '#14324cff';
-export declare const cvThemeLightPalettesSecondary30 = '#26547cff';
-export declare const cvThemeLightPalettesSecondary40 = '#3672a8ff';
-export declare const cvThemeLightPalettesSecondary50 = '#458fcfff';
-export declare const cvThemeLightPalettesSecondary60 = '#60a9edff';
-export declare const cvThemeLightPalettesSecondary70 = '#95bff1ff';
-export declare const cvThemeLightPalettesSecondary95 = '#eef4fcff';
-export declare const cvThemeLightPalettesSecondary98 = '#f8fafdff';
+export declare const caution = '#F38800';
+export declare const inverseBackground = '#1E1D1E';
+export declare const inverseOnSurface = '#F1F3F8';
+export declare const inverseSurface = '#3E4557';
+export declare const negative = '#AE1209';
+export declare const onSecondaryContainer = '#001D33';
+export declare const onSurface = '#00233C';
+export declare const onSurfaceVariant = '#59627B';
+export declare const positive = '#036600';
+export declare const primary = '#3053F4';
+export declare const secondaryContainer = '#DEEAFA';
+export declare const surfaceVariant = '#f8f9fb';
+export declare const collectionsSpacingCvBorderRadiusOuter1 = '20px';
+export declare const collectionsSpacingCvBorderRadiusOuter2 = '16px';
+export declare const collectionsSpacingCvBorderRadiusOuter3 = '12px';
+export declare const collectionsSpacingCvBorderRadiusOuter0 = '28px';
+export declare const collectionsSpacingCvCardPadding1 = '16px';
+export declare const collectionsSpacingCvCardPadding2 = '8px';
+export declare const collectionsSpacingCvCardPadding3 = '4px';
+export declare const collectionsSpacingCvCardPadding0 = '24px';
+export declare const collectionsSpacingCvDataTableBodyContainerHeight1 = '40px';
+export declare const collectionsSpacingCvDataTableBodyContainerHeight2 = '32px';
+export declare const collectionsSpacingCvDataTableBodyContainerHeight3 = '24px';
+export declare const collectionsSpacingCvDataTableBodyContainerHeight0 = '48px';
+export declare const collectionsSpacingCvDataTableHeaderContainerHeight1 =
+  '48px';
+export declare const collectionsSpacingCvDataTableHeaderContainerHeight2 =
+  '40px';
+export declare const collectionsSpacingCvDataTableHeaderContainerHeight3 =
+  '32px';
+export declare const collectionsSpacingCvDataTableHeaderContainerHeight0 =
+  '56px';
+export declare const collectionsSpacingCvList1LinePaddingVertical1 = '4px';
+export declare const collectionsSpacingCvList1LinePaddingVertical2 = '0px';
+export declare const collectionsSpacingCvList1LinePaddingVertical3 = '0px';
+export declare const collectionsSpacingCvList1LinePaddingVertical0 = '8px';
+export declare const collectionsSpacingCvList2LinePaddingVertical1 = '4px';
+export declare const collectionsSpacingCvList2LinePaddingVertical2 = '0px';
+export declare const collectionsSpacingCvList2LinePaddingVertical3 = '0px';
+export declare const collectionsSpacingCvList2LinePaddingVertical0 = '8px';
+export declare const collectionsSpacingCvList3LinePaddingVertical1 = '8px';
+export declare const collectionsSpacingCvList3LinePaddingVertical2 = '4px';
+export declare const collectionsSpacingCvList3LinePaddingVertical3 = '0px';
+export declare const collectionsSpacingCvList3LinePaddingVertical0 = '12px';
+export declare const collectionsSpacingCvListItem1LineContainerHeight1 = '48px';
+export declare const collectionsSpacingCvListItem1LineContainerHeight2 = '40px';
+export declare const collectionsSpacingCvListItem1LineContainerHeight3 = '32px';
+export declare const collectionsSpacingCvListItem1LineContainerHeight0 = '56px';
+export declare const collectionsSpacingCvListItem2LineContainerHeight1 = '64px';
+export declare const collectionsSpacingCvListItem2LineContainerHeight2 = '56px';
+export declare const collectionsSpacingCvListItem2LineContainerHeight3 = '48px';
+export declare const collectionsSpacingCvListItem2LineContainerHeight0 = '72px';
+export declare const collectionsSpacingCvListItem3LineContainerHeight1 = '80px';
+export declare const collectionsSpacingCvListItem3LineContainerHeight2 = '72px';
+export declare const collectionsSpacingCvListItem3LineContainerHeight3 = '64px';
+export declare const collectionsSpacingCvListItem3LineContainerHeight0 = '88px';
+export declare const collectionsSpacingCvListItemBorderRadius1 = '100px';
+export declare const collectionsSpacingCvListItemBorderRadius2 = '100px';
+export declare const collectionsSpacingCvListItemBorderRadius3 = '100px';
+export declare const collectionsSpacingCvListItemBorderRadius0 = '100px';
+export declare const collectionsSpacingCvPaddingVertical1 = '8px';
+export declare const collectionsSpacingCvPaddingVertical2 = '4px';
+export declare const collectionsSpacingCvPaddingVertical3 = '0px';
+export declare const collectionsSpacingCvPaddingVertical0 = '12px';
+export declare const collectionsSpacingCvShapeLarge1 = '16px';
+export declare const collectionsSpacingCvShapeLarge2 = '12px';
+export declare const collectionsSpacingCvShapeLarge3 = '8px';
+export declare const collectionsSpacingCvShapeLarge0 = '20px';
+export declare const collectionsSpacingCvShapeMedium1 = '8px';
+export declare const collectionsSpacingCvShapeMedium2 = '4px';
+export declare const collectionsSpacingCvShapeMedium3 = '2px';
+export declare const collectionsSpacingCvShapeMedium0 = '12px';
+export declare const collectionsSpacingCvShapeSmall1 = '4px';
+export declare const collectionsSpacingCvShapeSmall2 = '2px';
+export declare const collectionsSpacingCvShapeSmall3 = '0px';
+export declare const collectionsSpacingCvShapeSmall0 = '8px';
+export declare const collectionsSpacingCvShapeXlarge1 = '24px';
+export declare const collectionsSpacingCvShapeXlarge2 = '20px';
+export declare const collectionsSpacingCvShapeXlarge3 = '16px';
+export declare const collectionsSpacingCvShapeXlarge0 = '28px';
+export declare const collectionsSpacingCvSpaceBottom1 = '8px';
+export declare const collectionsSpacingCvSpaceBottom2 = '4px';
+export declare const collectionsSpacingCvSpaceBottom3 = '0px';
+export declare const collectionsSpacingCvSpaceBottom0 = '12px';
+export declare const collectionsSpacingCvSpaceTop1 = '8px';
+export declare const collectionsSpacingCvSpaceTop2 = '4px';
+export declare const collectionsSpacingCvSpaceTop3 = '0px';
+export declare const collectionsSpacingCvSpaceTop0 = '12px';
+export declare const collectionsSpacingCvToolbarHeight1 = '56px';
+export declare const collectionsSpacingCvToolbarHeight2 = '48px';
+export declare const collectionsSpacingCvToolbarHeight3 = '40px';
+export declare const collectionsSpacingCvToolbarHeight0 = '64px';
+export declare const collectionsSpacingMdcBorderRadius1 = '8px';
+export declare const collectionsSpacingMdcBorderRadius2 = '4px';
+export declare const collectionsSpacingMdcBorderRadius3 = '0px';
+export declare const collectionsSpacingMdcBorderRadius0 = '12px';
+export declare const collectionsSpacingMdcButtonHorizontalPadding1 = '16px';
+export declare const collectionsSpacingMdcButtonHorizontalPadding2 = '16px';
+export declare const collectionsSpacingMdcButtonHorizontalPadding3 = '16px';
+export declare const collectionsSpacingMdcButtonHorizontalPadding0 = '16px';
+export declare const collectionsSpacingMdcIconSize1 = '24px';
+export declare const collectionsSpacingMdcIconSize2 = '24px';
+export declare const collectionsSpacingMdcIconSize3 = '24px';
+export declare const collectionsSpacingMdcIconSize0 = '24px';
+export declare const collectionsSpacingMdcListSidePadding1 = '16px';
+export declare const collectionsSpacingMdcListSidePadding2 = '16px';
+export declare const collectionsSpacingMdcListSidePadding3 = '16px';
+export declare const collectionsSpacingMdcListSidePadding0 = '16px';
+export declare const collectionsThemeCvThemeCaution4Dark = '#FFB7750B';
+export declare const collectionsThemeCvThemeCaution4Light = '#F388000B';
+export declare const collectionsThemeCvThemeCaution8Dark = '#FFB77515';
+export declare const collectionsThemeCvThemeCaution8Light = '#F3880015';
+export declare const collectionsThemeCvThemeCaution12Dark = '#FFB7751F';
+export declare const collectionsThemeCvThemeCaution12Light = '#F388001F';
+export declare const collectionsThemeCvThemeCaution16Dark = '#FFB77529';
+export declare const collectionsThemeCvThemeCaution16Light = '#F3880029';
+export declare const collectionsThemeCvThemeCaution20Dark = '#FFB77534';
+export declare const collectionsThemeCvThemeCaution20Light = '#F3880034';
+export declare const collectionsThemeCvThemeCaution24Dark = '#FFB7753E';
+export declare const collectionsThemeCvThemeCaution24Light = '#F388003E';
+export declare const collectionsThemeCvThemeCaution38Dark = '#FFB77562';
+export declare const collectionsThemeCvThemeCaution38Light = '#F3880062';
+export declare const collectionsThemeCvThemeCaution74Dark = '#FFB775BE';
+export declare const collectionsThemeCvThemeCaution74Light = '#F38800BE';
+export declare const collectionsThemeCvThemeEmphasis4Dark = '#CC809C0B';
+export declare const collectionsThemeCvThemeEmphasis4Light = '#B101420B';
+export declare const collectionsThemeCvThemeEmphasis8Dark = '#CC809C15';
+export declare const collectionsThemeCvThemeEmphasis8Light = '#B1014215';
+export declare const collectionsThemeCvThemeEmphasis12Dark = '#CC809C1F';
+export declare const collectionsThemeCvThemeEmphasis12Light = '#B101421F';
+export declare const collectionsThemeCvThemeEmphasis16Dark = '#CC809C29';
+export declare const collectionsThemeCvThemeEmphasis16Light = '#B1014229';
+export declare const collectionsThemeCvThemeEmphasis20Dark = '#CC809C34';
+export declare const collectionsThemeCvThemeEmphasis20Light = '#B1014234';
+export declare const collectionsThemeCvThemeEmphasis24Dark = '#CC809C3E';
+export declare const collectionsThemeCvThemeEmphasis24Light = '#B101423E';
+export declare const collectionsThemeCvThemeEmphasis38Dark = '#CC809C62';
+export declare const collectionsThemeCvThemeEmphasis38Light = '#B1014262';
+export declare const collectionsThemeCvThemeEmphasis74Dark = '#CC809CBE';
+export declare const collectionsThemeCvThemeEmphasis74Light = '#B10142BE';
+export declare const collectionsThemeCvThemeInverseOnSurface4Dark = '#3E3E410B';
+export declare const collectionsThemeCvThemeInverseOnSurface4Light =
+  '#F6F3F60B';
+export declare const collectionsThemeCvThemeInverseOnSurface8Dark = '#3E3E4115';
+export declare const collectionsThemeCvThemeInverseOnSurface8Light =
+  '#F6F3F615';
+export declare const collectionsThemeCvThemeInverseOnSurface12Dark =
+  '#3E3E411F';
+export declare const collectionsThemeCvThemeInverseOnSurface12Light =
+  '#F6F3F61F';
+export declare const collectionsThemeCvThemeInverseOnSurface16Dark =
+  '#3E3E4129';
+export declare const collectionsThemeCvThemeInverseOnSurface16Light =
+  '#F6F3F61F';
+export declare const collectionsThemeCvThemeInversePrimaryDark = '#3053F4';
+export declare const collectionsThemeCvThemeInversePrimary4Dark = '#3053F40B';
+export declare const collectionsThemeCvThemeInversePrimary4Light = '#BAC3FF0B';
+export declare const collectionsThemeCvThemeInversePrimary8Dark = '#3053F415';
+export declare const collectionsThemeCvThemeInversePrimary8Light = '#BAC3FF15';
+export declare const collectionsThemeCvThemeInversePrimary12Dark = '#3053F41F';
+export declare const collectionsThemeCvThemeInversePrimary12Light = '#BAC3FF1F';
+export declare const collectionsThemeCvThemeInversePrimary16Dark = '#3053F429';
+export declare const collectionsThemeCvThemeInversePrimary16Light = '#BAC3FF29';
+export declare const collectionsThemeCvThemeInverseSecondary4Dark = '#6163780B';
+export declare const collectionsThemeCvThemeInverseSecondary4Light =
+  '#BCD5F60B';
+export declare const collectionsThemeCvThemeInverseSecondary8Dark = '#61637815';
+export declare const collectionsThemeCvThemeInverseSecondary8Light =
+  '#BCD5F615';
+export declare const collectionsThemeCvThemeInverseSecondary12Dark =
+  '#6163781F';
+export declare const collectionsThemeCvThemeInverseSecondary12Light =
+  '#BCD5F61F';
+export declare const collectionsThemeCvThemeInverseSecondary16Dark =
+  '#61637829';
+export declare const collectionsThemeCvThemeInverseSecondary16Light =
+  '#C3C5DD29';
+export declare const collectionsThemeCvThemeInverseTertiary4Dark = '#FF5F020B';
+export declare const collectionsThemeCvThemeInverseTertiary4Light = '#FF5F020B';
+export declare const collectionsThemeCvThemeInverseTertiary8Dark = '#FF5F0215';
+export declare const collectionsThemeCvThemeInverseTertiary8Light = '#FF5F0215';
+export declare const collectionsThemeCvThemeInverseTertiary12Dark = '#FF5F021F';
+export declare const collectionsThemeCvThemeInverseTertiary12Light =
+  '#FF5F021F';
+export declare const collectionsThemeCvThemeInverseTertiary16Dark = '#FF5F0229';
+export declare const collectionsThemeCvThemeInverseTertiary16Light =
+  '#FF5F0229';
+export declare const collectionsThemeCvThemeInverseTertiary38Dark = '#FF5F0262';
+export declare const collectionsThemeCvThemeInverseTertiary38Light =
+  '#FF5F0262';
+export declare const collectionsThemeCvThemeInverseTertiary74Dark = '#FF5F02BE';
+export declare const collectionsThemeCvThemeInverseTertiary74Light =
+  '#FF5F02BE';
+export declare const collectionsThemeCvThemeLogoDark = '#FFFFFF';
+export declare const collectionsThemeCvThemeLogoLight = '#FF5F02';
+export declare const collectionsThemeCvThemeNegative4Dark = '#FD7D690B';
+export declare const collectionsThemeCvThemeNegative4Light = '#AE12090B';
+export declare const collectionsThemeCvThemeNegative8Dark = '#FD7D6915';
+export declare const collectionsThemeCvThemeNegative8Light = '#AE120915';
+export declare const collectionsThemeCvThemeNegative12Dark = '#FD7D691F';
+export declare const collectionsThemeCvThemeNegative12Light = '#AE12091F';
+export declare const collectionsThemeCvThemeNegative16Dark = '#FD7D6929';
+export declare const collectionsThemeCvThemeNegative16Light = '#AE120929';
+export declare const collectionsThemeCvThemeNegative20Dark = '#FD7D6934';
+export declare const collectionsThemeCvThemeNegative20Light = '#AE120934';
+export declare const collectionsThemeCvThemeNegative24Dark = '#FD7D693E';
+export declare const collectionsThemeCvThemeNegative24Light = '#AE12093E';
+export declare const collectionsThemeCvThemeNegative38Dark = '#FD7D6962';
+export declare const collectionsThemeCvThemeNegative38Light = '#AE120962';
+export declare const collectionsThemeCvThemeNegative74Dark = '#FD7D69BE';
+export declare const collectionsThemeCvThemeNegative74Light = '#AE1209BE';
+export declare const collectionsThemeCvThemeOnCaution4Dark = '#66492F0B';
+export declare const collectionsThemeCvThemeOnCaution4Light = '#FFFFFF0B';
+export declare const collectionsThemeCvThemeOnCaution8Dark = '#66492F15';
+export declare const collectionsThemeCvThemeOnCaution8Light = '#FFFFFF15';
+export declare const collectionsThemeCvThemeOnCaution12Dark = '#66492F1F';
+export declare const collectionsThemeCvThemeOnCaution12Light = '#FFFFFF1F';
+export declare const collectionsThemeCvThemeOnCaution16Dark = '#66492F29';
+export declare const collectionsThemeCvThemeOnCaution16Light = '#FFFFFF29';
+export declare const collectionsThemeCvThemeOnCaution38Dark = '#66492F62';
+export declare const collectionsThemeCvThemeOnCaution38Light = '#FFFFFF62';
+export declare const collectionsThemeCvThemeOnCaution74Dark = '#66492FBE';
+export declare const collectionsThemeCvThemeOnCaution74Light = '#FFFFFFBE';
+export declare const collectionsThemeCvThemeOnCautionContainer4Dark =
+  '#19120C0B';
+export declare const collectionsThemeCvThemeOnCautionContainer4Light =
+  '#180E000B';
+export declare const collectionsThemeCvThemeOnCautionContainer8Dark =
+  '#19120C15';
+export declare const collectionsThemeCvThemeOnCautionContainer8Light =
+  '#180E0015';
+export declare const collectionsThemeCvThemeOnCautionContainer12Dark =
+  '#19120C1F';
+export declare const collectionsThemeCvThemeOnCautionContainer12Light =
+  '#180E001F';
+export declare const collectionsThemeCvThemeOnCautionContainer16Dark =
+  '#19120C29';
+export declare const collectionsThemeCvThemeOnCautionContainer16Light =
+  '#180E0029';
+export declare const collectionsThemeCvThemeOnCautionContainer38Dark =
+  '#19120C62';
+export declare const collectionsThemeCvThemeOnCautionContainer38Light =
+  '#180E0062';
+export declare const collectionsThemeCvThemeOnCautionContainer74Dark =
+  '#19120CBE';
+export declare const collectionsThemeCvThemeOnCautionContainer74Light =
+  '#180E00BE';
+export declare const collectionsThemeCvThemeOnEmphasis4Dark = '#1910130B';
+export declare const collectionsThemeCvThemeOnEmphasis4Light = '#FFFFFF0B';
+export declare const collectionsThemeCvThemeOnEmphasis8Dark = '#19101315';
+export declare const collectionsThemeCvThemeOnEmphasis8Light = '#FFFFFF15';
+export declare const collectionsThemeCvThemeOnEmphasis12Dark = '#1910131F';
+export declare const collectionsThemeCvThemeOnEmphasis12Light = '#FFFFFF1F';
+export declare const collectionsThemeCvThemeOnEmphasis16Dark = '#19101329';
+export declare const collectionsThemeCvThemeOnEmphasis16Light = '#FFFFFF29';
+export declare const collectionsThemeCvThemeOnEmphasis38Dark = '#19101362';
+export declare const collectionsThemeCvThemeOnEmphasis38Light = '#FFFFFF62';
+export declare const collectionsThemeCvThemeOnEmphasis74Dark = '#191013BE';
+export declare const collectionsThemeCvThemeOnEmphasis74Light = '#FFFFFFBE';
+export declare const collectionsThemeCvThemeOnEmphasisContainer4Dark =
+  '#FFD9E70B';
+export declare const collectionsThemeCvThemeOnEmphasisContainer4Light =
+  '#1200070B';
+export declare const collectionsThemeCvThemeOnEmphasisContainer8Dark =
+  '#FFD9E715';
+export declare const collectionsThemeCvThemeOnEmphasisContainer8Light =
+  '#12000715';
+export declare const collectionsThemeCvThemeOnEmphasisContainer12Dark =
+  '#FFD9E71F';
+export declare const collectionsThemeCvThemeOnEmphasisContainer12Light =
+  '#1200071F';
+export declare const collectionsThemeCvThemeOnEmphasisContainer16Dark =
+  '#FFD9E729';
+export declare const collectionsThemeCvThemeOnEmphasisContainer16Light =
+  '#180E0029';
+export declare const collectionsThemeCvThemeOnEmphasisContainer38Dark =
+  '#FFD9E762';
+export declare const collectionsThemeCvThemeOnEmphasisContainer38Light =
+  '#180E0062';
+export declare const collectionsThemeCvThemeOnEmphasisContainer74Dark =
+  '#FFD9E7BE';
+export declare const collectionsThemeCvThemeOnEmphasisContainer74Light =
+  '#180E00BE';
+export declare const collectionsThemeCvThemeOnNegative4Dark = '#3319150B';
+export declare const collectionsThemeCvThemeOnNegative4Light = '#FFFFFF0B';
+export declare const collectionsThemeCvThemeOnNegative8Dark = '#33191515';
+export declare const collectionsThemeCvThemeOnNegative8Light = '#FFFFFF15';
+export declare const collectionsThemeCvThemeOnNegative12Dark = '#3319151F';
+export declare const collectionsThemeCvThemeOnNegative12Light = '#FFFFFF1F';
+export declare const collectionsThemeCvThemeOnNegative16Dark = '#33191529';
+export declare const collectionsThemeCvThemeOnNegative16Light = '#FFFFFF29';
+export declare const collectionsThemeCvThemeOnNegative38Dark = '#33191562';
+export declare const collectionsThemeCvThemeOnNegative38Light = '#FFFFFF62';
+export declare const collectionsThemeCvThemeOnNegative74Dark = '#331915BE';
+export declare const collectionsThemeCvThemeOnNegative74Light = '#FFFFFFBE';
+export declare const collectionsThemeCvThemeOnNegativeContainer4Dark =
+  '#FFAC9F0B';
+export declare const collectionsThemeCvThemeOnNegativeContainer4Light =
+  '#1102010B';
+export declare const collectionsThemeCvThemeOnNegativeContainer8Dark =
+  '#FFAC9F15';
+export declare const collectionsThemeCvThemeOnNegativeContainer8Light =
+  '#11020115';
+export declare const collectionsThemeCvThemeOnNegativeContainer12Dark =
+  '#FFAC9F1F';
+export declare const collectionsThemeCvThemeOnNegativeContainer12Light =
+  '#1102011F';
+export declare const collectionsThemeCvThemeOnNegativeContainer16Dark =
+  '#FFAC9F29';
+export declare const collectionsThemeCvThemeOnNegativeContainer16Light =
+  '#11020129';
+export declare const collectionsThemeCvThemeOnNegativeContainer38Dark =
+  '#FFAC9F62';
+export declare const collectionsThemeCvThemeOnNegativeContainer38Light =
+  '#11020162';
+export declare const collectionsThemeCvThemeOnNegativeContainer74Dark =
+  '#FFAC9FBE';
+export declare const collectionsThemeCvThemeOnNegativeContainer74Light =
+  '#110201BE';
+export declare const collectionsThemeCvThemeOnPositive4Dark = '#1126110B';
+export declare const collectionsThemeCvThemeOnPositive4Light = '#FFFFFF0B';
+export declare const collectionsThemeCvThemeOnPositive8Dark = '#11261115';
+export declare const collectionsThemeCvThemeOnPositive8Light = '#FFFFFF15';
+export declare const collectionsThemeCvThemeOnPositive12Dark = '#1126111F';
+export declare const collectionsThemeCvThemeOnPositive12Light = '#FFFFFF1F';
+export declare const collectionsThemeCvThemeOnPositive16Dark = '#11261129';
+export declare const collectionsThemeCvThemeOnPositive16Light = '#FFFFFF29';
+export declare const collectionsThemeCvThemeOnPositive38Dark = '#11261162';
+export declare const collectionsThemeCvThemeOnPositive38Light = '#FFFFFF62';
+export declare const collectionsThemeCvThemeOnPositive74Dark = '#112611BE';
+export declare const collectionsThemeCvThemeOnPositive74Light = '#FFFFFFBE';
+export declare const collectionsThemeCvThemeOnPositiveContainer4Dark =
+  '#91D8900B';
+export declare const collectionsThemeCvThemeOnPositiveContainer4Light =
+  '#000A000B';
+export declare const collectionsThemeCvThemeOnPositiveContainer8Dark =
+  '#91D89015';
+export declare const collectionsThemeCvThemeOnPositiveContainer8Light =
+  '#000A0015';
+export declare const collectionsThemeCvThemeOnPositiveContainer12Dark =
+  '#91D8901F';
+export declare const collectionsThemeCvThemeOnPositiveContainer12Light =
+  '#000A001F';
+export declare const collectionsThemeCvThemeOnPositiveContainer16Dark =
+  '#91D89029';
+export declare const collectionsThemeCvThemeOnPositiveContainer16Light =
+  '#000A0029';
+export declare const collectionsThemeCvThemeOnPositiveContainer38Dark =
+  '#91D89062';
+export declare const collectionsThemeCvThemeOnPositiveContainer38Light =
+  '#000A0062';
+export declare const collectionsThemeCvThemeOnPositiveContainer74Dark =
+  '#91D890BE';
+export declare const collectionsThemeCvThemeOnPositiveContainer74Light =
+  '#000A00BE';
+export declare const collectionsThemeCvThemeOnPrimary4Dark = '#111A280B';
+export declare const collectionsThemeCvThemeOnPrimary4Light = '#FFFFFF0B';
+export declare const collectionsThemeCvThemeOnPrimary8Dark = '#111A2815';
+export declare const collectionsThemeCvThemeOnPrimary8Light = '#FFFFFF15';
+export declare const collectionsThemeCvThemeOnPrimary12Dark = '#111A281F';
+export declare const collectionsThemeCvThemeOnPrimary12Light = '#FFFFFF1F';
+export declare const collectionsThemeCvThemeOnPrimary16Dark = '#111A2829';
+export declare const collectionsThemeCvThemeOnPrimary16Light = '#FFFFFF29';
+export declare const collectionsThemeCvThemeOnPrimary38Dark = '#111A2862';
+export declare const collectionsThemeCvThemeOnPrimary38Light = '#FFFFFF62';
+export declare const collectionsThemeCvThemeOnPrimary74Dark = '#111A28BE';
+export declare const collectionsThemeCvThemeOnPrimary74Light = '#FFFFFFBE';
+export declare const collectionsThemeCvThemeOnPrimaryContainer4Dark =
+  '#DDE1FF0B';
+export declare const collectionsThemeCvThemeOnPrimaryContainer4Light =
+  '#00115A0B';
+export declare const collectionsThemeCvThemeOnPrimaryContainer8Dark =
+  '#DDE1FF15';
+export declare const collectionsThemeCvThemeOnPrimaryContainer8Light =
+  '#00115A15';
+export declare const collectionsThemeCvThemeOnPrimaryContainer12Dark =
+  '#DDE1FF1F';
+export declare const collectionsThemeCvThemeOnPrimaryContainer12Light =
+  '#00115A1F';
+export declare const collectionsThemeCvThemeOnPrimaryContainer16Dark =
+  '#DDE1FF29';
+export declare const collectionsThemeCvThemeOnPrimaryContainer16Light =
+  '#00115A29';
+export declare const collectionsThemeCvThemeOnPrimaryContainer38Dark =
+  '#DDE1FF62';
+export declare const collectionsThemeCvThemeOnPrimaryContainer38Light =
+  '#00115A62';
+export declare const collectionsThemeCvThemeOnPrimaryContainer74Dark =
+  '#DDE1FFBE';
+export declare const collectionsThemeCvThemeOnPrimaryContainer74Light =
+  '#00115ABE';
+export declare const collectionsThemeCvThemeOnSecondary4Dark = '#171A2C0B';
+export declare const collectionsThemeCvThemeOnSecondary4Light = '#FFFFFF0B';
+export declare const collectionsThemeCvThemeOnSecondary8Dark = '#171A2C15';
+export declare const collectionsThemeCvThemeOnSecondary8Light = '#FFFFFF15';
+export declare const collectionsThemeCvThemeOnSecondary12Dark = '#171A2C1F';
+export declare const collectionsThemeCvThemeOnSecondary12Light = '#FFFFFF1F';
+export declare const collectionsThemeCvThemeOnSecondary16Dark = '#171A2C29';
+export declare const collectionsThemeCvThemeOnSecondary16Light = '#FFFFFF29';
+export declare const collectionsThemeCvThemeOnSecondary38Dark = '#171A2C62';
+export declare const collectionsThemeCvThemeOnSecondary38Light = '#FFFFFF62';
+export declare const collectionsThemeCvThemeOnSecondary74Dark = '#171A2CBE';
+export declare const collectionsThemeCvThemeOnSecondary74Light = '#FFFFFFBE';
+export declare const collectionsThemeCvThemeOnSecondaryContainer4Dark =
+  '#5B5D720B';
+export declare const collectionsThemeCvThemeOnSecondaryContainer4Light =
+  '#001D330B';
+export declare const collectionsThemeCvThemeOnSecondaryContainer8Dark =
+  '#5B5D7215';
+export declare const collectionsThemeCvThemeOnSecondaryContainer8Light =
+  '#001D3315';
+export declare const collectionsThemeCvThemeOnSecondaryContainer12Dark =
+  '#5B5D721F';
+export declare const collectionsThemeCvThemeOnSecondaryContainer12Light =
+  '#001D331F';
+export declare const collectionsThemeCvThemeOnSecondaryContainer16Dark =
+  '#61637829';
+export declare const collectionsThemeCvThemeOnSecondaryContainer16Light =
+  '#001D3329';
+export declare const collectionsThemeCvThemeOnSecondaryContainer38Dark =
+  '#61637862';
+export declare const collectionsThemeCvThemeOnSecondaryContainer38Light =
+  '#001D3362';
+export declare const collectionsThemeCvThemeOnSecondaryContainer74Dark =
+  '#616378BE';
+export declare const collectionsThemeCvThemeOnSecondaryContainer74Light =
+  '#001D33BE';
+export declare const collectionsThemeCvThemeOnSurface4Dark = '#EBE8EC0B';
+export declare const collectionsThemeCvThemeOnSurface4Light = '#00233C0B';
+export declare const collectionsThemeCvThemeOnSurface8Dark = '#EBE8EC15';
+export declare const collectionsThemeCvThemeOnSurface8Light = '#00233C15';
+export declare const collectionsThemeCvThemeOnSurface12Dark = '#EBE8EC1F';
+export declare const collectionsThemeCvThemeOnSurface12Light = '#00233C1F';
+export declare const collectionsThemeCvThemeOnSurface16Dark = '#EBE8EC29';
+export declare const collectionsThemeCvThemeOnSurface16Light = '#00233C29';
+export declare const collectionsThemeCvThemeOnSurface20Dark = '#EBE8EC34';
+export declare const collectionsThemeCvThemeOnSurface20Light = '#00233C34';
+export declare const collectionsThemeCvThemeOnSurface38Dark = '#EBE8EC62';
+export declare const collectionsThemeCvThemeOnSurface38Light = '#00233C62';
+export declare const collectionsThemeCvThemeOnSurface74Dark = '#EBE8ECBE';
+export declare const collectionsThemeCvThemeOnSurface74Light = '#00233CBE';
+export declare const collectionsThemeCvThemeOnSurfaceVariant4Dark = '#D5D3D80B';
+export declare const collectionsThemeCvThemeOnSurfaceVariant4Light =
+  '#59627B0B';
+export declare const collectionsThemeCvThemeOnSurfaceVariant8Dark = '#D5D3D815';
+export declare const collectionsThemeCvThemeOnSurfaceVariant8Light =
+  '#59627B15';
+export declare const collectionsThemeCvThemeOnSurfaceVariant12Dark =
+  '#D5D3D81F';
+export declare const collectionsThemeCvThemeOnSurfaceVariant12Light =
+  '#59627B1F';
+export declare const collectionsThemeCvThemeOnSurfaceVariant16Dark =
+  '#D5D3D829';
+export declare const collectionsThemeCvThemeOnSurfaceVariant16Light =
+  '#59627B29';
+export declare const collectionsThemeCvThemeOnSurfaceVariant38Dark =
+  '#D5D3D862';
+export declare const collectionsThemeCvThemeOnSurfaceVariant38Light =
+  '#59627B62';
+export declare const collectionsThemeCvThemeOnTertiary4Dark = '#612E1A0B';
+export declare const collectionsThemeCvThemeOnTertiary4Light = '#FFFFFF0B';
+export declare const collectionsThemeCvThemeOnTertiary8Dark = '#612E1A15';
+export declare const collectionsThemeCvThemeOnTertiary8Light = '#FFFFFF15';
+export declare const collectionsThemeCvThemeOnTertiary12Dark = '#612E1A1F';
+export declare const collectionsThemeCvThemeOnTertiary12Light = '#FFFFFF1F';
+export declare const collectionsThemeCvThemeOnTertiary16Dark = '#612E1A29';
+export declare const collectionsThemeCvThemeOnTertiary16Light = '#FFFFFF29';
+export declare const collectionsThemeCvThemeOnTertiary38Dark = '#612E1A62';
+export declare const collectionsThemeCvThemeOnTertiary38Light = '#FFFFFF62';
+export declare const collectionsThemeCvThemeOnTertiary74Dark = '#612E1ABE';
+export declare const collectionsThemeCvThemeOnTertiary74Light = '#FFFFFFBE';
+export declare const collectionsThemeCvThemeOnTertiaryContainer4Dark =
+  '#FEF1EC0B';
+export declare const collectionsThemeCvThemeOnTertiaryContainer4Light =
+  '#4813000B';
+export declare const collectionsThemeCvThemeOnTertiaryContainer8Dark =
+  '#FEF1EC15';
+export declare const collectionsThemeCvThemeOnTertiaryContainer8Light =
+  '#48130015';
+export declare const collectionsThemeCvThemeOnTertiaryContainer12Dark =
+  '#FEF1EC1F';
+export declare const collectionsThemeCvThemeOnTertiaryContainer12Light =
+  '#4813001F';
+export declare const collectionsThemeCvThemeOnTertiaryContainer16Dark =
+  '#FEF1EC29';
+export declare const collectionsThemeCvThemeOnTertiaryContainer16Light =
+  '#48130029';
+export declare const collectionsThemeCvThemeOnTertiaryContainer38Dark =
+  '#FEF1EC62';
+export declare const collectionsThemeCvThemeOnTertiaryContainer38Light =
+  '#48130062';
+export declare const collectionsThemeCvThemeOnTertiaryContainer74Dark =
+  '#FEF1ECBE';
+export declare const collectionsThemeCvThemeOnTertiaryContainer74Light =
+  '#481300BE';
+export declare const collectionsThemeCvThemeOutline8Dark = '#8F8E9715';
+export declare const collectionsThemeCvThemeOutline8Light = '#727D9C15';
+export declare const collectionsThemeCvThemeOutline12Dark = '#8F8E971F';
+export declare const collectionsThemeCvThemeOutline12Light = '#727D9C1F';
+export declare const collectionsThemeCvThemeOutline16Dark = '#8F8E9729';
+export declare const collectionsThemeCvThemeOutline16Light = '#727D9C29';
+export declare const collectionsThemeCvThemePositive4Dark = '#91D8900B';
+export declare const collectionsThemeCvThemePositive4Light = '#0366000B';
+export declare const collectionsThemeCvThemePositive8Dark = '#91D89015';
+export declare const collectionsThemeCvThemePositive8Light = '#03660015';
+export declare const collectionsThemeCvThemePositive12Dark = '#91D8901F';
+export declare const collectionsThemeCvThemePositive12Light = '#0366001F';
+export declare const collectionsThemeCvThemePositive16Dark = '#91D89029';
+export declare const collectionsThemeCvThemePositive16Light = '#03660029';
+export declare const collectionsThemeCvThemePositive20Dark = '#91D89034';
+export declare const collectionsThemeCvThemePositive20Light = '#03660034';
+export declare const collectionsThemeCvThemePositive24Dark = '#91D8903E';
+export declare const collectionsThemeCvThemePositive24Light = '#0366003E';
+export declare const collectionsThemeCvThemePositive38Dark = '#91D89062';
+export declare const collectionsThemeCvThemePositive38Light = '#03660062';
+export declare const collectionsThemeCvThemePositive74Dark = '#91D890BE';
+export declare const collectionsThemeCvThemePositive74Light = '#036600BE';
+export declare const collectionsThemeCvThemePrimary4Dark = '#BAC3FF0B';
+export declare const collectionsThemeCvThemePrimary4Light = '#3053F40B';
+export declare const collectionsThemeCvThemePrimary8Dark = '#BAC3FF15';
+export declare const collectionsThemeCvThemePrimary8Light = '#3053F415';
+export declare const collectionsThemeCvThemePrimary12Dark = '#BAC3FF1F';
+export declare const collectionsThemeCvThemePrimary12Light = '#3053F41F';
+export declare const collectionsThemeCvThemePrimary16Dark = '#BAC3FF29';
+export declare const collectionsThemeCvThemePrimary16Light = '#3053F429';
+export declare const collectionsThemeCvThemePrimary20Dark = '#BAC3FF34';
+export declare const collectionsThemeCvThemePrimary20Light = '#3053F434';
+export declare const collectionsThemeCvThemePrimary24Dark = '#BAC3FF3E';
+export declare const collectionsThemeCvThemePrimary24Light = '#3053F43E';
+export declare const collectionsThemeCvThemePrimary38Dark = '#BAC3FF62';
+export declare const collectionsThemeCvThemePrimary38Light = '#3053F462';
+export declare const collectionsThemeCvThemePrimary74Dark = '#BAC3FFBE';
+export declare const collectionsThemeCvThemePrimary74Light = '#3053F4BE';
+export declare const collectionsThemeCvThemeScrimDark = '#00000052';
+export declare const collectionsThemeCvThemeScrimLight = '#00000052';
+export declare const collectionsThemeCvThemeSecondary4Dark = '#C3C5DD0B';
+export declare const collectionsThemeCvThemeSecondary4Light = '#00233C0B';
+export declare const collectionsThemeCvThemeSecondary8Dark = '#C3C5DD15';
+export declare const collectionsThemeCvThemeSecondary8Light = '#00233C15';
+export declare const collectionsThemeCvThemeSecondary12Dark = '#C3C5DD1F';
+export declare const collectionsThemeCvThemeSecondary12Light = '#00233C1F';
+export declare const collectionsThemeCvThemeSecondary16Dark = '#C3C5DD29';
+export declare const collectionsThemeCvThemeSecondary16Light = '#00233C29';
+export declare const collectionsThemeCvThemeSurfaceVariant8Dark = '#00000015';
+export declare const collectionsThemeCvThemeSurfaceVariant8Light = '#F8F9FB15';
+export declare const collectionsThemeCvThemeSurfaceVariant12Dark = '#0000001F';
+export declare const collectionsThemeCvThemeSurfaceVariant12Light = '#F8F9FB1F';
+export declare const collectionsThemeCvThemeSurfaceVariant16Dark = '#00000029';
+export declare const collectionsThemeCvThemeSurfaceVariant16Light = '#FDF9FC29';
+export declare const collectionsThemeCvThemeTertiaryDark = '#FF5F02';
+export declare const collectionsThemeCvThemeTertiary4Dark = '#FF5F020B';
+export declare const collectionsThemeCvThemeTertiary4Light = '#FF5F020B';
+export declare const collectionsThemeCvThemeTertiary8Dark = '#FF5F0215';
+export declare const collectionsThemeCvThemeTertiary8Light = '#FF5F0215';
+export declare const collectionsThemeCvThemeTertiary12Dark = '#FF5F021F';
+export declare const collectionsThemeCvThemeTertiary12Light = '#FF5F021F';
+export declare const collectionsThemeCvThemeTertiary16Dark = '#FF5F0229';
+export declare const collectionsThemeCvThemeTertiary16Light = '#FF5F0229';
+export declare const collectionsThemeCvThemePalettesCaution0Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesCaution0Light = '#000000';
+export declare const collectionsThemeCvThemePalettesCaution10Dark = '#19120C';
+export declare const collectionsThemeCvThemePalettesCaution10Light = '#180E00';
+export declare const collectionsThemeCvThemePalettesCaution20Dark = '#332517';
+export declare const collectionsThemeCvThemePalettesCaution20Light = '#613600';
+export declare const collectionsThemeCvThemePalettesCaution30Dark = '#66492F';
+export declare const collectionsThemeCvThemePalettesCaution30Light = '#AA5F00';
+export declare const collectionsThemeCvThemePalettesCaution40Dark = '#996E46';
+export declare const collectionsThemeCvThemePalettesCaution40Light = '#F38800';
+export declare const collectionsThemeCvThemePalettesCaution50Dark = '#B38052';
+export declare const collectionsThemeCvThemePalettesCaution50Light = '#F4941A';
+export declare const collectionsThemeCvThemePalettesCaution60Dark = '#CC925E';
+export declare const collectionsThemeCvThemePalettesCaution60Light = '#F5A033';
+export declare const collectionsThemeCvThemePalettesCaution70Dark = '#E6A569';
+export declare const collectionsThemeCvThemePalettesCaution70Light = '#F7AC4D';
+export declare const collectionsThemeCvThemePalettesCaution80Dark = '#FFB775';
+export declare const collectionsThemeCvThemePalettesCaution80Light = '#F8B866';
+export declare const collectionsThemeCvThemePalettesCaution90Dark = '#FFCD9E';
+export declare const collectionsThemeCvThemePalettesCaution90Light = '#FFCC8C';
+export declare const collectionsThemeCvThemePalettesCaution95Dark = '#FFE2C8';
+export declare const collectionsThemeCvThemePalettesCaution95Light = '#FFDCB0';
+export declare const collectionsThemeCvThemePalettesCaution98Dark = '#FFF8F1';
+export declare const collectionsThemeCvThemePalettesCaution98Light = '#FEF3E6';
+export declare const collectionsThemeCvThemePalettesCaution100Dark = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesCaution100Light = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue0Dark =
+  '#000000';
+export declare const collectionsThemeCvThemePalettesDigitalBlue0Light =
+  '#000000';
+export declare const collectionsThemeCvThemePalettesDigitalBlue10Dark =
+  '#0C121B';
+export declare const collectionsThemeCvThemePalettesDigitalBlue10Light =
+  '#00115A';
+export declare const collectionsThemeCvThemePalettesDigitalBlue20Dark =
+  '#111A28';
+export declare const collectionsThemeCvThemePalettesDigitalBlue20Light =
+  '#00208E';
+export declare const collectionsThemeCvThemePalettesDigitalBlue30Dark =
+  '#1D2C43';
+export declare const collectionsThemeCvThemePalettesDigitalBlue30Light =
+  '#0436D3';
+export declare const collectionsThemeCvThemePalettesDigitalBlue40Dark =
+  '#324369';
+export declare const collectionsThemeCvThemePalettesDigitalBlue40Light =
+  '#3053F4';
+export declare const collectionsThemeCvThemePalettesDigitalBlue50Dark =
+  '#485A8E';
+export declare const collectionsThemeCvThemePalettesDigitalBlue50Light =
+  '#4967FF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue60Dark =
+  '#5D71B4';
+export declare const collectionsThemeCvThemePalettesDigitalBlue60Light =
+  '#7187FF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue70Dark =
+  '#7388D9';
+export declare const collectionsThemeCvThemePalettesDigitalBlue70Light =
+  '#96A5FF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue80Dark =
+  '#889FFF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue80Light =
+  '#BAC3FF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue90Dark =
+  '#BAC3FF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue90Light =
+  '#DEE0FF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue91Dark =
+  '#BEC9FE';
+export declare const collectionsThemeCvThemePalettesDigitalBlue91Light =
+  '#E1E3FD';
+export declare const collectionsThemeCvThemePalettesDigitalBlue92Dark =
+  '#C6CFFD';
+export declare const collectionsThemeCvThemePalettesDigitalBlue92Light =
+  '#E5E5FE';
+export declare const collectionsThemeCvThemePalettesDigitalBlue93Dark =
+  '#CED5FE';
+export declare const collectionsThemeCvThemePalettesDigitalBlue93Light =
+  '#E8E9FE';
+export declare const collectionsThemeCvThemePalettesDigitalBlue94Dark =
+  '#D5DBFE';
+export declare const collectionsThemeCvThemePalettesDigitalBlue94Light =
+  '#ECECFE';
+export declare const collectionsThemeCvThemePalettesDigitalBlue95Dark =
+  '#DDE1FF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue95Light =
+  '#F0EFFF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue98Dark =
+  '#EFEFFF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue98Light =
+  '#FBF8FF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue99Dark =
+  '#FAFAFF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue99Light =
+  '#FEFBFF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue100Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesDigitalBlue100Light =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesEmphasis0Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesEmphasis0Light = '#000000';
+export declare const collectionsThemeCvThemePalettesEmphasis10Dark = '#191013';
+export declare const collectionsThemeCvThemePalettesEmphasis10Light = '#120007';
+export declare const collectionsThemeCvThemePalettesEmphasis20Dark = '#332027';
+export declare const collectionsThemeCvThemePalettesEmphasis20Light = '#47001A';
+export declare const collectionsThemeCvThemePalettesEmphasis30Dark = '#4C303A';
+export declare const collectionsThemeCvThemePalettesEmphasis30Light = '#7C012E';
+export declare const collectionsThemeCvThemePalettesEmphasis40Dark = '#66404E';
+export declare const collectionsThemeCvThemePalettesEmphasis40Light = '#B10142';
+export declare const collectionsThemeCvThemePalettesEmphasis50Dark = '#B37089';
+export declare const collectionsThemeCvThemePalettesEmphasis50Light = '#B91A55';
+export declare const collectionsThemeCvThemePalettesEmphasis60Dark = '#CC809C';
+export declare const collectionsThemeCvThemePalettesEmphasis60Light = '#C13468';
+export declare const collectionsThemeCvThemePalettesEmphasis70Dark = '#E690B0';
+export declare const collectionsThemeCvThemePalettesEmphasis70Light = '#C84D7B';
+export declare const collectionsThemeCvThemePalettesEmphasis80Dark = '#FFA0C3';
+export declare const collectionsThemeCvThemePalettesEmphasis80Light = '#D880A1';
+export declare const collectionsThemeCvThemePalettesEmphasis90Dark = '#FFBDD5';
+export declare const collectionsThemeCvThemePalettesEmphasis90Light = '#E8B3C6';
+export declare const collectionsThemeCvThemePalettesEmphasis95Dark = '#FFD9E7';
+export declare const collectionsThemeCvThemePalettesEmphasis95Light = '#EFCCD9';
+export declare const collectionsThemeCvThemePalettesEmphasis98Dark = '#FFF6F9';
+export declare const collectionsThemeCvThemePalettesEmphasis98Light = '#F7E6EC';
+export declare const collectionsThemeCvThemePalettesEmphasis100Dark = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesEmphasis100Light =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNavy0Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesNavy0Light = '#000000';
+export declare const collectionsThemeCvThemePalettesNavy10Dark = '#001D33';
+export declare const collectionsThemeCvThemePalettesNavy10Light = '#001D33';
+export declare const collectionsThemeCvThemePalettesNavy13Dark = '#00233C';
+export declare const collectionsThemeCvThemePalettesNavy13Light = '#00233C';
+export declare const collectionsThemeCvThemePalettesNavy20Dark = '#14324C';
+export declare const collectionsThemeCvThemePalettesNavy20Light = '#14324C';
+export declare const collectionsThemeCvThemePalettesNavy30Dark = '#2D4964';
+export declare const collectionsThemeCvThemePalettesNavy30Light = '#26547C';
+export declare const collectionsThemeCvThemePalettesNavy40Dark = '#45617D';
+export declare const collectionsThemeCvThemePalettesNavy40Light = '#3672A8';
+export declare const collectionsThemeCvThemePalettesNavy50Dark = '#5E7A97';
+export declare const collectionsThemeCvThemePalettesNavy50Light = '#458FCF';
+export declare const collectionsThemeCvThemePalettesNavy60Dark = '#7793B1';
+export declare const collectionsThemeCvThemePalettesNavy60Light = '#60A9ED';
+export declare const collectionsThemeCvThemePalettesNavy70Dark = '#91AECD';
+export declare const collectionsThemeCvThemePalettesNavy70Light = '#95BFF1';
+export declare const collectionsThemeCvThemePalettesNavy80Dark = '#ACC9E9';
+export declare const collectionsThemeCvThemePalettesNavy80Light = '#BCD5F6';
+export declare const collectionsThemeCvThemePalettesNavy90Dark = '#CFE5FF';
+export declare const collectionsThemeCvThemePalettesNavy90Light = '#DEEAFA';
+export declare const collectionsThemeCvThemePalettesNavy95Dark = '#E8F2FF';
+export declare const collectionsThemeCvThemePalettesNavy95Light = '#EEF4FC';
+export declare const collectionsThemeCvThemePalettesNavy98Dark = '#F8FAFD';
+export declare const collectionsThemeCvThemePalettesNavy98Light = '#F8FAFD';
+export declare const collectionsThemeCvThemePalettesNavy99Dark = '#FCFCFF';
+export declare const collectionsThemeCvThemePalettesNavy99Light = '#FBFCFE';
+export declare const collectionsThemeCvThemePalettesNavy100Dark = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNavy100Light = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNegative0Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesNegative0Light = '#000000';
+export declare const collectionsThemeCvThemePalettesNegative10Dark = '#190C0A';
+export declare const collectionsThemeCvThemePalettesNegative10Light = '#110201';
+export declare const collectionsThemeCvThemePalettesNegative20Dark = '#331915';
+export declare const collectionsThemeCvThemePalettesNegative20Light = '#460704';
+export declare const collectionsThemeCvThemePalettesNegative30Dark = '#65322A';
+export declare const collectionsThemeCvThemePalettesNegative30Light = '#7A0D06';
+export declare const collectionsThemeCvThemePalettesNegative40Dark = '#984B3F';
+export declare const collectionsThemeCvThemePalettesNegative40Light = '#AE1209';
+export declare const collectionsThemeCvThemePalettesNegative50Dark = '#B1584A';
+export declare const collectionsThemeCvThemePalettesNegative50Light = '#B62A22';
+export declare const collectionsThemeCvThemePalettesNegative60Dark = '#CA6454';
+export declare const collectionsThemeCvThemePalettesNegative60Light = '#BE413A';
+export declare const collectionsThemeCvThemePalettesNegative70Dark = '#E4715F';
+export declare const collectionsThemeCvThemePalettesNegative70Light = '#C65953';
+export declare const collectionsThemeCvThemePalettesNegative80Dark = '#FD7D69';
+export declare const collectionsThemeCvThemePalettesNegative80Light = '#E0938E';
+export declare const collectionsThemeCvThemePalettesNegative90Dark = '#FFAC9F';
+export declare const collectionsThemeCvThemePalettesNegative90Light = '#FFB2AE';
+export declare const collectionsThemeCvThemePalettesNegative95Dark = '#FFD2CB';
+export declare const collectionsThemeCvThemePalettesNegative95Light = '#FFC9C7';
+export declare const collectionsThemeCvThemePalettesNegative98Dark = '#FFF2F0';
+export declare const collectionsThemeCvThemePalettesNegative98Light = '#FFDCDB';
+export declare const collectionsThemeCvThemePalettesNegative100Dark = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNegative100Light =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutral0Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesNeutral0Light = '#000000';
+export declare const collectionsThemeCvThemePalettesNeutral1Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesNeutral1Light = '#020305';
+export declare const collectionsThemeCvThemePalettesNeutral2Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesNeutral2Light = '#05060A';
+export declare const collectionsThemeCvThemePalettesNeutral3Dark = '#020202';
+export declare const collectionsThemeCvThemePalettesNeutral3Light = '#080A0F';
+export declare const collectionsThemeCvThemePalettesNeutral4Dark = '#060506';
+export declare const collectionsThemeCvThemePalettesNeutral4Light = '#0A0D12';
+export declare const collectionsThemeCvThemePalettesNeutral5Dark = '#0A090A';
+export declare const collectionsThemeCvThemePalettesNeutral5Light = '#0D1016';
+export declare const collectionsThemeCvThemePalettesNeutral6Dark = '#0E0E0E';
+export declare const collectionsThemeCvThemePalettesNeutral6Light = '#10141A';
+export declare const collectionsThemeCvThemePalettesNeutral7Dark = '#121212';
+export declare const collectionsThemeCvThemePalettesNeutral7Light = '#14181F';
+export declare const collectionsThemeCvThemePalettesNeutral8Dark = '#161616';
+export declare const collectionsThemeCvThemePalettesNeutral8Light = '#171B24';
+export declare const collectionsThemeCvThemePalettesNeutral9Dark = '#1A191A';
+export declare const collectionsThemeCvThemePalettesNeutral9Light = '#1B1F29';
+export declare const collectionsThemeCvThemePalettesNeutral10Dark = '#1E1D1E';
+export declare const collectionsThemeCvThemePalettesNeutral10Light = '#1F232E';
+export declare const collectionsThemeCvThemePalettesNeutral11Dark = '#222122';
+export declare const collectionsThemeCvThemePalettesNeutral11Light = '#222633';
+export declare const collectionsThemeCvThemePalettesNeutral12Dark = '#252426';
+export declare const collectionsThemeCvThemePalettesNeutral12Light = '#252A37';
+export declare const collectionsThemeCvThemePalettesNeutral13Dark = '#292829';
+export declare const collectionsThemeCvThemePalettesNeutral13Light = '#292E3C';
+export declare const collectionsThemeCvThemePalettesNeutral14Dark = '#2C2B2D';
+export declare const collectionsThemeCvThemePalettesNeutral14Light = '#2C313F';
+export declare const collectionsThemeCvThemePalettesNeutral15Dark = '#2F2E30';
+export declare const collectionsThemeCvThemePalettesNeutral15Light = '#2F3443';
+export declare const collectionsThemeCvThemePalettesNeutral16Dark = '#323134';
+export declare const collectionsThemeCvThemePalettesNeutral16Light = '#333847';
+export declare const collectionsThemeCvThemePalettesNeutral17Dark = '#353537';
+export declare const collectionsThemeCvThemePalettesNeutral17Light = '#353B4B';
+export declare const collectionsThemeCvThemePalettesNeutral18Dark = '#38383B';
+export declare const collectionsThemeCvThemePalettesNeutral18Light = '#383E4F';
+export declare const collectionsThemeCvThemePalettesNeutral19Dark = '#3B3B3E';
+export declare const collectionsThemeCvThemePalettesNeutral19Light = '#3B4153';
+export declare const collectionsThemeCvThemePalettesNeutral20Dark = '#3E3E41';
+export declare const collectionsThemeCvThemePalettesNeutral20Light = '#3E4557';
+export declare const collectionsThemeCvThemePalettesNeutral21Dark = '#414144';
+export declare const collectionsThemeCvThemePalettesNeutral21Light = '#41485B';
+export declare const collectionsThemeCvThemePalettesNeutral22Dark = '#444447';
+export declare const collectionsThemeCvThemePalettesNeutral22Light = '#444B5F';
+export declare const collectionsThemeCvThemePalettesNeutral23Dark = '#47474A';
+export declare const collectionsThemeCvThemePalettesNeutral23Light = '#474E62';
+export declare const collectionsThemeCvThemePalettesNeutral24Dark = '#4A4A4D';
+export declare const collectionsThemeCvThemePalettesNeutral24Light = '#495166';
+export declare const collectionsThemeCvThemePalettesNeutral25Dark = '#4D4D50';
+export declare const collectionsThemeCvThemePalettesNeutral25Light = '#4C546A';
+export declare const collectionsThemeCvThemePalettesNeutral30Dark = '#5C5B5F';
+export declare const collectionsThemeCvThemePalettesNeutral30Light = '#59627B';
+export declare const collectionsThemeCvThemePalettesNeutral35Dark = '#68686E';
+export declare const collectionsThemeCvThemePalettesNeutral35Light = '#66708C';
+export declare const collectionsThemeCvThemePalettesNeutral40Dark = '#76757D';
+export declare const collectionsThemeCvThemePalettesNeutral40Light = '#727D9C';
+export declare const collectionsThemeCvThemePalettesNeutral50Dark = '#8F8E97';
+export declare const collectionsThemeCvThemePalettesNeutral50Light = '#8E98B4';
+export declare const collectionsThemeCvThemePalettesNeutral60Dark = '#A6A6AD';
+export declare const collectionsThemeCvThemePalettesNeutral60Light = '#A4ADC8';
+export declare const collectionsThemeCvThemePalettesNeutral70Dark = '#BEBDC3';
+export declare const collectionsThemeCvThemePalettesNeutral70Light = '#BBC1D9';
+export declare const collectionsThemeCvThemePalettesNeutral80Dark = '#D5D3D8';
+export declare const collectionsThemeCvThemePalettesNeutral80Light = '#D1D5E7';
+export declare const collectionsThemeCvThemePalettesNeutral87Dark = '#E5E2E6';
+export declare const collectionsThemeCvThemePalettesNeutral87Light = '#E0E3EF';
+export declare const collectionsThemeCvThemePalettesNeutral90Dark = '#EBE8EC';
+export declare const collectionsThemeCvThemePalettesNeutral90Light = '#E6E9F3';
+export declare const collectionsThemeCvThemePalettesNeutral91Dark = '#EEEAEE';
+export declare const collectionsThemeCvThemePalettesNeutral91Light = '#E8EBF4';
+export declare const collectionsThemeCvThemePalettesNeutral92Dark = '#F0EDF0';
+export declare const collectionsThemeCvThemePalettesNeutral92Light = '#EBEDF5';
+export declare const collectionsThemeCvThemePalettesNeutral93Dark = '#F2EFF2';
+export declare const collectionsThemeCvThemePalettesNeutral93Light = '#EDEFF6';
+export declare const collectionsThemeCvThemePalettesNeutral94Dark = '#F4F1F4';
+export declare const collectionsThemeCvThemePalettesNeutral94Light = '#EFF1F7';
+export declare const collectionsThemeCvThemePalettesNeutral95Dark = '#F6F3F6';
+export declare const collectionsThemeCvThemePalettesNeutral95Light = '#F1F3F8';
+export declare const collectionsThemeCvThemePalettesNeutral96Dark = '#F8F5F8';
+export declare const collectionsThemeCvThemePalettesNeutral96Light = '#F3F5F9';
+export declare const collectionsThemeCvThemePalettesNeutral97Dark = '#FAF7FA';
+export declare const collectionsThemeCvThemePalettesNeutral97Light = '#F6F7FB';
+export declare const collectionsThemeCvThemePalettesNeutral98Dark = '#FDF9FC';
+export declare const collectionsThemeCvThemePalettesNeutral98Light = '#F8F9FB';
+export declare const collectionsThemeCvThemePalettesNeutral99Dark = '#FFFBFE';
+export declare const collectionsThemeCvThemePalettesNeutral99Light = '#FCFCFD';
+export declare const collectionsThemeCvThemePalettesNeutral100Dark = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutral100Light = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant0Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant0Light =
+  '#000000';
+export declare const collectionsThemeCvThemePalettesNeutralVariant5Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant5Light =
+  '#0F1114';
+export declare const collectionsThemeCvThemePalettesNeutralVariant10Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant10Light =
+  '#1A1C1E';
+export declare const collectionsThemeCvThemePalettesNeutralVariant15Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant15Light =
+  '#242629';
+export declare const collectionsThemeCvThemePalettesNeutralVariant20Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant20Light =
+  '#2F3033';
+export declare const collectionsThemeCvThemePalettesNeutralVariant25Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant25Light =
+  '#3A3B3F';
+export declare const collectionsThemeCvThemePalettesNeutralVariant30Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant30Light =
+  '#45474A';
+export declare const collectionsThemeCvThemePalettesNeutralVariant35Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant35Light =
+  '#515256';
+export declare const collectionsThemeCvThemePalettesNeutralVariant40Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant40Light =
+  '#5D5E62';
+export declare const collectionsThemeCvThemePalettesNeutralVariant50Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant50Light =
+  '#76777A';
+export declare const collectionsThemeCvThemePalettesNeutralVariant60Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant60Light =
+  '#8F9194';
+export declare const collectionsThemeCvThemePalettesNeutralVariant70Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant70Light =
+  '#AAABAF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant80Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant80Light =
+  '#C6C6CA';
+export declare const collectionsThemeCvThemePalettesNeutralVariant90Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant90Light =
+  '#E2E2E6';
+export declare const collectionsThemeCvThemePalettesNeutralVariant91Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant91Light =
+  '#E4E4E9';
+export declare const collectionsThemeCvThemePalettesNeutralVariant92Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant92Light =
+  '#E7E7EC';
+export declare const collectionsThemeCvThemePalettesNeutralVariant93Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant93Light =
+  '#EAEAEF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant94Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant94Light =
+  '#EDEDF1';
+export declare const collectionsThemeCvThemePalettesNeutralVariant95Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant95Light =
+  '#F0F0F4';
+export declare const collectionsThemeCvThemePalettesNeutralVariant96Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant96Light =
+  '#F2F2F7';
+export declare const collectionsThemeCvThemePalettesNeutralVariant97Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant97Light =
+  '#F5F5FA';
+export declare const collectionsThemeCvThemePalettesNeutralVariant98Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant98Light =
+  '#F9F9FD';
+export declare const collectionsThemeCvThemePalettesNeutralVariant99Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant99Light =
+  '#FCFCFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant100Dark =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesNeutralVariant100Light =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesOrange0Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesOrange0Light = '#000000';
+export declare const collectionsThemeCvThemePalettesOrange10Dark = '#190900';
+export declare const collectionsThemeCvThemePalettesOrange10Light = '#481300';
+export declare const collectionsThemeCvThemePalettesOrange20Dark = '#331300';
+export declare const collectionsThemeCvThemePalettesOrange20Light = '#8D3001';
+export declare const collectionsThemeCvThemePalettesOrange30Dark = '#492313';
+export declare const collectionsThemeCvThemePalettesOrange30Light = '#CF4B00';
+export declare const collectionsThemeCvThemePalettesOrange40Dark = '#612E1A';
+export declare const collectionsThemeCvThemePalettesOrange40Light = '#FF5F02';
+export declare const collectionsThemeCvThemePalettesOrange50Dark = '#AA512D';
+export declare const collectionsThemeCvThemePalettesOrange50Light = '#FF7A42';
+export declare const collectionsThemeCvThemePalettesOrange60Dark = '#C25D33';
+export declare const collectionsThemeCvThemePalettesOrange60Light = '#FF986D';
+export declare const collectionsThemeCvThemePalettesOrange70Dark = '#DB683A';
+export declare const collectionsThemeCvThemePalettesOrange70Light = '#FFA47E';
+export declare const collectionsThemeCvThemePalettesOrange80Dark = '#F37440';
+export declare const collectionsThemeCvThemePalettesOrange80Light = '#FFC0A8';
+export declare const collectionsThemeCvThemePalettesOrange90Dark = '#F79E79';
+export declare const collectionsThemeCvThemePalettesOrange90Light = '#FFDBCE';
+export declare const collectionsThemeCvThemePalettesOrange95Dark = '#FDC4A4';
+export declare const collectionsThemeCvThemePalettesOrange95Light = '#FFEDE7';
+export declare const collectionsThemeCvThemePalettesOrange98Dark = '#FEF1EC';
+export declare const collectionsThemeCvThemePalettesOrange98Light = '#FFF8F6';
+export declare const collectionsThemeCvThemePalettesOrange100Dark = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesOrange100Light = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesPositive0Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesPositive0Light = '#000000';
+export declare const collectionsThemeCvThemePalettesPositive10Dark = '#081308';
+export declare const collectionsThemeCvThemePalettesPositive10Light = '#000A00';
+export declare const collectionsThemeCvThemePalettesPositive20Dark = '#112611';
+export declare const collectionsThemeCvThemePalettesPositive20Light = '#012900';
+export declare const collectionsThemeCvThemePalettesPositive30Dark = '#224B22';
+export declare const collectionsThemeCvThemePalettesPositive30Light = '#024700';
+export declare const collectionsThemeCvThemePalettesPositive40Dark = '#337132';
+export declare const collectionsThemeCvThemePalettesPositive40Light = '#036600';
+export declare const collectionsThemeCvThemePalettesPositive50Dark = '#3B843B';
+export declare const collectionsThemeCvThemePalettesPositive50Light = '#1C751A';
+export declare const collectionsThemeCvThemePalettesPositive60Dark = '#449643';
+export declare const collectionsThemeCvThemePalettesPositive60Light = '#358533';
+export declare const collectionsThemeCvThemePalettesPositive70Dark = '#4DA94C';
+export declare const collectionsThemeCvThemePalettesPositive70Light = '#4F944D';
+export declare const collectionsThemeCvThemePalettesPositive80Dark = '#55BC54';
+export declare const collectionsThemeCvThemePalettesPositive80Light = '#68A366';
+export declare const collectionsThemeCvThemePalettesPositive90Dark = '#91D890';
+export declare const collectionsThemeCvThemePalettesPositive90Light = '#8FCC8E';
+export declare const collectionsThemeCvThemePalettesPositive95Dark = '#BBE4BB';
+export declare const collectionsThemeCvThemePalettesPositive95Light = '#B5E8B3';
+export declare const collectionsThemeCvThemePalettesPositive98Dark = '#EEF8EE';
+export declare const collectionsThemeCvThemePalettesPositive98Light = '#DAF6DA';
+export declare const collectionsThemeCvThemePalettesPositive100Dark = '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesPositive100Light =
+  '#FFFFFF';
+export declare const collectionsThemeCvThemePalettesSecondary0Dark = '#000000';
+export declare const collectionsThemeCvThemePalettesSecondary10Dark = '#171A2C';
+export declare const collectionsThemeCvThemePalettesSecondary20Dark = '#2C2F42';
+export declare const collectionsThemeCvThemePalettesSecondary30Dark = '#434659';
+export declare const collectionsThemeCvThemePalettesSecondary40Dark = '#5B5D72';
+export declare const collectionsThemeCvThemePalettesSecondary50Dark = '#73768B';
+export declare const collectionsThemeCvThemePalettesSecondary60Dark = '#8D8FA6';
+export declare const collectionsThemeCvThemePalettesSecondary70Dark = '#A8AAC1';
+export declare const collectionsThemeCvThemePalettesSecondary80Dark = '#C3C5DD';
+export declare const collectionsThemeCvThemePalettesSecondary90Dark = '#DFE1F9';
+export declare const collectionsThemeCvThemePalettesSecondary95Dark = '#F0EFFF';
+export declare const collectionsThemeCvThemePalettesSecondary98Dark = '#FBF8FF';
+export declare const collectionsThemeCvThemePalettesSecondary100Dark =
+  '#FFFFFF';
+export declare const collectionsTypographyCvTypographyBody1FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyBody1FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyBody1FontSizeDefault =
+  '16px';
+export declare const collectionsTypographyCvTypographyBody1FontSizeSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyBody1FontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyBody1FontWeightSmall =
+  '400px';
+export declare const collectionsTypographyCvTypographyBody1LetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyBody1LetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyBody1LineHeightDefault =
+  '24px';
+export declare const collectionsTypographyCvTypographyBody1LineHeightSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyBody2FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyBody2FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyBody2FontSizeDefault =
+  '14px';
+export declare const collectionsTypographyCvTypographyBody2FontSizeSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyBody2FontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyBody2FontWeightSmall =
+  '400px';
+export declare const collectionsTypographyCvTypographyBody2LetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyBody2LetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyBody2LineHeightDefault =
+  '20px';
+export declare const collectionsTypographyCvTypographyBody2LineHeightSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyButtonFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyButtonFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyButtonFontSizeDefault =
+  '14px';
+export declare const collectionsTypographyCvTypographyButtonFontSizeSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyButtonFontWeightDefault =
+  '500px';
+export declare const collectionsTypographyCvTypographyButtonFontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographyButtonLetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyButtonLetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyButtonLineHeightDefault =
+  '16px';
+export declare const collectionsTypographyCvTypographyButtonLineHeightSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyCaptionFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyCaptionFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyCaptionFontSizeDefault =
+  '12px';
+export declare const collectionsTypographyCvTypographyCaptionFontSizeSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyCaptionFontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyCaptionFontWeightSmall =
+  '400px';
+export declare const collectionsTypographyCvTypographyCaptionLetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyCaptionLetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyCaptionLineHeightDefault =
+  '16px';
+export declare const collectionsTypographyCvTypographyCaptionLineHeightSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyCodeFontFamilyDefault =
+  'Roboto Mono';
+export declare const collectionsTypographyCvTypographyCodeFontFamilySmall =
+  'Roboto Mono';
+export declare const collectionsTypographyCvTypographyCodeFontSizeDefault =
+  '12px';
+export declare const collectionsTypographyCvTypographyCodeFontSizeSmall = '0px';
+export declare const collectionsTypographyCvTypographyCodeFontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyCodeFontWeightSmall =
+  '400px';
+export declare const collectionsTypographyCvTypographyCodeLetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyCodeLetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyCodeLineHeightDefault =
+  '20px';
+export declare const collectionsTypographyCvTypographyCodeLineHeightSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline1FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline1FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline1FontSizeDefault =
+  '96px';
+export declare const collectionsTypographyCvTypographyHeadline1FontSizeSmall =
+  '48px';
+export declare const collectionsTypographyCvTypographyHeadline1FontWeightDefault =
+  '300px';
+export declare const collectionsTypographyCvTypographyHeadline1FontWeightSmall =
+  '300px';
+export declare const collectionsTypographyCvTypographyHeadline1LetterSpacingDefault =
+  '-1.5px';
+export declare const collectionsTypographyCvTypographyHeadline1LetterSpacingSmall =
+  '-1.5px';
+export declare const collectionsTypographyCvTypographyHeadline1LineHeightDefault =
+  '112px';
+export declare const collectionsTypographyCvTypographyHeadline1LineHeightSmall =
+  '56px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleFontSizeDefault =
+  '48px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleFontSizeSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleFontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleFontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleLetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleLetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleLineHeightDefault =
+  '56px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleLineHeightSmall =
+  '36px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleSpaceAfterDefault =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleSpaceAfterSmall =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleSpaceBeforeDefault =
+  '32px';
+export declare const collectionsTypographyCvTypographyHeadline1ArticleSpaceBeforeSmall =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline2FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline2FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline2FontSizeDefault =
+  '60px';
+export declare const collectionsTypographyCvTypographyHeadline2FontSizeSmall =
+  '34px';
+export declare const collectionsTypographyCvTypographyHeadline2FontWeightDefault =
+  '300px';
+export declare const collectionsTypographyCvTypographyHeadline2FontWeightSmall =
+  '300px';
+export declare const collectionsTypographyCvTypographyHeadline2LetterSpacingDefault =
+  '-0.5px';
+export declare const collectionsTypographyCvTypographyHeadline2LetterSpacingSmall =
+  '-0.5px';
+export declare const collectionsTypographyCvTypographyHeadline2LineHeightDefault =
+  '72px';
+export declare const collectionsTypographyCvTypographyHeadline2LineHeightSmall =
+  '42px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleFontSizeDefault =
+  '34px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleFontSizeSmall =
+  '20px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleFontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleFontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleLetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleLetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleLineHeightDefault =
+  '42px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleLineHeightSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleSpaceAfterDefault =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleSpaceAfterSmall =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleSpaceBeforeDefault =
+  '32px';
+export declare const collectionsTypographyCvTypographyHeadline2ArticleSpaceBeforeSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline3FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline3FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline3FontSizeDefault =
+  '48px';
+export declare const collectionsTypographyCvTypographyHeadline3FontSizeSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline3FontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline3FontWeightSmall =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline3LetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline3LetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline3LineHeightDefault =
+  '56px';
+export declare const collectionsTypographyCvTypographyHeadline3LineHeightSmall =
+  '36px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleFontSizeDefault =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleFontSizeSmall =
+  '16px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleFontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleFontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleLetterSpacingDefault =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleLetterSpacingSmall =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleLineHeightDefault =
+  '36px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleLineHeightSmall =
+  '28px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleSpaceAfterDefault =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleSpaceAfterSmall =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleSpaceBeforeDefault =
+  '32px';
+export declare const collectionsTypographyCvTypographyHeadline3ArticleSpaceBeforeSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline4FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline4FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline4FontSizeDefault =
+  '34px';
+export declare const collectionsTypographyCvTypographyHeadline4FontSizeSmall =
+  '20px';
+export declare const collectionsTypographyCvTypographyHeadline4FontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline4FontWeightSmall =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline4LetterSpacingDefault =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline4LetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline4LineHeightDefault =
+  '42px';
+export declare const collectionsTypographyCvTypographyHeadline4LineHeightSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleFontSizeDefault =
+  '20px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleFontSizeSmall =
+  '14px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleFontWeightDefault =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleFontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleLetterSpacingDefault =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleLetterSpacingSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleLineHeightDefault =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleLineHeightSmall =
+  '22px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleSpaceAfterDefault =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleSpaceAfterSmall =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleSpaceBeforeDefault =
+  '32px';
+export declare const collectionsTypographyCvTypographyHeadline4ArticleSpaceBeforeSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline5FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline5FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline5FontSizeDefault =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline5FontSizeSmall =
+  '16px';
+export declare const collectionsTypographyCvTypographyHeadline5FontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline5FontWeightSmall =
+  '400px';
+export declare const collectionsTypographyCvTypographyHeadline5LetterSpacingDefault =
+  '0.18000000715255737px';
+export declare const collectionsTypographyCvTypographyHeadline5LetterSpacingSmall =
+  '0.18000000715255737px';
+export declare const collectionsTypographyCvTypographyHeadline5LineHeightDefault =
+  '36px';
+export declare const collectionsTypographyCvTypographyHeadline5LineHeightSmall =
+  '28px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleFontSizeDefault =
+  '16px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleFontSizeSmall =
+  '14px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleFontWeightDefault =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleFontWeightSmall =
+  '600px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleLetterSpacingDefault =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleLetterSpacingSmall =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleLineHeightDefault =
+  '28px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleLineHeightSmall =
+  '20px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleSpaceAfterDefault =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleSpaceAfterSmall =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleSpaceBeforeDefault =
+  '32px';
+export declare const collectionsTypographyCvTypographyHeadline5ArticleSpaceBeforeSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline6FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline6FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline6FontSizeDefault =
+  '20px';
+export declare const collectionsTypographyCvTypographyHeadline6FontSizeSmall =
+  '14px';
+export declare const collectionsTypographyCvTypographyHeadline6FontWeightDefault =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline6FontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline6LetterSpacingDefault =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographyHeadline6LetterSpacingSmall =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographyHeadline6LineHeightDefault =
+  '24px';
+export declare const collectionsTypographyCvTypographyHeadline6LineHeightSmall =
+  '22px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleFontSizeDefault =
+  '14px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleFontSizeSmall =
+  '12px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleFontWeightDefault =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleFontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleLetterSpacingDefault =
+  '0.10000000149011612px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleLetterSpacingSmall =
+  '0.10000000149011612px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleLineHeightDefault =
+  '22px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleLineHeightSmall =
+  '16px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleSpaceAfterDefault =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleSpaceAfterSmall =
+  '8px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleSpaceBeforeDefault =
+  '32px';
+export declare const collectionsTypographyCvTypographyHeadline6ArticleSpaceBeforeSmall =
+  '24px';
+export declare const collectionsTypographyCvTypographyOverlineFontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographyOverlineFontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographyOverlineFontSizeDefault =
+  '10px';
+export declare const collectionsTypographyCvTypographyOverlineFontSizeSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographyOverlineFontWeightDefault =
+  '400px';
+export declare const collectionsTypographyCvTypographyOverlineFontWeightSmall =
+  '400px';
+export declare const collectionsTypographyCvTypographyOverlineLetterSpacingDefault =
+  '1.5px';
+export declare const collectionsTypographyCvTypographyOverlineLetterSpacingSmall =
+  '1.5px';
+export declare const collectionsTypographyCvTypographyOverlineLineHeightDefault =
+  '16px';
+export declare const collectionsTypographyCvTypographyOverlineLineHeightSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographySubtitle1FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographySubtitle1FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographySubtitle1FontSizeDefault =
+  '16px';
+export declare const collectionsTypographyCvTypographySubtitle1FontSizeSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographySubtitle1FontWeightDefault =
+  '500px';
+export declare const collectionsTypographyCvTypographySubtitle1FontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographySubtitle1LetterSpacingDefault =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographySubtitle1LetterSpacingSmall =
+  '0.15000000596046448px';
+export declare const collectionsTypographyCvTypographySubtitle1LineHeightDefault =
+  '28px';
+export declare const collectionsTypographyCvTypographySubtitle1LineHeightSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographySubtitle2FontFamilyDefault =
+  'Inter';
+export declare const collectionsTypographyCvTypographySubtitle2FontFamilySmall =
+  'Inter';
+export declare const collectionsTypographyCvTypographySubtitle2FontSizeDefault =
+  '14px';
+export declare const collectionsTypographyCvTypographySubtitle2FontSizeSmall =
+  '0px';
+export declare const collectionsTypographyCvTypographySubtitle2FontWeightDefault =
+  '500px';
+export declare const collectionsTypographyCvTypographySubtitle2FontWeightSmall =
+  '500px';
+export declare const collectionsTypographyCvTypographySubtitle2LetterSpacingDefault =
+  '0.10000000149011612px';
+export declare const collectionsTypographyCvTypographySubtitle2LetterSpacingSmall =
+  '0.10000000149011612px';
+export declare const collectionsTypographyCvTypographySubtitle2LineHeightDefault =
+  '22px';
+export declare const collectionsTypographyCvTypographySubtitle2LineHeightSmall =
+  '0px';
