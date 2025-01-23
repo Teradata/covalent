@@ -424,14 +424,12 @@ byId:
 order:
   - get-started
   - designers
-  - figma-organization
   - developers
   - foundations
   - design-principles
   - color
-  - typography-3shrxwkyk
   - icons
-  - accessibility
+  - typography-3shrxwkyk
   - components
   - action-ribbon
   - alert
@@ -441,8 +439,6 @@ order:
   - button
   - card
   - checkbox
-  - icon-checkbox
-  - code-editor
   - code-snippet
   - chip-item
   - chip
@@ -457,7 +453,8 @@ order:
   - icon
   - icon-button
   - icon-button-toggle
-  - icon-lockup
+  - icon-checkbox
+  - icon-radio
   - linear-progress
   - list
   - list-item
@@ -465,9 +462,7 @@ order:
   - check-list-item
   - radio-list-item
   - menu
-  - notebook-cell
   - radio
-  - icon-radio
   - select
   - side-sheet
   - slider
@@ -479,19 +474,21 @@ order:
   - switch
   - tabs
   - tab
-  - text-area
-  - textfield
-  - text-lockup
   - toolbar
   - tooltip
   - top-app-bar
   - top-app-bar-fixed
   - tree-list
   - tree-list-item
+  - text-area
+  - textfield
+  - text-lockup
   - text
+  - code-editor
+  - icon-lockup
+  - notebook-cell
   - patterns
   - errors
-  - get-started-cards
   - tokens
   - colors-vvhchtke
   - colors-9gexmujiba
@@ -504,4 +501,7 @@ order:
   - video
   - date-and-time
   - word-list
+  - accessibility
+  - figma-organization
+  - get-started-cards
   - inclusive-language-glnk25tux

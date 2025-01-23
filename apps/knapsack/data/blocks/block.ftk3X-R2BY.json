@@ -1,0 +1,19 @@
+{
+  "id": "ftk3X-R2BY",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14597:35584"
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
+    }
+  },
+  "size": "medium",
+  "blockType": "design-src-tiles"
+}

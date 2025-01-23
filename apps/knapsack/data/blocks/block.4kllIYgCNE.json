@@ -1,0 +1,36 @@
+{
+  "id": "4kllIYgCNE",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Color roles",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Color roles set a standard for how a color is used our design system. These color role guidelines are set to create visually appealing and accessible user interfaces. All colors roles are tokenized and follow color accessibility standards in WCAG 2.1 AA. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

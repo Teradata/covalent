@@ -1,0 +1,36 @@
+{
+  "id": "OmxYteUjXt",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Theming",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "A theme is a set of selected and informed style choices that define the visual appearance of a website, application, or product. When we apply theming to color palettes, this involves selecting a cohesive set of colors to create a consistent visual style for our user interface. Our color system provides both a light and dark theme.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
