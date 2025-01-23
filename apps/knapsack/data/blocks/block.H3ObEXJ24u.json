@@ -1,59 +1,9 @@
 {
-  "id": "JEhmbC4qk5",
+  "id": "H3ObEXJ24u",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Anatomy",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Description",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "attrs": {
-            "alt": "Text field Anatomy placeholder",
-            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img-0epnyegwwpng",
-            "title": "Text field Anatomy placeholder"
-          }
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Key",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
         {
           "type": "orderedList",
           "attrs": {
@@ -70,7 +20,7 @@
                   },
                   "content": [
                     {
-                      "text": "Icon: ",
+                      "text": "Icon",
                       "type": "text",
                       "marks": [
                         {
@@ -79,7 +29,7 @@
                       ]
                     },
                     {
-                      "text": "Communicates if the radio button is selected.",
+                      "text": ": Communicates the state of the radio button, selected or unselected.",
                       "type": "text"
                     }
                   ]
@@ -105,7 +55,7 @@
                       ]
                     },
                     {
-                      "text": ": Communicates the interaction state of the checkbox. States indicated by this state layer include Hovered, Focused, and Pressed.",
+                      "text": ": Communicates the interaction state of the radio. States indicated by this state layer include Hovered, Focused, and Pressed.",
                       "type": "text"
                     }
                   ]
@@ -113,9 +63,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "horizontalRule"
         }
       ]
     }

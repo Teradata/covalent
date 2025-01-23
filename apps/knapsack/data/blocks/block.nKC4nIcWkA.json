@@ -1,7 +1,17 @@
 {
   "id": "nKC4nIcWkA",
   "data": {
-    "items": []
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14705:8276"
+      }
+    ],
+    "imageStyles": {
+      "size": "auto",
+      "seamless": true
+    },
+    "columns": "1"
   },
   "blockType": "design-src-tiles"
 }
