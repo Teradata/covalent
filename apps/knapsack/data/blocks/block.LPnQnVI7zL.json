@@ -5,8 +5,8 @@
       {
         "id": "l7IUszBcro",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://m2.material.io/components/dialogs",
+          "external": true
         },
         "title": "See also",
         "description": "Angular Material component"
@@ -14,8 +14,8 @@
       {
         "id": "pa9VyuuUxU",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7979-29833",
+          "external": true
         },
         "title": "See also",
         "description": "Figma component"

@@ -90,7 +90,7 @@
           },
           "content": [
             {
-              "text": "Helpful Tips:",
+              "text": "Helpful tips:",
               "type": "text",
               "marks": [
                 {
@@ -127,9 +127,6 @@
                             "href": "https://wave.webaim.org/",
                             "class": null
                           }
-                        },
-                        {
-                          "type": "bold"
                         }
                       ]
                     },

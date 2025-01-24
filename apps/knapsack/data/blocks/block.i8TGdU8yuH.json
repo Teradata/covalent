@@ -5,26 +5,13 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Keyboard interactions",
-              "type": "text"
-            }
-          ]
-        },
-        {
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Focus Management",
+              "text": "Focus management",
               "type": "text",
               "marks": [
                 {

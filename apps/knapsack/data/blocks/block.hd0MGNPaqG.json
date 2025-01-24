@@ -5,17 +5,17 @@
       {
         "id": "5Vz49XObnn",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://www.w3.org/TR/WCAG21/",
+          "external": true
         },
         "title": "See also",
-        "description": "Web Content Accessibility Guidelines(WCAG) component  standards"
+        "description": "Web Content Accessibility Guidelines (WCAG) component standards"
       },
       {
         "id": "vTwlTnz8lE",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://m2.material.io/components/buttons/web#using-buttons",
+          "external": true
         },
         "title": "See Also",
         "description": "Material accessibility component guidelines"

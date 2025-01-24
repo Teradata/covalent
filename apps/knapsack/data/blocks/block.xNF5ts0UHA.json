@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Testing and Iteration",
+              "text": "Testing and iteration",
               "type": "text"
             }
           ]
@@ -28,9 +28,6 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "horizontalRule"
         },
         {
           "type": "paragraph",
@@ -135,7 +132,7 @@
           },
           "content": [
             {
-              "text": "Helpful Tip",
+              "text": "Helpful tip",
               "type": "text",
               "marks": [
                 {
@@ -166,9 +163,6 @@
                     "href": "https://accessibilityinsights.io/",
                     "class": null
                   }
-                },
-                {
-                  "type": "bold"
                 }
               ]
             }

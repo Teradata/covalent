@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Screen Reader Accessibility",
+              "text": "Screen reader accessibility",
               "type": "text"
             }
           ]
@@ -28,9 +28,6 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "horizontalRule"
         }
       ]
     }

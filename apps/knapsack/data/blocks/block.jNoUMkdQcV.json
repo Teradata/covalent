@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Responsive and Scalable Text",
+              "text": "Responsive and scalable text",
               "type": "text"
             }
           ]
@@ -28,9 +28,6 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "horizontalRule"
         }
       ]
     }

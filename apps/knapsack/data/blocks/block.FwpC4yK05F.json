@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Keyboard Navigation",
+              "text": "Keyboard navigation",
               "type": "text"
             }
           ]
@@ -28,9 +28,6 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "horizontalRule"
         }
       ]
     }

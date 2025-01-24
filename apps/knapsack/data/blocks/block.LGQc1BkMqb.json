@@ -11,22 +11,14 @@
           },
           "content": [
             {
-              "text": "Tab Index Focus",
+              "text": "Tab index focus: ",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
+            },
             {
               "text": "Buttons must follow a logical tab order to maintain smooth navigation:",
               "type": "text"

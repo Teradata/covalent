@@ -38,14 +38,20 @@
                     "href": "#",
                     "class": null
                   }
-                },
+                }
+              ]
+            },
+            {
+              "text": " ",
+              "type": "text",
+              "marks": [
                 {
                   "type": "bold"
                 }
               ]
             },
             {
-              "text": " or ",
+              "text": "or ",
               "type": "text"
             },
             {
@@ -59,9 +65,6 @@
                     "href": "#",
                     "class": null
                   }
-                },
-                {
-                  "type": "bold"
                 }
               ]
             }

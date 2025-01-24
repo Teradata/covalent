@@ -41,9 +41,6 @@
                   }
                 },
                 {
-                  "type": "bold"
-                },
-                {
                   "type": "underline"
                 }
               ]

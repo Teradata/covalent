@@ -107,7 +107,7 @@
           },
           "content": [
             {
-              "text": "Implementation Tips:",
+              "text": "Implementation tips:",
               "type": "text",
               "marks": [
                 {
@@ -250,6 +250,41 @@
                   "content": [
                     {
                       "text": "Use \"skip to content\" links at the beginning of pages to improve navigation efficiency for assistive technology users.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Review ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "assisted technology documentation ",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "link",
+                          "attrs": {
+                            "rel": "noopener noreferrer nofollow",
+                            "href": "https://m2.material.io/design/usability/accessibility.html#assistive-technology",
+                            "class": null
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": "in Material 2 ",
                       "type": "text"
                     }
                   ]

@@ -128,8 +128,7 @@
     },
     {
       "id": "UbxKUmH4n",
-      "type": "subPage",
-      "minRoleNeeded": "VIEWER"
+      "type": "subPage"
     },
     {
       "id": "trCAw4vLd",
@@ -156,9 +155,7 @@
         "mDF1TkRFpH",
         "SF-AaUd8LA",
         "JYoYaFX2t",
-        "Y69opKil",
-        "8d6cc7VZj1",
-        "CH-twQ8psK"
+        "Y69opKil"
       ]
     },
     {
@@ -201,10 +198,9 @@
       "blockIds": [
         "jNuxQ6SHNE",
         "u4dqJIWdas",
+        "8SzRTXVgE3",
         "2OXXuCFC3r",
-        "knC7jvJWgf",
         "LGQc1BkMqb",
-        "XLmVcyMWh9",
         "MYnl8wYI0v",
         "YD22AvbrXp",
         "hd0MGNPaqG"
@@ -245,9 +241,7 @@
         "jNuxQ6SHNE",
         "u4dqJIWdas",
         "2OXXuCFC3r",
-        "knC7jvJWgf",
         "LGQc1BkMqb",
-        "XLmVcyMWh9",
         "MYnl8wYI0v",
         "YD22AvbrXp",
         "hd0MGNPaqG"
@@ -288,9 +282,7 @@
         "jNuxQ6SHNE",
         "u4dqJIWdas",
         "2OXXuCFC3r",
-        "knC7jvJWgf",
         "LGQc1BkMqb",
-        "XLmVcyMWh9",
         "MYnl8wYI0v",
         "YD22AvbrXp",
         "hd0MGNPaqG"
@@ -331,9 +323,7 @@
         "jNuxQ6SHNE",
         "u4dqJIWdas",
         "2OXXuCFC3r",
-        "knC7jvJWgf",
         "LGQc1BkMqb",
-        "XLmVcyMWh9",
         "MYnl8wYI0v",
         "YD22AvbrXp",
         "hd0MGNPaqG"

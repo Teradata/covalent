@@ -101,7 +101,7 @@
                           ]
                         },
                         {
-                          "text": " button",
+                          "text": " ",
                           "type": "text"
                         }
                       ]
@@ -164,7 +164,7 @@
                           ]
                         },
                         {
-                          "text": " button",
+                          "text": " ",
                           "type": "text"
                         }
                       ]
@@ -225,10 +225,6 @@
                               }
                             }
                           ]
-                        },
-                        {
-                          "text": " button",
-                          "type": "text"
                         }
                       ]
                     }

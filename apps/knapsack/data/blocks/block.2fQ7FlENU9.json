@@ -5,17 +5,17 @@
       {
         "id": "Trd3hG-ht1",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://www.w3.org/TR/WCAG21/",
+          "external": true
         },
         "title": "See also",
-        "description": "Web Content Accessibility Guidelines(WCAG) component standards"
+        "description": "Web Content Accessibility Guidelines (WCAG) component standards"
       },
       {
         "id": "pqxx40Dgi8",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://m2.material.io/components/dialogs/web#using-dialogs",
+          "external": true
         },
         "title": "See also",
         "description": "Material accessibility component guidelines"

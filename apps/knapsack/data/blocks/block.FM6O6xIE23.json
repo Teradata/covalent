@@ -5,20 +5,14 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Keyboard interactions",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Radios should be fully operable via keyboard:",
+              "type": "text"
             }
           ]
         },
@@ -35,7 +29,7 @@
                   },
                   "content": [
                     {
-                      "text": "Tab Key",
+                      "text": "Tab key",
                       "type": "text",
                       "marks": [
                         {
@@ -50,7 +44,12 @@
                   ]
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
             {
               "type": "listItem",
               "content": [
@@ -87,7 +86,7 @@
                   },
                   "content": [
                     {
-                      "text": "Arrow Keys",
+                      "text": "Arrow keys",
                       "type": "text",
                       "marks": [
                         {
