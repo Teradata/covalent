@@ -5,8 +5,8 @@
       {
         "id": "f-A3evEemL",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://m2.material.io/components/text-fields",
+          "external": true
         },
         "title": "See also",
         "description": "Angular Material component"
@@ -14,8 +14,8 @@
       {
         "id": "0X0Ba30ApB",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8066-25102",
+          "external": true
         },
         "title": "See also",
         "description": "Figma Component"

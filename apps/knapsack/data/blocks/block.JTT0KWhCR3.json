@@ -1,0 +1,32 @@
+{
+  "id": "JTT0KWhCR3",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "omIHLzxOc",
+        "link": {
+          "path": "https://m2.material.io/design/usability/accessibility.html#understanding-accessibility",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Material accessibility"
+      },
+      {
+        "id": "aH0QxFZTQ0",
+        "link": {
+          "path": "https://m2.material.io/design/color/text-legibility.html",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Material text legibility standards"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "4"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

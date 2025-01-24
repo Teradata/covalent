@@ -1,0 +1,19 @@
+{
+  "id": "X704KCbRJP",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "14507:770"
+      }
+    ],
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
+    },
+    "columns": "1",
+    "hideComponentProps": true
+  },
+  "blockType": "design-src-tiles"
+}
