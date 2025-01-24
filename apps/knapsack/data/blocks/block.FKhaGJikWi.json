@@ -5,14 +5,13 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Keyboard interactions",
+              "text": "Checkboxes should be fully operable via keyboard:",
               "type": "text"
             }
           ]
@@ -30,7 +29,7 @@
                   },
                   "content": [
                     {
-                      "text": "Tab Key",
+                      "text": "Tab key",
                       "type": "text",
                       "marks": [
                         {
@@ -45,7 +44,12 @@
                   ]
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
             {
               "type": "listItem",
               "content": [

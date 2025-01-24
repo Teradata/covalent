@@ -5,19 +5,20 @@
       {
         "id": "MolavBKas5",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://www.w3.org/TR/WCAG21/",
+          "external": true
         },
         "title": "See also",
-        "description": "Web Content Accessibility Guidelines(WCAG) component standards"
+        "description": "Web Content Accessibility Guidelines (WCAG) component standards"
       },
       {
         "id": "MRvYbphZ-b",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://m2.material.io/components/text-fields/web#using-text-fields",
+          "external": true
         },
-        "title": "See also"
+        "title": "See also",
+        "description": "Material accessibility component guidelines"
       }
     ],
     "tileStyles": {

@@ -85,6 +85,10 @@
       "type": "designSrc",
       "hidden": true,
       "minRoleNeeded": "ADMIN"
+    },
+    {
+      "id": "lm1MthNrEM",
+      "type": "subPage"
     }
   ],
   "subPages": [
@@ -152,6 +156,11 @@
       "id": "G3tf4CzeNi",
       "title": "Style",
       "blockIds": ["eoYSn9Yrdo", "UeRfnaYgIy"]
+    },
+    {
+      "id": "lm1MthNrEM",
+      "title": "Accessibility",
+      "blockIds": []
     }
   ],
   "designSrcComponentsById": {

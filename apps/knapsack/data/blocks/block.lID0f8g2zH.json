@@ -5,17 +5,17 @@
       {
         "id": "1qibihXQUj",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://www.w3.org/TR/WCAG21/",
+          "external": true
         },
         "title": "See also",
-        "description": "Web Content Accessibility Guidelines(WCAG) component standards"
+        "description": "Web Content Accessibility Guidelines (WCAG) component standards"
       },
       {
         "id": "6ZN0fkArlP",
         "link": {
-          "path": "#",
-          "external": false
+          "path": "https://m2.material.io/components/checkboxes/web#using-checkboxes",
+          "external": true
         },
         "title": "See also",
         "description": "Material accessibility component guidelines"

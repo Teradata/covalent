@@ -38,35 +38,24 @@
                     "href": "#",
                     "class": null
                   }
-                },
-                {
-                  "type": "bold"
                 }
               ]
             },
             {
-              "text": " or a ",
-              "type": "text"
-            },
-            {
-              "text": "drop-down menu",
+              "text": " ",
               "type": "text",
               "marks": [
                 {
-                  "type": "link",
-                  "attrs": {
-                    "rel": "noopener noreferrer nofollow",
-                    "href": "#",
-                    "class": null
-                  }
-                },
-                {
                   "type": "bold"
                 }
               ]
             },
             {
-              "text": ".",
+              "text": "or a ",
+              "type": "text"
+            },
+            {
+              "text": "drop-down menu.",
               "type": "text",
               "marks": [
                 {

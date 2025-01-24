@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Inclusive Content",
+              "text": "Inclusive content",
               "type": "text"
             }
           ]
@@ -28,9 +28,6 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "horizontalRule"
         }
       ]
     }

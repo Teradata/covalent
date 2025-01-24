@@ -34,8 +34,22 @@
                   },
                   "content": [
                     {
-                      "text": "All text meets or exceeds a contrast ratio of 4.5:1. See Color Standards",
+                      "text": "All text meets or exceeds a contrast ratio of 4.5:1. See ",
                       "type": "text"
+                    },
+                    {
+                      "text": "Color Standards",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "link",
+                          "attrs": {
+                            "rel": "noopener noreferrer nofollow",
+                            "href": "/pages/color",
+                            "class": null
+                          }
+                        }
+                      ]
                     }
                   ]
                 }
@@ -183,6 +197,41 @@
                   "content": [
                     {
                       "text": "Check contrast ratios not just for text but also for icons and interactive elements to ensure universal clarity.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Review ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "additional documentation for color and contrast",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "link",
+                          "attrs": {
+                            "rel": "noopener noreferrer nofollow",
+                            "href": "https://m2.material.io/design/usability/accessibility.html#color-and-contrast",
+                            "class": null
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " on Material 2",
                       "type": "text"
                     }
                   ]

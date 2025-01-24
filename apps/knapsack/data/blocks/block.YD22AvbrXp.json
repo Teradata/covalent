@@ -12,13 +12,8 @@
           },
           "content": [
             {
-              "text": "Additional Resources",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Additional resources",
+              "type": "text"
             }
           ]
         },

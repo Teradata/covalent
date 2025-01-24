@@ -5,19 +5,6 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Keyboard Interactions",
-              "type": "text"
-            }
-          ]
-        },
-        {
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
@@ -42,7 +29,7 @@
                   },
                   "content": [
                     {
-                      "text": "Enter/Return Key",
+                      "text": "Enter/Return key",
                       "type": "text",
                       "marks": [
                         {

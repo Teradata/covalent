@@ -13,12 +13,7 @@
           "content": [
             {
               "text": "Additional resources",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "type": "text"
             }
           ]
         },
