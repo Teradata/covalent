@@ -65,6 +65,7 @@ const html = `<div layout="row" layout-align="start center" class="pad-xs pad-bo
 `;
 
 @Component({
+  standalone: false,
   selector: 'code-editor-demo-basic',
   styleUrls: ['./code-editor-demo-basic.component.scss'],
   templateUrl: './code-editor-demo-basic.component.html',

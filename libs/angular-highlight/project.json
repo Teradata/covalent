@@ -9,8 +9,7 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular-highlight"],
       "options": {
-        "project": "libs/angular-highlight/ng-package.json",
-        "tailwindConfig": "libs/angular-highlight/tailwind.config.js"
+        "project": "libs/angular-highlight/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -23,7 +22,7 @@
       "defaultConfiguration": "production"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/angular-highlight"],
       "options": {
         "jestConfig": "libs/angular-highlight/jest.config.js",

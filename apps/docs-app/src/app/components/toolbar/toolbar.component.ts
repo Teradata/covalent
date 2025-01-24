@@ -13,6 +13,7 @@ import { getDirection, setDirection } from '../../utilities/direction';
 import { GitHubService } from '../../services/github.service';
 
 @Component({
+  standalone: false,
   selector: 'td-toolbar',
   templateUrl: '././toolbar.component.html',
 })

@@ -10,6 +10,7 @@ import { ITdWordCloudData } from '@covalent/echarts/wordcloud';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'wordcloud-demo-basic',
   templateUrl: './wordcloud-demo-basic.component.html',
   styleUrls: ['./wordcloud-demo-basic.component.scss'],

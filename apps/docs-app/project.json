@@ -124,7 +124,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/docs-app"],
       "options": {
         "jestConfig": "apps/docs-app/jest.config.js",

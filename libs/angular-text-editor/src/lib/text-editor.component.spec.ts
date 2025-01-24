@@ -5,13 +5,11 @@ import { TdTextEditorComponent } from './text-editor.component';
 describe('Component: TextEditor', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TdTextEditorComponent,
+      imports: [
         TestTextEditorComponent,
         TestTextEditorResetComponent,
         TestTextEditorOptionsComponent,
       ],
-      imports: [],
     });
     TestBed.compileComponents();
   }));
@@ -105,6 +103,7 @@ describe('Component: TextEditor', () => {
       <td-text-editor #editor1></td-text-editor>
     </div>
   `,
+  imports: [TdTextEditorComponent],
 })
 class TestTextEditorComponent {
   @ViewChild('editor1', { static: true }) editor1!: TdTextEditorComponent;
@@ -116,6 +115,7 @@ class TestTextEditorComponent {
       <td-text-editor #editor1 [value]="Something"></td-text-editor>
     </div>
   `,
+  imports: [TdTextEditorComponent],
 })
 class TestTextEditorResetComponent {
   @ViewChild('editor1', { static: true }) editor1!: TdTextEditorComponent;
@@ -127,6 +127,7 @@ class TestTextEditorResetComponent {
       <td-text-editor #editor1 [options]="opts"></td-text-editor>
     </div>
   `,
+  imports: [TdTextEditorComponent],
 })
 class TestTextEditorOptionsComponent {
   opts: { toolbar: boolean } = {

@@ -7,6 +7,7 @@ interface IRouteConfig {
   description?: string;
 }
 @Component({
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'layouts-nav-view',
   styleUrls: ['./nav-view.component.scss'],
@@ -147,6 +148,7 @@ export class NavViewComponent {
   navViewFullTypescript = `
     import { Component, ChangeDetectionStrategy } from '@angular/core';
     @Component({
+  standalone: false,
       changeDetection: ChangeDetectionStrategy.OnPush,
       selector: 'layouts-nav-view',
       styleUrls: ['./nav-view.component.scss'],

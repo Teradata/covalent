@@ -8,6 +8,7 @@ import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'combination-demo-basic',
   styleUrls: ['./combination-demo-basic.component.scss'],
   templateUrl: './combination-demo-basic.component.html',

@@ -8,6 +8,7 @@ import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'sankey-demo-basic',
   templateUrl: './sankey-demo-basic.component.html',
   styleUrls: ['./sankey-demo-basic.component.scss'],

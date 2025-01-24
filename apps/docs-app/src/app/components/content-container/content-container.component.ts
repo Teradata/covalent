@@ -3,6 +3,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Observable, Subject, map, takeUntil } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'app-content-container',
   templateUrl: './content-container.component.html',
   styleUrls: ['./content-container.component.scss'],

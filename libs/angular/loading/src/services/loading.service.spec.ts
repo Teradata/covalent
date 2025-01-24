@@ -17,8 +17,7 @@ describe('Service: Loading', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TdLoadingWrapperTestComponent],
-      imports: [NoopAnimationsModule, CovalentLoadingModule],
+      imports: [NoopAnimationsModule, CovalentLoadingModule, TdLoadingWrapperTestComponent],
       providers: [
         {
           provide: OverlayContainer,

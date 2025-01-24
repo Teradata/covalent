@@ -10,6 +10,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
+  standalone: false,
   selector: 'draggable-resizable-dialog',
   template: `
     <h2>Draggable resizable dialog</h2>
@@ -23,6 +24,7 @@ import { takeUntil } from 'rxjs/operators';
 export class DraggableResizableDialogComponent {}
 
 @Component({
+  standalone: false,
   selector: 'dialogs-demo-draggable-resizable',
   styleUrls: ['./dialogs-demo-draggable-resizable.component.scss'],
   templateUrl: './dialogs-demo-draggable-resizable.component.html',

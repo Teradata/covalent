@@ -29,7 +29,7 @@
       ]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/markdown-flavored"],
       "options": {
         "jestConfig": "libs/markdown-flavored/jest.config.js",

@@ -14,6 +14,7 @@ const initialItems: IMarkdownNavigatorItem[] = [
 ];
 
 @Component({
+  standalone: false,
   selector: 'markdown-navigator-demo-editor',
   styleUrls: ['./markdown-navigator-demo-editor.component.scss'],
   templateUrl: './markdown-navigator-demo-editor.component.html',

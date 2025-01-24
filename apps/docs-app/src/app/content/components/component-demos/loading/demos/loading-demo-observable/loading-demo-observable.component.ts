@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'loading-demo-observable',
   styleUrls: ['./loading-demo-observable.component.scss'],
   templateUrl: './loading-demo-observable.component.html',

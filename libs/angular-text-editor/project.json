@@ -22,7 +22,7 @@
       "defaultConfiguration": "production"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/angular-text-editor"],
       "options": {
         "jestConfig": "libs/angular-text-editor/jest.config.js",

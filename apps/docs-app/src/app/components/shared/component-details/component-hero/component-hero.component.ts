@@ -7,6 +7,7 @@ import {
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'td-component-hero',
   templateUrl: './component-hero.component.html',
   styleUrls: ['./component-hero.component.scss'],
@@ -16,6 +17,7 @@ export class ComponentHeroComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'td-component-hero-dynamic',
   template: '',
 })

@@ -1,20 +1,14 @@
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { ApplicationRef, Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { ENTER } from '@angular/cdk/keycodes';
 
-import { CovalentFileModule } from '../file.module';
 import { TdFileInputComponent } from '../file-input/file-input.component';
 
 describe('Component: FileInput', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TdFileInputBasicTestComponent,
-        TdFileInputModelTestComponent,
-      ],
-      imports: [FormsModule, CovalentFileModule],
+      imports: [TdFileInputBasicTestComponent, TdFileInputModelTestComponent,],
     });
     TestBed.compileComponents();
   }));
@@ -184,6 +178,7 @@ describe('Component: FileInput', () => {
       <span>test</span>
     </td-file-input>
   `,
+  imports: [TdFileInputComponent],
 })
 class TdFileInputBasicTestComponent {
   accept?: string;
@@ -203,6 +198,7 @@ class TdFileInputBasicTestComponent {
       <span>test</span>
     </td-file-input>
   `,
+  imports: [TdFileInputComponent],
 })
 class TdFileInputModelTestComponent {
   multiple?: boolean;

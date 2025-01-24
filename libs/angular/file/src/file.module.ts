@@ -1,13 +1,5 @@
 import { Type } from '@angular/core';
 import { NgModule } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { PortalModule } from '@angular/cdk/portal';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-
 import { TdFileSelectDirective } from './directives/file-select.directive';
 import { TdFileDropDirective } from './directives/file-drop.directive';
 import { TdFileUploadComponent } from './file-upload/file-upload.component';
@@ -25,15 +17,12 @@ const TD_FILE: Type<any>[] = [
   TdFileInputLabelDirective,
 ];
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [
-    FormsModule,
-    CommonModule,
-    MatIconModule,
-    MatButtonModule,
-    PortalModule,
-  ],
-  declarations: [TD_FILE],
+  imports: [TD_FILE],
   exports: [TD_FILE],
   providers: [TdFileService],
 })

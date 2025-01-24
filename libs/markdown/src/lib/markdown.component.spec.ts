@@ -58,8 +58,7 @@ function anchorTestNonEnglishMarkdown(): string {
 describe('Component: Markdown', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CovalentMarkdownModule],
-      declarations: [
+      imports: [
         TdMarkdownEmptyStaticContentTestRenderingComponent,
         TdMarkdownStaticContentTestRenderingComponent,
         TdMarkdownDymanicContentTestRenderingComponent,
@@ -677,6 +676,7 @@ describe('Component: Markdown', () => {
 // Use the 3 components below to test the rendering requirements of the TdMarkdown component.
 @Component({
   template: ` <td-markdown></td-markdown> `,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownEmptyStaticContentTestRenderingComponent {}
 
@@ -689,11 +689,13 @@ class TdMarkdownEmptyStaticContentTestRenderingComponent {}
         * list item
       </td-markdown>`,
   preserveWhitespaces: true,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownStaticContentTestRenderingComponent {}
 
 @Component({
   template: ` <td-markdown [content]="content"></td-markdown> `,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownDymanicContentTestRenderingComponent {
   content!: string;
@@ -709,6 +711,7 @@ class TdMarkdownDymanicContentTestRenderingComponent {
       </td-markdown>
       `,
   preserveWhitespaces: true,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownSimpleLineBreaksTestRenderingComponent {
   simpleLineBreaks!: boolean;
@@ -719,6 +722,7 @@ class TdMarkdownSimpleLineBreaksTestRenderingComponent {
   template: `
     <td-markdown (contentReady)="tdMarkdownContentIsReady()"></td-markdown>
   `,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownEmptyStaticContentTestEventsComponent {
   tdMarkdownContentIsReady(): void {
@@ -735,6 +739,7 @@ class TdMarkdownEmptyStaticContentTestEventsComponent {
         * list item
       </td-markdown>`,
   preserveWhitespaces: true,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownStaticContentTestEventsComponent {
   tdMarkdownContentIsReady(): void {
@@ -749,6 +754,7 @@ class TdMarkdownStaticContentTestEventsComponent {
       (contentReady)="tdMarkdownContentIsReady()"
     ></td-markdown>
   `,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownDynamicContentTestEventsComponent {
   content!: string;
@@ -761,6 +767,7 @@ class TdMarkdownDynamicContentTestEventsComponent {
   template: `
     <td-markdown [anchor]="anchor" [content]="content"></td-markdown>
   `,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownAnchorsTestEventsComponent {
   content!: string;
@@ -771,6 +778,7 @@ class TdMarkdownAnchorsTestEventsComponent {
   template: `
     <td-markdown [content]="content" [hostedUrl]="hostedUrl"></td-markdown>
   `,
+  imports: [TdMarkdownComponent],
 })
 class TdMarkdownLinksTestEventsComponent {
   hostedUrl!: string;

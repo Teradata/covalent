@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
+  standalone: false,
   selector: 'markdown-demo-file-url',
   styleUrls: ['./markdown-demo-file-url.component.scss'],
   templateUrl: './markdown-demo-file-url.component.html',

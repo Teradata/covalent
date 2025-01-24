@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CovalentGuidedTourService, IGuidedTour } from '@covalent/guided-tour';
 @Component({
+  standalone: false,
   selector: 'guided-tour-demo-skip-count',
   templateUrl: './guided-tour-demo-skip-count.component.html',
   styleUrls: ['./guided-tour-demo-skip-count.component.scss'],

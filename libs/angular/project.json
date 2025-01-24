@@ -9,8 +9,7 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular"],
       "options": {
-        "project": "libs/angular/ng-package.json",
-        "tailwindConfig": "libs/angular/tailwind.config.js"
+        "project": "libs/angular/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -36,7 +35,7 @@
       "dependsOn": ["build"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/angular"],
       "options": {
         "jestConfig": "libs/angular/jest.config.js",

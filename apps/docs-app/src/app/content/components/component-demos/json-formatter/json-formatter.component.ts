@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'json-formatter-demo',
   styleUrls: ['./json-formatter.component.scss'],
   templateUrl: './json-formatter.component.html',

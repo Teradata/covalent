@@ -13,6 +13,8 @@ import {
   IMarkdownNavigatorWindowConfig,
 } from '../markdown-navigator-window-service/markdown-navigator-window.service';
 import { By } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 @Component({
   selector: 'td-test-component',
@@ -21,6 +23,7 @@ import { By } from '@angular/platform-browser';
       Open markdown navigator window
     </button>
   `,
+  imports: [CovalentMarkdownNavigatorModule],
 })
 class TestComponent {
   items: IMarkdownNavigatorWindowConfig = { items: [] };
@@ -37,9 +40,10 @@ describe('MarkdownNavigatorWindowDirective', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
-      declarations: [TestComponent],
+      imports: [NoopAnimationsModule, TestComponent],
       providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
         {
           provide: OverlayContainer,
           useFactory: () => {

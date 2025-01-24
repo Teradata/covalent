@@ -8,6 +8,7 @@ import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'types-scatter',
   templateUrl: './scatter.component.html',
   styleUrls: ['./scatter.component.scss'],

@@ -1,15 +1,16 @@
 import { NgModule, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { TdChartSeriesWordcloudComponent } from './wordcloud.component';
 
 export const WORDCLOUD_MODULE_COMPONENTS: Type<any>[] = [
   TdChartSeriesWordcloudComponent,
 ];
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [WORDCLOUD_MODULE_COMPONENTS],
+  imports: [WORDCLOUD_MODULE_COMPONENTS],
   exports: [WORDCLOUD_MODULE_COMPONENTS],
 })
 export class CovalentWordcloudEchartsModule {}

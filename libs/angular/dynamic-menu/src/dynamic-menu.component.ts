@@ -4,11 +4,17 @@ import {
   IMenuTrigger,
   ITdDynamicMenuLinkClickEvent,
 } from './dynamic-menu.menu';
+import { CommonModule } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { TdDynamicMenuItemComponent } from './dynamic-menu-item/dynamic-menu-item.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'td-dynamic-menu',
   styleUrls: ['dynamic-menu.component.scss'],
   templateUrl: './dynamic-menu.component.html',
+  imports: [CommonModule, MatIcon, MatMenuModule, MatButtonModule, TdDynamicMenuItemComponent],
 })
 export class TdDynamicMenuComponent {
   @Input() trigger!: IMenuTrigger;

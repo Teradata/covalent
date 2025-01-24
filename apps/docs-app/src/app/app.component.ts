@@ -7,6 +7,7 @@ import { getSelectedLanguage } from './utilities/translate';
 import { getDirection } from './utilities/direction';
 
 @Component({
+  standalone: false,
   selector: 'docs-covalent',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

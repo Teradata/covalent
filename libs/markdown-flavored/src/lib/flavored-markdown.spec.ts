@@ -9,6 +9,7 @@ import { ITdFlavoredMarkdownButtonClickEvent } from './flavored-markdown.compone
       markdown
     }}</td-flavored-markdown>
   `,
+  imports: [CovalentFlavoredMarkdownModule],
 })
 class TdFlavoredMarkdownTestComponent {
   markdown = '';
@@ -20,8 +21,7 @@ class TdFlavoredMarkdownTestComponent {
 describe('Component: TdFlavoredMarkdown should: ', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CovalentFlavoredMarkdownModule],
-      declarations: [TdFlavoredMarkdownTestComponent],
+      imports: [TdFlavoredMarkdownTestComponent],
     });
     TestBed.compileComponents();
   }));

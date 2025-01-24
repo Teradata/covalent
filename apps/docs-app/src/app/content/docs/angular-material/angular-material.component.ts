@@ -3,6 +3,7 @@ import { Component, HostBinding } from '@angular/core';
 import { slideInUpAnimation } from '../../../app.animations';
 
 @Component({
+  standalone: false,
   selector: 'docs-angular-material',
   styleUrls: ['./angular-material.component.scss'],
   templateUrl: './angular-material.component.html',

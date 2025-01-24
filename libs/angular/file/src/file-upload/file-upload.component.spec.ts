@@ -7,8 +7,7 @@ import { By } from '@angular/platform-browser';
 describe('Component: FileUpload', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TdFileUploadBasicTestComponent],
-      imports: [CovalentFileModule],
+      imports: [TdFileUploadBasicTestComponent],
     });
     TestBed.compileComponents();
   }));
@@ -290,6 +289,7 @@ describe('Component: FileUpload', () => {
       </ng-template>
     </td-file-upload>
   `,
+  imports: [CovalentFileModule],
 })
 class TdFileUploadBasicTestComponent {
   accept!: string;

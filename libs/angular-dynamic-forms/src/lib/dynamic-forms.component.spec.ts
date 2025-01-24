@@ -11,12 +11,13 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { CovalentDynamicFormsModule } from './dynamic-forms.module';
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
-import { TdDynamicElementComponent } from './dynamic-element.component';
+import { TdDynamicElementComponent, TdDynamicFormsErrorTemplateDirective } from './dynamic-element.component';
 import {
   ITdDynamicElementConfig,
   TdDynamicElement,
   TdDynamicType,
 } from './services/dynamic-forms.service';
+import { NgIf } from '@angular/common';
 
 describe('Component: TdDynamicForms', () => {
   beforeEach(waitForAsync(() => {
@@ -26,8 +27,8 @@ describe('Component: TdDynamicForms', () => {
         MatNativeDateModule,
         CovalentDynamicFormsModule,
         TdDynamicTestModule,
+        TdDynamicFormsTestComponent,
       ],
-      declarations: [TdDynamicFormsTestComponent],
     });
     TestBed.compileComponents();
   }));
@@ -684,6 +685,7 @@ describe('Component: TdDynamicForms', () => {
       </ng-template>
     </td-dynamic-forms>
   `,
+  imports: [TdDynamicFormsComponent, TdDynamicFormsErrorTemplateDirective, NgIf],
 })
 class TdDynamicFormsTestComponent {
   elements!: ITdDynamicElementConfig[];
@@ -692,6 +694,7 @@ class TdDynamicFormsTestComponent {
 @Component({
   selector: 'td-dynamic-input-test',
   template: ` <input [formControl]="control" /> `,
+  imports: [ReactiveFormsModule],
 })
 export class TdDynamicTestComponent {
   control!: FormControl;
@@ -699,8 +702,7 @@ export class TdDynamicTestComponent {
 }
 
 @NgModule({
-  declarations: [TdDynamicTestComponent],
-  imports: [ReactiveFormsModule],
+  imports: [TdDynamicTestComponent],
   exports: [TdDynamicTestComponent],
 })
 export class TdDynamicTestModule {}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { editor } from 'monaco-editor';
 
 @Component({
+  standalone: false,
   selector: 'code-editor-demo-monaco',
   styleUrls: ['./code-editor-demo-monaco.component.scss'],
   templateUrl: './code-editor-demo-monaco.component.html',

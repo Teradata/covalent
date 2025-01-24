@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 
 @Component({
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'search-demo-input',
   styleUrls: ['./search-demo-input.component.scss'],

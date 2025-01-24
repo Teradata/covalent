@@ -15,6 +15,7 @@ import {
   tdPulseAnimation,
 } from '@covalent/core/common';
 @Component({
+  standalone: false,
   selector: 'animations-demo',
   styleUrls: ['./animations.component.scss'],
   templateUrl: './animations.component.html',
@@ -50,6 +51,7 @@ export class AnimationsComponent {
   import { tdAnimationUtility_A, tdAnimationUtility_B } from '@covalent/core/common';
 
   @Component({
+  standalone: false,
     ...
     animations: [
       tdAnimationUtility_A,

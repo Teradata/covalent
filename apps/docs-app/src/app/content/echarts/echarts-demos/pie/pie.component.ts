@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'types-pie',
   templateUrl: './pie.component.html',
   styleUrls: ['./pie.component.scss'],

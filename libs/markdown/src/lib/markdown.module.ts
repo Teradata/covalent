@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import {
   provideHttpClient,
@@ -9,10 +8,13 @@ import {
 import { TdMarkdownComponent } from './markdown.component';
 import { TdMarkdownLoaderService } from './markdown-loader/markdown-loader.service';
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  declarations: [TdMarkdownComponent],
   exports: [TdMarkdownComponent],
-  imports: [CommonModule],
+  imports: [TdMarkdownComponent],
   providers: [
     TdMarkdownLoaderService,
     provideHttpClient(withInterceptorsFromDi()),

@@ -15,8 +15,7 @@ describe('TdStatusDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CovalentDialogsModule],
-      declarations: [TdStatusDialogComponent],
+      imports: [CovalentDialogsModule, TdStatusDialogComponent],
       providers: [{ provide: MatDialogRef, useClass: MatDialogRefMock }],
     }).compileComponents();
 

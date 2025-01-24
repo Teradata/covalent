@@ -1,13 +1,14 @@
 import { NgModule, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { TdChartSeriesLineComponent } from './line.component';
 
 export const LINE_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesLineComponent];
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [LINE_MODULE_COMPONENTS],
+  imports: [LINE_MODULE_COMPONENTS],
   exports: [LINE_MODULE_COMPONENTS],
 })
 export class CovalentLineEchartsModule {}
