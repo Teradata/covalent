@@ -9,7 +9,8 @@
           "path": "/pages/designers"
         },
         "image": "https://knapsack.imgix.net/site/covalent/get-started-designers-rdzwrotbbgpng",
-        "title": "Get started as a designer"
+        "title": "Get started (designers)",
+        "description": "Learn how to set up your workspace, access design files, and apply system components efficiently."
       },
       {
         "id": "NYZp56rve7",
@@ -18,8 +19,8 @@
           "path": "/pages/developers"
         },
         "image": "https://knapsack.imgix.net/site/covalent/get-started-developers-lihe0gjyzmpng",
-        "title": "Get started as a developer",
-        "description": ""
+        "title": "Get started (developers)",
+        "description": "Set up Covalent, install components, and follow best practices for seamless integration."
       },
       {
         "id": "nGGtVJNGah",
@@ -28,7 +29,8 @@
           "path": "/pages/tokens"
         },
         "image": "https://knapsack.imgix.net/site/covalent/tokens-akqyugiebwpng",
-        "title": "Tokens"
+        "title": "Tokens",
+        "description": "Standardized styles that we use across all our UI elements, in both design and code."
       },
       {
         "id": "0Qx6cdBG1e",
@@ -37,7 +39,8 @@
           "path": "/pages/design-principles"
         },
         "image": "https://knapsack.imgix.net/site/covalent/design-principles--H2sjXzMk74.png",
-        "title": "Design principles"
+        "title": "Design principles",
+        "description": "These principles articulate the fundamental goals all design decisions can be measured against externally as well as internally."
       }
     ],
     "gridStyles": {
