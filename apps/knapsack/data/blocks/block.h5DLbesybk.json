@@ -9,7 +9,8 @@
           "path": "/pages/designers"
         },
         "image": "https://knapsack.imgix.net/site/covalent/get-started-designers--Yf1MXJjxUQ.png",
-        "title": "Designers"
+        "title": "Designers",
+        "description": "Learn how to set up your workspace, access design files, and apply system components efficiently."
       },
       {
         "id": "2HXcfa9rFt",
@@ -18,7 +19,8 @@
           "path": "/pages/developers"
         },
         "image": "https://knapsack.imgix.net/site/covalent/get-started-developers--liUrVKO53m.png",
-        "title": "Developers"
+        "title": "Developers",
+        "description": "Set up Covalent, install components, and follow best practices for seamless integration."
       }
     ],
     "tileStyles": {
