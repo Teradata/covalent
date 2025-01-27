@@ -5,10 +5,10 @@
       {
         "id": "aAHr99CPu",
         "link": {
-          "name": "Voice and tone",
-          "path": "/pages/voice-and-tone"
+          "name": "Design principles",
+          "path": "/pages/design-principles"
         },
-        "image": "https://knapsack.imgix.net/site/covalent/voice-and-tone-9drmogd1bpng",
+        "image": "https://knapsack.imgix.net/site/covalent/foundationsdesign-principlesthumbnail--NlvZgmynUV.png",
         "title": "Design principles",
         "description": ""
       },
@@ -22,15 +22,6 @@
         "title": "Color"
       },
       {
-        "id": "e5vZWpD3an",
-        "link": {
-          "name": "Icons",
-          "path": "/pages/icons"
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/icons-jochax2ppzpng",
-        "title": "Icons"
-      },
-      {
         "id": "QfWJs0FvGa",
         "link": {
           "name": "Typography",
@@ -38,6 +29,15 @@
         },
         "image": "https://knapsack.imgix.net/site/covalent/typography-c7dggtibjpng",
         "title": "Typography"
+      },
+      {
+        "id": "e5vZWpD3an",
+        "link": {
+          "name": "Icons",
+          "path": "/pages/icons"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/icons-jochax2ppzpng",
+        "title": "Icons"
       },
       {
         "id": "pliUNgmMB",
