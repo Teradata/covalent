@@ -18,32 +18,10 @@
           ]
         },
         {
-          "type": "image",
+          "type": "orderedList",
           "attrs": {
-            "alt": "placeholder",
-            "src": "https://knapsack.imgix.net/site/covalent/errorshero-dialog--Xcr9VXKIf.png",
-            "title": "placeholder"
-          }
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
+            "start": 1
           },
-          "content": [
-            {
-              "text": "Anatomy dictation specs",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
           "content": [
             {
               "type": "listItem",
@@ -55,8 +33,26 @@
                   },
                   "content": [
                     {
-                      "text": "Summary of key visual elements",
+                      "text": "Alert[default] error symbol:",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": " State icon alert component positioned left of the error message and is vertically-aligned to the top of its container. Color is ",
                       "type": "text"
+                    },
+                    {
+                      "text": "cv-theme/negative",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -72,17 +68,78 @@
                   },
                   "content": [
                     {
-                      "text": "Dictate anatomy examples",
-                      "type": "text"
+                      "text": "Dialog component:",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "orderedList",
+                  "attrs": {
+                    "start": 1
+                  },
+                  "content": [
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "Close button (optional)",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "Dialog body content",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "CTA(required) + secondary button(optional)",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
               ]
             }
           ]
-        },
-        {
-          "type": "horizontalRule"
         }
       ]
     }

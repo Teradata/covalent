@@ -5,14 +5,6 @@
       "type": "doc",
       "content": [
         {
-          "type": "image",
-          "attrs": {
-            "alt": null,
-            "src": "https://knapsack.imgix.net/site/covalent/errorshero-inline--Tl9mNWFe4q.png",
-            "title": null
-          }
-        },
-        {
           "type": "heading",
           "attrs": {
             "level": 2,
@@ -71,9 +63,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "horizontalRule"
         }
       ]
     }
