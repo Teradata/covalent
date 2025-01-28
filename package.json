@@ -105,8 +105,8 @@
     "html-webpack-plugin": "4.5.2"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "18.x.x",
-    "@angular-devkit/build-angular": "18.x.x",
+    "@angular-builders/custom-webpack": "19.x.x",
+    "@angular-devkit/build-angular": "19.x.x",
     "@angular-devkit/core": "18.x.x",
     "@angular-devkit/schematics": "18.x.x",
     "@angular-eslint/eslint-plugin": "18.x.x",
@@ -195,7 +195,7 @@
     "ts-jest": "29.1.1",
     "ts-morph": "^24.0.0",
     "typescript": "5.5.4",
-    "vite": "^5.4.11",
+    "vite": "^5.4.14",
     "vite-plugin-dts": "~3.8.1",
     "vitest": "^2.1.5"
   }
