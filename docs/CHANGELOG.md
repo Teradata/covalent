@@ -1,3 +1,10 @@
+## [9.1.1](https://github.com/Teradata/covalent/compare/v9.1.0...v9.1.1) (2025-01-28)
+
+### Bug Fixes
+
+- **search:** scss lint fix ([fdd7fcf](https://github.com/Teradata/covalent/commit/fdd7fcfa3bde10ee4ec0ced9ed460f2f083096b9))
+- **search:** style fix for search bar ([b3ec2d6](https://github.com/Teradata/covalent/commit/b3ec2d6d190a956cdc6dec2ba306ee55375ecdc8))
+
 # [9.1.0](https://github.com/Teradata/covalent/compare/v9.0.0...v9.1.0) (2025-01-13)
 
 ### Features
