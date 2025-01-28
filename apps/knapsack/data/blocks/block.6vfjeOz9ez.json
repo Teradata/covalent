@@ -1,0 +1,37 @@
+{
+  "id": "6vfjeOz9ez",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Inverse",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The dark version of the base color is set to the light version of the base color, and vice versa.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "medium",
+  "blockType": "text-editor"
+}
