@@ -435,19 +435,21 @@ order:
   - components
   - action-ribbon
   - alert
+  - button
+  - checkbox
+  - dialog
+  - radio
+  - select
   - app-shell
   - badge
   - breadcrumbs
-  - button
   - card
-  - checkbox
   - icon-checkbox
   - code-editor
   - code-snippet
   - chip-item
   - chip
   - circular-progress
-  - dialog
   - empty-state
   - expansion-panel
   - expansion-panel-item
@@ -466,9 +468,7 @@ order:
   - radio-list-item
   - menu
   - notebook-cell
-  - radio
   - icon-radio
-  - select
   - side-sheet
   - slider
   - snackbar
