@@ -56,6 +56,7 @@ export const _TdSearchInputMixinBase =
         'hide-left',
         style({
           transform: 'translateX(-150%)',
+          opacity: 0,
           display: 'none',
         })
       ),
@@ -63,6 +64,7 @@ export const _TdSearchInputMixinBase =
         'hide-right',
         style({
           transform: 'translateX(150%)',
+          opacity: 0,
           display: 'none',
         })
       ),
@@ -70,6 +72,7 @@ export const _TdSearchInputMixinBase =
         'show',
         style({
           transform: 'translateX(0%)',
+          opacity: 1,
           display: 'block',
         })
       ),
@@ -91,7 +94,7 @@ export class TdSearchInputComponent
    * appearance?: MatFormFieldAppearance
    * Appearance style for the underlying input component.
    */
-  @Input() appearance: MatFormFieldAppearance = 'outline';
+  @Input() appearance: MatFormFieldAppearance = 'fill';
 
   /**
    * showUnderline?: boolean

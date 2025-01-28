@@ -4,6 +4,7 @@
     type="button"
     class="td-search-icon"
     (click)="searchClicked()"
+    [ngClass]="{ 'td-search-icon-active': searchVisible || alwaysVisible }"
   >
     <mat-icon *ngIf="searchVisible && !alwaysVisible">{{ backIcon }}</mat-icon>
     <mat-icon *ngIf="!searchVisible || alwaysVisible">{{
@@ -20,7 +21,7 @@
     [clearIcon]="clearIcon"
     (searchDebounce)="handleSearchDebounce($event)"
     (search)="handleSearch($event)"
-    (clear)="handleClear(); toggleVisibility()"
+    (clear)="handleClear();"
     (blur)="handleBlur()"
   ></td-search-input>
 </div>

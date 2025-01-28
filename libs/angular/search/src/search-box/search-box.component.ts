@@ -86,7 +86,7 @@ export class TdSearchBoxComponent implements ControlValueAccessor {
    * The icon used to clear the search input.
    * Defaults to 'cancel' icon.
    */
-  @Input() clearIcon = 'cancel';
+  @Input() clearIcon = 'close';
 
   /**
    * showUnderline?: boolean
