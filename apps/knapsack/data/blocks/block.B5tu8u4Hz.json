@@ -30,7 +30,7 @@
                   },
                   "content": [
                     {
-                      "text": "Do not use icons for decoration. If you need a little more visual impact, consider Spot illustrations.",
+                      "text": "Do not use icons for decoration. If you need a little more visual impact, consider spot illustrations.",
                       "type": "text"
                     }
                   ]
@@ -47,7 +47,7 @@
                   },
                   "content": [
                     {
-                      "text": "Icons should only be used for items that are clickable. If you can't click the icon, don't use it (unless it's a disabled state of something).",
+                      "text": "Icons should only be used for items that are clickable. If you can't click the icon, don't use it (unless it's disabled).",
                       "type": "text"
                     }
                   ]
@@ -64,7 +64,7 @@
                   },
                   "content": [
                     {
-                      "text": "Keep in mind that the best icon is often a text label.",
+                      "text": "The best icon is often a text label.",
                       "type": "text"
                     }
                   ]
