@@ -9,6 +9,7 @@
     ],
     "columns": "1",
     "imageStyles": {
+      "fit": "fill",
       "size": "large",
       "seamless": true
     }

@@ -81,7 +81,7 @@
                       ]
                     },
                     {
-                      "text": ": Communicates the interaction state of the checkbox. States indicated by this state layer include Hovered, Focused, and Pressed.",
+                      "text": ": Communicates the interaction state of the checkbox. States indicated by this state layer include Hovered, Focused, and Pressed. See the Colors page under Foundations for more details.",
                       "type": "text"
                     }
                   ]

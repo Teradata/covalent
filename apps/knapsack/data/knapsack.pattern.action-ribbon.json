@@ -81,14 +81,14 @@
       "type": "template"
     },
     {
+      "id": "lm1MthNrEM",
+      "type": "subPage"
+    },
+    {
       "id": "DGBIlJlEO",
       "type": "designSrc",
       "hidden": true,
       "minRoleNeeded": "ADMIN"
-    },
-    {
-      "id": "lm1MthNrEM",
-      "type": "subPage"
     }
   ],
   "subPages": [
