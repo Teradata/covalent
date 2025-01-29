@@ -444,6 +444,7 @@ order:
   - badge
   - breadcrumbs
   - card
+  - icon-checkbox
   - chip-item
   - code-editor
   - code-snippet
@@ -458,7 +459,6 @@ order:
   - icon
   - icon-button
   - icon-button-toggle
-  - icon-checkbox
   - icon-lockup
   - icon-radio
   - linear-progress
