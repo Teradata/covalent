@@ -1,5 +1,5 @@
 {
-  "id": "4S3YOGaS5b",
+  "id": "ZoCdse-OVA",
   "data": {
     "content": {
       "type": "doc",
@@ -12,13 +12,8 @@
           },
           "content": [
             {
-              "text": "Heading 1",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Color palettes",
+              "type": "text"
             }
           ]
         },
@@ -29,16 +24,10 @@
           },
           "content": [
             {
-              "text": "This is content in a text block.",
+              "text": "Explore theming, creating color palettes, and how they impact color roles at Teradata. ",
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          }
         }
       ]
     }

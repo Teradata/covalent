@@ -1,5 +1,5 @@
 {
-  "id": "vG5YCF3R3j",
+  "id": "C3TFhkP3s",
   "data": {
     "content": {
       "type": "doc",
@@ -7,13 +7,13 @@
         {
           "type": "heading",
           "attrs": {
-            "textAlign": "left",
-            "level": 3
+            "level": 2,
+            "textAlign": "left"
           },
           "content": [
             {
-              "type": "text",
-              "text": "Be easy"
+              "text": "Variant",
+              "type": "text"
             }
           ]
         },
@@ -24,14 +24,14 @@
           },
           "content": [
             {
-              "type": "text",
-              "text": "Simplify content and interactions and enable collaboration between AI and humans by focusing on usability and guiding users through the easiest paths to get a job done. "
+              "text": "Alternative lower-emphasis version of the base color.",
+              "type": "text"
             }
           ]
         }
       ]
     }
   },
-  "size": "small",
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "medium"
 }

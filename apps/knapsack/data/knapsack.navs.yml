@@ -428,10 +428,10 @@ order:
   - developers
   - foundations
   - design-principles
-  - color
-  - typography-3shrxwkyk
-  - icons
   - accessibility
+  - color
+  - icons
+  - typography-3shrxwkyk
   - components
   - action-ribbon
   - alert
@@ -445,9 +445,9 @@ order:
   - breadcrumbs
   - card
   - icon-checkbox
+  - chip-item
   - code-editor
   - code-snippet
-  - chip-item
   - chip
   - circular-progress
   - empty-state
@@ -460,6 +460,7 @@ order:
   - icon-button
   - icon-button-toggle
   - icon-lockup
+  - icon-radio
   - linear-progress
   - list
   - list-item
@@ -468,7 +469,6 @@ order:
   - radio-list-item
   - menu
   - notebook-cell
-  - icon-radio
   - side-sheet
   - slider
   - snackbar
@@ -479,15 +479,15 @@ order:
   - switch
   - tabs
   - tab
-  - text-area
-  - textfield
-  - text-lockup
   - toolbar
   - tooltip
   - top-app-bar
   - top-app-bar-fixed
   - tree-list
   - tree-list-item
+  - text-area
+  - textfield
+  - text-lockup
   - text
   - patterns
   - errors

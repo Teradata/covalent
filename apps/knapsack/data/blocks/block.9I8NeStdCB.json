@@ -5,12 +5,12 @@
       {
         "id": "aZr6RjLvBS",
         "link": {
-          "path": "https://m2.material.io/design/color/the-color-system.html",
+          "path": "https://m3.material.io/styles/color/roles",
           "external": true
         },
         "image": "https://knapsack.imgix.net/site/covalent/material-design-logo-zc-urjolqmpng",
         "title": "Material Design color system",
-        "description": "Our colors follow the model laid out by Material Design 2"
+        "description": "Our colors follows the model laid out by Material Design 3"
       },
       {
         "id": "yw4ZIprLbc",
@@ -29,8 +29,9 @@
       "imageSize": "small"
     },
     "gridStyles": {
-      "columns": "4"
+      "columns": "3"
     }
   },
-  "blockType": "shortcut-tiles"
+  "blockType": "shortcut-tiles",
+  "spacing": "medium"
 }
