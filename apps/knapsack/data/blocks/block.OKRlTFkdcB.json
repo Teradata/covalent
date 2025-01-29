@@ -7,13 +7,13 @@
         {
           "type": "heading",
           "attrs": {
-            "textAlign": "left",
-            "level": 2
+            "level": 2,
+            "textAlign": "left"
           },
           "content": [
             {
-              "type": "text",
-              "text": "Trust"
+              "text": "Trust",
+              "type": "text"
             }
           ]
         },
@@ -24,8 +24,8 @@
           },
           "content": [
             {
-              "type": "text",
-              "text": "We're building a system that builds trust with the teams. When the system is trusted, adoption comes. We listen to the teams' feedback. To help people learn and apply the guidance, we prioritize a predictable information architecture with simple, clear, and update-to-date documentation with no extra or irrelevant content."
+              "text": "We're building a system that builds trust with the teams. When the system is trusted, adoption comes. We listen to the teams' feedback. To help people learn and apply the guidance, we prioritize a predictable information architecture with simple, clear, and update-to-date documentation. No extra or irrelevant content.",
+              "type": "text"
             }
           ]
         }
