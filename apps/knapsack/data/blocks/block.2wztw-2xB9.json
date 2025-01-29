@@ -24,64 +24,8 @@
           },
           "content": [
             {
-              "text": "A checkbox has 3 main states:",
+              "text": "The states below use state layers to communicate interaction state. See the Colors page under Foundations for more details.",
               "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
-          "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Selected",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Unselected",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Indeterminate",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
             }
           ]
         },
@@ -90,6 +34,19 @@
           "attrs": {
             "textAlign": "left"
           }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Selected",
+              "type": "text"
+            }
+          ]
         }
       ]
     }
