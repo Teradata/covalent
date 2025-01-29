@@ -1,3 +1,11 @@
+## [9.1.2](https://github.com/Teradata/covalent/compare/v9.1.1...v9.1.2) (2025-01-29)
+
+### Bug Fixes
+
+- **docs:** remove orphan page ([300a7df](https://github.com/Teradata/covalent/commit/300a7df8dca32e23c70cb04d8babcae185cc95f7))
+- **docs:** restore missing design principles content ([9276032](https://github.com/Teradata/covalent/commit/9276032e172305fdfc7d5467c2ed5f27c9ddb5a0))
+- **docs:** sanitize older branch to try to prevent data loss ([e5399df](https://github.com/Teradata/covalent/commit/e5399dff76c46b3d219ca030fd2e753929f1a9c7))
+
 ## [9.1.1](https://github.com/Teradata/covalent/compare/v9.1.0...v9.1.1) (2025-01-28)
 
 ### Bug Fixes
