@@ -424,12 +424,14 @@ byId:
 order:
   - get-started
   - designers
+  - figma-organization
   - developers
   - foundations
   - design-principles
   - color
   - icons
   - typography-3shrxwkyk
+  - accessibility
   - components
   - action-ribbon
   - alert
@@ -442,9 +444,9 @@ order:
   - badge
   - breadcrumbs
   - card
+  - chip-item
   - code-editor
   - code-snippet
-  - chip-item
   - chip
   - circular-progress
   - empty-state
@@ -457,6 +459,7 @@ order:
   - icon-button
   - icon-button-toggle
   - icon-checkbox
+  - icon-lockup
   - icon-radio
   - linear-progress
   - list
@@ -465,6 +468,7 @@ order:
   - check-list-item
   - radio-list-item
   - menu
+  - notebook-cell
   - side-sheet
   - slider
   - snackbar
@@ -485,11 +489,9 @@ order:
   - textfield
   - text-lockup
   - text
-  - code-editor
-  - icon-lockup
-  - notebook-cell
   - patterns
   - errors
+  - get-started-cards
   - tokens
   - colors-vvhchtke
   - colors-9gexmujiba
@@ -502,7 +504,4 @@ order:
   - video
   - date-and-time
   - word-list
-  - accessibility
-  - figma-organization
-  - get-started-cards
   - inclusive-language-glnk25tux

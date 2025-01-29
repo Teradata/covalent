@@ -373,6 +373,8 @@
       "templateId": "web-components-raE1x4tYL",
       "demoId": "wJJ2tksHEK",
       "assetSetId": "light",
+      "width": 111,
+      "height": 54,
       "url": "/api/v1/render?patternId=button&templateId=web-components-raE1x4tYL&assetSetId=light&demoId=wJJ2tksHEK&isInIframe=false&wrapHtml=true"
     },
     {
@@ -380,6 +382,8 @@
       "templateId": "web-components-raE1x4tYL",
       "demoId": "wJJ2tksHEK",
       "assetSetId": "dark",
+      "width": 111,
+      "height": 54,
       "url": "/api/v1/render?patternId=button&templateId=web-components-raE1x4tYL&assetSetId=dark&demoId=wJJ2tksHEK&isInIframe=false&wrapHtml=true"
     },
     {
