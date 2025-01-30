@@ -1,18 +1,18 @@
 {
-  "id": "oL7QKaN9Lm",
+  "id": "u3DSAIB64U",
   "data": {
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "15214:39176"
+        "nodeId": "15178:19915"
       }
     ],
+    "columns": "1",
     "imageStyles": {
-      "fit": "fill",
       "size": "auto",
       "seamless": true
-    },
-    "columns": "1"
+    }
   },
+  "size": "medium",
   "blockType": "design-src-tiles"
 }
