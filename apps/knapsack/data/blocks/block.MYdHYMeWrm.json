@@ -40,7 +40,8 @@
       }
     ],
     "tileStyles": {
-      "headerBeforeImage": true
+      "imageSize": "none",
+      "headerBeforeImage": false
     }
   },
   "blockType": "guidelines"

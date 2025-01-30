@@ -1,30 +1,9 @@
 {
-  "id": "GApyH6EUtK",
+  "id": "OYjPTUOP0h",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Anatomy",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "attrs": {
-            "alt": "placeholder",
-            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img--p5P-MefnD.png",
-            "title": "placeholder"
-          }
-        },
         {
           "type": "paragraph",
           "attrs": {
