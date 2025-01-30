@@ -16,6 +16,18 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Action Ribbon should be used  to streamline user actions such as save, edit, delete, or configure, making them easily accessible in a consistent location. It's best applied in contexts like forms or data management interfaces where quick access to actions is beneficial.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

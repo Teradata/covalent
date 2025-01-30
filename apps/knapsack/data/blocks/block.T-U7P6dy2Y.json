@@ -18,7 +18,30 @@
                       "type": "paragraph",
                       "content": [
                         {
-                          "text": "Do use the Action Ribbon for grouping actions",
+                          "text": "Do use in contexts like forms or data management interfaces ",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "where quick access to actions is beneficial.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Do use the action ribbon for grouping actions",
                           "type": "text",
                           "marks": [
                             {
@@ -101,7 +124,30 @@
                       "type": "paragraph",
                       "content": [
                         {
-                          "text": "Don't overload the Action Ribbon",
+                          "text": "Don't",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "text": " use the action ribbon in simple interfaces where fewer actions are needed.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Don't overload the action ribbon",
                           "type": "text",
                           "marks": [
                             {
