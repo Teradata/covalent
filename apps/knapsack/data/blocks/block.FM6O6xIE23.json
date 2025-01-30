@@ -44,12 +44,7 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
-          "content": [
+            },
             {
               "type": "listItem",
               "content": [

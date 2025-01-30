@@ -24,47 +24,8 @@
           },
           "content": [
             {
-              "text": "A radio button has 2 main states:",
+              "text": "The states below use state layers to communicate interaction state. See the Colors page under Foundations for more details.",
               "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
-          "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Selected",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Unselected",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
             }
           ]
         }
