@@ -1,21 +1,9 @@
 {
-  "id": "wVeKmQ56N3",
+  "id": "H3ObEXJ24u",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "These states use the following color roles:",
-              "type": "text"
-            }
-          ]
-        },
         {
           "type": "orderedList",
           "attrs": {
@@ -32,7 +20,16 @@
                   },
                   "content": [
                     {
-                      "text": "primary",
+                      "text": "Icon",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": Communicates the state of the radio button, selected or unselected.",
                       "type": "text"
                     }
                   ]
@@ -49,7 +46,16 @@
                   },
                   "content": [
                     {
-                      "text": "on-surface-variant",
+                      "text": "State layer",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": Communicates the interaction state of the radio. See the Colors page under Foundations for more details.",
                       "type": "text"
                     }
                   ]
