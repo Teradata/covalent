@@ -1,15 +1,14 @@
 {
-  "id": "Fy4XFUF1xk",
+  "id": "GKK64cBqN7",
   "data": {
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "15357:43303"
+        "nodeId": "15281:9006"
       }
     ],
     "columns": "1",
     "imageStyles": {
-      "fit": "fill",
       "size": "auto",
       "seamless": true
     }
