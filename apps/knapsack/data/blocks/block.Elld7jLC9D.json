@@ -1,17 +1,17 @@
 {
-  "id": "yPnlDRjsDv",
+  "id": "Elld7jLC9D",
   "data": {
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "14705:6140"
+        "nodeId": "15281:8572"
       }
     ],
-    "columns": "2",
+    "columns": "1",
     "imageStyles": {
-      "size": "auto",
       "seamless": true
     }
   },
-  "blockType": "design-src-tiles"
+  "blockType": "design-src-tiles",
+  "size": "medium"
 }
