@@ -198,3 +198,4 @@ settings:
       enabledRendererIds:
         - web-components
         - angular
+      hideThemeSelector: true
