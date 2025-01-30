@@ -44,5 +44,6 @@
       "headerBeforeImage": false
     }
   },
-  "blockType": "guidelines"
+  "blockType": "guidelines",
+  "spacing": "medium"
 }
