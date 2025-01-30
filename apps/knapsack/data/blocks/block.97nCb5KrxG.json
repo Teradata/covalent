@@ -9,9 +9,11 @@
     ],
     "columns": "1",
     "imageStyles": {
+      "fit": "contain",
+      "size": "auto",
+      "align": "left",
       "seamless": true
     }
   },
-  "size": "medium",
   "blockType": "design-src-tiles"
 }

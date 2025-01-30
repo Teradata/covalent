@@ -1,17 +1,9 @@
 {
-  "id": "bZiSPhSfHL",
+  "id": "XHWSFYUdCv",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "image",
-          "attrs": {
-            "alt": "Placeholder",
-            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img-hero--sj1zUHf8G1.png",
-            "title": "Placeholder"
-          }
-        },
         {
           "type": "heading",
           "attrs": {
