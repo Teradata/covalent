@@ -2,7 +2,7 @@
   "id": "0rZ0OosspG",
   "data": {
     "md": [
-      "# Anatomy\nAn alert is composed of (up to) four elements:\n- Status icon\n- Title\n- Description (optional)\n- Call to action button\n- Icon"
+      "## Anatomy\nAn alert is composed of (up to) five elements:\n- Status icon\n- Title\n- Description (optional)\n- Call to action button\n- Icon"
     ],
     "columns": 1
   },
