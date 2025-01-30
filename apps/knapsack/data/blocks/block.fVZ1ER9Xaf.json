@@ -1,5 +1,5 @@
 {
-  "id": "eoYSn9Yrdo",
+  "id": "fVZ1ER9Xaf",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Anatomy",
+              "text": "Additional resources",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Action ribbons are split into two regions, with the section context (usually the title) aligned to the left, and the page actions aligned to the right. Try to keep the number of page actions to three or less.",
+              "text": "Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences.",
               "type": "text"
             }
           ]

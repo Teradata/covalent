@@ -1,0 +1,20 @@
+{
+  "id": "VWhxJikXDx",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "BMUMd1l-H4",
+        "link": {
+          "path": "https://material.angular.io/components/toolbar/overview#accessibility",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Material Angular"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

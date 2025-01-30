@@ -1,5 +1,5 @@
 {
-  "id": "MZy0lSp2MK",
+  "id": "Bs2scaVInJ",
   "data": {
     "content": {
       "type": "doc",
@@ -12,11 +12,40 @@
           },
           "content": [
             {
-              "text": "Mini-toolbar",
+              "text": "Action placement order",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use this order to help maintain consistency between applications.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "From right to left",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
                 }
               ]
             }
@@ -35,7 +64,7 @@
                   },
                   "content": [
                     {
-                      "text": "Contains a title",
+                      "text": "Add button (if any)",
                       "type": "text"
                     }
                   ]
@@ -52,7 +81,7 @@
                   },
                   "content": [
                     {
-                      "text": "Contains a close button",
+                      "text": "Search button (if any)",
                       "type": "text"
                     }
                   ]
@@ -69,7 +98,24 @@
                   },
                   "content": [
                     {
-                      "text": "Does not provide user feedback messages",
+                      "text": "Less common functions",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Overflow menu (if any)",
                       "type": "text"
                     }
                   ]
@@ -77,10 +123,22 @@
               ]
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
         }
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "size": "small",
+  "blockType": "text-editor"
 }

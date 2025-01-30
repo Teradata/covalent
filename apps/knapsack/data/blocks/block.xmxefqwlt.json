@@ -1,5 +1,5 @@
 {
-  "id": "eoYSn9Yrdo",
+  "id": "xmxefqwlt",
   "data": {
     "content": {
       "type": "doc",
@@ -7,13 +7,18 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 4,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Anatomy",
-              "type": "text"
+              "text": "Voice & Tone:",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },
@@ -24,13 +29,21 @@
           },
           "content": [
             {
-              "text": "Action ribbons are split into two regions, with the section context (usually the title) aligned to the left, and the page actions aligned to the right. Try to keep the number of page actions to three or less.",
+              "text": "Direct and supportive, providing immediate feedback.",
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          }
         }
       ]
     }
   },
+  "size": "small",
   "blockType": "text-editor"
 }
