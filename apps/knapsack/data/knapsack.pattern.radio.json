@@ -64,7 +64,8 @@
     },
     {
       "id": "uJ77Os6iuR",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     },
     {
       "id": "overview",
