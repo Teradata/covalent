@@ -10,6 +10,24 @@
         },
         "title": "See also",
         "description": "Toolbars"
+      },
+      {
+        "id": "ZYXmypKjSO",
+        "link": {
+          "name": "Color",
+          "path": "/pages/color"
+        },
+        "title": "Color",
+        "description": "Color"
+      },
+      {
+        "id": "vYcLcan0Rn",
+        "link": {
+          "path": "https://material.angular.io/components/toolbar/overview",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Material Angular"
       }
     ],
     "gridStyles": {

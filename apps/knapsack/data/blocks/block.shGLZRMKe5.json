@@ -1,10 +1,10 @@
 {
-  "id": "UeRfnaYgIy",
+  "id": "shGLZRMKe5",
   "data": {
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "13644:24161"
+        "nodeId": "15339:6902"
       }
     ],
     "imageStyles": {
@@ -14,5 +14,6 @@
     },
     "columns": "1"
   },
+  "size": "large",
   "blockType": "design-src-tiles"
 }

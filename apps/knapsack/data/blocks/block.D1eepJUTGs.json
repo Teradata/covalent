@@ -1,24 +1,27 @@
 {
-  "id": "rtPCzklJvh",
+  "id": "D1eepJUTGs",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 4,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Default / inactive",
+              "text": "Hit area state",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            },
+            {
+              "text": " ",
+              "type": "text"
             }
           ]
         },
@@ -29,7 +32,7 @@
           },
           "content": [
             {
-              "text": "No items have been selected",
+              "text": "When focused, the Action Ribbon displays a clear visual indicator, making it easy for users to identify which part of the ribbon is active. This aids users who rely on visual cues to navigate.",
               "type": "text"
             }
           ]
@@ -37,6 +40,6 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "size": "medium",
+  "blockType": "text-editor"
 }

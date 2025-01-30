@@ -1,5 +1,5 @@
 {
-  "id": "eoYSn9Yrdo",
+  "id": "K5MSCqJc",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Anatomy",
+              "text": "Overview",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Action ribbons are split into two regions, with the section context (usually the title) aligned to the left, and the page actions aligned to the right. Try to keep the number of page actions to three or less.",
+              "text": "The Action Ribbon is an essential component designed to enhance user interaction and feedback by providing a common, dynamic region for action controls. Accessibility in the Action Ribbon ensures that all users, including those with disabilities, can navigate and operate the component effectively, promoting inclusivity and usability.",
               "type": "text"
             }
           ]

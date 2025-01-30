@@ -7,13 +7,18 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 4,
             "textAlign": "left"
           },
           "content": [
             {
               "text": "Action ribbon",
-              "type": "text"
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },
@@ -77,5 +82,5 @@
     }
   },
   "blockType": "text-editor",
-  "size": "medium"
+  "size": "small"
 }
