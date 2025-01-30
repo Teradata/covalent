@@ -129,6 +129,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "medium"
+  "blockType": "text-editor"
 }
