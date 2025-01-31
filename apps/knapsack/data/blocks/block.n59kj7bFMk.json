@@ -5,10 +5,7 @@
       "type": "doc",
       "content": [
         {
-          "type": "orderedList",
-          "attrs": {
-            "start": 1
-          },
+          "type": "bulletList",
           "content": [
             {
               "type": "listItem",

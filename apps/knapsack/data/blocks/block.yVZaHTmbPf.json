@@ -5,27 +5,7 @@
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Key",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "orderedList",
-          "attrs": {
-            "start": 1
-          },
+          "type": "bulletList",
           "content": [
             {
               "type": "listItem",
@@ -115,7 +95,7 @@
                   },
                   "content": [
                     {
-                      "text": "Icon",
+                      "text": "Icon button",
                       "type": "text",
                       "marks": [
                         {
@@ -124,7 +104,7 @@
                       ]
                     },
                     {
-                      "text": " (optional): Commonly used to clear the input field, communicate a warning or error, or toggle visibility.",
+                      "text": ": Used to expand the options menu.",
                       "type": "text"
                     }
                   ]
@@ -150,7 +130,7 @@
                       ]
                     },
                     {
-                      "text": " (optional): Give further help or communicate an error message. Use Caption typography format.",
+                      "text": " (optional): Give further help or communicate an error message. Use Caption typography form",
                       "type": "text"
                     }
                   ]
