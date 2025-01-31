@@ -1,8 +1,8 @@
 {
-  "globalAssetSetIds": ["light", "dark"],
+  "globalAssetSetIds": ["default", "dark"],
   "allAssetSets": {
-    "light": {
-      "id": "light",
+    "default": {
+      "id": "default",
       "title": "Light",
       "assets": [
         {
