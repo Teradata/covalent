@@ -16,14 +16,25 @@
     {
       "id": "cD5CibJZlL",
       "title": "Onboarding",
-      "blockIds": []
+      "blockIds": [
+        "5LwhbAGNc",
+        "E9f36KOiL",
+        "Ovan3Eh3Yz",
+        "F2ytkxQOt",
+        "84StfQF8Z",
+        "thao3q2Bx8",
+        "VtprwCPxGE",
+        "dBb3191J2T",
+        "ZZB4WPj7an",
+        "2SlT8HoWsi"
+      ]
     },
     {
       "id": "TXfPct2ysa",
       "title": "Accessibility",
-      "blockIds": []
+      "blockIds": ["e7B3XgIhUH", "Iulu-FMAds", "cDXEF5HCA2"]
     }
   ],
   "templates": [],
-  "description": ""
+  "description": "The get-started cards serve as shortcuts to tasks that we want people to complete first during onboarding. It's an opportunity for us to help them quickly unlock the value of their Teradata product."
 }
