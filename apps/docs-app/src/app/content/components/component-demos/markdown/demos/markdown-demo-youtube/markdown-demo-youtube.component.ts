@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'markdown-demo-youtube',
   styleUrls: ['./markdown-demo-youtube.component.scss'],
   templateUrl: './markdown-demo-youtube.component.html',

@@ -322,6 +322,7 @@ async function validateTree(
       [footer]="footer"
     ></td-markdown-navigator>
   `,
+  imports: [TdMarkdownNavigatorComponent]
 })
 class TdMarkdownNavigatorTestComponent {
   items?: IMarkdownNavigatorItem[] = [];
@@ -340,8 +341,7 @@ describe('MarkdownNavigatorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TdMarkdownNavigatorTestComponent],
-      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
+      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule, TdMarkdownNavigatorTestComponent],
       providers: [
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),

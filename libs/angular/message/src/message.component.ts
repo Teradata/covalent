@@ -14,6 +14,8 @@ import {
 } from '@angular/core';
 
 import { tdCollapseAnimation } from './collapse.animation';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Directive({
   selector: '[tdMessageContainer]',
@@ -27,6 +29,7 @@ export class TdMessageContainerDirective {
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss'],
   animations: [tdCollapseAnimation],
+  imports: [CommonModule, MatIconModule, TdMessageContainerDirective],
 })
 export class TdMessageComponent implements AfterViewInit {
   private _color!: string;

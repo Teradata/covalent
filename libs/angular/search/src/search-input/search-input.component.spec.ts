@@ -5,13 +5,13 @@ import { By } from '@angular/platform-browser';
 import { CovalentSearchModule } from '../search.module';
 import { DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { TdSearchInputComponent } from './search-input.component';
 
 describe('Component: SearchInput', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, FormsModule, CovalentSearchModule],
-        declarations: [TestNgModelSupportComponent],
+        imports: [NoopAnimationsModule, FormsModule, CovalentSearchModule, TestNgModelSupportComponent],
       });
       TestBed.compileComponents();
     })
@@ -52,6 +52,7 @@ describe('Component: SearchInput', () => {
 
 @Component({
   template: ` <td-search-input [(ngModel)]="value"></td-search-input> `,
+  imports: [TdSearchInputComponent, FormsModule],
 })
 class TestNgModelSupportComponent {
   value!: string;

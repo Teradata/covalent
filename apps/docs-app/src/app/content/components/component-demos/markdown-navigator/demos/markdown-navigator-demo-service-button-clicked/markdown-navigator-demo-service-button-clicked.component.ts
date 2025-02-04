@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'markdown-navigator-demo-service-button-clicked',
   styleUrls: [
     './markdown-navigator-demo-service-button-clicked.component.scss',

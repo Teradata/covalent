@@ -3,6 +3,7 @@ import { AbstractControl, UntypedFormControl } from '@angular/forms';
 import { ITdDynamicElementConfig } from '@covalent/dynamic-forms';
 
 @Component({
+  standalone: false,
   selector: 'td-dynamic-input-test',
   template: `
     <td-code-editor
@@ -30,6 +31,7 @@ export class TdTestDynamicComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'dynamic-forms-demo-custom-elements',
   styleUrls: ['./dynamic-forms-demo-custom-elements.component.scss'],
   templateUrl: './dynamic-forms-demo-custom-elements.component.html',

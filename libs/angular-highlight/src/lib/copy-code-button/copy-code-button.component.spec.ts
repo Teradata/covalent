@@ -14,12 +14,12 @@ describe('CopyCodeButtonComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [TdCopyCodeButtonComponent],
         imports: [
           ClipboardModule,
           MatIconModule,
           MatTooltipModule,
           MatButtonModule,
+          TdCopyCodeButtonComponent,
         ],
       }).compileComponents();
     })

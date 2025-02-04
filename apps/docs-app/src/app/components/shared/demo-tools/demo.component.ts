@@ -4,6 +4,7 @@ import { forkJoin, Observable, Subject, Subscriber } from 'rxjs';
 import { catchError, map, takeUntil } from 'rxjs/operators';
 
 @Component({
+  standalone: false,
   selector: 'demo-component',
   styleUrls: ['./demo.component.scss'],
   templateUrl: './demo.component.html',

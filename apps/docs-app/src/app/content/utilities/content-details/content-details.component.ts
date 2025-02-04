@@ -4,6 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'app-content-details',
   templateUrl: './content-details.component.html',
   styleUrls: ['./content-details.component.scss'],

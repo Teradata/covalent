@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SubPageMode, CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
+  standalone: false,
   selector: 'example',
   template: `
     it works from a component
@@ -50,12 +51,14 @@ export class SideSheetDemoExampleComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'example-layered',
   template: 'Im Multi layered!',
 })
 class SideSheetDemoExampleLayeredComponent {}
 
 @Component({
+  standalone: false,
   selector: 'side-sheet-demo-multi',
   templateUrl: './side-sheet-demo-multi.component.html',
   styleUrls: ['./side-sheet-demo-multi.component.scss'],

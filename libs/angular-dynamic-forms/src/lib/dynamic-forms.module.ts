@@ -50,7 +50,7 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
 ];
 
 @NgModule({
-  declarations: [
+  imports: [
     TdDynamicFormsComponent,
     TdDynamicElementComponent,
     TdDynamicElementDirective,
@@ -63,20 +63,6 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     TdDynamicSliderComponent,
     TdDynamicSelectComponent,
     TdDynamicDatepickerComponent,
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    CovalentFileModule,
   ],
   exports: [...TD_DYNAMIC_FORMS, ...TD_DYNAMIC_FORMS_ENTRY_COMPONENTS],
   providers: [DYNAMIC_FORMS_PROVIDER],

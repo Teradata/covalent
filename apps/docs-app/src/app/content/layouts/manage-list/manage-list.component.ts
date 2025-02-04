@@ -8,6 +8,7 @@ interface IRouteConfig {
   description?: string;
 }
 @Component({
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'layouts-manage-list',
   styleUrls: ['./manage-list.component.scss'],
@@ -234,6 +235,7 @@ export class ManageListComponent {
   managedListFullTypescript = `
     import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
     @Component({
+  standalone: false,
       changeDetection: ChangeDetectionStrategy.OnPush,
       selector: 'layouts-manage-list',
       styleUrls: ['./manage-list.component.scss'],

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CovalentUserProfileModule } from '@covalent/core/user-profile';
+import { TdUserProfileComponent } from '@covalent/core/user-profile';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
@@ -15,7 +15,7 @@ import { UserProfileDemoListItemsComponent } from './user-profile-demo-list-item
     MatListModule,
     MatIconModule,
     MatDividerModule,
-    CovalentUserProfileModule,
+    TdUserProfileComponent,
   ],
   exports: [UserProfileDemoListItemsComponent],
 })

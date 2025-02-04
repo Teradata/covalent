@@ -24,6 +24,8 @@ import {
   compareByTitle,
 } from '../markdown-navigator.component.spec';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 const RAW_MARKDOWN_HEADING = 'Heading';
 const RAW_MARKDOWN = `# ${RAW_MARKDOWN_HEADING}`;
@@ -44,6 +46,7 @@ async function wait(fixture: ComponentFixture<TestComponent>): Promise<void> {
 @Component({
   selector: 'td-test-component',
   template: ` <div></div> `,
+  imports: [CovalentMarkdownNavigatorModule],
 })
 class TestComponent {}
 
@@ -56,9 +59,10 @@ describe('MarkdownNavigatorWindowService', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule],
-      declarations: [TestComponent],
+      imports: [NoopAnimationsModule, TestComponent],
       providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
         {
           provide: OverlayContainer,
           useFactory: () => {

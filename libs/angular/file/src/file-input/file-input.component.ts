@@ -28,6 +28,9 @@ import {
   mixinControlValueAccessor,
   mixinDisabled,
 } from '@covalent/core/common';
+import { MatButtonModule } from '@angular/material/button';
+import { TdFileDropDirective } from '../directives/file-drop.directive';
+import { TdFileSelectDirective } from '../directives/file-select.directive';
 
 @Directive({
   selector: '[tdFileInputLabel]ng-template',
@@ -63,6 +66,7 @@ export const _TdFileInputMixinBase = mixinControlValueAccessor(
   inputs: ['disabled', 'value'],
   styleUrls: ['./file-input.component.scss'],
   templateUrl: './file-input.component.html',
+  imports: [MatButtonModule, TdFileDropDirective, TdFileSelectDirective],
 })
 export class TdFileInputComponent
   extends _TdFileInputMixinBase

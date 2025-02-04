@@ -1,13 +1,12 @@
 import { TestBed, waitForAsync, fakeAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { CovalentHighlightModule } from './highlight.module';
+import { TdHighlightComponent } from './highlight.component';
 
 describe('Component: Highlight', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CovalentHighlightModule],
-      declarations: [
+      imports: [
         TdHighlightEmptyStaticTestRenderingComponent,
         TdHighlightStaticHtmlTestRenderingComponent,
         TdHighlightDynamicCssTestRenderingComponent,
@@ -199,6 +198,7 @@ describe('Component: Highlight', () => {
 // Use the 4 components below to test the rendering requirements of the TdHighlight component.
 @Component({
   template: ` <td-highlight></td-highlight> `,
+  imports: [TdHighlightComponent],
 })
 class TdHighlightEmptyStaticTestRenderingComponent {}
 
@@ -208,6 +208,7 @@ class TdHighlightEmptyStaticTestRenderingComponent {}
       {{ dataHtml0 }}
     </td-highlight>
   `,
+  imports: [TdHighlightComponent],
 })
 class TdHighlightStaticHtmlTestRenderingComponent {
   dataHtml0 = `
@@ -222,6 +223,7 @@ class TdHighlightStaticHtmlTestRenderingComponent {
   template: `
     <td-highlight codeLang="css" [content]="content"></td-highlight>
   `,
+  imports: [TdHighlightComponent],
 })
 class TdHighlightDynamicCssTestRenderingComponent {
   content!: string;
@@ -229,6 +231,7 @@ class TdHighlightDynamicCssTestRenderingComponent {
 
 @Component({
   template: ` <td-highlight [codeLang]="lang"></td-highlight> `,
+  imports: [TdHighlightComponent],
 })
 class TdHighlightUndefinedLangTestRenderingComponent {
   lang!: string;
@@ -239,6 +242,7 @@ class TdHighlightUndefinedLangTestRenderingComponent {
   template: `
     <td-highlight (contentReady)="tdHighlightContentIsReady()"></td-highlight>
   `,
+  imports: [TdHighlightComponent],
 })
 class TdHighlightEmptyStaticTestEventsComponent {
   tdHighlightContentIsReady(): void {
@@ -252,6 +256,7 @@ class TdHighlightEmptyStaticTestEventsComponent {
       {{ dataHtml }}
     </td-highlight>
   `,
+  imports: [TdHighlightComponent],
 })
 class TdHighlightStaticHtmlTestEventsComponent {
   dataHtml = `
@@ -273,6 +278,7 @@ class TdHighlightStaticHtmlTestEventsComponent {
       (contentReady)="tdHighlightContentIsReady()"
     ></td-highlight>
   `,
+  imports: [TdHighlightComponent],
 })
 class TdHighlightDynamicCssTestEventsComponent {
   content!: string;
@@ -288,6 +294,7 @@ class TdHighlightDynamicCssTestEventsComponent {
       (contentReady)="tdHighlightContentIsReady()"
     ></td-highlight>
   `,
+  imports: [TdHighlightComponent],
 })
 class TdHighlightUndefinedLangTestEventsComponent {
   lang!: string;

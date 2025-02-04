@@ -13,8 +13,12 @@ import {
   CovalentSideSheetWrapperDirective,
 } from './side-sheet.content-directives';
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  declarations: [
+  imports: [
     CovalentSideSheetContainerComponent,
     CovalentSideSheetActionsDirective,
     CovalentSideSheetCloseDirective,
@@ -29,7 +33,6 @@ import {
     CovalentSideSheetTitleDirective,
     CovalentSideSheetWrapperDirective,
   ],
-  imports: [PortalModule, MatDialogModule, MatCommonModule],
   providers: [CovalentSideSheet],
 })
 export class CovalentSideSheetModule {}

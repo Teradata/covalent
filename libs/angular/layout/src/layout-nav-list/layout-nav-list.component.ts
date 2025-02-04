@@ -1,14 +1,19 @@
 import { Component, Input, ViewChild, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MatSidenav, MatDrawerToggleResult } from '@angular/material/sidenav';
+import { MatSidenav, MatDrawerToggleResult, MatSidenavContainer } from '@angular/material/sidenav';
 
 import { ILayoutTogglable } from '../layout-toggle.class';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatIcon } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'td-layout-nav-list',
   styleUrls: ['./layout-nav-list.component.scss'],
   templateUrl: './layout-nav-list.component.html',
+  imports: [CommonModule, MatSidenav, MatSidenavContainer, MatToolbar, MatIcon],
+
 })
 export class TdLayoutNavListComponent implements ILayoutTogglable {
   @ViewChild(MatSidenav, { static: true }) sidenav!: MatSidenav;

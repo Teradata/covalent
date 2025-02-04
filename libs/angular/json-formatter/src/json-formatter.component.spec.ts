@@ -9,8 +9,7 @@ import { By } from '@angular/platform-browser';
 describe('Component: JsonFormatter', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TdJsonFormatterBasicTestComponent],
-      imports: [NoopAnimationsModule, CovalentJsonFormatterModule],
+      imports: [NoopAnimationsModule, CovalentJsonFormatterModule, TdJsonFormatterBasicTestComponent],
     });
     TestBed.compileComponents();
   }));
@@ -283,6 +282,7 @@ describe('Component: JsonFormatter', () => {
       [levelsOpen]="levelsOpen"
     ></td-json-formatter>
   `,
+  imports: [TdJsonFormatterComponent],
 })
 class TdJsonFormatterBasicTestComponent {
   data: any;

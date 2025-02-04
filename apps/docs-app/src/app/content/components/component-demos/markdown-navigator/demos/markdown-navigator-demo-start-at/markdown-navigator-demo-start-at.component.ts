@@ -9,6 +9,7 @@ function compareByTitle(
 }
 
 @Component({
+  standalone: false,
   selector: 'markdown-navigator-demo-start-at',
   styleUrls: ['./markdown-navigator-demo-start-at.component.scss'],
   templateUrl: './markdown-navigator-demo-start-at.component.html',

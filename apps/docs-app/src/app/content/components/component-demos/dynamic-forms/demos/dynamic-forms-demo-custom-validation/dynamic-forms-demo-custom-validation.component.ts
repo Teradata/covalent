@@ -8,6 +8,7 @@ import {
 } from '@covalent/dynamic-forms';
 
 @Component({
+  standalone: false,
   selector: 'dynamic-forms-demo-custom-validation',
   styleUrls: ['./dynamic-forms-demo-custom-validation.component.scss'],
   templateUrl: './dynamic-forms-demo-custom-validation.component.html',

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
-
 import { TdCodeEditorComponent } from './code-editor.component';
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [TdCodeEditorComponent],
+  imports: [TdCodeEditorComponent],
   exports: [TdCodeEditorComponent],
-  bootstrap: [TdCodeEditorComponent],
 })
 export class CovalentCodeEditorModule {}

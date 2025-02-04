@@ -8,12 +8,16 @@
         "plugin:@nx/angular",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
-      "rules": {}
+      "rules": {
+        "@angular-eslint/prefer-standalone": "off"
+      }
     },
     {
       "files": ["*.html"],
       "extends": ["plugin:@nx/angular-template"],
-      "rules": {}
+      "rules": {
+        "@angular-eslint/prefer-standalone": "off"
+      }
     }
   ]
 }

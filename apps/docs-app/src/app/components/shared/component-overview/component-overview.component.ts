@@ -8,6 +8,7 @@ import { ICombinedRouteGroup } from '../../../utilities/route-group';
 
 const ANGULAR_DOCS_URL = 'https://material.angular.io/';
 @Component({
+  standalone: false,
   selector: 'component-overview',
   styleUrls: ['./component-overview.component.scss'],
   templateUrl: './component-overview.component.html',

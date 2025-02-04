@@ -6,6 +6,7 @@ import {
 } from '@covalent/core/loading';
 
 @Component({
+  standalone: false,
   selector: 'loading-demo-icon',
   templateUrl: './loading-demo-icon.component.html',
   styleUrls: ['./loading-demo-icon.component.scss'],

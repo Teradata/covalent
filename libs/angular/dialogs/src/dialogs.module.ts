@@ -20,9 +20,6 @@ import { TdPromptDialogComponent } from './prompt-dialog/prompt-dialog.component
 import { TdStatusDialogComponent } from './status-dialog/status-dialog.component';
 import { TdDialogService } from './services/dialog.service';
 import { TdWindowDialogComponent } from './window-dialog/window-dialog.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatIconModule } from '@angular/material/icon';
 
 const TD_DIALOGS: Type<any>[] = [
   TdAlertDialogComponent,
@@ -40,18 +37,12 @@ const TD_DIALOGS: Type<any>[] = [
   TdStatusDialogComponent,
 ];
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [
-    FormsModule,
-    CommonModule,
-    MatDialogModule,
-    MatInputModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatIconModule,
-  ],
-  declarations: [...TD_DIALOGS],
+  imports: [...TD_DIALOGS],
   exports: [...TD_DIALOGS],
   providers: [TdDialogService],
 })

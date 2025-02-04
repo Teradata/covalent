@@ -54,9 +54,12 @@ const TD_DEFAULT_FORM_FIELD_OPTIONS = {
 import { RouterPathService } from './services/router-path.service';
 import { IconService } from './services/icon.service';
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [FormsModule, CommonModule],
-  declarations: [TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
+  imports: [TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
   exports: [FormsModule, CommonModule, TD_DIRECTIVES, TD_PIPES, TD_VALIDATORS],
   providers: [
     RouterPathService,

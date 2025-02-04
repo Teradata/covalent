@@ -3,6 +3,7 @@ import { Component, HostBinding } from '@angular/core';
 import { slideInUpAnimation } from '../../../../app.animations';
 
 @Component({
+  standalone: false,
   selector: 'directives-demo',
   styleUrls: ['./directives.component.scss'],
   templateUrl: './directives.component.html',

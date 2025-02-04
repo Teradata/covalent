@@ -1,6 +1,5 @@
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
-import { CovalentFileModule } from '../file.module';
 import { TdFileSelectDirective } from '../directives/file-select.directive';
 
 import { By } from '@angular/platform-browser';
@@ -8,8 +7,7 @@ import { By } from '@angular/platform-browser';
 describe('Directive: FileSelect', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TdFileSelectBasicTestComponent],
-      imports: [CovalentFileModule],
+      imports: [TdFileSelectBasicTestComponent],
     });
     TestBed.compileComponents();
   }));
@@ -59,6 +57,7 @@ describe('Directive: FileSelect', () => {
       (fileSelect)="files = $event"
     />
   `,
+  imports: [TdFileSelectDirective],
 })
 class TdFileSelectBasicTestComponent {
   multiple!: boolean;

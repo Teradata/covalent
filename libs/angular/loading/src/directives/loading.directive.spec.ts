@@ -1,7 +1,7 @@
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { catchError } from 'rxjs/operators';
 import { CovalentLoadingModule } from '../loading.module';
@@ -12,11 +12,14 @@ import {
   LoadingStrategy,
 } from '../loading.component';
 import { MatProgressBar } from '@angular/material/progress-bar';
+import { TdLoadingDirective } from './loading.directive';
+import { AsyncPipe } from '@angular/common';
 
 describe('Directive: Loading', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        CovalentLoadingModule,
         TdLoadingDefaultTestComponent,
         TdLoadingBasicTestComponent,
         TdLoadingDuplicationTestComponent,
@@ -24,7 +27,7 @@ describe('Directive: Loading', () => {
         TdLoadingNamedErrorStarUntilAsyncTestComponent,
         TdLoadingBooleanTemplateUntilTestComponent,
       ],
-      imports: [NoopAnimationsModule, CovalentLoadingModule],
+      providers: [provideNoopAnimations()]
     });
     TestBed.compileComponents();
   }));
@@ -443,6 +446,7 @@ describe('Directive: Loading', () => {
       <div class="content"></div>
     </ng-template>
   `,
+  imports: [TdLoadingDirective] 
 })
 class TdLoadingDefaultTestComponent {}
 
@@ -459,6 +463,7 @@ class TdLoadingDefaultTestComponent {}
       <div class="content"></div>
     </ng-template>
   `,
+  imports: [TdLoadingDirective],
 })
 class TdLoadingBasicTestComponent {
   name!: string;
@@ -478,6 +483,7 @@ class TdLoadingBasicTestComponent {
       <div class="content"></div>
     </ng-template>
   `,
+  imports: [TdLoadingDirective],
 })
 class TdLoadingDuplicationTestComponent {}
 
@@ -488,6 +494,7 @@ class TdLoadingDuplicationTestComponent {}
       <div class="content">{{ item }}</div>
     </div>
   `,
+  imports: [TdLoadingDirective, AsyncPipe],
 })
 class TdLoadingStarUntilAsyncTestComponent {
   private _subject: Subject<any> = new Subject<any>();
@@ -512,6 +519,7 @@ class TdLoadingStarUntilAsyncTestComponent {
       <div class="content">{{ item }}</div>
     </div>
   `,
+  imports: [TdLoadingDirective, AsyncPipe] 
 })
 class TdLoadingNamedErrorStarUntilAsyncTestComponent {
   private _subject: Subject<any> = new Subject<any>();
@@ -539,6 +547,7 @@ class TdLoadingNamedErrorStarUntilAsyncTestComponent {
       <div class="content"></div>
     </ng-template>
   `,
+  imports: [TdLoadingDirective],
 })
 class TdLoadingBooleanTemplateUntilTestComponent {
   loading = false;

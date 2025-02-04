@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-
 import { TdBreadcrumbsComponent } from './breadcrumbs.component';
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule, MatIconModule],
-  declarations: [TdBreadcrumbsComponent, TdBreadcrumbComponent],
+  imports: [TdBreadcrumbsComponent, TdBreadcrumbComponent],
   exports: [TdBreadcrumbsComponent, TdBreadcrumbComponent],
 })
 export class CovalentBreadcrumbsModule {}

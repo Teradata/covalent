@@ -5,6 +5,7 @@ import {
   ITourEvent,
 } from '@covalent/guided-tour';
 @Component({
+  standalone: false,
   selector: 'guided-tour-demo-go-back-navigation',
   styleUrls: ['./guided-tour-demo-go-back-navigation.component.scss'],
   templateUrl: './guided-tour-demo-go-back-navigation.component.html',

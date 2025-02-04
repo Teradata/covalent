@@ -1,9 +1,5 @@
 import { Type } from '@angular/core';
 import { NgModule } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-
 import {
   TdMessageComponent,
   TdMessageContainerDirective,
@@ -14,9 +10,12 @@ const TD_MESSAGE: Type<any>[] = [
   TdMessageContainerDirective,
 ];
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule, MatIconModule],
-  declarations: [TD_MESSAGE],
+  imports: [TD_MESSAGE],
   exports: [TD_MESSAGE],
 })
 export class CovalentMessageModule {}

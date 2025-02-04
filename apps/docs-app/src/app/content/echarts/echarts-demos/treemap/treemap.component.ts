@@ -8,6 +8,7 @@ import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
 
 @Component({
+  standalone: false,
   selector: 'types-treemap',
   templateUrl: './treemap.component.html',
   styleUrls: ['./treemap.component.scss'],

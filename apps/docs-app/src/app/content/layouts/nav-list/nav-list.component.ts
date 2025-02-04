@@ -8,6 +8,7 @@ interface IRouteConfig {
 }
 
 @Component({
+  standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'layouts-nav-list',
   styleUrls: ['./nav-list.component.scss'],
@@ -189,6 +190,7 @@ export class NavListComponent {
   navListFullTypescript = `
     import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
     @Component({
+  standalone: false,
       changeDetection: ChangeDetectionStrategy.OnPush,
       selector: 'layouts-nav-list',
       styleUrls: ['./nav-list.component.scss'],

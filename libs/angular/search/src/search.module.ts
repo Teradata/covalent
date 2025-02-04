@@ -1,24 +1,13 @@
 import { NgModule } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-
 import { TdSearchInputComponent } from './search-input/search-input.component';
 import { TdSearchBoxComponent } from './search-box/search-box.component';
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [
-    FormsModule,
-    CommonModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-  ],
-  declarations: [TdSearchInputComponent, TdSearchBoxComponent],
+  imports: [TdSearchInputComponent, TdSearchBoxComponent],
   exports: [TdSearchInputComponent, TdSearchBoxComponent],
 })
 export class CovalentSearchModule {}

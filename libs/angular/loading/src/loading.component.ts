@@ -5,7 +5,10 @@ import {
   DoCheck,
 } from '@angular/core';
 import { tdFadeInOutAnimation } from '@covalent/core/common';
-import { TemplatePortal } from '@angular/cdk/portal';
+import { CdkPortalOutlet, TemplatePortal } from '@angular/cdk/portal';
+import { MatProgressBar } from '@angular/material/progress-bar';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { CommonModule } from '@angular/common';
 
 export enum LoadingType {
   Circular = 'circular',
@@ -35,6 +38,12 @@ export const TD_CIRCLE_DIAMETER = 40;
   styleUrls: ['./loading.component.scss'],
   templateUrl: './loading.component.html',
   animations: [tdFadeInOutAnimation],
+  imports: [
+    CommonModule,
+    MatProgressBar,
+    MatProgressSpinner,
+    CdkPortalOutlet,
+  ],
 })
 export class TdLoadingComponent implements DoCheck {
   private _mode: LoadingMode = LoadingMode.Indeterminate;

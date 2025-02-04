@@ -5,6 +5,7 @@ import {
 } from '@covalent/dynamic-forms';
 
 @Component({
+  standalone: false,
   selector: 'dynamic-forms-demo-file-input',
   styleUrls: ['./dynamic-forms-demo-file-input.component.scss'],
   templateUrl: './dynamic-forms-demo-file-input.component.html',

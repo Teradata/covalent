@@ -1,6 +1,4 @@
 import { NgModule, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import {
   TdChartTooltipComponent,
   TdChartTooltipFormatterDirective,
@@ -13,9 +11,12 @@ export const TOOLTIP_MODULE_COMPONENTS: Type<any>[] = [
   TdSeriesTooltipComponent,
 ];
 
+/**
+ * @deprecated This module is deprecated and will be removed in future versions.
+ * Please migrate to using standalone components as soon as possible.
+ */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [TOOLTIP_MODULE_COMPONENTS],
+  imports: [TOOLTIP_MODULE_COMPONENTS],
   exports: [TOOLTIP_MODULE_COMPONENTS],
 })
 export class CovalentTooltipEchartsModule {}

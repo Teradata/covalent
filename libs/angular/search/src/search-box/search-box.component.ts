@@ -8,7 +8,7 @@ import {
   ChangeDetectorRef,
   forwardRef,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import {
   trigger,
   state,
@@ -20,6 +20,9 @@ import {
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
 import { noop } from 'rxjs';
+import { MatIcon } from '@angular/material/icon';
+import { MatIconButton } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 export class TdSearchBoxBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) {}
@@ -37,6 +40,7 @@ export class TdSearchBoxBase {
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, FormsModule, MatIconButton, TdSearchInputComponent, MatIcon],
   animations: [
     trigger('inputState', [
       state(

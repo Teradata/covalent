@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { TdTextEditorComponent } from '@covalent/text-editor';
 
 @Component({
+  standalone: false,
   selector: 'text-editor-demo',
   styleUrls: ['./text-editor.component.scss'],
   templateUrl: './text-editor.component.html',

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'highlight-demo-css',
   styleUrls: ['./highlight-demo-css.component.scss'],
   templateUrl: './highlight-demo-css.component.html',
