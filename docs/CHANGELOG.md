@@ -1,3 +1,9 @@
+## [9.1.3](https://github.com/Teradata/covalent/compare/v9.1.2...v9.1.3) (2025-02-04)
+
+### Bug Fixes
+
+- **angular:** fixing dynamic menu open in new tab ([#2380](https://github.com/Teradata/covalent/issues/2380)) ([a22cd00](https://github.com/Teradata/covalent/commit/a22cd0024437334c85f118c43ac6a8715beb1a8b))
+
 ## [9.1.2](https://github.com/Teradata/covalent/compare/v9.1.1...v9.1.2) (2025-01-29)
 
 ### Bug Fixes
