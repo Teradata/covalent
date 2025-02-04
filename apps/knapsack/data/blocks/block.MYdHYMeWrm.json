@@ -9,11 +9,53 @@
           "type": "doc",
           "content": [
             {
-              "type": "paragraph",
+              "type": "bulletList",
               "content": [
                 {
-                  "text": "Use concise, action-oriented text. ",
-                  "type": "text"
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Use concise, action-oriented text",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "When the primary action is a negative one such as \"Delete,\" \"Discard,\" and \"Skip,\" the secondary action needs to be semantically distinct from the primary one. Learn how to ",
+                          "type": "text"
+                        },
+                        {
+                          "text": "avoid double negatives",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "link",
+                              "attrs": {
+                                "rel": "noopener noreferrer nofollow",
+                                "href": "/pattern/dialog?subPageId=oCySB2xNtB",
+                                "class": null
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "text": " in the content guidelines. ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -30,7 +72,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Overuse modals for non-essential information or task. ",
+                  "text": "Overuse modals for non-critical information or task. ",
                   "type": "text"
                 }
               ]
