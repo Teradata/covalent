@@ -23,7 +23,7 @@
           },
           "content": [
             {
-              "text": "Onboarding cards are primarily meant for introducing workflows. This means upon selecting a button, the user is taken to a UI where they complete the task. Limit linking to learning resources to 1 card. ",
+              "text": "Onboarding cards are primarily meant for introducing workflows. They allow people to \"learn by doing.\" Upon selecting a call-to-action button, the user is taken to a UI where they complete the task. Linking to documentation is recommended only if data shows the target audience expects to see documentation highlighted during their first-time experience.   ",
               "type": "text"
             }
           ]

@@ -187,7 +187,7 @@ byId:
     path: /pages/get-started
   get-started-cards:
     id: get-started-cards
-    name: Get Started Cards
+    name: Get-started cards
     parentId: patterns
     path: /pattern/get-started-cards
   icon:
