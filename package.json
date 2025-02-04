@@ -153,7 +153,7 @@
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@typescript-eslint/utils": "^7.16.0",
-    "@vitest/coverage-v8": "^2.1.5",
+    "@vitest/coverage-v8": "^2.1.9",
     "autoprefixer": "^10.4.0",
     "chromatic": "^7.5.4",
     "css-loader": "^6.7.1",
@@ -197,6 +197,6 @@
     "typescript": "5.5.4",
     "vite": "^5.4.11",
     "vite-plugin-dts": "~3.8.1",
-    "vitest": "^2.1.5"
+    "vitest": "^2.1.9"
   }
 }
