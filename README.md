@@ -35,7 +35,7 @@ Covalent is Teradata's design system used to create Teradata branded experiences
 
 ## Angular Support
 
-Certain covalent version are meant for certain angular versions, and here is the matrix:
+Certain versions of Covalent are designed to work with specific versions of Angular. Below is a matrix that outlines these compatibility details:
 
 | Covalent |      Angular      |
 | :------: | :---------------: |
