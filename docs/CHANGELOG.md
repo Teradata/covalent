@@ -1,3 +1,18 @@
+# [10.0.0](https://github.com/Teradata/covalent/compare/v9.1.3...v10.0.0) (2025-02-05)
+
+- Feat/angular 19 upgrade BREAKING CHANGE: Upgrade covalent to Angular 19 ([11888ea](https://github.com/Teradata/covalent/commit/11888ea905157ecb26ba3c44529266d2b19ddc2b))
+
+### Features
+
+- **angular:** upgrading to v19 ([#2350](https://github.com/Teradata/covalent/issues/2350)) ([b6a7a7e](https://github.com/Teradata/covalent/commit/b6a7a7e966e7307db21483eea0f224aa5694c4e3))
+- **docs:** Update README.md ([#2387](https://github.com/Teradata/covalent/issues/2387)) ([77ee683](https://github.com/Teradata/covalent/commit/77ee68364bd387d0d505235220c576ff07adc84b))
+
+### BREAKING CHANGES
+
+- **docs:** updating to next major version for angular 19 support
+- Upgrade covalent to Angular 19
+- **angular:** \* feat(angular): upgrading to ng 19
+
 ## [9.1.3](https://github.com/Teradata/covalent/compare/v9.1.2...v9.1.3) (2025-02-04)
 
 ### Bug Fixes
