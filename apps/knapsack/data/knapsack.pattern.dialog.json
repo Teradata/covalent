@@ -12,8 +12,8 @@
       "templateLanguageId": "web-components",
       "spec": {
         "slots": {
-          "default": {
-            "title": "default",
+          "main": {
+            "title": "main",
             "description": "Primary content area. May contain a list, a form, or prose."
           },
           "secondaryAction": {

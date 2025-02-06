@@ -13,11 +13,12 @@ html {
   min-height: 100vh;
 }
 
-/* Elements that depend on a parent to have a width*/
+/* Elements that depend on a parent to have a width */
 /* Partial width */
 .knapsack-wrapper.knapsack-pattern-direct-parent:has(
     > cv-alert,
     > cv-linear-progress,
+    > cv-notebook-cell,
     > cv-slider,
     > cv-slider-range
   ) {

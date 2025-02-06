@@ -129,20 +129,30 @@
     {
       "patternId": "alert",
       "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "tnvgSz6pjh",
+      "demoId": "pYd0j3oNrI",
       "assetSetId": "default",
-      "width": 806,
-      "height": 94,
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=tnvgSz6pjh&assetSetId=default"
+      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=pYd0j3oNrI&assetSetId=default"
     },
     {
       "patternId": "alert",
       "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "tnvgSz6pjh",
+      "demoId": "pYd0j3oNrI",
       "assetSetId": "dark",
-      "width": 806,
-      "height": 94,
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=tnvgSz6pjh&assetSetId=dark"
+      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=pYd0j3oNrI&assetSetId=dark"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "t7e3P48Pkm",
+      "assetSetId": "default",
+      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=t7e3P48Pkm&assetSetId=default"
+    },
+    {
+      "patternId": "alert",
+      "templateId": "web-components-4qjJYWsUZi",
+      "demoId": "t7e3P48Pkm",
+      "assetSetId": "dark",
+      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=t7e3P48Pkm&assetSetId=dark"
     },
     {
       "patternId": "alert",
@@ -189,30 +199,30 @@
     {
       "patternId": "alert",
       "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "t7e3P48Pkm",
+      "demoId": "CE5x5TaMa2",
       "assetSetId": "default",
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=t7e3P48Pkm&assetSetId=default"
+      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=CE5x5TaMa2&assetSetId=default"
     },
     {
       "patternId": "alert",
       "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "t7e3P48Pkm",
+      "demoId": "CE5x5TaMa2",
       "assetSetId": "dark",
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=t7e3P48Pkm&assetSetId=dark"
+      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=CE5x5TaMa2&assetSetId=dark"
     },
     {
       "patternId": "alert",
       "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "pYd0j3oNrI",
+      "demoId": "s8Ci4Cd08W",
       "assetSetId": "default",
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=pYd0j3oNrI&assetSetId=default"
+      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=s8Ci4Cd08W&assetSetId=default"
     },
     {
       "patternId": "alert",
       "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "pYd0j3oNrI",
+      "demoId": "s8Ci4Cd08W",
       "assetSetId": "dark",
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=pYd0j3oNrI&assetSetId=dark"
+      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=s8Ci4Cd08W&assetSetId=dark"
     },
     {
       "patternId": "alert",
@@ -255,34 +265,6 @@
       "demoId": "yf2q5F2Jyk",
       "assetSetId": "dark",
       "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=yf2q5F2Jyk&assetSetId=dark"
-    },
-    {
-      "patternId": "alert",
-      "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "CE5x5TaMa2",
-      "assetSetId": "default",
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=CE5x5TaMa2&assetSetId=default"
-    },
-    {
-      "patternId": "alert",
-      "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "CE5x5TaMa2",
-      "assetSetId": "dark",
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=CE5x5TaMa2&assetSetId=dark"
-    },
-    {
-      "patternId": "alert",
-      "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "s8Ci4Cd08W",
-      "assetSetId": "default",
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=s8Ci4Cd08W&assetSetId=default"
-    },
-    {
-      "patternId": "alert",
-      "templateId": "web-components-4qjJYWsUZi",
-      "demoId": "s8Ci4Cd08W",
-      "assetSetId": "dark",
-      "url": "/api/v1/render-demo-id?patternId=alert&templateId=web-components-4qjJYWsUZi&demoId=s8Ci4Cd08W&assetSetId=dark"
     },
     {
       "patternId": "app-shell",
@@ -343,6 +325,34 @@
     {
       "patternId": "button",
       "templateId": "web-components-raE1x4tYL",
+      "demoId": "iTDoYFy3jF",
+      "assetSetId": "default",
+      "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=iTDoYFy3jF&assetSetId=default"
+    },
+    {
+      "patternId": "button",
+      "templateId": "web-components-raE1x4tYL",
+      "demoId": "iTDoYFy3jF",
+      "assetSetId": "dark",
+      "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=iTDoYFy3jF&assetSetId=dark"
+    },
+    {
+      "patternId": "button",
+      "templateId": "web-components-raE1x4tYL",
+      "demoId": "NcPgR30pFc",
+      "assetSetId": "default",
+      "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=NcPgR30pFc&assetSetId=default"
+    },
+    {
+      "patternId": "button",
+      "templateId": "web-components-raE1x4tYL",
+      "demoId": "NcPgR30pFc",
+      "assetSetId": "dark",
+      "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=NcPgR30pFc&assetSetId=dark"
+    },
+    {
+      "patternId": "button",
+      "templateId": "web-components-raE1x4tYL",
       "demoId": "LVG5iF-p9d",
       "assetSetId": "default",
       "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=LVG5iF-p9d&assetSetId=default"
@@ -353,38 +363,6 @@
       "demoId": "LVG5iF-p9d",
       "assetSetId": "dark",
       "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=LVG5iF-p9d&assetSetId=dark"
-    },
-    {
-      "patternId": "button",
-      "templateId": "web-components-raE1x4tYL",
-      "demoId": "E5ymzzEPs",
-      "assetSetId": "default",
-      "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=E5ymzzEPs&assetSetId=default"
-    },
-    {
-      "patternId": "button",
-      "templateId": "web-components-raE1x4tYL",
-      "demoId": "E5ymzzEPs",
-      "assetSetId": "dark",
-      "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=E5ymzzEPs&assetSetId=dark"
-    },
-    {
-      "patternId": "button",
-      "templateId": "web-components-raE1x4tYL",
-      "demoId": "wJJ2tksHEK",
-      "assetSetId": "default",
-      "width": 111,
-      "height": 54,
-      "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=wJJ2tksHEK&assetSetId=default"
-    },
-    {
-      "patternId": "button",
-      "templateId": "web-components-raE1x4tYL",
-      "demoId": "wJJ2tksHEK",
-      "assetSetId": "dark",
-      "width": 111,
-      "height": 54,
-      "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=wJJ2tksHEK&assetSetId=dark"
     },
     {
       "patternId": "button",
