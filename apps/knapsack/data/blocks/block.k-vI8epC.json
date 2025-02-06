@@ -81,7 +81,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "\"Keep editing / Discard\" are a good example of two semantically distinct actions. They remove any ambiguity and sets the expectation for each action in relation to the user's context. ",
+                  "text": "\"Keep editing / Discard\" are a good example of two semantically distinct actions. They give clear guidance for each of the actions in relation to the user's context. ",
                   "type": "text"
                 }
               ]
@@ -177,7 +177,16 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Don't use \"Cancel.\" Because \"Cancel / Discard\" are semantically similar, the user may interpret \"Cancel\" as \"canceling the unsaved changes.\" This can create confusion. ",
+                  "text": "Don't use \"Cancel.\" ",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Because \"Cancel / Discard\" are semantically similar, the user may interpret \"Cancel\" as \"canceling the unsaved changes.\" This can create confusion. ",
                   "type": "text"
                 }
               ]
