@@ -1,9 +1,9 @@
 {
-  "id": "k-vI8epC",
+  "id": "ZjMnVXYvOd",
   "data": {
     "guidelines": [
       {
-        "id": "D1oE0NvYfS",
+        "id": "oXSMPKvw23",
         "type": "do",
         "content": {
           "type": "doc",
@@ -26,7 +26,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Succinctly communicate what happened.",
+                  "text": "Repeat the user's request with a concise question and a neutral tone, for example, \"Delete this file?\" ",
                   "type": "text"
                 }
               ]
@@ -49,7 +49,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Remember you're having a conversation with a human. Lean into our empathetic and transparent voice when the user needs to decide what to do next. ",
+                  "text": "Succinctly communicate additional information such as the result of the primary action.",
                   "type": "text"
                 }
               ]
@@ -72,7 +72,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "If the primary action is a negative one such as \"Discard,\" the secondary action must be semantically distinct from the primary action. ",
+                  "text": "If the primary action is a negative one such as \"Delete,\" the secondary action must be semantically distinct from the primary action. This removes any ambiguity ",
                   "type": "text"
                 }
               ]
@@ -81,16 +81,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "\"Keep editing / Discard\" are a good example of two semantically distinct actions. They remove any ambiguity and sets the expectation for each action in relation to the user's context. ",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "text": " ",
+                  "text": "\"Don't delete / Delete\" are a good example of 2 semantically distinct actions. They remove any ambiguity for each of the actions in relation to the user's request to \"delete the file.\"  ",
                   "type": "text"
                 }
               ]
@@ -99,7 +90,7 @@
         }
       },
       {
-        "id": "doPEyP6rD",
+        "id": "Jkw6zMaCje",
         "type": "dont",
         "content": {
           "type": "doc",
@@ -122,7 +113,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Don't assume they know what happened. Asking a question is more suitable if the user initiate the action themselves.  ",
+                  "text": "Don't say \"Are you sure\"? It can be perceived as condescending.",
                   "type": "text"
                 }
               ]
@@ -145,16 +136,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Don't say \"Are you sure?\" especially when they may not be aware of what happened.  ",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "text": "Don't repeat the heading. ",
+                  "text": "Don't be wordy. Try keeping the message to one succinct sentence. ",
                   "type": "text"
                 }
               ]
@@ -177,7 +159,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Don't use \"Cancel.\" Because \"Cancel / Discard\" are semantically similar, the user may interpret \"Cancel\" as \"canceling the unsaved changes.\" This can create confusion. ",
+                  "text": "Don't use \"Yes\" and \"No.\" A modal dialog is already interruptive to the user's workflow. Don't make them spend more time understanding what action \"Yes\" and \"No\" each represents. ",
                   "type": "text"
                 }
               ]

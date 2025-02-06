@@ -20,5 +20,6 @@ settings:
     hideText: false
     backgroundSize: cover
     backgroundOverlay: true
-  hideTableOfContents: true
+  tableOfContents:
+    hide: true
 description: Use the Covalent design system to create applications that are uniquely Teradata

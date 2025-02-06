@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Text fields are for collecting input. Clear labels and placeholders minimize input errors.",
+              "text": "Two scenarios require a modal dialog:",
               "type": "text"
             }
           ]
@@ -42,16 +42,7 @@
                   },
                   "content": [
                     {
-                      "text": "Categorization",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Use single-line text fields for short inputs; multi-line for long text.",
+                      "text": "confirming the user's action ",
                       "type": "text"
                     }
                   ]
@@ -68,42 +59,7 @@
                   },
                   "content": [
                     {
-                      "text": "Voice & Tone",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Instructional and supportive.",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Word Limit",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Labels up to 5 words. Placeholder text up to 30 characters.",
+                      "text": "communicating a high-severity error",
                       "type": "text"
                     }
                   ]
