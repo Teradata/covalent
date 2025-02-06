@@ -1,0 +1,37 @@
+{
+  "name": "email-templates",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/email-templates/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/email-templates"
+      }
+    },
+    "build-styles": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "postcss libs/email-templates/src/styles/styles.scss -o libs/email-templates/src/styles/_generated.css"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/libs/email-templates"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["libs/email-templates/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

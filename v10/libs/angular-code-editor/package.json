@@ -1,0 +1,32 @@
+{
+  "name": "@covalent/code-editor",
+  "version": "0.0.0-COVALENT",
+  "description": "Teradata UI Platform Code Editor Module",
+  "keywords": [
+    "angular",
+    "covalent",
+    "monaco",
+    "monaco-editor",
+    "code",
+    "editor",
+    "electron",
+    "reusable"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "peerDependencies": {
+    "@angular/common": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "monaco-editor": "0.0.0-MONACO"
+  },
+  "dependencies": {
+    "tslib": "0.0.0-TSLIB"
+  }
+}

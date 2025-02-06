@@ -1,0 +1,11 @@
+<div id="abort-on-demo">
+  <div>
+    <button mat-raised-button color="accent" (click)="startTour()">
+      Start tour
+    </button>
+  </div>
+  <button mat-raised-button id="add-element" (click)="addElement()">
+    Add element
+  </button>
+  <h3 id="added-element" *ngIf="displayElement">Hello world</h3>
+</div>

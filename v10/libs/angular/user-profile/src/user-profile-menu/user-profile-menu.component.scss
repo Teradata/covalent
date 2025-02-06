@@ -1,0 +1,11 @@
+::ng-deep .mat-mdc-list-item-avatar.mdc-list-item__start {
+  line-height: 40px;
+  text-align: center;
+  margin: 0 16px;
+}
+
+::ng-deep
+  .mat-mdc-action-list
+  .mdc-list-item:not(.mdc-list-item--with-leading-avatar) {
+  padding-left: 72px;
+}

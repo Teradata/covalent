@@ -1,0 +1,59 @@
+{
+  "name": "angular-echarts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/angular-echarts/src",
+  "prefix": "covalent",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/libs/angular-echarts"],
+      "options": {
+        "project": "libs/angular-echarts/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-echarts/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-echarts/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/angular-echarts"],
+      "options": {
+        "jestConfig": "libs/angular-echarts/jest.config.js",
+        "passWithNoTests": true,
+        "scripts": [
+          "node_modules/echarts/dist/echarts.min.js",
+          "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-echarts/src/**/*.ts",
+          "libs/angular-echarts/src/**/*.html",
+          "libs/angular-echarts/bar/**/*.ts",
+          "libs/angular-echarts/bar/**/*.html"
+        ]
+      }
+    },
+    "scsslint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/angular-echarts/**/*.scss'"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

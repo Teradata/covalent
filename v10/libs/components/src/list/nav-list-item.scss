@@ -1,0 +1,159 @@
+@use '@material/animation';
+
+:host {
+  font-family: var(--mdc-typography-font-family);
+  font-size: var(--mdc-typography-body2-font-size);
+  font-weight: 600;
+  line-height: var(--mdc-typography-body2-line-height);
+  text-align: left;
+  border-radius: var(--cv-list-item-border-radius, 100px);
+  transition: border-radius 200ms animation.$standard-curve-timing-function,
+    width 200ms animation.$standard-curve-timing-function;
+  width: var(--cv-list-item-width, 100%);
+  color: var(--cv-theme-on-surface-variant);
+
+  ::slotted(cv-icon[slot='graphic']) {
+    color: var(--cv-theme-on-surface-variant);
+  }
+
+  --mdc-list-item-graphic-margin: 4px;
+}
+
+::slotted(*) {
+  --cv-list-padding-right: 0;
+  --cv-list-padding-left: 0;
+  --cv-list-item-text-padding: 16px;
+}
+
+:host([activated]) {
+  color: var(--cv-theme-on-secondary-container);
+
+  ::slotted(cv-icon[slot='graphic']) {
+    color: var(--cv-theme-on-secondary-container);
+  }
+}
+
+:host([selected]:not([activated])) .expansion-header {
+  transition: background-color 250ms animation.$standard-curve-timing-function
+    color 250ms animation.$standard-curve-timing-function;
+  background-color: var(--cv-list-item-selected-background-color);
+  color: var(--cv-list-item-selected-color);
+
+  .mdc-deprecated-list-item__graphic {
+    --mdc-theme-text-icon-on-background: var(--cv-list-item-selected-color);
+  }
+}
+
+:host([subnav]) {
+  --cv-list-item-text-padding: 16px;
+
+  height: 32px;
+  font-weight: var(--mdc-typography-body2-font-weight);
+  border-radius: var(--cv-list-item-border-radius, 100px);
+  padding: 0;
+  padding-right: var(--cv-list-padding-right, 12px);
+  padding-left: var(--cv-list-padding-left, 12px);
+}
+
+:host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
+  --mdc-theme-text-icon-on-background: var(--cv-theme-on-surface);
+
+  margin-left: var(--cv-list-item-graphic-margin-left, 12px);
+  padding-left: 4px;
+  background-color: transparent;
+}
+
+:host([graphic='avatar']) {
+  padding: 0;
+  background-color: transparent;
+}
+
+:host([graphic='avatar']:not([twoline])) {
+  height: 48px;
+}
+
+:host([selected]),
+:host([activated]),
+:host([hasActivatedChild]) {
+  .mdc-deprecated-list-item__graphic.material-icons {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
+:host([hasChildren]) {
+  flex-direction: column;
+  overflow: visible;
+  height: var(--cv-list-item-height, inherit) !important;
+  background: none;
+  padding: 0;
+
+  --mdc-list-side-padding: 0;
+  --cv-list-item-graphic-margin-left: 0;
+
+  ::slotted(cv-list) {
+    padding-left: 32px;
+  }
+}
+
+:host([hasChildren][open]:hover:not([activated])) {
+  .expansion-header {
+    --mdc-ripple-color: transparent;
+
+    &:hover {
+      --mdc-ripple-color: var(--mdc-theme-on-surface-variant);
+    }
+  }
+}
+
+.expansion-header {
+  position: relative;
+  height: 48px;
+  width: 100%;
+  border-radius: var(--cv-list-item-border-radius, 100px);
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  background-color: var(--cv-list-item-background-color);
+  color: var(--cv-list-item-text-color);
+
+  mwc-ripple {
+    border-radius: var(--cv-list-item-border-radius, 100px);
+    overflow: hidden;
+  }
+}
+
+.expansion-header-inner {
+  padding: 0 16px;
+}
+
+.expansion-icon {
+  margin-right: var(--cv-list-item-expansion-icon-margin, 0);
+  font-size: var(--cv-list-item-expansion-icon-size, --mdc-icon-size);
+  color: var(
+    --cv-list-item-text-icon-on-background,
+    var(--mdc-theme-text-icon-on-background)
+  );
+}
+
+.expansion-panel {
+  display: block;
+  width: 100%;
+  max-height: var(--cv-list-menu-height, 0);
+  overflow: hidden;
+  transition: max-height 200ms animation.$acceleration-curve-timing-function;
+
+  --mdc-list-side-padding: 72px;
+}
+
+:host([open][hasChildren]:not([twoline])) {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+
+  .expansion-panel {
+    transition-timing-function: animation.$deceleration-curve-timing-function;
+    max-height: var(--cv-list-menu-height, inherit);
+  }
+}

@@ -1,0 +1,60 @@
+<td-dialog class="td-status-dialog">
+  <!-- Displays the icon and background color according to the state -->
+  <div tdDialogStatus class="td-status-dialog-state" [ngClass]="state">
+    <mat-icon>
+      {{ getStatusIcon() }}
+    </mat-icon>
+  </div>
+  <!-- Dialog title and the close icon -->
+  <ng-container tdDialogTitle>
+    <div class="td-status-dialog-title">
+      <span *ngIf="title" class="">{{ title }}</span>
+      <button
+        mat-icon-button
+        class="td-status-dialog__icon-button"
+        (click)="close()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </ng-container>
+  <!-- Dialog content with additonal information -->
+  <ng-container tdDialogContent>
+    <span class="td-dialog-message">
+      {{ message }}
+      <div
+        class="td-status-dialog__toggle-details"
+        role="button"
+        tabindex="0"
+        *ngIf="details"
+        (click)="toggleDetails()"
+        (keydown.enter)="toggleDetails()"
+      >
+        {{
+          showDetails
+            ? detailsLabels?.hideDetailsLabel
+            : detailsLabels?.showDetailsLabel
+        }}
+        <mat-icon
+          [ngClass]="{
+            'td-status-dialog__arrow-icon': true,
+            close: !showDetails,
+            open: showDetails
+          }"
+          >arrow_drop_down</mat-icon
+        >
+      </div>
+      <div *ngIf="showDetails">{{ details }}</div>
+    </span>
+  </ng-container>
+  <ng-container tdDialogActions>
+    <button
+      mat-raised-button
+      color="primary"
+      class="td-status-dialog___button"
+      (click)="close()"
+    >
+      {{ closeButton }}
+    </button>
+  </ng-container>
+</td-dialog>

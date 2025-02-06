@@ -1,0 +1,57 @@
+@use './status-header.theme';
+@include status-header.theme();
+
+.status-header-title {
+  padding: 0 0 16px 16px;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-header-title-text {
+  font-family: var(--mdc-typography-headline6-font-family);
+  font-size: var(--mdc-typography-headline6-font-size);
+  font-weight: var(--mdc-typography-headline6-font-weight);
+  line-height: var(--mdc-typography-headline6-line-height);
+}
+
+.status-header-text {
+  font-family: var(--mdc-typography-body2-font-family);
+  font-size: var(--mdc-typography-body2-font-size);
+  font-weight: var(--mdc-typography-body2-font-weight);
+  line-height: var(--mdc-typography-body2-line-height);
+}
+
+.status-header-icon {
+  --mdc-icon-size: 36px;
+
+  border-radius: 50%;
+  min-width: 72px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-header-status {
+  padding-left: 32px;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.status-header-text-block {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+  margin-right: 56px;
+
+  .status-header-helper {
+    font-family: var(--mdc-typography-caption-font-family);
+    font-size: var(--mdc-typography-caption-font-size);
+    font-weight: var(--mdc-typography-caption-font-weight);
+    line-height: var(--mdc-typography-caption-line-height);
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "name": "components",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/components/src",
+  "projectType": "library",
+  "implicitDependencies": ["tokens"],
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["cd libs/components/ && vite"],
+        "parallel": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "customWebpackConfig": {
+          "path": "./monaco-webpack.config.js",
+          "mergeRules": {
+            "module.rules": "prepend"
+          }
+        },
+        "commands": [
+          "mkdir -p dist/libs/components/",
+          "vite build --config libs/components/vite.config.js  --outDir dist/libs/components",
+          "./node_modules/.bin/tsc --project libs/components/tsconfig.lib.json  --declaration --declarationMap --emitDeclarationOnly --outDir dist/libs/components",
+          "cp libs/components/package.json dist/libs/components"
+        ],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/libs/components"]
+    },
+    "build-scss": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "mkdir -p dist/libs/components/theme/prebuilt",
+          "cp libs/components/src/index.scss dist/libs/components",
+          "cp libs/components/src/theme/_index.scss dist/libs/components/theme",
+          "./node_modules/.bin/sass --trace --color --style=compressed --load-path=node_modules ./libs/components/src/theme/prebuilt:./dist/libs/components/theme/prebuilt"
+        ],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/libs/components/theme"],
+      "dependsOn": ["build"]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["vitest -r libs/components -c vite.config.js -w false"],
+        "parallel": false
+      },
+      "coverage": {
+        "dir": "coverage/libs/components"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/components/**/*.ts"]
+      }
+    },
+    "scsslint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "./node_modules/.bin/stylelint --allow-empty-input 'libs/components/**/*.scss'"
+          }
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "storybook dev -c libs/components/.storybook"
+          }
+        ]
+      }
+    },
+    "build-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "storybook build -c libs/components/.storybook -o dist/storybook/components"
+          }
+        ]
+      }
+    },
+    "build-exports": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node ./scripts/export-components"],
+        "parallel": false
+      }
+    }
+  },
+  "tags": []
+}

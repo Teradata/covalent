@@ -1,0 +1,16 @@
+<div
+  *tdLoading="
+    'overlayStarSyntax';
+    mode: loadingMode.Indeterminate;
+    type: loadingType.Circular;
+    strategy: loadingStrategy.Overlay;
+    color: 'accent'
+  "
+>
+  <div class="pad text-center">loading content...</div>
+</div>
+<div layout="row">
+  <button mat-raised-button color="primary" (click)="toggleOverlayStarSyntax()">
+    Toggle loader
+  </button>
+</div>

@@ -1,0 +1,22 @@
+@mixin covalent-flavored-markdown-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  td-flavored-markdown {
+    :not(pre) > code {
+      background: map-get($background, app-bar);
+      color: mat-color($foreground, secondary-text);
+    }
+
+    .mat-checkbox-disabled {
+      label.mat-checkbox-layout {
+        .mat-checkbox-label {
+          color: currentColor;
+        }
+      }
+    }
+  }
+}

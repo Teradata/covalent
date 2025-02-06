@@ -1,0 +1,65 @@
+$mat-font-url: 'styles/font/' !default;
+
+@mixin covalent-material-icons() {
+  @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block');
+
+  // Ensure our size prevails over material
+  mat-icon.material-icons {
+    &,
+    &.mat-icon {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  // Rules for sizing the icon.
+  .material-icons.md-18,
+  .material-icons.mat-18 {
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+  }
+
+  .material-icons.md-24,
+  .material-icons.mat-24 {
+    font-size: 24px;
+    height: 24px;
+    width: 24px;
+  }
+
+  .material-icons.md-36,
+  .material-icons.mat-36 {
+    font-size: 36px;
+    height: 36px;
+    width: 36px;
+  }
+
+  .material-icons.md-48,
+  .material-icons.mat-48 {
+    font-size: 48px;
+    height: 48px;
+    width: 48px;
+  }
+
+  // Rules for using icons as black on a light background.
+  .material-icons.md-dark,
+  .material-icons.mat-dark {
+    color: rgba(0, 0, 0, 54%);
+  }
+
+  .material-icons.md-dark.md-inactive,
+  .material-icons.mat-dark.mat-inactive {
+    color: rgba(0, 0, 0, 26%);
+  }
+
+  // Rules for using icons as white on a dark background.
+  .material-icons.md-light,
+  .material-icons.mat-light {
+    color: rgba(255, 255, 255, 100%);
+  }
+
+  .material-icons.md-light.md-inactive,
+  .material-icons.mat-light.mat-inactive {
+    color: rgba(255, 255, 255, 30%);
+  }
+}

@@ -1,0 +1,51 @@
+:host {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+:host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
+  --mdc-theme-text-icon-on-background: var(--cv-theme-on-secondary-container);
+
+  color: var(--cv-theme-on-secondary-container);
+  background-color: var(--cv-theme-secondary-container);
+  border-radius: 9999px;
+}
+
+:host([disabled]) {
+  color: var(--cv-theme-on-surface-38);
+
+  &:host([graphic='avatar']) .mdc-deprecated-list-item__graphic,
+  .mdc-deprecated-list-item__meta {
+    --mdc-theme-text-icon-on-background: var(--cv-theme-on-surface-38);
+  }
+}
+
+.mdc-deprecated-list-item__meta.material-icons ::slotted(cv-icon) {
+  font-family: var(--mdc-icon-font);
+  font-size: var(--mdc-icon-size, 24px);
+  line-height: 1;
+}
+
+.mdc-deprecated-list-item__text {
+  padding-left: var(--cv-list-item-text-padding, 0);
+}
+
+.mdc-deprecated-list-item__secondary-text {
+  --mdc-icon-size: var(--mdc-typography-body2-font-size);
+}
+
+.mdc-deprecated-list-item__meta {
+  display: flex;
+  align-items: center;
+}
+
+:host(:not([left])) .mdc-deprecated-list-item__meta {
+  width: auto;
+  min-width: 40px;
+}
+
+.mdc-deprecated-list-item__meta ::slotted(*),
+.mdc-deprecated-list-item__graphic ::slotted(*) {
+  display: flex;
+  align-items: center;
+}

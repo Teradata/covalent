@@ -1,0 +1,16 @@
+{
+  "name": "coding-standards",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/coding-standards/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/coding-standards/**/*.js"]
+      }
+    }
+  },
+  "tags": []
+}

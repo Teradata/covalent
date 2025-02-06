@@ -1,0 +1,8 @@
+@mixin td-list-utilities() {
+  mat-list mat-list-item [matListItemAvatar],
+  mat-list a[mat-list-item] [matListItemAvatar],
+  mat-nav-list mat-list-item [matListItemAvatar],
+  mat-nav-list a[mat-list-item] [matListItemAvatar] {
+    min-width: 40px;
+  }
+}
