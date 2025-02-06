@@ -14,12 +14,18 @@ html {
 }
 
 /* Elements that depend on a parent to have a width*/
+/* Partial width */
 .knapsack-wrapper.knapsack-pattern-direct-parent:has(
     > cv-alert,
     > cv-linear-progress,
     > cv-slider,
     > cv-slider-range
   ) {
+  min-width: 80vw;
+}
+
+/* Full-width */
+.knapsack-wrapper.knapsack-pattern-direct-parent:has(> cv-alert[inline]) {
   min-width: 100vw;
 }
 
