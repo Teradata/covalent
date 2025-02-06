@@ -72,7 +72,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "If the primary action is a negative one such as \"Delete,\" the secondary action must be semantically distinct from the primary action. This removes any ambiguity ",
+                  "text": "If the primary action is a negative one such as \"Delete,\" the secondary action must be semantically distinct from the primary action. ",
                   "type": "text"
                 }
               ]
@@ -81,7 +81,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "\"Don't delete / Delete\" are a good example of 2 semantically distinct actions. They remove any ambiguity for each of the actions in relation to the user's request to \"delete the file.\"  ",
+                  "text": "\"Don't delete / Delete\" are a good example of 2 semantically distinct actions. They remove any ambiguity for each of the actions in relation to the user's request.  ",
                   "type": "text"
                 }
               ]
@@ -159,7 +159,16 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Don't use \"Yes\" and \"No.\" A modal dialog is already interruptive to the user's workflow. Don't make them spend more time understanding what action \"Yes\" and \"No\" each represents. ",
+                  "text": "Don't use \"Yes\" and \"No.\" ",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "A modal dialog is already interruptive to the user's workflow. Don't make them spend more time understanding what action \"Yes\" and \"No\" each represents. ",
                   "type": "text"
                 }
               ]
