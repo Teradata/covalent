@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Not all errors call for displaying a modal dialog. When critical issues require the user’s immediate attention, use a modal dialog. To get themselves unstuck, the user may needs to spend a considerable amount of time or effort. See the ",
+              "text": "Not all errors call for displaying a modal dialog. When critical issues require the user’s immediate attention, use a modal dialog. To get themselves unstuck, the user may need to spend a considerable amount of time or effort. See the ",
               "type": "text"
             },
             {
