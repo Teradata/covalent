@@ -1,6 +1,6 @@
 {
   "id": "F84crA5Gx4",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "side-sheet",
   "templateId": "web-components-UMR43JQszt",
@@ -19,5 +19,10 @@
     }
   },
   "height": 502,
-  "width": 895
+  "width": 895,
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:44:05.870Z"
+  }
 }

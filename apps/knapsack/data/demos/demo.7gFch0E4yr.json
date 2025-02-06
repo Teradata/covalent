@@ -1,6 +1,6 @@
 {
   "id": "7gFch0E4yr",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "tree-list-item",
   "templateId": "web-components-1jOFYZB9ms",
@@ -22,5 +22,10 @@
         }
       ]
     }
+  },
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:46:35.210Z"
   }
 }

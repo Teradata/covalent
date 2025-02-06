@@ -1,6 +1,6 @@
 {
   "id": "3HxZQWfBi9",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "tab",
   "templateId": "web-components-1-Bf2NwL1T",
@@ -9,5 +9,10 @@
       "label": "Tab label"
     },
     "slots": {}
+  },
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:45:30.424Z"
   }
 }

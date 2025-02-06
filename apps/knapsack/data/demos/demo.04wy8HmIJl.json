@@ -28,5 +28,9 @@
   "title": "Negative",
   "patternId": "action-ribbon",
   "templateId": "web-components-v3gk7O39kO",
-  "description": "A description"
+  "description": "Something negative happened, such as a form validation error.",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:17:09.353Z"
+  }
 }

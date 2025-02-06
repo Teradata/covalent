@@ -1,6 +1,6 @@
 {
   "id": "FTt0oVydi1",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "icon-checkbox",
   "templateId": "web-components-jTiv8OpG9M",
@@ -34,5 +34,10 @@
         }
       ]
     }
+  },
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:36:24.571Z"
   }
 }
