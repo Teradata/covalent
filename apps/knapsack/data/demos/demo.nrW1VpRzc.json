@@ -10,13 +10,13 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "CRFHBobaZj",
           "patternId": "button",
-          "templateId": "angular-i3OR9O7kXg",
-          "demoId": "CRFHBobaZj"
+          "templateId": "angular-i3OR9O7kXg"
         },
         {
-          "type": "text",
-          "text": "card content"
+          "text": "card content",
+          "type": "text"
         }
       ]
     }

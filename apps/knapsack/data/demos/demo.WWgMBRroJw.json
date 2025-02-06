@@ -1,6 +1,6 @@
 {
   "id": "WWgMBRroJw",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "text-lockup",
   "templateId": "web-components-4Aa-qjh3vF",
@@ -18,5 +18,10 @@
         }
       ]
     }
+  },
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:47:32.495Z"
   }
 }
