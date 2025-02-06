@@ -35,4 +35,5 @@ description: >-
   An error occurs when Teradata users expect one thing to happen but something else (or nothing) happens. These moments
   are frustrating. They make it harder to get things done yet present an opportunity for us to build trust.
 settings:
-  hideTableOfContents: false
+  tableOfContents:
+    hide: false
