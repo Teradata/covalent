@@ -1,0 +1,29 @@
+{
+  "id": "Uu5wDGX4VF",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "1dYyjDVi5a",
+        "link": {
+          "path": "https://www.npmjs.com/package/@material/banner/v/11.0.0-canary.dc9c84023.0?activeTab=readme",
+          "external": true
+        },
+        "title": "See also",
+        "description": "MDC banner"
+      },
+      {
+        "id": "OZnwVsdAfM",
+        "link": {
+          "path": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Storybook"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

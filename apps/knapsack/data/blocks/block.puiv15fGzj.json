@@ -1,5 +1,5 @@
 {
-  "id": "hVD9btaqaT",
+  "id": "puiv15fGzj",
   "data": {
     "content": {
       "type": "doc",
@@ -12,19 +12,7 @@
           },
           "content": [
             {
-              "text": "States",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Text here",
+              "text": "Additional resources",
               "type": "text"
             }
           ]
