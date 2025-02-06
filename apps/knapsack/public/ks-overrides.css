@@ -1,5 +1,26 @@
-body {
+body,
+html {
   background-color: var(--mdc-theme-background);
+}
+
+/* Elements that depend on a parent to have a width and height */
+.knapsack-wrapper.knapsack-pattern-direct-parent:has(
+    > cv-action-ribbon,
+    > cv-top-app-bar,
+    > cv-toolbar
+  ) {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+/* Elements that depend on a parent to have a width*/
+.knapsack-wrapper.knapsack-pattern-direct-parent:has(
+    > cv-alert,
+    > cv-linear-progress,
+    > cv-slider,
+    > cv-slider-range
+  ) {
+  min-width: 100vw;
 }
 
 cv-app-shell {
