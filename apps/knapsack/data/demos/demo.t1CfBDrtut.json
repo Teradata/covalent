@@ -1,6 +1,6 @@
 {
   "id": "t1CfBDrtut",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "code-editor",
   "templateId": "web-components-JulJ63YyUz",
@@ -12,5 +12,10 @@
       "code": "SELECT * FROM aster_nb_modelSC;"
     },
     "slots": {}
+  },
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:36:48.048Z"
   }
 }

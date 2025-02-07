@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [

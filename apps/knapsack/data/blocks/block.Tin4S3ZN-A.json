@@ -1,0 +1,19 @@
+{
+  "id": "Tin4S3ZN-A",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "15550:8166"
+      }
+    ],
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
+    },
+    "columns": "1"
+  },
+  "blockType": "design-src-tiles",
+  "size": "large"
+}

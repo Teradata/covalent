@@ -1,0 +1,29 @@
+{
+  "id": "sBhEd0JwlX",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "TdCa7PEeis",
+        "link": {
+          "path": "https://www.npmjs.com/package/@material/mwc-checkbox",
+          "external": true
+        },
+        "title": "See also",
+        "description": "MWC checkbox"
+      },
+      {
+        "id": "mkCaw4lpB5",
+        "link": {
+          "path": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-checkbox--overview",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Storybook"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

@@ -19,16 +19,16 @@
       "output": [
         {
           "type": "template-demo",
-          "patternId": "text",
-          "templateId": "web-components-FXCMXD35mF",
           "demoId": "I8QaXfk3hy",
-          "reactKey": "1899055f-970c-4794-a63a-aa245205fe8c"
+          "reactKey": "1899055f-970c-4794-a63a-aa245205fe8c",
+          "patternId": "text",
+          "templateId": "web-components-FXCMXD35mF"
         },
         {
           "type": "template-demo",
+          "demoId": "8hSkkY-kWb",
           "patternId": "text",
-          "templateId": "web-components-FXCMXD35mF",
-          "demoId": "8hSkkY-kWb"
+          "templateId": "web-components-FXCMXD35mF"
         }
       ]
     }

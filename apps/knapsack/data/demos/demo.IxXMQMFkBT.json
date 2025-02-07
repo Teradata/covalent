@@ -1,6 +1,6 @@
 {
   "id": "IxXMQMFkBT",
-  "title": "close icon",
+  "title": "Close",
   "description": "A description",
   "type": "data",
   "patternId": "icon-button",
@@ -10,5 +10,9 @@
       "icon": "close"
     },
     "slots": {}
+  },
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:38:54.307Z"
   }
 }

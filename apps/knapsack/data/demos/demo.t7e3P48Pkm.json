@@ -11,8 +11,12 @@
     "slots": {}
   },
   "type": "data",
-  "title": "Informational (page-level)",
+  "title": "Active (page-level)",
   "patternId": "alert",
   "templateId": "web-components-4qjJYWsUZi",
-  "description": "Use for general informational messages"
+  "description": "Use for general informational messages",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:22:43.330Z"
+  }
 }

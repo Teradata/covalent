@@ -1,6 +1,6 @@
 {
   "id": "w0H1gm2jvp",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "expansion-panel-item",
   "templateId": "web-components-vBLifAApG",
@@ -15,5 +15,10 @@
     "slots": {
       "content": []
     }
+  },
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:37:52.006Z"
   }
 }

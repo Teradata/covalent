@@ -88,20 +88,6 @@
                       "content": [
                         {
                           "text": "Raised",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "link",
-                              "attrs": {
-                                "rel": "noopener noreferrer nofollow",
-                                "href": "/pattern/button?templateId=web-components-raE1x4tYL",
-                                "class": null
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "text": " ",
                           "type": "text"
                         }
                       ]
@@ -151,20 +137,6 @@
                       "content": [
                         {
                           "text": "Outline",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "link",
-                              "attrs": {
-                                "rel": "noopener noreferrer nofollow",
-                                "href": "/pattern/button?templateId=web-components-raE1x4tYL",
-                                "class": null
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "text": " ",
                           "type": "text"
                         }
                       ]
@@ -214,17 +186,7 @@
                       "content": [
                         {
                           "text": "Text",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "link",
-                              "attrs": {
-                                "rel": "noopener noreferrer nofollow",
-                                "href": "/pattern/button?templateId=web-components-raE1x4tYL",
-                                "class": null
-                              }
-                            }
-                          ]
+                          "type": "text"
                         }
                       ]
                     }
@@ -259,5 +221,6 @@
       ]
     }
   },
-  "blockType": "table"
+  "blockType": "table",
+  "spacing": "small"
 }

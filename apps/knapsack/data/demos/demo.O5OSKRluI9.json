@@ -1,6 +1,6 @@
 {
   "id": "O5OSKRluI9",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "icon-button-toggle",
   "templateId": "web-components-6kGMXrj-eP",
@@ -10,5 +10,10 @@
       "offIcon": "flashlight_off"
     },
     "slots": {}
+  },
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:39:55.311Z"
   }
 }

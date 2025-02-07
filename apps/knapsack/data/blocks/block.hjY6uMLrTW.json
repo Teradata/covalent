@@ -1,0 +1,29 @@
+{
+  "id": "hjY6uMLrTW",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "DU0B2L7VUr",
+        "link": {
+          "path": "https://www.npmjs.com/package/@material/mwc-select",
+          "external": true
+        },
+        "title": "See also",
+        "description": "MWC select"
+      },
+      {
+        "id": "ps-FZlMCZ",
+        "link": {
+          "path": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-select--overview",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Storybook"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

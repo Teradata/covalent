@@ -1,6 +1,6 @@
 {
   "id": "gMTyjmInaG",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "circular-progress",
   "templateId": "web-components-rw6v6c4fnU",
@@ -12,5 +12,10 @@
       "closed": false
     },
     "slots": {}
+  },
+  "description": "",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-06T16:37:14.977Z"
   }
 }

@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
@@ -38,9 +38,6 @@
                     "href": "#",
                     "class": null
                   }
-                },
-                {
-                  "type": "bold"
                 }
               ]
             },
@@ -59,9 +56,6 @@
                     "href": "#",
                     "class": null
                   }
-                },
-                {
-                  "type": "bold"
                 }
               ]
             },

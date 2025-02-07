@@ -1,0 +1,29 @@
+{
+  "id": "17T2dF0dtw",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "IiT-sooOLQ",
+        "link": {
+          "path": "https://www.npmjs.com/package/@material/mwc-button",
+          "external": true
+        },
+        "title": "See also",
+        "description": "MWC button"
+      },
+      {
+        "id": "7lu3vS1gy",
+        "link": {
+          "path": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-button--overview",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Storybook"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
