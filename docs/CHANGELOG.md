@@ -1,3 +1,10 @@
+## [10.0.1](https://github.com/Teradata/covalent/compare/v10.0.0...v10.0.1) (2025-02-07)
+
+### Bug Fixes
+
+- **knapsack:** repair broken links to removed components ([d9831ce](https://github.com/Teradata/covalent/commit/d9831ceaa83cb8637271fb8bdb0073cb9cbc045a))
+- **knapsack:** replace references to removed button demo ([6868b90](https://github.com/Teradata/covalent/commit/6868b90a41c9b3fd20277644adb10032ee2e6a75))
+
 # [10.0.0](https://github.com/Teradata/covalent/compare/v9.1.3...v10.0.0) (2025-02-05)
 
 - Feat/angular 19 upgrade BREAKING CHANGE: Upgrade covalent to Angular 19 ([11888ea](https://github.com/Teradata/covalent/commit/11888ea905157ecb26ba3c44529266d2b19ddc2b))
