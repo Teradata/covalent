@@ -1,23 +1,30 @@
 {
-  "id": "s7sSsuyqQk",
+  "id": "Yy3EHn1oaI",
   "blockType": "text-editor",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "horizontalRule"
-        },
-        {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "textAlign": "left",
-            "level": 4
+            "textAlign": "left"
           },
           "content": [
             {
+              "text": "MWC button",
               "type": "text",
-              "text": "References"
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://www.npmjs.com/package/@material/mwc-button",
+                    "class": null,
+                    "target": "_blank"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -28,42 +35,19 @@
           },
           "content": [
             {
+              "text": "Covalent design system - Button",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
-                    "href": "https://www.npmjs.com/package/@material/banner/v/11.0.0-canary.dc9c84023.0?activeTab=readme",
-                    "target": "_blank",
                     "rel": "noopener noreferrer nofollow",
-                    "class": null
+                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-button--overview",
+                    "class": null,
+                    "target": "_blank"
                   }
                 }
-              ],
-              "text": "MDC banner"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "type": "text",
-              "marks": [
-                {
-                  "type": "link",
-                  "attrs": {
-                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview",
-                    "target": "_blank",
-                    "rel": "noopener noreferrer nofollow",
-                    "class": null
-                  }
-                }
-              ],
-              "text": "Covalent design system - Action ribbon"
+              ]
             }
           ]
         }

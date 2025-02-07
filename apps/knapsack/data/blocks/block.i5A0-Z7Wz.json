@@ -77,7 +77,7 @@
                       },
                       "content": [
                         {
-                          "text": "Default / inactive",
+                          "text": "Default",
                           "type": "text",
                           "marks": [
                             {
@@ -123,6 +123,5 @@
       ]
     }
   },
-  "blockType": "table",
-  "spacing": "small"
+  "blockType": "table"
 }

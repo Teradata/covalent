@@ -1,13 +1,10 @@
 {
-  "id": "s7sSsuyqQk",
+  "id": "pbJlBMxTth",
   "blockType": "text-editor",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "horizontalRule"
-        },
         {
           "type": "heading",
           "attrs": {
@@ -56,14 +53,14 @@
                 {
                   "type": "link",
                   "attrs": {
-                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview",
+                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-alert--overview",
                     "target": "_blank",
                     "rel": "noopener noreferrer nofollow",
                     "class": null
                   }
                 }
               ],
-              "text": "Covalent design system - Action ribbon"
+              "text": "Covalent design system - Alert"
             }
           ]
         }

@@ -1,23 +1,20 @@
 {
-  "id": "s7sSsuyqQk",
+  "id": "sI9T2CK0mW",
   "blockType": "text-editor",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "horizontalRule"
-        },
-        {
           "type": "heading",
           "attrs": {
-            "textAlign": "left",
-            "level": 4
+            "level": 4,
+            "textAlign": "left"
           },
           "content": [
             {
-              "type": "text",
-              "text": "References"
+              "text": "References",
+              "type": "text"
             }
           ]
         },
@@ -28,19 +25,19 @@
           },
           "content": [
             {
+              "text": "MWC Checkbox",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
-                    "href": "https://www.npmjs.com/package/@material/banner/v/11.0.0-canary.dc9c84023.0?activeTab=readme",
-                    "target": "_blank",
                     "rel": "noopener noreferrer nofollow",
-                    "class": null
+                    "href": "https://www.npmjs.com/package/@material/mwc-checkbox",
+                    "class": null,
+                    "target": "_blank"
                   }
                 }
-              ],
-              "text": "MDC banner"
+              ]
             }
           ]
         },
@@ -51,19 +48,19 @@
           },
           "content": [
             {
+              "text": "Covalent Design System - Checkbox",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
-                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview",
-                    "target": "_blank",
                     "rel": "noopener noreferrer nofollow",
-                    "class": null
+                    "href": "https://teradata.github.io/covalent/docs/components/?path=/docs/components-checkbox--overview",
+                    "class": null,
+                    "target": "_blank"
                   }
                 }
-              ],
-              "text": "Covalent design system - Action ribbon"
+              ]
             }
           ]
         }

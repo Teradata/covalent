@@ -1,6 +1,6 @@
 {
   "id": "1OH1Dga5C0",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "status-header",
   "templateId": "web-components-UDLnfGbB2W",
@@ -30,10 +30,5 @@
       ],
       "status-header-text": []
     }
-  },
-  "description": "",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:44:54.302Z"
   }
 }
