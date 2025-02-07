@@ -1,0 +1,60 @@
+{
+  "id": "rs173pGkd9",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Communicating a high-severity error",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Not all errors call for displaying a modal dialog. When critical issues require the user’s immediate attention, use a modal dialog. To get themselves unstuck, the user may need to spend a considerable amount of time or effort. See the ",
+              "type": "text"
+            },
+            {
+              "text": "content guidelines",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pattern/errors?subPageId=xjnUexUurf",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " for designing for high-severity errors. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

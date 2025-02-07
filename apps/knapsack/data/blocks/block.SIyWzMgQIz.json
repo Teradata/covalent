@@ -1,0 +1,23 @@
+{
+  "id": "SIyWzMgQIz",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "If the user is not aware of an action that's been initiated, for example, they accidentally select the Back button on their browser while editing a form, display a modal dialog to communicate what happened and the actions they can take. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
