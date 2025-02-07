@@ -1,0 +1,28 @@
+{
+  "id": "tnvgSz6pjh",
+  "title": "Main",
+  "type": "data",
+  "patternId": "alert",
+  "templateId": "web-components-4qjJYWsUZi",
+  "data": {
+    "props": {
+      "icon": "info",
+      "state": "active",
+      "titleText": "Alert title",
+      "iconAriaLabel": "info",
+      "descriptionText": "Alert description"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "E5ymzzEPs",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  },
+  "height": 94,
+  "width": 806
+}

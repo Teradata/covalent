@@ -1,6 +1,6 @@
 {
   "id": "tMM8dM4L3g",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "notebook-cell",
   "templateId": "web-components-dlfSUMV1v",
@@ -16,16 +16,12 @@
       "drag-handle": [
         {
           "type": "template-demo",
-          "demoId": "wjN6p0NzFt",
-          "reactKey": "f90d6590-8f60-49a9-ac02-3336ef96557e",
           "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX"
+          "templateId": "web-components-ctiCe2sAX",
+          "demoId": "wjN6p0NzFt",
+          "reactKey": "f90d6590-8f60-49a9-ac02-3336ef96557e"
         }
       ]
     }
-  },
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:43:32.359Z"
   }
 }

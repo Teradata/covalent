@@ -1,6 +1,6 @@
 {
   "id": "pTyIIHqJtL",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "card",
   "templateId": "web-components-mU8MX1FHrF",
@@ -21,7 +21,7 @@
       "card-actions": [
         {
           "type": "template-demo",
-          "demoId": "LVG5iF-p9d",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         },

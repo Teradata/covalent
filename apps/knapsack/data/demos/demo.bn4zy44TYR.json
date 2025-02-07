@@ -1,6 +1,6 @@
 {
   "id": "bn4zy44TYR",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "icon",
   "templateId": "web-components-N8bzRbfpuX",
@@ -14,10 +14,5 @@
         }
       ]
     }
-  },
-  "description": "",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:38:28.387Z"
   }
 }

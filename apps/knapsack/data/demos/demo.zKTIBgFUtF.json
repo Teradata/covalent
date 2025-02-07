@@ -15,24 +15,31 @@
       "default": [
         {
           "type": "template-demo",
-          "demoId": "gGO6DoUZYB",
           "patternId": "text",
-          "templateId": "web-components-FXCMXD35mF"
+          "templateId": "web-components-FXCMXD35mF",
+          "demoId": "gGO6DoUZYB"
         },
         {
           "type": "template-demo",
-          "demoId": "w8HgPvaR-Q",
           "patternId": "text",
-          "templateId": "web-components-FXCMXD35mF"
+          "templateId": "web-components-FXCMXD35mF",
+          "demoId": "w8HgPvaR-Q"
         }
       ],
-      "primaryAction": [],
+      "primaryAction": [
+        {
+          "type": "template-demo",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL",
+          "demoId": "wJJ2tksHEK"
+        }
+      ],
       "details": [
         {
           "type": "template-demo",
-          "demoId": "RWQsKmRljq",
           "patternId": "code-snippet",
-          "templateId": "web-components-MmKtwF24Vv"
+          "templateId": "web-components-MmKtwF24Vv",
+          "demoId": "RWQsKmRljq"
         }
       ]
     }

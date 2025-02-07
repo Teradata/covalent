@@ -1,6 +1,6 @@
 {
   "id": "v3IaS3HWdf",
-  "title": "Sub item",
+  "title": "sub item",
   "description": "A description",
   "type": "data",
   "patternId": "navigation-list-item",
@@ -14,14 +14,10 @@
     "slots": {
       "default": [
         {
-          "text": "Sub item",
+          "text": "sub item",
           "type": "text"
         }
       ]
     }
-  },
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:42:31.108Z"
   }
 }
