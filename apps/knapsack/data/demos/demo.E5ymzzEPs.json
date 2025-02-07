@@ -1,20 +1,21 @@
 {
-  "id": "WrxE56n9M1",
-  "title": "Main",
+  "id": "E5ymzzEPs",
+  "title": "Outlined",
   "type": "data",
   "patternId": "button",
   "templateId": "web-components-raE1x4tYL",
   "data": {
     "props": {
-      "label": "test",
-      "trailingIcon": false,
+      "label": "Label",
+      "trailingIcon": true,
       "raised": false,
       "unelevated": false,
-      "outlined": false,
+      "outlined": true,
       "dense": false,
       "disabled": false,
       "expandContent": false,
-      "fullwidth": false
+      "fullwidth": false,
+      "icon": "add"
     },
     "slots": {}
   }

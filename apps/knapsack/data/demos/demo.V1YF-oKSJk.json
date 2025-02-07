@@ -1,6 +1,6 @@
 {
   "id": "V1YF-oKSJk",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "tooltip",
   "templateId": "web-components-erhVvpq9vk",
@@ -11,15 +11,10 @@
     "slots": {
       "default": [
         {
-          "text": "I'm a tooltip",
+          "text": "Im a tooltip",
           "type": "text"
         }
       ]
     }
-  },
-  "description": "",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:45:56.179Z"
   }
 }

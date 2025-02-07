@@ -1,6 +1,6 @@
 {
   "id": "MQBKTe4GON",
-  "title": "Back arrow",
+  "title": "Arrow back",
   "description": "A description",
   "type": "data",
   "patternId": "icon-button",
@@ -10,9 +10,5 @@
       "icon": "arrow_back"
     },
     "slots": {}
-  },
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:39:33.095Z"
   }
 }

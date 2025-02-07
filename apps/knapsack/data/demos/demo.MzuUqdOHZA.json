@@ -1,6 +1,6 @@
 {
   "id": "MzuUqdOHZA",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "radio-list-item",
   "templateId": "web-components-fwKtEBOnv",
@@ -24,10 +24,5 @@
         }
       ]
     }
-  },
-  "description": "",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:42:58.578Z"
   }
 }

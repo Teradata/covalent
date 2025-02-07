@@ -19,17 +19,12 @@
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }
-      ],
-      "icon": []
+      ]
     }
   },
   "type": "data",
   "title": "Loading",
   "patternId": "action-ribbon",
   "templateId": "web-components-v3gk7O39kO",
-  "description": "An ongoing operation is underway.",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:19:12.893Z"
-  }
+  "description": "A description"
 }
