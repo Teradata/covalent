@@ -12,8 +12,8 @@
       "templateLanguageId": "web-components",
       "spec": {
         "slots": {
-          "main": {
-            "title": "main",
+          "default": {
+            "title": "default",
             "description": "Primary content area. May contain a list, a form, or prose."
           },
           "secondaryAction": {
@@ -137,7 +137,6 @@
         "MfYrYo0FUB",
         "XHWSFYUdCv",
         "7AabGis0pF",
-        "gNMZ76dcNf",
         "CJjT990rbj",
         "NyEluNe60R",
         "MYdHYMeWrm",
@@ -176,7 +175,6 @@
       "title": "Accessibility",
       "blockIds": [
         "Vq5mlxyExd",
-        "vYUWLFbndj",
         "Vr4J8dRBOG",
         "i8TGdU8yuH",
         "t66bYNAlxw",

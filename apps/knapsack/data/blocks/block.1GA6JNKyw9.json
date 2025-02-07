@@ -7,13 +7,18 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
               "text": "Additional resources",
-              "type": "text"
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
             }
           ]
         },

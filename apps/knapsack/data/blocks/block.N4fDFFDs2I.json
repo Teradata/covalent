@@ -29,12 +29,7 @@
                       "content": [
                         {
                           "text": "Anatomy",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "bold"
-                            }
-                          ]
+                          "type": "text"
                         }
                       ]
                     }
