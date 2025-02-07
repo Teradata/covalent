@@ -1,6 +1,6 @@
 {
   "id": "qgGc8WUNHQ",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "list-item",
   "templateId": "web-components-ytRTf8wtxn",
@@ -41,10 +41,5 @@
         }
       ]
     }
-  },
-  "description": "",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:41:53.834Z"
   }
 }

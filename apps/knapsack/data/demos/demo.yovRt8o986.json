@@ -1,6 +1,6 @@
 {
   "id": "yovRt8o986",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "dialog",
   "templateId": "web-components-S9Ia0KOrya",
@@ -24,7 +24,7 @@
       "secondaryAction": [
         {
           "type": "template-demo",
-          "demoId": "LVG5iF-p9d",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }
@@ -32,7 +32,7 @@
       "primaryAction": [
         {
           "type": "template-demo",
-          "demoId": "LVG5iF-p9d",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }

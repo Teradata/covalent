@@ -1,6 +1,6 @@
 {
   "id": "5lBJhPKvTj",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "app-shell",
   "templateId": "web-components-z8r4uoVkf",
@@ -58,9 +58,5 @@
         }
       ]
     }
-  },
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:34:56.326Z"
   }
 }

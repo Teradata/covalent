@@ -1,6 +1,6 @@
 {
   "id": "5aKkBtql-E",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "snackbar",
   "templateId": "web-components-3ERE1Ai9lo",
@@ -13,7 +13,7 @@
       "action": [
         {
           "type": "template-demo",
-          "demoId": "LVG5iF-p9d",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }

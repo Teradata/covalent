@@ -26,9 +26,5 @@
   "title": "Pending",
   "patternId": "action-ribbon",
   "templateId": "web-components-v3gk7O39kO",
-  "description": "Something is waiting before taking action.",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:19:38.885Z"
-  }
+  "description": "A description"
 }

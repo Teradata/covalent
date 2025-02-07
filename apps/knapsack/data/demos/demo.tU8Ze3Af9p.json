@@ -1,6 +1,6 @@
 {
   "id": "tU8Ze3Af9p",
-  "title": "AI chat",
+  "title": "AI Chat",
   "description": "A description",
   "type": "data",
   "patternId": "textfield",
@@ -12,9 +12,5 @@
       "dense": true
     },
     "slots": {}
-  },
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:47:22.490Z"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "HyZJsWXVOc",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "chip",
   "templateId": "web-components-7wYRPSnEZH",
@@ -33,9 +33,5 @@
         }
       ]
     }
-  },
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:37:05.269Z"
   }
 }

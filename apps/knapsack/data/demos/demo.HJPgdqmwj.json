@@ -1,6 +1,6 @@
 {
   "id": "HJPgdqmwj",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "code-snippet",
   "templateId": "web-components-MmKtwF24Vv",
@@ -19,7 +19,7 @@
       "action-items": [
         {
           "type": "template-demo",
-          "demoId": "LVG5iF-p9d",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }
@@ -27,7 +27,7 @@
       "actionItems": [
         {
           "type": "template-demo",
-          "demoId": "LVG5iF-p9d",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }

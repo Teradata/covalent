@@ -1,16 +1,11 @@
 {
   "id": "HY3BFMh0AM",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "slider",
   "templateId": "web-components-33Z9-C4Qs",
   "data": {
     "props": {},
     "slots": {}
-  },
-  "description": "",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:44:24.271Z"
   }
 }

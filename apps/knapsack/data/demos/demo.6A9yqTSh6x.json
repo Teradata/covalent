@@ -1,6 +1,6 @@
 {
   "id": "6A9yqTSh6x",
-  "title": "Houseboat",
+  "title": "Main",
   "type": "data",
   "patternId": "icon-lockup",
   "templateId": "web-components-RPcggDLyDK",
@@ -16,10 +16,5 @@
         }
       ]
     }
-  },
-  "description": "",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:40:25.002Z"
   }
 }

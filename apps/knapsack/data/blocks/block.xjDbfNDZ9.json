@@ -1,0 +1,17 @@
+{
+  "id": "xjDbfNDZ9",
+  "data": {
+    "demoId": "wJJ2tksHEK",
+    "patternId": "button",
+    "templateId": "web-components-raE1x4tYL",
+    "allowResizing": true,
+    "showSchemaForm": false,
+    "showCodeSnippet": true
+  },
+  "blockType": "pattern-template-block",
+  "header": {
+    "showHeader": true,
+    "title": "Raised button",
+    "description": "To customize code view the Web Components or Angular playground"
+  }
+}

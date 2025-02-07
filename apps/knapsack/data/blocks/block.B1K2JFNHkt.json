@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "spacing": "small"
+  "blockType": "text-editor"
 }

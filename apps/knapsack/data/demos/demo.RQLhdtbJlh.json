@@ -1,6 +1,6 @@
 {
   "id": "RQLhdtbJlh",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "top-app-bar-fixed",
   "templateId": "web-components-d0oZXgy7Uj",
@@ -24,13 +24,13 @@
       "actionItems": [
         {
           "type": "template-demo",
-          "demoId": "LVG5iF-p9d",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         },
         {
           "type": "template-demo",
-          "demoId": "LVG5iF-p9d",
+          "demoId": "E5ymzzEPs",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }

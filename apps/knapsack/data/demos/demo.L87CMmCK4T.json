@@ -1,6 +1,6 @@
 {
   "id": "L87CMmCK4T",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "text-area",
   "templateId": "web-components-48rzn99y9G",
@@ -16,10 +16,5 @@
       "maxLength": 80
     },
     "slots": {}
-  },
-  "description": "",
-  "meta": {
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-02-06T16:46:56.710Z"
   }
 }
