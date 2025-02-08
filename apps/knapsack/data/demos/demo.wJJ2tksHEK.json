@@ -1,6 +1,6 @@
 {
   "id": "wJJ2tksHEK",
-  "title": "Raised",
+  "title": "Raised (deleteme)",
   "description": "A description",
   "type": "data",
   "patternId": "button",
@@ -17,5 +17,9 @@
     "slots": {}
   },
   "width": 111,
-  "height": 54
+  "height": 54,
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-07T21:33:40.492Z"
+  }
 }

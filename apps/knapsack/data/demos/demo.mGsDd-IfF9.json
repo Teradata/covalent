@@ -1,25 +1,29 @@
 {
-  "id": "NcPgR30pFc",
+  "id": "mGsDd-IfF9",
   "data": {
     "props": {
       "icon": "add",
       "dense": false,
       "label": "Label",
-      "raised": false,
-      "outlined": true,
-      "trailingIcon": true
+      "raised": true,
+      "disabled": false,
+      "outlined": false,
+      "fullwidth": false,
+      "unelevated": false,
+      "trailingIcon": true,
+      "expandContent": false
     },
     "slots": {}
   },
   "meta": {
     "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
     "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "createdDate": "2025-02-06T16:25:15.421Z",
-    "updatedDate": "2025-02-06T16:27:11.848Z"
+    "createdDate": "2025-02-07T21:33:44.491Z",
+    "updatedDate": "2025-02-07T21:33:59.242Z"
   },
   "type": "data",
-  "title": "Outlined",
+  "title": "Raised",
   "patternId": "button",
   "templateId": "web-components-raE1x4tYL",
-  "description": "For less critical actions or alternatives, like \"cancel\" or \"back\"."
+  "description": ""
 }

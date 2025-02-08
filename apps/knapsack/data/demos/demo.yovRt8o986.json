@@ -1,13 +1,13 @@
 {
   "id": "yovRt8o986",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "dialog",
   "templateId": "web-components-S9Ia0KOrya",
   "data": {
     "props": {
       "open": true,
-      "heading": "Sample dialog title",
+      "heading": "Heading",
       "scrimClickAction": "close",
       "escapeKeyAction": "close",
       "defaultAction": "close",
@@ -17,14 +17,15 @@
     "slots": {
       "default": [
         {
-          "text": "Sample dialog content goes here",
+          "text": "Message",
           "type": "text"
         }
       ],
       "secondaryAction": [
         {
           "type": "template-demo",
-          "demoId": "E5ymzzEPs",
+          "demoId": "XJJf3W25ge",
+          "reactKey": "5b78bd5c-7d37-4fe0-95a7-3c10e7955149",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }
@@ -32,11 +33,17 @@
       "primaryAction": [
         {
           "type": "template-demo",
-          "demoId": "E5ymzzEPs",
+          "demoId": "JSZvt7JppQ",
+          "reactKey": "ddbdd779-6fef-4730-b6f8-ee99731f511c",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }
       ]
     }
-  }
+  },
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-08T00:45:14.482Z"
+  },
+  "description": ""
 }
