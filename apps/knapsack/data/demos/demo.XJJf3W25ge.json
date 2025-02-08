@@ -1,0 +1,24 @@
+{
+  "id": "XJJf3W25ge",
+  "data": {
+    "props": {
+      "dense": false,
+      "label": "Label",
+      "raised": false,
+      "outlined": false,
+      "trailingIcon": false
+    },
+    "slots": {}
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-02-08T00:44:09.925Z",
+    "updatedDate": "2025-02-08T00:44:49.713Z"
+  },
+  "type": "data",
+  "title": "Text",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL",
+  "description": "A description"
+}
