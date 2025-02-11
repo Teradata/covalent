@@ -16,6 +16,18 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

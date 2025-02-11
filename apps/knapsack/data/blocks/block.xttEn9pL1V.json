@@ -1,0 +1,43 @@
+{
+  "id": "xttEn9pL1V",
+  "data": {
+    "guidelines": [
+      {
+        "id": "ktGQ-DkRAP",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Focus on the jobs to be done in the user's context. First, identify  jobs that are most important for the user to unlock the value of the experience they're in. Then identify the role of the person who will perform the jobs. ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "gridStyles": {
+      "columns": "1"
+    },
+    "tileStyles": {
+      "imageSize": "none",
+      "headerBeforeImage": true
+    }
+  },
+  "blockType": "guidelines"
+}

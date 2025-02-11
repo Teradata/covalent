@@ -16,6 +16,18 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Accessibility is paramount in ensuring that Get Started Cards are inclusive and effective for all users, including those with disabilities. These cards are designed to help users quickly engage with key features and tasks during initial product interaction or setup. To support accessibility, the design and implementation of these cards adhere to WCAG 2.1 standards, focusing on navigability, clarity, and ease of interaction through both traditional and assistive technologies",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

@@ -17,19 +17,29 @@
       "id": "cD5CibJZlL",
       "title": "Onboarding",
       "blockIds": [
+        "jTLq0DpEwz",
         "5LwhbAGNc",
         "E9f36KOiL",
         "F2ytkxQOt",
         "YQ5OWE4Ajp",
         "dBb3191J2T",
-        "ZZB4WPj7an",
-        "2SlT8HoWsi"
+        "xttEn9pL1V",
+        "2SlT8HoWsi",
+        "qBBNO76IF"
       ]
     },
     {
       "id": "TXfPct2ysa",
       "title": "Accessibility",
-      "blockIds": ["e7B3XgIhUH", "Iulu-FMAds", "cDXEF5HCA2"]
+      "blockIds": [
+        "e7B3XgIhUH",
+        "Iulu-FMAds",
+        "ymkoM3Srkk",
+        "bD6Ja8-n-C",
+        "mZM7Z9u12",
+        "cDXEF5HCA2",
+        "vdteKoO9dF"
+      ]
     }
   ],
   "templates": [],
