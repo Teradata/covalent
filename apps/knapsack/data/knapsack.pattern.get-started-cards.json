@@ -10,7 +10,7 @@
       "type": "subPage"
     }
   ],
-  "title": "Get-started cards",
+  "title": "Cards",
   "statuses": {},
   "subPages": [
     {
@@ -43,5 +43,5 @@
     }
   ],
   "templates": [],
-  "description": "The get-started cards serve as shortcuts to tasks that we want people to complete first. It's an opportunity for us to help them quickly unlock the value of their Teradata feature or product during onboarding."
+  "description": "Cards serve as shortcuts to tasks that we want people to complete first. It's an opportunity for us to help them quickly unlock the value of their Teradata feature or product."
 }
