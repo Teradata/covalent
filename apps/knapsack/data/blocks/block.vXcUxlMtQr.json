@@ -18,6 +18,7 @@
           "name": "Get Started Cards",
           "path": "/pattern/get-started-cards"
         },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-getstartedcardthumbnail--GObnsRbh-i.png",
         "title": "Get started cards",
         "description": "Standardize actions to help users onboard and deliver value early"
       }
