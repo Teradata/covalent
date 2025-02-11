@@ -1,26 +1,18 @@
 {
-  "id": "uZd36wHJs",
+  "id": "ymkoM3Srkk",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 3,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Modal errors",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": ":",
+              "text": "Key Controls",
               "type": "text"
             }
           ]
@@ -38,7 +30,7 @@
                   },
                   "content": [
                     {
-                      "text": "Focus",
+                      "text": "Tab Key:",
                       "type": "text",
                       "marks": [
                         {
@@ -47,7 +39,7 @@
                       ]
                     },
                     {
-                      "text": ": Ensure focus stays within the modal while it is open, with the ability to return focus to the triggering element when closed.",
+                      "text": " Advances the focus from one interactive element to the next within the Get Started Cards.",
                       "type": "text"
                     }
                   ]
@@ -64,7 +56,7 @@
                   },
                   "content": [
                     {
-                      "text": "Escape Key",
+                      "text": "Enter/Spacebar:",
                       "type": "text",
                       "marks": [
                         {
@@ -73,33 +65,7 @@
                       ]
                     },
                     {
-                      "text": ": Allow users to dismiss the modal using the Escape key.",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Tab Index",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Provide a logical Tab order within the modal, cycling back to the top once the end is reached.",
+                      "text": " Activates the focused element or action, such as expanding a card detail or initiating an action linked to the card.",
                       "type": "text"
                     }
                   ]
@@ -111,5 +77,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "medium"
 }

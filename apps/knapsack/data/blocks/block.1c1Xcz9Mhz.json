@@ -13,12 +13,7 @@
           "content": [
             {
               "text": "Keyboard Interactions",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "type": "text"
             }
           ]
         },
@@ -164,6 +159,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "medium"
+  "blockType": "text-editor"
 }

@@ -1,0 +1,29 @@
+{
+  "id": "vdteKoO9dF",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "wbsbrfgp3S",
+        "link": {
+          "path": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Web Content Accessibility Guidelines(WCAG) component standards"
+      },
+      {
+        "id": "ThqHGYRYGi",
+        "link": {
+          "path": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Web Components Accessibility Guide"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
