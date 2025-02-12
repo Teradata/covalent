@@ -5,23 +5,6 @@
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Key",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "type": "orderedList",
           "attrs": {
             "start": 1
