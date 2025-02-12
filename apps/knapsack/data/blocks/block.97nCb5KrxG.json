@@ -4,12 +4,12 @@
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "15281:8625"
+        "nodeId": "15735:9279"
       }
     ],
     "columns": "1",
     "imageStyles": {
-      "fit": "contain",
+      "fit": "fill",
       "size": "auto",
       "align": "left",
       "seamless": true

@@ -20,16 +20,7 @@
                   },
                   "content": [
                     {
-                      "text": "Icon",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Communicates the state of the radio button, selected or unselected.",
+                      "text": "Communicates the state of the radio button, selected or unselected.",
                       "type": "text"
                     }
                   ]
@@ -46,16 +37,7 @@
                   },
                   "content": [
                     {
-                      "text": "State layer",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Communicates the interaction state of the radio. See the Colors page under Foundations for more details.",
+                      "text": "Communicates the interaction state of the radio. See the Colors page under Foundations for more details about state layers.",
                       "type": "text"
                     }
                   ]

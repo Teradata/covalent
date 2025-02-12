@@ -55,7 +55,7 @@
                       },
                       "content": [
                         {
-                          "text": "Icon color token",
+                          "text": "Color token 1",
                           "type": "text",
                           "marks": [
                             {
@@ -82,7 +82,7 @@
                       },
                       "content": [
                         {
-                          "text": "State layer color token",
+                          "text": "Color token 2",
                           "type": "text",
                           "marks": [
                             {
