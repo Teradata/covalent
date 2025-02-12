@@ -8,11 +8,24 @@
       "descriptionText": "Alert description",
       "inline": true
     },
-    "slots": {}
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "O-OKCCyTqJ",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
   },
   "type": "data",
-  "title": "Neutral (inline)",
+  "title": "Inline alert",
   "patternId": "alert",
   "templateId": "web-components-4qjJYWsUZi",
-  "description": "Use for messages that require less visual prominence"
+  "description": "Use for messages that require less visual prominence, usually embedded in (and referring to) a small region of the UI (such as a properties panel).",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-12T22:05:45.302Z"
+  }
 }

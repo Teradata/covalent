@@ -18,16 +18,16 @@
     "slots": {
       "default": [
         {
-          "type": "text",
-          "text": "Error message / content to be displayed."
+          "text": "Error message / content to be displayed.",
+          "type": "text"
         }
       ],
       "primaryAction": [
         {
           "type": "template-demo",
+          "demoId": "wJJ2tksHEK",
           "patternId": "button",
-          "templateId": "web-components-raE1x4tYL",
-          "demoId": "wJJ2tksHEK"
+          "templateId": "web-components-raE1x4tYL"
         }
       ]
     }

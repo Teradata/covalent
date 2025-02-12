@@ -15,31 +15,31 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "gGO6DoUZYB",
           "patternId": "text",
-          "templateId": "web-components-FXCMXD35mF",
-          "demoId": "gGO6DoUZYB"
+          "templateId": "web-components-FXCMXD35mF"
         },
         {
           "type": "template-demo",
+          "demoId": "w8HgPvaR-Q",
           "patternId": "text",
-          "templateId": "web-components-FXCMXD35mF",
-          "demoId": "w8HgPvaR-Q"
+          "templateId": "web-components-FXCMXD35mF"
         }
       ],
       "primaryAction": [
         {
           "type": "template-demo",
+          "demoId": "wJJ2tksHEK",
           "patternId": "button",
-          "templateId": "web-components-raE1x4tYL",
-          "demoId": "wJJ2tksHEK"
+          "templateId": "web-components-raE1x4tYL"
         }
       ],
       "details": [
         {
           "type": "template-demo",
+          "demoId": "RWQsKmRljq",
           "patternId": "code-snippet",
-          "templateId": "web-components-MmKtwF24Vv",
-          "demoId": "RWQsKmRljq"
+          "templateId": "web-components-MmKtwF24Vv"
         }
       ]
     }
