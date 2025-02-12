@@ -20,16 +20,7 @@
                   },
                   "content": [
                     {
-                      "text": "Container",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Contains icon.",
+                      "text": "Contains the check icon.",
                       "type": "text"
                     }
                   ]
@@ -46,16 +37,7 @@
                   },
                   "content": [
                     {
-                      "text": "Icon",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Present if the checkbox is in the selected or indeterminate state.",
+                      "text": " Present if the checkbox is in the selected or indeterminate state.",
                       "type": "text"
                     }
                   ]
@@ -72,16 +54,7 @@
                   },
                   "content": [
                     {
-                      "text": "State layer",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Communicates the interaction state of the checkbox. States indicated by this state layer include Hovered, Focused, and Pressed. See the Colors page under Foundations for more details.",
+                      "text": "Communicates the interaction state of the checkbox. States indicated by this layer include Hovered, Focused, and Pressed. See the Colors page under Foundations for more details on state layers.",
                       "type": "text"
                     }
                   ]
