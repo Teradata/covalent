@@ -9,11 +9,10 @@
     ],
     "columns": "1",
     "imageStyles": {
-      "fit": "contain",
-      "size": "large",
+      "fit": "fill",
+      "size": "auto",
       "seamless": true
     }
   },
-  "blockType": "design-src-tiles",
-  "size": "medium"
+  "blockType": "design-src-tiles"
 }
