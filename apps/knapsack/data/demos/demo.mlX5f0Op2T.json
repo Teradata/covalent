@@ -1,0 +1,34 @@
+{
+  "id": "mlX5f0Op2T",
+  "data": {
+    "props": {
+      "icon": "info",
+      "state": "active",
+      "inline": false,
+      "titleText": "Alert title",
+      "iconAriaLabel": "aria-label for the icon",
+      "descriptionText": "Alert description"
+    },
+    "slots": {
+      "action-items": [
+        {
+          "type": "template-demo",
+          "demoId": "ycX74nYU-o",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-02-12T22:02:10.540Z",
+    "updatedDate": "2025-02-12T22:03:40.750Z"
+  },
+  "type": "data",
+  "title": "Full-page alert",
+  "patternId": "alert",
+  "templateId": "web-components-4qjJYWsUZi",
+  "description": "For page-wide messaging."
+}

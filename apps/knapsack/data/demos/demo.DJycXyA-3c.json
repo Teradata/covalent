@@ -14,29 +14,29 @@
       "default": [
         {
           "type": "template-demo",
+          "demoId": "UCPV9gWi17",
           "patternId": "toolbar",
-          "templateId": "web-components-A6-16QhSaM",
-          "demoId": "UCPV9gWi17"
+          "templateId": "web-components-A6-16QhSaM"
         },
         {
           "type": "template-demo",
+          "demoId": "5QIssuXE3s",
           "patternId": "empty-state",
-          "templateId": "web-components-E0GwXgHJv",
-          "demoId": "5QIssuXE3s"
+          "templateId": "web-components-E0GwXgHJv"
         }
       ],
       "help": [
         {
           "type": "template-demo",
+          "demoId": "7neD2HUsv2",
           "patternId": "toolbar",
-          "templateId": "web-components-A6-16QhSaM",
-          "demoId": "7neD2HUsv2"
+          "templateId": "web-components-A6-16QhSaM"
         },
         {
           "type": "template-demo",
+          "demoId": "TkaR2KlMc",
           "patternId": "text",
-          "templateId": "web-components-FXCMXD35mF",
-          "demoId": "TkaR2KlMc"
+          "templateId": "web-components-FXCMXD35mF"
         }
       ]
     },

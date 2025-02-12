@@ -56,19 +56,7 @@
           }
         }
       },
-      "demoIds": [
-        "tnvgSz6pjh",
-        "vmDFzhOhSn",
-        "S4K35ZGdnu",
-        "WosGIC3IsN",
-        "t7e3P48Pkm",
-        "pYd0j3oNrI",
-        "xnEh2A2lis",
-        "LATgTeg21H",
-        "yf2q5F2Jyk",
-        "CE5x5TaMa2",
-        "s8Ci4Cd08W"
-      ],
+      "demoIds": ["mlX5f0Op2T", "s8Ci4Cd08W"],
       "blockIds": ["RILkEnTgSL", "av87gquwW3", "pbJlBMxTth"]
     }
   ],

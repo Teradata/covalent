@@ -16,10 +16,10 @@
       "drag-handle": [
         {
           "type": "template-demo",
-          "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX",
           "demoId": "wjN6p0NzFt",
-          "reactKey": "f90d6590-8f60-49a9-ac02-3336ef96557e"
+          "reactKey": "f90d6590-8f60-49a9-ac02-3336ef96557e",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
         }
       ]
     }
