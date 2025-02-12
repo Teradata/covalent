@@ -1,0 +1,49 @@
+{
+  "id": "gI9Hrcjx-I",
+  "data": {
+    "props": {
+      "open": true,
+      "heading": "Delete this file?",
+      "scrimClickAction": "close",
+      "escapeKeyAction": "close",
+      "defaultAction": "close",
+      "actionAttribute": "dialogAction",
+      "initialFocusAttribute": "dialogInitialFocus"
+    },
+    "slots": {
+      "default": [
+        {
+          "text": "This action cannot be undone.",
+          "type": "text"
+        }
+      ],
+      "secondaryAction": [
+        {
+          "type": "template-demo",
+          "demoId": "D88shG1X",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ],
+      "primaryAction": [
+        {
+          "type": "template-demo",
+          "demoId": "qwXXJ6oGmT",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-02-12T23:32:50.866Z",
+    "updatedDate": "2025-02-12T23:34:04.055Z"
+  },
+  "type": "data",
+  "title": "Delete confirmation",
+  "patternId": "dialog",
+  "templateId": "web-components-S9Ia0KOrya",
+  "description": ""
+}

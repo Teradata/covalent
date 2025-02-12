@@ -1,0 +1,21 @@
+{
+  "id": "Dq5C2ohT6Y",
+  "data": {
+    "props": {
+      "checked": true,
+      "global": false
+    },
+    "slots": {}
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-02-12T23:34:40.115Z",
+    "updatedDate": "2025-02-12T23:34:51.375Z"
+  },
+  "type": "data",
+  "title": "Checked",
+  "patternId": "radio",
+  "templateId": "web-components-qk2MWcBipT",
+  "description": ""
+}
