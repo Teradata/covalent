@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Variant",
+              "text": "Variants",
               "type": "text"
             }
           ]
@@ -33,5 +33,5 @@
     }
   },
   "blockType": "text-editor",
-  "size": "medium"
+  "size": "small"
 }

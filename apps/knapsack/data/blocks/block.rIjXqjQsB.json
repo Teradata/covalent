@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Used as a fill color for foreground elements like buttons. They should not be used for text or icons. There are also five surface container roles named based on their level of emphasis (",
+              "text": "Used as a fill color for container elements. They should not be used for text or icons. There are five surface container roles named based on their level of emphasis (",
               "type": "text"
             },
             {
@@ -206,5 +206,6 @@
     }
   },
   "blockType": "text-editor",
-  "size": "medium"
+  "size": "small",
+  "spacing": "small"
 }

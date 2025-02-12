@@ -11,10 +11,12 @@
       "fit": "fill",
       "size": "auto",
       "align": "center",
+      "corners": "rounded",
       "seamless": true
     },
     "columns": "1"
   },
   "blockType": "design-src-tiles",
-  "size": "medium"
+  "size": "large",
+  "spacing": "small"
 }

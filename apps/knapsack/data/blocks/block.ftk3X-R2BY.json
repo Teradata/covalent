@@ -11,9 +11,11 @@
     "imageStyles": {
       "fit": "fill",
       "size": "auto",
+      "corners": "rounded",
       "seamless": true
     }
   },
-  "size": "medium",
-  "blockType": "design-src-tiles"
+  "size": "large",
+  "blockType": "design-src-tiles",
+  "spacing": "small"
 }

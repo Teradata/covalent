@@ -1,18 +1,17 @@
 {
-  "id": "hFb0Pg4mcC",
+  "id": "3w2m8DoUn9",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Other roles",
+              "text": "At Teradata, surface colors are best used for Pages, Modals, Tables, Headers, and Cards.",
               "type": "text"
             }
           ]
@@ -20,5 +19,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "spacing": "small"
 }
