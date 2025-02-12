@@ -24,6 +24,7 @@ export class AlertBase extends LitElement {
         this.mdcFoundation.close(this.reason);
         this.reason = CloseReason.UNSPECIFIED;
       }
+      this.adjustHeight();
     }
   })
   open = true;
@@ -53,7 +54,12 @@ export class AlertBase extends LitElement {
       active: this.state === 'active',
     };
     return html` <div class="${classMap(classes)}" role="banner">
-      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive" aria-label="${this.titleText}">
+      <div
+        class="mdc-banner__content"
+        role="alertdialog"
+        aria-live="assertive"
+        aria-label="${this.titleText}"
+      >
         <div class="mdc-banner__graphic-text-wrapper">
           ${this.icon ? this.renderIcon() : ''}
           <div class="mdc-banner__text">
@@ -70,7 +76,11 @@ export class AlertBase extends LitElement {
 
   /** @soyTemplate */
   protected renderIcon(): TemplateResult {
-    return html` <div class="mdc-banner__graphic" role="img" aria-label="${this.iconAriaLabel}">
+    return html` <div
+      class="mdc-banner__graphic"
+      role="img"
+      aria-label="${this.iconAriaLabel}"
+    >
       <slot name="icon">
         <cv-icon class="mdc-banner__icon"> ${this.icon} </cv-icon>
       </slot>
@@ -98,7 +108,7 @@ export class AlertBase extends LitElement {
             bubbles: true,
             cancelable: true,
             detail: { reason: action },
-          })
+          }),
         ),
       notifyClosed: () => {
         /* */
@@ -133,6 +143,23 @@ export class AlertBase extends LitElement {
     this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
     if (this.open) {
       this.mdcFoundation.open();
+    }
+    this.adjustHeight();
+  }
+
+  private adjustHeight() {
+    if (window.innerWidth <= 430) {
+      requestAnimationFrame(() => {
+        const contentHeight = this.mdcContent.offsetHeight;
+        this.mdcRoot.style.height = `${contentHeight + 20}px`;
+      });
+    } else if (window.innerWidth <= 768) {
+      requestAnimationFrame(() => {
+        const contentHeight = this.mdcContent.offsetHeight;
+        this.mdcRoot.style.height = `${contentHeight + 14}px`;
+      });
+    } else {
+      this.mdcRoot.style.height = '';
     }
   }
 }
