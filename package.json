@@ -119,7 +119,7 @@
     "@commitlint/config-angular": "^19.7.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@covalent/tokens": "latest",
-    "@nx/angular": "20.3.2",
+    "@nx/angular": "20.4.2",
     "@nx/cypress": "20.3.2",
     "@nx/eslint": "20.3.2",
     "@nx/eslint-plugin": "20.3.2",
