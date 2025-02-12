@@ -5,24 +5,10 @@
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "orderedList",
           "attrs": {
-            "textAlign": "left"
+            "start": 1
           },
-          "content": [
-            {
-              "text": "Anatomy dictation specs",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
           "content": [
             {
               "type": "listItem",
@@ -34,7 +20,7 @@
                   },
                   "content": [
                     {
-                      "text": "Summary of key visual elements",
+                      "text": "Provides details about the request.",
                       "type": "text"
                     }
                   ]
@@ -51,7 +37,41 @@
                   },
                   "content": [
                     {
-                      "text": "Dictate anatomy examples",
+                      "text": "Provides a brief description of the message or request.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Contains the header, body, and buttons.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Actions the user can take on the message or request.",
                       "type": "text"
                     }
                   ]
