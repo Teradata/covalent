@@ -87,7 +87,7 @@
                       },
                       "content": [
                         {
-                          "text": "Value",
+                          "text": "1",
                           "type": "text"
                         }
                       ]
@@ -136,7 +136,7 @@
                       },
                       "content": [
                         {
-                          "text": "Label",
+                          "text": "2",
                           "type": "text"
                         }
                       ]
@@ -185,7 +185,7 @@
                       },
                       "content": [
                         {
-                          "text": "Container",
+                          "text": "3",
                           "type": "text"
                         }
                       ]
@@ -234,7 +234,7 @@
                       },
                       "content": [
                         {
-                          "text": "Icon",
+                          "text": "4",
                           "type": "text"
                         }
                       ]
@@ -283,7 +283,7 @@
                       },
                       "content": [
                         {
-                          "text": "Supporting text",
+                          "text": "5",
                           "type": "text"
                         }
                       ]
@@ -319,6 +319,5 @@
       ]
     }
   },
-  "size": "medium",
   "blockType": "table"
 }
