@@ -147,6 +147,12 @@ export class AlertBase extends LitElement {
     this.adjustHeight();
   }
 
+  protected override updated(
+    changedProperties: Map<string | number | symbol, unknown>,
+  ): void {
+    super.updated(changedProperties);
+    this.adjustHeight();
+  }
   private adjustHeight() {
     if (window.innerWidth <= 430) {
       requestAnimationFrame(() => {
