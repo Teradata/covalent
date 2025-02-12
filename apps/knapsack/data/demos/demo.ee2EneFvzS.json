@@ -1,12 +1,12 @@
 {
   "id": "ee2EneFvzS",
-  "title": "Main",
+  "title": "Unchecked",
   "type": "data",
   "patternId": "checkbox",
   "templateId": "web-components-29FbeDQWhM",
   "data": {
     "props": {
-      "checked": true,
+      "checked": false,
       "indeterminate": false,
       "disabled": false,
       "reducedTouchTarget": false,
@@ -16,5 +16,9 @@
       "default": []
     }
   },
-  "description": "Checkboxes allow the user to select one or more items from a set. Checkboxes can be used to turn an option on or off."
+  "description": "Checkboxes allow the user to select one or more items from a set. Checkboxes can be used to turn an option on or off.",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-02-12T23:39:55.867Z"
+  }
 }
