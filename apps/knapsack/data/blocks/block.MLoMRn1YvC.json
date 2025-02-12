@@ -1,5 +1,5 @@
 {
-  "id": "WuTkdWStk",
+  "id": "MLoMRn1YvC",
   "data": {
     "content": {
       "type": "doc",
@@ -7,7 +7,7 @@
         {
           "type": "table",
           "attrs": {
-            "equalColumns": true
+            "equalColumns": false
           },
           "content": [
             {
@@ -28,7 +28,7 @@
                       },
                       "content": [
                         {
-                          "text": "Anatomy",
+                          "text": "#",
                           "type": "text",
                           "marks": [
                             {
@@ -87,7 +87,7 @@
                       },
                       "content": [
                         {
-                          "text": "Value",
+                          "text": "1",
                           "type": "text"
                         }
                       ]
@@ -136,7 +136,7 @@
                       },
                       "content": [
                         {
-                          "text": "Label",
+                          "text": "2",
                           "type": "text"
                         }
                       ]
@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "primary",
+                          "text": "negative",
                           "type": "text"
                         }
                       ]
@@ -185,7 +185,7 @@
                       },
                       "content": [
                         {
-                          "text": "Container",
+                          "text": "3",
                           "type": "text"
                         }
                       ]
@@ -207,7 +207,7 @@
                       },
                       "content": [
                         {
-                          "text": "primary",
+                          "text": "negative",
                           "type": "text"
                         }
                       ]
@@ -234,7 +234,7 @@
                       },
                       "content": [
                         {
-                          "text": "Icon",
+                          "text": "4",
                           "type": "text"
                         }
                       ]
@@ -264,12 +264,60 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "5",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "negative",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
       ]
     }
   },
-  "size": "medium",
   "blockType": "table"
 }

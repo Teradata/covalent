@@ -4,7 +4,7 @@
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "15178:19840"
+        "nodeId": "15576:11426"
       }
     ],
     "imageStyles": {
@@ -13,6 +13,5 @@
     },
     "columns": "1"
   },
-  "size": "medium",
   "blockType": "design-src-tiles"
 }

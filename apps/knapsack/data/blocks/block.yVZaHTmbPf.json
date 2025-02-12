@@ -5,23 +5,6 @@
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Key",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "type": "orderedList",
           "attrs": {
             "start": 1
@@ -37,16 +20,7 @@
                   },
                   "content": [
                     {
-                      "text": "Value",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Used as placeholder text that informs the user what type of selection is available. For example, \"Select a country\" is an informative placeholder. Use Body 1 typography format.",
+                      "text": "Either placeholder text prior to user input, or the currently selected option. ",
                       "type": "text"
                     }
                   ]
@@ -63,16 +37,7 @@
                   },
                   "content": [
                     {
-                      "text": "Label",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": " (optional): Communicates the type of input being requested. Use Caption typography format.",
+                      "text": "Communicates the type of input requested. ",
                       "type": "text"
                     }
                   ]
@@ -89,16 +54,7 @@
                   },
                   "content": [
                     {
-                      "text": "Container",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": ": Contains the select field.",
+                      "text": "Container for the field.",
                       "type": "text"
                     }
                   ]
@@ -115,16 +71,7 @@
                   },
                   "content": [
                     {
-                      "text": "Icon",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": " (optional): Commonly used to clear the input field, communicate a warning or error, or toggle visibility.",
+                      "text": "Dropdown icon. Use 'arrow_drop_down' from the Material Symbols collection.",
                       "type": "text"
                     }
                   ]
@@ -141,16 +88,7 @@
                   },
                   "content": [
                     {
-                      "text": "Supporting text",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": " (optional): Give further help or communicate an error message. Use Caption typography format.",
+                      "text": "(Optional) Provide supporting text or communicate an error message.",
                       "type": "text"
                     }
                   ]

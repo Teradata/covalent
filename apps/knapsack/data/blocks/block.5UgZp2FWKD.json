@@ -1,5 +1,5 @@
 {
-  "id": "ROsmz3RWYN",
+  "id": "5UgZp2FWKD",
   "data": {
     "content": {
       "type": "doc",
@@ -7,7 +7,7 @@
         {
           "type": "table",
           "attrs": {
-            "equalColumns": true
+            "equalColumns": false
           },
           "content": [
             {
@@ -28,7 +28,7 @@
                       },
                       "content": [
                         {
-                          "text": "Anatomy",
+                          "text": "#",
                           "type": "text",
                           "marks": [
                             {
@@ -87,7 +87,7 @@
                       },
                       "content": [
                         {
-                          "text": "Value",
+                          "text": "1",
                           "type": "text"
                         }
                       ]
@@ -136,105 +136,7 @@
                       },
                       "content": [
                         {
-                          "text": "Label",
-                          "type": "text"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "tableCell",
-                  "attrs": {
-                    "colspan": 1,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "negative",
-                          "type": "text"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "tableRow",
-              "content": [
-                {
-                  "type": "tableCell",
-                  "attrs": {
-                    "colspan": 1,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "Container",
-                          "type": "text"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "tableCell",
-                  "attrs": {
-                    "colspan": 1,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "negative",
-                          "type": "text"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "tableRow",
-              "content": [
-                {
-                  "type": "tableCell",
-                  "attrs": {
-                    "colspan": 1,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "Icon",
+                          "text": "2",
                           "type": "text"
                         }
                       ]
@@ -283,7 +185,7 @@
                       },
                       "content": [
                         {
-                          "text": "Supporting text",
+                          "text": "3",
                           "type": "text"
                         }
                       ]
@@ -305,7 +207,105 @@
                       },
                       "content": [
                         {
-                          "text": "negative",
+                          "text": "outline",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "4",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "on-surface-variant",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "5",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "on-surface-variant",
                           "type": "text"
                         }
                       ]
@@ -319,6 +319,5 @@
       ]
     }
   },
-  "size": "medium",
   "blockType": "table"
 }
