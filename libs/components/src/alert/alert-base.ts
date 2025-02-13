@@ -6,14 +6,16 @@ import { Action, CloseReason, events } from '@material/banner/constants';
 
 import { html, LitElement, TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
-import { property, query } from 'lit/decorators.js';
+import { property, query, state } from 'lit/decorators.js';
 
 export class AlertBase extends LitElement {
   protected mdcFoundation!: MDCBannerFoundation;
   protected readonly mdcFoundationClass = MDCBannerFoundation;
+  private _resizeObserver!: ResizeObserver;
 
   @query('.mdc-banner') protected mdcRoot!: HTMLElement;
   @query('.mdc-banner__content') protected mdcContent!: HTMLElement;
+  @state() protected currentWidth = 0;
 
   @property({ type: Boolean, reflect: true })
   @observer(function (this: AlertBase, value: boolean) {
@@ -41,6 +43,26 @@ export class AlertBase extends LitElement {
   @property()
   state = '';
 
+  constructor() {
+    super();
+    // Create ResizeObserver with callback
+    this._resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const newWidth = entry.contentRect.width;
+        if (newWidth !== this.currentWidth) {
+          this.currentWidth = newWidth;
+          this.mdcFoundation.layout();
+        }
+      }
+    });
+  }
+
+  // Cleanup when element is removed
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this._resizeObserver.disconnect();
+  }
+
   protected reason: CloseReason = CloseReason.UNSPECIFIED;
 
   protected override render() {
@@ -53,7 +75,12 @@ export class AlertBase extends LitElement {
       active: this.state === 'active',
     };
     return html` <div class="${classMap(classes)}" role="banner">
-      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive" aria-label="${this.titleText}">
+      <div
+        class="mdc-banner__content"
+        role="alertdialog"
+        aria-live="assertive"
+        aria-label="${this.titleText}"
+      >
         <div class="mdc-banner__graphic-text-wrapper">
           ${this.icon ? this.renderIcon() : ''}
           <div class="mdc-banner__text">
@@ -70,7 +97,11 @@ export class AlertBase extends LitElement {
 
   /** @soyTemplate */
   protected renderIcon(): TemplateResult {
-    return html` <div class="mdc-banner__graphic" role="img" aria-label="${this.iconAriaLabel}">
+    return html` <div
+      class="mdc-banner__graphic"
+      role="img"
+      aria-label="${this.iconAriaLabel}"
+    >
       <slot name="icon">
         <cv-icon class="mdc-banner__icon"> ${this.icon} </cv-icon>
       </slot>
@@ -98,7 +129,7 @@ export class AlertBase extends LitElement {
             bubbles: true,
             cancelable: true,
             detail: { reason: action },
-          })
+          }),
         ),
       notifyClosed: () => {
         /* */
@@ -134,5 +165,7 @@ export class AlertBase extends LitElement {
     if (this.open) {
       this.mdcFoundation.open();
     }
+    // Observe when element is resized
+    this._resizeObserver.observe(this.mdcRoot);
   }
 }
