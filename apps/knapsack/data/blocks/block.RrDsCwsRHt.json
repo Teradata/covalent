@@ -24,7 +24,31 @@
           },
           "content": [
             {
-              "text": "...then you should also bookmark these projects. They're from a previous generation of the design system, but contain years worth of valuable examples to peruse. They're worth familiarizing yourself with, but be aware that they are visually out of date.",
+              "text": "...then you should also bookmark these projects. They're from a previous generation of the design system, but contain years worth of valuable examples to peruse. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Dig around in the various files inside these projects. They're mostly structured with documentation on the first page and then a bunch of component designs and examples on later pages. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "They're worth familiarizing yourself with, but be aware that they are visually out of date.",
               "type": "text"
             }
           ]

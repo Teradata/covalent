@@ -24,7 +24,25 @@
           },
           "content": [
             {
-              "text": "Visit figma.com and log in using your Teradata account.",
+              "text": "Visit ",
+              "type": "text"
+            },
+            {
+              "text": "figma.com",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://figma.com",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " and log in using your Teradata account.",
               "type": "text"
             }
           ]
