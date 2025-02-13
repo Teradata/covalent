@@ -11,6 +11,15 @@
         "image": "https://knapsack.imgix.net/site/covalent/figma-dzmrsgqrhjpng",
         "title": "Figma library",
         "description": "All our foundational Figma components can be found in this library."
+      },
+      {
+        "id": "JrHLIb2RN6",
+        "link": {
+          "path": "https://www.figma.com/design/5y0VXufoAsspMzd8G0bl0i/Material-Symbols?m=auto",
+          "external": true
+        },
+        "title": "Material Symbols",
+        "description": "All the iconography we use throughout our products can be found here."
       }
     ],
     "gridStyles": {
@@ -21,5 +30,7 @@
       "titleSize": "large"
     }
   },
-  "blockType": "shortcut-tiles"
+  "blockType": "shortcut-tiles",
+  "size": "large",
+  "spacing": "medium"
 }

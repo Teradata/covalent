@@ -24,7 +24,19 @@
           },
           "content": [
             {
-              "text": "We build on Material Design 2 as our design system foundation.",
+              "text": "Depending on the product, we build on top of versions 1 or 2 of the Material Design spec.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Older products were built on Material Design 1 standards and we still support those. All new products are starting from a Material Design 2 base, and these are what you'll find documentation for here.",
               "type": "text"
             }
           ]

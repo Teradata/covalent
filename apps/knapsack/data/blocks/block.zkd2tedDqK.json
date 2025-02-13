@@ -7,7 +7,7 @@
         {
           "type": "table",
           "attrs": {
-            "equalColumns": false
+            "equalColumns": true
           },
           "content": [
             {
@@ -192,5 +192,6 @@
       ]
     }
   },
-  "blockType": "table"
+  "blockType": "table",
+  "size": "large"
 }

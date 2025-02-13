@@ -36,7 +36,7 @@
           },
           "content": [
             {
-              "text": "These docs cover our  additions and any modifications we made to Material Design. It also covers our specific implementation details. For standard Material components, refer to Google's comprehensive documentation.",
+              "text": "These docs cover our  additions and any modifications we made to Material Design. It also covers our specific implementation details. For standard Material components, refer to Google's comprehensive documentation. Most component pages will have links in the additional resources section to the upstream Material Design spec for easy reference.",
               "type": "text"
             }
           ]

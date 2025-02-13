@@ -1,30 +1,18 @@
 {
-  "id": "Y6eNqNHOFZ",
+  "id": "RrDsCwsRHt",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": " ",
-              "type": "text"
-            }
-          ]
-        },
-        {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 3,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Projects to bookmark",
+              "text": "5. If you're working on older products",
               "type": "text"
             }
           ]
@@ -36,7 +24,7 @@
           },
           "content": [
             {
-              "text": "You'll want to create some bookmarks to help keep organized in your day-to-day work. Add stars to the following projects:",
+              "text": "...then you should also bookmark these projects. They're from a previous generation of the design system, but contain years worth of valuable examples to peruse. They're worth familiarizing yourself with, but be aware that they are visually out of date.",
               "type": "text"
             }
           ]
@@ -44,5 +32,6 @@
       ]
     }
   },
+  "size": "small",
   "blockType": "text-editor"
 }

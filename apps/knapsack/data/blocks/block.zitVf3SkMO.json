@@ -1,5 +1,5 @@
 {
-  "id": "lIchOeXRm3",
+  "id": "zitVf3SkMO",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 3,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Older examples",
+              "text": "1. Log in to Figma",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "These projects are from a previous generation of the design system, but contain years worth of valuable examples to peruse. They're worth familiarizing yourself with, but be aware that they are visually out of date. ",
+              "text": "Visit figma.com and log in using your Teradata account.",
               "type": "text"
             }
           ]
@@ -32,5 +32,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }

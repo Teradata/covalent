@@ -9,8 +9,8 @@
           "external": true
         },
         "image": "https://knapsack.imgix.net/site/covalent/material-design-pwazvl9qpng",
-        "title": "Material Design",
-        "description": "Our system uses Material Design 2 as a foundation. Review their docs for further context and extensive examples."
+        "title": "See also",
+        "description": "Material Design 2 documentation"
       }
     ],
     "gridStyles": {
@@ -18,7 +18,7 @@
     },
     "tileStyles": {
       "imageSize": "none",
-      "titleSize": "large"
+      "titleSize": "xsmall"
     }
   },
   "blockType": "shortcut-tiles"
