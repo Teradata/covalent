@@ -109,7 +109,7 @@
                       },
                       "content": [
                         {
-                          "text": "How to's and tutorials.",
+                          "text": "How tos and tutorials.",
                           "type": "text"
                         }
                       ]
@@ -286,7 +286,7 @@
                       },
                       "content": [
                         {
-                          "text": "What we call Patterns today, these are explanations for standard approaches to solving existing problems. For example, a whole end-to-end file upload sequence, which can have multiple stage, states, and variants depending on on your specific circumstance.",
+                          "text": "We refer to these as Patterns nowadays. These are explanations for standard approaches to solving existing problems. For example, a whole end-to-end file upload sequence, which can have multiple stages, states, and variants depending on on your specific circumstance.",
                           "type": "text"
                         }
                       ]

@@ -13,6 +13,15 @@
         "description": ""
       },
       {
+        "id": "pliUNgmMB",
+        "link": {
+          "name": "Accessibility",
+          "path": "/pages/accessibility"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/accessibility--AQT5oZG2J9.png",
+        "title": "Accessibility"
+      },
+      {
         "id": "OtxKkEX1FI",
         "link": {
           "name": "Color",
@@ -20,15 +29,6 @@
         },
         "image": "https://knapsack.imgix.net/site/covalent/color-zlgynxnkvpng",
         "title": "Color"
-      },
-      {
-        "id": "QfWJs0FvGa",
-        "link": {
-          "name": "Typography",
-          "path": "/pages/typography-3shrxwkyk"
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/typography-c7dggtibjpng",
-        "title": "Typography"
       },
       {
         "id": "e5vZWpD3an",
@@ -40,13 +40,13 @@
         "title": "Icons"
       },
       {
-        "id": "pliUNgmMB",
+        "id": "QfWJs0FvGa",
         "link": {
-          "name": "Accessibility",
-          "path": "/pages/accessibility"
+          "name": "Typography",
+          "path": "/pages/typography-3shrxwkyk"
         },
-        "image": "https://knapsack.imgix.net/site/covalent/accessibility--AQT5oZG2J9.png",
-        "title": "Accessibility"
+        "image": "https://knapsack.imgix.net/site/covalent/typography-c7dggtibjpng",
+        "title": "Typography"
       }
     ],
     "tileStyles": {
