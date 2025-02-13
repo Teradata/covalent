@@ -11,9 +11,9 @@
     "imageStyles": {
       "fit": "fill",
       "size": "auto",
+      "corners": "rounded",
       "seamless": true
     }
   },
-  "size": "large",
   "blockType": "design-src-tiles"
 }

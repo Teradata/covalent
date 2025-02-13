@@ -1,5 +1,5 @@
 {
-  "id": "VlWhJxQNN",
+  "id": "uaGjH513a5",
   "data": {
     "content": {
       "type": "doc",
@@ -28,7 +28,7 @@
                       },
                       "content": [
                         {
-                          "text": "Inline alert anatomy",
+                          "text": "Full-page alert anatomy",
                           "type": "text",
                           "marks": [
                             {
@@ -109,7 +109,7 @@
                       },
                       "content": [
                         {
-                          "text": "on-positive",
+                          "text": "on-surface",
                           "type": "text"
                         }
                       ]
@@ -158,10 +158,47 @@
                       },
                       "content": [
                         {
-                          "text": "positive",
+                          "text": "surface-container-highest",
                           "type": "text"
                         }
                       ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      }
                     }
                   ]
                 }
@@ -173,6 +210,5 @@
     }
   },
   "size": "medium",
-  "blockType": "table",
-  "spacing": "medium"
+  "blockType": "table"
 }
