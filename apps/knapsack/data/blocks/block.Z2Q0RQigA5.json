@@ -1,5 +1,5 @@
 {
-  "id": "FSJrgqvzsm",
+  "id": "Z2Q0RQigA5",
   "data": {
     "content": {
       "type": "doc",
@@ -12,19 +12,7 @@
           },
           "content": [
             {
-              "text": "Figma",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Our design tool of choice is Figma.  ",
+              "text": "Some basic tips",
               "type": "text"
             }
           ]

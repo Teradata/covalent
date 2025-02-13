@@ -1,0 +1,23 @@
+{
+  "id": "z8KxHdMwzT",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "VvIB1UiZ4",
+        "link": {
+          "path": "https://m2.material.io/design/layout/spacing-methods.html#baseline-grid",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Material Design spacing methods"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "centered": false
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

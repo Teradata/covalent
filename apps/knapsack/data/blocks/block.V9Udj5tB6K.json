@@ -1,0 +1,60 @@
+{
+  "id": "V9Udj5tB6K",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use base 8 measurements",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "All of our sizing follows an base 8 or base 4 measurement standard. This is better for UI design because it allows pixel perfect doubling of numbers, starting with the smallest: 1x1 pixel. Double it once, and you have 2x2 pixels, then 4x4, 8x8, etc. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "This prevents us from getting into situations where anti aliasing happens on small icons, thin lines, and elsewhere.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Tweak Figma to make this easier in your daily life. Open the Figma menu > Preferences > Nudge amount and set the \"Big nudge\" value to 8.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
