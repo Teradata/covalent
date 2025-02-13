@@ -1,5 +1,5 @@
 {
-  "id": "VlWhJxQNN",
+  "id": "s8la0SQi2B",
   "data": {
     "content": {
       "type": "doc",
@@ -109,7 +109,7 @@
                       },
                       "content": [
                         {
-                          "text": "on-positive",
+                          "text": "on-caution-container",
                           "type": "text"
                         }
                       ]
@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "positive",
+                          "text": "caution-container",
                           "type": "text"
                         }
                       ]

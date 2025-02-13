@@ -30,6 +30,5 @@
     },
     "hideComponentProps": true
   },
-  "blockType": "design-src-tiles",
-  "spacing": "medium"
+  "blockType": "design-src-tiles"
 }

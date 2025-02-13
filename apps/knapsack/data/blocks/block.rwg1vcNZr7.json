@@ -1,5 +1,5 @@
 {
-  "id": "VlWhJxQNN",
+  "id": "rwg1vcNZr7",
   "data": {
     "content": {
       "type": "doc",
@@ -28,7 +28,7 @@
                       },
                       "content": [
                         {
-                          "text": "Inline alert anatomy",
+                          "text": "Full-page alert anatomy",
                           "type": "text",
                           "marks": [
                             {
@@ -109,7 +109,7 @@
                       },
                       "content": [
                         {
-                          "text": "on-positive",
+                          "text": "on-secondary",
                           "type": "text"
                         }
                       ]
@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "positive",
+                          "text": "secondary",
                           "type": "text"
                         }
                       ]
@@ -173,6 +173,5 @@
     }
   },
   "size": "medium",
-  "blockType": "table",
-  "spacing": "medium"
+  "blockType": "table"
 }
