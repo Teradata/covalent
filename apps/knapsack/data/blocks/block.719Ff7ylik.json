@@ -1,18 +1,17 @@
 {
-  "id": "JYoYaFX2t",
+  "id": "719Ff7ylik",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "States",
+              "text": "Content",
               "type": "text"
             }
           ]
