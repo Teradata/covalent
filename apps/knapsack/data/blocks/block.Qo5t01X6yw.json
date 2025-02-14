@@ -42,5 +42,6 @@
       "titleSize": "large"
     }
   },
-  "blockType": "shortcut-tiles"
+  "blockType": "shortcut-tiles",
+  "spacing": "small"
 }
