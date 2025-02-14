@@ -15,6 +15,8 @@ export class AlertBase extends LitElement {
 
   @query('.mdc-banner') protected mdcRoot!: HTMLElement;
   @query('.mdc-banner__content') protected mdcContent!: HTMLElement;
+  @query('.mdc-banner__graphic-text-wrapper')
+  protected mdcGraphicTextWrapper!: HTMLElement;
   @state() protected currentWidth = 0;
 
   @property({ type: Boolean, reflect: true })
@@ -166,6 +168,6 @@ export class AlertBase extends LitElement {
       this.mdcFoundation.open();
     }
     // Observe when element is resized
-    this._resizeObserver.observe(this.mdcRoot);
+    this._resizeObserver.observe(this.mdcGraphicTextWrapper);
   }
 }
