@@ -3,6 +3,24 @@
   "data": {
     "shortcuts": [
       {
+        "id": "uvEmEzs806",
+        "link": {
+          "path": "https://teradata.sharepoint.com/:w:/r/teams/Experience1/_layouts/15/Doc.aspx?sourcedoc=%7BFD1EDB66-B95E-454F-9141-7416EF5BEBC0%7D&file=Web%20Accessibility%20Guidelines.docx&action=default&mobileredirect=true&DefaultItemOpen=1%3Fweb%3D1",
+          "external": true
+        },
+        "title": "See Also",
+        "description": "Teradata web accessibility guidelines"
+      },
+      {
+        "id": "RQiE37mwTx",
+        "link": {
+          "path": "https://teradata.sharepoint.com/:w:/r/teams/Experience1/_layouts/15/Doc.aspx?sourcedoc=%7B04BF4D16-C165-4ABD-92CD-ADEEA95A235D%7D&file=Teradata%20Accessibility%20Best%20Practices%20and%20Considerations.docx&action=default&mobileredirect=true&DefaultItemOpen=1%3Fweb%3D1",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Teradata accessibility best practices and resources"
+      },
+      {
         "id": "omIHLzxOc",
         "link": {
           "path": "https://m2.material.io/design/usability/accessibility.html#understanding-accessibility",

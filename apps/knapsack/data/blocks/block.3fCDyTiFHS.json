@@ -1,26 +1,19 @@
 {
   "id": "3fCDyTiFHS",
   "data": {
-    "content": {
-      "type": "doc",
-      "content": [
-        {
-          "type": "image",
-          "attrs": {
-            "alt": null,
-            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img--rZXKNXjtEV.png",
-            "title": null
-          }
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          }
-        }
-      ]
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "15684:8270"
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
     }
   },
   "size": "medium",
-  "blockType": "text-editor"
+  "blockType": "design-src-tiles"
 }

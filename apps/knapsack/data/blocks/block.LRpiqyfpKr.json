@@ -1,38 +1,19 @@
 {
   "id": "LRpiqyfpKr",
   "data": {
-    "content": {
-      "type": "doc",
-      "content": [
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          }
-        },
-        {
-          "type": "image",
-          "attrs": {
-            "alt": null,
-            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img--MinzCysAFp.png",
-            "title": null
-          }
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          }
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          }
-        }
-      ]
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "15677:8146"
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
     }
   },
   "size": "medium",
-  "blockType": "text-editor"
+  "blockType": "design-src-tiles"
 }
