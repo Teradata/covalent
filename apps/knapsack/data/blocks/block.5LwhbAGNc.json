@@ -33,16 +33,7 @@
                   },
                   "content": [
                     {
-                      "text": "Header: ",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Establishes context for the task list and introduces the purpose of the cards. The header uses semantic markup to support accessibility and screen readers.",
+                      "text": "Provides context and introduces the onboarding or task sequence using a title or message to succinctly communicate the overarching goal or status of the tasks.",
                       "type": "text"
                     }
                   ]
@@ -59,16 +50,7 @@
                   },
                   "content": [
                     {
-                      "text": "Progress:",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": " Displays task progress, helping users track completion in a visual and numerical format. The purpose is to encourage user engagement by showing the remaining tasks.",
+                      "text": "Wraps the onboarding cards in a collapsible format, which can be expanded or collapsed to show or hide the cards, helping manage screen real estate and focus.",
                       "type": "text"
                     }
                   ]
@@ -85,123 +67,7 @@
                   },
                   "content": [
                     {
-                      "text": "Section card:",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": " Cards are structured within a flexible, reusable container for consistency with each containing the following:",
-                      "type": "text"
-                    }
-                  ]
-                },
-                {
-                  "type": "bulletList",
-                  "content": [
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Icon: Provides a visual representation of the task",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Title: Clear action-based task description",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Description: Concise summary of the task’s purpose",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "listItem",
-                      "content": [
-                        {
-                          "type": "paragraph",
-                          "attrs": {
-                            "textAlign": "left"
-                          },
-                          "content": [
-                            {
-                              "text": "Call-to-Action (CTA): triggers next steps in the workflow",
-                              "type": "text"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "orderedList",
-          "attrs": {
-            "start": 1
-          },
-          "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "Navigation:",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": " Houses secondary controls, such as \"Skip All\", allowing users to bypass tasks. Supports efficient task management while preserving workflow control.",
+                      "text": "Visual indicator showing the user's progression through the onboarding steps, typically represented as \"X/Y Complete,\" which helps motivate and guide users through the setup process.",
                       "type": "text"
                     }
                   ]
@@ -218,16 +84,7 @@
                   },
                   "content": [
                     {
-                      "text": "Button: ",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Primary interactive elements directing users toward task completion. Uses ARIA roles to enhance accessibility and usability.",
+                      "text": "Positioned prominently to allow users to bypass the entire onboarding process or task list, enabling those familiar with the system to quickly move past introductory tasks.",
                       "type": "text"
                     }
                   ]
@@ -244,16 +101,58 @@
                   },
                   "content": [
                     {
-                      "text": "Icon button:",
-                      "type": "text",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ]
-                    },
+                      "text": "An icon button that changes state (e.g., up/down arrow) to control the expansion or collapse of the accordion container, indicating whether the accordion is open or closed.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
                     {
-                      "text": " Small, action-driven elements enabling secondary interactions, such as expanding or skipping content. Provides progressive disclosure to maintain a clean UI",
+                      "text": "Positioned at the edges of the card carousel, these buttons allow users to view additional cards by navigating left or right through the onboarding card carousel.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Individual containers for each task or step in the onboarding process, which include icons, titles, descriptions, and a call-to-action(CTA) button specific to each task, providing a clear and actionable path for users.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Dots or other markers that indicate the current slide within the carousel and the total number of slides, with the currently active card highlighted in a darker shade to clearly show the user's position within the sequence.",
                       "type": "text"
                     }
                   ]
