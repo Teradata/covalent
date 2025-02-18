@@ -26,14 +26,7 @@
           "templateId": "web-components-FXCMXD35mF"
         }
       ],
-      "primaryAction": [
-        {
-          "type": "template-demo",
-          "demoId": "wJJ2tksHEK",
-          "patternId": "button",
-          "templateId": "web-components-raE1x4tYL"
-        }
-      ],
+      "primaryAction": [],
       "details": [
         {
           "type": "template-demo",

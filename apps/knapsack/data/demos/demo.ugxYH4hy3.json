@@ -22,14 +22,7 @@
           "type": "text"
         }
       ],
-      "primaryAction": [
-        {
-          "type": "template-demo",
-          "demoId": "wJJ2tksHEK",
-          "patternId": "button",
-          "templateId": "web-components-raE1x4tYL"
-        }
-      ]
+      "primaryAction": []
     }
   }
 }
