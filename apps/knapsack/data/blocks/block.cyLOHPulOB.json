@@ -7,9 +7,9 @@
         {
           "type": "image",
           "attrs": {
-            "alt": null,
-            "src": "https://knapsack.imgix.net/site/covalent/placeholder-img-hero--9rKnSwT8r.png",
-            "title": null
+            "alt": "Accessibility hero image",
+            "src": "https://knapsack.imgix.net/site/covalent/foundationsaccessibilityhero--TT2cKd6LV.png",
+            "title": "Accessibility hero image"
           }
         }
       ]
