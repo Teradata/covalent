@@ -1,3 +1,10 @@
+## [10.0.2](https://github.com/Teradata/covalent/compare/v10.0.1...v10.0.2) (2025-02-19)
+
+### Bug Fixes
+
+- **components:** adjusting the height layout of alert on resize ([6f94c42](https://github.com/Teradata/covalent/commit/6f94c42da472f0be56f8aee1906f5147d2161c4e))
+- **components:** adjusting the height layout of alert on resize ([2702d27](https://github.com/Teradata/covalent/commit/2702d27627812fa7ad19ff38b75802abc4d7b0f3))
+
 ## [10.0.1](https://github.com/Teradata/covalent/compare/v10.0.0...v10.0.1) (2025-02-07)
 
 ### Bug Fixes
