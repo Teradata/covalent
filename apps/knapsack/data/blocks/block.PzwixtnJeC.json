@@ -20,7 +20,7 @@
                   },
                   "content": [
                     {
-                      "text": " (Optional) Commonly used to indicate search functionality.",
+                      "text": " Commonly used to indicate search functionality.",
                       "type": "text"
                     }
                   ]
@@ -37,7 +37,7 @@
                   },
                   "content": [
                     {
-                      "text": "(Optional) Communicates the type of text input being requested.",
+                      "text": "Communicates the type of text input being requested.",
                       "type": "text"
                     }
                   ]
@@ -54,7 +54,7 @@
                   },
                   "content": [
                     {
-                      "text": "(Optional) Serves as placeholder text and will be replaced by the user's input.",
+                      "text": "Serves as placeholder text and will be replaced by the user's input.",
                       "type": "text"
                     }
                   ]
@@ -88,7 +88,7 @@
                   },
                   "content": [
                     {
-                      "text": " (Optional) Commonly used to clear the input field, communicate a warning or error, or toggle visibility.",
+                      "text": "Commonly used to clear the input field, communicate a warning or error, or toggle visibility.",
                       "type": "text"
                     }
                   ]
@@ -105,7 +105,7 @@
                   },
                   "content": [
                     {
-                      "text": " (Optional) Give further help or communicate an error message. Use Caption typography format.",
+                      "text": "Give further help or communicate an error message. Use Caption typography format.",
                       "type": "text"
                     }
                   ]
