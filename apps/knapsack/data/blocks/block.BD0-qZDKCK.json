@@ -226,6 +226,5 @@
     "showHeader": false,
     "description": "Use “default” outline buttons for everything except the primary action (if any)."
   },
-  "spacing": "small",
   "blockType": "table"
 }
