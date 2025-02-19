@@ -267,7 +267,7 @@
   "size": "small",
   "header": {
     "title": "Active",
-    "showHeader": true,
+    "showHeader": false,
     "description": "A change has been made in the page. For example, a bulk selection or a form edit."
   },
   "blockType": "table"

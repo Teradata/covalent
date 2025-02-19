@@ -273,7 +273,7 @@
   "size": "small",
   "header": {
     "title": "Negative",
-    "showHeader": true,
+    "showHeader": false,
     "description": "Something negative happened, such as a form validation error."
   },
   "blockType": "table"

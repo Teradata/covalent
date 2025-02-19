@@ -267,7 +267,7 @@
   "size": "small",
   "header": {
     "title": "Pending",
-    "showHeader": true,
+    "showHeader": false,
     "description": "Something is waiting before taking action."
   },
   "blockType": "table"

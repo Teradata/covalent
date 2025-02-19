@@ -273,7 +273,7 @@
   "size": "small",
   "header": {
     "title": "Positive",
-    "showHeader": true,
+    "showHeader": false,
     "description": "Something good happened."
   },
   "blockType": "table"
