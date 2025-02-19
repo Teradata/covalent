@@ -13,12 +13,7 @@
           "content": [
             {
               "text": "Secondary",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "type": "text"
             }
           ]
         }

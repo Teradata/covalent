@@ -28,25 +28,6 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          }
-        },
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 3,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Selected",
-              "type": "text"
-            }
-          ]
         }
       ]
     }
