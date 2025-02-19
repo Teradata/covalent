@@ -9,7 +9,8 @@
     ".": {
       "sass": "./index.scss",
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     },
     "./icon/icon.theme": "./icon/_icon.theme.scss",
     "./data-table.theme": "./data-table/_data-table.theme.scss",
