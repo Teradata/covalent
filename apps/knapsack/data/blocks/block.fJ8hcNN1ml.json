@@ -16,18 +16,6 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "The states below use state layers to communicate interaction state. See the Colors page under Foundations for more details.",
-              "type": "text"
-            }
-          ]
         }
       ]
     }

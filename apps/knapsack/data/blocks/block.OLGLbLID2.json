@@ -1,5 +1,5 @@
 {
-  "id": "GTPofHZITW",
+  "id": "OLGLbLID2",
   "data": {
     "content": {
       "type": "doc",
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "The following interaction states are available for buttons. See the state layers section on the ",
+              "text": "The following interaction states are available for checkboxes. See the state layers section on the ",
               "type": "text"
             },
             {
@@ -35,8 +35,9 @@
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "/pages/color",
-                    "class": null
+                    "href": "/site/covalent/OnqLe3iEF/pages/color",
+                    "class": null,
+                    "target": "_self"
                   }
                 }
               ]

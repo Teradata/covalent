@@ -13,12 +13,7 @@
           "content": [
             {
               "text": "Negative",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "type": "text"
             }
           ]
         }

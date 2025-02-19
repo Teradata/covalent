@@ -1,19 +1,19 @@
 {
-  "id": "gRCFJRAgTx",
+  "id": "lolMIN1sCt",
   "data": {
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "15941:20723"
+        "nodeId": "15941:20810"
       }
     ],
     "columns": "1",
     "imageStyles": {
       "fit": "fill",
       "size": "auto",
+      "corners": "rounded",
       "seamless": true
     }
   },
-  "blockType": "design-src-tiles",
-  "size": "small"
+  "blockType": "design-src-tiles"
 }
