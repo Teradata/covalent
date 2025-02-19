@@ -12,6 +12,18 @@
               "type": "paragraph",
               "content": [
                 {
+                  "text": "Example label",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "hardBreak"
+                },
+                {
                   "text": "\"Please enter a valid email address.\"",
                   "type": "text"
                 }
@@ -29,6 +41,18 @@
             {
               "type": "paragraph",
               "content": [
+                {
+                  "text": "Example label",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "hardBreak"
+                },
                 {
                   "text": "\"Error 400: Invalid field.\"",
                   "type": "text"
