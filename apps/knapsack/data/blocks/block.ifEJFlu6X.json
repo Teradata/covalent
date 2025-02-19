@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "caustion",
+                          "text": "on-caution",
                           "type": "text"
                         }
                       ]
@@ -207,7 +207,7 @@
                       },
                       "content": [
                         {
-                          "text": "on-caution",
+                          "text": "caution",
                           "type": "text"
                         }
                       ]

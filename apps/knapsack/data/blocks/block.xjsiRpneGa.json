@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "outline",
+                          "text": "primary",
                           "type": "text"
                         }
                       ]
@@ -207,7 +207,7 @@
                       },
                       "content": [
                         {
-                          "text": "primary",
+                          "text": "outline",
                           "type": "text"
                         }
                       ]

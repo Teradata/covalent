@@ -16,18 +16,6 @@
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "[This anatomy needs to capture button visual specs:  spacing, typography, padding, and colors for each variant(raised, outline, text). the component will also need to show optional props e.g. icon and icon position]",
-              "type": "text"
-            }
-          ]
         }
       ]
     }

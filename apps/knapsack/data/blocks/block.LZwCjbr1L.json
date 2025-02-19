@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "emphasis",
+                          "text": "on-emphasis",
                           "type": "text"
                         }
                       ]
@@ -207,7 +207,7 @@
                       },
                       "content": [
                         {
-                          "text": "on-emphasis",
+                          "text": "emphasis",
                           "type": "text"
                         }
                       ]

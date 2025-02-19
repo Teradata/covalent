@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "primary",
+                          "text": "on-primary",
                           "type": "text"
                         }
                       ]
@@ -207,7 +207,7 @@
                       },
                       "content": [
                         {
-                          "text": "on-primary",
+                          "text": "primary",
                           "type": "text"
                         }
                       ]
