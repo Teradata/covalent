@@ -12,16 +12,21 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Example placeholder:",
+                  "text": "Example placeholder",
                   "type": "text",
                   "marks": [
                     {
                       "type": "bold"
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
                 {
-                  "text": " \"Select country\"",
+                  "text": "\"Select country\"",
                   "type": "text"
                 }
               ]
@@ -39,16 +44,21 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Example Placeholder:",
+                  "text": "Example Placeholder",
                   "type": "text",
                   "marks": [
                     {
                       "type": "bold"
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
                 {
-                  "text": " \"Please pick a country from this list\"",
+                  "text": "\"Please pick a country from this list\"",
                   "type": "text"
                 }
               ]

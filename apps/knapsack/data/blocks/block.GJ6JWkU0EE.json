@@ -12,16 +12,21 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Example Label:",
+                  "text": "Example Label",
                   "type": "text",
                   "marks": [
                     {
                       "type": "bold"
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
                 {
-                  "text": " \"Monthly Plan\"",
+                  "text": "\"Monthly Plan\"",
                   "type": "text"
                 }
               ]
@@ -39,7 +44,21 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Example Label:",
+                  "text": "Example Label",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "\"",
                   "type": "text",
                   "marks": [
                     {
@@ -48,7 +67,7 @@
                   ]
                 },
                 {
-                  "text": " \"Choose this option if you want a monthly plan.\"",
+                  "text": "Choose this option if you want a monthly plan.\"",
                   "type": "text"
                 }
               ]
