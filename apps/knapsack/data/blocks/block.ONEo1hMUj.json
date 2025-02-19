@@ -1,17 +1,18 @@
 {
-  "id": "ZjsGrsLvSx",
+  "id": "ONEo1hMUj",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Content",
+              "text": "States",
               "type": "text"
             }
           ]

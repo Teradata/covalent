@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "secondary",
+                          "text": "on-secondary",
                           "type": "text"
                         }
                       ]
@@ -207,7 +207,7 @@
                       },
                       "content": [
                         {
-                          "text": "on-secondary",
+                          "text": "secondary",
                           "type": "text"
                         }
                       ]

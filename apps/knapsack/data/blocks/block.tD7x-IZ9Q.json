@@ -109,7 +109,7 @@
                       },
                       "content": [
                         {
-                          "text": "negative",
+                          "text": "on-negative",
                           "type": "text"
                         }
                       ]

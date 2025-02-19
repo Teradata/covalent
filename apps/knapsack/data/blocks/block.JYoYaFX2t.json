@@ -12,7 +12,31 @@
           },
           "content": [
             {
-              "text": "States",
+              "text": "Variants",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": " Buttons are outlined by default or filled for higher emphasis. Use outlined buttons for everything except the primary action (if any). Use filled buttons for the primary action.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Buttons can have one icon to the left or right of the text.",
               "type": "text"
             }
           ]
