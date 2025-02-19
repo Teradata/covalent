@@ -12,13 +12,43 @@
           },
           "content": [
             {
-              "text": "Default",
+              "text": "Interaction states",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The following interaction states are available for buttons. See the state layers section on the ",
+              "type": "text"
+            },
+            {
+              "text": "Colors page",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/color",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " for more details.",
+              "type": "text"
             }
           ]
         }
