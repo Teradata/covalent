@@ -88,7 +88,7 @@
                   },
                   "content": [
                     {
-                      "text": "(Optional) Provide supporting text or communicate an error message.",
+                      "text": "Provide supporting text or communicate an error message.",
                       "type": "text"
                     }
                   ]

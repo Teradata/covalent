@@ -37,7 +37,7 @@
                   },
                   "content": [
                     {
-                      "text": "(Optional) Gives a brief description.",
+                      "text": "Gives a brief description.",
                       "type": "text"
                     }
                   ]
