@@ -11,6 +11,7 @@
     "imageStyles": {
       "fit": "fill",
       "size": "auto",
+      "corners": "rounded",
       "seamless": true
     }
   },

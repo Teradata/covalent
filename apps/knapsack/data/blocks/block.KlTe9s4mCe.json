@@ -273,7 +273,7 @@
   "size": "small",
   "header": {
     "title": "Caution",
-    "showHeader": true,
+    "showHeader": false,
     "description": "A warning or other item that should draw attention but isn’t necessarily an error."
   },
   "blockType": "table"

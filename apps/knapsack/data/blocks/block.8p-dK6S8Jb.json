@@ -261,7 +261,7 @@
   "size": "small",
   "header": {
     "title": "Default/inactive",
-    "showHeader": true,
+    "showHeader": false,
     "description": "Nothing in particular is happening."
   },
   "blockType": "table"

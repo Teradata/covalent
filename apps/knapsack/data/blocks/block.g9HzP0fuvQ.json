@@ -267,7 +267,7 @@
   "size": "small",
   "header": {
     "title": "Loading",
-    "showHeader": true,
+    "showHeader": false,
     "description": "An ongoing operation is underway."
   },
   "blockType": "table"
