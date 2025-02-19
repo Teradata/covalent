@@ -15,5 +15,8 @@
     }
   },
   "blockType": "design-src-tiles",
-  "size": "large"
+  "size": "large",
+  "header": {
+    "showHeader": false
+  }
 }
