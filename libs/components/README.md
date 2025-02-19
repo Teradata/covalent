@@ -63,6 +63,38 @@ import '@covalent/components/button';
 export class AppComponent {}
 ```
 
+### Using with React
+
+While Covalent web components work directly in React, for optimal TypeScript support and React-centric APIs, we recommend using our dedicated React wrapper library. This provides:
+
+✅ Native React prop handling  
+✅ First-class event binding  
+✅ Full TS type definitions  
+✅ Component documentation in JSX format
+
+```jsx
+// Example usage
+import { CovalentButton, CovalentSwitch } from '@covalent/components-react';
+
+function App() {
+  return (
+    <>
+      <CovalentSwitch checked onChange={(e) => console.log(e.detail)} />
+      <CovalentButton label="React Power" onClick={() => alert('Works like regular React components!')} />
+    </>
+  );
+}
+```
+
+**Get Started with React:**  
+📚 See the [Full React Components Documentation](https://github.com/Teradata/covalent/blob/main/libs/components-react/README.md)
+
+```bash
+npm install @covalent/components-react
+# or
+yarn add @covalent/components-react
+```
+
 ### 🧩 Component Catalog
 
 Importing individual Covalent web components is supported and encouraged for production deployments. By importing only the components you need, you can reduce the overall code size and improve the performance of your application.
