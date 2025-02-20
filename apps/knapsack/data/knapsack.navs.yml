@@ -440,6 +440,7 @@ order:
   - dialog
   - radio
   - select
+  - textfield
   - app-shell
   - badge
   - breadcrumbs
@@ -486,7 +487,6 @@ order:
   - tree-list
   - tree-list-item
   - text-area
-  - textfield
   - text-lockup
   - text
   - patterns
