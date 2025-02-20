@@ -36,10 +36,49 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Hit Area State",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": ": ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "A visible focus indicator highlights the banner notification when it gains keyboard focus, ensuring that users can easily identify which element is active.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }
   },
   "blockType": "text-editor",
-  "size": "medium"
+  "size": "small"
 }

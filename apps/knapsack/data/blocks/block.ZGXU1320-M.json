@@ -1,9 +1,101 @@
 {
-  "id": "LGQc1BkMqb",
+  "id": "ZGXU1320-M",
   "data": {
     "content": {
       "type": "doc",
       "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Buttons should be fully operable via keyboard:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Enter/Return key",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": Activates the button’s action.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Spacebar",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": Activates the button’s action, consistent with standard keyboard behavior.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Provide clear feedback, such as visual states (e.g., hover, focus, active), to indicate when the button is ready to be interacted with.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
         {
           "type": "paragraph",
           "attrs": {
@@ -80,7 +172,8 @@
                           "attrs": {
                             "rel": "noopener noreferrer nofollow",
                             "href": "#",
-                            "class": null
+                            "class": null,
+                            "target": "_self"
                           }
                         }
                       ]
@@ -115,6 +208,6 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "medium"
+  "size": "small",
+  "blockType": "text-editor"
 }
