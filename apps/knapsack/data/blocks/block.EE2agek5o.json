@@ -1,0 +1,35 @@
+{
+  "id": "EE2agek5o",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Our products are solutions to customer problems. Our products should not be problems for users to solve. Neither should our product content. That’s why we do all the hard work of thinking, clarifying, and simplifying. We do this, as trusted guides, so users don’t have to.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Follow these conventions and guidelines to create confidence-inspiring content that users count on and enjoy.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
