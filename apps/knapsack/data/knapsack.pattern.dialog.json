@@ -96,6 +96,7 @@
       },
       "demoIds": ["yovRt8o986", "gI9Hrcjx-I", "gI9Hrcjx-I", "gI9Hrcjx-I"],
       "blockIds": [
+        "XdyFQ9lNNW",
         "qJo5uTJEn3",
         "cT2x20EdNp",
         "ToPwHs3IQ3",
@@ -272,6 +273,11 @@
       "title": "Figma Component",
       "fileId": "KvXVAmYdCVAS7hzkOa73Em",
       "componentId": "7979:30491"
+    }
+  },
+  "settings": {
+    "tableOfContents": {
+      "excludeHeadings": ["h6", "h5", "h4"]
     }
   }
 }
