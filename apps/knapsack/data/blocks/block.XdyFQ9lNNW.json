@@ -1,0 +1,27 @@
+{
+  "id": "XdyFQ9lNNW",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": null
+          },
+          "content": [
+            {
+              "text": "import \"@covalent/components/dialog\";",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "code-snippet",
+  "header": {
+    "showHeader": true,
+    "title": "How to import"
+  }
+}

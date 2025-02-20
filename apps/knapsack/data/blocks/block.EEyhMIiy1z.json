@@ -1,0 +1,27 @@
+{
+  "id": "EEyhMIiy1z",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": "javascript"
+          },
+          "content": [
+            {
+              "text": "import '@covalent/components/action-ribbon';",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "code-snippet",
+  "header": {
+    "showHeader": true,
+    "title": "How to Import"
+  }
+}

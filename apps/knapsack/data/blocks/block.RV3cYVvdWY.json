@@ -1,0 +1,27 @@
+{
+  "id": "RV3cYVvdWY",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": null
+          },
+          "content": [
+            {
+              "text": "import '@covalent/components/button';",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "code-snippet",
+  "header": {
+    "showHeader": true,
+    "title": "How to Import"
+  }
+}
