@@ -24,11 +24,13 @@ export class CovalentDialog extends DialogBase {
 
     const overlayContainer = document.querySelector('.cdk-overlay-container');
 
-    setTimeout(() => {
-      if (overlayContainer) {
-        overlayContainer.removeAttribute('inert');
-      }
-    }, 200);
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        if (overlayContainer) {
+          overlayContainer.removeAttribute('inert');
+        }
+      }, 200);
+    });
   }
 }
 
