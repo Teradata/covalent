@@ -1,3 +1,15 @@
+# [10.1.0-beta.1](https://github.com/Teradata/covalent/compare/v10.0.2...v10.1.0-beta.1) (2025-02-20)
+
+### Bug Fixes
+
+- **components:** fix dialog integration with angular cdk ([30b037c](https://github.com/Teradata/covalent/commit/30b037cd3fa930719d15bf974f669e5caf5f578d))
+- **knapsack:** app-shell styling in knapsack ([4e7bef8](https://github.com/Teradata/covalent/commit/4e7bef8349e817e8e6c23275bb4c00a864b5ff98))
+- **knapsack:** app-shell styling in knapsack ([36e4f53](https://github.com/Teradata/covalent/commit/36e4f53b8e6185153bfa4048ec958283b7032cb4))
+
+### Features
+
+- **knapsack:** add new demo for outlined button ([55bb35a](https://github.com/Teradata/covalent/commit/55bb35a048c5216648fe34bf1b3af997215d23cf))
+
 ## [10.0.2](https://github.com/Teradata/covalent/compare/v10.0.1...v10.0.2) (2025-02-19)
 
 ### Bug Fixes
