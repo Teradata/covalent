@@ -5,19 +5,6 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Anatomy",
-              "type": "text"
-            }
-          ]
-        },
-        {
           "type": "orderedList",
           "attrs": {
             "start": 1
@@ -33,7 +20,7 @@
                   },
                   "content": [
                     {
-                      "text": "Provides context and introduces the onboarding or task sequence using a title or message to succinctly communicate the overarching goal or status of the tasks.",
+                      "text": "Content needed",
                       "type": "text"
                     }
                   ]
@@ -152,7 +139,7 @@
                   },
                   "content": [
                     {
-                      "text": "Dots or other markers that indicate the current slide within the carousel and the total number of slides, with the currently active card highlighted in a darker shade to clearly show the user's position within the sequence.",
+                      "text": "Dots or other markers that indicate the current slide within the carousel and the total number of slides, with the currently active card highlighted in a darker shade to clearly show the user's position within the sequence.Provides context and introduces the onboarding or task sequence using a title or message to succinctly communicate the overarching goal or status of the tasks.",
                       "type": "text"
                     }
                   ]
