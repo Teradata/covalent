@@ -16,6 +16,18 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use the following typography tokens.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

@@ -405,5 +405,6 @@
       ]
     }
   },
-  "blockType": "table"
+  "blockType": "table",
+  "size": "small"
 }
