@@ -73,6 +73,10 @@
   /* Desktop only styles */
   @media only screen and (min-width: 768px) {
     position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
   }
 
@@ -92,7 +96,9 @@
   height: 100vh;
   grid-area: main;
   overflow: auto;
-  transition: margin-left 200ms ease-in-out, margin-right 200ms ease-in-out;
+  transition:
+    margin-left 200ms ease-in-out,
+    margin-right 200ms ease-in-out;
 
   .main-wrapper {
     margin: 0 auto;
@@ -266,7 +272,7 @@ nav.navigation {
   background-color: var(--mdc-theme-background);
   z-index: var(
     --cv-app-shell-navigation-z-index,
-    2
+    6
   ); // must be greater than --cv-app-shell-user-menu-z-index
 
   .toggle-drawer {
@@ -317,8 +323,10 @@ nav.navigation {
   }
 
   .cov-drawer--hovered & {
-    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 20%),
-      0 24px 38px 3px rgba(0, 0, 0, 14%), 0 9px 46px 8px rgba(0, 0, 0, 12%);
+    box-shadow:
+      0 11px 15px -7px rgba(0, 0, 0, 20%),
+      0 24px 38px 3px rgba(0, 0, 0, 14%),
+      0 9px 46px 8px rgba(0, 0, 0, 12%);
     background-color: var(--mdc-theme-surface);
   }
 }
