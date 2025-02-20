@@ -29,7 +29,7 @@ export class CovalentDialog extends DialogBase {
         if (overlayContainer) {
           overlayContainer.removeAttribute('inert');
         }
-      }, 200);
+      }, 500);
     });
   }
 }
