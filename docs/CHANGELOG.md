@@ -1,3 +1,9 @@
+# [10.1.0-beta.2](https://github.com/Teradata/covalent/compare/v10.1.0-beta.1...v10.1.0-beta.2) (2025-02-20)
+
+### Bug Fixes
+
+- **components:** fix dialog integration with angular cdk ([9f936e8](https://github.com/Teradata/covalent/commit/9f936e84f6b724361e09fb0d9a7ba1ca38344af9))
+
 # [10.1.0-beta.1](https://github.com/Teradata/covalent/compare/v10.0.2...v10.1.0-beta.1) (2025-02-20)
 
 ### Bug Fixes
