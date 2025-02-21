@@ -12,7 +12,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Heading:",
+                  "text": "Heading",
                   "type": "text",
                   "marks": [
                     {
@@ -35,7 +35,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Use sentence style with no ending punctuation.",
+                  "text": "Use imperative verbs and sentence style.",
                   "type": "text"
                 }
               ]
@@ -44,7 +44,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Message:",
+                  "text": "Message",
                   "type": "text",
                   "marks": [
                     {
@@ -58,7 +58,33 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Use imperative verbs when speaking to the the user about the task at hand. Don't use permissive language such as \"you can.\"",
+                  "text": "When writing about benefits of completing the task, use the future sense to create a human-like tone, for example, ",
+                  "type": "text"
+                },
+                {
+                  "text": "you'll",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "italic"
+                    }
+                  ]
+                },
+                {
+                  "text": " or ",
+                  "type": "text"
+                },
+                {
+                  "text": "they'll",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "italic"
+                    }
+                  ]
+                },
+                {
+                  "text": ".",
                   "type": "text"
                 }
               ]
@@ -67,7 +93,20 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Use future sense to create a human-like tone  when speaking about benefits of the task completion.",
+                  "text": "If the task completion will enable functionalities for other people, be clear about who's doing what by using phrases like ",
+                  "type": "text"
+                },
+                {
+                  "text": "they'll",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "italic"
+                    }
+                  ]
+                },
+                {
+                  "text": ". ",
                   "type": "text"
                 }
               ]
@@ -76,7 +115,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Call to action:",
+                  "text": "Call to action",
                   "type": "text",
                   "marks": [
                     {
@@ -108,7 +147,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Heading:",
+                  "text": "Heading",
                   "type": "text",
                   "marks": [
                     {
@@ -140,7 +179,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Message:",
+                  "text": "Message",
                   "type": "text",
                   "marks": [
                     {
@@ -163,7 +202,20 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Don't use present sense when talking about benefits of the task completion. We strive to be human and motivating in onboarding.  ",
+                  "text": "Don't use the present sense when writing about benefits of completing the task. The future tense, for example, ",
+                  "type": "text"
+                },
+                {
+                  "text": "They'll manage users...,",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "italic"
+                    }
+                  ]
+                },
+                {
+                  "text": " is a better choice, because onboarding requires a conversational tone.",
                   "type": "text"
                 }
               ]
@@ -172,7 +224,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Call to action:",
+                  "text": "Call to action",
                   "type": "text",
                   "marks": [
                     {

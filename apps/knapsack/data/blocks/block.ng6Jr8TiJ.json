@@ -1,0 +1,81 @@
+{
+  "id": "ng6Jr8TiJ",
+  "data": {
+    "guidelines": [
+      {
+        "id": "qMQnsmWRh4",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Link to UIs where people can complete a task. ",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Onboarding cards are primarily meant for introducing workflows. They allow people to learn by doing. ",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "bAyEDWVjr",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Don't link to documentation.  ",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use cards to link to UIs where people can complete a task, ",
+                  "type": "text"
+                },
+                {
+                  "text": "not read about",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "italic"
+                    }
+                  ]
+                },
+                {
+                  "text": " how to complete a task.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph"
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}
