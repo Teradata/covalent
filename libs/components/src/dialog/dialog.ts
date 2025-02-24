@@ -1,8 +1,7 @@
 import { css, PropertyValues, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 import { DialogBase } from '@material/mwc-dialog/mwc-dialog-base';
 import { styles as baseStyles } from '@material/mwc-dialog/mwc-dialog.css';
-import { observer } from '@material/mwc-base/observer.js';
 
 import styles from './dialog.scss?inline';
 
