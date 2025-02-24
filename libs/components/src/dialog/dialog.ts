@@ -57,8 +57,7 @@ export class CovalentDialog extends DialogBase {
                 node.hasAttribute('inert')
               ) {
                 node.removeAttribute('inert');
-
-                console.log('removed inert');
+                observer.disconnect();
               }
             }
           });
