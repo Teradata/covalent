@@ -22,19 +22,6 @@ export class CovalentDialog extends DialogBase {
 
   observer!: MutationObserver;
 
-  protected updated(_changedProperties: PropertyValues): void {
-    super.updated(_changedProperties);
-
-    const overlayContainer = document.querySelector('#storybook-root');
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        if (overlayContainer) {
-          overlayContainer.removeAttribute('inert');
-        }
-      }, 500);
-    });
-  }
-
   protected firstUpdated() {
     super.firstUpdated();
 
@@ -47,17 +34,16 @@ export class CovalentDialog extends DialogBase {
         if (mutation.type === 'childList') {
           // Check if nodes have been added
           mutation.addedNodes.forEach((node) => {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-              console.log('Element added to DOM:', node);
-              // check if node has class cdk-overlay-container and remove the attribute inert if present
-              if (
-                node instanceof HTMLElement &&
-                node.classList.contains('cdk-overlay-container') &&
-                node.hasAttribute('inert')
-              ) {
+            if (
+              node.nodeType === Node.ELEMENT_NODE &&
+              node instanceof HTMLElement &&
+              node.classList.contains('cdk-overlay-container') &&
+              node.hasAttribute('inert')
+            ) {
+              setTimeout(() => {
                 node.removeAttribute('inert');
                 observer.disconnect();
-              }
+              });
             }
           });
         }
@@ -68,8 +54,7 @@ export class CovalentDialog extends DialogBase {
     this.observer = new MutationObserver(callback);
 
     // Start observing the target node for configured mutations
-    const config = { childList: true, subtree: true };
-    this.observer.observe(document.body, config);
+    this.observer.observe(document.body, { childList: true, subtree: true });
   }
 
   disconnectedCallback() {
