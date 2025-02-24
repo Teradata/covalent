@@ -1,3 +1,14 @@
+# [10.1.0-beta.4](https://github.com/Teradata/covalent/compare/v10.1.0-beta.3...v10.1.0-beta.4) (2025-02-24)
+
+### Bug Fixes
+
+- **dialog:** remove dialog from blocking elements ([e93d278](https://github.com/Teradata/covalent/commit/e93d2785a0be02f8229b88b91b1bfb3700052afe))
+- **dialog:** remove dialog from blocking elements ([5c72ea7](https://github.com/Teradata/covalent/commit/5c72ea7722f4afa50a23e0aa4787a4fd5b293121))
+
+### Features
+
+- **components:** using mutation observer for dialog inert ([3263cb9](https://github.com/Teradata/covalent/commit/3263cb962ac8cf804e3a6b93128385c0c79a6a4b))
+
 # [10.1.0-beta.3](https://github.com/Teradata/covalent/compare/v10.1.0-beta.2...v10.1.0-beta.3) (2025-02-20)
 
 ### Bug Fixes
