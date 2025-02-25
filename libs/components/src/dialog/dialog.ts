@@ -43,7 +43,7 @@ export class CovalentDialog extends DialogBase {
               setTimeout(() => {
                 node.removeAttribute('inert');
                 observer.disconnect();
-              });
+              }, 500);
             }
           });
         }

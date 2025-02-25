@@ -26,7 +26,7 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
       const button = document.body.querySelector('#dialog-button');
       const helpToggleButton = document.body.querySelector('.help-toggle');
       const fullscreenCloseButton = document.body.querySelector(
-        '.full-screen-dialog-close'
+        '.full-screen-dialog-close',
       );
       button.addEventListener('click', () => {
         const dialog = document.body.querySelector('#dialog1');
@@ -43,7 +43,7 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
         dialog.open = false;
       });
     },
-    { once: true }
+    { once: true },
   );
 
   return `
@@ -166,7 +166,7 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
             </cv-typography>
         </div>
     </div>
-</cv-full-screen-dialog>`;
+</cv-full-screen-dialog><div class="cdk-overlay-container"></div>`;
 };
 
 export const Basic = Template.bind({});
