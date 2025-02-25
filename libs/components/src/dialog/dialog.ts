@@ -37,9 +37,9 @@ export class CovalentDialog extends DialogBase {
             if (
               node.nodeType === Node.ELEMENT_NODE &&
               node instanceof HTMLElement &&
-              node.classList.contains('cdk-overlay-container') &&
-              node.hasAttribute('inert')
+              node.classList.contains('cdk-overlay-container')
             ) {
+              console.log('found cdk overlay container');
               setTimeout(() => {
                 node.removeAttribute('inert');
                 observer.disconnect();
