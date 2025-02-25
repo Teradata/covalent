@@ -1,0 +1,8 @@
+id: feedback
+title: Feedback
+blockIds:
+  - xlY-NVaCNZ
+settings:
+  pageHeader:
+    hideText: false
+description: Your feedback makes the design system better. Tell us what’s working, what’s unclear, and where we can improve.

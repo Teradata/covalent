@@ -155,6 +155,11 @@ byId:
     name: Expansion panel item
     parentId: components
     path: /pattern/expansion-panel-item
+  feedback:
+    id: feedback
+    name: Feedback
+    parentId: root
+    path: /pages/feedback
   figma-organization:
     id: figma-organization
     name: Figma organization
@@ -505,3 +510,4 @@ order:
   - date-and-time
   - word-list
   - inclusive-language-glnk25tux
+  - feedback
