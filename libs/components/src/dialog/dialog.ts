@@ -2,7 +2,7 @@ import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { DialogBase } from '@material/mwc-dialog/mwc-dialog-base';
 import { styles as baseStyles } from '@material/mwc-dialog/mwc-dialog.css';
-
+import { DocumentWithBlockingElements } from 'blocking-elements';
 import styles from './dialog.scss?inline';
 
 declare global {
@@ -22,47 +22,13 @@ export class CovalentDialog extends DialogBase {
 
   observer!: MutationObserver;
 
-  protected firstUpdated() {
-    super.firstUpdated();
-
-    // Callback function to execute when mutations are observed
-    const callback: MutationCallback = (
-      mutationsList,
-      observer: MutationObserver,
-    ) => {
-      for (const mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-          // Check if nodes have been added
-          mutation.addedNodes.forEach((node) => {
-            if (
-              node.nodeType === Node.ELEMENT_NODE &&
-              node instanceof HTMLElement &&
-              node.classList.contains('cdk-overlay-container')
-            ) {
-              console.log('found cdk overlay container');
-              setTimeout(() => {
-                node.removeAttribute('inert');
-                observer.disconnect();
-              }, 500);
-            }
-          });
-        }
-      }
-    };
-
-    // Create an observer instance linked to the callback function
-    this.observer = new MutationObserver(callback);
-
-    // Start observing the target node for configured mutations
-    this.observer.observe(document.body, { childList: true, subtree: true });
-  }
-
-  disconnectedCallback() {
-    // Disconnect the observer when the component is disconnected
-    if (this.observer) {
-      this.observer.disconnect();
+  protected updated(changedProperties: Map<string, any>) {
+    super.updated(changedProperties);
+    if (changedProperties.has('open') && this.open) {
+      setTimeout(() => {
+        (document as DocumentWithBlockingElements).$blockingElements.pop();
+      }, 250);
     }
-    super.disconnectedCallback();
   }
 }
 
