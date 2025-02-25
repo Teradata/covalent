@@ -1,3 +1,9 @@
+# [10.1.0-beta.6](https://github.com/Teradata/covalent/compare/v10.1.0-beta.5...v10.1.0-beta.6) (2025-02-25)
+
+### Bug Fixes
+
+- **components:** add time delay ([369aae8](https://github.com/Teradata/covalent/commit/369aae89716211bb6083bd194e4e7a8ddb2ee1f9))
+
 # [10.1.0-beta.5](https://github.com/Teradata/covalent/compare/v10.1.0-beta.4...v10.1.0-beta.5) (2025-02-24)
 
 ### Bug Fixes
