@@ -22,17 +22,17 @@ byId:
   app-shell:
     id: app-shell
     name: App shell
-    parentId: components
+    parentId: coming-soon
     path: /pattern/app-shell
   badge:
     id: badge
     name: Badge
-    parentId: components
+    parentId: coming-soon
     path: /pattern/badge
   breadcrumbs:
     id: breadcrumbs
     name: Breadcrumbs
-    parentId: components
+    parentId: coming-soon
     path: /pattern/breadcrumbs
   button:
     id: button
@@ -42,7 +42,7 @@ byId:
   card:
     id: card
     name: Card
-    parentId: components
+    parentId: coming-soon
     path: /pattern/card
   check-list-item:
     hidden: true
@@ -58,27 +58,27 @@ byId:
   chip:
     id: chip
     name: Chip set
-    parentId: components
+    parentId: coming-soon
     path: /pattern/chip
   chip-item:
     id: chip-item
     name: Chip
-    parentId: components
+    parentId: coming-soon
     path: /pattern/chip-item
   circular-progress:
     id: circular-progress
     name: Circular progress
-    parentId: components
+    parentId: coming-soon
     path: /pattern/circular-progress
   code-editor:
     id: code-editor
     name: Code editor
-    parentId: components
+    parentId: coming-soon
     path: /pattern/code-editor
   code-snippet:
     id: code-snippet
     name: Code snippet
-    parentId: components
+    parentId: coming-soon
     path: /pattern/code-snippet
   color:
     id: color
@@ -95,6 +95,11 @@ byId:
     name: Color
     parentId: tokens
     path: /pages/colors-vvhchtke
+  coming-soon:
+    id: coming-soon
+    name: Coming soon
+    parentId: components
+    path: ''
   components:
     id: components
     name: Components
@@ -133,7 +138,7 @@ byId:
   empty-state:
     id: empty-state
     name: Empty state
-    parentId: components
+    parentId: coming-soon
     path: /pattern/empty-state
   error-messages:
     id: error-messages
@@ -148,12 +153,12 @@ byId:
   expansion-panel:
     id: expansion-panel
     name: Expansion panel
-    parentId: components
+    parentId: coming-soon
     path: /pattern/expansion-panel
   expansion-panel-item:
     id: expansion-panel-item
     name: Expansion panel item
-    parentId: components
+    parentId: coming-soon
     path: /pattern/expansion-panel-item
   feedback:
     id: feedback
@@ -168,12 +173,12 @@ byId:
   focused-page:
     id: focused-page
     name: Focused page
-    parentId: components
+    parentId: coming-soon
     path: /pattern/focused-page
   form-field:
     id: form-field
     name: Form field
-    parentId: components
+    parentId: coming-soon
     path: /pattern/form-field
   foundations:
     id: foundations
@@ -183,7 +188,7 @@ byId:
   full-screen-dialog:
     id: full-screen-dialog
     name: Full-screen dialog
-    parentId: components
+    parentId: coming-soon
     path: /pattern/full-screen-dialog
   get-started:
     id: get-started
@@ -198,32 +203,32 @@ byId:
   icon:
     id: icon
     name: Icon
-    parentId: components
+    parentId: coming-soon
     path: /pattern/icon
   icon-button:
     id: icon-button
     name: Icon button
-    parentId: components
+    parentId: coming-soon
     path: /pattern/icon-button
   icon-button-toggle:
     id: icon-button-toggle
     name: Icon button toggle
-    parentId: components
+    parentId: coming-soon
     path: /pattern/icon-button-toggle
   icon-checkbox:
     id: icon-checkbox
     name: Checkbox icon
-    parentId: components
+    parentId: coming-soon
     path: /pattern/icon-checkbox
   icon-lockup:
     id: icon-lockup
     name: Icon lockup
-    parentId: components
+    parentId: coming-soon
     path: /pattern/icon-lockup
   icon-radio:
     id: icon-radio
     name: Radio icon
-    parentId: components
+    parentId: coming-soon
     path: /pattern/icon-radio
   icons:
     id: icons
@@ -238,12 +243,12 @@ byId:
   linear-progress:
     id: linear-progress
     name: Linear progress
-    parentId: components
+    parentId: coming-soon
     path: /pattern/linear-progress
   list:
     id: list
     name: List
-    parentId: components
+    parentId: coming-soon
     path: /pattern/list
   list-item:
     hidden: true
@@ -254,7 +259,7 @@ byId:
   menu:
     id: menu
     name: Menu
-    parentId: components
+    parentId: coming-soon
     path: /pattern/menu
   navigation-list-item:
     hidden: true
@@ -265,7 +270,7 @@ byId:
   notebook-cell:
     id: notebook-cell
     name: Notebook cell
-    parentId: components
+    parentId: coming-soon
     path: /pattern/notebook-cell
   patterns:
     id: patterns
@@ -296,33 +301,33 @@ byId:
   side-sheet:
     id: side-sheet
     name: Side sheet
-    parentId: components
+    parentId: coming-soon
     path: /pattern/side-sheet
   slider:
     id: slider
     name: Slider
-    parentId: components
+    parentId: coming-soon
     path: /pattern/slider
   snackbar:
     id: snackbar
     name: Snackbar
-    parentId: components
+    parentId: coming-soon
     path: /pattern/snackbar
   split-button:
     hidden: true
     id: split-button
     name: Split button
-    parentId: components
+    parentId: coming-soon
     path: /pattern/split-button
   status-dialog:
     id: status-dialog
     name: Status dialog
-    parentId: components
+    parentId: coming-soon
     path: /pattern/status-dialog
   status-header:
     id: status-header
     name: Status header
-    parentId: components
+    parentId: coming-soon
     path: /pattern/status-header
   status-header-item:
     hidden: true
@@ -333,32 +338,32 @@ byId:
   switch:
     id: switch
     name: Switch
-    parentId: components
+    parentId: coming-soon
     path: /pattern/switch
   tab:
     id: tab
     name: Tab
-    parentId: components
+    parentId: coming-soon
     path: /pattern/tab
   tabs:
     id: tabs
     name: Tab bar
-    parentId: components
+    parentId: coming-soon
     path: /pattern/tabs
   text:
     id: text
     name: Typography
-    parentId: components
+    parentId: coming-soon
     path: /pattern/text
   text-area:
     id: text-area
     name: Text area
-    parentId: components
+    parentId: coming-soon
     path: /pattern/text-area
   text-lockup:
     id: text-lockup
     name: Text lockup
-    parentId: components
+    parentId: coming-soon
     path: /pattern/text-lockup
   textfield:
     id: textfield
@@ -373,17 +378,17 @@ byId:
   toolbar:
     id: toolbar
     name: Toolbar
-    parentId: components
+    parentId: coming-soon
     path: /pattern/toolbar
   tooltip:
     id: tooltip
     name: Tooltip
-    parentId: components
+    parentId: coming-soon
     path: /pattern/tooltip
   top-app-bar:
     id: top-app-bar
     name: Top app bar
-    parentId: components
+    parentId: coming-soon
     path: /pattern/top-app-bar
   top-app-bar-fixed:
     hidden: true
@@ -394,12 +399,12 @@ byId:
   tree-list:
     id: tree-list
     name: Tree list
-    parentId: components
+    parentId: coming-soon
     path: /pattern/tree-list
   tree-list-item:
     id: tree-list-item
     name: Tree list item
-    parentId: components
+    parentId: coming-soon
     path: /pattern/tree-list-item
   typography:
     id: typography
@@ -446,6 +451,7 @@ order:
   - radio
   - select
   - textfield
+  - coming-soon
   - app-shell
   - badge
   - breadcrumbs
@@ -466,7 +472,6 @@ order:
   - icon-button
   - icon-button-toggle
   - icon-lockup
-  - icon-radio
   - linear-progress
   - list
   - list-item
@@ -475,6 +480,7 @@ order:
   - radio-list-item
   - menu
   - notebook-cell
+  - icon-radio
   - side-sheet
   - slider
   - snackbar
