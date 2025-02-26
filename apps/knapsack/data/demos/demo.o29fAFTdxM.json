@@ -1,0 +1,27 @@
+{
+  "id": "o29fAFTdxM",
+  "data": {
+    "props": {
+      "tabindex": -1
+    },
+    "slots": {
+      "default": [
+        {
+          "text": "List item 3",
+          "type": "text"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "54041903-5670-430c-ab7e-0682d14b96d6",
+    "updatedBy": "54041903-5670-430c-ab7e-0682d14b96d6",
+    "createdDate": "2025-02-26T21:46:49.175Z",
+    "updatedDate": "2025-02-26T21:47:29.007Z"
+  },
+  "type": "data",
+  "title": "list item 3",
+  "patternId": "list-item",
+  "templateId": "web-components-ytRTf8wtxn",
+  "description": ""
+}
