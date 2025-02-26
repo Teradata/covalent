@@ -8,7 +8,6 @@
     "props": {
       "tabindex": -1,
       "twoLine": false,
-      "graphic": "avatar",
       "hasMeta": false
     },
     "slots": {
@@ -18,28 +17,13 @@
           "type": "text"
         }
       ],
-      "secondary": [
-        {
-          "text": "secondary text",
-          "type": "text"
-        }
-      ],
-      "graphic": [
-        {
-          "type": "template-demo",
-          "demoId": "bn4zy44TYR",
-          "patternId": "icon",
-          "templateId": "web-components-N8bzRbfpuX"
-        }
-      ],
-      "meta": [
-        {
-          "type": "template-demo",
-          "demoId": "ezyQjAA-T1",
-          "patternId": "icon",
-          "templateId": "web-components-N8bzRbfpuX"
-        }
-      ]
+      "secondary": [],
+      "graphic": [],
+      "meta": []
     }
+  },
+  "meta": {
+    "updatedBy": "54041903-5670-430c-ab7e-0682d14b96d6",
+    "updatedDate": "2025-02-26T21:45:44.129Z"
   }
 }

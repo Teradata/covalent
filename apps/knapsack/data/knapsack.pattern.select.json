@@ -23,7 +23,7 @@
           "$schema": "http://json-schema.org/draft-07/schema",
           "description": "",
           "type": "object",
-          "required": ["required", "outlined"],
+          "required": [],
           "properties": {
             "label": {
               "type": "string",
@@ -71,7 +71,21 @@
               "type": "boolean"
             }
           }
-        }
+        },
+        "propOrder": [
+          "label",
+          "value",
+          "validationMessage",
+          "helper",
+          "icon",
+          "required",
+          "outlined",
+          "naturalMenuWidth",
+          "fixedMenuPosition",
+          "disabled",
+          "validateOnInitialRender"
+        ],
+        "slotOrder": ["default"]
       },
       "demoIds": ["sWH6jqeBc"],
       "blockIds": [
