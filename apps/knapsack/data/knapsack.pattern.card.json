@@ -93,7 +93,8 @@
     },
     {
       "id": "angular-K2H0Gg5PuL",
-      "type": "template"
+      "type": "template",
+      "hidden": true
     }
   ],
   "subPages": [
