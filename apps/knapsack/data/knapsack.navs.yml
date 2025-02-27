@@ -167,7 +167,7 @@ byId:
     path: /pages/feedback
   figma-organization:
     id: figma-organization
-    name: Figma organization
+    name: Design file setup
     parentId: designers
     path: /pages/figma-organization
   focused-page:
