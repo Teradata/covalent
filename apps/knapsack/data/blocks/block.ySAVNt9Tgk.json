@@ -24,8 +24,33 @@
           },
           "content": [
             {
-              "text": "Use the following typography tokens.",
+              "text": "Use these text styles for action ribbon:",
               "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "attrs": {
+            "start": 1
+          },
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "caption",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
