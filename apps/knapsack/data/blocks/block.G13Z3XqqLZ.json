@@ -1,0 +1,39 @@
+{
+  "id": "G13Z3XqqLZ",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "iAimQhNEKH",
+        "link": {
+          "path": "https://teradata.github.io/covalent/docs/components/?path=/docs/introduction--overview",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/storybook-icon-7m8kzc6tvhpng",
+        "title": "Storybook",
+        "description": "Older documentation, useful while we flesh out this new site"
+      },
+      {
+        "id": "sT40IIybaA",
+        "link": {
+          "path": "https://github.com/Teradata/covalent/blob/main/docs/CONTRIBUTING.md",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/github--SHw1qjqR7Z.png",
+        "title": "Contribute",
+        "description": "For contributing new components to Covalent review these guidelines"
+      }
+    ],
+    "gridStyles": {
+      "columns": "4"
+    },
+    "tileStyles": {
+      "titleSize": "large"
+    }
+  },
+  "header": {
+    "title": "Feature Requests or Issues",
+    "showHeader": false,
+    "description": "Did you find an issue or have a feature request with one of our existing components? First, check through our GitHub Issues. If you don’t see it listed, go ahead and create an issue."
+  },
+  "blockType": "shortcut-tiles"
+}

@@ -21,26 +21,6 @@
         "image": "https://knapsack.imgix.net/site/covalent/github-shw1qjqr7z--5REKROui.png",
         "title": "Tokens theming",
         "description": "Use Covalent tokens with our web component library"
-      },
-      {
-        "id": "iAimQhNEKH",
-        "link": {
-          "path": "https://teradata.github.io/covalent/docs/components/?path=/docs/introduction--overview",
-          "external": true
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/storybook-icon-7m8kzc6tvhpng",
-        "title": "Storybook",
-        "description": "Older documentation, useful while we flesh out this new site"
-      },
-      {
-        "id": "sT40IIybaA",
-        "link": {
-          "path": "https://github.com/Teradata/covalent/blob/main/docs/CONTRIBUTING.md",
-          "external": true
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/github--SHw1qjqR7Z.png",
-        "title": "Contribute",
-        "description": "For contributing new components to Covalent review these guidelines"
       }
     ],
     "gridStyles": {
