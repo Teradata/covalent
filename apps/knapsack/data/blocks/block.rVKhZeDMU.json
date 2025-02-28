@@ -1,0 +1,60 @@
+{
+  "id": "rVKhZeDMU",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Scrollable",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When the screen size is too small to display all cards at once, scroll controls should appear. The left and right arrow buttons can be used to scroll through the collection of cards. The carousel position is communicated by the dots beneath the cards.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Clicking the forward arrow on the last page of cards should return the user to the first page, and clicking the back arrow on the first page of cards should bring them to the last page.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The card carousel should be scrollable using the trackpad or arrow keys when the carousel is focused. Snap scrolling ensures that when users scroll through the carousel, the view always adjusts so that only fully visible cards are shown.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

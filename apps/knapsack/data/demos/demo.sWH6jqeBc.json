@@ -5,9 +5,7 @@
   "patternId": "select",
   "templateId": "web-components-qWXTtv81jY",
   "data": {
-    "props": {
-      "outlined": true
-    },
+    "props": {},
     "slots": {
       "default": [
         {
@@ -18,13 +16,7 @@
         },
         {
           "type": "template-demo",
-          "demoId": "aaIyWQv-kt",
-          "patternId": "list-item",
-          "templateId": "web-components-ytRTf8wtxn"
-        },
-        {
-          "type": "template-demo",
-          "demoId": "o29fAFTdxM",
+          "demoId": "qgGc8WUNHQ",
           "patternId": "list-item",
           "templateId": "web-components-ytRTf8wtxn"
         }
