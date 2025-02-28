@@ -5,26 +5,13 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
-          "attrs": {
-            "level": 1,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "File name",
-              "type": "text"
-            }
-          ]
-        },
-        {
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Each feature title is made up of some combination of the following properties.",
+              "text": "Each  title is made up of one item from each of the following categories:",
               "type": "text"
             }
           ]
@@ -235,7 +222,7 @@
                           },
                           "content": [
                             {
-                              "text": "For example VEDITOR-800",
+                              "text": "For example VEDITOR-294",
                               "type": "text"
                             }
                           ]
@@ -260,6 +247,28 @@
                       "type": "text"
                     }
                   ]
+                },
+                {
+                  "type": "bulletList",
+                  "content": [
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "For example Editor enhanced layout",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -268,5 +277,7 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small",
+  "spacing": "medium"
 }

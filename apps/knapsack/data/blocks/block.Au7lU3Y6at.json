@@ -1,5 +1,5 @@
 {
-  "id": "InybWHO1DL",
+  "id": "Au7lU3Y6at",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Create a new file for each JIRA ticket",
+              "text": "Update the status as you progress",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "To do this, clone the \"New feature template\" file linked below, and move it into the 💟 ",
+              "text": "The design status names are chosen so that if you sort the Figma  💟 ",
               "type": "text"
             },
             {
@@ -37,7 +37,7 @@
               ]
             },
             {
-              "text": " project. Then, rename it according to the guide below, and make sure to update the status card to match.",
+              "text": " project reverse alphabetically, the ones that need attention the most (in progress and review) will rise to the top. This lets us all view the project and see quickly what everyone is working on and stay abreast of changes.",
               "type": "text"
             }
           ]

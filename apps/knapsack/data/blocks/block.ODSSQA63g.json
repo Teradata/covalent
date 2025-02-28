@@ -15,5 +15,6 @@
       "seamless": true
     }
   },
-  "blockType": "design-src-tiles"
+  "blockType": "design-src-tiles",
+  "spacing": "medium"
 }

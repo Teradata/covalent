@@ -1,5 +1,5 @@
 {
-  "id": "ggX7T9zaBm",
+  "id": "FvMX0hlVau",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Figma status card",
+              "text": "End result",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Change the content and state of the status card in your Figma file as you progress through the design process. If you're using the new feature template, it will be on the Overview page.",
+              "text": "You'll end up with a file named with the status, ticket number and a descriptive title, plus a color coded thumbnail that carries all the same info for easy recognition in Figma's file browser.",
               "type": "text"
             }
           ]
@@ -32,5 +32,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }
