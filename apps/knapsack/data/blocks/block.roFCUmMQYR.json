@@ -42,7 +42,7 @@
                   },
                   "content": [
                     {
-                      "text": "confirming the user's action ",
+                      "text": "Confirming the user's action. Read on to learn how to avoid double negative actions. ",
                       "type": "text"
                     }
                   ]
@@ -59,7 +59,25 @@
                   },
                   "content": [
                     {
-                      "text": "communicating a high-severity error",
+                      "text": "Communicating a high-severity ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "error",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "link",
+                          "attrs": {
+                            "rel": "noopener noreferrer nofollow",
+                            "href": "/pages/error-messages",
+                            "class": null
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": ".  ",
                       "type": "text"
                     }
                   ]
