@@ -1,5 +1,5 @@
 {
-  "id": "m2ZD8JXZJo",
+  "id": "0BZObfsU75",
   "data": {
     "items": [
       {
@@ -11,12 +11,12 @@
         "nodeId": "13854:2523"
       }
     ],
+    "columns": "2",
     "imageStyles": {
       "fit": "fill",
       "size": "auto",
       "seamless": true
-    },
-    "columns": "2"
+    }
   },
   "blockType": "design-src-tiles"
 }

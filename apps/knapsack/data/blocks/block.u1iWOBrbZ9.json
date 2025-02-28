@@ -1,18 +1,17 @@
 {
-  "id": "Zu6MbzLgVg",
+  "id": "u1iWOBrbZ9",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Content guidelines",
+              "text": "Use alerts for important information only. Overusing them can result in desensitization. For example, users may develop fatigue and stop paying attention to any of the alerts. ",
               "type": "text"
             }
           ]
