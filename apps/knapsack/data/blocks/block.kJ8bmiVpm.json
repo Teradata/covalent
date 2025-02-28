@@ -1,0 +1,36 @@
+{
+  "id": "kJ8bmiVpm",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Complete",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When all cards in the carousel have been completed, the carousel should change to the completed state. A congratulatory message will be displayed, along with a link to further learning resources. The \"Skip all\" button becomes \"Dismiss\", allowing the user to hide the completed set of cards. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
