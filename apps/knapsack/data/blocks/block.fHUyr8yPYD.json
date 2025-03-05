@@ -1,0 +1,23 @@
+{
+  "id": "fHUyr8yPYD",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Always use numerals on a UI. Do not spell out numbers—even at the beginning of a sentence. This saves space,  makes the UI easy  to scan and understand, and maintains visual consistency across languages. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

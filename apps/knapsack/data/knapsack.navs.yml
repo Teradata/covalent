@@ -272,6 +272,11 @@ byId:
     name: Notebook cell
     parentId: coming-soon
     path: /pattern/notebook-cell
+  numbers:
+    id: numbers
+    name: Numbers
+    parentId: product-and-ui
+    path: /pages/numbers
   patterns:
     id: patterns
     name: Patterns
@@ -511,9 +516,10 @@ order:
   - voice-and-tone
   - adapting-tone-by-situation
   - product-and-ui
+  - numbers
+  - date-and-time
   - error-messages
   - video
-  - date-and-time
   - word-list
   - inclusive-language-glnk25tux
   - feedback

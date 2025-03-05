@@ -1,0 +1,42 @@
+{
+  "id": "92GEZlscVd",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Learn more about ",
+              "type": "text"
+            },
+            {
+              "text": "dates and times",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/site/covalent/XLLLHJ7A9/pages/date-and-time",
+                    "class": null,
+                    "target": "_self"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
