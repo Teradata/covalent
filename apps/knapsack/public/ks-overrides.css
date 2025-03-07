@@ -33,6 +33,4 @@ html {
 cv-app-shell {
   display: block;
   margin: -8px;
-  height: 100vh;
-  width: 100vw;
 }

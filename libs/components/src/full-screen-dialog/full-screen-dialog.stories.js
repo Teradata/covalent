@@ -166,7 +166,7 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
             </cv-typography>
         </div>
     </div>
-</cv-full-screen-dialog><div class="cdk-overlay-container"></div>`;
+</cv-full-screen-dialog>`;
 };
 
 export const Basic = Template.bind({});
