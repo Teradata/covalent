@@ -1,8 +1,15 @@
 import { css, unsafeCSS } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { DialogBase } from '@material/mwc-dialog/mwc-dialog-base';
+import { MDCDialogAdapter } from '@material/dialog/adapter.js';
 import { styles as baseStyles } from '@material/mwc-dialog/mwc-dialog.css';
+import {
+  createFocusTrapInstance,
+  MDCDialogFocusTrapFactory,
+} from '@material/dialog/util';
 import { DocumentWithBlockingElements } from 'blocking-elements';
+import { createFocusTrap, FocusTrap } from 'focus-trap';
+
 import styles from './dialog.scss?inline';
 
 declare global {
@@ -20,15 +27,24 @@ export class CovalentDialog extends DialogBase {
     `,
   ];
 
-  observer!: MutationObserver;
+  /** Enables/Disables the trap focus functionality that uses blocking-elements library */
+  @property({ type: Boolean, reflect: true })
+  trapFocus = false;
 
-  protected updated(changedProperties: Map<string, any>) {
-    super.updated(changedProperties);
-    if (changedProperties.has('open') && this.open) {
-      setTimeout(() => {
-        (document as DocumentWithBlockingElements).$blockingElements.pop();
-      }, 250);
-    }
+  protected override createAdapter(): MDCDialogAdapter {
+    const baseAdapater = super.createAdapter();
+
+    return {
+      ...baseAdapater,
+      // Override the trapFocus method to prevent the blocking-elements from assigning inert attribute
+      trapFocus: (el) => {
+        if (this.trapFocus) {
+          baseAdapater.trapFocus(el);
+        } else if (el && !this.isConnected) {
+          el.focus();
+        }
+      },
+    };
   }
 }
 
