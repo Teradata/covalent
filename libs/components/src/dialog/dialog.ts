@@ -3,13 +3,6 @@ import { customElement, property } from 'lit/decorators.js';
 import { DialogBase } from '@material/mwc-dialog/mwc-dialog-base';
 import { MDCDialogAdapter } from '@material/dialog/adapter.js';
 import { styles as baseStyles } from '@material/mwc-dialog/mwc-dialog.css';
-import {
-  createFocusTrapInstance,
-  MDCDialogFocusTrapFactory,
-} from '@material/dialog/util';
-import { DocumentWithBlockingElements } from 'blocking-elements';
-import { createFocusTrap, FocusTrap } from 'focus-trap';
-
 import styles from './dialog.scss?inline';
 
 declare global {
