@@ -73,10 +73,6 @@
   /* Desktop only styles */
   @media only screen and (min-width: 768px) {
     position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     width: 100%;
   }
 
@@ -272,7 +268,7 @@ nav.navigation {
   background-color: var(--mdc-theme-background);
   z-index: var(
     --cv-app-shell-navigation-z-index,
-    6
+    2
   ); // must be greater than --cv-app-shell-user-menu-z-index
 
   .toggle-drawer {
