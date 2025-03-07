@@ -1,0 +1,54 @@
+{
+  "id": "LDwxEunLOj",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Writing mechanics",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "These conventions support clarity, consistency, and the Teradata ",
+              "type": "text"
+            },
+            {
+              "text": "voice",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/voice-and-tone",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". Follow them not only to help users get their immediate jobs done but also to build credibility into our products and content.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
