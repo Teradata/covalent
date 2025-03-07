@@ -7,7 +7,7 @@ export default {
   title: 'Components/Dialog',
 };
 
-const Template = () => {
+const Template = ({ trapFocus }) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -17,11 +17,11 @@ const Template = () => {
         dialog.open = true;
       });
     },
-    { once: true }
+    { once: true },
   );
   return `
     <cv-button id="dialog-button" raised>Open basic dialog</cv-button>
-    <cv-dialog id="dialog1" heading="Dialog header" scrimClickAction="">
+    <cv-dialog id="dialog1" heading="Dialog header" ${trapFocus ? 'trapFocus' : ''} scrimClickAction="">
       Dialog body text
       <cv-button slot="primaryAction" dialogAction="close">Action 2</cv-button>
       <cv-button slot="secondaryAction" dialogAction="close">Action 1</cv-button>
@@ -31,8 +31,11 @@ const Template = () => {
 export const Basic = dialogComponent.bind({});
 
 export const Anatomy = Template.bind({});
+Anatomy.args = {
+  trapFocus: true,
+};
 
-const templateLogout = ({}) => {
+const templateLogout = () => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -42,7 +45,7 @@ const templateLogout = ({}) => {
         dialog.open = true;
       });
     },
-    { once: true }
+    { once: true },
   );
   return `
   <cv-button id="logoout-button" raised>Open logout dialog</cv-button>
@@ -65,7 +68,7 @@ const templateUDF = ({}) => {
         dialog.open = true;
       });
     },
-    { once: true }
+    { once: true },
   );
   return `
           <cv-button id="udf-button" raised>Open UDF dialog</cv-button>
