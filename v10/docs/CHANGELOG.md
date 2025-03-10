@@ -1,3 +1,9 @@
+## [10.0.3](https://github.com/Teradata/covalent/compare/v10.0.2...v10.0.3) (2025-03-10)
+
+### Bug Fixes
+
+- **components:** add property trapFocus to base dialog ([#2465](https://github.com/Teradata/covalent/issues/2465)) ([f4e73da](https://github.com/Teradata/covalent/commit/f4e73da8bc2eb429c5a479e1f415237a81b95e6f))
+
 # [10.1.0-beta.10](https://github.com/Teradata/covalent/compare/v10.1.0-beta.9...v10.1.0-beta.10) (2025-03-07)
 
 ### Bug Fixes
