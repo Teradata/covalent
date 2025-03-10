@@ -1,0 +1,47 @@
+{
+  "id": "DzJYgygDif",
+  "data": {
+    "guidelines": [
+      {
+        "id": "4Wp6MgecmD",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "skipped objects, errors, and warnings",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "Z1nGnFcN5Q",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "skipped objects, errors, and warnings that may have occurred for a particular job",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}

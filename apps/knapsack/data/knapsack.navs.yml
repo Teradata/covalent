@@ -70,11 +70,6 @@ byId:
     name: Circular progress
     parentId: coming-soon
     path: /pattern/circular-progress
-  code-editor:
-    id: code-editor
-    name: Code editor
-    parentId: coming-soon
-    path: /pattern/code-editor
   code-snippet:
     id: code-snippet
     name: Code snippet
@@ -267,11 +262,6 @@ byId:
     name: Navigation list item
     parentId: list
     path: /pattern/navigation-list-item
-  notebook-cell:
-    id: notebook-cell
-    name: Notebook cell
-    parentId: coming-soon
-    path: /pattern/notebook-cell
   patterns:
     id: patterns
     name: Patterns
@@ -350,6 +340,11 @@ byId:
     name: Tab bar
     parentId: coming-soon
     path: /pattern/tabs
+  test:
+    id: test
+    name: Clarity and efficiency
+    parentId: content
+    path: /pattern/test
   text:
     id: text
     name: Typography
@@ -432,16 +427,6 @@ byId:
     parentId: content
     path: /pages/word-list
 order:
-  - get-started
-  - designers
-  - figma-organization
-  - developers
-  - foundations
-  - design-principles
-  - accessibility
-  - color
-  - icons
-  - typography-3shrxwkyk
   - components
   - action-ribbon
   - alert
@@ -455,23 +440,21 @@ order:
   - app-shell
   - badge
   - breadcrumbs
+  - split-button
   - card
-  - icon-checkbox
-  - chip-item
-  - code-editor
   - code-snippet
   - chip
+  - chip-item
   - circular-progress
   - empty-state
   - expansion-panel
   - expansion-panel-item
-  - focused-page
   - form-field
-  - full-screen-dialog
   - icon
   - icon-button
   - icon-button-toggle
-  - icon-lockup
+  - icon-checkbox
+  - icon-radio
   - linear-progress
   - list
   - list-item
@@ -479,12 +462,9 @@ order:
   - check-list-item
   - radio-list-item
   - menu
-  - notebook-cell
-  - icon-radio
   - side-sheet
   - slider
   - snackbar
-  - split-button
   - status-dialog
   - status-header
   - status-header-item
@@ -500,13 +480,13 @@ order:
   - text-area
   - text-lockup
   - text
-  - patterns
-  - errors
-  - get-started-cards
+  - focused-page
+  - full-screen-dialog
+  - icon-lockup
   - tokens
-  - colors-vvhchtke
-  - colors-9gexmujiba
   - typography
+  - colors-9gexmujiba
+  - colors-vvhchtke
   - content
   - voice-and-tone
   - adapting-tone-by-situation
@@ -514,6 +494,20 @@ order:
   - error-messages
   - video
   - date-and-time
+  - test
   - word-list
   - inclusive-language-glnk25tux
+  - foundations
+  - accessibility
+  - color
+  - design-principles
+  - icons
+  - typography-3shrxwkyk
+  - get-started
+  - designers
+  - figma-organization
+  - developers
+  - patterns
+  - errors
+  - get-started-cards
   - feedback
