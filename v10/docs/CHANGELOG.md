@@ -1,3 +1,9 @@
+# [10.1.0-beta.10](https://github.com/Teradata/covalent/compare/v10.1.0-beta.9...v10.1.0-beta.10) (2025-03-07)
+
+### Bug Fixes
+
+- **components:** disable blocking elements ([2c784ff](https://github.com/Teradata/covalent/commit/2c784ff9a18c5952b0129a8ac2a28f324a0ab975))
+
 ## [10.0.2](https://github.com/Teradata/covalent/compare/v10.0.1...v10.0.2) (2025-02-19)
 
 ### Bug Fixes
