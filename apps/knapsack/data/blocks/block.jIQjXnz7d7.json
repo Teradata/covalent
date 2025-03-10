@@ -1,0 +1,42 @@
+{
+  "id": "jIQjXnz7d7",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "These conventions support clarity, consistency, and the Teradata ",
+              "type": "text"
+            },
+            {
+              "text": "voice",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/site/covalent/nhYvdlKSIj/pages/voice-and-tone",
+                    "class": null,
+                    "target": "_self"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". Follow them not only to help users get their immediate jobs done but also to build credibility into our products and content.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
