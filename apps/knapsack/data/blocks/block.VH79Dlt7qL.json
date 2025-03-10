@@ -1,0 +1,24 @@
+{
+  "id": "VH79Dlt7qL",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Do not design tables so that columns, when  read together, form sentences. This makes the information harder to scan and interferes with translation and accessibility. Instead, use categorical labels for headers.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "large",
+  "blockType": "text-editor"
+}
