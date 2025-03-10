@@ -1,0 +1,74 @@
+{
+  "id": "a2tBwSCDp7",
+  "data": {
+    "guidelines": [
+      {
+        "id": "F7yPaMXn",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The organization admin enters the provider URL.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The secondary repository should function correctly after you switch it to primary mode.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "an0zZFBxy",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The provider URL is entered.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The provider URL is entered by the organization admin.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The secondary repository should function correctly after it is switched to primary mode.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}

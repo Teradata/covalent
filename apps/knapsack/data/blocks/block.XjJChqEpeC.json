@@ -1,0 +1,60 @@
+{
+  "id": "XjJChqEpeC",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Concise writing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Say what you need to say using as few words as possible. This saves the user’s time, and reduces their cognitive load, which helps them move forward.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Extra words reduce credibility by making content look unfinished or opaque. “How do I know that what I need is here?” a user might think. This doesn’t mean leaving out information users need or words you need for our voice and tone, inclusivity, and other content guidelines. It means always ask “Do our users, or does our content, need this?”",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use active voice, present tense, and imperative verbs to build in word economy. And consider every paragraph, sentence, and word. Does it convey meaning that’s not already there? Is there a shorter way to say it?",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

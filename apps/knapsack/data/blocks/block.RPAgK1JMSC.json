@@ -1,0 +1,49 @@
+{
+  "id": "RPAgK1JMSC",
+  "data": {
+    "guidelines": [
+      {
+        "id": "2GowUtSsDT",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "View",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "urQNYuOiz",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Closely view.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none",
+      "imageOutlined": false,
+      "headerBeforeImage": false
+    }
+  },
+  "blockType": "guidelines"
+}

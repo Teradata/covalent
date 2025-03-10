@@ -1,0 +1,41 @@
+{
+  "id": "9Ve-ElNBvl",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For a longer-form example, see this tone guideline: ",
+              "type": "text"
+            },
+            {
+              "text": "Straightforward and brief",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/adapting-tone-by-situation",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". It shows two versions of content for the same task—one is wordy, one is concise",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

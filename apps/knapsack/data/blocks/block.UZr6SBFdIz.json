@@ -1,0 +1,61 @@
+{
+  "id": "UZr6SBFdIz",
+  "data": {
+    "guidelines": [
+      {
+        "id": "F7yPaMXn",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Manage network connectivity",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "an0zZFBxy",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Network connectivity managemen",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": "t",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}

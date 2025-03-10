@@ -1,0 +1,47 @@
+{
+  "id": "AzZ5EzZax5",
+  "data": {
+    "guidelines": [
+      {
+        "id": "F7yPaMXn",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The steps depend on whether you do this before or after the engine is deployed.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "an0zZFBxy",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The steps depend on whether you do this before or after you or a project collaborator deploys the engine.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}
