@@ -1,13 +1,13 @@
 {
-  "id": "gI9Hrcjx-I",
+  "id": "dQm3yYGqlP",
   "data": {
     "props": {
       "open": true,
       "heading": "Delete this file?",
-      "scrimClickAction": "close",
-      "escapeKeyAction": "close",
       "defaultAction": "close",
       "actionAttribute": "dialogAction",
+      "escapeKeyAction": "close",
+      "scrimClickAction": "close",
       "initialFocusAttribute": "dialogInitialFocus"
     },
     "slots": {
@@ -17,18 +17,18 @@
           "type": "text"
         }
       ],
-      "secondaryAction": [
+      "primaryAction": [
         {
           "type": "template-demo",
-          "demoId": "D88shG1X",
+          "demoId": "ef-xsFyrBX",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }
       ],
-      "primaryAction": [
+      "secondaryAction": [
         {
           "type": "template-demo",
-          "demoId": "qwXXJ6oGmT",
+          "demoId": "DyIHNiinLt",
           "patternId": "button",
           "templateId": "web-components-raE1x4tYL"
         }
@@ -38,8 +38,8 @@
   "meta": {
     "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
     "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "createdDate": "2025-02-12T23:32:50.866Z",
-    "updatedDate": "2025-02-12T23:34:04.055Z"
+    "createdDate": "2025-03-10T19:33:24.209Z",
+    "updatedDate": "2025-03-10T19:33:45.176Z"
   },
   "type": "data",
   "title": "Delete confirmation",
