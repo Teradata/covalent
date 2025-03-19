@@ -1,3 +1,9 @@
+## [10.0.4](https://github.com/Teradata/covalent/compare/v10.0.3...v10.0.4) (2025-03-19)
+
+### Bug Fixes
+
+- **components:** import fix for icon in alert ([#2469](https://github.com/Teradata/covalent/issues/2469)) ([c11f1d6](https://github.com/Teradata/covalent/commit/c11f1d6bb5a7c8e08b32f0a2db8f33fcca0ce65c))
+
 ## [10.0.3](https://github.com/Teradata/covalent/compare/v10.0.2...v10.0.3) (2025-03-10)
 
 ### Bug Fixes
