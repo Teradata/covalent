@@ -8,6 +8,8 @@ import { html, LitElement, TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { property, query, state } from 'lit/decorators.js';
 
+import '../icon/icon';
+
 export class AlertBase extends LitElement {
   protected mdcFoundation!: MDCBannerFoundation;
   protected readonly mdcFoundationClass = MDCBannerFoundation;
