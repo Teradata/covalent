@@ -20,6 +20,7 @@ export * from './behaviors/disable-ripple.mixin';
 // Directives
 export * from './forms/auto-trim/auto-trim.directive';
 export * from './directives/fullscreen/fullscreen.directive';
+export * from './directives/web-components/form-control.directive';
 
 // Validators
 export * from './forms/validators/validators';
