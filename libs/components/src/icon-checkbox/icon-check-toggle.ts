@@ -1,5 +1,5 @@
 import { css, html, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { CheckboxBase } from '@material/mwc-checkbox/mwc-checkbox-base';
@@ -24,6 +24,9 @@ export class CovalentIconCheckToggle extends CheckboxBase {
   @property() width: number | string = '200';
   @property() height: number | string = '160';
   @property({ type: Boolean }) iconOnly = false;
+
+  @query('.container') protected override mdcRoot!: HTMLElement;
+
   override render() {
     const classes = {
       checked: this.checked,
@@ -41,10 +44,10 @@ export class CovalentIconCheckToggle extends CheckboxBase {
             <input type="checkbox" class="mdc-checkbox__native-control"></input>
             <div class="mdc-toggle__background">
                 <svg class="mdc-toggle__checkmark ${classMap(
-                  checkmark
+                  checkmark,
                 )}" viewBox="0 0 24 24">
                     <path class="mdc-toggle__checkmark-path ${classMap(
-                      checkmark
+                      checkmark,
                     )}" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
                 </svg>
             </div>
@@ -58,4 +61,4 @@ export class CovalentIconCheckToggle extends CheckboxBase {
   }
 }
 
-export default CovalentIconCheckToggle
+export default CovalentIconCheckToggle;
