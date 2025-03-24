@@ -25,7 +25,7 @@ export class CovalentIconCheckToggle extends CheckboxBase {
   @property() height: number | string = '160';
   @property({ type: Boolean }) iconOnly = false;
 
-  @query('.container') protected override mdcRoot!: HTMLElement;
+  @query('.container') declare protected mdcRoot: HTMLElement;
 
   override render() {
     const classes = {
