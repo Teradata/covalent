@@ -1,3 +1,13 @@
+# [10.1.0-beta.1](https://github.com/Teradata/covalent/compare/v10.0.4...v10.1.0-beta.1) (2025-03-24)
+
+### Bug Fixes
+
+- **components:** fix react build ([8352531](https://github.com/Teradata/covalent/commit/8352531d1264d61cea7107473b1a97b5640eaf63))
+
+### Features
+
+- **componets:** adding ng formControl directive ([0f63b86](https://github.com/Teradata/covalent/commit/0f63b86b328c3a0a67b27924c62529da1a25908a))
+
 ## [10.0.4](https://github.com/Teradata/covalent/compare/v10.0.3...v10.0.4) (2025-03-19)
 
 ### Bug Fixes
