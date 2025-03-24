@@ -1,6 +1,6 @@
 {
   "id": "bn4zy44TYR",
-  "title": "Main",
+  "title": "Material Symbol",
   "type": "data",
   "patternId": "icon",
   "templateId": "web-components-N8bzRbfpuX",
@@ -14,5 +14,10 @@
         }
       ]
     }
+  },
+  "description": "Display an icon from the Material Symbols icon font",
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-03-24T20:10:55.618Z"
   }
 }

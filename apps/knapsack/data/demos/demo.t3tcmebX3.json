@@ -1,0 +1,27 @@
+{
+  "id": "t3tcmebX3",
+  "data": {
+    "props": {
+      "iconfont": "covalent-icons"
+    },
+    "slots": {
+      "default": [
+        {
+          "text": "product_editor",
+          "type": "text"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-03-24T20:09:06.180Z",
+    "updatedDate": "2025-03-24T20:10:22.497Z"
+  },
+  "type": "data",
+  "title": "Covalent icon",
+  "patternId": "icon",
+  "templateId": "web-components-N8bzRbfpuX",
+  "description": "Display an icon from the Covalent custom icon set"
+}
