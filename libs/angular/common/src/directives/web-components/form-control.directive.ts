@@ -17,8 +17,12 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 export class CovalentTextfieldValueAccessorDirective
   implements ControlValueAccessor
 {
-  private _onChange: (value: any) => void = () => {};
-  private _onTouched: () => void = () => {};
+  private _onChange: (value: any) => void = () => {
+    /* noop */
+  };
+  private _onTouched: () => void = () => {
+    /* noop */
+  };
 
   constructor(
     private _elementRef: ElementRef<any>,

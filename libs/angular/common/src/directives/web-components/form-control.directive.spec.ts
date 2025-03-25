@@ -4,6 +4,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CovalentTextfieldValueAccessorDirective } from './form-control.directive';
 
 // Import the built output of the web components library
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import '../../../../../../dist/libs/components';
 
 @Component({
