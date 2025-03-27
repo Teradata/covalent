@@ -55,16 +55,16 @@ export class CovalentExpansionPanel extends LitElement {
 
   firstUpdated() {
     window.addEventListener('cv-expansionPanel-togglePanel', (e) =>
-      this._handleToggle(<CustomEvent>e)
+      this._handleToggle(<CustomEvent>e),
     );
 
     this.style.setProperty(
       '--cv-expansion-panel-item-title-width',
-      this.titleWidth
+      this.titleWidth,
     );
 
     if (this.noSurface) {
-      this.style.setProperty('--mdc-theme-surface', 'transparent');
+      this.style.setProperty('--cv-theme-surface-container', 'transparent');
     }
 
     if (this.panelItems.length == 1) {
