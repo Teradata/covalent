@@ -17,7 +17,9 @@ export * from './behaviors/control-value-accesor.mixin';
 export * from './behaviors/disabled.mixin';
 export * from './behaviors/disable-ripple.mixin';
 
-// Directives
+/**
+ * Directives
+ */
 export * from './forms/auto-trim/auto-trim.directive';
 export * from './directives/fullscreen/fullscreen.directive';
 export * from './directives/web-components/form-control.directive';
