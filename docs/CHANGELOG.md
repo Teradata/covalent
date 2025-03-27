@@ -1,8 +1,23 @@
+# [10.1.0-beta.1](https://github.com/Teradata/covalent/compare/v10.0.5...v10.1.0-beta.1) (2025-03-27)
+
+### Bug Fixes
+
+- **angular:** including more selectors for web component form control ([45aea4c](https://github.com/Teradata/covalent/commit/45aea4c0e60febad40b53ce24ef9813cb2f7c24c))
+- **angular:** update import statements in public_api.ts ([a1bee0b](https://github.com/Teradata/covalent/commit/a1bee0b6da759892a715b7edfb40b054bc6aabdb))
+- **components:** fix react build ([231eecf](https://github.com/Teradata/covalent/commit/231eecfa5da0e05d990cf02f9b3f1595fa00b278))
+- **components:** icon check ([2babd12](https://github.com/Teradata/covalent/commit/2babd1253be81757b0a5c2bd62d584df1810fce4))
+
+### Features
+
+- **componets:** adding ng formControl directive ([fa52217](https://github.com/Teradata/covalent/commit/fa52217aadf958ae40558914d71e3fbae626640b))
+- **expansion-panel:** update styles and add slot support ([3c07685](https://github.com/Teradata/covalent/commit/3c0768506a542c5e58d82438f1cd960f7b687aa0))
+
 ## [10.0.5](https://github.com/Teradata/covalent/compare/v10.0.4...v10.0.5) (2025-03-27)
 
 ### Bug Fixes
 
 - **angular-dynamic-forms:** change dynamic datepicker imports ([#2473](https://github.com/Teradata/covalent/issues/2473)) ([c7bc449](https://github.com/Teradata/covalent/commit/c7bc449d5fbdece9edff6878946c187b439f0d13))
+
 # [10.1.0-beta.2](https://github.com/Teradata/covalent/compare/v10.1.0-beta.1...v10.1.0-beta.2) (2025-03-27)
 
 ### Bug Fixes
