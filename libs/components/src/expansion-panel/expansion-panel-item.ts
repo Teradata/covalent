@@ -41,9 +41,10 @@ export class CovalentExpansionPanelItem extends LitElement {
     return html`
       <div class="panel">
         <div class="header" @click=${this._toggleContent}>
-          <span class="title">${this.title}</span>
-          <span class="contentPreview">${this.contentPreview}</span>
-
+          <span class="title">${this.title}<slot name="title"></slot></span>
+          <span class="contentPreview"
+            >${this.contentPreview}<slot name="preview"></slot
+          ></span>
           <cv-icon class="closedIcon">expand_more</cv-icon>
           <cv-icon class="openedIcon">expand_less</cv-icon>
         </div>

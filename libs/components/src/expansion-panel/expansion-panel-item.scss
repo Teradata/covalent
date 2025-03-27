@@ -158,8 +158,10 @@
 :host {
   .panel {
     border-bottom: 1px solid var(--mdc-theme-border, rgba(0, 0, 0, 12%));
-    background-color: var(--mdc-theme-surface, #ffffff);
-    transition: margin-bottom 0.5s, margin-top 0.5s;
+    background-color: var(--cv-theme-surface-container, #ffffff);
+    transition:
+      margin-bottom 0.5s,
+      margin-top 0.5s;
   }
 
   .header {
@@ -168,7 +170,10 @@
     padding: 0 24px;
     display: flex;
     align-items: center;
-    transition: min-height 0.5s, max-height 0.5s;
+    transition:
+      min-height 0.5s,
+      max-height 0.5s;
+    cursor: pointer;
   }
 
   .title {

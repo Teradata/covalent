@@ -9,15 +9,16 @@ export default {
   title: 'Components/Expansion panel',
   args: {
     icon: 'description',
+    noSurface: false,
   },
   parameters: {
     layout: 'centered',
   },
 };
 
-export const Basic = ({ icon }) => {
+export const Basic = ({ icon, noSurface }) => {
   return `
-    <cv-expansion-panel titleWidth='16em'>
+    <cv-expansion-panel ${noSurface ? 'noSurface' : ''} titleWidth='16em'>
 
       <cv-expansion-panel-item
       title="Title"
@@ -66,4 +67,10 @@ export const Basic = ({ icon }) => {
 
     </cv-expansion-panel>
     `;
+};
+
+export const NoSurface = Basic.bind({});
+
+NoSurface.args = {
+  noSurface: true,
 };
