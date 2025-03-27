@@ -1,3 +1,9 @@
+# [10.1.0-beta.2](https://github.com/Teradata/covalent/compare/v10.1.0-beta.1...v10.1.0-beta.2) (2025-03-27)
+
+### Bug Fixes
+
+- **angular:** update import statements in public_api.ts ([88e68f2](https://github.com/Teradata/covalent/commit/88e68f2e48fe1653157ca55226a292183fdb34a9))
+
 # [10.1.0-beta.1](https://github.com/Teradata/covalent/compare/v10.0.4...v10.1.0-beta.1) (2025-03-27)
 
 ### Bug Fixes
