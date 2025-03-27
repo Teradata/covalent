@@ -6,13 +6,17 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
   selector: `cv-textfield[formControl],
      cv-textarea[formControl],
      cv-select[formControl],
-     cv-textfield[formControlName],
-     cv-textarea[formControlName],
-     cv-select[formControlName],
      cv-checkbox[formControl],
      cv-checkbox-icon[formControl],
      cv-radio[formControl], 
-     cv-radio-icon[formControl]`,
+     cv-radio-icon[formControl],
+     cv-textfield[formControlName],
+     cv-textarea[formControlName],
+     cv-select[formControlName],
+     cv-checkbox[formControlName],
+     cv-checkbox-icon[formControlName],
+     cv-radio[formControlName], 
+     cv-radio-icon[formControlName],`,
 })
 export class CovalentTextfieldValueAccessorDirective
   implements ControlValueAccessor
