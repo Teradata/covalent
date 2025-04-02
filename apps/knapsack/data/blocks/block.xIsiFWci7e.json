@@ -1,9 +1,9 @@
 {
-  "id": "xFQUT6qDEy",
+  "id": "xIsiFWci7e",
   "data": {
     "guidelines": [
       {
-        "id": "NWXTenviI8",
+        "id": "oUOJmlWnm",
         "type": "do",
         "content": {
           "type": "doc",
@@ -12,7 +12,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "You can turn on notifications.",
+                  "text": "Disable advanced reporting access for admin users.",
                   "type": "text"
                 }
               ]
@@ -21,7 +21,7 @@
         }
       },
       {
-        "id": "O8XelRI3n",
+        "id": "iKlT6X-uIU",
         "type": "dont",
         "content": {
           "type": "doc",
@@ -30,7 +30,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "You can disable notifications.",
+                  "text": "Disable admin users for advanced reporting access.",
                   "type": "text"
                 }
               ]

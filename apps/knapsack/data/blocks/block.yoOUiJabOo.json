@@ -36,7 +36,7 @@
           },
           "content": [
             {
-              "text": "For example, avoid using “enable” and \"disable.” Instead use “turn on” and “turn off.”",
+              "text": "Never use \"enable\" or \"disable\" to directly describe people when you're referring to adding a capability for them or removing a capability from them.     ",
               "type": "text"
             }
           ]

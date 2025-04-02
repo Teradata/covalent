@@ -1,0 +1,23 @@
+{
+  "id": "IANTWAvhDA",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "If you're referring to simple toggles or settings, use \"turn on\" and \"turn off.\"",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
