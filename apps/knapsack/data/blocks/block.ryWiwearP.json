@@ -1,0 +1,30 @@
+{
+  "id": "ryWiwearP",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "16996:18446"
+      },
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "16996:22121"
+      },
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "16996:22197"
+      },
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "16996:22236"
+      }
+    ],
+    "columns": "4",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "seamless": true
+    }
+  },
+  "blockType": "design-src-tiles"
+}

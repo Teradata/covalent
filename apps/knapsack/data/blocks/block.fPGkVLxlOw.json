@@ -1,0 +1,37 @@
+{
+  "id": "fPGkVLxlOw",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Padding",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "There should always be 8px at the top and bottom of a menu.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "medium",
+  "blockType": "text-editor"
+}

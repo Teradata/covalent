@@ -1,0 +1,83 @@
+{
+  "id": "menu-2auajeekzb",
+  "tabs": [
+    {
+      "id": "overview",
+      "type": "subPage"
+    },
+    {
+      "id": "LjKvhx5Lkz",
+      "type": "subPage"
+    },
+    {
+      "id": "RwoYygHU46",
+      "type": "subPage"
+    },
+    {
+      "id": "xfprdvFw5M",
+      "type": "designSrc"
+    }
+  ],
+  "title": "Menu",
+  "statuses": {},
+  "subPages": [
+    {
+      "id": "overview",
+      "title": "Usage",
+      "blockIds": [
+        "jNiYbHMSbL",
+        "1B3Vx1PzV2",
+        "i-gv5rf8EW",
+        "prldZnTHgw",
+        "MUtP50b9O",
+        "mpYEXAad7g",
+        "LaDKdnyImC",
+        "bYouynBIao",
+        "70LmYLbEtT"
+      ]
+    },
+    {
+      "id": "LjKvhx5Lkz",
+      "title": "Style",
+      "blockIds": [
+        "qFCzRPrV3",
+        "aKL4FnzGco",
+        "a8rNjR7Rr1",
+        "fPGkVLxlOw",
+        "iI1Nyaoe8J",
+        "Vue4grbdA",
+        "ryWiwearP",
+        "oI-ka9MEjZ",
+        "lSs0JoynGf",
+        "5sdRUSegm7",
+        "7bwqSbXFP5",
+        "bnpJvv9Ekf",
+        "K5HNBzE2vP",
+        "3ZeA8SLHP1"
+      ]
+    },
+    {
+      "id": "RwoYygHU46",
+      "title": "Accessibility",
+      "blockIds": [
+        "8J63d4rxJh",
+        "JMfZ6qgH2U",
+        "NRrO40LwG",
+        "0qBPRNGa9E",
+        "gLIFIuxJ6p",
+        "TfjCtSVFmq",
+        "6X53dXG9lc"
+      ]
+    }
+  ],
+  "templates": [],
+  "description": "Provide extended features or hide some items for usability.",
+  "designSrcComponentsById": {
+    "xfprdvFw5M": {
+      "id": "xfprdvFw5M",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7605:20819"
+    }
+  }
+}

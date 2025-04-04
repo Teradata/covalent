@@ -1,0 +1,72 @@
+{
+  "id": "aKL4FnzGco",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "orderedList",
+          "attrs": {
+            "start": 1
+          },
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Contains the menu contents.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Clickable menu item. See ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "List item",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "link",
+                          "attrs": {
+                            "rel": "noopener noreferrer nofollow",
+                            "href": "https://design.teradata.com/site/covalent/latest/pattern/list-item?subPageId=overview",
+                            "class": null
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " for detailed interactions.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "medium",
+  "blockType": "text-editor"
+}
