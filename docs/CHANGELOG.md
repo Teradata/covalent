@@ -1,3 +1,9 @@
+# [10.1.0](https://github.com/Teradata/covalent/compare/v10.0.5...v10.1.0) (2025-04-08)
+
+### Features
+
+- **components:** adding ng formControl directive ([#2472](https://github.com/Teradata/covalent/issues/2472)) ([ceb8779](https://github.com/Teradata/covalent/commit/ceb8779efd070e780b0cb2b0a0cb8708c969aab7))
+
 # [10.1.0-beta.1](https://github.com/Teradata/covalent/compare/v10.0.5...v10.1.0-beta.1) (2025-03-27)
 
 ### Bug Fixes
