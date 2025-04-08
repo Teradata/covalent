@@ -40,7 +40,13 @@
       "options": {
         "jestConfig": "libs/angular/jest.config.js",
         "passWithNoTests": true
-      }
+      },
+      "dependsOn": [
+        {
+          "projects": ["components"],
+          "target": "build"
+        }
+      ]
     },
     "lint": {
       "executor": "@nx/eslint:lint",
