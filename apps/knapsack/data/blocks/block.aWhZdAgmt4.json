@@ -1,0 +1,23 @@
+{
+  "id": "aWhZdAgmt4",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For capabilities that involve permissions, access control, or a complex process, it's okay to use \"enable\" and \"disable” as long as they don't directly describe people.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
