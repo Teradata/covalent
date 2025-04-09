@@ -1,0 +1,63 @@
+{
+  "id": "6-Bu6Re3V",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Imperative verbs",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use imperative verbs when you’re telling or inviting users to do something. Imperative verbs are clear and brisk. They don’t need a subject, which saves at least one word.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Note:",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": " Previously in Ixiasoft, our practice was to use a gerund as the first word in a task topic title. Gerunds are nouns that functions as verbs, like “creating” in “creating an environment.” We have discontinued that practice. Begin the title of a task topic in Ixiasoft, or the title of any procedure no matter the tool, with an imperative verb as in “create an environment.”",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

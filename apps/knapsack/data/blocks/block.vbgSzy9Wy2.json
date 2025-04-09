@@ -1,0 +1,23 @@
+{
+  "id": "vbgSzy9Wy2",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Sometimes, if the subject of the sentence is unknown or unimportant, passive voice might be necessary or better. For example, including an unimportant subject might distract from the main point or add words that just aren’t helpful.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
