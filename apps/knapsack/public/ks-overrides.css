@@ -7,17 +7,20 @@ html {
 .knapsack-wrapper.knapsack-pattern-direct-parent {
   min-width: 100vw;
   min-height: 100vh;
-}
-
-/* Elements that depend on a parent to have a width and height */
-.knapsack-wrapper.knapsack-pattern-direct-parent:not(
-    > cv-action-ribbon,
-    > cv-top-app-bar,
-    > cv-toolbar
-  ) {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+/* Elements that depend on a parent to have a width and height */
+.knapsack-wrapper.knapsack-pattern-direct-parent:has(
+    > cv-action-ribbon,
+    > cv-top-app-bar,
+    > cv-toolbar,
+    > cv-alert,
+
+  ) {
+  display: block;
 }
 
 /* Elements that depend on a parent to have a width */
