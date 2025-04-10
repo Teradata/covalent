@@ -1,0 +1,48 @@
+{
+  "id": "NUuD7jiIGd",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Bulleted lists",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Introduce bulleted lists with a grammatically complete sentence. Don’t let the bullet points complete the sentence, because that can undermine translation accuracy. Languages have different syntax, so breaking a sentence might not work in other languages.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "You can also introduce a bulleted list with a straightforward label or category.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

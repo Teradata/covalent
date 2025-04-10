@@ -1,0 +1,41 @@
+{
+  "id": "KoowkXBYlc",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The contraction “you’ll” indicates the future tense. Even if the present tense is not confusing, “you’ll” can be a better choice, because it sounds warmer and less rigid. In ",
+              "type": "text"
+            },
+            {
+              "text": "Writing mechanics",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pattern/test?subPageId=oRnxIPIaHx",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ", see the contractions we can use.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

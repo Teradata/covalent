@@ -1,0 +1,23 @@
+{
+  "id": "9MqQoSUOX",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Users have jobs to do, and we create content to help them get their jobs done. How our content helps users do this is as important as the technology that makes our products go. Use these techniques to achieve actionable, straightforward content to ensure user success.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
