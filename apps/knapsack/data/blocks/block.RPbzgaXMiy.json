@@ -1,0 +1,23 @@
+{
+  "id": "RPbzgaXMiy",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "You can also use hyphens to add clarity. Although you can add prepositions and verbs for the same purpose, possessives and hyphens are more economical.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

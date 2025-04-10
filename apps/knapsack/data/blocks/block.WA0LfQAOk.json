@@ -1,0 +1,47 @@
+{
+  "id": "WA0LfQAOk",
+  "data": {
+    "guidelines": [
+      {
+        "id": "dfVx3qT6zh",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "You can schedule across time zones, troubleshoot an issue in the user's local time zone, or review usage in a specific area.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "fRZ2WYnH6p",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "You can schedule across time zones, troubleshoot an issue in the user's local time zone or review usage in a specific area.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}
