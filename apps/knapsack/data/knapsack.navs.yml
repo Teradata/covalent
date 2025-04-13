@@ -263,8 +263,8 @@ byId:
     path: /pattern/menu
   menu-2auajeekzb:
     id: menu-2auajeekzb
-    name: Menu
-    parentId: components
+    name: Menu (no web component)
+    parentId: coming-soon
     path: /pattern/menu-2auajeekzb
   navigation-list-item:
     hidden: true
@@ -438,7 +438,6 @@ order:
   - button
   - checkbox
   - dialog
-  - menu-2auajeekzb
   - radio
   - select
   - textfield
@@ -467,6 +466,7 @@ order:
   - navigation-list-item
   - check-list-item
   - radio-list-item
+  - menu-2auajeekzb
   - menu
   - side-sheet
   - slider
