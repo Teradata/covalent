@@ -1,5 +1,5 @@
 {
-  "id": "bnpJvv9Ekf",
+  "id": "EmuNh2cCK",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Scrollbar",
+              "text": "Full width",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "If a maximum height has been applied to a menu or the menu is too large to display all items inside the current screen height, apply a scrollbar.",
+              "text": "If menu items require longer text, the menu can  match the full width of the container that holds the button that opens the menu.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "medium"
+  "blockType": "text-editor"
 }

@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "<content>",
+              "text": "Items in a menu should be labelled as concisely as possible for quick comprehension. Items should be labelled with a single word if possible. If longer content is necessary, use a full width variant (see Variants section).",
               "type": "text"
             }
           ]

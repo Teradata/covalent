@@ -1,5 +1,5 @@
 {
-  "id": "MUtP50b9O",
+  "id": "QVIz25kKPE",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Separate destructive actions",
+              "text": "Opening a menu",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Destructive actions should be separated from other options with a divider.",
+              "text": "A menu can be opened in the following ways.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "medium"
+  "blockType": "text-editor"
 }

@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "<content>",
+              "text": "When a button opens a menu, the menu should be positioned relative to the button's placement on the screen. For example, if there is not enough room above the button, the menu should appear below the button. All possible positioning is shown below.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "size": "medium",
   "blockType": "text-editor"
 }

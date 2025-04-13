@@ -438,6 +438,7 @@ order:
   - button
   - checkbox
   - dialog
+  - menu-2auajeekzb
   - radio
   - select
   - textfield
@@ -516,4 +517,3 @@ order:
   - errors
   - get-started-cards
   - feedback
-  - menu-2auajeekzb

@@ -1,5 +1,5 @@
 {
-  "id": "bnpJvv9Ekf",
+  "id": "9HMxsYJr4r",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Scrollbar",
+              "text": "Selected",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "If a maximum height has been applied to a menu or the menu is too large to display all items inside the current screen height, apply a scrollbar.",
+              "text": "To indicate that a menu item has been selected, use a color fill and check icon. If the item already has an icon, just use a color fill.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "medium"
+  "blockType": "text-editor"
 }
