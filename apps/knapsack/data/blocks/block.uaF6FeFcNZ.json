@@ -81,16 +81,6 @@
         "image": "https://knapsack.imgix.net/site/covalent/cv-text-field-thumbnail--LTMwZEywCR.png",
         "title": "Text field",
         "description": "Allows users to type text into a form."
-      },
-      {
-        "id": "IMTTen25My",
-        "link": {
-          "name": "Usage",
-          "path": "/pattern/menu-2auajeekzb?subPageId=overview"
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/cv-menuthumbnail--ciI2I1tHI0.png",
-        "title": "Menu",
-        "description": "Provide extended features or hide some items for usability."
       }
     ],
     "gridStyles": {
