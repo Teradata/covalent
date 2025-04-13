@@ -61,6 +61,23 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "(Optional) Divider used to separate destructive actions or otherwise categorize the items.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

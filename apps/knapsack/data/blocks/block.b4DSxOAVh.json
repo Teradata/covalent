@@ -1,10 +1,10 @@
 {
-  "id": "mpYEXAad7g",
+  "id": "b4DSxOAVh",
   "data": {
     "items": [
       {
         "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-        "nodeId": "17229:16401"
+        "nodeId": "17229:17812"
       }
     ],
     "columns": "1",
@@ -15,6 +15,6 @@
       "seamless": true
     }
   },
-  "blockType": "design-src-tiles",
-  "size": "medium"
+  "size": "large",
+  "blockType": "design-src-tiles"
 }

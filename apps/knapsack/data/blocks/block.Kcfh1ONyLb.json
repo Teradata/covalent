@@ -1,5 +1,5 @@
 {
-  "id": "bnpJvv9Ekf",
+  "id": "Kcfh1ONyLb",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Scrollbar",
+              "text": "Using another UI item",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "If a maximum height has been applied to a menu or the menu is too large to display all items inside the current screen height, apply a scrollbar.",
+              "text": "Other UI items, such as items in a table, can be used to open a menu. The item can be right-clicked to open a contextual menu.",
               "type": "text"
             }
           ]

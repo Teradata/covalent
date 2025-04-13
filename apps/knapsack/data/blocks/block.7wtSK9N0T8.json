@@ -1,5 +1,5 @@
 {
-  "id": "bnpJvv9Ekf",
+  "id": "7wtSK9N0T8",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Scrollbar",
+              "text": "Using a button",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "If a maximum height has been applied to a menu or the menu is too large to display all items inside the current screen height, apply a scrollbar.",
+              "text": "A regular button that opens a menu should always have a dropdown arrow icon. An icon button that opens a menu should use a \"more vertical / 3-dot menu\" icon.",
               "type": "text"
             }
           ]

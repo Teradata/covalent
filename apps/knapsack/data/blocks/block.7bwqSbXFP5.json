@@ -12,7 +12,19 @@
           },
           "content": [
             {
-              "text": "Variants",
+              "text": "States",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Menus items use the cv-list-item component. Interaction states for menu items match the interaction states for cv-list-item.",
               "type": "text"
             }
           ]
