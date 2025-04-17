@@ -262,6 +262,7 @@ byId:
     parentId: coming-soon
     path: /pattern/menu
   menu-2auajeekzb:
+    hidden: true
     id: menu-2auajeekzb
     name: Menu (no web component)
     parentId: coming-soon

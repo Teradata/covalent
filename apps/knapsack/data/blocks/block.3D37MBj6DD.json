@@ -1,5 +1,5 @@
 {
-  "id": "9HMxsYJr4r",
+  "id": "3D37MBj6DD",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Selected",
+              "text": "Width",
               "type": "text"
             }
           ]
@@ -21,10 +21,17 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          }
+          },
+          "content": [
+            {
+              "text": "Menus have a minimum width of 112px and a maximum width of 280px (unless the full width variant is used). ",
+              "type": "text"
+            }
+          ]
         }
       ]
     }
   },
+  "size": "medium",
   "blockType": "text-editor"
 }
