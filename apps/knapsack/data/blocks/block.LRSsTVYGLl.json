@@ -1,0 +1,148 @@
+{
+  "id": "LRSsTVYGLl",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Elevation",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The ",
+              "type": "text"
+            },
+            {
+              "text": "surface color",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://design.teradata.com/site/covalent/latest/pages/color#surface-colors",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " and drop shadow of a menu is variable based it's elevation relative to the UI items below it. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "In the first example, the menu is directly on top of the lowest UI item, which has the surface color",
+              "type": "text"
+            },
+            {
+              "text": " surface-container-lowest.",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": " So, the menu has the surface color",
+              "type": "text"
+            },
+            {
+              "text": " surface-container-low",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": ", one level above the item below it. The menu has the drop shadow setting",
+              "type": "text"
+            },
+            {
+              "text": " Elevation 1.",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "In the second example, the menu is on top of the second lowest UI item, which has the surface color",
+              "type": "text"
+            },
+            {
+              "text": " surface-container-low",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": ". So, the menu has the surface color",
+              "type": "text"
+            },
+            {
+              "text": " surface-container",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "text": ", one level above the item below it. The menu has the drop shadow setting",
+              "type": "text"
+            },
+            {
+              "text": " Elevation 2.",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

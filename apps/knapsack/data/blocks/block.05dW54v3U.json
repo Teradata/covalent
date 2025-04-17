@@ -1,5 +1,5 @@
 {
-  "id": "HYCt-WfYzt",
+  "id": "05dW54v3U",
   "data": {
     "content": {
       "type": "doc",
@@ -34,7 +34,7 @@
                   },
                   "content": [
                     {
-                      "text": "<content>",
+                      "text": "The button or select dropdown that opens the menu should be included in the sequential keyboard navigation, allowing users to reach it using the Tab key. The menu can then be opened using Enter or Space.",
                       "type": "text"
                     }
                   ]
@@ -51,7 +51,7 @@
                   },
                   "content": [
                     {
-                      "text": "Remove disabled fields from the tab order.",
+                      "text": "Once opened, tab dismisses the menu and moves to the nex item in the tab order.",
                       "type": "text"
                     }
                   ]

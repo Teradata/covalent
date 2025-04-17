@@ -256,7 +256,19 @@
                       },
                       "content": [
                         {
-                          "text": "surface-container",
+                          "text": "surface-container-X",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "(Height is variable)",
                           "type": "text"
                         }
                       ]

@@ -5,19 +5,6 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
-          "attrs": {
-            "level": 1,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Keyboard interactions",
-              "type": "text"
-            }
-          ]
-        },
-        {
           "type": "bulletList",
           "content": [
             {

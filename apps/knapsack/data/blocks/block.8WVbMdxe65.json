@@ -1,5 +1,5 @@
 {
-  "id": "9HMxsYJr4r",
+  "id": "8WVbMdxe65",
   "data": {
     "content": {
       "type": "doc",
@@ -7,21 +7,15 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Selected",
+              "text": "Keyboard interactions",
               "type": "text"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          }
         }
       ]
     }

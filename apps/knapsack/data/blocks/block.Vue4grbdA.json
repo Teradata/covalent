@@ -28,6 +28,18 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Positioning the menu to the bottom-right of the trigger is ideal. Otherwise, the positioning should be responsive.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }
