@@ -262,11 +262,16 @@ byId:
     parentId: coming-soon
     path: /pattern/menu
   menu-2auajeekzb:
-    hidden: true
     id: menu-2auajeekzb
     name: Menu (no web component)
     parentId: coming-soon
     path: /pattern/menu-2auajeekzb
+  menu-copy:
+    hidden: true
+    id: menu-copy
+    name: Menu copy
+    parentId: coming-soon
+    path: /pattern/menu-copy
   navigation-list-item:
     hidden: true
     id: navigation-list-item
@@ -468,6 +473,7 @@ order:
   - check-list-item
   - radio-list-item
   - menu-2auajeekzb
+  - menu-copy
   - menu
   - side-sheet
   - slider

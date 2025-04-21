@@ -1,5 +1,5 @@
 {
-  "id": "NRrO40LwG",
+  "id": "gVec0KD4nW",
   "data": {
     "content": {
       "type": "doc",
@@ -148,6 +148,6 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "medium"
+  "size": "medium",
+  "blockType": "text-editor"
 }

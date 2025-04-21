@@ -1,5 +1,5 @@
 {
-  "id": "LxxrI6e5uu",
+  "id": "X4fYUVior",
   "data": {
     "content": {
       "type": "doc",
@@ -19,6 +19,6 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "size": "small",
+  "blockType": "text-editor"
 }

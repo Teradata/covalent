@@ -1,17 +1,18 @@
 {
-  "id": "LxxrI6e5uu",
+  "id": "q94FX1ZBr",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "When a button or icon button is used to open a menu, the button should return to its enabled state after opening the menu.",
+              "text": "Variants",
               "type": "text"
             }
           ]
@@ -19,6 +20,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "blockType": "text-editor"
 }

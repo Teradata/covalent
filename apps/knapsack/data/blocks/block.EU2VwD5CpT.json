@@ -1,5 +1,5 @@
 {
-  "id": "63URHojCxt",
+  "id": "EU2VwD5CpT",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Select using a button - Single item",
+              "text": "Opening a menu",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "When a single item can be selected, use a color fill on the selected item.",
+              "text": "A menu can be opened in the following ways.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "blockType": "text-editor"
 }

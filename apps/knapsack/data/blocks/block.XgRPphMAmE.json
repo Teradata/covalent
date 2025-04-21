@@ -1,5 +1,5 @@
 {
-  "id": "63URHojCxt",
+  "id": "XgRPphMAmE",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Select using a button - Single item",
+              "text": "Additional resources",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "When a single item can be selected, use a color fill on the selected item.",
+              "text": "Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "blockType": "text-editor"
 }

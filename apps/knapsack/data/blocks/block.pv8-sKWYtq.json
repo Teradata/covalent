@@ -1,5 +1,5 @@
 {
-  "id": "Vue4grbdA",
+  "id": "pv8-sKWYtq",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Positioning",
+              "text": "Use icons and dividers",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "When a button opens a menu, the menu should be positioned relative to the button's placement on the screen. For example, if there is not enough room above the button, the menu should appear below the button. All possible positioning is shown below.",
+              "text": "Use descriptive icons that provide quickly recognizable cues about each menu item's purpose.",
               "type": "text"
             }
           ]
@@ -36,7 +36,7 @@
           },
           "content": [
             {
-              "text": "Default positioning is at the bottom right. Positioning should be done responsively according to the button's location on the screen.",
+              "text": "Create visual distinction between selection categories using dividers. Destructive actions should be separated from other options with a divider.",
               "type": "text"
             }
           ]
@@ -44,5 +44,6 @@
       ]
     }
   },
+  "size": "medium",
   "blockType": "text-editor"
 }
