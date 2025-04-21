@@ -1,5 +1,5 @@
 {
-  "id": "63URHojCxt",
+  "id": "bvBdmc7h87",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Select using a button - Single item",
+              "text": "Padding",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "When a single item can be selected, use a color fill on the selected item.",
+              "text": "There should always be 8px at the top and bottom of a menu.",
               "type": "text"
             }
           ]
@@ -32,6 +32,6 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "size": "medium",
+  "blockType": "text-editor"
 }

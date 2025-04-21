@@ -1,5 +1,5 @@
 {
-  "id": "63URHojCxt",
+  "id": "iG7ld2Vhwd",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Select using a button - Single item",
+              "text": "When to use",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "When a single item can be selected, use a color fill on the selected item.",
+              "text": "Menus are used to provide extended features or hide some items for usability. They appear as a result of user action on a button, dropdown select, or other UI item. They are elevated above all other items.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "size": "small"
+  "blockType": "text-editor"
 }

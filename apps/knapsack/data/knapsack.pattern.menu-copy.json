@@ -1,0 +1,116 @@
+{
+  "id": "menu-copy",
+  "tabs": [
+    {
+      "id": "YhFK3XSK",
+      "type": "subPage"
+    },
+    {
+      "id": "KFieNqeUV1",
+      "type": "subPage"
+    },
+    {
+      "id": "2CTQWDICx9",
+      "type": "subPage"
+    },
+    {
+      "id": "LCZ2o1jUDO",
+      "type": "designSrc",
+      "hidden": true
+    }
+  ],
+  "title": "Menu copy",
+  "statuses": {},
+  "subPages": [
+    {
+      "id": "YhFK3XSK",
+      "title": "Usage",
+      "blockIds": [
+        "3xDsdRqol",
+        "iG7ld2Vhwd",
+        "ltllGPpK7d",
+        "qWfQMEAvit",
+        "clGwPphVM2",
+        "pv8-sKWYtq",
+        "0OwMKmiQ8",
+        "D1114cNkCr",
+        "0LWjDVay7",
+        "tNq-BwG0Fh"
+      ]
+    },
+    {
+      "id": "KFieNqeUV1",
+      "title": "Style",
+      "blockIds": [
+        "Yf36sbjm30",
+        "QXpqMyAD5",
+        "5mzRyVaxUZ",
+        "bvBdmc7h87",
+        "krhH5IJA95",
+        "EmtNWxjHpw",
+        "VHGbDoq2qu",
+        "QL0bytdJO",
+        "Ml-sEpwIFX",
+        "NsYYKhhPPw",
+        "3j18vLlxPr",
+        "6u7VcJs5ej",
+        "EU2VwD5CpT",
+        "IwwUqhTOPy",
+        "nZyix36Oi1",
+        "X4fYUVior",
+        "3QsP0jZuB9",
+        "LIaq8OkRhZ",
+        "NfFAEFi6Y",
+        "HTEv5R2Snx",
+        "Y5bEboiKn3",
+        "gxlgwvsr2O",
+        "Fb2G0YY5UX",
+        "pYpl3qkIw4",
+        "J-sDmXNsUq",
+        "85BpGkBw8O",
+        "mGzw4wj7cM",
+        "RF1TtHHtyd",
+        "F-kkLaz3sj",
+        "qDEGwlErZS",
+        "gWVJawMrU5",
+        "dKsm31LrUo",
+        "yrkwPo0bcg",
+        "Yqg5jkheAm",
+        "T9VvHIpxy",
+        "LnG1zJ5CfW",
+        "gTkzmXUah5",
+        "epyV4mcDRd",
+        "FL8WWmBEB1",
+        "LEdDxrUyXL",
+        "ZQxHmbsKuG",
+        "6v0sI5H0zD",
+        "q94FX1ZBr",
+        "W68b2wa-N6",
+        "SaJovgLnsd"
+      ]
+    },
+    {
+      "id": "2CTQWDICx9",
+      "title": "Accessibility",
+      "blockIds": [
+        "n2RoDRDYtQ",
+        "FjTyUFcPSs",
+        "gVec0KD4nW",
+        "YhisM5kMvz",
+        "z718zLYVKc",
+        "XgRPphMAmE",
+        "5098x0WrTN"
+      ]
+    }
+  ],
+  "templates": [],
+  "description": "Provide extended features or hide some items for usability.",
+  "designSrcComponentsById": {
+    "LCZ2o1jUDO": {
+      "id": "LCZ2o1jUDO",
+      "title": "Figma Component",
+      "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+      "componentId": "7605:20819"
+    }
+  }
+}
