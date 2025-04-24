@@ -1,25 +1,25 @@
-@import '../theme-functions';
-@import '../rtl';
+@use '../theme-functions';
+@use '../rtl';
 
 // Standard button sizing.
-$mat-button-padding: 0 rem(0.6) !default;
-$mat-button-min-width: rem(8.8) !default;
-$mat-button-margin: rem(0.6) rem(0.8) !default;
-$mat-button-line-height: rem(3.6) !default;
+$mat-button-padding: 0 theme-functions.rem(0.6) !default;
+$mat-button-min-width: theme-functions.rem(8.8) !default;
+$mat-button-margin: theme-functions.rem(0.6) theme-functions.rem(0.8) !default;
+$mat-button-line-height: theme-functions.rem(3.6) !default;
 $mat-button-border-radius: 3px !default;
 
 // FAB sizing.
 $mat-fab-border-radius: 50%;
-$mat-fab-size: rem(5.6) !default;
-$mat-fab-line-height: rem(5.6) !default;
-$mat-fab-padding: rem(1.6) !default;
-$mat-fab-mini-size: rem(4) !default;
-$mat-fab-mini-line-height: rem(4) !default;
+$mat-fab-size: theme-functions.rem(5.6) !default;
+$mat-fab-line-height: theme-functions.rem(5.6) !default;
+$mat-fab-padding: theme-functions.rem(1.6) !default;
+$mat-fab-mini-size: theme-functions.rem(4) !default;
+$mat-fab-mini-line-height: theme-functions.rem(4) !default;
 
 // Icon button sizing.
-$mat-icon-button-height: rem(4) !default;
-$mat-icon-button-width: rem(4) !default;
-$mat-icon-button-margin: rem(0.6) !default;
+$mat-icon-button-height: theme-functions.rem(4) !default;
+$mat-icon-button-width: theme-functions.rem(4) !default;
+$mat-icon-button-margin: theme-functions.rem(0.6) !default;
 $mat-icon-border-radius: $mat-fab-border-radius;
 
 /** Mixin to create distinct classes for fab positions, e.g. ".mat-fab-position-bottom-right". */
@@ -35,8 +35,8 @@ $mat-icon-border-radius: $mat-fab-border-radius;
   [mat-fab].mat-fab-#{$spot},
   .mat-fab.mat-fab-#{$spot} {
     top: $top;
-    @include rtl(right, $right, $left);
-    @include rtl(left, $left, $right);
+    @include rtl.rtl(right, $right, $left);
+    @include rtl.rtl(left, $left, $right);
 
     bottom: $bottom;
     position: absolute;

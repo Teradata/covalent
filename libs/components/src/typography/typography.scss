@@ -1,28 +1,29 @@
+@use 'sass:map';
 @use '@material/typography/mdc-typography';
 @use '@covalent/tokens' as tokens;
 @use '../theme' as theme;
 
-$theme-tokens: map-get(tokens.$tokens, 'theme');
-$light-tokens: map-get($theme-tokens, 'light');
-$light-colors: map-get($light-tokens, 'colors');
-$dark-tokens: map-get($theme-tokens, 'dark');
-$dark-colors: map-get($dark-tokens, 'colors');
+$theme-tokens: map.get(tokens.$tokens, 'theme');
+$light-tokens: map.get($theme-tokens, 'light');
+$light-colors: map.get($light-tokens, 'colors');
+$dark-tokens: map.get($theme-tokens, 'dark');
+$dark-colors: map.get($dark-tokens, 'colors');
 // Merge deprecated tokens
-$light-colors: map-merge($light-colors, map-get(tokens.$tokens, light));
-$dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
+$light-colors: map.merge($light-colors, map.get(tokens.$tokens, light));
+$dark-colors: map.merge($dark-colors, map.get(tokens.$tokens, dark));
 
 // For convience re-define theme tokens scoped to a light/dark class
 :root {
   @include theme.components-theme(
-    map-merge($light-colors, map-get(tokens.$tokens, light)),
-    map-get(tokens.$tokens, typography)
+    map.merge($light-colors, map.get(tokens.$tokens, light)),
+    map.get(tokens.$tokens, typography)
   );
 }
 
 .dark {
   @include theme.components-theme(
-    map-merge($dark-colors, map-get(tokens.$tokens, dark)),
-    map-get(tokens.$tokens, typography)
+    map.merge($dark-colors, map.get(tokens.$tokens, dark)),
+    map.get(tokens.$tokens, typography)
   );
 }
 

@@ -1,4 +1,5 @@
-@import '../variables';
+@use '../variables';
+@use '../rtl';
 
 @mixin td-structure-utilities() {
   html,
@@ -23,7 +24,7 @@
   button.md-no-style {
     font-weight: normal;
     background-color: inherit;
-    @include rtl(text-align, left, right);
+    @include rtl.rtl(text-align, left, right);
 
     border: none;
     padding: 0;
@@ -116,7 +117,7 @@
     margin: 8px;
   }
 
-  @media (min-width: $layout-breakpoint-sm) {
+  @media (min-width: variables.$layout-breakpoint-sm) {
     .md-padding,
     .mat-padding {
       padding: 16px;

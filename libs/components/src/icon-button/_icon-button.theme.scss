@@ -1,7 +1,8 @@
+@use 'sass:map';
 @use '@material/icon-button';
 
 @mixin icon-button-theme($theme) {
-  $icon: map-get($theme, text-icon-on-background);
+  $icon: map.get($theme, text-icon-on-background);
 
   .mdc-icon-button {
     @include icon-button.ink-color($icon);

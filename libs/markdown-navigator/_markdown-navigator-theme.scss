@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '@angular/material' as mat;
 
 @mixin covalent-markdown-navigator-typography($fontConfig) {
@@ -13,8 +14,8 @@
 }
 
 @mixin covalent-markdown-navigator-theme($theme) {
-  $foreground: map-get($theme, foreground);
-  $secondary: map-get($foreground, secondary-text);
+  $foreground: map.get($theme, foreground);
+  $secondary: map.get($foreground, secondary-text);
 
   td-markdown-navigator {
     td-breadcrumbs {

@@ -1,7 +1,7 @@
-@import '../styles/styles';
+@use '../styles/styles';
 
-@include covalent-core();
-@include covalent-material-icons();
-@include covalent-utilities();
-@include covalent-layout();
-@include covalent-colors();
+@include styles.covalent-core();
+@include styles.covalent-material-icons();
+@include styles.covalent-utilities();
+@include styles.covalent-layout();
+@include styles.covalent-colors();

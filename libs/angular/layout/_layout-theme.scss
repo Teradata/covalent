@@ -1,44 +1,46 @@
-@import '../common/styles/elevation';
-@import '../common/styles/theme-functions';
-@import '../common/styles/typography-functions';
+@use 'sass:map';
+
+@use '../common/styles/elevation';
+@use '../common/styles/theme-functions';
+@use '../common/styles/typography-functions';
 
 @mixin td-layout-typography($config) {
   td-navigation-drawer {
     .td-navigation-drawer-title {
       font: {
-        family: td-font-family($config);
-        size: td-font-size($config, subheading-2);
+        family: typography-functions.td-font-family($config);
+        size: typography-functions.td-font-size($config, subheading-2);
       }
     }
 
     .td-navigation-drawer-name {
       font: {
-        family: td-font-family($config);
-        size: td-font-size($config, body-1);
+        family: typography-functions.td-font-family($config);
+        size: typography-functions.td-font-size($config, body-1);
         weight: 500;
       }
 
-      line-height: td-line-height($config, body-1);
+      line-height: typography-functions.td-line-height($config, body-1);
     }
 
     .td-navigation-drawer-menu-toggle {
       font: {
-        family: td-font-family($config);
-        size: td-font-size($config, body-2);
+        family: typography-functions.td-font-family($config);
+        size: typography-functions.td-font-size($config, body-2);
         weight: 400;
       }
 
-      line-height: td-line-height($config, body-2);
+      line-height: typography-functions.td-line-height($config, body-2);
     }
   }
 }
 
 @mixin td-layout-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+  $warn: map.get($theme, warn);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
 
   [mat-icon-button].td-layout-menu-button {
     margin-left: 0;
@@ -55,11 +57,15 @@
   td-layout-card-over,
   td-navigation-drawer,
   td-layout {
-    --mat-sidenav-container-background-color: var(--mat-sidenav-content-background-color);
-    --mat-expansion-container-background-color: var(--mat-sidenav-content-background-color);
+    --mat-sidenav-container-background-color: var(
+      --mat-sidenav-content-background-color
+    );
+    --mat-expansion-container-background-color: var(
+      --mat-sidenav-content-background-color
+    );
 
     mat-toolbar {
-      @include mat-elevation(1);
+      @include elevation.mat-elevation(1);
 
       z-index: 1;
     }
@@ -89,41 +95,44 @@
   }
 
   .mat-drawer-side.td-layout-sidenav {
-    @include mat-elevation(2);
+    @include elevation.mat-elevation(2);
   }
 
   .td-layout-footer {
-    @include mat-elevation(2);
+    @include elevation.mat-elevation(2);
 
     &.mat-primary {
-      background: mat-color($primary);
+      background: theme-functions.mat-color($primary);
 
       &,
       mat-icon {
-        color: mat-color($primary);
+        color: theme-functions.mat-color($primary);
       }
     }
 
     &.mat-accent {
-      background: mat-color($accent);
+      background: theme-functions.mat-color($accent);
 
       &,
       mat-icon {
-        color: mat-color($accent);
+        color: theme-functions.mat-color($accent);
       }
     }
 
     &.mat-warn {
-      background: mat-color($warn);
+      background: theme-functions.mat-color($warn);
 
       &,
       mat-icon {
-        color: mat-color($warn);
+        color: theme-functions.mat-color($warn);
       }
     }
 
     .mat-mdc-button {
-      --mdc-text-button-label-text-color: #{mat-color($foreground, text)};
+      --mdc-text-button-label-text-color: #{theme-functions.mat-color(
+          $foreground,
+          text
+        )};
     }
   }
 }

@@ -1,4 +1,7 @@
-@import 'variables';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'variables';
 
 // A collection of mixins and CSS classes that can be used to apply elevation to a material
 // element.
@@ -127,7 +130,7 @@ $mat-elevation-property: box-shadow !default;
 $mat-elevation-transition-duration: 280ms !default;
 
 // The default easing value for elevation transitions.
-$mat-elevation-transition-timing-function: $mat-fast-out-slow-in-timing-function;
+$mat-elevation-transition-timing-function: variables.$mat-fast-out-slow-in-timing-function;
 
 // The default color for elevation shadows.
 $mat-elevation-color: black !default;
@@ -142,16 +145,17 @@ $mat-elevation-opacity: 1 !default;
   $color: $mat-elevation-color,
   $opacity: $mat-elevation-opacity
 ) {
-  @if type-of($zValue) != number or not unitless($zValue) {
+  @if meta.type-of($zValue) != number or not math.is-unitless($zValue) {
     @error '$zValue must be a unitless number';
   }
   @if $zValue < 0 or $zValue > 24 {
     @error '$zValue must be between 0 and 24';
   }
 
-  box-shadow: #{map-get(_get-umbra-map($color, $opacity), $zValue)},
-    #{map-get(_get-penumbra-map($color, $opacity), $zValue)},
-    #{map-get(_get-ambient-map($color, $opacity), $zValue)};
+  box-shadow:
+    #{map.get(_get-umbra-map($color, $opacity), $zValue)},
+    #{map.get(_get-penumbra-map($color, $opacity), $zValue)},
+    #{map.get(_get-ambient-map($color, $opacity), $zValue)};
 }
 
 // Returns a string that can be used as the value for a transition property for elevation.

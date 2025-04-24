@@ -1,6 +1,9 @@
+@use 'sass:string';
+@use 'sass:map';
+
 // Utility for fetching a nested value from a typography config.
 @function _td-get-type-value($config, $level, $name) {
-  @return map-get(map-get($config, $level), $name);
+  @return map.get(map.get($config, $level), $name);
 }
 
 // Gets the font size for a level inside a typography config.
@@ -20,13 +23,13 @@
 
 // Gets the font-family from a typography config and removes the quotes around it.
 @function td-font-family($config, $level: null) {
-  $font-family: map-get($config, font-family);
+  $font-family: map.get($config, font-family);
 
   @if $level != null {
     $font-family: _td-get-type-value($config, $level, font-family);
   }
 
-  @return unquote($font-family);
+  @return string.unquote($font-family);
 }
 
 // Represents a typography level from the Material design spec.

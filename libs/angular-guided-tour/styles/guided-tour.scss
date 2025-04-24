@@ -1,15 +1,17 @@
+@use '../../angular/common/styles/elevation';
+
 $mat-icon-font: 'Material Symbols Outlined', sans-serif;
 
 .shepherd-content,
 .shepherd-arrow::before {
-  @include mat-elevation-transition;
-  @include mat-elevation(4);
+  @include elevation.mat-elevation-transition;
+  @include elevation.mat-elevation(4);
 }
 
 .shepherd-element:hover {
   .shepherd-content,
   .shepherd-arrow::before {
-    @include mat-elevation(8);
+    @include elevation.mat-elevation(8);
   }
 }
 
@@ -21,7 +23,7 @@ $mat-icon-font: 'Material Symbols Outlined', sans-serif;
 }
 
 .shepherd-highlight {
-  @include mat-elevation(1);
+  @include elevation.mat-elevation(1);
 }
 
 // remove arrow if shepherd centerd the tooltip
@@ -236,7 +238,10 @@ $mat-icon-font: 'Material Symbols Outlined', sans-serif;
   pointer-events: none;
   position: fixed;
   top: 0;
-  transition: all 0.3s ease-out, height 0ms 0.3s, opacity 0.3s 0ms;
+  transition:
+    all 0.3s ease-out,
+    height 0ms 0.3s,
+    opacity 0.3s 0ms;
   width: 100vw;
   z-index: 9997;
 }
@@ -244,7 +249,10 @@ $mat-icon-font: 'Material Symbols Outlined', sans-serif;
 .shepherd-modal-overlay-container.shepherd-modal-is-visible {
   height: 100vh;
   opacity: 0.5;
-  transition: all 0.3s ease-out, height 0s 0s, opacity 0.3s 0s;
+  transition:
+    all 0.3s ease-out,
+    height 0s 0s,
+    opacity 0.3s 0s;
 }
 
 .shepherd-modal-overlay-container.shepherd-modal-is-visible path {

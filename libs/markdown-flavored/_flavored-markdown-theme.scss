@@ -1,14 +1,17 @@
+@use 'sass:map';
+@use '../angular/common/styles/theme-functions';
+
 @mixin covalent-flavored-markdown-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+  $warn: map.get($theme, warn);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
 
   td-flavored-markdown {
     :not(pre) > code {
-      background: map-get($background, app-bar);
-      color: mat-color($foreground, secondary-text);
+      background: map.get($background, app-bar);
+      color: theme-functions.mat-color($foreground, secondary-text);
     }
 
     .mat-checkbox-disabled {

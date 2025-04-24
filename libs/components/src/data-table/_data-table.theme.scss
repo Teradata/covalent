@@ -1,13 +1,15 @@
+@use 'sass:map';
+
 @use '@material/data-table' as data-table;
 
 @mixin data-table-theme($theme) {
-  $surface: map-get($theme, surface);
-  $highlight: map-get($theme, surface-neutral-highlight);
-  $highlight-hover: map-get($theme, surface-neutral-highlight-hover);
-  $text: map-get($theme, text-primary-on-background);
-  $hint-text: map-get($theme, text-hint-on-background);
-  $icon: map-get($theme, text-icon-on-background);
-  $divider: map-get($theme, divider);
+  $surface: map.get($theme, surface);
+  $highlight: map.get($theme, surface-neutral-highlight);
+  $highlight-hover: map.get($theme, surface-neutral-highlight-hover);
+  $text: map.get($theme, text-primary-on-background);
+  $hint-text: map.get($theme, text-hint-on-background);
+  $icon: map.get($theme, text-icon-on-background);
+  $divider: map.get($theme, divider);
 
   @include data-table.sort-icon-color($hint-text);
   @include data-table.sort-icon-active-color($icon);

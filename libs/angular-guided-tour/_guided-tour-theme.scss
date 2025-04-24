@@ -1,3 +1,8 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../angular/typography/all-typography' as td-typography;
+@use '../angular/common/styles/theme-functions';
+
 @mixin covalent-guided-tour-theme($theme, $config: null) {
   @include td-guided-tour-typography($config);
   @include td-guided-tour-theme($theme);
@@ -5,7 +10,7 @@
 
 @mixin td-guided-tour-typography($config) {
   @if $config == null {
-    $config: td-typography-config();
+    $config: td-typography.td-typography-config();
   }
 
   .shepherd-title {
@@ -22,13 +27,13 @@
 }
 
 @mixin td-guided-tour-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
 
   .shepherd-highlight {
-    background: mat-color($background, focused-button);
+    background: theme-functions.mat-color($background, focused-button);
   }
 
   .shepherd-button.mat-mdc-button:not(:disabled),
@@ -38,14 +43,14 @@
   .shepherd-text,
   .shepherd-content,
   .shepherd-cancel-icon span::after {
-    color: mat-color($accent, darker-contrast);
+    color: theme-functions.mat-color($accent, darker-contrast);
   }
 
   .shepherd-button:not(:disabled),
   .shepherd-button.shepherd-button-secondary:not(:disabled),
   .shepherd-cancel-icon {
     &:hover {
-      background: mat-color($background, focused-button);
+      background: theme-functions.mat-color($background, focused-button);
     }
   }
 
@@ -56,7 +61,7 @@
   .shepherd-content,
   .shepherd-element.shepherd-has-title[data-popper-placement^='bottom']
     > .shepherd-arrow::before {
-    background: mat-color($accent, darker);
+    background: theme-functions.mat-color($accent, darker);
   }
 
   // Bringing in mat-icon button styles

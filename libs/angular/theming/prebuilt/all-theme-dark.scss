@@ -1,20 +1,27 @@
 @use '@angular/material' as mat;
 @use '@covalent/tokens' as variables;
-@import '../all-theme';
-@import '../../../markdown/markdown-theme';
-@import '../../../angular-highlight/highlight-theme';
-@import '../../../markdown-flavored/flavored-markdown-theme';
-@import '../../../markdown-navigator/markdown-navigator-theme';
-@import '../../../angular-guided-tour/guided-tour-theme';
-@import '../../../angular-guided-tour/styles/guided-tour.scss';
+@use '../all-theme';
+@use '../../../markdown/markdown-theme';
+@use '../../../angular-highlight/highlight-theme';
+@use '../../../markdown-flavored/flavored-markdown-theme';
+@use '../../../markdown-navigator/markdown-navigator-theme';
+@use '../../../angular-guided-tour/guided-tour-theme';
+@use '../../../angular-guided-tour/styles/guided-tour.scss';
 // Teradata brand
-@import '../teradata-theme';
-
-@include mat.core-theme($td-dark-theme);
-@include mat.all-component-themes($td-dark-theme);
-@include covalent-theme($td-dark-theme);
-@include covalent-markdown-theme($td-dark-theme);
-@include covalent-highlight-theme($td-dark-theme);
-@include covalent-flavored-markdown-theme($td-dark-theme);
-@include covalent-markdown-navigator-theme($td-dark-theme);
-@include covalent-guided-tour-theme($td-dark-theme);
+@use '../teradata-theme';
+@include mat.core-theme(teradata-theme.$td-dark-theme);
+@include mat.all-component-themes(teradata-theme.$td-dark-theme);
+@include all-theme.covalent-theme(teradata-theme.$td-dark-theme);
+@include markdown-theme.covalent-markdown-theme(teradata-theme.$td-dark-theme);
+@include highlight-theme.covalent-highlight-theme(
+  teradata-theme.$td-dark-theme
+);
+@include flavored-markdown-theme.covalent-flavored-markdown-theme(
+  teradata-theme.$td-dark-theme
+);
+@include markdown-navigator-theme.covalent-markdown-navigator-theme(
+  teradata-theme.$td-dark-theme
+);
+@include guided-tour-theme.covalent-guided-tour-theme(
+  teradata-theme.$td-dark-theme
+);

@@ -1,13 +1,14 @@
-@import '../variables';
+@use '../variables';
+@use '../rtl';
 
 @mixin td-sidenav-utilities() {
   mat-sidenav {
-    width: $navigation-drawer-width;
+    width: variables.$navigation-drawer-width;
 
     .mat-list-item-content {
       mat-icon {
-        @include rtl(margin-left, 0, $margin);
-        @include rtl(margin-right, $margin, 0);
+        @include rtl.rtl(margin-left, 0, variables.$margin);
+        @include rtl.rtl(margin-right, variables.$margin, 0);
       }
     }
 

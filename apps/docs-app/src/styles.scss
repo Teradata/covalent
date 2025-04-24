@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '@angular/material' as mat;
 @use '@covalent/tokens' as variables;
 @import '../../../libs/angular/theming/all-theme';
@@ -41,7 +42,7 @@ $mat-font-url: './';
 // Include covalent color classes
 @include covalent-colors();
 
-$background: map-get($td-light-theme, background);
+$background: map.get($td-light-theme, background);
 @include mat.core-theme($td-light-theme);
 @include mat.all-component-themes($td-light-theme);
 @include covalent-theme($td-light-theme);
@@ -54,7 +55,7 @@ $background: map-get($td-light-theme, background);
 @include teradata-brand($td-light-theme);
 
 .mat-app-background {
-  background-color: map-get($background, background);
+  background-color: map.get($background, background);
 }
 
 .cv-surface-high {
@@ -71,7 +72,7 @@ body .mat-card {
 
 // Dark theme
 .theme-dark {
-  $background: map-get($td-dark-theme, background);
+  $background: map.get($td-dark-theme, background);
   @include mat.core-theme($td-dark-theme);
   @include mat.all-component-colors($td-dark-theme);
   @include covalent-theme($td-dark-theme);
@@ -83,7 +84,7 @@ body .mat-card {
   @include teradata-brand($td-dark-theme);
 
   .mat-app-background {
-    background-color: map-get($background, background);
+    background-color: map.get($background, background);
   }
 
   .cv-surface-high {

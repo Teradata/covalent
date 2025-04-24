@@ -1,14 +1,16 @@
-@import '../common/styles/variables';
-@import '../common/styles/elevation';
-@import '../common/styles/theme-functions';
+@use 'sass:map';
+
+@use '../common/styles/variables';
+@use '../common/styles/elevation';
+@use '../common/styles/theme-functions';
 
 @mixin td-file-theme($theme) {
-  $background: map-get($theme, background);
+  $background: map.get($theme, background);
 
   td-file-upload {
     .td-file-upload-cancel {
       mat-icon {
-        background-color: mat-color($background, background);
+        background-color: theme-functions.mat-color($background, background);
       }
     }
   }
@@ -18,10 +20,11 @@
     * Class that is added ondragenter by the [TdFileDrop] directive.
     */
     .drop-zone {
-      transition: background $swift-ease-out-duration
-          $swift-ease-out-timing-function,
-        mat-elevation-transition-property-value();
-      @include mat-elevation(8);
+      transition:
+        background variables.$swift-ease-out-duration
+          variables.$swift-ease-out-timing-function,
+        elevation.mat-elevation-transition-property-value();
+      @include elevation.mat-elevation(8);
     }
   }
 }

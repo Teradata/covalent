@@ -1,5 +1,6 @@
+@use 'sass:map';
 @use '@covalent/tokens' as tokens;
-$typography: map-get(tokens.$tokens, typography);
+$typography: map.get(tokens.$tokens, typography);
 
 $code-font: 'Menlo', 'Monaco', 'Andale Mono', 'lucida console', 'Courier New',
   monospace;
@@ -48,10 +49,10 @@ $padding: 16px;
     display: block;
     overflow-wrap: break-word;
     margin: 0;
-    font-family: map-get($typography, code-font-family);
-    font-size: map-get($typography, code-font-size);
-    font-weight: map-get($typography, code-font-weight);
-    line-height: map-get($typography, code-line-height);
+    font-family: map.get($typography, code-font-family);
+    font-size: map.get($typography, code-font-size);
+    font-weight: map.get($typography, code-font-weight);
+    line-height: map.get($typography, code-line-height);
   }
 
   .copy-button {

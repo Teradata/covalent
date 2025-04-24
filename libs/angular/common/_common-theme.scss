@@ -1,25 +1,26 @@
-@import 'styles/theme-functions';
+@use 'sass:map';
+@use 'styles/theme-functions';
 
 @mixin td-common-theme($theme) {
-  $warn: map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $warn: map.get($theme, warn);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
 
   mat-list-item,
   [mat-list-item],
   .mat-list-item-content {
     mat-icon {
-      color: mat-color($foreground, icon);
+      color: theme-functions.mat-color($foreground, icon);
 
       &[matListItemAvatar] {
-        background-color: mat-color($background, hover);
+        background-color: theme-functions.mat-color($background, hover);
       }
     }
   }
 
   .mat-list-text {
     p {
-      color: mat-color($foreground, disabled);
+      color: theme-functions.mat-color($foreground, disabled);
     }
   }
 
@@ -30,7 +31,7 @@
   .mat-row {
     &:hover,
     &:focus {
-      background-color: map-get($background, hover);
+      background-color: map.get($background, hover);
     }
   }
 }

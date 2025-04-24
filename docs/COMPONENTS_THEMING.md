@@ -20,17 +20,17 @@ Covalent uses SCSS tokens as one way to manage its theming system. These tokens 
 @use '@covalent/icons';
 
 // Extracting theme tokens
-$theme-tokens: map-get(covalent-tokens.$tokens, 'theme');
-$light-tokens: map-get($theme-tokens, 'light');
-$dark-tokens: map-get($theme-tokens, 'dark');
+$theme-tokens: map.get(covalent-tokens.$tokens, 'theme');
+$light-tokens: map.get($theme-tokens, 'light');
+$dark-tokens: map.get($theme-tokens, 'dark');
 
 // Extracting color tokens for light and dark themes
-$light-colors: map-get($light-tokens, 'colors');
-$dark-colors: map-get($dark-tokens, 'colors');
+$light-colors: map.get($light-tokens, 'colors');
+$dark-colors: map.get($dark-tokens, 'colors');
 
 // Merging with deprecated tokens (if any)
-$light-colors: map-merge($light-colors, map-get(covalent-tokens.$tokens, 'light'));
-$dark-colors: map-merge($dark-colors, map-get(covalent-tokens.$tokens, 'dark'));
+$light-colors: map.merge($light-colors, map.get(covalent-tokens.$tokens, 'light'));
+$dark-colors: map.merge($dark-colors, map.get(covalent-tokens.$tokens, 'dark'));
 ```
 
 This snippet demonstrates how to extract and prepare color tokens for both light and dark themes.
@@ -42,13 +42,13 @@ To apply the theme, you use the extracted tokens to define CSS custom properties
 ```scss
 :root {
   // Apply the light theme by default
-  @include covalent-theme.components-theme($light-colors, map-get(covalent-tokens.$tokens, typography));
+  @include covalent-theme.components-theme($light-colors, map.get(covalent-tokens.$tokens, typography));
 }
 
 // Dark theme class
 .theme-dark {
   // Apply the dark theme when .theme-dark class is added to an element
-  @include covalent-theme.components-theme($dark-colors, map-get(covalent-tokens.$tokens, typography));
+  @include covalent-theme.components-theme($dark-colors, map.get(covalent-tokens.$tokens, typography));
 }
 ```
 

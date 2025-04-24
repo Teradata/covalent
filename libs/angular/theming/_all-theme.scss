@@ -1,31 +1,33 @@
-@import '../breadcrumbs/breadcrumbs-theme';
-@import '../common/common-theme';
-@import '../layout/layout-theme';
-@import '../loading/loading-theme';
-@import '../file/file-theme';
-@import '../dialogs/dialog-theme';
-@import '../json-formatter/json-formatter-theme';
-@import '../message/message-theme';
-@import '../side-sheet/side-sheet.theme';
+@use 'sass:map';
+
+@use '../breadcrumbs/breadcrumbs-theme';
+@use '../common/common-theme';
+@use '../layout/layout-theme';
+@use '../loading/loading-theme';
+@use '../file/file-theme';
+@use '../dialogs/dialog-theme';
+@use '../json-formatter/json-formatter-theme';
+@use '../message/message-theme';
+@use '../side-sheet/side-sheet.theme';
 // import the covalent mixins
-@import '../common/styles/styles';
-@import '../typography/all-typography';
+@use '../common/styles/styles';
+@use '../typography/all-typography';
 
 // Create a theme.
 @mixin covalent-theme($theme, $config: null) {
-  @include td-typography($config);
-  @include td-breadcrumbs-theme($theme);
-  @include td-common-theme($theme);
-  @include td-layout-theme($theme);
-  @include td-loading-theme($theme);
-  @include td-file-theme($theme);
-  @include td-dialog-theme($theme);
-  @include td-json-formatter-theme($theme);
-  @include td-message-theme($theme);
-  @include td-side-sheet-theme($theme);
+  @include all-typography.td-typography($config);
+  @include breadcrumbs-theme.td-breadcrumbs-theme($theme);
+  @include common-theme.td-common-theme($theme);
+  @include layout-theme.td-layout-theme($theme);
+  @include loading-theme.td-loading-theme($theme);
+  @include file-theme.td-file-theme($theme);
+  @include dialog-theme.td-dialog-theme($theme);
+  @include json-formatter-theme.td-json-formatter-theme($theme);
+  @include message-theme.td-message-theme($theme);
+  @include side-sheet.td-side-sheet-theme($theme);
 
-  $foreground: map-get(map-get($theme, color), foreground);
-  $inverse-on-surface: map-get($foreground, inverse-on-surface);
+  $foreground: map.get(map.get($theme, color), foreground);
+  $inverse-on-surface: map.get($foreground, inverse-on-surface);
 
   .mdc-tooltip__surface {
     // Tooltip fix to override the correct fill color in MDC styles

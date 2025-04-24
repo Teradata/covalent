@@ -1,9 +1,10 @@
+@use 'sass:map';
 @use '@angular/material' as mat;
 
 @mixin covalent-markdown-theme($theme) {
-  $accent: map-get($theme, accent);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $accent: map.get($theme, accent);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
 
   td-markdown {
     a {

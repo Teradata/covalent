@@ -1,3 +1,7 @@
+@use 'sass:color';
+@use 'sass:meta';
+@use 'sass:map';
+
 @function rem($multiplier) {
   $font-size: 10px;
   @return $multiplier * $font-size;
@@ -14,12 +18,12 @@
 @function mat-color($palette, $hue: default, $opacity: null) {
   // If hueKey is a number between zero and one, then it actually contains an
   // opacity value, so recall this function with the default hue and that given opacity.
-  @if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
+  @if meta.type-of($hue) == number and $hue >= 0 and $hue <= 1 {
     @return mat-color($palette, default, $hue);
   }
 
-  $color: map-get($palette, $hue);
-  $opacity: if($opacity == null, opacity($color), $opacity);
+  $color: map.get($palette, $hue);
+  $opacity: if($opacity == null, color.opacity($color), $opacity);
 
   @return rgba($color, $opacity);
 }

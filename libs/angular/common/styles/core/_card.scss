@@ -1,9 +1,11 @@
-@import '../variables';
+@use '../variables';
 
 @function makelongshadow($color) {
   $val: 0 0 $color;
   @for $i from 1 through 200 {
-    $val: #{$val}, #{$i}px #{$i}px #{$color};
+    $val:
+      #{$val},
+      #{$i}px #{$i}px #{$color};
   }
   @return $val;
 }
@@ -25,10 +27,10 @@ $color: rgba(0, 0, 0, 1%);
       }
 
       [matCardAvatar] {
-        font-size: $mat-card-header-size;
-        line-height: $mat-card-header-size;
-        height: $mat-card-header-size;
-        width: $mat-card-header-size;
+        font-size: variables.$mat-card-header-size;
+        line-height: variables.$mat-card-header-size;
+        height: variables.$mat-card-header-size;
+        width: variables.$mat-card-header-size;
         margin: 16px 0 0 15px;
         border-radius: 50%;
       }
@@ -46,24 +48,24 @@ $color: rgba(0, 0, 0, 1%);
       }
 
       mat-card-title {
-        padding-top: $padding;
-        padding-left: $padding;
-        padding-right: $padding;
+        padding-top: variables.$padding;
+        padding-left: variables.$padding;
+        padding-right: variables.$padding;
       }
 
       mat-card-subtitle {
-        padding-left: $padding;
-        padding-right: $padding;
+        padding-left: variables.$padding;
+        padding-right: variables.$padding;
       }
 
       mat-card-content {
-        padding: $padding;
+        padding: variables.$padding;
       }
 
       &,
       & .mat-card {
         & .mat-card-actions {
-          padding: calc($padding / 2);
+          padding: calc(variables.$padding / 2);
           margin: 0;
         }
       }
@@ -85,8 +87,8 @@ $color: rgba(0, 0, 0, 1%);
         .mat-card-md-image,
         .mat-card-sm-image {
           &:last-child {
-            border-top-left-radius: $mat-card-radius;
-            border-bottom-left-radius: $mat-card-radius;
+            border-top-left-radius: variables.$mat-card-radius;
+            border-bottom-left-radius: variables.$mat-card-radius;
           }
         }
       }
@@ -94,8 +96,8 @@ $color: rgba(0, 0, 0, 1%);
       .mat-card {
         .mat-card-image {
           &:first-child {
-            border-top-left-radius: $mat-card-radius;
-            border-top-right-radius: $mat-card-radius;
+            border-top-left-radius: variables.$mat-card-radius;
+            border-top-right-radius: variables.$mat-card-radius;
           }
         }
 
@@ -103,7 +105,7 @@ $color: rgba(0, 0, 0, 1%);
         .mat-card-md-image,
         .mat-card-sm-image {
           &:first-child {
-            border-top-right-radius: $mat-card-radius;
+            border-top-right-radius: variables.$mat-card-radius;
           }
         }
       }
@@ -116,8 +118,8 @@ $color: rgba(0, 0, 0, 1%);
         .mat-card-md-image,
         .mat-card-sm-image {
           &:last-child {
-            border-top-right-radius: $mat-card-radius;
-            border-bottom-right-radius: $mat-card-radius;
+            border-top-right-radius: variables.$mat-card-radius;
+            border-bottom-right-radius: variables.$mat-card-radius;
           }
         }
       }
@@ -125,8 +127,8 @@ $color: rgba(0, 0, 0, 1%);
       .mat-card {
         .mat-card-image {
           &:first-child {
-            border-top-left-radius: $mat-card-radius;
-            border-top-right-radius: $mat-card-radius;
+            border-top-left-radius: variables.$mat-card-radius;
+            border-top-right-radius: variables.$mat-card-radius;
           }
         }
 
@@ -134,7 +136,7 @@ $color: rgba(0, 0, 0, 1%);
         .mat-card-md-image,
         .mat-card-sm-image {
           &:first-child {
-            border-top-left-radius: $mat-card-radius;
+            border-top-left-radius: variables.$mat-card-radius;
           }
         }
       }
@@ -146,13 +148,17 @@ $color: rgba(0, 0, 0, 1%);
     &[ng-reflect-href] {
       &:hover {
         cursor: pointer;
-        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 20%),
-          0 4px 5px 0 rgba(0, 0, 0, 14%), 0 1px 10px 0 rgba(0, 0, 0, 12%);
+        box-shadow:
+          0 2px 4px -1px rgba(0, 0, 0, 20%),
+          0 4px 5px 0 rgba(0, 0, 0, 14%),
+          0 1px 10px 0 rgba(0, 0, 0, 12%);
       }
 
       &:active {
-        box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 20%),
-          0 10px 14px 1px rgba(0, 0, 0, 14%), 0 4px 18px 3px rgba(0, 0, 0, 12%);
+        box-shadow:
+          0 6px 6px -3px rgba(0, 0, 0, 20%),
+          0 10px 14px 1px rgba(0, 0, 0, 14%),
+          0 4px 18px 3px rgba(0, 0, 0, 12%);
 
         & mat-toolbar {
           background-color: rgba(255, 255, 255, 20%);
@@ -167,8 +173,10 @@ $color: rgba(0, 0, 0, 1%);
           transparent 50%,
           rgba(255, 255, 255, 20%) 50%
         );
-        transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,
-          color 0.5s ease 0s, background-color 0.5s ease;
+        transition:
+          background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,
+          color 0.5s ease 0s,
+          background-color 0.5s ease;
       }
     }
 

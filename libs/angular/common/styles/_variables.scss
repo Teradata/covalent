@@ -1,4 +1,4 @@
-@import 'theme-functions';
+@use 'theme-functions';
 
 // Teradata UI Platform
 // ------------------------------
@@ -12,16 +12,16 @@ $step-circle: 24px;
 $font-family: 'Inter', sans-serif !default;
 $font-size: 10px;
 
-$display-4-font-size-base: rem(11.2) !default;
-$display-3-font-size-base: rem(5.6) !default;
-$display-2-font-size-base: rem(4.5) !default;
-$display-1-font-size-base: rem(3.4) !default;
-$headline-font-size-base: rem(2.4) !default;
-$title-font-size-base: rem(2) !default;
-$subhead-font-size-base: rem(1.6) !default;
+$display-4-font-size-base: theme-functions.rem(11.2) !default;
+$display-3-font-size-base: theme-functions.rem(5.6) !default;
+$display-2-font-size-base: theme-functions.rem(4.5) !default;
+$display-1-font-size-base: theme-functions.rem(3.4) !default;
+$headline-font-size-base: theme-functions.rem(2.4) !default;
+$title-font-size-base: theme-functions.rem(2) !default;
+$subhead-font-size-base: theme-functions.rem(1.6) !default;
 
-$body-font-size-base: rem(1.4) !default;
-$caption-font-size-base: rem(1.2) !default;
+$body-font-size-base: theme-functions.rem(1.4) !default;
+$caption-font-size-base: theme-functions.rem(1.2) !default;
 
 // Layout
 $baseline-grid: 8px !default;
@@ -32,7 +32,7 @@ $layout-breakpoint-lg: 1920px !default;
 $layout-gutter-width: ($baseline-grid * 2) !default;
 
 // Typography
-$mat-body-font-size-base: rem(1.4) !default;
+$mat-body-font-size-base: theme-functions.rem(1.4) !default;
 
 // App bar variables
 $app-bar-height: 64px;
@@ -42,7 +42,7 @@ $mat-card-header-size: 40px;
 $mat-card-radius: 2px;
 
 // Icons
-$icon-size: rem(2.4);
+$icon-size: theme-functions.rem(2.4);
 
 // Toast
 $toast-height: $baseline-grid * 3 !default;
