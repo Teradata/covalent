@@ -1,4 +1,4 @@
-import { css, html, TemplateResult, unsafeCSS } from 'lit';
+import { css, html, unsafeCSS } from 'lit';
 import { RadioBase } from '@material/mwc-radio/mwc-radio-base';
 import { styles as radioStyle } from '@material/mwc-radio/mwc-radio.css';
 import { customElement, property } from 'lit/decorators.js';
