@@ -13,7 +13,7 @@ declare global {
 
 @customElement('cv-dialog')
 export class CovalentDialog extends DialogBase {
-  static override styles = [
+  static override styles: any = [
     baseStyles,
     css`
       ${unsafeCSS(styles)}

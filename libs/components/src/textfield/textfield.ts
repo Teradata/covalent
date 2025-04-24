@@ -12,7 +12,7 @@ declare global {
 
 @customElement('cv-textfield')
 export class CovalentTextField extends TextFieldBase {
-  static override styles = [
+  static override styles: any = [
     baseTextFieldStyles,
     css`
       ${unsafeCSS(styles)}

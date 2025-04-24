@@ -15,7 +15,7 @@ export type BadgeAlignmentHorizonatal = 'left' | 'right';
 
 @customElement('cv-badge')
 export class CovalentBadge extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -74,7 +74,7 @@ export class CovalentBadge extends LitElement {
 
       // Filter out non-element nodes
       const elements = assignedNodes.filter(
-        (node) => node.nodeType === Node.ELEMENT_NODE
+        (node) => node.nodeType === Node.ELEMENT_NODE,
       );
 
       if (!elements.length) {

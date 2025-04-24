@@ -7,7 +7,7 @@ import '../typography/typography';
 
 @customElement('cv-icon-demo')
 export class CovalentIconDemo extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -22,7 +22,7 @@ export class CovalentIconDemo extends LitElement {
             <cv-typography scale="caption">
               <div class="wrap">${icon}</div>
             </cv-typography>
-          </div>`
+          </div>`,
       )}
     </div>`;
   }

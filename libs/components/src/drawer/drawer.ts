@@ -12,7 +12,12 @@ declare global {
 
 @customElement('cv-drawer')
 export class CovalentDrawer extends DrawerBase {
-  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
+  static override styles: any = [
+    baseStyles,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
-export default CovalentDrawer
+export default CovalentDrawer;

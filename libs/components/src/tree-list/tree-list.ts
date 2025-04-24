@@ -10,7 +10,7 @@ declare global {
 // Wraps cv-tree-list-item components
 @customElement('cv-tree-list')
 export class CovalentTreeList extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -32,7 +32,7 @@ document.addEventListener('select', (e: Event) => {
 const handleSelect = (e: Event): void => {
   // All cv-tree-list-item components.
   const items: any[] = Array.from(
-    document?.querySelectorAll('cv-tree-list-item')
+    document?.querySelectorAll('cv-tree-list-item'),
   );
 
   // Currently selected item.
@@ -41,8 +41,8 @@ const handleSelect = (e: Event): void => {
 
   // Find previously selected element and remove the styling.
   items.forEach((item) => {
-    item
-      .shadowRoot?.querySelector('div.itemContent')
+    item.shadowRoot
+      ?.querySelector('div.itemContent')
       ?.classList.remove('selected');
   });
 

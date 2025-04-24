@@ -17,7 +17,7 @@ declare global {
  */
 @customElement('cv-side-sheet')
 export class CovalentSideSheet extends CovalentDialog {
-  static override styles = [
+  static override styles: any = [
     styles,
     css`
       ${unsafeCSS(baseStyles)}

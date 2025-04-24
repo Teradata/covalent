@@ -15,7 +15,7 @@ declare global {
 
 @customElement('cv-list-item')
 export class CovalentListItem extends ListItemBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(listItemStyle)}
     `,

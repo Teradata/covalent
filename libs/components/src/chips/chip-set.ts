@@ -10,7 +10,7 @@ import styles from './chip-set.scss?inline';
  */
 @customElement('cv-chip-set')
 export class CovalentChipSet extends ChipSetBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -22,6 +22,5 @@ declare global {
     'cv-chip-set': CovalentChipSet;
   }
 }
-
 
 export default CovalentChipSet;

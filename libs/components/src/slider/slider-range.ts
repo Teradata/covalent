@@ -10,7 +10,7 @@ declare global {
 
 @customElement('cv-slider-range')
 export class CovalentSliderRange extends SliderRangeBase {
-  static override styles = [styles];
+  static override styles: any = [styles];
 }
 
 export default CovalentSliderRange;

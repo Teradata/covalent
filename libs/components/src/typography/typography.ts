@@ -10,7 +10,7 @@ declare global {
 
 @customElement('cv-typography')
 export class CovalentTypography extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

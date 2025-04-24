@@ -12,8 +12,12 @@ declare global {
 
 @customElement('cv-icon-button')
 export class CovalentIconButton extends IconButtonBase {
-  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
+  static override styles: any = [
+    baseStyles,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
-
 
 export default CovalentIconButton;

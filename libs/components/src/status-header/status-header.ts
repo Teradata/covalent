@@ -10,7 +10,7 @@ import styles from './status-header.scss?inline';
  */
 @customElement('cv-status-header')
 export class CovalentStatusHeader extends StatusHeaderBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

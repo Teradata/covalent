@@ -13,7 +13,7 @@ declare global {
 
 @customElement('cv-formfield')
 export class CovalentFormfield extends FormfieldBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -21,4 +21,4 @@ export class CovalentFormfield extends FormfieldBase {
   ];
 }
 
-export default CovalentFormfield
+export default CovalentFormfield;

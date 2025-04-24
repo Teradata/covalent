@@ -12,7 +12,12 @@ declare global {
 
 @customElement('cv-snackbar')
 export class CovalentSnackbar extends SnackbarBase {
-  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
+  static override styles: any = [
+    baseStyles,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
 export default CovalentSnackbar;

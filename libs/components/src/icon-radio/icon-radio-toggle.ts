@@ -12,7 +12,7 @@ declare global {
 
 @customElement('cv-radio-icon')
 export class CovalentIconRadioToggle extends RadioBase {
-  static override styles = [
+  static override styles: any = [
     radioStyle,
     css`
       ${unsafeCSS(styles)}
@@ -22,7 +22,7 @@ export class CovalentIconRadioToggle extends RadioBase {
   @property({ type: Boolean }) iconOnly = false;
 
   // Override the renderRipple method to minimally introduce the icon & text slots without overwritting the render method
-  protected override renderRipple(): TemplateResult | string {
+  protected override renderRipple() {
     const iconSlot = html`<slot name="icon"></slot>`;
     const textSlot = this.iconOnly
       ? ''

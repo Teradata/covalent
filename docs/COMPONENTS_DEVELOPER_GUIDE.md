@@ -26,7 +26,7 @@ import styles from './badge.scss?inline'; // Adjust the path as needed
  */
 @customElement('cv-badge')
 export class CovalentBadge extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

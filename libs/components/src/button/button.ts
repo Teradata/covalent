@@ -11,7 +11,12 @@ declare global {
 
 @customElement('cv-button')
 export class CovalentButton extends ButtonBase {
-  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
+  static override styles: any = [
+    baseStyles,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
 export default CovalentButton;

@@ -25,7 +25,7 @@ declare global {
  */
 @customElement('cv-app-shell')
 export class CovalentAppShell extends DrawerBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -183,7 +183,7 @@ export class CovalentAppShell extends DrawerBase {
     const maxWidthForHelp = Math.max(320, windowWidth - mainMinWidth);
     const newWidth = Math.max(
       320,
-      Math.min(maxWidthForHelp, this._startWidth - diff)
+      Math.min(maxWidthForHelp, this._startWidth - diff),
     );
     if (this.helpWidth !== newWidth) {
       this.helpWidth = newWidth;
@@ -214,7 +214,7 @@ export class CovalentAppShell extends DrawerBase {
     this.forcedOpen = forcedOpen;
 
     this.dispatchEvent(
-      new Event('CovalentAppShell:toggle', { bubbles: true, composed: true })
+      new Event('CovalentAppShell:toggle', { bubbles: true, composed: true }),
     );
 
     this.requestUpdate();
@@ -222,14 +222,14 @@ export class CovalentAppShell extends DrawerBase {
 
   private updateHelpPanelWidth() {
     const appShell = this.shadowRoot?.querySelector(
-      '.app-shell'
+      '.app-shell',
     ) as HTMLElement;
     appShell?.style.setProperty('--cv-help-width', `${this.helpWidth}px`);
   }
 
   private _handleMenuClick() {
     this.mdcRoot.dispatchEvent(
-      new Event('transitionend', { bubbles: true, composed: true })
+      new Event('transitionend', { bubbles: true, composed: true }),
     );
     // Forcefully toggle the open/close state
     this._toggleOpen(!this.forcedOpen);

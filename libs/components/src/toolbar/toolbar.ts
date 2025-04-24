@@ -11,7 +11,7 @@ declare global {
 
 @customElement('cv-toolbar')
 export class CovalentToolbar extends TopAppBarBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

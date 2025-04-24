@@ -10,7 +10,7 @@ import styles from './chip.scss?inline';
  */
 @customElement('cv-chip')
 export class CovalentChip extends ChipBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

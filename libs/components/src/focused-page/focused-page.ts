@@ -19,7 +19,7 @@ import { classMap } from 'lit/directives/class-map.js';
 
 @customElement('cv-focused-page')
 export class CovalentFocusedPage extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

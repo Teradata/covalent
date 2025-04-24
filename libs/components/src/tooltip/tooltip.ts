@@ -15,7 +15,7 @@ declare global {
 export class CovalentTooltip extends LitElement {
   protected mdcFoundation!: MDCTooltipFoundation;
   protected readonly mdcFoundationClass = MDCTooltipFoundation;
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -47,19 +47,20 @@ export class CovalentTooltip extends LitElement {
       getViewportWidth: () =>
         Math.max(
           document.documentElement.clientWidth || 0,
-          window.innerWidth || 0
+          window.innerWidth || 0,
         ),
       getViewportHeight: () =>
         Math.max(
           document.documentElement.clientHeight || 0,
-          window.innerHeight || 0
+          window.innerHeight || 0,
         ),
       getTooltipSize: () =>
         Object.assign({
           width: this.mdcRoot.clientWidth,
           height: this.mdcRoot.clientHeight,
         }),
-      getTooltipCaretBoundingRect: () => this.mdcRoot.getBoundingClientRect() ?? null,
+      getTooltipCaretBoundingRect: () =>
+        this.mdcRoot.getBoundingClientRect() ?? null,
       getAnchorBoundingRect: () => this.anchor?.getBoundingClientRect() ?? null,
       getParentBoundingRect: () =>
         this.renderRoot.getRootNode().parentElement?.getBoundingClientRect() ??
@@ -69,7 +70,8 @@ export class CovalentTooltip extends LitElement {
       setAnchorAttribute: (attr: string, value: string) =>
         this.anchor?.setAttribute(attr, value),
       isRTL: () => false,
-      isInstanceOfElement:(eventTarget: EventTarget | null) => eventTarget instanceof Element,
+      isInstanceOfElement: (eventTarget: EventTarget | null) =>
+        eventTarget instanceof Element,
       anchorContainsElement: (element: HTMLElement) =>
         this.anchor?.contains(element) ?? false,
       tooltipContainsElement: (element: HTMLElement) => this.contains(element),
@@ -120,21 +122,21 @@ export class CovalentTooltip extends LitElement {
     this.mdcFoundation = new this.mdcFoundationClass(this.createAdapter());
 
     this.anchor?.addEventListener('click', () =>
-      this.mdcFoundation.handleAnchorClick()
+      this.mdcFoundation.handleAnchorClick(),
     );
     this.anchor?.addEventListener('mouseenter', () =>
-      this.mdcFoundation.handleAnchorMouseEnter()
+      this.mdcFoundation.handleAnchorMouseEnter(),
     );
     this.anchor?.addEventListener('touchstart', () =>
-      this.mdcFoundation.handleAnchorTouchstart()
+      this.mdcFoundation.handleAnchorTouchstart(),
     );
 
     if (!this.persistent) {
       this.anchor?.addEventListener('mouseleave', () =>
-        this.mdcFoundation.handleAnchorMouseLeave()
+        this.mdcFoundation.handleAnchorMouseLeave(),
       );
       this.anchor?.addEventListener('touchend', () =>
-        this.mdcFoundation.handleAnchorTouchend()
+        this.mdcFoundation.handleAnchorTouchend(),
       );
     }
   }
@@ -142,19 +144,19 @@ export class CovalentTooltip extends LitElement {
   disconnectedCallback(): void {
     super.connectedCallback();
     this.anchor?.removeEventListener('click', () =>
-      this.mdcFoundation.handleAnchorClick()
+      this.mdcFoundation.handleAnchorClick(),
     );
     this.anchor?.removeEventListener('mouseenter', () =>
-      this.mdcFoundation.handleAnchorMouseEnter()
+      this.mdcFoundation.handleAnchorMouseEnter(),
     );
     this.anchor?.removeEventListener('mouseleave', () =>
-      this.mdcFoundation.handleAnchorMouseLeave()
+      this.mdcFoundation.handleAnchorMouseLeave(),
     );
     this.anchor?.removeEventListener('touchstart', () =>
-      this.mdcFoundation.handleAnchorTouchstart()
+      this.mdcFoundation.handleAnchorTouchstart(),
     );
     this.anchor?.removeEventListener('touchend', () =>
-      this.mdcFoundation.handleAnchorTouchend()
+      this.mdcFoundation.handleAnchorTouchend(),
     );
   }
 

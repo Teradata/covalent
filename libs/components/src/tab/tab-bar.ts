@@ -10,7 +10,7 @@ declare global {
 
 @customElement('cv-tab-bar')
 export class CovalentTabBar extends TabBarBase {
-  static override styles = [styles];
+  static override styles: any = [styles];
 }
 
 export default CovalentTabBar;

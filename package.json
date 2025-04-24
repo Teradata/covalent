@@ -90,7 +90,7 @@
     "echarts-stat": "^1.2.0",
     "echarts-wordcloud": "^2.1.0",
     "highlight.js": "^11.9.0",
-    "lit": "^2.2.8",
+    "lit": "^3.3.0",
     "mjml-browser": "^4.15.3",
     "monaco-editor": "^0.52.0",
     "rxjs": "^7.8.1",

@@ -12,7 +12,7 @@ import '../icon/icon';
  */
 @customElement('cv-icon-lockup')
 export class CovalentIconLockup extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -67,7 +67,7 @@ export class CovalentIconLockup extends LitElement {
    */
   private checkIconSlot() {
     const slot = this.shadowRoot?.querySelector(
-      'slot[name="icon"]'
+      'slot[name="icon"]',
     ) as HTMLSlotElement;
     this._hasIconSlot = slot && slot.assignedNodes().length > 0;
   }

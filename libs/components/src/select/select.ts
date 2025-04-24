@@ -12,7 +12,12 @@ declare global {
 
 @customElement('cv-select')
 export class CovalentSelect extends SelectBase {
-  static override styles = [css`${unsafeCSS(styles)}`, baseStyles];
+  static override styles: any = [
+    css`
+      ${unsafeCSS(styles)}
+    `,
+    baseStyles,
+  ];
 }
 
 export default CovalentSelect;

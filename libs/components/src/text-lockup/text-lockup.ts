@@ -11,7 +11,7 @@ declare global {
 
 @customElement('cv-text-lockup')
 export class CovalentTextLockup extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

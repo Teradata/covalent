@@ -10,7 +10,7 @@ declare global {
 
 @customElement('cv-circular-progress')
 export class CovalentCircularProgress extends CircularProgressBase {
-  static override styles = [styles];
+  static override styles: any = [styles];
 }
 
 export default CovalentCircularProgress;

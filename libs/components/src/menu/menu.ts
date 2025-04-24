@@ -12,7 +12,7 @@ declare global {
 
 @customElement('cv-menu')
 export class CovalentMenu extends MenuBase {
-  static override styles = [
+  static override styles: any = [
     baseStyles,
     css`
       ${unsafeCSS(styles)}

@@ -10,7 +10,7 @@ declare global {
 
 @customElement('cv-slider')
 export class CovalentSlider extends SliderSingleBase {
-  static override styles = [styles];
+  static override styles: any = [styles];
 }
 
 export default CovalentSlider;

@@ -107,7 +107,7 @@ export class CovalentNotebookCell extends LitElement {
     },
   };
 
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
@@ -162,7 +162,7 @@ export class CovalentNotebookCell extends LitElement {
     });
 
     const menu = this.shadowRoot?.querySelector(
-      '.contextMenu'
+      '.contextMenu',
     ) as HTMLDivElement;
     const menuHeight = menu?.offsetHeight;
 

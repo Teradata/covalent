@@ -13,7 +13,7 @@ declare global {
 
 @customElement('cv-check-list-item')
 export class CovalentCheckListItem extends CheckListItemBase {
-  static override styles = [
+  static override styles: any = [
     styles,
     controlStyle,
     css`

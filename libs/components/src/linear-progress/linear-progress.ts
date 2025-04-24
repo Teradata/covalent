@@ -12,7 +12,12 @@ declare global {
 
 @customElement('cv-linear-progress')
 export class CovalentLinearProgress extends LinearProgressBase {
-  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
+  static override styles: any = [
+    baseStyles,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
 export default CovalentLinearProgress;

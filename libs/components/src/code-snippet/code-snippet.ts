@@ -12,7 +12,7 @@ declare global {
 
 @customElement('cv-code-snippet')
 export class CovalentCodeSnippet extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

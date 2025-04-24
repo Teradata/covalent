@@ -20,7 +20,7 @@ declare global {
 
 @customElement('cv-nav-list-item')
 export class CovalentNavRailListItem extends CovalentListItem {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(listItemStyle)}
     `,

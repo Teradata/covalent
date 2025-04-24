@@ -12,7 +12,7 @@ declare global {
 
 @customElement('cv-list')
 export class CovalentList extends ListBase {
-  static override styles = [
+  static override styles: any = [
     baseStyles,
     css`
       ${unsafeCSS(styles)}

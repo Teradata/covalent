@@ -13,7 +13,13 @@ declare global {
 
 @customElement('cv-textarea')
 export class CovalentTextArea extends TextAreaBase {
-  static override styles = [textfieldStyles, baseTextAreaStyles, css`${unsafeCSS(styles)}`];
+  static override styles: any = [
+    textfieldStyles,
+    baseTextAreaStyles,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
 }
 
 export default CovalentTextArea;

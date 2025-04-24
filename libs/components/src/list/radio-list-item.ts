@@ -13,7 +13,7 @@ declare global {
 
 @customElement('cv-radio-list-item')
 export class CovalentRadioListItem extends RadioListItemBase {
-  static override styles = [
+  static override styles: any = [
     styles,
     controlStyle,
     css`

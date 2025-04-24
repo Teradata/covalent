@@ -15,7 +15,7 @@ declare global {
  */
 @customElement('cv-status-header-item')
 export class CovalentStatusHeaderItem extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

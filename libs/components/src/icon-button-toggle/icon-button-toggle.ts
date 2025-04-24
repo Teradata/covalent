@@ -18,7 +18,7 @@ export class CovalentIconButtonToggle extends IconButtonToggle {
   @property({ type: Boolean, reflect: true })
   toggledOn = false;
 
-  static override styles = [
+  static override styles: any = [
     ...IconButtonToggle.styles,
     css`
       ${unsafeCSS(styles)}

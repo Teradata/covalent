@@ -12,7 +12,7 @@ declare global {
 
 @customElement('cv-empty-state')
 export class CovalentEmptyState extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

@@ -12,7 +12,7 @@ import '../focused-page/focused-page';
 
 @customElement('cv-full-screen-dialog')
 export class CovalentFullscreenDialog extends CovalentDialog {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(CovalentDialog.styles)} ${unsafeCSS(styles)}
     `,

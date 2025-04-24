@@ -10,7 +10,7 @@ import styles from './action-ribbon.scss?inline';
  */
 @customElement('cv-action-ribbon')
 export class CovalentActionRibbon extends ActionRibbonBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

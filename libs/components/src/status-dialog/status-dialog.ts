@@ -41,7 +41,7 @@ export class CovalentStatusDialog extends CovalentDialog {
   @state()
   showDetailsLink = false;
 
-  static override styles = [
+  static override styles: any = [
     baseStyles,
     css`
       ${unsafeCSS(styles)}
@@ -57,7 +57,7 @@ export class CovalentStatusDialog extends CovalentDialog {
 
       // Filter out non-element nodes
       this.showDetailsLink = detailNodes.some(
-        (node) => node.nodeType === Node.ELEMENT_NODE
+        (node) => node.nodeType === Node.ELEMENT_NODE,
       );
     }
   }

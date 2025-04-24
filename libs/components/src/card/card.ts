@@ -11,7 +11,7 @@ declare global {
 
 @customElement('cv-card')
 export class CovalentCard extends CardBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

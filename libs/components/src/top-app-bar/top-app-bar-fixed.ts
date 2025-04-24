@@ -12,7 +12,7 @@ declare global {
 
 @customElement('cv-top-app-bar-fixed')
 export class CovalentTopAppBarFixed extends TopAppBarFixedBase {
-  static override styles = [
+  static override styles: any = [
     styles,
     css`
       ${unsafeCSS(baseStyles)}

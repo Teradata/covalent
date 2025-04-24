@@ -13,7 +13,7 @@ declare global {
 
 @customElement('cv-tree-list-item')
 export class CovalentTreeListItem extends LitElement {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,

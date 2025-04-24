@@ -10,7 +10,7 @@ import styles from './alert.scss?inline';
  */
 @customElement('cv-alert')
 export class CovalentAlert extends AlertBase {
-  static override styles = [
+  static override styles: any = [
     css`
       ${unsafeCSS(styles)}
     `,
