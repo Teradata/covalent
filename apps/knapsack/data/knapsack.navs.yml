@@ -263,10 +263,16 @@ byId:
     parentId: coming-soon
     path: /pattern/menu
   menu-2auajeekzb:
+    hidden: true
     id: menu-2auajeekzb
     name: Menu
     parentId: components
     path: /pattern/menu-2auajeekzb
+  menu-copy:
+    id: menu-copy
+    name: Menu
+    parentId: components
+    path: /pattern/menu-copy
   navigation-list-item:
     hidden: true
     id: navigation-list-item
@@ -440,6 +446,7 @@ order:
   - checkbox
   - dialog
   - menu-2auajeekzb
+  - menu-copy
   - radio
   - select
   - textfield

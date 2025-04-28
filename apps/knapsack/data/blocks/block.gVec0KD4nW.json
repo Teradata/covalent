@@ -5,19 +5,6 @@
       "type": "doc",
       "content": [
         {
-          "type": "heading",
-          "attrs": {
-            "level": 1,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Keyboard interactions",
-              "type": "text"
-            }
-          ]
-        },
-        {
           "type": "bulletList",
           "content": [
             {
@@ -105,45 +92,6 @@
           "attrs": {
             "textAlign": "left"
           }
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Tab index focus",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
-          "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "After clicking the UI element to open the menu, the tab index focus should move to the menu. ",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ]
     }
