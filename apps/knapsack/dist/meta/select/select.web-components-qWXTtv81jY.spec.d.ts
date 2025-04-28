@@ -32,7 +32,7 @@ export interface Select {
   /**
    * Displays error state if value is empty and select is blurred.
    */
-  required: boolean;
+  required?: boolean;
   /**
    * Whether or not to show the material outlined variant.
    */
