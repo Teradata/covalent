@@ -21,13 +21,7 @@
           "type": "paragraph",
           "attrs": {
             "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Use a check icon to indicate which items are selected when multiple selections can be made. Otherwise, just use a color fill on the selected items.",
-              "type": "text"
-            }
-          ]
+          }
         }
       ]
     }

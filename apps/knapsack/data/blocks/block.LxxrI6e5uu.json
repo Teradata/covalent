@@ -11,7 +11,7 @@
           },
           "content": [
             {
-              "text": "When a button or icon button is used to open a menu, the button should return to its enabled state after opening the menu.",
+              "text": "When a button or icon button is used to open a menu, the button should return to it's enabled state after opening the menu.",
               "type": "text"
             }
           ]

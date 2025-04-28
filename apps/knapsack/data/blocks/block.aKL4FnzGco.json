@@ -84,6 +84,6 @@
       ]
     }
   },
-  "blockType": "text-editor",
-  "spacing": "small"
+  "size": "medium",
+  "blockType": "text-editor"
 }

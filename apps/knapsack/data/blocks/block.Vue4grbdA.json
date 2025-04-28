@@ -36,7 +36,7 @@
           },
           "content": [
             {
-              "text": "Default positioning is at the bottom right. Positioning should be done responsively according to the button's location on the screen.",
+              "text": "Positioning the menu to the bottom-right of the trigger is ideal. Otherwise, the positioning should be responsive.",
               "type": "text"
             }
           ]

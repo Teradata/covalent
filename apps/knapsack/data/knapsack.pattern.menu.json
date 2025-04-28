@@ -1,6 +1,6 @@
 {
   "id": "menu",
-  "title": "Menu",
+  "title": "Menu (has web component)",
   "description": "Collection of options or actions presented in an overlay in list format.",
   "statuses": {},
   "templates": [
