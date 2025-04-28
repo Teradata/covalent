@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "description": "",
   "type": "object",
-  "required": ["required", "outlined"],
+  "required": ["outlined"],
   "properties": {
     "label": {
       "type": "string",
