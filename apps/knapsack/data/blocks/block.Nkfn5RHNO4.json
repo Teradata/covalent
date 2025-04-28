@@ -1,0 +1,49 @@
+{
+  "id": "Nkfn5RHNO4",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Action required",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Keep visible until user acts or dismisses manually.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Always includes a close icon. May also include an action button.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "small",
+  "blockType": "text-editor"
+}

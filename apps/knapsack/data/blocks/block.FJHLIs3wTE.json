@@ -1,0 +1,59 @@
+{
+  "id": "FJHLIs3wTE",
+  "data": {
+    "type": "warning",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Need to display a long-term state or app-wide notice? Use an ",
+              "type": "text"
+            },
+            {
+              "text": "Alert",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/site/covalent/M2hm1RnCDV/pattern/alert",
+                    "class": null,
+                    "target": "_self"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " or ",
+              "type": "text"
+            },
+            {
+              "text": "Empty state",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/site/covalent/M2hm1RnCDV/pattern/empty-state",
+                    "class": null,
+                    "target": "_self"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " instead of a snackbar.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout"
+}

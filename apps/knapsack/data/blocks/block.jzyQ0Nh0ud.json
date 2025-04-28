@@ -1,0 +1,68 @@
+{
+  "id": "jzyQ0Nh0ud",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Tab index focus",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Ensures that snackbars are included in the sequential keyboard navigation, allowing users to reach and interact with them using the Tab key.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Hit area state",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "A visible focus indicator highlights the snackbar when it gains keyboard focus, ensuring that users can easily identify which element is active.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "small",
+  "blockType": "text-editor"
+}

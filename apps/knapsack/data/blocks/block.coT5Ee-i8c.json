@@ -1,0 +1,37 @@
+{
+  "id": "coT5Ee-i8c",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Placement",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Place the snackbar at the bottom left of the screen, 24px from the bottom and 24px from the left.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "small",
+  "blockType": "text-editor"
+}

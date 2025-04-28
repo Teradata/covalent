@@ -1,0 +1,49 @@
+{
+  "id": "1j-pC3u4k2",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Action not available",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Because these disappear automatically, do not add a dismiss or cancel action.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Auto-hides after 4 seconds.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor",
+  "size": "small"
+}

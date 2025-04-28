@@ -1,5 +1,5 @@
 {
-  "id": "VlWhJxQNN",
+  "id": "pSdr9LrvsT",
   "data": {
     "content": {
       "type": "doc",
@@ -7,7 +7,7 @@
         {
           "type": "table",
           "attrs": {
-            "equalColumns": true
+            "equalColumns": false
           },
           "content": [
             {
@@ -28,13 +28,8 @@
                       },
                       "content": [
                         {
-                          "text": "Inline alert anatomy",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "bold"
-                            }
-                          ]
+                          "text": "Variant",
+                          "type": "text"
                         }
                       ]
                     }
@@ -55,61 +50,7 @@
                       },
                       "content": [
                         {
-                          "text": "Color token",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "bold"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "tableRow",
-              "content": [
-                {
-                  "type": "tableCell",
-                  "attrs": {
-                    "colspan": 1,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "1, 2, 3, 5, 6",
-                          "type": "text"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "tableCell",
-                  "attrs": {
-                    "colspan": 1,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "on-positive-container",
+                          "text": "Purpose",
                           "type": "text"
                         }
                       ]
@@ -136,7 +77,7 @@
                       },
                       "content": [
                         {
-                          "text": "4",
+                          "text": "Action not available",
                           "type": "text"
                         }
                       ]
@@ -158,7 +99,105 @@
                       },
                       "content": [
                         {
-                          "text": "positive-container",
+                          "text": "No further input needed",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Action optional",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Longer duration before auto-hide to allow user action",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Action required",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "Keep visible until user acts or dismisses manually",
                           "type": "text"
                         }
                       ]
@@ -172,7 +211,6 @@
       ]
     }
   },
-  "size": "medium",
-  "blockType": "table",
-  "spacing": "medium"
+  "spacing": "small",
+  "blockType": "table"
 }

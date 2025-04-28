@@ -1,0 +1,31 @@
+{
+  "id": "skLYgeusTs",
+  "data": {
+    "props": {
+      "open": true,
+      "leading": true,
+      "labelText": "2 items deleted",
+      "timeoutMs": "10000",
+      "closeOnEscape": true
+    },
+    "slots": {
+      "action": [
+        {
+          "type": "template-demo",
+          "demoId": "I2gqziI18S"
+        }
+      ],
+      "dismiss": []
+    }
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-04-17T14:18:25.231Z",
+    "updatedDate": "2025-04-17T19:44:50.246Z"
+  },
+  "type": "data",
+  "title": "Action optional",
+  "patternId": "snackbar",
+  "templateId": "web-components-3ERE1Ai9lo"
+}

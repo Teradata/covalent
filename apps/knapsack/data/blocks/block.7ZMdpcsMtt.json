@@ -1,0 +1,70 @@
+{
+  "id": "7ZMdpcsMtt",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 4,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "References",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "MWC snackbar",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://www.npmjs.com/package/@material/mwc-snackbar",
+                    "class": null,
+                    "target": "_blank"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Covalent design system - Snackbar",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://www.npmjs.com/package/@material/mwc-snackbar",
+                    "class": null,
+                    "target": "_blank"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

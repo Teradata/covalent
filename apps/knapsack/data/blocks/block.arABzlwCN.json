@@ -1,0 +1,147 @@
+{
+  "id": "arABzlwCN",
+  "data": {
+    "guidelines": [
+      {
+        "id": "YyvW1hF8IZ",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Do",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "text": " use for non-interrupting feedback.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "tA4RZ4U8V",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Don't ",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "text": "use for long-term state or app-wide notices. Use an ",
+                          "type": "text"
+                        },
+                        {
+                          "text": "Alert",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "link",
+                              "attrs": {
+                                "rel": "noopener noreferrer nofollow",
+                                "href": "/pattern/alert",
+                                "class": null
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "text": " or ",
+                          "type": "text"
+                        },
+                        {
+                          "text": "Empty state",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "link",
+                              "attrs": {
+                                "rel": "noopener noreferrer nofollow",
+                                "href": "/pattern/empty-state",
+                                "class": null
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "text": " for that.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Don't",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "text": " overuse the manual dismissal type. For most cases, a self-hiding snackbar is preferable.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "1"
+    }
+  },
+  "blockType": "guidelines"
+}

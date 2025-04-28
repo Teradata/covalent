@@ -1,0 +1,27 @@
+{
+  "id": "NS-SRbVm5O",
+  "data": {
+    "props": {
+      "dense": false,
+      "label": "Retry",
+      "raised": false,
+      "disabled": false,
+      "outlined": false,
+      "fullwidth": false,
+      "unelevated": false,
+      "trailingIcon": false,
+      "expandContent": false
+    },
+    "slots": {}
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-04-08T21:50:26.300Z",
+    "updatedDate": "2025-04-08T21:50:26.300Z"
+  },
+  "type": "data",
+  "title": "Outlined",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL"
+}

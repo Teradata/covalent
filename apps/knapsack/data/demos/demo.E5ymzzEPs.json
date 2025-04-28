@@ -6,17 +6,20 @@
   "templateId": "web-components-raE1x4tYL",
   "data": {
     "props": {
-      "label": "Label",
-      "trailingIcon": true,
+      "label": "Retry",
+      "trailingIcon": false,
       "raised": false,
       "unelevated": false,
-      "outlined": true,
+      "outlined": false,
       "dense": false,
       "disabled": false,
       "expandContent": false,
-      "fullwidth": false,
-      "icon": "add"
+      "fullwidth": false
     },
     "slots": {}
+  },
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-04-02T16:59:35.403Z"
   }
 }

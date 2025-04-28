@@ -1,0 +1,39 @@
+{
+  "id": "N-JOY8DOHe",
+  "data": {
+    "props": {
+      "open": true,
+      "leading": true,
+      "labelText": "Upload failed",
+      "timeoutMs": "-1",
+      "closeOnEscape": true
+    },
+    "slots": {
+      "action": [
+        {
+          "type": "template-demo",
+          "demoId": "NS-SRbVm5O",
+          "patternId": "button",
+          "templateId": "web-components-raE1x4tYL"
+        }
+      ],
+      "dismiss": [
+        {
+          "type": "template-demo",
+          "demoId": "FzW5xt1-MF"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-04-08T21:50:26.299Z",
+    "updatedDate": "2025-04-17T19:45:16.438Z"
+  },
+  "type": "data",
+  "title": "Action required",
+  "patternId": "snackbar",
+  "templateId": "web-components-3ERE1Ai9lo",
+  "description": ""
+}

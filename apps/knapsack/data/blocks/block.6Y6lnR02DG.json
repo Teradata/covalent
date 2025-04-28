@@ -1,0 +1,36 @@
+{
+  "id": "6Y6lnR02DG",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Overview",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Snackbars are designed to be accessible to everyone, enabling all users, regardless of ability, to receive important information and alerts effectively. These components are built to ensure that notifications are perceivable, operable, and understandable for users with various accessibility needs.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

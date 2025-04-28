@@ -1,22 +1,9 @@
 {
-  "id": "yK1IYXpcjU",
+  "id": "R1Vk2-Hw9O",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Typography",
-              "type": "text"
-            }
-          ]
-        },
         {
           "type": "paragraph",
           "attrs": {
@@ -24,7 +11,7 @@
           },
           "content": [
             {
-              "text": "Use these text styles for alert:",
+              "text": "Snackbars are split into two regions, with the message aligned to the left, and the actions (when present) aligned to the right. ",
               "type": "text"
             }
           ]
@@ -45,7 +32,7 @@
                   },
                   "content": [
                     {
-                      "text": "body-1",
+                      "text": "Contains the snackbar contents.",
                       "type": "text"
                     }
                   ]
@@ -62,7 +49,41 @@
                   },
                   "content": [
                     {
-                      "text": "body-2",
+                      "text": "Text to communicate with the user.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "(optional) A single regular action is allowed. ",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "(optional) A close button.",
                       "type": "text"
                     }
                   ]

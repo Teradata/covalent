@@ -1,0 +1,67 @@
+{
+  "id": "Ja2qaxbxw",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Animation",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Animate the snackbar when it shows up and also when it leaves.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "View this in action by clicking the “leading” button on ",
+              "type": "text"
+            },
+            {
+              "text": "this demo",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://material-components.github.io/material-components-web-catalog/#/component/snackbar",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "small",
+  "blockType": "text-editor"
+}

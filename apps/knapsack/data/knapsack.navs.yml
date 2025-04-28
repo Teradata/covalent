@@ -318,7 +318,7 @@ byId:
   snackbar:
     id: snackbar
     name: Snackbar
-    parentId: coming-soon
+    parentId: components
     path: /pattern/snackbar
   split-button:
     hidden: true
@@ -439,36 +439,46 @@ byId:
     parentId: content
     path: /pages/word-list
 order:
+  - get-started
+  - designers
+  - figma-organization
+  - developers
+  - foundations
+  - design-principles
+  - accessibility
+  - color
+  - icons
+  - typography-3shrxwkyk
   - components
   - action-ribbon
   - alert
   - button
   - checkbox
   - dialog
-  - menu-2auajeekzb
-  - menu-copy
   - radio
   - select
+  - snackbar
   - textfield
   - coming-soon
   - app-shell
   - badge
   - breadcrumbs
-  - split-button
   - card
+  - icon-checkbox
+  - chip-item
   - code-snippet
   - chip
-  - chip-item
   - circular-progress
   - empty-state
   - expansion-panel
   - expansion-panel-item
+  - focused-page
   - form-field
+  - full-screen-dialog
   - icon
   - icon-button
   - icon-button-toggle
-  - icon-checkbox
-  - icon-radio
+  - icon-lockup
   - linear-progress
   - list
   - list-item
@@ -476,9 +486,10 @@ order:
   - check-list-item
   - radio-list-item
   - menu
+  - icon-radio
   - side-sheet
   - slider
-  - snackbar
+  - split-button
   - status-dialog
   - status-header
   - status-header-item
@@ -494,13 +505,14 @@ order:
   - text-area
   - text-lockup
   - text
-  - focused-page
-  - full-screen-dialog
-  - icon-lockup
+  - menu-2auajeekzb
+  - patterns
+  - errors
+  - get-started-cards
   - tokens
-  - typography
-  - colors-9gexmujiba
   - colors-vvhchtke
+  - colors-9gexmujiba
+  - typography
   - content
   - voice-and-tone
   - adapting-tone-by-situation
@@ -508,20 +520,8 @@ order:
   - error-messages
   - video
   - date-and-time
-  - clarity-and-efficiency
   - word-list
   - inclusive-language-glnk25tux
-  - foundations
-  - accessibility
-  - color
-  - design-principles
-  - icons
-  - typography-3shrxwkyk
-  - get-started
-  - designers
-  - figma-organization
-  - developers
-  - patterns
-  - errors
-  - get-started-cards
+  - clarity-and-efficiency
   - feedback
+  - menu-copy

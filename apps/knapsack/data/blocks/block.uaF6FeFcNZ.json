@@ -73,6 +73,16 @@
         "description": "Allows the user to choose from a list of options presented in a collapsible format"
       },
       {
+        "id": "eaZfLedoLs",
+        "link": {
+          "name": "Snackbar",
+          "path": "/pattern/snackbar"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-snackbarthumbnail--UkMay3QJLE.png",
+        "title": "Snackbar",
+        "description": "Temporary notification displayed at the bottom of the screen."
+      },
+      {
         "id": "VFcY7sVkVf",
         "link": {
           "name": "Text field",
