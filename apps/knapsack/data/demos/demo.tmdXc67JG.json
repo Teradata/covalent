@@ -1,0 +1,31 @@
+{
+  "id": "tmdXc67JG",
+  "data": {
+    "props": {
+      "hasMeta": false,
+      "twoLine": false,
+      "tabindex": -1
+    },
+    "slots": {
+      "meta": [],
+      "default": [
+        {
+          "text": "List item",
+          "type": "text"
+        }
+      ],
+      "graphic": [],
+      "secondary": []
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-04-28T21:19:12.796Z",
+    "updatedDate": "2025-04-28T21:19:12.796Z"
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "list-item",
+  "templateId": "web-components-ytRTf8wtxn"
+}

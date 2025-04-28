@@ -15,7 +15,8 @@
     },
     {
       "id": "xfprdvFw5M",
-      "type": "designSrc"
+      "type": "designSrc",
+      "hidden": true
     }
   ],
   "title": "Menu",
