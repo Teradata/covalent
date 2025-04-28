@@ -1,3 +1,9 @@
+## [10.1.1](https://github.com/Teradata/covalent/compare/v10.1.0...v10.1.1) (2025-04-28)
+
+### Bug Fixes
+
+- **knapsack:** adjust knapsack overrides to fix some demos ([#2494](https://github.com/Teradata/covalent/issues/2494)) ([ded7680](https://github.com/Teradata/covalent/commit/ded76800a2787cae75040bd48a732bd2f35e3464))
+
 # [10.1.0](https://github.com/Teradata/covalent/compare/v10.0.5...v10.1.0) (2025-04-08)
 
 ### Features
