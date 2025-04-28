@@ -74,13 +74,13 @@
       "type": "template"
     },
     {
+      "id": "EFexhCyTtS",
+      "type": "subPage"
+    },
+    {
       "id": "VFcB0OS3SY",
       "type": "designSrc",
       "hidden": true
-    },
-    {
-      "id": "EFexhCyTtS",
-      "type": "subPage"
     }
   ],
   "subPages": [

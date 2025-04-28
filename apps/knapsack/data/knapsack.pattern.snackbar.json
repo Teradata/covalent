@@ -59,7 +59,7 @@
           }
         }
       },
-      "demoIds": ["5aKkBtql-E"],
+      "demoIds": ["5aKkBtql-E", "skLYgeusTs", "N-JOY8DOHe"],
       "blockIds": ["xfL63ciNa", "pKs3OLNbvF", "GSVdeIILdE"]
     }
   ],
@@ -69,8 +69,16 @@
       "type": "subPage"
     },
     {
+      "id": "Gm-IeL6Gu",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-3ERE1Ai9lo",
       "type": "template"
+    },
+    {
+      "id": "Cu2MsmI3oD",
+      "type": "subPage"
     },
     {
       "id": "EujGB1e-TW",
@@ -82,7 +90,56 @@
     {
       "id": "overview",
       "title": "Usage",
-      "blockIds": ["svn3cPALNT", "Q6b5CiqdXC"]
+      "blockIds": [
+        "jmv0oMx9C5",
+        "veqvwV2i0M",
+        "FJHLIs3wTE",
+        "pSdr9LrvsT",
+        "1j-pC3u4k2",
+        "a-agqL1XfK",
+        "eHq0Tg0WY",
+        "cxjuCxymEL",
+        "Nkfn5RHNO4",
+        "t780kEi8b8",
+        "PmJDYP1TsK",
+        "hJhcU0-Sqe",
+        "arABzlwCN",
+        "6-X2-1nLLi",
+        "22VdEGxvYI",
+        "Q6b5CiqdXC"
+      ]
+    },
+    {
+      "id": "Gm-IeL6Gu",
+      "title": "Style",
+      "blockIds": [
+        "Z4zlUf2Ok3",
+        "mBAfLWP2Uv",
+        "R1Vk2-Hw9O",
+        "n-QlKqw4jF",
+        "8GYUWuv7S8",
+        "4kkPxP-oEv",
+        "XlM3HpupvU",
+        "coT5Ee-i8c",
+        "I1joEiS7yS",
+        "oaCrJaflQh",
+        "Ja2qaxbxw",
+        "MyE4IgAPYo"
+      ]
+    },
+    {
+      "id": "Cu2MsmI3oD",
+      "title": "Accessibility",
+      "blockIds": [
+        "6Y6lnR02DG",
+        "O09KFuoBly",
+        "69xQLrIBGx",
+        "jzyQ0Nh0ud",
+        "w7iIELPFMF",
+        "Ln0svhtySK",
+        "Afk6HivL4D",
+        "ER3JpBuFqj"
+      ]
     }
   ],
   "designSrcComponentsById": {
@@ -91,6 +148,11 @@
       "title": "Figma Component",
       "fileId": "KvXVAmYdCVAS7hzkOa73Em",
       "componentId": "7979:30644"
+    }
+  },
+  "settings": {
+    "tableOfContents": {
+      "excludeHeadings": ["h6", "h5", "h4", "h3", "h2"]
     }
   }
 }

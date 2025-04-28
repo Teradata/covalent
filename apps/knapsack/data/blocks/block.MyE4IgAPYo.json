@@ -1,0 +1,14 @@
+{
+  "id": "MyE4IgAPYo",
+  "data": {
+    "imageSize": "full",
+    "images": [
+      {
+        "src": "https://knapsack.imgix.net/site/covalent/snackbar-animation--8BrLBhgsHC.gif",
+        "caption": "snackbar-animation.gif"
+      }
+    ]
+  },
+  "size": "large",
+  "blockType": "image-block"
+}

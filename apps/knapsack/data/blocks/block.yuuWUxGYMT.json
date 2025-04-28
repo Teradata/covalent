@@ -1,5 +1,5 @@
 {
-  "id": "VlWhJxQNN",
+  "id": "yuuWUxGYMT",
   "data": {
     "content": {
       "type": "doc",
@@ -28,13 +28,8 @@
                       },
                       "content": [
                         {
-                          "text": "Inline alert anatomy",
-                          "type": "text",
-                          "marks": [
-                            {
-                              "type": "bold"
-                            }
-                          ]
+                          "text": "Method signature",
+                          "type": "text"
                         }
                       ]
                     }
@@ -55,44 +50,44 @@
                       },
                       "content": [
                         {
-                          "text": "Color token",
+                          "text": "Description",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tableRow",
+              "content": [
+                {
+                  "type": "tableCell",
+                  "attrs": {
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "colwidth": null
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "attrs": {
+                        "textAlign": "left"
+                      },
+                      "content": [
+                        {
+                          "text": "show() => void",
                           "type": "text",
                           "marks": [
                             {
-                              "type": "bold"
+                              "type": "code"
                             }
                           ]
                         }
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "type": "tableRow",
-              "content": [
-                {
-                  "type": "tableCell",
-                  "attrs": {
-                    "colspan": 1,
-                    "rowspan": 1,
-                    "colwidth": null
-                  },
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "attrs": {
-                        "textAlign": "left"
-                      },
-                      "content": [
-                        {
-                          "text": "1, 2, 3, 5, 6",
-                          "type": "text"
-                        }
-                      ]
-                    }
-                  ]
                 },
                 {
                   "type": "tableCell",
@@ -109,7 +104,7 @@
                       },
                       "content": [
                         {
-                          "text": "on-positive-container",
+                          "text": "Opens the snackbar.",
                           "type": "text"
                         }
                       ]
@@ -136,8 +131,13 @@
                       },
                       "content": [
                         {
-                          "text": "4",
-                          "type": "text"
+                          "text": "close(reason: string = '') => void",
+                          "type": "text",
+                          "marks": [
+                            {
+                              "type": "code"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -158,7 +158,7 @@
                       },
                       "content": [
                         {
-                          "text": "positive-container",
+                          "text": "Closes the snackbar, optionally with the specified reason indicating why it was closed.",
                           "type": "text"
                         }
                       ]
@@ -172,7 +172,9 @@
       ]
     }
   },
-  "size": "medium",
-  "blockType": "table",
-  "spacing": "medium"
+  "header": {
+    "title": "Methods",
+    "showHeader": true
+  },
+  "blockType": "table"
 }

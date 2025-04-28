@@ -1,5 +1,5 @@
 {
-  "id": "yK1IYXpcjU",
+  "id": "8GYUWuv7S8",
   "data": {
     "content": {
       "type": "doc",
@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Use these text styles for alert:",
+              "text": "Use these text styles for the snackbar:",
               "type": "text"
             }
           ]
@@ -35,23 +35,6 @@
             "start": 1
           },
           "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "body-1",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
-            },
             {
               "type": "listItem",
               "content": [

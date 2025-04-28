@@ -1,31 +1,24 @@
 {
   "id": "5aKkBtql-E",
-  "title": "Main",
+  "title": "Action not available",
   "type": "data",
   "patternId": "snackbar",
   "templateId": "web-components-3ERE1Ai9lo",
   "data": {
     "props": {
       "open": true,
-      "labelText": "Can't send photo. Retry in 5 seconds."
+      "labelText": "Settings saved",
+      "leading": true,
+      "timeoutMs": "4000",
+      "closeOnEscape": true
     },
     "slots": {
-      "action": [
-        {
-          "type": "template-demo",
-          "demoId": "E5ymzzEPs",
-          "patternId": "button",
-          "templateId": "web-components-raE1x4tYL"
-        }
-      ],
-      "dismiss": [
-        {
-          "type": "template-demo",
-          "demoId": "BueNSFTYn",
-          "patternId": "icon-button",
-          "templateId": "web-components-ctiCe2sAX"
-        }
-      ]
+      "action": [],
+      "dismiss": []
     }
+  },
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-04-17T19:45:04.513Z"
   }
 }

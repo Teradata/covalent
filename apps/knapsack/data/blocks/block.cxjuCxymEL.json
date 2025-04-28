@@ -1,0 +1,20 @@
+{
+  "id": "cxjuCxymEL",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "17140:46799"
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "corners": "rounded",
+      "seamless": true
+    }
+  },
+  "size": "large",
+  "blockType": "design-src-tiles"
+}
