@@ -1,0 +1,24 @@
+{
+  "id": "I2gqziI18S",
+  "data": {
+    "props": {
+      "dense": false,
+      "label": "Undo",
+      "raised": false,
+      "outlined": false,
+      "trailingIcon": false
+    },
+    "slots": {}
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-04-17T14:19:03.151Z",
+    "updatedDate": "2025-04-17T14:19:19.305Z"
+  },
+  "type": "data",
+  "title": "Text",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL",
+  "description": "A description"
+}
