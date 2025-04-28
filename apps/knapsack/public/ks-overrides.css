@@ -17,8 +17,7 @@ html {
     > cv-action-ribbon,
     > cv-top-app-bar,
     > cv-toolbar,
-    > cv-alert,
-
+    > cv-alert
   ) {
   display: block;
 }
