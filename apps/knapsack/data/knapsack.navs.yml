@@ -265,7 +265,7 @@ byId:
   menu-2auajeekzb:
     id: menu-2auajeekzb
     name: Menu
-    parentId: dialog
+    parentId: components
     path: /pattern/menu-2auajeekzb
   navigation-list-item:
     hidden: true
@@ -438,8 +438,8 @@ order:
   - alert
   - button
   - checkbox
-  - dialog
   - menu-2auajeekzb
+  - dialog
   - radio
   - select
   - textfield
