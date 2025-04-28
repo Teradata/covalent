@@ -15,11 +15,10 @@
     },
     {
       "id": "xfprdvFw5M",
-      "type": "designSrc",
-      "hidden": true
+      "type": "designSrc"
     }
   ],
-  "title": "Menu (no web component)",
+  "title": "Menu",
   "statuses": {},
   "subPages": [
     {
@@ -28,7 +27,6 @@
       "blockIds": [
         "jNiYbHMSbL",
         "1B3Vx1PzV2",
-        "F5Oo7Gzp1d",
         "i-gv5rf8EW",
         "prldZnTHgw",
         "xiDUfg987c",
@@ -43,9 +41,11 @@
       "title": "Style",
       "blockIds": [
         "qFCzRPrV3",
-        "a8rNjR7Rr1",
         "aKL4FnzGco",
+        "a8rNjR7Rr1",
         "fPGkVLxlOw",
+        "7sHJv48VDm",
+        "3D37MBj6DD",
         "iI1Nyaoe8J",
         "Vue4grbdA",
         "ryWiwearP",
@@ -64,8 +64,17 @@
         "Kcfh1ONyLb",
         "i5r5rWMLXX",
         "KS3XB0w2fg",
+        "LRSsTVYGLl",
+        "zccBaxkKo5",
+        "bvaQxrukPb",
         "7bwqSbXFP5",
         "9HMxsYJr4r",
+        "63URHojCxt",
+        "xr7iuf4Ge",
+        "TBFKz7JotN",
+        "sMAhWluDDj",
+        "9xB4aKleqX",
+        "SXuWgfpZp",
         "NVZUyrBgdq",
         "jpOIPFitXa",
         "mxDC6QnoSU",
@@ -86,7 +95,10 @@
         "QyTP6f2pCn",
         "U8srTT6uRd",
         "bnpJvv9Ekf",
-        "K5HNBzE2vP"
+        "K5HNBzE2vP",
+        "EmuNh2cCK",
+        "UGLfVJbUTS",
+        "3ZeA8SLHP1"
       ]
     },
     {
@@ -95,7 +107,9 @@
       "blockIds": [
         "8J63d4rxJh",
         "JMfZ6qgH2U",
+        "8WVbMdxe65",
         "NRrO40LwG",
+        "05dW54v3U",
         "0qBPRNGa9E",
         "gLIFIuxJ6p",
         "TfjCtSVFmq",

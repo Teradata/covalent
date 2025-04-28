@@ -1,5 +1,5 @@
 {
-  "id": "lSs0JoynGf",
+  "id": "EmuNh2cCK",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 1,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Content guidelines",
+              "text": "Full width",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Items in a menu should be labelled as concisely as possible for quick comprehension. Items should be labelled with a single word if possible. If longer content is necessary, use a full width variant (see Variants section).",
+              "text": "If menu items require longer text, the menu can  match the full width of the container that holds the button that opens the menu.",
               "type": "text"
             }
           ]

@@ -257,21 +257,16 @@ byId:
     parentId: list
     path: /pattern/list-item
   menu:
+    hidden: true
     id: menu
-    name: Menu
+    name: Menu (has web component)
     parentId: coming-soon
     path: /pattern/menu
   menu-2auajeekzb:
     id: menu-2auajeekzb
-    name: Menu (no web component)
-    parentId: coming-soon
+    name: Menu
+    parentId: dialog
     path: /pattern/menu-2auajeekzb
-  menu-copy:
-    hidden: true
-    id: menu-copy
-    name: Menu copy
-    parentId: coming-soon
-    path: /pattern/menu-copy
   navigation-list-item:
     hidden: true
     id: navigation-list-item
@@ -444,6 +439,7 @@ order:
   - button
   - checkbox
   - dialog
+  - menu-2auajeekzb
   - radio
   - select
   - textfield
@@ -472,8 +468,6 @@ order:
   - navigation-list-item
   - check-list-item
   - radio-list-item
-  - menu-2auajeekzb
-  - menu-copy
   - menu
   - side-sheet
   - slider
