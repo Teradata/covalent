@@ -1082,6 +1082,17 @@
       ]
     },
     {
+      "name": "div",
+      "description": "",
+      "references": [
+        {
+          "name": "Knapsack Docs",
+          "url": "http://localhost:3999/pattern/ks-prototypes/web-components"
+        }
+      ],
+      "attributes": []
+    },
+    {
       "name": "cv-linear-progress",
       "description": "Visual indication of progress displayed in a linear format.",
       "references": [
@@ -1236,11 +1247,11 @@
     },
     {
       "name": "cv-menu",
-      "description": "Collection of options or actions presented in an overlay in list format.",
+      "description": "Provide extended features or hide some items for usability.",
       "references": [
         {
           "name": "Knapsack Docs",
-          "url": "http://localhost:3999/pattern/menu/web-components-hY3y1MyhrP"
+          "url": "http://localhost:3999/pattern/menu-copy/web-components-hY3y1MyhrP"
         }
       ],
       "attributes": [
@@ -1671,7 +1682,7 @@
         },
         {
           "name": "required",
-          "description": "(required) boolean Displays error state if value is empty and select is blurred."
+          "description": "boolean Displays error state if value is empty and select is blurred."
         },
         {
           "name": "outlined",
