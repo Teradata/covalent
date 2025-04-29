@@ -455,6 +455,7 @@ order:
   - button
   - checkbox
   - dialog
+  - menu-copy
   - radio
   - select
   - snackbar
@@ -524,4 +525,3 @@ order:
   - inclusive-language-glnk25tux
   - clarity-and-efficiency
   - feedback
-  - menu-copy
