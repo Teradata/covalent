@@ -51,6 +51,8 @@ settings:
         - h5
         - h4
         - h3
+  prototyping:
+    patternId: ks-prototypes
   theme:
     appearance:
       customFonts:
