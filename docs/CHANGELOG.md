@@ -1,3 +1,9 @@
+# [10.2.0](https://github.com/Teradata/covalent/compare/v10.1.1...v10.2.0) (2025-05-01)
+
+### Features
+
+- **tokens:** update tokens from latest figma vars ([50ba2f4](https://github.com/Teradata/covalent/commit/50ba2f4fa281b47cfcc619073e3d1a8f0f78921f))
+
 ## [10.1.1](https://github.com/Teradata/covalent/compare/v10.1.0...v10.1.1) (2025-04-28)
 
 ### Bug Fixes
