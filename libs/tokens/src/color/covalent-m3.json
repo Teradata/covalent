@@ -2,889 +2,902 @@
   "theme": {
     "light": {
       "palettes": {
-        "digital blue 98": {
+        "digital-blue-98": {
           "type": "color",
           "value": "#fbf8ffff",
           "blendMode": "normal"
         },
-        "digital blue 100": {
+        "digital-blue-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "digital blue 95": {
+        "digital-blue-95": {
           "type": "color",
           "value": "#f0efffff",
           "blendMode": "normal"
         },
-        "digital blue 90": {
+        "digital-blue-90": {
           "type": "color",
           "value": "#dee0ffff",
           "blendMode": "normal"
         },
-        "digital blue 80": {
+        "digital-blue-80": {
           "type": "color",
           "value": "#bac3ffff",
           "blendMode": "normal"
         },
-        "digital blue 70": {
+        "digital-blue-70": {
           "type": "color",
           "value": "#96a5ffff",
           "blendMode": "normal"
         },
-        "digital blue 60": {
+        "digital-blue-60": {
           "type": "color",
           "value": "#7187ffff",
           "blendMode": "normal"
         },
-        "digital blue 50": {
+        "digital-blue-50": {
           "type": "color",
           "value": "#4967ffff",
           "blendMode": "normal"
         },
-        "digital blue 40": {
+        "digital-blue-40": {
           "type": "color",
           "value": "#3053f4ff",
           "blendMode": "normal"
         },
-        "digital blue 30": {
+        "digital-blue-30": {
           "type": "color",
           "value": "#0436d3ff",
           "blendMode": "normal"
         },
-        "digital blue 20": {
+        "digital-blue-20": {
           "type": "color",
           "value": "#00208eff",
           "blendMode": "normal"
         },
-        "digital blue 10": {
+        "digital-blue-10": {
           "type": "color",
           "value": "#00115aff",
           "blendMode": "normal"
         },
-        "orange 100": {
+        "orange-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "orange 98": {
+        "orange-98": {
           "type": "color",
           "value": "#fff8f6ff",
           "blendMode": "normal"
         },
-        "orange 95": {
+        "orange-95": {
           "type": "color",
           "value": "#ffede7ff",
           "blendMode": "normal"
         },
-        "orange 90": {
+        "orange-90": {
           "type": "color",
           "value": "#ffdbceff",
           "blendMode": "normal"
         },
-        "orange 80": {
+        "orange-80": {
           "type": "color",
           "value": "#ffc0a8ff",
           "blendMode": "normal"
         },
-        "orange 70": {
+        "orange-70": {
           "type": "color",
           "value": "#ffa47eff",
           "blendMode": "normal"
         },
-        "orange 60": {
+        "orange-60": {
           "type": "color",
           "value": "#ff986dff",
           "blendMode": "normal"
         },
-        "orange 50": {
+        "orange-50": {
           "type": "color",
           "value": "#ff7a42ff",
           "blendMode": "normal"
         },
-        "orange 40": {
+        "orange-40": {
           "type": "color",
           "value": "#ff5f02ff",
           "blendMode": "normal"
         },
-        "orange 30": {
+        "orange-30": {
           "type": "color",
           "value": "#cf4b00ff",
           "blendMode": "normal"
         },
-        "orange 20": {
+        "orange-20": {
           "type": "color",
           "value": "#8d3001ff",
           "blendMode": "normal"
         },
-        "orange 10": {
+        "orange-10": {
           "type": "color",
           "value": "#481300ff",
           "blendMode": "normal"
         },
-        "orange 0": {
+        "orange-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "digital blue 0": {
+        "digital-blue-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "navy 100": {
+        "navy-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "navy 99": {
+        "navy-99": {
           "type": "color",
           "value": "#fbfcfeff",
           "blendMode": "normal"
         },
-        "navy 95": {
+        "navy-95": {
           "type": "color",
           "value": "#eef4fcff",
           "blendMode": "normal"
         },
-        "navy 90": {
+        "navy-90": {
           "type": "color",
           "value": "#deeafaff",
           "blendMode": "normal"
         },
-        "navy 80": {
+        "navy-80": {
           "type": "color",
           "value": "#bcd5f6ff",
           "blendMode": "normal"
         },
-        "navy 70": {
+        "navy-70": {
           "type": "color",
           "value": "#95bff1ff",
           "blendMode": "normal"
         },
-        "navy 60": {
+        "navy-60": {
           "type": "color",
           "value": "#60a9edff",
           "blendMode": "normal"
         },
-        "navy 50": {
+        "navy-50": {
           "type": "color",
           "value": "#458fcfff",
           "blendMode": "normal"
         },
-        "navy 40": {
+        "navy-40": {
           "type": "color",
           "value": "#3672a8ff",
           "blendMode": "normal"
         },
-        "navy 30": {
+        "navy-30": {
           "type": "color",
           "value": "#26547cff",
           "blendMode": "normal"
         },
-        "navy 20": {
+        "navy-20": {
           "type": "color",
           "value": "#14324cff",
           "blendMode": "normal"
         },
-        "navy 10": {
+        "navy-10": {
           "type": "color",
           "value": "#001d33ff",
           "blendMode": "normal"
         },
-        "navy 0": {
+        "navy-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "negative 100": {
+        "negative-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "negative 98": {
+        "negative-98": {
           "type": "color",
           "value": "#ffdcdbff",
           "blendMode": "normal"
         },
-        "negative 95": {
+        "negative-95": {
           "type": "color",
           "value": "#ffc9c7ff",
           "blendMode": "normal"
         },
-        "negative 90": {
+        "negative-90": {
           "type": "color",
           "value": "#ffb2aeff",
           "blendMode": "normal"
         },
-        "negative 80": {
+        "negative-80": {
           "type": "color",
           "value": "#e0938eff",
           "blendMode": "normal"
         },
-        "negative 70": {
+        "negative-70": {
           "type": "color",
           "value": "#c65953ff",
           "blendMode": "normal"
         },
-        "negative 60": {
+        "negative-60": {
           "type": "color",
           "value": "#be413aff",
           "blendMode": "normal"
         },
-        "negative 50": {
+        "negative-50": {
           "type": "color",
           "value": "#b62a22ff",
           "blendMode": "normal"
         },
-        "negative 40": {
+        "negative-40": {
           "type": "color",
           "value": "#ae1209ff",
           "blendMode": "normal"
         },
-        "negative 30": {
+        "negative-30": {
           "type": "color",
           "value": "#7a0d06ff",
           "blendMode": "normal"
         },
-        "negative 20": {
+        "negative-20": {
           "type": "color",
           "value": "#460704ff",
           "blendMode": "normal"
         },
-        "negative 10": {
+        "negative-10": {
           "type": "color",
           "value": "#110201ff",
           "blendMode": "normal"
         },
-        "negative 0": {
+        "negative-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "caution 100": {
+        "caution-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "caution 98": {
+        "caution-98": {
           "type": "color",
           "value": "#fef3e6ff",
           "blendMode": "normal"
         },
-        "caution 95": {
+        "caution-95": {
           "type": "color",
           "value": "#ffdcb0ff",
           "blendMode": "normal"
         },
-        "caution 90": {
+        "caution-90": {
           "type": "color",
           "value": "#ffcc8cff",
           "blendMode": "normal"
         },
-        "caution 80": {
+        "caution-80": {
           "type": "color",
           "value": "#f8b866ff",
           "blendMode": "normal"
         },
-        "caution 70": {
+        "caution-70": {
           "type": "color",
           "value": "#f7ac4dff",
           "blendMode": "normal"
         },
-        "caution 60": {
+        "caution-60": {
           "type": "color",
           "value": "#f5a033ff",
           "blendMode": "normal"
         },
-        "caution 50": {
+        "caution-50": {
           "type": "color",
           "value": "#f4941aff",
           "blendMode": "normal"
         },
-        "caution 40": {
+        "caution-40": {
           "type": "color",
           "value": "#f38800ff",
           "blendMode": "normal"
         },
-        "caution 30": {
+        "caution-30": {
           "type": "color",
           "value": "#aa5f00ff",
           "blendMode": "normal"
         },
-        "caution 20": {
+        "caution-20": {
           "type": "color",
           "value": "#613600ff",
           "blendMode": "normal"
         },
-        "caution 10": {
+        "caution-10": {
           "type": "color",
           "value": "#180e00ff",
           "blendMode": "normal"
         },
-        "caution 0": {
+        "caution-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "positive 100": {
+        "positive-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "positive 98": {
+        "positive-98": {
           "type": "color",
           "value": "#daf6daff",
           "blendMode": "normal"
         },
-        "positive 95": {
+        "positive-95": {
           "type": "color",
           "value": "#b5e8b3ff",
           "blendMode": "normal"
         },
-        "positive 90": {
+        "positive-90": {
           "type": "color",
           "value": "#8fcc8eff",
           "blendMode": "normal"
         },
-        "positive 80": {
+        "positive-80": {
           "type": "color",
           "value": "#68a366ff",
           "blendMode": "normal"
         },
-        "positive 70": {
+        "positive-70": {
           "type": "color",
           "value": "#4f944dff",
           "blendMode": "normal"
         },
-        "positive 60": {
+        "positive-60": {
           "type": "color",
           "value": "#358533ff",
           "blendMode": "normal"
         },
-        "positive 50": {
+        "positive-50": {
           "type": "color",
           "value": "#1c751aff",
           "blendMode": "normal"
         },
-        "positive 40": {
+        "positive-40": {
           "type": "color",
           "value": "#036600ff",
           "blendMode": "normal"
         },
-        "positive 30": {
+        "positive-30": {
           "type": "color",
           "value": "#024700ff",
           "blendMode": "normal"
         },
-        "positive 20": {
+        "positive-20": {
           "type": "color",
           "value": "#012900ff",
           "blendMode": "normal"
         },
-        "positive 10": {
+        "positive-10": {
           "type": "color",
           "value": "#000a00ff",
           "blendMode": "normal"
         },
-        "positive 0": {
+        "positive-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "emphasis 100": {
+        "emphasis-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "emphasis 98": {
+        "emphasis-98": {
           "type": "color",
           "value": "#f7e6ecff",
           "blendMode": "normal"
         },
-        "emphasis 95": {
+        "emphasis-95": {
           "type": "color",
           "value": "#efccd9ff",
           "blendMode": "normal"
         },
-        "emphasis 90": {
+        "emphasis-90": {
           "type": "color",
           "value": "#e8b3c6ff",
           "blendMode": "normal"
         },
-        "emphasis 80": {
+        "emphasis-80": {
           "type": "color",
           "value": "#d880a1ff",
           "blendMode": "normal"
         },
-        "emphasis 70": {
+        "emphasis-70": {
           "type": "color",
           "value": "#c84d7bff",
           "blendMode": "normal"
         },
-        "emphasis 60": {
+        "emphasis-60": {
           "type": "color",
           "value": "#c13468ff",
           "blendMode": "normal"
         },
-        "emphasis 50": {
+        "emphasis-50": {
           "type": "color",
           "value": "#b91a55ff",
           "blendMode": "normal"
         },
-        "emphasis 40": {
+        "emphasis-40": {
           "type": "color",
           "value": "#b10142ff",
           "blendMode": "normal"
         },
-        "emphasis 30": {
+        "emphasis-30": {
           "type": "color",
           "value": "#7c012eff",
           "blendMode": "normal"
         },
-        "emphasis 20": {
+        "emphasis-20": {
           "type": "color",
           "value": "#47001aff",
           "blendMode": "normal"
         },
-        "emphasis 10": {
+        "emphasis-10": {
           "type": "color",
           "value": "#120007ff",
           "blendMode": "normal"
         },
-        "emphasis 0": {
+        "emphasis-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "secondary 80": {
+        "secondary-80": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 80}"
+          "value": "{theme.light.palettes.navy-80}"
         },
-        "secondary 20": {
+        "secondary-20": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 20}"
+          "value": "{theme.light.palettes.navy-20}"
         },
-        "secondary 30": {
+        "secondary-30": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 30}"
+          "value": "{theme.light.palettes.navy-30}"
         },
-        "secondary 90": {
+        "secondary-90": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 90}"
+          "value": "{theme.light.palettes.navy-90}"
         },
-        "secondary 10": {
+        "secondary-10": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 10}"
+          "value": "{theme.light.palettes.navy-10}"
         },
-        "neutral 100": {
+        "neutral-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral 98": {
+        "neutral-98": {
           "type": "color",
           "value": "#f8f9fbff",
           "blendMode": "normal"
         },
-        "neutral 95": {
+        "neutral-95": {
           "type": "color",
           "value": "#f1f3f8ff",
           "blendMode": "normal"
         },
-        "neutral 90": {
+        "neutral-90": {
           "type": "color",
           "value": "#e6e9f3ff",
           "blendMode": "normal"
         },
-        "neutral 80": {
+        "neutral-80": {
           "type": "color",
           "value": "#d1d5e7ff",
           "blendMode": "normal"
         },
-        "neutral 70": {
+        "neutral-70": {
           "type": "color",
           "value": "#bbc1d9ff",
           "blendMode": "normal"
         },
-        "neutral 60": {
+        "neutral-60": {
           "type": "color",
           "value": "#a4adc8ff",
           "blendMode": "normal"
         },
-        "neutral 50": {
+        "neutral-50": {
           "type": "color",
           "value": "#8e98b4ff",
           "blendMode": "normal"
         },
-        "neutral 40": {
+        "neutral-40": {
           "type": "color",
           "value": "#727d9cff",
           "blendMode": "normal"
         },
-        "neutral 30": {
+        "neutral-30": {
           "type": "color",
           "value": "#59627bff",
           "blendMode": "normal"
         },
-        "neutral 20": {
+        "neutral-20": {
           "type": "color",
           "value": "#3e4557ff",
           "blendMode": "normal"
         },
-        "neutral 10": {
+        "neutral-10": {
           "type": "color",
           "value": "#1f232eff",
           "blendMode": "normal"
         },
-        "neutral 0": {
+        "neutral-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "neutral 87": {
+        "neutral-87": {
           "type": "color",
           "value": "#e0e3efff",
           "blendMode": "normal"
         },
-        "neutral 96": {
+        "neutral-96": {
           "type": "color",
           "value": "#f3f5f9ff",
           "blendMode": "normal"
         },
-        "neutral 94": {
+        "neutral-94": {
           "type": "color",
           "value": "#eff1f7ff",
           "blendMode": "normal"
         },
-        "neutral 92": {
+        "neutral-92": {
           "type": "color",
           "value": "#ebedf5ff",
           "blendMode": "normal"
         },
-        "secondary 100": {
+        "secondary-100": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 100}"
+          "value": "{theme.light.palettes.navy-100}"
         },
-        "secondary 98": {
+        "secondary-98": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 98}"
+          "value": "{theme.light.palettes.navy-98}"
         },
-        "secondary 95": {
+        "secondary-95": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 95}"
+          "value": "{theme.light.palettes.navy-95}"
         },
-        "secondary 70": {
+        "secondary-70": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 70}"
+          "value": "{theme.light.palettes.navy-70}"
         },
-        "secondary 60": {
+        "secondary-60": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 60}"
+          "value": "{theme.light.palettes.navy-60}"
         },
-        "secondary 50": {
+        "secondary-50": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 50}"
+          "value": "{theme.light.palettes.navy-50}"
         },
-        "secondary 40": {
+        "secondary-40": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 40}"
+          "value": "{theme.light.palettes.navy-40}"
         },
-        "secondary 0": {
+        "secondary-0": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 0}"
+          "value": "{theme.light.palettes.navy-0}"
         },
-        "neutral 99": {
+        "neutral-99": {
           "type": "color",
           "value": "#fcfcfdff",
           "blendMode": "normal"
         },
-        "neutral 35": {
+        "neutral-35": {
           "type": "color",
           "value": "#66708cff",
           "blendMode": "normal"
         },
-        "neutral 25": {
+        "neutral-25": {
           "type": "color",
           "value": "#4c546aff",
           "blendMode": "normal"
         },
-        "neutral 97": {
+        "neutral-97": {
           "type": "color",
           "value": "#f6f7fbff",
           "blendMode": "normal"
         },
-        "neutral 93": {
+        "neutral-93": {
           "type": "color",
           "value": "#edeff6ff",
           "blendMode": "normal"
         },
-        "neutral 91": {
+        "neutral-91": {
           "type": "color",
           "value": "#e8ebf4ff",
           "blendMode": "normal"
         },
-        "neutral 2": {
+        "neutral-2": {
           "type": "color",
           "value": "#05060aff",
           "blendMode": "normal"
         },
-        "neutral 3": {
+        "neutral-3": {
           "type": "color",
           "value": "#080a0fff",
           "blendMode": "normal"
         },
-        "neutral 4": {
+        "neutral-4": {
           "type": "color",
           "value": "#0a0d12ff",
           "blendMode": "normal"
         },
-        "neutral 5": {
+        "neutral-5": {
           "type": "color",
           "value": "#0d1016ff",
           "blendMode": "normal"
         },
-        "neutral 6": {
+        "neutral-6": {
           "type": "color",
           "value": "#10141aff",
           "blendMode": "normal"
         },
-        "neutral 7": {
+        "neutral-7": {
           "type": "color",
           "value": "#14181fff",
           "blendMode": "normal"
         },
-        "neutral 8": {
+        "neutral-8": {
           "type": "color",
           "value": "#171b24ff",
           "blendMode": "normal"
         },
-        "neutral 9": {
+        "neutral-9": {
           "type": "color",
           "value": "#1b1f29ff",
           "blendMode": "normal"
         },
-        "neutral 11": {
+        "neutral-11": {
           "type": "color",
           "value": "#222633ff",
           "blendMode": "normal"
         },
-        "neutral 12": {
+        "neutral-12": {
           "type": "color",
           "value": "#252a37ff",
           "blendMode": "normal"
         },
-        "neutral 13": {
+        "neutral-13": {
           "type": "color",
           "value": "#292e3cff",
           "blendMode": "normal"
         },
-        "neutral 14": {
+        "neutral-14": {
           "type": "color",
           "value": "#2c313fff",
           "blendMode": "normal"
         },
-        "neutral 15": {
+        "neutral-15": {
           "type": "color",
           "value": "#2f3443ff",
           "blendMode": "normal"
         },
-        "neutral 16": {
+        "neutral-16": {
           "type": "color",
           "value": "#333847ff",
           "blendMode": "normal"
         },
-        "neutral 17": {
+        "neutral-17": {
           "type": "color",
           "value": "#353b4bff",
           "blendMode": "normal"
         },
-        "neutral 18": {
+        "neutral-18": {
           "type": "color",
           "value": "#383e4fff",
           "blendMode": "normal"
         },
-        "neutral 19": {
+        "neutral-19": {
           "type": "color",
           "value": "#3b4153ff",
           "blendMode": "normal"
         },
-        "neutral 21": {
+        "neutral-21": {
           "type": "color",
           "value": "#41485bff",
           "blendMode": "normal"
         },
-        "neutral 22": {
+        "neutral-22": {
           "type": "color",
           "value": "#444b5fff",
           "blendMode": "normal"
         },
-        "neutral 23": {
+        "neutral-23": {
           "type": "color",
           "value": "#474e62ff",
           "blendMode": "normal"
         },
-        "neutral 24": {
+        "neutral-24": {
           "type": "color",
           "value": "#495166ff",
           "blendMode": "normal"
         },
-        "digital blue 91": {
+        "digital-blue-91": {
           "type": "color",
           "value": "#e1e3fdff",
           "blendMode": "normal"
         },
-        "digital blue 92": {
+        "digital-blue-92": {
           "type": "color",
           "value": "#e5e5feff",
           "blendMode": "normal"
         },
-        "digital blue 93": {
+        "digital-blue-93": {
           "type": "color",
           "value": "#e8e9feff",
           "blendMode": "normal"
         },
-        "digital blue 94": {
+        "digital-blue-94": {
           "type": "color",
           "value": "#ececfeff",
           "blendMode": "normal"
         },
-        "digital blue 99": {
+        "digital-blue-99": {
           "type": "color",
           "value": "#fefbffff",
           "blendMode": "normal"
         },
-        "neutral variant 100": {
+        "neutral-variant-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 99": {
+        "neutral-variant-99": {
           "type": "color",
           "value": "#fcfcffff",
           "blendMode": "normal"
         },
-        "neutral variant 98": {
+        "neutral-variant-98": {
           "type": "color",
           "value": "#f9f9fdff",
           "blendMode": "normal"
         },
-        "neutral variant 97": {
+        "neutral-variant-97": {
           "type": "color",
           "value": "#f5f5faff",
           "blendMode": "normal"
         },
-        "neutral variant 96": {
+        "neutral-variant-96": {
           "type": "color",
           "value": "#f2f2f7ff",
           "blendMode": "normal"
         },
-        "neutral variant 95": {
+        "neutral-variant-95": {
           "type": "color",
           "value": "#f0f0f4ff",
           "blendMode": "normal"
         },
-        "neutral variant 94": {
+        "neutral-variant-94": {
           "type": "color",
           "value": "#ededf1ff",
           "blendMode": "normal"
         },
-        "neutral variant 93": {
+        "neutral-variant-93": {
           "type": "color",
           "value": "#eaeaefff",
           "blendMode": "normal"
         },
-        "neutral variant 92": {
+        "neutral-variant-92": {
           "type": "color",
           "value": "#e7e7ecff",
           "blendMode": "normal"
         },
-        "neutral variant 91": {
+        "neutral-variant-91": {
           "type": "color",
           "value": "#e4e4e9ff",
           "blendMode": "normal"
         },
-        "neutral variant 90": {
+        "neutral-variant-90": {
           "type": "color",
           "value": "#e2e2e6ff",
           "blendMode": "normal"
         },
-        "neutral variant 80": {
+        "neutral-variant-80": {
           "type": "color",
           "value": "#c6c6caff",
           "blendMode": "normal"
         },
-        "neutral variant 70": {
+        "neutral-variant-70": {
           "type": "color",
           "value": "#aaabafff",
           "blendMode": "normal"
         },
-        "neutral variant 60": {
+        "neutral-variant-60": {
           "type": "color",
           "value": "#8f9194ff",
           "blendMode": "normal"
         },
-        "neutral variant 50": {
+        "neutral-variant-50": {
           "type": "color",
           "value": "#76777aff",
           "blendMode": "normal"
         },
-        "neutral variant 40": {
+        "neutral-variant-40": {
           "type": "color",
           "value": "#5d5e62ff",
           "blendMode": "normal"
         },
-        "neutral variant 35": {
+        "neutral-variant-35": {
           "type": "color",
           "value": "#515256ff",
           "blendMode": "normal"
         },
-        "neutral variant 30": {
+        "neutral-variant-30": {
           "type": "color",
           "value": "#45474aff",
           "blendMode": "normal"
         },
-        "neutral variant 25": {
+        "neutral-variant-25": {
           "type": "color",
           "value": "#3a3b3fff",
           "blendMode": "normal"
         },
-        "neutral variant 20": {
+        "neutral-variant-20": {
           "type": "color",
           "value": "#2f3033ff",
           "blendMode": "normal"
         },
-        "neutral variant 15": {
+        "neutral-variant-15": {
           "type": "color",
           "value": "#242629ff",
           "blendMode": "normal"
         },
-        "neutral variant 10": {
+        "neutral-variant-10": {
           "type": "color",
           "value": "#1a1c1eff",
           "blendMode": "normal"
         },
-        "neutral variant 5": {
+        "neutral-variant-5": {
           "type": "color",
           "value": "#0f1114ff",
           "blendMode": "normal"
         },
-        "neutral variant 0": {
+        "neutral-variant-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "neutral 1": {
+        "neutral-1": {
           "type": "color",
           "value": "#020305ff",
           "blendMode": "normal"
         },
-        "navy 13": {
+        "navy-13": {
           "type": "color",
           "value": "#00233cff",
           "blendMode": "normal"
         },
-        "navy 98": {
+        "navy-98": {
           "type": "color",
           "value": "#f8fafdff",
           "blendMode": "normal"
@@ -892,156 +905,194 @@
       },
       "colors": {
         "primary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.digital blue 40}"
+          "value": "{theme.light.palettes.digital-blue-40}"
         },
         "primary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.digital blue 94}"
+          "value": "{theme.light.palettes.digital-blue-94}"
         },
         "on-primary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.digital blue 100}"
+          "value": "{theme.light.palettes.digital-blue-100}"
         },
         "secondary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 13}"
+          "value": "{theme.light.palettes.navy-13}"
         },
         "secondary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.secondary 90}"
+          "value": "{theme.light.palettes.secondary-90}"
         },
         "on-secondary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.secondary 100}"
+          "value": "{theme.light.palettes.secondary-100}"
         },
         "on-secondary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.secondary 10}"
+          "value": "{theme.light.palettes.secondary-10}"
         },
         "tertiary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.orange 40}"
+          "value": "{theme.light.palettes.orange-40}"
         },
         "tertiary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.orange 90}"
+          "value": "{theme.light.palettes.orange-90}"
         },
         "on-tertiary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.orange 100}"
+          "value": "{theme.light.palettes.orange-100}"
         },
         "on-tertiary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.orange 10}"
+          "value": "{theme.light.palettes.orange-10}"
         },
         "surface": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 98}"
+          "value": "{theme.light.palettes.neutral-98}"
         },
         "surface-dim": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 87}"
+          "value": "{theme.light.palettes.neutral-96}"
         },
         "surface-bright": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 98}"
+          "value": "{theme.light.palettes.neutral-100}"
         },
         "surface-container-lowest": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 100}"
+          "value": "{theme.light.palettes.neutral-100}"
         },
         "surface-container-low": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 96}"
+          "value": "{theme.light.palettes.neutral-96}"
         },
         "surface-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 94}"
+          "value": "{theme.light.palettes.neutral-94}"
         },
         "surface-container-high": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 92}"
+          "value": "{theme.light.palettes.neutral-92}"
         },
         "surface-container-highest": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 90}"
+          "value": "{theme.light.palettes.neutral-90}"
         },
         "on-surface": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.navy 13}"
+          "value": "{theme.light.palettes.navy-13}"
         },
         "on-surface-variant": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 30}"
+          "value": "{theme.light.palettes.neutral-30}"
         },
         "inverse-surface": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 20}"
+          "value": "{theme.light.palettes.neutral-20}"
         },
         "inverse-on-surface": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 95}"
+          "value": "{theme.light.palettes.neutral-95}"
         },
         "negative": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.negative 40}"
+          "value": "{theme.light.palettes.negative-40}"
         },
         "negative-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.negative 90}"
+          "value": "{theme.light.palettes.negative-90}"
         },
         "on-negative": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.negative 100}"
+          "value": "{theme.light.palettes.negative-100}"
         },
         "on-negative-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.negative 10}"
+          "value": "{theme.light.palettes.negative-10}"
         },
         "positive": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.positive 40}"
+          "value": "{theme.light.palettes.positive-40}"
         },
         "positive-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.positive 90}"
+          "value": "{theme.light.palettes.positive-90}"
         },
         "on-positive": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.positive 100}"
+          "value": "{theme.light.palettes.positive-100}"
         },
         "on-positive-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.positive 10}"
+          "value": "{theme.light.palettes.positive-10}"
         },
         "caution": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.caution 40}"
+          "value": "{theme.light.palettes.caution-40}"
         },
         "caution-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.caution 90}"
+          "value": "{theme.light.palettes.caution-90}"
         },
         "on-caution": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.caution 100}"
+          "value": "{theme.light.palettes.caution-100}"
         },
         "on-caution-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.caution 10}"
+          "value": "{theme.light.palettes.caution-10}"
         },
         "outline": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 40}"
+          "value": "{theme.light.palettes.neutral-40}"
         },
         "outline-variant": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 80}"
+          "value": "{theme.light.palettes.neutral-80}"
         },
         "shadow": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 0}"
+          "value": "{theme.light.palettes.neutral-0}"
         },
         "scrim": {
           "type": "color",
@@ -1049,28 +1100,34 @@
           "blendMode": "normal"
         },
         "primary-fixed": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.digital blue 90}"
+          "value": "{theme.light.palettes.digital-blue-90}"
         },
         "primary-fixed-dim": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.digital blue 80}"
+          "value": "{theme.light.palettes.digital-blue-80}"
         },
         "secondary-fixed": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.secondary 90}"
+          "value": "{theme.light.palettes.secondary-90}"
         },
         "secondary-fixed-dim": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.secondary 80}"
+          "value": "{theme.light.palettes.secondary-80}"
         },
         "tertiary-fixed": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.orange 90}"
+          "value": "{theme.light.palettes.orange-90}"
         },
         "tertiary-fixed-dim": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.orange 80}"
+          "value": "{theme.light.palettes.orange-80}"
         },
         "primary-8": {
           "description": "Use for hover states",
@@ -1094,12 +1151,14 @@
           "blendMode": "normal"
         },
         "on-primary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.digital blue 10}"
+          "value": "{theme.light.palettes.digital-blue-10}"
         },
         "inverse-primary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.digital blue 80}"
+          "value": "{theme.light.palettes.digital-blue-80}"
         },
         "on-surface-38": {
           "type": "color",
@@ -1178,24 +1237,29 @@
           "blendMode": "normal"
         },
         "surface-variant": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 98}"
+          "value": "{theme.light.palettes.neutral-98}"
         },
         "emphasis": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.emphasis 40}"
+          "value": "{theme.light.palettes.emphasis-40}"
         },
         "emphasis-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.emphasis 90}"
+          "value": "{theme.light.palettes.emphasis-90}"
         },
         "on-emphasis": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.emphasis 100}"
+          "value": "{theme.light.palettes.emphasis-100}"
         },
         "on-emphasis-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.emphasis 10}"
+          "value": "{theme.light.palettes.emphasis-10}"
         },
         "positive-16": {
           "type": "color",
@@ -1500,8 +1564,9 @@
           "blendMode": "normal"
         },
         "inverse-secondary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.secondary 80}"
+          "value": "{theme.light.palettes.secondary-80}"
         },
         "inverse-secondary-8": {
           "type": "color",
@@ -1524,8 +1589,9 @@
           "blendMode": "normal"
         },
         "inverse-tertiary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.orange 40}"
+          "value": "{theme.light.palettes.orange-40}"
         },
         "inverse-tertiary-8": {
           "type": "color",
@@ -1752,8 +1818,9 @@
           "blendMode": "normal"
         },
         "background": {
+          "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.neutral 98}"
+          "value": "{theme.light.palettes.neutral-98}"
         },
         "surface-variant-8": {
           "type": "color",
@@ -1768,6 +1835,11 @@
         "surface-variant-16": {
           "type": "color",
           "value": "#fdf9fc29",
+          "blendMode": "normal"
+        },
+        "logo": {
+          "type": "color",
+          "value": "#ff5f02ff",
           "blendMode": "normal"
         },
         "on-surface-variant-38": {
@@ -1939,907 +2011,932 @@
           "type": "color",
           "value": "#180e00bd",
           "blendMode": "normal"
+        },
+        "on-primary-container-38": {
+          "type": "color",
+          "value": "#00115a61",
+          "blendMode": "normal"
+        },
+        "on-primary-container-74": {
+          "type": "color",
+          "value": "#00115abd",
+          "blendMode": "normal"
+        },
+        "primary-38": {
+          "type": "color",
+          "value": "#3053f461",
+          "blendMode": "normal"
+        },
+        "primary-74": {
+          "type": "color",
+          "value": "#3053f4bd",
+          "blendMode": "normal"
+        },
+        "brand": {
+          "type": "color",
+          "value": "#ff5f02ff",
+          "blendMode": "normal"
         }
       }
     },
     "dark": {
       "palettes": {
-        "digital blue 98": {
+        "digital-blue-98": {
           "type": "color",
           "value": "#efefffff",
           "blendMode": "normal"
         },
-        "digital blue 100": {
+        "digital-blue-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "digital blue 95": {
+        "digital-blue-95": {
           "type": "color",
           "value": "#dde1ffff",
           "blendMode": "normal"
         },
-        "digital blue 90": {
+        "digital-blue-90": {
           "type": "color",
           "value": "#bac3ffff",
           "blendMode": "normal"
         },
-        "digital blue 80": {
+        "digital-blue-80": {
           "type": "color",
           "value": "#889fffff",
           "blendMode": "normal"
         },
-        "digital blue 70": {
+        "digital-blue-70": {
           "type": "color",
           "value": "#7388d9ff",
           "blendMode": "normal"
         },
-        "digital blue 60": {
+        "digital-blue-60": {
           "type": "color",
           "value": "#5d71b4ff",
           "blendMode": "normal"
         },
-        "digital blue 50": {
+        "digital-blue-50": {
           "type": "color",
           "value": "#485a8eff",
           "blendMode": "normal"
         },
-        "digital blue 40": {
+        "digital-blue-40": {
           "type": "color",
           "value": "#324369ff",
           "blendMode": "normal"
         },
-        "digital blue 30": {
+        "digital-blue-30": {
           "type": "color",
           "value": "#1d2c43ff",
           "blendMode": "normal"
         },
-        "digital blue 20": {
+        "digital-blue-20": {
           "type": "color",
           "value": "#111a28ff",
           "blendMode": "normal"
         },
-        "digital blue 10": {
+        "digital-blue-10": {
           "type": "color",
           "value": "#0c121bff",
           "blendMode": "normal"
         },
-        "orange 100": {
+        "orange-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "orange 98": {
+        "orange-98": {
           "type": "color",
           "value": "#fef1ecff",
           "blendMode": "normal"
         },
-        "orange 95": {
+        "orange-95": {
           "type": "color",
           "value": "#fdc4a4ff",
           "blendMode": "normal"
         },
-        "orange 90": {
+        "orange-90": {
           "type": "color",
           "value": "#f79e79ff",
           "blendMode": "normal"
         },
-        "orange 80": {
+        "orange-80": {
           "type": "color",
           "value": "#f37440ff",
           "blendMode": "normal"
         },
-        "orange 70": {
+        "orange-70": {
           "type": "color",
           "value": "#db683aff",
           "blendMode": "normal"
         },
-        "orange 60": {
+        "orange-60": {
           "type": "color",
           "value": "#c25d33ff",
           "blendMode": "normal"
         },
-        "orange 50": {
+        "orange-50": {
           "type": "color",
           "value": "#aa512dff",
           "blendMode": "normal"
         },
-        "orange 40": {
+        "orange-40": {
           "type": "color",
           "value": "#612e1aff",
           "blendMode": "normal"
         },
-        "orange 30": {
+        "orange-30": {
           "type": "color",
           "value": "#492313ff",
           "blendMode": "normal"
         },
-        "orange 20": {
+        "orange-20": {
           "type": "color",
           "value": "#331300ff",
           "blendMode": "normal"
         },
-        "orange 10": {
+        "orange-10": {
           "type": "color",
           "value": "#190900ff",
           "blendMode": "normal"
         },
-        "orange 0": {
+        "orange-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "digital blue 0": {
+        "digital-blue-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "navy 100": {
+        "navy-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "navy 99": {
+        "navy-99": {
           "type": "color",
           "value": "#fcfcffff",
           "blendMode": "normal"
         },
-        "navy 95": {
+        "navy-95": {
           "type": "color",
           "value": "#e8f2ffff",
           "blendMode": "normal"
         },
-        "navy 90": {
+        "navy-90": {
           "type": "color",
           "value": "#cfe5ffff",
           "blendMode": "normal"
         },
-        "navy 80": {
+        "navy-80": {
           "type": "color",
           "value": "#acc9e9ff",
           "blendMode": "normal"
         },
-        "navy 70": {
+        "navy-70": {
           "type": "color",
           "value": "#91aecdff",
           "blendMode": "normal"
         },
-        "navy 60": {
+        "navy-60": {
           "type": "color",
           "value": "#7793b1ff",
           "blendMode": "normal"
         },
-        "navy 50": {
+        "navy-50": {
           "type": "color",
           "value": "#5e7a97ff",
           "blendMode": "normal"
         },
-        "navy 40": {
+        "navy-40": {
           "type": "color",
           "value": "#45617dff",
           "blendMode": "normal"
         },
-        "navy 30": {
+        "navy-30": {
           "type": "color",
           "value": "#2d4964ff",
           "blendMode": "normal"
         },
-        "navy 20": {
+        "navy-20": {
           "type": "color",
           "value": "#14324cff",
           "blendMode": "normal"
         },
-        "navy 10": {
+        "navy-10": {
           "type": "color",
           "value": "#001d33ff",
           "blendMode": "normal"
         },
-        "navy 0": {
+        "navy-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "negative 100": {
+        "negative-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "negative 98": {
+        "negative-98": {
           "type": "color",
           "value": "#fff2f0ff",
           "blendMode": "normal"
         },
-        "negative 95": {
+        "negative-95": {
           "type": "color",
           "value": "#ffd2cbff",
           "blendMode": "normal"
         },
-        "negative 90": {
+        "negative-90": {
           "type": "color",
           "value": "#ffac9fff",
           "blendMode": "normal"
         },
-        "negative 80": {
+        "negative-80": {
           "type": "color",
           "value": "#fd7d69ff",
           "blendMode": "normal"
         },
-        "negative 70": {
+        "negative-70": {
           "type": "color",
           "value": "#e4715fff",
           "blendMode": "normal"
         },
-        "negative 60": {
+        "negative-60": {
           "type": "color",
           "value": "#ca6454ff",
           "blendMode": "normal"
         },
-        "negative 50": {
+        "negative-50": {
           "type": "color",
           "value": "#b1584aff",
           "blendMode": "normal"
         },
-        "negative 40": {
+        "negative-40": {
           "type": "color",
           "value": "#984b3fff",
           "blendMode": "normal"
         },
-        "negative 30": {
+        "negative-30": {
           "type": "color",
           "value": "#65322aff",
           "blendMode": "normal"
         },
-        "negative 20": {
+        "negative-20": {
           "type": "color",
           "value": "#331915ff",
           "blendMode": "normal"
         },
-        "negative 10": {
+        "negative-10": {
           "type": "color",
           "value": "#190c0aff",
           "blendMode": "normal"
         },
-        "negative 0": {
+        "negative-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "caution 100": {
+        "caution-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "caution 98": {
+        "caution-98": {
           "type": "color",
           "value": "#fff8f1ff",
           "blendMode": "normal"
         },
-        "caution 95": {
+        "caution-95": {
           "type": "color",
           "value": "#ffe2c8ff",
           "blendMode": "normal"
         },
-        "caution 90": {
+        "caution-90": {
           "type": "color",
           "value": "#ffcd9eff",
           "blendMode": "normal"
         },
-        "caution 80": {
+        "caution-80": {
           "type": "color",
           "value": "#ffb775ff",
           "blendMode": "normal"
         },
-        "caution 70": {
+        "caution-70": {
           "type": "color",
           "value": "#e6a569ff",
           "blendMode": "normal"
         },
-        "caution 60": {
+        "caution-60": {
           "type": "color",
           "value": "#cc925eff",
           "blendMode": "normal"
         },
-        "caution 50": {
+        "caution-50": {
           "type": "color",
           "value": "#b38052ff",
           "blendMode": "normal"
         },
-        "caution 40": {
+        "caution-40": {
           "type": "color",
           "value": "#996e46ff",
           "blendMode": "normal"
         },
-        "caution 30": {
+        "caution-30": {
           "type": "color",
           "value": "#66492fff",
           "blendMode": "normal"
         },
-        "caution 20": {
+        "caution-20": {
           "type": "color",
           "value": "#332517ff",
           "blendMode": "normal"
         },
-        "caution 10": {
+        "caution-10": {
           "type": "color",
           "value": "#19120cff",
           "blendMode": "normal"
         },
-        "caution 0": {
+        "caution-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "positive 100": {
+        "positive-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "positive 98": {
+        "positive-98": {
           "type": "color",
           "value": "#eef8eeff",
           "blendMode": "normal"
         },
-        "positive 95": {
+        "positive-95": {
           "type": "color",
           "value": "#bbe4bbff",
           "blendMode": "normal"
         },
-        "positive 90": {
+        "positive-90": {
           "type": "color",
           "value": "#91d890ff",
           "blendMode": "normal"
         },
-        "positive 80": {
+        "positive-80": {
           "type": "color",
           "value": "#55bc54ff",
           "blendMode": "normal"
         },
-        "positive 70": {
+        "positive-70": {
           "type": "color",
           "value": "#4da94cff",
           "blendMode": "normal"
         },
-        "positive 60": {
+        "positive-60": {
           "type": "color",
           "value": "#449643ff",
           "blendMode": "normal"
         },
-        "positive 50": {
+        "positive-50": {
           "type": "color",
           "value": "#3b843bff",
           "blendMode": "normal"
         },
-        "positive 40": {
+        "positive-40": {
           "type": "color",
           "value": "#337132ff",
           "blendMode": "normal"
         },
-        "positive 30": {
+        "positive-30": {
           "type": "color",
           "value": "#224b22ff",
           "blendMode": "normal"
         },
-        "positive 20": {
+        "positive-20": {
           "type": "color",
           "value": "#112611ff",
           "blendMode": "normal"
         },
-        "positive 10": {
+        "positive-10": {
           "type": "color",
           "value": "#081308ff",
           "blendMode": "normal"
         },
-        "positive 0": {
+        "positive-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "emphasis 100": {
+        "emphasis-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "emphasis 98": {
+        "emphasis-98": {
           "type": "color",
           "value": "#fff6f9ff",
           "blendMode": "normal"
         },
-        "emphasis 95": {
+        "emphasis-95": {
           "type": "color",
           "value": "#ffd9e7ff",
           "blendMode": "normal"
         },
-        "emphasis 90": {
+        "emphasis-90": {
           "type": "color",
           "value": "#ffbdd5ff",
           "blendMode": "normal"
         },
-        "emphasis 80": {
+        "emphasis-80": {
           "type": "color",
           "value": "#ffa0c3ff",
           "blendMode": "normal"
         },
-        "emphasis 70": {
+        "emphasis-70": {
           "type": "color",
           "value": "#e690b0ff",
           "blendMode": "normal"
         },
-        "emphasis 60": {
+        "emphasis-60": {
           "type": "color",
           "value": "#cc809cff",
           "blendMode": "normal"
         },
-        "emphasis 50": {
+        "emphasis-50": {
           "type": "color",
           "value": "#b37089ff",
           "blendMode": "normal"
         },
-        "emphasis 40": {
+        "emphasis-40": {
           "type": "color",
           "value": "#66404eff",
           "blendMode": "normal"
         },
-        "emphasis 30": {
+        "emphasis-30": {
           "type": "color",
           "value": "#4c303aff",
           "blendMode": "normal"
         },
-        "emphasis 20": {
+        "emphasis-20": {
           "type": "color",
           "value": "#332027ff",
           "blendMode": "normal"
         },
-        "emphasis 10": {
+        "emphasis-10": {
           "type": "color",
           "value": "#191013ff",
           "blendMode": "normal"
         },
-        "emphasis 0": {
+        "emphasis-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "secondary 80": {
+        "secondary-80": {
           "type": "color",
           "value": "#c3c5ddff",
           "blendMode": "normal"
         },
-        "secondary 20": {
+        "secondary-20": {
           "type": "color",
           "value": "#2c2f42ff",
           "blendMode": "normal"
         },
-        "secondary 30": {
+        "secondary-30": {
           "type": "color",
           "value": "#434659ff",
           "blendMode": "normal"
         },
-        "secondary 90": {
+        "secondary-90": {
           "type": "color",
           "value": "#dfe1f9ff",
           "blendMode": "normal"
         },
-        "secondary 10": {
+        "secondary-10": {
           "type": "color",
           "value": "#171a2cff",
           "blendMode": "normal"
         },
-        "neutral 100": {
+        "neutral-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral 98": {
+        "neutral-98": {
           "type": "color",
           "value": "#fdf9fcff",
           "blendMode": "normal"
         },
-        "neutral 95": {
+        "neutral-95": {
           "type": "color",
           "value": "#f6f3f6ff",
           "blendMode": "normal"
         },
-        "neutral 90": {
+        "neutral-90": {
           "type": "color",
           "value": "#ebe8ecff",
           "blendMode": "normal"
         },
-        "neutral 80": {
+        "neutral-80": {
           "type": "color",
           "value": "#d5d3d8ff",
           "blendMode": "normal"
         },
-        "neutral 70": {
+        "neutral-70": {
           "type": "color",
           "value": "#bebdc3ff",
           "blendMode": "normal"
         },
-        "neutral 60": {
+        "neutral-60": {
           "type": "color",
           "value": "#a6a6adff",
           "blendMode": "normal"
         },
-        "neutral 50": {
+        "neutral-50": {
           "type": "color",
           "value": "#8f8e97ff",
           "blendMode": "normal"
         },
-        "neutral 40": {
+        "neutral-40": {
           "type": "color",
           "value": "#76757dff",
           "blendMode": "normal"
         },
-        "neutral 30": {
+        "neutral-30": {
           "type": "color",
           "value": "#5c5b5fff",
           "blendMode": "normal"
         },
-        "neutral 20": {
+        "neutral-20": {
           "type": "color",
           "value": "#3e3e41ff",
           "blendMode": "normal"
         },
-        "neutral 10": {
+        "neutral-10": {
           "type": "color",
           "value": "#1e1d1eff",
           "blendMode": "normal"
         },
-        "neutral 0": {
+        "neutral-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "neutral 87": {
+        "neutral-87": {
           "type": "color",
           "value": "#e5e2e6ff",
           "blendMode": "normal"
         },
-        "neutral 96": {
+        "neutral-96": {
           "type": "color",
           "value": "#f8f5f8ff",
           "blendMode": "normal"
         },
-        "neutral 94": {
+        "neutral-94": {
           "type": "color",
           "value": "#f4f1f4ff",
           "blendMode": "normal"
         },
-        "neutral 92": {
+        "neutral-92": {
           "type": "color",
           "value": "#f0edf0ff",
           "blendMode": "normal"
         },
-        "secondary 100": {
+        "secondary-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "secondary 98": {
+        "secondary-98": {
           "type": "color",
           "value": "#fbf8ffff",
           "blendMode": "normal"
         },
-        "secondary 95": {
+        "secondary-95": {
           "type": "color",
           "value": "#f0efffff",
           "blendMode": "normal"
         },
-        "secondary 70": {
+        "secondary-70": {
           "type": "color",
           "value": "#a8aac1ff",
           "blendMode": "normal"
         },
-        "secondary 60": {
+        "secondary-60": {
           "type": "color",
           "value": "#8d8fa6ff",
           "blendMode": "normal"
         },
-        "secondary 50": {
+        "secondary-50": {
           "type": "color",
           "value": "#73768bff",
           "blendMode": "normal"
         },
-        "secondary 40": {
+        "secondary-40": {
           "type": "color",
           "value": "#5b5d72ff",
           "blendMode": "normal"
         },
-        "secondary 0": {
+        "secondary-0": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "neutral 99": {
+        "neutral-99": {
           "type": "color",
           "value": "#fffbfeff",
           "blendMode": "normal"
         },
-        "neutral 35": {
+        "neutral-35": {
           "type": "color",
           "value": "#68686eff",
           "blendMode": "normal"
         },
-        "neutral 25": {
+        "neutral-25": {
           "type": "color",
           "value": "#4d4d50ff",
           "blendMode": "normal"
         },
-        "neutral 97": {
+        "neutral-97": {
           "type": "color",
           "value": "#faf7faff",
           "blendMode": "normal"
         },
-        "neutral 93": {
+        "neutral-93": {
           "type": "color",
           "value": "#f2eff2ff",
           "blendMode": "normal"
         },
-        "neutral 91": {
+        "neutral-91": {
           "type": "color",
           "value": "#eeeaeeff",
           "blendMode": "normal"
         },
-        "neutral 2": {
+        "neutral-2": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "neutral 3": {
+        "neutral-3": {
           "type": "color",
           "value": "#020202ff",
           "blendMode": "normal"
         },
-        "neutral 4": {
+        "neutral-4": {
           "type": "color",
           "value": "#060506ff",
           "blendMode": "normal"
         },
-        "neutral 5": {
+        "neutral-5": {
           "type": "color",
           "value": "#0a090aff",
           "blendMode": "normal"
         },
-        "neutral 6": {
+        "neutral-6": {
           "type": "color",
           "value": "#0e0e0eff",
           "blendMode": "normal"
         },
-        "neutral 7": {
+        "neutral-7": {
           "type": "color",
           "value": "#121212ff",
           "blendMode": "normal"
         },
-        "neutral 8": {
+        "neutral-8": {
           "type": "color",
           "value": "#161616ff",
           "blendMode": "normal"
         },
-        "neutral 9": {
+        "neutral-9": {
           "type": "color",
           "value": "#1a191aff",
           "blendMode": "normal"
         },
-        "neutral 11": {
+        "neutral-11": {
           "type": "color",
           "value": "#222122ff",
           "blendMode": "normal"
         },
-        "neutral 12": {
+        "neutral-12": {
           "type": "color",
           "value": "#252426ff",
           "blendMode": "normal"
         },
-        "neutral 13": {
+        "neutral-13": {
           "type": "color",
           "value": "#292829ff",
           "blendMode": "normal"
         },
-        "neutral 14": {
+        "neutral-14": {
           "type": "color",
           "value": "#2c2b2dff",
           "blendMode": "normal"
         },
-        "neutral 15": {
+        "neutral-15": {
           "type": "color",
           "value": "#2f2e30ff",
           "blendMode": "normal"
         },
-        "neutral 16": {
+        "neutral-16": {
           "type": "color",
           "value": "#323134ff",
           "blendMode": "normal"
         },
-        "neutral 17": {
+        "neutral-17": {
           "type": "color",
           "value": "#353537ff",
           "blendMode": "normal"
         },
-        "neutral 18": {
+        "neutral-18": {
           "type": "color",
           "value": "#38383bff",
           "blendMode": "normal"
         },
-        "neutral 19": {
+        "neutral-19": {
           "type": "color",
           "value": "#3b3b3eff",
           "blendMode": "normal"
         },
-        "neutral 21": {
+        "neutral-21": {
           "type": "color",
           "value": "#414144ff",
           "blendMode": "normal"
         },
-        "neutral 22": {
+        "neutral-22": {
           "type": "color",
           "value": "#444447ff",
           "blendMode": "normal"
         },
-        "neutral 23": {
+        "neutral-23": {
           "type": "color",
           "value": "#47474aff",
           "blendMode": "normal"
         },
-        "neutral 24": {
+        "neutral-24": {
           "type": "color",
           "value": "#4a4a4dff",
           "blendMode": "normal"
         },
-        "digital blue 91": {
+        "digital-blue-91": {
           "type": "color",
           "value": "#bec9feff",
           "blendMode": "normal"
         },
-        "digital blue 92": {
+        "digital-blue-92": {
           "type": "color",
           "value": "#c6cffdff",
           "blendMode": "normal"
         },
-        "digital blue 93": {
+        "digital-blue-93": {
           "type": "color",
           "value": "#ced5feff",
           "blendMode": "normal"
         },
-        "digital blue 94": {
+        "digital-blue-94": {
           "type": "color",
           "value": "#d5dbfeff",
           "blendMode": "normal"
         },
-        "digital blue 99": {
+        "digital-blue-99": {
           "type": "color",
           "value": "#fafaffff",
           "blendMode": "normal"
         },
-        "neutral variant 100": {
+        "neutral-variant-100": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 99": {
+        "neutral-variant-99": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 98": {
+        "neutral-variant-98": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 97": {
+        "neutral-variant-97": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 96": {
+        "neutral-variant-96": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 95": {
+        "neutral-variant-95": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 94": {
+        "neutral-variant-94": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 93": {
+        "neutral-variant-93": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 92": {
+        "neutral-variant-92": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 91": {
+        "neutral-variant-91": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 90": {
+        "neutral-variant-90": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 80": {
+        "neutral-variant-80": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 70": {
+        "neutral-variant-70": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 60": {
+        "neutral-variant-60": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 50": {
+        "neutral-variant-50": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 40": {
+        "neutral-variant-40": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 35": {
+        "neutral-variant-35": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 30": {
+        "neutral-variant-30": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 25": {
+        "neutral-variant-25": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 20": {
+        "neutral-variant-20": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 15": {
+        "neutral-variant-15": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 10": {
+        "neutral-variant-10": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 5": {
+        "neutral-variant-5": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral variant 0": {
+        "neutral-variant-0": {
           "type": "color",
           "value": "#ffffffff",
           "blendMode": "normal"
         },
-        "neutral 1": {
+        "neutral-1": {
           "type": "color",
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "navy 13": {
+        "navy-13": {
           "type": "color",
           "value": "#00233cff",
           "blendMode": "normal"
         },
-        "navy 98": {
+        "navy-98": {
           "type": "color",
           "value": "#f8fafdff",
           "blendMode": "normal"
@@ -2847,32 +2944,39 @@
       },
       "colors": {
         "primary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital blue 90}"
+          "value": "{theme.dark.palettes.digital-blue-90}"
         },
         "primary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital blue 30}"
+          "value": "{theme.dark.palettes.digital-blue-30}"
         },
         "on-primary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital blue 20}"
+          "value": "{theme.dark.palettes.digital-blue-20}"
         },
         "secondary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary 80}"
+          "value": "{theme.dark.palettes.secondary-80}"
         },
         "secondary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary 30}"
+          "value": "{theme.dark.palettes.secondary-30}"
         },
         "on-secondary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary 10}"
+          "value": "{theme.dark.palettes.secondary-10}"
         },
         "on-secondary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary 90}"
+          "value": "{theme.dark.palettes.secondary-90}"
         },
         "tertiary": {
           "type": "color",
@@ -2880,124 +2984,154 @@
           "blendMode": "normal"
         },
         "tertiary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.orange 60}"
+          "value": "{theme.dark.palettes.orange-60}"
         },
         "on-tertiary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.orange 40}"
+          "value": "{theme.dark.palettes.orange-40}"
         },
         "on-tertiary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.orange 98}"
+          "value": "{theme.dark.palettes.orange-98}"
         },
         "surface": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 8}"
+          "value": "{theme.dark.palettes.neutral-10}"
         },
         "surface-dim": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 6}"
+          "value": "{theme.dark.palettes.neutral-8}"
         },
         "surface-bright": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 24}"
+          "value": "{theme.dark.palettes.neutral-24}"
         },
         "surface-container-lowest": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 10}"
+          "value": "{theme.dark.palettes.neutral-14}"
         },
         "surface-container-low": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 12}"
+          "value": "{theme.dark.palettes.neutral-16}"
         },
         "surface-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 14}"
+          "value": "{theme.dark.palettes.neutral-18}"
         },
         "surface-container-high": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 16}"
+          "value": "{theme.dark.palettes.neutral-20}"
         },
         "surface-container-highest": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 18}"
+          "value": "{theme.dark.palettes.neutral-22}"
         },
         "on-surface": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 90}"
+          "value": "{theme.dark.palettes.neutral-90}"
         },
         "on-surface-variant": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 80}"
+          "value": "{theme.dark.palettes.neutral-80}"
         },
         "inverse-surface": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 90}"
+          "value": "{theme.dark.palettes.neutral-90}"
         },
         "inverse-on-surface": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 20}"
+          "value": "{theme.dark.palettes.neutral-20}"
         },
         "negative": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.negative 80}"
+          "value": "{theme.dark.palettes.negative-80}"
         },
         "negative-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.negative 30}"
+          "value": "{theme.dark.palettes.negative-30}"
         },
         "on-negative": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.negative 20}"
+          "value": "{theme.dark.palettes.negative-20}"
         },
         "on-negative-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.negative 90}"
+          "value": "{theme.dark.palettes.negative-90}"
         },
         "positive": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.positive 90}"
+          "value": "{theme.dark.palettes.positive-90}"
         },
         "positive-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.positive 30}"
+          "value": "{theme.dark.palettes.positive-30}"
         },
         "on-positive": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.positive 20}"
+          "value": "{theme.dark.palettes.positive-20}"
         },
         "on-positive-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.positive 90}"
+          "value": "{theme.dark.palettes.positive-90}"
         },
         "caution": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.caution 90}"
+          "value": "{theme.dark.palettes.caution-90}"
         },
         "caution-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.caution 30}"
+          "value": "{theme.dark.palettes.caution-30}"
         },
         "on-caution": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.caution 30}"
+          "value": "{theme.dark.palettes.caution-30}"
         },
         "on-caution-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.caution 90}"
+          "value": "{theme.dark.palettes.caution-90}"
         },
         "outline": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 50}"
+          "value": "{theme.dark.palettes.neutral-50}"
         },
         "outline-variant": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 20}"
+          "value": "{theme.dark.palettes.neutral-20}"
         },
         "shadow": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 0}"
+          "value": "{theme.dark.palettes.neutral-0}"
         },
         "scrim": {
           "type": "color",
@@ -3005,28 +3139,34 @@
           "blendMode": "normal"
         },
         "primary-fixed": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital blue 95}"
+          "value": "{theme.dark.palettes.digital-blue-95}"
         },
         "primary-fixed-dim": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital blue 90}"
+          "value": "{theme.dark.palettes.digital-blue-90}"
         },
         "secondary-fixed": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary 90}"
+          "value": "{theme.dark.palettes.secondary-90}"
         },
         "secondary-fixed-dim": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary 80}"
+          "value": "{theme.dark.palettes.secondary-80}"
         },
         "tertiary-fixed": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.orange 90}"
+          "value": "{theme.dark.palettes.orange-90}"
         },
         "tertiary-fixed-dim": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.orange 80}"
+          "value": "{theme.dark.palettes.orange-80}"
         },
         "primary-8": {
           "description": "Use for hover states",
@@ -3050,8 +3190,9 @@
           "blendMode": "normal"
         },
         "on-primary-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital blue 95}"
+          "value": "{theme.dark.palettes.digital-blue-95}"
         },
         "inverse-primary": {
           "type": "color",
@@ -3135,24 +3276,29 @@
           "blendMode": "normal"
         },
         "surface-variant": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 0}"
+          "value": "{theme.dark.palettes.neutral-0}"
         },
         "emphasis": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.emphasis 60}"
+          "value": "{theme.dark.palettes.emphasis-60}"
         },
         "emphasis-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.emphasis 40}"
+          "value": "{theme.dark.palettes.emphasis-40}"
         },
         "on-emphasis": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.emphasis 10}"
+          "value": "{theme.dark.palettes.emphasis-10}"
         },
         "on-emphasis-container": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.emphasis 95}"
+          "value": "{theme.dark.palettes.emphasis-95}"
         },
         "positive-16": {
           "type": "color",
@@ -3457,8 +3603,9 @@
           "blendMode": "normal"
         },
         "inverse-secondary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary 40}"
+          "value": "{theme.dark.palettes.secondary-40}"
         },
         "inverse-secondary-8": {
           "type": "color",
@@ -3481,8 +3628,9 @@
           "blendMode": "normal"
         },
         "inverse-tertiary": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.orange 40}"
+          "value": "{theme.dark.palettes.orange-40}"
         },
         "inverse-tertiary-8": {
           "type": "color",
@@ -3709,8 +3857,9 @@
           "blendMode": "normal"
         },
         "background": {
+          "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral 0}"
+          "value": "{theme.dark.palettes.neutral-0}"
         },
         "surface-variant-8": {
           "type": "color",
@@ -3725,6 +3874,11 @@
         "surface-variant-16": {
           "type": "color",
           "value": "#00000029",
+          "blendMode": "normal"
+        },
+        "logo": {
+          "type": "color",
+          "value": "#ffffffff",
           "blendMode": "normal"
         },
         "on-surface-variant-38": {
@@ -3895,6 +4049,31 @@
         "on-emphasis-container-74": {
           "type": "color",
           "value": "#ffd9e7bd",
+          "blendMode": "normal"
+        },
+        "on-primary-container-38": {
+          "type": "color",
+          "value": "#dde1ff61",
+          "blendMode": "normal"
+        },
+        "on-primary-container-74": {
+          "type": "color",
+          "value": "#dde1ffbd",
+          "blendMode": "normal"
+        },
+        "primary-38": {
+          "type": "color",
+          "value": "#bac3ff61",
+          "blendMode": "normal"
+        },
+        "primary-74": {
+          "type": "color",
+          "value": "#bac3ffbd",
+          "blendMode": "normal"
+        },
+        "brand": {
+          "type": "color",
+          "value": "#ff5f02ff",
           "blendMode": "normal"
         }
       }
