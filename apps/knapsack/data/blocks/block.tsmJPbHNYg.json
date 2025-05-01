@@ -15,7 +15,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Ensure that the default or placeholder option is clear and instructive (e.g., \"Select a country\").",
+                  "text": "Ensure that the default or placeholder option is clear and concise.",
                   "type": "text"
                 }
               ]
@@ -30,7 +30,13 @@
           "type": "doc",
           "content": [
             {
-              "type": "paragraph"
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The placeholder text should not be a verb phrase.",
+                  "type": "text"
+                }
+              ]
             }
           ]
         }
