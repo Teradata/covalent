@@ -1,4 +1,4 @@
-import { addHasRemoveClass,} from '@material/mwc-base/base-element';
+import { addHasRemoveClass } from '@material/mwc-base/base-element';
 import { observer } from '@material/mwc-base/observer';
 import { MDCBannerAdapter } from '@material/banner/adapter';
 import {
@@ -41,10 +41,17 @@ export class ActionRibbonBase extends LitElement {
   @property({ type: Boolean }) centered = true;
 
   /**
-   * The state representation active|negative|positive|caution
+   * The state representation active|negative|positive|caution|loading|pending|checked
    */
   @property()
-  state?: 'active' | 'negative' | 'positive' | 'caution';
+  state?:
+    | 'active'
+    | 'negative'
+    | 'positive'
+    | 'caution'
+    | 'loading'
+    | 'pending'
+    | 'checked';
 
   protected reason: CloseReason = CloseReason.UNSPECIFIED;
 
@@ -55,10 +62,18 @@ export class ActionRibbonBase extends LitElement {
       positive: this.state === 'positive',
       caution: this.state === 'caution',
       active: this.state === 'active',
+      loading: this.state === 'loading',
+      pending: this.state === 'pending',
+      checked: this.state === 'checked',
       'mdc-banner--centered': this.centered,
     };
     return html` <div class="${classMap(classes)}" role="banner">
-      <div class="mdc-banner__content" role="alertdialog" aria-live="assertive" aria-label="${this.labelText}">
+      <div
+        class="mdc-banner__content"
+        role="alertdialog"
+        aria-live="assertive"
+        aria-label="${this.labelText}"
+      >
         <div class="mdc-banner__graphic-text-wrapper">
           ${this.icon ? this.renderIcon() : ''}
           <div class="mdc-banner__text">${this.labelText}</div>
@@ -71,7 +86,11 @@ export class ActionRibbonBase extends LitElement {
   }
 
   protected renderIcon(): TemplateResult {
-    return html` <div class="mdc-banner__graphic" role="img" aria-label="${this.iconAriaLabel}">
+    return html` <div
+      class="mdc-banner__graphic"
+      role="img"
+      aria-label="${this.iconAriaLabel}"
+    >
       <slot name="icon">
         <cv-icon class="mdc-banner__icon"> ${this.icon} </cv-icon>
       </slot>
@@ -92,7 +111,7 @@ export class ActionRibbonBase extends LitElement {
             bubbles: true,
             cancelable: true,
             detail: { reason: action },
-          })
+          }),
         ),
       notifyClosed: (reason: CloseReason) =>
         this.dispatchEvent(
@@ -100,7 +119,7 @@ export class ActionRibbonBase extends LitElement {
             bubbles: true,
             cancelable: true,
             detail: { reason: reason },
-          })
+          }),
         ),
       notifyClosing: (reason: CloseReason) =>
         this.dispatchEvent(
@@ -108,15 +127,15 @@ export class ActionRibbonBase extends LitElement {
             bubbles: true,
             cancelable: true,
             detail: { reason: reason },
-          })
+          }),
         ),
       notifyOpened: () =>
         this.dispatchEvent(
-          new CustomEvent(events.OPENED, { bubbles: true, cancelable: true })
+          new CustomEvent(events.OPENED, { bubbles: true, cancelable: true }),
         ),
       notifyOpening: () =>
         this.dispatchEvent(
-          new CustomEvent(events.OPENING, { bubbles: true, cancelable: true })
+          new CustomEvent(events.OPENING, { bubbles: true, cancelable: true }),
         ),
     };
   }

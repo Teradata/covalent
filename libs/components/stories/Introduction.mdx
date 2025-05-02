@@ -1,0 +1,47 @@
+import { Meta, DocsContainer } from '@storybook/blocks';
+
+<Meta
+  title="Introduction"
+  parameters={{
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Covalent Design System
+
+We're merging the Teradata Design System and Covalent into a single
+comprehensive product. In the short term, just use the nav to browse
+the raw components. We'll layer in documenation over time.
+
+Ping us in the **#design-system** channel on Slack for help.
+
+<div className="link-list">
+  <a className="link-item" href="./?path=/docs/components-app-shell--overview">
+    <span>
+      <strong>App shell</strong>
+      Our standard starter app, great for multi-level UIs that need to show a dashboard,
+      subsections with lists of items, and detail pages to view those items.
+    </span>
+  </a>
+
+{' '}
+<a
+  className="link-item"
+  href="https://github.com/Teradata/covalent/tree/main/docs/COMPONENTS_QUICKSTART.md"
+>
+  <span>
+    <strong>Getting started</strong>A quick how to guide on including these
+    components in a html page
+  </span>
+</a>
+
+  <a className="link-item" href="https://github.com/Teradata/covalent/tree/main/docs/COMPONENTS_THEMING.md">
+    <span>
+      <strong>Theming</strong>Learn how to apply light or dark themes for these
+      web components
+    </span>
+  </a>
+</div>

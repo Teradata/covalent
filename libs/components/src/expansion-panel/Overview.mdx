@@ -1,39 +1,33 @@
-import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
+import { Canvas, DocsContainer, Meta, Story } from '@storybook/blocks';
 import './expansion-panel';
 import './expansion-panel-item';
 import '../button/button';
 import incorrectExample from './expansion-panel-incorrect-example.png';
 
-<Meta
-  title="Components/Expansion-Panel"
-  parameters={{
-    layout: 'fullscreen',
-    previewTabs: {
-      canvas: { hidden: true },
-    },
-  }}
-/>
+import * as ExpansionPanelStories from './expansion-panel.stories';
+
+<Meta of={ExpansionPanelStories} />
 
 <style>
   {`
-  #story--example-button--outlined,
-  #story--example-button--text {
-    margin-right: 8px;
-  }
-  .buttonFooter{
-    display:flex; 
-    align-items:center;
-  }
-  .buttonContainer {
-    margin-left:auto;
-  }
-  cv-button {
-    margin-left:5px;
-  }
-  img {
-    width:550px;
-  }
-  `}
+    #story--example-button--outlined,
+    #story--example-button--text {
+      margin-right: 8px;
+    }
+    .buttonFooter{
+      display:flex; 
+      align-items:center;
+    }
+    .buttonContainer {
+      margin-left:auto;
+    }
+    cv-button {
+      margin-left:5px;
+    }
+    img {
+      width:550px;
+    }
+    `}
 </style>
 
 # Expansion panel
@@ -53,24 +47,19 @@ Set of expandable panels stacked up similar to data table.
     <cv-expansion-panel-item title="Title" contentPreview="Content preview">
       <div slot="content">Content</div>
     </cv-expansion-panel-item>
-    <cv-expansion-panel-item
-      title="Lorem ipsum dolor"
-      contentPreview="Content preview"
-    >
+
+    <cv-expansion-panel-item title="Lorem ipsum dolor" contentPreview="Content preview">
       <div slot="content">Content</div>
     </cv-expansion-panel-item>
-    <cv-expansion-panel-item
-      title="Lorem ipsum dolor"
-      contentPreview="Content preview"
-    >
+
+    <cv-expansion-panel-item title="Lorem ipsum dolor" contentPreview="Content preview">
       <div slot="content">Content</div>
     </cv-expansion-panel-item>
-    <cv-expansion-panel-item
-      title="Lorem ipsum dolor"
-      contentPreview="Content preview"
-    >
+
+    <cv-expansion-panel-item title="Lorem ipsum dolor" contentPreview="Content preview">
       <div slot="content">Content</div>
     </cv-expansion-panel-item>
+
   </cv-expansion-panel>
 </Canvas>
 
@@ -92,23 +81,23 @@ Call to action is located in the footer.
 <Canvas>
   <form>
     <cv-expansion-panel titleWidth="16em">
-      <cv-expansion-panel-item
-        title="Title"
-        contentPreview="Content preview"
-        showFooter
-      >
+      <cv-expansion-panel-item title="Title" contentPreview="Content preview" showFooter>
         <div slot="content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </div>
+
         <div slot="footer" class="buttonFooter">
           <div>You have unsaved changes</div>
+
           <div class="buttonContainer">
-            <cv-button outlined label="Cancel"></cv-button>
-            <cv-button raised label="Save" class="primary accent"></cv-button>
+            <cv-button outlined label="Cancel" />
+
+            <cv-button raised label="Save" class="primary accent" />
           </div>
         </div>
       </cv-expansion-panel-item>
     </cv-expansion-panel>
+
   </form>
 </Canvas>
 

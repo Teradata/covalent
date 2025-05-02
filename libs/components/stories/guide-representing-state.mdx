@@ -1,4 +1,4 @@
-import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
+import { Canvas, Meta, DocsContainer, Story } from '@storybook/blocks';
 
 <Meta
   title="Guides/Representing state"
@@ -12,27 +12,27 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
 
 <style>
   {`
-  .caution {
-    color: var(--mdc-theme-caution);
-  }
-  .positive {
-    color: var(--mdc-theme-positive);
-  }
-  .negative {
-    color: var(--mdc-theme-negative);
-  }
-  .status_lockup {
-    display: flex;
-  }
-  .status_lockup mwc-icon {
-    margin-right: 8px;
-  }
+    .caution {
+      color: var(--mdc-theme-caution);
+    }
+    .positive {
+      color: var(--mdc-theme-positive);
+    }
+    .negative {
+      color: var(--mdc-theme-negative);
+    }
+    .status_lockup {
+      display: flex;
+    }
+    .status_lockup mwc-icon {
+      margin-right: 8px;
+    }
 
-  .docs-story mwc-list {
-    margin: 0 auto;
-    max-width: 30rem;
-  }
-  `}
+    .docs-story mwc-list {
+      margin: 0 auto;
+      max-width: 30rem;
+    }
+    `}
 </style>
 
 # Representing state
@@ -45,16 +45,16 @@ For giving opinionated feedback. Error messages, loading, status indicators, etc
 
 ## State types
 
-| Use case          | Icon                                                                     | Icon handle       | Icon set | Color               |
-| ----------------- | ------------------------------------------------------------------------ | ----------------- | -------- | ------------------- |
-| Cancelled         | <cv-icon>not_interested</cv-icon>                                        | not_interested    | Material | Icon disabled       |
-| Caution / warning | <cv-icon class="caution">warning</cv-icon>                               | warning           | Material | Foreground caution  |
-| Changed           | <cv-icon class="covalent-icon">state_changed</cv-icon>                   | state_changed     | Covalent | Foreground primary  |
-| Error             | <cv-icon class="negative">error</cv-icon>                                | error             | Material | Foreground negative |
-| Paused            | <cv-icon>pause</cv-icon>                                                 | pause             | Material | Icon                |
-| Pending / waiting | <cv-icon class="covalent-icon">loader_dots</cv-icon>                     | loader_dots       | Covalent | Icon                |
-| Running           | <cv-circular-progress indeterminate density="-6"></cv-circular-progress> | circular progress | Covalent | Icon                |
-| Success           | <cv-icon class="positive">check</cv-icon>                                | check             | Material | Foreground positive |
+| Use case          | Icon                                                   | Icon handle       | Icon set | Color               |
+| ----------------- | ------------------------------------------------------ | ----------------- | -------- | ------------------- |
+| Cancelled         | <cv-icon>not_interested</cv-icon>                      | not_interested    | Material | Icon disabled       |
+| Caution / warning | <cv-icon class="caution">warning</cv-icon>             | warning           | Material | Foreground caution  |
+| Changed           | <cv-icon class="covalent-icon">state_changed</cv-icon> | state_changed     | Covalent | Foreground primary  |
+| Error             | <cv-icon class="negative">error</cv-icon>              | error             | Material | Foreground negative |
+| Paused            | <cv-icon>pause</cv-icon>                               | pause             | Material | Icon                |
+| Pending / waiting | <cv-icon class="covalent-icon">loader_dots</cv-icon>   | loader_dots       | Covalent | Icon                |
+| Running           | <cv-circular-progress indeterminate density="-6" />    | circular progress | Covalent | Icon                |
+| Success           | <cv-icon class="positive">check</cv-icon>              | check             | Material | Foreground positive |
 
 ---
 
@@ -68,37 +68,49 @@ Show as a byline in your list item. Do not use the list icon - this is reserved 
   <cv-list>
     <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
+
       <span slot="secondary" class="status-caution">
         <cv-icon>warning</cv-icon>
         Warning
       </span>
+
       <cv-icon slot="graphic" class="inverted">
-        sentiment_very_satisfied
+        sentiment\_very\_satisfied
       </cv-icon>
     </cv-list-item>
-    <li divider role="separator"></li>
+
+    <li divider role="separator" />
+
     <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
+
       <span slot="secondary" class="status-negative">
         <cv-icon>error</cv-icon>
         Error
       </span>
+
       <cv-icon slot="graphic" class="inverted">
-        sentiment_very_satisfied
+        sentiment\_very\_satisfied
       </cv-icon>
     </cv-list-item>
-    <li divider role="separator"></li>
+
+    <li divider role="separator" />
+
     <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
+
       <span slot="secondary" class="status-positive">
         <cv-icon>check</cv-icon>
         Successful
       </span>
+
       <cv-icon slot="graphic" class="inverted">
-        sentiment_very_satisfied
+        sentiment\_very\_satisfied
       </cv-icon>
     </cv-list-item>
-    <li divider role="separator"></li>
+
+    <li divider role="separator" />
+
   </cv-list>
 </Canvas>
 
@@ -115,54 +127,67 @@ Try to put the status column last (or nearly last).
       <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
         Title
       </th>
+
       <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
         Description
       </th>
+
       <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
         Status
       </th>
     </tr>
+
   </thead>
+
   <tbody class="mdc-data-table__content">
     <tr class="mdc-data-table__row" data-row-id="u0">
       <td class="mdc-data-table__cell" id="r0">
         Title
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell">
         Lorem ipsum dolor sit amet, consecte...
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell state_positive">
         <div class="status_lockup">
           <cv-icon class="positive">check</cv-icon> Successful
         </div>
       </td>
     </tr>
+
     <tr class="mdc-data-table__row" data-row-id="u1">
       <td class="mdc-data-table__cell" id="r1">
         Title
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell">
         Lorem ipsum dolor sit amet, consecte...
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell state_caution">
         <div class="status_lockup">
           <cv-icon class="caution">warning</cv-icon> Some things didn't work
         </div>
       </td>
     </tr>
+
     <tr class="mdc-data-table__row" data-row-id="u1">
       <td class="mdc-data-table__cell" id="r1">
         Title
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell">
         Lorem ipsum dolor sit amet, consecte...
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell state_negative">
         <div class="status_lockup">
           <cv-icon class="negative">error</cv-icon> Failed
         </div>
       </td>
     </tr>
+
   </tbody>
 </table>
 
@@ -177,54 +202,67 @@ This is often too heavy-handed. Be careful.
       <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
         Title
       </th>
+
       <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
         Description
       </th>
+
       <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
         Status
       </th>
     </tr>
+
   </thead>
+
   <tbody class="mdc-data-table__content">
     <tr class="mdc-data-table__row highlight_positive" data-row-id="u0">
       <td class="mdc-data-table__cell" id="r0">
         Title
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell">
         Lorem ipsum dolor sit amet, consecte...
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell state_positive">
         <div class="status_lockup">
           <cv-icon class="positive">check</cv-icon> Successful
         </div>
       </td>
     </tr>
+
     <tr class="mdc-data-table__row highlight_caution" data-row-id="u1">
       <td class="mdc-data-table__cell" id="r1">
         Title
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell">
         Lorem ipsum dolor sit amet, consecte...
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell state_caution">
         <div class="status_lockup">
           <cv-icon class="caution">warning</cv-icon> Some things didn't work
         </div>
       </td>
     </tr>
+
     <tr class="mdc-data-table__row highlight_negative" data-row-id="u1">
       <td class="mdc-data-table__cell" id="r1">
         Title
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell">
         Lorem ipsum dolor sit amet, consecte...
       </td>
+
       <td class="mdc-data-table__cell mdc-data-table__cell state_negative">
         <div class="status_lockup">
           <cv-icon class="negative">error</cv-icon> Failed
         </div>
       </td>
     </tr>
+
   </tbody>
 </table>
 
@@ -236,13 +274,9 @@ Use an alert component appropriate to the context. See the Alerts doc for more d
 
 <Canvas>
   <cv-card cardtitle="Card title">
-    <cv-alert
-      titletext="Alert title"
-      descriptiontext="alert description"
-      state="active"
-      icon="info"
-      inline
-    ></cv-alert>
+    <cv-alert titletext="Alert title" descriptiontext="alert description" state="active" icon="info" inline />
+
     <div style={{ padding: '16px' }}>Card Content</div>
+
   </cv-card>
 </Canvas>

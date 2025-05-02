@@ -1,4 +1,4 @@
-import { Meta, DocsContainer } from '@storybook/addon-docs';
+import { Meta, DocsContainer } from '@storybook/blocks';
 import { Icons, Code } from '@storybook/components';
 
 <Meta
@@ -13,11 +13,11 @@ import { Icons, Code } from '@storybook/components';
 
 <style>
   {`
-  table svg {
-    height: 1.5rem;
-    width: auto;
-  }
-  `}
+    table svg {
+      height: 1.5rem;
+      width: auto;
+    }
+    `}
 </style>
 
 # Markdown elements
@@ -52,7 +52,7 @@ _This is italic text_
 
 _This is italic text_
 
-~~Strikethrough~~
+\~~Strikethrough~~
 
 ## Blockquotes
 
@@ -90,7 +90,7 @@ _This is italic text_
 ### Start numbering with offset:
 
 57. foo
-1. bar
+58. bar
 
 ---
 
@@ -102,10 +102,10 @@ This `code` is inline
 
 ### Indented code
 
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
+// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
 
 ### Block code "fences"
 

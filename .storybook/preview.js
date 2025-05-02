@@ -5,12 +5,6 @@ import './theme/theme.scss';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
   backgrounds: {
     grid: {
       disable: true,

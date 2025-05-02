@@ -1,4 +1,4 @@
-import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
+import { Canvas, Meta, DocsContainer, Story } from '@storybook/blocks';
 
 <Meta
   title="Guides/Writing and naming"
@@ -12,25 +12,25 @@ import { Canvas, Meta, DocsContainer, Story } from '@storybook/addon-docs';
 
 <style>
   {`
-  .caution {
-    color: var(--mdc-theme-caution);
-  }
-  .positive {
-    color: var(--mdc-theme-positive);
-  }
-  .negative {
-    color: var(--mdc-theme-negative);
-  }
-  .status_lockup {
-    display: flex;
-  }
-  .status_lockup cv-icon {
-    margin-right: 8px;
-  }
-  #button-incorrect {
-    --mdc-typography-button-text-transform: none;
-  }
-  `}
+    .caution {
+      color: var(--mdc-theme-caution);
+    }
+    .positive {
+      color: var(--mdc-theme-positive);
+    }
+    .negative {
+      color: var(--mdc-theme-negative);
+    }
+    .status_lockup {
+      display: flex;
+    }
+    .status_lockup cv-icon {
+      margin-right: 8px;
+    }
+    #button-incorrect {
+      --mdc-typography-button-text-transform: none;
+    }
+    `}
 </style>
 
 # Writing and naming
@@ -68,7 +68,7 @@ Buttons use all caps. This is a specific design exception that breaks the above 
 
 | <div class="status_lockup positive"><cv-icon class="positive">check</cv-icon> Correct</div> | <div class="status_lockup negative"><cv-icon class="negative">error</cv-icon> Incorrect</div> |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| <cv-button id="button-correct" outlined label="Button action"></cv-button>                  | <cv-button id="button-incorrect" outlined label="Button action"></cv-button>                  |
+| <cv-button id="button-correct" outlined label="Button action" />                            | <cv-button id="button-incorrect" outlined label="Button action" />                            |
 
 #### Email and web addresses
 
@@ -76,7 +76,7 @@ When writing out an email address or website URL, use all lowercase.
 
 | <div class="status_lockup positive"><cv-icon class="positive">check</cv-icon> Correct</div> | <div class="status_lockup negative"><cv-icon class="negative">error</cv-icon> Incorrect</div> |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| john.doe&#64;teradata.com                                                                   | John.Doe&#64;Teradata.Com                                                                     | // Have to use the html character code for the @ symbol so markdown doesn't automatically make this into a link |
+| john.doe@teradata.com                                                                       | John.Doe@Teradata.Com                                                                         | // Have to use the html character code for the @ symbol so markdown doesn't automatically make this into a link |
 | teradata.com                                                                                | Teradata.Com                                                                                  |
 
 #### Which capitalization to use

@@ -32,6 +32,11 @@
 
 .mdc-deprecated-list-item__secondary-text {
   --mdc-icon-size: var(--mdc-typography-body2-font-size);
+
+  ::slotted(*) {
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 .mdc-deprecated-list-item__meta {
