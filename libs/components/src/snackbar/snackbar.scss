@@ -6,6 +6,7 @@
   --mdc-theme-on-surface: var(--cv-theme-inverse-on-surface);
   --mdc-theme-surface: var(--cv-theme-inverse-surface);
   --mdc-snackbar-action-color: var(--cv-theme-inverse-on-surface);
+  --mdc-ripple-color: var(--cv-theme-inverse-primary);
 
   .mdc-snackbar__surface {
     background-color: var(--mdc-theme-surface);
