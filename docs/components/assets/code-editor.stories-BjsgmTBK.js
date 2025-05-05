@@ -1,4 +1,4 @@
-import"./code-editor-BjqVEQEr.js";import"./query-assigned-elements-XF8sHqwE.js";import"./async-directive-C13IN93l.js";import"./directive-helpers-BPGTDVDR.js";import"./directive-CF8sV3Lr.js";import"./index-CcivOJRT.js";import"./iframe-DVdkBVgj.js";import"../sb-preview/runtime.js";const c=`
+import"./code-editor-Bdx6H_7D.js";import"./query-assigned-elements-XF8sHqwE.js";import"./async-directive-C13IN93l.js";import"./directive-helpers-BPGTDVDR.js";import"./directive-CF8sV3Lr.js";import"./index-CcivOJRT.js";import"./iframe-B7Op5TGh.js";import"../sb-preview/runtime.js";const c=`
 SELECT * FROM load_to_teradata (
     ON (
     SELECT 'class' AS class_col,
