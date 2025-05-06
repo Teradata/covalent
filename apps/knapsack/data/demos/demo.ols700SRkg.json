@@ -1,0 +1,32 @@
+{
+  "id": "ols700SRkg",
+  "data": {
+    "props": {
+      "hasMeta": false,
+      "twoLine": false,
+      "tabindex": -1,
+      "disabled": true
+    },
+    "slots": {
+      "meta": [],
+      "default": [
+        {
+          "text": "Paste\n",
+          "type": "text"
+        }
+      ],
+      "graphic": [],
+      "secondary": []
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:40:23.138Z",
+    "updatedDate": "2025-05-01T18:40:57.910Z"
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "list-item",
+  "templateId": "web-components-ytRTf8wtxn"
+}

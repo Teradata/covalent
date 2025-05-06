@@ -1,0 +1,37 @@
+{
+  "id": "TkMXJnRSa",
+  "data": {
+    "props": {
+      "hasMeta": false,
+      "twoLine": false,
+      "tabindex": -1,
+      "graphic": "icon"
+    },
+    "slots": {
+      "meta": [],
+      "default": [
+        {
+          "text": "Download",
+          "type": "text"
+        }
+      ],
+      "graphic": [
+        {
+          "type": "template-demo",
+          "demoId": "3x2bgwDz1"
+        }
+      ],
+      "secondary": []
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:35:05.376Z",
+    "updatedDate": "2025-05-01T18:38:50.795Z"
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "list-item",
+  "templateId": "web-components-ytRTf8wtxn"
+}

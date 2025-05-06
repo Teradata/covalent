@@ -1,5 +1,5 @@
 {
-  "id": "pYpl3qkIw4",
+  "id": "wkEsh-oj",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Selected",
+              "text": "Leave disabled items visible",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Use a check icon to indicate which items are selected when multiple selections can be made. Otherwise, just use a color fill on the selected item.",
+              "text": "When certain actions are disabled, do not hide them. Instead, make them visible as disabled.",
               "type": "text"
             }
           ]
@@ -32,5 +32,6 @@
       ]
     }
   },
+  "size": "medium",
   "blockType": "text-editor"
 }
