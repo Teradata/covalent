@@ -1,3 +1,13 @@
+# [10.3.0](https://github.com/Teradata/covalent/compare/v10.2.1...v10.3.0) (2025-05-06)
+
+### Bug Fixes
+
+- **package:** @types/react to version 19.1.3 ([ad32c59](https://github.com/Teradata/covalent/commit/ad32c59668afba5e678bf1f62863addf478e139e))
+
+### Features
+
+- **components:** updating storybook and component styles ([35034ea](https://github.com/Teradata/covalent/commit/35034ea6c60173b89cb141f6d6cdb875066a7e2e))
+
 ## [10.2.1](https://github.com/Teradata/covalent/compare/v10.2.0...v10.2.1) (2025-05-05)
 
 ### Bug Fixes
