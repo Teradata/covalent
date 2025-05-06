@@ -88,8 +88,8 @@ export class AlertBase extends LitElement {
         <div class="mdc-banner__graphic-text-wrapper">
           ${this.icon ? this.renderIcon() : ''}
           <div class="mdc-banner__text">
-            <span class="mdc-typography--body2">${this.titleText}</span>
-            <div class="mdc-typography--body1">${this.descriptionText}</div>
+            <span class="mdc-typography--body1">${this.titleText}</span>
+            <div class="mdc-typography--body2">${this.descriptionText}</div>
           </div>
         </div>
         <div class="mdc-banner__actions">

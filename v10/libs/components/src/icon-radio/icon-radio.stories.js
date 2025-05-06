@@ -1,4 +1,5 @@
 import './icon-radio-toggle';
+import '../icon/icon';
 
 export default {
   title: 'Components/Icon Radio',

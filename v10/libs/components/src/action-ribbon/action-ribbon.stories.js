@@ -58,3 +58,21 @@ Caution.args = {
   label: 'These changes will increase your monthly spending rate',
   icon: 'warning',
 };
+export const Loading = Neutral.bind({});
+Loading.args = {
+  color: 'loading',
+  label: 'These changes will increase your monthly spending rate',
+  icon: 'houseboat',
+};
+export const Pending = Neutral.bind({});
+Pending.args = {
+  color: 'pending',
+  label: 'These changes will increase your monthly spending rate',
+  icon: 'houseboat',
+};
+export const Checked = Neutral.bind({});
+Checked.args = {
+  color: 'checked',
+  label: 'These changes will increase your monthly spending rate',
+  icon: 'houseboat',
+};
