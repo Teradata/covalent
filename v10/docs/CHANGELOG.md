@@ -1,3 +1,9 @@
+## [10.2.1](https://github.com/Teradata/covalent/compare/v10.2.0...v10.2.1) (2025-05-05)
+
+### Bug Fixes
+
+- **components:** removing snackbar overriding styling ([90e8fc0](https://github.com/Teradata/covalent/commit/90e8fc04b18944de547e2d9b7f64ea51b21603ea))
+
 # [10.2.0](https://github.com/Teradata/covalent/compare/v10.1.1...v10.2.0) (2025-05-01)
 
 ### Features
