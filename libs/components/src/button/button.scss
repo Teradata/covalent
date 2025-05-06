@@ -3,6 +3,8 @@
   --mdc-button-outline-color: var(--cv-theme-outline);
   // override MDC button text tranform
   --mdc-typography-button-text-transform: none;
+  --mdc-button-disabled-fill-color: var(--cv-theme-on-surface-12);
+  --mdc-button-disabled-ink-color: var(--cv-theme-on-surface-38);
 }
 
 @mixin buttonColor($colorMap) {
