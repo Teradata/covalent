@@ -20,6 +20,14 @@
   }
 }
 
+:host([selected]),
+:host([activated]),
+:host([hasActivatedChild]) {
+  .mdc-deprecated-list-item__graphic.material-icons {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
 .mdc-deprecated-list-item__meta.material-icons ::slotted(cv-icon) {
   font-family: var(--mdc-icon-font);
   font-size: var(--mdc-icon-size, 24px);

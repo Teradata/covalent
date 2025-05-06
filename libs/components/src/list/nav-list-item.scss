@@ -7,7 +7,8 @@
   line-height: var(--mdc-typography-body2-line-height);
   text-align: left;
   border-radius: var(--cv-list-item-border-radius, 100px);
-  transition: border-radius 200ms animation.$standard-curve-timing-function,
+  transition:
+    border-radius 200ms animation.$standard-curve-timing-function,
     width 200ms animation.$standard-curve-timing-function;
   width: var(--cv-list-item-width, 100%);
   color: var(--cv-theme-on-surface-variant);
@@ -70,14 +71,6 @@
 
 :host([graphic='avatar']:not([twoline])) {
   height: 48px;
-}
-
-:host([selected]),
-:host([activated]),
-:host([hasActivatedChild]) {
-  .mdc-deprecated-list-item__graphic.material-icons {
-    font-variation-settings: 'FILL' 1;
-  }
 }
 
 :host([hasChildren]) {

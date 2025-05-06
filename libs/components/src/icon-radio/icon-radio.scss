@@ -1,6 +1,4 @@
 :host {
-  --mdc-radio-unchecked-color: var(--mdc-theme-text-icon-on-background);
-
   .mdc-radio__background {
     position: absolute;
     top: 8px;
@@ -32,8 +30,10 @@
 }
 
 :host([checked]) .mdc-radio {
+  --mdc-theme-text-icon-on-background: var(--mdc-theme-primary);
   border: solid 2px var(--mdc-theme-primary);
   background-color: var(--mdc-theme-surface-primary-highlight);
+  font-variation-settings: 'FILL' 1;
 
   &:hover {
     background-color: var(--mdc-theme-surface-primary-highlight-hover);
