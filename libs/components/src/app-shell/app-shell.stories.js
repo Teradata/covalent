@@ -18,7 +18,7 @@ import '../typography/typography';
 import { MDCDataTable, events } from '@material/data-table';
 
 export default {
-  title: 'Patterns/App Shell',
+  title: 'Components/App Shell',
   args: {
     contained: true,
     fullWidth: false,
@@ -76,7 +76,7 @@ const Template = ({
 
       setTimeout(updateActionRibbon, 150);
     },
-    { once: true }
+    { once: true },
   );
 
   document.addEventListener(events.SELECTED_ALL, updateActionRibbon);

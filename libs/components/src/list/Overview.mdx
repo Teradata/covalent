@@ -1,25 +1,18 @@
-import { Canvas, DocsContainer, Meta, Story } from '@storybook/addon-docs';
+import { Canvas, DocsContainer, Meta, Story } from '@storybook/blocks';
+import * as ListStories from './list.stories';
 
-<Meta
-  title="Components/List"
-  parameters={{
-    layout: 'fullscreen',
-    previewTabs: {
-      canvas: { hidden: true },
-    },
-  }}
-/>
+<Meta of={ListStories} />
 
 <style>
   {`
-  .docs-story > div:first-of-type .innerZoomElementWrapper > div {
-      border: none !important;
-  }
-  .docs-story mwc-list {
-    margin: 0 auto;
-    max-width: 30rem;
-  }
-  `}
+    .docs-story > div:first-of-type .innerZoomElementWrapper > div {
+        border: none !important;
+    }
+    .docs-story mwc-list {
+      margin: 0 auto;
+      max-width: 30rem;
+    }
+    `}
 </style>
 
 # Lists
@@ -51,36 +44,48 @@ Show as a byline in your list item. Do not use the main icon or avatar - this is
   <cv-list>
     <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
+
       <span slot="secondary" class="status-caution">
         <cv-icon>warning</cv-icon>
         Warning
       </span>
+
       <cv-icon slot="graphic" class="inverted">
-        tag_faces
+        tag\_faces
       </cv-icon>
     </cv-list-item>
-    <li divider role="separator"></li>
+
+    <li divider role="separator" />
+
     <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
+
       <span slot="secondary" class="status-negative">
         <cv-icon>error</cv-icon>
         Error
       </span>
+
       <cv-icon slot="graphic" class="inverted">
-        tag_faces
+        tag\_faces
       </cv-icon>
     </cv-list-item>
-    <li divider role="separator"></li>
+
+    <li divider role="separator" />
+
     <cv-list-item twoline graphic="avatar">
       <span>User Name</span>
+
       <span slot="secondary" class="status-positive">
         <cv-icon>check</cv-icon>
         Successful
       </span>
+
       <cv-icon slot="graphic" class="inverted">
-        tag_faces
+        tag\_faces
       </cv-icon>
     </cv-list-item>
-    <li divider role="separator"></li>
+
+    <li divider role="separator" />
+
   </cv-list>
 </Canvas>

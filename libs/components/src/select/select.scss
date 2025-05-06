@@ -9,6 +9,17 @@
     --mdc-theme-text-icon-on-background
   );
   --mdc-select-dropdown-icon-color: var(--mdc-theme-text-icon-on-background);
+  --mdc-typography-subtitle1-font-family: var(
+    --mdc-typography-body1-font-family
+  );
+  --mdc-typography-subtitle1-font-size: var(
+    --mdc-typography-body1-font-size,
+    1rem
+  );
+  --mdc-typography-subtitle1-font-weight: var(
+    --mdc-typography-body1-font-weight,
+    400
+  );
 
   .mdc-select:not(.mdc-select--disabled) .mdc-select__icon {
     color: var(--mdc-select-dropdown-icon-color);

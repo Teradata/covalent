@@ -14,9 +14,6 @@ module.exports = {
     '@storybook/addon-interactions',
     'storybook-dark-mode',
   ],
-  features: {
-    legacyMdx1: true, // 👈 Enables MDX v1 support
-  },
   docs: {
     //👇 See the table below for the list of supported options
     autodocs: true,

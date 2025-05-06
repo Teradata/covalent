@@ -43,4 +43,20 @@
   .dark #storybook-explorer-tree .sidebar-item[data-selected='false'] svg {
     color: var(--cv-dark-secondary);
   }
+
+  .light #storybook-explorer-tree .sidebar-item[data-selected='false'] {
+    color: var(--cv-light-secondary);
+  }
+
+  .dark
+    #storybook-explorer-tree
+    .sidebar-item:hover:not([data-selected='true']) {
+    background: var(--cv-theme-dark-colors-on-surface-8);
+  }
+
+  .light
+    #storybook-explorer-tree
+    .sidebar-item:hover:not([data-selected='true']) {
+    background: var(--cv-theme-light-colors-on-surface-8);
+  }
 </style>
