@@ -53,6 +53,16 @@
         "description": "Modal window prompting users for input or displaying critical information."
       },
       {
+        "id": "R64eZCAsvz",
+        "link": {
+          "name": "Menu",
+          "path": "/pattern/menu-copy"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-menuthumbnail--dfyfXEGad.png",
+        "title": "Menu",
+        "description": "Provide extended features or hide some items for usability."
+      },
+      {
         "id": "XqXp3Psd1",
         "link": {
           "name": "Radio",

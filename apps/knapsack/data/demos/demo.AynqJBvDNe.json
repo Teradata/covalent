@@ -1,0 +1,35 @@
+{
+  "id": "AynqJBvDNe",
+  "data": {
+    "props": {
+      "open": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "demoId": "eDZNd79CTX"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "h6dlBmbYFx"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "ols700SRkg"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:39:05.208Z",
+    "updatedDate": "2025-05-01T20:09:17.302Z"
+  },
+  "type": "data",
+  "title": "Disabled items",
+  "patternId": "menu-copy",
+  "templateId": "web-components-hY3y1MyhrP",
+  "description": ""
+}

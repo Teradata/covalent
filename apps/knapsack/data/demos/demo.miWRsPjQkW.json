@@ -1,0 +1,37 @@
+{
+  "id": "miWRsPjQkW",
+  "data": {
+    "props": {
+      "hasMeta": false,
+      "twoLine": false,
+      "tabindex": -1,
+      "graphic": "icon"
+    },
+    "slots": {
+      "meta": [],
+      "default": [
+        {
+          "text": "Save",
+          "type": "text"
+        }
+      ],
+      "graphic": [
+        {
+          "type": "template-demo",
+          "demoId": "PI0EM-z2fE"
+        }
+      ],
+      "secondary": []
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:35:18.855Z",
+    "updatedDate": "2025-05-01T18:38:50.794Z"
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "list-item",
+  "templateId": "web-components-ytRTf8wtxn"
+}

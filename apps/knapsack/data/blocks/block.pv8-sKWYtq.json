@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Use descriptive icons that provide quickly recognizable cues about each menu item's purpose.",
+              "text": "Use descriptive icons that provide quickly recognizable cues about each menu item's purpose. Use only filled icons on menu items.",
               "type": "text"
             }
           ]

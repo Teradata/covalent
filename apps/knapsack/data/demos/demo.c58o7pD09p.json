@@ -1,0 +1,35 @@
+{
+  "id": "c58o7pD09p",
+  "data": {
+    "props": {
+      "open": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "demoId": "pD9wbU5FCD"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "RFEeOe-1J9"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "mbQrG8TC5M"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:44:52.518Z",
+    "updatedDate": "2025-05-01T20:16:38.425Z"
+  },
+  "type": "data",
+  "title": "Customization",
+  "patternId": "menu-copy",
+  "templateId": "web-components-hY3y1MyhrP",
+  "description": ""
+}

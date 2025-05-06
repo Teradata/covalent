@@ -1,0 +1,37 @@
+{
+  "id": "RFEeOe-1J9",
+  "data": {
+    "props": {
+      "hasMeta": false,
+      "twoLine": false,
+      "tabindex": -1,
+      "graphic": "icon"
+    },
+    "slots": {
+      "meta": [],
+      "default": [
+        {
+          "text": "Switch to dark mode",
+          "type": "text"
+        }
+      ],
+      "graphic": [
+        {
+          "type": "template-demo",
+          "demoId": "RUugD2Aowy"
+        }
+      ],
+      "secondary": []
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:45:08.901Z",
+    "updatedDate": "2025-05-01T18:50:52.587Z"
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "list-item",
+  "templateId": "web-components-ytRTf8wtxn"
+}

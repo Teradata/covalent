@@ -1,0 +1,43 @@
+{
+  "id": "pD9wbU5FCD",
+  "data": {
+    "props": {
+      "hasMeta": false,
+      "twoLine": false,
+      "tabindex": -1,
+      "graphic": "avatar",
+      "twoline": true
+    },
+    "slots": {
+      "meta": [],
+      "default": [
+        {
+          "text": "John Doe",
+          "type": "text"
+        }
+      ],
+      "graphic": [
+        {
+          "type": "template-demo",
+          "demoId": "7EhqcNUjrE"
+        }
+      ],
+      "secondary": [
+        {
+          "text": "john.doe@teradata.com",
+          "type": "text"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:45:05.674Z",
+    "updatedDate": "2025-05-01T18:46:44.525Z"
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "list-item",
+  "templateId": "web-components-ytRTf8wtxn"
+}

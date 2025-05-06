@@ -1,0 +1,43 @@
+{
+  "id": "gRDfiA2cmG",
+  "data": {
+    "props": {
+      "open": true
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "demoId": "PCsjhAscgV"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "TA1iNP2FsF"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "miWRsPjQkW"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "TkMXJnRSa"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "cACzoy2AlB"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:18:37.903Z",
+    "updatedDate": "2025-05-01T20:08:59.912Z"
+  },
+  "type": "data",
+  "title": "Use icons",
+  "patternId": "menu-copy",
+  "templateId": "web-components-hY3y1MyhrP",
+  "description": ""
+}

@@ -1,0 +1,47 @@
+{
+  "id": "tJNSB-88zA",
+  "data": {
+    "props": {
+      "open": true,
+      "multi": false
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "template-demo",
+          "demoId": "JJNlfGawpB",
+          "patternId": "list-item",
+          "templateId": "web-components-ytRTf8wtxn"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "xcTFBCCVsP",
+          "patternId": "list-item",
+          "templateId": "web-components-ytRTf8wtxn"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "gkgvxr2Vys",
+          "patternId": "list-item",
+          "templateId": "web-components-ytRTf8wtxn"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "21-BRBUC2x"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:41:27.510Z",
+    "updatedDate": "2025-05-01T20:14:49.322Z"
+  },
+  "type": "data",
+  "title": "Multi-select",
+  "width": 719,
+  "height": 521,
+  "patternId": "menu-copy",
+  "templateId": "web-components-hY3y1MyhrP"
+}

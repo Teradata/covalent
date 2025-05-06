@@ -1,0 +1,25 @@
+{
+  "id": "3x2bgwDz1",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "text": "download",
+          "type": "text"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-05-01T18:37:17.594Z",
+    "updatedDate": "2025-05-01T18:38:50.795Z"
+  },
+  "type": "data",
+  "title": "Material Symbol",
+  "patternId": "icon",
+  "templateId": "web-components-N8bzRbfpuX",
+  "description": "Display an icon from the Material Symbols icon font"
+}
