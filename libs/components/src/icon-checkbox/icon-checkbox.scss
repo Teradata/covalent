@@ -65,6 +65,7 @@
 
 .checked {
   --mdc-theme-text-icon-on-background: var(--mdc-theme-primary);
+
   border: solid 2px var(--mdc-theme-primary);
   background-color: var(--mdc-theme-surface-primary-highlight);
   font-variation-settings: 'FILL' 1;
