@@ -3,7 +3,6 @@ import { RadioBase } from '@material/mwc-radio/mwc-radio-base';
 import { styles as radioStyle } from '@material/mwc-radio/mwc-radio.css';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './icon-radio.scss?inline';
-import baseRadioStyle from '../radio/radio.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -17,7 +16,6 @@ export class CovalentIconRadioToggle extends RadioBase {
     radioStyle,
     css`
       ${unsafeCSS(styles)}
-      ${unsafeCSS(baseRadioStyle)}
     `,
   ];
 
