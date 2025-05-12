@@ -5,13 +5,25 @@
 .mdc-evolution-chip {
   background-color: var(--cv-theme-surface-container);
 
+  &.mdc-evolution-chip--with-avatar .mdc-evolution-chip__graphic {
+    line-height: 24px;
+  }
+
+  .mdc-evolution-chip__graphic {
+    line-height: 20px;
+  }
+
   .mdc-evolution-chip__text-label {
-    color: var(--cv-theme-on-surface-container);
+    color: var(--cv-theme-on-surface);
   }
 
   .mdc-evolution-chip__icon {
     font-family: var(--mdc-icon-font, 'Material Symbols Rounded');
-    color: var(--mdc-theme-text-icon-on-background);
+    color: var(--cv-theme-on-surface);
+  }
+
+  .mdc-evolution-chip__icon--trailing {
+    line-height: 18px;
   }
 
   .mdc-evolution-chip__checkmark-path {
@@ -23,18 +35,22 @@
   }
 
   &.positive {
-    background-color: var(--cv-theme-surface-positive);
+    --cv-theme-surface-container: var(--cv-theme-positive-container);
+    --cv-theme-on-surface-container: var(--cv-theme-on-positive);
   }
 
   &.negative {
-    background-color: var(--mdc-theme-surface-negative);
+    --cv-theme-surface-container: var(--cv-theme-negative-container);
+    --cv-theme-on-surface-container: var(--cv-theme-on-negative);
   }
 
   &.caution {
-    background-color: var(--mdc-theme-surface-caution);
+    --cv-theme-surface-container: var(--cv-theme-caution-container);
+    --cv-theme-on-surface-container: var(--cv-theme-on-caution);
   }
 
   &.secondary {
-    background-color: var(--mdc-theme-surface-secondary);
+    --cv-theme-surface-container: var(--cv-theme-secondary-container);
+    --cv-theme-on-surface-container: var(--cv-theme-on-secondary);
   }
 }
