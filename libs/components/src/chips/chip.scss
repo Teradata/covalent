@@ -14,12 +14,12 @@
   }
 
   .mdc-evolution-chip__text-label {
-    color: var(--cv-theme-on-surface);
+    color: var(--cv-theme-on-surface-container);
   }
 
   .mdc-evolution-chip__icon {
     font-family: var(--mdc-icon-font, 'Material Symbols Rounded');
-    color: var(--cv-theme-on-surface);
+    color: var(--cv-theme-on-surface-container);
   }
 
   .mdc-evolution-chip__icon--trailing {
@@ -36,21 +36,21 @@
 
   &.positive {
     --cv-theme-surface-container: var(--cv-theme-positive-container);
-    --cv-theme-on-surface-container: var(--cv-theme-on-positive);
+    --cv-theme-on-surface-container: var(--cv-theme-on-positive-container);
   }
 
   &.negative {
     --cv-theme-surface-container: var(--cv-theme-negative-container);
-    --cv-theme-on-surface-container: var(--cv-theme-on-negative);
+    --cv-theme-on-surface-container: var(--cv-theme-on-negative-container);
   }
 
   &.caution {
     --cv-theme-surface-container: var(--cv-theme-caution-container);
-    --cv-theme-on-surface-container: var(--cv-theme-on-caution);
+    --cv-theme-on-surface-container: var(--cv-theme-on-caution-container);
   }
 
   &.secondary {
     --cv-theme-surface-container: var(--cv-theme-secondary-container);
-    --cv-theme-on-surface-container: var(--cv-theme-on-secondary);
+    --cv-theme-on-surface-container: var(--cv-theme-on-secondary-container);
   }
 }

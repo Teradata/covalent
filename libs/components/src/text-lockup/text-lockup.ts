@@ -2,6 +2,7 @@ import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import styles from './text-lockup.scss?inline';
+import '../icon/icon';
 
 declare global {
   interface HTMLElementTagNameMap {
