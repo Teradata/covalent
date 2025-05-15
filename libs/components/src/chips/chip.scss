@@ -31,7 +31,8 @@
   }
 
   &.mdc-evolution-chip--selected {
-    background-color: var(--mdc-theme-surface-primary);
+    background-color: var(--cv-theme-secondary-container);
+    color: var(--cv-theme-on-secondary-container);
   }
 
   &.positive {
