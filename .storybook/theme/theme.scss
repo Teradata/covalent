@@ -30,6 +30,7 @@ $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
 
 .sb-show-main {
   background-color: var(--mdc-theme-surface);
+  color: var(--mdc-theme-on-surface);
 
   .sbdocs-wrapper {
     padding-top: 0;
@@ -145,7 +146,9 @@ $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, dark));
     padding: 16px;
     border: 1px solid var(--mdc-theme-border);
     border-radius: 8px;
-    transition: background 150ms ease-out, border 150ms ease-out,
+    transition:
+      background 150ms ease-out,
+      border 150ms ease-out,
       transform 150ms ease-out;
     color: var(--mdc-theme-text-secondary-on-background);
     display: flex;
