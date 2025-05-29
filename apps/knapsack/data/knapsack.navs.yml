@@ -279,6 +279,11 @@ byId:
     name: Navigation list item
     parentId: list
     path: /pattern/navigation-list-item
+  notebook-cell:
+    id: notebook-cell
+    name: /pattern/notebook-cell
+    parentId: coming-soon
+    path: /pattern/notebook-cell
   patterns:
     id: patterns
     name: Patterns
@@ -487,6 +492,7 @@ order:
   - check-list-item
   - radio-list-item
   - menu
+  - notebook-cell
   - icon-radio
   - side-sheet
   - slider
