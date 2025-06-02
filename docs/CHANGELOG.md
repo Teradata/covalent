@@ -1,3 +1,9 @@
+# [10.4.0-beta.1](https://github.com/Teradata/covalent/compare/v10.3.0...v10.4.0-beta.1) (2025-06-02)
+
+### Features
+
+- **density:** implement density utility for consistent component height ([30ea687](https://github.com/Teradata/covalent/commit/30ea6870330a5fa21a869d472f2b2be152c507e9))
+
 # [10.3.0](https://github.com/Teradata/covalent/compare/v10.2.1...v10.3.0) (2025-05-06)
 
 ### Bug Fixes
