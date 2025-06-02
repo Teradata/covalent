@@ -1,7 +1,12 @@
 @use '@material/mwc-top-app-bar/node_modules/@material/top-app-bar/mdc-top-app-bar';
+@use '../theme/density.scss';
 
 :host {
   display: block;
+
+  .mdc-top-app-bar__row {
+    height: density.density-height(64px, 0, 8px);
+  }
 }
 
 :host([sticky]) {

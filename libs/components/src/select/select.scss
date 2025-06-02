@@ -1,3 +1,5 @@
+@use '../theme/density.scss';
+
 :host {
   --mdc-select-idle-line-color: var(--mdc-theme-border);
   --mdc-select-hover-line-color: var(--mdc-theme-text-icon-on-background);
@@ -20,8 +22,23 @@
     --mdc-typography-body1-font-weight,
     400
   );
+  --mdc-menu-item-height: #{density.density-height(48px)};
 
   .mdc-select:not(.mdc-select--disabled) .mdc-select__icon {
     color: var(--mdc-select-dropdown-icon-color);
+  }
+
+  .mdc-select .mdc-select__anchor {
+    height: density.density-height(56px);
+
+    .mdc-floating-label--float-above {
+      transform: translateY(#{density.density-height(-37.25px, 0, -2px)})
+        scale(1);
+    }
+  }
+
+  .mdc-select.mdc-select--with-leading-icon .mdc-floating-label--float-above {
+    transform: translateY(#{density.density-height(-37.25px, 0, -2px)})
+      translateX(-32px) scale(1);
   }
 }

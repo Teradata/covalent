@@ -1,8 +1,9 @@
 @use '@material/chips/chip';
-
+@use '../theme/density.scss';
 @include chip.core-styles();
 
 .mdc-evolution-chip {
+  height: density.density-height(32px);
   background-color: var(--cv-theme-surface-container);
 
   &.mdc-evolution-chip--with-avatar .mdc-evolution-chip__graphic {

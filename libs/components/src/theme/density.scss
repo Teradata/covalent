@@ -1,0 +1,10 @@
+// --- button density function --- //
+@function density-height($height, $density: 0, $interval: 4px) {
+  @return calc(
+    #{$height} +
+      (
+        var(--cv-density-mode, #{$density}) *
+          var(--cv-density-interval, #{$interval})
+      )
+  );
+}

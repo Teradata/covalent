@@ -1,6 +1,20 @@
+@use '../theme/density.scss';
+
 :host {
   width: 100%;
   box-sizing: border-box;
+}
+
+:host(:not([twoline])) {
+  height: density.density-height(56px);
+}
+
+:host([twoline]) {
+  height: density.density-height(72px);
+
+  .mdc-deprecated-list-item__primary-text::before {
+    height: density.density-height(32px, 0, 2px);
+  }
 }
 
 :host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
