@@ -74,7 +74,7 @@
     "echarts-wordcloud": "^2.0.0",
     "highlight.js": "^11.4.0",
     "lit": "^2.2.8",
-    "monaco-editor": "^0.34.1",
+    "monaco-editor": "^0.52.2",
     "rxjs": "^7.8.1",
     "shepherd.js": "^9.0.0",
     "showdown": "^2.0.3",
