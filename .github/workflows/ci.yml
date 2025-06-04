@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-          cache: npm
+          # cache: npm # temporarily disabled due to issues with caching
       - run: npm ci
       - run: npm run format:check -- --base=${{ github.event.pull_request.base.sha }}
       - run: npx nx affected --target=scsslint --base=${{ github.event.pull_request.base.sha }}
