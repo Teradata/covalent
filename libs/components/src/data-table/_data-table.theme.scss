@@ -1,4 +1,6 @@
 @use '@material/data-table' as data-table;
+@use '@material/data-table/data-table' as data-table-core;
+
 @use '../theme/density.scss';
 
 @mixin data-table-theme($theme) {
@@ -10,6 +12,8 @@
   $icon: map-get($theme, text-icon-on-background);
   $divider: map-get($theme, divider);
 
+  @include data-table-core.core-styles;
+  @include data-table-core.theme-baseline;
   @include data-table.sort-icon-color($hint-text);
   @include data-table.sort-icon-active-color($icon);
   // @include data-table.header-row-fill-color,

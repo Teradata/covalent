@@ -14,4 +14,8 @@
   .mdc-tab--active {
     font-variation-settings: 'FILL' 1;
   }
+
+  &[minwidth] {
+    flex: 0 0 auto;
+  }
 }

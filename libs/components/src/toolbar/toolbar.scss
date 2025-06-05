@@ -12,6 +12,7 @@
 :host([sticky]) {
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
 .mdc-top-app-bar__title {
