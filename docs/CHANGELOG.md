@@ -1,3 +1,10 @@
+# [10.4.0-beta.2](https://github.com/Teradata/covalent/compare/v10.4.0-beta.1...v10.4.0-beta.2) (2025-06-05)
+
+### Features
+
+- **data-table:** refactor data-table theme in light and dark themes ([1210137](https://github.com/Teradata/covalent/commit/12101379d480c6a4a16c723a5214e63174cb375d))
+- **data-table:** update styles ([46ced57](https://github.com/Teradata/covalent/commit/46ced5749d4d7683dcbd169a9d534bc4cd4f1f27))
+
 # [10.4.0-beta.1](https://github.com/Teradata/covalent/compare/v10.3.0...v10.4.0-beta.1) (2025-06-02)
 
 ### Features
