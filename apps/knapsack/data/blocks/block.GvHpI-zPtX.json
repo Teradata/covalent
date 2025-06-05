@@ -29,8 +29,8 @@
                       },
                       "content": [
                         {
-                          "type": "text",
-                          "text": "Event name"
+                          "text": "Event name",
+                          "type": "text"
                         }
                       ]
                     }
@@ -51,8 +51,8 @@
                       },
                       "content": [
                         {
-                          "type": "text",
-                          "text": "Target"
+                          "text": "Target",
+                          "type": "text"
                         }
                       ]
                     }
@@ -73,8 +73,8 @@
                       },
                       "content": [
                         {
-                          "type": "text",
-                          "text": "Detail"
+                          "text": "Detail",
+                          "type": "text"
                         }
                       ]
                     }
@@ -95,8 +95,8 @@
                       },
                       "content": [
                         {
-                          "type": "text",
-                          "text": "Description"
+                          "text": "Description",
+                          "type": "text"
                         }
                       ]
                     }
@@ -122,13 +122,13 @@
                       },
                       "content": [
                         {
+                          "text": "MDCTabBar:activated",
                           "type": "text",
                           "marks": [
                             {
                               "type": "code"
                             }
-                          ],
-                          "text": "activated"
+                          ]
                         }
                       ]
                     }
@@ -149,13 +149,13 @@
                       },
                       "content": [
                         {
+                          "text": "cv-tab-bar",
                           "type": "text",
                           "marks": [
                             {
                               "type": "code"
                             }
-                          ],
-                          "text": "cv-tab-bar"
+                          ]
                         }
                       ]
                     }
@@ -176,13 +176,13 @@
                       },
                       "content": [
                         {
+                          "text": "{index: number}",
                           "type": "text",
                           "marks": [
                             {
                               "type": "code"
                             }
-                          ],
-                          "text": "{index: number}"
+                          ]
                         }
                       ]
                     }
@@ -203,8 +203,8 @@
                       },
                       "content": [
                         {
-                          "type": "text",
-                          "text": "Emitted when a tab selection has been made."
+                          "text": "Emitted when a tab selection has been made.",
+                          "type": "text"
                         }
                       ]
                     }
