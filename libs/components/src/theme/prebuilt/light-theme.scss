@@ -12,6 +12,5 @@ $light-colors: map-merge($light-colors, map-get(tokens.$tokens, 'light'));
 // Define the base theme using light tokens w/ light tokens
 :root {
   @include theme.components-theme($light-colors, $typography);
-
   @include data-table.data-table-theme($light-colors);
 }
