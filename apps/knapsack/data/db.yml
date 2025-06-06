@@ -22,10 +22,10 @@ settings:
     files:
       - fileId: KvXVAmYdCVAS7hzkOa73Em
         name: Covalent principles
-        priorVersion: '2212162158610928739'
+        priorVersion: '2213215915948591203'
         type: figma
-        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2213215915948591203
-        version: '2213215915948591203'
+        url: https://www.figma.com/file/KvXVAmYdCVAS7hzkOa73Em?version-id=2224051328166257338
+        version: '2224051328166257338'
     hideOpenInSource: true
   favicon: https://knapsack.imgix.net/site/covalent/t-favicon-6zimud2smwpng
   hideTitleInNavigation: true

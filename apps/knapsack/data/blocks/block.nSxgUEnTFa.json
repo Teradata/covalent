@@ -1,0 +1,54 @@
+{
+  "id": "nSxgUEnTFa",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Menu behavior",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "To learn about behavior for the menu component that appears when focusing the select component, see the ",
+              "type": "text"
+            },
+            {
+              "text": "Menu",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pattern/menu-copy",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " page.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

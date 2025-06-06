@@ -80,22 +80,14 @@
           }
         },
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Tab index focus",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": " ",
+              "text": "Tab index focus ",
               "type": "text"
             }
           ]

@@ -1,5 +1,5 @@
 {
-  "id": "ZI8Csk1wp8",
+  "id": "NWqt3awB5d",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Positive",
+              "text": "Label behavior",
               "type": "text"
             }
           ]
@@ -24,19 +24,7 @@
           },
           "content": [
             {
-              "text": "Use to indicate that a task or process has completed successfully.",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Use the \"state_positive\" Covalent icon.",
+              "text": "Before text input has been entered, the label for the text field should be shown inside the input area. After the text field has been focused, the label should move above the input area to make room for user input.",
               "type": "text"
             }
           ]
@@ -44,5 +32,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }
