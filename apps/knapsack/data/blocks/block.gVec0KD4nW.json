@@ -92,10 +92,21 @@
           "attrs": {
             "textAlign": "left"
           }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "After clicking the UI element to open the menu, the tab index focus should move to the menu. ",
+              "type": "text"
+            }
+          ]
         }
       ]
     }
   },
-  "size": "medium",
   "blockType": "text-editor"
 }

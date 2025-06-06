@@ -1,5 +1,5 @@
 {
-  "id": "rtPCzklJvh",
+  "id": "NWqt3awB5d",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 3,
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Default / inactive",
+              "text": "Label behavior",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "No items have been selected",
+              "text": "Before text input has been entered, the label for the text field should be shown inside the input area. After the text field has been focused, the label should move above the input area to make room for user input.",
               "type": "text"
             }
           ]
