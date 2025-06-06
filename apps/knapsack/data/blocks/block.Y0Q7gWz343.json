@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
@@ -51,7 +51,25 @@
                       ]
                     },
                     {
-                      "text": ": Use single-line text fields for short inputs; multi-line for long text.",
+                      "text": ": Use text fields for short, single-line inputs. Use ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "text areas",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "link",
+                          "attrs": {
+                            "rel": "noopener noreferrer nofollow",
+                            "href": "/pattern/text-area",
+                            "class": null
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " for longer text inputs.",
                       "type": "text"
                     }
                   ]
@@ -103,7 +121,7 @@
                       ]
                     },
                     {
-                      "text": ": Labels up to 5 words. Placeholder text up to 30 characters.",
+                      "text": ": Labels should be as few words as possible. Use one or two words to describe the input requested. Placeholder text up to 30 characters.",
                       "type": "text"
                     }
                   ]
