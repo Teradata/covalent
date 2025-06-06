@@ -1,0 +1,42 @@
+{
+  "id": "VUJU070xUW",
+  "data": {
+    "guidelines": [
+      {
+        "id": "LEGHLM3Kii",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Ensure the list of options is clearly labeled and sorted logically (e.g., alphabetically or by frequency of use).  ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    },
+    "gridStyles": {
+      "columns": "1"
+    }
+  },
+  "blockType": "guidelines"
+}
