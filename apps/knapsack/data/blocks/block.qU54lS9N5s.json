@@ -78,10 +78,26 @@
                     {
                       "text": "Auditing released experiences for opportunities to improve",
                       "type": "text"
+                    },
+                    {
+                      "type": "hardBreak"
                     }
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Experience Scorecard",
+              "type": "text"
             }
           ]
         },
