@@ -1,0 +1,29 @@
+{
+  "id": "NAeDQOIp8b",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "j2kvKuAv4B",
+        "link": {
+          "path": "https://www.w3.org/TR/WCAG21/",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Web Content Accessibility Guidelines (WCAG) component standards"
+      },
+      {
+        "id": "KqS9a8oO95",
+        "link": {
+          "path": "https://m2.material.io/components/lists/web#using-lists",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Material accessibility component guidelines"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}
