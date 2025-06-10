@@ -248,7 +248,7 @@ byId:
   list:
     id: list
     name: List
-    parentId: coming-soon
+    parentId: components
     path: /pattern/list
   list-item:
     hidden: true
@@ -460,6 +460,11 @@ order:
   - button
   - checkbox
   - dialog
+  - list
+  - list-item
+  - navigation-list-item
+  - check-list-item
+  - radio-list-item
   - menu-copy
   - radio
   - select
@@ -486,11 +491,6 @@ order:
   - icon-button-toggle
   - icon-lockup
   - linear-progress
-  - list
-  - list-item
-  - navigation-list-item
-  - check-list-item
-  - radio-list-item
   - menu
   - notebook-cell
   - icon-radio

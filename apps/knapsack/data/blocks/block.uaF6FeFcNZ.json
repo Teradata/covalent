@@ -53,6 +53,16 @@
         "description": "Modal window prompting users for input or displaying critical information."
       },
       {
+        "id": "C9yqv2mcW",
+        "link": {
+          "name": "List",
+          "path": "/pattern/list"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-listthumbnail--EDuH4XWsS.png",
+        "title": "List",
+        "description": "Collection of items displayed vertically or horizontally."
+      },
+      {
         "id": "R64eZCAsvz",
         "link": {
           "name": "Menu",
