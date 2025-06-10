@@ -1,0 +1,136 @@
+{
+  "id": "qU54lS9N5s",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "How to apply ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Apply these heuristics early and often. Use them when:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Kicking off a project and aligning on goals",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Reviewing work before handoff",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Auditing released experiences for opportunities to improve",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "You can use our ",
+              "type": "text"
+            },
+            {
+              "text": "Experience scorecard template",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener",
+                    "href": "https://teradata-my.sharepoint.com/:w:/r/personal/josh_schoen_teradata_com1/Documents/Work/admin/process/Experience%20scorecard.docx?d=wd2d9d04bf8b74bf5bca70ae52b1dd694&csf=1&web=1&e=WQKQ6M",
+                    "class": "",
+                    "target": "_blank"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " to track and document your assessment. If you need support or want to walk through it with a partner, reach out in the ",
+              "type": "text"
+            },
+            {
+              "text": "#design-system",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": " channel.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

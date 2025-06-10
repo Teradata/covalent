@@ -115,6 +115,11 @@ byId:
     name: Date and time
     parentId: product-and-ui
     path: /pages/date-and-time
+  design-heuristics:
+    id: design-heuristics
+    name: 'Design heuristics '
+    parentId: design-principles
+    path: /pages/design-heuristics
   design-principles:
     id: design-principles
     name: Design principles
@@ -531,3 +536,4 @@ order:
   - inclusive-language-glnk25tux
   - clarity-and-efficiency
   - feedback
+  - design-heuristics
