@@ -1,0 +1,36 @@
+{
+  "id": "2gYSIK4bmV",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Our six design heuristics",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Each heuristic aligns to one of our design principles. Together, they cover what it takes to build a product that feels thoughtful, consistent, and adaptable to change. Each includes questions to guide reflection and evaluation.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
