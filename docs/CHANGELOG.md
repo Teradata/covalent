@@ -1,3 +1,13 @@
+# [6.5.0](https://github.com/Teradata/covalent/compare/v6.4.3...v6.5.0) (2025-06-11)
+
+### Bug Fixes
+
+- **release:** update checkout and setup-node actions ([#2521](https://github.com/Teradata/covalent/issues/2521)) ([f8af18a](https://github.com/Teradata/covalent/commit/f8af18af641bff1748c6dbffde99d21ac0b9a37d))
+
+### Features
+
+- **code-editor:** upgrade monaco-editor in covalent v6.x.x ([#2514](https://github.com/Teradata/covalent/issues/2514)) ([744af87](https://github.com/Teradata/covalent/commit/744af87265b3a7a2f156ef525661703537047f51))
+
 ## [6.4.3](https://github.com/Teradata/covalent/compare/v6.4.2...v6.4.3) (2024-12-06)
 
 ### Bug Fixes
