@@ -7,6 +7,7 @@ import tableRowSelectionContent from '../../stories/demos/table-row-selection.co
 import tablePagination from '../../stories/demos/table-pagination.content.html?raw';
 import tableProgressIndicator from '../../stories/demos/table-progress-indicator.content.html?raw';
 import tableColumnSorting from '../../stories/demos/table-column-sorting.content.html?raw';
+import tableStickyHeader from '../../stories/demos/table.sticky-header.content.html?raw';
 
 import './data-table.stories.scss';
 
@@ -18,6 +19,7 @@ export default {
 };
 
 export const Basic = ({}) => tableContent;
+export const StickyHeader = ({}) => tableStickyHeader;
 export const RowSelection = ({}) => tableRowSelectionContent;
 export const WithPagination = ({}) => tablePagination;
 export const WithColumnSorting = ({}) => tableColumnSorting;

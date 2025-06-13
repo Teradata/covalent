@@ -36,4 +36,24 @@
   .mdc-data-table__sort-icon-button {
     font-size: 1rem;
   }
+
+  .mdc-data-table__table-container--sticky-header {
+    max-height: 400px;
+    overflow-y: auto;
+    position: relative;
+
+    .mdc-data-table__header-row {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      .mdc-data-table__header-cell {
+        background: $surface;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
 }
