@@ -24,7 +24,7 @@
         "commands": [
           "mkdir -p dist/libs/components/",
           "vite build --config libs/components/vite.config.js  --outDir dist/libs/components",
-          "./node_modules/.bin/tsc --project libs/components/tsconfig.lib.json  --declaration --declarationMap --emitDeclarationOnly --outDir dist/libs/components",
+          "./node_modules/.bin/tsc --project libs/components/tsconfig.lib.json  --declaration --emitDeclarationOnly --outDir dist/libs/components",
           "cp libs/components/package.json dist/libs/components"
         ],
         "parallel": false
