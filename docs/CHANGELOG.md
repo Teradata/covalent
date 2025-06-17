@@ -1,3 +1,9 @@
+# [10.4.0-beta.3](https://github.com/Teradata/covalent/compare/v10.4.0-beta.2...v10.4.0-beta.3) (2025-06-17)
+
+### Bug Fixes
+
+- **componets:** remove map files ([61c9a81](https://github.com/Teradata/covalent/commit/61c9a81b4b10004ad0c3ed4a5838d8176af821ad))
+
 # [10.4.0-beta.2](https://github.com/Teradata/covalent/compare/v10.4.0-beta.1...v10.4.0-beta.2) (2025-06-05)
 
 ### Features
