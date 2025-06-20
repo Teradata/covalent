@@ -1,5 +1,5 @@
 {
-  "id": "DVczU1ny62",
+  "id": "VvfphJm0ap",
   "data": {
     "content": {
       "type": "doc",
@@ -11,25 +11,33 @@
           },
           "content": [
             {
-              "text": "See also: ",
+              "text": "Use ",
               "type": "text"
             },
             {
-              "text": "add",
+              "text": "though",
               "type": "text",
               "marks": [
                 {
-                  "type": "link",
-                  "attrs": {
-                    "rel": "noopener noreferrer nofollow",
-                    "href": "#add",
-                    "class": null
-                  }
+                  "type": "italic"
                 }
               ]
             },
             {
-              "text": ".",
+              "text": " or ",
+              "type": "text"
+            },
+            {
+              "text": "in practice",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " instead. ",
               "type": "text"
             }
           ]

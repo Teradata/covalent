@@ -1,24 +1,18 @@
 {
-  "id": "AieFt9vJR",
+  "id": "1qEvBqkOzN",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "add, add additional ",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "There is no one standard. Check with your architect and project lead to determine the term used within your program. ",
+              "type": "text"
             }
           ]
         }

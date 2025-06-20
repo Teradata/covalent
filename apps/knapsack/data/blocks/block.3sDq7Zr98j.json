@@ -1,0 +1,23 @@
+{
+  "id": "3sDq7Zr98j",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Priority Scheduler concept for a set of parameters that determine the amount of resources available to the sessions assigned to a specific group of users. An AG has an assigned weight that is compared to other AG weights. An AG can limit the total amount of CPU used by sessions under its control. An AG belongs to a Resource Partition. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

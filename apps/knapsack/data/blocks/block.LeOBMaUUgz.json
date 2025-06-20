@@ -1,0 +1,25 @@
+{
+  "id": "LeOBMaUUgz",
+  "data": {
+    "type": "error",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Avoid",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout",
+  "size": "small",
+  "header": {
+    "showHeader": false
+  }
+}

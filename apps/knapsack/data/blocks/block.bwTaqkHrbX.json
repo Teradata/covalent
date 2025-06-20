@@ -1,5 +1,5 @@
 {
-  "id": "VfN5P6R3AJ",
+  "id": "bwTaqkHrbX",
   "data": {
     "content": {
       "type": "doc",
@@ -11,11 +11,11 @@
           },
           "content": [
             {
-              "text": "Use ",
+              "text": "The terms ",
               "type": "text"
             },
             {
-              "text": "add",
+              "text": "allow",
               "type": "text",
               "marks": [
                 {
@@ -24,18 +24,44 @@
               ]
             },
             {
-              "text": " to mean adding a thing or person that already exists. For example, if you're adding an existing user to your database, use \"add.\" If the user doesn't exist yet, use ",
+              "text": " and ",
               "type": "text"
             },
             {
-              "text": "create",
+              "text": "let",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " imply that a program, feature, or product permits a user to do something. Use ",
+              "type": "text"
+            },
+            {
+              "text": "you can",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " instead. ",
+              "type": "text"
+            },
+            {
+              "text": "Learn more about inclusive language",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "#create",
+                    "href": "/pages/inclusive-language-glnk25tux",
                     "class": null
                   }
                 },

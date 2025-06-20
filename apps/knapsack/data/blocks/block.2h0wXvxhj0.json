@@ -1,24 +1,18 @@
 {
-  "id": "AieFt9vJR",
+  "id": "2h0wXvxhj0",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "add, add additional ",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "An alert is a type of event that reports status or a problem with a resource.",
+              "type": "text"
             }
           ]
         }

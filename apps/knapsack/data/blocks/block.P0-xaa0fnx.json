@@ -1,0 +1,22 @@
+{
+  "id": "P0-xaa0fnx",
+  "data": {
+    "type": "warning",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Use with caution",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout",
+  "size": "small"
+}

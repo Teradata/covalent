@@ -1,5 +1,5 @@
 {
-  "id": "DVczU1ny62",
+  "id": "IH23xsV6-B",
   "data": {
     "content": {
       "type": "doc",
@@ -11,26 +11,26 @@
           },
           "content": [
             {
-              "text": "See also: ",
+              "text": "Refer to a program that you want to stop by using cancel or stop. ",
               "type": "text"
             },
             {
-              "text": "add",
+              "text": "Learn more about inclusive language.",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "#add",
-                    "class": null
+                    "href": "/site/covalent/ABHUvtG3-f/pages/inclusive-language-glnk25tux",
+                    "class": null,
+                    "target": "_self"
                   }
+                },
+                {
+                  "type": "underline"
                 }
               ]
-            },
-            {
-              "text": ".",
-              "type": "text"
             }
           ]
         }

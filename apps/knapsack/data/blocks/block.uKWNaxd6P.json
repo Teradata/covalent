@@ -1,5 +1,5 @@
 {
-  "id": "DVczU1ny62",
+  "id": "uKWNaxd6P",
   "data": {
     "content": {
       "type": "doc",
@@ -11,25 +11,20 @@
           },
           "content": [
             {
-              "text": "See also: ",
+              "text": "The term ",
               "type": "text"
             },
             {
-              "text": "add",
+              "text": "and/or",
               "type": "text",
               "marks": [
                 {
-                  "type": "link",
-                  "attrs": {
-                    "rel": "noopener noreferrer nofollow",
-                    "href": "#add",
-                    "class": null
-                  }
+                  "type": "italic"
                 }
               ]
             },
             {
-              "text": ".",
+              "text": " is often misused and difficult to translate. Rewrite the sentence to make the choices clear. ",
               "type": "text"
             }
           ]

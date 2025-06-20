@@ -1,24 +1,18 @@
 {
-  "id": "AieFt9vJR",
+  "id": "17LKmgtSKD",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "add, add additional ",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Use affect (verb) to indicate influence or impact.",
+              "type": "text"
             }
           ]
         }

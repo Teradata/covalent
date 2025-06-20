@@ -1,5 +1,5 @@
 {
-  "id": "DVczU1ny62",
+  "id": "DFLq7CiA61",
   "data": {
     "content": {
       "type": "doc",
@@ -11,25 +11,20 @@
           },
           "content": [
             {
-              "text": "See also: ",
+              "text": "Do not use the characters ",
               "type": "text"
             },
             {
-              "text": "add",
+              "text": "(s)",
               "type": "text",
               "marks": [
                 {
-                  "type": "link",
-                  "attrs": {
-                    "rel": "noopener noreferrer nofollow",
-                    "href": "#add",
-                    "class": null
-                  }
+                  "type": "italic"
                 }
               ]
             },
             {
-              "text": ".",
+              "text": " to indicate an object can be one or more things. In most cases, use plural instead.",
               "type": "text"
             }
           ]

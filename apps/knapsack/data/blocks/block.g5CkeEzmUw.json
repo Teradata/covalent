@@ -1,24 +1,18 @@
 {
-  "id": "AieFt9vJR",
+  "id": "g5CkeEzmUw",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "add, add additional ",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Use lowercase.",
+              "type": "text"
             }
           ]
         }
