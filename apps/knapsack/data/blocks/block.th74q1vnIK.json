@@ -1,0 +1,22 @@
+{
+  "id": "th74q1vnIK",
+  "data": {
+    "type": "warning",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Use with caution",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout",
+  "size": "small"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "8uT73SgKPI",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "In Teradata Ecosystem Manager, the Application Health portlet uses application dependency charts to display application resources within an ecosystem. Each application dependency chart is organized with applications listed on the y axis and resources listed on the x axis. Resources are listed within their resource category (components, processes, and data). Application dependency charts have internal controls to collapse and expand resource category columns. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

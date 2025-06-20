@@ -1,0 +1,23 @@
+{
+  "id": "V7gOI29kIu",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "A program that performs a specific function. Applications might be made of sub-processes. Within a job, an application might have its processing divided by job steps. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

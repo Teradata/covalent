@@ -1,0 +1,23 @@
+{
+  "id": "8hbegLU-Dg",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Do not use to indicate placement of text or graphics. Use preceding or following. Use below for things like below the threshold. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
