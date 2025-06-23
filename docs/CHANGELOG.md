@@ -1,3 +1,10 @@
+# [11.0.0-beta.3](https://github.com/Teradata/covalent/compare/v11.0.0-beta.2...v11.0.0-beta.3) (2025-06-23)
+
+### Features
+
+- **icon:** add CovalentIconDemo component to showcase icons ([6421bb7](https://github.com/Teradata/covalent/commit/6421bb7f96b015be1beab92f1cbd05de4f12d54a))
+- **icon:** update icon demo and configuration for module support ([2bcfa19](https://github.com/Teradata/covalent/commit/2bcfa19b95a0e2e615a0ec2f6af67d569b204721))
+
 # [11.0.0-beta.2](https://github.com/Teradata/covalent/compare/v11.0.0-beta.1...v11.0.0-beta.2) (2025-06-23)
 
 ### Features
