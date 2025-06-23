@@ -1,3 +1,9 @@
+# [11.0.0-beta.4](https://github.com/Teradata/covalent/compare/v11.0.0-beta.3...v11.0.0-beta.4) (2025-06-23)
+
+### Features
+
+- **components:** added icon exports for list and demo ([138af36](https://github.com/Teradata/covalent/commit/138af36d4b12b1bbb4cc6918274c69dcb817141b))
+
 # [11.0.0-beta.3](https://github.com/Teradata/covalent/compare/v11.0.0-beta.2...v11.0.0-beta.3) (2025-06-23)
 
 ### Features
