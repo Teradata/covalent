@@ -5,7 +5,7 @@ import path from 'path';
 // Function to dynamically generate entry paths
 const getComponentEntries = () => {
   const componentsConfigPath = path.resolve(
-    __dirname,
+    new URL('.', import.meta.url).pathname,
     './component-config.json',
   );
   const componentsConfig = JSON.parse(
@@ -18,7 +18,7 @@ const getComponentEntries = () => {
 };
 
 // https://vitejs.dev/config/
-module.exports = defineConfig(({ mode }) => {
+export default defineConfig(({ mode }) => {
   return {
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode),

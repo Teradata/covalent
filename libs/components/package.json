@@ -2,6 +2,7 @@
   "name": "@covalent/components",
   "version": "0.0.0-COVALENT",
   "description": "a catalog of material components for covalent",
+  "type": "module",
   "main": "./index.js",
   "module": "./index.mjs",
   "types": "./index.d.ts",
