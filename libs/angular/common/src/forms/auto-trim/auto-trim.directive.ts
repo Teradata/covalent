@@ -1,12 +1,12 @@
-import { Directive } from '@angular/core';
-import { HostListener, Host, Optional } from '@angular/core';
+import { Directive, inject } from '@angular/core';
+import { HostListener } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
 @Directive({
   selector: '[tdAutoTrim]',
 })
 export class TdAutoTrimDirective {
-  constructor(@Optional() @Host() private _model: NgModel) {}
+  private _model = inject(NgModel, { optional: true, host: true });
 
   /**
    * Listens to host's (blur) event and trims value.

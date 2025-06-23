@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscriber } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -16,7 +16,7 @@ const INTERNAL_DOCS_URL = 'https://covalent-docs.firebaseio.com/';
 
 @Injectable()
 export class InternalDocsService {
-  constructor(private _http: HttpClient) {}
+  private _http = inject(HttpClient);
 
   queryTemplates(): Observable<ITemplate[]> {
     return this._http
@@ -26,7 +26,7 @@ export class InternalDocsService {
           return new Observable((subscriber: Subscriber<ITemplate[]>) => {
             subscriber.next([]);
           });
-        })
+        }),
       );
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import {
   TdMarkdownNavigatorWindowService,
   TdMarkdownNavigatorWindowComponent,
@@ -20,12 +20,12 @@ import { Subject, takeUntil } from 'rxjs';
 export class MarkdownNavigatorDemoServiceButtonClickedComponent
   implements OnDestroy
 {
-  private _destroy$ = new Subject<void>();
+  private _markdownNavigatorWindowService = inject(
+    TdMarkdownNavigatorWindowService,
+  );
+  private _snackBar = inject(MatSnackBar);
 
-  constructor(
-    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService,
-    private _snackBar: MatSnackBar
-  ) {}
+  private _destroy$ = new Subject<void>();
 
   ngOnDestroy(): void {
     this._destroy$.next();
@@ -46,8 +46,8 @@ export class MarkdownNavigatorDemoServiceButtonClickedComponent
         this._snackBar.open(
           `Button clicked: ${JSON.stringify(data)}`,
           undefined,
-          { duration: 2000 }
-        )
+          { duration: 2000 },
+        ),
       );
   }
 }

@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { componentDetails } from '../../../../content/components/components';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -10,12 +10,15 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./content-overview.component.scss'],
 })
 export class ContentOverviewComponent implements OnInit, OnDestroy {
+  private _route = inject(ActivatedRoute);
+  private _router = inject(Router);
+
   contentPlaceholder: any;
   componentJson: any;
 
   private _destroy$ = new Subject<void>();
 
-  constructor(private _route: ActivatedRoute, private _router: Router) {
+  constructor() {
     this.componentJson = componentDetails;
   }
 
@@ -24,7 +27,7 @@ export class ContentOverviewComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this._destroy$))
       .subscribe((params: ParamMap) => {
         const component: any = this.componentJson.find(
-          (e: any) => e.id === params.get('id')
+          (e: any) => e.id === params.get('id'),
         );
         if (!component) {
           this._router.navigate(['components']);

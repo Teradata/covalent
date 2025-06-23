@@ -4,11 +4,11 @@ import {
   Input,
   OnChanges,
   OnInit,
-  Optional,
   SimpleChanges,
   ElementRef,
   HostBinding,
   HostListener,
+  inject,
 } from '@angular/core';
 import { CovalentSideSheet } from './side-sheet';
 import { _closeSideSheetVia, CovalentSideSheetRef } from './side-sheet-ref';
@@ -24,6 +24,12 @@ let dialogElementUid = 0;
   exportAs: 'CovalentSideSheetClose',
 })
 export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
+  dialogRef = inject<CovalentSideSheetRef<any>>(CovalentSideSheetRef, {
+    optional: true,
+  });
+  private _elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
+  private _dialog = inject(CovalentSideSheet);
+
   /** Screenreader label for the button. */
   @HostBinding('attr.arial-label')
   @Input('aria-label')
@@ -43,12 +49,6 @@ export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
     this._onButtonClick($event);
   }
 
-  constructor(
-    @Optional() public dialogRef: CovalentSideSheetRef<any>,
-    private _elementRef: ElementRef<HTMLElement>,
-    private _dialog: CovalentSideSheet
-  ) {}
-
   ngOnInit(): void {
     if (!this.dialogRef) {
       // When this directive is included in a dialog via TemplateRef (rather than being
@@ -58,7 +58,7 @@ export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
       // be resolved at constructor time.
       this.dialogRef = getClosestDialog(
         this._elementRef,
-        this._dialog.openSideSheets
+        this._dialog.openSideSheets,
       );
     }
   }
@@ -78,10 +78,15 @@ export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
     // result in incorrect origins. Most of the time, close buttons will be auto focused in the
     // dialog, and therefore clicking the button won't result in a focus change. This means that
     // the FocusMonitor won't detect any origin change, and will always output `program`.
+
+    if (!this.dialogRef) {
+      return;
+    }
+
     _closeSideSheetVia(
       this.dialogRef,
       event.screenX === 0 && event.screenY === 0 ? 'keyboard' : 'mouse',
-      this.dialogResult
+      this.dialogResult,
     );
   }
 }
@@ -94,6 +99,12 @@ export class CovalentSideSheetCloseDirective implements OnInit, OnChanges {
   exportAs: 'CovalentSideSheetTitle',
 })
 export class CovalentSideSheetTitleDirective implements OnInit {
+  private _dialogRef = inject<CovalentSideSheetRef<any>>(CovalentSideSheetRef, {
+    optional: true,
+  });
+  private _elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
+  private _dialog = inject(CovalentSideSheet);
+
   /** Unique id for the dialog title. If none is supplied, it will be auto-generated. */
   @Input() id = `td-side-sheet-title-${dialogElementUid++}`;
 
@@ -101,18 +112,10 @@ export class CovalentSideSheetTitleDirective implements OnInit {
 
   @HostBinding('attr.id') idAttr = this.id;
 
-  constructor(
-    // The dialog title directive is always used in combination with a `CovalentSideSheetRef`.
-    // tslint:disable-next-line: lightweight-tokens
-    @Optional() private _dialogRef: CovalentSideSheetRef<any>,
-    private _elementRef: ElementRef<HTMLElement>,
-    private _dialog: CovalentSideSheet
-  ) {}
-
   ngOnInit(): void {
     if (this._dialogRef) {
       Promise.resolve().then(() => {
-        const container = this._dialogRef._containerInstance;
+        const container = this._dialogRef?._containerInstance;
 
         if (container && !container._ariaLabelledByQueue.includes(this.id)) {
           container._ariaLabelledByQueue.push(this.id);
@@ -121,7 +124,7 @@ export class CovalentSideSheetTitleDirective implements OnInit {
     } else {
       this._dialogRef = getClosestDialog(
         this._elementRef,
-        this._dialog.openSideSheets
+        this._dialog.openSideSheets,
       );
     }
   }
@@ -165,7 +168,7 @@ export class CovalentSideSheetWrapperDirective {
  */
 function getClosestDialog(
   element: ElementRef<HTMLElement>,
-  openDialogs: CovalentSideSheetRef<any>[]
+  openDialogs: CovalentSideSheetRef<any>[],
 ): CovalentSideSheetRef<any> {
   let parent: HTMLElement | null = element.nativeElement.parentElement;
 
@@ -174,6 +177,6 @@ function getClosestDialog(
   }
 
   return parent
-    ? openDialogs.find((dialog) => dialog.id === parent?.id) ?? openDialogs[0]
+    ? (openDialogs.find((dialog) => dialog.id === parent?.id) ?? openDialogs[0])
     : openDialogs[0];
 }

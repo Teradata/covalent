@@ -3,7 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  Optional,
+  inject,
 } from '@angular/core';
 import { Dir } from '@angular/cdk/bidi';
 import { tdCollapseAnimation } from './collapse.animation';
@@ -20,6 +20,9 @@ import { MatTooltip } from '@angular/material/tooltip';
   animations: [tdCollapseAnimation],
 })
 export class TdJsonFormatterComponent {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+  private _dir = inject(Dir, { optional: true });
+
   /**
    * Max length for property names. Any names bigger than this get trunctated.
    */
@@ -77,7 +80,7 @@ export class TdJsonFormatterComponent {
     return this._key
       ? this._key.substring(0, TdJsonFormatterComponent.KEY_MAX_LENGTH) +
           elipsis
-      : this._key ?? '';
+      : (this._key ?? '');
   }
 
   /**
@@ -103,11 +106,6 @@ export class TdJsonFormatterComponent {
     }
     return false;
   }
-
-  constructor(
-    private _changeDetectorRef: ChangeDetectorRef,
-    @Optional() private _dir: Dir
-  ) {}
 
   /**
    * Refreshes json-formatter and rerenders [data]
@@ -212,7 +210,7 @@ export class TdJsonFormatterComponent {
       const previewArray: any[] =
         Object.entries(this._data).slice(
           0,
-          TdJsonFormatterComponent.PREVIEW_LIMIT
+          TdJsonFormatterComponent.PREVIEW_LIMIT,
         ) ?? [];
       previewData = previewArray.map((obj: any) => {
         return this.getValue(obj);
@@ -236,7 +234,7 @@ export class TdJsonFormatterComponent {
       startChar +
       previewString.substring(
         0,
-        TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH
+        TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH,
       ) +
       ellipsis +
       endChar

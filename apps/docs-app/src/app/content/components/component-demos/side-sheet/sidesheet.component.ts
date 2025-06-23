@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   TemplateRef,
   ViewChild,
+  inject,
 } from '@angular/core';
 import { CovalentSideSheet } from '@covalent/core/side-sheet';
 
@@ -14,9 +15,9 @@ import { CovalentSideSheet } from '@covalent/core/side-sheet';
   templateUrl: './sidesheet.component.html',
 })
 export class SidesheetDemoComponent {
-  @ViewChild('example') template!: TemplateRef<any>;
+  private sideSheet = inject(CovalentSideSheet);
 
-  constructor(private sideSheet: CovalentSideSheet) {}
+  @ViewChild('example') template!: TemplateRef<any>;
 
   toggleSideSheet(): void {
     this.sideSheet.open(this.template);

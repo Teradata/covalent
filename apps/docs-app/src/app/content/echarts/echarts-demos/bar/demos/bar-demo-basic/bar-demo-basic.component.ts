@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   OnInit,
   ChangeDetectorRef,
+  inject,
 } from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
@@ -15,6 +16,9 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BarDemoBasicComponent implements OnInit {
+  private _cdr = inject(ChangeDetectorRef);
+  themeSelector = inject(ChartThemeSelectorService);
+
   themes: string[] = getThemes();
   selectedTheme!: string;
 
@@ -99,11 +103,6 @@ export class BarDemoBasicComponent implements OnInit {
       showContent: true,
     },
   };
-
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService
-  ) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

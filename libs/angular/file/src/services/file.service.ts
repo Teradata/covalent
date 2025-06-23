@@ -1,4 +1,4 @@
-import { Injectable, Optional } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {
   HttpClient,
   HttpRequest,
@@ -17,6 +17,8 @@ export interface IUploadExtras {
 
 @Injectable()
 export class TdFileService {
+  private readonly _http = inject(HttpClient, { optional: true });
+
   private _progressSubject: Subject<number> = new Subject<number>();
   private _progressObservable: Observable<number>;
 
@@ -33,7 +35,7 @@ export class TdFileService {
    * @param _http the http client instance
    * @breaking-change 3.0.0 remove 'Optional' decorator once the legay upload method is removed
    */
-  constructor(@Optional() private readonly _http: HttpClient) {
+  constructor() {
     this._progressObservable = this._progressSubject.asObservable();
   }
 
@@ -44,11 +46,11 @@ export class TdFileService {
     url: string,
     method: string,
     body: File | FormData,
-    { headers, params }: IUploadExtras = {}
+    { headers, params }: IUploadExtras = {},
   ): Observable<HttpEvent<any>> {
     if (!this._http) {
       throw new Error(
-        'The HttpClient module needs to be imported at root module level'
+        'The HttpClient module needs to be imported at root module level',
       );
     }
     const req: HttpRequest<File | FormData> = new HttpRequest(
@@ -59,7 +61,7 @@ export class TdFileService {
         reportProgress: true,
         headers: new HttpHeaders(headers || {}),
         params: new HttpParams({ fromObject: params || {} }),
-      }
+      },
     );
     return this._http
       .request(req)
@@ -73,7 +75,7 @@ export class TdFileService {
         break;
       case HttpEventType.UploadProgress:
         this._progressSubject.next(
-          Math.round((100 * event.loaded) / (event.total ?? 0))
+          Math.round((100 * event.loaded) / (event.total ?? 0)),
         );
         break;
       case HttpEventType.Response:

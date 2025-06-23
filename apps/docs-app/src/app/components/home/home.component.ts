@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { GitHubService } from '../../services';
 
@@ -19,6 +19,8 @@ interface IRouteConfig {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
+  private _gitHubService = inject(GitHubService);
+
   // Current date
   year: any = new Date().getFullYear();
 
@@ -71,8 +73,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   ];
 
   private _destroy$ = new Subject<void>();
-
-  constructor(private _gitHubService: GitHubService) {}
 
   ngAfterViewInit(): void {
     this._gitHubService

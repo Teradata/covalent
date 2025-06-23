@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,6 +13,9 @@ import { getDirection } from './utilities/direction';
   styleUrls: ['./app.component.scss'],
 })
 export class DocsAppComponent {
+  private _iconRegistry = inject(MatIconRegistry);
+  private _domSanitizer = inject(DomSanitizer);
+
   // Current date
   year: any = new Date().getFullYear();
 
@@ -56,11 +59,9 @@ export class DocsAppComponent {
 
   dir: 'ltr' | 'rtl';
 
-  constructor(
-    private _iconRegistry: MatIconRegistry,
-    private _domSanitizer: DomSanitizer,
-    translateService: TranslateService
-  ) {
+  constructor() {
+    const translateService = inject(TranslateService);
+
     // Set fallback language
     translateService.setDefaultLang('en');
     // Supported languages
@@ -74,154 +75,154 @@ export class DocsAppComponent {
       'assets',
       'teradata',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/teradata.svg'
-      )
+        'assets/icons/teradata.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'github',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/github.svg'
-      )
+        'assets/icons/github.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'covalent',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/covalent.svg'
-      )
+        'assets/icons/covalent.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'covalent-stroke',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/covalent-stroke.svg'
-      )
+        'assets/icons/covalent-stroke.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'covalent-outline',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/covalent-outline.svg'
-      )
+        'assets/icons/covalent-outline.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'angular',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/angular.svg'
-      )
+        'assets/icons/angular.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'angular-outline',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/angular-outline.svg'
-      )
+        'assets/icons/angular-outline.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'material-outline',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/material-outline.svg'
-      )
+        'assets/icons/material-outline.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'teradata-ux',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/teradata-ux.svg'
-      )
+        'assets/icons/teradata-ux.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'appcenter',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/appcenter.svg'
-      )
+        'assets/icons/appcenter.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'listener',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/listener.svg'
-      )
+        'assets/icons/listener.svg',
+      ),
     );
     this._iconRegistry.addSvgIconInNamespace(
       'assets',
       'querygrid',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/querygrid.svg'
-      )
+        'assets/icons/querygrid.svg',
+      ),
     );
 
     // SVG Icons
     this._iconRegistry.addSvgIcon(
       'teradata',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/teradata.svg'
-      )
+        'assets/icons/teradata.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'teradata-dark',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/teradata-dark.svg'
-      )
+        'assets/icons/teradata-dark.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'teradata-solid',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/teradata-solid.svg'
-      )
+        'assets/icons/teradata-solid.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'teradata-icon',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/teradata-icon.svg'
-      )
+        'assets/icons/teradata-icon.svg',
+      ),
     );
 
     this._iconRegistry.addSvgIcon(
       'appcenter',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/appcenter.svg'
-      )
+        'assets/icons/appcenter.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'control-center',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/control-center.svg'
-      )
+        'assets/icons/control-center.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'querygrid',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/querygrid.svg'
-      )
+        'assets/icons/querygrid.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'listener',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/listener.svg'
-      )
+        'assets/icons/listener.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'workload-analytics',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/workload-analytics.svg'
-      )
+        'assets/icons/workload-analytics.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'unity',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/unity.svg'
-      )
+        'assets/icons/unity.svg',
+      ),
     );
     this._iconRegistry.addSvgIcon(
       'viewpoint',
       this._domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/viewpoint.svg'
-      )
+        'assets/icons/viewpoint.svg',
+      ),
     );
 
     // set direction

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {
   IMenuItem,
@@ -13,6 +13,8 @@ import {
   templateUrl: './dynamic-menu-demo-basic.component.html',
 })
 export class DynamicMenuDemoBasicComponent {
+  private _snackBar = inject(MatSnackBar);
+
   trigger1: IMenuTrigger = {
     id: 'triggerbutton',
     icon: 'list',
@@ -126,13 +128,11 @@ export class DynamicMenuDemoBasicComponent {
     },
   ];
 
-  constructor(private _snackBar: MatSnackBar) {}
-
   reportClick(event: ITdDynamicMenuLinkClickEvent): void {
     this._snackBar.open(
       `Item "${event.text}:${event.action}" clicked`,
       undefined,
-      { duration: 2000 }
+      { duration: 2000 },
     );
   }
 }

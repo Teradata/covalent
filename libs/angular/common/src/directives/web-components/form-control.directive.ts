@@ -1,5 +1,5 @@
 /* eslint-disable @angular-eslint/directive-selector */
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Directive({
@@ -21,6 +21,9 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 export class CovalentTextfieldValueAccessorDirective
   implements ControlValueAccessor
 {
+  private _elementRef = inject<ElementRef<any>>(ElementRef);
+  _ngControl = inject(NgControl);
+
   private _onChange: (value: any) => void = () => {
     /* noop */
   };
@@ -28,10 +31,9 @@ export class CovalentTextfieldValueAccessorDirective
     /* noop */
   };
 
-  constructor(
-    private _elementRef: ElementRef<any>,
-    public _ngControl: NgControl,
-  ) {
+  constructor() {
+    const _ngControl = this._ngControl;
+
     _ngControl.valueAccessor = this;
   }
 

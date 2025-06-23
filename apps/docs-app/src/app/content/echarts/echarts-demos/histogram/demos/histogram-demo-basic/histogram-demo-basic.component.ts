@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   OnInit,
   ChangeDetectorRef,
+  inject,
 } from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
 import { TdHistogramBinningMethod } from '@covalent/echarts/histogram';
@@ -16,15 +17,13 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HistogramDemoBasicComponent implements OnInit {
+  private _cdr = inject(ChangeDetectorRef);
+  themeSelector = inject(ChartThemeSelectorService);
+
   themes: string[] = getThemes();
   selectedTheme!: string;
   methods: string[] = ['squareRoot', 'scott', 'freedmanDiaconis', 'sturges'];
   selectedMethod: TdHistogramBinningMethod = 'squareRoot';
-
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService
-  ) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

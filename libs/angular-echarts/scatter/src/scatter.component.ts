@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -122,7 +123,9 @@ export class TdChartSeriesScatterComponent
   @Input() z?: number;
   @Input() silent?: boolean;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('scatter', _optionsService);
   }
 

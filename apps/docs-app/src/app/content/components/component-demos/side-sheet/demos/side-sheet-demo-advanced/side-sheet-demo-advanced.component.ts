@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
@@ -15,7 +15,7 @@ class SideSheetDemoExampleComponent {}
   styleUrls: ['./side-sheet-demo-advanced.component.scss'],
 })
 export class SideSheetDemoAdvancedComponent {
-  constructor(private sideSheet: CovalentSideSheet) {}
+  private sideSheet = inject(CovalentSideSheet);
 
   toggleSideSheet(): void {
     this.sideSheet.open(SideSheetDemoExampleComponent);

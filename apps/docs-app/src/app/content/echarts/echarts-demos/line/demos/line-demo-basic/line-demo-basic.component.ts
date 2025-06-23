@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   OnInit,
   ChangeDetectorRef,
+  inject,
 } from '@angular/core';
 import { getThemes } from '@covalent/echarts/base';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
@@ -15,6 +16,9 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LineDemoBasicComponent implements OnInit {
+  private _cdr = inject(ChangeDetectorRef);
+  themeSelector = inject(ChartThemeSelectorService);
+
   today: Date = new Date();
 
   themes: string[] = getThemes();
@@ -45,7 +49,7 @@ export class LineDemoBasicComponent implements OnInit {
           },
           {
             name: new Date(
-              this.today.getTime() + 24 * 3600 * 1000
+              this.today.getTime() + 24 * 3600 * 1000,
             ).toISOString(),
             value: [
               new Date(this.today.getTime() + 24 * 3600 * 1000).toISOString(),
@@ -54,11 +58,11 @@ export class LineDemoBasicComponent implements OnInit {
           },
           {
             name: new Date(
-              this.today.getTime() + 2 * 24 * 3600 * 1000
+              this.today.getTime() + 2 * 24 * 3600 * 1000,
             ).toISOString(),
             value: [
               new Date(
-                this.today.getTime() + 2 * 24 * 3600 * 1000
+                this.today.getTime() + 2 * 24 * 3600 * 1000,
               ).toISOString(),
               100,
             ],
@@ -79,7 +83,7 @@ export class LineDemoBasicComponent implements OnInit {
           },
           {
             name: new Date(
-              this.today.getTime() + 10 * 3600 * 1000
+              this.today.getTime() + 10 * 3600 * 1000,
             ).toISOString(),
             value: [
               new Date(this.today.getTime() + 10 * 3600 * 1000).toISOString(),
@@ -88,11 +92,11 @@ export class LineDemoBasicComponent implements OnInit {
           },
           {
             name: new Date(
-              this.today.getTime() + 3 * 24 * 3600 * 1000
+              this.today.getTime() + 3 * 24 * 3600 * 1000,
             ).toISOString(),
             value: [
               new Date(
-                this.today.getTime() + 3 * 24 * 3600 * 1000
+                this.today.getTime() + 3 * 24 * 3600 * 1000,
               ).toISOString(),
               100,
             ],
@@ -106,11 +110,6 @@ export class LineDemoBasicComponent implements OnInit {
       showContent: true,
     },
   };
-
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService
-  ) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

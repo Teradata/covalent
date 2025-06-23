@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Input,
+  inject,
+} from '@angular/core';
 
 import { TdChartOptionsService } from '../chart-options.service';
 import { TdXAxisPosition } from './axis.interface';
@@ -44,7 +49,9 @@ import { TdChartAxisDirective } from './axis.component';
 export class TdChartXAxisComponent extends TdChartAxisDirective {
   @Input() position!: TdXAxisPosition;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('xAxis', _optionsService);
   }
 }

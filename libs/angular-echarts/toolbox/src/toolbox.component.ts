@@ -10,6 +10,7 @@ import {
   ContentChild,
   ViewChild,
   OnDestroy,
+  inject,
 } from '@angular/core';
 
 import {
@@ -144,6 +145,10 @@ export class TdChartViewDataFormatterDirective {}
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartToolboxComponent implements OnChanges, OnDestroy {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+  private _elementRef = inject(ElementRef);
+  private _optionsService = inject(TdChartOptionsService);
+
   private _state: any = {};
 
   @Input() config: any = {};
@@ -171,12 +176,6 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
   formatterTemplate!: TemplateRef<any>;
   @ViewChild('toolboxContent', { static: true })
   fullTemplate!: TemplateRef<any>;
-
-  constructor(
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _elementRef: ElementRef,
-    private _optionsService: TdChartOptionsService
-  ) {}
 
   ngOnChanges(): void {
     this._setOptions();
@@ -211,7 +210,7 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
         width: this.width,
         height: this.height,
       },
-      this.config ? this.config : {}
+      this.config ? this.config : {},
     );
     // set toolbox configuration in parent chart and render new configurations
     this._optionsService.setOption('toolbox', config);

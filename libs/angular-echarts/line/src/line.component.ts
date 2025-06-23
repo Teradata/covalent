@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -136,7 +137,9 @@ export class TdChartSeriesLineComponent
   @Input() z?: number;
   @Input() silent?: boolean;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('line', _optionsService);
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TdMarkdownNavigatorWindowService } from '@covalent/markdown-navigator';
 
 @Component({
@@ -8,9 +8,10 @@ import { TdMarkdownNavigatorWindowService } from '@covalent/markdown-navigator';
   templateUrl: './markdown-navigator-demo-service.component.html',
 })
 export class MarkdownNavigatorDemoServiceComponent {
-  constructor(
-    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService
-  ) {}
+  private _markdownNavigatorWindowService = inject(
+    TdMarkdownNavigatorWindowService,
+  );
+
   open(): void {
     this._markdownNavigatorWindowService.open({
       items: [

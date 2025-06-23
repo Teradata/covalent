@@ -11,6 +11,7 @@ import {
   HostBinding,
   HostListener,
   ChangeDetectorRef,
+  inject,
 } from '@angular/core';
 
 import { tdCollapseAnimation } from './collapse.animation';
@@ -21,7 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
   selector: '[tdMessageContainer]',
 })
 export class TdMessageContainerDirective {
-  constructor(public viewContainer: ViewContainerRef) {}
+  viewContainer = inject(ViewContainerRef);
 }
 
 @Component({
@@ -32,6 +33,10 @@ export class TdMessageContainerDirective {
   imports: [CommonModule, MatIconModule, TdMessageContainerDirective],
 })
 export class TdMessageComponent implements AfterViewInit {
+  private _renderer = inject(Renderer2);
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+  private _elementRef = inject(ElementRef);
+
   private _color!: string;
   private _opened = true;
   private _hidden = false;
@@ -90,26 +95,26 @@ export class TdMessageComponent implements AfterViewInit {
   set color(color: string) {
     this._renderer.removeClass(
       this._elementRef.nativeElement,
-      'mat-' + this._color
+      'mat-' + this._color,
     );
     this._renderer.removeClass(
       this._elementRef.nativeElement,
-      'bgc-' + this._color + '-100'
+      'bgc-' + this._color + '-100',
     );
     this._renderer.removeClass(
       this._elementRef.nativeElement,
-      'tc-' + this._color + '-700'
+      'tc-' + this._color + '-700',
     );
     if (color === 'primary' || color === 'accent' || color === 'warn') {
       this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + color);
     } else {
       this._renderer.addClass(
         this._elementRef.nativeElement,
-        'bgc-' + color + '-100'
+        'bgc-' + color + '-100',
       );
       this._renderer.addClass(
         this._elementRef.nativeElement,
-        'tc-' + color + '-700'
+        'tc-' + color + '-700',
       );
     }
     this._color = color;
@@ -141,11 +146,7 @@ export class TdMessageComponent implements AfterViewInit {
     return this._opened;
   }
 
-  constructor(
-    private _renderer: Renderer2,
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _elementRef: ElementRef
-  ) {
+  constructor() {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-message');
   }
 

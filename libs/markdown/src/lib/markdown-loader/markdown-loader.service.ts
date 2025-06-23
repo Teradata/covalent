@@ -1,11 +1,12 @@
-import { Injectable, SecurityContext } from '@angular/core';
+import { Injectable, SecurityContext, inject } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { isGithubHref, rawGithubHref } from '../markdown-utils/markdown-utils';
 
 @Injectable()
 export class TdMarkdownLoaderService {
-  constructor(private _http: HttpClient, private _sanitizer: DomSanitizer) {}
+  private _http = inject(HttpClient);
+  private _sanitizer = inject(DomSanitizer);
 
   async load(url: string, httpOptions: object = {}): Promise<string> {
     const sanitizedUrl: string =

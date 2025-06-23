@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   LoadingMode,
   LoadingStrategy,
@@ -13,13 +13,13 @@ import {
   templateUrl: './loading-demo-basic.component.html',
 })
 export class LoadingDemoBasicComponent {
+  private _loadingService = inject(TdLoadingService);
+
   loadingMode = LoadingMode;
   loadingStrategy = LoadingStrategy;
   loadingType = LoadingType;
 
   overlayStarSyntax = false;
-
-  constructor(private _loadingService: TdLoadingService) {}
 
   toggleOverlayStarSyntax(): void {
     this.overlayStarSyntax = !this.overlayStarSyntax;

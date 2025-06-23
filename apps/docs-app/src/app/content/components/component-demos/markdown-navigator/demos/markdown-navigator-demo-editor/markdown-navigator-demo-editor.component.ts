@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   IMarkdownNavigatorItem,
   TdMarkdownNavigatorWindowService,
@@ -20,13 +20,13 @@ const initialItems: IMarkdownNavigatorItem[] = [
   templateUrl: './markdown-navigator-demo-editor.component.html',
 })
 export class MarkdownNavigatorDemoEditorComponent {
+  private _markdownNavigatorWindowService = inject(
+    TdMarkdownNavigatorWindowService,
+  );
+
   input: string = prettyJson(initialItems);
   items: IMarkdownNavigatorItem[] = initialItems;
   windowShouldOpen = false;
-
-  constructor(
-    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService
-  ) {}
 
   applyInput(): void {
     this.items = JSON.parse(this.input);

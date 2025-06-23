@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   forwardRef,
   OnChanges,
+  inject,
 } from '@angular/core';
 
 import {
@@ -60,10 +61,6 @@ export class TdChartSeriesHistogramComponent
   @Input() source?: number[] | number[][];
   @Input() method?: TdHistogramBinningMethod;
 
-  constructor(_optionsService: TdChartOptionsService) {
-    super(_optionsService);
-  }
-
   override ngOnChanges(): void {
     let output: any = [];
     if (!this.source) {
@@ -76,7 +73,7 @@ export class TdChartSeriesHistogramComponent
       const index = config.datasetIndex ?? 1;
       const source: any[] = this.source;
       const indexedOutput = source[0].map((_: any, colIndex: string | number) =>
-        source.map((row) => row[colIndex])
+        source.map((row) => row[colIndex]),
       );
       output = indexedOutput[index - 1] ?? [];
     } else {
@@ -143,7 +140,7 @@ export class TdChartSeriesHistogramComponent
       },
       this.getConfig(),
       this._options,
-      this.config ? this.config : {}
+      this.config ? this.config : {},
     );
     this.optionsService.setArrayOption('series', config);
   }

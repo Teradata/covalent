@@ -1,4 +1,4 @@
-import { Directive, HostListener, ElementRef, Inject } from '@angular/core';
+import { Directive, HostListener, ElementRef, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 interface IFsDocument extends HTMLDocument {
@@ -16,11 +16,10 @@ interface IFsDocument extends HTMLDocument {
   exportAs: 'tdFullScreen',
 })
 export class TdFullscreenDirective {
+  private _document = inject<IFsDocument>(DOCUMENT);
+  private _el = inject(ElementRef);
+
   fullScreenIsActive = false;
-  constructor(
-    @Inject(DOCUMENT) private _document: IFsDocument,
-    private _el: ElementRef
-  ) {}
 
   @HostListener('document:fullscreenchange', ['$event'])
   @HostListener('document:webkitfullscreenchange', ['$event'])

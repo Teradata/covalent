@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
   Router,
@@ -52,21 +52,23 @@ export interface IGuidedTourEvent {
 
 @Injectable()
 export class CovalentGuidedTourService extends CovalentGuidedTour {
+  private _router = inject(Router);
+  private _route = inject(ActivatedRoute);
+  private _httpClient = inject(HttpClient);
+
   private _toursMap: Map<string, IGuidedTour> = new Map<string, IGuidedTour>();
   private _tourStepURLs: Map<string, string> = new Map<string, string>();
-  constructor(
-    private _router: Router,
-    private _route: ActivatedRoute,
-    private _httpClient: HttpClient
-  ) {
+  constructor() {
     super();
+    const _router = this._router;
+
     _router.events
       .pipe(
         filter(
           (event: NavigationEvent) =>
             event instanceof NavigationStart &&
-            event.navigationTrigger === 'popstate'
-        )
+            event.navigationTrigger === 'popstate',
+        ),
       )
       .subscribe(() => {
         if (this.shepherdTour.isActive()) {
@@ -81,7 +83,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
 
   async registerTour(
     tourName: string,
-    tour: IGuidedTour | string
+    tour: IGuidedTour | string,
   ): Promise<void> {
     const guidedTour: IGuidedTour =
       typeof tour === 'string' ? await this._loadTour(tour) : tour;
@@ -96,8 +98,8 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
       this.newTour(Object.assign({}, guidedTour, { steps: undefined }));
       const tourInstance: Shepherd.Tour = this.shepherdTour.addSteps(
         this._configureRoutesForSteps(
-          this._prepareTour(guidedTour.steps, guidedTour.finishButtonText)
-        )
+          this._prepareTour(guidedTour.steps, guidedTour.finishButtonText),
+        ),
       );
       // init route transition if step URL is different then the current location.
       this.tourEvent$(TourEvents.show).subscribe(
@@ -118,7 +120,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
               this._tourStepURLs.set(id, currentURL);
             }
           }
-        }
+        },
       );
       this.start();
       return tourInstance;
@@ -140,7 +142,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
           this.startTour(tourParam);
           // get current search parameters
           const searchParams: URLSearchParams = new URLSearchParams(
-            window.location.search
+            window.location.search,
           );
           // delete tour queryParam
           searchParams.delete(queryParam);
@@ -156,7 +158,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
           // replace state in history without triggering a navigation
           window.history.replaceState({ path: url }, '', url);
         }
-      })
+      }),
     );
   }
 
@@ -180,7 +182,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
         .pipe(
           map((resultSet: any) => {
             return JSON.parse(JSON.stringify(resultSet));
-          })
+          }),
         )
         .toPromise();
     } catch {
@@ -193,7 +195,7 @@ export class CovalentGuidedTourService extends CovalentGuidedTour {
   }
 
   private _configureRoutesForSteps(
-    routedSteps: IGuidedTourStep[]
+    routedSteps: IGuidedTourStep[],
   ): IGuidedTourStep[] {
     routedSteps.forEach((step: IGuidedTourStep) => {
       if (step.routing) {

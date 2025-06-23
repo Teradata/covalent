@@ -8,13 +8,18 @@ import {
   ContentChild,
   ChangeDetectorRef,
   forwardRef,
+  inject,
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import {
   TdFileInputComponent,
   TdFileInputLabelDirective,
 } from '../file-input/file-input.component';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormsModule } from '@angular/forms';
+import {
+  NG_VALUE_ACCESSOR,
+  ControlValueAccessor,
+  FormsModule,
+} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
@@ -36,9 +41,18 @@ export class TdFileUploadBase {
   selector: 'td-file-upload',
   styleUrls: ['./file-upload.component.scss'],
   templateUrl: './file-upload.component.html',
-  imports: [CommonModule, FormsModule, TdFileInputComponent, MatButtonModule, MatIcon, CdkPortalOutlet],
+  imports: [
+    CommonModule,
+    FormsModule,
+    TdFileInputComponent,
+    MatButtonModule,
+    MatIcon,
+    CdkPortalOutlet,
+  ],
 })
 export class TdFileUploadComponent implements ControlValueAccessor {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+
   private _multiple = false;
   private _required = false;
   private _disabled = false;
@@ -132,9 +146,7 @@ export class TdFileUploadComponent implements ControlValueAccessor {
    * Event emitted when cancel button is clicked.
    */
   // eslint-disable-next-line @angular-eslint/no-output-native
-  @Output() cancel: EventEmitter<void> = new EventEmitter<void>(); // TODO: check if we can change the name of this emitter
-
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+  @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
 
   writeValue(value: File | FileList): void {
     this.value = value;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TdDialogService } from '@covalent/core/dialogs';
 
 @Component({
@@ -21,7 +21,8 @@ export class DraggableDialogComponent {}
   templateUrl: './dialogs-demo-draggable.component.html',
 })
 export class DialogsDemoDraggableComponent {
-  constructor(private _dialogService: TdDialogService) {}
+  private _dialogService = inject(TdDialogService);
+
   openDraggableDialog(): void {
     this._dialogService.openDraggable({
       component: DraggableDialogComponent,

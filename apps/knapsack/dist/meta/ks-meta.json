@@ -985,6 +985,66 @@
       "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=boILoye9Gi&assetSetId=dark"
     },
     {
+      "patternId": "menu-copy",
+      "templateId": "web-components-hY3y1MyhrP",
+      "demoId": "gRDfiA2cmG",
+      "assetSetId": "default",
+      "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=gRDfiA2cmG&assetSetId=default"
+    },
+    {
+      "patternId": "menu-copy",
+      "templateId": "web-components-hY3y1MyhrP",
+      "demoId": "gRDfiA2cmG",
+      "assetSetId": "dark",
+      "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=gRDfiA2cmG&assetSetId=dark"
+    },
+    {
+      "patternId": "menu-copy",
+      "templateId": "web-components-hY3y1MyhrP",
+      "demoId": "AynqJBvDNe",
+      "assetSetId": "default",
+      "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=AynqJBvDNe&assetSetId=default"
+    },
+    {
+      "patternId": "menu-copy",
+      "templateId": "web-components-hY3y1MyhrP",
+      "demoId": "AynqJBvDNe",
+      "assetSetId": "dark",
+      "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=AynqJBvDNe&assetSetId=dark"
+    },
+    {
+      "patternId": "menu-copy",
+      "templateId": "web-components-hY3y1MyhrP",
+      "demoId": "tJNSB-88zA",
+      "assetSetId": "default",
+      "width": 719,
+      "height": 521,
+      "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=tJNSB-88zA&assetSetId=default"
+    },
+    {
+      "patternId": "menu-copy",
+      "templateId": "web-components-hY3y1MyhrP",
+      "demoId": "tJNSB-88zA",
+      "assetSetId": "dark",
+      "width": 719,
+      "height": 521,
+      "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=tJNSB-88zA&assetSetId=dark"
+    },
+    {
+      "patternId": "menu-copy",
+      "templateId": "web-components-hY3y1MyhrP",
+      "demoId": "c58o7pD09p",
+      "assetSetId": "default",
+      "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=c58o7pD09p&assetSetId=default"
+    },
+    {
+      "patternId": "menu-copy",
+      "templateId": "web-components-hY3y1MyhrP",
+      "demoId": "c58o7pD09p",
+      "assetSetId": "dark",
+      "url": "/api/v1/render-demo-id?patternId=menu-copy&templateId=web-components-hY3y1MyhrP&demoId=c58o7pD09p&assetSetId=dark"
+    },
+    {
       "patternId": "navigation-list-item",
       "templateId": "web-components-Qtmmi7N-aL",
       "demoId": "E5NLCltz6",

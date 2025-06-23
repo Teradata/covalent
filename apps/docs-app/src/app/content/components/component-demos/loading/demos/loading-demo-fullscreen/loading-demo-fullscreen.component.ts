@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   TdLoadingService,
   LoadingMode,
@@ -12,7 +12,9 @@ import {
   templateUrl: './loading-demo-fullscreen.component.html',
 })
 export class LoadingDemoFullscreenComponent {
-  constructor(private _loadingService: TdLoadingService) {
+  private _loadingService = inject(TdLoadingService);
+
+  constructor() {
     // optional, only necessary for a custom config
     // used in toggleCustomFullscreenDemo()
     this._loadingService.create({
@@ -32,7 +34,7 @@ export class LoadingDemoFullscreenComponent {
     this._loadingService.register('customFullscreenDemo');
     setTimeout(
       () => this._loadingService.resolve('customFullscreenDemo'),
-      1500
+      1500,
     );
   }
 }

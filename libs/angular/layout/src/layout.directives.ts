@@ -1,12 +1,4 @@
-import {
-  Optional,
-  Directive,
-  Input,
-  Renderer2,
-  ElementRef,
-  Inject,
-  forwardRef,
-} from '@angular/core';
+import { Directive, Input, Renderer2, ElementRef, inject } from '@angular/core';
 import { TdLayoutComponent } from './layout.component';
 import { BaseLayoutToggleDirective } from './layout-toggle.class';
 
@@ -17,16 +9,6 @@ export class TdLayoutToggleDirective extends BaseLayoutToggleDirective {
   @Input()
   set tdLayoutToggle(tdLayoutToggle: boolean | string) {
     this.disabled = !(<any>tdLayoutToggle === '' || tdLayoutToggle);
-  }
-
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutComponent))
-    layout: TdLayoutComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
   }
 
   onClick(): void {
@@ -43,16 +25,6 @@ export class TdLayoutCloseDirective extends BaseLayoutToggleDirective {
     this.disabled = !(<any>tdLayoutClose === '' || tdLayoutClose);
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutComponent))
-    layout: TdLayoutComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
-  }
-
   onClick(): void {
     this._layout.close();
   }
@@ -65,16 +37,6 @@ export class TdLayoutOpenDirective extends BaseLayoutToggleDirective {
   @Input('tdLayoutOpen')
   set tdLayoutClose(tdLayoutOpen: boolean) {
     this.disabled = !(<any>tdLayoutOpen === '' || tdLayoutOpen);
-  }
-
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutComponent))
-    layout: TdLayoutComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
   }
 
   onClick(): void {

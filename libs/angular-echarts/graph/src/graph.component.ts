@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -180,7 +181,9 @@ export class TdChartSeriesGraphComponent
   @Input() width?: string | number;
   @Input() height?: string | number;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('graph', _optionsService);
   }
 

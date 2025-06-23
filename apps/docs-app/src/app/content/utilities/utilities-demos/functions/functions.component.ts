@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { slideInUpAnimation } from '../../../../app.animations';
 import {
@@ -22,6 +22,8 @@ import {
   animations: [slideInUpAnimation],
 })
 export class FunctionsDemoComponent {
+  private _snackBar = inject(MatSnackBar);
+
   @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('class.td-route-animation') classAnimation = true;
   copyText = 'Lorem Ipsum';
@@ -231,7 +233,7 @@ export class FunctionsDemoComponent {
     } 
   }
   `;
-  constructor(private _snackBar: MatSnackBar) {
+  constructor() {
     this.objectsString = formatJSON(this.objects, 2);
   }
 
@@ -317,7 +319,7 @@ export class FunctionsDemoComponent {
       undefined,
       {
         duration: 2000,
-      }
+      },
     );
   }
 

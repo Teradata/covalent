@@ -7,9 +7,13 @@ import {
   Output,
   EventEmitter,
   ChangeDetectionStrategy,
+  inject,
 } from '@angular/core';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
-import { ITdFlavoredMarkdownButtonClickEvent, TdFlavoredMarkdownComponent } from '../flavored-markdown.component';
+import {
+  ITdFlavoredMarkdownButtonClickEvent,
+  TdFlavoredMarkdownComponent,
+} from '../flavored-markdown.component';
 import { ICopyCodeTooltips } from '@covalent/highlight';
 import { MatProgressBar } from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
@@ -21,9 +25,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./flavored-markdown-loader.component.scss'],
   templateUrl: './flavored-markdown-loader.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, MatProgressBar, TdFlavoredMarkdownComponent]
+  imports: [CommonModule, MatProgressBar, TdFlavoredMarkdownComponent],
 })
 export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+  private _markdownUrlLoaderService = inject(TdMarkdownLoaderService);
+
   /**
    * url: string
    * The url of the markdown file.
@@ -81,11 +88,6 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
   content!: string;
   loading = true;
 
-  constructor(
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _markdownUrlLoaderService: TdMarkdownLoaderService
-  ) {}
-
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['url'] || changes['httpOptions']) {
       this.loadMarkdown();
@@ -98,7 +100,7 @@ export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
     try {
       this.content = await this._markdownUrlLoaderService.load(
         this.url ?? '',
-        this.httpOptions
+        this.httpOptions,
       );
     } catch (error) {
       this.loadFailed.emit(error as Error);

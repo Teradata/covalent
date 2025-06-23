@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CovalentGuidedTourService, IGuidedTour } from '@covalent/guided-tour';
 @Component({
   standalone: false,
@@ -7,7 +7,7 @@ import { CovalentGuidedTourService, IGuidedTour } from '@covalent/guided-tour';
   styleUrls: ['./guided-tour-demo-skip-count.component.scss'],
 })
 export class GuidedTourDemoSkipCountComponent implements OnInit {
-  constructor(private _guidedTourService: CovalentGuidedTourService) {}
+  private _guidedTourService = inject(CovalentGuidedTourService);
 
   ngOnInit(): void {
     const skipCountTour: IGuidedTour = {

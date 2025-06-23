@@ -7,8 +7,13 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   forwardRef,
+  inject,
 } from '@angular/core';
-import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import {
   trigger,
   state,
@@ -40,7 +45,13 @@ export class TdSearchBoxBase {
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, MatIconButton, TdSearchInputComponent, MatIcon],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatIconButton,
+    TdSearchInputComponent,
+    MatIcon,
+  ],
   animations: [
     trigger('inputState', [
       state(
@@ -48,14 +59,14 @@ export class TdSearchBoxBase {
         style({
           width: '0%',
           margin: '0px',
-        })
+        }),
       ),
       state(
         '1',
         style({
           width: '100%',
           margin: AUTO_STYLE,
-        })
+        }),
       ),
       transition('0 => 1', animate('200ms ease-in')),
       transition('1 => 0', animate('200ms ease-out')),
@@ -63,6 +74,8 @@ export class TdSearchBoxBase {
   ],
 })
 export class TdSearchBoxComponent implements ControlValueAccessor {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+
   private _searchVisible = false;
   @ViewChild(TdSearchInputComponent, { static: true })
   _searchInput?: TdSearchInputComponent;
@@ -128,7 +141,7 @@ export class TdSearchBoxComponent implements ControlValueAccessor {
    * search: function($event)
    * Event emitted after the key enter has been pressed.
    */
-  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * clear: function()
@@ -141,8 +154,6 @@ export class TdSearchBoxComponent implements ControlValueAccessor {
    * Event emitted after the blur event has been called in underlying input.
    */
   @Output() blurSearch: EventEmitter<void> = new EventEmitter<void>();
-
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
   writeValue(value: unknown): void {
     this.value = value;
@@ -180,7 +191,7 @@ export class TdSearchBoxComponent implements ControlValueAccessor {
   }
 
   handleSearch(value: string): void {
-    this.search.emit(value);
+    this.searchChange.emit(value);
   }
 
   handleClear(): void {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, HostBinding } from '@angular/core';
+import { Component, Input, OnInit, HostBinding, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { slideInUpAnimation } from '../../app.animations';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
@@ -12,12 +12,12 @@ import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
   imports: [CovalentFlavoredMarkdownModule],
 })
 export class TdReadmeLoaderComponent implements OnInit {
+  private _route = inject(ActivatedRoute);
+
   @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('class.td-route-animation') classAnimation = true;
 
   @Input() resourceUrl?: string;
-
-  constructor(private _route: ActivatedRoute) {}
 
   ngOnInit(): void {
     if (this.resourceUrl) {

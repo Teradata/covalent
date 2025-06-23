@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Optional } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbar } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
   imports: [CommonModule, MatToolbar, MatIcon],
 })
 export class TdLayoutNavComponent {
+  private _router = inject(Router, { optional: true });
+
   /**
    * toolbarTitle?: string
    *
@@ -55,11 +57,9 @@ export class TdLayoutNavComponent {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(@Optional() private _router: Router) {}
-
   handleNavigationClick(): void {
     if (this.routerEnabled && this.navigationRoute) {
-      this._router.navigateByUrl(this.navigationRoute);
+      this._router?.navigateByUrl(this.navigationRoute);
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   TestBed,
   waitForAsync,
@@ -15,9 +15,9 @@ import { TdPromptDialogComponent } from './prompt-dialog.component';
 describe('Component: TdPromptDialogComponent', () => {
   @Component({ template: '' })
   class TestComponent {
-    promptDialogComponent!: TdPromptDialogComponent;
+    private _dialogService = inject(TdDialogService);
 
-    constructor(private _dialogService: TdDialogService) {}
+    promptDialogComponent!: TdPromptDialogComponent;
 
     openPrompt(): void {
       const ref = this._dialogService.openPrompt({

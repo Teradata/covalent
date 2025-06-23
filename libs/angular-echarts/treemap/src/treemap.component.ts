@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -180,7 +181,9 @@ export class TdChartSeriesTreemapComponent
   @Input() emphasis?: ITdTreemapEmphasis;
   @Input() declare tooltip: ITdSeriesTooltip;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('treemap', _optionsService);
   }
 

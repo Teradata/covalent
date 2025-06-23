@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -131,7 +132,9 @@ export class TdChartSeriesTreeComponent
   @Input() leaves?: ITdTreeLeaves;
   @Input() emphasis?: ITdTreeEmphasis;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('tree', _optionsService);
   }
 

@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 import { usaJSON } from './geoJson-USA';
 
@@ -10,6 +15,8 @@ import { usaJSON } from './geoJson-USA';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MapDemoBasicComponent implements OnInit {
+  themeSelector = inject(ChartThemeSelectorService);
+
   // Chart config
   config: any = {
     tooltip: {
@@ -93,8 +100,6 @@ export class MapDemoBasicComponent implements OnInit {
       },
     ],
   };
-
-  constructor(public themeSelector: ChartThemeSelectorService) {}
 
   ngOnInit(): void {
     echarts.registerMap('USA', usaJSON);

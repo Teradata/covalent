@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -120,7 +121,9 @@ export class TdChartSeriesMapComponent
   @Input() markArea?: ITdMarkArea;
   @Input() silent?: boolean;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('map', _optionsService);
   }
 

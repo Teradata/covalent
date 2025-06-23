@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   CovalentGuidedTourService,
   IGuidedTour,
@@ -12,7 +12,7 @@ import {
   templateUrl: './guided-tour-demo-advance-on.component.html',
 })
 export class GuidedTourDemoAdvanceOnComponent implements OnInit {
-  constructor(private _guidedTourService: CovalentGuidedTourService) {}
+  private _guidedTourService = inject(CovalentGuidedTourService);
 
   ngOnInit(): void {
     const advanceOnTour: IGuidedTour = {

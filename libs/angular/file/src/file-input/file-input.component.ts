@@ -15,6 +15,7 @@ import {
   OnInit,
   OnDestroy,
   NgZone,
+  inject,
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
@@ -36,10 +37,10 @@ import { TdFileSelectDirective } from '../directives/file-select.directive';
   selector: '[tdFileInputLabel]ng-template',
 })
 export class TdFileInputLabelDirective extends TemplatePortalDirective {
-  constructor(
-    templateRef: TemplateRef<unknown>,
-    viewContainerRef: ViewContainerRef
-  ) {
+  constructor() {
+    const templateRef = inject<TemplateRef<unknown>>(TemplateRef);
+    const viewContainerRef = inject(ViewContainerRef);
+
     super(templateRef, viewContainerRef);
   }
 }
@@ -49,7 +50,7 @@ export class TdFileInputBase {
 }
 
 export const _TdFileInputMixinBase = mixinControlValueAccessor(
-  mixinDisabled(TdFileInputBase)
+  mixinDisabled(TdFileInputBase),
 );
 
 @Component({
@@ -72,6 +73,9 @@ export class TdFileInputComponent
   extends _TdFileInputMixinBase
   implements OnInit, OnDestroy, IControlValueAccessor, ICanDisable
 {
+  private _ngZone = inject(NgZone);
+  private _renderer = inject(Renderer2);
+
   private _multiple = false;
 
   /** The native `<button class="td-file-input"></button>` element */
@@ -121,11 +125,9 @@ export class TdFileInputComponent
 
   private _destroy$ = new Subject<void>();
 
-  constructor(
-    private _ngZone: NgZone,
-    private _renderer: Renderer2,
-    _changeDetectorRef: ChangeDetectorRef
-  ) {
+  constructor() {
+    const _changeDetectorRef = inject(ChangeDetectorRef);
+
     super(_changeDetectorRef);
   }
 
@@ -134,8 +136,8 @@ export class TdFileInputComponent
       merge(
         fromEvent(this._inputButton.nativeElement, 'click'),
         fromEvent<KeyboardEvent>(this._inputButton.nativeElement, 'keyup').pipe(
-          filter((event) => event.keyCode === ENTER)
-        )
+          filter((event) => event.keyCode === ENTER),
+        ),
       )
         .pipe(takeUntil(this._destroy$))
         .subscribe(() => this._inputElement.nativeElement.click());

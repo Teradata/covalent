@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { Observable, Subject, map, takeUntil } from 'rxjs';
 
 @Component({
@@ -12,12 +12,14 @@ export class ContentContainerComponent implements OnDestroy {
   isSmall!: Observable<boolean>;
   destroyed = new Subject<void>();
 
-  constructor(breakpointObserver: BreakpointObserver) {
+  constructor() {
+    const breakpointObserver = inject(BreakpointObserver);
+
     this.isSmall = breakpointObserver
       .observe([Breakpoints.XSmall, Breakpoints.Small])
       .pipe(
         map((result) => result.matches),
-        takeUntil(this.destroyed)
+        takeUntil(this.destroyed),
       );
   }
 

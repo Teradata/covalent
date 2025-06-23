@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/prefer-inject */
 /* tslint:disable */
 import {
   Directive,

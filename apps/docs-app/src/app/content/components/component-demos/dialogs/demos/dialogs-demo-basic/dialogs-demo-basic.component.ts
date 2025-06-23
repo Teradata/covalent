@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TdDialogService } from '@covalent/core/dialogs';
 
 @Component({
@@ -8,7 +8,8 @@ import { TdDialogService } from '@covalent/core/dialogs';
   templateUrl: './dialogs-demo-basic.component.html',
 })
 export class DialogsDemoBasicComponent {
-  constructor(private _dialogService: TdDialogService) {}
+  private _dialogService = inject(TdDialogService);
+
   openAlert(): void {
     this._dialogService.openAlert({
       title: 'Alert',

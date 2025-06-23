@@ -10,6 +10,7 @@ import {
   ContentChild,
   ViewChild,
   OnDestroy,
+  inject,
 } from '@angular/core';
 
 import {
@@ -36,6 +37,10 @@ export class TdChartTooltipFormatterDirective {}
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartTooltipComponent implements OnChanges, OnDestroy {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+  private _elementRef = inject(ElementRef);
+  private _optionsService = inject(TdChartOptionsService);
+
   private _state: any = {};
 
   _context: TdTooltipContext = new TdTooltipContext();
@@ -74,12 +79,6 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
   @ViewChild('tooltipContent', { static: true })
   fullTemplate!: TemplateRef<any>;
 
-  constructor(
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _elementRef: ElementRef,
-    private _optionsService: TdChartOptionsService
-  ) {}
-
   ngOnChanges(): void {
     this._setOptions();
   }
@@ -107,8 +106,8 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
         formatter: this.formatter
           ? this.formatter
           : this.formatterTemplate
-          ? this._formatter()
-          : undefined,
+            ? this._formatter()
+            : undefined,
         backgroundColor: this.backgroundColor,
         borderColor: this.borderColor,
         borderWidth: this.borderWidth,
@@ -116,7 +115,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
         textStyle: this.textStyle,
         extraCssText: this.extraCssText,
       },
-      this.config ? this.config : {}
+      this.config ? this.config : {},
     );
     // set tooltip configuration in parent chart and render new configurations
     this._optionsService.setOption('tooltip', config);
@@ -129,12 +128,12 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
   private _formatter(): (
     params: any,
     ticket: any,
-    callback: (ticket: string, html: string) => void
+    callback: (ticket: string, html: string) => void,
   ) => string {
     return (
       params: any,
       ticket: any,
-      callback: (ticket: string, html: string) => void
+      callback: (ticket: string, html: string) => void,
     ) => {
       this._context = {
         $implicit: params,
@@ -145,7 +144,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
       setTimeout(() => {
         callback(
           ticket,
-          (<HTMLElement>this._elementRef.nativeElement).innerHTML
+          (<HTMLElement>this._elementRef.nativeElement).innerHTML,
         );
       });
       this._changeDetectorRef.markForCheck();

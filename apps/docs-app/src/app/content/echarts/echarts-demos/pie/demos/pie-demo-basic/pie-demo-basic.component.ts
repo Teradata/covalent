@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { ChartThemeSelectorService } from '../../../../../../utilities/chart-theme';
 
 @Component({
@@ -9,6 +9,8 @@ import { ChartThemeSelectorService } from '../../../../../../utilities/chart-the
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PieDemoBasicComponent {
+  themeSelector = inject(ChartThemeSelectorService);
+
   // Chart config
   config: any = {
     toolbox: {
@@ -56,6 +58,4 @@ export class PieDemoBasicComponent {
       formatter: '{a} <br/>{b} : {c} ({d}%)',
     },
   };
-
-  constructor(public themeSelector: ChartThemeSelectorService) {}
 }

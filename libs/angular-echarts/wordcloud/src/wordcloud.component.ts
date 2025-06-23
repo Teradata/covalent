@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -102,7 +103,9 @@ export class TdChartSeriesWordcloudComponent
   @Input() drawOutOfBound?: boolean;
   @Input() textStyle?: ITdWordcloudTextStyle;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('wordCloud', _optionsService);
   }
 

@@ -10,6 +10,7 @@ import {
   ViewChild,
   ChangeDetectorRef,
   AfterViewChecked,
+  inject,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatTooltip } from '@angular/material/tooltip';
@@ -29,6 +30,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, TdCopyCodeButtonComponent],
 })
 export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
+  private _renderer = inject(Renderer2);
+  private _elementRef = inject(ElementRef);
+  private _domSanitizer = inject(DomSanitizer);
+  private cdr = inject(ChangeDetectorRef);
+
   private _initialized = false;
 
   private _content!: string;
@@ -98,7 +104,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   set lang(lang: string) {
     // tslint:disable-next-line: no-console
     console.warn(
-      'DEPRECATION WARNING: switch to codeLang attribute as lang attribute is deprecated.'
+      'DEPRECATION WARNING: switch to codeLang attribute as lang attribute is deprecated.',
     );
     this.setLanguage(lang);
   }
@@ -114,13 +120,6 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   @ViewChild('copyComponent') copyComp!: ElementRef;
 
   @ViewChild('tooltip') tooltip!: MatTooltip;
-
-  constructor(
-    private _renderer: Renderer2,
-    private _elementRef: ElementRef,
-    private _domSanitizer: DomSanitizer,
-    private cdr: ChangeDetectorRef
-  ) {}
 
   ngAfterViewChecked(): void {
     this.cdr.detectChanges();
@@ -139,7 +138,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
   setLanguage(lang: string): void {
     if (!lang) {
       throw new Error(
-        'Error: language attribute must be defined in TdHighlightComponent.'
+        'Error: language attribute must be defined in TdHighlightComponent.',
       );
     }
     this._lang = lang;
@@ -169,7 +168,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
       this._renderer.setProperty(
         this._elementRef.nativeElement,
         'innerHTML',
-        ''
+        '',
       );
 
       this._elementFromString(code);
@@ -177,7 +176,7 @@ export class TdHighlightComponent implements AfterViewInit, AfterViewChecked {
       if (this.copyCodeToClipboard) {
         this._renderer.appendChild(
           this._elementRef.nativeElement,
-          this.copyComp.nativeElement
+          this.copyComp.nativeElement,
         );
       }
     }

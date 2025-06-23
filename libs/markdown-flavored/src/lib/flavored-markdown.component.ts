@@ -21,6 +21,7 @@ import {
   HostBinding,
   OnInit,
   OnDestroy,
+  inject,
 } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
@@ -64,7 +65,7 @@ export interface ITdFlavoredMarkDownTableColumn {
           <mat-header-cell
             [ngClass]="{
               'align-right': column.numeric,
-              'align-center': column.centered
+              'align-center': column.centered,
             }"
             *matHeaderCellDef
             mat-sort-header
@@ -74,7 +75,7 @@ export interface ITdFlavoredMarkDownTableColumn {
             *matCellDef="let row"
             [ngClass]="{
               'align-right': column.numeric,
-              'align-center': column.centered
+              'align-center': column.centered,
             }"
             ><td-markdown>{{ row[column.name] }}</td-markdown></mat-cell
           >
@@ -108,7 +109,7 @@ export class TdFlavoredMarkdownTableComponent implements OnInit, AfterViewInit {
     }
 
     this.displayedColumns = this.columnDefs.map(
-      (c: ITdFlavoredMarkDownTableColumn) => c.name
+      (c: ITdFlavoredMarkDownTableColumn) => c.name,
     );
     this.dataSource = new MatTableDataSource(this.data);
   }
@@ -142,16 +143,14 @@ export class TdFlavoredMarkdownButtonComponent {
   selector: '[tdFlavoredMarkdownContainer]',
 })
 export class TdFlavoredMarkdownContainerDirective {
-  constructor(
-    public viewContainerRef: ViewContainerRef,
-    private _renderer: Renderer2
-  ) {}
+  viewContainerRef = inject(ViewContainerRef);
+  private _renderer = inject(Renderer2);
 
   clear(): void {
     this._renderer.setProperty(
       this.viewContainerRef.element.nativeElement,
       'innerHTML',
-      ''
+      '',
     );
     this.viewContainerRef.clear();
   }
@@ -172,6 +171,12 @@ export type IReplacerFunc<T> = (
 export class TdFlavoredMarkdownComponent
   implements AfterViewInit, OnChanges, OnDestroy
 {
+  private _componentFactoryResolver = inject(ComponentFactoryResolver);
+  private _renderer = inject(Renderer2);
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+  private _injector = inject(Injector);
+  private _elementRef = inject(ElementRef);
+
   private _content!: string;
   private _simpleLineBreaks = false;
   private _hostedUrl!: string;
@@ -294,14 +299,6 @@ export class TdFlavoredMarkdownComponent
 
   private _destroy$ = new Subject<void>();
 
-  constructor(
-    private _componentFactoryResolver: ComponentFactoryResolver,
-    private _renderer: Renderer2,
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _injector: Injector,
-    private _elementRef: ElementRef
-  ) {}
-
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
     if (
@@ -320,7 +317,7 @@ export class TdFlavoredMarkdownComponent
     if (!this._content) {
       this._loadContent(
         (<HTMLElement>this.container.viewContainerRef.element.nativeElement)
-          .textContent ?? ''
+          .textContent ?? '',
       );
       Promise.resolve().then(() => {
         this._viewInit = true;
@@ -339,7 +336,7 @@ export class TdFlavoredMarkdownComponent
     } else if (this._viewInit) {
       this._loadContent(
         (<HTMLElement>this.container.viewContainerRef.element.nativeElement)
-          .textContent ?? ''
+          .textContent ?? '',
       );
     }
     this._changeDetectorRef.markForCheck();
@@ -388,7 +385,7 @@ export class TdFlavoredMarkdownComponent
       setTimeout(
         () =>
           scrollToAnchor(this._elementRef.nativeElement, this._anchor, false),
-        250
+        250,
       );
       this.contentReady.emit();
       Promise.resolve().then(() => {
@@ -407,7 +404,7 @@ export class TdFlavoredMarkdownComponent
       this._render(markdownParts[0], '', []);
       this.container.viewContainerRef.insert(
         this._components[key].hostView,
-        this.container.viewContainerRef.length
+        this.container.viewContainerRef.length,
       );
       delete this._components[key];
       this._render(markdownParts[1], keys[0], keys);
@@ -428,7 +425,7 @@ export class TdFlavoredMarkdownComponent
       contentRef.instance.refresh();
       this.container.viewContainerRef.insert(
         contentRef.hostView,
-        this.container.viewContainerRef.length
+        this.container.viewContainerRef.length,
       );
     }
   }
@@ -437,14 +434,14 @@ export class TdFlavoredMarkdownComponent
     markdown: string,
     type: Type<T>,
     regExp: RegExp,
-    replacerFunc: IReplacerFunc<T>
+    replacerFunc: IReplacerFunc<T>,
   ): string {
     let componentIndex = 0;
     return markdown.replace(regExp, (...args: any[]) => {
       const componentFactory: ComponentFactory<T> =
         this._componentFactoryResolver.resolveComponentFactory(type);
       const componentRef: ComponentRef<T> = componentFactory.create(
-        this._injector
+        this._injector,
       );
       replacerFunc(componentRef, ...args);
       const key: string =
@@ -468,7 +465,7 @@ export class TdFlavoredMarkdownComponent
         componentRef: ComponentRef<MatCheckbox>,
         match: string,
         checked: string,
-        label: string
+        label: string,
       ) => {
         componentRef.instance.checked = !!checked.trim();
         componentRef.instance.ariaLabel = label;
@@ -478,9 +475,9 @@ export class TdFlavoredMarkdownComponent
             componentRef.instance._elementRef.nativeElement
           )).getElementsByTagName('label')[0],
           'innerHTML',
-          label
+          label,
         );
-      }
+      },
     );
   }
 
@@ -488,7 +485,7 @@ export class TdFlavoredMarkdownComponent
     const buttonRegExp = /\[([^[]+)\](\(#data=(.*?)\))/i;
     const globalButtonRegExp = new RegExp(
       buttonRegExp.source,
-      buttonRegExp.flags + 'g'
+      buttonRegExp.flags + 'g',
     );
     return this._replaceComponent(
       markdown,
@@ -496,7 +493,7 @@ export class TdFlavoredMarkdownComponent
       globalButtonRegExp,
       (
         componentRef: ComponentRef<TdFlavoredMarkdownButtonComponent>,
-        match: string
+        match: string,
       ) => {
         const matches = buttonRegExp.exec(match);
         if (!matches) {
@@ -509,9 +506,9 @@ export class TdFlavoredMarkdownComponent
         componentRef.instance.clicked
           .pipe(takeUntil(this._destroy$))
           .subscribe((clickEvent: ITdFlavoredMarkdownButtonClickEvent) =>
-            this.buttonClicked.emit(clickEvent)
+            this.buttonClicked.emit(clickEvent),
           );
-      }
+      },
     );
   }
 
@@ -525,7 +522,7 @@ export class TdFlavoredMarkdownComponent
         componentRef: ComponentRef<TdHighlightComponent>,
         match: string,
         language: string,
-        codeblock: string
+        codeblock: string,
       ) => {
         if (language) {
           componentRef.instance.codeLang = language;
@@ -535,7 +532,7 @@ export class TdFlavoredMarkdownComponent
         componentRef.instance.toggleRawButton = this.toggleRawCode;
         componentRef.instance.rawToggleLabels = this.rawToggleLabels;
         componentRef.instance.content = codeblock;
-      }
+      },
     );
   }
 
@@ -548,7 +545,7 @@ export class TdFlavoredMarkdownComponent
       tableRgx,
       (
         componentRef: ComponentRef<TdFlavoredMarkdownTableComponent>,
-        match: string
+        match: string,
       ) => {
         const dataTableLines: string[] = match
           .replace(/(\s|\t)*\n+(\s|\t)*$/g, '')
@@ -588,7 +585,7 @@ export class TdFlavoredMarkdownComponent
                 /`(.*)`/,
                 (m: string, value: string) => {
                   return value;
-                }
+                },
               );
             }
           });
@@ -602,10 +599,10 @@ export class TdFlavoredMarkdownComponent
               numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
               centered: /^:--*[ \t]*:[ \t]*$/.test(alignment[index]),
             };
-          }
+          },
         );
         componentRef.instance.data = data;
-      }
+      },
     );
   }
 
@@ -622,8 +619,8 @@ export class TdFlavoredMarkdownComponent
 
         const lineTexts: string[] = match.split(
           new RegExp(
-            '\\n {' + (matchIndex - 1).toString() + '}(\\+|\\*|\\-)[ |\\t]'
-          )
+            '\\n {' + (matchIndex - 1).toString() + '}(\\+|\\*|\\-)[ |\\t]',
+          ),
         );
         lineTexts.shift();
         const lines: IFlavoredListItem[] = [];
@@ -648,7 +645,7 @@ export class TdFlavoredMarkdownComponent
           });
         });
         componentRef.instance.lines = lines;
-      }
+      },
     );
   }
 }

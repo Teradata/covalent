@@ -1,16 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 
 import { filter, pairwise } from 'rxjs/operators';
 
 @Injectable()
 export class RouterPathService {
+  private _router = inject(Router);
+
   private static _previousRoute = '/';
-  constructor(private _router: Router) {
+  constructor() {
     this._router.events
       .pipe(
         filter((e: any) => e instanceof RoutesRecognized),
-        pairwise()
+        pairwise(),
       )
       .subscribe((e: any[]) => {
         RouterPathService._previousRoute = e[0].urlAfterRedirects;

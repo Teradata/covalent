@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import {
   LoadingMode,
   LoadingStrategy,
@@ -16,12 +16,12 @@ import { slideInUpAnimation } from '../../../../app.animations';
   animations: [slideInUpAnimation],
 })
 export class LoadingDemoComponent {
+  private _loadingService = inject(TdLoadingService);
+
   overlayStarSyntax = false;
   loadingMode = LoadingMode;
   loadingStrategy = LoadingStrategy;
   loadingType = LoadingType;
-
-  constructor(private _loadingService: TdLoadingService) {}
 
   toggleOverlayStarSyntax(): void {
     this.overlayStarSyntax = !this.overlayStarSyntax;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SubPageMode, CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
@@ -39,8 +39,9 @@ import { SubPageMode, CovalentSideSheet } from '@covalent/core/side-sheet';
   `,
 })
 export class SideSheetDemoExampleComponent {
+  private sideSheet = inject(CovalentSideSheet);
+
   SubPageOpenMode = SubPageMode;
-  constructor(private sideSheet: CovalentSideSheet) {}
 
   openSideSheet(mode: SubPageMode = SubPageMode.pushed): void {
     this.sideSheet.open(SideSheetDemoExampleLayeredComponent, {
@@ -64,7 +65,7 @@ class SideSheetDemoExampleLayeredComponent {}
   styleUrls: ['./side-sheet-demo-multi.component.scss'],
 })
 export class SideSheetDemoMultiComponent {
-  constructor(private sideSheet: CovalentSideSheet) {}
+  private sideSheet = inject(CovalentSideSheet);
 
   toggleSideSheet(): void {
     this.sideSheet.open(SideSheetDemoExampleComponent);
