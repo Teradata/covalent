@@ -24,10 +24,6 @@ export interface ILayoutTogglable {
   close(): Promise<MatDrawerToggleResult>;
 }
 
-export const ILayoutTogglableToken = new InjectionToken<ILayoutTogglable>(
-  'ILayoutTogglable',
-);
-
 export class LayoutToggleBase {}
 
 /* tslint:disable-next-line */
@@ -38,10 +34,12 @@ export abstract class BaseLayoutToggleDirective
   extends _TdLayoutToggleMixinBase
   implements AfterViewInit, OnDestroy, ICanDisable
 {
-  protected _layout = inject(ILayoutTogglableToken);
   private _renderer = inject(Renderer2);
   private _elementRef = inject(ElementRef);
-
+  _layout = inject<ILayoutTogglable | undefined>(
+    new InjectionToken<ILayoutTogglable | undefined>('ILayoutTogglable'),
+    { optional: true },
+  );
   private _toggleSubs?: Subscription;
 
   private _initialized = false;

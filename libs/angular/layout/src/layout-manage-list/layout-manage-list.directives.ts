@@ -14,7 +14,7 @@ export class TdLayoutManageListToggleDirective extends BaseLayoutToggleDirective
   }
 
   onClick(): void {
-    this._layout.toggle();
+    this._layout?.toggle();
   }
 }
 
@@ -30,7 +30,7 @@ export class TdLayoutManageListCloseDirective extends BaseLayoutToggleDirective 
   }
 
   onClick(): void {
-    this._layout.close();
+    this._layout?.close();
   }
 }
 
@@ -46,6 +46,6 @@ export class TdLayoutManageListOpenDirective extends BaseLayoutToggleDirective {
   }
 
   onClick(): void {
-    this._layout.open();
+    this._layout?.open();
   }
 }
