@@ -1,3 +1,9 @@
+# [11.0.0-beta.5](https://github.com/Teradata/covalent/compare/v11.0.0-beta.4...v11.0.0-beta.5) (2025-06-23)
+
+### Features
+
+- **package:** add style export to package.json ([a65889a](https://github.com/Teradata/covalent/commit/a65889a8b65ea3c1fa113e7a52b56a188d597774))
+
 # [11.0.0-beta.4](https://github.com/Teradata/covalent/compare/v11.0.0-beta.3...v11.0.0-beta.4) (2025-06-23)
 
 ### Features
