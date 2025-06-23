@@ -1,3 +1,10 @@
+# [11.0.0-beta.2](https://github.com/Teradata/covalent/compare/v11.0.0-beta.1...v11.0.0-beta.2) (2025-06-23)
+
+### Features
+
+- **build:** add TypeScript declaration generation to build process ([6f3f610](https://github.com/Teradata/covalent/commit/6f3f61062fb1388d6797c0405cd45e4cf0f02d81))
+- **components:** add icon demo component and update icon lists ([9a7107f](https://github.com/Teradata/covalent/commit/9a7107f958c06ab70ce76ef1fb809bb5e42075fc))
+
 # [11.0.0-beta.1](https://github.com/Teradata/covalent/compare/v10.4.0-beta.3...v11.0.0-beta.1) (2025-06-23)
 
 ### Bug Fixes
