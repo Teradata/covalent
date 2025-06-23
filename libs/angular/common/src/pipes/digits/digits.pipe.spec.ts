@@ -11,8 +11,10 @@ describe('TdDigitsPipe', () => {
   let l10nFrPipe: TdDigitsPipe;
   beforeEach(() => {
     pipe = new TdDigitsPipe();
-    l10nEsPipe = new TdDigitsPipe('es');
-    l10nFrPipe = new TdDigitsPipe('fr');
+    l10nEsPipe = new TdDigitsPipe();
+    l10nEsPipe.locale = 'es'; // ensure locale is set to 'es'
+    l10nFrPipe = new TdDigitsPipe();
+    l10nFrPipe.locale = 'fr'; // ensure locale is set to 'fr'
   });
 
   it('should return with an empty or invalid input', () => {

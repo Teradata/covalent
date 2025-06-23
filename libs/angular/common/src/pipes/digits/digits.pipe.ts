@@ -1,15 +1,18 @@
-import { Pipe, PipeTransform, LOCALE_ID, inject } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-
 @Pipe({
   name: 'digits',
 })
 export class TdDigitsPipe implements PipeTransform {
-  private _locale = inject(LOCALE_ID) ?? 'en';
-
+  private _locale = 'en';
   private _decimalPipe: DecimalPipe;
 
   constructor() {
+    this._decimalPipe = new DecimalPipe(this._locale);
+  }
+
+  set locale(locale: string) {
+    this._locale = locale;
     this._decimalPipe = new DecimalPipe(this._locale);
   }
 

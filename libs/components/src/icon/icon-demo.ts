@@ -1,9 +1,9 @@
 import { LitElement, css, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import COV_ICON_LIST from './_icon-list.stories';
+import COV_ICON_LIST from './icon-list.js';
 import styles from './icon-demo.scss?inline';
-import './icon';
-import '../typography/typography';
+import './icon.js';
+import '../typography/typography.js';
 
 @customElement('cv-icon-demo')
 export class CovalentIconDemo extends LitElement {
