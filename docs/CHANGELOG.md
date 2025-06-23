@@ -1,3 +1,17 @@
+# [11.0.0-beta.1](https://github.com/Teradata/covalent/compare/v10.4.0-beta.3...v11.0.0-beta.1) (2025-06-23)
+
+### Bug Fixes
+
+- **components:** update SCSS build command to disable source maps ([9094996](https://github.com/Teradata/covalent/commit/9094996615df5f6dfb59f931d5d42db92fb36174))
+
+### Features
+
+- **angular:** upgrade angular and Nx dependencies to version 20.x.x ([82fc793](https://github.com/Teradata/covalent/commit/82fc793ff1adedb86247eefe434714012f2f3df4))
+
+### BREAKING CHANGES
+
+- **angular:** now supporting NG 20.x
+
 # [10.4.0-beta.3](https://github.com/Teradata/covalent/compare/v10.4.0-beta.2...v10.4.0-beta.3) (2025-06-17)
 
 ### Bug Fixes
