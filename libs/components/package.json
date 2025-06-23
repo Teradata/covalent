@@ -7,10 +7,10 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "sass": "./index.scss",
       "import": "./index.mjs",
-      "require": "./index.js",
-      "types": "./index.d.ts"
+      "require": "./index.js"
     },
     "./icon/icon.theme": "./icon/_icon.theme.scss",
     "./data-table.theme": "./data-table/_data-table.theme.scss",

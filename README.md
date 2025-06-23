@@ -15,25 +15,26 @@ Covalent is Teradata's design system used to create Teradata branded experiences
 
 ## Setup
 
-- Ensure you have Node 18.12.0+
+- Ensure you have Node 22.16.0+
 - Install Node packages `npm ci`
 - Run local build `npm run start`
 
 ---
 
-- [Getting Started](docs/GETTING_STARTED.md)
 - [Web Components](docs/COMPONENTS_QUICKSTART.md)
-- [Contributing Guidelines](docs/CONTRIBUTING.md)
-- [Developer Guide](docs/DEVELOPER_GUIDE.md)
-- [Upgrading](docs/UPGRADE.md)
+- [Web Components theming](docs/COMPONENTS_DEVELOPER_GUIDE.md)
+- [Web Components developer Guide](docs/COMPONENTS_DEVELOPER_GUIDE.md)
+- [Contributing guidelines](docs/CONTRIBUTING.md)
 - [Releasing](docs/RELEASE.md)
 - [Changelog](docs/CHANGELOG.md)
-- [StackBlitz Template](https://stackblitz.com/edit/covalent)
-- [Plunker Template](http://plnkr.co/edit/XhSrUWBw2RhCkXPoE4fn)
 
 ---
 
 ## Angular Support
+
+- [Getting Started](docs/GETTING_STARTED.md)
+- [StackBlitz Template](https://stackblitz.com/edit/covalent)
+- [Plunker Template](http://plnkr.co/edit/XhSrUWBw2RhCkXPoE4fn)
 
 Certain versions of Covalent are designed to work with specific versions of Angular. Below is a matrix that outlines these compatibility details:
 
@@ -48,6 +49,21 @@ Certain versions of Covalent are designed to work with specific versions of Angu
 |   8.X    |       17.X        |
 |   9.X    |       18.X        |
 |   10.X   |       19.X        |
+|   11.X   |       20.X        |
+
+...existing code...
+
+---
+
+## Angular Support
+
+...existing code...
+
+| 11.X | 20.X |
+
+---
+
+---
 
 ## Browser Support
 
@@ -60,6 +76,20 @@ Covalent is built on a CSS Flexbox layout and all layouts and components heavily
 | **Supported** |   ✓    |    ✓    |   ✓    |  ✓   |       ~       |       ~       |
 
 ~ Indicates limited testing & lower priority
+
+## Using this workspace with VS code and NX
+
+- Covalent uses [Nx](https://nx.dev/) for monorepo builds and task running.
+- For a better experience, install the [Nx Console extension for VS Code](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console).
+- **Nx Console** lets you:
+  - Run builds, tests, lint, and affected commands with a click.
+  - Generate libraries, components, and schematics interactively.
+  - Explore project/dependency graphs visually.
+  - Edit workspace configs quickly.
+- **Get started:**
+  1. Open the repo in VS Code.
+  2. Install Nx Console from the Extensions Marketplace.
+  3. Use the Nx Console sidebar or search Nx commands in the Command Palette (`Cmd+Shift+P`).
 
 ## Running Chromatic
 

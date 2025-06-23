@@ -244,8 +244,8 @@ $td-light-theme-background: (
 // todo: need to re-catalog used variables
 $td-light-theme-foreground: (
   base: $light-on-background,
-  divider: $light-divider,
-  dividers: $light-divider,
+  divider: $theme-light-colors-outline,
+  dividers: $theme-light-colors-outline-variant,
   disabled: $theme-light-colors-on-surface-38,
   disabled-button: $theme-light-colors-on-surface-38,
   disabled-text: $theme-light-colors-on-surface-38,
@@ -318,8 +318,8 @@ $td-dark-theme-background: (
 // todo: need to re-catalog used variables
 $td-dark-theme-foreground: (
   base: $dark-on-background,
-  divider: $dark-divider,
-  dividers: $dark-divider,
+  divider: $theme-dark-colors-outline,
+  dividers: $theme-dark-colors-outline-variant,
   disabled: $theme-dark-colors-on-surface-38,
   disabled-button: $theme-dark-colors-on-surface-38,
   disabled-text: $theme-dark-colors-on-surface-38,
@@ -331,9 +331,9 @@ $td-dark-theme-foreground: (
   icons: $dark-text-icon-on-background,
   inverse-on-surface: $theme-dark-colors-inverse-on-surface,
   text: $dark-on-surface,
-  slider-min: $dark-on-surface,
-  slider-off: $theme-dark-colors-on-surface-8,
-  slider-off-active: $theme-dark-colors-on-surface-16,
+  slider-min: red,
+  slider-off: red,
+  slider-off-active: red,
   accent: $theme-dark-colors-on-primary,
   emphasis: $theme-dark-colors-on-emphasis,
   caution: $theme-dark-colors-on-caution,

@@ -2,7 +2,7 @@
 
 Get started with Covalent using the Angular CLI.
 
-See the [material getting started](https://v18.material.angular.io/guide/getting-started) for instructions.
+See the [material getting started](https://v20.material.angular.io/guide/getting-started) for instructions.
 
 ## Install the CLI
 
@@ -94,7 +94,7 @@ export class AppComponent {
 
 This is **required** to apply all of the core, theme and typography styles to your application.
 
-See the [material theming guide](https://v18.material.angular.io/guide/theming) and the [material typography guide](https://v18.material.angular.io/guide/typography) for instructions.
+See the [material theming guide](https://v20.material.angular.io/guide/theming) and the [material typography guide](https://v20.material.angular.io/guide/typography) for instructions.
 
 A theme file is a simple Sass file that defines your palettes and passes them to mixins that output the corresponding styles. A typical theme file will look something like this:
 

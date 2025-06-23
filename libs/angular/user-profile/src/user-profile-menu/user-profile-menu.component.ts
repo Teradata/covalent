@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { MatActionList, MatList, MatListItem, MatListItemAvatar } from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { TdMenuComponent } from '@covalent/core/menu';
 
 @Component({
@@ -9,7 +9,7 @@ import { TdMenuComponent } from '@covalent/core/menu';
   templateUrl: './user-profile-menu.component.html',
   styleUrls: ['./user-profile-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, TdMenuComponent, MatIcon, MatList, MatActionList, MatListItemAvatar, MatListItem],
+  imports: [CommonModule, TdMenuComponent, MatIcon, MatListModule],
 })
 export class TdUserProfileMenuComponent {
   @Input() email?: string;

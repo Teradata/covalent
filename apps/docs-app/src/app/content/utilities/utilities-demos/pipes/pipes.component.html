@@ -17,7 +17,7 @@
   <a
     mat-raised-button
     color="primary"
-    href="https://v19.angular.dev/guide/templates/pipes"
+    href="https://v20.angular.dev/guide/templates/pipes"
     target="_blank"
     class="push-top-sm"
   >
@@ -46,7 +46,7 @@
         <p matListItemLine>Converted: {{ log.digits | digits }}</p>
         <!-- output with precision aurgument -->
         <p *ngIf="log.precision" matListItemLine>
-          With precision argument: {{ log.digits | digits : log.precision }}
+          With precision argument: {{ log.digits | digits: log.precision }}
         </p>
       </mat-list-item>
     </mat-list>
@@ -78,7 +78,7 @@
         <p matListItemLine>Converted: {{ log.bytes | bytes }}</p>
         <!-- output with precision aurgument -->
         <p *ngIf="log.precision" matListItemLine>
-          With precision argument: {{ log.bytes | bytes : log.precision }}
+          With precision argument: {{ log.bytes | bytes: log.precision }}
         </p>
       </mat-list-item>
     </mat-list>
@@ -111,7 +111,7 @@
         <!-- output with precision aurgument -->
         <p *ngIf="log.precision" matListItemLine>
           With precision argument:
-          {{ log.bytes | decimalBytes : log.precision }}
+          {{ log.bytes | decimalBytes: log.precision }}
         </p>
       </mat-list-item>
     </mat-list>
@@ -136,7 +136,7 @@
       <mat-list-item *ngFor="let log of logs">
         <h3 matListItemTitle>
           Timestamp: {{ log.timestamp }} |
-          {{ log.timestamp | timeAgo : log.reference }}
+          {{ log.timestamp | timeAgo: log.reference }}
         </h3>
         <p *ngIf="log.reference" matListItemLine>
           Reference: {{ log.reference }}
@@ -165,7 +165,7 @@
       <mat-list-item *ngFor="let log of logs">
         <h3 matListItemTitle>
           Timestamp: {{ log.expiration_date }} |
-          {{ log.expiration_date | timeUntil : log.reference }}
+          {{ log.expiration_date | timeUntil: log.reference }}
         </h3>
         <p *ngIf="log.reference" matListItemLine>
           Reference: {{ log.reference }}
@@ -200,7 +200,7 @@
         </h3>
         <!-- output with timeDifference pipe -->
         <p matListItemLine>
-          Difference: {{ log.timestamp | timeDifference : log.timestampend }}
+          Difference: {{ log.timestamp | timeDifference: log.timestampend }}
         </p>
         <!-- outputs the time difference relative to the current time -->
         <p matListItemLine>
@@ -242,7 +242,7 @@
         <p matListItemLine>
           Truncate with a length value of
           <code>{{ log.truncate_length }}</code>
-          : {{ log.text_value | truncate : log.truncate_length ?? 0 }}
+          : {{ log.text_value | truncate: log.truncate_length ?? 0 }}
         </p>
       </mat-list-item>
     </mat-list>

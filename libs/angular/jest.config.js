@@ -1,3 +1,5 @@
+const esModules = ['@angular/common/locales'];
+
 module.exports = {
   displayName: 'angular',
   preset: '../../jest.preset.js',
@@ -14,7 +16,9 @@ module.exports = {
       },
     ],
   },
-  transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
+  transformIgnorePatterns: [
+    `<rootDir>/node_modules/(?!.*\\.mjs$|${esModules.join('|')})`, // jest-preset-angular
+  ],
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

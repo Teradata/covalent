@@ -6,7 +6,7 @@ Covalent is a UI Platform focused on solving common enterprise needs. Covalent f
 
 ## Compatibility
 
-The latest version of Covalent is now fully compatible with [**Angular 18**](https://v18.angular.dev/overview).
+The latest version of Covalent is now fully compatible with [**Angular 20**](https://v20.angular.dev/overview).
 
 <br/>
 

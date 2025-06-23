@@ -1,11 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@covalent/tokens/index.css';
-@import 'monaco-editor/min/vs/editor/editor.main';
+@use '@covalent/tokens/index.css';
+@use 'monaco-editor/min/vs/editor/editor.main';
 
 body {
   margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

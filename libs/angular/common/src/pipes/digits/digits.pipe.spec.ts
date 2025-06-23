@@ -1,5 +1,4 @@
 import { TdDigitsPipe } from './digits.pipe';
-
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 
@@ -58,6 +57,6 @@ describe('TdDigitsPipe', () => {
     /* not registered transformations */
     expect(() => {
       l10nFrPipe.transform(1000);
-    }).toThrowError();
+    }).toThrow();
   });
 });

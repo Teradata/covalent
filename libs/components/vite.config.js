@@ -1,4 +1,4 @@
-const { defineConfig } = require('vite');
+import { defineConfig } from 'vite';
 import fs from 'fs';
 import path from 'path';
 
@@ -6,14 +6,14 @@ import path from 'path';
 const getComponentEntries = () => {
   const componentsConfigPath = path.resolve(
     __dirname,
-    './component-config.json'
+    './component-config.json',
   );
   const componentsConfig = JSON.parse(
-    fs.readFileSync(componentsConfigPath, 'utf8')
+    fs.readFileSync(componentsConfigPath, 'utf8'),
   );
 
   return componentsConfig.map((component) =>
-    path.join('libs/components/src', component.path)
+    path.join('libs/components/src', component.path),
   );
 };
 
@@ -29,7 +29,6 @@ module.exports = defineConfig(({ mode }) => {
     build: {
       lib: {
         entry: ['libs/components/src/index.ts', ...getComponentEntries()],
-        name: 'Covalent',
         rollupOptions: {
           external: ['monaco-editor'],
         },
