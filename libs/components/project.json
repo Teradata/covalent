@@ -24,7 +24,6 @@
         "commands": [
           "mkdir -p dist/libs/components/",
           "vite build --config libs/components/vite.config.js  --outDir dist/libs/components",
-          "./node_modules/.bin/tsc --project libs/components/tsconfig.lib.json  --declaration  --emitDeclarationOnly --outDir dist/libs/components",
           "cp libs/components/package.json dist/libs/components"
         ],
         "parallel": false
@@ -34,12 +33,7 @@
     "build-scss": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "mkdir -p dist/libs/components/theme/prebuilt",
-          "cp libs/components/src/index.scss dist/libs/components",
-          "cp libs/components/src/theme/_index.scss dist/libs/components/theme",
-          "./node_modules/.bin/sass --no-source-map --trace --color --style=compressed --load-path=node_modules ./libs/components/src/theme/prebuilt:./dist/libs/components/theme/prebuilt"
-        ],
+        "commands": [],
         "parallel": false
       },
       "outputs": ["{workspaceRoot}/dist/libs/components/theme"],
