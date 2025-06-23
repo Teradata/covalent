@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
 import fs from 'fs';
 import path from 'path';
 
@@ -27,12 +26,6 @@ module.exports = defineConfig(({ mode }) => {
     optimizeDeps: {
       include: ['monaco-editor'], // Ensure Monaco Editor is pre-bundled
     },
-    plugins: [
-      dts({
-        tsconfigPath: 'libs/components/tsconfig.lib.json',
-        // Other options like include, exclude, rollupTypes, etc.
-      }),
-    ],
     build: {
       lib: {
         entry: ['libs/components/src/index.ts', ...getComponentEntries()],
