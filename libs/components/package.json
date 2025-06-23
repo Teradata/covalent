@@ -6,10 +6,12 @@
   "main": "./index.js",
   "module": "./index.mjs",
   "types": "./index.d.ts",
+  "style": "./covalent.css",
   "exports": {
     ".": {
       "types": "./index.d.ts",
       "sass": "./index.scss",
+      "style": "./covalent.css",
       "import": "./index.mjs",
       "require": "./index.js"
     },
