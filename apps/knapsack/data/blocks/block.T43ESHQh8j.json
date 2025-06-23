@@ -7,25 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
               "text": "States",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 3,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Enabled",
               "type": "text"
             }
           ]

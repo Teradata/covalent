@@ -1,0 +1,48 @@
+{
+  "id": "dvHndHcoL1",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Overview",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "List items implement semantic HTML structure using appropriate ARIA roles and landmarks to ensure screen reader compatibility. The component supports comprehensive keyboard navigation with tab order management and focus indicators. Color and contrast meet WCAG 2.1 AA standards for all text and interactive elements.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Screen readers announce list structure, item count, and current position to provide spatial context. Interactive elements include proper labeling and state descriptions. Focus management ensures logical navigation flow and proper focus restoration after actions.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

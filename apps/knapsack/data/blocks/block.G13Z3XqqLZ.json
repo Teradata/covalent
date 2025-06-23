@@ -21,6 +21,16 @@
         "image": "https://knapsack.imgix.net/site/covalent/github--SHw1qjqR7Z.png",
         "title": "Contribute",
         "description": "For contributing new components to Covalent review these guidelines"
+      },
+      {
+        "id": "uUcXtuWtQJ",
+        "link": {
+          "path": "https://github.com/Teradata/covalent/tree/main/libs/components-react",
+          "external": true
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/react-framework-logo--vws4KaQvUF.jpg",
+        "title": "Like using React?",
+        "description": "Check out our guide to using covalent components library in react"
       }
     ],
     "gridStyles": {

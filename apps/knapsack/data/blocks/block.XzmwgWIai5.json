@@ -1,0 +1,39 @@
+{
+  "id": "XzmwgWIai5",
+  "data": {
+    "type": "warning",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Lists are containers for ",
+              "type": "text"
+            },
+            {
+              "text": "list items",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pattern/list-item",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". See that doc for further detail.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout"
+}

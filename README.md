@@ -1,4 +1,4 @@
-## Covalent Design System
+# Covalent Design System
 
 [![Covalent CI](https://github.com/teradata/covalent/actions/workflows/ci.yml/badge.svg)](https://github.com/teradata/covalent/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/%40covalent/core.svg)](https://www.npmjs.com/package/@covalent/core)
@@ -9,7 +9,7 @@
 
 <img alt="Covalent" src="https://raw.githubusercontent.com/Teradata/covalent/main/apps/docs-app/src/assets/icons/covalent.svg" width="150">
 
-Covalent is Teradata's design system used to create Teradata branded experiences. This space is intended to be used to support developers creating coded experiences for Teradata products. Currently we are only supporting angular and a library of web components.
+Covalent is Teradata's design system used to create consistent, branded experiences. This repository provides tools and components to support developers building applications for Teradata products. We currently support Angular and offer a comprehensive library of web components.
 
 **Vision: To build an atomic, reusable component platform for Teradata to consume, while collaborating in an open source model.**
 
@@ -67,7 +67,7 @@ Certain versions of Covalent are designed to work with specific versions of Angu
 
 ## Browser Support
 
-Covalent is built on a CSS Flexbox layout and all layouts and components heavily rely up that support, so the current browsers are supported in order or recommendation:
+Covalent is built on a CSS Flexbox layout and all layouts and components heavily rely on that support, so the current browsers are supported in order of recommendation:
 
 #### Current version - 1 for the following:
 
@@ -93,4 +93,6 @@ Covalent is built on a CSS Flexbox layout and all layouts and components heavily
 
 ## Running Chromatic
 
-`npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}`
+```bash
+npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
+```

@@ -24,7 +24,25 @@
           },
           "content": [
             {
-              "text": "Menus items use the cv-list-item component. Interaction states for menu items match the interaction states for cv-list-item.",
+              "text": "Menus items use the ",
+              "type": "text"
+            },
+            {
+              "text": "list item",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pattern/list-item",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " component. Interaction states for menu items match the interaction states for cv-list-item.",
               "type": "text"
             }
           ]

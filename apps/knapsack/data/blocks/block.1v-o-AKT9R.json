@@ -41,12 +41,17 @@
                   "type": "text",
                   "marks": [
                     {
-                      "type": "bold"
+                      "type": "link",
+                      "attrs": {
+                        "rel": "noopener noreferrer nofollow",
+                        "href": "/pattern/radio",
+                        "class": null
+                      }
                     }
                   ]
                 },
                 {
-                  "text": " instead.",
+                  "text": " or a toggle instead.",
                   "type": "text"
                 }
               ]

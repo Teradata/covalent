@@ -15,7 +15,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Ensure that the default or placeholder option is clear and concise.",
+                  "text": "Ensure that the label is clear and concise.",
                   "type": "text"
                 }
               ]
@@ -33,7 +33,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "The placeholder text should not be a verb phrase.",
+                  "text": "The label should not be a verb phrase.",
                   "type": "text"
                 }
               ]

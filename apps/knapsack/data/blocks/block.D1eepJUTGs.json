@@ -5,22 +5,14 @@
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Hit area state",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "text": " ",
+              "text": "Hit area state ",
               "type": "text"
             }
           ]
