@@ -1,3 +1,9 @@
+# [11.0.0-beta.6](https://github.com/Teradata/covalent/compare/v11.0.0-beta.5...v11.0.0-beta.6) (2025-06-25)
+
+### Bug Fixes
+
+- **package:** remove type and style fields from package.json ([11e9234](https://github.com/Teradata/covalent/commit/11e92344c0effb8cacd7cdd103156f0f173dfbcb))
+
 # [11.0.0-beta.5](https://github.com/Teradata/covalent/compare/v11.0.0-beta.4...v11.0.0-beta.5) (2025-06-23)
 
 ### Features
