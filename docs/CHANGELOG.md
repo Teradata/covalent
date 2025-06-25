@@ -1,3 +1,9 @@
+# [11.0.0-beta.7](https://github.com/Teradata/covalent/compare/v11.0.0-beta.6...v11.0.0-beta.7) (2025-06-25)
+
+### Bug Fixes
+
+- update imports to include CommonModule in toolbox and tooltip ([d7cbe56](https://github.com/Teradata/covalent/commit/d7cbe563d631022e5402846b4dbf29a0160c8af9))
+
 # [11.0.0-beta.6](https://github.com/Teradata/covalent/compare/v11.0.0-beta.5...v11.0.0-beta.6) (2025-06-25)
 
 ### Bug Fixes
