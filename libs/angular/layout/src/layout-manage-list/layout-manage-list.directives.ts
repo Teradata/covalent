@@ -1,4 +1,4 @@
-import { Directive, Input, Renderer2, ElementRef, inject } from '@angular/core';
+import { Directive, Input, inject } from '@angular/core';
 import { TdLayoutManageListComponent } from './layout-manage-list.component';
 import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 
@@ -11,6 +11,11 @@ export class TdLayoutManageListToggleDirective extends BaseLayoutToggleDirective
     this.disabled = !(
       <any>tdLayoutManageListToggle === '' || tdLayoutManageListToggle
     );
+  }
+
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutManageListComponent);
   }
 
   onClick(): void {
@@ -29,6 +34,11 @@ export class TdLayoutManageListCloseDirective extends BaseLayoutToggleDirective 
     );
   }
 
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutManageListComponent);
+  }
+
   onClick(): void {
     this._layout?.close();
   }
@@ -43,6 +53,11 @@ export class TdLayoutManageListOpenDirective extends BaseLayoutToggleDirective {
     this.disabled = !(
       <any>tdLayoutManageListOpen === '' || tdLayoutManageListOpen
     );
+  }
+
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutManageListComponent);
   }
 
   onClick(): void {

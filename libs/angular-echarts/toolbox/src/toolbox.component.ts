@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   Input,
@@ -142,6 +143,7 @@ export class TdChartViewDataFormatterDirective {}
 @Component({
   selector: 'td-chart-toolbox',
   templateUrl: './toolbox.component.html',
+  imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartToolboxComponent implements OnChanges, OnDestroy {

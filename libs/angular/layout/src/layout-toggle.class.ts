@@ -7,7 +7,6 @@ import {
   OnDestroy,
   Directive,
   inject,
-  InjectionToken,
 } from '@angular/core';
 
 import { MatSidenav, MatDrawerToggleResult } from '@angular/material/sidenav';
@@ -34,16 +33,15 @@ export abstract class BaseLayoutToggleDirective
   extends _TdLayoutToggleMixinBase
   implements AfterViewInit, OnDestroy, ICanDisable
 {
+  private _toggleSubs?: Subscription;
+
   private _renderer = inject(Renderer2);
   private _elementRef = inject(ElementRef);
-  _layout = inject<ILayoutTogglable | undefined>(
-    new InjectionToken<ILayoutTogglable | undefined>('ILayoutTogglable'),
-    { optional: true },
-  );
-  private _toggleSubs?: Subscription;
 
   private _initialized = false;
   private _hideWhenOpened = false;
+
+  protected _layout?: ILayoutTogglable;
 
   /**
    * hideWhenOpened?: boolean
@@ -60,11 +58,7 @@ export abstract class BaseLayoutToggleDirective
 
   constructor() {
     super();
-    // if layout has not been provided
-    // show warn message
-    if (!this._layout) {
-      this._noLayoutMessage();
-    }
+
     this._renderer.addClass(
       this._elementRef.nativeElement,
       'td-layout-menu-button',
@@ -73,6 +67,11 @@ export abstract class BaseLayoutToggleDirective
 
   ngAfterViewInit(): void {
     this._initialized = true;
+    // if layout has not been provided
+    // show warn message
+    if (!this._layout) {
+      this._noLayoutMessage();
+    }
     if (this._layout && this._layout.sidenav) {
       this._toggleSubs = this._layout.sidenav._animationStarted.subscribe(
         () => {

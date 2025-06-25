@@ -18,10 +18,12 @@ import {
   TdChartTooltipFormatterDirective,
   TdTooltipContext,
 } from './tooltip.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'td-chart-series-tooltip',
   templateUrl: './tooltip.component.html',
+  imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {

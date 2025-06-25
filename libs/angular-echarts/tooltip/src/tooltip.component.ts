@@ -12,7 +12,7 @@ import {
   OnDestroy,
   inject,
 } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 import {
   TdChartOptionsService,
   assignDefined,
@@ -34,6 +34,7 @@ export class TdChartTooltipFormatterDirective {}
 @Component({
   selector: 'td-chart-tooltip',
   templateUrl: './tooltip.component.html',
+  imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartTooltipComponent implements OnChanges, OnDestroy {

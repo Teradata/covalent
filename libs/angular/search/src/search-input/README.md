@@ -22,7 +22,7 @@
 - searchDebounce: function
   - Event emitted after the [debounce] timeout.
   - Emits a [string].
-- search: function
+- searchChange: function
   - Event emitted after the key enter has been pressed.
   - Emits a [string].
 - clear: function
