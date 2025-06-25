@@ -4,9 +4,12 @@
   display: block;
 }
 
-:host([sticky]) {
-  position: sticky;
+:host([sticky].is-sticky) {
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .mdc-top-app-bar__title {

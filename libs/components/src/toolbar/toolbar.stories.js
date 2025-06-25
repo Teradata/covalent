@@ -13,6 +13,7 @@ export default {
     add: true,
     secondaryAction: true,
     action: true,
+    sticky: false,
   },
   parameters: {
     layout: 'fullscreen',
@@ -27,9 +28,10 @@ export const Toolbar = ({
   add,
   secondaryAction,
   action,
+  sticky,
 }) => {
   return `
-    <cv-toolbar ${dense ? 'dense' : ''}>
+    <cv-toolbar ${dense ? 'dense' : ''} ${sticky ? 'sticky' : ''}>
       <span slot="title">${title}</span> 
       ${
         filter
