@@ -45,10 +45,3 @@
       inverse-on-surface
     )};
 }
-
-// --- button density function --- //
-@function density-height($height) {
-  @return calc(
-    #{$height} + (var(--cv-density-mode, 0) * var(--cv-density-interval, 4px))
-  );
-}

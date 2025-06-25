@@ -1,4 +1,4 @@
-// --- button density function --- //
+// Density mixins and functions for controlling spacing based on density mode
 @function density-height($height, $density: 0, $interval: 4px) {
   @return calc(
     #{$height} +
