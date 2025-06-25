@@ -1,7 +1,11 @@
-import { Component, Input, ViewChild, Optional } from '@angular/core';
+import { Component, Input, ViewChild, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MatSidenav, MatDrawerToggleResult, MatSidenavContainer } from '@angular/material/sidenav';
+import {
+  MatSidenav,
+  MatDrawerToggleResult,
+  MatSidenavContainer,
+} from '@angular/material/sidenav';
 
 import { ILayoutTogglable } from '../layout-toggle.class';
 import { MatToolbar } from '@angular/material/toolbar';
@@ -13,9 +17,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./layout-nav-list.component.scss'],
   templateUrl: './layout-nav-list.component.html',
   imports: [CommonModule, MatSidenav, MatSidenavContainer, MatToolbar, MatIcon],
-
 })
 export class TdLayoutNavListComponent implements ILayoutTogglable {
+  private _router = inject(Router, { optional: true });
+
   @ViewChild(MatSidenav, { static: true }) sidenav!: MatSidenav;
 
   /**
@@ -113,11 +118,9 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(@Optional() private _router: Router) {}
-
   handleNavigationClick(): void {
     if (this.routerEnabled && this.navigationRoute) {
-      this._router.navigateByUrl(this.navigationRoute);
+      this._router?.navigateByUrl(this.navigationRoute);
     }
   }
 

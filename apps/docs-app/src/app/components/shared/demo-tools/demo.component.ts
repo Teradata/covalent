@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin, Observable, Subject, Subscriber } from 'rxjs';
 import { catchError, map, takeUntil } from 'rxjs/operators';
@@ -10,6 +10,8 @@ import { catchError, map, takeUntil } from 'rxjs/operators';
   templateUrl: './demo.component.html',
 })
 export class DemoComponent implements OnDestroy {
+  private _http = inject(HttpClient);
+
   @Input() demoId!: string;
   @Input() demoTitle!: string;
   viewCode = false;
@@ -18,8 +20,6 @@ export class DemoComponent implements OnDestroy {
   stylesFile!: string;
 
   private _destroy$ = new Subject<void>();
-
-  constructor(private _http: HttpClient) {}
 
   ngOnDestroy(): void {
     this._destroy$.next();
@@ -36,19 +36,19 @@ export class DemoComponent implements OnDestroy {
           `assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.ts`,
           {
             responseType: 'text',
-          }
+          },
         ),
         html: this._http.get(
           `assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.html`,
           {
             responseType: 'text',
-          }
+          },
         ),
         styles: this._http.get(
           `assets/demos/${demoFolderName}/demos/${this.demoId}/${this.demoId}.component.scss`,
           {
             responseType: 'text',
-          }
+          },
         ),
       })
         .pipe(
@@ -63,7 +63,7 @@ export class DemoComponent implements OnDestroy {
                 html: responses.html,
                 styles: responses.styles,
               };
-            }
+            },
           ),
           catchError((error: Response) => {
             return new Observable<any>((subscriber: Subscriber<any>) => {
@@ -74,7 +74,7 @@ export class DemoComponent implements OnDestroy {
               }
             });
           }),
-          takeUntil(this._destroy$)
+          takeUntil(this._destroy$),
         )
         .subscribe(
           (demo: { typescript: string; html: string; styles: string }) => {
@@ -82,7 +82,7 @@ export class DemoComponent implements OnDestroy {
             this.htmlFile = demo.html;
             this.stylesFile = demo.styles;
             this.viewCode = true;
-          }
+          },
         );
     }
   }

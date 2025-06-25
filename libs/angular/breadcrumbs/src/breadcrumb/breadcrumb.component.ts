@@ -6,6 +6,7 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  inject,
 } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
@@ -17,6 +18,9 @@ import { MatIcon } from '@angular/material/icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbComponent implements AfterViewInit {
+  private _elementRef = inject(ElementRef);
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+
   private _displayCrumb = true;
   private _width = 0;
   private _displayIcon = true;
@@ -77,11 +81,6 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     // and showing them instead of the component doing itself for reasons like responsive
     return this._displayCrumb ? undefined : 'none';
   }
-
-  constructor(
-    private _elementRef: ElementRef,
-    private _changeDetectorRef: ChangeDetectorRef
-  ) {}
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element

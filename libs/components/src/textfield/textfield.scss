@@ -1,3 +1,5 @@
+@use '../theme/density.scss';
+
 :host {
   --mdc-text-field-label-ink-color: var(
     --mdc-theme-text-secondary-on-background
@@ -25,8 +27,17 @@
   );
 }
 
-:host([dense]) {
-  height: 48px;
+.mdc-text-field:not(.mdc-text-field--textarea) {
+  height: density.density-height(56px);
+
+  .mdc-floating-label--float-above {
+    transform: translateY(#{density.density-height(-37.25px, 0, -2px)}) scale(1);
+  }
+
+  &.mdc-text-field--with-leading-icon .mdc-floating-label--float-above {
+    transform: translateY(#{density.density-height(-37.25px, 0, -2px)})
+      translateX(-32px) scale(1);
+  }
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {

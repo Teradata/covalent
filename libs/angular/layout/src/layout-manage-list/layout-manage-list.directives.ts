@@ -1,12 +1,4 @@
-import {
-  Optional,
-  Directive,
-  Input,
-  Renderer2,
-  ElementRef,
-  Inject,
-  forwardRef,
-} from '@angular/core';
+import { Directive, Input, inject } from '@angular/core';
 import { TdLayoutManageListComponent } from './layout-manage-list.component';
 import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 
@@ -21,18 +13,13 @@ export class TdLayoutManageListToggleDirective extends BaseLayoutToggleDirective
     );
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutManageListComponent))
-    layout: TdLayoutManageListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutManageListComponent);
   }
 
   onClick(): void {
-    this._layout.toggle();
+    this._layout?.toggle();
   }
 }
 
@@ -47,18 +34,13 @@ export class TdLayoutManageListCloseDirective extends BaseLayoutToggleDirective 
     );
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutManageListComponent))
-    layout: TdLayoutManageListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutManageListComponent);
   }
 
   onClick(): void {
-    this._layout.close();
+    this._layout?.close();
   }
 }
 
@@ -73,17 +55,12 @@ export class TdLayoutManageListOpenDirective extends BaseLayoutToggleDirective {
     );
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutManageListComponent))
-    layout: TdLayoutManageListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutManageListComponent);
   }
 
   onClick(): void {
-    this._layout.open();
+    this._layout?.open();
   }
 }

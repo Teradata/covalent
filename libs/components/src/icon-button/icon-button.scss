@@ -1,4 +1,8 @@
+@use '../theme/density.scss';
+
 :host {
+  --mdc-icon-button-size: #{density.density-height(48px)};
+
   color: var(--mdc-theme-text-icon-on-background);
 
   .mdc-icon-button {

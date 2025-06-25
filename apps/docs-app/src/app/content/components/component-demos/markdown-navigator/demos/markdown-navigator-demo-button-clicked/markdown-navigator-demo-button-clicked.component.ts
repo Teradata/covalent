@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
@@ -10,13 +10,13 @@ import { IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
   templateUrl: './markdown-navigator-demo-button-clicked.component.html',
 })
 export class MarkdownNavigatorDemoButtonClickedComponent {
+  private _snackBar = inject(MatSnackBar);
+
   items: IMarkdownNavigatorItem[] = [
     {
       markdownString: `[Trigger button click event](#data={"planet":"mars"})`,
     },
   ];
-
-  constructor(private _snackBar: MatSnackBar) {}
 
   handleButtonClicked(data: ITdFlavoredMarkdownButtonClickEvent): void {
     this._snackBar.open(`Button clicked: ${JSON.stringify(data)}`, undefined, {

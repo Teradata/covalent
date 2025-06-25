@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, inject } from '@angular/core';
 
 const sql = `SELECT department_number, sampleid
 FROM department
@@ -71,20 +71,20 @@ const html = `<div layout="row" layout-align="start center" class="pad-xs pad-bo
   templateUrl: './code-editor-demo-basic.component.html',
 })
 export class CodeEditorDemoBasicComponent {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+
   editorLanguage = 'sql';
   editorVal: string = sql;
-
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
   changeLanguage(): void {
     this.editorVal =
       this.editorLanguage === 'sql'
         ? sql
         : this.editorLanguage === 'typescript'
-        ? typescript
-        : this.editorLanguage === 'javascript'
-        ? javascript
-        : html;
+          ? typescript
+          : this.editorLanguage === 'javascript'
+            ? javascript
+            : html;
     this._changeDetectorRef.detectChanges();
   }
 }

@@ -1,0 +1,14 @@
+{
+  "density": {
+    "interval": {
+      "value": "4px",
+      "type": "number",
+      "description": "Default interval number"
+    },
+    "mode": {
+      "value": 0,
+      "type": "number",
+      "description": "Default density mode (points to normal)"
+    }
+  }
+}

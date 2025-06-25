@@ -10,6 +10,7 @@ import {
   OnChanges,
   OnDestroy,
   SimpleChanges,
+  inject,
 } from '@angular/core';
 
 import { Subject, fromEvent, merge, timer } from 'rxjs';
@@ -31,6 +32,10 @@ import { assignDefined } from './utils';
   providers: [CHART_PROVIDER],
 })
 export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+  private _elementRef = inject(ElementRef);
+  private _optionsService = inject(TdChartOptionsService);
+
   private _destroy: Subject<boolean> = new Subject<boolean>();
   private _widthSubject: Subject<number> = new Subject<number>();
   private _heightSubject: Subject<number> = new Subject<number>();
@@ -85,12 +90,6 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   @Output() datazoom: EventEmitter<any> = new EventEmitter<any>();
   @Output() restore: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _elementRef: ElementRef,
-    private _optionsService: TdChartOptionsService
-  ) {}
-
   ngAfterViewInit(): void {
     this._initializeChart();
   }
@@ -140,9 +139,9 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
             },
           },
           this._options,
-          this.config ? this.config : {}
+          this.config ? this.config : {},
         ),
-        true
+        true,
       );
       this._changeDetectorRef.markForCheck();
     }
@@ -154,7 +153,7 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
       this.themeName ?? '',
       {
         renderer: this.renderer,
-      }
+      },
     );
     fromEvent(this._instance, 'click')
       .pipe(takeUntil(this._destroy))
@@ -199,7 +198,7 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
     merge(
       fromEvent(window, 'resize').pipe(debounceTime(100)),
       this._widthSubject.asObservable().pipe(distinctUntilChanged()),
-      this._heightSubject.asObservable().pipe(distinctUntilChanged())
+      this._heightSubject.asObservable().pipe(distinctUntilChanged()),
     )
       .pipe(takeUntil(this._destroy), debounceTime(100))
       .subscribe(() => {
@@ -215,7 +214,7 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
           assignDefined(this._options, options);
         }),
         debounceTime(0),
-        takeUntil(this._destroy)
+        takeUntil(this._destroy),
       )
       .subscribe(() => {
         this.render();
@@ -227,12 +226,12 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
           this._widthSubject.next(
             (<HTMLElement>(
               this._elementRef.nativeElement
-            )).getBoundingClientRect().width
+            )).getBoundingClientRect().width,
           );
           this._heightSubject.next(
             (<HTMLElement>(
               this._elementRef.nativeElement
-            )).getBoundingClientRect().height
+            )).getBoundingClientRect().height,
           );
         }
       });

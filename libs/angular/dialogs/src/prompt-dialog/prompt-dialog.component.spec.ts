@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   TestBed,
   waitForAsync,
@@ -15,9 +15,9 @@ import { TdPromptDialogComponent } from './prompt-dialog.component';
 describe('Component: TdPromptDialogComponent', () => {
   @Component({ template: '' })
   class TestComponent {
-    promptDialogComponent!: TdPromptDialogComponent;
+    private _dialogService = inject(TdDialogService);
 
-    constructor(private _dialogService: TdDialogService) {}
+    promptDialogComponent!: TdPromptDialogComponent;
 
     openPrompt(): void {
       const ref = this._dialogService.openPrompt({
@@ -49,7 +49,7 @@ describe('Component: TdPromptDialogComponent', () => {
     fixture.componentInstance.openPrompt();
     const focusSpy = jest.spyOn(
       fixture.componentInstance.promptDialogComponent._input.nativeElement,
-      'focus'
+      'focus',
     );
     fixture.componentInstance.promptDialogComponent.ngAfterViewInit();
     fixture.detectChanges();
@@ -57,15 +57,18 @@ describe('Component: TdPromptDialogComponent', () => {
     expect(focusSpy).toHaveBeenCalled();
   }));
 
-  it('should select call the `select()` method once the input is focused', fakeAsync(() => {
+  it('should call the `select()` method once the input is focused', fakeAsync(() => {
     fixture.componentInstance.openPrompt();
-    const selectSpy = jest.spyOn(
-      fixture.componentInstance.promptDialogComponent._input.nativeElement,
-      'select'
-    );
+    const input =
+      fixture.componentInstance.promptDialogComponent._input.nativeElement;
+    const selectSpy = jest.spyOn(input, 'select');
     fixture.componentInstance.promptDialogComponent.ngAfterViewInit();
     fixture.detectChanges();
+
+    // Simulate the focus event which should trigger select()
+    input.dispatchEvent(new Event('focus'));
     tick(500);
+
     expect(selectSpy).toHaveBeenCalled();
   }));
 });

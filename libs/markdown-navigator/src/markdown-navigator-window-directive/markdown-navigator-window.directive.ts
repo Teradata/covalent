@@ -1,4 +1,4 @@
-import { Directive, HostListener, Input } from '@angular/core';
+import { Directive, HostListener, Input, inject } from '@angular/core';
 import {
   TdMarkdownNavigatorWindowService,
   IMarkdownNavigatorWindowConfig,
@@ -8,11 +8,12 @@ import {
   selector: '[tdMarkdownNavigatorWindow]',
 })
 export class TdMarkdownNavigatorWindowDirective {
+  private _markdownNavigatorWindowService = inject(
+    TdMarkdownNavigatorWindowService,
+  );
+
   @Input('tdMarkdownNavigatorWindow') config?: IMarkdownNavigatorWindowConfig;
   @Input() disabled = false;
-  constructor(
-    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService
-  ) {}
 
   @HostListener('click') click(): void {
     if (!this.disabled && this.config) {

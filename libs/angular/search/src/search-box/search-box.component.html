@@ -20,8 +20,8 @@
     [placeholder]="placeholder"
     [clearIcon]="clearIcon"
     (searchDebounce)="handleSearchDebounce($event)"
-    (search)="handleSearch($event)"
-    (clear)="handleClear();"
+    (searchChange)="handleSearch($event)"
+    (clear)="handleClear()"
     (blur)="handleBlur()"
   ></td-search-input>
 </div>

@@ -3,6 +3,7 @@ import {
   ElementRef,
   ViewChild,
   ViewContainerRef,
+  inject,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -22,12 +23,17 @@ export class ComponentHeroComponent {
   template: '',
 })
 export class ComponentHeroComponentDynamicComponent {
+  private route = inject(ActivatedRoute);
+  private vcr = inject(ViewContainerRef);
+
   resourceUrl: any = 'test';
 
   @ViewChild('container') //normal way
   container!: ElementRef;
 
-  constructor(private route: ActivatedRoute, private vcr: ViewContainerRef) {
+  constructor() {
+    const route = this.route;
+
     this.resourceUrl = route.snapshot.data['resourceUrl'];
     this.vcr.clear();
     this.vcr.createComponent(this.resourceUrl);

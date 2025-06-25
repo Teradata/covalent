@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TdDialogService } from '@covalent/core/dialogs';
 
 @Component({
@@ -8,7 +8,7 @@ import { TdDialogService } from '@covalent/core/dialogs';
   templateUrl: './message-demo-action.component.html',
 })
 export class MessageDemoActionComponent {
-  constructor(private _dialogService: TdDialogService) {}
+  private _dialogService = inject(TdDialogService);
 
   showAlert(): void {
     this._dialogService.openAlert({

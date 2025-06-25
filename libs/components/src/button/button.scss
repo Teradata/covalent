@@ -1,3 +1,5 @@
+@use '../theme/density.scss';
+
 :host {
   // override MDC button color
   --mdc-button-outline-color: var(--cv-theme-outline);
@@ -5,6 +7,11 @@
   --mdc-typography-button-text-transform: none;
   --mdc-button-disabled-fill-color: var(--cv-theme-on-surface-12);
   --mdc-button-disabled-ink-color: var(--cv-theme-on-surface-38);
+}
+
+// --- apply height density --- //
+.mdc-button {
+  height: density.density-height(36px);
 }
 
 @mixin buttonColor($colorMap) {

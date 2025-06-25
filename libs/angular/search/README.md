@@ -41,19 +41,7 @@
 Example for HTML usage:
 
 ```html
-<td-search-box
-  backIcon="arrow_back"
-  placeholder="Search here"
-  [(ngModel)]="searchInputTerm"
-  [showUnderline]="false|true"
-  [debounce]="500"
-  [alwaysVisible]="false|true"
-  (searchDebounce)="searchInputTerm = $event"
-  (search)="searchInputTerm = $event"
-  (clear)="searchInputTerm = ''"
-  (blur)="onBlurEvent()"
->
-</td-search-box>
+<td-search-box backIcon="arrow_back" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (searchChange)="searchInputTerm = $event" (clear)="searchInputTerm = ''" (blur)="onBlurEvent()"> </td-search-box>
 ```
 
 # TdSearchInputComponent: td-search-input
@@ -102,17 +90,7 @@ Example for HTML usage:
 Example for HTML usage:
 
 ```html
-<td-search-input
-  appearance="fill|outline"
-  placeholder="Search here"
-  [(ngModel)]="searchInputTerm"
-  [showUnderline]="false|true"
-  [debounce]="500"
-  (searchDebounce)="searchInputTerm = $event"
-  (search)="searchInputTerm = $event"
-  (clear)="searchInputTerm = ''"
->
-</td-search-input>
+<td-search-input appearance="fill|outline" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (searchChange)="searchInputTerm = $event" (clear)="searchInputTerm = ''"> </td-search-input>
 ```
 
 ## Setup

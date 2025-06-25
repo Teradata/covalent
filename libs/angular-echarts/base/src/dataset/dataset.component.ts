@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   OnChanges,
   OnDestroy,
+  inject,
 } from '@angular/core';
 import { TdChartOptionsService } from '../chart-options.service';
 import { assignDefined } from '../utils';
@@ -14,6 +15,8 @@ import { assignDefined } from '../utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdDatasetComponent implements OnChanges, OnDestroy {
+  private _optionsService = inject(TdChartOptionsService);
+
   private _state: any = {};
 
   @Input() id?: string;
@@ -21,8 +24,6 @@ export class TdDatasetComponent implements OnChanges, OnDestroy {
   @Input() source?: object | any[];
   @Input() dimensions?: any[];
   @Input() sourceHeader?: boolean;
-
-  constructor(private _optionsService: TdChartOptionsService) {}
 
   ngOnChanges(): void {
     this._setOptions();
@@ -41,7 +42,7 @@ export class TdDatasetComponent implements OnChanges, OnDestroy {
         dimensions: this.dimensions,
         sourceHeader: this.sourceHeader,
       },
-      this.config ? this.config : {}
+      this.config ? this.config : {},
     );
     // set dataset configuration in parent chart and render new configurations
     this._optionsService.setOption('dataset', config);

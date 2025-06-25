@@ -1,8 +1,11 @@
+@use '../theme/density.scss';
+
 :host {
   --mdc-tab-text-label-color-default: var(
     --mdc-theme-text-primary-on-background
   );
   --mdc-tab-color-default: var(--mdc-theme-text-icon-on-background);
+  --mdc-tab-height: #{density.density-height(48px)};
 
   .mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
     color: var(--mdc-theme-text-primary-on-background);
@@ -10,5 +13,9 @@
 
   .mdc-tab--active {
     font-variation-settings: 'FILL' 1;
+  }
+
+  &[minwidth] {
+    flex: 0 0 auto;
   }
 }

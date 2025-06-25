@@ -12,6 +12,5 @@ $dark-colors: map-merge($dark-colors, map-get(tokens.$tokens, 'dark'));
 // Define the base theme using dark tokens w/ dark tokens
 :root {
   @include theme.components-theme($dark-colors, $typography);
-
   @include data-table.data-table-theme($dark-colors);
 }

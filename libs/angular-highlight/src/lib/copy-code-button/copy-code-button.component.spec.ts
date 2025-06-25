@@ -11,19 +11,17 @@ describe('CopyCodeButtonComponent', () => {
   let component: TdCopyCodeButtonComponent;
   let fixture: ComponentFixture<TdCopyCodeButtonComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          ClipboardModule,
-          MatIconModule,
-          MatTooltipModule,
-          MatButtonModule,
-          TdCopyCodeButtonComponent,
-        ],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        ClipboardModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatButtonModule,
+        TdCopyCodeButtonComponent,
+      ],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TdCopyCodeButtonComponent);
@@ -34,7 +32,7 @@ describe('CopyCodeButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
     expect(
-      fixture.debugElement.query(By.css('button')).nativeElement
+      fixture.debugElement.query(By.css('button')).nativeElement,
     ).toBeTruthy();
   });
 
@@ -43,13 +41,9 @@ describe('CopyCodeButtonComponent', () => {
     component.copyCodeToClipboard = true;
     expect(component).toBeTruthy();
     expect(
-      fixture.debugElement.query(By.css('button')).nativeElement
+      fixture.debugElement.query(By.css('button')).nativeElement,
     ).toBeTruthy();
-    expect(
-      fixture.debugElement
-        .query(By.css('button'))
-        .nativeElement.getAttribute('ng-reflect-message')
-    ).toEqual('Copy');
+    expect(component.copyTooltip).toEqual('Copy');
   });
 
   it('should override tooltip', () => {
@@ -59,12 +53,8 @@ describe('CopyCodeButtonComponent', () => {
     fixture.whenStable();
     expect(component).toBeTruthy();
     expect(
-      fixture.debugElement.query(By.css('button')).nativeElement
+      fixture.debugElement.query(By.css('button')).nativeElement,
     ).toBeTruthy();
-    expect(
-      fixture.debugElement
-        .query(By.css('button'))
-        .nativeElement.getAttribute('ng-reflect-message')
-    ).toEqual('CC');
+    expect(component.copyTooltip).toEqual('CC');
   });
 });

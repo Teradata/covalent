@@ -1,12 +1,4 @@
-import {
-  Optional,
-  Directive,
-  Input,
-  Renderer2,
-  ElementRef,
-  Inject,
-  forwardRef,
-} from '@angular/core';
+import { Directive, Input, inject } from '@angular/core';
 import { TdLayoutComponent } from './layout.component';
 import { BaseLayoutToggleDirective } from './layout-toggle.class';
 
@@ -19,18 +11,13 @@ export class TdLayoutToggleDirective extends BaseLayoutToggleDirective {
     this.disabled = !(<any>tdLayoutToggle === '' || tdLayoutToggle);
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutComponent))
-    layout: TdLayoutComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutComponent);
   }
 
   onClick(): void {
-    this._layout.toggle();
+    this._layout?.toggle();
   }
 }
 
@@ -43,18 +30,13 @@ export class TdLayoutCloseDirective extends BaseLayoutToggleDirective {
     this.disabled = !(<any>tdLayoutClose === '' || tdLayoutClose);
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutComponent))
-    layout: TdLayoutComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutComponent);
   }
 
   onClick(): void {
-    this._layout.close();
+    this._layout?.close();
   }
 }
 
@@ -67,17 +49,12 @@ export class TdLayoutOpenDirective extends BaseLayoutToggleDirective {
     this.disabled = !(<any>tdLayoutOpen === '' || tdLayoutOpen);
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutComponent))
-    layout: TdLayoutComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutComponent);
   }
 
   onClick(): void {
-    this._layout.open();
+    this._layout?.open();
   }
 }

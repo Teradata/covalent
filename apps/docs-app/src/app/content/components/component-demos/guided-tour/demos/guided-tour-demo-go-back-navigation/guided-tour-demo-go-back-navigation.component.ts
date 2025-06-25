@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   CovalentGuidedTourService,
   IGuidedTour,
@@ -11,7 +11,7 @@ import {
   templateUrl: './guided-tour-demo-go-back-navigation.component.html',
 })
 export class GuidedTourDemoGoBackNavigationComponent implements OnInit {
-  constructor(private _guidedTourService: CovalentGuidedTourService) {}
+  private _guidedTourService = inject(CovalentGuidedTourService);
 
   ngOnInit(): void {
     const goBackNavigationTour: IGuidedTour = {
@@ -66,7 +66,7 @@ export class GuidedTourDemoGoBackNavigationComponent implements OnInit {
     };
     this._guidedTourService.registerTour(
       'goBackNavigationTour',
-      goBackNavigationTour
+      goBackNavigationTour,
     );
   }
 

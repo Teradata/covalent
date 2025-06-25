@@ -31,7 +31,7 @@
         *ngIf="!debounce"
         placeholder="Search here"
         [alwaysVisible]="alwaysVisible"
-        (search)="searchBoxTerm = $event"
+        (searchChange)="searchBoxTerm = $event"
         (clear)="searchBoxTerm = ''"
         flex
       ></td-search-box>

@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 import {
   TdChartOptionsService,
@@ -113,7 +114,9 @@ export class TdChartSeriesBarComponent
   @Input() zlevel?: number;
   @Input() z?: number;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('bar', _optionsService);
   }
 

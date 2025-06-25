@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -109,7 +110,9 @@ export class TdChartSeriesPieComponent
   @Input() center?: object;
   @Input() radius?: number | string | any[];
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('pie', _optionsService);
   }
 

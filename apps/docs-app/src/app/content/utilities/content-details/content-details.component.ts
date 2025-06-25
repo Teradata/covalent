@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { componentDetails } from '../../components/components';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -10,6 +10,9 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./content-details.component.scss'],
 })
 export class ContentDetailsComponent implements OnInit, OnDestroy {
+  private _route = inject(ActivatedRoute);
+  private _router = inject(Router);
+
   componentArray: any[];
   component: any;
   navLinks: any = [
@@ -32,7 +35,7 @@ export class ContentDetailsComponent implements OnInit, OnDestroy {
 
   private _destroy$ = new Subject<void>();
 
-  constructor(private _route: ActivatedRoute, private _router: Router) {
+  constructor() {
     this.componentArray = componentDetails;
   }
 
@@ -41,7 +44,7 @@ export class ContentDetailsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this._destroy$))
       .subscribe((params: ParamMap) => {
         const componentMatch: any = this.componentArray.find(
-          (e: any) => e.id === params.get('id')
+          (e: any) => e.id === params.get('id'),
         );
         if (componentMatch) {
           this.component = componentMatch;

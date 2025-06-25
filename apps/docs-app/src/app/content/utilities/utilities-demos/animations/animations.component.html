@@ -24,7 +24,7 @@
   <a
     mat-raised-button
     color="primary"
-    href="https://v19.angular.dev/guide/animations"
+    href="https://v20.angular.dev/guide/animations"
     target="_blank"
     class="push-top-sm"
   >
@@ -73,7 +73,7 @@
         mat-raised-button
         [@tdRotate]="{
           value: rotateState2,
-          params: { duration: 500, degreesEnd: -45 }
+          params: { duration: 500, degreesEnd: -45 },
         }"
         (click)="rotateState2 = !rotateState2"
         color="accent"
@@ -82,7 +82,7 @@
         <mat-icon
           [@tdRotate]="{
             value: rotateState2,
-            params: { duration: 750, degreesEnd: 545 }
+            params: { duration: 750, degreesEnd: 545 },
           }"
           >mood</mat-icon
         >

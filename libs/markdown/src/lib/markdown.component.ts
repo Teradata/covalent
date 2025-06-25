@@ -12,6 +12,7 @@ import {
   HostBinding,
   NgZone,
   OnDestroy,
+  inject,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
@@ -70,12 +71,12 @@ function generateHref(currentHref: string, relativeHref: string): string {
 function normalizeHtmlHrefs(
   html: string,
   currentHref: string,
-  fileLinkExtensions?: string[]
+  fileLinkExtensions?: string[],
 ): string {
   if (currentHref) {
     const document: Document = new DOMParser().parseFromString(
       html,
-      'text/html'
+      'text/html',
     );
     document
       .querySelectorAll<HTMLAnchorElement>('a[href]')
@@ -95,7 +96,7 @@ function normalizeHtmlHrefs(
             // only check .md urls or urls ending with the fileLinkExtensions
 
             const hrefWithoutHash: string = removeTrailingHash(
-              link.getAttribute('href')
+              link.getAttribute('href'),
             );
 
             url.href = generateHref(currentHref, hrefWithoutHash);
@@ -127,7 +128,7 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
   if (currentHref) {
     const document: Document = new DOMParser().parseFromString(
       html,
-      'text/html'
+      'text/html',
     );
     document
       .querySelectorAll<HTMLImageElement>('img[src]')
@@ -144,7 +145,7 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
             isGithubHref(currentHref)
               ? rawGithubHref(currentHref)
               : currentHref,
-            src
+            src,
           );
         }
         // gh svgs need to have ?sanitize=true
@@ -166,7 +167,7 @@ function addIdsToHeadings(html: string): string {
   if (html) {
     const document: Document = new DOMParser().parseFromString(
       html,
-      'text/html'
+      'text/html',
     );
     document
       .querySelectorAll('h1, h2, h3, h4, h5, h6')
@@ -184,7 +185,7 @@ function changeStyleAlignmentToClass(html: string) {
   if (html) {
     const document: Document = new DOMParser().parseFromString(
       html,
-      'text/html'
+      'text/html',
     );
     ['right', 'center', 'left'].forEach((alignment: string) => {
       document
@@ -221,6 +222,11 @@ function stripAllHtmlTags(input: string): string {
 export class TdMarkdownComponent
   implements OnChanges, AfterViewInit, OnDestroy
 {
+  private _renderer = inject(Renderer2);
+  private _elementRef = inject(ElementRef);
+  private _domSanitizer = inject(DomSanitizer);
+  private _ngZone = inject(NgZone);
+
   private _content!: string;
   private _simpleLineBreaks = false;
   private _hostedUrl!: string;
@@ -300,13 +306,6 @@ export class TdMarkdownComponent
    */
   @Output() contentReady: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(
-    private _renderer: Renderer2,
-    private _elementRef: ElementRef,
-    private _domSanitizer: DomSanitizer,
-    private _ngZone: NgZone
-  ) {}
-
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
     if (
@@ -324,7 +323,7 @@ export class TdMarkdownComponent
   ngAfterViewInit(): void {
     if (!this._content) {
       this._loadContent(
-        (<HTMLElement>this._elementRef.nativeElement).textContent
+        (<HTMLElement>this._elementRef.nativeElement).textContent,
       );
     }
     this._viewInit = true;
@@ -350,7 +349,7 @@ export class TdMarkdownComponent
           ) {
             this.handleFileAnchorClicks(event);
           }
-        }
+        },
       );
     });
   }
@@ -364,7 +363,7 @@ export class TdMarkdownComponent
       this._loadContent(this._content);
     } else if (this._viewInit) {
       this._loadContent(
-        (<HTMLElement>this._elementRef.nativeElement).textContent
+        (<HTMLElement>this._elementRef.nativeElement).textContent,
       );
     }
   }
@@ -378,7 +377,7 @@ export class TdMarkdownComponent
       this._renderer.setProperty(
         this._elementRef.nativeElement,
         'innerHTML',
-        ''
+        '',
       );
       // Parse html string into actual HTML elements.
       this._elementFromString(this._render(markdown));
@@ -388,8 +387,8 @@ export class TdMarkdownComponent
       setTimeout(
         () =>
           scrollToAnchor(this._elementRef.nativeElement, this._anchor, true),
-        250
-      )
+        250,
+      ),
     );
     this.contentReady.emit();
   }
@@ -416,19 +415,19 @@ export class TdMarkdownComponent
     const html: string =
       this._domSanitizer.sanitize(
         SecurityContext.HTML,
-        changeStyleAlignmentToClass(markupStr)
+        changeStyleAlignmentToClass(markupStr),
       ) ?? '';
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(
       html,
       this._hostedUrl,
-      this._fileLinkExtensions
+      this._fileLinkExtensions,
     );
     const htmlWithAbsoluteImgSrcs: string = normalizeImageSrcs(
       htmlWithAbsoluteHrefs,
-      this._hostedUrl
+      this._hostedUrl,
     );
     const htmlWithHeadingIds: string = addIdsToHeadings(
-      htmlWithAbsoluteImgSrcs
+      htmlWithAbsoluteImgSrcs,
     );
     const htmlWithVideos: SafeHtml = renderVideoElements(htmlWithHeadingIds);
     this._renderer.setProperty(div, 'innerHTML', htmlWithVideos);

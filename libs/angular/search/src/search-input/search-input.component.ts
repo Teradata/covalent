@@ -5,13 +5,13 @@ import {
   Input,
   Output,
   EventEmitter,
-  Optional,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   forwardRef,
   OnDestroy,
   ElementRef,
   NgZone,
+  inject,
 } from '@angular/core';
 import {
   trigger,
@@ -23,7 +23,10 @@ import {
 import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material/input';
-import { MatFormField, MatFormFieldAppearance } from '@angular/material/form-field';
+import {
+  MatFormField,
+  MatFormFieldAppearance,
+} from '@angular/material/form-field';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, skip, takeUntil } from 'rxjs/operators';
 import {
@@ -61,7 +64,7 @@ export const _TdSearchInputMixinBase =
           transform: 'translateX(-150%)',
           opacity: 0,
           display: 'none',
-        })
+        }),
       ),
       state(
         'hide-right',
@@ -69,7 +72,7 @@ export const _TdSearchInputMixinBase =
           transform: 'translateX(150%)',
           opacity: 0,
           display: 'none',
-        })
+        }),
       ),
       state(
         'show',
@@ -77,7 +80,7 @@ export const _TdSearchInputMixinBase =
           transform: 'translateX(0%)',
           opacity: 1,
           display: 'block',
-        })
+        }),
       ),
       transition('* => show', animate('200ms ease-in')),
       transition('show => *', animate('200ms ease-out')),
@@ -88,6 +91,9 @@ export class TdSearchInputComponent
   extends _TdSearchInputMixinBase
   implements IControlValueAccessor, OnInit, OnDestroy
 {
+  private _dir = inject(Dir, { optional: true });
+  private _ngZone = inject(NgZone);
+
   @ViewChild(MatInput, { static: true }) _input?: MatInput;
 
   @ViewChild('searchElement', { static: true, read: ElementRef })
@@ -136,7 +142,7 @@ export class TdSearchInputComponent
    * search: function($event)
    * Event emitted after the key enter has been pressed.
    */
-  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * clear: function()
@@ -159,11 +165,9 @@ export class TdSearchInputComponent
 
   private _destroy$ = new Subject<void>();
 
-  constructor(
-    @Optional() private _dir: Dir,
-    override _changeDetectorRef: ChangeDetectorRef,
-    private _ngZone: NgZone
-  ) {
+  constructor() {
+    const _changeDetectorRef = inject(ChangeDetectorRef);
+
     super(_changeDetectorRef);
   }
 
@@ -172,7 +176,7 @@ export class TdSearchInputComponent
       ?.pipe(
         debounceTime(this.debounce),
         skip(1), // skip first change when value is set to undefined
-        takeUntil(this._destroy$)
+        takeUntil(this._destroy$),
       )
       .subscribe((value: string) => {
         this._searchTermChanged(value);
@@ -181,7 +185,7 @@ export class TdSearchInputComponent
     this._ngZone.runOutsideAngular(() =>
       fromEvent(this._searchElement.nativeElement, 'search')
         .pipe(takeUntil(this._destroy$))
-        .subscribe(this._stopPropagation)
+        .subscribe(this._stopPropagation),
     );
   }
 
@@ -203,7 +207,7 @@ export class TdSearchInputComponent
   handleSearch(event: Event): void {
     this._stopPropagation(event);
     if (typeof this.value == 'string') {
-      this.search.emit(this.value);
+      this.searchChange.emit(this.value);
     }
   }
 

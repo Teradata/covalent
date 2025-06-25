@@ -1,4 +1,4 @@
-import { Directive, Input, OnInit, OnDestroy } from '@angular/core';
+import { Directive, Input, OnInit, OnDestroy, inject } from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
 
 import {
@@ -24,6 +24,10 @@ let TD_LOADING_NEXT_ID = 0;
   selector: '[tdLoading]',
 })
 export class TdLoadingDirective implements OnInit, OnDestroy {
+  private _viewContainerRef = inject(ViewContainerRef);
+  private _templateRef = inject<TemplateRef<TdLoadingContext>>(TemplateRef);
+  private _loadingService = inject(TdLoadingService);
+
   private _context: TdLoadingContext = new TdLoadingContext();
   private _loadingRef?: ILoadingRef;
 
@@ -83,12 +87,6 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoadingColor') color: 'primary' | 'accent' | 'warn' = 'primary';
 
-  constructor(
-    private _viewContainerRef: ViewContainerRef,
-    private _templateRef: TemplateRef<TdLoadingContext>,
-    private _loadingService: TdLoadingService
-  ) {}
-
   /**
    * Registers component in the DOM, so it will be available when calling resolve/register.
    */
@@ -125,7 +123,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
         },
         this._viewContainerRef,
         this._templateRef,
-        this._context
+        this._context,
       );
     }
   }

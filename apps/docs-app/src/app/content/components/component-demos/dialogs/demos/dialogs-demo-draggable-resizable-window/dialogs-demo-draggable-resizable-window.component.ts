@@ -1,10 +1,10 @@
 import {
   Component,
-  Inject,
   Renderer2,
   Output,
   EventEmitter,
   OnDestroy,
+  inject,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DragRef } from '@angular/cdk/drag-drop';
@@ -44,13 +44,11 @@ export class DraggableResizableWindowDialogComponent {
   templateUrl: './dialogs-demo-draggable-resizable-window.component.html',
 })
 export class DialogsDemoDraggableResizableWindowComponent implements OnDestroy {
-  private _destroy$ = new Subject<void>();
+  private _dialogService = inject(TdDialogService);
+  private _document = inject(DOCUMENT);
+  private _renderer2 = inject(Renderer2);
 
-  constructor(
-    private _dialogService: TdDialogService,
-    @Inject(DOCUMENT) private _document: any,
-    private _renderer2: Renderer2
-  ) {}
+  private _destroy$ = new Subject<void>();
 
   ngOnDestroy(): void {
     this._destroy$.next();
@@ -60,15 +58,14 @@ export class DialogsDemoDraggableResizableWindowComponent implements OnDestroy {
     const {
       matDialogRef,
       dragRefSubject,
-    }: IDraggableRefs<DraggableResizableWindowDialogComponent> = this._dialogService.openDraggable(
-      {
+    }: IDraggableRefs<DraggableResizableWindowDialogComponent> =
+      this._dialogService.openDraggable({
         component: DraggableResizableWindowDialogComponent,
         dragHandleSelectors: ['mat-toolbar'],
         config: {
           panelClass: ['td-window-dialog'], // pass this class in to ensure certain css is properly added
         },
-      }
-    );
+      });
 
     // listen to close event
     matDialogRef.componentInstance.closed
@@ -83,7 +80,7 @@ export class DialogsDemoDraggableResizableWindowComponent implements OnDestroy {
           this._document,
           this._renderer2,
           matDialogRef,
-          dragRf
+          dragRf,
         );
       });
 

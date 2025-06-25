@@ -1,9 +1,9 @@
 import {
   Injectable,
-  Inject,
   RendererFactory2,
   Renderer2,
   Type,
+  inject,
 } from '@angular/core';
 import {
   MatDialogRef,
@@ -59,22 +59,24 @@ const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
 
 @Injectable()
 export class TdMarkdownNavigatorWindowService {
+  private _tdDialogService = inject(TdDialogService);
+  private _document = inject(DOCUMENT);
+  private rendererFactory = inject(RendererFactory2);
+
   private _renderer2: Renderer2;
   private dragRef!: DragRef;
   private resizableDraggableDialog!: ResizableDraggableDialog;
   private markdownNavigatorWindowDialog!: MatDialogRef<TdMarkdownNavigatorWindowComponent>;
   private markdownNavigatorWindowDialogsOpen = 0;
 
-  constructor(
-    private _tdDialogService: TdDialogService,
-    @Inject(DOCUMENT) private _document: any,
-    private rendererFactory: RendererFactory2
-  ) {
+  constructor() {
+    const rendererFactory = this.rendererFactory;
+
     this._renderer2 = rendererFactory.createRenderer(undefined, null);
   }
 
   public open(
-    config: IMarkdownNavigatorWindowConfig
+    config: IMarkdownNavigatorWindowConfig,
   ): MatDialogRef<TdMarkdownNavigatorWindowComponent> {
     this.close();
 
@@ -118,7 +120,7 @@ export class TdMarkdownNavigatorWindowService {
         this._document,
         this._renderer2,
         this.markdownNavigatorWindowDialog,
-        this.dragRef
+        this.dragRef,
       );
     });
     this._handleEvents();
@@ -140,7 +142,7 @@ export class TdMarkdownNavigatorWindowService {
 
   private _handleEvents(): void {
     this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe(() =>
-      this.close()
+      this.close(),
     );
 
     this.markdownNavigatorWindowDialog

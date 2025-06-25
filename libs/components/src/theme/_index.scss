@@ -4,6 +4,7 @@
   }
 }
 
+// --- components theme mixin --- //
 @mixin components-theme($theme, $typography) {
   // Covalent theme tokens as css variables
   @include css-variable-tokens($theme);

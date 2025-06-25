@@ -1,9 +1,9 @@
+/* eslint-disable @angular-eslint/prefer-inject */
 /* tslint:disable */
 import {
   Directive,
   Inject,
   Injectable,
-  InjectFlags,
   InjectionToken,
   Injector,
   OnDestroy,
@@ -63,7 +63,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
     private _parentSideSheet: _CovalentSideSheetBase<C> | undefined,
     private _sideSheetRefConstructor: Type<CovalentSideSheetRef<any>>,
     private _sideSheetContainerType: Type<C>,
-    private _sideSheetDataToken: InjectionToken<unknown>
+    private _sideSheetDataToken: InjectionToken<unknown>,
   ) {}
 
   /** Keeps track of the currently-open side-sheets. */
@@ -75,7 +75,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
 
   open<T, D = unknown, R = unknown>(
     componentOrTemplateRef: ComponentType<T> | TemplateRef<T>,
-    config?: CovalentSideSheetConfig<D>
+    config?: CovalentSideSheetConfig<D>,
   ): CovalentSideSheetRef<T, R> {
     config = {
       ...(this._defaultOptions || new CovalentSideSheetConfig()),
@@ -86,13 +86,13 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
     const overlayRef = this._createOverlay(config);
     const sideSheetContainer = this._attachSideSheetContainer(
       overlayRef,
-      config
+      config,
     );
     const sideSheetRef = this._attachSideSheetContent<T, R>(
       componentOrTemplateRef,
       sideSheetContainer,
       overlayRef,
-      config
+      config,
     );
     const prevSideSheetRef: CovalentSideSheetRef<unknown> =
       this.openSideSheets.slice(-1)[0];
@@ -121,9 +121,9 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
       .pipe(
         filter(
           (event) =>
-            event.state === 'closing' && !!(prevSideSheetRef && prevOverlayRef)
+            event.state === 'closing' && !!(prevSideSheetRef && prevOverlayRef),
         ),
-        take(1)
+        take(1),
       )
       .subscribe(() => {
         prevOverlayRef.overlayElement.style.transition = `${AnimationDurations.EXITING} ${AnimationCurves.DECELERATION_CURVE}`;
@@ -191,7 +191,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
    */
   private _attachSideSheetContainer(
     overlay: OverlayRef,
-    config: CovalentSideSheetConfig
+    config: CovalentSideSheetConfig,
   ): C {
     const userInjector =
       config && config.viewContainerRef && config.viewContainerRef.injector;
@@ -204,7 +204,6 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
       this._sideSheetContainerType,
       config.viewContainerRef,
       injector,
-      config.componentFactoryResolver
     );
     const containerRef = overlay.attach<C>(containerPortal);
 
@@ -224,7 +223,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
     componentOrTemplateRef: ComponentType<T> | TemplateRef<T>,
     sideSheetContainer: C,
     overlayRef: OverlayRef,
-    config: CovalentSideSheetConfig
+    config: CovalentSideSheetConfig,
   ): CovalentSideSheetRef<T, R> {
     // Create a reference to the side-sheet we're creating in order to give the user a handle
     // to modify and close it.
@@ -232,7 +231,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
       overlayRef,
       config,
       sideSheetContainer,
-      config.id
+      config.id,
     );
 
     if (componentOrTemplateRef instanceof TemplateRef) {
@@ -241,20 +240,20 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
         new TemplatePortal<T>(componentOrTemplateRef, null!, <any>{
           $implicit: config.data,
           sideSheetRef,
-        })
+        }),
       );
     } else {
       const injector = this._createInjector<T>(
         config,
         sideSheetRef,
-        sideSheetContainer
+        sideSheetContainer,
       );
       const contentRef = sideSheetContainer.attach<T>(
         new ComponentPortal(
           componentOrTemplateRef,
           config.viewContainerRef,
-          injector
-        )
+          injector,
+        ),
       );
       sideSheetRef.componentInstance = contentRef.instance;
     }
@@ -267,7 +266,7 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
   private _createInjector<T>(
     config: CovalentSideSheetConfig,
     sideSheetRef: CovalentSideSheetRef<T>,
-    sideSheetContainer: C
+    sideSheetContainer: C,
   ): Injector {
     const userInjector =
       config && config.viewContainerRef && config.viewContainerRef.injector;
@@ -285,11 +284,9 @@ export class _CovalentSideSheetBase<C extends _CovalentSideSheetContainerBase>
     if (
       config.direction &&
       (!userInjector ||
-        !userInjector.get<Directionality | null>(
-          Directionality,
-          null,
-          InjectFlags.Optional
-        ))
+        !userInjector.get<Directionality | null>(Directionality, null, {
+          optional: true,
+        }))
     ) {
       providers.push({
         provide: Directionality,
@@ -336,7 +333,7 @@ export class CovalentSideSheet extends _CovalentSideSheetBase<CovalentSideSheetC
     @Optional()
     @Inject(MAT_DIALOG_DEFAULT_OPTIONS)
     defaultOptions: CovalentSideSheetConfig,
-    @Optional() @SkipSelf() parentSideSheet: CovalentSideSheet
+    @Optional() @SkipSelf() parentSideSheet: CovalentSideSheet,
   ) {
     super(
       overlay,
@@ -345,7 +342,7 @@ export class CovalentSideSheet extends _CovalentSideSheetBase<CovalentSideSheetC
       parentSideSheet,
       CovalentSideSheetRef,
       CovalentSideSheetContainerComponent,
-      MAT_DIALOG_DATA
+      MAT_DIALOG_DATA,
     );
   }
 }

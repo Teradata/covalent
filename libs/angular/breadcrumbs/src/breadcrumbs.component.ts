@@ -11,6 +11,7 @@ import {
   Input,
   HostBinding,
   AfterViewInit,
+  inject,
 } from '@angular/core';
 
 import { fromEvent, Subject } from 'rxjs';
@@ -27,6 +28,9 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 export class TdBreadcrumbsComponent
   implements OnInit, AfterContentInit, AfterViewInit, OnDestroy
 {
+  private _elementRef = inject(ElementRef);
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+
   private _resizing = false;
   private _separatorIcon = 'chevron_right';
   private _destroy$ = new Subject<void>();
@@ -49,11 +53,6 @@ export class TdBreadcrumbsComponent
   public get separatorIcon(): string {
     return this._separatorIcon;
   }
-
-  constructor(
-    private _elementRef: ElementRef,
-    private _changeDetectorRef: ChangeDetectorRef
-  ) {}
 
   ngOnInit(): void {
     fromEvent(window, 'resize')
@@ -132,7 +131,7 @@ export class TdBreadcrumbsComponent
           breadcrumb.separatorIcon = this.separatorIcon;
           // don't show the icon on the last breadcrumb
           breadcrumb.displayIcon = index < breadcrumbArray.length - 1;
-        }
+        },
       );
     }
   }

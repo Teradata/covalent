@@ -10,6 +10,7 @@ import {
   OnInit,
   OnDestroy,
   NgZone,
+  inject,
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
@@ -17,6 +18,10 @@ export class TdFileDropBase {}
 
 @Directive({ selector: '[tdFileDrop]' })
 export class TdFileDropDirective implements OnInit, OnDestroy {
+  private _renderer = inject(Renderer2);
+  private _element = inject<ElementRef<HTMLElement>>(ElementRef);
+  private _ngZone = inject(NgZone);
+
   private _multiple = false;
   private _dragenterListener?: VoidFunction;
   private _dragleaveListener?: VoidFunction;
@@ -59,12 +64,6 @@ export class TdFileDropDirective implements OnInit, OnDestroy {
     return this.disabled ? '' : undefined;
   }
 
-  constructor(
-    private _renderer: Renderer2,
-    private _element: ElementRef<HTMLElement>,
-    private _ngZone: NgZone
-  ) {}
-
   ngOnInit(): void {
     this._ngZone.runOutsideAngular(() => {
       // Listens to 'dragenter' host event to add animation class 'drop-zone' which can be overriden in host.
@@ -77,7 +76,7 @@ export class TdFileDropDirective implements OnInit, OnDestroy {
             this._renderer.addClass(this._element.nativeElement, 'drop-zone');
           }
           this._stopEvent(event);
-        }
+        },
       );
 
       // Listens to 'dragleave' host event to remove animation class 'drop-zone'.
@@ -88,7 +87,7 @@ export class TdFileDropDirective implements OnInit, OnDestroy {
         (event: Event) => {
           this._renderer.removeClass(this._element.nativeElement, 'drop-zone');
           this._stopEvent(event);
-        }
+        },
       );
 
       // Listens to 'dragover' host event to validate transfer items.
@@ -112,7 +111,7 @@ export class TdFileDropDirective implements OnInit, OnDestroy {
             transfer.dropEffect = 'copy';
           }
           this._stopEvent(event);
-        }
+        },
       );
     });
   }
@@ -151,7 +150,7 @@ export class TdFileDropDirective implements OnInit, OnDestroy {
    * Validates if the transfer item types are 'Files'.
    */
   private _typeCheck(
-    types: ReadonlyArray<string> | DOMStringList
+    types: ReadonlyArray<string> | DOMStringList,
   ): 'none' | 'copy' | 'link' | 'move' {
     let dropEffect: 'none' | 'copy' | 'link' | 'move' = 'none';
     if (

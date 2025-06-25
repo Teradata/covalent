@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
 @Component({
   standalone: false,
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-details.component.scss'],
 })
 export class DetailsWrapperComponent implements OnInit {
+  private _route = inject(ActivatedRoute);
+
   componentArray!: any[];
   component: any;
   navLinks: any = [
@@ -32,8 +34,6 @@ export class DetailsWrapperComponent implements OnInit {
       alwaysShow: false,
     },
   ];
-
-  constructor(private _route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.component = this._route.snapshot.data;

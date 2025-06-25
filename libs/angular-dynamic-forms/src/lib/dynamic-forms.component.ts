@@ -8,6 +8,7 @@ import {
   QueryList,
   AfterContentInit,
   OnDestroy,
+  inject,
 } from '@angular/core';
 import {
   UntypedFormGroup,
@@ -20,7 +21,10 @@ import {
   TdDynamicFormsService,
   ITdDynamicElementConfig,
 } from './services/dynamic-forms.service';
-import { TdDynamicElementComponent, TdDynamicFormsErrorTemplateDirective } from './dynamic-element.component';
+import {
+  TdDynamicElementComponent,
+  TdDynamicFormsErrorTemplateDirective,
+} from './dynamic-element.component';
 
 import { timer, Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
@@ -34,6 +38,10 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
+  private _formBuilder = inject(UntypedFormBuilder);
+  private _dynamicFormsService = inject(TdDynamicFormsService);
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+
   private _renderedElements: ITdDynamicElementConfig[] = [];
   private _elements!: ITdDynamicElementConfig[];
   private _templateMap: Map<string, TemplateRef<any>> = new Map<
@@ -116,11 +124,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
     return {};
   }
 
-  constructor(
-    private _formBuilder: UntypedFormBuilder,
-    private _dynamicFormsService: TdDynamicFormsService,
-    private _changeDetectorRef: ChangeDetectorRef
-  ) {
+  constructor() {
     this.dynamicForm = this._formBuilder.group({});
   }
 
@@ -157,7 +161,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
     for (const errorTemplate of this._errorTemplates.toArray()) {
       this._templateMap.set(
         errorTemplate.tdDynamicFormsError ?? '',
-        errorTemplate.templateRef
+        errorTemplate.templateRef,
       );
     }
   }
@@ -173,12 +177,12 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
       }
       duplicates.push(elem.name);
       const dynamicElement: AbstractControl | null = this.dynamicForm.get(
-        elem.name
+        elem.name,
       );
       if (!dynamicElement) {
         this.dynamicForm.addControl(
           elem.name,
-          this._dynamicFormsService.createFormControl(elem)
+          this._dynamicFormsService.createFormControl(elem),
         );
         this._subscribeToControlStatusChanges(elem.name);
       } else {
@@ -191,7 +195,7 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
           dynamicElement.enable();
         }
         dynamicElement.setValidators(
-          this._dynamicFormsService.createValidators(elem)
+          this._dynamicFormsService.createValidators(elem),
         );
       }
       // copy objects so they are only changes when calling this method
@@ -212,8 +216,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
       (renderedElement: ITdDynamicElementConfig) =>
         !this._elements.some(
           (element: ITdDynamicElementConfig) =>
-            element.name === renderedElement.name
-        )
+            element.name === renderedElement.name,
+        ),
     );
     // remove elements that were removed from the array
     this._renderedElements.forEach((elem: ITdDynamicElementConfig) => {
@@ -228,8 +232,8 @@ export class TdDynamicFormsComponent implements AfterContentInit, OnDestroy {
 
     const controlDestroyed$: Observable<any> = this._destroyControl$.pipe(
       filter(
-        (destroyedElementName: string) => destroyedElementName === elementName
-      )
+        (destroyedElementName: string) => destroyedElementName === elementName,
+      ),
     );
 
     control.statusChanges

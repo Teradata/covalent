@@ -1,4 +1,10 @@
-import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  OnDestroy,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -15,6 +21,8 @@ const ANGULAR_DOCS_URL = 'https://material.angular.io/';
   animations: [slideInUpAnimation],
 })
 export class ComponentOverviewComponent implements OnInit, OnDestroy {
+  private route = inject(ActivatedRoute);
+
   @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('class.td-route-animation') classAnimation = true;
 
@@ -24,13 +32,11 @@ export class ComponentOverviewComponent implements OnInit, OnDestroy {
 
   private _destroy$ = new Subject<void>();
 
-  constructor(private route: ActivatedRoute) {}
-
   ngOnInit(): void {
     this.route.data.pipe(takeUntil(this._destroy$)).subscribe((data: any) => {
       this.category = routeGroups.find(
         (group: ICombinedRouteGroup) =>
-          group.name.toLowerCase() === data.category
+          group.name.toLowerCase() === data.category,
       );
       this.categoryGroups = this.category.routeGroups;
     });

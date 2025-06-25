@@ -1,3 +1,74 @@
+# [11.0.0-beta.7](https://github.com/Teradata/covalent/compare/v11.0.0-beta.6...v11.0.0-beta.7) (2025-06-25)
+
+### Bug Fixes
+
+- update imports to include CommonModule in toolbox and tooltip ([d7cbe56](https://github.com/Teradata/covalent/commit/d7cbe563d631022e5402846b4dbf29a0160c8af9))
+
+# [11.0.0-beta.6](https://github.com/Teradata/covalent/compare/v11.0.0-beta.5...v11.0.0-beta.6) (2025-06-25)
+
+### Bug Fixes
+
+- **package:** remove type and style fields from package.json ([11e9234](https://github.com/Teradata/covalent/commit/11e92344c0effb8cacd7cdd103156f0f173dfbcb))
+
+# [11.0.0-beta.5](https://github.com/Teradata/covalent/compare/v11.0.0-beta.4...v11.0.0-beta.5) (2025-06-23)
+
+### Features
+
+- **package:** add style export to package.json ([a65889a](https://github.com/Teradata/covalent/commit/a65889a8b65ea3c1fa113e7a52b56a188d597774))
+
+# [11.0.0-beta.4](https://github.com/Teradata/covalent/compare/v11.0.0-beta.3...v11.0.0-beta.4) (2025-06-23)
+
+### Features
+
+- **components:** added icon exports for list and demo ([138af36](https://github.com/Teradata/covalent/commit/138af36d4b12b1bbb4cc6918274c69dcb817141b))
+
+# [11.0.0-beta.3](https://github.com/Teradata/covalent/compare/v11.0.0-beta.2...v11.0.0-beta.3) (2025-06-23)
+
+### Features
+
+- **icon:** add CovalentIconDemo component to showcase icons ([6421bb7](https://github.com/Teradata/covalent/commit/6421bb7f96b015be1beab92f1cbd05de4f12d54a))
+- **icon:** update icon demo and configuration for module support ([2bcfa19](https://github.com/Teradata/covalent/commit/2bcfa19b95a0e2e615a0ec2f6af67d569b204721))
+
+# [11.0.0-beta.2](https://github.com/Teradata/covalent/compare/v11.0.0-beta.1...v11.0.0-beta.2) (2025-06-23)
+
+### Features
+
+- **build:** add TypeScript declaration generation to build process ([6f3f610](https://github.com/Teradata/covalent/commit/6f3f61062fb1388d6797c0405cd45e4cf0f02d81))
+- **components:** add icon demo component and update icon lists ([9a7107f](https://github.com/Teradata/covalent/commit/9a7107f958c06ab70ce76ef1fb809bb5e42075fc))
+
+# [11.0.0-beta.1](https://github.com/Teradata/covalent/compare/v10.4.0-beta.3...v11.0.0-beta.1) (2025-06-23)
+
+### Bug Fixes
+
+- **components:** update SCSS build command to disable source maps ([9094996](https://github.com/Teradata/covalent/commit/9094996615df5f6dfb59f931d5d42db92fb36174))
+
+### Features
+
+- **angular:** upgrade angular and Nx dependencies to version 20.x.x ([82fc793](https://github.com/Teradata/covalent/commit/82fc793ff1adedb86247eefe434714012f2f3df4))
+
+### BREAKING CHANGES
+
+- **angular:** now supporting NG 20.x
+
+# [10.4.0-beta.3](https://github.com/Teradata/covalent/compare/v10.4.0-beta.2...v10.4.0-beta.3) (2025-06-17)
+
+### Bug Fixes
+
+- **componets:** remove map files ([61c9a81](https://github.com/Teradata/covalent/commit/61c9a81b4b10004ad0c3ed4a5838d8176af821ad))
+
+# [10.4.0-beta.2](https://github.com/Teradata/covalent/compare/v10.4.0-beta.1...v10.4.0-beta.2) (2025-06-05)
+
+### Features
+
+- **data-table:** refactor data-table theme in light and dark themes ([1210137](https://github.com/Teradata/covalent/commit/12101379d480c6a4a16c723a5214e63174cb375d))
+- **data-table:** update styles ([46ced57](https://github.com/Teradata/covalent/commit/46ced5749d4d7683dcbd169a9d534bc4cd4f1f27))
+
+# [10.4.0-beta.1](https://github.com/Teradata/covalent/compare/v10.3.0...v10.4.0-beta.1) (2025-06-02)
+
+### Features
+
+- **density:** implement density utility for consistent component height ([30ea687](https://github.com/Teradata/covalent/commit/30ea6870330a5fa21a869d472f2b2be152c507e9))
+
 # [10.3.0](https://github.com/Teradata/covalent/compare/v10.2.1...v10.3.0) (2025-05-06)
 
 ### Bug Fixes

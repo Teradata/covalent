@@ -4,22 +4,22 @@ const path = require('path');
 // Paths
 const componentsConfigPath = path.resolve(
   __dirname,
-  '../libs/components/component-config.json'
+  '../libs/components/component-config.json',
 );
 const packageJsonPath = path.resolve(
   __dirname,
-  '../libs/components/package.json'
+  '../libs/components/package.json',
 );
 const indexTsPath = path.resolve(__dirname, '../libs/components/src/index.ts');
 
 // Read components-config.json
 let componentsConfig = JSON.parse(
-  fs.readFileSync(componentsConfigPath, 'utf8')
+  fs.readFileSync(componentsConfigPath, 'utf8'),
 );
 
 // Sort components alphabetically by `name`
 componentsConfig = componentsConfig.sort((a, b) =>
-  a.name.localeCompare(b.name)
+  a.name.localeCompare(b.name),
 );
 
 // Generate exports object for package.json
@@ -39,7 +39,9 @@ const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 // Update package.json with the new exports
 packageJson.exports = {
   '.': {
+    types: './index.d.ts',
     sass: './index.scss',
+    style: './covalent.css',
     import: './index.mjs',
     require: './index.js',
   },
@@ -63,5 +65,5 @@ const indexExports = componentsConfig
 fs.writeFileSync(indexTsPath, indexExports, 'utf8');
 
 console.log(
-  'Successfully updated package.json and index.ts with sorted dynamic exports!'
+  'Successfully updated package.json and index.ts with sorted dynamic exports!',
 );

@@ -10,8 +10,8 @@ import {
   ChangeDetectorRef,
   OnDestroy,
   NgZone,
-  Inject,
   PLATFORM_ID,
+  inject,
 } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
@@ -45,7 +45,7 @@ export class TdCodeEditorBase {
 
 export const _TdCodeEditorMixinBase = mixinControlValueAccessor(
   mixinDisabled(TdCodeEditorBase),
-  []
+  [],
 );
 
 @Component({
@@ -64,6 +64,10 @@ export class TdCodeEditorComponent
   extends _TdCodeEditorMixinBase
   implements OnInit, ControlValueAccessor, OnDestroy
 {
+  private _elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
+  private _ngZone = inject(NgZone);
+  private platformId = inject(PLATFORM_ID);
+
   private _destroy: Subject<boolean> = new Subject<boolean>();
   private _widthSubject: Subject<number> = new Subject<number>();
   private _heightSubject: Subject<number> = new Subject<number>();
@@ -183,7 +187,7 @@ export class TdCodeEditorComponent
     if (this._language) {
       editor.setModelLanguage(
         this._editor.getModel() as editor.ITextModel,
-        this._language
+        this._language,
       );
       this.editorLanguageChanged.emit();
     }
@@ -202,7 +206,7 @@ export class TdCodeEditorComponent
           tokenizer: {
             root: language.monarchTokensProvider,
           },
-        })
+        }),
       );
 
       // Define a new theme that constains only rules that match this language
@@ -214,7 +218,7 @@ export class TdCodeEditorComponent
           provideCompletionItems: () => {
             return language.completionItemProvider;
           },
-        })
+        }),
       );
 
       const css: HTMLStyleElement = document.createElement('style');
@@ -315,12 +319,9 @@ export class TdCodeEditorComponent
   }
 
   // tslint:disable-next-line:member-ordering
-  constructor(
-    _changeDetectorRef: ChangeDetectorRef,
-    private _elementRef: ElementRef<HTMLElement>,
-    private _ngZone: NgZone,
-    @Inject(PLATFORM_ID) private platformId: string
-  ) {
+  constructor() {
+    const _changeDetectorRef = inject(ChangeDetectorRef);
+
     super(_changeDetectorRef);
   }
 
@@ -335,12 +336,12 @@ export class TdCodeEditorComponent
     // Add teradata branded themes
     editor.defineTheme(
       'cv-light',
-      cvEditorLightTheme as editor.IStandaloneThemeData
+      cvEditorLightTheme as editor.IStandaloneThemeData,
     );
 
     editor.defineTheme(
       'cv-dark',
-      cvEditorDarkTheme as editor.IStandaloneThemeData
+      cvEditorDarkTheme as editor.IStandaloneThemeData,
     );
 
     this._editor = editor.create(
@@ -351,8 +352,8 @@ export class TdCodeEditorComponent
           language: this.language,
           theme: this._theme,
         },
-        this.editorOptions
-      )
+        this.editorOptions,
+      ),
     );
     this._componentInitialized = true;
     setTimeout(() => {
@@ -371,7 +372,7 @@ export class TdCodeEditorComponent
         this._fromEditor = true;
         this.writeValue(this._editor.getValue());
         this.layout();
-      })
+      }),
     );
     this.addFullScreenModeCommand();
 
@@ -379,14 +380,14 @@ export class TdCodeEditorComponent
       merge(
         fromEvent(window, 'resize').pipe(debounceTime(100)),
         this._widthSubject.asObservable().pipe(distinctUntilChanged()),
-        this._heightSubject.asObservable().pipe(distinctUntilChanged())
+        this._heightSubject.asObservable().pipe(distinctUntilChanged()),
       )
         .pipe(debounceTime(100), takeUntil(this._destroy))
         .subscribe(() => {
           // Note: this is being called outside of the Angular zone since we don't have to
           // run change detection whenever the editor resizes itself.
           this.layout();
-        })
+        }),
     );
     this._ngZone.runOutsideAngular(() =>
       timer(500, 250)
@@ -396,14 +397,14 @@ export class TdCodeEditorComponent
             this._elementRef.nativeElement.getBoundingClientRect();
           this._widthSubject.next(width);
           this._heightSubject.next(height);
-        })
+        }),
     );
   }
 
   ngOnDestroy(): void {
     this._changeDetectorRef.detach();
     this._registeredLanguagesStyles.forEach((style: HTMLStyleElement) =>
-      style.remove()
+      style.remove(),
     );
     while (this._disposables.length) {
       this._disposables.pop()?.dispose();
@@ -455,7 +456,7 @@ export class TdCodeEditorComponent
         run: () => {
           this.showFullScreenEditor();
         },
-      })
+      }),
     );
   }
 }

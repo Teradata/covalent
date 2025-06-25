@@ -5,11 +5,9 @@ import {
   ContentChildren,
   OnInit,
   OnDestroy,
-  forwardRef,
-  Inject,
   QueryList,
   SecurityContext,
-  Optional,
+  inject,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
@@ -44,6 +42,10 @@ export class TdNavigationDrawerToolbarDirective {}
   imports: [CommonModule, MatToolbar, MatIcon, MatIconButton],
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
+  private _layout = inject(TdLayoutComponent);
+  private _router = inject(Router, { optional: true });
+  private _sanitize = inject(DomSanitizer);
+
   private _menuToggled = false;
   private _backgroundImage!: SafeStyle | null;
   private _destroy$ = new Subject<void>();
@@ -136,11 +138,11 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
     if (backgroundUrl) {
       const sanitizedUrl = this._sanitize.sanitize(
         SecurityContext.RESOURCE_URL,
-        backgroundUrl
+        backgroundUrl,
       );
       this._backgroundImage = this._sanitize.sanitize(
         SecurityContext.STYLE,
-        'url(' + sanitizedUrl + ')'
+        'url(' + sanitizedUrl + ')',
       );
     }
   }
@@ -171,13 +173,6 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(
-    @Inject(forwardRef(() => TdLayoutComponent))
-    private _layout: TdLayoutComponent,
-    @Optional() private _router: Router,
-    private _sanitize: DomSanitizer
-  ) {}
-
   ngOnInit(): void {
     this._layout.sidenav.openedChange
       .pipe(takeUntil(this._destroy$))
@@ -200,7 +195,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   handleNavigationClick(): void {
     if (this.routerEnabled && this.navigationRoute) {
-      this._router.navigateByUrl(this.navigationRoute);
+      this._router?.navigateByUrl(this.navigationRoute);
       this.close();
     }
   }

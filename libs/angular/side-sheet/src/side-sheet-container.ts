@@ -25,10 +25,9 @@ import {
   EventEmitter,
   HostBinding,
   HostListener,
-  Inject,
-  Optional,
   ViewChild,
   ViewEncapsulation,
+  inject,
 } from '@angular/core';
 import { tdSideSheetAnimations } from './side-sheet.animation';
 import { CovalentSideSheetConfig } from './side-sheet.config';
@@ -58,7 +57,13 @@ export function _getFocusedElementPierceShadowDom(): HTMLElement | null {
  */
 @Directive()
 export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
-  protected _document: Document;
+  protected _elementRef = inject(ElementRef);
+  protected _focusTrapFactory = inject(ConfigurableFocusTrapFactory);
+  protected _changeDetectorRef = inject(ChangeDetectorRef);
+  _config = inject(CovalentSideSheetConfig);
+  private _focusMonitor = inject(FocusMonitor);
+
+  protected _document: Document | null = null;
 
   /** The portal outlet inside of this container into which the side-sheet content will be loaded. */
   @ViewChild(CdkPortalOutlet, { static: true }) _portalOutlet!: CdkPortalOutlet;
@@ -88,16 +93,12 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
   /** ID for the container DOM element. */
   _id!: string;
 
-  constructor(
-    protected _elementRef: ElementRef,
-    protected _focusTrapFactory: ConfigurableFocusTrapFactory,
-    protected _changeDetectorRef: ChangeDetectorRef,
-    @Optional() @Inject(DOCUMENT) _document: any,
-    /** The side-sheet configuration. */
-    public _config: CovalentSideSheetConfig,
-    private _focusMonitor?: FocusMonitor
-  ) {
+  constructor() {
+    const _document = inject(DOCUMENT, { optional: true });
+
     super();
+    const _config = this._config;
+
     this._ariaLabelledBy = _config.ariaLabelledBy || null;
     this._document = _document;
   }
@@ -187,14 +188,14 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
       // do anything.
       if (
         !activeElement ||
-        activeElement === this._document.body ||
+        activeElement === this._document?.body ||
         activeElement === element ||
         element.contains(activeElement)
       ) {
         if (this._focusMonitor) {
           this._focusMonitor.focusVia(
             previousElement,
-            this._closeInteractionType
+            this._closeInteractionType,
           );
           this._closeInteractionType = null;
         } else {
@@ -211,7 +212,7 @@ export abstract class _CovalentSideSheetContainerBase extends BasePortalOutlet {
   /** Sets up the focus trap. */
   private _setupFocusTrap() {
     this._focusTrap = this._focusTrapFactory.create(
-      this._elementRef.nativeElement
+      this._elementRef.nativeElement,
     );
   }
 
@@ -272,13 +273,13 @@ export class CovalentSideSheetContainerComponent extends _CovalentSideSheetConta
     return this._state;
   }
   @HostListener('@sideSheetContainer.start', ['$event']) onAnimateStart(
-    $event: AnimationEvent
+    $event: AnimationEvent,
   ) {
     this._onAnimationStart($event);
   }
 
   @HostListener('@sideSheetContainer.done', ['$event']) onAnimateDone(
-    $event: AnimationEvent
+    $event: AnimationEvent,
   ) {
     this._onAnimationDone($event);
   }

@@ -1,7 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
-import { TdDialogActionsDirective, TdDialogComponent, TdDialogContentDirective, TdDialogStatusDirective, TdDialogTitleDirective } from '../dialog.component';
+import {
+  TdDialogActionsDirective,
+  TdDialogComponent,
+  TdDialogContentDirective,
+  TdDialogStatusDirective,
+  TdDialogTitleDirective,
+} from '../dialog.component';
 import { CommonModule } from '@angular/common';
 import { MatButton, MatIconButton } from '@angular/material/button';
 
@@ -16,9 +22,22 @@ export type TdStatusDialogDetailsLabels = {
   selector: 'td-status-dialog',
   templateUrl: './status-dialog.component.html',
   styleUrls: ['./status-dialog.component.scss'],
-  imports: [CommonModule, MatIcon, MatIconButton, MatButton, TdDialogComponent, TdDialogTitleDirective, TdDialogContentDirective, TdDialogActionsDirective, TdDialogStatusDirective],
+  imports: [
+    CommonModule,
+    MatIcon,
+    MatIconButton,
+    MatButton,
+    TdDialogComponent,
+    TdDialogTitleDirective,
+    TdDialogContentDirective,
+    TdDialogActionsDirective,
+    TdDialogStatusDirective,
+  ],
 })
 export class TdStatusDialogComponent {
+  private _dialogRef =
+    inject<MatDialogRef<TdStatusDialogComponent>>(MatDialogRef);
+
   // Label of the close button in the footer
   closeButton?: string = 'CLOSE';
   // Message to be displayed in the dialog
@@ -36,8 +55,6 @@ export class TdStatusDialogComponent {
     showDetailsLabel: 'Show details',
     hideDetailsLabel: 'Hide details',
   };
-
-  constructor(private _dialogRef: MatDialogRef<TdStatusDialogComponent>) {}
 
   close(): void {
     this._dialogRef.close();

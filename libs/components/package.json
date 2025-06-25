@@ -4,13 +4,13 @@
   "description": "a catalog of material components for covalent",
   "main": "./index.js",
   "module": "./index.mjs",
-  "types": "./index.d.ts",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "sass": "./index.scss",
+      "style": "./covalent.css",
       "import": "./index.mjs",
-      "require": "./index.js",
-      "types": "./index.d.ts"
+      "require": "./index.js"
     },
     "./icon/icon.theme": "./icon/_icon.theme.scss",
     "./data-table.theme": "./data-table/_data-table.theme.scss",
@@ -126,11 +126,6 @@
       "types": "./icon/icon.d.ts",
       "import": "./icon.mjs",
       "require": "./icon.js"
-    },
-    "./icon-demo": {
-      "types": "./icon/icon-demo.d.ts",
-      "import": "./icon-demo.mjs",
-      "require": "./icon-demo.js"
     },
     "./icon-button": {
       "types": "./icon-button/icon-button.d.ts",

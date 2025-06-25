@@ -22,7 +22,7 @@
 - searchDebounce: function
   - Event emitted after the [debounce] timeout.
   - Emits a [string].
-- search: function
+- searchChange: function
   - Event emitted after the key enter has been pressed.
   - Emits a [string].
 - clear: function
@@ -60,15 +60,5 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-<td-search-input
-  appearance="fill|outline"
-  placeholder="Search here"
-  [(ngModel)]="searchInputTerm"
-  [showUnderline]="false|true"
-  [debounce]="500"
-  (searchDebounce)="searchInputTerm = $event"
-  (search)="searchInputTerm = $event"
-  (clear)="searchInputTerm = ''"
->
-</td-search-input>
+<td-search-input appearance="fill|outline" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (searchChange)="searchInputTerm = $event" (clear)="searchInputTerm = ''"> </td-search-input>
 ```

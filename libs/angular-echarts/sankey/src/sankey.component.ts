@@ -3,6 +3,7 @@ import {
   Input,
   ChangeDetectionStrategy,
   forwardRef,
+  inject,
 } from '@angular/core';
 
 import {
@@ -115,7 +116,9 @@ export class TdChartSeriesSankeyComponent
   @Input() edges?: any[];
   @Input() silent?: boolean;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('sankey', _optionsService);
   }
 

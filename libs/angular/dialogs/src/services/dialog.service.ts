@@ -1,4 +1,4 @@
-import { Injectable, Inject, Renderer2, RendererFactory2 } from '@angular/core';
+import { Injectable, Renderer2, RendererFactory2, inject } from '@angular/core';
 import {
   MatDialog,
   MatDialogRef,
@@ -59,14 +59,16 @@ export interface IDraggableRefs<T> {
 
 @Injectable()
 export class TdDialogService {
+  private _document = inject(DOCUMENT);
+  private _dialogService = inject(MatDialog);
+  private _dragDrop = inject(DragDrop);
+  private rendererFactory = inject(RendererFactory2);
+
   private _renderer2: Renderer2;
 
-  constructor(
-    @Inject(DOCUMENT) private _document: any,
-    private _dialogService: MatDialog,
-    private _dragDrop: DragDrop,
-    private rendererFactory: RendererFactory2
-  ) {
+  constructor() {
+    const rendererFactory = this.rendererFactory;
+
     this._renderer2 = rendererFactory.createRenderer(undefined, null);
   }
 
@@ -79,7 +81,7 @@ export class TdDialogService {
    */
   public open<T>(
     component: ComponentType<T>,
-    config?: MatDialogConfig
+    config?: MatDialogConfig,
   ): MatDialogRef<T> {
     return this._dialogService.open(component, config);
   }
@@ -133,7 +135,7 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdConfirmDialogComponent> object.
    */
   public openConfirm(
-    config: IConfirmConfig
+    config: IConfirmConfig,
   ): MatDialogRef<TdConfirmDialogComponent> {
     const dialogConfig: MatDialogConfig = this._createConfig(config);
     const dialogRef: MatDialogRef<TdConfirmDialogComponent> =
@@ -169,7 +171,7 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdPromptDialogComponent> object.
    */
   public openPrompt(
-    config: IPromptConfig
+    config: IPromptConfig,
   ): MatDialogRef<TdPromptDialogComponent> {
     const dialogConfig: MatDialogConfig = this._createConfig(config);
     const dialogRef: MatDialogRef<TdPromptDialogComponent> =
@@ -199,7 +201,7 @@ export class TdDialogService {
   }: IDraggableConfig<T>): IDraggableRefs<T> {
     const matDialogRef: MatDialogRef<T, any> = this._dialogService.open(
       component,
-      config
+      config,
     );
     const dragRefSubject: Subject<DragRef> = new Subject<DragRef>();
 
@@ -228,7 +230,7 @@ export class TdDialogService {
             ...acc,
             ...Array.from(dialogElement.querySelectorAll(curr)),
           ],
-          []
+          [],
         );
         if (dragHandles.length > 0) {
           draggableElement.withHandles(<HTMLElement[]>dragHandles);
@@ -240,7 +242,7 @@ export class TdDialogService {
       }
 
       const boundaryElement = dialogElement.closest(
-        CDK_OVERLAY_CONTAINER_SELECTOR
+        CDK_OVERLAY_CONTAINER_SELECTOR,
       );
       if (boundaryElement) {
         draggableElement.withBoundaryElement(<HTMLElement>boundaryElement);
@@ -274,7 +276,7 @@ export class TdDialogService {
    * Returns an MatDialogRef<TdStatusDialogComponent> object.
    */
   public openStatus(
-    config: IStatusConfig
+    config: IStatusConfig,
   ): MatDialogRef<TdStatusDialogComponent> {
     config.panelClass = 'td-status-dialog';
     config.autoFocus = false;

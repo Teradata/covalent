@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   forwardRef,
   OnChanges,
+  inject,
 } from '@angular/core';
 
 import {
@@ -151,7 +152,9 @@ export class TdChartSeriesClusteringComponent
   @Input() zlevel?: number;
   originalData: any;
 
-  constructor(_optionsService: TdChartOptionsService) {
+  constructor() {
+    const _optionsService = inject(TdChartOptionsService);
+
     super('scatter', _optionsService);
   }
 
@@ -165,7 +168,7 @@ export class TdChartSeriesClusteringComponent
     const result = ecStat.clustering.hierarchicalKMeans(
       output,
       this.clusterCount,
-      false
+      false,
     );
     const series = [];
 
@@ -266,7 +269,7 @@ export class TdChartSeriesClusteringComponent
       },
       this.getConfig(),
       this._options,
-      this.config ? this.config : {}
+      this.config ? this.config : {},
     );
     this.optionsService.setArrayOption('scatter', config);
   }

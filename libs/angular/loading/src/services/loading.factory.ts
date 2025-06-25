@@ -5,6 +5,7 @@ import {
   SkipSelf,
   Optional,
   EmbeddedViewRef,
+  inject,
 } from '@angular/core';
 import {
   Injector,
@@ -39,11 +40,9 @@ export interface ILoadingRef {
  */
 @Injectable()
 export class TdLoadingFactory {
-  constructor(
-    private _componentFactoryResolver: ComponentFactoryResolver,
-    private _overlay: Overlay,
-    private _injector: Injector
-  ) {}
+  private _componentFactoryResolver = inject(ComponentFactoryResolver);
+  private _overlay = inject(Overlay);
+  private _injector = inject(Injector);
 
   /**
    * Uses material `Overlay` services to create a DOM element and attach the loading component
@@ -64,7 +63,7 @@ export class TdLoadingFactory {
           loading = true;
           overlayRef = this._createOverlay();
           loadingRef.componentRef = overlayRef.attach(
-            new ComponentPortal(TdLoadingComponent)
+            new ComponentPortal(TdLoadingComponent),
           );
           this._mapOptions(options, loadingRef.componentRef?.instance);
           loadingRef.componentRef?.instance.show();
@@ -90,7 +89,7 @@ export class TdLoadingFactory {
   public createOverlayComponent(
     options: ITdLoadingConfig,
     viewContainerRef: ViewContainerRef,
-    templateRef: TemplateRef<object>
+    templateRef: TemplateRef<object>,
   ): ILoadingRef {
     (<IInternalLoadingOptions>options).height = undefined;
     (<IInternalLoadingOptions>options).style = LoadingStyle.Overlay;
@@ -100,7 +99,7 @@ export class TdLoadingFactory {
     if (loadingRef.componentRef) {
       loadingRef.componentRef.instance.content = new TemplatePortal(
         templateRef,
-        viewContainerRef
+        viewContainerRef,
       );
       viewContainerRef.clear();
       viewContainerRef.insert(loadingRef.componentRef?.hostView, 0);
@@ -130,7 +129,7 @@ export class TdLoadingFactory {
     options: ITdLoadingConfig,
     viewContainerRef: ViewContainerRef,
     templateRef: TemplateRef<object>,
-    context: TdLoadingContext
+    context: TdLoadingContext,
   ): ILoadingRef {
     const nativeElement: HTMLElement = <HTMLElement>(
       templateRef.elementRef.nativeElement
@@ -151,7 +150,7 @@ export class TdLoadingFactory {
           loading = true;
           // detach the content and attach the loader if loader is there
           const index: number = viewContainerRef.indexOf(
-            loadingRef.componentRef.hostView
+            loadingRef.componentRef.hostView,
           );
           if (index < 0) {
             viewContainerRef.detach(viewContainerRef.indexOf(contentRef));
@@ -165,7 +164,7 @@ export class TdLoadingFactory {
           const index: number = viewContainerRef.indexOf(contentRef);
           if (index < 0) {
             viewContainerRef.detach(
-              viewContainerRef.indexOf(loadingRef.componentRef.hostView)
+              viewContainerRef.indexOf(loadingRef.componentRef.hostView),
             );
             viewContainerRef.insert(contentRef, 0);
           }
@@ -224,7 +223,7 @@ export class TdLoadingFactory {
    */
   private _mapOptions(
     options: IInternalLoadingOptions,
-    instance: TdLoadingComponent
+    instance: TdLoadingComponent,
   ): void {
     if (options.style) {
       instance.style = options.style;
@@ -247,13 +246,8 @@ export class TdLoadingFactory {
 
 export function LOADING_FACTORY_PROVIDER_FACTORY(
   parent: TdLoadingFactory,
-  componentFactoryResolver: ComponentFactoryResolver,
-  overlay: Overlay,
-  injector: Injector
 ): TdLoadingFactory {
-  return (
-    parent || new TdLoadingFactory(componentFactoryResolver, overlay, injector)
-  );
+  return parent || new TdLoadingFactory();
 }
 
 export const LOADING_FACTORY_PROVIDER: Provider = {

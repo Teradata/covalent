@@ -1,4 +1,10 @@
-import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
+import {
+  Injectable,
+  Provider,
+  SkipSelf,
+  Optional,
+  inject,
+} from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
 
 import { TdLoadingContext } from '../directives/loading.directive';
@@ -52,10 +58,12 @@ export class TdLoadingDirectiveConfig
 
 @Injectable()
 export class TdLoadingService {
+  private _loadingFactory = inject(TdLoadingFactory);
+
   private _context: { [key: string]: ILoadingRef } = {};
   private _timeouts: { [key: string]: any } = {};
 
-  constructor(private _loadingFactory: TdLoadingFactory) {
+  constructor() {
     this.create({
       name: 'td-loading-main',
     });
@@ -76,13 +84,13 @@ export class TdLoadingService {
     config: ITdLoadingDirectiveConfig,
     viewContainerRef: ViewContainerRef,
     templateRef: TemplateRef<object>,
-    context: TdLoadingContext
+    context: TdLoadingContext,
   ): ILoadingRef {
     const directiveConfig: TdLoadingDirectiveConfig =
       new TdLoadingDirectiveConfig(config);
     if (this._context[directiveConfig.name]) {
       throw Error(
-        `Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`
+        `Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`,
       );
     }
     if (directiveConfig.strategy === LoadingStrategy.Overlay) {
@@ -90,7 +98,7 @@ export class TdLoadingService {
         this._loadingFactory.createOverlayComponent(
           directiveConfig,
           viewContainerRef,
-          templateRef
+          templateRef,
         );
     } else {
       this._context[directiveConfig.name] =
@@ -98,7 +106,7 @@ export class TdLoadingService {
           directiveConfig,
           viewContainerRef,
           templateRef,
-          context
+          context,
         );
     }
     return this._context[directiveConfig.name];
@@ -149,7 +157,7 @@ export class TdLoadingService {
    */
   public register(
     name: string = 'td-loading-main',
-    registers: number = 1
+    registers: number = 1,
   ): boolean {
     // try registering into the service if the loading component has been instanciated or if it exists.
     if (this._context[name]) {
@@ -187,7 +195,7 @@ export class TdLoadingService {
    */
   public resolve(
     name: string = 'td-loading-main',
-    resolves: number = 1
+    resolves: number = 1,
   ): boolean {
     // clear timeout if the loading component is "resolved" before its "registered"
     this._clearTimeout(name);
@@ -259,9 +267,8 @@ export class TdLoadingService {
 
 export function LOADING_PROVIDER_FACTORY(
   parent: TdLoadingService,
-  loadingFactory: TdLoadingFactory
 ): TdLoadingService {
-  return parent || new TdLoadingService(loadingFactory);
+  return parent || new TdLoadingService();
 }
 
 export const LOADING_PROVIDER: Provider = {

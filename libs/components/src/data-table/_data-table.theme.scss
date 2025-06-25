@@ -1,4 +1,5 @@
 @use '@material/data-table' as data-table;
+@use '../theme/density.scss';
 
 @mixin data-table-theme($theme) {
   $surface: map-get($theme, surface);
@@ -35,5 +36,13 @@
 
   .mdc-data-table__sort-icon-button {
     font-size: 1rem;
+  }
+
+  .mdc-data-table__header-row {
+    height: density.density-height(56px);
+  }
+
+  .mdc-data-table__row {
+    height: density.density-height(52px);
   }
 }

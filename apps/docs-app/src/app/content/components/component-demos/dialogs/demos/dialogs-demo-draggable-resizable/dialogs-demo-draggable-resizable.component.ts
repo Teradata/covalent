@@ -1,4 +1,4 @@
-import { Component, Inject, Renderer2, OnDestroy } from '@angular/core';
+import { Component, Renderer2, OnDestroy, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DragRef } from '@angular/cdk/drag-drop';
 import {
@@ -30,13 +30,11 @@ export class DraggableResizableDialogComponent {}
   templateUrl: './dialogs-demo-draggable-resizable.component.html',
 })
 export class DialogsDemoDraggableResizableComponent implements OnDestroy {
-  private _destroy$ = new Subject<void>();
+  private _dialogService = inject(TdDialogService);
+  private _document = inject(DOCUMENT);
+  private _renderer2 = inject(Renderer2);
 
-  constructor(
-    private _dialogService: TdDialogService,
-    @Inject(DOCUMENT) private _document: any,
-    private _renderer2: Renderer2
-  ) {}
+  private _destroy$ = new Subject<void>();
 
   ngOnDestroy(): void {
     this._destroy$.next();
@@ -46,13 +44,12 @@ export class DialogsDemoDraggableResizableComponent implements OnDestroy {
     const {
       matDialogRef,
       dragRefSubject,
-    }: IDraggableRefs<DraggableResizableDialogComponent> = this._dialogService.openDraggable(
-      {
+    }: IDraggableRefs<DraggableResizableDialogComponent> =
+      this._dialogService.openDraggable({
         component: DraggableResizableDialogComponent,
         // CSS selectors of element(s) inside the component meant to be drag handle(s)
         dragHandleSelectors: ['.drag-handle'],
-      }
-    );
+      });
 
     let resizableDraggableDialog: ResizableDraggableDialog;
     dragRefSubject
@@ -62,7 +59,7 @@ export class DialogsDemoDraggableResizableComponent implements OnDestroy {
           this._document,
           this._renderer2,
           matDialogRef,
-          dragRf
+          dragRf,
         );
       });
 

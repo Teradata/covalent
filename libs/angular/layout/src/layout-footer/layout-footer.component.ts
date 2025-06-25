@@ -1,4 +1,4 @@
-import { Component, Input, Renderer2, ElementRef } from '@angular/core';
+import { Component, Input, Renderer2, ElementRef, inject } from '@angular/core';
 
 @Component({
   /* tslint:disable-next-line */
@@ -7,6 +7,9 @@ import { Component, Input, Renderer2, ElementRef } from '@angular/core';
   templateUrl: './layout-footer.component.html',
 })
 export class TdLayoutFooterComponent {
+  private _renderer = inject(Renderer2);
+  private _elementRef = inject(ElementRef);
+
   private _color?: 'primary' | 'accent' | 'warn';
 
   /**
@@ -19,12 +22,12 @@ export class TdLayoutFooterComponent {
     if (color) {
       this._renderer.removeClass(
         this._elementRef.nativeElement,
-        'mat-' + this._color
+        'mat-' + this._color,
       );
       this._color = color;
       this._renderer.addClass(
         this._elementRef.nativeElement,
-        'mat-' + this._color
+        'mat-' + this._color,
       );
     }
   }
@@ -32,7 +35,7 @@ export class TdLayoutFooterComponent {
     return this._color;
   }
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef) {
+  constructor() {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-layout-footer');
   }
 }

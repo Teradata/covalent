@@ -3,6 +3,7 @@ import {
   ChangeDetectorRef,
   ElementRef,
   DoCheck,
+  inject,
 } from '@angular/core';
 import { tdFadeInOutAnimation } from '@covalent/core/common';
 import { CdkPortalOutlet, TemplatePortal } from '@angular/cdk/portal';
@@ -38,14 +39,12 @@ export const TD_CIRCLE_DIAMETER = 40;
   styleUrls: ['./loading.component.scss'],
   templateUrl: './loading.component.html',
   animations: [tdFadeInOutAnimation],
-  imports: [
-    CommonModule,
-    MatProgressBar,
-    MatProgressSpinner,
-    CdkPortalOutlet,
-  ],
+  imports: [CommonModule, MatProgressBar, MatProgressSpinner, CdkPortalOutlet],
 })
 export class TdLoadingComponent implements DoCheck {
+  private _elementRef = inject(ElementRef);
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+
   private _mode: LoadingMode = LoadingMode.Indeterminate;
   private _defaultMode: LoadingMode = LoadingMode.Indeterminate;
   private _value = 0;
@@ -102,11 +101,6 @@ export class TdLoadingComponent implements DoCheck {
    * Sets theme color of [TdLoadingComponent] rendered.
    */
   color: 'primary' | 'accent' | 'warn' = 'primary';
-
-  constructor(
-    private _elementRef: ElementRef,
-    private _changeDetectorRef: ChangeDetectorRef
-  ) {}
 
   ngDoCheck(): void {
     // When overlay is used and the host width has a value greater than 1px

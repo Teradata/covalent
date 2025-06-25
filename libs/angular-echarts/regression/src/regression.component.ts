@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   forwardRef,
   OnChanges,
+  inject,
 } from '@angular/core';
 
 import {
@@ -64,10 +65,6 @@ export class TdChartSeriesRegressionComponent
   @Input() declare data?: number[][];
   @Input() regressionType?: TdRegressionType;
   @Input() polinomialOrder?: number;
-
-  constructor(_optionsService: TdChartOptionsService) {
-    super(_optionsService);
-  }
 
   override ngOnChanges(): void {
     this.render();
@@ -132,7 +129,7 @@ export class TdChartSeriesRegressionComponent
       },
       this.getConfig(),
       this._options,
-      this.config ? this.config : {}
+      this.config ? this.config : {},
     );
     this.optionsService.setArrayOption('scatter', config);
   }
@@ -142,7 +139,7 @@ export class TdChartSeriesRegressionComponent
     const result = ecStat.regression(
       this.regressionType ?? 'linear',
       output,
-      this.polinomialOrder ?? 2
+      this.polinomialOrder ?? 2,
     );
     let series = this.optionsService.getOption('series');
 

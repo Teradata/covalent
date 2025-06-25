@@ -7,6 +7,7 @@ import {
   forwardRef,
   NgZone,
   OnDestroy,
+  inject,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { marked } from 'marked';
@@ -32,14 +33,14 @@ const EasyMDE = (window as any).EasyMDE;
 export class TdTextEditorComponent
   implements AfterViewInit, OnDestroy, ControlValueAccessor
 {
+  private _zone = inject(NgZone);
+
   private _value = '';
   private _easyMDE!: typeof EasyMDE;
   private _fromEditor = false;
 
   @ViewChild('easymde', { static: true }) textarea!: ElementRef;
   @Input() options: any = {};
-
-  constructor(private _zone: NgZone) {}
 
   /* tslint:disable-next-line */
   propagateChange = (_: any) => noop;

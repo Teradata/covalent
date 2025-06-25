@@ -4,6 +4,7 @@ import {
   ElementRef,
   Input,
   OnChanges,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafeHtml } from '@angular/platform-browser';
@@ -16,11 +17,11 @@ import { SafeHtml } from '@angular/platform-browser';
   styleUrl: './preview.component.scss',
 })
 export class PreviewComponent implements AfterViewInit, OnChanges {
+  private elementRef = inject(ElementRef);
+
   @Input() html = '';
 
   sanitizedHtml!: SafeHtml;
-
-  constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit(): void {
     this.updateIframeContent();

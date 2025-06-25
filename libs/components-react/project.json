@@ -24,7 +24,7 @@
       "dependsOn": ["build-files"],
       "executor": "nx:run-commands",
       "options": {
-        "command": "cp dist/libs/components/style.css dist/libs/components-react/"
+        "command": "cp dist/libs/components/covalent.css dist/libs/components-react/"
       }
     },
     "test": {

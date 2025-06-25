@@ -10,6 +10,7 @@ import {
   ChangeDetectorRef,
   Type,
   Injector,
+  inject,
 } from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, AbstractControl } from '@angular/forms';
@@ -37,12 +38,16 @@ export const _TdDynamicElementMixinBase =
 
 @Directive({ selector: '[tdDynamicFormsError]ng-template' })
 export class TdDynamicFormsErrorTemplateDirective extends CdkPortal {
+  override templateRef: TemplateRef<any>;
+
   @Input() tdDynamicFormsError?: string;
-  constructor(
-    public override templateRef: TemplateRef<any>,
-    viewContainerRef: ViewContainerRef
-  ) {
+  constructor() {
+    const templateRef = inject<TemplateRef<any>>(TemplateRef);
+    const viewContainerRef = inject(ViewContainerRef);
+
     super(templateRef, viewContainerRef);
+
+    this.templateRef = templateRef;
   }
 }
 
@@ -50,7 +55,7 @@ export class TdDynamicFormsErrorTemplateDirective extends CdkPortal {
   selector: '[tdDynamicContainer]',
 })
 export class TdDynamicElementDirective {
-  constructor(public viewContainer: ViewContainerRef) {}
+  viewContainer = inject(ViewContainerRef);
 }
 
 @Component({
@@ -70,6 +75,9 @@ export class TdDynamicElementComponent
   extends _TdDynamicElementMixinBase
   implements IControlValueAccessor, OnInit, OnChanges
 {
+  private _injector = inject(Injector);
+  private _dynamicFormsService = inject(TdDynamicFormsService);
+
   private _instance: any;
 
   /**
@@ -161,11 +169,9 @@ export class TdDynamicElementComponent
     return this.min;
   }
 
-  constructor(
-    private _injector: Injector,
-    private _dynamicFormsService: TdDynamicFormsService,
-    _changeDetectorRef: ChangeDetectorRef
-  ) {
+  constructor() {
+    const _changeDetectorRef = inject(ChangeDetectorRef);
+
     super(_changeDetectorRef);
   }
 

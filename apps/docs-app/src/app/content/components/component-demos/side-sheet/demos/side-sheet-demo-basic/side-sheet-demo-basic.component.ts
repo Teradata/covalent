@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 import { CovalentSideSheet } from '@covalent/core/side-sheet';
 
 @Component({
@@ -8,9 +8,9 @@ import { CovalentSideSheet } from '@covalent/core/side-sheet';
   styleUrls: ['./side-sheet-demo-basic.component.scss'],
 })
 export class SideSheetDemoBasicComponent {
-  @ViewChild('example') template!: TemplateRef<any>;
+  private sideSheet = inject(CovalentSideSheet);
 
-  constructor(private sideSheet: CovalentSideSheet) {}
+  @ViewChild('example') template!: TemplateRef<any>;
 
   toggleSideSheet(): void {
     this.sideSheet.open(this.template);

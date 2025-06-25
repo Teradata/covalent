@@ -6,6 +6,7 @@ import {
   AfterViewInit,
   OnDestroy,
   Directive,
+  inject,
 } from '@angular/core';
 
 import { MatSidenav, MatDrawerToggleResult } from '@angular/material/sidenav';
@@ -34,8 +35,13 @@ export abstract class BaseLayoutToggleDirective
 {
   private _toggleSubs?: Subscription;
 
+  private _renderer = inject(Renderer2);
+  private _elementRef = inject(ElementRef);
+
   private _initialized = false;
   private _hideWhenOpened = false;
+
+  protected _layout?: ILayoutTogglable;
 
   /**
    * hideWhenOpened?: boolean
@@ -50,30 +56,27 @@ export abstract class BaseLayoutToggleDirective
     }
   }
 
-  constructor(
-    protected _layout: ILayoutTogglable,
-    private _renderer: Renderer2,
-    private _elementRef: ElementRef
-  ) {
+  constructor() {
     super();
-    // if layout has not been provided
-    // show warn message
-    if (!this._layout) {
-      this._noLayoutMessage();
-    }
+
     this._renderer.addClass(
       this._elementRef.nativeElement,
-      'td-layout-menu-button'
+      'td-layout-menu-button',
     );
   }
 
   ngAfterViewInit(): void {
     this._initialized = true;
+    // if layout has not been provided
+    // show warn message
+    if (!this._layout) {
+      this._noLayoutMessage();
+    }
     if (this._layout && this._layout.sidenav) {
       this._toggleSubs = this._layout.sidenav._animationStarted.subscribe(
         () => {
           this._toggleVisibility();
-        }
+        },
       );
     }
     // execute toggleVisibility since the onOpenStart and onCloseStart
@@ -113,7 +116,7 @@ export abstract class BaseLayoutToggleDirective
         this._renderer.setStyle(
           this._elementRef.nativeElement,
           'display',
-          'none'
+          'none',
         );
       } else {
         this._renderer.setStyle(this._elementRef.nativeElement, 'display', '');
@@ -124,7 +127,7 @@ export abstract class BaseLayoutToggleDirective
   private _noLayoutMessage(): void {
     /* tslint:disable-next-line */
     console.warn(
-      'Covalent: Parent layout not found for layout toggle directive'
+      'Covalent: Parent layout not found for layout toggle directive',
     );
   }
 }

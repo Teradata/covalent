@@ -26,9 +26,18 @@
 
   $foreground: map-get(map-get($theme, color), foreground);
   $inverse-on-surface: map-get($foreground, inverse-on-surface);
+  $outline-variant: map-get($foreground, dividers);
+
+  .mat-divider {
+    --mat-divider-color: #{$outline-variant};
+  }
+
+  .mat-drawer-side {
+    --mat-sidenav-container-divider-color: #{$outline-variant};
+  }
 
   .mdc-tooltip__surface {
     // Tooltip fix to override the correct fill color in MDC styles
-    --mdc-plain-tooltip-supporting-text-color: #{$inverse-on-surface};
+    --mat-tooltip-supporting-text-color: #{$inverse-on-surface};
   }
 }

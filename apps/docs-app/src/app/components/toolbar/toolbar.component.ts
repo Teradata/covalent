@@ -3,7 +3,7 @@
  * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
  */
 
-import { Component, Inject, Renderer2, OnInit } from '@angular/core';
+import { Component, Renderer2, OnInit, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { Dir } from '@angular/cdk/bidi';
@@ -18,6 +18,11 @@ import { GitHubService } from '../../services/github.service';
   templateUrl: '././toolbar.component.html',
 })
 export class ToolbarComponent implements OnInit {
+  private _renderer = inject(Renderer2);
+  private _githubService = inject(GitHubService);
+  private _dir = inject(Dir);
+  private _document = inject(DOCUMENT);
+
   dir: 'ltr' | 'rtl' = getDirection();
 
   versions?: string[] = [];
@@ -26,12 +31,7 @@ export class ToolbarComponent implements OnInit {
     return location.pathname.split('/')[2] || 'LOCAL';
   }
 
-  constructor(
-    private _renderer: Renderer2,
-    private _githubService: GitHubService,
-    private _dir: Dir,
-    @Inject(DOCUMENT) private _document: any
-  ) {
+  constructor() {
     const localTheme = localStorage.getItem('theme');
 
     this._dir.dir = this.dir;
@@ -55,7 +55,7 @@ export class ToolbarComponent implements OnInit {
     this._renderer.setAttribute(
       this._document.querySelector('html'),
       'dir',
-      dir
+      dir,
     );
     this._dir.dir = dir;
     setDirection(dir);

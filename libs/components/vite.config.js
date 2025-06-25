@@ -1,24 +1,24 @@
-const { defineConfig } = require('vite');
+import { defineConfig } from 'vite';
 import fs from 'fs';
 import path from 'path';
 
 // Function to dynamically generate entry paths
 const getComponentEntries = () => {
   const componentsConfigPath = path.resolve(
-    __dirname,
-    './component-config.json'
+    new URL('.', import.meta.url).pathname,
+    './component-config.json',
   );
   const componentsConfig = JSON.parse(
-    fs.readFileSync(componentsConfigPath, 'utf8')
+    fs.readFileSync(componentsConfigPath, 'utf8'),
   );
 
   return componentsConfig.map((component) =>
-    path.join('libs/components/src', component.path)
+    path.join('libs/components/src', component.path),
   );
 };
 
 // https://vitejs.dev/config/
-module.exports = defineConfig(({ mode }) => {
+export default defineConfig(({ mode }) => {
   return {
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode),
@@ -29,7 +29,6 @@ module.exports = defineConfig(({ mode }) => {
     build: {
       lib: {
         entry: ['libs/components/src/index.ts', ...getComponentEntries()],
-        name: 'Covalent',
         rollupOptions: {
           external: ['monaco-editor'],
         },

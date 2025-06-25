@@ -1,5 +1,5 @@
-import { Directive, Input, Output, EventEmitter } from '@angular/core';
-import { HostListener, HostBinding, Host, Optional } from '@angular/core';
+import { Directive, Input, Output, EventEmitter, inject } from '@angular/core';
+import { HostListener, HostBinding } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { NgModel } from '@angular/forms';
 
@@ -7,6 +7,8 @@ import { NgModel } from '@angular/forms';
   selector: '[tdFileSelect]',
 })
 export class TdFileSelectDirective {
+  private model = inject(NgModel, { optional: true, host: true });
+
   private _multiple = false;
 
   /**
@@ -36,8 +38,6 @@ export class TdFileSelectDirective {
   get multipleBinding(): string | undefined {
     return this._multiple ? '' : undefined;
   }
-
-  constructor(@Optional() @Host() private model: NgModel) {}
 
   /**
    * Listens to 'change' host event to get [HTMLInputElement] files.

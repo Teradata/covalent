@@ -1,12 +1,4 @@
-import {
-  Optional,
-  Directive,
-  Input,
-  Renderer2,
-  ElementRef,
-  Inject,
-  forwardRef,
-} from '@angular/core';
+import { Directive, Input, inject } from '@angular/core';
 import { TdLayoutNavListComponent } from './layout-nav-list.component';
 import { BaseLayoutToggleDirective } from '../layout-toggle.class';
 
@@ -21,18 +13,13 @@ export class TdLayoutNavListToggleDirective extends BaseLayoutToggleDirective {
     );
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutNavListComponent))
-    layout: TdLayoutNavListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutNavListComponent);
   }
 
   onClick(): void {
-    this._layout.toggle();
+    this._layout?.toggle();
   }
 }
 
@@ -45,18 +32,13 @@ export class TdLayoutNavListCloseDirective extends BaseLayoutToggleDirective {
     this.disabled = !(<any>tdLayoutNavListClose === '' || tdLayoutNavListClose);
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutNavListComponent))
-    layout: TdLayoutNavListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutNavListComponent);
   }
 
   onClick(): void {
-    this._layout.close();
+    this._layout?.close();
   }
 }
 
@@ -69,17 +51,12 @@ export class TdLayoutNavListOpenDirective extends BaseLayoutToggleDirective {
     this.disabled = !(<any>tdLayoutNavListOpen === '' || tdLayoutNavListOpen);
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutNavListComponent))
-    layout: TdLayoutNavListComponent,
-    renderer: Renderer2,
-    elementRef: ElementRef
-  ) {
-    super(layout, renderer, elementRef);
+  constructor() {
+    super();
+    this._layout = inject(TdLayoutNavListComponent);
   }
 
   onClick(): void {
-    this._layout.open();
+    this._layout?.open();
   }
 }
