@@ -1,3 +1,69 @@
+# [11.0.0](https://github.com/Teradata/covalent/compare/v10.3.0...v11.0.0) (2025-06-26)
+
+### Bug Fixes
+
+- **deps-dev:** bump brace-expansion from 1.1.11 to 1.1.12 ([#2522](https://github.com/Teradata/covalent/issues/2522)) ([ccb35b3](https://github.com/Teradata/covalent/commit/ccb35b387247b6c4448caa27fc904b36775ae5c1))
+
+### Features
+
+- **angular:** upgrade angular and Nx dependencies to version 20.x.x ([b436fb1](https://github.com/Teradata/covalent/commit/b436fb19cb779d0f214c69148fb72564bbb68a35))
+
+### BREAKING CHANGES
+
+- **angular:** now supporting NG 20.x
+
+- fix(components): update SCSS build command to disable source maps
+
+- ci(release): 11.0.0-beta.1 [skip ci]
+
+- feat(components): add icon demo component and update icon lists
+
+- refactor(components): remove unused icon list and demo component
+
+- feat(build): add TypeScript declaration generation to build process
+
+- build(workflows): update Node.js version to 20 in CI
+
+- refactor(components): remove icon-demo exports
+
+- ci(release): 11.0.0-beta.2 [skip ci]
+
+- refactor(angular): migrate to inject for dependency injection
+
+* Updated various components and services to use the `inject` function for dependency injection instead of constructor injection.
+* Removed unnecessary `@Optional()` decorators where applicable.
+* Simplified constructor signatures by eliminating parameters for injected services.
+* Ensured optional dependencies are safely accessed using optional chaining.
+* Improved code readability and maintainability by consolidating imports and reducing boilerplate code.
+
+- refactor(search): rename search event to searchChange for consistency
+
+- feat(icon): add CovalentIconDemo component to showcase icons
+
+- feat(icon): update icon demo and configuration for module support
+
+- ci(release): 11.0.0-beta.3 [skip ci]
+
+- refactor(build): remove typescript type declarations
+
+- feat(components): added icon exports for list and demo
+
+- ci(release): 11.0.0-beta.4 [skip ci]
+
+- feat(package): add style export to package.json
+
+- ci(release): 11.0.0-beta.5 [skip ci]
+
+- fix(package): remove type and style fields from package.json
+
+- ci(release): 11.0.0-beta.6 [skip ci]
+
+- fix(): update imports to include CommonModule in toolbox and tooltip
+
+- ci(release): 11.0.0-beta.7 [skip ci]
+
+- refactor(theme): remove unused button density function
+
 # [11.0.0-beta.7](https://github.com/Teradata/covalent/compare/v11.0.0-beta.6...v11.0.0-beta.7) (2025-06-25)
 
 ### Bug Fixes
