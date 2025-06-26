@@ -38,8 +38,16 @@
       "type": "subPage"
     },
     {
+      "id": "ISKhExFvN7",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-Ue0Hy3Asb",
       "type": "template"
+    },
+    {
+      "id": "svmfV4DW-L",
+      "type": "subPage"
     },
     {
       "id": "kSl7xCDrNV",
@@ -51,7 +59,47 @@
     {
       "id": "overview",
       "title": "Usage",
-      "blockIds": ["tMxMRSoTsS", "zSUHpxYdKS"]
+      "blockIds": [
+        "oJnlEuFFuf",
+        "n7-PZOGym",
+        "woPEqzshGu",
+        "mmeb3WgRkT",
+        "q3WNGLntCO",
+        "HzZnlHt7BY",
+        "cAOkzJZJMH",
+        "HQPHBpesgI",
+        "zSUHpxYdKS"
+      ]
+    },
+    {
+      "id": "ISKhExFvN7",
+      "title": "Style",
+      "blockIds": [
+        "aaiSxVg6qQ",
+        "GD0TZEPvq3",
+        "ut5Noe8bXY",
+        "bE5V5omSm",
+        "fDsMVTlMfj",
+        "2WxmkW3myy",
+        "p5CXU4XxTN",
+        "89MgLyre5",
+        "e5ymgLJ7PG",
+        "uk4Q2f2cvo"
+      ]
+    },
+    {
+      "id": "svmfV4DW-L",
+      "title": "Accessibility",
+      "blockIds": [
+        "XYqfwUDoxM",
+        "AP8AkT7BT4",
+        "AMS1J7xLU2",
+        "qXCEK2-iBU",
+        "QdQJxgtlw0",
+        "4pP93LjYu8",
+        "qqiihfAMzI",
+        "3bVKdaps4b"
+      ]
     }
   ],
   "designSrcComponentsById": {

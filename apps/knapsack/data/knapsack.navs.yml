@@ -395,7 +395,7 @@ byId:
   toolbar:
     id: toolbar
     name: Toolbar
-    parentId: coming-soon
+    parentId: components
     path: /pattern/toolbar
   tooltip:
     id: tooltip
@@ -416,7 +416,7 @@ byId:
   tree-list:
     id: tree-list
     name: Tree list
-    parentId: coming-soon
+    parentId: components
     path: /pattern/tree-list
   tree-list-item:
     id: tree-list-item
@@ -473,10 +473,11 @@ order:
   - radio-list-item
   - menu-copy
   - radio
-  - icon-radio
   - select
   - snackbar
   - textfield
+  - toolbar
+  - tree-list
   - coming-soon
   - app-shell
   - badge
@@ -500,6 +501,7 @@ order:
   - linear-progress
   - menu
   - notebook-cell
+  - icon-radio
   - side-sheet
   - slider
   - split-button
@@ -509,11 +511,9 @@ order:
   - switch
   - tabs
   - tab
-  - toolbar
   - tooltip
   - top-app-bar
   - top-app-bar-fixed
-  - tree-list
   - tree-list-item
   - text-area
   - text-lockup

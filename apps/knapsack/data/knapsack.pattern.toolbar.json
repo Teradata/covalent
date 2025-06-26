@@ -1,7 +1,7 @@
 {
   "id": "toolbar",
   "title": "Toolbar",
-  "description": "Styling and formatting of text within an interface.",
+  "description": "Provide wayfinding, context and actions for the current page",
   "statuses": {},
   "templates": [
     {
@@ -61,7 +61,7 @@
           }
         }
       },
-      "demoIds": ["NXMdeiHjKO"],
+      "demoIds": ["NXMdeiHjKO", "jBi2h7tnlI"],
       "blockIds": ["IRWOjWCkbH", "1vU2Q5vIku"]
     }
   ],
@@ -71,8 +71,16 @@
       "type": "subPage"
     },
     {
+      "id": "ZmnCcuo4qY",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-A6-16QhSaM",
       "type": "template"
+    },
+    {
+      "id": "OdoqVTCW",
+      "type": "subPage"
     },
     {
       "id": "OyvutmXQL9",
@@ -84,7 +92,51 @@
     {
       "id": "overview",
       "title": "Usage",
-      "blockIds": ["g2jAxU8a6l", "wMMForWZ2"]
+      "blockIds": [
+        "vvW3Y67uQQ",
+        "KJ3qoxm4xd",
+        "ks5YKjtXt2",
+        "ShLsP7zPCl",
+        "UuS1IRKxsS",
+        "tDMC0TpXQ",
+        "1OuA2iIWR3",
+        "jBY76tig-c",
+        "grGMNd8XmD",
+        "lWnFqfxqk1",
+        "wMMForWZ2"
+      ]
+    },
+    {
+      "id": "OdoqVTCW",
+      "title": "Accessibility",
+      "blockIds": [
+        "zMolzzKk2",
+        "q07EkyimuL",
+        "7cTP6l5-X",
+        "MYvr3Zdnc4",
+        "jVqLKJdZdA",
+        "uPIv3z4cHF",
+        "y4uVZULnbJ",
+        "AJ8x5epQl"
+      ]
+    },
+    {
+      "id": "ZmnCcuo4qY",
+      "title": "Style",
+      "blockIds": [
+        "c6yvrpTUMp",
+        "4G7byGQkt3",
+        "NBIk3Wopul",
+        "47v3qiCiPB",
+        "yM0uC6oenW",
+        "Fwvc5wz6ZZ",
+        "5Os4HTvz-F",
+        "XSsVFHtJiP",
+        "c0ZSzhHM1j",
+        "s6BCNA0rkQ",
+        "4UYNx8Mh0R",
+        "j2H4LD1KQm"
+      ]
     }
   ],
   "designSrcComponentsById": {

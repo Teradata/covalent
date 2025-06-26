@@ -83,16 +83,6 @@
         "description": "Allows the user to select a single option from a set of mutually exclusive choices."
       },
       {
-        "id": "j2yNgd59p6",
-        "link": {
-          "name": "Radio icon",
-          "path": "/pattern/icon-radio"
-        },
-        "image": "https://knapsack.imgix.net/site/covalent/cv-radio-iconthumbnail--KALsX6jrqd.png",
-        "title": "Radio icon",
-        "description": "Radio button styled with an icon as its visual representation."
-      },
-      {
         "id": "gsUo5fHgD",
         "link": {
           "name": "Select",
@@ -100,7 +90,7 @@
         },
         "image": "https://knapsack.imgix.net/site/covalent/cv-select-thumbnail--sxbmqVcWS.png",
         "title": "Select",
-        "description": "Allows the user to choose from a list of options presented in a collapsible format."
+        "description": "Allows the user to choose from a list of options presented in a collapsible format"
       },
       {
         "id": "eaZfLedoLs",
@@ -121,6 +111,26 @@
         "image": "https://knapsack.imgix.net/site/covalent/cv-text-field-thumbnail--LTMwZEywCR.png",
         "title": "Text field",
         "description": "Allows users to type text into a form."
+      },
+      {
+        "id": "rglq8r0bF4",
+        "link": {
+          "name": "Tree list",
+          "path": "/pattern/tree-list"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-tree-listthumbnail--DY03WYj2I.png",
+        "title": "Tree list",
+        "description": "Provides a hierarchical drill-down  of deep nested structures."
+      },
+      {
+        "id": "4oo7mS3vbc",
+        "link": {
+          "name": "Toolbar",
+          "path": "/pattern/toolbar"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-toolbarthumbnail--1rvQ3447kM.png",
+        "title": "Toolbar",
+        "description": "Provide wayfinding, context and actions for the current page"
       }
     ],
     "gridStyles": {
