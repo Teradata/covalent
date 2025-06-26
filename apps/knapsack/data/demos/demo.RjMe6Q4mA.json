@@ -1,6 +1,6 @@
 {
   "id": "RjMe6Q4mA",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "tree-list",
   "templateId": "web-components-Ue0Hy3Asb",
@@ -28,5 +28,9 @@
         }
       ]
     }
+  },
+  "meta": {
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedDate": "2025-06-23T18:57:09.024Z"
   }
 }

@@ -1,0 +1,34 @@
+{
+  "id": "jBi2h7tnlI",
+  "data": {
+    "props": {
+      "dense": true
+    },
+    "slots": {
+      "title": [
+        {
+          "text": "Title toolbar",
+          "type": "text"
+        }
+      ],
+      "actionItems": [
+        {
+          "type": "template-demo",
+          "demoId": "RqLVGzaUA",
+          "patternId": "icon-button",
+          "templateId": "web-components-ctiCe2sAX"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-06-26T22:18:01.724Z",
+    "updatedDate": "2025-06-26T22:19:34.830Z"
+  },
+  "type": "data",
+  "title": "Mini",
+  "patternId": "toolbar",
+  "templateId": "web-components-A6-16QhSaM"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "RqLVGzaUA",
+  "data": {
+    "props": {
+      "icon": "close"
+    },
+    "slots": {}
+  },
+  "meta": {
+    "createdBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "createdDate": "2025-06-26T22:18:01.725Z",
+    "updatedDate": "2025-06-26T22:19:04.621Z"
+  },
+  "type": "data",
+  "title": "close",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX",
+  "description": "A description"
+}
