@@ -1,0 +1,23 @@
+@use '../theme/density.scss';
+
+:host {
+  --mdc-icon-button-size: #{density.density-height(48px)};
+
+  border-radius: 50%;
+  color: var(--cv-theme-on-surface-variant);
+}
+
+:host([disabled]) {
+  background-color: transparent;
+}
+
+:host([on]) {
+  --mdc-ripple-color: var(--cv-theme-on-surface);
+
+  background-color: var(--cv-theme-secondary-container);
+  color: var(--cv-theme-on-secondary-container);
+
+  .material-icons {
+    font-variation-settings: 'FILL' 1;
+  }
+}

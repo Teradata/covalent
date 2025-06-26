@@ -1,0 +1,19 @@
+:host {
+  --mdc-theme-text-primary-on-background: var(--cv-theme-inverse-on-surface);
+  --mdc-theme-text-icon-on-background: var(--cv-theme-inverse-on-surface);
+  --mdc-theme-primary: var(--cv-theme-inverse-primary);
+  --mdc-theme-on-primary: var(--cv-theme-on-inverse-primary);
+  --mdc-theme-on-surface: var(--cv-theme-inverse-on-surface);
+  --mdc-theme-surface: var(--cv-theme-inverse-surface);
+  --mdc-snackbar-action-color: var(--cv-theme-inverse-on-surface);
+  --mdc-ripple-color: var(--cv-theme-inverse-primary);
+
+  .mdc-snackbar__surface {
+    background-color: var(--mdc-theme-surface);
+    color: var(--mdc-theme-on-surface);
+  }
+
+  .mdc-snackbar__label {
+    color: var(--mdc-theme-on-surface);
+  }
+}

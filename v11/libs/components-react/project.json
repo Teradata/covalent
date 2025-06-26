@@ -1,0 +1,48 @@
+{
+  "name": "components-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/components-react/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build-files": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/components-react"
+      }
+    },
+    "build": {
+      "dependsOn": ["build-files"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cp dist/libs/components/covalent.css dist/libs/components-react/"
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/libs/components-react"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "generate-react-wrappers": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node ./scripts/react-wrappers"]
+      }
+    }
+  },
+  "implicitDependencies": ["components"]
+}

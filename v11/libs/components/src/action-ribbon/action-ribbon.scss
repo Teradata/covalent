@@ -1,0 +1,20 @@
+@use '@material/banner/banner' as banner-core;
+@use './action-ribbon.theme';
+
+@include banner-core.core-styles();
+@include action-ribbon.theme();
+
+.mdc-banner__content {
+  min-height: 56px;
+}
+
+.mdc-banner__graphic {
+  background-color: transparent;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-variation-settings: 'FILL' 1;
+}
+
+.mdc-banner__actions {
+  align-self: center;
+}

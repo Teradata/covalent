@@ -1,0 +1,60 @@
+.cv-badge {
+  background-color: var(--cv-theme-negative);
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: var(--cv-theme-on-negative);
+  display: inline-block;
+  font-family: var(--mdc-typography-caption-font-family);
+  font-size: var(--mdc-typography-caption-font-size);
+  font-weight: var(--mdc-typography-caption-font-weight);
+  line-height: var(--mdc-typography-caption-line-height);
+  height: 16px;
+  min-width: 16px;
+  padding: 0 4px;
+  position: absolute;
+  text-align: center;
+
+  &.small {
+    height: 2px;
+    padding: 2px;
+    min-width: 2px;
+  }
+
+  &.top-right {
+    top: var(--cv-badge-position-y, -2px);
+    right: var(--cv-badge-position-x, -2px);
+  }
+
+  &.top-left {
+    top: var(--cv-badge-position-y, -2px);
+    left: var(--cv-badge-position-x, -2px);
+  }
+
+  &.bottom-right {
+    bottom: var(--cv-badge-position-y, -2px);
+    right: var(--cv-badge-position-x, -2px);
+  }
+
+  &.bottom-left {
+    bottom: var(--cv-badge-position-y, -2px);
+    left: var(--cv-badge-position-x, -2px);
+  }
+
+  &.isolated {
+    position: relative;
+    inset: 0;
+  }
+}
+
+.cv-badge-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.wrapped-content {
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}

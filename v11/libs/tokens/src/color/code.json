@@ -1,0 +1,24 @@
+{
+  "light": {
+    "code-snippet-color": { "value": "#383a42", "type": "color" },
+    "code-snippet-comment": { "value": "#6C6C6C", "type": "color" },
+    "code-snippet-keyword": { "value": "#A626A4", "type": "color" },
+    "code-snippet-selector": { "value": "#AD0F00", "type": "color" },
+    "code-snippet-literal": { "value": "#17749B", "type": "color" },
+    "code-snippet-string": { "value": "#0A7C08", "type": "color" },
+    "code-snippet-variable": { "value": "#8E6102", "type": "color" },
+    "code-snippet-title": { "value": "#004FFD", "type": "color" },
+    "code-snippet-class": { "value": "#6A6C02", "type": "color" }
+  },
+  "dark": {
+    "code-snippet-color": { "value": "#abb2bf", "type": "color" },
+    "code-snippet-comment": { "value": "#5c6370", "type": "color" },
+    "code-snippet-keyword": { "value": "#c678dd", "type": "color" },
+    "code-snippet-selector": { "value": "#e06c75", "type": "color" },
+    "code-snippet-literal": { "value": "#56b6c2", "type": "color" },
+    "code-snippet-string": { "value": "#98c379", "type": "color" },
+    "code-snippet-variable": { "value": "#d19a66", "type": "color" },
+    "code-snippet-title": { "value": "#61aeee", "type": "color" },
+    "code-snippet-class": { "value": "#e6c07b", "type": "color" }
+  }
+}

@@ -1,0 +1,90 @@
+@mixin theme() {
+  .mdc-banner {
+    --cv-action-ribbon-background: transparent;
+
+    background-color: var(--cv-action-ribbon-background);
+    overflow: hidden;
+
+    .mdc-banner__content {
+      max-width: inherit;
+    }
+
+    .mdc-banner__graphic,
+    .mdc-banner__text {
+      --mdc-theme-on-surface: var(--cv-theme-on-surface-38);
+
+      color: var(--mdc-theme-on-surface);
+    }
+
+    .mdc-banner__text {
+      margin-left: 16px;
+      font-family: var(--mdc-typography-caption-font-family);
+      font-size: var(--mdc-typography-caption-font-size);
+      font-weight: var(--mdc-typography-caption-font-weight);
+      line-height: var(--mdc-typography-caption-line-height);
+    }
+
+    &.caution {
+      --cv-action-ribbon-background: var(--cv-theme-caution-8);
+
+      .mdc-banner__graphic,
+      .mdc-banner__text {
+        --mdc-theme-on-surface: var(--mdc-theme-caution);
+      }
+    }
+
+    &.negative {
+      --cv-action-ribbon-background: var(--cv-theme-negative-8);
+
+      .mdc-banner__graphic,
+      .mdc-banner__text {
+        --mdc-theme-on-surface: var(--mdc-theme-negative);
+      }
+    }
+
+    &.active {
+      --cv-action-ribbon-background: var(--cv-theme-primary-8);
+
+      .mdc-banner__graphic,
+      .mdc-banner__text {
+        --mdc-theme-on-surface: var(--cv-theme-primary);
+      }
+    }
+
+    &.positive {
+      --cv-action-ribbon-background: var(--cv-theme-positive-8);
+
+      .mdc-banner__graphic,
+      .mdc-banner__text {
+        --mdc-theme-on-surface: var(--mdc-theme-positive);
+      }
+    }
+
+    &.loading {
+      .mdc-banner__graphic,
+      .mdc-banner__text {
+        --mdc-theme-on-surface: var(--mdc-theme-primary);
+      }
+    }
+
+    &.pending {
+      .mdc-banner__graphic,
+      .mdc-banner__text {
+        --mdc-theme-on-surface: var(--mdc-theme-on-surface-variant);
+      }
+    }
+
+    &.checked {
+      --cv-action-ribbon-background: var(--cv-theme-primary-8);
+
+      .mdc-banner__graphic,
+      .mdc-banner__text {
+        --mdc-theme-on-surface: var(--mdc-theme-on-surface-variant);
+      }
+    }
+  }
+
+  ::slotted(*) {
+    margin-left: 8px;
+  }
+}

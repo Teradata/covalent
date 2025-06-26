@@ -1,0 +1,58 @@
+@use '@material/chips/chip';
+@use '../theme/density.scss';
+@include chip.core-styles();
+
+.mdc-evolution-chip {
+  height: density.density-height(32px);
+  background-color: var(--cv-theme-surface-container);
+
+  &.mdc-evolution-chip--with-avatar .mdc-evolution-chip__graphic {
+    line-height: 24px;
+  }
+
+  .mdc-evolution-chip__graphic {
+    line-height: 20px;
+  }
+
+  .mdc-evolution-chip__text-label {
+    color: var(--cv-theme-on-surface);
+  }
+
+  .mdc-evolution-chip__icon {
+    font-family: var(--mdc-icon-font, 'Material Symbols Rounded');
+    color: var(--cv-theme-on-surface);
+  }
+
+  .mdc-evolution-chip__icon--trailing {
+    line-height: 18px;
+  }
+
+  .mdc-evolution-chip__checkmark-path {
+    stroke: var(--mdc-theme-text-icon-on-background);
+  }
+
+  &.mdc-evolution-chip--selected {
+    background-color: var(--cv-theme-secondary-container);
+    color: var(--cv-theme-on-secondary-container);
+  }
+
+  &.positive {
+    --cv-theme-surface-container: var(--cv-theme-positive-container);
+    --cv-theme-on-surface-container: var(--cv-theme-on-positive-container);
+  }
+
+  &.negative {
+    --cv-theme-surface-container: var(--cv-theme-negative-container);
+    --cv-theme-on-surface-container: var(--cv-theme-on-negative-container);
+  }
+
+  &.caution {
+    --cv-theme-surface-container: var(--cv-theme-caution-container);
+    --cv-theme-on-surface-container: var(--cv-theme-on-caution-container);
+  }
+
+  &.secondary {
+    --cv-theme-surface-container: var(--cv-theme-secondary-container);
+    --cv-theme-on-surface-container: var(--cv-theme-on-secondary-container);
+  }
+}

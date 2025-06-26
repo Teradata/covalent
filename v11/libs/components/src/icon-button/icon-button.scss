@@ -1,0 +1,16 @@
+@use '../theme/density.scss';
+
+:host {
+  --mdc-icon-button-size: #{density.density-height(48px)};
+
+  color: var(--mdc-theme-text-icon-on-background);
+
+  .mdc-icon-button {
+    cursor: var(--cv-icon-button-cursor, pointer);
+
+    &:active,
+    &:focus {
+      font-variation-settings: 'FILL' 1;
+    }
+  }
+}

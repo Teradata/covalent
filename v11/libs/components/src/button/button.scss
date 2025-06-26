@@ -1,0 +1,37 @@
+@use '../theme/density.scss';
+
+:host {
+  // override MDC button color
+  --mdc-button-outline-color: var(--cv-theme-outline);
+  // override MDC button text tranform
+  --mdc-typography-button-text-transform: none;
+  --mdc-button-disabled-fill-color: var(--cv-theme-on-surface-12);
+  --mdc-button-disabled-ink-color: var(--cv-theme-on-surface-38);
+}
+
+// --- apply height density --- //
+.mdc-button {
+  height: density.density-height(36px);
+}
+
+@mixin buttonColor($colorMap) {
+  @each $color, $value in $colorMap {
+    :host([color='#{$color}']) {
+      --mdc-theme-primary: var(--cv-theme-#{$value});
+      --mdc-theme-on-primary: var(--cv-theme-on-#{$value});
+    }
+  }
+}
+
+// --- apply button color --- //
+@include buttonColor(
+  (
+    'primary': 'primary',
+    'secondary': 'secondary',
+    'emphasis': 'emphasis',
+    'neutral': 'neutral',
+    'caution': 'caution',
+    'negative': 'negative',
+    'positive': 'positive',
+  )
+);

@@ -1,0 +1,108 @@
+import { Canvas, DocsContainer, Meta, Story } from '@storybook/blocks';
+import './expansion-panel';
+import './expansion-panel-item';
+import '../button/button';
+import incorrectExample from './expansion-panel-incorrect-example.png';
+
+import * as ExpansionPanelStories from './expansion-panel.stories';
+
+<Meta of={ExpansionPanelStories} />
+
+<style>
+  {`
+    #story--example-button--outlined,
+    #story--example-button--text {
+      margin-right: 8px;
+    }
+    .buttonFooter{
+      display:flex; 
+      align-items:center;
+    }
+    .buttonContainer {
+      margin-left:auto;
+    }
+    cv-button {
+      margin-left:5px;
+    }
+    img {
+      width:550px;
+    }
+    `}
+</style>
+
+# Expansion panel
+
+## Anatomy
+
+Set of expandable panels stacked up similar to data table.
+
+#### Interactions and behavior
+
+- Click on the expandable panel anywhere to get the extra information.
+- Unexpanded items group into single cards, one before and one after the open panel.
+- The expanded panel separates into its own card. Only one panel may be open at a time.
+
+<Canvas>
+  <cv-expansion-panel titleWidth="16em">
+    <cv-expansion-panel-item title="Title" contentPreview="Content preview">
+      <div slot="content">Content</div>
+    </cv-expansion-panel-item>
+
+    <cv-expansion-panel-item title="Lorem ipsum dolor" contentPreview="Content preview">
+      <div slot="content">Content</div>
+    </cv-expansion-panel-item>
+
+    <cv-expansion-panel-item title="Lorem ipsum dolor" contentPreview="Content preview">
+      <div slot="content">Content</div>
+    </cv-expansion-panel-item>
+
+    <cv-expansion-panel-item title="Lorem ipsum dolor" contentPreview="Content preview">
+      <div slot="content">Content</div>
+    </cv-expansion-panel-item>
+
+  </cv-expansion-panel>
+</Canvas>
+
+---
+
+## Common mistakes
+
+#### Call to action placement on expanded panel
+
+Do not add any call to action (button/link) on the expansion panel header because
+the expansion panel header is clickable and when clicked on expanded state, it
+collapses the panel. If absolutely needed, the call to actions can be added at
+the bottom of expanded region.
+
+##### Correct
+
+Call to action is located in the footer.
+
+<Canvas>
+  <form>
+    <cv-expansion-panel titleWidth="16em">
+      <cv-expansion-panel-item title="Title" contentPreview="Content preview" showFooter>
+        <div slot="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+
+        <div slot="footer" class="buttonFooter">
+          <div>You have unsaved changes</div>
+
+          <div class="buttonContainer">
+            <cv-button outlined label="Cancel" />
+
+            <cv-button raised label="Save" class="primary accent" />
+          </div>
+        </div>
+      </cv-expansion-panel-item>
+    </cv-expansion-panel>
+
+  </form>
+</Canvas>
+
+##### Incorrect
+
+Call to action is located in the header.
+
+<img src={incorrectExample} alt="Incorrect footer use" />

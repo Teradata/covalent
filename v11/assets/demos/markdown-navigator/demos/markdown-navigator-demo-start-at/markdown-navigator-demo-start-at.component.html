@@ -1,0 +1,12 @@
+<span>Start at descendant:</span>
+<mat-button-toggle-group (change)="handleChange()" [(ngModel)]="selection">
+  <mat-button-toggle value="reference">A1</mat-button-toggle>
+  <mat-button-toggle value="id">A2</mat-button-toggle>
+  <mat-button-toggle value="custom">A3</mat-button-toggle>
+</mat-button-toggle-group>
+<td-markdown-navigator
+  [items]="items"
+  [startAt]="startAt"
+  [compareWith]="compareWith"
+  [style.height.px]="200"
+></td-markdown-navigator>

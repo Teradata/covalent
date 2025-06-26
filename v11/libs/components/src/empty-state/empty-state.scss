@@ -1,0 +1,67 @@
+@use '@material/typography/mdc-typography';
+
+:host {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 360px;
+  margin: auto;
+}
+
+.icon-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: color-mix(
+    in srgb,
+    var(--mdc-theme-on-surface) 4%,
+    transparent
+  );
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.covalent-icon {
+  font-size: 40px;
+  color: var(--mdc-theme-text-secondary-on-background);
+}
+
+.mdc-typography--headline6 {
+  font-family: var(--mdc-typography-headline6-font-family);
+  font-size: var(--mdc-typography-headline6-font-size);
+  font-weight: var(--mdc-typography-headline6-font-weight);
+  line-height: var(--mdc-typography-headline6-line-height);
+  color: var(--mdc-theme-text-secondary-on-background);
+  margin: 16px 0 8px;
+}
+
+.mdc-typography--body2 {
+  font-family: var(--mdc-typography-body2-font-family);
+  font-size: var(--mdc-typography-body2-font-size);
+  font-weight: var(--mdc-typography-body2-font-weight);
+  line-height: var(--mdc-typography-body2-line-height);
+  color: var(--mdc-theme-text-secondary-on-background);
+  margin: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0 20px;
+  margin-top: 16px;
+}
+
+h6 {
+  margin: 16px;
+}

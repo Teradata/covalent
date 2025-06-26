@@ -1,0 +1,47 @@
+@mixin css-variable-tokens($theme, $prefix: 'cv-theme') {
+  @each $key, $value in $theme {
+    --#{$prefix}-#{$key}: #{map-get($theme, $key)};
+  }
+}
+
+// --- components theme mixin --- //
+@mixin components-theme($theme, $typography) {
+  // Covalent theme tokens as css variables
+  @include css-variable-tokens($theme);
+  // Covalent typography tokens as css variables
+  @include css-variable-tokens($typography, 'cv-typography');
+  // Material tokens as css variables
+  @include css-variable-tokens($theme, 'mdc-theme');
+  // Material typography tokens as css variables
+  @include css-variable-tokens($typography, 'mdc-typography');
+
+  // Overrides that dont fit in the theme map
+  --mdc-theme-border: #{map-get($theme, divider)};
+  --mdc-theme-surface-accent: #{map-get($theme, surface-primary)};
+  --mdc-theme-surface-accent-highlight: #{map-get(
+      $theme,
+      surface-primary-highlight
+    )};
+  --mdc-theme-surface-accent-highlight-hover: #{map-get(
+      $theme,
+      surface-primary-highlight-hover
+    )};
+  --mdc-typography-button-letter-spacing: 0;
+
+  // Icons
+  --mdc-icon-font: 'Material Symbols Outlined';
+
+  // Ripple
+  --mdc-ripple-color: #{map-get($theme, on-surface)};
+
+  // Shape
+  --mdc-shape-small: 8px;
+  --mdc-shape-medium: 8px;
+
+  // Tooltip
+  --mdc-plain-tooltip-container-color: #{map-get($theme, inverse-surface)};
+  --mdc-plain-tooltip-supporting-text-color: #{map-get(
+      $theme,
+      inverse-on-surface
+    )};
+}

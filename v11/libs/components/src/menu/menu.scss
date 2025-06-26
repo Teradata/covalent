@@ -1,0 +1,9 @@
+@use '../theme/density.scss';
+
+:host {
+  --mdc-menu-item-height: #{density.density-height(48px)};
+}
+
+mwc-menu-surface {
+  --mdc-theme-surface: var(--cv-theme-surface-container);
+}

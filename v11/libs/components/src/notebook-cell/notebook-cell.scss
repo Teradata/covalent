@@ -1,0 +1,185 @@
+:host {
+  --mdc-icon-button-size: 2rem;
+
+  font-family: var(--mdc-typography-body1-font-family);
+  width: 100%;
+}
+
+cv-code-snippet {
+  background-color: var(--cv-theme-surface);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+cv-code-snippet::part(code) {
+  font-size: var(--mdc-typography-body2-font-size);
+  line-height: var(--mdc-typography-body2-line-height);
+  padding: 0;
+  white-space: pre-wrap;
+}
+
+cv-code-editor {
+  margin-top: -1px;
+}
+
+.selectionIndicator {
+  background-color: var(--cv-theme-primary);
+  border-radius: 2px;
+  height: 100%;
+  visibility: hidden;
+}
+
+.selectionIndicatorWrapper {
+  min-width: 8px;
+
+  &:hover {
+    .selectionIndicator {
+      visibility: visible;
+    }
+  }
+}
+
+.status {
+  padding: 0 1px;
+  position: relative;
+}
+
+.loading {
+  top: 2.5px;
+}
+
+.timesExecuted {
+  --cv-icon-button-cursor: grab;
+
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--cv-theme-on-surface-38);
+  display: flex;
+  font-family: var(--cv-typography-subtitle2-font-family);
+  font-size: var(--cv-typography-subtitle2-font-size);
+  gap: 0.5rem;
+  height: 56px;
+  line-height: var(--cv-typography-headline6-line-height);
+
+  .executionCount {
+    padding-right: 1rem;
+    overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+    width: 52px;
+  }
+
+  .dragHandle {
+    color: var(--cv-theme-on-surface-variant);
+    cursor: grab;
+    padding-left: 0.5rem;
+    transition: visibility 0.3s ease;
+    visibility: hidden;
+
+    &:active {
+      --cv-icon-button-cursor: grabbing;
+    }
+  }
+}
+
+.timesExecutedWrapper {
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &:hover {
+    .dragHandle {
+      visibility: visible;
+    }
+  }
+}
+
+.cell {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  transition: background-color 0.2s ease;
+  user-select: auto;
+
+  &.focused,
+  &.selected {
+    .selectionIndicator {
+      visibility: visible;
+    }
+  }
+
+  &:hover {
+    background-color: var(--cv-theme-secondary-4);
+
+    .selectionIndicator {
+      visibility: visible;
+      background-color: var(--cv-theme-on-secondary-container-38);
+    }
+  }
+
+  &:active {
+    background-color: var(--cv-theme-secondary-12);
+
+    .selectionIndicator {
+      visibility: visible;
+      background-color: var(--cv-theme-on-secondary-container-74);
+    }
+  }
+}
+
+.cellWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cellOutputWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100% - 130px);
+  flex: 1;
+}
+
+.contextMenu {
+  background-color: var(--cv-theme-surface-canvas);
+  border-radius: 8px;
+  box-shadow: 0 8px 12px 6px rgba(0, 0, 0, 15%), 0 4px 4px 0 rgba(0, 0, 0, 30%);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.contextMenuContent {
+  border-radius: 4px;
+  flex-grow: 1;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.contextMenu.open {
+  visibility: visible;
+}
+
+.editorContainer {
+  box-sizing: border-box;
+  background-color: var(--cv-theme-surface);
+  border: 1px solid var(--cv-theme-outline-variant);
+  border-radius: var(--cv-editor-border-radius, 4px);
+  min-height: 56px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.errors,
+.output {
+  max-width: 100%;
+  width: 100%;
+}

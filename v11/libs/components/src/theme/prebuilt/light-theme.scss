@@ -1,0 +1,16 @@
+@use '@covalent/tokens' as tokens;
+@use '../../data-table/data-table.theme' as data-table;
+@use '../' as theme;
+
+$theme-tokens: map-get(tokens.$tokens, 'theme');
+$light-tokens: map-get($theme-tokens, 'light');
+$light-colors: map-get($light-tokens, 'colors');
+$typography: map-get(tokens.$tokens, 'typography');
+// Deprecated tokens
+$light-colors: map-merge($light-colors, map-get(tokens.$tokens, 'light'));
+
+// Define the base theme using light tokens w/ light tokens
+:root {
+  @include theme.components-theme($light-colors, $typography);
+  @include data-table.data-table-theme($light-colors);
+}
