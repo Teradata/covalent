@@ -8,6 +8,7 @@
       }
     ],
     "imageStyles": {
+      "fit": "fill",
       "size": "auto",
       "seamless": true
     },

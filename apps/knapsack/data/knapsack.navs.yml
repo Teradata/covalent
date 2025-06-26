@@ -233,7 +233,7 @@ byId:
   icon-radio:
     id: icon-radio
     name: Radio icon
-    parentId: coming-soon
+    parentId: components
     path: /pattern/icon-radio
   icons:
     id: icons
@@ -455,6 +455,7 @@ order:
   - developers
   - foundations
   - design-principles
+  - design-heuristics
   - accessibility
   - color
   - icons
@@ -472,6 +473,7 @@ order:
   - radio-list-item
   - menu-copy
   - radio
+  - icon-radio
   - select
   - snackbar
   - textfield
@@ -498,7 +500,6 @@ order:
   - linear-progress
   - menu
   - notebook-cell
-  - icon-radio
   - side-sheet
   - slider
   - split-button
@@ -536,4 +537,3 @@ order:
   - inclusive-language-glnk25tux
   - clarity-and-efficiency
   - feedback
-  - design-heuristics
