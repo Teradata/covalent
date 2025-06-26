@@ -1,6 +1,6 @@
 {
   "id": "NXMdeiHjKO",
-  "title": "Main",
+  "title": "Default",
   "type": "data",
   "patternId": "toolbar",
   "templateId": "web-components-A6-16QhSaM",
@@ -40,5 +40,9 @@
         }
       ]
     }
+  },
+  "meta": {
+    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
+    "updatedDate": "2025-06-26T22:19:46.512Z"
   }
 }

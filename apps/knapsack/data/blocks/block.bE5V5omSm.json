@@ -1,5 +1,5 @@
 {
-  "id": "HTEv5R2Snx",
+  "id": "bE5V5omSm",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Using another UI item",
+              "text": "Indent levels",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Other UI items, such as items in a table, can be used to open a menu. The item can be right-clicked to open a contextual menu.",
+              "text": "Use indents to communicate hierarchy between tree list items. Add 16px of left padding for each level of hierarchy.",
               "type": "text"
             }
           ]
@@ -32,6 +32,6 @@
       ]
     }
   },
-  "size": "small",
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "small"
 }

@@ -1,5 +1,5 @@
 {
-  "id": "HTEv5R2Snx",
+  "id": "q3WNGLntCO",
   "data": {
     "content": {
       "type": "doc",
@@ -7,12 +7,12 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "Using another UI item",
+              "text": "Recommendations",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Other UI items, such as items in a table, can be used to open a menu. The item can be right-clicked to open a contextual menu.",
+              "text": "Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.",
               "type": "text"
             }
           ]
@@ -32,6 +32,5 @@
       ]
     }
   },
-  "size": "small",
   "blockType": "text-editor"
 }

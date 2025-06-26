@@ -1,5 +1,5 @@
 {
-  "id": "HTEv5R2Snx",
+  "id": "2WxmkW3myy",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Using another UI item",
+              "text": "Two line items",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Other UI items, such as items in a table, can be used to open a menu. The item can be right-clicked to open a contextual menu.",
+              "text": "Allow the item height to expand by the height of the extra text. First line of text and icons should remain top-aligned, with second line “hanging” below.",
               "type": "text"
             }
           ]

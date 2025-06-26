@@ -1,5 +1,5 @@
 {
-  "id": "HTEv5R2Snx",
+  "id": "89MgLyre5",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Using another UI item",
+              "text": "Empty state",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Other UI items, such as items in a table, can be used to open a menu. The item can be right-clicked to open a contextual menu.",
+              "text": "Use a simple “No results” text in a space the same size as any other menu item. Do not use an icon.",
               "type": "text"
             }
           ]
