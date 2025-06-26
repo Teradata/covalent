@@ -1,0 +1,29 @@
+{
+  "id": "e23isVcGO",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "k6bvKfD1pr",
+        "link": {
+          "path": "https://www.w3.org/TR/WCAG21/",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Web Content Accessibility Guidelines (WCAG) component standards"
+      },
+      {
+        "id": "Q-ziiaANw4",
+        "link": {
+          "path": "https://m2.material.io/components/radio-buttons/web#using-radio-buttons",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Material accessibility component guidelines"
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "shortcut-tiles"
+}

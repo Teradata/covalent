@@ -64,8 +64,16 @@
       "type": "subPage"
     },
     {
+      "id": "yCYAg3yxQg",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-gmBL6Mhy4",
       "type": "template"
+    },
+    {
+      "id": "lNEvyAz-xQ",
+      "type": "subPage"
     },
     {
       "id": "logfM7PUH0",
@@ -77,7 +85,79 @@
     {
       "id": "overview",
       "title": "Usage",
-      "blockIds": ["NoeLCkJYP", "QpglwCoz0J"]
+      "blockIds": [
+        "tfVEVj18E",
+        "DHHZTw-LCD",
+        "ofawfjt3P",
+        "aqRVMJYpul",
+        "NLXLwloe6h",
+        "WT6OhO4w8g",
+        "1m3gBM1Ir1",
+        "QpglwCoz0J"
+      ]
+    },
+    {
+      "id": "yCYAg3yxQg",
+      "title": "Style",
+      "blockIds": [
+        "NiQPCM6fgd",
+        "4imIWuZWQ",
+        "qOOCp-Upw0",
+        "rjK4b03bLR",
+        "3FhhFecSw",
+        "JEM0bWak4H",
+        "Ds3hVy2kHr",
+        "LA0iZPXW2P",
+        "cUyjMsgmg",
+        "rbsNsadFR",
+        "XQCrl-OTK",
+        "pv-hWS1chF",
+        "sDYuEUVPFP",
+        "DSeEd01-3A",
+        "v4ourL1Qp",
+        "UGTfrbseF6",
+        "KMzmUSIHt",
+        "ozTfWuJ8KW",
+        "LrMlqhnBNz",
+        "efFWCIV8BK",
+        "3TT6sCeqUp",
+        "tzbOrDS9tu",
+        "wcj6pwZHxz",
+        "I87KIg5HQj",
+        "6w6Vxb1-9A",
+        "5lmhNbDdx2",
+        "6NYlGCVQA",
+        "KuqSGlVkuc",
+        "QhxFRBpCrB",
+        "8LhOjjqhln",
+        "TNWxNKaVoL",
+        "UNyYJDYlO",
+        "kIzRK-MGNk",
+        "0n1Dv6vRJF",
+        "3nechJA4cn",
+        "d05x469xJ0",
+        "l4-2EJc7xr",
+        "ZyzNX5QQp2",
+        "ts8qSDZPA",
+        "OwJb-TKCkz",
+        "pwfCRXZTmz"
+      ]
+    },
+    {
+      "id": "lNEvyAz-xQ",
+      "title": "Accessibility",
+      "blockIds": [
+        "4oLnzhVZDJ",
+        "xdCzTZLJYk",
+        "IzIWtew7Av",
+        "UGKGy8ybBj",
+        "WJ9a-ZwnFf",
+        "N72TobBUgW",
+        "7fnmugNqAg",
+        "F0mpSpI6Qh",
+        "9KC9fOIUFI",
+        "e23isVcGO"
+      ]
     }
   ],
   "designSrcComponentsById": {

@@ -1,0 +1,98 @@
+{
+  "id": "DHHZTw-LCD",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use radio icon buttons when you need a more visual way for the user to choose one option from a set of predefined options, such as selecting a payment method or choosing a shipping speed. These function identically to ",
+              "type": "text"
+            },
+            {
+              "text": "standard radio buttons",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pattern/radio",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ", but present in a more visually impactful way, and provide much a larger click target. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "If there are more than two options, or the choices are less mutually exclusive, consider using ",
+              "type": "text"
+            },
+            {
+              "text": "checkboxes",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": " or checkbox icons",
+              "type": "text"
+            },
+            {
+              "text": ".",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#",
+                    "class": null
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

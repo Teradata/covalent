@@ -1,5 +1,5 @@
 {
-  "id": "46tFTX6U74",
+  "id": "OwJb-TKCkz",
   "data": {
     "content": {
       "type": "doc",
@@ -7,7 +7,7 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "The following interaction states are available for radio buttons. See the state layers section on the ",
+              "text": "The following interaction states are available for radio icons. See the state layers section on the ",
               "type": "text"
             },
             {
