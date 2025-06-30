@@ -1,0 +1,23 @@
+{
+  "id": "sJD5VoYTVC",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The DM Daemon is the main component of Teradata Data Mover and resides on a managed Linux server. The DM Daemon processes incoming requests from external interfaces such as the DM command line interface, polls and processes job requests submitted with the DM table-driven interface, distributes work for each Teradata DM job to the DM Agents, plans the movement of tables from the source Teradata system to the target Teradata system, and sends status information to Teradata MSM and TVI. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

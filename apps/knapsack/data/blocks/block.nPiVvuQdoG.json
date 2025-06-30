@@ -1,0 +1,23 @@
+{
+  "id": "nPiVvuQdoG",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Write out the names of specific countries. The meaning of this word changes if the user is not in the United States.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

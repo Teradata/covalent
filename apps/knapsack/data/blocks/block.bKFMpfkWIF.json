@@ -1,0 +1,49 @@
+{
+  "id": "bKFMpfkWIF",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When selected, a ",
+              "type": "text"
+            },
+            {
+              "text": "dropdown list",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " shows options that a user can select from. A ",
+              "type": "text"
+            },
+            {
+              "text": "dropdown arrow",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " signals a collapsible or expandable menu.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

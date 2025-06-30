@@ -1,0 +1,44 @@
+{
+  "id": "oGWQVdAK",
+  "data": {
+    "guidelines": [
+      {
+        "id": "3d7R9EwpY",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Enable advanced filters to make additional search options available.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "JEic5p68YL",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "You can disable two-factor authentication in account settings.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

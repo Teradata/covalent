@@ -1,0 +1,44 @@
+{
+  "id": "65NpHxjevi",
+  "data": {
+    "guidelines": [
+      {
+        "id": "3d7R9EwpY",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Upload a file or paste a link.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "JEic5p68YL",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "You can either upload a file or paste a link.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}
