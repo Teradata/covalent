@@ -1,0 +1,23 @@
+{
+  "id": "jxpuklQ8yG",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Any circumstance that is pertinent to workload management. In Teradata ASM, there are three types of events: planned, unplanned, and user-defined events, all of which can cause a reallocation of system resources. In Teradata EM, alert events signal that a metric threshold has been crossed. Health events are used to do component heartbeats, signal process start and stops, as well as perform data synchronization checks for data resources. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
