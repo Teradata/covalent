@@ -1,0 +1,23 @@
+{
+  "id": "j4TF-00hea",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The DCP was formally known as MRAdmin. The Viewpoint Configuration admin portlet replaced this portlet and added new functions in release 13.0.1. This was unofficially known as MrsAdmin and was later broken out into several portlets, including Monitored Systems, Backup, LDAP Servers, and Managed Servers. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

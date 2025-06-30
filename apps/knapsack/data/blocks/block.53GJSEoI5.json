@@ -1,0 +1,67 @@
+{
+  "id": "53GJSEoI5",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Desire",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " carries a strong emotional connotation, which we want to avoid. Use ",
+              "type": "text"
+            },
+            {
+              "text": "needs, requires",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", or other clear, professional terms. ",
+              "type": "text"
+            },
+            {
+              "text": "Learn about imperative verbs",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://design.teradata.com/site/covalent/latest/pattern/clarity-and-efficiency?subPageId=svzx0McjTs#imperative-verbs",
+                    "class": null,
+                    "target": "_blank"
+                  }
+                },
+                {
+                  "type": "underline"
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

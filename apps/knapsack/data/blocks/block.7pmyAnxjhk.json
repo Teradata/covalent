@@ -1,0 +1,23 @@
+{
+  "id": "7pmyAnxjhk",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "DCS is the acronym for Data Collection Service, a fault tolerant, horizontally scalable data collection and caching system. The DCS collects monitoring and performance data and caches it in a middle tier cache database. The presence of this cache database means that management and monitoring activities can continue, even if Teradata Database is unavailable.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
