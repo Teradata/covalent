@@ -1,5 +1,5 @@
 {
-  "id": "VfN5P6R3AJ",
+  "id": "IH23xsV6-B",
   "data": {
     "content": {
       "type": "doc",
@@ -11,11 +11,11 @@
           },
           "content": [
             {
-              "text": "Use ",
+              "text": "Refer to a program that you want to stoap by using ",
               "type": "text"
             },
             {
-              "text": "add",
+              "text": "cancel",
               "type": "text",
               "marks": [
                 {
@@ -24,29 +24,39 @@
               ]
             },
             {
-              "text": " to mean adding a thing or person that already exists. For example, if you're adding an existing user to your database, use \"add.\" If the user doesn't exist yet, use ",
+              "text": " or ",
               "type": "text"
             },
             {
-              "text": "create",
+              "text": "stop",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ". ",
+              "type": "text"
+            },
+            {
+              "text": "Learn more about inclusive language.",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "#create",
-                    "class": null
+                    "href": "/site/covalent/ABHUvtG3-f/pages/inclusive-language-glnk25tux",
+                    "class": null,
+                    "target": "_self"
                   }
                 },
                 {
                   "type": "underline"
                 }
               ]
-            },
-            {
-              "text": ".",
-              "type": "text"
             }
           ]
         }

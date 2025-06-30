@@ -1,0 +1,22 @@
+{
+  "id": "sTpyVzD8c6",
+  "data": {
+    "type": "error",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Do not use",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout",
+  "size": "small"
+}

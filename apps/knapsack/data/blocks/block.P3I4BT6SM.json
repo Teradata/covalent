@@ -1,24 +1,18 @@
 {
-  "id": "AieFt9vJR",
+  "id": "P3I4BT6SM",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "add, add additional ",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Two words. No hyphen.",
+              "type": "text"
             }
           ]
         }
