@@ -1,0 +1,23 @@
+{
+  "id": "m3lqpAo4mz",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Internal-only term that refers to the functionality of setting, sending, and receiving alerts when established criteria are met. The customer-facing term is Teradata Alerts. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

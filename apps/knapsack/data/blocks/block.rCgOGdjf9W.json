@@ -1,0 +1,29 @@
+{
+  "id": "rCgOGdjf9W",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "co-locate",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

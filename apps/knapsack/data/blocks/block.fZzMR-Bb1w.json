@@ -1,0 +1,29 @@
+{
+  "id": "fZzMR-Bb1w",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "command line, command-line, at the command line",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

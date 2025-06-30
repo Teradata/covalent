@@ -1,0 +1,49 @@
+{
+  "id": "yGXVwNs9XI",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use ",
+              "type": "text"
+            },
+            {
+              "text": "compared to",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " when making comparisons rather than ",
+              "type": "text"
+            },
+            {
+              "text": "compared with",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ". ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
