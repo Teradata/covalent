@@ -1,0 +1,70 @@
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+section h1 {
+  grid-column: 1 / -1;
+  font-size: 2em;
+  margin: 0;
+}
+.card {
+  background-color: var(--cv-theme-surface-container-lowest);
+  padding: 1.5em;
+  border-radius: 1em;
+}
+h2 {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+code {
+  background-color: var(--cv-theme-caution-16);
+  border-radius: 4px;
+  font-size: 0.9em;
+  padding: 2px 4px;
+}
+pre {
+  background-color: var(--cv-theme-caution-16);
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85em;
+}
+p {
+  color: var(--cv-theme-on-surface-variant);
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  background-color: var(--cv-theme-on-surface-16);
+  list-style: none;
+  padding: 1em;
+}
+.placeholder-icon {
+  height: 24px;
+  width: 24px;
+  background-color: var(--cv-theme-on-surface-variant);
+  border-radius: 4px;
+}
+.card.vertical ul {
+  display: flex;
+}
+.card.vertical li {
+  padding: 3em 0.75em;
+}
+.card.horizontal.icon-demo ul {
+  display: block;
+}
+.card.horizontal.icon-demo li {
+  padding: 0.75em;
+  display: flex;
+  justify-content: center;
+}
