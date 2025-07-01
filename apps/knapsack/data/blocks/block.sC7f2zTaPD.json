@@ -1,0 +1,36 @@
+{
+  "id": "sC7f2zTaPD",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "To describe when a dialog box is added on the screen, write ",
+              "type": "text"
+            },
+            {
+              "text": "The <dialog box name> dialog box appears",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
