@@ -5,8 +5,9 @@
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 2,
             "textAlign": "left"
           },
           "content": [

@@ -11,7 +11,33 @@
           },
           "content": [
             {
-              "text": "See also add.",
+              "text": "Do not use the word ",
+              "type": "text"
+            },
+            {
+              "text": "dashboard",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " unless you can't find a way to write around it. If you must use the word ",
+              "type": "text"
+            },
+            {
+              "text": "dashboard",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", use it sparingly and with architectural consent. Choose clearer, purpose-driven terms instead.",
               "type": "text"
             }
           ]

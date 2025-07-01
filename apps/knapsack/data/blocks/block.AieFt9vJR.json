@@ -5,13 +5,14 @@
       "type": "doc",
       "content": [
         {
-          "type": "paragraph",
+          "type": "heading",
           "attrs": {
+            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "add ",
+              "text": "add, add additional ",
               "type": "text",
               "marks": [
                 {

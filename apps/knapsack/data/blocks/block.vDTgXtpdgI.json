@@ -1,0 +1,49 @@
+{
+  "id": "vDTgXtpdgI",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use ",
+              "type": "text"
+            },
+            {
+              "text": "appear",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " when describing a noun that becomes visible. Use ",
+              "type": "text"
+            },
+            {
+              "text": "open",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " when describing an application window, folder, or file. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

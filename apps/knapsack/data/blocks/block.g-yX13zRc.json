@@ -1,0 +1,62 @@
+{
+  "id": "g-yX13zRc",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For consistency and to avoid confusion, use ",
+              "type": "text"
+            },
+            {
+              "text": "because",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " to indicate a reason. (Although it is acceptable grammatically, avoid beginning a sentence with because.) Use ",
+              "type": "text"
+            },
+            {
+              "text": "since",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " to indicate time that has passed. Avoid using ",
+              "type": "text"
+            },
+            {
+              "text": "for",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ", which indicates a weak causal relationship, and allows the following clause to be a separate independent clause. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

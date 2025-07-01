@@ -1,0 +1,44 @@
+{
+  "id": "PZTMBfwyJO",
+  "data": {
+    "guidelines": [
+      {
+        "id": "3d7R9EwpY",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Select Settings from the menu.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "JEic5p68YL",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Click on the Settings button from the menu.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

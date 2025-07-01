@@ -1,0 +1,62 @@
+{
+  "id": "aeMk8GnE-N",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use ",
+              "type": "text"
+            },
+            {
+              "text": "can be",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " when the intended meaning is ",
+              "type": "text"
+            },
+            {
+              "text": "possibility",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ". Use ",
+              "type": "text"
+            },
+            {
+              "text": "is",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " when the intended meaning is an actuality.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

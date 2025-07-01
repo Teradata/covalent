@@ -32,24 +32,20 @@
               "type": "text",
               "marks": [
                 {
-                  "type": "italic"
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#create",
+                    "class": null
+                  }
+                },
+                {
+                  "type": "underline"
                 }
               ]
             },
             {
               "text": ".",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "See also create.",
               "type": "text"
             }
           ]

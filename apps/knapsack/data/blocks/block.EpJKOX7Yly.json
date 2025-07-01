@@ -15,7 +15,7 @@
               "type": "text"
             },
             {
-              "text": "create",
+              "text": "create ",
               "type": "text",
               "marks": [
                 {
@@ -24,7 +24,7 @@
               ]
             },
             {
-              "text": " to mean creating something that doesn't exist yet. ",
+              "text": "to mean creating something that doesn't exist yet. ",
               "type": "text"
             }
           ]

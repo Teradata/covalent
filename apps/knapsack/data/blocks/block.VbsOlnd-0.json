@@ -1,0 +1,22 @@
+{
+  "id": "VbsOlnd-0",
+  "data": {
+    "type": "success",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Preferred",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout",
+  "size": "small"
+}

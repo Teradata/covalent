@@ -1,0 +1,49 @@
+{
+  "id": "IsK1anIBNI",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When referring to versions, use the term ",
+              "type": "text"
+            },
+            {
+              "text": "and earlier",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " or ",
+              "type": "text"
+            },
+            {
+              "text": "or earlier",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ". If working on legacy content, ensure consistency by using whichever term is used in other topics. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
