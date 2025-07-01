@@ -1,0 +1,23 @@
+{
+  "id": "DSQ1TYAsVs",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "(For hardware products only). Indicates a hazardous situation, which, if not avoided, could result in minor or moderate personal injury.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
