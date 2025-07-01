@@ -1,0 +1,23 @@
+{
+  "id": "NdoZA7xtCv",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "No initial cap for alert, but the actual alert event type uses all caps (\"START\"). For example, a START or HEARTBEAT event was expected and not received, or if a monitored threshold is crossed, an alert event reports metrics. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

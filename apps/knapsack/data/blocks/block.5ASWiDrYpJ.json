@@ -1,5 +1,5 @@
 {
-  "id": "EpJKOX7Yly",
+  "id": "5ASWiDrYpJ",
   "data": {
     "content": {
       "type": "doc",
@@ -11,11 +11,11 @@
           },
           "content": [
             {
-              "text": "Use ",
+              "text": "Do not use to indicate placement of text or graphics. Use ",
               "type": "text"
             },
             {
-              "text": "create ",
+              "text": "preceding",
               "type": "text",
               "marks": [
                 {
@@ -24,23 +24,11 @@
               ]
             },
             {
-              "text": "to mean creating something that doesn't exist yet. ",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Do not use ",
+              "text": " or ",
               "type": "text"
             },
             {
-              "text": "create new",
+              "text": "following",
               "type": "text",
               "marks": [
                 {
@@ -49,11 +37,11 @@
               ]
             },
             {
-              "text": " as ",
+              "text": ". Use ",
               "type": "text"
             },
             {
-              "text": "create",
+              "text": "above",
               "type": "text",
               "marks": [
                 {
@@ -62,7 +50,20 @@
               ]
             },
             {
-              "text": " already means creating something new. Avoid redundancy when the meaning is clear without an extra word such as \"new.\" ",
+              "text": " for things like ",
+              "type": "text"
+            },
+            {
+              "text": "above 10%",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ". ",
               "type": "text"
             }
           ]

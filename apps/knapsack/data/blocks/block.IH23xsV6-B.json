@@ -1,0 +1,84 @@
+{
+  "id": "IH23xsV6-B",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use ",
+              "type": "text"
+            },
+            {
+              "text": "cancel",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " or ",
+              "type": "text"
+            },
+            {
+              "text": "stop ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": "instead. ",
+              "type": "text"
+            },
+            {
+              "text": "Learn more ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/inclusive-language-glnk25tux",
+                    "class": null,
+                    "target": "_self"
+                  }
+                },
+                {
+                  "type": "underline"
+                }
+              ]
+            },
+            {
+              "text": "in inclusive language.",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/inclusive-language-glnk25tux",
+                    "class": null
+                  }
+                },
+                {
+                  "type": "underline"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

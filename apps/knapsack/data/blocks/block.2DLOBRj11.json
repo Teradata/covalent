@@ -1,5 +1,5 @@
 {
-  "id": "DVczU1ny62",
+  "id": "2DLOBRj11",
   "data": {
     "content": {
       "type": "doc",
@@ -11,11 +11,11 @@
           },
           "content": [
             {
-              "text": "Do not use the word ",
+              "text": "The correct spelling is ",
               "type": "text"
             },
             {
-              "text": "dashboard",
+              "text": "adapter",
               "type": "text",
               "marks": [
                 {
@@ -24,11 +24,11 @@
               ]
             },
             {
-              "text": " unless you can't find a way to write around it. If you must use the word ",
+              "text": ", not ",
               "type": "text"
             },
             {
-              "text": "dashboard",
+              "text": "adaptor",
               "type": "text",
               "marks": [
                 {
@@ -37,7 +37,7 @@
               ]
             },
             {
-              "text": ", use it sparingly and with architectural consent. Choose clearer, purpose-driven terms instead.",
+              "text": ". ",
               "type": "text"
             }
           ]

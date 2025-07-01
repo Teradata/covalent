@@ -1,24 +1,31 @@
 {
-  "id": "AieFt9vJR",
+  "id": "0E6I7eu-Jz",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "add, add additional ",
+              "text": "Use ",
+              "type": "text"
+            },
+            {
+              "text": "admin",
               "type": "text",
               "marks": [
                 {
-                  "type": "bold"
+                  "type": "italic"
                 }
               ]
+            },
+            {
+              "text": " in reference to the person responsible for the database.",
+              "type": "text"
             }
           ]
         }

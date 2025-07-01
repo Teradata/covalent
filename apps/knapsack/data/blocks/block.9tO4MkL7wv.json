@@ -1,24 +1,18 @@
 {
-  "id": "AieFt9vJR",
+  "id": "9tO4MkL7wv",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "add, add additional ",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Active data warehouse.",
+              "type": "text"
             }
           ]
         }
