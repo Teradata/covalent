@@ -1,0 +1,23 @@
+{
+  "id": "pkB-4TMPHf",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Used for LDAP authentication, binding is an LDAP operation that authenticates a username and a password, usually by checking a corporate directory. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

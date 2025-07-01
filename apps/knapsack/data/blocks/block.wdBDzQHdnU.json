@@ -1,0 +1,49 @@
+{
+  "id": "wdBDzQHdnU",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "See also: ",
+              "type": "text"
+            },
+            {
+              "text": "grayed out",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "underline"
+                }
+              ]
+            },
+            {
+              "text": " and ",
+              "type": "text"
+            },
+            {
+              "text": "unavailable",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "underline"
+                }
+              ]
+            },
+            {
+              "text": ". ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

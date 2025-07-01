@@ -1,0 +1,23 @@
+{
+  "id": "6U0iPSKTqF",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Some screen components appear in full color when they are available and in a washed-out, monochromatic color scheme (usfually light gray) to identify them as unavailable. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
