@@ -1,0 +1,22 @@
+{
+  "id": "S9IqNZY8ic",
+  "data": {
+    "type": "success",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Preferred",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "callout",
+  "size": "small"
+}

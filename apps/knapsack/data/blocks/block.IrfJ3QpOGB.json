@@ -1,0 +1,66 @@
+{
+  "id": "IrfJ3QpOGB",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Never use ",
+              "type": "text"
+            },
+            {
+              "text": "enable",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " or ",
+              "type": "text"
+            },
+            {
+              "text": "disable",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " to directly describe people when you're referring to adding a capability for them or removing a capability from them. ",
+              "type": "text"
+            },
+            {
+              "text": "Learn more about inclusive language.",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://design.teradata.com/site/covalent/latest/pages/inclusive-language-glnk25tux#disability",
+                    "class": null
+                  }
+                },
+                {
+                  "type": "underline"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
