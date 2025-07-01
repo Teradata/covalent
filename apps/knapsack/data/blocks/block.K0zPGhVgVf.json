@@ -1,0 +1,23 @@
+{
+  "id": "K0zPGhVgVf",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "In workload management, an exception occurs when a query violates or executes outside the system regulation rules that are currently in effect. Workloads have exceptions when the set of system management conditions are not met. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
