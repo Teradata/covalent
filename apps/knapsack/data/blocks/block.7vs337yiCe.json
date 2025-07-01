@@ -1,0 +1,44 @@
+{
+  "id": "7vs337yiCe",
+  "data": {
+    "guidelines": [
+      {
+        "id": "dkT7joqt5j",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The system supports Windows, macOS, and Linux.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "Du7lKcaFKW",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The system supports both Windows, macOS, and Linux.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

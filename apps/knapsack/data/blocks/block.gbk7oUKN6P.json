@@ -1,0 +1,62 @@
+{
+  "id": "gbk7oUKN6P",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When documenting what a user should do to complete their task, refer to the name of the card but don't use the word ",
+              "type": "text"
+            },
+            {
+              "text": "card",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": ". Use the verb ",
+              "type": "text"
+            },
+            {
+              "text": "on",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " when orienting them to the area of the UI they need to be. The only time you should use ",
+              "type": "text"
+            },
+            {
+              "text": "card",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": " is if you are instructing the user how to move or resize or otherwise interact with the card itself. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
