@@ -1,0 +1,78 @@
+:host {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+:host([direction='vertical']) {
+  display: inline-block;
+  min-height: 100%;
+  max-height: 100vh;
+  width: auto;
+  padding: 0 8px;
+}
+
+:host([flush='true']) {
+  padding: 0;
+}
+
+:host([direction='vertical'][flush='true']) {
+  padding: 0;
+}
+
+:host([size='inset']) {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+:host([direction='vertical'][size='inset']) {
+  padding: 12px 8px;
+}
+
+:host([direction='vertical'][size='inset'][flush='true']) {
+  padding: 12px 0;
+}
+
+:host::before {
+  content: '';
+  position: absolute;
+  background-color: var(--cv-theme-outline-variant, #d1d5e7);
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+:host([direction='vertical'])::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  width: 1px;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+:host([size='icon'])::before {
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 1px;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+:host([direction='vertical'][size='icon'])::before {
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 24px;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%) translateY(-50%);
+}
