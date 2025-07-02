@@ -87,6 +87,11 @@
       "import": "./dialog.mjs",
       "require": "./dialog.js"
     },
+    "./divider": {
+      "types": "./divider/divider.d.ts",
+      "import": "./divider.mjs",
+      "require": "./divider.js"
+    },
     "./drawer": {
       "types": "./drawer/drawer.d.ts",
       "import": "./drawer.mjs",

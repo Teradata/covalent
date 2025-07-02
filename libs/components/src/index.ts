@@ -13,6 +13,7 @@ export * from './code-editor/code-editor';
 export * from './code-editor/code-editor.theme';
 export * from './code-snippet/code-snippet';
 export * from './dialog/dialog';
+export * from './divider/divider';
 export * from './drawer/drawer';
 export * from './empty-state/empty-state';
 export * from './expansion-panel/expansion-panel';
