@@ -473,6 +473,7 @@ order:
   - radio-list-item
   - menu-copy
   - radio
+  - icon-radio
   - select
   - snackbar
   - textfield
@@ -501,7 +502,6 @@ order:
   - linear-progress
   - menu
   - notebook-cell
-  - icon-radio
   - side-sheet
   - slider
   - split-button

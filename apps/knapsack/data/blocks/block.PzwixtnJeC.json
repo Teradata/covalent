@@ -20,7 +20,7 @@
                   },
                   "content": [
                     {
-                      "text": " Commonly used to indicate search functionality.",
+                      "text": "Icon that is commonly used to indicate search functionality.",
                       "type": "text"
                     }
                   ]
@@ -88,7 +88,7 @@
                   },
                   "content": [
                     {
-                      "text": "Commonly used to clear the input field, communicate a warning or error, or toggle visibility.",
+                      "text": "Icon that is commonly used to clear the input field, communicate a warning or error, or toggle visibility.",
                       "type": "text"
                     }
                   ]
@@ -105,7 +105,7 @@
                   },
                   "content": [
                     {
-                      "text": "Give further help or communicate an error message. Use Caption typography format.",
+                      "text": "Communicates an in-line error message. ",
                       "type": "text"
                     }
                   ]

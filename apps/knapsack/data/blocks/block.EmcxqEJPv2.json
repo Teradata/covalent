@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "Dropdowns help users navigate large option sets efficiently. Content labels guide accurate selection.",
+              "text": "Drop-downs help users navigate large option sets efficiently. Content labels guide accurate selection.",
               "type": "text"
             }
           ]
@@ -68,7 +68,7 @@
                   },
                   "content": [
                     {
-                      "text": "Voice & Tone",
+                      "text": "Tone",
                       "type": "text",
                       "marks": [
                         {
@@ -77,7 +77,7 @@
                       ]
                     },
                     {
-                      "text": ": Neutral and instructional.",
+                      "text": ": Use imperative verbs and short phrases to be clear and direct.",
                       "type": "text"
                     }
                   ]
@@ -103,7 +103,7 @@
                       ]
                     },
                     {
-                      "text": ": Placeholder text up to 20 characters. Options should be concise (2-4 words).",
+                      "text": ": Label text up to 20 characters. Options should be concise (2-4 words).",
                       "type": "text"
                     }
                   ]

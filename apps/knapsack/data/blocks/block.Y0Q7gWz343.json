@@ -86,7 +86,7 @@
                   },
                   "content": [
                     {
-                      "text": "Voice & Tone",
+                      "text": "Tone",
                       "type": "text",
                       "marks": [
                         {
@@ -95,7 +95,7 @@
                       ]
                     },
                     {
-                      "text": ": Instructional and supportive.",
+                      "text": ": Use imperative verbs and short phrases to be clear and direct.",
                       "type": "text"
                     }
                   ]
