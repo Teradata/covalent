@@ -10,9 +10,9 @@ describe('Covalent Divider', () => {
   beforeAll(() => {
     document.body.innerHTML = `
       <cv-divider></cv-divider>
-      <cv-divider orientation="vertical"></cv-divider>
-      <cv-divider variant="inset"></cv-divider>
-      <cv-divider hidden></cv-divider>
+      <cv-divider direction="vertical"></cv-divider>
+      <cv-divider size="inset"></cv-divider>
+      <cv-divider flush></cv-divider>
     `;
     dividerElements = document.body.querySelectorAll('cv-divider');
   });
@@ -24,24 +24,24 @@ describe('Covalent Divider', () => {
   it('should render with default properties', () => {
     const divider = dividerElements[0];
     expect(divider).toBeDefined();
-    expect(divider.orientation).toBe('horizontal');
-    expect(divider.variant).toBe('full-width');
-    expect(divider.hidden).toBe(false);
+    expect(divider.direction).toBe('horizontal');
+    expect(divider.size).toBe('full');
+    expect(divider.flush).toBe(false);
   });
 
-  it('should render vertical orientation', () => {
+  it('should render vertical direction', () => {
     const divider = dividerElements[1];
-    expect(divider.orientation).toBe('vertical');
+    expect(divider.direction).toBe('vertical');
   });
 
-  it('should render inset variant', () => {
+  it('should render inset size', () => {
     const divider = dividerElements[2];
-    expect(divider.variant).toBe('inset');
+    expect(divider.size).toBe('inset');
   });
 
-  it('should be hidden when hidden property is true', () => {
+  it('should be flush when flush property is true', () => {
     const divider = dividerElements[3];
-    expect(divider.hidden).toBe(true);
+    expect(divider.flush).toBe(true);
   });
 
   it('should have correct role attribute', () => {

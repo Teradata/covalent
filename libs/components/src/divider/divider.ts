@@ -34,7 +34,13 @@ export class CovalentDivider extends LitElement {
   }
 
   render() {
-    return html``;
+    return html`
+      <div
+        class="cv-divider ${this.direction} ${this.size} ${this.flush
+          ? 'flush'
+          : ''}"
+      ></div>
+    `;
   }
 }
 
