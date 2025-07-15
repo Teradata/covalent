@@ -36,6 +36,10 @@
   padding: 12px 0;
 }
 
+:host([flush]) {
+  padding: 0 !important;
+}
+
 :host::before {
   content: '';
   position: absolute;
