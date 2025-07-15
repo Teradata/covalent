@@ -80,3 +80,18 @@
   bottom: auto;
   transform: translateX(-50%) translateY(-50%);
 }
+
+:host([size='inset'])::before {
+  left: 16px;
+  right: 16px;
+}
+
+:host([direction='vertical'][size='inset'])::before {
+  top: 12px;
+  bottom: 12px;
+  left: 50%;
+  right: auto;
+  width: 1px;
+  height: auto;
+  transform: translateX(-50%);
+}
