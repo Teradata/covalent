@@ -1,3 +1,9 @@
+## [11.0.1-beta.2](https://github.com/Teradata/covalent/compare/v11.0.1-beta.1...v11.0.1-beta.2) (2025-07-17)
+
+### Bug Fixes
+
+- remove TypeScript definitions from package.json ([464cbe4](https://github.com/Teradata/covalent/commit/464cbe4102f5bf850f2a784e76de2e8cffd48333))
+
 ## [11.0.1-beta.1](https://github.com/Teradata/covalent/compare/v11.0.0...v11.0.1-beta.1) (2025-07-16)
 
 ### Bug Fixes
