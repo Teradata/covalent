@@ -26,7 +26,6 @@ componentsConfig = componentsConfig.sort((a, b) =>
 const exportsObject = componentsConfig.reduce((exportsObj, component) => {
   const componentName = path.basename(component.path); // Get last directory from path
   exportsObj[`./${componentName}`] = {
-    types: `${component.path}.d.ts`,
     import: `./${componentName}.mjs`,
     require: `./${componentName}.js`,
   };
@@ -39,7 +38,6 @@ const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 // Update package.json with the new exports
 packageJson.exports = {
   '.': {
-    types: './index.d.ts',
     sass: './index.scss',
     style: './covalent.css',
     import: './index.mjs',
