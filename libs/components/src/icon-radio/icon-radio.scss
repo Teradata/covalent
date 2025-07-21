@@ -16,10 +16,10 @@
 
 .mdc-radio {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: var(--cv-icon-radio-horizontal-alignment, center);
+  align-items: var(--cv-icon-radio-vertical-alignment, center);
   flex-direction: column;
-  text-align: center;
+  text-align: var(--cv-icon-radio-text-alignment, center);
   row-gap: 8px;
   width: var(--cv-icon-radio-width, 200px);
   height: var(--cv-icon-radio-height, 160px);
