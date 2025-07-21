@@ -1,3 +1,9 @@
+# [11.1.0](https://github.com/Teradata/covalent/compare/v11.0.0...v11.1.0) (2025-07-21)
+
+### Features
+
+- add CovalentDivider component (DSYS-111) ([#2530](https://github.com/Teradata/covalent/issues/2530)) ([e248f90](https://github.com/Teradata/covalent/commit/e248f90e97c6753582679155ae746564dde13c44))
+
 # [11.0.0](https://github.com/Teradata/covalent/compare/v10.3.0...v11.0.0) (2025-06-26)
 
 ### Bug Fixes
