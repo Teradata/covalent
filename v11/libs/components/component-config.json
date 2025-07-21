@@ -309,5 +309,10 @@
     "selector": "cv-typography",
     "path": "./typography/typography",
     "events": ["select"]
+  },
+  {
+    "name": "CovalentDivider",
+    "selector": "cv-divider",
+    "path": "./divider/divider"
   }
 ]

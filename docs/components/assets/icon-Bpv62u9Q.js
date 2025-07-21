@@ -1,1 +1,0 @@
-import{s as c,I as v}from"./mwc-icon-BGUO1vKj.js";import{e as p}from"./query-assigned-elements-BJdb4KNY.js";var f=Object.getOwnPropertyDescriptor,m=(t,o,a,l)=>{for(var e=l>1?void 0:l?f(o,a):o,s=t.length-1,n;s>=0;s--)(n=t[s])&&(e=n(e)||e);return e};let r=class extends v{};r.styles=[c];r=m([p("cv-icon")],r);
