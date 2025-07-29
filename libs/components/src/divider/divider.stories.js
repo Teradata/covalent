@@ -54,7 +54,7 @@ const IconTemplate = ({ direction = 'horizontal', size, flush }) => {
       cv-icon-button {
         display: block;
       }
-      ${direction == 'vertical' ? '#storybook-root { display: flex }' : ''}
+      ${direction == 'vertical' ? '#storybook-root, #story--components-divider--vertical-inner, #story--components-divider--vertical-flush-inner { display: flex }' : ''}
     </style>   
     <cv-icon-button icon="person" aria-label="Add item"></cv-icon-button>
     <cv-icon-button icon="houseboat" aria-label="Add item"></cv-icon-button>
