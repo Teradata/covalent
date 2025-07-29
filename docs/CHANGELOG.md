@@ -1,3 +1,9 @@
+# [11.2.0](https://github.com/Teradata/covalent/compare/v11.1.1...v11.2.0) (2025-07-29)
+
+### Features
+
+- **divider:** enhance divider styles and update stories layout ([#2538](https://github.com/Teradata/covalent/issues/2538)) ([0db0b1d](https://github.com/Teradata/covalent/commit/0db0b1d4cffc10015442787ff05466e54e9b721d))
+
 ## [11.1.1](https://github.com/Teradata/covalent/compare/v11.1.0...v11.1.1) (2025-07-22)
 
 ### Bug Fixes
