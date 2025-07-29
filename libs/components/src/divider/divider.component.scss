@@ -24,8 +24,13 @@
 }
 
 :host([size='inset']) {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: var(--cv-divider-padding-left, 16px);
+  padding-right: var(--cv-divider-padding-right, 16px);
+}
+
+:host([size='inset'])::before {
+  left: var(--cv-divider-padding-left, 16px);
+  right: var(--cv-divider-padding-right, 16px);
 }
 
 :host([direction='vertical'][size='inset']) {
@@ -79,11 +84,6 @@
   right: auto;
   bottom: auto;
   transform: translateX(-50%) translateY(-50%);
-}
-
-:host([size='inset'])::before {
-  left: 16px;
-  right: 16px;
 }
 
 :host([direction='vertical'][size='inset'])::before {
