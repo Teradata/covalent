@@ -1,6 +1,13 @@
 import './divider';
 import './divider.scss';
 
+import '../card/card';
+import '../list/list';
+import '../list/list-item';
+import '../typography/typography';
+import '../icon-button/icon-button';
+import { TmplAstBlockNode } from '@angular/compiler';
+
 export default {
   title: 'Components/Divider',
   argTypes: {
@@ -23,191 +30,79 @@ export default {
   },
 };
 
-const Template = ({ direction, size, flush }) => {
+const BasicTemplate = ({ direction, size, flush }) => {
   return `
-    <section class="horizontal-section">
-      <h1>Horizontal dividers</h1>
-
-      <div class="card horizontal">
-        <p><strong>Default:</strong></p>
-        <pre><code>&lt;cv-divider&gt;&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li>Sample list item</li>
-          <li>Sample list item</li>
-          <cv-divider></cv-divider>
-          <li>Sample list item</li>
-          <li>Sample list item</li>
-        </ul>
-      </div>
-
-      <div class="card horizontal">
-        <p><strong>Flush:</strong></p>
-        <pre><code>&lt;cv-divider
-     flush&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li>Sample list item</li>
-          <li>Sample list item</li>
-          <cv-divider flush></cv-divider>
-          <li>Sample list item</li>
-          <li>Sample list item</li>
-        </ul>
-      </div>
-
-      <div class="card horizontal">
-        <p><strong>Inset:</strong></p>
-        <pre><code>&lt;cv-divider
-     size="inset"&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li>Sample list item</li>
-          <li>Sample list item</li>
-          <cv-divider size="inset"></cv-divider>
-          <li>Sample list item</li>
-          <li>Sample list item</li>
-        </ul>
-      </div>
-
-      <div class="card horizontal">
-        <p><strong>Inset + flush:</strong></p>
-        <pre><code>&lt;cv-divider
-     size="inset"
-     flush&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li>Sample list item</li>
-          <li>Sample list item</li>
-          <cv-divider size="inset" flush></cv-divider>
-          <li>Sample list item</li>
-          <li>Sample list item</li>
-        </ul>
-      </div>
-
-      <div class="card horizontal icon-demo">
-        <p><strong>Icon width:</strong></p>
-        <pre><code>&lt;cv-divider
-     size="icon"&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-          <cv-divider size="icon"></cv-divider>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-        </ul>
-      </div>
-
-      <div class="card horizontal icon-demo">
-        <p><strong>Icon + flush:</strong></p>
-        <pre><code>&lt;cv-divider
-     size="icon"
-     flush&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-          <cv-divider size="icon" flush></cv-divider>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="vertical-section">
-      <h1>Vertical dividers</h1>
-
-      <div class="card vertical">
-        <p><strong>Default:</strong></p>
-        <pre><code>&lt;cv-divider
-     direction="vertical"&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-          <cv-divider direction="vertical"></cv-divider>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-        </ul>
-      </div>
-
-      <div class="card vertical">
-        <p><strong>Flush:</strong></p>
-        <pre><code>&lt;cv-divider
-     direction="vertical"
-     flush&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-          <cv-divider direction="vertical" flush></cv-divider>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-        </ul>
-      </div>
-
-      <div class="card vertical">
-        <p><strong>Inset:</strong></p>
-        <pre><code>&lt;cv-divider
-     direction="vertical"
-     size="inset"&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-          <cv-divider direction="vertical" size="inset"></cv-divider>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-        </ul>
-      </div>
-
-      <div class="card vertical">
-        <p><strong>Inset + flush:</strong></p>
-        <pre><code>&lt;cv-divider
-     direction="vertical"
-     size="inset"
-     flush&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-          <cv-divider direction="vertical" size="inset" flush></cv-divider>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-        </ul>
-      </div>
-
-      <div class="card vertical">
-        <p><strong>Icon height:</strong></p>
-        <pre><code>&lt;cv-divider
-     direction="vertical"
-     size="icon"&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-          <cv-divider direction="vertical" size="icon"></cv-divider>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-        </ul>
-      </div>
-
-      <div class="card vertical">
-        <p><strong>Icon + flush:</strong></p>
-        <pre><code>&lt;cv-divider
-     direction="vertical"
-     size="icon"
-     flush&gt;
-&lt;/cv-divider&gt;</code></pre>
-        <ul>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-          <cv-divider direction="vertical" size="icon" flush></cv-divider>
-          <li><div class="placeholder-icon"></div></li>
-          <li><div class="placeholder-icon"></div></li>
-        </ul>
-      </div>
-    </section>
+    <cv-card>
+      <cv-list>
+        <cv-list-item>Lorem ipsum dolor sit amet, consectetur</cv-list-item>
+        <cv-list-item>Lorem ipsum dolor sit amet, consectetur</cv-list-item>
+        <cv-divider
+          direction="${direction}"
+          size="${size}"
+          ${flush ? 'flush' : ''}>
+        </cv-divider>
+        <cv-list-item>Lorem ipsum dolor sit amet, consectetur</cv-list-item>
+        <cv-list-item>Lorem ipsum dolor sit amet, consectetur</cv-list-item>
+      </cv-list>      
+    </cv-card>
   `;
 };
 
-export const Basic = Template.bind({});
+const IconTemplate = ({ direction = 'horizontal', size, flush }) => {
+  return `
+    <style>
+      cv-icon-button {
+        display: block;
+      }
+      ${direction == 'vertical' ? '#storybook-root { display: flex }' : ''}
+    </style>   
+    <cv-icon-button icon="person" aria-label="Add item"></cv-icon-button>
+    <cv-icon-button icon="houseboat" aria-label="Add item"></cv-icon-button>
+    <cv-divider
+      direction="${direction}"      
+      size="${size}"
+      ${flush ? 'flush' : ''}>
+    </cv-divider>
+    <cv-icon-button icon="shield" aria-label="Add item"></cv-icon-button>
+    <cv-icon-button icon="settings" aria-label="Add item"></cv-icon-button>
+  `;
+};
+
+export const Basic = BasicTemplate.bind({});
+
+export const Inset = BasicTemplate.bind({});
+Inset.args = {
+  size: 'inset',
+};
+
+export const Flush = BasicTemplate.bind({});
+Flush.args = {
+  flush: true,
+};
+
+export const Icon = IconTemplate.bind({});
+Icon.args = {
+  direction: 'horizontal',
+  size: 'icon',
+};
+
+export const IconFlush = IconTemplate.bind({});
+IconFlush.args = {
+  direction: 'horizontal',
+  size: 'icon',
+  flush: true,
+};
+
+export const Vertical = IconTemplate.bind({});
+Vertical.args = {
+  direction: 'vertical',
+  size: 'icon',
+  flush: false,
+};
+
+export const VerticalFlush = IconTemplate.bind({});
+VerticalFlush.args = {
+  direction: 'vertical',
+  size: 'icon',
+  flush: true,
+};
