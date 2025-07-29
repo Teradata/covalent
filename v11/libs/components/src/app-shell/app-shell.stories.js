@@ -14,6 +14,7 @@ import '../toolbar/toolbar';
 import '../button/button';
 import '../textfield/textfield';
 import '../typography/typography';
+import '../divider/divider';
 
 import { MDCDataTable, events } from '@material/data-table';
 
@@ -160,6 +161,9 @@ const Template = ({
           <span>Data Protections</span>
           <cv-icon slot="graphic">settings_backup_restore</cv-icon>
         </cv-nav-list-item>
+
+        <cv-divider size="inset"></cv-divider>
+
         <cv-nav-list-item graphic="avatar">
           <span>Identity</span>
           <cv-icon slot="graphic">contacts</cv-icon>
@@ -172,7 +176,9 @@ const Template = ({
         <cv-icon>arrow_drop_down</cv-icon>
        </span>
 
-       <cv-textfield slot="actionItems" icon="forum" placeholder="Message ask.ai" style="margin-right: 8px" dense></cv-textfield>
+       <cv-icon-button slot="actionItems" icon="forum"></cv-icon-button>
+       <cv-divider slot="actionItems" direction="vertical" size="icon"></cv-divider>
+
        <cv-icon-button slot="actionItems" icon="notifications"></cv-icon-button>
        <cv-icon-button-toggle slot="actionItems" onIcon="help" offIcon="help" class="help-item"></cv-icon-button-toggle>
        <cv-icon-button slot="actionItems" icon="person" style="margin-right: -12px"></cv-icon-button>

@@ -23,6 +23,9 @@
   --cv-list-item-expansion-icon-size: 0;
   --cv-list-item-selected-background-color: var(--cv-theme-primary-24);
   --cv-list-item-selected-color: var(--cv-theme-primary);
+  --cv-divider-margin: 0 0 0 -6px;
+  --cv-divider-padding-left: 12px;
+  --cv-divider-padding-right: 24px;
 }
 
 :host([open]) .navigation {
@@ -38,6 +41,8 @@
     --cv-theme-on-surface-variant-8
   );
   --cv-list-item-selected-color: var(--cv-theme-on-surface-variant);
+  --cv-divider-margin: 0;
+  --cv-divider-padding-right: 20px;
 }
 
 :host([helpOpen]) {

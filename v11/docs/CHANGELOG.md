@@ -1,3 +1,9 @@
+## [11.1.1](https://github.com/Teradata/covalent/compare/v11.1.0...v11.1.1) (2025-07-22)
+
+### Bug Fixes
+
+- **icon-radio:** add ability to change text alignment ([#2536](https://github.com/Teradata/covalent/issues/2536)) ([6a8710b](https://github.com/Teradata/covalent/commit/6a8710b8248d4d56080bcd02fabaafa1d72d4669))
+
 # [11.1.0](https://github.com/Teradata/covalent/compare/v11.0.0...v11.1.0) (2025-07-21)
 
 ### Features
