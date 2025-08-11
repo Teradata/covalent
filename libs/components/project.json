@@ -8,7 +8,9 @@
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["cd libs/components/ && vite"],
+        "commands": [
+          "cd libs/components/ && webpack serve --config webpack.config.js"
+        ],
         "parallel": false
       }
     },
@@ -17,8 +19,8 @@
       "options": {
         "commands": [
           "mkdir -p dist/libs/components/",
-          "vite build --config libs/components/vite.config.js  --outDir dist/libs/components",
-          "./node_modules/.bin/tsc --project libs/components/tsconfig.lib.json  --declaration --emitDeclarationOnly --outDir dist/libs/components",
+          "webpack --config libs/components/webpack.config.js",
+          "./node_modules/.bin/tsc --project libs/components/tsconfig.lib.json --declaration --emitDeclarationOnly --outDir dist/libs/components",
           "cp libs/components/package.json dist/libs/components"
         ],
         "parallel": false

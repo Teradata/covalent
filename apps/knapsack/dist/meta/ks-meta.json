@@ -1245,6 +1245,20 @@
       "url": "/api/v1/render-demo-id?patternId=status-header&templateId=web-components-UDLnfGbB2W&demoId=1OH1Dga5C0&assetSetId=dark"
     },
     {
+      "patternId": "status-header-item",
+      "templateId": "web-components-L38-y9L2M",
+      "demoId": "ZUuThpxGG",
+      "assetSetId": "default",
+      "url": "/api/v1/render-demo-id?patternId=status-header-item&templateId=web-components-L38-y9L2M&demoId=ZUuThpxGG&assetSetId=default"
+    },
+    {
+      "patternId": "status-header-item",
+      "templateId": "web-components-L38-y9L2M",
+      "demoId": "ZUuThpxGG",
+      "assetSetId": "dark",
+      "url": "/api/v1/render-demo-id?patternId=status-header-item&templateId=web-components-L38-y9L2M&demoId=ZUuThpxGG&assetSetId=dark"
+    },
+    {
       "patternId": "switch",
       "templateId": "web-components-tGj2TvSrpD",
       "demoId": "U89p0LyOsP",

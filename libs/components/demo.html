@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <base href="/" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Covalent - components</title>
+    <title>Covalent - components Demo</title>
 
     <!-- CSS Reset -->
     <link href="reset.css" rel="stylesheet" />
+
+    <!-- Main entry point to include all of Covalent Components-->
+    <script type="module" src="src/index.ts"></script>
+    <link href="src/theme/prebuilt/light-theme.scss" rel="stylesheet" />
+    <link href="public/index.scss" rel="stylesheet" />
 
     <!-- Inter Font Typography & Material Icons Font --->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,6 +27,8 @@
     />
   </head>
   <body>
-    <!-- Build entry point - webpack will inject scripts here -->
+    <cv-app-shell appName="[App Name]" sectionName="Environments" contained>
+      <!-- Demo content preserved here -->
+    </cv-app-shell>
   </body>
 </html>
