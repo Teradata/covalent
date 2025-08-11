@@ -200,5 +200,4 @@ settings:
     theming:
       enabledRendererIds:
         - web-components
-        - angular
       hideThemeSelector: true

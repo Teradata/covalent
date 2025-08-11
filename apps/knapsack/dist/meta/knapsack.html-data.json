@@ -1972,7 +1972,7 @@
       "references": [
         {
           "name": "Knapsack Docs",
-          "url": "http://localhost:3999/pattern/status-header-item/web-components-55FkYSafco"
+          "url": "http://localhost:3999/pattern/status-header-item/web-components-L38-y9L2M"
         }
       ],
       "attributes": [
@@ -2489,7 +2489,7 @@
     },
     {
       "name": "cv-toolbar",
-      "description": "Styling and formatting of text within an interface.",
+      "description": "Provide wayfinding, context and actions for the current page",
       "references": [
         {
           "name": "Knapsack Docs",

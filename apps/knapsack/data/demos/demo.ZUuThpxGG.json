@@ -1,0 +1,17 @@
+{
+  "id": "ZUuThpxGG",
+  "title": "Main",
+  "type": "data",
+  "patternId": "status-header-item",
+  "templateId": "web-components-L38-y9L2M",
+  "data": {
+    "props": {},
+    "slots": {}
+  },
+  "meta": {
+    "createdBy": "Knapsack",
+    "createdDate": "2025-08-11T18:38:54.298Z",
+    "updatedBy": "Knapsack",
+    "updatedDate": "2025-08-11T18:38:54.298Z"
+  }
+}

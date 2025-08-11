@@ -25,10 +25,6 @@
           }
         },
         {
-          "src": "../../../dist/libs/angular/theming/prebuilt/all-theme-light.css",
-          "includedRenderers": ["angular"]
-        },
-        {
           "src": "../public/ks-overrides.css",
           "attributes": {
             "type": "text/css"
@@ -64,10 +60,6 @@
           "attributes": {
             "type": "text/css"
           }
-        },
-        {
-          "src": "../../../dist/libs/angular/theming/prebuilt/all-theme-dark.css",
-          "includedRenderers": ["angular"]
         },
         {
           "src": "../public/ks-overrides.css",

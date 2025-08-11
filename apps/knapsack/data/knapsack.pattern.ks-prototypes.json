@@ -24,27 +24,6 @@
       },
       "demoIds": [],
       "blockIds": []
-    },
-    {
-      "id": "angular",
-      "templateLanguageId": "angular",
-      "title": "Angular",
-      "path": "@knapsack/renderer-angular/prototyping-template",
-      "alias": "PrototypingTemplateComponent",
-      "spec": {
-        "isInferred": false,
-        "props": {
-          "type": "object",
-          "properties": {}
-        },
-        "slots": {
-          "default": {
-            "title": "Default"
-          }
-        }
-      },
-      "demoIds": [],
-      "blockIds": []
     }
   ],
   "tabs": []
