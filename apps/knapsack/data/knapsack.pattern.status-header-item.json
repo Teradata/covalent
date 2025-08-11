@@ -5,7 +5,7 @@
   "statuses": {},
   "templates": [
     {
-      "id": "web-components-55FkYSafco",
+      "id": "web-components-L38-y9L2M",
       "title": "Web components",
       "path": "../../../dist/libs/components/status-header-item.js",
       "alias": "cv-status-header-item",
@@ -31,8 +31,8 @@
           }
         }
       },
-      "demoIds": ["YHuTizup8"],
-      "blockIds": ["IlFuarr90N"]
+      "demoIds": ["ZUuThpxGG"],
+      "blockIds": []
     }
   ],
   "tabs": [
@@ -41,8 +41,8 @@
       "type": "subPage"
     },
     {
-      "id": "web-components-55FkYSafco",
-      "type": "template"
+      "type": "template",
+      "id": "web-components-L38-y9L2M"
     }
   ],
   "subPages": [
