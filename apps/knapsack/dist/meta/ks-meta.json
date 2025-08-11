@@ -253,34 +253,6 @@
       "url": "/api/v1/render-demo-id?patternId=button&templateId=web-components-raE1x4tYL&demoId=mGsDd-IfF9&assetSetId=dark"
     },
     {
-      "patternId": "button",
-      "templateId": "angular-i3OR9O7kXg",
-      "demoId": "CRFHBobaZj",
-      "assetSetId": "default",
-      "url": "/api/v1/render-demo-id?patternId=button&templateId=angular-i3OR9O7kXg&demoId=CRFHBobaZj&assetSetId=default"
-    },
-    {
-      "patternId": "button",
-      "templateId": "angular-i3OR9O7kXg",
-      "demoId": "CRFHBobaZj",
-      "assetSetId": "dark",
-      "url": "/api/v1/render-demo-id?patternId=button&templateId=angular-i3OR9O7kXg&demoId=CRFHBobaZj&assetSetId=dark"
-    },
-    {
-      "patternId": "button",
-      "templateId": "angular-i3OR9O7kXg",
-      "demoId": "eIOsBgDEvJ",
-      "assetSetId": "default",
-      "url": "/api/v1/render-demo-id?patternId=button&templateId=angular-i3OR9O7kXg&demoId=eIOsBgDEvJ&assetSetId=default"
-    },
-    {
-      "patternId": "button",
-      "templateId": "angular-i3OR9O7kXg",
-      "demoId": "eIOsBgDEvJ",
-      "assetSetId": "dark",
-      "url": "/api/v1/render-demo-id?patternId=button&templateId=angular-i3OR9O7kXg&demoId=eIOsBgDEvJ&assetSetId=dark"
-    },
-    {
       "patternId": "card",
       "templateId": "web-components-mU8MX1FHrF",
       "demoId": "pTyIIHqJtL",
@@ -307,20 +279,6 @@
       "demoId": "sNLUIRYsNz",
       "assetSetId": "dark",
       "url": "/api/v1/render-demo-id?patternId=card&templateId=web-components-mU8MX1FHrF&demoId=sNLUIRYsNz&assetSetId=dark"
-    },
-    {
-      "patternId": "card",
-      "templateId": "angular-K2H0Gg5PuL",
-      "demoId": "nrW1VpRzc",
-      "assetSetId": "default",
-      "url": "/api/v1/render-demo-id?patternId=card&templateId=angular-K2H0Gg5PuL&demoId=nrW1VpRzc&assetSetId=default"
-    },
-    {
-      "patternId": "card",
-      "templateId": "angular-K2H0Gg5PuL",
-      "demoId": "nrW1VpRzc",
-      "assetSetId": "dark",
-      "url": "/api/v1/render-demo-id?patternId=card&templateId=angular-K2H0Gg5PuL&demoId=nrW1VpRzc&assetSetId=dark"
     },
     {
       "patternId": "check-list-item",
@@ -1509,6 +1467,20 @@
       "demoId": "NXMdeiHjKO",
       "assetSetId": "dark",
       "url": "/api/v1/render-demo-id?patternId=toolbar&templateId=web-components-A6-16QhSaM&demoId=NXMdeiHjKO&assetSetId=dark"
+    },
+    {
+      "patternId": "toolbar",
+      "templateId": "web-components-A6-16QhSaM",
+      "demoId": "jBi2h7tnlI",
+      "assetSetId": "default",
+      "url": "/api/v1/render-demo-id?patternId=toolbar&templateId=web-components-A6-16QhSaM&demoId=jBi2h7tnlI&assetSetId=default"
+    },
+    {
+      "patternId": "toolbar",
+      "templateId": "web-components-A6-16QhSaM",
+      "demoId": "jBi2h7tnlI",
+      "assetSetId": "dark",
+      "url": "/api/v1/render-demo-id?patternId=toolbar&templateId=web-components-A6-16QhSaM&demoId=jBi2h7tnlI&assetSetId=dark"
     },
     {
       "patternId": "tooltip",

@@ -261,12 +261,6 @@ byId:
     name: List item
     parentId: list
     path: /pattern/list-item
-  menu:
-    hidden: true
-    id: menu
-    name: Menu (has web component)
-    parentId: coming-soon
-    path: /pattern/menu
   menu-2auajeekzb:
     hidden: true
     id: menu-2auajeekzb
@@ -500,7 +494,6 @@ order:
   - icon-button-toggle
   - icon-lockup
   - linear-progress
-  - menu
   - notebook-cell
   - side-sheet
   - slider
