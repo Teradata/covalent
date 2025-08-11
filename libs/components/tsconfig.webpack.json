@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "module": "ES2020",
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "../../dist/libs/components",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*.ts", "types.d.ts"],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.stories.ts",
+    "**/*.stories.js",
+    "**/*.stories.jsx",
+    "**/*.stories.tsx",
+    "vite.config.js"
+  ]
+}
