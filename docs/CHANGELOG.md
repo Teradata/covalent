@@ -1,3 +1,9 @@
+# [11.3.0-beta.1](https://github.com/Teradata/covalent/compare/v11.2.0...v11.3.0-beta.1) (2025-08-12)
+
+### Features
+
+- migrate components to webpack builder AI ([bc3fd4c](https://github.com/Teradata/covalent/commit/bc3fd4c16f333b46c29ed510d7f8c1b0e72d7da7))
+
 # [11.2.0](https://github.com/Teradata/covalent/compare/v11.1.1...v11.2.0) (2025-07-29)
 
 ### Features
