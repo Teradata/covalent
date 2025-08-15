@@ -131,6 +131,26 @@
         "image": "https://knapsack.imgix.net/site/covalent/cv-toolbarthumbnail--1rvQ3447kM.png",
         "title": "Toolbar",
         "description": "Provide wayfinding, context and actions for the current page"
+      },
+      {
+        "id": "I0dSFDkckJ",
+        "link": {
+          "name": "Checkbox icon",
+          "path": "/pattern/icon-checkbox"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-checkbox-iconthumbnail--l6ku37F3rc.png",
+        "title": "Checkbox icon",
+        "description": "Checkbox styled with an icon as its visual representation."
+      },
+      {
+        "id": "gUaDQLolGB",
+        "link": {
+          "name": "Radio icon",
+          "path": "/pattern/icon-radio"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-radio-iconthumbnail--8MscFUQKyM.png",
+        "title": "Radio icon",
+        "description": "Radio button styled with an icon as its visual representation."
       }
     ],
     "gridStyles": {

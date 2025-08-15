@@ -1,6 +1,6 @@
 {
   "id": "FTt0oVydi1",
-  "title": "Main",
+  "title": "Unchecked",
   "type": "data",
   "patternId": "icon-checkbox",
   "templateId": "web-components-jTiv8OpG9M",
@@ -34,5 +34,9 @@
         }
       ]
     }
+  },
+  "meta": {
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-08-15T22:02:26.873Z"
   }
 }
