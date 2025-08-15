@@ -100,6 +100,11 @@ byId:
     name: Coming soon
     parentId: components
     path: ''
+  common-mistakes:
+    id: common-mistakes
+    name: Common mistakes
+    parentId: foundations
+    path: /pages/common-mistakes
   components:
     id: components
     name: Components
@@ -245,6 +250,11 @@ byId:
     name: Inclusive language
     parentId: content
     path: /pages/inclusive-language-glnk25tux
+  info-and-help:
+    id: info-and-help
+    name: Info and help
+    parentId: product-and-ui
+    path: /pages/info-and-help
   linear-progress:
     id: linear-progress
     name: Linear progress
@@ -452,6 +462,7 @@ order:
   - design-heuristics
   - accessibility
   - color
+  - common-mistakes
   - icons
   - typography-3shrxwkyk
   - components
@@ -523,9 +534,10 @@ order:
   - voice-and-tone
   - adapting-tone-by-situation
   - product-and-ui
-  - error-messages
-  - video
   - date-and-time
+  - error-messages
+  - info-and-help
+  - video
   - word-list
   - inclusive-language-glnk25tux
   - clarity-and-efficiency
