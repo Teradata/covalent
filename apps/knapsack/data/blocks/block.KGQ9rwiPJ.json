@@ -1,0 +1,52 @@
+{
+  "id": "KGQ9rwiPJ",
+  "data": {
+    "guidelines": [
+      {
+        "id": "idjDDR6WqP",
+        "type": "do",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/foundationscommon-mistakestoggles-checkboxescorrect--eOnHEK3JJx.png",
+          "type": "image"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Use a checkbox if the change doesn’t take effect until you submit the form.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "cYsPdJMhU",
+        "type": "dont",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/foundationscommon-mistakestoggles-checkboxesincorrect--HSSMgFeJm.png",
+          "type": "image"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "A toggle should only be used when the change it triggers takes effect immediately.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

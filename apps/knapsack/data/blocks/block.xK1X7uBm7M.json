@@ -1,0 +1,53 @@
+{
+  "id": "xK1X7uBm7M",
+  "data": {
+    "guidelines": [
+      {
+        "id": "RF2opB5JdI",
+        "type": "do",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/foundationscommon-mistakesinline-alert-margincorrect--PQL103dZxn.png",
+          "type": "image"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Inline alerts should extend to the edge of the container.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "uYw4lKmMdK",
+        "type": "dont",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/foundationscommon-mistakesinline-alert-marginincorrect--T4v0wLUiNa.png",
+          "type": "image"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Do not include padding around inline alerts.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}

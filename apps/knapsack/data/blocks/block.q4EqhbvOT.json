@@ -1,0 +1,53 @@
+{
+  "id": "q4EqhbvOT",
+  "data": {
+    "guidelines": [
+      {
+        "id": "RF2opB5JdI",
+        "type": "do",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/foundationscommon-mistakestables-margincorrect--jLi6ZyC-RY.png",
+          "type": "image"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Tables should extend to the edge of the container.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "uYw4lKmMdK",
+        "type": "dont",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/foundationscommon-mistakestables-marginincorrect--5nTEGWK9mt.png",
+          "type": "image"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Do not include padding around tables.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines",
+  "spacing": "medium"
+}
