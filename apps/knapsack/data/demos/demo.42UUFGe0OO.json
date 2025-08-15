@@ -1,0 +1,25 @@
+{
+  "id": "42UUFGe0OO",
+  "data": {
+    "props": {},
+    "slots": {
+      "default": [
+        {
+          "text": "houseboat",
+          "type": "text"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-08-15T22:03:29.365Z",
+    "updatedDate": "2025-08-15T22:03:29.365Z"
+  },
+  "type": "data",
+  "title": "Material Symbol",
+  "patternId": "icon",
+  "templateId": "web-components-N8bzRbfpuX",
+  "description": "Display an icon from the Material Symbols icon font"
+}

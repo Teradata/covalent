@@ -1,16 +1,15 @@
 {
-  "id": "3VTw68n4F5",
-  "title": "Unchecked",
-  "type": "data",
-  "patternId": "icon-radio",
-  "templateId": "web-components-gmBL6Mhy4",
+  "id": "dO5BuvNajc",
   "data": {
-    "props": {},
+    "props": {
+      "checked": false,
+      "disabled": true
+    },
     "slots": {
       "icon": [
         {
           "type": "template-demo",
-          "demoId": "bn4zy44TYR",
+          "demoId": "42UUFGe0OO",
           "patternId": "icon",
           "templateId": "web-components-N8bzRbfpuX"
         }
@@ -28,7 +27,13 @@
     }
   },
   "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
     "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-08-15T22:03:14.367Z"
-  }
+    "createdDate": "2025-08-15T22:03:29.365Z",
+    "updatedDate": "2025-08-15T22:03:37.643Z"
+  },
+  "type": "data",
+  "title": "Disabled",
+  "patternId": "icon-radio",
+  "templateId": "web-components-gmBL6Mhy4"
 }
