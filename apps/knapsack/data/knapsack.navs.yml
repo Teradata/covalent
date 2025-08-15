@@ -223,7 +223,7 @@ byId:
   icon-checkbox:
     id: icon-checkbox
     name: Checkbox icon
-    parentId: coming-soon
+    parentId: components
     path: /pattern/icon-checkbox
   icon-lockup:
     id: icon-lockup
@@ -459,6 +459,7 @@ order:
   - alert
   - button
   - checkbox
+  - icon-checkbox
   - dialog
   - list
   - list-item
@@ -478,7 +479,6 @@ order:
   - badge
   - breadcrumbs
   - card
-  - icon-checkbox
   - chip-item
   - code-snippet
   - chip

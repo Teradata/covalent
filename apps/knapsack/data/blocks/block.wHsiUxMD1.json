@@ -1,5 +1,5 @@
 {
-  "id": "9i840wb6go",
+  "id": "wHsiUxMD1",
   "data": {
     "content": {
       "type": "doc",
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "The checkbox helps users make binary choices. Clear labeling and contextual guidance ensure correct usage and understanding.",
+              "text": "The checkbox icon helps users make binary choices. Clear labeling and contextual guidance ensure correct usage and understanding.",
               "type": "text"
             }
           ]
@@ -51,7 +51,7 @@
                       ]
                     },
                     {
-                      "text": ": Group related checkboxes with a clear group label.",
+                      "text": ": Group related checkbox icons with a clear group label.",
                       "type": "text"
                     }
                   ]
