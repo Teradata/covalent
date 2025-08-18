@@ -1,0 +1,41 @@
+{
+  "id": "zE647fevWI",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "These terms carry racist origins and connotations.  Use \"allowlist\" and \"blocklist\" instead. See ",
+              "type": "text"
+            },
+            {
+              "text": "Inclusive language",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/inclusive-language-glnk25tux",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

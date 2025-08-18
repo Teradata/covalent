@@ -1,0 +1,41 @@
+{
+  "id": "H7H6Fzytd",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "AI, ML, AI/ML",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"AI,\" \"ML,\" and \"AI/ML\" at their first and subsequent occurrences. Don't use \"AI & ML\" or \"AI and ML.\" Use “AI” to refer to an end-to-end solution or process, a broad business context, or when the distinction between AI and ML isn’t critical. Use “AI/ML” when you want to be precise about the methods and algorithms being used.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

@@ -12,7 +12,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Select Settings from the menu.",
+                  "text": "Select Settings ",
                   "type": "text"
                 }
               ]
@@ -30,7 +30,7 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Click on the Settings button from the menu.",
+                  "text": "Click on the Settings button ",
                   "type": "text"
                 }
               ]
@@ -38,7 +38,13 @@
           ]
         }
       }
-    ]
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
   },
-  "blockType": "guidelines"
+  "blockType": "guidelines",
+  "header": {
+    "showHeader": false
+  }
 }

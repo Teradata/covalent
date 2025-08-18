@@ -21,6 +21,18 @@
               ]
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "One word. No space. Capital \"L.\"",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

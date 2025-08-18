@@ -12,13 +12,55 @@
           },
           "content": [
             {
-              "text": "Allocation Group",
+              "text": "Allocation Group ",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Priority Scheduler concept for a set of parameters that determine the amount of resources available to the sessions assigned to a specific group of users. An AG has an assigned weight that is compared to other AG weights, can limit the total amount of CPU used by sessions under its control, and belongs to a Resource Partition. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Title case. The acronym is ",
+              "type": "text"
+            },
+            {
+              "text": "AG",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#ag",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
             }
           ]
         }

@@ -1,0 +1,23 @@
+{
+  "id": "5u92tPSPC",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Instead, use \"turn on\" and \"turn off\" for physical machines and \"start\" and \"stop\" for virtual machines.\t\t\t",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

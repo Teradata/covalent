@@ -12,13 +12,25 @@
           },
           "content": [
             {
-              "text": "blob, BLOB, Azure Blob ",
+              "text": "blob, BLOB, Azure Blob Storage ",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"blob\" to refer generically to binary large object storage. Use \"BLOB\" to refer to the data type.  \"Azure Blob Storage\" is the Microsoft product.",
+              "type": "text"
             }
           ]
         }

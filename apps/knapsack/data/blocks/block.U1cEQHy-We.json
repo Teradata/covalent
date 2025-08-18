@@ -1,0 +1,23 @@
+{
+  "id": "U1cEQHy-We",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Don't use \"(s)\" to mean one or more. Most often, use the plural form instead.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

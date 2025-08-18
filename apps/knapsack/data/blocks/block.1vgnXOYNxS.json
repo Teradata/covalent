@@ -1,0 +1,23 @@
+{
+  "id": "1vgnXOYNxS",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Don't refer to UI components. Users know how to use them. Instead, guide users to accomplish something.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

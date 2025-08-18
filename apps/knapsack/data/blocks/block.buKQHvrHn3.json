@@ -12,13 +12,25 @@
           },
           "content": [
             {
-              "text": "appendix, appendixes ",
+              "text": "appendix, -es ",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"appendixes\" for the plural form.",
+              "type": "text"
             }
           ]
         }

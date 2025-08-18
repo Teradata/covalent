@@ -18,5 +18,6 @@
     }
   },
   "blockType": "callout",
-  "size": "small"
+  "size": "small",
+  "spacing": "small"
 }

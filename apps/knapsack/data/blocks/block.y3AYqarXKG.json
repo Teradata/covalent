@@ -1,0 +1,47 @@
+{
+  "id": "y3AYqarXKG",
+  "data": {
+    "guidelines": [
+      {
+        "id": "gmPw4N5Qy8",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Teradata supports single sign-on (SSO) so users don't have to enter credentials multiple times.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "8T0F-1fuaH",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Teradata supports Single Sign-On (SSO) so users don't have to enter credentials multiple times.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}

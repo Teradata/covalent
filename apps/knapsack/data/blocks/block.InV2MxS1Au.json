@@ -1,0 +1,23 @@
+{
+  "id": "InV2MxS1Au",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Don't reference GDO Files because it's ambiguous, or the compiled binary file because users shouldn't know it exists. Instead, refer to the editable file using the file name. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

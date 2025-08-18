@@ -1,0 +1,23 @@
+{
+  "id": "OjPd8nKuzh",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Don't use Latinisms. Use \"and more\" or \"and other\" instead, or rewrite the sentence using \"such as.\" ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

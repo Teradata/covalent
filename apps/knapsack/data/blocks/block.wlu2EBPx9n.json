@@ -1,0 +1,23 @@
+{
+  "id": "wlu2EBPx9n",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Don't refer to gestures such as \"click,\" because we don't know the user's platform or input device. Instead, use \"select\" or \"choose\" to focus on the outcome.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

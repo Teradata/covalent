@@ -12,13 +12,25 @@
           },
           "content": [
             {
-              "text": "data center, data mining, data model, data node, data stream, data type",
+              "text": "data cardinality, data center, data mining, data model, data node, data stream, data type",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Two words, lowercase, no hyphen.",
+              "type": "text"
             }
           ]
         }

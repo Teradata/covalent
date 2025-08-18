@@ -1,0 +1,42 @@
+{
+  "id": "ll4IJAcAWe",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Don't use \"master\" and \"slave\" because they have racist origins. Use  \"primary\" and \"secondary\" instead. See ",
+              "type": "text"
+            },
+            {
+              "text": "Inclusive language",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/site/covalent/vX0bpYDGF/pages/inclusive-language-glnk25tux",
+                    "class": null,
+                    "target": "_self"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
