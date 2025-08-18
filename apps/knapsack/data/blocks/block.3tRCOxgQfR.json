@@ -1,0 +1,42 @@
+{
+  "id": "3tRCOxgQfR",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Refers to the functionality of setting, sending, and receiving alerts when established criteria are met. Use the customer-facing term \"Teradata Alerts\" instead. The acronym is ",
+              "type": "text"
+            },
+            {
+              "text": "CAM",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#cam",
+                    "class": null,
+                    "target": "_self"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
