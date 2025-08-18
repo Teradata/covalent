@@ -12,7 +12,8 @@
       "size": "auto",
       "corners": "rounded",
       "seamless": true
-    }
+    },
+    "columns": "1"
   },
   "size": "large",
   "blockType": "design-src-tiles"
