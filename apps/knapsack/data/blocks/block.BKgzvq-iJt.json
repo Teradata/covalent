@@ -21,6 +21,18 @@
               ]
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"Aster Database\" to refer to the Aster Database product. Use the preposition \"on\" and not \"in\" to refer to the Aster Database system. ",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

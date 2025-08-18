@@ -1,27 +1,9 @@
 {
-  "id": "m5nxnE1Jsg",
+  "id": "3PfAlRs4yr",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "create",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
         {
           "type": "paragraph",
           "attrs": {
@@ -29,11 +11,11 @@
           },
           "content": [
             {
-              "text": "Use \"create\"",
+              "text": "Use \"cancel\" or \"stop\"",
               "type": "text"
             },
             {
-              "text": " ",
+              "text": " ",
               "type": "text",
               "marks": [
                 {
@@ -42,30 +24,18 @@
               ]
             },
             {
-              "text": "to mean creating something that doesn't exist yet. ",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "Do not use \"create new\" as \"create\" already means creating. See ",
+              "text": "instead. See ",
               "type": "text"
             },
             {
-              "text": "add, add additional",
+              "text": "Inclusive language",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "#add-add-additional",
+                    "href": "/pages/inclusive-language-glnk25tux",
                     "class": null
                   }
                 }

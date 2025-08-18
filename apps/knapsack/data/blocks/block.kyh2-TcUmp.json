@@ -21,6 +21,18 @@
               ]
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "One word, no hyphen.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

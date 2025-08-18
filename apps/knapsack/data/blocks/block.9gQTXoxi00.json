@@ -12,13 +12,25 @@
           },
           "content": [
             {
-              "text": "ad hoc, ad hoc query",
+              "text": "ad hoc",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Two words, no hyphen. ",
+              "type": "text"
             }
           ]
         }

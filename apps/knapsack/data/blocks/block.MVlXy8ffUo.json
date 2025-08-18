@@ -19,6 +19,22 @@
                   "type": "bold"
                 }
               ]
+            },
+            {
+              "text": " ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "An alert is an event that reports status or a problem with a resource. Lowercase, but the  alert event type is all uppercase. ",
+              "type": "text"
             }
           ]
         }

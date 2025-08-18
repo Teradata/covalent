@@ -1,15 +1,17 @@
 {
-  "id": "k0hK0CM67z",
+  "id": "U1cEQHy-We",
   "data": {
-    "type": "error",
     "content": {
       "type": "doc",
       "content": [
         {
           "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
           "content": [
             {
-              "text": "Do not use",
+              "text": "Don't use \"(s)\" to mean one or more. Most often, use the plural form instead.",
               "type": "text"
             }
           ]
@@ -17,7 +19,5 @@
       ]
     }
   },
-  "blockType": "callout",
-  "size": "small",
-  "spacing": "small"
+  "blockType": "text-editor"
 }

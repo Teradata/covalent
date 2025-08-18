@@ -21,6 +21,18 @@
               ]
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Hyphenated.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

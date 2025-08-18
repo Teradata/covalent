@@ -12,11 +12,74 @@
           },
           "content": [
             {
-              "text": "abend",
+              "text": "abend (n.)",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Short for \"abnormal end,\" an unexpected program failure caused by an error. Always use as a noun. Lowercase unless you're referring to the Teradata Tools and Utilities message.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Examples:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "information about the abend",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "TD9901 TASK ABEND",
+                      "type": "text"
+                    }
+                  ]
                 }
               ]
             }

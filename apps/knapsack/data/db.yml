@@ -1,3 +1,6 @@
+blockCollections:
+  byId: {}
+  settings: {}
 blocks:
   settings:
     guidelines:
@@ -201,3 +204,6 @@ settings:
       enabledRendererIds:
         - web-components
       hideThemeSelector: true
+tabs:
+  byId: {}
+  settings: {}

@@ -11,11 +11,23 @@
           },
           "content": [
             {
-              "text": "Use ",
+              "text": "Use \"sign in\" to describe using a username and password in starting a session on VantageCloud Lake or other Teradata products. Use \"sign out\" to refer to ending a session.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Don't use \"log in,\" \"login,\" \"log into,\" \"log on,\" \"logon,\" \"log onto,\" \"log off,\" \"log out,\" \"logout,\" \"signin,\" \"sign-in,\" \"sign into,\" \"sign-off,\" \"sign off,\" \"sign on,\" or \"sign-on\"",
               "type": "text"
             },
             {
-              "text": "sign in",
+              "text": " ",
               "type": "text",
               "marks": [
                 {
@@ -24,20 +36,19 @@
               ]
             },
             {
-              "text": " to describe using a username and password in starting a session on VantageCloud Lake or other Teradata products. Use ",
+              "text": "(with the exception of \"single sign-on\").",
               "type": "text"
-            },
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
             {
-              "text": "sign out",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "italic"
-                }
-              ]
-            },
-            {
-              "text": " to refer to ending a session.",
+              "text": "Avoid using the noun or adjective form such as \"sign-in\" or \"signed-out.\" Instead, use the verb form because it gives the most clarity.",
               "type": "text"
             }
           ]
