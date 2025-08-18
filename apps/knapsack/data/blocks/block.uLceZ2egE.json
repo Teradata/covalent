@@ -1,0 +1,68 @@
+{
+  "id": "uLceZ2egE",
+  "data": {
+    "guidelines": [
+      {
+        "id": "oGqnze6Dxg",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "See the diagram in the next section.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Consider this example:",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "growth rates below 10%",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Y5OsoQ-bNU",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "See the diagram  below.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}

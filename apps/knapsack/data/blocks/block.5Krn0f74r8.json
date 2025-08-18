@@ -1,0 +1,41 @@
+{
+  "id": "5Krn0f74r8",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"start\" or \"run\" instead. If you're referring to a function or command, try to write around it. Or, use the appropriate case to signal that it's programming language. See ",
+              "type": "text"
+            },
+            {
+              "text": "Inclusive language",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "/pages/inclusive-language-glnk25tux",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
