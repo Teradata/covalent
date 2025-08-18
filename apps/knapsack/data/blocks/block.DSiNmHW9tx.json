@@ -1,0 +1,23 @@
+{
+  "id": "DSiNmHW9tx",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "\"DBC\" is the standard username built into a root user account. But it's jargon that users have told us they don't understand. When you're writing content that's meant to guide the user on using the credentials, use \"root user account\" or \"root user password\" instead.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

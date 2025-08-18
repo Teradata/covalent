@@ -1,0 +1,23 @@
+{
+  "id": "byefzI9hHa",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "The verb \"display\" takes an object, which shouldn't be confused with \"appear\" or \"open.\" But we recommend using \"show\" instead of \"display\" since that's more our voice. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
