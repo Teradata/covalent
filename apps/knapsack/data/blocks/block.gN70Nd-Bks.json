@@ -1,0 +1,65 @@
+{
+  "id": "gN70Nd-Bks",
+  "data": {
+    "guidelines": [
+      {
+        "id": "GaxYHcN34",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "a notification appears",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The dashboard shows  data.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "GOmfBzaqT",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "a notification displays",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "The dashboard displays  data.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}

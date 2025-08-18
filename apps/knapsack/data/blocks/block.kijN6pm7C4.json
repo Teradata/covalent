@@ -1,0 +1,65 @@
+{
+  "id": "kijN6pm7C4",
+  "data": {
+    "guidelines": [
+      {
+        "id": "GaxYHcN34",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Drag the slider to adjust the volume.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Drag and drop a file to upload it.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "GOmfBzaqT",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Drag and drop the slider to adjust the volume.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Drag-and-drop a file to upload it.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
+  },
+  "blockType": "guidelines"
+}

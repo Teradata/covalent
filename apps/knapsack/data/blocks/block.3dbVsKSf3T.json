@@ -1,0 +1,23 @@
+{
+  "id": "3dbVsKSf3T",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"switch,\" or \"turn on\" and \"turn off,\" instead.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
