@@ -21,6 +21,30 @@
               ]
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"administer\" to mean manage a database. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"admin\" to mean the person responsible for the database.",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

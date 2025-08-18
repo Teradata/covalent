@@ -12,13 +12,25 @@
           },
           "content": [
             {
-              "text": "client",
+              "text": "client-server environment",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Lowercase. Hyphenate \"client-server.\" ",
+              "type": "text"
             }
           ]
         }

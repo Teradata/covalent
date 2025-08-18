@@ -12,11 +12,57 @@
           },
           "content": [
             {
-              "text": "class",
+              "text": "class ",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Used in Teradata Workload Management to refer to workloads.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Example:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "A workload is a class of database requests.",
+                      "type": "text"
+                    }
+                  ]
                 }
               ]
             }

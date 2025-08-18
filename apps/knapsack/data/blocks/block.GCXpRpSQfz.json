@@ -12,13 +12,25 @@
           },
           "content": [
             {
-              "text": "& (ampersand)",
+              "text": "& ",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Only use \"&\" in SEO elements such as search titles, or in proper nouns. Otherwise, use \"and.\"",
+              "type": "text"
             }
           ]
         }

@@ -1,24 +1,18 @@
 {
-  "id": "x4RBuTne5S",
+  "id": "1vgnXOYNxS",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "display (v.)",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Don't refer to UI components. Users know how to use them. Instead, guide users to accomplish something.",
+              "type": "text"
             }
           ]
         }

@@ -1,15 +1,17 @@
 {
-  "id": "k0hK0CM67z",
+  "id": "VaSfgY8iM8",
   "data": {
-    "type": "error",
     "content": {
       "type": "doc",
       "content": [
         {
           "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
           "content": [
             {
-              "text": "Do not use",
+              "text": "Use \"select\" instead. The user might not be using a mouse.",
               "type": "text"
             }
           ]
@@ -17,7 +19,5 @@
       ]
     }
   },
-  "blockType": "callout",
-  "size": "small",
-  "spacing": "small"
+  "blockType": "text-editor"
 }

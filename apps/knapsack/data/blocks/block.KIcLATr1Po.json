@@ -25,6 +25,61 @@
               "type": "text"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Using \"above\" to indicate the placement of text or graphics is problematic for accessibility. It assumes users consume content in a visual, top-down way. Use \"preceding\" or \"previous\" instead.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use \"above\" for measurements.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "See ",
+              "type": "text"
+            },
+            {
+              "text": "below",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "#below",
+                    "class": null,
+                    "target": "_self"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
         }
       ]
     }

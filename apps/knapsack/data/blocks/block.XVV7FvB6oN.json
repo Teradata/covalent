@@ -1,0 +1,101 @@
+{
+  "id": "XVV7FvB6oN",
+  "data": {
+    "guidelines": [
+      {
+        "id": "q7cYoiF1YI",
+        "type": "do",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Save your changes.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Learn more about ",
+                  "type": "text"
+                },
+                {
+                  "text": "data protection",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "underline"
+                    }
+                  ]
+                },
+                {
+                  "text": ".",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "vnwEsJVuaf",
+        "type": "dont",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Select the ",
+                  "type": "text"
+                },
+                {
+                  "text": "Save",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " button to save your changes.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Click this ",
+                  "type": "text"
+                },
+                {
+                  "text": "link",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "underline"
+                    }
+                  ]
+                },
+                {
+                  "text": " to learn more about data protection.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

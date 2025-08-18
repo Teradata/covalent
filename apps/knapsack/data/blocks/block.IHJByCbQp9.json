@@ -1,27 +1,9 @@
 {
-  "id": "OorIx3Pe3P",
+  "id": "IHJByCbQp9",
   "data": {
     "content": {
       "type": "doc",
       "content": [
-        {
-          "type": "heading",
-          "attrs": {
-            "level": 2,
-            "textAlign": "left"
-          },
-          "content": [
-            {
-              "text": "DCS",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            }
-          ]
-        },
         {
           "type": "paragraph",
           "attrs": {
@@ -29,18 +11,18 @@
           },
           "content": [
             {
-              "text": "Acronym for ",
+              "text": "Use \"stop responding\" or another appropriate term instead. See ",
               "type": "text"
             },
             {
-              "text": "Data Collection Service",
+              "text": "Errors",
               "type": "text",
               "marks": [
                 {
                   "type": "link",
                   "attrs": {
                     "rel": "noopener noreferrer nofollow",
-                    "href": "#data-collection-service",
+                    "href": "/pattern/errors",
                     "class": null
                   }
                 }

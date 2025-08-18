@@ -21,6 +21,52 @@
               ]
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When referring to versions, use the term \"and earlier\" or \"or earlier.\" If working on legacy content, ensure consistency by using whichever term is used in other topics. ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Example:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "For systems running Teradata Database 16.00 and earlier, the Workload State collector retains period information. ",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
