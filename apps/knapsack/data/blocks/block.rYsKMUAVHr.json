@@ -1,0 +1,36 @@
+{
+  "id": "rYsKMUAVHr",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Chips are compact elements that represent discrete information or actions. They can be used to display input, make selections, filter content, or trigger events. Unlike buttons, which are typically static and consistent in appearance, chips are often presented in groups and appear dynamically based on user interaction or system state.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

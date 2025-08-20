@@ -1,0 +1,76 @@
+{
+  "id": "YOphUXoWLR",
+  "data": {
+    "guidelines": [
+      {
+        "id": "dljoVzvfRj",
+        "type": "do",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/cv-chipdo-content--P6UPyReNgd.png",
+          "type": "image"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Example Label",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "hardBreak"
+                },
+                {
+                  "text": "\"Walk\"",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "GIiNhj8J08",
+        "type": "dont",
+        "image": {
+          "src": "https://knapsack.imgix.net/site/covalent/cv-chipdont-content--jh4gHVqYb.png",
+          "type": "image"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Example Label",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "hardBreak"
+                },
+                {
+                  "text": "\"Prefer walking routes\"",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

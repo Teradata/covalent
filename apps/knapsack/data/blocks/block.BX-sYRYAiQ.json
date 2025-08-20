@@ -1,0 +1,18 @@
+{
+  "id": "BX-sYRYAiQ",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "18956:18536"
+      }
+    ],
+    "columns": "1",
+    "hideComponentProps": true,
+    "imageStyles": {
+      "size": "auto",
+      "seamless": true
+    }
+  },
+  "blockType": "design-src-tiles"
+}

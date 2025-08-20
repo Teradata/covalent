@@ -490,9 +490,9 @@ order:
   - badge
   - breadcrumbs
   - card
+  - chip
   - chip-item
   - code-snippet
-  - chip
   - circular-progress
   - empty-state
   - expansion-panel

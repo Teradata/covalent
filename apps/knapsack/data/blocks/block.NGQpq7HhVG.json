@@ -1,0 +1,120 @@
+{
+  "id": "NGQpq7HhVG",
+  "data": {
+    "guidelines": [
+      {
+        "id": "g-Q8GlSc5S",
+        "type": "do",
+        "image": {
+          "alt": "A chip with a CPU icon and description \"Engine\" in the default state, a chip with the description \"Selected\" in the selected state with a close icon, and a chip with a description of \"Database\" in a default state. ",
+          "src": "https://knapsack.imgix.net/site/covalent/cv-chipdo--Vgdo8eNxFh.png",
+          "type": "image",
+          "title": "Examples of how to use chips"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Ensure chips have clear and concise descriptors",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Group chips together when appropriate",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "imageFit": "contain"
+      },
+      {
+        "id": "lR1slryohQ",
+        "type": "dont",
+        "image": {
+          "alt": "A selected filter chip with an anchor trailing icon, and a chip with a very long description. ",
+          "src": "https://knapsack.imgix.net/site/covalent/cv-chipdont--ZdftczJ1oy.png",
+          "type": "image",
+          "title": "Examples of how not to use chips"
+        },
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Use chips when there is only one option.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Use chips with long text descriptions.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Use other icons besides the close icon for the trailing icon.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "imageFit": "contain"
+      }
+    ]
+  },
+  "blockType": "guidelines"
+}

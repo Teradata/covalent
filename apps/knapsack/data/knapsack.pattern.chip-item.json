@@ -60,28 +60,80 @@
       "type": "subPage"
     },
     {
+      "id": "a2pOyuSCKg",
+      "type": "subPage"
+    },
+    {
       "id": "web-components-vegaZgkE47",
       "type": "template"
     },
     {
-      "id": "pEom2FIkPi",
-      "type": "designSrc",
-      "hidden": true
+      "id": "zZ646TiRXd",
+      "type": "subPage"
+    },
+    {
+      "id": "DqpR97K4uy",
+      "type": "designSrc"
     }
   ],
   "subPages": [
     {
       "id": "overview",
       "title": "Usage",
-      "blockIds": ["huGSuOSFLN", "aqbCC1UTu6"]
+      "blockIds": [
+        "BX-sYRYAiQ",
+        "rYsKMUAVHr",
+        "P2yDZDUoZR",
+        "6dtRDfC-L3",
+        "p2oB6pM9kF",
+        "NGQpq7HhVG",
+        "bYMwr8kwEX",
+        "aqbCC1UTu6"
+      ]
+    },
+    {
+      "id": "a2pOyuSCKg",
+      "title": "Style",
+      "blockIds": [
+        "ndwOsvS-EA",
+        "rDE5HUqMnU",
+        "HgXlScII",
+        "RCZOZgCFyU",
+        "0o43W7CxGh",
+        "YOphUXoWLR",
+        "pVfmwOg72u",
+        "HSCAx7Ji5",
+        "iHUG8yRrl",
+        "LuDHa5PDdI",
+        "JAAg1VBMpg",
+        "cWrv7IGW5D"
+      ]
+    },
+    {
+      "id": "zZ646TiRXd",
+      "title": "Accessibility",
+      "blockIds": [
+        "YGYWLELZTv",
+        "WG323Q5fEJ",
+        "OIQoeR0Sg0",
+        "MhEJio7rj",
+        "KHxjr26sEy",
+        "V-d9pIdmSG",
+        "9tfxjmd-kt"
+      ]
     }
   ],
   "designSrcComponentsById": {
-    "pEom2FIkPi": {
-      "id": "pEom2FIkPi",
+    "DqpR97K4uy": {
+      "id": "DqpR97K4uy",
       "title": "Figma Component",
       "fileId": "KvXVAmYdCVAS7hzkOa73Em",
-      "componentId": "8169:5802"
+      "componentId": "17463:2891"
     }
+  },
+  "thumbnail": {
+    "type": "designSrcItem",
+    "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+    "nodeId": "18956:18534"
   }
 }
