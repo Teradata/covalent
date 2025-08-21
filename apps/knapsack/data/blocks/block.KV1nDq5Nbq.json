@@ -1,0 +1,42 @@
+{
+  "id": "KV1nDq5Nbq",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For Teradata products, features, and tools that have been branded or trademarked, see the ",
+              "type": "text"
+            },
+            {
+              "text": "marketing guidelines",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://teradata.sharepoint.com/sites/GlobalMarketing/Brand%20Resources%20Library/Forms/AllItems.aspx?id=%2Fsites%2FGlobalMarketing%2FBrand%20Resources%20Library%2FGuidelines%2FTeradata%20Style%20and%20Terms%20Guide%20%2D%20Internal%20%2D%20SP001139%2EPDF&parent=%2Fsites%2FGlobalMarketing%2FBrand%20Resources%20Library%2FGuidelines",
+                    "class": null,
+                    "target": "_blank"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
