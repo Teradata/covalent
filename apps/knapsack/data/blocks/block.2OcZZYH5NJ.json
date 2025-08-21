@@ -1,0 +1,41 @@
+{
+  "id": "2OcZZYH5NJ",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "For Teradata products, features, and tools that have been branded or trademarked, see the ",
+              "type": "text"
+            },
+            {
+              "text": "marketing guidelines",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "rel": "noopener noreferrer nofollow",
+                    "href": "https://teradata.sharepoint.com/sites/GlobalMarketing/SitePages/Brand-Resources.aspx?csf=1&web=1&e=fl801m&ovuser=9151cbaa-fc6b-4f48-89bb-8c4a71982138%2cfelicia.wu%40teradata.com&OR=Teams-HL&CT=1746117146024&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNTAzMTMyMTAxNCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3d%3d&CID=e0ed99a1-e0e5-0000-b65d-5f47c90ee435&cidOR=SPO",
+                    "class": null
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
