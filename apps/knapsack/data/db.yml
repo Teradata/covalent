@@ -1,10 +1,6 @@
 blockCollections:
   byId:
-    BaUwUOuo1M:
-      blockIds:
-        - KV1nDq5Nbq
-      id: BaUwUOuo1M
-    IT9rl2722:
+    GXrEBhSulF:
       blockIds:
         - GCXpRpSQfz
         - fsjCGm6DwZ
@@ -196,7 +192,11 @@ blockCollections:
         - ICVESgI7N
         - TJTKbS-rov
         - eZng1lKqjj
-      id: IT9rl2722
+      id: GXrEBhSulF
+    tDml332o3:
+      blockIds:
+        - 2OcZZYH5NJ
+      id: tDml332o3
   settings: {}
 blocks:
   settings:
@@ -403,18 +403,18 @@ settings:
       hideThemeSelector: true
 tabs:
   byId:
-    h8DGygjIQJ:
+    2CFUVUS2zi:
       blockCollectionIds:
-        - IT9rl2722
-      id: h8DGygjIQJ
-      slug: a-z
-      title: A–Z
-      type: block-collection-tab
-    jne-e2tIE:
-      blockCollectionIds:
-        - BaUwUOuo1M
-      id: jne-e2tIE
+        - tDml332o3
+      id: 2CFUVUS2zi
       slug: product-and-feature-names
       title: Product and feature names
+      type: block-collection-tab
+    5dxcMDbdIY:
+      blockCollectionIds:
+        - GXrEBhSulF
+      id: 5dxcMDbdIY
+      slug: a-z
+      title: A–Z
       type: block-collection-tab
   settings: {}
