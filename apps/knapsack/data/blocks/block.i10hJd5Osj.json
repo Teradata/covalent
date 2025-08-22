@@ -29,7 +29,7 @@
           },
           "content": [
             {
-              "text": "Lowercase, unless it's part of a product name; then, use title case.",
+              "text": "Lowercase, unless it's part of a product name.",
               "type": "text"
             }
           ]
