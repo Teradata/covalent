@@ -1,5 +1,5 @@
 {
-  "id": "2OcZZYH5NJ",
+  "id": "m8M3V4cWbb",
   "data": {
     "content": {
       "type": "doc",
@@ -12,7 +12,7 @@
           },
           "content": [
             {
-              "text": "Data and analytics glossary",
+              "text": "Product and feature names",
               "type": "text"
             }
           ]
@@ -24,7 +24,7 @@
           },
           "content": [
             {
-              "text": "See Part 4 of the  ",
+              "text": "See Part 3 of ",
               "type": "text"
             },
             {
@@ -43,7 +43,7 @@
               ]
             },
             {
-              "text": " for definitions of common terms. ",
+              "text": ". For example, if you need instructions about using the names of the different deployment offerings and editions of Vantage, look no further than this marketing guide. ",
               "type": "text"
             }
           ]

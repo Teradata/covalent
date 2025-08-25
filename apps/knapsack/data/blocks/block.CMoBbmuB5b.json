@@ -1,0 +1,23 @@
+{
+  "id": "CMoBbmuB5b",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Are you looking for the correct ways on how to present Teradata's proprietary products, features, and tools in content, or definitions of a data term? Reference these marketing brand guidelines.   ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

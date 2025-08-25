@@ -195,6 +195,8 @@ blockCollections:
       id: GXrEBhSulF
     tDml332o3:
       blockIds:
+        - CMoBbmuB5b
+        - m8M3V4cWbb
         - 2OcZZYH5NJ
       id: tDml332o3
   settings: {}
@@ -407,8 +409,8 @@ tabs:
       blockCollectionIds:
         - tDml332o3
       id: 2CFUVUS2zi
-      slug: product-and-feature-names
-      title: Product and feature names
+      slug: marketing-terms
+      title: Marketing terms
       type: block-collection-tab
     5dxcMDbdIY:
       blockCollectionIds:

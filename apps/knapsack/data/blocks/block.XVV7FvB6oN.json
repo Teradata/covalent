@@ -95,7 +95,10 @@
           ]
         }
       }
-    ]
+    ],
+    "tileStyles": {
+      "imageSize": "none"
+    }
   },
   "blockType": "guidelines"
 }
