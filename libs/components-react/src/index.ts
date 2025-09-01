@@ -12,6 +12,7 @@ export * from './CircularProgress/CovalentCircularProgress';
 export * from './CodeEditor/CovalentCodeEditor';
 export * from './CodeSnippet/CovalentCodeSnippet';
 export * from './Dialog/CovalentDialog';
+export * from './Divider/CovalentDivider';
 export * from './Drawer/CovalentDrawer';
 export * from './EmptyState/CovalentEmptyState';
 export * from './ExpansionPanel/CovalentExpansionPanel';
