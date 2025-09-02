@@ -1,3 +1,9 @@
+## [11.2.1](https://github.com/Teradata/covalent/compare/v11.2.0...v11.2.1) (2025-09-02)
+
+### Bug Fixes
+
+- **app-shell:** fix sidenav remote opening ([#2555](https://github.com/Teradata/covalent/issues/2555)) ([9d04f41](https://github.com/Teradata/covalent/commit/9d04f418dfaadc36c146f7d529e8fb1226470813))
+
 # [11.2.0](https://github.com/Teradata/covalent/compare/v11.1.1...v11.2.0) (2025-07-29)
 
 ### Features
