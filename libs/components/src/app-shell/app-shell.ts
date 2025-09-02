@@ -85,10 +85,19 @@ export class CovalentAppShell extends DrawerBase {
   @property({ type: Boolean, reflect: true })
   fullWidth = false;
 
+  /**
+   * Control left navigation visibility with external control
+   */
+  @property({ type: Boolean, reflect: true })
+  remoteNavOpen = false;
+
   private hovered = false;
   private hoverTimeout: any | undefined;
   private hoverEntryDuration = 250;
   private hoverExitDuration = 250;
+  private remoteControlTimeout: any | undefined;
+
+  private readonly observedAttributes = ['remotenavopen'];
 
   constructor() {
     super();
@@ -96,7 +105,7 @@ export class CovalentAppShell extends DrawerBase {
     this._resize = this._resize.bind(this);
     this._stopResize = this._stopResize.bind(this);
     this._startResizing = this._startResizing.bind(this);
-    this._setupEventListeners();
+    this._setupHelpEventListeners();
     window.addEventListener('DOMContentLoaded', () => {
       this.setupHelpPanelListeners();
       const storedWidth = localStorage.getItem('helpWidth');
@@ -132,7 +141,7 @@ export class CovalentAppShell extends DrawerBase {
     this.requestUpdate();
   }
 
-  private _setupEventListeners() {
+  private _setupHelpEventListeners() {
     window.addEventListener('DOMContentLoaded', () => {
       const helpToggle = document.querySelector('.help-item');
       const helpClose = document.querySelector('.help-close');
@@ -183,7 +192,7 @@ export class CovalentAppShell extends DrawerBase {
     const maxWidthForHelp = Math.max(320, windowWidth - mainMinWidth);
     const newWidth = Math.max(
       320,
-      Math.min(maxWidthForHelp, this._startWidth - diff)
+      Math.min(maxWidthForHelp, this._startWidth - diff),
     );
     if (this.helpWidth !== newWidth) {
       this.helpWidth = newWidth;
@@ -214,7 +223,7 @@ export class CovalentAppShell extends DrawerBase {
     this.forcedOpen = forcedOpen;
 
     this.dispatchEvent(
-      new Event('CovalentAppShell:toggle', { bubbles: true, composed: true })
+      new Event('CovalentAppShell:toggle', { bubbles: true, composed: true }),
     );
 
     this.requestUpdate();
@@ -222,14 +231,14 @@ export class CovalentAppShell extends DrawerBase {
 
   private updateHelpPanelWidth() {
     const appShell = this.shadowRoot?.querySelector(
-      '.app-shell'
+      '.app-shell',
     ) as HTMLElement;
     appShell?.style.setProperty('--cv-help-width', `${this.helpWidth}px`);
   }
 
   private _handleMenuClick() {
     this.mdcRoot.dispatchEvent(
-      new Event('transitionend', { bubbles: true, composed: true })
+      new Event('transitionend', { bubbles: true, composed: true }),
     );
     // Forcefully toggle the open/close state
     this._toggleOpen(!this.forcedOpen);
@@ -296,6 +305,20 @@ export class CovalentAppShell extends DrawerBase {
     super.disconnectedCallback();
     this.removeEventListener('MDCDrawer:closed', this._handleDrawerClosed);
     window.removeEventListener('resize', this.resizeEvent);
+  }
+
+  override attributeChangedCallback(
+    name: string,
+    oldValue: string,
+    newValue: string,
+  ) {
+    if (this.observedAttributes.includes(name)) {
+      clearTimeout(this.remoteControlTimeout);
+      this.remoteControlTimeout = setTimeout(() => {
+        this._handleMenuClick();
+      }, 0);
+    }
+    super.attributeChangedCallback(name, oldValue, newValue);
   }
 
   protected renderSection() {
