@@ -24,6 +24,7 @@ export default {
     contained: true,
     fullWidth: false,
     helpResizable: true,
+    remoteNavOpen: false,
   },
   argTypes: {
     navClick: { action: 'clicked' },
@@ -36,6 +37,7 @@ export default {
 let appShell;
 let banner;
 let dataTable;
+let remoteOpeningToggle;
 
 const updateActionRibbon = () => {
   const selectedRowNum = dataTable.getSelectedRowIds().length;
@@ -56,6 +58,7 @@ const Template = ({
   contained = true,
   fullWidth = false,
   helpResizable = true,
+  remoteNavOpen = false,
 }) => {
   document.addEventListener(
     'DOMContentLoaded',
@@ -65,6 +68,7 @@ const Template = ({
       appShell = document.querySelector('cv-app-shell');
       banner = document.querySelector('cv-action-ribbon');
       dataTable = new MDCDataTable(dataTableEl);
+      remoteOpeningToggle = document.querySelector('.remote-opening-toggle');
 
       helpItem.addEventListener('click', () => {
         appShell.helpOpen = !appShell.helpOpen;
@@ -76,6 +80,10 @@ const Template = ({
       });
 
       setTimeout(updateActionRibbon, 150);
+
+      remoteOpeningToggle.addEventListener('click', () => {
+        appShell.remoteNavOpen = !appShell.remoteNavOpen;
+      });
     },
     { once: true },
   );
@@ -106,6 +114,7 @@ const Template = ({
     ${contained ? `contained` : ''}
     ${fullWidth ? `fullWidth` : ''}
     ${helpResizable ? `helpResizable` : ''}
+    ${remoteNavOpen ? `remoteNavOpen=${remoteNavOpen}` : ''}
 
     >
 
@@ -268,7 +277,14 @@ const Template = ({
 
       <cv-toolbar>
         <span slot="title">[Section name]</span>
-        <cv-icon-button slot="actionItems" icon="menu_open"></cv-icon-button>
+        <cv-button slot="actionItems"
+          class="remote-opening-toggle"
+          label="Toggle sidenav"
+          ${remoteNavOpen ? `icon="fullscreen"` : `icon="fullscreen_exit"`}"
+        >
+        </cv-button>
+        <cv-icon-button slot="actionItems" icon="menu_open">
+        </cv-icon-button>
         <cv-icon-button
           class="hidden-large"
           slot="actionItems"
@@ -326,4 +342,9 @@ fullWidth.args = {
 export const helpResizable = Template.bind({});
 helpResizable.args = {
   helpResizable: true,
+};
+
+export const remoteMenuToggle = Template.bind({});
+remoteMenuToggle.args = {
+  remoteNavOpen: true,
 };
