@@ -1,6 +1,5 @@
 import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
 import '../data-table/data-table.stories.scss';
-
 import './app-shell';
 import '../action-ribbon/action-ribbon';
 import '../icon/icon';
@@ -11,6 +10,8 @@ import '../list/list-item';
 import '../list/nav-list-item';
 import '../select/select';
 import '../toolbar/toolbar';
+import '../tab/tab-bar';
+import '../tab/tab';
 import '../button/button';
 import '../textfield/textfield';
 import '../typography/typography';
@@ -94,8 +95,24 @@ const Template = ({
 
   return `
     <style>
+
+    cv-select {
+        --cv-density-mode:-3;
+    }
+    cv-select cv-list-item {
+        --cv-density-mode:0;
+    }
+        
     .hidden-large {
         display: none;
+    }
+
+    .user-menu {
+      background: var(--mdc-theme-surface); 
+      display: flex;
+      justify-content:space-between;
+      align-items: between;
+      padding: 8px 0;
     }
 
     @media only screen and (max-width: 800px) {
@@ -179,19 +196,35 @@ const Template = ({
         </cv-nav-list-item>
       </cv-list>
 
-      <cv-toolbar slot="user-menu" sticky>
-       <span slot="title" style="display:flex; align-items: center">
-        <cv-typography scale="body1">All environments</cv-typography>
-        <cv-icon>arrow_drop_down</cv-icon>
-       </span>
 
-       <cv-icon-button slot="actionItems" icon="forum"></cv-icon-button>
-       <cv-divider slot="actionItems" direction="vertical" size="icon"></cv-divider>
+      <div class="user-menu" slot="user-menu" >
+        <cv-select icon="database" text slot="title" >
+          <cv-typography scale="subtitle2" style="margin:0px 16px 10px;">All environments</cv-typography>
+          <cv-divider flush></cv-divider>
+          <cv-list-item twoline selected graphic="icon" value="1">
+            Base user
+            <span slot="secondary">1 CPU, 2GB RAM</span>
+            <cv-icon slot="graphic">check</cv-icon>
+          </cv-list-item>
+          <cv-list-item twoline graphic="icon" value="1">
+            Advanced user
+            <span slot="secondary">2 CPU, 4GB RAM</span>
+          </cv-list-item>
+          <cv-list-item twoline graphic="icon" value="1">
+            Pro user
+            <span slot="secondary">4 CPU, 8GB RAM</span>
+          </cv-list-item>
+        </cv-select>
 
-       <cv-icon-button slot="actionItems" icon="notifications"></cv-icon-button>
-       <cv-icon-button-toggle slot="actionItems" onIcon="help" offIcon="help" class="help-item"></cv-icon-button-toggle>
-       <cv-icon-button slot="actionItems" icon="person" style="margin-right: -12px"></cv-icon-button>
-      </cv-toolbar>
+        <span>
+          <cv-icon-button slot="actionItems" icon="forum"></cv-icon-button>
+          <cv-divider slot="actionItems" direction="vertical" size="icon"></cv-divider>
+
+          <cv-icon-button slot="actionItems" icon="notifications"></cv-icon-button>
+          <cv-icon-button-toggle slot="actionItems" onIcon="help" offIcon="help" class="help-item"></cv-icon-button-toggle>
+          <cv-icon-button slot="actionItems" icon="person" style="margin-right: -12px"></cv-icon-button>
+        </span>
+      </div>
 
       <div slot="help" class="help-panel mdc-typography">
         <cv-toolbar sticky>
