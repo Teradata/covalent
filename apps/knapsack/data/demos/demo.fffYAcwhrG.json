@@ -1,0 +1,20 @@
+{
+  "id": "fffYAcwhrG",
+  "data": {
+    "props": {
+      "icon": "add",
+      "disabled": false
+    },
+    "slots": {}
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-09-03T23:35:01.796Z",
+    "updatedDate": "2025-09-03T23:35:18.243Z"
+  },
+  "type": "data",
+  "title": "Main",
+  "patternId": "icon-button",
+  "templateId": "web-components-ctiCe2sAX"
+}

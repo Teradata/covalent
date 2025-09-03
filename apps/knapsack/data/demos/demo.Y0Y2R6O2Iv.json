@@ -1,0 +1,27 @@
+{
+  "id": "Y0Y2R6O2Iv",
+  "data": {
+    "props": {
+      "dense": false,
+      "label": "Label",
+      "raised": false,
+      "disabled": false,
+      "outlined": true,
+      "fullwidth": false,
+      "unelevated": false,
+      "trailingIcon": false,
+      "expandContent": false
+    },
+    "slots": {}
+  },
+  "meta": {
+    "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "createdDate": "2025-09-03T23:33:34.487Z",
+    "updatedDate": "2025-09-03T23:36:16.129Z"
+  },
+  "type": "data",
+  "title": "Outlined",
+  "patternId": "button",
+  "templateId": "web-components-raE1x4tYL"
+}

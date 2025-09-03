@@ -10,7 +10,7 @@
       "trailingIcon": false,
       "raised": false,
       "unelevated": false,
-      "outlined": false,
+      "outlined": true,
       "dense": false,
       "disabled": false,
       "expandContent": false,
@@ -20,6 +20,6 @@
   },
   "meta": {
     "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedDate": "2025-04-02T16:59:35.403Z"
+    "updatedDate": "2025-09-03T23:35:46.380Z"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "NXMdeiHjKO",
-  "title": "Default",
+  "title": "Main",
   "type": "data",
   "patternId": "toolbar",
   "templateId": "web-components-A6-16QhSaM",
@@ -9,40 +9,53 @@
     "slots": {
       "title": [
         {
-          "text": "Title toolbar",
+          "text": "Page toolbar",
           "type": "text"
         }
       ],
       "actionItems": [
         {
           "type": "template-demo",
-          "demoId": "tU8Ze3Af9p",
-          "patternId": "textfield",
-          "templateId": "web-components-M4zyalwdNJ"
-        },
-        {
-          "type": "template-demo",
-          "demoId": "i-aFgnERP",
+          "demoId": "iUt-9n1-2i",
+          "reactKey": "829e9422-6eba-4d0b-a53a-1efe0a457583",
           "patternId": "icon-button",
           "templateId": "web-components-ctiCe2sAX"
         },
         {
           "type": "template-demo",
-          "demoId": "MWNDJ0YT9M",
+          "demoId": "k9rshyqsC",
+          "reactKey": "8c84355e-86fd-4e27-8cc0-305b18bee0a4",
           "patternId": "icon-button",
           "templateId": "web-components-ctiCe2sAX"
         },
         {
           "type": "template-demo",
-          "demoId": "iyfHwphwcs",
+          "demoId": "fffYAcwhrG",
+          "reactKey": "c7def327-3e5f-4440-a2fa-ebba84c3594d",
           "patternId": "icon-button",
           "templateId": "web-components-ctiCe2sAX"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "Y0Y2R6O2Iv",
+          "reactKey": "a36cd468-9e38-44d9-8baa-e9d71dc534f0"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "e9b1tdFlvH",
+          "reactKey": "485319af-75af-4855-af6c-6522825a26e3"
+        },
+        {
+          "type": "template-demo",
+          "demoId": "6CkHQ5Jk4A",
+          "reactKey": "a0dcc3de-3705-4c6f-b678-6eddaad0ae25"
         }
       ]
     }
   },
   "meta": {
-    "updatedBy": "33f4e30e-bb41-42d1-9394-d1ea4d17270c",
-    "updatedDate": "2025-06-26T22:19:46.512Z"
-  }
+    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedDate": "2025-09-03T23:36:46.275Z"
+  },
+  "description": ""
 }
