@@ -17,7 +17,11 @@
             "description": "A <div> or <span> that will be used as the title text."
           },
           "actionItems": {
-            "allowedPatternIds": ["icon-button", "textfield"],
+            "allowedPatternIds": [
+              "icon-button",
+              "button",
+              "icon-button-toggle"
+            ],
             "title": "actionItems",
             "description": "A number of <cv-icon-button> elements to use for action icons on the right side."
           },
@@ -59,7 +63,16 @@
               "type": "boolean"
             }
           }
-        }
+        },
+        "isInferred": false,
+        "propOrder": [
+          "dense",
+          "centerTitle",
+          "prominent",
+          "scrollTarget",
+          "sticky"
+        ],
+        "slotOrder": ["title", "actionItems", "navigationIcon", "default"]
       },
       "demoIds": ["NXMdeiHjKO", "jBi2h7tnlI"],
       "blockIds": ["IRWOjWCkbH", "1vU2Q5vIku"]
