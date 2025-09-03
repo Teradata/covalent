@@ -55,19 +55,20 @@
 
   .mdc-select__selected-text-secondary {
     --mdc-icon-size: var(--mdc-typography-body2-font-size);
+
     font-family: var(
       --mdc-typography-body2-font-family,
       var(--mdc-typography-font-family, Roboto, sans-serif)
     );
     font-size: var(--mdc-typography-body2-font-size, 0.875rem);
     font-weight: var(--mdc-typography-body2-font-weight, 400);
-    letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+    letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0179em);
     text-decoration: var(--mdc-typography-body2-text-decoration, inherit);
     text-transform: var(--mdc-typography-body2-text-transform, inherit);
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    margin-top: 0px;
+    margin-top: 0;
     line-height: normal;
     display: block;
     width: 100%;
@@ -78,8 +79,7 @@
     .mdc-select__selected-text-container,
   .mdc-select--filled .mdc-select__anchor .mdc-select__selected-text-container,
   .mdc-select--text .mdc-select__anchor .mdc-select__selected-text-container {
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-flow: column nowrap;
     align-content: center;
     justify-content: center;
   }
@@ -91,6 +91,7 @@
 
   .mdc-select--text:not(.mdc-select--disabled) .mdc-select__anchor {
     --mdc-select-fill-color: transparent;
+
     border-radius: var(--mdc-shape-small);
   }
 }
