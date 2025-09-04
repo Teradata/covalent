@@ -28,7 +28,7 @@
     color: var(--mdc-select-dropdown-icon-color);
   }
 
-  .mdc-select .mdc-select__anchor {
+  .mdc-select.mdc-select--outlined .mdc-select__anchor {
     height: density.density-height(56px);
 
     .mdc-floating-label--float-above {
@@ -37,8 +37,61 @@
     }
   }
 
-  .mdc-select.mdc-select--with-leading-icon .mdc-floating-label--float-above {
+  .mdc-select.mdc-select--text .mdc-select__anchor {
+    height: density.density-height(56px);
+  }
+
+  .mdc-select--with-twoline:not(.mdc-select--outlined)
+    .mdc-select__anchor
+    .mdc-floating-label--float-above {
+    transform: translateY(-106%) scale(0);
+  }
+
+  .mdc-select.mdc-select--outlined.mdc-select--with-leading-icon
+    .mdc-floating-label--float-above {
     transform: translateY(#{density.density-height(-37.25px, 0, -2px)})
       translateX(-32px) scale(1);
+  }
+
+  .mdc-select__selected-text-secondary {
+    --mdc-icon-size: var(--mdc-typography-body2-font-size);
+
+    font-family: var(
+      --mdc-typography-body2-font-family,
+      var(--mdc-typography-font-family, Roboto, sans-serif)
+    );
+    font-size: var(--mdc-typography-body2-font-size, 0.875rem);
+    font-weight: var(--mdc-typography-body2-font-weight, 400);
+    letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0179em);
+    text-decoration: var(--mdc-typography-body2-text-decoration, inherit);
+    text-transform: var(--mdc-typography-body2-text-transform, inherit);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 0;
+    line-height: normal;
+    display: block;
+    width: 100%;
+  }
+
+  .mdc-select--outlined
+    .mdc-select__anchor
+    .mdc-select__selected-text-container,
+  .mdc-select--filled .mdc-select__anchor .mdc-select__selected-text-container,
+  .mdc-select--text .mdc-select__anchor .mdc-select__selected-text-container {
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .mdc-select--filled .mdc-select__anchor .mdc-select__selected-text-container {
+    align-self: center;
+    height: 100%;
+  }
+
+  .mdc-select--text:not(.mdc-select--disabled) .mdc-select__anchor {
+    --mdc-select-fill-color: transparent;
+
+    border-radius: var(--mdc-shape-small);
   }
 }
