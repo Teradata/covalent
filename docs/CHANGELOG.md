@@ -1,3 +1,13 @@
+# [11.3.0](https://github.com/Teradata/covalent/compare/v11.2.1...v11.3.0) (2025-09-04)
+
+### Bug Fixes
+
+- **components:** scss lint error ([7426fe6](https://github.com/Teradata/covalent/commit/7426fe6bdfa1760a9acd920d28e53c0a33e04f59))
+
+### Features
+
+- **components:** adding text style to select ([2852037](https://github.com/Teradata/covalent/commit/285203738719f755297b50f6b36a6be53807f4ed))
+
 ## [11.2.1](https://github.com/Teradata/covalent/compare/v11.2.0...v11.2.1) (2025-09-02)
 
 ### Bug Fixes
