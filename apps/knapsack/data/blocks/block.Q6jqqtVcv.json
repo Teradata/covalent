@@ -1,0 +1,36 @@
+{
+  "id": "Q6jqqtVcv",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Content guidelines",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Explain to the user that no data is available. Make it clear if this is an expected situation or an error. Provide a next step for the user to take to resolve the situation.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

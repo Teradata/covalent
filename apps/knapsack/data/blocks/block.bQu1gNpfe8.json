@@ -1,0 +1,17 @@
+{
+  "id": "bQu1gNpfe8",
+  "data": {
+    "shortcuts": [
+      {
+        "id": "Vc3w6RShcS",
+        "link": {
+          "path": "https://www.w3.org/TR/WCAG21/",
+          "external": true
+        },
+        "title": "See also",
+        "description": "Web Content Accessibility Guidelines (WCAG) component standards"
+      }
+    ]
+  },
+  "blockType": "shortcut-tiles"
+}

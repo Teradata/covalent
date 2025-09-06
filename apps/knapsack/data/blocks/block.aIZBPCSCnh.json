@@ -1,0 +1,36 @@
+{
+  "id": "aIZBPCSCnh",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Alignment",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "To prevent the empty state from jumping when switching to the progress or error state, define a container that is centered and align the empty state within it, ensuring that the layout remains consistent during state transitions.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

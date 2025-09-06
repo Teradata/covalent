@@ -1,0 +1,19 @@
+{
+  "id": "IVbHzM0B54",
+  "data": {
+    "items": [
+      {
+        "fileId": "KvXVAmYdCVAS7hzkOa73Em",
+        "nodeId": "21549:27039"
+      }
+    ],
+    "columns": "1",
+    "imageStyles": {
+      "fit": "fill",
+      "size": "auto",
+      "corners": "rounded",
+      "seamless": true
+    }
+  },
+  "blockType": "design-src-tiles"
+}

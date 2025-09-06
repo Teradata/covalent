@@ -148,7 +148,7 @@ byId:
   empty-state:
     id: empty-state
     name: Empty state
-    parentId: coming-soon
+    parentId: components
     path: /pattern/empty-state
   error-messages:
     id: error-messages
@@ -472,6 +472,7 @@ order:
   - checkbox
   - icon-checkbox
   - dialog
+  - empty-state
   - list
   - list-item
   - navigation-list-item
@@ -494,7 +495,6 @@ order:
   - code-snippet
   - chip
   - circular-progress
-  - empty-state
   - expansion-panel
   - expansion-panel-item
   - focused-page

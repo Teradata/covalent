@@ -1,0 +1,37 @@
+{
+  "id": "Slmhfw9oAw",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "With two actions",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Provides two action options. One action often has more prominence.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "size": "small",
+  "blockType": "text-editor"
+}
