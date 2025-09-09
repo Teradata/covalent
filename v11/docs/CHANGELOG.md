@@ -1,3 +1,9 @@
+## [11.3.2](https://github.com/Teradata/covalent/compare/v11.3.1...v11.3.2) (2025-09-09)
+
+### Bug Fixes
+
+- **dependencies:** update @covalent/tokens to version 11.3.1 ([#2561](https://github.com/Teradata/covalent/issues/2561)) ([b9dea94](https://github.com/Teradata/covalent/commit/b9dea9476b970bad1be1acd07bec4acdc7faef8d))
+
 ## [11.3.1](https://github.com/Teradata/covalent/compare/v11.3.0...v11.3.1) (2025-09-09)
 
 ### Bug Fixes
