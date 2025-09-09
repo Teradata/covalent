@@ -1,3 +1,10 @@
+## [11.3.1](https://github.com/Teradata/covalent/compare/v11.3.0...v11.3.1) (2025-09-09)
+
+### Bug Fixes
+
+- **typography:** add 'sans-serif' to font-family values for consistency ([27a1e58](https://github.com/Teradata/covalent/commit/27a1e5896566a3ea6f9f9a94df4c0d335afac55e))
+- **typography:** update font families and weights for consistency ([300bab4](https://github.com/Teradata/covalent/commit/300bab47026a2b380adc752cf528912b808119bb))
+
 # [11.3.0](https://github.com/Teradata/covalent/compare/v11.2.1...v11.3.0) (2025-09-04)
 
 ### Bug Fixes
