@@ -151,6 +151,16 @@
         "image": "https://knapsack.imgix.net/site/covalent/cv-radio-iconthumbnail--8MscFUQKyM.png",
         "title": "Radio icon",
         "description": "Radio button styled with an icon as its visual representation."
+      },
+      {
+        "id": "Y4BlD2TXoB",
+        "link": {
+          "name": "Empty state",
+          "path": "/pattern/empty-state"
+        },
+        "image": "https://knapsack.imgix.net/site/covalent/cv-empty-statethumbnail--XUVAebtJ5U.png",
+        "title": "Empty state",
+        "description": "Placeholder content displayed when there is no data to show."
       }
     ],
     "gridStyles": {
