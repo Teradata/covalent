@@ -1,0 +1,36 @@
+{
+  "id": "1OpVK3TtLL",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 1,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Button usage",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Follow the rule of keeping only one primary button on each page when possible. If there is no primary button on the page, a primary button may be used in the empty state. If one exists already, use an outlined button or text button for less emphasis. ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
