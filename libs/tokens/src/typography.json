@@ -1,6 +1,9 @@
 {
   "typography": {
-    "font-family": { "value": "'Inter', Arial", "type": "fontFamilies" },
+    "font-family": {
+      "value": "'Inter', Arial, sans-serif",
+      "type": "fontFamilies"
+    },
 
     "headline1-font-family": {
       "value": "{typography.font-family}",
@@ -110,7 +113,10 @@
     "caption-line-height": { "value": "16px", "type": "lineHeights" },
     "caption-letter-spacing": { "value": "0px", "type": "letterSpacing" },
 
-    "code-font-family": { "value": "Roboto Mono", "type": "fontFamilies" },
+    "code-font-family": {
+      "value": "Roboto Mono, monospace",
+      "type": "fontFamilies"
+    },
     "code-font-size": { "value": "12px", "type": "fontSizes" },
     "code-font-weight": { "value": "400", "type": "fontWeights" },
     "code-line-height": { "value": "20px", "type": "lineHeights" },
