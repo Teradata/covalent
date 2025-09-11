@@ -24,26 +24,7 @@
           },
           "content": [
             {
-              "text": "See Part 3 of the ",
-              "type": "text"
-            },
-            {
-              "text": "Teradata style and terms guide",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "link",
-                  "attrs": {
-                    "rel": "noopener noreferrer nofollow",
-                    "href": "https://teradata.sharepoint.com/sites/GlobalMarketing/Brand%20Resources%20Library/Forms/AllItems.aspx?id=%2Fsites%2FGlobalMarketing%2FBrand%20Resources%20Library%2FGuidelines%2FTeradata%20Style%20and%20Terms%20Guide%20%2D%20Internal%20%2D%20SP001139%2EPDF&parent=%2Fsites%2FGlobalMarketing%2FBrand%20Resources%20Library%2FGuidelines",
-                    "class": null,
-                    "target": "_blank"
-                  }
-                }
-              ]
-            },
-            {
-              "text": ". For example, if you need instructions about using the names of the different deployment offerings and editions of Vantage, look no further than this marketing guide. ",
+              "text": "See the Teradata style guide in Brand Resources. For example, if you need instructions about using the names of the different deployment offerings and editions of Vantage, look no further than this marketing guide. ",
               "type": "text"
             }
           ]
