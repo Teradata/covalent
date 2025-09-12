@@ -1,5 +1,4 @@
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import * as iconList from '../../../icons/material-codepoints.json';
+import * as iconList from './material-codepoints.json';
 
 export const MAT_ICON_LIST = Object.keys(iconList);
 
