@@ -10,6 +10,7 @@ export * from './chips/chip';
 export * from './chips/chip-set';
 export * from './circular-progress/circular-progress';
 export * from './code-editor/code-editor';
+export * from './code-editor/code-editor.theme';
 export * from './code-snippet/code-snippet';
 export * from './dialog/dialog';
 export * from './divider/divider';

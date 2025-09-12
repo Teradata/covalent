@@ -10,6 +10,6 @@ declare module '*.css' {
   export default css;
 }
 declare module '*?inline' {
-  const contents:{default: string}
-  export = contents
+  const contents: { default: string };
+  export = contents;
 }

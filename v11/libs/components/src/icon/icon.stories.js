@@ -1,6 +1,7 @@
 import './icon';
-import './icon-demo';
-import { MAT_ICON_LIST, COV_ICON_LIST } from './_icon-list';
+import '../../stories/demos/icon-demo';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { MAT_ICON_LIST, COV_ICON_LIST } from '../../../icons/icon-list';
 
 export default {
   title: 'Components/Icon',

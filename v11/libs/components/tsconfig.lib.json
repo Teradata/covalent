@@ -6,7 +6,7 @@
     "declaration": true,
     "types": []
   },
-  "include": ["**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "**/*.spec.ts",
     "**/*.stories.ts",
