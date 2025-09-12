@@ -186,7 +186,7 @@
     "sass": "^1.83.1",
     "storybook": "^8.6.12",
     "storybook-dark-mode": "4.0.2",
-    "style-dictionary": "^4.3.0",
+    "style-dictionary": "^5.0.4",
     "stylelint": "^14.5.3",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
