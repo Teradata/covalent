@@ -1,6 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  ReactiveFormsModule,
+  ValidationErrors,
+  AbstractControl,
+} from '@angular/forms';
 import { CovalentTextfieldValueAccessorDirective } from './form-control.directive';
 
 // Import the built output of the web components library
@@ -100,5 +110,47 @@ describe('CovalentTextfieldValueAccessorDirective', () => {
     textfield.dispatchEvent(new Event('change'));
     textfield.dispatchEvent(new Event('blur'));
     fixture.detectChanges();
+  });
+
+  it('should handle async validator changes and update validity', fakeAsync(() => {
+    const asyncValidator = (
+      control: AbstractControl,
+    ): Promise<ValidationErrors | null> => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(control.value === 'invalid' ? { asyncError: true } : null);
+        }, 100);
+      });
+    };
+
+    // Clear existing validators and set only async validator
+    component.control.clearValidators();
+    component.control.setAsyncValidators([asyncValidator]);
+    component.control.setValue('invalid');
+
+    // Use tick() to advance time and complete async validation
+    tick(150);
+    fixture.detectChanges();
+
+    expect(component.control.errors).toEqual({ asyncError: true });
+    expect(component.control.status).toBe('INVALID');
+  }));
+
+  it('should update form control value on input event for real-time validation', () => {
+    const textfield = fixture.nativeElement.querySelector('cv-textfield');
+
+    // Set initial value
+    textfield.value = 'real-time';
+    textfield.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    expect(component.control.value).toBe('real-time');
+
+    // Change value again via input event
+    textfield.value = 'updated';
+    textfield.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    expect(component.control.value).toBe('updated');
   });
 });
