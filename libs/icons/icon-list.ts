@@ -97,6 +97,7 @@ export const COV_ICON_LIST = [
   'disconnect',
   'dock_right',
   'dock_right_outlined',
+  'embedding_model',
   'engine',
   'engine_outlined',
   'engine_sql',
