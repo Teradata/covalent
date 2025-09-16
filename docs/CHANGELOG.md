@@ -1,3 +1,9 @@
+# [11.4.0](https://github.com/Teradata/covalent/compare/v11.3.3...v11.4.0) (2025-09-16)
+
+### Features
+
+- **icons:** add embedding model icon ([#2568](https://github.com/Teradata/covalent/issues/2568)) ([562fdb2](https://github.com/Teradata/covalent/commit/562fdb20721a14e665a1ed3a7765efd21d2e731e))
+
 ## [11.3.3](https://github.com/Teradata/covalent/compare/v11.3.2...v11.3.3) (2025-09-12)
 
 ### Bug Fixes
