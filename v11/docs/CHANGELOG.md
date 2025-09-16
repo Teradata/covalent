@@ -1,3 +1,9 @@
+## [11.3.3](https://github.com/Teradata/covalent/compare/v11.3.2...v11.3.3) (2025-09-12)
+
+### Bug Fixes
+
+- **package:** types not exported correctly ([#2567](https://github.com/Teradata/covalent/issues/2567)) ([bc3e237](https://github.com/Teradata/covalent/commit/bc3e23701dea275a44f59aa865f4daf7cd80d163))
+
 ## [11.3.2](https://github.com/Teradata/covalent/compare/v11.3.1...v11.3.2) (2025-09-09)
 
 ### Bug Fixes

@@ -2,11 +2,12 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?d7k029')
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?xbiss0')
       format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?d7k029')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?xbiss0')
       format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?d7k029##{$icomoon-font-family}')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?xbiss0##{$icomoon-font-family}')
       format('svg');
   font-weight: normal;
   font-style: normal;
@@ -48,6 +49,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-embedding_model {
+  &:before {
+    content: $cov-embedding_model;
+  }
+}
 .cov-slack {
   &:before {
     content: $cov-slack;
