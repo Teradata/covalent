@@ -43,3 +43,19 @@
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {
   color: var(--mdc-theme-text-icon-on-background);
 }
+
+.mdc-text-field--outlined.mdc-text-field--with-trailing-icon
+  .text-field-loading {
+  padding-right: 12px;
+}
+
+.text-field-loading {
+  // set the color of the circular progress spinner
+  --mdc-theme-primary: var(
+    --cv-text-field-loading-color,
+    var(--cv-theme-primary)
+  );
+
+  align-self: center;
+  padding: 12px 0 12px 12px;
+}
