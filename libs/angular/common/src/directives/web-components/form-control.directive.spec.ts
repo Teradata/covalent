@@ -68,7 +68,7 @@ describe('CovalentTextfieldValueAccessorDirective', () => {
   it('should update form control when textfield value changes', () => {
     const textfield = fixture.nativeElement.querySelector('cv-textfield');
     textfield.value = 'new value';
-    textfield.dispatchEvent(new Event('change'));
+    textfield.dispatchEvent(new Event('input'));
     fixture.detectChanges();
     expect(component.control.value).toBe('new value');
   });
