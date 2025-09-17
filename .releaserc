@@ -29,7 +29,11 @@
     "name": "beta",
     "prerelease": true,
     "channel": "next"
-  },{
+  }, {
     "name": "main" 
+  }, {
+    "name": "release/10.x.x",
+    "range": "10.x",
+    "prerelease": false
   }]
 }
