@@ -1,6 +1,14 @@
 /* eslint-disable @angular-eslint/directive-selector */
-import { Directive, ElementRef, HostListener, inject } from '@angular/core';
+import {
+  DestroyRef,
+  Directive,
+  ElementRef,
+  HostListener,
+  OnInit,
+  inject
+} from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Directive({
   selector: `cv-textfield[formControl],
@@ -19,8 +27,9 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
      cv-radio-icon[formControlName],`,
 })
 export class CovalentTextfieldValueAccessorDirective
-  implements ControlValueAccessor
+  implements ControlValueAccessor, OnInit
 {
+  private _destroyRef = inject(DestroyRef);
   private _elementRef = inject<ElementRef<any>>(ElementRef);
   _ngControl = inject(NgControl);
 
@@ -35,6 +44,18 @@ export class CovalentTextfieldValueAccessorDirective
     const _ngControl = this._ngControl;
 
     _ngControl.valueAccessor = this;
+  }
+
+  ngOnInit(): void {
+    // Set up a subscription to monitor status changes
+    if (this._ngControl.control) {
+      this._ngControl.control.statusChanges
+        .pipe(takeUntilDestroyed(this._destroyRef))
+        .subscribe(() => {
+          this._onTouched();
+          this._updateValidity();
+        });
+    }
   }
 
   writeValue(value: string): void {
@@ -56,6 +77,18 @@ export class CovalentTextfieldValueAccessorDirective
 
   registerOnTouched(fn: any): void {
     this._onTouched = fn;
+  }
+
+  @HostListener('input')
+  handleInput(): void {
+    if (!this._isTextAreaOrField()) {
+      return;
+    }
+
+    const value = this._elementRef.nativeElement.value;
+    this._onChange(value);
+    this._onTouched();
+    this._updateValidity();
   }
 
   @HostListener('change', ['$event'])
@@ -87,6 +120,11 @@ export class CovalentTextfieldValueAccessorDirective
   private _isRadio() {
     const tagName = this._elementRef.nativeElement.tagName.toLowerCase();
     return tagName === 'cv-radio' || tagName === 'cv-radio-icon';
+  }
+
+  private _isTextAreaOrField() {
+    const tagName = this._elementRef.nativeElement.tagName.toLowerCase();
+    return tagName === 'cv-textarea' || tagName === 'cv-textfield';
   }
 
   private _updateValidity(): void {
