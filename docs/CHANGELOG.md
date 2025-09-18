@@ -1,3 +1,9 @@
+## [10.3.2](https://github.com/Teradata/covalent/compare/v10.3.1...v10.3.2) (2025-09-18)
+
+### Bug Fixes
+
+- support updateOn strategy for form controls ([#2573](https://github.com/Teradata/covalent/issues/2573)) ([a0855ef](https://github.com/Teradata/covalent/commit/a0855efbcc932b42771fc0f2f4af6219d300dae9))
+
 ## [10.3.1](https://github.com/Teradata/covalent/compare/v10.3.0...v10.3.1) (2025-09-17)
 
 ### Bug Fixes
