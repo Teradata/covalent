@@ -72,4 +72,5 @@ Loading.args = {
   icon: 'person',
   loading: true,
   loaderDensity: -6,
+  iconTrailing: false,
 };

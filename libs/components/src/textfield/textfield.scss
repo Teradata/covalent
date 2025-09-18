@@ -44,9 +44,21 @@
   color: var(--mdc-theme-text-icon-on-background);
 }
 
-.mdc-text-field--outlined.mdc-text-field--with-trailing-icon
-  .text-field-loading {
-  padding-right: 12px;
+// Styles for loading state
+.mdc-text-field--outlined:not(
+    .mdc-text-field--with-trailing-icon
+  ).cv-text-field--loading
+  .mdc-text-field__input {
+  width: calc(100% - 32px);
+}
+
+.mdc-text-field--outlined.mdc-text-field--with-trailing-icon.cv-text-field--loading {
+  padding-right: 48px;
+}
+
+.mdc-text-field--outlined.mdc-text-field--with-leading-icon.cv-text-field--loading
+  .mdc-text-field__input {
+  width: calc(100% - 80px);
 }
 
 .text-field-loading {
@@ -56,6 +68,8 @@
     var(--cv-theme-primary)
   );
 
+  position: absolute;
+  right: 0;
   align-self: center;
-  padding: 12px 0 12px 12px;
+  padding: 12px;
 }
