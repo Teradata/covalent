@@ -1,3 +1,11 @@
+## [11.4.2](https://github.com/Teradata/covalent/compare/v11.4.1...v11.4.2) (2025-09-19)
+
+### Bug Fixes
+
+- **cv-textfield:** adjust styles for loading state ([7425553](https://github.com/Teradata/covalent/commit/742555343c654e766b4fe08122d113c6b0de5e87))
+- support loading state i cv-textfiled ([814fb1c](https://github.com/Teradata/covalent/commit/814fb1c2baee73284decbc5a68ecd23599a1efae))
+- support updateOn strategy for form controls ([a8c6ec1](https://github.com/Teradata/covalent/commit/a8c6ec112099de5a175a154bdf007e09d106a206))
+
 ## [11.4.1](https://github.com/Teradata/covalent/compare/v11.4.0...v11.4.1) (2025-09-17)
 
 ### Bug Fixes
