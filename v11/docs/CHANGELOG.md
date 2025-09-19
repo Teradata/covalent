@@ -1,3 +1,9 @@
+## [11.4.1](https://github.com/Teradata/covalent/compare/v11.4.0...v11.4.1) (2025-09-17)
+
+### Bug Fixes
+
+- fomr control directive to handle input ([#2570](https://github.com/Teradata/covalent/issues/2570)) ([328a1e1](https://github.com/Teradata/covalent/commit/328a1e15f08704c1924c3618f22d02f2b76196d3))
+
 # [11.4.0](https://github.com/Teradata/covalent/compare/v11.3.3...v11.4.0) (2025-09-16)
 
 ### Features

@@ -11,6 +11,8 @@ export default {
   args: {
     style: 'outlined',
     disabled: false,
+    loading: false,
+    loaderDensity: -6,
   },
 };
 
@@ -22,6 +24,8 @@ const Template = ({
   disabled,
   required,
   helper,
+  loading,
+  loaderDensity,
 }) => {
   return `
         <cv-textfield 
@@ -31,12 +35,15 @@ const Template = ({
               iconTrailing && icon
                 ? `iconTrailing="${icon}"`
                 : icon
-                ? `icon="${icon}"`
-                : null
+                  ? `icon="${icon}"`
+                  : null
             }
             ${helper ? `helper="${helper}"` : null}
             ${disabled ? `disabled` : null}
-            ${required ? `required` : null}>
+            ${required ? `required` : null}
+            ${loading ? 'loading' : null}
+            ${loaderDensity ? `loaderDensity="${loaderDensity}"` : ''}
+            >
         </cv-textfield>`;
 };
 
@@ -57,4 +64,13 @@ export const HelperText = Template.bind({});
 HelperText.args = {
   label: 'Click to see helper text',
   helper: 'Helper Text',
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  label: 'Loading state',
+  icon: 'person',
+  loading: true,
+  loaderDensity: -6,
+  iconTrailing: false,
 };
