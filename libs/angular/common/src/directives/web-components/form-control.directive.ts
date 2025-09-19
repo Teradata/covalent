@@ -52,7 +52,6 @@ export class CovalentTextfieldValueAccessorDirective
       this._ngControl.control.statusChanges
         .pipe(takeUntilDestroyed(this._destroyRef))
         .subscribe(() => {
-          this._onTouched();
           this._updateValidity();
         });
     }
@@ -79,31 +78,42 @@ export class CovalentTextfieldValueAccessorDirective
     this._onTouched = fn;
   }
 
+  /**
+   * Gets the updateOn strategy of the control.
+   * @returns The updateOn strategy of the control, defaulting to 'change' if not set.
+   */
+  private getUpdateOn(): 'change' | 'blur' | 'submit' {
+    return this._ngControl.control?.updateOn || 'change';
+  }
+
   @HostListener('input')
   handleInput(): void {
-    if (!this._isTextAreaOrField()) {
-      return;
+    // Update on 'input' event for textfields/textareas if updateOn strategy is 'change'
+    if (this._isTextAreaOrField() && this.getUpdateOn() === 'change') {
+      const value = this._elementRef.nativeElement.value;
+      this._onChange(value);
     }
-
-    const value = this._elementRef.nativeElement.value;
-    this._onChange(value);
-    this._onTouched();
-    this._updateValidity();
   }
 
   @HostListener('change', ['$event'])
-  handleChange(event: Event): void {
-    const value = this._isCheckBox()
-      ? this._elementRef.nativeElement.checked
-      : this._elementRef.nativeElement.value;
-
-    this._onChange(value);
-    this._onTouched();
-    this._updateValidity();
+  handleChange(): void {
+    // For textfields/textareas, handleInput covers 'change' event
+    if (!this._isTextAreaOrField()) {
+      const value = this._isCheckBox()
+        ? this._elementRef.nativeElement.checked
+        : this._elementRef.nativeElement.value;
+      this._onChange(value);
+      this._onTouched();
+    }
   }
 
   @HostListener('blur')
   handleBlur(): void {
+    // For textfields/textareas, update on 'blur' if updateOn strategy is 'blur'
+    if (this._isTextAreaOrField() && this.getUpdateOn() === 'blur') {
+      const value = this._elementRef.nativeElement.value;
+      this._onChange(value);
+    }
     this._onTouched();
   }
 
