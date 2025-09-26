@@ -41,30 +41,8 @@
           },
           "content": [
             {
-              "text": "Example:",
+              "text": "Example: A workload is a class of database requests.",
               "type": "text"
-            }
-          ]
-        },
-        {
-          "type": "bulletList",
-          "content": [
-            {
-              "type": "listItem",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "attrs": {
-                    "textAlign": "left"
-                  },
-                  "content": [
-                    {
-                      "text": "A workload is a class of database requests.",
-                      "type": "text"
-                    }
-                  ]
-                }
-              ]
             }
           ]
         }
