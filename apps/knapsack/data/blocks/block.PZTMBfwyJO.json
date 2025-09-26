@@ -12,7 +12,20 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Select Settings ",
+                  "text": "Select ",
+                  "type": "text"
+                },
+                {
+                  "text": "Settings",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " ",
                   "type": "text"
                 }
               ]
@@ -30,7 +43,20 @@
               "type": "paragraph",
               "content": [
                 {
-                  "text": "Click on the Settings button ",
+                  "text": "Click on the ",
+                  "type": "text"
+                },
+                {
+                  "text": "Settings ",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": "button ",
                   "type": "text"
                 }
               ]
