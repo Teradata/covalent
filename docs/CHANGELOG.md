@@ -1,3 +1,9 @@
+## [11.4.3-beta.2](https://github.com/Teradata/covalent/compare/v11.4.3-beta.1...v11.4.3-beta.2) (2025-09-30)
+
+### Bug Fixes
+
+- update dependencies in package.json for [@material](https://github.com/material) components ([08f234d](https://github.com/Teradata/covalent/commit/08f234d64fd12bf3e51aef77f8c656aac655235e))
+
 ## [11.4.3-beta.1](https://github.com/Teradata/covalent/compare/v11.4.2...v11.4.3-beta.1) (2025-09-30)
 
 ### Bug Fixes
