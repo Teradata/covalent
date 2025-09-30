@@ -1,3 +1,9 @@
+## [11.4.3-beta.1](https://github.com/Teradata/covalent/compare/v11.4.2...v11.4.3-beta.1) (2025-09-30)
+
+### Bug Fixes
+
+- update dependencies in package.json for @covalent/components ([047feca](https://github.com/Teradata/covalent/commit/047feca0c8f338e0e67b732d16149894a28f9460))
+
 ## [11.4.2](https://github.com/Teradata/covalent/compare/v11.4.1...v11.4.2) (2025-09-19)
 
 ### Bug Fixes
