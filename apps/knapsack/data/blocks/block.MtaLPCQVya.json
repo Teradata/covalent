@@ -1,0 +1,36 @@
+{
+  "id": "MtaLPCQVya",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Lowercase everywhere",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Never use capitalized format as in \"Teradata Notebook,” \"Teradata Notebooks,” or “Notebook.” Teradata has not established this as a branded product/feature name. Always use lowercase \"notebooks\" or “notebook” as a descriptive term.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
