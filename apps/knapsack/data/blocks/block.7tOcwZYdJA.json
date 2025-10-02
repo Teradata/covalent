@@ -1,0 +1,36 @@
+{
+  "id": "7tOcwZYdJA",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use \"Teradata\" as a modifier for notebook",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Think of notebooks as files. Use \"Teradata notebooks\" when you need to distinguish Teradata's implementation from other notebook platforms or when the brand context is essential to understanding.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
