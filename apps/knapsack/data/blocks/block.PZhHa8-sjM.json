@@ -17,5 +17,6 @@
       ]
     }
   },
-  "blockType": "callout"
+  "blockType": "callout",
+  "size": "small"
 }
