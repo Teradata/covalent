@@ -12,6 +12,7 @@ export const COV_ICON_LIST = [
   'api_ondark',
   'application',
   'application_outlined',
+  'ask_ai',
   'attribution',
   'attribution_outlined',
   'auto_refresh_off',
