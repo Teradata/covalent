@@ -1,3 +1,9 @@
+# [11.5.0](https://github.com/Teradata/covalent/compare/v11.4.2...v11.5.0) (2025-10-08)
+
+### Features
+
+- **icons:** add ask_ai icon to covalent icons ([e9dd739](https://github.com/Teradata/covalent/commit/e9dd73958122798776e3a760a57ce6fd32c7de77))
+
 ## [11.4.2](https://github.com/Teradata/covalent/compare/v11.4.1...v11.4.2) (2025-09-19)
 
 ### Bug Fixes
