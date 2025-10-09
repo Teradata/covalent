@@ -3,10 +3,10 @@
   "data": {
     "props": {
       "icon": "info",
+      "inline": true,
       "titleText": "Alert title",
       "iconAriaLabel": "aria-label for the icon",
-      "descriptionText": "Alert description",
-      "inline": true
+      "descriptionText": "Alert description"
     },
     "slots": {
       "action-items": [
