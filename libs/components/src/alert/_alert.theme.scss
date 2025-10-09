@@ -4,6 +4,7 @@
     --mdc-theme-primary: var(--mdc-theme-on-surface);
     --mdc-theme-text-primary-on-background: var(--cv-theme-on-surface);
     --mdc-theme-text-secondary-on-background: var(--cv-theme-on-surface);
+    --mdc-theme-text-icon-on-background: var(--cv-theme-on-surface);
     --cv-theme-outline: var(--cv-theme-on-surface);
 
     background-color: var(--mdc-theme-surface);
@@ -11,6 +12,7 @@
 
     .mdc-banner__graphic {
       --mdc-theme-surface: var(--mdc-theme-text-icon-on-background);
+      color: var(--mdc-theme-text-icon-on-background);
     }
 
     .mdc-banner__text {
