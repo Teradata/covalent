@@ -5,6 +5,7 @@ export const MAT_ICON_LIST = Object.keys(iconList);
 export const COV_ICON_LIST = [
   'advanced_sql',
   'advanced_sql_outlined',
+  'ai_assistant',
   'alias_arrow',
   'alias_arrow_outlined',
   'api',
@@ -12,7 +13,6 @@ export const COV_ICON_LIST = [
   'api_ondark',
   'application',
   'application_outlined',
-  'ask_ai',
   'attribution',
   'attribution_outlined',
   'auto_refresh_off',
