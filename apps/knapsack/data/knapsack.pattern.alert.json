@@ -23,9 +23,9 @@
               "description": "Icon added to the alert"
             },
             "state": {
-              "description": "State representation which can take the values:\nactive|negative|positive|caution",
+              "description": "State representation which can take the values:\nneutral|active|negative|positive|caution",
               "type": "string",
-              "enum": ["active", "negative", "positive", "caution"]
+              "enum": ["neutral", "active", "negative", "positive", "caution"]
             },
             "inline": {
               "type": "boolean",
@@ -50,11 +50,22 @@
         },
         "slots": {
           "action-items": {
-            "allowedPatternIds": ["button", "checkbox"],
+            "allowedPatternIds": ["button", "icon-button"],
             "title": "action-items",
-            "description": "Action items that can be added to the alert"
+            "description": "Action items that can be added to the alert",
+            "disallowText": true
           }
-        }
+        },
+        "isInferred": false,
+        "propOrder": [
+          "icon",
+          "state",
+          "inline",
+          "titleText",
+          "iconAriaLabel",
+          "descriptionText"
+        ],
+        "slotOrder": ["action-items"]
       },
       "demoIds": ["mlX5f0Op2T", "s8Ci4Cd08W"],
       "blockIds": ["NlbyYtz3sW", "RILkEnTgSL", "av87gquwW3", "pbJlBMxTth"]
