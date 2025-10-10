@@ -3,7 +3,7 @@
   "data": {
     "props": {
       "icon": "info",
-      "state": "active",
+      "state": "neutral",
       "inline": false,
       "titleText": "Alert title",
       "iconAriaLabel": "aria-label for the icon",
@@ -22,9 +22,9 @@
   },
   "meta": {
     "createdBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
-    "updatedBy": "e097dcca-d3ae-4884-89c5-4b97f20391ef",
+    "updatedBy": "c647259d-fc5b-4c4e-b26b-f4c388aaefd8",
     "createdDate": "2025-02-12T22:02:10.540Z",
-    "updatedDate": "2025-02-12T22:03:40.750Z"
+    "updatedDate": "2025-10-09T18:48:45.389Z"
   },
   "type": "data",
   "title": "Full-page alert",
