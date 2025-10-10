@@ -1,3 +1,9 @@
+## [11.5.2](https://github.com/Teradata/covalent/compare/v11.5.1...v11.5.2) (2025-10-10)
+
+### Bug Fixes
+
+- update components package.json dependencies ([#2581](https://github.com/Teradata/covalent/issues/2581)) ([642011c](https://github.com/Teradata/covalent/commit/642011c9e65b2c111b955a4faab728429ce7bb73))
+
 ## [11.5.2-beta.1](https://github.com/Teradata/covalent/compare/v11.5.1...v11.5.2-beta.1) (2025-10-10)
 
 ### Bug Fixes
