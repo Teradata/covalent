@@ -8,8 +8,11 @@ const args = process.argv.slice(2);
 const placeholders = [
   ['0.0.0-COVALENT', packageJson.version],
   ['0.0.0-TSLIB', packageJson.dependencies['tslib']],
+  ['0.0.0-LIT', packageJson.dependencies['lit']],
   ['0.0.0-NG', packageJson.dependencies['@angular/core']],
   ['0.0.0-MATERIAL', packageJson.dependencies['@angular/material']],
+  ['0.0.0-@MATERIAL', packageJson.dependencies['@material/button']],
+  ['0.0.0-MWC', packageJson.dependencies['@material/mwc-button']],
   ['0.0.0-ECHARTS', packageJson.dependencies['echarts']],
   ['0.0.0-STAT', packageJson.dependencies['echarts-stat']],
   ['0.0.0-WORDCLOUD', packageJson.dependencies['echarts-wordcloud']],
@@ -23,7 +26,7 @@ console.log('Replacing placeholders: ', placeholders);
 
 /** RegExps that match version placeholders inside of a file. */
 const placeholderRegexes = placeholders.map(
-  (placeholder) => new RegExp(placeholder[0], 'g')
+  (placeholder) => new RegExp(placeholder[0], 'g'),
 );
 /**
  * Walks through every file in a directory and replaces the version placeholders
@@ -40,7 +43,7 @@ function replaceVersionPlaceholders(packageDir = 'dist') {
     const fileContent = placeholderRegexes.reduce(
       (accumulator, currentValue, currentIndex) =>
         accumulator.replace(currentValue, placeholders[currentIndex][1]),
-      readFileSync(filePath, 'utf-8')
+      readFileSync(filePath, 'utf-8'),
     );
 
     console.log(`Replacing placeholder in ${filePath}`);
