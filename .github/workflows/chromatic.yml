@@ -30,6 +30,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - run: npm install -g pnpm # Or use corepack enable && pnpm install
       - run: npm ci
       # 👇 Adds Chromatic as a step in the workflow
       - run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --exit-once-uploaded --auto-accept-changes
