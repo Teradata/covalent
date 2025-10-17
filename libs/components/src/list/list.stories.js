@@ -49,24 +49,75 @@ const IconTemplate = ({ icon, iconStyle = 'avatar', disabled }) => {
     </cv-list>`;
 };
 
-const TwoLineTemplate = ({ icon, style, required, helper, disabled }) => {
+// const TwoLineTemplate = ({ icon, style, required, helper, disabled }) => {
+//   return `
+//     <cv-list>
+//         <cv-list-item twoline ${disabled ? `disabled` : null}>
+//             <span>Item 0</span>
+//             <span slot="secondary">Secondary line</span>
+//         </cv-list-item>
+//         <cv-list-item twoline>
+//             <span>Item 1</span>
+//             <span slot="secondary">Secondary line</span>
+//         </cv-list-item>
+//         <cv-list-item twoline>
+//             <span>Item 2</span>
+//             <span slot="secondary">Secondary line</span>
+//         </cv-list-item>
+//         <cv-list-item twoline>
+//             <span>Item 3</span>
+//             <span slot="secondary">Secondary line</span>
+//         </cv-list-item>
+//     </cv-list>`;
+// };
+
+// const ThreeLineTemplate = ({ disabled }) => {
+//   return `
+//     <cv-list>
+//         <cv-list-item threeline ${disabled ? `disabled` : null}>
+//             <span>Item 0</span>
+//             <span slot="secondary">Secondary line</span>
+//             <span slot="threeline">Third line</span>
+//         </cv-list-item>
+//         <cv-list-item threeline>
+//             <span>Item 1</span>
+//             <span slot="threeline">Third line</span>
+//         </cv-list-item>
+//         <cv-list-item threeline>
+//             <span>Item 2</span>
+//             <span slot="threeline">Third line</span>
+//         </cv-list-item>
+//         <cv-list-item threeline>
+//             <span>Item 3</span>
+//             <span slot="threeline">Third line</span>
+//         </cv-list-item>
+//     </cv-list>`;
+// };
+
+const MultiLineTemplate = ({ threeline, disabled }) => {
   return `
-    <cv-list>
-        <cv-list-item twoline ${disabled ? `disabled` : null}>
+   <cv-list>
+        <cv-list-item twoline ${threeline ? 'threeline' : ''} ${
+          disabled ? 'disabled' : ''
+        }>
             <span>Item 0</span>
             <span slot="secondary">Secondary line</span>
+            ${threeline ? `<span slot="threeline">Third line</span>` : ''}
         </cv-list-item>
-        <cv-list-item twoline>
+        <cv-list-item twoline ${threeline ? 'threeline' : ''}>
             <span>Item 1</span>
             <span slot="secondary">Secondary line</span>
+            ${threeline ? `<span slot="threeline">Third line</span>` : ''}
         </cv-list-item>
-        <cv-list-item twoline>
+        <cv-list-item twoline ${threeline ? 'threeline' : ''}>
             <span>Item 2</span>
             <span slot="secondary">Secondary line</span>
+            ${threeline ? `<span slot="threeline">Third line</span>` : ''}
         </cv-list-item>
-        <cv-list-item twoline>
+        <cv-list-item twoline ${threeline ? 'threeline' : ''}>
             <span>Item 3</span>
             <span slot="secondary">Secondary line</span>
+            ${threeline ? `<span slot="threeline">Third line</span>` : ''}
         </cv-list-item>
     </cv-list>`;
 };
@@ -75,8 +126,8 @@ const CheckRadioTemplate = ({ listType = 'check', disabled }) => {
   return `
     <cv-list multi>
         <cv-${listType}-list-item selected ${
-    disabled ? `disabled` : null
-  }>Item 0</cv-${listType}-list-item>
+          disabled ? `disabled` : null
+        }>Item 0</cv-${listType}-list-item>
         <cv-${listType}-list-item selected>Item 1</cv-${listType}-list-item>
         <li divider role="separator" padded></li>
         <cv-${listType}-list-item left selected>Item 2 (left)</cv-${listType}-list-item>
@@ -103,9 +154,32 @@ WithAvatar.argTypes = {
   },
 };
 
-export const TwoLine = TwoLineTemplate.bind({});
+// export const TwoLine = TwoLineTemplate.bind({});
+// TwoLine.args = {
+//   disabled: false,
+// };
+
+// export const ThreeLine = ThreeLineTemplate.bind({});
+// ThreeLine.args = {
+//   graphic: 'avatar',
+//   disabled: false,
+// };
+
+export const TwoLine = MultiLineTemplate.bind({});
 TwoLine.args = {
+  threeline: false,
   disabled: false,
+};
+
+export const ThreeLine = MultiLineTemplate.bind({});
+ThreeLine.args = {
+  threeline: true,
+  disabled: false,
+};
+ThreeLine.argTypes = {
+  threeline: {
+    control: { type: 'boolean' },
+  },
 };
 
 export const ChecksAndRadios = CheckRadioTemplate.bind({});

@@ -76,3 +76,30 @@
   display: flex;
   align-items: center;
 }
+
+:host {
+  // The base <li> is a flex container. We need to allow its children to wrap.
+  // This is the most important change.
+  .mdc-list-item {
+    flex-wrap: wrap;
+  }
+}
+
+:host([threeline]) {
+  height: 88px;
+}
+
+// Target the content passed into the threeline slot.
+::slotted([slot='threeline']) {
+  // Make it a block that takes up the full width, forcing it to a new line.
+  display: block;
+  width: 100%;
+  // Add some padding to align it visually under the primary/secondary text.
+  // This value may need tweaking.
+  padding-left: 16px;
+  padding-right: 16px;
+  // Standard Material text styles.
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
