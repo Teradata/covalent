@@ -97,24 +97,24 @@ const IconTemplate = ({ icon, iconStyle = 'avatar', disabled }) => {
 const MultiLineTemplate = ({ threeline, disabled }) => {
   return `
    <cv-list>
-        <cv-list-item twoline ${threeline ? 'threeline' : ''} ${
+        <cv-list-item ${threeline ? 'threeline' : ''} ${
           disabled ? 'disabled' : ''
         }>
             <span>Item 0</span>
             <span slot="secondary">Secondary line</span>
             ${threeline ? `<span slot="threeline">Third line</span>` : ''}
         </cv-list-item>
-        <cv-list-item twoline ${threeline ? 'threeline' : ''}>
+        <cv-list-item ${threeline ? 'threeline' : ''}>
             <span>Item 1</span>
             <span slot="secondary">Secondary line</span>
             ${threeline ? `<span slot="threeline">Third line</span>` : ''}
         </cv-list-item>
-        <cv-list-item twoline ${threeline ? 'threeline' : ''}>
+        <cv-list-item ${threeline ? 'threeline' : ''}>
             <span>Item 2</span>
             <span slot="secondary">Secondary line</span>
             ${threeline ? `<span slot="threeline">Third line</span>` : ''}
         </cv-list-item>
-        <cv-list-item twoline ${threeline ? 'threeline' : ''}>
+        <cv-list-item ${threeline ? 'threeline' : ''}>
             <span>Item 3</span>
             <span slot="secondary">Secondary line</span>
             ${threeline ? `<span slot="threeline">Third line</span>` : ''}
@@ -175,11 +175,6 @@ export const ThreeLine = MultiLineTemplate.bind({});
 ThreeLine.args = {
   threeline: true,
   disabled: false,
-};
-ThreeLine.argTypes = {
-  threeline: {
-    control: { type: 'boolean' },
-  },
 };
 
 export const ChecksAndRadios = CheckRadioTemplate.bind({});

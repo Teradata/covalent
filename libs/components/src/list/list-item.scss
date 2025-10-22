@@ -3,13 +3,15 @@
 :host {
   width: 100%;
   box-sizing: border-box;
+  display: contents;
 }
 
-:host(:not([twoline])) {
+// Base heights for different variants
+:host(:not([twoline]):not([threeline])) {
   height: density.density-height(56px);
 }
 
-:host([twoline]) {
+:host([twoline]:not([threeline])) {
   height: density.density-height(72px);
 
   .mdc-deprecated-list-item__primary-text::before {
@@ -17,12 +19,120 @@
   }
 }
 
+// Three-line support
+:host([threeline]) {
+  height: density.density-height(88px);
+
+  .mdc-deprecated-list-item__text {
+    align-self: flex-start;
+    padding-top: 16px;
+  }
+
+  .mdc-deprecated-list-item__graphic {
+    align-self: flex-start;
+    margin-top: 16px;
+  }
+}
+
+.mdc-deprecated-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 16px;
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+    flex: 1;
+    text-align: left;
+    padding-left: var(--cv-list-item-text-padding, 0);
+
+    :slotted([slot='threeline']) {
+      padding: 0 16px;
+      display: block;
+      font-family: var(--cv-typography-caption-font-family);
+      font-size: var(--cv-typography-caption-font-size);
+      font-weight: var(--cv-typography-caption-font-weight);
+      line-height: var(--cv-typography-caption-line-height);
+      letter-spacing: var(--cv-typography-caption-letter-spacing);
+      color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  &__primary-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    font-family: var(
+      --mdc-typography-subtitle1-font-family,
+      var(--mdc-typography-font-family, Roboto, sans-serif)
+    );
+    font-size: var(--mdc-typography-subtitle1-font-size, 1rem);
+    font-weight: var(--mdc-typography-subtitle1-font-weight, 500);
+    letter-spacing: var(--mdc-typography-subtitle1-letter-spacing, 0.009375em);
+    line-height: 1.5rem;
+  }
+
+  &__secondary-text {
+    --mdc-icon-size: var(--mdc-typography-body2-font-size);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    font-family: var(
+      --mdc-typography-body2-font-family,
+      var(--mdc-typography-font-family, Roboto, sans-serif)
+    );
+    font-size: var(--mdc-typography-body2-font-size, 0.875rem);
+    font-weight: var(--mdc-typography-body2-font-weight, 400);
+    letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+    line-height: 1.25rem;
+    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
+
+    ::slotted(*) {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  // Threeline text styles
+  &__threeline-text {
+    --mdc-icon-size: var(--mdc-typography-body2-font-size);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    font-family: var(
+      --mdc-typography-body2-font-family,
+      var(--mdc-typography-font-family, Roboto, sans-serif)
+    );
+    font-size: var(--mdc-typography-body2-font-size, 0.875rem);
+    font-weight: var(--mdc-typography-body2-font-weight, 400);
+    letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+    line-height: 1.25rem;
+    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
+
+    ::slotted(*) {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
+
 :host([graphic='avatar']) .mdc-deprecated-list-item__graphic {
   --mdc-theme-text-icon-on-background: var(--cv-theme-on-secondary-container);
-
   color: var(--cv-theme-on-secondary-container);
   background-color: var(--cv-theme-secondary-container);
   border-radius: 9999px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 :host([disabled]) {
@@ -48,19 +158,6 @@
   line-height: 1;
 }
 
-.mdc-deprecated-list-item__text {
-  padding-left: var(--cv-list-item-text-padding, 0);
-}
-
-.mdc-deprecated-list-item__secondary-text {
-  --mdc-icon-size: var(--mdc-typography-body2-font-size);
-
-  ::slotted(*) {
-    display: inline-flex;
-    align-items: center;
-  }
-}
-
 .mdc-deprecated-list-item__meta {
   display: flex;
   align-items: center;
@@ -75,31 +172,4 @@
 .mdc-deprecated-list-item__graphic ::slotted(*) {
   display: flex;
   align-items: center;
-}
-
-:host {
-  // The base <li> is a flex container. We need to allow its children to wrap.
-  // This is the most important change.
-  .mdc-list-item {
-    flex-wrap: wrap;
-  }
-}
-
-:host([threeline]) {
-  height: 88px;
-}
-
-// Target the content passed into the threeline slot.
-::slotted([slot='threeline']) {
-  // Make it a block that takes up the full width, forcing it to a new line.
-  display: block;
-  width: 100%;
-  // Add some padding to align it visually under the primary/secondary text.
-  // This value may need tweaking.
-  padding-left: 16px;
-  padding-right: 16px;
-  // Standard Material text styles.
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 400;
 }
