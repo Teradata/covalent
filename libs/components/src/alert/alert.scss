@@ -15,10 +15,10 @@ $query: feature-targeting.all();
   ); // COPYBARA_COMMENT_THIS_LINE
 
   .mdc-banner {
-    @include shape.radius(8px);
+    @include shape.radius(12px);
     @include elevation-mixins.overlay-surface-position($query: $query);
     @include elevation-mixins.overlay-dimensions(100%, $query: $query);
-    @include elevation-mixins.elevation(1, $query: $query);
+    @include elevation-mixins.elevation(0, $query: $query);
 
     overflow: hidden;
     border: none;
@@ -29,18 +29,21 @@ $query: feature-targeting.all();
 
     .mdc-banner__graphic {
       background: none;
+      font-variation-settings: 'FILL' 1;
       margin-left: 24px;
       width: 24px;
-      font-variation-settings: 'FILL' 1;
     }
 
     .mdc-banner__text {
       margin-left: 24px;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
 
     .mdc-banner__actions {
       align-self: center;
       align-items: center;
+      padding-right: 16px;
     }
 
     &.cv-banner--inline {

@@ -42,7 +42,7 @@ export class AlertBase extends LitElement {
 
   @property({ type: Boolean }) inline = false;
   /**
-   * The state representation active|negative|positive|caution
+   * The state representation neutral|active|negative|positive|caution
    */
   @property()
   state = '';
