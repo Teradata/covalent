@@ -92,10 +92,11 @@ export class CovalentAppShell extends DrawerBase {
   remoteNavOpen = false;
 
   private hovered = false;
-  private hoverTimeout: any | undefined;
+  private hoverTimeout: number | undefined;
   private hoverEntryDuration = 250;
   private hoverExitDuration = 250;
-  private remoteControlTimeout: any | undefined;
+  private remoteControlTimeout: number | undefined;
+  private _originallyForcedOpen = false;
 
   private readonly observedAttributes = ['remotenavopen'];
 
@@ -240,12 +241,17 @@ export class CovalentAppShell extends DrawerBase {
     this.mdcRoot.dispatchEvent(
       new Event('transitionend', { bubbles: true, composed: true }),
     );
+
     // Forcefully toggle the open/close state
     this._toggleOpen(!this.forcedOpen);
 
     this.dispatchEvent(new Event('CovalentAppShell:menuClick'));
 
     this.hovered = false;
+
+    if (this.type === 'dismissible') {
+      this._originallyForcedOpen = this.forcedOpen;
+    }
   }
 
   private _handleNavMouseOver = () => {
@@ -287,10 +293,23 @@ export class CovalentAppShell extends DrawerBase {
   resizeEvent() {
     // TODO should be configurable outside appshell
     const mql = window.matchMedia('(max-width: 767px)');
+
     if (mql.matches && this.type !== 'modal') {
+      this._originallyForcedOpen = this.forcedOpen;
       this.type = 'modal';
+      if (this._originallyForcedOpen && this.open) {
+        requestAnimationFrame(() => {
+          this._handleMenuClick();
+        });
+      }
     } else if (!mql.matches && this.type !== 'dismissible') {
       this.type = 'dismissible';
+      if (this._originallyForcedOpen) {
+        requestAnimationFrame(() => {
+          this._handleMenuClick();
+        });
+      }
+      this._originallyForcedOpen = false;
     }
     this.requestUpdate();
   }
