@@ -92,10 +92,10 @@ export class CovalentAppShell extends DrawerBase {
   remoteNavOpen = false;
 
   private hovered = false;
-  private hoverTimeout: number | undefined;
+  private hoverTimeout: any | undefined;
   private hoverEntryDuration = 250;
   private hoverExitDuration = 250;
-  private remoteControlTimeout: number | undefined;
+  private remoteControlTimeout: any | undefined;
   private _originallyForcedOpen = false;
 
   private readonly observedAttributes = ['remotenavopen'];
