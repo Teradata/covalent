@@ -20,11 +20,16 @@ $query: feature-targeting.all();
     @include elevation-mixins.overlay-dimensions(100%, $query: $query);
     @include elevation-mixins.elevation(0, $query: $query);
 
+    --mdc-typography-body1-line-height: 20px;
+    --mdc-typography-body2-line-height: 16px;
+    --mdc-banner-with-image-image-size: 32px;
+
     overflow: hidden;
     border: none;
 
     .mdc-banner__content {
       max-width: inherit;
+      min-height: 64px;
     }
 
     .mdc-banner__graphic {
@@ -36,14 +41,24 @@ $query: feature-targeting.all();
 
     .mdc-banner__text {
       margin-left: 24px;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      & > * {
+        margin: 0;
+      }
     }
 
     .mdc-banner__actions {
+      padding-right: 16px;
+      padding-left: 0;
       align-self: center;
       align-items: center;
-      padding-right: 16px;
+      min-height: 0;
+      height: 32px;
+      display: flex;
     }
 
     &.cv-banner--inline {
