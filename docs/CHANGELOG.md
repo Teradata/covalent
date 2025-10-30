@@ -1,3 +1,9 @@
+## [11.5.3](https://github.com/Teradata/covalent/compare/v11.5.2...v11.5.3) (2025-10-30)
+
+### Bug Fixes
+
+- **cv-alert:** update height to 64px instead 72px calculated ([#2588](https://github.com/Teradata/covalent/issues/2588)) ([f8676e8](https://github.com/Teradata/covalent/commit/f8676e8eba068388e3f663ec9149121f0d1b64f8))
+
 ## [11.5.2](https://github.com/Teradata/covalent/compare/v11.5.1...v11.5.2) (2025-10-10)
 
 ### Bug Fixes
