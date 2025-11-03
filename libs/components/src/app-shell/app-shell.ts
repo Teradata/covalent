@@ -96,7 +96,6 @@ export class CovalentAppShell extends DrawerBase {
   private hoverEntryDuration = 250;
   private hoverExitDuration = 250;
   private remoteControlTimeout: any | undefined;
-  private _originallyForcedOpen = false;
 
   private readonly observedAttributes = ['remotenavopen'];
 
@@ -248,10 +247,6 @@ export class CovalentAppShell extends DrawerBase {
     this.dispatchEvent(new Event('CovalentAppShell:menuClick'));
 
     this.hovered = false;
-
-    if (this.type === 'dismissible') {
-      this._originallyForcedOpen = this.forcedOpen;
-    }
   }
 
   private _handleNavMouseOver = () => {
@@ -287,29 +282,28 @@ export class CovalentAppShell extends DrawerBase {
   private _handleDrawerClosed() {
     this.forcedOpen = false;
     this.hovered = false;
+
+    const appContent = this.shadowRoot?.querySelector(
+      '.main.mdc-drawer-app-content',
+    );
+    if (appContent) {
+      appContent.removeAttribute('inert');
+    }
+
     this.requestUpdate();
   }
 
   resizeEvent() {
     // TODO should be configurable outside appshell
     const mql = window.matchMedia('(max-width: 767px)');
-
     if (mql.matches && this.type !== 'modal') {
-      this._originallyForcedOpen = this.forcedOpen;
       this.type = 'modal';
-      if (this._originallyForcedOpen && this.open) {
-        requestAnimationFrame(() => {
-          this._handleMenuClick();
-        });
-      }
     } else if (!mql.matches && this.type !== 'dismissible') {
       this.type = 'dismissible';
-      if (this._originallyForcedOpen) {
-        requestAnimationFrame(() => {
-          this._handleMenuClick();
-        });
-      }
-      this._originallyForcedOpen = false;
+      const appContent = this.shadowRoot?.querySelector(
+        '.main.mdc-drawer-app-content',
+      );
+      if (appContent) appContent.removeAttribute('inert');
     }
     this.requestUpdate();
   }
