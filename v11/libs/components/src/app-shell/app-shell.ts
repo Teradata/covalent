@@ -240,6 +240,7 @@ export class CovalentAppShell extends DrawerBase {
     this.mdcRoot.dispatchEvent(
       new Event('transitionend', { bubbles: true, composed: true }),
     );
+
     // Forcefully toggle the open/close state
     this._toggleOpen(!this.forcedOpen);
 
@@ -281,8 +282,18 @@ export class CovalentAppShell extends DrawerBase {
   private _handleDrawerClosed() {
     this.forcedOpen = false;
     this.hovered = false;
+    this.removeInertAttribute();
     this.requestUpdate();
   }
+
+  private removeInertAttribute = () => {
+    const appContent = this.shadowRoot?.querySelector(
+      '.main.mdc-drawer-app-content',
+    );
+    if (appContent) {
+      appContent.removeAttribute('inert');
+    }
+  };
 
   resizeEvent() {
     // TODO should be configurable outside appshell
@@ -291,6 +302,7 @@ export class CovalentAppShell extends DrawerBase {
       this.type = 'modal';
     } else if (!mql.matches && this.type !== 'dismissible') {
       this.type = 'dismissible';
+      this.removeInertAttribute();
     }
     this.requestUpdate();
   }
