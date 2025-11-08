@@ -13,6 +13,7 @@ import {
   EventEmitter,
   SecurityContext,
   inject,
+  CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 import {
   removeLeadingHash,
@@ -33,9 +34,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { TdDialogComponent } from '@covalent/core/dialogs';
 import { TdMessageComponent } from '@covalent/core/message';
-import { TdBreadcrumbsComponent } from '@covalent/core/breadcrumbs';
+import {
+  TdBreadcrumbsComponent,
+  TdBreadcrumbComponent,
+} from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
 
 export interface IMarkdownNavigatorItem {
@@ -86,6 +89,7 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
     TdFlavoredMarkdownLoaderComponent,
     TdMessageComponent,
     TdBreadcrumbsComponent,
+    TdBreadcrumbComponent,
   ],
   providers: [TdMarkdownLoaderService],
 })
@@ -156,7 +160,6 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   historyStack: IMarkdownNavigatorItem[] = []; // history
   currentMarkdownItem?: IMarkdownNavigatorItem; // currently rendered
   currentMenuItems?: IMarkdownNavigatorItem[] = []; // current menu items
-
   loading = false;
 
   markdownLoaderError?: string;
@@ -265,6 +268,10 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       return this.getTitle(this.historyStack[this.historyStack.length - 1]);
     }
     return '';
+  }
+
+  get navigationBreadcrumbs(): IMarkdownNavigatorItem[] {
+    return this.historyStack.slice(0, -1);
   }
 
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
@@ -405,6 +412,21 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   getIcon(item: IMarkdownNavigatorItem): string {
     return item?.icon || 'subject';
+  }
+
+  getIconFont(item: IMarkdownNavigatorItem): string | null {
+    const icon = item?.icon;
+    // Usar la misma lógica que icon.stories.js - detectar iconos de Covalent
+    if (icon && this.isCovalentIcon(icon)) {
+      return 'covalent-icons';
+    }
+    return null; // Material icons (default)
+  }
+
+  private isCovalentIcon(iconName: string): boolean {
+    // Lista pequeña de prueba - solo 2 iconos para markdown-navigator
+    const COVALENT_ICONS = ['product_modelops', 'variable_outlined'];
+    return COVALENT_ICONS.includes(iconName);
   }
 
   handleChildrenUrlError(error: Error): void {

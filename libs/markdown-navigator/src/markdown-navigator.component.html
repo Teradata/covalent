@@ -1,41 +1,39 @@
 @if (!showEmptyState) {
   <ng-container>
-    <mat-progress-bar
-      *ngIf="loading"
-      mode="indeterminate"
-      color="accent"
-    ></mat-progress-bar>
-    <ng-container *ngIf="showHeader">
+    @if (loading) {
+      <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+    }
+
+    @if (showHeader) {
       <td-breadcrumbs>
         <a
           td-breadcrumb
           [matTooltip]="goHomeLabel ?? ''"
           (click)="reset()"
           [attr.data-test]="'home-button'"
-          >Homeeee</a
+          >Home</a
         >
-        <ng-container
-          *ngFor="let stack of historyStack; last as isLast; index as index"
-        >
-          <ng-container *ngIf="!isLast; else lastBreadCrumb">
-            <a
-              td-breadcrumb
-              (click)="goBack(historyStack.length - index)"
-              [attr.data-test]="'back-button'"
-              >{{ stack.title }}</a
-            >
-          </ng-container>
-          <ng-template #lastBreadCrumb>
-            <mat-icon class="breadcrumb-end-icon">chevron_right</mat-icon>
-          </ng-template>
-        </ng-container>
+
+        @for (
+          item of navigationBreadcrumbs;
+          track item.id;
+          let index = $index
+        ) {
+          <a
+            td-breadcrumb
+            (click)="goBack(navigationBreadcrumbs.length - index)"
+            [attr.data-test]="'back-button-' + index + ''"
+            >{{ getTitle(item) }}</a
+          >
+        }
       </td-breadcrumbs>
+
       <div class="breadcrumb-current-title" [attr.data-test]="'title'">
         {{ currentItemTitle }}
       </div>
 
       <mat-divider [style.position]="'relative'"></mat-divider>
-    </ng-container>
+    }
 
     <div class="scroll-area" id="td-markdown-navigator-content">
       @if (showTdMarkdownLoader || showTdMarkdown) {
@@ -101,6 +99,11 @@
                 <mat-icon matListItemIcon>
                   {{ getIcon(item) }}
                 </mat-icon>
+                <!-- <cv-icon [attr.iconFont]="getIconFont(item)">
+                  {{ getIcon(item) }}
+                </cv-icon> -->
+                <!-- <cv-icon [attr.iconFont]="getIconFont(item)">{{ getIcon(item) }}</cv-icon> -->
+                <!-- <cv-icon [name]="getIcon(item)"></cv-icon> -->
                 <span matListItemTitle class="truncate">
                   {{ getTitle(item) }}
                 </span>
