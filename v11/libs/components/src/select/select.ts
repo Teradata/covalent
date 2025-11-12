@@ -34,6 +34,13 @@ export class CovalentSelect extends SelectBase {
   @property({ type: Boolean, reflect: true })
   text = false;
 
+  override updated(changedProperties: Map<string | number | symbol, unknown>) {
+    super.updated(changedProperties);
+    if (changedProperties.has('value')) {
+      this.layout();
+    }
+  }
+
   override render() {
     const classes = {
       'mdc-select--disabled': this.disabled,

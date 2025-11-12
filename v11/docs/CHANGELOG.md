@@ -1,3 +1,9 @@
+## [11.5.5](https://github.com/Teradata/covalent/compare/v11.5.4...v11.5.5) (2025-11-12)
+
+### Bug Fixes
+
+- **app-shell:** fix height orange ribbon from 2 to 4px ([#2591](https://github.com/Teradata/covalent/issues/2591)) ([926cce1](https://github.com/Teradata/covalent/commit/926cce1fb7c4a7a5cb6a3cf921ae16237807617d))
+
 ## [11.5.4](https://github.com/Teradata/covalent/compare/v11.5.3...v11.5.4) (2025-11-04)
 
 ### Bug Fixes
