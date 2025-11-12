@@ -1,3 +1,9 @@
+## [11.5.4](https://github.com/Teradata/covalent/compare/v11.5.3...v11.5.4) (2025-11-04)
+
+### Bug Fixes
+
+- **cv-app-shell:** fix app-shell component when resizing ([#2587](https://github.com/Teradata/covalent/issues/2587)) ([29961fd](https://github.com/Teradata/covalent/commit/29961fd86d82f76d201c6cba4f058fbf842a1388))
+
 ## [11.5.3](https://github.com/Teradata/covalent/compare/v11.5.2...v11.5.3) (2025-10-30)
 
 ### Bug Fixes
