@@ -13,6 +13,7 @@ import {
   EventEmitter,
   SecurityContext,
   inject,
+  CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 import {
   removeLeadingHash,
@@ -33,10 +34,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { TdDialogComponent } from '@covalent/core/dialogs';
 import { TdMessageComponent } from '@covalent/core/message';
-import { TdBreadcrumbsComponent } from '@covalent/core/breadcrumbs';
+import {
+  TdBreadcrumbsComponent,
+  TdBreadcrumbComponent,
+} from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
+import { COV_ICON_LIST } from './shared/constants/covalent-icons';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -86,6 +90,7 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
     TdFlavoredMarkdownLoaderComponent,
     TdMessageComponent,
     TdBreadcrumbsComponent,
+    TdBreadcrumbComponent,
   ],
   providers: [TdMarkdownLoaderService],
 })
@@ -156,7 +161,6 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   historyStack: IMarkdownNavigatorItem[] = []; // history
   currentMarkdownItem?: IMarkdownNavigatorItem; // currently rendered
   currentMenuItems?: IMarkdownNavigatorItem[] = []; // current menu items
-
   loading = false;
 
   markdownLoaderError?: string;
@@ -265,6 +269,10 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       return this.getTitle(this.historyStack[this.historyStack.length - 1]);
     }
     return '';
+  }
+
+  get navigationBreadcrumbs(): IMarkdownNavigatorItem[] {
+    return this.historyStack.slice(0, -1);
   }
 
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
@@ -407,10 +415,16 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return item?.icon || 'subject';
   }
 
+  isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
+    const icon: string = this.getIcon(item);
+    return COV_ICON_LIST.includes(icon);
+  }
+
   handleChildrenUrlError(error: Error): void {
     this.childrenUrlError = error.message;
     this._changeDetectorRef.markForCheck();
   }
+
   handleMarkdownLoaderError(error: Error): void {
     this.markdownLoaderError = error ? error.message : '';
     this._changeDetectorRef.markForCheck();

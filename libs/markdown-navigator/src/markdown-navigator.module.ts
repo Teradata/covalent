@@ -5,6 +5,8 @@ import { TdMarkdownNavigatorWindowComponent } from './markdown-navigator-window/
 import { TdMarkdownNavigatorWindowDirective } from './markdown-navigator-window-directive/markdown-navigator-window.directive';
 import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window-service/markdown-navigator-window.service';
 import { TdDialogService } from '@covalent/core/dialogs';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 /**
  * @deprecated This module is deprecated and will be removed in future versions.
@@ -25,4 +27,18 @@ import { TdDialogService } from '@covalent/core/dialogs';
   ],
   providers: [TdMarkdownNavigatorWindowService, TdDialogService],
 })
-export class CovalentMarkdownNavigatorModule {}
+export class CovalentMarkdownNavigatorModule {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    // Registra 'material-icons' y asegúrate de que use la clase mat-ligature-font
+    iconRegistry.registerFontClassAlias(
+      'material-icons',
+      'material-icons mat-ligature-font',
+    );
+
+    // Opcional: Para el caso de Covalent, si usa ligaduras
+    iconRegistry.registerFontClassAlias(
+      'covalent-icons',
+      'covalent-icons mat-ligature-font',
+    );
+  }
+}
