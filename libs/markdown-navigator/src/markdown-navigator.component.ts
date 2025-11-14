@@ -40,6 +40,7 @@ import {
   TdBreadcrumbComponent,
 } from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
+import { COV_ICON_LIST } from './shared/constants/covalent-icons';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -414,25 +415,16 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return item?.icon || 'subject';
   }
 
-  getIconFont(item: IMarkdownNavigatorItem): string | null {
-    const icon = item?.icon;
-    // Usar la misma lógica que icon.stories.js - detectar iconos de Covalent
-    if (icon && this.isCovalentIcon(icon)) {
-      return 'covalent-icons';
-    }
-    return null; // Material icons (default)
-  }
-
-  private isCovalentIcon(iconName: string): boolean {
-    // Lista pequeña de prueba - solo 2 iconos para markdown-navigator
-    const COVALENT_ICONS = ['product_modelops', 'variable_outlined'];
-    return COVALENT_ICONS.includes(iconName);
+  isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
+    const icon: string = this.getIcon(item);
+    return COV_ICON_LIST.includes(icon);
   }
 
   handleChildrenUrlError(error: Error): void {
     this.childrenUrlError = error.message;
     this._changeDetectorRef.markForCheck();
   }
+
   handleMarkdownLoaderError(error: Error): void {
     this.markdownLoaderError = error ? error.message : '';
     this._changeDetectorRef.markForCheck();

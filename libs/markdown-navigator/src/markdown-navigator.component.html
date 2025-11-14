@@ -96,14 +96,14 @@
                 matTooltipPosition="before"
                 matTooltipShowDelay="500"
               >
-                <mat-icon matListItemIcon>
+                <mat-icon
+                  matListItemIcon
+                  [attr.fontSet]="
+                    isCovalentIcon(item) ? 'covalent-icons' : null
+                  "
+                >
                   {{ getIcon(item) }}
                 </mat-icon>
-                <!-- <cv-icon [attr.iconFont]="getIconFont(item)">
-                  {{ getIcon(item) }}
-                </cv-icon> -->
-                <!-- <cv-icon [attr.iconFont]="getIconFont(item)">{{ getIcon(item) }}</cv-icon> -->
-                <!-- <cv-icon [name]="getIcon(item)"></cv-icon> -->
                 <span matListItemTitle class="truncate">
                   {{ getTitle(item) }}
                 </span>
