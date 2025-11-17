@@ -1,3 +1,9 @@
+## [11.5.7](https://github.com/Teradata/covalent/compare/v11.5.6...v11.5.7) (2025-11-17)
+
+### Bug Fixes
+
+- **build:** chromatic build action ([#2583](https://github.com/Teradata/covalent/issues/2583)) ([80766bb](https://github.com/Teradata/covalent/commit/80766bbe33a51f44d11c6a393d60a418bd50d1c5))
+
 ## [11.5.6](https://github.com/Teradata/covalent/compare/v11.5.5...v11.5.6) (2025-11-12)
 
 ### Bug Fixes
