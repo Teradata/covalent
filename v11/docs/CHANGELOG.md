@@ -1,3 +1,9 @@
+## [11.5.6](https://github.com/Teradata/covalent/compare/v11.5.5...v11.5.6) (2025-11-12)
+
+### Bug Fixes
+
+- **cv-select:** fix select component label ([#2590](https://github.com/Teradata/covalent/issues/2590)) ([e3a6d6c](https://github.com/Teradata/covalent/commit/e3a6d6c13ef3a3e2c3dd16e68b28462e0fe98bda))
+
 ## [11.5.5](https://github.com/Teradata/covalent/compare/v11.5.4...v11.5.5) (2025-11-12)
 
 ### Bug Fixes
