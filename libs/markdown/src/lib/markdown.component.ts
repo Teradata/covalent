@@ -417,6 +417,7 @@ export class TdMarkdownComponent
         SecurityContext.STYLE,
         changeStyleAlignmentToClass(markupStr),
       ) ?? '';
+
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(
       html,
       this._hostedUrl,
@@ -466,8 +467,6 @@ export class TdMarkdownComponent
     converter.setOption('literalMidWordUnderscores', true);
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
     converter.setOption('emoji', true);
-    converter.setOption('openHTMLTags', true);
-    converter.setOption('sanitize', false); // sanitization is handled by Angular DomSanitizer
     return converter.makeHtml(markdownToParse);
   }
 }
