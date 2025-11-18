@@ -13,7 +13,6 @@ import {
   EventEmitter,
   SecurityContext,
   inject,
-  CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 import {
   removeLeadingHash,

@@ -21,7 +21,7 @@
         ) {
           <a
             td-breadcrumb
-            (click)="goBack(navigationBreadcrumbs.length - index)"
+            (click)="goBack(historyStack.length - index)"
             [attr.data-test]="'back-button-' + index + ''"
             >{{ getTitle(item) }}</a
           >

@@ -29,13 +29,6 @@ import { MatIconRegistry } from '@angular/material/icon';
 })
 export class CovalentMarkdownNavigatorModule {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    // Registra 'material-icons' y asegúrate de que use la clase mat-ligature-font
-    iconRegistry.registerFontClassAlias(
-      'material-icons',
-      'material-icons mat-ligature-font',
-    );
-
-    // Opcional: Para el caso de Covalent, si usa ligaduras
     iconRegistry.registerFontClassAlias(
       'covalent-icons',
       'covalent-icons mat-ligature-font',
