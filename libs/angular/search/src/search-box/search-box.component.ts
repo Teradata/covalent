@@ -8,7 +8,11 @@ import {
   ChangeDetectorRef,
   forwardRef,
 } from '@angular/core';
-import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import {
   trigger,
   state,
@@ -40,7 +44,13 @@ export class TdSearchBoxBase {
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, MatIconButton, TdSearchInputComponent, MatIcon],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatIconButton,
+    TdSearchInputComponent,
+    MatIcon,
+  ],
   animations: [
     trigger('inputState', [
       state(
@@ -48,14 +58,14 @@ export class TdSearchBoxBase {
         style({
           width: '0%',
           margin: '0px',
-        })
+        }),
       ),
       state(
         '1',
         style({
           width: '100%',
           margin: AUTO_STYLE,
-        })
+        }),
       ),
       transition('0 => 1', animate('200ms ease-in')),
       transition('1 => 0', animate('200ms ease-out')),
@@ -128,6 +138,7 @@ export class TdSearchBoxComponent implements ControlValueAccessor {
    * search: function($event)
    * Event emitted after the key enter has been pressed.
    */
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   /**
