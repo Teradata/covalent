@@ -1,5 +1,5 @@
 {
-  "id": "23VgmpV3P3",
+  "id": "6QY5GyrJU",
   "data": {
     "content": {
       "type": "doc",
@@ -7,23 +7,19 @@
         {
           "type": "heading",
           "attrs": {
-            "level": 2,
+            "level": 1,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "obsolete",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "V",
+              "type": "text"
             }
           ]
         }
       ]
     }
   },
-  "blockType": "text-editor"
+  "blockType": "text-editor",
+  "size": "medium"
 }

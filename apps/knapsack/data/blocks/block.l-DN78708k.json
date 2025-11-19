@@ -1,17 +1,15 @@
 {
-  "id": "KDmdQV3Q7A",
+  "id": "l-DN78708k",
   "data": {
+    "type": "error",
     "content": {
       "type": "doc",
       "content": [
         {
           "type": "paragraph",
-          "attrs": {
-            "textAlign": "left"
-          },
           "content": [
             {
-              "text": "Use \"deprecated\" or \"no longer supported.\"",
+              "text": "Do not use",
               "type": "text"
             }
           ]
@@ -19,5 +17,6 @@
       ]
     }
   },
-  "blockType": "text-editor"
+  "size": "small",
+  "blockType": "callout"
 }
