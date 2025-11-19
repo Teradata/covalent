@@ -308,7 +308,6 @@ export const COV_ICON_LIST = [
   'wand_outlined',
   'workflow',
   'workflow_outlined',
-  'test_icon',
 ];
 
 export default COV_ICON_LIST;
