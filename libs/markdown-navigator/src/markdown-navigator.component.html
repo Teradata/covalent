@@ -16,13 +16,13 @@
 
         @for (
           item of navigationBreadcrumbs;
-          track item.id;
-          let index = $index
+          let index = $index;
+          track item.id ?? index
         ) {
           <a
             td-breadcrumb
             (click)="goBack(historyStack.length - index)"
-            [attr.data-test]="'back-button-' + index + ''"
+            [attr.data-test]="'back-button-' + index"
             >{{ getTitle(item) }}</a
           >
         }
@@ -84,7 +84,11 @@
       @if (showMenu) {
         <div class="td-markdown-list">
           <mat-action-list>
-            @for (item of currentMenuItems; let index = $index; track item.id) {
+            @for (
+              item of currentMenuItems;
+              let index = $index;
+              track item.id ?? index
+            ) {
               <button
                 [id]="
                   'td-markdown-navigator-list-item-' +
