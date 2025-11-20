@@ -1,3 +1,9 @@
+## [11.5.8](https://github.com/Teradata/covalent/compare/v11.5.7...v11.5.8) (2025-11-20)
+
+### Bug Fixes
+
+- **markdown:** update sanitizer context and enhance showdown options ([#2592](https://github.com/Teradata/covalent/issues/2592)) ([93e5461](https://github.com/Teradata/covalent/commit/93e5461319a1dc8f9b9d83f763dc080208fdc199))
+
 ## [11.5.7](https://github.com/Teradata/covalent/compare/v11.5.6...v11.5.7) (2025-11-17)
 
 ### Bug Fixes
