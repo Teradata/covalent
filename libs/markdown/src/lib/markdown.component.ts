@@ -414,9 +414,10 @@ export class TdMarkdownComponent
 
     const html: string =
       this._domSanitizer.sanitize(
-        SecurityContext.HTML,
+        SecurityContext.STYLE,
         changeStyleAlignmentToClass(markupStr),
       ) ?? '';
+
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(
       html,
       this._hostedUrl,
@@ -460,6 +461,7 @@ export class TdMarkdownComponent
     // Convert markdown into html
     const converter: showdown.Converter = new showdown.Converter();
     converter.setOption('ghCodeBlocks', true);
+    converter.setOption('ghCompatibleHeaderId', true);
     converter.setOption('tasklists', true);
     converter.setOption('tables', true);
     converter.setOption('literalMidWordUnderscores', true);
