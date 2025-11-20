@@ -1,5 +1,5 @@
 {
-  "id": "23VgmpV3P3",
+  "id": "xugkKxNHth",
   "data": {
     "content": {
       "type": "doc",
@@ -12,13 +12,25 @@
           },
           "content": [
             {
-              "text": "obsolete",
+              "text": "onsite",
               "type": "text",
               "marks": [
                 {
                   "type": "bold"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "One word, no hyphen.",
+              "type": "text"
             }
           ]
         }

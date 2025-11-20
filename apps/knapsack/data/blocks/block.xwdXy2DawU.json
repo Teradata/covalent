@@ -1,24 +1,18 @@
 {
-  "id": "23VgmpV3P3",
+  "id": "xwdXy2DawU",
   "data": {
     "content": {
       "type": "doc",
       "content": [
         {
-          "type": "heading",
+          "type": "paragraph",
           "attrs": {
-            "level": 2,
             "textAlign": "left"
           },
           "content": [
             {
-              "text": "obsolete",
-              "type": "text",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
+              "text": "Use \"VantageCloud Lake\" or \"Lake.\"",
+              "type": "text"
             }
           ]
         }
