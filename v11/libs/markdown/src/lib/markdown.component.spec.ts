@@ -78,14 +78,14 @@ describe('Component: Markdown', () => {
     it('should render empty static content', waitForAsync(() => {
       const fixture: ComponentFixture<TdMarkdownEmptyStaticContentTestRenderingComponent> =
         TestBed.createComponent(
-          TdMarkdownEmptyStaticContentTestRenderingComponent
+          TdMarkdownEmptyStaticContentTestRenderingComponent,
         );
       const element: HTMLElement = fixture.nativeElement;
 
       expect(
         fixture.debugElement
           .query(By.css('td-markdown'))
-          .nativeElement.textContent.trim()
+          .nativeElement.textContent.trim(),
       ).toBe(``);
       expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
@@ -95,7 +95,7 @@ describe('Component: Markdown', () => {
         expect(
           fixture.debugElement
             .query(By.css('td-markdown'))
-            .nativeElement.textContent.trim()
+            .nativeElement.textContent.trim(),
         ).toBe('');
       });
     }));
@@ -108,12 +108,12 @@ describe('Component: Markdown', () => {
       expect(
         fixture.debugElement
           .query(By.css('td-markdown'))
-          .nativeElement.textContent.trim()
+          .nativeElement.textContent.trim(),
       ).toBe(
         `
         # title
 
-        * list item`.trim()
+        * list item`.trim(),
       );
       expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
@@ -121,10 +121,10 @@ describe('Component: Markdown', () => {
         fixture.detectChanges();
         expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(
-          element.querySelector('td-markdown div h1')?.textContent?.trim()
+          element.querySelector('td-markdown div h1')?.textContent?.trim(),
         ).toBe('title');
         expect(
-          element.querySelector('td-markdown div ul li')?.textContent?.trim()
+          element.querySelector('td-markdown div ul li')?.textContent?.trim(),
         ).toBe('list item');
       });
     }));
@@ -132,7 +132,7 @@ describe('Component: Markdown', () => {
     it('should render newlines as <br/> if simpleLineBreaks is true', waitForAsync(() => {
       const fixture: ComponentFixture<TdMarkdownSimpleLineBreaksTestRenderingComponent> =
         TestBed.createComponent(
-          TdMarkdownSimpleLineBreaksTestRenderingComponent
+          TdMarkdownSimpleLineBreaksTestRenderingComponent,
         );
       const component: TdMarkdownSimpleLineBreaksTestRenderingComponent =
         fixture.debugElement.componentInstance;
@@ -142,13 +142,13 @@ describe('Component: Markdown', () => {
       expect(
         fixture.debugElement
           .query(By.css('td-markdown'))
-          .nativeElement.textContent.trim()
+          .nativeElement.textContent.trim(),
       ).toBe(
         `
         first line
         second line
         third line
-        `.trim()
+        `.trim(),
       );
       expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
@@ -158,7 +158,7 @@ describe('Component: Markdown', () => {
           fixture.detectChanges();
           expect(element.querySelector('td-markdown div')).toBeTruthy();
           expect(
-            element.querySelector('td-markdown')?.querySelectorAll('br').length
+            element.querySelector('td-markdown')?.querySelectorAll('br').length,
           ).toBe(2);
         });
       });
@@ -167,7 +167,7 @@ describe('Component: Markdown', () => {
     it('should not render newlines as <br/> if simpleLineBreaks is false', waitForAsync(() => {
       const fixture: ComponentFixture<TdMarkdownSimpleLineBreaksTestRenderingComponent> =
         TestBed.createComponent(
-          TdMarkdownSimpleLineBreaksTestRenderingComponent
+          TdMarkdownSimpleLineBreaksTestRenderingComponent,
         );
       const component: TdMarkdownSimpleLineBreaksTestRenderingComponent =
         fixture.debugElement.componentInstance;
@@ -177,13 +177,13 @@ describe('Component: Markdown', () => {
       expect(
         fixture.debugElement
           .query(By.css('td-markdown'))
-          .nativeElement.textContent.trim()
+          .nativeElement.textContent.trim(),
       ).toBe(
         `
         first line
         second line
         third line
-        `.trim()
+        `.trim(),
       );
       expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
@@ -193,7 +193,7 @@ describe('Component: Markdown', () => {
           fixture.detectChanges();
           expect(element.querySelector('td-markdown div')).toBeTruthy();
           expect(
-            element.querySelector('td-markdown')?.querySelectorAll('br').length
+            element.querySelector('td-markdown')?.querySelectorAll('br').length,
           ).toBe(0);
         });
       });
@@ -217,7 +217,7 @@ describe('Component: Markdown', () => {
       expect(
         fixture.debugElement
           .query(By.css('td-markdown'))
-          .nativeElement.textContent.trim()
+          .nativeElement.textContent.trim(),
       ).toBe('');
       expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
@@ -225,13 +225,13 @@ describe('Component: Markdown', () => {
         fixture.detectChanges();
         expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(
-          element.querySelector('td-markdown div h1')?.textContent?.trim()
+          element.querySelector('td-markdown div h1')?.textContent?.trim(),
         ).toBe('another title');
         expect(
-          element.querySelector('td-markdown div h2')?.textContent?.trim()
+          element.querySelector('td-markdown div h2')?.textContent?.trim(),
         ).toBe('subtitle');
         expect(
-          element.querySelector('td-markdown div code')?.textContent?.trim()
+          element.querySelector('td-markdown div code')?.textContent?.trim(),
         ).toBe('pseudo code');
       });
     }));
@@ -250,7 +250,7 @@ describe('Component: Markdown', () => {
       expect(
         fixture.debugElement
           .query(By.css('td-markdown'))
-          .nativeElement.textContent.trim()
+          .nativeElement.textContent.trim(),
       ).toBe('');
       expect(element.querySelector('td-markdown div')).toBeFalsy();
       fixture.detectChanges();
@@ -258,12 +258,80 @@ describe('Component: Markdown', () => {
         fixture.detectChanges();
         expect(element.querySelector('td-markdown div')).toBeTruthy();
         expect(
-          element.querySelector('td-markdown div h1')?.textContent?.trim()
+          element.querySelector('td-markdown div h1')?.textContent?.trim(),
         ).toBe('another title');
         expect(element.querySelector('td-markdown div h2')).toBeFalsy();
         expect(
-          element.querySelector('td-markdown div')?.textContent?.trim()
+          element.querySelector('td-markdown div')?.textContent?.trim(),
         ).toContain('## subtitle');
+      });
+    }));
+
+    it('should preserve inline styles and classes in rendered HTML', waitForAsync(() => {
+      const fixture: ComponentFixture<TdMarkdownDymanicContentTestRenderingComponent> =
+        TestBed.createComponent(TdMarkdownDymanicContentTestRenderingComponent);
+      const component: TdMarkdownDymanicContentTestRenderingComponent =
+        fixture.debugElement.componentInstance;
+      component.content = `
+        <h1 style="color: red; font-weight: 700;" class="cv-styled-heading">Styled Heading</h1>
+
+        <p style="margin: 10px;">Styled paragraph</p>
+
+        <code style="font-family: Roboto Mono;">inline code</code>
+      `;
+      const element: HTMLElement = fixture.nativeElement;
+
+      expect(
+        fixture.debugElement
+          .query(By.css('td-markdown'))
+          .nativeElement.textContent.trim(),
+      ).toBe('');
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        const h1 = element.querySelector('td-markdown div h1') as HTMLElement;
+        expect(h1).toBeTruthy();
+        expect(h1?.classList.contains('cv-styled-heading')).toBe(true);
+        expect(h1?.getAttribute('style')?.includes('color: red')).toBe(true);
+        const p = element.querySelector('td-markdown div p') as HTMLElement;
+        expect(p?.getAttribute('style')?.includes('margin: 10px')).toBe(true);
+        const code = element.querySelector(
+          'td-markdown div code',
+        ) as HTMLElement;
+        expect(code?.getAttribute('style')?.includes('font-family')).toBe(true);
+      });
+    }));
+
+    it('should preserve raw HTML classes so elements are selectable by class', waitForAsync(() => {
+      const fixture: ComponentFixture<TdMarkdownDymanicContentTestRenderingComponent> =
+        TestBed.createComponent(TdMarkdownDymanicContentTestRenderingComponent);
+      const component: TdMarkdownDymanicContentTestRenderingComponent =
+        fixture.debugElement.componentInstance;
+      component.content = `
+        <h2 class="custom-heading">Heading by class</h2>
+
+        <ul class="custom-list"><li>one</li></ul>
+      `;
+      const element: HTMLElement = fixture.nativeElement;
+
+      expect(
+        fixture.debugElement
+          .query(By.css('td-markdown'))
+          .nativeElement.textContent.trim(),
+      ).toBe('');
+      expect(element.querySelector('td-markdown div')).toBeFalsy();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        const elByClass = element.querySelector(
+          'td-markdown div .custom-heading',
+        ) as HTMLElement;
+        expect(elByClass?.textContent?.trim()).toBe('Heading by class');
+        const listItem = element.querySelector(
+          'td-markdown div .custom-list li',
+        ) as HTMLElement;
+        expect(listItem?.textContent?.trim()).toBe('one');
       });
     }));
 
@@ -383,7 +451,7 @@ describe('Component: Markdown', () => {
       component.content = anchorTestMarkdown();
 
       const { componentInstance } = fixture.debugElement.query(
-        By.directive(TdMarkdownComponent)
+        By.directive(TdMarkdownComponent),
       );
       componentInstance.contentReady.subscribe(contentReadySpy);
 
@@ -489,7 +557,7 @@ describe('Component: Markdown', () => {
             const href = anchorElement.getAttribute('href');
             const expectedHref: string = links[index][1];
             expect(href).toEqual(expectedHref);
-          }
+          },
         );
       }
 
@@ -556,7 +624,7 @@ describe('Component: Markdown', () => {
             const src = imageElement.getAttribute('src');
             const expectedSrc: string = images[index][1];
             expect(src).toEqual(expectedSrc);
-          }
+          },
         );
       }
 
@@ -582,7 +650,7 @@ describe('Component: Markdown', () => {
       it('should be fired only once after display renders empty static content', waitForAsync(() => {
         const fixture: ComponentFixture<TdMarkdownEmptyStaticContentTestEventsComponent> =
           TestBed.createComponent(
-            TdMarkdownEmptyStaticContentTestEventsComponent
+            TdMarkdownEmptyStaticContentTestEventsComponent,
           );
         const component: TdMarkdownEmptyStaticContentTestEventsComponent =
           fixture.debugElement.componentInstance;
