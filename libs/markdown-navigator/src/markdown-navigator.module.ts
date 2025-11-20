@@ -5,7 +5,8 @@ import { TdMarkdownNavigatorWindowComponent } from './markdown-navigator-window/
 import { TdMarkdownNavigatorWindowDirective } from './markdown-navigator-window-directive/markdown-navigator-window.directive';
 import { TdMarkdownNavigatorWindowService } from './markdown-navigator-window-service/markdown-navigator-window.service';
 import { TdDialogService } from '@covalent/core/dialogs';
-
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 /**
  * @deprecated This module is deprecated and will be removed in future versions.
  * Please migrate to using standalone components as soon as possible.
@@ -25,4 +26,8 @@ import { TdDialogService } from '@covalent/core/dialogs';
   ],
   providers: [TdMarkdownNavigatorWindowService, TdDialogService],
 })
-export class CovalentMarkdownNavigatorModule {}
+export class CovalentMarkdownNavigatorModule {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.registerFontClassAlias('covalent-icons', 'covalent-icons');
+  }
+}

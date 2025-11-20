@@ -54,6 +54,16 @@
     margin: 8px 0;
     padding-left: 16px;
   }
+
+  .td-markdown-list {
+    .mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines {
+      .mdc-list-item__primary-text::before {
+        display: block;
+        height: 16px;
+        vertical-align: baseline;
+      }
+    }
+  }
 }
 
 .truncate {

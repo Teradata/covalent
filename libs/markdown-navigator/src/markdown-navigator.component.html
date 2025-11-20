@@ -14,19 +14,18 @@
         >Home</a
       >
       <ng-container
-        *ngFor="let stack of historyStack; last as isLast; index as index"
+        *ngFor="
+          let item of navigationBreadcrumbs;
+          last as isLast;
+          index as index
+        "
       >
-        <ng-container *ngIf="!isLast; else lastBreadCrumb">
-          <a
-            td-breadcrumb
-            (click)="goBack(historyStack.length - index)"
-            [attr.data-test]="'back-button'"
-            >{{ stack.title }}</a
-          >
-        </ng-container>
-        <ng-template #lastBreadCrumb>
-          <mat-icon class="breadcrumb-end-icon">chevron_right</mat-icon>
-        </ng-template>
+        <a
+          td-breadcrumb
+          (click)="goBack(historyStack.length - index)"
+          [attr.data-test]="'back-button-' + index"
+          >{{ item.title }}</a
+        >
       </ng-container>
     </td-breadcrumbs>
     <div class="breadcrumb-current-title" [attr.data-test]="'title'">
@@ -90,7 +89,10 @@
           matTooltipPosition="before"
           matTooltipShowDelay="500"
         >
-          <mat-icon matListItemIcon>
+          <mat-icon
+            matListItemIcon
+            [attr.fontSet]="isCovalentIcon(item) ? 'covalent-icons' : null"
+          >
             {{ getIcon(item) }}
           </mat-icon>
           <span matListItemTitle class="truncate">
