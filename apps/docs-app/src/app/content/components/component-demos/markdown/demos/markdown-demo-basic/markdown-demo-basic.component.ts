@@ -84,4 +84,14 @@ export class MarkdownDemoBasicComponent {
 
     [logo]: assets/icons/teradata-dark.svg "Teradata Labs"
   `;
+
+  inlineHtmlMarkdown = `
+    <div style="border: 2px solid #007aff; padding: 10px; border-radius: 5px;">
+      <h3 style="color: #007aff;">This is a heading inside a div</h3>
+      <p style="font-style: italic;">This paragraph is styled with inline CSS.</p>
+      <button style="background-color: #007aff; color: white; border: none; padding: 10px 15px; border-radius: 3px; cursor: pointer;">
+        Click Me
+      </button>
+    </div>
+  `;
 }
