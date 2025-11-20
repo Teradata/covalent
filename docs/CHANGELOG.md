@@ -1,3 +1,9 @@
+## [10.3.3](https://github.com/Teradata/covalent/compare/v10.3.2...v10.3.3) (2025-11-20)
+
+### Bug Fixes
+
+- **markdown:** update sanitizer context and enhance md options ([#2592](https://github.com/Teradata/covalent/issues/2592)) ([70e3cd2](https://github.com/Teradata/covalent/commit/70e3cd2424fe703e22c296eabbd52969003b6e83))
+
 ## [10.3.2](https://github.com/Teradata/covalent/compare/v10.3.1...v10.3.2) (2025-09-18)
 
 ### Bug Fixes
@@ -4786,9 +4792,7 @@ ngAfterViewInit(): void {
 ## Breaking Changes
 
 - **deploy:** Single core package. ([81901b23eca8e02330260b5831c64da3005a39fd](https://github.com/Teradata/covalent/commit/81901b23eca8e02330260b5831c64da3005a39fd)), closes [#166](https://github.com/Teradata/covalent/issues/166) and [#93](https://github.com/Teradata/covalent/issues/93)
-
   - Created submodules of all core modules which are wrapped by one parent module CovalentCoreModule (`@covalent/core`)
-
     - CovalentCommonModule
     - CovalentChipsModule
     - CovalentDataTableModule
@@ -4806,7 +4810,6 @@ ngAfterViewInit(): void {
     - CovalentStepsModule
 
   - Stand alone modules:
-
     - CovalentHttpModule (`@covalent/http`)
     - CovalentDynamicFormsModule (`@covalent/dynamic-forms`)
     - CovalentHighlightModule (`@covalent/highlight`)
@@ -4949,16 +4952,13 @@ ngAfterViewInit(): void {
   ```
 
 - **dynamic-forms:** Introducing `dynamic-forms` module. ([3eb363873f11b5929655ec4c5ffa822a91fbc5e0](https://github.com/Teradata/covalent/commit/3eb363873f11b5929655ec4c5ffa822a91fbc5e0)), closes [#8](https://github.com/Teradata/covalent/issues/8)
-
   - Supported TdDynamicType
-
     - TdDynamicType.Text (renders md-input-container input type="text")
     - TdDynamicType.Number (renders md-input-container input type="number")
     - TdDynamicType.Boolean (renders md-slide-toggle)
     - TdDynamicType.Array (renders md-select)
 
   - Supported TdDynamicElement
-
     - TdDynamicElement.Input (renders md-input-container input type="text")
     - TdDynamicElement.Textarea (renders md-input-container textarea)
     - TdDynamicElement.Slider (renders md-slider)
