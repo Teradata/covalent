@@ -74,7 +74,7 @@ export interface ITdFlavoredMarkDownTableColumn {
           <mat-cell
             *matCellDef="let row"
             [ngClass]="{
-              'align-right': column.numeric,
+              'align-right-top': column.numeric,
               'align-center': column.centered,
             }"
             ><td-markdown>{{ row[column.name] }}</td-markdown></mat-cell
@@ -193,6 +193,7 @@ export class TdFlavoredMarkdownComponent
    */
   @Input()
   set content(content: string) {
+    console.log(content);
     this._content = content;
   }
 
@@ -607,25 +608,35 @@ export class TdFlavoredMarkdownComponent
   }
 
   private _replaceLists(markdown: string): string {
-    const listRegExp = /(?:^|\n)(( *(\+|\*|-))[ |\t](.*)\n)+/g;
-    const listCharRegExp = new RegExp(/^(\+|\*|-)/);
+    const listRegExp = /(?:^|\n)(( *(\+|\*|-|\d+\.))[ |\t](.*)\n)+/g;
+    const listCharRegExp = new RegExp(/^(\+|\*|-|\d+\.)/);
     return this._replaceComponent(
       markdown,
       TdFlavoredListComponent,
       listRegExp,
       (componentRef: ComponentRef<TdFlavoredListComponent>, match: string) => {
-        const start = /(\+|\*|-)/.exec(match);
+        const start = /(\+|\*|-|\d+\.)/.exec(match);
         const matchIndex = start !== null ? start.index : 1;
 
         const lineTexts: string[] = match.split(
           new RegExp(
-            '\\n {' + (matchIndex - 1).toString() + '}(\\+|\\*|\\-)[ |\\t]',
+            '\\n {' +
+              (matchIndex - 1).toString() +
+              '}(\\+|\\*|\\-|\\d+\\.)[ |\\t]',
           ),
         );
         lineTexts.shift();
         const lines: IFlavoredListItem[] = [];
+
+        // Detectar si es una lista ordenada desde el primer item
+        const firstMarkerMatch = /(\+|\*|-|\d+\.)/.exec(match);
+        const isOrderedList =
+          firstMarkerMatch && /^\d+\./.test(firstMarkerMatch[1]);
+        const startNumber =
+          isOrderedList && firstMarkerMatch ? parseInt(firstMarkerMatch[1]) : 1;
+
         lineTexts.forEach((text: string) => {
-          const sublineTexts: string[] = text.split(/\n *(\+|\*|-) /);
+          const sublineTexts: string[] = text.split(/\n *(\+|\*|-|\d+\.) /);
           const lineText = sublineTexts.shift() ?? '';
 
           if (listCharRegExp.test(lineText)) {
@@ -634,6 +645,8 @@ export class TdFlavoredMarkdownComponent
 
           lines.push({
             line: lineText,
+            type: isOrderedList ? 'ordered' : 'unordered',
+            startNumber: startNumber,
             sublines: sublineTexts
               .map((subline: string) => {
                 if (listCharRegExp.test(subline)) {

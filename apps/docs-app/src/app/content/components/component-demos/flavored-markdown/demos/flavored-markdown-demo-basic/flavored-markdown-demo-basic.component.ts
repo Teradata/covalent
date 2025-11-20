@@ -11,7 +11,7 @@ export class FlavoredMarkdownDemoBasicComponent {
     ## Checkboxes
 
     - [x] My checkbox
-    - [x] My second checkbox
+    - [ ] My second checkbox
     - [ ] My empty checkbox
 
     ## List
@@ -27,6 +27,6 @@ export class FlavoredMarkdownDemoBasicComponent {
       | ------------- |:-------------:| -----:|
       | **col 3 is**  | right-aligned | $1600 |
       | col 2 is      | *centered*    |   $12 |
-      | zebra stripes | are neat      |    $1 |   
+      | zebra stripes | are neat      |    $1 |
   `;
 }
