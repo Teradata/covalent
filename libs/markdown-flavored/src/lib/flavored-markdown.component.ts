@@ -74,7 +74,7 @@ export interface ITdFlavoredMarkDownTableColumn {
           <mat-cell
             *matCellDef="let row"
             [ngClass]="{
-              'align-right-top': column.numeric,
+              'align-right': column.numeric,
               'align-center': column.centered,
             }"
             ><td-markdown>{{ row[column.name] }}</td-markdown></mat-cell
@@ -193,7 +193,6 @@ export class TdFlavoredMarkdownComponent
    */
   @Input()
   set content(content: string) {
-    console.log(content);
     this._content = content;
   }
 
