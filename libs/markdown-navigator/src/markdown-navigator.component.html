@@ -1,117 +1,133 @@
-<ng-container *ngIf="!showEmptyState">
-  <mat-progress-bar
-    *ngIf="loading"
-    mode="indeterminate"
-    color="accent"
-  ></mat-progress-bar>
-  <ng-container *ngIf="showHeader">
-    <td-breadcrumbs>
-      <a
-        td-breadcrumb
-        [matTooltip]="goHomeLabel ?? ''"
-        (click)="reset()"
-        [attr.data-test]="'home-button'"
-        >Home</a
-      >
-      <ng-container
-        *ngFor="let stack of historyStack; last as isLast; index as index"
-      >
-        <ng-container *ngIf="!isLast; else lastBreadCrumb">
+@if (!showEmptyState) {
+  <ng-container>
+    @if (loading) {
+      <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+    }
+
+    @if (showHeader) {
+      <td-breadcrumbs>
+        <a
+          td-breadcrumb
+          [matTooltip]="goHomeLabel ?? ''"
+          (click)="reset()"
+          [attr.data-test]="'home-button'"
+          >Home</a
+        >
+
+        @for (
+          item of navigationBreadcrumbs;
+          let index = $index;
+          track item.id ?? index
+        ) {
           <a
             td-breadcrumb
             (click)="goBack(historyStack.length - index)"
-            [attr.data-test]="'back-button'"
-            >{{ stack.title }}</a
+            [attr.data-test]="'back-button-' + index"
+            >{{ getTitle(item) }}</a
           >
-        </ng-container>
-        <ng-template #lastBreadCrumb>
-          <mat-icon class="breadcrumb-end-icon">chevron_right</mat-icon>
-        </ng-template>
-      </ng-container>
-    </td-breadcrumbs>
-    <div class="breadcrumb-current-title" [attr.data-test]="'title'">
-      {{ currentItemTitle }}
-    </div>
+        }
+      </td-breadcrumbs>
 
-    <mat-divider [style.position]="'relative'"></mat-divider>
+      <div class="breadcrumb-current-title" [attr.data-test]="'title'">
+        {{ currentItemTitle }}
+      </div>
+
+      <mat-divider [style.position]="'relative'"></mat-divider>
+    }
+
+    <div class="scroll-area" id="td-markdown-navigator-content">
+      @if (showTdMarkdownLoader || showTdMarkdown) {
+        <div class="markdown-wrapper" #markdownWrapper>
+          @if (markdownLoaderError) {
+            <td-message
+              [sublabel]="markdownLoaderError"
+              color="warn"
+              icon="error"
+              [attr.data-test]="'markdown-loader-error'"
+            ></td-message>
+          }
+
+          @if (showTdMarkdownLoader) {
+            <td-flavored-markdown-loader
+              [url]="url ?? ''"
+              [httpOptions]="httpOptions ?? {}"
+              [anchor]="anchor ?? ''"
+              [copyCodeToClipboard]="copyCodeToClipboard"
+              [copyCodeTooltips]="copyCodeTooltips"
+              (loadFailed)="handleMarkdownLoaderError($event)"
+              (buttonClicked)="buttonClicked.emit($event)"
+            ></td-flavored-markdown-loader>
+          }
+
+          @if (showTdMarkdown) {
+            <td-flavored-markdown
+              [content]="markdownString ?? ''"
+              [hostedUrl]="url ?? ''"
+              [anchor]="anchor ?? ''"
+              [copyCodeToClipboard]="copyCodeToClipboard"
+              [copyCodeTooltips]="copyCodeTooltips"
+              (buttonClicked)="buttonClicked.emit($event)"
+            ></td-flavored-markdown>
+          }
+        </div>
+      }
+
+      @if (childrenUrlError) {
+        <td-message
+          [sublabel]="childrenUrlError"
+          color="warn"
+          icon="error"
+          [attr.data-test]="'children-url-error'"
+        ></td-message>
+      }
+
+      @if (showMenu) {
+        <div class="td-markdown-list">
+          <mat-action-list>
+            @for (
+              item of currentMenuItems;
+              let index = $index;
+              track item.id ?? index
+            ) {
+              <button
+                [id]="
+                  'td-markdown-navigator-list-item-' +
+                  (item.id ? item.id : index)
+                "
+                (click)="handleItemSelected(item)"
+                mat-list-item
+                [matTooltip]="getTitle(item)"
+                matTooltipPosition="before"
+                matTooltipShowDelay="500"
+              >
+                <mat-icon
+                  matListItemIcon
+                  [attr.fontSet]="
+                    isCovalentIcon(item) ? 'covalent-icons' : null
+                  "
+                >
+                  {{ getIcon(item) }}
+                </mat-icon>
+                <span matListItemTitle class="truncate">
+                  {{ getTitle(item) }}
+                </span>
+                <span matListItemLine class="truncate">
+                  {{ item.description }}
+                </span>
+                <mat-divider></mat-divider>
+              </button>
+            }
+          </mat-action-list>
+        </div>
+      }
+      <ng-container *ngComponentOutlet="footerComponent"></ng-container>
+    </div>
   </ng-container>
+}
 
-  <div class="scroll-area" id="td-markdown-navigator-content">
-    <div
-      *ngIf="showTdMarkdownLoader || showTdMarkdown"
-      class="markdown-wrapper"
-      #markdownWrapper
-    >
-      <td-message
-        *ngIf="markdownLoaderError"
-        [sublabel]="markdownLoaderError"
-        color="warn"
-        icon="error"
-        [attr.data-test]="'markdown-loader-error'"
-      ></td-message>
-      <td-flavored-markdown-loader
-        *ngIf="showTdMarkdownLoader"
-        [url]="url ?? ''"
-        [httpOptions]="httpOptions ?? {}"
-        [anchor]="anchor ?? ''"
-        [copyCodeToClipboard]="copyCodeToClipboard"
-        [copyCodeTooltips]="copyCodeTooltips"
-        (loadFailed)="handleMarkdownLoaderError($event)"
-        (buttonClicked)="buttonClicked.emit($event)"
-      ></td-flavored-markdown-loader>
-      <td-flavored-markdown
-        *ngIf="showTdMarkdown"
-        [content]="markdownString ?? ''"
-        [hostedUrl]="url ?? ''"
-        [anchor]="anchor ?? ''"
-        [copyCodeToClipboard]="copyCodeToClipboard"
-        [copyCodeTooltips]="copyCodeTooltips"
-        (buttonClicked)="buttonClicked.emit($event)"
-      ></td-flavored-markdown>
-    </div>
-
-    <td-message
-      *ngIf="childrenUrlError"
-      [sublabel]="childrenUrlError"
-      color="warn"
-      icon="error"
-      [attr.data-test]="'children-url-error'"
-    ></td-message>
-    <div *ngIf="showMenu" class="td-markdown-list">
-      <mat-action-list>
-        <button
-          *ngFor="let item of currentMenuItems; index as index"
-          [id]="
-            'td-markdown-navigator-list-item-' + (item.id ? item.id : index)
-          "
-          (click)="handleItemSelected(item)"
-          mat-list-item
-          [matTooltip]="getTitle(item)"
-          matTooltipPosition="before"
-          matTooltipShowDelay="500"
-        >
-          <mat-icon matListItemIcon>
-            {{ getIcon(item) }}
-          </mat-icon>
-          <span matListItemTitle class="truncate">
-            {{ getTitle(item) }}
-          </span>
-          <span matListItemLine class="truncate">{{ item.description }}</span>
-          <mat-divider></mat-divider>
-        </button>
-      </mat-action-list>
-    </div>
-
-    <ng-container *ngComponentOutlet="footerComponent"></ng-container>
+@if (showEmptyState) {
+  <div layout="column" layout-align="center center" class="empty-state">
+    <mat-icon matListItemAvatar>subject</mat-icon>
+    <h2>{{ emptyStateLabel }}</h2>
   </div>
-</ng-container>
-
-<div
-  *ngIf="showEmptyState"
-  layout="column"
-  layout-align="center center"
-  class="empty-state"
->
-  <mat-icon matListItemAvatar>subject</mat-icon>
-  <h2>{{ emptyStateLabel }}</h2>
-</div>
+}
