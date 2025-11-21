@@ -6,8 +6,6 @@ import { MatListModule } from '@angular/material/list';
 export interface IFlavoredListItem {
   line: string;
   sublines?: string[];
-  type?: 'ordered' | 'unordered';
-  startNumber?: number;
 }
 
 @Component({

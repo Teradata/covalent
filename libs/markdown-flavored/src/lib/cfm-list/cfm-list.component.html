@@ -1,10 +1,7 @@
 <mat-list [attr.dense]="dense ? true : null">
-  <ng-template let-line let-i="index" let-last="last" ngFor [ngForOf]="lines">
+  <ng-template let-line let-last="last" ngFor [ngForOf]="lines">
     <mat-list-item>
       <h4 matListItemTitle>
-        <span *ngIf="line.type === 'ordered'"
-          >{{ (line.startNumber || 1) + i }}.
-        </span>
         {{ line.line }}
       </h4>
       <p *ngFor="let subline of line.sublines" matListItemLine>
