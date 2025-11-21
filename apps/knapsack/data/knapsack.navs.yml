@@ -293,6 +293,11 @@ byId:
     name: /pattern/notebook-cell
     parentId: coming-soon
     path: /pattern/notebook-cell
+  notebook-content-guidelines:
+    id: notebook-content-guidelines
+    name: Notebook content guidelines
+    parentId: content
+    path: /pages/notebook-content-guidelines
   patterns:
     id: patterns
     name: Patterns
@@ -539,6 +544,7 @@ order:
   - info-and-help
   - video
   - word-list
+  - notebook-content-guidelines
   - inclusive-language-glnk25tux
   - clarity-and-efficiency
   - feedback
