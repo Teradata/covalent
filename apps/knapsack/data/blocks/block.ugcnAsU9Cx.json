@@ -1,0 +1,277 @@
+{
+  "id": "ugcnAsU9Cx",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Code Cells",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "There are two main ways to display code in notebooks:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "attrs": {
+            "start": 1
+          },
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Runnable code cells",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "orderedList",
+                  "attrs": {
+                    "start": 1
+                  },
+                  "content": [
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "Use when a user needs to",
+                              "type": "text"
+                            },
+                            {
+                              "text": " run code",
+                              "type": "text",
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ]
+                            },
+                            {
+                              "text": " as part of the workflow. These cells run in the notebook environment",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "attrs": {
+                    "textAlign": "left"
+                  },
+                  "content": [
+                    {
+                      "text": "Fenced code blocks",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "orderedList",
+                  "attrs": {
+                    "start": 1
+                  },
+                  "content": [
+                    {
+                      "type": "listItem",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "attrs": {
+                            "textAlign": "left"
+                          },
+                          "content": [
+                            {
+                              "text": "Use when showing examples or syntax references that are",
+                              "type": "text"
+                            },
+                            {
+                              "text": " not",
+                              "type": "text",
+                              "marks": [
+                                {
+                                  "type": "italic"
+                                }
+                              ]
+                            },
+                            {
+                              "text": " meant to be run. Ideal for documentation, command-line instructions, or static code snippets",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "How to create (Markdown)",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Runnable code cells",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": "markdown"
+          },
+          "content": [
+            {
+              "text": "## Connect to Teradata Vantage\nUse `create_context()` to establish a connection to your Vantage environment.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": "python"
+          },
+          "content": [
+            {
+              "text": "# Import required libraries\nimport numpy as np\nimport pandas as pd\nimport zipfile\nfrom teradataml import *",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Fenced code blocks",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": "markdown"
+          },
+          "content": [
+            {
+              "text": "This is an illustrative example of how to format your Teradata connection string.\n\n```\nteradata://username:password@hostname:port/database\n```",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

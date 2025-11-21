@@ -1,0 +1,151 @@
+{
+  "id": "4syUJdj1k0",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Section headers",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use headers to define notebook sections and create a logical reading path. Headers structure the content and enable navigation through intra-notebook links. ",
+              "type": "text"
+            },
+            {
+              "text": "Every ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ]
+            },
+            {
+              "text": "notebook must include at least one H1 (main title) and H2 for major sections.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "How to create (Markdown)",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use Markdown ",
+              "type": "text"
+            },
+            {
+              "text": "#",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": ", ",
+              "type": "text"
+            },
+            {
+              "text": "##",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": ", and ",
+              "type": "text"
+            },
+            {
+              "text": "### ",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": "syntax. Each header automatically becomes a link target (e.g., ",
+              "type": "text"
+            },
+            {
+              "text": "#connect-to-your-data",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": ").",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}
