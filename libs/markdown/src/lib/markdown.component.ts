@@ -467,6 +467,7 @@ export class TdMarkdownComponent
     converter.setOption('tables', true);
     converter.setOption('literalMidWordUnderscores', true);
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
+    converter.setOption('disableForced4SpacesIndentedSublists', true);
     converter.setOption('emoji', true);
     return converter.makeHtml(markdownToParse);
   }
