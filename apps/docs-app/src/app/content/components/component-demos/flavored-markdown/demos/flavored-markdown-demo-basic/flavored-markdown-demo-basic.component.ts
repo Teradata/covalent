@@ -14,6 +14,22 @@ export class FlavoredMarkdownDemoBasicComponent {
     - [x] My second checkbox
     - [ ] My empty checkbox
 
+    ## Mixed Lists
+
+    This demonstrates the fix for ordered lists with nested bullet points:
+
+    1. First ordered item
+       - Nested bullet point
+       - Another nested bullet
+       
+    2. Second ordered item
+       - More nested bullets
+       - Testing sequential numbering
+       
+    3. Third ordered item
+       - Final nested bullets
+       - Fix confirmed working
+
     ## List
 
     + One
@@ -27,6 +43,6 @@ export class FlavoredMarkdownDemoBasicComponent {
       | ------------- |:-------------:| -----:|
       | **col 3 is**  | right-aligned | $1600 |
       | col 2 is      | *centered*    |   $12 |
-      | zebra stripes | are neat      |    $1 |   
-  `;
+      | zebra stripes | are neat      |    $1 |
+    `;
 }
