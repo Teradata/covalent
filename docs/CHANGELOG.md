@@ -1,3 +1,9 @@
+## [10.3.4](https://github.com/Teradata/covalent/compare/v10.3.3...v10.3.4) (2025-11-22)
+
+### Bug Fixes
+
+- **markdown-flavored-v10:** fix ordered mixed lists ([#2600](https://github.com/Teradata/covalent/issues/2600)) ([e92c9cf](https://github.com/Teradata/covalent/commit/e92c9cfa79388c42d9f16220c4fd4d970a4fbe6b))
+
 ## [10.3.3](https://github.com/Teradata/covalent/compare/v10.3.2...v10.3.3) (2025-11-20)
 
 ### Bug Fixes
