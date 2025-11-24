@@ -441,6 +441,10 @@ export class TdMarkdownComponent
     markdown = markdown
       .replace(/^(\s|\t)*\n+/g, '')
       .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
+
+    // Preprocess markdown to fix common formatting issues
+    markdown = this._preprocessMarkdown(markdown);
+
     // Split markdown by line characters
     let lines: string[] = markdown.split('\n');
 
@@ -468,7 +472,85 @@ export class TdMarkdownComponent
     converter.setOption('literalMidWordUnderscores', true);
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
     converter.setOption('disableForced4SpacesIndentedSublists', true);
+    converter.setOption('smoothLivePreview', true);
+    converter.setOption('smartIndentationFix', true);
+    converter.setOption('requireSpaceBeforeHeadingText', true);
     converter.setOption('emoji', true);
+    converter.setOption('literalMidWordUnderscores', true);
+    converter.setOption('smoothLivePreview', true);
+    converter.setOption('smartIndentationFix', true);
+
     return converter.makeHtml(markdownToParse);
+  }
+
+  /**
+   * Preprocesses markdown to create correct visual hierarchy based on context patterns.
+   * Uses hierarchy inference instead of problem detection.
+   */
+  private _preprocessMarkdown(markdown: string): string {
+    if (!markdown || markdown.trim().length === 0) {
+      return markdown;
+    }
+
+    const lines = markdown.split('\n');
+    const processedLines: string[] = [];
+    const hierarchyStack: Array<{ marker: string; level: number }> = [];
+
+    for (const line of lines) {
+      const trimmedLine = line.trim();
+
+      if (trimmedLine === '') {
+        processedLines.push(line);
+        continue;
+      }
+
+      // Detect ordered list (always level 0)
+      const orderedMatch = line.match(/^(\s*)(\d+)\.\s+(.*)$/);
+      if (orderedMatch) {
+        hierarchyStack.length = 0;
+        processedLines.push(line);
+        continue;
+      }
+
+      // Detect bullet list
+      const bulletMatch = line.match(/^(\s*)([*\-+])\s+(.*)$/);
+      if (bulletMatch) {
+        const marker = bulletMatch[2];
+        const content = bulletMatch[3];
+        const level = this._inferHierarchyLevel(marker, hierarchyStack);
+        const indent = ' '.repeat(level * 3); // 3 spaces per level
+        const fixedLine = `${indent}${marker} ${content}`;
+        processedLines.push(fixedLine);
+        continue;
+      }
+
+      processedLines.push(line);
+      if (!line.match(/^\s/) && trimmedLine !== '') {
+        hierarchyStack.length = 0;
+      }
+    }
+
+    return processedLines.join('\n');
+  }
+
+  /**
+   * Infers hierarchy level based on marker patterns and context stack.
+   */
+  private _inferHierarchyLevel(
+    currentMarker: string,
+    stack: Array<{ marker: string; level: number }>,
+  ): number {
+    const existingIndex = stack.findIndex(
+      (item) => item.marker === currentMarker,
+    );
+
+    if (existingIndex >= 0) {
+      stack.length = existingIndex + 1;
+      return stack[existingIndex].level;
+    } else {
+      const newLevel = stack.length + 1;
+      stack.push({ marker: currentMarker, level: newLevel });
+      return newLevel;
+    }
   }
 }
