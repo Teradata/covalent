@@ -10,13 +10,16 @@
       background-color: inherit;
       color: map-get($foreground, text);
 
-      mat-icon {
-        color: map-get($foreground, icon);
-      }
-
       & + .mat-button-toggle {
         border-left-color: map-get($foreground, divider);
       }
+    }
+  }
+
+  .copy-button,
+  .raw-and-copy-buttons {
+    mat-icon {
+      color: map-get($foreground, icon);
     }
   }
 
