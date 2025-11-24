@@ -18,5 +18,28 @@
         }
       }
     }
+
+    mat-table {
+      --mat-table-row-item-outline-color: var(--cv-theme-outline-variant);
+      --mat-table-background-color: var(--cv-theme-surface-bright);
+      --mat-table-header-headline-font: var(
+        --cv-typography-caption-font-family
+      );
+      --mat-table-header-headline-line-height: var(
+        --cv-typography-caption-line-height
+      );
+      --mat-table-header-headline-size: var(--cv-typography-caption-font-size);
+      --mat-table-header-headline-weight: var(
+        --cv-typography-caption-font-weight
+      );
+
+      &.mat-mdc-table {
+        border: 1px solid var(--cv-theme-outline-variant);
+      }
+
+      mat-row.mat-mdc-row:nth-child(even) {
+        background-color: var(--cv-theme-surface);
+      }
+    }
   }
 }

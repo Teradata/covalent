@@ -32,6 +32,11 @@ $code-font: 'Menlo', 'Monaco', 'Andale Mono', 'lucida console', 'Courier New',
   }
 
   mat-table {
+    &.mat-mdc-table {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
     .align-right {
       justify-content: flex-end;
     }
