@@ -1,3 +1,9 @@
+## [10.3.5](https://github.com/Teradata/covalent/compare/v10.3.4...v10.3.5) (2025-11-24)
+
+### Bug Fixes
+
+- **flavored-markdown:** update table styles CAT-2556 ([#2603](https://github.com/Teradata/covalent/issues/2603)) ([06f17b9](https://github.com/Teradata/covalent/commit/06f17b988fae04d8a0f19c01a9d492f051acee39))
+
 ## [10.3.4](https://github.com/Teradata/covalent/compare/v10.3.3...v10.3.4) (2025-11-22)
 
 ### Bug Fixes
