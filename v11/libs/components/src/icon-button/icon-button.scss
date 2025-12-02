@@ -12,5 +12,10 @@
     &:focus {
       font-variation-settings: 'FILL' 1;
     }
+
+    &:disabled {
+      cursor: default;
+      color: var(--cv-theme-on-surface-38);
+    }
   }
 }

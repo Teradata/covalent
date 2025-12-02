@@ -1,3 +1,9 @@
+## [11.5.10](https://github.com/Teradata/covalent/compare/v11.5.9...v11.5.10) (2025-12-02)
+
+### Bug Fixes
+
+- **markdown:** remove img background color ([#2607](https://github.com/Teradata/covalent/issues/2607)) ([08b462a](https://github.com/Teradata/covalent/commit/08b462aec8cd631110b3b38ff1eb51e8c5cf2d8c))
+
 ## [11.5.9](https://github.com/Teradata/covalent/compare/v11.5.8...v11.5.9) (2025-11-24)
 
 ### Bug Fixes
@@ -5051,9 +5057,7 @@ ngAfterViewInit(): void {
 ## Breaking Changes
 
 - **deploy:** Single core package. ([81901b23eca8e02330260b5831c64da3005a39fd](https://github.com/Teradata/covalent/commit/81901b23eca8e02330260b5831c64da3005a39fd)), closes [#166](https://github.com/Teradata/covalent/issues/166) and [#93](https://github.com/Teradata/covalent/issues/93)
-
   - Created submodules of all core modules which are wrapped by one parent module CovalentCoreModule (`@covalent/core`)
-
     - CovalentCommonModule
     - CovalentChipsModule
     - CovalentDataTableModule
@@ -5071,7 +5075,6 @@ ngAfterViewInit(): void {
     - CovalentStepsModule
 
   - Stand alone modules:
-
     - CovalentHttpModule (`@covalent/http`)
     - CovalentDynamicFormsModule (`@covalent/dynamic-forms`)
     - CovalentHighlightModule (`@covalent/highlight`)
@@ -5214,16 +5217,13 @@ ngAfterViewInit(): void {
   ```
 
 - **dynamic-forms:** Introducing `dynamic-forms` module. ([3eb363873f11b5929655ec4c5ffa822a91fbc5e0](https://github.com/Teradata/covalent/commit/3eb363873f11b5929655ec4c5ffa822a91fbc5e0)), closes [#8](https://github.com/Teradata/covalent/issues/8)
-
   - Supported TdDynamicType
-
     - TdDynamicType.Text (renders md-input-container input type="text")
     - TdDynamicType.Number (renders md-input-container input type="number")
     - TdDynamicType.Boolean (renders md-slide-toggle)
     - TdDynamicType.Array (renders md-select)
 
   - Supported TdDynamicElement
-
     - TdDynamicElement.Input (renders md-input-container input type="text")
     - TdDynamicElement.Textarea (renders md-input-container textarea)
     - TdDynamicElement.Slider (renders md-slider)

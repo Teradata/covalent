@@ -13,13 +13,17 @@ export default {
       options: ['outlined', 'filled', 'text'],
       control: { type: 'radio' },
     },
+    disabled: {
+      control: 'boolean',
+    },
   },
   args: {
     style: 'outlined',
+    disabled: false,
   },
 };
 
-const Template = ({ icon, style, required, helper }) => {
+const Template = ({ icon, style, required, helper, disabled }) => {
   return `
         <cv-select
             label="${style}"
@@ -27,7 +31,8 @@ const Template = ({ icon, style, required, helper }) => {
             ${style}
             ${icon ? `icon="${icon}"` : null}
             ${helper ? `helper="${helper}"` : null}
-            ${required ? `required` : null}>
+            ${required ? `required` : null}
+            ${disabled ? `disabled` : null}>
             <cv-list-item selected></cv-list-item>
             <cv-list-item ${
               icon ? `graphic="icon"` : null
@@ -44,7 +49,7 @@ const Template = ({ icon, style, required, helper }) => {
         </cv-select>`;
 };
 
-const Advanced = ({ icon, style, required, helper }) => {
+const Advanced = ({ icon, style, required, helper, disabled }) => {
   return `
         <cv-select
             label="${style}"
@@ -54,7 +59,8 @@ const Advanced = ({ icon, style, required, helper }) => {
             ${style}
             ${icon ? `icon="${icon}"` : null}
             ${helper ? `helper="${helper}"` : null}
-            ${required ? `required` : null}>
+            ${required ? `required` : null}
+            ${disabled ? `disabled` : null}>
             <cv-icon-lockup slot="selected-secondary" icon="check" scale="caption" state="positive">online</cv-icon-lockup>
             <cv-typography scale="subtitle2" style="margin:0px 16px 10px;">Select an Item</cv-typography>
             <cv-divider flush></cv-divider>
