@@ -1,3 +1,9 @@
+## [10.3.6](https://github.com/Teradata/covalent/compare/v10.3.5...v10.3.6) (2025-12-02)
+
+### Bug Fixes
+
+- **markdown:** remove img background color ([#2607](https://github.com/Teradata/covalent/issues/2607)) ([32d3766](https://github.com/Teradata/covalent/commit/32d37667fe7a4088ab288a3e3b0f9df418a6094c))
+
 ## [10.3.5](https://github.com/Teradata/covalent/compare/v10.3.4...v10.3.5) (2025-11-24)
 
 ### Bug Fixes
