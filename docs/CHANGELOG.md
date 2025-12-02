@@ -1,3 +1,9 @@
+## [11.5.11](https://github.com/Teradata/covalent/compare/v11.5.10...v11.5.11) (2025-12-02)
+
+### Bug Fixes
+
+- **button-component:** fix when button state is disabled in dark mode ([#2608](https://github.com/Teradata/covalent/issues/2608)) ([8a8771c](https://github.com/Teradata/covalent/commit/8a8771c84c78ccf956bbc118b66dfda104a8b7df))
+
 ## [11.5.10](https://github.com/Teradata/covalent/compare/v11.5.9...v11.5.10) (2025-12-02)
 
 ### Bug Fixes
