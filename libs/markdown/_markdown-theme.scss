@@ -49,10 +49,6 @@
       }
     }
 
-    img {
-      background-color: mat.m2-get-color-from-palette($background, card);
-    }
-
     code {
       background-color: mat.m2-get-color-from-palette($background, hover);
     }
