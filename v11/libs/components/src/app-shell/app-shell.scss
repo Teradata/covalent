@@ -122,6 +122,11 @@
 
     &.wrapper-card {
       --mdc-shape-medium: var(--cv-border-radius-outer);
+
+      /* prevent the custom property from inheriting into children */
+      & * {
+        --mdc-shape-medium: initial;
+      }
     }
   }
 
