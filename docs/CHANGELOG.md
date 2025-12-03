@@ -1,3 +1,9 @@
+## [11.5.12](https://github.com/Teradata/covalent/compare/v11.5.11...v11.5.12) (2025-12-03)
+
+### Bug Fixes
+
+- **app-shell:** prevent inheritance of custom property in wrapper-card ([#2609](https://github.com/Teradata/covalent/issues/2609)) ([53358c5](https://github.com/Teradata/covalent/commit/53358c5c4e9eae95648d481533327787ea84a13e))
+
 ## [11.5.11](https://github.com/Teradata/covalent/compare/v11.5.10...v11.5.11) (2025-12-02)
 
 ### Bug Fixes
