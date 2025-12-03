@@ -41,6 +41,10 @@
     height: density.density-height(56px);
   }
 
+  .mdc-select.mdc-select--text.mdc-select--disabled {
+    --mdc-select-disabled-fill-color: transparent;
+  }
+
   .mdc-select--with-twoline:not(.mdc-select--outlined)
     .mdc-select__anchor
     .mdc-floating-label--float-above {
