@@ -1,0 +1,165 @@
+{
+  "id": "CJ455JtQRz",
+  "data": {
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Equations",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "When to use",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Include equations in your notebook when you need to explain a product feature, algorithm, or data science concept that relies on mathematical notation. Use equations to clarify complex ideas, demonstrate calculations, or provide formal definitions that directly support the user’s understanding and workflow.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3,
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "How to create (Markdown)",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Use LaTeX syntax within Markdown cells to display equations. For inline equations, wrap your LaTeX code in single dollar signs: ",
+              "type": "text"
+            },
+            {
+              "text": "$ ... $",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": " . For block equations, wrap your LaTeX code in double dollar signs on seperate lines:",
+              "type": "text"
+            },
+            {
+              "text": " $$ ... $$",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": " . Always provide a ",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Inline equation:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": "markdown"
+          },
+          "content": [
+            {
+              "text": "The mean is calculated as $ \\mu = \\frac{1}{n} \\sum_{i=1}^n x_i $.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          },
+          "content": [
+            {
+              "text": "Block equation:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "codeBlock",
+          "attrs": {
+            "language": "markdown"
+          },
+          "content": [
+            {
+              "text": "Formula to calculate the mean:\n\n$$\n\\mu = \\frac{1}{n} \\sum_{i=1}^n x_i\n$$",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "attrs": {
+            "textAlign": "left"
+          }
+        }
+      ]
+    }
+  },
+  "blockType": "text-editor"
+}

@@ -1,0 +1,53 @@
+id: notebook-content-guidelines
+title: Notebook content guidelines
+tabIds: []
+blockIds:
+  - R-i2kLP1G7
+  - g4p33tVrwp
+  - RpVZ67lhE7
+  - Mco7FrBWQF
+  - x1Tg321nO5
+  - 4syUJdj1k0
+  - dp9G7bg2yG
+  - qwZqn1KXv9
+  - evK0JMLo-r
+  - 0lKxL0GI5S
+  - 5wxdRkYkfQ
+  - QSTDjsmJG2
+  - 3dGD6h8op0
+  - lx35uKUHF
+  - BYVaIVQbIQ
+  - kv5g76NK2
+  - r2aSvyqVFz
+  - zQK9y-by-G
+  - ZR4Uk8xjAu
+  - cYjU9Y-zCB
+  - ugcnAsU9Cx
+  - 92N6GjEz
+  - 9etn0Hkrhm
+  - wSVfIUcic4
+  - HyecBARYub
+  - etJRx88080
+  - nBDWU60ilm
+  - 0jrqQLzwTr
+  - eoPyYSOu
+  - EdxJdwjYcb
+  - CJ455JtQRz
+  - 9w01PV89g
+  - DmutBXUOXY
+  - Wad8UO6zN2
+settings:
+  pageHeader:
+    hideText: false
+  tableOfContents:
+    hide: false
+    excludeHeadings:
+      - h6
+      - h5
+      - h4
+      - h3
+    excludeBlockHeaderTitles: false
+description: >-
+  These guidelines empower notebook authors to deliver clear, consistent, and user-focused content in Teradata
+  notebooks. By following these principles, writers create a seamless experience that guides users efficiently through
+  tasks, ensuring every notebook is easy to navigate, understand, and apply.
