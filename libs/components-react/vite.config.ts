@@ -46,6 +46,7 @@ export default defineConfig({
   },
 
   test: {
+    setupFiles: ['src/test-setup.ts'],
     watch: false,
     globals: true,
     server: {
