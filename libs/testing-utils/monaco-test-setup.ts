@@ -6,7 +6,7 @@
 
 // Mock CSS API required by Monaco Editor
 (globalThis as any).CSS = {
-  supports: (rule: string) => true,
+  supports: () => true,
   escape: (value: string) => value,
 };
 
