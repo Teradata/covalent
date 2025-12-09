@@ -1,3 +1,21 @@
+## [11.5.12](https://github.com/Teradata/covalent/compare/v11.5.11...v11.5.12) (2025-12-03)
+
+### Bug Fixes
+
+- **app-shell:** prevent inheritance of custom property in wrapper-card ([#2609](https://github.com/Teradata/covalent/issues/2609)) ([53358c5](https://github.com/Teradata/covalent/commit/53358c5c4e9eae95648d481533327787ea84a13e))
+
+## [11.5.11](https://github.com/Teradata/covalent/compare/v11.5.10...v11.5.11) (2025-12-02)
+
+### Bug Fixes
+
+- **button-component:** fix when button state is disabled in dark mode ([#2608](https://github.com/Teradata/covalent/issues/2608)) ([8a8771c](https://github.com/Teradata/covalent/commit/8a8771c84c78ccf956bbc118b66dfda104a8b7df))
+
+## [11.5.10](https://github.com/Teradata/covalent/compare/v11.5.9...v11.5.10) (2025-12-02)
+
+### Bug Fixes
+
+- **markdown:** remove img background color ([#2607](https://github.com/Teradata/covalent/issues/2607)) ([08b462a](https://github.com/Teradata/covalent/commit/08b462aec8cd631110b3b38ff1eb51e8c5cf2d8c))
+
 ## [11.5.9](https://github.com/Teradata/covalent/compare/v11.5.8...v11.5.9) (2025-11-24)
 
 ### Bug Fixes
@@ -5223,7 +5241,6 @@ ngAfterViewInit(): void {
     - TdDynamicType.Array (renders md-select)
 
   - Supported TdDynamicElement
-
     - TdDynamicElement.Input (renders md-input-container input type="text")
     - TdDynamicElement.Textarea (renders md-input-container textarea)
     - TdDynamicElement.Slider (renders md-slider)
