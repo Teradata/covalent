@@ -256,6 +256,13 @@ slot[name='splat-screen'] {
   display: none;
 }
 
+[name='user-menu'] {
+  position: sticky;
+  top: 0;
+  display: block;
+  z-index: var(--cv-app-shell-user-menu-z-index, 1);
+}
+
 [name='mini-list'] {
   display: none;
   width: 320px;
