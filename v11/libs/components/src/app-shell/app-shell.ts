@@ -91,6 +91,18 @@ export class CovalentAppShell extends DrawerBase {
   @property({ type: Boolean, reflect: true })
   remoteNavOpen = false;
 
+  /**
+   * Show splat screen for xsmall screens
+   */
+  @property({ type: Boolean, reflect: true })
+  showSplatScreen = false;
+
+  /**
+   * Center the app name and (slot=mobile-header-logo) in the top app bar
+   */
+  @property({ type: Boolean, reflect: true })
+  centerAppName = false;
+
   private hovered = false;
   private hoverTimeout: any | undefined;
   private hoverEntryDuration = 250;
@@ -348,6 +360,19 @@ export class CovalentAppShell extends DrawerBase {
       : html`<slot></slot>`;
   }
 
+  /**
+   * If appName is provided, render it; otherwise, render items in the mobile header logo slot
+   * @returns App name or items in the mobile header logo slot
+   */
+  private renderAppName() {
+    return (
+      this.appName ||
+      html`<div class="top-app-bar-title">
+        <slot name="mobile-header-logo"></slot>
+      </div>`
+    );
+  }
+
   override render() {
     const dismissible = this.type === 'dismissible' || this.type === 'modal';
     const modal = this.type === 'modal';
@@ -359,6 +384,7 @@ export class CovalentAppShell extends DrawerBase {
       'cov-help--closed': !this.helpOpen,
       'cov-help--resizing': this._resizing,
       'cov-content--full-width': this.fullWidth,
+      'cov-splat-screen': this.showSplatScreen,
     };
     const drawerClasses = {
       'mdc-drawer--dismissible': dismissible,
@@ -375,14 +401,17 @@ export class CovalentAppShell extends DrawerBase {
     return html`
       <div class="app-shell ${classMap(classes)}">
         <span class="header"
-          ><cv-top-app-bar-fixed centerTitle>
+          ><cv-top-app-bar-fixed .centerTitle=${this.centerAppName}>
             <cv-icon-button
               class="toggle-drawer"
               @click=${this._handleMenuClick}
               slot="navigationIcon"
               icon="menu"
             ></cv-icon-button>
-            <span slot="title">${this.appName}</span>
+            <span slot="title">${this.renderAppName()}</span>
+            <span slot="actionItems">
+              <slot name="mobile-header-action-items"></slot>
+            </span>
           </cv-top-app-bar-fixed>
         </span>
         <nav
@@ -408,6 +437,7 @@ export class CovalentAppShell extends DrawerBase {
             <slot name="user-menu"></slot>
             ${this.renderMain()}
           </div>
+          <slot name="splat-screen"></slot>
         </div>
         <div class="help" @mousedown="${this._startResizing}">
           ${this.helpResizable

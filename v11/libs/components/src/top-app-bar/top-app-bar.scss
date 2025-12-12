@@ -16,6 +16,10 @@
   .mdc-top-app-bar--fixed-adjust {
     padding-top: density.density-height(64px, 0, 8px);
   }
+
+  .mdc-top-app-bar__title {
+    padding-left: var(--cv-top-app-bar-title-padding-left, 20px);
+  }
 }
 
 .mdc-top-app-bar {
