@@ -1,3 +1,9 @@
+# [11.6.0](https://github.com/Teradata/covalent/compare/v11.5.12...v11.6.0) (2025-12-12)
+
+### Features
+
+- **app-shell:** add slots and properties to fix mobile responsiveness ([#2612](https://github.com/Teradata/covalent/issues/2612)) ([5c6ae54](https://github.com/Teradata/covalent/commit/5c6ae540a8fdee61e466c403a8e7cc7b57de7a9d))
+
 ## [11.5.12](https://github.com/Teradata/covalent/compare/v11.5.11...v11.5.12) (2025-12-03)
 
 ### Bug Fixes
