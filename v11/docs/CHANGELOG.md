@@ -1,3 +1,9 @@
+# [11.6.0](https://github.com/Teradata/covalent/compare/v11.5.12...v11.6.0) (2025-12-12)
+
+### Features
+
+- **app-shell:** add slots and properties to fix mobile responsiveness ([#2612](https://github.com/Teradata/covalent/issues/2612)) ([5c6ae54](https://github.com/Teradata/covalent/commit/5c6ae540a8fdee61e466c403a8e7cc7b57de7a9d))
+
 ## [11.5.12](https://github.com/Teradata/covalent/compare/v11.5.11...v11.5.12) (2025-12-03)
 
 ### Bug Fixes
@@ -5069,7 +5075,9 @@ ngAfterViewInit(): void {
 ## Breaking Changes
 
 - **deploy:** Single core package. ([81901b23eca8e02330260b5831c64da3005a39fd](https://github.com/Teradata/covalent/commit/81901b23eca8e02330260b5831c64da3005a39fd)), closes [#166](https://github.com/Teradata/covalent/issues/166) and [#93](https://github.com/Teradata/covalent/issues/93)
+
   - Created submodules of all core modules which are wrapped by one parent module CovalentCoreModule (`@covalent/core`)
+
     - CovalentCommonModule
     - CovalentChipsModule
     - CovalentDataTableModule
@@ -5087,6 +5095,7 @@ ngAfterViewInit(): void {
     - CovalentStepsModule
 
   - Stand alone modules:
+
     - CovalentHttpModule (`@covalent/http`)
     - CovalentDynamicFormsModule (`@covalent/dynamic-forms`)
     - CovalentHighlightModule (`@covalent/highlight`)
@@ -5229,7 +5238,9 @@ ngAfterViewInit(): void {
   ```
 
 - **dynamic-forms:** Introducing `dynamic-forms` module. ([3eb363873f11b5929655ec4c5ffa822a91fbc5e0](https://github.com/Teradata/covalent/commit/3eb363873f11b5929655ec4c5ffa822a91fbc5e0)), closes [#8](https://github.com/Teradata/covalent/issues/8)
+
   - Supported TdDynamicType
+
     - TdDynamicType.Text (renders md-input-container input type="text")
     - TdDynamicType.Number (renders md-input-container input type="number")
     - TdDynamicType.Boolean (renders md-slide-toggle)

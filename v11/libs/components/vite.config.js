@@ -41,6 +41,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     test: {
+      setupFiles: ['src/test-setup.ts'],
       server: {
         deps: {
           inline: [/safevalues/],
