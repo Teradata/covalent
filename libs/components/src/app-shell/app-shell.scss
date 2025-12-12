@@ -243,11 +243,17 @@
   }
 }
 
-[name='user-menu'] {
-  position: sticky;
-  top: 0;
-  display: block;
-  z-index: var(--cv-app-shell-user-menu-z-index, 1);
+.header {
+  --cv-top-app-bar-title-padding-left: 8px;
+}
+
+.top-app-bar-title {
+  display: flex;
+  align-items: center;
+}
+
+slot[name='splat-screen'] {
+  display: none;
 }
 
 [name='mini-list'] {
@@ -394,5 +400,15 @@ nav.navigation {
     width: auto;
     border: none;
     overflow-x: hidden;
+  }
+}
+
+@media only screen and (width <= 480px) {
+  .cov-splat-screen .main-wrapper {
+    display: none;
+  }
+
+  slot[name='splat-screen'] {
+    display: block;
   }
 }
