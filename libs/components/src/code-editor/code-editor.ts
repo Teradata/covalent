@@ -98,13 +98,13 @@ export class CovalentCodeEditor extends LitElement {
     // uses covalent light colors
     editor.defineTheme(
       'cv-light',
-      cvEditorLightTheme as editor.IStandaloneThemeData
+      cvEditorLightTheme as editor.IStandaloneThemeData,
     );
 
     // uses covalent dark colors
     editor.defineTheme(
       'cv-dark',
-      cvEditorDarkTheme as editor.IStandaloneThemeData
+      cvEditorDarkTheme as editor.IStandaloneThemeData,
     );
 
     this.editor = editor.create(container, {
@@ -115,6 +115,7 @@ export class CovalentCodeEditor extends LitElement {
       theme: this.getTheme(),
       automaticLayout: true,
       scrollBeyondLastLine: false,
+      useShadowDOM: true,
     });
 
     // Notify when the editor instance is created/ready
@@ -123,7 +124,7 @@ export class CovalentCodeEditor extends LitElement {
         detail: { editor: this.editor },
         bubbles: false,
         composed: true,
-      })
+      }),
     );
   }
 
@@ -145,7 +146,7 @@ export class CovalentCodeEditor extends LitElement {
           new CustomEvent('editor-focus', {
             bubbles: false,
             composed: true,
-          })
+          }),
         );
       });
 
@@ -155,7 +156,7 @@ export class CovalentCodeEditor extends LitElement {
           new CustomEvent('editor-blur', {
             bubbles: false,
             composed: true,
-          })
+          }),
         );
       });
 
@@ -192,7 +193,7 @@ export class CovalentCodeEditor extends LitElement {
           detail: { code: this.code },
           bubbles: true,
           composed: true,
-        })
+        }),
       );
     });
   }
@@ -216,7 +217,7 @@ export class CovalentCodeEditor extends LitElement {
       // Update monaco editor language when language prop is changed
       editor.setModelLanguage(
         this.editor.getModel() as editor.ITextModel,
-        this.language || ''
+        this.language || '',
       );
     }
   }
