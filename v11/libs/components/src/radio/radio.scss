@@ -2,8 +2,9 @@
   --mdc-radio-unchecked-color: var(--cv-theme-on-surface-variant);
   --mdc-theme-secondary: var(--cv-theme-primary);
   --mdc-radio-disabled-color: var(--cv-theme-on-surface-38);
-}
-
-.mdc-radio:hover {
-  --mdc-radio-unchecked-color: var(--cv-theme-on-surface);
+  --mdc-radio-unchecked-hover-ripple-color: var(--cv-theme-on-surface-8);
+  --mdc-radio-unchecked-focus-color: var(--cv-theme-on-surface);
+  --mdc-radio-unchecked-focus-ripple-color: var(--cv-theme-on-surface-12);
+  --mdc-radio-checked-hover-ripple-color: var(--cv-theme-primary-8);
+  --mdc-radio-checked-focus-ripple-color: var(--cv-theme-primary-12);
 }
