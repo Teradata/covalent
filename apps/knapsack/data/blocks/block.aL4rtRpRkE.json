@@ -207,7 +207,7 @@
                       },
                       "content": [
                         {
-                          "text": "Does the content and design support WCAG 2.1 standards (keyboard navigation, screen reader compatibility, etc.)?",
+                          "text": "Does the content and design support WCAG 2.2 standards (keyboard navigation, screen reader compatibility, etc.)?",
                           "type": "text"
                         }
                       ]
