@@ -4,7 +4,7 @@ $mat-font-url: 'styles/font/' !default;
   @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block');
 
   .material-icons {
-    font-family: 'Material Symbols Outlined';
+    font-family: 'Material Symbols Outlined', sans-serif;
   }
 
   // Ensure our size prevails over material
