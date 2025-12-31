@@ -7,6 +7,8 @@
 @import '../../../libs/markdown-navigator/markdown-navigator-theme';
 @import '../../../libs/angular-guided-tour/guided-tour-theme';
 @import '../../../libs/angular-guided-tour/styles/guided-tour.scss';
+$icomoon-font-path: '/libs/icons' !default;
+@import '../../../libs/icons/covalent-icons.scss';
 // Teradata brand
 @import '../../../libs/angular/theming/teradata-theme';
 
