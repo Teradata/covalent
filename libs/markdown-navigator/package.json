@@ -30,10 +30,16 @@
     "@angular/cdk": "0.0.0-MATERIAL",
     "@covalent/core": "0.0.0-COVALENT",
     "@covalent/flavored-markdown": "0.0.0-COVALENT",
-    "@covalent/highlight": "0.0.0-COVALENT"
+    "@covalent/highlight": "0.0.0-COVALENT",
+    "@covalent/icons": "0.0.0-COVALENT"
   },
   "dependencies": {
     "tslib": "0.0.0-TSLIB"
+  },
+  "peerDependenciesMeta": {
+    "@covalent/icons": {
+      "optional": true
+    }
   },
   "exports": {
     "./markdown-navigator-theme": {
