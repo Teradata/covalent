@@ -12,6 +12,7 @@ import {
   Output,
   EventEmitter,
   SecurityContext,
+  inject,
 } from '@angular/core';
 import {
   removeLeadingHash,
@@ -30,7 +31,7 @@ import { firstValueFrom } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { TdDialogComponent } from '@covalent/core/dialogs';
 import { TdMessageComponent } from '@covalent/core/message';
@@ -94,6 +95,18 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
   providers: [TdMarkdownLoaderService],
 })
 export class TdMarkdownNavigatorComponent implements OnChanges {
+  constructor(
+    private _markdownUrlLoaderService: TdMarkdownLoaderService,
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _sanitizer: DomSanitizer,
+    private _http: HttpClient,
+    private _matIconRegistry: MatIconRegistry,
+  ) {
+    this._matIconRegistry.registerFontClassAlias(
+      'covalent-icons',
+      'covalent-icons mat-ligature-font',
+    );
+  }
   /**
    * items: IMarkdownNavigatorItem[]
    *
@@ -160,13 +173,6 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   markdownLoaderError?: string;
   childrenUrlError?: string;
-
-  constructor(
-    private _markdownUrlLoaderService: TdMarkdownLoaderService,
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _sanitizer: DomSanitizer,
-    private _http: HttpClient,
-  ) {}
 
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
@@ -414,12 +420,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   getIcon(item: IMarkdownNavigatorItem): string {
-    return item?.icon || 'subject';
+    const icon = item?.icon || 'subject';
+    return icon.split(';')[0];
   }
 
   isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
-    const icon: string = this.getIcon(item);
-    return COV_ICON_LIST.includes(icon);
+    return COV_ICON_LIST.includes(this.getIcon(item));
   }
 
   handleChildrenUrlError(error: Error): void {

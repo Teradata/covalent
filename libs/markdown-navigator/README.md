@@ -62,6 +62,64 @@ import { CovalentMarkdownNavigatorModule } from '@covalent/markdown-navigator';
 export class MyModule {}
 ```
 
+## Covalent Icons Support (Optional)
+
+The Markdown Navigator component supports both **Material Icons** (default) and **Covalent Icons** (optional).
+
+### Using with Covalent Design System
+
+If your project already uses other Covalent components and has the following in your global styles:
+
+```scss
+@use '@covalent/icons';
+```
+
+**You don't need to do anything additional.** Covalent Icons will work automatically.
+
+### Using Markdown Navigator Standalone
+
+If you're using the Markdown Navigator component without the full Covalent Design System:
+
+1. **Install the icons package:**
+
+   ```bash
+   npm install @covalent/icons
+   ```
+
+2. **Import in your global styles** (`src/styles.scss`):
+   ```scss
+   @import '@covalent/markdown-navigator/styles/markdown-navigator-icons.scss';
+   ```
+
+### Without Covalent Icons
+
+The component works perfectly with **Material Icons only**. Covalent Icons are completely optional.
+
+### Icon Usage
+
+You can specify icons in your items using:
+
+- **Material Icons:** Use the icon name directly
+
+  ```typescript
+  {
+    title: 'Notebooks',
+    icon: 'book',  // Material Icon
+    // ...
+  }
+  ```
+
+- **Covalent Icons:** Use the icon name (the component auto-detects Covalent icons)
+  ```typescript
+  {
+    title: 'Vector Store',
+    icon: 'variable_outlined;covalent-icons',  // Covalent Icon
+    // ...
+  }
+  ```
+
+The component automatically detects which font to use based on the icon name. No additional configuration needed in your TypeScript code.
+
 ## Usage
 
 ```html
@@ -176,27 +234,20 @@ export class MyModule {}
 ## Usage
 
 ```typescript
-import {
-  TdMarkdownNavigatorWindowComponent,
-  TdMarkdownNavigatorWindowService,
-  IMarkdownNavigatorItem,
-} from '@covalent/markdown-navigator';
+import { TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowService, IMarkdownNavigatorItem } from '@covalent/markdown-navigator';
 import { MatDialogRef } from '@angular/material/dialog';
 
 export class SampleComponent {
-  constructor(
-    private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService
-  ) {}
+  constructor(private _markdownNavigatorWindowService: TdMarkdownNavigatorWindowService) {}
 
   ngOnInit(): void {
-    const ref: MatDialogRef<TdMarkdownNavigatorWindowComponent> =
-      this._markdownNavigatorWindowService.open({
-        items: [
-          {
-            url: 'https://github.com/Teradata/covalent/blob/main/README.md',
-          },
-        ],
-      });
+    const ref: MatDialogRef<TdMarkdownNavigatorWindowComponent> = this._markdownNavigatorWindowService.open({
+      items: [
+        {
+          url: 'https://github.com/Teradata/covalent/blob/main/README.md',
+        },
+      ],
+    });
     ref.afterOpened().subscribe(() => {});
     ref.afterClosed().subscribe(() => {});
   }
@@ -231,11 +282,5 @@ export class MyModule {}
 Example:
 
 ```html
-<button
-  mat-button
-  [tdMarkdownNavigatorWindow]="{ items: [] }"
-  [disabled]="false"
->
-  Open window
-</button>
+<button mat-button [tdMarkdownNavigatorWindow]="{ items: [] }" [disabled]="false">Open window</button>
 ```

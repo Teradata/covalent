@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?d7k029')
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?d7k029')
       format('truetype'),
     url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?d7k029')
       format('woff'),
@@ -20,6 +21,7 @@
 [covalent-icons],
 [iconFont='covalent-icons'] {
   --mdc-icon-font: '#{$icomoon-font-family}';
+  font-family: '#{$icomoon-font-family}' !important;
 }
 
 [class^='cov-'],
