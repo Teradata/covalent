@@ -31,7 +31,7 @@ import { firstValueFrom } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { TdMessageComponent } from '@covalent/core/message';
 import {
@@ -98,6 +98,14 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private _changeDetectorRef = inject(ChangeDetectorRef);
   private _sanitizer = inject(DomSanitizer);
   private _http = inject(HttpClient);
+  private _iconRegistry = inject(MatIconRegistry);
+
+  constructor() {
+    this._iconRegistry.registerFontClassAlias(
+      'covalent-icons',
+      'covalent-icons mat-ligature-font',
+    );
+  }
 
   /**
    * items: IMarkdownNavigatorItem[]
@@ -411,7 +419,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   getIcon(item: IMarkdownNavigatorItem): string {
-    return item?.icon || 'subject';
+    const icon = item?.icon || 'subject';
+    return icon.split(';')[0];
   }
 
   isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
