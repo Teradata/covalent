@@ -41554,7 +41554,7 @@ qe();
 var BB = _(Kn(), 1), mn = _(OB(), 1);
 
 // src/manager-api/version.ts
-var NB = "8.6.14";
+var NB = "8.6.15";
 
 // src/manager-api/modules/versions.ts
 var { VERSIONCHECK: uhe } = z, MB = (0, BB.default)(1)(() => {

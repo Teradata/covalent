@@ -1,0 +1,8 @@
+// Covalent Icons for Markdown Navigator
+// Import this file once in your global styles to enable Covalent icons support
+
+// Override font path for npm consumers
+$icomoon-font-path: '~@covalent/icons' !default;
+
+// Import Covalent icons
+@import '@covalent/icons/covalent-icons.scss';
