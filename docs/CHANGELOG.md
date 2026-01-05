@@ -1,3 +1,9 @@
+## [10.3.7](https://github.com/Teradata/covalent/compare/v10.3.6...v10.3.7) (2026-01-05)
+
+### Bug Fixes
+
+- **markdown-navigator:** add conf to render covalent and material-icons ([#2616](https://github.com/Teradata/covalent/issues/2616)) ([52e664d](https://github.com/Teradata/covalent/commit/52e664d711f7b881a310b892a26999b25a79c708))
+
 ## [10.3.6](https://github.com/Teradata/covalent/compare/v10.3.5...v10.3.6) (2025-12-02)
 
 ### Bug Fixes
