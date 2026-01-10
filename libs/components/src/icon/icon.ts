@@ -1,6 +1,7 @@
 import { Icon } from '@material/mwc-icon/mwc-icon';
 import { styles } from '@material/mwc-icon/mwc-icon-host.css';
-import { customElement } from 'lit/decorators.js';
+import { css } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -10,7 +11,17 @@ declare global {
 
 @customElement('cv-icon')
 export class CovalentIcon extends Icon {
-  static override styles = [styles];
+  @property({ type: Boolean, reflect: true })
+  filled = false;
+
+  static override styles = [
+    styles,
+    css`
+      :host([filled]) {
+        font-variation-settings: 'FILL' 1;
+      }
+    `,
+  ];
 }
 
-export default CovalentIcon
+export default CovalentIcon;
