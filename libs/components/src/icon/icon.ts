@@ -1,7 +1,8 @@
 import { Icon } from '@material/mwc-icon/mwc-icon';
-import { styles } from '@material/mwc-icon/mwc-icon-host.css';
-import { css } from 'lit';
+import { styles as IconStyles } from '@material/mwc-icon/mwc-icon-host.css';
 import { customElement, property } from 'lit/decorators.js';
+import { unsafeCSS } from 'lit';
+import styles from './icon.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -14,14 +15,7 @@ export class CovalentIcon extends Icon {
   @property({ type: Boolean, reflect: true })
   filled = false;
 
-  static override styles = [
-    styles,
-    css`
-      :host([filled]) {
-        font-variation-settings: 'FILL' 1;
-      }
-    `,
-  ];
+  static override styles = [IconStyles, unsafeCSS(styles)];
 }
 
 export default CovalentIcon;
