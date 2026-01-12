@@ -1,6 +1,8 @@
 import { Icon } from '@material/mwc-icon/mwc-icon';
-import { styles } from '@material/mwc-icon/mwc-icon-host.css';
-import { customElement } from 'lit/decorators.js';
+import { styles as IconStyles } from '@material/mwc-icon/mwc-icon-host.css';
+import { customElement, property } from 'lit/decorators.js';
+import { unsafeCSS } from 'lit';
+import styles from './icon.scss?inline';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -10,7 +12,10 @@ declare global {
 
 @customElement('cv-icon')
 export class CovalentIcon extends Icon {
-  static override styles = [styles];
+  @property({ type: Boolean, reflect: true })
+  filled = false;
+
+  static override styles = [IconStyles, unsafeCSS(styles)];
 }
 
-export default CovalentIcon
+export default CovalentIcon;

@@ -14,17 +14,22 @@ export default {
       options: ['64px', '48px', '24px', '16px'],
       control: { type: 'select' },
     },
+    filled: {
+      control: { type: 'boolean' },
+    },
   },
   args: {
     icon: 'houseboat',
     size: '48px',
+    filled: false,
   },
 };
 
-const Template = ({ icon, size }, ...args) => {
+const Template = ({ icon, size, filled }, ...args) => {
   const icoElem = document.createElement('cv-icon');
   icoElem.innerText = icon;
   icoElem.style.fontSize = size;
+  icoElem.filled = filled;
 
   if (args[0].parameters.showCovIcons) {
     icoElem.setAttribute('iconFont', 'covalent-icons');
@@ -54,3 +59,10 @@ CovalentIcons.args = {
 };
 
 export const AllCovalentIcons = AllCovalentIconsTemplate.bind({});
+
+export const FilledIcon = Template.bind({});
+FilledIcon.args = {
+  icon: 'home',
+  size: '48px',
+  filled: true,
+};
