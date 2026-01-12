@@ -12,7 +12,14 @@ declare global {
 
 @customElement('cv-radio')
 export class CovalentRadio extends RadioBase {
-  static override styles = [baseStyles, css`${unsafeCSS(styles)}`];
+  static override styles = [
+    baseStyles,
+    css`
+      ${unsafeCSS(styles)}
+    `,
+  ];
+
+  protected override useStateLayerCustomProperties = true;
 }
 
 export default CovalentRadio;

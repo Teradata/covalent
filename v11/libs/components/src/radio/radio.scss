@@ -2,9 +2,19 @@
   --mdc-radio-unchecked-color: var(--cv-theme-on-surface-variant);
   --mdc-theme-secondary: var(--cv-theme-primary);
   --mdc-radio-disabled-color: var(--cv-theme-on-surface-38);
-  --mdc-radio-unchecked-hover-ripple-color: var(--cv-theme-on-surface-8);
-  --mdc-radio-unchecked-focus-color: var(--cv-theme-on-surface);
-  --mdc-radio-unchecked-focus-ripple-color: var(--cv-theme-on-surface-12);
-  --mdc-radio-checked-hover-ripple-color: var(--cv-theme-primary-8);
-  --mdc-radio-checked-focus-ripple-color: var(--cv-theme-primary-12);
+  --mdc-ripple-hover-state-layer-color: var(--cv-theme-on-surface);
+  --mdc-ripple-hover-state-layer-opacity: 0.08;
+  --mdc-ripple-focus-state-layer-opacity: 0.12;
+  --mdc-ripple-pressed-state-layer-opacity: 0.12;
+}
+
+:host([checked]) {
+  --mdc-ripple-hover-state-layer-color: var(--cv-theme-primary);
+  --mdc-ripple-hover-state-layer-opacity: 0.08;
+  --mdc-ripple-focus-state-layer-opacity: 0.12;
+  --mdc-ripple-pressed-state-layer-opacity: 0.12;
+}
+
+:host(:focus-within:not([checked])) {
+  --mdc-radio-unchecked-color: var(--cv-theme-on-surface);
 }
