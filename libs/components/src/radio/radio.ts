@@ -1,4 +1,4 @@
-import { css, html, TemplateResult, unsafeCSS } from 'lit';
+import { css, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { RadioBase } from '@material/mwc-radio/mwc-radio-base';
 import { styles as baseStyles } from '@material/mwc-radio/mwc-radio.css';
@@ -19,16 +19,7 @@ export class CovalentRadio extends RadioBase {
     `,
   ];
 
-  protected override renderRipple(): TemplateResult | string {
-    return this.shouldRenderRipple
-      ? html`<mwc-ripple
-          unbounded
-          accent
-          .internalUseStateLayerCustomProperties="${true}"
-          .disabled="${this.disabled}"
-        ></mwc-ripple>`
-      : '';
-  }
+  protected override useStateLayerCustomProperties = true;
 }
 
 export default CovalentRadio;
