@@ -1,5 +1,5 @@
 @use '@material/typography/mdc-typography';
-@use '@covalent/tokens' as tokens;
+@use '../../../../dist/libs/tokens' as tokens;
 @use '../theme' as theme;
 
 $theme-tokens: map-get(tokens.$tokens, 'theme');

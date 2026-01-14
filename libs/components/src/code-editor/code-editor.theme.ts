@@ -1,4 +1,4 @@
-import * as tokens from '@covalent/tokens';
+import * as tokens from '../../../../dist/libs/tokens';
 
 const getTheme = (theme: 'Light' | 'Dark') => {
   return {
