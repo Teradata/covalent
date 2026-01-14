@@ -8,7 +8,7 @@ import {
   CvDarkOnBackground,
   CvLightOnBackground,
   CvDarkTextIconOnBackground,
-} from '@covalent/tokens';
+} from '../../dist/libs/tokens';
 
 export default create({
   base: 'dark',
