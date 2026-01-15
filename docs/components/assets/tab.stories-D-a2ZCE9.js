@@ -1,4 +1,4 @@
-import"./tab-Clkqccus.js";import"./tslib.es6-C-hQhb2A.js";import"./query-assigned-elements-BJdb4KNY.js";import"./base-element-C3CkHPn4.js";import"./utils-DQt7ZoY7.js";import"./event-options-CZVCfsC0.js";import"./query-pFbEai1B.js";import"./observer-D8jHVEI7.js";import"./class-map-LmxYoNzI.js";import"./directive-CvdRHFdJ.js";import"./ripple-handlers-CLC5WHP1.js";import"./state-CGn7W7VL.js";import"./style-map-CNNK6hz8.js";const C={title:"Components/Tabs"},t=({icon:a,activeIndex:m=0})=>`
+import"./tab-9RjXdCbJ.js";import"./tslib.es6-C-hQhb2A.js";import"./query-assigned-elements-BJdb4KNY.js";import"./base-element-C3CkHPn4.js";import"./utils-DQt7ZoY7.js";import"./event-options-CZVCfsC0.js";import"./query-pFbEai1B.js";import"./observer-D8jHVEI7.js";import"./class-map-LmxYoNzI.js";import"./directive-CvdRHFdJ.js";import"./ripple-handlers-CLC5WHP1.js";import"./state-CGn7W7VL.js";import"./style-map-CNNK6hz8.js";const C={title:"Components/Tabs"},t=({icon:a,activeIndex:m=0})=>`
         <cv-tab-bar activeIndex="${m}">
             <cv-tab${a?` icon="${a}"`:""} label="Tab one">
             </cv-tab>

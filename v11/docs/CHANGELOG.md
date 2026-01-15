@@ -1,3 +1,9 @@
+## [11.6.4](https://github.com/Teradata/covalent/compare/v11.6.3...v11.6.4) (2026-01-15)
+
+### Bug Fixes
+
+- **cv-textfield:** add suffix and prefix variations in dark mode ([#2623](https://github.com/Teradata/covalent/issues/2623)) ([c32c3f9](https://github.com/Teradata/covalent/commit/c32c3f94cfa52c8105942c58d94f9f114f19a3f5))
+
 ## [11.6.3](https://github.com/Teradata/covalent/compare/v11.6.2...v11.6.3) (2026-01-12)
 
 ### Bug Fixes

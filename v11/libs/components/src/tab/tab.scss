@@ -6,6 +6,7 @@
   );
   --mdc-tab-color-default: var(--mdc-theme-text-icon-on-background);
   --mdc-tab-height: #{density.density-height(48px)};
+  --mdc-typography-button-text-transform: none;
 
   .mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
     color: var(--mdc-theme-text-primary-on-background);
