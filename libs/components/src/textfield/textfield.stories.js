@@ -26,6 +26,8 @@ const Template = ({
   helper,
   loading,
   loaderDensity,
+  prefix,
+  suffix,
 }) => {
   return `
         <cv-textfield 
@@ -43,6 +45,8 @@ const Template = ({
             ${required ? `required` : null}
             ${loading ? 'loading' : null}
             ${loaderDensity ? `loaderDensity="${loaderDensity}"` : ''}
+            ${prefix ? `prefix="${prefix}"` : ''}
+            ${suffix ? `suffix="${suffix}"` : ''}
             >
         </cv-textfield>`;
 };
@@ -73,4 +77,17 @@ Loading.args = {
   loading: true,
   loaderDensity: -6,
   iconTrailing: false,
+};
+
+export const WithSuffix = Template.bind({});
+WithSuffix.args = {
+  label: 'Price',
+  suffix: 'USD',
+};
+
+export const PrefixAndSuffix = Template.bind({});
+PrefixAndSuffix.args = {
+  label: '',
+  prefix: '$',
+  suffix: 'USD',
 };

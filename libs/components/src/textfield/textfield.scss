@@ -73,3 +73,17 @@
   align-self: center;
   padding: 12px;
 }
+
+.mdc-text-field:not(.mdc-text-field--disabled) {
+  .mdc-text-field__affix--prefix,
+  .mdc-text-field__affix--suffix {
+    color: var(--mdc-theme-text-secondary-on-background);
+  }
+}
+
+.mdc-text-field--disabled {
+  .mdc-text-field__affix--prefix,
+  .mdc-text-field__affix--suffix {
+    color: var(--cv-theme-on-surface-38);
+  }
+}
