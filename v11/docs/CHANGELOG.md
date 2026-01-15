@@ -1,3 +1,10 @@
+## [11.6.3](https://github.com/Teradata/covalent/compare/v11.6.2...v11.6.3) (2026-01-12)
+
+### Bug Fixes
+
+- **cv-icon:** update component to allow filled property ([#2621](https://github.com/Teradata/covalent/issues/2621)) ([d8c43a2](https://github.com/Teradata/covalent/commit/d8c43a2b9bfa1105e1895ce26d9dbea13a005cda))
+- **cv-radio:** fix figma parity design ([#2618](https://github.com/Teradata/covalent/issues/2618)) ([1d4aac2](https://github.com/Teradata/covalent/commit/1d4aac20f936156c2a5029839bd2f531e39cf8b4))
+
 ## [11.6.2](https://github.com/Teradata/covalent/compare/v11.6.1...v11.6.2) (2026-01-05)
 
 ### Bug Fixes
