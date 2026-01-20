@@ -34,10 +34,29 @@ export class CovalentSelect extends SelectBase {
   @property({ type: Boolean, reflect: true })
   text = false;
 
-  override updated(changedProperties: Map<string | number | symbol, unknown>) {
+  override async updated(
+    changedProperties: Map<string | number | symbol, unknown>,
+  ) {
     super.updated(changedProperties);
     if (changedProperties.has('value')) {
-      this.layout();
+      await this.updateComplete;
+      await this.layoutOptions();
+      await this.layout();
+    }
+  }
+
+  override async layout(updateItems = true) {
+    await super.layout(updateItems);
+
+    if (this.outlined && !this.value && this.selectedText) {
+      const labelElement = this.labelElement;
+      if (labelElement) {
+        labelElement.floatingLabelFoundation.float(true);
+        this.outlineOpen = true;
+        await this.updateComplete;
+        const labelWidth = labelElement.floatingLabelFoundation.getWidth();
+        this.outlineWidth = labelWidth;
+      }
     }
   }
 
