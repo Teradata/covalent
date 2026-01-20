@@ -48,6 +48,15 @@ export class CovalentSelect extends SelectBase {
   override async layout(updateItems = true) {
     await super.layout(updateItems);
 
+    if (this.outlined && this.outlineOpen && this.labelElement) {
+      await this.updateComplete;
+      const realWidth = this.labelElement.scrollWidth;
+      const scaledWidth = realWidth * 0.75;
+      if (scaledWidth > this.outlineWidth) {
+        this.outlineWidth = scaledWidth;
+      }
+    }
+
     if (this.outlined && !this.value && this.selectedText) {
       const labelElement = this.labelElement;
       if (labelElement) {
