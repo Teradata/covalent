@@ -19,6 +19,8 @@
     "format:check": "nx format",
     "format:write": "nx format:write",
     "ghpages:deploy": "VERSION=$(echo v${npm_package_version} | cut -c1-3) && nx build docs-app -- --base-href=/covalent/$VERSION/ && bash scripts/ghpages-deploy $VERSION",
+    "sync-icons": "cp libs/icons/icon-list.ts libs/markdown-navigator/src/shared/constants/covalent-icons.ts",
+    "prerelease:prepare": "npm run sync-icons",
     "release:prepare": "npx nx run-many --target=build --all && node ./scripts/version-placeholder ./dist",
     "style-dictionary": "cd libs/tokens && style-dictionary build",
     "storybook": "storybook dev -c libs/components/.storybook",

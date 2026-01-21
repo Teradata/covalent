@@ -34,7 +34,7 @@ export class MarkdownNavigatorDemoBasicComponent {
     {
       title: 'Example Feature',
       description: 'Sample feature with Covalent icon',
-      icon: 'variable_outlined;covalent-icons',
+      icon: 'data_preparation_outlined;covalent-icons',
       markdownString: '# Example\n\nThis uses a Covalent icon.',
     },
     {
