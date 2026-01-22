@@ -1,3 +1,9 @@
+## [11.6.5](https://github.com/Teradata/covalent/compare/v11.6.4...v11.6.5) (2026-01-15)
+
+### Bug Fixes
+
+- **cv-tab:** remove property to uppercase tabs button text ([#2624](https://github.com/Teradata/covalent/issues/2624)) ([9e19a35](https://github.com/Teradata/covalent/commit/9e19a35c69b714cbcb733048aba25324b69f5abb))
+
 ## [11.6.4](https://github.com/Teradata/covalent/compare/v11.6.3...v11.6.4) (2026-01-15)
 
 ### Bug Fixes
