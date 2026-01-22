@@ -1,3 +1,10 @@
+## [11.6.6](https://github.com/Teradata/covalent/compare/v11.6.5...v11.6.6) (2026-01-22)
+
+### Bug Fixes
+
+- **cv-select:** text truncated notch ([0fefde8](https://github.com/Teradata/covalent/commit/0fefde82a8b6ae0d4237bff3c48ff5f7e67e4392))
+- **cv-select:** workaround to fix select notch overlapping ([6798f9e](https://github.com/Teradata/covalent/commit/6798f9eebf590647827aedfe27d85c431513492d))
+
 ## [11.6.5](https://github.com/Teradata/covalent/compare/v11.6.4...v11.6.5) (2026-01-15)
 
 ### Bug Fixes
