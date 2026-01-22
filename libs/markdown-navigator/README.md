@@ -64,21 +64,29 @@ export class MyModule {}
 
 ## Covalent Icons Support (Optional)
 
-The Markdown Navigator component supports both **Material Icons** (default) and **Covalent Icons** (optional).
+The Markdown Navigator automatically detects Covalent Icons and applies the correct font styling. Covalent Icons are **completely optional** - the component works perfectly with Material Icons only.
 
-### Using with Covalent Design System
+### Icon Detection (Built-in)
 
-If your project already uses other Covalent components and has the following in your global styles:
+The component includes icon detection out-of-the-box. **No additional setup or installation required.**
+
+Icon detection is bundled within the component and works with any version of `@covalent/icons` installed in your project.
+
+### Rendering Covalent Icons (Optional)
+
+If you want to **render** Covalent Icons (not just Material Icons), you need to install the icon fonts:
+
+**Option 1: Using with Covalent Design System**
+
+If your project already uses other Covalent components with the following in your global styles:
 
 ```scss
 @use '@covalent/icons';
 ```
 
-**You don't need to do anything additional.** Covalent Icons will work automatically.
+Covalent Icons will work automatically.
 
-### Using Markdown Navigator Standalone
-
-If you're using the Markdown Navigator component without the full Covalent Design System:
+**Option 2: Standalone Installation**
 
 1. **Install the icons package:**
 
@@ -91,32 +99,25 @@ If you're using the Markdown Navigator component without the full Covalent Desig
    @import '@covalent/markdown-navigator/styles/markdown-navigator-icons.scss';
    ```
 
-### Without Covalent Icons
-
-The component works perfectly with **Material Icons only**. Covalent Icons are completely optional.
-
 ### Icon Usage
 
-You can specify icons in your items using:
+Both icon types work the same way in your data:
 
-- **Material Icons:** Use the icon name directly
+```typescript
+// Material Icons (always available via Google Fonts)
+{
+  title: 'Notebooks',
+  icon: 'book',
+}
 
-  ```typescript
-  {
-    title: 'Notebooks',
-    icon: 'book',  // Material Icon
-    // ...
-  }
-  ```
+// Covalent Icons (requires @covalent/icons for rendering)
+{
+  title: 'Vector Store',
+  icon: 'variable_outlined',  // Auto-detected as Covalent icon
+}
+```
 
-- **Covalent Icons:** Use the icon name (the component auto-detects Covalent icons)
-  ```typescript
-  {
-    title: 'Vector Store',
-    icon: 'variable_outlined;covalent-icons',  // Covalent Icon
-    // ...
-  }
-  ```
+**Note:** If a Covalent icon is used but `@covalent/icons` is not installed, the icon will display as an empty box. Material Icons always work without additional setup.
 
 The component automatically detects which font to use based on the icon name. No additional configuration needed in your TypeScript code.
 
