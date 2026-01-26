@@ -39,7 +39,6 @@ import {
   TdBreadcrumbComponent,
 } from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
-import { COV_ICON_LIST } from './shared/constants/covalent-icons';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -99,6 +98,13 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private _sanitizer = inject(DomSanitizer);
   private _http = inject(HttpClient);
   private _iconRegistry = inject(MatIconRegistry);
+  private _materialFontSets: string[] = [
+    'material-icons',
+    'outlined',
+    'filled',
+    'rounded',
+    'sharp',
+  ];
 
   constructor() {
     this._iconRegistry.registerFontClassAlias(
@@ -424,8 +430,11 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
-    const icon: string = this.getIcon(item);
-    return COV_ICON_LIST.includes(icon);
+    if (!item?.icon) return false;
+    if (item.icon.includes(';covalent')) return true;
+    return this._materialFontSets.some((font: string) =>
+      item?.icon?.includes(font),
+    );
   }
 
   handleChildrenUrlError(error: Error): void {
