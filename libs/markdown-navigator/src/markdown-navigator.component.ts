@@ -432,7 +432,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
     if (!item?.icon) return false;
     if (item.icon.includes(';covalent')) return true;
-    return this._materialFontSets.some((font: string) =>
+    return !this._materialFontSets.some((font: string) =>
       item?.icon?.includes(font),
     );
   }
