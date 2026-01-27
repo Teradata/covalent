@@ -1,3 +1,10 @@
+## [11.6.7](https://github.com/Teradata/covalent/compare/v11.6.6...v11.6.7) (2026-01-27)
+
+### Bug Fixes
+
+- **markdown-navigator:** remove peerDependencies and build scripts ([#2633](https://github.com/Teradata/covalent/issues/2633)) ([7cbc891](https://github.com/Teradata/covalent/commit/7cbc891b7ccf84657ab9f2fb4263647702d6c492))
+- **markdown-navigator:** update peerDependency issue ([#2628](https://github.com/Teradata/covalent/issues/2628)) ([93cca65](https://github.com/Teradata/covalent/commit/93cca65e530603c7d6854f3ce32767d1ce368a5c))
+
 ## [11.6.6](https://github.com/Teradata/covalent/compare/v11.6.5...v11.6.6) (2026-01-22)
 
 ### Bug Fixes
