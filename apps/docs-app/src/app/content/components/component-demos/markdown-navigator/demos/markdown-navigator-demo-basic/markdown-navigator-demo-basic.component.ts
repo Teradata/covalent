@@ -12,7 +12,7 @@ export class MarkdownNavigatorDemoBasicComponent {
     {
       title: 'RxJS',
       description: 'Reactive programming',
-      icon: 'speed',
+      icon: 'home',
       url: 'https://github.com/ReactiveX/rxjs/blob/master/README.md',
       children: [
         {
@@ -34,13 +34,13 @@ export class MarkdownNavigatorDemoBasicComponent {
     {
       title: 'Example Feature',
       description: 'Sample feature with Covalent icon',
-      icon: 'variable_outlined;covalent-icons',
+      icon: 'variable_outlined;covalent',
       markdownString: '# Example\n\nThis uses a Covalent icon.',
     },
     {
       title: 'Another Example',
       description: 'Another sample with Covalent icon',
-      icon: 'product_modelops_outlined;covalent-icons',
+      icon: 'product_modelops_outlined;covalent',
       children: [
         {
           title: 'Sub item',

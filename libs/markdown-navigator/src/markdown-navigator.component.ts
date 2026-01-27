@@ -425,7 +425,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
-    return COV_ICON_LIST.includes(this.getIcon(item));
+    if (!item?.icon) return false;
+    return item?.icon?.includes(';covalent');
   }
 
   handleChildrenUrlError(error: Error): void {
