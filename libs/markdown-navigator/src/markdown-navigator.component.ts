@@ -98,13 +98,6 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private _sanitizer = inject(DomSanitizer);
   private _http = inject(HttpClient);
   private _iconRegistry = inject(MatIconRegistry);
-  private _materialFontSets: string[] = [
-    'material-icons',
-    'outlined',
-    'filled',
-    'rounded',
-    'sharp',
-  ];
 
   constructor() {
     this._iconRegistry.registerFontClassAlias(
