@@ -1,3 +1,7 @@
+import * as iconList from './material-codepoints.json';
+
+export const MAT_ICON_LIST = Object.keys(iconList);
+
 export const COV_ICON_LIST = [
   'advanced_sql',
   'advanced_sql_outlined',

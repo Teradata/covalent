@@ -12,7 +12,6 @@ import {
   Output,
   EventEmitter,
   SecurityContext,
-  inject,
 } from '@angular/core';
 import {
   removeLeadingHash,
@@ -40,7 +39,6 @@ import {
   TdBreadcrumbComponent,
 } from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
-import { COV_ICON_LIST } from './shared/constants/covalent-icons';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -425,7 +423,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
-    return COV_ICON_LIST.includes(this.getIcon(item));
+    if (!item?.icon) return false;
+    return item?.icon?.includes(';covalent');
   }
 
   handleChildrenUrlError(error: Error): void {
