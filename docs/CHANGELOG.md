@@ -1,3 +1,10 @@
+## [11.6.8](https://github.com/Teradata/covalent/compare/v11.6.7...v11.6.8) (2026-01-27)
+
+### Bug Fixes
+
+- **angular code-editor:** fixed token and configuration ([#2635](https://github.com/Teradata/covalent/issues/2635)) ([c8665ee](https://github.com/Teradata/covalent/commit/c8665ee273244bf1ec0d41b14f27984f608b153a))
+- **web code-editor:** fixed token for line number ([#2634](https://github.com/Teradata/covalent/issues/2634)) ([57d495d](https://github.com/Teradata/covalent/commit/57d495d8a5c63e969795bae3766e4ff74e00208f))
+
 ## [11.6.7](https://github.com/Teradata/covalent/compare/v11.6.6...v11.6.7) (2026-01-27)
 
 ### Bug Fixes
