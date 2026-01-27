@@ -34,13 +34,13 @@ export class MarkdownNavigatorDemoBasicComponent {
     {
       title: 'Example Feature',
       description: 'Sample feature with Covalent icon',
-      icon: 'user_defined_function_outlined',
+      icon: 'user_defined_function_outlined;covalent',
       markdownString: '# Example\n\nThis uses a Covalent icon.',
     },
     {
       title: 'Another Example',
       description: 'Another sample with Covalent icon',
-      icon: 'code_fork_outlined;covalent-icons',
+      icon: 'code_fork_outlined;covalent',
       children: [
         {
           title: 'Sub item',

@@ -31,7 +31,7 @@
     "@covalent/core": "0.0.0-COVALENT",
     "@covalent/flavored-markdown": "0.0.0-COVALENT",
     "@covalent/highlight": "0.0.0-COVALENT",
-    "@covalent/icons": ">=10.0.0.0"
+    "@covalent/icons": ">=10.0.0"
   },
   "dependencies": {
     "tslib": "0.0.0-TSLIB"

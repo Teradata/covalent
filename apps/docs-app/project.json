@@ -45,10 +45,7 @@
             "output": "/libs"
           }
         ],
-        "styles": [
-          "apps/docs-app/src/styles.scss",
-          "libs/icons/covalent-icons.css"
-        ],
+        "styles": ["apps/docs-app/src/styles.scss"],
         "scripts": [
           "node_modules/echarts/dist/echarts.js",
           "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js",
