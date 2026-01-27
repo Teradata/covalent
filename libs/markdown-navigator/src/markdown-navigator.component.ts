@@ -39,7 +39,6 @@ import {
   TdBreadcrumbComponent,
 } from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
-import { COV_ICON_LIST } from './shared/constants/covalent-icons';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
@@ -424,8 +423,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
-    const icon: string = this.getIcon(item);
-    return COV_ICON_LIST.includes(icon);
+    if (!item?.icon) return false;
+    return item?.icon.includes(';covalent');
   }
 
   handleChildrenUrlError(error: Error): void {
