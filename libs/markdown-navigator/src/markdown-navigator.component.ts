@@ -12,7 +12,6 @@ import {
   Output,
   EventEmitter,
   SecurityContext,
-  inject,
 } from '@angular/core';
 import {
   removeLeadingHash,
@@ -40,7 +39,6 @@ import {
   TdBreadcrumbComponent,
 } from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
-import { COV_ICON_LIST } from './shared/constants/covalent-icons';
 
 export interface IMarkdownNavigatorItem {
   id?: string;
