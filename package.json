@@ -137,7 +137,7 @@
     "@storybook/addon-interactions": "8.6.12",
     "@storybook/addon-links": "8.6.12",
     "@storybook/blocks": "^8.6.12",
-    "@storybook/cli": "8.6.15",
+    "@storybook/cli": "10.2.1",
     "@storybook/html-vite": "^8.6.12",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "8.6.12",
