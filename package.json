@@ -117,7 +117,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-angular": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@covalent/tokens": "latest",
+    "@covalent/tokens": "./dist/libs/tokens",
     "@nx/angular": "21.1.2",
     "@nx/cypress": "21.1.2",
     "@nx/eslint": "21.1.2",
