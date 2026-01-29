@@ -1,3 +1,9 @@
+# [11.7.0](https://github.com/Teradata/covalent/compare/v11.6.8...v11.7.0) (2026-01-29)
+
+### Features
+
+- **tokens:** Covalent | New Teradata Branding ([#2637](https://github.com/Teradata/covalent/issues/2637)) ([cda1134](https://github.com/Teradata/covalent/commit/cda113451c84287b91806c8bfabe9b319e61b52d))
+
 ## [11.6.8](https://github.com/Teradata/covalent/compare/v11.6.7...v11.6.8) (2026-01-27)
 
 ### Bug Fixes
