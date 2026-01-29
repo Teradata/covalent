@@ -64,17 +64,6 @@
   grid-template: 'nav mini-list main help' min-content / auto auto 1fr;
   min-height: 100%;
 
-  // TD Tiger stripe
-  &::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    height: 4px;
-    width: 100%;
-    z-index: 1000;
-    background-color: #ff5f02;
-  }
-
   /* Desktop only styles */
   @media only screen and (min-width: 768px) {
     position: fixed;
