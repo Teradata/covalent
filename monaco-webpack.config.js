@@ -11,7 +11,7 @@ module.exports = {
       {
         test: /\.ttf$/,
         include: [/node_modules\/monaco-editor/],
-        use: ['file-loader'],
+        type: 'asset/resource',
       },
     ],
   },
