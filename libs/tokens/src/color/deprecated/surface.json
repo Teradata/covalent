@@ -117,7 +117,7 @@
   },
   "dark": {
     "background": {
-      "value": "{theme.dark.colors.surface}",
+      "value": "{theme.dark.colors.background}",
       "type": "color"
     },
     "surface": {

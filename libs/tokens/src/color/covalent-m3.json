@@ -2034,8 +2034,13 @@
         },
         "brand": {
           "type": "color",
-          "value": "#ff5f02ff",
+          "value": "{theme.light.palettes.digital-blue-40}",
           "blendMode": "normal"
+        },
+        "on-brand": {
+          "description": "",
+          "type": "color",
+          "value": "{theme.light.colors.inverse-on-surface}"
         }
       }
     },
@@ -2053,12 +2058,12 @@
         },
         "digital-blue-95": {
           "type": "color",
-          "value": "#dde1ffff",
+          "value": "#b8c8f6ff",
           "blendMode": "normal"
         },
         "digital-blue-90": {
           "type": "color",
-          "value": "#bac3ffff",
+          "value": "#3053f4ff",
           "blendMode": "normal"
         },
         "digital-blue-80": {
@@ -2223,12 +2228,42 @@
         },
         "navy-20": {
           "type": "color",
-          "value": "#14324cff",
+          "value": "#2b374fff",
+          "blendMode": "normal"
+        },
+        "navy-16": {
+          "type": "color",
+          "value": "#1e273cff",
+          "blendMode": "normal"
+        },
+        "navy-14": {
+          "type": "color",
+          "value": "#182032ff",
+          "blendMode": "normal"
+        },
+        "navy-12": {
+          "type": "color",
+          "value": "#111827ff",
           "blendMode": "normal"
         },
         "navy-10": {
           "type": "color",
-          "value": "#001d33ff",
+          "value": "#0d131eff",
+          "blendMode": "normal"
+        },
+        "navy-8": {
+          "type": "color",
+          "value": "#090d17ff",
+          "blendMode": "normal"
+        },
+        "navy-6": {
+          "type": "color",
+          "value": "#06080eff",
+          "blendMode": "normal"
+        },
+        "navy-4": {
+          "type": "color",
+          "value": "#030406ff",
           "blendMode": "normal"
         },
         "navy-0": {
@@ -2383,7 +2418,7 @@
         },
         "positive-90": {
           "type": "color",
-          "value": "#91d890ff",
+          "value": "#81f976ff",
           "blendMode": "normal"
         },
         "positive-80": {
@@ -2413,12 +2448,12 @@
         },
         "positive-30": {
           "type": "color",
-          "value": "#224b22ff",
+          "value": "#435e3eff",
           "blendMode": "normal"
         },
         "positive-20": {
           "type": "color",
-          "value": "#112611ff",
+          "value": "#31412eff",
           "blendMode": "normal"
         },
         "positive-10": {
@@ -2788,7 +2823,7 @@
         },
         "digital-blue-92": {
           "type": "color",
-          "value": "#c6cffdff",
+          "value": "#688bf1",
           "blendMode": "normal"
         },
         "digital-blue-93": {
@@ -2946,7 +2981,7 @@
         "primary": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital-blue-90}"
+          "value": "{theme.dark.palettes.digital-blue-92}"
         },
         "primary-container": {
           "description": "",
@@ -2966,7 +3001,7 @@
         "secondary-container": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary-30}"
+          "value": "{theme.dark.colors.primary-container}"
         },
         "on-secondary": {
           "description": "",
@@ -2976,7 +3011,7 @@
         "on-secondary-container": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.secondary-90}"
+          "value": "{theme.dark.colors.primary}"
         },
         "tertiary": {
           "type": "color",
@@ -3001,42 +3036,42 @@
         "surface": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-10}"
+          "value": "{theme.dark.palettes.navy-6}"
         },
         "surface-dim": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-8}"
+          "value": "{theme.dark.palettes.navy-4}"
         },
         "surface-bright": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-24}"
+          "value": "{theme.dark.palettes.navy-20}"
         },
         "surface-container-lowest": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-14}"
+          "value": "{theme.dark.palettes.navy-8}"
         },
         "surface-container-low": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-16}"
+          "value": "{theme.dark.palettes.navy-10}"
         },
         "surface-container": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-18}"
+          "value": "{theme.dark.palettes.navy-12}"
         },
         "surface-container-high": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-20}"
+          "value": "{theme.dark.palettes.navy-14}"
         },
         "surface-container-highest": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-22}"
+          "value": "{theme.dark.palettes.navy-16}"
         },
         "on-surface": {
           "description": "",
@@ -3126,7 +3161,7 @@
         "outline-variant": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-20}"
+          "value": "{theme.dark.colors.on-surface-16}"
         },
         "shadow": {
           "description": "",
@@ -3859,7 +3894,7 @@
         "background": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.neutral-0}"
+          "value": "{theme.dark.palettes.navy-4}"
         },
         "surface-variant-8": {
           "type": "color",
@@ -4073,8 +4108,13 @@
         },
         "brand": {
           "type": "color",
-          "value": "#ff5f02ff",
+          "value": "{theme.dark.palettes.digital-blue-90}",
           "blendMode": "normal"
+        },
+        "on-brand": {
+          "description": "",
+          "type": "color",
+          "value": "{theme.dark.colors.on-surface}"
         }
       }
     }
