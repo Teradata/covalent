@@ -3,11 +3,11 @@ import '../dialog/dialog';
 import '../icon-button/icon-button';
 import '../button/button';
 
-import { addons } from '@storybook/preview-api';
+import { addons } from 'storybook/preview-api';
 import {
   DARK_MODE_EVENT_NAME,
   UPDATE_DARK_MODE_EVENT_NAME,
-} from 'storybook-dark-mode';
+} from '@vueless/storybook-dark-mode';
 
 // get channel to listen to event emitter
 const channel = addons.getChannel();
@@ -70,7 +70,7 @@ const Template = ({
         channel.emit(UPDATE_DARK_MODE_EVENT_NAME);
       });
     },
-    { once: true }
+    { once: true },
   );
   return `
     <cv-code-snippet

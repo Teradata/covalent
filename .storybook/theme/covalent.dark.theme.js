@@ -1,4 +1,4 @@
-import { create } from '@storybook/theming';
+import { create } from 'storybook/theming';
 import brandImage from './teradata-dark.svg';
 import {
   CvDarkPrimary,
