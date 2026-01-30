@@ -53,6 +53,7 @@ export default {
     hideActions: false,
     heading: 'Basic heading for the dialog',
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ state, hideActions, heading }) => {
@@ -65,7 +66,7 @@ const Template = ({ state, hideActions, heading }) => {
         dialog.open = true;
       });
     },
-    { once: true }
+    { once: true },
   );
 
   const buttonName = `${heading}`.includes('Basic')
@@ -75,8 +76,8 @@ const Template = ({ state, hideActions, heading }) => {
   return `
     <cv-button id="dialog-button" raised>${buttonName}</cv-button>
     <cv-status-dialog id="dialog" state="${state}" heading="${heading}" ${
-    hideActions ? 'hideActions' : ''
-  } scrimClickAction="" >
+      hideActions ? 'hideActions' : ''
+    } scrimClickAction="" >
       ${dialogContent[state]}
       <cv-button raised slot="primaryAction" dialogAction="close">Close</cv-button>
     </cv-status-dialog>`;
@@ -92,14 +93,14 @@ const TemplateWithDetails = ({ state, hideActions, heading }) => {
         dialog.open = true;
       });
     },
-    { once: true }
+    { once: true },
   );
 
   return `
     <cv-button id="dialog-button-2" raised>Open dialog with details</cv-button>
     <cv-status-dialog id="dialog-2" state="${state}" heading="${heading}" ${
-    hideActions ? 'hideActions' : ''
-  } scrimClickAction="" >
+      hideActions ? 'hideActions' : ''
+    } scrimClickAction="" >
       ${dialogContent[state]}
       <div slot="details">
         <cv-code-snippet language="sql" hideHeader=true>

@@ -13,6 +13,7 @@ export default {
       control: 'text',
     },
   },
+  tags: ['autodocs'],
 };
 
 export const Neutral = ({

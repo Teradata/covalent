@@ -42,6 +42,7 @@ export default {
     content: sqlContent,
     maxHeight: 0,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({

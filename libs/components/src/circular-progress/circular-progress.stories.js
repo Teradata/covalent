@@ -13,6 +13,7 @@ export default {
   args: {
     density: 0,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ density = 0, indeterminate, progress }) => {

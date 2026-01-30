@@ -9,6 +9,7 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
+  tags: ['autodocs'],
 };
 
 const BasicTemplate = ({ selected, disabled }) => {
@@ -75,8 +76,8 @@ const CheckRadioTemplate = ({ listType = 'check', disabled }) => {
   return `
     <cv-list multi>
         <cv-${listType}-list-item selected ${
-    disabled ? `disabled` : null
-  }>Item 0</cv-${listType}-list-item>
+          disabled ? `disabled` : null
+        }>Item 0</cv-${listType}-list-item>
         <cv-${listType}-list-item selected>Item 1</cv-${listType}-list-item>
         <li divider role="separator" padded></li>
         <cv-${listType}-list-item left selected>Item 2 (left)</cv-${listType}-list-item>

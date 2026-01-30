@@ -13,6 +13,7 @@ export default {
     twoActions: true,
     icon: 'work',
   },
+  tags: ['autodocs'],
 };
 
 // Page empty state
