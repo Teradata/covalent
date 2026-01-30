@@ -14,4 +14,14 @@
   --mdc-switch-selected-pressed-track-color: var(
     --mdc-theme-surface-secondary-highlight-hover
   );
+  --mdc-switch-unselected-handle-color: var(--cv-theme-outline);
+  --mdc-switch-unselected-hover-handle-color: var(
+    --cv-theme-on-surface-variant
+  );
+  --mdc-switch-unselected-focus-handle-color: var(
+    --cv-theme-on-surface-variant
+  );
+  --mdc-switch-unselected-pressed-handle-color: var(
+    --cv-theme-on-surface-variant
+  );
 }
