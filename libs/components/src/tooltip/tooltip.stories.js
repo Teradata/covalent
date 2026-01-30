@@ -16,6 +16,7 @@ export default {
   args: {
     content: "I'm a tooltip!",
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({

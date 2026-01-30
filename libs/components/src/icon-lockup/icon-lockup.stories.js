@@ -35,6 +35,7 @@ export default {
     state: 'null',
     trailingIcon: false,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({

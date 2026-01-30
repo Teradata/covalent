@@ -2,8 +2,8 @@ const rootMain = require('../../../.storybook/main.js');
 const { mergeConfig } = require('vite');
 
 // Use the following syntax to add addons!
-(rootMain.stories = ['../**/*.stories.@(js|jsx|ts|tsx|mdx)']),
-  (rootMain.core = { builder: '@storybook/builder-vite' });
+((rootMain.stories = ['../**/*.stories.@(js|jsx|ts|tsx|mdx)']),
+  (rootMain.core = { builder: '@storybook/builder-vite' }));
 module.exports = {
   ...rootMain,
   async viteFinal(config, { configType }) {
@@ -19,7 +19,7 @@ module.exports = {
       resolve: (await import('../vite.config.js')).default.resolve,
       // Add dependencies to pre-optimization
       optimizeDeps: {
-        include: ['storybook-dark-mode'],
+        include: ['@vueless/storybook-dark-mode'],
       },
       server: {
         fs: {
@@ -30,5 +30,11 @@ module.exports = {
       assetsInclude: ['/sb-preview/runtime.js', '**/*.html'],
     });
   },
+
   framework: '@storybook/html-vite',
+
+  features: {
+    backgrounds: false,
+    outline: false,
+  },
 };

@@ -5,6 +5,7 @@ import '../textfield/textfield';
 
 export default {
   title: 'Components/Dialog',
+  tags: ['autodocs'],
 };
 
 const Template = ({ trapFocus }) => {

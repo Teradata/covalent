@@ -13,6 +13,7 @@ export default {
     label: { control: 'text' },
     onChange: { action: 'onChange' },
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ disabled, label = 'On/Off', checked, onChange }) => {

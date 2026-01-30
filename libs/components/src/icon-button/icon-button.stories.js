@@ -13,6 +13,7 @@ export default {
     icon: 'houseboat',
     disabled: false,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ disabled, icon }) => {

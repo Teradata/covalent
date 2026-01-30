@@ -10,6 +10,7 @@ export default {
     actionBar: false,
     fullHeight: false,
   },
+  tags: ['autodocs'],
 };
 
 export const Basic = ({ outlined, fullHeight, actionBar, cardTitle }) => {

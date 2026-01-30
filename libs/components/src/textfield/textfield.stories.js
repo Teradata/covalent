@@ -14,6 +14,7 @@ export default {
     loading: false,
     loaderDensity: -6,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({

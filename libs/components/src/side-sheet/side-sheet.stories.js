@@ -12,6 +12,7 @@ export default {
       handles: ['click cv-button'],
     },
   },
+  tags: ['autodocs'],
 };
 
 export const Basic = () => {
@@ -22,10 +23,10 @@ export const Basic = () => {
       document
         .querySelector('cv-button')
         ?.addEventListener('click', () =>
-          sideSheet?.open ? sideSheet.close() : sideSheet?.show()
+          sideSheet?.open ? sideSheet.close() : sideSheet?.show(),
         );
     },
-    { once: true }
+    { once: true },
   );
   return `
         <cv-button raised>Open side sheet</cv-button>
@@ -44,15 +45,17 @@ export const Multiple = () => {
       document
         .querySelector('#parentTarget')
         ?.addEventListener('click', () =>
-          sideSheet?.open ? sideSheet.close() : sideSheet?.show()
+          sideSheet?.open ? sideSheet.close() : sideSheet?.show(),
         );
       document
         .querySelector('#childTarget')
         ?.addEventListener('click', () =>
-          childSideSheet?.open ? childSideSheet.close() : childSideSheet?.show()
+          childSideSheet?.open
+            ? childSideSheet.close()
+            : childSideSheet?.show(),
         );
     },
-    { once: true }
+    { once: true },
   );
   return `
         <cv-button id="parentTarget" raised>Open side sheet</cv-button>
@@ -73,10 +76,10 @@ export const StatusHeader = () => {
       document
         .querySelector('cv-button')
         ?.addEventListener('click', () =>
-          sideSheet?.open ? sideSheet.close() : sideSheet?.show()
+          sideSheet?.open ? sideSheet.close() : sideSheet?.show(),
         );
     },
-    { once: true }
+    { once: true },
   );
   return `
         <style>

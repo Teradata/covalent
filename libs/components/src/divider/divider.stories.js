@@ -28,6 +28,7 @@ export default {
     size: 'full',
     flush: false,
   },
+  tags: ['autodocs'],
 };
 
 const BasicTemplate = ({ direction, size, flush }) => {

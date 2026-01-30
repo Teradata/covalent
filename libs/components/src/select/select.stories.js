@@ -21,6 +21,7 @@ export default {
     style: 'outlined',
     disabled: false,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ icon, style, required, helper, disabled }) => {

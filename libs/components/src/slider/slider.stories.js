@@ -11,6 +11,7 @@ export default {
     disabled: false,
     markers: false,
   },
+  tags: ['autodocs'],
 };
 
 const SingleTemplate = ({ discrete, disabled, markers, value = 10 }) => {

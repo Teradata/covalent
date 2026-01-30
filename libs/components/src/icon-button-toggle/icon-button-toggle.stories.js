@@ -19,13 +19,14 @@ export default {
     disabled: false,
     toggledOn: false,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ disabled, onIcon, offIcon, toggledOn }) => {
   return `
     <cv-icon-button-toggle onIcon="${onIcon}" offIcon="${offIcon}"${
-    disabled ? ` disabled` : ``
-  }${toggledOn ? ' toggledOn' : ''}>
+      disabled ? ` disabled` : ``
+    }${toggledOn ? ' toggledOn' : ''}>
     </cv-icon-button-toggle>`;
 };
 

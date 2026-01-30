@@ -14,6 +14,7 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  tags: ['autodocs'],
 };
 
 export const Basic = ({ icon, noSurface }) => {

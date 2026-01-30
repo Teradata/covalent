@@ -20,6 +20,7 @@ export default {
     status: 'Status',
     icon: 'Status',
   },
+  tags: ['autodocs'],
 };
 
 const renderIcon = (state, icon) => {

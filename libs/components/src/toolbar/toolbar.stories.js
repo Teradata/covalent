@@ -17,6 +17,7 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
+  tags: ['autodocs'],
 };
 
 export const Toolbar = ({

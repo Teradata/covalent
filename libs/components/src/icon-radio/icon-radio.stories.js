@@ -6,6 +6,7 @@ export default {
   args: {
     iconOnly: false,
   },
+  tags: ['autodocs'],
 };
 
 export const Template = ({ iconOnly }) => {

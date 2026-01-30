@@ -27,6 +27,7 @@ export default {
     showZero: true,
     hideBadge: false,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({

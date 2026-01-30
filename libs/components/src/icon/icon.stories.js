@@ -23,6 +23,7 @@ export default {
     size: '48px',
     filled: false,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ icon, size, filled }, ...args) => {

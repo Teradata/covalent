@@ -8,6 +8,7 @@ export default {
     height: 160,
     iconOnly: false,
   },
+  tags: ['autodocs'],
 };
 
 export const Template = ({ width, height, iconOnly }) => {
