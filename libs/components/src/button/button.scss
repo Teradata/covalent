@@ -38,6 +38,6 @@
 );
 
 .mdc-button--raised:not(:disabled) {
-  background-color: var(--cv-theme-brand);
-  color: var(--cv-theme-on-brand);
+  background-color: var(--mdc-theme-primary);
+  color: var(--mdc-theme-on-primary);
 }
