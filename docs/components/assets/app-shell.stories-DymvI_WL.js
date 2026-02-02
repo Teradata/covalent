@@ -111,7 +111,7 @@ import{t as ze}from"./table-row-selection.content-tSLjFSBa.js";/* empty css     
           class="mdc-drawer-scrim"
           @click="${this._handleScrimClick}"
         ></div>`:G;return y`
-      <div class="app-shell ${ee(e)}">
+      <div part="app-shell" class="app-shell ${ee(e)}">
         <span class="header"
           ><cv-top-app-bar-fixed .centerTitle=${this.centerAppName}>
             <cv-icon-button
