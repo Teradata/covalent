@@ -1,3 +1,9 @@
+## [10.4.1](https://github.com/Teradata/covalent/compare/v10.4.0...v10.4.1) (2026-02-02)
+
+### Bug Fixes
+
+- **angular code-editor:** fixed token and configuration ([#2635](https://github.com/Teradata/covalent/issues/2635)) ([#2639](https://github.com/Teradata/covalent/issues/2639)) ([71e6b30](https://github.com/Teradata/covalent/commit/71e6b30f5d1af04cd64dce809959430cf34f2c1e))
+
 # [10.4.0](https://github.com/Teradata/covalent/compare/v10.3.7...v10.4.0) (2026-01-27)
 
 ### Bug Fixes
