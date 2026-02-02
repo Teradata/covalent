@@ -241,8 +241,9 @@ const getTheme = (theme: 'Light' | 'Dark') => {
       'editor.foreground': tokens[`CvTheme${theme}ColorsOnSurface`],
       'editorCursor.foreground': tokens[`Cv${theme}TextSecondaryOnBackground`],
       'editorLineNumber.activeForeground':
-        tokens[`CvTheme${theme}ColorsOnSurface74`],
-      'editorLineNumber.foreground': tokens[`CvTheme${theme}ColorsOnSurface38`],
+        tokens[`CvTheme${theme}ColorsOnSurfaceVariant`],
+      'editorLineNumber.foreground':
+        tokens[`CvTheme${theme}ColorsOnSurfaceVariant`],
       'editor.lineHighlightBackground':
         tokens[`CvTheme${theme}ColorsSurfaceContainerLow`],
       'inputValidation.errorBackground': tokens[`Cv${theme}Negative`],
