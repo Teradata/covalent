@@ -1,3 +1,9 @@
+# [11.8.0](https://github.com/Teradata/covalent/compare/v11.7.1...v11.8.0) (2026-02-03)
+
+### Features
+
+- **components:** add 'part' attributes to app shell ([f7828de](https://github.com/Teradata/covalent/commit/f7828dee24accb13ab494d4f2b38d9ec7f525f70))
+
 ## [11.7.1](https://github.com/Teradata/covalent/compare/v11.7.0...v11.7.1) (2026-01-30)
 
 ### Bug Fixes

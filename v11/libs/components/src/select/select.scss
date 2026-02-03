@@ -51,6 +51,13 @@
     height: density.density-height(56px);
   }
 
+  .mdc-select .mdc-select__anchor .mdc-select__selected-text,
+  .mdc-select .mdc-select__anchor .mdc-select__selected-text-secondary,
+  .mdc-select .mdc-select__anchor .mdc-select__selected-text-secondary * {
+    display: block;
+    text-overflow: ellipsis;
+  }
+
   .mdc-select.mdc-select--text.mdc-select--disabled {
     --mdc-select-disabled-fill-color: transparent;
   }
