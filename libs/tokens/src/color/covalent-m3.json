@@ -47,6 +47,11 @@
           "value": "#3053f4ff",
           "blendMode": "normal"
         },
+        "digital-blue-35": {
+          "type": "color",
+          "value": "#2044e3ff",
+          "blendMode": "normal"
+        },
         "digital-blue-30": {
           "type": "color",
           "value": "#0436d3ff",
@@ -912,7 +917,7 @@
         "primary-container": {
           "description": "",
           "type": "color",
-          "value": "{theme.light.palettes.digital-blue-94}"
+          "value": "{theme.light.palettes.digital-blue-35}"
         },
         "on-primary": {
           "description": "",
@@ -2091,6 +2096,11 @@
           "value": "#324369ff",
           "blendMode": "normal"
         },
+        "digital-blue-35": {
+          "type": "color",
+          "value": "#1a274eff",
+          "blendMode": "normal"
+        },
         "digital-blue-30": {
           "type": "color",
           "value": "#1d2c43ff",
@@ -2223,12 +2233,57 @@
         },
         "navy-30": {
           "type": "color",
-          "value": "#2d4964ff",
+          "value": "#435678",
+          "blendMode": "normal"
+        },
+        "navy-29": {
+          "type": "color",
+          "value": "#405273",
+          "blendMode": "normal"
+        },
+        "navy-28": {
+          "type": "color",
+          "value": "#3E4F6F",
+          "blendMode": "normal"
+        },
+        "navy-27": {
+          "type": "color",
+          "value": "#3B4C6B",
+          "blendMode": "normal"
+        },
+        "navy-26": {
+          "type": "color",
+          "value": "#394967",
+          "blendMode": "normal"
+        },
+        "navy-25": {
+          "type": "color",
+          "value": "#374663",
+          "blendMode": "normal"
+        },
+        "navy-24": {
+          "type": "color",
+          "value": "#34435F",
+          "blendMode": "normal"
+        },
+        "navy-23": {
+          "type": "color",
+          "value": "#32405B",
+          "blendMode": "normal"
+        },
+        "navy-22": {
+          "type": "color",
+          "value": "#303D57",
+          "blendMode": "normal"
+        },
+        "navy-21": {
+          "type": "color",
+          "value": "#2E3A54",
           "blendMode": "normal"
         },
         "navy-20": {
           "type": "color",
-          "value": "#2b374fff",
+          "value": "#2B374F",
           "blendMode": "normal"
         },
         "navy-16": {
@@ -2986,7 +3041,7 @@
         "primary-container": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital-blue-30}"
+          "value": "{theme.dark.palettes.digital-blue-35}"
         },
         "on-primary": {
           "description": "",
@@ -3036,17 +3091,17 @@
         "surface": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.navy-6}"
+          "value": "{theme.dark.palettes.navy-14}"
         },
         "surface-dim": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.navy-4}"
+          "value": "{theme.dark.palettes.navy-10}"
         },
         "surface-bright": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.navy-20}"
+          "value": "{theme.dark.palettes.navy-26}"
         },
         "surface-container-lowest": {
           "description": "",
@@ -3056,22 +3111,22 @@
         "surface-container-low": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.navy-10}"
+          "value": "{theme.dark.palettes.navy-12}"
         },
         "surface-container": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.navy-12}"
+          "value": "{theme.dark.palettes.navy-16}"
         },
         "surface-container-high": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.navy-14}"
+          "value": "{theme.dark.palettes.navy-20}"
         },
         "surface-container-highest": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.navy-16}"
+          "value": "{theme.dark.palettes.navy-24}"
         },
         "on-surface": {
           "description": "",

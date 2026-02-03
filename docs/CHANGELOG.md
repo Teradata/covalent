@@ -1,3 +1,9 @@
+## [11.7.1](https://github.com/Teradata/covalent/compare/v11.7.0...v11.7.1) (2026-01-30)
+
+### Bug Fixes
+
+- **tokens:** fix tokens and components using these new tokens ([#2641](https://github.com/Teradata/covalent/issues/2641)) ([e9cbb18](https://github.com/Teradata/covalent/commit/e9cbb1880ac7b14e3f0b6e76eee7f93f95640407))
+
 # [11.7.0](https://github.com/Teradata/covalent/compare/v11.6.8...v11.7.0) (2026-01-29)
 
 ### Features

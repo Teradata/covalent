@@ -399,7 +399,7 @@ export class CovalentAppShell extends DrawerBase {
       : nothing;
 
     return html`
-      <div class="app-shell ${classMap(classes)}">
+      <div part="app-shell" class="app-shell ${classMap(classes)}">
         <span class="header"
           ><cv-top-app-bar-fixed .centerTitle=${this.centerAppName}>
             <cv-icon-button
