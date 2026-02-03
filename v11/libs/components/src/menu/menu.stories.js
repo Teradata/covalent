@@ -44,6 +44,7 @@ export default {
       },
     },
   },
+  tags: ['autodocs'],
 };
 
 export const Basic = (args) => {

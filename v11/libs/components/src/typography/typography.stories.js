@@ -2,6 +2,7 @@ import './typography';
 
 export default {
   title: 'Components/Text',
+  tags: ['autodocs'],
 };
 
 export const Basic = () => {

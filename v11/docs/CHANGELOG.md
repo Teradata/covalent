@@ -1,3 +1,9 @@
+## [11.8.1](https://github.com/Teradata/covalent/compare/v11.8.0...v11.8.1) (2026-02-03)
+
+### Bug Fixes
+
+- **components:** add text overflow handling in select ([#2643](https://github.com/Teradata/covalent/issues/2643)) ([5b267bb](https://github.com/Teradata/covalent/commit/5b267bb0e6d54964fdbfdca87bc2eb73814bbb65))
+
 # [11.8.0](https://github.com/Teradata/covalent/compare/v11.7.1...v11.8.0) (2026-02-03)
 
 ### Features

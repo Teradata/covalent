@@ -17,6 +17,7 @@ export default {
     open: false,
     escapeKeyAction: 'close',
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
@@ -26,7 +27,7 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
       const button = document.body.querySelector('#dialog-button');
       const helpToggleButton = document.body.querySelector('.help-toggle');
       const fullscreenCloseButton = document.body.querySelector(
-        '.full-screen-dialog-close'
+        '.full-screen-dialog-close',
       );
       button.addEventListener('click', () => {
         const dialog = document.body.querySelector('#dialog1');
@@ -43,7 +44,7 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
         dialog.open = false;
       });
     },
-    { once: true }
+    { once: true },
   );
 
   return `

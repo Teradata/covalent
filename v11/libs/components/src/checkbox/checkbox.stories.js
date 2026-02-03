@@ -4,6 +4,7 @@ import '../formfield/formfield';
 export default {
   title: 'Components/Checkbox',
   argTypes: {},
+  tags: ['autodocs'],
 };
 
 const Template = ({ label = 'Bananas', disabled }) => {

@@ -9,6 +9,7 @@ export default {
     leading: false,
     label: "Can't send photo. Retry in 5 seconds.",
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ label, leading, stacked }) => {
@@ -22,7 +23,7 @@ const Template = ({ label, leading, stacked }) => {
         return snackbar.open ? snackbar.close() : snackbar.show();
       });
     },
-    { once: true }
+    { once: true },
   );
 
   return `

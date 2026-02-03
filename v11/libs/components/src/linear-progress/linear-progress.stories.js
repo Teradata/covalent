@@ -18,6 +18,7 @@ export default {
       control: 'boolean',
     },
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ indeterminate, buffer, progress, reverse }) => {
@@ -26,7 +27,7 @@ const Template = ({ indeterminate, buffer, progress, reverse }) => {
   progressBar.buffer = buffer;
   progressBar.progress = progress;
   progressBar.reverse = reverse;
-  progressBar.ariaLabel = 'Example progress bar'
+  progressBar.ariaLabel = 'Example progress bar';
 
   return progressBar;
 };

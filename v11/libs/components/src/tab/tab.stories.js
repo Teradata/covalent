@@ -3,6 +3,7 @@ import './tab';
 
 export default {
   title: 'Components/Tabs',
+  tags: ['autodocs'],
 };
 
 const Template = ({ icon, activeIndex = 0 }) => {

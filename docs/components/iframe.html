@@ -1,7 +1,7 @@
 <!doctype html>
 <!--suppress HtmlUnknownTarget -->
 <html lang="en">
-  <head>
+  <head><script type="module" src="/vite-inject-mocker-entry.js"></script>
     <meta charset="utf-8" />
     <title>Storybook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -45,10 +45,10 @@
       window.LOGLEVEL = 'info';
       window.FRAMEWORK_OPTIONS = {};
       window.CHANNEL_OPTIONS = {};
-      window.FEATURES = {"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false,"disallowImplicitActionsInRenderV8":true};
+      window.FEATURES = {"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false,"disallowImplicitActionsInRenderV8":true,"viewport":true,"highlight":true,"controls":true,"interactions":true,"actions":true,"backgrounds":false,"outline":false,"measure":true,"sidebarOnboardingChecklist":true};
       window.STORIES = [{"titlePrefix":"","directory":"./libs/components","files":"**/*.stories.@(js|jsx|ts|tsx|mdx)","importPathMatcher":"^\\.[\\\\/](?:libs\\/components(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx|mdx))$"}];
       window.DOCS_OPTIONS = {"defaultName":"Overview","autodocs":true};
-      window.TAGS_OPTIONS = {"dev-only":{"excludeFromDocsStories":true},"docs-only":{"excludeFromSidebar":true},"test-only":{"excludeFromSidebar":true,"excludeFromDocsStories":true}};
+      window.TAGS_OPTIONS = {};
 
       
 
@@ -60,8 +60,7 @@
     <base target="_parent" />
 
 <style>
-  /* While we aren't showing the main block yet, but still preparing, we want everything the user
-     has rendered, which may or may not be in #storybook-root, to be display none */
+  /* While we aren't showing the main block yet, but still preparing, we want everything the user has rendered, which may or may not be in #storybook-root, to be display none */
   .sb-show-preparing-story:not(.sb-show-main) > :not(.sb-preparing-story) {
     display: none;
   }
@@ -170,7 +169,13 @@
     margin: auto;
     padding: 30px;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgb(247, 247, 247);
+    color: rgb(46, 52, 56);
+
+    & * {
+      background: rgb(247, 247, 247);
+      color: rgb(46, 52, 56);
+    }
   }
 
   .sb-nopreview_heading {
@@ -184,10 +189,33 @@
     width: 100vw;
     min-height: 100vh;
     box-sizing: border-box;
+  }
+
+  .sb-errordisplay_main {
+    margin: auto;
+    padding: 24px;
+    display: flex;
+    box-sizing: border-box;
+
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    background: white;
+    color: black;
+    border: 1px solid #ff0000;
+    box-shadow: 0 0 64px rgba(0, 0, 0, 0.1);
+    gap: 24px;
 
     & ol {
       padding-left: 18px;
       margin: 0;
+    }
+
+    /* Redefine colors to ensure readability regardless of user-provided * selectors. */
+    * {
+      background: white;
+      color: black;
     }
 
     & h1 {
@@ -227,45 +255,35 @@
     & a {
       color: currentColor;
     }
-  }
 
-  .sb-errordisplay_main {
-    margin: auto;
-    padding: 24px;
-    display: flex;
-    box-sizing: border-box;
+    & .sb-errordisplay_code {
+      padding: 10px;
+      flex: 1;
+      background: #242424;
+      color: #c6c6c6;
+      box-sizing: border-box;
 
-    flex-direction: column;
-    min-height: 100%;
-    width: 100%;
-    border-radius: 6px;
-    background: white;
-    border: 1px solid #ff0000;
-    box-shadow: 0 0 64px rgba(0, 0, 0, 0.1);
-    gap: 24px;
-  }
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19px;
+      border-radius: 4px;
 
-  .sb-errordisplay_code {
-    padding: 10px;
-    flex: 1;
-    background: #242424;
-    color: #c6c6c6;
-    box-sizing: border-box;
+      font-family:
+        'Operator Mono', 'Fira Code Retina', 'Fira Code', 'FiraCode-Retina', 'Andale Mono',
+        'Lucida Console', Consolas, Monaco, monospace;
+      margin: 0;
+      overflow: auto;
 
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    border-radius: 4px;
+      & code {
+        background-color: inherit;
+        color: inherit;
+      }
+    }
 
-    font-family: 'Operator Mono', 'Fira Code Retina', 'Fira Code', 'FiraCode-Retina', 'Andale Mono',
-      'Lucida Console', Consolas, Monaco, monospace;
-    margin: 0;
-    overflow: auto;
-  }
-
-  .sb-errordisplay pre {
-    white-space: pre-wrap;
-    white-space: revert;
+    & .sb-errordisplay pre {
+      white-space: pre-wrap;
+      white-space: revert;
+    }
   }
 
   @-webkit-keyframes sb-rotate360 {
@@ -492,11 +510,31 @@
     margin-bottom: 4px;
     padding: 2px 5px;
   }
+
+  .sb-sr-only,
+  .sb-hidden-until-focus:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: none;
+  }
+
+  .sb-hidden-until-focus {
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+  }
+
+  .sb-hidden-until-focus:focus {
+    opacity: 1;
+  }
 </style>
 
 <script>
   /* globals window */
-  /* eslint-disable no-underscore-dangle */
   try {
     if (window.top !== window) {
       window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.top.__REACT_DEVTOOLS_GLOBAL_HOOK__;
@@ -529,7 +567,9 @@
   };
 </script>
 
-    <script type="module" crossorigin src="./assets/iframe-B9FdjS-z.js"></script>
+    <script type="module" crossorigin src="./assets/iframe-DEf5NMz7.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/preload-helper-Dp1pzeXC.js">
+    <link rel="stylesheet" crossorigin href="./assets/iframe-BDFc9VW8.css">
   </head>
 
   <body>
@@ -656,7 +696,6 @@
     <div id="storybook-root"></div>
     <div id="storybook-docs"></div>
     <script>
-      // eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
       function __onViteAppLoadingError(event) {
         const hostname = globalThis.location.hostname;
         if (hostname !== 'localhost' && globalThis.CONFIG_TYPE === 'DEVELOPMENT') {

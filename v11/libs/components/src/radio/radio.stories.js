@@ -4,6 +4,7 @@ import '../formfield/formfield';
 export default {
   title: 'Components/Radio',
   argTypes: {},
+  tags: ['autodocs'],
 };
 
 const Template = ({ disabled }) => {
