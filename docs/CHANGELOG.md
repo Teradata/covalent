@@ -1,3 +1,9 @@
+# [11.9.0](https://github.com/Teradata/covalent/compare/v11.8.1...v11.9.0) (2026-02-03)
+
+### Features
+
+- **storybook:** upgrade to storybook 10 ([#2640](https://github.com/Teradata/covalent/issues/2640)) ([5307d24](https://github.com/Teradata/covalent/commit/5307d2467fe3cdfab7e788222ffc4a3c1ee7d621))
+
 ## [11.8.1](https://github.com/Teradata/covalent/compare/v11.8.0...v11.8.1) (2026-02-03)
 
 ### Bug Fixes
