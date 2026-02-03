@@ -356,7 +356,7 @@ export class CovalentAppShell extends DrawerBase {
 
   protected renderMain() {
     return this.contained
-      ? html`<cv-card class="wrapper-card"><slot></slot></cv-card>`
+      ? html`<cv-card part="main" class="wrapper-card"><slot></slot></cv-card>`
       : html`<slot></slot>`;
   }
 
@@ -367,7 +367,7 @@ export class CovalentAppShell extends DrawerBase {
   private renderAppName() {
     return (
       this.appName ||
-      html`<div class="top-app-bar-title">
+      html`<div part="app-name" class="top-app-bar-title">
         <slot name="mobile-header-logo"></slot>
       </div>`
     );
