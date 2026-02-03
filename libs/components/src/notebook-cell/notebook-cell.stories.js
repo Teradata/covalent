@@ -18,6 +18,7 @@ export default {
     editorTheme: 'cv-light',
     timesExecuted: 2,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({
@@ -35,10 +36,10 @@ const Template = ({
 }) => {
   return `<div style="width: 60vw;">
             <cv-notebook-cell code="${code}" index="${index}" language="${language}" timesExecuted="${timesExecuted}" editorTheme="${editorTheme}" ${
-    hideEditor ? 'hideEditor' : ''
-  } ${selected ? 'selected' : ''} ${loading ? 'loading' : ''} ${
-    hideCount ? 'hideCount' : ''
-  }>
+              hideEditor ? 'hideEditor' : ''
+            } ${selected ? 'selected' : ''} ${loading ? 'loading' : ''} ${
+              hideCount ? 'hideCount' : ''
+            }>
       ${
         error &&
         `<div slot="error" style="margin-top: 1rem;">

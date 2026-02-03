@@ -18,6 +18,7 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
@@ -31,7 +32,7 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
         dialog.helpOpen = !dialog.helpOpen;
       });
     },
-    { once: true }
+    { once: true },
   );
 
   return `

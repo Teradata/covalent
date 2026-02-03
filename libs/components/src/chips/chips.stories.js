@@ -11,6 +11,7 @@ export default {
     disabled: false,
     avatar: false,
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({

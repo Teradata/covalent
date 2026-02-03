@@ -25,6 +25,7 @@ export default {
     subText: 'environment Id',
     subTextTrailing: false,
   },
+  tags: ['autodocs'],
 };
 
 export const textLockup = ({

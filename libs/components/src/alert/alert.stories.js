@@ -21,6 +21,7 @@ export default {
     state: 'active',
     actionElement: 'button',
   },
+  tags: ['autodocs'],
 };
 
 export const PageLevel = ({

@@ -27,6 +27,7 @@ export default {
       control: { type: 'select' },
     },
   },
+  tags: ['autodocs'],
 };
 
 const Template = ({
