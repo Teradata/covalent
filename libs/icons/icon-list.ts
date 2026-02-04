@@ -298,6 +298,7 @@ export const COV_ICON_LIST = [
   'teradata_nocircle',
   'teradata_nobackground',
   'teradata_nobackground_outlined',
+  'terry',
   'text_analysis',
   'text_analysis_outlined',
   'undock',
