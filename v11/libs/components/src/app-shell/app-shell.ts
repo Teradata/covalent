@@ -433,7 +433,7 @@ export class CovalentAppShell extends DrawerBase {
         </nav>
         ${scrim}
         <slot name="mini-list"></slot>
-        <div class="main mdc-drawer-app-content">
+        <div part="main-wrapper" class="main mdc-drawer-app-content">
           <div class="main-wrapper">
             <slot name="user-menu"></slot>
             ${this.renderMain()}
