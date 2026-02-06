@@ -415,6 +415,7 @@ export class CovalentAppShell extends DrawerBase {
           </cv-top-app-bar-fixed>
         </span>
         <nav
+          part="navigation"
           class="navigation mdc-drawer ${classMap(drawerClasses)}"
           @mouseenter="${this._handleNavMouseOver}"
           @mouseleave="${this._handleNavMouseOut}"

@@ -1,4 +1,4 @@
-var ge=Object.defineProperty;var Ae=(e,t,r)=>t in e?ge(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r;var u=(e,t,r)=>Ae(e,typeof t!="symbol"?t+"":t,r);import{f as K,g as we,h as Ee,_ as re,a as U,c as T}from"./tslib.es6-X4n3o5C8.js";import{g as d}from"./iframe-DEf5NMz7.js";import{M as ie}from"./foundation-D9HcNlNd.js";var M={};/**
+var ge=Object.defineProperty;var Ae=(e,t,r)=>t in e?ge(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r;var u=(e,t,r)=>Ae(e,typeof t!="symbol"?t+"":t,r);import{f as K,g as we,h as Ee,_ as re,a as U,c as T}from"./tslib.es6-X4n3o5C8.js";import{g as d}from"./iframe-BLTFoG5q.js";import{M as ie}from"./foundation-D9HcNlNd.js";var M={};/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */const h={};function _e(e){if(e!==h)throw new Error("Bad secret")}/**
