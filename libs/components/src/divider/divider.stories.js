@@ -31,7 +31,7 @@ export default {
   tags: ['autodocs'],
 };
 
-const BasicTemplate = ({ direction, size, flush }) => {
+const basicTemplate = ({ direction, size, flush }) => {
   return `
     <cv-card>
       <cv-list>
@@ -49,7 +49,7 @@ const BasicTemplate = ({ direction, size, flush }) => {
   `;
 };
 
-const IconTemplate = ({ direction = 'horizontal', size, flush }) => {
+const iconTemplate = ({ direction = 'horizontal', size, flush }) => {
   return `
     <style>
       cv-icon-button {
@@ -69,41 +69,56 @@ const IconTemplate = ({ direction = 'horizontal', size, flush }) => {
   `;
 };
 
-export const Basic = BasicTemplate.bind({});
-
-export const Inset = BasicTemplate.bind({});
-Inset.args = {
-  size: 'inset',
+export const Basic = {
+  render: basicTemplate,
+  args: {},
 };
 
-export const Flush = BasicTemplate.bind({});
-Flush.args = {
-  flush: true,
+export const Inset = {
+  render: basicTemplate,
+  args: {
+    size: 'inset',
+  },
 };
 
-export const Icon = IconTemplate.bind({});
-Icon.args = {
-  direction: 'horizontal',
-  size: 'icon',
+export const Flush = {
+  render: basicTemplate,
+  args: {
+    flush: true,
+  },
 };
 
-export const IconFlush = IconTemplate.bind({});
-IconFlush.args = {
-  direction: 'horizontal',
-  size: 'icon',
-  flush: true,
+export const Icon = {
+  render: iconTemplate,
+  args: {
+    direction: 'horizontal',
+    size: 'icon',
+  },
 };
 
-export const Vertical = IconTemplate.bind({});
-Vertical.args = {
-  direction: 'vertical',
-  size: 'icon',
-  flush: false,
+export const IconFlush = {
+  render: iconTemplate,
+  args: {
+    direction: 'horizontal',
+    size: 'icon',
+    flush: true,
+  },
 };
 
-export const VerticalFlush = IconTemplate.bind({});
-VerticalFlush.args = {
-  direction: 'vertical',
-  size: 'icon',
-  flush: true,
+export const Vertical = {
+  render: iconTemplate,
+  args: {
+    direction: 'vertical',
+    size: 'icon',
+    flush: false,
+  },
+};
+
+export const VerticalFlush = {
+  render: iconTemplate,
+  args: {
+    direction: 'vertical',
+    size: 'icon',
+    flush: true,
+  },
 };

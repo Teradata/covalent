@@ -19,25 +19,6 @@ import '../divider/divider';
 
 import { MDCDataTable, events } from '@material/data-table';
 
-export default {
-  title: 'Components/App Shell',
-  args: {
-    contained: true,
-    fullWidth: false,
-    helpResizable: true,
-    remoteNavOpen: false,
-    showSplatScreen: false,
-    centerAppName: false,
-  },
-  argTypes: {
-    navClick: { action: 'clicked' },
-  },
-  parameters: {
-    layout: 'fullscreen',
-  },
-  tags: ['autodocs'],
-};
-
 let appShell;
 let banner;
 let dataTable;
@@ -57,7 +38,7 @@ const updateActionRibbon = () => {
   }
 };
 
-const Template = ({
+const appShellTemplate = ({
   appName = '[App name]',
   sectionTitle = '',
   forcedOpen = false,
@@ -67,6 +48,8 @@ const Template = ({
   remoteNavOpen = false,
   showSplatScreen = false,
   centerAppName = false,
+  helpOpen = false,
+  drawerOpen = false,
 }) => {
   document.addEventListener(
     'DOMContentLoaded',
@@ -184,7 +167,8 @@ const Template = ({
     ${remoteNavOpen ? `remoteNavOpen=${remoteNavOpen}` : ''}
     ${showSplatScreen ? `showSplatScreen` : ''}
     ${centerAppName ? `centerAppName` : ''}
-
+    ${helpOpen ? `helpOpen` : ''}
+    ${drawerOpen ? `drawerOpen` : ''}
     >
 
       <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>
@@ -407,35 +391,66 @@ const Template = ({
     `;
 };
 
-export const Basic = Template.bind({});
-
-export const sectionTitle = Template.bind({});
-sectionTitle.args = {
-  sectionTitle: 'Environments',
+export default {
+  title: 'Components/App Shell',
+  args: {
+    contained: true,
+    fullWidth: false,
+    helpResizable: true,
+    remoteNavOpen: false,
+    showSplatScreen: false,
+    centerAppName: false,
+    helpOpen: false,
+    drawerOpen: false,
+    forcedOpen: false,
+  },
+  argTypes: {
+    navClick: { action: 'clicked' },
+  },
+  parameters: {
+    layout: 'fullscreen',
+  },
+  tags: ['autodocs'],
+  render: appShellTemplate,
 };
 
-export const forcedOpen = Template.bind({});
-forcedOpen.args = {
-  forcedOpen: true,
+export const Basic = {
+  args: {},
 };
 
-export const fullWidth = Template.bind({});
-fullWidth.args = {
-  fullWidth: true,
+export const sectionTitle = {
+  args: {
+    sectionTitle: 'Environments',
+  },
 };
 
-export const helpResizable = Template.bind({});
-helpResizable.args = {
-  helpResizable: true,
+export const forcedOpen = {
+  args: {
+    forcedOpen: true,
+  },
 };
 
-export const remoteMenuToggle = Template.bind({});
-remoteMenuToggle.args = {
-  remoteNavOpen: true,
+export const fullWidth = {
+  args: {
+    fullWidth: true,
+  },
 };
 
-export const splatScreen = Template.bind({});
-splatScreen.args = {
-  appName: '',
-  showSplatScreen: true,
+export const helpResizable = {
+  args: {
+    helpResizable: true,
+  },
+};
+
+export const remoteMenuToggle = {
+  args: {
+    remoteNavOpen: true,
+  },
+};
+
+export const splatScreen = {
+  args: {
+    appName: '',
+    showSplatScreen: true,
+  },
 };
