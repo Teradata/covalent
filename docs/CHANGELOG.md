@@ -1,3 +1,9 @@
+# [11.11.0](https://github.com/Teradata/covalent/compare/v11.10.0...v11.11.0) (2026-02-11)
+
+### Features
+
+- **storybook:** update to csf3 and match props from knapsack ([e0c6889](https://github.com/Teradata/covalent/commit/e0c6889440a287327999ae8aeb7ceaa3ec383b93))
+
 # [11.10.0](https://github.com/Teradata/covalent/compare/v11.9.1...v11.10.0) (2026-02-06)
 
 ### Features
