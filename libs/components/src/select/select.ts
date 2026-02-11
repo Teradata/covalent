@@ -45,6 +45,22 @@ export class CovalentSelect extends SelectBase {
     }
   }
 
+  protected override async firstUpdated() {
+    await super.firstUpdated();
+    this.normalizeItemValues();
+  }
+
+  protected override onItemsUpdated() {
+    super.onItemsUpdated();
+    this.normalizeItemValues();
+  }
+
+  private normalizeItemValues() {
+    for (const item of this.items) {
+      item.value = String(item.value ?? '');
+    }
+  }
+
   override async layout(updateItems = true) {
     await super.layout(updateItems);
 
