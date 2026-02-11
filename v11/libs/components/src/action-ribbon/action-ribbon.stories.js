@@ -1,6 +1,7 @@
 import './action-ribbon';
 import '../button/button';
 import '../icon/icon';
+import '../icon-button/icon-button';
 
 export default {
   title: 'Components/Action Ribbon',
@@ -8,72 +9,152 @@ export default {
     layout: 'fullscreen',
   },
   argTypes: {
-    label: { control: 'text' },
+    labelText: { control: 'text' },
+    state: {
+      control: 'select',
+      options: ['active', 'negative', 'positive', 'caution'],
+    },
     icon: {
       control: 'text',
+    },
+    iconAriaLabel: {
+      control: 'text',
+    },
+    centered: {
+      control: 'boolean',
     },
   },
   tags: ['autodocs'],
 };
 
-export const Neutral = ({
-  label = 'No changes',
-  color,
+// Shared render function
+const renderActionRibbon = ({
+  labelText = 'No changes',
+  state,
   icon,
+  iconAriaLabel,
+  centered = false,
   saveDisabled = false,
 }) => {
   return `
     <cv-action-ribbon
-      labelText="${label}"
-      state="${color}" 
-      ${icon ? `icon="${icon}"` : null}
-      ${icon ? `iconAriaLabel="${icon}"` : null}>
+      labelText="${labelText}"
+      ${state ? `state="${state}"` : ''}
+      ${icon ? `icon="${icon}"` : ''}
+      ${iconAriaLabel ? `iconAriaLabel="${iconAriaLabel}"` : ''}
+      ${centered ? 'centered' : ''}>
       <cv-button slot="action-items" outlined>Cancel</cv-button>
       <cv-button slot="action-items" ${
-        saveDisabled ? 'disabled' : null
+        saveDisabled ? 'disabled' : ''
       } raised>Save</cv-button>
     </cv-action-ribbon>`;
 };
 
-export const Active = Neutral.bind({});
-Active.args = {
-  color: 'active',
-  label: 'You have unsaved changes',
+export const Neutral = {
+  name: 'Default / inactive',
+  render: renderActionRibbon,
+  args: {
+    labelText: 'No changes',
+    saveDisabled: true,
+  },
 };
-export const Positive = Neutral.bind({});
-Positive.args = {
-  color: 'positive',
-  label: '(3/3) items selected',
-  icon: 'check',
+
+export const Active = {
+  render: renderActionRibbon,
+  args: {
+    state: 'active',
+    labelText: 'You have unsaved changes',
+  },
 };
-export const Negative = Neutral.bind({});
-Negative.args = {
-  color: 'negative',
-  label: 'The name field may not contain numbers',
-  icon: 'error',
-  saveDisabled: true,
+
+export const Positive = {
+  render: renderActionRibbon,
+  args: {
+    state: 'positive',
+    labelText: '(3/3) items selected',
+    icon: 'check',
+    iconAriaLabel: 'check',
+  },
 };
-export const Caution = Neutral.bind({});
-Caution.args = {
-  color: 'caution',
-  label: 'These changes will increase your monthly spending rate',
-  icon: 'warning',
+
+export const Negative = {
+  render: renderActionRibbon,
+  args: {
+    state: 'negative',
+    labelText: 'The name field may not contain numbers',
+    icon: 'error',
+    iconAriaLabel: 'error',
+    saveDisabled: true,
+  },
 };
-export const Loading = Neutral.bind({});
-Loading.args = {
-  color: 'loading',
-  label: 'These changes will increase your monthly spending rate',
-  icon: 'houseboat',
+
+export const Caution = {
+  render: renderActionRibbon,
+  args: {
+    state: 'caution',
+    labelText: 'These changes will increase your monthly spending rate',
+    icon: 'warning',
+    iconAriaLabel: 'warning',
+  },
 };
-export const Pending = Neutral.bind({});
-Pending.args = {
-  color: 'pending',
-  label: 'These changes will increase your monthly spending rate',
-  icon: 'houseboat',
+
+export const Centered = {
+  render: renderActionRibbon,
+  args: {
+    state: 'active',
+    labelText: 'Centered action ribbon',
+    centered: true,
+  },
 };
-export const Checked = Neutral.bind({});
-Checked.args = {
-  color: 'checked',
-  label: 'These changes will increase your monthly spending rate',
-  icon: 'houseboat',
+
+export const Loading = {
+  render: renderActionRibbon,
+  args: {
+    labelText: 'Running...',
+    saveDisabled: true,
+  },
+};
+
+export const Pending = {
+  render: renderActionRibbon,
+  args: {
+    state: 'disabled',
+    labelText: 'Queued',
+    saveDisabled: true,
+  },
+};
+
+export const BulkSelectionInactive = {
+  name: 'Bulk selection default / inactive',
+  render: ({ labelText = '0 items selected', state, centered = false }) => {
+    return `
+      <cv-action-ribbon
+        labelText="${labelText}"
+        ${state ? `state="${state}"` : ''}
+        ${centered ? 'centered' : ''}>
+        <cv-icon-button slot="action-items" icon="filter_list"></cv-icon-button>
+        <cv-icon-button slot="action-items" icon="search"></cv-icon-button>
+        <cv-icon-button slot="action-items" icon="delete"></cv-icon-button>
+      </cv-action-ribbon>`;
+  },
+  args: {
+    labelText: '0 items selected',
+  },
+};
+
+export const BulkSelectionActive = {
+  name: 'Bulk selection active',
+  render: ({ labelText = '1 item selected', state, centered = false }) => {
+    return `
+      <cv-action-ribbon
+        labelText="${labelText}"
+        ${state ? `state="${state}"` : ''}
+        ${centered ? 'centered' : ''}>
+        <cv-icon-button slot="action-items" icon="delete"></cv-icon-button>
+      </cv-action-ribbon>`;
+  },
+  args: {
+    state: 'active',
+    labelText: '1 item selected',
+  },
 };

@@ -1,3 +1,10 @@
+# [11.10.0](https://github.com/Teradata/covalent/compare/v11.9.1...v11.10.0) (2026-02-06)
+
+### Features
+
+- **components:** add 'part' to main wrapper ([fc867b1](https://github.com/Teradata/covalent/commit/fc867b15dfc950659e35a2db9e7d3f6ecddeeb9a))
+- **components:** add 'part' to main wrapper in app-shell ([893ff2a](https://github.com/Teradata/covalent/commit/893ff2a6ddbcb26f034f820facbde4b92da06296))
+
 # [11.9.0](https://github.com/Teradata/covalent/compare/v11.8.1...v11.9.0) (2026-02-03)
 
 ### Features

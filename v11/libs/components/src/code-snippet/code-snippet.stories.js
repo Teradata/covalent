@@ -32,20 +32,7 @@ SELECT * FROM load_to_teradata (
 );
 `;
 
-export default {
-  title: 'Components/Code snippet',
-  args: {
-    hideHeader: false,
-    inline: false,
-    label: 'Example.sql',
-    language: 'sql',
-    content: sqlContent,
-    maxHeight: 0,
-  },
-  tags: ['autodocs'],
-};
-
-const Template = ({
+const codeSnippetTemplate = ({
   inline,
   content,
   hideHeader,
@@ -86,23 +73,7 @@ const Template = ({
     </cv-code-snippet>`;
 };
 
-export const Basic = Template.bind();
-Basic.args = {
-  language: 'sql',
-  content: sqlContent,
-};
-
-export const Scrollable = Template.bind();
-Scrollable.args = {
-  maxHeight: 250,
-};
-
-export const HiddenHeader = Template.bind();
-HiddenHeader.args = {
-  hideHeader: true,
-};
-
-const TemplateDialog = (...args) => {
+const dialogTemplate = (args) => {
   return `
     <style>
     cv-code-snippet {
@@ -118,18 +89,54 @@ const TemplateDialog = (...args) => {
     </style>
     <cv-dialog heading="Lorem ipsum dolor sit amet" open>
         <cv-typography scale="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor consectetur quis velit donec vel integer diam. Nisl pretium egestas ultrices facilisis sed amet et. Odio elementum ut eu magnis at ullamcorper euismod.</cv-typography>
-        ${Template(...args)}
+        ${codeSnippetTemplate(args)}
         <cv-button outlined slot="primaryAction">Export</cv-button>
         <cv-button slot="secondaryAction">Close</cv-button>
     </cv-dialog>
     `;
 };
-export const Dialog = TemplateDialog.bind();
-Dialog.args = {
-  inline: true,
+
+export default {
+  title: 'Components/Code snippet',
+  args: {
+    hideHeader: false,
+    inline: false,
+    label: 'Example.sql',
+    language: 'sql',
+    content: sqlContent,
+    maxHeight: 0,
+  },
+  tags: ['autodocs'],
+  render: codeSnippetTemplate,
 };
-Dialog.parameters = {
-  docs: {
-    inlineStories: false,
+
+export const Basic = {
+  args: {
+    language: 'sql',
+    content: sqlContent,
+  },
+};
+
+export const Scrollable = {
+  args: {
+    maxHeight: 250,
+  },
+};
+
+export const HiddenHeader = {
+  args: {
+    hideHeader: true,
+  },
+};
+
+export const Dialog = {
+  render: dialogTemplate,
+  args: {
+    inline: true,
+  },
+  parameters: {
+    docs: {
+      inlineStories: false,
+    },
   },
 };

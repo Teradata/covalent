@@ -1,3 +1,4 @@
+import { state } from 'lit/decorators.js';
 import './chip';
 import './chip-set';
 
@@ -10,11 +11,20 @@ export default {
     trailingIcon: false,
     disabled: false,
     avatar: false,
+    state: 'secondary',
+    filter: false,
+  },
+  argTypes: {
+    state: {
+      control: 'select',
+      options: [undefined, 'secondary', 'negative', 'positive', 'caution'],
+    },
   },
   tags: ['autodocs'],
 };
 
-const Template = ({
+// Shared render function for basic chip variants
+const renderChip = ({
   avatar,
   label,
   disabled,
@@ -34,7 +44,8 @@ const Template = ({
           </cv-chip-set>`;
 };
 
-const SelectableTemplate = ({ multiSelectable, label, disabled, state }) => {
+// Shared render function for selectable chips
+const renderSelectableChip = ({ multiSelectable, label, disabled, state }) => {
   return `<cv-chip-set 
            label="test chips" 
            selectable
@@ -53,30 +64,51 @@ const SelectableTemplate = ({ multiSelectable, label, disabled, state }) => {
           </cv-chip-set>`;
 };
 
-export const Basic = Template.bind({});
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  state: 'secondary',
+export const Main = {
+  render: renderChip,
+};
+export const Icon = {
+  render: renderChip,
+  args: {
+    label: 'Person',
+    showIcon: true,
+    icon: 'person',
+    state: 'caution',
+  },
 };
 
-export const Caution = Template.bind({});
-Caution.args = {
-  state: 'caution',
+export const Secondary = {
+  args: {
+    state: 'secondary',
+  },
+  render: renderChip,
 };
 
-export const Positive = Template.bind({});
-Positive.args = {
-  state: 'positive',
+export const Caution = {
+  args: {
+    state: 'caution',
+  },
+  render: renderChip,
 };
 
-export const Negative = Template.bind({});
-Negative.args = {
-  state: 'negative',
+export const Positive = {
+  args: {
+    state: 'positive',
+  },
+  render: renderChip,
 };
 
-export const Selectable = SelectableTemplate.bind({});
-Selectable.args = {
-  showIcon: true,
-  multiSelectable: false,
+export const Negative = {
+  args: {
+    state: 'negative',
+  },
+  render: renderChip,
+};
+
+export const Selectable = {
+  args: {
+    showIcon: true,
+    multiSelectable: false,
+  },
+  render: renderSelectableChip,
 };

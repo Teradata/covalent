@@ -3,26 +3,20 @@ import '../icon/icon';
 import '../card/card';
 import '../button/button';
 
-export default {
-  title: 'Components/Empty state',
-  args: {
-    headline: "You don't have access to this area",
-    subtitle:
-      "You don't have permission to view this application.\nPlease contact your system administrator for further details.",
-    action: false,
-    twoActions: true,
-    icon: 'work',
-  },
-  tags: ['autodocs'],
-};
-
-// Page empty state
-export const Page = ({ headline, subtitle, action, twoActions, icon }) => {
+const pageTemplate = ({
+  headline,
+  subtitle,
+  action,
+  twoActions,
+  icon,
+  card,
+}) => {
   return `
   <cv-empty-state 
     headline="${headline}" 
     subtitle="${subtitle}"
     icon="${icon}"
+    ${card ? 'card' : ''}
   >
     ${
       action && !twoActions
@@ -38,38 +32,16 @@ export const Page = ({ headline, subtitle, action, twoActions, icon }) => {
 </cv-empty-state>`;
 };
 
-export const PageTitleOnly = Page.bind({});
-PageTitleOnly.args = {
-  subtitle: '',
-  action: false,
-  twoActions: false,
-};
-export const PageWithSubtitle = Page.bind({});
-PageWithSubtitle.args = {
-  action: false,
-  twoActions: false,
-};
-export const PageOneAction = Page.bind({});
-PageOneAction.args = {
-  subtitle: '',
-  action: true,
-  twoActions: false,
-};
-export const PageTwoActions = Page.bind({});
-PageTwoActions.args = {
-  subtitle: '',
-  action: false,
-  twoActions: true,
-};
-
 // Card empty state
-const Card = ({
+const cardTemplate = ({
   cardOutlined,
   cardTitle,
   headline,
   subtitle,
   action,
   twoActions,
+  icon,
+  card,
 }) => {
   return `
     <cv-card 
@@ -79,7 +51,8 @@ const Card = ({
       <cv-empty-state 
       headline="${headline}" 
       subtitle="${subtitle}"
-      card
+      ${icon ? `icon="${icon}"` : ''}
+      ${card ? 'card' : ''}
       >
           ${
             action && !twoActions
@@ -97,22 +70,81 @@ const Card = ({
   `;
 };
 
-export const CardNoAction = Card.bind({});
-CardNoAction.args = {
-  cardOutlined: false,
-  action: false,
-  twoActions: false,
-  headline: '',
-  subtitle: "You don't have access to this area",
-  cardTitle: 'Card Title',
+export default {
+  title: 'Components/Empty state',
+  argTypes: {
+    card: { control: { type: 'boolean' } },
+  },
+  args: {
+    headline: "You don't have access to this area",
+    subtitle:
+      "You don't have permission to view this application.\nPlease contact your system administrator for further details.",
+    action: false,
+    twoActions: true,
+    icon: 'work',
+    card: false,
+  },
+  tags: ['autodocs'],
+  render: pageTemplate,
 };
 
-export const CardWithAction = Card.bind({});
-CardWithAction.args = {
-  cardOutlined: false,
-  action: true,
-  twoActions: false,
-  headline: '',
-  subtitle: "You don't have access to this area",
-  cardTitle: 'Card Title',
+export const Page = {
+  args: {},
+};
+
+export const PageTitleOnly = {
+  args: {
+    subtitle: '',
+    action: false,
+    twoActions: false,
+  },
+};
+
+export const PageWithSubtitle = {
+  args: {
+    action: false,
+    twoActions: false,
+  },
+};
+
+export const PageOneAction = {
+  args: {
+    subtitle: '',
+    action: true,
+    twoActions: false,
+  },
+};
+
+export const PageTwoActions = {
+  args: {
+    subtitle: '',
+    action: false,
+    twoActions: true,
+  },
+};
+
+export const CardNoAction = {
+  render: cardTemplate,
+  args: {
+    card: true,
+    cardOutlined: false,
+    action: false,
+    twoActions: false,
+    headline: '',
+    subtitle: "You don't have access to this area",
+    cardTitle: 'Card Title',
+  },
+};
+
+export const CardWithAction = {
+  render: cardTemplate,
+  args: {
+    card: true,
+    cardOutlined: false,
+    action: true,
+    twoActions: false,
+    headline: '',
+    subtitle: "You don't have access to this area",
+    cardTitle: 'Card Title',
+  },
 };
