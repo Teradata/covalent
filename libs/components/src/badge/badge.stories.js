@@ -1,6 +1,7 @@
 import './badge';
 
 import '../icon/icon';
+import '../icon-button/icon-button';
 import '../list/list-item';
 import '../list/list';
 import '../typography/typography';
@@ -30,7 +31,7 @@ export default {
   tags: ['autodocs'],
 };
 
-const Template = ({
+const badgeTemplate = ({
   content,
   max,
   size,
@@ -38,6 +39,7 @@ const Template = ({
   hideBadge,
   verticalAlignment,
   horizontalAlignment,
+  showicon = true,
 }) => {
   return `<cv-badge${content || content == 0 ? ` content=${content}` : ''}${
     size ? ` size=${size}` : ''
@@ -46,12 +48,74 @@ const Template = ({
   }${horizontalAlignment ? ` horizontalAlignment=${horizontalAlignment}` : ''}${
     showZero ? ' showZero' : ''
   }${hideBadge ? ' hideBadge' : ''}>
-    <cv-icon style="font-size: 36px">chat<cv-icon>
+    ${showicon ? `<cv-icon style="font-size: 36px">chat</cv-icon>` : ''}
+  </cv-badge>`;
+};
+const badgeButtonTemplate = ({
+  content,
+  max,
+  size,
+  showZero,
+  hideBadge,
+  verticalAlignment,
+  horizontalAlignment,
+  showicon = true,
+}) => {
+  return `<cv-badge${content || content == 0 ? ` content=${content}` : ''}${
+    size ? ` size=${size}` : ''
+  }${max ? ` max=${max}` : ''}${
+    verticalAlignment ? ` verticalAlignment=${verticalAlignment}` : ''
+  }${horizontalAlignment ? ` horizontalAlignment=${horizontalAlignment}` : ''}${
+    showZero ? ' showZero' : ''
+  }${hideBadge ? ' hideBadge' : ''}>
+    ${showicon ? `<cv-icon-button icon="houseboat"></cv-icon-button>` : ''}
   </cv-badge>`;
 };
 
-const ListTemplate = () => {
-  return `
+export const Main = {
+  args: {
+    content: '1000',
+    max: 99,
+    size: 'large',
+    showZero: true,
+    verticalAlignment: 'top',
+    horizontalAlignment: 'right',
+    showicon: false,
+  },
+  render: badgeTemplate,
+};
+
+export const IconButton = {
+  args: {
+    content: 33,
+    max: 99,
+  },
+  render: badgeButtonTemplate,
+};
+export const Large = {
+  args: {
+    content: 3,
+    max: 99,
+  },
+  render: badgeTemplate,
+};
+export const LargeWithLimit = {
+  args: {
+    content: 9999,
+    max: 99,
+  },
+  render: badgeTemplate,
+};
+
+export const IconWithSmallBadge = {
+  args: {
+    size: 'small',
+  },
+  render: badgeTemplate,
+};
+
+export const Basic = {
+  render: () => `
   <div style="margin-bottom: 3em;">
     <cv-typography scale="headline5">Basic</cv-typography>
     <cv-badge content='Hello world'></cv-badge>
@@ -66,24 +130,5 @@ const ListTemplate = () => {
       <span style="padding-right: 2em;">Item 2</span>
       <cv-badge content=1000 max=999></cv-badge>
     </cv-list-item>
-  </cv-list>`;
+  </cv-list>`,
 };
-
-export const Large = Template.bind({});
-Large.args = {
-  content: 3,
-  max: 99,
-};
-
-export const LargeWithLimit = Template.bind({});
-LargeWithLimit.args = {
-  content: 9999,
-  max: 99,
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-};
-
-export const Basic = ListTemplate.bind({});

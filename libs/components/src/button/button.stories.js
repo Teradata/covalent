@@ -9,12 +9,13 @@ export default {
     trailingIcon: false,
     disabled: false,
     dense: false,
+    raised: false,
+    unelevated: false,
+    outlined: false,
+    expandContent: false,
+    fullwidth: false,
   },
   argTypes: {
-    style: {
-      options: ['raised', 'outlined'],
-      control: { type: 'select' },
-    },
     color: {
       options: [
         'primary',
@@ -30,15 +31,19 @@ export default {
   tags: ['autodocs'],
 };
 
-const Template = ({
+const buttonTemplate = ({
   label,
   showIcon,
   trailingIcon,
   icon,
-  style,
   color,
   disabled,
   dense,
+  raised,
+  unelevated,
+  outlined,
+  expandContent,
+  fullwidth,
 }) => {
   return `<cv-button id="myButton"
                       label="${label}"
@@ -46,58 +51,80 @@ const Template = ({
                       ${showIcon && icon ? `icon="${icon}"` : ''}
                       ${dense ? 'dense' : ''}
                       ${disabled ? 'disabled' : ''}
-                      ${style}
+                      ${raised ? 'raised' : ''}
+                      ${unelevated ? 'unelevated' : ''}
+                      ${outlined ? 'outlined' : ''}
+                      ${expandContent ? 'expandContent' : ''}
+                      ${fullwidth ? 'fullwidth' : ''}
                       ${color ? `color="${color}"` : ''}>         
         </cv-button>`;
 };
 
-export const Contained = Template.bind({});
-Contained.args = {
-  style: 'raised',
+export const Raised = {
+  args: {
+    raised: true,
+  },
+  render: buttonTemplate,
 };
 
-export const Outlined = Template.bind({});
-Outlined.args = {
-  style: 'outlined',
+export const Outlined = {
+  args: {
+    outlined: true,
+  },
+  render: buttonTemplate,
 };
 
-export const Text = Template.bind({});
-Text.args = {
-  style: 'text',
+export const Text = {
+  args: {
+    style: 'text',
+  },
+  render: buttonTemplate,
 };
 
-export const secondary = Template.bind({});
-secondary.args = {
-  style: 'raised',
-  color: 'secondary',
+export const secondary = {
+  args: {
+    raised: true,
+    color: 'secondary',
+  },
+  render: buttonTemplate,
 };
 
-export const emphasis = Template.bind({});
-emphasis.args = {
-  style: 'raised',
-  color: 'emphasis',
+export const emphasis = {
+  args: {
+    raised: true,
+    color: 'emphasis',
+  },
+  render: buttonTemplate,
 };
 
-export const caution = Template.bind({});
-caution.args = {
-  style: 'raised',
-  color: 'caution',
+export const caution = {
+  args: {
+    raised: true,
+    color: 'caution',
+  },
+  render: buttonTemplate,
 };
 
-export const negative = Template.bind({});
-negative.args = {
-  style: 'raised',
-  color: 'negative',
+export const negative = {
+  args: {
+    raised: true,
+    color: 'negative',
+  },
+  render: buttonTemplate,
 };
 
-export const positive = Template.bind({});
-positive.args = {
-  style: 'raised',
-  color: 'positive',
+export const positive = {
+  args: {
+    raised: true,
+    color: 'positive',
+  },
+  render: buttonTemplate,
 };
 
-export const dense = Template.bind({});
-dense.args = {
-  dense: true,
-  style: 'raised',
+export const dense = {
+  args: {
+    dense: true,
+    raised: true,
+  },
+  render: buttonTemplate,
 };

@@ -1,3 +1,4 @@
+import { render } from 'lit';
 import './code-editor';
 
 const sqlContent = `
@@ -19,18 +20,6 @@ SELECT * FROM load_to_teradata (
     target_table ('td_nb_modelSC')
 );
 `;
-
-export default {
-  title: 'Components/Code Editor',
-  args: {
-    theme: 'cv-light',
-    code: sqlContent,
-    language: 'sql',
-    disableScroll: false,
-  },
-  tags: ['autodocs'],
-};
-
 const Template = ({ theme, language, code, disableScroll }) => {
   return `
   <div style="width: 800px; height: 100%">
@@ -42,4 +31,22 @@ const Template = ({ theme, language, code, disableScroll }) => {
    `;
 };
 
-export const Basic = Template.bind();
+export default {
+  title: 'Components/Code Editor',
+  argTypes: {
+    theme: {
+      options: ['cv-light', 'cv-dark', 'vs', 'vs-dark'],
+      control: { type: 'select' },
+    },
+  },
+  args: {
+    theme: 'cv-light',
+    code: sqlContent,
+    language: 'sql',
+    disableScroll: false,
+  },
+  render: Template,
+  tags: ['autodocs'],
+};
+
+export const Basic = {};

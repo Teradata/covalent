@@ -1,5 +1,21 @@
 import './circular-progress';
 
+const circularProgressTemplate = ({
+  density = 0,
+  indeterminate,
+  progress,
+  closed,
+}) => {
+  const progressBar = document.createElement('cv-circular-progress');
+  progressBar.density = density;
+  progressBar.indeterminate = indeterminate;
+  progressBar.progress = progress;
+  progressBar.closed = closed;
+  progressBar.ariaLabel = 'Example progress bar';
+
+  return progressBar;
+};
+
 export default {
   title: 'Components/Circular Progress',
   argTypes: {
@@ -9,33 +25,30 @@ export default {
     density: {
       control: { type: 'range', min: -8, max: 50 },
     },
+    closed: {
+      control: { type: 'boolean' },
+    },
   },
   args: {
     density: 0,
+    closed: false,
   },
   tags: ['autodocs'],
+  render: circularProgressTemplate,
 };
 
-const Template = ({ density = 0, indeterminate, progress }) => {
-  const progressBar = document.createElement('cv-circular-progress');
-  progressBar.density = density;
-  progressBar.indeterminate = indeterminate;
-  progressBar.progress = progress;
-  progressBar.ariaLabel = 'Example progress bar';
-
-  return progressBar;
+export const Indeterminate = {
+  parameters: {
+    // disables Chromatic's snapshotting on a story level
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    indeterminate: true,
+  },
 };
 
-export const Indeterminate = Template.bind({});
-Indeterminate.parameters = {
-  // disables Chromatic's snapshotting on a story level
-  chromatic: { disableSnapshot: true },
-};
-Indeterminate.args = {
-  indeterminate: true,
-};
-
-export const Determinate = Template.bind({});
-Determinate.args = {
-  progress: 0.5,
+export const Determinate = {
+  args: {
+    progress: 0.5,
+  },
 };

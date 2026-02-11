@@ -1,30 +1,39 @@
 import './checkbox';
 import '../formfield/formfield';
 
-export default {
-  title: 'Components/Checkbox',
-  argTypes: {},
-  tags: ['autodocs'],
-};
-
-const Template = ({ label = 'Bananas', disabled }) => {
+const checkboxTemplate = ({
+  label = 'Bananas',
+  disabled,
+  checked,
+  indeterminate,
+  reducedTouchTarget,
+  value,
+}) => {
   return `<cv-checkbox
                 aria-label="${label}"
-                ${disabled ? `disabled` : null}>
+                ${checked ? `checked` : null}
+                ${indeterminate ? `indeterminate` : null}
+                ${disabled ? `disabled` : null}
+                ${reducedTouchTarget ? `reducedTouchTarget` : null}
+                ${value ? `value="${value}"` : null}>
             </cv-checkbox>
             <cv-checkbox
                 aria-label="${label}"
                 checked
-                ${disabled ? `disabled` : null}>
+                ${disabled ? `disabled` : null}
+                ${reducedTouchTarget ? `reducedTouchTarget` : null}
+                ${value ? `value="${value}"` : null}>
             </cv-checkbox>
             <cv-checkbox
                 aria-label="${label}"
                 indeterminate
-                ${disabled ? `disabled` : null}>
+                ${disabled ? `disabled` : null}
+                ${reducedTouchTarget ? `reducedTouchTarget` : null}
+                ${value ? `value="${value}"` : null}>
             </cv-checkbox>`;
 };
 
-const LabelTemplate = ({ label = 'Bananas', indeterminate }) => {
+const labelTemplate = ({ label = 'Bananas', indeterminate }) => {
   return `
             <style>
                 cv-formfield {
@@ -48,15 +57,61 @@ const LabelTemplate = ({ label = 'Bananas', indeterminate }) => {
                 <cv-checkbox class="child" checked></cv-checkbox>
             </cv-formfield>`;
 };
-
-export const Basic = Template.bind({});
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+const singleCheckboxTemplate = ({
+  label = 'Bananas',
+  disabled,
+  checked,
+  indeterminate,
+  reducedTouchTarget,
+  value,
+}) => {
+  return `<cv-checkbox
+                aria-label="${label}"
+                ${checked ? `checked` : null}
+                ${indeterminate ? `indeterminate` : null}
+                ${disabled ? `disabled` : null}
+                ${reducedTouchTarget ? `reducedTouchTarget` : null}
+                ${value ? `value="${value}"` : null}>
+            </cv-checkbox>`;
 };
 
-export const WithLabel = LabelTemplate.bind({});
-WithLabel.args = {
-  indeterminate: true,
+export default {
+  title: 'Components/Checkbox',
+  argTypes: {
+    checked: { control: 'boolean' },
+    indeterminate: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    reducedTouchTarget: { control: 'boolean' },
+    value: { control: 'text' },
+  },
+  tags: ['autodocs'],
+  render: checkboxTemplate,
+};
+
+export const Checked = {
+  args: {
+    checked: true,
+  },
+  render: singleCheckboxTemplate,
+};
+
+export const Unchecked = {
+  args: {},
+  render: singleCheckboxTemplate,
+};
+export const Basic = {
+  args: {},
+};
+
+export const Disabled = {
+  args: {
+    disabled: true,
+  },
+};
+
+export const WithLabel = {
+  render: labelTemplate,
+  args: {
+    indeterminate: true,
+  },
 };

@@ -14,47 +14,40 @@ export default {
       options: ['button', 'close icon', 'none'],
       control: { type: 'select' },
     },
+    inline: {
+      control: { type: 'boolean' },
+    },
   },
   args: {
-    title: 'Alert title',
-    description: 'Alert description',
-    state: 'active',
+    icon: 'info',
+    state: 'neutral',
+    inline: false,
+    titleText: 'Alert title',
+    iconAriaLabel: 'aria-label for the icon',
+    descriptionText: 'Alert description',
     actionElement: 'button',
   },
   tags: ['autodocs'],
 };
 
-export const PageLevel = ({
-  title,
-  description,
-  state,
+// Shared render function
+const renderAlert = ({
   icon,
-  actionElement,
+  state,
   inline,
+  titleText,
+  iconAriaLabel,
+  descriptionText,
+  actionElement,
 }) => {
-  switch (state) {
-    case 'positive':
-      icon = 'check';
-      break;
-    case 'negative':
-      icon = 'error';
-      break;
-    case 'caution':
-      icon = 'warning';
-      break;
-    case 'active':
-    default:
-      icon = 'info';
-  }
-
   return `
         <cv-alert
-          titleText="${title}"
-          descriptionText="${description}"
-          state="${state}"
           ${icon ? `icon="${icon}"` : ''}
-          ${icon ? `iconAriaLabel="${icon}"` : ''}
-          ${inline ? `inline` : ''}>
+          ${state ? `state="${state}"` : ''}
+          ${inline ? `inline` : ''}
+          ${titleText ? `titleText="${titleText}"` : ''}
+          ${iconAriaLabel ? `iconAriaLabel="${iconAriaLabel}"` : ''}
+          ${descriptionText ? `descriptionText="${descriptionText}"` : ''}>
           ${
             actionElement === 'button'
               ? `<cv-button slot="action-items">Button text</cv-button>`
@@ -68,10 +61,16 @@ export const PageLevel = ({
         </cv-alert>`;
 };
 
-export const Inline = PageLevel.bind({});
-Inline.args = {
-  inline: true,
+export const PageLevel = {
+  render: renderAlert,
 };
-Inline.parameters = {
-  layout: 'fullscreen',
+
+export const Inline = {
+  render: renderAlert,
+  args: {
+    inline: true,
+  },
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
