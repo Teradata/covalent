@@ -4,6 +4,10 @@ import '../circular-progress/circular-progress';
 export default {
   title: 'Components/Icon lockup',
   argTypes: {
+    covalentIcon: { control: 'boolean' },
+    filledIcon: { control: 'boolean' },
+    icon: { control: 'text' },
+    trailingIcon: { control: 'boolean' },
     scale: {
       options: [
         'headline1',
@@ -32,20 +36,14 @@ export default {
     filledIcon: false,
     icon: 'houseboat',
     scale: 'body1',
-    state: 'null',
+    state: null,
     trailingIcon: false,
   },
   tags: ['autodocs'],
 };
 
-const Template = ({
-  icon,
-  scale,
-  trailingIcon,
-  state,
-  covalentIcon,
-  filledIcon,
-}) => {
+const TemplateRender = (args) => {
+  const { icon, scale, trailingIcon, state, covalentIcon, filledIcon } = args;
   return `<cv-icon-lockup icon="${icon}" scale="${scale}"${
     trailingIcon ? ' trailingIcon' : ''
   }${covalentIcon ? ' covalentIcon' : ''}${filledIcon ? ' filledIcon' : ''}${
@@ -53,7 +51,8 @@ const Template = ({
   }>Lorem ipsum dolor sit amet</cv-icon-lockup>`;
 };
 
-const LoadingTemplate = ({ scale, trailingIcon, state }) => {
+const LoadingRender = (args) => {
+  const { scale, trailingIcon, state } = args;
   return `<cv-icon-lockup scale="${scale}"${
     trailingIcon ? ' trailingIcon' : ''
   }${state ? ` state=${state}` : ''}>Lorem ipsum dolor sit amet
@@ -61,34 +60,31 @@ const LoadingTemplate = ({ scale, trailingIcon, state }) => {
   </cv-icon-lockup>`;
 };
 
-export const Basic = Template.bind({});
-
-export const Primary = Template.bind({});
-Primary.args = {
-  state: 'primary',
+export const Main = {
+  render: TemplateRender,
 };
 
-export const Positive = Template.bind({});
-Positive.args = {
-  state: 'positive',
-  icon: 'check',
+export const Primary = {
+  render: TemplateRender,
+  args: { state: 'primary' },
 };
 
-export const Negative = Template.bind({});
-Negative.args = {
-  state: 'negative',
-  icon: 'error',
-  filledIcon: true,
+export const Positive = {
+  render: TemplateRender,
+  args: { state: 'positive', icon: 'check' },
 };
 
-export const Caution = Template.bind({});
-Caution.args = {
-  state: 'caution',
-  icon: 'warning',
-  filledIcon: true,
+export const Negative = {
+  render: TemplateRender,
+  args: { state: 'negative', icon: 'error', filledIcon: true },
 };
 
-export const Loading = LoadingTemplate.bind({});
-Loading.args = {
-  state: 'primary',
+export const Caution = {
+  render: TemplateRender,
+  args: { state: 'caution', icon: 'warning', filledIcon: true },
+};
+
+export const Loading = {
+  render: LoadingRender,
+  args: { state: 'primary' },
 };
