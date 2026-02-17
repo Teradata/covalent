@@ -25,6 +25,14 @@ export default {
 };
 
 const Template = ({ icon, style, required, helper, disabled }) => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('cv-list-item');
+    items.forEach((item) => {
+      if (item.value !== '') {
+        item.value = Number(item.value);
+      }
+    });
+  });
   return `
         <cv-select
             label="${style}"

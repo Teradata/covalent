@@ -161,6 +161,29 @@ export class CovalentSelect extends SelectBase {
   protected createAdapter(): MDCSelectAdapter {
     return {
       ...super.createAdapter(),
+      // Override floatLabel to treat numeric values (e.g. 0) as real values
+      // so the floating label isn't cleared on blur by foundation truthy checks.
+      floatLabel: (shouldFloat: boolean) => {
+        const labelEl = this.labelElement;
+        if (labelEl) {
+          if (typeof this.value === 'number') {
+            const hasValue = !Number.isNaN(this.value);
+            labelEl.floatingLabelFoundation.float(shouldFloat || hasValue);
+            return;
+          }
+          labelEl.floatingLabelFoundation.float(shouldFloat);
+        }
+      },
+      // Override closeOutline to prevent closing when value is a valid number
+      // since foundation's layout() uses getValue().length > 0 which fails for numeric values.
+      closeOutline: () => {
+        if (this.outlineElement) {
+          if (typeof this.value === 'number' && !Number.isNaN(this.value)) {
+            return;
+          }
+          this.outlineOpen = false;
+        }
+      },
       getMenuItemTextAtIndex: (index) => {
         const menuElement = this.menuElement;
         if (!menuElement) {
