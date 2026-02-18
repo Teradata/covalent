@@ -1,3 +1,9 @@
+# [11.12.0](https://github.com/Teradata/covalent/compare/v11.11.1...v11.12.0) (2026-02-18)
+
+### Features
+
+- **storybook:** change values ([16c1a68](https://github.com/Teradata/covalent/commit/16c1a684e3d1c6d9bd0022c397aba53822ccdeaf))
+
 ## [11.11.1](https://github.com/Teradata/covalent/compare/v11.11.0...v11.11.1) (2026-02-17)
 
 ### Bug Fixes
