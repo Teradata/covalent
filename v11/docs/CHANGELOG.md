@@ -1,3 +1,11 @@
+## [11.11.1](https://github.com/Teradata/covalent/compare/v11.11.0...v11.11.1) (2026-02-17)
+
+### Bug Fixes
+
+- **select web:** floating label and outline with numeric value ([cd23015](https://github.com/Teradata/covalent/commit/cd23015c3434041ef0720eae2b50c6bd62ec8bcf))
+- **select:** fix label not floating with numeric values ([463c325](https://github.com/Teradata/covalent/commit/463c325f60acffca33763c741e262f226e224f3b))
+- **tokens:** update covalent tokens ([f51e5d0](https://github.com/Teradata/covalent/commit/f51e5d002ab1ee590dd324cd3b7ea9fe894e0caa))
+
 # [11.11.0](https://github.com/Teradata/covalent/compare/v11.10.0...v11.11.0) (2026-02-11)
 
 ### Features
