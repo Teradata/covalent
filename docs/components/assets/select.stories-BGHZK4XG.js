@@ -8,10 +8,10 @@ import"./select-DnX2CG2T.js";import"./typography-cb1uvqFc.js";import"./list-item
             ${a?"required":null}
             ${d?"disabled":null}>
             <cv-list-item selected></cv-list-item>
-            <cv-list-item ${e?'graphic="icon"':null} value="0">Item 0</cv-list-item>
-            <cv-list-item ${e?'graphic="icon"':null} value="1">Item 1</cv-list-item>
-            <cv-list-item ${e?'graphic="icon"':null} value="2">Item 2</cv-list-item>
-            <cv-list-item ${e?'graphic="icon"':null} value="3">Item 3</cv-list-item>
+            <cv-list-item ${e?'graphic="icon"':null} value="1">Item 0</cv-list-item>
+            <cv-list-item ${e?'graphic="icon"':null} value="2">Item 1</cv-list-item>
+            <cv-list-item ${e?'graphic="icon"':null} value="3">Item 2</cv-list-item>
+            <cv-list-item ${e?'graphic="icon"':null} value="4">Item 3</cv-list-item>
         </cv-select>`),R=({icon:e,style:i,required:a,helper:t,disabled:d})=>`
         <cv-select
             label="${i}"
@@ -72,10 +72,10 @@ import"./select-DnX2CG2T.js";import"./typography-cb1uvqFc.js";import"./list-item
             \${required ? \`required\` : null}
             \${disabled ? \`disabled\` : null}>
             <cv-list-item selected></cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="0">Item 0</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="1">Item 1</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="2">Item 2</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="3">Item 3</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="1">Item 0</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="2">Item 1</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="3">Item 2</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="4">Item 3</cv-list-item>
         </cv-select>\`;
 }`,...(p=(v=r.parameters)==null?void 0:v.docs)==null?void 0:p.source}}};var h,$,g;n.parameters={...n.parameters,docs:{...(h=n.parameters)==null?void 0:h.docs,source:{originalSource:`({
   icon,
@@ -102,10 +102,10 @@ import"./select-DnX2CG2T.js";import"./typography-cb1uvqFc.js";import"./list-item
             \${required ? \`required\` : null}
             \${disabled ? \`disabled\` : null}>
             <cv-list-item selected></cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="0">Item 0</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="1">Item 1</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="2">Item 2</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="3">Item 3</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="1">Item 0</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="2">Item 1</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="3">Item 2</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="4">Item 3</cv-list-item>
         </cv-select>\`;
 }`,...(g=($=n.parameters)==null?void 0:$.docs)==null?void 0:g.source}}};var y,b,q;l.parameters={...l.parameters,docs:{...(y=l.parameters)==null?void 0:y.docs,source:{originalSource:`({
   icon,
@@ -132,10 +132,10 @@ import"./select-DnX2CG2T.js";import"./typography-cb1uvqFc.js";import"./list-item
             \${required ? \`required\` : null}
             \${disabled ? \`disabled\` : null}>
             <cv-list-item selected></cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="0">Item 0</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="1">Item 1</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="2">Item 2</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="3">Item 3</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="1">Item 0</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="2">Item 1</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="3">Item 2</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="4">Item 3</cv-list-item>
         </cv-select>\`;
 }`,...(q=(b=l.parameters)==null?void 0:b.docs)==null?void 0:q.source}}};var I,M,f;c.parameters={...c.parameters,docs:{...(I=c.parameters)==null?void 0:I.docs,source:{originalSource:`({
   icon,
@@ -162,10 +162,10 @@ import"./select-DnX2CG2T.js";import"./typography-cb1uvqFc.js";import"./list-item
             \${required ? \`required\` : null}
             \${disabled ? \`disabled\` : null}>
             <cv-list-item selected></cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="0">Item 0</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="1">Item 1</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="2">Item 2</cv-list-item>
-            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="3">Item 3</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="1">Item 0</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="2">Item 1</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="3">Item 2</cv-list-item>
+            <cv-list-item \${icon ? \`graphic="icon"\` : null} value="4">Item 3</cv-list-item>
         </cv-select>\`;
 }`,...(f=(M=c.parameters)==null?void 0:M.docs)==null?void 0:f.source}}};var x,A,w;s.parameters={...s.parameters,docs:{...(x=s.parameters)==null?void 0:x.docs,source:{originalSource:`({
   icon,
