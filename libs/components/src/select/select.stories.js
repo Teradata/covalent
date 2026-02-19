@@ -9,27 +9,42 @@ import '../icon-lockup/icon-lockup';
 export default {
   title: 'Components/Select',
   argTypes: {
-    style: {
-      options: ['outlined', 'filled', 'text'],
-      control: { type: 'radio' },
+    outlined: {
+      control: 'boolean',
     },
     disabled: {
       control: 'boolean',
     },
   },
   args: {
-    style: 'outlined',
+    outlined: true,
     disabled: false,
+    required: false,
+    label: '',
+    value: '',
+    validationMessage: 'This Field is Required',
+    helper: '',
+    icon: '',
+    naturalMenuWidth: false,
+    fixedMenuPosition: false,
+    validateOnInitialRender: false,
   },
   tags: ['autodocs'],
 };
 
-const Template = ({ icon, style, required, helper, disabled }) => {
+const Template = ({
+  icon,
+  outlined,
+  required,
+  helper,
+  disabled,
+  validationMessage,
+}) => {
   return `
         <cv-select
-            label="${style}"
-            validationMessage="This Field is Required"
-            ${style}
+            label="${outlined ? 'outlined' : 'filled'}"
+            ${validationMessage ? `validationMessage="${validationMessage}"` : ''}
+            ${outlined ? 'outlined' : ''}
             ${icon ? `icon="${icon}"` : null}
             ${helper ? `helper="${helper}"` : null}
             ${required ? `required` : null}
@@ -50,14 +65,22 @@ const Template = ({ icon, style, required, helper, disabled }) => {
         </cv-select>`;
 };
 
-const Advanced = ({ icon, style, required, helper, disabled }) => {
+const Advanced = ({
+  icon,
+  outlined,
+  required,
+  helper,
+  disabled,
+  validationMessage,
+  naturalMenuWidth,
+}) => {
   return `
         <cv-select
-            label="${style}"
-            validationMessage="This Field is Required"
-            naturalMenuWidth
+            label="${outlined ? 'outlined' : 'filled'}"
+            ${validationMessage ? `validationMessage="${validationMessage}"` : ''}
+            ${naturalMenuWidth ? 'naturalMenuWidth' : ''}
             twoLine
-            ${style}
+            ${outlined ? 'outlined' : ''}
             ${icon ? `icon="${icon}"` : null}
             ${helper ? `helper="${helper}"` : null}
             ${required ? `required` : null}
@@ -93,25 +116,36 @@ const Advanced = ({ icon, style, required, helper, disabled }) => {
         </cv-select>`;
 };
 
-export const Basic = Template.bind({});
-
-export const Required = Template.bind({});
-Required.args = {
-  required: true,
+export const Main = {
+  render: Template,
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  icon: 'event',
+export const Required = {
+  render: Template,
+  args: {
+    required: true,
+  },
 };
 
-export const HelperText = Template.bind({});
-HelperText.args = {
-  helper: 'Helper Text',
+export const Icon = {
+  render: Template,
+  args: {
+    icon: 'event',
+  },
 };
 
-export const twoLine = Advanced.bind({});
-twoLine.args = {
-  icon: 'power',
-  required: true,
+export const HelperText = {
+  render: Template,
+  args: {
+    helper: 'Helper Text',
+  },
+};
+
+export const twoLine = {
+  render: Advanced,
+  args: {
+    icon: 'power',
+    required: true,
+    naturalMenuWidth: true,
+  },
 };
