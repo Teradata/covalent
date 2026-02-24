@@ -50,6 +50,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-ai_apps {
+  &:before {
+    content: $cov-ai_apps;
+  }
+}
+.cov-ai_apps_outlined {
+  &:before {
+    content: $cov-ai_apps_outlined;
+  }
+}
 .cov-ai_assistant {
   &:before {
     content: $cov-ai_assistant;
