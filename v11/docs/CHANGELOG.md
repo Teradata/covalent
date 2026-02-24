@@ -1,3 +1,9 @@
+## [11.12.1](https://github.com/Teradata/covalent/compare/v11.12.0...v11.12.1) (2026-02-19)
+
+### Bug Fixes
+
+- **packages:** fix token verion ([89f0014](https://github.com/Teradata/covalent/commit/89f00144927454091a06c998ec1c208f57359818))
+
 # [11.12.0](https://github.com/Teradata/covalent/compare/v11.11.1...v11.12.0) (2026-02-18)
 
 ### Features
