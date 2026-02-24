@@ -10,7 +10,7 @@ tag=latest
 # ── Auth Diagnostics ──
 echo "=== NPM Auth Diagnostics ==="
 echo "Token length: ${#NPM_TOKEN}"
-echo "Token prefix: ${NPM_TOKEN:0:4}..."
+echo "Token prefix: ${NPM_TOKEN:0:8}..."
 echo "Token suffix: ...${NPM_TOKEN: -4}"
 
 if [[ -z "$NPM_TOKEN" ]]; then
@@ -24,6 +24,7 @@ else
   echo "✅ No whitespace in token"
 fi
 
+echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >~/.npmrc
 echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >.npmrc
 
 echo ""
@@ -48,6 +49,7 @@ for package in ./dist/libs/*; do
 done
 
 rm .npmrc
+rm ~/.npmrc
 
 echo ""
 echo "Dry-run completed [scope: $scope]. No packages were actually published."
