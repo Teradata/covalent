@@ -1,3 +1,29 @@
+## [11.12.1](https://github.com/Teradata/covalent/compare/v11.12.0...v11.12.1) (2026-02-19)
+
+### Bug Fixes
+
+- **packages:** fix token verion ([89f0014](https://github.com/Teradata/covalent/commit/89f00144927454091a06c998ec1c208f57359818))
+
+# [11.12.0](https://github.com/Teradata/covalent/compare/v11.11.1...v11.12.0) (2026-02-18)
+
+### Features
+
+- **storybook:** change values ([16c1a68](https://github.com/Teradata/covalent/commit/16c1a684e3d1c6d9bd0022c397aba53822ccdeaf))
+
+## [11.11.1](https://github.com/Teradata/covalent/compare/v11.11.0...v11.11.1) (2026-02-17)
+
+### Bug Fixes
+
+- **select web:** floating label and outline with numeric value ([cd23015](https://github.com/Teradata/covalent/commit/cd23015c3434041ef0720eae2b50c6bd62ec8bcf))
+- **select:** fix label not floating with numeric values ([463c325](https://github.com/Teradata/covalent/commit/463c325f60acffca33763c741e262f226e224f3b))
+- **tokens:** update covalent tokens ([f51e5d0](https://github.com/Teradata/covalent/commit/f51e5d002ab1ee590dd324cd3b7ea9fe894e0caa))
+
+# [11.11.0](https://github.com/Teradata/covalent/compare/v11.10.0...v11.11.0) (2026-02-11)
+
+### Features
+
+- **storybook:** update to csf3 and match props from knapsack ([e0c6889](https://github.com/Teradata/covalent/commit/e0c6889440a287327999ae8aeb7ceaa3ec383b93))
+
 # [11.10.0](https://github.com/Teradata/covalent/compare/v11.9.1...v11.10.0) (2026-02-06)
 
 ### Features

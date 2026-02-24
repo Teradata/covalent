@@ -10,16 +10,33 @@ import tableColumnSorting from '../../stories/demos/table-column-sorting.content
 
 import './data-table.stories.scss';
 
+const dataTableTemplate = ({ content }) => content;
+
 export default {
   title: 'Components/Data Table',
   parameters: {
     //    layout: "fullscreen",
   },
   tags: ['autodocs'],
+  render: dataTableTemplate,
 };
 
-export const Basic = ({}) => tableContent;
-export const RowSelection = ({}) => tableRowSelectionContent;
-export const WithPagination = ({}) => tablePagination;
-export const WithColumnSorting = ({}) => tableColumnSorting;
-export const ProgressIndicator = ({}) => tableProgressIndicator;
+export const Basic = {
+  render: () => tableContent,
+};
+
+export const RowSelection = {
+  render: () => tableRowSelectionContent,
+};
+
+export const WithPagination = {
+  render: () => tablePagination,
+};
+
+export const WithColumnSorting = {
+  render: () => tableColumnSorting,
+};
+
+export const ProgressIndicator = {
+  render: () => tableProgressIndicator,
+};

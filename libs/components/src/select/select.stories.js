@@ -52,16 +52,16 @@ const Template = ({
             <cv-list-item selected></cv-list-item>
             <cv-list-item ${
               icon ? `graphic="icon"` : null
-            } value="0">Item 0</cv-list-item>
+            } value="1">Item 0</cv-list-item>
             <cv-list-item ${
               icon ? `graphic="icon"` : null
-            } value="1">Item 1</cv-list-item>
+            } value="2">Item 1</cv-list-item>
             <cv-list-item ${
               icon ? `graphic="icon"` : null
-            } value="2">Item 2</cv-list-item>
+            } value="3">Item 2</cv-list-item>
             <cv-list-item ${
               icon ? `graphic="icon"` : null
-            } value="3">Item 3</cv-list-item>
+            } value="4">Item 3</cv-list-item>
         </cv-select>`;
 };
 

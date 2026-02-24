@@ -8,7 +8,7 @@ export default {
   tags: ['autodocs'],
 };
 
-const Template = ({ trapFocus }) => {
+const anatomyTemplate = ({ trapFocus }) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -28,15 +28,115 @@ const Template = ({ trapFocus }) => {
       <cv-button slot="secondaryAction" dialogAction="close">Action 1</cv-button>
     </cv-dialog>`;
 };
-
-export const Basic = dialogComponent.bind({});
-
-export const Anatomy = Template.bind({});
-Anatomy.args = {
-  trapFocus: true,
+const defaultTemplate = ({
+  open = true,
+  heading = 'Heading',
+  scrimClickAction = 'close',
+  escapeKeyAction = 'close',
+  defaultAction = 'close',
+  actionAttribute = 'dialogAction',
+  initialFocusAttribute = 'dialogInitialFocus',
+  hideActions,
+  stacked,
+}) => {
+  return `<cv-dialog
+  ${open ? 'open' : ''}
+  heading="${heading}"
+  scrimClickAction="${scrimClickAction}"
+  escapeKeyAction="${escapeKeyAction}"
+  defaultAction="${defaultAction}"
+  actionAttribute="${actionAttribute}"
+  initialFocusAttribute="${initialFocusAttribute}"
+  ${hideActions ? 'hideActions' : ''}
+  ${stacked ? 'stacked' : ''}
+>
+  Message
+  <div slot="secondaryAction">
+    <cv-button label="Label"> </cv-button>
+  </div>
+  <div slot="primaryAction">
+    <cv-button label="Label"> </cv-button>
+  </div>
+</cv-dialog>`;
+};
+const deleteTemplate = ({
+  open = true,
+  heading = 'Heading',
+  scrimClickAction = 'close',
+  escapeKeyAction = 'close',
+  defaultAction = 'close',
+  actionAttribute = 'dialogAction',
+  initialFocusAttribute = 'dialogInitialFocus',
+  hideActions,
+  stacked,
+}) => {
+  return `<cv-dialog
+  ${open ? 'open' : ''}
+  heading="${heading}"
+  scrimClickAction="${scrimClickAction}"
+  escapeKeyAction="${escapeKeyAction}"
+  defaultAction="${defaultAction}"
+  actionAttribute="${actionAttribute}"
+  initialFocusAttribute="${initialFocusAttribute}"
+  ${hideActions ? 'hideActions' : ''}
+  ${stacked ? 'stacked' : ''}
+>
+  This action cannot be undone.
+  <div slot="primaryAction">
+    <cv-button color="negative" label="Delete"> </cv-button>
+  </div>
+  <div slot="secondaryAction">
+    <cv-button label="Don't delete"> </cv-button>
+  </div>
+</cv-dialog>`;
+};
+export const Default = {
+  render: defaultTemplate,
+  argTypes: {
+    open: { control: { type: 'boolean' } },
+    heading: { control: { type: 'text' } },
+    scrimClickAction: { control: { type: 'text' } },
+    escapeKeyAction: { control: { type: 'text' } },
+    defaultAction: { control: { type: 'text' } },
+    actionAttribute: { control: { type: 'text' } },
+    initialFocusAttribute: { control: { type: 'text' } },
+    hideActions: { control: { type: 'boolean' } },
+    stacked: { control: { type: 'boolean' } },
+  },
+  args: {
+    open: true,
+    heading: 'Heading',
+    scrimClickAction: 'close',
+    escapeKeyAction: 'close',
+    defaultAction: 'close',
+    actionAttribute: 'dialogAction',
+    initialFocusAttribute: 'dialogInitialFocus',
+    hideActions: false,
+    stacked: false,
+  },
+};
+export const DeleteConfirmation = {
+  argTypes: Default.argTypes,
+  args: {
+    ...Default.args,
+    open: true,
+    heading: 'Delete this file?',
+  },
+  render: deleteTemplate,
 };
 
-const templateLogout = () => {
+export const Basic = {
+  render: dialogComponent,
+};
+
+export const Anatomy = {
+  render: anatomyTemplate,
+  args: {
+    trapFocus: true,
+  },
+};
+
+const logoutTemplate = () => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -49,7 +149,7 @@ const templateLogout = () => {
     { once: true },
   );
   return `
-  <cv-button id="logoout-button" raised>Open logout dialog</cv-button>
+  <cv-button id="logout-button" raised>Open logout dialog</cv-button>
   <cv-dialog id="example-logout" heading="You will be logged out soon" scrimClickAction="">
             Due to inactivity, you’ll be logged out in 3 minutes to protect your security.
             <cv-button slot="primaryAction" dialogAction="close">Log out</cv-button>
@@ -57,9 +157,11 @@ const templateLogout = () => {
           </cv-dialog>`;
 };
 
-export const Logout = templateLogout.bind({});
+export const Logout = {
+  render: logoutTemplate,
+};
 
-const templateUDF = ({}) => {
+const udfTemplate = ({}) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -87,4 +189,6 @@ const templateUDF = ({}) => {
           </cv-dialog>`;
 };
 
-export const UDF = templateUDF.bind({});
+export const UDF = {
+  render: udfTemplate,
+};
