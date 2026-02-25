@@ -5,44 +5,66 @@ export default {
   title: 'Components/Icon Radio',
   args: {
     iconOnly: false,
+    checked: false,
+    disabled: false,
+    value: '',
+    name: '',
   },
   tags: ['autodocs'],
 };
 
-export const Template = ({ iconOnly }) => {
-  return `
-      <cv-radio-icon ${iconOnly ? 'iconOnly' : ''}>
+export const Template = {
+  render: ({ iconOnly, checked, disabled, value, name }) => {
+    const attrs = [
+      iconOnly ? 'iconOnly' : '',
+      checked ? 'checked' : '',
+      disabled ? 'disabled' : '',
+      value ? `value="${value}"` : '',
+      name ? `name="${name}"` : '',
+    ]
+      .filter(Boolean)
+      .join(' ');
+
+    return `
+      <cv-radio-icon ${attrs}>
         <cv-icon slot="icon">work</cv-icon>
         <div slot="text">Balanced</div>
         <div slot="text">Every week</div>
       </cv-radio-icon>
-      <cv-radio-icon ${iconOnly ? 'iconOnly' : ''}>
+      <cv-radio-icon ${attrs}>
         <cv-icon slot="icon">work</cv-icon>
         <div slot="text">Balanced</div>
         <div slot="text">Every week</div>
       </cv-radio-icon>
   `;
+  },
+};
+
+export const Unchecked = {
+  render: Template.render,
+  args: {
+    checked: false,
+  },
+};
+
+export const Checked = {
+  render: Template.render,
+  args: {
+    checked: true,
+  },
+};
+
+export const Disabled = {
+  render: Template.render,
+  args: {
+    checked: false,
+    disabled: true,
+  },
 };
 
 // Story for text only radio icons
-export const TextOnly = () => {
-  document.addEventListener('DOMContentLoaded', () => {
-    const textRadioContainer = document.getElementById('text-radio-demo');
-    textRadioContainer.style.setProperty(
-      '--cv-icon-radio-horizontal-alignment',
-      'start',
-    );
-    textRadioContainer.style.setProperty(
-      '--cv-icon-radio-vertical-alignment',
-      'start',
-    );
-    textRadioContainer.style.setProperty(
-      '--cv-icon-radio-text-alignment',
-      'left',
-    );
-    textRadioContainer.style.setProperty('--cv-icon-radio-height', '120px');
-  });
-  return `
+export const TextOnly = {
+  render: () => `
     <div id="text-radio-demo">
       <cv-radio-icon>
         <div slot="text">Basic</div>
@@ -65,5 +87,13 @@ export const TextOnly = () => {
         </div>
       </cv-radio-icon>
     </div>
-  `;
+  `,
+  play: async ({ canvasElement }) => {
+    const root = canvasElement.querySelector('#text-radio-demo');
+    if (!root) return;
+    root.style.setProperty('--cv-icon-radio-horizontal-alignment', 'start');
+    root.style.setProperty('--cv-icon-radio-vertical-alignment', 'start');
+    root.style.setProperty('--cv-icon-radio-text-alignment', 'left');
+    root.style.setProperty('--cv-icon-radio-height', '120px');
+  },
 };

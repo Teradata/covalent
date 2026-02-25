@@ -165,4 +165,9 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
 </cv-focused-page>`;
 };
 
-export const Basic = Template.bind({});
+export const Main = {
+  render: Template,
+  args: {
+    helpOpen: false,
+  },
+};
