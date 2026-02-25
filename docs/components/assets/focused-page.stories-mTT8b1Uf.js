@@ -1,44 +1,5 @@
-import './focused-page';
-import '../button/button';
-import '../toolbar/toolbar';
-import '../icon-button/icon-button';
-import '../icon-button-toggle/icon-button-toggle';
-import '../icon-radio/icon-radio-toggle';
-import '../typography/typography';
-import '../icon/icon';
-
-export default {
-  title: 'Components/Focused page',
-  argTypes: {},
-  args: {
-    helpOpen: false,
-    helpResizable: false,
-    hideTopBorder: false,
-  },
-  parameters: {
-    layout: 'fullscreen',
-  },
-  tags: ['autodocs'],
-};
-
-const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
-  document.addEventListener(
-    'DOMContentLoaded',
-    () => {
-      const helpToggleButton = document.body.querySelector('.help-toggle');
-
-      helpToggleButton.addEventListener('click', () => {
-        const dialog = document.body.querySelector('#focused-page');
-        dialog.helpOpen = !dialog.helpOpen;
-      });
-    },
-    { once: true },
-  );
-
-  return `
-<cv-focused-page id="focused-page" scrimClickAction="" ${
-    helpResizable ? ' helpResizable' : ''
-  }${helpOpen ? ' helpOpen' : ''}${hideTopBorder ? ' hideTopBorder' : ''}>
+import"./focused-page-Kh9nJknR.js";import"./button-_PqhMK-p.js";import"./toolbar-BgU72bHH.js";import"./icon-button-BLwa0yFi.js";import"./icon-button-toggle-BGaiBJNb.js";import"./icon-radio-toggle-D8LHDdGE.js";import"./typography-BHFGcuk9.js";import"./icon-1XQe7S_h.js";import"./query-assigned-elements-BJdb4KNY.js";import"./query-pFbEai1B.js";import"./class-map-LmxYoNzI.js";import"./directive-CvdRHFdJ.js";import"./tslib.es6-X4n3o5C8.js";import"./mwc-icon-ClXlKBjv.js";import"./ripple-handlers-_TDZG32v.js";import"./base-element-BG6oFIG9.js";import"./utils-sZhlDiu_.js";import"./state-CGn7W7VL.js";import"./style-map-CNNK6hz8.js";import"./aria-property-BYXgNswj.js";import"./event-options-CZVCfsC0.js";import"./if-defined-dAx6j6jI.js";import"./mwc-top-app-bar-base-BT2fPar5.js";import"./mwc-icon-button.css-DLV-hkFx.js";import"./mwc-radio.css-BkadBfay.js";import"./form-element-XdRIvKOk.js";import"./observer-D8jHVEI7.js";const _={title:"Components/Focused page",argTypes:{},args:{helpOpen:!1,helpResizable:!1,hideTopBorder:!1},parameters:{layout:"fullscreen"},tags:["autodocs"]},r=({helpOpen:n,helpResizable:c,hideTopBorder:l})=>(document.addEventListener("DOMContentLoaded",()=>{document.body.querySelector(".help-toggle").addEventListener("click",()=>{const t=document.body.querySelector("#focused-page");t.helpOpen=!t.helpOpen})},{once:!0}),`
+<cv-focused-page id="focused-page" scrimClickAction="" ${c?" helpResizable":""}${n?" helpOpen":""}${l?" hideTopBorder":""}>
     <!-- Content to be rendered in the focused page component -->
     <!-- Replace with any content as desired -->
     
@@ -162,12 +123,9 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
             </cv-typography>
         </div>
     </div>
-</cv-focused-page>`;
-};
-
-export const Main = {
+</cv-focused-page>`),e={render:r,args:{helpOpen:!1}};var o,i,a;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:`{
   render: Template,
   args: {
-    helpOpen: false,
-  },
-};
+    helpOpen: false
+  }
+}`,...(a=(i=e.parameters)==null?void 0:i.docs)==null?void 0:a.source}}};const $=["Main"];export{e as Main,$ as __namedExportsOrder,_ as default};

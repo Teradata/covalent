@@ -1,53 +1,41 @@
-import './focused-page';
-import '../button/button';
-import '../toolbar/toolbar';
-import '../icon-button/icon-button';
-import '../icon-button-toggle/icon-button-toggle';
-import '../icon-radio/icon-radio-toggle';
-import '../typography/typography';
-import '../icon/icon';
-
-export default {
-  title: 'Components/Focused page',
-  argTypes: {},
-  args: {
-    helpOpen: false,
-    helpResizable: false,
-    hideTopBorder: false,
-  },
-  parameters: {
-    layout: 'fullscreen',
-  },
-  tags: ['autodocs'],
-};
-
-const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
-  document.addEventListener(
-    'DOMContentLoaded',
-    () => {
-      const helpToggleButton = document.body.querySelector('.help-toggle');
-
-      helpToggleButton.addEventListener('click', () => {
-        const dialog = document.body.querySelector('#focused-page');
-        dialog.helpOpen = !dialog.helpOpen;
-      });
-    },
-    { once: true },
-  );
-
-  return `
-<cv-focused-page id="focused-page" scrimClickAction="" ${
-    helpResizable ? ' helpResizable' : ''
-  }${helpOpen ? ' helpOpen' : ''}${hideTopBorder ? ' hideTopBorder' : ''}>
-    <!-- Content to be rendered in the focused page component -->
+import{r as p,i as h,n as g,x as f,e as b}from"./query-assigned-elements-BJdb4KNY.js";import{C as y}from"./dialog-Dv0VeR0n.js";import"./focused-page-Kh9nJknR.js";import"./button-_PqhMK-p.js";import"./toolbar-BgU72bHH.js";import"./icon-button-BLwa0yFi.js";import"./icon-button-toggle-BGaiBJNb.js";import"./icon-radio-toggle-D8LHDdGE.js";import"./typography-BHFGcuk9.js";import"./icon-1XQe7S_h.js";import"./tslib.es6-X4n3o5C8.js";import"./inert.esm-CIOG4SQk.js";import"./base-element-BG6oFIG9.js";import"./utils-sZhlDiu_.js";import"./observer-D8jHVEI7.js";import"./query-pFbEai1B.js";import"./class-map-LmxYoNzI.js";import"./directive-CvdRHFdJ.js";import"./mwc-icon-ClXlKBjv.js";import"./ripple-handlers-_TDZG32v.js";import"./state-CGn7W7VL.js";import"./style-map-CNNK6hz8.js";import"./aria-property-BYXgNswj.js";import"./event-options-CZVCfsC0.js";import"./if-defined-dAx6j6jI.js";import"./mwc-top-app-bar-base-BT2fPar5.js";import"./mwc-icon-button.css-DLV-hkFx.js";import"./mwc-radio.css-BkadBfay.js";import"./form-element-XdRIvKOk.js";const x=":host{--cv-dialog-border-radius: 0;--cv-dialog-horizontal-padding: 0;--cv-dialog-vertical-padding: 0;--mdc-dialog-scrim-color: transparent;--mdc-dialog-min-width: 100vw;--mdc-dialog-max-width: 100vw;--mdc-dialog-min-height: 100vh;--mdc-dialog-max-height: 100vh}.mdc-dialog .mdc-dialog__container{opacity:1;transform:translate(100%);transition:transform .3s ease}.mdc-dialog--opening .mdc-dialog__container{transform:translate(100%)}.mdc-dialog--open .mdc-dialog__container{transform:translate(0);transition:transform .3s ease}.mdc-dialog--closing .mdc-dialog__container{opacity:1;transform:translate(100%);transition:transform .3s ease}";var _=Object.defineProperty,w=Object.getOwnPropertyDescriptor,d=(t,e,i,l)=>{for(var o=l>1?void 0:l?w(e,i):e,a=t.length-1,c;a>=0;a--)(c=t[a])&&(o=(l?c(e,i,o):c(o))||o);return l&&o&&_(e,i,o),o};let r=class extends y{constructor(){super(...arguments),this.helpOpen=!1,this.helpResizable=!1}getInitialFocusEl(){const t=`[${this.initialFocusAttribute}]`,e=this.querySelector(t);return e||this.renderRoot.querySelector("cv-focused-page")}render(){return f` <div
+      class="mdc-dialog"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="title"
+      aria-describedby="content"
+    >
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface">
+          <div id="content" class="mdc-dialog__content">
+            <cv-focused-page
+              .helpOpen="${this.helpOpen}"
+              .helpResizable="${this.helpResizable}"
+              .hideTopBorder="${!0}"
+            >
+              <slot></slot>
+              <slot name="help" slot="help"> </slot>
+            </cv-focused-page>
+          </div>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>`}};r.styles=[h`
+      ${p(y.styles)} ${p(x)}
+    `];d([g({type:Boolean,reflect:!0})],r.prototype,"helpOpen",2);d([g({type:Boolean,reflect:!0})],r.prototype,"helpResizable",2);r=d([b("cv-full-screen-dialog")],r);const Z={title:"Components/Full-screen dialog",argTypes:{},args:{helpOpen:!1,helpResizable:!1,open:!1,escapeKeyAction:"close"},tags:["autodocs"]},O=({helpOpen:t,helpResizable:e,open:i,escapeKeyAction:l})=>(document.addEventListener("DOMContentLoaded",()=>{const o=document.body.querySelector("#dialog-button"),a=document.body.querySelector(".help-toggle"),c=document.body.querySelector(".full-screen-dialog-close");o.addEventListener("click",()=>{const n=document.body.querySelector("#dialog1");n.open=!0}),a.addEventListener("click",()=>{const n=document.body.querySelector("#dialog1");n.helpOpen=!n.helpOpen}),c.addEventListener("click",()=>{const n=document.body.querySelector("#dialog1");n.open=!1})},{once:!0}),`
+<cv-button id="dialog-button" raised>Open full-screen dialog</cv-button>
+<cv-full-screen-dialog id="dialog1"  scrimClickAction="" ${i?" open":""} escapeKeyAction="${l}"${e?" helpResizable":""}${t?" helpOpen":""}>
+    <!-- Content to be rendered in the full-screen dialog component -->
     <!-- Replace with any content as desired -->
     
     <cv-toolbar>
         <span slot="title">
-            Connect data source
+          Connect data source
         </span>
         <cv-icon-button-toggle onIcon="help" offIcon="help" class="help-toggle"
             slot="actionItems"></cv-icon-button-toggle>
+        <cv-icon-button icon="close" class="full-screen-dialog-close"
+            slot="actionItems"></cv-icon-button>
     </cv-toolbar>
     <div style="display:flex; gap: 3rem; flex-wrap: wrap; padding: 2rem 1rem 1.5rem; max-width: 1200px">
         <div>
@@ -148,26 +136,13 @@ const Template = ({ helpOpen, helpResizable, hideTopBorder }) => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 tincidunt lectus risus, id aliquet mi congue sed.
             </cv-typography>
-            <br />
-            <cv-typography scale="body1">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                pouere cubilia curae; Phasellus tincidunt eros arcu, sollicitudin
-                laoreet urna aliquet eget.
-            </cv-typography>
-            <br />
-            <cv-typography scale="body1">
-                Phasellus porta sed libero vel vulputate. Quisque non nisl sem.
-                Pellentesque nec pretium magna, et vestibulum neque. Mauris molestie
-                eros quis nisi pretium,
-            </cv-typography>
         </div>
     </div>
-</cv-focused-page>`;
-};
-
-export const Main = {
+</cv-full-screen-dialog>`),s={render:O,args:{escapeKeyAction:"close",open:!0,helpOpen:!1}};var v,u,m;s.parameters={...s.parameters,docs:{...(v=s.parameters)==null?void 0:v.docs,source:{originalSource:`{
   render: Template,
   args: {
-    helpOpen: false,
-  },
-};
+    escapeKeyAction: 'close',
+    open: true,
+    helpOpen: false
+  }
+}`,...(m=(u=s.parameters)==null?void 0:u.docs)==null?void 0:m.source}}};const ee=["Main"];export{s as Main,ee as __namedExportsOrder,Z as default};

@@ -75,14 +75,20 @@ const Template = ({
   </div>`;
 };
 
-export const Basic = Template.bind({});
-
-export const Error = Template.bind({});
-Error.args = {
-  error: true,
+export const Main = {
+  render: Template,
 };
 
-export const WithOutput = Template.bind({});
-WithOutput.args = {
-  output: true,
+export const Error = {
+  render: Template,
+  args: {
+    error: true,
+  },
+};
+
+export const WithOutput = {
+  render: Template,
+  args: {
+    output: true,
+  },
 };

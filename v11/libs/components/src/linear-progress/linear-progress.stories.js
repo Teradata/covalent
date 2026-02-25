@@ -8,6 +8,9 @@ export default {
     chromatic: { disableSnapshot: true },
   },
   argTypes: {
+    indeterminate: {
+      control: { type: 'boolean' },
+    },
     progress: {
       control: { type: 'range', max: 1, min: 0, step: 0.1 },
     },
@@ -17,28 +20,42 @@ export default {
     reverse: {
       control: 'boolean',
     },
+    closed: {
+      control: { type: 'boolean' },
+    },
   },
   tags: ['autodocs'],
 };
 
-const Template = ({ indeterminate, buffer, progress, reverse }) => {
+const Template = (args) => {
+  const { indeterminate, buffer, progress, reverse, closed } = args;
   const progressBar = document.createElement('cv-linear-progress');
   progressBar.indeterminate = indeterminate;
   progressBar.buffer = buffer;
   progressBar.progress = progress;
   progressBar.reverse = reverse;
+  progressBar.closed = closed;
   progressBar.ariaLabel = 'Example progress bar';
 
   return progressBar;
 };
 
-export const Indeterminate = Template.bind({});
-Indeterminate.args = {
-  indeterminate: true,
+export const Indeterminate = {
+  render: Template,
+  args: {
+    indeterminate: true,
+    reverse: false,
+    closed: false,
+  },
 };
 
-export const Determinate = Template.bind({});
-Determinate.args = {
-  progress: 0.5,
-  buffer: 0.5,
+export const Determinate = {
+  render: Template,
+  args: {
+    progress: 0.5,
+    buffer: 0.5,
+    indeterminate: false,
+    reverse: false,
+    closed: false,
+  },
 };

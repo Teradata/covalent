@@ -10,6 +10,10 @@ export default {
       options: MAT_ICON_LIST,
       control: { type: 'select' },
     },
+    iconfont: {
+      name: 'iconfont',
+      control: { type: 'text' },
+    },
     size: {
       options: ['64px', '48px', '24px', '16px'],
       control: { type: 'select' },
@@ -22,18 +26,24 @@ export default {
     icon: 'houseboat',
     size: '48px',
     filled: false,
+    iconfont: '',
   },
   tags: ['autodocs'],
 };
 
-const Template = ({ icon, size, filled }, ...args) => {
+const Template = (args, context) => {
+  const { icon, size, filled } = args;
   const icoElem = document.createElement('cv-icon');
   icoElem.innerText = icon;
   icoElem.style.fontSize = size;
   icoElem.filled = filled;
 
-  if (args[0].parameters.showCovIcons) {
-    icoElem.setAttribute('iconFont', 'covalent-icons');
+  if (context && context.parameters && context.parameters.showCovIcons) {
+    icoElem.setAttribute('iconfont', 'covalent-icons');
+  }
+
+  if (args && args.iconfont) {
+    icoElem.setAttribute('iconfont', args.iconfont);
   }
 
   return icoElem;
@@ -43,27 +53,32 @@ const AllCovalentIconsTemplate = () => {
   return `<cv-icon-demo></cv-icon-demo>`;
 };
 
-export const MaterialIcons = Template.bind({});
-
-export const CovalentIcons = Template.bind({});
-CovalentIcons.parameters = {
-  showCovIcons: true,
+export const MaterialIcon = {
+  render: Template,
 };
 
-CovalentIcons.argTypes = {
-  icon: {
-    options: COV_ICON_LIST,
+export const CovalentIcon = {
+  render: Template,
+  args: {
+    icon: 'product_editor',
+    iconfont: 'covalent-icons',
+  },
+  argTypes: {
+    icon: {
+      options: COV_ICON_LIST,
+    },
   },
 };
-CovalentIcons.args = {
-  icon: 'product_editor',
+
+export const AllCovalentIcons = {
+  render: AllCovalentIconsTemplate,
 };
 
-export const AllCovalentIcons = AllCovalentIconsTemplate.bind({});
-
-export const FilledIcon = Template.bind({});
-FilledIcon.args = {
-  icon: 'home',
-  size: '48px',
-  filled: true,
+export const FilledIcon = {
+  render: Template,
+  args: {
+    icon: 'home',
+    size: '48px',
+    filled: true,
+  },
 };
