@@ -1,3 +1,9 @@
+# [11.13.0](https://github.com/Teradata/covalent/compare/v11.12.1...v11.13.0) (2026-02-25)
+
+### Features
+
+- **icons:** added app_ai icon to covalent-icons ([b02a2c5](https://github.com/Teradata/covalent/commit/b02a2c541be6121aa43b3a520a18045d18bf5016))
+
 ## [11.12.1](https://github.com/Teradata/covalent/compare/v11.12.0...v11.12.1) (2026-02-19)
 
 ### Bug Fixes
