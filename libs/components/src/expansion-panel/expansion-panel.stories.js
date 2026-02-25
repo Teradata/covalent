@@ -10,6 +10,24 @@ export default {
   args: {
     icon: 'description',
     noSurface: false,
+    titleWidth: '150px',
+  },
+  argTypes: {
+    icon: {
+      control: {
+        type: 'text',
+      },
+    },
+    noSurface: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    titleWidth: {
+      control: {
+        type: 'text',
+      },
+    },
   },
   parameters: {
     layout: 'centered',
@@ -17,9 +35,11 @@ export default {
   tags: ['autodocs'],
 };
 
-export const Basic = ({ icon, noSurface }) => {
+const Template = ({ icon, noSurface, titleWidth } = {}) => {
   return `
-    <cv-expansion-panel ${noSurface ? 'noSurface' : ''} titleWidth='16em'>
+    <cv-expansion-panel ${noSurface ? 'noSurface' : ''} ${
+      titleWidth ? `titleWidth='${titleWidth}'` : ''
+    }>
 
       <cv-expansion-panel-item
       title="Title"
@@ -70,8 +90,24 @@ export const Basic = ({ icon, noSurface }) => {
     `;
 };
 
-export const NoSurface = Basic.bind({});
+export const Main = {
+  render: Template,
+  args: {
+    noSurface: false,
+    titleWidth: '150px',
+  },
+};
 
-NoSurface.args = {
-  noSurface: true,
+export const NoSurface = {
+  render: Template,
+  args: {
+    noSurface: true,
+  },
+};
+
+export const WithContentAndFooter = {
+  render: Template,
+  args: {
+    titleWidth: '150px',
+  },
 };

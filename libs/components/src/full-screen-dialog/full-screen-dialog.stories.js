@@ -170,4 +170,11 @@ const Template = ({ helpOpen, helpResizable, open, escapeKeyAction }) => {
 </cv-full-screen-dialog>`;
 };
 
-export const Basic = Template.bind({});
+export const Main = {
+  render: Template,
+  args: {
+    escapeKeyAction: 'close',
+    open: true,
+    helpOpen: false,
+  },
+};
