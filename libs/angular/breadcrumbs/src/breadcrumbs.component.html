@@ -1,1 +1,32 @@
 <ng-content></ng-content>
+
+@if (showOverflowButton) {
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="overflowMenu"
+    class="td-breadcrumbs-overflow-button"
+    aria-label="Show hidden breadcrumbs"
+    [style.order]="overflowButtonOrder"
+    [attr.data-test-id]="'breadcrumb-overflow-button'"
+  >
+    <mat-icon>more_horiz</mat-icon>
+  </button>
+  <mat-icon
+    class="td-breadcrumb-separator-icon"
+    [style.order]="overflowButtonOrder"
+    color="primary"
+    >{{ separatorIcon }}</mat-icon
+  >
+}
+
+<mat-menu #overflowMenu="matMenu" class="td-breadcrumbs-overflow-menu">
+  @for (item of overFlowMenuItems; track item; let index = $index) {
+    <button
+      mat-menu-item
+      (click)="handleOverflowItemClick(item)"
+      [attr.data-test-id]="'breadcrumb-overflow-item-' + index"
+    >
+      {{ getItemText(item) }}
+    </button>
+  }
+</mat-menu>
