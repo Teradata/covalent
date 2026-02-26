@@ -83,6 +83,14 @@
 
 .arrowIcon {
   color: var(--mdc-theme-text-primary-on-background);
+
+  &.hidden-arrow {
+    visibility: hidden;
+  }
+}
+
+.arrowIcon.hidden-arrow {
+  visibility: hidden;
 }
 
 .open {
