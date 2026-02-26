@@ -150,3 +150,40 @@ export const OverflowTest = ({ icon }) => {
         </div>
     `;
 };
+
+export const WithLeafItems = ({ icon }) => {
+  return `
+        <cv-tree-list>
+            <cv-tree-list-item icon="${icon}" isOpen="true">
+                <div slot="label">Folders</div>
+                <cv-tree-list-item icon="${icon}" slot="nest" indentLevel="1" isOpen="true">
+                    <div slot="label">Documents</div>
+                    <cv-tree-list-item icon="${icon}" slot="nest" indentLevel="2" isLeafItem="true">
+                        <div slot="label">Resume.pdf</div>
+                    </cv-tree-list-item>
+                    <cv-tree-list-item icon="${icon}" slot="nest" indentLevel="2" isLeafItem="true">
+                        <div slot="label">Cover Letter.docx</div>
+                    </cv-tree-list-item>
+                </cv-tree-list-item>
+                <cv-tree-list-item icon="${icon}" slot="nest" indentLevel="1" isOpen="true">
+                    <div slot="label">Images</div>
+                    <cv-tree-list-item icon="${icon}" slot="nest" indentLevel="2" isLeafItem="true">
+                        <div slot="label">photo1.jpg</div>
+                    </cv-tree-list-item>
+                    <cv-tree-list-item icon="${icon}" slot="nest" indentLevel="2" isLeafItem="true">
+                        <div slot="label">photo2.png</div>
+                    </cv-tree-list-item>
+                    <cv-tree-list-item icon="${icon}" slot="nest" indentLevel="2" isLeafItem="true">
+                        <div slot="label">photo3.gif</div>
+                    </cv-tree-list-item>
+                </cv-tree-list-item>
+                <cv-tree-list-item icon="${icon}" slot="nest" indentLevel="1" isLeafItem="true">
+                    <div slot="label">README.md</div>
+                </cv-tree-list-item>
+            </cv-tree-list-item>
+            <cv-tree-list-item icon="${icon}" isLeafItem="true">
+                <div slot="label">Empty File.txt</div>
+            </cv-tree-list-item>
+        </cv-tree-list>
+    `;
+};
