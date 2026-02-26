@@ -58,6 +58,28 @@ export class CovalentIconLockup extends LitElement {
   trailingIcon = false;
 
   /**
+   * Icon size per scale. Scales not listed fall back to the
+   * corresponding typography line-height CSS variable.
+   */
+  private readonly ICON_SIZE_MAP: Record<string, string> = {
+    headline1: '96px',
+    headline2: '80px',
+    headline3: '64px',
+    headline4: '48px',
+    headline5: '32px',
+    subtitle1: '24px',
+    subtitle2: '20px',
+    button: '20px',
+  };
+
+  private get iconSize(): string {
+    return (
+      this.ICON_SIZE_MAP[this.scale] ??
+      `var(--cv-typography-${this.scale}-line-height, 16px)`
+    );
+  }
+
+  /**
    * Tracks if the icon slot has content.
    */
   @state() private _hasIconSlot = false;
@@ -67,7 +89,7 @@ export class CovalentIconLockup extends LitElement {
    */
   private checkIconSlot() {
     const slot = this.shadowRoot?.querySelector(
-      'slot[name="icon"]'
+      'slot[name="icon"]',
     ) as HTMLSlotElement;
     this._hasIconSlot = slot && slot.assignedNodes().length > 0;
   }
@@ -85,7 +107,7 @@ export class CovalentIconLockup extends LitElement {
     return html`<slot name="icon"></slot>
       <cv-icon
         class=${classMap(classes)}
-        style="${`font-size: var(--cv-typography-${this.scale}-line-height, 16px)`}"
+        style="${`font-size: ${this.iconSize}`}"
       >
         ${this.icon}
       </cv-icon>`;

@@ -11,9 +11,14 @@
   display: flex;
   gap: 4px;
   max-width: 100%;
+  color: var(--cv-theme-on-surface);
 
   cv-typography {
     flex: 1 0 0;
+  }
+
+  cv-icon.covalent-icon {
+    --mdc-icon-font: 'covalent-icons';
   }
 }
 
@@ -35,7 +40,9 @@
 }
 
 .text {
-  font-feature-settings: 'liga' off, 'clig' off;
+  font-feature-settings:
+    'liga' off,
+    'clig' off;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
