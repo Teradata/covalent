@@ -26,6 +26,8 @@ export class CovalentTreeListItem extends LitElement {
   @property({ type: Number }) indentLevel = 0;
   // How much left padding (px) to add for nested elements.
   @property({ type: Number }) indentMultiple = 16;
+  // Indicates if this is a leaf item (no children, non-expandable).
+  @property({ type: Boolean }) isLeafItem = false;
   override render() {
     // Class map for showing/hiding an item's content.
     const classes = {
@@ -36,6 +38,7 @@ export class CovalentTreeListItem extends LitElement {
     const animation = {
       open: this.isOpen,
       close: !this.isOpen,
+      'hidden-arrow': this.isLeafItem,
     };
     const arrowIcon = 'arrow_right';
     const icon = html`<cv-icon>${this.icon}</cv-icon>`;
@@ -68,8 +71,11 @@ export class CovalentTreeListItem extends LitElement {
     `;
   }
   private _handleClick() {
-    // Toggles the dropdown for a list item.
-    this.isOpen = !this.isOpen;
+    // Prevent toggling for leaf items.
+    if (!this.isLeafItem) {
+      // Toggles the dropdown for a list item.
+      this.isOpen = !this.isOpen;
+    }
 
     // Create and emit the select event; the tree-list component is listening for this.
     const event = new CustomEvent('select', {
