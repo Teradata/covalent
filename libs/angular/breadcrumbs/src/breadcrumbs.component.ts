@@ -221,10 +221,6 @@ export class TdBreadcrumbsComponent
   }
 
   private _calculateVisibility(): void {
-    this._breadcrumbs.forEach((breadcrumb: TdBreadcrumbComponent) => {
-      breadcrumb.recalculateWidth();
-    });
-
     const crumbsArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
     const totalBreadcrumbs = crumbsArray.length;
 

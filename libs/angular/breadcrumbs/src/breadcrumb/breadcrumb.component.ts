@@ -149,11 +149,4 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     event.stopPropagation();
     event.preventDefault();
   }
-
-  public recalculateWidth(): void {
-    this._width = (<HTMLElement>(
-      this.elementRef.nativeElement
-    )).getBoundingClientRect().width;
-    this._changeDetectorRef.markForCheck();
-  }
 }
