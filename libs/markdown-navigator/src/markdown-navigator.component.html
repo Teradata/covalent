@@ -5,7 +5,7 @@
     }
 
     @if (showHeader) {
-      <td-breadcrumbs>
+      <td-breadcrumbs size="caption">
         <a
           td-breadcrumb
           [matTooltip]="goHomeLabel ?? ''"
@@ -31,8 +31,6 @@
       <div class="breadcrumb-current-title" [attr.data-test]="'title'">
         {{ currentItemTitle }}
       </div>
-
-      <mat-divider [style.position]="'relative'"></mat-divider>
     }
 
     <div class="scroll-area" id="td-markdown-navigator-content">
