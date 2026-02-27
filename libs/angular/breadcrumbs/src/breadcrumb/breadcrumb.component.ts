@@ -67,7 +67,7 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     return this._shouldTruncate;
   }
 
-  set shouldTruncate(shouldTruncate: boolean) {
+  public set shouldTruncate(shouldTruncate: boolean) {
     this._shouldTruncate = shouldTruncate;
     setTimeout(() => {
       this._changeDetectorRef.markForCheck();
@@ -92,7 +92,7 @@ export class TdBreadcrumbComponent implements AfterViewInit {
   /**
    * Whether to display the crumb or not
    */
-  set displayCrumb(shouldDisplay: boolean) {
+  public set displayCrumb(shouldDisplay: boolean) {
     this._displayCrumb = shouldDisplay;
     setTimeout(() => {
       this._changeDetectorRef.markForCheck();
@@ -135,7 +135,9 @@ export class TdBreadcrumbComponent implements AfterViewInit {
       const textSpan = this.elementRef.nativeElement.querySelector(
         '.td-breadcrumb-text',
       );
-      this.fullText = textSpan.textContent?.trim() || '';
+      if (textSpan) {
+        this.fullText = textSpan.textContent?.trim() || '';
+      }
       this._changeDetectorRef.markForCheck();
     });
   }
@@ -146,5 +148,12 @@ export class TdBreadcrumbComponent implements AfterViewInit {
   _handleIconClick(event: Event): void {
     event.stopPropagation();
     event.preventDefault();
+  }
+
+  public recalculateWidth(): void {
+    this._width = (<HTMLElement>(
+      this.elementRef.nativeElement
+    )).getBoundingClientRect().width;
+    this._changeDetectorRef.markForCheck();
   }
 }

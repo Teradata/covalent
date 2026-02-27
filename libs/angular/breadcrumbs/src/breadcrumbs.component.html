@@ -21,7 +21,7 @@
 }
 
 <mat-menu #overflowMenu="matMenu" class="td-breadcrumbs-overflow-menu">
-  @for (item of overFlowMenuItems; track item; let index = $index) {
+  @for (item of overflowMenuItems; track item; let index = $index) {
     <button
       mat-menu-item
       (click)="handleOverflowItemClick(item)"

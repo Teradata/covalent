@@ -41,6 +41,13 @@ export class TdBreadcrumbsComponent
   private _separatorIcon = 'chevron_right';
   private _destroy$ = new Subject<void>();
 
+  /**
+   * Maximum width ratio for the last breadcrumb when truncation is needed.
+   * Set to 35% of available width to ensure last breadcrumb doesn't dominate the space
+   * while still being readable.
+   */
+  private readonly LAST_BREADCRUMB_MAX_WIDTH_RATIO = 0.35;
+
   @HostBinding('class.td-breadcrumbs') tdBreadCrumbsClass = true;
   @HostBinding('attr.role') role = 'navigation';
   @HostBinding('attr.aria-label') ariaLabel = 'Breadcrumb';
@@ -50,11 +57,11 @@ export class TdBreadcrumbsComponent
   _breadcrumbs!: QueryList<TdBreadcrumbComponent>;
   // the list of hidden breadcrumbs not shown right now (responsive)
   hiddenBreadcrumbs: TdBreadcrumbComponent[] = [];
-  overFlowMenuItems: TdBreadcrumbComponent[] = [];
+  overflowMenuItems: TdBreadcrumbComponent[] = [];
   showOverflowButton = false;
   overflowButtonOrder = 50;
 
-  @ViewChild(MatMenuTrigger) overflowMenuTrigger!: MatMenuTrigger;
+  @ViewChild(MatMenuTrigger) overflowMenuTrigger?: MatMenuTrigger;
 
   /**
    * Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
@@ -214,6 +221,10 @@ export class TdBreadcrumbsComponent
   }
 
   private _calculateVisibility(): void {
+    this._breadcrumbs.forEach((breadcrumb: TdBreadcrumbComponent) => {
+      breadcrumb.recalculateWidth();
+    });
+
     const crumbsArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
     const totalBreadcrumbs = crumbsArray.length;
 
@@ -222,10 +233,11 @@ export class TdBreadcrumbsComponent
       crumbsArray.forEach((breadcrumb: TdBreadcrumbComponent) => {
         breadcrumb.displayCrumb = true;
         breadcrumb.shouldTruncate = false;
+        breadcrumb.maxWidth = undefined;
         breadcrumb.flexOrder = 0; // Default order
       });
       this.showOverflowButton = false;
-      this.overFlowMenuItems = [];
+      this.overflowMenuItems = [];
       this.hiddenBreadcrumbs = [];
       this._changeDetectorRef.markForCheck();
       return;
@@ -233,10 +245,38 @@ export class TdBreadcrumbsComponent
 
     const firstCrumb = crumbsArray[0];
     const lastCrumb = crumbsArray[totalBreadcrumbs - 1];
+    const containerWidth = this.nativeElementWidth;
+    const totalRequiredWidth = crumbsArray.reduce(
+      (sum, crumb) => sum + crumb.width,
+      0,
+    );
+
+    if (totalRequiredWidth <= containerWidth) {
+      crumbsArray.forEach(
+        (breadcrumb: TdBreadcrumbComponent, index: number) => {
+          breadcrumb.displayCrumb = true;
+          breadcrumb.shouldTruncate = false;
+          breadcrumb.maxWidth = undefined;
+          breadcrumb.flexOrder =
+            index === 0
+              ? 0
+              : index === totalBreadcrumbs - 1
+                ? 1000
+                : index * 10; // Assign orders based on index for middle crumbs
+        },
+      );
+
+      this.showOverflowButton = false;
+      this.overflowMenuItems = [];
+      this.hiddenBreadcrumbs = [];
+      this._changeDetectorRef.markForCheck();
+      return;
+    }
+
     const overflowButtonWidth = 48;
-    const availableWidth = this.nativeElementWidth - overflowButtonWidth;
-    let requiredWidth = firstCrumb.width + lastCrumb.width;
+    const availableWidth = containerWidth - overflowButtonWidth;
     const visibleMiddleCrumbs: number[] = [];
+    let requiredWidth = firstCrumb.width + lastCrumb.width;
 
     // Try to fit breadcrumbs from right to left (favoring more recent items)
     for (let i = totalBreadcrumbs - 2; i >= 1; i--) {
@@ -256,6 +296,7 @@ export class TdBreadcrumbsComponent
         // First breadcrumb - always visible, always first
         breadcrumb.displayCrumb = true;
         breadcrumb.shouldTruncate = false;
+        breadcrumb.maxWidth = undefined;
         breadcrumb.flexOrder = 0;
       } else if (index === totalBreadcrumbs - 1) {
         // Last breadcrumb - always visible, always last
@@ -266,12 +307,14 @@ export class TdBreadcrumbsComponent
         // Visible middle breadcrumbs - assign incremental orders
         breadcrumb.displayCrumb = true;
         breadcrumb.shouldTruncate = false;
+        breadcrumb.maxWidth = undefined;
         breadcrumb.flexOrder = currentOrder;
         currentOrder += 10;
       } else {
         // Hidden breadcrumbs
         breadcrumb.displayCrumb = false;
         breadcrumb.shouldTruncate = false;
+        breadcrumb.maxWidth = undefined;
         breadcrumb.flexOrder = 0; // Doesn't matter, it's hidden
         hiddenBreadcrumbs.push(breadcrumb);
       }
@@ -281,14 +324,18 @@ export class TdBreadcrumbsComponent
     this.overflowButtonOrder = currentOrder;
 
     // Truncate last breadcrumb if too long
-    const lastBreadcrumbMaxWidth = availableWidth * 0.35;
+    const lastBreadcrumbMaxWidth =
+      availableWidth * this.LAST_BREADCRUMB_MAX_WIDTH_RATIO;
     if (lastCrumb.width > lastBreadcrumbMaxWidth) {
       lastCrumb.shouldTruncate = true;
       lastCrumb.maxWidth = lastBreadcrumbMaxWidth;
+    } else {
+      // Ensure maxWidth is reset if last breadcrumb doesn't need truncation
+      lastCrumb.maxWidth = undefined;
     }
 
     this.showOverflowButton = hiddenBreadcrumbs.length > 0;
-    this.overFlowMenuItems = hiddenBreadcrumbs;
+    this.overflowMenuItems = hiddenBreadcrumbs;
     this.hiddenBreadcrumbs = hiddenBreadcrumbs;
     this._changeDetectorRef.markForCheck();
   }
