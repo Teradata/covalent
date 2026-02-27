@@ -1,3 +1,10 @@
+## [10.4.2](https://github.com/Teradata/covalent/compare/v10.4.1...v10.4.2) (2026-02-27)
+
+### Bug Fixes
+
+- add leaf node functionality to tree list item ([facb301](https://github.com/Teradata/covalent/commit/facb3015feb74a007c9a50f307092dcbd80ef7cc))
+- lint issue ([967f865](https://github.com/Teradata/covalent/commit/967f8657dad036ccb958fe14d7639d2f13fd0b9b))
+
 ## [10.4.1](https://github.com/Teradata/covalent/compare/v10.4.0...v10.4.1) (2026-02-02)
 
 ### Bug Fixes
