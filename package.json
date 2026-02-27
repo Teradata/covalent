@@ -20,7 +20,7 @@
     "format:check": "nx format",
     "format:write": "nx format:write",
     "ghpages:deploy": "VERSION=$(echo v${npm_package_version} | cut -c1-3) && nx build docs-app -- --base-href=/covalent/$VERSION/ && bash scripts/ghpages-deploy $VERSION",
-    "release:prepare": "npx nx run-many --target=build --all --exclude=knapsack && node ./scripts/version-placeholder ./dist",
+    "release:prepare": "npx nx run-many --target=build --all --exclude=knapsack && npx nx run components:build-scss && node ./scripts/version-placeholder ./dist",
     "style-dictionary": "cd libs/tokens && style-dictionary build",
     "storybook": "storybook dev -c libs/components/.storybook",
     "build-storybook": "storybook build -c libs/components/.storybook -o dist/storybook/components",
