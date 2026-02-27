@@ -1,3 +1,10 @@
+## [10.4.3](https://github.com/Teradata/covalent/compare/v10.4.2...v10.4.3) (2026-02-27)
+
+### Bug Fixes
+
+- components scss build in release pipelines for 10.x.x ([cbc09e1](https://github.com/Teradata/covalent/commit/cbc09e14ebbe766ccddfdfcdea40dd9bc0908cba))
+- **components:** components scss build in release pipelines for 10.x.x ([3bb676e](https://github.com/Teradata/covalent/commit/3bb676eccf8da70b673d85f1b925dfef84111a81))
+
 ## [10.4.2](https://github.com/Teradata/covalent/compare/v10.4.1...v10.4.2) (2026-02-27)
 
 ### Bug Fixes
