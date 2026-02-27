@@ -1,3 +1,9 @@
+## [11.13.1](https://github.com/Teradata/covalent/compare/v11.13.0...v11.13.1) (2026-02-26)
+
+### Bug Fixes
+
+- **icon-lockup:** style fixes ([54812f8](https://github.com/Teradata/covalent/commit/54812f80825ef1ac23618bb0ad468109b83e70f8))
+
 # [11.13.0](https://github.com/Teradata/covalent/compare/v11.12.1...v11.13.0) (2026-02-25)
 
 ### Features
