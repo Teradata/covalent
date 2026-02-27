@@ -1,8 +1,18 @@
-<ng-content></ng-content>
-<mat-icon
-  *ngIf="displayIcon"
-  class="td-breadcrumb-separator-icon"
-  [style.cursor]="'default'"
-  (click)="_handleIconClick($event)"
-  >{{ separatorIcon }}</mat-icon
+<span
+  class="td-breadcrumb-text"
+  [class.td-breadcrumb-truncated]="shouldTruncate"
+  [matTooltip]="shouldTruncate ? fullText : ''"
+  [matTooltipDisabled]="!shouldTruncate"
+  [attr.aria-label]="shouldTruncate ? fullText : null"
 >
+  <ng-content></ng-content>
+</span>
+@if (displayIcon) {
+  <mat-icon
+    class="td-breadcrumb-separator-icon"
+    [style.cursor]="'default'"
+    (click)="_handleIconClick($event)"
+    aria-hidden="true"
+    >{{ separatorIcon }}</mat-icon
+  >
+}

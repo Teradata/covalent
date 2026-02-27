@@ -43,9 +43,24 @@ export class MarkdownNavigatorDemoBasicComponent {
       icon: 'code_fork_outlined;covalent',
       children: [
         {
-          title: 'Sub item',
+          title: 'Covalent Sub item Folder 1',
           icon: 'folder',
           markdownString: '# Sub Item\n\nA nested example.',
+          children: [
+            {
+              title: 'Covalent Sub item Folder 2',
+              icon: 'folder',
+              markdownString: '# Sub Item\n\nA nested example.',
+              children: [
+                {
+                  title: 'Covalent Sub item 3',
+                  icon: 'folder',
+                  markdownString: '# Sub Item\n\nA nested example.',
+                  children: [],
+                },
+              ],
+            },
+          ],
         },
       ],
     },
