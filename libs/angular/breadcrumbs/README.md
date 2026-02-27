@@ -9,7 +9,8 @@
 - separatorIcon?: string
   - Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
 - size?: string
-  - Sets the typography size. Options: 'headline1', 'headline2', 'headline3', 'headline4', 'headline5', 'headline6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'button', 'caption', 'overline'
+  - Sets the typography size. Options: 'headline1', 'headline2', 'headline3', 'headline4', 'headline5', 'headline6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'button', 'caption'
+  - **Note:** Requires `@covalent/tokens/index.css` to be imported in your global styles
 
 #### Methods
 

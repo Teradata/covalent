@@ -31,6 +31,12 @@ export class TdBreadcrumbComponent implements AfterViewInit {
   public elementRef = inject(ElementRef);
   public fullText = '';
   public flexOrder = 0;
+  public isCurrentPage = false;
+
+  @HostBinding('attr.aria-current')
+  get ariaCurrent(): string | null {
+    return this.isCurrentPage ? 'page' : null;
+  }
 
   @HostBinding('class.mdc-button') matButtonClass = true;
   @HostBinding('class.td-breadcrumb') tdBreadCrumbClass = true;

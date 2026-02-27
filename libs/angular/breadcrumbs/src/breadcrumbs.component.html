@@ -3,9 +3,9 @@
 @if (showOverflowButton) {
   <button
     mat-icon-button
-    [matMenuTriggerFor]="overflowMenu"
     class="td-breadcrumbs-overflow-button"
-    aria-label="Show hidden breadcrumbs"
+    [matMenuTriggerFor]="overflowMenu"
+    [attr.aria-label]="overflowButtonAriaLabel"
     [style.order]="overflowButtonOrder"
     [attr.data-test-id]="'breadcrumb-overflow-button'"
   >
@@ -15,6 +15,7 @@
     class="td-breadcrumb-separator-icon"
     [style.order]="overflowButtonOrder"
     color="primary"
+    aria-hidden="true"
     >{{ separatorIcon }}</mat-icon
   >
 }
@@ -25,6 +26,7 @@
       mat-menu-item
       (click)="handleOverflowItemClick(item)"
       [attr.data-test-id]="'breadcrumb-overflow-item-' + index"
+      [attr.aria-label]="'Navigate to ' + getItemText(item)"
     >
       {{ getItemText(item) }}
     </button>

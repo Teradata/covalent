@@ -42,6 +42,8 @@ export class TdBreadcrumbsComponent
   private _destroy$ = new Subject<void>();
 
   @HostBinding('class.td-breadcrumbs') tdBreadCrumbsClass = true;
+  @HostBinding('attr.role') role = 'navigation';
+  @HostBinding('attr.aria-label') ariaLabel = 'Breadcrumb';
 
   // all the sub components, which are the individual breadcrumbs
   @ContentChildren(TdBreadcrumbComponent, { descendants: true })
@@ -77,8 +79,7 @@ export class TdBreadcrumbsComponent
     | 'body1'
     | 'body2'
     | 'button'
-    | 'caption'
-    | 'overline';
+    | 'caption';
 
   @HostBinding('style.font-family')
   get fontFamily(): string | undefined {
@@ -131,13 +132,16 @@ export class TdBreadcrumbsComponent
       .pipe(startWith(this._breadcrumbs), takeUntil(this._destroy$))
       .subscribe(() => {
         this._waitToCalculateVisibility();
-        this.setCrumbIcons();
-        this._changeDetectorRef.markForCheck();
+        setTimeout(() => {
+          this.setCrumbIcons();
+          this._changeDetectorRef.markForCheck();
+        });
       });
   }
 
   ngOnDestroy(): void {
     this._destroy$.next();
+    this._destroy$.complete();
   }
 
   /*
@@ -172,6 +176,11 @@ export class TdBreadcrumbsComponent
     return this._breadcrumbs ? this._breadcrumbs.length : 0;
   }
 
+  get overflowButtonAriaLabel(): string {
+    const count = this.hiddenBreadcrumbs.length;
+    return `Show ${count} hidden breadcrumb${count > 1 ? 's' : ''}`;
+  }
+
   handleOverflowItemClick(item: TdBreadcrumbComponent): void {
     const nativeElement = item.elementRef?.nativeElement;
     if (nativeElement) {
@@ -190,9 +199,16 @@ export class TdBreadcrumbsComponent
     if (this._breadcrumbs) {
       const breadcrumbArray: TdBreadcrumbComponent[] =
         this._breadcrumbs.toArray();
-      breadcrumbArray.forEach((breadcrumb: TdBreadcrumbComponent) => {
-        breadcrumb.separatorIcon = this.separatorIcon;
-        breadcrumb.displayIcon = true;
+
+      setTimeout(() => {
+        breadcrumbArray.forEach(
+          (breadcrumb: TdBreadcrumbComponent, index: number) => {
+            breadcrumb.separatorIcon = this.separatorIcon;
+            breadcrumb.displayIcon = true;
+            breadcrumb.isCurrentPage = index === breadcrumbArray.length - 1;
+          },
+        );
+        this._changeDetectorRef.markForCheck();
       });
     }
   }

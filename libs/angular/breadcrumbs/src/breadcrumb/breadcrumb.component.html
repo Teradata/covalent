@@ -3,6 +3,7 @@
   [class.td-breadcrumb-truncated]="shouldTruncate"
   [matTooltip]="shouldTruncate ? fullText : ''"
   [matTooltipDisabled]="!shouldTruncate"
+  [attr.aria-label]="shouldTruncate ? fullText : null"
 >
   <ng-content></ng-content>
 </span>
@@ -11,6 +12,7 @@
     class="td-breadcrumb-separator-icon"
     [style.cursor]="'default'"
     (click)="_handleIconClick($event)"
+    aria-hidden="true"
     >{{ separatorIcon }}</mat-icon
   >
 }
