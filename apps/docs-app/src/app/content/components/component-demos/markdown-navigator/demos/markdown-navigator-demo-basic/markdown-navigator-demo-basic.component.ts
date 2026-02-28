@@ -46,6 +46,27 @@ export class MarkdownNavigatorDemoBasicComponent {
           title: 'Sub item',
           icon: 'folder',
           markdownString: '# Sub Item\n\nA nested example.',
+          children: [
+            {
+              title: 'Sub item 2',
+              icon: 'folder',
+              markdownString: '# Sub Item\n\nA nested example.',
+              children: [
+                {
+                  title: 'Sub item 3',
+                  icon: 'folder',
+                  markdownString: '# Sub Item\n\nA nested example.',
+                  children: [
+                    {
+                      title: 'Sub item 4',
+                      icon: 'folder',
+                      markdownString: '# Sub Item\n\nA nested example.',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
       ],
     },
