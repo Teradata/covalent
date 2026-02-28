@@ -1,4 +1,12 @@
-<ng-content></ng-content>
+<span
+  class="td-breadcrumb-text"
+  [class.td-breadcrumb-truncated]="shouldTruncate"
+  [matTooltip]="shouldTruncate ? fullText : ''"
+  [matTooltipDisabled]="!shouldTruncate"
+  [attr.aria-label]="shouldTruncate ? fullText : ''"
+>
+  <ng-content></ng-content>
+</span>
 <mat-icon
   *ngIf="displayIcon"
   class="td-breadcrumb-separator-icon"
