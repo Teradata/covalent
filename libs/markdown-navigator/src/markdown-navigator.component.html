@@ -5,7 +5,7 @@
     color="accent"
   ></mat-progress-bar>
   <ng-container *ngIf="showHeader">
-    <td-breadcrumbs>
+    <td-breadcrumbs [size]="'caption'">
       <a
         td-breadcrumb
         [matTooltip]="goHomeLabel ?? ''"

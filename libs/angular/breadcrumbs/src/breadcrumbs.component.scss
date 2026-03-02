@@ -1,8 +1,43 @@
 :host {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
 
   &.td-breadcrumbs {
     white-space: nowrap;
+  }
+}
+
+.td-breadcrumbs-overflow-button {
+  flex-shrink: 0;
+  margin: 0 4px;
+
+  mat-icon {
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+  }
+
+  + .td-breadcrumb-separator-icon {
+    order: inherit;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin: 0 10px;
+  }
+}
+
+.td-breadcrumb-overflow-menu {
+  max-width: 300px;
+
+  button {
+    max-width: 100%;
+
+    ::ng-deep .mat-mdc-menu-item-text {
+      white-space: normal;
+      line-height: 1.4;
+    }
   }
 }
