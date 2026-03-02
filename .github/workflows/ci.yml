@@ -20,8 +20,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm cache clean --force
-      - run: rm -rf node_modules package-lock.json
       - run: npm ci
       - run: npm run format:check -- --base=${{ github.event.pull_request.base.sha }}
       - run: npx nx affected --target=scsslint --base=${{ github.event.pull_request.base.sha }} --exclude=knapsack
@@ -39,8 +37,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm cache clean --force
-      - run: rm -rf node_modules package-lock.json
       - run: npm ci
       - run: npx nx affected --target=test --base=${{ github.event.pull_request.base.sha }} --exclude=knapsack
 
@@ -56,8 +52,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm cache clean --force
-      - run: rm -rf node_modules package-lock.json
       - run: npm ci
       - run: NODE_OPTIONS=--max_old_space_size=4096 npx nx affected --target=e2e --base=${{ github.event.pull_request.base.sha }} --exclude=knapsack
 
@@ -73,8 +67,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm cache clean --force
-      - run: rm -rf node_modules package-lock.json
       - run: npm ci
       - run: npx nx affected --target=build --base=${{ github.event.pull_request.base.sha }} --exclude=knapsack
       - run: npx nx affected --target=build-scss --base=${{ github.event.pull_request.base.sha }} --exclude=knapsack
