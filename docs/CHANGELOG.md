@@ -1,3 +1,12 @@
+# [10.5.0](https://github.com/Teradata/covalent/compare/v10.4.3...v10.5.0) (2026-03-02)
+
+### Features
+
+- **breadcrumbs:** update breadcrumbs ui ([ea37097](https://github.com/Teradata/covalent/commit/ea370972821aa06b695dcdb9d4bb049dbba68cd3))
+- **breadcrumbs:** update breadcrumbs ui ([5464c4d](https://github.com/Teradata/covalent/commit/5464c4dedb102c00844c7afc917c18a827f1412f))
+- **breadcrumbs:** update ci.yaml to avoid cache and memory bus ([a3f3910](https://github.com/Teradata/covalent/commit/a3f3910af13b5201555965b2c57f95f41c57a777))
+- **breadcrumbs:** update ci.yaml to avoid cache and memory bus ([dcfc06e](https://github.com/Teradata/covalent/commit/dcfc06e1356ba195918c9829b841bf0f3930f35e))
+
 ## [10.4.3](https://github.com/Teradata/covalent/compare/v10.4.2...v10.4.3) (2026-02-27)
 
 ### Bug Fixes
