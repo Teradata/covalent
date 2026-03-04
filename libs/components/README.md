@@ -160,6 +160,12 @@ Here is a table listing the imports for Covalent web components:
 | TreeListItem       | cv-tree-list-item       | @covalent/components/tree-list-item       |
 | Typography         | cv-typography           | @covalent/components/typography           |
 
+## Figma Code Connect
+
+Components are linked to their Figma counterparts via [Code Connect](https://github.com/figma/code-connect). When developers inspect a component in Figma Dev Mode, they see a live code snippet reflecting the current variant selections.
+
+See [FIGMA_CODE_CONNECT.md](./FIGMA_CODE_CONNECT.md) for setup, publishing, and how to connect new components.
+
 ## Running the storybook docs
 
 Run `nx storybook components` to start the main storybook documentation site for this project

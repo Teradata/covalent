@@ -1,0 +1,8 @@
+{
+  "codeConnect": {
+    "include": ["src/**/*.{ts,js}"],
+    "label": "Web Components",
+    "parser": "html",
+    "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles"
+  }
+}
