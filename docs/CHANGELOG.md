@@ -1,3 +1,9 @@
+## [10.5.1](https://github.com/Teradata/covalent/compare/v10.5.0...v10.5.1) (2026-03-05)
+
+### Bug Fixes
+
+- tree list container scroll control ([#2672](https://github.com/Teradata/covalent/issues/2672)) ([643469d](https://github.com/Teradata/covalent/commit/643469ddcd1369294cef3558db4fcc7bc554f155))
+
 # [10.5.0](https://github.com/Teradata/covalent/compare/v10.4.3...v10.5.0) (2026-03-02)
 
 ### Features
