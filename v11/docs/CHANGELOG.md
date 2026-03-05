@@ -1,3 +1,12 @@
+# [11.14.0](https://github.com/Teradata/covalent/compare/v11.13.2...v11.14.0) (2026-02-27)
+
+### Features
+
+- **breadcrumbs:** fix pr comments and bugs ([2e9c904](https://github.com/Teradata/covalent/commit/2e9c90472d1a4847b0efeac4bb34aad0a35a054c))
+- **breadcrumbs:** fix pr comments and copilot suggestions ([38e4a0e](https://github.com/Teradata/covalent/commit/38e4a0e3c04b493704f53e62aa8f6df365b6e0a1))
+- **breadcrumbs:** make some ui stylish and update tests ([ee559ec](https://github.com/Teradata/covalent/commit/ee559ec6e4f8e4f624102959c47c04221d25fa2c))
+- **breadcrumbs:** new breadcrumbs behavior on responsive screens ([8f5ce3d](https://github.com/Teradata/covalent/commit/8f5ce3db5c54157add3432f41f1036e75b2763e2))
+
 ## [11.13.2](https://github.com/Teradata/covalent/compare/v11.13.1...v11.13.2) (2026-02-27)
 
 ### Bug Fixes
