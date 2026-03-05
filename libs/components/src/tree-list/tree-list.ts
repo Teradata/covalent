@@ -17,7 +17,7 @@ export class CovalentTreeList extends LitElement {
   ];
   override render() {
     return html`
-      <div class="container">
+      <div class="container" part="container">
         <div class="content">
           <slot></slot>
         </div>
@@ -32,7 +32,7 @@ document.addEventListener('select', (e: Event) => {
 const handleSelect = (e: Event): void => {
   // All cv-tree-list-item components.
   const items: any[] = Array.from(
-    document?.querySelectorAll('cv-tree-list-item')
+    document?.querySelectorAll('cv-tree-list-item'),
   );
 
   // Currently selected item.
@@ -41,8 +41,8 @@ const handleSelect = (e: Event): void => {
 
   // Find previously selected element and remove the styling.
   items.forEach((item) => {
-    item
-      .shadowRoot?.querySelector('div.itemContent')
+    item.shadowRoot
+      ?.querySelector('div.itemContent')
       ?.classList.remove('selected');
   });
 
