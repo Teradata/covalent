@@ -20,7 +20,7 @@ export function genHeadingId(str: string): string {
         // Remove certain special chars to create heading ids similar to those in github
         // borrowed from showdown
         // https://github.com/showdownjs/showdown/blob/main/src/subParsers/makehtml/headers.js#L94
-        .replace(/[&+$,/:;=?@"#{}|^¨~[\]`\\*)(%.!'<>]/g, '')
+        .replace(/[&+$,/:;=?@"#{}|^¨~[\]`\\*)(%.!'<>]/g, ''),
     ).toLowerCase();
   }
   return '';
@@ -29,13 +29,13 @@ export function genHeadingId(str: string): string {
 export function scrollToAnchor(
   scope: HTMLElement,
   anchor: string,
-  tryParent: boolean
+  tryParent: boolean,
 ): boolean {
   if (scope && anchor) {
     const normalizedAnchor: string = genHeadingId(anchor);
     let headingToJumpTo: Element | null = null;
     const headingWithinComponent = scope.querySelector(
-      `[id="${normalizedAnchor}"]`
+      `[id="${normalizedAnchor}"]`,
     );
 
     if (headingWithinComponent) {
@@ -66,13 +66,13 @@ export function isAnchorLink(anchor?: HTMLAnchorElement): boolean {
 
 export function isFileLink(
   anchor: HTMLAnchorElement,
-  fileExtensions: string[] | undefined
+  fileExtensions: string[] | undefined,
 ): boolean {
   if (fileExtensions && fileExtensions.length) {
     const href = anchor.getAttribute('href');
     if (href) {
       return fileExtensions.some((fileExtension) =>
-        href.endsWith(fileExtension)
+        href.endsWith(fileExtension),
       );
     }
   }
@@ -145,4 +145,60 @@ export function renderVideoElements(html: string): string {
     .replace(ytLongEmbed, convert)
     .replace(ytShort, convert)
     .replace(ytPlaylist, convertPL);
+}
+
+/**
+ * Checks whether text contains markdown syntax patterns.
+ */
+export function containsMarkdown(text: string): boolean {
+  const markdownPatterns = [
+    /(?:^|\n)\s{0,3}#{1,6}\s/, // ATX headings
+    /(?:^|\n)\s{0,3}[-*+]\s/, // unordered list items
+    /(?:^|\n)\s{0,3}\d+\.\s/, // ordered list items
+    /(?:^|\n)\s{0,3}>\s/, // blockquotes
+    /\*\*.+?\*\*/s, // bold
+    /\[.+?\]\(.+?\)/s, // links
+    /!\[.*?\]\(.+?\)/s, // images
+    /`.+?`/, // inline code
+    /(?:^|\n)\s{0,3}```/, // fenced code blocks
+    /(?:^|\n)\s{0,3}---\s*(?:$|\n)/, // horizontal rules
+  ];
+  return markdownPatterns.some((pattern) => pattern.test(text));
+}
+
+/**
+ * Finds the index of the matching closing tag, handling nested same-name tags.
+ */
+export function findClosingTagIndex(
+  str: string,
+  tagName: string,
+  searchFrom: number,
+): number {
+  const openPattern = new RegExp(`<${tagName}(?:\\s[^>]*)?>`, 'gi');
+  const closePattern = new RegExp(`</${tagName}\\s*>`, 'gi');
+  let depth = 1;
+  let pos = searchFrom;
+
+  while (pos < str.length && depth > 0) {
+    openPattern.lastIndex = pos;
+    closePattern.lastIndex = pos;
+
+    // we look for open and close tags starting from the end of the last match
+    const nextOpen = openPattern.exec(str);
+    const nextClose = closePattern.exec(str);
+
+    if (!nextClose) return -1;
+
+    // if we find an open tag before a close tag, it means we have a nested tag, so we increase the depth
+    if (nextOpen && nextOpen.index < nextClose.index) {
+      depth++;
+      pos = nextOpen.index + nextOpen[0].length;
+    } else {
+      depth--;
+      if (depth === 0) return nextClose.index;
+      pos = nextClose.index + nextClose[0].length;
+    }
+  }
+
+  return -1;
 }
