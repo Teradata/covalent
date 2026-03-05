@@ -10,6 +10,7 @@ import { FlavoredMarkdownDemoRoutingModule } from './flavored-markdown-demo-rout
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { FlavoredMarkdownDemoButtonsComponent } from './flavored-markdown-demo-buttons/flavored-markdown-demo-buttons.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FlavoredMarkdownDemoNestedHtmlComponent } from './flavored-markdown-demo-nested-html/flavored-markdown-demo-nested-html.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FlavoredMarkdownDemoTablesComponent,
     FlavoredMarkdownDemoLoaderComponent,
     FlavoredMarkdownDemoButtonsComponent,
+    FlavoredMarkdownDemoNestedHtmlComponent,
   ],
   imports: [
     DemoModule,
