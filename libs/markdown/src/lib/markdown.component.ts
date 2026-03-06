@@ -24,6 +24,8 @@ import {
   isRawGithubHref,
   renderVideoElements,
   isFileLink,
+  findClosingTagIndex,
+  containsMarkdown,
 } from './markdown-utils/markdown-utils';
 
 import * as showdown from 'showdown';
@@ -198,6 +200,74 @@ function changeStyleAlignmentToClass(html: string) {
   }
 
   return html;
+}
+
+/**
+ * Adds markdown="1" attribute to HTML block-level tags so that
+ * showdown parses any markdown nested inside them.
+ * Only adds the attribute when the tag's inner content contains markdown syntax.
+ */
+function addMarkdownAttrToHtmlTags(markdown: string): string {
+  const voidElements = new Set([
+    'area',
+    'base',
+    'br',
+    'col',
+    'embed',
+    'hr',
+    'img',
+    'input',
+    'link',
+    'meta',
+    'param',
+    'source',
+    'track',
+    'wbr',
+  ]);
+
+  const openTagRegex = /<([A-Za-z][A-Za-z0-9-]*)(\s[^>]*)?\s*>/g;
+  let result = '';
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = openTagRegex.exec(markdown)) !== null) {
+    const fullMatch = match[0];
+    const tagName = match[1];
+    const attrs = match[2] || '';
+    const tag = tagName.toLowerCase();
+
+    // Skip void elements, self-closing tags, or tags with existing markdown attr
+    if (
+      voidElements.has(tag) ||
+      fullMatch.endsWith('/>') ||
+      /markdown\s*=/.test(attrs)
+    ) {
+      continue;
+    }
+
+    const contentStart = match.index + fullMatch.length;
+    const closingTagIndex = findClosingTagIndex(
+      markdown,
+      tagName,
+      contentStart,
+    );
+
+    if (closingTagIndex === -1) continue;
+
+    const innerContent = markdown.slice(contentStart, closingTagIndex);
+
+    if (containsMarkdown(innerContent)) {
+      result += markdown.slice(lastIndex, match.index);
+      result += fullMatch.replace(
+        new RegExp(`<${tagName}(\\s|>)`),
+        `<${tagName} markdown="1"$1`,
+      );
+      lastIndex = contentStart;
+    }
+  }
+
+  result += markdown.slice(lastIndex);
+  return result;
 }
 
 // Strips all the html tags in the html sand returns the text
@@ -469,6 +539,9 @@ export class TdMarkdownComponent
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
     converter.setOption('disableForced4SpacesIndentedSublists', true);
     converter.setOption('emoji', true);
-    return converter.makeHtml(markdownToParse);
+
+    const markdownWithAttr: string = addMarkdownAttrToHtmlTags(markdownToParse);
+    const html = converter.makeHtml(markdownWithAttr);
+    return html;
   }
 }
