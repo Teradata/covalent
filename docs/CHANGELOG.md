@@ -1,3 +1,9 @@
+## [11.14.2](https://github.com/Teradata/covalent/compare/v11.14.1...v11.14.2) (2026-03-06)
+
+### Bug Fixes
+
+- **markdown:** handle html with nested markdown ([23b8dbf](https://github.com/Teradata/covalent/commit/23b8dbf9aef2172558722f63b5bfcc2636e91804))
+
 ## [11.14.1](https://github.com/Teradata/covalent/compare/v11.14.0...v11.14.1) (2026-03-05)
 
 ### Bug Fixes
