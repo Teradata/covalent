@@ -1,3 +1,9 @@
+## [10.5.3](https://github.com/Teradata/covalent/compare/v10.5.2...v10.5.3) (2026-03-06)
+
+### Bug Fixes
+
+- href target in Markdown parser ([44f9174](https://github.com/Teradata/covalent/commit/44f917478e8996312e34b7900b07393c716347d3))
+
 ## [10.5.2](https://github.com/Teradata/covalent/compare/v10.5.1...v10.5.2) (2026-03-06)
 
 ### Bug Fixes
