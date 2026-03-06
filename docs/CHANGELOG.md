@@ -1,3 +1,10 @@
+## [11.14.3](https://github.com/Teradata/covalent/compare/v11.14.2...v11.14.3) (2026-03-06)
+
+### Bug Fixes
+
+- href target in Markdown parser ([03281dc](https://github.com/Teradata/covalent/commit/03281dc70cea11b71aa0498db028ada824b1049c))
+- set \_blank target only for absolute external links ([ceb4ba7](https://github.com/Teradata/covalent/commit/ceb4ba7bc8bca95917a19ac4fd91a08f8d7062fc))
+
 ## [11.14.2](https://github.com/Teradata/covalent/compare/v11.14.1...v11.14.2) (2026-03-06)
 
 ### Bug Fixes
