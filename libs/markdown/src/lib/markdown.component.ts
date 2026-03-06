@@ -74,44 +74,54 @@ function normalizeHtmlHrefs(
   fileLinkExtensions?: string[],
 ): string {
   const document: Document = new DOMParser().parseFromString(html, 'text/html');
+
   document
     .querySelectorAll<HTMLAnchorElement>('a[href]')
     .forEach((link: HTMLAnchorElement) => {
-      const url: URL = new URL(link.href);
-      const originalHash: string = url.hash;
-      const isFileAnchorLink = isFileLink(link, fileLinkExtensions);
-      if (isAnchorLink(link)) {
-        if (originalHash) {
-          url.hash = genHeadingId(originalHash);
-          link.href = url.hash;
-        }
-      } else if (currentHref && url.host === window.location.host) {
-        // hosts match, meaning URL MIGHT have been malformed by showdown
-        // url is a relative url or just a link to a part of the application
-        if (url.pathname.endsWith('.md') || isFileAnchorLink) {
-          // only check .md urls or urls ending with the fileLinkExtensions
+      try {
+        const url: URL = new URL(link.href);
+        const originalHash: string = url.hash;
+        const isFileAnchorLink = isFileLink(link, fileLinkExtensions);
 
-          const hrefWithoutHash: string = removeTrailingHash(
-            link.getAttribute('href'),
-          );
-
-          url.href = generateHref(currentHref, hrefWithoutHash);
-
+        if (isAnchorLink(link)) {
           if (originalHash) {
             url.hash = genHeadingId(originalHash);
+            link.href = url.hash;
           }
-          link.href = url.href;
-        }
-        link.target = isFileAnchorLink ? '_self' : '_blank';
-      } else {
-        // url is absolute
-        if (url.pathname.endsWith('.md')) {
-          if (originalHash) {
-            url.hash = genHeadingId(originalHash);
+        } else if (url.host === window.location.host) {
+          // hosts match, meaning URL MIGHT have been malformed by showdown
+          // url is a relative url or just a link to a part of the application
+          if (
+            currentHref &&
+            (url.pathname.endsWith('.md') || isFileAnchorLink)
+          ) {
+            // only check .md urls or urls ending with the fileLinkExtensions
+            const hrefWithoutHash: string = removeTrailingHash(
+              link.getAttribute('href'),
+            );
+            url.href = generateHref(currentHref, hrefWithoutHash);
+            if (originalHash) {
+              url.hash = genHeadingId(originalHash);
+            }
+            link.href = url.href;
+            link.target = isFileAnchorLink ? '_self' : '_blank';
           }
-          link.href = url.href;
+        } else {
+          // Different host - external link
+          if (url.pathname.endsWith('.md')) {
+            if (originalHash) {
+              url.hash = genHeadingId(originalHash);
+            }
+            link.href = url.href;
+          }
+          link.target = '_blank';
         }
-        link.target = '_blank';
+      } catch {
+        // If URL parsing fails, check if it looks like an external http(s) link
+        const hrefAttr = (link.getAttribute('href') ?? '').trim();
+        if (hrefAttr.startsWith('http://') || hrefAttr.startsWith('https://')) {
+          link.target = '_blank';
+        }
       }
     });
 
