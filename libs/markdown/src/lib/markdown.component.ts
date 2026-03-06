@@ -33,7 +33,7 @@ import * as showdown from 'showdown';
 
 function isAbsoluteUrl(currentHref: string): boolean {
   // Regular Expression to check url
-  const RgExp = new RegExp('^(?:[a-z]+:)?//', 'i');
+  const RgExp = /^(?:[a-z]+:)?\/\//i;
   return RgExp.test(currentHref);
 }
 
@@ -75,17 +75,16 @@ function normalizeHtmlHrefs(
   currentHref: string,
   fileLinkExtensions?: string[],
 ): string {
-  if (currentHref) {
-    const document: Document = new DOMParser().parseFromString(
-      html,
-      'text/html',
-    );
-    document
-      .querySelectorAll<HTMLAnchorElement>('a[href]')
-      .forEach((link: HTMLAnchorElement) => {
+  const document: Document = new DOMParser().parseFromString(html, 'text/html');
+
+  document
+    .querySelectorAll<HTMLAnchorElement>('a[href]')
+    .forEach((link: HTMLAnchorElement) => {
+      try {
         const url: URL = new URL(link.href);
         const originalHash: string = url.hash;
         const isFileAnchorLink = isFileLink(link, fileLinkExtensions);
+
         if (isAnchorLink(link)) {
           if (originalHash) {
             url.hash = genHeadingId(originalHash);
@@ -94,23 +93,23 @@ function normalizeHtmlHrefs(
         } else if (url.host === window.location.host) {
           // hosts match, meaning URL MIGHT have been malformed by showdown
           // url is a relative url or just a link to a part of the application
-          if (url.pathname.endsWith('.md') || isFileAnchorLink) {
+          if (
+            currentHref &&
+            (url.pathname.endsWith('.md') || isFileAnchorLink)
+          ) {
             // only check .md urls or urls ending with the fileLinkExtensions
-
             const hrefWithoutHash: string = removeTrailingHash(
               link.getAttribute('href'),
             );
-
             url.href = generateHref(currentHref, hrefWithoutHash);
-
             if (originalHash) {
               url.hash = genHeadingId(originalHash);
             }
             link.href = url.href;
+            link.target = isFileAnchorLink ? '_self' : '_blank';
           }
-          link.target = isFileAnchorLink ? '_self' : '_blank';
         } else {
-          // url is absolute
+          // Different host - external link
           if (url.pathname.endsWith('.md')) {
             if (originalHash) {
               url.hash = genHeadingId(originalHash);
@@ -119,11 +118,16 @@ function normalizeHtmlHrefs(
           }
           link.target = '_blank';
         }
-      });
+      } catch {
+        // If URL parsing fails, check if it looks like an external http(s) link
+        const hrefAttr = (link.getAttribute('href') ?? '').trim();
+        if (hrefAttr.startsWith('http://') || hrefAttr.startsWith('https://')) {
+          link.target = '_blank';
+        }
+      }
+    });
 
-    return new XMLSerializer().serializeToString(document);
-  }
-  return html;
+  return new XMLSerializer().serializeToString(document);
 }
 
 function normalizeImageSrcs(html: string, currentHref: string): string {
@@ -292,10 +296,10 @@ function stripAllHtmlTags(input: string): string {
 export class TdMarkdownComponent
   implements OnChanges, AfterViewInit, OnDestroy
 {
-  private _renderer = inject(Renderer2);
-  private _elementRef = inject(ElementRef);
-  private _domSanitizer = inject(DomSanitizer);
-  private _ngZone = inject(NgZone);
+  private readonly _renderer = inject(Renderer2);
+  private readonly _elementRef = inject(ElementRef);
+  private readonly _domSanitizer = inject(DomSanitizer);
+  private readonly _ngZone = inject(NgZone);
 
   private _content!: string;
   private _simpleLineBreaks = false;
@@ -487,7 +491,6 @@ export class TdMarkdownComponent
         SecurityContext.STYLE,
         changeStyleAlignmentToClass(markupStr),
       ) ?? '';
-
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(
       html,
       this._hostedUrl,

@@ -7,7 +7,6 @@ import {
 } from '@angular/core/testing';
 import { ApplicationRef, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { CovalentMarkdownModule } from './markdown.module';
 import { TdMarkdownComponent } from './markdown.component';
 
 // Implementing scrollIntoView since its not implemented JSDOM
@@ -577,6 +576,131 @@ describe('Component: Markdown', () => {
       checkAnchors();
     }));
 
+    it('should normalize markdown hrefs and link targets', waitForAsync(async () => {
+      const fixture: ComponentFixture<TdMarkdownLinksTestEventsComponent> =
+        TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
+      const component: TdMarkdownLinksTestEventsComponent =
+        fixture.debugElement.componentInstance;
+
+      const RAW_LINK =
+        'https://raw.githubusercontent.com/Teradata/covalent/main/';
+      const SUB_DIRECTORY = 'docs/';
+      const CURRENT_MD_FILE = 'GETTING_STARTED.md';
+
+      component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+      component.content = `
+        * [anchor](#My%20Heading)
+        * [relative doc](README.md#My%20Heading)
+        * [root doc](/README.md#Top%20Heading)
+        * [local html](guide.html)
+        * [external md](https://angular.dev/guide.md#My%20Heading)
+        * [external site](https://angular.dev/)
+      `;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const anchors: HTMLAnchorElement[] =
+        fixture.debugElement.nativeElement.querySelectorAll('a');
+
+      const getAnchorByLabel = (label: string): HTMLAnchorElement =>
+        Array.from(anchors).find(
+          (anchor: HTMLAnchorElement) => anchor.textContent?.trim() === label,
+        ) as HTMLAnchorElement;
+
+      const anchorLink = getAnchorByLabel('anchor');
+      expect(anchorLink.getAttribute('href')).toBe('#my20heading');
+      expect(anchorLink.getAttribute('target')).toBeNull();
+
+      const relativeDocLink = getAnchorByLabel('relative doc');
+      expect(relativeDocLink.getAttribute('href')).toBe(
+        'README.md#My%20Heading',
+      );
+      expect(relativeDocLink.getAttribute('target')).toBeNull();
+
+      const rootDocLink = getAnchorByLabel('root doc');
+      expect(rootDocLink.getAttribute('href')).toBe('/README.md#Top%20Heading');
+      expect(rootDocLink.getAttribute('target')).toBeNull();
+
+      const localHtmlLink = getAnchorByLabel('local html');
+      expect(localHtmlLink.getAttribute('href')).toBe('guide.html');
+      expect(localHtmlLink.getAttribute('target')).toBeNull();
+
+      const externalMdLink = getAnchorByLabel('external md');
+      expect(externalMdLink.getAttribute('href')).toBe(
+        'https://angular.dev/guide.md#my20heading',
+      );
+      expect(externalMdLink.getAttribute('target')).toBe('_blank');
+
+      const externalSiteLink = getAnchorByLabel('external site');
+      expect(externalSiteLink.getAttribute('href')).toBe(
+        'https://angular.dev/',
+      );
+      expect(externalSiteLink.getAttribute('target')).toBe('_blank');
+    }));
+
+    it('should set _blank target for external links without hostedUrl', waitForAsync(async () => {
+      const fixture: ComponentFixture<TdMarkdownLinksTestEventsComponent> =
+        TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
+      const component: TdMarkdownLinksTestEventsComponent =
+        fixture.debugElement.componentInstance;
+
+      const EXTERNAL_AUTH_URL =
+        'https://login-stage.cloud.teradata.com/as/user_authz.oauth2?user_code=G9KT-NV9G';
+
+      component.content = `
+        * [external auth](${EXTERNAL_AUTH_URL})
+      `;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const anchor: HTMLAnchorElement =
+        fixture.debugElement.nativeElement.querySelector('a');
+      expect(anchor.getAttribute('href')).toBe(EXTERNAL_AUTH_URL);
+      expect(anchor.getAttribute('target')).toBe('_blank');
+    }));
+
+    it('should set _self target for configured file links', waitForAsync(async () => {
+      const fixture: ComponentFixture<TdMarkdownLinksTestEventsComponent> =
+        TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
+      const component: TdMarkdownLinksTestEventsComponent =
+        fixture.debugElement.componentInstance;
+
+      const RAW_LINK =
+        'https://raw.githubusercontent.com/Teradata/covalent/main/';
+      const SUB_DIRECTORY = 'docs/';
+      const CURRENT_MD_FILE = 'GETTING_STARTED.md';
+
+      component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+      component.fileLinkExtensions = ['.ipynb'];
+      component.content = `
+        * [file](https://localhost/examples/notebook.ipynb)
+        * [markdown](README.md)
+      `;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const anchors: HTMLAnchorElement[] =
+        fixture.debugElement.nativeElement.querySelectorAll('a');
+
+      const getAnchorByLabel = (label: string): HTMLAnchorElement =>
+        Array.from(anchors).find(
+          (anchor: HTMLAnchorElement) => anchor.textContent?.trim() === label,
+        ) as HTMLAnchorElement;
+
+      const fileLink = getAnchorByLabel('file');
+      expect(fileLink.getAttribute('href')).toBe(
+        `${RAW_LINK}${SUB_DIRECTORY}https://localhost/examples/notebook.ipynb`,
+      );
+      expect(fileLink.getAttribute('target')).toBe('_self');
+
+      const markdownLink = getAnchorByLabel('markdown');
+      expect(markdownLink.getAttribute('href')).toBe('README.md');
+      expect(markdownLink.getAttribute('target')).toBeNull();
+    }));
+
     it('should generate the proper image urls', waitForAsync(async () => {
       const fixture: ComponentFixture<TdMarkdownLinksTestEventsComponent> =
         TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
@@ -844,11 +968,16 @@ class TdMarkdownAnchorsTestEventsComponent {
 
 @Component({
   template: `
-    <td-markdown [content]="content" [hostedUrl]="hostedUrl"></td-markdown>
+    <td-markdown
+      [content]="content"
+      [hostedUrl]="hostedUrl"
+      [fileLinkExtensions]="fileLinkExtensions"
+    ></td-markdown>
   `,
   imports: [TdMarkdownComponent],
 })
 class TdMarkdownLinksTestEventsComponent {
   hostedUrl!: string;
+  fileLinkExtensions?: string[];
   content!: string;
 }
