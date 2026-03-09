@@ -50,6 +50,7 @@ const appShellTemplate = ({
   centerAppName = false,
   helpOpen = false,
   drawerOpen = false,
+  hideNav = false,
 }) => {
   document.addEventListener(
     'DOMContentLoaded',
@@ -169,6 +170,7 @@ const appShellTemplate = ({
     ${centerAppName ? `centerAppName` : ''}
     ${helpOpen ? `helpOpen` : ''}
     ${drawerOpen ? `drawerOpen` : ''}
+    ${hideNav ? `hideNav` : ''}
     >
 
       <cv-icon-button slot="section-action" icon="arrow_back"></cv-icon-button>
@@ -403,6 +405,7 @@ export default {
     helpOpen: false,
     drawerOpen: false,
     forcedOpen: false,
+    hideNav: false,
   },
   argTypes: {
     navClick: { action: 'clicked' },
