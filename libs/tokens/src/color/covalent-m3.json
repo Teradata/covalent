@@ -3211,11 +3211,6 @@
           "value": "#000000ff",
           "blendMode": "normal"
         },
-        "navy-13": {
-          "type": "color",
-          "value": "#151c2dff",
-          "blendMode": "normal"
-        },
         "navy-98": {
           "type": "color",
           "value": "#f9fbfdff",
@@ -3231,7 +3226,7 @@
         "primary-container": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.digital-blue-30}"
+          "value": "{theme.dark.palettes.digital-blue-35}"
         },
         "on-primary": {
           "description": "",
