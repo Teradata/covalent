@@ -1,0 +1,11 @@
+:host {
+  .mdc-slider__value-indicator {
+    background-color: var(--cv-theme-on-surface);
+    color: var(--cv-theme-on-primary);
+    opacity: 0.74;
+  }
+
+  .mdc-slider__value-indicator::before {
+    border-top-color: var(--cv-theme-on-surface);
+  }
+}
