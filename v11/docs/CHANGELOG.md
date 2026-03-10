@@ -1,3 +1,9 @@
+## [11.14.5](https://github.com/Teradata/covalent/compare/v11.14.4...v11.14.5) (2026-03-10)
+
+### Bug Fixes
+
+- **components slider:** value indicator token fix ([99ce20d](https://github.com/Teradata/covalent/commit/99ce20d54e10a020eaa41903150d8e932b79e414))
+
 ## [11.14.4](https://github.com/Teradata/covalent/compare/v11.14.3...v11.14.4) (2026-03-10)
 
 ### Bug Fixes
