@@ -137,8 +137,18 @@
       padding-right: 24px;
     }
 
+    .cov-drawer--hidden & {
+      margin-left: 0;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
     .cov-help--open & {
       margin-right: var(--cv-help-width, 320px);
+      padding-right: 0;
+    }
+
+    .cov-drawer--hidden.cov-help--open & {
       padding-right: 0;
     }
   }
@@ -286,6 +296,10 @@ nav.navigation {
     --cv-app-shell-navigation-z-index,
     6
   ); // must be greater than --cv-app-shell-user-menu-z-index
+
+  .cov-drawer--hidden & {
+    display: none;
+  }
 
   .toggle-drawer {
     margin: 8px auto;

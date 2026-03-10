@@ -103,6 +103,12 @@ export class CovalentAppShell extends DrawerBase {
   @property({ type: Boolean, reflect: true })
   centerAppName = false;
 
+  /**
+   * Hide the side navigation on all screen sizes
+   */
+  @property({ type: Boolean, reflect: true })
+  hideNav = false;
+
   private hovered = false;
   private hoverTimeout: any | undefined;
   private hoverEntryDuration = 250;
@@ -380,6 +386,7 @@ export class CovalentAppShell extends DrawerBase {
       'cov-drawer--forced-open': this.forcedOpen,
       'cov-drawer--open': this.drawerOpen || this.forcedOpen,
       'cov-drawer--hovered': this.hovered,
+      'cov-drawer--hidden': this.hideNav,
       'cov-help--open': this.helpOpen,
       'cov-help--closed': !this.helpOpen,
       'cov-help--resizing': this._resizing,
@@ -402,36 +409,40 @@ export class CovalentAppShell extends DrawerBase {
       <div part="app-shell" class="app-shell ${classMap(classes)}">
         <span class="header"
           ><cv-top-app-bar-fixed .centerTitle=${this.centerAppName}>
-            <cv-icon-button
-              class="toggle-drawer"
-              @click=${this._handleMenuClick}
-              slot="navigationIcon"
-              icon="menu"
-            ></cv-icon-button>
+            ${!this.hideNav
+              ? html`<cv-icon-button
+                  class="toggle-drawer"
+                  @click=${this._handleMenuClick}
+                  slot="navigationIcon"
+                  icon="menu"
+                ></cv-icon-button>`
+              : nothing}
             <span slot="title">${this.renderAppName()}</span>
             <span slot="actionItems">
               <slot name="mobile-header-action-items"></slot>
             </span>
           </cv-top-app-bar-fixed>
         </span>
-        <nav
-          part="navigation"
-          class="navigation mdc-drawer ${classMap(drawerClasses)}"
-          @mouseenter="${this._handleNavMouseOver}"
-          @mouseleave="${this._handleNavMouseOut}"
-        >
-          <div class="navigation-toolbar">
-            <cv-icon-button
-              @click="${this._handleMenuClick}"
-              class="toggle-drawer"
-              icon="menu"
-            ></cv-icon-button>
-            <slot name="logo"></slot>
-          </div>
-          ${this.renderSection()}
-          <slot name="navigation"></slot>
-        </nav>
-        ${scrim}
+        ${!this.hideNav
+          ? html`<nav
+              part="navigation"
+              class="navigation mdc-drawer ${classMap(drawerClasses)}"
+              @mouseenter="${this._handleNavMouseOver}"
+              @mouseleave="${this._handleNavMouseOut}"
+            >
+              <div class="navigation-toolbar">
+                <cv-icon-button
+                  @click="${this._handleMenuClick}"
+                  class="toggle-drawer"
+                  icon="menu"
+                ></cv-icon-button>
+                <slot name="logo"></slot>
+              </div>
+              ${this.renderSection()}
+              <slot name="navigation"></slot>
+            </nav>`
+          : nothing}
+        ${!this.hideNav ? scrim : nothing}
         <slot name="mini-list"></slot>
         <div part="main-wrapper" class="main mdc-drawer-app-content">
           <div class="main-wrapper">
