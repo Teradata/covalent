@@ -1,3 +1,9 @@
+## [11.14.4](https://github.com/Teradata/covalent/compare/v11.14.3...v11.14.4) (2026-03-10)
+
+### Bug Fixes
+
+- **tokens:** update cv-primary-container reference to new value ([50a9a09](https://github.com/Teradata/covalent/commit/50a9a093854cbd28c3908207f7af27a607876ab8))
+
 ## [11.14.3](https://github.com/Teradata/covalent/compare/v11.14.2...v11.14.3) (2026-03-06)
 
 ### Bug Fixes
