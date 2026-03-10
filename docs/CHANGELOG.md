@@ -1,3 +1,9 @@
+# [11.15.0](https://github.com/Teradata/covalent/compare/v11.14.5...v11.15.0) (2026-03-10)
+
+### Features
+
+- **app-shell:** add hide nav ability to app-shell ([#2684](https://github.com/Teradata/covalent/issues/2684)) ([ce14869](https://github.com/Teradata/covalent/commit/ce14869787671feab55ab1202099a024be351e06))
+
 ## [11.14.5](https://github.com/Teradata/covalent/compare/v11.14.4...v11.14.5) (2026-03-10)
 
 ### Bug Fixes
