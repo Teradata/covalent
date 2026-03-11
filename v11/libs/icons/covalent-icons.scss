@@ -50,6 +50,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-hash_index {
+  &:before {
+    content: $cov-hash_index;
+  }
+}
+.cov-join_index {
+  &:before {
+    content: $cov-join_index;
+  }
+}
+.cov-macro {
+  &:before {
+    content: $cov-macro;
+  }
+}
+.cov-schema {
+  &:before {
+    content: $cov-schema;
+  }
+}
+.cov-terry {
+  &:before {
+    content: $cov-terry;
+  }
+}
 .cov-ai_apps {
   &:before {
     content: $cov-ai_apps;
