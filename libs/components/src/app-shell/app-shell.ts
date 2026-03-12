@@ -408,7 +408,7 @@ export class CovalentAppShell extends DrawerBase {
     return html`
       <div part="app-shell" class="app-shell ${classMap(classes)}">
         <span class="header"
-          ><cv-top-app-bar-fixed .centerTitle=${this.centerAppName}>
+          ><cv-top-app-bar-fixed part="top-app-bar" .centerTitle=${this.centerAppName}>
             ${!this.hideNav
               ? html`<cv-icon-button
                   class="toggle-drawer"
