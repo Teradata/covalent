@@ -408,41 +408,40 @@ export class CovalentAppShell extends DrawerBase {
     return html`
       <div part="app-shell" class="app-shell ${classMap(classes)}">
         <span class="header"
-          ><cv-top-app-bar-fixed .centerTitle=${this.centerAppName}>
-            ${!this.hideNav
-              ? html`<cv-icon-button
-                  class="toggle-drawer"
-                  @click=${this._handleMenuClick}
-                  slot="navigationIcon"
-                  icon="menu"
-                ></cv-icon-button>`
-              : nothing}
+          ><cv-top-app-bar-fixed
+            part="top-app-bar"
+            .centerTitle=${this.centerAppName}
+          >
+            <cv-icon-button
+              class="toggle-drawer"
+              @click=${this._handleMenuClick}
+              slot="navigationIcon"
+              icon="menu"
+            ></cv-icon-button>
             <span slot="title">${this.renderAppName()}</span>
             <span slot="actionItems">
               <slot name="mobile-header-action-items"></slot>
             </span>
           </cv-top-app-bar-fixed>
         </span>
-        ${!this.hideNav
-          ? html`<nav
-              part="navigation"
-              class="navigation mdc-drawer ${classMap(drawerClasses)}"
-              @mouseenter="${this._handleNavMouseOver}"
-              @mouseleave="${this._handleNavMouseOut}"
-            >
-              <div class="navigation-toolbar">
-                <cv-icon-button
-                  @click="${this._handleMenuClick}"
-                  class="toggle-drawer"
-                  icon="menu"
-                ></cv-icon-button>
-                <slot name="logo"></slot>
-              </div>
-              ${this.renderSection()}
-              <slot name="navigation"></slot>
-            </nav>`
-          : nothing}
-        ${!this.hideNav ? scrim : nothing}
+        <nav
+          part="navigation"
+          class="navigation mdc-drawer ${classMap(drawerClasses)}"
+          @mouseenter="${this._handleNavMouseOver}"
+          @mouseleave="${this._handleNavMouseOut}"
+        >
+          <div class="navigation-toolbar">
+            <cv-icon-button
+              @click="${this._handleMenuClick}"
+              class="toggle-drawer"
+              icon="menu"
+            ></cv-icon-button>
+            <slot name="logo"></slot>
+          </div>
+          ${this.renderSection()}
+          <slot name="navigation"></slot>
+        </nav>
+        ${scrim}
         <slot name="mini-list"></slot>
         <div part="main-wrapper" class="main mdc-drawer-app-content">
           <div class="main-wrapper">
