@@ -244,6 +244,10 @@
 
 .header {
   --cv-top-app-bar-title-padding-left: 8px;
+
+  .cov-drawer--hidden & .toggle-drawer {
+    display: none;
+  }
 }
 
 .top-app-bar-title {
