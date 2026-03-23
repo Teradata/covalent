@@ -21,7 +21,7 @@
 
     mat-table {
       --mat-table-row-item-outline-color: var(--cv-theme-outline-variant);
-      --mat-table-background-color: var(--cv-theme-surface-bright);
+      --mat-table-background-color: none;
       --mat-table-header-headline-font: var(
         --cv-typography-caption-font-family
       );
@@ -38,7 +38,7 @@
       }
 
       mat-row.mat-mdc-row:nth-child(even) {
-        background-color: var(--cv-theme-surface);
+        background-color: var(--cv-theme-on-surface-4);
       }
     }
   }
