@@ -1,3 +1,9 @@
+## [11.16.1](https://github.com/Teradata/covalent/compare/v11.16.0...v11.16.1) (2026-03-13)
+
+### Bug Fixes
+
+- **app-shell:** add a part property to the top-app-bar in app-shell ([#2688](https://github.com/Teradata/covalent/issues/2688)) ([b41b554](https://github.com/Teradata/covalent/commit/b41b5540911192e8421649415983ccb71be441c6))
+
 # [11.16.0](https://github.com/Teradata/covalent/compare/v11.15.0...v11.16.0) (2026-03-11)
 
 ### Features
