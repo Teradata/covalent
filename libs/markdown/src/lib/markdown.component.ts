@@ -169,6 +169,81 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
   return html;
 }
 
+function normalizeVideoSrcs(html: string, currentHref: string): string {
+  if (currentHref) {
+    const document: Document = new DOMParser().parseFromString(
+      html,
+      'text/html',
+    );
+
+    // Normalize video elements with src attribute
+    document
+      .querySelectorAll<HTMLVideoElement>('video[src]')
+      .forEach((video: HTMLVideoElement) => {
+        const src = video.getAttribute('src') ?? '';
+        try {
+          /* tslint:disable-next-line:no-unused-expression */
+          new URL(src);
+          if (isGithubHref(src)) {
+            video.src = rawGithubHref(src);
+          }
+        } catch {
+          video.src = generateHref(
+            isGithubHref(currentHref)
+              ? rawGithubHref(currentHref)
+              : currentHref,
+            src,
+          );
+        }
+      });
+
+    // Normalize video poster attributes
+    document
+      .querySelectorAll<HTMLVideoElement>('video[poster]')
+      .forEach((video: HTMLVideoElement) => {
+        const poster = video.getAttribute('poster') ?? '';
+        try {
+          /* tslint:disable-next-line:no-unused-expression */
+          new URL(poster);
+          if (isGithubHref(poster)) {
+            video.poster = rawGithubHref(poster);
+          }
+        } catch {
+          video.poster = generateHref(
+            isGithubHref(currentHref)
+              ? rawGithubHref(currentHref)
+              : currentHref,
+            poster,
+          );
+        }
+      });
+
+    // Normalize source tags inside video elements
+    document
+      .querySelectorAll<HTMLSourceElement>('video source[src]')
+      .forEach((source: HTMLSourceElement) => {
+        const src = source.getAttribute('src') ?? '';
+        try {
+          /* tslint:disable-next-line:no-unused-expression */
+          new URL(src);
+          if (isGithubHref(src)) {
+            source.src = rawGithubHref(src);
+          }
+        } catch {
+          source.src = generateHref(
+            isGithubHref(currentHref)
+              ? rawGithubHref(currentHref)
+              : currentHref,
+            src,
+          );
+        }
+      });
+
+    return new XMLSerializer().serializeToString(document);
+  }
+  return html;
+}
+
 function addIdsToHeadings(html: string): string {
   if (html) {
     const document: Document = new DOMParser().parseFromString(
@@ -500,8 +575,12 @@ export class TdMarkdownComponent
       htmlWithAbsoluteHrefs,
       this._hostedUrl,
     );
-    const htmlWithHeadingIds: string = addIdsToHeadings(
+    const htmlWithAbsoluteVideoSrcs: string = normalizeVideoSrcs(
       htmlWithAbsoluteImgSrcs,
+      this._hostedUrl,
+    );
+    const htmlWithHeadingIds: string = addIdsToHeadings(
+      htmlWithAbsoluteVideoSrcs,
     );
     const htmlWithVideos: SafeHtml = renderVideoElements(htmlWithHeadingIds);
     this._renderer.setProperty(div, 'innerHTML', htmlWithVideos);
