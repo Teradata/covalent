@@ -1,4 +1,4 @@
-import { css, unsafeCSS } from 'lit';
+import { css, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from '@material/mwc-dialog/mwc-dialog.css';
 import { CovalentDialog } from '../dialog/dialog';
@@ -29,6 +29,20 @@ export class CovalentSideSheet extends CovalentDialog {
 
   @property({ type: Boolean, reflect: true })
   noPadding = false;
+
+  @property({ type: Number })
+  width = 800;
+
+  willUpdate(changedProperties: PropertyValues): void {
+    super.willUpdate(changedProperties);
+    if (changedProperties.has('width')) {
+      if (this.width !== 800) {
+        this.style.setProperty('--cv-side-sheet-width', `${this.width}px`);
+      } else {
+        this.style.removeProperty('--cv-side-sheet-width');
+      }
+    }
+  }
 
   constructor() {
     super();

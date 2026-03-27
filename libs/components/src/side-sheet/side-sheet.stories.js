@@ -6,7 +6,13 @@ import '../data-table/data-table.stories.scss';
 
 export default {
   title: 'Components/Side sheet',
-  argTypes: { onClick: { action: 'clicked' } },
+  argTypes: {
+    onClick: { action: 'clicked' },
+    width: { control: { type: 'number' } },
+  },
+  args: {
+    width: 800,
+  },
   parameters: {
     actions: {
       handles: ['click cv-button'],
@@ -15,7 +21,7 @@ export default {
   tags: ['autodocs'],
 };
 
-export const Basic = () => {
+export const Basic = ({ width }) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -30,12 +36,12 @@ export const Basic = () => {
   );
   return `
         <cv-button raised>Open side sheet</cv-button>
-        <cv-side-sheet heading="Sample side sheet">
+        <cv-side-sheet heading="Sample side sheet" width="${width}">
         </cv-side-sheet>
     `;
 };
 
-export const Multiple = () => {
+export const Multiple = ({ width }) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -59,15 +65,15 @@ export const Multiple = () => {
   );
   return `
         <cv-button id="parentTarget" raised>Open side sheet</cv-button>
-        <cv-side-sheet id="parentSideSheet" heading="Sample side sheet">
+        <cv-side-sheet id="parentSideSheet" heading="Sample side sheet" width="${width}">
             <cv-button id="childTarget" raised>Open child</cv-button>
         </cv-side-sheet>
-        <cv-side-sheet id="childSideSheet" heading="Child side sheet" >
+        <cv-side-sheet id="childSideSheet" heading="Child side sheet" width="${width}">
         </cv-side-sheet>
     `;
 };
 
-export const StatusHeader = () => {
+export const StatusHeader = ({ width }) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -82,13 +88,8 @@ export const StatusHeader = () => {
     { once: true },
   );
   return `
-        <style>
-            cv-side-sheet {
-                --cv-side-sheet-width: 800px;
-            }
-        </style>
         <cv-button raised>Open side sheet</cv-button>
-        <cv-side-sheet noPadding>
+        <cv-side-sheet noPadding width="${width}">
           ${ActiveStatusHeader({
             state: 'active',
             title: 'Example status from a side sheet',
