@@ -1,0 +1,27 @@
+{
+  "name": "@covalent/base-styles",
+  "version": "0.0.0-COVALENT",
+  "description": "Base CSS styles and utility classes for Covalent Design System",
+  "main": "./covalent.css",
+  "exports": {
+    ".": {
+      "style": "./covalent.css",
+      "sass": "./classes.scss"
+    },
+    "./covalent.css": "./covalent.css",
+    "./covalent.min.css": "./covalent.min.css",
+    "./elements.css": "./elements.css",
+    "./elements.min.css": "./elements.min.css",
+    "./themes/light.css": "./themes/light.css",
+    "./themes/dark.css": "./themes/dark.css"
+  },
+  "peerDependencies": {
+    "@covalent/tokens": "0.0.0-COVALENT"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "author": "Teradata UX"
+}

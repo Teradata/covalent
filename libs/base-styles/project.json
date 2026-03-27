@@ -1,0 +1,43 @@
+{
+  "name": "base-styles",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/base-styles/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/libs/base-styles"],
+      "dependsOn": ["^build"],
+      "options": {
+        "cwd": "{workspaceRoot}",
+        "commands": [
+          "mkdir -p dist/libs/base-styles/themes",
+          "mkdir -p libs/base-styles/public/css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/base-styles/src/classes.scss dist/libs/base-styles/covalent.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/base-styles/src/classes.scss dist/libs/base-styles/covalent.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/base-styles/src/elements.scss dist/libs/base-styles/elements.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/base-styles/src/elements.scss dist/libs/base-styles/elements.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/base-styles/src/themes/light.scss dist/libs/base-styles/themes/light.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/base-styles/src/themes/dark.scss dist/libs/base-styles/themes/dark.css",
+          "cp dist/libs/base-styles/covalent.css libs/base-styles/public/css/",
+          "cp dist/libs/base-styles/elements.css libs/base-styles/public/css/",
+          "cp dist/libs/base-styles/themes/light.css libs/base-styles/public/css/",
+          "cp dist/libs/base-styles/themes/dark.css libs/base-styles/public/css/",
+          "cp libs/base-styles/src/*.scss dist/libs/base-styles/",
+          "cp libs/base-styles/src/_*.scss dist/libs/base-styles/",
+          "cp libs/base-styles/src/themes/*.scss dist/libs/base-styles/themes/",
+          "cp libs/base-styles/package.json dist/libs/base-styles/",
+          "cp libs/base-styles/README.md dist/libs/base-styles/"
+        ],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'No linting configured for SCSS-only library'"
+      }
+    }
+  },
+  "tags": ["type:library", "scope:styles"]
+}

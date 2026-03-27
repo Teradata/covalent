@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covalent Base Styles - Classless Demo</title>
+
+    <!-- Import ONLY theme and classless styles (no utility classes) -->
+    <link rel="stylesheet" href="css/light.css" id="theme-stylesheet" />
+    <link rel="stylesheet" href="css/elements.css" />
+
+    <style>
+      body {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--cv-theme-primary);
+        color: var(--cv-theme-on-primary);
+        border: none;
+        border-radius: 24px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 500;
+        transition: background 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .theme-toggle:hover {
+        opacity: 0.9;
+      }
+
+      .mode-toggle {
+        position: fixed;
+        top: 3.5rem;
+        right: 1rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--cv-theme-secondary);
+        color: var(--cv-theme-on-secondary);
+        border: none;
+        border-radius: 24px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 500;
+        transition: background 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .mode-toggle:hover {
+        opacity: 0.9;
+      }
+
+      .highlight-box {
+        background: var(--cv-theme-surface-variant);
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid var(--cv-theme-outline-variant);
+        margin: 2rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      🌓 Toggle Theme
+    </button>
+    <a class="mode-toggle" href="index.html">🎨 Switch to Utility Classes</a>
+
+    <header>
+      <h1>⚡ Classless Mode Demo</h1>
+      <p>
+        This page uses <strong>zero classes</strong>! All HTML elements are
+        automatically styled using <code>elements.css</code>. Perfect for
+        Markdown content, documentation, and rapid prototyping.
+      </p>
+      <p>
+        <small>
+          Notice: No <code>class="cv-*"</code> attributes anywhere in the HTML
+          below.
+        </small>
+      </p>
+    </header>
+
+    <hr />
+
+    <section>
+      <h2>Typography Scale</h2>
+      <p>All heading levels are automatically styled with Covalent tokens:</p>
+
+      <h1>Heading 1 - Display Large (96px)</h1>
+      <h2>Heading 2 - Display Medium (60px)</h2>
+      <h3>Heading 3 - Display Small (48px)</h3>
+      <h4>Heading 4 - Large Title (34px)</h4>
+      <h5>Heading 5 - Medium Title (24px)</h5>
+      <h6>Heading 6 - Small Title (20px)</h6>
+
+      <p>
+        This is a regular paragraph using <strong>body-1</strong> typography
+        tokens. It includes <strong>bold text</strong>, <em>italic text</em>,
+        and <a href="#">links</a> that are automatically styled with the primary
+        color.
+      </p>
+
+      <p>
+        <small>
+          This is small text using the caption typography token. Perfect for
+          helper text, footnotes, or annotations.
+        </small>
+      </p>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Lists</h2>
+
+      <h3>Unordered List</h3>
+      <ul>
+        <li>First item in the list</li>
+        <li>
+          Second item with nested content
+          <ul>
+            <li>Nested item level 2</li>
+            <li>
+              Another nested item
+              <ul>
+                <li>Nested item level 3</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Third top-level item</li>
+      </ul>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>First step in the process</li>
+        <li>
+          Second step with sub-steps
+          <ol>
+            <li>Sub-step 2.1</li>
+            <li>
+              Sub-step 2.2
+              <ol>
+                <li>Detailed instruction</li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li>Third step</li>
+        <li>Final step</li>
+      </ol>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Code Examples</h2>
+
+      <h3>Inline Code</h3>
+      <p>
+        Use inline code for short snippets:
+        <code>const greeting = 'Hello, World!';</code> or variable names like
+        <code>userName</code> within text.
+      </p>
+
+      <h3>Code Blocks</h3>
+      <p>For larger code samples, use the <code>&lt;pre&gt;</code> tag:</p>
+
+      <pre><code>// TypeScript example
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+function greetUser(user: User): string {
+  return `Hello, ${user.name}!`;
+}
+
+const currentUser: User = {
+  id: 1,
+  name: 'Jane Doe',
+  email: 'jane@example.com'
+};
+
+console.log(greetUser(currentUser));</code></pre>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Links & Navigation</h2>
+      <p>
+        All <code>&lt;a&gt;</code> elements are automatically styled with the
+        primary brand color and hover states:
+      </p>
+      <p>
+        <a href="https://teradata.github.io/covalent/"
+          >Visit Covalent Documentation</a
+        >
+      </p>
+      <p>
+        <a href="https://github.com/teradata/covalent">View Source on GitHub</a>
+      </p>
+      <p>
+        <a href="https://www.npmjs.com/package/@covalent/base-styles"
+          >npm Package</a
+        >
+      </p>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Markdown Example</h2>
+      <p>This is how Markdown would be rendered with classless styles:</p>
+
+      <div class="highlight-box">
+        <h3>Sample Blog Post</h3>
+
+        <p>
+          <small>Published on March 27, 2026 by Jane Doe</small>
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. This
+          paragraph demonstrates how <strong>body text</strong> looks without
+          any classes. You can include <a href="#">links</a>, <em>emphasis</em>,
+          and <code>code snippets</code> naturally.
+        </p>
+
+        <h4>Key Points</h4>
+        <ul>
+          <li>No classes needed</li>
+          <li>Perfect for Markdown</li>
+          <li>Semantic HTML</li>
+          <li>Accessible by default</li>
+        </ul>
+
+        <h4>Installation Steps</h4>
+        <ol>
+          <li>Install the package</li>
+          <li>Import the theme</li>
+          <li>Import elements.css</li>
+          <li>Write HTML - no classes!</li>
+        </ol>
+
+        <p>Check the <a href="#">documentation</a> for more details.</p>
+      </div>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>When to Use Classless Mode</h2>
+
+      <h3>✅ Great For:</h3>
+      <ul>
+        <li>
+          <strong>Documentation sites</strong> - Markdown content automatically
+          styled
+        </li>
+        <li><strong>Blog posts</strong> - Focus on content, not classes</li>
+        <li>
+          <strong>Prototyping</strong> - Rapid HTML without class overhead
+        </li>
+        <li><strong>Static content</strong> - Pages with simple structure</li>
+        <li><strong>Accessibility</strong> - Encourages semantic HTML</li>
+      </ul>
+
+      <h3>⚠️ Use Utility Classes Instead For:</h3>
+      <ul>
+        <li>
+          <strong>Complex UIs</strong> - Need different styles for same elements
+        </li>
+        <li>
+          <strong>Component libraries</strong> - Require fine-grained control
+        </li>
+        <li>
+          <strong>Design systems</strong> - Multiple variations of elements
+        </li>
+        <li>
+          <strong>Specific overrides</strong> - Custom styling per instance
+        </li>
+      </ul>
+
+      <div class="highlight-box">
+        <h4>💡 Pro Tip: Mix Both!</h4>
+        <p>
+          You can use <code>elements.css</code> as a base and import
+          <code>covalent.css</code> for specific overrides when needed.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <footer>
+      <p>Built with 💙 by the Teradata Covalent team. Licensed under MIT.</p>
+      <p>
+        <small>
+          <a href="https://teradata.github.io/covalent/">Documentation</a> ·
+          <a href="https://github.com/teradata/covalent">GitHub</a> ·
+          <a href="https://www.npmjs.com/package/@covalent/base-styles">npm</a>
+        </small>
+      </p>
+    </footer>
+
+    <script>
+      function toggleTheme() {
+        const themeLink = document.getElementById('theme-stylesheet');
+        const currentTheme = themeLink.getAttribute('href');
+
+        if (currentTheme.includes('light')) {
+          themeLink.setAttribute('href', 'css/dark.css');
+        } else {
+          themeLink.setAttribute('href', 'css/light.css');
+        }
+      }
+    </script>
+  </body>
+</html>
