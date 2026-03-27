@@ -1,3 +1,10 @@
+## [11.16.2](https://github.com/Teradata/covalent/compare/v11.16.1...v11.16.2) (2026-03-23)
+
+### Bug Fixes
+
+- **flavored markdown:** update table tokens ([579dc1b](https://github.com/Teradata/covalent/commit/579dc1bae8ee880f21b4109d24efcc8cd95b8816))
+- **flavored markdown:** update table tokens ([fc34516](https://github.com/Teradata/covalent/commit/fc345163695cf31fdc564dafc921ba52ed423148))
+
 ## [11.16.1](https://github.com/Teradata/covalent/compare/v11.16.0...v11.16.1) (2026-03-13)
 
 ### Bug Fixes
