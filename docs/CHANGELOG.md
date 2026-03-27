@@ -1,3 +1,9 @@
+## [11.16.3](https://github.com/Teradata/covalent/compare/v11.16.2...v11.16.3) (2026-03-27)
+
+### Bug Fixes
+
+- **side-sheet:** add background, add width prop ([195cb74](https://github.com/Teradata/covalent/commit/195cb748bff41ad6c19e3692a064feda0fd1b8dd))
+
 ## [11.16.2](https://github.com/Teradata/covalent/compare/v11.16.1...v11.16.2) (2026-03-23)
 
 ### Bug Fixes
