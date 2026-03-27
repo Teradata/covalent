@@ -5,14 +5,24 @@ import '../icon-button/icon-button';
 export default {
   title: 'Components/Snackbar',
   args: {
+    open: true,
     stacked: false,
     leading: false,
-    label: "Can't send photo. Retry in 5 seconds.",
+    closeOnEscape: false,
+    timeoutMs: '5000',
+    labelText: "Can't send photo. Retry in 5 seconds.",
   },
   tags: ['autodocs'],
 };
 
-const Template = ({ label, leading, stacked }) => {
+const renderSnackbar = ({
+  open,
+  labelText,
+  leading,
+  stacked,
+  closeOnEscape,
+  timeoutMs,
+}) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
@@ -30,14 +40,18 @@ const Template = ({ label, leading, stacked }) => {
     <cv-button class="show-snackbar-button">Toggle snackbar</cv-button>
     <cv-snackbar
        class="my-snackbar"
-       labelText="${label}"
+       labelText="${labelText}"
        ${leading ? 'leading' : ''}
        ${stacked ? 'stacked' : ''}
-       open>
+       ${closeOnEscape ? 'closeOnEscape' : ''}
+       ${timeoutMs ? `timeoutMs="${timeoutMs}"` : ''}
+       ${open ? 'open' : ''}>
       <cv-button slot="action">Retry</cv-button>
       <cv-icon-button icon="close" slot="dismiss"></cv-icon-button>
     </cv-snackbar>`;
 };
 
-export const Basic = Template.bind({});
-Basic.args = {};
+export const Basic = {
+  render: renderSnackbar,
+  args: {},
+};

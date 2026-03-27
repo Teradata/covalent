@@ -9,15 +9,25 @@ export default {
     layout: 'fullscreen',
   },
   argTypes: {
+    statusText: {
+      control: { type: 'text' },
+    },
+    statusHelper: {
+      control: { type: 'text' },
+    },
+    titleText: {
+      control: { type: 'text' },
+    },
     state: {
-      options: ['active', 'caution', 'error', 'positive', 'neutral'],
+      options: ['active', 'caution', 'error', 'positive', 'neutral', 'pending'],
       control: { type: 'select' },
     },
   },
   args: {
     state: 'neutral',
-    title: 'Item details',
-    status: 'Status',
+    titleText: 'Item details',
+    statusText: 'Status',
+    statusHelper: 'secondary text',
     icon: 'Status',
   },
   tags: ['autodocs'],
@@ -33,14 +43,15 @@ const renderIcon = (state, icon) => {
   }
 };
 
-const HeaderWithTabs = ({
+const renderStatusHeader = ({
   state = 'neutral',
-  status = 'status',
-  title = 'title',
+  statusText = 'status',
+  statusHelper = 'secondary text',
+  titleText = 'title',
   icon,
 }) => {
   return `
-    <cv-status-header state="${state}" statusText="${status}" statusHelper="secondary text" titleText="${title}">
+    <cv-status-header state="${state}" statusText="${statusText}" statusHelper="${statusHelper}" titleText="${titleText}">
       ${renderIcon(state, icon)}
 
       <cv-icon-button slot="status-header-actions" icon="close" dialogAction="close" ></cv-icon-button>
@@ -74,42 +85,59 @@ const HeaderWithTabs = ({
     </cv-status-header>`;
 };
 
-export const Active = HeaderWithTabs.bind({});
-Active.args = {
-  state: 'active',
-  status: 'Running',
-  title: 'Active item details',
+export const Active = {
+  render: renderStatusHeader,
+  args: {
+    state: 'active',
+    statusText: 'Running',
+    titleText: 'Active item details',
+  },
 };
-export const Caution = HeaderWithTabs.bind({});
-Caution.args = {
-  state: 'caution',
-  icon: 'warning',
-  status: 'Caution',
-  title: 'Caution item details',
+
+export const Caution = {
+  render: renderStatusHeader,
+  args: {
+    state: 'caution',
+    icon: 'warning',
+    statusText: 'Caution',
+    titleText: 'Caution item details',
+  },
 };
-export const Error = HeaderWithTabs.bind({});
-Error.args = {
-  state: 'error',
-  icon: 'error',
-  status: 'Error',
-  title: 'Error item details',
+
+export const Error = {
+  render: renderStatusHeader,
+  args: {
+    state: 'error',
+    icon: 'error',
+    statusText: 'Error',
+    titleText: 'Error item details',
+  },
 };
-export const Positive = HeaderWithTabs.bind({});
-Positive.args = {
-  state: 'positive',
-  icon: 'done',
-  status: 'Positive',
-  title: 'Positive item details',
+
+export const Positive = {
+  render: renderStatusHeader,
+  args: {
+    state: 'positive',
+    icon: 'done',
+    statusText: 'Positive',
+    titleText: 'Positive item details',
+  },
 };
-export const Paused = HeaderWithTabs.bind({});
-Paused.args = {
-  icon: 'pause',
-  status: 'Paused',
-  title: 'Paused item details',
+
+export const Paused = {
+  render: renderStatusHeader,
+  args: {
+    icon: 'pause',
+    statusText: 'Paused',
+    titleText: 'Paused item details',
+  },
 };
-export const Pending = HeaderWithTabs.bind({});
-Pending.args = {
-  state: 'pending',
-  status: 'Pending',
-  title: 'Pending item details',
+
+export const Pending = {
+  render: renderStatusHeader,
+  args: {
+    state: 'pending',
+    statusText: 'Pending',
+    titleText: 'Pending item details',
+  },
 };

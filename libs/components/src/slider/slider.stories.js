@@ -1,6 +1,36 @@
 import './slider';
 import './slider-range';
 
+const createSliderElement = (tagName, { discrete, disabled, markers }) => {
+  const slider = document.createElement(tagName);
+  slider.discrete = discrete;
+  slider.disabled = disabled;
+  slider.markers = markers;
+  slider.max = 50;
+  slider.min = 5;
+
+  if (markers) {
+    slider.step = 5;
+  }
+
+  return slider;
+};
+
+const renderSingleSlider = ({ value = 10, ...args }) => {
+  const slider = createSliderElement('cv-slider', args);
+  slider.value = value;
+
+  return slider;
+};
+
+const renderRangeSlider = ({ value = 10, ...args }) => {
+  const slider = createSliderElement('cv-slider-range', args);
+  slider.valueStart = value;
+  slider.valueEnd = value + 10;
+
+  return slider;
+};
+
 export default {
   title: 'Components/Slider',
   parameters: {
@@ -12,44 +42,14 @@ export default {
     markers: false,
   },
   tags: ['autodocs'],
+  render: renderSingleSlider,
 };
 
-const SingleTemplate = ({ discrete, disabled, markers, value = 10 }) => {
-  const progressBar = document.createElement('cv-slider');
-  progressBar.discrete = discrete;
-  progressBar.disabled = disabled;
-  progressBar.markers = markers;
-  progressBar.value = value;
-  progressBar.max = 50;
-  progressBar.min = 5;
-
-  if (markers) {
-    progressBar.step = 5;
-  }
-
-  return progressBar;
+export const Basic = {
+  args: {},
 };
 
-const RangeTemplate = ({ discrete, disabled, markers, value = 10 }) => {
-  const progressBar = document.createElement('cv-slider-range');
-  progressBar.discrete = discrete;
-  progressBar.disabled = disabled;
-  progressBar.markers = markers;
-  progressBar.valueStart = value;
-  progressBar.valueEnd = value + 10;
-
-  progressBar.max = 50;
-  progressBar.min = 5;
-
-  if (markers) {
-    progressBar.step = 5;
-  }
-
-  return progressBar;
+export const Range = {
+  args: {},
+  render: renderRangeSlider,
 };
-
-export const Basic = SingleTemplate.bind({});
-Basic.args = {};
-
-export const Range = RangeTemplate.bind({});
-Range.args = {};

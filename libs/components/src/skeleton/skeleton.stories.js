@@ -7,47 +7,47 @@ import tableProgressContent from '../../stories/demos/table-progress-indicator.c
 
 import 'skeleton-elements/css';
 
-export default {
-  title: 'Components/Skeleton',
-  tags: ['autodocs'],
-};
-
-const skeletonClsName = 'skeleton-text';
-const skeletonEffect = 'skeleton-effect-fade';
-
-export const DataTable = () => {
-  const container = document.createElement('div');
-  container.innerHTML = tableProgressContent;
-  const tableCell = container.getElementsByClassName('mdc-data-table__cell');
-  Array.from(tableCell).forEach((cell) => {
-    cell.classList.add(skeletonClsName);
-    cell.classList.add(skeletonEffect);
+const applySkeletonClasses = (elements) => {
+  Array.from(elements).forEach((element) => {
+    element.classList.add(skeletonClsName);
+    element.classList.add(skeletonEffect);
   });
+};
+
+const createSkeletonContainer = (content, applySkeleton) => {
+  const container = document.createElement('div');
+  container.innerHTML = content;
+  applySkeleton?.(container);
 
   return container;
 };
 
-export const Typography = () => {
-  const container = document.createElement('div');
-  container.classList.add(skeletonClsName);
-  container.classList.add(skeletonEffect);
-  container.innerHTML = `${Basic()}`;
-
-  return container;
+const renderSkeletonContent = (content) => {
+  return createSkeletonContainer(content, (container) => {
+    container.classList.add(skeletonClsName);
+    container.classList.add(skeletonEffect);
+  });
 };
 
-export const Content = () => {
-  const container = document.createElement('div');
-  container.classList.add(skeletonClsName);
-  container.classList.add(skeletonEffect);
-  container.innerHTML = loremIpsumContent;
-
-  return container;
+const renderDataTable = () => {
+  return createSkeletonContainer(tableProgressContent, (container) => {
+    applySkeletonClasses(
+      container.getElementsByClassName('mdc-data-table__cell'),
+    );
+  });
 };
 
-export const Checkbox = ({ label = 'Bananas', indeterminate }) => {
-  const container = document.createElement('div');
-  container.innerHTML = `
+const renderTypography = () => {
+  return renderSkeletonContent(`${Basic()}`);
+};
+
+const renderContent = () => {
+  return renderSkeletonContent(loremIpsumContent);
+};
+
+const renderCheckbox = ({ label = 'Bananas', indeterminate }) => {
+  const container = createSkeletonContainer(
+    `
       <style>
           cv-formfield {
               display: block;
@@ -66,13 +66,45 @@ export const Checkbox = ({ label = 'Bananas', indeterminate }) => {
       
       <cv-formfield label="${label}">
           <cv-checkbox class="child" checked></cv-checkbox>
-      </cv-formfield>`;
-
-  const labels = container.getElementsByTagName('cv-formfield');
-  Array.from(labels).forEach((label) => {
-    label.classList.add(skeletonClsName);
-    label.classList.add(skeletonEffect);
-  });
+      </cv-formfield>`,
+    (checkboxContainer) => {
+      applySkeletonClasses(
+        checkboxContainer.getElementsByTagName('cv-formfield'),
+      );
+    },
+  );
 
   return container;
+};
+
+export default {
+  title: 'Components/Skeleton',
+  argTypes: {
+    label: { control: 'text' },
+    indeterminate: { control: 'boolean' },
+  },
+  tags: ['autodocs'],
+};
+
+const skeletonClsName = 'skeleton-text';
+const skeletonEffect = 'skeleton-effect-fade';
+
+export const DataTable = {
+  render: renderDataTable,
+};
+
+export const Typography = {
+  render: renderTypography,
+};
+
+export const Content = {
+  render: renderContent,
+};
+
+export const Checkbox = {
+  render: renderCheckbox,
+  args: {
+    label: 'Bananas',
+    indeterminate: false,
+  },
 };
