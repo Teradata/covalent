@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covalent Base Styles - Complete Demo</title>
+
+    <!-- Import Base Styles from compiled CSS -->
+    <link rel="stylesheet" href="css/light.css" id="theme-stylesheet" />
+    <link rel="stylesheet" href="css/covalent.css" />
+
+    <style>
+      .container {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+      .demo-section {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--cv-theme-outline-variant);
+      }
+      .demo-section:last-child {
+        border-bottom: none;
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--cv-theme-primary);
+        color: var(--cv-theme-on-primary);
+        border: none;
+        border-radius: 24px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 500;
+        transition: background 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .theme-toggle:hover {
+        opacity: 0.9;
+      }
+
+      .mode-toggle {
+        position: fixed;
+        top: 3.5rem;
+        right: 1rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--cv-theme-secondary);
+        color: var(--cv-theme-on-secondary);
+        border: none;
+        border-radius: 24px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 500;
+        transition: background 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .mode-toggle:hover {
+        opacity: 0.9;
+      }
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 1.5rem;
+      }
+      .mode-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--cv-theme-tertiary);
+        color: var(--cv-theme-on-tertiary);
+        border-radius: 12px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-left: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      🌓 Toggle Theme
+    </button>
+    <a class="mode-toggle" href="classless.html">⚡ Switch to Classless</a>
+
+    <div class="container">
+      <header class="demo-section">
+        <h1 class="cv-headline-1">🎨 Covalent Base Styles</h1>
+        <span class="mode-badge" id="mode-indicator">Utility Classes Mode</span>
+        <p class="cv-body-1">
+          Complete utility classes for typography, code, links, and lists using
+          <a href="https://teradata.github.io/covalent/" class="cv-link"
+            >Covalent Design System</a
+          >
+          tokens.
+        </p>
+        <p class="cv-body-2">
+          Click "Switch to Classless" above or
+          <a href="classless.html" class="cv-link"
+            >view the pure classless demo</a
+          >
+          to see automatic styling without classes!
+        </p>
+      </header>
+
+      <!-- HEADINGS -->
+      <section class="demo-section">
+        <h2 class="cv-headline-2">Headings (H1-H6)</h2>
+        <p class="cv-body-1">
+          Complete heading scale from H1 to H6 using Inter font family.
+        </p>
+
+        <div style="margin-top: 2rem">
+          <h1 class="cv-headline-1">Headline 1 (96px) - Display Large</h1>
+          <h2 class="cv-headline-2">Headline 2 (60px) - Display Medium</h2>
+          <h3 class="cv-headline-3">Headline 3 (48px) - Display Small</h3>
+          <h4 class="cv-headline-4">Headline 4 (34px) - Large Title</h4>
+          <h5 class="cv-headline-5">Headline 5 (24px) - Medium Title</h5>
+          <h6 class="cv-headline-6">Headline 6 (20px) - Small Title</h6>
+        </div>
+      </section>
+
+      <!-- PARAGRAPHS -->
+      <section class="demo-section">
+        <h2 class="cv-headline-2">Paragraphs & Text</h2>
+        <p class="cv-body-1">
+          Multiple text styles for different use cases: subtitles, body text,
+          captions, and button text.
+        </p>
+
+        <div class="demo-grid">
+          <div>
+            <h3 class="cv-headline-4">Subtitles</h3>
+            <p class="cv-subtitle-1">
+              Subtitle 1 (16px/500) - Used for section introductions or
+              emphasized content.
+            </p>
+            <p class="cv-subtitle-2">
+              Subtitle 2 (14px/500) - Smaller subtitle for less prominent
+              content.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="cv-headline-4">Body Text</h3>
+            <p class="cv-body-1">
+              Body 1 (16px) - Primary body text for optimal readability in
+              paragraphs.
+            </p>
+            <p class="cv-body-2">
+              Body 2 (14px) - Secondary body text for less prominent
+              information.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="cv-headline-4">Other Styles</h3>
+            <p class="cv-caption">
+              Caption (12px) - Small helper text for labels and annotations.
+            </p>
+            <p class="cv-button-text">
+              Button Text (14px) - Uppercase text for buttons and actions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTS -->
+      <section class="demo-section">
+        <h2 class="cv-headline-2">Lists</h2>
+        <p class="cv-body-1">
+          Styled unordered and ordered lists with support for nesting.
+        </p>
+
+        <div class="demo-grid">
+          <div>
+            <h3 class="cv-headline-4">Unordered List</h3>
+            <ul class="cv-list-unordered">
+              <li>First item in the list</li>
+              <li>
+                Second item with more text
+                <ul>
+                  <li>Nested item level 2</li>
+                  <li>
+                    Another nested item
+                    <ul>
+                      <li>Nested item level 3</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>Third top-level item</li>
+              <li>Fourth item completes the list</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="cv-headline-4">Ordered List</h3>
+            <ol class="cv-list-ordered">
+              <li>First step in the process</li>
+              <li>
+                Second step with details
+                <ol>
+                  <li>Sub-step 2.1</li>
+                  <li>
+                    Sub-step 2.2
+                    <ol>
+                      <li>Detailed instruction</li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>Third step to completion</li>
+              <li>Final step</li>
+            </ol>
+          </div>
+        </div>
+
+        <h3 class="cv-headline-4">Dense List</h3>
+        <p class="cv-body-2">Use dense variant for compact layouts:</p>
+        <ul class="cv-list-unordered cv-list-dense">
+          <li>Compact item 1</li>
+          <li>Compact item 2</li>
+          <li>Compact item 3</li>
+        </ul>
+      </section>
+
+      <!-- CODE -->
+      <section class="demo-section">
+        <h2 class="cv-headline-2">Code Styling</h2>
+        <p class="cv-body-1">
+          Code can be displayed inline or as blocks, both using Roboto Mono.
+        </p>
+
+        <h3 class="cv-headline-4">Inline Code</h3>
+        <p class="cv-body-1">
+          Use inline code for short snippets:
+          <code class="cv-code">const greeting = 'Hello, World!';</code> or
+          variable names like <code class="cv-code">userName</code> within text.
+        </p>
+
+        <h3 class="cv-headline-4">Code Blocks</h3>
+        <pre class="cv-code-block">
+// TypeScript example with types
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+function greetUser(user: User): string {
+  return `Hello, ${user.name}!`;
+}
+
+const currentUser: User = {
+  id: 1,
+  name: 'Jane Doe',
+  email: 'jane@example.com'
+};
+
+console.log(greetUser(currentUser));</pre
+        >
+      </section>
+
+      <!-- LINKS -->
+      <section class="demo-section">
+        <h2 class="cv-headline-2">Links & Navigation</h2>
+        <p class="cv-body-1">
+          Links use the primary color with hover states for better UX.
+        </p>
+
+        <div style="margin-top: 1rem">
+          <p class="cv-body-1">
+            <a href="https://teradata.github.io/covalent/" class="cv-link"
+              >Visit Covalent Documentation</a
+            >
+          </p>
+          <p class="cv-body-1">
+            <a href="https://github.com/teradata/covalent" class="cv-link"
+              >View Source on GitHub</a
+            >
+          </p>
+          <p class="cv-body-1">
+            <a
+              href="https://www.npmjs.com/package/@covalent/foundations"
+              class="cv-link"
+              >npm Package</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- GETTING STARTED -->
+      <section class="demo-section">
+        <h2 class="cv-headline-2">Getting Started</h2>
+        <p class="cv-body-1">Choose your preferred mode:</p>
+
+        <h3 class="cv-headline-4">
+          Option 1: Utility Classes (What you're seeing now)
+        </h3>
+        <p class="cv-body-2">Use explicit classes for full control:</p>
+        <pre class="cv-code-block">
+&lt;!-- Include theme + utility classes --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/themes/light.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/covalent.css"&gt;
+
+&lt;h1 class="cv-headline-1"&gt;Title&lt;/h1&gt;
+&lt;p class="cv-body-1"&gt;Paragraph&lt;/p&gt;</pre
+        >
+
+        <h3 class="cv-headline-4">
+          Option 2: Classless/Semantic (Zero Config)
+        </h3>
+        <p class="cv-body-2">
+          HTML elements automatically styled - no classes needed!
+        </p>
+        <pre class="cv-code-block">
+&lt;!-- Include theme + classless styles --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/themes/light.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/elements.css"&gt;
+
+&lt;h1&gt;Title&lt;/h1&gt;  &lt;!-- No classes! --&gt;
+&lt;p&gt;Paragraph&lt;/p&gt;</pre
+        >
+
+        <h3 class="cv-headline-4">npm Install</h3>
+        <pre class="cv-code-block">
+npm install @covalent/foundations @covalent/tokens</pre
+        >
+      </section>
+
+      <!-- TOKENS -->
+      <section class="demo-section">
+        <h2 class="cv-headline-2">Design Tokens</h2>
+        <p class="cv-body-1">
+          All styles use CSS variables generated from Covalent design tokens.
+        </p>
+
+        <h3 class="cv-headline-4">Available CSS Variables</h3>
+        <ul class="cv-list-unordered">
+          <li>
+            <code class="cv-code">--cv-theme-primary</code> - Primary brand
+            color
+          </li>
+          <li>
+            <code class="cv-code">--cv-theme-secondary</code> - Secondary accent
+            color
+          </li>
+          <li>
+            <code class="cv-code">--cv-theme-on-surface</code> - Main text color
+          </li>
+          <li>
+            <code class="cv-code">--cv-theme-on-surface-variant</code> -
+            Secondary text
+          </li>
+          <li>
+            <code class="cv-code">--cv-theme-outline</code> - Border color
+          </li>
+          <li>
+            <code class="cv-code">--cv-typography-*</code> - All typography
+            tokens
+          </li>
+        </ul>
+      </section>
+
+      <footer class="demo-section">
+        <p class="cv-body-2">
+          Built with 💙 by the Teradata Covalent team. Licensed under MIT.
+        </p>
+        <p class="cv-caption">v0.0.1-POC | Last updated: 2026</p>
+      </footer>
+    </div>
+
+    <script>
+      function toggleTheme() {
+        const themeLink = document.getElementById('theme-stylesheet');
+        const currentTheme = themeLink.getAttribute('href');
+
+        if (currentTheme.includes('light')) {
+          themeLink.setAttribute('href', 'css/dark.css');
+        } else {
+          themeLink.setAttribute('href', 'css/light.css');
+        }
+      }
+    </script>
+  </body>
+</html>

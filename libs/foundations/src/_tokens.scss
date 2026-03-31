@@ -1,0 +1,3 @@
+// Re-export tokens para uso interno
+// El _index.scss se encuentra en dist/libs/tokens después del build
+@forward 'index';
