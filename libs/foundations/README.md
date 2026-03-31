@@ -1,6 +1,67 @@
-# @covalent/base-styles
+# @covalent/foundations
 
-Base CSS utility classes for Covalent Design System. Use these classes to apply Covalent styling to standard HTML elements in any framework or vanilla JavaScript project.
+Foundation CSS utility classes for Covalent Design System. Use these classes to apply Covalent styling to standard HTML elements in any framework or vanilla JavaScript project.
+
+## ⚡ Quick Start (Bundles - Recommended for Designers)
+
+**Single import with automatic dark mode:**
+
+```html
+<!-- Utility classes with auto dark mode -->
+<link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/covalent.adaptive.css" />
+
+<!-- OR classless with auto dark mode -->
+<link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/elements.adaptive.css" />
+```
+
+**That's it!** Themes automatically switch based on your OS preference (dark mode on macOS/Windows).
+
+<details>
+<summary><strong>📦 All Bundle Options</strong></summary>
+
+### Adaptive Bundles (Auto Dark Mode)
+
+Perfect for designers and quick prototyping. Automatically switches between light/dark themes.
+
+```html
+<!-- Utility classes + auto theme switching -->
+<link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/covalent.adaptive.css" />
+
+<!-- Classless + auto theme switching -->
+<link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/elements.adaptive.css" />
+```
+
+### Theme-Specific Bundles
+
+When you need a fixed theme (e.g., always light for mockups).
+
+```html
+<!-- Light theme bundles -->
+<link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/covalent-light.bundle.css" />
+<link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/elements-light.bundle.css" />
+
+<!-- Dark theme bundles -->
+<link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/covalent-dark.bundle.css" />
+<link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/elements-dark.bundle.css" />
+```
+
+### Modular (Advanced)
+
+For dynamic theme switching or custom combinations.
+
+```html
+<link href="themes/light.css" id="theme" />
+<link href="covalent.css" />
+
+<script>
+  // Switch theme dynamically
+  document.getElementById('theme').href = 'themes/dark.css';
+</script>
+```
+
+</details>
+
+---
 
 ## 🎯 Two Usage Modes
 
@@ -38,19 +99,37 @@ HTML elements are automatically styled. No classes needed!
 
 ---
 
-## 🚀 Quick Start
+## � Detailed Usage Guide
 
-### Option 1: Utility Classes (Recommended for Apps)
+### Option 1: Bundles (Easiest - Recommended for Designers)
+
+Single file import with everything included:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- ONE import - theme + styles + auto dark mode -->
+    <link href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/bundles/covalent.adaptive.css" />
+  </head>
+  <body>
+    <h1 class="cv-headline-1">Hello Covalent!</h1>
+    <p class="cv-body-1">Theme switches automatically with OS preference.</p>
+  </body>
+</html>
+```
+
+### Option 2: Modular (Advanced - For Dynamic Theme Switching)
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <!-- Choose theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/base-styles@latest/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/themes/light.css" />
 
     <!-- Include utility classes -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/base-styles@latest/covalent.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/covalent.css" />
   </head>
   <body>
     <h1 class="cv-headline-1">Hello Covalent!</h1>
@@ -70,10 +149,10 @@ HTML elements are automatically styled. No classes needed!
 <html>
   <head>
     <!-- Choose theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/base-styles@latest/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/themes/light.css" />
 
     <!-- Include classless styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/base-styles@latest/elements.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@covalent/foundations@latest/elements.css" />
   </head>
   <body>
     <h1>Hello Covalent!</h1>
@@ -90,7 +169,7 @@ HTML elements are automatically styled. No classes needed!
 ## 📦 Installation
 
 ```bash
-npm install @covalent/base-styles @covalent/tokens
+npm install @covalent/foundations @covalent/tokens
 ```
 
 ## 💻 Usage
@@ -99,28 +178,28 @@ npm install @covalent/base-styles @covalent/tokens
 
 ```html
 <!-- In your HTML -->
-<link rel="stylesheet" href="node_modules/@covalent/base-styles/themes/light.css" />
-<link rel="stylesheet" href="node_modules/@covalent/base-styles/covalent.css" />
+<link rel="stylesheet" href="node_modules/@covalent/foundations/themes/light.css" />
+<link rel="stylesheet" href="node_modules/@covalent/foundations/covalent.css" />
 ```
 
 ### With Build Tools - Classless
 
 ```html
 <!-- In your HTML -->
-<link rel="stylesheet" href="node_modules/@covalent/base-styles/themes/light.css" />
-<link rel="stylesheet" href="node_modules/@covalent/base-styles/elements.css" />
+<link rel="stylesheet" href="node_modules/@covalent/foundations/themes/light.css" />
+<link rel="stylesheet" href="node_modules/@covalent/foundations/elements.css" />
 ```
 
 ### With SCSS
 
 ```scss
 // Import utility classes
-@use '@covalent/base-styles/classes' as cv;
+@use '@covalent/foundations/classes' as cv;
 
 // Or import specific modules for customization
-@use '@covalent/base-styles/typography';
-@use '@covalent/base-styles/code';
-@use '@covalent/base-styles/lists';
+@use '@covalent/foundations/typography';
+@use '@covalent/foundations/code';
+@use '@covalent/foundations/lists';
 ```
 
 ## 📚 Available Classes
@@ -316,27 +395,51 @@ Use CSS variables for custom components:
 nx build tokens
 
 # Build the styles
-nx build base-styles
+nx build foundations
 
 # View demo
-npm run dev:base-styles
+npm run dev:foundations
 # Open http://localhost:8000
 ```
 
 ## 📁 Files Included
 
 ```
-@covalent/base-styles/
-├── covalent.css         # Utility classes (expanded)
-├── covalent.min.css     # Utility classes (minified)
-├── elements.css         # Classless/semantic styles (expanded)
-├── elements.min.css     # Classless/semantic styles (minified)
+@covalent/foundations/
+├── covalent.css                         # Utility classes (expanded)
+├── covalent.min.css                     # Utility classes (minified)
+├── elements.css                         # Classless/semantic styles (expanded)
+├── elements.min.css                     # Classless/semantic styles (minified)
 ├── themes/
-│   ├── light.css       # Light theme CSS variables
-│   └── dark.css        # Dark theme CSS variables
+│   ├── light.css                       # Light theme CSS variables
+│   └── dark.css                        # Dark theme CSS variables
+├── bundles/
+│   ├── covalent.adaptive.css           # Utility + auto dark mode ⭐
+│   ├── covalent.adaptive.min.css
+│   ├── elements.adaptive.css           # Classless + auto dark mode ⭐
+│   ├── elements.adaptive.min.css
+│   ├── covalent-light.bundle.css       # Utility + light theme
+│   ├── covalent-light.bundle.min.css
+│   ├── covalent-dark.bundle.css        # Utility + dark theme
+│   ├── covalent-dark.bundle.min.css
+│   ├── elements-light.bundle.css       # Classless + light theme
+│   ├── elements-light.bundle.min.css
+│   ├── elements-dark.bundle.css        # Classless + dark theme
+│   └── elements-dark.bundle.min.css
 ├── package.json
 └── README.md
 ```
+
+### 📦 Which Bundle Should I Use?
+
+| Use Case                 | Recommended File                    | Size     | Features                     |
+| ------------------------ | ----------------------------------- | -------- | ---------------------------- |
+| **Designer mockups**     | `bundles/covalent.adaptive.css`     | ~41KB    | One file, auto dark mode     |
+| **Quick prototype**      | `bundles/elements.adaptive.css`     | ~39KB    | Zero classes, auto dark mode |
+| **Always light theme**   | `bundles/covalent-light.bundle.css` | ~23KB    | Fixed light theme            |
+| **Always dark theme**    | `bundles/covalent-dark.bundle.css`  | ~23KB    | Fixed dark theme             |
+| **Dynamic theme switch** | `themes/light.css` + `covalent.css` | ~23KB    | Can swap themes with JS      |
+| **Production app**       | Modular imports + tree-shaking      | Smallest | Import only what you need    |
 
 ## 🔄 Choosing Between Utility vs Classless
 

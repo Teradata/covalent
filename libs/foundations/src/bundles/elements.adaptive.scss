@@ -1,0 +1,49 @@
+// Covalent Foundations - Adaptive Bundle (Classless/Semantic)
+// Includes: Both themes + Classless styles + Auto dark mode
+// Automatically switches between light/dark based on OS preference
+
+// All @use statements must be at the top
+@use '../tokens' as *;
+@use '../elements';
+
+$tokens-map: $tokens;
+$theme-tokens: map-get($tokens-map, 'theme');
+$light-tokens: map-get($theme-tokens, 'light');
+$dark-tokens: map-get($theme-tokens, 'dark');
+$light-colors: map-get($light-tokens, 'colors');
+$dark-colors: map-get($dark-tokens, 'colors');
+$typography-tokens: map-get($tokens-map, 'typography');
+
+// Mixin to generate CSS variables from tokens
+@mixin css-variables($tokens, $prefix: 'cv-theme') {
+  @each $key, $value in $tokens {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+}
+
+// Light theme (default)
+:root {
+  color-scheme: light;
+
+  // Theme colors
+  @include css-variables($light-colors);
+
+  // Typography tokens
+  @include css-variables($typography-tokens, 'cv-typography');
+
+  // Apply theme colors to body
+  background-color: var(--cv-theme-background);
+  color: var(--cv-theme-on-background);
+}
+
+// Dark theme (when OS prefers dark mode)
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    // Override with dark theme colors
+    @include css-variables($dark-colors);
+
+    // Body already set in :root, just uses updated variables
+  }
+}
