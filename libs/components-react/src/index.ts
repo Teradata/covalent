@@ -4,6 +4,8 @@ export * from './AppShell/CovalentAppShell';
 export * from './Badge/CovalentBadge';
 export * from './Button/CovalentButton';
 export * from './Card/CovalentCard';
+export * from './Card/CovalentCardFooter';
+export * from './Card/CovalentCardHeader';
 export * from './Checkbox/CovalentCheckbox';
 export * from './List/CovalentCheckListItem';
 export * from './Chips/CovalentChip';
