@@ -1,0 +1,35 @@
+:host {
+  --cv-card-header-height: 56px;
+
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.cv-card-header {
+  display: flex;
+  height: var(--cv-card-header-height);
+  padding: 0 4px 0 16px;
+  align-self: stretch;
+  gap: 8px;
+  align-items: center;
+}
+
+.cv-card-header__context {
+  flex: 1 0 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cv-card-header__actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cv-card-header__divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--cv-theme-outline-variant);
+}
