@@ -83,6 +83,16 @@
       "import": "./card.mjs",
       "require": "./card.js"
     },
+    "./card-footer": {
+      "types": "./card/card-footer/card-footer.d.ts",
+      "import": "./card-footer.mjs",
+      "require": "./card-footer.js"
+    },
+    "./card-header": {
+      "types": "./card/card-header/card-header.d.ts",
+      "import": "./card-header.mjs",
+      "require": "./card-header.js"
+    },
     "./checkbox": {
       "types": "./checkbox/checkbox.d.ts",
       "import": "./checkbox.mjs",

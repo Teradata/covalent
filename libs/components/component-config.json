@@ -26,6 +26,16 @@
     "path": "./button/button"
   },
   {
+    "name": "CovalentCardHeader",
+    "selector": "cv-card-header",
+    "path": "./card/card-header/card-header"
+  },
+  {
+    "name": "CovalentCardFooter",
+    "selector": "cv-card-footer",
+    "path": "./card/card-footer/card-footer"
+  },
+  {
     "name": "CovalentCard",
     "selector": "cv-card",
     "path": "./card/card"
