@@ -1,3 +1,10 @@
+# [11.17.0](https://github.com/Teradata/covalent/compare/v11.16.3...v11.17.0) (2026-03-31)
+
+### Features
+
+- **base-styles:** add new custom css files using all our tokens ([fde19f1](https://github.com/Teradata/covalent/commit/fde19f155015f5069ad2a8344dd071dd27d4bdc5))
+- **foundations:** add cdn-ready utility css elements library ([37ec52c](https://github.com/Teradata/covalent/commit/37ec52c39e1c07f02374a8af0a0f26311361ae13))
+
 ## [11.16.3](https://github.com/Teradata/covalent/compare/v11.16.2...v11.16.3) (2026-03-27)
 
 ### Bug Fixes

@@ -4,6 +4,7 @@ export * from './app-shell/app-shell';
 export * from './badge/badge';
 export * from './button/button';
 export * from './card/card';
+export * from './card/card-header/card-header';
 export * from './checkbox/checkbox';
 export * from './list/check-list-item';
 export * from './chips/chip';
