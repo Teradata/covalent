@@ -1,3 +1,9 @@
+# [11.18.0](https://github.com/Teradata/covalent/compare/v11.17.0...v11.18.0) (2026-04-06)
+
+### Features
+
+- **card:** add CovalentCardHeader component ([a78164c](https://github.com/Teradata/covalent/commit/a78164c1c69984a01f22d394b9339c51dbff1703))
+
 # [11.17.0](https://github.com/Teradata/covalent/compare/v11.16.3...v11.17.0) (2026-03-31)
 
 ### Features
