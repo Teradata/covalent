@@ -3,8 +3,16 @@
 
   td-breadcrumb {
     &:last-of-type {
-      font-weight: bold;
       cursor: default;
+      color: var(--cv-theme-on-surface);
+      font-feature-settings:
+        'liga' off,
+        'clig' off;
+      font-family: var(--cv-typography-headline6-font-family);
+      font-size: var(--cv-typography-headline6-font-size);
+      font-weight: var(--cv-typography-headline6-font-weight);
+      line-height: var(--cv-typography-headline6-line-height);
+      letter-spacing: var(--cv-typography-headline6-letter-spacing);
     }
   }
 }
