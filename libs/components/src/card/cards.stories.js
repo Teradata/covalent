@@ -1,5 +1,8 @@
 import './card';
+import '../card/card-header/card-header';
 import '../icon-button/icon-button';
+import '../button/button';
+import '../typography/typography';
 import '../expansion-panel/expansion-panel';
 import '../expansion-panel/expansion-panel-item';
 import tableContent from '../../stories/demos/table.content.html?raw';
@@ -87,6 +90,22 @@ const cardExpansionPanelTemplate = ({
   `;
 };
 
+const cardHeaderTemplate = ({ outlined, divider }) => {
+  return `
+  <cv-card ${outlined ? 'outlined' : ''}>
+    <cv-card-header ${divider ? 'divider' : ''}>
+      <div slot="leading">
+        <cv-typography scale="headline5">Card subtitle</cv-typography>
+      </div>
+      <div slot="trailing">
+        <cv-icon-button icon="more_vert"></cv-icon-button>
+      </div>
+    </cv-card-header>
+    ${tableContent}
+  </cv-card>
+  `;
+};
+
 export const Main = {
   args: {
     cardTitle: 'Card title',
@@ -108,4 +127,12 @@ export const Outline = {
     cardTitle: '',
   },
   render: cardTemplate,
+};
+
+export const WithHeaderAndFooter = {
+  args: {
+    outlined: false,
+    divider: false,
+  },
+  render: cardHeaderTemplate,
 };
