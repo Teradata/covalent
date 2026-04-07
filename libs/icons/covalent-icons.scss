@@ -3,11 +3,11 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ho7355')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?wulg52')
       format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ho7355')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?wulg52')
       format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ho7355##{$icomoon-font-family}')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?wulg52##{$icomoon-font-family}')
       format('svg');
   font-weight: normal;
   font-style: normal;
@@ -50,6 +50,146 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-database_connected {
+  &:before {
+    content: $cov-database_connected;
+  }
+}
+.cov-database_connected_outlined {
+  &:before {
+    content: $cov-database_connected_outlined;
+  }
+}
+.cov-product_openid {
+  &:before {
+    content: $cov-product_openid;
+  }
+}
+.cov-product_openid_outlined {
+  &:before {
+    content: $cov-product_openid_outlined;
+  }
+}
+.cov-product_saml {
+  &:before {
+    content: $cov-product_saml;
+  }
+}
+.cov-product_saml_outlined {
+  &:before {
+    content: $cov-product_saml_outlined;
+  }
+}
+.cov-state_approved {
+  &:before {
+    content: $cov-state_approved;
+  }
+}
+.cov-state_approved_outlined {
+  &:before {
+    content: $cov-state_approved_outlined;
+  }
+}
+.cov-state_code_deployed {
+  &:before {
+    content: $cov-state_code_deployed;
+  }
+}
+.cov-state_code_deployed_outlined {
+  &:before {
+    content: $cov-state_code_deployed_outlined;
+  }
+}
+.cov-state_code_retired {
+  &:before {
+    content: $cov-state_code_retired;
+  }
+}
+.cov-state_code_retired_outlined {
+  &:before {
+    content: $cov-state_code_retired_outlined;
+  }
+}
+.cov-state_created_document {
+  &:before {
+    content: $cov-state_created_document;
+  }
+}
+.cov-state_created_document_outlined {
+  &:before {
+    content: $cov-state_created_document_outlined;
+  }
+}
+.cov-state_model_evaluated {
+  &:before {
+    content: $cov-state_model_evaluated;
+  }
+}
+.cov-state_model_evaluated_outlined {
+  &:before {
+    content: $cov-state_model_evaluated_outlined;
+  }
+}
+.cov-state_model_trained {
+  &:before {
+    content: $cov-state_model_trained;
+  }
+}
+.cov-state_model_trained_outlined {
+  &:before {
+    content: $cov-state_model_trained_outlined;
+  }
+}
+.cov-state_ready_for_review {
+  &:before {
+    content: $cov-state_ready_for_review;
+  }
+}
+.cov-state_ready_for_review_outlined {
+  &:before {
+    content: $cov-state_ready_for_review_outlined;
+  }
+}
+.cov-state_rejected {
+  &:before {
+    content: $cov-state_rejected;
+  }
+}
+.cov-state_rejected_outlined {
+  &:before {
+    content: $cov-state_rejected_outlined;
+  }
+}
+.cov-state_scheduled {
+  &:before {
+    content: $cov-state_scheduled;
+  }
+}
+.cov-state_scheduled_outlined {
+  &:before {
+    content: $cov-state_scheduled_outlined;
+  }
+}
+.cov-state_stopped {
+  &:before {
+    content: $cov-state_stopped;
+  }
+}
+.cov-state_stopped_outlined {
+  &:before {
+    content: $cov-state_stopped_outlined;
+  }
+}
+.cov-state_suspended {
+  &:before {
+    content: $cov-state_suspended;
+  }
+}
+.cov-state_suspended_outlined {
+  &:before {
+    content: $cov-state_suspended_outlined;
+  }
+}
 .cov-hash_index {
   &:before {
     content: $cov-hash_index;

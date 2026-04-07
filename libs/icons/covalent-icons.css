@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'covalent-icons';
   src:
-    url('./covalent-icons.ttf?natb2n') format('truetype'),
-    url('./covalent-icons.woff?natb2n') format('woff'),
-    url('./covalent-icons.svg?natb2n#covalent-icons') format('svg');
+    url('./covalent-icons.ttf?wulg52') format('truetype'),
+    url('./covalent-icons.woff?wulg52') format('woff'),
+    url('./covalent-icons.svg?wulg52#covalent-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -44,6 +44,90 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-database_connected:before {
+  content: '\ea49';
+}
+.cov-database_connected_outlined:before {
+  content: '\ea4a';
+}
+.cov-product_openid:before {
+  content: '\ea4b';
+}
+.cov-product_openid_outlined:before {
+  content: '\ea4c';
+}
+.cov-product_saml:before {
+  content: '\ea4d';
+}
+.cov-product_saml_outlined:before {
+  content: '\ea4e';
+}
+.cov-state_approved:before {
+  content: '\ea4f';
+}
+.cov-state_approved_outlined:before {
+  content: '\ea50';
+}
+.cov-state_code_deployed:before {
+  content: '\ea51';
+}
+.cov-state_code_deployed_outlined:before {
+  content: '\ea52';
+}
+.cov-state_code_retired:before {
+  content: '\ea53';
+}
+.cov-state_code_retired_outlined:before {
+  content: '\ea54';
+}
+.cov-state_created_document:before {
+  content: '\ea55';
+}
+.cov-state_created_document_outlined:before {
+  content: '\ea56';
+}
+.cov-state_model_evaluated:before {
+  content: '\ea57';
+}
+.cov-state_model_evaluated_outlined:before {
+  content: '\ea58';
+}
+.cov-state_model_trained:before {
+  content: '\ea59';
+}
+.cov-state_model_trained_outlined:before {
+  content: '\ea5a';
+}
+.cov-state_ready_for_review:before {
+  content: '\ea5b';
+}
+.cov-state_ready_for_review_outlined:before {
+  content: '\ea5c';
+}
+.cov-state_rejected:before {
+  content: '\ea5d';
+}
+.cov-state_rejected_outlined:before {
+  content: '\ea5e';
+}
+.cov-state_scheduled:before {
+  content: '\ea5f';
+}
+.cov-state_scheduled_outlined:before {
+  content: '\ea60';
+}
+.cov-state_stopped:before {
+  content: '\ea61';
+}
+.cov-state_stopped_outlined:before {
+  content: '\ea62';
+}
+.cov-state_suspended:before {
+  content: '\ea63';
+}
+.cov-state_suspended_outlined:before {
+  content: '\ea64';
+}
 .cov-hash_index:before {
   content: '\ea44';
 }
