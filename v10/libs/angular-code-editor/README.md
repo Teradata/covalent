@@ -49,6 +49,8 @@ npm install @covalent/code-editor
 
 Due to an known issue in Monaco Editor version 0.20.0 <a href="https://github.com/microsoft/monaco-editor/issues/1842">https://github.com/microsoft/monaco-editor/issues/1842</a> regarding errors arising when quickly disposing editor instances, utilize the 0.17.1 version of monaco-editor.
 
+If you notice issues with icons not loading there's a known issue with css-loader that prevents it from loading the file font correctly [https://github.com/microsoft/monaco-editor/issues/2742](https://github.com/microsoft/monaco-editor/issues/2742) downgrade to `css-loader@5.2.7`.
+
 We utilize the ESM build of the Monaco Editor. To include this build, you must utilize custom webpack. See <a href="https://github.com/Microsoft/monaco-editor/blob/master/docs/integrate-esm.md">https://github.com/Microsoft/monaco-editor/blob/master/docs/integrate-esm.md</a> for more information.
 
 Install the webpack custom builder.
@@ -79,7 +81,7 @@ module.exports = {
       },
       {
         test: /\.ttf$/,
-        use: ['file-loader'],
+        type: 'asset/resource',
       },
     ],
   },
@@ -90,6 +92,15 @@ module.exports = {
     }),
   ],
 };
+```
+
+If using Webpack 4 or lower, it is necessary to use the file-loader instead of Asset Modules like the code below:
+
+```javascript
+{
+  test: /\.ttf$/,
+  use: ['file-loader']
+}
 ```
 
 Note: If you are including this component in an Electron application, define the electron-renderer target. See Electron example here:
@@ -128,17 +139,7 @@ export class MyModule {}
 ## Example
 
 ```html
-<td-code-editor
-  [style.height.px]="200"
-  editorStyle="border:0;"
-  flex
-  theme="vs"
-  language="sql"
-  [editorOptions]="{readOnly:true, fontSize:20}"
-  [(ngModel)]="model"
-  (ngModelChange)="callBackFunc()"
->
-</td-code-editor>
+<td-code-editor [style.height.px]="200" editorStyle="border:0;" flex theme="vs" language="sql" [editorOptions]="{readOnly:true, fontSize:20}" [(ngModel)]="model" (ngModelChange)="callBackFunc()"> </td-code-editor>
 ```
 
 ## Running unit tests

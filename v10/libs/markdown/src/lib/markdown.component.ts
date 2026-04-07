@@ -24,13 +24,15 @@ import {
   isRawGithubHref,
   renderVideoElements,
   isFileLink,
+  findClosingTagIndex,
+  containsMarkdown,
 } from './markdown-utils/markdown-utils';
 
 import * as showdown from 'showdown';
 
 function isAbsoluteUrl(currentHref: string): boolean {
   // Regular Expression to check url
-  const RgExp = new RegExp('^(?:[a-z]+:)?//', 'i');
+  const RgExp = /^(?:[a-z]+:)?\/\//i;
   return RgExp.test(currentHref);
 }
 
@@ -70,19 +72,17 @@ function generateHref(currentHref: string, relativeHref: string): string {
 function normalizeHtmlHrefs(
   html: string,
   currentHref: string,
-  fileLinkExtensions?: string[]
+  fileLinkExtensions?: string[],
 ): string {
-  if (currentHref) {
-    const document: Document = new DOMParser().parseFromString(
-      html,
-      'text/html'
-    );
-    document
-      .querySelectorAll<HTMLAnchorElement>('a[href]')
-      .forEach((link: HTMLAnchorElement) => {
+  const document: Document = new DOMParser().parseFromString(html, 'text/html');
+  document
+    .querySelectorAll<HTMLAnchorElement>('a[href]')
+    .forEach((link: HTMLAnchorElement) => {
+      try {
         const url: URL = new URL(link.href);
         const originalHash: string = url.hash;
         const isFileAnchorLink = isFileLink(link, fileLinkExtensions);
+
         if (isAnchorLink(link)) {
           if (originalHash) {
             url.hash = genHeadingId(originalHash);
@@ -91,11 +91,14 @@ function normalizeHtmlHrefs(
         } else if (url.host === window.location.host) {
           // hosts match, meaning URL MIGHT have been malformed by showdown
           // url is a relative url or just a link to a part of the application
-          if (url.pathname.endsWith('.md') || isFileAnchorLink) {
+          if (
+            currentHref &&
+            (url.pathname.endsWith('.md') || isFileAnchorLink)
+          ) {
             // only check .md urls or urls ending with the fileLinkExtensions
 
             const hrefWithoutHash: string = removeTrailingHash(
-              link.getAttribute('href')
+              link.getAttribute('href'),
             );
 
             url.href = generateHref(currentHref, hrefWithoutHash);
@@ -107,7 +110,7 @@ function normalizeHtmlHrefs(
           }
           link.target = isFileAnchorLink ? '_self' : '_blank';
         } else {
-          // url is absolute
+          // Different host - external link
           if (url.pathname.endsWith('.md')) {
             if (originalHash) {
               url.hash = genHeadingId(originalHash);
@@ -116,18 +119,23 @@ function normalizeHtmlHrefs(
           }
           link.target = '_blank';
         }
-      });
+      } catch {
+        // If URL parsing fails, check if it looks like an external http(s) link
+        const hrefAttr = (link.getAttribute('href') ?? '').trim();
+        if (hrefAttr.startsWith('http://') || hrefAttr.startsWith('https://')) {
+          link.target = '_blank';
+        }
+      }
+    });
 
-    return new XMLSerializer().serializeToString(document);
-  }
-  return html;
+  return new XMLSerializer().serializeToString(document);
 }
 
 function normalizeImageSrcs(html: string, currentHref: string): string {
   if (currentHref) {
     const document: Document = new DOMParser().parseFromString(
       html,
-      'text/html'
+      'text/html',
     );
     document
       .querySelectorAll<HTMLImageElement>('img[src]')
@@ -144,7 +152,7 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
             isGithubHref(currentHref)
               ? rawGithubHref(currentHref)
               : currentHref,
-            src
+            src,
           );
         }
         // gh svgs need to have ?sanitize=true
@@ -166,7 +174,7 @@ function addIdsToHeadings(html: string): string {
   if (html) {
     const document: Document = new DOMParser().parseFromString(
       html,
-      'text/html'
+      'text/html',
     );
     document
       .querySelectorAll('h1, h2, h3, h4, h5, h6')
@@ -184,7 +192,7 @@ function changeStyleAlignmentToClass(html: string) {
   if (html) {
     const document: Document = new DOMParser().parseFromString(
       html,
-      'text/html'
+      'text/html',
     );
     ['right', 'center', 'left'].forEach((alignment: string) => {
       document
@@ -198,6 +206,74 @@ function changeStyleAlignmentToClass(html: string) {
   }
 
   return html;
+}
+
+/**
+ * Adds markdown="1" attribute to HTML block-level tags so that
+ * showdown parses any markdown nested inside them.
+ * Only adds the attribute when the tag's inner content contains markdown syntax.
+ */
+function addMarkdownAttrToHtmlTags(markdown: string): string {
+  const voidElements = new Set([
+    'area',
+    'base',
+    'br',
+    'col',
+    'embed',
+    'hr',
+    'img',
+    'input',
+    'link',
+    'meta',
+    'param',
+    'source',
+    'track',
+    'wbr',
+  ]);
+
+  const openTagRegex = /<([A-Za-z][A-Za-z0-9-]*)(\s[^>]*)?\s*>/g;
+  let result = '';
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = openTagRegex.exec(markdown)) !== null) {
+    const fullMatch = match[0];
+    const tagName = match[1];
+    const attrs = match[2] || '';
+    const tag = tagName.toLowerCase();
+
+    // Skip void elements, self-closing tags, or tags with existing markdown attr
+    if (
+      voidElements.has(tag) ||
+      fullMatch.endsWith('/>') ||
+      /markdown\s*=/.test(attrs)
+    ) {
+      continue;
+    }
+
+    const contentStart = match.index + fullMatch.length;
+    const closingTagIndex = findClosingTagIndex(
+      markdown,
+      tagName,
+      contentStart,
+    );
+
+    if (closingTagIndex === -1) continue;
+
+    const innerContent = markdown.slice(contentStart, closingTagIndex);
+
+    if (containsMarkdown(innerContent)) {
+      result += markdown.slice(lastIndex, match.index);
+      result += fullMatch.replace(
+        new RegExp(`<${tagName}(\\s|>)`),
+        `<${tagName} markdown="1"$1`,
+      );
+      lastIndex = contentStart;
+    }
+  }
+
+  result += markdown.slice(lastIndex);
+  return result;
 }
 
 // Strips all the html tags in the html sand returns the text
@@ -304,7 +380,7 @@ export class TdMarkdownComponent
     private _renderer: Renderer2,
     private _elementRef: ElementRef,
     private _domSanitizer: DomSanitizer,
-    private _ngZone: NgZone
+    private _ngZone: NgZone,
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -324,7 +400,7 @@ export class TdMarkdownComponent
   ngAfterViewInit(): void {
     if (!this._content) {
       this._loadContent(
-        (<HTMLElement>this._elementRef.nativeElement).textContent
+        (<HTMLElement>this._elementRef.nativeElement).textContent,
       );
     }
     this._viewInit = true;
@@ -350,7 +426,7 @@ export class TdMarkdownComponent
           ) {
             this.handleFileAnchorClicks(event);
           }
-        }
+        },
       );
     });
   }
@@ -364,7 +440,7 @@ export class TdMarkdownComponent
       this._loadContent(this._content);
     } else if (this._viewInit) {
       this._loadContent(
-        (<HTMLElement>this._elementRef.nativeElement).textContent
+        (<HTMLElement>this._elementRef.nativeElement).textContent,
       );
     }
   }
@@ -378,7 +454,7 @@ export class TdMarkdownComponent
       this._renderer.setProperty(
         this._elementRef.nativeElement,
         'innerHTML',
-        ''
+        '',
       );
       // Parse html string into actual HTML elements.
       this._elementFromString(this._render(markdown));
@@ -388,8 +464,8 @@ export class TdMarkdownComponent
       setTimeout(
         () =>
           scrollToAnchor(this._elementRef.nativeElement, this._anchor, true),
-        250
-      )
+        250,
+      ),
     );
     this.contentReady.emit();
   }
@@ -415,20 +491,21 @@ export class TdMarkdownComponent
 
     const html: string =
       this._domSanitizer.sanitize(
-        SecurityContext.HTML,
-        changeStyleAlignmentToClass(markupStr)
+        SecurityContext.STYLE,
+        changeStyleAlignmentToClass(markupStr),
       ) ?? '';
+
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(
       html,
       this._hostedUrl,
-      this._fileLinkExtensions
+      this._fileLinkExtensions,
     );
     const htmlWithAbsoluteImgSrcs: string = normalizeImageSrcs(
       htmlWithAbsoluteHrefs,
-      this._hostedUrl
+      this._hostedUrl,
     );
     const htmlWithHeadingIds: string = addIdsToHeadings(
-      htmlWithAbsoluteImgSrcs
+      htmlWithAbsoluteImgSrcs,
     );
     const htmlWithVideos: SafeHtml = renderVideoElements(htmlWithHeadingIds);
     this._renderer.setProperty(div, 'innerHTML', htmlWithVideos);
@@ -461,11 +538,16 @@ export class TdMarkdownComponent
     // Convert markdown into html
     const converter: showdown.Converter = new showdown.Converter();
     converter.setOption('ghCodeBlocks', true);
+    converter.setOption('ghCompatibleHeaderId', true);
     converter.setOption('tasklists', true);
     converter.setOption('tables', true);
     converter.setOption('literalMidWordUnderscores', true);
     converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
+    converter.setOption('disableForced4SpacesIndentedSublists', true);
     converter.setOption('emoji', true);
-    return converter.makeHtml(markdownToParse);
+
+    const markdownWithAttr: string = addMarkdownAttrToHtmlTags(markdownToParse);
+    const html = converter.makeHtml(markdownWithAttr);
+    return html;
   }
 }

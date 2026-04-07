@@ -1,3 +1,116 @@
+## [10.5.5](https://github.com/Teradata/covalent/compare/v10.5.4...v10.5.5) (2026-04-07)
+
+### Bug Fixes
+
+- **markdown:** fix markdown content styling ([b95302a](https://github.com/Teradata/covalent/commit/b95302ae56baee038ef43bac13c86851938c2b22))
+
+## [10.5.4](https://github.com/Teradata/covalent/compare/v10.5.3...v10.5.4) (2026-03-23)
+
+### Bug Fixes
+
+- **flavored markdown:** update table tokens ([c5b05bc](https://github.com/Teradata/covalent/commit/c5b05bc6cdaa2ddb1ee302f21f072959f9484e55))
+- **flavored markdown:** update table tokens ([45dd987](https://github.com/Teradata/covalent/commit/45dd9872fc77624669f8335ef7ca11f638712885))
+
+## [10.5.3](https://github.com/Teradata/covalent/compare/v10.5.2...v10.5.3) (2026-03-06)
+
+### Bug Fixes
+
+- href target in Markdown parser ([44f9174](https://github.com/Teradata/covalent/commit/44f917478e8996312e34b7900b07393c716347d3))
+
+## [10.5.2](https://github.com/Teradata/covalent/compare/v10.5.1...v10.5.2) (2026-03-06)
+
+### Bug Fixes
+
+- **markdown:** handle html with nested markdown ([9d2b3f9](https://github.com/Teradata/covalent/commit/9d2b3f969054a8063e34ee06f2bc49e1ca2829ff))
+
+## [10.5.1](https://github.com/Teradata/covalent/compare/v10.5.0...v10.5.1) (2026-03-05)
+
+### Bug Fixes
+
+- tree list container scroll control ([#2672](https://github.com/Teradata/covalent/issues/2672)) ([643469d](https://github.com/Teradata/covalent/commit/643469ddcd1369294cef3558db4fcc7bc554f155))
+
+# [10.5.0](https://github.com/Teradata/covalent/compare/v10.4.3...v10.5.0) (2026-03-02)
+
+### Features
+
+- **breadcrumbs:** update breadcrumbs ui ([ea37097](https://github.com/Teradata/covalent/commit/ea370972821aa06b695dcdb9d4bb049dbba68cd3))
+- **breadcrumbs:** update breadcrumbs ui ([5464c4d](https://github.com/Teradata/covalent/commit/5464c4dedb102c00844c7afc917c18a827f1412f))
+- **breadcrumbs:** update ci.yaml to avoid cache and memory bus ([a3f3910](https://github.com/Teradata/covalent/commit/a3f3910af13b5201555965b2c57f95f41c57a777))
+- **breadcrumbs:** update ci.yaml to avoid cache and memory bus ([dcfc06e](https://github.com/Teradata/covalent/commit/dcfc06e1356ba195918c9829b841bf0f3930f35e))
+
+## [10.4.3](https://github.com/Teradata/covalent/compare/v10.4.2...v10.4.3) (2026-02-27)
+
+### Bug Fixes
+
+- components scss build in release pipelines for 10.x.x ([cbc09e1](https://github.com/Teradata/covalent/commit/cbc09e14ebbe766ccddfdfcdea40dd9bc0908cba))
+- **components:** components scss build in release pipelines for 10.x.x ([3bb676e](https://github.com/Teradata/covalent/commit/3bb676eccf8da70b673d85f1b925dfef84111a81))
+
+## [10.4.2](https://github.com/Teradata/covalent/compare/v10.4.1...v10.4.2) (2026-02-27)
+
+### Bug Fixes
+
+- add leaf node functionality to tree list item ([facb301](https://github.com/Teradata/covalent/commit/facb3015feb74a007c9a50f307092dcbd80ef7cc))
+- lint issue ([967f865](https://github.com/Teradata/covalent/commit/967f8657dad036ccb958fe14d7639d2f13fd0b9b))
+
+## [10.4.1](https://github.com/Teradata/covalent/compare/v10.4.0...v10.4.1) (2026-02-02)
+
+### Bug Fixes
+
+- **angular code-editor:** fixed token and configuration ([#2635](https://github.com/Teradata/covalent/issues/2635)) ([#2639](https://github.com/Teradata/covalent/issues/2639)) ([71e6b30](https://github.com/Teradata/covalent/commit/71e6b30f5d1af04cd64dce809959430cf34f2c1e))
+
+# [10.4.0](https://github.com/Teradata/covalent/compare/v10.3.7...v10.4.0) (2026-01-27)
+
+### Bug Fixes
+
+- **markdown-navigator:** remove peerDependency issues ([#2631](https://github.com/Teradata/covalent/issues/2631)) ([3e7f564](https://github.com/Teradata/covalent/commit/3e7f56435ab61aaa79cb4877fb6f3f58e693ec0c))
+
+### Features
+
+- **markdown-navigator:** remove peerDependencies ([#2632](https://github.com/Teradata/covalent/issues/2632)) ([8dc5ab3](https://github.com/Teradata/covalent/commit/8dc5ab38d0e79239accdc67fcb1f334c9d885ba8))
+
+## [10.3.7](https://github.com/Teradata/covalent/compare/v10.3.6...v10.3.7) (2026-01-05)
+
+### Bug Fixes
+
+- **markdown-navigator:** add conf to render covalent and material-icons ([#2616](https://github.com/Teradata/covalent/issues/2616)) ([52e664d](https://github.com/Teradata/covalent/commit/52e664d711f7b881a310b892a26999b25a79c708))
+
+## [10.3.6](https://github.com/Teradata/covalent/compare/v10.3.5...v10.3.6) (2025-12-02)
+
+### Bug Fixes
+
+- **markdown:** remove img background color ([#2607](https://github.com/Teradata/covalent/issues/2607)) ([32d3766](https://github.com/Teradata/covalent/commit/32d37667fe7a4088ab288a3e3b0f9df418a6094c))
+
+## [10.3.5](https://github.com/Teradata/covalent/compare/v10.3.4...v10.3.5) (2025-11-24)
+
+### Bug Fixes
+
+- **flavored-markdown:** update table styles CAT-2556 ([#2603](https://github.com/Teradata/covalent/issues/2603)) ([06f17b9](https://github.com/Teradata/covalent/commit/06f17b988fae04d8a0f19c01a9d492f051acee39))
+
+## [10.3.4](https://github.com/Teradata/covalent/compare/v10.3.3...v10.3.4) (2025-11-22)
+
+### Bug Fixes
+
+- **markdown-flavored-v10:** fix ordered mixed lists ([#2600](https://github.com/Teradata/covalent/issues/2600)) ([e92c9cf](https://github.com/Teradata/covalent/commit/e92c9cfa79388c42d9f16220c4fd4d970a4fbe6b))
+
+## [10.3.3](https://github.com/Teradata/covalent/compare/v10.3.2...v10.3.3) (2025-11-20)
+
+### Bug Fixes
+
+- **markdown:** update sanitizer context and enhance md options ([#2592](https://github.com/Teradata/covalent/issues/2592)) ([70e3cd2](https://github.com/Teradata/covalent/commit/70e3cd2424fe703e22c296eabbd52969003b6e83))
+
+## [10.3.2](https://github.com/Teradata/covalent/compare/v10.3.1...v10.3.2) (2025-09-18)
+
+### Bug Fixes
+
+- support updateOn strategy for form controls ([#2573](https://github.com/Teradata/covalent/issues/2573)) ([a0855ef](https://github.com/Teradata/covalent/commit/a0855efbcc932b42771fc0f2f4af6219d300dae9))
+
+## [10.3.1](https://github.com/Teradata/covalent/compare/v10.3.0...v10.3.1) (2025-09-17)
+
+### Bug Fixes
+
+- **ci:** trigger releases for changes in 10.x.x branch ([#2571](https://github.com/Teradata/covalent/issues/2571)) ([1cd15ff](https://github.com/Teradata/covalent/commit/1cd15ff560fc5ac63862d053631e79d768564dd2))
+- fomr control directive to handle input ([#2569](https://github.com/Teradata/covalent/issues/2569)) ([4dd343a](https://github.com/Teradata/covalent/commit/4dd343a9bb210487af96ce2952ad6317dc6f7137))
+
 # [10.3.0](https://github.com/Teradata/covalent/compare/v10.2.1...v10.3.0) (2025-05-06)
 
 ### Bug Fixes
@@ -4773,9 +4886,7 @@ ngAfterViewInit(): void {
 ## Breaking Changes
 
 - **deploy:** Single core package. ([81901b23eca8e02330260b5831c64da3005a39fd](https://github.com/Teradata/covalent/commit/81901b23eca8e02330260b5831c64da3005a39fd)), closes [#166](https://github.com/Teradata/covalent/issues/166) and [#93](https://github.com/Teradata/covalent/issues/93)
-
   - Created submodules of all core modules which are wrapped by one parent module CovalentCoreModule (`@covalent/core`)
-
     - CovalentCommonModule
     - CovalentChipsModule
     - CovalentDataTableModule
@@ -4793,7 +4904,6 @@ ngAfterViewInit(): void {
     - CovalentStepsModule
 
   - Stand alone modules:
-
     - CovalentHttpModule (`@covalent/http`)
     - CovalentDynamicFormsModule (`@covalent/dynamic-forms`)
     - CovalentHighlightModule (`@covalent/highlight`)
@@ -4936,16 +5046,13 @@ ngAfterViewInit(): void {
   ```
 
 - **dynamic-forms:** Introducing `dynamic-forms` module. ([3eb363873f11b5929655ec4c5ffa822a91fbc5e0](https://github.com/Teradata/covalent/commit/3eb363873f11b5929655ec4c5ffa822a91fbc5e0)), closes [#8](https://github.com/Teradata/covalent/issues/8)
-
   - Supported TdDynamicType
-
     - TdDynamicType.Text (renders md-input-container input type="text")
     - TdDynamicType.Number (renders md-input-container input type="number")
     - TdDynamicType.Boolean (renders md-slide-toggle)
     - TdDynamicType.Array (renders md-select)
 
   - Supported TdDynamicElement
-
     - TdDynamicElement.Input (renders md-input-container input type="text")
     - TdDynamicElement.Textarea (renders md-input-container textarea)
     - TdDynamicElement.Slider (renders md-slider)

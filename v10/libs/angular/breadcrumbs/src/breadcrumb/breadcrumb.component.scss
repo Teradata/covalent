@@ -7,6 +7,7 @@
     align-content: center;
     flex-shrink: 0;
     justify-content: flex-end;
+    max-width: 100%;
 
     ::ng-deep > * {
       margin: 0 10px;
@@ -23,4 +24,23 @@
     min-width: 0;
     padding: 0;
   }
+}
+
+.td-breadcrumb-text {
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+
+  &.td-breadcrumb-truncated {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+}
+
+mat-icon.td-breadcrumb-separator-icon {
+  flex-shrink: 0;
 }

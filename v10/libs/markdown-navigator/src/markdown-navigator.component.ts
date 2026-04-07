@@ -18,7 +18,11 @@ import {
   isAnchorLink,
   TdMarkdownLoaderService,
 } from '@covalent/markdown';
-import { ITdFlavoredMarkdownButtonClickEvent, TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent } from '@covalent/flavored-markdown';
+import {
+  ITdFlavoredMarkdownButtonClickEvent,
+  TdFlavoredMarkdownComponent,
+  TdFlavoredMarkdownLoaderComponent,
+} from '@covalent/flavored-markdown';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ICopyCodeTooltips } from '@covalent/highlight';
@@ -26,11 +30,14 @@ import { firstValueFrom } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { TdDialogComponent } from '@covalent/core/dialogs';
 import { TdMessageComponent } from '@covalent/core/message';
-import { TdBreadcrumbsComponent } from '@covalent/core/breadcrumbs';
+import {
+  TdBreadcrumbsComponent,
+  TdBreadcrumbComponent,
+} from '@covalent/core/breadcrumbs';
 import { CommonModule } from '@angular/common';
 
 export interface IMarkdownNavigatorItem {
@@ -56,7 +63,7 @@ export interface IMarkdownNavigatorLabels {
 
 export type IMarkdownNavigatorCompareWith = (
   o1: IMarkdownNavigatorItem,
-  o2: IMarkdownNavigatorItem
+  o2: IMarkdownNavigatorItem,
 ) => boolean;
 
 export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
@@ -81,10 +88,23 @@ export const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels = {
     TdFlavoredMarkdownLoaderComponent,
     TdMessageComponent,
     TdBreadcrumbsComponent,
+    TdBreadcrumbComponent,
   ],
   providers: [TdMarkdownLoaderService],
 })
 export class TdMarkdownNavigatorComponent implements OnChanges {
+  constructor(
+    private _markdownUrlLoaderService: TdMarkdownLoaderService,
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _sanitizer: DomSanitizer,
+    private _http: HttpClient,
+    private _matIconRegistry: MatIconRegistry,
+  ) {
+    this._matIconRegistry.registerFontClassAlias(
+      'covalent-icons',
+      'covalent-icons mat-ligature-font',
+    );
+  }
   /**
    * items: IMarkdownNavigatorItem[]
    *
@@ -151,13 +171,6 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   markdownLoaderError?: string;
   childrenUrlError?: string;
-
-  constructor(
-    private _markdownUrlLoaderService: TdMarkdownLoaderService,
-    private _changeDetectorRef: ChangeDetectorRef,
-    private _sanitizer: DomSanitizer,
-    private _http: HttpClient
-  ) {}
 
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
@@ -264,6 +277,10 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return '';
   }
 
+  get navigationBreadcrumbs(): IMarkdownNavigatorItem[] {
+    return this.historyStack.slice(0, -1);
+  }
+
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
     if (changes['items']) {
       this.reset();
@@ -318,7 +335,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       this.currentMarkdownItem = parent;
       this.historyStack = this.historyStack.slice(
         0,
-        this.historyStack.length - goBackLength + 1
+        this.historyStack.length - goBackLength + 1,
       );
       this.setChildrenAsCurrentMenuItems(parent);
     } else {
@@ -338,7 +355,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   async setChildrenAsCurrentMenuItems(
-    item: IMarkdownNavigatorItem
+    item: IMarkdownNavigatorItem,
   ): Promise<void> {
     this.currentMenuItems = [];
     this.loading = true;
@@ -359,7 +376,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       stackSnapshot.length === newStackSnapshot.length &&
       stackSnapshot.every(
         (stackItem: IMarkdownNavigatorItem, index: number) =>
-          stackItem === newStackSnapshot[index]
+          stackItem === newStackSnapshot[index],
       )
     ) {
       this.currentMenuItems = children;
@@ -370,7 +387,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   async loadChildrenUrl(
-    item: IMarkdownNavigatorItem
+    item: IMarkdownNavigatorItem,
   ): Promise<IMarkdownNavigatorItem[]> {
     const sanitizedUrl =
       this._sanitizer.sanitize(SecurityContext.URL, item.childrenUrl ?? null) ??
@@ -379,7 +396,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       return await firstValueFrom<IMarkdownNavigatorItem[]>(
         this._http.get<IMarkdownNavigatorItem[]>(sanitizedUrl, {
           ...item.httpOptions,
-        })
+        }),
       );
     } catch (error: any) {
       this.handleChildrenUrlError(error);
@@ -401,7 +418,13 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   }
 
   getIcon(item: IMarkdownNavigatorItem): string {
-    return item?.icon || 'subject';
+    const icon = item?.icon || 'subject';
+    return icon.split(';')[0];
+  }
+
+  isCovalentIcon(item: IMarkdownNavigatorItem): boolean {
+    if (!item?.icon) return false;
+    return item?.icon?.includes(';covalent');
   }
 
   handleChildrenUrlError(error: Error): void {
@@ -415,7 +438,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   private async _jumpTo(
     itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[],
-    children?: IMarkdownNavigatorItem[]
+    children?: IMarkdownNavigatorItem[],
   ): Promise<boolean> {
     const historyStack: IMarkdownNavigatorItem[] = this.historyStack;
     let path: IMarkdownNavigatorItem[] = [];
@@ -443,7 +466,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   private async followPath(
     items: IMarkdownNavigatorItem[],
-    path: IMarkdownNavigatorItem[]
+    path: IMarkdownNavigatorItem[],
   ): Promise<IMarkdownNavigatorItem[]> {
     let pathItems: IMarkdownNavigatorItem[] = [];
     let currentLevel: IMarkdownNavigatorItem[] = items;
@@ -451,7 +474,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       this.compareWith || defaultCompareWith;
     for (const pathItem of path) {
       const foundItem: IMarkdownNavigatorItem | undefined = currentLevel.find(
-        (item: IMarkdownNavigatorItem) => compareWith(pathItem, item)
+        (item: IMarkdownNavigatorItem) => compareWith(pathItem, item),
       );
 
       if (foundItem) {
@@ -474,7 +497,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   private findPath(
     items?: IMarkdownNavigatorItem[],
-    item?: IMarkdownNavigatorItem
+    item?: IMarkdownNavigatorItem,
   ): IMarkdownNavigatorItem[] {
     const compareWith: IMarkdownNavigatorCompareWith =
       this.compareWith || defaultCompareWith;
@@ -485,7 +508,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
         }
         const ancestors: IMarkdownNavigatorItem[] = this.findPath(
           child.children,
-          item
+          item,
         );
         if (ancestors.length) {
           return [child, ...ancestors];
@@ -511,7 +534,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
     try {
       const markdownString: string = await this._markdownUrlLoaderService.load(
-        url.href
+        url.href,
       );
       // pass in url to be able to use currentMarkdownItem.url later on
       this.handleItemSelected({ markdownString, url: url.href });
@@ -554,7 +577,7 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
 }
 function defaultCompareWith(
   o1: IMarkdownNavigatorItem,
-  o2: IMarkdownNavigatorItem
+  o2: IMarkdownNavigatorItem,
 ): boolean {
   if (o1.id && o2.id) {
     return o1.id === o2.id;

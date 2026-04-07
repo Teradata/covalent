@@ -2,12 +2,18 @@
 
 @mixin covalent-markdown-navigator-typography($fontConfig) {
   td-markdown-navigator {
-    td-breadcrumbs .mat-button {
-      font: mat.get-theme-typography($fontConfig, caption);
-    }
+    // Breadcrumbs already use caption size via their size property, no override needed
 
     .breadcrumb-current-title {
-      font: mat.get-theme-typography($fontConfig, headline-5);
+      font-family: var(--cv-typography-headline6-font-family);
+      font-size: var(--cv-typography-headline6-font-size);
+      font-weight: var(--cv-typography-headline6-font-weight);
+      line-height: var(--cv-typography-headline6-line-height);
+      letter-spacing: var(--cv-typography-headline6-letter-spacing);
+      color: var(--cv-theme-on-surface);
+      font-feature-settings:
+        'liga' off,
+        'clig' off;
     }
   }
 }

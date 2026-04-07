@@ -6,21 +6,38 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  inject,
 } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'td-breadcrumb, a[td-breadcrumb]',
   styleUrls: ['./breadcrumb.component.scss'],
   templateUrl: './breadcrumb.component.html',
-  imports: [CommonModule, MatIcon],
+  standalone: true,
+  imports: [CommonModule, MatIcon, MatTooltipModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbComponent implements AfterViewInit {
+  private _changeDetectorRef = inject(ChangeDetectorRef);
+
   private _displayCrumb = true;
   private _width = 0;
   private _displayIcon = true;
   private _separatorIcon = 'chevron_right';
+  private _shouldTruncate = false;
+  private _maxWidth?: number;
+
+  public elementRef = inject(ElementRef);
+  public fullText = '';
+  public flexOrder = 0;
+  public isCurrentPage = false;
+
+  @HostBinding('attr.aria-current')
+  get ariaCurrent(): string | null {
+    return this.isCurrentPage ? 'page' : null;
+  }
 
   @HostBinding('class.mdc-button') matButtonClass = true;
   @HostBinding('class.td-breadcrumb') tdBreadCrumbClass = true;
@@ -42,6 +59,28 @@ export class TdBreadcrumbComponent implements AfterViewInit {
   }
   public set displayIcon(displayIcon: boolean) {
     this._displayIcon = displayIcon;
+    setTimeout(() => {
+      this._changeDetectorRef.markForCheck();
+    });
+  }
+
+  get shouldTruncate(): boolean {
+    return this._shouldTruncate;
+  }
+
+  set shouldTruncate(shouldTruncate: boolean) {
+    this._shouldTruncate = shouldTruncate;
+    setTimeout(() => {
+      this._changeDetectorRef.markForCheck();
+    });
+  }
+
+  get maxWidth(): number | undefined {
+    return this._maxWidth;
+  }
+
+  set maxWidth(maxWidth: number | undefined) {
+    this._maxWidth = maxWidth;
     setTimeout(() => {
       this._changeDetectorRef.markForCheck();
     });
@@ -78,17 +117,28 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     return this._displayCrumb ? undefined : 'none';
   }
 
-  constructor(
-    private _elementRef: ElementRef,
-    private _changeDetectorRef: ChangeDetectorRef
-  ) {}
+  @HostBinding('style.max-width.px')
+  get maxWidthBinding(): number | undefined {
+    return this._shouldTruncate ? this._maxWidth : undefined;
+  }
+
+  @HostBinding('style.order')
+  get orderBinding(): number {
+    return this.flexOrder;
+  }
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element
     setTimeout(() => {
       this._width = (<HTMLElement>(
-        this._elementRef.nativeElement
+        this.elementRef.nativeElement
       )).getBoundingClientRect().width;
+      const textSpan = this.elementRef.nativeElement.querySelector(
+        '.td-breadcrumb-text',
+      );
+      if (textSpan) {
+        this.fullText = textSpan.textContent?.trim() || '';
+      }
       this._changeDetectorRef.markForCheck();
     });
   }

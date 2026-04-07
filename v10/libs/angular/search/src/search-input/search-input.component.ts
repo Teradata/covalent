@@ -23,7 +23,10 @@ import {
 import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material/input';
-import { MatFormField, MatFormFieldAppearance } from '@angular/material/form-field';
+import {
+  MatFormField,
+  MatFormFieldAppearance,
+} from '@angular/material/form-field';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, skip, takeUntil } from 'rxjs/operators';
 import {
@@ -61,7 +64,7 @@ export const _TdSearchInputMixinBase =
           transform: 'translateX(-150%)',
           opacity: 0,
           display: 'none',
-        })
+        }),
       ),
       state(
         'hide-right',
@@ -69,7 +72,7 @@ export const _TdSearchInputMixinBase =
           transform: 'translateX(150%)',
           opacity: 0,
           display: 'none',
-        })
+        }),
       ),
       state(
         'show',
@@ -77,7 +80,7 @@ export const _TdSearchInputMixinBase =
           transform: 'translateX(0%)',
           opacity: 1,
           display: 'block',
-        })
+        }),
       ),
       transition('* => show', animate('200ms ease-in')),
       transition('show => *', animate('200ms ease-out')),
@@ -136,6 +139,7 @@ export class TdSearchInputComponent
    * search: function($event)
    * Event emitted after the key enter has been pressed.
    */
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   /**
@@ -162,7 +166,7 @@ export class TdSearchInputComponent
   constructor(
     @Optional() private _dir: Dir,
     override _changeDetectorRef: ChangeDetectorRef,
-    private _ngZone: NgZone
+    private _ngZone: NgZone,
   ) {
     super(_changeDetectorRef);
   }
@@ -172,7 +176,7 @@ export class TdSearchInputComponent
       ?.pipe(
         debounceTime(this.debounce),
         skip(1), // skip first change when value is set to undefined
-        takeUntil(this._destroy$)
+        takeUntil(this._destroy$),
       )
       .subscribe((value: string) => {
         this._searchTermChanged(value);
@@ -181,7 +185,7 @@ export class TdSearchInputComponent
     this._ngZone.runOutsideAngular(() =>
       fromEvent(this._searchElement.nativeElement, 'search')
         .pipe(takeUntil(this._destroy$))
-        .subscribe(this._stopPropagation)
+        .subscribe(this._stopPropagation),
     );
   }
 
