@@ -1,3 +1,9 @@
+## [10.5.5](https://github.com/Teradata/covalent/compare/v10.5.4...v10.5.5) (2026-04-07)
+
+### Bug Fixes
+
+- **markdown:** fix markdown content styling ([b95302a](https://github.com/Teradata/covalent/commit/b95302ae56baee038ef43bac13c86851938c2b22))
+
 ## [10.5.4](https://github.com/Teradata/covalent/compare/v10.5.3...v10.5.4) (2026-03-23)
 
 ### Bug Fixes
