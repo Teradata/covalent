@@ -94,8 +94,16 @@
     }
 
     input {
-      font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans,
-        clean, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      font:
+        13px/1.4 Helvetica,
+        arial,
+        nimbussansl,
+        liberationsans,
+        freesans,
+        clean,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
         'Segoe UI Symbol';
     }
 
@@ -136,40 +144,77 @@
     h6 {
       margin-top: 0;
       margin-bottom: 0;
-      line-height: 1.5;
+      font-feature-settings:
+        'liga' off,
+        'clig' off;
+      color: var(--cv-theme-on-surface);
     }
 
     h1 {
-      font-size: 30px;
+      font-family: var(--cv-typography-headline1-article-font-family);
+      font-size: var(--cv-typography-headline1-article-font-size);
+      font-weight: var(--cv-typography-headline1-article-font-weight);
+      line-height: var(--cv-typography-headline1-article-line-height);
+      letter-spacing: var(--cv-typography-headline1-article-letter-spacing);
     }
 
     h2 {
-      font-size: 21px;
+      font-family: var(--cv-typography-headline2-article-font-family);
+      font-size: var(--cv-typography-headline2-article-font-size);
+      font-weight: var(--cv-typography-headline2-article-font-weight);
+      line-height: var(--cv-typography-headline2-article-line-height);
+      letter-spacing: var(--cv-typography-headline2-article-letter-spacing);
     }
 
     h3 {
-      font-size: 16px;
+      font-family: var(--cv-typography-headline3-article-font-family);
+      font-size: var(--cv-typography-headline3-article-font-size);
+      font-weight: var(--cv-typography-headline3-article-font-weight);
+      line-height: var(--cv-typography-headline3-article-line-height);
+      letter-spacing: var(--cv-typography-headline3-article-letter-spacing);
     }
 
     h4 {
-      font-size: 14px;
+      font-family: var(--cv-typography-headline4-article-font-family);
+      font-size: var(--cv-typography-headline4-article-font-size);
+      font-weight: var(--cv-typography-headline4-article-font-weight);
+      line-height: var(--cv-typography-headline4-article-line-height);
+      letter-spacing: var(--cv-typography-headline4-article-letter-spacing);
     }
 
     h5 {
-      font-size: 12px;
+      font-family: var(--cv-typography-headline5-article-font-family);
+      font-size: var(--cv-typography-headline5-article-font-size);
+      font-weight: var(--cv-typography-headline5-article-font-weight);
+      line-height: var(--cv-typography-headline5-article-line-height);
+      letter-spacing: var(--cv-typography-headline5-article-letter-spacing);
     }
 
     h6 {
-      font-size: 11px;
+      font-family: var(--cv-typography-headline6-article-font-family);
+      font-size: var(--cv-typography-headline6-article-font-size);
+      font-weight: var(--cv-typography-headline6-article-font-weight);
+      line-height: var(--cv-typography-headline6-article-line-height);
+      letter-spacing: var(--cv-typography-headline6-article-letter-spacing);
     }
 
     p {
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
+      color: var(--cv-theme-on-surface-variant);
+      font-family: var(--cv-typography-body1-font-family);
+      font-size: var(--cv-typography-body1-font-size);
+      font-weight: var(--cv-typography-body1-font-weight);
+      line-height: var(--cv-typography-body1-line-height);
+      letter-spacing: var(--cv-typography-body1-letter-spacing);
+      font-feature-settings:
+        'liga' off,
+        'clig' off;
     }
 
     blockquote {
       margin: 0;
+      color: var(--cv-theme-on-surface-variant);
     }
 
     ul,
@@ -177,6 +222,11 @@
       padding-left: 0;
       margin-top: 0;
       margin-bottom: 0;
+      color: var(--cv-theme-on-surface-variant);
+      font-family: var(--cv-typography-body1-font-family);
+      font-size: var(--cv-typography-body1-font-size);
+      font-weight: var(--cv-typography-body1-font-weight);
+      line-height: var(--cv-typography-body1-line-height);
     }
 
     ol ol,
@@ -196,14 +246,19 @@
     }
 
     code {
-      font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-      font-size: 12px;
+      font-family: var(--cv-typography-code-font-family);
+      font-size: var(--cv-typography-code-font-size);
+      font-weight: var(--cv-typography-code-font-weight);
+      line-height: var(--cv-typography-code-line-height);
     }
 
     pre {
       margin-top: 0;
       margin-bottom: 0;
-      font: 12px Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-family: var(--cv-typography-code-font-family);
+      font-size: var(--cv-typography-code-font-size);
+      font-weight: var(--cv-typography-code-font-weight);
+      line-height: var(--cv-typography-code-line-height);
     }
 
     .pl-0 {
@@ -285,9 +340,9 @@
     }
 
     h1 {
+      margin-top: var(--cv-typography-headline1-article-space-before);
+      margin-bottom: var(--cv-typography-headline1-article-space-after);
       padding-bottom: 0.3em;
-      font-size: 2.25em;
-      line-height: 1.2;
       border-bottom-width: 1px;
       border-bottom-style: solid;
     }
@@ -298,8 +353,6 @@
 
     h2 {
       padding-bottom: 0.3em;
-      font-size: 1.75em;
-      line-height: 1.225;
       border-bottom-width: 1px;
       border-bottom-style: solid;
     }
@@ -308,33 +361,16 @@
       line-height: 1;
     }
 
-    h3 {
-      font-size: 1.5em;
-      line-height: 1.43;
-    }
-
     h3 .anchor {
       line-height: 1.2;
-    }
-
-    h4 {
-      font-size: 1.25em;
     }
 
     h4 .anchor {
       line-height: 1.2;
     }
 
-    h5 {
-      font-size: 1em;
-    }
-
     h5 .anchor {
       line-height: 1.1;
-    }
-
-    h6 {
-      font-size: 1em;
     }
 
     h6 .anchor {
@@ -609,7 +645,12 @@
     kbd {
       display: inline-block;
       padding: 3px 5px;
-      font: 11px Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font:
+        11px Consolas,
+        'Liberation Mono',
+        Menlo,
+        Courier,
+        monospace;
       line-height: 10px;
       vertical-align: middle;
       background-color: #fcfcfc;
