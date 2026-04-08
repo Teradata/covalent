@@ -1,3 +1,10 @@
+# [11.19.0](https://github.com/Teradata/covalent/compare/v11.18.1...v11.19.0) (2026-04-08)
+
+### Features
+
+- **icons:** added new connection manager icons ([09c5ea4](https://github.com/Teradata/covalent/commit/09c5ea4cf2b13fafed82dc12d408a968bcbd2def))
+- **icons:** added new connection manager icons ([20638ed](https://github.com/Teradata/covalent/commit/20638ed9a064ce0163671f28ef80a6c093dc02b0))
+
 ## [11.18.1](https://github.com/Teradata/covalent/compare/v11.18.0...v11.18.1) (2026-04-07)
 
 ### Bug Fixes
