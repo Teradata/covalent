@@ -8,7 +8,6 @@
     "build": {
       "executor": "@angular-builders/custom-webpack:browser",
       "outputs": ["{options.outputPath}"],
-      "dependsOn": ["tokens:build"],
       "options": {
         "customWebpackConfig": {
           "path": "./monaco-webpack.config.js",
