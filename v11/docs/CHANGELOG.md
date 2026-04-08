@@ -1,3 +1,9 @@
+## [11.18.1](https://github.com/Teradata/covalent/compare/v11.18.0...v11.18.1) (2026-04-07)
+
+### Bug Fixes
+
+- **markdown-navigator:** fix typography styling on component content ([3da0491](https://github.com/Teradata/covalent/commit/3da04911fc749344753068e9d5aa6675f71a3862))
+
 # [11.18.0](https://github.com/Teradata/covalent/compare/v11.17.0...v11.18.0) (2026-04-06)
 
 ### Features
