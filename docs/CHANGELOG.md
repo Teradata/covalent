@@ -1,3 +1,11 @@
+## [11.19.1](https://github.com/Teradata/covalent/compare/v11.19.0...v11.19.1) (2026-04-08)
+
+### Bug Fixes
+
+- **markdown:** update article typography tokens ([8f4e80a](https://github.com/Teradata/covalent/commit/8f4e80a9c98e48e171c3b67ccd4da3f1cb9799af))
+- **markdown:** update tokens build on CI process ([a9a36f8](https://github.com/Teradata/covalent/commit/a9a36f8967b5297c76130c9c569bcca317266bfa))
+- **markdown:** update tokens build on CI process ([41fb95e](https://github.com/Teradata/covalent/commit/41fb95e659aa42aa7db7633b8f6fb81062ed3cc1))
+
 # [11.19.0](https://github.com/Teradata/covalent/compare/v11.18.1...v11.19.0) (2026-04-08)
 
 ### Features
