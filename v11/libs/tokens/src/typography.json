@@ -120,6 +120,90 @@
     "code-font-size": { "value": "12px", "type": "fontSizes" },
     "code-font-weight": { "value": "400", "type": "fontWeights" },
     "code-line-height": { "value": "20px", "type": "lineHeights" },
-    "code-letter-spacing": { "value": "0px", "type": "letterSpacing" }
+    "code-letter-spacing": { "value": "0px", "type": "letterSpacing" },
+
+    "headline1-article-font-family": {
+      "value": "{typography.font-family}",
+      "type": "fontFamilies"
+    },
+    "headline1-article-font-size": { "value": "48px", "type": "fontSizes" },
+    "headline1-article-font-weight": { "value": "400", "type": "fontWeights" },
+    "headline1-article-line-height": { "value": "56px", "type": "lineHeights" },
+    "headline1-article-letter-spacing": {
+      "value": "0px",
+      "type": "letterSpacing"
+    },
+    "headline1-article-space-before": { "value": "32px", "type": "dimension" },
+    "headline1-article-space-after": { "value": "8px", "type": "dimension" },
+
+    "headline2-article-font-family": {
+      "value": "{typography.font-family}",
+      "type": "fontFamilies"
+    },
+    "headline2-article-font-size": { "value": "34px", "type": "fontSizes" },
+    "headline2-article-font-weight": { "value": "400", "type": "fontWeights" },
+    "headline2-article-line-height": { "value": "42px", "type": "lineHeights" },
+    "headline2-article-letter-spacing": {
+      "value": "0px",
+      "type": "letterSpacing"
+    },
+    "headline2-article-space-before": { "value": "32px", "type": "dimension" },
+    "headline2-article-space-after": { "value": "8px", "type": "dimension" },
+
+    "headline3-article-font-family": {
+      "value": "{typography.font-family}",
+      "type": "fontFamilies"
+    },
+    "headline3-article-font-size": { "value": "24px", "type": "fontSizes" },
+    "headline3-article-font-weight": { "value": "400", "type": "fontWeights" },
+    "headline3-article-line-height": { "value": "36px", "type": "lineHeights" },
+    "headline3-article-letter-spacing": {
+      "value": "0.15px",
+      "type": "letterSpacing"
+    },
+    "headline3-article-space-before": { "value": "32px", "type": "dimension" },
+    "headline3-article-space-after": { "value": "8px", "type": "dimension" },
+
+    "headline4-article-font-family": {
+      "value": "{typography.font-family}",
+      "type": "fontFamilies"
+    },
+    "headline4-article-font-size": { "value": "20px", "type": "fontSizes" },
+    "headline4-article-font-weight": { "value": "500", "type": "fontWeights" },
+    "headline4-article-line-height": { "value": "24px", "type": "lineHeights" },
+    "headline4-article-letter-spacing": {
+      "value": "0.15px",
+      "type": "letterSpacing"
+    },
+    "headline4-article-space-before": { "value": "32px", "type": "dimension" },
+    "headline4-article-space-after": { "value": "8px", "type": "dimension" },
+
+    "headline5-article-font-family": {
+      "value": "{typography.font-family}",
+      "type": "fontFamilies"
+    },
+    "headline5-article-font-size": { "value": "16px", "type": "fontSizes" },
+    "headline5-article-font-weight": { "value": "500", "type": "fontWeights" },
+    "headline5-article-line-height": { "value": "28px", "type": "lineHeights" },
+    "headline5-article-letter-spacing": {
+      "value": "0.15px",
+      "type": "letterSpacing"
+    },
+    "headline5-article-space-before": { "value": "32px", "type": "dimension" },
+    "headline5-article-space-after": { "value": "8px", "type": "dimension" },
+
+    "headline6-article-font-family": {
+      "value": "{typography.font-family}",
+      "type": "fontFamilies"
+    },
+    "headline6-article-font-size": { "value": "14px", "type": "fontSizes" },
+    "headline6-article-font-weight": { "value": "500", "type": "fontWeights" },
+    "headline6-article-line-height": { "value": "22px", "type": "lineHeights" },
+    "headline6-article-letter-spacing": {
+      "value": "0.1px",
+      "type": "letterSpacing"
+    },
+    "headline6-article-space-before": { "value": "32px", "type": "dimension" },
+    "headline6-article-space-after": { "value": "8px", "type": "dimension" }
   }
 }
