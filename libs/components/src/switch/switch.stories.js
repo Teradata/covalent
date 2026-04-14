@@ -4,13 +4,13 @@ import '../formfield/formfield';
 const renderSwitch = ({
   disabled,
   label = 'On/Off',
-  selected,
+  checked,
   name,
   value,
   onChange,
 }) => {
   const switchInput = document.createElement('cv-switch');
-  switchInput.selected = selected;
+  switchInput.checked = checked;
   switchInput.disabled = disabled;
   switchInput.ariaLabel = label;
 
@@ -45,7 +45,7 @@ export default {
     disabled: {
       control: 'boolean',
     },
-    selected: {
+    checked: {
       control: 'boolean',
     },
     name: { control: 'text' },
@@ -55,7 +55,7 @@ export default {
   },
   args: {
     disabled: false,
-    selected: false,
+    checked: false,
     name: '',
     value: '',
     label: 'On/Off',

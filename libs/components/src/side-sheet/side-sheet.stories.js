@@ -4,6 +4,9 @@ import { Active as ActiveStatusHeader } from '../status-header/status-header.sto
 import tableRowSelectionContent from '../../stories/demos/table-row-selection.content.html?raw';
 import '../data-table/data-table.stories.scss';
 
+const renderStory = (story, args = {}) =>
+  story.render({ ...(story.args ?? {}), ...args });
+
 const attachSideSheetToggle = ({
   triggerSelector,
   sideSheetSelector,
@@ -111,9 +114,9 @@ export const StatusHeader = {
   args: {
     noPadding: true,
     width: '800px',
-    content: `${ActiveStatusHeader({
+    content: `${renderStory(ActiveStatusHeader, {
       state: 'active',
-      title: 'Example status from a side sheet',
+      titleText: 'Example status from a side sheet',
     })}
           ${tableRowSelectionContent}`,
   },

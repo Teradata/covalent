@@ -1,11 +1,25 @@
 import '../checkbox/checkbox';
 import '../formfield/formfield';
 
-import { Basic } from '../typography/typography.stories';
+import typographyMeta, { Basic } from '../typography/typography.stories';
 import loremIpsumContent from '../../stories/demos/lorem-ipsum.content.html?raw';
 import tableProgressContent from '../../stories/demos/table-progress-indicator.content.html?raw';
 
 import 'skeleton-elements/css';
+
+const renderStory = (story, meta, args = {}) => {
+  if (typeof story === 'function') {
+    return story(args);
+  }
+
+  const render = story.render ?? meta?.render;
+
+  if (typeof render !== 'function') {
+    throw new Error('Story render function is not available');
+  }
+
+  return render({ ...(story.args ?? {}), ...args });
+};
 
 const applySkeletonClasses = (elements) => {
   Array.from(elements).forEach((element) => {
@@ -24,8 +38,9 @@ const createSkeletonContainer = (content, applySkeleton) => {
 
 const renderSkeletonContent = (content) => {
   return createSkeletonContainer(content, (container) => {
-    container.classList.add(skeletonClsName);
-    container.classList.add(skeletonEffect);
+    applySkeletonClasses(
+      container.children.length ? container.children : [container],
+    );
   });
 };
 
@@ -38,7 +53,7 @@ const renderDataTable = () => {
 };
 
 const renderTypography = () => {
-  return renderSkeletonContent(`${Basic()}`);
+  return renderSkeletonContent(renderStory(Basic, typographyMeta));
 };
 
 const renderContent = () => {

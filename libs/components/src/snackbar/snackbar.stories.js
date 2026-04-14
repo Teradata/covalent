@@ -10,7 +10,7 @@ export default {
     leading: false,
     closeOnEscape: false,
     timeoutMs: '5000',
-    labelText: "Can't send photo. Retry in 5 seconds.",
+    label: "Can't send photo. Retry in 5 seconds.",
   },
   tags: ['autodocs'],
 };
