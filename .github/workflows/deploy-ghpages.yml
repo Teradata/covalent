@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'release/*']
 
 jobs:
   release:
@@ -23,10 +23,12 @@ jobs:
       - name: Install dependencies
         run: npx ci
       - name: Build story book artifacts
+        if: github.ref == 'refs/heads/main'
         env:
           NODE_OPTIONS: --max-old-space-size=4096
         run: npx nx run components:build-storybook
       - name: Deploy docs and storybook to GitHub pages
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH }}
+          DEPLOY_STORYBOOK: ${{ github.ref == 'refs/heads/main' }}
         run: npm run ghpages:deploy

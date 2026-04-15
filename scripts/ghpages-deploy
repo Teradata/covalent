@@ -13,10 +13,12 @@ rm -rf ./$version
 mkdir $version
 cp -r dist/apps/docs-app/* $version
 
-echo "Create or replace storybook dir"
-rm -rf ./$storybook_dir
-mkdir -p $storybook_dir
-cp -r ./dist/storybook/* ./$storybook_dir/
+if [ "$DEPLOY_STORYBOOK" = "true" ]; then
+  echo "Create or replace storybook dir"
+  rm -rf ./$storybook_dir
+  mkdir -p $storybook_dir
+  cp -r ./dist/storybook/* ./$storybook_dir/
+fi
 
 echo "Configuring GIT User"
 git config user.name github-actions
@@ -24,8 +26,14 @@ git config user.email github-actions@github.com
 
 echo 'Tracking files'
 git add -A $version
-git add -A $storybook_dir
+if [ "$DEPLOY_STORYBOOK" = "true" ]; then
+  git add -A $storybook_dir
+fi
 echo 'Commiting files'
-git commit --no-verify -a -m "feat(): gh-pages update for $version; update storybook pages"
+if [ "$DEPLOY_STORYBOOK" = "true" ]; then
+  git commit --no-verify -a -m "feat(): gh-pages update for $version; update storybook pages"
+else
+  git commit --no-verify -a -m "feat(): gh-pages update for $version"
+fi
 echo 'Pushing files into gh-pages branch'
 git push origin gh-pages --force
