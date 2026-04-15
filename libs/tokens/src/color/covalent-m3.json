@@ -3311,7 +3311,7 @@
         "surface-container-highest": {
           "description": "",
           "type": "color",
-          "value": "{theme.dark.palettes.navy-24}"
+          "value": "{theme.dark.palettes.neutral-22}"
         },
         "on-surface": {
           "description": "",
