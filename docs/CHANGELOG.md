@@ -1,3 +1,11 @@
+## [10.5.6](https://github.com/Teradata/covalent/compare/v10.5.5...v10.5.6) (2026-04-15)
+
+### Bug Fixes
+
+- **markdown:** fix linter issues ([a6fc946](https://github.com/Teradata/covalent/commit/a6fc9469d284ef6e0f90dd739d75a78d14b9ec0a))
+- **markdown:** implement local videos support in markdown ([1e6bff5](https://github.com/Teradata/covalent/commit/1e6bff5c9c2bbdadd1fff218047086b6bb97da88))
+- **markdown:** wip on render local videos ([21b7f68](https://github.com/Teradata/covalent/commit/21b7f68c6d041397e95bacee3961e66634c705e2))
+
 ## [10.5.5](https://github.com/Teradata/covalent/compare/v10.5.4...v10.5.5) (2026-04-07)
 
 ### Bug Fixes
