@@ -48,8 +48,29 @@ Simply use HTML5 video syntax:
 - \`autoplay\` - Auto-play on load (use carefully!)
 
 ### Notes:
-- The \`hostedUrl\` input is used to resolve relative paths
-- For GitHub URLs, paths are automatically converted to raw URLs
-- Multiple source formats can be specified for browser compatibility
-`;
+- For relative paths, make sure to set the \`hostedUrl\` input
+- Multiple \`<source>\` tags can be used for browser compatibility
+- Video files should be served from accessible URLs
+  `;
+
+  localVideoMarkdown = `
+## Local Video Example
+
+This example uses a video from the local assets folder:
+
+<video controls width="600" height="400">
+  <source src="assets/video/example.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+### Code:
+\`\`\`html
+<video controls width="600" height="400">
+  <source src="assets/video/example.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+\`\`\`
+
+**Note:** The video file is located at \`apps/docs-app/src/assets/video/example.mp4\`
+  `;
 }
