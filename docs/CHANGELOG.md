@@ -1,3 +1,9 @@
+## [11.19.2](https://github.com/Teradata/covalent/compare/v11.19.1...v11.19.2) (2026-04-15)
+
+### Bug Fixes
+
+- **tokens:** update surface-container-highest to use neutral-22 ([9bfb2ef](https://github.com/Teradata/covalent/commit/9bfb2ef8f05f5d0742cf02b906871499b5656c1c))
+
 ## [11.19.1](https://github.com/Teradata/covalent/compare/v11.19.0...v11.19.1) (2026-04-08)
 
 ### Bug Fixes
