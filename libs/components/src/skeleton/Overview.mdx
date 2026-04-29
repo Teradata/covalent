@@ -1,0 +1,49 @@
+import { Canvas, Meta, Source } from '@storybook/addon-docs/blocks';
+import { useDarkMode } from '@vueless/storybook-dark-mode';
+import * as SkeletonStories from './skeleton.stories';
+
+export const DarkSource = (props) => {
+  const isDark = useDarkMode();
+  return <Source {...props} dark={isDark} />;
+};
+
+<Meta of={SkeletonStories} />
+
+# Skeleton
+
+These examples use [skeleton-elements](https://skeleton-elements.nolimits4web.com/) — a third-party
+library for skeleton screen / ghost element effects. The stories below show how to integrate it.
+
+---
+
+## Setup
+
+**1. Install**
+
+<DarkSource language="bash" code="npm install skeleton-elements" />
+
+**2. Import styles**
+
+<DarkSource language="js" code="import 'skeleton-elements/css';" />
+
+**3. Apply classes to your markup**
+
+<DarkSource
+  language="html"
+  code={`<p class="skeleton-text skeleton-effect-fade">Loading…</p>
+<div class="skeleton-block skeleton-effect-wave" style="height: 200px;"></div>`}
+/>
+
+Effect modifiers: `skeleton-effect-fade` · `skeleton-effect-wave` · `skeleton-effect-pulse`
+
+---
+
+## STORIES
+
+<Canvas of={SkeletonStories.DataTable} />
+
+<Canvas of={SkeletonStories.Typography} />
+
+<Canvas of={SkeletonStories.Content} />
+
+<Canvas of={SkeletonStories.Checkbox} />

@@ -9,7 +9,6 @@ import 'skeleton-elements/css';
 
 export default {
   title: 'Components/Skeleton',
-  tags: ['autodocs'],
 };
 
 const skeletonClsName = 'skeleton-text';
