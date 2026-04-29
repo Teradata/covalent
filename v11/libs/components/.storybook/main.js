@@ -2,7 +2,10 @@ const rootMain = require('../../../.storybook/main.js');
 const { mergeConfig } = require('vite');
 
 // Use the following syntax to add addons!
-((rootMain.stories = ['../**/*.stories.@(js|jsx|ts|tsx|mdx)']),
+((rootMain.stories = [
+  '../**/*.stories.@(js|jsx|ts|tsx)',
+  '../**/Overview.mdx',
+]),
   (rootMain.core = { builder: '@storybook/builder-vite' }));
 module.exports = {
   ...rootMain,
