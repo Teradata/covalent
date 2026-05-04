@@ -87,6 +87,9 @@ export class CovalentNotebookCell extends LitElement {
 
   private _menuPosition = { top: 0, left: 0 };
 
+  @state()
+  private _editorStale = false;
+
   editorOptions = {
     minimap: { enabled: false }, // Disable minimap to save space
     wordWrap: 'on', // Enable word wrap to avoid horizontal scroll
@@ -126,11 +129,21 @@ export class CovalentNotebookCell extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
     document.addEventListener('click', this.closeContextMenu);
+
+    if (this._editorStale) {
+      this.updateComplete.then(() => {
+        this._editorStale = false;
+      });
+    }
   }
 
   disconnectedCallback(): void {
     super.disconnectedCallback();
     document.removeEventListener('click', this.closeContextMenu);
+
+    if (this.selected) {
+      this._editorStale = true;
+    }
   }
 
   handleCodeChange(e: CustomEvent) {
@@ -162,7 +175,7 @@ export class CovalentNotebookCell extends LitElement {
     });
 
     const menu = this.shadowRoot?.querySelector(
-      '.contextMenu'
+      '.contextMenu',
     ) as HTMLDivElement;
     const menuHeight = menu?.offsetHeight;
 
@@ -216,22 +229,22 @@ export class CovalentNotebookCell extends LitElement {
   }
 
   renderEditor() {
-    // Show editor when the cell is selected and show code snippet otherwise
-    const editor = this.selected
-      ? html`<cv-code-editor
-          @code-change="${this.handleCodeChange}"
-          @editor-ready="${this.setEditorInstance}"
-          @editor-focus="${(e: CustomEvent) => this.setEditorFocus(e, true)}"
-          @editor-blur="${(e: CustomEvent) => this.setEditorFocus(e, false)}"
-          .code="${this.code}"
-          .language="${this.language}"
-          .options="${this.editorOptions}"
-          .theme="${this.editorTheme}"
-          disableScroll
-        ></cv-code-editor>`
-      : html`<cv-code-snippet hideHeader .language="${this.language}"
-          >${this.code}</cv-code-snippet
-        >`;
+    const editor =
+      this.selected && !this._editorStale
+        ? html`<cv-code-editor
+            @code-change="${this.handleCodeChange}"
+            @editor-ready="${this.setEditorInstance}"
+            @editor-focus="${(e: CustomEvent) => this.setEditorFocus(e, true)}"
+            @editor-blur="${(e: CustomEvent) => this.setEditorFocus(e, false)}"
+            .code="${this.code}"
+            .language="${this.language}"
+            .options="${this.editorOptions}"
+            .theme="${this.editorTheme}"
+            disableScroll
+          ></cv-code-editor>`
+        : html`<cv-code-snippet hideHeader .language="${this.language}"
+            >${this.code}</cv-code-snippet
+          >`;
     return html`${this.hideEditor
       ? ''
       : html`<div class="editorContainer">${editor}</div>`}`;
