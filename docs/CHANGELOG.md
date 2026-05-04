@@ -1,3 +1,9 @@
+## [11.19.4](https://github.com/Teradata/covalent/compare/v11.19.3...v11.19.4) (2026-05-04)
+
+### Bug Fixes
+
+- **components:** fix notebook-cell render lifecycle ([556de3a](https://github.com/Teradata/covalent/commit/556de3aef14a367435ed98125e4c1d8b146173e2))
+
 ## [11.19.3](https://github.com/Teradata/covalent/compare/v11.19.2...v11.19.3) (2026-04-15)
 
 ### Bug Fixes
