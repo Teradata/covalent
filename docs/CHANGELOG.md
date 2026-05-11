@@ -1,3 +1,62 @@
+## [11.19.4](https://github.com/Teradata/covalent/compare/v11.19.3...v11.19.4) (2026-05-04)
+
+### Bug Fixes
+
+- **components:** fix notebook-cell render lifecycle ([556de3a](https://github.com/Teradata/covalent/commit/556de3aef14a367435ed98125e4c1d8b146173e2))
+
+## [11.19.3](https://github.com/Teradata/covalent/compare/v11.19.2...v11.19.3) (2026-04-15)
+
+### Bug Fixes
+
+- **markdown:** add support for local videos ([cbe0c1f](https://github.com/Teradata/covalent/commit/cbe0c1fd2cb636e373cf9f4a61beb3625073e21f))
+- **markdown:** fix linter issues ([a0538c3](https://github.com/Teradata/covalent/commit/a0538c3ef87c73a78516e666a3e7535811b633a8))
+
+## [11.19.2](https://github.com/Teradata/covalent/compare/v11.19.1...v11.19.2) (2026-04-15)
+
+### Bug Fixes
+
+- **tokens:** update surface-container-highest to use neutral-22 ([9bfb2ef](https://github.com/Teradata/covalent/commit/9bfb2ef8f05f5d0742cf02b906871499b5656c1c))
+
+## [11.19.1](https://github.com/Teradata/covalent/compare/v11.19.0...v11.19.1) (2026-04-08)
+
+### Bug Fixes
+
+- **markdown:** update article typography tokens ([8f4e80a](https://github.com/Teradata/covalent/commit/8f4e80a9c98e48e171c3b67ccd4da3f1cb9799af))
+- **markdown:** update tokens build on CI process ([a9a36f8](https://github.com/Teradata/covalent/commit/a9a36f8967b5297c76130c9c569bcca317266bfa))
+- **markdown:** update tokens build on CI process ([41fb95e](https://github.com/Teradata/covalent/commit/41fb95e659aa42aa7db7633b8f6fb81062ed3cc1))
+
+# [11.19.0](https://github.com/Teradata/covalent/compare/v11.18.1...v11.19.0) (2026-04-08)
+
+### Features
+
+- **icons:** added new connection manager icons ([09c5ea4](https://github.com/Teradata/covalent/commit/09c5ea4cf2b13fafed82dc12d408a968bcbd2def))
+- **icons:** added new connection manager icons ([20638ed](https://github.com/Teradata/covalent/commit/20638ed9a064ce0163671f28ef80a6c093dc02b0))
+
+## [11.18.1](https://github.com/Teradata/covalent/compare/v11.18.0...v11.18.1) (2026-04-07)
+
+### Bug Fixes
+
+- **markdown-navigator:** fix typography styling on component content ([3da0491](https://github.com/Teradata/covalent/commit/3da04911fc749344753068e9d5aa6675f71a3862))
+
+# [11.18.0](https://github.com/Teradata/covalent/compare/v11.17.0...v11.18.0) (2026-04-06)
+
+### Features
+
+- **card:** add CovalentCardHeader component ([a78164c](https://github.com/Teradata/covalent/commit/a78164c1c69984a01f22d394b9339c51dbff1703))
+
+# [11.17.0](https://github.com/Teradata/covalent/compare/v11.16.3...v11.17.0) (2026-03-31)
+
+### Features
+
+- **base-styles:** add new custom css files using all our tokens ([fde19f1](https://github.com/Teradata/covalent/commit/fde19f155015f5069ad2a8344dd071dd27d4bdc5))
+- **foundations:** add cdn-ready utility css elements library ([37ec52c](https://github.com/Teradata/covalent/commit/37ec52c39e1c07f02374a8af0a0f26311361ae13))
+
+## [11.16.3](https://github.com/Teradata/covalent/compare/v11.16.2...v11.16.3) (2026-03-27)
+
+### Bug Fixes
+
+- **side-sheet:** add background, add width prop ([195cb74](https://github.com/Teradata/covalent/commit/195cb748bff41ad6c19e3692a064feda0fd1b8dd))
+
 ## [11.16.2](https://github.com/Teradata/covalent/compare/v11.16.1...v11.16.2) (2026-03-23)
 
 ### Bug Fixes

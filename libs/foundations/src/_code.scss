@@ -1,0 +1,29 @@
+@use 'tokens' as *;
+
+$tokens-map: $tokens;
+$typography: map-get($tokens-map, 'typography');
+
+.cv-code {
+  font-family: map-get($typography, 'code-font-family');
+  font-size: map-get($typography, 'code-font-size');
+  font-weight: map-get($typography, 'code-font-weight');
+  line-height: map-get($typography, 'code-line-height');
+  background-color: var(--cv-theme-surface-variant);
+  color: var(--cv-theme-on-surface-variant);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  display: inline;
+}
+
+.cv-code-block {
+  font-family: map-get($typography, 'code-font-family');
+  font-size: map-get($typography, 'code-font-size');
+  background-color: var(--cv-theme-surface-variant);
+  color: var(--cv-theme-on-surface-variant);
+  padding: 1rem;
+  border-radius: 8px;
+  display: block;
+  overflow-x: auto;
+  margin: 0 0 1rem;
+  white-space: pre;
+}

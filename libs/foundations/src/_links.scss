@@ -1,0 +1,19 @@
+.cv-link {
+  color: var(--cv-theme-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--cv-theme-primary);
+  }
+
+  &:visited {
+    color: var(--cv-theme-primary);
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}

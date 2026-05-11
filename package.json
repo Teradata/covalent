@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "11.16.2",
+  "version": "11.19.4",
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
     "angular",
@@ -21,6 +21,8 @@
     "ghpages:deploy": "VERSION=$(echo v${npm_package_version} | cut -c1-3) && nx build docs-app -- --base-href=/covalent/$VERSION/ && bash scripts/ghpages-deploy $VERSION",
     "release:prepare": "npx nx run-many --target=build --all && node ./scripts/version-placeholder ./dist",
     "style-dictionary": "cd libs/tokens && style-dictionary build",
+    "build:foundations": "nx build tokens && nx build foundations",
+    "dev:foundations": "python3 -m http.server 8000 --directory libs/foundations/public",
     "storybook": "storybook dev -c libs/components/.storybook",
     "build-storybook": "storybook build -c libs/components/.storybook -o dist/storybook/components",
     "chromatic": "npx chromatic",
@@ -117,7 +119,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-angular": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@covalent/tokens": "latest",
+    "@covalent/tokens": "^11.19.1",
     "@nx/angular": "21.1.2",
     "@nx/cypress": "21.1.2",
     "@nx/eslint": "21.1.2",

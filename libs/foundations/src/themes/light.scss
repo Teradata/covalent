@@ -1,0 +1,39 @@
+@use '../tokens' as *;
+
+$tokens-map: $tokens;
+$theme-tokens: map-get($tokens-map, 'theme');
+$light-tokens: map-get($theme-tokens, 'light');
+$light-colors: map-get($light-tokens, 'colors');
+$typography-tokens: map-get($tokens-map, 'typography');
+
+// Merge deprecated tokens if they exist
+@if map-has-key($tokens-map, 'light') {
+  $deprecated-light: map-get($tokens-map, 'light');
+  $light-colors: map-merge($light-colors, $deprecated-light);
+}
+
+// Mixin to generate CSS variables
+@mixin css-variables($map, $prefix: 'cv-theme') {
+  @each $key, $value in $map {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+}
+
+:root {
+  // Apply light theme colors
+  @include css-variables($light-colors, 'cv-theme');
+
+  // Apply typography tokens
+  @include css-variables($typography-tokens, 'cv-typography');
+
+  // Base styles
+  color-scheme: light;
+  font-family: map-get($typography-tokens, 'font-family');
+}
+
+body {
+  background-color: var(--cv-theme-background);
+  color: var(--cv-theme-on-background);
+  margin: 0;
+  padding: 0;
+}

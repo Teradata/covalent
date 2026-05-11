@@ -42,3 +42,6 @@ Thumbs.db
 .nx
 storybook-static
 build-storybook.log
+
+# Generated CSS files for local dev
+libs/foundations/public/css/

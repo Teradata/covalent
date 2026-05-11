@@ -1,0 +1,101 @@
+@use 'tokens' as *;
+
+$tokens-map: $tokens;
+$typography: map-get($tokens-map, 'typography');
+
+// Base list styles using Covalent tokens
+.cv-list {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  color: var(--cv-theme-on-surface);
+  font-family: map-get($typography, 'body1-font-family');
+  font-size: map-get($typography, 'body1-font-size');
+  font-weight: map-get($typography, 'body1-font-weight');
+  line-height: map-get($typography, 'body1-line-height');
+  letter-spacing: map-get($typography, 'body1-letter-spacing');
+}
+
+// Unordered list
+.cv-list-unordered {
+  list-style: disc;
+  padding-left: 40px;
+  margin: 0 0 16px 0;
+  color: var(--cv-theme-on-surface);
+  font-family: map-get($typography, 'body1-font-family');
+  font-size: map-get($typography, 'body1-font-size');
+  font-weight: map-get($typography, 'body1-font-weight');
+  line-height: map-get($typography, 'body1-line-height');
+  letter-spacing: map-get($typography, 'body1-letter-spacing');
+
+  li {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Nested list styling
+  ul {
+    list-style: circle;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    ul {
+      list-style: square;
+    }
+  }
+}
+
+// Ordered list
+.cv-list-ordered {
+  list-style: decimal;
+  padding-left: 40px;
+  margin: 0 0 16px 0;
+  color: var(--cv-theme-on-surface);
+  font-family: map-get($typography, 'body1-font-family');
+  font-size: map-get($typography, 'body1-font-size');
+  font-weight: map-get($typography, 'body1-font-weight');
+  line-height: map-get($typography, 'body1-line-height');
+  letter-spacing: map-get($typography, 'body1-letter-spacing');
+
+  li {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Nested list styling
+  ol {
+    list-style: lower-alpha;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    ol {
+      list-style: lower-roman;
+    }
+  }
+}
+
+// Nested list utility class
+.cv-list-nested {
+  margin-left: 24px;
+  margin-top: 8px;
+}
+
+// Dense list variant (using density token)
+.cv-list-dense {
+  li {
+    margin-bottom: 4px; // density.interval
+  }
+}
+
+// List item with divider
+.cv-list-item-divider {
+  border-bottom: 1px solid var(--cv-theme-outline-variant);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@covalent/foundations",
+  "version": "0.0.0-COVALENT",
+  "description": "Foundation CSS styles and utility classes for Covalent Design System",
+  "main": "./covalent.css",
+  "exports": {
+    ".": {
+      "style": "./covalent.css",
+      "sass": "./classes.scss"
+    },
+    "./covalent.css": "./covalent.css",
+    "./covalent.min.css": "./covalent.min.css",
+    "./elements.css": "./elements.css",
+    "./elements.min.css": "./elements.min.css",
+    "./themes/light.css": "./themes/light.css",
+    "./themes/dark.css": "./themes/dark.css",
+    "./bundles/covalent-light.bundle.css": "./bundles/covalent-light.bundle.css",
+    "./bundles/covalent-light.bundle.min.css": "./bundles/covalent-light.bundle.min.css",
+    "./bundles/covalent-dark.bundle.css": "./bundles/covalent-dark.bundle.css",
+    "./bundles/covalent-dark.bundle.min.css": "./bundles/covalent-dark.bundle.min.css",
+    "./bundles/elements-light.bundle.css": "./bundles/elements-light.bundle.css",
+    "./bundles/elements-light.bundle.min.css": "./bundles/elements-light.bundle.min.css",
+    "./bundles/elements-dark.bundle.css": "./bundles/elements-dark.bundle.css",
+    "./bundles/elements-dark.bundle.min.css": "./bundles/elements-dark.bundle.min.css",
+    "./bundles/covalent.adaptive.css": "./bundles/covalent.adaptive.css",
+    "./bundles/covalent.adaptive.min.css": "./bundles/covalent.adaptive.min.css",
+    "./bundles/elements.adaptive.css": "./bundles/elements.adaptive.css",
+    "./bundles/elements.adaptive.min.css": "./bundles/elements.adaptive.min.css"
+  },
+  "peerDependencies": {
+    "@covalent/tokens": "0.0.0-COVALENT"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "author": "Teradata UX"
+}

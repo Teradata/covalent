@@ -1,0 +1,59 @@
+{
+  "name": "foundations",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/foundations/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/libs/foundations"],
+      "dependsOn": ["^build"],
+      "options": {
+        "cwd": "{workspaceRoot}",
+        "commands": [
+          "mkdir -p dist/libs/foundations/themes",
+          "mkdir -p dist/libs/foundations/bundles",
+          "mkdir -p libs/foundations/public/css",
+          "mkdir -p libs/foundations/public/css/bundles",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/classes.scss dist/libs/foundations/covalent.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/foundations/src/classes.scss dist/libs/foundations/covalent.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/elements.scss dist/libs/foundations/elements.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/foundations/src/elements.scss dist/libs/foundations/elements.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/themes/light.scss dist/libs/foundations/themes/light.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/themes/dark.scss dist/libs/foundations/themes/dark.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/bundles/covalent-light.bundle.scss dist/libs/foundations/bundles/covalent-light.bundle.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/foundations/src/bundles/covalent-light.bundle.scss dist/libs/foundations/bundles/covalent-light.bundle.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/bundles/covalent-dark.bundle.scss dist/libs/foundations/bundles/covalent-dark.bundle.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/foundations/src/bundles/covalent-dark.bundle.scss dist/libs/foundations/bundles/covalent-dark.bundle.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/bundles/elements-light.bundle.scss dist/libs/foundations/bundles/elements-light.bundle.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/foundations/src/bundles/elements-light.bundle.scss dist/libs/foundations/bundles/elements-light.bundle.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/bundles/elements-dark.bundle.scss dist/libs/foundations/bundles/elements-dark.bundle.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/foundations/src/bundles/elements-dark.bundle.scss dist/libs/foundations/bundles/elements-dark.bundle.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/bundles/covalent.adaptive.scss dist/libs/foundations/bundles/covalent.adaptive.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/foundations/src/bundles/covalent.adaptive.scss dist/libs/foundations/bundles/covalent.adaptive.min.css",
+          "npx sass --no-source-map --style=expanded --load-path=dist/libs/tokens libs/foundations/src/bundles/elements.adaptive.scss dist/libs/foundations/bundles/elements.adaptive.css",
+          "npx sass --no-source-map --style=compressed --load-path=dist/libs/tokens libs/foundations/src/bundles/elements.adaptive.scss dist/libs/foundations/bundles/elements.adaptive.min.css",
+          "cp dist/libs/foundations/covalent.css libs/foundations/public/css/",
+          "cp dist/libs/foundations/elements.css libs/foundations/public/css/",
+          "cp dist/libs/foundations/themes/light.css libs/foundations/public/css/",
+          "cp dist/libs/foundations/themes/dark.css libs/foundations/public/css/",
+          "cp dist/libs/foundations/bundles/*.css libs/foundations/public/css/bundles/",
+          "cp libs/foundations/src/*.scss dist/libs/foundations/",
+          "cp libs/foundations/src/_*.scss dist/libs/foundations/",
+          "cp libs/foundations/src/themes/*.scss dist/libs/foundations/themes/",
+          "cp libs/foundations/src/bundles/*.scss dist/libs/foundations/bundles/",
+          "cp libs/foundations/package.json dist/libs/foundations/",
+          "cp libs/foundations/README.md dist/libs/foundations/"
+        ],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'No linting configured for SCSS-only library'"
+      }
+    }
+  },
+  "tags": ["type:library", "scope:styles"]
+}
