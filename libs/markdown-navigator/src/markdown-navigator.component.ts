@@ -411,8 +411,8 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return (
       removeLeadingHash(item.anchor ?? '') ||
       item.title ||
-      getTitleFromUrl(item.url ?? '') ||
       getTitleFromMarkdownString(item.markdownString ?? '') ||
+      getTitleFromUrl(item.url ?? '') ||
       ''
     ).trim();
   }
@@ -440,6 +440,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private async _jumpTo(
     itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[],
     children?: IMarkdownNavigatorItem[],
+    shouldReset: boolean = true,
   ): Promise<boolean> {
     const historyStack: IMarkdownNavigatorItem[] = this.historyStack;
     let path: IMarkdownNavigatorItem[] = [];
@@ -453,13 +454,22 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       } else {
         path = this.findPath(this.items, itemOrPath);
       }
-      path.forEach((pathItem: IMarkdownNavigatorItem, index) => {
-        if (index === 0) {
-          this.reset();
-        }
 
-        this.handleItemSelected(pathItem);
-      });
+      // When navigating through internal links (shouldReset = false),
+      // only navigate to the final destination, not the entire path,
+      // to avoid duplicating parent items already in historyStack
+      if (!shouldReset && path.length > 0) {
+        const destination = path[path.length - 1];
+        this.handleItemSelected(destination);
+      } else {
+        path.forEach((pathItem: IMarkdownNavigatorItem, index) => {
+          if (index === 0 && shouldReset) {
+            this.reset();
+          }
+
+          this.handleItemSelected(pathItem);
+        });
+      }
     }
 
     return !!path.length;
@@ -507,6 +517,14 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
         if (item && compareWith(child, item)) {
           return [child];
         }
+        // Also try to match by URL filename pattern for internal links
+        if (
+          item?.url &&
+          child.url &&
+          this.urlsMatchByFilename(child.url, item.url)
+        ) {
+          return [child];
+        }
         const ancestors: IMarkdownNavigatorItem[] = this.findPath(
           child.children,
           item,
@@ -519,17 +537,45 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
     return [];
   }
 
+  private urlsMatchByFilename(url1: string, url2: string): boolean {
+    try {
+      const filename1 = url1.split('/').pop()?.split('?')[0] ?? '';
+      const filename2 = url2.split('/').pop()?.split('?')[0] ?? '';
+      return filename1 !== '' && filename2 !== '' && filename1 === filename2;
+    } catch {
+      return false;
+    }
+  }
+
   private async handleLinkClick(event: Event): Promise<void> {
     event.preventDefault();
     const link: HTMLAnchorElement = <HTMLAnchorElement>event.target;
     const url: URL = new URL(link.href);
     const urlParts = url.href.split('/');
     const id = urlParts[urlParts.length - 1].split('.md')[0];
+
+    // Capture link text for better UX - Phase 1
+    const linkText = link.textContent?.trim() || '';
+
     this.loading = true;
     this._changeDetectorRef.markForCheck();
-    const pathFound = await this._jumpTo({ id });
+
+    // Try to find by ID first (relative navigation, preserve history)
+    const pathFound = await this._jumpTo({ id }, undefined, false);
 
     if (pathFound) {
+      return;
+    }
+
+    // Try to find by URL pattern - Phase 2 (relative navigation, preserve history)
+    const filename = urlParts[urlParts.length - 1];
+    const pathFoundByUrl = await this._jumpTo(
+      { url: filename },
+      undefined,
+      false,
+    );
+
+    if (pathFoundByUrl) {
       return;
     }
 
@@ -537,8 +583,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
       const markdownString: string = await this._markdownUrlLoaderService.load(
         url.href,
       );
-      // pass in url to be able to use currentMarkdownItem.url later on
-      this.handleItemSelected({ markdownString, url: url.href });
+      // Pass link text as title for immediate UX improvement - Phase 1
+      this.handleItemSelected({
+        markdownString,
+        url: url.href,
+        title: linkText || undefined, // Use link text if available
+      });
       this.markdownWrapper.nativeElement.scrollTop = 0;
     } catch (error) {
       const win = window.open(url.href, '_blank');
