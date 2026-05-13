@@ -174,12 +174,12 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
-    const element: HTMLElement = <HTMLElement>event.srcElement;
-    if (
-      element.matches('a[href]') &&
-      isMarkdownHref(<HTMLAnchorElement>element)
-    ) {
-      this.handleLinkClick(event);
+    const element: HTMLElement = <HTMLElement>event.target;
+    // Use closest() to handle clicks on nested elements inside links
+    const anchor: HTMLAnchorElement | null = element.closest('a[href]');
+
+    if (anchor && isMarkdownHref(anchor)) {
+      this.handleLinkClick(event, anchor);
     }
   }
 
@@ -440,7 +440,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private async _jumpTo(
     itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[],
     children?: IMarkdownNavigatorItem[],
-    shouldReset: boolean = true,
+    shouldReset = true,
   ): Promise<boolean> {
     const historyStack: IMarkdownNavigatorItem[] = this.historyStack;
     let path: IMarkdownNavigatorItem[] = [];
@@ -539,17 +539,22 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
 
   private urlsMatchByFilename(url1: string, url2: string): boolean {
     try {
-      const filename1 = url1.split('/').pop()?.split('?')[0] ?? '';
-      const filename2 = url2.split('/').pop()?.split('?')[0] ?? '';
+      // Extract filename and strip query params (?...) and hash fragments (#...)
+      const filename1 =
+        url1.split('/').pop()?.split('?')[0].split('#')[0] ?? '';
+      const filename2 =
+        url2.split('/').pop()?.split('?')[0].split('#')[0] ?? '';
       return filename1 !== '' && filename2 !== '' && filename1 === filename2;
     } catch {
       return false;
     }
   }
 
-  private async handleLinkClick(event: Event): Promise<void> {
+  private async handleLinkClick(
+    event: Event,
+    link: HTMLAnchorElement,
+  ): Promise<void> {
     event.preventDefault();
-    const link: HTMLAnchorElement = <HTMLAnchorElement>event.target;
     const url: URL = new URL(link.href);
     const urlParts = url.href.split('/');
     const id = urlParts[urlParts.length - 1].split('.md')[0];
