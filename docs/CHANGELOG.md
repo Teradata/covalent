@@ -1,3 +1,10 @@
+## [10.5.7](https://github.com/Teradata/covalent/compare/v10.5.6...v10.5.7) (2026-05-14)
+
+### Bug Fixes
+
+- **markdown-navigator:** fix linter issues ([2a24791](https://github.com/Teradata/covalent/commit/2a247912d499aea6c1277939e02e78b5c6a1a0f5))
+- **markdown-navigator:** mixed navigation in relative and absolute paths ([0d8494d](https://github.com/Teradata/covalent/commit/0d8494dae73c888b6dfd10ef3c894fc1d243f9e4))
+
 ## [10.5.6](https://github.com/Teradata/covalent/compare/v10.5.5...v10.5.6) (2026-04-15)
 
 ### Bug Fixes
