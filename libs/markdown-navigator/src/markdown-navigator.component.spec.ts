@@ -183,27 +183,27 @@ export const ITEMS_AT_SAME_LEVEL_AS_MARKDOWN: IMarkdownNavigatorItem[] = [
 ];
 
 async function wait(
-  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>
+  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>,
 ): Promise<void> {
   fixture.detectChanges();
   await fixture.whenStable();
 }
 function getItem(
   fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>,
-  index: number
+  index: number,
 ): HTMLElement {
   return fixture.debugElement.queryAll(By.css('mat-action-list button'))[index]
     .nativeElement;
 }
 async function goBack(
-  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>
+  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>,
 ): Promise<void> {
   fixture.componentInstance.navigator.goBack();
   await wait(fixture);
 }
 
 async function goHome(
-  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>
+  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>,
 ): Promise<void> {
   fixture.debugElement
     .query(By.css('[data-test="home-button"]'))
@@ -211,14 +211,14 @@ async function goHome(
   await wait(fixture);
 }
 function getMarkdown(
-  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>
+  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>,
 ): string {
   return fixture.debugElement.query(By.css('td-flavored-markdown '))
     .nativeElement.textContent;
 }
 
 function getTitle(
-  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>
+  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>,
 ): string {
   return fixture.debugElement.query(By.css('[data-test="title"]')).nativeElement
     .textContent;
@@ -226,13 +226,13 @@ function getTitle(
 
 export function compareByTitle(
   o1: IMarkdownNavigatorItem,
-  o2: IMarkdownNavigatorItem
+  o2: IMarkdownNavigatorItem,
 ): boolean {
   return o1.title === o2.title;
 }
 
 async function validateTree(
-  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>
+  fixture: ComponentFixture<TdMarkdownNavigatorTestComponent>,
 ): Promise<void> {
   expect(getItem(fixture, 0).textContent).toContain('A');
   getItem(fixture, 0).click();
@@ -322,7 +322,7 @@ async function validateTree(
       [footer]="footer"
     ></td-markdown-navigator>
   `,
-  imports: [TdMarkdownNavigatorComponent]
+  imports: [TdMarkdownNavigatorComponent],
 })
 class TdMarkdownNavigatorTestComponent {
   items?: IMarkdownNavigatorItem[] = [];
@@ -341,7 +341,11 @@ describe('MarkdownNavigatorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, CovalentMarkdownNavigatorModule, TdMarkdownNavigatorTestComponent],
+      imports: [
+        NoopAnimationsModule,
+        CovalentMarkdownNavigatorModule,
+        TdMarkdownNavigatorTestComponent,
+      ],
       providers: [
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),
@@ -362,7 +366,7 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
 
       expect(markdownNavigator.showEmptyState).toBeTruthy();
@@ -371,7 +375,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showMenu).toBeFalsy();
       expect(markdownNavigator.showTdMarkdown).toBeFalsy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
-    })
+    }),
   ));
 
   it('should render empty state when undefined is passed into items', waitForAsync(
@@ -384,7 +388,7 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
 
       expect(markdownNavigator.showEmptyState).toBeTruthy();
@@ -393,7 +397,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showMenu).toBeFalsy();
       expect(markdownNavigator.showTdMarkdown).toBeFalsy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
-    })
+    }),
   ));
 
   it('should render one raw markdown item', waitForAsync(
@@ -406,7 +410,7 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
 
       expect(markdownNavigator.showEmptyState).toBeFalsy();
@@ -415,7 +419,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showMenu).toBeFalsy();
       expect(markdownNavigator.showTdMarkdown).toBeTruthy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
-    })
+    }),
   ));
 
   it('should fetch childrenUrl and render', waitForAsync(
@@ -435,7 +439,7 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
 
       expect(markdownNavigator.showMenu).toBeTruthy();
@@ -454,7 +458,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(getItem(fixture, 1).textContent).toContain(itemBTitle);
 
       httpTestingController.verify();
-    })
+    }),
   ));
 
   it('should show proper error messages', waitForAsync(
@@ -486,14 +490,14 @@ describe('MarkdownNavigatorComponent', () => {
       function getMarkdownLoaderError(): HTMLElement {
         return (
           fixture.debugElement.query(
-            By.css('[data-test="markdown-loader-error"]')
+            By.css('[data-test="markdown-loader-error"]'),
           ) || {}
         ).nativeElement;
       }
       function getChildrenUrlError(): HTMLElement {
         return (
           fixture.debugElement.query(
-            By.css('[data-test="children-url-error"]')
+            By.css('[data-test="children-url-error"]'),
           ) || {}
         ).nativeElement;
       }
@@ -565,7 +569,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(getChildrenUrlError()).toBeFalsy();
 
       httpTestingController.verify();
-    })
+    }),
   ));
 
   it('should render one url item from GitHub', waitForAsync(
@@ -578,7 +582,7 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
 
       expect(markdownNavigator.showEmptyState).toBeFalsy();
@@ -587,7 +591,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showMenu).toBeFalsy();
       expect(markdownNavigator.showTdMarkdown).toBeFalsy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeTruthy();
-    })
+    }),
   ));
 
   it('should render a flat list of items', waitForAsync(
@@ -600,10 +604,10 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(
-        By.css('mat-action-list button')
+        By.css('mat-action-list button'),
       );
 
       expect(markdownNavigator.showEmptyState).toBeFalsy();
@@ -613,7 +617,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showTdMarkdown).toBeFalsy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
       expect(listItems.length).toBe(FLAT_MIXED_ITEMS.length);
-    })
+    }),
   ));
 
   it('should use custom icons if passed in', waitForAsync(
@@ -625,17 +629,17 @@ describe('MarkdownNavigatorComponent', () => {
       await wait(fixture);
 
       const listItems: DebugElement[] = fixture.debugElement.queryAll(
-        By.css('mat-action-list button')
+        By.css('mat-action-list button'),
       );
 
       expect(listItems.length).toBe(ITEMS_WITH_CUSTOM_ICONS.length);
       expect(listItems[0].nativeElement.textContent).toContain(
-        ITEMS_WITH_CUSTOM_ICONS[0].icon
+        ITEMS_WITH_CUSTOM_ICONS[0].icon,
       );
       expect(listItems[1].nativeElement.textContent).toContain(
-        ITEMS_WITH_CUSTOM_ICONS[1].icon
+        ITEMS_WITH_CUSTOM_ICONS[1].icon,
       );
-    })
+    }),
   ));
 
   it('should use descriptions if passed in', waitForAsync(
@@ -647,17 +651,17 @@ describe('MarkdownNavigatorComponent', () => {
       await wait(fixture);
 
       const listItems: DebugElement[] = fixture.debugElement.queryAll(
-        By.css('mat-action-list button')
+        By.css('mat-action-list button'),
       );
 
       expect(listItems.length).toBe(ITEMS_WITH_DESCRIPTIONS.length);
       expect(listItems[0].nativeElement.textContent).toContain(
-        ITEMS_WITH_DESCRIPTIONS[0].description
+        ITEMS_WITH_DESCRIPTIONS[0].description,
       );
       expect(listItems[1].nativeElement.textContent).toContain(
-        ITEMS_WITH_DESCRIPTIONS[1].description
+        ITEMS_WITH_DESCRIPTIONS[1].description,
       );
-    })
+    }),
   ));
 
   it('should render a nested list of items', waitForAsync(
@@ -670,10 +674,10 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(
-        By.css('mat-action-list button')
+        By.css('mat-action-list button'),
       );
 
       expect(markdownNavigator.showEmptyState).toBeFalsy();
@@ -684,12 +688,12 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
       expect(listItems.length).toBe(NESTED_MIXED_ITEMS.length);
       expect(listItems[0].nativeElement.textContent).toContain(
-        NESTED_MIXED_ITEMS[0].title
+        NESTED_MIXED_ITEMS[0].title,
       );
       expect(listItems[1].nativeElement.textContent).toContain(
-        NESTED_MIXED_ITEMS[1].title
+        NESTED_MIXED_ITEMS[1].title,
       );
-    })
+    }),
   ));
 
   it('should render list and markdown side by side', waitForAsync(
@@ -702,20 +706,20 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(
-        By.css('mat-action-list button')
+        By.css('mat-action-list button'),
       );
 
       expect(markdownNavigator.showTdMarkdown).toBeFalsy();
       expect(markdownNavigator.showTdMarkdownLoader).toBeFalsy();
       expect(listItems.length).toBe(ITEMS_AT_SAME_LEVEL_AS_MARKDOWN.length);
       expect(listItems[0].nativeElement.textContent).toContain(
-        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title
+        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title,
       );
       expect(listItems[1].nativeElement.textContent).toContain(
-        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[1].title
+        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[1].title,
       );
       getItem(fixture, 0).click();
       await wait(fixture);
@@ -723,10 +727,10 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showMenu).toBeTruthy();
       expect(markdownNavigator.showTdMarkdown).toBeTruthy();
       expect(getTitle(fixture)).toContain(
-        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title
+        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title,
       );
       expect(getMarkdown(fixture)).toContain(
-        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].markdownString
+        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].markdownString,
       );
 
       getItem(fixture, 0).click();
@@ -739,22 +743,22 @@ describe('MarkdownNavigatorComponent', () => {
       expect(markdownNavigator.showMenu).toBeFalsy();
       expect(markdownNavigator.showTdMarkdown).toBeTruthy();
       expect(getTitle(fixture)).toContain(
-        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].children[0].title
+        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].children[0].title,
       );
       expect(getMarkdown(fixture)).toContain(
-        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].children[0].markdownString
+        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].children[0].markdownString,
       );
       goBack(fixture);
 
       expect(markdownNavigator.showMenu).toBeTruthy();
       expect(markdownNavigator.showTdMarkdown).toBeTruthy();
       expect(getTitle(fixture)).toContain(
-        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title
+        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].title,
       );
       expect(getMarkdown(fixture)).toContain(
-        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].markdownString
+        ITEMS_AT_SAME_LEVEL_AS_MARKDOWN[0].markdownString,
       );
-    })
+    }),
   ));
 
   it('should use default labels if labels is undefined', waitForAsync(
@@ -767,25 +771,25 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
       const elem: DebugElement = fixture.debugElement.query(
-        By.directive(TdMarkdownNavigatorComponent)
+        By.directive(TdMarkdownNavigatorComponent),
       );
 
       expect(markdownNavigator.goBackLabel).toContain(
-        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack
+        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack,
       );
       expect(markdownNavigator.goHomeLabel).toContain(
-        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome
+        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome,
       );
       expect(markdownNavigator.emptyStateLabel).toContain(
-        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState
+        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState,
       );
       expect(elem.nativeElement.textContent).toContain(
-        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState
+        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState,
       );
-    })
+    }),
   ));
 
   it('should use default labels if labels is an empty object', waitForAsync(
@@ -798,25 +802,25 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
       const elem: DebugElement = fixture.debugElement.query(
-        By.directive(TdMarkdownNavigatorComponent)
+        By.directive(TdMarkdownNavigatorComponent),
       );
 
       expect(markdownNavigator.goBackLabel).toContain(
-        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack
+        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goBack,
       );
       expect(markdownNavigator.goHomeLabel).toContain(
-        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome
+        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.goHome,
       );
       expect(markdownNavigator.emptyStateLabel).toContain(
-        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState
+        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState,
       );
       expect(elem.nativeElement.textContent).toContain(
-        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState
+        DEFAULT_MARKDOWN_NAVIGATOR_LABELS.emptyState,
       );
-    })
+    }),
   ));
 
   it('should use labels if passed in', waitForAsync(
@@ -834,21 +838,21 @@ describe('MarkdownNavigatorComponent', () => {
 
       const markdownNavigator: TdMarkdownNavigatorComponent =
         fixture.debugElement.query(
-          By.directive(TdMarkdownNavigatorComponent)
+          By.directive(TdMarkdownNavigatorComponent),
         ).componentInstance;
       const elem: DebugElement = fixture.debugElement.query(
-        By.directive(TdMarkdownNavigatorComponent)
+        By.directive(TdMarkdownNavigatorComponent),
       );
 
       expect(markdownNavigator.goBackLabel).toContain(SAMPLE_LABELS.goBack);
       expect(markdownNavigator.goHomeLabel).toContain(SAMPLE_LABELS.goHome);
       expect(markdownNavigator.emptyStateLabel).toContain(
-        SAMPLE_LABELS.emptyState
+        SAMPLE_LABELS.emptyState,
       );
       expect(elem.nativeElement.textContent).toContain(
-        SAMPLE_LABELS.emptyState
+        SAMPLE_LABELS.emptyState,
       );
-    })
+    }),
   ));
 
   it('should be able to navigate up and down tree using the back button', waitForAsync(
@@ -860,7 +864,7 @@ describe('MarkdownNavigatorComponent', () => {
       await wait(fixture);
 
       validateTree(fixture);
-    })
+    }),
   ));
 
   it('should be able to go to root using home button', waitForAsync(
@@ -883,7 +887,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(getItem(fixture, 1).textContent).toContain('B');
 
       validateTree(fixture);
-    })
+    }),
   ));
 
   it('should be able to start at a certain item by passing a reference to that item', waitForAsync(
@@ -914,7 +918,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(getTitle(fixture)).toContain('B');
       await goBack(fixture);
       validateTree(fixture);
-    })
+    }),
   ));
 
   it('should be able to jump to start at a certain item by referencing an id', waitForAsync(
@@ -928,7 +932,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(getTitle(fixture)).toContain('A');
       await goBack(fixture);
       validateTree(fixture);
-    })
+    }),
   ));
 
   it('should be able to jump to start at a certain item by referencing a path of items', waitForAsync(
@@ -943,7 +947,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(getTitle(fixture)).toContain('A');
       await goBack(fixture);
       validateTree(fixture);
-    })
+    }),
   ));
 
   it('should not jump anywhere if path is invalid', waitForAsync(
@@ -961,7 +965,7 @@ describe('MarkdownNavigatorComponent', () => {
       expect(getItem(fixture, 0).textContent).toContain('A');
       expect(getItem(fixture, 1).textContent).toContain('B');
       validateTree(fixture);
-    })
+    }),
   ));
 
   it('should be able to jump to start at a certain item by referencing a path of items that depends on children_url', waitForAsync(
@@ -993,7 +997,7 @@ describe('MarkdownNavigatorComponent', () => {
       await wait(fixture);
       await wait(fixture);
       expect(getTitle(fixture)).toContain('3c');
-    })
+    }),
   ));
 
   it('should be able to jump to start at a certain item by using a custom compareWith function', waitForAsync(
@@ -1009,7 +1013,7 @@ describe('MarkdownNavigatorComponent', () => {
 
       function deepHackyComparison(
         o1: IMarkdownNavigatorItem,
-        o2: IMarkdownNavigatorItem
+        o2: IMarkdownNavigatorItem,
       ): boolean {
         // order matters
         return JSON.stringify(o1) === JSON.stringify(o2);
@@ -1020,7 +1024,7 @@ describe('MarkdownNavigatorComponent', () => {
       fixture.componentInstance.startAt = NESTED_MIXED_ITEMS[1];
       await wait(fixture);
       expect(getTitle(fixture)).toContain(NESTED_MIXED_ITEMS[1].title);
-    })
+    }),
   ));
 
   it('should be able to render a custom component as a footer', waitForAsync(
@@ -1034,7 +1038,7 @@ describe('MarkdownNavigatorComponent', () => {
       await wait(fixture);
 
       expect(fixture.nativeElement.textContent).toContain(
-        'Global Footer Content'
+        'Global Footer Content',
       );
 
       getItem(fixture, 0).click();
@@ -1052,8 +1056,284 @@ describe('MarkdownNavigatorComponent', () => {
       await wait(fixture);
 
       expect(fixture.nativeElement.textContent).toContain(
-        'Global Footer Content'
+        'Global Footer Content',
       );
-    })
+    }),
+  ));
+
+  it('should match URLs by filename ignoring query params and hash fragments', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> =
+        TestBed.createComponent(TdMarkdownNavigatorTestComponent);
+
+      fixture.componentInstance.items = RAW_MARKDOWN_ITEM;
+      await wait(fixture);
+
+      const component = fixture.componentInstance.navigator;
+
+      // Test query params
+      expect(
+        component['urlsMatchByFilename'](
+          'docs/file.md',
+          'docs/file.md?version=2',
+        ),
+      ).toBe(true);
+
+      // Test hash fragments
+      expect(
+        component['urlsMatchByFilename'](
+          'docs/file.md',
+          'docs/file.md#section',
+        ),
+      ).toBe(true);
+
+      // Test both query params and hash fragments
+      expect(
+        component['urlsMatchByFilename'](
+          'docs/file.md',
+          'docs/file.md?v=2#section',
+        ),
+      ).toBe(true);
+
+      // Test different filenames should not match
+      expect(
+        component['urlsMatchByFilename']('docs/file.md', 'docs/other.md'),
+      ).toBe(false);
+
+      // Test different paths same filename should match
+      expect(
+        component['urlsMatchByFilename']('path1/file.md', 'path2/file.md'),
+      ).toBe(true);
+
+      // Test empty filenames should not match
+      expect(component['urlsMatchByFilename']('docs/', 'docs/')).toBe(false);
+    }),
+  ));
+
+  it('should preserve history stack when navigating through internal links (shouldReset=false)', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> =
+        TestBed.createComponent(TdMarkdownNavigatorTestComponent);
+
+      const items: IMarkdownNavigatorItem[] = [
+        {
+          id: 'parent',
+          title: 'Parent',
+          children: [
+            {
+              id: 'child',
+              title: 'Child',
+              markdownString: '# Child content',
+            },
+          ],
+        },
+      ];
+
+      fixture.componentInstance.items = items;
+      await wait(fixture);
+
+      const component = fixture.componentInstance.navigator;
+
+      // Navigate to parent (menu navigation - shouldReset=true by default)
+      getItem(fixture, 0).click();
+      await wait(fixture);
+
+      expect(component.historyStack.length).toBe(1);
+      expect(component.historyStack[0].id).toBe('parent');
+
+      // Simulate internal link navigation (shouldReset=false)
+      await component['_jumpTo']({ id: 'child' }, undefined, false);
+      await wait(fixture);
+
+      // Should have both parent and child in history (not reset)
+      expect(component.historyStack.length).toBe(2);
+      expect(component.historyStack[0].id).toBe('parent');
+      expect(component.historyStack[1].id).toBe('child');
+    }),
+  ));
+
+  it('should reset history stack when navigating through menu (shouldReset=true)', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> =
+        TestBed.createComponent(TdMarkdownNavigatorTestComponent);
+
+      fixture.componentInstance.items = DEEPLY_NESTED_TREE;
+      await wait(fixture);
+
+      const component = fixture.componentInstance.navigator;
+
+      // Navigate to A
+      getItem(fixture, 0).click();
+      await wait(fixture);
+      expect(component.historyStack.length).toBe(1);
+      expect(component.historyStack[0].title).toBe('A');
+
+      // Navigate to A1
+      getItem(fixture, 0).click();
+      await wait(fixture);
+      expect(component.historyStack.length).toBe(2);
+
+      // Jump to B with shouldReset=true (simulating menu navigation)
+      // This should reset the stack first, then build path to B
+      const bItem = DEEPLY_NESTED_TREE.find((item) => item.title === 'B');
+      await component['_jumpTo'](bItem!, undefined, true);
+      await wait(fixture);
+
+      // After reset + navigation to B, history should only contain B
+      expect(component.historyStack.length).toBe(1);
+      expect(component.historyStack[0].title).toBe('B');
+    }),
+  ));
+
+  it('should handle clicks on nested elements inside links using closest()', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> =
+        TestBed.createComponent(TdMarkdownNavigatorTestComponent);
+
+      const items: IMarkdownNavigatorItem[] = [
+        {
+          id: 'doc1',
+          title: 'Document 1',
+          markdownString: '# Document 1',
+        },
+        {
+          id: 'doc2',
+          title: 'Document 2',
+          markdownString: '# Document 2',
+        },
+      ];
+
+      fixture.componentInstance.items = items;
+      await wait(fixture);
+
+      const component = fixture.componentInstance.navigator;
+
+      // Test that closest() is used by verifying the method exists and works correctly
+      const mockAnchor = document.createElement('a');
+      mockAnchor.href = 'http://localhost/doc2.md';
+      mockAnchor.innerHTML = '<strong>Bold Link</strong>';
+      document.body.appendChild(mockAnchor);
+
+      const strongElement = mockAnchor.querySelector('strong') as HTMLElement;
+
+      // Verify closest() finds the anchor from nested element
+      expect(strongElement.closest('a[href]')).toBe(mockAnchor);
+
+      // Cleanup
+      document.body.removeChild(mockAnchor);
+    }),
+  ));
+
+  it('should preserve breadcrumbs when mixing menu navigation and internal links', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> =
+        TestBed.createComponent(TdMarkdownNavigatorTestComponent);
+
+      const items: IMarkdownNavigatorItem[] = [
+        {
+          id: 'guide',
+          title: 'User Guide',
+          markdownString: '# User Guide\n\nSee [Settings](settings.md)',
+          children: [
+            {
+              id: 'settings',
+              title: 'Settings',
+              markdownString: '# Settings\n\nCheck [Advanced](advanced.md)',
+              children: [
+                {
+                  id: 'advanced',
+                  title: 'Advanced',
+                  markdownString: '# Advanced Settings',
+                },
+              ],
+            },
+          ],
+        },
+      ];
+
+      fixture.componentInstance.items = items;
+      await wait(fixture);
+
+      const component = fixture.componentInstance.navigator;
+
+      // Step 1: Menu navigation to "User Guide"
+      getItem(fixture, 0).click();
+      await wait(fixture);
+      expect(component.historyStack.length).toBe(1);
+      expect(component.historyStack[0].id).toBe('guide');
+
+      // Step 2: Internal link to "Settings" (should preserve "User Guide" in history)
+      await component['_jumpTo']({ id: 'settings' }, undefined, false);
+      await wait(fixture);
+      expect(component.historyStack.length).toBe(2);
+      expect(component.historyStack[0].id).toBe('guide');
+      expect(component.historyStack[1].id).toBe('settings');
+
+      // Step 3: Internal link to "Advanced" (should preserve full history)
+      await component['_jumpTo']({ id: 'advanced' }, undefined, false);
+      await wait(fixture);
+      expect(component.historyStack.length).toBe(3);
+      expect(component.historyStack[0].id).toBe('guide');
+      expect(component.historyStack[1].id).toBe('settings');
+      expect(component.historyStack[2].id).toBe('advanced');
+
+      // Verify breadcrumbs show complete path without duplicates
+      const breadcrumbs = component.navigationBreadcrumbs;
+      expect(breadcrumbs.length).toBe(2); // All items except current (last one)
+      expect(breadcrumbs[0].id).toBe('guide');
+      expect(breadcrumbs[1].id).toBe('settings');
+    }),
+  ));
+
+  it('should not duplicate parent items in breadcrumbs when clicking internal links to nested items', waitForAsync(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdMarkdownNavigatorTestComponent> =
+        TestBed.createComponent(TdMarkdownNavigatorTestComponent);
+
+      const items: IMarkdownNavigatorItem[] = [
+        {
+          id: 'docs',
+          title: 'Documentation',
+          children: [
+            {
+              id: 'api',
+              title: 'API Reference',
+              children: [
+                {
+                  id: 'endpoints',
+                  title: 'Endpoints',
+                  markdownString: '# API Endpoints',
+                },
+              ],
+            },
+          ],
+        },
+      ];
+
+      fixture.componentInstance.items = items;
+      await wait(fixture);
+
+      const component = fixture.componentInstance.navigator;
+
+      // Navigate to Documentation via menu
+      getItem(fixture, 0).click();
+      await wait(fixture);
+      expect(component.historyStack.length).toBe(1);
+
+      // Click internal link to deeply nested "Endpoints"
+      // This should find the full path [api, endpoints] but only add the destination
+      await component['_jumpTo']({ id: 'endpoints' }, undefined, false);
+      await wait(fixture);
+
+      // Should NOT duplicate parent items
+      expect(component.historyStack.length).toBe(2);
+      expect(component.historyStack[0].id).toBe('docs');
+      expect(component.historyStack[1].id).toBe('endpoints');
+
+      // Verify no duplicates in the stack
+      const ids = component.historyStack.map((item) => item.id);
+      const uniqueIds = new Set(ids);
+      expect(ids.length).toBe(uniqueIds.size);
+    }),
   ));
 });

@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Mixed Navigation Demo</mat-card-title>
+    <mat-card-subtitle>
+      Tests menu navigation + internal markdown links working together
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="navigator-container">
+      <td-markdown-navigator
+        [items]="items"
+        [copyCodeToClipboard]="true"
+        [style.height.px]="700"
+      ></td-markdown-navigator>
+    </div>
+  </mat-card-content>
+</mat-card>
