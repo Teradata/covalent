@@ -20,10 +20,11 @@ export default (
     centerTitle,
     dense,
     prominent,
+    scrollTarget,
     showContent,
     showActionItems,
   } = {},
-  { parameters } = {}
+  { parameters } = {},
 ) => {
   const AppBarComponentElem = parameters?.fixed
     ? 'cv-top-app-bar-fixed'
@@ -47,7 +48,8 @@ export default (
       <${AppBarComponentElem}
           ${centerTitle ? 'centerTitle' : null}
           ${dense ? 'dense' : null}
-          ${prominent ? 'prominent' : null}>
+          ${prominent ? 'prominent' : null}
+          ${scrollTarget ? `scrollTarget="${scrollTarget}"` : ''}>
         <cv-icon-button slot="navigationIcon" icon="menu_open"></cv-icon-button>
         <div slot="title">${title}</div>
         ${actionItems}

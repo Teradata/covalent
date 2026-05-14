@@ -1,52 +1,68 @@
 import '../checkbox/checkbox';
 import '../formfield/formfield';
 
-import { Basic } from '../typography/typography.stories';
+import typographyMeta, { Basic } from '../typography/typography.stories';
 import loremIpsumContent from '../../stories/demos/lorem-ipsum.content.html?raw';
 import tableProgressContent from '../../stories/demos/table-progress-indicator.content.html?raw';
 
 import 'skeleton-elements/css';
 
-export default {
-  title: 'Components/Skeleton',
+const renderStory = (story, meta, args = {}) => {
+  if (typeof story === 'function') {
+    return story(args);
+  }
+
+  const render = story.render ?? meta?.render;
+
+  if (typeof render !== 'function') {
+    throw new Error('Story render function is not available');
+  }
+
+  return render({ ...(story.args ?? {}), ...args });
 };
 
-const skeletonClsName = 'skeleton-text';
-const skeletonEffect = 'skeleton-effect-fade';
-
-export const DataTable = () => {
-  const container = document.createElement('div');
-  container.innerHTML = tableProgressContent;
-  const tableCell = container.getElementsByClassName('mdc-data-table__cell');
-  Array.from(tableCell).forEach((cell) => {
-    cell.classList.add(skeletonClsName);
-    cell.classList.add(skeletonEffect);
+const applySkeletonClasses = (elements) => {
+  Array.from(elements).forEach((element) => {
+    element.classList.add(skeletonClsName);
+    element.classList.add(skeletonEffect);
   });
+};
+
+const createSkeletonContainer = (content, applySkeleton) => {
+  const container = document.createElement('div');
+  container.innerHTML = content;
+  applySkeleton?.(container);
 
   return container;
 };
 
-export const Typography = () => {
-  const container = document.createElement('div');
-  container.classList.add(skeletonClsName);
-  container.classList.add(skeletonEffect);
-  container.innerHTML = `${Basic()}`;
-
-  return container;
+const renderSkeletonContent = (content) => {
+  return createSkeletonContainer(content, (container) => {
+    applySkeletonClasses(
+      container.children.length ? container.children : [container],
+    );
+  });
 };
 
-export const Content = () => {
-  const container = document.createElement('div');
-  container.classList.add(skeletonClsName);
-  container.classList.add(skeletonEffect);
-  container.innerHTML = loremIpsumContent;
-
-  return container;
+const renderDataTable = () => {
+  return createSkeletonContainer(tableProgressContent, (container) => {
+    applySkeletonClasses(
+      container.getElementsByClassName('mdc-data-table__cell'),
+    );
+  });
 };
 
-export const Checkbox = ({ label = 'Bananas', indeterminate }) => {
-  const container = document.createElement('div');
-  container.innerHTML = `
+const renderTypography = () => {
+  return renderSkeletonContent(renderStory(Basic, typographyMeta));
+};
+
+const renderContent = () => {
+  return renderSkeletonContent(loremIpsumContent);
+};
+
+const renderCheckbox = ({ label = 'Bananas', indeterminate }) => {
+  const container = createSkeletonContainer(
+    `
       <style>
           cv-formfield {
               display: block;
@@ -65,13 +81,45 @@ export const Checkbox = ({ label = 'Bananas', indeterminate }) => {
       
       <cv-formfield label="${label}">
           <cv-checkbox class="child" checked></cv-checkbox>
-      </cv-formfield>`;
-
-  const labels = container.getElementsByTagName('cv-formfield');
-  Array.from(labels).forEach((label) => {
-    label.classList.add(skeletonClsName);
-    label.classList.add(skeletonEffect);
-  });
+      </cv-formfield>`,
+    (checkboxContainer) => {
+      applySkeletonClasses(
+        checkboxContainer.getElementsByTagName('cv-formfield'),
+      );
+    },
+  );
 
   return container;
+};
+
+export default {
+  title: 'Components/Skeleton',
+  argTypes: {
+    label: { control: 'text' },
+    indeterminate: { control: 'boolean' },
+  },
+  tags: ['autodocs'],
+};
+
+const skeletonClsName = 'skeleton-text';
+const skeletonEffect = 'skeleton-effect-fade';
+
+export const DataTable = {
+  render: renderDataTable,
+};
+
+export const Typography = {
+  render: renderTypography,
+};
+
+export const Content = {
+  render: renderContent,
+};
+
+export const Checkbox = {
+  render: renderCheckbox,
+  args: {
+    label: 'Bananas',
+    indeterminate: false,
+  },
 };

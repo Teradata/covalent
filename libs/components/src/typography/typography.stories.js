@@ -1,11 +1,6 @@
 import './typography';
 
-export default {
-  title: 'Components/Text',
-  tags: ['autodocs'],
-};
-
-export const Basic = () => {
+const renderTypography = () => {
   return `
     <cv-typography scale="headline1">Headline 1</cv-typography>
     <cv-typography scale="headline2">Headline 2</cv-typography>
@@ -22,3 +17,11 @@ export const Basic = () => {
     <cv-typography scale="body2">Body 2</cv-typography>
   `;
 };
+
+export default {
+  title: 'Components/Text',
+  render: renderTypography,
+  tags: ['autodocs'],
+};
+
+export const Basic = {};
