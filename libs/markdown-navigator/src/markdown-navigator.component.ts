@@ -439,7 +439,7 @@ export class TdMarkdownNavigatorComponent implements OnChanges {
   private async _jumpTo(
     itemOrPath: IMarkdownNavigatorItem | IMarkdownNavigatorItem[],
     children?: IMarkdownNavigatorItem[],
-    shouldReset: boolean = true,
+    shouldReset = true,
   ): Promise<boolean> {
     const historyStack: IMarkdownNavigatorItem[] = this.historyStack;
     let path: IMarkdownNavigatorItem[] = [];
