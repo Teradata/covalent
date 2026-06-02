@@ -15,6 +15,7 @@
 }
 
 .mdc-radio {
+  position: relative;
   display: flex;
   justify-content: var(--cv-icon-radio-horizontal-alignment, center);
   align-items: var(--cv-icon-radio-vertical-alignment, center);
@@ -31,6 +32,17 @@
 .mdc-radio--touch .mdc-radio__native-control {
   width: 100%;
   height: 100%;
+}
+
+.mdc-radio > div {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 4px;
+}
+
+:host([text-only]) .mdc-radio > div {
+  flex: 1;
 }
 
 :host([checked]) .mdc-radio {
@@ -50,19 +62,44 @@
   color: var(--mdc-theme-text-icon-on-background);
 }
 
-[name='text']::slotted(*) {
+[name='text']::slotted(div) {
   color: var(--mdc-theme-text-primary-on-background);
   font-family: var(--mdc-typography-body1-font-family);
   font-size: var(--mdc-typography-body1-font-size);
   font-weight: var(--mdc-typography-body1-font-weight);
   line-height: var(--mdc-typography-body1-line-height);
   letter-spacing: 0.4px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 100%;
+  word-break: break-word;
 }
 
-[name='text']::slotted(*:last-child) {
+[name='text']::slotted(div:first-of-type) {
+  -webkit-line-clamp: var(--cv-icon-radio-title-lines, 2);
+  line-clamp: var(--cv-icon-radio-title-lines, 2);
+}
+
+:host([text-only]) [name='text']::slotted(div:first-of-type) {
+  padding-right: var(--cv-icon-radio-title-padding-right, 32px);
+}
+
+[name='text']::slotted(div:last-of-type) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: var(--mdc-theme-text-secondary-on-background);
   font-family: var(--mdc-typography-body2-font-family);
   font-size: var(--mdc-typography-body2-font-size);
   font-weight: var(--mdc-typography-body2-font-weight);
   line-height: var(--mdc-typography-body2-line-height);
+  -webkit-line-clamp: var(--cv-icon-radio-description-lines, 4);
+  line-clamp: var(--cv-icon-radio-description-lines, 4);
+}
+
+:host([text-only]) [name='text']::slotted(div:last-of-type) {
+  padding-right: 8px;
+  -webkit-line-clamp: var(--cv-icon-radio-description-lines, 4);
+  line-clamp: var(--cv-icon-radio-description-lines, 4);
 }

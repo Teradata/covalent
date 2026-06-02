@@ -62,6 +62,45 @@ export const Disabled = {
   },
 };
 
+// Story for dynamic line-clamp testing
+export const DynamicLineClamp = {
+  render: () => `
+    <div id="dynamic-demo" style="display: flex; gap: 20px; flex-direction: column;">
+      <cv-radio-icon id="test-card">
+        <div slot="text">Short</div>
+        <div slot="text">
+          This is a description that should get more lines when the title is short. Let's add more text to see how it behaves with the dynamic line clamping. More content here to test the behavior properly
+        </div>
+      </cv-radio-icon>
+      <cv-button id="change-text" label="Toggle Title Length" raised></cv-button>
+    </div>
+  `,
+  play: async ({ canvasElement }) => {
+    const root = canvasElement.querySelector('#dynamic-demo');
+    const card = canvasElement.querySelector('#test-card');
+    if (!root || !card) return;
+
+    root.style.setProperty('--cv-icon-radio-horizontal-alignment', 'start');
+    root.style.setProperty('--cv-icon-radio-vertical-alignment', 'start');
+    root.style.setProperty('--cv-icon-radio-text-alignment', 'left');
+    root.style.setProperty('--cv-icon-radio-height', '120px');
+
+    const button = canvasElement.querySelector('#change-text');
+    const titleDiv = card.querySelector('[slot="text"]');
+
+    let isShort = true;
+    button?.addEventListener('click', () => {
+      if (isShort) {
+        titleDiv.textContent =
+          'This Is Now A Very Long Title That Spans Two Full Lines';
+      } else {
+        titleDiv.textContent = 'Short';
+      }
+      isShort = !isShort;
+    });
+  },
+};
+
 // Story for text only radio icons
 export const TextOnly = {
   render: () => `
@@ -78,12 +117,14 @@ export const TextOnly = {
         <div slot="text">
           <cv-typography scale="body2">Best for structured, formatted, PDF documents.</cv-typography>
           <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
+          <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
+          <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
         </div>
       </cv-radio-icon>
       <cv-radio-icon>
-        <div slot="text">Vector-Distance</div>
+        <div slot="text">Vector-Distance</div> 
         <div slot="text">
-          <cv-typography scale="body2">Best for high-dimensional, large-scale datasets where fast nearest-neighbor search is required</cv-typography>
+          Best for high-dimensional, large-scale datasets where fast nearest-neighbor search is required, large-scale datasets where fast nearest-neighbor search is required
         </div>
       </cv-radio-icon>
     </div>
