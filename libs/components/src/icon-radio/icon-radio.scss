@@ -69,7 +69,7 @@
   font-weight: var(--mdc-typography-body1-font-weight);
   line-height: var(--mdc-typography-body1-line-height);
   letter-spacing: 0.4px;
-  display: -webkit-box;
+  display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix */
   -webkit-box-orient: vertical;
   overflow: hidden;
   max-height: 100%;
@@ -86,7 +86,7 @@
 }
 
 [name='text']::slotted(div:last-of-type) {
-  display: -webkit-box;
+  display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix */
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: var(--mdc-theme-text-secondary-on-background);
