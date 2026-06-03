@@ -4,6 +4,7 @@
 @import 'divider';
 @import 'icons';
 @import 'list';
+@import 'scrollbar';
 @import 'sidenav';
 @import 'structure';
 @import 'toolbar';
@@ -16,6 +17,7 @@
   @include td-divider-utilities();
   @include td-icon-utilities();
   @include td-list-utilities();
+  @include td-scrollbar-utilities();
   @include td-sidenav-utilities();
   @include td-structure-utilities();
   @include td-toolbar-utilities();
