@@ -1,3 +1,12 @@
+## [11.19.6](https://github.com/Teradata/covalent/compare/v11.19.5...v11.19.6) (2026-06-05)
+
+### Bug Fixes
+
+- **button:** update brand tokens from primary to brand ([ec9807a](https://github.com/Teradata/covalent/commit/ec9807a46f62ed8c03867e54cc9ec15d1f431a73))
+- **radio-icon-component:** update text for long titles and text ([dace97a](https://github.com/Teradata/covalent/commit/dace97ab7f999c3421fb78d6a2dc4e1a05631fc2))
+- **scrollbars:** match scrollbars styling for light and darkmode ([6db9c83](https://github.com/Teradata/covalent/commit/6db9c838b42e50fbfe10e5116731debb10dc1a87))
+- **scrollbars:** match scrollbars styling for light and darkmode ([bf75f53](https://github.com/Teradata/covalent/commit/bf75f53b9d5a18722cf9a3ad364f4af0785d8887))
+
 ## [11.19.5](https://github.com/Teradata/covalent/compare/v11.19.4...v11.19.5) (2026-05-14)
 
 ### Bug Fixes
