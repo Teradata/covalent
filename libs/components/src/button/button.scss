@@ -1,6 +1,9 @@
 @use '../theme/density.scss';
 
 :host {
+  // default button color to brand tokens
+  --mdc-theme-primary: var(--cv-theme-brand);
+  --mdc-theme-on-primary: var(--cv-theme-on-brand);
   // override MDC button color
   --mdc-button-outline-color: var(--cv-theme-outline);
   // override MDC button text tranform
@@ -27,7 +30,7 @@
 // --- apply button color --- //
 @include buttonColor(
   (
-    'primary': 'primary',
+    'primary': 'brand',
     'secondary': 'secondary',
     'emphasis': 'emphasis',
     'neutral': 'neutral',

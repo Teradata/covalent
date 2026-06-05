@@ -1,0 +1,36 @@
+// Minimal scrollbar styling to match the host operating system
+// Uses Covalent theme tokens for consistent appearance in light and dark modes
+
+// Scrollbar styles for global application
+// Track: var(--cv-theme-surface-container)
+// Thumb: var(--cv-theme-outline)
+
+// Modern Firefox scrollbar styling
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cv-theme-outline) var(--cv-theme-surface-container);
+}
+
+// WebKit browsers (Chrome, Safari, Edge, Opera)
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--cv-theme-surface-container);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--cv-theme-outline);
+  border-radius: 6px;
+  border: 2px solid var(--cv-theme-surface-container);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--cv-theme-on-surface-variant);
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--cv-theme-surface-container);
+}

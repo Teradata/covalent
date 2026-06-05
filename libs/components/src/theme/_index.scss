@@ -1,3 +1,5 @@
+@use 'scrollbar' as scrollbar;
+
 @mixin css-variable-tokens($theme, $prefix: 'cv-theme') {
   @each $key, $value in $theme {
     --#{$prefix}-#{$key}: #{map-get($theme, $key)};
@@ -44,4 +46,15 @@
       $theme,
       inverse-on-surface
     )};
+
+  // Apply scrollbar styling globally
+  body,
+  html {
+    @include scrollbar.scrollbar-theme();
+  }
+
+  // Apply to common scrollable elements
+  * {
+    @include scrollbar.scrollbar-theme();
+  }
 }

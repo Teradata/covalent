@@ -1,6 +1,7 @@
 // Classless/Semantic styles - applies Covalent tokens directly to HTML elements
 // Use this for zero-configuration styling without utility classes
 @use 'tokens' as *;
+@use 'scrollbar';
 
 $tokens-map: $tokens;
 $typography: map-get($tokens-map, 'typography');
