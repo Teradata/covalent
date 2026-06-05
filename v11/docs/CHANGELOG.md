@@ -1,3 +1,10 @@
+## [11.19.5](https://github.com/Teradata/covalent/compare/v11.19.4...v11.19.5) (2026-05-14)
+
+### Bug Fixes
+
+- **markdown-navigator:** address copilot issues and linter options ([3e2bcb5](https://github.com/Teradata/covalent/commit/3e2bcb534bbedb882ebeb927aa9360f8685c0985))
+- **markdown-navigator:** mixed navigations relative and absolute paths ([b80c37f](https://github.com/Teradata/covalent/commit/b80c37f64c063b039dcb08dd212258c1eead1d0f))
+
 ## [11.19.4](https://github.com/Teradata/covalent/compare/v11.19.3...v11.19.4) (2026-05-04)
 
 ### Bug Fixes
