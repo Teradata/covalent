@@ -118,13 +118,12 @@ export const TextOnly = {
           <cv-typography scale="body2">Best for structured, formatted, PDF documents.</cv-typography>
           <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
           <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
-          <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
         </div>
       </cv-radio-icon>
       <cv-radio-icon>
         <div slot="text">Vector-Distance</div> 
         <div slot="text">
-          Best for high-dimensional, large-scale datasets where fast nearest-neighbor search is required, large-scale datasets where fast nearest-neighbor search is required
+          Best for high-dimensional, large-scale datasets where fast nearest-neighbor search is required, large-scale datasets where search is required
         </div>
       </cv-radio-icon>
     </div>
