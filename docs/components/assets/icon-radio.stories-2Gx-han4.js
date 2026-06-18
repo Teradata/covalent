@@ -9,7 +9,7 @@ import"./icon-radio-toggle--YQCqUgw.js";import"./icon-BYm93zaG.js";import"./quer
         <div slot="text">Balanced</div>
         <div slot="text">Every week</div>
       </cv-radio-icon>
-  `}},s={render:r.render,args:{checked:!1}},c={render:r.render,args:{checked:!0}},d={render:r.render,args:{checked:!1,disabled:!0}},l={render:()=>`
+  `}},c={render:r.render,args:{checked:!1}},s={render:r.render,args:{checked:!0}},d={render:r.render,args:{checked:!1,disabled:!0}},l={render:()=>`
     <div id="dynamic-demo" style="display: flex; gap: 20px; flex-direction: column;">
       <cv-radio-icon id="test-card">
         <div slot="text">Short</div>
@@ -34,13 +34,12 @@ import"./icon-radio-toggle--YQCqUgw.js";import"./icon-BYm93zaG.js";import"./quer
           <cv-typography scale="body2">Best for structured, formatted, PDF documents.</cv-typography>
           <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
           <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
-          <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
         </div>
       </cv-radio-icon>
       <cv-radio-icon>
         <div slot="text">Vector-Distance</div> 
         <div slot="text">
-          Best for high-dimensional, large-scale datasets where fast nearest-neighbor search is required, large-scale datasets where fast nearest-neighbor search is required
+          Best for high-dimensional, large-scale datasets where fast nearest-neighbor search is required, large-scale datasets where search is required
         </div>
       </cv-radio-icon>
     </div>
@@ -66,17 +65,17 @@ import"./icon-radio-toggle--YQCqUgw.js";import"./icon-BYm93zaG.js";import"./quer
       </cv-radio-icon>
   \`;
   }
-}`,...(m=(y=r.parameters)==null?void 0:y.docs)==null?void 0:m.source}}};var g,h,u;s.parameters={...s.parameters,docs:{...(g=s.parameters)==null?void 0:g.docs,source:{originalSource:`{
+}`,...(m=(y=r.parameters)==null?void 0:y.docs)==null?void 0:m.source}}};var h,g,u;c.parameters={...c.parameters,docs:{...(h=c.parameters)==null?void 0:h.docs,source:{originalSource:`{
   render: Template.render,
   args: {
     checked: false
   }
-}`,...(u=(h=s.parameters)==null?void 0:h.docs)==null?void 0:u.source}}};var x,f,S;c.parameters={...c.parameters,docs:{...(x=c.parameters)==null?void 0:x.docs,source:{originalSource:`{
+}`,...(u=(g=c.parameters)==null?void 0:g.docs)==null?void 0:u.source}}};var x,f,S;s.parameters={...s.parameters,docs:{...(x=s.parameters)==null?void 0:x.docs,source:{originalSource:`{
   render: Template.render,
   args: {
     checked: true
   }
-}`,...(S=(f=c.parameters)==null?void 0:f.docs)==null?void 0:S.source}}};var b,w,k;d.parameters={...d.parameters,docs:{...(b=d.parameters)==null?void 0:b.docs,source:{originalSource:`{
+}`,...(S=(f=s.parameters)==null?void 0:f.docs)==null?void 0:S.source}}};var b,w,k;d.parameters={...d.parameters,docs:{...(b=d.parameters)==null?void 0:b.docs,source:{originalSource:`{
   render: Template.render,
   args: {
     checked: false,
@@ -132,13 +131,12 @@ import"./icon-radio-toggle--YQCqUgw.js";import"./icon-BYm93zaG.js";import"./quer
           <cv-typography scale="body2">Best for structured, formatted, PDF documents.</cv-typography>
           <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
           <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
-          <cv-typography scale="caption" style="margin-top: 16px;">May struggle with irregular formatting or images.</cv-typography>
         </div>
       </cv-radio-icon>
       <cv-radio-icon>
         <div slot="text">Vector-Distance</div> 
         <div slot="text">
-          Best for high-dimensional, large-scale datasets where fast nearest-neighbor search is required, large-scale datasets where fast nearest-neighbor search is required
+          Best for high-dimensional, large-scale datasets where fast nearest-neighbor search is required, large-scale datasets where search is required
         </div>
       </cv-radio-icon>
     </div>
@@ -153,4 +151,4 @@ import"./icon-radio-toggle--YQCqUgw.js";import"./icon-BYm93zaG.js";import"./quer
     root.style.setProperty('--cv-icon-radio-text-alignment', 'left');
     root.style.setProperty('--cv-icon-radio-height', '120px');
   }
-}`,...(D=(B=p.parameters)==null?void 0:B.docs)==null?void 0:D.source}}};const W=["Template","Unchecked","Checked","Disabled","DynamicLineClamp","TextOnly"];export{c as Checked,d as Disabled,l as DynamicLineClamp,r as Template,p as TextOnly,s as Unchecked,W as __namedExportsOrder,Q as default};
+}`,...(D=(B=p.parameters)==null?void 0:B.docs)==null?void 0:D.source}}};const W=["Template","Unchecked","Checked","Disabled","DynamicLineClamp","TextOnly"];export{s as Checked,d as Disabled,l as DynamicLineClamp,r as Template,p as TextOnly,c as Unchecked,W as __namedExportsOrder,Q as default};
