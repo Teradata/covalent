@@ -169,7 +169,7 @@
     "jest-preset-angular": "14.6.0",
     "jiti": "2.4.2",
     "jsdom": "~26.0.0",
-    "mjml": "^4.15.3",
+    "mjml": "^5.4.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "ng-packagr": "20.x.x",
     "nx": "21.1.2",
