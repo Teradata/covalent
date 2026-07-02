@@ -87,7 +87,7 @@
     "@ngx-translate/core": "^16.0.4",
     "@ngx-translate/http-loader": "^16.0.1",
     "easymde": "^2.18.0",
-    "echarts": "^5.4.3",
+    "echarts": "^6.1.0",
     "echarts-stat": "^1.2.0",
     "echarts-wordcloud": "^2.1.0",
     "highlight.js": "^11.9.0",
