@@ -105,14 +105,14 @@
     "@material/slider": "15.0.0-canary.b994146f6.0"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^20.0.0-beta.0",
-    "@angular-devkit/build-angular": "~20.0.0",
+    "@angular-builders/custom-webpack": "^21.0.3",
+    "@angular-devkit/build-angular": "~21.2.13",
     "@angular-devkit/core": "~20.0.0",
     "@angular-devkit/schematics": "~20.0.0",
     "@angular-eslint/eslint-plugin": "20.1.0",
     "@angular-eslint/eslint-plugin-template": "20.1.0",
     "@angular-eslint/template-parser": "20.1.0",
-    "@angular/build": "20.x.x",
+    "@angular/build": "21.x.x",
     "@angular/cli": "20.x.x",
     "@angular/compiler-cli": "20.x.x",
     "@angular/language-service": "20.x.x",
@@ -126,7 +126,7 @@
     "@nx/eslint-plugin": "21.1.2",
     "@nx/jest": "21.1.2",
     "@nx/js": "21.1.2",
-    "@nx/vite": "21.1.2",
+    "@nx/vite": "22.7.5",
     "@nx/web": "21.1.2",
     "@nx/workspace": "21.1.2",
     "@schematics/angular": "20.x.x",
@@ -149,7 +149,7 @@
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@typescript-eslint/utils": "^7.16.0",
-    "@vitest/coverage-v8": "^2.1.9",
+    "@vitest/coverage-v8": "^4.1.8",
     "@vueless/storybook-dark-mode": "^10.0.7",
     "autoprefixer": "^10.4.20",
     "chromatic": "^11.22.2",
@@ -196,7 +196,7 @@
     "vite": "6.4.1",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-raw": "^1.0.3",
-    "vitest": "^2.1.9",
+    "vitest": "^4.1.8",
     "webpack-mjml-loader": "^2.0.1"
   }
 }
