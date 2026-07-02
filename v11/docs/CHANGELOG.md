@@ -1,3 +1,9 @@
+## [11.19.7](https://github.com/Teradata/covalent/compare/v11.19.6...v11.19.7) (2026-06-18)
+
+### Bug Fixes
+
+- **icon-radio:** update copy ([fbfcf1c](https://github.com/Teradata/covalent/commit/fbfcf1cc3a7c0e208433556da1aac429484e9c8f))
+
 ## [11.19.6](https://github.com/Teradata/covalent/compare/v11.19.5...v11.19.6) (2026-06-05)
 
 ### Bug Fixes
