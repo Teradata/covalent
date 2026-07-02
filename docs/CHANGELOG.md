@@ -1,3 +1,9 @@
+## [11.19.8](https://github.com/Teradata/covalent/compare/v11.19.7...v11.19.8) (2026-07-02)
+
+### Bug Fixes
+
+- **scrollbar:** update export scrollbar themecss file ([d60e792](https://github.com/Teradata/covalent/commit/d60e792b88613aaebfbc5fe28129e40538eddacb))
+
 ## [11.19.7](https://github.com/Teradata/covalent/compare/v11.19.6...v11.19.7) (2026-06-18)
 
 ### Bug Fixes
