@@ -190,6 +190,8 @@ export const COV_ICON_LIST = [
   'placeholder_outlined',
   'primary_cluster',
   'primary_cluster_outlined',
+  'product_aistudio',
+  'product_aistudio_outlined',
   'product_analyst',
   'product_analyst_outlined',
   'product_appcenter',
