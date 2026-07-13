@@ -1,3 +1,9 @@
+# [11.20.0](https://github.com/Teradata/covalent/compare/v11.19.8...v11.20.0) (2026-07-13)
+
+### Features
+
+- **icon:** add new icons to covalent icon font ([b1beff0](https://github.com/Teradata/covalent/commit/b1beff0995d52e2266e5a2b0155291e8de5148f1))
+
 ## [11.19.8](https://github.com/Teradata/covalent/compare/v11.19.7...v11.19.8) (2026-07-02)
 
 ### Bug Fixes
