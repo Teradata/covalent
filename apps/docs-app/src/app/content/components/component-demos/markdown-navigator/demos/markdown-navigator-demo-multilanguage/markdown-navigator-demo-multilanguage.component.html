@@ -1,0 +1,48 @@
+<div
+  class="language-selector"
+  style="
+    padding: 16px;
+    background: #f5f5f5;
+    margin-bottom: 16px;
+    border-radius: 4px;
+  "
+>
+  <h3 style="margin-top: 0">Language Selector</h3>
+  <div style="display: flex; gap: 8px">
+    <button
+      mat-raised-button
+      [color]="currentLanguage === 'en' ? 'primary' : undefined"
+      (click)="changeLanguage('en')"
+    >
+      🇬🇧 English
+    </button>
+    <button
+      mat-raised-button
+      [color]="currentLanguage === 'es' ? 'primary' : undefined"
+      (click)="changeLanguage('es')"
+    >
+      🇪🇸 Español
+    </button>
+    <button
+      mat-raised-button
+      [color]="currentLanguage === 'ja' ? 'primary' : undefined"
+      (click)="changeLanguage('ja')"
+    >
+      🇯🇵 日本語
+    </button>
+    <button
+      mat-raised-button
+      [color]="currentLanguage === 'de' ? 'primary' : undefined"
+      (click)="changeLanguage('de')"
+    >
+      🇩🇪 Deutsch
+    </button>
+  </div>
+</div>
+
+<td-markdown-navigator
+  [items]="items"
+  [labels]="labels"
+  [copyCodeToClipboard]="true"
+  [style.height.px]="600"
+></td-markdown-navigator>

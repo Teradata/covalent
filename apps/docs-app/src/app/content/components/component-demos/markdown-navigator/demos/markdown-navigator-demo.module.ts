@@ -29,6 +29,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MarkdownNavigatorDemoChildrenUrlStartAtComponent } from './markdown-navigator-demo-children-url-start-at/markdown-navigator-demo-children-url-start-at.component';
 import { MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent } from './markdown-navigator-demo-start-at-onclick-children-url/markdown-navigator-demo-start-at-onclick-children-url.component';
 import { MarkdownNavigatorDemoMixedNavigationComponent } from './markdown-navigator-demo-mixed-navigation/markdown-navigator-demo-mixed-navigation.component';
+import { MarkdownNavigatorDemoMultilanguageComponent } from './markdown-navigator-demo-multilanguage/markdown-navigator-demo-multilanguage.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MarkdownNavigatorDemoMixedNavigationComponent } from './markdown-naviga
     MarkdownNavigatorDemoChildrenUrlStartAtComponent,
     MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent,
     MarkdownNavigatorDemoMixedNavigationComponent,
+    MarkdownNavigatorDemoMultilanguageComponent,
   ],
   imports: [
     DemoModule,
