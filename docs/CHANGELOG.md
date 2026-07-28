@@ -1,3 +1,9 @@
+## [11.20.1](https://github.com/Teradata/covalent/compare/v11.20.0...v11.20.1) (2026-07-28)
+
+### Bug Fixes
+
+- **md-navigator:** fix multilanguage support on md-navigator breadcrumbs ([35bd4c4](https://github.com/Teradata/covalent/commit/35bd4c4176adc24ad5538e78561f74afe8bed2bf))
+
 # [11.20.0](https://github.com/Teradata/covalent/compare/v11.19.8...v11.20.0) (2026-07-13)
 
 ### Features
