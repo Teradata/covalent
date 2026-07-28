@@ -6,6 +6,7 @@ import { MarkdownNavigatorDemoRoutingModule } from './markdown-navigator-demo-ro
 import { DemoModule } from '../../../../../components/shared/demo-tools/demo.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import {
   MarkdownNavigatorDemoFooterComponent,
   MarkdownNavigatorDemoFooterGlobalExampleComponent,
@@ -28,6 +29,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MarkdownNavigatorDemoChildrenUrlStartAtComponent } from './markdown-navigator-demo-children-url-start-at/markdown-navigator-demo-children-url-start-at.component';
 import { MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent } from './markdown-navigator-demo-start-at-onclick-children-url/markdown-navigator-demo-start-at-onclick-children-url.component';
 import { MarkdownNavigatorDemoMixedNavigationComponent } from './markdown-navigator-demo-mixed-navigation/markdown-navigator-demo-mixed-navigation.component';
+import { MarkdownNavigatorDemoMultilanguageComponent } from './markdown-navigator-demo-multilanguage/markdown-navigator-demo-multilanguage.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { MarkdownNavigatorDemoMixedNavigationComponent } from './markdown-naviga
     MarkdownNavigatorDemoChildrenUrlStartAtComponent,
     MarkdownNavigatorDemoStartAtOnclickChildrenUrlComponent,
     MarkdownNavigatorDemoMixedNavigationComponent,
+    MarkdownNavigatorDemoMultilanguageComponent,
   ],
   imports: [
     DemoModule,
@@ -58,6 +61,7 @@ import { MarkdownNavigatorDemoMixedNavigationComponent } from './markdown-naviga
     CommonModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
     MatListModule,
     MatButtonToggleModule,
     MatSlideToggleModule,

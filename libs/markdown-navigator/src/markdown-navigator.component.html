@@ -11,7 +11,7 @@
         [matTooltip]="goHomeLabel ?? ''"
         (click)="reset()"
         [attr.data-test]="'home-button'"
-        >Home</a
+        >{{ goHomeLabel }}</a
       >
       <ng-container
         *ngFor="
