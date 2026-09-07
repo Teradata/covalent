@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'covalent-icons';
   src:
-    url('./covalent-icons.ttf?z0976d') format('truetype'),
-    url('./covalent-icons.woff?z0976d') format('woff'),
-    url('./covalent-icons.svg?z0976d#covalent-icons') format('svg');
+    url('./covalent-icons.ttf?1zvuug') format('truetype'),
+    url('./covalent-icons.woff?1zvuug') format('woff'),
+    url('./covalent-icons.svg?1zvuug#covalent-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -44,6 +44,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-git_icon:before {
+  content: '\ea67';
+}
+.cov-language_python:before {
+  content: '\ea68';
+}
+.cov-product_agentops:before {
+  content: '\ea69';
+}
+.cov-product_agentops_outlined:before {
+  content: '\ea6a';
+}
+.cov-product_aimodelhub:before {
+  content: '\ea6b';
+}
+.cov-product_aimodelhub_outlined:before {
+  content: '\ea6c';
+}
+.cov-product_ask_ai:before {
+  content: '\ea6d';
+}
+.cov-product_ask_ai_outlined:before {
+  content: '\ea6e';
+}
 .cov-product_aistudio:before {
   content: '\ea65';
 }
