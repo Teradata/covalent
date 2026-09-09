@@ -206,6 +206,8 @@ export const COV_ICON_LIST = [
   'product_appcenter_outlined',
   'product_console',
   'product_console_outlined',
+  'product_consumption',
+  'product_consumption_outlined',
   'product_cx',
   'product_cx_outlined',
   'product_editor',
