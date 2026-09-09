@@ -1,3 +1,9 @@
+# [11.22.0](https://github.com/Teradata/covalent/compare/v11.21.0...v11.22.0) (2026-09-09)
+
+### Features
+
+- **icons:** add product consumption icons to covalent icon list ([c091881](https://github.com/Teradata/covalent/commit/c091881b81519b0acf0cba2a1be2a1d20af59576))
+
 # [11.21.0](https://github.com/Teradata/covalent/compare/v11.20.1...v11.21.0) (2026-09-09)
 
 ### Features
