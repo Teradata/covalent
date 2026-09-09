@@ -3,11 +3,11 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?z0976d')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?1zvuug')
       format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?z0976d')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?1zvuug')
       format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?z0976d##{$icomoon-font-family}')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?1zvuug##{$icomoon-font-family}')
       format('svg');
   font-weight: normal;
   font-style: normal;
@@ -50,6 +50,46 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cov-git_icon {
+  &:before {
+    content: $cov-git_icon;
+  }
+}
+.cov-language_python {
+  &:before {
+    content: $cov-language_python;
+  }
+}
+.cov-product_agentops {
+  &:before {
+    content: $cov-product_agentops;
+  }
+}
+.cov-product_agentops_outlined {
+  &:before {
+    content: $cov-product_agentops_outlined;
+  }
+}
+.cov-product_aimodelhub {
+  &:before {
+    content: $cov-product_aimodelhub;
+  }
+}
+.cov-product_aimodelhub_outlined {
+  &:before {
+    content: $cov-product_aimodelhub_outlined;
+  }
+}
+.cov-product_ask_ai {
+  &:before {
+    content: $cov-product_ask_ai;
+  }
+}
+.cov-product_ask_ai_outlined {
+  &:before {
+    content: $cov-product_ask_ai_outlined;
+  }
+}
 .cov-product_aistudio {
   &:before {
     content: $cov-product_aistudio;
