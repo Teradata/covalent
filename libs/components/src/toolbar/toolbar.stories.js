@@ -7,7 +7,11 @@ export default {
   title: 'Components/Toolbar',
   args: {
     title: 'Page title',
+    centerTitle: false,
     dense: false,
+    prominent: false,
+    scrollTarget: '',
+    sticky: false,
     filter: true,
     search: true,
     add: true,
@@ -20,8 +24,12 @@ export default {
   tags: ['autodocs'],
 };
 
-export const Toolbar = ({
+const toolbarTemplate = ({
+  centerTitle,
   dense,
+  prominent,
+  scrollTarget,
+  sticky,
   title,
   filter,
   search,
@@ -30,7 +38,13 @@ export const Toolbar = ({
   action,
 }) => {
   return `
-    <cv-toolbar ${dense ? 'dense' : ''}>
+    <cv-toolbar
+      ${centerTitle ? 'centerTitle' : ''}
+      ${dense ? 'dense' : ''}
+      ${prominent ? 'prominent' : ''}
+      ${scrollTarget ? `scrollTarget="${scrollTarget}"` : ''}
+      ${sticky ? 'sticky' : ''}
+    >
       <span slot="title">${title}</span> 
       ${
         filter
@@ -61,7 +75,13 @@ export const Toolbar = ({
   `;
 };
 
-export const denseToolbar = Toolbar.bind({});
-denseToolbar.args = {
-  dense: 'true',
+export const Toolbar = {
+  render: toolbarTemplate,
+};
+
+export const denseToolbar = {
+  args: {
+    dense: true,
+  },
+  render: toolbarTemplate,
 };

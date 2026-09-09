@@ -42,65 +42,146 @@ SELECT * FROM load_to_teradata (
 export default {
   title: 'Components/Status Dialog',
   argTypes: {
+    open: { control: { type: 'boolean' } },
     state: {
       options: ['error', 'positive', 'warning'],
       control: { type: 'select' },
     },
+    heading: { control: { type: 'text' } },
+    hideActions: { control: { type: 'boolean' } },
+    stacked: { control: { type: 'boolean' } },
+    scrimClickAction: { control: { type: 'text' } },
+    escapeKeyAction: { control: { type: 'text' } },
+    defaultAction: { control: { type: 'text' } },
+    actionAttribute: { control: { type: 'text' } },
+    initialFocusAttribute: { control: { type: 'text' } },
   },
   args: {
     state: 'error',
     open: false,
     hideActions: false,
+    stacked: false,
     heading: 'Basic heading for the dialog',
+    scrimClickAction: '',
+    escapeKeyAction: 'close',
+    defaultAction: 'close',
+    actionAttribute: 'dialogAction',
+    initialFocusAttribute: 'dialogInitialFocus',
   },
   tags: ['autodocs'],
 };
 
-const Template = ({ state, hideActions, heading }) => {
+const setupDialogTrigger = (buttonSelector, dialogSelector) => {
   document.addEventListener(
     'DOMContentLoaded',
     () => {
-      const button = document.body.querySelector('#dialog-button');
+      const button = document.body.querySelector(buttonSelector);
       button.addEventListener('click', () => {
-        const dialog = document.body.querySelector('#dialog');
+        const dialog = document.body.querySelector(dialogSelector);
         dialog.open = true;
       });
     },
     { once: true },
   );
+};
+
+const getDialogAttributes = ({
+  state,
+  open,
+  heading,
+  hideActions,
+  stacked,
+  scrimClickAction,
+  escapeKeyAction,
+  defaultAction,
+  actionAttribute,
+  initialFocusAttribute,
+}) => {
+  return [
+    `state="${state}"`,
+    `heading="${heading}"`,
+    open ? 'open' : '',
+    hideActions ? 'hideActions' : '',
+    stacked ? 'stacked' : '',
+    `scrimClickAction="${scrimClickAction}"`,
+    `escapeKeyAction="${escapeKeyAction}"`,
+    `defaultAction="${defaultAction}"`,
+    `actionAttribute="${actionAttribute}"`,
+    `initialFocusAttribute="${initialFocusAttribute}"`,
+  ]
+    .filter(Boolean)
+    .join(' ');
+};
+
+const renderStatusDialog = ({
+  state,
+  open,
+  hideActions,
+  heading,
+  stacked,
+  scrimClickAction,
+  escapeKeyAction,
+  defaultAction,
+  actionAttribute,
+  initialFocusAttribute,
+}) => {
+  setupDialogTrigger('#dialog-button', '#dialog');
 
   const buttonName = `${heading}`.includes('Basic')
     ? 'Open basic dialog'
     : `${`${state[0]}`.toUpperCase()}${`${state}`.substring(1)}`;
 
+  const dialogAttributes = getDialogAttributes({
+    state,
+    open,
+    heading,
+    hideActions,
+    stacked,
+    scrimClickAction,
+    escapeKeyAction,
+    defaultAction,
+    actionAttribute,
+    initialFocusAttribute,
+  });
+
   return `
     <cv-button id="dialog-button" raised>${buttonName}</cv-button>
-    <cv-status-dialog id="dialog" state="${state}" heading="${heading}" ${
-      hideActions ? 'hideActions' : ''
-    } scrimClickAction="" >
+    <cv-status-dialog id="dialog" ${dialogAttributes}>
       ${dialogContent[state]}
       <cv-button raised slot="primaryAction" dialogAction="close">Close</cv-button>
     </cv-status-dialog>`;
 };
 
-const TemplateWithDetails = ({ state, hideActions, heading }) => {
-  document.addEventListener(
-    'DOMContentLoaded',
-    () => {
-      const button = document.body.querySelector('#dialog-button-2');
-      button.addEventListener('click', () => {
-        const dialog = document.body.querySelector('#dialog-2');
-        dialog.open = true;
-      });
-    },
-    { once: true },
-  );
+const renderStatusDialogWithDetails = ({
+  state,
+  open,
+  hideActions,
+  heading,
+  stacked,
+  scrimClickAction,
+  escapeKeyAction,
+  defaultAction,
+  actionAttribute,
+  initialFocusAttribute,
+}) => {
+  setupDialogTrigger('#dialog-button-2', '#dialog-2');
+
+  const dialogAttributes = getDialogAttributes({
+    state,
+    open,
+    heading,
+    hideActions,
+    stacked,
+    scrimClickAction,
+    escapeKeyAction,
+    defaultAction,
+    actionAttribute,
+    initialFocusAttribute,
+  });
 
   return `
     <cv-button id="dialog-button-2" raised>Open dialog with details</cv-button>
-    <cv-status-dialog id="dialog-2" state="${state}" heading="${heading}" ${
-      hideActions ? 'hideActions' : ''
-    } scrimClickAction="" >
+    <cv-status-dialog id="dialog-2" ${dialogAttributes}>
       ${dialogContent[state]}
       <div slot="details">
         <cv-code-snippet language="sql" hideHeader=true>
@@ -111,27 +192,37 @@ const TemplateWithDetails = ({ state, hideActions, heading }) => {
     </cv-status-dialog>`;
 };
 
-export const Basic = Template.bind({});
-
-export const Positive = Template.bind({});
-Positive.args = {
-  state: 'positive',
-  heading: 'Data sharing users added',
+export const Basic = {
+  render: renderStatusDialog,
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  state: 'warning',
-  heading: 'Warning',
+export const Positive = {
+  render: renderStatusDialog,
+  args: {
+    state: 'positive',
+    heading: 'Data sharing users added',
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  state: 'error',
-  heading: 'Couldn’t add data sharing users',
+export const Warning = {
+  render: renderStatusDialog,
+  args: {
+    state: 'warning',
+    heading: 'Warning',
+  },
 };
 
-export const WithDetails = TemplateWithDetails.bind({});
-WithDetails.args = {
-  heading: 'Couldn’t add data sharing users',
+export const Error = {
+  render: renderStatusDialog,
+  args: {
+    state: 'error',
+    heading: 'Couldn’t add data sharing users',
+  },
+};
+
+export const WithDetails = {
+  render: renderStatusDialogWithDetails,
+  args: {
+    heading: 'Couldn’t add data sharing users',
+  },
 };

@@ -14,7 +14,7 @@ export default {
       options: MAT_ICON_LIST,
       control: { type: 'select' },
     },
-    subTextState: {
+    state: {
       options: ['active', 'positive', 'negative', 'caution'],
       control: { type: 'select' },
     },
@@ -23,17 +23,17 @@ export default {
     scale: 'small',
     text: 'TDICAM-8523411',
     subText: 'environment Id',
-    subTextTrailing: false,
+    trailingSubText: false,
   },
   tags: ['autodocs'],
 };
 
-export const textLockup = ({
+const renderTextLockup = ({
   icon,
   scale,
+  state,
   subText,
-  subTextState,
-  subTextTrailing,
+  trailingSubText,
   text,
 }) => {
   return `
@@ -41,28 +41,38 @@ export const textLockup = ({
       subtext="${subText}"
       scale="${scale}"
       ${icon ? `icon="${icon}"` : ''}
-      ${subTextState ? `state="${subTextState}"` : ''}
-      ${subTextTrailing ? 'trailingSubText' : ''}>${text}</cv-text-lockup>
+      ${state ? `state="${state}"` : ''}
+      ${trailingSubText ? 'trailingSubText' : ''}>${text}</cv-text-lockup>
   `;
 };
 
-export const textLockupLarge = textLockup.bind({});
-textLockupLarge.args = {
-  scale: 'large',
+export const textLockup = {
+  render: renderTextLockup,
 };
 
-export const textLockupTrailing = textLockup.bind({});
-textLockupTrailing.args = {
-  text: 'Jan 12th, 2022 at 5:10pm',
-  subText: 'Date last ran successfully',
-  subTextTrailing: true,
+export const textLockupLarge = {
+  render: renderTextLockup,
+  args: {
+    scale: 'large',
+  },
 };
 
-export const textLockupWithIcon = textLockup.bind({});
-textLockupWithIcon.args = {
-  icon: 'warning',
-  text: 'Daily production backup job',
-  subText: 'completed with issues',
-  subTextState: 'caution',
-  subTextTrailing: true,
+export const textLockupTrailing = {
+  render: renderTextLockup,
+  args: {
+    text: 'Jan 12th, 2022 at 5:10pm',
+    subText: 'Date last ran successfully',
+    trailingSubText: true,
+  },
+};
+
+export const textLockupWithIcon = {
+  render: renderTextLockup,
+  args: {
+    icon: 'warning',
+    text: 'Daily production backup job',
+    subText: 'completed with issues',
+    state: 'caution',
+    trailingSubText: true,
+  },
 };

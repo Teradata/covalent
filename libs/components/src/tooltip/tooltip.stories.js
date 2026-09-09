@@ -1,32 +1,14 @@
 import './tooltip';
 import '../icon/icon';
 
-export default {
-  title: 'Components/Tooltip',
-  argTypes: {
-    showDelayInMs: {
-      control: 'number',
-      label: 'show delay in milliseconds',
-    },
-    hideDelayInMs: {
-      control: 'number',
-      label: 'hide delay in milliseconds',
-    },
-  },
-  args: {
-    content: "I'm a tooltip!",
-  },
-  tags: ['autodocs'],
-};
-
-const Template = ({
+function renderTooltip({
   richTitle,
-  isRich,
-  isPersistent,
+  rich,
+  persistent,
   content,
-  showDelayInMs,
-  hideDelayInMs,
-}) => {
+  showDelay,
+  hidedelay,
+}) {
   document.addEventListener('DOMContentLoaded', () => {
     window.tooltip.anchor = window.button;
   });
@@ -41,33 +23,65 @@ const Template = ({
     <cv-tooltip
       id="tooltip"
       ${richTitle ? `richTitle="${richTitle}"` : ''}
-      ${showDelayInMs >= 0 ? `showDelay="${showDelayInMs}"` : ''}
-      ${hideDelayInMs >= 0 ? `hideDelay="${hideDelayInMs}"` : ''}
-      ${isRich ? 'rich' : ''}
-      ${isPersistent ? 'persistent' : ''}>
+      ${showDelay >= 0 ? `showDelay="${showDelay}"` : ''}
+      ${hidedelay >= 0 ? `hideDelay="${hidedelay}"` : ''}
+      ${rich ? 'rich' : ''}
+      ${persistent ? 'persistent' : ''}>
       ${content}
     </cv-tooltip>
   `;
+}
+
+export default {
+  title: 'Components/Tooltip',
+  argTypes: {
+    rich: {
+      control: 'boolean',
+    },
+    persistent: {
+      control: 'boolean',
+    },
+    richTitle: {
+      control: 'text',
+    },
+    showDelay: {
+      control: 'number',
+      label: 'show delay in milliseconds',
+    },
+    hidedelay: {
+      control: 'number',
+      label: 'hide delay in milliseconds',
+    },
+  },
+  args: {
+    content: "I'm a tooltip!",
+  },
+  tags: ['autodocs'],
+  render: renderTooltip,
 };
 
-export const Basic = Template.bind({});
+export const Basic = {
+  args: {},
+};
 
-export const Rich = Template.bind({});
-Rich.args = {
-  isRich: true,
-  isPersistent: true,
-  richTitle: 'This is the rich title!',
-  content: `
+export const Rich = {
+  args: {
+    rich: true,
+    persistent: true,
+    richTitle: 'This is the rich title!',
+    content: `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
       pretium vitae est et dapibus. Aenean sit amet felis eu lorem fermentum
       aliquam sit amet sit amet eros.
       <a class="mdc-tooltip__content-link" href="http://teradata.com" target="_blank">Learn more</a>.
       <cv-button slot="actionItems" label="Action"></button>
   `,
+  },
 };
 
-export const NoDelay = Template.bind({});
-NoDelay.args = {
-  showDelayInMs: 0,
-  hideDelayInMs: 0,
+export const NoDelay = {
+  args: {
+    showDelay: 0,
+    hidedelay: 0,
+  },
 };

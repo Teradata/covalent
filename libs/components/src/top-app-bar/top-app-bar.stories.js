@@ -5,6 +5,7 @@ import '../data-table/data-table.stories.scss';
 
 export default {
   title: 'Components/Top App Bar',
+  render: topAppBarComponent,
   argTypes: {
     showContent: {
       options: ['table', 'tableWithSelection', 'loremIpsum'],
@@ -19,6 +20,7 @@ export default {
     centerTitle: false,
     dense: false,
     prominent: false,
+    scrollTarget: '',
     showContent: 'table',
     showActionItems: 'icons',
   },
@@ -28,15 +30,16 @@ export default {
   tags: ['autodocs'],
 };
 
-export const Basic = topAppBarComponent.bind({});
-Basic.args = {};
+export const Basic = {};
 
-export const BasicWithButtons = topAppBarComponent.bind({});
-BasicWithButtons.args = {
-  showActionItems: 'buttons',
+export const BasicWithButtons = {
+  args: {
+    showActionItems: 'buttons',
+  },
 };
 
-export const Fixed = topAppBarComponent.bind({});
-Fixed.parameters = {
-  fixed: true,
+export const Fixed = {
+  parameters: {
+    fixed: true,
+  },
 };
