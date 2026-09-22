@@ -6,15 +6,32 @@
   "targets": {
     "build": {
       "executor": "nx:run-commands",
+      "dependsOn": ["check-manifest"],
       "outputs": ["{workspaceRoot}/dist/libs/icons"],
       "options": {
         "commands": [
           "mkdir -p dist/libs/icons",
           "cp libs/icons/covalent-icons*.scss dist/libs/icons",
           "cp libs/icons/covalent-icons.* dist/libs/icons",
-          "cp libs/icons/package.json dist/libs/icons"
+          "cp libs/icons/package.json dist/libs/icons",
+          "cp libs/icons/README.md dist/libs/icons",
+          "cp libs/icons/icons.manifest.json dist/libs/icons",
+          "cp libs/icons/THIRD-PARTY-NOTICES.md dist/libs/icons"
         ],
         "parallel": false
+      }
+    },
+    "check-manifest": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/svgs/*.svg",
+        "{projectRoot}/icons.manifest.json",
+        "{workspaceRoot}/scripts/validate-icon-manifest.js",
+        "{workspaceRoot}/scripts/validate-icon-manifest.test.js"
+      ],
+      "options": {
+        "command": "node --test scripts/validate-icon-manifest.test.js && node scripts/validate-icon-manifest.js"
       }
     }
   },
