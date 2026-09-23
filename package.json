@@ -184,7 +184,7 @@
     "react-dom": "^18.2.0",
     "sass": "^1.83.1",
     "storybook": "10.2.1",
-    "style-dictionary": "^5.0.4",
+    "style-dictionary": "^5.4.4",
     "stylelint": "^14.5.3",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
