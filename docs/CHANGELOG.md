@@ -1,3 +1,10 @@
+# [11.23.0](https://github.com/Teradata/covalent/compare/v11.22.1...v11.23.0) (2026-10-02)
+
+### Features
+
+- **code snippet:** allow code to be rendered as is ([54980f6](https://github.com/Teradata/covalent/commit/54980f62e1fc7e1be27d2b44b1375fddc2e84f9f))
+- **code snippet:** allow code to be rendered as is ([55675b8](https://github.com/Teradata/covalent/commit/55675b8eed209ec7fb6578a1fd89e67b65b44612))
+
 ## [11.22.1](https://github.com/Teradata/covalent/compare/v11.22.0...v11.22.1) (2026-09-09)
 
 ### Bug Fixes
