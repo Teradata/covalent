@@ -33,11 +33,12 @@ SELECT * FROM load_to_teradata (
 `;
 
 const codeSnippetTemplate = ({
-  inline,
   content,
-  hideHeader,
   label,
   language,
+  hideHeader,
+  inline,
+  skipTrim,
   maxHeight,
 }) => {
   document.addEventListener(
@@ -60,17 +61,19 @@ const codeSnippetTemplate = ({
     },
     { once: true },
   );
+  // do not add extra spaces in the HTML code
   return `
     <cv-code-snippet
-        label="${label}"
-        maxHeight="${maxHeight}"
-        language="${language}"
-        ${hideHeader ? 'hideHeader' : ''}
-        ${inline ? 'inline' : ''}>
-    <cv-icon-button slot="actionItems" id="theme-toggle"></cv-icon-button>
-    <cv-icon-button slot="actionItems" icon="content_copy"></cv-icon-button>
-    ${content}
-    </cv-code-snippet>`;
+      label="${label}"
+      maxHeight="${maxHeight}"
+      language="${language}"
+      ${hideHeader ? 'hideHeader' : ''}
+      ${inline ? 'inline' : ''}
+      ${skipTrim ? 'skipTrim' : ''}
+    ><cv-icon-button slot="actionItems" id="theme-toggle"
+    ></cv-icon-button><cv-icon-button
+    slot="actionItems" icon="content_copy"
+    ></cv-icon-button>${content}</cv-code-snippet>`;
 };
 
 const dialogTemplate = (args) => {
@@ -101,7 +104,8 @@ export default {
   args: {
     hideHeader: false,
     inline: false,
-    label: 'Example.sql',
+    skipTrim: false,
+    label: 'Explain plan',
     language: 'sql',
     content: sqlContent,
     maxHeight: 0,
@@ -126,6 +130,15 @@ export const Scrollable = {
 export const HiddenHeader = {
   args: {
     hideHeader: true,
+  },
+};
+
+export const SkipTrim = {
+  args: {
+    content:
+      '  1) First, we lock TABLE_NAME in DB_NAME for\n\n     access, and we lock TABLE_NAME2 in DB_NAME2 for access.\n\n  2) Next, we do an all-AMPs JOIN step in DB_NAME from\n\n     TABLE_NAME by way of an all-rows scan with no\n',
+    language: 'plaintext',
+    skipTrim: true,
   },
 };
 

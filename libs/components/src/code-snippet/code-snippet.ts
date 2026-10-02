@@ -1,8 +1,8 @@
-import { css, LitElement, html, unsafeCSS } from 'lit';
+import hljs from 'highlight.js/lib/common';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property, queryAssignedNodes } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import styles from './code-snippet.scss?inline';
-import hljs from 'highlight.js/lib/common';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -29,6 +29,9 @@ export class CovalentCodeSnippet extends LitElement {
 
   @property({ type: Boolean, reflect: true })
   hideHeader = false;
+
+  @property({ type: Boolean, reflect: true })
+  skipTrim = false;
 
   @queryAssignedNodes({})
   _codeItems!: Array<Node>;
@@ -68,7 +71,7 @@ export class CovalentCodeSnippet extends LitElement {
     };
     classes[`language-${this.language}`] = true;
     const container = document.createElement('div');
-    container.innerHTML = this._code.trim();
+    container.innerHTML = this.skipTrim ? this._code : this._code.trim();
 
     let styleHeight;
     if (this.maxHeight && this.maxHeight > 0) {
