@@ -1,3 +1,9 @@
+## [11.22.1](https://github.com/Teradata/covalent/compare/v11.22.0...v11.22.1) (2026-09-09)
+
+### Bug Fixes
+
+- **icons:** add missing Ask AI icon ligatures ([0e56fb2](https://github.com/Teradata/covalent/commit/0e56fb21e82e6ad641981ad39dbe0c5b36ac1ee8))
+
 # [11.22.0](https://github.com/Teradata/covalent/compare/v11.21.0...v11.22.0) (2026-09-09)
 
 ### Features
