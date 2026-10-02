@@ -19,6 +19,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run format:check -- --base=${{ github.event.pull_request.base.sha }}
+      - run: npx nx run icons:check-manifest
       - run: npx nx affected --target=scsslint --base=${{ github.event.pull_request.base.sha }}
       - run: npx nx affected --target=lint --base=${{ github.event.pull_request.base.sha }}
 
